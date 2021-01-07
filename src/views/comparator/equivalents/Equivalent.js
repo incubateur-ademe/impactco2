@@ -5,14 +5,16 @@ import { colors, mq } from 'utils/styles'
 import CO2NumberContext from 'utils/CO2NumberContext'
 
 const Wrapper = styled.div`
-  width: 33.333%;
+  width: calc(33.333% - 1em);
+  margin: 0.5em;
 
   ${mq.small} {
-    width: 50%;
+    width: calc(50% - 1em);
   }
 `
 const Content = styled.div`
-  margin: 0.5em;
+  height: 100%;
+  width: 100%;
   padding: 1em;
   border-radius: 1em;
   text-align: center;

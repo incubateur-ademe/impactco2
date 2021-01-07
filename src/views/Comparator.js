@@ -10,10 +10,10 @@ import Equivalents from './comparator/Equivalents'
 const Wrapper = styled.div`
   flex: 1;
   max-width: 45em;
-  margin: 0 auto 2em;
+  margin: 0 auto 6em;
 
   ${mq.small} {
-    margin: 0 3vw 2em;
+    margin: 0 3vw 6em;
   }
 `
 export default function Comparator() {
