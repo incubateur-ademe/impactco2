@@ -1,59 +1,12 @@
 [
   {
-    "id": 27010,
+    "id": 20689,
     "name": {
-      "fr": "Smartphone",
-      "en": "Smartphone"
+      "fr": "Repas avec du boeuf"
     },
-    "emoji": "📱",
-    "total": 16.5,
-    "details": [
-      {
-        "label": {
-          "fr": "Energy (Assembly)",
-          "en": "Energy (Assembly)"
-        },
-        "value": 0.172
-      },
-      {
-        "label": {
-          "fr": "Energy (making)",
-          "en": "Energy (making)"
-        },
-        "value": 0.0639
-      }
-    ],
-    "uncertainty": 50
-  },
-  {
-    "id": 26966,
-    "name": {
-      "fr": "Canapé convertible"
-    },
-    "emoji": "🛋",
-    "total": 197,
-    "details": [],
-    "uncertainty": 15
-  },
-  {
-    "id": 27044,
-    "name": {
-      "fr": "T-shirt en coton"
-    },
-    "emoji": "👕",
-    "total": 5.2,
-    "details": [],
-    "uncertainty": 25
-  },
-  {
-    "id": 27043,
-    "name": {
-      "fr": "Jean en coton"
-    },
-    "emoji": "👖",
-    "total": 23.2,
-    "details": [],
-    "uncertainty": 30
+    "emoji": "🍔",
+    "total": 7.26,
+    "default": true
   },
   {
     "id": 20683,
@@ -62,17 +15,87 @@
     },
     "emoji": "🍎",
     "total": 0.51,
-    "details": [],
-    "uncertainty": 50
+    "default": true
   },
   {
-    "id": 20689,
+    "id": 27976,
     "name": {
-      "fr": "Repas avec du boeuf"
+      "fr": "km en voiture"
     },
-    "emoji": "🍔",
-    "total": 7.26,
-    "details": [],
-    "uncertainty": 50
+    "emoji": "🚗",
+    "total": 0.121,
+    "default": true
+  },
+  {
+    "id": 206589,
+    "name": {
+      "fr": "km en TGV"
+    },
+    "emoji": "🚅",
+    "total": 0.00173,
+    "default": true
+  },
+  {
+    "id": 27010,
+    "name": {
+      "fr": "Smartphone"
+    },
+    "emoji": "📱",
+    "total": 16.5,
+    "default": true
+  },
+  {
+    "id": 26966,
+    "name": {
+      "fr": "Canapé convertible"
+    },
+    "emoji": "🛋",
+    "total": 197,
+    "default": true
+  },
+  {
+    "id": 27044,
+    "name": {
+      "fr": "T-shirt en coton"
+    },
+    "emoji": "👕",
+    "total": 5.2,
+    "default": true
+  },
+  {
+    "id": 27043,
+    "name": {
+      "fr": "Jean en coton"
+    },
+    "emoji": "👖",
+    "total": 23.2,
+    "default": true
+  },
+  {
+    "id": 28081,
+    "name": {
+      "fr": "km en avion"
+    },
+    "emoji": "✈️",
+    "total": 1.67,
+    "default": false
+  },
+  {
+    "id": 20688,
+    "name": {
+      "fr": "Repas avec du poulet"
+    },
+    "emoji": "🍗",
+    "total": 1.58,
+    "default": false
+  },
+  {
+    "id": 27000,
+    "name": {
+      "fr": "Télévision 45 pouces"
+    },
+    "emoji": "📺",
+    "total": 371,
+    "default": false
   }
 ]

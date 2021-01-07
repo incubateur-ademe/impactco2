@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { QueryParamProvider } from 'use-query-params'
 
 import { GlobalStyle } from 'utils/styles'
 
@@ -14,12 +15,14 @@ const Wrapper = styled.div`
 `
 function App() {
   return (
-    <Wrapper>
-      <GlobalStyle />
-      <Header />
-      <Comparator />
-      <Footer />
-    </Wrapper>
+    <QueryParamProvider>
+      <Wrapper>
+        <GlobalStyle />
+        <Header />
+        <Comparator />
+        <Footer />
+      </Wrapper>
+    </QueryParamProvider>
   )
 }
 
