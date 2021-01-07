@@ -22,7 +22,9 @@ export default function Equivalent(props) {
     <Tile>
       <Emoji>{props.equivalent.emoji}</Emoji>
       <Number length={String(total).length}>{total}</Number>
-      <Name>{props.equivalent.name.fr}</Name>
+      <Name>
+        {props.equivalent.name.fr.replaceAll('[s]', total > 1 ? 's' : '')}
+      </Name>
     </Tile>
   )
 }

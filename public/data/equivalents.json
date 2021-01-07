@@ -38,7 +38,7 @@
   {
     "id": 27010,
     "name": {
-      "fr": "Smartphone"
+      "fr": "Smartphone[s]"
     },
     "emoji": "📱",
     "total": 16.5,
@@ -47,7 +47,7 @@
   {
     "id": 26966,
     "name": {
-      "fr": "Canapé convertible"
+      "fr": "Canapé[s] convertible[s]"
     },
     "emoji": "🛋",
     "total": 197,
@@ -56,7 +56,7 @@
   {
     "id": 27044,
     "name": {
-      "fr": "T-shirt en coton"
+      "fr": "T-shirt[s] en coton"
     },
     "emoji": "👕",
     "total": 5.2,
@@ -65,7 +65,7 @@
   {
     "id": 27043,
     "name": {
-      "fr": "Jean en coton"
+      "fr": "Jean[s] en coton"
     },
     "emoji": "👖",
     "total": 23.2,
@@ -92,7 +92,7 @@
   {
     "id": 27000,
     "name": {
-      "fr": "Télévision 45 pouces"
+      "fr": "Télévision[s] 45 pouces"
     },
     "emoji": "📺",
     "total": 371,

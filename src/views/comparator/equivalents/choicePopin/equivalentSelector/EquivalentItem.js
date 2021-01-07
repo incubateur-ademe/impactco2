@@ -61,7 +61,7 @@ const DragHandle = sortableHandle((props) => (
 
 const EquivalentItem = SortableElement(({ equivalent, onClick }) => (
   <Wrapper active={equivalent.active} onClick={onClick}>
-    <Label>{equivalent.name.fr}</Label>
+    <Label>{equivalent.name.fr.replaceAll('[s]', '')}</Label>
     <DragHandle active={equivalent.active} />
   </Wrapper>
 ))
