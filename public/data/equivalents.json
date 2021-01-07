@@ -1,0 +1,78 @@
+[
+  {
+    "id": 27010,
+    "name": {
+      "fr": "Smartphone",
+      "en": "Smartphone"
+    },
+    "emoji": "📱",
+    "total": 16.5,
+    "details": [
+      {
+        "label": {
+          "fr": "Energy (Assembly)",
+          "en": "Energy (Assembly)"
+        },
+        "value": 0.172
+      },
+      {
+        "label": {
+          "fr": "Energy (making)",
+          "en": "Energy (making)"
+        },
+        "value": 0.0639
+      }
+    ],
+    "uncertainty": 50
+  },
+  {
+    "id": 26966,
+    "name": {
+      "fr": "Canapé convertible"
+    },
+    "emoji": "🛋",
+    "total": 197,
+    "details": [],
+    "uncertainty": 15
+  },
+  {
+    "id": 27044,
+    "name": {
+      "fr": "T-shirt en coton"
+    },
+    "emoji": "👕",
+    "total": 5.2,
+    "details": [],
+    "uncertainty": 25
+  },
+  {
+    "id": 27043,
+    "name": {
+      "fr": "Jean en coton"
+    },
+    "emoji": "👖",
+    "total": 23.2,
+    "details": [],
+    "uncertainty": 30
+  },
+  {
+    "id": 20683,
+    "name": {
+      "fr": "Repas végétarien"
+    },
+    "emoji": "🍎",
+    "total": 0.51,
+    "details": [],
+    "uncertainty": 50
+  },
+  {
+    "id": 20689,
+    "name": {
+      "fr": "Repas avec du boeuf"
+    },
+    "emoji": "🍔",
+    "total": 7.26,
+    "details": [],
+    "uncertainty": 50
+  }
+]
