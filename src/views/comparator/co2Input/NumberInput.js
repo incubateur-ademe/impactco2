@@ -75,7 +75,7 @@ export default function NumberInput() {
           }}
         />
       </InputWrapper>
-      <Unit>kg/CO2</Unit>
+      <Unit>kg/CO2e</Unit>
     </Wrapper>
   )
 }
