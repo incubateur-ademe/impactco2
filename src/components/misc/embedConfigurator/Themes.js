@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   margin: 0 -0.5em 1em;
 
-  ${mq} {
+  ${mq.small} {
     flex-direction: column;
   }
 `
