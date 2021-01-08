@@ -35,6 +35,15 @@ const Why = styled.div`
     color: ${colors.text};
   }
 `
+const Sup = styled.sup`
+  font-weight: 700;
+  line-height: 0;
+
+  a {
+    color: ${colors.text};
+    text-decoration: none;
+  }
+`
 export default function Header() {
   return (
     <Wrapper>
@@ -51,7 +60,16 @@ export default function Header() {
         </a>
       </Why>
       <Subtitle>
-        Voici quelques équivalents pour se figurer ce qu’un poids en CO2
+        Voici quelques équivalents pour se figurer ce qu’un poids en CO2e{' '}
+        <Sup>
+          <a
+            href='https://ecolab.gitbook.io/documentation-ecolab/lexique-environnemental-et-changement-climat#lequivalent-co2-ou-co2-equivalent-co-2-e'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            ?
+          </a>
+        </Sup>
         représente en objet ou activité du quotidien...
       </Subtitle>
     </Wrapper>

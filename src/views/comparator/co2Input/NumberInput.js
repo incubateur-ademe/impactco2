@@ -69,7 +69,7 @@ export default function NumberInput() {
           type='number'
           value={CO2}
           onChange={(e) => {
-            if (e.currentTarget.value <= 9999999) {
+            if (e.currentTarget.value <= 999999) {
               setCO2(e.currentTarget.value)
             }
           }}
