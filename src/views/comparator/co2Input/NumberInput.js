@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import { colors, mq } from 'utils/styles'
+import { mq } from 'utils/styles'
 
 import CO2NumberContext from 'utils/CO2NumberContext'
 
@@ -26,7 +26,8 @@ const InputWrapper = styled.div`
     left: -2%;
     width: 104%;
     height: 100%;
-    background-color: ${colors.text};
+    background-color: ${(props) => props.theme.colors.second};
+    border: 2px solid ${(props) => props.theme.colors.text};
     transform: rotate3d(1, -1, 0, 33deg) rotate(5.1deg);
   }
 `
@@ -36,7 +37,7 @@ const Input = styled.input`
   padding: 0 0.3em;
   font-weight: 900;
   font-style: italic;
-  color: ${colors.main};
+  color: ${(props) => props.theme.colors.main};
   text-align: right;
   background-color: transparent;
   border: none;
@@ -59,7 +60,7 @@ const Unit = styled.a`
   font-size: 0.6em;
   font-weight: 700;
   line-height: 1.7;
-  color: ${colors.text};
+  color: ${(props) => props.theme.colors.text};
   text-decoration: none;
 `
 export default function NumberInput() {

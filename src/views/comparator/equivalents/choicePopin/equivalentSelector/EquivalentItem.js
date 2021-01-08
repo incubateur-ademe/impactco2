@@ -2,8 +2,6 @@ import React from 'react'
 import { SortableElement, sortableHandle } from 'react-sortable-hoc'
 import styled from 'styled-components'
 
-import { colors } from 'utils/styles'
-
 const Wrapper = styled.li`
   position: relative;
   z-index: 920;
@@ -12,7 +10,8 @@ const Wrapper = styled.li`
   align-items: center;
   padding: 0.7em 1.2em 0.7em 1.8em;
   margin: 0.35em 0;
-  color: ${(props) => (props.active ? colors.text : colors.main)};
+  color: ${(props) =>
+    props.active ? props.theme.colors.second : props.theme.colors.main};
   list-style: none;
   cursor: pointer;
 
@@ -23,8 +22,9 @@ const Wrapper = styled.li`
     left: -6%;
     width: 112%;
     height: 100%;
-    background-color: ${(props) => (props.active ? colors.main : colors.text)};
-    border: 1px solid ${colors.main};
+    background-color: ${(props) =>
+      props.active ? props.theme.colors.main : props.theme.colors.second};
+    border: 1px solid ${(props) => props.theme.colors.main};
     transform: rotate3d(1, -1, 0, 42deg) rotate(8.3deg);
   }
 `
@@ -48,7 +48,8 @@ const Bar = styled.div`
   left: ${(props) => (props.top ? '2px' : props.bottom ? '-2px' : 0)};
   width: 100%;
   height: 3px;
-  background-color: ${(props) => (props.active ? colors.text : colors.main)};
+  background-color: ${(props) =>
+    props.active ? props.theme.colors.text : props.theme.colors.main};
 `
 
 const DragHandle = sortableHandle((props) => (

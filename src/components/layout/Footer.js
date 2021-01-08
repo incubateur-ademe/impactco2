@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import ademe from 'assets/ademe.jpg'
 import repufrancaise from 'assets/repufrancaise.jpg'
 import ecolab from 'assets/ecolab.png'
-import { colors, mq } from 'utils/styles'
+import { mq } from 'utils/styles'
 
 import Button from 'components/base/Button'
+import EmbedConfigurator from 'components/misc/EmbedConfigurator'
 
 const Wrapper = styled.div`
-  background-color: ${colors.text};
-  color: ${colors.second};
+  background-color: ${(props) => props.theme.colors.second};
+  color: ${(props) => props.theme.colors.main};
 `
 const Content = styled.div`
   max-width: 45em;
   margin: 0 auto;
-  padding: 2em 0 0;
+  padding: 1em 0 0;
 
   ${mq.small} {
     margin: 0 3vw;
@@ -56,9 +57,11 @@ const Logo = styled.img`
 `
 
 export default function Footer() {
+  const [open, setOpen] = useState(true)
   return (
     <Wrapper>
       <Content>
+        <EmbedConfigurator />
         <Flex>
           <Source>
             <Title>Sources des données :</Title>
@@ -70,7 +73,9 @@ export default function Footer() {
               Base carbone®
             </a>
           </Source>
-          <Button disabled>Je veux l'intégrer à mon site !</Button>
+          <Button disabled onClick={() => setOpen(true)}>
+            Je veux l'intégrer à mon site !
+          </Button>
         </Flex>
         <LogosWrapper>
           <Logos>

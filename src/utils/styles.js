@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import styledNormalize from 'styled-normalize'
 
-export const colors = {
+/*export const colors = {
   main: '#05386B',
   second: '#379683',
   third: '#5CDB95',
@@ -10,7 +10,7 @@ export const colors = {
   white: '#fdfdfd',
   // text: '#EDF5E1'
   text: '#ffffdb',
-}
+}*/
 
 export const breakpoints = {
   small: 730,
@@ -33,13 +33,13 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: ${(props) => props.theme.fonts};
     scroll-behavior: smooth;
   }
 
   body {
-    background-color: ${colors.second};
-    color: ${colors.text};
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
     line-height: 1.3;
 
     ${mq.small} {
@@ -57,6 +57,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${colors.main};
+    color: ${(props) => props.theme.colors.main};
   }
 `

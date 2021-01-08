@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors, mq } from 'utils/styles'
+import { mq } from 'utils/styles'
 
 const Wrapper = styled.div`
   width: calc(33.333% - 1em);
@@ -17,8 +17,13 @@ const Content = styled.div`
   padding: 1em;
   border-radius: 1em;
   text-align: center;
-  color: ${(props) => (props.active ? colors.text : colors.main)};
-  background-color: ${(props) => (props.active ? colors.main : colors.text)};
+  color: ${(props) =>
+    props.active ? props.theme.colors.second : props.theme.colors.main};
+  background-color: ${(props) =>
+    props.active ? props.theme.colors.main : props.theme.colors.second};
+  border: 2px solid
+    ${(props) =>
+      props.active ? props.theme.colors.main : props.theme.colors.text};
   cursor: ${(props) => (props.active ? 'pointer' : 'inherit')};
   overflow: hidden;
 

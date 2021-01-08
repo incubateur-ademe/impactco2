@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors, mq } from 'utils/styles'
+import { mq } from 'utils/styles'
 
 const Wrapper = styled.div`
   max-width: 45em;
@@ -33,7 +33,7 @@ const Why = styled.div`
   margin: 0 1em 1em 0;
 
   a {
-    color: ${colors.text};
+    color: ${(props) => props.theme.colors.text};
   }
 `
 const Sup = styled.sup`
@@ -41,7 +41,7 @@ const Sup = styled.sup`
   line-height: 0;
 
   a {
-    color: ${colors.text};
+    color: ${(props) => props.theme.colors.text};
     text-decoration: none;
   }
 `

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from 'utils/styles'
 import Button from 'components/base/Button'
 
 import EquivalentSelector from './choicePopin/EquivalentSelector'
@@ -35,8 +34,8 @@ const Popin = styled.div`
   max-height: 90vh;
   margin: 2em;
   padding: 2em;
-  color: ${colors.main};
-  background-color: ${colors.text};
+  color: ${(props) => props.theme.colors.main};
+  background-color: ${(props) => props.theme.colors.second};
   border-radius: 1em;
   opacity: ${(props) => (props.open ? 1 : 0)};
   transform: scale(${(props) => (props.open ? 1 : 0.7)})
