@@ -25,7 +25,8 @@ const Big = styled.span`
   font-size: 1.6em;
 `
 const Subtitle = styled.div`
-  max-width: 35em;
+  max-width: 30em;
+  line-height: 1.5;
 `
 const Why = styled.div`
   text-align: right;
@@ -60,7 +61,7 @@ export default function Header() {
         </a>
       </Why>
       <Subtitle>
-        Voici quelques équivalents pour se figurer ce qu’un poids en CO2e{' '}
+        Voici quelques équivalents pour se figurer ce qu’un poids en CO2e
         <Sup>
           <a
             href='https://ecolab.gitbook.io/documentation-ecolab/lexique-environnemental-et-changement-climat#lequivalent-co2-ou-co2-equivalent-co-2-e'
@@ -69,7 +70,7 @@ export default function Header() {
           >
             ?
           </a>
-        </Sup>
+        </Sup>{' '}
         représente en objet ou activité du quotidien...
       </Subtitle>
     </Wrapper>
