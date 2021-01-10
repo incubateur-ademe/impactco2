@@ -12,5 +12,9 @@ const Wrapper = styled.code`
 `
 export default function Code() {
   let location = useLocation()
-  return <Wrapper>{`https://dummywebsite.com/${location.search}`}</Wrapper>
+  return (
+    <Wrapper
+      onClick={() => window.alert('not functional yet')}
+    >{`https://dummywebsite.com/${location.search}`}</Wrapper>
+  )
 }

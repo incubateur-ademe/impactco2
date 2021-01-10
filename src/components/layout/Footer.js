@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ademe from 'assets/ademe.jpg'
 import repufrancaise from 'assets/repufrancaise.jpg'
 import ecolab from 'assets/ecolab.png'
 import { mq } from 'utils/styles'
+import StyleContext from 'utils/StyleContext'
 
 import Button from 'components/base/Button'
 
@@ -57,7 +58,8 @@ const Logo = styled.img`
 `
 
 export default function Footer() {
-  const [open, setOpen] = useState(true)
+  const { setConfiguratorOpen } = useContext(StyleContext)
+
   return (
     <Wrapper>
       <Content>
@@ -72,7 +74,16 @@ export default function Footer() {
               Base carbone®
             </a>
           </Source>
-          <Button disabled onClick={() => setOpen(true)}>
+          <Button
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth',
+              })
+              setConfiguratorOpen(true)
+            }}
+          >
             Je veux l'intégrer à mon site !
           </Button>
         </Flex>

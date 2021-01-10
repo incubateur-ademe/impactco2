@@ -1,10 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { mq } from 'utils/styles'
+
 const Wrapper = styled.div`
-  flex: 1;
-  padding: 1em;
+  width: calc(25% - 1em);
   margin: 0.5em;
+
+  ${mq.small} {
+    width: calc(50% - 1em);
+  }
+`
+const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 1em;
   font-family: ${(props) => props.displayTheme.fonts};
   background-color: ${(props) => props.displayTheme.colors.background};
   border-radius: 1em;
@@ -40,17 +50,19 @@ const Tile = styled.div`
 `
 export default function Theme(props) {
   return (
-    <Wrapper
-      onClick={props.onClick}
-      current={props.current}
-      displayTheme={props.theme}
-    >
-      <Title displayTheme={props.theme}>{props.theme.name}</Title>
-      <Tiles>
-        <Tile displayTheme={props.theme} />
-        <Tile displayTheme={props.theme} />
-        <Tile active displayTheme={props.theme} />
-      </Tiles>
+    <Wrapper>
+      <Content
+        onClick={props.onClick}
+        current={props.current}
+        displayTheme={props.theme}
+      >
+        <Title displayTheme={props.theme}>{props.theme.name}</Title>
+        <Tiles>
+          <Tile displayTheme={props.theme} />
+          <Tile displayTheme={props.theme} />
+          <Tile active displayTheme={props.theme} />
+        </Tiles>
+      </Content>
     </Wrapper>
   )
 }

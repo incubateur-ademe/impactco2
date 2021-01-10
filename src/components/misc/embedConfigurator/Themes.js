@@ -8,11 +8,8 @@ import Theme from './themes/Theme'
 
 const Wrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin: 0 -0.5em 1em;
-
-  ${mq.small} {
-    flex-direction: column;
-  }
 `
 export default function Themes() {
   const { themes, theme, setTheme } = useContext(StyleContext)

@@ -12,8 +12,8 @@ const Wrapper = styled.div`
   }
 `
 const Content = styled.div`
-  height: 100%;
   width: 100%;
+  height: 100%;
   padding: 1em;
   border-radius: 1em;
   text-align: center;

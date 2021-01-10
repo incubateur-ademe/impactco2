@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import {
   useQueryParam,
@@ -62,6 +62,8 @@ export default function CO2NumberProvider(props) {
     withDefault(BooleanParam, true)
   )
 
+  const [configuratorOpen, setConfiguratorOpen] = useState(false)
+
   return (
     <StyleContext.Provider
       value={{
@@ -70,6 +72,8 @@ export default function CO2NumberProvider(props) {
         setTheme,
         displayTitle,
         setDisplayTitle,
+        configuratorOpen,
+        setConfiguratorOpen,
       }}
     >
       <ThemeProvider
