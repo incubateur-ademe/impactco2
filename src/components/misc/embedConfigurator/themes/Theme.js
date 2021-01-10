@@ -19,8 +19,24 @@ const Title = styled.h4`
   font-size: 1.5em;
   color: ${(props) => props.displayTheme.colors.text};
 `
-const Text = styled.p`
-  color: ${(props) => props.displayTheme.colors.text};
+const Tiles = styled.div`
+  display: flex;
+  margin: 0 -0.5em;
+`
+const Tile = styled.div`
+  flex: 1;
+  height: 2em;
+  margin: 0 0.5em;
+  background-color: ${(props) =>
+    props.active
+      ? props.displayTheme.colors.main
+      : props.displayTheme.colors.second};
+  border: 2px solid
+    ${(props) =>
+      props.active
+        ? props.displayTheme.colors.main
+        : props.displayTheme.colors.text};
+  border-radius: 0.5em;
 `
 export default function Theme(props) {
   return (
@@ -30,7 +46,11 @@ export default function Theme(props) {
       displayTheme={props.theme}
     >
       <Title displayTheme={props.theme}>{props.theme.name}</Title>
-      <Text displayTheme={props.theme}>Lorem ipsum dolor sit amet :)</Text>
+      <Tiles>
+        <Tile displayTheme={props.theme} />
+        <Tile displayTheme={props.theme} />
+        <Tile active displayTheme={props.theme} />
+      </Tiles>
     </Wrapper>
   )
 }

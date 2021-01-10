@@ -8,7 +8,6 @@ const Wrapper = styled.button`
   height: 100%;
   padding: 0.8em 1.6em;
   font-size: 1.2em;
-  font-weight: 500;
   color: ${(props) =>
     props.hollow ? props.theme.colors.main : props.theme.colors.second};
   background-color: ${(props) =>

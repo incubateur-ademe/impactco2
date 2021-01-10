@@ -1,6 +1,11 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { useQueryParam, StringParam, withDefault } from 'use-query-params'
+import {
+  useQueryParam,
+  StringParam,
+  BooleanParam,
+  withDefault,
+} from 'use-query-params'
 
 import StyleContext from 'utils/StyleContext'
 
@@ -25,6 +30,16 @@ const themes = {
     },
     fonts: '"Montserrat", Arial, sans-serif',
   },
+  night: {
+    name: 'Nuit',
+    colors: {
+      main: '#fdfdfd',
+      second: '#282c35',
+      background: '#282c35',
+      text: '#fdfdfd',
+    },
+    fonts: '"Montserrat", Arial, sans-serif',
+  },
   accessible: {
     name: 'Accessible',
     colors: {
@@ -42,12 +57,19 @@ export default function CO2NumberProvider(props) {
     withDefault(StringParam, 'default')
   )
 
+  const [displayTitle, setDisplayTitle] = useQueryParam(
+    'title',
+    withDefault(BooleanParam, true)
+  )
+
   return (
     <StyleContext.Provider
       value={{
         themes,
         theme,
         setTheme,
+        displayTitle,
+        setDisplayTitle,
       }}
     >
       <ThemeProvider

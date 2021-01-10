@@ -15,6 +15,8 @@ export default function CO2NumberProvider(props) {
     withDefault(DelimitedArrayParam, [])
   )
 
+  const [popinOpen, setPopinOpen] = useState(false)
+
   useEffect(() => {
     fetch('/data/equivalents.json')
       .then((res) => res.json())
@@ -63,6 +65,8 @@ export default function CO2NumberProvider(props) {
               .map((equivalent) => equivalent.id)
           )
         },
+        popinOpen,
+        setPopinOpen,
       }}
     >
       {props.children}

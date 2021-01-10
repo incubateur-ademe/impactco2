@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import StyleContext from 'utils/StyleContext'
 import { mq } from 'utils/styles'
 
 const Wrapper = styled.div`
@@ -46,33 +47,39 @@ const Sup = styled.sup`
   }
 `
 export default function Header() {
+  const { displayTitle } = useContext(StyleContext)
   return (
     <Wrapper>
-      <Title>
-        Perdre 1 tonne c’est bien, <Big>mais comment ?</Big>
-      </Title>
-      <Why>
-        <a
-          href='https://ecolab.ademe.fr/blog/carbone/historique-calculateur-carbone-nos-gestes-climat-micmac-coach-carbone.md'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Et pourquoi ?
-        </a>
-      </Why>
-      <Subtitle>
-        Voici quelques équivalents pour se figurer ce qu’un poids en CO2e
-        <Sup>
-          <a
-            href='https://ecolab.gitbook.io/documentation-ecolab/lexique-environnemental-et-changement-climat#lequivalent-co2-ou-co2-equivalent-co-2-e'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            ?
-          </a>
-        </Sup>{' '}
-        représente en objet ou activité du quotidien...
-      </Subtitle>
+      {displayTitle && (
+        <>
+          {' '}
+          <Title>
+            Perdre 1 tonne c’est bien, <Big>mais comment ?</Big>
+          </Title>
+          <Why>
+            <a
+              href='https://ecolab.ademe.fr/blog/carbone/historique-calculateur-carbone-nos-gestes-climat-micmac-coach-carbone.md'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Et pourquoi ?
+            </a>
+          </Why>
+          <Subtitle>
+            Voici quelques équivalents pour se figurer ce qu’un poids en CO2e
+            <Sup>
+              <a
+                href='https://ecolab.gitbook.io/documentation-ecolab/lexique-environnemental-et-changement-climat#lequivalent-co2-ou-co2-equivalent-co-2-e'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                ?
+              </a>
+            </Sup>{' '}
+            représente en objet ou activité du quotidien...
+          </Subtitle>
+        </>
+      )}
     </Wrapper>
   )
 }

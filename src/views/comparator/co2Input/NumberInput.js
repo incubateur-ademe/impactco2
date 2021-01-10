@@ -68,7 +68,7 @@ export default function NumberInput() {
 
   return (
     <Wrapper>
-      <InputWrapper length={String(CO2).length}>
+      <InputWrapper>
         <Input
           type='number'
           value={CO2}

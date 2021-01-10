@@ -22,7 +22,6 @@ export default function Themes() {
     setThemeKeys(Object.keys(themes))
   }, [themes])
 
-  console.log(theme, themeKeys)
   return (
     <Wrapper>
       {themeKeys.map((themeKey) => (

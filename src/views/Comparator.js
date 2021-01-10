@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { mq } from 'utils/styles'
-import CO2NumberProvider from 'components/providers/CO2NumberProvider'
-import EquivalentsProvider from 'components/providers/EquivalentsProvider'
 
 import CO2Input from './comparator/CO2Input.js'
 import Equivalents from './comparator/Equivalents'
@@ -19,13 +17,9 @@ const Wrapper = styled.div`
 `
 export default function Comparator() {
   return (
-    <CO2NumberProvider>
-      <EquivalentsProvider>
-        <Wrapper>
-          <CO2Input />
-          <Equivalents />
-        </Wrapper>
-      </EquivalentsProvider>
-    </CO2NumberProvider>
+    <Wrapper>
+      <CO2Input />
+      <Equivalents />
+    </Wrapper>
   )
 }

@@ -7,11 +7,11 @@ import ecolab from 'assets/ecolab.png'
 import { mq } from 'utils/styles'
 
 import Button from 'components/base/Button'
-import EmbedConfigurator from 'components/misc/EmbedConfigurator'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   color: ${(props) => props.theme.colors.main};
+  transition: all 600ms;
 `
 const Content = styled.div`
   max-width: 45em;
@@ -61,7 +61,6 @@ export default function Footer() {
   return (
     <Wrapper>
       <Content>
-        <EmbedConfigurator />
         <Flex>
           <Source>
             <Title>Sources des données :</Title>

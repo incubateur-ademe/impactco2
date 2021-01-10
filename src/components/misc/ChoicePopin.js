@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import EquivalentsContext from 'utils/EquivalentsContext'
 import Button from 'components/base/Button'
 
 import EquivalentSelector from './choicePopin/EquivalentSelector'
@@ -57,14 +58,16 @@ const ButtonClose = styled.div`
 `
 
 export default function ChoicePopin(props) {
+  const { popinOpen, setPopinOpen } = useContext(EquivalentsContext)
+
   return (
-    <Wrapper open={props.open}>
-      <Background open={props.open} onClick={() => props.setOpen(false)} />
-      <Popin open={props.open}>
-        <ButtonClose onClick={() => props.setOpen(false)}>+</ButtonClose>
+    <Wrapper open={popinOpen}>
+      <Background open={popinOpen} onClick={() => setPopinOpen(false)} />
+      <Popin open={popinOpen}>
+        <ButtonClose onClick={() => setPopinOpen(false)}>+</ButtonClose>
         <Title>Équivalents</Title>
         <EquivalentSelector />
-        <Button onClick={() => props.setOpen(false)}>Valider</Button>
+        <Button onClick={() => setPopinOpen(false)}>Valider</Button>
       </Popin>
     </Wrapper>
   )

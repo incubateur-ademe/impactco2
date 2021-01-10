@@ -41,6 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
     line-height: 1.3;
+    transition: all 600ms;
 
     ${mq.small} {
       font-size: 0.875em;
