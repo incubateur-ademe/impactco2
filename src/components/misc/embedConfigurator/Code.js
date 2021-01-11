@@ -24,6 +24,6 @@ export default function Code() {
   return (
     <Wrapper><Text
       onClick={() => window.alert('not functional yet')}
-    >{`<script src="https://dummywebsite.com/${location.search}"></script>`}</Text><Explication>Copiez ce code puis ajouter le ou vous voulez qu'il s'affiche sur votre site web</Explication></Wrapper>
+    >{`<script src="https://dummywebsite.com/${location.search}"></script>`}</Text><Explication>Copiez ce code puis ajoutez-le où vous souhaitez qu'il s'affiche sur votre site web</Explication></Wrapper>
   )
 }
