@@ -34,6 +34,7 @@ const Content = styled.div`
   margin: 0 auto;
   padding: 2em;
   overflow-y: scroll;
+  overflow-x: hidden;
 
   ${mq.medium} {
     position: relative;
