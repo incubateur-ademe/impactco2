@@ -60,25 +60,38 @@ const ButtonClose = styled.div`
 const Title = styled.h2`
   font-size: 2em;
   margin-bottom: 1rem;
-`;
+`
 const Subtitle = styled.h3`
   font-size: 1.3em;
   margin-bottom: 1rem;
-`;
+`
 export default function EmbedConfigurator() {
-  const { configuratorOpen, setConfiguratorOpen } = useContext(StyleContext)
+  const {
+    configuratorOpen,
+    setConfiguratorOpen,
+    setTheme,
+    setDisplayTitle,
+  } = useContext(StyleContext)
 
   const { setPopinOpen } = useContext(EquivalentsContext)
 
   return (
     <Wrapper open={configuratorOpen}>
       <Content>
-        <ButtonClose onClick={() => setConfiguratorOpen(false)}>+</ButtonClose>
+        <ButtonClose
+          onClick={() => {
+            setTheme('default')
+            setDisplayTitle(true)
+            setConfiguratorOpen(false)
+          }}
+        >
+          +
+        </ButtonClose>
         <Title>Intégrer le simulateur</Title>
         <Code />
         <Subtitle>Options d'intégration</Subtitle>
         <NumberInput />
-        
+
         <Button onClick={() => setPopinOpen(true)}>
           Choisir les équivalents
         </Button>

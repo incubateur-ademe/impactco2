@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 const Text = styled.code`
   display: block;
   margin-bottom: 0.5em;
-  padding: 1em 0;
+  padding: 1em 0; 
   color: ${(props) => props.theme.colors.main};
   word-break: break-word;
   border-bottom: 1px solid ${(props) => props.theme.colors.main};
