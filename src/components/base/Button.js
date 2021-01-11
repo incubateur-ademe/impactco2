@@ -5,7 +5,6 @@ const Wrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   padding: 0.8em 1.6em;
   font-size: 1.2em;
   color: ${(props) =>
