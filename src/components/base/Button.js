@@ -21,7 +21,7 @@ const Wrapper = styled.button`
   &:hover {
     background-color: ${(props) =>
       props.hollow ? props.theme.colors.main : props.theme.colors.main};
-    color: ${(props) => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.second};
   }
 
   &:focus {

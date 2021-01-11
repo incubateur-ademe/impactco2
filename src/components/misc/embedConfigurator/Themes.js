@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
-import { mq } from 'utils/styles'
 import StyleContext from 'utils/StyleContext'
 
 import Theme from './themes/Theme'
