@@ -6,10 +6,7 @@ import CO2NumberContext from 'utils/CO2NumberContext'
 
 const Wrapper = styled.div`
   display: flex;
-
-  ${mq.small} {
-    margin-bottom: 1em;
-  }
+  margin-bottom: 1em;
 `
 const Input = styled.input`
   position: relative;

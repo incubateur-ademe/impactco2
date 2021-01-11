@@ -14,18 +14,27 @@ import Code from './embedConfigurator/Code'
 const Wrapper = styled.div`
   display: ${(props) => (props.open ? 'block' : 'none')};
   background-color: ${(props) => props.theme.colors.second};
-  border-bottom: 5px solid ${(props) => props.theme.colors.text};
+  border-left: 5px solid ${(props) => props.theme.colors.main};
   color: ${(props) => props.theme.colors.main};
   transition: all 600ms;
+
+  ${mq.medium} {
+    border-left: none;
+    border-bottom: 2px solid ${(props) => props.theme.colors.main};
+  }
 `
 const Content = styled.div`
   position: relative;
-  max-width: 45em;
+  max-width: 30em;
   margin: 0 auto;
-  padding: 1em 0;
+  padding: 2em;
 
+  ${mq.medium} {
+    max-width: 45em;
+  }
   ${mq.small} {
     margin: 0 3vw;
+    padding: 1em 0;
   }
 `
 const Flex = styled.div`
@@ -49,6 +58,14 @@ const ButtonClose = styled.div`
   cursor: pointer;
   line-height: 0.5;
 `
+const Title = styled.h2`
+  font-size: 2em;
+  margin-bottom: 1rem;
+`;
+const Subtitle = styled.h3`
+  font-size: 1.3em;
+  margin-bottom: 1rem;
+`;
 export default function EmbedConfigurator() {
   const { configuratorOpen, setConfiguratorOpen } = useContext(StyleContext)
 
@@ -58,17 +75,16 @@ export default function EmbedConfigurator() {
     <Wrapper open={configuratorOpen}>
       <Content>
         <ButtonClose onClick={() => setConfiguratorOpen(false)}>+</ButtonClose>
-
+        <Title>Intégrer le simulateur</Title>
+        <Code />
+        <Subtitle>Options d'intégration</Subtitle>
+        <NumberInput />
+        
         <Button onClick={() => setPopinOpen(true)}>
           Choisir les équivalents
         </Button>
-        <Flex>
-          <TitleDisplay />
-          <NumberInput />
-        </Flex>
-
         <Themes />
-        <Code />
+        <TitleDisplay />
       </Content>
     </Wrapper>
   )

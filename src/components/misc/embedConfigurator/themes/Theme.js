@@ -4,9 +4,12 @@ import styled from 'styled-components'
 import { mq } from 'utils/styles'
 
 const Wrapper = styled.div`
-  width: calc(25% - 1em);
+  width: calc(50% - 1em);
   margin: 0.5em;
 
+  ${mq.medium} {
+    width: calc(25% - 1em);
+  }
   ${mq.small} {
     width: calc(50% - 1em);
   }

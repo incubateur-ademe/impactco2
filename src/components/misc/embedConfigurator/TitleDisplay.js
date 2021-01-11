@@ -5,7 +5,7 @@ import StyleContext from 'utils/StyleContext'
 
 const Wrapper = styled.div`
   position: relative;
-  margin-left: 0.5rem;
+  margin: 0 0 1rem 0.5rem;
   font-size: 1.2em;
 
   &:before {

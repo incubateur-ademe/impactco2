@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
 
-import { GlobalStyle } from 'utils/styles'
+import { GlobalStyle, mq } from 'utils/styles'
 import StyleProvider from 'components/providers/StyleProvider'
 import CO2NumberProvider from 'components/providers/CO2NumberProvider'
 import EquivalentsProvider from 'components/providers/EquivalentsProvider'
@@ -16,9 +16,20 @@ import Comparator from 'views/Comparator'
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: space-between;
+
+  ${mq.medium} {
+    flex-direction: column-reverse;
+  }
+`
+const Content = styled.div`
+  flex: 1;
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
-`
+
+
+`;
 function App() {
   return (
     <Router>
@@ -27,11 +38,13 @@ function App() {
           <CO2NumberProvider>
             <EquivalentsProvider>
               <Wrapper>
-                <GlobalStyle />
+                <Content>
+                  <GlobalStyle />
+                  <Header />
+                  <Comparator />
+                  <Footer />
+                </Content>
                 <EmbedConfigurator />
-                <Header />
-                <Comparator />
-                <Footer />
               </Wrapper>
               <ChoicePopin />
             </EquivalentsProvider>

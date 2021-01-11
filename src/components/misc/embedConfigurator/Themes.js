@@ -9,7 +9,7 @@ import Theme from './themes/Theme'
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -0.5em 1em;
+  margin: 1em -0.5em;
 `
 export default function Themes() {
   const { themes, theme, setTheme } = useContext(StyleContext)
