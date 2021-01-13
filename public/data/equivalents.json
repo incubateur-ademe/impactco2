@@ -97,5 +97,23 @@
     "emoji": "📺",
     "total": 371,
     "default": false
-  }
+  },
+  {
+    "id": 20587,
+    "name": {
+      "fr": "Livre de 300g"
+    },
+    "emoji": "📚",
+    "total": 1.1,
+    "default": false
+  },
+  {
+    "id": 24295,
+    "name": {
+      "fr": "Ramette de papier blanc - 80g/m² A4"
+    },
+    "emoji": "📄",
+    "total": 2.29,
+    "default": false
+  }  
 ]
