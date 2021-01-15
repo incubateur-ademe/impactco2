@@ -115,5 +115,14 @@
     "emoji": "📄",
     "total": 0.00458581,
     "default": false
+  },
+  {
+    "id": 32,
+    "name": {
+      "fr": "Jour[s] de chauffage au gaz"
+    },
+    "emoji": "🏘️",
+    "total": 9.31506849,
+    "default": false
   }
 ]
