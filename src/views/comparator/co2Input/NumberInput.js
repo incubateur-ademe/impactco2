@@ -55,16 +55,24 @@ const Input = styled.input`
     -moz-appearance: textfield;
   }
 `
-const Unit = styled.a`
-  display: block;
+const Unit = styled.div`
   font-size: 0.6em;
   font-weight: 700;
   line-height: 1.7;
   color: ${(props) => props.theme.colors.text};
-  text-decoration: none;
+  cursor: pointer;
+  transition: color 200ms ease-out;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.main};
+  }
+`
+const Sub = styled.sub`
+  bottom: -0.2em;
+  line-height: 0;
 `
 export default function NumberInput() {
-  const { CO2, setCO2 } = useContext(CO2NumberContext)
+  const { CO2, setCO2, setCO2EPopin } = useContext(CO2NumberContext)
 
   return (
     <Wrapper>
@@ -79,12 +87,8 @@ export default function NumberInput() {
           }}
         />
       </InputWrapper>
-      <Unit
-        href='https://ecolab.gitbook.io/documentation-ecolab/lexique-environnemental-et-changement-climat#lequivalent-co2-ou-co2-equivalent-co-2-e'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        kg/CO2e
+      <Unit onClick={() => setCO2EPopin(true)}>
+        kgCO2<Sub>e</Sub>
       </Unit>
     </Wrapper>
   )

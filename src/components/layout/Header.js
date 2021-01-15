@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import StyleContext from 'utils/StyleContext'
+import CO2NumberContext from 'utils/CO2NumberContext'
 import { mq } from 'utils/styles'
 
 const Wrapper = styled.div`
@@ -14,16 +15,16 @@ const Wrapper = styled.div`
 `
 const Title = styled.h1`
   margin-bottom: 0;
-  font-size: 3.1em;
+  font-size: 4.9em;
   font-weight: 900;
   line-height: 1.2;
 
   ${mq.small} {
-    font-size: 6.45vw;
+    font-size: 9.2vw;
   }
 `
 const Big = styled.span`
-  font-size: 1.6em;
+  font-size: 4rem;
 `
 const Subtitle = styled.div`
   max-width: 30em;
@@ -40,21 +41,23 @@ const Why = styled.div`
 const Sup = styled.sup`
   font-weight: 700;
   line-height: 0;
-
-  a {
-    color: ${(props) => props.theme.colors.text};
-    text-decoration: none;
-  }
+  cursor: pointer;
+`
+const Sub = styled.sub`
+  bottom: -0.2em;
+  line-height: 0;
 `
 export default function Header() {
   const { displayTitle } = useContext(StyleContext)
+  const { setCO2EPopin } = useContext(CO2NumberContext)
   return (
     <Wrapper>
       {displayTitle && (
         <>
-          {' '}
           <Title>
-            Perdre 1 tonne c’est bien, <Big>mais comment ?</Big>
+            2 tonnes de CO2,
+            <br />
+            <Big>ça représente quoi ?</Big>
           </Title>
           <Why>
             <a
@@ -62,21 +65,14 @@ export default function Header() {
               target='_blank'
               rel='noopener noreferrer'
             >
-              Et pourquoi ?
+              Et pourquoi s'en débarasser ?
             </a>
           </Why>
           <Subtitle>
-            Voici quelques équivalents pour se figurer ce qu’un poids en CO2e
-            <Sup>
-              <a
-                href='https://ecolab.gitbook.io/documentation-ecolab/lexique-environnemental-et-changement-climat#lequivalent-co2-ou-co2-equivalent-co-2-e'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                ?
-              </a>
-            </Sup>{' '}
-            représente en objet ou activité du quotidien...
+            Voici quelques équivalents pour se figurer ce qu’un poids en CO2
+            <Sub>e</Sub>
+            <Sup onClick={() => setCO2EPopin(true)}>?</Sup> représente en objet
+            ou activité du quotidien...
           </Subtitle>
         </>
       )}

@@ -12,6 +12,7 @@ import EmbedConfigurator from 'components/misc/EmbedConfigurator'
 import Header from 'components/layout/Header'
 import Footer from 'components/layout/Footer'
 import ChoicePopin from 'components/misc/ChoicePopin'
+import CO2EPopin from 'components/misc/CO2EPopin'
 import Comparator from 'views/Comparator'
 
 const Wrapper = styled.div`
@@ -27,9 +28,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-
-`;
+`
 function App() {
   return (
     <Router>
@@ -37,9 +36,9 @@ function App() {
         <StyleProvider>
           <CO2NumberProvider>
             <EquivalentsProvider>
+              <GlobalStyle />
               <Wrapper>
                 <Content>
-                  <GlobalStyle />
                   <Header />
                   <Comparator />
                   <Footer />
@@ -47,6 +46,7 @@ function App() {
                 <EmbedConfigurator />
               </Wrapper>
               <ChoicePopin />
+              <CO2EPopin />
             </EquivalentsProvider>
           </CO2NumberProvider>
         </StyleProvider>

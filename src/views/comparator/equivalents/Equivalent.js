@@ -4,14 +4,12 @@ import styled from 'styled-components'
 import Tile from 'components/misc/Tile'
 import CO2NumberContext from 'utils/CO2NumberContext'
 
+import NumberInput from './equivalent/NumberInput'
+
 const Emoji = styled.div`
   font-size: 4em;
 `
-const Number = styled.div`
-  font-size: ${(props) => (props.length > 8 ? '1.5em' : '2.5em')};
-  font-weight: 700;
-  line-height: ${(props) => (props.length > 8 ? '1.8' : 'inherit')};
-`
+
 const Name = styled.div``
 export default function Equivalent(props) {
   const { CO2 } = useContext(CO2NumberContext)
@@ -21,7 +19,7 @@ export default function Equivalent(props) {
   return (
     <Tile>
       <Emoji>{props.equivalent.emoji}</Emoji>
-      <Number length={String(total).length}>{total}</Number>
+      <NumberInput value={total} total={props.equivalent.total} />
       <Name>
         {props.equivalent.name.fr.replaceAll('[s]', total > 1 ? 's' : '')}
       </Name>

@@ -21,7 +21,9 @@ export default function CO2Input() {
     <Wrapper>
       <NumberInput />
       <Sentence>
-        c’est autant d’émissions que pour fabriquer ou consommer :
+        c’est autant d’émissions que pour
+        <br />
+        fabriquer, consommer ou parcourir :
       </Sentence>
     </Wrapper>
   )
