@@ -15,16 +15,20 @@ const Wrapper = styled.div`
 `
 const Title = styled.h1`
   margin-bottom: 0;
-  font-size: 4.9em;
+  font-size: 5.1em;
   font-weight: 900;
   line-height: 1.2;
 
   ${mq.small} {
-    font-size: 9.2vw;
+    font-size: 10.7vw;
   }
 `
 const Big = styled.span`
   font-size: 4rem;
+
+  ${mq.small} {
+    font-size: 8.4vw;
+  }
 `
 const Subtitle = styled.div`
   max-width: 30em;
@@ -38,9 +42,9 @@ const Why = styled.div`
     color: ${(props) => props.theme.colors.text};
   }
 `
-const Sup = styled.sup`
+const CO2E = styled.span`
   font-weight: 700;
-  line-height: 0;
+  color: ${(props) => props.theme.colors.main};
   cursor: pointer;
 `
 export default function Header() {
@@ -51,7 +55,7 @@ export default function Header() {
       {displayTitle && (
         <>
           <Title>
-            2 tonnes de CO2,
+            2 tonnes de CO<sub>2</sub>
             <br />
             <Big>ça représente quoi ?</Big>
           </Title>
@@ -65,8 +69,11 @@ export default function Header() {
             </a>
           </Why>
           <Subtitle>
-            Voici quelques équivalents pour se figurer ce qu’un poids en CO
-            <sub>2</sub>e<Sup onClick={() => setCO2EPopin(true)}>?</Sup>{' '}
+            Voici quelques équivalents pour se figurer ce qu’un poids en{' '}
+            <CO2E onClick={() => setCO2EPopin(true)}>
+              CO
+              <sub>2</sub>e
+            </CO2E>{' '}
             représente en objet ou activité du quotidien...
           </Subtitle>
         </>

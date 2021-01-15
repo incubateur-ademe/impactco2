@@ -1,6 +1,6 @@
 import React from 'react'
-import { SortableElement, sortableHandle } from 'react-sortable-hoc'
 import styled from 'styled-components'
+import { SortableElement, sortableHandle } from 'react-sortable-hoc'
 
 const Wrapper = styled.li`
   position: relative;
