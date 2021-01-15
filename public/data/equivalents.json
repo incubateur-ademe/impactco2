@@ -101,19 +101,19 @@
   {
     "id": 20587,
     "name": {
-      "fr": "Livre de 300g"
+      "fr": "Livre[s] de poche"
     },
     "emoji": "📚",
-    "total": 1.1,
+    "total": 1.18,
     "default": false
   },
   {
-    "id": 24295,
+    "id": 24309,
     "name": {
-      "fr": "Ramette de papier blanc - 80g/m² A4"
+      "fr": "Feuille[s] de papier A4"
     },
     "emoji": "📄",
-    "total": 2.29,
+    "total": 0.00458581,
     "default": false
-  }  
+  }
 ]
