@@ -67,10 +67,6 @@ const Unit = styled.div`
     color: ${(props) => props.theme.colors.main};
   }
 `
-const Sub = styled.sub`
-  bottom: -0.2em;
-  line-height: 0;
-`
 export default function NumberInput() {
   const { CO2, setCO2, setCO2EPopin } = useContext(CO2NumberContext)
 
@@ -88,7 +84,7 @@ export default function NumberInput() {
         />
       </InputWrapper>
       <Unit onClick={() => setCO2EPopin(true)}>
-        kgCO2<Sub>e</Sub>
+        kgCO<sub>2</sub>e
       </Unit>
     </Wrapper>
   )

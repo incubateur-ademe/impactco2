@@ -43,10 +43,6 @@ const Sup = styled.sup`
   line-height: 0;
   cursor: pointer;
 `
-const Sub = styled.sub`
-  bottom: -0.2em;
-  line-height: 0;
-`
 export default function Header() {
   const { displayTitle } = useContext(StyleContext)
   const { setCO2EPopin } = useContext(CO2NumberContext)
@@ -69,10 +65,9 @@ export default function Header() {
             </a>
           </Why>
           <Subtitle>
-            Voici quelques équivalents pour se figurer ce qu’un poids en CO2
-            <Sub>e</Sub>
-            <Sup onClick={() => setCO2EPopin(true)}>?</Sup> représente en objet
-            ou activité du quotidien...
+            Voici quelques équivalents pour se figurer ce qu’un poids en CO
+            <sub>2</sub>e<Sup onClick={() => setCO2EPopin(true)}>?</Sup>{' '}
+            représente en objet ou activité du quotidien...
           </Subtitle>
         </>
       )}
