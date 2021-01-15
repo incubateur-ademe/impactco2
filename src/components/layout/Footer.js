@@ -50,7 +50,7 @@ const Logos = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  width: 100%;
   background-color: white;
 `
 const Logo = styled.img`
@@ -87,14 +87,14 @@ export default function Footer() {
             Je veux l'intégrer à mon site !
           </Button>
         </Flex>
-        <LogosWrapper>
-          <Logos>
-            <Logo src={repufrancaise} />
-            <Logo src={ademe} />
-            <Logo src={ecolab} />
-          </Logos>
-        </LogosWrapper>
       </Content>
+      <LogosWrapper>
+        <Logos>
+          <Logo src={repufrancaise} />
+          <Logo src={ademe} />
+          <Logo src={ecolab} />
+        </Logos>
+      </LogosWrapper>
     </Wrapper>
   )
 }
