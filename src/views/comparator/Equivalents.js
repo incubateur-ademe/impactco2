@@ -28,7 +28,7 @@ export default function Equivalents() {
 
   return (
     <SortableList
-      equivalents={equivalents}
+      equivalents={equivalents.filter((equivalent) => equivalent.active)}
       setPopinOpen={setPopinOpen}
       axis={'xy'}
       onSortEnd={({ oldIndex, newIndex }) => {
