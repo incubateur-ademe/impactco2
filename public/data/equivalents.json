@@ -124,5 +124,32 @@
     "emoji": "📄",
     "total": 0.00458581,
     "default": false
+  },
+  {
+    "id": 22066,
+    "name": {
+      "fr": "kg d'ordures ménagères"
+    },
+    "emoji": "🚮",
+    "total": 0.215
+    "default": false
+  },
+  {
+    "id": 24283,
+    "name": {
+      "fr": "Litre[s] d'eau du robinet"
+    },
+    "emoji": "🚰",
+    "total": 0.000132
+    "default": false
+  },
+  {
+    "id": 31001,
+    "name": {
+      "fr": "Litre[s] d'eau de source"
+    },
+    "emoji": "💧",
+    "total": 0.566
+    "default": false
   }
 ]
