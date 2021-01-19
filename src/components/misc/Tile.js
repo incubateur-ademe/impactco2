@@ -1,13 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { mq } from 'utils/styles'
-
 const Wrapper = styled.div`
   width: calc(33.333% - 1em);
   margin: 0.5em;
 
-  ${mq.small} {
+  ${(props) => props.theme.mq.small} {
     width: calc(50% - 1em);
   }
 `

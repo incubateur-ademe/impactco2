@@ -1,15 +1,14 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import StyleContext from 'utils/StyleContext'
-import CO2NumberContext from 'utils/CO2NumberContext'
-import { mq } from 'utils/styles'
+import UXContext from 'utils/UXContext'
+import ModalContext from 'utils/ModalContext'
 
 const Wrapper = styled.div`
   max-width: 45em;
   margin: 2em auto 3em;
 
-  ${mq.small} {
+  ${(props) => props.theme.mq.small} {
     margin: 2em 3vw 3em;
   }
 `
@@ -19,14 +18,14 @@ const Title = styled.h1`
   font-weight: 900;
   line-height: 1.2;
 
-  ${mq.small} {
+  ${(props) => props.theme.mq.small} {
     font-size: 10.7vw;
   }
 `
 const Big = styled.span`
   font-size: 4rem;
 
-  ${mq.small} {
+  ${(props) => props.theme.mq.small} {
     font-size: 8.4vw;
   }
 `
@@ -48,8 +47,8 @@ const CO2E = styled.span`
   cursor: pointer;
 `
 export default function Header() {
-  const { displayTitle } = useContext(StyleContext)
-  const { setCO2EPopin } = useContext(CO2NumberContext)
+  const { displayTitle } = useContext(UXContext)
+  const { setCO2E } = useContext(ModalContext)
   return (
     <Wrapper>
       {displayTitle && (
@@ -70,7 +69,7 @@ export default function Header() {
           </Why>
           <Subtitle>
             Voici quelques équivalents pour se figurer ce qu’un poids en{' '}
-            <CO2E onClick={() => setCO2EPopin(true)}>
+            <CO2E onClick={() => setCO2E(true)}>
               CO
               <sub>2</sub>e
             </CO2E>{' '}

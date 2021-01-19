@@ -11,6 +11,14 @@ export const themes = {
       text: '#ffffdb',
     },
     fonts: '"Montserrat", Arial, sans-serif',
+    mq: {
+      small: `@media screen and (max-width: ${730}px)`,
+      medium: `@media screen and (max-width: ${1260}px)`,
+      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
+      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
+      large: `@media screen and (min-width: ${1800}px)`,
+      xlarge: `@media screen and (min-width: ${2000}px)`,
+    },
   },
   classic: {
     name: 'Classique',
@@ -21,6 +29,14 @@ export const themes = {
       text: '#32337B',
     },
     fonts: '"Montserrat", Arial, sans-serif',
+    mq: {
+      small: `@media screen and (max-width: ${730}px)`,
+      medium: `@media screen and (max-width: ${1260}px)`,
+      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
+      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
+      large: `@media screen and (min-width: ${1800}px)`,
+      xlarge: `@media screen and (min-width: ${2000}px)`,
+    },
   },
   night: {
     name: 'Nuit',
@@ -31,6 +47,14 @@ export const themes = {
       text: '#fdfdfd',
     },
     fonts: '"Montserrat", Arial, sans-serif',
+    mq: {
+      small: `@media screen and (max-width: ${730}px)`,
+      medium: `@media screen and (max-width: ${1260}px)`,
+      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
+      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
+      large: `@media screen and (min-width: ${1800}px)`,
+      xlarge: `@media screen and (min-width: ${2000}px)`,
+    },
   },
   accessible: {
     name: 'Accessible',
@@ -41,23 +65,15 @@ export const themes = {
       text: 'black',
     },
     fonts: 'Arial, sans-serif',
+    mq: {
+      small: `@media screen and (max-width: ${730}px)`,
+      medium: `@media screen and (max-width: ${1260}px)`,
+      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
+      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
+      large: `@media screen and (min-width: ${1800}px)`,
+      xlarge: `@media screen and (min-width: ${2000}px)`,
+    },
   },
-}
-
-export const breakpoints = {
-  small: 730,
-  mediumPortrait: 1000,
-  medium: 1260,
-  large: 1800,
-  xlarge: 2000,
-}
-export const mq = {
-  small: `@media screen and (max-width: ${breakpoints.small}px)`,
-  medium: `@media screen and (max-width: ${breakpoints.medium}px)`,
-  mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${breakpoints.medium}px)`,
-  mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${breakpoints.medium}px)`,
-  large: `@media screen and (min-width: ${breakpoints.large}px)`,
-  xlarge: `@media screen and (min-width: ${breakpoints.xlarge}px)`,
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -75,7 +91,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
     transition: all 600ms;
 
-    ${mq.small} {
+    ${(props) => props.theme.mq.small} {
       font-size: 0.875em;
     }
   } 

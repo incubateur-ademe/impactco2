@@ -11,25 +11,22 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   margin: 0 -0.5em;
 `
-const SortableList = SortableContainer(({ equivalents, setPopinOpen }) => {
+const SortableList = SortableContainer(({ equivalents }) => {
   return (
     <Wrapper>
       {equivalents.map((equivalent, index) => (
         <Equivalent key={equivalent.id} index={index} equivalent={equivalent} />
       ))}
-      <More onClick={() => setPopinOpen(true)} />
+      <More />
     </Wrapper>
   )
 })
 export default function Equivalents() {
-  const { equivalents, setPopinOpen, setEquivalents } = useContext(
-    EquivalentsContext
-  )
+  const { equivalents, setEquivalents } = useContext(EquivalentsContext)
 
   return (
     <SortableList
       equivalents={equivalents.filter((equivalent) => equivalent.active)}
-      setPopinOpen={setPopinOpen}
       axis={'xy'}
       onSortEnd={({ oldIndex, newIndex }) => {
         const equivalentToMove = equivalents[oldIndex]

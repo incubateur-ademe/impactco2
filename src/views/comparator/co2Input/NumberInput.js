@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import { mq } from 'utils/styles'
-
 import CO2NumberContext from 'utils/CO2NumberContext'
+import ModalContext from 'utils/ModalContext'
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,7 +10,7 @@ const Wrapper = styled.div`
   margin-bottom: 0.5rem;
   font-size: 6em;
 
-  ${mq.small} {
+  ${(props) => props.theme.mq.small} {
     font-size: 12vw;
   }
 `
@@ -68,7 +67,8 @@ const Unit = styled.div`
   }
 `
 export default function NumberInput() {
-  const { CO2, setCO2, setCO2EPopin } = useContext(CO2NumberContext)
+  const { CO2, setCO2 } = useContext(CO2NumberContext)
+  const { setCO2E } = useContext(ModalContext)
 
   return (
     <Wrapper>
@@ -83,7 +83,7 @@ export default function NumberInput() {
           }}
         />
       </InputWrapper>
-      <Unit onClick={() => setCO2EPopin(true)}>
+      <Unit onClick={() => setCO2E(true)}>
         kgCO<sub>2</sub>e
       </Unit>
     </Wrapper>

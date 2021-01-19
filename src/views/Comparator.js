@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { mq } from 'utils/styles'
-
 import CO2Input from './comparator/CO2Input.js'
 import Equivalents from './comparator/Equivalents'
 
@@ -11,7 +9,7 @@ const Wrapper = styled.div`
   max-width: 45em;
   margin: 0 auto 6em;
 
-  ${mq.small} {
+  ${(props) => props.theme.mq.small} {
     margin: 0 3vw 6em;
   }
 `

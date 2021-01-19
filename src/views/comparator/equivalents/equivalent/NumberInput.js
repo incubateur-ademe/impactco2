@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 
-import { mq } from 'utils/styles'
-
 import CO2NumberContext from 'utils/CO2NumberContext'
 
 const Wrapper = styled.div`

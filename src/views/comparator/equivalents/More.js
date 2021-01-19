@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+
+import ModalContext from 'utils/ModalContext'
 
 import Tile from 'components/misc/Tile'
 
@@ -19,8 +21,10 @@ const Plus = styled.div`
   }
 `
 export default function More(props) {
+  const { setEquivalents } = useContext(ModalContext)
+
   return (
-    <Tile active onClick={props.onClick}>
+    <Tile active onClick={() => setEquivalents(true)}>
       <Plus>+</Plus>
     </Tile>
   )

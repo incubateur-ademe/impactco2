@@ -23,7 +23,7 @@
       "fr": "Jour[s] de chauffage (gaz)"
     },
     "emoji": "🏘️",
-    "total": 18.63
+    "total": 18.63,
     "default": true
   },
   {
@@ -131,7 +131,7 @@
       "fr": "kg d'ordures ménagères"
     },
     "emoji": "🚮",
-    "total": 0.215
+    "total": 0.215,
     "default": false
   },
   {
@@ -140,7 +140,7 @@
       "fr": "Litre[s] d'eau du robinet"
     },
     "emoji": "🚰",
-    "total": 0.000132
+    "total": 0.000132,
     "default": false
   },
   {
@@ -149,7 +149,7 @@
       "fr": "Litre[s] d'eau de source"
     },
     "emoji": "💧",
-    "total": 0.566
+    "total": 0.566,
     "default": false
   }
 ]

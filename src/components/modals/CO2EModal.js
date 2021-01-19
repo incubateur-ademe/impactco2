@@ -1,17 +1,17 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import CO2NumberContext from 'utils/CO2NumberContext'
+import ModalContext from 'utils/ModalContext'
 
-import Popin from 'components/base/Popin'
+import Modal from '@bit/datagir.simulateurs.modal'
 
 const Title = styled.h2``
 const Text = styled.p``
-export default function CO2EPopin(props) {
-  const { CO2EPopin, setCO2EPopin } = useContext(CO2NumberContext)
+export default function CO2EModal() {
+  const { CO2E, setCO2E } = useContext(ModalContext)
 
   return (
-    <Popin open={CO2EPopin} setOpen={setCO2EPopin}>
+    <Modal open={CO2E} setOpen={setCO2E} textColor={'main'}>
       <Title>
         L'équivalent CO<sub>2</sub> ou CO<sub>2</sub> équivalent (CO<sub>2</sub>
         e)
@@ -26,6 +26,6 @@ export default function CO2EPopin(props) {
         l’atmosphère que 28 à 30 kg de CO<sub>2</sub> au cours du siècle qui
         suit leur émission.
       </Text>
-    </Popin>
+    </Modal>
   )
 }

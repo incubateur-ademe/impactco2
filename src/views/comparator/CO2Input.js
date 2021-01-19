@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { mq } from 'utils/styles'
-
 import NumberInput from './co2Input/NumberInput'
 
 const Wrapper = styled.div`
@@ -12,7 +10,7 @@ const Sentence = styled.div`
   font-size: 1.45em;
   text-align: center;
 
-  ${mq.small} {
+  ${(props) => props.theme.mq.small} {
     font-size: inherit;
   }
 `
