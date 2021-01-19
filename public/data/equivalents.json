@@ -18,6 +18,15 @@
     "default": true
   },
   {
+    "id": 32,
+    "name": {
+      "fr": "Jour[s] de chauffage (gaz)"
+    },
+    "emoji": "🏘️",
+    "total": 18.63
+    "default": true
+  },
+  {
     "id": 27976,
     "name": {
       "fr": "km en voiture"
@@ -45,13 +54,31 @@
     "default": true
   },
   {
+    "id": 27043,
+    "name": {
+      "fr": "Jean[s] en coton"
+    },
+    "emoji": "👖",
+    "total": 23.2,
+    "default": true
+  },
+  {
+    "id": 20587,
+    "name": {
+      "fr": "Livre[s] de poche"
+    },
+    "emoji": "📚",
+    "total": 1.18,
+    "default": true
+  },
+  {
     "id": 26966,
     "name": {
       "fr": "Canapé[s] convertible[s]"
     },
     "emoji": "🛋",
     "total": 197,
-    "default": true
+    "default": false
   },
   {
     "id": 27044,
@@ -60,16 +87,7 @@
     },
     "emoji": "👕",
     "total": 5.2,
-    "default": true
-  },
-  {
-    "id": 27043,
-    "name": {
-      "fr": "Jean[s] en coton"
-    },
-    "emoji": "👖",
-    "total": 23.2,
-    "default": true
+    "default": false
   },
   {
     "id": 28081,
@@ -99,30 +117,12 @@
     "default": false
   },
   {
-    "id": 20587,
-    "name": {
-      "fr": "Livre[s] de poche"
-    },
-    "emoji": "📚",
-    "total": 1.18,
-    "default": false
-  },
-  {
     "id": 24309,
     "name": {
       "fr": "Feuille[s] de papier A4"
     },
     "emoji": "📄",
     "total": 0.00458581,
-    "default": false
-  },
-  {
-    "id": 32,
-    "name": {
-      "fr": "Jour[s] de chauffage (gaz)"
-    },
-    "emoji": "🏘️",
-    "total": 18.63
     "default": false
   }
 ]
