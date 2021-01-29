@@ -25,7 +25,7 @@
     "emoji": "🏘️",
     "total": 18.63,
     "default": true,
-    "about": "Une année de chaufage au gaz équivaut à 3.4tCO<sub>2</sub>e (<a href='https://nosgestesclimat.fr/documentation/logement/gaz' target='_blank'>source</a>).<br/><br/>Ce qui fait qu'une journée de chauffage est équivalente à 18.63kgCO<sub>2</sub>e."
+    "about": "Une année de chauffage (en France, la période de chauffage est généralement comprise entre le 15 octobre et le 15 avril de l'année suivante) au gaz équivaut à 3.4tCO<sub>2</sub>e (<a href='https://nosgestesclimat.fr/documentation/logement/gaz' target='_blank'>source</a>).<br/><br/>Ce qui fait qu'une journée de chauffage en période de chauffe est équivalente à 18.63kgCO<sub>2</sub>e."
   },
   {
     "id": 27976,
@@ -71,7 +71,7 @@
     "emoji": "📚",
     "total": 1.18,
     "default": true,
-    "about": "Sur la base carbone, la valeur est donnée pour 300g de livre.<br/><br/>En utilisant les chiffres de <a href='http://www.scolibris.fr/rezolibris/download.php?file=fichetechnique/38/pdf/Poids-du-livre.pdf' target='_blank'>Scolibris</a> on voit que 300g correspond à un livre de poche de 371 pages (0.110.18300 + 0.110.1880*371/2).<br/><br/>Si on estime le nombre moyen de page d'un livre à 400 (<a href='https://actualitte.com/article/35773/numerique/la-taille-moyenne-du-livre-s-est-allongee-de-80-pages-en-15-ans' target='_blank'>source</a>) on arrive à un poids de 322.74g.<br/><br/>Ce qui fait qu'un livre de poche moyen est équivalent à 1.18kgCO2e"
+    "about": "Dans la Base Carbone, la valeur est donnée pour un livre de 300g.<br/><br/>En utilisant les chiffres de <a href='http://www.scolibris.fr/rezolibris/download.php?file=fichetechnique/38/pdf/Poids-du-livre.pdf' target='_blank'>Scolibris</a> on voit que 300g correspond à un livre de poche de 371 pages (0.110.18300 + 0.110.1880*371/2).<br/><br/>Si on estime le nombre moyen de page d'un livre à 400 (<a href='https://actualitte.com/article/35773/numerique/la-taille-moyenne-du-livre-s-est-allongee-de-80-pages-en-15-ans' target='_blank'>source</a>) on arrive à un poids de 322.74g.<br/><br/>Ce qui fait qu'un livre de poche moyen est équivalent à 1.18kgCO2e"
   },
   {
     "id": 26966,
