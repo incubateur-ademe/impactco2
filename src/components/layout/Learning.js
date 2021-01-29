@@ -99,24 +99,6 @@ export default function Learning() {
           Ainsi vous pouvez comparer facilement différents gestes et voir ce qui
           compte vraiment.
         </Text>
-        <ButtonWrapper>
-          <ButtonLink href='https://ecolab.ademe.fr/blog/carbone/historique-calculateur-carbone-nos-gestes-climat-micmac-coach-carbone.md'>
-            Je veux en savoir plus
-          </ButtonLink>
-        </ButtonWrapper>
-        <Text>
-          Ces correspondances sont calculées à partir des facteurs d’émissions
-          de la Base Carbone® de l’ADEME. Un facteur d’émissions permet de
-          traduire l’impact GES (
-          <CO2E onClick={() => setCO2E(true)}>
-            CO
-            <sub>2</sub>e
-          </CO2E>
-          ) d’une donnée d’activité unitaire (kWh, kg, litre, etc.) : par
-          exemple, l’impact GES de la production et distribution d’1 kWh
-          d’électricité, de la fabrication d’un jean en coton, de la collecte et
-          du traitement d’1 tonne d’ordures ménagères, etc.
-        </Text>
         <Text>
           Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
           calculer votre empreinte sur le climat grace à notre simulateur{' '}
@@ -133,6 +115,20 @@ export default function Learning() {
             Je calcule mon empreinte carbone
           </ButtonLink>
         </ButtonWrapper>
+        <Text>
+          Les correspondances proposées dans ce convertisseur sont calculées à
+          partir des facteurs d’émissions de la Base Carbone® de l’ADEME.
+          <br />
+          Un facteur d’émissions permet de traduire l’impact GES (
+          <CO2E onClick={() => setCO2E(true)}>
+            CO
+            <sub>2</sub>e
+          </CO2E>
+          ) d’une donnée d’activité unitaire (kWh, kg, litre, etc...) : par
+          exemple, l’impact GES de la production et distribution d’1 kWh
+          d’électricité, de la fabrication d’un jean en coton, de la collecte et
+          du traitement d’1 tonne d’ordures ménagères, etc.
+        </Text>
       </Content>
     </Wrapper>
   )
