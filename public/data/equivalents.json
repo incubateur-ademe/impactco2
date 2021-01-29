@@ -130,14 +130,14 @@
     "about": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\""
   },
   {
-    "id": 24309,
+    "id": 24295,
     "name": {
       "fr": "Feuille[s] de papier A4"
     },
     "emoji": "📄",
-    "total": 0.00458581,
+    "total": 0.00458,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Papier - Moyen - Hors utilisation et fin de vie\""
+    "about": "Dans la Base Carbone, le facteur d'émissions est donné pour une \"Ramette de papier blanc - 80g/m² A4 - Hors utilisation et fin de vie\" de 500 feuilles."
   },
   {
     "id": 22066,
@@ -146,7 +146,8 @@
     },
     "emoji": "🚮",
     "total": 0.215,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Ordures ménagères - fin de vie moyenne\""
   },
   {
     "id": 24283,
@@ -156,15 +157,16 @@
     "emoji": "🚰",
     "total": 0.000132,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau - du robinet\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\""
   },
   {
-    "id": 31001,
+    "id": 31000,
     "name": {
       "fr": "Litre[s] d'eau de source"
     },
     "emoji": "💧",
     "total": 0.45,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau embouteillée de source\""
   }
 ]
