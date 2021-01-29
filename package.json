@@ -9,6 +9,7 @@
     "@bit/datagir.simulateurs.footer": "^0.0.4",
     "@bit/datagir.simulateurs.iframe-footer": "0.0.1",
     "@bit/datagir.simulateurs.modal": "^0.0.2",
+    "@bit/datagir.simulateurs.update-available": "^0.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",

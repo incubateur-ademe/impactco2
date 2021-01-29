@@ -4,8 +4,6 @@ const script = document.getElementById('datagir-mon-convertisseur-co2')
 
 const domain = script.dataset.domain
 const search = script.dataset.search
-//const theme = script.dataset.theme
-//const title = script.dataset.title
 const source = window.location.href.toString()
 
 const src = `${

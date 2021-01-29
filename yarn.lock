@@ -1169,6 +1169,14 @@
     react "^17.0.1"
     styled-components "^5.2.1"
 
+"@bit/datagir.simulateurs.update-available@^0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/datagir.simulateurs.update-available/-/datagir.simulateurs.update-available-0.0.1.tgz#85b9cd0f8e9707dca62bedb5d7423b09c09476cd"
+  integrity sha1-hbnND46XB9ymK+2110I7CcCUds0=
+  dependencies:
+    react "^17.0.1"
+    styled-components "^5.2.1"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"

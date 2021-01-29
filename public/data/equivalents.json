@@ -6,7 +6,8 @@
     },
     "emoji": "🍔",
     "total": 7.26,
-    "default": true
+    "default": true,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
   },
   {
     "id": 20683,
@@ -15,7 +16,8 @@
     },
     "emoji": "🍎",
     "total": 0.51,
-    "default": true
+    "default": true,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
   },
   {
     "id": 32,
@@ -34,7 +36,8 @@
     },
     "emoji": "🚗",
     "total": 0.121,
-    "default": true
+    "default": true,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\""
   },
   {
     "id": 206589,
@@ -43,7 +46,8 @@
     },
     "emoji": "🚅",
     "total": 0.00173,
-    "default": true
+    "default": true,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\""
   },
   {
     "id": 27010,
@@ -52,7 +56,8 @@
     },
     "emoji": "📱",
     "total": 16.5,
-    "default": true
+    "default": true,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - classique\""
   },
   {
     "id": 27043,
@@ -61,7 +66,8 @@
     },
     "emoji": "👖",
     "total": 23.2,
-    "default": true
+    "default": true,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\""
   },
   {
     "id": 20587,
@@ -80,7 +86,8 @@
     },
     "emoji": "🛋",
     "total": 197,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\""
   },
   {
     "id": 27044,
@@ -89,7 +96,8 @@
     },
     "emoji": "👕",
     "total": 5.2,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\""
   },
   {
     "id": 28081,
@@ -98,7 +106,8 @@
     },
     "emoji": "✈️",
     "total": 1.67,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 101-220 sièges, <500 kms jet, 2018 - SANS trainées\""
   },
   {
     "id": 20688,
@@ -107,7 +116,8 @@
     },
     "emoji": "🍗",
     "total": 1.58,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   },
   {
     "id": 27000,
@@ -116,7 +126,8 @@
     },
     "emoji": "📺",
     "total": 371,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\""
   },
   {
     "id": 24309,
@@ -125,7 +136,8 @@
     },
     "emoji": "📄",
     "total": 0.00458581,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Papier - Moyen - Hors utilisation et fin de vie\""
   },
   {
     "id": 22066,
@@ -143,7 +155,8 @@
     },
     "emoji": "🚰",
     "total": 0.000132,
-    "default": false
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau - du robinet\""
   },
   {
     "id": 31001,
