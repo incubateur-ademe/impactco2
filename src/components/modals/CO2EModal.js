@@ -13,18 +13,21 @@ export default function CO2EModal() {
   return (
     <Modal open={CO2E} setOpen={setCO2E} textColor={'main'}>
       <Title>
-        L'équivalent CO<sub>2</sub> ou CO<sub>2</sub> équivalent (CO<sub>2</sub>
-        e)
+        L'équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
       </Title>
       <Text>
-        Les différents GES anthropiques ont un impact plus ou moins important
-        sur le climat. Afin d’être comparés, les émissions des différents GES
-        peuvent être exprimés en CO<sub>2</sub>e (équivalent CO<sub>2</sub>).
-        Pour cela, le PRG (potentiel de réchauffement global) à 100 ans est
-        l'indicateur classique retenu dans la plupart des rapports et traités
-        internationaux. Par exemple, 1 kg de méthane (CH4) réchauffera autant
-        l’atmosphère que 28 à 30 kg de CO<sub>2</sub> au cours du siècle qui
-        suit leur émission.
+        Le dérèglement climatique actuel est une conséquence de nos émissions
+        importantes de gaz à effet de serre. Nous avons la chance de pouvoir
+        mesurer ces émissions avec un indice simple : les kilogrammes
+        d'équivalent CO<sub>2</sub> (kgCO<sub>2</sub>e).
+      </Text>
+      <Text>
+        Par exemple, 1k g de méthane équivaut à 28 kg de CO<sub>2</sub>. Si
+        j'achète un pack de 6 briques de lait, et que la production du lait émet
+        1kg de méthane (derrière le lait il y a tous les besoins des vaches) et
+        2 kg de CO
+        <sub>2</sub> (le transport en camion), alors l'impact est de 30 kg
+        d'équivalent CO<sub>2</sub>.
       </Text>
     </Modal>
   )

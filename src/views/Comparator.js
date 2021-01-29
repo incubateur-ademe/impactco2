@@ -6,12 +6,6 @@ import Equivalents from './comparator/Equivalents'
 
 const Wrapper = styled.div`
   flex: 1;
-  max-width: 45em;
-  margin: 0 auto 6em;
-
-  ${(props) => props.theme.mq.small} {
-    margin: 0 3vw 6em;
-  }
 `
 export default function Comparator() {
   return (

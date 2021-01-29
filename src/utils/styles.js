@@ -88,8 +88,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
-    line-height: 1.3;
-    transition: all 600ms;
+    line-height: 1.4;
 
     ${(props) => props.theme.mq.small} {
       font-size: 0.875em;

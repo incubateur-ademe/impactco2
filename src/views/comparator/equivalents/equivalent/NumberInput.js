@@ -61,12 +61,19 @@ export default function NumberInput(props) {
   return (
     <Wrapper focus={focus}>
       <Input
-        type='number'
-        value={props.value < 10 ? props.value : Math.round(props.value)}
+        type='text'
+        value={
+          props.value < 10
+            ? props.value
+            : Math.round(props.value)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+        }
         length={String(props.value).length}
         onChange={(e) => {
-          if (e.currentTarget.value * props.total <= 999999) {
-            setCO2(e.currentTarget.value * props.total)
+          const newValue = Number(e.target.value.replaceAll(' ', ''))
+          if (newValue * props.total <= 99999) {
+            setCO2(newValue * props.total)
           }
         }}
         onFocus={() => setFocus(true)}

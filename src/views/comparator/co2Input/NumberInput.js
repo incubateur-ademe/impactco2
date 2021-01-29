@@ -57,7 +57,7 @@ const Input = styled.input`
 const Unit = styled.div`
   font-size: 0.6em;
   font-weight: 700;
-  line-height: 1.7;
+  line-height: 1.9;
   color: ${(props) => props.theme.colors.text};
   cursor: pointer;
   transition: color 200ms ease-out;
@@ -75,9 +75,9 @@ export default function NumberInput() {
       <InputWrapper>
         <Input
           type='number'
-          value={CO2}
+          value={Math.round(CO2 * 100) / 100}
           onChange={(e) => {
-            if (e.currentTarget.value <= 999999) {
+            if (e.currentTarget.value <= 99999) {
               setCO2(e.currentTarget.value)
             }
           }}

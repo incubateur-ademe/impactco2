@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import useWindowSize from 'hooks/useWindowSize'
 import UXContext from 'utils/UXContext'
 
 import Header from 'components/layout/Header'
+import Learning from 'components/layout/Learning'
 import Footer from '@bit/datagir.simulateurs.footer'
 import Embed from 'components/misc/Embed'
 import Comparator from 'views/Comparator'
@@ -20,17 +22,34 @@ const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+`
+const FullScreen = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 45em;
+  min-height: ${(props) => props.windowHeight}px;
+  margin: 2em auto 5em;
+
+  ${(props) => props.theme.mq.small} {
+    margin: 2em 3vw 5em;
+  }
 `
 export default function Layout() {
+  const { height } = useWindowSize()
+
   const { setConfiguratorOpen } = useContext(UXContext)
 
   return (
     <Wrapper>
       <Content>
-        <Header />
-        <Comparator />
+        <FullScreen windowHeight={height}>
+          <Header />
+          <Comparator />
+        </FullScreen>
+        <Learning />
         <Footer
+          color={'main'}
           setConfiguratorOpen={setConfiguratorOpen}
           sources={[
             {

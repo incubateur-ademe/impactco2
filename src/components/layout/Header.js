@@ -5,12 +5,7 @@ import UXContext from 'utils/UXContext'
 import ModalContext from 'utils/ModalContext'
 
 const Wrapper = styled.div`
-  max-width: 45em;
-  margin: 2em auto 3em;
-
-  ${(props) => props.theme.mq.small} {
-    margin: 2em 3vw 3em;
-  }
+  margin-bottom: 3em;
 `
 const Title = styled.h1`
   margin-bottom: 0;
@@ -35,7 +30,7 @@ const Subtitle = styled.div`
 `
 const Why = styled.div`
   text-align: right;
-  margin: 0 1em 1em 0;
+  margin: 0 1.5em 1em 0;
 
   a {
     color: ${(props) => props.theme.colors.text};
@@ -46,7 +41,7 @@ const CO2E = styled.span`
   color: ${(props) => props.theme.colors.main};
   cursor: pointer;
 `
-export default function Header() {
+export default function Header(props) {
   const { displayTitle } = useContext(UXContext)
   const { setCO2E } = useContext(ModalContext)
   return (
@@ -60,11 +55,15 @@ export default function Header() {
           </Title>
           <Why>
             <a
-              href='https://ecolab.ademe.fr/blog/carbone/historique-calculateur-carbone-nos-gestes-climat-micmac-coach-carbone.md'
-              target='_blank'
+              href={
+                props.iframe
+                  ? 'https://mesfruitsetlegumesdesaison.fr#informations'
+                  : '#informations'
+              }
+              target={props.iframe ? '_blank' : '_self'}
               rel='noopener noreferrer'
             >
-              Et pourquoi s'en débarasser ?
+              Et pourquoi s'y tenir ?
             </a>
           </Why>
           <Subtitle>
