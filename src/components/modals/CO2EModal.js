@@ -22,12 +22,9 @@ export default function CO2EModal() {
         d'équivalent CO<sub>2</sub> (kgCO<sub>2</sub>e).
       </Text>
       <Text>
-        Par exemple, 1k g de méthane équivaut à 28 kg de CO<sub>2</sub>. Si
-        j'achète un pack de 6 briques de lait, et que la production du lait émet
-        1kg de méthane (derrière le lait il y a tous les besoins des vaches) et
-        2 kg de CO
-        <sub>2</sub> (le transport en camion), alors l'impact est de 30 kg
-        d'équivalent CO<sub>2</sub>.
+        Par exemple, 1 kg de méthane équivaut à 28 kg de CO<sub>2</sub>. Si la
+        fabrication d'un produit a émis 1 kg de méthane et 1 kg de CO<sub>2</sub>,
+        alors l'impact total de ce produit est de 30 kg d'équivalent CO<sub>2</sub>.
       </Text>
     </Modal>
   )
