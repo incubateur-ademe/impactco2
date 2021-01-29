@@ -31,7 +31,8 @@ const Number = styled.div`
   transition: opacity 1000ms;
 
   ${(props) => props.theme.mq.small} {
-    font-size: 49vw;
+    font-size: 30vw;
+    letter-spacing: 0;
   }
 `
 const BigText = styled.div`
@@ -40,14 +41,17 @@ const BigText = styled.div`
   text-transform: uppercase;
 
   ${(props) => props.theme.mq.small} {
-    font-size: 22vw;
+    line-height: 1.04;
   }
 `
 const Line = styled.div`
   font-size: ${(props) => (props.bottom ? '5.39em' : '6.7em')};
-
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: opacity 1000ms ${(props) => (props.bottom ? '800ms' : '400ms')};
+
+  ${(props) => props.theme.mq.small} {
+    font-size: ${(props) => (props.bottom ? '10.7vw' : '13.5vw')};
+  }
 `
 const Strong = styled.p`
   margin-left: 2rem;
@@ -127,7 +131,7 @@ export default function Learning() {
           ) d’une donnée d’activité unitaire (kWh, kg, litre, etc...) : par
           exemple, l’impact GES de la production et distribution d’1 kWh
           d’électricité, de la fabrication d’un jean en coton, de la collecte et
-          du traitement d’1 tonne d’ordures ménagères, etc.
+          du traitement d’1 tonne d’ordures ménagères, etc...
         </Text>
       </Content>
     </Wrapper>

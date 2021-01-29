@@ -8,7 +8,6 @@ import Header from 'components/layout/Header'
 import Learning from 'components/layout/Learning'
 import Footer from '@bit/datagir.simulateurs.footer'
 import Embed from 'components/misc/Embed'
-import Comparator from 'views/Comparator'
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,7 +34,7 @@ const FullScreen = styled.div`
     margin: 2em 3vw 5em;
   }
 `
-export default function Layout() {
+export default function Layout(props) {
   const { height } = useWindowSize()
 
   const { setConfiguratorOpen } = useContext(UXContext)
@@ -45,7 +44,7 @@ export default function Layout() {
       <Content>
         <FullScreen windowHeight={height}>
           <Header />
-          <Comparator />
+          {props.children}
         </FullScreen>
         <Learning />
         <Footer

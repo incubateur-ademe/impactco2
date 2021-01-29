@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  width: calc(33.333% - 1em);
+  width: 33.333%;
   padding: 0.5em;
 
   ${(props) => props.theme.mq.small} {
-    width: calc(50% - 1em);
+    width: 50%;
   }
 `
 const Content = styled.div`

@@ -20,6 +20,7 @@ export default function Embed() {
 
   return (
     <EmbedConfigurator
+      id='datagir-mon-convertisseur-co2'
       configuratorOpen={configuratorOpen}
       setConfiguratorOpen={setConfiguratorOpen}
       themes={themes}
