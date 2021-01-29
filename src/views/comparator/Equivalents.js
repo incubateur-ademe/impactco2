@@ -27,6 +27,7 @@ export default function Equivalents() {
   return (
     <SortableList
       equivalents={equivalents.filter((equivalent) => equivalent.active)}
+      distance={1}
       axis={'xy'}
       onSortEnd={({ oldIndex, newIndex }) => {
         const equivalentToMove = equivalents[oldIndex]

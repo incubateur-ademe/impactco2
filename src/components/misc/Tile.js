@@ -3,13 +3,14 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   width: calc(33.333% - 1em);
-  margin: 0.5em;
+  padding: 0.5em;
 
   ${(props) => props.theme.mq.small} {
     width: calc(50% - 1em);
   }
 `
 const Content = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   padding: 1em;

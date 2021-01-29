@@ -12,6 +12,7 @@ import EquivalentsProvider from 'components/providers/EquivalentsProvider'
 import Layout from 'components/layout/Layout'
 import EquivalentsModal from 'components/modals/EquivalentsModal'
 import CO2EModal from 'components/modals/CO2EModal'
+import AboutModal from 'components/modals/AboutModal'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                   <Layout />
                   <EquivalentsModal />
                   <CO2EModal />
+                  <AboutModal />
                 </EquivalentsProvider>
               </CO2NumberProvider>
             </ModalProvider>
