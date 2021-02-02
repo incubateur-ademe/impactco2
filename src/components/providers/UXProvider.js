@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import { useQueryParam, BooleanParam, withDefault } from 'use-query-params'
 
 import UXContext from 'utils/UXContext'
+import usePageView from 'hooks/usePageView'
 
 export default function UXProvider(props) {
+  usePageView('Mon Convertisseur CO2')
+
   const [configuratorOpen, setConfiguratorOpen] = useState(false)
 
   const [displayTitle, setDisplayTitle] = useQueryParam(

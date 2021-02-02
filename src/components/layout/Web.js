@@ -48,6 +48,7 @@ export default function Layout(props) {
         </FullScreen>
         <Learning />
         <Footer
+          width={'45em'}
           color={'main'}
           setConfiguratorOpen={setConfiguratorOpen}
           sources={[
