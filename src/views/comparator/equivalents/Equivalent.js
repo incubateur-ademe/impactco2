@@ -11,6 +11,11 @@ import NumberInput from './equivalent/NumberInput'
 const Emoji = styled.div`
   font-size: 4em;
   text-align: center;
+
+  ${(props) => props.theme.mq.small} {
+    pointer-events: none;
+  }
+
   span {
     cursor: move;
   }
@@ -23,11 +28,7 @@ const About = styled.div`
   font-weight: 700;
   cursor: pointer;
 `
-const DragHandle = sortableHandle((props) => (
-  <Emoji>
-    <span>{props.emoji}</span>
-  </Emoji>
-))
+const DragHandle = sortableHandle((props) => <span>{props.emoji}</span>)
 const Equivalent = SortableElement((props) => {
   const { CO2 } = useContext(CO2NumberContext)
   const { setAbout } = useContext(ModalContext)
@@ -39,7 +40,9 @@ const Equivalent = SortableElement((props) => {
       {props.equivalent.about && (
         <About onClick={() => setAbout(props.equivalent.about)}>?</About>
       )}
-      <DragHandle emoji={props.equivalent.emoji} />
+      <Emoji>
+        <DragHandle emoji={props.equivalent.emoji} />
+      </Emoji>
       <NumberInput value={total} total={props.equivalent.total} />
       <Name>
         {props.equivalent.name.fr.replaceAll('[s]', total > 1 ? 's' : '')}

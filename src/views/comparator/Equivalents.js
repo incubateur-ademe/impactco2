@@ -36,6 +36,7 @@ export default function Equivalents() {
         equivalentsCopy.splice(newIndex, 0, equivalentToMove)
         setEquivalents(equivalentsCopy)
       }}
+      useDragHandle
     />
   )
 }
