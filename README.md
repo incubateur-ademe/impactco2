@@ -12,4 +12,4 @@ H√©bergement via Netlify. Il suffit de push sur ce repo (branche master) pour d√
 
 `yarn` pour installer l'application
 
-`yarn start` pour lancer l'application sur [http://localhost:8000](http://localhost:8000)
+`yarn start` pour lancer l'application sur [http://localhost:3000](http://localhost:3000)
