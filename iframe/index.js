@@ -6,8 +6,8 @@ const domain = script.dataset.domain
 const search = script.dataset.search
 const source = window.location.href.toString()
 
-const src = `${domain || 'https://monconvertisseurco2.fr'}/embed${
-  search + '&' || '?'
+const src = `${domain || 'https://monconvertisseurco2.fr'}/embed${search}${
+  search.includes('?') ? '&' : '?'
 }source=${source}`
 
 const iframe = document.createElement('iframe')
