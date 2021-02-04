@@ -105,9 +105,9 @@
       "fr": "km en avion"
     },
     "emoji": "✈️",
-    "total": 1.67,
+    "total": 0.102,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 101-220 sièges, <500 kms jet, 2018 - SANS trainées\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, sans trainées\""
   },
   {
     "id": 20688,
