@@ -123,7 +123,7 @@ export default function Learning() {
           Les correspondances proposées dans ce convertisseur sont calculées à
           partir des facteurs d’émissions de la Base Carbone® de l’ADEME.
           <br />
-          Un facteur d’émissions permet de traduire l’impact GES (
+          Un facteur d’émissions permet de traduire l’impact GES (kg
           <CO2E onClick={() => setCO2E(true)}>
             CO
             <sub>2</sub>e
