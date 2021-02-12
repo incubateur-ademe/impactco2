@@ -1132,7 +1132,7 @@
     react "^17.0.1"
     styled-components "^5.2.1"
 
-"@bit/datagir.simulateurs.embed-configurator@^0.0.13":
+"@bit/datagir.simulateurs.embed-configurator@0.0.13":
   version "0.0.13"
   resolved "https://node.bit.dev/datagir.simulateurs.embed-configurator/-/datagir.simulateurs.embed-configurator-0.0.13.tgz#73f3056f1696310b81c3cffae90e22a7ac69a4c4"
   integrity sha1-c/MFbxaWMQuBw8/66Q4ip6xppMQ=
@@ -1143,10 +1143,10 @@
     react-router-dom "^5.2.0"
     styled-components "^5.2.1"
 
-"@bit/datagir.simulateurs.footer@^0.0.4":
-  version "0.0.4"
-  resolved "https://node.bit.dev/datagir.simulateurs.footer/-/datagir.simulateurs.footer-0.0.4.tgz#72c719d2a2c4ee0fc3a9c85735c24d5a17bf7735"
-  integrity sha1-cscZ0qLE7g/DqchXNcJNWhe/dzU=
+"@bit/datagir.simulateurs.footer@0.0.6":
+  version "0.0.6"
+  resolved "https://node.bit.dev/datagir.simulateurs.footer/-/datagir.simulateurs.footer-0.0.6.tgz#c2fb834fe1cd3902cec0f2812ea23c61ebea37bd"
+  integrity sha1-wvuDT+HNOQLOwPKBLqI8YevqN70=
   dependencies:
     "@bit/datagir.simulateurs.button" "0.0.2"
     react "^17.0.1"
