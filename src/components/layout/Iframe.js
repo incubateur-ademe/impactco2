@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Header from 'components/layout/Header'
-import IframeFooter from '@bit/datagir.simulateurs.iframe-footer'
+import IframeFooter from 'components/base/IframeFooter'
 
 const Wrapper = styled.div``
 const Content = styled.div`

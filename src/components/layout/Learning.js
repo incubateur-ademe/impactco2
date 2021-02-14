@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import useOnScreen from 'hooks/useOnScreen'
 import ModalContext from 'utils/ModalContext'
 
-import ButtonLink from '@bit/datagir.simulateurs.button-link'
+import ButtonLink from 'components/base/Button'
 
 const Wrapper = styled.div`
   position: relative;

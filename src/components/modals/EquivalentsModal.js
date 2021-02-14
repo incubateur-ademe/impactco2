@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'utils/ModalContext'
-import Button from '@bit/datagir.simulateurs.button'
+import Button from 'components/base/Button'
 
-import Modal from '@bit/datagir.simulateurs.modal'
+import Modal from 'components/base/Modal'
 import EquivalentSelector from './equivalentsModal/EquivalentSelector'
 
 const Title = styled.h2`

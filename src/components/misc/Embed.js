@@ -5,7 +5,7 @@ import UXContext from 'utils/UXContext'
 import CO2NumberContext from 'utils/CO2NumberContext'
 import ModalContext from 'utils/ModalContext'
 
-import EmbedConfigurator from '@bit/datagir.simulateurs.embed-configurator'
+import EmbedConfigurator from 'components/base/EmbedConfigurator'
 
 export default function Embed() {
   const { themes, theme, setTheme } = useContext(StyleContext)

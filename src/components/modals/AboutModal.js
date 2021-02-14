@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'utils/ModalContext'
-import Modal from '@bit/datagir.simulateurs.modal'
+import Modal from 'components/base/Modal'
 
 const Title = styled.h2``
 const Text = styled.p``

@@ -1116,67 +1116,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bit/datagir.simulateurs.button-link@0.0.1", "@bit/datagir.simulateurs.button-link@^0.0.1":
-  version "0.0.1"
-  resolved "https://node.bit.dev/datagir.simulateurs.button-link/-/datagir.simulateurs.button-link-0.0.1.tgz#95a50c01585f474ed5eb68c0d017868685ddef7f"
-  integrity sha1-laUMAVhfR07V62jA0BeGhoXd738=
-  dependencies:
-    react "^17.0.1"
-    styled-components "^5.2.1"
-
-"@bit/datagir.simulateurs.button@0.0.2", "@bit/datagir.simulateurs.button@^0.0.2":
-  version "0.0.2"
-  resolved "https://node.bit.dev/datagir.simulateurs.button/-/datagir.simulateurs.button-0.0.2.tgz#8322272b5e3cbdddeae9080c833198622cd38053"
-  integrity sha1-gyInK148vd3q6QgMgzGYYizTgFM=
-  dependencies:
-    react "^17.0.1"
-    styled-components "^5.2.1"
-
-"@bit/datagir.simulateurs.embed-configurator@0.0.13":
-  version "0.0.13"
-  resolved "https://node.bit.dev/datagir.simulateurs.embed-configurator/-/datagir.simulateurs.embed-configurator-0.0.13.tgz#73f3056f1696310b81c3cffae90e22a7ac69a4c4"
-  integrity sha1-c/MFbxaWMQuBw8/66Q4ip6xppMQ=
-  dependencies:
-    "@bit/datagir.simulateurs.button" "0.0.2"
-    copy-to-clipboard "3.3.1"
-    react "^17.0.1"
-    react-router-dom "^5.2.0"
-    styled-components "^5.2.1"
-
-"@bit/datagir.simulateurs.footer@0.0.6":
-  version "0.0.6"
-  resolved "https://node.bit.dev/datagir.simulateurs.footer/-/datagir.simulateurs.footer-0.0.6.tgz#c2fb834fe1cd3902cec0f2812ea23c61ebea37bd"
-  integrity sha1-wvuDT+HNOQLOwPKBLqI8YevqN70=
-  dependencies:
-    "@bit/datagir.simulateurs.button" "0.0.2"
-    react "^17.0.1"
-    styled-components "^5.2.1"
-
-"@bit/datagir.simulateurs.iframe-footer@0.0.1":
-  version "0.0.1"
-  resolved "https://node.bit.dev/datagir.simulateurs.iframe-footer/-/datagir.simulateurs.iframe-footer-0.0.1.tgz#4c97550070160fefbc6fc6b2ac6633e3458d9591"
-  integrity sha1-TJdVAHAWD++8b8ayrGYz40WNlZE=
-  dependencies:
-    "@bit/datagir.simulateurs.button-link" "0.0.1"
-    react "^17.0.1"
-    styled-components "^5.2.1"
-
-"@bit/datagir.simulateurs.modal@^0.0.2":
-  version "0.0.2"
-  resolved "https://node.bit.dev/datagir.simulateurs.modal/-/datagir.simulateurs.modal-0.0.2.tgz#4a0aa99053588579c4e4a4b5c378db685004ed7d"
-  integrity sha1-SgqpkFNYhXnE5KS1w3jbaFAE7X0=
-  dependencies:
-    react "^17.0.1"
-    styled-components "^5.2.1"
-
-"@bit/datagir.simulateurs.update-available@^0.0.1":
-  version "0.0.1"
-  resolved "https://node.bit.dev/datagir.simulateurs.update-available/-/datagir.simulateurs.update-available-0.0.1.tgz#85b9cd0f8e9707dca62bedb5d7423b09c09476cd"
-  integrity sha1-hbnND46XB9ymK+2110I7CcCUds0=
-  dependencies:
-    react "^17.0.1"
-    styled-components "^5.2.1"
-
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -3705,7 +3644,7 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
-copy-to-clipboard@3.3.1:
+copy-to-clipboard@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.3.1.tgz#115aa1a9998ffab6196f93076ad6da3b913662ae"
   integrity sha512-i13qo6kIHTTpCm8/Wup+0b1mVWETvu2kIMzKoK8FpkLkFxlt0znUAHcMzox+T8sPlqtZXq3CulEjQHsYiGFJUw==

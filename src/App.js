@@ -9,7 +9,6 @@ import UXProvider from 'components/providers/UXProvider'
 import CO2NumberProvider from 'components/providers/CO2NumberProvider'
 import EquivalentsProvider from 'components/providers/EquivalentsProvider'
 
-import UpdateAvailable from '@bit/datagir.simulateurs.update-available'
 import Web from 'components/layout/Web'
 import Iframe from 'components/layout/Iframe'
 import EquivalentsModal from 'components/modals/EquivalentsModal'
@@ -42,7 +41,6 @@ function App() {
                   <EquivalentsModal />
                   <CO2EModal />
                   <AboutModal />
-                  <UpdateAvailable />
                 </EquivalentsProvider>
               </CO2NumberProvider>
             </ModalProvider>

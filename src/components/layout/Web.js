@@ -6,7 +6,7 @@ import UXContext from 'utils/UXContext'
 
 import Header from 'components/layout/Header'
 import Learning from 'components/layout/Learning'
-import Footer from '@bit/datagir.simulateurs.footer'
+import Footer from 'components/base/Footer'
 import Embed from 'components/misc/Embed'
 
 const Wrapper = styled.div`

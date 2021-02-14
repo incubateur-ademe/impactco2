@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import ModalContext from 'utils/ModalContext'
 
-import Modal from '@bit/datagir.simulateurs.modal'
+import Modal from 'components/base/Modal'
 
 const Title = styled.h2``
 const Text = styled.p``
@@ -23,8 +23,9 @@ export default function CO2EModal() {
       </Text>
       <Text>
         Par exemple, 1 kg de méthane équivaut à 28 kg de CO<sub>2</sub>. Si la
-        fabrication d'un produit a émis 1 kg de méthane et 1 kg de CO<sub>2</sub>,
-        alors l'impact total de ce produit est de 29 kg d'équivalent CO<sub>2</sub>.
+        fabrication d'un produit a émis 1 kg de méthane et 1 kg de CO
+        <sub>2</sub>, alors l'impact total de ce produit est de 29 kg
+        d'équivalent CO<sub>2</sub>.
       </Text>
     </Modal>
   )
