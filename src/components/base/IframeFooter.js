@@ -5,6 +5,8 @@ import ademe from './footer/ademe.jpg'
 import repufrancaise from './footer/repufrancaise.jpg'
 
 import Button from 'components/base/Button'
+import MagicLink from 'components/base/MagicLink'
+import Logo from './footer/Logo'
 
 const Wrapper = styled.div`
   position: relative;
@@ -14,37 +16,46 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: ${(props) => props.width || '40em'};
-  margin: 0 auto;
+  margin: 0 3vw;
   padding: 1em 0;
 
   ${(props) => props.theme.mq.small} {
-    max-width: none;
-    margin: 0 3vw;
+    flex-direction: column-reverse;
   }
 `
-const Logos = styled.div`
-  flex: 1;
+const LogosWrapper = styled.div`
   display: flex;
-  align-items: center;
-  width: 100%;
-`
-const Logo = styled.img`
-  width: 4em;
+  justify-content: center;
+  margin: 0 1rem 0 0;
 
   ${(props) => props.theme.mq.small} {
-    width: 3em;
+    margin: 1rem 0 0;
   }
+`
+const Logos = styled(MagicLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  background-color: white;
+`
+const Institution = styled.img`
+  display: block;
+  height: 5.625em;
 `
 
 export default function Footer(props) {
   return (
     <Wrapper>
       <Content>
-        <Logos>
-          <Logo src={repufrancaise} alt='République Française' />
-          <Logo src={ademe} alt='ADEME' />
-        </Logos>
+        <LogosWrapper>
+          <Logos to='https://datagir.ademe.fr/'>
+            <Institution src={repufrancaise} alt='République Française' />
+            <Institution src={ademe} alt='ADEME' />
+            <Logo />
+          </Logos>
+        </LogosWrapper>
         {props.about && (
           <Button href={props.about}>En savoir plus sur ce simulateur</Button>
         )}
