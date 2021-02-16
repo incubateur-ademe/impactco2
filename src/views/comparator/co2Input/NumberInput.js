@@ -40,6 +40,7 @@ const Input = styled.input`
   text-align: right;
   background-color: transparent;
   border: none;
+  transform: translate3d(0, 0, 10em);
 
   &:focus {
     outline: none;
