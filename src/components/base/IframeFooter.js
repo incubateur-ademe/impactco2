@@ -57,7 +57,7 @@ export default function Footer(props) {
           </Logos>
         </LogosWrapper>
         {props.about && (
-          <Button href={props.about}>En savoir plus sur ce simulateur</Button>
+          <Button to={props.about}>En savoir plus sur ce simulateur</Button>
         )}
       </Content>
     </Wrapper>
