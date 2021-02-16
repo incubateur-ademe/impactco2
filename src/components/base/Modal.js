@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translate3d(0, 0, 1em);
   pointer-events: ${(props) => (props.open ? 'inherit' : 'none')};
 `
 const Background = styled.div`
