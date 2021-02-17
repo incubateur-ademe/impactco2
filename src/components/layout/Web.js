@@ -28,10 +28,11 @@ const FullScreen = styled.div`
   flex-direction: column;
   max-width: 45em;
   min-height: ${(props) => props.windowHeight}px;
-  margin: 2em auto 5em;
+  margin: 0 auto 5em;
+  padding-top: 2em;
 
   ${(props) => props.theme.mq.small} {
-    margin: 2em 3vw 5em;
+    margin: 0 3vw 5em;
   }
 `
 export default function Layout(props) {
