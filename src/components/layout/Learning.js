@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import useOnScreen from 'hooks/useOnScreen'
 import ModalContext from 'utils/ModalContext'
 
-import ButtonLink from 'components/base/Button'
+import Button from 'components/base/Button'
 
 const Wrapper = styled.div`
   position: relative;
@@ -115,9 +115,9 @@ export default function Learning() {
           </a>
         </Text>
         <ButtonWrapper>
-          <ButtonLink href={'https://nosgestesclimat.fr/'}>
+          <Button to={'https://nosgestesclimat.fr/'}>
             Je calcule mon empreinte carbone
-          </ButtonLink>
+          </Button>
         </ButtonWrapper>
         <Text>
           Les correspondances proposées dans ce convertisseur sont calculées à
