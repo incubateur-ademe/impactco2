@@ -1,4 +1,4 @@
-# Mes Fruits et Légumes de Saison
+# Mon convertisseur CO2
 
 Application web permettant de comparer la consommation en CO2e de divers équivalents.
 
