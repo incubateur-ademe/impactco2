@@ -6,11 +6,13 @@ import repufrancaise from './footer/repufrancaise.jpg'
 
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
+import ThemeToggle from 'components/base/ThemeToggle'
 import Logo from './footer/Logo'
 
 const Wrapper = styled.div`
   position: relative;
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: ${(props) =>
+    props.theme.colors[props.background || 'second']};
   transition: all 600ms;
 `
 const Content = styled.div`
@@ -35,8 +37,10 @@ const Flex = styled.div`
 `
 const Sources = styled.div`
   flex: 1;
+
   ${(props) => props.theme.mq.small} {
-    margin-bottom: 1em;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 `
 const Source = styled.a`
@@ -45,6 +49,18 @@ const Source = styled.a`
 const Title = styled.h3`
   margin: 0;
   color: ${(props) => props.theme.colors[props.color || 'text']};
+`
+const Right = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  ${(props) => props.theme.mq.small} {
+    align-items: center;
+  }
+`
+const StyledButton = styled(Button)`
+  margin-bottom: 1rem;
 `
 const LogosWrapper = styled.div`
   display: flex;
@@ -65,15 +81,16 @@ const Institution = styled.img`
 
 export default function Footer(props) {
   return (
-    <Wrapper>
-      <Content>
+    <Wrapper background={props.background}>
+      <Content width={props.width}>
         <Flex>
           {props.sources && (
             <Sources>
-              <Title color={props.color}>Sources des données :</Title>
+              <Title color={props.color}>Sources des données</Title>
 
               {props.sources.map((source) => (
                 <Source
+                  key={source.label}
                   href={source.href}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -83,20 +100,23 @@ export default function Footer(props) {
               ))}
             </Sources>
           )}
-          {props.setConfiguratorOpen && (
-            <Button
-              onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  left: 0,
-                  behavior: 'smooth',
-                })
-                props.setConfiguratorOpen(true)
-              }}
-            >
-              Je veux l'intégrer à mon site !
-            </Button>
-          )}
+          <Right>
+            {props.setConfiguratorOpen && (
+              <StyledButton
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth',
+                  })
+                  props.setConfiguratorOpen(true)
+                }}
+              >
+                Je veux l'intégrer à mon site !
+              </StyledButton>
+            )}
+            <ThemeToggle mobile />
+          </Right>
         </Flex>
       </Content>
       <LogosWrapper>

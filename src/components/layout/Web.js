@@ -7,6 +7,7 @@ import UXContext from 'utils/UXContext'
 import Header from 'components/layout/Header'
 import Learning from 'components/layout/Learning'
 import Footer from 'components/base/Footer'
+import ThemeToggle from 'components/base/ThemeToggle'
 import Embed from 'components/misc/Embed'
 
 const Wrapper = styled.div`
@@ -43,6 +44,7 @@ export default function Layout(props) {
   return (
     <Wrapper>
       <Content>
+        <ThemeToggle />
         <FullScreen windowHeight={height}>
           <Header />
           {props.children}
