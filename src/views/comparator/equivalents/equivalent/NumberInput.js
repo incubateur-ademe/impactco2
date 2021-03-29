@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     height: 100%;
     border: 2px solid ${(props) => props.theme.colors.main};
     transform: rotate3d(1, -1, 0, 33deg) rotate(5.1deg);
-    opacity: ${(props) => (props.focus ? 1 : 0)};
+    opacity: ${(props) => (props.focus ? 1 : 0.15)};
     transition: opacity 200ms ease-out;
   }
 
