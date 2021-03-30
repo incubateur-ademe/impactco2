@@ -168,5 +168,15 @@
     "total": 0.45,
     "default": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Eau embouteillée de source\""
+  },
+  {
+    "id": 55,
+    "name": {
+      "fr": "Heure[s] de streaming vidéo"
+    },
+    "emoji": "🎬",
+    "total": 0.004,
+    "default": false,
+    "about": "G. Kamiya – International Energy Agency (<a href='https://www.iea.org/commentaries/the-carbon-footprint-of-streaming-video-fact-checking-the-headlines'>source</a>)"
   }
 ]
