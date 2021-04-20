@@ -115,4 +115,8 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: ${(props) => props.theme.colors.main};
   }
+
+  option {
+    color: #010101;
+  }
 `
