@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   position: relative;
-  margin-bottom: 1rem;
-  font-size: 1.2em;
+  display: inline-block;
+  font-size: ${(props) => (props.small ? '1em' : '1.2em')};
 
   &:before {
     content: '';
@@ -23,33 +23,42 @@ const Wrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: ${(props) => props.theme.colors.main};
-    text-align: center;
-    width: calc(1.2rem + 4px);
-    font-size: 2em;
-    line-height: calc(1.2rem + 4px);
+    font-size: 1.75em;
+    line-height: 0.7;
     opacity: ${(props) => (props.checked ? 1 : 0)};
     cursor: pointer;
   }
 `
 const Input = styled.input`
-  margin-right: 1em;
+  margin-right: ${(props) => (props.label ? '1em' : 0)};
   opacity: 0;
   pointer-events: none;
 `
-const Label = styled.label``
+const Label = styled.label`
+  font-size: 0.833333333em;
+  white-space: nowrap;
+`
 export default function Checkbox(props) {
   return (
     <Wrapper
-      checked={props.option.value}
-      onClick={(e) => props.option.setter((prev) => !prev)}
+      checked={props.checked}
+      small={props.small}
+      onClick={(e) => props.onChange((prev) => !prev)}
+      className={props.className}
     >
       <Input
         type='checkbox'
-        checked={props.option.value}
-        onChange={(e) => props.option.setter(e.currentTarget.checked)}
+        checked={props.checked}
+        label={props.children || props.label}
+        onChange={(e) => props.onChange(e.target.checked)}
       />
-      <Label>{props.option.label}</Label>
+      {(props.children || props.label) && (
+        <Label>{props.children || props.label}</Label>
+      )}
     </Wrapper>
   )
 }

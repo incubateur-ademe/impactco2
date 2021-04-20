@@ -7,6 +7,8 @@ export const themes = {
     colors: {
       main: '#05386B',
       second: '#ffffdb',
+      ter: '#05386B',
+      quad: '#ffffdb',
       background: '#379683',
       text: '#ffffdb',
     },
@@ -23,9 +25,11 @@ export const themes = {
   classic: {
     name: 'Classique',
     colors: {
-      main: '#32337B',
-      second: '#fdfdfd',
-      background: '#fdfdfd',
+      main: '#EF0D50',
+      second: '#ffffff',
+      ter: '#32337B',
+      quad: '#ffffff',
+      background: '#ffffff',
       text: '#32337B',
     },
     fonts: '"Montserrat", Arial, sans-serif',
@@ -41,10 +45,12 @@ export const themes = {
   night: {
     name: 'Nuit',
     colors: {
-      main: '#fdfdfd',
-      second: '#282c35',
-      background: '#282c35',
-      text: '#fdfdfd',
+      main: '#92F2D2',
+      second: '#1e1e1e',
+      ter: '#ffffff',
+      quad: '#1e1e1e',
+      background: '#1e1e1e',
+      text: '#ffffff',
     },
     fonts: '"Montserrat", Arial, sans-serif',
     mq: {
@@ -56,15 +62,17 @@ export const themes = {
       xlarge: `@media screen and (min-width: ${2000}px)`,
     },
   },
-  accessible: {
-    name: 'Accessible',
+  simple: {
+    name: 'Simple',
     colors: {
-      main: 'black',
-      second: 'white',
-      background: 'white',
-      text: 'black',
+      main: '#000091',
+      second: '#ffffff',
+      ter: '#1e1e1e',
+      quad: '#ffffff',
+      background: '#ffffff',
+      text: '#1e1e1e',
     },
-    fonts: 'Arial, sans-serif',
+    fonts: '"Montserrat", Arial, sans-serif',
     mq: {
       small: `@media screen and (max-width: ${730}px)`,
       medium: `@media screen and (max-width: ${1260}px)`,

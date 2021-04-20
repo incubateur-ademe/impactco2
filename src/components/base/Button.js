@@ -8,15 +8,16 @@ const Wrapper = styled(MagicLink)`
   justify-content: center;
   align-items: center;
   padding: 0.8em 1.6em;
-  font-size: 1.2em;
+  font-size: ${(props) => (props.small ? '0.875em' : '1em')};
+  font-weight: 400;
   text-align: center;
   text-decoration: none;
   color: ${(props) =>
-    props.hollow ? props.theme.colors.main : props.theme.colors.second};
+    props.hollow ? props.theme.colors.main : props.theme.colors['second']};
   background-color: ${(props) =>
     props.hollow ? 'transparent' : props.theme.colors.main};
   border: 1px solid ${(props) => props.theme.colors.main};
-  border-radius: 1em;
+  border-radius: 1.5em;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};
   cursor: pointer;
@@ -25,7 +26,7 @@ const Wrapper = styled(MagicLink)`
   &:hover {
     background-color: ${(props) =>
       props.hollow ? props.theme.colors.main : props.theme.colors.main};
-    color: ${(props) => props.theme.colors.second};
+    color: ${(props) => props.theme.colors['second']};
   }
 
   &:focus {
@@ -43,6 +44,9 @@ export default function Button(props) {
       onClick={props.onClick}
       disabled={props.disabled}
       hollow={props.hollow}
+      small={props.small}
+      className={props.className}
+      textColor={props.textColor}
     >
       {props.children}
     </Wrapper>

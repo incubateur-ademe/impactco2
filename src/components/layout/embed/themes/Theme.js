@@ -21,8 +21,8 @@ const Content = styled.div`
   border-radius: 1em;
   box-shadow: ${(props) =>
     props.current
-      ? 'rgba(0, 0, 0, 0.64) 0px 0px 8px 0px, rgba(0, 0, 0, 0.16) 0px 0px 15px 0px, rgba(0, 0, 0, 0.48) 0px 0px 20px 4px;'
-      : 'rgba(0, 0, 0, 0.16) 0px 0px 8px 0px, rgba(0, 0, 0, 0.04) 0px 0px 15px 0px, rgba(0, 0, 0, 0.12) 0px 0px 20px 4px;'};
+      ? 'rgba(0, 0, 0, 0.64) 0px 0px 8px 0px, rgba(0, 0, 0, 0.16) 0px 0px 15px 0px, rgba(0, 0, 0, 0.48) 0px 0px 20px 4px'
+      : 'rgba(0, 0, 0, 0.16) 0px 0px 8px 0px, rgba(0, 0, 0, 0.04) 0px 0px 15px 0px, rgba(0, 0, 0, 0.12) 0px 0px 20px 4px'}!important;
   cursor: pointer;
 `
 const Title = styled.h4`

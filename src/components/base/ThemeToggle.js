@@ -9,13 +9,15 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0.5rem;
   right: 0.5rem;
-  display: ${(props) => (props.mobile ? 'none' : 'flex')};
+  display: flex;
 
   ${(props) => props.theme.mq.medium} {
     position: relative;
     left: 0;
     right: 0;
     display: ${(props) => (props.mobile ? 'block' : 'none')};
+    margin-bottom: 2rem;
+    text-align: center;
   }
 `
 const Svg = styled.svg`
@@ -29,18 +31,18 @@ const Svg = styled.svg`
 `
 export default function Visible(props) {
   const { themes, accessibility, setAccessibility } = useContext(StyleContext)
-  const { configuratorOpen } = useContext(UXContext)
+  const { embedOpen } = useContext(UXContext)
 
   return (
-    !configuratorOpen && (
+    !embedOpen && (
       <Wrapper mobile={props.mobile}>
         <Switch
           onChange={() =>
             setAccessibility((prevAccessibility) => !prevAccessibility)
           }
           checked={accessibility}
-          offColor={themes.classic.colors.main}
-          onColor={themes.classic.colors.main}
+          offColor={themes.classic.colors.ter}
+          onColor={themes.classic.colors.ter}
           offHandleColor={themes.classic.colors.background}
           onHandleColor={themes.classic.colors.background}
           uncheckedIcon={

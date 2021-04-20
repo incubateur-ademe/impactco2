@@ -17,7 +17,7 @@ const Content = styled.div`
   border-radius: 1em;
   text-align: center;
   color: ${(props) =>
-    props.active ? props.theme.colors.second : props.theme.colors.main};
+    props.active ? props.theme.colors.second : props.theme.colors.ter};
   background-color: ${(props) =>
     props.active ? props.theme.colors.main : props.theme.colors.second};
   border: 2px solid

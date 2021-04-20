@@ -1,17 +1,20 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import useWindowSize from 'hooks/useWindowSize'
-import UXContext from 'utils/UXContext'
 
-import Header from 'components/layout/Header'
-import Learning from 'components/layout/Learning'
-import Footer from 'components/base/Footer'
 import ThemeToggle from 'components/base/ThemeToggle'
-import Embed from 'components/misc/Embed'
+import InstallButton from 'components/base/InstallButton'
+import Header from 'components/misc/Header'
+import Learning from 'components/misc/Learning'
+import ShareWrapper from 'components/wrappers/ShareWrapper'
+import EmbedWrapper from 'components/wrappers/EmbedWrapper'
+import ContactWrapper from 'components/wrappers/ContactWrapper'
+import FooterWrapper from 'components/wrappers/FooterWrapper'
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 
   ${(props) => props.theme.mq.medium} {
@@ -24,45 +27,39 @@ const Content = styled.div`
   flex-direction: column;
 `
 const FullScreen = styled.div`
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
-  max-width: 45em;
+  width: 46rem;
   min-height: ${(props) => props.windowHeight}px;
-  margin: 0 auto 5em;
-  padding-top: 2em;
+  margin: 0 auto 5rem;
+  padding: 2rem 0.5rem;
 
   ${(props) => props.theme.mq.small} {
-    margin: 0 3vw 5em;
+    width: auto;
+    margin: 0 3vw 2em;
+    padding-bottom: 5vw;
   }
 `
-export default function Layout(props) {
+export default function Web(props) {
   const { height } = useWindowSize()
-
-  const { setConfiguratorOpen } = useContext(UXContext)
 
   return (
     <Wrapper>
+      <ThemeToggle />
       <Content>
-        <ThemeToggle />
         <FullScreen windowHeight={height}>
           <Header />
           {props.children}
         </FullScreen>
         <Learning />
-        <Footer
-          width={'45em'}
-          color={'main'}
-          setConfiguratorOpen={setConfiguratorOpen}
-          sources={[
-            {
-              label: 'Base carbone®',
-              href: 'https://data.ademe.fr/datasets/base-carbone(r)',
-            },
-          ]}
-        />
+        <FooterWrapper />
       </Content>
-      <Embed />
+      <EmbedWrapper />
+      <ShareWrapper />
+      <ContactWrapper />
+      <InstallButton />
     </Wrapper>
   )
 }

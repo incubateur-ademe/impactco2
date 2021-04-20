@@ -12,7 +12,7 @@ export default function CO2NumberProvider(props) {
     withDefault(StringParam, 'default')
   )
 
-  const { configuratorOpen } = useContext(UXContext)
+  const { embedOpen } = useContext(UXContext)
   const [accessibility, setAccessibility] = useState(false)
 
   return (
@@ -27,7 +27,7 @@ export default function CO2NumberProvider(props) {
     >
       <ThemeProvider
         theme={{
-          ...themes[accessibility && !configuratorOpen ? 'classic' : theme],
+          ...themes[accessibility && !embedOpen ? 'classic' : theme],
         }}
       >
         {props.children}

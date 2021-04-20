@@ -1,17 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Header from 'components/layout/Header'
-import IframeFooter from 'components/base/IframeFooter'
+import IframeFooter from 'components/layout/IframeFooter'
+import Header from 'components/misc/Header'
 
 const Wrapper = styled.div``
 const Content = styled.div`
-  max-width: 45em;
-  margin: 0 auto 5em;
-  padding-top: 2em;
+  position: relative;
+  width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 0.5rem;
 
   ${(props) => props.theme.mq.small} {
-    margin: 0 3vw 5em;
+    width: 100%;
   }
 `
 export default function Iframe(props) {
@@ -21,7 +22,7 @@ export default function Iframe(props) {
         <Header iframe />
         {props.children}
       </Content>
-      <IframeFooter about={'https://monconvertisseurco2.fr#informations'} />
+      <IframeFooter about='https://monconvertisseurco2.fr/' />
     </Wrapper>
   )
 }

@@ -28,19 +28,12 @@ const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 30em;
+  width: ${(props) => props.width || '30em'};
   max-width: 90vw;
   max-height: 90vh;
-  margin: 2em;
-  padding: 2em;
-  color: ${(props) =>
-    props.textColor
-      ? props.theme.colors[props.textColor]
-      : props.theme.colors.text};
-  background-color: ${(props) =>
-    props.backgroundColor
-      ? props.theme.colors[props.backgroundColor]
-      : props.theme.colors.second};
+  margin: 2rem;
+  color: ${(props) => props.theme.colors.text};
+  background-color: ${(props) => props.theme.colors.background};
   border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
 
@@ -53,24 +46,28 @@ const ButtonClose = styled.div`
   position: absolute;
   top: 0.5em;
   right: 0.5em;
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: 700;
   transform: rotate(45deg);
   cursor: pointer;
   line-height: 0.5;
 `
-
+const Scroll = styled.div`
+  overflow-y: scroll;
+  padding: 2rem;
+`
 export default function Modal(props) {
   return (
-    <Wrapper open={props.open}>
+    <Wrapper open={props.open} className={props.className}>
       <Background open={props.open} onClick={() => props.setOpen(false)} />
       <Content
         open={props.open}
+        width={props.width}
         textColor={props.textColor}
         backgroundColor={props.backgroundColor}
       >
         <ButtonClose onClick={() => props.setOpen(false)}>+</ButtonClose>
-        {props.children}
+        <Scroll>{props.children}</Scroll>
       </Content>
     </Wrapper>
   )

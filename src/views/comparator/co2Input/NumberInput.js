@@ -36,7 +36,7 @@ const Input = styled.input`
   padding: 0 0.3em;
   font-weight: 900;
   font-style: italic;
-  color: ${(props) => props.theme.colors.main};
+  color: ${(props) => props.theme.colors.ter};
   text-align: right;
   background-color: transparent;
   border: none;

@@ -33,7 +33,7 @@ const Input = styled.input`
   font-size: ${(props) => (props.length > 6 ? '1.5em' : '2.5em')};
   font-weight: 700;
   line-height: ${(props) => (props.length > 6 ? '2.2' : 'inherit')};
-  color: ${(props) => props.theme.colors.main};
+  color: ${(props) => props.theme.colors.ter};
   text-align: center;
   background-color: transparent;
   border: none;

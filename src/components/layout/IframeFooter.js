@@ -6,7 +6,7 @@ import repufrancaise from './footer/repufrancaise.jpg'
 
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
-import Logo from './footer/Logo'
+import Logo from 'components/base/Logo'
 
 const Wrapper = styled.div`
   position: relative;
