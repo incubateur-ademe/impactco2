@@ -10,7 +10,7 @@
     <meta name="title" content="Mon Convertisseur CO2" />
     <meta
       name="description"
-      content="Visualisez facilement un poids en CO2e grâce à ce convertisseur, et découvrez quels sont les gestes climat qui comptent vraiment."
+      content="Visualisez facilement un poids en CO2 grâce à ce convertisseur, et découvrez quels sont les gestes climat qui comptent vraiment."
     />
 
     <!-- Open Graph / Facebook -->
@@ -19,7 +19,7 @@
     <meta property="og:title" content="Mon Convertisseur CO2" />
     <meta
       property="og:description"
-      content="Visualisez facilement un poids en CO2e grâce à ce convertisseur, et découvrez quels sont les gestes climat qui comptent vraiment."
+      content="Visualisez facilement un poids en CO2 grâce à ce convertisseur, et découvrez quels sont les gestes climat qui comptent vraiment."
     />
     <meta
       property="og:image"
@@ -32,7 +32,7 @@
     <meta property="twitter:title" content="Mon Convertisseur CO2" />
     <meta
       property="twitter:description"
-      content="Visualisez facilement un poids en CO2e grâce à ce convertisseur, et découvrez quels sont les gestes climat qui comptent vraiment."
+      content="Visualisez facilement un poids en CO2 grâce à ce convertisseur, et découvrez quels sont les gestes climat qui comptent vraiment."
     />
     <meta
       property="twitter:image"
@@ -85,10 +85,22 @@
   </head>
   <body>
     <noscript
-      >Visualisez facilement un poids en CO2e grâce à ce convertisseur, et
+      >Visualisez facilement un poids en CO2 grâce à ce convertisseur, et
       découvrez quels sont les gestes climat qui comptent vraiment.</noscript
     >
     <div id="root"></div>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nom" />
+      <input type="email" name="email" />
+      <input type="text" name="objet" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="bug" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nom" />
+      <input type="email" name="email" />
+      <input type="text" name="objet" />
+      <textarea name="message"></textarea>
+    </form>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.contentWindow.js"
       integrity="sha512-5+HBQlT1izP2UxL213/uqaO9tIpPso52TedvIsOevDs6w/HNt0/KNlkYLgi8Ona7lPCBjMEWybiR/qqs2MgyEg=="
