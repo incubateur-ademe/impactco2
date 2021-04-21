@@ -22,7 +22,7 @@ export default function Iframe(props) {
         <Header iframe />
         {props.children}
       </Content>
-      <IframeFooter about='https://monconvertisseurco2.fr/' />
+      <IframeFooter about={process.env.REACT_APP_URL} />
     </Wrapper>
   )
 }
