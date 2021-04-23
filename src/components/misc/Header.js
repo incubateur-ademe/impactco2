@@ -6,6 +6,7 @@ import ModalContext from 'utils/ModalContext'
 
 const Wrapper = styled.div`
   margin-bottom: 3em;
+  padding-top: 2rem;
 `
 const Title = styled.h1`
   margin-bottom: 0;

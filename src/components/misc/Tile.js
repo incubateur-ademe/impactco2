@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   width: 33.333%;
-  padding: 0.5em;
+  padding: 0.5rem;
 
   ${(props) => props.theme.mq.small} {
     width: 50%;

@@ -9,7 +9,7 @@ import More from './equivalents/More'
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -0.5em;
+  margin: 0 -0.5rem;
 `
 const SortableList = SortableContainer(({ equivalents }) => {
   return (

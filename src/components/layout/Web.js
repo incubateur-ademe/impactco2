@@ -34,12 +34,10 @@ const FullScreen = styled.div`
   width: 46rem;
   min-height: ${(props) => props.windowHeight}px;
   margin: 0 auto 5rem;
-  padding: 2rem 0.5rem;
+  padding: 0 0.5rem;
 
   ${(props) => props.theme.mq.small} {
     width: auto;
-    margin: 0 3vw 2em;
-    padding-bottom: 5vw;
   }
 `
 export default function Web(props) {
