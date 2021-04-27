@@ -8,13 +8,12 @@ import ContactButton from './panel/ContactButton'
 const Wrapper = styled.div`
   position: relative;
   width: ${(props) => (props.open ? '30rem' : 0)};
-  transition: all 400ms ease-out;
+  transition: width 400ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
-    display: ${(props) => (props.open ? 'block' : 'none')};
+    display: ${(props) => (props.open && props.small ? 'block' : 'none')};
     width: auto;
     border-left: none;
-    overflow: hidden;
     transition: none;
   }
 `
@@ -26,22 +25,23 @@ const Content = styled.div`
   width: 30rem;
   height: 100%;
   padding: 2rem;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) =>
+    props.small ? 'transparent' : props.theme.colors.background};
   border-left: 5px solid ${(props) => props.theme.colors.main};
   overflow-y: scroll;
   overflow-x: visible;
   transform: translateX(${(props) => (props.open ? 0 : '100%')});
-  transition: all 400ms ease-out;
+  transition: transform 400ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
     position: relative;
     width: auto;
     height: auto;
     transform: none;
-    padding: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
     border-left: none;
-    border-bottom: 2px solid ${(props) => props.theme.colors.main};
-    overflow: hidden;
+    overflow: visible;
     transition: none;
   }
 
@@ -66,27 +66,28 @@ const ButtonClose = styled.div`
 `
 export default function Panel(props) {
   return (
-    <Wrapper open={props.open}>
-      {props.index === 0 ? (
-        <EmbedButton
-          open={props.open}
-          onClick={props.toggleClose}
-          index={props.index}
-        />
-      ) : props.index === 1 ? (
-        <ShareButton
-          open={props.open}
-          onClick={props.toggleClose}
-          index={props.index}
-        />
-      ) : (
-        <ContactButton
-          open={props.open}
-          onClick={props.toggleClose}
-          index={props.index}
-        />
-      )}
-      <Content open={props.open}>
+    <Wrapper open={props.open} small={props.small}>
+      {!props.small &&
+        (props.index === 0 ? (
+          <EmbedButton
+            open={props.open}
+            onClick={props.toggleClose}
+            index={props.index}
+          />
+        ) : props.index === 1 ? (
+          <ShareButton
+            open={props.open}
+            onClick={props.toggleClose}
+            index={props.index}
+          />
+        ) : (
+          <ContactButton
+            open={props.open}
+            onClick={props.toggleClose}
+            index={props.index}
+          />
+        ))}
+      <Content open={props.open} small={props.small}>
         <ButtonClose onClick={props.toggleClose}>+</ButtonClose>
         {props.children}
       </Content>

@@ -43,6 +43,7 @@ export default function Contact(props) {
 
   return (
     <Panel
+      small={props.small}
       open={contactOpen}
       toggleClose={() => {
         setContactOpen((prevOpen) => !prevOpen)

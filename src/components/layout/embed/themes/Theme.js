@@ -4,13 +4,6 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   width: calc(50% - 1em);
   margin: 0.5em;
-
-  ${(props) => props.theme.mq.medium} {
-    width: calc(25% - 1em);
-  }
-  ${(props) => props.theme.mq.small} {
-    width: calc(50% - 1em);
-  }
 `
 const Content = styled.div`
   width: 100%;

@@ -32,11 +32,6 @@ export default function UXProvider(props) {
         embedOpen,
         setEmbedOpen: (value) => {
           if (value) {
-            window.scrollTo({
-              top: 0,
-              left: 0,
-              behavior: 'smooth',
-            })
             setShareOpen(false)
             setContactOpen(false)
             setTypeShare('simulator')
@@ -46,11 +41,6 @@ export default function UXProvider(props) {
         shareOpen,
         setShareOpen: (value) => {
           if (value) {
-            window.scrollTo({
-              top: 0,
-              left: 0,
-              behavior: 'smooth',
-            })
             setEmbedOpen(false)
             setContactOpen(false)
             setTypeShare('simulator')
@@ -60,11 +50,6 @@ export default function UXProvider(props) {
         contactOpen,
         setContactOpen: (value) => {
           if (value) {
-            window.scrollTo({
-              top: 0,
-              left: 0,
-              behavior: 'smooth',
-            })
             setShareOpen(false)
             setEmbedOpen(false)
             setTypeShare('simulator')

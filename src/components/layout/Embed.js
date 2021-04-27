@@ -16,6 +16,7 @@ export default function Embed(props) {
 
   return (
     <Panel
+      small={props.small}
       open={embedOpen}
       toggleClose={() => {
         setTheme('default')

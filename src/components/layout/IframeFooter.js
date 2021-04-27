@@ -7,30 +7,26 @@ import repufrancaise from './footer/repufrancaise.jpg'
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
 import Logo from 'components/base/Logo'
+import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.div`
   position: relative;
-  background-color: white;
+  background-color: ${(props) =>
+    props.theme.colors[props.background || 'second']};
 `
 const Content = styled.div`
+  max-width: 37rem;
+  margin: 0 auto;
+  padding: 1rem 0.5rem 0.5rem;
+`
+const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 3vw;
-  padding: 1em 0;
-
-  ${(props) => props.theme.mq.small} {
-    flex-direction: column-reverse;
-  }
+  justify-content: center;
+  margin: 0 0 1rem;
 `
 const LogosWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 1rem 0 0;
-
-  ${(props) => props.theme.mq.small} {
-    margin: 1rem 0 0;
-  }
 `
 const Logos = styled(MagicLink)`
   display: flex;
@@ -47,8 +43,14 @@ const Institution = styled.img`
 
 export default function Footer(props) {
   return (
-    <Wrapper>
+    <Wrapper background={props.background}>
       <Content>
+        <MobileButtons iframe />
+        <ButtonWrapper>
+          <Button to={process.env.REACT_APP_URL}>
+            En savoir plus sur ce simulateur
+          </Button>
+        </ButtonWrapper>
         <LogosWrapper>
           <Logos to='https://datagir.ademe.fr/'>
             <Institution src={repufrancaise} alt='République Française' />
@@ -56,9 +58,6 @@ export default function Footer(props) {
             <Logo />
           </Logos>
         </LogosWrapper>
-        {props.about && (
-          <Button to={props.about}>En savoir plus sur ce simulateur</Button>
-        )}
       </Content>
     </Wrapper>
   )

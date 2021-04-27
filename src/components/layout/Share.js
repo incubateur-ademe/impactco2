@@ -53,6 +53,7 @@ export default function Share(props) {
 
   return (
     <Panel
+      small={props.small}
       open={shareOpen}
       toggleClose={() => setShareOpen((prevOpen) => !prevOpen)}
       index={1}

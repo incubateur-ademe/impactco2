@@ -22,7 +22,10 @@ export default function Iframe(props) {
         <Header iframe />
         {props.children}
       </Content>
-      <IframeFooter about={process.env.REACT_APP_URL} />
+      <IframeFooter
+        about={process.env.REACT_APP_URL}
+        background={'background'}
+      />
     </Wrapper>
   )
 }
