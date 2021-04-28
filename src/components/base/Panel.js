@@ -87,7 +87,7 @@ export default function Panel(props) {
             index={props.index}
           />
         ))}
-      <Content open={props.open} small={props.small}>
+      <Content small={props.small} open={props.open}>
         <ButtonClose onClick={props.toggleClose}>+</ButtonClose>
         {props.children}
       </Content>

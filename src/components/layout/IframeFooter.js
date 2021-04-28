@@ -11,8 +11,7 @@ import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.div`
   position: relative;
-  background-color: ${(props) =>
-    props.theme.colors[props.background || 'second']};
+  background-color: ${(props) => props.theme.colors.second};
 `
 const Content = styled.div`
   max-width: 37rem;
@@ -41,9 +40,9 @@ const Institution = styled.img`
   height: 5.625em;
 `
 
-export default function Footer(props) {
+export default function Footer() {
   return (
-    <Wrapper background={props.background}>
+    <Wrapper>
       <Content>
         <MobileButtons iframe />
         <ButtonWrapper>
@@ -51,14 +50,14 @@ export default function Footer(props) {
             En savoir plus sur ce simulateur
           </Button>
         </ButtonWrapper>
-        <LogosWrapper>
-          <Logos to='https://datagir.ademe.fr/'>
-            <Institution src={repufrancaise} alt='République Française' />
-            <Institution src={ademe} alt='ADEME' />
-            <Logo />
-          </Logos>
-        </LogosWrapper>
       </Content>
+      <LogosWrapper>
+        <Logos to='https://datagir.ademe.fr/'>
+          <Institution src={repufrancaise} alt='République Française' />
+          <Institution src={ademe} alt='ADEME' />
+          <Logo />
+        </Logos>
+      </LogosWrapper>
     </Wrapper>
   )
 }
