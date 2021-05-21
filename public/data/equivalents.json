@@ -37,7 +37,7 @@
     "emoji": "🚗",
     "total": 0.193,
     "default": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant."
   },
   {
     "id": 206589,
@@ -47,7 +47,7 @@
     "emoji": "🚅",
     "total": 0.00173,
     "default": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\"<br/>Périmètre : émissions liées à la production et la distribution d'électricité."
   },
   {
     "id": 27010,
@@ -57,7 +57,7 @@
     "emoji": "📱",
     "total": 16.5,
     "default": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - classique\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - classique\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 27043,
@@ -67,7 +67,7 @@
     "emoji": "👖",
     "total": 23.2,
     "default": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 20587,
@@ -87,7 +87,7 @@
     "emoji": "🛋",
     "total": 197,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 27044,
@@ -97,7 +97,7 @@
     "emoji": "👕",
     "total": 5.2,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 28081,
@@ -107,7 +107,7 @@
     "emoji": "✈️",
     "total": 0.102,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, sans trainées\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, sans trainées\"<br/>Périmètre : émissions directes, production et distribution de carburant."
   },
   {
     "id": 20688,
@@ -127,7 +127,7 @@
     "emoji": "📺",
     "total": 371,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 24295,
@@ -145,9 +145,9 @@
       "fr": "kg d'ordures ménagères"
     },
     "emoji": "🚮",
-    "total": 0.215,
+    "total": 0.386,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Ordures ménagères - fin de vie moyenne\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Ordures ménagères résiduelles - Fin de vie moyenne - Impacts\""
   },
   {
     "id": 24283,
@@ -157,7 +157,7 @@
     "emoji": "🚰",
     "total": 0.000132,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
   },
   {
     "id": 31000,
@@ -165,9 +165,9 @@
       "fr": "Litre[s] d'eau de source"
     },
     "emoji": "💧",
-    "total": 0.45,
+    "total": 0.453,
     "default": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau embouteillée de source\""
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
   },
   {
     "id": 55,
