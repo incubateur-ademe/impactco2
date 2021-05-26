@@ -15,6 +15,7 @@ import Iframe from 'components/layout/Iframe'
 import EquivalentsModal from 'components/modals/EquivalentsModal'
 import CO2EModal from 'components/modals/CO2EModal'
 import AboutModal from 'components/modals/AboutModal'
+import InstallInstructionsModal from 'components/modals/InstallInstructionsModal'
 import Comparator from 'views/Comparator'
 
 const queryClient = new QueryClient()
@@ -45,6 +46,7 @@ function App() {
                     <EquivalentsModal />
                     <CO2EModal />
                     <AboutModal />
+                    <InstallInstructionsModal />
                   </EquivalentsProvider>
                 </CO2NumberProvider>
               </ModalProvider>

@@ -53,7 +53,7 @@ const ButtonClose = styled.div`
   line-height: 0.5;
 `
 const Scroll = styled.div`
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 2rem;
 `
 export default function Modal(props) {

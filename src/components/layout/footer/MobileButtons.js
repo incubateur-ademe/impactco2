@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import UXContext from 'utils/UXContext'
+import ModalContext from 'utils/ModalContext'
 import ShareWrapper from 'components/wrappers/ShareWrapper'
 import EmbedWrapper from 'components/wrappers/EmbedWrapper'
 import ContactWrapper from 'components/wrappers/ContactWrapper'
@@ -78,7 +79,9 @@ export default function MobileButtons(props) {
     setShareOpen,
     setContactOpen,
     installPrompt,
+    iOSPrompt,
   } = useContext(UXContext)
+  const { setInstallInstructions } = useContext(ModalContext)
 
   return (
     <>
@@ -114,8 +117,14 @@ export default function MobileButtons(props) {
           </Icon>
           <Label>Partager</Label>
         </Button>
-        {installPrompt && (
-          <Button onClick={() => installPrompt.prompt()}>
+        {(installPrompt || iOSPrompt) && (
+          <Button
+            onClick={() =>
+              installPrompt
+                ? installPrompt.prompt()
+                : setInstallInstructions(true)
+            }
+          >
             <Icon>
               <Install x='0px' y='0px' viewBox='0 0 512 512'>
                 <path
