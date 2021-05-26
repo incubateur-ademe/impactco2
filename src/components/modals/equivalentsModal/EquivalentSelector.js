@@ -10,7 +10,7 @@ const EquivalentList = styled.ul`
   flex: 1;
   margin: 0 0 1em;
   padding: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
 `
 const SortableList = SortableContainer(({ equivalents, toggleActive }) => {
   return (

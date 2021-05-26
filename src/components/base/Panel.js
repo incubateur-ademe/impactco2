@@ -28,7 +28,7 @@ const Content = styled.div`
   background-color: ${(props) =>
     props.small ? 'transparent' : props.theme.colors.background};
   border-left: 5px solid ${(props) => props.theme.colors.main};
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: visible;
   transform: translateX(${(props) => (props.open ? 0 : '100%')});
   transition: transform 400ms ease-out;
