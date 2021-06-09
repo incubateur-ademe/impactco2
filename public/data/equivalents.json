@@ -130,6 +130,26 @@
     "about": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
+    "id": 27002,
+    "name": {
+      "fr": "Ordinateur portable"
+    },
+    "emoji": "💻",
+    "total": 156,
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Ordinateur - portable\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27006,
+    "name": {
+      "fr": "Ecran[s] d'ordinateur 23,8 pouces"
+    },
+    "emoji": "🖥️",
+    "total": 248,
+    "default": false,
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Ecran - 23,8 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
     "id": 24295,
     "name": {
       "fr": "Feuille[s] de papier A4"
