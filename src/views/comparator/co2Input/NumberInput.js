@@ -75,11 +75,13 @@ export default function NumberInput() {
     <Wrapper>
       <InputWrapper>
         <Input
-          type='number'
+          type='text'
+          inputmode='numeric'
+          pattern='[0-9]*'
           value={Math.round(CO2 * 100) / 100}
           onChange={(e) => {
-            if (e.currentTarget.value <= 99999) {
-              setCO2(e.currentTarget.value)
+            if (e.target.value <= 99999) {
+              setCO2(Number(e.target.value) || 0)
             }
           }}
         />
