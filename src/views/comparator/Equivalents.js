@@ -23,18 +23,20 @@ const SortableList = SortableContainer(({ equivalents }) => {
 })
 export default function Equivalents() {
   const { equivalents, setEquivalents } = useContext(EquivalentsContext)
-
+  console.log(equivalents)
   return (
     <SortableList
       equivalents={equivalents.filter((equivalent) => equivalent.active)}
       distance={1}
       axis={'xy'}
       onSortEnd={({ oldIndex, newIndex }) => {
-        const equivalentToMove = equivalents[oldIndex]
-        const equivalentsCopy = JSON.parse(JSON.stringify(equivalents))
+        console.log(oldIndex, newIndex)
+        const activeElements = equivalents.filter((equivalent) => equivalent.active)
+        const equivalentToMove = activeElements[oldIndex]
+        const equivalentsCopy = JSON.parse(JSON.stringify(activeElements))
         equivalentsCopy.splice(oldIndex, 1)
         equivalentsCopy.splice(newIndex, 0, equivalentToMove)
-        setEquivalents(equivalentsCopy)
+        setEquivalents([...equivalentsCopy, ...equivalents.filter((equivalent) => !equivalent.active)] )
       }}
       useDragHandle
     />
