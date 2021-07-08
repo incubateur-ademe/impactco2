@@ -29,25 +29,28 @@ function App() {
             <StyleProvider>
               <ModalProvider>
                 <CO2NumberProvider>
-                  <EquivalentsProvider>
-                    <GlobalStyle />
-                    <Switch>
-                      <Route path='/embed'>
+                  <GlobalStyle />
+                  <Switch>
+                    <Route path='/embed'>
+                      <EquivalentsProvider iframe>
                         <Iframe>
                           <Comparator iframe />
                         </Iframe>
-                      </Route>
-                      <Route>
+                        <EquivalentsModal />
+                      </EquivalentsProvider>
+                    </Route>
+                    <Route>
+                      <EquivalentsProvider>
                         <Web>
                           <Comparator />
                         </Web>
-                      </Route>
-                    </Switch>
-                    <EquivalentsModal />
-                    <CO2EModal />
-                    <AboutModal />
-                    <InstallInstructionsModal />
-                  </EquivalentsProvider>
+                        <EquivalentsModal />
+                      </EquivalentsProvider>
+                    </Route>
+                  </Switch>
+                  <CO2EModal />
+                  <AboutModal />
+                  <InstallInstructionsModal />
                 </CO2NumberProvider>
               </ModalProvider>
             </StyleProvider>

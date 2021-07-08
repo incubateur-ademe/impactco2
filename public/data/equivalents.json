@@ -7,6 +7,7 @@
     "emoji": "🍔",
     "total": 7.26,
     "default": true,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
   },
   {
@@ -17,6 +18,7 @@
     "emoji": "🍎",
     "total": 0.51,
     "default": true,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
   },
   {
@@ -27,6 +29,7 @@
     "emoji": "🏘️",
     "total": 18.63,
     "default": true,
+    "defaultEmbed": true,
     "about": "Une année de chauffage (en France, la période de chauffage est généralement comprise entre le 15 octobre et le 15 avril de l'année suivante) au gaz équivaut à 3.4tCO<sub>2</sub>e (<a href='https://nosgestesclimat.fr/documentation/logement/gaz' target='_blank'>source</a>).<br/><br/>Ce qui fait qu'une journée de chauffage en période de chauffe est équivalente à 18.63kgCO<sub>2</sub>e."
   },
   {
@@ -37,6 +40,7 @@
     "emoji": "🚗",
     "total": 0.193,
     "default": true,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
@@ -47,6 +51,7 @@
     "emoji": "🚅",
     "total": 0.00173,
     "default": true,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\"<br/>Périmètre : émissions liées à la production et la distribution d'électricité.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
@@ -57,6 +62,7 @@
     "emoji": "📱",
     "total": 16.5,
     "default": true,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - classique\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -67,6 +73,7 @@
     "emoji": "👖",
     "total": 23.2,
     "default": true,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -77,6 +84,7 @@
     "emoji": "📚",
     "total": 1.18,
     "default": true,
+    "defaultEmbed": true,
     "about": "Dans la Base Carbone, la valeur est donnée pour un livre de 300g.<br/><br/>En utilisant les chiffres de <a href='http://www.scolibris.fr/rezolibris/download.php?file=fichetechnique/38/pdf/Poids-du-livre.pdf' target='_blank'>Scolibris</a> on voit que 300g correspond à un livre de poche de 371 pages (0.110.18300 + 0.110.1880*371/2).<br/><br/>Si on estime le nombre moyen de page d'un livre à 400 (<a href='https://actualitte.com/article/35773/numerique/la-taille-moyenne-du-livre-s-est-allongee-de-80-pages-en-15-ans' target='_blank'>source</a>) on arrive à un poids de 322.74g.<br/><br/>Ce qui fait qu'un livre de poche moyen est équivalent à 1.18kgCO2e"
   },
   {
@@ -87,6 +95,7 @@
     "emoji": "🛋",
     "total": 197,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -97,6 +106,7 @@
     "emoji": "👕",
     "total": 5.2,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -107,6 +117,7 @@
     "emoji": "✈️",
     "total": 0.186,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
@@ -117,6 +128,7 @@
     "emoji": "🍗",
     "total": 1.58,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   },
   {
@@ -127,6 +139,7 @@
     "emoji": "📺",
     "total": 371,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -137,6 +150,7 @@
     "emoji": "💻",
     "total": 156,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Ordinateur - portable\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -147,6 +161,7 @@
     "emoji": "🖥️",
     "total": 248,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Ecran - 23,8 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -157,6 +172,7 @@
     "emoji": "📄",
     "total": 0.00458,
     "default": false,
+    "defaultEmbed": false,
     "about": "Dans la Base Carbone, le facteur d'émissions est donné pour une \"Ramette de papier blanc - 80g/m² A4 - Hors utilisation et fin de vie\" de 500 feuilles."
   },
   {
@@ -167,6 +183,7 @@
     "emoji": "🚮",
     "total": 0.386,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Ordures ménagères résiduelles - Fin de vie moyenne - Impacts\""
   },
   {
@@ -177,6 +194,7 @@
     "emoji": "🚰",
     "total": 0.000132,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
   },
   {
@@ -187,6 +205,7 @@
     "emoji": "💧",
     "total": 0.453,
     "default": false,
+    "defaultEmbed": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
   },
   {
@@ -197,6 +216,7 @@
     "emoji": "🎬",
     "total": 0.004,
     "default": false,
+    "defaultEmbed": false,
     "about": "G. Kamiya – International Energy Agency (<a target='_blank' href='https://www.iea.org/commentaries/the-carbon-footprint-of-streaming-video-fact-checking-the-headlines'>source</a>)"
   }
 ]

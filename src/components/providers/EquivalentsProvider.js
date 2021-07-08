@@ -7,7 +7,7 @@ import {
 
 import EquivalentsContext from 'utils/EquivalentsContext'
 
-export default function CO2NumberProvider(props) {
+export default function EquivalentsProvider(props) {
   const [equivalents, setEquivalents] = useState([])
 
   const [equivalentsVisibles, setEquivalentsVisibles] = useQueryParam(
@@ -47,14 +47,16 @@ export default function CO2NumberProvider(props) {
           } else {
             setEquivalents(
               res.map((equivalent) => {
-                equivalent.active = equivalent.default
+                equivalent.active = props.iframe
+                  ? equivalent.defaultEmbed
+                  : equivalent.default
                 return equivalent
               })
             )
           }
         })
     }
-  }, [equivalentsVisibles, equivalentsFetched])
+  }, [equivalentsVisibles, equivalentsFetched, props.iframe])
 
   return (
     <EquivalentsContext.Provider

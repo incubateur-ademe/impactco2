@@ -7,11 +7,11 @@ import Equivalents from './comparator/Equivalents'
 const Wrapper = styled.div`
   flex: 1;
 `
-export default function Comparator() {
+export default function Comparator(props) {
   return (
     <Wrapper>
       <CO2Input />
-      <Equivalents />
+      <Equivalents iframe={props.iframe} />
     </Wrapper>
   )
 }
