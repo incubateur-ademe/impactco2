@@ -207,16 +207,5 @@
     "default": false,
     "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
-  },
-  {
-    "id": 55,
-    "name": {
-      "fr": "Heure[s] de streaming vidéo"
-    },
-    "emoji": "🎬",
-    "total": 0.004,
-    "default": false,
-    "defaultEmbed": false,
-    "about": "G. Kamiya – International Energy Agency (<a target='_blank' href='https://www.iea.org/commentaries/the-carbon-footprint-of-streaming-video-fact-checking-the-headlines'>source</a>)"
   }
 ]
