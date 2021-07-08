@@ -95,7 +95,7 @@
     "emoji": "🛋",
     "total": 197,
     "default": false,
-    "defaultEmbed": false,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -117,7 +117,7 @@
     "emoji": "✈️",
     "total": 0.186,
     "default": false,
-    "defaultEmbed": false,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
@@ -139,7 +139,7 @@
     "emoji": "📺",
     "total": 371,
     "default": false,
-    "defaultEmbed": false,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -150,7 +150,7 @@
     "emoji": "💻",
     "total": 156,
     "default": false,
-    "defaultEmbed": false,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Ordinateur - portable\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -194,7 +194,7 @@
     "emoji": "🚰",
     "total": 0.000132,
     "default": false,
-    "defaultEmbed": false,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
   },
   {
@@ -205,7 +205,7 @@
     "emoji": "💧",
     "total": 0.453,
     "default": false,
-    "defaultEmbed": false,
+    "defaultEmbed": true,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
   },
   {
