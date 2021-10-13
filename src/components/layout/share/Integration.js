@@ -24,7 +24,7 @@ const Svg = styled.svg`
     width: 1.7rem;
   }
   path {
-    fill: ${(props) => props.theme.colors.quad}!important;
+    fill: ${(props) => props.theme.colors.background}!important;
   }
 `
 export default function Integration(props) {

@@ -11,7 +11,7 @@ const Text = styled.input`
   display: block;
   width: 100%;
   padding: 0.3rem 0;
-  color: ${(props) => props.theme.colors.ter};
+  color: ${(props) => props.theme.colors.text};
   font-family: 'Courier New', Courier, monospace;
   line-height: inherit;
   white-space: nowrap;

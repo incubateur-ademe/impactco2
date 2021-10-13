@@ -33,27 +33,23 @@ const ShareButtons = styled.div`
   }
 `
 export default function Share(props) {
-  const {
-    shareOpen,
-    setShareOpen,
-    typeShare,
-    setTypeShare,
-    setEmbedOpen,
-  } = useContext(UXContext)
+  const { shareOpen, setShareOpen, typeShare, setTypeShare, setEmbedOpen } =
+    useContext(UXContext)
 
   let location = useLocation()
-  const [url, setUrl] = useState(`${window.location.origin}/${location.search}`)
+  const [url, setUrl] = useState()
   useEffect(() => {
     setUrl(
-      `${window.location.origin}/${
-        typeShare === 'result' ? location.search : ''
+      `${window.location.origin}${
+        typeShare === 'result' ? location.pathname + location.search : ''
       }`
     )
-  }, [location.search, typeShare])
+  }, [location.search, location.pathname, typeShare])
 
   return (
     <Panel
       small={props.small}
+      id={props.small ? 'share-mobile' : null}
       open={shareOpen}
       toggleClose={() => setShareOpen((prevOpen) => !prevOpen)}
       index={1}
@@ -66,17 +62,29 @@ export default function Share(props) {
           onChange={setTypeShare}
           options={[
             { value: 'simulator', label: `ce simulateur` },
-            { value: 'result', label: `mon résultat` },
+            {
+              value: 'result',
+              label: `cette fiche`,
+            },
           ]}
         />
       </h2>
       <ShareButtons>
         <Integration onClick={() => setEmbedOpen(true)} />
-        <Mail title={props.title} message={props.message} url={url} />
-        <Facebook title={props.title} message={props.message} url={url} />
-        <Twitter title={props.title} message={props.message} url={url} />
-        <Linkedin title={props.title} message={props.message} url={url} />
-        <Whatsapp title={props.title} message={props.message} url={url} />
+        <Mail
+          subject={props.messages.mail[typeShare].subject}
+          body={props.messages.mail[typeShare].body}
+          url={url}
+        />
+        <Facebook quote={props.messages.facebook[typeShare].quote} url={url} />
+        <Twitter title={props.messages.twitter[typeShare].title} url={url} />
+        <Linkedin
+          title={props.messages.linkedin[typeShare].title}
+          summary={props.messages.linkedin[typeShare].summary}
+          source={props.messages.linkedin[typeShare].source}
+          url={url}
+        />
+        <Whatsapp title={props.messages.whatsapp[typeShare].title} url={url} />
       </ShareButtons>
       <Link url={url} />
     </Panel>
