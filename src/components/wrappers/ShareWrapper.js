@@ -27,8 +27,7 @@ Voici un résultat de recherche sur le site Mon Convertisseur CO2 que je voulais
         },
         facebook: {
           simulator: {
-            quote:
-              '2 tonnes de CO2 ça représente quoi ? 🤔 Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Grâce à ce simulateur Datagir, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍',
+            quote: `2 tonnes de CO2 ça représente quoi ? � Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur l'environnement ! Grâce à ce simulateur Datagir, découvrez et comparez l’impact des objets du quotidien sur le climat �`,
           },
           result: {
             quote: `Comme moi, donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Voici les résultats de ma recherche sur ce simulateur Datagir. Vous aussi, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
@@ -36,8 +35,7 @@ Voici un résultat de recherche sur le site Mon Convertisseur CO2 que je voulais
         },
         twitter: {
           simulator: {
-            title:
-              '2 tonnes de CO2 ça représente quoi ? 🤔 Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Grâce à ce simulateur @_datagir, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍',
+            title: `2 tonnes de CO2 ça représente quoi ? � Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur l'environnement ! Grâce à ce simulateur @_datagir, découvrez et comparez l’impact des objets du quotidien sur le climat �`,
           },
           result: {
             title: `Comme moi, donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Voici les résultats de ma recherche sur ce simulateur @_datagir. Vous aussi, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
@@ -53,8 +51,7 @@ Voici un résultat de recherche sur le site Mon Convertisseur CO2 que je voulais
         },
         whatsapp: {
           simulator: {
-            title:
-              '2 tonnes de CO2 ça représente quoi ? 🤔 Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Grâce à ce simulateur Datagir, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍',
+            title: `2 tonnes de CO2 ça représente quoi ? � Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur l'environnement ! Grâce à ce simulateur Datagir, découvrez et comparez l’impact des objets du quotidien sur le climat �`,
           },
           result: {
             title: `Comme moi, donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Voici les résultats de ma recherche sur ce simulateur Datagir. Vous aussi, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
