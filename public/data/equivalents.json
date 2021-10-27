@@ -55,15 +55,15 @@
     "about": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\"<br/>Périmètre : émissions liées à la production et la distribution d'électricité.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
-    "id": 27010,
+    "id": 27012,
     "name": {
       "fr": "Smartphone[s]"
     },
     "emoji": "📱",
-    "total": 16.5,
+    "total": 32.8,
     "default": true,
     "defaultEmbed": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - classique\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+    "about": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 27043,
