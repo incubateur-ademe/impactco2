@@ -46,7 +46,7 @@ const Mail = styled.svg`
   transition: all 300ms ease-out;
 
   path {
-    fill: ${(props) => props.theme.colors.second};
+    fill: ${(props) => props.theme.colors.background};
   }
 `
 export default function ContactButton(props) {

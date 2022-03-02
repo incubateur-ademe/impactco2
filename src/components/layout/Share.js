@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from '@reach/router'
 
 import UXContext from 'utils/UXContext'
 import Select from 'components/base/FancySelect'
@@ -32,6 +32,17 @@ const ShareButtons = styled.div`
     }
   }
 `
+const Title = styled.div`
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: ${(props) => props.theme.colors.second};
+  font-weight: bold;
+  line-height: 1.2;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.5rem;
+  }
+`
 export default function Share(props) {
   const { shareOpen, setShareOpen, typeShare, setTypeShare, setEmbedOpen } =
     useContext(UXContext)
@@ -40,7 +51,7 @@ export default function Share(props) {
   const [url, setUrl] = useState()
   useEffect(() => {
     setUrl(
-      `${window.location.origin}${
+      `${window.location.origin}/${
         typeShare === 'result' ? location.pathname + location.search : ''
       }`
     )
@@ -54,7 +65,7 @@ export default function Share(props) {
       toggleClose={() => setShareOpen((prevOpen) => !prevOpen)}
       index={1}
     >
-      <h2>
+      <Title>
         Partager{' '}
         <Select
           fancy
@@ -65,10 +76,11 @@ export default function Share(props) {
             {
               value: 'result',
               label: `cette fiche`,
+              disabled: !props.result,
             },
           ]}
         />
-      </h2>
+      </Title>
       <ShareButtons>
         <Integration onClick={() => setEmbedOpen(true)} />
         <Mail

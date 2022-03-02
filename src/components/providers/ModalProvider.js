@@ -3,21 +3,21 @@ import ModalContext from 'utils/ModalContext'
 
 export default function ModalProvider(props) {
   const [CO2E, setCO2E] = useState(false)
-  const [equivalents, setEquivalents] = useState(false)
-  const [about, setAbout] = useState(false)
-  const [installInstructions, setInstallInstructions] = useState(false)
+  const [map, setMap] = useState(false)
+  const [avoid, setAvoid] = useState(false)
+  const [next, setNext] = useState(false)
 
   return (
     <ModalContext.Provider
       value={{
         CO2E,
         setCO2E,
-        equivalents,
-        setEquivalents,
-        about,
-        setAbout,
-        installInstructions,
-        setInstallInstructions,
+        map,
+        setMap,
+        avoid,
+        setAvoid,
+        next,
+        setNext,
       }}
     >
       {props.children}

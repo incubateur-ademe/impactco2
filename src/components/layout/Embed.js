@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
+import styled from 'styled-components'
 
-import StyleContext from 'utils/StyleContext'
 import UXContext from 'utils/UXContext'
 import Panel from 'components/base/Panel'
 import Themes from './embed/Themes'
@@ -8,23 +8,31 @@ import Code from './embed/Code'
 import ContactPrompt from 'components/base/ContactPrompt'
 import Select from 'components/base/FancySelect'
 
+const Title = styled.div`
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: ${(props) => props.theme.colors.second};
+  font-weight: bold;
+  line-height: 1.2;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.5rem;
+  }
+`
 export default function Embed(props) {
-  const { themes, theme, setTheme } = useContext(StyleContext)
-  const { embedOpen, setEmbedOpen, typeShare, setTypeShare } = useContext(
-    UXContext
-  )
+  const { embedOpen, setEmbedOpen, typeShare, setTypeShare } =
+    useContext(UXContext)
 
   return (
     <Panel
       small={props.small}
       open={embedOpen}
       toggleClose={() => {
-        setTheme('default')
         setEmbedOpen((prevOpen) => !prevOpen)
       }}
       index={0}
     >
-      <h2>
+      <Title>
         Intégrer{' '}
         <Select
           fancy
@@ -32,14 +40,18 @@ export default function Embed(props) {
           onChange={setTypeShare}
           options={[
             { value: 'simulator', label: `ce simulateur` },
-            { value: 'result', label: `mon résultat` },
+            { value: 'result', label: `cette fiche`, disabled: !props.result },
           ]}
         />
-      </h2>
+      </Title>
       <Code id={props.id} typeShare={typeShare} />
-      <h3>Options d'intégration</h3>
-      {props.children}
-      <Themes themes={themes} theme={theme} setTheme={setTheme} />
+      {props.children && (
+        <>
+          <h3>Options d'intégration</h3>
+          {props.children}
+        </>
+      )}
+      <Themes />
       <ContactPrompt configurator />
     </Panel>
   )

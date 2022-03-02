@@ -15,6 +15,17 @@ const Form = styled.form`
   width: 100%;
   margin-bottom: 3rem;
 `
+const Title = styled.div`
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: ${(props) => props.theme.colors.second};
+  font-weight: bold;
+  line-height: 1.2;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.5rem;
+  }
+`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -50,8 +61,7 @@ export default function Contact(props) {
       }}
       index={2}
     >
-      <h2>Nous contacter</h2>
-
+      <Title>Nous contacter</Title>
       <Form
         id='contact'
         method='post'
@@ -112,7 +122,9 @@ export default function Contact(props) {
             Je souhaite en savoir plus sur Datagir
           </option>
           {props.options.map((option) => (
-            <option value={option.value}>{option.label}</option>
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
           ))}
           <option value='bug'>J'ai trouvé un bug</option>
           <option value='amelioration'>

@@ -2,26 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  width: calc(50% - 1em);
-  margin: 0.5em;
+  width: calc(50% - 1rem);
+  margin: 0.5rem;
 `
 const Content = styled.div`
   width: 100%;
   height: 100%;
-  padding: 1em;
+  padding: 1rem;
   font-family: ${(props) => props.displayTheme.fonts};
   background-color: ${(props) => props.displayTheme.colors.background};
-  border-radius: 1em;
-  box-shadow: ${(props) =>
-    props.current
-      ? 'rgba(0, 0, 0, 0.64) 0px 0px 8px 0px, rgba(0, 0, 0, 0.16) 0px 0px 15px 0px, rgba(0, 0, 0, 0.48) 0px 0px 20px 4px'
-      : 'rgba(0, 0, 0, 0.16) 0px 0px 8px 0px, rgba(0, 0, 0, 0.04) 0px 0px 15px 0px, rgba(0, 0, 0, 0.12) 0px 0px 20px 4px'}!important;
+  border: 0.125rem solid
+    ${(props) =>
+      props.displayTheme.colors[props.current ? 'main' : 'background']};
+  border-radius: 1rem;
   cursor: pointer;
 `
-const Title = styled.h4`
+const Title = styled.div`
   margin-bottom: 0.4em;
   font-size: 1.5em;
-  color: ${(props) => props.displayTheme.colors.text};
+  font-weight: bold;
+  color: ${(props) => props.displayTheme.colors.second};
 `
 const Tiles = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const Tile = styled.div`
   background-color: ${(props) =>
     props.active
       ? props.displayTheme.colors.main
-      : props.displayTheme.colors.second};
+      : props.displayTheme.colors.background};
   border: 2px solid
     ${(props) =>
       props.active

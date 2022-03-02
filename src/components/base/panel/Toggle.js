@@ -32,7 +32,7 @@ const Arrow = styled.svg`
   transition: opacity 300ms ease-out;
 
   path {
-    fill: ${(props) => props.theme.colors.second};
+    fill: ${(props) => props.theme.colors.background};
   }
 `
 export default function Toggle(props) {
@@ -43,6 +43,7 @@ export default function Toggle(props) {
         open={props.open}
         onClick={props.onClick}
         data-tip={props.tooltip}
+        aria-label={props.tooltip}
       >
         {props.children}
         <Arrow

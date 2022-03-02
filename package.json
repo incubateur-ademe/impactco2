@@ -1,63 +1,54 @@
 {
-  "name": "ecolab-calculateurco2inverse",
-  "version": "0.1.0",
+  "name": "monconvertisseurco2",
+  "version": "0.2.0",
   "private": true,
+  "author": "Datagir",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.1",
+    "axios": "^0.26.0",
+    "babel-plugin-styled-components": "^2.0.6",
     "copy-to-clipboard": "^3.3.1",
+    "gatsby": "^4.9.0",
+    "gatsby-plugin-manifest": "^4.9.0",
+    "gatsby-plugin-matomo": "^0.11.0",
+    "gatsby-plugin-offline": "^5.9.0",
+    "gatsby-plugin-preact": "^6.9.0",
+    "gatsby-plugin-react-helmet": "^5.9.0",
+    "gatsby-plugin-sitemap": "^5.9.0",
+    "gatsby-plugin-styled-components": "^5.9.0",
+    "gatsby-plugin-use-query-params": "^1.0.1",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "iframe-resizer": "^4.3.1",
-    "query-string": "^6.13.8",
+    "preact": "^10.5.14",
+    "preact-render-to-string": "^5.1.19",
+    "query-string": "^7.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-query": "^3.13.10",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
+    "react-helmet": "^6.1.0",
+    "react-query": "^3.18.1",
+    "react-scripts": "5.0.0",
     "react-share": "^4.4.0",
-    "react-sortable-hoc": "^1.11.0",
     "react-switch": "^6.0.0",
     "react-tooltip": "^4.2.17",
     "styled-components": "^5.2.1",
     "styled-normalize": "^8.0.7",
+    "twemoji": "^13.0.1",
     "use-query-params": "^1.1.9"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && yarn iframe",
-    "iframe": "webpack",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "webpack": "^5.18.0",
+    "gatsby-cli": "^4.9.0",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
+    "prettier": "^2.3.2",
+    "webpack": "^5.16.0",
     "webpack-cli": "^4.4.0"
   },
-  "resolutions": {
-    "react-scripts/eslint-webpack-plugin": "2.3.0"
-  },
-  "bit": {
-    "env": {},
-    "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
+  "scripts": {
+    "build": " yarn iframe && gatsby build",
+    "iframe": "webpack",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }
 }

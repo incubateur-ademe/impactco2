@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import UXContext from 'utils/UXContext'
-import ModalContext from 'utils/ModalContext'
 import ShareWrapper from 'components/wrappers/ShareWrapper'
 import EmbedWrapper from 'components/wrappers/EmbedWrapper'
 import ContactWrapper from 'components/wrappers/ContactWrapper'
@@ -23,19 +22,19 @@ const Button = styled.button`
   align-items: center;
   margin: 0;
   padding: 0;
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.second};
   background: none;
   border: none;
 `
 const StyledLink = styled(MagicLink)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-  color: ${(props) => props.theme.colors.text};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: ${(props) => props.theme.colors.second};
   text-decoration: none;
 `
-const Icon = styled.div`
+const Icon = styled.span`
   position: relative;
   width: 3rem;
   height: 3rem;
@@ -51,7 +50,7 @@ const Icon = styled.div`
     height: auto;
 
     path {
-      fill: ${(props) => props.theme.colors.second};
+      fill: ${(props) => props.theme.colors.background};
     }
   }
 `
@@ -68,21 +67,14 @@ const Eye = styled.svg`
   width: 1.5rem;
 `
 const Install = styled.svg``
-const Label = styled.div`
+const Label = styled.span`
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: bold;
   text-align: center;
 `
 export default function MobileButtons(props) {
-  const {
-    setEmbedOpen,
-    setShareOpen,
-    setContactOpen,
-    installPrompt,
-    iOSPrompt,
-  } = useContext(UXContext)
-  const { setInstallInstructions } = useContext(ModalContext)
-
+  const { setEmbedOpen, setShareOpen, setContactOpen, installPrompt } =
+    useContext(UXContext)
   return (
     <>
       <Wrapper iframe={props.iframe}>
@@ -117,14 +109,8 @@ export default function MobileButtons(props) {
           </Icon>
           <Label>Partager</Label>
         </Button>
-        {(installPrompt || iOSPrompt) && (
-          <Button
-            onClick={() =>
-              installPrompt
-                ? installPrompt.prompt()
-                : setInstallInstructions(true)
-            }
-          >
+        {installPrompt && (
+          <Button onClick={() => installPrompt.prompt()}>
             <Icon>
               <Install x='0px' y='0px' viewBox='0 0 512 512'>
                 <path
@@ -159,9 +145,7 @@ export default function MobileButtons(props) {
           <Label>Contact</Label>
         </Button>
         {props.iframe && (
-          <StyledLink
-            to={process.env.REACT_APP_URL || 'https://datagir.ademe.fr'}
-          >
+          <StyledLink to={process.env.GATSBY_URL || 'https://datagir.ademe.fr'}>
             <Icon>
               <Eye x='0px' y='0px' viewBox='0 0 469.333 469.333'>
                 <path d='M234.667,170.667c-35.307,0-64,28.693-64,64s28.693,64,64,64s64-28.693,64-64S269.973,170.667,234.667,170.667z' />

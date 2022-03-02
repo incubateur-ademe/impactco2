@@ -5,7 +5,7 @@ import UXContext from 'utils/UXContext'
 import MagicLink from 'components/base/MagicLink'
 
 const Text = styled.p``
-const Title = styled.h3``
+const Title = styled.h2``
 const StyledLink = styled.button`
   display: inline;
   margin: 0;
@@ -61,7 +61,7 @@ export default function ContactPrompt(props) {
           <br />
           Ce simulateur est développé de manière ouverte (open source).
           L’ensemble du code est{' '}
-          <MagicLink to={process.env.REACT_APP_REPOSITORY_URL}>
+          <MagicLink to='https://github.com/datagir/quefairedemesdechets/'>
             disponible librement
           </MagicLink>
           .

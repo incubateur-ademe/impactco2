@@ -11,9 +11,7 @@ import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.div`
   position: relative;
-  position: relative;
-  background-color: ${(props) =>
-    props.theme.colors[props.background || 'second']};
+  background-color: ${(props) => props.theme.colors.background};
 `
 const Content = styled.div`
   max-width: 37rem;
@@ -48,7 +46,7 @@ export default function Footer() {
       <Content>
         <MobileButtons iframe />
         <ButtonWrapper>
-          <Button to={process.env.REACT_APP_URL}>
+          <Button to={process.env.GATSBY_URL}>
             En savoir plus sur ce simulateur
           </Button>
         </ButtonWrapper>

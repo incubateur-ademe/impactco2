@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import useWindowSize from 'hooks/useWindowSize'
 import EmbedButton from './panel/EmbedButton'
 import ShareButton from './panel/ShareButton'
 import ContactButton from './panel/ContactButton'
@@ -59,14 +60,15 @@ const ButtonClose = styled.div`
   top: 0.25em;
   right: 0.1em;
   font-size: 3em;
-  font-weight: 700;
+  font-weight: bold;
   transform: rotate(45deg);
   cursor: pointer;
   line-height: 0.5;
 `
 export default function Panel(props) {
-  return (
-    <Wrapper open={props.open} small={props.small}>
+  const { width } = useWindowSize()
+  return (width > 1200 && !props.small) || (width <= 1200 && props.small) ? (
+    <Wrapper open={props.open} small={props.small} id={props.id}>
       {!props.small &&
         (props.index === 0 ? (
           <EmbedButton
@@ -87,10 +89,10 @@ export default function Panel(props) {
             index={props.index}
           />
         ))}
-      <Content small={props.small} open={props.open}>
+      <Content open={props.open} small={props.small}>
         <ButtonClose onClick={props.toggleClose}>+</ButtonClose>
         {props.children}
       </Content>
     </Wrapper>
-  )
+  ) : null
 }

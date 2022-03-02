@@ -12,6 +12,7 @@ export default function Mail(props) {
       onClick={() =>
         window._paq?.push(['trackEvent', 'Share', 'Email', props.url])
       }
+      noIcon
     >
       <Svg height='448pt' viewBox='0 0 448 448' width='448pt'>
         <path d='m314.375 144h-180.75l90.375 77.464844zm0 0' />

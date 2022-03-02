@@ -25,7 +25,7 @@ export default function InstallInstructionsModal() {
             fill='#2E7CF6'
           />
         </Svg>{' '}
-        puis sur "Sur l'écran d'accueil".
+        puis sur "Ajouter à l'écran d'accueil".
       </Text>
     </Modal>
   )

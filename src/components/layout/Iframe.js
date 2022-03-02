@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import IframeFooter from 'components/layout/IframeFooter'
-import Header from 'components/misc/Header'
 
 const Wrapper = styled.div``
 const Content = styled.div`
@@ -16,16 +15,14 @@ const Content = styled.div`
   }
 `
 export default function Iframe(props) {
+  useEffect(() => {
+    window?._paq?.push(['setCookieSameSite', 'None'])
+  }, [])
+
   return (
     <Wrapper>
-      <Content>
-        <Header iframe />
-        {props.children}
-      </Content>
-      <IframeFooter
-        about={process.env.REACT_APP_URL}
-        background={'background'}
-      />
+      <Content>{props.children}</Content>
+      <IframeFooter about={process.env.GATSBY_URL} />
     </Wrapper>
   )
 }

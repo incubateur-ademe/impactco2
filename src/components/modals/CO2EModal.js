@@ -2,16 +2,16 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'utils/ModalContext'
-
 import Modal from 'components/base/Modal'
+import MagicLink from 'components/base/MagicLink'
+import Button from 'components/base/Button'
 
 const Title = styled.h2``
 const Text = styled.p``
 export default function CO2EModal() {
   const { CO2E, setCO2E } = useContext(ModalContext)
-
   return (
-    <Modal open={CO2E} setOpen={setCO2E} textColor={'main'}>
+    <Modal open={CO2E} setOpen={setCO2E}>
       <Title>
         L'équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
       </Title>
@@ -27,6 +27,15 @@ export default function CO2EModal() {
         <sub>2</sub>, alors l'impact total de ce produit est de 29 kg
         d'équivalent CO<sub>2</sub>.
       </Text>
+      <Text>
+        Pour voir plus d'équivalents, vous pouvez utiliser{' '}
+        <MagicLink to={`https://monconvertisseurco2.fr`}>
+          notre convertisseur CO2
+        </MagicLink>
+      </Text>
+      <Button to={`https://monconvertisseurco2.fr`}>
+        Voir Mon Convertisseur CO2
+      </Button>
     </Modal>
   )
 }

@@ -6,55 +6,65 @@ export default function ShareWrapper(props) {
   return (
     <Share
       small={props.small}
+      result={props.result}
       messages={{
         mail: {
           simulator: {
-            subject: `Découvrez et intégrez le simulateur de l'ADEME Mon Convertisseur CO2 !`,
+            subject: `Découvrez et intégrez le simulateur de l'ADEME Que Faire de mes Déchets !`,
             body: `Bonjour,
-
-Vous souhaitez sensibiliser votre communauté ou collaborateurs et les aider à mieux comprendre leur impact sur le climat ?
-
-Visualisez facilement en objet tangible du quotidien un poids en CO2e grâce à ce simulateur Mon Convertisseur CO2.
+            
+Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ?
+            
+Le site Que Faire de mes Déchets permet de savoir quoi faire de vos déchets, de savoir ce qu'ils vont devenir et comment les éviter. 
 
 Découvrez le ici : `,
           },
           result: {
-            subject: `Découvre mon résultat sur le simulateur de l'ADEME Mon Convertisseur CO2`,
+            subject: `Découvre cette fiche résultat sur le site de l'ADEME Que Faire de mes Déchets - ${props.result}`,
             body: `Bonjour,
 
-Voici un résultat de recherche sur le site Mon Convertisseur CO2 que je voulais partager avec toi : `,
+Voici un résultat de recherche sur le site Que Faire de mes Déchets que je voulais partager avec toi : `,
           },
         },
         facebook: {
           simulator: {
-            quote: `2 tonnes de CO2 ça représente quoi ? 🤔 Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur l'environnement ! Grâce à ce simulateur Datagir, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
+            quote:
+              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions ! ♻🌍',
           },
           result: {
-            quote: `Comme moi, donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Voici les résultats de ma recherche sur ce simulateur Datagir. Vous aussi, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
+            quote: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
         twitter: {
           simulator: {
-            title: `2 tonnes de CO2 ça représente quoi ? 🤔 Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur l'environnement ! Grâce à ce simulateur @_datagir, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
+            title:
+              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions ! ♻🌍',
           },
           result: {
-            title: `Comme moi, donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Voici les résultats de ma recherche sur ce simulateur @_datagir. Vous aussi, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
+            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
         linkedin: {
           simulator: {
-            source: 'Mon Convertisseur CO2',
+            source: 'Que Faire de mes Déchets',
+            title:
+              'Retrouvez les consignes de tri de tous les déchets et intégrez cet outil à votre site ! 💻♻🌍',
+            summary:
+              'Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ? Faites-leur découvrir Que faire de mes déchets !  Ce simulateur aussi intégrable librement en iframe sur vos plateformes web et mobiles, de quoi toucher largement les visiteurs de votre site !',
           },
           result: {
-            source: `Mon Convertisseur CO2`,
+            source: `Que faire de mes Déchets`,
+            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
+            summary:
+              'Des questions sur un autre déchet ? Toutes les réponses sont dans Que Faire de mes Déchets !',
           },
         },
         whatsapp: {
           simulator: {
-            title: `2 tonnes de CO2 ça représente quoi ? 🤔 Donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur l'environnement ! Grâce à ce simulateur Datagir, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
+            title: 'Que Faire de mes Déchets ♻🌍',
           },
           result: {
-            title: `Comme moi, donnez du sens aux tonnes et kg de CO2 pour mieux évaluer votre impact sur le climat ! Voici les résultats de ma recherche sur ce simulateur Datagir. Vous aussi, découvrez et comparez l’impact des objets du quotidien sur le climat 🌍`,
+            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
       }}
