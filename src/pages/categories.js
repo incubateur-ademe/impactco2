@@ -1,12 +1,12 @@
 import React from 'react'
 
 import Web from 'components/layout/Web'
-import Equivalents from 'views/Equivalents'
+import Categories from 'views/Categories'
 
-export default function Index() {
+export default function categories() {
   return (
     <Web>
-      <Equivalents />
+      <Categories />
     </Web>
   )
 }

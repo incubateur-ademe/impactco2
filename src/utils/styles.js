@@ -1,25 +1,27 @@
 import { createGlobalStyle } from 'styled-components'
 import styledNormalize from 'styled-normalize'
+import slick from './slick'
 
 export const themes = {
   default: {
     name: 'Clair',
     colors: {
-      main: '#E01B0B',
+      main: '#26827C',
       mainLight: '#F6BFC3',
-      second: '#32337B',
-      secondLight: '#E5EDF5',
+      second: '#004899',
+      secondLight: '#EFF4F9',
       background: '#ffffff',
       footer: '#F6F7F9',
+      footerLight: '#FBFBFC',
       text: '#383838',
-      error: 'red',
+      textLight: '#939699',
     },
     fonts: {
-      body: '"Marianne", sans-serif',
-      title: '"Marianne", sans-serif',
+      body: '"Marianne", Arial, sans-serif',
+      title: '"Marianne", Arial, sans-serif',
     },
     mq: {
-      small: `@media screen and (max-width: ${40}em)`,
+      small: `@media screen and (max-width: ${39}em)`,
       medium: `@media screen and (max-width: ${75}em)`,
       mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
       mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
@@ -30,20 +32,22 @@ export const themes = {
   night: {
     name: 'Sombre',
     colors: {
-      main: '#F6BFC3',
+      main: '#E8F8F7',
+      mainLight: '#F6BFC3',
       second: '#E5EDF5',
       secondLight: '#383838',
       background: '#1e1e1e',
       footer: '#383838',
+      footerLight: '#1e1e1e',
       text: '#ffffff',
-      error: 'red',
+      textLight: '#939699',
     },
     fonts: {
-      body: '"Marianne", sans-serif',
-      title: '"Marianne", sans-serif',
+      body: '"Marianne", Arial, sans-serif',
+      title: '"Marianne", Arial, sans-serif',
     },
     mq: {
-      small: `@media screen and (max-width: ${40}em)`,
+      small: `@media screen and (max-width: ${39}em)`,
       medium: `@media screen and (max-width: ${75}em)`,
       mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
       mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
@@ -56,12 +60,26 @@ export const themes = {
 export const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
 
+  ${slick}
+  .slick-dots  {
+    li {
+      button {
+        border: 0.125rem solid ${(props) => props.theme.colors.main};
+      }
+
+      &.slick-active {
+        button {
+          background: ${(props) => props.theme.colors.main};
+        }
+      }
+    }
+  }
+
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: ${(props) => props.theme.fonts.body};
     line-height: 1.4;
-    text-rendering: geometricPrecision;
   }
 
   body {
@@ -102,5 +120,14 @@ export const GlobalStyle = createGlobalStyle`
 
   option {
     color: #010101;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
   }
 `

@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { GlobalStyle } from 'utils/styles'
+import useIframe from 'hooks/useIframe'
 import ModalProvider from 'components/providers/ModalProvider'
 import UXProvider from 'components/providers/UXProvider'
-import SearchProvider from 'components/providers/SearchProvider'
+import DataProvider from 'components/providers/DataProvider'
 import InstallButton from 'components/base/InstallButton'
 import HeaderWrapper from 'components/wrappers/HeaderWrapper'
 import FooterWrapper from 'components/wrappers/FooterWrapper'
@@ -36,32 +37,27 @@ const FullScreen = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 46.5rem;
+  width: 38.5rem;
   max-width: 100%;
   min-height: ${(props) => (props.iframe ? 'none' : '100vh')};
   margin: 0 auto;
-  padding: 0 0.75rem 5rem;
+  padding: ${(props) => (props.iframe ? 0.75 : 0)}rem 0.75rem
+    ${(props) => (props.iframe ? 0 : 5)}rem;
 `
 export default function Web(props) {
-  const [iframe, setIframe] = useState(false)
-  const [noHeader, setnoHeader] = useState(false)
-
-  useEffect(() => {
-    setIframe(window.location.search.includes('iframe'))
-    setnoHeader(window.location.search.includes('noheader'))
-  }, [])
+  const iframe = useIframe()
 
   return (
     <Wrapper>
       <Seo title={props.title} />
       <QueryClientProvider client={queryClient}>
         <UXProvider>
-          <SearchProvider>
+          <DataProvider>
             <ModalProvider>
               <GlobalStyle />
               <Content>
                 <FullScreen iframe={iframe}>
-                  <HeaderWrapper noHeader={noHeader} />
+                  {!iframe && <HeaderWrapper />}
                   {props.children}
                 </FullScreen>
                 <FooterWrapper iframe={iframe} />
@@ -72,7 +68,7 @@ export default function Web(props) {
               <InstallButton />
               <ModalWrapper />
             </ModalProvider>
-          </SearchProvider>
+          </DataProvider>
         </UXProvider>
       </QueryClientProvider>
     </Wrapper>

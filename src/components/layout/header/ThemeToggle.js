@@ -5,19 +5,11 @@ import Switch from 'react-switch'
 import { themes } from 'utils/styles'
 import StyleContext from 'utils/StyleContext'
 
-const Wrapper = styled.div`
-  position: fixed;
-  top: 0.5rem;
-  right: 0.5rem;
+const Wrapper = styled.label`
+  position: absolute;
+  top: 0.75rem;
+  right: 0;
   display: flex;
-
-  ${(props) => props.theme.mq.medium} {
-    position: relative;
-    left: 0;
-    right: 0;
-    display: ${(props) => (props.mobile ? 'block' : 'none')};
-    text-align: center;
-  }
 `
 const Svg = styled.svg`
   position: absolute;
@@ -28,7 +20,7 @@ const Svg = styled.svg`
   width: 1.2rem;
   height: auto;
 `
-export default function Visible(props) {
+export default function ThemeToggle(props) {
   const { theme, setTheme } = useContext(StyleContext)
 
   return (

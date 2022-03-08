@@ -1,12 +1,12 @@
 import React from 'react'
 
 import Web from 'components/layout/Web'
-import Equivalents from 'views/Equivalents'
+import Co2 from 'views/Co2'
 
-export default function Index() {
+export default function co2() {
   return (
     <Web>
-      <Equivalents />
+      <Co2 />
     </Web>
   )
 }

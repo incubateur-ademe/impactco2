@@ -86,9 +86,9 @@ export default function Logo() {
       <Title>
         Mon
         <br />
-        Impact
+        Convertisseur
         <br />
-        Transport
+        CO2
       </Title>
     </Wrapper>
   )
