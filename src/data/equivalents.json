@@ -4,7 +4,9 @@
     "name": {
       "fr": "Repas avec du boeuf"
     },
+    "slug": "repasavecduboeuf",
     "emoji": "🍔",
+    "category": 2,
     "total": 7.26,
     "default": true,
     "tile": true,
@@ -15,7 +17,9 @@
     "name": {
       "fr": "Repas végétarien"
     },
+    "slug": "repasvegetarien",
     "emoji": "🍎",
+    "category": 2,
     "total": 0.51,
     "default": true,
     "tile": true,
@@ -26,7 +30,9 @@
     "name": {
       "fr": "Jour[s] de chauffage (gaz)"
     },
+    "slug": "gaz",
     "emoji": "🏘️",
+    "category": 6,
     "total": 18.63,
     "default": true,
     "tile": true,
@@ -37,7 +43,9 @@
     "name": {
       "fr": "km en voiture"
     },
+    "slug": "voiturethermique",
     "emoji": "🚗",
+    "category": 4,
     "total": 0.193,
     "default": true,
     "tile": true,
@@ -48,7 +56,9 @@
     "name": {
       "fr": "km en TGV"
     },
+    "slug": "tgv",
     "emoji": "🚅",
+    "category": 4,
     "total": 0.00173,
     "default": true,
     "tile": true,
@@ -59,7 +69,9 @@
     "name": {
       "fr": "Smartphone[s]"
     },
+    "slug": "smartphone",
     "emoji": "📱",
+    "category": 1,
     "total": 32.8,
     "default": true,
     "tile": true,
@@ -70,7 +82,9 @@
     "name": {
       "fr": "Jean[s] en coton"
     },
+    "slug": "jeanencoton",
     "emoji": "👖",
+    "category": 5,
     "total": 23.2,
     "default": true,
     "tile": true,
@@ -81,7 +95,9 @@
     "name": {
       "fr": "Livre[s] de poche"
     },
+    "slug": "livredepoche",
     "emoji": "📚",
+    "category": 7,
     "total": 1.18,
     "default": true,
     "tile": true,
@@ -92,7 +108,9 @@
     "name": {
       "fr": "Canapé[s] convertible[s]"
     },
+    "slug": "canapeconvertible",
     "emoji": "🛋",
+    "category": 7,
     "total": 197,
     "default": true,
     "tile": false,
@@ -103,7 +121,9 @@
     "name": {
       "fr": "T-shirt[s] en coton"
     },
+    "slug": "tshirtencoton",
     "emoji": "👕",
+    "category": 5,
     "total": 5.2,
     "default": false,
     "tile": false,
@@ -114,7 +134,9 @@
     "name": {
       "fr": "km en avion"
     },
+    "slug": "avion",
     "emoji": "✈️",
+    "category": 4,
     "total": 0.186,
     "default": true,
     "tile": false,
@@ -125,7 +147,9 @@
     "name": {
       "fr": "Repas avec du poulet"
     },
+    "slug": "repasavecdupoulet",
     "emoji": "🍗",
+    "category": 2,
     "total": 1.58,
     "default": false,
     "tile": false,
@@ -136,7 +160,9 @@
     "name": {
       "fr": "Télévision[s] 45 pouces"
     },
+    "slug": "television",
     "emoji": "📺",
+    "category": 1,
     "total": 371,
     "default": true,
     "tile": false,
@@ -147,7 +173,9 @@
     "name": {
       "fr": "Ordinateur[s] portable[s]"
     },
+    "slug": "ordinateurportable",
     "emoji": "💻",
+    "category": 1,
     "total": 156,
     "default": true,
     "tile": false,
@@ -158,29 +186,22 @@
     "name": {
       "fr": "Ecran[s] d'ordinateur 23,8 pouces"
     },
+    "slug": "ecrandordinateur",
     "emoji": "🖥️",
+    "category": 1,
     "total": 248,
     "default": false,
     "tile": false,
     "about": "Base Carbone, facteur d'émissions :<br/>\"Ecran - 23,8 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
-    "id": 24295,
-    "name": {
-      "fr": "Feuille[s] de papier A4"
-    },
-    "emoji": "📄",
-    "total": 0.00458,
-    "default": false,
-    "tile": false,
-    "about": "Dans la Base Carbone, le facteur d'émissions est donné pour une \"Ramette de papier blanc - 80g/m² A4 - Hors utilisation et fin de vie\" de 500 feuilles."
-  },
-  {
     "id": 22066,
     "name": {
       "fr": "kg d'ordures ménagères"
     },
+    "slug": "orduresmenageres",
     "emoji": "🚮",
+    "category": "Maison",
     "total": 0.386,
     "default": false,
     "tile": false,
@@ -191,7 +212,9 @@
     "name": {
       "fr": "Litre[s] d'eau du robinet"
     },
+    "slug": "eaudurobinet",
     "emoji": "🚰",
+    "category": "Boisson",
     "total": 0.000132,
     "default": true,
     "tile": false,
@@ -202,7 +225,9 @@
     "name": {
       "fr": "Litre[s] d'eau en bouteille"
     },
+    "slug": "eauenbouteille",
     "emoji": "💧",
+    "category": "Boisson",
     "total": 0.453,
     "default": true,
     "tile": false,

@@ -8,9 +8,9 @@ export default function Equivalents() {
   const { currentEquivalent } = useContext(DataContext)
 
   return (
-    <div>
+    <>
       <Search type='equivalents' />
       <Tiles equivalent={currentEquivalent} />
-    </div>
+    </>
   )
 }

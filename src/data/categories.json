@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "fr": "Numérique"
+    },
+    "emoji": "🍔",
+    "slug": "numerique",
+    "multiplier": 1
+  },
+  {
+    "id": 2,
+    "name": {
+      "fr": "Repas"
+    },
+    "emoji": "🍔",
+    "slug": "repas",
+    "multiplier": 1
+  },
+  {
+    "id": 3,
+    "name": {
+      "fr": "Boisson"
+    },
+    "emoji": "🏘️",
+    "slug": "boisson",
+    "multiplier": 100
+  },
+  {
+    "id": 4,
+    "name": {
+      "fr": "Déplacement"
+    },
+    "emoji": "🏘️",
+    "slug": "deplacement",
+    "multiplier": 10
+  },
+  {
+    "id": 5,
+    "name": {
+      "fr": "Habillement"
+    },
+    "emoji": "🍔",
+    "slug": "habillement",
+    "multiplier": 1
+  },
+  {
+    "id": 6,
+    "name": {
+      "fr": "Chauffage"
+    },
+    "emoji": "🍔",
+    "slug": "chauffage",
+    "multiplier": 1
+  },
+  {
+    "id": 7,
+    "name": {
+      "fr": "Mobilier"
+    },
+    "emoji": "🍔",
+    "slug": "mobilier",
+    "multiplier": 1
+  }
+]

@@ -3,22 +3,41 @@ import { navigate } from 'gatsby'
 
 import DataContext from 'utils/DataContext'
 import equivalentsData from 'data/equivalents.json'
+import categoriesData from 'data/categories.json'
 
 export default function DataProvider(props) {
   const [equivalents, setEquivalents] = useState([])
   const [currentEquivalent, setCurrentEquivalent] = useState(0)
 
+  const [categories, setCategories] = useState([])
+  const [currentCategory, setCurrentCategory] = useState(0)
   useEffect(() => {
     setEquivalents(equivalentsData)
+    setCategories(categoriesData)
+  }, [])
+
+  useEffect(() => {
     setCurrentEquivalent(
       (window.location.hash &&
-        equivalentsData.find(
+        equivalents.find(
           (equivalent) =>
             String(equivalent.id) === window.location.hash.replace('#', '')
         )) ||
-        equivalentsData.filter((equivalent) => equivalent.default)[0]
+        equivalents.filter((equivalent) => equivalent.default)[0]
     )
-  }, [])
+  }, [equivalents])
+
+  useEffect(() => {
+    setCurrentCategory(
+      (window.location.pathname === '/categories' &&
+        window.location.hash &&
+        categories.find(
+          (category) =>
+            String(category.slug) === window.location.hash.replace('#', '')
+        )) ||
+        categories[0]
+    )
+  }, [categories])
 
   return (
     <DataContext.Provider
@@ -28,6 +47,12 @@ export default function DataProvider(props) {
         setCurrentEquivalent: (equivalent) => {
           navigate(`#${equivalent.id}`)
           setCurrentEquivalent(equivalent)
+        },
+        categories,
+        currentCategory,
+        setCurrentCategory: (category) => {
+          navigate(`#${category.slug}`)
+          setCurrentCategory(category)
         },
       }}
     >
