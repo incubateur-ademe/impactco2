@@ -25,7 +25,7 @@ export default function MagicLink(props) {
     </button>
   ) : props.to.includes(':') ||
     props.to.includes('.') ||
-    props.to.includes('#') ? (
+    (props.to.includes('#') && !props.internal) ? (
     <a
       className={props.className}
       href={props.to}

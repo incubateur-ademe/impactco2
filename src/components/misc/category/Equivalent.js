@@ -91,8 +91,6 @@ const Unit = styled.span`
 
 export default function Equivalent(props) {
   const { setCO2E } = useContext(ModalContext)
-  console.log(props.equivalent.total, props.category.multiplier)
-  console.log(props.equivalent.total * props.category.multiplier)
   return (
     <Wrapper to={`/equivalents/${props.equivalent.slug}`}>
       <EmojiWrapper>

@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Emoji from 'components/base/Emoji'
+import MagicLink from 'components/base/MagicLink'
+import Share from './details/Share'
 
 const Wrapper = styled.div`
   position: relative;
@@ -43,6 +45,10 @@ const Unit = styled.span`
 const Small = styled.span`
   font-size: 1rem;
 `
+const Bottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 export default function Details(props) {
   return (
     <Wrapper>
@@ -58,6 +64,12 @@ export default function Details(props) {
           <Small>kg</Small> CO2<Small>e</Small>
         </Unit>
       </Value>
+      <Bottom>
+        <Share />
+        <MagicLink to='#sources' internal>
+          Sources
+        </MagicLink>
+      </Bottom>
     </Wrapper>
   )
 }
