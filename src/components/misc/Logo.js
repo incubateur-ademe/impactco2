@@ -25,24 +25,21 @@ const Title = styled.h1`
 `
 const Path = styled.path`
   fill: ${(props) => props.theme.colors.main};
+`
+const Line = styled.path`
+  fill: ${(props) => props.theme.colors.main};
   ${Wrapper}:hover & {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
     transform-origin: center;
-    transition: transform 200ms 120ms ease-out;
+    transition: transform 300ms 120ms ease-out;
   }
 `
 const Circle = styled.path`
   fill: ${(props) => props.theme.colors.main};
   ${Wrapper}:hover & {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
     transform-origin: center;
-    transition: transform 300ms ease-out;
-  }
-`
-const Wheel = styled.g`
-  ${Wrapper}:hover & {
-    transform: rotate(360deg);
-    transition: transform 750ms ease-out;
+    transition: transform 600ms ease-out;
   }
 `
 export default function Logo() {
@@ -55,7 +52,7 @@ export default function Logo() {
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
       >
-        <path
+        <Path
           fillRule='evenodd'
           clipRule='evenodd'
           d='M40.2843 2.12731H2.53923V39.8724H40.2843V2.12731ZM0.823547 0.411621V41.5881H42V0.411621H0.823547Z'
@@ -75,7 +72,7 @@ export default function Logo() {
           />
         </mask>
         <g mask='url(#mask0_616_5994)'>
-          <Path
+          <Line
             fillRule='evenodd'
             clipRule='evenodd'
             d='M43.8192 3.8156L4.35838 43.2764L-0.949249 37.9688L38.5115 -1.49204L43.8192 3.8156Z'
