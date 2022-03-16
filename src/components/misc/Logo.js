@@ -29,7 +29,7 @@ const Path = styled.path`
 const Line = styled.path`
   fill: ${(props) => props.theme.colors.main};
   ${Wrapper}:hover & {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
     transform-origin: center;
     transition: transform 300ms 120ms ease-out;
   }
@@ -37,7 +37,7 @@ const Line = styled.path`
 const Circle = styled.path`
   fill: ${(props) => props.theme.colors.main};
   ${Wrapper}:hover & {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
     transform-origin: center;
     transition: transform 600ms ease-out;
   }
