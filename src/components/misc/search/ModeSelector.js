@@ -43,7 +43,7 @@ export default function ModeSelector() {
       <Tab current={location.pathname === '/'} to='/'>
         Équivalents
       </Tab>
-      <Tab current={location.pathname === '/categories'} to='/categories'>
+      <Tab current={location.pathname.includes('/categories')} to='/categories'>
         Categories
       </Tab>
       <Tab current={location.pathname === '/co2'} to='/co2' large>

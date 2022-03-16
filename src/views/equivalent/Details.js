@@ -22,11 +22,11 @@ const Header = styled.div`
 `
 const StyledEmoji = styled(Emoji)`
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  font-size: 3rem;
 `
 const Title = styled.h1`
   margin: 0.25rem 0 0.75rem;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: normal;
   color: ${(props) => props.theme.colors.text};
 `
@@ -36,14 +36,14 @@ const Value = styled.div`
   line-height: 1.1;
 `
 const Number = styled.span`
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 `
 const Unit = styled.span`
-  font-size: 1.25rem;
-`
-const Small = styled.span`
   font-size: 1rem;
+`
+const Big = styled.span`
+  font-size: 1.5rem;
 `
 const Bottom = styled.div`
   display: flex;
@@ -61,7 +61,7 @@ export default function Details(props) {
       <Value>
         <Number>{props.equivalent.total}</Number>{' '}
         <Unit>
-          <Small>kg</Small> CO2<Small>e</Small>
+          kg <Big>CO2</Big>e
         </Unit>
       </Value>
       <Bottom>
