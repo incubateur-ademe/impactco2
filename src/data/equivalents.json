@@ -339,19 +339,6 @@
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
-    "id": 22066,
-    "name": {
-      "fr": "kg d'ordures ménagères"
-    },
-    "slug": "orduresmenageres",
-    "emoji": "🚮",
-    "category": "Maison",
-    "total": 0.386,
-    "default": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Ordures ménagères résiduelles - Fin de vie moyenne - Impacts\""
-  },
-  {
     "id": 24283,
     "name": {
       "fr": "Litre[s] d'eau du robinet"
