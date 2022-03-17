@@ -6,12 +6,16 @@ const Title = styled.h3`
   text-align: center;
   color: ${(props) => props.theme.colors.text};
 `
-const Text = styled.p``
+const Text = styled.div``
 export default function Details(props) {
   return (
     <Wrapper id='sources'>
       <Title>Sources et hypothèses</Title>
-      <Text>{props.equivalent.sources}</Text>
+      <Text
+        dangerouslySetInnerHTML={{
+          __html: props.equivalent.sources,
+        }}
+      />
     </Wrapper>
   )
 }

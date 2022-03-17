@@ -10,7 +10,7 @@
     "total": 7.26,
     "default": true,
     "tile": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
   },
   {
     "id": 20683,
@@ -18,129 +18,51 @@
       "fr": "Repas végétarien"
     },
     "slug": "repasvegetarien",
-    "emoji": "🍎",
+    "emoji": "🥗",
     "category": 2,
     "total": 0.51,
     "default": true,
     "tile": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
   },
   {
-    "id": 32,
+    "id": 20684,
     "name": {
-      "fr": "Jour[s] de chauffage (gaz)"
+      "fr": "Repas végétalien"
     },
-    "slug": "gaz",
-    "emoji": "🏘️",
-    "category": 6,
-    "total": 18.63,
-    "default": true,
-    "tile": true,
-    "about": "Une année de chauffage (en France, la période de chauffage est généralement comprise entre le 15 octobre et le 15 avril de l'année suivante) au gaz équivaut à 3.4tCO<sub>2</sub>e (<a href='https://nosgestesclimat.fr/documentation/logement/gaz' target='_blank'>source</a>).<br/><br/>Ce qui fait qu'une journée de chauffage en période de chauffe est équivalente à 18.63kgCO<sub>2</sub>e."
-  },
-  {
-    "id": 27976,
-    "name": {
-      "fr": "km en voiture"
-    },
-    "slug": "voiturethermique",
-    "emoji": "🚗",
-    "category": 4,
-    "total": 0.193,
-    "default": true,
-    "tile": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
-  },
-  {
-    "id": 206589,
-    "name": {
-      "fr": "km en TGV"
-    },
-    "slug": "tgv",
-    "emoji": "🚅",
-    "category": 4,
-    "total": 0.00173,
-    "default": true,
-    "tile": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\"<br/>Périmètre : émissions liées à la production et la distribution d'électricité.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
-  },
-  {
-    "id": 27012,
-    "name": {
-      "fr": "Smartphone[s]"
-    },
-    "slug": "smartphone",
-    "emoji": "📱",
-    "category": 1,
-    "total": 32.8,
-    "default": true,
-    "tile": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27043,
-    "name": {
-      "fr": "Jean[s] en coton"
-    },
-    "slug": "jeanencoton",
-    "emoji": "👖",
-    "category": 5,
-    "total": 23.2,
-    "default": true,
-    "tile": true,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 20587,
-    "name": {
-      "fr": "Livre[s] de poche"
-    },
-    "slug": "livredepoche",
-    "emoji": "📚",
-    "category": 7,
-    "total": 1.18,
-    "default": true,
-    "tile": true,
-    "about": "Dans la Base Carbone, la valeur est donnée pour un livre de 300g.<br/><br/>En utilisant les chiffres de <a href='http://www.scolibris.fr/rezolibris/download.php?file=fichetechnique/38/pdf/Poids-du-livre.pdf' target='_blank'>Scolibris</a> on voit que 300g correspond à un livre de poche de 371 pages (0.110.18300 + 0.110.1880*371/2).<br/><br/>Si on estime le nombre moyen de page d'un livre à 400 (<a href='https://actualitte.com/article/35773/numerique/la-taille-moyenne-du-livre-s-est-allongee-de-80-pages-en-15-ans' target='_blank'>source</a>) on arrive à un poids de 322.74g.<br/><br/>Ce qui fait qu'un livre de poche moyen est équivalent à 1.18kgCO2e"
-  },
-  {
-    "id": 26966,
-    "name": {
-      "fr": "Canapé[s] convertible[s]"
-    },
-    "slug": "canapeconvertible",
-    "emoji": "🛋",
-    "category": 7,
-    "total": 197,
-    "default": true,
-    "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27044,
-    "name": {
-      "fr": "T-shirt[s] en coton"
-    },
-    "slug": "tshirtencoton",
-    "emoji": "👕",
-    "category": 5,
-    "total": 5.2,
+    "slug": "repasvegetalien",
+    "emoji": "🍎",
+    "category": 2,
+    "total": 0.39,
     "default": false,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+    "sources": "NGC"
   },
   {
-    "id": 28081,
+    "id": 20685,
     "name": {
-      "fr": "km en avion"
+      "fr": "Repas avec du poisson blanc"
     },
-    "slug": "avion",
-    "emoji": "✈️",
-    "category": 4,
-    "total": 0.186,
-    "default": true,
+    "slug": "repasavecdupoissonblanc",
+    "emoji": "🐟",
+    "category": 2,
+    "total": 1.11,
+    "default": false,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+    "sources": "NGC"
+  },
+  {
+    "id": 20686,
+    "name": {
+      "fr": "Repas avec du poisson gras"
+    },
+    "slug": "repasavecdupoissongras",
+    "emoji": "🐟",
+    "category": 2,
+    "total": 1.98,
+    "default": false,
+    "tile": false,
+    "sources": "NGC"
   },
   {
     "id": 20688,
@@ -153,12 +75,182 @@
     "total": 1.58,
     "default": false,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   },
+  {
+    "id": 32,
+    "name": {
+      "fr": "Jour[s] de chauffage (gaz)"
+    },
+    "slug": "gaz",
+    "emoji": "🏘️",
+    "category": 6,
+    "total": 18.63,
+    "default": true,
+    "tile": true,
+    "sources": "Une année de chauffage (en France, la période de chauffage est généralement comprise entre le 15 octobre et le 15 avril de l'année suivante) au gaz équivaut à 3.4tCO<sub>2</sub>e (<a href='https://nosgestesclimat.fr/documentation/logement/gaz' target='_blank'>source</a>).<br/><br/>Ce qui fait qu'une journée de chauffage en période de chauffe est équivalente à 18.63kgCO<sub>2</sub>e."
+  },
+  {
+    "id": 27976,
+    "name": {
+      "fr": "km en voiture"
+    },
+    "slug": "voiturethermique",
+    "emoji": "🚗",
+    "category": 4,
+    "total": 0.193,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+  },
+  {
+    "id": 206589,
+    "name": {
+      "fr": "km en TGV"
+    },
+    "slug": "tgv",
+    "emoji": "🚅",
+    "category": 4,
+    "total": 0.00173,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\"<br/>Périmètre : émissions liées à la production et la distribution d'électricité.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+  },
+  {
+    "id": 27043,
+    "name": {
+      "fr": "Jean[s] (en coton)"
+    },
+    "slug": "jeanencoton",
+    "emoji": "👖",
+    "category": 5,
+    "total": 23.2,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27044,
+    "name": {
+      "fr": "T-shirt[s] en coton"
+    },
+    "slug": "tshirtencoton",
+    "emoji": "👕",
+    "category": 5,
+    "total": 5.2,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27045,
+    "name": {
+      "fr": "Chemise[s] (en coton)"
+    },
+    "slug": "chemiseencoton",
+    "emoji": "👚",
+    "category": 5,
+    "total": 11.2,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27046,
+    "name": {
+      "fr": "Chaussure[s] en cuir"
+    },
+    "slug": "chaussureencuir",
+    "emoji": "👞",
+    "category": 5,
+    "total": 13.4,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27047,
+    "name": {
+      "fr": "Robe[s]"
+    },
+    "slug": "Robe",
+    "emoji": "👗",
+    "category": 5,
+    "total": 49.8,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27048,
+    "name": {
+      "fr": "Pull[s] (en laine)"
+    },
+    "slug": "pullenlaine",
+    "emoji": "🧶",
+    "category": 5,
+    "total": 52.9,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27049,
+    "name": {
+      "fr": "Manteau[s]"
+    },
+    "slug": "manteau",
+    "emoji": "🧥",
+    "category": 5,
+    "total": 85.8,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 20587,
+    "name": {
+      "fr": "Livre[s] de poche"
+    },
+    "slug": "livredepoche",
+    "emoji": "📚",
+    "category": 7,
+    "total": 1.18,
+    "default": true,
+    "tile": true,
+    "sources": "Dans la Base Carbone, la valeur est donnée pour un livre de 300g.<br/><br/>En utilisant les chiffres de <a href='http://www.scolibris.fr/rezolibris/download.php?file=fichetechnique/38/pdf/Poids-du-livre.pdf' target='_blank'>Scolibris</a> on voit que 300g correspond à un livre de poche de 371 pages (0.110.18300 + 0.110.1880*371/2).<br/><br/>Si on estime le nombre moyen de page d'un livre à 400 (<a href='https://actualitte.com/article/35773/numerique/la-taille-moyenne-du-livre-s-est-allongee-de-80-pages-en-15-ans' target='_blank'>source</a>) on arrive à un poids de 322.74g.<br/><br/>Ce qui fait qu'un livre de poche moyen est équivalent à 1.18kgCO2e"
+  },
+  {
+    "id": 26966,
+    "name": {
+      "fr": "Canapé[s] convertible[s]"
+    },
+    "slug": "canapeconvertible",
+    "emoji": "🛋",
+    "category": 7,
+    "total": 197,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 28081,
+    "name": {
+      "fr": "km en avion"
+    },
+    "slug": "avion",
+    "emoji": "✈️",
+    "category": 4,
+    "total": 0.186,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+  },
+
   {
     "id": 27000,
     "name": {
-      "fr": "Télévision[s] 45 pouces"
+      "fr": "Télévision[s]"
     },
     "slug": "television",
     "emoji": "📺",
@@ -166,7 +258,7 @@
     "total": 371,
     "default": true,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 27002,
@@ -179,20 +271,72 @@
     "total": 156,
     "default": true,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Ordinateur - portable\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Ordinateur - portable\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 27006,
     "name": {
-      "fr": "Ecran[s] d'ordinateur 23,8 pouces"
+      "fr": "Ordinateur[s] fixe[s] (avec écran)"
     },
-    "slug": "ecrandordinateur",
+    "slug": "ordinateurfixe",
     "emoji": "🖥️",
     "category": 1,
-    "total": 248,
+    "total": 417,
     "default": false,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Ecran - 23,8 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Ecran - 23,8 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27012,
+    "name": {
+      "fr": "Smartphone[s]"
+    },
+    "slug": "smartphone",
+    "emoji": "📱",
+    "category": 1,
+    "total": 16.5,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27013,
+    "name": {
+      "fr": "Montre[s] connectée[s]"
+    },
+    "slug": "montreconnectee",
+    "emoji": "⌚️",
+    "category": 1,
+    "total": 9.72,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27014,
+    "name": {
+      "fr": "Console[s] vidéo"
+    },
+    "slug": "consolevideo",
+    "emoji": "🎮",
+    "category": 1,
+    "total": 73.3,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27015,
+    "name": {
+      "fr": "Imprimante[s] (jet d'encre)"
+    },
+    "slug": "imprimantejetdencre",
+    "emoji": "🖨",
+    "category": 1,
+    "total": 88.2,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 22066,
@@ -205,7 +349,7 @@
     "total": 0.386,
     "default": false,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Ordures ménagères résiduelles - Fin de vie moyenne - Impacts\""
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Ordures ménagères résiduelles - Fin de vie moyenne - Impacts\""
   },
   {
     "id": 24283,
@@ -214,11 +358,11 @@
     },
     "slug": "eaudurobinet",
     "emoji": "🚰",
-    "category": "Boisson",
+    "category": 3,
     "total": 0.000132,
     "default": true,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
   },
   {
     "id": 31000,
@@ -227,10 +371,62 @@
     },
     "slug": "eauenbouteille",
     "emoji": "💧",
-    "category": "Boisson",
+    "category": 3,
     "total": 0.453,
     "default": true,
     "tile": false,
-    "about": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
+  },
+  {
+    "id": 31001,
+    "name": {
+      "fr": "Litre[s] de soda"
+    },
+    "slug": "soda",
+    "emoji": "🥤",
+    "category": 3,
+    "total": 0.57,
+    "default": true,
+    "tile": false,
+    "sources": "Agribalyse"
+  },
+  {
+    "id": 31002,
+    "name": {
+      "fr": "Litre[s] de bière"
+    },
+    "slug": "biere",
+    "emoji": "🍺",
+    "category": 3,
+    "total": 1.09,
+    "default": true,
+    "tile": false,
+    "sources": "Agribalyse"
+  },
+  {
+    "id": 31003,
+    "name": {
+      "fr": "Litre[s] de vin"
+    },
+    "slug": "vin",
+    "emoji": "🍷",
+    "category": 3,
+    "total": 1.13,
+    "default": true,
+    "tile": false,
+    "sources": "Agribalyse"
+  },
+  {
+    "id": 31004,
+    "name": {
+      "fr": "Litre[s] de lait"
+    },
+    "slug": "lait",
+    "emoji": "🥛",
+    "category": 3,
+    "total": 1.53,
+    "default": true,
+    "tile": false,
+    "sources": "Agribalyse"
   }
 ]

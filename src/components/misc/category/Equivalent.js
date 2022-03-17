@@ -9,8 +9,14 @@ const Wrapper = styled(MagicLink)`
   position: relative;
   display: flex;
   align-items: flex-end;
-  margin-bottom: 1.375rem;
+  padding: 0.875rem 0.875rem 1rem;
   text-decoration: none;
+  border-radius: 1rem;
+  transition: background-color 200ms ease-out;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.mainLight};
+  }
 `
 const TitleWrapper = styled.div`
   position: relative;
@@ -59,21 +65,15 @@ const Bar = styled.div`
 const Value = styled.div`
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: ${(props) => (props.inside ? 'auto' : '100%')};
+  right: ${(props) => (props.inside ? '1rem' : 'auto')};
+  color: ${(props) => props.theme.colors[props.inside ? 'background' : 'main']};
   transform: translateY(-50%);
   display: flex;
   align-items: baseline;
   padding-left: ${(props) => (props.noBar ? 0 : 0.5)}rem;
   line-height: 0.7;
-  color: ${(props) => props.theme.colors.main};
   transition: color 200ms ease-out;
-
-  ${(props) => props.theme.mq.medium} {
-    left: ${(props) => (props.inside ? 'auto' : '100%')};
-    right: ${(props) => (props.inside ? '1rem' : 'auto')};
-    color: ${(props) =>
-      props.theme.colors[props.inside ? 'background' : 'second']};
-  }
 `
 const Number = styled.span`
   margin-right: 0.6rem;
@@ -91,6 +91,7 @@ const Unit = styled.span`
 
 export default function Equivalent(props) {
   const { setCO2E } = useContext(ModalContext)
+
   return (
     <Wrapper to={`/equivalents/${props.equivalent.slug}`}>
       <EmojiWrapper>
@@ -111,8 +112,8 @@ export default function Equivalent(props) {
         <Chart>
           <Bar percent={props.equivalent.total / props.max}>
             <Value
-              noBar={props.equivalent.value / props.max === 0}
-              inside={props.equivalent.value / props.max > 0.7}
+              noBar={props.equivalent.total / props.max === 0}
+              inside={props.equivalent.total / props.max > 0.7}
             >
               <Number>
                 {Math.round(

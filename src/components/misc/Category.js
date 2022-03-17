@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import DataContext from 'utils/DataContext'
 import MagicLink from 'components/base/MagicLink'
+import Button from 'components/base/Button'
 import Equivalent from './category/Equivalent'
 
 const Wrapper = styled.div`
@@ -11,6 +12,19 @@ const Wrapper = styled.div`
 const Title = styled.h3`
   text-align: center;
   color: ${(props) => props.theme.colors.text};
+`
+const Equivalents = styled.div`
+  margin-bottom: 1rem;
+`
+const Bottom = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const Disclaimer = styled.p`
+  max-width: 23rem;
+  font-size: 0.875rem;
+  text-align: center;
 `
 export default function Category(props) {
   const { equivalents } = useContext(DataContext)
@@ -36,14 +50,26 @@ export default function Category(props) {
           )
         </Title>
       )}
-      {equivalentsOfCategory.map((equivalent) => (
-        <Equivalent
-          equivalent={equivalent}
-          category={props.category}
-          key={equivalent.id}
-          max={equivalentsOfCategory[equivalentsOfCategory.length - 1].total}
-        />
-      ))}
+      <Equivalents>
+        {equivalentsOfCategory.map((equivalent) => (
+          <Equivalent
+            equivalent={equivalent}
+            category={props.category}
+            key={equivalent.id}
+            max={equivalentsOfCategory[equivalentsOfCategory.length - 1].total}
+          />
+        ))}
+      </Equivalents>
+      {!props.title && (
+        <Bottom>
+          <Disclaimer>
+            Valeurs exprimées en kg CO2e émis {props?.category?.unit}.
+          </Disclaimer>
+          <Button onClick={() => alert('soon')} hollow>
+            Comparer avec d'autres catégories
+          </Button>
+        </Bottom>
+      )}
     </Wrapper>
   )
 }
