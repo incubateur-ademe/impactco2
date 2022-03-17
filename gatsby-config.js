@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Que Faire de mes Déchets ? Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
+    title: `Mon Convertisseur CO2`,
     author: `Datagir`,
-    description: `Masque chirurgical ou ffp2, téléphone portable, médicaments, capsules de café, vêtements... Découvrez ici comment les recycler, les trier, les éviter ou les jeter !`,
+    description: ``,
     siteUrl: `https://quefairedemesdechets.fr`,
     image: 'metaimage.png',
     twitterUsername: '_datagir',
@@ -34,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Que Faire de mes Déchets`,
-        short_name: `QFDMD`,
+        name: `Mon Convertisseur CO2`,
+        short_name: `MCCO2`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#e42313`,
