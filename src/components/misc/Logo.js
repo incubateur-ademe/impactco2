@@ -31,7 +31,7 @@ const Line = styled.path`
   ${Wrapper}:hover & {
     transform: rotate(-180deg);
     transform-origin: center;
-    transition: transform 300ms 120ms ease-out;
+    transition: transform 300ms 130ms ease-out;
   }
 `
 const Circle = styled.path`
