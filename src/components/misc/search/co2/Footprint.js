@@ -23,11 +23,13 @@ const Title = styled.h2`
   font-weight: normal;
   color: ${(props) => props.theme.colors.text};
 `
-export default function Category(props) {
+const Description = styled.p``
+export default function Footprint(props) {
   return (
     <Wrapper>
-      <StyledEmoji>{props.category.emoji}</StyledEmoji>
-      <Title>{props.category.name.fr}</Title>
+      <StyledEmoji>{props.footprint.emoji}</StyledEmoji>
+      <Title>{props.footprint.name.fr}</Title>
+      <Description>{props.footprint.description}</Description>
     </Wrapper>
   )
 }

@@ -4,6 +4,7 @@ import { navigate } from 'gatsby'
 import DataContext from 'utils/DataContext'
 import equivalentsData from 'data/equivalents.json'
 import categoriesData from 'data/categories.json'
+import footprintsData from 'data/footprints.json'
 
 export default function DataProvider(props) {
   const [equivalents, setEquivalents] = useState([])
@@ -11,9 +12,14 @@ export default function DataProvider(props) {
 
   const [categories, setCategories] = useState([])
   const [currentCategory, setCurrentCategory] = useState(0)
+
+  const [footprints, setFootprints] = useState([])
+  const [weight, setWeight] = useState(1)
+
   useEffect(() => {
     setEquivalents(equivalentsData)
     setCategories(categoriesData)
+    setFootprints(footprintsData)
   }, [])
 
   useEffect(() => {
@@ -54,6 +60,9 @@ export default function DataProvider(props) {
           navigate(`#${category.slug}`)
           setCurrentCategory(category)
         },
+        footprints,
+        weight,
+        setWeight,
       }}
     >
       {props.children}

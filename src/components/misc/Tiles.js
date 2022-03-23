@@ -19,22 +19,24 @@ const TilesWrapper = styled.div`
 `
 export default function Tiles(props) {
   const { equivalents } = useContext(DataContext)
-  return props.equivalent ? (
+  return props.weight && equivalents ? (
     <Wrapper>
-      <Title>
-        1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
-        <br />
-        émet autant de CO2e que...
-      </Title>
+      {props.equivalent && (
+        <Title>
+          1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
+          <br />
+          émet autant de CO2e que...
+        </Title>
+      )}
       <TilesWrapper>
         {equivalents
           .filter((equivalent) => equivalent.tile)
-          .filter((equivalent) => equivalent.id !== props.equivalent.id)
+          .filter(
+            (equivalent) =>
+              !props.equivalent || equivalent.id !== props.equivalent.id
+          )
           .map((equivalent) => (
-            <Tile
-              equivalent={equivalent}
-              currentEquivalent={props.equivalent}
-            />
+            <Tile equivalent={equivalent} weight={props.weight} />
           ))}
       </TilesWrapper>
     </Wrapper>

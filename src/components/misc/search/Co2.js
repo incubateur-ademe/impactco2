@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import Slider from 'react-slick'
+
+import DataContext from 'utils/DataContext'
+import Footprint from './co2/Footprint'
+import Weight from './co2/Weight'
 
 const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
+  max-width: 21rem;
+  margin: 0 auto;
 `
-
 export default function Co2() {
-  return <Wrapper>CO2</Wrapper>
+  const { footprints } = useContext(DataContext)
+
+  return footprints ? (
+    <Wrapper>
+      <Slider
+        dots={true}
+        infinite={true}
+        speed={500}
+        slidesToShow={1}
+        slidesToScroll={1}
+      >
+        {footprints.map((footprint) => (
+          <Footprint footprint={footprint} key={footprint.id} />
+        ))}
+        <Weight />
+      </Slider>
+    </Wrapper>
+  ) : null
 }

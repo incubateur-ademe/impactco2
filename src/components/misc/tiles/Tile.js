@@ -39,12 +39,10 @@ export default function Tile(props) {
   const [total, setTotal] = useState(0)
   useEffect(() => {
     let tempTotal =
-      Math.round(
-        (props.currentEquivalent.total / props.equivalent.total) * 100000
-      ) / 100000
+      Math.round((props.weight / props.equivalent.total) * 100000) / 100000
 
     setTotal(tempTotal)
-  }, [props.currentEquivalent, props.equivalent])
+  }, [props.weight, props.equivalent])
 
   return (
     <Wrapper>
@@ -52,7 +50,7 @@ export default function Tile(props) {
       <Title>
         <Number>
           <AnimatedNumber
-            value={props.currentEquivalent.total / props.equivalent.total}
+            value={props.weight / props.equivalent.total}
             duration={500}
             formatValue={(value) => {
               let tempTotal = Math.round(value * 100000) / 100000
