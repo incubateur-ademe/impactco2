@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
+import Breadcrumb from './details/Breadcrumb'
 import Share from './details/Share'
 
 const Wrapper = styled.div`
@@ -51,25 +52,29 @@ const Bottom = styled.div`
 `
 export default function Details(props) {
   return (
-    <Wrapper>
-      <Header>
-        <Title>
-          1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
-        </Title>
-        <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
-      </Header>
-      <Value>
-        <Number>{props.equivalent.total}</Number>{' '}
-        <Unit>
-          kg <Big>CO2</Big>e
-        </Unit>
-      </Value>
-      <Bottom>
-        <Share />
-        <MagicLink to='#sources' internal>
-          Sources
-        </MagicLink>
-      </Bottom>
-    </Wrapper>
+    <>
+      <Breadcrumb equivalent={props.equivalent} category={props.category} />
+
+      <Wrapper>
+        <Header>
+          <Title>
+            1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
+          </Title>
+          <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
+        </Header>
+        <Value>
+          <Number>{props.equivalent.total}</Number>{' '}
+          <Unit>
+            kg <Big>CO2</Big>e
+          </Unit>
+        </Value>
+        <Bottom>
+          <Share />
+          <MagicLink to='#sources' internal>
+            Sources
+          </MagicLink>
+        </Bottom>
+      </Wrapper>
+    </>
   )
 }

@@ -46,7 +46,7 @@ export default function ModeSelector() {
       <Tab current={location.pathname.includes('/categories')} to='/categories'>
         Categories
       </Tab>
-      <Tab current={location.pathname === '/co2'} to='/co2' large>
+      <Tab current={location.pathname.includes('/co2')} to='/co2'>
         Poids
       </Tab>
       <Burger location={location} />
