@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `
 export default function Co2() {
-  const { footprints } = useContext(DataContext)
+  const { footprints, setWeight } = useContext(DataContext)
 
   return footprints ? (
     <Wrapper>
@@ -21,6 +21,9 @@ export default function Co2() {
         speed={500}
         slidesToShow={1}
         slidesToScroll={1}
+        afterChange={(index) =>
+          setWeight(footprints[index] ? footprints[index].value : 1)
+        }
       >
         {footprints.map((footprint) => (
           <Footprint footprint={footprint} key={footprint.id} />
