@@ -13,7 +13,7 @@ export default function Breadcrumb(props) {
     <Wrapper>
       <MagicLink to='/'>Accueil</MagicLink>
       {'  '}>{'  '}
-      <MagicLink to={`categories/#${props.category.slug}`} internal>
+      <MagicLink to={`/categories/#${props.category.slug}`} internal>
         {props.category.name.fr}
       </MagicLink>
       {'  '}>{'  '}

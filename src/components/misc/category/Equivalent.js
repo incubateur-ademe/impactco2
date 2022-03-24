@@ -11,6 +11,8 @@ const Wrapper = styled(MagicLink)`
   align-items: flex-end;
   padding: 0.875rem 0.875rem 1rem;
   text-decoration: none;
+  background-color: ${(props) =>
+    props.current ? props.theme.colors.secondLight : 'transparent'};
   border-radius: 1rem;
   transition: background-color 200ms ease-out;
 
@@ -93,7 +95,10 @@ export default function Equivalent(props) {
   const { setCO2E } = useContext(ModalContext)
 
   return (
-    <Wrapper to={`/equivalents/${props.equivalent.slug}`}>
+    <Wrapper
+      to={`/equivalents/${props.equivalent.slug}`}
+      current={props.current}
+    >
       <EmojiWrapper>
         <Emoji>{props.equivalent.emoji}</Emoji>
       </EmojiWrapper>

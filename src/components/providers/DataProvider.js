@@ -35,7 +35,7 @@ export default function DataProvider(props) {
 
   useEffect(() => {
     setCurrentCategory(
-      (window.location.pathname === '/categories' &&
+      (window.location.pathname.includes('/categories') &&
         window.location.hash &&
         categories.find(
           (category) =>

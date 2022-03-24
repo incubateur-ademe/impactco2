@@ -55,8 +55,9 @@ export default function Category(props) {
           <Equivalent
             equivalent={equivalent}
             category={props.category}
-            key={equivalent.id}
             max={equivalentsOfCategory[equivalentsOfCategory.length - 1].total}
+            current={props.equivalent?.id === equivalent.id}
+            key={equivalent.id}
           />
         ))}
       </Equivalents>
