@@ -52,12 +52,12 @@
   {
     "id": 6,
     "name": {
-      "fr": "Chauffage"
+      "fr": "Electroménager"
     },
-    "emoji": "🏠",
-    "slug": "chauffage",
+    "emoji": "🛁",
+    "slug": "electromenager",
     "multiplier": 1,
-    "unit": "par repas comprenant la fabrication, la distribution et la consommation"
+    "unit": "par produit comprenant la fabrication, la distribution et l’usage (pendant un an)"
   },
   {
     "id": 7,

@@ -78,28 +78,54 @@
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   },
   {
-    "id": 32,
+    "id": 27977,
     "name": {
-      "fr": "Jour[s] de chauffage (gaz)"
+      "fr": "km en métro"
     },
-    "slug": "gaz",
-    "emoji": "🏘️",
-    "category": 6,
-    "total": 18.63,
-    "default": true,
+    "slug": "metro",
+    "emoji": "🚇",
+    "category": 4,
+    "total": 0.0025,
+    "default": false,
     "tile": true,
-    "sources": "Une année de chauffage (en France, la période de chauffage est généralement comprise entre le 15 octobre et le 15 avril de l'année suivante) au gaz équivaut à 3.4tCO<sub>2</sub>e (<a href='https://nosgestesclimat.fr/documentation/logement/gaz' target='_blank'>source</a>).<br/><br/>Ce qui fait qu'une journée de chauffage en période de chauffe est équivalente à 18.63kgCO<sub>2</sub>e."
+    "sources": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro"
   },
   {
     "id": 27976,
     "name": {
-      "fr": "km en voiture"
+      "fr": "km en voiture (thermique)"
     },
     "slug": "voiturethermique",
     "emoji": "🚗",
     "category": 4,
     "total": 0.193,
-    "default": true,
+    "default": false,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+  },
+  {
+    "id": 27978,
+    "name": {
+      "fr": "km en voiture (électrique)"
+    },
+    "slug": "voitureelectrique",
+    "emoji": "🚗",
+    "category": 4,
+    "total": 0.0198,
+    "default": false,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+  },
+  {
+    "id": 27979,
+    "name": {
+      "fr": "km en moto"
+    },
+    "slug": "moto",
+    "emoji": "🏍️",
+    "category": 4,
+    "total": 0.168,
+    "default": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
@@ -112,9 +138,22 @@
     "emoji": "🚅",
     "category": 4,
     "total": 0.00173,
-    "default": true,
+    "default": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\"<br/>Périmètre : émissions liées à la production et la distribution d'électricité.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+  },
+  {
+    "id": 28081,
+    "name": {
+      "fr": "km en avion"
+    },
+    "slug": "avion",
+    "emoji": "✈️",
+    "category": 4,
+    "total": 0.186,
+    "default": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
     "id": 27043,
@@ -208,19 +247,6 @@
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
-    "id": 20587,
-    "name": {
-      "fr": "Livre[s] de poche"
-    },
-    "slug": "livredepoche",
-    "emoji": "📚",
-    "category": 7,
-    "total": 1.18,
-    "default": true,
-    "tile": true,
-    "sources": "Dans la Base Carbone, la valeur est donnée pour un livre de 300g.<br/><br/>En utilisant les chiffres de <a href='http://www.scolibris.fr/rezolibris/download.php?file=fichetechnique/38/pdf/Poids-du-livre.pdf' target='_blank'>Scolibris</a> on voit que 300g correspond à un livre de poche de 371 pages (0.110.18300 + 0.110.1880*371/2).<br/><br/>Si on estime le nombre moyen de page d'un livre à 400 (<a href='https://actualitte.com/article/35773/numerique/la-taille-moyenne-du-livre-s-est-allongee-de-80-pages-en-15-ans' target='_blank'>source</a>) on arrive à un poids de 322.74g.<br/><br/>Ce qui fait qu'un livre de poche moyen est équivalent à 1.18kgCO2e"
-  },
-  {
     "id": 26966,
     "name": {
       "fr": "Canapé[s] convertible[s]"
@@ -232,19 +258,6 @@
     "default": true,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 28081,
-    "name": {
-      "fr": "km en avion"
-    },
-    "slug": "avion",
-    "emoji": "✈️",
-    "category": 4,
-    "total": 0.186,
-    "default": true,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
 
   {
@@ -347,7 +360,7 @@
     "emoji": "🚰",
     "category": 3,
     "total": 0.000132,
-    "default": true,
+    "default": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
   },
@@ -360,7 +373,7 @@
     "emoji": "💧",
     "category": 3,
     "total": 0.453,
-    "default": true,
+    "default": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
   },
@@ -373,7 +386,7 @@
     "emoji": "🥤",
     "category": 3,
     "total": 0.57,
-    "default": true,
+    "default": false,
     "tile": false,
     "sources": "Agribalyse"
   },
@@ -386,7 +399,7 @@
     "emoji": "🍺",
     "category": 3,
     "total": 1.09,
-    "default": true,
+    "default": false,
     "tile": false,
     "sources": "Agribalyse"
   },
@@ -399,7 +412,7 @@
     "emoji": "🍷",
     "category": 3,
     "total": 1.13,
-    "default": true,
+    "default": false,
     "tile": false,
     "sources": "Agribalyse"
   },
@@ -412,8 +425,138 @@
     "emoji": "🥛",
     "category": 3,
     "total": 1.53,
-    "default": true,
+    "default": false,
     "tile": false,
     "sources": "Agribalyse"
+  },
+  {
+    "id": 300000,
+    "name": {
+      "fr": "Chaise[s] (en bois)"
+    },
+    "slug": "chaiseenbois",
+    "emoji": "🪑",
+    "category": 7,
+    "total": 18.6,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=chaise"
+  },
+  {
+    "id": 300001,
+    "name": {
+      "fr": "Table[s] (en bois)"
+    },
+    "slug": "tableenbois",
+    "emoji": "📦",
+    "category": 7,
+    "total": 80.2,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=table"
+  },
+  {
+    "id": 300002,
+    "name": {
+      "fr": "Canapé[s] (textile)"
+    },
+    "slug": "canapetextile",
+    "emoji": "🛋",
+    "category": 7,
+    "total": 179,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=canapé"
+  },
+  {
+    "id": 300003,
+    "name": {
+      "fr": "Armoire"
+    },
+    "slug": "armoire",
+    "emoji": "🚪",
+    "category": 7,
+    "total": 907,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=armoire"
+  },
+  {
+    "id": 300004,
+    "name": {
+      "fr": "Lit (cadre + sommier + matelas)"
+    },
+    "slug": "lit",
+    "emoji": "🛏",
+    "category": 7,
+    "total": 444.3,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/281"
+  },
+  {
+    "id": 400000,
+    "name": {
+      "fr": "Four (électrique encastrable)"
+    },
+    "slug": "four",
+    "emoji": "🎛",
+    "category": 6,
+    "total": 217,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=four"
+  },
+  {
+    "id": 400001,
+    "name": {
+      "fr": "Lave-vaisselle"
+    },
+    "slug": "lavevaisselle",
+    "emoji": "🍽",
+    "category": 6,
+    "total": 271,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-vaisselle"
+  },
+  {
+    "id": 400002,
+    "name": {
+      "fr": "Lave-linge (7kg)"
+    },
+    "slug": "lavelinge",
+    "emoji": "🧦",
+    "category": 6,
+    "total": 342,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
+  },
+  {
+    "id": 400003,
+    "name": {
+      "fr": "Réfrigérateur"
+    },
+    "slug": "refrigirateur",
+    "emoji": "❄️",
+    "category": 6,
+    "total": 257,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
+  },
+  {
+    "id": 400005,
+    "name": {
+      "fr": "Aspirateur"
+    },
+    "slug": "aspirateur",
+    "emoji": "🧹",
+    "category": 6,
+    "total": 47.3,
+    "default": true,
+    "tile": true,
+    "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
   }
 ]
