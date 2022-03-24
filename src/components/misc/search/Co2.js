@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 
@@ -12,6 +12,10 @@ const Wrapper = styled.div`
 `
 export default function Co2() {
   const { footprints, setWeight } = useContext(DataContext)
+
+  useEffect(() => {
+    footprints.length && setWeight(footprints[0].value)
+  }, [footprints])
 
   return footprints ? (
     <Wrapper>
