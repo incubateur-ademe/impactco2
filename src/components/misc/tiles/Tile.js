@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: 11rem;
   margin: 1rem;
-  padding: 1rem 0;
+  padding: 1rem 0.25rem;
   background-color: ${(props) => props.theme.colors.secondLight};
   border-radius: 1rem;
 `
@@ -20,6 +20,7 @@ const StyledEmoji = styled(Emoji)`
   font-size: 2rem;
 `
 const Title = styled.h4`
+  min-height: 4.5rem;
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
   font-weight: normal;
