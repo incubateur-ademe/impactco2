@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
-import Breadcrumb from './details/Breadcrumb'
+import ModeSelector from 'components/misc/search/ModeSelector'
 import Share from './details/Share'
 
 const Wrapper = styled.div`
@@ -53,7 +53,7 @@ const Bottom = styled.div`
 export default function Details(props) {
   return (
     <>
-      <Breadcrumb equivalent={props.equivalent} category={props.category} />
+      <ModeSelector />
 
       <Wrapper>
         <Header>
