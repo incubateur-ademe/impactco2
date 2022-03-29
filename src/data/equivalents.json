@@ -168,218 +168,6 @@
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   },
   {
-    "id": 27012,
-    "name": {
-      "fr": "Smartphone[s]"
-    },
-    "slug": "smartphone",
-    "emoji": "📱",
-    "category": 1,
-    "total": 16.5,
-    "default": true,
-    "visualization": true,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27000,
-    "name": {
-      "fr": "Télévision[s]"
-    },
-    "slug": "television",
-    "emoji": "📺",
-    "category": 1,
-    "total": 371,
-    "default": true,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27002,
-    "name": {
-      "fr": "Ordinateur[s] portable[s]"
-    },
-    "slug": "ordinateurportable",
-    "emoji": "💻",
-    "category": 1,
-    "total": 156,
-    "default": true,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Ordinateur - portable\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27006,
-    "name": {
-      "fr": "Ordinateur[s] fixe[s] (avec écran)"
-    },
-    "slug": "ordinateurfixe",
-    "emoji": "🖥️",
-    "category": 1,
-    "total": 417,
-    "default": true,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Ecran - 23,8 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-
-  {
-    "id": 27013,
-    "name": {
-      "fr": "Montre[s] connectée[s]"
-    },
-    "slug": "montreconnectee",
-    "emoji": "⌚️",
-    "category": 1,
-    "total": 9.72,
-    "default": false,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27014,
-    "name": {
-      "fr": "Console[s] vidéo"
-    },
-    "slug": "consolevideo",
-    "emoji": "🎮",
-    "category": 1,
-    "total": 73.3,
-    "default": false,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27015,
-    "name": {
-      "fr": "Imprimante[s] (jet d'encre)"
-    },
-    "slug": "imprimantejetdencre",
-    "emoji": "🖨",
-    "category": 1,
-    "total": 88.2,
-    "default": false,
-    "visualization": false,
-    "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27043,
-    "name": {
-      "fr": "Jean[s] (en coton)"
-    },
-    "slug": "jeanencoton",
-    "emoji": "👖",
-    "category": 5,
-    "total": 23.2,
-    "default": false,
-    "visualization": false,
-    "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27044,
-    "name": {
-      "fr": "T-shirt[s] en coton"
-    },
-    "slug": "tshirtencoton",
-    "emoji": "👕",
-    "category": 5,
-    "total": 5.2,
-    "default": true,
-    "visualization": true,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27045,
-    "name": {
-      "fr": "Chemise[s] (en coton)"
-    },
-    "slug": "chemiseencoton",
-    "emoji": "👚",
-    "category": 5,
-    "total": 11.2,
-    "default": false,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27046,
-    "name": {
-      "fr": "Chaussure[s] en cuir"
-    },
-    "slug": "chaussureencuir",
-    "emoji": "👞",
-    "category": 5,
-    "total": 13.4,
-    "default": false,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27047,
-    "name": {
-      "fr": "Robe[s]"
-    },
-    "slug": "Robe",
-    "emoji": "👗",
-    "category": 5,
-    "total": 49.8,
-    "default": false,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27048,
-    "name": {
-      "fr": "Pull[s] (en laine)"
-    },
-    "slug": "pullenlaine",
-    "emoji": "🧶",
-    "category": 5,
-    "total": 52.9,
-    "default": true,
-    "visualization": false,
-    "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
-    "id": 27049,
-    "name": {
-      "fr": "Manteau[s]"
-    },
-    "slug": "manteau",
-    "emoji": "🧥",
-    "category": 5,
-    "total": 85.8,
-    "default": false,
-    "visualization": false,
-    "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-
-  {
-    "id": 26966,
-    "name": {
-      "fr": "Canapé[s] convertible[s]"
-    },
-    "slug": "canapeconvertible",
-    "emoji": "🛋",
-    "category": 7,
-    "total": 197,
-    "default": false,
-    "visualization": false,
-    "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
-  },
-  {
     "id": 24283,
     "name": {
       "fr": "Litre[s] d'eau du robinet"
@@ -464,6 +252,219 @@
     "sources": "Agribalyse"
   },
   {
+    "id": 27012,
+    "name": {
+      "fr": "Smartphone[s]"
+    },
+    "slug": "smartphone",
+    "emoji": "📱",
+    "category": 1,
+    "total": 16.5,
+    "default": false,
+    "visualization": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27000,
+    "name": {
+      "fr": "Télévision[s]"
+    },
+    "slug": "television",
+    "emoji": "📺",
+    "category": 1,
+    "total": 371,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27002,
+    "name": {
+      "fr": "Ordinateur[s] portable[s]"
+    },
+    "slug": "ordinateurportable",
+    "emoji": "💻",
+    "category": 1,
+    "total": 156,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Ordinateur - portable\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27006,
+    "name": {
+      "fr": "Ordinateur[s] fixe[s] (avec écran)"
+    },
+    "slug": "ordinateurfixe",
+    "emoji": "🖥️",
+    "category": 1,
+    "total": 417,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Ecran - 23,8 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+
+  {
+    "id": 27013,
+    "name": {
+      "fr": "Montre[s] connectée[s]"
+    },
+    "slug": "montreconnectee",
+    "emoji": "⌚️",
+    "category": 1,
+    "total": 9.72,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27014,
+    "name": {
+      "fr": "Console[s] vidéo"
+    },
+    "slug": "consolevideo",
+    "emoji": "🎮",
+    "category": 1,
+    "total": 73.3,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27015,
+    "name": {
+      "fr": "Imprimante[s] (jet d'encre)"
+    },
+    "slug": "imprimantejetdencre",
+    "emoji": "🖨",
+    "category": 1,
+    "total": 88.2,
+    "default": true,
+    "visualization": false,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27043,
+    "name": {
+      "fr": "Jean[s] (en coton)"
+    },
+    "slug": "jeanencoton",
+    "emoji": "👖",
+    "category": 5,
+    "total": 23.2,
+    "default": true,
+    "visualization": false,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27044,
+    "name": {
+      "fr": "T-shirt[s] en coton"
+    },
+    "slug": "tshirtencoton",
+    "emoji": "👕",
+    "category": 5,
+    "total": 5.2,
+    "default": false,
+    "visualization": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27045,
+    "name": {
+      "fr": "Chemise[s] (en coton)"
+    },
+    "slug": "chemiseencoton",
+    "emoji": "👚",
+    "category": 5,
+    "total": 11.2,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27046,
+    "name": {
+      "fr": "Chaussure[s] en cuir"
+    },
+    "slug": "chaussureencuir",
+    "emoji": "👞",
+    "category": 5,
+    "total": 13.4,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27047,
+    "name": {
+      "fr": "Robe[s]"
+    },
+    "slug": "Robe",
+    "emoji": "👗",
+    "category": 5,
+    "total": 49.8,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27048,
+    "name": {
+      "fr": "Pull[s] (en laine)"
+    },
+    "slug": "pullenlaine",
+    "emoji": "🧶",
+    "category": 5,
+    "total": 52.9,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27049,
+    "name": {
+      "fr": "Manteau[s]"
+    },
+    "slug": "manteau",
+    "emoji": "🧥",
+    "category": 5,
+    "total": 85.8,
+    "default": true,
+    "visualization": false,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+
+  {
+    "id": 26966,
+    "name": {
+      "fr": "Canapé[s] convertible[s]"
+    },
+    "slug": "canapeconvertible",
+    "emoji": "🛋",
+    "category": 7,
+    "total": 197,
+    "default": true,
+    "visualization": false,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+
+  {
     "id": 300000,
     "name": {
       "fr": "Chaise[s] (en bois)"
@@ -472,7 +473,7 @@
     "emoji": "🪑",
     "category": 7,
     "total": 18.6,
-    "default": false,
+    "default": true,
     "visualization": false,
     "tile": true,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=chaise"
@@ -500,7 +501,7 @@
     "emoji": "🛋",
     "category": 7,
     "total": 179,
-    "default": false,
+    "default": true,
     "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=canapé"
@@ -514,7 +515,7 @@
     "emoji": "🚪",
     "category": 7,
     "total": 907,
-    "default": false,
+    "default": true,
     "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=armoire"
@@ -528,7 +529,7 @@
     "emoji": "🛏",
     "category": 7,
     "total": 444.3,
-    "default": false,
+    "default": true,
     "visualization": false,
     "tile": true,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/281"
@@ -542,7 +543,7 @@
     "emoji": "🎛",
     "category": 6,
     "total": 217,
-    "default": false,
+    "default": true,
     "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=four"
@@ -570,7 +571,7 @@
     "emoji": "🧦",
     "category": 6,
     "total": 342,
-    "default": false,
+    "default": true,
     "visualization": false,
     "tile": true,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
@@ -584,7 +585,7 @@
     "emoji": "❄️",
     "category": 6,
     "total": 257,
-    "default": false,
+    "default": true,
     "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
@@ -598,7 +599,7 @@
     "emoji": "🧹",
     "category": 6,
     "total": 47.3,
-    "default": false,
+    "default": true,
     "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"

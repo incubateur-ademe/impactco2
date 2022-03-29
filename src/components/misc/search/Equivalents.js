@@ -22,16 +22,16 @@ export default function Equivalents() {
         slidesToShow={1}
         slidesToScroll={1}
         initialSlide={equivalents
-          .filter((equivalent) => !equivalent.visualization)
+          .filter((equivalent) => equivalent.default)
           .findIndex((equivalent) => equivalent.id === currentEquivalent.id)}
         afterChange={(index) =>
           setCurrentEquivalent(
-            equivalents.filter((equivalent) => !equivalent.visualization)[index]
+            equivalents.filter((equivalent) => equivalent.default)[index]
           )
         }
       >
         {equivalents
-          .filter((equivalent) => !equivalent.visualization)
+          .filter((equivalent) => equivalent.default)
           .map((equivalent) => (
             <Equivalent equivalent={equivalent} key={equivalent.id} />
           ))}
