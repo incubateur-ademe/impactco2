@@ -35,7 +35,11 @@ export default function Tiles(props) {
               !props.equivalent || equivalent.id !== props.equivalent.id
           )
           .map((equivalent) => (
-            <Tile equivalent={equivalent} weight={props.weight} />
+            <Tile
+              equivalent={equivalent}
+              weight={props.weight}
+              key={equivalent.id}
+            />
           ))}
       </TilesWrapper>
     </Wrapper>

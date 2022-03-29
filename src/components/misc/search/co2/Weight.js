@@ -14,12 +14,33 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.footerLight};
   border-radius: 1rem;
 `
+const StyledTextInput = styled(TextInput)`
+  position: relative;
+
+  &:before {
+    content: 'kgCO2e';
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+  input {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-right: 5rem;
+    text-align: right;
+  }
+`
 export default function Weight() {
   const { weight, setWeight } = useContext(DataContext)
 
   return (
     <Wrapper>
-      <TextInput value={weight} onChange={(e) => setWeight(e.value)} />
+      <StyledTextInput
+        type='number'
+        value={weight}
+        onChange={(e) => setWeight(e.value)}
+      />
     </Wrapper>
   )
 }
