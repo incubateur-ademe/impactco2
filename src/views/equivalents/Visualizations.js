@@ -23,6 +23,7 @@ export default function Visualizations(props) {
       )}
       {equivalents
         .filter((equivalent) => equivalent.visualization)
+        .sort((a, b) => (a.total > b.total ? -1 : 1))
         .map((equivalent) => (
           <Visualization equivalent={equivalent} weight={props.weight} />
         ))}

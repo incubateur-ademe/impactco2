@@ -21,14 +21,20 @@ export default function Equivalents() {
         speed={500}
         slidesToShow={1}
         slidesToScroll={1}
-        initialSlide={equivalents.findIndex(
-          (equivalent) => equivalent.id === currentEquivalent.id
-        )}
-        afterChange={(index) => setCurrentEquivalent(equivalents[index])}
+        initialSlide={equivalents
+          .filter((equivalent) => !equivalent.visualization)
+          .findIndex((equivalent) => equivalent.id === currentEquivalent.id)}
+        afterChange={(index) =>
+          setCurrentEquivalent(
+            equivalents.filter((equivalent) => !equivalent.visualization)[index]
+          )
+        }
       >
-        {equivalents.map((equivalent) => (
-          <Equivalent equivalent={equivalent} key={equivalent.id} />
-        ))}
+        {equivalents
+          .filter((equivalent) => !equivalent.visualization)
+          .map((equivalent) => (
+            <Equivalent equivalent={equivalent} key={equivalent.id} />
+          ))}
       </Slider>
     </Wrapper>
   ) : null
