@@ -7,7 +7,10 @@ import Tile from './tiles/Tile'
 const Wrapper = styled.div`
   margin-top: 1.5rem;
 `
-
+const Title = styled.h3`
+  text-align: center;
+  color: ${(props) => props.theme.colors.text};
+`
 const TilesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -17,6 +20,13 @@ export default function Tiles(props) {
   const { equivalents } = useContext(DataContext)
   return props.weight && equivalents ? (
     <Wrapper>
+      {props.title && (
+        <Title>
+          c’est autant d’émissions que pour
+          <br />
+          fabriquer, consommer ou parcourir :
+        </Title>
+      )}
       <TilesWrapper>
         {equivalents
           .filter((equivalent) => !equivalent.visualization)

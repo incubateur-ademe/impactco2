@@ -10,7 +10,7 @@ export default function Co2() {
   return (
     <>
       <Search type='co2' />
-      <Tiles weight={weight} />
+      <Tiles weight={weight} title />
     </>
   )
 }

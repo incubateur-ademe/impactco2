@@ -5,7 +5,9 @@ import { formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Visualization from './visualizations/Visualization'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin-top: 1.5rem;
+`
 const Title = styled.h3`
   text-align: center;
   color: ${(props) => props.theme.colors.text};

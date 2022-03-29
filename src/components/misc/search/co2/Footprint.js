@@ -19,8 +19,7 @@ const StyledEmoji = styled(Emoji)`
 `
 const Title = styled.h2`
   margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 1.5rem;
   color: ${(props) => props.theme.colors.text};
 `
 const Description = styled.p``
