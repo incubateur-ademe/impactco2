@@ -21,18 +21,21 @@ const StyledEmoji = styled(Emoji)`
   font-size: 1.5rem;
 `
 export default function Visualization(props) {
+  console.log(formatNumber(props.weight / props.equivalent.total, true))
   return props.weight ? (
     <Wrapper>
       <Title>
         {formatNumber(props.weight / props.equivalent.total)}{' '}
         {formatName(
           props.equivalent.name.fr,
-          formatNumber(props.weight / props.equivalent.total)
+          formatNumber(props.weight / props.equivalent.total, true)
         )}
       </Title>
       <Emojis>
         {Array.from(
-          Array(Math.ceil(formatNumber(props.weight / props.equivalent.total)))
+          Array(
+            Math.ceil(formatNumber(props.weight / props.equivalent.total, true))
+          )
         ).map((emoji) => (
           <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
         ))}

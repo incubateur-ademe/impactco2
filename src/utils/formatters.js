@@ -1,4 +1,4 @@
-export function formatNumber(value) {
+export function formatNumber(value, noformat) {
   let tempTotal = Math.round(value * 100000) / 100000
   tempTotal =
     tempTotal > 0.001 ? Math.round(tempTotal * 10000) / 10000 : tempTotal
@@ -7,7 +7,7 @@ export function formatNumber(value) {
   tempTotal = tempTotal > 0.01 ? Math.round(tempTotal * 100) / 100 : tempTotal
   tempTotal = tempTotal > 0.1 ? Math.round(tempTotal * 10) / 10 : tempTotal
   tempTotal = tempTotal > 1 ? Math.round(tempTotal * 1) / 1 : tempTotal
-  return tempTotal.toLocaleString('fr-fr')
+  return noformat ? tempTotal : tempTotal.toLocaleString('fr-fr')
 }
 
 export function formatName(name, value) {
