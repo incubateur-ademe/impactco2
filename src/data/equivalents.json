@@ -9,6 +9,7 @@
     "category": 4,
     "total": 0.0025,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro"
   },
@@ -22,6 +23,7 @@
     "category": 4,
     "total": 0.193,
     "default": false,
+    "visualization": true,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
@@ -35,6 +37,7 @@
     "category": 4,
     "total": 0.0198,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
@@ -48,6 +51,7 @@
     "category": 4,
     "total": 0.168,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
@@ -61,6 +65,7 @@
     "category": 4,
     "total": 0.00173,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\"<br/>Périmètre : émissions liées à la production et la distribution d'électricité.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
@@ -74,6 +79,7 @@
     "category": 4,
     "total": 0.186,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
@@ -87,6 +93,7 @@
     "category": 2,
     "total": 7.26,
     "default": false,
+    "visualization": true,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
   },
@@ -100,6 +107,7 @@
     "category": 2,
     "total": 0.51,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
   },
@@ -113,6 +121,7 @@
     "category": 2,
     "total": 0.39,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "NGC"
   },
@@ -126,6 +135,7 @@
     "category": 2,
     "total": 1.11,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "NGC"
   },
@@ -139,6 +149,7 @@
     "category": 2,
     "total": 1.98,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "NGC"
   },
@@ -152,6 +163,7 @@
     "category": 2,
     "total": 1.58,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   },
@@ -165,6 +177,7 @@
     "category": 1,
     "total": 16.5,
     "default": true,
+    "visualization": true,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -178,6 +191,7 @@
     "category": 1,
     "total": 371,
     "default": true,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Télévision - 40-49 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -191,6 +205,7 @@
     "category": 1,
     "total": 156,
     "default": true,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Ordinateur - portable\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -204,6 +219,7 @@
     "category": 1,
     "total": 417,
     "default": true,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Ecran - 23,8 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -218,6 +234,7 @@
     "category": 1,
     "total": 9.72,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -231,6 +248,7 @@
     "category": 1,
     "total": 73.3,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -244,6 +262,7 @@
     "category": 1,
     "total": 88.2,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -257,6 +276,7 @@
     "category": 5,
     "total": 23.2,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -270,6 +290,7 @@
     "category": 5,
     "total": 5.2,
     "default": true,
+    "visualization": true,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -283,6 +304,7 @@
     "category": 5,
     "total": 11.2,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -296,6 +318,7 @@
     "category": 5,
     "total": 13.4,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -309,6 +332,7 @@
     "category": 5,
     "total": 49.8,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -322,6 +346,7 @@
     "category": 5,
     "total": 52.9,
     "default": true,
+    "visualization": false,
     "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -335,6 +360,7 @@
     "category": 5,
     "total": 85.8,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -349,6 +375,7 @@
     "category": 7,
     "total": 197,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
@@ -362,6 +389,7 @@
     "category": 3,
     "total": 0.000132,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
   },
@@ -375,6 +403,7 @@
     "category": 3,
     "total": 0.453,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
   },
@@ -388,6 +417,7 @@
     "category": 3,
     "total": 0.57,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Agribalyse"
   },
@@ -401,6 +431,7 @@
     "category": 3,
     "total": 1.09,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Agribalyse"
   },
@@ -414,6 +445,7 @@
     "category": 3,
     "total": 1.13,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Agribalyse"
   },
@@ -427,6 +459,7 @@
     "category": 3,
     "total": 1.53,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "Agribalyse"
   },
@@ -440,6 +473,7 @@
     "category": 7,
     "total": 18.6,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=chaise"
   },
@@ -453,6 +487,7 @@
     "category": 7,
     "total": 80.2,
     "default": true,
+    "visualization": false,
     "tile": true,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=table"
   },
@@ -466,6 +501,7 @@
     "category": 7,
     "total": 179,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=canapé"
   },
@@ -479,6 +515,7 @@
     "category": 7,
     "total": 907,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=armoire"
   },
@@ -492,6 +529,7 @@
     "category": 7,
     "total": 444.3,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/281"
   },
@@ -505,6 +543,7 @@
     "category": 6,
     "total": 217,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=four"
   },
@@ -518,6 +557,7 @@
     "category": 6,
     "total": 271,
     "default": true,
+    "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-vaisselle"
   },
@@ -531,6 +571,7 @@
     "category": 6,
     "total": 342,
     "default": false,
+    "visualization": false,
     "tile": true,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
   },
@@ -544,6 +585,7 @@
     "category": 6,
     "total": 257,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
   },
@@ -557,6 +599,7 @@
     "category": 6,
     "total": 47.3,
     "default": false,
+    "visualization": false,
     "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
   }

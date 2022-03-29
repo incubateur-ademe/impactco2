@@ -16,25 +16,19 @@ export default function Equivalents() {
   return equivalents && currentEquivalent ? (
     <Wrapper>
       <Slider
-        dots={true}
+        dots={false}
         infinite={true}
         speed={500}
         slidesToShow={1}
         slidesToScroll={1}
-        initialSlide={equivalents
-          .filter((equivalent) => equivalent.default)
-          .findIndex((equivalent) => equivalent.id === currentEquivalent.id)}
-        afterChange={(index) =>
-          setCurrentEquivalent(
-            equivalents.filter((equivalent) => equivalent.default)[index]
-          )
-        }
+        initialSlide={equivalents.findIndex(
+          (equivalent) => equivalent.id === currentEquivalent.id
+        )}
+        afterChange={(index) => setCurrentEquivalent(equivalents[index])}
       >
-        {equivalents
-          .filter((equivalent) => equivalent.default)
-          .map((equivalent) => (
-            <Equivalent equivalent={equivalent} key={equivalent.id} />
-          ))}
+        {equivalents.map((equivalent) => (
+          <Equivalent equivalent={equivalent} key={equivalent.id} />
+        ))}
       </Slider>
     </Wrapper>
   ) : null

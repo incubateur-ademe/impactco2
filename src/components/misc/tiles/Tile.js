@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import AnimatedNumber from 'animated-number-react'
 
+import { formatNumber, formatName } from 'utils/formatters'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/Button'
 
@@ -53,29 +54,13 @@ export default function Tile(props) {
           <AnimatedNumber
             value={props.weight / props.equivalent.total}
             duration={500}
-            formatValue={(value) => {
-              let tempTotal = Math.round(value * 100000) / 100000
-              tempTotal =
-                tempTotal > 0.001
-                  ? Math.round(tempTotal * 10000) / 10000
-                  : tempTotal
-              tempTotal =
-                tempTotal > 0.001
-                  ? Math.round(tempTotal * 1000) / 1000
-                  : tempTotal
-              tempTotal =
-                tempTotal > 0.01 ? Math.round(tempTotal * 100) / 100 : tempTotal
-              tempTotal =
-                tempTotal > 0.1 ? Math.round(tempTotal * 10) / 10 : tempTotal
-              tempTotal =
-                tempTotal > 1 ? Math.round(tempTotal * 1) / 1 : tempTotal
-              return tempTotal
-            }}
+            formatValue={formatNumber}
           />
         </Number>{' '}
-        {props.equivalent.name.fr
-          .replaceAll('[s]', total > 1 ? 's' : '')
-          .toLowerCase()}
+        {formatName(
+          props.equivalent.name.fr,
+          props.weight / props.equivalent.total
+        )}
       </Title>
 
       <StyledButton to={`/equivalents/${props.equivalent.slug}`}>
