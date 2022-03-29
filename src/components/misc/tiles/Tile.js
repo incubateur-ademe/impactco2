@@ -59,7 +59,7 @@ export default function Tile(props) {
         </Number>{' '}
         {formatName(
           props.equivalent.name.fr,
-          props.weight / props.equivalent.total
+          formatNumber(props.weight / props.equivalent.total, true)
         )}
       </Title>
 
