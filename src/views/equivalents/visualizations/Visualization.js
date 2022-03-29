@@ -32,7 +32,7 @@ export default function Visualization(props) {
       </Title>
       <Emojis>
         {Array.from(
-          Array(Math.ceil(props.weight / props.equivalent.total))
+          Array(Math.ceil(formatNumber(props.weight / props.equivalent.total)))
         ).map((emoji) => (
           <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
         ))}
