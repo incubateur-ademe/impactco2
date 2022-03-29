@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import { formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Visualization from './visualizations/Visualization'
 
@@ -16,7 +17,7 @@ export default function Visualizations(props) {
     <Wrapper>
       {props.equivalent && (
         <Title>
-          1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
+          1 {formatName(props.equivalent.name.fr, 1).toLowerCase()}
           <br />
           émet autant de CO2e que...
         </Title>
