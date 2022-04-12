@@ -16,7 +16,7 @@ export default function Co2() {
   return footprints ? (
     <Wrapper>
       <Slider
-        dots={true}
+        dots={false}
         infinite={true}
         speed={500}
         slidesToShow={1}

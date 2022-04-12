@@ -15,7 +15,6 @@ export default function Equivalents() {
         equivalent={currentEquivalent}
         weight={currentEquivalent?.total}
       />
-      <Tiles equivalent={currentEquivalent} weight={currentEquivalent?.total} />
     </>
   )
 }

@@ -2,7 +2,6 @@ const slickStyle = `
 .slick-slider {
   position: relative;
   display: block;
-  margin-bottom: 1.5rem;
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;

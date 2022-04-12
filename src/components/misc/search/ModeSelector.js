@@ -41,13 +41,13 @@ export default function ModeSelector() {
   return (
     <Wrapper>
       <Tab current={location.pathname === '/'} to='/'>
-        Équivalents
+        Équivalences
       </Tab>
       <Tab current={location.pathname.includes('/categories')} to='/categories'>
         Categories
       </Tab>
       <Tab current={location.pathname.includes('/co2')} to='/co2'>
-        Poids
+        CO2e
       </Tab>
       <Burger location={location} />
     </Wrapper>

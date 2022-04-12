@@ -7,7 +7,7 @@ import Equivalent from './selector/Equivalent'
 
 const Wrapper = styled.div`
   max-width: 21rem;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
 `
 const Title = styled.div`
   margin: 0 0.5rem;
