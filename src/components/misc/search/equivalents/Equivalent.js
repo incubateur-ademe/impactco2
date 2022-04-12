@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Emoji from 'components/base/Emoji'
-import Button from 'components/base/Button'
+import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
   display: flex;
@@ -42,8 +42,7 @@ const Unit = styled.span`
 const Small = styled.span`
   font-size: 0.75rem;
 `
-const StyledButton = styled(Button)`
-  padding: 0.375rem 1rem;
+const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;
 `
 export default function Equivalent(props) {
@@ -61,9 +60,9 @@ export default function Equivalent(props) {
           </Unit>
         </Value>
       )}
-      <StyledButton to={`/equivalents/${props.equivalent.slug}`} hollow>
+      <StyledMagicLink to={`/equivalents/${props.equivalent.slug}`} hollow>
         Voir le détail
-      </StyledButton>
+      </StyledMagicLink>
     </Wrapper>
   )
 }

@@ -18,9 +18,10 @@ const StyledEmoji = styled(Emoji)`
   font-size: 2.5rem;
 `
 const Title = styled.h2`
+  display: flex;
+  align-items: center;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 1.25rem;
   color: ${(props) => props.theme.colors.text};
 `
 export default function Category(props) {
