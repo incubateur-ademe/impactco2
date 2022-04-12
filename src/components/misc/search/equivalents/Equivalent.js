@@ -19,6 +19,8 @@ const StyledEmoji = styled(Emoji)`
   font-size: 1.5rem;
 `
 const Title = styled.h2`
+  display: flex;
+  align-items: center;
   margin-bottom: 0.5rem;
   min-height: 3rem;
   font-size: 1.25rem;

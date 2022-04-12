@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import { formatNumber } from 'utils/formatters'
+import DataContext from 'utils/DataContext'
 import Emoji from 'components/base/Emoji'
 import Selector from './visualization/Selector'
 
@@ -27,13 +28,23 @@ const StyledEmoji = styled(Emoji)`
   font-size: 1.5rem;
 `
 export default function Visualization(props) {
+  const { categories } = useContext(DataContext)
   return props.weight ? (
     <Wrapper>
       <Selector weight={props.weight} />
       <Emojis>
         {Array.from(
           Array(
-            Math.ceil(formatNumber(props.weight / props.equivalent.total, true))
+            Math.ceil(
+              formatNumber(
+                props.weight /
+                  props.equivalent.total /
+                  categories.find(
+                    (category) => category.id === props.equivalent.category
+                  ).multiplier,
+                true
+              )
+            )
           )
         ).map((emoji) => (
           <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
