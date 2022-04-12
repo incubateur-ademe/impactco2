@@ -9,6 +9,7 @@ import footprintsData from 'data/footprints.json'
 export default function DataProvider(props) {
   const [equivalents, setEquivalents] = useState([])
   const [currentEquivalent, setCurrentEquivalent] = useState(0)
+  const [visualizedEquivalent, setVisualizedEquivalent] = useState(0)
 
   const [categories, setCategories] = useState([])
   const [currentCategory, setCurrentCategory] = useState(0)
@@ -30,6 +31,9 @@ export default function DataProvider(props) {
             String(equivalent.id) === window.location.hash.replace('#', '')
         )) ||
         equivalents.filter((equivalent) => equivalent.default)[0]
+    )
+    setVisualizedEquivalent(
+      equivalents.find((equivalent) => equivalent.id === 27976)
     )
   }, [equivalents])
 
@@ -54,6 +58,8 @@ export default function DataProvider(props) {
           navigate(`#${equivalent.id}`)
           setCurrentEquivalent(equivalent)
         },
+        visualizedEquivalent,
+        setVisualizedEquivalent,
         categories,
         currentCategory,
         setCurrentCategory: (category) => {

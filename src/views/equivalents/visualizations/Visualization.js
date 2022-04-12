@@ -1,18 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { formatNumber, formatName } from 'utils/formatters'
+import { formatNumber } from 'utils/formatters'
 import Emoji from 'components/base/Emoji'
+import Selector from './visualization/Selector'
 
 const Wrapper = styled.div`
   margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: ${(props) => props.theme.colors.secondLight};
+  border-radius: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    padding: 1rem;
+  }
 `
-const Title = styled.h3`
-  margin-bottom: 0.25rem;
-  color: ${(props) => props.theme.colors.text};
-`
+
 const Emojis = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0 -0.125rem;
 `
@@ -21,16 +27,9 @@ const StyledEmoji = styled(Emoji)`
   font-size: 1.5rem;
 `
 export default function Visualization(props) {
-  console.log(formatNumber(props.weight / props.equivalent.total, true))
   return props.weight ? (
     <Wrapper>
-      <Title>
-        {formatNumber(props.weight / props.equivalent.total)}{' '}
-        {formatName(
-          props.equivalent.name.fr,
-          formatNumber(props.weight / props.equivalent.total, true)
-        )}
-      </Title>
+      <Selector weight={props.weight} />
       <Emojis>
         {Array.from(
           Array(

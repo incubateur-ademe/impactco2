@@ -1,35 +1,23 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import { formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Visualization from './visualizations/Visualization'
 
 const Wrapper = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 `
-const Title = styled.h3`
+const Title = styled.div`
+  margin-bottom: 1rem;
   text-align: center;
-  color: ${(props) => props.theme.colors.text};
 `
 export default function Visualizations(props) {
-  const { equivalents } = useContext(DataContext)
+  const { visualizedEquivalent } = useContext(DataContext)
 
-  return (
+  return props.equivalent && visualizedEquivalent ? (
     <Wrapper>
-      {props.equivalent && (
-        <Title>
-          1 {formatName(props.equivalent.name.fr, 1).toLowerCase()}
-          <br />
-          émet autant de CO2e que...
-        </Title>
-      )}
-      {equivalents
-        .filter((equivalent) => equivalent.visualization)
-        .sort((a, b) => (a.total > b.total ? -1 : 1))
-        .map((equivalent) => (
-          <Visualization equivalent={equivalent} weight={props.weight} />
-        ))}
+      <Title>émet autant de CO2e que</Title>
+      <Visualization equivalent={visualizedEquivalent} weight={props.weight} />
     </Wrapper>
-  )
+  ) : null
 }

@@ -20,8 +20,8 @@ const StyledEmoji = styled(Emoji)`
 `
 const Title = styled.h2`
   margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: normal;
+  min-height: 3rem;
+  font-size: 1.25rem;
   color: ${(props) => props.theme.colors.text};
 `
 const Value = styled.div`
@@ -51,12 +51,14 @@ export default function Equivalent(props) {
       <Title>
         1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
       </Title>
-      <Value>
-        <Number>{props.equivalent.total}</Number>
-        <Unit>
-          <Small>kg</Small> CO2<Small>e</Small>
-        </Unit>
-      </Value>
+      {false && (
+        <Value>
+          <Number>{props.equivalent.total}</Number>
+          <Unit>
+            <Small>kg</Small> CO2<Small>e</Small>
+          </Unit>
+        </Value>
+      )}
       <StyledButton to={`/equivalents/${props.equivalent.slug}`} hollow>
         Voir le détail
       </StyledButton>
