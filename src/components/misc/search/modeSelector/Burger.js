@@ -98,7 +98,7 @@ export default function Burger(props) {
   return (
     <Wrapper>
       <Button
-        current={props.location.pathname === '/teletravail'}
+        current={props.location.pathname.includes('/co2')}
         aria-label='menu'
       >
         <Svg
@@ -135,7 +135,7 @@ export default function Burger(props) {
         </Svg>
       </Button>
       <MenuWrapper>
-        <Item to='/teletravail'>Mode télétravail</Item>
+        <Item to='/co2'>CO2e</Item>
       </MenuWrapper>
     </Wrapper>
   )

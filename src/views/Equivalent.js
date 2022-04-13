@@ -10,7 +10,11 @@ export default function Equivalent(props) {
     <>
       <Details equivalent={props.equivalent} category={props.category} />
       <Category equivalent={props.equivalent} category={props.category} title />
-      <Tiles equivalent={props.equivalent} weight={props.equivalent.total} />
+      <Tiles
+        equivalent={props.equivalent}
+        weight={props.equivalent.total}
+        title
+      />
       <Source equivalent={props.equivalent} />
     </>
   )

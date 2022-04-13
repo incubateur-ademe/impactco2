@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import { formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Tile from './tiles/Tile'
 
@@ -22,6 +23,12 @@ export default function Tiles(props) {
     <Wrapper>
       {props.title && (
         <Title>
+          {props.equivalent && (
+            <>
+              1 {formatName(props.equivalent.name.fr, 1)}
+              <br />
+            </>
+          )}
           c’est autant d’émissions que pour
           <br />
           fabriquer, consommer ou parcourir :

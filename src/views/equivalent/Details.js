@@ -26,25 +26,41 @@ const StyledEmoji = styled(Emoji)`
   font-size: 3rem;
 `
 const Title = styled.h1`
-  margin: 0.25rem 0 0.75rem;
-  font-size: 1.75rem;
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.5rem;
   font-weight: normal;
   color: ${(props) => props.theme.colors.text};
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.25rem;
+  }
 `
 const Value = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: ${(props) => props.theme.colors.second};
   line-height: 1.1;
 `
 const Number = styled.span`
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: bold;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 2rem;
+  }
 `
 const Unit = styled.span`
   font-size: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.75rem;
+  }
 `
 const Big = styled.span`
   font-size: 1.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
 `
 const Bottom = styled.div`
   display: flex;

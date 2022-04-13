@@ -6,6 +6,7 @@ import DataContext from 'utils/DataContext'
 import Equivalent from './selector/Equivalent'
 
 const Wrapper = styled.div`
+  width: calc(100vw - 5rem);
   max-width: 21rem;
   margin: 0 auto 1rem;
 `

@@ -7,6 +7,7 @@ import Footprint from './co2/Footprint'
 import Weight from './co2/Weight'
 
 const Wrapper = styled.div`
+  width: calc(100vw - 5rem);
   max-width: 21rem;
   margin: 0 auto;
 `

@@ -15,10 +15,18 @@ const Wrapper = styled.div`
   padding: 1rem 0.25rem;
   background-color: ${(props) => props.theme.colors.secondLight};
   border-radius: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    width: calc(50% - 2rem);
+  }
 `
 const StyledEmoji = styled(Emoji)`
   margin-bottom: 0.5rem;
   font-size: 2rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.5rem;
+  }
 `
 const Title = styled.h4`
   min-height: 4.5rem;
@@ -32,10 +40,18 @@ const Number = styled.span`
   display: block;
   font-size: 2rem;
   font-weight: bold;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.5rem;
+  }
 `
 const StyledButton = styled(Button)`
   padding: 0.375rem 1rem;
   font-size: 0.875rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.75rem;
+  }
 `
 export default function Tile(props) {
   const [total, setTotal] = useState(0)
