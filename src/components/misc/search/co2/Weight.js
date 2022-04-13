@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import DataContext from 'utils/DataContext'
+import Emoji from 'components/base/Emoji'
 import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
@@ -14,8 +15,14 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.footerLight};
   border-radius: 1rem;
 `
+const StyledEmoji = styled(Emoji)`
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+`
 const StyledTextInput = styled(TextInput)`
   position: relative;
+  max-width: 10rem;
+  margin: 0 auto 1rem;
 
   &:before {
     content: 'kgCO2e';
@@ -25,7 +32,7 @@ const StyledTextInput = styled(TextInput)`
     transform: translateY(-50%);
   }
   input {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     padding-right: 5rem;
     text-align: right;
@@ -36,6 +43,7 @@ export default function Weight() {
 
   return (
     <Wrapper>
+      <StyledEmoji>⚖️</StyledEmoji>
       <StyledTextInput
         type='number'
         value={weight}

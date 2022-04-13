@@ -14,15 +14,21 @@ const Wrapper = styled.div`
   border-radius: 1rem;
 `
 const StyledEmoji = styled(Emoji)`
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-`
-const Title = styled.h2`
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
+`
+const Title = styled.h2`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  min-height: 3rem;
+  font-size: 1.25rem;
   color: ${(props) => props.theme.colors.text};
 `
-const Description = styled.p``
+const Description = styled.p`
+  margin: 0;
+  font-size: 0.875rem;
+`
 export default function Footprint(props) {
   return (
     <Wrapper>
