@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby'
 
+import { formatName } from 'utils/formatters'
+
 const SEO = (props) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(graphql`
@@ -28,7 +30,11 @@ const SEO = (props) => {
   } = site.siteMetadata
 
   const seo = {
-    title: props.title ? `${props.title} | ${defaultTitle}` : defaultTitle,
+    title: formatName(
+      props.title ? `${props.title} | ${defaultTitle}` : defaultTitle,
+      1,
+      true
+    ),
     description: props.description || defaultDescription,
     image: `${siteUrl}/${props.image || defaultImage}`,
     url: `${siteUrl}${pathname}`,

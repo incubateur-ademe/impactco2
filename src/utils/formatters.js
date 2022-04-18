@@ -10,10 +10,18 @@ export function formatNumber(value, noformat) {
   return noformat ? tempTotal : tempTotal.toLocaleString('fr-fr')
 }
 
-export function formatName(name, value) {
-  return name
+export function formatName(name, value, capital) {
+  const newName = name
     .replaceAll('[s]', value > 1 ? 's' : '')
-    .toLowerCase()
     .replaceAll('[x]', value > 1 ? 'x' : '')
-    .toLowerCase()
+
+  return capital ? newName : newName.toLowerCase()
+}
+
+export function formatPercent(value, total) {
+  let tempPercent = (value / total) * 100
+  tempPercent = Math.round(tempPercent * 100) / 100
+  tempPercent =
+    tempPercent > 1 ? Math.round(tempPercent * 10) / 10 : tempPercent
+  return tempPercent
 }

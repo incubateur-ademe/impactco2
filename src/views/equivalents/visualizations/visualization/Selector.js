@@ -10,15 +10,6 @@ const Wrapper = styled.div`
   max-width: 21rem;
   margin: 0 auto 1rem;
 `
-const Title = styled.div`
-  margin: 0 0.5rem;
-  padding: 1rem;
-  font-size: 1.25rem;
-  text-align: center;
-  color: ${(props) => props.theme.colors.text};
-  background-color: ${(props) => props.theme.colors.footerLight};
-  border-radius: 1rem;
-`
 export default function Selector(props) {
   const { equivalents, visualizedEquivalent, setVisualizedEquivalent } =
     useContext(DataContext)

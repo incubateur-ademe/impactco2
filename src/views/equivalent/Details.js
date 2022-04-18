@@ -4,12 +4,13 @@ import styled from 'styled-components'
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
 import ModeSelector from 'components/misc/search/ModeSelector'
+import Ecv from './details/Ecv'
 import Share from './details/Share'
 
 const Wrapper = styled.div`
   position: relative;
   margin-bottom: 0.5rem;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   background-color: ${(props) => props.theme.colors.secondLight};
   border-radius: 1rem;
 
@@ -36,7 +37,7 @@ const Title = styled.h1`
   }
 `
 const Value = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: ${(props) => props.theme.colors.second};
   line-height: 1.1;
 `
@@ -84,6 +85,7 @@ export default function Details(props) {
             kg <Big>CO2</Big>e
           </Unit>
         </Value>
+        <Ecv equivalent={props.equivalent} />
         <Bottom>
           <Share />
           <MagicLink to='#sources' internal>

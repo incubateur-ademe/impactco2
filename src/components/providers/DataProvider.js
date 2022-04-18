@@ -5,6 +5,7 @@ import DataContext from 'utils/DataContext'
 import equivalentsData from 'data/equivalents.json'
 import categoriesData from 'data/categories.json'
 import footprintsData from 'data/footprints.json'
+import ecvData from 'data/ecv.json'
 
 export default function DataProvider(props) {
   const [equivalents, setEquivalents] = useState([])
@@ -17,10 +18,13 @@ export default function DataProvider(props) {
   const [footprints, setFootprints] = useState([])
   const [weight, setWeight] = useState(1)
 
+  const [ecv, setEcv] = useState([])
+
   useEffect(() => {
     setEquivalents(equivalentsData)
     setCategories(categoriesData)
     setFootprints(footprintsData)
+    setEcv(ecvData)
   }, [])
 
   useEffect(() => {
@@ -69,6 +73,7 @@ export default function DataProvider(props) {
         footprints,
         weight,
         setWeight,
+        ecv,
       }}
     >
       {props.children}

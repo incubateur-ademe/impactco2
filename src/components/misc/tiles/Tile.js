@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import AnimatedNumber from 'animated-number-react'
 
@@ -54,14 +54,6 @@ const StyledButton = styled(Button)`
   }
 `
 export default function Tile(props) {
-  const [total, setTotal] = useState(0)
-  useEffect(() => {
-    let tempTotal =
-      Math.round((props.weight / props.equivalent.total) * 100000) / 100000
-
-    setTotal(tempTotal)
-  }, [props.weight, props.equivalent])
-
   return (
     <Wrapper>
       <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>

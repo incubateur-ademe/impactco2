@@ -72,6 +72,7 @@ const slickStyle = `
   height: 31px;
   padding: 0;
   transform: translate(-100%, -50%);
+  background: transparent;
   background-image: url("data:image/svg+xml,%3Csvg width='27' height='31' viewBox='0 0 27 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 17.9187C-0.499999 16.764 -0.500001 13.8772 1.5 12.7225L22.5 0.598169C24.5 -0.556532 27 0.886842 27 3.19624L27 27.445C27 29.7544 24.5 31.1977 22.5 30.043L1.5 17.9187Z' fill='%2326827C'/%3E%3C/svg%3E%0A");
   cursor: pointer;
   color: transparent;

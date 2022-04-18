@@ -317,6 +317,32 @@
     "emoji": "⌚️",
     "category": 1,
     "total": 9.72,
+    "ecv": [
+      {
+        "value": 3.7058,
+        "id": 1
+      },
+      {
+        "value": 0.3142,
+        "id": 2
+      },
+      {
+        "value": 0.0209,
+        "id": 3
+      },
+      {
+        "value": 5.679,
+        "id": 4
+      },
+      {
+        "value": 0.1196,
+        "id": 5
+      },
+      {
+        "value": 0.0107,
+        "id": 6
+      }
+    ],
     "default": true,
     "visualization": false,
     "tile": false,
