@@ -10,7 +10,12 @@ import MagicLink from 'components/base/MagicLink'
 const Wrapper = styled.div`
   display: none;
   justify-content: space-around;
-  margin-bottom: ${(props) => (props.iframe ? 1 : 2)}rem;
+  width: 100%;
+  max-width: 37rem;
+  margin: 0 auto ${(props) => (props.iframe ? 0.5 : 2)}rem;
+  padding: ${(props) => (props.iframe ? '1rem 0 0.5rem' : 0)};
+  background-color: ${(props) => props.theme.colors.footer};
+  border-radius: 1rem;
 
   ${(props) => props.theme.mq.medium} {
     display: flex;
@@ -34,11 +39,11 @@ const StyledLink = styled(MagicLink)`
   color: ${(props) => props.theme.colors.second};
   text-decoration: none;
 `
-const Icon = styled.span`
+const Icon = styled.div`
   position: relative;
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: 0.4rem;
+  width: ${(props) => (props.iframe ? 2 : 3)}rem;
+  height: ${(props) => (props.iframe ? 2 : 3)}rem;
+  margin-bottom: ${(props) => (props.iframe ? 0.2 : 0.4)}rem;
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
 
@@ -55,21 +60,20 @@ const Icon = styled.span`
   }
 `
 const Mail = styled.svg`
-  width: 1.5rem;
+  width: ${(props) => (props.iframe ? 1.25 : 1.5)}rem;
 `
 const Embed = styled.svg`
-  width: 1.75rem;
+  width: ${(props) => (props.iframe ? 1.5 : 1.75)}rem;
 `
 const Share = styled.svg`
-  width: 1.5rem;
+  width: ${(props) => (props.iframe ? 1.25 : 1.5)}rem;
 `
 const Eye = styled.svg`
-  width: 1.5rem;
+  width: ${(props) => (props.iframe ? 1.25 : 1.5)}rem;
 `
 const Install = styled.svg``
-const Label = styled.span`
-  font-size: 0.75rem;
-  font-weight: bold;
+const Label = styled.div`
+  font-size: ${(props) => (props.iframe ? 0.75 : 1)}rem;
   text-align: center;
 `
 export default function MobileButtons(props) {
@@ -79,8 +83,9 @@ export default function MobileButtons(props) {
     <>
       <Wrapper iframe={props.iframe}>
         <Button onClick={() => setEmbedOpen(true)}>
-          <Icon>
+          <Icon iframe={props.iframe}>
             <Embed
+              iframe={props.iframe}
               x='0px'
               y='0px'
               width='94.504px'
@@ -92,11 +97,16 @@ export default function MobileButtons(props) {
               <path d='M60.967,13.6c-0.254-0.466-0.682-0.812-1.19-0.962l-4.239-1.251c-1.058-0.314-2.172,0.293-2.484,1.352L33.375,79.382    c-0.15,0.509-0.092,1.056,0.161,1.521c0.253,0.467,0.682,0.812,1.19,0.963l4.239,1.251c0.189,0.056,0.38,0.083,0.567,0.083    c0.863,0,1.66-0.564,1.917-1.435l19.679-66.644C61.278,14.612,61.221,14.065,60.967,13.6z' />
             </Embed>
           </Icon>
-          <Label>Intégrer</Label>
+          <Label iframe={props.iframe}>Intégrer</Label>
         </Button>
         <Button onClick={() => setShareOpen(true)}>
-          <Icon>
-            <Share height='512pt' viewBox='-21 0 512 512' width='512pt'>
+          <Icon iframe={props.iframe}>
+            <Share
+              iframe={props.iframe}
+              height='512pt'
+              viewBox='-21 0 512 512'
+              width='512pt'
+            >
               <path d='m453.332031 85.332031c0 38.292969-31.039062 69.335938-69.332031 69.335938s-69.332031-31.042969-69.332031-69.335938c0-38.289062 31.039062-69.332031 69.332031-69.332031s69.332031 31.042969 69.332031 69.332031zm0 0' />
               <path d='m384 170.667969c-47.0625 0-85.332031-38.273438-85.332031-85.335938 0-47.058593 38.269531-85.332031 85.332031-85.332031s85.332031 38.273438 85.332031 85.332031c0 47.0625-38.269531 85.335938-85.332031 85.335938zm0-138.667969c-29.417969 0-53.332031 23.9375-53.332031 53.332031 0 29.398438 23.914062 53.335938 53.332031 53.335938s53.332031-23.9375 53.332031-53.335938c0-29.394531-23.914062-53.332031-53.332031-53.332031zm0 0' />
               <path d='m453.332031 426.667969c0 38.289062-31.039062 69.332031-69.332031 69.332031s-69.332031-31.042969-69.332031-69.332031c0-38.292969 31.039062-69.335938 69.332031-69.335938s69.332031 31.042969 69.332031 69.335938zm0 0' />
@@ -107,12 +117,17 @@ export default function MobileButtons(props) {
               <path d='m333.632812 421.761719c-3.585937 0-7.210937-.898438-10.539062-2.796875l-197.953125-112.851563c-10.21875-5.824219-13.800781-18.859375-7.976563-29.101562 5.800782-10.238281 18.855469-13.84375 29.097657-7.976563l197.953125 112.851563c10.21875 5.824219 13.800781 18.859375 7.976562 29.101562-3.945312 6.910157-11.15625 10.773438-18.558594 10.773438zm0 0' />
             </Share>
           </Icon>
-          <Label>Partager</Label>
+          <Label iframe={props.iframe}>Partager</Label>
         </Button>
         {installPrompt && (
           <Button onClick={() => installPrompt.prompt()}>
-            <Icon>
-              <Install x='0px' y='0px' viewBox='0 0 512 512'>
+            <Icon iframe={props.iframe}>
+              <Install
+                iframe={props.iframe}
+                x='0px'
+                y='0px'
+                viewBox='0 0 512 512'
+              >
                 <path
                   d='M339.093,246.464c-3.627-7.232-11.008-11.797-19.093-11.797h-42.667V21.333C277.333,9.557,267.797,0,256,0
 			s-21.333,9.557-21.333,21.333v213.333H192c-8.085,0-15.467,4.565-19.093,11.797c-3.584,7.232-2.816,15.872,2.027,22.336l64,85.333
@@ -128,12 +143,12 @@ export default function MobileButtons(props) {
                 />
               </Install>
             </Icon>
-            <Label>Installer</Label>
+            <Label iframe={props.iframe}>Installer</Label>
           </Button>
         )}
         <Button onClick={() => setContactOpen(true)}>
-          <Icon>
-            <Mail x='0px' y='0px' viewBox='0 0 512 512'>
+          <Icon iframe={props.iframe}>
+            <Mail iframe={props.iframe} x='0px' y='0px' viewBox='0 0 512 512'>
               <path
                 d='M467,61H45C20.218,61,0,81.196,0,106v300c0,24.72,20.128,45,45,45h422c24.72,0,45-20.128,45-45V106
 			C512,81.28,491.872,61,467,61z M460.786,91L256.954,294.833L51.359,91H460.786z M30,399.788V112.069l144.479,143.24L30,399.788z
@@ -142,17 +157,22 @@ export default function MobileButtons(props) {
               />
             </Mail>
           </Icon>
-          <Label>Contact</Label>
+          <Label iframe={props.iframe}>Contact</Label>
         </Button>
         {props.iframe && (
-          <StyledLink to={process.env.GATSBY_URL || 'https://datagir.ademe.fr'}>
-            <Icon>
-              <Eye x='0px' y='0px' viewBox='0 0 469.333 469.333'>
+          <StyledLink to={'https://monconvertisseurco2.fr'}>
+            <Icon iframe={props.iframe}>
+              <Eye
+                iframe={props.iframe}
+                x='0px'
+                y='0px'
+                viewBox='0 0 469.333 469.333'
+              >
                 <path d='M234.667,170.667c-35.307,0-64,28.693-64,64s28.693,64,64,64s64-28.693,64-64S269.973,170.667,234.667,170.667z' />
                 <path d='M234.667,74.667C128,74.667,36.907,141.013,0,234.667c36.907,93.653,128,160,234.667,160     c106.773,0,197.76-66.347,234.667-160C432.427,141.013,341.44,74.667,234.667,74.667z M234.667,341.333     c-58.88,0-106.667-47.787-106.667-106.667S175.787,128,234.667,128s106.667,47.787,106.667,106.667     S293.547,341.333,234.667,341.333z' />
               </Eye>
             </Icon>
-            <Label>
+            <Label iframe={props.iframe}>
               Version
               <br />
               détaillée

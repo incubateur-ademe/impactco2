@@ -59,7 +59,7 @@ export default function DataProvider(props) {
         equivalents,
         currentEquivalent,
         setCurrentEquivalent: (equivalent) => {
-          navigate(`#${equivalent.id}`)
+          navigate(`${window.location.search}#${equivalent.id}`)
           setCurrentEquivalent(equivalent)
         },
         visualizedEquivalent,
@@ -67,7 +67,7 @@ export default function DataProvider(props) {
         categories,
         currentCategory,
         setCurrentCategory: (category) => {
-          navigate(`#${category.slug}`)
+          navigate(`${window.location.search}#${category.slug}`)
           setCurrentCategory(category)
         },
         footprints,

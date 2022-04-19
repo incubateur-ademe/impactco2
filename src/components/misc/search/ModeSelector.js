@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useLocation } from '@reach/router'
-import MagicLink from 'components/base/MagicLink'
 
+import MagicLink from 'components/base/MagicLink'
 import Burger from './modeSelector/Burger'
 
 const Wrapper = styled.nav`
