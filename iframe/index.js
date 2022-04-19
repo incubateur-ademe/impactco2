@@ -5,7 +5,7 @@ const script = document.getElementById('datagir_dechets')
 const search = script.dataset.search
 const source = window.location.href.toString()
 
-const src = `https://quefairedemesdechets.fr/${search}&iframe=1&source=${source}`
+const src = `https://mcc-v2.netlify.app/${search}&iframe=1&source=${source}`
 
 const iframe = document.createElement('iframe')
 
