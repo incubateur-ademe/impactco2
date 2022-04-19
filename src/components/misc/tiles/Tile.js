@@ -17,7 +17,8 @@ const Wrapper = styled.div`
   border-radius: 1rem;
 
   ${(props) => props.theme.mq.small} {
-    width: calc(50% - 2rem);
+    width: calc(50% - 0.75rem);
+    margin: 0.375rem;
   }
 `
 const StyledEmoji = styled(Emoji)`

@@ -16,6 +16,10 @@ const TilesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 -1rem;
+
+  ${(props) => props.theme.mq.small} {
+    margin: 0 -0.375rem;
+  }
 `
 export default function Tiles(props) {
   const { equivalents } = useContext(DataContext)

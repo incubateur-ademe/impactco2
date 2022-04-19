@@ -66,7 +66,7 @@ export default function Category(props) {
           <Disclaimer>
             Valeurs exprimées en kg CO2e émis {props?.category?.unit}.
           </Disclaimer>
-          <Button onClick={() => alert('soon')} hollow>
+          <Button onClick={() => alert('Bientôt disponible')} hollow>
             Comparer avec d'autres catégories
           </Button>
         </Bottom>

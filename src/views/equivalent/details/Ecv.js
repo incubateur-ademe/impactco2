@@ -16,6 +16,10 @@ const List = styled.ul`
   list-style: none;
   margin: 0 -0.5rem;
   padding: 0;
+
+  ${(props) => props.theme.mq.small} {
+    column-count: 1;
+  }
 `
 const Item = styled.li`
   position: relative;

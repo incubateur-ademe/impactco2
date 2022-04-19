@@ -84,90 +84,6 @@
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
-    "id": 20689,
-    "name": {
-      "fr": "Repas avec du boeuf"
-    },
-    "slug": "repasavecduboeuf",
-    "emoji": "🍔",
-    "category": 2,
-    "total": 7.26,
-    "default": false,
-    "visualization": true,
-    "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
-  },
-  {
-    "id": 20683,
-    "name": {
-      "fr": "Repas végétarien"
-    },
-    "slug": "repasvegetarien",
-    "emoji": "🥗",
-    "category": 2,
-    "total": 0.51,
-    "default": false,
-    "visualization": false,
-    "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
-  },
-  {
-    "id": 20684,
-    "name": {
-      "fr": "Repas végétalien"
-    },
-    "slug": "repasvegetalien",
-    "emoji": "🍎",
-    "category": 2,
-    "total": 0.39,
-    "default": false,
-    "visualization": false,
-    "tile": false,
-    "sources": "NGC"
-  },
-  {
-    "id": 20685,
-    "name": {
-      "fr": "Repas avec du poisson blanc"
-    },
-    "slug": "repasavecdupoissonblanc",
-    "emoji": "🐟",
-    "category": 2,
-    "total": 1.11,
-    "default": false,
-    "visualization": false,
-    "tile": false,
-    "sources": "NGC"
-  },
-  {
-    "id": 20686,
-    "name": {
-      "fr": "Repas avec du poisson gras"
-    },
-    "slug": "repasavecdupoissongras",
-    "emoji": "🐟",
-    "category": 2,
-    "total": 1.98,
-    "default": false,
-    "visualization": false,
-    "tile": false,
-    "sources": "NGC"
-  },
-  {
-    "id": 20688,
-    "name": {
-      "fr": "Repas avec du poulet"
-    },
-    "slug": "repasavecdupoulet",
-    "emoji": "🍗",
-    "category": 2,
-    "total": 1.58,
-    "default": false,
-    "visualization": false,
-    "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
-  },
-  {
     "id": 24283,
     "name": {
       "fr": "Litre[s] d'eau du robinet"
@@ -286,9 +202,9 @@
         "id": 6
       }
     ],
-    "default": false,
+    "default": true,
     "visualization": true,
-    "tile": false,
+    "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - plus de 5,5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -427,6 +343,90 @@
     "visualization": false,
     "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 20689,
+    "name": {
+      "fr": "Repas avec du boeuf"
+    },
+    "slug": "repasavecduboeuf",
+    "emoji": "🍔",
+    "category": 2,
+    "total": 7.26,
+    "default": true,
+    "visualization": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
+  },
+  {
+    "id": 20683,
+    "name": {
+      "fr": "Repas végétarien"
+    },
+    "slug": "repasvegetarien",
+    "emoji": "🥗",
+    "category": 2,
+    "total": 0.51,
+    "default": true,
+    "visualization": false,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
+  },
+  {
+    "id": 20684,
+    "name": {
+      "fr": "Repas végétalien"
+    },
+    "slug": "repasvegetalien",
+    "emoji": "🍎",
+    "category": 2,
+    "total": 0.39,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "NGC"
+  },
+  {
+    "id": 20685,
+    "name": {
+      "fr": "Repas avec du poisson blanc"
+    },
+    "slug": "repasavecdupoissonblanc",
+    "emoji": "🐟",
+    "category": 2,
+    "total": 1.11,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "NGC"
+  },
+  {
+    "id": 20686,
+    "name": {
+      "fr": "Repas avec du poisson gras"
+    },
+    "slug": "repasavecdupoissongras",
+    "emoji": "🐟",
+    "category": 2,
+    "total": 1.98,
+    "default": true,
+    "visualization": false,
+    "tile": false,
+    "sources": "NGC"
+  },
+  {
+    "id": 20688,
+    "name": {
+      "fr": "Repas avec du poulet"
+    },
+    "slug": "repasavecdupoulet",
+    "emoji": "🍗",
+    "category": 2,
+    "total": 1.58,
+    "default": true,
+    "visualization": false,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   },
   {
     "id": 27043,
