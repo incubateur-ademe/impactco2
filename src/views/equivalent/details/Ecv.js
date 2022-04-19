@@ -26,6 +26,10 @@ const Item = styled.li`
   border-radius: 0.25rem;
   cursor: pointer;
 
+  &:hover {
+    color: ${(props) => props.theme.colors.main};
+  }
+
   &:before {
     content: '';
     position: absolute;

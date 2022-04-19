@@ -35,12 +35,6 @@ const Section = styled.div`
     font-size: 1.75rem;
   }
 `
-const MobileSection = styled(Section)`
-  display: none;
-  ${(props) => props.theme.mq.medium} {
-    display: flex;
-  }
-`
 const LogosWrapper = styled.div`
   display: flex;
   justify-content: center;

@@ -25,6 +25,10 @@ const Header = styled.div`
 const StyledEmoji = styled(Emoji)`
   margin-bottom: 0.5rem;
   font-size: 3rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 2rem;
+  }
 `
 const Title = styled.h1`
   margin: 0.25rem 0 0.5rem;
@@ -33,7 +37,7 @@ const Title = styled.h1`
   color: ${(props) => props.theme.colors.text};
 
   ${(props) => props.theme.mq.small} {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 `
 const Value = styled.div`

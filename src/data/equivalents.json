@@ -259,11 +259,37 @@
     "slug": "smartphone",
     "emoji": "📱",
     "category": 1,
-    "total": 16.5,
+    "total": 29.4,
+    "ecv": [
+      {
+        "value": 24.1654132332142,
+        "id": 1
+      },
+      {
+        "value": 0.0763021265937079,
+        "id": 2
+      },
+      {
+        "value": 0.0518394047879707,
+        "id": 3
+      },
+      {
+        "value": 6.23125043673638,
+        "id": 4
+      },
+      {
+        "value": 0.533713683152604,
+        "id": 5
+      },
+      {
+        "value": -1.8163965605781,
+        "id": 6
+      }
+    ],
     "default": false,
     "visualization": true,
     "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - plus de 5,5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
     "id": 27000,
@@ -273,7 +299,33 @@
     "slug": "television",
     "emoji": "📺",
     "category": 1,
-    "total": 371,
+    "total": 403.3359,
+    "ecv": [
+      {
+        "value": 318.219200641678,
+        "id": 1
+      },
+      {
+        "value": 2.2636267766829,
+        "id": 2
+      },
+      {
+        "value": 2.25946191055556,
+        "id": 3
+      },
+      {
+        "value": 27.1301536559235,
+        "id": 4
+      },
+      {
+        "value": 62.1577045057366,
+        "id": 5
+      },
+      {
+        "value": -8.69420838210626,
+        "id": 6
+      }
+    ],
     "default": true,
     "visualization": false,
     "tile": false,
