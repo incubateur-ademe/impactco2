@@ -59,6 +59,7 @@ export default function Ecv(props) {
       <List>
         {props.equivalent.ecv.map((item) => (
           <Item
+            key={item.id}
             color={ecv.find((step) => step.id === item.id)?.color}
             hover={hover === item.id}
           >

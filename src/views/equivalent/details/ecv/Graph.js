@@ -23,6 +23,7 @@ export default function Graph(props) {
     <Wrapper>
       {props.equivalent.ecv.map((item) => (
         <Item
+          key={item.id}
           color={props.ecv.find((step) => step.id === item.id)?.color}
           width={(item.value / props.equivalent.total) * 100}
           onMouseEnter={() => props.setHover(item.id)}

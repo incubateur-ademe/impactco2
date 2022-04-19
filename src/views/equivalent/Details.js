@@ -4,13 +4,14 @@ import styled from 'styled-components'
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
 import ModeSelector from 'components/misc/search/ModeSelector'
+import Breadcrumb from './details/Breadcrumb'
 import Ecv from './details/Ecv'
 import Share from './details/Share'
 
 const Wrapper = styled.div`
   position: relative;
   margin-bottom: 0.5rem;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem 1.5rem;
   background-color: ${(props) => props.theme.colors.secondLight};
   border-radius: 1rem;
 
@@ -75,8 +76,9 @@ export default function Details(props) {
   return (
     <>
       <ModeSelector />
-
       <Wrapper>
+        <Breadcrumb equivalent={props.equivalent} category={props.category} />
+
         <Header>
           <Title>
             1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
