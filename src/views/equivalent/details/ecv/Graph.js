@@ -4,9 +4,13 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   display: flex;
   height: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-radius: 0.5rem;
   overflow: hidden;
+
+  ${(props) => props.theme.mq.small} {
+    height: 2rem;
+  }
 `
 const Item = styled.div`
   height: 100%;
