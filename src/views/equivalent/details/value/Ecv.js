@@ -8,6 +8,7 @@ import Graph from './ecv/Graph'
 const Wrapper = styled.div`
   margin-bottom: 1.5rem;
   padding: 1rem 1rem 0.5rem;
+  color: ${(props) => props.theme.colors.text};
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 1rem;
 `
@@ -45,7 +46,6 @@ const Item = styled.li`
     border-radius: 0.25rem;
   }
 `
-
 const Percent = styled.span`
   font-weight: 300;
 `
@@ -53,7 +53,7 @@ export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
 
   const [hover, setHover] = useState(null)
-  return props.equivalent.ecv ? (
+  return props.equivalent.ecv && props.open ? (
     <Wrapper>
       <Graph equivalent={props.equivalent} ecv={ecv} setHover={setHover} />
       <List>

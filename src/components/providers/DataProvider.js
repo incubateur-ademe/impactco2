@@ -16,7 +16,7 @@ export default function DataProvider(props) {
   const [currentCategory, setCurrentCategory] = useState(0)
 
   const [footprints, setFootprints] = useState([])
-  const [weight, setWeight] = useState(1)
+  const [weight, setWeight] = useState(2000)
 
   const [ecv, setEcv] = useState([])
 

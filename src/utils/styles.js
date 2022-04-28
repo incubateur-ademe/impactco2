@@ -10,6 +10,7 @@ export const themes = {
       mainLight: '#DFECEB',
       second: '#004899',
       secondLight: '#EFF4F9',
+      secondLighter: '#E0EDFA',
       background: '#ffffff',
       footer: '#F6F7F9',
       footerLight: '#FBFBFC',
@@ -77,7 +78,6 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    scroll-behavior: smooth;
     font-family: ${(props) => props.theme.fonts.body};
     line-height: 1.4;
   }
@@ -101,11 +101,14 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     font-family: ${(props) => props.theme.fonts.title};
-    color: ${(props) => props.theme.colors.second};
     font-weight: bold;
     line-height: 1.2;
   }
 
+  h1 {
+    font-size: 2.25rem;
+  }
+  
   h2 {
     font-size: 2rem;
 

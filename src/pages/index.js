@@ -1,12 +1,12 @@
 import React from 'react'
 
 import Web from 'components/layout/Web'
-import Equivalents from 'views/Equivalents'
+import Home from 'views/Home'
 
 export default function Index() {
   return (
     <Web>
-      <Equivalents />
+      <Home />
     </Web>
   )
 }

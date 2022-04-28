@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import DataContext from 'utils/DataContext'
 import ModalContext from 'utils/ModalContext'
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
@@ -37,7 +38,6 @@ const Title = styled.div`
 `
 const ChartWrapper = styled.div`
   flex: 1;
-  max-width: 30rem;
 `
 const Chart = styled.div`
   position: relative;
@@ -89,14 +89,20 @@ const Number = styled.span`
 const Unit = styled.span`
   cursor: pointer;
   font-size: 0.875rem;
+  white-space: nowrap;
 `
 
 export default function Equivalent(props) {
+  const { categories } = useContext(DataContext)
+
   const { setCO2E } = useContext(ModalContext)
 
   return (
     <Wrapper
-      to={`/equivalents/${props.equivalent.slug}`}
+      to={`/categories/${
+        categories.find((category) => category.id === props.equivalent.category)
+          .slug
+      }/${props.equivalent.slug}`}
       current={props.current}
     >
       <EmojiWrapper>
@@ -110,7 +116,7 @@ export default function Equivalent(props) {
               {props.equivalent.name.fr.replaceAll(
                 '[s]',
                 props.category.multiplier === 1 ? '' : 's'
-              )}{' '}
+              )}
             </span>
           </Title>
         </TitleWrapper>
@@ -129,7 +135,7 @@ export default function Equivalent(props) {
               </Number>
               <Unit onClick={() => setCO2E(true)}>
                 {' '}
-                kgCO
+                kg CO
                 <sub>2</sub>e
               </Unit>
             </Value>

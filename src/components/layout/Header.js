@@ -4,13 +4,14 @@ import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
+import Section from 'components/base/Section'
 import ThemeToggle from './header/ThemeToggle'
 
 const Wrapper = styled.header`
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin: 0.25rem 0;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 0.5rem;
@@ -31,15 +32,19 @@ const Logos = styled(MagicLink)`
 `
 export default function Header(props) {
   return (
-    <Wrapper className={props.className}>
-      <Left>
-        <Logos to='/' aria-label='Accueil'>
-          <Marianne />
-          <Ademe />
-        </Logos>
-        {props.children}
-      </Left>
-      <ThemeToggle />
-    </Wrapper>
+    <Section>
+      <Section.Content>
+        <Wrapper className={props.className}>
+          <Left>
+            <Logos to='/' aria-label='Accueil'>
+              <Marianne />
+              <Ademe />
+            </Logos>
+            {props.children}
+          </Left>
+          <ThemeToggle />
+        </Wrapper>
+      </Section.Content>
+    </Section>
   )
 }

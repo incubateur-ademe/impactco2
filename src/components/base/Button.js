@@ -60,3 +60,25 @@ export default function Button(props) {
     </Wrapper>
   )
 }
+
+Button.Wrapper = styled.div`
+  display: flex;
+  flex-direction: ${(props) => (props.vertical ? 'column' : 'row')};
+  justify-content: ${(props) =>
+    props.left ? 'flex-start' : props.right ? 'flex-end' : 'center'};
+  align-items: center;
+  margin: 0 -0.5rem;
+
+  > * {
+    margin: 0 0.5rem ${(props) => (props.vertical ? '1rem' : '0')};
+  }
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    margin: 0;
+
+    > * {
+      margin: 0 0 1rem;
+    }
+  }
+`

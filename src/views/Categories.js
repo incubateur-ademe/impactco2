@@ -1,16 +1,5 @@
-import React, { useContext } from 'react'
-
-import DataContext from 'utils/DataContext'
-import Search from '../components/misc/Search'
-import Category from '../components/misc/Category'
+import React from 'react'
 
 export default function Categories() {
-  const { currentCategory } = useContext(DataContext)
-
-  return (
-    <>
-      <Search type='categories' />
-      <Category category={currentCategory} />
-    </>
-  )
+  return <div>Categories</div>
 }

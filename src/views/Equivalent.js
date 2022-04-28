@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Category from 'components/misc/Category'
+import CategoryList from 'components/misc/CategoryList'
 import Tiles from 'components/misc/Tiles'
 import Details from './equivalent/Details'
 import Source from './equivalent/Source'
@@ -9,10 +9,10 @@ export default function Equivalent(props) {
   return (
     <>
       <Details equivalent={props.equivalent} category={props.category} />
-      <Category equivalent={props.equivalent} category={props.category} title />
-      <Tiles
+      <Tiles equivalent={props.equivalent} background />
+      <CategoryList
         equivalent={props.equivalent}
-        weight={props.equivalent.total}
+        category={props.category}
         title
       />
       <Source equivalent={props.equivalent} />

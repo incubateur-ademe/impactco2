@@ -10,7 +10,7 @@
     "total": 0.0025,
     "default": false,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro"
   },
   {
@@ -52,7 +52,7 @@
     "total": 0.168,
     "default": false,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
@@ -80,7 +80,7 @@
     "total": 0.186,
     "default": false,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
   },
   {
@@ -94,7 +94,7 @@
     "total": 0.000132,
     "default": false,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
   },
   {
@@ -341,7 +341,7 @@
     "total": 88.2,
     "default": true,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Smartphone - de 5 pouces\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -350,7 +350,7 @@
       "fr": "Repas avec du boeuf"
     },
     "slug": "repasavecduboeuf",
-    "emoji": "🍔",
+    "emoji": "🥩",
     "category": 2,
     "total": 7.26,
     "default": true,
@@ -425,7 +425,7 @@
     "total": 1.58,
     "default": true,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   },
   {
@@ -453,7 +453,7 @@
     "total": 5.2,
     "default": false,
     "visualization": true,
-    "tile": false,
+    "tile": true,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
   {
@@ -523,7 +523,7 @@
     "total": 85.8,
     "default": true,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
 
@@ -538,7 +538,7 @@
     "total": 197,
     "default": true,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
   },
 
@@ -553,7 +553,7 @@
     "total": 18.6,
     "default": true,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=chaise"
   },
   {
@@ -567,7 +567,7 @@
     "total": 80.2,
     "default": true,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=table"
   },
   {
@@ -609,7 +609,7 @@
     "total": 444.3,
     "default": true,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/281"
   },
   {
@@ -651,7 +651,7 @@
     "total": 342,
     "default": true,
     "visualization": false,
-    "tile": true,
+    "tile": false,
     "sources": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Lave-linge"
   },
   {

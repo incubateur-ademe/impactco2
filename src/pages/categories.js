@@ -1,12 +1,12 @@
 import React from 'react'
 
 import Web from 'components/layout/Web'
-import Categories from 'views/Categories'
+import Categories from 'components/misc/Categories'
 
 export default function categories() {
   return (
     <Web>
-      <Categories />
+      <Categories main />
     </Web>
   )
 }
