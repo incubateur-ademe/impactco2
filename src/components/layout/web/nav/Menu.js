@@ -51,7 +51,10 @@ export default function Menu() {
         current={window.location.pathname.includes('/categories')}
       >
         {categories.map((category) => (
-          <Dropdown.Item to={`/categories/${category.slug}`}>
+          <Dropdown.Item
+            to={`/categories/${category.slug}`}
+            current={window.location.pathname.includes(category.slug)}
+          >
             <StyledEmoji>{category.emoji}</StyledEmoji> {category.name.fr}
           </Dropdown.Item>
         ))}

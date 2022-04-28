@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
+import { navigate } from 'gatsby'
 
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
@@ -31,10 +32,9 @@ export default function CategorySlider(props) {
           speed={500}
           slidesToShow={1}
           slidesToScroll={1}
-          initialSlide={props.category.id}
+          initialSlide={props.category.id - 1}
           afterChange={(index) => {
-            console.log(index)
-            props.setCategory(categories[index])
+            navigate(`/categories/${categories[index].slug}`)
           }}
         >
           {categories.map((category) => (
