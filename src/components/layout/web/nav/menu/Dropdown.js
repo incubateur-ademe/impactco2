@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 
@@ -51,18 +51,30 @@ const ButtonDropdown = styled.button`
   svg {
     margin-left: 0.5rem;
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: ${(props) =>
+        props.theme.colors[props.current || props.open ? 'main' : 'text']};
     }
   }
 `
 export default function Dropdown(props) {
   const [open, setOpen] = useState(false)
 
+  useEffect(() => {
+    document.addEventListener('click', () => setOpen(false))
+
+    return () => {
+      document.removeEventListener('click', () => setOpen(false))
+    }
+  }, [])
+
   return (
     <Wrapper>
       <ButtonDropdown
         to={props.to}
-        onClick={() => setOpen((prevOpen) => !prevOpen)}
+        onClick={(e) => {
+          e.stopPropagation()
+          setOpen((prevOpen) => !prevOpen)
+        }}
         open={open}
         current={props.current}
         as={props.children ? 'button' : MagicLink}

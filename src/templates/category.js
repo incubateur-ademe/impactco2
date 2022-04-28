@@ -7,7 +7,10 @@ export default function category(props) {
   return (
     <Web
       title={props.pageContext.category.name.fr}
-      result={props.pageContext.category.name.fr}
+      breadcrumb={{
+        type: 'equivalent',
+        category: props.pageContext.category,
+      }}
     >
       <Category category={props.pageContext.category} />
     </Web>

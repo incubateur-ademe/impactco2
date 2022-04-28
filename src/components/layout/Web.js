@@ -54,7 +54,7 @@ export default function Web(props) {
                 <FullScreen iframe={iframe}>
                   {!iframe && <HeaderWrapper />}
                   <Nav />
-                  <BreadCrumb />
+                  <BreadCrumb breadcrumb={props.breadcrumb} />
                   {props.children}
                 </FullScreen>
                 <FooterWrapper iframe={iframe} />
