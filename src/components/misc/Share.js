@@ -1,12 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 
-import UXContext from 'utils/UXContext'
-import Select from 'components/base/FancySelect'
-import Panel from 'components/base/Panel'
 import Integration from './share/Integration'
-import Link from './share/Link'
 import Mail from './share/Mail'
 import Facebook from './share/Facebook'
 import Twitter from './share/Twitter'

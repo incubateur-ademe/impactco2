@@ -46,7 +46,7 @@ export default function Category(props) {
         {props.equivalent && (
           <Title>
             Categorie{' '}
-            <MagicLink to={`/categories#${props.category.slug}`} internal>
+            <MagicLink to={`/categories/${props.category.slug}`}>
               {props.category.name.fr}
             </MagicLink>
           </Title>
