@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { formatName } from 'utils/formatters'
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 
@@ -31,7 +32,7 @@ export default function BreadCrumb(props) {
                     {props.breadcrumb.category.name.fr}
                   </MagicLink>
                   {' > '}
-                  {props.breadcrumb.equivalent.name.fr}
+                  {formatName(props.breadcrumb.equivalent.name.fr, 1, true)}
                 </>
               ) : (
                 props.breadcrumb.category.name.fr

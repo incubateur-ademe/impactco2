@@ -21,8 +21,8 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  ${(props) => props.theme.mq.medium} {
-    flex-direction: column-reverse;
+  ${(props) => props.theme.mq.small} {
+    display: none;
   }
 `
 const Content = styled.div`
@@ -39,31 +39,46 @@ const FullScreen = styled.div`
   padding: ${(props) => (props.iframe ? 0.75 : 0)}rem 0
     ${(props) => (props.iframe ? 0 : 5)}rem;
 `
+const Responsive = styled.div`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+
+  ${(props) => props.theme.mq.small} {
+    display: flex;
+  }
+`
 export default function Web(props) {
   const iframe = useIframe()
 
   return (
-    <Wrapper>
-      <Seo title={props.title} />
-      <QueryClientProvider client={queryClient}>
-        <UXProvider>
-          <DataProvider>
-            <ModalProvider>
-              <GlobalStyle />
-              <Content>
-                <FullScreen iframe={iframe}>
-                  {!iframe && <HeaderWrapper />}
-                  <Nav />
-                  <BreadCrumb breadcrumb={props.breadcrumb} />
-                  {props.children}
-                </FullScreen>
-                <FooterWrapper iframe={iframe} />
-              </Content>
-              <ModalWrapper />
-            </ModalProvider>
-          </DataProvider>
-        </UXProvider>
-      </QueryClientProvider>
-    </Wrapper>
+    <>
+      {' '}
+      <Wrapper>
+        <Seo title={props.title} />
+        <QueryClientProvider client={queryClient}>
+          <UXProvider>
+            <DataProvider>
+              <ModalProvider>
+                <GlobalStyle />
+                <Content>
+                  <FullScreen iframe={iframe}>
+                    {!iframe && <HeaderWrapper />}
+                    <Nav />
+                    <BreadCrumb breadcrumb={props.breadcrumb} />
+                    {props.children}
+                  </FullScreen>
+                  <FooterWrapper iframe={iframe} />
+                </Content>
+                <ModalWrapper />
+              </ModalProvider>
+            </DataProvider>
+          </UXProvider>
+        </QueryClientProvider>
+      </Wrapper>
+      <Responsive>Ce site n'est pas encore accessible mobile</Responsive>
+    </>
   )
 }

@@ -5,8 +5,8 @@ const Wrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
   background-color: ${(props) => props.theme.colors.main};
   border: none;
   border-radius: 50%;

@@ -8,7 +8,6 @@ import Button from 'components/base/Button'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
 import Datagir from 'components/base/Datagir'
-import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.footer`
   position: relative;
@@ -66,7 +65,6 @@ export default function Footer(props) {
   const iframe = useIframe()
   return iframe ? (
     <>
-      <MobileButtons iframe={iframe} />
       <Logos
         to='https://datagir.ademe.fr/'
         aria-label='datagir.ademe.fr'
@@ -86,8 +84,6 @@ export default function Footer(props) {
       id='apropos'
     >
       <Content iframe={iframe}>
-        <MobileButtons iframe={iframe} />
-
         <Section>{props.children}</Section>
         <Section>
           <ContactPrompt />

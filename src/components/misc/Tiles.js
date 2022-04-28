@@ -10,13 +10,14 @@ import {
 import { formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
+import Share from 'components/misc/Share'
 import Weight from './tiles/Weight'
 import Tile from './tiles/Tile'
 import AddButton from './tiles/AddButton'
 
 const StyledSection = styled(Section)`
   margin-bottom: 4rem;
-  padding: ${(props) => (props.background ? 3 : 0)}rem 0 1rem;
+  padding: ${(props) => (props.background ? 3 : 0)}rem 0 1.5rem;
 `
 const Title = styled.h2`
   margin-bottom: 1rem;
@@ -30,7 +31,7 @@ const Text = styled.p`
 const TilesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -0.75rem;
+  margin: 0 -0.75rem 0.5rem;
 
   ${(props) => props.theme.mq.small} {
     margin: 0 -0.375rem;
@@ -113,6 +114,7 @@ export default function Tiles(props) {
             </SortableContext>
           </TilesWrapper>
         </DndContext>
+        <Share />
       </Section.Content>
     </StyledSection>
   )

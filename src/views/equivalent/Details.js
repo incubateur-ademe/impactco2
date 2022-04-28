@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Section from 'components/base/Section'
+import Share from 'components/misc/Share'
 import Value from './details/Value'
 import Visualization from './details/Visualization'
 
@@ -15,10 +16,11 @@ export default function Details(props) {
   return (
     <>
       <Section>
-        <Section.Content>
+        <Section.Content flex>
           <Title>
             1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
           </Title>
+          <Share title />
         </Section.Content>
       </Section>
       <Value equivalent={props.equivalent} />
