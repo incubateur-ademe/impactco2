@@ -30,6 +30,7 @@ const ButtonDropdown = styled.button`
   background-color: ${(props) =>
     props.open ? props.theme.colors.secondLighter : 'transparent'};
   border: none;
+  cursor: pointer;
   transition: background-color 200ms ease-out;
 
   &:hover {
@@ -58,10 +59,7 @@ export default function Dropdown(props) {
   const [open, setOpen] = useState(false)
 
   return (
-    <Wrapper
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
+    <Wrapper>
       <ButtonDropdown
         to={props.to}
         onClick={() => setOpen((prevOpen) => !prevOpen)}
@@ -82,13 +80,23 @@ export default function Dropdown(props) {
   )
 }
 Dropdown.Item = styled(MagicLink)`
+  position: relative;
   display: block;
-  padding: 0.75rem 1.5rem 0.5rem;
+  padding: 0.75rem 2.5rem 0.5rem 1.5rem;
   font-size: 0.875rem;
   color: ${(props) => props.theme.colors[props.current ? 'main' : 'text']};
   text-decoration: none;
   white-space: nowrap;
 
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 0.0625rem;
+    background-color: ${(props) => props.theme.colors.secondLighter};
+  }
   &:last-child {
     padding: 0.75rem 1.5rem 1rem;
   }
