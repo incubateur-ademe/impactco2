@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import DataContext from 'utils/DataContext'
 import MagicLink from 'components/base/MagicLink'
+import Emoji from 'components/base/Emoji'
+import Dropdown from './menu/Dropdown'
 
 const Wrapper = styled.nav`
   display: flex;
@@ -34,18 +37,30 @@ const Item = styled(MagicLink)`
     opacity: ${(props) => (props.current ? 1 : 0)};
   }
 `
+const StyledEmoji = styled(Emoji)`
+  margin: 0 0.25rem 0.25rem 0;
+  font-size: 1.25rem;
+`
 export default function Menu() {
+  const { categories } = useContext(DataContext)
+
   return (
     <Wrapper>
-      <Item
-        to='/categories'
+      <Dropdown
+        label={'Catégories'}
         current={window.location.pathname.includes('/categories')}
       >
-        Catégories
-      </Item>
-      <Item to='/co2e' current={window.location.pathname.includes('/co2')}>
-        CO<sub>2</sub>e
-      </Item>
+        {categories.map((category) => (
+          <Dropdown.Item to={`/categories/${category.slug}`}>
+            <StyledEmoji>{category.emoji}</StyledEmoji> {category.name.fr}
+          </Dropdown.Item>
+        ))}
+      </Dropdown>
+      <Dropdown
+        label={'CO2e'}
+        to='/co2e'
+        current={window.location.pathname.includes('/co2')}
+      />
     </Wrapper>
   )
 }

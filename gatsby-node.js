@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       },
     })
   })
-  const categoriesPagse = categories.map((category) => {
+  const categoriesPages = categories.map((category) => {
     createPage({
       path: `/categories/${category.slug}/`,
       component: require.resolve('./src/templates/category.js'),
