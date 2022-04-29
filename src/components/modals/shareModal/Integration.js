@@ -1,21 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.button`
+import MagicLink from 'components/base/MagicLink'
+
+const Wrapper = styled(MagicLink)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background-color: ${(props) => props.theme.colors.main};
   border: none;
   border-radius: 50%;
   cursor: pointer;
-
-  ${(props) => props.theme.mq.small} {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
 `
 const Svg = styled.svg`
   width: 2.2rem !important;
@@ -29,13 +26,7 @@ const Svg = styled.svg`
 `
 export default function Integration(props) {
   return (
-    <Wrapper
-      url={props.url}
-      title={props.title}
-      summary={props.message}
-      source={props.url}
-      onClick={props.onClick}
-    >
+    <Wrapper to={'/integration'}>
       <Svg
         x='0px'
         y='0px'

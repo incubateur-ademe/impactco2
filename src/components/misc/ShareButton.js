@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 
+import ModalContext from 'utils/ModalContext'
 import Button from 'components/base/Button'
 
 const hover = keyframes`
@@ -53,9 +54,10 @@ const Svg = styled.svg`
   }
 `
 export default function ShareButton(props) {
+  const { setShare } = useContext(ModalContext)
   return (
     <StyledButtonWrapper title={props.title}>
-      <StyledButton hollow>
+      <StyledButton hollow onClick={() => setShare(true)}>
         <Svg height='512pt' viewBox='-21 0 512 512' width='512pt'>
           <path d='m453.332031 85.332031c0 38.292969-31.039062 69.335938-69.332031 69.335938s-69.332031-31.042969-69.332031-69.335938c0-38.289062 31.039062-69.332031 69.332031-69.332031s69.332031 31.042969 69.332031 69.332031zm0 0' />
           <path

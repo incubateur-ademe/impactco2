@@ -29,7 +29,7 @@ const Text = styled.input`
     font-size: 0.875em;
     color: ${(props) => props.theme.colors.main};
     opacity: ${(props) => (props.copied ? 1 : 0)};
-    transition: opacity 300ms ease-out;
+    transition: opacity 200ms ease-out;
   }
 `
 const Copy = styled.button`

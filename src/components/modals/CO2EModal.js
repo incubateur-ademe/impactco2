@@ -9,9 +9,9 @@ import Button from 'components/base/Button'
 const Title = styled.h2``
 const Text = styled.p``
 export default function CO2EModal() {
-  const { CO2E, setCO2E } = useContext(ModalContext)
+  const { CO2E: open, setCO2E: setOpen } = useContext(ModalContext)
   return (
-    <Modal open={CO2E} setOpen={setCO2E}>
+    <Modal open={open} setOpen={setOpen}>
       <Title>
         L'équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
       </Title>
