@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { useLocation } from '@reach/router'
 
 import ModalContext from 'utils/ModalContext'
 import Modal from 'components/base/Modal'
@@ -30,7 +31,9 @@ const Wrapper = styled.div`
 export default function CO2EModal() {
   const { share: open, setShare: setOpen } = useContext(ModalContext)
 
-  const url = window.location.origin
+  const location = useLocation()
+
+  const url = location.origin
 
   return (
     <Modal open={open} setOpen={setOpen}>
