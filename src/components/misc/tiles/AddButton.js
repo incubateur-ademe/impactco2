@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import Button from 'components/base/Button'
+import ModalContext from 'utils/ModalContext'
 
 const Wrapper = styled.button`
   position: relative;
@@ -40,8 +40,10 @@ const Text = styled.p`
   text-align: center;
 `
 export default function AddButton() {
+  const { setTiles } = useContext(ModalContext)
+
   return (
-    <Wrapper onClick={() => alert('Bientôt')}>
+    <Wrapper onClick={() => setTiles(true)}>
       <Title>+</Title>
       <Text>Ajouter un equivalent</Text>
     </Wrapper>

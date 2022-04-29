@@ -38,11 +38,10 @@ const TilesWrapper = styled.div`
   }
 `
 export default function Tiles(props) {
-  const { equivalents } = useContext(DataContext)
+  const { equivalents, tiles, setTiles } = useContext(DataContext)
 
-  const [equivalentsToDisplay, setEquivalentsToDisplay] = useState([])
   useEffect(() => {
-    setEquivalentsToDisplay(
+    setTiles(
       equivalents
         .filter((equivalent) => equivalent.tile)
         .filter(
@@ -50,7 +49,7 @@ export default function Tiles(props) {
             !props.equivalent || equivalent.id !== props.equivalent.id
         )
     )
-  }, [equivalents, props.equivalent])
+  }, [props.equivalent, equivalents])
 
   const [weight, setWeight] = useState(props.equivalent?.total || 2000)
 
@@ -80,7 +79,7 @@ export default function Tiles(props) {
           measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
           onDragEnd={({ active, over }) => {
             if (active.id !== over.id) {
-              setEquivalentsToDisplay((items) => {
+              setTiles((items) => {
                 const oldIndex = items.indexOf(
                   items.find((item) => item.id === active.id)
                 )
@@ -93,18 +92,15 @@ export default function Tiles(props) {
           }}
         >
           <TilesWrapper>
-            <SortableContext
-              items={equivalentsToDisplay}
-              strategy={rectSortingStrategy}
-            >
-              {equivalentsToDisplay.map((equivalent) => (
+            <SortableContext items={tiles} strategy={rectSortingStrategy}>
+              {tiles.map((equivalent) => (
                 <Tile
                   equivalent={equivalent}
                   weight={weight}
                   key={equivalent.id}
                   background={props.background}
                   removeEquivalent={(id) =>
-                    setEquivalentsToDisplay((equivalents) =>
+                    setTiles((equivalents) =>
                       equivalents.filter((equivalent) => equivalent.id !== id)
                     )
                   }
