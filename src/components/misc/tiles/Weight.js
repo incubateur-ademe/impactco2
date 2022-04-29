@@ -1,8 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import DataContext from 'utils/DataContext'
-import Emoji from 'components/base/Emoji'
 import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`

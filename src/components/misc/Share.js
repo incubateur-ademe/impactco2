@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 
-import Integration from './share/Integration'
 import Mail from './share/Mail'
 import Facebook from './share/Facebook'
 import Twitter from './share/Twitter'
@@ -36,7 +35,6 @@ export default function Share(props) {
 
   return (
     <Wrapper title={props.title}>
-      <Integration onClick={() => alert('Bientôt disponible')} />
       <Mail subject={'subject'} body={'body'} url={url} />
       <Facebook quote={'quote'} url={url} />
       <Twitter title={'title'} url={url} />

@@ -10,7 +10,7 @@ import {
 import { formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
-import Share from 'components/misc/Share'
+import ShareButton from 'components/misc/ShareButton'
 import Weight from './tiles/Weight'
 import Tile from './tiles/Tile'
 import AddButton from './tiles/AddButton'
@@ -49,7 +49,7 @@ export default function Tiles(props) {
             !props.equivalent || equivalent.id !== props.equivalent.id
         )
     )
-  }, [props.equivalent, equivalents])
+  }, [props.equivalent, equivalents, setTiles])
 
   const [weight, setWeight] = useState(props.equivalent?.total || 2000)
 
@@ -110,7 +110,7 @@ export default function Tiles(props) {
             </SortableContext>
           </TilesWrapper>
         </DndContext>
-        <Share />
+        <ShareButton />
       </Section.Content>
     </StyledSection>
   )

@@ -6,7 +6,6 @@ const Wrapper = styled.div`
   position: relative;
   margin-right: 1.25rem;
 `
-const Title = styled(MagicLink)``
 const List = styled.div`
   position: absolute;
   z-index: 12;
@@ -50,6 +49,9 @@ const ButtonDropdown = styled.button`
 
   svg {
     margin-left: 0.5rem;
+    transform: rotate(${(props) => (props.open ? 180 : 0)}deg);
+    transition: transform 200ms ease-out;
+
     path {
       fill: ${(props) =>
         props.theme.colors[props.current || props.open ? 'main' : 'text']};
@@ -59,11 +61,12 @@ const ButtonDropdown = styled.button`
 export default function Dropdown(props) {
   const [open, setOpen] = useState(false)
 
+  const handleClick = () => setOpen(false)
   useEffect(() => {
-    document.addEventListener('click', () => setOpen(false))
+    document.addEventListener('click', handleClick)
 
     return () => {
-      document.removeEventListener('click', () => setOpen(false))
+      document.removeEventListener('click', handleClick)
     }
   }, [])
 

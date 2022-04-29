@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { navigate } from 'gatsby'
 
 import DataContext from 'utils/DataContext'
 import equivalentsData from 'data/equivalents.json'
