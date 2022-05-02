@@ -42,7 +42,7 @@ const Equals = styled.div`
 const StyledButton = styled(Button)`
   font-size: 0.875rem;
 `
-export default function Boeuf() {
+export default function Eau() {
   return (
     <>
       <Title>(Infographie non définitive)</Title>

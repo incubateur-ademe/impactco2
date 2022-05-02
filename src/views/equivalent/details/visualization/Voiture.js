@@ -38,14 +38,14 @@ const Equals = styled.div`
 const StyledButton = styled(Button)`
   font-size: 0.875rem;
 `
-export default function Boeuf() {
+export default function Voiture() {
   return (
     <>
       <Equivalents>
         <Equivalent>
           <Emojis>🚗</Emojis>
           <Label>
-            1 km
+            <strong>1 km</strong>
             <br />
             en voiture
           </Label>
@@ -54,7 +54,7 @@ export default function Boeuf() {
         <Equivalent>
           <Emojis>🚌🚌</Emojis>
           <Label>
-            2 km
+            <strong>2 km</strong>
             <br />
             en bus
           </Label>
@@ -65,7 +65,7 @@ export default function Boeuf() {
             🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅
           </Emojis>
           <Label>
-            112 km
+            <strong>112 km</strong>
             <br />
             en TGV
           </Label>

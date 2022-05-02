@@ -8,7 +8,8 @@ export default function notfound() {
     <Web>
       <Section>
         <Section.Content>
-          <h1>404</h1>
+          <h1>Intégration</h1>
+          <p>Ici bientôt un configurateur de widget</p>
         </Section.Content>
       </Section>
     </Web>
