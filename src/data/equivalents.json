@@ -44,12 +44,12 @@
   {
     "id": 27979,
     "name": {
-      "fr": "km en moto"
+      "fr": "km en bus"
     },
-    "slug": "moto",
-    "emoji": "🏍️",
+    "slug": "bus",
+    "emoji": "🚌",
     "category": 4,
-    "total": 0.168,
+    "total": 0.103,
     "default": false,
     "visualization": false,
     "tile": false,
@@ -77,7 +77,7 @@
     "slug": "avion",
     "emoji": "✈️",
     "category": 4,
-    "total": 0.186,
+    "total": 0.126,
     "default": false,
     "visualization": false,
     "tile": false,
