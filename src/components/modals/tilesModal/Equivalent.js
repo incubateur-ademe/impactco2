@@ -15,6 +15,7 @@ const Wrapper = styled.button`
   margin-bottom: 0.25rem;
   border: none;
   border-radius: 0.5rem;
+  color: ${(props) => props.theme.colors.text};
   background-color: ${(props) =>
     props.theme.colors[props.checked ? 'mainLight' : 'background']};
   opacity: ${(props) => (props.disabled ? 0.3 : 1)};
