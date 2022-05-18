@@ -151,8 +151,8 @@ export default function Tile(props) {
         to={`/categories/${
           categories.find(
             (category) => category.id === props.equivalent.category
-          ).id
-        }/${props.equivalent.id}`}
+          ).slug
+        }/${props.equivalent.slug}`}
       >
         Voir le détail
       </StyledMagicLink>
