@@ -33,7 +33,7 @@ export default function Heading() {
         </Text>
         <Button.Wrapper>
           <Button to='/categories'>Voir les catégories</Button>
-          <Button onClick={() => alert('Bientôt')} hollow>
+          <Button onClick={() => alert('Bientôt disponible')} hollow>
             Comprendre le CO2e
           </Button>
         </Button.Wrapper>

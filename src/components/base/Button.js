@@ -19,7 +19,7 @@ const Wrapper = styled(MagicLink)`
         ]};
   background-color: ${(props) =>
     props.hollow ? 'transparent' : props.theme.colors.main};
-  border: 0.125em solid ${(props) => props.theme.colors.main};
+  border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 1.5em;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};
