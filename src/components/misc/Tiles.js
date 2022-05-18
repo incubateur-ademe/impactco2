@@ -46,7 +46,7 @@ export default function Tiles(props) {
         .filter((equivalent) => equivalent.tile)
         .filter(
           (equivalent) =>
-            !props.equivalent || equivalent.id !== props.equivalent.id
+            !props.equivalent || equivalent.slug !== props.equivalent.slug
         )
     )
   }, [props.equivalent, equivalents, setTiles])
