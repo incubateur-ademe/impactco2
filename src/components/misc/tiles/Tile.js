@@ -89,8 +89,7 @@ const Name = styled.span`
   align-items: center;
   min-height: 2.125rem;
 `
-const StyledButton = styled(Button)`
-  padding: 0.375rem 1rem;
+const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;
 
   ${(props) => props.theme.mq.small} {
@@ -148,7 +147,7 @@ export default function Tile(props) {
         </Name>
       </Title>
 
-      <MagicLink
+      <StyledMagicLink
         to={`/categories/${
           categories.find(
             (category) => category.id === props.equivalent.category
@@ -156,7 +155,7 @@ export default function Tile(props) {
         }/${props.equivalent.id}`}
       >
         Voir le détail
-      </MagicLink>
+      </StyledMagicLink>
     </Wrapper>
   )
 }
