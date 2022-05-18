@@ -36,7 +36,7 @@ export default function Ecv(props) {
           <Graph item={item} equivalent={props.equivalent} />
         ))}
       </List>
-      <Button.Wrapper>
+      <Button.Wrapper right>
         <Button small hollow onClick={() => alert('Bientôt disponible')}>
           Ajouter l'usage
         </Button>
