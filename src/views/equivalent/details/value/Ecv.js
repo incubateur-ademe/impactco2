@@ -23,7 +23,7 @@ const List = styled.ul`
 export default function Ecv(props) {
   const [ecvToDisplay, setEcvToDisplay] = useState([])
   useEffect(() => {
-    props.equivalent &&
+    props.equivalent?.ecv &&
       setEcvToDisplay(
         props.equivalent.ecv.sort((a, b) => (a.value < b.value ? 1 : -1))
       )
