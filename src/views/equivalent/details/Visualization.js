@@ -32,14 +32,14 @@ const visualizations = {
 const Wrapper = styled.div`
   margin-bottom: 4rem;
   padding: 1.5rem;
-  background-color: ${(props) => props.theme.colors.secondLight};
+  background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
 `
 export default function Visualization(props) {
-  return visualizations[props.equivalent.id] ? (
+  return visualizations[props.equivalent.slug] ? (
     <Section>
       <Section.Content>
-        <Wrapper>{visualizations[props.equivalent.id]}</Wrapper>
+        <Wrapper>{visualizations[props.equivalent.slug]}</Wrapper>
       </Section.Content>
     </Section>
   ) : null

@@ -16,13 +16,13 @@ const Input = styled.input`
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
   border: 2px solid
-    ${(props) => props.theme.colors[props.error ? 'error' : 'second']};
+    ${(props) => props.theme.colors[props.error ? 'error' : 'main']};
   border-radius: 1rem;
   transition: box-shadow 300ms ease-out;
 
   &:focus {
     outline: none;
-    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.second};
+    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
   }
 `
 export default function TextInput(props) {

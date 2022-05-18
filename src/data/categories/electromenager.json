@@ -1,0 +1,135 @@
+[
+  {
+    "name": {
+      "fr": "Bouilloire[s]"
+    },
+    "slug": "bouilloire",
+    "emoji": "🎵",
+    "category": 6,
+    "ecv": [
+      {
+        "value": 3.92551745975495,
+        "id": 1
+      },
+      {
+        "value": 0.236818204229257,
+        "id": 2
+      },
+      {
+        "value": 0.590293393621879,
+        "id": 3
+      },
+      {
+        "value": 4.98051969151672,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 5.27273319,
+      "defaultyears": 6
+    },
+    "end": -0.659363081745786,
+    "default": false,
+    "tile": false,
+    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Cafetière[s] à dosettes"
+    },
+    "slug": "cafetieredosette",
+    "emoji": "🎵",
+    "category": 6,
+    "ecv": [
+      {
+        "value": 8.46271935618363,
+        "id": 1
+      },
+      {
+        "value": 0.394135722315441,
+        "id": 2
+      },
+      {
+        "value": 1.27761344591338,
+        "id": 3
+      },
+      {
+        "value": 11.8777997167964,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 35.160078,
+      "defaultyears": 5
+    },
+    "end": 52.7491626905852,
+    "default": false,
+    "tile": false,
+    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 400000,
+    "name": {
+      "fr": "Four (électrique encastrable)"
+    },
+    "slug": "four",
+    "emoji": "🎛",
+    "category": 6,
+    "total": 217,
+    "default": true,
+    "tile": false,
+    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 400001,
+    "name": {
+      "fr": "Lave-vaisselle"
+    },
+    "slug": "lavevaisselle",
+    "emoji": "🍽",
+    "category": 6,
+    "total": 271,
+    "default": true,
+    "tile": false,
+    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 400002,
+    "name": {
+      "fr": "Lave-linge (7kg)"
+    },
+    "slug": "lavelinge",
+    "emoji": "🧦",
+    "category": 6,
+    "total": 342,
+    "default": true,
+    "tile": false,
+    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 400003,
+    "name": {
+      "fr": "Réfrigérateur"
+    },
+    "slug": "refrigirateur",
+    "emoji": "❄️",
+    "category": 6,
+    "total": 257,
+    "default": true,
+    "tile": false,
+    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 400005,
+    "name": {
+      "fr": "Aspirateur"
+    },
+    "slug": "aspirateur",
+    "emoji": "🧹",
+    "category": 6,
+    "total": 47.3,
+    "default": true,
+    "tile": false,
+    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  }
+]

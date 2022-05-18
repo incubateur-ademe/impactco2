@@ -14,7 +14,7 @@ const Input = styled.select`
   padding: 0.5rem 1rem;
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
-  border: 2px solid ${(props) => props.theme.colors.second};
+  border: 2px solid ${(props) => props.theme.colors.main};
   border-radius: 1rem;
   appearance: none;
   background-repeat: no-repeat;

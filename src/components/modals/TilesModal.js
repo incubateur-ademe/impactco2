@@ -37,14 +37,14 @@ export default function TilesModal() {
       <Equivalents>
         {equivalents.map((equivalent) => (
           <Equivalent
-            key={equivalent.id}
+            key={equivalent.slug}
             equivalent={equivalent}
             checked={tiles.find((tile) => tile === equivalent)}
             setChecked={(checked) =>
               setTiles((prevTiles) =>
                 checked
                   ? [...prevTiles, equivalent]
-                  : prevTiles.filter((tile) => tile.id !== equivalent.id)
+                  : prevTiles.filter((tile) => tile.id !== equivalent.slug)
               )
             }
           />

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { formatPercent, formatTotal } from 'utils/formatters'
 const Wrapper = styled.div`
   display: flex;
   height: 2.5rem;
@@ -19,13 +20,14 @@ const Item = styled.div`
   cursor: pointer;
 `
 export default function Graph(props) {
+  console.log(formatPercent(props.ecv[0].value / formatTotal(props.equivalent)))
   return (
     <Wrapper>
       {props.equivalent.ecv.map((item) => (
         <Item
           key={item.id}
           color={props.ecv.find((step) => step.id === item.id)?.color}
-          width={(item.value / props.equivalent.total) * 100}
+          width={formatPercent(item.value, formatTotal(props.equivalent), true)}
           onMouseEnter={() => props.setHover(item.id)}
           onMouseLeave={() => props.setHover(null)}
         />

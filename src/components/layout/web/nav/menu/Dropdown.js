@@ -11,7 +11,7 @@ const List = styled.div`
   z-index: 12;
   top: 100%;
   left: 0;
-  background-color: ${(props) => props.theme.colors.secondLight};
+  background-color: ${(props) => props.theme.colors.second};
   border-radius: 0 0 1rem 1rem;
   box-shadow: -0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -27,13 +27,13 @@ const ButtonDropdown = styled.button`
   color: ${(props) =>
     props.theme.colors[props.current || props.open ? 'main' : 'text']};
   background-color: ${(props) =>
-    props.open ? props.theme.colors.secondLighter : 'transparent'};
+    props.open ? props.theme.colors.secondLight : 'transparent'};
   border: none;
   cursor: pointer;
   transition: background-color 200ms ease-out;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondLighter};
+    background-color: ${(props) => props.theme.colors.secondLight};
   }
 
   &:before {
@@ -110,13 +110,13 @@ Dropdown.Item = styled(MagicLink)`
     left: 1rem;
     right: 1rem;
     height: 0.0625rem;
-    background-color: ${(props) => props.theme.colors.secondLighter};
+    background-color: ${(props) => props.theme.colors.secondLight};
   }
   &:last-child {
     padding: 0.75rem 1.5rem 1rem;
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondLighter};
+    background-color: ${(props) => props.theme.colors.secondLight};
   }
 `

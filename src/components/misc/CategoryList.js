@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
+import { formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import Button from 'components/base/Button'
-import Equivalent from './category/Equivalent'
+import Equivalent from './categoryList/Equivalent'
 
 const StyledSection = styled(Section)`
   margin-bottom: 4.5rem;
@@ -36,6 +37,10 @@ export default function Category(props) {
       setEquivalentsOfCategory(
         equivalents
           .filter((equivalent) => equivalent.category === props.category.id)
+          .map((equivalent) => ({
+            ...equivalent,
+            total: formatTotal(equivalent),
+          }))
           .sort((a, b) => (a.total > b.total ? 1 : -1))
       )
   }, [equivalents, props.category])
@@ -59,8 +64,8 @@ export default function Category(props) {
               max={
                 equivalentsOfCategory[equivalentsOfCategory.length - 1].total
               }
-              current={props.equivalent?.id === equivalent.id}
-              key={equivalent.id}
+              current={props.equivalent?.id === equivalent.slug}
+              key={equivalent.slug}
             />
           ))}
         </Equivalents>

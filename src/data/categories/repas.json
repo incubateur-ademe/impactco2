@@ -1,0 +1,80 @@
+[
+  {
+    "id": 20689,
+    "name": {
+      "fr": "Repas avec du boeuf"
+    },
+    "slug": "repasavecduboeuf",
+    "emoji": "🥩",
+    "category": 2,
+    "total": 7.26,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
+  },
+  {
+    "id": 20683,
+    "name": {
+      "fr": "Repas végétarien"
+    },
+    "slug": "repasvegetarien",
+    "emoji": "🥗",
+    "category": 2,
+    "total": 0.51,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
+  },
+  {
+    "id": 20684,
+    "name": {
+      "fr": "Repas végétalien"
+    },
+    "slug": "repasvegetalien",
+    "emoji": "🍎",
+    "category": 2,
+    "total": 0.39,
+    "default": true,
+    "tile": false,
+    "sources": "NGC"
+  },
+  {
+    "id": 20685,
+    "name": {
+      "fr": "Repas avec du poisson blanc"
+    },
+    "slug": "repasavecdupoissonblanc",
+    "emoji": "🐟",
+    "category": 2,
+    "total": 1.11,
+    "default": true,
+    "tile": false,
+    "sources": "NGC"
+  },
+  {
+    "id": 20686,
+    "name": {
+      "fr": "Repas avec du poisson gras"
+    },
+    "slug": "repasavecdupoissongras",
+    "emoji": "🐟",
+    "category": 2,
+    "total": 1.98,
+    "default": true,
+    "tile": false,
+    "sources": "NGC"
+  },
+  {
+    "id": 20688,
+    "name": {
+      "fr": "Repas avec du poulet"
+    },
+    "slug": "repasavecdupoulet",
+    "emoji": "🍗",
+    "category": 2,
+    "total": 1.58,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
+  }
+]

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 
-import { formatPercent } from 'utils/formatters'
+import { formatPercent, formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Graph from './ecv/Graph'
 
@@ -65,7 +65,7 @@ export default function Ecv(props) {
           >
             {ecv.find((step) => step.id === item.id)?.name.fr} :{' '}
             <Percent>
-              {formatPercent(item.value, props.equivalent.total)} %
+              {formatPercent(item.value, formatTotal(props.equivalent))} %
             </Percent>
           </Item>
         ))}

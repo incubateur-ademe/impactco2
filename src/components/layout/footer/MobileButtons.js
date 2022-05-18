@@ -27,7 +27,7 @@ const Button = styled.button`
   align-items: center;
   margin: 0;
   padding: 0;
-  color: ${(props) => props.theme.colors.second};
+  color: ${(props) => props.theme.colors.main};
   background: none;
   border: none;
 `
@@ -36,7 +36,7 @@ const StyledLink = styled(MagicLink)`
   flex-direction: column;
   align-items: center;
 
-  color: ${(props) => props.theme.colors.second};
+  color: ${(props) => props.theme.colors.main};
   text-decoration: none;
 `
 const Icon = styled.div`

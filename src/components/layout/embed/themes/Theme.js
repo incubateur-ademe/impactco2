@@ -21,7 +21,7 @@ const Title = styled.div`
   margin-bottom: 0.4em;
   font-size: 1.5em;
   font-weight: bold;
-  color: ${(props) => props.displayTheme.colors.second};
+  color: ${(props) => props.displayTheme.colors.text};
 `
 const Tiles = styled.div`
   display: flex;

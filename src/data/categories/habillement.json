@@ -1,0 +1,93 @@
+[
+  {
+    "id": 27043,
+    "name": {
+      "fr": "Jean[s] (en coton)"
+    },
+    "slug": "jeanencoton",
+    "emoji": "👖",
+    "category": 5,
+    "total": 23.2,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Jean - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27044,
+    "name": {
+      "fr": "T-shirt[s] en coton"
+    },
+    "slug": "tshirtencoton",
+    "emoji": "👕",
+    "category": 5,
+    "total": 5.2,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27045,
+    "name": {
+      "fr": "Chemise[s] (en coton)"
+    },
+    "slug": "chemiseencoton",
+    "emoji": "👚",
+    "category": 5,
+    "total": 11.2,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27046,
+    "name": {
+      "fr": "Chaussure[s] en cuir"
+    },
+    "slug": "chaussureencuir",
+    "emoji": "👞",
+    "category": 5,
+    "total": 13.4,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27047,
+    "name": {
+      "fr": "Robe[s]"
+    },
+    "slug": "Robe",
+    "emoji": "👗",
+    "category": 5,
+    "total": 49.8,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27048,
+    "name": {
+      "fr": "Pull[s] (en laine)"
+    },
+    "slug": "pullenlaine",
+    "emoji": "🧶",
+    "category": 5,
+    "total": 52.9,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  },
+  {
+    "id": 27049,
+    "name": {
+      "fr": "Manteau[s]"
+    },
+    "slug": "manteau",
+    "emoji": "🧥",
+    "category": 5,
+    "total": 85.8,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"T-shirt - en coton\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+  }
+]

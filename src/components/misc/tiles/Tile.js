@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   margin: 0.75rem;
   padding: 1rem 0.25rem;
   background-color: ${(props) =>
-    props.theme.colors[props.background ? 'footerLight' : 'secondLight']};
+    props.theme.colors[props.background ? 'footerLight' : 'second']};
   border-radius: 1rem;
 
   ${(props) => props.theme.mq.small} {
@@ -101,7 +101,7 @@ export default function Tile(props) {
 
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({
-      id: props.equivalent.id,
+      id: props.equivalent.slug,
       animateLayoutChanges: ({ wasDragging }) => !wasDragging,
     })
 
@@ -112,7 +112,9 @@ export default function Tile(props) {
 
   return (
     <Wrapper background={props.background} ref={setNodeRef} style={style}>
-      <ButtonRemove onClick={() => props.removeEquivalent(props.equivalent.id)}>
+      <ButtonRemove
+        onClick={() => props.removeEquivalent(props.equivalent.slug)}
+      >
         <svg
           x='0px'
           y='0px'
@@ -134,7 +136,7 @@ export default function Tile(props) {
       <Title>
         <Number>
           <AnimatedNumber
-            value={props.weight / props.equivalent.total}
+            value={formatNumber(props.weight / props.equivalent.total)}
             duration={500}
             formatValue={formatNumber}
           />
@@ -142,7 +144,7 @@ export default function Tile(props) {
         <Name>
           {formatName(
             props.equivalent.name.fr,
-            formatNumber(props.weight / props.equivalent.total, true)
+            (props.weight / props.equivalent.total, true)
           )}
         </Name>
       </Title>

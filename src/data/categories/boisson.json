@@ -1,0 +1,80 @@
+[
+  {
+    "id": 24283,
+    "name": {
+      "fr": "Litre[s] d'eau du robinet"
+    },
+    "slug": "eaudurobinet",
+    "emoji": "🚰",
+    "category": 3,
+    "total": 0.000132,
+    "default": true,
+    "tile": false,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
+  },
+  {
+    "id": 31000,
+    "name": {
+      "fr": "Litre[s] d'eau en bouteille"
+    },
+    "slug": "eauenbouteille",
+    "emoji": "💧",
+    "category": 3,
+    "total": 0.453,
+    "default": true,
+    "tile": true,
+    "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
+  },
+  {
+    "id": 31001,
+    "name": {
+      "fr": "Litre[s] de soda"
+    },
+    "slug": "soda",
+    "emoji": "🥤",
+    "category": 3,
+    "total": 0.57,
+    "default": true,
+    "tile": false,
+    "sources": "Agribalyse"
+  },
+  {
+    "id": 31002,
+    "name": {
+      "fr": "Litre[s] de bière"
+    },
+    "slug": "biere",
+    "emoji": "🍺",
+    "category": 3,
+    "total": 1.09,
+    "default": true,
+    "tile": false,
+    "sources": "Agribalyse"
+  },
+  {
+    "id": 31003,
+    "name": {
+      "fr": "Litre[s] de vin"
+    },
+    "slug": "vin",
+    "emoji": "🍷",
+    "category": 3,
+    "total": 1.13,
+    "default": true,
+    "tile": false,
+    "sources": "Agribalyse"
+  },
+  {
+    "id": 31004,
+    "name": {
+      "fr": "Litre[s] de lait"
+    },
+    "slug": "lait",
+    "emoji": "🥛",
+    "category": 3,
+    "total": 1.53,
+    "default": true,
+    "tile": false,
+    "sources": "Agribalyse"
+  }
+]

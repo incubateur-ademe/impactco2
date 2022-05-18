@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     left: 0;
     height: 1.1em;
     width: 1.1em;
-    border: 2px solid ${(props) => props.theme.colors.second};
+    border: 2px solid ${(props) => props.theme.colors.main};
     border-radius: 0.25rem;
     pointer-events: none;
   }
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${(props) => props.theme.colors.second};
+    color: ${(props) => props.theme.colors.main};
     font-size: 1.75em;
     line-height: 0.7;
     opacity: ${(props) => (props.checked ? 1 : 0)};

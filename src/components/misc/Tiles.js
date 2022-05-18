@@ -46,7 +46,7 @@ export default function Tiles(props) {
         .filter((equivalent) => equivalent.tile)
         .filter(
           (equivalent) =>
-            !props.equivalent || equivalent.id !== props.equivalent.id
+            !props.equivalent || equivalent.slug !== props.equivalent.slug
         )
     )
   }, [props.equivalent, equivalents, setTiles])
@@ -97,11 +97,11 @@ export default function Tiles(props) {
                 <Tile
                   equivalent={equivalent}
                   weight={weight}
-                  key={equivalent.id}
+                  key={equivalent.slug}
                   background={props.background}
                   removeEquivalent={(id) =>
                     setTiles((equivalents) =>
-                      equivalents.filter((equivalent) => equivalent.id !== id)
+                      equivalents.filter((equivalent) => equivalent.slug !== id)
                     )
                   }
                 />

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import { formatNumber, formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import ModalContext from 'utils/ModalContext'
 import Emoji from 'components/base/Emoji'
@@ -13,7 +14,7 @@ const Wrapper = styled(MagicLink)`
   padding: 0.875rem 0.875rem 1rem;
   text-decoration: none;
   background-color: ${(props) =>
-    props.current ? props.theme.colors.secondLight : 'transparent'};
+    props.current ? props.theme.colors.second : 'transparent'};
   border-radius: 1rem;
   transition: background-color 200ms ease-out;
 
@@ -113,10 +114,7 @@ export default function Equivalent(props) {
           <Title>
             {props.category.multiplier}{' '}
             <span>
-              {props.equivalent.name.fr.replaceAll(
-                '[s]',
-                props.category.multiplier === 1 ? '' : 's'
-              )}
+              {formatName(props.equivalent.name.fr, props.category.multiplier)}
             </span>
           </Title>
         </TitleWrapper>
@@ -127,11 +125,11 @@ export default function Equivalent(props) {
               inside={props.equivalent.total / props.max > 0.7}
             >
               <Number>
-                {Math.round(
+                {formatNumber(
                   (props.equivalent.total * props.category.multiplier).toFixed(
                     2
-                  ) * 100
-                ) / 100}
+                  )
+                )}
               </Number>
               <Unit onClick={() => setCO2E(true)}>
                 {' '}

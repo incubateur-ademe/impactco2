@@ -11,7 +11,7 @@ import Select from 'components/base/FancySelect'
 const Title = styled.div`
   margin-bottom: 1rem;
   font-size: 2rem;
-  color: ${(props) => props.theme.colors.second};
+  color: ${(props) => props.theme.colors.text};
   font-weight: bold;
   line-height: 1.2;
 

@@ -7,7 +7,7 @@ const Wrapper = styled(MagicLink)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.8em 1.6em;
+  padding: 0.625em 1.5em;
   font-size: ${(props) => (props.small ? '0.875em' : '1em')};
   text-align: center;
   text-decoration: none;
@@ -19,7 +19,7 @@ const Wrapper = styled(MagicLink)`
         ]};
   background-color: ${(props) =>
     props.hollow ? 'transparent' : props.theme.colors.main};
-  border: 1px solid ${(props) => props.theme.colors.main};
+  border: 0.125em solid ${(props) => props.theme.colors.main};
   border-radius: 1.5em;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};

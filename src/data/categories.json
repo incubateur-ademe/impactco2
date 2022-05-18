@@ -7,7 +7,7 @@
     "emoji": "💻",
     "slug": "numerique",
     "multiplier": 1,
-    "unit": "par produit comprenant la fabrication, la distribution et l’usage (pendant un an)"
+    "unit": "par produit comprenant la fabrication et la distribution"
   },
   {
     "id": 2,
@@ -47,7 +47,7 @@
     "emoji": "👔",
     "slug": "habillement",
     "multiplier": 1,
-    "unit": "par produit comprenant la fabrication, la distribution et l’usage (pendant un an)"
+    "unit": "par produit comprenant la fabrication et la distribution"
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "emoji": "🛁",
     "slug": "electromenager",
     "multiplier": 1,
-    "unit": "par produit comprenant la fabrication, la distribution et l’usage (pendant un an)"
+    "unit": "par produit comprenant la fabrication et la distribution"
   },
   {
     "id": 7,
@@ -67,6 +67,6 @@
     "emoji": "🪑",
     "slug": "mobilier",
     "multiplier": 1,
-    "unit": "par produit comprenant la fabrication, la distribution et l’usage (pendant un an)"
+    "unit": "par produit comprenant la fabrication et la distribution"
   }
 ]

@@ -13,7 +13,7 @@ const Suggestion = styled.div`
   cursor: pointer;
   transition: background-color 200ms ease-out;
   background-color: ${(props) =>
-    props.theme.colors[props.current ? 'secondLight' : 'background']};
+    props.theme.colors[props.current ? 'second' : 'background']};
 
   &:hover {
     background-color: ${(props) => props.theme.colors.mainLight};

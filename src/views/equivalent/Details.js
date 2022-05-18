@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { formatName } from 'utils/formatters'
 import Section from 'components/base/Section'
 import ShareButton from 'components/misc/ShareButton'
 import Value from './details/Value'
@@ -17,9 +18,7 @@ export default function Details(props) {
     <>
       <Section>
         <Section.Content flex>
-          <Title>
-            1 {props.equivalent.name.fr.replaceAll('[s]', '').toLowerCase()}
-          </Title>
+          <Title>1 {formatName(props.equivalent.name.fr, 1)}</Title>
           <ShareButton title />
         </Section.Content>
       </Section>

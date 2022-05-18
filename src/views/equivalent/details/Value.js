@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import { formatTotal, formatNumber } from 'utils/formatters'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import Ecv from './value/Ecv'
@@ -60,7 +61,9 @@ export default function Value(props) {
       <Section.Content>
         <Top>
           <div>
-            <Number>{props.equivalent.total}</Number>{' '}
+            <Number>
+              {formatNumber(formatTotal(props.equivalent), false, true)}
+            </Number>{' '}
             <Unit>
               kg <Big>CO2</Big>e
             </Unit>

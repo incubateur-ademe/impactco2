@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   width: 12.75rem;
   margin: 0.75rem;
   padding: 1rem 0.25rem;
-  background-color: ${(props) => props.theme.colors.secondLight};
+  background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
 
   ${(props) => props.theme.mq.small} {

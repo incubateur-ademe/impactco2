@@ -18,7 +18,6 @@ const Form = styled.form`
 const Title = styled.div`
   margin-bottom: 1rem;
   font-size: 2rem;
-  color: ${(props) => props.theme.colors.second};
   font-weight: bold;
   line-height: 1.2;
 
