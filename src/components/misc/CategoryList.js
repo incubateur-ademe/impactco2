@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
+import Checkbox from 'components/base/Checkbox'
 import MagicLink from 'components/base/MagicLink'
 import Button from 'components/base/Button'
 import Equivalent from './categoryList/Equivalent'
@@ -28,8 +29,19 @@ const Disclaimer = styled.p`
   font-size: 0.875rem;
   text-align: center;
 `
+const CheckboxWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  max-width: 32rem;
+  margin: 0 auto;
+`
+const StyledCheckbox = styled(Checkbox)`
+  font-size: 0.875rem;
+`
 export default function Category(props) {
   const { equivalents } = useContext(DataContext)
+
+  const [displayAll, setDisplayAll] = useState(props.equivalent ? true : false)
 
   const [equivalentsOfCategory, setEquivalentsOfCategory] = useState([])
   useEffect(() => {
@@ -37,24 +49,37 @@ export default function Category(props) {
       setEquivalentsOfCategory(
         equivalents
           .filter((equivalent) => equivalent.category === props.category.id)
+          .filter((equivalent) => equivalent.default || displayAll)
           .map((equivalent) => ({
             ...equivalent,
             total: formatTotal(equivalent),
           }))
           .sort((a, b) => (a.total > b.total ? 1 : -1))
       )
-  }, [equivalents, props.category])
+  }, [equivalents, props.category, displayAll])
 
   return (
     <StyledSection>
       <Section.Content>
-        {props.equivalent && (
+        {props.equivalent ? (
           <Title>
             Categorie{' '}
             <MagicLink to={`/categories/${props.category.slug}`}>
               {props.category.name.fr}
             </MagicLink>
           </Title>
+        ) : (
+          <CheckboxWrapper>
+            <StyledCheckbox
+              name='displayAll'
+              checked={displayAll}
+              onChange={() =>
+                setDisplayAll((prevDisplayAll) => !prevDisplayAll)
+              }
+            >
+              Voir tous les équivalents
+            </StyledCheckbox>
+          </CheckboxWrapper>
         )}
         <Equivalents small={props.small}>
           {equivalentsOfCategory.map((equivalent) => (
