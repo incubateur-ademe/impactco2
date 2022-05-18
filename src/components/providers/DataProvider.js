@@ -21,15 +21,17 @@ export default function DataProvider(props) {
   const [tiles, setTiles] = useState([])
 
   useEffect(() => {
-    setEquivalents([
-      ...boisson,
-      ...deplacement,
-      ...electromenager,
-      ...habillement,
-      ...mobilier,
-      ...numerique,
-      ...repas,
-    ])
+    setEquivalents(
+      [
+        ...boisson,
+        ...deplacement,
+        ...electromenager,
+        ...habillement,
+        ...mobilier,
+        ...numerique,
+        ...repas,
+      ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
+    )
     setCategories(categoriesData)
     setEcv(ecvData)
   }, [])

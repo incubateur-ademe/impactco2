@@ -4,10 +4,11 @@ import AnimatedNumber from 'animated-number-react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 
-import { formatNumber, formatName } from 'utils/formatters'
+import { formatNumber, formatName, formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/Button'
+import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
   position: relative;
@@ -101,7 +102,7 @@ export default function Tile(props) {
 
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({
-      id: props.equivalent.slug,
+      id: props.equivalent.id,
       animateLayoutChanges: ({ wasDragging }) => !wasDragging,
     })
 
@@ -112,9 +113,7 @@ export default function Tile(props) {
 
   return (
     <Wrapper background={props.background} ref={setNodeRef} style={style}>
-      <ButtonRemove
-        onClick={() => props.removeEquivalent(props.equivalent.slug)}
-      >
+      <ButtonRemove onClick={() => props.removeEquivalent(props.equivalent.id)}>
         <svg
           x='0px'
           y='0px'
@@ -136,7 +135,7 @@ export default function Tile(props) {
       <Title>
         <Number>
           <AnimatedNumber
-            value={formatNumber(props.weight / props.equivalent.total)}
+            value={props.weight / formatTotal(props.equivalent)}
             duration={500}
             formatValue={formatNumber}
           />
@@ -144,20 +143,20 @@ export default function Tile(props) {
         <Name>
           {formatName(
             props.equivalent.name.fr,
-            (props.weight / props.equivalent.total, true)
+            props.weight / formatTotal(props.equivalent)
           )}
         </Name>
       </Title>
 
-      <StyledButton
+      <MagicLink
         to={`/categories/${
           categories.find(
             (category) => category.id === props.equivalent.category
-          ).slug
-        }/${props.equivalent.slug}`}
+          ).id
+        }/${props.equivalent.id}`}
       >
         Voir le détail
-      </StyledButton>
+      </MagicLink>
     </Wrapper>
   )
 }
