@@ -46,7 +46,7 @@ const Big = styled.span`
 `
 const Including = styled.span`
   opacity: ${(props) => (props.ecvOpen ? 1 : 0)};
-  transition: opacity 300ms ease-out;
+  transition: opacity ${(props) => (props.ecvOpen ? 300 : 0)}ms;
 `
 const StyledButton = styled(Button)`
   position: absolute;
@@ -78,7 +78,7 @@ export default function Value(props) {
               {formatNumber(formatTotal(props.equivalent), false, true)}
             </Number>{' '}
             <Unit>
-              kg <Big>CO2</Big>e<Including ecvOpen={ecvOpen}> dont</Including>
+              kg <Big>CO2</Big>e<Including ecvOpen={ecvOpen}> dont :</Including>
             </Unit>
           </div>
           {props.equivalent.ecv && (
