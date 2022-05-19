@@ -7,6 +7,7 @@ import {
   rectSortingStrategy,
 } from '@dnd-kit/sortable'
 
+import useIframe from 'hooks/useIframe'
 import { formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
@@ -16,8 +17,9 @@ import Tile from './tiles/Tile'
 import AddButton from './tiles/AddButton'
 
 const StyledSection = styled(Section)`
-  margin-bottom: 4rem;
-  padding: ${(props) => (props.background ? 3 : 0)}rem 0 1.5rem;
+  margin-bottom: ${(props) => (props.iframe ? 0 : '4rem')};
+  padding: ${(props) => (props.background ? 3 : 0)}rem 0
+    ${(props) => (props.iframe ? 0 : '1.5rem')};
 `
 const Title = styled.h2`
   margin-bottom: 1rem;
@@ -31,14 +33,13 @@ const Text = styled.p`
 const TilesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -0.75rem 0.5rem;
-
-  ${(props) => props.theme.mq.small} {
-    margin: 0 -0.375rem;
-  }
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 `
 export default function Tiles(props) {
   const { equivalents, tiles, setTiles } = useContext(DataContext)
+
+  const iframe = useIframe()
 
   useEffect(() => {
     setTiles(
@@ -54,7 +55,7 @@ export default function Tiles(props) {
   const [weight, setWeight] = useState(props.equivalent?.total || 2000)
 
   return (
-    <StyledSection background={props.background}>
+    <StyledSection background={props.background} iframe={iframe}>
       <Section.Content>
         {props.equivalent ? (
           <Title>

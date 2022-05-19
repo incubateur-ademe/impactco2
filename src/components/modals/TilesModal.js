@@ -19,7 +19,7 @@ const StyledButtonWrapper = styled(Button.Wrapper)`
   right: 0.5rem;
   padding: 0.5rem;
   background-color: ${(props) => props.theme.colors.background};
-  border-top: 0.0625rem solid ${(props) => props.theme.colors.footer};
+  border-top: 0.0625rem solid ${(props) => props.theme.colors.textLight};
   border-radius: 0 0 1rem 1rem;
 `
 export default function TilesModal() {

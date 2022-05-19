@@ -3,15 +3,14 @@ import styled from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { GlobalStyle } from 'utils/styles'
-import useIframe from 'hooks/useIframe'
 import ModalProvider from 'components/providers/ModalProvider'
 import UXProvider from 'components/providers/UXProvider'
 import DataProvider from 'components/providers/DataProvider'
-import HeaderWrapper from 'components/wrappers/HeaderWrapper'
+import Seo from './web/Seo'
+import Header from './web/Header'
 import Nav from './web/Nav'
 import BreadCrumb from './web/BreadCrumb'
-import FooterWrapper from 'components/wrappers/FooterWrapper'
-import Seo from './web/Seo'
+import Footer from './web/Footer'
 import ModalWrapper from 'components/wrappers/ModalWrapper'
 
 const queryClient = new QueryClient()
@@ -35,9 +34,8 @@ const FullScreen = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: ${(props) => (props.iframe ? 'none' : '100vh')};
-  padding: ${(props) => (props.iframe ? 0.75 : 0)}rem 0
-    ${(props) => (props.iframe ? 0 : 5)}rem;
+  min-height: 100vh;
+  padding: 0 0 5rem;
 `
 const Responsive = styled.div`
   display: none;
@@ -51,11 +49,8 @@ const Responsive = styled.div`
   }
 `
 export default function Web(props) {
-  const iframe = useIframe()
-
   return (
     <>
-      {' '}
       <Wrapper>
         <Seo title={props.title} />
         <QueryClientProvider client={queryClient}>
@@ -64,13 +59,13 @@ export default function Web(props) {
               <ModalProvider>
                 <GlobalStyle />
                 <Content>
-                  <FullScreen iframe={iframe}>
-                    {!iframe && <HeaderWrapper />}
+                  <FullScreen>
+                    <Header />
                     <Nav />
                     <BreadCrumb breadcrumb={props.breadcrumb} />
                     {props.children}
                   </FullScreen>
-                  <FooterWrapper iframe={iframe} />
+                  <Footer />
                 </Content>
                 <ModalWrapper />
               </ModalProvider>

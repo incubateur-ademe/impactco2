@@ -5,6 +5,7 @@ import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
 import Section from 'components/base/Section'
+import Logo from 'components/misc/Logo'
 import ThemeToggle from './header/ThemeToggle'
 
 const Wrapper = styled.header`
@@ -40,7 +41,7 @@ export default function Header(props) {
               <Marianne />
               <Ademe />
             </Logos>
-            {props.children}
+            <Logo />
           </Left>
           <ThemeToggle />
         </Wrapper>

@@ -4,10 +4,10 @@ import AnimatedNumber from 'animated-number-react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 
+import useIframe from 'hooks/useIframe'
 import { formatNumber, formatName, formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Emoji from 'components/base/Emoji'
-import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
@@ -15,17 +15,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 12.75rem;
-  margin: 0.75rem;
+  width: calc(33.3333% - 1rem);
   padding: 1rem 0.25rem;
   background-color: ${(props) =>
-    props.theme.colors[props.background ? 'footerLight' : 'second']};
+    props.theme.colors[props.background ? 'textLight' : 'second']};
   border-radius: 1rem;
-
-  ${(props) => props.theme.mq.small} {
-    width: calc(50% - 0.75rem);
-    margin: 0.375rem;
-  }
 `
 const ButtonRemove = styled.button`
   position: absolute;
@@ -62,10 +56,6 @@ const ButtonEmoji = styled.button`
   background: none;
   border: none;
   cursor: grab;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1.5rem;
-  }
 `
 const Title = styled.h4`
   margin-bottom: 0.5rem;
@@ -78,10 +68,6 @@ const Number = styled.span`
   display: block;
   font-size: 2rem;
   font-weight: bold;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1.5rem;
-  }
 `
 const Name = styled.span`
   display: flex;
@@ -91,13 +77,11 @@ const Name = styled.span`
 `
 const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.75rem;
-  }
 `
 export default function Tile(props) {
   const { categories } = useContext(DataContext)
+
+  const iframe = useIframe()
 
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({
@@ -147,15 +131,17 @@ export default function Tile(props) {
         </Name>
       </Title>
 
-      <StyledMagicLink
-        to={`/categories/${
-          categories.find(
-            (category) => category.id === props.equivalent.category
-          ).slug
-        }/${props.equivalent.slug}`}
-      >
-        Voir le détail
-      </StyledMagicLink>
+      {!iframe && (
+        <StyledMagicLink
+          to={`/categories/${
+            categories.find(
+              (category) => category.id === props.equivalent.category
+            ).slug
+          }/${props.equivalent.slug}`}
+        >
+          Voir le détail
+        </StyledMagicLink>
+      )}
     </Wrapper>
   )
 }

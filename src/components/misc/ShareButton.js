@@ -16,7 +16,6 @@ const hover = keyframes`
   }
 `
 const StyledButtonWrapper = styled(Button.Wrapper)`
-  align-items: flex-start;
   margin-top: ${(props) => (props.title ? '0.25rem' : 0)};
 `
 const StyledButton = styled(Button)`

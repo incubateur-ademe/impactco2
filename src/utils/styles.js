@@ -11,10 +11,8 @@ export const themes = {
       second: '#EFF4F9',
       secondLight: '#E0EDFA',
       background: '#ffffff',
-      footer: '#F6F7F9',
-      footerLight: '#FBFBFC',
       text: '#383838',
-      textLight: '#939699',
+      textLight: '#FBFBFC',
     },
     fonts: {
       body: '"Marianne", Arial, sans-serif',

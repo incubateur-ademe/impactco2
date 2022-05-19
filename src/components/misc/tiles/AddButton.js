@@ -8,19 +8,13 @@ const Wrapper = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 12.75rem;
-  margin: 0.75rem;
+  width: calc(33.3333% - 1.5rem);
   padding: 1rem;
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};
   border: none;
   border-radius: 1rem;
   cursor: pointer;
-
-  ${(props) => props.theme.mq.small} {
-    width: calc(50% - 0.75rem);
-    margin: 0.375rem;
-  }
 
   &:hover h4,
   &:focus h4 {
