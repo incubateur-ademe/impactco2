@@ -6,15 +6,19 @@ import Section from 'components/base/Section'
 import Configurator from 'components/misc/Configurator'
 
 const StyledIframeResizer = styled(IframeResizer)`
-  width: 100%;
+  flex: 1;
   border: 0.125rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+`
+const StyledSectionContent = styled(Section.Content)`
+  align-items: flex-start;
+  width: 60rem;
 `
 export default function Integration() {
   const [theme, setTheme] = useState('default')
   return (
     <Section>
-      <Section.Content>
+      <StyledSectionContent flex>
         <Configurator theme={theme} setTheme={setTheme} />
         <StyledIframeResizer
           src={`${window.location.origin}/iframes/tuiles?theme=${theme}`}
@@ -22,7 +26,7 @@ export default function Integration() {
           webkitallowfullscreen={true}
           mozallowfullscreen={true}
         />
-      </Section.Content>
+      </StyledSectionContent>
     </Section>
   )
 }
