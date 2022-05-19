@@ -9,7 +9,7 @@ const Label = styled.label`
   margin-bottom: 0.5rem;
 `
 const Input = styled.select`
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem 0.5rem 1rem;
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
   border: 0.125rem solid ${(props) => props.theme.colors.main};

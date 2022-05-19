@@ -8,7 +8,7 @@ const Wrapper = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(33.3333% - 1.5rem);
+  width: calc(33.3333% - 1rem);
   padding: 1rem;
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};

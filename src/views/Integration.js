@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
 
@@ -11,12 +11,14 @@ const StyledIframeResizer = styled(IframeResizer)`
   border-radius: 1rem;
 `
 export default function Integration() {
+  const [theme, setTheme] = useState('default')
+
   return (
     <Section>
       <Section.Content>
-        <Configurator />
+        <Configurator theme={theme} setTheme={setTheme} />
         <StyledIframeResizer
-          src={'http://localhost:8000/iframes/tuiles'}
+          src={`http://localhost:8000/iframes/tuiles?theme=${theme}`}
           allowfullscreen={true}
           webkitallowfullscreen={true}
           mozallowfullscreen={true}
