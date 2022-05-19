@@ -26,6 +26,28 @@ const Wrapper = styled.div`
     width: calc(33.3333% - 0.5rem);
   }
 `
+const ButtonDrag = styled.button`
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  height: 1.125rem;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: grab;
+
+  svg {
+    width: auto;
+    height: 100%;
+    transition: transform 300ms ease-out;
+    transform-origin: center;
+
+    circle {
+      fill: ${(props) => props.theme.colors.main};
+    }
+  }
+`
 const ButtonRemove = styled.button`
   position: absolute;
   top: 0.75rem;
@@ -69,7 +91,7 @@ const ButtonEmoji = styled.button`
   }
 `
 const Title = styled.h4`
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-size: 0.875rem;
   font-weight: normal;
   text-align: center;
@@ -90,8 +112,7 @@ const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;
 `
 const StyledButton = styled(Button)`
-  font-size: 0.75rem;
-  border-width: 0.0675rem;
+  font-size: 0.8125rem;
 `
 
 export default function Tile(props) {
@@ -112,6 +133,18 @@ export default function Tile(props) {
 
   return (
     <Wrapper background={props.background} ref={setNodeRef} style={style}>
+      {!props.reference && (
+        <ButtonDrag {...attributes} {...listeners}>
+          <svg width='12' height='16' viewBox='0 0 12 16' fill='none'>
+            <circle cx='2' cy='2' r='2' />
+            <circle cx='10' cy='2' r='2' />
+            <circle cx='2' cy='8' r='2' />
+            <circle cx='10' cy='8' r='2' />
+            <circle cx='2' cy='14' r='2' />
+            <circle cx='10' cy='14' r='2' />
+          </svg>
+        </ButtonDrag>
+      )}
       <ButtonRemove onClick={() => props.removeEquivalent(props.equivalent.id)}>
         <svg
           x='0px'

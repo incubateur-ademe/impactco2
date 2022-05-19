@@ -25,27 +25,12 @@ const Wrapper = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.colors.mainLight};
   }
-
-  ${(props) => props.theme.mq.small} {
-    flex-direction: row-reverse;
-    width: 100%;
-    height: 4.5rem;
-    padding: 0.75rem 1rem;
-    border: 0.1875rem solid ${(props) => props.theme.colors.main};
-    border-radius: 1.5rem;
-  }
 `
 const Label = styled.span`
   display: block;
   font-size: ${(props) => (props.small ? 0.875 : 1)}rem;
   text-align: center;
   line-height: 1.2;
-
-  ${(props) => props.theme.mq.small} {
-    flex: 1;
-    margin: 0 1rem;
-    text-align: left;
-  }
 `
 const Left = styled.div`
   display: flex;
