@@ -26,9 +26,10 @@ const Text = styled.code`
   position: relative;
   display: block;
   padding: 1rem 1rem 2rem;
+  font-size: 0.875rem;
+  word-break: break-word;
   background-color: ${(props) => props.theme.colors.textLight};
   border-radius: 0.5rem;
-  word-break: break-word;
   animation: ${(props) => (props.copied ? flash : 'none')} 400ms 1;
 `
 const Copy = styled.button`
