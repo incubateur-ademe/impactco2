@@ -12,13 +12,12 @@ const StyledIframeResizer = styled(IframeResizer)`
 `
 export default function Integration() {
   const [theme, setTheme] = useState('default')
-
   return (
     <Section>
       <Section.Content>
         <Configurator theme={theme} setTheme={setTheme} />
         <StyledIframeResizer
-          src={`http://localhost:8000/iframes/tuiles?theme=${theme}`}
+          src={`${window.location.origin}/iframes/tuiles?theme=${theme}`}
           allowfullscreen={true}
           webkitallowfullscreen={true}
           mozallowfullscreen={true}

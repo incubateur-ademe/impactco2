@@ -9,7 +9,8 @@ const flash = (props) => keyframes`
     background-color: ${props.theme.colors.textLight};
   }
 
-  50% {
+  35%,
+  55% {
     background-color: ${props.theme.colors.secondLight};
   }
 `
@@ -28,7 +29,7 @@ const Text = styled.code`
   background-color: ${(props) => props.theme.colors.textLight};
   border-radius: 0.5rem;
   word-break: break-word;
-  animation: ${(props) => (props.copied ? flash : 'none')} 500ms 1;
+  animation: ${(props) => (props.copied ? flash : 'none')} 400ms 1;
 `
 const Copy = styled.button`
   position: absolute;
@@ -41,7 +42,7 @@ const Copy = styled.button`
   background-color: ${(props) => props.theme.colors.textLight};
   border: none;
   cursor: pointer;
-  animation: ${(props) => (props.copied ? flash : 'none')} 500ms 1;
+  animation: ${(props) => (props.copied ? flash : 'none')} 400ms 1;
 `
 export default function Code(props) {
   let location = useLocation()
@@ -49,18 +50,18 @@ export default function Code(props) {
 
   useEffect(() => {
     setScript(
-      `<script id="${props.id || 'datagir'}" src="${
-        window.location.origin
-      }/iframe.js" data-search="${
-        props.typeShare === 'result' ? location.pathname : ''
-      }?theme=${props.theme}"></script>`
+      `<script id="datagir-mon-convertisseur-co2" src="${window.location.origin}/iframe.js" data-search="?theme=${props.theme}"></script>`
     )
   }, [location.pathname, props.id, props.typeShare, props.theme])
 
   const [copied, setCopied] = useState(false)
+
+  const unsetCopied = () => setCopied(false)
   useEffect(() => {
-    setTimeout(() => setCopied(false), 500)
+    setTimeout(unsetCopied, 400)
+    return () => clearTimeout(unsetCopied)
   }, [copied])
+
   return (
     <Wrapper>
       <Label htmlFor='code'>
@@ -72,7 +73,7 @@ export default function Code(props) {
       </Text>
       <Copy
         onClick={() => {
-          if (copy(script)) {
+          if (!copied && copy(script)) {
             setCopied(true)
           }
         }}
