@@ -72,13 +72,4 @@ Button.Wrapper = styled.div`
   > * {
     margin: 0 0.5rem ${(props) => (props.vertical ? '1rem' : '0')};
   }
-
-  ${(props) => props.theme.mq.small} {
-    flex-direction: column;
-    margin: 0;
-
-    > * {
-      margin: 0 0 1rem;
-    }
-  }
 `

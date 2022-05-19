@@ -14,7 +14,7 @@ const Wrapper = styled.footer`
 `
 const StyledMagicLink = styled(MagicLink)`
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0.75rem auto;
   font-size: 0.75rem;
   font-weight: 300;
   text-align: center;

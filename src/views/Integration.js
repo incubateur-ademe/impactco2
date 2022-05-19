@@ -12,7 +12,7 @@ const StyledIframeResizer = styled(IframeResizer)`
 `
 const StyledSectionContent = styled(Section.Content)`
   align-items: flex-start;
-  width: 60rem;
+  width: 75rem;
 `
 export default function Integration() {
   const [theme, setTheme] = useState('default')

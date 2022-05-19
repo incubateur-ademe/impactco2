@@ -65,7 +65,7 @@ export default function Code(props) {
     <Wrapper>
       <Label htmlFor='code'>
         3) Copiez le code ci-dessous où vous souhaitez afficher l'iframe sur
-        votre site web
+        votre site.
       </Label>
       <Text name='code' copied={copied}>
         {script}
