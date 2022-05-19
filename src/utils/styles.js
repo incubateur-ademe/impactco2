@@ -20,7 +20,7 @@ export const themes = {
     },
     mq: {
       small: `@media screen and (max-width: ${44.25}em)`,
-      medium: `@media screen and (max-width: ${75}em)`,
+      medium: `@media screen and (max-width: ${44.25}em)`,
       mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
       mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
       large: `@media screen and (min-width: ${92}em)`,
@@ -45,7 +45,7 @@ export const themes = {
     },
     mq: {
       small: `@media screen and (max-width: ${44.25}em)`,
-      medium: `@media screen and (max-width: ${75}em)`,
+      medium: `@media screen and (max-width: ${44.25}em)`,
       mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
       mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
       large: `@media screen and (min-width: ${92}em)`,

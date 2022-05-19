@@ -9,6 +9,7 @@ import { formatNumber, formatName, formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
+import Button from 'components/base/Button'
 
 const Wrapper = styled.div`
   position: relative;
@@ -16,10 +17,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: calc(33.3333% - 1rem);
-  padding: 1rem 0.25rem;
+  padding: 1.125rem 0.25rem;
   background-color: ${(props) =>
     props.theme.colors[props.background ? 'textLight' : 'second']};
   border-radius: 1rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: calc(33.3333% - 0.5rem);
+  }
 `
 const ButtonRemove = styled.button`
   position: absolute;
@@ -56,6 +61,12 @@ const ButtonEmoji = styled.button`
   background: none;
   border: none;
   cursor: grab;
+  pointer-events: ${(props) => (props.reference ? 'none' : 'inherit')};
+
+  img,
+  span {
+    display: block;
+  }
 `
 const Title = styled.h4`
   margin-bottom: 0.5rem;
@@ -78,6 +89,11 @@ const Name = styled.span`
 const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;
 `
+const StyledButton = styled(Button)`
+  font-size: 0.75rem;
+  border-width: 0.0675rem;
+`
+
 export default function Tile(props) {
   const { categories } = useContext(DataContext)
 
@@ -112,7 +128,7 @@ export default function Tile(props) {
           />
         </svg>
       </ButtonRemove>
-      <ButtonEmoji {...attributes} {...listeners}>
+      <ButtonEmoji {...attributes} {...listeners} reference={props.reference}>
         <Emoji>{props.equivalent.emoji}</Emoji>
       </ButtonEmoji>
       <Title>
@@ -130,17 +146,28 @@ export default function Tile(props) {
           )}
         </Name>
       </Title>
-
-      {!iframe && (
-        <StyledMagicLink
-          to={`/categories/${
-            categories.find(
-              (category) => category.id === props.equivalent.category
-            ).slug
-          }/${props.equivalent.slug}`}
-        >
-          Voir le détail
-        </StyledMagicLink>
+      {props.reference ? (
+        !iframe &&
+        !props.equivalentPage && (
+          <StyledMagicLink
+            to={`/categories/${
+              categories.find(
+                (category) => category.id === props.equivalent.category
+              )?.slug
+            }/${props.equivalent.slug}`}
+          >
+            Voir le détail
+          </StyledMagicLink>
+        )
+      ) : (
+        <Button.Wrapper>
+          <StyledButton
+            onClick={() => props.setCurEquivalent(props.equivalent)}
+            hollow
+          >
+            Comparer
+          </StyledButton>
+        </Button.Wrapper>
       )}
     </Wrapper>
   )

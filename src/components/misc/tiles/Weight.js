@@ -1,39 +1,59 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useDroppable } from '@dnd-kit/core'
 
 import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 0 0.5rem;
+  align-items: center;
+  width: calc(33.3333% - 1rem);
+  padding: 2rem 1.5rem 1.5rem;
+  background-color: ${(props) =>
+    props.theme.colors[props.background ? 'textLight' : 'second']};
   font-size: 2rem;
-  font-weight: bold;
+  border-radius: 1rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: calc(33.3333% - 0.5rem);
+    padding: 2rem 1rem 1.5rem;
+  }
 `
+
 const StyledTextInput = styled(TextInput)`
   position: relative;
-  max-width: 10rem;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.5rem;
+  display: block;
 
   input {
     font-weight: bold;
-    text-align: right;
+    text-align: center;
   }
 `
 const Unit = styled.span`
-  padding: 0.625rem;
+  font-size: 1.5rem;
   line-height: 1.15;
 `
+const Small = styled.span`
+  font-size: 0.625em;
+`
 export default function Weight(props) {
+  const { setNodeRef } = useDroppable({
+    id: 'weight',
+  })
+
   return (
-    <Wrapper>
+    <Wrapper background={props.background} ref={setNodeRef}>
       <StyledTextInput
         type='number'
         value={props.weight}
         onChange={(e) => props.setWeight(e.value)}
       />
       <Unit>
-        kg CO<sub>2</sub>e
+        kg CO<sub>2</sub>
+        <Small>e</Small>
       </Unit>
     </Wrapper>
   )
