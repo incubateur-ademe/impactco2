@@ -6,14 +6,10 @@ import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   height: 1.05rem;
   font-size: 0.75rem;
   font-weight: 300;
-
-  ${(props) => props.theme.mq.small} {
-    display: none;
-  }
 `
 export default function BreadCrumb(props) {
   return (

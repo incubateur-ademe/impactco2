@@ -17,7 +17,7 @@ const Input = styled.input`
   background-color: transparent;
   border: 0.125rem solid
     ${(props) => props.theme.colors[props.error ? 'error' : 'main']};
-  border-radius: 0.5em;
+  border-radius: 0.75rem;
   transition: box-shadow 300ms ease-out;
 
   &:focus {

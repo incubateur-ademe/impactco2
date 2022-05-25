@@ -10,7 +10,7 @@ const StyledSection = styled(Section)`
   background-color: ${(props) => props.theme.colors.main};
 `
 const StyledSectionContent = styled(Section.Content)`
-  max-width: 32rem;
+  max-width: 44rem;
 `
 const Category = styled.div`
   padding: 1rem;

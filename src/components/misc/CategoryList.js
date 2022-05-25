@@ -16,7 +16,6 @@ const Title = styled.h2`
   text-align: center;
 `
 const Equivalents = styled.div`
-  max-width: ${(props) => (props.small ? '32rem' : '100%')};
   margin: 0 auto 1rem;
 `
 const Bottom = styled.div`
@@ -32,7 +31,6 @@ const Disclaimer = styled.p`
 const CheckboxWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  max-width: 32rem;
   margin: 0 auto;
 `
 const StyledCheckbox = styled(Checkbox)`

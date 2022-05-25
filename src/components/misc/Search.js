@@ -8,10 +8,10 @@ const Wrapper = styled.div`
   width: 20rem;
   font-size: 0.875rem;
 `
-export default function Search() {
+export default function Search(props) {
   return (
-    <Wrapper>
-      <SearchBar />
+    <Wrapper className={props.className}>
+      <SearchBar placeholder={props.placeholder} />
     </Wrapper>
   )
 }

@@ -9,15 +9,13 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 12.75rem;
-  margin: 0.75rem;
+  width: calc(33.3333% - 1rem);
   padding: 1rem 0.25rem;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
 
-  ${(props) => props.theme.mq.small} {
-    width: calc(50% - 0.75rem);
-    margin: 0.375rem;
+  ${(props) => props.theme.mq.medium} {
+    width: calc(33.3333% - 0.5rem);
   }
 `
 const StyledEmoji = styled(Emoji)`

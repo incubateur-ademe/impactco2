@@ -31,15 +31,23 @@ const Line = styled.path`
   ${Wrapper}:hover & {
     transform: rotate(-180deg);
     transform-origin: center;
-    transition: transform 300ms 125ms ease-out;
+    transition: transform 300ms 135ms ease-out;
   }
 `
 const Circle = styled.path`
   fill: ${(props) => props.theme.colors.main};
+  transform-origin: center;
   ${Wrapper}:hover & {
     transform: rotate(-180deg);
-    transform-origin: center;
     transition: transform 600ms ease-out;
+  }
+`
+const Circle2 = styled.path`
+  fill: ${(props) => props.theme.colors.main};
+  transform-origin: center;
+  ${Wrapper}:hover & {
+    transform: rotate(-180deg);
+    transition: transform 450ms ease-out 168ms;
   }
 `
 export default function Logo() {
@@ -84,7 +92,7 @@ export default function Logo() {
             d='M8.83201 8.47364C10.8839 6.42172 10.8839 3.09488 8.83201 1.04296C6.78008 -1.00897 3.45325 -1.00897 1.40132 1.04296C-0.650606 3.09488 -0.650606 6.42172 1.40132 8.47364C3.45325 10.5256 6.78008 10.5256 8.83201 8.47364ZM14.1396 13.7813C19.1229 8.79803 19.1229 0.718575 14.1396 -4.26468C9.15639 -9.24793 1.07694 -9.24793 -3.90631 -4.26468C-8.88957 0.718576 -8.88957 8.79803 -3.90631 13.7813C1.07694 18.7645 9.15639 18.7645 14.1396 13.7813Z'
             fill='#26827C'
           />
-          <Circle
+          <Circle2
             fillRule='evenodd'
             clipRule='evenodd'
             d='M41.2844 40.9258C43.3364 38.8739 43.3364 35.547 41.2844 33.4951C39.2325 31.4432 35.9057 31.4432 33.8537 33.4951C31.8018 35.547 31.8018 38.8739 33.8537 40.9258C35.9057 42.9777 39.2325 42.9777 41.2844 40.9258ZM46.5921 46.2334C51.5753 41.2502 51.5753 33.1707 46.5921 28.1875C41.6088 23.2042 33.5294 23.2042 28.5461 28.1875C23.5629 33.1707 23.5629 41.2502 28.5461 46.2334C33.5294 51.2167 41.6088 51.2167 46.5921 46.2334Z'
