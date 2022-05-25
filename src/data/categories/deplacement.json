@@ -11,7 +11,7 @@
     "total": 0.0025,
     "default": true,
     "tile": false,
-    "sources": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro"
   },
   {
     "id": 27976,
@@ -27,7 +27,7 @@
     "total": 0.193,
     "default": true,
     "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture"
   },
   {
     "id": 27978,
@@ -43,7 +43,7 @@
     "total": 0.0198,
     "default": true,
     "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture"
   },
   {
     "id": 27979,
@@ -57,7 +57,7 @@
     "total": 0.103,
     "default": true,
     "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Voiture moyenne - Mixte - 2018\"<br/>Périmètre : émissions directes, production et distribution de carburant.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus"
   },
   {
     "id": 206589,
@@ -71,7 +71,7 @@
     "total": 0.00173,
     "default": true,
     "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"TGV - 2019\"<br/>Périmètre : émissions liées à la production et la distribution d'électricité.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv"
   },
   {
     "id": 28081,
@@ -85,6 +85,6 @@
     "total": 0.126,
     "default": true,
     "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Avion passagers - 1 000 à 2 000 km, 101 à 220 sièges, avec trainées\"<br/>Périmètre : émissions directes, production, distribution de carburant et impact des trainées.<br/><br/>Pour aller plus loin, <a href='https://monimpacttransport.fr/' target='_blank'>Mon Impact Transport</a> vous aide à comparer plus finement les modes de transport entre eux et à calculer l'impact de vos déplacements."
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion"
   }
 ]
