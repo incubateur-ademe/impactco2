@@ -17,13 +17,13 @@ const Title = styled.h1`
 `
 const Text = styled.p`
   width: 42rem;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2rem;
   text-align: center;
 `
 const StyledSearch = styled(Search)`
   width: 42rem;
   height: 3.0625rem;
-  margin: 0 auto 3rem;
+  margin: 0 auto 4rem;
   font-size: 1.375rem;
 `
 export default function Heading() {
