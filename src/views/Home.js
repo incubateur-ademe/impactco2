@@ -1,14 +1,15 @@
 import React from 'react'
 
-import Heading from './home/Heading.js'
 import Tiles from 'components/misc/Tiles'
-import Categories from 'components/misc/Categories'
+import Heading from './home/Heading.js'
+import About from './home/About.js'
 
 export default function Home() {
   return (
     <>
       <Heading />
       <Tiles background />
+      <About />
     </>
   )
 }

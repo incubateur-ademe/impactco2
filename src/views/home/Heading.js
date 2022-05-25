@@ -16,8 +16,8 @@ const Title = styled.h1`
   text-align: center;
 `
 const Text = styled.p`
-  width: 42rem;
   margin: 0 auto 2rem;
+  font-size: 1.125rem;
   text-align: center;
 `
 const StyledSearch = styled(Search)`
