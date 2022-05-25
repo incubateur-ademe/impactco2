@@ -8,8 +8,7 @@ export default function Home() {
   return (
     <>
       <Heading />
-      <Tiles weight background />
-      <Categories />
+      <Tiles background />
     </>
   )
 }

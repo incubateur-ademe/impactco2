@@ -12,36 +12,23 @@ const Wrapper = styled(MagicLink)`
   text-align: center;
   line-height: 1.2;
   text-decoration: none;
-  color: ${(props) =>
-    props.hollow
-      ? props.theme.colors.main
-      : props.theme.colors[
-          props.theme.name === 'Défaut' ? 'background' : 'background'
-        ]};
+  color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'background']};
   background-color: ${(props) =>
     props.hollow ? 'transparent' : props.theme.colors.main};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
-  border-radius: 1.5em;
+  border-radius: 1.5rem;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};
   cursor: pointer;
   transition: all 300ms ease-out;
 
-  &:hover {
-    background-color: ${(props) =>
-      props.hollow ? props.theme.colors.main : props.theme.colors.main};
-    color: ${(props) =>
-      props.theme.colors[
-        props.theme.name === 'Défaut' ? 'background' : 'background'
-      ]};
-  }
-
+  &:hover,
   &:focus {
     outline: none;
-  }
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1em;
+    background-color: ${(props) =>
+      props.theme.colors[props.hollow ? 'main' : 'background']};
+    color: ${(props) =>
+      props.theme.colors[props.hollow ? 'background' : 'main']};
   }
 `
 export default function Button(props) {

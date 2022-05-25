@@ -7,6 +7,7 @@ import Emoji from 'components/base/Emoji'
 const Wrapper = styled.div`
   max-height: 60vh;
   overflow: hidden;
+  font-size: clamp(0.75rem, 1em, 1.125rem);
 `
 const Suggestion = styled.div`
   padding: 0.75em 0.75em 0.75em 2em;
@@ -19,7 +20,7 @@ const Suggestion = styled.div`
     background-color: ${(props) => props.theme.colors.mainLight};
   }
   &:last-child {
-    padding-bottom: 1.5em;
+    padding-bottom: 1em;
   }
 `
 const Name = styled.span`

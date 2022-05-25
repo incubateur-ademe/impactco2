@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 import Section from 'components/base/Section'
 import Search from 'components/misc/Search'
-import Categories from 'components/misc/Categories'
-import Suggestions from './heading/Suggestions'
+import Categories from './heading/Categories'
 
 const StyledSectionContent = styled(Section.Content)`
   margin-bottom: 6rem;
@@ -42,7 +41,6 @@ export default function Heading() {
           entourent ?
         </Text>
         <StyledSearch placeholder={'Entrez un objet, un geste...'} />
-        <Suggestions />
         <Categories />
       </StyledSectionContent>
     </Section>
