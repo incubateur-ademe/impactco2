@@ -27,6 +27,9 @@ const Name = styled.span`
   align-items: center;
   gap: 0.5rem;
 `
+const Subtitle = styled.span`
+  font-weight: 300;
+`
 export default function Suggestions(props) {
   const onKeyDown = useCallback(
     (e) => {
@@ -65,7 +68,15 @@ export default function Suggestions(props) {
             >
               <Name>
                 <Emoji>{product.item.emoji}</Emoji>
-                {formatName(product.item.name.fr, 1)}
+                <span>
+                  {formatName(product.item.name.fr, 1)}{' '}
+                  {product.item.subtitle && (
+                    <Subtitle>
+                      {' '}
+                      ({formatName(product.item.subtitle.fr, 1)})
+                    </Subtitle>
+                  )}
+                </span>
               </Name>
             </Suggestion>
           )

@@ -32,7 +32,7 @@ export default function SearchBar(props) {
     if (equivalents) {
       setFuse(
         new Fuse(equivalents, {
-          keys: ['name.fr'],
+          keys: ['name.fr', 'subtitle.fr'],
           threshold: 0.3,
           ignoreLocation: true,
         })
@@ -55,11 +55,11 @@ export default function SearchBar(props) {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
+    setCurrent(0)
     if (!focus) {
-      setCurrent(0)
       input.current && input.current.blur()
     }
-  }, [focus])
+  }, [focus, results])
 
   const navigateToEquivalent = ({ item }) => {
     navigate(

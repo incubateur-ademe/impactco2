@@ -61,6 +61,9 @@ const Visible = styled.div`
   }
 `
 const Name = styled.span``
+const Subtitle = styled.span`
+  font-weight: 300;
+`
 
 export default React.forwardRef(function TextInput(props, ref) {
   return (
@@ -82,6 +85,12 @@ export default React.forwardRef(function TextInput(props, ref) {
         {props.suggestion && (
           <Visible>
             <Name>{formatName(props.suggestion.item.name.fr, 1)}</Name>
+            {props.suggestion.item.subtitle && (
+              <Subtitle>
+                {' '}
+                ({formatName(props.suggestion.item.subtitle.fr, 1)})
+              </Subtitle>
+            )}
           </Visible>
         )}
       </Suggestion>
