@@ -31,7 +31,7 @@ const Line = styled.path`
   ${Wrapper}:hover & {
     transform: rotate(-180deg);
     transform-origin: center;
-    transition: transform 300ms 135ms ease-out;
+    transition: transform 300ms 140ms ease-out;
   }
 `
 const Circle = styled.path`
@@ -47,7 +47,7 @@ const Circle2 = styled.path`
   transform-origin: center;
   ${Wrapper}:hover & {
     transform: rotate(-180deg);
-    transition: transform 450ms ease-out 168ms;
+    transition: transform 400ms ease-out 168ms;
   }
 `
 export default function Logo() {
