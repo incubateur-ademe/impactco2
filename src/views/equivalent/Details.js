@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
 import Section from 'components/base/Section'
+import MagicLink from 'components/base/MagicLink'
 import ShareButton from 'components/misc/ShareButton'
 import Value from './details/Value'
 import Visualization from './details/Visualization'
@@ -16,6 +17,9 @@ const Subtitle = styled.span`
 const Disclaimer = styled.p`
   max-width: 27.25rem;
   margin-bottom: 3.5rem;
+  font-size: 0.875rem;
+`
+const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;
 `
 export default function Details(props) {
@@ -41,10 +45,11 @@ export default function Details(props) {
       </Section>
       <Value equivalent={props.equivalent} />
       <Section>
-        <Section.Content>
+        <Section.Content flex>
           <Disclaimer>
             Valeurs exprimées en kg CO2e émis {props.category?.unit}.
           </Disclaimer>
+          <StyledMagicLink to={props.equivalent.source}>Source</StyledMagicLink>
         </Section.Content>
       </Section>
       <Visualization equivalent={props.equivalent} />
