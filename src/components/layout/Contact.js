@@ -9,7 +9,6 @@ import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
 import TextArea from 'components/base/TextArea'
 import Select from 'components/base/Select'
-import ContactPrompt from 'components/base/ContactPrompt'
 
 const Form = styled.form`
   width: 100%;
@@ -167,7 +166,6 @@ export default function Contact(props) {
           </Alert>
         )}
       </Form>
-      <ContactPrompt contact />
     </Panel>
   )
 }

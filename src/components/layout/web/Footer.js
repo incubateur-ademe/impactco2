@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import MagicLink from 'components/base/MagicLink'
-import ContactPrompt from 'components/base/ContactPrompt'
 import Section from 'components/base/Section'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
@@ -40,9 +39,7 @@ export default function Footer(props) {
   return (
     <>
       <Section background as='footer'>
-        <StyledSectionContent>
-          <ContactPrompt />
-        </StyledSectionContent>
+        <StyledSectionContent></StyledSectionContent>
       </Section>
       <LogosWrapper>
         <Logos

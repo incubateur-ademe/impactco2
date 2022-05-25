@@ -9,13 +9,15 @@ import monimpacttransport from './about/mon-impact-transport.png'
 import mesfruitsetlegumesdesaison from './about/mes-fruits-et-legumes-de-saison.jpg'
 import quefairedemesdechets from './about/que-faire-de-mes-dechets.png'
 
+const StyledSection = styled(Section)`
+  margin-bottom: 4rem;
+`
 const Title = styled.h2``
 const Text = styled.p`
   font-size: 1.125rem;
 `
 const SimulateursTitle = styled.h3`
   padding-top: 0.25rem;
-  font-size: 1.5rem;
   text-align: center;
 `
 const Simulateurs = styled.div`
@@ -52,7 +54,7 @@ export default function About(props) {
     },
   ]
   return (
-    <Section>
+    <StyledSection>
       <Section.Content>
         <Title as={props.main ? 'h1' : 'h2'}>Qui sommes nous ?</Title>
         <Text>
@@ -85,6 +87,6 @@ export default function About(props) {
           ))}
         </Simulateurs>
       </Section.Content>
-    </Section>
+    </StyledSection>
   )
 }

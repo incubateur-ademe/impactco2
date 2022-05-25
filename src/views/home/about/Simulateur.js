@@ -20,15 +20,16 @@ const Wrapper = styled.div`
   }
 `
 const Image = styled.img`
+  display: block;
   width: 100%;
   height: auto;
+  margin-bottom: 0.875rem;
 `
 const Title = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 3rem;
-  margin: 0.25rem;
+  margin-bottom: 0.625rem;
   font-size: 1.125rem;
   font-weight: bold;
   text-align: center;

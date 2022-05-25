@@ -119,10 +119,11 @@ export const GlobalStyle = createGlobalStyle`
   
   h2 {
     font-size: 2rem;
+  }
 
-    ${(props) => props.theme.mq.small} {
-      font-size: 1.5rem;
-    }
+  h3 {
+    margin-bottom: 0.625rem;
+    font-size: 1.375rem;
   }
 
   a {
@@ -130,7 +131,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   option {
-    color: #010101;
+    color: #383838;
   }
 
   input::-webkit-outer-spin-button,
