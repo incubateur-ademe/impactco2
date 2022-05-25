@@ -2,7 +2,10 @@
   {
     "id": 26966,
     "name": {
-      "fr": "Canapé[s] convertible[s]"
+      "fr": "Canapé[s]"
+    },
+    "subtitle": {
+      "fr": "Convertible[s]"
     },
     "slug": "canapeconvertible",
     "emoji": "🛋",
@@ -10,13 +13,15 @@
     "total": 197,
     "default": true,
     "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Canapé - convertible\"<br/>Périmètre : Energie (Assemblage et Mise en forme), Matières premières, Transport (Approvisionnement et Distribution)."
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
-
   {
     "id": 300000,
     "name": {
-      "fr": "Chaise[s] (en bois)"
+      "fr": "Chaise[s]"
+    },
+    "subtitle": {
+      "fr": "En bois"
     },
     "slug": "chaiseenbois",
     "emoji": "🪑",
@@ -24,12 +29,15 @@
     "total": 18.6,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 300001,
     "name": {
-      "fr": "Table[s] (en bois)"
+      "fr": "Table[s]"
+    },
+    "subtitle": {
+      "fr": "En bois"
     },
     "slug": "tableenbois",
     "emoji": "📦",
@@ -37,12 +45,15 @@
     "total": 80.2,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 300002,
     "name": {
-      "fr": "Canapé[s] (textile)"
+      "fr": "Canapé[s]"
+    },
+    "subtitle": {
+      "fr": "Textile"
     },
     "slug": "canapetextile",
     "emoji": "🛋",
@@ -50,7 +61,7 @@
     "total": 179,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 300003,
@@ -63,12 +74,15 @@
     "total": 907,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 300004,
     "name": {
-      "fr": "Lit (cadre + sommier + matelas)"
+      "fr": "Lit"
+    },
+    "subtitle": {
+      "fr": "Cadre + sommier + matelas"
     },
     "slug": "lit",
     "emoji": "🛏",
@@ -76,6 +90,6 @@
     "total": 444.3,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }
 ]

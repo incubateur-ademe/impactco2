@@ -22,7 +22,6 @@ export function formatName(name, value, capital) {
 
 export function formatPercent(value, total, noformat) {
   let tempPercent = (value / total) * 100
-  console.log(noformat)
   return noformat
     ? tempPercent
     : tempPercent.toLocaleString('fr-fr', { maximumFractionDigits: 1 })

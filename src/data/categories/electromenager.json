@@ -3,6 +3,7 @@
     "name": {
       "fr": "Bouilloire[s]"
     },
+
     "slug": "bouilloire",
     "emoji": "🎵",
     "category": 6,
@@ -31,11 +32,14 @@
     "end": -0.659363081745786,
     "default": false,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "name": {
-      "fr": "Cafetière[s] à dosettes"
+      "fr": "Cafetière[s]"
+    },
+    "subtitle": {
+      "fr": "À dosettes"
     },
     "slug": "cafetieredosette",
     "emoji": "🎵",
@@ -65,12 +69,15 @@
     "end": 52.7491626905852,
     "default": false,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 400000,
     "name": {
-      "fr": "Four (électrique encastrable)"
+      "fr": "Four"
+    },
+    "subtitle": {
+      "fr": "Électrique encastrable"
     },
     "slug": "four",
     "emoji": "🎛",
@@ -78,25 +85,29 @@
     "total": 217,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 400001,
     "name": {
       "fr": "Lave-vaisselle"
     },
+
     "slug": "lavevaisselle",
     "emoji": "🍽",
     "category": 6,
     "total": 271,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 400002,
     "name": {
-      "fr": "Lave-linge (7kg)"
+      "fr": "Lave-linge"
+    },
+    "subtitle": {
+      "fr": "7kg"
     },
     "slug": "lavelinge",
     "emoji": "🧦",
@@ -104,32 +115,34 @@
     "total": 342,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 400003,
     "name": {
       "fr": "Réfrigérateur"
     },
+
     "slug": "refrigirateur",
     "emoji": "❄️",
     "category": 6,
     "total": 257,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "id": 400005,
     "name": {
       "fr": "Aspirateur"
     },
+
     "slug": "aspirateur",
     "emoji": "🧹",
     "category": 6,
     "total": 47.3,
     "default": true,
     "tile": false,
-    "sources": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }
 ]

@@ -10,7 +10,7 @@
     "total": 7.26,
     "default": true,
     "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
+    "source": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec boeuf)\""
   },
   {
     "id": 20683,
@@ -23,7 +23,7 @@
     "total": 0.51,
     "default": true,
     "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
+    "source": "Base Carbone, facteur d'émissions :<br/>\"Repas - végétarien\""
   },
   {
     "id": 20684,
@@ -36,7 +36,7 @@
     "total": 0.39,
     "default": true,
     "tile": false,
-    "sources": "NGC"
+    "source": "NGC"
   },
   {
     "id": 20685,
@@ -49,7 +49,7 @@
     "total": 1.11,
     "default": true,
     "tile": false,
-    "sources": "NGC"
+    "source": "NGC"
   },
   {
     "id": 20686,
@@ -62,7 +62,7 @@
     "total": 1.98,
     "default": true,
     "tile": false,
-    "sources": "NGC"
+    "source": "NGC"
   },
   {
     "id": 20688,
@@ -75,6 +75,6 @@
     "total": 1.58,
     "default": true,
     "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
+    "source": "Base Carbone, facteur d'émissions :<br/>\"Repas - à dominante animale (avec poulet)\""
   }
 ]

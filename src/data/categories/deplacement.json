@@ -4,6 +4,7 @@
     "name": {
       "fr": "km en métro"
     },
+
     "slug": "metro",
     "emoji": "🚇",
     "category": 4,
@@ -15,7 +16,10 @@
   {
     "id": 27976,
     "name": {
-      "fr": "km en voiture (thermique)"
+      "fr": "km en voiture"
+    },
+    "subtitle": {
+      "fr": "Moteur thermique"
     },
     "slug": "voiturethermique",
     "emoji": "🚗",
@@ -28,7 +32,10 @@
   {
     "id": 27978,
     "name": {
-      "fr": "km en voiture (électrique)"
+      "fr": "km en voiture"
+    },
+    "subtitle": {
+      "fr": "Moteur électrique"
     },
     "slug": "voitureelectrique",
     "emoji": "🚗",
@@ -43,6 +50,7 @@
     "name": {
       "fr": "km en bus"
     },
+
     "slug": "bus",
     "emoji": "🚌",
     "category": 4,
@@ -56,6 +64,7 @@
     "name": {
       "fr": "km en TGV"
     },
+
     "slug": "tgv",
     "emoji": "🚅",
     "category": 4,
@@ -69,6 +78,7 @@
     "name": {
       "fr": "km en avion"
     },
+
     "slug": "avion",
     "emoji": "✈️",
     "category": 4,

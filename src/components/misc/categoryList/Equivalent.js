@@ -37,6 +37,10 @@ const Title = styled.div`
     font-size: 0.75rem;
   }
 `
+const Subtitle = styled.span`
+  font-weight: 300;
+  line-height: 0;
+`
 const ChartWrapper = styled.div`
   flex: 1;
 `
@@ -116,6 +120,17 @@ export default function Equivalent(props) {
             <span>
               {formatName(props.equivalent.name.fr, props.category.multiplier)}
             </span>
+            {props.displayAll && props.equivalent.subtitle && (
+              <Subtitle>
+                {' '}
+                (
+                {formatName(
+                  props.equivalent.subtitle.fr,
+                  props.category.multiplier
+                )}
+                )
+              </Subtitle>
+            )}
           </Title>
         </TitleWrapper>
         <Chart>

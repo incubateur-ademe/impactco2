@@ -91,6 +91,7 @@ export default function Category(props) {
               }
               current={props.equivalent?.id === equivalent.slug}
               key={equivalent.slug}
+              displayAll={displayAll}
             />
           ))}
         </Equivalents>

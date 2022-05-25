@@ -10,7 +10,7 @@
     "total": 0.000132,
     "default": true,
     "tile": false,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
+    "source": "Base Carbone, facteur d'émissions :<br/>\"Eau de reseau - Hors infrastructure\"<br/>Périmètre : Energie (électricité : réseaux, usines (eau potable et eau usée) et bâtiments tertiaires, postes fixes de combustion), Intrants (réparations de fuites sur canalisation eau potable et Branchements eau potable), Intrants (réactifs), Transport (véhicules particuliers, utilitaires, engins)."
   },
   {
     "id": 31000,
@@ -23,7 +23,7 @@
     "total": 0.453,
     "default": true,
     "tile": true,
-    "sources": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
+    "source": "Base Carbone, facteur d'émissions :<br/>\"Eau de source - embouteillée\"<br/>Périmètre : Extraction, Emballage, Transport, Supermarché et distribution."
   },
   {
     "id": 31001,
@@ -36,7 +36,7 @@
     "total": 0.57,
     "default": true,
     "tile": false,
-    "sources": "Agribalyse"
+    "source": "Agribalyse"
   },
   {
     "id": 31002,
@@ -49,7 +49,7 @@
     "total": 1.09,
     "default": true,
     "tile": false,
-    "sources": "Agribalyse"
+    "source": "Agribalyse"
   },
   {
     "id": 31003,
@@ -62,7 +62,7 @@
     "total": 1.13,
     "default": true,
     "tile": false,
-    "sources": "Agribalyse"
+    "source": "Agribalyse"
   },
   {
     "id": 31004,
@@ -75,6 +75,6 @@
     "total": 1.53,
     "default": true,
     "tile": false,
-    "sources": "Agribalyse"
+    "source": "Agribalyse"
   }
 ]
