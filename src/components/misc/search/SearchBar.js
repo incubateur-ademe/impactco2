@@ -13,13 +13,14 @@ const Wrapper = styled.form`
   top: 0;
   left: 0;
   right: 0;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) =>
+    props.focus ? props.theme.colors.background : 'transparent'};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.625em;
   box-shadow: ${(props) =>
     props.focus ? '-0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05)' : 'none'};
   overflow: hidden;
-  transition: box-shadow 300ms ease-out;
+  transition: box-shadow 300ms ease-out, background-color 300ms ease-out;
 `
 
 export default function SearchBar(props) {
