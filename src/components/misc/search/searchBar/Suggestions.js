@@ -23,6 +23,11 @@ const Suggestion = styled.div`
     padding-bottom: 1em;
   }
 `
+const NotFound = styled.div`
+  padding: 0.75em 0.75em 0.75em 2em;
+  font-weight: 300;
+  background-color: ${(props) => props.theme.colors.background};
+`
 const Name = styled.span`
   display: flex;
   align-items: center;
@@ -50,38 +55,61 @@ export default function Suggestions(props) {
 
   useEffect(() => {
     window.addEventListener('keydown', onKeyDown)
-
     return () => {
       window.removeEventListener('keydown', onKeyDown)
     }
   }, [onKeyDown])
-  console.log(props.results)
+
   return (
     <Wrapper>
-      {props.results.map(
-        (product, index) =>
-          index < 10 && (
-            <Suggestion
-              current={index === props.current}
-              key={product.item.id}
-              onClick={() => props.handleSuggestionClick(product)}
-              onMouseDown={(e) => e.preventDefault()}
-            >
-              <Name>
-                <Emoji>{product.item.emoji}</Emoji>
-                <span>
-                  {formatName(product.item.name.fr, 1)}{' '}
-                  {product.item.subtitle && (
-                    <Subtitle>
-                      {' '}
-                      ({formatName(product.item.subtitle.fr, 1)})
-                    </Subtitle>
-                  )}
-                </span>
-              </Name>
-            </Suggestion>
+      {props.enabled &&
+        (props.results.length ? (
+          props.results.map(
+            (product, index) =>
+              index < 10 && (
+                <Suggestion
+                  current={index === props.current}
+                  key={product.item.id}
+                  onClick={() => props.handleSuggestionClick(product)}
+                  onMouseDown={(e) => e.preventDefault()}
+                >
+                  <Name>
+                    <Emoji>{product.item.emoji}</Emoji>
+                    <span>
+                      {formatName(product.item.name.fr, 1)}{' '}
+                      {product.item.subtitle && (
+                        <Subtitle>
+                          {' '}
+                          ({formatName(product.item.subtitle.fr, 1)})
+                        </Subtitle>
+                      )}
+                    </span>
+                  </Name>
+                </Suggestion>
+              )
           )
-      )}
+        ) : (
+          <>
+            <NotFound onMouseDown={(e) => e.preventDefault()} small>
+              Nous n'avons rien trouvé :(
+              <br />
+              Essayez de naviguer par catégorie
+            </NotFound>
+            {props.categories.map((category, index) => (
+              <Suggestion
+                current={index === props.current}
+                key={category.slug}
+                onClick={() => props.handleSuggestionClick({ item: category })}
+                onMouseDown={(e) => e.preventDefault()}
+              >
+                <Name>
+                  <Emoji>{category.emoji}</Emoji>
+                  <span>{category.name.fr}</span>
+                </Name>
+              </Suggestion>
+            ))}
+          </>
+        ))}
     </Wrapper>
   )
 }

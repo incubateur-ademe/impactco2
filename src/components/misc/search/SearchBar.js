@@ -33,7 +33,24 @@ export default function SearchBar(props) {
     if (equivalents) {
       setFuse(
         new Fuse(equivalents, {
-          keys: ['name.fr', 'subtitle.fr', 'synonyms'],
+          keys: [
+            {
+              name: 'name.fr',
+              weight: 1,
+            },
+            {
+              name: 'slug',
+              weight: 0.7,
+            },
+            {
+              name: 'subtitle.fr',
+              weight: 0.4,
+            },
+            {
+              name: 'synonyms',
+              weight: 0.2,
+            },
+          ],
           threshold: 0.3,
           ignoreLocation: true,
         })
@@ -62,11 +79,13 @@ export default function SearchBar(props) {
     }
   }, [focus, results])
 
-  const navigateToEquivalent = ({ item }) => {
+  const navigateToItem = ({ item }) => {
     navigate(
-      `/categories/${
-        categories.find((category) => category.id === item.category).slug
-      }/${item.slug}`
+      item.category
+        ? `/categories/${
+            categories.find((category) => category.id === item.category).slug
+          }/${item.slug}`
+        : `/categories/${item.slug}`
     )
   }
 
@@ -75,8 +94,12 @@ export default function SearchBar(props) {
       focus={focus}
       onSubmit={(e) => {
         e.preventDefault()
-        if (results[current]) {
-          navigateToEquivalent(results[current])
+        if (search.length > 1) {
+          if (results[current]) {
+            navigateToItem(results[current])
+          } else {
+            navigateToItem({ item: categories[current] })
+          }
         }
       }}
       className={props.className}
@@ -93,12 +116,13 @@ export default function SearchBar(props) {
       />
       {focus && (
         <Suggestions
-          search={search}
+          enabled={search.length > 1}
           results={results}
+          categories={categories}
           focus={focus}
           current={current}
           setCurrent={setCurrent}
-          handleSuggestionClick={navigateToEquivalent}
+          handleSuggestionClick={navigateToItem}
         />
       )}
     </Wrapper>
