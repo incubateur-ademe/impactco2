@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { formatNumber, formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
-import ModalContext from 'utils/ModalContext'
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
 
@@ -100,8 +99,6 @@ const Unit = styled.span`
 export default function Equivalent(props) {
   const { categories } = useContext(DataContext)
 
-  const { setCO2E } = useContext(ModalContext)
-
   return (
     <Wrapper
       to={`/categories/${
@@ -146,7 +143,7 @@ export default function Equivalent(props) {
                   )
                 )}
               </Number>
-              <Unit onClick={() => setCO2E(true)}>
+              <Unit>
                 {' '}
                 kg CO
                 <sub>2</sub>e

@@ -14,7 +14,6 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-size: 2rem;
 `
-const Options = styled.div``
 export default function Configurator(props) {
   return (
     <Wrapper>

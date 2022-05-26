@@ -1,17 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import Section from 'components/base/Section'
-import MagicLink from 'components/base/MagicLink'
 import SimpleTile from 'components/base/SimpleTile'
-import nosgestesclimat from './about/nos-gestes-climat.jpg'
-import monimpacttransport from './about/mon-impact-transport.png'
-import mesfruitsetlegumesdesaison from './about/mes-fruits-et-legumes-de-saison.jpg'
 
 const Title = styled.h2``
-const Text = styled.p`
-  font-size: 1.125rem;
-`
 export default function Contact(props) {
   return (
     <Section>
@@ -43,7 +36,7 @@ export default function Contact(props) {
           />
           <SimpleTile
             item={{
-              title: 'Reprennez le code de nos simulateurs',
+              title: 'Reprenez le code de nos simulateurs',
               text: `Nos simulateurs sont développés de manière ouverte (open source). L’ensemble du code est disponible librement`,
               emoji: '⚙️',
               url: 'https://github.com/datagir/',

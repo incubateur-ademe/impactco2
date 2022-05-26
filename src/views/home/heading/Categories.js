@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import { formatName } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Button from 'components/base/Button'
 import Emoji from 'components/base/Emoji'

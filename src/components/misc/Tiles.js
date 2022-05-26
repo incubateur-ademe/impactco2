@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
-import {
-  DndContext,
-  useDroppable,
-  closestCenter,
-  MeasuringStrategy,
-} from '@dnd-kit/core'
+import { DndContext, closestCenter, MeasuringStrategy } from '@dnd-kit/core'
 import {
   arrayMove,
   SortableContext,
