@@ -1,13 +1,13 @@
 import React from 'react'
 
-import CO2EModal from 'components/modals/CO2EModal'
+import Co2eModal from 'components/modals/Co2eModal'
 import TilesModal from 'components/modals/TilesModal'
 import ShareModal from 'components/modals/ShareModal'
 
 export default function ModalWrapper() {
   return (
     <>
-      <CO2EModal />
+      <Co2eModal />
       <TilesModal />
       <ShareModal />
     </>

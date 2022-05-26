@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import ModalContext from 'utils/ModalContext'
 import Section from 'components/base/Section'
+import ButtonLink from 'components/base/ButtonLink'
 import Search from 'components/misc/Search'
 import Categories from './heading/Categories'
 
@@ -27,6 +29,7 @@ const StyledSearch = styled(Search)`
   font-size: 1.375rem;
 `
 export default function Heading() {
+  const { setCo2e } = useContext(ModalContext)
   return (
     <Section>
       <StyledSectionContent>
@@ -36,9 +39,10 @@ export default function Heading() {
           des objets et gestes de votre quotidien
         </Title>
         <Text>
-          On parle de plus en plus de CO2e, mais concrètement quelles sont les
-          émissions nécessaires pour fabriquer et consommer les objets qui nous
-          entourent ?
+          On parle de plus en plus de{' '}
+          <ButtonLink onClick={() => setCo2e(true)}>CO2e</ButtonLink>, mais
+          concrètement quelles sont les émissions nécessaires pour fabriquer et
+          consommer les objets qui nous entourent ?
         </Text>
         <StyledSearch placeholder={'Entrez un objet, un geste...'} />
         <Categories />
