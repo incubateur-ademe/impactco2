@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
-import Simulateur from './about/Simulateur'
+import SimpleTile from 'components/base/SimpleTile'
 import nosgestesclimat from './about/nos-gestes-climat.jpg'
 import monimpacttransport from './about/mon-impact-transport.png'
 import mesfruitsetlegumesdesaison from './about/mes-fruits-et-legumes-de-saison.jpg'
@@ -20,35 +20,26 @@ const SimulateursTitle = styled.h3`
   padding-top: 0.25rem;
   text-align: center;
 `
-const Simulateurs = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
 
-  ${(props) => props.theme.mq.medium} {
-    gap: 0.75rem;
-  }
-`
 export default function About(props) {
   const simulateurs = [
     {
-      name: 'Nos Gestes Climat',
+      title: 'Nos Gestes Climat',
       img: nosgestesclimat,
       url: 'https://nosgestesclimat.fr',
     },
     {
-      name: 'Mon Impact Transport',
+      title: 'Mon Impact Transport',
       img: monimpacttransport,
       url: 'https://monimpacttransport.fr',
     },
     {
-      name: 'Mes Fruits et Légumes de Saison',
+      title: 'Mes Fruits et Légumes de Saison',
       img: mesfruitsetlegumesdesaison,
       url: 'https://mesfruitsetlegumesdesaison.fr',
     },
     {
-      name: 'Que Faire de mes Déchets',
+      title: 'Que Faire de mes Déchets',
       img: quefairedemesdechets,
       url: 'https://quefairedemesdechets.fr',
     },
@@ -81,11 +72,11 @@ export default function About(props) {
           l’information au plus près des citoyens.
         </Text>
         <SimulateursTitle>Découvrez nos autres simulateurs</SimulateursTitle>
-        <Simulateurs>
+        <SimpleTile.Wrapper>
           {simulateurs.map((simulateur) => (
-            <Simulateur simulateur={simulateur} />
+            <SimpleTile item={simulateur} column={2} />
           ))}
-        </Simulateurs>
+        </SimpleTile.Wrapper>
       </Section.Content>
     </StyledSection>
   )
