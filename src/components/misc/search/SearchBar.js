@@ -33,7 +33,7 @@ export default function SearchBar(props) {
     if (equivalents) {
       setFuse(
         new Fuse(equivalents, {
-          keys: ['name.fr', 'subtitle.fr'],
+          keys: ['name.fr', 'subtitle.fr', 'synonyms'],
           threshold: 0.3,
           ignoreLocation: true,
         })

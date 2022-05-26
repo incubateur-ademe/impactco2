@@ -122,7 +122,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
-    margin-bottom: 0.625rem;
     font-size: 1.375rem;
   }
 
