@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mon Convertisseur CO2`,
     author: `Datagir`,
-    description: `Découvrez l'impact sur le climat de votre quotidien. Comparez des objets et gestes entre eux et visualisez facilement leurs émissions en CO2e`,
+    description: `Découvrez l'impact sur le climat de votre quotidien. Comparez des objets et gestes entre-eux et visualisez facilement leurs émissions de CO2e.`,
     siteUrl: `https://mcc-v2.netlify.app`,
     image: 'metaimage.png',
     twitterUsername: '_datagir',
