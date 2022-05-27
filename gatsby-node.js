@@ -92,6 +92,7 @@ exports.onPostBuild = async () => {
   </head>
   <style>
     body {
+      font-family: "Ubuntu", Arial, sans-serif
       margin: 0;
     }
     .top {
@@ -105,7 +106,6 @@ exports.onPostBuild = async () => {
       margin: 0;
       font-size: 90px;
       line-height: 108px;
-      font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     }
     .bottom {
       display: flex;
@@ -121,11 +121,9 @@ exports.onPostBuild = async () => {
       font-size: 120px;
       line-height: 108px;
       text-align: right;
-      font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     }
     span {
       font-size: 60px;
-      font-family: Arial, sans-serif;
     }
   </style>
   <body>
