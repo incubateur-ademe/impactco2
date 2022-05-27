@@ -20,16 +20,9 @@ const StyledButtonWrapper = styled(Button.Wrapper)`
   margin-top: ${(props) => (props.title ? '0.25rem' : 0)};
 `
 const StyledButton = styled(Button)`
-  gap: 0.5rem;
   padding: 0.375rem 1rem;
-  font-size: 0.875rem;
 
   &:hover {
-    svg {
-      path {
-        fill: ${(props) => props.theme.colors.background};
-      }
-    }
     .outline {
       animation-name: ${hover};
       animation-duration: 400ms;
@@ -40,11 +33,8 @@ const Svg = styled.svg`
   display: block;
   width: 1.125rem;
   height: auto;
-  transition: all 300ms ease-out;
 
   path {
-    fill: ${(props) => props.theme.colors.main};
-
     &.outline1 {
       animation-delay: 200ms;
     }
@@ -57,7 +47,7 @@ export default function ShareButton(props) {
   const { setShare } = useContext(ModalContext)
   return (
     <StyledButtonWrapper title={props.title}>
-      <StyledButton hollow onClick={() => setShare(true)}>
+      <StyledButton hollow small onClick={() => setShare(true)}>
         <Svg height='512pt' viewBox='-21 0 512 512' width='512pt'>
           <path d='m453.332031 85.332031c0 38.292969-31.039062 69.335938-69.332031 69.335938s-69.332031-31.042969-69.332031-69.335938c0-38.289062 31.039062-69.332031 69.332031-69.332031s69.332031 31.042969 69.332031 69.332031zm0 0' />
           <path

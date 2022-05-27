@@ -7,6 +7,7 @@ const Wrapper = styled(MagicLink)`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: ${(props) => (props.small ? '0.375em' : '0.5em')};
   padding: 0.5em 1.5em;
   font-size: ${(props) => (props.small ? '0.875em' : '1em')};
   text-align: center;
@@ -22,6 +23,12 @@ const Wrapper = styled(MagicLink)`
   cursor: pointer;
   transition: all 300ms ease-out;
 
+  path {
+    transition: all 300ms ease-out;
+    fill: ${(props) =>
+      props.theme.colors[props.hollow ? 'main' : 'background']};
+  }
+
   &:hover,
   &:focus {
     outline: none;
@@ -29,6 +36,11 @@ const Wrapper = styled(MagicLink)`
       props.theme.colors[props.hollow ? 'main' : 'background']};
     color: ${(props) =>
       props.theme.colors[props.hollow ? 'background' : 'main']};
+
+    path {
+      fill: ${(props) =>
+        props.theme.colors[props.hollow ? 'background' : 'main']};
+    }
   }
 `
 export default function Button(props) {
