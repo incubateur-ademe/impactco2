@@ -28,7 +28,7 @@ exports.onPostBuild = async () => {
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     executablePath: await chromium.executablePath,
-    headless: chromium.headless,
+    headless: true,
   })
   const page = await browser.newPage()
   await page.setViewport({
