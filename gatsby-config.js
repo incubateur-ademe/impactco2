@@ -3,7 +3,7 @@ module.exports = {
     title: `Mon Convertisseur CO2`,
     author: `Datagir`,
     description: ``,
-    siteUrl: `https://monconvertisseurco2.fr`,
+    siteUrl: `https://mcc-v2.netlify.app`,
     image: 'metaimage.png',
     twitterUsername: '_datagir',
   },

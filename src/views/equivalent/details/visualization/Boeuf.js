@@ -4,6 +4,10 @@ import styled from 'styled-components'
 import Button from 'components/base/Button'
 import Emoji from 'components/base/Emoji'
 
+const Title = styled.h3`
+  font-weight: normal;
+  text-align: center;
+`
 const Equivalents = styled.div`
   display: flex;
   justify-content: space-around;
@@ -41,6 +45,9 @@ const StyledButton = styled(Button)`
 export default function Boeuf() {
   return (
     <>
+      <Title>
+        En terme d'émissions de CO2<sub>e</sub>
+      </Title>
       <Equivalents>
         <Equivalent>
           <Emojis>🥩</Emojis>

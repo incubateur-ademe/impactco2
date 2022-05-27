@@ -52,7 +52,7 @@ export default function Web(props) {
   return (
     <>
       <Wrapper>
-        <Seo title={props.title} />
+        <Seo title={props.title} image={props.image} />
         <QueryClientProvider client={queryClient}>
           <UXProvider>
             <DataProvider>

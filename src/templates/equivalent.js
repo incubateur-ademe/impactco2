@@ -13,6 +13,7 @@ export default function equivalent(props) {
         category: props.pageContext.category,
         equivalent: props.pageContext.equivalent,
       }}
+      image={`/og-images/${props.pageContext.equivalent.slug}.jpeg`}
     >
       <Equivalent
         equivalent={props.pageContext.equivalent}
