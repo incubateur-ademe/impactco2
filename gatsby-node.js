@@ -21,6 +21,39 @@ const equivalents = [
   ...repas,
 ]
 
+function formatNumber(value, noformat) {
+  let tempTotal = Math.round(value * 1000000) / 1000000
+  tempTotal =
+    tempTotal > 0.0001 ? Math.round(tempTotal * 10000) / 10000 : tempTotal
+  tempTotal =
+    tempTotal > 0.001 ? Math.round(tempTotal * 1000) / 1000 : tempTotal
+  tempTotal = tempTotal > 0.01 ? Math.round(tempTotal * 100) / 100 : tempTotal
+  tempTotal = tempTotal > 0.1 ? Math.round(tempTotal * 10) / 10 : tempTotal
+  tempTotal = tempTotal > 1 ? Math.round(tempTotal * 1) / 1 : tempTotal
+  return noformat
+    ? tempTotal
+    : tempTotal.toLocaleString('fr-fr', { maximumFractionDigits: 10 })
+}
+
+function formatName(name, value, capital) {
+  const newName = name
+    .replaceAll('[s]', value > 1 ? 's' : '')
+    .replaceAll('[x]', value > 1 ? 'x' : '')
+
+  return capital ? newName : newName.toLowerCase()
+}
+function formatTotal(equivalent, years, end) {
+  let total =
+    equivalent.total || equivalent.ecv.reduce((acc, cur) => acc + cur.value, 0)
+  if (years) {
+    total += years * equivalent.usage.peryear
+  }
+  if (end) {
+    total += equivalent.end
+  }
+  return total
+}
+
 exports.onPostBuild = async () => {
   const dir = path.resolve(__dirname, './public/og-images')
   if (!fs.existsSync(dir)) fs.mkdirSync(dir)
@@ -33,7 +66,7 @@ exports.onPostBuild = async () => {
   const page = await browser.newPage()
   await page.setViewport({
     width: 1200,
-    height: 630,
+    height: 628,
   })
 
   async function createOG({ html, slug }) {
@@ -50,7 +83,63 @@ exports.onPostBuild = async () => {
 
   for (const equivalent of equivalents) {
     await createOG({
-      html: `<html><body><h1>${equivalent.name.fr}</h1></body></html>`,
+      html: `
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      height: 314px;
+      padding: 0 64px;
+      color: #26827c;
+    }
+    h1 {
+      margin: 0;
+      font-size: 90px;
+      line-height: 108px;
+      font-family: Arial Black;
+    }
+    .bottom {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 314px;
+      padding: 0 64px;
+      color: #fff;
+      background-color: #26827c;
+    }
+    h2 {
+      margin: 0;
+      font-size: 120px;
+      line-height: 108px;
+      text-align: right;
+      font-family: Arial Black;
+    }
+    span {
+      font-size: 60px;
+      font-family: Arial;
+    }
+  </style>
+  <body>
+    <div class="top">
+      <h1>${formatName(equivalent.name.fr, 1, true)}</h1>
+    </div>
+    <div class="bottom">
+      <h2>
+        ${formatNumber(formatTotal(equivalent))} <span>kg CO2<sub>e</sub></span>
+      </h2>
+    </div>
+  </body>
+</html>
+`,
       slug: equivalent.slug,
     })
   }
