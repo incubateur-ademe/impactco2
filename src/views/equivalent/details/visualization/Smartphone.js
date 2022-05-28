@@ -11,6 +11,7 @@ const Sizes = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2.5rem;
 `
 const Size = styled.p`
   display: flex;

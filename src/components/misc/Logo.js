@@ -50,9 +50,9 @@ const Circle2 = styled.path`
     transition: transform 400ms ease-out 168ms;
   }
 `
-export default function Logo() {
+export default function Logo(props) {
   return (
-    <Wrapper to='/'>
+    <Wrapper to='/' className={props.className}>
       <Svg
         width='42'
         height='42'
