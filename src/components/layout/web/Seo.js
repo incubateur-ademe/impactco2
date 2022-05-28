@@ -30,11 +30,7 @@ const SEO = (props) => {
   } = site.siteMetadata
 
   const seo = {
-    title: formatName(
-      props.title ? `${props.title} | ${defaultTitle}` : defaultTitle,
-      1,
-      true
-    ),
+    title: formatName(props.title || defaultTitle, 1, true),
     description: props.description || defaultDescription,
     image: `${siteUrl}/${props.image || defaultImage}`,
     url: `${siteUrl}${pathname}`,

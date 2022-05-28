@@ -6,7 +6,7 @@ import Category from 'views/Category'
 export default function category(props) {
   return (
     <Web
-      title={props.pageContext.category.name.fr}
+      title={`Découvrez l'impact de ${props.pageContext.category.name.fr} sur Mon Convertisseur CO2`}
       breadcrumb={{
         type: 'equivalent',
         category: props.pageContext.category,

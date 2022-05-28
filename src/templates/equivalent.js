@@ -6,7 +6,7 @@ import Equivalent from '../views/Equivalent'
 export default function equivalent(props) {
   return (
     <Web
-      title={props.pageContext.equivalent.name.fr}
+      title={`Découvrez l'impact d'un ${props.pageContext.equivalent.name.fr} sur Mon Convertisseur CO2`}
       result={props.pageContext.equivalent.name.fr}
       breadcrumb={{
         type: 'equivalent',
