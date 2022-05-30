@@ -48,7 +48,7 @@ module.exports = og = (equivalent) => `
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 32px 64px;
+      padding: 32px;
       color: #26827c;
     }
     .bottom {
