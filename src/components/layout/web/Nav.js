@@ -8,6 +8,7 @@ import Menu from './nav/Menu'
 
 const StyledSection = styled(Section)`
   margin-bottom: 1rem;
+  z-index: 500;
 `
 const Wrapper = styled.div`
   display: flex;
