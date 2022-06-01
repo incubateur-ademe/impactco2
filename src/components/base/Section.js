@@ -12,6 +12,10 @@ Section.Content = styled.div`
   max-width: 100%;
   margin: 0 auto;
   padding: 0 0.75rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: 100%;
+  }
 `
 
 export default Section

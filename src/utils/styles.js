@@ -19,12 +19,8 @@ export const themes = {
       title: '"Marianne", Arial, sans-serif',
     },
     mq: {
-      small: `@media screen and (max-width: ${44.25}em)`,
-      medium: `@media screen and (max-width: ${44.25}em)`,
-      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
-      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
-      large: `@media screen and (min-width: ${92}em)`,
-      xlarge: `@media screen and (min-width: ${2000}px)`,
+      small: `@media screen and (max-width: ${36}em)`,
+      medium: `@media screen and (max-width: ${48}em)`,
     },
   },
   night: {
@@ -44,12 +40,8 @@ export const themes = {
       title: '"Marianne", Arial, sans-serif',
     },
     mq: {
-      small: `@media screen and (max-width: ${44.25}em)`,
-      medium: `@media screen and (max-width: ${44.25}em)`,
-      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
-      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
-      large: `@media screen and (min-width: ${92}em)`,
-      xlarge: `@media screen and (min-width: ${2000}px)`,
+      small: `@media screen and (max-width: ${36}em)`,
+      medium: `@media screen and (max-width: ${48}em)`,
     },
   },
 }

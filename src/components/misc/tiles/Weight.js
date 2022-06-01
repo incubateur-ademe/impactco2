@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: calc(33.3333% - 1rem);
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1.125rem 1.5rem 1.375rem;
   background-color: ${(props) =>
     props.theme.colors[props.background ? 'textLight' : 'second']};
   font-size: 2rem;
@@ -21,7 +21,12 @@ const Wrapper = styled.div`
     padding: 2rem 1rem 1.5rem;
   }
 `
-
+const Label = styled.label`
+  margin-bottom: 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-align: center;
+`
 const StyledTextInput = styled(TextInput)`
   position: relative;
   margin-bottom: 0.5rem;
@@ -46,6 +51,7 @@ export default function Weight(props) {
 
   return (
     <Wrapper background={props.background} ref={setNodeRef}>
+      <Label>Entrez une quantité de CO2e ci-dessous</Label>
       <StyledTextInput
         type='number'
         value={props.weight}

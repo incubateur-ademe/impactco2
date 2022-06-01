@@ -19,10 +19,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  ${(props) => props.theme.mq.small} {
-    display: none;
-  }
 `
 const Content = styled.div`
   flex: 1;
@@ -36,17 +32,6 @@ const FullScreen = styled.div`
   flex-direction: column;
   min-height: 100vh;
   padding: 0 0 5rem;
-`
-const Responsive = styled.div`
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-
-  ${(props) => props.theme.mq.small} {
-    display: flex;
-  }
 `
 export default function Web(props) {
   return (
@@ -73,7 +58,6 @@ export default function Web(props) {
           </UXProvider>
         </QueryClientProvider>
       </Wrapper>
-      <Responsive>Ce site n'est pas encore accessible mobile</Responsive>
     </>
   )
 }

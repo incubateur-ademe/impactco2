@@ -16,6 +16,12 @@ const Wrapper = styled.div`
 `
 const StyledSearch = styled(Search)`
   top: 0.375rem;
+  width: 20rem;
+  font-size: 0.875rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: 17rem;
+  }
 `
 export default function Nav() {
   const location = useLocation()

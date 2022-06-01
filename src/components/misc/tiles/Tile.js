@@ -108,9 +108,6 @@ const Name = styled.span`
   align-items: center;
   min-height: 2.125rem;
 `
-const StyledMagicLink = styled(MagicLink)`
-  font-size: 0.875rem;
-`
 const StyledButton = styled(Button)`
   font-size: 0.8125rem;
 `
@@ -182,15 +179,17 @@ export default function Tile(props) {
       {props.reference ? (
         !iframe &&
         !props.equivalentPage && (
-          <StyledMagicLink
-            to={`/categories/${
-              categories.find(
-                (category) => category.id === props.equivalent.category
-              )?.slug
-            }/${props.equivalent.slug}`}
-          >
-            Voir le détail
-          </StyledMagicLink>
+          <Button.Wrapper>
+            <StyledButton
+              to={`/categories/${
+                categories.find(
+                  (category) => category.id === props.equivalent.category
+                )?.slug
+              }/${props.equivalent.slug}`}
+            >
+              Voir le détail
+            </StyledButton>
+          </Button.Wrapper>
         )
       ) : (
         <Button.Wrapper>
