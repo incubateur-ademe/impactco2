@@ -4,6 +4,7 @@
     "name": {
       "fr": "Repas avec du boeuf"
     },
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasavecduboeuf",
     "emoji": "🥩",
     "category": 2,
@@ -17,6 +18,7 @@
     "name": {
       "fr": "Repas végétarien"
     },
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasvegetarien",
     "emoji": "🥗",
     "category": 2,
@@ -30,6 +32,7 @@
     "name": {
       "fr": "Repas végétalien"
     },
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasvegetalien",
     "emoji": "🍎",
     "category": 2,
@@ -43,6 +46,7 @@
     "name": {
       "fr": "Repas avec du poisson blanc"
     },
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasavecdupoissonblanc",
     "emoji": "🐟",
     "category": 2,
@@ -56,6 +60,7 @@
     "name": {
       "fr": "Repas avec du poisson gras"
     },
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasavecdupoissongras",
     "emoji": "🐟",
     "category": 2,
@@ -69,6 +74,7 @@
     "name": {
       "fr": "Repas avec du poulet"
     },
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasavecdupoulet",
     "emoji": "🍗",
     "category": 2,

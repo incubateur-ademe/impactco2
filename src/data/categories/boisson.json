@@ -4,6 +4,7 @@
     "name": {
       "fr": "Litre[s] d'eau du robinet"
     },
+    "synonyms": ["boire"],
     "slug": "eaudurobinet",
     "emoji": "🚰",
     "category": 3,
@@ -17,6 +18,7 @@
     "name": {
       "fr": "Litre[s] d'eau en bouteille"
     },
+    "synonyms": ["boire"],
     "slug": "eauenbouteille",
     "emoji": "💧",
     "category": 3,
@@ -30,6 +32,7 @@
     "name": {
       "fr": "Litre[s] de soda"
     },
+    "synonyms": ["boire"],
     "slug": "soda",
     "emoji": "🥤",
     "category": 3,
@@ -43,6 +46,7 @@
     "name": {
       "fr": "Litre[s] de bière"
     },
+    "synonyms": ["boire"],
     "slug": "biere",
     "emoji": "🍺",
     "category": 3,
@@ -56,6 +60,7 @@
     "name": {
       "fr": "Litre[s] de vin"
     },
+    "synonyms": ["boire"],
     "slug": "vin",
     "emoji": "🍷",
     "category": 3,
@@ -69,6 +74,7 @@
     "name": {
       "fr": "Litre[s] de lait"
     },
+    "synonyms": ["boire"],
     "slug": "lait",
     "emoji": "🥛",
     "category": 3,
