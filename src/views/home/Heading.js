@@ -28,6 +28,11 @@ const StyledSearch = styled(Search)`
   margin: 0 auto 4rem;
   font-size: 1.375rem;
 `
+const StyledButtonLink = styled(ButtonLink)`
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+`
 export default function Heading() {
   const { setCo2e } = useContext(ModalContext)
   return (
@@ -46,6 +51,9 @@ export default function Heading() {
         </Text>
         <StyledSearch placeholder={'Entrez un objet, un geste...'} />
         <Categories />
+        <StyledButtonLink onClick={() => setCo2e(true)}>
+          Comprendre le CO2e
+        </StyledButtonLink>
       </StyledSectionContent>
     </Section>
   )
