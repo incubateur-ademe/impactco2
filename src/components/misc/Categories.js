@@ -51,7 +51,7 @@ export default function Categories(props) {
           )}
           <List>
             {categories.map((category) => (
-              <Category key={category.id} category={category} />
+              <Category key={category.slug} category={category} />
             ))}
           </List>
         </Section.Content>

@@ -8,7 +8,6 @@ import useIframe from 'hooks/useIframe'
 import { formatNumber, formatName, formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Emoji from 'components/base/Emoji'
-import MagicLink from 'components/base/MagicLink'
 import Button from 'components/base/Button'
 
 const Wrapper = styled.div`

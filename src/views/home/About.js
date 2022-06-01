@@ -74,7 +74,7 @@ export default function About(props) {
         <SimulateursTitle>Découvrez nos autres simulateurs</SimulateursTitle>
         <SimpleTile.Wrapper>
           {simulateurs.map((simulateur) => (
-            <SimpleTile item={simulateur} column={2} />
+            <SimpleTile key={simulateur.url} item={simulateur} column={2} />
           ))}
         </SimpleTile.Wrapper>
       </Section.Content>

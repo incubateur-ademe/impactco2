@@ -20,7 +20,7 @@ export default function Categories() {
       <Text>En panne d’inspiration ? Naviguez par catégories :</Text>
       <Button.Wrapper>
         {categories.map((category) => (
-          <Button small to={`/categories/${category.slug}`}>
+          <Button key={category.slug} to={`/categories/${category.slug}`} small>
             <Emoji>{category.emoji}</Emoji>
             {category.name.fr}
           </Button>

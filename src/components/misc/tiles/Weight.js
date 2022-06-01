@@ -51,8 +51,9 @@ export default function Weight(props) {
 
   return (
     <Wrapper background={props.background} ref={setNodeRef}>
-      <Label>Entrez une quantité de CO2e ci-dessous</Label>
+      <Label htmlFor='co2'>Entrez une quantité de CO2e ci-dessous</Label>
       <StyledTextInput
+        name='co2'
         type='number'
         value={props.weight}
         onChange={(e) => props.setWeight(e.value)}
