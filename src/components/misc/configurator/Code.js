@@ -11,7 +11,7 @@ const flash = (props) => keyframes`
 
   35%,
   55% {
-    background-color: ${props.theme.colors.secondLight};
+    background-color: ${props.theme.colors.secondDark};
   }
 `
 

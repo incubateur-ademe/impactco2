@@ -7,26 +7,8 @@ import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import VisualizationWrapper from './visualization/VisualizationWrapper'
-import DurationSelector from './ecv/DurationSelector'
-import Graph from './ecv/Graph'
+import Step from './ecv/Step'
 
-const Wrapper = styled.div`
-  position: relative;
-  background-color: ${(props) => props.theme.colors.background};
-`
-const Background = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: ${(props) => props.theme.colors.second};
-  border-radius: 1rem;
-`
-const Content = styled.div`
-  position: relative;
-  padding: 1.5rem;
-`
 const Title = styled.h2``
 const Text = styled.p``
 const Total = styled.div``
@@ -70,9 +52,6 @@ export default function Ecv(props) {
         tempEcvToDisplay.push({
           color: '#ff00ff',
           id: 1000,
-          name: {
-            fr: `Usage<br/>(pendant ${usage} ans)`,
-          },
           value: props.equivalent.usage.peryear * usage,
         })
       }
@@ -106,17 +85,17 @@ export default function Ecv(props) {
           <Flipper flipKey={ecvToDisplay.map((step) => step.id).join()}>
             {ecvToDisplay.map((item) => (
               <Flipped flipId={item.id} key={item.id}>
-                <Graph
+                <Step
                   item={item}
                   equivalent={props.equivalent}
                   total={formatTotal(props.equivalent, usage, end)}
+                  usage={usage}
+                  setUsage={setUsage}
                 />
               </Flipped>
             ))}
           </Flipper>
-          {usage && (
-            <DurationSelector duration={usage} setDuration={setUsage} />
-          )}
+
           <StyledButtonWrapper left className='noscreenshot'>
             <Button
               hollow

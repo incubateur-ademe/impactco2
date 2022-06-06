@@ -9,7 +9,7 @@ export const themes = {
       main: '#26827C',
       mainLight: '#DFECEB',
       second: '#EFF4F9',
-      secondLight: '#E0EDFA',
+      secondDark: '#B1D4F6',
       background: '#ffffff',
       text: '#383838',
       textLight: '#FBFBFC',

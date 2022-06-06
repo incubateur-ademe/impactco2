@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatPercent, formatNumberFixed } from 'utils/formatters'
+import DurationSelector from './step/DurationSelector'
 
 const Wrapper = styled.li`
   position: relative;
@@ -9,7 +10,7 @@ const Wrapper = styled.li`
   align-items: center;
 
   &:last-child {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 `
 const Title = styled.div`
@@ -26,7 +27,7 @@ const Chart = styled.div`
   align-items: center;
   flex: 1;
   padding: 0.75rem 0;
-  border-left: 0.0675rem solid ${(props) => props.theme.colors.text};
+  border-left: 0.0675rem solid ${(props) => props.theme.colors.secondDark};
 `
 const Sizer = styled.div`
   width: 9rem;
@@ -72,10 +73,14 @@ const Absolute = styled.span`
     font-weight: normal;
   }
 `
-export default function Graph(props) {
+export default function Step(props) {
   return (
     <Wrapper {...props} color={props.item.color}>
-      <Title dangerouslySetInnerHTML={{ __html: props.item.name.fr }} />
+      {props.item.name ? (
+        <Title dangerouslySetInnerHTML={{ __html: props.item.name.fr }} />
+      ) : (
+        <DurationSelector duration={props.usage} setDuration={props.setUsage} />
+      )}
       <Chart>
         <Bar
           color={props.item.color}

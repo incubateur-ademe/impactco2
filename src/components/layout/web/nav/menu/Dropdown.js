@@ -27,13 +27,13 @@ const ButtonDropdown = styled.button`
   color: ${(props) =>
     props.theme.colors[props.current || props.open ? 'main' : 'text']};
   background-color: ${(props) =>
-    props.open ? props.theme.colors.secondLight : 'transparent'};
+    props.open ? props.theme.colors.secondDark : 'transparent'};
   border: none;
   cursor: pointer;
   transition: background-color 200ms ease-out;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondLight};
+    background-color: ${(props) => props.theme.colors.secondDark};
   }
 
   &:before {
@@ -110,13 +110,13 @@ Dropdown.Item = styled(MagicLink)`
     left: 1rem;
     right: 1rem;
     height: 0.0625rem;
-    background-color: ${(props) => props.theme.colors.secondLight};
+    background-color: ${(props) => props.theme.colors.secondDark};
   }
   &:last-child {
     padding: 0.75rem 1.5rem 1rem;
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondLight};
+    background-color: ${(props) => props.theme.colors.secondDark};
   }
 `
