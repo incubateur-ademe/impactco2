@@ -15,7 +15,6 @@ export default function useScreenshot(slug) {
       toPng(ref.current, {
         cacheBust: true,
         filter: (node) => {
-          console.log(node.className)
           return !node.className || !node.className.includes
             ? true
             : !node.className?.includes('noscreenshot')

@@ -40,13 +40,13 @@ export default function Visualization(props) {
             // props.setCategory(categories[index])
           }}
         >
-          <VisualizationWrapper equivalent={props.equivalent}>
+          <VisualizationWrapper equivalent={props.equivalent} fixed>
             <SmartphoneGeneral />
           </VisualizationWrapper>
-          <VisualizationWrapper equivalent={props.equivalent}>
+          <VisualizationWrapper equivalent={props.equivalent} fixed>
             <SmartphoneCategory />
           </VisualizationWrapper>
-          <VisualizationWrapper equivalent={props.equivalent}>
+          <VisualizationWrapper equivalent={props.equivalent} fixed>
             <Smartphone />
           </VisualizationWrapper>
         </Slider>

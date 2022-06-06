@@ -3,6 +3,7 @@ import React from 'react'
 import Details from './equivalent/Details'
 import Visualization from './equivalent/Visualization'
 import VisualizationSlider from './equivalent/VisualizationSlider'
+import Ecv from './equivalent/Ecv'
 
 export default function Equivalent(props) {
   return (
@@ -13,6 +14,7 @@ export default function Equivalent(props) {
       ) : (
         <Visualization equivalent={props.equivalent} />
       )}
+      <Ecv equivalent={props.equivalent} />
     </>
   )
 }

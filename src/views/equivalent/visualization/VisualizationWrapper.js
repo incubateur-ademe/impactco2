@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import useScreenshot from 'hooks/useScreenshot'
-import Section from 'components/base/Section'
-import DownloadButton from './DownloadButton'
+import Buttons from './Buttons'
 import Signature from './Signature'
 
 const Wrapper = styled.div`
@@ -21,13 +20,13 @@ const Background = styled.div`
 `
 const Content = styled.div`
   position: relative;
-  min-height: 21rem;
+  min-height: ${(props) => (props.fixed ? '21rem' : 'none')};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1.5rem;
 `
-export default function Visualization(props) {
+export default function VisualizationWrapper(props) {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
     props.equivalent.slug
   )
@@ -35,8 +34,8 @@ export default function Visualization(props) {
   return (
     <Wrapper ref={ref}>
       <Background className='noscreenshot' />
-      <Content>{props.children}</Content>
-      <DownloadButton onClick={takeScreenshot} />
+      <Content fixed={props.fixed}>{props.children}</Content>
+      <Buttons takeScreenshot={takeScreenshot} />
       {isScreenshotting && <Signature />}
     </Wrapper>
   )

@@ -51,9 +51,7 @@ const Unit = styled.span`
 export default function Smartphone() {
   return (
     <>
-      <Title>
-        Impact de la taille de l’écran sur les émissions de CO<sub>2e</sub>
-      </Title>
+      <Title>Impact de la taille de l’écran</Title>
       <Sizes>
         <Size small>
           <StyledEmoji small>📱</StyledEmoji>

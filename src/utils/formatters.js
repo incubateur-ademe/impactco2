@@ -11,7 +11,12 @@ export function formatNumber(value, noformat) {
     ? tempTotal
     : tempTotal.toLocaleString('fr-fr', { maximumFractionDigits: 10 })
 }
-
+export function formatNumberFixed(value, digits) {
+  return value.toLocaleString('fr-fr', {
+    maximumFractionDigits: digits || 1,
+    minimumFractionDigits: digits || 1,
+  })
+}
 export function formatName(name, value, capital) {
   const newName = name
     .replaceAll('[s]', value > 1 ? 's' : '')

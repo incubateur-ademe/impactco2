@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import useScreenshot from 'hooks/useScreenshot'
 import Section from 'components/base/Section'
-import DownloadButton from './visualization/DownloadButton'
+import Buttons from './visualization/Buttons'
 import Boeuf from './visualization/Boeuf'
 import BoeufTemp from './visualization/BoeufTemp'
 import Smartphone from './visualization/Smartphone'
@@ -49,7 +49,7 @@ export default function Visualization(props) {
       <Section.Content>
         <Wrapper ref={ref}>
           {visualizations[props.equivalent.slug]}
-          <DownloadButton onClick={takeScreenshot} />
+          <Buttons takeScreenshot={takeScreenshot} />
           {isScreenshotting && <Signature />}
         </Wrapper>
       </Section.Content>

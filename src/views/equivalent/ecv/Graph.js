@@ -1,19 +1,22 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import { formatPercent, formatTotal } from 'utils/formatters'
-import DataContext from 'utils/DataContext'
+import { formatPercent, formatNumberFixed } from 'utils/formatters'
 
 const Wrapper = styled.li`
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 1.5rem;
+  }
 `
 const Title = styled.div`
-  width: 8rem;
+  width: 9rem;
   margin-right: 0.75rem;
-  font-size: 0.75rem;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
   text-align: right;
   line-height: 1.2;
 `
@@ -22,14 +25,18 @@ const Chart = styled.div`
   display: flex;
   align-items: center;
   flex: 1;
+  padding: 0.75rem 0;
+  border-left: 0.0675rem solid ${(props) => props.theme.colors.text};
+`
+const Sizer = styled.div`
+  width: 9rem;
 `
 const Bar = styled.div`
   position: relative;
-  width: ${(props) => props.percent * 85}%;
-  height: 2rem;
-  transform-origin: left;
+  width: ${(props) => props.percent * 100}%;
+  height: 2.5rem;
   background-color: ${(props) => props.color};
-  border-radius: 1rem;
+  border-radius: 0 1rem 1rem 0;
 `
 
 const Value = styled.div`
@@ -45,56 +52,47 @@ const Value = styled.div`
   line-height: 0.7;
   transition: color 200ms ease-out;
 `
-const Number = styled.span`
+const Percent = styled.span`
   margin-right: 0.25rem;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: bold;
+  white-space: nowrap;
 
   ${(props) => props.theme.mq.small} {
     font-size: 1rem;
   }
 `
-const Unit = styled.span`
+const Absolute = styled.span`
   cursor: pointer;
   font-size: 0.75rem;
+  font-weight: 300;
   white-space: nowrap;
+
+  span {
+    font-weight: normal;
+  }
 `
 export default function Graph(props) {
-  const { ecv } = useContext(DataContext)
-
   return (
-    <Wrapper
-      key={props.item.id}
-      color={ecv.find((step) => step.id === props.item.id)?.color}
-    >
-      <Title>{ecv.find((step) => step.id === props.item.id)?.name.fr}</Title>
+    <Wrapper {...props} color={props.item.color}>
+      <Title dangerouslySetInnerHTML={{ __html: props.item.name.fr }} />
       <Chart>
         <Bar
-          color={ecv.find((step) => step.id === props.item.id)?.color}
-          percent={
-            formatPercent(
-              props.item.value,
-              formatTotal(props.equivalent),
-              true
-            ) / 100
-          }
+          color={props.item.color}
+          percent={formatPercent(props.item.value, props.total, true) / 100}
         >
           <Value
-            noBar={
-              formatPercent(
-                props.item.value,
-                formatTotal(props.equivalent),
-                true
-              ) === 0
-            }
+            noBar={formatPercent(props.item.value, props.total, true) === 0}
           >
-            <Number>
-              {formatPercent(props.item.value, formatTotal(props.equivalent))}
-            </Number>
-            <Unit> %</Unit>
+            <Percent>{formatPercent(props.item.value, props.total)} %</Percent>
+            <Absolute>
+              (<span>{formatNumberFixed(props.item.value)}</span> kgCO
+              <sub>2</sub>e)
+            </Absolute>
           </Value>
         </Bar>
       </Chart>
+      <Sizer />
     </Wrapper>
   )
 }
