@@ -7,12 +7,13 @@ const Wrapper = styled.div`
   align-items: flex-end;
   width: 9rem;
   margin-right: 0.75rem;
-  padding: 0.75rem 0;
   font-size: 0.875rem;
   text-align: right;
   line-height: 1.2;
 `
-const Label = styled.div``
+const Label = styled.div`
+  margin-bottom: 0.25rem;
+`
 const Selector = styled.div`
   display: flex;
   justify-content: space-between;
