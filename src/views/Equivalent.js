@@ -1,19 +1,18 @@
 import React from 'react'
 
-import CategoryList from 'components/misc/CategoryList'
-import Tiles from 'components/misc/Tiles'
 import Details from './equivalent/Details'
+import Visualization from './equivalent/Visualization'
+import VisualizationSlider from './equivalent/VisualizationSlider'
 
 export default function Equivalent(props) {
   return (
     <>
       <Details equivalent={props.equivalent} category={props.category} />
-      <Tiles equivalent={props.equivalent} background />
-      <CategoryList
-        equivalent={props.equivalent}
-        category={props.category}
-        title
-      />
+      {props.equivalent.slug === 'smartphone' ? (
+        <VisualizationSlider equivalent={props.equivalent} />
+      ) : (
+        <Visualization equivalent={props.equivalent} />
+      )}
     </>
   )
 }

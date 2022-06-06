@@ -74,12 +74,31 @@
     "name": {
       "fr": "Litre[s] de lait"
     },
+    "subtitle": {
+      "fr": "De vache"
+    },
     "synonyms": ["boire"],
-    "slug": "lait",
+    "slug": "laitdevache",
     "emoji": "🥛",
     "category": 3,
     "total": 1.53,
     "default": true,
+    "tile": false,
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Litre[s] de lait"
+    },
+    "subtitle": {
+      "fr": "De soja"
+    },
+    "synonyms": ["boire"],
+    "slug": "laitdesoja",
+    "emoji": "🍈",
+    "category": 3,
+    "total": 0.42,
+    "default": false,
     "tile": false,
     "source": "https://agribalyse.ademe.fr/"
   }

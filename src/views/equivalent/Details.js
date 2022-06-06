@@ -6,7 +6,6 @@ import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import ShareButton from 'components/misc/ShareButton'
 import Value from './details/Value'
-import Visualization from './details/Visualization'
 
 const Title = styled.h1``
 const Subtitle = styled.span`
@@ -52,7 +51,6 @@ export default function Details(props) {
           <StyledMagicLink to={props.equivalent.source}>Source</StyledMagicLink>
         </Section.Content>
       </Section>
-      <Visualization equivalent={props.equivalent} />
     </>
   )
 }

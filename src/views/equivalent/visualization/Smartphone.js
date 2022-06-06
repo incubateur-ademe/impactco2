@@ -5,11 +5,12 @@ import Emoji from 'components/base/Emoji'
 
 const Title = styled.h3`
   margin-bottom: 1rem;
+  font-weight: normal;
   text-align: center;
 `
 const Sizes = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 2.5rem;
 `
@@ -50,24 +51,26 @@ const Unit = styled.span`
 export default function Smartphone() {
   return (
     <>
-      <Title>Impact de la taille de l’écran</Title>
+      <Title>
+        Impact de la taille de l’écran sur les émissions de CO<sub>2e</sub>
+      </Title>
       <Sizes>
         <Size small>
           <StyledEmoji small>📱</StyledEmoji>
           <Label>- de 4,5 pouces</Label>
-          <Number>27,6</Number>
+          <Number>22</Number>
           <Unit>kg CO2e</Unit>
         </Size>
         <Size>
           <StyledEmoji>📱</StyledEmoji>
           <Label>5 pouces</Label>
-          <Number>32,8</Number>
+          <Number>26</Number>
           <Unit>kg CO2e</Unit>
         </Size>
         <Size large>
           <StyledEmoji large>📱</StyledEmoji>
           <Label>+ de 5,5 pouces</Label>
-          <Number>39,1</Number>
+          <Number>31</Number>
           <Unit>kg CO2e</Unit>
         </Size>
       </Sizes>

@@ -15,8 +15,10 @@ export default function useScreenshot(slug) {
       toPng(ref.current, {
         cacheBust: true,
         filter: (node) => {
-          console.log(node.class)
-          return !node.classList ? true : !node.classList[0]?.includes('Button')
+          console.log(node.className)
+          return !node.className || !node.className.includes
+            ? true
+            : !node.className?.includes('noscreenshot')
         },
       })
         .then((dataUrl) => {

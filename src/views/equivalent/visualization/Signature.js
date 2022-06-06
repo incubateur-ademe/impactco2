@@ -10,20 +10,20 @@ const Wrapper = styled.div`
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   pointer-events: none;
 `
 const StyledLogo = styled(Logo)`
   position: absolute;
   bottom: 1rem;
-  left: 1.5rem;
+  left: 1rem;
   font-size: 0.571428571rem;
   pointer-events: none;
 `
 const StyledDatagir = styled(Datagir)`
   position: absolute;
   bottom: 1rem;
-  right: 1.5rem;
+  right: 1rem;
   width: auto;
   height: 2rem;
   margin: 0;
