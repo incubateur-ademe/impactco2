@@ -108,7 +108,14 @@ const Name = styled.span`
   min-height: 2.125rem;
 `
 const StyledButton = styled(Button)`
+  padding: 0.5em 0.75rem;
   font-size: 0.8125rem;
+
+  svg {
+    display: block;
+    height: 0.75rem;
+    width: auto;
+  }
 `
 
 export default function Tile(props) {
@@ -196,6 +203,15 @@ export default function Tile(props) {
             onClick={() => props.setCurEquivalent(props.equivalent)}
             hollow
           >
+            <svg
+              width='292'
+              height='388'
+              viewBox='0 0 292 388'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M168.627 9.37298C162.378 3.12397 154.19 -4.25109e-05 146 -4.32269e-05C137.812 -4.39427e-05 129.62 3.12497 123.373 9.37297L9.99496 122.75C-2.50204 135.247 -2.50205 155.508 9.99495 168.005C22.492 180.502 42.753 180.502 55.25 168.005L114 109.255L114 356.001C114 373.674 128.327 388.001 146 388.001C163.673 388.001 178 373.674 178 356.001L178 109.255L236.75 168.005C249.247 180.502 269.508 180.502 282.005 168.005C294.502 155.508 294.502 135.247 282.005 122.75L168.627 9.37298Z' />
+            </svg>
             Comparer
           </StyledButton>
         </Button.Wrapper>

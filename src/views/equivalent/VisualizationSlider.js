@@ -3,13 +3,25 @@ import styled from 'styled-components'
 import Slider from 'react-slick'
 
 import Section from 'components/base/Section'
-import VisualizationWrapper from './visualization/VisualizationWrapper'
+import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import SmartphoneGeneral from './visualization/SmartphoneGeneral'
 import SmartphoneCategory from './visualization/SmartphoneCategory'
 import Smartphone from './visualization/Smartphone'
 
 const StyledSection = styled(Section)`
   margin-bottom: 4rem;
+
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: inherit !important;
+
+    & > div {
+      height: 100%;
+    }
+  }
 
   .slick-prev {
     left: -1rem;
@@ -39,16 +51,25 @@ export default function Visualization(props) {
           afterChange={(index) => {
             // props.setCategory(categories[index])
           }}
+          responsive={[
+            {
+              breakpoint: 830,
+              settings: {
+                dots: true,
+                arrows: false,
+              },
+            },
+          ]}
         >
-          <VisualizationWrapper equivalent={props.equivalent} fixed>
+          <ScreenshotWrapper equivalent={props.equivalent} fixed>
             <SmartphoneGeneral />
-          </VisualizationWrapper>
-          <VisualizationWrapper equivalent={props.equivalent} fixed>
+          </ScreenshotWrapper>
+          <ScreenshotWrapper equivalent={props.equivalent} fixed>
             <SmartphoneCategory />
-          </VisualizationWrapper>
-          <VisualizationWrapper equivalent={props.equivalent} fixed>
+          </ScreenshotWrapper>
+          <ScreenshotWrapper equivalent={props.equivalent} fixed>
             <Smartphone />
-          </VisualizationWrapper>
+          </ScreenshotWrapper>
         </Slider>
       </Section.Content>
     </StyledSection>

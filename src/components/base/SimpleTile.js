@@ -20,6 +20,9 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     width: calc(${(props) => (props.column === 2 ? 50 : 33.3333)}% - 0.5rem);
   }
+  ${(props) => props.theme.mq.small} {
+    width: calc(${(props) => (props.column === 2 ? 100 : 50)}% - 0.5rem);
+  }
 `
 const Top = styled.div`
   position: relative;

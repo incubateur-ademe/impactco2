@@ -6,7 +6,7 @@ import { formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
-import VisualizationWrapper from './visualization/VisualizationWrapper'
+import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import Step from './ecv/Step'
 
 const Title = styled.h2``
@@ -81,7 +81,7 @@ export default function Ecv(props) {
           Proin volutpat sollicitudin cursus. Nam suscipit at arcu malesuada
           eleifend. Duis egestas pharetra urna et scelerisque.
         </Text>
-        <VisualizationWrapper equivalent={props.equivalent} fixed>
+        <ScreenshotWrapper equivalent={props.equivalent}>
           <Flipper flipKey={ecvToDisplay.map((step) => step.id).join()}>
             {ecvToDisplay.map((item) => (
               <Flipped flipId={item.id} key={item.id}>
@@ -112,7 +112,7 @@ export default function Ecv(props) {
               Ajouter la fin de vie
             </Button>
           </StyledButtonWrapper>
-        </VisualizationWrapper>
+        </ScreenshotWrapper>
       </Section.Content>
     </Section>
   ) : null

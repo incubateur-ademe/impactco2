@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import useScreenshot from 'hooks/useScreenshot'
-import Buttons from './Buttons'
-import Signature from './Signature'
+import Buttons from './screenshotWrapper/Buttons'
+import Signature from './screenshotWrapper/Signature'
 
 const Wrapper = styled.div`
   position: relative;
+  height: 100%;
   background-color: ${(props) => props.theme.colors.background};
 `
 const Background = styled.div`
@@ -20,10 +21,10 @@ const Background = styled.div`
 `
 const Content = styled.div`
   position: relative;
-  min-height: ${(props) => (props.fixed ? '21rem' : 'none')};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   padding: 1.5rem;
 `
 export default function VisualizationWrapper(props) {

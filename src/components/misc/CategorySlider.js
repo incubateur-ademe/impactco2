@@ -11,6 +11,10 @@ const StyledSection = styled(Section)`
 `
 const StyledSectionContent = styled(Section.Content)`
   max-width: 44rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: calc(100vw - 4rem);
+  }
 `
 const Category = styled.div`
   padding: 1rem;
@@ -18,6 +22,10 @@ const Category = styled.div`
   font-weight: bold;
   text-align: center;
   color: ${(props) => props.theme.colors.background};
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 2.5rem;
+  }
 `
 export default function CategorySlider(props) {
   const { categories } = useContext(DataContext)

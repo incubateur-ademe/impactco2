@@ -88,17 +88,18 @@ const slickStyle = `
   left: 0.5rem;
   right: 0.5rem;
   display: flex!important;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
   margin: 0;
   padding: 0;
   font-size: 0;
   list-style: none;
 
   button {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 1rem;
+    height: 1rem;
     padding: 0;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem;
     background-color: transparent;
     cursor: pointer;
   }

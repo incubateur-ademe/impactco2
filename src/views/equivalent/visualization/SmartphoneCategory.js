@@ -18,6 +18,10 @@ const Equivalent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: ${(props) => (props.large ? 17 : 7.5)}rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: ${(props) => (props.large ? 12 : 6)}rem;
+  }
 `
 const Emojis = styled(Emoji)`
   display: inline-flex;
@@ -29,6 +33,12 @@ const Emojis = styled(Emoji)`
   margin-bottom: 0.25rem;
   font-size: 2rem;
   text-align: center;
+
+  ${(props) => props.theme.mq.medium} {
+    min-height: 3.25rem;
+    font-size: 1.5rem;
+    gap: 0.25rem;
+  }
 `
 const Label = styled.div`
   display: flex;
@@ -42,6 +52,10 @@ const Label = styled.div`
 const Equals = styled.div`
   font-size: 3.5rem;
   font-weight: bold;
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 2.5rem;
+  }
 `
 const LinkWrapper = styled.div`
   width: 100%;
