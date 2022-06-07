@@ -15,6 +15,10 @@ const StyledSection = styled(Section)`
 const Title = styled.h2``
 const Text = styled.p`
   font-size: 1.125rem;
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 1rem;
+  }
 `
 const SimulateursTitle = styled.h3`
   padding-top: 0.25rem;

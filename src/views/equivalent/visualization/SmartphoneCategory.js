@@ -4,66 +4,16 @@ import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 import Emoji from 'components/base/Emoji'
 
-const Title = styled.h3`
-  font-weight: normal;
-  text-align: center;
-`
-const Equivalents = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 1.5rem;
-`
-const Equivalent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: ${(props) => (props.large ? 17 : 7.5)}rem;
+import {
+  Title,
+  Equivalents,
+  Equivalent,
+  Emojis,
+  Label,
+  Equals,
+  CenterLink,
+} from 'components/misc/Visualization'
 
-  ${(props) => props.theme.mq.medium} {
-    width: ${(props) => (props.large ? 12 : 6)}rem;
-  }
-`
-const Emojis = styled(Emoji)`
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.375rem;
-  justify-content: center;
-  align-items: center;
-  min-height: 5.625rem;
-  margin-bottom: 0.25rem;
-  font-size: 2rem;
-  text-align: center;
-
-  ${(props) => props.theme.mq.medium} {
-    min-height: 3.25rem;
-    font-size: 1.5rem;
-    gap: 0.25rem;
-  }
-`
-const Label = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 2.5rem;
-  text-align: center;
-  font-size: 0.875rem;
-  font-weight: 300;
-`
-const Equals = styled.div`
-  font-size: 3.5rem;
-  font-weight: bold;
-
-  ${(props) => props.theme.mq.medium} {
-    font-size: 2.5rem;
-  }
-`
-const LinkWrapper = styled.div`
-  width: 100%;
-  text-align: center;
-`
-const StyledMagicLink = styled(MagicLink)`
-  font-size: 0.875rem;
-`
 export default function Boeuf() {
   return (
     <>
@@ -71,26 +21,24 @@ export default function Boeuf() {
         En terme d'émissions de CO2<sub>e</sub>
       </Title>
       <Equivalents>
-        <Equivalent>
+        <Equivalent size={[7.5, 6, 4]}>
           <Emojis>📺</Emojis>
           <Label>1 télévision</Label>
         </Equivalent>
         <Equals>=</Equals>
-        <Equivalent>
+        <Equivalent size={[10, 8, 10]}>
           <Emojis>💻💻💻</Emojis>
           <Label>3 ordinateurs portables</Label>
         </Equivalent>
         <Equals>=</Equals>
-        <Equivalent large>
+        <Equivalent size={[20, 12, 12]}>
           <Emojis>📱📱📱📱📱📱📱📱📱📱📱📱📱</Emojis>
           <Label>13 smartphones</Label>
         </Equivalent>
       </Equivalents>
-      <LinkWrapper>
-        <StyledMagicLink to='/categories/numerique' className='noscreenshot'>
-          Voir la catégorie numérique
-        </StyledMagicLink>
-      </LinkWrapper>
+      <CenterLink to='/categories/numerique'>
+        Voir la catégorie numérique
+      </CenterLink>
     </>
   )
 }

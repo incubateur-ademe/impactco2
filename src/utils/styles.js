@@ -111,14 +111,29 @@ export const GlobalStyle = createGlobalStyle`
     ${(props) => props.theme.mq.medium} {
       font-size: 2rem;
     }
+    ${(props) => props.theme.mq.small} {
+      font-size: 1.5rem;
+    }
   }
   
   h2 {
     font-size: 2rem;
+
+     ${(props) => props.theme.mq.medium} {
+      font-size: 1.75rem;
+    }
+
+    ${(props) => props.theme.mq.small} {
+      font-size: 1.375rem;
+    }
   }
 
   h3 {
     font-size: 1.375rem;
+
+    ${(props) => props.theme.mq.small} {
+      font-size: 1.125rem;
+    }
   }
 
   a {

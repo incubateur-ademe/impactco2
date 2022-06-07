@@ -20,6 +20,10 @@ const Wrapper = styled(MagicLink)`
   &:hover {
     background-color: ${(props) => props.theme.colors.mainLight};
   }
+
+  ${(props) => props.theme.mq.small} {
+    padding: 0.25rem 0.25rem 1rem;
+  }
 `
 const TitleWrapper = styled.div`
   position: relative;

@@ -24,6 +24,9 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     width: calc(33.3333% - 0.5rem);
   }
+  ${(props) => props.theme.mq.small} {
+    width: calc(50% - 0.375rem);
+  }
 `
 const ButtonDrag = styled.button`
   position: absolute;
@@ -100,6 +103,10 @@ const Number = styled.span`
   display: block;
   font-size: 2rem;
   font-weight: bold;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.75rem;
+  }
 `
 const Name = styled.span`
   display: flex;

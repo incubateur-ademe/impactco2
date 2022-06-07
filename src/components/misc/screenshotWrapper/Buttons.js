@@ -50,6 +50,11 @@ const Wrapper = styled.div`
   display: flex;
   align-items: flex-end;
   gap: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    left: 1rem;
+    justify-content: space-between;
+  }
 `
 const Button = styled.button`
   display: flex;

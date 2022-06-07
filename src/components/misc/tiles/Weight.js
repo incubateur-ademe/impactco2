@@ -18,7 +18,10 @@ const Wrapper = styled.div`
 
   ${(props) => props.theme.mq.medium} {
     width: calc(33.3333% - 0.5rem);
-    padding: 2rem 1rem 1.5rem;
+    padding: 1.125rem 1rem 1.375rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    width: calc(50% - 0.375rem);
   }
 `
 const Label = styled.label`

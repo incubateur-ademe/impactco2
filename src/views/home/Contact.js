@@ -5,13 +5,18 @@ import Section from 'components/base/Section'
 import SimpleTile from 'components/base/SimpleTile'
 
 const Title = styled.h2``
+const Br = styled.br`
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
+`
 export default function Contact(props) {
   return (
     <Section>
       <Section.Content>
         <Title>
           Comment intégrer ces données
-          <br />à mon site ou application ?
+          <Br /> à mon site ou application ?
         </Title>
         <SimpleTile.Wrapper>
           <SimpleTile

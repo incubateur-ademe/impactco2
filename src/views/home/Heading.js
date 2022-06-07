@@ -16,6 +16,11 @@ const Title = styled.h1`
   color: ${(props) => props.theme.colors.main};
   text-align: center;
 `
+const Br = styled.br`
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
+`
 const Text = styled.p`
   margin: 0 auto 2rem;
   font-size: 1.125rem;
@@ -35,6 +40,11 @@ const StyledSearch = styled(Search)`
     width: 100%;
     font-size: 1.25rem;
   }
+
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
 `
 const StyledButtonLink = styled(ButtonLink)`
   display: block;
@@ -48,8 +58,7 @@ export default function Heading() {
       <StyledSectionContent>
         <Title>
           Découvrez l’impact sur le climat
-          <br />
-          des objets et gestes de votre
+          <Br /> des objets et gestes de votre
           <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />
           quotidien
         </Title>

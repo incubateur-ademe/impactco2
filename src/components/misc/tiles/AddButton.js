@@ -20,6 +20,13 @@ const Wrapper = styled.button`
   &:focus h4 {
     transform: scale(1.2);
   }
+
+  ${(props) => props.theme.mq.medium} {
+    width: calc(33.3333% - 0.5rem);
+  }
+  ${(props) => props.theme.mq.small} {
+    width: calc(50% - 0.375rem);
+  }
 `
 const Title = styled.h4`
   height: 5rem;

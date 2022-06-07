@@ -18,6 +18,10 @@ const hover = keyframes`
 const StyledButtonWrapper = styled(Button.Wrapper)`
   align-items: flex-start;
   margin-top: ${(props) => (props.title ? '0.25rem' : 0)};
+
+  ${(props) => props.theme.mq.medium} {
+    margin: 0;
+  }
 `
 const StyledButton = styled(Button)`
   padding: 0.375rem 1rem;

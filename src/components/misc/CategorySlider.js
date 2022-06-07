@@ -26,6 +26,9 @@ const Category = styled.div`
   ${(props) => props.theme.mq.medium} {
     font-size: 2.5rem;
   }
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.25rem;
+  }
 `
 export default function CategorySlider(props) {
   const { categories } = useContext(DataContext)

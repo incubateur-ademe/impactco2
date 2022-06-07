@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     width: calc(${(props) => (props.column === 2 ? 50 : 33.3333)}% - 0.5rem);
   }
   ${(props) => props.theme.mq.small} {
-    width: calc(${(props) => (props.column === 2 ? 100 : 50)}% - 0.5rem);
+    width: calc(${(props) => (props.column === 2 ? 50 : 100)}% - 0.5rem);
   }
 `
 const Top = styled.div`
@@ -54,6 +54,10 @@ const Title = styled.p`
   font-weight: bold;
   text-align: center;
   color: ${(props) => props.theme.colors.text};
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
 `
 const Text = styled.p`
   margin: 0 0.5rem 0.625rem;

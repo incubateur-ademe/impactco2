@@ -17,7 +17,7 @@ export default function Boeuf() {
         En terme d'émissions de CO2<sub>e</sub>
       </Title>
       <Equivalents>
-        <Equivalent>
+        <Equivalent size={[7.5, 6, 4]}>
           <Emojis>📱</Emojis>
           <Label>
             produire
@@ -26,8 +26,8 @@ export default function Boeuf() {
           </Label>
         </Equivalent>
         <Equals>=</Equals>
-        <Equivalent medium>
-          <Emojis large>🥩🥩🥩🥩</Emojis>
+        <Equivalent size={[10, 7, 7]}>
+          <Emojis margin={70}>🥩🥩🥩🥩</Emojis>
           <Label>
             consommer
             <br />
@@ -35,7 +35,7 @@ export default function Boeuf() {
           </Label>
         </Equivalent>
         <Equals>=</Equals>
-        <Equivalent large>
+        <Equivalent size={[10, 6, 6]}>
           <Emojis large>👕👕👕👕👕</Emojis>
           <Label>
             fabriquer
