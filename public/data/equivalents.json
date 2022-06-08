@@ -30,7 +30,7 @@
     "total": 18.63,
     "default": true,
     "defaultEmbed": true,
-    "about": "Une année de chauffage (en France, la période de chauffage est généralement comprise entre le 15 octobre et le 15 avril de l'année suivante) au gaz équivaut à 3.4tCO<sub>2</sub>e (<a href='https://nosgestesclimat.fr/documentation/logement/gaz' target='_blank'>source</a>).<br/><br/>Ce qui fait qu'une journée de chauffage en période de chauffe est équivalente à 18.63kgCO<sub>2</sub>e."
+    "about": "Une année de chauffage (en France, la période de chauffage est généralement comprise entre le 15 octobre et le 15 avril de l'année suivante) au gaz équivaut à 3.4tCO<sub>2</sub>e (<a href='https://nosgestesclimat.fr/documentation/logement/chauffage/gaz' target='_blank'>source</a>).<br/><br/>Ce qui fait qu'une journée de chauffage en période de chauffe est équivalente à 18.63kgCO<sub>2</sub>e."
   },
   {
     "id": 27976,
