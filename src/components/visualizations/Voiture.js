@@ -64,7 +64,9 @@ export default function Voiture() {
         <br />
         en TGV
       </Small>
-      <CenterLink to='/co2e'>Voir plus d'équivalences</CenterLink>
+      <CenterLink to='/categories/deplacement'>
+        Voir tous les modes de transport
+      </CenterLink>
     </>
   )
 }

@@ -22,6 +22,8 @@ const visualizations = {
   repasavecdupoissongras: [<PoissonGras />],
   repasavecdupoissonblanc: [<PoissonBlanc />],
   voiturethermique: [<Voiture />],
+  busthermique: [<Voiture />],
+  tgv: [<Voiture />],
 }
 
 export default visualizations
