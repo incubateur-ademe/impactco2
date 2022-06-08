@@ -7,13 +7,21 @@ import Smartphone from './Smartphone'
 import Boeuf from './Boeuf'
 import PoissonGras from './PoissonGras'
 import PoissonBlanc from './PoissonBlanc'
+import Vegetalien from './Vegetalien'
+
+import Voiture from './Voiture'
 
 const visualizations = {
   smartphone: [<SmartphoneGeneral />, <SmartphoneCategory />, <Smartphone />],
+  ordinateurportable: [<SmartphoneCategory />],
+  television: [<SmartphoneCategory />],
+  repasvegetalien: [<Vegetalien />],
   repasvegetarien: [<Boeuf />],
-  repasavecduboeuf: [<Boeuf />],
+  repasavecduboeuf: [<Boeuf />, <SmartphoneGeneral />],
+  repasavecdupoulet: [<Boeuf />],
   repasavecdupoissongras: [<PoissonGras />],
   repasavecdupoissonblanc: [<PoissonBlanc />],
+  voiturethermique: [<Voiture />],
 }
 
 export default visualizations

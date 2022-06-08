@@ -1,48 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Button from 'components/base/Button'
-import Emoji from 'components/base/Emoji'
+import {
+  Title,
+  Equivalents,
+  Equivalent,
+  Emojis,
+  Label,
+  Equals,
+  CenterLink,
+  Small,
+} from 'components/misc/Visualization'
 
-const Equivalents = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 1.5rem;
-`
-const Equivalent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: ${(props) => (props.large ? 19 : 5)}rem;
-`
-const Emojis = styled(Emoji)`
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: ${(props) => (props.small ? 0.125 : 0.375)}rem;
-  justify-content: center;
-  align-items: center;
-  min-height: 5.625rem;
-  margin-bottom: 0.25rem;
-  font-size: ${(props) => (props.small ? 0.875 : 2)}rem;
-  text-align: center;
-`
-const Label = styled.div`
-  text-align: center;
-  font-size: 0.875rem;
-  font-weight: 300;
-`
-const Equals = styled.div`
-  font-size: 3.5rem;
-  font-weight: bold;
-`
-const StyledButton = styled(Button)`
-  font-size: 0.875rem;
-`
 export default function Voiture() {
   return (
     <>
+      <Title>
+        En terme d'émissions de CO2<sub>e</sub>
+      </Title>
       <Equivalents>
-        <Equivalent>
+        <Equivalent size={[7.5, 6, 8]}>
           <Emojis>🚗</Emojis>
           <Label>
             <strong>1 km</strong>
@@ -51,7 +28,7 @@ export default function Voiture() {
           </Label>
         </Equivalent>
         <Equals>=</Equals>
-        <Equivalent>
+        <Equivalent size={[6, 7, 22]}>
           <Emojis>🚌🚌</Emojis>
           <Label>
             <strong>2 km</strong>
@@ -60,7 +37,7 @@ export default function Voiture() {
           </Label>
         </Equivalent>
         <Equals>=</Equals>
-        <Equivalent large>
+        <Equivalent size={[20, 16, 35]}>
           <Emojis small>
             🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅🚅
           </Emojis>
@@ -71,11 +48,23 @@ export default function Voiture() {
           </Label>
         </Equivalent>
       </Equivalents>
-      <Button.Wrapper>
-        <StyledButton to='/categories/deplacement'>
-          Voir tous les modes de transport
-        </StyledButton>
-      </Button.Wrapper>
+      <Small>
+        <br />
+        <strong>1 km</strong>
+        <br />
+        en voiture
+        <br />=
+        <br />
+        <strong>2 km</strong>
+        <br />
+        en bus
+        <br />=
+        <br />
+        <strong>112 km</strong>
+        <br />
+        en TGV
+      </Small>
+      <CenterLink to='/co2e'>Voir plus d'équivalences</CenterLink>
     </>
   )
 }

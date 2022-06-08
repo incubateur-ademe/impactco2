@@ -36,21 +36,21 @@ export const Emojis = styled(Emoji)`
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 0.75rem;
+  gap: ${(props) => (props.small ? '0.125rem 0.25rem' : '0.25rem 0.75rem')};
   justify-content: center;
   align-items: center;
   width: ${(props) => (props.margin ? props.margin : 100)}%;
   margin: 0 auto 0.75rem;
-  font-size: 2rem;
+  font-size: ${(props) => (props.small ? 1 : 2)}rem;
   text-align: center;
 
   ${(props) => props.theme.mq.medium} {
-    font-size: 1.5rem;
+    font-size: ${(props) => (props.small ? 0.75 : 1.5)}rem;
     gap: 0.25rem;
   }
   ${(props) => props.theme.mq.small} {
-    font-size: 7vw;
-    gap: 1vw;
+    font-size: ${(props) => (props.small ? 3.5 : 7)}vw;
+    gap: ${(props) => (props.small ? 0.5 : 1)}vw;
   }
 `
 export const Label = styled.div`
@@ -71,6 +71,9 @@ export const Label = styled.div`
   }
 `
 export const Equals = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
   font-size: 3.5rem;
   font-weight: bold;
   line-height: 1;
@@ -79,9 +82,6 @@ export const Equals = styled.div`
     font-size: 2.5rem;
   }
   ${(props) => props.theme.mq.small} {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
     font-size: 8vw;
   }
 `
