@@ -10,6 +10,11 @@ const Wrapper = styled.div`
   padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
 `
 const Title = styled.h1`
   font-size: 2rem;
