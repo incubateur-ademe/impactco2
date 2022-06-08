@@ -68,7 +68,7 @@ const Subtitle = styled.span`
 export default React.forwardRef(function TextInput(props, ref) {
   return (
     <Wrapper>
-      <Glass />
+      <Glass onClick={() => ref.current.focus()} />
       <Input
         ref={ref}
         type='text'

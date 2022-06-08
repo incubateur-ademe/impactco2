@@ -12,6 +12,10 @@ export const Equivalents = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
+
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 1rem;
+  }
 `
 export const Equivalent = styled.div`
   position: relative;
@@ -24,7 +28,7 @@ export const Equivalent = styled.div`
     width: ${(props) => props.size[1]}rem;
   }
   ${(props) => props.theme.mq.small} {
-    width: ${(props) => props.size[2]}rem;
+    width: ${(props) => props.size[2]}vw;
   }
 `
 export const Emojis = styled(Emoji)`
@@ -42,6 +46,10 @@ export const Emojis = styled(Emoji)`
   ${(props) => props.theme.mq.medium} {
     font-size: 1.5rem;
     gap: 0.25rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    font-size: 7vw;
+    gap: 1vw;
   }
 `
 export const Label = styled.div`
@@ -73,7 +81,14 @@ export const Equals = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 8vw;
+  }
+`
+export const Small = styled.p`
+  display: none;
+  text-align: center;
+  ${(props) => props.theme.mq.small} {
+    display: block;
   }
 `
 export const LinkWrapper = styled.div`

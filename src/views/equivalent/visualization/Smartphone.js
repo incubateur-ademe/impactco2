@@ -13,6 +13,11 @@ const Sizes = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-bottom: 2.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    gap: 2vw;
+  }
 `
 const Size = styled.p`
   display: flex;
@@ -30,6 +35,10 @@ const Size = styled.p`
     width: ${(props) => (props.small ? 20 : props.large ? 28 : 24)}vw;
     height: ${(props) => (props.small ? 20 : props.large ? 28 : 24)}vw;
   }
+  ${(props) => props.theme.mq.small} {
+    width: ${(props) => (props.small ? 30 : props.large ? 40 : 35)}vw;
+    height: ${(props) => (props.small ? 30 : props.large ? 40 : 35)}vw;
+  }
 `
 const StyledEmoji = styled(Emoji)`
   display: flex;
@@ -41,12 +50,19 @@ const StyledEmoji = styled(Emoji)`
   ${(props) => props.theme.mq.medium} {
     font-size: ${(props) => (props.small ? 3 : props.large ? 5 : 4)}vw;
   }
+  ${(props) => props.theme.mq.small} {
+    height: auto;
+    font-size: ${(props) => (props.small ? 5 : props.large ? 7 : 6)}vw;
+  }
 `
 const Label = styled.span`
   display: block;
   margin-bottom: 0.5rem;
   ${(props) => props.theme.mq.medium} {
     font-size: 2vw;
+  }
+  ${(props) => props.theme.mq.medium} {
+    font-size: 3.5vw;
   }
 `
 const Number = styled.span`
@@ -58,6 +74,9 @@ const Number = styled.span`
   ${(props) => props.theme.mq.medium} {
     font-size: 4vw;
   }
+  ${(props) => props.theme.mq.medium} {
+    font-size: 7vw;
+  }
 `
 const Unit = styled.span`
   display: block;
@@ -66,6 +85,9 @@ const Unit = styled.span`
 
   ${(props) => props.theme.mq.medium} {
     font-size: 1.5vw;
+  }
+  ${(props) => props.theme.mq.medium} {
+    font-size: 2.5vw;
   }
 `
 export default function Smartphone() {

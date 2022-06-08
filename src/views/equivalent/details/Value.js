@@ -21,7 +21,7 @@ const Number = styled.span`
   font-weight: bold;
 
   ${(props) => props.theme.mq.small} {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 `
 const Unit = styled.span`
@@ -48,6 +48,12 @@ const StyledEmoji = styled(Emoji)`
   font-size: 3rem;
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 5.25rem;
+
+  ${(props) => props.theme.mq.small} {
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 2rem;
+  }
 `
 export default function Value(props) {
   return (
