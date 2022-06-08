@@ -10,6 +10,7 @@ import PoissonBlanc from './PoissonBlanc'
 import Vegetalien from './Vegetalien'
 
 import Voiture from './Voiture'
+import Metro from './Metro'
 
 const visualizations = {
   smartphone: [<SmartphoneGeneral />, <SmartphoneCategory />, <Smartphone />],
@@ -22,8 +23,9 @@ const visualizations = {
   repasavecdupoissongras: [<PoissonGras />],
   repasavecdupoissonblanc: [<PoissonBlanc />],
   voiturethermique: [<Voiture />],
-  busthermique: [<Voiture />],
+  bus: [<Voiture />],
   tgv: [<Voiture />],
+  metro: [<Metro />],
 }
 
 export default visualizations
