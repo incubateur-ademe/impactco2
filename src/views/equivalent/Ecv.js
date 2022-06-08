@@ -75,12 +75,6 @@ export default function Ecv(props) {
     <Section>
       <Section.Content>
         <Title>Détail de l'empreinte</Title>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem
-          dictum, ultricies nibh vel, lobortis nisi. Phasellus sed posuere diam.
-          Proin volutpat sollicitudin cursus. Nam suscipit at arcu malesuada
-          eleifend. Duis egestas pharetra urna et scelerisque.
-        </Text>
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Flipper flipKey={ecvToDisplay.map((step) => step.id).join()}>
             {ecvToDisplay.map((item) => (
