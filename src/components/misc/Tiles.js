@@ -57,6 +57,18 @@ export default function Tiles(props) {
     curEquivalent && setWeight(formatTotal(curEquivalent))
   }, [curEquivalent])
 
+  const [showSubtitle, setShowSubtitle] = useState(false)
+  useEffect(() => {
+    setShowSubtitle(
+      tiles.filter((tile) =>
+        tiles.find(
+          (otherTile) =>
+            otherTile.name.fr === tile.name.fr && otherTile.slug !== tile.slug
+        )
+      ).length
+    )
+  }, [tiles])
+
   return (
     <StyledSection background={props.background} iframe={iframe}>
       <Section.Content>
@@ -90,6 +102,7 @@ export default function Tiles(props) {
                   equivalent={curEquivalent}
                   weight={formatTotal(curEquivalent)}
                   background={props.background}
+                  showSubtitle={showSubtitle}
                   equivalentPage={props.equivalent?.slug === curEquivalent.slug}
                   removeEquivalent={() => setCurEquivalent(null)}
                   reference
@@ -125,6 +138,7 @@ export default function Tiles(props) {
                     weight={weight}
                     key={equivalent.id}
                     background={props.background}
+                    showSubtitle={showSubtitle}
                     removeEquivalent={(id) =>
                       setTiles((equivalents) =>
                         equivalents.filter((equivalent) => equivalent.id !== id)

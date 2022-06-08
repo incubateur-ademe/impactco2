@@ -110,9 +110,15 @@ const Number = styled.span`
 `
 const Name = styled.span`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 2.125rem;
+`
+const Subtitle = styled.span`
+  display: block;
+  font-weight: 300;
+  font-size: 0.75rem;
 `
 const StyledButton = styled(Button)`
   padding: 0.5em 0.75rem;
@@ -186,6 +192,16 @@ export default function Tile(props) {
           {formatName(
             props.equivalent.name.fr,
             props.weight / formatTotal(props.equivalent)
+          )}
+          {props.showSubtitle && props.equivalent.subtitle ? (
+            <Subtitle>
+              {formatName(
+                props.equivalent.subtitle.fr,
+                props.weight / formatTotal(props.equivalent)
+              )}
+            </Subtitle>
+          ) : (
+            ''
           )}
         </Name>
       </Title>
