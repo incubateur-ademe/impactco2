@@ -11,6 +11,7 @@ import Vegetalien from './Vegetalien'
 
 import Voiture from './Voiture'
 import Metro from './Metro'
+import Avion from './Avion'
 
 const visualizations = {
   smartphone: [<SmartphoneGeneral />, <SmartphoneCategory />, <Smartphone />],
@@ -26,6 +27,7 @@ const visualizations = {
   bus: [<Voiture />],
   tgv: [<Voiture />],
   metro: [<Metro />],
+  avion: [<Avion />],
 }
 
 export default visualizations
