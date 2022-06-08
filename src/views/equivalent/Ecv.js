@@ -92,10 +92,10 @@ export default function Ecv(props) {
                 )
               }
             >
-              Ajouter l'usage
+              {usage ? 'Enlever' : 'Ajouter'} l'usage
             </Button>
             <Button hollow small onClick={() => setEnd((prevEnd) => !prevEnd)}>
-              Ajouter la fin de vie
+              {end ? 'Enlever' : 'Ajouter'} la fin de vie
             </Button>
           </StyledButtonWrapper>
         </ScreenshotWrapper>
