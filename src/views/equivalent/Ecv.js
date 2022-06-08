@@ -2,36 +2,20 @@ import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import { Flipper, Flipped } from 'react-flip-toolkit'
 
-import { formatTotal } from 'utils/formatters'
+import { formatNumberFixed, formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import Step from './ecv/Step'
 
-const Title = styled.h2``
-const Text = styled.p``
-const Total = styled.div``
-const Number = styled.span`
-  font-size: 3.75rem;
-  font-weight: bold;
+export const Title = styled.h3`
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 2rem;
 
-  ${(props) => props.theme.mq.small} {
-    font-size: 2rem;
-  }
-`
-const Unit = styled.span`
-  font-size: 1rem;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.75rem;
-  }
-`
-const Big = styled.span`
-  font-size: 1.25rem;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1rem;
+  span {
+    font-size: 0.75em;
   }
 `
 const StyledButtonWrapper = styled(Button.Wrapper)``
@@ -74,8 +58,16 @@ export default function Ecv(props) {
   return ecvToDisplay.length ? (
     <Section>
       <Section.Content>
-        <Title>Détail de l'empreinte</Title>
         <ScreenshotWrapper equivalent={props.equivalent}>
+          <Title>
+            Détail de l'empreinte d'un smartphone (
+            {formatNumberFixed(formatTotal(props.equivalent, usage, end))}{' '}
+            <span>
+              kgCO
+              <sub>2</sub>e
+            </span>
+            )
+          </Title>
           <Flipper flipKey={ecvToDisplay.map((step) => step.id).join()}>
             {ecvToDisplay.map((item) => (
               <Flipped flipId={item.id} key={item.id}>
