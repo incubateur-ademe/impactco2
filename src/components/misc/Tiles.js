@@ -48,7 +48,7 @@ export default function Tiles(props) {
   const [curEquivalent, setCurEquivalent] = useState(props.equivalent)
   useEffect(() => {
     if (!tiles.length) {
-      setTiles(equivalents.filter((equivalent) => equivalent.tile || true))
+      setTiles(equivalents.filter((equivalent) => equivalent.tile))
     }
   }, [tiles, equivalents, setTiles])
 
