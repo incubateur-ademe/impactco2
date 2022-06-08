@@ -23,9 +23,11 @@ const Wrapper = styled.form`
   transition: box-shadow 300ms ease-out, background-color 300ms ease-out;
 
   ${(props) => props.theme.mq.small} {
-    left: auto;
-    width: ${(props) => (props.focus ? 'calc(100vw - 1.5rem)' : '2.375rem')};
-    border-radius: ${(props) => (props.focus ? ' 0.625em' : '4rem')};
+    left: ${(props) => (props.home ? 0 : 'auto')};
+    width: ${(props) =>
+      props.home ? 'auto' : props.focus ? 'calc(100vw - 1.5rem)' : '2.375rem'};
+    border-radius: ${(props) =>
+      props.home || props.focus ? ' 0.625em' : '4rem'};
     transition: box-shadow 300ms ease-out, width 200ms ease-out;
   }
 `
@@ -99,6 +101,7 @@ export default function SearchBar(props) {
   return (
     <Wrapper
       focus={focus}
+      home={props.home}
       onSubmit={(e) => {
         e.preventDefault()
         if (search.length > 1) {

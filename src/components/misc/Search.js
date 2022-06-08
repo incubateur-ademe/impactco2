@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 export default function Search(props) {
   return (
     <Wrapper className={props.className}>
-      <SearchBar placeholder={props.placeholder} />
+      <SearchBar placeholder={props.placeholder} home={props.home} />
     </Wrapper>
   )
 }
