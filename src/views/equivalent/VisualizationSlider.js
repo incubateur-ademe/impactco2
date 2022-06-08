@@ -2,11 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 
+import visualizations from 'components/visualizations/list'
 import Section from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
-import SmartphoneGeneral from './visualization/SmartphoneGeneral'
-import SmartphoneCategory from './visualization/SmartphoneCategory'
-import Smartphone from './visualization/Smartphone'
+import Tiles from 'components/misc/Tiles'
 
 const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -37,8 +36,9 @@ const StyledSection = styled(Section)`
     ) => props.theme.colors.main.replace('#', '')}'/%3E%3C/svg%3E%0A");
   }
 `
+
 export default function Visualization(props) {
-  return (
+  return visualizations[props.equivalent.slug] ? (
     <StyledSection>
       <Section.Content>
         <Slider
@@ -61,17 +61,15 @@ export default function Visualization(props) {
             },
           ]}
         >
-          <ScreenshotWrapper equivalent={props.equivalent} fixed>
-            <SmartphoneGeneral />
-          </ScreenshotWrapper>
-          <ScreenshotWrapper equivalent={props.equivalent} fixed>
-            <SmartphoneCategory />
-          </ScreenshotWrapper>
-          <ScreenshotWrapper equivalent={props.equivalent} fixed>
-            <Smartphone />
-          </ScreenshotWrapper>
+          {visualizations[props.equivalent.slug].map((visualization) => (
+            <ScreenshotWrapper equivalent={props.equivalent} fixed>
+              {visualization}
+            </ScreenshotWrapper>
+          ))}
         </Slider>
       </Section.Content>
     </StyledSection>
+  ) : (
+    <Tiles equivalent={props.equivalent} />
   )
 }

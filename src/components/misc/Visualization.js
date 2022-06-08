@@ -7,11 +7,12 @@ import Emoji from 'components/base/Emoji'
 export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
+  margin-bottom: 2rem;
 `
 export const Equivalents = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  margin-bottom: 4.5rem;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 1rem;
