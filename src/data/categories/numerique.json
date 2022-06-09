@@ -158,7 +158,7 @@
       "fr": "24 pouces"
     },
     "slug": "ecran24pouces",
-    "emoji": "🖥️",
+    "emoji": "🖥",
     "category": 1,
     "ecv": [
       {
@@ -194,7 +194,7 @@
     },
 
     "slug": "tablettedetachable",
-    "emoji": "🖥️",
+    "emoji": "💻",
     "category": 1,
     "ecv": [
       {
