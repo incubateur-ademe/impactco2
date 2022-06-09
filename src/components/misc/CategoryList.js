@@ -32,6 +32,9 @@ const CheckboxWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: 0 auto;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  transition: opacity 200ms;
 `
 const StyledCheckbox = styled(Checkbox)`
   font-size: 0.875rem;
@@ -67,7 +70,7 @@ export default function Category(props) {
             </MagicLink>
           </Title>
         ) : (
-          <CheckboxWrapper>
+          <CheckboxWrapper visible={props.category.slug !== 'repas'}>
             <StyledCheckbox
               name='displayAll'
               checked={displayAll}

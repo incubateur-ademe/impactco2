@@ -38,9 +38,6 @@ const Accessibility = styled.div`
 export default function Footer(props) {
   return (
     <>
-      <Section background as='footer'>
-        <StyledSectionContent></StyledSectionContent>
-      </Section>
       <LogosWrapper>
         <Logos
           to='https://datagir.ademe.fr/'

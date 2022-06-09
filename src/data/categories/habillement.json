@@ -75,7 +75,7 @@
     "emoji": "👗",
     "category": 5,
     "total": 49.8,
-    "default": true,
+    "default": false,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },

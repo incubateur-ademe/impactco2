@@ -43,7 +43,7 @@
     "emoji": "🚗",
     "category": 4,
     "total": 0.0198,
-    "default": true,
+    "default": false,
     "tile": false,
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture"
   },
