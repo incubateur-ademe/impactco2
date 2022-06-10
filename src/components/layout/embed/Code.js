@@ -42,7 +42,7 @@ export default function Code(props) {
   useEffect(() => {
     setScript(
       `<script id="${props.id || 'datagir'}" src="${
-        window.location.origin
+        location.origin
       }/iframe.js" data-search="${
         props.typeShare === 'result' ? location.pathname : ''
       }?theme=${theme}"></script>`

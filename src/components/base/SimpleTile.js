@@ -72,7 +72,6 @@ const StyledButton = styled(Button)`
     font-size: 0.75rem;
   }
 `
-
 const Svg = styled.svg`
   width: 1em;
   height: auto;
