@@ -10,9 +10,20 @@ const Wrapper = styled.div`
   font-size: 0.875rem;
   text-align: right;
   line-height: 1.2;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    margin: 0;
+  }
 `
 const Label = styled.div`
   margin-bottom: 0.25rem;
+
+  ${(props) => props.theme.mq.small} {
+    margin: 0 0.5rem 0 0.25rem;
+  }
 `
 const Selector = styled.div`
   display: flex;

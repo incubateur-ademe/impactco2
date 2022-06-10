@@ -22,6 +22,7 @@ const Background = styled.div`
 const Content = styled.div`
   position: relative;
   display: flex;
+  z-index: 2;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
@@ -35,7 +36,7 @@ export default function VisualizationWrapper(props) {
   return (
     <Wrapper ref={ref}>
       <Background className='noscreenshot' />
-      <Content fixed={props.fixed}>{props.children}</Content>
+      <Content>{props.children}</Content>
       <Buttons takeScreenshot={takeScreenshot} />
       {isScreenshotting && <Signature />}
     </Wrapper>

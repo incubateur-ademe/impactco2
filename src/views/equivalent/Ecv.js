@@ -18,7 +18,11 @@ export const Title = styled.h3`
     font-size: 0.75em;
   }
 `
-const StyledButtonWrapper = styled(Button.Wrapper)``
+const StyledButtonWrapper = styled(Button.Wrapper)`
+  ${(props) => props.theme.mq.small} {
+    justify-content: center;
+  }
+`
 export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
 

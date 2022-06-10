@@ -12,6 +12,12 @@ const Wrapper = styled.li`
   &:last-child {
     margin-bottom: 1rem;
   }
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: 0.0675rem solid ${(props) => props.theme.colors.secondDark};
+  }
 `
 const Title = styled.div`
   width: 9rem;
@@ -20,6 +26,13 @@ const Title = styled.div`
   font-size: 0.875rem;
   text-align: right;
   line-height: 1.2;
+
+  ${(props) => props.theme.mq.small} {
+    width: auto;
+    margin: 0;
+    padding: 0.25rem;
+    text-align: left;
+  }
 `
 const Chart = styled.div`
   position: relative;
@@ -28,6 +41,13 @@ const Chart = styled.div`
   flex: 1;
   padding: 0.75rem 0;
   border-left: 0.0675rem solid ${(props) => props.theme.colors.secondDark};
+
+  ${(props) => props.theme.mq.small} {
+    width: calc(100% - 3.5rem);
+    margin-bottom: 1rem;
+    padding: 0;
+    border: none;
+  }
 `
 const Sizer = styled.div`
   width: 9rem;
@@ -52,6 +72,11 @@ const Value = styled.div`
   padding-left: ${(props) => (props.noBar ? 0 : 0.5)}rem;
   line-height: 0.7;
   transition: color 200ms ease-out;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    line-height: 1.1;
+  }
 `
 const Percent = styled.span`
   margin-right: 0.25rem;
@@ -64,7 +89,6 @@ const Percent = styled.span`
   }
 `
 const Absolute = styled.span`
-  cursor: pointer;
   font-size: 0.75rem;
   font-weight: 300;
   white-space: nowrap;
