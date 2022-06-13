@@ -15,7 +15,7 @@ const Wrapper = styled(MagicLink)`
   text-decoration: none;
   color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'background']};
   background-color: ${(props) =>
-    props.hollow ? 'transparent' : props.theme.colors.main};
+    props.theme.colors[props.hollow ? 'background' : 'main']};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
