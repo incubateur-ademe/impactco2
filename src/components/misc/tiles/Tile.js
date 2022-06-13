@@ -93,11 +93,12 @@ const ButtonEmoji = styled.button`
     display: block;
   }
 `
-const Title = styled.h4`
+const Title = styled.p`
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
   font-weight: normal;
   text-align: center;
+  line-height: 1.2;
   color: ${(props) => props.theme.colors.text};
 `
 const Number = styled.span`
