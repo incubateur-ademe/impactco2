@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
+import { useQueryParamString } from 'react-use-query-param-string'
 
 import visualizations from 'components/visualizations/list'
 import Section from 'components/base/Section'
@@ -38,7 +39,12 @@ const StyledSection = styled(Section)`
 `
 
 export default function Visualization(props) {
-  return visualizations[props.equivalent.slug] ? (
+  const [currentSlide, setCurrentSlide, initialized] = useQueryParamString(
+    'slide',
+    0
+  )
+
+  return visualizations[props.equivalent.slug] && initialized ? (
     <StyledSection>
       <Section.Content>
         <Slider
@@ -47,9 +53,9 @@ export default function Visualization(props) {
           speed={500}
           slidesToShow={1}
           slidesToScroll={1}
-          initialSlide={0}
+          initialSlide={currentSlide}
           afterChange={(index) => {
-            // props.setCategory(categories[index])
+            setCurrentSlide(index)
           }}
           responsive={[
             {

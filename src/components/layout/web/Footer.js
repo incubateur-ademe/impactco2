@@ -2,14 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 import MagicLink from 'components/base/MagicLink'
-import Section from 'components/base/Section'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
 import Datagir from 'components/base/Datagir'
 
-const StyledSectionContent = styled(Section.Content)`
-  padding: 2rem 0;
-`
 const LogosWrapper = styled.div`
   display: flex;
   justify-content: center;
