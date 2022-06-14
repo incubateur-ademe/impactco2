@@ -33,7 +33,7 @@ export default function CO2EModal() {
 
   const location = useLocation()
 
-  const url = location.origin
+  const url = location.href
 
   return (
     <Modal open={open} setOpen={setOpen}>

@@ -68,7 +68,11 @@ export default function Visualization(props) {
           ]}
         >
           {visualizations[props.equivalent.slug].map((visualization) => (
-            <ScreenshotWrapper equivalent={props.equivalent} fixed>
+            <ScreenshotWrapper
+              key={props.equivalent.slug}
+              equivalent={props.equivalent}
+              fixed
+            >
               {visualization}
             </ScreenshotWrapper>
           ))}
