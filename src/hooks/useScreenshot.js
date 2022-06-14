@@ -32,6 +32,7 @@ export default function useScreenshot(slug) {
           console.log(err)
         })
     }, 20)
+    window?._paq?.push(['trackEvent', 'Interaction', 'Screenshot', slug])
   }
 
   return { ref, takeScreenshot, isScreenshotting }

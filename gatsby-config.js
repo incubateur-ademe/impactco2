@@ -11,7 +11,6 @@ module.exports = {
     //`gatsby-plugin-preact`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-use-query-params',
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
     {
@@ -29,6 +28,7 @@ module.exports = {
         siteId: '156',
         matomoUrl: 'https://stats.data.gouv.fr',
         siteUrl: 'https://monconvertisseurco2.fr',
+        dev: true,
       },
     },
     /*{

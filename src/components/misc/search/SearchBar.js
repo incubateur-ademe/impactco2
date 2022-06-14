@@ -68,6 +68,7 @@ export default function SearchBar(props) {
   }, [equivalents])
 
   useEffect(() => {
+    window?._paq?.push(['trackEvent', 'Interaction', 'Search', search])
     if (fuse && search.length > 1) {
       setResults(
         fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))

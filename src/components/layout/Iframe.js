@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { GlobalStyle } from 'utils/styles'
+import useInteraction from 'hooks/useInteraction'
 import ModalProvider from 'components/providers/ModalProvider'
 import UXProvider from 'components/providers/UXProvider'
 import DataProvider from 'components/providers/DataProvider'
@@ -15,6 +16,8 @@ const Wrapper = styled.div`
   padding: 1rem 0;
 `
 export default function Iframe(props) {
+  useInteraction()
+
   return (
     <>
       <Wrapper>

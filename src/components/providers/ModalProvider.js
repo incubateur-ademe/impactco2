@@ -10,11 +10,20 @@ export default function ModalProvider(props) {
     <ModalContext.Provider
       value={{
         Co2e,
-        setCo2e,
+        setCo2e: (value) => {
+          window?._paq?.push(['trackEvent', 'Interaction', 'Modal', 'CO2e'])
+          setCo2e(value)
+        },
         tiles,
-        setTiles,
+        setTiles: (value) => {
+          window?._paq?.push(['trackEvent', 'Interaction', 'Modal', 'Tuiles'])
+          setTiles(value)
+        },
         share,
-        setShare,
+        setShare: (value) => {
+          window?._paq?.push(['trackEvent', 'Interaction', 'Modal', 'Partage'])
+          setShare(value)
+        },
       }}
     >
       {props.children}

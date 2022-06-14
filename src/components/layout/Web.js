@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { GlobalStyle } from 'utils/styles'
+import useInteraction from 'hooks/useInteraction'
 import ModalProvider from 'components/providers/ModalProvider'
 import UXProvider from 'components/providers/UXProvider'
 import DataProvider from 'components/providers/DataProvider'
@@ -34,6 +35,8 @@ const FullScreen = styled.div`
   padding: 0 0 5rem;
 `
 export default function Web(props) {
+  useInteraction()
+
   return (
     <>
       <Wrapper>
