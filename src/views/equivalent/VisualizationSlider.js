@@ -53,7 +53,7 @@ export default function Visualization(props) {
           speed={500}
           slidesToShow={1}
           slidesToScroll={1}
-          initialSlide={currentSlide}
+          initialSlide={Number(currentSlide)}
           afterChange={(index) => {
             setCurrentSlide(index)
           }}

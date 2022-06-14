@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
 
 import ModalContext from 'utils/ModalContext'
 import Modal from 'components/base/Modal'
@@ -31,27 +30,25 @@ const Wrapper = styled.div`
 export default function CO2EModal() {
   const { share: open, setShare: setOpen } = useContext(ModalContext)
 
-  const location = useLocation()
-
-  const url = location.href
+  const href = typeof window !== 'undefined' ? window?.location?.href : ''
 
   return (
     <Modal open={open} setOpen={setOpen}>
       <Title>Partager</Title>
       <Wrapper>
         <Integration />
-        <Mail subject={'subject'} body={'body'} url={url} />
-        <Facebook quote={'quote'} url={url} />
-        <Twitter title={'title'} url={url} />
+        <Mail subject={'subject'} body={'body'} url={href} />
+        <Facebook quote={'quote'} url={href} />
+        <Twitter title={'title'} url={href} />
         <Linkedin
           title={'title'}
           summary={'summary'}
           source={'source'}
-          url={url}
+          url={href}
         />
-        <Whatsapp title={'title'} url={url} />
+        <Whatsapp title={'title'} url={href} />
       </Wrapper>
-      <Link url={url} />
+      <Link url={href} />
     </Modal>
   )
 }
