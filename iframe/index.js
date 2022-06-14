@@ -6,7 +6,9 @@ const type = script.dataset.type || 'tuiles'
 const search = script.dataset.search
 const source = window.location.href.toString()
 
-const src = `https://monconvertisseurco2.fr/iframes/${type}${search}&source=${source}`
+const src = `https://monconvertisseurco2.fr/iframes/${type}${search}${
+  search ? '&' : '?'
+}source=${source}`
 
 const iframe = document.createElement('iframe')
 
