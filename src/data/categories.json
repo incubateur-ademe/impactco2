@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "fr": "Numérique"
+    },
+    "emoji": "💻",
+    "slug": "numerique",
+    "multiplier": 1,
+    "unit": "par produit comprenant la fabrication et la distribution"
+  },
+  {
+    "id": 2,
+    "name": {
+      "fr": "Repas"
+    },
+    "emoji": "🍽",
+    "slug": "repas",
+    "multiplier": 1,
+    "unit": "par repas comprenant la fabrication, la distribution et la consommation"
+  },
+  {
+    "id": 3,
+    "name": {
+      "fr": "Boisson"
+    },
+    "emoji": "🍹",
+    "slug": "boisson",
+    "multiplier": 100,
+    "unit": " pour 100 litres de produit comprenant la fabrication, la distribution et la consommation"
+  },
+  {
+    "id": 4,
+    "name": {
+      "fr": "Déplacement"
+    },
+    "emoji": "🚴‍♂️",
+    "slug": "deplacement",
+    "multiplier": 10,
+    "unit": "pour 10 km comprenant les émissions directes, et la production et distribution de carburant et d'électricité"
+  },
+  {
+    "id": 5,
+    "name": {
+      "fr": "Habillement"
+    },
+    "emoji": "👔",
+    "slug": "habillement",
+    "multiplier": 1,
+    "unit": "par produit comprenant la fabrication et la distribution"
+  },
+  {
+    "id": 6,
+    "name": {
+      "fr": "Electroménager"
+    },
+    "emoji": "🛁",
+    "slug": "electromenager",
+    "multiplier": 1,
+    "unit": "par produit comprenant la fabrication et la distribution"
+  },
+  {
+    "id": 7,
+    "name": {
+      "fr": "Mobilier"
+    },
+    "emoji": "🪑",
+    "slug": "mobilier",
+    "multiplier": 1,
+    "unit": "par produit comprenant la fabrication et la distribution"
+  }
+]

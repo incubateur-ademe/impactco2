@@ -11,11 +11,11 @@ const Wrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    height: 1.2em;
-    width: 1.2em;
+    height: 1.1em;
+    width: 1.1em;
     border: 2px solid ${(props) => props.theme.colors.main};
     border-radius: 0.25rem;
-    cursor: pointer;
+    pointer-events: none;
   }
 
   &:after {
@@ -30,34 +30,39 @@ const Wrapper = styled.div`
     font-size: 1.75em;
     line-height: 0.7;
     opacity: ${(props) => (props.checked ? 1 : 0)};
-    cursor: pointer;
+    pointer-events: none;
   }
 `
 const Input = styled.input`
-  margin-right: ${(props) => (props.label ? '1em' : 0)};
+  margin-right: ${(props) => (props.label ? '0.75em' : 0)};
   opacity: 0;
-  pointer-events: none;
+  cursor: pointer;
+
+  &:focus {
+    opacity: 0.5;
+  }
 `
 const Label = styled.label`
   font-size: 0.833333333em;
   white-space: nowrap;
+  cursor: pointer;
 `
 export default function Checkbox(props) {
   return (
     <Wrapper
       checked={props.checked}
       small={props.small}
-      onClick={(e) => props.onChange((prev) => !prev)}
       className={props.className}
     >
       <Input
+        id={props.name}
         type='checkbox'
         checked={props.checked}
         label={props.children || props.label}
         onChange={(e) => props.onChange(e.target.checked)}
       />
       {(props.children || props.label) && (
-        <Label>{props.children || props.label}</Label>
+        <Label htmlFor={props.name}>{props.children || props.label}</Label>
       )}
     </Wrapper>
   )

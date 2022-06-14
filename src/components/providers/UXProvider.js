@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useQueryParam, BooleanParam, withDefault } from 'use-query-params'
 
 import UXContext from 'utils/UXContext'
-import usePageView from 'hooks/usePageView'
 
 export default function UXProvider(props) {
-  usePageView('Mon Convertisseur CO2')
-
   const [embedOpen, setEmbedOpen] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
   const [contactOpen, setContactOpen] = useState(false)
   const [typeShare, setTypeShare] = useState('simulator')
   const [details, setDetails] = useState(false)
-
-  const [displayTitle, setDisplayTitle] = useQueryParam(
-    'title',
-    withDefault(BooleanParam, true)
-  )
 
   const [installPrompt, setInstallPrompt] = useState(null)
   useEffect(() => {
@@ -26,18 +17,7 @@ export default function UXProvider(props) {
     })
   }, [])
 
-  const isIos = () => {
-    const userAgent = window.navigator.userAgent.toLowerCase()
-    return /iphone|ipad|ipod/.test(userAgent)
-  }
-  const isInStandaloneMode = () =>
-    'standalone' in window.navigator && window.navigator.standalone
-  const [iOSPrompt, setIOSPrompt] = useState(false)
-  useEffect(() => {
-    if (isIos() && !isInStandaloneMode()) {
-      setIOSPrompt(true)
-    }
-  }, [])
+  const [binFlight, setBinFlight] = useState(false)
 
   return (
     <UXContext.Provider
@@ -74,9 +54,8 @@ export default function UXProvider(props) {
         typeShare,
         setTypeShare,
         installPrompt,
-        iOSPrompt,
-        displayTitle,
-        setDisplayTitle,
+        binFlight,
+        setBinFlight,
       }}
     >
       {props.children}

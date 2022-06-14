@@ -1,0 +1,95 @@
+[
+  {
+    "id": 26966,
+    "name": {
+      "fr": "Canapé[s]"
+    },
+    "subtitle": {
+      "fr": "Convertible[s]"
+    },
+    "slug": "canapeconvertible",
+    "emoji": "🛋",
+    "category": 7,
+    "total": 197,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 300000,
+    "name": {
+      "fr": "Chaise[s]"
+    },
+    "subtitle": {
+      "fr": "En bois"
+    },
+    "slug": "chaiseenbois",
+    "emoji": "🪑",
+    "category": 7,
+    "total": 18.6,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 300001,
+    "name": {
+      "fr": "Table[s]"
+    },
+    "subtitle": {
+      "fr": "En bois"
+    },
+    "slug": "tableenbois",
+    "emoji": "🪵",
+    "category": 7,
+    "total": 80.2,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 300002,
+    "name": {
+      "fr": "Canapé[s]"
+    },
+    "subtitle": {
+      "fr": "Textile"
+    },
+    "slug": "canapetextile",
+    "emoji": "🛋",
+    "category": 7,
+    "total": 179,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 300003,
+    "name": {
+      "fr": "Armoire"
+    },
+    "slug": "armoire",
+    "emoji": "🚪",
+    "category": 7,
+    "total": 907,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 300004,
+    "name": {
+      "fr": "Lit"
+    },
+    "subtitle": {
+      "fr": "Cadre + sommier + matelas"
+    },
+    "slug": "lit",
+    "emoji": "🛏",
+    "category": 7,
+    "total": 444.3,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  }
+]

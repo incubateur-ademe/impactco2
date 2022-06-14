@@ -1,0 +1,95 @@
+[
+  {
+    "id": 27977,
+    "name": {
+      "fr": "km en métro"
+    },
+    "synonyms": ["déplacer"],
+    "slug": "metro",
+    "emoji": "🚇",
+    "category": 4,
+    "total": 0.0025,
+    "default": true,
+    "tile": false,
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro"
+  },
+  {
+    "id": 27976,
+    "name": {
+      "fr": "km en voiture"
+    },
+    "subtitle": {
+      "fr": "Moteur thermique"
+    },
+    "synonyms": ["déplacer", "conduire"],
+    "slug": "voiturethermique",
+    "emoji": "🚗",
+    "category": 4,
+    "total": 0.193,
+    "default": true,
+    "tile": true,
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture"
+  },
+  {
+    "id": 27978,
+    "name": {
+      "fr": "km en voiture"
+    },
+    "subtitle": {
+      "fr": "Moteur électrique"
+    },
+    "synonyms": ["déplacer", "conduire"],
+    "slug": "voitureelectrique",
+    "emoji": "🚗",
+    "category": 4,
+    "total": 0.0198,
+    "default": false,
+    "tile": false,
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture"
+  },
+  {
+    "id": 27979,
+    "name": {
+      "fr": "km en bus"
+    },
+
+    "synonyms": ["déplacer"],
+    "slug": "bus",
+    "emoji": "🚌",
+    "category": 4,
+    "total": 0.103,
+    "default": true,
+    "tile": false,
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus"
+  },
+  {
+    "id": 206589,
+    "name": {
+      "fr": "km en TGV"
+    },
+
+    "synonyms": ["déplacer"],
+    "slug": "tgv",
+    "emoji": "🚅",
+    "category": 4,
+    "total": 0.00173,
+    "default": true,
+    "tile": true,
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv"
+  },
+  {
+    "id": 28081,
+    "name": {
+      "fr": "km en avion"
+    },
+
+    "synonyms": ["déplacer", "voler"],
+    "slug": "avion",
+    "emoji": "✈️",
+    "category": 4,
+    "total": 0.126,
+    "default": true,
+    "tile": false,
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion"
+  }
+]

@@ -7,34 +7,40 @@ const Wrapper = styled(MagicLink)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.8em 1.6em;
+  gap: ${(props) => (props.small ? '0.375em' : '0.5em')};
+  padding: 0.5em 1.5em;
   font-size: ${(props) => (props.small ? '0.875em' : '1em')};
-  font-weight: 400;
   text-align: center;
+  line-height: 1.2;
   text-decoration: none;
-  color: ${(props) =>
-    props.hollow ? props.theme.colors.main : props.theme.colors['second']};
+  color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'background']};
   background-color: ${(props) =>
-    props.hollow ? 'transparent' : props.theme.colors.main};
-  border: 1px solid ${(props) => props.theme.colors.main};
-  border-radius: 1.5em;
+    props.theme.colors[props.hollow ? 'background' : 'main']};
+  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border-radius: 1.5rem;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};
   cursor: pointer;
   transition: all 300ms ease-out;
 
-  &:hover {
-    background-color: ${(props) =>
-      props.hollow ? props.theme.colors.main : props.theme.colors.main};
-    color: ${(props) => props.theme.colors['second']};
+  path {
+    transition: all 300ms ease-out;
+    fill: ${(props) =>
+      props.theme.colors[props.hollow ? 'main' : 'background']};
   }
 
+  &:hover,
   &:focus {
     outline: none;
-  }
+    background-color: ${(props) =>
+      props.theme.colors[props.hollow ? 'main' : 'background']};
+    color: ${(props) =>
+      props.theme.colors[props.hollow ? 'background' : 'main']};
 
-  ${(props) => props.theme.mq.small} {
-    font-size: 1em;
+    path {
+      fill: ${(props) =>
+        props.theme.colors[props.hollow ? 'background' : 'main']};
+    }
   }
 `
 export default function Button(props) {
@@ -47,8 +53,20 @@ export default function Button(props) {
       small={props.small}
       className={props.className}
       textColor={props.textColor}
+      aria-label={props.children}
+      noIcon
     >
       {props.children}
     </Wrapper>
   )
 }
+
+Button.Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: ${(props) => (props.vertical ? 'column' : 'row')};
+  justify-content: ${(props) =>
+    props.left ? 'flex-start' : props.right ? 'flex-end' : 'center'};
+  align-items: center;
+  gap: 1rem;
+`

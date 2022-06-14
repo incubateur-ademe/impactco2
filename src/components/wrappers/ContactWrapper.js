@@ -8,8 +8,12 @@ export default function ContactWrapper(props) {
       small={props.small}
       options={[
         {
-          value: 'Imprecision',
-          label: `Les chiffres ne sont pas bon`,
+          value: 'Erreur',
+          label: `Je souhaite signaler une erreur pour un déchet`,
+        },
+        {
+          value: 'Manquant',
+          label: `Je souhaite signaler un déchet manquant`,
         },
       ]}
     />

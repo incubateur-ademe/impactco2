@@ -1,0 +1,890 @@
+[
+  {
+    "id": 27012,
+    "name": {
+      "fr": "Smartphone[s]"
+    },
+    "subtitle": {
+      "fr": "5 pouces"
+    },
+    "synonyms": [
+      "telephone",
+      "gsm",
+      "mobile",
+      "portable",
+      "iphone",
+      "samsung",
+      "xiaomi",
+      "Apple",
+      "Samsung",
+      "Huawei",
+      "Xiaomi",
+      "OPPO",
+      "Sony",
+      "Realme",
+      "LG",
+      "Honor",
+      "OnePlus",
+      "Google",
+      "TCL",
+      "Alcatel",
+      "Nokia",
+      "Motorola",
+      "CAT",
+      "InnJoo",
+      "Lenovo",
+      "Microsoft",
+      "Elephone",
+      "HTC",
+      "ZTE",
+      "Vivo",
+      "Asus",
+      "Wiko",
+      "Haier",
+      "BlackBerry"
+    ],
+    "slug": "smartphone",
+    "emoji": "📱",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 20.662476329486,
+        "id": 1
+      },
+      {
+        "value": 0.0666504748738235,
+        "id": 2
+      },
+      {
+        "value": 0.0517036611640674,
+        "id": 3
+      },
+      {
+        "value": 5.45828394086831,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.0428919856,
+      "defaultyears": 4
+    },
+    "end": -1.44533720771952,
+    "default": true,
+    "tile": true,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 475,
+    "name": {
+      "fr": "Ordinateur[s] fixe[s]"
+    },
+    "subtitle": {
+      "fr": "Bureautique"
+    },
+    "slug": "ordinateurfixebureautique",
+    "emoji": "🖥️",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 82.9392275803426,
+        "id": 1
+      },
+      {
+        "value": 4.75354107309693,
+        "id": 2
+      },
+      {
+        "value": 4.18845393322541,
+        "id": 3
+      },
+      {
+        "value": 77.1912571588444,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 5.03567247,
+      "defaultyears": 6
+    },
+    "end": -10.2418849552206,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 476,
+    "name": {
+      "fr": "Ordinateur[s] fixe[s]"
+    },
+    "subtitle": {
+      "fr": "Performance"
+    },
+    "slug": "ordinateurfixeperformance",
+    "emoji": "🖥️",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 153.325602332735,
+        "id": 1
+      },
+      {
+        "value": 7.95029990148238,
+        "id": 2
+      },
+      {
+        "value": 7.36242869835709,
+        "id": 3
+      },
+      {
+        "value": 126.879055536959,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 19.91634,
+      "defaultyears": 6
+    },
+    "end": -20.479642298922,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 478,
+    "name": {
+      "fr": "Écran[s]"
+    },
+    "subtitle": {
+      "fr": "24 pouces"
+    },
+    "slug": "ecran24pouces",
+    "emoji": "🖥",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 228.667196307416,
+        "id": 1
+      },
+      {
+        "value": 4.9435753543456,
+        "id": 2
+      },
+      {
+        "value": 2.54973920986062,
+        "id": 3
+      },
+      {
+        "value": 11.6862822188106,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 3.40966173,
+      "defaultyears": 6
+    },
+    "end": -5.36739103823929,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 4711,
+    "name": {
+      "fr": "Tablette[s] détachable[s]"
+    },
+
+    "slug": "tablettedetachable",
+    "emoji": "💻",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 61.928526726663,
+        "id": 1
+      },
+      {
+        "value": 1.07232018349783,
+        "id": 2
+      },
+      {
+        "value": 0.425533545011766,
+        "id": 3
+      },
+      {
+        "value": 18.8206804414877,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 2.48328552,
+      "defaultyears": 3
+    },
+    "end": -3.3718663396044,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 4711,
+    "name": {
+      "fr": "Tablette[s]"
+    },
+    "subtitle": {
+      "fr": "Classique"
+    },
+    "slug": "tabletteclassique",
+    "emoji": "📱",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 30.8887314435277,
+        "id": 1
+      },
+      {
+        "value": 0.161304460803735,
+        "id": 2
+      },
+      {
+        "value": 0.1276290185462,
+        "id": 3
+      },
+      {
+        "value": 13.337880280413,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 2.48328552,
+      "defaultyears": 3
+    },
+    "end": -1.0530804367788,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 4712,
+    "name": {
+      "fr": "Tablette[s]"
+    },
+    "subtitle": {
+      "fr": "Mini"
+    },
+    "slug": "tablettemini",
+    "emoji": "📱",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 20.5501795723876,
+        "id": 1
+      },
+      {
+        "value": 0.12603085769205,
+        "id": 2
+      },
+      {
+        "value": 0.0952386223667705,
+        "id": 3
+      },
+      {
+        "value": 10.353221013172,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 2.48328552,
+      "defaultyears": 3
+    },
+    "end": -0.724090952855313,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 4718,
+    "name": {
+      "fr": "Chaine[s] hifi"
+    },
+
+    "slug": "chainehifi",
+    "emoji": "🎵",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 82.7155503392287,
+        "id": 1
+      },
+      {
+        "value": 10.1597167481221,
+        "id": 2
+      },
+      {
+        "value": 5.50478368663506,
+        "id": 3
+      },
+      {
+        "value": 24.914023314087,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 4.66693558,
+      "defaultyears": 5
+    },
+    "end": -10.3424901759157,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 4723,
+    "name": {
+      "fr": "Liseuse[s]"
+    },
+    "subtitle": {
+      "fr": "Non rétro-éclairé"
+    },
+    "slug": "liseuse",
+    "emoji": "📘",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 28.6386708591066,
+        "id": 1
+      },
+      {
+        "value": 0.516701700068382,
+        "id": 2
+      },
+      {
+        "value": 0.0353779120185071,
+        "id": 3
+      },
+      {
+        "value": 9.06816632791489,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.0373807249,
+      "defaultyears": 5
+    },
+    "end": -1.71514674850865,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27000,
+    "name": {
+      "fr": "Télévision[s] "
+    },
+    "subtitle": {
+      "fr": "40 - 49 pouces"
+    },
+    "slug": "television",
+    "emoji": "📺",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 318.219200641678,
+        "id": 1
+      },
+      {
+        "value": 2.2636267766829,
+        "id": 2
+      },
+      {
+        "value": 2.25946191055556,
+        "id": 3
+      },
+      {
+        "value": 27.1301536559235,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 7.76971306,
+      "defaultyears": 8
+    },
+    "end": -8.69420838210626,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27002,
+    "name": {
+      "fr": "Ordinateur[s] portable[s]"
+    },
+
+    "slug": "ordinateurportable",
+    "emoji": "💻",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 100.126651822594,
+        "id": 1
+      },
+      {
+        "value": 0.405069298638844,
+        "id": 2
+      },
+      {
+        "value": 0.763849328522349,
+        "id": 3
+      },
+      {
+        "value": 33.4073020837998,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 4.58940987,
+      "defaultyears": 6
+    },
+    "end": -5.78881336720088,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27006,
+    "name": {
+      "fr": "Ordinateur[s] fixe[s]"
+    },
+    "subtitle": {
+      "fr": "Avec écran"
+    },
+    "slug": "ordinateurfixe",
+    "emoji": "🖥️",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 311.606424,
+        "id": 1
+      },
+      {
+        "value": 9.69711643,
+        "id": 2
+      },
+      {
+        "value": 6.73819314,
+        "id": 3
+      },
+      {
+        "value": 88.8775394,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 8.4453342,
+      "defaultyears": 6
+    },
+    "end": -15.609276,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+
+  {
+    "id": 27013,
+    "name": {
+      "fr": "Montre[s] connectée[s]"
+    },
+
+    "slug": "montreconnectee",
+    "emoji": "⌚️",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 3.70575615394535,
+        "id": 1
+      },
+      {
+        "value": 0.314247507482078,
+        "id": 2
+      },
+      {
+        "value": 0.0208842709332118,
+        "id": 3
+      },
+      {
+        "value": 5.67898043921665,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.0239236639,
+      "defaultyears": 5
+    },
+    "end": 0.0106943300908481,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27013,
+    "name": {
+      "fr": "Cadre[s] photo digital"
+    },
+
+    "slug": "cadrephotodigital",
+    "emoji": "🖼",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 37.4028508246865,
+        "id": 1
+      },
+      {
+        "value": 0.714412956714528,
+        "id": 2
+      },
+      {
+        "value": 0.157370131666723,
+        "id": 3
+      },
+      {
+        "value": 1.91804191387795,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.0373807249,
+      "defaultyears": 5
+    },
+    "end": -1.22372678556011,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27013,
+    "name": {
+      "fr": "Home cinéma"
+    },
+
+    "slug": "homecinema",
+    "emoji": "📽",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 88.6807024111332,
+        "id": 1
+      },
+      {
+        "value": 11.0093030397196,
+        "id": 2
+      },
+      {
+        "value": 5.9650616501029,
+        "id": 3
+      },
+      {
+        "value": 26.9357611871324,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 6.41616181,
+      "defaultyears": 5
+    },
+    "end": -11.166985067359,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Barre[s] de son"
+    },
+
+    "slug": "barredeson",
+    "emoji": "🔈",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 32.9189542577309,
+        "id": 1
+      },
+      {
+        "value": 1.96329824955051,
+        "id": 2
+      },
+      {
+        "value": 0.950585972869152,
+        "id": 3
+      },
+      {
+        "value": 4.38693847451035,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 1.9941179,
+      "defaultyears": 5
+    },
+    "end": -4.71436019956684,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Modem[s]"
+    },
+    "subtitle": {
+      "fr": "Fibre"
+    },
+    "slug": "modemfibre",
+    "emoji": "📡",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 75.8381711741523,
+        "id": 1
+      },
+      {
+        "value": 0.448050243653193,
+        "id": 2
+      },
+      {
+        "value": 0.979526278303151,
+        "id": 3
+      },
+      {
+        "value": 4.22942877233108,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 11.167862,
+      "defaultyears": 6
+    },
+    "end": -7.33144459609132,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Enceinte[s] bluetooth"
+    },
+
+    "slug": "enceintebluetooth",
+    "emoji": "🔊",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 7.34539614246443,
+        "id": 1
+      },
+      {
+        "value": 0.0717747393956498,
+        "id": 2
+      },
+      {
+        "value": 0.109566800305517,
+        "id": 3
+      },
+      {
+        "value": 0.747995273150451,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.224484033,
+      "defaultyears": 5
+    },
+    "end": -0.587240636962036,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27014,
+    "name": {
+      "fr": "Console[s] de salon"
+    },
+
+    "slug": "console de salon",
+    "emoji": "🎮",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 60.7675889773099,
+        "id": 1
+      },
+      {
+        "value": 2.53956296042669,
+        "id": 2
+      },
+      {
+        "value": 2.46078452778988,
+        "id": 3
+      },
+      {
+        "value": 7.94752148564131,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 6.25663238,
+      "defaultyears": 5
+    },
+    "end": -3.40627657865222,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27014,
+    "name": {
+      "fr": "Console[s] portable"
+    },
+
+    "slug": "consoleportable",
+    "emoji": "👾",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 21.0324749693322,
+        "id": 1
+      },
+      {
+        "value": 0.522878038546287,
+        "id": 2
+      },
+      {
+        "value": 0.104736362081524,
+        "id": 3
+      },
+      {
+        "value": 9.16532665795207,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.193542786,
+      "defaultyears": 5
+    },
+    "end": -0.880643030943794,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27014,
+    "name": {
+      "fr": "Appareil photo"
+    },
+    "subtitle": {
+      "fr": "Reflex"
+    },
+    "slug": "appareilphotoreflex",
+    "emoji": "📷",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 26.5167876175978,
+        "id": 1
+      },
+      {
+        "value": 0.955170493102893,
+        "id": 2
+      },
+      {
+        "value": 0.536681304854483,
+        "id": 3
+      },
+      {
+        "value": 2.60301617431843,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.0608794626,
+      "defaultyears": 5
+    },
+    "end": -2.78661372432045,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27014,
+    "name": {
+      "fr": "Appareil photo"
+    },
+    "subtitle": {
+      "fr": "Compact"
+    },
+    "slug": "appareilphotocompact",
+    "emoji": "📸",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 22.9032913497794,
+        "id": 1
+      },
+      {
+        "value": 0.404112125854186,
+        "id": 2
+      },
+      {
+        "value": 0.194906232027756,
+        "id": 3
+      },
+      {
+        "value": 0.925613518396406,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.0239620031,
+      "defaultyears": 5
+    },
+    "end": -2.20297495821832,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27015,
+    "name": {
+      "fr": "Imprimante[s]"
+    },
+    "subtitle": {
+      "fr": "Jet d'encre"
+    },
+    "slug": "imprimantejetdencre",
+    "emoji": "🖨",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 51.0432214447613,
+        "id": 1
+      },
+      {
+        "value": 1.39926567174294,
+        "id": 2
+      },
+      {
+        "value": 4.97382444958263,
+        "id": 3
+      },
+      {
+        "value": 14.6892420655758,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 3.57703491,
+      "defaultyears": 6
+    },
+    "end": -1.5110767449382,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  }
+]

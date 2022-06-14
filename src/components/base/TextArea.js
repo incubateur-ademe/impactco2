@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-weight: bold;
   color: ${(props) => props.theme.colors[props.error ? 'error' : 'text']};
 `
 const Input = styled.textarea`
@@ -16,14 +16,14 @@ const Input = styled.textarea`
 
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
-  border: 2px solid ${(props) => props.theme.colors.text};
+  border: 2px solid ${(props) => props.theme.colors.main};
   border-radius: 1rem;
   resize: vertical;
   transition: box-shadow 300ms ease-out;
 
   &:focus {
     outline: none;
-    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.text};
+    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
   }
 `
 export default function TextArea(props) {

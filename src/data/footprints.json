@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "fr": "10 tonnes"
+    },
+    "emoji": "😐",
+    "value": 10000,
+    "description": "L'empreinte annuelle du français moyen"
+  },
+  {
+    "id": 2,
+    "name": {
+      "fr": "2 tonnes"
+    },
+    "emoji": "😀",
+    "value": 2000,
+    "description": "L'empreinte annuelle cible pour 2050"
+  }
+]

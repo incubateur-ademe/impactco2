@@ -1,31 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-import IframeFooter from 'components/layout/IframeFooter'
-import Header from 'components/misc/Header'
+import { GlobalStyle } from 'utils/styles'
+import ModalProvider from 'components/providers/ModalProvider'
+import UXProvider from 'components/providers/UXProvider'
+import DataProvider from 'components/providers/DataProvider'
+import ModalWrapper from 'components/wrappers/ModalWrapper'
+import IframeFooter from './iframe/IframeFooter'
 
-const Wrapper = styled.div``
-const Content = styled.div`
-  position: relative;
-  width: 46rem;
-  margin: 0 auto;
-  padding: 2rem 0.5rem;
+const queryClient = new QueryClient()
 
-  ${(props) => props.theme.mq.small} {
-    width: 100%;
-  }
+const Wrapper = styled.div`
+  padding: 1rem 0;
 `
 export default function Iframe(props) {
   return (
-    <Wrapper>
-      <Content>
-        <Header iframe />
-        {props.children}
-      </Content>
-      <IframeFooter
-        about={process.env.REACT_APP_URL}
-        background={'background'}
-      />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <QueryClientProvider client={queryClient}>
+          <UXProvider>
+            <DataProvider>
+              <ModalProvider>
+                <GlobalStyle />
+                {props.children}
+                <IframeFooter />
+                <ModalWrapper />
+              </ModalProvider>
+            </DataProvider>
+          </UXProvider>
+        </QueryClientProvider>
+      </Wrapper>
+    </>
   )
 }

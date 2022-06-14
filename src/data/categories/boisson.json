@@ -1,0 +1,105 @@
+[
+  {
+    "id": 24283,
+    "name": {
+      "fr": "Litre[s] d'eau du robinet"
+    },
+    "synonyms": ["boire"],
+    "slug": "eaudurobinet",
+    "emoji": "🚰",
+    "category": 3,
+    "total": 0.000132,
+    "default": true,
+    "tile": false,
+    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau"
+  },
+  {
+    "id": 31000,
+    "name": {
+      "fr": "Litre[s] d'eau en bouteille"
+    },
+    "synonyms": ["boire"],
+    "slug": "eauenbouteille",
+    "emoji": "💧",
+    "category": 3,
+    "total": 0.453,
+    "default": true,
+    "tile": true,
+    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau"
+  },
+  {
+    "id": 31001,
+    "name": {
+      "fr": "Litre[s] de soda"
+    },
+    "synonyms": ["boire"],
+    "slug": "soda",
+    "emoji": "🥤",
+    "category": 3,
+    "total": 0.57,
+    "default": true,
+    "tile": false,
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "id": 31002,
+    "name": {
+      "fr": "Litre[s] de bière"
+    },
+    "synonyms": ["boire"],
+    "slug": "biere",
+    "emoji": "🍺",
+    "category": 3,
+    "total": 1.09,
+    "default": true,
+    "tile": false,
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "id": 31003,
+    "name": {
+      "fr": "Litre[s] de vin"
+    },
+    "synonyms": ["boire"],
+    "slug": "vin",
+    "emoji": "🍷",
+    "category": 3,
+    "total": 1.13,
+    "default": true,
+    "tile": false,
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "id": 31004,
+    "name": {
+      "fr": "Litre[s] de lait"
+    },
+    "subtitle": {
+      "fr": "De vache"
+    },
+    "synonyms": ["boire"],
+    "slug": "laitdevache",
+    "emoji": "🥛",
+    "category": 3,
+    "total": 1.53,
+    "default": true,
+    "tile": false,
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Litre[s] de lait"
+    },
+    "subtitle": {
+      "fr": "De soja"
+    },
+    "synonyms": ["boire"],
+    "slug": "laitdesoja",
+    "emoji": "🍈",
+    "category": 3,
+    "total": 0.42,
+    "default": false,
+    "tile": false,
+    "source": "https://agribalyse.ademe.fr/"
+  }
+]

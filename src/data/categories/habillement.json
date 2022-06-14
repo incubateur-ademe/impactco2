@@ -1,0 +1,114 @@
+[
+  {
+    "id": 27043,
+    "name": {
+      "fr": "Jean[s]"
+    },
+    "subtitle": {
+      "fr": "En coton"
+    },
+    "slug": "jeanencoton",
+    "emoji": "👖",
+    "category": 5,
+    "total": 23.2,
+    "default": true,
+    "tile": true,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27044,
+    "name": {
+      "fr": "T-shirt[s]"
+    },
+    "subtitle": {
+      "fr": "En coton"
+    },
+    "slug": "tshirtencoton",
+    "emoji": "👕",
+    "category": 5,
+    "total": 5.2,
+    "default": true,
+    "tile": true,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27045,
+    "name": {
+      "fr": "Chemise[s]"
+    },
+    "subtitle": {
+      "fr": "En coton"
+    },
+    "slug": "chemiseencoton",
+    "emoji": "👚",
+    "category": 5,
+    "total": 11.2,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27046,
+    "name": {
+      "fr": "Chaussure[s]"
+    },
+    "subtitle": {
+      "fr": "En cuir"
+    },
+    "slug": "chaussureencuir",
+    "emoji": "👞",
+    "category": 5,
+    "total": 13.4,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27047,
+    "name": {
+      "fr": "Robe[s]"
+    },
+    "subtitle": {
+      "fr": "En coton"
+    },
+    "slug": "Robeencoton",
+    "emoji": "👗",
+    "category": 5,
+    "total": 49.8,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27048,
+    "name": {
+      "fr": "Pull[s]"
+    },
+    "subtitle": {
+      "fr": "En laine"
+    },
+    "slug": "pullenlaine",
+    "emoji": "🧶",
+    "category": 5,
+    "total": 52.9,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "id": 27049,
+    "name": {
+      "fr": "Manteau[s]"
+    },
+    "subtitle": {
+      "fr": "Textile"
+    },
+    "slug": "manteau",
+    "emoji": "🧥",
+    "category": 5,
+    "total": 85.8,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  }
+]

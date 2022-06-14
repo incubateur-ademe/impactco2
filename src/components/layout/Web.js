@@ -1,25 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-import useWindowSize from 'hooks/useWindowSize'
+import { GlobalStyle } from 'utils/styles'
+import ModalProvider from 'components/providers/ModalProvider'
+import UXProvider from 'components/providers/UXProvider'
+import DataProvider from 'components/providers/DataProvider'
+import Seo from './web/Seo'
+import Header from './web/Header'
+import Nav from './web/Nav'
+import BreadCrumb from './web/BreadCrumb'
+import Footer from './web/Footer'
+import ModalWrapper from 'components/wrappers/ModalWrapper'
 
-import ThemeToggle from 'components/base/ThemeToggle'
-import InstallButton from 'components/base/InstallButton'
-import Header from 'components/misc/Header'
-import Learning from 'components/misc/Learning'
-import ShareWrapper from 'components/wrappers/ShareWrapper'
-import EmbedWrapper from 'components/wrappers/EmbedWrapper'
-import ContactWrapper from 'components/wrappers/ContactWrapper'
-import FooterWrapper from 'components/wrappers/FooterWrapper'
+const queryClient = new QueryClient()
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  ${(props) => props.theme.mq.medium} {
-    flex-direction: column-reverse;
-  }
 `
 const Content = styled.div`
   flex: 1;
@@ -31,33 +30,34 @@ const FullScreen = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 46rem;
-  min-height: ${(props) => props.windowHeight}px;
-  margin: 0 auto 5rem;
-  padding: 0 0.5rem;
-
-  ${(props) => props.theme.mq.small} {
-    width: auto;
-  }
+  min-height: 100vh;
+  padding: 0 0 5rem;
 `
 export default function Web(props) {
-  const { height } = useWindowSize()
-
   return (
-    <Wrapper>
-      <ThemeToggle />
-      <Content>
-        <FullScreen windowHeight={height}>
-          <Header />
-          {props.children}
-        </FullScreen>
-        <Learning />
-        <FooterWrapper />
-      </Content>
-      <EmbedWrapper />
-      <ShareWrapper />
-      <ContactWrapper />
-      <InstallButton />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Seo title={props.title} image={props.image} />
+        <QueryClientProvider client={queryClient}>
+          <UXProvider>
+            <DataProvider>
+              <ModalProvider>
+                <GlobalStyle />
+                <Content>
+                  <FullScreen>
+                    <Header />
+                    <Nav />
+                    <BreadCrumb breadcrumb={props.breadcrumb} />
+                    {props.children}
+                  </FullScreen>
+                  <Footer />
+                </Content>
+                <ModalWrapper />
+              </ModalProvider>
+            </DataProvider>
+          </UXProvider>
+        </QueryClientProvider>
+      </Wrapper>
+    </>
   )
 }
