@@ -3,7 +3,7 @@ module.exports = {
     title: `Mon Convertisseur CO2`,
     author: `Datagir`,
     description: `Découvrez l'impact sur le climat de votre quotidien. Comparez des objets et gestes entre-eux et visualisez facilement leurs émissions de CO2e.`,
-    siteUrl: `https://mcc-v2.netlify.app`,
+    siteUrl: `https://monconvertisseurco2.fr`,
     image: 'metaimage.png',
     twitterUsername: '_datagir',
   },
@@ -26,9 +26,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-matomo',
       options: {
-        siteId: '199',
+        siteId: '156',
         matomoUrl: 'https://stats.data.gouv.fr',
-        siteUrl: 'https://quefairedemesdechets.fr',
+        siteUrl: 'https://monconvertisseurco2.fr',
       },
     },
     {
