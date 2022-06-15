@@ -31,7 +31,7 @@ module.exports = {
         dev: true,
       },
     },
-    /*{
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Mon Convertisseur CO2`,
@@ -42,6 +42,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: 'src/images/favicon.png',
       },
-    },*/
+    },
   ],
 }

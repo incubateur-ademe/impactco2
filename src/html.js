@@ -26,18 +26,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <form name='contact' hidden>
-          <input type='text' name='nom' />
-          <input type='email' name='email' />
-          <input type='text' name='objet' />
-          <textarea name='message'></textarea>
-        </form>
-        <form name='bug' hidden>
-          <input type='text' name='nom' />
-          <input type='email' name='email' />
-          <input type='text' name='objet' />
-          <textarea name='message'></textarea>
-        </form>
         <script
           src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js'
           integrity='sha512-14SY6teTzhrLWeL55Q4uCyxr6GQOxF3pEoMxo2mBxXwPRikdMtzKMYWy2B5Lqjr6PHHoGOxZgPaxUYKQrSmu0A=='
