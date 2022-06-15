@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import { Flipper, Flipped } from 'react-flip-toolkit'
 
-import { formatNumberFixed, formatTotal } from 'utils/formatters'
+import { formatName, formatNumberFixed, formatTotal } from 'utils/formatters'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
@@ -64,8 +64,8 @@ export default function Ecv(props) {
       <Section.Content>
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
-            Détail de l'empreinte d'un smartphone (
-            {formatNumberFixed(formatTotal(props.equivalent, usage, end))}{' '}
+            Détail de l'empreinte de 1 {formatName(props.equivalent.name.fr, 1)}{' '}
+            ({formatNumberFixed(formatTotal(props.equivalent, usage, end))}{' '}
             <span>
               kgCO
               <sub>2</sub>e
