@@ -3,6 +3,8 @@ import React from 'react'
 import SmartphoneGeneral from './SmartphoneGeneral'
 import SmartphoneCategory from './SmartphoneCategory'
 import Smartphone from './Smartphone'
+import Montre from './Montre'
+import MontreCategory from './MontreCategory'
 
 import Boeuf from './Boeuf'
 import PoissonGras from './PoissonGras'
@@ -17,6 +19,7 @@ const visualizations = {
   smartphone: [<SmartphoneGeneral />, <SmartphoneCategory />, <Smartphone />],
   ordinateurportable: [<SmartphoneCategory />],
   television: [<SmartphoneCategory />],
+  montreconnectee: [<Montre />, <MontreCategory />],
   repasvegetalien: [<Vegetalien />],
   repasvegetarien: [<Boeuf />],
   repasavecduboeuf: [<Boeuf />, <SmartphoneGeneral />],
