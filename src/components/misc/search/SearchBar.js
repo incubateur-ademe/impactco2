@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { navigate } from 'gatsby'
 import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 
+import useDebounce from 'hooks/useDebounce.js'
 import DataContext from 'utils/DataContext'
 import TextInput from './searchBar/TextInput'
 import Suggestions from './searchBar/Suggestions'
@@ -36,6 +37,8 @@ export default function SearchBar(props) {
   const { equivalents, categories } = useContext(DataContext)
   const [search, setSearch] = useState('')
 
+  useDebounce(search, 300)
+
   const [results, setResults] = useState([])
   const [fuse, setFuse] = useState(null)
   useEffect(() => {
@@ -68,7 +71,6 @@ export default function SearchBar(props) {
   }, [equivalents])
 
   useEffect(() => {
-    window?._paq?.push(['trackEvent', 'Interaction', 'Search', search])
     if (fuse && search.length > 1) {
       setResults(
         fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
