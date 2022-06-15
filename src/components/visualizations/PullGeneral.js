@@ -1,0 +1,65 @@
+import React from 'react'
+
+import {
+  Title,
+  Equivalents,
+  Equivalent,
+  Emojis,
+  Label,
+  Equals,
+  CenterLink,
+  Small,
+} from 'components/misc/Visualization'
+
+export default function PullGeneral() {
+  return (
+    <>
+      <Title>
+        En termes d'émissions de CO2<sub>e</sub>
+      </Title>
+      <Equivalents>
+        <Equivalent size={[7.5, 6, 8]}>
+          <Emojis>🧶</Emojis>
+          <Label>
+            fabriquer
+            <br />
+            <strong>1 pull en laine</strong>
+          </Label>
+        </Equivalent>
+        <Equals>=</Equals>
+        <Equivalent size={[10, 8, 16]}>
+          <Emojis>📱📱</Emojis>
+          <Label>
+            produire
+            <br />
+            <strong>2 smartphones</strong>
+          </Label>
+        </Equivalent>
+        <Equals>=</Equals>
+        <Equivalent size={[10, 6, 24]}>
+          <Emojis>🔊🔊🔊🔊🔊🔊</Emojis>
+          <Label>
+            produire
+            <br />
+            <strong>6 enceintes bluetooth</strong>
+          </Label>
+        </Equivalent>
+      </Equivalents>
+      <Small>
+        produire
+        <br />
+        <strong>1 smartphone</strong>
+        <br />=<br />
+        consommer
+        <br />
+        <strong>4 repas avec du boeuf</strong>
+        <br />=<br />
+        fabriquer
+        <br />
+        <strong>5 t-shirts</strong>
+        <br />
+      </Small>
+      <CenterLink to='/co2e'>Voir plus d'équivalences</CenterLink>
+    </>
+  )
+}

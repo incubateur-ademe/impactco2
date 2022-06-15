@@ -28,7 +28,7 @@ module.exports = {
         siteId: '156',
         matomoUrl: 'https://stats.data.gouv.fr',
         siteUrl: 'https://monconvertisseurco2.fr',
-        dev: true,
+        dev: false,
       },
     },
     {
