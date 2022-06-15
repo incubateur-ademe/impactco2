@@ -34,12 +34,13 @@ export default function MontreCategory() {
         </Equivalent>
       </Equivalents>
       <Small>
-        <br />1 télévision
+        <br />
+        1 ordinateur portable
         <br />=
-        <br />3 ordinateurs portables
+        <br />5 smartphones
         <br />=
         <br />
-        13 smartphones
+        14 montres connectées
         <br />
       </Small>
       <CenterLink to='/categories/numerique'>
