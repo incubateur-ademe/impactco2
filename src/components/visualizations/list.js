@@ -21,6 +21,8 @@ import Voiture from './Voiture'
 import Metro from './Metro'
 import Avion from './Avion'
 
+import JeansGeneral from './JeansGeneral'
+
 const visualizations = {
   smartphone: [<SmartphoneGeneral />, <SmartphoneCategory />, <Smartphone />],
   ordinateurportable: [<SmartphoneCategory />],
@@ -44,6 +46,8 @@ const visualizations = {
   tgv: [<Voiture />],
   metro: [<Metro />],
   avion: [<Avion />],
+  tshirtencoton: [<SmartphoneGeneral />],
+  jeansencoton: [<JeansGeneral />],
 }
 
 export default visualizations
