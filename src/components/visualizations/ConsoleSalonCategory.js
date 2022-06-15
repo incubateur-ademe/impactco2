@@ -11,7 +11,7 @@ import {
   Small,
 } from 'components/misc/Visualization'
 
-export default function SmartphoneCategory() {
+export default function ConsoleSalonCategory() {
   return (
     <>
       <Title>
@@ -19,27 +19,27 @@ export default function SmartphoneCategory() {
       </Title>
       <Equivalents>
         <Equivalent size={[7.5, 6, 8]}>
-          <Emojis>📺</Emojis>
-          <Label>1 télévision</Label>
+          <Emojis>🖥️</Emojis>
+          <Label>1 ordinateurs de gamer</Label>
         </Equivalent>
         <Equals>=</Equals>
-        <Equivalent size={[10, 8, 24]}>
-          <Emojis>💻💻💻</Emojis>
-          <Label>3 ordinateurs portables</Label>
+        <Equivalent size={[10, 7, 22]}>
+          <Emojis margin={70}>🎮🎮🎮🎮</Emojis>
+          <Label>4 consoles de salon</Label>
         </Equivalent>
         <Equals>=</Equals>
-        <Equivalent size={[20, 12, 24]}>
-          <Emojis>📱📱📱📱📱📱📱📱📱📱📱📱📱</Emojis>
-          <Label>13 smartphones</Label>
+        <Equivalent size={[15, 10, 33]}>
+          <Emojis>👾👾👾👾👾👾👾👾👾👾</Emojis>
+          <Label>10 consoles portable</Label>
         </Equivalent>
       </Equivalents>
       <Small>
-        <br />1 télévision
+        <br />1 ordinateurs de gamer
         <br />=
-        <br />3 ordinateurs portables
+        <br />4 consoles de salon
         <br />=
         <br />
-        13 smartphones
+        10 consoles portable
         <br />
       </Small>
       <CenterLink to='/categories/numerique'>

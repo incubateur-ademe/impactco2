@@ -11,7 +11,7 @@ import {
   Small,
 } from 'components/misc/Visualization'
 
-export default function Boeuf() {
+export default function SmartphoneGeneral() {
   return (
     <>
       <Title>

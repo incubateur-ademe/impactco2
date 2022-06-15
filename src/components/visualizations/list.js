@@ -5,6 +5,8 @@ import SmartphoneCategory from './SmartphoneCategory'
 import Smartphone from './Smartphone'
 import Montre from './Montre'
 import MontreCategory from './MontreCategory'
+import ImprimanteCategory from './ImprimanteCategory'
+import ConsoleSalonCategory from './ConsoleSalonCategory'
 
 import Boeuf from './Boeuf'
 import PoissonGras from './PoissonGras'
@@ -20,6 +22,8 @@ const visualizations = {
   ordinateurportable: [<SmartphoneCategory />],
   television: [<SmartphoneCategory />],
   montreconnectee: [<Montre />, <MontreCategory />],
+  imprimantejetdencre: [<ImprimanteCategory />],
+  consoledesalon: [<ConsoleSalonCategory />],
   repasvegetalien: [<Vegetalien />],
   repasvegetarien: [<Boeuf />],
   repasavecduboeuf: [<Boeuf />, <SmartphoneGeneral />],
