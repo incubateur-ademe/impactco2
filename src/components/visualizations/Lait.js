@@ -44,7 +44,9 @@ export default function Laut() {
         4 litres de lait de soja
         <br />
       </Small>
-      <CenterLink to='/co2e'>Voir plus d'équivalences</CenterLink>
+      <CenterLink to='/categories/boisson'>
+        Voir la catégorie boisson
+      </CenterLink>{' '}
     </>
   )
 }
