@@ -14,6 +14,8 @@ import PoissonGras from './PoissonGras'
 import PoissonBlanc from './PoissonBlanc'
 import Vegetalien from './Vegetalien'
 
+import Eau from './Eau'
+
 import Voiture from './Voiture'
 import Metro from './Metro'
 import Avion from './Avion'
@@ -32,6 +34,8 @@ const visualizations = {
   repasavecdupoulet: [<Boeuf />],
   repasavecdupoissongras: [<PoissonGras />],
   repasavecdupoissonblanc: [<PoissonBlanc />],
+  eaudurobinet: [<Eau />],
+  eauenbouteille: [<Eau />],
   voiturethermique: [<Voiture />],
   bus: [<Voiture />],
   tgv: [<Voiture />],
