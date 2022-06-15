@@ -15,6 +15,7 @@ import PoissonBlanc from './PoissonBlanc'
 import Vegetalien from './Vegetalien'
 
 import Eau from './Eau'
+import Lait from './Lait'
 
 import Voiture from './Voiture'
 import Metro from './Metro'
@@ -36,6 +37,8 @@ const visualizations = {
   repasavecdupoissonblanc: [<PoissonBlanc />],
   eaudurobinet: [<Eau />],
   eauenbouteille: [<Eau />],
+  laitdevache: [<Lait />],
+  laitdesoja: [<Lait />],
   voiturethermique: [<Voiture />],
   bus: [<Voiture />],
   tgv: [<Voiture />],

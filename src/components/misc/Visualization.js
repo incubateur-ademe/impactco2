@@ -48,8 +48,7 @@ export const Emojis = styled(Emoji)`
   ${(props) => props.theme.mq.medium} {
     font-size: ${(props) =>
       props.small ? 0.75 : props.xsmall ? 0.375 : 1.5}rem;
-    gap: ;
-    ${(props) => (props.xsmall ? 0 : 0.25)}rem;
+    gap: ${(props) => (props.xsmall ? 0 : 0.25)}rem;
   }
   ${(props) => props.theme.mq.small} {
     font-size: ${(props) => (props.small ? 3.5 : props.xsmall ? 1.5 : 7)}vw;
