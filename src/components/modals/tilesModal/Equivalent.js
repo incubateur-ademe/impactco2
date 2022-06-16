@@ -32,6 +32,9 @@ const Label = styled.span`
   text-align: center;
   line-height: 1.2;
 `
+const Subtitle = styled.span`
+  font-weight: 300;
+`
 const Left = styled.div`
   display: flex;
   align-items: center;
@@ -49,7 +52,12 @@ export default function Option(props) {
       <Left>
         <Checkbox checked={props.checked} />
 
-        <Label>{formatName(props.equivalent.name.fr, 1)}</Label>
+        <Label>
+          {formatName(props.equivalent.name.fr, 1)}{' '}
+          {props.equivalent.subtitle && (
+            <Subtitle>({formatName(props.equivalent.subtitle.fr, 1)})</Subtitle>
+          )}
+        </Label>
       </Left>
       <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
     </Wrapper>
