@@ -4,7 +4,7 @@
     "name": {
       "fr": "Repas avec du boeuf"
     },
-    "synonyms": ["manger", "alimenter"],
+    "synonyms": ["manger", "alimenter", "viande"],
     "slug": "repasavecduboeuf",
     "emoji": "🥩",
     "category": 2,
@@ -74,7 +74,7 @@
     "name": {
       "fr": "Repas avec du poulet"
     },
-    "synonyms": ["manger", "alimenter"],
+    "synonyms": ["manger", "alimenter", "viande"],
     "slug": "repasavecdupoulet",
     "emoji": "🍗",
     "category": 2,
