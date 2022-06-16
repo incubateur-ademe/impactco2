@@ -156,7 +156,18 @@ export default function Tile(props) {
   return (
     <Wrapper background={props.background} ref={setNodeRef} style={style}>
       {!props.reference && (
-        <ButtonDrag {...attributes} {...listeners}>
+        <ButtonDrag
+          {...attributes}
+          {...listeners}
+          onMouseDown={() =>
+            window?._paq?.push([
+              'trackEvent',
+              'Interaction',
+              'Drag tuile',
+              props.equivalent.slug,
+            ])
+          }
+        >
           <svg width='12' height='16' viewBox='0 0 12 16' fill='none'>
             <circle cx='2' cy='2' r='2' />
             <circle cx='10' cy='2' r='2' />
@@ -167,7 +178,17 @@ export default function Tile(props) {
           </svg>
         </ButtonDrag>
       )}
-      <ButtonRemove onClick={() => props.removeEquivalent(props.equivalent.id)}>
+      <ButtonRemove
+        onClick={() => {
+          props.removeEquivalent(props.equivalent.id)
+          window?._paq?.push([
+            'trackEvent',
+            'Interaction',
+            'Supprimer tuile',
+            props.equivalent.slug,
+          ])
+        }}
+      >
         <svg
           x='0px'
           y='0px'
@@ -183,7 +204,19 @@ export default function Tile(props) {
           />
         </svg>
       </ButtonRemove>
-      <ButtonEmoji {...attributes} {...listeners} reference={props.reference}>
+      <ButtonEmoji
+        {...attributes}
+        {...listeners}
+        reference={props.reference}
+        onMouseDown={() =>
+          window?._paq?.push([
+            'trackEvent',
+            'Interaction',
+            'Drag tuile',
+            props.equivalent.slug,
+          ])
+        }
+      >
         <Emoji>{props.equivalent.emoji}</Emoji>
       </ButtonEmoji>
       <Title>
@@ -244,7 +277,15 @@ export default function Tile(props) {
       ) : (
         <Button.Wrapper>
           <StyledButton
-            onClick={() => props.setCurEquivalent(props.equivalent)}
+            onClick={() => {
+              props.setCurEquivalent(props.equivalent)
+              window?._paq?.push([
+                'trackEvent',
+                'Interaction',
+                'Comparer tuile',
+                props.equivalent.slug,
+              ])
+            }}
             hollow
           >
             <svg
