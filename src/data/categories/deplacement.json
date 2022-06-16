@@ -4,7 +4,7 @@
     "name": {
       "fr": "km en métro"
     },
-    "synonyms": ["déplacer"],
+    "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "metro",
     "emoji": "🚇",
     "category": 4,
@@ -21,7 +21,7 @@
     "subtitle": {
       "fr": "Moteur thermique"
     },
-    "synonyms": ["déplacer", "conduire"],
+    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voiturethermique",
     "emoji": "🚗",
     "category": 4,
@@ -38,7 +38,7 @@
     "subtitle": {
       "fr": "Moteur électrique"
     },
-    "synonyms": ["déplacer", "conduire"],
+    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voitureelectrique",
     "emoji": "🚗",
     "category": 4,
@@ -53,7 +53,7 @@
       "fr": "km en bus"
     },
 
-    "synonyms": ["déplacer"],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "bus",
     "emoji": "🚌",
     "category": 4,
@@ -68,7 +68,7 @@
       "fr": "km en TGV"
     },
 
-    "synonyms": ["déplacer"],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "tgv",
     "emoji": "🚅",
     "category": 4,
@@ -83,7 +83,7 @@
       "fr": "km en avion"
     },
 
-    "synonyms": ["déplacer", "voler"],
+    "synonyms": ["transport", "déplacement", "déplacer", "voler", "voyager"],
     "slug": "avion",
     "emoji": "✈️",
     "category": 4,
