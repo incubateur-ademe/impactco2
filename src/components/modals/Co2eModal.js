@@ -15,12 +15,14 @@ export default function Co2eModal() {
       </Title>
       <Text>
         Le dérèglement climatique actuel est une conséquence de nos émissions
-        importantes de gaz à effet de serre. Nous avons la chance de pouvoir
+        importantes de différents gaz à effet de serre. Nous pouvons
         mesurer ces émissions avec un indice simple : les kilogrammes
         d'équivalent CO<sub>2</sub> (kgCO<sub>2</sub>e).
       </Text>
       <Text>
-        Par exemple, 1 kg de méthane équivaut à 28 kg de CO<sub>2</sub>. Si la
+        Chaque gaz à effet est de serre est ramené à un équivalent en CO2
+        selon son pouvoir de réchauffement. Par exemple, 1 kg de méthane
+        équivaut à 28 kg de CO<sub>2</sub> car il est 28 fois plus réchauffant. Si la
         fabrication d'un produit a émis 1 kg de méthane et 1 kg de CO
         <sub>2</sub>, alors l'impact total de ce produit est de 29 kg
         d'équivalent CO<sub>2</sub>.
