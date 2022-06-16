@@ -56,7 +56,7 @@ const Bar = styled.div`
   position: relative;
   width: ${(props) => props.percent * 100}%;
   height: 2.5rem;
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.theme.colors.main};
   border-radius: 0 1rem 1rem 0;
 `
 
