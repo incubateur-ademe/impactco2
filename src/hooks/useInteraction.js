@@ -6,8 +6,9 @@ const handleInteraction = () => {
 }
 export default function useInteraction() {
   useEffect(() => {
-    document.body.addEventListener('click', handleInteraction)
+    window?._paq?.push(['trackEvent', 'User', 'Branche', process.env.BRANCH])
 
+    document.body.addEventListener('click', handleInteraction)
     return () => {
       document.body.removeEventListener('click', handleInteraction)
     }
