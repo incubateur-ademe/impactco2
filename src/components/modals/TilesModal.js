@@ -34,28 +34,30 @@ export default function TilesModal() {
         Sélectionnez (ou désélectionnez) des équivalents pour créer votre
         infographie personnalisée.
       </Text>
-      <Equivalents>
-        {equivalents.map((equivalent) => (
-          <Equivalent
-            key={equivalent.slug}
-            equivalent={equivalent}
-            checked={tiles.find((tile) => tile === equivalent)}
-            setChecked={(checked) => {
-              setTiles((prevTiles) =>
-                checked
-                  ? [...prevTiles, equivalent]
-                  : prevTiles.filter((tile) => tile.id !== equivalent.slug)
-              )
-              window?._paq?.push([
-                'trackEvent',
-                'Interaction',
-                'Ajouter tuile',
-                equivalent.slug,
-              ])
-            }}
-          />
-        ))}
-      </Equivalents>
+      {open && (
+        <Equivalents>
+          {equivalents.map((equivalent) => (
+            <Equivalent
+              key={equivalent.slug}
+              equivalent={equivalent}
+              checked={tiles.find((tile) => tile === equivalent)}
+              setChecked={(checked) => {
+                setTiles((prevTiles) =>
+                  checked
+                    ? [...prevTiles, equivalent]
+                    : prevTiles.filter((tile) => tile.id !== equivalent.slug)
+                )
+                window?._paq?.push([
+                  'trackEvent',
+                  'Interaction',
+                  'Ajouter tuile',
+                  equivalent.slug,
+                ])
+              }}
+            />
+          ))}
+        </Equivalents>
+      )}
       <StyledButtonWrapper>
         <Button onClick={() => setOpen(false)}>Valider et fermer</Button>
       </StyledButtonWrapper>
