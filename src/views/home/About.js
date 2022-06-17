@@ -23,30 +23,6 @@ const SimulateursTitle = styled.h3`
 `
 
 export default function About(props) {
-  const simulateurs = [
-    {
-      title: 'Nos Gestes Climat',
-      img: './about/nos-gestes-climat.jpg',
-      url: 'https://nosgestesclimat.fr',
-    },
-    {
-      title: 'Mon Impact Transport',
-      img: './about/mon-impact-transport.png',
-      url: 'https://monimpacttransport.fr',
-    },
-    {
-      title: 'Mes Fruits et Légumes de Saison',
-      img: './about/mes-fruits-et-legumes-de-saison.jpg',
-      url: 'https://mesfruitsetlegumesdesaison.fr',
-    },
-    {
-      title: 'Que Faire de mes Déchets',
-      img: './about/que-faire-de-mes-dechets.png',
-      url: 'https://quefairedemesdechets.fr',
-    },
-  ]
-
-  const img = ['./about/que-faire-de-mes-dechets.png']
   return (
     <StyledSection>
       <Section.Content>
