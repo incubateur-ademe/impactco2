@@ -46,7 +46,7 @@ export default function AddButton() {
   return (
     <Wrapper onClick={() => setTiles(true)}>
       <Title>+</Title>
-      <Text>Ajouter un equivalent</Text>
+      <Text>Ajouter un équivalent</Text>
     </Wrapper>
   )
 }
