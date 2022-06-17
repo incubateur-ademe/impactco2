@@ -53,7 +53,7 @@ export default function Visualization(props) {
           speed={500}
           slidesToShow={1}
           slidesToScroll={1}
-          autoplay={true}
+          autoplay={false}
           autoplaySpeed={5000}
           initialSlide={Number(currentSlide)}
           afterChange={(index) => {
