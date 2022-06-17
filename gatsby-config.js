@@ -14,6 +14,12 @@ module.exports = {
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        allowList: ['BRANCH'],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
