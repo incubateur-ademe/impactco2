@@ -1,13 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import SimpleTile from 'components/base/SimpleTile'
-import nosgestesclimat from './about/nos-gestes-climat.jpg'
-import monimpacttransport from './about/mon-impact-transport.png'
-import mesfruitsetlegumesdesaison from './about/mes-fruits-et-legumes-de-saison.jpg'
-import quefairedemesdechets from './about/que-faire-de-mes-dechets.png'
 
 const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -29,25 +26,27 @@ export default function About(props) {
   const simulateurs = [
     {
       title: 'Nos Gestes Climat',
-      img: nosgestesclimat,
+      img: './about/nos-gestes-climat.jpg',
       url: 'https://nosgestesclimat.fr',
     },
     {
       title: 'Mon Impact Transport',
-      img: monimpacttransport,
+      img: './about/mon-impact-transport.png',
       url: 'https://monimpacttransport.fr',
     },
     {
       title: 'Mes Fruits et Légumes de Saison',
-      img: mesfruitsetlegumesdesaison,
+      img: './about/mes-fruits-et-legumes-de-saison.jpg',
       url: 'https://mesfruitsetlegumesdesaison.fr',
     },
     {
       title: 'Que Faire de mes Déchets',
-      img: quefairedemesdechets,
+      img: './about/que-faire-de-mes-dechets.png',
       url: 'https://quefairedemesdechets.fr',
     },
   ]
+
+  const img = ['./about/que-faire-de-mes-dechets.png']
   return (
     <StyledSection>
       <Section.Content>
@@ -77,9 +76,46 @@ export default function About(props) {
         </Text>
         <SimulateursTitle>Découvrez nos autres simulateurs</SimulateursTitle>
         <SimpleTile.Wrapper>
-          {simulateurs.map((simulateur) => (
-            <SimpleTile key={simulateur.url} item={simulateur} column={2} />
-          ))}
+          <SimpleTile
+            title='Nos Gestes Climat'
+            url='https://quefairedemesdechets.fr'
+            column={2}
+          >
+            <StaticImage
+              src='./about/nos-gestes-climat.jpg'
+              alt='Nos Gestes Climat'
+            />
+          </SimpleTile>
+          <SimpleTile
+            title='Mon Impact Transport'
+            url='https://quefairedemesdechets.fr'
+            column={2}
+          >
+            <StaticImage
+              src='./about/mon-impact-transport.png'
+              alt='Mon Impact Transport'
+            />
+          </SimpleTile>
+          <SimpleTile
+            title='Mes Fruits et Légumes de Saison'
+            url='https://quefairedemesdechets.fr'
+            column={2}
+          >
+            <StaticImage
+              src='./about/mes-fruits-et-legumes-de-saison.jpg'
+              alt='Mes Fruits et Légumes de Saison'
+            />
+          </SimpleTile>
+          <SimpleTile
+            title='Que Faire de mes Déchets'
+            url='https://quefairedemesdechets.fr'
+            column={2}
+          >
+            <StaticImage
+              src='./about/que-faire-de-mes-dechets.png'
+              alt='Que Faire de mes Déchets'
+            />
+          </SimpleTile>
         </SimpleTile.Wrapper>
       </Section.Content>
     </StyledSection>

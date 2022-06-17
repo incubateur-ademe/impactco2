@@ -9,6 +9,8 @@ module.exports = {
   },
   plugins: [
     //`gatsby-plugin-preact`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-root-import`,

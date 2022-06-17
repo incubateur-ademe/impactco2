@@ -31,7 +31,7 @@ const Top = styled.div`
   align-items: center;
 `
 const StyledEmoji = styled(Emoji)`
-  margin: 1.25rem 0 1rem;
+  margin: 1.25rem 0 0;
   font-size: 2rem;
   text-align: center;
 
@@ -39,17 +39,11 @@ const StyledEmoji = styled(Emoji)`
     font-size: 1.5rem;
   }
 `
-const Image = styled.img`
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-bottom: 0.875rem;
-`
 const Title = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0.5rem 0.625rem;
+  margin: 0.875rem 0.5rem 0.625rem;
   font-size: ${(props) => (props.small ? 1 : 1.125)}rem;
   font-weight: bold;
   text-align: center;
@@ -80,15 +74,13 @@ export default function SimpleTile(props) {
   return (
     <Wrapper column={props.column}>
       <Top>
-        {props.item.emoji && <StyledEmoji>{props.item.emoji}</StyledEmoji>}
-        {props.item.img && (
-          <Image src={props.item.img} alt={props.item.title} />
-        )}
-        <Title small={props.small}>{props.item.title}</Title>
-        {props.item.text && <Text>{props.item.text}</Text>}
+        {props.emoji && <StyledEmoji>{props.emoji}</StyledEmoji>}
+        {props.children}
+        <Title small={props.small}>{props.title}</Title>
+        {props.text && <Text>{props.text}</Text>}
       </Top>
-      <StyledButton to={props.item.url}>
-        {props.item.button || (
+      <StyledButton to={props.url}>
+        {props.button || (
           <>
             Découvrir
             <Svg x='0px' y='0px' viewBox='0 0 283.178 283.178'>

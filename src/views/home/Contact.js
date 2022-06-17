@@ -20,33 +20,27 @@ export default function Contact(props) {
         </Title>
         <SimpleTile.Wrapper>
           <SimpleTile
-            item={{
-              title: 'Affichez nos simulateurs sur votre site',
-              text: `Personnalisez-les et intégrez-les facilement grace à notre configurateur`,
-              emoji: '📲',
-              url: '/integration',
-              button: 'Voir le configurateur',
-            }}
+            title='Affichez nos simulateurs sur votre site'
+            text={`Personnalisez-les et intégrez-les facilement grace à notre configurateur`}
+            emoji='📲'
+            url='/integration'
+            button='Voir le configurateur'
             small
           />
           <SimpleTile
-            item={{
-              title: 'Réutilisez les données brutes',
-              text: `Contactez nous à datagir@ademe.fr pour bénéficier de notre expertise et accompagnement.`,
-              emoji: '📊',
-              url: 'mailto:datagir@ademe.fr',
-              button: 'Contacter Datagir',
-            }}
+            title='Réutilisez les données brutes'
+            text={`Contactez nous à datagir@ademe.fr pour bénéficier de notre expertise et accompagnement.`}
+            emoji='📊'
+            url='mailto:datagir@ademe.fr'
+            button='Contacter Datagir'
             small
           />
           <SimpleTile
-            item={{
-              title: 'Reprenez le code de nos simulateurs',
-              text: `Nos simulateurs sont développés de manière ouverte (open source). L’ensemble du code est disponible librement`,
-              emoji: '⚙️',
-              url: 'https://github.com/datagir/',
-              button: 'Voir le code',
-            }}
+            title='Reprenez le code de nos simulateurs'
+            text={`Nos simulateurs sont développés de manière ouverte (open source). L’ensemble du code est disponible librement`}
+            emoji='⚙️'
+            url='https://github.com/datagir/'
+            button='Voir le code'
             small
           />
         </SimpleTile.Wrapper>
