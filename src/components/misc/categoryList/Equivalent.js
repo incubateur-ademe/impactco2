@@ -109,6 +109,14 @@ export default function Equivalent(props) {
         categories.find((category) => category.id === props.equivalent.category)
           .slug
       }/${props.equivalent.slug}`}
+      onClick={() =>
+        window?._paq?.push([
+          'trackEvent',
+          'Interaction',
+          'Navigation via graph categorie',
+          props.equivalent.slug,
+        ])
+      }
       current={props.current}
     >
       <EmojiWrapper>
