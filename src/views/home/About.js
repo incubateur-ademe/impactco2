@@ -54,7 +54,7 @@ export default function About(props) {
         <SimpleTile.Wrapper>
           <SimpleTile
             title='Nos Gestes Climat'
-            url='https://quefairedemesdechets.fr'
+            url='https://nosgestesclimat.fr'
             column={2}
           >
             <StaticImage
@@ -64,7 +64,7 @@ export default function About(props) {
           </SimpleTile>
           <SimpleTile
             title='Mon Impact Transport'
-            url='https://quefairedemesdechets.fr'
+            url='https://monimpacttransport.fr'
             column={2}
           >
             <StaticImage
@@ -74,7 +74,7 @@ export default function About(props) {
           </SimpleTile>
           <SimpleTile
             title='Mes Fruits et Légumes de Saison'
-            url='https://quefairedemesdechets.fr'
+            url='https://mesfruitsetlegumesdesaison.fr'
             column={2}
           >
             <StaticImage
