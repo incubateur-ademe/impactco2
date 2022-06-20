@@ -79,14 +79,9 @@ const ButtonRemove = styled.button`
     }
   }
 `
-const ButtonEmoji = styled.button`
+const EmojiWrapper = styled.div`
   margin-bottom: 0.5rem;
-  padding: 0;
   font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: grab;
-  pointer-events: ${(props) => (props.reference ? 'none' : 'inherit')};
 
   img,
   span {
@@ -204,21 +199,9 @@ export default function Tile(props) {
           />
         </svg>
       </ButtonRemove>
-      <ButtonEmoji
-        {...attributes}
-        {...listeners}
-        reference={props.reference}
-        onMouseDown={() =>
-          window?._paq?.push([
-            'trackEvent',
-            'Interaction',
-            'Drag tuile',
-            props.equivalent.slug,
-          ])
-        }
-      >
+      <EmojiWrapper>
         <Emoji>{props.equivalent.emoji}</Emoji>
-      </ButtonEmoji>
+      </EmojiWrapper>
       <Title>
         <Number>
           <AnimatedNumber
