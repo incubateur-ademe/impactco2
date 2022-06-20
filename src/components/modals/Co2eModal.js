@@ -20,8 +20,8 @@ export default function Co2eModal() {
         d'équivalent CO<sub>2</sub> (kgCO<sub>2</sub>e).
       </Text>
       <Text>
-        Chaque gaz à effet est de serre est ramené à un équivalent en CO2
-        selon son pouvoir de réchauffement. Par exemple, 1 kg de méthane
+        Chaque gaz à effet est de serre est ramené à un équivalent en 
+        CO<sub>2</sub> selon son pouvoir de réchauffement. Par exemple, 1 kg de méthane
         équivaut à 28 kg de CO<sub>2</sub> car il est 28 fois plus réchauffant. Si la
         fabrication d'un produit a émis 1 kg de méthane et 1 kg de CO
         <sub>2</sub>, alors l'impact total de ce produit est de 29 kg
