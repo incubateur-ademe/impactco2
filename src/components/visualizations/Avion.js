@@ -23,7 +23,7 @@ export default function Avion() {
           <Label>
             <strong>1 km</strong>
             <br />
-            en voiture
+            en avion
           </Label>
         </Equivalent>
         <Equals>=</Equals>
@@ -51,7 +51,7 @@ export default function Avion() {
         <br />
         <strong>1 km</strong>
         <br />
-        en voiture
+        en avion
         <br />=
         <br />
         <strong>2 km</strong>
