@@ -73,14 +73,89 @@
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 400000,
+    "name": {
+      "fr": "Cafetière[s]"
+    },
+    "subtitle": {
+      "fr": "Filtre"
+    },
+    "synonyms": [""],
+    "slug": "cafetierefiltre",
+    "emoji": "☕️",
+    "category": 6,
+    "ecv": [
+      {
+        "value": 16.7491847366496,
+        "id": 1
+      },
+      {
+        "value": 0.507829328766485,
+        "id": 2
+      },
+      {
+        "value": 1.47082451900049,
+        "id": 3
+      },
+      {
+        "value": 12.7918996391102,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 27.1831351,
+      "defaultyears": 5
+    },
+    "end": 29.8824988339172,
+    "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Cafetière[s]"
+    },
+    "subtitle": {
+      "fr": "Expresso"
+    },
+    "synonyms": ["espresso"],
+    "slug": "cafetiereexpresso",
+    "emoji": "☕️",
+    "category": 6,
+    "ecv": [
+      {
+        "value": 27.0666552917124,
+        "id": 1
+      },
+      {
+        "value": 0.936722195669203,
+        "id": 2
+      },
+      {
+        "value": 3.20799867992834,
+        "id": 3
+      },
+      {
+        "value": 15.926176128887,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 28.0487772,
+      "defaultyears": 5
+    },
+    "end": 23.9101982705374,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
     "name": {
       "fr": "Four"
     },
     "subtitle": {
-      "fr": "Électrique encastrable"
+      "fr": "Électrique"
     },
-    "slug": "four",
+    "slug": "fourelectrique",
     "emoji": "🎛",
     "category": 6,
     "total": 217,
@@ -89,21 +164,40 @@
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 400001,
     "name": {
       "fr": "Lave-vaisselle"
     },
-
     "slug": "lavevaisselle",
     "emoji": "🍽",
     "category": 6,
-    "total": 271,
+    "ecv": [
+      {
+        "value": 157.75927939944,
+        "id": 1
+      },
+      {
+        "value": 7.54182695224947,
+        "id": 2
+      },
+      {
+        "value": 15.5684363413951,
+        "id": 3
+      },
+      {
+        "value": 63.022463630834,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 21.943837,
+      "defaultyears": 10
+    },
+    "end": -22.6301522707884,
     "default": true,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 400002,
     "name": {
       "fr": "Lave-linge"
     },
@@ -113,36 +207,111 @@
     "slug": "lavelinge",
     "emoji": "🧦",
     "category": 6,
-    "total": 342,
+    "ecv": [
+      {
+        "value": 197.297037097456,
+        "id": 1
+      },
+      {
+        "value": 10.8662882118782,
+        "id": 2
+      },
+      {
+        "value": 13.8051214857605,
+        "id": 3
+      },
+      {
+        "value": 73.7153068142095,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 21.6932702,
+      "defaultyears": 10
+    },
+    "end": -47.7754436590173,
     "default": true,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 400003,
     "name": {
       "fr": "Réfrigérateur"
     },
-
     "slug": "refrigirateur",
     "emoji": "❄️",
     "category": 6,
-    "total": 257,
+    "ecv": [
+      {
+        "value": 162.081563649907,
+        "id": 1
+      },
+      {
+        "value": 7.72234396019848,
+        "id": 2
+      },
+      {
+        "value": 11.4157709422884,
+        "id": 3
+      },
+      {
+        "value": 73.5061566428504,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 8.83240334,
+      "defaultyears": 10
+    },
+    "end": -20.163316975983,
     "default": true,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 400005,
     "name": {
       "fr": "Aspirateur"
     },
-
     "slug": "aspirateur",
     "emoji": "🧹",
     "category": 6,
     "total": 47.3,
     "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Climatiseur[s]"
+    },
+    "synonyms": ["climatisation"],
+    "slug": "climatiseur",
+    "emoji": "❄️",
+    "category": 6,
+    "ecv": [
+      {
+        "value": 169.796890366223,
+        "id": 1
+      },
+      {
+        "value": 5.1963400483211,
+        "id": 2
+      },
+      {
+        "value": 18.6768486582807,
+        "id": 3
+      },
+      {
+        "value": 44.5200276834971,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 18.2596505,
+      "defaultyears": 6
+    },
+    "end": 65.4233854443126,
+    "default": false,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }
