@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+import ModalContext from 'utils/ModalContext'
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
+import ButtonLink from 'components/base/ButtonLink'
 import ShareButton from 'components/misc/ShareButton'
 import Value from './details/Value'
 
@@ -41,6 +43,8 @@ const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;
 `
 export default function Details(props) {
+  const { setCo2e } = useContext(ModalContext)
+
   return (
     <>
       <Section>
@@ -66,7 +70,11 @@ export default function Details(props) {
       <Section>
         <StyledSectionContent flex>
           <Disclaimer>
-            Valeurs exprimées en kg CO2e émis {props.category?.unit}.
+            Valeurs exprimées en kg{' '}
+            <ButtonLink onClick={() => setCo2e(true)}>
+              CO<sub>2</sub>e
+            </ButtonLink>{' '}
+            émis {props.category?.unit}.
           </Disclaimer>
           <StyledMagicLink to={props.equivalent.source}>Source</StyledMagicLink>
         </StyledSectionContent>

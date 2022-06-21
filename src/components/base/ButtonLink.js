@@ -12,6 +12,11 @@ const Wrapper = styled(MagicLink)`
   background: transparent;
   border: none;
   cursor: pointer;
+
+  & sub {
+    display: inline-block;
+    text-decoration: none;
+  }
 `
 export default function ButtonLink(props) {
   return (
