@@ -6,7 +6,7 @@ export function formatNumber(value, noformat) {
     tempTotal > 0.001 ? Math.round(tempTotal * 1000) / 1000 : tempTotal
   tempTotal = tempTotal > 0.01 ? Math.round(tempTotal * 100) / 100 : tempTotal
   tempTotal = tempTotal > 0.1 ? Math.round(tempTotal * 10) / 10 : tempTotal
-  tempTotal = tempTotal > 1 ? Math.round(tempTotal * 1) / 1 : tempTotal
+  tempTotal = tempTotal > 2 ? Math.round(tempTotal * 1) / 1 : tempTotal
   return noformat
     ? tempTotal
     : tempTotal.toLocaleString('fr-fr', { maximumFractionDigits: 10 })
