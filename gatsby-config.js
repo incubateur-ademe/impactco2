@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Mon Convertisseur CO2`,
+    title: `Découvrez l'impact sur le climat de votre quotidien`,
     author: `Datagir`,
-    description: `Découvrez l'impact sur le climat de votre quotidien. Comparez des objets et gestes entre-eux et visualisez facilement leurs émissions de CO2e.`,
+    description: `Comparez des objets et gestes entre-eux et visualisez facilement leurs émissions de CO2e.`,
     siteUrl: `https://monconvertisseurco2.fr`,
     image: 'metaimage.png',
     twitterUsername: '_datagir',
