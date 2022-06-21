@@ -54,4 +54,23 @@ const visualizations = {
   manteau: [<Manteau />],
 }
 
+export const home = [
+  <SmartphoneGeneral />,
+  <SmartphoneCategory />,
+  <Montre />,
+  <MontreCategory />,
+  <ImprimanteCategory />,
+  <ConsoleSalonCategory />,
+  <OrdinateurFixeCategory />,
+  <Vegetalien />,
+  <Boeuf />,
+  <PoissonGras />,
+  <PoissonBlanc />,
+  <Lait />,
+  <Voiture />,
+  <Avion />,
+  <JeansGeneral />,
+  <PullGeneral />,
+]
+
 export default visualizations
