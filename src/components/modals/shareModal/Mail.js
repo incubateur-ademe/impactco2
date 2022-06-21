@@ -7,8 +7,8 @@ export default function Mail(props) {
   return (
     <MagicLink
       to={`mailto:?subject=${encodeURI(props.subject)}&body=${encodeURI(
-        props.body
-      )}${encodeURI(props.url)}`}
+        props.url
+      )}`}
       onClick={() =>
         window._paq?.push(['trackEvent', 'Share', 'Email', props.url])
       }
