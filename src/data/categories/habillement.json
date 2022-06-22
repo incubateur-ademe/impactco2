@@ -1,22 +1,75 @@
 [
   {
-    "id": 27043,
     "name": {
       "fr": "Jeans"
     },
-    "subtitle": {
-      "fr": "En coton"
-    },
-    "slug": "jeansencoton",
+    "slug": "jeans",
+    "synonyms": ["habiller"],
     "emoji": "👖",
     "category": 5,
-    "total": 23.2,
+    "ecv": [
+      {
+        "value": 6.71577918745776,
+        "id": 1
+      },
+      {
+        "value": 0.572619621727373,
+        "id": 2
+      },
+      {
+        "value": 9.94711273545712,
+        "id": 3
+      },
+      {
+        "value": 5.4389186837573,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.250618604,
+      "defaultyears": 5
+    },
+    "end": 0.63563578618721,
     "default": true,
     "tile": true,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 27044,
+    "name": {
+      "fr": "Polo[s]"
+    },
+    "slug": "polo",
+    "synonyms": ["habiller"],
+    "emoji": "👚",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 2.77326105064947,
+        "id": 1
+      },
+      {
+        "value": 0.350076439686799,
+        "id": 2
+      },
+      {
+        "value": 3.13579084997928,
+        "id": 3
+      },
+      {
+        "value": 1.99170429798737,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.283813258,
+      "defaultyears": 5
+    },
+    "end": 0.544462785648209,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
     "name": {
       "fr": "T-shirt[s]"
     },
@@ -24,15 +77,113 @@
       "fr": "En coton"
     },
     "slug": "tshirtencoton",
+    "synonyms": ["habiller"],
     "emoji": "👕",
     "category": 5,
-    "total": 5.2,
+    "ecv": [
+      {
+        "value": 1.68250044929409,
+        "id": 1
+      },
+      {
+        "value": 0.153295818446919,
+        "id": 2
+      },
+      {
+        "value": 1.90971774714268,
+        "id": 3
+      },
+      {
+        "value": 1.40410288585542,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.196677291,
+      "defaultyears": 5
+    },
+    "end": 0.250404099863735,
     "default": true,
     "tile": true,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 27045,
+    "name": {
+      "fr": "T-shirt[s]"
+    },
+    "subtitle": {
+      "fr": "En polyester"
+    },
+    "slug": "tshirtenpolyester",
+    "synonyms": ["habiller"],
+    "emoji": "👕",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 2.00469200953299,
+        "id": 1
+      },
+      {
+        "value": 0.139939265557948,
+        "id": 2
+      },
+      {
+        "value": 1.73360600900888,
+        "id": 3
+      },
+      {
+        "value": 1.33453942239411,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.107837512,
+      "defaultyears": 5
+    },
+    "end": 0.172305318123854,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Sweat[s]"
+    },
+    "subtitle": {
+      "fr": "En coton"
+    },
+    "slug": "sweatencoton",
+    "synonyms": ["habiller"],
+    "emoji": "🦺",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 9.78020416893434,
+        "id": 1
+      },
+      {
+        "value": 1.19649435730047,
+        "id": 2
+      },
+      {
+        "value": 11.7523029930899,
+        "id": 3
+      },
+      {
+        "value": 4.67357597801238,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.715343761,
+      "defaultyears": 5
+    },
+    "end": 1.51606227347502,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
     "name": {
       "fr": "Chemise[s]"
     },
@@ -40,31 +191,189 @@
       "fr": "En coton"
     },
     "slug": "chemiseencoton",
+    "synonyms": ["habiller"],
     "emoji": "👚",
     "category": 5,
-    "total": 11.2,
+    "ecv": [
+      {
+        "value": 2.41520394057459,
+        "id": 1
+      },
+      {
+        "value": 0.314681973234939,
+        "id": 2
+      },
+      {
+        "value": 6.4584709668835,
+        "id": 3
+      },
+      {
+        "value": 2.08563286261565,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.314517279,
+      "defaultyears": 5
+    },
+    "end": 0.462075432138259,
     "default": true,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 27046,
     "name": {
-      "fr": "Chaussure[s]"
+      "fr": "Chemise[s]"
+    },
+    "subtitle": {
+      "fr": "En viscose"
+    },
+    "slug": "chemiseenviscose",
+    "synonyms": ["habiller"],
+    "emoji": "👚",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 1.74904410395076,
+        "id": 1
+      },
+      {
+        "value": 0.211223988104837,
+        "id": 2
+      },
+      {
+        "value": 6.23328855897312,
+        "id": 3
+      },
+      {
+        "value": 2.00101277048857,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.29513142,
+      "defaultyears": 5
+    },
+    "end": 0.464139172777627,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Paire[s] de chaussures"
     },
     "subtitle": {
       "fr": "En cuir"
     },
-    "slug": "chaussureencuir",
+    "slug": "chaussuresencuir",
+    "synonyms": ["habiller"],
     "emoji": "👞",
     "category": 5,
-    "total": 13.4,
+    "ecv": [
+      {
+        "value": 3.06320840494112,
+        "id": 1
+      },
+      {
+        "value": 0.379916399647876,
+        "id": 2
+      },
+      {
+        "value": 0.496785335748426,
+        "id": 3
+      },
+      {
+        "value": 9.41689560854668,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0,
+      "defaultyears": 1
+    },
+    "end": 1.55449454602226,
     "default": true,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 27047,
+    "name": {
+      "fr": "Paire[s] de chaussures"
+    },
+    "subtitle": {
+      "fr": "En tissu"
+    },
+    "slug": "chaussuresentissu",
+    "synonyms": ["habiller"],
+    "emoji": "🥾",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 4.81163172892169,
+        "id": 1
+      },
+      {
+        "value": 0.29505073821529,
+        "id": 2
+      },
+      {
+        "value": 3.97200492320128,
+        "id": 3
+      },
+      {
+        "value": 8.21148202601768,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0,
+      "defaultyears": 1
+    },
+    "end": 1.2198842675649,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Paire[s] de chaussures"
+    },
+    "subtitle": {
+      "fr": "De sport"
+    },
+    "slug": "chaussuresdesport",
+    "synonyms": ["habiller"],
+    "emoji": "👟",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 6.08341321950025,
+        "id": 1
+      },
+      {
+        "value": 0.372169915296596,
+        "id": 2
+      },
+      {
+        "value": 2.93822392919762,
+        "id": 3
+      },
+      {
+        "value": 9.27283492692368,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0,
+      "defaultyears": 1
+    },
+    "end": 1.4255512835071,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
     "name": {
       "fr": "Robe[s]"
     },
@@ -72,15 +381,113 @@
       "fr": "En coton"
     },
     "slug": "Robeencoton",
+    "synonyms": ["habiller"],
     "emoji": "👗",
     "category": 5,
-    "total": 49.8,
+    "ecv": [
+      {
+        "value": 14.0701311296077,
+        "id": 1
+      },
+      {
+        "value": 1.22243132050941,
+        "id": 2
+      },
+      {
+        "value": 25.6526557148748,
+        "id": 3
+      },
+      {
+        "value": 7.70594287490145,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 1.16264069,
+      "defaultyears": 5
+    },
+    "end": 1.29416237785554,
     "default": false,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 27048,
+    "name": {
+      "fr": "Robe[s]"
+    },
+    "subtitle": {
+      "fr": "En polyester"
+    },
+    "slug": "Robeenpolyester",
+    "synonyms": ["habiller"],
+    "emoji": "👗",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 19.6406599223765,
+        "id": 1
+      },
+      {
+        "value": 1.10490328337953,
+        "id": 2
+      },
+      {
+        "value": 23.1213877826841,
+        "id": 3
+      },
+      {
+        "value": 7.11180533110049,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.964467698,
+      "defaultyears": 5
+    },
+    "end": 1.53486702873937,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Robe[s]"
+    },
+    "subtitle": {
+      "fr": "En viscose"
+    },
+    "slug": "Robeenviscose",
+    "synonyms": ["habiller"],
+    "emoji": "👗",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 10.0211162216161,
+        "id": 1
+      },
+      {
+        "value": 1.74331570248864,
+        "id": 2
+      },
+      {
+        "value": 25.1547013675586,
+        "id": 3
+      },
+      {
+        "value": 8.04998516007235,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 1.03735098,
+      "defaultyears": 5
+    },
+    "end": 2.39476716560145,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
     "name": {
       "fr": "Pull[s]"
     },
@@ -88,26 +495,214 @@
       "fr": "En laine"
     },
     "slug": "pullenlaine",
+    "synonyms": ["habiller"],
     "emoji": "🧶",
     "category": 5,
-    "total": 52.9,
+    "ecv": [
+      {
+        "value": 39.3401848590052,
+        "id": 1
+      },
+      {
+        "value": 0.859564016810473,
+        "id": 2
+      },
+      {
+        "value": 8.57680679704375,
+        "id": 3
+      },
+      {
+        "value": 4.16552969009911,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.503327566,
+      "defaultyears": 5
+    },
+    "end": 1.27881830769189,
     "default": true,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
-    "id": 27049,
+    "name": {
+      "fr": "Pull[s]"
+    },
+    "subtitle": {
+      "fr": "En acrylique"
+    },
+    "slug": "pullenacrylique",
+    "synonyms": ["habiller"],
+    "emoji": "🧶",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 13.9357303827883,
+        "id": 1
+      },
+      {
+        "value": 0.73268320279258,
+        "id": 2
+      },
+      {
+        "value": 7.27384057271409,
+        "id": 3
+      },
+      {
+        "value": 3.67647578678073,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.491530186,
+      "defaultyears": 5
+    },
+    "end": 1.01073009563544,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Pull[s]"
+    },
+    "subtitle": {
+      "fr": "En coton recyclé"
+    },
+    "slug": "pullencotonrecycle",
+    "synonyms": ["habiller"],
+    "emoji": "🧶",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 0.936315756776739,
+        "id": 1
+      },
+      {
+        "value": 0.454241563129171,
+        "id": 2
+      },
+      {
+        "value": 5.54828693889922,
+        "id": 3
+      },
+      {
+        "value": 1.22850008276279,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.715343761,
+      "defaultyears": 5
+    },
+    "end": 1.51606227347502,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
     "name": {
       "fr": "Manteau[s]"
     },
-    "subtitle": {
-      "fr": "Textile"
-    },
     "slug": "manteau",
+    "synonyms": ["habiller"],
     "emoji": "🧥",
     "category": 5,
-    "total": 85.8,
+    "ecv": [
+      {
+        "value": 44.4588660742929,
+        "id": 1
+      },
+      {
+        "value": 2.10645566990794,
+        "id": 2
+      },
+      {
+        "value": 29.9134208299953,
+        "id": 3
+      },
+      {
+        "value": 9.23809853307973,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 2.64442279,
+      "defaultyears": 5
+    },
+    "end": 2.39840212966855,
     "default": true,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Veste[s] imperméable[s]"
+    },
+    "slug": "vesteimpermeable",
+    "synonyms": ["k-way", "anorak"],
+    "emoji": "🧥",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 28.1768661161809,
+        "id": 1
+      },
+      {
+        "value": 0.315025517833807,
+        "id": 2
+      },
+      {
+        "value": 6.28798837784357,
+        "id": 3
+      },
+      {
+        "value": 3.8840906072732,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.360161997,
+      "defaultyears": 5
+    },
+    "end": 0.646349561372889,
+    "default": false,
+    "tile": false,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+  },
+  {
+    "name": {
+      "fr": "Veste[s] simili-cuir"
+    },
+    "slug": "vestesimilicuir",
+    "synonyms": ["habiller"],
+    "emoji": "🧥",
+    "category": 5,
+    "ecv": [
+      {
+        "value": 12.2879431377867,
+        "id": 1
+      },
+      {
+        "value": 0.417669298864363,
+        "id": 2
+      },
+      {
+        "value": 6.46612032297222,
+        "id": 3
+      },
+      {
+        "value": 4.72228214174061,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 0.388875125,
+      "defaultyears": 5
+    },
+    "end": 0.881444738170221,
+    "default": false,
     "tile": false,
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }
