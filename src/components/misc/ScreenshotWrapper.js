@@ -29,7 +29,7 @@ const Content = styled.div`
 `
 export default function VisualizationWrapper(props) {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    props.equivalent.slug
+    props.equivalent.slug || 'monconvertisseurco2'
   )
 
   return (
