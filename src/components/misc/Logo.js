@@ -18,9 +18,11 @@ const Svg = styled.svg`
   height: auto;
   margin-right: 0.5em;
 `
-const Title = styled.h1`
+const Title = styled.div`
   margin: 0;
   font-size: 0.875em;
+  font-weight: bold;
+  line-height: 1.2;
   color: ${(props) => props.theme.colors.main};
 `
 const Path = styled.path`
