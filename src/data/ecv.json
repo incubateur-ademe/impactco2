@@ -4,41 +4,41 @@
     "name": {
       "fr": "Matières premières"
     },
-    "color": "#FFD80F"
+    "color": "#e60049"
   },
   {
     "id": 2,
     "name": {
       "fr": "Approvisionnement"
     },
-    "color": "#FFA12E"
+    "color": "#0bb4ff"
   },
   {
     "id": 3,
     "name": {
       "fr": "Mise en forme"
     },
-    "color": "#7CF165"
+    "color": "#50e991"
   },
   {
     "id": 4,
     "name": {
       "fr": "Assemblage et distribution"
     },
-    "color": "#F75E5E"
+    "color": "#00bfa0"
   },
   {
     "id": 5,
     "name": {
       "fr": "Utilisation"
     },
-    "color": "#00E0F5"
+    "color": "#9b19f5"
   },
   {
     "id": 6,
     "name": {
       "fr": "Fin de vie"
     },
-    "color": "#C71AAD"
+    "color": "#ffa300"
   }
 ]

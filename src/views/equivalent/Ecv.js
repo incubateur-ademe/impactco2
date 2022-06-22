@@ -38,14 +38,14 @@ export default function Ecv(props) {
       }))
       if (usage) {
         tempEcvToDisplay.push({
-          color: '#ff00ff',
+          color: '#9b19f5',
           id: 1000,
           value: props.equivalent.usage.peryear * usage,
         })
       }
       if (end) {
         tempEcvToDisplay.push({
-          color: '#ffff00',
+          color: '#ffa300',
           id: 1001,
           name: {
             fr: `Fin de vie`,
