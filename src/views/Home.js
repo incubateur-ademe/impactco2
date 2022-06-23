@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Heading />
       <Visualization />
-      <Tiles background />
+      <Tiles background title />
       <About />
       <Contact />
     </>

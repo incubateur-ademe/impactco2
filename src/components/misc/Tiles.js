@@ -18,8 +18,16 @@ import AddButton from './tiles/AddButton'
 
 const StyledSection = styled(Section)`
   margin-bottom: ${(props) => (props.iframe ? 0 : '4rem')};
-  padding: ${(props) => (props.background ? 2 : 0)}rem 0
+  padding: ${(props) => (props.background ? 3 : 0)}rem 0
     ${(props) => (props.iframe ? 0 : '1.5rem')};
+`
+const Title = styled.h2`
+  text-align: center;
+`
+const Br = styled.br`
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 const Reference = styled.div`
   display: flex;
@@ -72,6 +80,13 @@ export default function Tiles(props) {
   return (
     <StyledSection background={props.background} iframe={iframe}>
       <Section.Content>
+        {props.title && (
+          <Title>
+            Visualisez facilement
+            <Br />
+            une quantité de CO<sub>2</sub>e
+          </Title>
+        )}
         <DndContext
           collisionDetection={closestCenter}
           measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}

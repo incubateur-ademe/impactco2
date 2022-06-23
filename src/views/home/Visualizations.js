@@ -10,7 +10,7 @@ import Tiles from 'components/misc/Tiles'
 const homeRandomized = home.sort((a, b) => 0.5 - Math.random())
 
 const StyledSection = styled(Section)`
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 
   .slick-track {
     display: flex !important;
@@ -38,11 +38,14 @@ const StyledSection = styled(Section)`
     ) => props.theme.colors.main.replace('#', '')}'/%3E%3C/svg%3E%0A");
   }
 `
-
+const Title = styled.h2`
+  text-align: center;
+`
 export default function Visualization(props) {
   return homeRandomized ? (
     <StyledSection>
       <Section.Content>
+        <Title>Découvrez toutes nos infographies</Title>
         <Slider
           dots={false}
           infinite={true}
