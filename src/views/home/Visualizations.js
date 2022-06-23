@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 
@@ -6,8 +6,6 @@ import { home } from 'components/visualizations/list'
 import Section from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import Tiles from 'components/misc/Tiles'
-
-const homeRandomized = home.sort((a, b) => 0.5 - Math.random())
 
 const StyledSection = styled(Section)`
   margin-bottom: 6rem;
@@ -54,6 +52,11 @@ const Title = styled.h2`
   text-align: center;
 `
 export default function Visualization(props) {
+  const homeRandomized = useMemo(
+    () => home.sort((a, b) => 0.5 - Math.random()),
+    []
+  )
+
   return homeRandomized ? (
     <StyledSection>
       <Section.Content>
