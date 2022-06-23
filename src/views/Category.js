@@ -21,7 +21,7 @@ export default function Category(props) {
         category={category}
         setCategory={(category) => {
           window.history.pushState({}, '', `/categories/${category.slug}`)
-          document.title = `${category.name.fr} | Mon Convertisseur CO2`
+          document.title = `Découvrez l'impact de ${category.name.fr} sur Mon Convertisseur CO2`
           setCategory(category)
         }}
       />

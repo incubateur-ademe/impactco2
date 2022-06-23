@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import Section from 'components/base/Section'
 import SimpleTile from 'components/base/SimpleTile'
 
-const Title = styled.h2``
+const Title = styled.h2`
+  text-align: center;
+`
 const Br = styled.br`
   ${(props) => props.theme.mq.small} {
     display: none;

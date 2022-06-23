@@ -9,7 +9,9 @@ import SimpleTile from 'components/base/SimpleTile'
 const StyledSection = styled(Section)`
   margin-bottom: 4rem;
 `
-const Title = styled.h2``
+const Title = styled.h2`
+  text-align: center;
+`
 const Text = styled.p`
   font-size: 1.125rem;
 

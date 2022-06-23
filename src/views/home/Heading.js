@@ -64,9 +64,11 @@ export default function Heading() {
         </Title>
         <Text>
           On parle de plus en plus de{' '}
-          <ButtonLink onClick={() => setCo2e(true)}>CO2e</ButtonLink>, mais
-          concrètement quelles sont les émissions nécessaires pour fabriquer et
-          consommer les objets qui nous
+          <ButtonLink onClick={() => setCo2e(true)}>
+            CO<sub>2</sub>e
+          </ButtonLink>
+          , mais concrètement quelles sont les émissions nécessaires pour
+          fabriquer et consommer les objets qui nous
           <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />
           entourent
           <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />?
@@ -74,7 +76,7 @@ export default function Heading() {
         <StyledSearch placeholder={'Entrez un objet, un geste...'} home />
         <Categories />
         <StyledButtonLink onClick={() => setCo2e(true)}>
-          Comprendre le CO2e
+          Comprendre le CO<sub>2</sub>e
         </StyledButtonLink>
       </StyledSectionContent>
     </Section>

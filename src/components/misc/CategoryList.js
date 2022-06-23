@@ -2,11 +2,13 @@ import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
 import { formatTotal } from 'utils/formatters'
+import ModalContext from 'utils/ModalContext'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
 import MagicLink from 'components/base/MagicLink'
 import Button from 'components/base/Button'
+import ButtonLink from 'components/base/ButtonLink'
 import Equivalent from './categoryList/Equivalent'
 
 const StyledSection = styled(Section)`
@@ -40,6 +42,8 @@ const StyledCheckbox = styled(Checkbox)`
   font-size: 0.875rem;
 `
 export default function Category(props) {
+  const { setCo2e } = useContext(ModalContext)
+
   const { equivalents } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(props.equivalent ? true : false)
@@ -99,7 +103,11 @@ export default function Category(props) {
         {!props.title && (
           <Bottom>
             <Disclaimer>
-              Valeurs exprimées en kg CO2e émis {props.category?.unit}.
+              Valeurs exprimées en kg{' '}
+              <ButtonLink onClick={() => setCo2e(true)}>
+                CO<sub>2</sub>e
+              </ButtonLink>{' '}
+              émis {props.category?.unit}.
             </Disclaimer>
             <Button
               onClick={() => {

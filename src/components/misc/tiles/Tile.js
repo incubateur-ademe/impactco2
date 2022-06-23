@@ -50,6 +50,10 @@ const ButtonDrag = styled.button`
       fill: ${(props) => props.theme.colors.main};
     }
   }
+
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 const ButtonRemove = styled.button`
   position: absolute;
