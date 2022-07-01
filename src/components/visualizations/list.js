@@ -25,6 +25,8 @@ import JeansGeneral from './JeansGeneral'
 import PullGeneral from './PullGeneral'
 import Manteau from './Manteau'
 
+import Chauffage from './Chauffage'
+
 const visualizations = {
   smartphone: [<SmartphoneGeneral />, <SmartphoneCategory />, <Smartphone />],
   ordinateurportable: [<SmartphoneCategory />],
@@ -52,6 +54,9 @@ const visualizations = {
   jeansencoton: [<JeansGeneral />],
   pullenlaine: [<PullGeneral />],
   manteau: [<Manteau />],
+  chauffageelectriquemaison: [<Chauffage />],
+  chauffagefioulmaison: [<Chauffage />],
+  chauffagegazmaison: [<Chauffage />],
 }
 
 export const home = [
