@@ -30,6 +30,16 @@ const Disclaimer = styled.p`
   font-size: 0.875rem;
   text-align: center;
 `
+const InstructionWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+const Instruction = styled.p`
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-align: center;
+`
 const CheckboxWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -38,6 +48,7 @@ const CheckboxWrapper = styled.div`
   visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   transition: opacity 200ms;
 `
+
 const StyledCheckbox = styled(Checkbox)`
   font-size: 0.875rem;
 `
@@ -46,7 +57,7 @@ export default function Category(props) {
 
   const { equivalents } = useContext(DataContext)
 
-  const [displayAll, setDisplayAll] = useState(props.equivalent ? true : false)
+  const [displayAll, setDisplayAll] = useState(false)
 
   const [equivalentsOfCategory, setEquivalentsOfCategory] = useState([])
   useEffect(() => {
@@ -66,32 +77,33 @@ export default function Category(props) {
   return (
     <StyledSection>
       <Section.Content>
-        {props.equivalent ? (
-          <Title>
-            Categorie{' '}
-            <MagicLink to={`/categories/${props.category.slug}`}>
-              {props.category.name.fr}
-            </MagicLink>
-          </Title>
-        ) : (
-          <CheckboxWrapper visible={props.category.slug !== 'repas'}>
-            <StyledCheckbox
-              name='displayAll'
-              checked={displayAll}
-              onChange={() => {
-                setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-                window?._paq?.push([
-                  'trackEvent',
-                  'Interaction',
-                  'Voir tous les équivalents',
-                  props.category.name.fr,
-                ])
-              }}
-            >
-              Voir tous les équivalents
-            </StyledCheckbox>
-          </CheckboxWrapper>
-        )}
+        <CheckboxWrapper
+          visible={equivalents
+            .filter((equivalent) => equivalent.category === props.category.id)
+            .find((equivalent) => !equivalent.default)}
+        >
+          <StyledCheckbox
+            name='displayAll'
+            checked={displayAll}
+            onChange={() => {
+              setDisplayAll((prevDisplayAll) => !prevDisplayAll)
+              window?._paq?.push([
+                'trackEvent',
+                'Interaction',
+                'Voir tous les équivalents',
+                props.category.name.fr,
+              ])
+            }}
+          >
+            Voir tous les équivalents
+          </StyledCheckbox>
+        </CheckboxWrapper>
+        <InstructionWrapper>
+          <Instruction>
+            Cliquez sur un équivalent pour voir le détail.
+          </Instruction>
+        </InstructionWrapper>
+
         <Equivalents small={props.small}>
           {equivalentsOfCategory.map((equivalent) => (
             <Equivalent
@@ -100,7 +112,6 @@ export default function Category(props) {
               max={
                 equivalentsOfCategory[equivalentsOfCategory.length - 1].total
               }
-              current={props.equivalent?.id === equivalent.slug}
               key={equivalent.slug}
               displayAll={displayAll}
             />
@@ -127,7 +138,7 @@ export default function Category(props) {
               }}
               hollow
             >
-              Comparer avec d'autres catégories
+              Comparer toutes les catégories
             </Button>
           </Bottom>
         )}
