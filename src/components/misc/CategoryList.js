@@ -78,9 +78,15 @@ export default function Category(props) {
             <StyledCheckbox
               name='displayAll'
               checked={displayAll}
-              onChange={() =>
+              onChange={() => {
                 setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-              }
+                window?._paq?.push([
+                  'trackEvent',
+                  'Interaction',
+                  'Voir tous les équivalents',
+                  props.category.name.fr,
+                ])
+              }}
             >
               Voir tous les équivalents
             </StyledCheckbox>
@@ -116,7 +122,7 @@ export default function Category(props) {
                   'trackEvent',
                   'Interaction',
                   'Comparer catégories',
-                  null,
+                  props.category.name.fr,
                 ])
               }}
               hollow
