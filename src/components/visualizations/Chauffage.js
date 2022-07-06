@@ -18,7 +18,7 @@ export default function Avion() {
         En termes d'émissions de CO2<sub>e</sub>
       </Title>
       <Equivalents>
-        <Equivalent size={[7.5, 8, 16]}>
+        <Equivalent size={[8, 8, 16]}>
           <Emojis>🛢🛢</Emojis>
           <Label>
             <strong>2 ans de chauffage</strong>
