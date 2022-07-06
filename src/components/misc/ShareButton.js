@@ -15,12 +15,18 @@ const hover = keyframes`
     opacity: 1;
   }
 `
-const StyledButtonWrapper = styled(Button.Wrapper)`
+const Wrapper = styled(Button.Wrapper)`
   align-items: flex-start;
   margin-top: ${(props) => (props.title ? '0.25rem' : 0)};
 
   ${(props) => props.theme.mq.medium} {
     margin: 0;
+  }
+
+  ${(props) => props.theme.mq.small} {
+    span {
+      display: none;
+    }
   }
 `
 const StyledButton = styled(Button)`
@@ -31,6 +37,10 @@ const StyledButton = styled(Button)`
       animation-name: ${hover};
       animation-duration: 400ms;
     }
+  }
+
+  ${(props) => props.theme.mq.small} {
+    padding: 0.375rem;
   }
 `
 const Svg = styled.svg`
@@ -50,7 +60,7 @@ const Svg = styled.svg`
 export default function ShareButton(props) {
   const { setShare } = useContext(ModalContext)
   return (
-    <StyledButtonWrapper title={props.title}>
+    <Wrapper title={props.title}>
       <StyledButton hollow small onClick={() => setShare(true)}>
         <Svg
           width='512'
@@ -79,6 +89,6 @@ export default function ShareButton(props) {
         </Svg>
         <span>Partager</span>
       </StyledButton>
-    </StyledButtonWrapper>
+    </Wrapper>
   )
 }

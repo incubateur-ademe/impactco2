@@ -14,6 +14,7 @@ const Subtitle = styled.span`
   font-size: 1.75rem;
   font-weight: 300;
   line-height: 0;
+  white-space: nowrap;
 
   ${(props) => props.theme.mq.small} {
     font-size: 1.125rem;
