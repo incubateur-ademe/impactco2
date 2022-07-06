@@ -1,0 +1,92 @@
+[
+  {
+    "name": {
+      "fr": "Année[s] de chauffage au gaz"
+    },
+    "subtitle": {
+      "fr": "Maison de 80m2"
+    },
+    "slug": "chauffagegazmaison",
+    "emoji": "💨",
+    "category": 8,
+    "total": 3014.56,
+    "default": true,
+    "tile": false,
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+  },
+  {
+    "name": {
+      "fr": "Année[s] de chauffage au gaz"
+    },
+    "subtitle": {
+      "fr": "Appartement de 80m2"
+    },
+    "slug": "chauffagegazappartement",
+    "emoji": "💨",
+    "category": 8,
+    "total": 2270,
+    "default": false,
+    "tile": false,
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+  },
+  {
+    "name": {
+      "fr": "Année[s] de chauffage au fioul"
+    },
+    "subtitle": {
+      "fr": "Maison de 80m2"
+    },
+    "slug": "chauffagefioulmaison",
+    "emoji": "🛢",
+    "category": 8,
+    "total": 4213.44,
+    "default": true,
+    "tile": false,
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+  },
+  {
+    "name": {
+      "fr": "Année[s] de chauffage au fioul"
+    },
+    "subtitle": {
+      "fr": "Appartement de 80m2"
+    },
+    "slug": "chauffagefioulappartement",
+    "emoji": "🛢",
+    "category": 8,
+    "total": 3991.68,
+    "default": false,
+    "tile": false,
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+  },
+  {
+    "name": {
+      "fr": "Année[s] de chauffage électrique"
+    },
+    "subtitle": {
+      "fr": "Maison de 80m2"
+    },
+    "slug": "chauffageelectriquemaison",
+    "emoji": "⚡️",
+    "category": 8,
+    "total": 482.512,
+    "default": true,
+    "tile": false,
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+  },
+  {
+    "name": {
+      "fr": "Année[s] de chauffage électrique"
+    },
+    "subtitle": {
+      "fr": "Appartement de 80m2"
+    },
+    "slug": "chauffageelectriqueappartement",
+    "emoji": "⚡️",
+    "category": 8,
+    "total": 295.88,
+    "default": false,
+    "tile": false,
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+  }
+]

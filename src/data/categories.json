@@ -68,5 +68,15 @@
     "slug": "mobilier",
     "multiplier": 1,
     "unit": "par produit comprenant la fabrication et la distribution"
+  },
+  {
+    "id": 8,
+    "name": {
+      "fr": "Chauffage"
+    },
+    "emoji": "🏠",
+    "slug": "chauffage",
+    "multiplier": 1,
+    "unit": ""
   }
 ]

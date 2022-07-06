@@ -9,6 +9,7 @@ const habillement = require('./src/data/categories/habillement.json')
 const mobilier = require('./src/data/categories/mobilier.json')
 const numerique = require('./src/data/categories/numerique.json')
 const repas = require('./src/data/categories/repas.json')
+const chauffage = require('./src/data/categories/chauffage.json')
 const categories = require('./src/data/categories.json')
 
 const ogTemplate = require('./src/templates/og.js')
@@ -21,6 +22,7 @@ const equivalents = [
   ...mobilier,
   ...numerique,
   ...repas,
+  ...chauffage,
 ]
 
 exports.onPostBuild = async () => {
