@@ -6,16 +6,12 @@ import ModalContext from 'utils/ModalContext'
 import DataContext from 'utils/DataContext'
 import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
-import MagicLink from 'components/base/MagicLink'
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import Equivalent from './categoryList/Equivalent'
 
 const StyledSection = styled(Section)`
   margin-bottom: 4.5rem;
-`
-const Title = styled.h2`
-  text-align: center;
 `
 const Equivalents = styled.div`
   margin: 0 auto 1rem;

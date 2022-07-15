@@ -6,6 +6,7 @@ import { GlobalStyle } from 'utils/styles'
 import useInteraction from 'hooks/useInteraction'
 import ModalProvider from 'components/providers/ModalProvider'
 import UXProvider from 'components/providers/UXProvider'
+import RulesProvider from '../providers/RulesProvider'
 import DataProvider from 'components/providers/DataProvider'
 import Seo from './web/Seo'
 import Header from './web/Header'
@@ -43,21 +44,23 @@ export default function Web(props) {
         <Seo title={props.title} image={props.image} />
         <QueryClientProvider client={queryClient}>
           <UXProvider>
-            <DataProvider>
-              <ModalProvider>
-                <GlobalStyle />
-                <Content>
-                  <FullScreen>
-                    <Header />
-                    <Nav />
-                    <BreadCrumb breadcrumb={props.breadcrumb} />
-                    {props.children}
-                  </FullScreen>
-                  <Footer />
-                </Content>
-                <ModalWrapper />
-              </ModalProvider>
-            </DataProvider>
+            <RulesProvider>
+              <DataProvider>
+                <ModalProvider>
+                  <GlobalStyle />
+                  <Content>
+                    <FullScreen>
+                      <Header />
+                      <Nav />
+                      <BreadCrumb breadcrumb={props.breadcrumb} />
+                      {props.children}
+                    </FullScreen>
+                    <Footer />
+                  </Content>
+                  <ModalWrapper />
+                </ModalProvider>
+              </DataProvider>
+            </RulesProvider>
           </UXProvider>
         </QueryClientProvider>
       </Wrapper>

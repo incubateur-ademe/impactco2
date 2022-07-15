@@ -78,4 +78,19 @@ export const home = [
   <PullGeneral />,
 ]
 
+export const test = {
+  'alimentation . plats': <Boeuf />,
+  'alimentation . boisson . eau en bouteille . affirmatif': <Eau />,
+  'transport . avion . usager': <Avion />,
+  'transport . voiture . km': <Voiture />,
+  'transport . train . km': <Voiture />,
+  'logement . chauffage . gaz . présent': <Chauffage />,
+  'logement . chauffage . fioul . présent': <Chauffage />,
+  'numérique . ordinateur portable . présent': <SmartphoneCategory />,
+  'numérique . ordinateur fixe . présent': <OrdinateurFixeCategory />,
+  'numérique . téléphone . présent': <SmartphoneGeneral />,
+  'numérique . téléphone . type': <Smartphone />,
+  'numérique . TV . présent': <SmartphoneCategory />,
+}
+
 export default visualizations

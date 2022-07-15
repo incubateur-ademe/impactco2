@@ -11,6 +11,7 @@ const Wrapper = styled(MagicLink)`
   text-decoration: underline;
   background: transparent;
   border: none;
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   cursor: pointer;
 
   & sub {
@@ -25,6 +26,7 @@ export default function ButtonLink(props) {
       onClick={props.onClick}
       disabled={props.disabled}
       className={props.className}
+      type={props.type}
       aria-label={props.children}
     >
       {props.children}

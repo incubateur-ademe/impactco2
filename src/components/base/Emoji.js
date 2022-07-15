@@ -8,7 +8,7 @@ const Wrapper = styled.span`
   vertical-align: middle;
 
   img {
-    display: block;
+    display: inline-block;
     width: auto;
     height: 1em;
   }

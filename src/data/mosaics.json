@@ -1,0 +1,18 @@
+[
+  {
+    "dottedName": "alimentation . plats",
+    "title": "Repas",
+    "rawNode": {
+      "type": "mosaicnumber",
+      "question": "Choisissez les plats de vos midis et dîners pour une semaine type"
+    },
+    "questions": [
+      "alimentation . plats . végétalien . nombre",
+      "alimentation . plats . végétarien . nombre",
+      "alimentation . plats . viande 1 . nombre",
+      "alimentation . plats . viande 2 . nombre",
+      "alimentation . plats . poisson 1 . nombre",
+      "alimentation . plats . poisson 2 . nombre"
+    ]
+  }
+]
