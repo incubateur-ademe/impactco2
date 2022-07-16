@@ -2,6 +2,8 @@ import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import { Flipper, Flipped } from 'react-flip-toolkit'
 
+import end from './end/end.webp'
+
 import RulesContext from 'utils/RulesContext'
 import { formatNumber } from 'utils/formatters'
 import Equivalent from './questions/chart/Equivalent' // Nope nope nope
@@ -27,6 +29,12 @@ const Number = styled.span`
 const Unit = styled.span`
   font-size: 1rem;
   white-space: nowrap;
+`
+const Image = styled.img`
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
 `
 const StyledFlipper = styled(Flipper)`
   margin-bottom: 1.5rem;
@@ -82,6 +90,7 @@ export default function End() {
           </Unit>
         </Value>
       </Title>
+      <Image src={end} alt='' />
       {somme && (
         <StyledFlipper flipKey={somme.map((item) => item.id).join()}>
           {somme.map((item) => (
