@@ -14,6 +14,7 @@ export default function Chart(props) {
 
   const repas = useMemo(
     () =>
+      props.rule.rawNode.type === 'mosaicnumber' &&
       props.rule?.questions
         ?.map((question) =>
           engine.getRule(question.dottedName.replace(' . nombre', ''))

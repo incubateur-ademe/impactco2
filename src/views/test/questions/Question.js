@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 
+import MosaicInput from './question/MosaicInput'
 import MosaicNumberInput from './question/MosaicNumberInput'
 import NumberInput from './question/NumberInput'
 import ChoicesInput from './question/ChoicesInput'
@@ -25,7 +26,14 @@ export default function Question(props) {
 
   console.log(props.rule.dottedName)
 
-  return type === 'mosaicnumber' ? (
+  return type === 'mosaic' ? (
+    <MosaicInput
+      rule={props.rule}
+      evaluation={props.evaluation}
+      value={props.value || ''}
+      onChange={props.onChange}
+    />
+  ) : type === 'mosaicnumber' ? (
     <MosaicNumberInput
       rule={props.rule}
       evaluation={props.evaluation}

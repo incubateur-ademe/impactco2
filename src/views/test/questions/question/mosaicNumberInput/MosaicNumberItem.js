@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     font-size: 1.125rem;
   }
 `
-const Label = styled.label`
+const Label = styled.p`
   margin-bottom: 1rem;
   text-align: center;
 `
