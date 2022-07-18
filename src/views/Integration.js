@@ -25,6 +25,7 @@ export default function Integration() {
   const [theme, setTheme] = useState('default')
 
   let location = useLocation()
+  console.log(location)
 
   return (
     <Section>
