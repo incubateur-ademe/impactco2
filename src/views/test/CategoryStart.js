@@ -1,22 +1,43 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
-
-import alimentation from './categoryStart/alimentation.jpeg'
-import divers from './categoryStart/divers.jpeg'
-import logement from './categoryStart/logement.webp'
-import numerique from './categoryStart/numerique.jpeg'
-import transport from './categoryStart/transport.png'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import RulesContext from 'utils/RulesContext'
 import Button from 'components/base/Button'
 
 const images = {
-  alimentation,
-  divers,
-  logement,
-  numérique: numerique,
-  transport,
+  alimentation: (
+    <StaticImage
+      src='./categoryStart/alimentation.jpeg'
+      alt=''
+      layout='fullWidth'
+    />
+  ),
+  divers: (
+    <StaticImage src='./categoryStart/divers.jpeg' alt='' layout='fullWidth' />
+  ),
+  logement: (
+    <StaticImage
+      src='./categoryStart/logement.webp'
+      alt=''
+      layout='fullWidth'
+    />
+  ),
+  numérique: (
+    <StaticImage
+      src='./categoryStart/numerique.jpeg'
+      alt=''
+      layout='fullWidth'
+    />
+  ),
+  transport: (
+    <StaticImage
+      src='./categoryStart/transport.png'
+      alt=''
+      layout='fullWidth'
+    />
+  ),
 }
 
 const Wrapper = styled.div`
@@ -28,23 +49,18 @@ const Wrapper = styled.div`
   overflow: hidden;
 `
 const Title = styled.h2``
-const Image = styled.img`
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1.5rem;
+const StyledReactMarkdown = styled(ReactMarkdown)`
+  margin-top: 1.5rem;
 `
-const StyledReactMarkdown = styled(ReactMarkdown)``
 export default function CategoryStart(props) {
   const { curCategory } = useContext(RulesContext)
 
-  console.log(curCategory)
   return (
     <Wrapper>
       <Title>
         {curCategory.title} {curCategory.rawNode['icônes']}
       </Title>
-      <Image src={images[curCategory.dottedName]} alt='' />
+      {images[curCategory.dottedName]}
       <StyledReactMarkdown>
         {curCategory.rawNode.description || '🚲 🚗 ✈️ 🚅 🚌'}
       </StyledReactMarkdown>

@@ -1,8 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import { Flipper, Flipped } from 'react-flip-toolkit'
-
-import end from './end/end.webp'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import RulesContext from 'utils/RulesContext'
 import { formatNumber } from 'utils/formatters'
@@ -90,7 +89,7 @@ export default function End() {
           </Unit>
         </Value>
       </Title>
-      <Image src={end} alt='' />
+      <StaticImage src='./end/end.webp' alt='' layout='fullWidth' />
       {somme && (
         <StyledFlipper flipKey={somme.map((item) => item.id).join()}>
           {somme.map((item) => (
