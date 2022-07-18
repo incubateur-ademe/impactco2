@@ -29,12 +29,6 @@ const Unit = styled.span`
   font-size: 1rem;
   white-space: nowrap;
 `
-const Image = styled.img`
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1.5rem;
-`
 const StyledFlipper = styled(Flipper)`
   margin-bottom: 1.5rem;
 `
