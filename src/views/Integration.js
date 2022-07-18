@@ -31,7 +31,7 @@ export default function Integration() {
     <Section>
       <StyledSectionContent flex>
         <Configurator theme={theme} setTheme={setTheme} />
-        {location && (
+        {location.origin && (
           <StyledIframeResizer
             src={`${location.origin}/iframes/tuiles?theme=${theme}`}
             allowfullscreen={true}
