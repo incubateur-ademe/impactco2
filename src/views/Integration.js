@@ -25,18 +25,20 @@ export default function Integration() {
   const [theme, setTheme] = useState('default')
 
   let location = useLocation()
-  console.log(location)
+  console.log(`${location.origin}/iframes/tuiles?theme=${theme}`)
 
   return (
     <Section>
       <StyledSectionContent flex>
         <Configurator theme={theme} setTheme={setTheme} />
-        <StyledIframeResizer
-          src={`${location.origin}/iframes/tuiles?theme=${theme}`}
-          allowfullscreen={true}
-          webkitallowfullscreen={true}
-          mozallowfullscreen={true}
-        />
+        {location && (
+          <StyledIframeResizer
+            src={`${location.origin}/iframes/tuiles?theme=${theme}`}
+            allowfullscreen={true}
+            webkitallowfullscreen={true}
+            mozallowfullscreen={true}
+          />
+        )}
       </StyledSectionContent>
     </Section>
   )
