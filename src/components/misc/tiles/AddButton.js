@@ -28,7 +28,7 @@ const Wrapper = styled.button`
     width: calc(50% - 0.375rem);
   }
 `
-const Title = styled.h4`
+const Title = styled.div`
   height: 5rem;
   margin-bottom: 0.5rem;
   font-size: 5rem;
