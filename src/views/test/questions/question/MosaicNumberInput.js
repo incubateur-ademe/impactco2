@@ -21,6 +21,7 @@ export default function MosaicNumberInput(props) {
     <Wrapper>
       {props.rule.questions.map((question) => (
         <MosaicNumberItem
+          key={question.dottedName}
           name={question.dottedName}
           parent={engine.getRule(question.dottedName.replace(' . nombre', ''))}
           rule={question}

@@ -21,6 +21,7 @@ export default function MosaicInput(props) {
     <Wrapper>
       {props.rule.questions.map((question) => (
         <MosaicItem
+          key={question.dottedName}
           name={question.dottedName}
           parent={engine.getRule(question.dottedName.replace(' . présent', ''))}
           rule={question}

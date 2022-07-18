@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { Fragment, useContext } from 'react'
 import styled from 'styled-components'
 
 import RulesContext from 'utils/RulesContext'
@@ -65,7 +65,7 @@ export default function Summary() {
   return (
     <Wrapper>
       {categories.map((category) => (
-        <>
+        <Fragment key={category.dottedName}>
           <Category
             onClick={() => setCurCategory(category)}
             current={category === curCategory}
@@ -74,7 +74,7 @@ export default function Summary() {
             {category.title}
           </Category>
           <Transition>{'>'}</Transition>
-        </>
+        </Fragment>
       ))}
       <Category
         onClick={() => setCurCategory('end')}

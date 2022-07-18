@@ -1,12 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import ModalContext from 'utils/ModalContext'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import Emoji from 'components/base/Emoji'
-import ButtonLink from 'components/base/ButtonLink'
-import Search from 'components/misc/Search'
 
 const StyledSectionContent = styled(Section.Content)`
   margin-bottom: 6rem;
@@ -33,7 +30,6 @@ const Text = styled.p`
   }
 `
 export default function Ngc() {
-  const { setCo2e } = useContext(ModalContext)
   return (
     <Section>
       <StyledSectionContent>
