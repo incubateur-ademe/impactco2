@@ -22,6 +22,7 @@ export default function Suggestions(props) {
     <StyledButtonWrapper left>
       {Object.entries(props.rule.suggestions).map((suggestion) => (
         <StyledButton
+          key={suggestion[0]}
           onClick={() =>
             props.onChange({
               [props.rule.dottedName]: suggestion[1].rawNode,
