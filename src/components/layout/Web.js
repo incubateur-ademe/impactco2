@@ -1,21 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { GlobalStyle } from 'utils/styles'
 import useInteraction from 'hooks/useInteraction'
-import ModalProvider from 'components/providers/ModalProvider'
-import UXProvider from 'components/providers/UXProvider'
-import RulesProvider from '../providers/RulesProvider'
-import DataProvider from 'components/providers/DataProvider'
 import Seo from './web/Seo'
 import Header from './web/Header'
 import Nav from './web/Nav'
 import BreadCrumb from './web/BreadCrumb'
 import Footer from './web/Footer'
-import ModalWrapper from 'components/wrappers/ModalWrapper'
-
-const queryClient = new QueryClient()
+import Modals from 'components/modals/Modals'
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,29 +32,18 @@ export default function Web(props) {
 
   return (
     <>
+      <Seo title={props.title} image={props.image} />
       <Wrapper>
-        <Seo title={props.title} image={props.image} />
-        <QueryClientProvider client={queryClient}>
-          <UXProvider>
-            <RulesProvider>
-              <DataProvider>
-                <ModalProvider>
-                  <GlobalStyle />
-                  <Content>
-                    <FullScreen>
-                      <Header />
-                      <Nav />
-                      <BreadCrumb breadcrumb={props.breadcrumb} />
-                      {props.children}
-                    </FullScreen>
-                    <Footer />
-                  </Content>
-                  <ModalWrapper />
-                </ModalProvider>
-              </DataProvider>
-            </RulesProvider>
-          </UXProvider>
-        </QueryClientProvider>
+        <Content>
+          <FullScreen>
+            <Header />
+            <Nav />
+            <BreadCrumb breadcrumb={props.breadcrumb} />
+            {props.children}
+          </FullScreen>
+          <Footer />
+        </Content>
+        <Modals />
       </Wrapper>
     </>
   )

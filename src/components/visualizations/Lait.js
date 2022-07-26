@@ -15,7 +15,7 @@ export default function Laut() {
   return (
     <>
       <Title>
-        En termes d'émissions de CO2<sub>e</sub>
+        En termes d&apos;émissions de CO2<sub>e</sub>
       </Title>
       <Equivalents>
         <Equivalent size={[14, 8, 30]}>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react'
 import styled from 'styled-components'
-import { navigate } from 'gatsby'
+import { useRouter } from 'next/router'
 import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 
 import useDebounce from 'hooks/useDebounce.js'
@@ -91,8 +91,10 @@ export default function SearchBar(props) {
     }
   }, [focus, results])
 
+  const router = useRouter()
+
   const navigateToItem = ({ item }) => {
-    navigate(
+    router.push(
       item.category
         ? `/categories/${
             categories.find((category) => category.id === item.category).slug

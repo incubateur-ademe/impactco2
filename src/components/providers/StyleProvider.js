@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import StyleContext from 'utils/StyleContext'
 import { themes } from 'utils/styles'
 
-const StyleProvider = (props) => {
+export default function StyleProvider(props) {
   const [theme, setTheme] = useState('default')
 
   useEffect(() => {
@@ -24,5 +24,3 @@ const StyleProvider = (props) => {
     </StyleContext.Provider>
   )
 }
-const wrapper = ({ element }) => <StyleProvider>{element}</StyleProvider>
-export default wrapper

@@ -14,7 +14,7 @@ export default function Eau() {
   return (
     <>
       <Title>
-        En termes d'émissions de CO2<sub>e</sub>
+        En termes d&apos;émissions de CO2<sub>e</sub>
       </Title>
       <Equivalents>
         <Equivalent size={[7, 6, 8]}>
@@ -22,7 +22,7 @@ export default function Eau() {
           <Label>
             1 litre
             <br />
-            d'eau en bouteille
+            d&apos;eau en bouteille
           </Label>
         </Equivalent>
         <Equals>=</Equals>
@@ -33,15 +33,15 @@ export default function Eau() {
           <Label>
             3 432 litres
             <br />
-            d'eau du robinet
+            d&apos;eau du robinet
           </Label>
         </Equivalent>
       </Equivalents>
       <Small>
-        <br /> 1 litre d'eau en bouteille
+        <br /> 1 litre d&apos;eau en bouteille
         <br />=
         <br />
-        3 432 litres d'eau du robinet
+        3 432 litres d&apos;eau du robinet
         <br />
       </Small>
       <CenterLink to='/categories/boisson'>

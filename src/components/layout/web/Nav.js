@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
+import { useRouter } from 'next/router'
 
 import Section from 'components/base/Section'
 import Search from 'components/misc/Search'
@@ -24,14 +24,14 @@ const StyledSearch = styled(Search)`
   }
 `
 export default function Nav() {
-  const location = useLocation()
+  const router = useRouter()
 
   return (
     <StyledSection background>
       <Section.Content>
         <Wrapper>
           <Menu />
-          {location.pathname !== '/' && <StyledSearch />}
+          {router.pathname !== '/' && <StyledSearch />}
         </Wrapper>
       </Section.Content>
     </StyledSection>

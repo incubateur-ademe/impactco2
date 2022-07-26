@@ -32,7 +32,7 @@ const Category = styled.div`
 `
 export default function CategorySlider(props) {
   const { categories } = useContext(DataContext)
-  console.log(categories)
+
   return (
     <StyledSection>
       <StyledSectionContent>

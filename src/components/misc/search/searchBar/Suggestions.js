@@ -91,7 +91,7 @@ export default function Suggestions(props) {
         ) : (
           <>
             <NotFound onMouseDown={(e) => e.preventDefault()} small>
-              Nous n'avons rien trouvé :(
+              Nous n&apos;avons rien trouvé :(
               <br />
               Essayez de naviguer par catégorie
             </NotFound>

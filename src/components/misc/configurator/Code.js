@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { useLocation } from '@reach/router'
 import copy from 'copy-to-clipboard'
 
 const flash = (props) => keyframes`
@@ -45,14 +44,13 @@ const Copy = styled.button`
   cursor: pointer;
 `
 export default function Code(props) {
-  let location = useLocation()
   const [script, setScript] = useState(null)
 
   useEffect(() => {
     setScript(
-      `<script id="datagir-mon-convertisseur-co2" src="${window.location.origin}/iframe.js" data-search="?theme=${props.theme}"></script>`
+      `<script id="datagir-mon-convertisseur-co2" src="${window?.location.origin}/iframe.js" data-search="?theme=${props.theme}"></script>`
     )
-  }, [location.pathname, props.id, props.typeShare, props.theme])
+  }, [props.id, props.typeShare, props.theme])
 
   const [copied, setCopied] = useState(false)
 
@@ -65,8 +63,8 @@ export default function Code(props) {
   return (
     <Wrapper>
       <Label htmlFor='code'>
-        3) Copiez le code ci-dessous où vous souhaitez afficher l'iframe sur
-        votre site.
+        3) Copiez le code ci-dessous où vous souhaitez afficher l&apos;iframe
+        sur votre site.
       </Label>
       <Text name='code' copied={copied}>
         {script}

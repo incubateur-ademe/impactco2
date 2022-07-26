@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
+import { useRouter } from 'next/router'
 
 import DataContext from 'utils/DataContext'
 import Emoji from 'components/base/Emoji'
@@ -17,19 +17,19 @@ const StyledEmoji = styled(Emoji)`
 export default function Menu() {
   const { categories } = useContext(DataContext)
 
-  const location = useLocation()
+  const router = useRouter()
 
   return (
     <Wrapper>
       <Dropdown
         label={'Catégories'}
-        current={location.pathname.includes('/categories')}
+        current={router.pathname.includes('/categories')}
       >
         {categories.map((category) => (
           <Dropdown.Item
             key={category.id}
             to={`/categories/${category.slug}`}
-            current={location.pathname.includes(category.slug)}
+            current={router.pathname.includes(category.slug)}
           >
             <StyledEmoji>{category.emoji}</StyledEmoji> {category.name.fr}
           </Dropdown.Item>
@@ -38,7 +38,7 @@ export default function Menu() {
       <Dropdown
         label={'CO2e'}
         to='/co2e'
-        current={location.pathname.includes('/co2')}
+        current={router.pathname.includes('/co2')}
       />
     </Wrapper>
   )
