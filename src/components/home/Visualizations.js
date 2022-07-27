@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 
@@ -51,10 +51,10 @@ const StyledSection = styled(Section)`
 const Title = styled.h2`
   text-align: center;
 `
-//TODO randomize
-const homeRandomized = home
-export default function Visualization(props) {
-  return homeRandomized ? (
+
+export default function Visualization() {
+  const [homeDisplayed, setHomeDisplayed] = useState(home.slice(0, 3))
+  return (
     <StyledSection>
       <Section.Content>
         <Title>Découvrez toutes nos infographies</Title>
@@ -66,8 +66,9 @@ export default function Visualization(props) {
           slidesToScroll={1}
           autoplay={true}
           autoplaySpeed={5000}
+          afterChange={() => setHomeDisplayed(home)}
         >
-          {homeRandomized.map((visualization, index) => (
+          {homeDisplayed.map((visualization, index) => (
             <ScreenshotWrapper key={index} equivalent={'test'}>
               {visualization}
             </ScreenshotWrapper>
@@ -75,7 +76,5 @@ export default function Visualization(props) {
         </Slider>
       </Section.Content>
     </StyledSection>
-  ) : (
-    <Tiles equivalent={props.equivalent} />
   )
 }

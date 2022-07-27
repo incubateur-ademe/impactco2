@@ -55,6 +55,7 @@ export const GlobalStyle = createGlobalStyle`
     url('/fonts/Marianne-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
+  font-display: swap
 }
 
 @font-face {
@@ -63,6 +64,7 @@ export const GlobalStyle = createGlobalStyle`
     url('/fonts/Marianne-ExtraBold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: swap
 }
 
 @font-face {
@@ -71,6 +73,7 @@ export const GlobalStyle = createGlobalStyle`
     url('/fonts/Marianne-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap
 }
 
 

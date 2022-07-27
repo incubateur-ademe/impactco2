@@ -70,22 +70,22 @@ const visualizations = {
 }
 
 export const home = [
+  <Boeuf key='Boeuf' />,
   <SmartphoneGeneral key='SmartphoneGeneral' />,
+  <Voiture key='Voiture' />,
+  <PullGeneral key='PullGeneral' />,
   <SmartphoneCategory key='SmartphoneCategory' />,
+  <PoissonGras key='PoissonGras' />,
   <Montre key='Montre' />,
+  <Lait key='Lait' />,
   <MontreCategory key='MontreCategory' />,
+  <JeansGeneral key='JeansGeneral' />,
+  <Vegetalien key='Vegetalien' />,
   <ImprimanteCategory key='ImprimanteCategory' />,
   <ConsoleSalonCategory key='ConsoleSalonCategory' />,
   <OrdinateurFixeCategory key='OrdinateurFixeCategory' />,
-  <Vegetalien key='Vegetalien' />,
-  <Boeuf key='Boeuf' />,
-  <PoissonGras key='PoissonGras' />,
   <PoissonBlanc key='PoissonBlanc' />,
-  <Lait key='Lait' />,
-  <Voiture key='Voiture' />,
   <Avion key='Avion' />,
-  <JeansGeneral key='JeansGeneral' />,
-  <PullGeneral key='PullGeneral' />,
 ]
 
 export const test = {
