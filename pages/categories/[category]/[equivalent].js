@@ -3,9 +3,9 @@ import { useRouter } from 'next/router'
 
 import DataContext from 'utils/DataContext'
 import Web from 'components/layout/Web'
-import Details from 'components/equivalent/Details'
-import VisualizationSlider from 'components/equivalent/VisualizationSlider'
-import Ecv from 'components/equivalent/Ecv'
+import Details from 'components/views/equivalent/Details'
+import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
+import Ecv from 'components/views/equivalent/Ecv'
 
 export default function Equivalent(props) {
   const { query } = useRouter()

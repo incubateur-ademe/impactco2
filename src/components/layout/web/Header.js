@@ -5,7 +5,7 @@ import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
 import Section from 'components/base/Section'
-import Logo from 'components/misc/Logo'
+import Logo from 'components/base/Logo'
 import ThemeToggle from './header/ThemeToggle'
 
 const Wrapper = styled.header`

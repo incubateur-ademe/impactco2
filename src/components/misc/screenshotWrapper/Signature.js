@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import MagicLink from 'components/base/MagicLink'
 import Datagir from 'components/base/Datagir'
-import Logo from 'components/misc/Logo'
+import Logo from 'components/base/Logo'
 
 const Wrapper = styled.div`
   position: absolute;

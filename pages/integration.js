@@ -4,7 +4,7 @@ import IframeResizer from 'iframe-resizer-react'
 
 import Web from 'components/layout/Web'
 import Section from 'components/base/Section'
-import Configurator from 'components/misc/Configurator'
+import Configurator from 'components/views/integration/Configurator'
 
 const StyledIframeResizer = styled(IframeResizer)`
   flex: 1;

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Script from 'next/script'
 
 import useInteraction from 'hooks/useInteraction'
-import Modals from 'components/modals/Modals'
 import IframeFooter from './iframe/IframeFooter'
 
 const Wrapper = styled.div`
@@ -17,7 +16,6 @@ export default function Iframe(props) {
       <Wrapper>
         {props.children}
         <IframeFooter />
-        <Modals />
       </Wrapper>
       <Script
         src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js'

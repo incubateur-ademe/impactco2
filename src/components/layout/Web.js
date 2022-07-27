@@ -7,7 +7,6 @@ import Header from './web/Header'
 import Nav from './web/Nav'
 import BreadCrumb from './web/BreadCrumb'
 import Footer from './web/Footer'
-import Modals from 'components/modals/Modals'
 
 const Wrapper = styled.div`
   display: flex;
@@ -43,7 +42,6 @@ export default function Web(props) {
           </FullScreen>
           <Footer />
         </Content>
-        <Modals />
       </Wrapper>
     </>
   )

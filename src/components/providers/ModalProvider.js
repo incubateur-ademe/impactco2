@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
+
 import ModalContext from 'utils/ModalContext'
+import Co2eModal from 'components/modals/Co2eModal'
+import TilesModal from 'components/modals/TilesModal'
+import ShareModal from 'components/modals/ShareModal'
 
 export default function ModalProvider(props) {
   const [Co2e, setCo2e] = useState(false)
@@ -27,6 +31,9 @@ export default function ModalProvider(props) {
       }}
     >
       {props.children}
+      <Co2eModal />
+      <TilesModal />
+      <ShareModal />
     </ModalContext.Provider>
   )
 }

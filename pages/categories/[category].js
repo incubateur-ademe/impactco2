@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import DataContext from 'utils/DataContext'
 import Web from 'components/layout/Web'
 import Section from 'components/base/Section'
-import ShareButton from 'components/misc/ShareButton'
+import ShareButton from 'components/base/ShareButton'
 import CategorySlider from 'components/misc/CategorySlider'
 import CategoryList from 'components/misc/CategoryList'
 

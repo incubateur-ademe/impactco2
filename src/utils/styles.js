@@ -49,31 +49,6 @@ export const themes = {
 export const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
 
-  @font-face {
-  font-family: 'Marianne';
-  src: url('/fonts/Marianne-Light.woff2') format('woff2'),
-    url('/fonts/Marianne-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Marianne';
-  src: url('/fonts/Marianne-ExtraBold.woff2') format('woff2'),
-    url('/fonts/Marianne-ExtraBold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Marianne';
-  src: url('/fonts/Marianne-Medium.woff2') format('woff2'),
-    url('/fonts/Marianne-Medium.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
   ${slick}
   .slick-dots  {
     li {

@@ -17,13 +17,15 @@ export default function Emoji(props) {
   return props.children ? (
     <Wrapper
       dangerouslySetInnerHTML={{
-        __html: twemoji.parse(props.children, {
-          folder: 'svg',
-          ext: '.svg',
-        }),
+        __html: twemoji
+          .parse(props.children, {
+            folder: 'svg',
+            ext: '.svg',
+          })
+          .replace(props.children, props.alt || ''),
       }}
       className={props.className}
-      onClick={props.onClick || (() => '')}
+      onClick={props.onClick || (() => null)}
     />
   ) : (
     ''
