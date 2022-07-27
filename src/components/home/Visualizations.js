@@ -5,7 +5,6 @@ import Slider from 'react-slick'
 import { home } from 'components/visualizations/list'
 import Section from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
-import Tiles from 'components/misc/Tiles'
 
 const StyledSection = styled(Section)`
   margin-bottom: 6rem;
@@ -51,7 +50,13 @@ const StyledSection = styled(Section)`
 const Title = styled.h2`
   text-align: center;
 `
+const StyledScreenshotWrapper = styled(ScreenshotWrapper)`
+  height: 21.0625rem;
 
+  ${(props) => props.theme.mq.medium} {
+    height: 100%;
+  }
+`
 export default function Visualization() {
   const [homeDisplayed, setHomeDisplayed] = useState(home.slice(0, 2))
   return (
@@ -69,9 +74,9 @@ export default function Visualization() {
           afterChange={() => setHomeDisplayed(home)}
         >
           {homeDisplayed.map((visualization, index) => (
-            <ScreenshotWrapper key={index} equivalent={'test'}>
+            <StyledScreenshotWrapper key={index}>
               {visualization}
-            </ScreenshotWrapper>
+            </StyledScreenshotWrapper>
           ))}
         </Slider>
       </Section.Content>

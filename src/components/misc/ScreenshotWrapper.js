@@ -29,11 +29,11 @@ const Content = styled.div`
 `
 export default function VisualizationWrapper(props) {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    props.equivalent.slug || 'monconvertisseurco2'
+    props.equivalent?.slug || 'monconvertisseurco2'
   )
 
   return (
-    <Wrapper ref={ref}>
+    <Wrapper className={props.className} ref={ref}>
       <Background className='noscreenshot' />
       <Buttons takeScreenshot={takeScreenshot} />
       <Content>{props.children}</Content>
