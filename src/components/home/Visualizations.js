@@ -53,7 +53,7 @@ const Title = styled.h2`
 `
 
 export default function Visualization() {
-  const [homeDisplayed, setHomeDisplayed] = useState(home.slice(0, 3))
+  const [homeDisplayed, setHomeDisplayed] = useState(home.slice(0, 2))
   return (
     <StyledSection>
       <Section.Content>
