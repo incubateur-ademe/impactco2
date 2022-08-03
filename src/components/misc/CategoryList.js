@@ -1,20 +1,17 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
-import { formatTotal } from 'utils/formatters'
-import ModalContext from 'utils/ModalContext'
-import DataContext from 'utils/DataContext'
+import { formatName, formatTotal } from 'utils/formatters'
+import ModalContext from 'components/providers/ModalProvider'
+import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
-import Equivalent from './categoryList/Equivalent'
+import BarChart from 'components/charts/BarChart'
 
 const StyledSection = styled(Section)`
   margin-bottom: 4.5rem;
-`
-const Equivalents = styled.div`
-  margin: 0 auto 1rem;
 `
 const Bottom = styled.div`
   display: flex;
@@ -48,10 +45,10 @@ const CheckboxWrapper = styled.div`
 const StyledCheckbox = styled(Checkbox)`
   font-size: 0.875rem;
 `
-export default function Category(props) {
+export default function CategoryList(props) {
   const { setCo2e } = useContext(ModalContext)
 
-  const { equivalents } = useContext(DataContext)
+  const { equivalents, categories } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)
 
@@ -63,12 +60,25 @@ export default function Category(props) {
           .filter((equivalent) => equivalent.category === props.category.id)
           .filter((equivalent) => equivalent.default || displayAll)
           .map((equivalent) => ({
-            ...equivalent,
-            total: formatTotal(equivalent),
+            title: `1 ${formatName(equivalent.name.fr)}`,
+            subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
+            emoji: equivalent.emoji,
+            value: formatTotal(equivalent),
+            to: `/categories/${
+              categories.find((category) => category.id === equivalent.category)
+                .slug
+            }/${equivalent.slug}`,
+            onClick: () =>
+              window?._paq?.push([
+                'trackEvent',
+                'Interaction',
+                'Navigation via graph categorie',
+                equivalent.slug,
+              ]),
           }))
-          .sort((a, b) => (a.total > b.total ? 1 : -1))
+          .sort((a, b) => (a.value > b.value ? 1 : -1))
       )
-  }, [equivalents, props.category, displayAll])
+  }, [equivalents, categories, props.category, displayAll])
 
   return (
     <StyledSection>
@@ -99,20 +109,10 @@ export default function Category(props) {
             Cliquez sur un équivalent pour voir le détail.
           </Instruction>
         </InstructionWrapper>
-
-        <Equivalents small={props.small}>
-          {equivalentsOfCategory.map((equivalent) => (
-            <Equivalent
-              equivalent={equivalent}
-              category={props.category}
-              max={
-                equivalentsOfCategory[equivalentsOfCategory.length - 1].total
-              }
-              key={equivalent.slug}
-              displayAll={displayAll}
-            />
-          ))}
-        </Equivalents>
+        <BarChart
+          items={equivalentsOfCategory}
+          max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
+        />
         {!props.title && (
           <Bottom>
             <Disclaimer>

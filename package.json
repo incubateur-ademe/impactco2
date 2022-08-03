@@ -14,6 +14,7 @@
     "@dnd-kit/sortable": "^7.0.1",
     "@tanstack/react-query": "^4.0.10",
     "animated-number-react": "^0.1.2",
+    "axios": "^0.27.2",
     "chrome-aws-lambda": "^10.1.0",
     "copy-to-clipboard": "^3.3.1",
     "fuse.js": "^6.6.2",
@@ -25,13 +26,16 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-flip-toolkit": "^7.0.14",
+    "react-highlight-words": "^0.18.0",
+    "react-range": "^1.8.14",
     "react-share": "^4.4.0",
     "react-slick": "^0.29.0",
     "react-switch": "^7.0.0",
     "react-use-query-param-string": "^2.0.3",
     "styled-components": "^5.3.5",
     "styled-normalize": "^8.0.7",
-    "twemoji": "^14.0.2"
+    "twemoji": "^14.0.2",
+    "use-query-params": "^2.0.0-rc.1"
   },
   "devDependencies": {
     "eslint": "8.20.0",

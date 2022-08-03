@@ -81,7 +81,5 @@ export default function Visualization(props) {
         </Slider>
       </Section.Content>
     </StyledSection>
-  ) : (
-    <Tiles equivalent={props.equivalent} />
-  )
+  ) : null
 }

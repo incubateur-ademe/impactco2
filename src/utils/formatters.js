@@ -17,7 +17,7 @@ export function formatNumberFixed(value, digits) {
     minimumFractionDigits: digits || 1,
   })
 }
-export function formatName(name, value, capital) {
+export function formatName(name = '', value = 1, capital) {
   const newName = name
     .replaceAll('[s]', value > 1 ? 's' : '')
     .replaceAll('[x]', value > 1 ? 'x' : '')
@@ -33,7 +33,9 @@ export function formatPercent(value, total, noformat) {
 }
 export function formatTotal(equivalent, years, end) {
   let total =
-    equivalent.total || equivalent.ecv.reduce((acc, cur) => acc + cur.value, 0)
+    equivalent.total || equivalent.total === 0
+      ? equivalent.total
+      : equivalent.ecv.reduce((acc, cur) => acc + cur.value, 0)
   if (years) {
     total += years * equivalent.usage.peryear
   }

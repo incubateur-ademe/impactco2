@@ -30,15 +30,22 @@
   {
     "id": 5,
     "name": {
-      "fr": "Utilisation"
+      "fr": "Carburant"
     },
     "color": "#9b19f5"
   },
   {
     "id": 6,
     "name": {
-      "fr": "Fin de vie"
+      "fr": "Construction"
     },
     "color": "#ffa300"
+  },
+  {
+    "id": 7,
+    "name": {
+      "fr": "Trainées de condensation"
+    },
+    "color": "#50e991"
   }
 ]

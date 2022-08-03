@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 
-import DataContext from 'utils/DataContext'
+import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 
 const StyledSection = styled(Section)`

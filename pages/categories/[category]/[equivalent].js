@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import { useRouter } from 'next/router'
 
-import DataContext from 'utils/DataContext'
+import DataContext from 'components/providers/DataProvider'
 import Web from 'components/layout/Web'
 import Details from 'components/views/equivalent/Details'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'

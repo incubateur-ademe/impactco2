@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-import DataContext from 'utils/DataContext'
 import boisson from 'data/categories/boisson.json'
 import deplacement from 'data/categories/deplacement.json'
 import electromenager from 'data/categories/electromenager.json'
@@ -11,6 +10,8 @@ import repas from 'data/categories/repas.json'
 import chauffage from 'data/categories/chauffage.json'
 import categories from 'data/categories.json'
 import ecv from 'data/ecv.json'
+
+const DataContext = React.createContext({})
 
 const equivalents = [
   ...boisson,
@@ -23,7 +24,7 @@ const equivalents = [
   ...chauffage,
 ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
 
-export default function DataProvider(props) {
+export function DataProvider(props) {
   const [tiles, setTiles] = useState([])
 
   return (
@@ -40,3 +41,5 @@ export default function DataProvider(props) {
     </DataContext.Provider>
   )
 }
+
+export default DataContext

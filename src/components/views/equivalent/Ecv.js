@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Flipper, Flipped } from 'react-flip-toolkit'
 
 import { formatName, formatNumberFixed, formatTotal } from 'utils/formatters'
-import DataContext from 'utils/DataContext'
+import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'

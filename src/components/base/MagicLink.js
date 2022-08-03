@@ -23,6 +23,7 @@ export default function MagicLink(props) {
       aria-label={props['aria-label']}
       disabled={props.disabled}
       type={props.type}
+      {...props}
     >
       {props.children}
     </button>
@@ -38,6 +39,7 @@ export default function MagicLink(props) {
       }
       rel='noreferrer noopener'
       aria-label={props['aria-label']}
+      {...props}
     >
       {props.children}
       {!props.noIcon && (
@@ -70,6 +72,7 @@ export default function MagicLink(props) {
         className={props.className}
         onClick={props.onClick || null}
         aria-label={props['aria-label']}
+        {...props}
       >
         {props.children}
       </a>

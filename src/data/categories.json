@@ -32,10 +32,10 @@
   {
     "id": 4,
     "name": {
-      "fr": "Déplacement"
+      "fr": "Transport"
     },
     "emoji": "🚴‍♂️",
-    "slug": "deplacement",
+    "slug": "transport",
     "multiplier": 10,
     "unit": "pour 10 km comprenant les émissions directes, et la production et distribution de carburant et d'électricité"
   },

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
-import ModalContext from 'utils/ModalContext'
+import ModalContext from 'components/providers/ModalProvider'
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import ButtonLink from 'components/base/ButtonLink'
@@ -51,12 +51,8 @@ export default function Details(props) {
       <Section>
         <Section.Content flex>
           <Title>
-            {props.category.multiplier !== 1 ? '1 ' : ''}
-            {formatName(
-              props.equivalent.name.fr,
-              1,
-              props.category.multiplier === 1
-            )}
+            {props.equivalent.unit && <>1 {props.equivalent.unit.fr} </>}
+            {formatName(props.equivalent.name.fr, 1, !props.equivalent.unit)}
             <Br />{' '}
             {props.equivalent.subtitle && (
               <Subtitle>

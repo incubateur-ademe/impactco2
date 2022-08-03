@@ -7,7 +7,7 @@ import { CSS } from '@dnd-kit/utilities'
 
 import useIframe from 'hooks/useIframe'
 import { formatNumber, formatName, formatTotal } from 'utils/formatters'
-import DataContext from 'utils/DataContext'
+import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/Button'
 
@@ -215,6 +215,7 @@ export default function Tile(props) {
           />
         </Number>
         <Name>
+          {props.equivalent.unit && <>{props.equivalent.unit.fr} </>}
           {formatName(
             props.equivalent.name.fr,
             props.weight / formatTotal(props.equivalent)

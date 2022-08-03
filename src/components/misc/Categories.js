@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import DataContext from 'utils/DataContext'
+import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import ShareButton from 'components/base/ShareButton'
 import Category from './categories/Category'

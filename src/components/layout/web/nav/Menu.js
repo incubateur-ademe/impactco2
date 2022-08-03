@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 
-import DataContext from 'utils/DataContext'
+import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Dropdown from './menu/Dropdown'
 

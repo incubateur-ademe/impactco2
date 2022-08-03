@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
-import StyleContext from 'utils/StyleContext'
 import { themes } from 'utils/styles'
 
-export default function StyleProvider(props) {
+const StyleContext = React.createContext({})
+
+export function StyleProvider(props) {
   const [theme, setTheme] = useState('default')
 
   useEffect(() => {
@@ -24,3 +25,5 @@ export default function StyleProvider(props) {
     </StyleContext.Provider>
   )
 }
+
+export default StyleContext
