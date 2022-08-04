@@ -81,7 +81,8 @@ export default function Distance(props) {
             id: `${equivalent.slug}`,
             title: `${formatName(equivalent.name.fr, 1, true)}`,
             subtitle:
-              displayAll && equivalent.subtitle
+              (displayAll || equivalent.name.fr === 'Voiture') &&
+              equivalent.subtitle
                 ? `(${formatName(equivalent.subtitle?.fr)})`
                 : null,
             emoji: equivalent.emoji,

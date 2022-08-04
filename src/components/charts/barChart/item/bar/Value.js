@@ -36,7 +36,7 @@ export default function Value(props) {
       noBar={props.value / props.max === 0}
       inside={props.value / props.max > 0.7}
     >
-      <Number>{formatNumber(props.value.toFixed(2))}</Number>
+      <Number>{formatNumber(props.value)}</Number>
       <Unit>
         {' '}
         kg CO

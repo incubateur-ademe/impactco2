@@ -102,14 +102,6 @@ const StyledCheckbox = styled(Checkbox)`
   }
 `
 export default function Search(props) {
-  const {
-    displayAll,
-    setDisplayAll,
-    carpool,
-    setCarpool,
-    construction,
-    setConstruction,
-  } = useContext(TransportContext)
   const { setOccupancy } = useContext(ModalContext)
 
   return (
@@ -151,48 +143,6 @@ export default function Search(props) {
             </>
           )}
         </Content>
-
-        {/* <Route path='/' exact>
-        <BottomWrapper>
-          {construction && <Legend>Construction</Legend>}
-          <Checkboxes>
-            <StyledCheckbox
-              name='construction'
-              checked={construction}
-              onChange={setConstruction}
-            >
-              Ajouter la construction des véhicules
-            </StyledCheckbox>
-            <StyledCheckbox
-              name='display-all'
-              checked={displayAll}
-              onChange={setDisplayAll}
-            >
-              Afficher tous les modes de transport
-            </StyledCheckbox>
-            <StyledCheckbox
-              name='carpool'
-              checked={carpool}
-              onChange={() =>
-                setCarpool((prevCarpool) => (prevCarpool ? 0 : 2))
-              }
-            >
-              Afficher le covoiturage
-            </StyledCheckbox>
-          </Checkboxes>
-        </BottomWrapper>
-      </Route>
-      <Route path='/itineraire'>
-        <Checkboxes>
-          <StyledCheckbox
-            name='carpool-2'
-            checked={carpool}
-            onChange={() => setCarpool((prevCarpool) => (prevCarpool ? 0 : 2))}
-          >
-            Afficher le covoiturage
-          </StyledCheckbox>
-        </Checkboxes>
-      </Route>*/}
       </Section.Content>
     </Section>
   )

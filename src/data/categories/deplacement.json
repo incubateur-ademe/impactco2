@@ -142,7 +142,7 @@
         "id": 6
       }
     ],
-    "default": false,
+    "default": true,
     "tile": false,
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture"
   },
@@ -164,6 +164,7 @@
       },
       {
         "value": 0.00442130627,
+        "_comment": "// = (Valeur en kgCO2e/kg de véhicule * Masse type) / Nombre de passagers / Durée de vie en km = (4 * 12000) / 30 / 361884",
         "id": 6
       }
     ],
@@ -276,7 +277,7 @@
         "id": 6
       }
     ],
-    "default": true,
+    "default": false,
     "tile": false,
     "display": {
       "max": 12
@@ -417,7 +418,7 @@
         "id": 6
       }
     ],
-    "default": true,
+    "default": false,
     "tile": false,
     "display": {
       "max": 150
