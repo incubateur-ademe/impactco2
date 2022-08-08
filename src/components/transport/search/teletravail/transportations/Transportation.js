@@ -33,8 +33,7 @@ export default function Transportation(props) {
       onClick={() => setTeletravailTransportation(props.transportation.id)}
       active={teletravailTransportation === props.transportation.id}
     >
-      <Emoji>{props.transportation.emoji.main}</Emoji>
-      <Secondary>{props.transportation.emoji.secondary}</Secondary>
+      <Emoji>{props.transportation.emoji}</Emoji>
     </Wrapper>
   )
 }

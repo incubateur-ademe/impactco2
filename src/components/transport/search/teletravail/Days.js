@@ -32,7 +32,7 @@ export default function Days() {
     }
   }, [days, presentiel, teletravail, setPresentiel, setTeletravail])
 
-  return start && end && teletravailTransportation ? (
+  return start.address && end.address && teletravailTransportation ? (
     <Wrapper>
       <Selector
         label='Présentiel'

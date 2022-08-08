@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 
 import DataContext from 'components/providers/DataProvider'
+import { TransportProvider } from 'components/transport/TransportProvider'
 import Web from 'components/layout/Web'
 import Search from 'components/transport/Search'
-import { TransportProvider } from 'components/transport/TransportProvider'
+import Teletravail from 'components/transport/Teletravail'
 
-export default function Teletravail() {
+export default function TeletravailPage() {
   const { categories } = useContext(DataContext)
   const category = categories.find((item) => item.id === 4)
   return (
@@ -19,6 +20,7 @@ export default function Teletravail() {
     >
       <TransportProvider>
         <Search teletravail />
+        <Teletravail />
       </TransportProvider>
     </Web>
   )

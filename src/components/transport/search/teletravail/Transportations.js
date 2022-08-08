@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
+import DataContext from 'components/providers/DataProvider'
 import TransportContext from 'components/transport/TransportProvider'
 import Transportation from './transportations/Transportation'
 
@@ -18,14 +19,13 @@ const Result = styled.div`
   text-align: center;
 `
 export default function Transportations() {
-  const {
-    itineraryTransportations: transportations,
-    start,
-    end,
-    teletravailTransportation,
-  } = useContext(TransportContext)
+  const { equivalents } = useContext(DataContext)
+  const transportations = useMemo(() =>
+    equivalents.filter((equivalent) => equivalent.category === 4)
+  )
+  const { start, end, teletravailTransportation } = useContext(TransportContext)
 
-  return start && end ? (
+  return start.address && end.address ? (
     <Wrapper>
       <List>
         {transportations
@@ -44,7 +44,7 @@ export default function Transportations() {
       <Result>
         {transportations.find(
           (transportation) => transportation.id === teletravailTransportation
-        )?.label.fr || 'Choisissez votre mode de transport'}
+        )?.name.fr || 'Choisissez votre mode de transport'}
       </Result>
     </Wrapper>
   ) : null
