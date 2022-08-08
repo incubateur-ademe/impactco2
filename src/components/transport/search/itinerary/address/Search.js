@@ -27,7 +27,6 @@ export default function Search(props) {
   useEffect(() => {
     setSearch(props.address)
   }, [props.address])
-
   const debouncedSearch = useDebounce(search)
 
   const [focus, setFocus] = useState(false)

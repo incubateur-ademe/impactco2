@@ -9,6 +9,7 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voler", "voyager"],
     "slug": "avion",
+    "type": "plane",
     "emoji": "✈️",
     "category": 4,
     "ecv": [
@@ -42,6 +43,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
     "slug": "tgv",
+
+    "type": "rail",
     "emoji": "🚅",
     "category": 4,
     "ecv": [
@@ -71,6 +74,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
     "slug": "intercites",
+
+    "type": "rail",
     "emoji": "🚈",
     "category": 4,
     "ecv": [
@@ -102,6 +107,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voiturethermique",
+
+    "type": "car",
     "emoji": "🚗",
     "category": 4,
     "ecv": [
@@ -130,6 +137,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voitureelectrique",
+
+    "type": "car",
     "emoji": "🚗",
     "category": 4,
     "ecv": [
@@ -155,6 +164,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "autocar",
+
+    "type": "car",
     "emoji": "🚐",
     "category": 4,
     "ecv": [
@@ -188,6 +199,8 @@
       "pedaler"
     ],
     "slug": "velo",
+
+    "type": "foot",
     "emoji": "🚶‍♀️",
     "category": 4,
     "total": 0,
@@ -206,6 +219,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "pedaler"],
     "slug": "veloelectrique",
+
+    "type": "foot",
     "emoji": "🚴",
     "category": 4,
     "ecv": [
@@ -237,6 +252,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busthermique",
+
+    "type": "car",
     "emoji": "🚌",
     "category": 4,
     "ecv": [
@@ -265,6 +282,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "tramway",
+
+    "type": "rail",
     "emoji": "🚌",
     "category": 4,
     "ecv": [
@@ -293,6 +312,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "rail"],
     "slug": "metro",
+
+    "type": "rail",
     "emoji": "🚇",
     "category": 4,
     "ecv": [
@@ -321,6 +342,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "scooter",
+
+    "type": "car",
     "emoji": "🛵",
     "category": 4,
     "ecv": [
@@ -349,6 +372,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "moto",
+
+    "type": "car",
     "emoji": "🏍️",
     "category": 4,
     "ecv": [
@@ -377,6 +402,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
     "slug": "rer",
+
+    "type": "rail",
     "emoji": "🚃",
     "category": 4,
     "ecv": [
@@ -406,6 +433,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
     "slug": "ter",
+
+    "type": "rail",
     "emoji": "🚈",
     "category": 4,
     "ecv": [
@@ -437,6 +466,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "buselectrique",
+
+    "type": "car",
     "emoji": "🚌",
     "category": 4,
     "ecv": [
@@ -468,6 +499,8 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busgnv",
+
+    "type": "car",
     "emoji": "🚌",
     "category": 4,
     "ecv": [

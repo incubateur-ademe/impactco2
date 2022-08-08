@@ -5,7 +5,6 @@ const generateToken = () => (Math.random() + 1).toString(36).substring(2)
 
 let sessiontoken = generateToken()
 
-console.log('sessiontoken', sessiontoken)
 export function useSuggestions(search, focus) {
   return useQuery(
     ['search', search],

@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 
 import DataContext from 'components/providers/DataProvider'
 import Web from 'components/layout/Web'
-import Search from 'components/transport/Search'
 import { TransportProvider } from 'components/transport/TransportProvider'
+import Search from 'components/transport/Search'
+import Itinerary from 'components/transport/Itinerary'
 
 export default function Itineraire() {
   const { categories } = useContext(DataContext)
@@ -19,6 +20,7 @@ export default function Itineraire() {
     >
       <TransportProvider>
         <Search itineraire />
+        <Itinerary category={category} />
       </TransportProvider>
     </Web>
   )

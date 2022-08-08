@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 
 import DataContext from 'components/providers/DataProvider'
 import Web from 'components/layout/Web'
+import { TransportProvider } from 'components/transport/TransportProvider'
 import Search from 'components/transport/Search'
 import Distance from 'components/transport/Distance'
-import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function Transport() {
   const { categories } = useContext(DataContext)
