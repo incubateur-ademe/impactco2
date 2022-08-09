@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react'
-import styled from 'styled-components'
 
 import { formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
@@ -10,9 +9,6 @@ import Section from 'components/base/Section'
 import YearlyFootprint from './teletravail/YearlyFootprint'
 import PercentFootprint from './teletravail/PercentFootprint'
 
-const Wrapper = styled.div`
-  margin-top: 2rem;
-`
 export default function Teletravail() {
   const iframe = useIframe(true)
 
@@ -95,17 +91,17 @@ export default function Teletravail() {
   return (
     <Section>
       <Section.Content>
-        {distance && currentTransportation && (
+        {distance && currentTransportation ? (
           <YearlyFootprint
             emitted={emitted}
             saved={saved}
             presentiel={presentiel}
             teletravail={teletravail}
           />
-        )}
-        {distance && currentTransportation && (
+        ) : null}
+        {distance && currentTransportation ? (
           <PercentFootprint saved={saved} />
-        )}
+        ) : null}
       </Section.Content>
     </Section>
   )

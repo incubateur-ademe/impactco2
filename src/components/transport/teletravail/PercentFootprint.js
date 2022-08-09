@@ -55,7 +55,7 @@ export default function PercentFootprint(props) {
       <Result>
         <Start>soit</Start> <Number>{percent}</Number> <Percent>%</Percent>
         <br />
-        d'économisé sur mon empreinte carbone annuelle
+        d&apos;économisé sur mon empreinte carbone annuelle
       </Result>
       <Details onClick={() => setFootprint(true)}>
         Préciser ou calculer mon empreinte carbone

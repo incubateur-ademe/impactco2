@@ -113,9 +113,9 @@ export default function YearlyFootprint(props) {
         </Saved>
       </Bar>
       <Disclaimer>
-        <strong>à l’année</strong> sur mes déplacements.
+        <strong>à l&apos;année</strong> sur mes déplacements.
         <br />
-        (d'autres émissions ont peut-être augmenté)
+        (d&apos;autres émissions ont peut-être augmenté)
       </Disclaimer>
     </Wrapper>
   )
