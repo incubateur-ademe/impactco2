@@ -33,7 +33,11 @@ export default function Item(props) {
     <Wrapper to={props.to} onClick={props.onClick || null} {...props}>
       <Emoji emoji={props.emoji} />
       <ChartWrapper>
-        <Title title={props.title} subtitle={props.subtitle} />
+        <Title
+          title={props.title}
+          subtitle={props.subtitle}
+          component={props.component}
+        />
         <Bar value={props.value} max={props.max} color={props.color} />
       </ChartWrapper>
     </Wrapper>

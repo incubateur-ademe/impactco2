@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const TransportContext = React.createContext({})
 
 export function TransportProvider(props) {
-  const [construction, setConstruction] = useState(false)
+  const [displayAll, setDisplayAll] = useState(false)
 
   const [carpool, setCarpool] = useState(false)
 
@@ -24,8 +24,8 @@ export function TransportProvider(props) {
   return (
     <TransportContext.Provider
       value={{
-        construction,
-        setConstruction,
+        displayAll,
+        setDisplayAll,
         carpool,
         setCarpool,
         km,

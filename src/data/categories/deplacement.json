@@ -107,7 +107,7 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voiturethermique",
-
+    "carpool": true,
     "type": "car",
     "emoji": "🚗",
     "category": 4,
@@ -137,7 +137,7 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voitureelectrique",
-
+    "carpool": true,
     "type": "car",
     "emoji": "🚗",
     "category": 4,

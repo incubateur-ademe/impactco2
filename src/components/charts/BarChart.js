@@ -16,6 +16,7 @@ export default function BarChart(props) {
             emoji={item.emoji}
             color={item.color}
             value={item.value}
+            component={item.component}
             max={props.max}
           />
         </Flipped>

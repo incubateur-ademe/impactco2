@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   position: relative;
-  z-index: 10;
-  display: flex;
+  display: inline-block;
   margin-bottom: 0.125rem;
 `
 const Title = styled.div`
@@ -27,6 +26,7 @@ export default function TitleComponent(props) {
         {props.title}
         {props.subtitle && <Subtitle> {props.subtitle}</Subtitle>}
       </Title>
+      {props.component}
     </Wrapper>
   )
 }
