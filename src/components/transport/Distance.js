@@ -14,7 +14,7 @@ export default function Distance(props) {
     useContext(TransportContext)
 
   const transportations = useTransportations()
-
+  console.log(transportations)
   return (
     <Section>
       <Section.Content>

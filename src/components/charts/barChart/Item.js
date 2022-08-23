@@ -38,7 +38,12 @@ export default function Item(props) {
           subtitle={props.subtitle}
           component={props.component}
         />
-        <Bar value={props.value} max={props.max} color={props.color} />
+        <Bar
+          value={props.value}
+          usage={props.usage}
+          max={props.max}
+          color={props.color}
+        />
       </ChartWrapper>
     </Wrapper>
   )

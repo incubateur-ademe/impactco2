@@ -41,11 +41,36 @@ export function formatTotal(equivalent, years, end) {
     equivalent.total || equivalent.total === 0
       ? equivalent.total
       : equivalent.ecv.reduce((acc, cur) => acc + cur.value, 0)
-  if (years) {
-    total += years * equivalent.usage.peryear
+
+  if (years !== 0 && equivalent.usage) {
+    total += (years || equivalent.usage.defaultyears) * equivalent.usage.peryear
   }
+
   if (end) {
     total += equivalent.end
   }
   return total
+}
+export function formatConstruction(equivalent) {
+  return equivalent.total || equivalent.total === 0
+    ? equivalent.total
+    : equivalent.ecv.reduce(
+        (acc, cur) => acc + ([1, 2, 3, 4, 6].includes(cur.id) ? cur.value : 0),
+        0
+      )
+}
+export function formatUsage(equivalent, years) {
+  if (equivalent.usage) {
+    return (years || equivalent.usage.defaultyears) * equivalent.usage.peryear
+  }
+  if (equivalent?.ecv?.find((ecv) => [5, 7].includes(ecv.id))) {
+    equivalent.ecv.map((ecv) => [5, 7].includes(ecv.id) && console.log(ecv.id))
+    const usage = equivalent.ecv.reduce(
+      (acc, cur) => acc + ([5, 7].includes(cur.id) ? cur.value : 0),
+      0
+    )
+    console.log('usage', usage)
+    return usage
+  }
+  return 0
 }

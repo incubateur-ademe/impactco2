@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 
-import { formatName, formatTotal } from 'utils/formatters'
+import { formatName, formatTotal, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
@@ -26,6 +26,7 @@ export default function CategoryList(props) {
             subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
+            usage: formatUsage(equivalent),
             to: `/categories/${
               categories.find((category) => category.id === equivalent.category)
                 .slug
