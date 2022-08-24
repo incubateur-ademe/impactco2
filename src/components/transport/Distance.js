@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { useTheme } from 'styled-components'
 
 import useTransportations from 'hooks/useTransportations'
 import TransportContext from './TransportProvider'
