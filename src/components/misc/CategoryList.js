@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react'
+import { useTheme } from 'styled-components'
 
 import { formatName, formatTotal, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
+import Legend from 'components/charts/Legend'
 import Top from './categoryList/Top'
 import Instruction from './categoryList/Instruction'
 import Bottom from './categoryList/Bottom'
 
 export default function CategoryList(props) {
+  const theme = useTheme()
+
   const { equivalents, categories } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)
@@ -22,6 +26,7 @@ export default function CategoryList(props) {
           .filter((equivalent) => equivalent.category === props.category.id)
           .filter((equivalent) => equivalent.default || displayAll)
           .map((equivalent) => ({
+            id: `${equivalent.slug}`,
             title: `1 ${formatName(equivalent.name.fr)}`,
             subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
@@ -73,6 +78,12 @@ export default function CategoryList(props) {
         <BarChart
           items={equivalentsOfCategory}
           max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
+        />
+        <Legend
+          items={[
+            { label: 'construction', color: theme.colors.main },
+            { label: 'usage', color: theme.colors.mainDark },
+          ]}
         />
         <Bottom category={props.category} />
       </Section.Content>

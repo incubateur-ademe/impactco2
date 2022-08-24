@@ -75,16 +75,14 @@ export default function useTransportations(itineraries) {
                 )} km`
               : ''),
           emoji: equivalent.emoji,
-          /* value:
+          value:
             (formatTotal(equivalent) *
               (itineraries ? itineraries[equivalent.type] : km)) /
             (equivalent.carpool && carpool ? carpool : 1),
           usage:
             (formatUsage(equivalent) *
               (itineraries ? itineraries[equivalent.type] : km)) /
-            (equivalent.carpool && carpool ? carpool : 1),*/
-          value: formatTotal(equivalent),
-          usage: formatUsage(equivalent),
+            (equivalent.carpool && carpool ? carpool : 1),
           component: equivalent.carpool && <Carpool />,
           to: `/categories/${
             categories.find((category) => category.id === equivalent.category)
@@ -101,6 +99,6 @@ export default function useTransportations(itineraries) {
         .sort((a, b) => (a.value > b.value ? 1 : -1))
     )
   }, [km, displayAll, carpool, itineraries])
-
+  console.log(transportations)
   return transportations
 }

@@ -5,10 +5,14 @@ import Item from './barChart/Item'
 
 export default function BarChart(props) {
   return (
-    <Flipper flipKey={props.items.map((item) => item.id).join()}>
+    <Flipper
+      className={props.className}
+      flipKey={props.items.map((item) => item.id).join()}
+    >
       {props.items.map((item) => (
         <Flipped flipId={item.id} key={item.id}>
           <Item
+            key={item.id}
             onClick={item.onClick}
             to={item.to}
             title={item.title}

@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
+import { useTheme } from 'styled-components'
 
 import useTransportations from 'hooks/useTransportations'
 import TransportContext from './TransportProvider'
@@ -14,7 +15,7 @@ export default function Distance(props) {
     useContext(TransportContext)
 
   const transportations = useTransportations()
-  console.log(transportations)
+
   return (
     <Section>
       <Section.Content>
