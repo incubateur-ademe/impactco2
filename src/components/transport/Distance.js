@@ -6,6 +6,7 @@ import TransportContext from './TransportProvider'
 import Section from 'components/base/Section'
 import Top from 'components/misc/categoryList/Top'
 import Instruction from 'components/misc/categoryList/Instruction'
+import CategoryLegend from 'components/misc/categoryList/CategoryLegend'
 import Bottom from 'components/misc/categoryList/Bottom'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
@@ -59,7 +60,12 @@ export default function Distance(props) {
           items={transportations}
           max={transportations[transportations.length - 1]?.value}
         />
-        {transportations.length && <Bottom category={props.category} />}
+        {transportations.length && (
+          <>
+            <CategoryLegend />
+            <Bottom category={props.category} />
+          </>
+        )}
       </Section.Content>
     </Section>
   )
