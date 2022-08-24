@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 47rem;
   max-width: 100%;
   margin: 5rem auto;
-  padding: 0 5rem 2rem;
+  padding: 0 5rem;
 
   ${(props) => props.theme.mq.small}  {
     padding: 0 0.75rem 5rem;

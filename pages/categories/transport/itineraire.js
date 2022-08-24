@@ -5,6 +5,7 @@ import Web from 'components/layout/Web'
 import { TransportProvider } from 'components/transport/TransportProvider'
 import Search from 'components/transport/Search'
 import Itinerary from 'components/transport/Itinerary'
+import Learning from 'components/transport/Learning'
 
 export default function Itineraire() {
   const { categories } = useContext(DataContext)
@@ -21,6 +22,7 @@ export default function Itineraire() {
       <TransportProvider>
         <Search itineraire />
         <Itinerary category={category} />
+        <Learning />
       </TransportProvider>
     </Web>
   )

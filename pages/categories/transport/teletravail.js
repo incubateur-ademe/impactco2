@@ -5,6 +5,7 @@ import { TransportProvider } from 'components/transport/TransportProvider'
 import Web from 'components/layout/Web'
 import Search from 'components/transport/Search'
 import Teletravail from 'components/transport/Teletravail'
+import Learning from 'components/transport/Learning'
 
 export default function TeletravailPage() {
   const { categories } = useContext(DataContext)
@@ -21,6 +22,7 @@ export default function TeletravailPage() {
       <TransportProvider>
         <Search teletravail />
         <Teletravail />
+        <Learning />
       </TransportProvider>
     </Web>
   )
