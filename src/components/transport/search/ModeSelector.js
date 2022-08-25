@@ -41,7 +41,7 @@ export default function ModeSelector(props) {
     <Wrapper>
       <Tab
         current={props.distance}
-        to='/categories/transport'
+        to={(props.iframe ? '/iframes' : '') + '/categories/transport'}
         title={`Distance${
           router.asPath.split() === '/' ? ' : page actuelle' : ''
         }`}
@@ -50,7 +50,9 @@ export default function ModeSelector(props) {
       </Tab>
       <Tab
         current={props.itineraire}
-        to='/categories/transport/itineraire'
+        to={
+          (props.iframe ? '/iframes' : '') + '/categories/transport/itineraire'
+        }
         title={`Itinéraire${
           router.asPath.split() === '/itineraire' ? ' : page actuelle' : ''
         }`}
@@ -59,7 +61,9 @@ export default function ModeSelector(props) {
       </Tab>
       <Tab
         current={props.teletravail}
-        to='/categories/transport/teletravail'
+        to={
+          (props.iframe ? '/iframes' : '') + '/categories/transport/teletravail'
+        }
         title={`Télétravail${
           router.asPath.split() === '/teletravail' ? ' : page actuelle' : ''
         }`}

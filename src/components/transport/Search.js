@@ -111,6 +111,7 @@ export default function Search(props) {
           distance={props.distance}
           itineraire={props.itineraire}
           teletravail={props.teletravail}
+          iframe={props.iframe}
         />
         <Content>
           {props.itineraire && (

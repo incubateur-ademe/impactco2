@@ -5,6 +5,7 @@ import MagicLink from 'components/base/MagicLink'
 import Emoji from './item/Emoji'
 import Title from './item/Title'
 import Bar from './item/Bar'
+import useIframe from 'hooks/useIframe'
 
 const Wrapper = styled(MagicLink)`
   position: relative;
@@ -29,8 +30,14 @@ const ChartWrapper = styled.div`
   flex: 1;
 `
 export default function Item(props) {
+  const iframe = useIframe()
   return (
-    <Wrapper to={props.to} onClick={props.onClick || null} {...props}>
+    <Wrapper
+      {...props}
+      to={(iframe ? 'https://monconvertisseurco2.fr' : '') + props.to}
+      onClick={props.onClick || null}
+      noIcon
+    >
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
         <Title

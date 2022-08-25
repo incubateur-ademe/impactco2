@@ -64,12 +64,10 @@ export function formatUsage(equivalent, years) {
     return (years || equivalent.usage.defaultyears) * equivalent.usage.peryear
   }
   if (equivalent?.ecv?.find((ecv) => [5, 7].includes(ecv.id))) {
-    equivalent.ecv.map((ecv) => [5, 7].includes(ecv.id) && console.log(ecv.id))
     const usage = equivalent.ecv.reduce(
       (acc, cur) => acc + ([5, 7].includes(cur.id) ? cur.value : 0),
       0
     )
-    console.log('usage', usage)
     return usage
   }
   return 0

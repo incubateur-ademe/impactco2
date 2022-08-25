@@ -31,7 +31,7 @@ export default function useTransportations(itineraries) {
               ? [
                   ...acc,
                   cur,
-                  { ...cur, slug: cur.slug + '_nocarpool', carpool: false },
+                  { ...cur, id: cur.slug + '_nocarpool', carpool: false },
                 ]
               : [...acc, cur],
           []
@@ -60,7 +60,7 @@ export default function useTransportations(itineraries) {
                 (itineraries ? itineraries[equivalent.type] : km))
         )
         .map((equivalent) => ({
-          id: `${equivalent.slug}`,
+          id: `${equivalent.id || equivalent.slug}`,
           title: `${formatName(equivalent.name.fr, 1, true)}`,
           subtitle:
             `${
@@ -100,6 +100,5 @@ export default function useTransportations(itineraries) {
         .sort((a, b) => (a.value > b.value ? 1 : -1))
     )
   }, [km, displayAll, carpool, itineraries])
-  console.log(transportations)
   return transportations
 }
