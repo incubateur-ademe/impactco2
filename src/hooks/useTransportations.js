@@ -99,6 +99,6 @@ export default function useTransportations(itineraries) {
         }))
         .sort((a, b) => (a.value > b.value ? 1 : -1))
     )
-  }, [km, displayAll, carpool, itineraries])
+  }, [categories, equivalents, km, displayAll, carpool, itineraries])
   return transportations
 }

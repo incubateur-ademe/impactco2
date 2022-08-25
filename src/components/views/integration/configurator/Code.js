@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 import copy from 'copy-to-clipboard'
 
@@ -44,12 +44,13 @@ const Copy = styled.button`
   cursor: pointer;
 `
 export default function Code(props) {
-  const script = useMemo(
-    () =>
-      `<script id="datagir-mon-convertisseur-co2" src="${window?.location.origin}/iframe.js" data-search="${props.type}?theme=${props.theme}"></script>`,
+  const [script, setScript] = useState(null)
 
-    [props.id, props.typeShare, props.theme, props.type]
-  )
+  useEffect(() => {
+    setScript(
+      `<script id="datagir-mon-convertisseur-co2" src="${window?.location.origin}/iframe.js" data-search="${props.type}?theme=${props.theme}"></script>`
+    )
+  }, [props.theme, props.type])
 
   const [copied, setCopied] = useState(false)
 

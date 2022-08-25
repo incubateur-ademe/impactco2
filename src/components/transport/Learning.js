@@ -90,23 +90,24 @@ export default function Learning() {
           </BigText>
         </Statistic>
         <Strong>
-          "Hors confinement", le secteur des transports est le 1er secteur
-          émetteur de gaz à effet de serre.
+          &quot;Hors confinement&quot;, le secteur des transports est le 1er
+          secteur émetteur de gaz à effet de serre.
         </Strong>
         <Text>
-          Jusqu’à peu, se déplacer faisait partie intégrante de notre vie
+          Jusqu&apos;à peu, se déplacer faisait partie intégrante de notre vie
           sociale et professionnelle. À tel point que tout notre environnement
-          est structuré autour des transports. Tout invite au voyage, qu’il soit
-          court ou long. Mais comment révolutionner nos trajets ? Découvrez des
-          pistes de réflexion avec cette{' '}
+          est structuré autour des transports. Tout invite au voyage, qu&apos;il
+          soit court ou long. Mais comment révolutionner nos trajets ? Découvrez
+          des pistes de réflexion avec cette{' '}
           <MagicLink to='https://multimedia.ademe.fr/infographies/infographie-la-mobilite-ademe/'>
-            infographie de l'ADEME
+            infographie de l&apos;ADEME
           </MagicLink>
         </Text>
 
         <Text>
           Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
-          calculer l'ensemble de votre empreinte sur le climat grace à notre{' '}
+          calculer l&apos;ensemble de votre empreinte sur le climat grace à
+          notre{' '}
           <MagicLink to={'https://nosgestesclimat.fr/'}>
             simulateur Nos Gestes Climat
           </MagicLink>
