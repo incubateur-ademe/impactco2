@@ -28,13 +28,20 @@ export default function Configurator(props) {
         votre iframe
       </Title>
       <Select
-        onChange={() => ''}
+        onChange={(e) => props.setType(e.value)}
         label={`1) Choisissez le type d'iframe que vous souhaitez intégrer.`}
         name='type'
       >
-        <option>Tuiles</option>
-        <option disabled>Fiche équivalent</option>
-        <option disabled>Catégorie</option>
+        <option value='tuiles'>Tuiles</option>
+        <option disabled>-----------</option>
+        <option value='categories/numerique'>Numérique</option>
+        <option value='categories/repas'>Repas</option>
+        <option value='categories/boisson'>Boisson</option>
+        <option value='categories/transport'>Transport</option>
+        <option value='categories/habillement'>Habillement</option>
+        <option value='categories/electromenager'>Électroménager</option>
+        <option value='categories/mobilier'>Mobilier</option>
+        <option value='categories/chauffage'>Chauffage</option>
       </Select>
       <Select
         onChange={({ value }) => props.setTheme(value)}

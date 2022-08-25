@@ -24,13 +24,20 @@ const StyledSectionContent = styled(Section.Content)`
 export default function Integration() {
   const [theme, setTheme] = useState('default')
 
+  const [type, setType] = useState('tuiles')
+
   return (
     <Web>
       <Section>
         <StyledSectionContent flex>
-          <Configurator theme={theme} setTheme={setTheme} />
+          <Configurator
+            theme={theme}
+            setTheme={setTheme}
+            type={type}
+            setType={setType}
+          />
           <StyledIframeResizer
-            src={`/iframes/tuiles?theme=${theme}`}
+            src={`/iframes/${type}?theme=${theme}`}
             allowfullscreen='true'
             webkitallowfullscreen='true'
             mozallowfullscreen='true'
