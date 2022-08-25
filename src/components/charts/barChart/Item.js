@@ -31,7 +31,7 @@ const ChartWrapper = styled.div`
 export default function Item(props) {
   return (
     <Wrapper to={props.to} onClick={props.onClick || null} {...props}>
-      <Emoji emoji={props.emoji} />
+      <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
         <Title
           title={props.title}

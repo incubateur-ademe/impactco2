@@ -14,10 +14,22 @@ const Wrapper = styled.div`
     margin-right: 0.75rem;
   }
 `
+const Second = styled.span`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(30%, 50%);
+  font-size: 0.75em;
+`
 export default function EmojiComponent(props) {
   return props.emoji ? (
     <Wrapper>
       <Emoji>{props.emoji}</Emoji>
+      {props.secondEmoji && (
+        <Second>
+          <Emoji>{props.secondEmoji}</Emoji>
+        </Second>
+      )}
     </Wrapper>
   ) : null
 }

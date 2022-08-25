@@ -18,6 +18,7 @@ export default function BarChart(props) {
             title={item.title}
             subtitle={item.subtitle}
             emoji={item.emoji}
+            secondEmoji={item.secondEmoji}
             color={item.color}
             value={item.value}
             usage={item.usage}

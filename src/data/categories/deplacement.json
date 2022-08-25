@@ -140,6 +140,7 @@
     "carpool": true,
     "type": "car",
     "emoji": "🚗",
+    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -222,6 +223,7 @@
 
     "type": "foot",
     "emoji": "🚴",
+    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -469,6 +471,7 @@
 
     "type": "car",
     "emoji": "🚌",
+    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -499,9 +502,9 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busgnv",
-
     "type": "car",
     "emoji": "🚌",
+    "secondEmoji": "💨",
     "category": 4,
     "ecv": [
       {

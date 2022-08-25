@@ -76,7 +76,7 @@ export default function CategoryList(props) {
           items={equivalentsOfCategory}
           max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
         />
-        <CategoryLegend />
+        {![2, 3].includes(props.category.id) && <CategoryLegend />}
         <Bottom category={props.category} />
       </Section.Content>
     </Section>

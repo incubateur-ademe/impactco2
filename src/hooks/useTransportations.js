@@ -75,6 +75,7 @@ export default function useTransportations(itineraries) {
                 )} km`
               : ''),
           emoji: equivalent.emoji,
+          secondEmoji: equivalent.secondEmoji,
           value:
             (formatTotal(equivalent) *
               (itineraries ? itineraries[equivalent.type] : km)) /
