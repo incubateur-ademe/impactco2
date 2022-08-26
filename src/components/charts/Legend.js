@@ -10,7 +10,8 @@ const Wrapper = styled.div`
 const Item = styled.div`
   position: relative;
   padding-left: 1.375rem;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 300;
 
   &:before {
     position: absolute;
