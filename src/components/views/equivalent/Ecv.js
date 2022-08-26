@@ -1,20 +1,24 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
+import { Flipper, Flipped } from 'react-flip-toolkit'
 
 import { formatName, formatNumberFixed, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
+import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
 
 export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
-  margin-bottom: 2rem;
 
   span {
     font-size: 0.75em;
   }
+`
+const StyledLegend = styled(Legend)`
+  margin-bottom: 3rem;
 `
 export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
@@ -49,11 +53,24 @@ export default function Ecv(props) {
   return ecvToDisplay.length ? (
     <Section>
       <Section.Content>
-        <StackedChart
-          items={ecvToDisplay}
-          total={formatTotal(props.equivalent, usage)}
-        />
-        <Legend items={ecvToDisplay} />
+        <ScreenshotWrapper equivalent={props.equivalent} noBackground>
+          <Title>
+            Détail de l&apos;empreinte de 1{' '}
+            {props.equivalent.unit && <>{props.equivalent.unit.fr} </>}
+            {formatName(props.equivalent.name.fr, 1)} (
+            {formatNumberFixed(formatTotal(props.equivalent, usage))}{' '}
+            <span>
+              kgCO
+              <sub>2</sub>e
+            </span>
+            )
+          </Title>
+          <StackedChart
+            items={ecvToDisplay}
+            total={formatTotal(props.equivalent, usage)}
+          />
+          <StyledLegend items={ecvToDisplay} />
+        </ScreenshotWrapper>
       </Section.Content>
     </Section>
   ) : null

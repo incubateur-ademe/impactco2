@@ -26,7 +26,7 @@ const Item = styled.div`
 `
 export default function Legend(props) {
   return (
-    <Wrapper>
+    <Wrapper className={props.className}>
       {props.items.map((item) => (
         <Item key={item.label} color={item.color}>
           {item.label}

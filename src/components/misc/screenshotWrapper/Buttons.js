@@ -102,7 +102,10 @@ export default function Buttons(props) {
   const { setShare } = useContext(ModalContext)
 
   return (
-    <Wrapper>
+    <Wrapper
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
+    >
       <Button onClick={props.takeScreenshot} className='noscreenshot'>
         <Svg
           width='22'

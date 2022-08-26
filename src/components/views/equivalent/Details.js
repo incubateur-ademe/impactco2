@@ -60,7 +60,6 @@ export default function Details(props) {
               </Subtitle>
             )}
           </Title>
-          <ShareButton title />
         </Section.Content>
       </Section>
       <Value equivalent={props.equivalent} />
