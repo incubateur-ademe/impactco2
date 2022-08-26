@@ -18,7 +18,11 @@ export default function StackedChart(props) {
   return (
     <Wrapper className={props.className}>
       {props.items.map((item) => (
-        <Item color={item.color} percent={item.value / props.total} />
+        <Item
+          key={item.id}
+          color={item.color}
+          percent={item.value / props.total}
+        />
       ))}
     </Wrapper>
   )
