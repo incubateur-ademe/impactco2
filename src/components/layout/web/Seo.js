@@ -7,18 +7,16 @@ export default function Seo(props) {
   const router = useRouter()
 
   const { title, description, image, url } = {
-    title: formatName(
-      props.title || `Découvrez l'impact sur le climat de votre quotidien`,
-      1,
-      true
-    ),
+    title: `${
+      props.title || `Impact sur le climat des objets et gestes`
+    } | Mon Convertisseur CO2`,
     description:
       props.description ||
-      `Comparez des objets et gestes entre-eux et visualisez facilement leurs émissions de CO2e.`,
+      `Découvrez l’impact sur le climat des objets et gestes de votre quotidien comme votre mobilier, vos habits ou encore vos repas`,
     image: `https://monconvertisseurco2.fr/${props.image || 'metaimage.png'}`,
     url: `https://monconvertisseurco2.fr/${router.asPath}`,
   }
-
+  console.log(title)
   return (
     <Head>
       <title>{title}</title>

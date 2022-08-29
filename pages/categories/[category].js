@@ -8,7 +8,7 @@ import ShareButton from 'components/base/ShareButton'
 import CategoryList from 'components/misc/CategoryList'
 
 export default function Category(props) {
-  return props.category ? (
+  return (
     <Web
       title={props.category.title}
       description={props.category.description}
@@ -25,7 +25,7 @@ export default function Category(props) {
       </Section>
       <CategoryList category={props.category} />
     </Web>
-  ) : null
+  )
 }
 
 export async function getStaticPaths() {
