@@ -68,7 +68,9 @@ export default function Ecv(props) {
             total={formatTotal(props.equivalent, usage)}
           />
           <StyledLegend items={ecvToDisplay} />
-          <DurationSelector duration={usage} setDuration={setUsage} />
+          {usage ? (
+            <DurationSelector duration={usage} setDuration={setUsage} />
+          ) : null}
         </ScreenshotWrapper>
       </Section.Content>
     </Section>
