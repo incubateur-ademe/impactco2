@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
-import { Flipper, Flipped } from 'react-flip-toolkit'
 
 import { formatName, formatNumberFixed, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
@@ -8,6 +7,7 @@ import Section from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
+import DurationSelector from './ecv/DurationSelector'
 
 export const Title = styled.h3`
   font-weight: normal;
@@ -17,9 +17,7 @@ export const Title = styled.h3`
     font-size: 0.75em;
   }
 `
-const StyledLegend = styled(Legend)`
-  margin-bottom: 3rem;
-`
+const StyledLegend = styled(Legend)``
 export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
 
@@ -70,6 +68,7 @@ export default function Ecv(props) {
             total={formatTotal(props.equivalent, usage)}
           />
           <StyledLegend items={ecvToDisplay} />
+          <DurationSelector duration={usage} setDuration={setUsage} />
         </ScreenshotWrapper>
       </Section.Content>
     </Section>
