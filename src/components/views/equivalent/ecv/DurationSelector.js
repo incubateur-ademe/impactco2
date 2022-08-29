@@ -6,6 +6,10 @@ const Wrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   font-size: 0.75rem;
+
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 2rem;
+  }
 `
 const Label = styled.div`
   font-weight: 300;

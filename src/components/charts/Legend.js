@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
   margin: 0.5rem 0 1.5rem;
 `
 const Item = styled.div`
