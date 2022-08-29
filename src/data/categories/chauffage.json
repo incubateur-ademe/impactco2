@@ -12,7 +12,8 @@
     "total": 3014.56,
     "default": true,
     "tile": false,
-    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
+    "description": "Découvrez à quoi correspond une année de chauffage au gaz dans une maison en kgCO₂e émis (CO₂e)"
   },
   {
     "name": {
@@ -27,7 +28,8 @@
     "total": 2270,
     "default": false,
     "tile": false,
-    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
+    "description": "Découvrez à quoi correspond une année de chauffage au gaz dans un appartement en kgCO₂e émis (CO₂e)"
   },
   {
     "name": {
@@ -42,7 +44,8 @@
     "total": 4213.44,
     "default": true,
     "tile": false,
-    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
+    "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul pour une maison"
   },
   {
     "name": {
@@ -57,7 +60,8 @@
     "total": 3991.68,
     "default": false,
     "tile": false,
-    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
+    "description": "Connaître l'équivalent en empreinte carbone de la consommation d'une année de chauffage au fioul pour un appartement"
   },
   {
     "name": {
@@ -72,7 +76,8 @@
     "total": 482.512,
     "default": true,
     "tile": false,
-    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
+    "description": "Découvrez à quoi correspond une année de chauffage électrique dans une maison en kgCO₂e émis (CO₂e)"
   },
   {
     "name": {
@@ -87,6 +92,7 @@
     "total": 295.88,
     "default": false,
     "tile": false,
-    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm"
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
+    "description": "Découvrez à quoi correspond une année de chauffage électrique dans un appartement en kgCO₂e émis (CO₂e)"
   }
 ]

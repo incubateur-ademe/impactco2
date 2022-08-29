@@ -31,7 +31,8 @@
     "display": {
       "min": 400
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion",
+    "description": "Combien de CO₂e émet un kilomètre en avion ? Mon Convertisseur CO₂e permet de mesurer l'impact de vos trajets  en avion sur le climat"
   },
   {
     "name": {
@@ -62,7 +63,8 @@
     "display": {
       "min": 150
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv",
+    "description": "Découvrez l'émission de CO₂e lors d'un voyage en TGV et comparez le à d'autres moyens de transport"
   },
   {
     "name": {
@@ -93,7 +95,8 @@
     "display": {
       "min": 31
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=train"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=train",
+    "description": "Découvrez l'émission de CO₂e lors d'un voyage en intercités et comparez le à d'autres moyens de transport"
   },
   {
     "name": {
@@ -123,7 +126,8 @@
     ],
     "default": true,
     "tile": true,
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
+    "description": "Connaître l'empreinte écologique d'un trajet avec une voiture à moteur thermique par rapport aux autres moyens de transport"
   },
   {
     "name": {
@@ -154,7 +158,8 @@
     ],
     "default": true,
     "tile": false,
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
+    "description": "Découvrez l'émission de CO₂e lors d'un trajet en voiture électrique et comparez le à d'autres moyens de transport"
   },
   {
     "name": {
@@ -185,7 +190,8 @@
     "display": {
       "min": 16
     },
-    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?routier2.htm"
+    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?routier2.htm",
+    "description": "Découvrez l'émission de CO₂e lors d'un voyage en car et comparez le à d'autres moyens de transport"
   },
   {
     "name": {
@@ -209,7 +215,8 @@
     "tile": false,
     "display": {
       "max": 30
-    }
+    },
+    "description": "Découvrez l'émission de CO₂e lors d'un voyage en vélo et comparez le à d'autres moyens de transport"
   },
   {
     "name": {
@@ -240,7 +247,8 @@
     "display": {
       "max": 30
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=velo"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=velo",
+    "description": "Découvrez l'impact CO₂e d'un trajet en velo ou trotinette électrique et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
   },
   {
     "name": {
@@ -273,7 +281,8 @@
     "display": {
       "max": 15
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "description": "Découvrez l'impact CO₂e d'un trajet en bus et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
   },
   {
     "name": {
@@ -303,7 +312,8 @@
     "display": {
       "max": 12
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tramway"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tramway",
+    "description": "Découvrez l'impact CO₂e d'un trajet en tramway et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
   },
   {
     "name": {
@@ -333,7 +343,8 @@
     "display": {
       "max": 12
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro",
+    "description": "Mon Convertisseur CO₂e vous indique l'impact écologique d'un trajet en métro par rapport à d'autres moyens de transport"
   },
   {
     "name": {
@@ -363,7 +374,8 @@
     "display": {
       "max": 50
     },
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=moto"
+    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=moto",
+    "description": "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
   },
   {
     "name": {
@@ -393,7 +405,8 @@
     "display": {
       "min": 51
     },
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=moto"
+    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=moto",
+    "description": "Découvrez l'impact CO₂e d'un trajet en moto et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
   },
   {
     "name": {
@@ -424,7 +437,8 @@
       "min": 11,
       "max": 100
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter",
+    "description": "Découvrez l'impact CO₂e d'un trajet en RER et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
   },
   {
     "name": {
@@ -454,7 +468,8 @@
     "display": {
       "max": 150
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter",
+    "description": "Découvrez l'impact CO₂e d'un trajet en TER et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
   },
   {
     "name": {
@@ -488,7 +503,8 @@
     "display": {
       "max": 15
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "description": "Découvrez l'impact CO₂e d'un trajet en bus électrique et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
   },
   {
     "name": {
@@ -521,6 +537,7 @@
     "display": {
       "max": 15
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus"
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
   }
 ]

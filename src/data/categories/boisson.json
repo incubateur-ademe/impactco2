@@ -11,7 +11,8 @@
     "total": 0.000132,
     "default": true,
     "tile": false,
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau"
+    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau",
+    "description": "Connaître l'impact environnemental d'un litre d'eau du robinet, comprenant la fabrication, la distribution et la consommation"
   },
   {
     "id": 31000,
@@ -25,7 +26,8 @@
     "total": 0.453,
     "default": true,
     "tile": true,
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau"
+    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau",
+    "description": "Connaître l'impact environnemental d'un litre d'eau en bouteille, comprenant la fabrication, la distribution et la consommation"
   },
   {
     "id": 31001,
@@ -39,7 +41,8 @@
     "total": 0.57,
     "default": true,
     "tile": false,
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "description": "Connaître l'impact écologique, calculé en kgCO₂e, d'un litre de soda, de la fabrication à la consommation"
   },
   {
     "id": 31002,
@@ -53,7 +56,8 @@
     "total": 1.09,
     "default": true,
     "tile": false,
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "description": "Voici le poids en kgCO₂e d'un litre de bière et comparez le à l'impact sur le climat  d'un litre d'eau en bouteille ou d'un déplacement en voiture"
   },
   {
     "id": 31003,
@@ -67,7 +71,8 @@
     "total": 1.13,
     "default": true,
     "tile": false,
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "description": "Découvrez l'impact sur le climat d'un litre de vin, comprenant la fabrication, la distribution et la consommation"
   },
   {
     "id": 31004,
@@ -84,7 +89,8 @@
     "total": 1.53,
     "default": true,
     "tile": false,
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "description": "Découvrez le poids en kgCO₂e ou CO₂e d'un litre de lait de vache par rapport au lait de soja et ainsi son impact écologique"
   },
   {
     "name": {
@@ -100,6 +106,7 @@
     "total": 0.42,
     "default": false,
     "tile": false,
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "description": "Découvrez le poids en kgCO₂e ou CO₂e d'un litre de lait de vache par rapport au lait de soja et ainsi son impact écologique"
   }
 ]
