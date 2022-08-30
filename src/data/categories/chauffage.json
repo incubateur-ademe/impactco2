@@ -13,7 +13,7 @@
     "default": true,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
-    "title": "",
+    "title": "Un an de chauffage au gaz en maison",
     "description": "Découvrez à quoi correspond une année de chauffage au gaz dans une maison en kgCO₂e émis (CO₂e)"
   },
   {
@@ -30,7 +30,7 @@
     "default": false,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
-    "title": "",
+    "title": "Poids CO₂e d'un an de chauffage au gaz",
     "description": "Découvrez à quoi correspond une année de chauffage au gaz dans un appartement en kgCO₂e émis (CO₂e)"
   },
   {
@@ -47,7 +47,7 @@
     "default": true,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
-    "title": "",
+    "title": "Un an de chauffage au fioul en maison",
     "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul pour une maison"
   },
   {
@@ -64,7 +64,7 @@
     "default": false,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
-    "title": "",
+    "title": "Poids CO₂e chauffage fioul appartement",
     "description": "Connaître l'équivalent en empreinte carbone de la consommation d'une année de chauffage au fioul pour un appartement"
   },
   {
@@ -81,7 +81,7 @@
     "default": true,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
-    "title": "",
+    "title": "Impact d'une année de chauffage maison",
     "description": "Découvrez à quoi correspond une année de chauffage électrique dans une maison en kgCO₂e émis (CO₂e)"
   },
   {
@@ -98,7 +98,7 @@
     "default": false,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
-    "title": "",
+    "title": "Impact d'une année de chauffage électrique",
     "description": "Découvrez à quoi correspond une année de chauffage électrique dans un appartement en kgCO₂e émis (CO₂e)"
   }
 ]
