@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2rem;
