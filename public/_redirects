@@ -4,4 +4,4 @@ https://api.monimpacttransport.fr/beta/*  https://monconvertisseurco2.fr/.netlif
 https://monimpacttransport.fr/*           https://monconvertisseurco2.fr/categories/transport/:splat  301
 https://www.monimpacttransport.fr/*       https://monconvertisseurco2.fr/categories/transport/:splat  301
 
-/deplacement/*                              /transport/:splat 301
+/categories/deplacement/*                 /categories/transport/:splat
