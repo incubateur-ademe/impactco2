@@ -55,7 +55,7 @@ export function formatConstruction(equivalent) {
   return equivalent.total || equivalent.total === 0
     ? equivalent.total
     : equivalent.ecv.reduce(
-        (acc, cur) => acc + ([1, 2, 3, 4, 6].includes(cur.id) ? cur.value : 0),
+        (acc, cur) => acc + ([1, 2, 3, 4, 5].includes(cur.id) ? cur.value : 0),
         0
       )
 }
@@ -63,9 +63,9 @@ export function formatUsage(equivalent, years) {
   if (equivalent.usage) {
     return (years || equivalent.usage.defaultyears) * equivalent.usage.peryear
   }
-  if (equivalent?.ecv?.find((ecv) => [5, 7].includes(ecv.id))) {
+  if (equivalent?.ecv?.find((ecv) => [6, 7, 8].includes(ecv.id))) {
     const usage = equivalent.ecv.reduce(
-      (acc, cur) => acc + ([5, 7].includes(cur.id) ? cur.value : 0),
+      (acc, cur) => acc + ([6, 7, 8].includes(cur.id) ? cur.value : 0),
       0
     )
     return usage

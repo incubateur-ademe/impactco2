@@ -16,7 +16,7 @@ export default function Seo(props) {
     image: `https://monconvertisseurco2.fr/${props.image || 'metaimage.png'}`,
     url: `https://monconvertisseurco2.fr/${router.asPath}`,
   }
-  console.log(title)
+
   return (
     <Head>
       <title>{title}</title>

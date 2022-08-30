@@ -12,6 +12,7 @@
     "default": true,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau",
+    "title": "Poids CO₂e d'un litre d'eau du robinet",
     "description": "Connaître l'impact environnemental d'un litre d'eau du robinet, comprenant la fabrication, la distribution et la consommation"
   },
   {
@@ -27,6 +28,7 @@
     "default": true,
     "tile": true,
     "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau",
+    "title": "Poids CO₂e d'un litre d'eau en bouteille",
     "description": "Connaître l'impact environnemental d'un litre d'eau en bouteille, comprenant la fabrication, la distribution et la consommation"
   },
   {
@@ -42,6 +44,7 @@
     "default": true,
     "tile": false,
     "source": "https://agribalyse.ademe.fr/",
+    "title": "Impact sur le climat d'un litre de soda",
     "description": "Connaître l'impact écologique, calculé en kgCO₂e, d'un litre de soda, de la fabrication à la consommation"
   },
   {
@@ -57,6 +60,7 @@
     "default": true,
     "tile": false,
     "source": "https://agribalyse.ademe.fr/",
+    "title": "Impact sur le climat d'un litre de bière",
     "description": "Voici le poids en kgCO₂e d'un litre de bière et comparez le à l'impact sur le climat  d'un litre d'eau en bouteille ou d'un déplacement en voiture"
   },
   {
@@ -72,6 +76,7 @@
     "default": true,
     "tile": false,
     "source": "https://agribalyse.ademe.fr/",
+    "title": "Poids en CO₂e d'un litre de vin",
     "description": "Découvrez l'impact sur le climat d'un litre de vin, comprenant la fabrication, la distribution et la consommation"
   },
   {
@@ -90,6 +95,7 @@
     "default": true,
     "tile": false,
     "source": "https://agribalyse.ademe.fr/",
+    "title": "L'empreinte carbone d'un litre de lait",
     "description": "Découvrez le poids en kgCO₂e ou CO₂e d'un litre de lait de vache par rapport au lait de soja et ainsi son impact écologique"
   },
   {
@@ -107,6 +113,7 @@
     "default": false,
     "tile": false,
     "source": "https://agribalyse.ademe.fr/",
+    "title": "L'empreinte carbone d'un litre de lait",
     "description": "Découvrez le poids en kgCO₂e ou CO₂e d'un litre de lait de vache par rapport au lait de soja et ainsi son impact écologique"
   }
 ]

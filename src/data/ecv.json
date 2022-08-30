@@ -47,5 +47,12 @@
       "fr": "Trainées de condensation"
     },
     "color": "#adc4c5"
+  },
+  {
+    "id": 8,
+    "name": {
+      "fr": "Usage"
+    },
+    "color": "#6f87ad"
   }
 ]

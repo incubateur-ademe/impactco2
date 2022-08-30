@@ -29,8 +29,8 @@ const equivalents = [
 export default function Equivalent(props) {
   return (
     <Web
-      title={`Découvrez l'impact d'un ${props.equivalent.name.fr} sur Mon Convertisseur CO2`}
-      result={props.equivalent.name.fr}
+      title={props.equivalent.title}
+      description={props.equivalent.description}
       breadcrumb={{
         type: 'equivalent',
         category: props.category,
