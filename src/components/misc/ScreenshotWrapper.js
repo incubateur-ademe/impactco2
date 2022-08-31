@@ -15,6 +15,12 @@ const StyledButtons = styled(Buttons)`
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    bottom: 0.5rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
 `
 export default function ScreenshotWrapper(props) {
   const [hover, setHover] = useState(false)

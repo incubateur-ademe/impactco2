@@ -6,7 +6,12 @@ import Background from 'components/screenshot/Background'
 import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
 
-const Wrapper = styled.div`
+const SizerWrapper = styled.div`
+  ${(props) => props.theme.mq.medium} {
+    overflow: hidden;
+  }
+`
+const Sizer = styled.div`
   position: relative;
   margin: -1.5rem;
   background-color: ${(props) =>
@@ -20,8 +25,12 @@ const Header = styled.div`
 const Title = styled.h1``
 const StyledButtons = styled(Buttons)`
   margin-top: 0.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    margin-top: 0;
+  }
 `
-export default function VisualizationWrapper(props) {
+export default function Wrapper(props) {
   const [hover, setHover] = useState(false)
 
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
@@ -29,20 +38,22 @@ export default function VisualizationWrapper(props) {
   )
 
   return (
-    <Wrapper className={props.className} ref={ref} hover={hover}>
-      <Background hover={hover}>
-        <Header>
-          <Title>{props.name}</Title>
-          <StyledButtons
-            takeScreenshot={takeScreenshot}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-            slug={`categories/${props.slug}`}
-          />
-        </Header>
-        {props.children}
-      </Background>
-      {isScreenshotting && <Signature />}
-    </Wrapper>
+    <SizerWrapper>
+      <Sizer className={props.className} ref={ref} hover={hover}>
+        <Background hover={hover}>
+          <Header>
+            <Title>{props.name}</Title>
+            <StyledButtons
+              takeScreenshot={takeScreenshot}
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+              slug={`categories/${props.slug}`}
+            />
+          </Header>
+          {props.children}
+        </Background>
+        {isScreenshotting && <Signature />}
+      </Sizer>
+    </SizerWrapper>
   )
 }

@@ -15,6 +15,10 @@ const Wrapper = styled.div`
     ${(props) => (props.hover ? props.theme.colors.main : 'transparent')};
   border-radius: 1rem;
   transition: all 300ms ease-out;
+
+  ${(props) => props.theme.mq.small} {
+    border: none;
+  }
 `
 const Content = styled.div`
   position: relative;

@@ -3,6 +3,11 @@ import styled from 'styled-components'
 const Top = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
 `
 const Checkboxes = styled.div`
   display: flex;
@@ -15,6 +20,10 @@ const Checkboxes = styled.div`
 
   > div {
     font-size: 0.875rem;
+  }
+
+  ${(props) => props.theme.mq.small} {
+    align-items: flex-start;
   }
 `
 
