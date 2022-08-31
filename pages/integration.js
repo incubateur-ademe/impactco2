@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
+import { useQueryParam, StringParam, withDefault } from 'use-query-params'
 
 import Web from 'components/layout/Web'
 import Section from 'components/base/Section'
@@ -24,7 +25,10 @@ const StyledSectionContent = styled(Section.Content)`
 export default function Integration() {
   const [theme, setTheme] = useState('default')
 
-  const [type, setType] = useState('tuiles')
+  const [type, setType] = useQueryParam(
+    'type',
+    withDefault(StringParam, 'tuiles')
+  )
 
   return (
     <Web>

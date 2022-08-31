@@ -3,11 +3,9 @@ import React from 'react'
 import categories from 'data/categories.json'
 
 import Web from 'components/layout/Web'
-import Section from 'components/base/Section'
-import ShareButton from 'components/base/ShareButton'
-import CategoryList from 'components/misc/CategoryList'
+import Category from 'components/misc/Category'
 
-export default function Category(props) {
+export default function CategoryPage(props) {
   return (
     <Web
       title={props.category.title}
@@ -17,13 +15,7 @@ export default function Category(props) {
         category: props.category,
       }}
     >
-      <Section>
-        <Section.Content flex>
-          <h1>{props.category.name.fr}</h1>
-          <ShareButton title />
-        </Section.Content>
-      </Section>
-      <CategoryList category={props.category} />
+      <Category category={props.category} />
     </Web>
   )
 }

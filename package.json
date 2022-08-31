@@ -22,6 +22,7 @@
     "iframe-resizer-react": "^1.1.0",
     "matomo-tracker": "^2.2.4",
     "next": "^12.2.2",
+    "next-query-params": "^4.0.0",
     "publicodes": "^1.0.0-beta.44",
     "puppeteer-core": "^15.5.0",
     "react": "18.2.0",

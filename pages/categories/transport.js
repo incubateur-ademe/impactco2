@@ -4,7 +4,6 @@ import categories from 'data/categories.json'
 
 import Web from 'components/layout/Web'
 import { TransportProvider } from 'components/transport/TransportProvider'
-import Search from 'components/transport/Search'
 import Distance from 'components/transport/Distance'
 import Learning from 'components/transport/Learning'
 
@@ -19,7 +18,6 @@ export default function Transport(props) {
       }}
     >
       <TransportProvider>
-        <Search distance />
         <Distance category={props.category} />
         <Learning />
       </TransportProvider>

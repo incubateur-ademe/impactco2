@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
-import { useQueryParamString } from 'react-use-query-param-string'
+import { useQueryParam, NumberParam, withDefault } from 'use-query-params'
 
 import visualizations from 'components/visualizations/list'
 import Section from 'components/base/Section'
@@ -39,12 +39,12 @@ const StyledSection = styled(Section)`
 `
 
 export default function Visualization(props) {
-  const [currentSlide, setCurrentSlide, initialized] = useQueryParamString(
+  const [currentSlide, setCurrentSlide] = useQueryParam(
     'slide',
-    0
+    withDefault(NumberParam, 0)
   )
 
-  return visualizations[props.equivalent.slug] && initialized ? (
+  return visualizations[props.equivalent.slug] ? (
     <StyledSection>
       <Section.Content>
         <Slider
@@ -73,7 +73,7 @@ export default function Visualization(props) {
             <ScreenshotWrapper
               key={props.equivalent.slug}
               equivalent={props.equivalent}
-              fixed
+              background
             >
               {visualization}
             </ScreenshotWrapper>

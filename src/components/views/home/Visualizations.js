@@ -74,7 +74,7 @@ export default function Visualization() {
           afterChange={() => setHomeDisplayed(home)}
         >
           {homeDisplayed.map((visualization, index) => (
-            <StyledScreenshotWrapper key={index}>
+            <StyledScreenshotWrapper key={index} background>
               {visualization}
             </StyledScreenshotWrapper>
           ))}

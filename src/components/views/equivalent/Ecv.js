@@ -50,7 +50,7 @@ export default function Ecv(props) {
   return ecvToDisplay.length ? (
     <Section>
       <Section.Content>
-        <ScreenshotWrapper equivalent={props.equivalent} noBackground>
+        <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
             Détail de l&apos;empreinte de 1{' '}
             {props.equivalent.unit && <>{props.equivalent.unit.fr} </>}

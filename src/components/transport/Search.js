@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import TransportContext from 'components/transport/TransportProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
 import ModeSelector from './search/ModeSelector'
 import Distance from './search/Distance'
@@ -105,46 +104,44 @@ export default function Search(props) {
   const { setOccupancy } = useContext(ModalContext)
 
   return (
-    <Section>
-      <Section.Content>
-        <ModeSelector
-          distance={props.distance}
-          itineraire={props.itineraire}
-          teletravail={props.teletravail}
-          iframe={props.iframe}
-        />
-        <Content>
-          {props.itineraire && (
-            <>
-              <Text>
-                Découvrez la quantité de CO2e que vous émettez{' '}
-                <Color onClick={() => setOccupancy(true)}>(par personne)</Color>{' '}
-                pour ce trajet
-              </Text>
-              <Itinerary />
-            </>
-          )}
-          {props.teletravail && (
-            <>
-              <Text>
-                Découvrez la quantité de CO2e que vous économisez (à
-                l&apos;année) en travaillant de chez vous
-              </Text>
-              <Teletravail />
-            </>
-          )}
-          {props.distance && (
-            <>
-              <Text>
-                Découvrez la quantité de CO2e que vous émettez{' '}
-                <Color onClick={() => setOccupancy(true)}>(par personne)</Color>{' '}
-                pour cette distance
-              </Text>
-              <Distance />
-            </>
-          )}
-        </Content>
-      </Section.Content>
-    </Section>
+    <>
+      <ModeSelector
+        distance={props.distance}
+        itineraire={props.itineraire}
+        teletravail={props.teletravail}
+        iframe={props.iframe}
+      />
+      <Content>
+        {props.itineraire && (
+          <>
+            <Text>
+              Découvrez la quantité de CO2e que vous émettez{' '}
+              <Color onClick={() => setOccupancy(true)}>(par personne)</Color>{' '}
+              pour ce trajet
+            </Text>
+            <Itinerary />
+          </>
+        )}
+        {props.teletravail && (
+          <>
+            <Text>
+              Découvrez la quantité de CO2e que vous économisez (à l&apos;année)
+              en travaillant de chez vous
+            </Text>
+            <Teletravail />
+          </>
+        )}
+        {props.distance && (
+          <>
+            <Text>
+              Découvrez la quantité de CO2e que vous émettez{' '}
+              <Color onClick={() => setOccupancy(true)}>(par personne)</Color>{' '}
+              pour cette distance
+            </Text>
+            <Distance />
+          </>
+        )}
+      </Content>
+    </>
   )
 }

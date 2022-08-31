@@ -5,10 +5,11 @@ import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
-import Top from './categoryList/Top'
-import Instruction from './categoryList/Instruction'
-import CategoryLegend from './categoryList/CategoryLegend'
-import Bottom from './categoryList/Bottom'
+import Wrapper from './category/Wrapper'
+import Top from './category/Top'
+import Instruction from './category/Instruction'
+import CategoryLegend from './category/CategoryLegend'
+import Bottom from './category/Bottom'
 
 export default function CategoryList(props) {
   const { equivalents, categories } = useContext(DataContext)
@@ -48,36 +49,40 @@ export default function CategoryList(props) {
   return (
     <Section>
       <Section.Content>
-        <Top>
-          <Instruction />
-          <Top.Checkboxes
-            visible={equivalents
-              .filter((equivalent) => equivalent.category === props.category.id)
-              .find((equivalent) => !equivalent.default)}
-          >
-            <Checkbox
-              name='displayAll'
-              checked={displayAll}
-              onChange={() => {
-                setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-                window?._paq?.push([
-                  'trackEvent',
-                  'Interaction',
-                  'Voir tous les équivalents',
-                  props.category.name.fr,
-                ])
-              }}
+        <Wrapper name={props.category.name.fr} slug={props.category.slug}>
+          <Top>
+            <Instruction />
+            <Top.Checkboxes
+              visible={equivalents
+                .filter(
+                  (equivalent) => equivalent.category === props.category.id
+                )
+                .find((equivalent) => !equivalent.default)}
             >
-              Voir tous les équivalents
-            </Checkbox>
-          </Top.Checkboxes>
-        </Top>
-        <BarChart
-          items={equivalentsOfCategory}
-          max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
-        />
-        {![2, 3].includes(props.category.id) && <CategoryLegend />}
-        <Bottom category={props.category} />
+              <Checkbox
+                name='displayAll'
+                checked={displayAll}
+                onChange={() => {
+                  setDisplayAll((prevDisplayAll) => !prevDisplayAll)
+                  window?._paq?.push([
+                    'trackEvent',
+                    'Interaction',
+                    'Voir tous les équivalents',
+                    props.category.name.fr,
+                  ])
+                }}
+              >
+                Voir tous les équivalents
+              </Checkbox>
+            </Top.Checkboxes>
+          </Top>
+          <BarChart
+            items={equivalentsOfCategory}
+            max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
+          />
+          {![2, 3].includes(props.category.id) && <CategoryLegend />}
+          <Bottom category={props.category} />
+        </Wrapper>
       </Section.Content>
     </Section>
   )

@@ -3,11 +3,9 @@ import { useRouter } from 'next/router'
 
 import DataContext from 'components/providers/DataProvider'
 import Iframe from 'components/layout/Iframe'
-import Section from 'components/base/Section'
-import ShareButton from 'components/base/ShareButton'
-import CategoryList from 'components/misc/CategoryList'
+import Category from 'components/misc/Category'
 
-export default function Category() {
+export default function CategoryIframe() {
   const { query } = useRouter()
   const { categories } = useContext(DataContext)
 
@@ -20,13 +18,7 @@ export default function Category() {
 
   return category ? (
     <Iframe>
-      <Section>
-        <Section.Content flex>
-          <h1>{category.name.fr}</h1>
-          <ShareButton title />
-        </Section.Content>
-      </Section>
-      <CategoryList category={category} />
+      <Category category={category} />
     </Iframe>
   ) : null
 }

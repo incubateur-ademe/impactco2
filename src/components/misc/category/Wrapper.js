@@ -8,36 +8,39 @@ import Signature from 'components/screenshot/Signature'
 
 const Wrapper = styled.div`
   position: relative;
-  height: 100%;
+  margin: -1.5rem;
   background-color: ${(props) => props.theme.colors.background};
 `
-const StyledButtons = styled(Buttons)`
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 `
-export default function ScreenshotWrapper(props) {
+const Title = styled.h1``
+const StyledButtons = styled(Buttons)`
+  margin-top: 0.5rem;
+`
+export default function VisualizationWrapper(props) {
   const [hover, setHover] = useState(false)
 
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    props.equivalent?.slug || 'monconvertisseurco2'
+    props.slug || 'monconvertisseurco2'
   )
 
   return (
     <Wrapper className={props.className} ref={ref}>
-      <Background
-        className='noscreenshot'
-        background={props.background}
-        hover={hover}
-      >
+      <Background hover={hover}>
+        <Header>
+          <Title>{props.name}</Title>
+          <StyledButtons
+            takeScreenshot={takeScreenshot}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            slug={`categories/${props.slug}`}
+          />
+        </Header>
         {props.children}
       </Background>
-      <StyledButtons
-        takeScreenshot={takeScreenshot}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-      />
-
       {isScreenshotting && <Signature />}
     </Wrapper>
   )

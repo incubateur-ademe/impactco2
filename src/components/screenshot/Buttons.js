@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
+import MagicLink from 'components/base/MagicLink'
 
 const jump = keyframes`
   from,
@@ -32,6 +33,20 @@ const jump = keyframes`
     transform: translate3d(0, -0.125rem, 0) scaleY(1.02);
   }
 `
+const slide = keyframes`
+  from {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-30%, 100%);
+  }
+  51% {
+    transform: translate(30%, -100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+`
 const share = keyframes`
   from {
     opacity: 1;
@@ -43,10 +58,8 @@ const share = keyframes`
     opacity: 1;
   }
 `
+
 const Wrapper = styled.div`
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
   display: flex;
   align-items: flex-end;
   gap: 1rem;
@@ -56,7 +69,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
   }
 `
-const Button = styled.button`
+const Button = styled(MagicLink)`
   position: relative;
   z-index: 12;
   display: flex;
@@ -65,7 +78,7 @@ const Button = styled.button`
   width: 2rem;
   height: 2rem;
   margin: 0;
-  padding: 0.3125rem;
+  padding: ${(props) => (props.large ? 0.1875 : 0.3125)}rem;
   background: transparent;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 50%;
@@ -73,6 +86,9 @@ const Button = styled.button`
   overflow: hidden;
 
   &:hover {
+    .slide {
+      animation: ${slide} 400ms;
+    }
     .jump {
       animation: ${jump} 600ms infinite;
     }
@@ -84,7 +100,7 @@ const Button = styled.button`
 `
 const Svg = styled.svg`
   display: block;
-  width: 100%;
+  width: ${(props) => (props.large ? 150 : 100)}%;
   height: auto;
 
   path {
@@ -103,21 +119,10 @@ export default function Buttons(props) {
 
   return (
     <Wrapper
+      className={props.className}
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
     >
-      <Button onClick={props.takeScreenshot} className='noscreenshot'>
-        <Svg
-          width='22'
-          height='25'
-          viewBox='0 0 22 25'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-          className='jump'
-        >
-          <path d='M9.31546 1.68556C9.29953 1.78376 9.29217 1.88314 9.29346 1.98258L9.29346 18.9141L9.12175 18.5449C8.95094 18.184 8.71847 17.8557 8.43487 17.5747L3.68685 12.8267C3.08991 12.2013 2.12963 12.0963 1.41157 12.5777C0.646405 13.138 0.480267 14.2124 1.04055 14.9777C1.08584 15.0395 1.13521 15.0982 1.18834 15.1535L9.77428 23.7394C10.4445 24.4104 11.5318 24.411 12.2028 23.7407L20.79 15.1535C21.4597 14.4819 21.4582 13.3947 20.7867 12.725C20.7338 12.6723 20.6776 12.6231 20.6183 12.5777C19.9003 12.0963 18.94 12.2013 18.343 12.8267L13.5864 17.5661C13.3342 17.818 13.1227 18.1077 12.9597 18.4247L12.7278 18.9399V2.07708C12.7604 1.19986 12.1476 0.430241 11.2854 0.265445C10.3493 0.113635 9.46733 0.749425 9.31546 1.68556Z' />
-        </Svg>
-      </Button>
       <Button onClick={() => setShare(true)} className='noscreenshot'>
         <Svg
           width='512'
@@ -143,6 +148,37 @@ export default function Buttons(props) {
           />
           <path d='M421.708 108.657C433.407 101.912 435.734 84.0317 426.906 68.7216C418.078 53.4115 401.437 46.4686 389.739 53.2144L93.1826 224.215C81.4838 230.961 79.1567 248.841 87.9848 264.151C96.813 279.461 113.454 286.404 125.152 279.658L421.708 108.657Z' />
           <path d='M396.357 461.275C408.062 468.011 424.696 461.054 433.511 445.736C442.326 430.418 439.984 412.54 428.279 405.805L131.576 235.059C119.871 228.324 103.237 235.281 94.4218 250.599C85.6069 265.916 87.9494 283.794 99.6539 290.53L396.357 461.275Z' />
+        </Svg>
+      </Button>
+      <Button
+        to={`/integration${props.slug ? `?type=${props.slug}` : ''}`}
+        large
+      >
+        <Svg
+          x='0px'
+          y='0px'
+          width='94.504px'
+          height='94.504px'
+          viewBox='0 0 94.504 94.504'
+        >
+          <path d='M93.918,45.833L69.799,21.714c-0.75-0.75-2.077-0.75-2.827,0l-5.229,5.229c-0.781,0.781-0.781,2.047,0,2.828    l17.477,17.475L61.744,64.724c-0.781,0.781-0.781,2.047,0,2.828l5.229,5.229c0.375,0.375,0.884,0.587,1.414,0.587    c0.529,0,1.039-0.212,1.414-0.587l24.117-24.118C94.699,47.881,94.699,46.614,93.918,45.833z' />
+          <path d='M32.759,64.724L15.285,47.248l17.477-17.475c0.375-0.375,0.586-0.883,0.586-1.414c0-0.53-0.21-1.039-0.586-1.414    l-5.229-5.229c-0.375-0.375-0.884-0.586-1.414-0.586c-0.53,0-1.039,0.211-1.414,0.586L0.585,45.833    c-0.781,0.781-0.781,2.047,0,2.829L24.704,72.78c0.375,0.375,0.884,0.587,1.414,0.587c0.53,0,1.039-0.212,1.414-0.587l5.229-5.229    C33.542,66.771,33.542,65.505,32.759,64.724z' />
+          <path
+            className='slide'
+            d='M60.967,13.6c-0.254-0.466-0.682-0.812-1.19-0.962l-4.239-1.251c-1.058-0.314-2.172,0.293-2.484,1.352L33.375,79.382    c-0.15,0.509-0.092,1.056,0.161,1.521c0.253,0.467,0.682,0.812,1.19,0.963l4.239,1.251c0.189,0.056,0.38,0.083,0.567,0.083    c0.863,0,1.66-0.564,1.917-1.435l19.679-66.644C61.278,14.612,61.221,14.065,60.967,13.6z'
+          />
+        </Svg>
+      </Button>
+      <Button onClick={props.takeScreenshot} className='noscreenshot'>
+        <Svg
+          width='22'
+          height='25'
+          viewBox='0 0 22 25'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+          className='jump'
+        >
+          <path d='M9.31546 1.68556C9.29953 1.78376 9.29217 1.88314 9.29346 1.98258L9.29346 18.9141L9.12175 18.5449C8.95094 18.184 8.71847 17.8557 8.43487 17.5747L3.68685 12.8267C3.08991 12.2013 2.12963 12.0963 1.41157 12.5777C0.646405 13.138 0.480267 14.2124 1.04055 14.9777C1.08584 15.0395 1.13521 15.0982 1.18834 15.1535L9.77428 23.7394C10.4445 24.4104 11.5318 24.411 12.2028 23.7407L20.79 15.1535C21.4597 14.4819 21.4582 13.3947 20.7867 12.725C20.7338 12.6723 20.6776 12.6231 20.6183 12.5777C19.9003 12.0963 18.94 12.2013 18.343 12.8267L13.5864 17.5661C13.3342 17.818 13.1227 18.1077 12.9597 18.4247L12.7278 18.9399V2.07708C12.7604 1.19986 12.1476 0.430241 11.2854 0.265445C10.3493 0.113635 9.46733 0.749425 9.31546 1.68556Z' />
         </Svg>
       </Button>
     </Wrapper>
