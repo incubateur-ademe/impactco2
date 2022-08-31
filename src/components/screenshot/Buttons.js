@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
 import MagicLink from 'components/base/MagicLink'
+import useIframe from 'hooks/useIframe'
 
 const jump = keyframes`
   from,
@@ -117,6 +118,8 @@ const Svg = styled.svg`
 export default function Buttons(props) {
   const { setShare } = useContext(ModalContext)
 
+  const iframe = useIframe()
+
   return (
     <Wrapper
       className={props.className}
@@ -151,8 +154,11 @@ export default function Buttons(props) {
         </Svg>
       </Button>
       <Button
-        to={`/integration${props.slug ? `?type=${props.slug}` : ''}`}
+        to={`${iframe ? 'https://monconvertisseurco2.fr' : ''}/integration${
+          props.slug ? `?type=${props.slug}` : ''
+        }`}
         large
+        noIcon
       >
         <Svg
           x='0px'

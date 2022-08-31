@@ -8,6 +8,9 @@ import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
 
+const StyledSection = styled(Section)`
+  margin-top: 5rem;
+`
 const Statistic = styled.div`
   margin-bottom: 1em;
   font-size: 4.3rem;
@@ -52,7 +55,7 @@ export default function Learning() {
   const isOnScreen = useOnScreen(ref, '-100px')
 
   return (
-    <Section>
+    <StyledSection>
       <Section.Content>
         <Statistic ref={ref}>
           <FirstLine>
@@ -101,6 +104,6 @@ export default function Learning() {
           </Button>
         </Button.Wrapper>
       </Section.Content>
-    </Section>
+    </StyledSection>
   )
 }
