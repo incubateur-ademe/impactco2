@@ -70,7 +70,7 @@ export default function Details(props) {
             <ButtonLink onClick={() => setCo2e(true)}>
               CO<sub>2</sub>e
             </ButtonLink>{' '}
-            émis {props.category?.unit}.
+            émis {props.category?.include}.
           </Disclaimer>
           <StyledMagicLink to={props.equivalent.source}>Source</StyledMagicLink>
         </StyledSectionContent>

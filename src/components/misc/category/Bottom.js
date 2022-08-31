@@ -21,11 +21,11 @@ export default function Bottom(props) {
   return (
     <Wrapper>
       <Disclaimer>
-        Valeurs exprimées en kg{' '}
+        Valeurs exprimées en {props.category.divider === 1 ? 'kg' : 'g'}{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        émis {props.category?.unit}.
+        émis {props.category?.include}.
       </Disclaimer>
       <Button
         onClick={() => {
