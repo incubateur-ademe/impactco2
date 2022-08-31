@@ -31,7 +31,11 @@ export default function Web(props) {
 
   return (
     <>
-      <Seo title={props.title} image={props.image} />
+      <Seo
+        title={props.title}
+        description={props.description}
+        image={props.image}
+      />
       <Wrapper>
         <Content>
           <FullScreen>
