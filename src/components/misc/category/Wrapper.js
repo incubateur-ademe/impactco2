@@ -9,7 +9,8 @@ import Signature from 'components/screenshot/Signature'
 const Wrapper = styled.div`
   position: relative;
   margin: -1.5rem;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) =>
+    props.hover ? props.theme.colors.background : 'transparent'};
 `
 const Header = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ export default function VisualizationWrapper(props) {
   )
 
   return (
-    <Wrapper className={props.className} ref={ref}>
+    <Wrapper className={props.className} ref={ref} hover={hover}>
       <Background hover={hover}>
         <Header>
           <Title>{props.name}</Title>

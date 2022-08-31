@@ -25,15 +25,16 @@ export default function Menu() {
         label={'Catégories'}
         current={router.pathname.includes('/categories')}
       >
-        {categories.map((category) => (
-          <Dropdown.Item
-            key={category.id}
-            to={`/categories/${category.slug}`}
-            current={router.pathname.includes(category.slug)}
-          >
-            <StyledEmoji>{category.emoji}</StyledEmoji> {category.name.fr}
-          </Dropdown.Item>
-        ))}
+        {categories &&
+          categories.map((category) => (
+            <Dropdown.Item
+              key={category.id}
+              to={`/categories/${category.slug}`}
+              current={router.pathname.includes(category.slug)}
+            >
+              <StyledEmoji>{category.emoji}</StyledEmoji> {category.name.fr}
+            </Dropdown.Item>
+          ))}
       </Dropdown>
       <Dropdown
         label={'CO2e'}

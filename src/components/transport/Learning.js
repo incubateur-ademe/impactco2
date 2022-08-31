@@ -4,22 +4,10 @@ import AnimatedNumber from 'animated-number-react'
 
 import useOnScreen from 'hooks/useOnScreen'
 
+import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
 
-const Wrapper = styled.div`
-  width: 47rem;
-  max-width: 100%;
-  margin: 5rem auto;
-  padding: 0 5rem;
-
-  ${(props) => props.theme.mq.small}  {
-    padding: 0 0.75rem 5rem;
-  }
-`
-const Content = styled.div`
-  position: relative;
-`
 const Statistic = styled.div`
   margin-bottom: 1em;
   font-size: 4.3rem;
@@ -59,18 +47,13 @@ const Strong = styled.p`
   }
 `
 const Text = styled.p``
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-`
 export default function Learning() {
   const ref = useRef()
   const isOnScreen = useOnScreen(ref, '-100px')
 
   return (
-    <Wrapper id='informations'>
-      <Content>
+    <Section>
+      <Section.Content>
         <Statistic ref={ref}>
           <FirstLine>
             <Number isOnScreen={isOnScreen}>
@@ -112,12 +95,12 @@ export default function Learning() {
             simulateur Nos Gestes Climat
           </MagicLink>
         </Text>
-        <ButtonWrapper>
+        <Button.Wrapper>
           <Button to={'https://nosgestesclimat.fr/'}>
             Découvrir Nos Gestes Climat
           </Button>
-        </ButtonWrapper>
-      </Content>
-    </Wrapper>
+        </Button.Wrapper>
+      </Section.Content>
+    </Section>
   )
 }
