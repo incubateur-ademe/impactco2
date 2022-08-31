@@ -1,21 +1,24 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import DataContext from 'components/providers/DataProvider'
-import Iframe from 'components/layout/Iframe'
+import categories from 'data/categories.json'
+
 import { TransportProvider } from 'components/transport/TransportProvider'
-import Search from 'components/transport/Search'
+import Iframe from 'components/layout/Iframe'
 import Distance from 'components/transport/Distance'
 
-export default function Transport() {
-  const { categories } = useContext(DataContext)
-  const category = categories.find((item) => item.id === 4)
-
+export default function Transport(props) {
   return (
     <Iframe>
       <TransportProvider>
-        <Search distance iframe />
-        <Distance category={category} />
+        <Distance category={props.category} iframe />
       </TransportProvider>
     </Iframe>
   )
+}
+export async function getStaticProps() {
+  return {
+    props: {
+      category: categories.find((item) => item.id === 4),
+    },
+  }
 }

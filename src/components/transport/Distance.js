@@ -22,7 +22,7 @@ export default function Distance(props) {
     <Section>
       <Section.Content>
         <Wrapper name={props.category.name.fr} slug={props.category.slug}>
-          <Search distance />
+          <Search distance iframe={props.iframe} />
           {transportations.length ? (
             <Top>
               <Instruction />

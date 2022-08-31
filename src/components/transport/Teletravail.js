@@ -6,10 +6,12 @@ import TransportContext from 'components/transport/TransportProvider'
 import useIframe from 'hooks/useIframe'
 import { useItinerary } from 'hooks/useItineraries'
 import Section from 'components/base/Section'
+import Wrapper from 'components/misc/Category/Wrapper'
 import YearlyFootprint from './teletravail/YearlyFootprint'
 import PercentFootprint from './teletravail/PercentFootprint'
+import Search from './Search'
 
-export default function Teletravail() {
+export default function Teletravail(props) {
   const iframe = useIframe(true)
 
   useEffect(() => {
@@ -91,17 +93,20 @@ export default function Teletravail() {
   return (
     <Section>
       <Section.Content>
-        {distance && currentTransportation ? (
-          <YearlyFootprint
-            emitted={emitted}
-            saved={saved}
-            presentiel={presentiel}
-            teletravail={teletravail}
-          />
-        ) : null}
-        {distance && currentTransportation ? (
-          <PercentFootprint saved={saved} />
-        ) : null}
+        <Wrapper name={props.category.name.fr} slug={props.category.slug}>
+          <Search teletravail iframe={props.iframe} />
+          {distance && currentTransportation ? (
+            <YearlyFootprint
+              emitted={emitted}
+              saved={saved}
+              presentiel={presentiel}
+              teletravail={teletravail}
+            />
+          ) : null}
+          {distance && currentTransportation ? (
+            <PercentFootprint saved={saved} />
+          ) : null}
+        </Wrapper>
       </Section.Content>
     </Section>
   )

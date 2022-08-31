@@ -1,29 +1,33 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import DataContext from 'components/providers/DataProvider'
+import categories from 'data/categories.json'
+
 import { TransportProvider } from 'components/transport/TransportProvider'
 import Web from 'components/layout/Web'
-import Search from 'components/transport/Search'
 import Teletravail from 'components/transport/Teletravail'
 import Learning from 'components/transport/Learning'
 
-export default function TeletravailPage() {
-  const { categories } = useContext(DataContext)
-  const category = categories.find((item) => item.id === 4)
+export default function TeletravailPage(props) {
   return (
     <Web
-      title={category.title}
-      description={category.description}
+      title={props.category.title}
+      description={props.category.description}
       breadcrumb={{
         type: 'equivalent',
-        category: category,
+        category: props.category,
       }}
     >
       <TransportProvider>
-        <Search teletravail />
-        <Teletravail />
+        <Teletravail category={props.category} />
         <Learning />
       </TransportProvider>
     </Web>
   )
+}
+export async function getStaticProps() {
+  return {
+    props: {
+      category: categories.find((item) => item.id === 4),
+    },
+  }
 }

@@ -1,20 +1,24 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import DataContext from 'components/providers/DataProvider'
+import categories from 'data/categories.json'
+
 import { TransportProvider } from 'components/transport/TransportProvider'
 import Iframe from 'components/layout/Iframe'
-import Search from 'components/transport/Search'
 import Teletravail from 'components/transport/Teletravail'
 
-export default function TeletravailPage() {
-  const { categories } = useContext(DataContext)
-  const category = categories.find((item) => item.id === 4)
+export default function TeletravailPage(props) {
   return (
     <Iframe>
       <TransportProvider>
-        <Search teletravail iframe />
-        <Teletravail />
+        <Teletravail category={props.category} iframe />
       </TransportProvider>
     </Iframe>
   )
+}
+export async function getStaticProps() {
+  return {
+    props: {
+      category: categories.find((item) => item.id === 4),
+    },
+  }
 }

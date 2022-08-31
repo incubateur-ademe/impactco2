@@ -1,20 +1,24 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import DataContext from 'components/providers/DataProvider'
-import Iframe from 'components/layout/Iframe'
+import categories from 'data/categories.json'
+
 import { TransportProvider } from 'components/transport/TransportProvider'
-import Search from 'components/transport/Search'
+import Iframe from 'components/layout/Iframe'
 import Itinerary from 'components/transport/Itinerary'
 
-export default function Itineraire() {
-  const { categories } = useContext(DataContext)
-  const category = categories.find((item) => item.id === 4)
+export default function Itineraire(props) {
   return (
     <Iframe>
       <TransportProvider>
-        <Search itineraire iframe />
-        <Itinerary category={category} />
+        <Itinerary category={props.category} iframe />
       </TransportProvider>
     </Iframe>
   )
+}
+export async function getStaticProps() {
+  return {
+    props: {
+      category: categories.find((item) => item.id === 4),
+    },
+  }
 }

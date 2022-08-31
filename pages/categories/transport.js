@@ -2,8 +2,8 @@ import React from 'react'
 
 import categories from 'data/categories.json'
 
-import Web from 'components/layout/Web'
 import { TransportProvider } from 'components/transport/TransportProvider'
+import Web from 'components/layout/Web'
 import Distance from 'components/transport/Distance'
 import Learning from 'components/transport/Learning'
 

@@ -1,24 +1,34 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 
-import DataContext from 'components/providers/DataProvider'
+import categories from 'data/categories.json'
+
 import Iframe from 'components/layout/Iframe'
 import Category from 'components/misc/Category'
 
-export default function CategoryIframe() {
-  const { query } = useRouter()
-  const { categories } = useContext(DataContext)
-
-  const [category, setCategory] = useState()
-  useEffect(() => {
-    setCategory(
-      categories?.find((category) => category.slug === query.category)
-    )
-  }, [query, categories])
-
-  return category ? (
+export default function CategoryIframe(props) {
+  return (
     <Iframe>
-      <Category category={category} />
+      <Category category={props.category} />
     </Iframe>
-  ) : null
+  )
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: categories
+      .filter((category) => category.id !== 4)
+      .map((category) => ({
+        params: { category: category.slug },
+      })),
+    fallback: false,
+  }
+}
+export async function getStaticProps({ params }) {
+  return {
+    props: {
+      category: categories?.find(
+        (category) => category.slug === params.category
+      ),
+    },
+  }
 }

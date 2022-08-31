@@ -1,29 +1,33 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import DataContext from 'components/providers/DataProvider'
-import Web from 'components/layout/Web'
+import categories from 'data/categories.json'
+
 import { TransportProvider } from 'components/transport/TransportProvider'
-import Search from 'components/transport/Search'
+import Web from 'components/layout/Web'
 import Itinerary from 'components/transport/Itinerary'
 import Learning from 'components/transport/Learning'
 
-export default function Itineraire() {
-  const { categories } = useContext(DataContext)
-  const category = categories.find((item) => item.id === 4)
+export default function ItinerairePage(props) {
   return (
     <Web
-      title={category.title}
-      description={category.description}
+      title={props.category.title}
+      description={props.category.description}
       breadcrumb={{
         type: 'equivalent',
-        category: category,
+        category: props.category,
       }}
     >
       <TransportProvider>
-        <Search itineraire />
-        <Itinerary category={category} />
+        <Itinerary category={props.category} />
         <Learning />
       </TransportProvider>
     </Web>
   )
+}
+export async function getStaticProps() {
+  return {
+    props: {
+      category: categories.find((item) => item.id === 4),
+    },
+  }
 }
