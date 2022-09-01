@@ -52,7 +52,8 @@ const StyledButtonLink = styled(ButtonLink)`
   text-align: center;
 `
 export default function Heading() {
-  const { setCo2e } = useContext(ModalContext)
+  const { setCo2e, setSurvey } = useContext(ModalContext)
+
   return (
     <Section>
       <StyledSectionContent>
@@ -75,8 +76,11 @@ export default function Heading() {
         </Text>
         <StyledSearch placeholder={'Entrez un objet, un geste...'} home />
         <Categories />
-        <StyledButtonLink onClick={() => setCo2e(true)}>
+        {/*<StyledButtonLink onClick={() => setCo2e(true)}>
           Comprendre le CO<sub>2</sub>e
+        </StyledButtonLink>*/}
+        <StyledButtonLink onClick={() => setSurvey(true)}>
+          Répondez à notre enquête utilisateur !
         </StyledButtonLink>
       </StyledSectionContent>
     </Section>

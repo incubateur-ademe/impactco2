@@ -60,7 +60,7 @@ const Scroll = styled.div`
 `
 export default function Modal(props) {
   return (
-    <Wrapper open={props.open} className={props.className}>
+    <Wrapper open={props.open}>
       <Background open={props.open} onClick={() => props.setOpen(false)} />
       <Content
         open={props.open}
@@ -70,7 +70,7 @@ export default function Modal(props) {
         noAnimation={props.noAnimation}
       >
         <ButtonClose onClick={() => props.setOpen(false)}>+</ButtonClose>
-        <Scroll>{props.children}</Scroll>
+        <Scroll className={props.className}>{props.children}</Scroll>
       </Content>
     </Wrapper>
   )
