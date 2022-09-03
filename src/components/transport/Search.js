@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import TransportContext from 'components/transport/TransportProvider'
-import ModalContext from 'components/providers/ModalProvider'
 import Checkbox from 'components/base/Checkbox'
 import ModeSelector from './search/ModeSelector'
 import Distance from './search/Distance'
@@ -101,7 +100,7 @@ const StyledCheckbox = styled(Checkbox)`
   }
 `
 export default function Search(props) {
-  const { setOccupancy } = useContext(ModalContext)
+  const { setOccupancyModal } = useContext(TransportContext)
 
   return (
     <>
@@ -116,7 +115,9 @@ export default function Search(props) {
           <>
             <Text>
               Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancy(true)}>(par personne)</Color>{' '}
+              <Color onClick={() => setOccupancyModal(true)}>
+                (par personne)
+              </Color>{' '}
               pour ce trajet
             </Text>
             <Itinerary />
@@ -135,7 +136,9 @@ export default function Search(props) {
           <>
             <Text>
               Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancy(true)}>(par personne)</Color>{' '}
+              <Color onClick={() => setOccupancyModal(true)}>
+                (par personne)
+              </Color>{' '}
               pour cette distance
             </Text>
             <Distance />

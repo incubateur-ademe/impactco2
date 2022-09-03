@@ -30,10 +30,7 @@ export default function Transportations() {
     <Wrapper>
       <List>
         {transportations
-          .filter(
-            (transportation) =>
-              transportation.default && !transportation.carpool
-          )
+          .filter((transportation) => transportation.default)
           .sort((a, b) => (a.id > b.id ? 1 : -1))
           .map((transportation) => (
             <Transportation

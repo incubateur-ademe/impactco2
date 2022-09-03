@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import TransportContext from 'components/transport/TransportProvider'
-import ModalContext from 'components/providers/ModalProvider'
 import Address from './itinerary/Address'
 import Transportations from './teletravail/Transportations'
 import Days from './teletravail/Days'
@@ -20,10 +19,14 @@ const Details = styled.button`
   cursor: pointer;
 `
 export default function Teletravail() {
-  const { start, setStart, end, setEnd, teletravailTransportation } =
-    useContext(TransportContext)
-
-  const { setTeletravail } = useContext(ModalContext)
+  const {
+    start,
+    setStart,
+    end,
+    setEnd,
+    teletravailTransportation,
+    setTeletravailModal,
+  } = useContext(TransportContext)
 
   return (
     <Wrapper>
@@ -36,7 +39,7 @@ export default function Teletravail() {
       <Transportations />
       <Days />
       {start && end && teletravailTransportation && (
-        <Details onClick={() => setTeletravail(true)}>
+        <Details onClick={() => setTeletravailModal(true)}>
           Voir et ajuster les détails du calcul
         </Details>
       )}

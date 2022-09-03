@@ -9,7 +9,7 @@ const StyledModal = styled(Modal)`
 `
 export default function SurveyModal() {
   const { survey: open, setSurvey: setOpen } = useContext(ModalContext)
-  console.log(open)
+
   return (
     <StyledModal open={open} setOpen={setOpen}>
       <iframe

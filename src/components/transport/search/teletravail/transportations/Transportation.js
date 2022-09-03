@@ -18,11 +18,12 @@ const Wrapper = styled.button`
   cursor: pointer;
   transition: background-color 200ms ease-out;
 `
-const Secondary = styled(Emoji)`
+const Second = styled.span`
   position: absolute;
-  right: -0.25rem;
-  bottom: -0.5rem;
-  font-size: 1.5rem;
+  bottom: 0;
+  right: 0;
+  transform: translate(30%, 50%);
+  font-size: 0.75em;
 `
 export default function Transportation(props) {
   const { teletravailTransportation, setTeletravailTransportation } =
@@ -34,6 +35,11 @@ export default function Transportation(props) {
       active={teletravailTransportation === props.transportation.id}
     >
       <Emoji>{props.transportation.emoji}</Emoji>
+      {props.transportation.secondEmoji && (
+        <Second>
+          <Emoji>{props.transportation.secondEmoji}</Emoji>
+        </Second>
+      )}
     </Wrapper>
   )
 }

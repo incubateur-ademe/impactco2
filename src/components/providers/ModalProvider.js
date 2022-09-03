@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Co2eModal from 'components/modals/Co2eModal'
 import TilesModal from 'components/modals/TilesModal'
 import ShareModal from 'components/modals/ShareModal'
-import OccupancyModal from 'components/modals/OccupancyModal'
 import SurveyModal from 'components/modals/SurveyModal'
 
 const ModalContext = React.createContext({})
@@ -12,7 +11,6 @@ export function ModalProvider(props) {
   const [Co2e, setCo2e] = useState(false)
   const [tiles, setTiles] = useState(false)
   const [share, setShare] = useState(false)
-  const [occupancy, setOccupancy] = useState(false)
   const [survey, setSurvey] = useState(false)
 
   return (
@@ -33,16 +31,6 @@ export function ModalProvider(props) {
           window?._paq?.push(['trackEvent', 'Interaction', 'Modal', 'Partage'])
           setShare(value)
         },
-        occupancy,
-        setOccupancy: (value) => {
-          window?._paq?.push([
-            'trackEvent',
-            'Interaction',
-            'Modal',
-            'Par personne',
-          ])
-          setOccupancy(value)
-        },
         survey,
         setSurvey: (value) => {
           window?._paq?.push([
@@ -59,7 +47,6 @@ export function ModalProvider(props) {
       <Co2eModal />
       <TilesModal />
       <ShareModal />
-      <OccupancyModal />
       <SurveyModal />
     </ModalContext.Provider>
   )

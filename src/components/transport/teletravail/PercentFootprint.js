@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
-import ModalContext from 'components/providers/ModalProvider'
 import TransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.div`
@@ -41,8 +40,7 @@ const Details = styled.button`
   cursor: pointer;
 `
 export default function PercentFootprint(props) {
-  const { setFootprint } = useContext(ModalContext)
-  const { yearlyFootprint } = useContext(TransportContext)
+  const { setFootprintModal, yearlyFootprint } = useContext(TransportContext)
 
   const [percent, setPercent] = useState(0)
   useEffect(() => {
@@ -57,7 +55,7 @@ export default function PercentFootprint(props) {
         <br />
         d&apos;économisé sur mon empreinte carbone annuelle
       </Result>
-      <Details onClick={() => setFootprint(true)}>
+      <Details onClick={() => setFootprintModal(true)}>
         Préciser ou calculer mon empreinte carbone
       </Details>
     </Wrapper>

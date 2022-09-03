@@ -3,25 +3,14 @@ import React, { useState, useEffect, useContext } from 'react'
 import { formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import TransportContext from 'components/transport/TransportProvider'
-import useIframe from 'hooks/useIframe'
 import { useItinerary } from 'hooks/useItineraries'
 import Section from 'components/base/Section'
-import Wrapper from 'components/misc/category/Wrapper'
+import Wrapper from 'components/misc/Category/Wrapper'
 import YearlyFootprint from './teletravail/YearlyFootprint'
 import PercentFootprint from './teletravail/PercentFootprint'
 import Search from './Search'
 
 export default function Teletravail(props) {
-  const iframe = useIframe(true)
-
-  useEffect(() => {
-    if (!iframe) {
-      document.title = 'Télétravail | Mon Impact Transport'
-      document.getElementById('Accueil')?.focus()
-      document.activeElement.blur()
-    }
-  }, [iframe])
-
   const { equivalents } = useContext(DataContext)
 
   const {
@@ -68,7 +57,7 @@ export default function Teletravail(props) {
             (distance - distance * extraKm) *
             teletravail *
             (52 - holidays - 1)) /
-            1000000
+            1000
         )
       )
       setEmitted(
@@ -77,7 +66,7 @@ export default function Teletravail(props) {
             distance *
             presentiel *
             (52 - holidays - 1)) /
-            1000000
+            1000
         )
       )
     }
