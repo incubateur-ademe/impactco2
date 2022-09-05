@@ -51,6 +51,15 @@ export function formatTotal(equivalent, years, end) {
   }
   return total
 }
+export function formatTotalByKm(equivalent, km) {
+  return (
+    (equivalent.total || equivalent.total === 0
+      ? equivalent.total
+      : (
+          equivalent?.ecvs?.find((ecv) => ecv.max > km)?.ecv || equivalent.ecv
+        ).reduce((acc, cur) => acc + cur.value, 0)) * km
+  )
+}
 export function formatConstruction(equivalent) {
   return equivalent.total || equivalent.total === 0
     ? equivalent.total

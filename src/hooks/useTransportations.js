@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react'
 import {
   formatName,
   formatNumber,
-  formatTotal,
+  formatTotalByKm,
   formatUsage,
 } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
@@ -77,9 +77,10 @@ export default function useTransportations(itineraries) {
           emoji: equivalent.emoji,
           secondEmoji: equivalent.secondEmoji,
           value:
-            (formatTotal(equivalent) *
-              (itineraries ? itineraries[equivalent.type] : km)) /
-            (equivalent.carpool && carpool ? carpool : 1),
+            formatTotalByKm(
+              equivalent,
+              itineraries ? itineraries[equivalent.type] : km
+            ) / (equivalent.carpool && carpool ? carpool : 1),
           usage:
             (formatUsage(equivalent) *
               (itineraries ? itineraries[equivalent.type] : km)) /

@@ -26,7 +26,7 @@
         "id": 7
       }
     ],
-    "distances": [
+    "ecvs": [
       {
         "max": 1000,
         "ecv": [
