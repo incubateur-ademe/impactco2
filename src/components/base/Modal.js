@@ -28,7 +28,7 @@ const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: ${(props) => props.width || '30em'};
+  width: ${(props) => props.width || '40em'};
   max-width: 90vw;
   max-height: 90vh;
   margin: 1rem;
