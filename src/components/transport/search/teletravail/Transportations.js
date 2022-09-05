@@ -21,7 +21,11 @@ const Result = styled.div`
 export default function Transportations() {
   const { equivalents } = useContext(DataContext)
   const transportations = useMemo(
-    () => equivalents.filter((equivalent) => equivalent.category === 4),
+    () =>
+      equivalents
+        .filter((equivalent) => equivalent.category === 4)
+        .filter((equivalent) => equivalent.default)
+        .filter((equivalent) => !['avion', 'velo'].includes(equivalent.slug)),
     [equivalents]
   )
   const { start, end, teletravailTransportation } = useContext(TransportContext)

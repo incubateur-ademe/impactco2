@@ -53,23 +53,8 @@ export default function SetFootprintModal() {
         est de moins de 2 tonnes de GES par an et par personne d&apos;ici 2050.
       </Text>
       <Text>
-        Si vous connaissez{' '}
-        <label htmlFor='empreinte'>votre empreinte carbone annuelle</label>,
-        vous pouvez la modifier :{' '}
-        <StyledTextInput
-          name='empreinte'
-          type='number'
-          value={yearlyFootprint}
-          onChange={(e) => {
-            setYearlyFootprint(e.value)
-            setPristine(false)
-          }}
-        />{' '}
-        tonnes
-      </Text>
-      <Text>
-        Si vous ne la connaissez pas, vous pouvez la calculer simplement grâce à
-        notre simulateur{' '}
+        Si vous ne la connaissez pas encore votre empreinte carbone, vous pouvez
+        la calculer simplement grâce à notre simulateur{' '}
         <MagicLink to={`https://nosgestesclimat.fr/`}>
           Nos Gestes Climat
         </MagicLink>
