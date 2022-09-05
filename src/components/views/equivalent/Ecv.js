@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { formatName, formatNumberFixed, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
+import ModalContext from 'components/providers/ModalProvider'
 import Section from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import StackedChart from 'components/charts/StackedChart'
@@ -21,6 +22,8 @@ const StyledLegend = styled(Legend)``
 export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
 
+  const { setEcv } = useContext(ModalContext)
+
   const [ecvToDisplay, setEcvToDisplay] = useState([])
 
   const [usage, setUsage] = useState(props.equivalent?.usage?.defaultyears || 0)
@@ -35,12 +38,14 @@ export default function Ecv(props) {
         .map((item) => ({
           ...item,
           label: item.name.fr,
+          onClick: () => setEcv(true),
         }))
       if (usage) {
         tempEcvToDisplay.push({
           value: props.equivalent.usage.peryear * usage,
           ...ecv.find((step) => step.id === 8),
           label: ecv.find((step) => step.id === 8).name.fr,
+          onClick: () => setEcv(true),
         })
       }
       setEcvToDisplay(tempEcvToDisplay.sort((a, b) => (a.id > b.id ? 1 : -1)))

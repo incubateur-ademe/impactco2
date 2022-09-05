@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
   margin: 0.5rem 0 1.5rem;
 `
@@ -25,12 +25,18 @@ const Item = styled.div`
     border-radius: 0.25rem;
   }
 `
+const More = styled.sup`
+  font-size: 0.625em;
+  color: ${(props) => props.theme.colors.main};
+  cursor: pointer;
+`
 export default function Legend(props) {
   return (
     <Wrapper className={props.className}>
       {props.items.map((item) => (
         <Item key={item.label} color={item.color}>
-          {item.label}
+          {item.label}{' '}
+          {item.onClick ? <More onClick={item.onClick}>(?)</More> : ''}
         </Item>
       ))}
     </Wrapper>
