@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { useLocation } from '@reach/router'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Svg = styled.svg`
   display: inline-block;
@@ -14,12 +14,16 @@ const Svg = styled.svg`
   }
 `
 export default function MagicLink(props) {
-  const { search } = useLocation()
+  const router = useRouter()
+
   return !props.to ? (
     <button
       className={props.className}
       onClick={props.onClick}
       aria-label={props['aria-label']}
+      disabled={props.disabled}
+      type={props.type}
+      {...props}
     >
       {props.children}
     </button>
@@ -35,6 +39,7 @@ export default function MagicLink(props) {
       }
       rel='noreferrer noopener'
       aria-label={props['aria-label']}
+      {...props}
     >
       {props.children}
       {!props.noIcon && (
@@ -56,12 +61,21 @@ export default function MagicLink(props) {
     </a>
   ) : (
     <Link
-      className={props.className}
-      to={props.to + (!props.to.includes('?') && search)}
-      onClick={props.onClick || null}
-      aria-label={props['aria-label']}
+      href={
+        props.to +
+        (!props.to.includes('?') && router.asPath.split('?')[1]
+          ? `?${router.asPath.split('?')[1]}`
+          : '')
+      }
     >
-      {props.children}
+      <a
+        className={props.className}
+        onClick={props.onClick || null}
+        aria-label={props['aria-label']}
+        {...props}
+      >
+        {props.children}
+      </a>
     </Link>
   )
 }

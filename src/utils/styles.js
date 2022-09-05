@@ -8,6 +8,7 @@ export const themes = {
     colors: {
       main: '#26827C',
       mainLight: '#DFECEB',
+      mainDark: '#1D625E',
       second: '#EFF4F9',
       secondDark: '#B1D4F6',
       background: '#ffffff',
@@ -28,6 +29,7 @@ export const themes = {
     colors: {
       main: '#E8F8F7',
       mainLight: '#17635E',
+      mainDark: '#1D625E',
       second: '#383838',
       background: '#1e1e1e',
       footer: '#383838',

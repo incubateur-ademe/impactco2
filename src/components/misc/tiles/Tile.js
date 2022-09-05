@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
+import { useRouter } from 'next/router'
 import AnimatedNumber from 'animated-number-react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 
 import useIframe from 'hooks/useIframe'
 import { formatNumber, formatName, formatTotal } from 'utils/formatters'
-import DataContext from 'utils/DataContext'
+import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/Button'
 
@@ -139,7 +139,7 @@ export default function Tile(props) {
   const { categories } = useContext(DataContext)
 
   const iframe = useIframe()
-  let location = useLocation()
+  const router = useRouter()
 
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({
@@ -217,6 +217,7 @@ export default function Tile(props) {
           />
         </Number>
         <Name>
+          {props.equivalent.unit && <>{props.equivalent.unit.fr} </>}
           {formatName(
             props.equivalent.name.fr,
             props.weight / formatTotal(props.equivalent)
@@ -237,7 +238,7 @@ export default function Tile(props) {
         !props.equivalentPage && (
           <Button.Wrapper>
             <StyledButton
-              to={`${iframe ? location.origin : ''}/categories/${
+              to={`${iframe ? router.basePath : ''}/categories/${
                 categories.find(
                   (category) => category.id === props.equivalent.category
                 )?.slug

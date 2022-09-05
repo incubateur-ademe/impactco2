@@ -15,7 +15,7 @@ const Wrapper = styled(MagicLink)`
   text-decoration: none;
   color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'background']};
   background-color: ${(props) =>
-    props.theme.colors[props.hollow ? 'background' : 'main']};
+    props.hollow ? 'transparent' : props.theme.colors.main};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
@@ -33,7 +33,7 @@ const Wrapper = styled(MagicLink)`
   &:focus {
     outline: none;
     background-color: ${(props) =>
-      props.theme.colors[props.hollow ? 'main' : 'background']};
+      props.hollow ? props.theme.colors.main : 'transparent'};
     color: ${(props) =>
       props.theme.colors[props.hollow ? 'background' : 'main']};
 
@@ -53,6 +53,7 @@ export default function Button(props) {
       small={props.small}
       className={props.className}
       textColor={props.textColor}
+      type={props.type}
       aria-label={props.children}
       noIcon
     >
@@ -66,7 +67,13 @@ Button.Wrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: ${(props) => (props.vertical ? 'column' : 'row')};
   justify-content: ${(props) =>
-    props.left ? 'flex-start' : props.right ? 'flex-end' : 'center'};
+    props.left
+      ? 'flex-start'
+      : props.right
+      ? 'flex-end'
+      : props.spacebetween
+      ? 'space-between'
+      : 'center'};
   align-items: center;
   gap: 1rem;
 `

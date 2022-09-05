@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Switch from 'react-switch'
 
 import { themes } from 'utils/styles'
-import StyleContext from 'utils/StyleContext'
+import StyleContext from 'components/providers/StyleProvider'
 
 const Wrapper = styled.label`
   position: absolute;

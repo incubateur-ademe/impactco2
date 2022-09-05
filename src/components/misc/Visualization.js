@@ -97,6 +97,10 @@ export const Small = styled.p`
 export const LinkWrapper = styled.div`
   width: 100%;
   text-align: center;
+
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 1.5rem;
+  }
 `
 export const StyledMagicLink = styled(MagicLink)`
   position: relative;

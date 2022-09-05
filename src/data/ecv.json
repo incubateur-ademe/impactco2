@@ -4,41 +4,55 @@
     "name": {
       "fr": "Matières premières"
     },
-    "color": "#e60049"
+    "color": "#ab616f"
   },
   {
     "id": 2,
     "name": {
       "fr": "Approvisionnement"
     },
-    "color": "#0bb4ff"
+    "color": "#a6b37d"
   },
   {
     "id": 3,
     "name": {
       "fr": "Mise en forme"
     },
-    "color": "#50e991"
+    "color": "#adc4c5"
   },
   {
     "id": 4,
     "name": {
       "fr": "Assemblage et distribution"
     },
-    "color": "#00bfa0"
+    "color": "#66a498"
   },
   {
     "id": 5,
     "name": {
-      "fr": "Utilisation"
+      "fr": "Construction"
     },
-    "color": "#9b19f5"
+    "color": "#ab616f"
   },
   {
     "id": 6,
     "name": {
-      "fr": "Fin de vie"
+      "fr": "Carburant"
     },
-    "color": "#ffa300"
+    "color": "#6f87ad"
+  },
+  {
+    "id": 7,
+    "name": {
+      "fr": "Trainées de condensation"
+    },
+    "color": "#adc4c5"
+  },
+  {
+    "id": 8,
+    "name": {
+      "fr": "Usage"
+    },
+    "color": "#6f87ad"
   }
 ]

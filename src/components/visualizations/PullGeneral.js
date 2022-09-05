@@ -15,7 +15,7 @@ export default function PullGeneral() {
   return (
     <>
       <Title>
-        En termes d'émissions de CO2<sub>e</sub>
+        En termes d&apos;émissions de CO2<sub>e</sub>
       </Title>
       <Equivalents>
         <Equivalent size={[7.5, 6, 8]}>
@@ -59,7 +59,7 @@ export default function PullGeneral() {
         <strong>5 t-shirts</strong>
         <br />
       </Small>
-      <CenterLink to='/co2e'>Voir plus d'équivalences</CenterLink>
+      <CenterLink to='/co2e'>Voir plus d&apos;équivalences</CenterLink>
     </>
   )
 }

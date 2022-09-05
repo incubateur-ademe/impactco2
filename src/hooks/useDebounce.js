@@ -1,13 +1,16 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function useDebounce(value, delay = 100) {
+export default function useDebounce(value, delay = 600) {
+  const [debouncedValue, setDebouncedValue] = useState(value)
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      value.length > 2 &&
-        window?._paq?.push(['trackEvent', 'Interaction', 'Search', value])
+      setDebouncedValue(value)
     }, delay)
     return () => {
       clearTimeout(timer)
     }
   }, [value, delay])
+
+  return debouncedValue
 }

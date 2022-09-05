@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
-import ModalContext from 'utils/ModalContext'
 
-export default function ModalProvider(props) {
+import Co2eModal from 'components/modals/Co2eModal'
+import TilesModal from 'components/modals/TilesModal'
+import ShareModal from 'components/modals/ShareModal'
+import SurveyModal from 'components/modals/SurveyModal'
+
+const ModalContext = React.createContext({})
+
+export function ModalProvider(props) {
   const [Co2e, setCo2e] = useState(false)
   const [tiles, setTiles] = useState(false)
   const [share, setShare] = useState(false)
+  const [survey, setSurvey] = useState(false)
 
   return (
     <ModalContext.Provider
@@ -24,9 +31,25 @@ export default function ModalProvider(props) {
           window?._paq?.push(['trackEvent', 'Interaction', 'Modal', 'Partage'])
           setShare(value)
         },
+        survey,
+        setSurvey: (value) => {
+          window?._paq?.push([
+            'trackEvent',
+            'Interaction',
+            'Modal',
+            'Questionnaire',
+          ])
+          setSurvey(value)
+        },
       }}
     >
       {props.children}
+      <Co2eModal />
+      <TilesModal />
+      <ShareModal />
+      <SurveyModal />
     </ModalContext.Provider>
   )
 }
+
+export default ModalContext

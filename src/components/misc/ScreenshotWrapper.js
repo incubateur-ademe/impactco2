@@ -1,42 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import useScreenshot from 'hooks/useScreenshot'
-import Buttons from './screenshotWrapper/Buttons'
-import Signature from './screenshotWrapper/Signature'
+import Background from 'components/screenshot/Background'
+import Buttons from 'components/screenshot/Buttons'
+import Signature from 'components/screenshot/Signature'
 
 const Wrapper = styled.div`
   position: relative;
   height: 100%;
   background-color: ${(props) => props.theme.colors.background};
 `
-const Background = styled.div`
+const StyledButtons = styled(Buttons)`
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: ${(props) => props.theme.colors.second};
-  border-radius: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    bottom: 0.5rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
 `
-const Content = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 1.5rem;
-`
-export default function VisualizationWrapper(props) {
+export default function ScreenshotWrapper(props) {
+  const [hover, setHover] = useState(false)
+
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    props.equivalent.slug || 'monconvertisseurco2'
+    props.equivalent?.slug || 'monconvertisseurco2'
   )
 
   return (
-    <Wrapper ref={ref}>
-      <Background className='noscreenshot' />
-      <Buttons takeScreenshot={takeScreenshot} />
-      <Content>{props.children}</Content>
+    <Wrapper className={props.className} ref={ref}>
+      <Background
+        className='noscreenshot'
+        background={props.background}
+        hover={hover}
+      >
+        {props.children}
+      </Background>
+      <StyledButtons
+        takeScreenshot={takeScreenshot}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      />
+
       {isScreenshotting && <Signature />}
     </Wrapper>
   )

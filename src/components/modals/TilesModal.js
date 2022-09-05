@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import ModalContext from 'utils/ModalContext'
-import DataContext from 'utils/DataContext'
+import ModalContext from 'components/providers/ModalProvider'
+import DataContext from 'components/providers/DataProvider'
 import Modal from 'components/base/Modal'
 import Button from 'components/base/Button'
 import Equivalent from './tilesModal/Equivalent'

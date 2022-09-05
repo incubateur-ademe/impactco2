@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import ModalContext from 'utils/ModalContext'
+import ModalContext from 'components/providers/ModalProvider'
 
 const Wrapper = styled.button`
   position: relative;

@@ -27,13 +27,13 @@ const ButtonDropdown = styled.button`
   color: ${(props) =>
     props.theme.colors[props.current || props.open ? 'main' : 'text']};
   background-color: ${(props) =>
-    props.open ? props.theme.colors.secondDark : 'transparent'};
+    props.open ? props.theme.colors.mainLight : 'transparent'};
   border: none;
   cursor: pointer;
   transition: background-color 200ms ease-out;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondDark};
+    background-color: ${(props) => props.theme.colors.mainLight};
   }
 
   &:before {
