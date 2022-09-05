@@ -13,7 +13,7 @@ export function ModalProvider(props) {
   const [tiles, setTiles] = useState(false)
   const [share, setShare] = useState(false)
   const [survey, setSurvey] = useState(false)
-  const [ecv, setEcv] = useState(true)
+  const [ecv, setEcv] = useState(false)
 
   return (
     <ModalContext.Provider
