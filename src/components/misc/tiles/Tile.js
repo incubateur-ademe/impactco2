@@ -166,6 +166,7 @@ export default function Tile(props) {
               props.equivalent.slug,
             ])
           }
+          aria-label={'Déplacer'}
         >
           <svg width='12' height='16' viewBox='0 0 12 16' fill='none'>
             <circle cx='2' cy='2' r='2' />
@@ -187,6 +188,7 @@ export default function Tile(props) {
             props.equivalent.slug,
           ])
         }}
+        aria-label={'Supprimer'}
       >
         <svg
           x='0px'

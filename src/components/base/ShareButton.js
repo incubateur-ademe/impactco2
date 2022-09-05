@@ -61,7 +61,12 @@ export default function ShareButton(props) {
   const { setShare } = useContext(ModalContext)
   return (
     <Wrapper title={props.title}>
-      <StyledButton hollow small onClick={() => setShare(true)}>
+      <StyledButton
+        hollow
+        small
+        onClick={() => setShare(true)}
+        aria-label={'Partager'}
+      >
         <Svg
           width='512'
           height='512'
