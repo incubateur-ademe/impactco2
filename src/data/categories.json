@@ -34,7 +34,7 @@
     "slug": "boisson",
     "divider": 1,
     "unit": "",
-    "include": " pour 100 litres de produit comprenant la fabrication, la distribution et la consommation",
+    "include": " pour 1 litre de produit comprenant la fabrication, la distribution et la consommation",
     "title": "L'empreinte carbone de nos boissons",
     "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
   },
@@ -47,7 +47,7 @@
     "slug": "transport",
     "divider": 1,
     "unit": "km",
-    "include": "pour 10 km comprenant les émissions directes, la production et distribution de carburant et d'électricité et la construction des véhicules",
+    "include": "pour 1 km comprenant les émissions directes, la production et distribution de carburant et d'électricité et la construction des véhicules",
     "title": "Empreinte carbone de vos déplacements",
     "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Mon Convertisseur CO2 vous connaitrez votre impact sur le climat"
   },
@@ -99,6 +99,18 @@
     "slug": "chauffage",
     "divider": 1,
     "include": "par m2",
+    "title": "Poids en CO₂e d'une année de chauffage",
+    "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée (électrique, gaz ou fioul)"
+  },
+  {
+    "id": 8,
+    "name": {
+      "fr": "Fruits et légumes"
+    },
+    "emoji": "🍅",
+    "slug": "fruitsetlegumes",
+    "divider": 1,
+    "include": "",
     "title": "Poids en CO₂e d'une année de chauffage",
     "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée (électrique, gaz ou fioul)"
   }

@@ -50,7 +50,7 @@ export default function Ecv(props) {
       }
       setEcvToDisplay(tempEcvToDisplay.sort((a, b) => (a.id > b.id ? 1 : -1)))
     }
-  }, [props.equivalent, ecv, usage])
+  }, [props.equivalent, ecv, setEcv, usage])
 
   return ecvToDisplay.length ? (
     <Section>
