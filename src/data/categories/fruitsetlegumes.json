@@ -40,7 +40,7 @@
     "category": 9,
     "ecv": [
       {
-        "value": 1.6095143,
+        "value": 0.098391782,
         "id": 9
       },
       {
@@ -443,26 +443,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.30959852,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.14056627,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.047418395,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru"
   },
   {
     "name": {
@@ -474,26 +474,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 4.5332143,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.18387334,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [4, 5, 6, 7, 8, 9],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru"
   },
   {
     "name": {
@@ -505,26 +505,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.20516352,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.19594288,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.048350192,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue"
   },
   {
     "name": {
@@ -536,26 +536,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.21625003,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.14056627,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.036575546,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [4, 5, 6, 7, 8, 9],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue"
   },
   {
     "name": {
@@ -567,19 +567,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.20329851,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.2272488,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.076659738,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.26550617,
         "id": 12
       }
     ],
@@ -598,26 +598,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.074925686,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.1704366,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.029958116,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue"
   },
   {
     "name": {
@@ -629,26 +629,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.46720987,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.1704366,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.057494804,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 9],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue"
   },
   {
     "name": {
@@ -660,19 +660,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.12575165,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.14056627,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.047418395,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 12
       }
     ],
