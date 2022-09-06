@@ -27,6 +27,224 @@
     ],
     "default": true,
     "tile": false,
+    "months": [4, 5, 6],
+    "source": "https://agribalyse.ademe.fr/app/aliments/13014_1#Fraise_de_saison,_crue"
+  },
+  {
+    "name": {
+      "fr": "Pomme"
+    },
+    "slug": "pomme",
+    "synonyms": ["manger"],
+    "emoji": "🍏",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 7, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Orange"
+    },
+    "slug": "orange",
+    "synonyms": ["manger"],
+    "emoji": "🍊",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Citron"
+    },
+    "slug": "citron",
+    "synonyms": ["manger"],
+    "emoji": "🍋",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Ail"
+    },
+    "slug": "ail",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [6, 7, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Artichaut"
+    },
+    "slug": "artichaut",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [4, 5, 6, 7, 8],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Asperge"
+    },
+    "slug": "asperge",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [3, 4, 5],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Betterave"
+    },
+    "slug": "betterave",
+    "synonyms": ["manger"],
+    "emoji": "🍠",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 9, 10, 11],
     "source": "https://agribalyse.ademe.fr/"
   }
 ]
