@@ -1,0 +1,32 @@
+[
+  {
+    "name": {
+      "fr": "Fraise"
+    },
+    "slug": "fraise",
+    "synonyms": ["manger"],
+    "emoji": "🍓",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0.27104474,
+        "id": 9
+      },
+      {
+        "value": 0.1547714,
+        "id": 10
+      },
+      {
+        "value": 0.032937006,
+        "id": 11
+      },
+      {
+        "value": 0.012317297,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "source": "https://agribalyse.ademe.fr/"
+  }
+]

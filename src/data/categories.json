@@ -103,7 +103,7 @@
     "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée (électrique, gaz ou fioul)"
   },
   {
-    "id": 8,
+    "id": 9,
     "name": {
       "fr": "Fruits et légumes"
     },
@@ -111,7 +111,7 @@
     "slug": "fruitsetlegumes",
     "divider": 1,
     "include": "",
-    "title": "Poids en CO₂e d'une année de chauffage",
-    "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée (électrique, gaz ou fioul)"
+    "title": "Poids en CO₂e des fruits et légumes",
+    "description": "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison"
   }
 ]
