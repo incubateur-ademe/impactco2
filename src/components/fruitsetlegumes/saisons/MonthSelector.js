@@ -45,6 +45,7 @@ export default function MonthSelector(props) {
     <Wrapper>
       {slugs.map((slug, index) => (
         <Month
+          key={slug}
           to={`/categories/fruitsetlegumes/mois/${slug}`}
           current={props.month.slug === slug}
         >
