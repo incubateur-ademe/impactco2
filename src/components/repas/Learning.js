@@ -86,8 +86,7 @@ export default function Learning() {
 
         <Text>
           Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
-          calculer l&apos;ensemble de votre empreinte sur le climat grace à
-          notre{' '}
+          calculer l’ensemble de votre empreinte sur le climat grace à notre{' '}
           <MagicLink to={'https://nosgestesclimat.fr/'}>
             simulateur Nos Gestes Climat
           </MagicLink>
