@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1.5rem;
 `
 const Disclaimer = styled.p`
   max-width: 23rem;
