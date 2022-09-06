@@ -257,19 +257,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.15247388,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.1704366,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.057494804,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
@@ -288,19 +288,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.087677241,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.1704366,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.029228063,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
@@ -319,26 +319,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.47540799,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.14056627,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.032937006,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru"
   },
   {
     "name": {
@@ -350,26 +350,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.074925686,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.1704366,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.057494804,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue"
   },
   {
     "name": {
@@ -381,26 +381,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.50051761,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.2272488,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.064466923,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.26550617,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru"
   },
   {
     "name": {
@@ -412,26 +412,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.30959852,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.14056627,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.039876447,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru"
   },
   {
     "name": {

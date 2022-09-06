@@ -110,7 +110,7 @@
     "emoji": "🍅",
     "slug": "fruitsetlegumes",
     "divider": 1,
-    "include": "",
+    "include": "par kg",
     "title": "Poids en CO₂e des fruits et légumes",
     "description": "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison"
   }
