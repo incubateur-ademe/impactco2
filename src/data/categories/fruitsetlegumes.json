@@ -40,26 +40,26 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.6095143,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.14056627,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.032937006,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 12
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue"
   },
   {
     "name": {
@@ -71,19 +71,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.32762271,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.33445761,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.042612199,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.26550617,
         "id": 12
       }
     ],
@@ -102,19 +102,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.30402273,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.29856854,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.042612199,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.26550617,
         "id": 12
       }
     ],
@@ -133,19 +133,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.06811426,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.17538905,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.031675203,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
@@ -164,19 +164,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.5015528,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.68174641,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.19340077,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 1.593037,
         "id": 12
       }
     ],
@@ -195,19 +195,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.0563045,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.18387517,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.048350192,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 12
       }
     ],
@@ -226,19 +226,19 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.072311127,
         "id": 9
       },
       {
-        "value": 0,
+        "value": 0.14056627,
         "id": 10
       },
       {
-        "value": 0,
+        "value": 0.024105619,
         "id": 11
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 12
       }
     ],
