@@ -101,17 +101,5 @@
     "include": "par m2",
     "title": "Poids en CO₂e d'une année de chauffage",
     "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée (électrique, gaz ou fioul)"
-  },
-  {
-    "id": 8,
-    "name": {
-      "fr": "Fruits et légumes"
-    },
-    "emoji": "🍅",
-    "slug": "fruitsetlegumes",
-    "divider": 1,
-    "include": "",
-    "title": "Poids en CO₂e d'une année de chauffage",
-    "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée (électrique, gaz ou fioul)"
   }
 ]
