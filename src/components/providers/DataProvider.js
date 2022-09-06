@@ -8,6 +8,7 @@ import mobilier from 'data/categories/mobilier.json'
 import numerique from 'data/categories/numerique.json'
 import repas from 'data/categories/repas.json'
 import chauffage from 'data/categories/chauffage.json'
+import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
 import categories from 'data/categories.json'
 import ecv from 'data/ecv.json'
 
@@ -22,6 +23,7 @@ const equivalents = [
   ...numerique,
   ...repas,
   ...chauffage,
+  ...fruitsetlegumes,
 ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
 
 export function DataProvider(props) {

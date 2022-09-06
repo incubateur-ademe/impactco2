@@ -246,5 +246,439 @@
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
     "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Blette"
+    },
+    "slug": "blette",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7, 8, 9, 10],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Carotte"
+    },
+    "slug": "carotte",
+    "synonyms": ["manger"],
+    "emoji": "🥕",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Céleri"
+    },
+    "slug": "celeri",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Champignon de Paris"
+    },
+    "slug": "champignondeparis",
+    "synonyms": ["manger"],
+    "emoji": "🍄",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Chou"
+    },
+    "slug": "chou",
+    "synonyms": ["manger"],
+    "emoji": "🥬",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Chou de Bruxelles"
+    },
+    "slug": "choudebruxelles",
+    "synonyms": ["manger"],
+    "emoji": "🥬",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Chou-fleur"
+    },
+    "slug": "choufleur",
+    "synonyms": ["manger"],
+    "emoji": "🥦",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Concombre"
+    },
+    "slug": "concombre",
+    "synonyms": ["manger"],
+    "emoji": "🥒",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [4, 5, 6, 7, 8, 9],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Courge"
+    },
+    "slug": "courge",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Courgette"
+    },
+    "slug": "courgette",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [4, 5, 6, 7, 8, 9],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Cresson"
+    },
+    "slug": "cresson",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Échalote"
+    },
+    "slug": "echalote",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Endive"
+    },
+    "slug": "endive",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 9],
+    "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Épinard"
+    },
+    "slug": "epinard",
+    "synonyms": ["manger"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 9
+      },
+      {
+        "value": 0,
+        "id": 10
+      },
+      {
+        "value": 0,
+        "id": 11
+      },
+      {
+        "value": 0,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/"
   }
 ]
