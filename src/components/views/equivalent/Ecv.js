@@ -10,6 +10,9 @@ import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
 import DurationSelector from './ecv/DurationSelector'
 
+export const StyledSection = styled(Section)`
+  margin-bottom: 4rem;
+`
 export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
@@ -53,7 +56,7 @@ export default function Ecv(props) {
   }, [props.equivalent, ecv, setEcv, usage])
 
   return ecvToDisplay.length ? (
-    <Section>
+    <StyledSection>
       <Section.Content>
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
@@ -77,6 +80,6 @@ export default function Ecv(props) {
           ) : null}
         </ScreenshotWrapper>
       </Section.Content>
-    </Section>
+    </StyledSection>
   ) : null
 }

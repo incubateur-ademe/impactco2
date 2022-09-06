@@ -14,6 +14,7 @@ import Web from 'components/layout/Web'
 import Details from 'components/views/equivalent/Details'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 import Ecv from 'components/views/equivalent/Ecv'
+import Text from 'components/views/equivalent/Text'
 
 const equivalents = [
   ...boisson,
@@ -40,6 +41,7 @@ export default function Equivalent(props) {
       <Details equivalent={props.equivalent} category={props.category} />
       <VisualizationSlider equivalent={props.equivalent} />
       <Ecv equivalent={props.equivalent} />
+      <Text equivalent={props.equivalent} />
     </Web>
   )
 }
