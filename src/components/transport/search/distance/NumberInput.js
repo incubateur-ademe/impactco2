@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
-import TextInput from "components/base/TextInput";
+import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.form`
   position: relative;
   display: flex;
   margin: 0 auto;
-`;
+`
 const StyledTextInput = styled(TextInput)`
   margin: 0;
   width: 12rem;
@@ -19,7 +19,7 @@ const StyledTextInput = styled(TextInput)`
       box-shadow: 0 0 0 0.125rem ${(props) => props.theme.colors.mainLight};
     }
   }
-`;
+`
 const Button = styled.button`
   position: absolute;
   top: 0;
@@ -45,27 +45,27 @@ const Button = styled.button`
       fill: ${(props) => props.theme.colors.main};
     }
   }
-`;
+`
 
 export default function NumberInput(props) {
-  const [km, setKm] = useState(props.km);
+  const [km, setKm] = useState(props.km)
   return (
     <Wrapper
       onSubmit={(e) => {
-        e.preventDefault();
-        props.setKm(km);
+        e.preventDefault()
+        props.setKm(km)
       }}
     >
       <StyledTextInput
-        type="number"
+        type='number'
         min={props.min}
         max={props.max}
         value={km}
         onChange={({ value }) => {
-          setKm(value);
+          setKm(value)
         }}
       />
       <Button>Valider</Button>
     </Wrapper>
-  );
+  )
 }
