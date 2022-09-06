@@ -51,7 +51,10 @@ export default function Distance(props) {
   return (
     <Section>
       <Section.Content>
-        <Wrapper name={props.category.name.fr} slug={props.category.slug}>
+        <Wrapper
+          name={`Les fruits et légumes de ${props.month.long}`}
+          slug={props.category.slug}
+        >
           <MonthSelector month={props.month} />
           <Top>
             <Instruction />
