@@ -13,6 +13,8 @@
     "total": 197,
     "default": false,
     "tile": false,
+    "title": "Poids CO₂e d'un canapé convertible",
+    "description": "La fabrication et la distribution d'un canapé convertible a un impact carbone à ne pas négliger. Découvrez son poids CO₂e grâce à Mon Convertisseur CO2",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -29,6 +31,8 @@
     "total": 18.6,
     "default": true,
     "tile": false,
+    "title": "Empreinte carbone chaise en bois ",
+    "description": "Grâce à Mon Convertisseur CO2, découvrez le poids en CO₂e d'une chaise en bois comprenant sa fabrication et sa distribution",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -45,6 +49,8 @@
     "total": 80.2,
     "default": true,
     "tile": false,
+    "title": "Empreinte carbone d'une table en bois",
+    "description": "La fabrication et la distribution d'une table en bois a un impact sur le climat. Découvrez son poids en CO₂e et son équivalence avec d'autres produits",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -61,6 +67,8 @@
     "total": 179,
     "default": true,
     "tile": false,
+    "title": "Quel est le poids CO₂e d'un canapé ?",
+    "description": "Découvre l'impact sur le climat de la fabrication et la distribution d'un canapé en textile et comparez-le à d'autres produits",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -74,6 +82,8 @@
     "total": 907,
     "default": true,
     "tile": false,
+    "title": "Impact sur le climat d'une armoire",
+    "description": "Découvrez l'empreinte carbone d'une armoire, comprenant sa fabrication et sa distribution, grâce à Mon Convertisseur CO2",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -90,6 +100,8 @@
     "total": 444.3,
     "default": true,
     "tile": false,
+    "title": "Impact sur le climat d'un lit en bois",
+    "description": "Savez-vous que la fabrication et la distribution d'un lit a un impact sur le climat ? Découvrez son poids en CO₂e et son équivalence avec d'autres meubles",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }
 ]
