@@ -106,6 +106,7 @@ export default function Distance(props) {
     displayAll,
     props.month,
     results,
+    theme,
   ])
 
   return (

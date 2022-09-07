@@ -37,7 +37,7 @@ const Bar = styled.div`
   line-height: 1;
   color: ${(props) => props.theme.colors.second};
   background-color: ${(props) =>
-    props.theme.colors[props.secondary ? 'main' : 'mainDark']};
+    props.theme.colors[props.secondary ? 'main' : 'error']};
   transform: scaleX(${(props) => (props.isOnScreen ? 1 : 0)});
   transform-origin: left;
   transition: transform 400ms ease-in-out
@@ -92,7 +92,7 @@ const Item = styled.div`
     width: 1em;
     height: 1em;
     background-color: ${(props) =>
-      props.theme.colors[props.secondary ? 'main' : 'mainDark']};
+      props.theme.colors[props.secondary ? 'main' : 'error']};
   }
 `
 export default function BarChart() {
