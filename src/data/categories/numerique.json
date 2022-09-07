@@ -388,7 +388,7 @@
     "default": false,
     "tile": false,
     "title": "Impact sur le climat d'une liseuse",
-    "description": "Saviez-vous qu'une liseuse avait un impact sur le climat ? Découvrez le poids CO₂e d'une liseuse non rétro-éclairé grâce à Mon Convertisseur CO₂e",
+    "description": "Saviez-vous qu'une liseuse avait un impact sur le climat ? Découvrez le poids CO₂e d'une liseuse non rétro-éclairé grâce à Mon Convertisseur CO2",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -506,7 +506,7 @@
     "default": true,
     "tile": false,
     "title": "Poids CO₂e ordinateur fixe avec écran",
-    "description": "Quel est l'empreinte carbone d'un ordinateur fixe avec écran ? Mon Convertisseur CO₂e vous permet de mesurer votre impact sur le climat !",
+    "description": "Quel est l'empreinte carbone d'un ordinateur fixe avec écran ? Mon Convertisseur CO2 vous permet de mesurer votre impact sur le climat !",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
 
@@ -621,7 +621,7 @@
     "default": false,
     "tile": false,
     "title": "Empreinte carbone d'un home cinema",
-    "description": "Avec Mon Convertisseur CO₂e, découvrez l'impact sur le climat d'un home cinéma avec son poids en CO₂e comprenant sa fabrication et sa distribution",
+    "description": "Avec Mon Convertisseur CO2, découvrez l'impact sur le climat d'un home cinéma avec son poids en CO₂e comprenant sa fabrication et sa distribution",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -734,7 +734,7 @@
     "default": false,
     "tile": false,
     "title": "Impact climat d'une enceinte bluetooth",
-    "description": "Découvrez l'impact d'une enceinte bluetooth avec Mon Convertisseur CO₂e ainsi que le détail de son empreinte carbone",
+    "description": "Découvrez l'impact d'une enceinte bluetooth avec Mon Convertisseur CO2 ainsi que le détail de son empreinte carbone",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -930,7 +930,7 @@
     "default": true,
     "tile": false,
     "title": "Empreinte carbone d'une imprimante",
-    "description": "Quelles sont les émissions CO₂e d'une imprimante et à quoi correspondent-elles ? Découvrez ces informations avec Mon Convertisseur CO₂e",
+    "description": "Quelles sont les émissions CO₂e d'une imprimante et à quoi correspondent-elles ? Découvrez ces informations avec Mon Convertisseur CO2",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }
 ]
