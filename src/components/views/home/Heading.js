@@ -48,7 +48,7 @@ const StyledSearch = styled(Search)`
 `
 const StyledButtonLink = styled(ButtonLink)`
   display: block;
-  margin: 0 auto;
+  margin: -1rem auto 1rem;
   text-align: center;
 `
 export default function Heading() {
@@ -74,14 +74,14 @@ export default function Heading() {
           entourent
           <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />?
         </Text>
+        <StyledButtonLink onClick={() => setSurvey(true)}>
+          Répondez à notre enquête utilisateur !
+        </StyledButtonLink>
         <StyledSearch placeholder={'Entrez un objet, un geste...'} home />
         <Categories />
         {/*<StyledButtonLink onClick={() => setCo2e(true)}>
           Comprendre le CO<sub>2</sub>e
         </StyledButtonLink>*/}
-        <StyledButtonLink onClick={() => setSurvey(true)}>
-          Répondez à notre enquête utilisateur !
-        </StyledButtonLink>
       </StyledSectionContent>
     </Section>
   )

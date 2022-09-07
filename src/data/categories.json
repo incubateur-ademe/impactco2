@@ -9,7 +9,7 @@
     "divider": 1,
     "unit": "",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
-    "title": "Impact sur le climat du numérique",
+    "title": "Empreinte carbone objets numériques",
     "description": "Montre connectée, smartphone, ordinateur, imprimante, console, télévision... Découvrez l'impact carbone des produits numériques dans votre quotidien"
   },
   {
@@ -22,7 +22,7 @@
     "divider": 1,
     "unit": "",
     "include": "par repas comprenant la fabrication, la distribution et la consommation",
-    "title": "Quel est l'impact climat d'un repas ?",
+    "title": "Empreinte carbone d'un repas",
     "description": "Repas végétalien, végétarien, avec du boeuf, avec du poulet, avec du poisson gras, ou avec du poisson blanc... Découvrez leur valeur en CO₂e"
   },
   {
