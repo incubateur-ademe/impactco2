@@ -23,13 +23,13 @@ export default function Menu() {
     <Wrapper>
       <Dropdown
         label={'Catégories'}
-        current={router.pathname.includes('/categories')}
+        current={router.pathname.includes('/empreinte-carbone')}
       >
         {categories &&
           categories.map((category) => (
             <Dropdown.Item
               key={category.id}
-              to={`/categories/${category.slug}`}
+              to={`/empreinte-carbone/${category.slug}`}
               current={router.pathname.includes(category.slug)}
             >
               <StyledEmoji>{category.emoji}</StyledEmoji> {category.name.fr}

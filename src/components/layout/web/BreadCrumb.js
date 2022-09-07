@@ -18,12 +18,12 @@ export default function BreadCrumb(props) {
         <Wrapper>
           {props.breadcrumb && props.breadcrumb.type === 'equivalent' && (
             <>
-              <MagicLink to='/categories'>Catégories</MagicLink>
+              <MagicLink to='/empreinte-carbone'>Catégories</MagicLink>
               {' > '}{' '}
               {props.breadcrumb.equivalent ? (
                 <>
                   <MagicLink
-                    to={`/categories/${props.breadcrumb.category.slug}`}
+                    to={`/empreinte-carbone/${props.breadcrumb.category.slug}`}
                   >
                     {props.breadcrumb.category.name.fr}
                   </MagicLink>

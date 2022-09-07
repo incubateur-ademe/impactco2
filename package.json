@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "yarn iframe && next build",
+    "postbuild": "next-sitemap",
     "iframe": "webpack",
     "start": "next start",
     "lint": "next lint"
@@ -24,6 +25,7 @@
     "matomo-tracker": "^2.2.4",
     "next": "^12.2.2",
     "next-query-params": "^4.0.0",
+    "next-sitemap": "^3.1.21",
     "publicodes": "^1.0.0-beta.44",
     "puppeteer-core": "^15.5.0",
     "react": "18.2.0",

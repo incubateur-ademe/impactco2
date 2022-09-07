@@ -60,7 +60,7 @@ export default function PoissonGras() {
         végétariens
         <br />
       </Small>
-      <CenterLink to='/categories/repas'>Voir tous les repas</CenterLink>
+      <CenterLink to='/empreinte-carbone/repas'>Voir tous les repas</CenterLink>
     </>
   )
 }

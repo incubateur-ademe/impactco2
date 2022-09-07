@@ -22,7 +22,7 @@ export default function Categories() {
         {categories.map((category) => (
           <Button
             key={category.slug}
-            to={`/categories/${category.slug}`}
+            to={`/empreinte-carbone/${category.slug}`}
             small
             onClick={() =>
               window?._paq?.push([

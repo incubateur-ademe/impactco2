@@ -1,35 +1,37 @@
 import React, { useState, useEffect, useContext } from 'react'
 
+import { slugs } from 'utils/months'
 import { formatName, formatTotal, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
+import Wrapper from 'components/misc/category/Wrapper'
+import Top from 'components/misc/category/Top'
+import Instruction from 'components/misc/category/Instruction'
+import CategoryLegend from 'components/misc/category/CategoryLegend'
+import Bottom from 'components/misc/category/Bottom'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
-import Wrapper from './category/Wrapper'
-import Top from './category/Top'
-import Instruction from './category/Instruction'
-import CategoryLegend from './category/CategoryLegend'
-import Bottom from './category/Bottom'
+import MonthSelector from './saisons/MonthSelector'
 
-export default function CategoryList(props) {
+export default function Distance(props) {
   const { equivalents, categories } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)
 
-  const [equivalentsOfCategory, setEquivalentsOfCategory] = useState([])
+  const [equivalentsOfTheMonth, setEquivalentsOfTheMonth] = useState([])
   useEffect(() => {
     props.category &&
-      setEquivalentsOfCategory(
+      setEquivalentsOfTheMonth(
         equivalents
           .filter((equivalent) => equivalent.category === props.category.id)
           .filter((equivalent) => equivalent.default || displayAll)
+          .filter((equivalent) => equivalent.months.includes(props.month.index))
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
-            title: `1 ${formatName(equivalent.name.fr)}`,
+            title: `1 kg de ${formatName(equivalent.name.fr)}`,
             subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
-            usage: formatUsage(equivalent),
             to: `/empreinte-carbone/${
               categories.find((category) => category.id === equivalent.category)
                 .slug
@@ -44,43 +46,24 @@ export default function CategoryList(props) {
           }))
           .sort((a, b) => (a.value > b.value ? 1 : -1))
       )
-  }, [equivalents, categories, props.category, displayAll])
+  }, [equivalents, categories, props.category, displayAll, props.month])
 
   return (
     <Section>
       <Section.Content>
-        <Wrapper name={props.category.name.fr} slug={props.category.slug}>
+        <Wrapper
+          name={`Les fruits et légumes de ${props.month.long}`}
+          slug={props.category.slug}
+        >
+          <MonthSelector month={props.month} />
           <Top>
             <Instruction />
-            <Top.Checkboxes
-              visible={equivalents
-                .filter(
-                  (equivalent) => equivalent.category === props.category.id
-                )
-                .find((equivalent) => !equivalent.default)}
-            >
-              <Checkbox
-                name='displayAll'
-                checked={displayAll}
-                onChange={() => {
-                  setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-                  window?._paq?.push([
-                    'trackEvent',
-                    'Interaction',
-                    'Voir tous les équivalents',
-                    props.category.name.fr,
-                  ])
-                }}
-              >
-                Voir tous les équivalents
-              </Checkbox>
-            </Top.Checkboxes>
+            <Top.Checkboxes visible></Top.Checkboxes>
           </Top>
           <BarChart
-            items={equivalentsOfCategory}
-            max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
+            items={equivalentsOfTheMonth}
+            max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value}
           />
-          {![2, 3].includes(props.category.id) && <CategoryLegend />}
           <Bottom category={props.category} />
         </Wrapper>
       </Section.Content>
