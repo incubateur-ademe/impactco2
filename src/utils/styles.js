@@ -14,6 +14,7 @@ export const themes = {
       background: '#ffffff',
       text: '#383838',
       textLight: '#FBFBFC',
+      error: '#ce0500',
     },
     fonts: {
       body: '"Marianne", Arial, sans-serif',
@@ -31,11 +32,12 @@ export const themes = {
       mainLight: '#17635E',
       mainDark: '#1D625E',
       second: '#383838',
-      background: '#1e1e1e',
+      background: '#000',
       footer: '#383838',
       footerLight: '#1e1e1e',
       text: '#ffffff',
       textLight: '#939699',
+      error: '#ff5655',
     },
     fonts: {
       body: '"Marianne", Arial, sans-serif',
