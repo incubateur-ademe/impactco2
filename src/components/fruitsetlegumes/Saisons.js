@@ -5,13 +5,14 @@ import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import { formatName, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
-import Wrapper from 'components/misc/category/Wrapper'
 import Top from 'components/misc/category/Top'
 import Instruction from 'components/misc/category/Instruction'
 import Bottom from 'components/misc/category/Bottom'
 import BarChart from 'components/charts/BarChart'
 import Legend from 'components/charts/Legend'
+import Wrapper from './saisons/Wrapper'
 import Search from './saisons/Search'
+import List from './saisons/List'
 
 export default function Distance(props) {
   const theme = useTheme()
@@ -77,7 +78,7 @@ export default function Distance(props) {
           )
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
-            title: `1 kg de ${formatName(equivalent.name.fr)}`,
+            title: formatName(equivalent.name.fr, 1, true),
             subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
@@ -112,19 +113,21 @@ export default function Distance(props) {
   return (
     <Section>
       <Section.Content>
-        <Wrapper
-          name={`Les fruits et légumes de ${props.month.long}`}
-          slug={props.category.slug}
-        >
+        <Wrapper month={props.month.long} slug={props.category.slug}>
           <Search month={props.month} search={search} setSearch={setSearch} />
           <Top>
             <Instruction />
             <Top.Checkboxes visible></Top.Checkboxes>
           </Top>
+          <List
+            items={equivalentsOfTheMonth}
+            max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value}
+          />
           <BarChart
             items={equivalentsOfTheMonth}
             max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value}
           />
+
           <Legend
             items={[
               { label: 'en saison', color: theme.colors.main },

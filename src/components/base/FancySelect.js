@@ -1,19 +1,6 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
-const flash = keyframes`
-  from,
-  75%,
-  87.5%,
-  to {
-    opacity: 1;
-  }
-
-  81.25%,
-  93.75% {
-    opacity: 0;
-  }
-`
 const Wrapper = styled.span`
   position: relative;
   display: inline-block;
@@ -21,7 +8,6 @@ const Wrapper = styled.span`
   color: ${(props) => props.theme.colors.main};
   box-shadow: 0px 0.1875rem 0px 0px
     ${(props) => (props.filled ? 'transparent' : props.theme.colors.main)};
-  animation: ${(props) => (!props.filled ? flash : 'none')} 4s infinite;
 `
 const Value = styled.span`
   text-transform: lowercase;
@@ -34,8 +20,7 @@ const Input = styled.select`
   height: 100%;
   font-size: inherit;
   font-weight: inherit;
-
-  color: transparent;
+  color: ${(props) => props.theme.colors.main};
   background-color: transparent;
   border: none;
   box-shadow: 0px 0.1em 0px 0px ${(props) => props.theme.colors.main};

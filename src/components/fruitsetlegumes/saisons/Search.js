@@ -7,7 +7,6 @@ import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
   position: relative;
-
   margin-bottom: 0.5rem;
   padding: 1.5rem 2rem;
   background-color: ${(props) => props.theme.colors.second};
