@@ -8,8 +8,6 @@ import Section from 'components/base/Section'
 import Top from 'components/misc/category/Top'
 import Instruction from 'components/misc/category/Instruction'
 import Bottom from 'components/misc/category/Bottom'
-import BarChart from 'components/charts/BarChart'
-import Legend from 'components/charts/Legend'
 import Wrapper from './saisons/Wrapper'
 import Search from './saisons/Search'
 import List from './saisons/List'
@@ -82,10 +80,8 @@ export default function Distance(props) {
             subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
-            color:
-              theme.colors[
-                equivalent.months.includes(props.month.index) ? 'main' : 'error'
-              ],
+            season: equivalent.months.includes(props.month.index),
+            months: equivalent.months,
             to: `/categories/${
               categories.find((category) => category.id === equivalent.category)
                 .slug
@@ -98,7 +94,7 @@ export default function Distance(props) {
                 equivalent.slug,
               ]),
           }))
-          .sort((a, b) => (a.value > b.value ? 1 : -1))
+          .sort((a, b) => (a.id > b.id ? 1 : -1))
       )
   }, [
     equivalents,
@@ -122,17 +118,6 @@ export default function Distance(props) {
           <List
             items={equivalentsOfTheMonth}
             max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value}
-          />
-          <BarChart
-            items={equivalentsOfTheMonth}
-            max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value}
-          />
-
-          <Legend
-            items={[
-              { label: 'en saison', color: theme.colors.main },
-              { label: 'hors saison', color: theme.colors.error },
-            ]}
           />
           <Bottom category={props.category} />
         </Wrapper>

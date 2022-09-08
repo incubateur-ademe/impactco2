@@ -8,7 +8,7 @@ import Category from 'components/misc/Category'
 export default function CategoryIframe(props) {
   return (
     <Iframe>
-      <Category category={props.category} />
+      <Category category={props.category} iframe />
     </Iframe>
   )
 }

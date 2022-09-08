@@ -15,6 +15,7 @@ export const themes = {
       text: '#383838',
       textLight: '#FBFBFC',
       error: '#ce0500',
+      warning: '#fc5d00',
     },
     fonts: {
       body: '"Marianne", Arial, sans-serif',
@@ -38,6 +39,7 @@ export const themes = {
       text: '#ffffff',
       textLight: '#939699',
       error: '#ff5655',
+      warning: '#fc5d00',
     },
     fonts: {
       body: '"Marianne", Arial, sans-serif',

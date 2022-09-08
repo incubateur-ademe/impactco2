@@ -81,7 +81,7 @@ export default function CategoryList(props) {
             max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
           />
           {![2, 3].includes(props.category.id) && <CategoryLegend />}
-          <Bottom category={props.category} />
+          <Bottom category={props.category} iframe={props.iframe} />
         </Wrapper>
       </Section.Content>
     </Section>

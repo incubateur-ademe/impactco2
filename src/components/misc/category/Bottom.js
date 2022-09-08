@@ -29,17 +29,20 @@ export default function Bottom(props) {
       </Disclaimer>
       <Button
         onClick={() => {
-          alert('Bientôt disponible')
-          window?._paq?.push([
-            'trackEvent',
-            'Interaction',
-            'Comparer catégories',
-            props.category.name.fr,
-          ])
+          if (!props.iframe) {
+            alert('Bientôt disponible')
+            window?._paq?.push([
+              'trackEvent',
+              'Interaction',
+              'Comparer catégories',
+              props.category.name.fr,
+            ])
+          }
         }}
+        to={props.iframe ? 'https://monconvertisseurco2.fr' : null}
         hollow
       >
-        Comparer toutes les catégories
+        {props.iframe ? <>Voir</> : <>Comparer</>} toutes les catégories
       </Button>
     </Wrapper>
   )

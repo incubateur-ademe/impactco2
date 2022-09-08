@@ -680,5 +680,39 @@
     "tile": false,
     "months": [0, 1, 2, 3, 4, 8, 9, 10, 11],
     "source": "https://agribalyse.ademe.fr/"
+  },
+  {
+    "name": {
+      "fr": "Mangue"
+    },
+    "subtitle": {
+      "fr": "Importée par avion"
+    },
+    "slug": "mangue",
+    "synonyms": ["manger"],
+    "emoji": "🥭",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0.16989903,
+        "id": 9
+      },
+      {
+        "value": 14.588919,
+        "id": 10
+      },
+      {
+        "value": 0.03993612,
+        "id": 11
+      },
+      {
+        "value": 0.099564814,
+        "id": 12
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "source": "https://agribalyse.ademe.fr/app/aliments/13025_1#Mangue_import%C3%A9e_par_avion,_pulpe,_crue"
   }
 ]
