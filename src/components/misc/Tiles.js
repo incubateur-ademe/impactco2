@@ -82,8 +82,7 @@ export default function Tiles(props) {
         {props.title && (
           <Title>
             Visualisez facilement
-            <Br />
-            une quantité de CO<sub>2</sub>e
+            <Br /> une quantité de CO<sub>2</sub>e
           </Title>
         )}
         <DndContext
