@@ -217,9 +217,8 @@ export default function Tile(props) {
           />
         </Number>
         <Name>
-          {props.equivalent.unit && <>{props.equivalent.unit.fr} </>}
           {formatName(
-            props.equivalent.name.fr,
+            (props.equivalent.unit?.fr || '') + props.equivalent.name.fr,
             props.weight / formatTotal(props.equivalent)
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (

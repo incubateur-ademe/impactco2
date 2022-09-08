@@ -6,7 +6,6 @@ import ModalContext from 'components/providers/ModalProvider'
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import ButtonLink from 'components/base/ButtonLink'
-import ShareButton from 'components/base/ShareButton'
 import Value from './details/Value'
 
 const Title = styled.h1``

@@ -2,7 +2,10 @@
   {
     "id": 24283,
     "name": {
-      "fr": "Litre[s] d'eau du robinet"
+      "fr": "Eau du robinet"
+    },
+    "unit": {
+      "fr": "Litre[s] d'"
     },
     "synonyms": ["boire"],
     "slug": "eaudurobinet",
@@ -18,7 +21,10 @@
   {
     "id": 31000,
     "name": {
-      "fr": "Litre[s] d'eau en bouteille"
+      "fr": "Eau en bouteille"
+    },
+    "unit": {
+      "fr": "Litre[s] d'"
     },
     "synonyms": ["boire"],
     "slug": "eauenbouteille",
@@ -34,7 +40,10 @@
   {
     "id": 31001,
     "name": {
-      "fr": "Litre[s] de soda"
+      "fr": "Soda"
+    },
+    "unit": {
+      "fr": "Litre[s] de "
     },
     "synonyms": ["boire"],
     "slug": "soda",
@@ -50,7 +59,10 @@
   {
     "id": 31002,
     "name": {
-      "fr": "Litre[s] de bière"
+      "fr": "Bière"
+    },
+    "unit": {
+      "fr": "Litre[s] de "
     },
     "synonyms": ["boire"],
     "slug": "biere",
@@ -66,7 +78,10 @@
   {
     "id": 31003,
     "name": {
-      "fr": "Litre[s] de vin"
+      "fr": "Vin"
+    },
+    "unit": {
+      "fr": "Litre[s] de "
     },
     "synonyms": ["boire"],
     "slug": "vin",
@@ -82,10 +97,13 @@
   {
     "id": 31004,
     "name": {
-      "fr": "Litre[s] de lait"
+      "fr": "Lait"
     },
     "subtitle": {
       "fr": "De vache"
+    },
+    "unit": {
+      "fr": "Litre[s] de "
     },
     "synonyms": ["boire"],
     "slug": "laitdevache",
@@ -100,10 +118,13 @@
   },
   {
     "name": {
-      "fr": "Litre[s] de lait"
+      "fr": "Lait"
     },
     "subtitle": {
       "fr": "De soja"
+    },
+    "unit": {
+      "fr": "Litre[s] de "
     },
     "synonyms": ["boire"],
     "slug": "laitdesoja",
