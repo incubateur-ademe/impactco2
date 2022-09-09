@@ -69,10 +69,10 @@ export default function Learning() {
         </Strong>
         <Text>
           Le <strong>secteur du numérique</strong> est en plein essor. En effet,
-          aujourd’hui, les usages numériques font partie intégrante de notre
-          quotidien. Mais saviez-vous que la{' '}
-          <strong>pollution numérique</strong> a une empreinte carbone
-          importante et représente jusqu’à{' '}
+          aujourd’hui, les appareils numériques et leurs usages font partie
+          intégrante de notre quotidien. Mais saviez-vous que le{' '}
+          <strong>numérique</strong> a une empreinte carbone importante et
+          représente jusqu’à{' '}
           <strong>
             2,5% des émissions de{' '}
             <ButtonLink onClick={() => setCo2e(true)}>
@@ -82,38 +82,46 @@ export default function Learning() {
           </strong>
         </Text>
         <Title>
-          Réduire sa pollution numérique avec des gestes simples, c’est possible
-          ?
+          Réduire son impact numérique avec des gestes simples, c’est possible ?
         </Title>
         <Text>
           Pour{' '}
           <MagicLink to='https://agirpourlatransition.ademe.fr/particuliers/bureau/bons-gestes/gardons-controle-pratiques-numeriques'>
-            réduire votre pollution numérique
+            réduire notre impact numérique
           </MagicLink>
-          , il existe de nombreux gestes à adopter ! Vous pouvez agir en
-          achetant des <strong>appareils reconditionnés</strong>, éteindre vos
-          appareils à la fin de chaque utilisation, limiter la très{' '}
-          <strong>haute définition</strong>, ou encore
-          <strong>supprimer vos mails</strong>. Et si vous faites déjà cela,
-          vous pouvez refuser les objets connectés, éteindre votre box internet
-          la nuit et pendant vos absences, et surtout, <strong>recycler</strong>{' '}
-          vos <strong>anciens équipements informatiques</strong>. En effet, la
-          plupart des matériaux contenus par les{' '}
-          <strong>équipements numériques</strong> sont{' '}
-          <strong>recyclables</strong> et <strong>réutilisables</strong>, et les
-          autres sont dangereux pour l’environnement et pour la santé : ils
-          doivent donc être traités en conséquence afin de limiter l’
-          <strong>empreinte carbone du secteur numérique</strong>.
+          , il existe de nombreux gestes à adopter ! Parce que les terminaux
+          (ordinateurs, smartphones…) sont à l’origine de l’essentiel des
+          impacts (de 65 à 90 %) en particulier pour leur fabrication, vous
+          pouvez agir en gardant le plus longtemps possible ces appareils ou en
+          privilégiant les <strong>appareils reconditionnés</strong> plutôt que
+          neufs. Eteindre vos appareils à la fin de chaque utilisation, limiter
+          la très haute définition, faire du{' '}
+          <strong>ménage dans votre cloud (photo, vidéo)</strong> comme dans vos
+          mails sont d’autres axes pour diminuer votre empreinte numérique.
+        </Text>
+        <Text>
+          Et pour aller plus loin, vous pouvez éteindre votre box internet la
+          nuit et pendant vos absences, et surtout, limiter les objets connectés
+          et <strong>recycler</strong> vos{' '}
+          <strong>anciens équipements informatiques</strong>. En effet, la
+          plupart des matériaux contenus dans les{' '}
+          <strong>équipements numériques</strong> sont
+          <strong>recyclables</strong> : quand ils ne peuvent pas être réparés,
+          vos smartphones par exemple peuvent être en revanche recyclés jusqu’à
+          80 % !
         </Text>
         <Title>
-          Comment va évoluer la pollution numérique dans les prochaines années ?
+          Comment va évoluer l'impact du numérique dans les prochaines années ?
         </Title>
         <Text>
-          D’après une étude du{' '}
-          <strong>Haut Conseil pour le climat (HCC)</strong>, le déploiement du{' '}
-          <strong>réseau 5G</strong> entraînerait une augmentation de 18 à 45%
-          de l’<strong>empreinte carbone du secteur numérique</strong> en France
-          d’ici 2030. Quant aux objets connectés (comme les{' '}
+          D’après une{' '}
+          <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/etude-numerique-environnement-ademe-arcep-note-synthese_janv2022.pdf'>
+            étude ADEME – ARCEP
+          </MagicLink>
+          , l’empreinte carbone du numérique pourrait augmenter de manière
+          significative si rien n’est fait pour la limiter (+ 60 % d’ici à 2040
+          soit 6,7 % de l’empreinte carbone nationale). Quant aux objets
+          connectés (comme les{' '}
           <MagicLink to='/categories/numerique/montreconnectee'>
             montres connectées
           </MagicLink>
