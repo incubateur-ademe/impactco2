@@ -94,7 +94,7 @@ export default function useTransportations(itineraries) {
               (itineraries ? itineraries[equivalent.type] : km)) /
             (equivalent.carpool && carpool ? carpool : 1),
           component: equivalent.carpool && <Carpool />,
-          to: `/categories/${
+          to: `/empreinte-carbone/${
             categories.find((category) => category.id === equivalent.category)
               .slug
           }/${equivalent.slug}`,
