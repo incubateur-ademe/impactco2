@@ -4,7 +4,6 @@ import categories from 'data/categories.json'
 
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
-import Learning from 'components/repas/Learning'
 
 export default function Repas(props) {
   return (
@@ -17,7 +16,6 @@ export default function Repas(props) {
       }}
     >
       <Category category={props.category} />
-      <Learning />
     </Web>
   )
 }
