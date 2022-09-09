@@ -48,9 +48,7 @@ export default function Voiture() {
         <br />
         <strong>445 km en voiture</strong>
       </Small>
-      <CenterLink to='/empreinte-carbone/habillement'>
-        Voir tous les habits
-      </CenterLink>
+      <CenterLink to='/co2e'>Voir plus d&apos;équivalences</CenterLink>
     </>
   )
 }
