@@ -50,7 +50,7 @@ export default function CategoryList(props) {
     <Section>
       <Section.Content>
         <Wrapper name={props.category.name.fr} slug={props.category.slug}>
-          <Top>
+          <Top className='noscreenshot'>
             <Instruction />
             <Top.Checkboxes
               visible={equivalents

@@ -14,6 +14,8 @@ const SizerWrapper = styled.div`
 const Sizer = styled.div`
   position: relative;
   margin: -1.5rem;
+`
+const Content = styled.div`
   background-color: ${(props) =>
     props.hover ? props.theme.colors.background : 'transparent'};
 `
@@ -39,20 +41,22 @@ export default function Wrapper(props) {
 
   return (
     <SizerWrapper>
-      <Sizer className={props.className} ref={ref} hover={hover}>
-        <Background hover={hover}>
-          <Header>
-            <Title>{props.name}</Title>
-            <StyledButtons
-              takeScreenshot={takeScreenshot}
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
-              slug={`categories/${props.slug}`}
-            />
-          </Header>
-          {props.children}
-        </Background>
-        {isScreenshotting && <Signature />}
+      <Sizer className={props.className}>
+        <Content ref={ref} hover={hover}>
+          <Background hover={hover}>
+            <Header>
+              <Title>{props.name}</Title>
+              <StyledButtons
+                takeScreenshot={takeScreenshot}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                slug={`categories/${props.slug}`}
+              />
+            </Header>
+            {props.children}
+          </Background>
+          {isScreenshotting && <Signature />}
+        </Content>
       </Sizer>
     </SizerWrapper>
   )

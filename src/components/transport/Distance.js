@@ -24,7 +24,7 @@ export default function Distance(props) {
         <Wrapper name={props.category.name.fr} slug={props.category.slug}>
           <Search distance iframe={props.iframe} />
           {transportations.length ? (
-            <Top>
+            <Top className='noscreenshot'>
               <Instruction />
               <Top.Checkboxes visible>
                 <Checkbox

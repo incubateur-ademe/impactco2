@@ -148,6 +148,7 @@ export default function Buttons(props) {
         </Svg>
       </Button>
       <Button
+        className='noscreenshot'
         to={`${iframe ? 'https://monconvertisseurco2.fr' : ''}/integration${
           props.slug ? `?type=${props.slug}` : ''
         }`}

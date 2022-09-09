@@ -29,6 +29,7 @@ export default function Bottom(props) {
         émis {props.category?.include}.
       </Disclaimer>
       <Button
+        className={'noscreenshot'}
         onClick={() => {
           alert('Bientôt disponible')
           window?._paq?.push([
