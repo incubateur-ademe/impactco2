@@ -7,6 +7,8 @@ const Wrapper = styled(MagicLink)`
   display: inline;
   margin: 0;
   padding: 0;
+  font-weight: inherit;
+  font-style: inherit;
   color: ${(props) => props.theme.colors.main};
   text-decoration: underline;
   background: transparent;
