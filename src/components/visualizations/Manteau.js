@@ -48,8 +48,8 @@ export default function Voiture() {
         <br />
         <strong>445 km en voiture</strong>
       </Small>
-      <CenterLink to='/empreinte-carbone/transport'>
-        Voir tous les modes de transport
+      <CenterLink to='/empreinte-carbone/habillement'>
+        Voir tous les habits
       </CenterLink>
     </>
   )
