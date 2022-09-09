@@ -50,7 +50,9 @@ export default function Details(props) {
       <Section>
         <Section.Content flex>
           <Title>
-            {props.equivalent.unit && <>1 {props.equivalent.unit.fr} </>}
+            {props.equivalent.unit && (
+              <>1 {formatName(props.equivalent.unit.fr)} </>
+            )}
             {formatName(props.equivalent.name.fr, 1, !props.equivalent.unit)}
             <Br />{' '}
             {props.equivalent.subtitle && (
