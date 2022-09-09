@@ -1,0 +1,41 @@
+[
+  {
+    "id": 475,
+    "name": {
+      "fr": "Email"
+    },
+    "subtitle": {
+      "fr": "Écrire, envoyer et lire"
+    },
+    "slug": "email",
+    "emoji": "",
+    "category": 1,
+    "ecv": [
+      {
+        "value": 0.0017947,
+        "id": 13
+      },
+      {
+        "value": 0.00018366,
+        "id": 14
+      },
+      {
+        "value": 0.0000358,
+        "id": 15
+      },
+      {
+        "value": 0.000936,
+        "id": 16
+      },
+      {
+        "value": 0.0001384,
+        "id": 17
+      }
+    ],
+    "default": false,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://negaoctet.org/"
+  }
+]
