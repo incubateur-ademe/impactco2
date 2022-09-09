@@ -96,10 +96,10 @@ export default function SearchBar(props) {
   const navigateToItem = ({ item }) => {
     router.push(
       item.category
-        ? `/categories/${
+        ? `/empreinte-carbone/${
             categories.find((category) => category.id === item.category).slug
           }/${item.slug}`
-        : `/categories/${item.slug}`
+        : `/empreinte-carbone/${item.slug}`
     )
   }
 

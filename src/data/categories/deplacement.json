@@ -29,6 +29,7 @@
     "ecvs": [
       {
         "max": 1000,
+        "subtitle": "Court courrier",
         "ecv": [
           {
             "value": 0.1256,
@@ -46,6 +47,7 @@
       },
       {
         "max": 3500,
+        "subtitle": "Moyen courrier",
         "ecv": [
           {
             "value": 0.0974,
@@ -63,6 +65,7 @@
       },
       {
         "max": 100000000000000000,
+        "subtitle": "Long courrier",
         "ecv": [
           {
             "value": 0.0828,
@@ -454,7 +457,6 @@
     },
     "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "moto",
-
     "type": "car",
     "emoji": "🏍️",
     "category": 4,

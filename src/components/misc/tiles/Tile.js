@@ -238,7 +238,7 @@ export default function Tile(props) {
         !props.equivalentPage && (
           <Button.Wrapper>
             <StyledButton
-              to={`${iframe ? router.basePath : ''}/categories/${
+              to={`${iframe ? router.basePath : ''}/empreinte-carbone/${
                 categories.find(
                   (category) => category.id === props.equivalent.category
                 )?.slug

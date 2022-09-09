@@ -11,7 +11,6 @@ import useIframe from 'hooks/useIframe'
 import { formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
-import ShareButton from 'components/base/ShareButton'
 import Weight from './tiles/Weight'
 import Tile from './tiles/Tile'
 import AddButton from './tiles/AddButton'
@@ -83,8 +82,7 @@ export default function Tiles(props) {
         {props.title && (
           <Title>
             Visualisez facilement
-            <Br />
-            une quantité de CO<sub>2</sub>e
+            <Br /> une quantité de CO<sub>2</sub>e
           </Title>
         )}
         <DndContext
@@ -165,7 +163,6 @@ export default function Tiles(props) {
               <AddButton />
             </TilesWrapper>
           </SortableContext>
-          <ShareButton />
         </DndContext>
       </Section.Content>
     </StyledSection>

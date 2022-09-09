@@ -10,6 +10,7 @@ import DataContext from 'components/providers/DataProvider'
 import TransportContext from 'components/transport/TransportProvider'
 import Carpool from 'components/transport/Carpool'
 
+// C'est un peu austère, déso
 export default function useTransportations(itineraries) {
   const [transportations, setTransportations] = useState([])
 
@@ -62,18 +63,25 @@ export default function useTransportations(itineraries) {
         .map((equivalent) => ({
           id: `${equivalent.id || equivalent.slug}`,
           title: `${formatName(equivalent.name.fr, 1, true)}`,
-          subtitle:
-            `${
-              (displayAll || equivalent.name.fr === 'Voiture') &&
-              equivalent.subtitle
-                ? `(${formatName(equivalent.subtitle?.fr)})`
-                : ''
-            }` +
-            (itineraries
-              ? ` - ${formatNumber(
-                  itineraries ? itineraries[equivalent.type] : km
-                )} km`
-              : ''),
+          subtitle: formatName(
+            equivalent?.ecvs
+              ? `(${
+                  equivalent?.ecvs?.find(
+                    (ecv) =>
+                      ecv.max >
+                      (itineraries ? itineraries[equivalent.type] : km)
+                  )?.subtitle
+                })`
+              : ((displayAll || equivalent.name.fr === 'Voiture') &&
+                equivalent.subtitle
+                  ? `(${equivalent.subtitle?.fr})`
+                  : '') +
+                  (itineraries
+                    ? ` - ${formatNumber(
+                        itineraries ? itineraries[equivalent.type] : km
+                      )} km`
+                    : '')
+          ),
           emoji: equivalent.emoji,
           secondEmoji: equivalent.secondEmoji,
           value:

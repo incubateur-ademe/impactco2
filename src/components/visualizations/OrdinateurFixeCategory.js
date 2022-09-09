@@ -42,7 +42,7 @@ export default function SmartphoneCategory() {
         9 tablettes
         <br />
       </Small>
-      <CenterLink to='/categories/numerique'>
+      <CenterLink to='/empreinte-carbone/numerique'>
         Voir la catégorie numérique
       </CenterLink>
     </>
