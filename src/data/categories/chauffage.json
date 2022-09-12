@@ -13,11 +13,15 @@
     "emoji": "💨",
     "category": 8,
     "total": 37.682,
+    "multiplier": 113,
     "default": true,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
     "title": "Un an de chauffage au gaz en maison",
-    "description": "Découvrez à quoi correspond une année de chauffage au gaz dans une maison en kgCO₂e émis (CO₂e)"
+    "description": "Découvrez à quoi correspond une année de chauffage au gaz dans une maison en kgCO₂e émis (CO₂e)",
+    "hypothesis": {
+      "fr": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
+    }
   },
   {
     "name": {
@@ -33,11 +37,15 @@
     "emoji": "💨",
     "category": 8,
     "total": 28.375,
+    "multiplier": 63,
     "default": false,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
     "title": "Poids CO₂e d'un an de chauffage au gaz",
-    "description": "Découvrez à quoi correspond une année de chauffage au gaz dans un appartement en kgCO₂e émis (CO₂e)"
+    "description": "Découvrez à quoi correspond une année de chauffage au gaz dans un appartement en kgCO₂e émis (CO₂e)",
+    "hypothesis": {
+      "fr": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'un appartement en France (63m2)"
+    }
   },
   {
     "name": {
@@ -53,11 +61,15 @@
     "emoji": "🛢",
     "category": 8,
     "total": 52.668,
+    "multiplier": 113,
     "default": true,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
     "title": "Un an de chauffage au fioul en maison",
-    "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul pour une maison"
+    "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul pour une maison",
+    "hypothesis": {
+      "fr": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
+    }
   },
   {
     "name": {
@@ -73,11 +85,15 @@
     "emoji": "🛢",
     "category": 8,
     "total": 49.896,
+    "multiplier": 63,
     "default": false,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
     "title": "Poids CO₂e chauffage fioul appartement",
-    "description": "Connaître l'équivalent en empreinte carbone de la consommation d'une année de chauffage au fioul pour un appartement"
+    "description": "Connaître l'équivalent en empreinte carbone de la consommation d'une année de chauffage au fioul pour un appartement",
+    "hypothesis": {
+      "fr": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'un appartement en France (63m2)"
+    }
   },
   {
     "name": {
@@ -93,11 +109,15 @@
     "emoji": "⚡️",
     "category": 8,
     "total": 6.0314,
+    "multiplier": 113,
     "default": true,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
     "title": "Impact d'une année de chauffage maison",
-    "description": "Découvrez à quoi correspond une année de chauffage électrique dans une maison en kgCO₂e émis (CO₂e)"
+    "description": "Découvrez à quoi correspond une année de chauffage électrique dans une maison en kgCO₂e émis (CO₂e)",
+    "hypothesis": {
+      "fr": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
+    }
   },
   {
     "name": {
@@ -113,10 +133,14 @@
     "emoji": "⚡️",
     "category": 8,
     "total": 3.6985,
+    "multiplier": 63,
     "default": false,
     "tile": false,
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?chauffage.htm",
     "title": "Impact d'une année de chauffage électrique",
-    "description": "Découvrez à quoi correspond une année de chauffage électrique dans un appartement en kgCO₂e émis (CO₂e)"
+    "description": "Découvrez à quoi correspond une année de chauffage électrique dans un appartement en kgCO₂e émis (CO₂e)",
+    "hypothesis": {
+      "fr": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'un appartement en France (63m2)"
+    }
   }
 ]

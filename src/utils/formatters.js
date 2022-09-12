@@ -51,6 +51,18 @@ export function formatTotal(equivalent, years, end) {
   }
   return total
 }
+export function formatTotalByMultiplier(equivalent) {
+  let total =
+    equivalent.total || equivalent.total === 0
+      ? equivalent.total
+      : equivalent.ecv.reduce((acc, cur) => acc + cur.value, 0)
+
+  if (equivalent.usage) {
+    total += equivalent.usage.defaultyears * equivalent.usage.peryear
+  }
+
+  return equivalent.multiplier ? total * equivalent.multiplier : total
+}
 export function formatTotalByKm(equivalent, km) {
   return (
     (equivalent.total || equivalent.total === 0

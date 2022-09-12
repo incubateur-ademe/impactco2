@@ -6,7 +6,11 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 
 import useIframe from 'hooks/useIframe'
-import { formatNumber, formatName, formatTotal } from 'utils/formatters'
+import {
+  formatNumber,
+  formatName,
+  formatTotalByMultiplier,
+} from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/Button'
@@ -211,7 +215,7 @@ export default function Tile(props) {
       <Title>
         <Number>
           <AnimatedNumber
-            value={props.weight / formatTotal(props.equivalent)}
+            value={props.weight / formatTotalByMultiplier(props.equivalent)}
             duration={500}
             formatValue={formatNumber}
           />
@@ -219,13 +223,13 @@ export default function Tile(props) {
         <Name>
           {formatName(
             (props.equivalent.unit?.fr || '') + props.equivalent.name.fr,
-            props.weight / formatTotal(props.equivalent)
+            props.weight / formatTotalByMultiplier(props.equivalent)
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (
             <Subtitle>
               {formatName(
                 props.equivalent.subtitle.fr,
-                props.weight / formatTotal(props.equivalent)
+                props.weight / formatTotalByMultiplier(props.equivalent)
               )}
             </Subtitle>
           ) : (
