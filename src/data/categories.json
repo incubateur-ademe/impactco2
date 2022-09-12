@@ -7,7 +7,7 @@
     "emoji": "💻",
     "slug": "numerique",
     "divider": 1,
-    "unit": "produit",
+    "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "Empreinte carbone objets numériques",
     "description": "Montre connectée, smartphone, ordinateur, imprimante, console, télévision... Découvrez l'impact carbone des produits numériques dans votre quotidien"
@@ -59,7 +59,7 @@
     "emoji": "👔",
     "slug": "habillement",
     "divider": 1,
-    "unit": "produit",
+    "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "L'empreinte carbone de vos habits",
     "description": "Connaissez-vous l'impact carbone des habits que vous portez ?  Mon convertisseur CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
@@ -72,7 +72,7 @@
     "emoji": "🛁",
     "slug": "electromenager",
     "divider": 1,
-    "unit": "produit",
+    "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "L'empreinte carbone de l'électroménager",
     "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Mon Convertisseur CO2 vous indique le poids CO₂e de chaque appareil !"
@@ -85,7 +85,7 @@
     "emoji": "🪑",
     "slug": "mobilier",
     "divider": 1,
-    "unit": "produit",
+    "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "Quel empreinte carbone a le mobilier ?",
     "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
