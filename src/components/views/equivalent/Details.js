@@ -51,7 +51,7 @@ export default function Details(props) {
         <Section.Content flex>
           <Title>
             {props.equivalent.unit && (
-              <>1 {formatName(props.equivalent.unit.fr)} </>
+              <>{formatName(props.equivalent.unit.fr, 1, true)} </>
             )}
             {formatName(props.equivalent.name.fr, 1, !props.equivalent.unit)}
             <Br />{' '}
@@ -63,7 +63,7 @@ export default function Details(props) {
           </Title>
         </Section.Content>
       </Section>
-      <Value equivalent={props.equivalent} />
+      <Value equivalent={props.equivalent} category={props.category} />
       <Section>
         <StyledSectionContent flex>
           <Disclaimer>

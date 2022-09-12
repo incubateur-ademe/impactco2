@@ -72,7 +72,7 @@
     "emoji": "🛁",
     "slug": "electromenager",
     "divider": 1,
-    "unit": "",
+    "unit": "produit",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "L'empreinte carbone de l'électroménager",
     "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Mon Convertisseur CO2 vous indique le poids CO₂e de chaque appareil !"
@@ -85,7 +85,7 @@
     "emoji": "🪑",
     "slug": "mobilier",
     "divider": 1,
-    "unit": "",
+    "unit": "produit",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "Quel empreinte carbone a le mobilier ?",
     "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
