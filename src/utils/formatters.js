@@ -16,11 +16,14 @@ export function formatNumber(value, noformat) {
     ? tempTotal
     : tempTotal.toLocaleString('fr-fr', { maximumFractionDigits: 11 })
 }
-export function formatNumberFixed(value, digits) {
-  return value.toLocaleString('fr-fr', {
-    maximumFractionDigits: digits || 1,
-    minimumFractionDigits: digits || 1,
-  })
+export function formatNumberPrecision(value) {
+  const tempValue = value < 1 ? value * 1000 : value
+  return (
+    tempValue.toLocaleString('fr-fr', {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2,
+    }) + (value < 1 ? ' g' : ' kg')
+  )
 }
 export function formatName(name = '', value = 1, capital) {
   const newName = name
