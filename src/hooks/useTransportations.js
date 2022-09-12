@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useMemo, useContext } from 'react'
 
 import {
   formatName,
@@ -12,14 +12,12 @@ import Carpool from 'components/transport/Carpool'
 
 // C'est un peu austère, déso
 export default function useTransportations(itineraries) {
-  const [transportations, setTransportations] = useState([])
-
   const { equivalents, categories } = useContext(DataContext)
 
   const { km, displayAll, carpool } = useContext(TransportContext)
 
-  useEffect(() => {
-    setTransportations(
+  const transportations = useMemo(
+    () =>
       equivalents
         .filter((equivalent) => equivalent.category === 4)
         .filter((equivalent) =>
@@ -106,8 +104,9 @@ export default function useTransportations(itineraries) {
               equivalent.slug,
             ]),
         }))
-        .sort((a, b) => (a.value > b.value ? 1 : -1))
-    )
-  }, [categories, equivalents, km, displayAll, carpool, itineraries])
+        .sort((a, b) => (a.value > b.value ? 1 : -1)),
+    [categories, equivalents, km, displayAll, carpool, itineraries]
+  )
+
   return transportations
 }
