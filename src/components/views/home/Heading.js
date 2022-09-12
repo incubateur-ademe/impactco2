@@ -75,7 +75,7 @@ export default function Heading() {
           <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />?
         </Text>
         <StyledButtonLink onClick={() => setSurvey(true)}>
-          Répondez à notre enquête utilisateur !
+          Participez à notre enquête utilisateurs !
         </StyledButtonLink>
         <StyledSearch placeholder={'Entrez un objet, un geste...'} home />
         <Categories />
