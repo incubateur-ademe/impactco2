@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
-import { formatName, formatNumberFixed, formatTotal } from 'utils/formatters'
+import {
+  formatName,
+  formatNumberPrecision,
+  formatTotal,
+} from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import Section from 'components/base/Section'
@@ -16,10 +20,6 @@ export const StyledSection = styled(Section)`
 export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
-
-  span {
-    font-size: 0.75em;
-  }
 `
 const StyledLegend = styled(Legend)``
 export default function Ecv(props) {
@@ -63,9 +63,9 @@ export default function Ecv(props) {
             Détail de l&apos;empreinte de 1{' '}
             {props.equivalent.unit && <>{props.equivalent.unit.fr} </>}
             {formatName(props.equivalent.name.fr, 1)} (
-            {formatNumberFixed(formatTotal(props.equivalent, usage))}{' '}
+            {formatNumberPrecision(formatTotal(props.equivalent, usage))}{' '}
             <span>
-              kgCO
+              CO
               <sub>2</sub>e
             </span>
             )

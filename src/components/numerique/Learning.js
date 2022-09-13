@@ -105,7 +105,7 @@ export default function Learning() {
           et <strong>recycler</strong> vos{' '}
           <strong>anciens équipements informatiques</strong>. En effet, la
           plupart des matériaux contenus dans les{' '}
-          <strong>équipements numériques</strong> sont
+          <strong>équipements numériques</strong> sont{' '}
           <strong>recyclables</strong> : quand ils ne peuvent pas être réparés,
           vos smartphones par exemple peuvent être en revanche recyclés jusqu’à
           80 % !
@@ -133,8 +133,8 @@ export default function Learning() {
               CO<sub>2</sub>e
             </ButtonLink>
           </strong>{' '}
-          due au <strong>numérique</strong>
-          est donc très important : chaque geste compte !
+          due au <strong>numérique</strong> est donc très important : chaque
+          geste compte !
         </Text>
 
         <Text>
@@ -144,6 +144,8 @@ export default function Learning() {
           <MagicLink to={'https://nosgestesclimat.fr/'}>
             simulateur Nos Gestes Climat
           </MagicLink>
+          <br />
+          <br />
         </Text>
         <Button.Wrapper>
           <Button to={'https://nosgestesclimat.fr/'}>

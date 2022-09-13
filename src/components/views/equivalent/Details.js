@@ -6,7 +6,6 @@ import ModalContext from 'components/providers/ModalProvider'
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import ButtonLink from 'components/base/ButtonLink'
-import ShareButton from 'components/base/ShareButton'
 import Value from './details/Value'
 
 const Title = styled.h1``
@@ -51,7 +50,9 @@ export default function Details(props) {
       <Section>
         <Section.Content flex>
           <Title>
-            {props.equivalent.unit && <>1 {props.equivalent.unit.fr} </>}
+            {props.equivalent.unit && (
+              <>{formatName(props.equivalent.unit.fr, 1, true)} </>
+            )}
             {formatName(props.equivalent.name.fr, 1, !props.equivalent.unit)}
             <Br />{' '}
             {props.equivalent.subtitle && (
@@ -62,7 +63,7 @@ export default function Details(props) {
           </Title>
         </Section.Content>
       </Section>
-      <Value equivalent={props.equivalent} />
+      <Value equivalent={props.equivalent} category={props.category} />
       <Section>
         <StyledSectionContent flex>
           <Disclaimer>

@@ -5,7 +5,7 @@
     },
 
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voler", "voyager"],
     "slug": "avion",
@@ -100,7 +100,7 @@
     },
 
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
     "slug": "tgv",
@@ -133,7 +133,7 @@
     },
 
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
     "slug": "intercites",
@@ -168,7 +168,7 @@
       "fr": "Moteur thermique"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voiturethermique",
@@ -200,7 +200,7 @@
       "fr": "Moteur électrique"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voitureelectrique",
@@ -230,7 +230,7 @@
       "fr": "Autocar"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "autocar",
@@ -289,7 +289,7 @@
       "fr": "Vélo (ou trottinette) à assistance électrique"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "pedaler"],
     "slug": "veloelectrique",
@@ -325,7 +325,7 @@
       "fr": "Moteur thermique"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busthermique",
@@ -357,7 +357,7 @@
       "fr": "Tramway"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "tramway",
@@ -389,7 +389,7 @@
       "fr": "Métro"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "rail"],
     "slug": "metro",
@@ -421,7 +421,7 @@
       "fr": "Scooter ou moto légère"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "scooter",
@@ -453,7 +453,7 @@
       "fr": "Moto"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "moto",
@@ -484,7 +484,7 @@
       "fr": "RER ou Transilien"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
     "slug": "rer",
@@ -517,7 +517,7 @@
       "fr": "TER"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
     "slug": "ter",
@@ -552,7 +552,7 @@
       "fr": "Moteur électrique"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "buselectrique",
@@ -588,7 +588,7 @@
       "fr": "GNV"
     },
     "unit": {
-      "fr": "km en"
+      "fr": "km en "
     },
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busgnv",

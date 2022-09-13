@@ -63,7 +63,8 @@ export default function Value(props) {
           <div>
             <Number>{formatNumber(formatTotal(props.equivalent))}</Number>{' '}
             <Unit>
-              kg <Big>CO2</Big>e
+              kg <Big>CO2</Big>e{' '}
+              {props.category.unit && <>/ {props.category.unit}</>}
             </Unit>
           </div>
         </Top>

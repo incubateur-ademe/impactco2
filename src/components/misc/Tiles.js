@@ -8,7 +8,7 @@ import {
 } from '@dnd-kit/sortable'
 
 import useIframe from 'hooks/useIframe'
-import { formatTotal } from 'utils/formatters'
+import { formatTotalByMultiplier } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import Weight from './tiles/Weight'
@@ -61,7 +61,7 @@ export default function Tiles(props) {
 
   const [weight, setWeight] = useState(2000)
   useEffect(() => {
-    curEquivalent && setWeight(formatTotal(curEquivalent))
+    curEquivalent && setWeight(formatTotalByMultiplier(curEquivalent))
   }, [curEquivalent])
 
   const [showSubtitle, setShowSubtitle] = useState(false)
@@ -113,7 +113,7 @@ export default function Tiles(props) {
               {curEquivalent ? (
                 <Tile
                   equivalent={curEquivalent}
-                  weight={formatTotal(curEquivalent)}
+                  weight={formatTotalByMultiplier(curEquivalent)}
                   background={props.background}
                   showSubtitle={showSubtitle}
                   equivalentPage={props.equivalent?.slug === curEquivalent.slug}
