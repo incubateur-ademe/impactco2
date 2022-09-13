@@ -77,6 +77,62 @@
   },
   {
     "name": {
+      "fr": "Spam"
+    },
+    "subtitle": {
+      "fr": "Non lu"
+    },
+    "slug": "spam",
+    "emoji": "✋",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 15
+      },
+      {
+        "value": 0.00000732,
+        "id": 16
+      },
+      {
+        "value": 0.00000696,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": {
+      "fr": "Stocker un email"
+    },
+    "subtitle": {
+      "fr": "Pendant 10 ans"
+    },
+    "slug": "stockage",
+    "emoji": "💾",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 3.66e-6,
+        "id": 16
+      },
+      {
+        "value": 3.48e-6,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": {
       "fr": "Requête web"
     },
     "slug": "requeteweb",
@@ -139,6 +195,103 @@
       },
       {
         "value": 0.000391,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": {
+      "fr": "Visio conférence"
+    },
+    "slug": "visioconference",
+    "emoji": "🎥",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 5.52e-2,
+        "id": 13
+      },
+      {
+        "value": 3.35e-3,
+        "id": 14
+      },
+      {
+        "value": 5.56e-2,
+        "id": 15
+      },
+      {
+        "value": 2.37e-4,
+        "id": 16
+      },
+      {
+        "value": 3.91e-4,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": {
+      "fr": "Audio conférence"
+    },
+    "slug": "audioconference",
+    "emoji": "🎙",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 5.52e-2,
+        "id": 13
+      },
+      {
+        "value": 3.35e-3,
+        "id": 14
+      },
+      {
+        "value": 3.04e-3,
+        "id": 15
+      },
+      {
+        "value": 2.37e-4,
+        "id": 16
+      },
+      {
+        "value": 2.14e-5,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": {
+      "fr": "Télécharger 1Go"
+    },
+    "slug": "telechargement",
+    "emoji": "⬇️",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 0.00927,
+        "id": 15
+      },
+      {
+        "value": 0.000125,
+        "id": 16
+      },
+      {
+        "value": 0.000799,
         "id": 17
       }
     ],
