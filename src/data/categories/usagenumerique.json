@@ -112,16 +112,16 @@
     "subtitle": {
       "fr": "Pendant 10 ans"
     },
-    "slug": "stockage",
+    "slug": "stockageemail",
     "emoji": "💾",
     "category": 10,
     "ecv": [
       {
-        "value": 3.66e-6,
+        "value": 1.44e-4,
         "id": 16
       },
       {
-        "value": 3.48e-6,
+        "value": 2.34e-5,
         "id": 17
       }
     ],

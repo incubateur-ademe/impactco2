@@ -27,6 +27,8 @@ import Manteau from './Manteau'
 
 import Chauffage from './Chauffage'
 
+import StockageEmails from 'components/numerique/StockageEmails'
+
 const visualizations = {
   smartphone: [
     <SmartphoneGeneral key='SmartphoneGeneral' />,
@@ -67,6 +69,9 @@ const visualizations = {
   chauffageelectriquemaison: [<Chauffage key='Chauffage' />],
   chauffagefioulmaison: [<Chauffage key='Chauffage' />],
   chauffagegazmaison: [<Chauffage key='Chauffage' />],
+  email: [<StockageEmails key='StockageEmails' />],
+  emailpiecejointe: [<StockageEmails key='StockageEmails' />],
+  stockageemail: [<StockageEmails key='StockageEmails' />],
 }
 
 export const home = [

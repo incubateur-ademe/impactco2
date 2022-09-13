@@ -37,6 +37,7 @@ export default function TextInput(props) {
         type={props.type || 'text'}
         id={props.name}
         name={props.name}
+        placeholder={props.placeholder}
         min={props.min}
         max={props.max}
         value={props.value}
