@@ -79,6 +79,7 @@ export default function StockageEmails() {
       <Tiles blur={!emails}>
         {equivalentsToShow.map((equivalent) => (
           <Tile
+            key={equivalent.slug}
             equivalent={equivalent}
             weight={totalWeight}
             background={true}
