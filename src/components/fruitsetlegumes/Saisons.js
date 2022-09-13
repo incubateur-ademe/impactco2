@@ -109,7 +109,7 @@ export default function Distance(props) {
   return (
     <Section>
       <Section.Content>
-        <Wrapper month={props.month.long} slug={props.category.slug}>
+        <Wrapper month={props.month} slug={props.category.slug}>
           <Search month={props.month} search={search} setSearch={setSearch} />
           <Top>
             <Instruction />
