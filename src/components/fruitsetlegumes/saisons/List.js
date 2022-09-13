@@ -20,7 +20,8 @@ const Item = styled(MagicLink)`
   position: relative;
   width: calc(33.3333% - 1rem);
   padding: 1rem;
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: ${(props) =>
+    props.theme.colors[props.season ? 'second' : 'errorLight']};
   border-radius: 1rem;
   text-decoration: none;
   color: ${(props) => props.theme.colors.text};
@@ -84,7 +85,7 @@ export default function List(props) {
   return (
     <Wrapper>
       {props.items.map((item) => (
-        <Item key={item.id} to={item.to}>
+        <Item key={item.id} to={item.to} season={item.season}>
           <Header>
             <Title>{item.title}</Title>
             <Emoji>{item.emoji}</Emoji>

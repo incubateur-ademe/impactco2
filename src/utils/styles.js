@@ -15,6 +15,7 @@ export const themes = {
       text: '#383838',
       textLight: '#FBFBFC',
       error: '#ce0500',
+      errorLight: '#ffdddd',
       warning: '#fc5d00',
     },
     fonts: {
