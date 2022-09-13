@@ -11,6 +11,10 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    gap: 0.75rem;
+  }
 `
 const Item = styled(MagicLink)`
   position: relative;

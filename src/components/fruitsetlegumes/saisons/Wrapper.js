@@ -22,6 +22,11 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
 `
 const Title = styled.h1`
   letter-spacing: -0.1rem;
@@ -31,6 +36,7 @@ const StyledButtons = styled(Buttons)`
 
   ${(props) => props.theme.mq.small} {
     margin-top: 0;
+    align-self: flex-end;
   }
 `
 export default function Wrapper(props) {

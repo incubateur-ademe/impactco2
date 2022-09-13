@@ -63,6 +63,10 @@ const share = keyframes`
 const Wrapper = styled.div`
   display: flex;
   gap: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    gap: 0.75rem;
+  }
 `
 const Button = styled(MagicLink)`
   position: relative;
@@ -91,6 +95,11 @@ const Button = styled(MagicLink)`
       animation-name: ${share};
       animation-duration: 400ms;
     }
+  }
+
+  ${(props) => props.theme.mq.small} {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 `
 const Svg = styled.svg`
