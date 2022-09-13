@@ -26,7 +26,6 @@ const Input = styled.select`
   cursor: pointer;
 `
 export default function FancySelect(props) {
-  console.log(props.options, props.value)
   return (
     <Wrapper color={props.color}>
       <Value

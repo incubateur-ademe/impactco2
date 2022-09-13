@@ -12,12 +12,12 @@ const Label = styled.label`
 `
 const Input = styled.input`
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
   border: 0.125rem solid
     ${(props) => props.theme.colors[props.error ? 'error' : 'main']};
-  border-radius: 0.75rem;
+  border-radius: 0.625em;
   transition: box-shadow 300ms ease-out;
 
   &:focus {

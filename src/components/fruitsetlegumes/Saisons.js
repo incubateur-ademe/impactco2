@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { useTheme } from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
 import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import { formatName, formatTotal } from 'utils/formatters'
@@ -12,6 +12,14 @@ import Wrapper from './saisons/Wrapper'
 import Search from './saisons/Search'
 import List from './saisons/List'
 
+const StyledTop = styled(Top)`
+  align-items: center;
+  margin-bottom: 0.75rem;
+
+  p {
+    margin: 0;
+  }
+`
 export default function Distance(props) {
   const theme = useTheme()
 
@@ -110,11 +118,10 @@ export default function Distance(props) {
     <Section>
       <Section.Content>
         <Wrapper month={props.month} slug={props.category.slug}>
-          <Search month={props.month} search={search} setSearch={setSearch} />
-          <Top>
+          <StyledTop>
             <Instruction />
-            <Top.Checkboxes visible></Top.Checkboxes>
-          </Top>
+            <Search month={props.month} search={search} setSearch={setSearch} />
+          </StyledTop>
           <List
             items={equivalentsOfTheMonth}
             max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value}

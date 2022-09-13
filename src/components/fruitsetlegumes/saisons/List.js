@@ -16,17 +16,21 @@ const Item = styled(MagicLink)`
   position: relative;
   width: calc(33.3333% - 1rem);
   padding: 1rem;
-  background-color: ${(props) =>
-    props.theme.colors[props.background ? 'textLight' : 'second']};
+  background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
   text-decoration: none;
   color: ${(props) => props.theme.colors.text};
+  transition: background-color 200ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
     width: calc(33.3333% - 0.5rem);
   }
   ${(props) => props.theme.mq.small} {
     width: calc(50% - 0.375rem);
+  }
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.mainLight};
   }
 `
 const Header = styled.div`
