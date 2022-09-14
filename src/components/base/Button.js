@@ -52,7 +52,6 @@ export default function Button(props) {
       hollow={props.hollow}
       small={props.small}
       className={props.className}
-      textColor={props.textColor}
       type={props.type}
       aria-label={props.children}
       noIcon

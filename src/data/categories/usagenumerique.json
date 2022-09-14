@@ -125,7 +125,33 @@
         "id": 17
       }
     ],
-    "default": true,
+    "default": false,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": {
+      "fr": "Stocker un Go de donnée"
+    },
+    "subtitle": {
+      "fr": "Pendant 10 ans"
+    },
+    "slug": "stockagedonnée",
+    "emoji": "💾",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 4.64e-1,
+        "id": 16
+      },
+      {
+        "value": 6.58e-2,
+        "id": 17
+      }
+    ],
+    "default": false,
     "tile": false,
     "title": "",
     "description": "",
