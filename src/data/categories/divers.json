@@ -1,0 +1,97 @@
+[
+  {
+    "name": {
+      "fr": "Cigarette[s]"
+    },
+    "slug": "cigarette",
+    "synonyms": ["fumer"],
+    "emoji": "🚬",
+    "category": 11,
+    "total": 0.014,
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://pubs.acs.org/doi/pdf/10.1021/acs.est.8b01533?rand=mktszp30"
+  },
+  {
+    "name": {
+      "fr": "Tasse[s] de thé"
+    },
+    "slug": "tassethé",
+    "emoji": "🫖",
+    "category": 11,
+    "ecv": [
+      {
+        "value": 0.00950148825,
+        "id": 30
+      },
+      {
+        "value": 0.00066886305,
+        "id": 32
+      },
+      {
+        "value": 0.00060733565,
+        "id": 33
+      },
+      {
+        "value": 3.1642655e-5,
+        "id": 34
+      },
+      {
+        "value": 0.00205075852,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://agribalyse.ademe.fr/app/aliments/18020#Th%C3%A9_infus%C3%A9,_non_sucr%C3%A9",
+    "hypothesis": {
+      "fr": "Nous prenons pour hypothèse une tasse de 250ml (simplifié ici en 250mg)."
+    }
+  },
+  {
+    "name": {
+      "fr": "Tasse[s] de café"
+    },
+    "slug": "tassecafe",
+    "emoji": "☕️",
+    "category": 11,
+    "ecv": [
+      {
+        "value": 0.127352855,
+        "id": 30
+      },
+      {
+        "value": 0.0036945355,
+        "id": 31
+      },
+      {
+        "value": 0.00144055608,
+        "id": 32
+      },
+      {
+        "value": 0.00439682125,
+        "id": 33
+      },
+      {
+        "value": 0.000184571608,
+        "id": 34
+      },
+      {
+        "value": 0.00205972387,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://agribalyse.ademe.fr/app/aliments/18004#Caf%C3%A9,_non_instantan%C3%A9,_non_sucr%C3%A9,_pr%C3%AAt_%C3%A0_boire",
+    "hypothesis": {
+      "fr": "Nous prenons pour hypothèse une tasse de 250ml (simplifié ici en 250mg)."
+    }
+  }
+]

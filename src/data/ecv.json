@@ -54,5 +54,47 @@
       "fr": "Usage"
     },
     "color": "#6f87ad"
+  },
+  {
+    "id": 30,
+    "name": {
+      "fr": "Agriculture"
+    },
+    "color": "#ab616f"
+  },
+  {
+    "id": 31,
+    "name": {
+      "fr": "Transformation"
+    },
+    "color": "#a6b37d"
+  },
+  {
+    "id": 32,
+    "name": {
+      "fr": "Emballage"
+    },
+    "color": "#adc4c5"
+  },
+  {
+    "id": 33,
+    "name": {
+      "fr": "Transport"
+    },
+    "color": "#66a498"
+  },
+  {
+    "id": 34,
+    "name": {
+      "fr": "Supermarché et distribution"
+    },
+    "color": "#F6D860"
+  },
+  {
+    "id": 35,
+    "name": {
+      "fr": "Consommation"
+    },
+    "color": "#6f87ad"
   }
 ]
