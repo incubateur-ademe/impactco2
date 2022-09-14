@@ -115,9 +115,9 @@ export default function StockageEmails() {
       <Text blur={!totalWeight}>
         Ma boite mail émet{' '}
         <strong>
-          {formatNumber(totalWeight)} kg CO<sub>2</sub>e
-        </strong>{' '}
-        sur 10 ans, soit l'équivalent de...
+          {formatNumber(totalWeight)} kg CO<sub>2</sub>e sur 10 ans
+        </strong>
+        , soit l'équivalent de...
       </Text>
       <Tiles blur={!totalWeight}>
         {equivalentsToShow.map((equivalent) => (
