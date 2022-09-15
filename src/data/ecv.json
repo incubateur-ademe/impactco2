@@ -56,28 +56,42 @@
     "color": "#6f87ad"
   },
   {
-    "id": 9,
+    "id": 30,
     "name": {
       "fr": "Agriculture"
     },
     "color": "#ab616f"
   },
   {
-    "id": 10,
+    "id": 31,
     "name": {
-      "fr": "Transport"
+      "fr": "Transformation"
     },
     "color": "#a6b37d"
   },
   {
-    "id": 11,
+    "id": 32,
     "name": {
-      "fr": "Supermarché et distribution"
+      "fr": "Emballage"
+    },
+    "color": "#adc4c5"
+  },
+  {
+    "id": 33,
+    "name": {
+      "fr": "Transport"
     },
     "color": "#66a498"
   },
   {
-    "id": 12,
+    "id": 34,
+    "name": {
+      "fr": "Supermarché et distribution"
+    },
+    "color": "#F6D860"
+  },
+  {
+    "id": 35,
     "name": {
       "fr": "Consommation"
     },

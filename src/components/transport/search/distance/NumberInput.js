@@ -46,6 +46,7 @@ const Button = styled.button`
     }
   }
 `
+
 export default function NumberInput(props) {
   const [km, setKm] = useState(props.km)
   return (
@@ -55,7 +56,15 @@ export default function NumberInput(props) {
         props.setKm(km)
       }}
     >
-      <StyledTextInput value={km} onChange={({ value }) => setKm(value)} />
+      <StyledTextInput
+        type='number'
+        min={props.min}
+        max={props.max}
+        value={km}
+        onChange={({ value }) => {
+          setKm(value)
+        }}
+      />
       <Button>Valider</Button>
     </Wrapper>
   )

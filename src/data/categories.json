@@ -7,10 +7,11 @@
     "emoji": "💻",
     "slug": "numerique",
     "divider": 1,
-    "unit": "",
+    "display": true,
+    "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
-    "title": "Impact sur le climat du numérique",
-    "description": "Montre connectée, smartphone, ordinateur, imprimante, console, télévision... Découvrez l'impact carbone des produits numériques dans votre quotidien"
+    "title": "Empreinte carbone objets numériques",
+    "description": "Le secteur du numérique représente 2,5% des émissions carbone en France. Comment réduire son impact numérique et agir pour le climat  à son échelle ?"
   },
   {
     "id": 2,
@@ -20,9 +21,10 @@
     "emoji": "🍽",
     "slug": "repas",
     "divider": 1,
-    "unit": "",
+    "display": true,
+    "unit": "repas",
     "include": "par repas comprenant la fabrication, la distribution et la consommation",
-    "title": "Quel est l'impact climat d'un repas ?",
+    "title": "Empreinte carbone d'un repas",
     "description": "Repas végétalien, végétarien, avec du boeuf, avec du poulet, avec du poisson gras, ou avec du poisson blanc... Découvrez leur valeur en CO₂e"
   },
   {
@@ -33,8 +35,9 @@
     "emoji": "🍹",
     "slug": "boisson",
     "divider": 1,
-    "unit": "",
-    "include": " pour 1 litre de produit comprenant la fabrication, la distribution et la consommation",
+    "display": true,
+    "unit": "litre",
+    "include": "par litre de produit comprenant la fabrication, la distribution et la consommation",
     "title": "L'empreinte carbone de nos boissons",
     "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
   },
@@ -46,8 +49,9 @@
     "emoji": "🚴‍♂️",
     "slug": "transport",
     "divider": 1,
+    "display": true,
     "unit": "km",
-    "include": "pour 1 km comprenant les émissions directes, la production et distribution de carburant et d'électricité et la construction des véhicules",
+    "include": "par personne en France. Sont incluses les émissions directes, et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
     "title": "Empreinte carbone de vos déplacements",
     "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Mon Convertisseur CO2 vous connaitrez votre impact sur le climat"
   },
@@ -59,7 +63,8 @@
     "emoji": "👔",
     "slug": "habillement",
     "divider": 1,
-    "unit": "",
+    "display": true,
+    "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "L'empreinte carbone de vos habits",
     "description": "Connaissez-vous l'impact carbone des habits que vous portez ?  Mon convertisseur CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
@@ -72,7 +77,8 @@
     "emoji": "🛁",
     "slug": "electromenager",
     "divider": 1,
-    "unit": "",
+    "display": true,
+    "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "L'empreinte carbone de l'électroménager",
     "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Mon Convertisseur CO2 vous indique le poids CO₂e de chaque appareil !"
@@ -85,7 +91,8 @@
     "emoji": "🪑",
     "slug": "mobilier",
     "divider": 1,
-    "unit": "",
+    "display": true,
+    "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "title": "Quel empreinte carbone a le mobilier ?",
     "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
@@ -98,7 +105,9 @@
     "emoji": "🏠",
     "slug": "chauffage",
     "divider": 1,
-    "include": "par m2",
+    "display": true,
+    "unit": "m2",
+    "include": "par m2 par année",
     "title": "Poids en CO₂e d'une année de chauffage",
     "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée (électrique, gaz ou fioul)"
   },
@@ -110,8 +119,24 @@
     "emoji": "🍅",
     "slug": "fruitsetlegumes",
     "divider": 1,
+    "display": true,
+    "unit": "kg",
     "include": "par kg de produit pour des fruits et légumes de saison",
     "title": "Poids en CO₂e des fruits et légumes",
     "description": "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison"
+  },
+  {
+    "id": 11,
+    "name": {
+      "fr": "Divers"
+    },
+    "emoji": "⚙️",
+    "slug": "divers",
+    "divider": 1,
+    "display": false,
+    "unit": "unité",
+    "include": "par unité",
+    "title": "",
+    "description": ""
   }
 ]

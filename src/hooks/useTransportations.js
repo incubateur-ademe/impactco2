@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useMemo, useContext } from 'react'
 
 import {
   formatName,
@@ -10,15 +10,14 @@ import DataContext from 'components/providers/DataProvider'
 import TransportContext from 'components/transport/TransportProvider'
 import Carpool from 'components/transport/Carpool'
 
+// C'est un peu austère, déso
 export default function useTransportations(itineraries) {
-  const [transportations, setTransportations] = useState([])
-
   const { equivalents, categories } = useContext(DataContext)
 
   const { km, displayAll, carpool } = useContext(TransportContext)
 
-  useEffect(() => {
-    setTransportations(
+  const transportations = useMemo(
+    () =>
       equivalents
         .filter((equivalent) => equivalent.category === 4)
         .filter((equivalent) =>
@@ -62,18 +61,25 @@ export default function useTransportations(itineraries) {
         .map((equivalent) => ({
           id: `${equivalent.id || equivalent.slug}`,
           title: `${formatName(equivalent.name.fr, 1, true)}`,
-          subtitle:
-            `${
-              (displayAll || equivalent.name.fr === 'Voiture') &&
-              equivalent.subtitle
-                ? `(${formatName(equivalent.subtitle?.fr)})`
-                : ''
-            }` +
-            (itineraries
-              ? ` - ${formatNumber(
-                  itineraries ? itineraries[equivalent.type] : km
-                )} km`
-              : ''),
+          subtitle: formatName(
+            equivalent?.ecvs
+              ? `(${
+                  equivalent?.ecvs?.find(
+                    (ecv) =>
+                      ecv.max >
+                      (itineraries ? itineraries[equivalent.type] : km)
+                  )?.subtitle
+                })`
+              : ((displayAll || equivalent.name.fr === 'Voiture') &&
+                equivalent.subtitle
+                  ? `(${equivalent.subtitle?.fr})`
+                  : '') +
+                  (itineraries
+                    ? ` - ${formatNumber(
+                        itineraries ? itineraries[equivalent.type] : km
+                      )} km`
+                    : '')
+          ),
           emoji: equivalent.emoji,
           secondEmoji: equivalent.secondEmoji,
           value:
@@ -86,7 +92,7 @@ export default function useTransportations(itineraries) {
               (itineraries ? itineraries[equivalent.type] : km)) /
             (equivalent.carpool && carpool ? carpool : 1),
           component: equivalent.carpool && <Carpool />,
-          to: `/categories/${
+          to: `/empreinte-carbone/${
             categories.find((category) => category.id === equivalent.category)
               .slug
           }/${equivalent.slug}`,
@@ -98,8 +104,9 @@ export default function useTransportations(itineraries) {
               equivalent.slug,
             ]),
         }))
-        .sort((a, b) => (a.value > b.value ? 1 : -1))
-    )
-  }, [categories, equivalents, km, displayAll, carpool, itineraries])
+        .sort((a, b) => (a.value > b.value ? 1 : -1)),
+    [categories, equivalents, km, displayAll, carpool, itineraries]
+  )
+
   return transportations
 }

@@ -84,13 +84,16 @@ const Edit = styled.div`
 `
 export default function Distance() {
   const { km, setKm } = useContext(TransportContext)
+  const convertSliderPositionToDistance = (pos) => {
+    // Please don't ask
+    return (
+      Math.round(
+        (Math.log((pos > 10000 ? 10000 : pos) * 10) / Math.log(10) - 1) * 1000
+      ) / 1000
+    )
+  }
 
-  // Please don't ask
-  const [position, setPosition] = useState(
-    Math.round(
-      (Math.log((km > 10000 ? 10000 : km) * 10) / Math.log(10) - 1) * 1000
-    ) / 1000
-  )
+  const [position, setPosition] = useState(convertSliderPositionToDistance(km))
 
   useEffect(() => {
     setKm(Math.round(Math.pow(10, position)))
@@ -102,16 +105,15 @@ export default function Distance() {
     <Wrapper>
       {openTextInput ? (
         <NumberInput
+          min={0}
           km={km}
           setKm={(km) => {
-            setPosition(
-              Math.round(
-                (Math.log((km > 10000 ? 10000 : km) * 10) / Math.log(10) - 1) *
-                  1000
-              ) / 1000
-            )
-            requestAnimationFrame(() => setKm(km > 10000 ? 10000 : km))
-            setOpenTextInput(false)
+            if (km !== '') {
+              // Forces the user to enter a number and avoid the convertion of '' to -inf by JS.
+              setPosition(convertSliderPositionToDistance(km))
+              requestAnimationFrame(() => setKm(km > 10000 ? 10000 : km))
+              setOpenTextInput(false)
+            }
           }}
         />
       ) : (
@@ -142,7 +144,9 @@ export default function Distance() {
             min={0}
             max={4}
             values={[position]}
-            onChange={(values) => setPosition(values[0])}
+            onChange={(values) => {
+              setPosition(values[0])
+            }}
             renderTrack={({ props, children }) => (
               <Track {...props}>{children}</Track>
             )}

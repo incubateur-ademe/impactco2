@@ -51,7 +51,7 @@ export default function Category(props) {
       <StyledEmoji>{props.category.emoji}</StyledEmoji>
       <Title>{props.category.name.fr}</Title>
 
-      <StyledButton to={`/categories/${props.category.slug}`}>
+      <StyledButton to={`/empreinte-carbone/${props.category.slug}`}>
         Visualiser
       </StyledButton>
     </Wrapper>

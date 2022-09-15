@@ -19,24 +19,26 @@ export default function Categories() {
     <Wrapper>
       <Text>En panne d’inspiration ? Naviguez par catégories :</Text>
       <Button.Wrapper>
-        {categories.map((category) => (
-          <Button
-            key={category.slug}
-            to={`/categories/${category.slug}`}
-            small
-            onClick={() =>
-              window?._paq?.push([
-                'trackEvent',
-                'Interaction',
-                'Suggestion',
-                category.name.fr,
-              ])
-            }
-          >
-            <Emoji>{category.emoji}</Emoji>
-            {category.name.fr}
-          </Button>
-        ))}
+        {categories
+          .filter((category) => category.display)
+          .map((category) => (
+            <Button
+              key={category.slug}
+              to={`/empreinte-carbone/${category.slug}`}
+              small
+              onClick={() =>
+                window?._paq?.push([
+                  'trackEvent',
+                  'Interaction',
+                  'Suggestion',
+                  category.name.fr,
+                ])
+              }
+            >
+              <Emoji>{category.emoji}</Emoji>
+              {category.name.fr}
+            </Button>
+          ))}
       </Button.Wrapper>
     </Wrapper>
   )

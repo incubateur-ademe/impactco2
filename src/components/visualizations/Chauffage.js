@@ -62,8 +62,8 @@ export default function Avion() {
         <br />
         électrique
       </Small>
-      <CenterLink to='/categories/deplacement'>
-        Voir tous les modes de transport
+      <CenterLink to='/empreinte-carbone/chauffage'>
+        Voir tous les modes de chauffage
       </CenterLink>
     </>
   )

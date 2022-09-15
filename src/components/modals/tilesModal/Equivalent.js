@@ -29,7 +29,7 @@ const Wrapper = styled.button`
 const Label = styled.span`
   display: block;
   font-size: ${(props) => (props.small ? 0.875 : 1)}rem;
-  text-align: center;
+  text-align: left;
   line-height: 1.2;
 `
 const Subtitle = styled.span`
@@ -53,7 +53,7 @@ export default function Option(props) {
         <Checkbox checked={props.checked} />
 
         <Label>
-          {formatName(props.equivalent.name.fr, 1)}{' '}
+          {formatName(props.equivalent.name.fr, 1, true)}{' '}
           {props.equivalent.subtitle && (
             <Subtitle>({formatName(props.equivalent.subtitle.fr, 1)})</Subtitle>
           )}

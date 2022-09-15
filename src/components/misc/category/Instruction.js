@@ -7,5 +7,9 @@ const Wrapper = styled.p`
   text-align: center;
 `
 export default function Instruction() {
-  return <Wrapper>Cliquez sur un équivalent pour voir le détail.</Wrapper>
+  return (
+    <Wrapper className={'noscreenshot'}>
+      Cliquez sur un équivalent pour voir le détail.
+    </Wrapper>
+  )
 }

@@ -71,6 +71,8 @@
     "end": -1.44533720771952,
     "default": true,
     "tile": true,
+    "title": "Impact climat d'un smartphone 5 pouces",
+    "description": "Découvrez le détail de l'empreinte carbone d'un smartphone 5 pouces : impact de ses matières premières, de son assemblage, son approvisionnement...",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -109,6 +111,8 @@
     "end": -10.2418849552206,
     "default": false,
     "tile": false,
+    "title": "Poids CO₂e ordinateur fixe (bureautique)",
+    "description": "Mesurez l'impact sur le climat d'un ordinateur fixe de bureautique et découvrez le détail de son empreinte carbone",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -147,6 +151,8 @@
     "end": -20.479642298922,
     "default": false,
     "tile": false,
+    "title": "Poids CO₂e ordinateur fixe (performance) ",
+    "description": "Découvrez le poids CO₂e d'un ordinateur fixe (performance), comprenant sa fabrication et sa distribution. Régulez ainsi votre empreinte carbone !",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -185,6 +191,8 @@
     "end": -5.36739103823929,
     "default": false,
     "tile": false,
+    "title": "Poids CO₂e d'un écran de 24 pouces",
+    "description": "Découvrez la valeurs exprimée en kg CO₂e émis par un écran de 24 pouces comprenant la fabrication et la distribution",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -221,6 +229,8 @@
     "end": -3.3718663396044,
     "default": false,
     "tile": false,
+    "title": "Empreinte carbone tablette détachable",
+    "description": "Le numérique a un impact important sur le climat ! Découvrez le poids CO₂e d'une tablette détachable ainsi que le détail de son empreinte sur le climat",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -259,6 +269,8 @@
     "end": -1.0530804367788,
     "default": false,
     "tile": false,
+    "title": "Impact climat d'une tablette classique",
+    "description": "Quel est l'impact sur le climat d'une tablette classique ? Découvrez son poids en CO₂e ainsi que son équivalence en litres d'eau, en km de voiture...",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -297,6 +309,8 @@
     "end": -0.724090952855313,
     "default": false,
     "tile": false,
+    "title": "Poids CO₂e d'une tablette mini",
+    "description": "Découvrez la valeur d'une tablette mini exprimée en kg CO₂e émis comprenant la fabrication et la distribution et régulez ainsi votre empreinte carbone",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -333,6 +347,8 @@
     "end": -10.3424901759157,
     "default": false,
     "tile": false,
+    "title": "Poids CO₂e d'une chaine hifi",
+    "description": "Découvrez le poids CO₂e d'une chaine hifi et comparez-le à plein d'autres produits pour mesurer son impact sur le climat",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -371,6 +387,8 @@
     "end": -1.71514674850865,
     "default": false,
     "tile": false,
+    "title": "Impact sur le climat d'une liseuse",
+    "description": "Saviez-vous qu'une liseuse avait un impact sur le climat ? Découvrez le poids CO₂e d'une liseuse non rétro-éclairé grâce à Mon Convertisseur CO2",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -409,6 +427,8 @@
     "end": -8.69420838210626,
     "default": true,
     "tile": false,
+    "title": "Poids CO₂e d'une télévision",
+    "description": "Quel est l'empreinte carbone d'une télévision 40-49 pouces ? Découvrez son poids carbone et son équivalence avec des ordinateurs et smartphones",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -445,6 +465,8 @@
     "end": -5.78881336720088,
     "default": true,
     "tile": false,
+    "title": "Poids CO₂e d'un ordinateur portable",
+    "description": "Quel est l'empreinte carbone d'un ordinateur portable ? Découvrez son poids en CO₂e et mesurez ainsi votre impact sur le climat",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -483,6 +505,8 @@
     "end": -15.609276,
     "default": true,
     "tile": false,
+    "title": "Poids CO₂e ordinateur fixe avec écran",
+    "description": "Quel est l'empreinte carbone d'un ordinateur fixe avec écran ? Mon Convertisseur CO2 vous permet de mesurer votre impact sur le climat !",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
 
@@ -520,6 +544,8 @@
     "end": 0.0106943300908481,
     "default": true,
     "tile": false,
+    "title": "Impact climat d'une montre connectée",
+    "description": "Découvrez l'impact sur le climat d'une montre connectée et comparez son poids CO₂e à d'autres produits comme un ordinateur, un smartphone...",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -556,6 +582,8 @@
     "end": -1.22372678556011,
     "default": false,
     "tile": false,
+    "title": "",
+    "description": "",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -592,6 +620,8 @@
     "end": -11.166985067359,
     "default": false,
     "tile": false,
+    "title": "Empreinte carbone d'un home cinema",
+    "description": "Avec Mon Convertisseur CO2, découvrez l'impact sur le climat d'un home cinéma avec son poids en CO₂e comprenant sa fabrication et sa distribution",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -627,6 +657,8 @@
     "end": -4.71436019956684,
     "default": false,
     "tile": false,
+    "title": "Empreinte carbone d'une barre de son ",
+    "description": "Votre bar de son a un impact sur le climat : découvrez son poids en CO₂e et comparez-le à d'autres produits numériques",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -664,6 +696,8 @@
     "end": -7.33144459609132,
     "default": false,
     "tile": false,
+    "title": "Poids CO₂e d'un modem (fibre)",
+    "description": "Découvrez le poids CO₂e d'un modem (fibre) et comparez-le aux émissions de litres d'eau, de km en voiture, de repas avec du boeuf...",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -699,6 +733,8 @@
     "end": -0.587240636962036,
     "default": false,
     "tile": false,
+    "title": "Impact climat d'une enceinte bluetooth",
+    "description": "Découvrez l'impact d'une enceinte bluetooth avec Mon Convertisseur CO2 ainsi que le détail de son empreinte carbone",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -735,6 +771,8 @@
     "end": -3.40627657865222,
     "default": true,
     "tile": false,
+    "title": "Impact climat d'une console de salon",
+    "description": "Saviez-vous que l'achat et l'utilisation d'une console de salon avait un impact sur le climat ? Découvrez son poids en CO₂e et les détails de son empreinte",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -771,6 +809,8 @@
     "end": -0.880643030943794,
     "default": false,
     "tile": false,
+    "title": "Impact climat d'une console portable",
+    "description": "Saviez-vous que l'achat et l'utilisation d'une console portable avait un impact sur le climat ? Découvrez son poids en CO₂e et les détails de son empreinte",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -809,6 +849,8 @@
     "end": -2.78661372432045,
     "default": false,
     "tile": false,
+    "title": "Empreinte carbone appareil photo (reflex)",
+    "description": "Quel est l'impact sur le climat d'un appareil photo de type reflex ? Découvrez son poids en CO₂e ainsi que le détail de son empreinte carbone",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -847,6 +889,8 @@
     "end": -2.20297495821832,
     "default": false,
     "tile": false,
+    "title": "Poids CO₂e d'un appareil photo (compact)",
+    "description": "Quel est l'impact sur le climat d'un appareil photo compact ? Découvrez son poids en CO₂e ainsi que son impact sur l'environnement",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -885,6 +929,8 @@
     "end": -1.5110767449382,
     "default": true,
     "tile": false,
+    "title": "Empreinte carbone d'une imprimante",
+    "description": "Quelles sont les émissions CO₂e d'une imprimante et à quoi correspondent-elles ? Découvrez ces informations avec Mon Convertisseur CO2",
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }
 ]

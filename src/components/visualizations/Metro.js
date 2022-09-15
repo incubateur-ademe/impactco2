@@ -63,7 +63,7 @@ export default function Metro() {
         <br />
         en métro
       </Small>
-      <CenterLink to='/categories/deplacement'>
+      <CenterLink to='/empreinte-carbone/transport'>
         Voir tous les modes de transport
       </CenterLink>
     </>

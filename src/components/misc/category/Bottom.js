@@ -9,9 +9,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1.5rem;
 `
 const Disclaimer = styled.p`
-  max-width: 23rem;
+  max-width: 34rem;
   font-size: 0.875rem;
   text-align: center;
 `
@@ -25,9 +26,10 @@ export default function Bottom(props) {
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        émis {props.category?.include}.
+        émis {props.category?.include}
       </Disclaimer>
       <Button
+        className={'noscreenshot'}
         onClick={() => {
           if (!props.iframe) {
             alert('Bientôt disponible')

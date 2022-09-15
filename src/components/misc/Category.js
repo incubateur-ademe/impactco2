@@ -25,12 +25,12 @@ export default function CategoryList(props) {
           .filter((equivalent) => equivalent.default || displayAll)
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
-            title: `1 ${formatName(equivalent.name.fr)}`,
+            title: `${formatName(equivalent.name.fr, 1, true)}`,
             subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
             usage: formatUsage(equivalent),
-            to: `/categories/${
+            to: `/empreinte-carbone/${
               categories.find((category) => category.id === equivalent.category)
                 .slug
             }/${equivalent.slug}`,
@@ -50,7 +50,7 @@ export default function CategoryList(props) {
     <Section>
       <Section.Content>
         <Wrapper name={props.category.name.fr} slug={props.category.slug}>
-          <Top>
+          <Top className='noscreenshot'>
             <Instruction />
             <Top.Checkboxes
               visible={equivalents
