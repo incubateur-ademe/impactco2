@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
 
   useEffect(() => {
+    console.log('init tracking')
     init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
   }, [])
 
