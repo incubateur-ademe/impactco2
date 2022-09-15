@@ -90,7 +90,7 @@ export default function Distance(props) {
             value: formatTotal(equivalent),
             season: equivalent.months.includes(props.month.index),
             months: equivalent.months,
-            to: `/categories/${
+            to: `/empreinte-carbone/${
               categories.find((category) => category.id === equivalent.category)
                 .slug
             }/${equivalent.slug}`,
