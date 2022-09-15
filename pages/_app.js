@@ -15,7 +15,9 @@ function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
 
   useEffect(() => {
-    init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
+    if (process.env.NODE_ENV === 'production') {
+      init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
+    }
   }, [])
 
   return (

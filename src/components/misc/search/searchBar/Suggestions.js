@@ -95,19 +95,23 @@ export default function Suggestions(props) {
               <br />
               Essayez de naviguer par catégorie
             </NotFound>
-            {props.categories.map((category, index) => (
-              <Suggestion
-                current={index === props.current}
-                key={category.slug}
-                onClick={() => props.handleSuggestionClick({ item: category })}
-                onMouseDown={(e) => e.preventDefault()}
-              >
-                <Name>
-                  <Emoji>{category.emoji}</Emoji>
-                  <span>{category.name.fr}</span>
-                </Name>
-              </Suggestion>
-            ))}
+            {props.categories
+              .filter((category) => category.display)
+              .map((category, index) => (
+                <Suggestion
+                  current={index === props.current}
+                  key={category.slug}
+                  onClick={() =>
+                    props.handleSuggestionClick({ item: category })
+                  }
+                  onMouseDown={(e) => e.preventDefault()}
+                >
+                  <Name>
+                    <Emoji>{category.emoji}</Emoji>
+                    <span>{category.name.fr}</span>
+                  </Name>
+                </Suggestion>
+              ))}
           </>
         ))}
     </Wrapper>
