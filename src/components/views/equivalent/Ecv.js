@@ -61,7 +61,9 @@ export default function Ecv(props) {
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
             Détail de l&apos;empreinte de 1{' '}
-            {props.equivalent.unit && <>{props.equivalent.unit.fr} </>}
+            {props.equivalent.unit && (
+              <>{formatName(props.equivalent.unit.fr)} </>
+            )}
             {formatName(props.equivalent.name.fr, 1)} (
             {formatNumberPrecision(formatTotal(props.equivalent, usage))}{' '}
             <span>

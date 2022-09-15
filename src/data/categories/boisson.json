@@ -30,10 +30,27 @@
     "slug": "eauenbouteille",
     "emoji": "💧",
     "category": 3,
-    "total": 0.453,
+    "ecv": [
+      {
+        "value": 0.0052740241,
+        "id": 30
+      },
+      {
+        "value": 0.3314434,
+        "id": 32
+      },
+      {
+        "value": 0.10355029,
+        "id": 33
+      },
+      {
+        "value": 0.012364537,
+        "id": 34
+      }
+    ],
     "default": true,
     "tile": true,
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=eau",
+    "source": "https://agribalyse.ademe.fr/app/aliments/18430#Eau_embouteill%C3%A9e_de_source",
     "title": "Poids CO₂e d'un litre d'eau en bouteille",
     "description": "Connaître l'impact environnemental d'un litre d'eau en bouteille, comprenant la fabrication, la distribution et la consommation"
   },
@@ -49,10 +66,35 @@
     "slug": "soda",
     "emoji": "🥤",
     "category": 3,
-    "total": 0.57,
+    "ecv": [
+      {
+        "value": 0.078511019,
+        "id": 30
+      },
+      {
+        "value": 0.030061611,
+        "id": 31
+      },
+      {
+        "value": 0.22265825,
+        "id": 32
+      },
+      {
+        "value": 0.20722133,
+        "id": 33
+      },
+      {
+        "value": 0.028932423,
+        "id": 34
+      },
+      {
+        "value": 0.0047993021,
+        "id": 35
+      }
+    ],
     "default": true,
     "tile": false,
-    "source": "https://agribalyse.ademe.fr/",
+    "source": "https://agribalyse.ademe.fr/app/aliments/18026#Boisson_gazeuse,_sans_jus_de_fruit,_sucr%C3%A9e",
     "title": "Impact sur le climat d'un litre de soda",
     "description": "Connaître l'impact écologique, calculé en kgCO₂e, d'un litre de soda, de la fabrication à la consommation"
   },
@@ -68,10 +110,35 @@
     "slug": "biere",
     "emoji": "🍺",
     "category": 3,
-    "total": 1.09,
+    "ecv": [
+      {
+        "value": 0.044404353,
+        "id": 30
+      },
+      {
+        "value": 0.25081748,
+        "id": 31
+      },
+      {
+        "value": 0.49690685,
+        "id": 32
+      },
+      {
+        "value": 0.268586,
+        "id": 33
+      },
+      {
+        "value": 0.028932423,
+        "id": 34
+      },
+      {
+        "value": 0.0047993021,
+        "id": 35
+      }
+    ],
     "default": true,
     "tile": false,
-    "source": "https://agribalyse.ademe.fr/",
+    "source": "https://agribalyse.ademe.fr/app/aliments/5001#Bi%C3%A8re_%22coeur_de_march%C3%A9%22_(4-5%C2%B0_alcool)",
     "title": "Impact sur le climat d'un litre de bière",
     "description": "Voici le poids en kgCO₂e d'un litre de bière et comparez le à l'impact sur le climat  d'un litre d'eau en bouteille ou d'un déplacement en voiture"
   },
@@ -87,7 +154,32 @@
     "slug": "vin",
     "emoji": "🍷",
     "category": 3,
-    "total": 1.13,
+    "ecv": [
+      {
+        "value": 0.22376566,
+        "id": 30
+      },
+      {
+        "value": 0.10399603,
+        "id": 31
+      },
+      {
+        "value": 0.58993207,
+        "id": 32
+      },
+      {
+        "value": 0.1915867,
+        "id": 33
+      },
+      {
+        "value": 0.012389304,
+        "id": 34
+      },
+      {
+        "value": 0.0047993021,
+        "id": 35
+      }
+    ],
     "default": true,
     "tile": false,
     "source": "https://agribalyse.ademe.fr/",
@@ -109,7 +201,28 @@
     "slug": "laitdevache",
     "emoji": "🥛",
     "category": 3,
-    "total": 1.53,
+    "ecv": [
+      {
+        "value": 1.1888463,
+        "id": 30
+      },
+      {
+        "value": 0.01061493,
+        "id": 31
+      },
+      {
+        "value": 0.17188731,
+        "id": 32
+      },
+      {
+        "value": 0.10315961,
+        "id": 33
+      },
+      {
+        "value": 0.012078628,
+        "id": 34
+      }
+    ],
     "default": true,
     "tile": false,
     "source": "https://agribalyse.ademe.fr/",
@@ -136,5 +249,91 @@
     "source": "https://agribalyse.ademe.fr/",
     "title": "L'empreinte carbone d'un litre de lait",
     "description": "Découvrez le poids en kgCO₂e ou CO₂e d'un litre de lait de vache par rapport au lait de soja et ainsi son impact écologique"
+  },
+  {
+    "name": {
+      "fr": "Thé"
+    },
+    "unit": {
+      "fr": "Litre[s] de "
+    },
+    "slug": "thé",
+    "emoji": "🫖",
+    "category": 3,
+    "ecv": [
+      {
+        "value": 0.038005953,
+        "id": 30
+      },
+      {
+        "value": 0.0026754522,
+        "id": 32
+      },
+      {
+        "value": 0.0024293426,
+        "id": 33
+      },
+      {
+        "value": 0.00012657062,
+        "id": 34
+      },
+      {
+        "value": 0.00820303408,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://agribalyse.ademe.fr/app/aliments/18020#Th%C3%A9_infus%C3%A9,_non_sucr%C3%A9",
+    "hypothesis": {
+      "fr": "Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg)."
+    }
+  },
+  {
+    "name": {
+      "fr": "Café"
+    },
+    "unit": {
+      "fr": "Litre[s] de "
+    },
+    "slug": "cafe",
+    "emoji": "☕️",
+    "category": 3,
+    "ecv": [
+      {
+        "value": 0.50941142,
+        "id": 30
+      },
+      {
+        "value": 0.014778142,
+        "id": 31
+      },
+      {
+        "value": 0.00576222432,
+        "id": 32
+      },
+      {
+        "value": 0.017587285,
+        "id": 33
+      },
+      {
+        "value": 0.000738286432,
+        "id": 34
+      },
+      {
+        "value": 0.00823889548,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "title": "",
+    "description": "",
+    "source": "https://agribalyse.ademe.fr/app/aliments/18004#Caf%C3%A9,_non_instantan%C3%A9,_non_sucr%C3%A9,_pr%C3%AAt_%C3%A0_boire",
+    "hypothesis": {
+      "fr": "Nous prenons pour hypothèse une tasse de 250ml (simplifié ici en 250mg)."
+    }
   }
 ]
