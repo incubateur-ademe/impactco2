@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 
-import useDebounce from 'hooks/useDebounce.js'
 import DataContext from 'components/providers/DataProvider'
 import TextInput from './searchBar/TextInput'
 import Suggestions from './searchBar/Suggestions'
@@ -36,8 +35,6 @@ const Wrapper = styled.form`
 export default function SearchBar(props) {
   const { equivalents, categories } = useContext(DataContext)
   const [search, setSearch] = useState('')
-
-  useDebounce(search, 300)
 
   const [results, setResults] = useState([])
   const [fuse, setFuse] = useState(null)
