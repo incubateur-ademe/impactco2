@@ -71,10 +71,11 @@ export default function TilesModal() {
       fuse && search.length > 0
         ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
         : equivalents
-            .sort((a, b) => (a.slug > b.slug ? 1 : -1))
             .map((equivalent) => ({ item: equivalent }))
+            .sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
     )
   }, [search, fuse, equivalents])
+
   return (
     <StyledModal open={open} setOpen={setOpen}>
       <Title>Ajouter ou enlever des équivalents</Title>
