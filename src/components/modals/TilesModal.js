@@ -36,26 +36,28 @@ export default function TilesModal() {
       </Text>
       {open && (
         <Equivalents>
-          {equivalents.map((equivalent) => (
-            <Equivalent
-              key={equivalent.slug}
-              equivalent={equivalent}
-              checked={tiles.find((tile) => tile === equivalent)}
-              setChecked={(checked) => {
-                setTiles((prevTiles) =>
-                  checked
-                    ? [...prevTiles, equivalent]
-                    : prevTiles.filter((tile) => tile.id !== equivalent.slug)
-                )
-                window?._paq?.push([
-                  'trackEvent',
-                  'Interaction',
-                  'Ajouter tuile',
-                  equivalent.slug,
-                ])
-              }}
-            />
-          ))}
+          {equivalents
+            .sort((a, b) => (a.slug > b.slug ? 1 : -1))
+            .map((equivalent) => (
+              <Equivalent
+                key={equivalent.slug}
+                equivalent={equivalent}
+                checked={tiles.find((tile) => tile === equivalent)}
+                setChecked={(checked) => {
+                  setTiles((prevTiles) =>
+                    checked
+                      ? [...prevTiles, equivalent]
+                      : prevTiles.filter((tile) => tile.id !== equivalent.slug)
+                  )
+                  window?._paq?.push([
+                    'trackEvent',
+                    'Interaction',
+                    'Ajouter tuile',
+                    equivalent.slug,
+                  ])
+                }}
+              />
+            ))}
         </Equivalents>
       )}
       <StyledButtonWrapper>
