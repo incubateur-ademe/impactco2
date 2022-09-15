@@ -67,7 +67,6 @@ export default function TilesModal() {
     }
   }, [equivalents])
   useEffect(() => {
-    //if (fuse && search.length > 1) {
     setResults(
       fuse && search.length > 0
         ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
@@ -75,7 +74,7 @@ export default function TilesModal() {
             .sort((a, b) => (a.slug > b.slug ? 1 : -1))
             .map((equivalent) => ({ item: equivalent }))
     )
-  }, [search, fuse])
+  }, [search, fuse, equivalents])
   return (
     <StyledModal open={open} setOpen={setOpen}>
       <Title>Ajouter ou enlever des équivalents</Title>
