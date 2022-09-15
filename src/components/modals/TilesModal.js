@@ -77,7 +77,7 @@ export default function TilesModal() {
     )
   }, [search, fuse])
   return (
-    <StyledModal open={true} setOpen={setOpen}>
+    <StyledModal open={open} setOpen={setOpen}>
       <Title>Ajouter ou enlever des équivalents</Title>
       <Text>
         Sélectionnez (ou désélectionnez) des équivalents pour créer votre
@@ -88,7 +88,7 @@ export default function TilesModal() {
         onChange={({ value }) => setSearch(value)}
         placeholder={'Entrez un objet, un geste...'}
       />
-      {true && (
+      {open && (
         <Equivalents>
           {results.map(({ item }) => (
             <Equivalent
