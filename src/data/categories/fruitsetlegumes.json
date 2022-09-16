@@ -4,7 +4,7 @@
       "fr": "Fraise"
     },
     "slug": "fraise",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🍓",
     "category": 9,
     "ecv": [
@@ -35,7 +35,7 @@
       "fr": "Pomme"
     },
     "slug": "pomme",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🍏",
     "category": 9,
     "ecv": [
@@ -66,7 +66,7 @@
       "fr": "Orange"
     },
     "slug": "orange",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
@@ -97,7 +97,7 @@
       "fr": "Citron"
     },
     "slug": "citron",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🍋",
     "category": 9,
     "ecv": [
@@ -128,7 +128,7 @@
       "fr": "Ail"
     },
     "slug": "ail",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -159,7 +159,7 @@
       "fr": "Artichaut"
     },
     "slug": "artichaut",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -190,7 +190,7 @@
       "fr": "Asperge"
     },
     "slug": "asperge",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -221,7 +221,7 @@
       "fr": "Betterave"
     },
     "slug": "betterave",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🍠",
     "category": 9,
     "ecv": [
@@ -252,7 +252,7 @@
       "fr": "Blette"
     },
     "slug": "blette",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -283,7 +283,7 @@
       "fr": "Carotte"
     },
     "slug": "carotte",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🥕",
     "category": 9,
     "ecv": [
@@ -314,7 +314,7 @@
       "fr": "Céleri"
     },
     "slug": "celeri",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -345,7 +345,7 @@
       "fr": "Champignon de Paris"
     },
     "slug": "champignondeparis",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🍄",
     "category": 9,
     "ecv": [
@@ -376,7 +376,7 @@
       "fr": "Chou"
     },
     "slug": "chou",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🥬",
     "category": 9,
     "ecv": [
@@ -407,7 +407,7 @@
       "fr": "Chou de Bruxelles"
     },
     "slug": "choudebruxelles",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🥬",
     "category": 9,
     "ecv": [
@@ -438,7 +438,7 @@
       "fr": "Chou-fleur"
     },
     "slug": "choufleur",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🥦",
     "category": 9,
     "ecv": [
@@ -469,7 +469,7 @@
       "fr": "Concombre"
     },
     "slug": "concombre",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🥒",
     "category": 9,
     "ecv": [
@@ -500,7 +500,7 @@
       "fr": "Courge"
     },
     "slug": "courge",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -531,7 +531,7 @@
       "fr": "Courgette"
     },
     "slug": "courgette",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -562,7 +562,7 @@
       "fr": "Cresson"
     },
     "slug": "cresson",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -593,7 +593,7 @@
       "fr": "Échalote"
     },
     "slug": "echalote",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -624,7 +624,7 @@
       "fr": "Endive"
     },
     "slug": "endive",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -655,7 +655,7 @@
       "fr": "Épinard"
     },
     "slug": "epinard",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -689,7 +689,7 @@
       "fr": "Importée par avion"
     },
     "slug": "mangue",
-    "synonyms": ["manger"],
+    "synonyms": ["manger, fruit"],
     "emoji": "🥭",
     "category": 9,
     "ecv": [
@@ -714,5 +714,1710 @@
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     "source": "https://agribalyse.ademe.fr/app/aliments/13025_1#Mangue_import%C3%A9e_par_avion,_pulpe,_crue"
+  },
+  {
+    "name": {
+      "fr": "Fenouil"
+    },
+    "slug": "Fenouil",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0.53978325,
+        "id": 30
+      },
+      {
+        "value": 0.28395814,
+        "id": 33
+      },
+      {
+        "value": 0.048350192,
+        "id": 34
+      },
+      {
+        "value": 0.099564814,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [3, 5, 6, 7, 8, 9, 10],
+    "source": "https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru"
+  },
+  {
+    "name": {
+      "fr": "Haricot vert"
+    },
+    "slug": "haricotvert",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0.14847666,
+        "id": 30
+      },
+      {
+        "value": 0.1704366,
+        "id": 33
+      },
+      {
+        "value": 0.057494804,
+        "id": 34
+      },
+      {
+        "value": 0.10436412,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7, 8, 9],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Laitue"
+    },
+    "slug": "laitue",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0.31309977,
+        "id": 30
+      },
+      {
+        "value": 0.2272488,
+        "id": 33
+      },
+      {
+        "value": 0.076659738,
+        "id": 34
+      },
+      {
+        "value": 0.26550617,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [4, 5, 6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Mâche"
+    },
+    "slug": "mache",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🥗",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0.31309977,
+        "id": 30
+      },
+      {
+        "value": 0.2272488,
+        "id": 33
+      },
+      {
+        "value": 0.076659738,
+        "id": 34
+      },
+      {
+        "value": 0.26550617,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Navet"
+    },
+    "slug": "navet",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0.087677241,
+        "id": 30
+      },
+      {
+        "value": 0.1704366,
+        "id": 33
+      },
+      {
+        "value": 0.029228063,
+        "id": 34
+      },
+      {
+        "value": 0.099564814,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Maïs"
+    },
+    "slug": "mais",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌽",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0.19397987,
+        "id": 30
+      },
+      {
+        "value": 0.26940995,
+        "id": 32
+      },
+      {
+        "value": 0.1616359,
+        "id": 33
+      },
+      {
+        "value": 0.030159429,
+        "id": 34
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Oignon"
+    },
+    "slug": "oignon",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 8, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Panais"
+    },
+    "slug": "panais",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Petit pois"
+    },
+    "slug": "petitpois",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [4, 5, 6],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Poireau"
+    },
+    "slug": "poireau",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 8, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Poivron"
+    },
+    "slug": "Poivron",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌶️",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Potiron"
+    },
+    "slug": "potiron",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🎃",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 8, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Radis"
+    },
+    "slug": "radis",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [2, 3, 4, 5],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Salsifis"
+    },
+    "slug": "salsifis",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Topinambour"
+    },
+    "slug": "topinambour",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Cassis"
+    },
+    "slug": "cassis",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍇",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Châtaigne"
+    },
+    "slug": "chataigne",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌰",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [9, 10],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Clémentine"
+    },
+    "slug": "clementine",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍊",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Pamplemousse"
+    },
+    "slug": "pamplemousse",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍊",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [1, 2, 3, 4, 5],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Coing"
+    },
+    "slug": "coing",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [9],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Figue"
+    },
+    "slug": "figue",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🥭",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [6, 7, 8, 9],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Groseille"
+    },
+    "slug": "groseille",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Kiwi"
+    },
+    "slug": "kiwi",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Mandarine"
+    },
+    "slug": "mandarine",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍊",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Melon"
+    },
+    "slug": "Melon",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍈",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Mirabelle"
+    },
+    "slug": "mirabelle",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Mûre"
+    },
+    "slug": "mure",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍓",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Nectarine"
+    },
+    "slug": "nectarine",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍊",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Myrtille"
+    },
+    "slug": "myrtille",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🫐",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Noisette"
+    },
+    "slug": "noisette",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌰",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [8, 9, 10],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Noix"
+    },
+    "slug": "noix",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌰",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [8, 9],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Prune"
+    },
+    "slug": "prune",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🫐",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Quetsche"
+    },
+    "slug": "quetsche",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [7, 8, 9],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Fenouil"
+    },
+    "slug": "Fenouil",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [3, 5, 6, 7, 8, 9, 10],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Reine Claude"
+    },
+    "slug": "reineclaude",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍈",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Rhubarbe"
+    },
+    "slug": "rhubarbe",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [3, 4, 5],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Pêche"
+    },
+    "slug": "peche",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍑",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Cerise"
+    },
+    "slug": "cerise",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍒",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Abricot"
+    },
+    "slug": "abricot",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍑",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Framboise"
+    },
+    "slug": "framboise",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍓",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Poire"
+    },
+    "slug": "poire",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍐",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 7, 8, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Raisin"
+    },
+    "slug": "raisin",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍇",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [8, 9],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Aubergine"
+    },
+    "slug": "aubergine",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍆",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Brocoli"
+    },
+    "slug": "brocoli",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🥦",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [8, 9, 10],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Tomate"
+    },
+    "slug": "tomate",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍅",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7, 8],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Ananas"
+    },
+    "slug": "ananas",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍍",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Banane"
+    },
+    "slug": "banane",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Avocat"
+    },
+    "slug": "avocat",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🥑",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Carambole"
+    },
+    "slug": "carambole",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Datte"
+    },
+    "slug": "datte",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Fruit de la passion"
+    },
+    "slug": "fruitdelapassion",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🌱",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Grenade"
+    },
+    "slug": "grenade",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🥭",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Kaki"
+    },
+    "slug": "kaki",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍈",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 9, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Noix de coco"
+    },
+    "slug": "noixdecoco",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🥥",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [0, 1, 10, 11],
+    "source": ""
+  },
+  {
+    "name": {
+      "fr": "Pastèque"
+    },
+    "slug": "pasteque",
+    "synonyms": ["manger, fruit"],
+    "emoji": "🍉",
+    "category": 9,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 30
+      },
+      {
+        "value": 14,
+        "id": 33
+      },
+      {
+        "value": 0,
+        "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [5, 6, 7, 8],
+    "source": ""
   }
 ]
