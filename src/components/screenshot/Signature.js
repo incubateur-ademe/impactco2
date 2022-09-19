@@ -12,6 +12,12 @@ const Wrapper = styled.div`
   transform: translateX(-50%);
   font-size: 0.875rem;
   pointer-events: none;
+
+  ${(props) => props.theme.mq.small} {
+    left: auto;
+    right: 1rem;
+    transform: none;
+  }
 `
 const StyledLogo = styled(Logo)`
   position: absolute;
@@ -28,6 +34,10 @@ const StyledDatagir = styled(Datagir)`
   height: 2rem;
   margin: 0;
   pointer-events: none;
+
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 export default function Signature() {
   return (

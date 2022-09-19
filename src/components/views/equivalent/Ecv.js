@@ -13,6 +13,7 @@ import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
 import DurationSelector from './ecv/DurationSelector'
+import Detail from './ecv/Detail'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -22,6 +23,7 @@ export const Title = styled.h3`
   text-align: center;
 `
 const StyledLegend = styled(Legend)``
+
 export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
 
@@ -80,6 +82,11 @@ export default function Ecv(props) {
           {usage ? (
             <DurationSelector duration={usage} setDuration={setUsage} />
           ) : null}
+
+          <Detail
+            ecv={ecvToDisplay}
+            total={formatTotal(props.equivalent, usage)}
+          />
         </ScreenshotWrapper>
       </Section.Content>
     </StyledSection>
