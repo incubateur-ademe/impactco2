@@ -67,7 +67,7 @@ export default function Detail(props) {
             {props.ecv
               .sort((a, b) => (a.value < b.value ? 1 : -1))
               .map((item) => (
-                <Item>
+                <Item key={item.label}>
                   <Label>{item.label}</Label>
                   <Value>{formatNumberPrecision(item.value)}</Value>
                   <Percent>{formatPercent(item.value, props.total)} %</Percent>
