@@ -14,6 +14,10 @@ const SizerWrapper = styled.div`
 const Sizer = styled.div`
   position: relative;
   margin: -1.5rem;
+
+  ${(props) => props.theme.mq.medium} {
+    margin: -0.75rem;
+  }
 `
 const Content = styled.div`
   background-color: ${(props) =>

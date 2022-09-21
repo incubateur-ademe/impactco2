@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.p`
+  margin: 0;
   font-size: 0.875rem;
   font-weight: 300;
   text-align: center;
