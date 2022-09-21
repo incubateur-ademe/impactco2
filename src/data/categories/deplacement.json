@@ -1,12 +1,7 @@
 [
   {
-    "name": {
-      "fr": "Avion"
-    },
-
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Avion",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voler", "voyager"],
     "slug": "avion",
     "type": "plane",
@@ -88,20 +83,15 @@
       "min": 400
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion",
-    "hypothesis": {
-      "fr": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>126 gCO2e/km/personne sans l'impact des traînées,<br/>230 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 3 500 km, >220 sièges :<br/>97,7 gCO2e/km/personne sans l'impact des traînées,<br/>178,4 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, >220 sièges :<br/>83,06 gCO2e/km/personne sans l'impact des traînées,<br/>151,66 gCO2e/km/personne avec l'impact des traînées"
-    },
-    "title": "Calcul empreinte carbone voyage avion",
-    "description": "Combien de CO₂e émet un kilomètre en avion ? Mon Convertisseur CO₂e permet de mesurer l'impact de vos trajets  en avion sur le climat"
+    "hypothesis": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>126 gCO2e/km/personne sans l'impact des traînées,<br/>230 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 3 500 km, >220 sièges :<br/>97,7 gCO2e/km/personne sans l'impact des traînées,<br/>178,4 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, >220 sièges :<br/>83,06 gCO2e/km/personne sans l'impact des traînées,<br/>151,66 gCO2e/km/personne avec l'impact des traînées",
+    "meta": {
+      "title": "Calcul empreinte carbone voyage avion",
+      "description": "Combien de CO₂e émet un kilomètre en avion ? Mon Convertisseur CO₂e permet de mesurer l'impact de vos trajets  en avion sur le climat"
+    }
   },
   {
-    "name": {
-      "fr": "TGV"
-    },
-
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "TGV",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
     "slug": "tgv",
 
@@ -124,17 +114,14 @@
       "min": 150
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv",
-    "title": "L'empreinte carbone d'un trajet en TGV",
-    "description": "Découvrez l'émission de CO₂e lors d'un voyage en TGV et comparez le à d'autres moyens de transport"
+    "meta": {
+      "title": "L'empreinte carbone d'un trajet en TGV",
+      "description": "Découvrez l'émission de CO₂e lors d'un voyage en TGV et comparez le à d'autres moyens de transport"
+    }
   },
   {
-    "name": {
-      "fr": "Intercités"
-    },
-
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Intercités",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
     "slug": "intercites",
 
@@ -157,19 +144,15 @@
       "min": 31
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=train",
-    "title": "L'empreinte carbone d'un trajet en intercités",
-    "description": "Découvrez l'émission de CO₂e lors d'un voyage en intercités et comparez le à d'autres moyens de transport"
+    "meta": {
+      "title": "L'empreinte carbone d'un trajet en intercités",
+      "description": "Découvrez l'émission de CO₂e lors d'un voyage en intercités et comparez le à d'autres moyens de transport"
+    }
   },
   {
-    "name": {
-      "fr": "Voiture"
-    },
-    "subtitle": {
-      "fr": "Moteur thermique"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Voiture",
+    "subtitle": "Moteur thermique",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voiturethermique",
     "carpool": true,
@@ -189,19 +172,15 @@
     "default": true,
     "tile": true,
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
-    "title": "Poids CO₂e d'une voiture thermique",
-    "description": "Connaître l'empreinte écologique d'un trajet avec une voiture à moteur thermique par rapport aux autres moyens de transport"
+    "meta": {
+      "title": "Poids CO₂e d'une voiture thermique",
+      "description": "Connaître l'empreinte écologique d'un trajet avec une voiture à moteur thermique par rapport aux autres moyens de transport"
+    }
   },
   {
-    "name": {
-      "fr": "Voiture"
-    },
-    "subtitle": {
-      "fr": "Moteur électrique"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Voiture",
+    "subtitle": "Moteur électrique",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voitureelectrique",
     "carpool": true,
@@ -222,16 +201,14 @@
     "default": true,
     "tile": false,
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
-    "title": "Poids CO₂e d'une voiture électrique ",
-    "description": "Découvrez l'émission de CO₂e lors d'un trajet en voiture électrique et comparez le à d'autres moyens de transport"
+    "meta": {
+      "title": "Poids CO₂e d'une voiture électrique ",
+      "description": "Découvrez l'émission de CO₂e lors d'un trajet en voiture électrique et comparez le à d'autres moyens de transport"
+    }
   },
   {
-    "name": {
-      "fr": "Autocar"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Autocar",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "autocar",
 
@@ -255,13 +232,13 @@
       "min": 16
     },
     "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?routier2.htm",
-    "title": "",
-    "description": "Découvrez l'émission de CO₂e lors d'un voyage en car et comparez le à d'autres moyens de transport"
+    "meta": {
+      "title": "",
+      "description": "Découvrez l'émission de CO₂e lors d'un voyage en car et comparez le à d'autres moyens de transport"
+    }
   },
   {
-    "name": {
-      "fr": "Vélo ou marche"
-    },
+    "name": "Vélo ou marche",
     "synonyms": [
       "transport",
       "déplacement",
@@ -281,16 +258,14 @@
     "display": {
       "max": 30
     },
-    "title": "",
-    "description": "Découvrez l'émission de CO₂e lors d'un voyage en vélo et comparez le à d'autres moyens de transport"
+    "meta": {
+      "title": "",
+      "description": "Découvrez l'émission de CO₂e lors d'un voyage en vélo et comparez le à d'autres moyens de transport"
+    }
   },
   {
-    "name": {
-      "fr": "Vélo (ou trottinette) à assistance électrique"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Vélo (ou trottinette) à assistance électrique",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voyager", "pedaler"],
     "slug": "veloelectrique",
 
@@ -314,19 +289,15 @@
       "max": 30
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=velo",
-    "title": "",
-    "description": "Découvrez l'impact CO₂e d'un trajet en velo ou trotinette électrique et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
+    "meta": {
+      "title": "",
+      "description": "Découvrez l'impact CO₂e d'un trajet en velo ou trotinette électrique et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
+    }
   },
   {
-    "name": {
-      "fr": "Bus"
-    },
-    "subtitle": {
-      "fr": "Moteur thermique"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Bus",
+    "subtitle": "Moteur thermique",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busthermique",
 
@@ -349,16 +320,14 @@
       "max": 15
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
-    "title": "Émission de CO₂e lors d'un trajet en bus",
-    "description": "Découvrez l'impact CO₂e d'un trajet en bus et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
+    "meta": {
+      "title": "Émission de CO₂e lors d'un trajet en bus",
+      "description": "Découvrez l'impact CO₂e d'un trajet en bus et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
+    }
   },
   {
-    "name": {
-      "fr": "Tramway"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Tramway",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "tramway",
 
@@ -381,16 +350,14 @@
       "max": 12
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tramway",
-    "title": "L'empreinte carbone d'un trajet en tramway",
-    "description": "Découvrez l'impact CO₂e d'un trajet en tramway et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
+    "meta": {
+      "title": "L'empreinte carbone d'un trajet en tramway",
+      "description": "Découvrez l'impact CO₂e d'un trajet en tramway et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements."
+    }
   },
   {
-    "name": {
-      "fr": "Métro"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Métro",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "rail"],
     "slug": "metro",
 
@@ -413,16 +380,14 @@
       "max": 12
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro",
-    "title": "Empreinte carbone d'un trajet en métro",
-    "description": "Mon Convertisseur CO₂e vous indique l'impact écologique d'un trajet en métro par rapport à d'autres moyens de transport"
+    "meta": {
+      "title": "Empreinte carbone d'un trajet en métro",
+      "description": "Mon Convertisseur CO₂e vous indique l'impact écologique d'un trajet en métro par rapport à d'autres moyens de transport"
+    }
   },
   {
-    "name": {
-      "fr": "Scooter ou moto légère"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Scooter ou moto légère",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "scooter",
 
@@ -445,16 +410,14 @@
       "max": 50
     },
     "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=moto",
-    "title": "",
-    "description": "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    "meta": {
+      "title": "",
+      "description": "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    }
   },
   {
-    "name": {
-      "fr": "Moto"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Moto",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "moto",
     "type": "car",
@@ -476,16 +439,14 @@
       "min": 51
     },
     "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=moto",
-    "title": "",
-    "description": "Découvrez l'impact CO₂e d'un trajet en moto et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    "meta": {
+      "title": "",
+      "description": "Découvrez l'impact CO₂e d'un trajet en moto et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    }
   },
   {
-    "name": {
-      "fr": "RER ou Transilien"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "RER ou Transilien",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
     "slug": "rer",
 
@@ -509,16 +470,14 @@
       "max": 100
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter",
-    "title": "L'empreinte carbone d'un trajet en RER",
-    "description": "Découvrez l'impact CO₂e d'un trajet en RER et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    "meta": {
+      "title": "L'empreinte carbone d'un trajet en RER",
+      "description": "Découvrez l'impact CO₂e d'un trajet en RER et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    }
   },
   {
-    "name": {
-      "fr": "TER"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "TER",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
     "slug": "ter",
 
@@ -541,19 +500,15 @@
       "max": 150
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter",
-    "title": "L'empreinte carbone d'un trajet en TER",
-    "description": "Découvrez l'impact CO₂e d'un trajet en TER et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    "meta": {
+      "title": "L'empreinte carbone d'un trajet en TER",
+      "description": "Découvrez l'impact CO₂e d'un trajet en TER et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    }
   },
   {
-    "name": {
-      "fr": "Bus"
-    },
-    "subtitle": {
-      "fr": "Moteur électrique"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Bus",
+    "subtitle": "Moteur électrique",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "buselectrique",
 
@@ -577,19 +532,15 @@
       "max": 15
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
-    "title": "Émission de CO₂e lors d'un trajet en bus électrique",
-    "description": "Découvrez l'impact CO₂e d'un trajet en bus électrique et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    "meta": {
+      "title": "Émission de CO₂e lors d'un trajet en bus électrique",
+      "description": "Découvrez l'impact CO₂e d'un trajet en bus électrique et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    }
   },
   {
-    "name": {
-      "fr": "Bus"
-    },
-    "subtitle": {
-      "fr": "GNV"
-    },
-    "unit": {
-      "fr": "km en "
-    },
+    "name": "Bus",
+    "subtitle": "GNV",
+    "unit": "km en ",
     "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busgnv",
     "type": "car",
@@ -612,7 +563,9 @@
       "max": 15
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
-    "title": "Émission de CO₂e lors d'un trajet en bus GNV",
-    "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    "meta": {
+      "title": "Émission de CO₂e lors d'un trajet en bus GNV",
+      "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Mon Convertisseur CO₂e choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    }
   }
 ]

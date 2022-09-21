@@ -34,7 +34,7 @@ export default function Menu() {
                 to={`/empreinte-carbone/${category.slug}`}
                 current={router.pathname.includes(category.slug)}
               >
-                <StyledEmoji>{category.emoji}</StyledEmoji> {category.name.fr}
+                <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
               </Dropdown.Item>
             ))}
       </Dropdown>

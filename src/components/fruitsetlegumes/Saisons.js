@@ -28,7 +28,7 @@ export default function Distance(props) {
           .filter((equivalent) => equivalent.months.includes(props.month.index))
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
-            title: `1 kg de ${formatName(equivalent.name.fr)}`,
+            title: `1 kg de ${formatName(equivalent.name)}`,
             subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),

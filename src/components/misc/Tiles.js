@@ -70,7 +70,7 @@ export default function Tiles(props) {
       tiles.filter((tile) =>
         tiles.find(
           (otherTile) =>
-            otherTile.name.fr === tile.name.fr && otherTile.slug !== tile.slug
+            otherTile.name === tile.name && otherTile.slug !== tile.slug
         )
       ).length
     )

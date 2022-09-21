@@ -31,12 +31,12 @@ export default function Categories() {
                   'trackEvent',
                   'Interaction',
                   'Suggestion',
-                  category.name.fr,
+                  category.name,
                 ])
               }
             >
               <Emoji>{category.emoji}</Emoji>
-              {category.name.fr}
+              {category.name}
             </Button>
           ))}
       </Button.Wrapper>

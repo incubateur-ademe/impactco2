@@ -222,13 +222,13 @@ export default function Tile(props) {
         </Number>
         <Name>
           {formatName(
-            (props.equivalent.unit?.fr || '') + props.equivalent.name.fr,
+            (props.equivalent.unit?.fr || '') + props.equivalent.name,
             props.weight / formatTotalByMultiplier(props.equivalent)
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (
             <Subtitle>
               {formatName(
-                props.equivalent.subtitle.fr,
+                props.equivalent.subtitle,
                 props.weight / formatTotalByMultiplier(props.equivalent)
               )}
             </Subtitle>

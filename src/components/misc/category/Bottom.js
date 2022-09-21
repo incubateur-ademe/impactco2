@@ -36,7 +36,7 @@ export default function Bottom(props) {
             'trackEvent',
             'Interaction',
             'Comparer catégories',
-            props.category.name.fr,
+            props.category.name,
           ])
         }}
         hollow

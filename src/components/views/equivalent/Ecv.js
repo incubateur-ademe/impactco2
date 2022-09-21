@@ -42,14 +42,14 @@ export default function Ecv(props) {
         }))
         .map((item) => ({
           ...item,
-          label: item.name.fr,
+          label: item.name,
           onClick: () => setEcv(true),
         }))
       if (usage) {
         tempEcvToDisplay.push({
           value: props.equivalent.usage.peryear * usage,
           ...ecv.find((step) => step.id === 8),
-          label: ecv.find((step) => step.id === 8).name.fr,
+          label: ecv.find((step) => step.id === 8).name,
           onClick: () => setEcv(true),
         })
       }
@@ -63,10 +63,8 @@ export default function Ecv(props) {
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
             Détail de l&apos;empreinte de 1{' '}
-            {props.equivalent.unit && (
-              <>{formatName(props.equivalent.unit.fr)} </>
-            )}
-            {formatName(props.equivalent.name.fr, 1)} (
+            {props.equivalent.unit && <>{formatName(props.equivalent.unit)} </>}
+            {formatName(props.equivalent.name, 1)} (
             {formatNumberPrecision(formatTotal(props.equivalent, usage))}{' '}
             <span>
               CO

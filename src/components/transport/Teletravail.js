@@ -82,7 +82,7 @@ export default function Teletravail(props) {
   return (
     <Section>
       <Section.Content>
-        <Wrapper name={props.category.name.fr} slug={props.category.slug}>
+        <Wrapper name={props.category.name} slug={props.category.slug}>
           <Search teletravail iframe={props.iframe} />
           {distance && currentTransportation ? (
             <YearlyFootprint

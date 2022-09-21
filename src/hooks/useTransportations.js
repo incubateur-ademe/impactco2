@@ -60,7 +60,7 @@ export default function useTransportations(itineraries) {
         )
         .map((equivalent) => ({
           id: `${equivalent.id || equivalent.slug}`,
-          title: `${formatName(equivalent.name.fr, 1, true)}`,
+          title: `${formatName(equivalent.name, 1, true)}`,
           subtitle: formatName(
             equivalent?.ecvs
               ? `(${
@@ -70,7 +70,7 @@ export default function useTransportations(itineraries) {
                       (itineraries ? itineraries[equivalent.type] : km)
                   )?.subtitle
                 })`
-              : ((displayAll || equivalent.name.fr === 'Voiture') &&
+              : ((displayAll || equivalent.name === 'Voiture') &&
                 equivalent.subtitle
                   ? `(${equivalent.subtitle?.fr})`
                   : '') +

@@ -9,8 +9,8 @@ import Learning from 'components/numerique/Learning'
 export default function Numerique(props) {
   return (
     <Web
-      title={props.category.title}
-      description={props.category.description}
+      title={props.category.meta.title}
+      description={props.category.meta.description}
       breadcrumb={{
         type: 'equivalent',
         category: props.category,
