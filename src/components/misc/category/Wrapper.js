@@ -50,7 +50,7 @@ export default function Wrapper(props) {
                 takeScreenshot={takeScreenshot}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
-                slug={`categories/${props.slug}`}
+                slug={`empreinte-carbone/${props.slug}`}
               />
             </Header>
             {props.children}
