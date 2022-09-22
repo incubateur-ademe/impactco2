@@ -46,7 +46,7 @@ export default function Transportations() {
       <Result>
         {transportations.find(
           (transportation) => transportation.id === teletravailTransportation
-        )?.name.fr || 'Choisissez votre mode de transport'}
+        )?.name || 'Choisissez votre mode de transport'}
       </Result>
     </Wrapper>
   ) : null

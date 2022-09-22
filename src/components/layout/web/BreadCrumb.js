@@ -25,13 +25,13 @@ export default function BreadCrumb(props) {
                   <MagicLink
                     to={`/empreinte-carbone/${props.breadcrumb.category.slug}`}
                   >
-                    {props.breadcrumb.category.name.fr}
+                    {props.breadcrumb.category.name}
                   </MagicLink>
                   {' > '}
-                  {formatName(props.breadcrumb.equivalent.name.fr, 1, true)}
+                  {formatName(props.breadcrumb.equivalent.name, 1, true)}
                 </>
               ) : (
-                props.breadcrumb.category.name.fr
+                props.breadcrumb.category.name
               )}
             </>
           )}

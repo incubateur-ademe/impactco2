@@ -13,6 +13,7 @@ import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
 import DurationSelector from './ecv/DurationSelector'
+import Detail from './ecv/Detail'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -22,6 +23,7 @@ export const Title = styled.h3`
   text-align: center;
 `
 const StyledLegend = styled(Legend)``
+
 export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
 
@@ -40,14 +42,14 @@ export default function Ecv(props) {
         }))
         .map((item) => ({
           ...item,
-          label: item.name.fr,
+          label: item.name,
           onClick: () => setEcv(true),
         }))
       if (usage) {
         tempEcvToDisplay.push({
           value: props.equivalent.usage.peryear * usage,
           ...ecv.find((step) => step.id === 8),
-          label: ecv.find((step) => step.id === 8).name.fr,
+          label: ecv.find((step) => step.id === 8).name,
           onClick: () => setEcv(true),
         })
       }
@@ -61,10 +63,8 @@ export default function Ecv(props) {
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
             Détail de l&apos;empreinte de 1{' '}
-            {props.equivalent.unit && (
-              <>{formatName(props.equivalent.unit.fr)} </>
-            )}
-            {formatName(props.equivalent.name.fr, 1)} (
+            {props.equivalent.unit && <>{formatName(props.equivalent.unit)} </>}
+            {formatName(props.equivalent.name, 1)} (
             {formatNumberPrecision(formatTotal(props.equivalent, usage))}{' '}
             <span>
               CO
@@ -80,6 +80,11 @@ export default function Ecv(props) {
           {usage ? (
             <DurationSelector duration={usage} setDuration={setUsage} />
           ) : null}
+
+          <Detail
+            ecv={ecvToDisplay}
+            total={formatTotal(props.equivalent, usage)}
+          />
         </ScreenshotWrapper>
       </Section.Content>
     </StyledSection>

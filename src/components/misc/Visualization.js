@@ -99,7 +99,7 @@ export const LinkWrapper = styled.div`
   text-align: center;
 
   ${(props) => props.theme.mq.small} {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 `
 export const StyledMagicLink = styled(MagicLink)`

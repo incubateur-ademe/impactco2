@@ -5,9 +5,7 @@ export default function Text(props) {
   return props.equivalent.hypothesis ? (
     <Section>
       <Section.Content>
-        <p
-          dangerouslySetInnerHTML={{ __html: props.equivalent.hypothesis.fr }}
-        />
+        <p dangerouslySetInnerHTML={{ __html: props.equivalent.hypothesis }} />
       </Section.Content>
     </Section>
   ) : null

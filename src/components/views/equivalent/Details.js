@@ -51,14 +51,12 @@ export default function Details(props) {
         <Section.Content flex>
           <Title>
             {props.equivalent.unit && (
-              <>{formatName(props.equivalent.unit.fr, 1, true)} </>
+              <>{formatName(props.equivalent.unit, 1, true)} </>
             )}
-            {formatName(props.equivalent.name.fr, 1, !props.equivalent.unit)}
+            {formatName(props.equivalent.name, 1, !props.equivalent.unit)}
             <Br />{' '}
             {props.equivalent.subtitle && (
-              <Subtitle>
-                ({formatName(props.equivalent.subtitle.fr, 1)})
-              </Subtitle>
+              <Subtitle>({formatName(props.equivalent.subtitle, 1)})</Subtitle>
             )}
           </Title>
         </Section.Content>

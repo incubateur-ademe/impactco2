@@ -76,11 +76,11 @@ export default function Suggestions(props) {
                   <Name>
                     <Emoji>{product.item.emoji}</Emoji>
                     <span>
-                      {formatName(product.item.name.fr, 1)}{' '}
+                      {formatName(product.item.name, 1)}{' '}
                       {product.item.subtitle && (
                         <Subtitle>
                           {' '}
-                          ({formatName(product.item.subtitle.fr, 1)})
+                          ({formatName(product.item.subtitle, 1)})
                         </Subtitle>
                       )}
                     </span>
@@ -108,7 +108,7 @@ export default function Suggestions(props) {
                 >
                   <Name>
                     <Emoji>{category.emoji}</Emoji>
-                    <span>{category.name.fr}</span>
+                    <span>{category.name}</span>
                   </Name>
                 </Suggestion>
               ))}

@@ -44,7 +44,7 @@ export default function TilesModal() {
         new Fuse(equivalents, {
           keys: [
             {
-              name: 'name.fr',
+              name: 'name',
               weight: 1,
             },
             {
@@ -52,7 +52,7 @@ export default function TilesModal() {
               weight: 0.7,
             },
             {
-              name: 'subtitle.fr',
+              name: 'subtitle',
               weight: 0.4,
             },
             {

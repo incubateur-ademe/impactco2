@@ -34,8 +34,8 @@ const equivalents = [
 export default function Equivalent(props) {
   return (
     <Web
-      title={props.equivalent.title}
-      description={props.equivalent.description}
+      title={props.equivalent.meta.title}
+      description={props.equivalent.meta.description}
       breadcrumb={{
         type: 'equivalent',
         category: props.category,

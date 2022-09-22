@@ -5,8 +5,9 @@ const Top = styled.div`
   justify-content: space-between;
 
   ${(props) => props.theme.mq.small} {
-    flex-direction: column-reverse;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 `
 const Checkboxes = styled.div`
@@ -23,7 +24,7 @@ const Checkboxes = styled.div`
   }
 
   ${(props) => props.theme.mq.small} {
-    align-items: flex-start;
+    align-items: center;
   }
 `
 

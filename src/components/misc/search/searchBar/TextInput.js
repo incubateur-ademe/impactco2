@@ -84,11 +84,11 @@ export default React.forwardRef(function TextInput(props, ref) {
         <Invisible>{props.search}</Invisible>
         {props.suggestion && (
           <Visible>
-            <Name>{formatName(props.suggestion.item.name.fr, 1)}</Name>
+            <Name>{formatName(props.suggestion.item.name, 1)}</Name>
             {props.suggestion.item.subtitle && (
               <Subtitle>
                 {' '}
-                ({formatName(props.suggestion.item.subtitle.fr, 1)})
+                ({formatName(props.suggestion.item.subtitle, 1)})
               </Subtitle>
             )}
           </Visible>

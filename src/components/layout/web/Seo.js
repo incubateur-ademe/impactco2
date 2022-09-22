@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { formatName } from 'utils/formatters'
 
 export default function Seo(props) {
   const router = useRouter()

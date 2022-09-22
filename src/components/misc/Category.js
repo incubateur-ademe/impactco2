@@ -6,6 +6,7 @@ import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Wrapper from './category/Wrapper'
+import Description from './category/Description'
 import Top from './category/Top'
 import Instruction from './category/Instruction'
 import CategoryLegend from './category/CategoryLegend'
@@ -25,7 +26,7 @@ export default function CategoryList(props) {
           .filter((equivalent) => equivalent.default || displayAll)
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
-            title: `${formatName(equivalent.name.fr, 1, true)}`,
+            title: `${formatName(equivalent.name, 1, true)}`,
             subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
@@ -49,7 +50,8 @@ export default function CategoryList(props) {
   return (
     <Section>
       <Section.Content>
-        <Wrapper name={props.category.name.fr} slug={props.category.slug}>
+        <Wrapper name={props.category.name} slug={props.category.slug}>
+          <Description description={props.category.description} />
           <Top className='noscreenshot'>
             <Instruction />
             <Top.Checkboxes
@@ -68,7 +70,7 @@ export default function CategoryList(props) {
                     'trackEvent',
                     'Interaction',
                     'Voir tous les équivalents',
-                    props.category.name.fr,
+                    props.category.name,
                   ])
                 }}
               >

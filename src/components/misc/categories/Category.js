@@ -49,7 +49,7 @@ export default function Category(props) {
   return (
     <Wrapper>
       <StyledEmoji>{props.category.emoji}</StyledEmoji>
-      <Title>{props.category.name.fr}</Title>
+      <Title>{props.category.name}</Title>
 
       <StyledButton to={`/empreinte-carbone/${props.category.slug}`}>
         Visualiser

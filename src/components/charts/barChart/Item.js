@@ -23,7 +23,7 @@ const Wrapper = styled(MagicLink)`
   }
 
   ${(props) => props.theme.mq.small} {
-    padding: 0.25rem 0.25rem 1rem;
+    padding: 0.25rem 0.125rem 1rem;
   }
 `
 const ChartWrapper = styled.div`

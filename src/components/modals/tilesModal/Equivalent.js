@@ -53,9 +53,9 @@ export default function Option(props) {
         <Checkbox checked={props.checked} />
 
         <Label>
-          {formatName(props.equivalent.name.fr, 1, true)}{' '}
+          {formatName(props.equivalent.name, 1, true)}{' '}
           {props.equivalent.subtitle && (
-            <Subtitle>({formatName(props.equivalent.subtitle.fr, 1)})</Subtitle>
+            <Subtitle>({formatName(props.equivalent.subtitle, 1)})</Subtitle>
           )}
         </Label>
       </Left>

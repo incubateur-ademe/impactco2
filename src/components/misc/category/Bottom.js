@@ -31,15 +31,13 @@ export default function Bottom(props) {
       <Button
         className={'noscreenshot'}
         onClick={() => {
-          if (!props.iframe) {
-            alert('Bientôt disponible')
-            window?._paq?.push([
-              'trackEvent',
-              'Interaction',
-              'Comparer catégories',
-              props.category.name.fr,
-            ])
-          }
+          alert('Bientôt disponible')
+          window?._paq?.push([
+            'trackEvent',
+            'Interaction',
+            'Comparer catégories',
+            props.category.name,
+          ])
         }}
         to={props.iframe ? 'https://monconvertisseurco2.fr' : null}
         hollow
