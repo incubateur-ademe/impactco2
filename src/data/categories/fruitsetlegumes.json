@@ -977,12 +977,24 @@
         "id": 30
       },
       {
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
         "value": 0.13634928,
         "id": 33
       },
       {
         "value": 0.019299477,
         "id": 34
+      },
+      {
+        "value": 0,
+        "id": 35
       }
     ],
     "default": true,
@@ -1000,26 +1012,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.41437532,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.029958116,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 8, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru"
   },
   {
     "name": {
@@ -1031,26 +1051,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.53935177,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.22610913,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.057494804,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru"
   },
   {
     "name": {
@@ -1062,26 +1090,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.20516352,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.19594288,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.048350192,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 8, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru"
   },
   {
     "name": {
@@ -1093,26 +1129,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.072311127,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.14056627,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.024105619,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [2, 3, 4, 5],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru"
   },
   {
     "name": {
@@ -1124,26 +1168,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.087677241,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.029228063,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru"
   },
   {
     "name": {
@@ -1155,26 +1207,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.3753882,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.26920619,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.10566,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.10556394,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru"
   },
   {
     "name": {
@@ -1186,26 +1246,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.4452434,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru"
   },
   {
     "name": {
@@ -1217,26 +1285,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.3964351,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.15119955,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.040547779,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.044251023,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [9, 10],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue"
   },
   {
     "name": {
@@ -1248,26 +1324,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.10169226,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.29856854,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.042612199,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.26550617,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue"
   },
   {
     "name": {
@@ -1279,26 +1363,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.18270046,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.3190708,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.031959149,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [1, 2, 3, 4, 5],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru"
   },
   {
     "name": {
@@ -1310,26 +1402,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.11930004,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.22955684,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [9],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru"
   },
   {
     "name": {
@@ -1341,26 +1441,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.23909936,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.19840735,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [6, 7, 8, 9],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue"
   },
   {
     "name": {
@@ -1372,26 +1480,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.4452434,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue"
   },
   {
     "name": {
@@ -1399,30 +1515,38 @@
     },
     "slug": "kiwi",
     "synonyms": ["manger, fruit"],
-    "emoji": "🌱",
+    "emoji": "🥝",
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.60379477,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.18018326,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru"
   },
   {
     "name": {
@@ -1434,26 +1558,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.10169226,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.29856854,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.042612199,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.26550617,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue"
   },
   {
     "name": {
@@ -1465,57 +1597,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.30901715,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.24449853,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.05324816,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.26550617,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": ""
-  },
-  {
-    "name": {
-      "fr": "Mirabelle"
-    },
-    "slug": "mirabelle",
-    "synonyms": ["manger, fruit"],
-    "emoji": "🌱",
-    "category": 9,
-    "ecv": [
-      {
-        "value": 0,
-        "id": 30
-      },
-      {
-        "value": 14,
-        "id": 33
-      },
-      {
-        "value": 0,
-        "id": 34
-      },
-      {
-        "value": 0,
-        "id": 35
-      }
-    ],
-    "default": true,
-    "tile": false,
-    "months": [7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru"
   },
   {
     "name": {
@@ -1527,26 +1636,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.53507426,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue"
   },
   {
     "name": {
@@ -1558,26 +1675,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.26173451,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue"
   },
   {
     "name": {
@@ -1589,26 +1714,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.1919533,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.14056627,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.032937006,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [6, 7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue"
   },
   {
     "name": {
@@ -1620,15 +1753,23 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 4.1455765,
         "id": 30
       },
       {
-        "value": 14,
-        "id": 33
+        "value": 0.068974455,
+        "id": 31
       },
       {
         "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.25999545,
+        "id": 33
+      },
+      {
+        "value": 0.036493002,
         "id": 34
       },
       {
@@ -1639,7 +1780,7 @@
     "default": true,
     "tile": false,
     "months": [8, 9, 10],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/15004#Noisette"
   },
   {
     "name": {
@@ -1682,89 +1823,36 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.59669943,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [6, 7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue"
   },
-  {
-    "name": {
-      "fr": "Quetsche"
-    },
-    "slug": "quetsche",
-    "synonyms": ["manger, fruit"],
-    "emoji": "🌱",
-    "category": 9,
-    "ecv": [
-      {
-        "value": 0,
-        "id": 30
-      },
-      {
-        "value": 14,
-        "id": 33
-      },
-      {
-        "value": 0,
-        "id": 34
-      },
-      {
-        "value": 0,
-        "id": 35
-      }
-    ],
-    "default": true,
-    "tile": false,
-    "months": [7, 8, 9],
-    "source": ""
-  },
-  {
-    "name": {
-      "fr": "Fenouil"
-    },
-    "slug": "Fenouil",
-    "synonyms": ["manger, fruit"],
-    "emoji": "🌱",
-    "category": 9,
-    "ecv": [
-      {
-        "value": 0,
-        "id": 30
-      },
-      {
-        "value": 14,
-        "id": 33
-      },
-      {
-        "value": 0,
-        "id": 34
-      },
-      {
-        "value": 0,
-        "id": 35
-      }
-    ],
-    "default": true,
-    "tile": false,
-    "months": [3, 5, 6, 7, 8, 9, 10],
-    "source": ""
-  },
+
   {
     "name": {
       "fr": "Reine Claude"
@@ -1775,26 +1863,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.59669943,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue"
   },
   {
     "name": {
@@ -1806,26 +1902,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.3753882,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [3, 4, 5],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue"
   },
   {
     "name": {
@@ -1837,26 +1941,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.38438194,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.29694292,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.063897792,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.39825926,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue"
   },
   {
     "name": {
@@ -1868,26 +1980,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.59669943,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0.35727452,
+        "id": 32
+      },
+      {
+        "value": 0.17724117,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue"
   },
   {
     "name": {
@@ -1899,26 +2019,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.18771307,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0.35727452,
+        "id": 32
+      },
+      {
+        "value": 0.17724117,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru"
   },
   {
     "name": {
@@ -1930,26 +2058,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.50243788,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.35872609,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.032937006,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue"
   },
   {
     "name": {
@@ -1961,26 +2097,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.058136545,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.14931767,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.032937006,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 7, 8, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue"
   },
   {
     "name": {
@@ -1992,26 +2136,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.29161536,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.19725844,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [8, 9],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru"
   },
   {
     "name": {
@@ -2023,26 +2175,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 5.0919415,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.16952471,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.036575546,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue"
   },
   {
     "name": {
@@ -2054,26 +2214,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.47868232,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.14056627,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.047418395,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.012317297,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [8, 9, 10],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru"
   },
   {
     "name": {
@@ -2085,26 +2253,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.19941101,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/20047_1#Tomate_de_saison,_crue"
   },
   {
     "name": {
@@ -2116,26 +2292,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.22738276,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.45643934,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.063897792,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.39825926,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine "
   },
   {
     "name": {
@@ -2147,26 +2331,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.65574971,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.53372688,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.07987224,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.59738888,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue"
   },
   {
     "name": {
@@ -2178,26 +2370,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.7728241,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.51466861,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.063897792,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.39825926,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru"
   },
   {
     "name": {
@@ -2209,26 +2409,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.16989903,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue"
   },
   {
     "name": {
@@ -2240,15 +2448,23 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 3.4383911,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0.28581962,
+        "id": 32
+      },
+      {
+        "value": 0.17465584,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.045995843,
         "id": 34
       },
       {
@@ -2259,7 +2475,7 @@
     "default": true,
     "tile": false,
     "months": [0, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che"
   },
   {
     "name": {
@@ -2271,26 +2487,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.60379477,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru"
   },
   {
     "name": {
@@ -2302,26 +2526,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.11930004,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.1704366,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue"
   },
   {
     "name": {
@@ -2333,26 +2565,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.53935177,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.22708192,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 9, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru"
   },
   {
     "name": {
@@ -2364,26 +2604,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 1.3841849,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0.53881991,
+        "id": 32
+      },
+      {
+        "value": 0.50581205,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.11361344,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.39825926,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche"
   },
   {
     "name": {
@@ -2395,25 +2643,33 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 0.23176286,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0,
+        "id": 32
+      },
+      {
+        "value": 0.21406438,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.03993612,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.099564814,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue"
   }
 ]
