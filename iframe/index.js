@@ -33,3 +33,4 @@ text-align: center
 `
 
 script.parentNode.insertBefore(iframe, script)
+script.parentNode.insertBefore(link, script)
