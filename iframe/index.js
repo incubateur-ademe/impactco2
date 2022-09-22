@@ -25,4 +25,11 @@ for (var key in iframeAttributes) {
 }
 iframeResize({}, iframe)
 
+const link = document.createElement('div')
+link.innerHTML = `<a href="https://monconvertisseurco2.fr" target="_blank">Découvrir l'empreinte carbone des objets et gestes de votre quotidien</a>`
+link.style.cssText = `
+margin: 1rem auto .5rem;
+text-align: center
+`
+
 script.parentNode.insertBefore(iframe, script)
