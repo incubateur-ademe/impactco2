@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Top = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 
   ${(props) => props.theme.mq.small} {
     flex-direction: column;

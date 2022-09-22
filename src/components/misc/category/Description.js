@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.p`
   max-width: 33rem;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1rem;
   font-size: 1rem;
   text-align: center;
 
