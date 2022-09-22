@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react'
-import styled, { useTheme } from 'styled-components'
+import React, { useState, useEffect, useContext, useMemo } from 'react'
+import styled from 'styled-components'
 
 import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import { formatName, formatTotal } from 'utils/formatters'
@@ -64,59 +64,58 @@ export default function Distance(props) {
     }
   }, [search, fuse])
 
-  const [equivalentsOfTheMonth, setEquivalentsOfTheMonth] = useState([])
-  useEffect(() => {
-    props.category &&
-      setEquivalentsOfTheMonth(
-        equivalents
-          .filter((equivalent) => equivalent.category === props.category.id)
-          .filter(
-            (equivalent) =>
-              results || equivalent.months.includes(props.month.index)
-          )
-          .filter(
-            (equivalent) =>
-              !results ||
-              results.find((result) => result.item.slug === equivalent.slug)
-          )
-          .map((equivalent) => ({
-            id: `${equivalent.slug}`,
-            title: formatName(equivalent.name, 1, true),
-            emoji: equivalent.emoji,
-            value: formatTotal(equivalent),
-            season: equivalent.months.includes(props.month.index),
-            months: equivalent.months,
-            to: `/empreinte-carbone/${
-              categories.find((category) => category.id === equivalent.category)
-                .slug
-            }/${equivalent.slug}`,
-            onClick: () =>
-              window?._paq?.push([
-                'trackEvent',
-                'Interaction',
-                'Navigation via graph categorie',
-                equivalent.slug,
-              ]),
-          }))
-          .sort((a, b) =>
-            sorting.includes('alph')
-              ? a.id > b.id
-                ? sorting.includes('desc')
-                  ? 1
-                  : -1
-                : sorting.includes('desc')
-                ? -1
-                : 1
-              : a.value > b.value
+  const equivalentsOfTheMonth = useMemo(
+    () =>
+      props.category &&
+      equivalents
+        .filter((equivalent) => equivalent.category === props.category.id)
+        .filter(
+          (equivalent) =>
+            results || equivalent.months.includes(props.month.index)
+        )
+        .filter(
+          (equivalent) =>
+            !results ||
+            results.find((result) => result.item.slug === equivalent.slug)
+        )
+        .map((equivalent) => ({
+          id: `${equivalent.slug}`,
+          title: formatName(equivalent.name, 1, true),
+          emoji: equivalent.emoji,
+          value: formatTotal(equivalent),
+          season: equivalent.months.includes(props.month.index),
+          months: equivalent.months,
+          to: `/empreinte-carbone/${
+            categories.find((category) => category.id === equivalent.category)
+              .slug
+          }/${equivalent.slug}`,
+          onClick: () =>
+            window?._paq?.push([
+              'trackEvent',
+              'Interaction',
+              'Navigation via graph categorie',
+              equivalent.slug,
+            ]),
+        }))
+        .sort((a, b) =>
+          sorting.includes('alph')
+            ? a.id > b.id
               ? sorting.includes('desc')
-                ? -1
-                : 1
+                ? 1
+                : -1
               : sorting.includes('desc')
-              ? 1
-              : -1
-          )
-      )
-  }, [equivalents, categories, props.category, props.month, results, sorting])
+              ? -1
+              : 1
+            : a.value > b.value
+            ? sorting.includes('desc')
+              ? -1
+              : 1
+            : sorting.includes('desc')
+            ? 1
+            : -1
+        ),
+    [equivalents, categories, props.category, props.month, results, sorting]
+  )
 
   return (
     <Section>
