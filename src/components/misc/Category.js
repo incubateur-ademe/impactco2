@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 
 import { formatName, formatTotal, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
@@ -17,35 +17,35 @@ export default function CategoryList(props) {
 
   const [displayAll, setDisplayAll] = useState(false)
 
-  const [equivalentsOfCategory, setEquivalentsOfCategory] = useState([])
-  useEffect(() => {
-    props.category &&
-      setEquivalentsOfCategory(
-        equivalents
-          .filter((equivalent) => equivalent.category === props.category.id)
-          .filter((equivalent) => equivalent.default || displayAll)
-          .map((equivalent) => ({
-            id: `${equivalent.slug}`,
-            title: `${formatName(equivalent.name, 1, true)}`,
-            subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
-            emoji: equivalent.emoji,
-            value: formatTotal(equivalent),
-            usage: formatUsage(equivalent),
-            to: `/empreinte-carbone/${
-              categories.find((category) => category.id === equivalent.category)
-                .slug
-            }/${equivalent.slug}`,
-            onClick: () =>
-              window?._paq?.push([
-                'trackEvent',
-                'Interaction',
-                'Navigation via graph categorie',
-                equivalent.slug,
-              ]),
-          }))
-          .sort((a, b) => (a.value > b.value ? 1 : -1))
-      )
-  }, [equivalents, categories, props.category, displayAll])
+  const equivalentsOfCategory = useMemo(
+    () =>
+      props.category &&
+      equivalents
+        .filter((equivalent) => equivalent.category === props.category.id)
+        .filter((equivalent) => equivalent.default || displayAll)
+        .map((equivalent) => ({
+          id: `${equivalent.slug}`,
+          title: `${formatName(equivalent.name, 1, true)}`,
+          subtitle: displayAll ? formatName(equivalent.subtitle) : null,
+          emoji: equivalent.emoji,
+          value: formatTotal(equivalent),
+          usage: formatUsage(equivalent),
+          to: `/empreinte-carbone/${
+            categories.find((category) => category.id === equivalent.category)
+              .slug
+          }/${equivalent.slug}`,
+          onClick: () =>
+            window?._paq?.push([
+              'trackEvent',
+              'Interaction',
+              'Navigation via graph categorie',
+              equivalent.slug,
+            ]),
+        }))
+        .sort((a, b) => (a.value > b.value ? 1 : -1)),
+
+    [equivalents, categories, props.category, displayAll]
+  )
 
   return (
     <Section>
