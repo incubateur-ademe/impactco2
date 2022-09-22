@@ -143,7 +143,7 @@ export default function BarChart() {
         <Mark position={(1.5 / 2) * 100}>1.5</Mark>
         <Mark position={(2 / 2) * 100}>2</Mark>
         <Unit>
-          kgCO<sub>2</sub>eq/kg de produit
+          kgCO<sub>2</sub>e / kg de produit
         </Unit>
       </Axis>
     </Wrapper>
