@@ -44,8 +44,13 @@ const Item = styled.tr`
 `
 const Label = styled.td``
 const Value = styled.td`
-  font-weight: bold;
+  font-size: 0.625em;
+  font-weight: 300;
   text-align: right;
+
+  strong {
+    font-size: 1.6em;
+  }
 `
 const Percent = styled.td`
   text-align: right;
@@ -69,10 +74,24 @@ export default function Detail(props) {
               .map((item) => (
                 <Item key={item.label}>
                   <Label>{item.label}</Label>
-                  <Value>{formatNumberPrecision(item.value)}</Value>
+
                   <Percent>{formatPercent(item.value, props.total)} %</Percent>
+                  <Value>
+                    <strong>{formatNumberPrecision(item.value)}</strong> CO
+                    <sub>2</sub>e
+                  </Value>
                 </Item>
               ))}
+            <Item key={'total'}>
+              <Label>
+                <strong>Total</strong>
+              </Label>
+              <Percent></Percent>
+              <Value>
+                <strong>{formatNumberPrecision(props.total)}</strong> CO
+                <sub>2</sub>e
+              </Value>
+            </Item>
           </tbody>
         </Wrapper>
       )}
