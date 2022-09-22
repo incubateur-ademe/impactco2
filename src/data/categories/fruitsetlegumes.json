@@ -719,7 +719,7 @@
     "name": {
       "fr": "Fenouil"
     },
-    "slug": "Fenouil",
+    "slug": "fenouil",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
     "category": 9,
@@ -1045,7 +1045,7 @@
     "name": {
       "fr": "Poivron"
     },
-    "slug": "Poivron",
+    "slug": "poivron",
     "synonyms": ["manger, fruit"],
     "emoji": "🌶️",
     "category": 9,
@@ -1591,7 +1591,7 @@
     "name": {
       "fr": "Melon"
     },
-    "slug": "Melon",
+    "slug": "melon",
     "synonyms": ["manger, fruit"],
     "emoji": "🍈",
     "category": 9,
