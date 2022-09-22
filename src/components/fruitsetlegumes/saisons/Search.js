@@ -56,7 +56,7 @@ const Option = styled.button`
   }
 `
 export default function Search(props) {
-  const [displaySort, setDisplaySort] = useState(true)
+  const [displaySort, setDisplaySort] = useState(false)
 
   return (
     <Wrapper>
