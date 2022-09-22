@@ -26,9 +26,9 @@ for (var key in iframeAttributes) {
 iframeResize({}, iframe)
 
 const link = document.createElement('div')
-link.innerHTML = `<a href="https://monconvertisseurco2.fr" target="_blank">Découvrir l'empreinte carbone des objets et gestes de votre quotidien</a>`
+link.innerHTML = `<a href="https://monconvertisseurco2.fr" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`
 link.style.cssText = `
-margin: 1rem auto .5rem;
+margin: 0.5rem auto 1rem;
 text-align: center
 `
 
