@@ -1,8 +1,6 @@
 [
   {
-    "name": {
-      "fr": "Fraise"
-    },
+    "name": "Fraise",
     "slug": "fraise",
     "synonyms": ["manger, fruit"],
     "emoji": "🍓",
@@ -28,12 +26,14 @@
     "default": true,
     "tile": false,
     "months": [4, 5, 6],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13014_1#Fraise_de_saison,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13014_1#Fraise_de_saison,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une fraise",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de fraises : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Pomme"
-    },
+    "name": "Pomme",
     "slug": "pomme",
     "synonyms": ["manger, fruit"],
     "emoji": "🍏",
@@ -59,12 +59,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une pomme",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de pommes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Orange"
-    },
+    "name": "Orange",
     "slug": "orange",
     "synonyms": ["manger, fruit"],
     "emoji": "🍊",
@@ -90,12 +92,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'une orange",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'oranges : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Citron"
-    },
+    "name": "Citron",
     "slug": "citron",
     "synonyms": ["manger, fruit"],
     "emoji": "🍋",
@@ -121,12 +125,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'un citron",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de citrons : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Ail"
-    },
+    "name": "Ail",
     "slug": "ail",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -152,12 +158,14 @@
     "default": true,
     "tile": false,
     "months": [6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'un kg d'ail",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'ail : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Artichaut"
-    },
+    "name": "Artichaut",
     "slug": "artichaut",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -183,12 +191,14 @@
     "default": true,
     "tile": false,
     "months": [4, 5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'un artichaut",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'artichaut : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Asperge"
-    },
+    "name": "Asperge",
     "slug": "asperge",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -214,12 +224,14 @@
     "default": true,
     "tile": false,
     "months": [3, 4, 5],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'une asperge",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'asperge : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Betterave"
-    },
+    "name": "Betterave",
     "slug": "betterave",
     "synonyms": ["manger, fruit"],
     "emoji": "🍠",
@@ -245,12 +257,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'une betterave",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de betterave : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Blette"
-    },
+    "name": "Blette",
     "slug": "blette",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -276,12 +290,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8, 9, 10],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'une blette",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de blette : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Carotte"
-    },
+    "name": "Carotte",
     "slug": "carotte",
     "synonyms": ["manger, fruit"],
     "emoji": "🥕",
@@ -307,12 +323,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'une carotte",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de carottes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Céleri"
-    },
+    "name": "Céleri",
     "slug": "celeri",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -338,12 +356,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un celeri",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de celeris : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Champignon de Paris"
-    },
+    "name": "Champignon de Paris",
     "slug": "champignondeparis",
     "synonyms": ["manger, fruit"],
     "emoji": "🍄",
@@ -369,12 +389,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de champignons de paris",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de champignons de paris : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Chou"
-    },
+    "name": "Chou",
     "slug": "chou",
     "synonyms": ["manger, fruit"],
     "emoji": "🥬",
@@ -400,12 +422,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un chou",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Chou de Bruxelles"
-    },
+    "name": "Chou de Bruxelles",
     "slug": "choudebruxelles",
     "synonyms": ["manger, fruit"],
     "emoji": "🥬",
@@ -431,12 +455,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un chou",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Chou-fleur"
-    },
+    "name": "Chou-fleur",
     "slug": "choufleur",
     "synonyms": ["manger, fruit"],
     "emoji": "🥦",
@@ -462,12 +488,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un chou",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Concombre"
-    },
+    "name": "Concombre",
     "slug": "concombre",
     "synonyms": ["manger, fruit"],
     "emoji": "🥒",
@@ -493,12 +521,14 @@
     "default": true,
     "tile": false,
     "months": [4, 5, 6, 7, 8, 9],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un concombre",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de concombres : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Courge"
-    },
+    "name": "Courge",
     "slug": "courge",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -524,12 +554,14 @@
     "default": true,
     "tile": false,
     "months": [0, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une courge",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de courges : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Courgette"
-    },
+    "name": "Courgette",
     "slug": "courgette",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -555,12 +587,14 @@
     "default": true,
     "tile": false,
     "months": [4, 5, 6, 7, 8, 9],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une courgette",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de courgettes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Cresson"
-    },
+    "name": "Cresson",
     "slug": "cresson",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -586,12 +620,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'un cresson",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de cressons : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Échalote"
-    },
+    "name": "Échalote",
     "slug": "echalote",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -617,12 +653,14 @@
     "default": true,
     "tile": false,
     "months": [9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une echalote",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'echalotes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Endive"
-    },
+    "name": "Endive",
     "slug": "endive",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -648,12 +686,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 9],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une endive",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'endives : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Épinard"
-    },
+    "name": "Épinard",
     "slug": "epinard",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -679,15 +719,15 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/"
+    "source": "https://agribalyse.ademe.fr/",
+    "meta": {
+      "title": "Empreinte carbone d'un epinard",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'epinards : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Mangue"
-    },
-    "subtitle": {
-      "fr": "Importée par avion"
-    },
+    "name": "Mangue",
+    "subtitle": "Importée par avion",
     "slug": "mangue",
     "synonyms": ["manger, fruit"],
     "emoji": "🥭",
@@ -713,12 +753,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13025_1#Mangue_import%C3%A9e_par_avion,_pulpe,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13025_1#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une mangue",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de mangues : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Fenouil"
-    },
+    "name": "Fenouil",
     "slug": "fenouil",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -744,12 +786,14 @@
     "default": true,
     "tile": false,
     "months": [3, 5, 6, 7, 8, 9, 10],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un fenouil",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de fenouils : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Haricot vert"
-    },
+    "name": "Haricot vert",
     "slug": "haricotvert",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -775,12 +819,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8, 9],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20061_2#Haricot_vert,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20061_2#Haricot_vert,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un kg d'haricot vert",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Laitue"
-    },
+    "name": "Laitue",
     "slug": "laitue",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -806,12 +852,14 @@
     "default": true,
     "tile": false,
     "months": [4, 5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une laitue",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de laitues : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Mâche"
-    },
+    "name": "Mâche",
     "slug": "mache",
     "synonyms": ["manger, fruit"],
     "emoji": "🥗",
@@ -837,12 +885,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de mache",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de maches : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Navet"
-    },
+    "name": "Navet",
     "slug": "navet",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -868,12 +918,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un navet",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de navets : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Maïs"
-    },
+    "name": "Maïs",
     "slug": "mais",
     "synonyms": ["manger, fruit"],
     "emoji": "🌽",
@@ -899,12 +951,14 @@
     "default": true,
     "tile": false,
     "months": [6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de mais",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de maiss : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Oignon"
-    },
+    "name": "Oignon",
     "slug": "oignon",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -930,12 +984,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un oignon",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de oignons : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Panais"
-    },
+    "name": "Panais",
     "slug": "panais",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -961,12 +1017,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un panais",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de panais : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Petit pois"
-    },
+    "name": "Petit pois",
     "slug": "petitpois",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1000,12 +1058,14 @@
     "default": true,
     "tile": false,
     "months": [4, 5, 6],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de petit pois",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de petit pois : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Poireau"
-    },
+    "name": "Poireau",
     "slug": "poireau",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1039,12 +1099,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un poireau",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de poireau : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Poivron"
-    },
+    "name": "Poivron",
     "slug": "poivron",
     "synonyms": ["manger, fruit"],
     "emoji": "🌶️",
@@ -1078,12 +1140,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un poivron",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de poivrons : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Potiron"
-    },
+    "name": "Potiron",
     "slug": "potiron",
     "synonyms": ["manger, fruit"],
     "emoji": "🎃",
@@ -1117,12 +1181,14 @@
     "default": true,
     "tile": false,
     "months": [0, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un potiron",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de potirons : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Radis"
-    },
+    "name": "Radis",
     "slug": "radis",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1156,12 +1222,14 @@
     "default": true,
     "tile": false,
     "months": [2, 3, 4, 5],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un radis",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de radis : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Salsifis"
-    },
+    "name": "Salsifis",
     "slug": "salsifis",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1195,12 +1263,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un salsifis",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de salsifis : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Topinambour"
-    },
+    "name": "Topinambour",
     "slug": "topinambour",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1234,12 +1304,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un topinambour",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de topinambours : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Cassis"
-    },
+    "name": "Cassis",
     "slug": "cassis",
     "synonyms": ["manger, fruit"],
     "emoji": "🍇",
@@ -1273,12 +1345,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de cassis",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de cassis : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Châtaigne"
-    },
+    "name": "Châtaigne",
     "slug": "chataigne",
     "synonyms": ["manger, fruit"],
     "emoji": "🌰",
@@ -1312,12 +1386,14 @@
     "default": true,
     "tile": false,
     "months": [9, 10],
-    "source": "https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une chataigne",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de chataignes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Clémentine"
-    },
+    "name": "Clémentine",
     "slug": "clementine",
     "synonyms": ["manger, fruit"],
     "emoji": "🍊",
@@ -1351,14 +1427,16 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une clementine",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de clementines : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Pamplemousse"
-    },
+    "name": "Pamplemousse",
     "slug": "pamplemousse",
-    "synonyms": ["manger, fruit"],
+    "synonyms": ["manger, fruit", "pomelo"],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
@@ -1390,12 +1468,14 @@
     "default": true,
     "tile": false,
     "months": [1, 2, 3, 4, 5],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un pamplemousse",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de pamplemousses : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Coing"
-    },
+    "name": "Coing",
     "slug": "coing",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1429,12 +1509,14 @@
     "default": true,
     "tile": false,
     "months": [9],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un coing",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de coings : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Figue"
-    },
+    "name": "Figue",
     "slug": "figue",
     "synonyms": ["manger, fruit"],
     "emoji": "🥭",
@@ -1468,12 +1550,14 @@
     "default": true,
     "tile": false,
     "months": [6, 7, 8, 9],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une figue",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de figues : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Groseille"
-    },
+    "name": "Groseille",
     "slug": "groseille",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1507,12 +1591,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de groseille",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de groseilles : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Kiwi"
-    },
+    "name": "Kiwi",
     "slug": "kiwi",
     "synonyms": ["manger, fruit"],
     "emoji": "🥝",
@@ -1546,12 +1632,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un kiwi",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de kiwis : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Mandarine"
-    },
+    "name": "Mandarine",
     "slug": "mandarine",
     "synonyms": ["manger, fruit"],
     "emoji": "🍊",
@@ -1585,12 +1673,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une mandarine",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de mandarines : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Melon"
-    },
+    "name": "Melon",
     "slug": "melon",
     "synonyms": ["manger, fruit"],
     "emoji": "🍈",
@@ -1624,12 +1714,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'une melon",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de melons : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Mûre"
-    },
+    "name": "Mûre",
     "slug": "mure",
     "synonyms": ["manger, fruit"],
     "emoji": "🍓",
@@ -1663,12 +1755,14 @@
     "default": true,
     "tile": false,
     "months": [7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de mure",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de mures : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Nectarine"
-    },
+    "name": "Nectarine",
     "slug": "nectarine",
     "synonyms": ["manger, fruit"],
     "emoji": "🍊",
@@ -1702,12 +1796,14 @@
     "default": true,
     "tile": false,
     "months": [7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une nectarine",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de nectarines : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Myrtille"
-    },
+    "name": "Myrtille",
     "slug": "myrtille",
     "synonyms": ["manger, fruit"],
     "emoji": "🫐",
@@ -1741,12 +1837,14 @@
     "default": true,
     "tile": false,
     "months": [6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de myrtille",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de myrtilles : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Noisette"
-    },
+    "name": "Noisette",
     "slug": "noisette",
     "synonyms": ["manger, fruit"],
     "emoji": "🌰",
@@ -1780,12 +1878,14 @@
     "default": true,
     "tile": false,
     "months": [8, 9, 10],
-    "source": "https://agribalyse.ademe.fr/app/aliments/15004#Noisette"
+    "source": "https://agribalyse.ademe.fr/app/aliments/15004#Noisette",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de noisette",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de noisette : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Noix"
-    },
+    "name": "Noix",
     "slug": "noix",
     "synonyms": ["manger, fruit"],
     "emoji": "🌰",
@@ -1819,12 +1919,14 @@
     "default": true,
     "tile": false,
     "months": [8, 9],
-    "source": "https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche"
+    "source": "https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de noix",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de noix : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Prune"
-    },
+    "name": "Prune",
     "slug": "prune",
     "synonyms": ["manger, fruit"],
     "emoji": "🫐",
@@ -1858,13 +1960,15 @@
     "default": true,
     "tile": false,
     "months": [6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une prune",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de prunes : de l'agriculture à la distribution et la consommation"
+    }
   },
 
   {
-    "name": {
-      "fr": "Reine Claude"
-    },
+    "name": "Reine Claude",
     "slug": "reineclaude",
     "synonyms": ["manger, fruit"],
     "emoji": "🍈",
@@ -1898,12 +2002,14 @@
     "default": true,
     "tile": false,
     "months": [8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une reine-claude",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de reine-claudes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Rhubarbe"
-    },
+    "name": "Rhubarbe",
     "slug": "rhubarbe",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1937,12 +2043,14 @@
     "default": true,
     "tile": false,
     "months": [3, 4, 5],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une rhubarbe",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de rhubarbes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Pêche"
-    },
+    "name": "Pêche",
     "slug": "peche",
     "synonyms": ["manger, fruit"],
     "emoji": "🍑",
@@ -1976,12 +2084,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une peche",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de peches : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Cerise"
-    },
+    "name": "Cerise",
     "slug": "cerise",
     "synonyms": ["manger, fruit"],
     "emoji": "🍒",
@@ -2015,12 +2125,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une cerise",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de cerises : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Abricot"
-    },
+    "name": "Abricot",
     "slug": "abricot",
     "synonyms": ["manger, fruit"],
     "emoji": "🍑",
@@ -2054,12 +2166,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un abricot",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de abricots : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Framboise"
-    },
+    "name": "Framboise",
     "slug": "framboise",
     "synonyms": ["manger, fruit"],
     "emoji": "🍓",
@@ -2093,12 +2207,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une framboise",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de framboises : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Poire"
-    },
+    "name": "Poire",
     "slug": "poire",
     "synonyms": ["manger, fruit"],
     "emoji": "🍐",
@@ -2132,12 +2248,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une poire",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de poires : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Raisin"
-    },
+    "name": "Raisin",
     "slug": "raisin",
     "synonyms": ["manger, fruit"],
     "emoji": "🍇",
@@ -2171,12 +2289,14 @@
     "default": true,
     "tile": false,
     "months": [8, 9],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un kg de raisin",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de raisin : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Aubergine"
-    },
+    "name": "Aubergine",
     "slug": "aubergine",
     "synonyms": ["manger, fruit"],
     "emoji": "🍆",
@@ -2210,12 +2330,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une aubergine",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de aubergines : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Brocoli"
-    },
+    "name": "Brocoli",
     "slug": "brocoli",
     "synonyms": ["manger, fruit"],
     "emoji": "🥦",
@@ -2249,12 +2371,14 @@
     "default": true,
     "tile": false,
     "months": [8, 9, 10],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un brocoli",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de brocolis : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Tomate"
-    },
+    "name": "Tomate",
     "slug": "tomate",
     "synonyms": ["manger, fruit"],
     "emoji": "🍅",
@@ -2288,12 +2412,14 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20047_1#Tomate_de_saison,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/20047_1#Tomate_de_saison,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une tomate",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de tomates : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Ananas"
-    },
+    "name": "Ananas",
     "slug": "ananas",
     "synonyms": ["manger, fruit"],
     "emoji": "🍍",
@@ -2327,12 +2453,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine "
+    "source": "https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine ",
+    "meta": {
+      "title": "Empreinte carbone d'un ananas",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de ananas : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Banane"
-    },
+    "name": "Banane",
     "slug": "banane",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2366,12 +2494,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une banane",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de bananes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Avocat"
-    },
+    "name": "Avocat",
     "slug": "avocat",
     "synonyms": ["manger, fruit"],
     "emoji": "🥑",
@@ -2405,12 +2535,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un avocat",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de avocats : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Carambole"
-    },
+    "name": "Carambole",
     "slug": "carambole",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2444,12 +2576,14 @@
     "default": true,
     "tile": false,
     "months": [0, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une carambole",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de caramboles : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Datte"
-    },
+    "name": "Datte",
     "slug": "datte",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2483,12 +2617,14 @@
     "default": true,
     "tile": false,
     "months": [0, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che",
+    "meta": {
+      "title": "Empreinte carbone d'une datte",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de dattes : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Fruit de la passion"
-    },
+    "name": "Fruit de la passion",
     "slug": "fruitdelapassion",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2522,12 +2658,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'un fruit de la passion",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de fruit de la passion : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Grenade"
-    },
+    "name": "Grenade",
     "slug": "grenade",
     "synonyms": ["manger, fruit"],
     "emoji": "🥭",
@@ -2561,12 +2699,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une grenade",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de grenades : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Kaki"
-    },
+    "name": "Kaki",
     "slug": "kaki",
     "synonyms": ["manger, fruit"],
     "emoji": "🍈",
@@ -2600,12 +2740,14 @@
     "default": true,
     "tile": false,
     "months": [0, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru",
+    "meta": {
+      "title": "Empreinte carbone d'une kaki",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de kakis : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Noix de coco"
-    },
+    "name": "Noix de coco",
     "slug": "noixdecoco",
     "synonyms": ["manger, fruit"],
     "emoji": "🥥",
@@ -2639,12 +2781,14 @@
     "default": true,
     "tile": false,
     "months": [0, 1, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche"
+    "source": "https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche",
+    "meta": {
+      "title": "Empreinte carbone d'une noix de coco",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de noix de coco : de l'agriculture à la distribution et la consommation"
+    }
   },
   {
-    "name": {
-      "fr": "Pastèque"
-    },
+    "name": "Pastèque",
     "slug": "pasteque",
     "synonyms": ["manger, fruit"],
     "emoji": "🍉",
@@ -2678,6 +2822,10 @@
     "default": true,
     "tile": false,
     "months": [5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue"
+    "source": "https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue",
+    "meta": {
+      "title": "Empreinte carbone d'une pasteque",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de pasteques : de l'agriculture à la distribution et la consommation"
+    }
   }
 ]

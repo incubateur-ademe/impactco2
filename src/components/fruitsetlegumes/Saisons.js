@@ -35,7 +35,7 @@ export default function Distance(props) {
         new Fuse(equivalents, {
           keys: [
             {
-              name: 'name.fr',
+              name: 'name',
               weight: 1,
             },
             {
@@ -43,7 +43,7 @@ export default function Distance(props) {
               weight: 0.7,
             },
             {
-              name: 'subtitle.fr',
+              name: 'subtitle',
               weight: 0.4,
             },
           ],
@@ -81,7 +81,7 @@ export default function Distance(props) {
           )
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
-            title: formatName(equivalent.name.fr, 1, true),
+            title: formatName(equivalent.name, 1, true),
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
             season: equivalent.months.includes(props.month.index),

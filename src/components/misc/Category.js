@@ -27,7 +27,7 @@ export default function CategoryList(props) {
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
             title: `${formatName(equivalent.name, 1, true)}`,
-            subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
+            subtitle: displayAll ? formatName(equivalent.subtitle) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
             usage: formatUsage(equivalent),
