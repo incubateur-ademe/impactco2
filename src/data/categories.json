@@ -130,6 +130,7 @@
     "name": "Fruits et légumes",
     "emoji": "🍅",
     "slug": "fruitsetlegumes",
+    "description": "Découvrez quels sont les fruits et légumes en saison et comparez leurs empreintes carbones.",
     "divider": 1,
     "display": true,
     "unit": "kg",

@@ -27,7 +27,7 @@ const Header = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 `
 const Title = styled.h1`
   margin-bottom: 1rem;
@@ -37,7 +37,6 @@ const StyledButtons = styled(Buttons)`
   margin-bottom: 0.5rem;
   ${(props) => props.theme.mq.small} {
     margin-top: 0;
-    align-self: flex-end;
   }
 `
 export default function Wrapper(props) {

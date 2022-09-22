@@ -6,6 +6,7 @@ import { formatName, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import Top from 'components/misc/category/Top'
+import Description from 'components/misc/category/Description'
 import Instruction from 'components/misc/category/Instruction'
 import Bottom from 'components/misc/category/Bottom'
 import Wrapper from './saisons/Wrapper'
@@ -121,6 +122,7 @@ export default function Distance(props) {
     <Section>
       <Section.Content>
         <Wrapper month={props.month} slug={props.category.slug}>
+          <Description description={props.category.description} />
           <StyledTop>
             <Instruction />
             <Search

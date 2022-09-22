@@ -6,8 +6,15 @@ import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
   position: relative;
+  align-self: flex-end;
   display: flex;
   gap: 0.5rem;
+  margin-top: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    margin: 0;
+    align-self: center;
+  }
 `
 const SortButton = styled(Button)`
   padding: 0.5em;
