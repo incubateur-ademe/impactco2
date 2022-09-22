@@ -14,7 +14,7 @@ export default function Eau() {
   return (
     <>
       <Title>
-        En termes d&apos;émissions de CO2<sub>e</sub>
+        En termes d&apos;émissions de CO<sub>2</sub>e
       </Title>
       <Equivalents>
         <Equivalent size={[7, 6, 8]}>
