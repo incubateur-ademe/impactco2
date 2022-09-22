@@ -1792,26 +1792,34 @@
     "category": 9,
     "ecv": [
       {
-        "value": 0,
+        "value": 2.5135833,
         "id": 30
       },
       {
-        "value": 14,
+        "value": 0,
+        "id": 31
+      },
+      {
+        "value": 0.53881991,
+        "id": 32
+      },
+      {
+        "value": 0.26464914,
         "id": 33
       },
       {
-        "value": 0,
+        "value": 0.072986004,
         "id": 34
       },
       {
-        "value": 0,
+        "value": 0.39825926,
         "id": 35
       }
     ],
     "default": true,
     "tile": false,
     "months": [8, 9],
-    "source": ""
+    "source": "https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche"
   },
   {
     "name": {

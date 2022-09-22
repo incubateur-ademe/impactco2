@@ -10,7 +10,7 @@ export default function MonthSelector(props) {
     <FancySelect
       value={props.month.slug}
       onChange={(value) => {
-        router.push(`/categories/fruitsetlegumes/mois/${value}`)
+        router.push(`/empreinte-carbone/fruitsetlegumes/mois/${value}`)
       }}
       options={slugs.map((slug, index) => ({
         value: slug,
