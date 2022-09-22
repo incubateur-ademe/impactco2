@@ -50,7 +50,10 @@ export default function CategoryList(props) {
   return (
     <Section>
       <Section.Content>
-        <Wrapper name={props.category.name} slug={props.category.slug}>
+        <Wrapper
+          name={props.category.title || props.category.name}
+          slug={props.category.slug}
+        >
           <Description description={props.category.description} />
           <Top className='noscreenshot'>
             <Instruction />

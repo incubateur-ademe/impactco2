@@ -21,7 +21,10 @@ export default function Distance(props) {
   return (
     <Section>
       <Section.Content>
-        <Wrapper name={props.category.name} slug={props.category.slug}>
+        <Wrapper
+          name={props.category.title || props.category.name}
+          slug={props.category.slug}
+        >
           <Search distance iframe={props.iframe} />
           {transportations.length ? (
             <Top className='noscreenshot'>
