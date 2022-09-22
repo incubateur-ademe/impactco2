@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { slugs, getMonth } from 'utils/months'
-import MagicLink from 'components/base/MagicLink'
-import TextInput from 'components/base/TextInput'
 import Button from 'components/base/Button'
+import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
   position: relative;
   display: flex;
   gap: 0.5rem;
 `
-const FilterButton = styled(Button)`
+const SortButton = styled(Button)`
   padding: 0.5em;
   font-size: 0.875rem;
   border-radius: 0.625em;
@@ -26,9 +24,34 @@ const SearchInput = styled(TextInput)`
   margin: 0;
   font-size: 0.875rem;
 `
+const SortPanel = styled.div`
+  position: absolute;
+  right: 2.5rem;
+  z-index: 120;
+  background-color: ${(props) => props.theme.colors.second};
+  border-radius: 0.5rem;
+  box-shadow: -0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+`
+const Option = styled.button`
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+  background-color: ${(props) =>
+    props.selected ? props.theme.colors.secondDark : 'transparent'};
+  border: none;
+  cursor: pointer;
+  transition: background-color 200ms ease-out;
+
+  &:hover {
+    background-color: ${(props) =>
+      props.theme.colors[props.selected ? 'secondDark' : 'mainLight']};
+  }
+`
 export default function Search(props) {
-  const [order, setOrder] = useState(false)
-  const [search, setSearch] = useState(false)
+  const [displaySort, setDisplaySort] = useState(true)
 
   return (
     <Wrapper>
@@ -37,7 +60,9 @@ export default function Search(props) {
         onChange={({ value }) => props.setSearch(value)}
         placeholder={'Recherchez'}
       />
-      <FilterButton onClick={() => alert('Pas encore développé')}>
+      <SortButton
+        onClick={() => setDisplaySort((prevDisplaySort) => !prevDisplaySort)}
+      >
         <svg x='0px' y='0px' viewBox='0 0 489.389 489.389'>
           <path
             d='M261.294,326.102c-8.3-7.3-21.8-6.2-29.1,2.1l-77,86.8v-346.9c0-11.4-9.4-20.8-20.8-20.8s-20.8,9.4-20.8,20.8v346.9
@@ -50,7 +75,47 @@ export default function Search(props) {
 			c8.3,8.3,20.8,9.4,29.1,2.1C490.194,155.502,491.294,143.002,483.994,134.702z'
           />
         </svg>
-      </FilterButton>
+      </SortButton>
+      {displaySort && (
+        <SortPanel>
+          <Option
+            onClick={() => {
+              props.setSorting('alph_desc')
+              setDisplaySort(false)
+            }}
+            selected={props.sorting === 'alph_desc'}
+          >
+            A => Z
+          </Option>
+          <Option
+            onClick={() => {
+              props.setSorting('alph_asc')
+              setDisplaySort(false)
+            }}
+            selected={props.sorting === 'alph_asc'}
+          >
+            Z => A
+          </Option>
+          <Option
+            onClick={() => {
+              props.setSorting('co2_desc')
+              setDisplaySort(false)
+            }}
+            selected={props.sorting === 'co2_desc'}
+          >
+            Du + émetteur au - émetteur
+          </Option>
+          <Option
+            onClick={() => {
+              props.setSorting('co2_asc')
+              setDisplaySort(false)
+            }}
+            selected={props.sorting === 'co2_asc'}
+          >
+            Du - émetteur au + émetteur
+          </Option>
+        </SortPanel>
+      )}
     </Wrapper>
   )
 }

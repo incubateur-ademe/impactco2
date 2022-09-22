@@ -65,7 +65,7 @@ export default function Item(props) {
       setInterval([orderedMonths[0], orderedMonths[orderedMonths.length - 1]])
     }
   }, [props.item])
-  console.log(interval)
+
   return (
     <Wrapper key={props.item.id} to={props.item.to} season={props.item.season}>
       <Header>

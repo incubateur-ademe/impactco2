@@ -21,11 +21,9 @@ const StyledTop = styled(Top)`
   }
 `
 export default function Distance(props) {
-  const theme = useTheme()
-
   const { equivalents, categories } = useContext(DataContext)
 
-  const [displayAll, setDisplayAll] = useState(false)
+  const [sorting, setSorting] = useState('alph_desc')
 
   const [search, setSearch] = useState('')
 
@@ -72,7 +70,6 @@ export default function Distance(props) {
       setEquivalentsOfTheMonth(
         equivalents
           .filter((equivalent) => equivalent.category === props.category.id)
-          .filter((equivalent) => equivalent.default || displayAll)
           .filter(
             (equivalent) =>
               results || equivalent.months.includes(props.month.index)
@@ -85,7 +82,6 @@ export default function Distance(props) {
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
             title: formatName(equivalent.name.fr, 1, true),
-            subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
             emoji: equivalent.emoji,
             value: formatTotal(equivalent),
             season: equivalent.months.includes(props.month.index),
@@ -102,17 +98,25 @@ export default function Distance(props) {
                 equivalent.slug,
               ]),
           }))
-          .sort((a, b) => (a.id > b.id ? 1 : -1))
+          .sort((a, b) =>
+            sorting.includes('alph')
+              ? a.id > b.id
+                ? sorting.includes('desc')
+                  ? 1
+                  : -1
+                : sorting.includes('desc')
+                ? -1
+                : 1
+              : a.value > b.value
+              ? sorting.includes('desc')
+                ? -1
+                : 1
+              : sorting.includes('desc')
+              ? 1
+              : -1
+          )
       )
-  }, [
-    equivalents,
-    categories,
-    props.category,
-    displayAll,
-    props.month,
-    results,
-    theme,
-  ])
+  }, [equivalents, categories, props.category, props.month, results, sorting])
 
   return (
     <Section>
@@ -120,7 +124,13 @@ export default function Distance(props) {
         <Wrapper month={props.month} slug={props.category.slug}>
           <StyledTop>
             <Instruction />
-            <Search month={props.month} search={search} setSearch={setSearch} />
+            <Search
+              month={props.month}
+              search={search}
+              setSearch={setSearch}
+              sorting={sorting}
+              setSorting={setSorting}
+            />
           </StyledTop>
           <List
             items={equivalentsOfTheMonth}
