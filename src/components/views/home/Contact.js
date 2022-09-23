@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import Section from 'components/base/Section'
 import SimpleTile from 'components/base/SimpleTile'
 
+const StyledSection = styled(Section)`
+  margin-bottom: 4rem;
+`
 const Title = styled.h2`
   text-align: center;
 `
@@ -14,7 +17,7 @@ const Br = styled.br`
 `
 export default function Contact(props) {
   return (
-    <Section>
+    <StyledSection>
       <Section.Content>
         <Title>
           Comment intégrer ces données
@@ -47,6 +50,6 @@ export default function Contact(props) {
           />
         </SimpleTile.Wrapper>
       </Section.Content>
-    </Section>
+    </StyledSection>
   )
 }
