@@ -14,6 +14,10 @@ const SizerWrapper = styled.div`
 const Sizer = styled.div`
   position: relative;
   margin: -1.5rem;
+
+  ${(props) => props.theme.mq.medium} {
+    margin: -0.75rem;
+  }
 `
 const Content = styled.div`
   background-color: ${(props) =>
@@ -21,13 +25,16 @@ const Content = styled.div`
 `
 const Header = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 `
-const Title = styled.h1``
+const Title = styled.h1`
+  margin-bottom: 1rem;
+  text-align: center;
+`
 const StyledButtons = styled(Buttons)`
-  margin-top: 0.5rem;
-
+  margin-bottom: 0.5rem;
   ${(props) => props.theme.mq.small} {
     margin-top: 0;
   }
@@ -45,13 +52,13 @@ export default function Wrapper(props) {
         <Content ref={ref} hover={hover}>
           <Background hover={hover}>
             <Header>
-              <Title>{props.name}</Title>
               <StyledButtons
                 takeScreenshot={takeScreenshot}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
-                slug={`categories/${props.slug}`}
+                slug={`empreinte-carbone/${props.slug}`}
               />
+              <Title>{props.name}</Title>
             </Header>
             {props.children}
           </Background>

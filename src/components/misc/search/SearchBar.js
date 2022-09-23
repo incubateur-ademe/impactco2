@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 
-import useDebounce from 'hooks/useDebounce.js'
 import DataContext from 'components/providers/DataProvider'
 import TextInput from './searchBar/TextInput'
 import Suggestions from './searchBar/Suggestions'
@@ -37,8 +36,6 @@ export default function SearchBar(props) {
   const { equivalents, categories } = useContext(DataContext)
   const [search, setSearch] = useState('')
 
-  useDebounce(search, 300)
-
   const [results, setResults] = useState([])
   const [fuse, setFuse] = useState(null)
   useEffect(() => {
@@ -47,7 +44,7 @@ export default function SearchBar(props) {
         new Fuse(equivalents, {
           keys: [
             {
-              name: 'name.fr',
+              name: 'name',
               weight: 1,
             },
             {
@@ -55,7 +52,7 @@ export default function SearchBar(props) {
               weight: 0.7,
             },
             {
-              name: 'subtitle.fr',
+              name: 'subtitle',
               weight: 0.4,
             },
             {

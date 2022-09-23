@@ -9,6 +9,7 @@ import numerique from 'data/categories/numerique.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import repas from 'data/categories/repas.json'
 import chauffage from 'data/categories/chauffage.json'
+import divers from 'data/categories/divers.json'
 import categories from 'data/categories.json'
 
 import Web from 'components/layout/Web'
@@ -27,13 +28,14 @@ const equivalents = [
   ...usagenumerique,
   ...repas,
   ...chauffage,
+  ...divers,
 ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
 
 export default function Equivalent(props) {
   return (
     <Web
-      title={props.equivalent.title}
-      description={props.equivalent.description}
+      title={props.equivalent.meta.title}
+      description={props.equivalent.meta.description}
       breadcrumb={{
         type: 'equivalent',
         category: props.category,

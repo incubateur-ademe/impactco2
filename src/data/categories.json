@@ -1,107 +1,143 @@
 [
   {
     "id": 1,
-    "name": {
-      "fr": "Numérique"
-    },
+    "name": "Numérique",
     "emoji": "💻",
     "slug": "numerique",
+    "title": "Empreinte carbone du numérique",
+    "description": "Découvrez l'impact sur le climat du secteur du numérique et comparez l'empreinte carbone des objets qui le composent.",
     "divider": 1,
+    "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
-    "title": "Empreinte carbone objets numériques",
-    "description": "Le secteur du numérique représente 2,5% des émissions carbone en France. Comment réduire son impact numérique et agir pour le climat  à son échelle ?"
+    "meta": {
+      "title": "Empreinte carbone objets numériques",
+      "description": "Le secteur du numérique représente 2,5% des émissions carbone en France. Comment réduire son impact numérique et agir pour le climat à son échelle ?"
+    }
   },
   {
     "id": 2,
-    "name": {
-      "fr": "Repas"
-    },
+    "name": "Repas",
     "emoji": "🍽",
     "slug": "repas",
+    "title": "Empreinte carbone de l'alimentation",
+    "description": "Découvrez l'impact sur le climat de votre alimentation et comparez l'empreinte carbone des différents types de repas.",
     "divider": 1,
+    "display": true,
     "unit": "repas",
     "include": "par repas comprenant la fabrication, la distribution et la consommation",
-    "title": "Empreinte carbone d'un repas",
-    "description": "Repas végétalien, végétarien, avec du boeuf, avec du poulet, avec du poisson gras, ou avec du poisson blanc... Découvrez leur valeur en CO₂e"
+    "meta": {
+      "title": "Empreinte carbone d'un repas",
+      "description": "Repas végétalien, végétarien, avec du boeuf, avec du poulet, avec du poisson gras, ou avec du poisson blanc... Découvrez leur valeur en CO₂e"
+    }
   },
   {
     "id": 3,
-    "name": {
-      "fr": "Boisson"
-    },
+    "name": "Boisson",
     "emoji": "🍹",
     "slug": "boisson",
+    "title": "Empreinte carbone des boissons",
     "divider": 1,
+    "display": true,
     "unit": "litre",
     "include": "par litre de produit comprenant la fabrication, la distribution et la consommation",
-    "title": "L'empreinte carbone de nos boissons",
-    "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
+    "meta": {
+      "title": "L'empreinte carbone de nos boissons",
+      "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
+    }
   },
   {
     "id": 4,
-    "name": {
-      "fr": "Transport"
-    },
+    "name": "Transport",
     "emoji": "🚴‍♂️",
     "slug": "transport",
+    "title": "Empreinte carbone du transport",
     "divider": 1,
+    "display": true,
     "unit": "km",
     "include": "par personne en France. Sont incluses les émissions directes, et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
-    "title": "Empreinte carbone de vos déplacements",
-    "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Mon Convertisseur CO2 vous connaitrez votre impact sur le climat"
+    "meta": {
+      "title": "Empreinte carbone de vos déplacements",
+      "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Mon Convertisseur CO2 vous connaitrez votre impact sur le climat"
+    }
   },
   {
     "id": 5,
-    "name": {
-      "fr": "Habillement"
-    },
+    "name": "Habillement",
     "emoji": "👔",
     "slug": "habillement",
+    "title": "Empreinte carbone des vêtements",
+    "description": "Découvrez l'impact sur le climat du secteur de la mode et comparez l'empreinte carbone de tous vos vêtements.",
     "divider": 1,
+    "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
-    "title": "L'empreinte carbone de vos habits",
-    "description": "Connaissez-vous l'impact carbone des habits que vous portez ?  Mon convertisseur CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
+    "meta": {
+      "title": "L'empreinte carbone de vos habits",
+      "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Mon convertisseur CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
+    }
   },
   {
     "id": 6,
-    "name": {
-      "fr": "Électroménager"
-    },
+    "name": "Électroménager",
     "emoji": "🛁",
     "slug": "electromenager",
+    "title": "Empreinte carbone de l'électroménager",
+    "description": "Découvrez l'impact sur le climat du secteur de l'électroménager et comparez l'empreinte carbone de tous vos équipements.",
     "divider": 1,
+    "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
-    "title": "L'empreinte carbone de l'électroménager",
-    "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Mon Convertisseur CO2 vous indique le poids CO₂e de chaque appareil !"
+    "meta": {
+      "title": "L'empreinte carbone de l'électroménager",
+      "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Mon Convertisseur CO2 vous indique le poids CO₂e de chaque appareil !"
+    }
   },
   {
     "id": 7,
-    "name": {
-      "fr": "Mobilier"
-    },
+    "name": "Mobilier",
     "emoji": "🪑",
     "slug": "mobilier",
+    "title": "Empreinte carbone du mobilier",
+    "description": "Découvrez l'impact sur le climat du secteur du mobilier et comparez l'empreinte carbone de vos meubles.",
     "divider": 1,
+    "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
-    "title": "Quel empreinte carbone a le mobilier ?",
-    "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
+    "meta": {
+      "title": "Quel empreinte carbone a le mobilier ?",
+      "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
+    }
   },
   {
     "id": 8,
-    "name": {
-      "fr": "Chauffage"
-    },
+    "name": "Chauffage",
     "emoji": "🏠",
     "slug": "chauffage",
+    "title": "Empreinte carbone du chauffage",
+    "description": "Découvrez l'impact sur le climat du chauffage et comparez les différents types de chaudières (électrique, gaz ou fioul).",
     "divider": 1,
+    "display": true,
     "unit": "m2",
     "include": "par m2 par année",
-    "title": "Poids en CO₂e d'une année de chauffage",
-    "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée (électrique, gaz ou fioul)"
+    "meta": {
+      "title": "Poids en CO₂e d'une année de chauffage",
+      "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée "
+    }
+  },
+  {
+    "id": 11,
+    "name": "Divers",
+    "emoji": "⚙️",
+    "slug": "divers",
+    "divider": 1,
+    "display": false,
+    "unit": "unité",
+    "include": "par unité",
+    "meta": {
+      "title": "",
+      "description": ""
+    }
   },
   {
     "id": 10,

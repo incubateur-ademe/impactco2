@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import Head from 'next/head'
 import Script from 'next/script'
 
 import ModalContext from 'components/providers/ModalProvider'
@@ -23,6 +24,9 @@ export default function Iframe(props) {
   return (
     <>
       <Wrapper>
+        <Head>
+          <meta name='robots' content='noindex' />
+        </Head>
         {props.children}
         <StyledButtonLink onClick={() => setSurvey(true)}>
           Répondez à notre enquête utilisateur !

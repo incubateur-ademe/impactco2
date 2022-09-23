@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Cigarette[s]",
+    "slug": "cigarette",
+    "synonyms": ["fumer"],
+    "emoji": "🚬",
+    "category": 11,
+    "total": 0.014,
+    "default": true,
+    "tile": false,
+    "meta": { "title": "", "description": "" },
+    "source": "https://pubs.acs.org/doi/pdf/10.1021/acs.est.8b01533?rand=mktszp30"
+  },
+  {
+    "name": "Livre[s] de poche",
+    "slug": "livredepoche",
+    "synonyms": ["lire"],
+    "emoji": "📘",
+    "category": 11,
+    "total": 1.18,
+    "default": true,
+    "tile": false,
+    "meta": { "title": "", "description": "" },
+    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=livre",
+    "hypothesis": "Dans la Base Carbone, la valeur est donnée pour un livre de 300g.<br/><br/>En utilisant les chiffres de <a href='http://www.scolibris.fr/rezolibris/download.php?file=fichetechnique/38/pdf/Poids-du-livre.pdf' target='_blank'>Scolibris</a> on voit que 300g correspond à un livre de poche de 371 pages (0.110.18300 + 0.110.1880*371/2).<br/><br/>Si on estime le nombre moyen de page d'un livre à 400 (<a href='https://actualitte.com/article/35773/numerique/la-taille-moyenne-du-livre-s-est-allongee-de-80-pages-en-15-ans' target='_blank'>source</a>) on arrive à un poids de 322.74g.<br/><br/>Ce qui fait qu'un livre de poche moyen est équivalent à 1.18kgCO2e"
+  }
+]

@@ -224,13 +224,13 @@ export default function Tile(props) {
         </Number>
         <Name>
           {formatName(
-            (props.equivalent.unit?.fr || '') + props.equivalent.name.fr,
+            (props.equivalent.unit?.fr || '') + props.equivalent.name,
             props.weight / formatTotalByMultiplier(props.equivalent)
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (
             <Subtitle>
               {formatName(
-                props.equivalent.subtitle.fr,
+                props.equivalent.subtitle,
                 props.weight / formatTotalByMultiplier(props.equivalent)
               )}
             </Subtitle>
@@ -243,7 +243,9 @@ export default function Tile(props) {
         !props.equivalentPage && (
           <Button.Wrapper>
             <StyledButton
-              to={`${iframe ? router.basePath : ''}/empreinte-carbone/${
+              to={`${
+                iframe ? 'https://monconvertisseurco2.fr' : ''
+              }/empreinte-carbone/${
                 categories.find(
                   (category) => category.id === props.equivalent.category
                 )?.slug

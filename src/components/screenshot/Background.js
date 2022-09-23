@@ -27,6 +27,10 @@ const Content = styled.div`
   justify-content: space-between;
   height: 100%;
   padding: 1.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    padding: 0.75rem 0.75rem 1.5rem;
+  }
 `
 export default function Background(props) {
   return (

@@ -1,58 +1,72 @@
 [
   {
     "id": 1,
-    "name": {
-      "fr": "Matières premières"
-    },
+    "name": "Matières premières",
     "color": "#ab616f"
   },
   {
     "id": 2,
-    "name": {
-      "fr": "Approvisionnement"
-    },
+    "name": "Approvisionnement",
     "color": "#a6b37d"
   },
   {
     "id": 3,
-    "name": {
-      "fr": "Mise en forme"
-    },
+    "name": "Mise en forme",
     "color": "#adc4c5"
   },
   {
     "id": 4,
-    "name": {
-      "fr": "Assemblage et distribution"
-    },
+    "name": "Assemblage et distribution",
     "color": "#66a498"
   },
   {
     "id": 5,
-    "name": {
-      "fr": "Construction"
-    },
+    "name": "Construction",
     "color": "#ab616f"
   },
   {
     "id": 6,
-    "name": {
-      "fr": "Carburant"
-    },
+    "name": "Carburant",
     "color": "#6f87ad"
   },
   {
     "id": 7,
-    "name": {
-      "fr": "Trainées de condensation"
-    },
+    "name": "Trainées de condensation",
     "color": "#adc4c5"
   },
   {
     "id": 8,
-    "name": {
-      "fr": "Usage"
-    },
+    "name": "Usage",
+    "color": "#6f87ad"
+  },
+  {
+    "id": 30,
+    "name": "Agriculture",
+    "color": "#ab616f"
+  },
+  {
+    "id": 31,
+    "name": "Transformation",
+    "color": "#a6b37d"
+  },
+  {
+    "id": 32,
+    "name": "Emballage",
+    "color": "#adc4c5"
+  },
+  {
+    "id": 33,
+    "name": "Transport",
+    "color": "#66a498"
+  },
+  {
+    "id": 34,
+    "name": "Supermarché et distribution",
+    "color": "#F6D860"
+  },
+  {
+    "id": 35,
+    "name": "Consommation",
     "color": "#6f87ad"
   },
   {

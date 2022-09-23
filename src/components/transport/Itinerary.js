@@ -22,7 +22,10 @@ export default function Itinerary(props) {
   return (
     <Section>
       <Section.Content>
-        <Wrapper name={props.category.name.fr} slug={props.category.slug}>
+        <Wrapper
+          name={props.category.title || props.category.name}
+          slug={props.category.slug}
+        >
           <Search itineraire iframe={props.iframe} />
           {transportations.length ? (
             <Top>
@@ -37,7 +40,7 @@ export default function Itinerary(props) {
                       'trackEvent',
                       'Interaction',
                       'Voir tous les équivalents',
-                      props.category.name.fr,
+                      props.category.name,
                     ])
                   }}
                 >

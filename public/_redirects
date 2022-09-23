@@ -7,3 +7,4 @@ https://www.monimpacttransport.fr/*       https://monconvertisseurco2.fr/categor
 /categories/deplacement/*                 /empreinte-carbone/transport/:splat
 
 /categories/*                             /empreinte-carbone/:splat
+/iframes/categories/*                     /iframes/empreinte-carbone/:splat

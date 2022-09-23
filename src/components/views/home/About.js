@@ -10,9 +10,6 @@ import monimpacttransport from './about/mon-impact-transport.png'
 import mesfruitsetlegumesdesaison from './about/mes-fruits-et-legumes-de-saison.jpg'
 import quefairedemesdechets from './about/que-faire-de-mes-dechets.png'
 
-const StyledSection = styled(Section)`
-  margin-bottom: 4rem;
-`
 const Title = styled.h2`
   text-align: center;
 `
@@ -30,7 +27,7 @@ const SimulateursTitle = styled.h3`
 
 export default function About(props) {
   return (
-    <StyledSection>
+    <Section>
       <Section.Content>
         <Title as={props.main ? 'h1' : 'h2'}>Qui sommes nous ?</Title>
         <Text>
@@ -91,6 +88,6 @@ export default function About(props) {
           </SimpleTile>
         </SimpleTile.Wrapper>
       </Section.Content>
-    </StyledSection>
+    </Section>
   )
 }

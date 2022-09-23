@@ -10,8 +10,8 @@ import Learning from 'components/transport/Learning'
 export default function Transport(props) {
   return (
     <Web
-      title={props.category.title}
-      description={props.category.description}
+      title={props.category.meta.title}
+      description={props.category.meta.description}
       breadcrumb={{
         type: 'equivalent',
         category: props.category,
