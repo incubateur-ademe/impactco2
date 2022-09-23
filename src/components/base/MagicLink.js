@@ -60,14 +60,7 @@ export default function MagicLink(props) {
       )}
     </a>
   ) : (
-    <Link
-      href={
-        props.to +
-        (!props.to.includes('?') && router.asPath.split('?')[1]
-          ? `?${router.asPath.split('?')[1]}`
-          : '')
-      }
-    >
+    <Link href={props.to}>
       <a
         className={props.className}
         onClick={props.onClick || null}
