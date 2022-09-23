@@ -72,7 +72,7 @@ export default function useTransportations(itineraries) {
                 })`
               : ((displayAll || equivalent.name === 'Voiture') &&
                 equivalent.subtitle
-                  ? `(${equivalent.subtitle?.fr})`
+                  ? `(${equivalent.subtitle})`
                   : '') +
                   (itineraries
                     ? ` - ${formatNumber(
