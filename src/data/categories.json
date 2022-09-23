@@ -113,6 +113,7 @@
     "divider": 1,
     "include": "",
     "title": "",
-    "description": ""
+    "description": "",
+    "list": true
   }
 ]

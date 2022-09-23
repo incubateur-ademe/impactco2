@@ -76,11 +76,24 @@ export default function CategoryList(props) {
               </Checkbox>
             </Top.Checkboxes>
           </Top>
-          <BarChart
-            items={equivalentsOfCategory}
-            max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
-          />
-          {![2, 3].includes(props.category.id) && <CategoryLegend />}
+          {props.category.list ? (
+            <List
+              items={equivalentsOfCategory}
+              max={
+                equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value
+              }
+            />
+          ) : (
+            <>
+              <BarChart
+                items={equivalentsOfCategory}
+                max={
+                  equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value
+                }
+              />
+              {![2, 3].includes(props.category.id) && <CategoryLegend />}
+            </>
+          )}
           <Bottom category={props.category} />
         </Wrapper>
       </Section.Content>
