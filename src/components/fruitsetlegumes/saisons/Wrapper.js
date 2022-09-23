@@ -35,7 +35,8 @@ const Title = styled.h1`
   text-align: center;
 `
 const StyledButtons = styled(Buttons)`
-  margin-bottom: 0.5rem;
+  margin: -1rem 0 0.5rem;
+
   ${(props) => props.theme.mq.small} {
     margin-top: 0;
   }

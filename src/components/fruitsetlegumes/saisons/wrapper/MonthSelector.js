@@ -6,7 +6,7 @@ import useIframe from 'hooks/useIframe'
 import FancySelect from 'components/base/FancySelect'
 
 export default function MonthSelector(props) {
-  const iframe = useIframe
+  const iframe = useIframe()
 
   const router = useRouter()
 
