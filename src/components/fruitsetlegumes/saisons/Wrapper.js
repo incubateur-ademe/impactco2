@@ -57,7 +57,7 @@ export default function Wrapper(props) {
                 takeScreenshot={takeScreenshot}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
-                slug={`categories/${props.slug}`}
+                slug={`empreinte-carbone/${props.slug}`}
               />
               <Title>
                 Les fruits et légumes de <MonthSelector month={props.month} />

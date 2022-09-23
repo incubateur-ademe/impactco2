@@ -3,9 +3,8 @@ import React from 'react'
 import categories from 'data/categories.json'
 
 import { slugs, getMonth } from 'utils/months'
-import Web from 'components/layout/Web'
+import Iframe from 'components/layout/Iframe'
 import Saisons from 'components/fruitsetlegumes/Saisons'
-import Learning from 'components/fruitsetlegumes/Learning'
 
 export default function Transport(props) {
   const date = new Date()
@@ -16,17 +15,9 @@ export default function Transport(props) {
   }
 
   return (
-    <Web
-      title={props.category.meta.title}
-      description={props.category.meta.description}
-      breadcrumb={{
-        type: 'equivalent',
-        category: props.category,
-      }}
-    >
+    <Iframe>
       <Saisons category={props.category} month={month} />
-      <Learning />
-    </Web>
+    </Iframe>
   )
 }
 export async function getStaticProps() {

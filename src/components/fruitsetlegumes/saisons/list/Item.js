@@ -19,9 +19,6 @@ const Wrapper = styled(MagicLink)`
   color: ${(props) => props.theme.colors.text};
   transition: background-color 200ms ease-out;
 
-  ${(props) => props.theme.mq.medium} {
-    width: calc(33.3333% - 0.5rem);
-  }
   ${(props) => props.theme.mq.small} {
     width: calc(50% - 0.375rem);
   }
