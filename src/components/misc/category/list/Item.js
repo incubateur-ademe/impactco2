@@ -28,17 +28,20 @@ const Wrapper = styled(MagicLink)`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: ${(props) => props.theme.colors.main};
 `
 const Title = styled.div`
   font-weight: bold;
 `
 const Value = styled.div`
-  margin-bottom: 0.125rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
 `
 const Unit = styled.span`
-  font-size: 0.75em;
+  font-size: 0.5em;
+  font-weight: 300;
 `
 export default function Item(props) {
   return (
@@ -48,13 +51,13 @@ export default function Item(props) {
         <Emoji>{props.item.emoji}</Emoji>
       </Header>
       <Value>
-        {formatNumber(props.item.value)}
+        {formatNumber(props.item.value * 1000)}
         <Unit>
           {' '}
-          kg CO<sub>2</sub>e / kg
+          g CO<sub>2</sub>e / {props.item.unit}
         </Unit>
       </Value>
-      <Chart item={props.item} />
+      <Chart item={props.item} max={props.max} />
     </Wrapper>
   )
 }

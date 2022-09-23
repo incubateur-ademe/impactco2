@@ -30,7 +30,7 @@ export default function List(props) {
         {props.items
           .filter((item, index) => index < itemPerPage * page || !iframe)
           .map((item) => (
-            <Item key={item.id} item={item} />
+            <Item key={item.id} item={item} max={props.max} />
           ))}
       </Wrapper>
       {iframe && props.items.length > itemPerPage * page ? (
