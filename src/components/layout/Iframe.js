@@ -5,16 +5,10 @@ import Script from 'next/script'
 
 import ModalContext from 'components/providers/ModalProvider'
 import useInteraction from 'hooks/useInteraction'
-import ButtonLink from 'components/base/ButtonLink'
 import IframeFooter from './iframe/IframeFooter'
 
 const Wrapper = styled.div`
   padding: 1rem 0;
-`
-const StyledButtonLink = styled(ButtonLink)`
-  display: block;
-  margin: 0 auto;
-  text-align: center;
 `
 export default function Iframe(props) {
   useInteraction()
@@ -28,9 +22,6 @@ export default function Iframe(props) {
           <meta name='robots' content='noindex' />
         </Head>
         {props.children}
-        <StyledButtonLink onClick={() => setSurvey(true)}>
-          Répondez à notre enquête utilisateur !
-        </StyledButtonLink>
         <IframeFooter />
       </Wrapper>
       <Script

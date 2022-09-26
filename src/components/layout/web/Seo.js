@@ -12,8 +12,8 @@ export default function Seo(props) {
     description:
       props.description ||
       `Découvrez l’impact sur le climat des objets et gestes de votre quotidien comme votre mobilier, vos habits ou encore vos repas`,
-    image: `https://monconvertisseurco2.fr/${props.image || 'metaimage.png'}`,
-    url: `https://monconvertisseurco2.fr/${router.asPath}`,
+    image: `https://impactco2.fr/${props.image || 'metaimage.png'}`,
+    url: `https://impactco2.fr/${router.asPath}`,
   }
 
   return (

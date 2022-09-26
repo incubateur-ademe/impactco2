@@ -59,7 +59,7 @@ export default function PullGeneral() {
         <strong>5 t-shirts</strong>
         <br />
       </Small>
-      <CenterLink to='/co2e'>Voir plus d&apos;équivalences</CenterLink>
+      <CenterLink to='/convertisseur'>Voir plus d&apos;équivalences</CenterLink>
     </>
   )
 }
