@@ -224,7 +224,7 @@ export default function Tile(props) {
         </Number>
         <Name>
           {formatName(
-            (props.equivalent.unit?.fr || '') + props.equivalent.name,
+            (props.equivalent.prefix || '') + props.equivalent.name,
             props.weight / formatTotalByMultiplier(props.equivalent)
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (

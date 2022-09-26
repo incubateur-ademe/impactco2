@@ -153,7 +153,7 @@
     "source": "https://negaoctet.org/"
   },
   {
-    "name": "Recherche sur le web",
+    "name": "Recherche[s] sur le web",
     "slug": "rechercheweb",
     "emoji": "🧐",
     "unit": "recherche",
@@ -190,6 +190,7 @@
   },
   {
     "name": "Streaming vidéo",
+    "prefix": "Heure[s] de ",
     "subtitle": "HD",
     "slug": "streamingvideo",
     "emoji": "🎬",
@@ -226,7 +227,8 @@
     "source": "https://negaoctet.org/"
   },
   {
-    "name": "Visio conférence",
+    "name": "Visioconférence",
+    "prefix": "Heure[s] de ",
     "slug": "visioconference",
     "emoji": "🎥",
     "unit": "heure",
@@ -262,7 +264,8 @@
     "source": "https://negaoctet.org/"
   },
   {
-    "name": "Audio conférence",
+    "name": "Audioconférence",
+    "prefix": "Heure[s] d'",
     "slug": "audioconference",
     "emoji": "🎙",
     "unit": "heure",
@@ -298,7 +301,7 @@
     "source": "https://negaoctet.org/"
   },
   {
-    "name": "Télécharger 1Go",
+    "name": "Go de donnée",
     "slug": "telechargement",
     "emoji": "⬇️",
     "category": 10,

@@ -50,10 +50,10 @@ export default function Details(props) {
       <Section>
         <Section.Content flex>
           <Title>
-            {props.equivalent.unit && (
-              <>{formatName(props.equivalent.unit, 1, true)} </>
+            {props.equivalent.prefix && (
+              <>{formatName(props.equivalent.prefix, 1, true)} </>
             )}
-            {formatName(props.equivalent.name, 1, !props.equivalent.unit)}
+            {formatName(props.equivalent.name, 1, !props.equivalent.prefix)}
             <Br />{' '}
             {props.equivalent.subtitle && (
               <Subtitle>({formatName(props.equivalent.subtitle, 1)})</Subtitle>
@@ -69,7 +69,7 @@ export default function Details(props) {
             <ButtonLink onClick={() => setCo2e(true)}>
               CO<sub>2</sub>e
             </ButtonLink>{' '}
-            émis {props.category?.include}.
+            émis {props.equivalent?.include || props.category?.include}.
           </Disclaimer>
           <StyledMagicLink to={props.equivalent.source}>Source</StyledMagicLink>
         </StyledSectionContent>

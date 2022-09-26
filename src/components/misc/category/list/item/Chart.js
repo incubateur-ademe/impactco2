@@ -23,6 +23,5 @@ const Wrapper = styled.div`
   }
 `
 export default function Chart(props) {
-  console.log(props.item.value / props.max)
   return <Wrapper percent={props.item.value / props.max} />
 }

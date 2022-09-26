@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { formatNumber, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
-import TextInput from 'components/base/TextInput'
 import Tile from 'components/misc/tiles/Tile'
 import ButtonLink from 'components/base/ButtonLink'
 
@@ -23,16 +22,24 @@ const Tiles = styled.div`
     gap: 0.75rem;
   }
 `
-const StyledTextInput = styled(TextInput)`
-  display: inline-block;
+const Input = styled.input`
   width: ${(props) => (props.mode === 'emails' ? 6 : 4.5)}rem;
   margin: 0 0.5rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1.125rem;
+  text-align: right;
+  color: ${(props) => props.theme.colors.text};
+  background-color: transparent;
+  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border-radius: 0.75rem;
+  transition: box-shadow 300ms ease-out;
 
-  input {
-    text-align: right;
+  &:focus {
+    outline: none;
+    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
   }
 `
+
 const Text = styled.p`
   text-align: center;
   filter: blur(${(props) => (props.blur ? '1rem' : 0)});
@@ -46,7 +53,7 @@ export default function StockageEmails() {
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter((equivalent) =>
-        ['voiturethermique', 'biere', 'repasavecduboeuf'].includes(
+        ['voiturethermique', 'repasavecduboeuf', 'cigarette'].includes(
           equivalent.slug
         )
       ),
@@ -84,22 +91,22 @@ export default function StockageEmails() {
       <Text>
         J'ai
         {mode === 'emails' ? (
-          <StyledTextInput
+          <Input
             key='1'
             mode={mode}
             type='number'
             value={emails}
-            onChange={({ value }) => setEmails(value)}
-            placeholder='10000'
+            onChange={(e) => setEmails(e.currentTarget.value)}
+            placeholder='XXXX'
           />
         ) : (
-          <StyledTextInput
+          <Input
             key='2'
             mode={mode}
             type='number'
             value={gigabytes}
-            onChange={({ value }) => setGigabytes(value)}
-            placeholder='5'
+            onChange={(e) => setGigabytes(e.currentTarget.value)}
+            placeholder='XX'
           />
         )}
         {mode === 'weight' ? `Go d'` : ''}emails stockés.{' '}
@@ -115,7 +122,7 @@ export default function StockageEmails() {
       <Text blur={!totalWeight}>
         Ma boite mail émet{' '}
         <strong>
-          {formatNumber(totalWeight)} kg CO<sub>2</sub>e sur 10 ans
+          {formatNumber(totalWeight)} kg CO<sub>2</sub>e par an
         </strong>
         , soit l'équivalent de...
       </Text>

@@ -127,9 +127,9 @@
   },
   {
     "id": 10,
-    "name": "Usages numérique",
+    "name": "Usage numérique",
     "emoji": "✉️",
-    "slug": "usagesnumerique",
+    "slug": "usagenumerique",
     "title": "Empreinte carbone des usages numériques",
     "description": "Découvrez l'impact sur le climat des usages numériques et comparez l'empreinte carbone des emails, du streaming ou encore de la visioconférence.",
     "divider": 1,

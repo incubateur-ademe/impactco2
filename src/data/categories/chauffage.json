@@ -2,7 +2,7 @@
   {
     "name": "Chauffage au gaz",
     "subtitle": "Maison",
-    "unit": "Année[s] de ",
+    "prefix": "Année[s] de ",
     "slug": "chauffagegazmaison",
     "emoji": "💨",
     "category": 8,
@@ -20,7 +20,7 @@
   {
     "name": "Chauffage au gaz",
     "subtitle": "Appartement",
-    "unit": "Année[s] de ",
+    "prefix": "Année[s] de ",
     "slug": "chauffagegazappartement",
     "emoji": "💨",
     "category": 8,
@@ -38,7 +38,7 @@
   {
     "name": "Chauffage au fioul",
     "subtitle": "Maison",
-    "unit": "Année[s] de ",
+    "prefix": "Année[s] de ",
     "slug": "chauffagefioulmaison",
     "emoji": "🛢",
     "category": 8,
@@ -56,7 +56,7 @@
   {
     "name": "Chauffage au fioul",
     "subtitle": "Appartement",
-    "unit": "Année[s] de ",
+    "prefix": "Année[s] de ",
     "slug": "chauffagefioulappartement",
     "emoji": "🛢",
     "category": 8,
@@ -74,7 +74,7 @@
   {
     "name": "Chauffage électrique",
     "subtitle": "Maison",
-    "unit": "Année[s] de ",
+    "prefix": "Année[s] de ",
     "slug": "chauffageelectriquemaison",
     "emoji": "⚡️",
     "category": 8,
@@ -92,7 +92,7 @@
   {
     "name": "Chauffage électrique",
     "subtitle": "Appartement",
-    "unit": "Année[s] de ",
+    "prefix": "Année[s] de ",
     "slug": "chauffageelectriqueappartement",
     "emoji": "⚡️",
     "category": 8,
