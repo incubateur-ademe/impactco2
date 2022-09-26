@@ -39,9 +39,10 @@ export default function Bottom(props) {
             props.category.name,
           ])
         }}
+        to={props.iframe ? 'https://monconvertisseurco2.fr' : null}
         hollow
       >
-        Comparer toutes les catégories
+        {props.iframe ? <>Voir</> : <>Comparer</>} toutes les catégories
       </Button>
     </Wrapper>
   )

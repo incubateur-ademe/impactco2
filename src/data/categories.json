@@ -126,6 +126,21 @@
     }
   },
   {
+    "id": 9,
+    "name": "Fruits et légumes",
+    "emoji": "🍅",
+    "slug": "fruitsetlegumes",
+    "description": "Découvrez quels sont les fruits et légumes en saison et comparez leurs empreintes carbones.",
+    "divider": 1,
+    "display": true,
+    "unit": "kg",
+    "include": "par kg de produit pour des fruits et légumes de saison",
+    "meta": {
+      "title": "Poids en CO₂e des fruits et légumes",
+      "description": "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison"
+    }
+  },
+  {
     "id": 11,
     "name": "Divers",
     "emoji": "⚙️",

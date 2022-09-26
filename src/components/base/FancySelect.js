@@ -1,31 +1,13 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
-const flash = keyframes`
-  from,
-  75%,
-  87.5%,
-  to {
-    opacity: 1;
-  }
-
-  81.25%,
-  93.75% {
-    opacity: 0;
-  }
-`
 const Wrapper = styled.span`
   position: relative;
   display: inline-block;
   line-height: 1.3;
-  color: ${(props) => props.theme.colors.main};
-  box-shadow: 0px 0.1875rem 0px 0px
-    ${(props) => (props.filled ? 'transparent' : props.theme.colors.main)};
-  animation: ${(props) => (!props.filled ? flash : 'none')} 4s infinite;
+  color: ${(props) => props.color || props.theme.colors.main};
 `
-const Value = styled.span`
-  text-transform: lowercase;
-`
+const Value = styled.span``
 const Input = styled.select`
   position: absolute;
   top: 0;
@@ -34,23 +16,18 @@ const Input = styled.select`
   height: 100%;
   font-size: inherit;
   font-weight: inherit;
-
   color: transparent;
   background-color: transparent;
   border: none;
-  box-shadow: 0px 0.1em 0px 0px ${(props) => props.theme.colors.main};
+  box-shadow: 0px 0.1em 0px 0px
+    ${(props) => props.color || props.theme.colors.main};
   transition: box-shadow 300ms ease-out;
   appearance: none;
   cursor: pointer;
-
-  &:focus {
-    outline: none;
-    box-shadow: 0px 0.25rem 0px 0px ${(props) => props.theme.colors.main};
-  }
 `
 export default function FancySelect(props) {
   return (
-    <Wrapper filled={props.value}>
+    <Wrapper color={props.color}>
       <Value
         dangerouslySetInnerHTML={{
           __html: props.options.find((option) => option.value === props.value)
@@ -66,6 +43,7 @@ export default function FancySelect(props) {
         onChange={(e) => {
           props.onChange(e.currentTarget.value)
         }}
+        color={props.color}
       >
         {props.options.map((option, index) => (
           <option

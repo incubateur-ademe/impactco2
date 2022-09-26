@@ -13,13 +13,6 @@ import { DataProvider } from 'components/providers/DataProvider'
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
-
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
-    }
-  }, [])
-
   return (
     <QueryParamProvider adapter={NextAdapter}>
       <QueryClientProvider client={queryClient}>

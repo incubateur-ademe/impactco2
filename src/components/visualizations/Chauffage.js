@@ -15,7 +15,7 @@ export default function Avion() {
   return (
     <>
       <Title>
-        En termes d&apos;émissions de CO2<sub>e</sub>
+        En termes d&apos;émissions de CO<sub>2</sub>e
       </Title>
       <Equivalents>
         <Equivalent size={[8, 8, 16]}>

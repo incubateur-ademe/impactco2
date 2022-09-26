@@ -54,7 +54,7 @@ export default function Learning() {
         </Statistic>
         <Strong>
           La{' '}
-          <MagicLink to='/categories/numerique/television'>
+          <MagicLink to='/empreinte-carbone/numerique/television'>
             production d’une télé
           </MagicLink>{' '}
           émet autant de{' '}
@@ -122,7 +122,7 @@ export default function Learning() {
           significative si rien n’est fait pour la limiter (+ 60 % d’ici à 2040
           soit 6,7 % de l’empreinte carbone nationale). Quant aux objets
           connectés (comme les{' '}
-          <MagicLink to='/categories/numerique/montreconnectee'>
+          <MagicLink to='/empreinte-carbone/numerique/montreconnectee'>
             montres connectées
           </MagicLink>
           ), ils risquent de représenter 18 à 23% de l’empreinte carbone d’ici

@@ -1,66 +1,139 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useMemo } from 'react'
+import styled from 'styled-components'
 
-import { slugs } from 'utils/months'
-import { formatName, formatTotal, formatUsage } from 'utils/formatters'
+import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
+import { formatName, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
-import Wrapper from 'components/misc/category/Wrapper'
 import Top from 'components/misc/category/Top'
+import Description from 'components/misc/category/Description'
 import Instruction from 'components/misc/category/Instruction'
-import CategoryLegend from 'components/misc/category/CategoryLegend'
 import Bottom from 'components/misc/category/Bottom'
-import Checkbox from 'components/base/Checkbox'
-import BarChart from 'components/charts/BarChart'
-import MonthSelector from './saisons/MonthSelector'
+import Wrapper from './saisons/Wrapper'
+import Search from './saisons/Search'
+import List from './saisons/List'
 
+const StyledTop = styled(Top)`
+  align-items: center;
+  margin-bottom: 0.75rem;
+
+  p {
+    margin: 0;
+  }
+`
 export default function Distance(props) {
   const { equivalents, categories } = useContext(DataContext)
 
-  const [displayAll, setDisplayAll] = useState(false)
+  const [sorting, setSorting] = useState('alph_desc')
 
-  const [equivalentsOfTheMonth, setEquivalentsOfTheMonth] = useState([])
+  const [search, setSearch] = useState('')
+
+  const [results, setResults] = useState([])
+  const [fuse, setFuse] = useState(null)
   useEffect(() => {
-    props.category &&
-      setEquivalentsOfTheMonth(
-        equivalents
-          .filter((equivalent) => equivalent.category === props.category.id)
-          .filter((equivalent) => equivalent.default || displayAll)
-          .filter((equivalent) => equivalent.months.includes(props.month.index))
-          .map((equivalent) => ({
-            id: `${equivalent.slug}`,
-            title: `1 kg de ${formatName(equivalent.name)}`,
-            subtitle: displayAll ? formatName(equivalent.subtitle?.fr) : null,
-            emoji: equivalent.emoji,
-            value: formatTotal(equivalent),
-            to: `/empreinte-carbone/${
-              categories.find((category) => category.id === equivalent.category)
-                .slug
-            }/${equivalent.slug}`,
-            onClick: () =>
-              window?._paq?.push([
-                'trackEvent',
-                'Interaction',
-                'Navigation via graph categorie',
-                equivalent.slug,
-              ]),
-          }))
-          .sort((a, b) => (a.value > b.value ? 1 : -1))
+    if (equivalents) {
+      setFuse(
+        new Fuse(equivalents, {
+          keys: [
+            {
+              name: 'name',
+              weight: 1,
+            },
+            {
+              name: 'slug',
+              weight: 0.7,
+            },
+            {
+              name: 'subtitle',
+              weight: 0.4,
+            },
+          ],
+          threshold: 0.3,
+          ignoreLocation: false,
+        })
       )
-  }, [equivalents, categories, props.category, displayAll, props.month])
+    }
+  }, [equivalents])
+
+  useEffect(() => {
+    if (fuse && search.length > 0) {
+      setResults(
+        fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+      )
+    } else {
+      setResults(null)
+    }
+  }, [search, fuse])
+
+  const equivalentsOfTheMonth = useMemo(
+    () =>
+      props.category &&
+      equivalents
+        .filter((equivalent) => equivalent.category === props.category.id)
+        .filter(
+          (equivalent) =>
+            results || equivalent.months.includes(props.month.index)
+        )
+        .filter(
+          (equivalent) =>
+            !results ||
+            results.find((result) => result.item.slug === equivalent.slug)
+        )
+        .map((equivalent) => ({
+          id: `${equivalent.slug}`,
+          title: formatName(equivalent.name, 1, true),
+          emoji: equivalent.emoji,
+          value: formatTotal(equivalent),
+          season: equivalent.months.includes(props.month.index),
+          months: equivalent.months,
+          to: `/empreinte-carbone/${
+            categories.find((category) => category.id === equivalent.category)
+              .slug
+          }/${equivalent.slug}`,
+          onClick: () =>
+            window?._paq?.push([
+              'trackEvent',
+              'Interaction',
+              'Navigation via graph categorie',
+              equivalent.slug,
+            ]),
+        }))
+        .sort((a, b) =>
+          sorting.includes('alph')
+            ? a.id > b.id
+              ? sorting.includes('desc')
+                ? 1
+                : -1
+              : sorting.includes('desc')
+              ? -1
+              : 1
+            : a.value > b.value
+            ? sorting.includes('desc')
+              ? -1
+              : 1
+            : sorting.includes('desc')
+            ? 1
+            : -1
+        ),
+    [equivalents, categories, props.category, props.month, results, sorting]
+  )
 
   return (
     <Section>
       <Section.Content>
-        <Wrapper
-          name={`Les fruits et légumes de ${props.month.long}`}
-          slug={props.category.slug}
-        >
-          <MonthSelector month={props.month} />
-          <Top>
+        <Wrapper month={props.month} slug={props.category.slug}>
+          <Description description={props.category.description} />
+          <StyledTop>
             <Instruction />
-            <Top.Checkboxes visible></Top.Checkboxes>
-          </Top>
-          <BarChart
+            <Search
+              month={props.month}
+              search={search}
+              setSearch={setSearch}
+              sorting={sorting}
+              setSorting={setSorting}
+            />
+          </StyledTop>
+          <List
             items={equivalentsOfTheMonth}
             max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value}
           />
