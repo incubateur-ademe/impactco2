@@ -52,14 +52,16 @@ export default function Equivalent(props) {
 
 export async function getStaticPaths() {
   return {
-    paths: equivalents.map((equivalent) => ({
-      params: {
-        equivalent: equivalent.slug,
-        category: categories.find(
-          (category) => category.id === equivalent.category
-        ).slug,
-      },
-    })),
+    paths: equivalents
+      .filter((equivalent) => equivalent.slug !== 'email')
+      .map((equivalent) => ({
+        params: {
+          equivalent: equivalent.slug,
+          category: categories.find(
+            (category) => category.id === equivalent.category
+          ).slug,
+        },
+      })),
     fallback: false,
   }
 }
