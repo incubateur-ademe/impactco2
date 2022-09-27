@@ -53,7 +53,15 @@ export default function Equivalent(props) {
 export async function getStaticPaths() {
   return {
     paths: equivalents
-      .filter((equivalent) => equivalent.slug !== 'email')
+      .filter(
+        (equivalent) =>
+          ![
+            'email',
+            'visioconference',
+            'audioconference',
+            'rechercheweb',
+          ].includes(equivalent.slug)
+      )
       .map((equivalent) => ({
         params: {
           equivalent: equivalent.slug,

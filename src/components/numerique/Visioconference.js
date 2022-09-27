@@ -9,8 +9,9 @@ export default function Email() {
       <Section.Content>
         <h2>Sources et hypothèses</h2>
         <p>
-          Nous prenons comme hypothèse une visioconférence (basse qualité) d'une
-          heure entre 2 ordinateurs portables avec une connexion fixe en France.
+          Nous prenons comme hypothèse une visioconférence (basse définition)
+          d'une heure entre 2 ordinateurs portables avec une connexion fixe en
+          France.
         </p>
         <br />
         <p>
