@@ -48,7 +48,15 @@ const Text = styled.p`
 const StyledButtonLink = styled(ButtonLink)`
   font-size: 0.75rem;
 `
+const ButtonMore = styled(ButtonLink)`
+  font-size: 0.75rem;
+`
+const More = styled.div`
+  margin: 1rem auto 2rem;
+`
 export default function StockageEmails() {
+  const [displayMore, setDisplayMore] = useState(false)
+
   const { equivalents } = useContext(DataContext)
   const equivalentsToShow = useMemo(
     () =>
@@ -138,6 +146,16 @@ export default function StockageEmails() {
           />
         ))}
       </Tiles>
+      <ButtonMore
+        onClick={() => setDisplayMore((prevDisplayMore) => !prevDisplayMore)}
+      >
+        En savoir plus
+      </ButtonMore>
+      {displayMore && (
+        <More>
+          On prends comme hypothèse un poids moyen de 200ko par email.
+        </More>
+      )}
     </>
   )
 }

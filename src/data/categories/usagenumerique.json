@@ -111,11 +111,11 @@
     "category": 10,
     "ecv": [
       {
-        "value": 1.44e-5,
+        "value": 1.29e-5,
         "id": 16
       },
       {
-        "value": 2.34e-6,
+        "value": 4.8e-6,
         "id": 17
       }
     ],
