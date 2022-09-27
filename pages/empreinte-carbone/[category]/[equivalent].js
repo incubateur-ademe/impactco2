@@ -60,6 +60,7 @@ export async function getStaticPaths() {
             'visioconference',
             'audioconference',
             'rechercheweb',
+            'streamingvideo',
           ].includes(equivalent.slug)
       )
       .map((equivalent) => ({
