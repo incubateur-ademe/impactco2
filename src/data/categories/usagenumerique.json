@@ -94,7 +94,7 @@
         "id": 17
       }
     ],
-    "default": true,
+    "default": false,
     "tile": false,
     "meta": {
       "title": "",
