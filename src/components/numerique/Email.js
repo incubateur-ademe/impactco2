@@ -1,6 +1,8 @@
 import React from 'react'
 
 import Section from 'components/base/Section'
+import MagicLink from 'components/base/MagicLink'
+import Button from 'components/base/Button'
 
 export default function Email() {
   return (
@@ -8,19 +10,44 @@ export default function Email() {
       <Section.Content>
         <h2>Sources et hypothèses</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          lacinia mattis erat quis hendrerit. Etiam fermentum at est eget
-          consequat. Nulla lacinia lectus sed est lacinia, vel dapibus turpis
-          fringilla. Phasellus gravida vestibulum nunc, quis consequat nunc
-          viverra et. Quisque in purus sed est finibus vulputate. Aliquam erat
-          volutpat. Nam iaculis, nunc in dapibus luctus, diam risus rhoncus ex,
-          vel cursus ante arcu ac turpis. Aenean eget facilisis nibh, a varius
-          augue. Duis vel mi sapien. Donec commodo, dolor eget porttitor tempus,
-          velit magna posuere ligula, in ornare arcu ligula at dolor. Etiam nec
-          feugiat elit. Sed luctus diam quis erat hendrerit dapibus. Nunc
-          porttitor porta augue, eget elementum purus egestas vitae. Sed eget ex
-          gravida, elementum arcu a, accumsan sem. Vivamus vitae turpis augue.
+          Nous prenons comme hypothèse un email sans pièce jointe, envoyé à une
+          personne, écrit et envoyé depuis la France.
         </p>
+        <h3>Du côté émetteur</h3>
+        <p>
+          Cet email à pris 3 minutes à écrire sur{' '}
+          <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
+            un agrégat de terminaux
+          </MagicLink>{' '}
+          (24% ordinateur fixe, 24% ordinateur portable, 8% tablette et 45%
+          smartphone).
+          <br />
+          Cet email est envoyé via le réseau internet fixe. Il sera stocké
+          pendant 10 ans dans la boite mail de la personne émettrice.
+        </p>
+        <h3>Du côté récepteur</h3>
+        <p>
+          Cet email a pris 10 seconde à lire sur{' '}
+          <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
+            un agrégat de terminaux
+          </MagicLink>{' '}
+          (24% ordinateur fixe, 24% ordinateur portable, 8% tablette et 45%
+          smartphone).
+          <br />
+          Cet email est reçu via le réseau internet fixe. Il sera stocké pendant
+          10 ans dans la boite mail de la personne réceptrice.
+        </p>
+        <br />
+        <p>
+          <strong>
+            Vous pourrez bientôt personnaliser ces données (types de terminaux,
+            réseau fixe ou mobile, durée de stockage, taille de la pièce jointe,
+            etc.)
+          </strong>
+        </p>
+        <Button.Wrapper onClick={() => alert('Pas maintenant')}>
+          <Button>Prévenez moi quand ce sera en ligne</Button>
+        </Button.Wrapper>
       </Section.Content>
     </Section>
   )

@@ -15,7 +15,7 @@ const equivalents = [...usagenumerique].map((equivalent) => ({
   id: equivalent.slug,
 }))
 
-export default function Equivalent(props) {
+export default function EmailPage(props) {
   return (
     <Web
       title={props.equivalent.meta.title}
