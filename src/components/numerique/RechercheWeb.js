@@ -17,7 +17,7 @@ export default function Email() {
           prise en compte.
           <br />
           N'est pas non plus pris en compte l'indexation des sites internet par
-          le moteur de recherche (considérés mutualisée entre les utilisateurs)
+          le moteur de recherche (considéré mutualisée entre les utilisateurs)
         </p>
         <p>
           Nous prenons comme hypothèse une recherche effectuée depuis la France.
