@@ -3,6 +3,7 @@ import React from 'react'
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import Button from 'components/base/Button'
+import Contact from './Contact'
 
 export default function Email() {
   return (
@@ -22,15 +23,10 @@ export default function Email() {
           <br />
         </p>
         <br />
-        <p>
-          <strong>
-            Vous pourrez bientôt personnaliser ces données (qualité de la vidéo,
-            types de terminaux, réseau fixe ou mobile, etc.)
-          </strong>
-        </p>
-        <Button.Wrapper onClick={() => alert('Pas maintenant')}>
-          <Button>Prévenez moi quand ce sera en ligne</Button>
-        </Button.Wrapper>
+        <Contact>
+          Vous pourrez bientôt personnaliser ces données (qualité de la vidéo,
+          types de terminaux, réseau fixe ou mobile, etc.)
+        </Contact>
       </Section.Content>
     </Section>
   )

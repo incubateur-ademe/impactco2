@@ -3,6 +3,7 @@ import React from 'react'
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import Button from 'components/base/Button'
+import Contact from './Contact'
 
 export default function Email() {
   return (
@@ -31,16 +32,9 @@ export default function Email() {
           Cette requête est envoyée via le réseau internet fixe. Elle pèse 16ko.
           <br />
         </p>
-        <p>
-          <strong>
-            Vous pourrez bientôt personnaliser ces données (types de terminaux,
-            réseau fixe ou mobile, etc.)
-          </strong>
-        </p>
-        <Button.Wrapper onClick={() => alert('Pas maintenant')}>
-          <Button>Prévenez moi quand ce sera en ligne</Button>
-        </Button.Wrapper>
-      </Section.Content>
+        <Contact>
+          Vous pourrez bientôt personnaliser ces données (types de terminaux, réseau fixe ou mobile, etc.)
+        </Contact>
     </Section>
   )
 }

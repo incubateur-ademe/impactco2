@@ -14,16 +14,11 @@ export default function Email() {
           France.
         </p>
         <br />
-        <p>
-          <strong>
-            Vous pourrez bientôt personnaliser ces données (nombre de
-            participants, types de terminaux, réseau fixe ou mobile, qualité de
-            la vidéo, etc.)
-          </strong>
-        </p>
-        <Button.Wrapper onClick={() => alert('Pas maintenant')}>
-          <Button>Prévenez moi quand ce sera en ligne</Button>
-        </Button.Wrapper>
+        <Contact>
+          Vous pourrez bientôt personnaliser ces données (nombre de
+          participants, types de terminaux, réseau fixe ou mobile, qualité de la
+          vidéo, etc.)
+        </Contact>
       </Section.Content>
     </Section>
   )
