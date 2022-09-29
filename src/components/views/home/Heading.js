@@ -48,11 +48,11 @@ const StyledSearch = styled(Search)`
 `
 const StyledButtonLink = styled(ButtonLink)`
   display: block;
-  margin: -1rem auto 1rem;
+  margin: 0 auto;
   text-align: center;
 `
 export default function Heading() {
-  const { setCo2e, setSurvey } = useContext(ModalContext)
+  const { setCo2e } = useContext(ModalContext)
 
   return (
     <Section>
@@ -74,14 +74,11 @@ export default function Heading() {
           entourent
           <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />?
         </Text>
-        <StyledButtonLink onClick={() => setSurvey(true)}>
-          Participez à notre enquête utilisateurs !
-        </StyledButtonLink>
         <StyledSearch placeholder={'Entrez un objet, un geste...'} home />
         <Categories />
-        {/*<StyledButtonLink onClick={() => setCo2e(true)}>
+        <StyledButtonLink onClick={() => setCo2e(true)}>
           Comprendre le CO<sub>2</sub>e
-        </StyledButtonLink>*/}
+        </StyledButtonLink>
       </StyledSectionContent>
     </Section>
   )

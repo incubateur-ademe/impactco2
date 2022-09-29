@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import Script from 'next/script'
 
-import ModalContext from 'components/providers/ModalProvider'
 import useInteraction from 'hooks/useInteraction'
 import ButtonLink from 'components/base/ButtonLink'
 import IframeFooter from './iframe/IframeFooter'
@@ -19,8 +18,6 @@ const StyledButtonLink = styled(ButtonLink)`
 export default function Iframe(props) {
   useInteraction()
 
-  const { setCo2e, setSurvey } = useContext(ModalContext)
-
   return (
     <>
       <Wrapper>
@@ -28,9 +25,6 @@ export default function Iframe(props) {
           <meta name='robots' content='noindex' />
         </Head>
         {props.children}
-        <StyledButtonLink onClick={() => setSurvey(true)}>
-          Répondez à notre enquête utilisateur !
-        </StyledButtonLink>
         <IframeFooter />
       </Wrapper>
       <Script
