@@ -43,7 +43,7 @@ export default function Ecv(props) {
         .map((item) => ({
           ...item,
           label: item.name,
-          onClick: () => setEcv(true),
+          onClick: () => setEcv(item.id),
         }))
       if (usage) {
         tempEcvToDisplay.push({

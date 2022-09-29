@@ -86,12 +86,12 @@
   },
   {
     "id": 16,
-    "name": "Construction des data-center",
+    "name": "Construction des data-centers",
     "color": "#66a498"
   },
   {
     "id": 17,
-    "name": "Usage des data-center",
+    "name": "Usage des data-centers",
     "color": "#6f87ad"
   }
 ]
