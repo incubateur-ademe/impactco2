@@ -2,7 +2,6 @@ import React from 'react'
 
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
-import Button from 'components/base/Button'
 import Contact from './Contact'
 
 export default function Email() {
@@ -33,8 +32,10 @@ export default function Email() {
           <br />
         </p>
         <Contact>
-          Vous pourrez bientôt personnaliser ces données (types de terminaux, réseau fixe ou mobile, etc.)
+          Vous pourrez bientôt personnaliser ces données (types de terminaux,
+          réseau fixe ou mobile, etc.)
         </Contact>
+      </Section.Content>
     </Section>
   )
 }

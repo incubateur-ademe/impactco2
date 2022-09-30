@@ -2,7 +2,6 @@ import React from 'react'
 
 import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
-import Button from 'components/base/Button'
 import Contact from './Contact'
 
 export default function Email() {
