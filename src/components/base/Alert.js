@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     left: 0;
     width: 0.3125rem;
     background-color: ${(props) =>
-      props.error ? props.theme.colors.error : props.theme.colors.success};
+      props.error ? props.theme.colors.error : props.theme.colors.main};
   }
 
   ${(props) => props.theme.mq.medium} {

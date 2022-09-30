@@ -51,7 +51,12 @@ export default function Contact(props) {
             : `Une erreur est survenue`}
         </Alert>
       )}
-      {mutation.isSuccess && <Alert title='Vous êtes inscrit' />}
+      {mutation.isSuccess && (
+        <Alert>
+          Vous êtes maintenant inscrit. Nous vous enverrons un email lorsque le
+          simulateur complet sera en ligne
+        </Alert>
+      )}
     </Wrapper>
   )
 }
