@@ -4,12 +4,16 @@ import styled from 'styled-components'
 import { formatNumber, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Tile from 'components/misc/tiles/Tile'
+import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 
 export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
   margin-bottom: 1.5rem;
+`
+const TilesWrapper = styled.div`
+  position: relative;
 `
 const Tiles = styled.div`
   display: flex;
@@ -21,6 +25,12 @@ const Tiles = styled.div`
   ${(props) => props.theme.mq.medium} {
     gap: 0.75rem;
   }
+`
+const ButtonResults = styled(Button)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
 `
 const Input = styled.input`
   width: ${(props) => (props.mode === 'emails' ? 6 : 4.5)}rem;
@@ -57,6 +67,8 @@ const More = styled.div`
 export default function StockageEmails() {
   const [displayMore, setDisplayMore] = useState(false)
 
+  const [displayResults, setDisplayResults] = useState(false)
+
   const { equivalents } = useContext(DataContext)
   const equivalentsToShow = useMemo(
     () =>
@@ -67,32 +79,19 @@ export default function StockageEmails() {
       ),
     [equivalents]
   )
-  const emailWeight = useMemo(
-    () =>
-      equivalents.find((equivalent) =>
-        ['stockageemail'].includes(equivalent.slug)
-      ),
-    [equivalents]
-  )
-  const gigabyteWeight = useMemo(
+  const gigabyte = useMemo(
     () =>
       equivalents.find((equivalent) =>
         ['stockagedonnée'].includes(equivalent.slug)
       ),
     [equivalents]
   )
+  const emailWeight = 0.0002 //ko
 
   const [mode, setMode] = useState('emails')
-  const [emails, setEmails] = useState(null)
-  const [gigabytes, setGigabytes] = useState(null)
+  const [weight, setWeight] = useState(2)
 
-  const totalWeight = useMemo(
-    () =>
-      mode === 'emails'
-        ? formatTotal(emailWeight) * emails
-        : formatTotal(gigabyteWeight) * gigabytes,
-    [emailWeight, gigabyteWeight, emails, gigabytes, mode]
-  )
+  const totalWeight = useMemo(() => formatTotal(gigabyte) * weight, [weight])
   return (
     <>
       <Title>Découvrez l'impact de votre boite mail sur le climat</Title>
@@ -103,8 +102,11 @@ export default function StockageEmails() {
             key='1'
             mode={mode}
             type='number'
-            value={emails}
-            onChange={(e) => setEmails(e.currentTarget.value)}
+            value={weight / emailWeight}
+            onChange={(e) => {
+              setWeight(e.currentTarget.value * emailWeight)
+              setDisplayResults(true)
+            }}
             placeholder='XXXX'
           />
         ) : (
@@ -112,8 +114,11 @@ export default function StockageEmails() {
             key='2'
             mode={mode}
             type='number'
-            value={gigabytes}
-            onChange={(e) => setGigabytes(e.currentTarget.value)}
+            value={weight}
+            onChange={(e) => {
+              setWeight(e.currentTarget.value)
+              setDisplayResults(true)
+            }}
             placeholder='XX'
           />
         )}
@@ -127,25 +132,32 @@ export default function StockageEmails() {
           {mode === 'emails' ? <>poids en Go</> : <>nombre d'emails</>} plutôt)
         </StyledButtonLink>
       </Text>
-      <Text blur={!totalWeight}>
+      <Text blur={!displayResults}>
         Ma boite mail émet{' '}
         <strong>
           {formatNumber(totalWeight)} kg CO<sub>2</sub>e par an
         </strong>
         , soit l'équivalent de...
       </Text>
-      <Tiles blur={!totalWeight}>
-        {equivalentsToShow.map((equivalent) => (
-          <Tile
-            key={equivalent.slug}
-            equivalent={equivalent}
-            weight={totalWeight}
-            background={true}
-            equivalentPage={true}
-            reference
-          />
-        ))}
-      </Tiles>
+      <TilesWrapper>
+        <Tiles blur={!displayResults}>
+          {equivalentsToShow.map((equivalent) => (
+            <Tile
+              key={equivalent.slug}
+              equivalent={equivalent}
+              weight={totalWeight}
+              background={true}
+              equivalentPage={true}
+              reference
+            />
+          ))}
+        </Tiles>
+        {!displayResults && (
+          <ButtonResults onClick={() => setDisplayResults(true)}>
+            Découvrir l'impact
+          </ButtonResults>
+        )}
+      </TilesWrapper>
       <ButtonMore
         onClick={() => setDisplayMore((prevDisplayMore) => !prevDisplayMore)}
       >
@@ -153,7 +165,7 @@ export default function StockageEmails() {
       </ButtonMore>
       {displayMore && (
         <More>
-          On prends comme hypothèse un poids moyen de 200ko par email.
+          Nous prenons comme hypothèse un poids moyen de 200ko par email.
         </More>
       )}
     </>
