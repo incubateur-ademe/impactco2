@@ -10,6 +10,7 @@ import usagenumerique from 'data/categories/usagenumerique.json'
 import repas from 'data/categories/repas.json'
 import chauffage from 'data/categories/chauffage.json'
 import divers from 'data/categories/divers.json'
+import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
 import categories from 'data/categories.json'
 import ecv from 'data/ecv.json'
 
@@ -25,6 +26,7 @@ const equivalents = [
   ...usagenumerique,
   ...repas,
   ...chauffage,
+  ...fruitsetlegumes,
   ...divers,
 ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
 

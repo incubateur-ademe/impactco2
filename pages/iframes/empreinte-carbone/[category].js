@@ -8,7 +8,7 @@ import Category from 'components/misc/Category'
 export default function CategoryIframe(props) {
   return (
     <Iframe>
-      <Category category={props.category} />
+      <Category category={props.category} iframe />
     </Iframe>
   )
 }
@@ -16,7 +16,7 @@ export default function CategoryIframe(props) {
 export async function getStaticPaths() {
   return {
     paths: categories
-      .filter((category) => category.id !== 4)
+      .filter((category) => ![4, 9].includes(category.id))
       .map((category) => ({
         params: { category: category.slug },
       })),

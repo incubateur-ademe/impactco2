@@ -78,7 +78,7 @@ export default function YearlyFootprint(props) {
             visible={props.emitted}
             small={(props.emitted / (props.emitted + props.saved)) * 100 < 25}
           >
-            <Number>{props.emitted}</Number> kgCO2<sub>e</sub>
+            <Number>{props.emitted}</Number> kgCO<sub>2</sub>e
             <br />
             émis
             <br />
@@ -97,7 +97,7 @@ export default function YearlyFootprint(props) {
             visible={props.saved}
             small={(props.saved / (props.emitted + props.saved)) * 100 < 25}
           >
-            <Number>{props.saved}</Number> kgCO2<sub>e</sub>
+            <Number>{props.saved}</Number> kgCO<sub>2</sub>e
             <br />
             évité{props.saved > 1 && 's'}
             <br />

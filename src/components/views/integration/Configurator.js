@@ -29,6 +29,7 @@ export default function Configurator(props) {
       </Title>
       <Select
         onChange={(e) => props.setType(e.value)}
+        value={props.type}
         label={`1) Choisissez le type d'iframe que vous souhaitez intégrer.`}
         name='type'
       >
@@ -42,6 +43,9 @@ export default function Configurator(props) {
         <option value='empreinte-carbone/electromenager'>Électroménager</option>
         <option value='empreinte-carbone/mobilier'>Mobilier</option>
         <option value='empreinte-carbone/chauffage'>Chauffage</option>
+        <option value='empreinte-carbone/fruitsetlegumes'>
+          Fruits et légumes
+        </option>
       </Select>
       <Select
         onChange={({ value }) => props.setTheme(value)}
