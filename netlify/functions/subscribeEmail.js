@@ -6,7 +6,7 @@ var apiKey = defaultClient.authentications['api-key']
 apiKey.apiKey = process.env.SENDINBLUE_API_KEY
 
 exports.handler = function (event) {
-  let listId = 133
+  let listId = 312
 
   let api = new SibApiV3Sdk.ContactsApi()
 
