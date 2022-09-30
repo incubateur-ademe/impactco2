@@ -86,7 +86,7 @@ export default function StockageEmails() {
       ),
     [equivalents]
   )
-  const emailWeight = 0.0002 //ko
+  const emailWeight = 0.0001 //ko
 
   const [mode, setMode] = useState('emails')
   const [weight, setWeight] = useState(2)
@@ -165,7 +165,7 @@ export default function StockageEmails() {
       </ButtonMore>
       {displayMore && (
         <More>
-          Nous prenons comme hypothèse un poids moyen de 200ko par email.
+          Nous prenons comme hypothèse un poids moyen de 100ko par email.
         </More>
       )}
     </>
