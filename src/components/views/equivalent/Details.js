@@ -51,7 +51,7 @@ export default function Details(props) {
         <Section.Content flex>
           <Title>
             {props.equivalent.prefix && (
-              <>{formatName(props.equivalent.prefix, 1, true)} </>
+              <>{formatName(props.equivalent.prefix, 1, true)}</>
             )}
             {formatName(props.equivalent.name, 1, !props.equivalent.prefix)}
             <Br />{' '}
