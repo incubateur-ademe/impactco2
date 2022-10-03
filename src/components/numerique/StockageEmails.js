@@ -8,6 +8,8 @@ import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
 
+const emailWeight = 0.0001 //ko
+
 export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
@@ -37,7 +39,7 @@ const ButtonResults = styled(Button)`
 const Input = styled.input`
   width: ${(props) => (props.mode === 'emails' ? 6 : 4.5)}rem;
   margin: 0 0.5rem 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   font-size: 1.125rem;
   text-align: right;
   color: ${(props) => props.theme.colors.text};
@@ -88,7 +90,6 @@ export default function StockageEmails() {
       ),
     [equivalents]
   )
-  const emailWeight = 0.0001 //ko
 
   const [mode, setMode] = useState('emails')
   const [weight, setWeight] = useState(2)
@@ -161,6 +162,7 @@ export default function StockageEmails() {
         )}
       </TilesWrapper>
       <ButtonMore
+        className='noscreenshot'
         onClick={() => setDisplayMore((prevDisplayMore) => !prevDisplayMore)}
       >
         En savoir plus
