@@ -53,7 +53,6 @@ const Input = styled.input`
     box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
   }
 `
-
 const Text = styled.p`
   text-align: center;
   filter: blur(${(props) => (props.blur ? '1rem' : 0)});
@@ -175,8 +174,8 @@ export default function StockageEmails() {
           la fabrication des data-centers associée), via ce{' '}
           <MagicLink to='/empreinte-carbone/usagenumerique/stockagedonnee'>
             facteur d'émission
-          </MagicLink>
-          .
+          </MagicLink>{' '}
+          (529,80 g CO<sub>2</sub>e / Go / année).
         </More>
       )}
     </>
