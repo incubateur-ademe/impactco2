@@ -6,6 +6,7 @@ import DataContext from 'components/providers/DataProvider'
 import Tile from 'components/misc/tiles/Tile'
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
+import MagicLink from 'components/base/MagicLink'
 
 export const Title = styled.h3`
   font-weight: normal;
@@ -31,6 +32,7 @@ const ButtonResults = styled(Button)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
+  font-size: 1.25rem;
 `
 const Input = styled.input`
   width: ${(props) => (props.mode === 'emails' ? 6 : 4.5)}rem;
@@ -82,7 +84,7 @@ export default function StockageEmails() {
   const gigabyte = useMemo(
     () =>
       equivalents.find((equivalent) =>
-        ['stockagedonnée'].includes(equivalent.slug)
+        ['stockagedonnee'].includes(equivalent.slug)
       ),
     [equivalents]
   )
@@ -166,6 +168,13 @@ export default function StockageEmails() {
       {displayMore && (
         <More>
           Nous prenons comme hypothèse un poids moyen de 100ko par email.
+          <br />
+          Est compté seulement le stockage des emails dans les data-centers (et
+          la fabrication des data-centers associée), via ce{' '}
+          <MagicLink to='/empreinte-carbone/usagenumerique/stockagedonnee'>
+            facteur d'émission
+          </MagicLink>
+          .
         </More>
       )}
     </>

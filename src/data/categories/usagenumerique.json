@@ -103,34 +103,9 @@
     "source": "https://negaoctet.org/"
   },
   {
-    "name": "Stocker un email",
-    "subtitle": "Pendant 1 an",
-    "slug": "stockageemail",
-    "emoji": "💾",
-    "unit": "année",
-    "category": 10,
-    "ecv": [
-      {
-        "value": 1.29e-5,
-        "id": 16
-      },
-      {
-        "value": 4.8e-6,
-        "id": 17
-      }
-    ],
-    "default": false,
-    "tile": false,
-    "meta": {
-      "title": "",
-      "description": ""
-    },
-    "source": "https://negaoctet.org/"
-  },
-  {
     "name": "Stocker un Go de donnée",
     "subtitle": "Pendant 1 an",
-    "slug": "stockagedonnée",
+    "slug": "stockagedonnee",
     "emoji": "💾",
     "unit": "année",
     "category": 10,
