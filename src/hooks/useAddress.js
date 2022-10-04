@@ -5,6 +5,7 @@ const generateToken = () => (Math.random() + 1).toString(36).substring(2)
 
 let sessiontoken = generateToken()
 
+console.log('sessiontoken', sessiontoken)
 export function useSuggestions(search, focus) {
   return useQuery(
     ['search', search],
@@ -12,9 +13,9 @@ export function useSuggestions(search, focus) {
       search && search.length > 2
         ? axios
             .get(
-              `https://monimpacttransport.fr/.netlify/functions/callGMapSearch?input=${search}&language=fr&sessiontoken=${sessiontoken}`
+              `https://monimpacttransport.fr/.netlify/functions/callGMapSearch?${search}`
             )
-            .then((res) => res.data.predictions)
+            .then((res) => res.data.features)
         : Promise.resolve([]),
     {
       keepPreviousData: true,

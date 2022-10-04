@@ -3,6 +3,13 @@ import styled from 'styled-components'
 
 import Highlighter from 'react-highlight-words'
 
+const displayAddress = (address) =>
+  `${address.properties.name ? address.properties.name + ' ' : ''}${
+    address.properties.housenumber ? address.properties.housenumber + ' ' : ''
+  }${address.properties.street ? address.properties.street + ', ' : ''}${
+    address.properties.city ? address.properties.city + ' ' : ''
+  } ${address.properties.country}`
+
 const Wrapper = styled.div`
   position: relative;
   background-color: ${(props) => props.theme.colors.background};
@@ -18,7 +25,7 @@ const Suggestion = styled.div`
   transition: background-color 200ms ease-out,
     opacity ${(props) => (props.isFetching ? 300 : 0)}ms ease-out;
   background-color: ${(props) =>
-    props.theme.colors[props.current ? 'second' : 'background']};
+    props.theme.colors[props.current ? 'secondLight' : 'background']};
   opacity: ${(props) => (props.isFetching ? 0.3 : 1)};
 
   &:hover {
@@ -75,7 +82,7 @@ export default function Suggestions(props) {
                 <Highlighter
                   searchWords={props.search.split(' ')}
                   autoEscape={true}
-                  textToHighlight={result.description}
+                  textToHighlight={displayAddress(result)}
                 />
               </Name>
             </Suggestion>
