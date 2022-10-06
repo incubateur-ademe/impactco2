@@ -26,7 +26,7 @@ export default function ScreenshotWrapper(props) {
   const [hover, setHover] = useState(false)
 
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    props.equivalent?.slug || 'monconvertisseurco2'
+    props.equivalent?.slug || 'impactco2'
   )
 
   return (

@@ -32,7 +32,7 @@
     "tile": true,
     "meta": {
       "title": "L'empreinte carbone de votre jean",
-      "description": "Découvrez la quantité de CO₂e émis pour fabriquer et distribuer votre jean grâce à Mon Convertisseur CO2."
+      "description": "Découvrez la quantité de CO₂e émis pour fabriquer et distribuer votre jean grâce à Impact CO2."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -107,7 +107,7 @@
     "tile": true,
     "meta": {
       "title": "Empreinte carbone d'un T-shirt en coton",
-      "description": "Quelle est l'empreinte carbone pour la fabrication d'un T-shirt en coton ? Maintenant grâce à Mon Convertisseur CO2, vous allez pouvoir le savoir !"
+      "description": "Quelle est l'empreinte carbone pour la fabrication d'un T-shirt en coton ? Maintenant grâce à Impact CO2, vous allez pouvoir le savoir !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -221,7 +221,7 @@
     "tile": false,
     "meta": {
       "title": "Impact climat d'une chemise en coton",
-      "description": "Mon convertisseur CO2 mesure l'empreinte carbone de votre chemise en coton et de tous types de vêtements !"
+      "description": "Impact CO2 mesure l'empreinte carbone de votre chemise en coton et de tous types de vêtements !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -259,7 +259,7 @@
     "tile": false,
     "meta": {
       "title": "Empreinte carbone chemise en viscose",
-      "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre chemise ? Mon Convertisseur CO2 vous dit tout !"
+      "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre chemise ? Impact CO2 vous dit tout !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -297,7 +297,7 @@
     "tile": false,
     "meta": {
       "title": "Poids en CO₂e pour chaussures en cuir",
-      "description": "Saviez-vous que vos chaussures en cuir ont un impact écologique ? Mon Convertisseur CO2 vous indique l'empreinte carbone de celles-ci"
+      "description": "Saviez-vous que vos chaussures en cuir ont un impact écologique ? Impact CO2 vous indique l'empreinte carbone de celles-ci"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -411,7 +411,7 @@
     "tile": false,
     "meta": {
       "title": "L'empreinte carbone d'une robe",
-      "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en coton grâce à Mon Convertisseur CO2."
+      "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en coton grâce à Impact CO2."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -449,7 +449,7 @@
     "tile": false,
     "meta": {
       "title": "L'empreinte carbone d'une robe",
-      "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en polyester grâce à Mon Convertisseur CO2."
+      "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en polyester grâce à Impact CO2."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },

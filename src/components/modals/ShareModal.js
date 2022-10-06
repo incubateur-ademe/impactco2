@@ -51,7 +51,7 @@ export default function CO2EModal() {
         />
         <Twitter
           title={
-            'Découvrez l’impact sur le climat des objets et gestes de votre quotidien #monconvertisseurco2'
+            'Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2'
           }
           url={href}
         />
@@ -59,7 +59,7 @@ export default function CO2EModal() {
           title={
             'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'
           }
-          summary={'Mon Convertisseur CO2'}
+          summary={'Impact CO2'}
           url={href}
         />
         <Whatsapp

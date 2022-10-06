@@ -8,7 +8,7 @@ export default function Seo(props) {
   const { title, description, image, url } = {
     title: `${
       props.title || `Impact sur le climat des objets et gestes`
-    } | Mon Convertisseur CO2`,
+    } | Impact CO2`,
     description:
       props.description ||
       `Découvrez l’impact sur le climat des objets et gestes de votre quotidien comme votre mobilier, vos habits ou encore vos repas`,

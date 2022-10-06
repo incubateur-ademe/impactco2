@@ -158,7 +158,7 @@ export default function Buttons(props) {
       </Button>
       <Button
         className='noscreenshot'
-        to={`${iframe ? 'https://monconvertisseurco2.fr' : ''}/integration${
+        to={`${iframe ? 'https://impactco2.fr' : ''}/integration${
           props.slug ? `?type=${props.slug}` : ''
         }`}
         large
