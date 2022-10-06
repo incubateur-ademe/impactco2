@@ -1,12 +1,14 @@
 import { iframeResize } from 'iframe-resizer'
 
-const script = document.getElementById('datagir-mon-convertisseur-co2')
+const script =
+  document.getElementById('datagir-mon-convertisseur-co2') ||
+  document.getElementById('datagir-impact-co2')
 
 const type = script.dataset.type || 'tuiles'
 const search = script.dataset.search
 const source = window.location.href.toString()
 
-const src = `https://monconvertisseurco2.fr/iframes/${type}${search}${
+const src = `https://impactco2.fr/iframes/${type}${search}${
   search ? '&' : '?'
 }source=${source}`
 
@@ -26,7 +28,7 @@ for (var key in iframeAttributes) {
 iframeResize({}, iframe)
 
 const link = document.createElement('div')
-link.innerHTML = `<a href="https://monconvertisseurco2.fr" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`
+link.innerHTML = `<a href="https://impactco2.fr" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`
 link.style.cssText = `
 margin: 0.5rem auto 1rem;
 text-align: center

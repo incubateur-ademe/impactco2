@@ -4,16 +4,10 @@ import Head from 'next/head'
 import Script from 'next/script'
 
 import useInteraction from 'hooks/useInteraction'
-import ButtonLink from 'components/base/ButtonLink'
 import IframeFooter from './iframe/IframeFooter'
 
 const Wrapper = styled.div`
   padding: 1rem 0;
-`
-const StyledButtonLink = styled(ButtonLink)`
-  display: block;
-  margin: 0 auto;
-  text-align: center;
 `
 export default function Iframe(props) {
   useInteraction()

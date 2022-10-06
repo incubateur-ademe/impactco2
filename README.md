@@ -1,4 +1,4 @@
-**Fiche Produit : Mon Convertisseur CO2**
+**Fiche Produit : Impact CO2**
 
 _Le drame_
 
@@ -14,7 +14,7 @@ Tout cela témoigne bien que nous n’avons pas les bons ordres de grandeurs en 
 
 _Une solution numérique ?_
 
-Mon convertisseur est un outil qui peut permettre de vulgariser ce qu’est réellement l’impact carbone d’un objet et mieux communiquer sur les ordres de grandeur en déconstruisant certaines idées préconçues.
+Impact CO2 est un outil qui peut permettre de vulgariser ce qu’est réellement l’impact carbone d’un objet et mieux communiquer sur les ordres de grandeur en déconstruisant certaines idées préconçues.
 Plus qu’un simulateur, l’outil est développé comme un site web sur lequel on peut naviguer dans les différentes représentations de l’impact d’un produit, et ce grâce à une barre de recherche ou en utilisant un menu de navigation.
 A travers différentes représentations, le but est de permettre à l’utilisateur :
 
@@ -29,20 +29,20 @@ Le site permettrait ainsi 3 niveaux de lectures essayant ainsi de s’adresser �
 - Une information plus détaillée, avec quelques notions clés
 - Une information sourcée qui permet de jouer avec certains paramètres
 
-Le site Mon Convertisseur CO2 permet également de pouvoir intégrer certaines visualisations directement en iframe pour diffuser l’information sur ses propres plateformes OU de pouvoir partager des contenus clés en main comme des infographies.
+Le site Impact CO2 permet également de pouvoir intégrer certaines visualisations directement en iframe pour diffuser l’information sur ses propres plateformes OU de pouvoir partager des contenus clés en main comme des infographies.
 
 _Stratégie de mise en marché_
 
-Comme les autres produits Datagir, le site Mon Convertisseur CO2 est aussi là pour outiller les organismes qui souhaitent sensibiliser et diffuser l’information auprès de leurs communautés. On se positionne donc sur une stratégie B to B to C.
+Comme les autres produits Datagir, le site Impact CO2 est aussi là pour outiller les organismes qui souhaitent sensibiliser et diffuser l’information auprès de leurs communautés. On se positionne donc sur une stratégie B to B to C.
 
-Toutefois, fort de son envie de vulgariser l’information à travers un contenu clair & détaillé, l’outil Mon Convertisseur CO2 fait aussi l’objet d’une stratégie SEO pour être mieux référencé dans les recherches utilisateurs.
+Toutefois, fort de son envie de vulgariser l’information à travers un contenu clair & détaillé, l’outil Impact CO2 fait aussi l’objet d’une stratégie SEO pour être mieux référencé dans les recherches utilisateurs.
 Ce qui témoigne aussi d’une volonté de déployer l’outil directement auprès des citoyens : B to C.
 
-# Mon convertisseur CO2
+# Impact CO2
 
 Application web permettant de comparer la consommation en CO2e de divers équivalents.
 
-https://monconvertisseurco2.fr
+https://impactco2.fr
 
 ## Développement
 

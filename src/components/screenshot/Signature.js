@@ -44,8 +44,8 @@ export default function Signature() {
     <>
       <StyledLogo />
       <Wrapper>
-        <MagicLink to='https://monconvertisseurco2.fr' noIcon>
-          monconvertisseurco2.fr
+        <MagicLink to='https://impactco2.fr' noIcon>
+          impactco2.fr
         </MagicLink>
       </Wrapper>
       <StyledDatagir />
