@@ -15,7 +15,7 @@ const Wrapper = styled(MagicLink)`
 
   svg {
     width: auto;
-    height: 3.5rem;
+    height: 3.5em;
   }
 `
 const Path = styled.path`
