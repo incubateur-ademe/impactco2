@@ -8,7 +8,7 @@ var transportations = require('./data/transportations.json')
 
 exports.handler = async function (event) {
   matomo.track(
-    `https://api.monconvertisseurco2.fr/beta/getEmissionsPerDistance?km=${event.queryStringParameters.km}`
+    `https://api.impactco2.fr/beta/getEmissionsPerDistance?km=${event.queryStringParameters.km}`
   )
 
   const km = event.queryStringParameters.km || 1
@@ -23,7 +23,7 @@ exports.handler = async function (event) {
 
   await axios
     .post(
-      `https://stats.data.gouv.fr/matomo.php?idsite=156&rec=1&_id=${id}&rand=${rand}&url=https%3A%2F%2Fapi.monconvertisseurco2.fr%2Fbeta%2FgetEmissionsPerDistance%3Fkm%3D${km}`
+      `https://stats.data.gouv.fr/matomo.php?idsite=156&rec=1&_id=${id}&rand=${rand}&url=https%3A%2F%2Fapi.impactco2.fr%2Fbeta%2FgetEmissionsPerDistance%3Fkm%3D${km}`
     )
     .then((response) => {
       console.log('tracked successfully')
