@@ -22,8 +22,6 @@ export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
 `
-const StyledLegend = styled(Legend)``
-
 export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
 
@@ -78,7 +76,7 @@ export default function Ecv(props) {
             items={ecvToDisplay}
             total={formatTotal(props.equivalent, usage)}
           />
-          <StyledLegend items={ecvToDisplay} />
+          <Legend items={ecvToDisplay} />
           {usage ? (
             <DurationSelector duration={usage} setDuration={setUsage} />
           ) : null}

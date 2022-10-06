@@ -3,6 +3,7 @@ import React from 'react'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import categories from 'data/categories.json'
 
+import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
 import Details from 'components/views/equivalent/Details'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
@@ -26,10 +27,12 @@ export default function StreamingVideoPage(props) {
         equivalent: props.equivalent,
       }}
     >
-      <Details equivalent={props.equivalent} category={props.category} />
-      <VisualizationSlider equivalent={props.equivalent} />
-      <Ecv equivalent={props.equivalent} />
-      <StreamingVideo />
+      <RulesProvider>
+        <Details equivalent={props.equivalent} category={props.category} />
+        <VisualizationSlider equivalent={props.equivalent} />
+        <Ecv equivalent={props.equivalent} />
+        <StreamingVideo equivalent={props.equivalent} />
+      </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>
   )
