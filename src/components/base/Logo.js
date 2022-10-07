@@ -17,15 +17,40 @@ const Wrapper = styled(MagicLink)`
     width: auto;
     height: 3.5em;
   }
+
+  &:hover {
+    .circle1 {
+      fill: ${(props) => props.theme.colors.main};
+      transition: fill 300ms ease-in 200ms;
+    }
+
+    .circle2 {
+      fill: ${(props) => props.theme.colors.background};
+    }
+    .circle3 {
+      fill: ${(props) => props.theme.colors.main};
+      transition: fill 300ms ease-out;
+    }
+  }
 `
 const Path = styled.path`
   fill: ${(props) => props.theme.colors.main};
 `
 const Circle = styled.circle`
   fill: ${(props) => props.theme.colors.main};
+  stroke: ${(props) => props.theme.colors.main};
+  transition: fill 300ms ease-in-out 100ms;
 `
 const HollowCircle = styled.circle`
+  fill: ${(props) => props.theme.colors.background};
   stroke: ${(props) => props.theme.colors.main};
+
+  &.circle1 {
+    transition: fill 300ms ease-out;
+  }
+  &.circle1 {
+    transition: fill 300ms ease-in 200ms;
+  }
 `
 export default function Logo(props) {
   return (
@@ -67,23 +92,27 @@ export default function Logo(props) {
         </mask>
         <g mask='url(#mask0_1984_4265)'>
           <HollowCircle
-            cx='52.4974'
-            cy='51.4973'
-            r='81.1898'
-            transform='rotate(-45 52.4974 51.4973)'
-            strokeWidth='25'
-          />
-          <Circle
-            cx='167.317'
-            cy='166.317'
-            r='93.6898'
-            transform='rotate(-45 167.317 166.317)'
-          />
-          <HollowCircle
+            className='circle1'
             cx='282.137'
             cy='281.137'
             r='81.1898'
             transform='rotate(-45 282.137 281.137)'
+            strokeWidth='25'
+          />
+          <Circle
+            className='circle2'
+            cx='167.317'
+            cy='166.317'
+            r='81.1898'
+            transform='rotate(-45 167.317 166.317)'
+            strokeWidth='25'
+          />{' '}
+          <HollowCircle
+            className='circle3'
+            cx='52.4974'
+            cy='51.4973'
+            r='81.1898'
+            transform='rotate(-45 52.4974 51.4973)'
             strokeWidth='25'
           />
         </g>
