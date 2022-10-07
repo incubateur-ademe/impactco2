@@ -48,7 +48,7 @@ const HollowCircle = styled.circle`
   &.circle1 {
     transition: fill 300ms ease-out;
   }
-  &.circle1 {
+  &.circle3 {
     transition: fill 300ms ease-in 200ms;
   }
 `
