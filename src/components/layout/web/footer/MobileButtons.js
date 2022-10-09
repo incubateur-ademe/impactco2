@@ -160,7 +160,7 @@ export default function MobileButtons(props) {
           <Label iframe={props.iframe}>Contact</Label>
         </Button>
         {props.iframe && (
-          <StyledLink to={'https://monconvertisseurco2.fr'}>
+          <StyledLink to={'https://impactco2.fr'}>
             <Icon iframe={props.iframe}>
               <Eye
                 iframe={props.iframe}

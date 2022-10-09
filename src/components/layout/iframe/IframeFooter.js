@@ -35,7 +35,7 @@ const Logos = styled(MagicLink)`
 export default function IframeFooter() {
   return (
     <Wrapper>
-      <StyledMagicLink to='https://monconvertisseurco2.fr/'>
+      <StyledMagicLink to='https://impactco2.fr/'>
         Voir la version détaillée
         <br />
         (et les sources)

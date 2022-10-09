@@ -243,9 +243,7 @@ export default function Tile(props) {
         !props.equivalentPage && (
           <Button.Wrapper>
             <StyledButton
-              to={`${
-                iframe ? 'https://monconvertisseurco2.fr' : ''
-              }/empreinte-carbone/${
+              to={`${iframe ? 'https://impactco2.fr' : ''}/empreinte-carbone/${
                 categories.find(
                   (category) => category.id === props.equivalent.category
                 )?.slug

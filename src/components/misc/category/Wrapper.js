@@ -44,7 +44,7 @@ export default function Wrapper(props) {
   const [hover, setHover] = useState(false)
 
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    props.slug || 'monconvertisseurco2'
+    props.slug || 'impactco2'
   )
 
   return (

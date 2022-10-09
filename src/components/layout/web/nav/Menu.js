@@ -39,9 +39,9 @@ export default function Menu() {
             ))}
       </Dropdown>
       <Dropdown
-        label={'CO2e'}
-        to='/co2e'
-        current={router.pathname.includes('/co2')}
+        label={'Convertisseur'}
+        to='/convertisseur'
+        current={router.pathname.includes('/convertisseur')}
       />
     </Wrapper>
   )

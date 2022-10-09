@@ -59,7 +59,7 @@ export default function Montre() {
         <strong>2 t-shirts</strong>
         <br />
       </Small>
-      <CenterLink to='/co2e'>Voir plus d&apos;équivalences</CenterLink>
+      <CenterLink to='/convertisseur'>Voir plus d&apos;équivalences</CenterLink>
     </>
   )
 }

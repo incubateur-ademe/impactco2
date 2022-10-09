@@ -34,7 +34,7 @@ export default function Item(props) {
   return (
     <Wrapper
       {...props}
-      to={(iframe ? 'https://monconvertisseurco2.fr' : '') + props.to}
+      to={(iframe ? 'https://impactco2.fr' : '') + props.to}
       onClick={props.onClick || null}
       noIcon
     >
