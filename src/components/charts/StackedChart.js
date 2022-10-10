@@ -13,6 +13,7 @@ const Item = styled.div`
   width: ${(props) => props.percent * 100}%;
   height: 100%;
   background-color: ${(props) => props.color || props.theme.colors.main};
+  transition: width 300ms ease-out;
 `
 export default function StackedChart(props) {
   return (

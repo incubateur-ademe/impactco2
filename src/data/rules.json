@@ -12,13 +12,35 @@
     "unité": "gCO2e"
   },
   "streaming . terminaux . construction": {
-    "title": "Construction des terminaux",
     "formule": 30.2,
     "unité": "gCO2e"
   },
   "streaming . terminaux . usage": {
     "formule": 3.42,
     "unité": "gCO2e"
+  },
+  "streaming . terminaux . type": {
+    "avec": {
+      "Ordinateur fixe": null,
+      "Ordinateur portable": null,
+      "Tablette": null,
+      "Smartphone": null,
+      "Télévision": null
+    },
+    "titre": "type du terminal",
+    "question": "Sur quel appareil regardez vous la vidéo ?",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "non",
+        "possibilités": [
+          "Ordinateur fixe",
+          "Ordinateur portable",
+          "Tablette",
+          "Smartphone",
+          "Télévision"
+        ]
+      }
+    }
   },
   "streaming . transmission": {
     "formule": {
@@ -56,6 +78,21 @@
       }
     },
     "par défaut": "'HD'"
+  },
+  "streaming . reseau": {
+    "avec": {
+      "Fixe": null,
+      "Mobile": "4G"
+    },
+    "titre": "reseau utilisé",
+    "question": "À quel réseau l'appareil est-il connecté ?",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "oui",
+        "possibilités": ["Fixe", "Mobile"]
+      }
+    },
+    "par défaut": "'Fixe'"
   },
   "streaming . data center": {
     "formule": {
