@@ -5,7 +5,6 @@ import RadioInput from './choicesInput/RadioInput'
 
 const Wrapper = styled.div`
   display: flex;
-  margin: 0 auto 1.5rem;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
   overflow: hidden;

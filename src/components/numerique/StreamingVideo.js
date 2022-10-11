@@ -5,19 +5,87 @@ import { formatName, formatNumber, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import RulesContext from './RulesProvider'
 import Section from 'components/base/Section'
+import Emoji from 'components/base/Emoji'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
 import Detail from 'components/views/equivalent/ecv/Detail'
+import Wrapper from './Wrapper'
 import Question from './Question'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;
 `
-export const Title = styled.h1`
+export const Title = styled.h1``
+const Bar = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
-  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0.5rem 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -2000rem;
+    right: -2000rem;
+    background-color: ${(props) => props.theme.colors.main};
+  }
+`
+const Top = styled.div`
+  position: relative;
+  color: ${(props) => props.theme.colors.background};
+  border-radius: 1rem 1rem 0 0;
+  transition: padding 300ms ease-out, margin 300ms ease-out;
+`
+const Number = styled.span`
+  font-size: 3.75rem;
+  font-weight: bold;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 3rem;
+  }
+`
+const Unit = styled.span`
+  font-size: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.75rem;
+  }
+`
+const Big = styled.span`
+  font-size: 1.25rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
+`
+const StyledEmoji = styled(Emoji)`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-top: 0.325rem;
+  font-size: 3rem;
+  background-color: ${(props) => props.theme.colors.background};
+  border-radius: 5.25rem;
+
+  ${(props) => props.theme.mq.small} {
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 2rem;
+  }
+`
+const Questions = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 `
 export default function Email(props) {
   const { ecv } = useContext(DataContext)
@@ -26,7 +94,7 @@ export default function Email(props) {
 
   const ecvToDisplay = useMemo(
     () =>
-      engine
+      engine && ecv
         ? engine
             .evaluate('streaming')
             .traversedVariables.filter((variable) =>
@@ -40,7 +108,7 @@ export default function Email(props) {
                 value: engine.evaluate(variable).nodeValue,
               }
             })
-        : 'nope',
+        : [],
     [ecv, engine, situation]
   )
 
@@ -57,33 +125,48 @@ export default function Email(props) {
   return engine ? (
     <StyledSection>
       <Section.Content>
-        <ScreenshotWrapper equivalent={props.equivalent}>
-          <Title>
-            <span>{formatName(props.equivalent.name, 1, true)}</span>
-            <span>
-              {formatNumber(engine.evaluate('streaming').nodeValue)}{' '}
-              <span>
-                g CO
-                <sub>2</sub>e
-              </span>
-            </span>
-          </Title>
-          {questions.map((question) => (
-            <Question
-              key={question[0]}
-              rule={question[1]}
-              evaluation={engine.evaluate(question[0])}
-              value={engine.evaluate(question[0]).nodeValue}
-              onChange={setSituation}
-            />
-          ))}
+        <Wrapper
+          name={formatName(props.equivalent.name, 1, true)}
+          slug={props.equivalent.slug}
+        >
+          <Bar>
+            <Top>
+              <Number>
+                {formatNumber(engine.evaluate('streaming').nodeValue)}
+              </Number>{' '}
+              <Unit>
+                g <Big>CO2</Big>e{' '}
+                {(props.equivalent.unit || props.category.unit) && (
+                  <>/ {props.equivalent.unit || props.category.unit}</>
+                )}
+              </Unit>
+            </Top>
+            <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
+          </Bar>
+          <Questions>
+            {questions.map((question) => (
+              <Question
+                key={question[0]}
+                rule={question[1]}
+                evaluation={engine.evaluate(question[0])}
+                value={engine.evaluate(question[0]).nodeValue}
+                onChange={setSituation}
+              />
+            ))}
+          </Questions>
           <StackedChart
             items={ecvToDisplay}
             total={formatTotal(props.equivalent)}
           />
           <Legend items={ecvToDisplay} />
-          <Detail ecv={ecvToDisplay} total={formatTotal(props.equivalent)} />
-        </ScreenshotWrapper>
+          <Detail
+            ecv={ecvToDisplay.map((ecv) => ({
+              ...ecv,
+              value: ecv.value / 1000,
+            }))}
+            total={engine.evaluate('streaming').nodeValue / 1000}
+          />
+        </Wrapper>
       </Section.Content>
     </StyledSection>
   ) : null

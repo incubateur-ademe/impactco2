@@ -5,9 +5,6 @@ import categories from 'data/categories.json'
 
 import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
-import Details from 'components/views/equivalent/Details'
-import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
-import Ecv from 'components/views/equivalent/Ecv'
 import Text from 'components/views/equivalent/Text'
 import StreamingVideo from 'components/numerique/StreamingVideo'
 
@@ -28,9 +25,6 @@ export default function StreamingVideoPage(props) {
       }}
     >
       <RulesProvider>
-        <Details equivalent={props.equivalent} category={props.category} />
-        <VisualizationSlider equivalent={props.equivalent} />
-        <Ecv equivalent={props.equivalent} />
         <StreamingVideo equivalent={props.equivalent} />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
