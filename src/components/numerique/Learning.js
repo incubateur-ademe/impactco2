@@ -71,8 +71,7 @@ export default function Learning() {
           Le <strong>secteur du numérique</strong> est en plein essor. En effet,
           aujourd’hui, les appareils numériques et leurs usages font partie
           intégrante de notre quotidien. Mais saviez-vous que le{' '}
-          <strong>numérique</strong> a une empreinte carbone importante et
-          représente jusqu’à{' '}
+          <strong>numérique</strong> représente jusqu’à{' '}
           <strong>
             2,5% des émissions de{' '}
             <ButtonLink onClick={() => setCo2e(true)}>
@@ -89,9 +88,9 @@ export default function Learning() {
           <MagicLink to='https://agirpourlatransition.ademe.fr/particuliers/bureau/bons-gestes/gardons-controle-pratiques-numeriques'>
             réduire notre impact numérique
           </MagicLink>
-          , il existe de nombreux gestes à adopter ! Parce que les terminaux
+          , il existe de nombreux gestes à adopter ! Parce que <strong>les terminaux
           (ordinateurs, smartphones…) sont à l’origine de l’essentiel des
-          impacts (de 65 à 90 %) en particulier pour leur fabrication, vous
+          impacts</strong> (de 65 à 90 %) en particulier pour leur fabrication, vous
           pouvez agir en gardant le plus longtemps possible ces appareils ou en
           privilégiant les <strong>appareils reconditionnés</strong> plutôt que
           neufs. Eteindre vos appareils à la fin de chaque utilisation, limiter
@@ -126,20 +125,18 @@ export default function Learning() {
             montres connectées
           </MagicLink>
           ), ils risquent de représenter 18 à 23% de l’empreinte carbone d’ici
-          2025, contre 1% en 2020. Limiter son{' '}
+          2025, contre 1% en 2020. Il est donc important de limiter son{' '}
           <strong>
             empreinte{' '}
             <ButtonLink onClick={() => setCo2e(true)}>
               CO<sub>2</sub>e
             </ButtonLink>
-          </strong>{' '}
-          due au <strong>numérique</strong> est donc très important : chaque
-          geste compte !
+          </strong>{' '}.
         </Text>
 
         <Text>
           Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
-          calculer l&apos;ensemble de votre empreinte sur le climat grace à
+          calculer <strong>l&apos;ensemble de votre empreinte sur le climat</strong> grace à
           notre{' '}
           <MagicLink to={'https://nosgestesclimat.fr/'}>
             simulateur Nos Gestes Climat
