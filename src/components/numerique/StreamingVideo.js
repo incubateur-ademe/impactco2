@@ -83,6 +83,7 @@ const StyledEmoji = styled(Emoji)`
 const Questions = styled.div`
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
@@ -115,9 +116,11 @@ export default function Email(props) {
   const questions = useMemo(
     () =>
       engine
-        ? Object.entries(engine.publicParsedRules).filter(
-            (rule) => rule[1].rawNode.question !== undefined
-          )
+        ? engine &&
+          engine
+            .evaluate('streaming')
+            .traversedVariables.map((variable) => engine.getRule(variable))
+            .filter((rule) => rule.rawNode.question !== undefined)
         : [],
     [engine, situation]
   )
@@ -146,10 +149,10 @@ export default function Email(props) {
           <Questions>
             {questions.map((question) => (
               <Question
-                key={question[0]}
-                rule={question[1]}
-                evaluation={engine.evaluate(question[0])}
-                value={engine.evaluate(question[0]).nodeValue}
+                key={question.dottedName}
+                rule={question}
+                evaluation={engine.evaluate(question.dottedName)}
+                value={engine.evaluate(question.dottedName).nodeValue}
                 onChange={setSituation}
               />
             ))}
