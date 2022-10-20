@@ -85,7 +85,7 @@ const Questions = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1rem 3rem;
   margin-bottom: 2rem;
 `
 export default function Email(props) {

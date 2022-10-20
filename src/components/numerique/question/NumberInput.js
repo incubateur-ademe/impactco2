@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { serializeUnit } from 'publicodes'
 
 const Wrapper = styled.div`
-  margin-bottom: 1.5rem;
   font-size: 1.25rem;
   ${(props) => props.theme.mq.small} {
     font-size: 1.125rem;
