@@ -3,12 +3,10 @@ import React from 'react'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import categories from 'data/categories.json'
 
+import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
-import Details from 'components/views/equivalent/Details'
-import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
-import Ecv from 'components/views/equivalent/Ecv'
 import Text from 'components/views/equivalent/Text'
-import Email from 'components/numerique/Email'
+import Simulateur from 'components/numerique/Simulateur'
 
 const equivalents = [...usagenumerique].map((equivalent) => ({
   ...equivalent,
@@ -26,10 +24,9 @@ export default function EmailPage(props) {
         equivalent: props.equivalent,
       }}
     >
-      <Details equivalent={props.equivalent} category={props.category} />
-      <VisualizationSlider equivalent={props.equivalent} />
-      <Ecv equivalent={props.equivalent} />
-      <Email />
+      <RulesProvider>
+        <Simulateur equivalent={props.equivalent} name='mails' />
+      </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>
   )

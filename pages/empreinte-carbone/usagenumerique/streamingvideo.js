@@ -6,7 +6,7 @@ import categories from 'data/categories.json'
 import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
 import Text from 'components/views/equivalent/Text'
-import StreamingVideo from 'components/numerique/StreamingVideo'
+import Simulateur from 'components/numerique/Simulateur'
 
 const equivalents = [...usagenumerique].map((equivalent) => ({
   ...equivalent,
@@ -25,7 +25,7 @@ export default function StreamingVideoPage(props) {
       }}
     >
       <RulesProvider>
-        <StreamingVideo equivalent={props.equivalent} />
+        <Simulateur equivalent={props.equivalent} name='streaming' />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>

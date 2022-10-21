@@ -6,7 +6,6 @@ import DataContext from 'components/providers/DataProvider'
 import RulesContext from './RulesProvider'
 import Section from 'components/base/Section'
 import Emoji from 'components/base/Emoji'
-import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
 import Detail from 'components/views/equivalent/ecv/Detail'
@@ -88,7 +87,7 @@ const Questions = styled.div`
   gap: 1rem 3rem;
   margin-bottom: 2rem;
 `
-export default function Email(props) {
+export default function Simulateur(props) {
   const { ecv } = useContext(DataContext)
 
   const { engine, situation, setSituation } = useContext(RulesContext)
@@ -97,12 +96,12 @@ export default function Email(props) {
     () =>
       engine && ecv
         ? engine
-            .evaluate('streaming')
+            .evaluate(props.name)
             .traversedVariables.filter((variable) =>
-              ecv.find((item) => item.id === variable)
+              ecv.find((item) => props.name + item.id === variable)
             )
             .map((variable) => {
-              const step = ecv.find((item) => item.id === variable)
+              const step = ecv.find((item) => props.name + item.id === variable)
               return {
                 color: step.color,
                 label: step.name,
@@ -110,7 +109,7 @@ export default function Email(props) {
               }
             })
         : [],
-    [ecv, engine, situation]
+    [ecv, engine, situation, props.formatNumber]
   )
 
   const questions = useMemo(
@@ -118,11 +117,11 @@ export default function Email(props) {
       engine
         ? engine &&
           engine
-            .evaluate('streaming')
+            .evaluate(props.name)
             .traversedVariables.map((variable) => engine.getRule(variable))
             .filter((rule) => rule.rawNode.question !== undefined)
         : [],
-    [engine, situation]
+    [engine, situation, props.name]
   )
 
   return engine ? (
@@ -135,7 +134,7 @@ export default function Email(props) {
           <Bar>
             <Top>
               <Number>
-                {formatNumber(engine.evaluate('streaming').nodeValue)}
+                {formatNumber(engine.evaluate(props.name).nodeValue)}
               </Number>{' '}
               <Unit>
                 g <Big>CO2</Big>e{' '}
@@ -167,7 +166,7 @@ export default function Email(props) {
               ...ecv,
               value: ecv.value / 1000,
             }))}
-            total={engine.evaluate('streaming').nodeValue / 1000}
+            total={engine.evaluate(props.name).nodeValue / 1000}
           />
         </Wrapper>
       </Section.Content>

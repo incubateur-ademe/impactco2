@@ -95,27 +95,27 @@
     "color": "#6f87ad"
   },
   {
-    "id": "streaming . terminaux . construction",
+    "id": " . terminaux . construction",
     "name": "Construction des terminaux",
     "color": "#ab616f"
   },
   {
-    "id": "streaming . terminaux . usage",
+    "id": " . terminaux . usage",
     "name": "Usage des terminaux",
     "color": "#a6b37d"
   },
   {
-    "id": "streaming . transmission",
+    "id": " . transmission",
     "name": "Transmission",
     "color": "#adc4c5"
   },
   {
-    "id": "streaming . data center . construction",
+    "id": " . data center . construction",
     "name": "Construction des data-centers",
     "color": "#66a498"
   },
   {
-    "id": "streaming . data center . usage",
+    "id": " . data center . usage",
     "name": "Usage des data-centers",
     "color": "#6f87ad"
   }

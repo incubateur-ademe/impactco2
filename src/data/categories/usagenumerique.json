@@ -239,43 +239,6 @@
     "source": "https://negaoctet.org/"
   },
   {
-    "name": "Audioconférence",
-    "prefix": "Heure[s] d'",
-    "slug": "audioconference",
-    "emoji": "🎙",
-    "unit": "heure",
-    "category": 10,
-    "ecv": [
-      {
-        "value": 5.52e-2,
-        "id": 13
-      },
-      {
-        "value": 3.35e-3,
-        "id": 14
-      },
-      {
-        "value": 3.04e-3,
-        "id": 15
-      },
-      {
-        "value": 2.37e-4,
-        "id": 16
-      },
-      {
-        "value": 2.14e-5,
-        "id": 17
-      }
-    ],
-    "default": true,
-    "tile": false,
-    "meta": {
-      "title": "",
-      "description": ""
-    },
-    "source": "https://negaoctet.org/"
-  },
-  {
     "name": "Go de donnée",
     "slug": "telechargement",
     "emoji": "⬇️",
