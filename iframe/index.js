@@ -7,10 +7,13 @@ const script =
   document.getElementById('datagir-mon-convertisseur-co2') ||
   document.getElementById('datagir-impact-co2')
 
-const type =
-  script.dataset.type || document.getElementById('mon-impact-transport')
-    ? 'empreinte-carbone/transport'
-    : 'tuiles'
+const type = script.dataset.type
+  ? script.dataset.type
+  : document.getElementById('mon-impact-transport') ||
+    document.getElementById('datagir-teletravail') ||
+    document.getElementById('ecolab-transport')
+  ? 'empreinte-carbone/transport'
+  : 'tuiles'
 const search = script.dataset.search
 const source = window.location.href.toString()
 
