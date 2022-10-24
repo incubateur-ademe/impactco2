@@ -9,6 +9,8 @@ https://api.monimpacttransport.fr/beta/*  https://impactco2.fr/.netlify/function
 http://api.impactco2.fr/beta/*            https://impactco2.fr/.netlify/functions/:splat 200
 https://api.impactco2.fr/beta/*           https://impactco2.fr/.netlify/functions/:splat 200
 
+https://teletravail.monimpacttransport.fr/* https://impactco2.fr/empreinte-carbone/transport/teletravail/*
+
 https://monimpacttransport.fr/iframe.js   https://impactco2.fr/iframe.js 
 
 https://monimpacttransport.fr/*           https://impactco2.fr/empreinte-carbone/transport/:splat  301!
