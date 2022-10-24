@@ -97,7 +97,7 @@ export default function Search(props) {
             }}
             selected={props.sorting === 'alph_desc'}
           >
-            A => Z
+            A =&gt; Z
           </Option>
           <Option
             onClick={() => {
@@ -106,7 +106,7 @@ export default function Search(props) {
             }}
             selected={props.sorting === 'alph_asc'}
           >
-            Z => A
+            Z =&gt; A
           </Option>
           <Option
             onClick={() => {
