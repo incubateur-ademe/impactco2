@@ -14,7 +14,7 @@ const type = script.dataset.type
     document.getElementById('ecolab-transport')
   ? 'empreinte-carbone/transport'
   : 'tuiles'
-const search = script.dataset.search
+const search = script.dataset.search || ''
 const source = window.location.href.toString()
 
 const src = `https://impactco2.fr/iframes/${type}${search}${
