@@ -11,8 +11,8 @@ https://api.impactco2.fr/beta/*           https://impactco2.fr/.netlify/function
 
 https://monimpacttransport.fr/iframe.js   https://impactco2.fr/iframe.js 
 
-https://monimpacttransport.fr/*           https://impactco2.fr/categories/transport/:splat  301!
-https://www.monimpacttransport.fr/*       https://impactco2.fr/categories/transport/:splat  301!
+https://monimpacttransport.fr/*           https://impactco2.fr/empreinte-carbone/transport/:splat  301!
+https://www.monimpacttransport.fr/*       https://impactco2.fr/empreinte-carbone/transport/:splat  301!
 
 
 
