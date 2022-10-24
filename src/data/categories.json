@@ -51,7 +51,7 @@
     "name": "Transport",
     "emoji": "🚴‍♂️",
     "slug": "transport",
-    "title": "Empreinte carbone du transport",
+    "title": "L'impact du transport",
     "divider": 1,
     "display": true,
     "unit": "km",
