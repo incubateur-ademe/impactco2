@@ -137,7 +137,7 @@ export default function Distance(props) {
             items={equivalentsOfTheMonth}
             max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value}
           />
-          <Bottom category={props.category} />
+          <Bottom category={props.category} iframe={props.iframe} />
         </Wrapper>
       </Section.Content>
     </Section>

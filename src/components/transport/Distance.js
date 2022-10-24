@@ -69,7 +69,7 @@ export default function Distance(props) {
           {transportations.length && (
             <>
               <CategoryLegend />
-              <Bottom category={props.category} />
+              <Bottom category={props.category} iframe={props.iframe} />
             </>
           )}
         </Wrapper>

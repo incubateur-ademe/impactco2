@@ -31,7 +31,7 @@ export default function Bottom(props) {
       <Button
         className={'noscreenshot'}
         onClick={() => {
-          alert('Bientôt disponible')
+          !props.iframe && alert('Bientôt disponible')
           window?._paq?.push([
             'trackEvent',
             'Interaction',

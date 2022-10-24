@@ -13,7 +13,7 @@ export function useSuggestions(search, focus) {
       search && search.length > 2
         ? axios
             .get(
-              `https://monimpacttransport.fr/.netlify/functions/callGMapSearch?${search}`
+              `https://impactco2.fr/.netlify/functions/callGMapSearch?${search}`
             )
             .then((res) => res.data.features)
         : Promise.resolve([]),
@@ -31,7 +31,7 @@ export function useAddress(id) {
     () =>
       axios
         .get(
-          `https://monimpacttransport.fr/.netlify/functions/callGMapPlace?place_id=${id}&sessiontoken=${sessiontoken}`
+          `https://impactco2.fr/.netlify/functions/callGMapPlace?place_id=${id}&sessiontoken=${sessiontoken}`
         )
         .then((res) => {
           sessiontoken = generateToken()

@@ -6,8 +6,15 @@ https://www.monconvertisseurco2.fr/*      https://impactco2.fr/:splat  301!
 http://api.monimpacttransport.fr/beta/*   https://impactco2.fr/.netlify/functions/:splat 200
 https://api.monimpacttransport.fr/beta/*  https://impactco2.fr/.netlify/functions/:splat 200
 
-https://monimpacttransport.fr/*           https://impactco2.fr/categories/transport/:splat  301!
-https://www.monimpacttransport.fr/*       https://impactco2.fr/categories/transport/:splat  301!
+http://api.impactco2.fr/beta/*            https://impactco2.fr/.netlify/functions/:splat 200
+https://api.impactco2.fr/beta/*           https://impactco2.fr/.netlify/functions/:splat 200
+
+https://teletravail.monimpacttransport.fr/* https://impactco2.fr/empreinte-carbone/transport/teletravail/*
+
+https://monimpacttransport.fr/iframe.js   https://impactco2.fr/iframe.js 
+
+https://monimpacttransport.fr/*           https://impactco2.fr/empreinte-carbone/transport/:splat  301!
+https://www.monimpacttransport.fr/*       https://impactco2.fr/empreinte-carbone/transport/:splat  301!
 
 
 

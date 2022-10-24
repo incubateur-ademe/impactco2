@@ -6,7 +6,6 @@ import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
 import SimpleTile from 'components/base/SimpleTile'
 import nosgestesclimat from './about/nos-gestes-climat.jpg'
-import monimpacttransport from './about/mon-impact-transport.png'
 import mesfruitsetlegumesdesaison from './about/mes-fruits-et-legumes-de-saison.jpg'
 import quefairedemesdechets from './about/que-faire-de-mes-dechets.png'
 
@@ -61,13 +60,6 @@ export default function About(props) {
             column={2}
           >
             <Image src={nosgestesclimat} alt='Nos Gestes Climat' />
-          </SimpleTile>
-          <SimpleTile
-            title='Mon Impact Transport'
-            url='https://monimpacttransport.fr'
-            column={2}
-          >
-            <Image src={monimpacttransport} alt='Mon Impact Transport' />
           </SimpleTile>
           <SimpleTile
             title='Mes Fruits et Légumes de Saison'
