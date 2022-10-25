@@ -14,11 +14,7 @@ export default function MonthSelector(props) {
     <FancySelect
       value={props.month.slug}
       onChange={(value) => {
-        router.push(
-          `${
-            iframe ? '/iframes' : ''
-          }/empreinte-carbone/fruitsetlegumes/mois/${value}`
-        )
+        router.push(`${iframe ? '/iframes' : ''}/fruitsetlegumes/mois/${value}`)
       }}
       options={slugs.map((slug, index) => ({
         value: slug,

@@ -43,9 +43,7 @@ export default function MontreCategory() {
         14 montres connectées
         <br />
       </Small>
-      <CenterLink to='/empreinte-carbone/numerique'>
-        Voir la catégorie numérique
-      </CenterLink>
+      <CenterLink to='/numerique'>Voir la catégorie numérique</CenterLink>
     </>
   )
 }

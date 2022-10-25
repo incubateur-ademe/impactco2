@@ -172,7 +172,7 @@ export default function StockageEmails() {
           <br />
           Est compté seulement le stockage des emails dans les data-centers (et
           la fabrication des data-centers associée), via ce{' '}
-          <MagicLink to='/empreinte-carbone/usagenumerique/stockagedonnee'>
+          <MagicLink to='/usagenumerique/stockagedonnee'>
             facteur d'émission
           </MagicLink>{' '}
           (529,80 g CO<sub>2</sub>e / Go / année).

@@ -19,7 +19,7 @@ export default function Iframe(props) {
           <meta name='robots' content='noindex' />
         </Head>
         {props.children}
-        <IframeFooter />
+        <IframeFooter url={props.url} />
       </Wrapper>
       <Script
         src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js'

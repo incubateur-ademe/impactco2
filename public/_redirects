@@ -9,17 +9,18 @@ https://api.monimpacttransport.fr/beta/*  https://impactco2.fr/.netlify/function
 http://api.impactco2.fr/beta/*            https://impactco2.fr/.netlify/functions/:splat 200
 https://api.impactco2.fr/beta/*           https://impactco2.fr/.netlify/functions/:splat 200
 
-https://teletravail.monimpacttransport.fr/* https://impactco2.fr/empreinte-carbone/transport/teletravail/*
+https://teletravail.monimpacttransport.fr/* https://impactco2.fr/transport/teletravail/*
 
 https://monimpacttransport.fr/iframe.js   https://impactco2.fr/iframe.js 
 
-https://monimpacttransport.fr/*           https://impactco2.fr/empreinte-carbone/transport/:splat  301!
-https://www.monimpacttransport.fr/*       https://impactco2.fr/empreinte-carbone/transport/:splat  301!
+https://monimpacttransport.fr/*           https://impactco2.fr/transport/:splat  301!
+https://www.monimpacttransport.fr/*       https://impactco2.fr/transport/:splat  301!
 
 
 
-/categories/deplacement/*                 /empreinte-carbone/transport/:splat
+/categories/deplacement/*                 /transport/:splat
 
-/categories/*                             /empreinte-carbone/:splat
-/iframes/categories/*                     /iframes/empreinte-carbone/:splat
+/categories/*                             /:splat
+/empreinte-carbone/*                      /:splat
+/iframes/categories/*                     /iframes/:splat
 

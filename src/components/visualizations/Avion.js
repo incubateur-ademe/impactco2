@@ -63,9 +63,7 @@ export default function Avion() {
         <br />
         en TGV
       </Small>
-      <CenterLink to='/empreinte-carbone/transport'>
-        Voir tous les modes de transport
-      </CenterLink>
+      <CenterLink to='/transport'>Voir tous les modes de transport</CenterLink>
     </>
   )
 }

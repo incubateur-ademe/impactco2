@@ -35,17 +35,15 @@ export default function Configurator(props) {
       >
         <option value='tuiles'>Tuiles</option>
         <option disabled>-----------</option>
-        <option value='empreinte-carbone/numerique'>Numérique</option>
-        <option value='empreinte-carbone/repas'>Repas</option>
-        <option value='empreinte-carbone/boisson'>Boisson</option>
-        <option value='empreinte-carbone/transport'>Transport</option>
-        <option value='empreinte-carbone/habillement'>Habillement</option>
-        <option value='empreinte-carbone/electromenager'>Électroménager</option>
-        <option value='empreinte-carbone/mobilier'>Mobilier</option>
-        <option value='empreinte-carbone/chauffage'>Chauffage</option>
-        <option value='empreinte-carbone/fruitsetlegumes'>
-          Fruits et légumes
-        </option>
+        <option value='numerique'>Numérique</option>
+        <option value='repas'>Repas</option>
+        <option value='boisson'>Boisson</option>
+        <option value='transport'>Transport</option>
+        <option value='habillement'>Habillement</option>
+        <option value='electromenager'>Électroménager</option>
+        <option value='mobilier'>Mobilier</option>
+        <option value='chauffage'>Chauffage</option>
+        <option value='fruitsetlegumes'>Fruits et légumes</option>
       </Select>
       <Select
         onChange={({ value }) => props.setTheme(value)}

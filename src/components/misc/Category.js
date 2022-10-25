@@ -32,7 +32,7 @@ export default function CategoryList(props) {
           unit: equivalent.unit,
           value: formatTotal(equivalent),
           usage: formatUsage(equivalent),
-          to: `/empreinte-carbone/${
+          to: `/${
             categories.find((category) => category.id === equivalent.category)
               .slug
           }/${equivalent.slug}`,
