@@ -154,7 +154,7 @@ export default function Simulateur(props) {
           </Bar>
           <StackedChart
             items={ecvToDisplay}
-            total={formatTotal(props.equivalent)}
+            total={engine.evaluate(props.name).nodeValue}
           />
           <Legend items={ecvToDisplay} />
           <Detail
