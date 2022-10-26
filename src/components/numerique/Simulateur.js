@@ -87,7 +87,7 @@ const Questions = styled.div`
   align-items: stretch;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
 
   ${(props) => props.theme.mq.medium} {
     flex-direction: column;
@@ -151,6 +151,18 @@ export default function Simulateur(props) {
             </Top>
             <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
           </Bar>
+          <StackedChart
+            items={ecvToDisplay}
+            total={formatTotal(props.equivalent)}
+          />
+          <Legend items={ecvToDisplay} />
+          <Detail
+            ecv={ecvToDisplay.map((ecv) => ({
+              ...ecv,
+              value: ecv.value / 1000,
+            }))}
+            total={engine.evaluate(props.name).nodeValue / 1000}
+          />
           <Questions>
             {props.name === 'streaming' ? (
               <>
@@ -169,18 +181,6 @@ export default function Simulateur(props) {
               ))
             )}
           </Questions>
-          <StackedChart
-            items={ecvToDisplay}
-            total={formatTotal(props.equivalent)}
-          />
-          <Legend items={ecvToDisplay} />
-          <Detail
-            ecv={ecvToDisplay.map((ecv) => ({
-              ...ecv,
-              value: ecv.value / 1000,
-            }))}
-            total={engine.evaluate(props.name).nodeValue / 1000}
-          />
         </Wrapper>
       </Section.Content>
     </StyledSection>

@@ -99,7 +99,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
-  #root {
+  #__next {
     overflow: hidden;
     width: 100%;
     position: relative;
