@@ -32,7 +32,11 @@ export default function DeviceInput(props) {
         <option value={`'tablette'`}>📱 Tablette</option>
         <option value={`'ordinateur portable'`}>💻 Ordinateur portable</option>
         <option value={`'ordinateur et écran'`}>🖥 Ordinateur fixe</option>
-        <option value={`'TV'`}>📺 Télévision</option>
+        {props.name !== 'mails' ? (
+          <option value={`'TV'`}>📺 Télévision</option>
+        ) : (
+          ''
+        )}
       </Select>
     </Wrapper>
   )

@@ -13,6 +13,7 @@ import Wrapper from './Wrapper'
 import Question from './Question'
 import DeviceInput from './question/DeviceInput'
 import VideoInput from './question/VideoInput'
+import EmailInput from './question/EmailInput'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -174,6 +175,12 @@ export default function Simulateur(props) {
               <>
                 <DeviceInput name={props.name} />
                 <VideoInput name={props.name} />
+              </>
+            )}
+            {props.name === 'mails' && (
+              <>
+                <DeviceInput name={props.name} />
+                <EmailInput name={props.name} />
               </>
             )}
           </Questions>
