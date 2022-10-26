@@ -164,22 +164,29 @@ export default function Simulateur(props) {
             total={engine.evaluate(props.name).nodeValue / 1000}
           />
           <Questions>
-            {props.name === 'streaming' ? (
+            {props.name === 'streaming' && (
               <>
                 <DeviceInput name={props.name} />
                 <VideoInput name={props.name} />
               </>
-            ) : (
-              questions.map((question) => (
-                <Question
-                  key={question.dottedName}
-                  rule={question}
-                  evaluation={engine.evaluate(question.dottedName)}
-                  value={engine.evaluate(question.dottedName).nodeValue}
-                  onChange={setSituation}
-                />
-              ))
             )}
+            {props.name === 'visio' && (
+              <>
+                <DeviceInput name={props.name} />
+                <VideoInput name={props.name} />
+              </>
+            )}
+          </Questions>
+          <Questions>
+            {questions.map((question) => (
+              <Question
+                key={question.dottedName}
+                rule={question}
+                evaluation={engine.evaluate(question.dottedName)}
+                value={engine.evaluate(question.dottedName).nodeValue}
+                onChange={setSituation}
+              />
+            ))}
           </Questions>
         </Wrapper>
       </Section.Content>

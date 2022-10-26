@@ -26,32 +26,30 @@ const SliderWrapper = styled.div`
   border-radius: 0.5rem;
 `
 const Duration = styled.div`
-  width: 6rem;
+  width: 3.5rem;
   text-align: right;
 `
-export default function DurationInput(props) {
+export default function ParticipantInput(props) {
   const { engine, setSituation } = useContext(RulesContext)
 
-  return (
+  return props.name === 'visio' ? (
     <Wrapper>
-      <Label>
-        Durée de la {props.name === 'streaming' ? 'vidéo' : 'communication'}
-      </Label>
+      <Label>Nombre de participants</Label>
       <SliderWrapper>
         <Slider
-          value={engine.evaluate(`${props.name} . durée`).nodeValue}
-          min={1}
-          max={600}
+          value={engine.evaluate(`${props.name} . emplacements`).nodeValue}
+          min={2}
+          max={20}
           onChange={(value) =>
             setSituation({
-              [`${props.name} . durée`]: value,
+              [`${props.name} . emplacements`]: value,
             })
           }
         />
         <Duration>
-          {engine.evaluate(`${props.name} . durée`).nodeValue} minutes
+          {engine.evaluate(`${props.name} . emplacements`).nodeValue}
         </Duration>
       </SliderWrapper>
     </Wrapper>
-  )
+  ) : null
 }

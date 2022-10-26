@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import QualityInput from './videoInput/QualityInput'
 import DurationInput from './videoInput/DurationInput'
+import ParticipantInput from './videoInput/ParticipantsInput'
 import NetworkInput from './videoInput/NetworkInput'
 
 const Wrapper = styled.div`
@@ -21,6 +22,7 @@ export default function VideoInput(props) {
     <Wrapper>
       <QualityInput name={props.name} />
       <DurationInput name={props.name} />
+      <ParticipantInput name={props.name} />
       <NetworkInput name={props.name} />
     </Wrapper>
   )

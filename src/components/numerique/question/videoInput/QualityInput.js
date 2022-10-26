@@ -21,26 +21,45 @@ export default function DeviceInput(props) {
 
   return (
     <Wrapper className={props.className}>
-      <Label>Qualité de la vidéo</Label>
+      <Label>
+        Qualité de la {props.name === 'streaming' ? 'vidéo' : 'communication'}
+      </Label>
       <HorizontalRadio
         value={`'${engine.evaluate(props.name + ' . qualité').nodeValue}'`}
         onChange={(value) =>
           setSituation({ [props.name + ' . qualité']: value })
         }
-        options={[
-          {
-            value: `'SD'`,
-            label: `SD`,
-          },
-          {
-            value: `'HD'`,
-            label: `HD`,
-          },
-          {
-            value: `'ultra HD'`,
-            label: `4K`,
-          },
-        ]}
+        options={
+          props.name === 'streaming'
+            ? [
+                {
+                  value: `'SD'`,
+                  label: `SD`,
+                },
+                {
+                  value: `'HD'`,
+                  label: `HD`,
+                },
+                {
+                  value: `'ultra HD'`,
+                  label: `4K`,
+                },
+              ]
+            : [
+                {
+                  value: `'audio'`,
+                  label: `Audio`,
+                },
+                {
+                  value: `'SD'`,
+                  label: `SD`,
+                },
+                {
+                  value: `'HD'`,
+                  label: `HD`,
+                },
+              ]
+        }
       />
     </Wrapper>
   )
