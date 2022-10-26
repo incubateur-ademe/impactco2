@@ -11,6 +11,8 @@ import Legend from 'components/charts/Legend'
 import Detail from 'components/views/equivalent/ecv/Detail'
 import Wrapper from './Wrapper'
 import Question from './Question'
+import DeviceInput from './question/DeviceInput'
+import VideoInput from './question/VideoInput'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -82,9 +84,9 @@ const StyledEmoji = styled(Emoji)`
 const Questions = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   flex-wrap: wrap;
-  gap: 1rem 3rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 `
 export default function Simulateur(props) {
@@ -123,7 +125,7 @@ export default function Simulateur(props) {
         : [],
     [engine, situation, props.name]
   )
-
+  console.log(questions)
   return engine ? (
     <StyledSection>
       <Section.Content>
@@ -146,15 +148,22 @@ export default function Simulateur(props) {
             <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
           </Bar>
           <Questions>
-            {questions.map((question) => (
-              <Question
-                key={question.dottedName}
-                rule={question}
-                evaluation={engine.evaluate(question.dottedName)}
-                value={engine.evaluate(question.dottedName).nodeValue}
-                onChange={setSituation}
-              />
-            ))}
+            {props.name === 'streaming' ? (
+              <>
+                <DeviceInput name={props.name} />
+                <VideoInput name={props.name} />
+              </>
+            ) : (
+              questions.map((question) => (
+                <Question
+                  key={question.dottedName}
+                  rule={question}
+                  evaluation={engine.evaluate(question.dottedName)}
+                  value={engine.evaluate(question.dottedName).nodeValue}
+                  onChange={setSituation}
+                />
+              ))
+            )}
           </Questions>
           <StackedChart
             items={ecvToDisplay}
