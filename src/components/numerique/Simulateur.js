@@ -88,6 +88,10 @@ const Questions = styled.div`
   flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 2rem;
+
+  ${(props) => props.theme.mq.medium} {
+    flex-direction: column;
+  }
 `
 export default function Simulateur(props) {
   const { ecv } = useContext(DataContext)
@@ -125,7 +129,7 @@ export default function Simulateur(props) {
         : [],
     [engine, situation, props.name]
   )
-  console.log(questions)
+
   return engine ? (
     <StyledSection>
       <Section.Content>

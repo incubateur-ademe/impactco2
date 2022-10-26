@@ -20,7 +20,7 @@ export default function DeviceInput(props) {
 
   return (
     <Wrapper className={props.className}>
-      <Label>Qualité de la vidéo</Label>
+      <Label>Type de réseau</Label>
       <HorizontalRadio
         value={`'${
           engine.evaluate(props.name + ' . transmission . réseau').nodeValue

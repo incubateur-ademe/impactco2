@@ -18,7 +18,7 @@ const Label = styled.label`
 `
 export default function DeviceInput(props) {
   const { engine, setSituation } = useContext(RulesContext)
-  console.log(engine.evaluate(props.name + ' . qualité').nodeValue)
+
   return (
     <Wrapper className={props.className}>
       <Label>Qualité de la vidéo</Label>

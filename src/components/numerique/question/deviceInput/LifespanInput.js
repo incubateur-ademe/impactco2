@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import RulesContext from 'components/numerique/RulesProvider'
 import Slider from 'components/base/Slider'
+import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,11 +35,11 @@ const Text = styled.p`
   text-align: center;
 `
 export default function DeviceInput(props) {
-  const { engine, situation, setSituation } = useContext(RulesContext)
+  const { engine, setSituation } = useContext(RulesContext)
 
   return (
     <Wrapper>
-      {engine.evaluate(props.name + ' . appareil').nodeValue !== 'moyenne' && (
+      {engine.evaluate(props.name + ' . appareil').nodeValue !== 'moyenne' ? (
         <>
           <Label>Durée de vie du terminal</Label>
           <SliderWrapper>
@@ -72,10 +73,22 @@ export default function DeviceInput(props) {
             </Age>
           </SliderWrapper>
           <Text>
-            (L’impact de la construction de l’appareil est attribué au prorata
-            de sa durée de vie totale)
+            L’impact de la construction de l’appareil est attribué au prorata de
+            sa durée de vie totale.
           </Text>
         </>
+      ) : (
+        <Text>
+          Nous utilisons pour la valeur par défaut{' '}
+          <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
+            un agrégat de terminaux
+          </MagicLink>
+          .
+          <br />
+          <br />
+          L’impact de la construction de l’appareil est attribué au prorata de
+          sa durée de vie totale.
+        </Text>
       )}
     </Wrapper>
   )
