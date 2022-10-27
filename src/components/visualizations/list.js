@@ -27,7 +27,7 @@ import Manteau from './Manteau'
 
 import Chauffage from './Chauffage'
 
-import StockageEmails from 'components/numerique/StockageEmails'
+import StockageEmails from 'components/numerique/equivalent/StockageEmails'
 
 const visualizations = {
   smartphone: [

@@ -6,7 +6,7 @@ import categories from 'data/categories.json'
 import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
 import Text from 'components/views/equivalent/Text'
-import Simulateur from 'components/numerique/Simulateur'
+import Equivalent from 'components/numerique/Equivalent'
 
 const equivalents = [...usagenumerique].map((equivalent) => ({
   ...equivalent,
@@ -25,7 +25,7 @@ export default function EmailPage(props) {
       }}
     >
       <RulesProvider>
-        <Simulateur equivalent={props.equivalent} name='mails' />
+        <Equivalent equivalent={props.equivalent} name='mails' />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>

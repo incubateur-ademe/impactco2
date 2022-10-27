@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { formatName, formatNumber, formatTotal } from 'utils/formatters'
+import { formatName, formatNumber } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import RulesContext from './RulesProvider'
@@ -11,11 +11,11 @@ import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
 import Detail from 'components/views/equivalent/ecv/Detail'
 import Wrapper from './Wrapper'
-import Question from './Question'
-import DeviceInput from './question/DeviceInput'
-import VideoInput from './question/VideoInput'
-import EmailInput from './question/EmailInput'
-import RechercheWebInput from './question/RechercheWebInput'
+import ExpertMode from './equivalent/ExpertMode'
+import DeviceInput from './equivalent/deviceInput'
+import VideoInput from './equivalent/VideoInput'
+import EmailInput from './equivalent/EmailInput'
+import RechercheWebInput from './equivalent/RechercheWebInput'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -90,7 +90,7 @@ const Questions = styled.div`
   align-items: stretch;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 1rem;
+  margin: 1rem 0;
 
   ${(props) => props.theme.mq.medium} {
     flex-direction: column;
@@ -101,7 +101,7 @@ export default function Simulateur(props) {
 
   const { setEcv } = useContext(ModalContext)
 
-  const { engine, situation, setSituation } = useContext(RulesContext)
+  const { engine, situation } = useContext(RulesContext)
 
   const ecvToDisplay = useMemo(
     () =>
@@ -194,17 +194,7 @@ export default function Simulateur(props) {
               </>
             )}
           </Questions>
-          <Questions>
-            {questions.map((question) => (
-              <Question
-                key={question.dottedName}
-                rule={question}
-                evaluation={engine.evaluate(question.dottedName)}
-                value={engine.evaluate(question.dottedName).nodeValue}
-                onChange={setSituation}
-              />
-            ))}
-          </Questions>
+          <ExpertMode questions={questions} />
         </Wrapper>
       </Section.Content>
     </StyledSection>
