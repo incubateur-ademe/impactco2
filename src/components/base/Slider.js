@@ -21,14 +21,8 @@ const Track = styled.div`
 const Thumb = styled.div`
   width: 1.25rem;
   height: 1.25rem;
-  color: ${(props) => props.theme.colors.background};
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: ${(props) => props.color || props.theme.colors.main};
   border-radius: 1rem;
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.125rem ${(props) => props.theme.colors.mainLight};
-  }
 `
 export default function Slider(props) {
   return (
@@ -43,8 +37,12 @@ export default function Slider(props) {
       renderTrack={({ props, children }) => (
         <Track {...props}>{children}</Track>
       )}
-      renderThumb={({ props }) => (
-        <Thumb {...props} aria-label={props.ariaLabel} />
+      renderThumb={({ props: anotherProps }) => (
+        <Thumb
+          {...anotherProps}
+          color={props.color}
+          aria-label={props.ariaLabel}
+        />
       )}
     />
   )

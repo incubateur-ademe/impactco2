@@ -182,13 +182,13 @@ export default function Simulateur(props) {
                 <VideoInput name={props.name} />
               </>
             )}
-            {props.name === 'mails' && (
+            {props.name === 'email' && (
               <>
                 <DeviceInput name={props.name} />
                 <EmailInput name={props.name} />
               </>
             )}
-            {props.name === 'requete web' && (
+            {props.name === 'recherche web' && (
               <>
                 <DeviceInput name={props.name} />
               </>

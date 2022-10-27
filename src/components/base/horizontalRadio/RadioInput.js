@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  border-right: 0.125rem solid ${(props) => props.theme.colors.main};
+  border-right: 0.125rem solid
+    ${(props) => props.color || props.theme.colors.main};
 
   &:last-child {
     border-right: none;
@@ -24,10 +25,12 @@ const Label = styled.label`
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   color: ${(props) =>
-    props.theme.colors[props.checked ? 'background' : 'main']};
+    props.checked
+      ? props.theme.colors.background
+      : props.color || props.theme.colors.main};
   line-height: 1.2;
   background-color: ${(props) =>
-    props.checked ? props.theme.colors.main : 'transparent'};
+    props.checked ? props.color || props.theme.colors.main : 'transparent'};
   cursor: pointer;
   transition: all 300ms ease-out;
 
@@ -37,7 +40,7 @@ const Label = styled.label`
 `
 export default function RadioInput(props) {
   return (
-    <Wrapper>
+    <Wrapper color={props.color}>
       <input
         type='radio'
         id={props.id}
@@ -46,7 +49,7 @@ export default function RadioInput(props) {
         checked={props.checked}
         onChange={props.onChange}
       />
-      <Label htmlFor={props.id} checked={props.checked}>
+      <Label htmlFor={props.id} checked={props.checked} color={props.color}>
         {props.label}
       </Label>
     </Wrapper>

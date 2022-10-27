@@ -25,7 +25,7 @@ export default function RechercheWebPage(props) {
       }}
     >
       <RulesProvider>
-        <Equivalent equivalent={props.equivalent} name='requete web' />
+        <Equivalent equivalent={props.equivalent} name='recherche web' />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>

@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   }
 `
 const StyledButtonLink = styled(ButtonLink)`
+  margin-bottom: 2rem;
   font-size: 0.75rem;
 `
 export default function ExpertMode(props) {
@@ -26,7 +27,10 @@ export default function ExpertMode(props) {
   const [open, setOpen] = useState(false)
   return (
     <>
-      <StyledButtonLink onClick={() => setOpen((prevOpen) => !prevOpen)}>
+      <StyledButtonLink
+        onClick={() => setOpen((prevOpen) => !prevOpen)}
+        className='noscreenshot'
+      >
         Voir plus d'options
       </StyledButtonLink>
       {open && (

@@ -25,7 +25,7 @@ export default function EmailPage(props) {
       }}
     >
       <RulesProvider>
-        <Equivalent equivalent={props.equivalent} name='mails' />
+        <Equivalent equivalent={props.equivalent} name='email' />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>
