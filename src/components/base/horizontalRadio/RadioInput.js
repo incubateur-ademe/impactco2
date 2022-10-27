@@ -2,6 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) =>
+    props.checked ? props.color || props.theme.colors.main : 'transparent'};
   border-right: 0.125rem solid
     ${(props) => props.color || props.theme.colors.main};
 
@@ -21,32 +26,26 @@ const Label = styled.label`
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0.75rem;
-  font-size: 1rem;
+  gap: 0.75em;
+  width: 100%;
+  padding: 0.5em 0.75em;
   color: ${(props) =>
     props.checked
       ? props.theme.colors.background
       : props.color || props.theme.colors.main};
-  line-height: 1.2;
-  background-color: ${(props) =>
-    props.checked ? props.color || props.theme.colors.main : 'transparent'};
+  line-height: 1.15;
+
   cursor: pointer;
   transition: all 300ms ease-out;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1rem;
-  }
 `
 export default function RadioInput(props) {
   return (
-    <Wrapper color={props.color}>
+    <Wrapper color={props.color} checked={props.checked}>
       <input
         type='radio'
         id={props.id}
         name={props.name}
         value={props.value}
-        checked={props.checked}
         onChange={props.onChange}
       />
       <Label htmlFor={props.id} checked={props.checked} color={props.color}>

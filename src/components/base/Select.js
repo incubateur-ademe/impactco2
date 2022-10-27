@@ -9,15 +9,15 @@ const Label = styled.label`
   margin-bottom: 0.5rem;
 `
 const Input = styled.select`
-  padding: 0.5rem 2rem 0.5rem 1rem;
+  padding: 0.5em 2em 0.5em 1em;
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
   border: 0.125rem solid ${(props) => props.color || props.theme.colors.main};
   border-radius: 0.5em;
   appearance: none;
   background-repeat: no-repeat;
-  background-position: calc(100% - 0.5rem) 50%;
-  background-size: 1.5rem 1.5rem;
+  background-position: calc(100% - 0.5em) 50%;
+  background-size: 1.5em 1.5em;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%23${(
     props
   ) =>

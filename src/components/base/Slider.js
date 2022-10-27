@@ -2,9 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { Range } from 'react-range'
 
+const Wrapper = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 1.25rem;
+`
 const Track = styled.div`
   position: relative;
-  flex: 1;
+  width: 100%;
   height: 0.0625rem;
   margin: 0 0.625rem;
 
@@ -26,24 +32,26 @@ const Thumb = styled.div`
 `
 export default function Slider(props) {
   return (
-    <Range
-      step={props.step || 1}
-      min={props.min || 0}
-      max={props.max || 10}
-      values={[props.value]}
-      onChange={(values) => {
-        props.onChange(values[0])
-      }}
-      renderTrack={({ props, children }) => (
-        <Track {...props}>{children}</Track>
-      )}
-      renderThumb={({ props: anotherProps }) => (
-        <Thumb
-          {...anotherProps}
-          color={props.color}
-          aria-label={props.ariaLabel}
-        />
-      )}
-    />
+    <Wrapper className={props.className}>
+      <Range
+        step={props.step || 1}
+        min={props.min || 0}
+        max={props.max || 10}
+        values={[props.value]}
+        onChange={(values) => {
+          props.onChange(values[0])
+        }}
+        renderTrack={({ props, children }) => (
+          <Track {...props}>{children}</Track>
+        )}
+        renderThumb={({ props: anotherProps }) => (
+          <Thumb
+            {...anotherProps}
+            color={props.color}
+            aria-label={props.ariaLabel}
+          />
+        )}
+      />
+    </Wrapper>
   )
 }

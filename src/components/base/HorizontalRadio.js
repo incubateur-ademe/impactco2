@@ -15,7 +15,7 @@ export default function HorizontalRadio(props) {
       {props.options.map((option) => (
         <RadioInput
           key={option.value}
-          id={option.value}
+          id={props.name + ' ' + option.value}
           name={props.name}
           value={option.value}
           label={option.label}

@@ -2,9 +2,9 @@ import React from 'react'
 
 import categories from 'data/categories.json'
 
+import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
 import Category from 'components/numerique/Category'
-import Learning from 'components/numerique/Learning'
 
 export default function Numerique(props) {
   return (
@@ -16,8 +16,9 @@ export default function Numerique(props) {
         category: props.category,
       }}
     >
-      <Category category={props.category} />
-      <Learning />
+      <RulesProvider>
+        <Category category={props.category} />{' '}
+      </RulesProvider>
     </Web>
   )
 }

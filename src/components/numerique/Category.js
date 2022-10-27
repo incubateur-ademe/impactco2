@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Section from 'components/base/Section'
 import Wrapper from 'components/misc/category/Wrapper'
 import Description from 'components/misc/category/Description'
 import Search from './category/Search'
+import Result from './category/Result'
 
 export default function Category(props) {
+  const [numberEmails, setNumberEmails] = useState(350)
+
   return (
     <Section>
       <Section.Content>
@@ -14,7 +17,11 @@ export default function Category(props) {
           slug={props.category.slug}
         >
           <Description description={props.category.description} />
-          <Search />
+          <Search
+            numberEmails={numberEmails}
+            setNumberEmails={setNumberEmails}
+          />
+          <Result numberEmails={numberEmails} />
         </Wrapper>
       </Section.Content>
     </Section>
