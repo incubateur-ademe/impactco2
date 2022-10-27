@@ -199,12 +199,12 @@ export default function Search(props) {
         <Label>
           <strong>{engine.evaluate(`visio . durée`).nodeValue / 60}h</strong> de{' '}
           <strong>
-            <Color color='#4CC8AF'>visioconférence</Color>
+            <Color color='#3DC7AB'>visioconférence</Color>
           </strong>
           <Small>par semaine</Small>
         </Label>
         <StyledSlider
-          color='#4CC8AF'
+          color='#3DC7AB'
           min={0}
           max={4200}
           step={60}
@@ -221,7 +221,7 @@ export default function Search(props) {
             onChange={({ value }) =>
               setSituation({ ['visio . appareil']: value })
             }
-            color='#4CC8AF'
+            color='#3DC7AB'
           >
             <option value={`'smartphone'`}>📱</option>
             <option value={`'tablette'`}>📱</option>
@@ -249,14 +249,14 @@ export default function Search(props) {
                 label: `4G`,
               },
             ]}
-            color='#4CC8AF'
+            color='#3DC7AB'
           />
           <StyledSelect
             value={`'${engine.evaluate('visio . qualité').nodeValue}'`}
             onChange={({ value }) =>
               setSituation({ ['visio . qualité']: value })
             }
-            color='#4CC8AF'
+            color='#3DC7AB'
           >
             <option value={`'audio'`}>🔉</option>
             <option value={`'SD'`}>SD</option>

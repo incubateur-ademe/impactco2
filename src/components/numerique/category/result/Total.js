@@ -39,7 +39,7 @@ export default function Total(props) {
         kg CO<sub>2</sub>e par semaine
       </Unit>
       <Comparaison>
-        (soit autant d’emission que 10 km en voiture 🚗)
+        (soit autant d’emission que ... km en voiture 🚗)
       </Comparaison>
     </Wrapper>
   ) : null

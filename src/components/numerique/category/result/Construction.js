@@ -23,6 +23,7 @@ const Number = styled.span`
 `
 const StyledStackedChart = styled(StackedChart)`
   margin: 0;
+  height: 1.25rem;
 `
 export default function Construction(props) {
   const { engine, situation } = useContext(RulesContext)
