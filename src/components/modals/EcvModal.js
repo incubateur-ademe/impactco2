@@ -17,7 +17,13 @@ export default function EcvModal() {
       {[1, 2, 3, 4].includes(open) && <Standard />}
       {[5, 6, 7].includes(open) && <Transport />}
       {[30, 31, 32, 33, 34, 35].includes(open) && <Agribalyse />}
-      {[13, 14, 15, 16, 17].includes(open) && <Numerique />}
+      {[
+        ' . terminaux . construction',
+        ' . terminaux . usage',
+        ' . transmission',
+        ' . data center . construction',
+        ' . data center . usage',
+      ].includes(open) && <Numerique />}
     </Modal>
   )
 }

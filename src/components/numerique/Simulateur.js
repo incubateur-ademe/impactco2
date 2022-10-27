@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { formatName, formatNumber, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
+import ModalContext from 'components/providers/ModalProvider'
 import RulesContext from './RulesProvider'
 import Section from 'components/base/Section'
 import Emoji from 'components/base/Emoji'
@@ -14,6 +15,7 @@ import Question from './Question'
 import DeviceInput from './question/DeviceInput'
 import VideoInput from './question/VideoInput'
 import EmailInput from './question/EmailInput'
+import RechercheWebInput from './question/RechercheWebInput'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -97,6 +99,8 @@ const Questions = styled.div`
 export default function Simulateur(props) {
   const { ecv } = useContext(DataContext)
 
+  const { setEcv } = useContext(ModalContext)
+
   const { engine, situation, setSituation } = useContext(RulesContext)
 
   const ecvToDisplay = useMemo(
@@ -113,6 +117,7 @@ export default function Simulateur(props) {
                 color: step.color,
                 label: step.name,
                 value: engine.evaluate(variable).nodeValue,
+                onClick: () => setEcv(step.id),
               }
             })
         : [],
@@ -181,6 +186,11 @@ export default function Simulateur(props) {
               <>
                 <DeviceInput name={props.name} />
                 <EmailInput name={props.name} />
+              </>
+            )}
+            {props.name === 'requete web' && (
+              <>
+                <DeviceInput name={props.name} />
               </>
             )}
           </Questions>
