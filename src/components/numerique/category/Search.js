@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import RulesContext from '../RulesProvider'
 import Slider from 'components/base/Slider'
 import Select from 'components/base/Select'
 import HorizontalRadio from 'components/base/HorizontalRadio'
