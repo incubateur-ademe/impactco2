@@ -6,6 +6,7 @@ import electromenager from 'data/categories/electromenager.json'
 import habillement from 'data/categories/habillement.json'
 import mobilier from 'data/categories/mobilier.json'
 import numerique from 'data/categories/numerique.json'
+import usagenumerique from 'data/categories/usagenumerique.json'
 import repas from 'data/categories/repas.json'
 import chauffage from 'data/categories/chauffage.json'
 import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
@@ -25,6 +26,7 @@ const equivalents = [
   ...habillement,
   ...mobilier,
   ...numerique,
+  ...usagenumerique,
   ...repas,
   ...chauffage,
   ...fruitsetlegumes,
@@ -52,14 +54,25 @@ export default function Equivalent(props) {
 
 export async function getStaticPaths() {
   return {
-    paths: equivalents.map((equivalent) => ({
-      params: {
-        equivalent: equivalent.slug,
-        category: categories.find(
-          (category) => category.id === equivalent.category
-        ).slug,
-      },
-    })),
+    paths: equivalents
+      .filter(
+        (equivalent) =>
+          ![
+            'email',
+            'visioconference',
+            'audioconference',
+            'rechercheweb',
+            'streamingvideo',
+          ].includes(equivalent.slug)
+      )
+      .map((equivalent) => ({
+        params: {
+          equivalent: equivalent.slug,
+          category: categories.find(
+            (category) => category.id === equivalent.category
+          ).slug,
+        },
+      })),
     fallback: false,
   }
 }

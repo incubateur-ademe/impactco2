@@ -24,7 +24,7 @@ export default function Categories() {
           .map((category) => (
             <Button
               key={category.slug}
-              to={`/empreinte-carbone/${category.slug}`}
+              to={`/${category.slug}`}
               small
               onClick={() =>
                 window?._paq?.push([

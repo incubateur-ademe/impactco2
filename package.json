@@ -38,6 +38,7 @@
     "react-switch": "^7.0.0",
     "react-tooltip": "^4.4.3",
     "react-use-query-param-string": "^2.0.3",
+    "sib-api-v3-sdk": "^8.4.2",
     "styled-components": "^5.3.6",
     "styled-normalize": "^8.0.7",
     "twemoji": "^14.0.2",

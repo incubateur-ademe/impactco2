@@ -68,5 +68,55 @@
     "id": 35,
     "name": "Consommation",
     "color": "#6f87ad"
+  },
+  {
+    "id": 13,
+    "name": "Construction des terminaux",
+    "color": "#ab616f"
+  },
+  {
+    "id": 14,
+    "name": "Usage des terminaux",
+    "color": "#a6b37d"
+  },
+  {
+    "id": 15,
+    "name": "Transmission",
+    "color": "#adc4c5"
+  },
+  {
+    "id": 16,
+    "name": "Construction des data-centers",
+    "color": "#66a498"
+  },
+  {
+    "id": 17,
+    "name": "Usage des data-centers",
+    "color": "#6f87ad"
+  },
+  {
+    "id": " . terminaux . construction",
+    "name": "Construction des terminaux",
+    "color": "#ab616f"
+  },
+  {
+    "id": " . terminaux . usage",
+    "name": "Usage des terminaux",
+    "color": "#a6b37d"
+  },
+  {
+    "id": " . transmission",
+    "name": "Transmission",
+    "color": "#adc4c5"
+  },
+  {
+    "id": " . data center . construction",
+    "name": "Construction des data-centers",
+    "color": "#66a498"
+  },
+  {
+    "id": " . data center . usage",
+    "name": "Usage des data-centers",
+    "color": "#6f87ad"
   }
 ]

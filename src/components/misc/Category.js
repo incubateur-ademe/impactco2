@@ -9,6 +9,7 @@ import Wrapper from './category/Wrapper'
 import Description from './category/Description'
 import Top from './category/Top'
 import Instruction from './category/Instruction'
+import List from './category/List'
 import CategoryLegend from './category/CategoryLegend'
 import Bottom from './category/Bottom'
 
@@ -28,9 +29,10 @@ export default function CategoryList(props) {
           title: `${formatName(equivalent.name, 1, true)}`,
           subtitle: displayAll ? formatName(equivalent.subtitle) : null,
           emoji: equivalent.emoji,
+          unit: equivalent.unit,
           value: formatTotal(equivalent),
           usage: formatUsage(equivalent),
-          to: `/empreinte-carbone/${
+          to: `/${
             categories.find((category) => category.id === equivalent.category)
               .slug
           }/${equivalent.slug}`,
@@ -58,11 +60,14 @@ export default function CategoryList(props) {
           <Top className='noscreenshot'>
             <Instruction />
             <Top.Checkboxes
-              visible={equivalents
-                .filter(
-                  (equivalent) => equivalent.category === props.category.id
-                )
-                .find((equivalent) => !equivalent.default)}
+              visible={
+                equivalents
+                  .filter(
+                    (equivalent) => equivalent.category === props.category.id
+                  )
+                  .find((equivalent) => !equivalent.default) &&
+                !props.category.list
+              }
             >
               <Checkbox
                 name='displayAll'
@@ -81,12 +86,25 @@ export default function CategoryList(props) {
               </Checkbox>
             </Top.Checkboxes>
           </Top>
-          <BarChart
-            items={equivalentsOfCategory}
-            max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
-          />
-          {![2, 3].includes(props.category.id) && <CategoryLegend />}
-          <Bottom category={props.category} iframe={props.iframe} />
+          {props.category.list ? (
+            <List
+              items={equivalentsOfCategory}
+              max={
+                equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value
+              }
+            />
+          ) : (
+            <>
+              <BarChart
+                items={equivalentsOfCategory}
+                max={
+                  equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value
+                }
+              />
+              {![2, 3].includes(props.category.id) && <CategoryLegend />}
+            </>
+          )}
+          <Bottom category={props.category} />
         </Wrapper>
       </Section.Content>
     </Section>

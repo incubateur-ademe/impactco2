@@ -23,7 +23,7 @@ export default function CategoryPage(props) {
 export async function getStaticPaths() {
   return {
     paths: categories
-      .filter((category) => ![1, 2, 4, 9].includes(category.id))
+      .filter((category) => ![1, 2, 4, 9, 10].includes(category.id))
       .map((category) => ({
         params: { category: category.slug },
       })),

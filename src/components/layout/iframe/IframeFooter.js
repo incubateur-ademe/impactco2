@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
@@ -32,10 +33,10 @@ const Logos = styled(MagicLink)`
     font-size: ${(props) => (props.iframe ? 0.75 : 1)}rem;
   }
 `
-export default function IframeFooter() {
+export default function IframeFooter(props) {
   return (
     <Wrapper>
-      <StyledMagicLink to='https://impactco2.fr/'>
+      <StyledMagicLink to={`https://impactco2.fr/${props.url}`}>
         Voir la version détaillée
         <br />
         (et les sources)

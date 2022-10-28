@@ -1,0 +1,268 @@
+[
+  {
+    "name": "Email + pièce jointe",
+    "subtitle": "Écrire, envoyer et lire",
+    "slug": "emailpiecejointe",
+    "emoji": "✉️",
+    "unit": "email",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 0.0017947,
+        "id": 13
+      },
+      {
+        "value": 0.00018366,
+        "id": 14
+      },
+      {
+        "value": 0.0000358,
+        "id": 15
+      },
+      {
+        "value": 0.000936,
+        "id": 16
+      },
+      {
+        "value": 0.0001384,
+        "id": 17
+      }
+    ],
+    "default": false,
+    "tile": false,
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": "Email",
+    "subtitle": "Écrire, envoyer et lire",
+    "slug": "email",
+    "emoji": "✉️",
+    "unit": "email",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 0.0017947,
+        "id": 13
+      },
+      {
+        "value": 0.00018366,
+        "id": 14
+      },
+      {
+        "value": 0,
+        "id": 15
+      },
+      {
+        "value": 0.00000732,
+        "id": 16
+      },
+      {
+        "value": 0.00000696,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": "Spam",
+    "subtitle": "Non lu",
+    "slug": "spam",
+    "emoji": "✋",
+    "unit": "email",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 0,
+        "id": 15
+      },
+      {
+        "value": 0.00000732,
+        "id": 16
+      },
+      {
+        "value": 0.00000696,
+        "id": 17
+      }
+    ],
+    "default": false,
+    "tile": false,
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": "Stocker un Go de donnée",
+    "subtitle": "Pendant 1 an",
+    "slug": "stockagedonnee",
+    "emoji": "💾",
+    "unit": "année",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 4.64e-1,
+        "id": 16
+      },
+      {
+        "value": 6.58e-2,
+        "id": 17
+      }
+    ],
+    "default": false,
+    "tile": false,
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": "Recherche[s] sur le web",
+    "slug": "rechercheweb",
+    "emoji": "🧐",
+    "unit": "recherche",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 0.001042,
+        "id": 13
+      },
+      {
+        "value": 0.0001063,
+        "id": 14
+      },
+      {
+        "value": 0.000001421,
+        "id": 15
+      },
+      {
+        "value": 0.0000000208,
+        "id": 16
+      },
+      {
+        "value": 0.000000117,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": "Streaming vidéo",
+    "prefix": "Heure[s] de ",
+    "subtitle": "HD",
+    "slug": "streamingvideo",
+    "emoji": "🎬",
+    "unit": "heure",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 3.02e-2,
+        "id": 13
+      },
+      {
+        "value": 3.42e-3,
+        "id": 14
+      },
+      {
+        "value": 2.78e-2,
+        "id": 15
+      },
+      {
+        "value": 2.37e-4,
+        "id": 16
+      },
+      {
+        "value": 3.91e-4,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": "Visioconférence",
+    "prefix": "Heure[s] de ",
+    "slug": "visioconference",
+    "emoji": "🎥",
+    "unit": "heure",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 5.52e-2,
+        "id": 13
+      },
+      {
+        "value": 3.35e-3,
+        "id": 14
+      },
+      {
+        "value": 1.3e-2,
+        "id": 15
+      },
+      {
+        "value": 2.37e-4,
+        "id": 16
+      },
+      {
+        "value": 9.13e-5,
+        "id": 17
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "source": "https://negaoctet.org/"
+  },
+  {
+    "name": "Go de donnée",
+    "slug": "telechargement",
+    "emoji": "⬇️",
+    "category": 10,
+    "ecv": [
+      {
+        "value": 0.00927,
+        "id": 15
+      },
+      {
+        "value": 0.000125,
+        "id": 16
+      },
+      {
+        "value": 0.000799,
+        "id": 17
+      }
+    ],
+    "default": false,
+    "tile": false,
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "source": "https://negaoctet.org/"
+  }
+]

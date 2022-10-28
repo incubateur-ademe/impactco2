@@ -22,8 +22,6 @@ export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
 `
-const StyledLegend = styled(Legend)``
-
 export default function Ecv(props) {
   const { ecv } = useContext(DataContext)
 
@@ -43,7 +41,7 @@ export default function Ecv(props) {
         .map((item) => ({
           ...item,
           label: item.name,
-          onClick: () => setEcv(true),
+          onClick: () => setEcv(item.id),
         }))
       if (usage) {
         tempEcvToDisplay.push({
@@ -63,7 +61,9 @@ export default function Ecv(props) {
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
             Détail de l&apos;empreinte de 1{' '}
-            {props.equivalent.unit && <>{formatName(props.equivalent.unit)} </>}
+            {props.equivalent.prefix && (
+              <>{formatName(props.equivalent.prefix)} </>
+            )}
             {formatName(props.equivalent.name, 1)} (
             {formatNumberPrecision(formatTotal(props.equivalent, usage))}{' '}
             <span>
@@ -76,7 +76,7 @@ export default function Ecv(props) {
             items={ecvToDisplay}
             total={formatTotal(props.equivalent, usage)}
           />
-          <StyledLegend items={ecvToDisplay} />
+          <Legend items={ecvToDisplay} />
           {usage ? (
             <DurationSelector duration={usage} setDuration={setUsage} />
           ) : null}

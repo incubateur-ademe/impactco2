@@ -60,7 +60,7 @@ export default function Vegetalien() {
         végétariens
         <br />
       </Small>
-      <CenterLink to='/empreinte-carbone/repas'>Voir tous les repas</CenterLink>
+      <CenterLink to='/repas'>Voir tous les repas</CenterLink>
     </>
   )
 }

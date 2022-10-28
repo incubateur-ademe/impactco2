@@ -35,7 +35,7 @@ export default function Legend(props) {
     <Wrapper className={props.className}>
       {props.items.map((item) => (
         <Item key={item.label} color={item.color}>
-          {item.label}{' '}
+          <span dangerouslySetInnerHTML={{ __html: item.label }} />{' '}
           {item.onClick ? <More onClick={item.onClick}>(?)</More> : ''}
         </Item>
       ))}

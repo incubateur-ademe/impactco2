@@ -42,9 +42,7 @@ export default function SmartphoneCategory() {
         13 smartphones
         <br />
       </Small>
-      <CenterLink to='/empreinte-carbone/numerique'>
-        Voir la catégorie numérique
-      </CenterLink>
+      <CenterLink to='/numerique'>Voir la catégorie numérique</CenterLink>
     </>
   )
 }

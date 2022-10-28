@@ -44,9 +44,7 @@ export default function Eau() {
         3 432 litres d&apos;eau du robinet
         <br />
       </Small>
-      <CenterLink to='/empreinte-carbone/boisson'>
-        Voir la catégorie boisson
-      </CenterLink>
+      <CenterLink to='/boisson'>Voir la catégorie boisson</CenterLink>
     </>
   )
 }

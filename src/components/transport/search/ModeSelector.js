@@ -41,7 +41,7 @@ export default function ModeSelector(props) {
     <Wrapper>
       <Tab
         current={props.distance}
-        to={(props.iframe ? '/iframes' : '') + '/empreinte-carbone/transport'}
+        to={(props.iframe ? '/iframes' : '') + '/transport'}
         title={`Distance${
           router.asPath.split() === '/' ? ' : page actuelle' : ''
         }`}
@@ -50,10 +50,7 @@ export default function ModeSelector(props) {
       </Tab>
       <Tab
         current={props.itineraire}
-        to={
-          (props.iframe ? '/iframes' : '') +
-          '/empreinte-carbone/transport/itineraire'
-        }
+        to={(props.iframe ? '/iframes' : '') + '/transport/itineraire'}
         title={`Itinéraire${
           router.asPath.split() === '/itineraire' ? ' : page actuelle' : ''
         }`}
@@ -62,10 +59,7 @@ export default function ModeSelector(props) {
       </Tab>
       <Tab
         current={props.teletravail}
-        to={
-          (props.iframe ? '/iframes' : '') +
-          '/empreinte-carbone/transport/teletravail'
-        }
+        to={(props.iframe ? '/iframes' : '') + '/transport/teletravail'}
         title={`Télétravail${
           router.asPath.split() === '/teletravail' ? ' : page actuelle' : ''
         }`}

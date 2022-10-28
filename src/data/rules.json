@@ -1,0 +1,111 @@
+{
+  "streaming": {
+    "formule": {
+      "somme": ["terminaux", "transmission", "data center"]
+    },
+    "unité": "gCO2e"
+  },
+  "streaming . terminaux": {
+    "formule": {
+      "somme": ["construction", "usage"]
+    },
+    "unité": "gCO2e"
+  },
+  "streaming . terminaux . construction": {
+    "formule": 30.2,
+    "unité": "gCO2e"
+  },
+  "streaming . terminaux . usage": {
+    "formule": 3.42,
+    "unité": "gCO2e"
+  },
+  "streaming . terminaux . type": {
+    "avec": {
+      "Ordinateur fixe": null,
+      "Ordinateur portable": null,
+      "Tablette": null,
+      "Smartphone": null,
+      "Télévision": null
+    },
+    "titre": "type du terminal",
+    "question": "Sur quel appareil regardez vous la vidéo ?",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "non",
+        "possibilités": [
+          "Ordinateur fixe",
+          "Ordinateur portable",
+          "Tablette",
+          "Smartphone",
+          "Télévision"
+        ]
+      }
+    }
+  },
+  "streaming . transmission": {
+    "formule": {
+      "variations": [
+        {
+          "si": "qualité = 'SD'",
+          "alors": 6.49
+        },
+        {
+          "si": "qualité = 'HD'",
+          "alors": 27.8
+        },
+        {
+          "si": "qualité = 'ultra HD'",
+          "alors": 64.9
+        }
+      ]
+    },
+    "unité": "gCO2e"
+  },
+  "streaming . qualité": {
+    "avec": {
+      "SD": null,
+      "HD": null,
+      "ultra HD": {
+        "titre": "4K"
+      }
+    },
+    "titre": "qualité de la vidéo",
+    "question": "Quelle est la qualité de la vidéo ?",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "oui",
+        "possibilités": ["SD", "HD", "ultra HD"]
+      }
+    },
+    "par défaut": "'HD'"
+  },
+  "streaming . reseau": {
+    "avec": {
+      "Fixe": null,
+      "Mobile": "4G"
+    },
+    "titre": "reseau utilisé",
+    "question": "À quel réseau l'appareil est-il connecté ?",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "oui",
+        "possibilités": ["Fixe", "Mobile"]
+      }
+    },
+    "par défaut": "'Fixe'"
+  },
+  "streaming . data center": {
+    "formule": {
+      "somme": ["construction", "usage"]
+    },
+    "unité": "gCO2e"
+  },
+  "streaming . data center . construction": {
+    "formule": 0.237,
+    "unité": "gCO2e"
+  },
+  "streaming . data center . usage": {
+    "formule": 0.391,
+    "unité": "gCO2e"
+  }
+}

@@ -2,7 +2,7 @@
   {
     "id": 24283,
     "name": "Eau du robinet",
-    "unit": "Litre[s] d'",
+    "prefix": "Litre[s] d'",
     "synonyms": ["boire"],
     "slug": "eaudurobinet",
     "emoji": "🚰",
@@ -19,7 +19,7 @@
   {
     "id": 31000,
     "name": "Eau en bouteille",
-    "unit": "Litre[s] d'",
+    "prefix": "Litre[s] d'",
     "synonyms": ["boire"],
     "slug": "eauenbouteille",
     "emoji": "💧",
@@ -53,7 +53,7 @@
   {
     "id": 31001,
     "name": "Soda",
-    "unit": "Litre[s] de ",
+    "prefix": "Litre[s] de ",
     "synonyms": ["boire"],
     "slug": "soda",
     "emoji": "🥤",
@@ -95,7 +95,7 @@
   {
     "id": 31002,
     "name": "Bière",
-    "unit": "Litre[s] de ",
+    "prefix": "Litre[s] de ",
     "synonyms": ["boire"],
     "slug": "biere",
     "emoji": "🍺",
@@ -137,7 +137,7 @@
   {
     "id": 31003,
     "name": "Vin",
-    "unit": "Litre[s] de ",
+    "prefix": "Litre[s] de ",
     "synonyms": ["boire"],
     "slug": "vin",
     "emoji": "🍷",
@@ -180,7 +180,7 @@
     "id": 31004,
     "name": "Lait",
     "subtitle": "De vache",
-    "unit": "Litre[s] de ",
+    "prefix": "Litre[s] de ",
     "synonyms": ["boire"],
     "slug": "laitdevache",
     "emoji": "🥛",
@@ -218,7 +218,7 @@
   {
     "name": "Lait",
     "subtitle": "De soja",
-    "unit": "Litre[s] de ",
+    "prefix": "Litre[s] de ",
     "synonyms": ["boire"],
     "slug": "laitdesoja",
     "emoji": "🍈",
@@ -234,7 +234,7 @@
   },
   {
     "name": "Thé",
-    "unit": "Litre[s] de ",
+    "prefix": "Litre[s] de ",
     "slug": "thé",
     "emoji": "🫖",
     "category": 3,
@@ -271,7 +271,7 @@
   },
   {
     "name": "Café",
-    "unit": "Litre[s] de ",
+    "prefix": "Litre[s] de ",
     "slug": "cafe",
     "emoji": "☕️",
     "category": 3,

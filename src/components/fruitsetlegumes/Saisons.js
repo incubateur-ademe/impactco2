@@ -86,7 +86,7 @@ export default function Distance(props) {
           value: formatTotal(equivalent),
           season: equivalent.months.includes(props.month.index),
           months: equivalent.months,
-          to: `/empreinte-carbone/${
+          to: `/${
             categories.find((category) => category.id === equivalent.category)
               .slug
           }/${equivalent.slug}`,

@@ -9,7 +9,7 @@
     "divider": 1,
     "display": true,
     "unit": "unité",
-    "include": "par produit comprenant la fabrication, la distribution et l'usage",
+    "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
       "title": "Empreinte carbone objets numériques",
       "description": "Le secteur du numérique représente 2,5% des émissions carbone en France. Comment réduire son impact numérique et agir pour le climat à son échelle ?"
@@ -25,7 +25,7 @@
     "divider": 1,
     "display": true,
     "unit": "repas",
-    "include": "par repas comprenant la fabrication, la distribution et la consommation",
+    "include": "par repas comprenant la fabrication, la distribution et la consommation.",
     "meta": {
       "title": "Empreinte carbone d'un repas",
       "description": "Repas végétalien, végétarien, avec du boeuf, avec du poulet, avec du poisson gras, ou avec du poisson blanc... Découvrez leur valeur en CO₂e"
@@ -40,7 +40,7 @@
     "divider": 1,
     "display": true,
     "unit": "litre",
-    "include": "par litre de produit comprenant la fabrication, la distribution et la consommation",
+    "include": "par litre de produit comprenant la fabrication, la distribution et la consommation.",
     "meta": {
       "title": "L'empreinte carbone de nos boissons",
       "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
@@ -71,7 +71,7 @@
     "divider": 1,
     "display": true,
     "unit": "unité",
-    "include": "par produit comprenant la fabrication, la distribution et l'usage",
+    "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
       "title": "L'empreinte carbone de vos habits",
       "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
@@ -87,7 +87,7 @@
     "divider": 1,
     "display": true,
     "unit": "unité",
-    "include": "par produit comprenant la fabrication, la distribution et l'usage",
+    "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
       "title": "L'empreinte carbone de l'électroménager",
       "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Impact CO2 vous indique le poids CO₂e de chaque appareil !"
@@ -103,7 +103,7 @@
     "divider": 1,
     "display": true,
     "unit": "unité",
-    "include": "par produit comprenant la fabrication, la distribution et l'usage",
+    "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
       "title": "Quel empreinte carbone a le mobilier ?",
       "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
@@ -119,7 +119,7 @@
     "divider": 1,
     "display": true,
     "unit": "m2",
-    "include": "par m2 par année",
+    "include": "par m2 par année.",
     "meta": {
       "title": "Poids en CO₂e d'une année de chauffage",
       "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée "
@@ -141,6 +141,23 @@
     }
   },
   {
+    "id": 10,
+    "name": "Usage numérique",
+    "emoji": "✉️",
+    "slug": "usagenumerique",
+    "title": "Empreinte carbone de ma vie numérique",
+    "description": "Découvrez l'impact sur le climat de vos usages numériques à l'échelle d'une semaine et comparez leurs empreintes carbones.",
+    "divider": 1,
+    "display": false,
+    "unit": "",
+    "include": "",
+    "list": true,
+    "meta": {
+      "title": "Poids en CO₂e des usages numériques",
+      "description": "Comparez l'impact écologique en CO₂e des emails, de la visioconférence, du streaming, etc."
+    }
+  },
+  {
     "id": 11,
     "name": "Divers",
     "emoji": "⚙️",
@@ -148,7 +165,7 @@
     "divider": 1,
     "display": false,
     "unit": "unité",
-    "include": "par unité",
+    "include": "par unité.",
     "meta": {
       "title": "",
       "description": ""

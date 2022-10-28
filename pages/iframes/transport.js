@@ -8,7 +8,7 @@ import Distance from 'components/transport/Distance'
 
 export default function Transport(props) {
   return (
-    <Iframe>
+    <Iframe url='transport'>
       <TransportProvider>
         <Distance category={props.category} iframe />
       </TransportProvider>

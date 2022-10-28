@@ -8,7 +8,7 @@ export default function useSituation(engine, defaultSituation) {
   if (prevSituation.current !== localSituation) {
     const newSituation = { ...prevSituation.current, ...localSituation }
     prevSituation.current = newSituation
-    engine.setSituation(newSituation)
+    engine && engine.setSituation(newSituation)
   }
 
   return { situation: prevSituation.current, setSituation: setLocalSituation }

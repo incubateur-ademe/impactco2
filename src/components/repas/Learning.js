@@ -28,7 +28,7 @@ export default function Learning() {
     <StyledSection>
       <Section.Content>
         <Title>
-          <MagicLink to='/empreinte-carbone/repas/repasavecduboeuf'>
+          <MagicLink to='/repas/repasavecduboeuf'>
             Produire 1kg de viande
           </MagicLink>{' '}
           émet 5 à 20 fois plus de gaz à effet de serre que produire 1kg de
@@ -40,11 +40,9 @@ export default function Learning() {
         <Text>
           Chaque <strong>repas a une empreinte carbone</strong> différente, mais
           la surconsommation de{' '}
-          <MagicLink to='/empreinte-carbone/repas/repasavecduboeuf'>
-            viande
-          </MagicLink>{' '}
-          a un impact considérable sur l’<strong>environnement</strong>. Elle
-          est responsable d’environ{' '}
+          <MagicLink to='/repas/repasavecduboeuf'>viande</MagicLink> a un impact
+          considérable sur l’<strong>environnement</strong>. Elle est
+          responsable d’environ{' '}
           <strong>20% des émissions de gaz à effet de serre</strong> et de
           presque <strong>80% de la déforestation</strong> dans le monde, à elle
           seule. Les océans sont également concernés car{' '}
@@ -70,10 +68,8 @@ export default function Learning() {
         <Text>
           Le <strong>régime flexitarien</strong> consiste à choisir des produits
           de saison qualitatifs et à manger moins de viande. En effet, un repas{' '}
-          <MagicLink to='/empreinte-carbone/repas/repasvegetarien'>
-            sans viande
-          </MagicLink>{' '}
-          a une <strong>empreinte carbone</strong> beaucoup moins importante. Un{' '}
+          <MagicLink to='/repas/repasvegetarien'>sans viande</MagicLink> a une{' '}
+          <strong>empreinte carbone</strong> beaucoup moins importante. Un{' '}
           <strong>flexitarien</strong> est un consommateur qui mange de tout,
           mais qui raisonne ses quantités et privilégie la qualité. Cela permet
           de couvrir ses <strong>besoins nutritionnels</strong> et aussi de{' '}
