@@ -148,7 +148,7 @@
     "title": "Empreinte carbone de ma vie numérique",
     "description": "Découvrez l'impact sur le climat de vos usages numériques à l'échelle d'une semaine et comparez leurs empreintes carbones.",
     "divider": 1,
-    "display": true,
+    "display": false,
     "unit": "",
     "include": "",
     "list": true,
