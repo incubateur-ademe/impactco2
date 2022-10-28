@@ -79,6 +79,7 @@ export default function Search(props) {
       ['streaming . durée']: 420,
       ['visio . durée']: 180,
       ['email . appareil']: `'smartphone'`,
+      ['email . taille']: 0.2,
       ['streaming . appareil']: `'TV'`,
       ['visio . appareil']: `'ordinateur portable'`,
       ['visio . emplacements']: 1,

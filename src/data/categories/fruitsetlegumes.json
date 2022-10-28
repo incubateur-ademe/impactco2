@@ -1,6 +1,8 @@
 [
   {
     "name": "Fraise",
+
+    "prefix": "kg de ",
     "slug": "fraise",
     "synonyms": ["manger, fruit"],
     "emoji": "🍓",
@@ -34,6 +36,8 @@
   },
   {
     "name": "Pomme",
+
+    "prefix": "kg de ",
     "slug": "pomme",
     "synonyms": ["manger, fruit"],
     "emoji": "🍏",
@@ -67,6 +71,8 @@
   },
   {
     "name": "Orange",
+
+    "prefix": "kg de ",
     "slug": "orange",
     "synonyms": ["manger, fruit"],
     "emoji": "🍊",
@@ -100,6 +106,8 @@
   },
   {
     "name": "Citron",
+
+    "prefix": "kg de ",
     "slug": "citron",
     "synonyms": ["manger, fruit"],
     "emoji": "🍋",
@@ -133,6 +141,8 @@
   },
   {
     "name": "Ail",
+
+    "prefix": "kg de ",
     "slug": "ail",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -166,6 +176,8 @@
   },
   {
     "name": "Artichaut",
+
+    "prefix": "kg de ",
     "slug": "artichaut",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -199,6 +211,8 @@
   },
   {
     "name": "Asperge",
+
+    "prefix": "kg de ",
     "slug": "asperge",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -232,6 +246,8 @@
   },
   {
     "name": "Betterave",
+
+    "prefix": "kg de ",
     "slug": "betterave",
     "synonyms": ["manger, fruit"],
     "emoji": "🍠",
@@ -265,6 +281,8 @@
   },
   {
     "name": "Blette",
+
+    "prefix": "kg de ",
     "slug": "blette",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -298,6 +316,8 @@
   },
   {
     "name": "Carotte",
+
+    "prefix": "kg de ",
     "slug": "carotte",
     "synonyms": ["manger, fruit"],
     "emoji": "🥕",
@@ -331,6 +351,8 @@
   },
   {
     "name": "Céleri",
+
+    "prefix": "kg de ",
     "slug": "celeri",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -364,6 +386,8 @@
   },
   {
     "name": "Champignon de Paris",
+
+    "prefix": "kg de ",
     "slug": "champignondeparis",
     "synonyms": ["manger, fruit"],
     "emoji": "🍄",
@@ -397,6 +421,8 @@
   },
   {
     "name": "Chou",
+
+    "prefix": "kg de ",
     "slug": "chou",
     "synonyms": ["manger, fruit"],
     "emoji": "🥬",
@@ -430,6 +456,8 @@
   },
   {
     "name": "Chou de Bruxelles",
+
+    "prefix": "kg de ",
     "slug": "choudebruxelles",
     "synonyms": ["manger, fruit"],
     "emoji": "🥬",
@@ -463,6 +491,8 @@
   },
   {
     "name": "Chou-fleur",
+
+    "prefix": "kg de ",
     "slug": "choufleur",
     "synonyms": ["manger, fruit"],
     "emoji": "🥦",
@@ -496,6 +526,8 @@
   },
   {
     "name": "Concombre",
+
+    "prefix": "kg de ",
     "slug": "concombre",
     "synonyms": ["manger, fruit"],
     "emoji": "🥒",
@@ -529,6 +561,8 @@
   },
   {
     "name": "Courge",
+
+    "prefix": "kg de ",
     "slug": "courge",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -562,6 +596,8 @@
   },
   {
     "name": "Courgette",
+
+    "prefix": "kg de ",
     "slug": "courgette",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -595,6 +631,8 @@
   },
   {
     "name": "Cresson",
+
+    "prefix": "kg de ",
     "slug": "cresson",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -628,6 +666,8 @@
   },
   {
     "name": "Échalote",
+
+    "prefix": "kg de ",
     "slug": "echalote",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -661,6 +701,8 @@
   },
   {
     "name": "Endive",
+
+    "prefix": "kg de ",
     "slug": "endive",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -694,6 +736,8 @@
   },
   {
     "name": "Épinard",
+
+    "prefix": "kg de ",
     "slug": "epinard",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -728,6 +772,8 @@
   {
     "name": "Mangue",
     "subtitle": "Importée par avion",
+
+    "prefix": "kg de ",
     "slug": "mangue",
     "synonyms": ["manger, fruit"],
     "emoji": "🥭",
@@ -761,6 +807,8 @@
   },
   {
     "name": "Fenouil",
+
+    "prefix": "kg de ",
     "slug": "fenouil",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -794,6 +842,8 @@
   },
   {
     "name": "Haricot vert",
+
+    "prefix": "kg de ",
     "slug": "haricotvert",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -827,6 +877,8 @@
   },
   {
     "name": "Laitue",
+
+    "prefix": "kg de ",
     "slug": "laitue",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -860,6 +912,8 @@
   },
   {
     "name": "Mâche",
+
+    "prefix": "kg de ",
     "slug": "mache",
     "synonyms": ["manger, fruit"],
     "emoji": "🥗",
@@ -893,6 +947,8 @@
   },
   {
     "name": "Navet",
+
+    "prefix": "kg de ",
     "slug": "navet",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -926,6 +982,8 @@
   },
   {
     "name": "Maïs",
+
+    "prefix": "kg de ",
     "slug": "mais",
     "synonyms": ["manger, fruit"],
     "emoji": "🌽",
@@ -959,6 +1017,8 @@
   },
   {
     "name": "Oignon",
+
+    "prefix": "kg de ",
     "slug": "oignon",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -992,6 +1052,8 @@
   },
   {
     "name": "Panais",
+
+    "prefix": "kg de ",
     "slug": "panais",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1025,6 +1087,8 @@
   },
   {
     "name": "Petit pois",
+
+    "prefix": "kg de ",
     "slug": "petitpois",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1066,6 +1130,8 @@
   },
   {
     "name": "Poireau",
+
+    "prefix": "kg de ",
     "slug": "poireau",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1107,6 +1173,8 @@
   },
   {
     "name": "Poivron",
+
+    "prefix": "kg de ",
     "slug": "poivron",
     "synonyms": ["manger, fruit"],
     "emoji": "🌶️",
@@ -1148,6 +1216,8 @@
   },
   {
     "name": "Potiron",
+
+    "prefix": "kg de ",
     "slug": "potiron",
     "synonyms": ["manger, fruit"],
     "emoji": "🎃",
@@ -1189,6 +1259,8 @@
   },
   {
     "name": "Radis",
+
+    "prefix": "kg de ",
     "slug": "radis",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1230,6 +1302,8 @@
   },
   {
     "name": "Salsifis",
+
+    "prefix": "kg de ",
     "slug": "salsifis",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1271,6 +1345,8 @@
   },
   {
     "name": "Topinambour",
+
+    "prefix": "kg de ",
     "slug": "topinambour",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1312,6 +1388,8 @@
   },
   {
     "name": "Cassis",
+
+    "prefix": "kg de ",
     "slug": "cassis",
     "synonyms": ["manger, fruit"],
     "emoji": "🍇",
@@ -1353,6 +1431,8 @@
   },
   {
     "name": "Châtaigne",
+
+    "prefix": "kg de ",
     "slug": "chataigne",
     "synonyms": ["manger, fruit"],
     "emoji": "🌰",
@@ -1394,6 +1474,8 @@
   },
   {
     "name": "Clémentine",
+
+    "prefix": "kg de ",
     "slug": "clementine",
     "synonyms": ["manger, fruit"],
     "emoji": "🍊",
@@ -1435,6 +1517,8 @@
   },
   {
     "name": "Pamplemousse",
+
+    "prefix": "kg de ",
     "slug": "pamplemousse",
     "synonyms": ["manger, fruit", "pomelo"],
     "emoji": "🍊",
@@ -1476,6 +1560,8 @@
   },
   {
     "name": "Coing",
+
+    "prefix": "kg de ",
     "slug": "coing",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1517,6 +1603,8 @@
   },
   {
     "name": "Figue",
+
+    "prefix": "kg de ",
     "slug": "figue",
     "synonyms": ["manger, fruit"],
     "emoji": "🥭",
@@ -1558,6 +1646,8 @@
   },
   {
     "name": "Groseille",
+
+    "prefix": "kg de ",
     "slug": "groseille",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -1599,6 +1689,8 @@
   },
   {
     "name": "Kiwi",
+
+    "prefix": "kg de ",
     "slug": "kiwi",
     "synonyms": ["manger, fruit"],
     "emoji": "🥝",
@@ -1640,6 +1732,8 @@
   },
   {
     "name": "Mandarine",
+
+    "prefix": "kg de ",
     "slug": "mandarine",
     "synonyms": ["manger, fruit"],
     "emoji": "🍊",
@@ -1681,6 +1775,8 @@
   },
   {
     "name": "Melon",
+
+    "prefix": "kg de ",
     "slug": "melon",
     "synonyms": ["manger, fruit"],
     "emoji": "🍈",
@@ -1722,6 +1818,8 @@
   },
   {
     "name": "Mûre",
+
+    "prefix": "kg de ",
     "slug": "mure",
     "synonyms": ["manger, fruit"],
     "emoji": "🍓",
@@ -1763,6 +1861,8 @@
   },
   {
     "name": "Nectarine",
+
+    "prefix": "kg de ",
     "slug": "nectarine",
     "synonyms": ["manger, fruit"],
     "emoji": "🍊",
@@ -1804,6 +1904,8 @@
   },
   {
     "name": "Myrtille",
+
+    "prefix": "kg de ",
     "slug": "myrtille",
     "synonyms": ["manger, fruit"],
     "emoji": "🫐",
@@ -1845,6 +1947,8 @@
   },
   {
     "name": "Noisette",
+
+    "prefix": "kg de ",
     "slug": "noisette",
     "synonyms": ["manger, fruit"],
     "emoji": "🌰",
@@ -1886,6 +1990,8 @@
   },
   {
     "name": "Noix",
+
+    "prefix": "kg de ",
     "slug": "noix",
     "synonyms": ["manger, fruit"],
     "emoji": "🌰",
@@ -1927,6 +2033,8 @@
   },
   {
     "name": "Prune",
+
+    "prefix": "kg de ",
     "slug": "prune",
     "synonyms": ["manger, fruit"],
     "emoji": "🫐",
@@ -1969,6 +2077,8 @@
 
   {
     "name": "Reine Claude",
+
+    "prefix": "kg de ",
     "slug": "reineclaude",
     "synonyms": ["manger, fruit"],
     "emoji": "🍈",
@@ -2010,6 +2120,8 @@
   },
   {
     "name": "Rhubarbe",
+
+    "prefix": "kg de ",
     "slug": "rhubarbe",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2051,6 +2163,8 @@
   },
   {
     "name": "Pêche",
+
+    "prefix": "kg de ",
     "slug": "peche",
     "synonyms": ["manger, fruit"],
     "emoji": "🍑",
@@ -2092,6 +2206,8 @@
   },
   {
     "name": "Cerise",
+
+    "prefix": "kg de ",
     "slug": "cerise",
     "synonyms": ["manger, fruit"],
     "emoji": "🍒",
@@ -2133,6 +2249,8 @@
   },
   {
     "name": "Abricot",
+
+    "prefix": "kg de ",
     "slug": "abricot",
     "synonyms": ["manger, fruit"],
     "emoji": "🍑",
@@ -2174,6 +2292,8 @@
   },
   {
     "name": "Framboise",
+
+    "prefix": "kg de ",
     "slug": "framboise",
     "synonyms": ["manger, fruit"],
     "emoji": "🍓",
@@ -2215,6 +2335,8 @@
   },
   {
     "name": "Poire",
+
+    "prefix": "kg de ",
     "slug": "poire",
     "synonyms": ["manger, fruit"],
     "emoji": "🍐",
@@ -2256,6 +2378,8 @@
   },
   {
     "name": "Raisin",
+
+    "prefix": "kg de ",
     "slug": "raisin",
     "synonyms": ["manger, fruit"],
     "emoji": "🍇",
@@ -2297,6 +2421,8 @@
   },
   {
     "name": "Aubergine",
+
+    "prefix": "kg de ",
     "slug": "aubergine",
     "synonyms": ["manger, fruit"],
     "emoji": "🍆",
@@ -2338,6 +2464,8 @@
   },
   {
     "name": "Brocoli",
+
+    "prefix": "kg de ",
     "slug": "brocoli",
     "synonyms": ["manger, fruit"],
     "emoji": "🥦",
@@ -2379,6 +2507,8 @@
   },
   {
     "name": "Tomate",
+
+    "prefix": "kg de ",
     "slug": "tomate",
     "synonyms": ["manger, fruit"],
     "emoji": "🍅",
@@ -2420,6 +2550,8 @@
   },
   {
     "name": "Ananas",
+
+    "prefix": "kg de ",
     "slug": "ananas",
     "synonyms": ["manger, fruit"],
     "emoji": "🍍",
@@ -2461,6 +2593,8 @@
   },
   {
     "name": "Banane",
+
+    "prefix": "kg de ",
     "slug": "banane",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2502,6 +2636,8 @@
   },
   {
     "name": "Avocat",
+
+    "prefix": "kg de ",
     "slug": "avocat",
     "synonyms": ["manger, fruit"],
     "emoji": "🥑",
@@ -2543,6 +2679,8 @@
   },
   {
     "name": "Carambole",
+
+    "prefix": "kg de ",
     "slug": "carambole",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2584,6 +2722,8 @@
   },
   {
     "name": "Datte",
+
+    "prefix": "kg de ",
     "slug": "datte",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2625,6 +2765,8 @@
   },
   {
     "name": "Fruit de la passion",
+
+    "prefix": "kg de ",
     "slug": "fruitdelapassion",
     "synonyms": ["manger, fruit"],
     "emoji": "🌱",
@@ -2666,6 +2808,8 @@
   },
   {
     "name": "Grenade",
+
+    "prefix": "kg de ",
     "slug": "grenade",
     "synonyms": ["manger, fruit"],
     "emoji": "🥭",
@@ -2707,6 +2851,8 @@
   },
   {
     "name": "Kaki",
+
+    "prefix": "kg de ",
     "slug": "kaki",
     "synonyms": ["manger, fruit"],
     "emoji": "🍈",
@@ -2748,6 +2894,8 @@
   },
   {
     "name": "Noix de coco",
+
+    "prefix": "kg de ",
     "slug": "noixdecoco",
     "synonyms": ["manger, fruit"],
     "emoji": "🥥",
@@ -2789,6 +2937,8 @@
   },
   {
     "name": "Pastèque",
+
+    "prefix": "kg de ",
     "slug": "pasteque",
     "synonyms": ["manger, fruit"],
     "emoji": "🍉",
