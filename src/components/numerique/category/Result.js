@@ -13,6 +13,12 @@ const Top = styled.div`
   justify-content: space-between;
   gap: 2rem;
   margin: 0 1.5rem 1.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0 0 1.5rem;
+  }
 `
 export default function Result(props) {
   return (

@@ -39,10 +39,14 @@ const SliderWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  min-width: 13.875rem;
+  width: calc(33.333333% - 1.75rem);
   padding: 0.5rem 0.75rem;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    width: 100%;
+  }
 `
 const Age = styled.div`
   width: 3rem;

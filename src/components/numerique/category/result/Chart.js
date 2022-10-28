@@ -9,6 +9,10 @@ import Legend from 'components/charts/Legend'
 const StyledStackedChart = styled(StackedChart)`
   margin: 0;
   height: 2.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    height: 1.25rem;
+  }
 `
 export default function Chart(props) {
   const { engine, situation } = useContext(RulesContext)

@@ -14,6 +14,11 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 `
 const Column = styled.div``
 const Label = styled.p`
@@ -31,6 +36,10 @@ const Color = styled.span`
 const Small = styled.span`
   display: block;
   font-size: 0.75rem;
+
+  ${(props) => props.theme.mq.small} {
+    display: inline;
+  }
 `
 const StyledSlider = styled(Slider)`
   margin-bottom: 0.75rem;
@@ -39,6 +48,11 @@ const StyledSlider = styled(Slider)`
 const Parameters = styled.div`
   display: flex;
   gap: 0.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
 `
 const StyledSelect = styled(Select)`
   margin: 0;
@@ -75,8 +89,7 @@ export default function Search(props) {
               email{props.numberEmails > 1 ? 's' : ''}
             </Color>
           </strong>{' '}
-          envoyé{props.numberEmails > 1 ? 's' : ''}
-          <Small>par semaine</Small>
+          envoyé{props.numberEmails > 1 ? 's' : ''} <Small>par semaine</Small>
         </Label>
         <StyledSlider
           color='#6C8CC1'
@@ -131,7 +144,7 @@ export default function Search(props) {
           de{' '}
           <strong>
             <Color color='#C25166'>streaming</Color>
-          </strong>
+          </strong>{' '}
           <Small>par semaine</Small>
         </Label>
         <StyledSlider
@@ -200,7 +213,7 @@ export default function Search(props) {
           <strong>{engine.evaluate(`visio . durée`).nodeValue / 60}h</strong> de{' '}
           <strong>
             <Color color='#3DC7AB'>visioconférence</Color>
-          </strong>
+          </strong>{' '}
           <Small>par semaine</Small>
         </Label>
         <StyledSlider
