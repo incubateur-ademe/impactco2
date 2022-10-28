@@ -8,7 +8,7 @@ import Result from './category/Result'
 import Devices from './category/Devices'
 
 export default function Category(props) {
-  const [numberEmails, setNumberEmails] = useState(350)
+  const [numberEmails, setNumberEmails] = useState(50)
   const [construction, setConstruction] = useState(true)
 
   return (

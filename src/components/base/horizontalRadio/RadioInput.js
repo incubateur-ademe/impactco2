@@ -5,11 +5,13 @@ const Wrapper = styled.div`
   flex: 1;
   background-color: ${(props) =>
     props.checked ? props.color || props.theme.colors.main : 'transparent'};
-  border-right: 0.125rem solid
-    ${(props) => props.color || props.theme.colors.main};
+  border: 0.125rem solid ${(props) => props.color || props.theme.colors.main};
 
+  &:first-child {
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
   &:last-child {
-    border-right: none;
+    border-radius: 0 0.5rem 0.5rem 0;
   }
 
   input {
