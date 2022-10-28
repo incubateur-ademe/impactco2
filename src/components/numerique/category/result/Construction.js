@@ -25,6 +25,13 @@ const StyledStackedChart = styled(StackedChart)`
   margin: 0;
   height: 1.25rem;
 `
+const Disclaimer = styled.p`
+  max-width: 15rem;
+  height: 1.75rem;
+  margin: 0 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+`
 export default function Construction(props) {
   const { engine, situation } = useContext(RulesContext)
 
@@ -59,9 +66,15 @@ export default function Construction(props) {
 
   return engine ? (
     <Wrapper>
-      <ConstructionPercent>
-        <Number>{formatPercent(construction, total)} %</Number> construction
-      </ConstructionPercent>
+      {props.construction ? (
+        <ConstructionPercent>
+          <Number>{formatPercent(construction, total)} %</Number> construction
+        </ConstructionPercent>
+      ) : (
+        <Disclaimer>
+          L'impact de la construction des appareils n'est pas représenté
+        </Disclaimer>
+      )}
       <StyledStackedChart
         items={[
           { id: 'Construction', value: construction },
