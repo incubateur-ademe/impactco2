@@ -16,7 +16,7 @@ export default function CategoryIframe(props) {
 export async function getStaticPaths() {
   return {
     paths: categories
-      .filter((category) => ![4, 9].includes(category.id))
+      .filter((category) => ![4, 9, 10].includes(category.id))
       .map((category) => ({
         params: { category: category.slug },
       })),
