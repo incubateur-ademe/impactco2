@@ -69,6 +69,7 @@ export default function Construction(props) {
       {props.construction ? (
         <ConstructionPercent>
           <Number>{formatPercent(construction, total)} %</Number> construction
+          de vos appareils
         </ConstructionPercent>
       ) : (
         <Disclaimer>
