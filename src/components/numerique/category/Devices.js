@@ -81,7 +81,7 @@ export default function Search(props) {
       </StyledButtonLink>
       <Sliders construction={props.construction}>
         {devices.map((device) => (
-          <SliderWrapper>
+          <SliderWrapper key={device.name}>
             <Emoji>{device.emoji}</Emoji>
             <Slider
               value={
