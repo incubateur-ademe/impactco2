@@ -6,11 +6,7 @@ import Background from 'components/screenshot/Background'
 import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
 
-const SizerWrapper = styled.div`
-  ${(props) => props.theme.mq.medium} {
-    overflow: hidden;
-  }
-`
+const SizerWrapper = styled.div``
 const Sizer = styled.div`
   position: relative;
   margin: -1.5rem;
