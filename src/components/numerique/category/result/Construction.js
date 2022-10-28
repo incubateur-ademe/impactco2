@@ -28,7 +28,7 @@ const StyledStackedChart = styled(StackedChart)`
 const Disclaimer = styled.p`
   max-width: 15rem;
   height: 1.75rem;
-  margin: 0 0.5rem;
+  margin: -0.25rem 0.5rem 0.25rem;
   font-size: 0.75rem;
   line-height: 1.2;
 `
