@@ -7,7 +7,6 @@ const Wrapper = styled.div`
   display: flex;
   border: 0.125rem solid ${(props) => props.color || props.theme.colors.main};
   border-radius: 0.5rem;
-  overflow: hidden;
 `
 export default function HorizontalRadio(props) {
   return (

@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
   background-color: ${(props) =>
     props.checked ? props.color || props.theme.colors.main : 'transparent'};
   border-right: 0.125rem solid
@@ -26,7 +24,6 @@ const Label = styled.label`
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.75em;
   width: 100%;
   padding: 0.5em 0.75em;
   color: ${(props) =>

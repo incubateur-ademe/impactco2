@@ -47,16 +47,22 @@ const StyledSlider = styled(Slider)`
 `
 const Parameters = styled.div`
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
   gap: 0.5rem;
+  margin-top: 0.5rem;
 
   ${(props) => props.theme.mq.small} {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
   }
 `
 const StyledSelect = styled(Select)`
+  flex: 1;
   margin: 0;
   font-size: 0.875rem;
+
+  select {
+    width: 100%;
+  }
 `
 const StyledHorizontalRadio = styled(HorizontalRadio)`
   font-size: 0.875rem;
@@ -98,19 +104,22 @@ export default function Search(props) {
           value={props.numberEmails}
           onChange={props.setNumberEmails}
         />
+        <StyledSelect
+          value={`'${engine.evaluate('email . appareil').nodeValue}'`}
+          onChange={({ value }) =>
+            setSituation({ ['email . appareil']: value })
+          }
+          color='#6C8CC1'
+        >
+          <option value={`'smartphone'`}>📱 Smartphone</option>
+          <option value={`'tablette'`}>📱 Tablette</option>
+          <option value={`'ordinateur portable'`}>
+            💻 Ordinateur portable
+          </option>
+          <option value={`'ordinateur et écran'`}>🖥 Ordinateur fixe</option>
+          <option value={`'TV'`}>📺 Télévision</option>
+        </StyledSelect>
         <Parameters>
-          <StyledSelect
-            value={`'${engine.evaluate('email . appareil').nodeValue}'`}
-            onChange={({ value }) =>
-              setSituation({ ['email . appareil']: value })
-            }
-            color='#6C8CC1'
-          >
-            <option value={`'smartphone'`}>📱</option>
-            <option value={`'tablette'`}>📱</option>
-            <option value={`'ordinateur portable'`}>💻</option>
-            <option value={`'ordinateur et écran'`}>🖥</option>
-          </StyledSelect>
           <StyledHorizontalRadio
             name='email . transmission . émetteur . réseau'
             value={`'${
@@ -159,20 +168,22 @@ export default function Search(props) {
             })
           }
         />
+        <StyledSelect
+          value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
+          onChange={({ value }) =>
+            setSituation({ ['streaming . appareil']: value })
+          }
+          color='#C25166'
+        >
+          <option value={`'smartphone'`}>📱 Smartphone</option>
+          <option value={`'tablette'`}>📱 Tablette</option>
+          <option value={`'ordinateur portable'`}>
+            💻 Ordinateur portable
+          </option>
+          <option value={`'ordinateur et écran'`}>🖥 Ordinateur fixe</option>
+          <option value={`'TV'`}>📺 Télévision</option>
+        </StyledSelect>
         <Parameters>
-          <StyledSelect
-            value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
-            onChange={({ value }) =>
-              setSituation({ ['streaming . appareil']: value })
-            }
-            color='#C25166'
-          >
-            <option value={`'smartphone'`}>📱</option>
-            <option value={`'tablette'`}>📱</option>
-            <option value={`'ordinateur portable'`}>💻</option>
-            <option value={`'ordinateur et écran'`}>🖥</option>
-            <option value={`'TV'`}>📺</option>
-          </StyledSelect>
           <StyledHorizontalRadio
             name='streaming . transmission . réseau'
             value={`'${
@@ -202,8 +213,8 @@ export default function Search(props) {
             }
             color='#C25166'
           >
-            <option value={`'SD'`}>SD</option>
-            <option value={`'HD'`}>HD</option>
+            <option value={`'SD'`}>Basse déf</option>
+            <option value={`'HD'`}>Haute Déf</option>
             <option value={`'ultra HD'`}>4K</option>
           </StyledSelect>
         </Parameters>
@@ -228,20 +239,22 @@ export default function Search(props) {
             })
           }
         />
+        <StyledSelect
+          value={`'${engine.evaluate('visio . appareil').nodeValue}'`}
+          onChange={({ value }) =>
+            setSituation({ ['visio . appareil']: value })
+          }
+          color='#3DC7AB'
+        >
+          <option value={`'smartphone'`}>📱 Smartphone</option>
+          <option value={`'tablette'`}>📱 Tablette</option>
+          <option value={`'ordinateur portable'`}>
+            💻 Ordinateur portable
+          </option>
+          <option value={`'ordinateur et écran'`}>🖥 Ordinateur fixe</option>
+          <option value={`'TV'`}>📺 Télévision</option>
+        </StyledSelect>
         <Parameters>
-          <StyledSelect
-            value={`'${engine.evaluate('visio . appareil').nodeValue}'`}
-            onChange={({ value }) =>
-              setSituation({ ['visio . appareil']: value })
-            }
-            color='#3DC7AB'
-          >
-            <option value={`'smartphone'`}>📱</option>
-            <option value={`'tablette'`}>📱</option>
-            <option value={`'ordinateur portable'`}>💻</option>
-            <option value={`'ordinateur et écran'`}>🖥</option>
-            <option value={`'TV'`}>📺</option>
-          </StyledSelect>
           <StyledHorizontalRadio
             name='visio . transmission . réseau'
             value={`'${
@@ -271,9 +284,9 @@ export default function Search(props) {
             }
             color='#3DC7AB'
           >
-            <option value={`'audio'`}>🔉</option>
-            <option value={`'SD'`}>SD</option>
-            <option value={`'HD'`}>HD</option>
+            <option value={`'audio'`}>Audio</option>
+            <option value={`'SD'`}>Basse déf</option>
+            <option value={`'HD'`}>Haute Déf</option>
           </StyledSelect>
         </Parameters>
       </Column>
