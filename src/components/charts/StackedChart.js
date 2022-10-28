@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 1rem;
   margin-bottom: 1rem;
-  border-radius: 1rem;
+  border-radius: 4rem;
   overflow: hidden;
 `
 const Item = styled.div`

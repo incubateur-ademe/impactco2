@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { formatNumber, formatPercent } from 'utils/formatters'
+import { formatPercent } from 'utils/formatters'
 import RulesContext from 'components/numerique/RulesProvider'
 import StackedChart from 'components/charts/StackedChart'
 
@@ -30,12 +30,14 @@ export default function Construction(props) {
 
   const construction = useMemo(
     () =>
-      (engine.evaluate('email . terminaux . construction').nodeValue *
-        props.numberEmails +
-        engine.evaluate('streaming . terminaux . construction').nodeValue +
-        engine.evaluate('visio . terminaux . construction').nodeValue) /
-      1000,
-    [engine, situation]
+      props.construction
+        ? (engine.evaluate('email . terminaux . construction').nodeValue *
+            props.numberEmails +
+            engine.evaluate('streaming . terminaux . construction').nodeValue +
+            engine.evaluate('visio . terminaux . construction').nodeValue) /
+          1000
+        : 0,
+    [engine, situation, props.construction]
   )
   const total = useMemo(
     () =>

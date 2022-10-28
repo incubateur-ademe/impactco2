@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { useRouter } from 'next/router'
 import AnimatedNumber from 'animated-number-react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
@@ -143,7 +142,6 @@ export default function Tile(props) {
   const { categories } = useContext(DataContext)
 
   const iframe = useIframe()
-  const router = useRouter()
 
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({

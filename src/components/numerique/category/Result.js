@@ -5,7 +5,9 @@ import Total from './result/Total'
 import Construction from './result/Construction'
 import Chart from './result/Chart'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin-bottom: 2rem;
+`
 const Top = styled.div`
   display: flex;
   justify-content: space-between;
@@ -16,10 +18,19 @@ export default function Result(props) {
   return (
     <Wrapper>
       <Top>
-        <Total numberEmails={props.numberEmails} />
-        <Construction numberEmails={props.numberEmails} />
+        <Total
+          numberEmails={props.numberEmails}
+          construction={props.construction}
+        />
+        <Construction
+          numberEmails={props.numberEmails}
+          construction={props.construction}
+        />
       </Top>
-      <Chart numberEmails={props.numberEmails} />
+      <Chart
+        numberEmails={props.numberEmails}
+        construction={props.construction}
+      />
     </Wrapper>
   )
 }

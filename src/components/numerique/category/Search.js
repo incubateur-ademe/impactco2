@@ -5,7 +5,6 @@ import RulesContext from '../RulesProvider'
 import Slider from 'components/base/Slider'
 import Select from 'components/base/Select'
 import HorizontalRadio from 'components/base/HorizontalRadio'
-import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
   display: flex;
@@ -62,6 +61,7 @@ export default function Search(props) {
       ['email . appareil']: `'smartphone'`,
       ['streaming . appareil']: `'TV'`,
       ['visio . appareil']: `'ordinateur portable'`,
+      ['visio . emplacements']: 1,
     })
   }, [])
 
