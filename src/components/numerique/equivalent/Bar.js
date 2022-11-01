@@ -71,7 +71,7 @@ const StyledEmoji = styled(Emoji)`
 
 export default function Bar(props) {
   const { engine } = useContext(RulesContext)
-  console.log(engine.evaluate(`${props.name} . durée`))
+
   return (
     <Wrapper>
       <Top>
