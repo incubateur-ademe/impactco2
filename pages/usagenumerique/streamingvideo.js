@@ -25,7 +25,11 @@ export default function StreamingVideoPage(props) {
       }}
     >
       <RulesProvider>
-        <Equivalent equivalent={props.equivalent} name='streaming' />
+        <Equivalent
+          equivalent={props.equivalent}
+          category={props.category}
+          name='streaming'
+        />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>

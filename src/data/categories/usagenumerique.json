@@ -1,44 +1,7 @@
 [
   {
-    "name": "Email + pièce jointe",
-    "subtitle": "Écrire, envoyer et lire",
-    "slug": "emailpiecejointe",
-    "emoji": "✉️",
-    "unit": "email",
-    "category": 10,
-    "ecv": [
-      {
-        "value": 0.0017947,
-        "id": 13
-      },
-      {
-        "value": 0.00018366,
-        "id": 14
-      },
-      {
-        "value": 0.0000358,
-        "id": 15
-      },
-      {
-        "value": 0.000936,
-        "id": 16
-      },
-      {
-        "value": 0.0001384,
-        "id": 17
-      }
-    ],
-    "default": false,
-    "tile": false,
-    "meta": {
-      "title": "",
-      "description": ""
-    },
-    "source": "https://negaoctet.org/"
-  },
-  {
     "name": "Email",
-    "subtitle": "Écrire, envoyer et lire",
+    "subtitle": "",
     "slug": "email",
     "emoji": "✉️",
     "unit": "email",
@@ -166,10 +129,10 @@
   {
     "name": "Streaming vidéo",
     "prefix": "Heure[s] de ",
-    "subtitle": "HD",
+    "subtitle": "",
     "slug": "streamingvideo",
     "emoji": "🎬",
-    "unit": "heure",
+    "unit": "",
     "category": 10,
     "ecv": [
       {
@@ -206,7 +169,7 @@
     "prefix": "Heure[s] de ",
     "slug": "visioconference",
     "emoji": "🎥",
-    "unit": "heure",
+    "unit": "",
     "category": 10,
     "ecv": [
       {

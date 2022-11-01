@@ -25,7 +25,11 @@ export default function VisioconferencePage(props) {
       }}
     >
       <RulesProvider>
-        <Equivalent equivalent={props.equivalent} name='visio' />
+        <Equivalent
+          equivalent={props.equivalent}
+          category={props.category}
+          name='visio'
+        />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>

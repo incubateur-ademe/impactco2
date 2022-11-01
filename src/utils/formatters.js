@@ -1,5 +1,4 @@
 export function formatNumber(value, noformat) {
-  console.log(value)
   if (!value) {
     return
   }
