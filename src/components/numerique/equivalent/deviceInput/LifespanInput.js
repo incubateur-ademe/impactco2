@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 import RulesContext from 'components/numerique/RulesProvider'
 import Slider from 'components/base/Slider'
-import MagicLink from 'components/base/MagicLink'
+import ButtonLink from 'components/base/ButtonLink'
+import ModalContext from 'components/providers/ModalProvider'
 
 const Wrapper = styled.div`
   display: flex;
@@ -36,6 +37,8 @@ const Text = styled.p`
 `
 export default function DeviceInput(props) {
   const { engine, setSituation } = useContext(RulesContext)
+
+  const { setDevices } = useContext(ModalContext)
 
   return (
     <Wrapper>
@@ -80,9 +83,9 @@ export default function DeviceInput(props) {
       ) : (
         <Text>
           Nous utilisons pour la valeur par défaut{' '}
-          <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
+          <ButtonLink onClick={() => setDevices(true)}>
             un agrégat de terminaux
-          </MagicLink>
+          </ButtonLink>
           .
           <br />
           <br />

@@ -4,6 +4,7 @@ import Co2eModal from 'components/modals/Co2eModal'
 import TilesModal from 'components/modals/TilesModal'
 import ShareModal from 'components/modals/ShareModal'
 import EcvModal from 'components/modals/EcvModal'
+import DevicesModal from 'components/modals/DevicesModal'
 
 const ModalContext = React.createContext({})
 
@@ -12,6 +13,7 @@ export function ModalProvider(props) {
   const [tiles, setTiles] = useState(false)
   const [share, setShare] = useState(false)
   const [ecv, setEcv] = useState(false)
+  const [devices, setDevices] = useState(false)
 
   return (
     <ModalContext.Provider
@@ -37,6 +39,11 @@ export function ModalProvider(props) {
           window?._paq?.push(['trackEvent', 'Interaction', 'Modal', 'ECV'])
           setEcv(value)
         },
+        devices,
+        setDevices: (value) => {
+          window?._paq?.push(['trackEvent', 'Interaction', 'Modal', 'Devices'])
+          setDevices(value)
+        },
       }}
     >
       {props.children}
@@ -44,6 +51,7 @@ export function ModalProvider(props) {
       <TilesModal />
       <ShareModal />
       <EcvModal />
+      <DevicesModal />
     </ModalContext.Provider>
   )
 }
