@@ -110,13 +110,8 @@
     "color": "#adc4c5"
   },
   {
-    "id": " . data center . construction",
-    "name": "Construction des data-centers",
-    "color": "#66a498"
-  },
-  {
-    "id": " . data center . usage",
-    "name": "Usage des data-centers",
+    "id": " . data center",
+    "name": "Data-centers",
     "color": "#6f87ad"
   }
 ]
