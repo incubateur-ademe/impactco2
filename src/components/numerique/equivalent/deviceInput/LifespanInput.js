@@ -80,7 +80,6 @@ export default function DeviceInput(props) {
                   } . durée de vie`]: value,
                 })
               }
-              onMouseDown={() => console.log('mousedown')}
             />
             <Age>{age} ans</Age>
           </SliderWrapper>

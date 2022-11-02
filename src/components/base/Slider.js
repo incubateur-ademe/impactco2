@@ -41,7 +41,6 @@ export default function Slider(props) {
         onChange={(values) => {
           props.onChange(values[0])
         }}
-        onmouseDown={() => console.log('mouse down')}
         renderTrack={({ props, children }) => (
           <Track {...props}>{children}</Track>
         )}
