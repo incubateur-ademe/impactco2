@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
@@ -39,6 +39,8 @@ export default function Simulateur(props) {
 
   const { engine, situation } = useContext(RulesContext)
 
+  const [construction, setConstruction] = useState(true)
+
   const ecvToDisplay = useMemo(
     () =>
       engine && ecv
@@ -46,6 +48,11 @@ export default function Simulateur(props) {
             .evaluate(props.name)
             .traversedVariables.filter((variable) =>
               ecv.find((item) => props.name + item.id === variable)
+            )
+            .filter(
+              (variable) =>
+                construction ||
+                !variable.includes(' . terminaux . construction')
             )
             .map((variable) => {
               const step = ecv.find((item) => props.name + item.id === variable)
@@ -57,7 +64,13 @@ export default function Simulateur(props) {
               }
             })
         : [],
-    [ecv, engine, situation, props.formatNumber]
+    [ecv, engine, situation, construction]
+  )
+  const total = useMemo(() =>
+    construction
+      ? engine.evaluate(props.name).nodeValue
+      : engine.evaluate(props.name).nodeValue -
+        engine.evaluate(`${props.name} . terminaux . construction`).nodeValue
   )
 
   const questions = useMemo(
@@ -80,44 +93,58 @@ export default function Simulateur(props) {
           slug={props.equivalent.slug}
         >
           <Bar
+            total={total}
             equivalent={props.equivalent}
             category={props.category}
             name={props.name}
           />
-          <StackedChart
-            items={ecvToDisplay}
-            total={engine.evaluate(props.name).nodeValue}
-          />
+          <StackedChart items={ecvToDisplay} total={total} />
           <Legend items={ecvToDisplay} />
           <Detail
             ecv={ecvToDisplay.map((ecv) => ({
               ...ecv,
               value: ecv.value / 1000,
             }))}
-            total={engine.evaluate(props.name).nodeValue / 1000}
+            total={total / 1000}
           />
           <Questions>
             {props.name === 'streaming' && (
               <>
-                <DeviceInput name={props.name} />
+                <DeviceInput
+                  construction={construction}
+                  setConstruction={setConstruction}
+                  name={props.name}
+                />
                 <VideoInput name={props.name} />
               </>
             )}
             {props.name === 'visio' && (
               <>
-                <DeviceInput name={props.name} />
+                <DeviceInput
+                  construction={construction}
+                  setConstruction={setConstruction}
+                  name={props.name}
+                />
                 <VideoInput name={props.name} />
               </>
             )}
             {props.name === 'email' && (
               <>
-                <DeviceInput name={props.name} />
+                <DeviceInput
+                  construction={construction}
+                  setConstruction={setConstruction}
+                  name={props.name}
+                />
                 <EmailInput name={props.name} />
               </>
             )}
             {props.name === 'recherche web' && (
               <>
-                <DeviceInput name={props.name} />
+                <DeviceInput
+                  construction={construction}
+                  setConstruction={setConstruction}
+                  name={props.name}
+                />
               </>
             )}
           </Questions>

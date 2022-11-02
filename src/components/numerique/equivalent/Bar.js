@@ -75,7 +75,7 @@ export default function Bar(props) {
   return (
     <Wrapper>
       <Top>
-        <Number>{formatNumber(engine.evaluate(props.name).nodeValue)}</Number>{' '}
+        <Number>{formatNumber(props.total)}</Number>{' '}
         <Unit>
           g <Big>CO2</Big>e{' '}
           {props.equivalent.unit || props.category.unit ? (

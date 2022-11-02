@@ -19,7 +19,11 @@ export default function DeviceInput(props) {
   return (
     <Wrapper>
       <TypeInput name={props.name} />
-      <LifespanInput name={props.name} />
+      <LifespanInput
+        name={props.name}
+        construction={props.construction}
+        setConstruction={props.setConstruction}
+      />
     </Wrapper>
   )
 }

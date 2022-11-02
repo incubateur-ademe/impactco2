@@ -65,42 +65,63 @@ export default function DeviceInput(props) {
 
   return (
     <Wrapper>
-      {engine.evaluate(props.name + ' . appareil').nodeValue !== 'moyenne' ? (
+      {props.construction ? (
         <>
-          <Label>Durée de vie du terminal</Label>
-          <SliderWrapper>
-            <Slider
-              value={age}
-              min={1}
-              max={20}
-              onChange={(value) =>
-                setSituation({
-                  [`${props.name} . appareil . ${
-                    engine.evaluate(props.name + ' . appareil').nodeValue
-                  } . durée de vie`]: value,
-                })
-              }
-            />
-            <Age>{age} ans</Age>
-          </SliderWrapper>
-          <Text>
-            L’impact de la construction de l’appareil est attribué au prorata de
-            sa durée de vie totale.
-          </Text>
+          {' '}
+          {engine.evaluate(props.name + ' . appareil').nodeValue !==
+          'moyenne' ? (
+            <>
+              <Label>Durée de vie du terminal</Label>
+              <SliderWrapper>
+                <Slider
+                  value={age}
+                  min={1}
+                  max={20}
+                  onChange={(value) =>
+                    setSituation({
+                      [`${props.name} . appareil . ${
+                        engine.evaluate(props.name + ' . appareil').nodeValue
+                      } . durée de vie`]: value,
+                    })
+                  }
+                />
+                <Age>{age} ans</Age>
+              </SliderWrapper>
+              <Text>
+                L’impact de la construction de l’appareil est attribué au
+                prorata de sa durée de vie totale.
+              </Text>
+            </>
+          ) : (
+            <>
+              {' '}
+              <Text>
+                Nous utilisons pour la valeur par défaut{' '}
+                <ButtonLink onClick={() => setDevices(true)}>
+                  un agrégat de terminaux
+                </ButtonLink>
+                .
+                <br />
+                <br />
+                L’impact de la construction de l’appareil est attribué au
+                prorata de sa durée de vie totale.
+              </Text>
+            </>
+          )}
         </>
       ) : (
         <Text>
-          Nous utilisons pour la valeur par défaut{' '}
-          <ButtonLink onClick={() => setDevices(true)}>
-            un agrégat de terminaux
-          </ButtonLink>
-          .
-          <br />
-          <br />
-          L’impact de la construction de l’appareil est attribué au prorata de
-          sa durée de vie totale.
+          L'impact de la construction de l'appareil n'est pas affiché ici
         </Text>
       )}
+      <ButtonLink
+        onClick={() =>
+          props.setConstruction((prevConstruction) => !prevConstruction)
+        }
+      >
+        {props.construction ? 'Ne pas a' : 'A'}fficher l’impact de la
+        construction
+      </ButtonLink>
     </Wrapper>
   )
 }
