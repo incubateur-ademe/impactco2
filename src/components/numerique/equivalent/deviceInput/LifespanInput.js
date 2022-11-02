@@ -1,5 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
+import useAnimateNumber from 'use-animate-number'
 
 import RulesContext from 'components/numerique/RulesProvider'
 import Slider from 'components/base/Slider'
@@ -36,9 +37,31 @@ const Text = styled.p`
   text-align: center;
 `
 export default function DeviceInput(props) {
-  const { engine, setSituation } = useContext(RulesContext)
+  const { engine, situation, setSituation } = useContext(RulesContext)
 
   const { setDevices } = useContext(ModalContext)
+
+  const [age, setAge] = useAnimateNumber(1, {
+    duration: 1000,
+    enterance: false,
+    decimals: 0,
+  })
+  const [prevAppareil, setPrevAppareil] = useState(
+    engine.evaluate(props.name + ' . appareil').nodeValue
+  )
+  useEffect(() => {
+    setAge(
+      engine.evaluate(props.name + ' . appareil').nodeValue !== 'moyenne'
+        ? engine.evaluate(
+            `${props.name} . appareil . ${
+              engine.evaluate(props.name + ' . appareil').nodeValue
+            } . durée de vie`
+          ).nodeValue
+        : 1,
+      prevAppareil === engine.evaluate(props.name + ' . appareil').nodeValue
+    )
+    setPrevAppareil(engine.evaluate(props.name + ' . appareil').nodeValue)
+  }, [engine, situation])
 
   return (
     <Wrapper>
@@ -47,13 +70,7 @@ export default function DeviceInput(props) {
           <Label>Durée de vie du terminal</Label>
           <SliderWrapper>
             <Slider
-              value={
-                engine.evaluate(
-                  `${props.name} . appareil . ${
-                    engine.evaluate(props.name + ' . appareil').nodeValue
-                  } . durée de vie`
-                ).nodeValue
-              }
+              value={age}
               min={1}
               max={20}
               onChange={(value) =>
@@ -63,17 +80,9 @@ export default function DeviceInput(props) {
                   } . durée de vie`]: value,
                 })
               }
+              onMouseDown={() => console.log('mousedown')}
             />
-            <Age>
-              {
-                engine.evaluate(
-                  `${props.name} . appareil . ${
-                    engine.evaluate(props.name + ' . appareil').nodeValue
-                  } . durée de vie`
-                ).nodeValue
-              }{' '}
-              ans
-            </Age>
+            <Age>{age} ans</Age>
           </SliderWrapper>
           <Text>
             L’impact de la construction de l’appareil est attribué au prorata de
