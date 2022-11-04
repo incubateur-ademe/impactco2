@@ -1,29 +1,17 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
 
 import RulesContext from 'components/numerique/RulesProvider'
 import HorizontalRadio from 'components/base/HorizontalRadio'
+import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.5rem;
-`
-const Label = styled.label`
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
-  font-weight: bold;
-  text-align: center;
-`
 export default function DeviceInput(props) {
   const { engine, setSituation } = useContext(RulesContext)
 
   return (
-    <Wrapper className={props.className}>
-      <Label>
+    <SliderWrapper>
+      <SliderWrapper.Label>
         Qualité de la {props.name === 'streaming' ? 'vidéo' : 'communication'}
-      </Label>
+      </SliderWrapper.Label>
       <HorizontalRadio
         value={`'${engine.evaluate(props.name + ' . qualité').nodeValue}'`}
         onChange={(value) =>
@@ -61,6 +49,6 @@ export default function DeviceInput(props) {
               ]
         }
       />
-    </Wrapper>
+    </SliderWrapper>
   )
 }

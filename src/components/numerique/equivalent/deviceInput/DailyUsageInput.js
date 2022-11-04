@@ -4,32 +4,39 @@ import RulesContext from 'components/numerique/RulesProvider'
 import Slider from 'components/base/Slider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
-export default function DurationInput(props) {
+export default function DailyUsageInput(props) {
   const { engine, setSituation } = useContext(RulesContext)
 
   return (
     <SliderWrapper>
-      <SliderWrapper.Label>Durée de rédaction</SliderWrapper.Label>
+      <SliderWrapper.Label>Durée d'utilisation quotidienne</SliderWrapper.Label>
       <SliderWrapper.Slider>
         <Slider
           value={
-            engine.evaluate(`${props.name} . terminaux . temps écriture`)
+            engine.evaluate(`${props.device.name} . profil utilisation`)
               .nodeValue
           }
           min={1}
           max={20}
+          step={0.5}
           onChange={(value) =>
             setSituation({
-              [`${props.name} . terminaux . temps écriture`]: value,
+              [`${props.device.name} . profil utilisation`]: value,
             })
           }
         />
         <SliderWrapper.Value>
-          {
-            engine.evaluate(`${props.name} . terminaux . temps écriture`)
+          {Math.floor(
+            engine.evaluate(`${props.device.name} . profil utilisation`)
               .nodeValue
-          }{' '}
-          min
+          )}
+          h
+          {Math.round(
+            (engine.evaluate(`${props.device.name} . profil utilisation`)
+              .nodeValue *
+              60) %
+              60
+          )}
         </SliderWrapper.Value>
       </SliderWrapper.Slider>
     </SliderWrapper>

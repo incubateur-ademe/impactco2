@@ -22,6 +22,7 @@ export const StyledSection = styled(Section)`
 export const Title = styled.h1``
 const Questions = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
@@ -57,6 +58,7 @@ export default function Simulateur(props) {
             .map((variable) => {
               const step = ecv.find((item) => props.name + item.id === variable)
               return {
+                id: step.name,
                 color: step.color,
                 label: step.name,
                 value: engine.evaluate(variable).nodeValue,

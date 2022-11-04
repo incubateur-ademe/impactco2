@@ -7,15 +7,13 @@ import RecipientInput from './emailInput/RecipientInput'
 import NetworkInput from './emailInput/NetworkInput'
 
 const Wrapper = styled.div`
-  width: calc(50% - 1rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
-
-  ${(props) => props.theme.mq.medium} {
-    width: 100%;
-  }
 `
 export default function EmailInput(props) {
   return (

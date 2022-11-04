@@ -7,7 +7,9 @@ import ParticipantInput from './videoInput/ParticipantsInput'
 import NetworkInput from './videoInput/NetworkInput'
 
 const Wrapper = styled.div`
-  width: calc(50% - 1rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
