@@ -126,7 +126,7 @@ export default function DeviceInput(props) {
           </StyledButtonLink>
         </Slide>
         {devices.map((device) => (
-          <Slide>
+          <Slide key={device.name}>
             <Label>{device.label}</Label>
             <Sliders>
               <LifeSpanInput name={props.name} device={device} />
