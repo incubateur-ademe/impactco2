@@ -22,7 +22,7 @@ const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
 `
 const Text = styled.p`
-  max-width: 24rem;
+  max-width: 29rem;
   margin: 0 auto 0.5rem;
   font-size: 0.875rem;
   text-align: center;

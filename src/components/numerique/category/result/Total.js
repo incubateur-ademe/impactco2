@@ -85,8 +85,18 @@ export default function Total(props) {
           {formatNumber(totalToUse / 1000)} kg CO<sub>2</sub>e{' '}
           <Color>par semaine</Color>
         </Big>{' '}
-        (hors construction de vos appareils), soit autant d’émissions que pour
-        fabriquer, consommer ou parcourir :
+        <br />
+        (hors construction de vos appareils).
+      </Text>
+      <Text>
+        Soit{' '}
+        <Big>
+          {formatNumber((totalToUse / 1000) * 52)} kg CO<sub>2</sub>e{' '}
+          <Color>par an</Color>{' '}
+        </Big>
+        <br />
+        ce qui représente autant d’émissions que pour fabriquer, consommer ou
+        parcourir :
       </Text>
       <Tiles>
         {equivalentsToShow.map((equivalent) => (
