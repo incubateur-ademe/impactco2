@@ -118,7 +118,6 @@ export default function Search(props) {
             💻 Ordinateur portable
           </option>
           <option value={`'ordinateur et écran'`}>🖥 Ordinateur fixe</option>
-          <option value={`'TV'`}>📺 Télévision</option>
         </StyledSelect>
         <Parameters>
           <StyledHorizontalRadio
