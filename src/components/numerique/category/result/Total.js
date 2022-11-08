@@ -1,41 +1,44 @@
 import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { formatNumber, formatTotalByMultiplier } from 'utils/formatters'
+import { formatNumber } from 'utils/formatters'
 import RulesContext from 'components/numerique/RulesProvider'
 import DataContext from 'components/providers/DataProvider'
-import MagicLink from 'components/base/MagicLink'
-import Emoji from 'components/base/Emoji'
+import Tile from 'components/misc/tiles/Tile'
 
-const Wrapper = styled.p`
+const Wrapper = styled.div`
   margin: 0;
 `
-const Number = styled.span`
-  font-size: 2.5rem;
+const Text = styled.p`
+  font-size: 1.125rem;
+  text-align: center;
+`
+const Big = styled.span`
+  font-size: 1.375rem;
   font-weight: bold;
-  line-height: 1;
 `
-const Unit = styled.span`
-  font-size: 0.875rem;
-  font-weight: 300;
-`
-const Comparaison = styled.span`
-  display: block;
-  font-size: 0.875rem;
-  line-height: 2;
+const Tiles = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+
+  ${(props) => props.theme.mq.medium} {
+    gap: 0.75rem;
+  }
 `
 export default function Total(props) {
   const { engine, situation } = useContext(RulesContext)
 
   const { equivalents } = useContext(DataContext)
-  const voiture = useMemo(
+  const equivalentsToShow = useMemo(
     () =>
-      equivalents.find((equivalent) =>
-        ['stockagedonnee'].includes(equivalent.slug)
+      equivalents.filter((equivalent) =>
+        ['voiturethermique', 'repasavecduboeuf', 'tshirtencoton'].includes(
+          equivalent.slug
+        )
       ),
     [equivalents]
   )
-
   const total = useMemo(
     () =>
       engine.evaluate('email').nodeValue * props.numberEmails +
@@ -58,19 +61,25 @@ export default function Total(props) {
 
   return engine ? (
     <Wrapper>
-      <Number>{formatNumber(totalToUse / 1000)}</Number>
-      <Unit>
-        {' '}
-        kg CO<sub>2</sub>e par semaine
-      </Unit>
-      <Comparaison>
-        (soit autant d’emission que{' '}
-        <MagicLink to='/transport/voiturethermique'>
-          {formatNumber(totalToUse / 1000 / formatTotalByMultiplier(voiture))}{' '}
-          km en voiture <Emoji>🚗</Emoji>
-        </MagicLink>
-        )
-      </Comparaison>
+      <Text>
+        Vos usages émettent{' '}
+        <Big>
+          {formatNumber(totalToUse / 1000)} kg CO<sub>2</sub>e par semaine
+        </Big>{' '}
+        (hors construction), soit autant d’émissions que pour fabriquer,
+        consommer ou parcourir :
+      </Text>
+      <Tiles>
+        {equivalentsToShow.map((equivalent) => (
+          <Tile
+            key={equivalent.slug}
+            equivalent={equivalent}
+            weight={totalToUse / 1000}
+            equivalentPage
+            reference
+          />
+        ))}
+      </Tiles>
     </Wrapper>
   ) : null
 }

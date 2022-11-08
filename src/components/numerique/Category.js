@@ -5,11 +5,10 @@ import Wrapper from 'components/misc/category/Wrapper'
 import Description from 'components/misc/category/Description'
 import Search from './category/Search'
 import Result from './category/Result'
-import Devices from './category/Devices'
 
 export default function Category(props) {
   const [numberEmails, setNumberEmails] = useState(50)
-  const [construction, setConstruction] = useState(true)
+  const [construction, setConstruction] = useState(false)
 
   return (
     <Section>
@@ -24,10 +23,6 @@ export default function Category(props) {
             setNumberEmails={setNumberEmails}
           />
           <Result numberEmails={numberEmails} construction={construction} />
-          <Devices
-            construction={construction}
-            setConstruction={setConstruction}
-          />
         </Wrapper>
       </Section.Content>
     </Section>
