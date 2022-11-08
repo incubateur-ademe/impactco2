@@ -27,6 +27,39 @@ const Text = styled.p`
 export default function Detail(props) {
   const { engine, situation } = useContext(RulesContext)
   const { equivalents, categories } = useContext(DataContext)
+
+  const devicesToDisplay = useMemo(
+    () =>
+      [
+        {
+          name: 'smartphone',
+          slug: 'smartphone',
+        },
+        {
+          name: 'tablette',
+          slug: 'tabletteclassique',
+        },
+        {
+          name: 'ordinateur portable',
+          slug: 'ordinateurportable',
+        },
+        {
+          name: 'ordinateur et écran',
+          slug: 'ordinateurfixe',
+        },
+        {
+          name: 'TV',
+          slug: 'television',
+        },
+      ].filter(
+        (device) =>
+          device.name === engine.evaluate('email . appareil').nodeValue ||
+          device.name === engine.evaluate('streaming . appareil').nodeValue ||
+          device.name === engine.evaluate('visio . appareil').nodeValue
+      ),
+    [situation, engine]
+  )
+  console.log(devicesToDisplay)
   const equivalentsOfCategory = useMemo(
     () =>
       [
@@ -103,13 +136,9 @@ export default function Detail(props) {
         },
         ...equivalents
           .filter((equivalent) =>
-            [
-              'smartphone',
-              'tabletteclassique',
-              'ordinateurportable',
-              'ordinateurfixe',
-              'television',
-            ].includes(equivalent.slug)
+            devicesToDisplay
+              .map((device) => device.slug)
+              .includes(equivalent.slug)
           )
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
@@ -131,7 +160,14 @@ export default function Detail(props) {
           })),
       ].sort((a, b) => (a.value > b.value ? 1 : -1)),
 
-    [engine, situation, props.numberEmails, equivalents, categories]
+    [
+      engine,
+      situation,
+      props.numberEmails,
+      equivalents,
+      categories,
+      devicesToDisplay,
+    ]
   )
 
   return (

@@ -68,6 +68,7 @@ export default function Simulateur(props) {
         : [],
     [ecv, engine, situation, construction]
   )
+
   const total = useMemo(() =>
     construction
       ? engine.evaluate(props.name).nodeValue
