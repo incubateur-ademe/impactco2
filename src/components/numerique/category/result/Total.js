@@ -17,6 +17,9 @@ const Big = styled.span`
   font-size: 1.375rem;
   font-weight: bold;
 `
+const Color = styled.span`
+  color: ${(props) => props.theme.colors.main};
+`
 const Tiles = styled.div`
   display: flex;
   gap: 1.5rem;
@@ -64,7 +67,8 @@ export default function Total(props) {
       <Text>
         Vos usages émettent{' '}
         <Big>
-          {formatNumber(totalToUse / 1000)} kg CO<sub>2</sub>e par semaine
+          {formatNumber(totalToUse / 1000)} kg CO<sub>2</sub>e{' '}
+          <Color>par semaine</Color>
         </Big>{' '}
         (hors construction), soit autant d’émissions que pour fabriquer,
         consommer ou parcourir :

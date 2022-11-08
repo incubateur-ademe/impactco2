@@ -15,52 +15,128 @@ const Wrapper = styled.div`
 const Title = styled.h3`
   text-align: center;
 `
+const Color = styled.span`
+  color: ${(props) => props.theme.colors.main};
+`
 const Text = styled.p`
   max-width: 24rem;
   margin: 0 auto 0.5rem;
   font-size: 0.875rem;
   text-align: center;
 `
-export default function Detail() {
+export default function Detail(props) {
+  const { engine, situation } = useContext(RulesContext)
   const { equivalents, categories } = useContext(DataContext)
   const equivalentsOfCategory = useMemo(
     () =>
-      equivalents
-        .filter((equivalent) =>
-          [
-            'smartphone',
-            'tabletteclassique',
-            'ordinateurportable',
-            'ordinateurfixe',
-            'television',
-          ].includes(equivalent.slug)
-        )
-        .map((equivalent) => ({
-          id: `${equivalent.slug}`,
-          title: `${formatName(equivalent.name, 1, true)}`,
-          emoji: equivalent.emoji,
-          unit: equivalent.unit,
-          value: formatConstruction(equivalent),
+      [
+        {
+          id: `email`,
+          title: `1 an d'emails (${props.numberEmails * 52} emails)`,
+          emoji: '📧',
+          color: '#6C8CC1',
+          value:
+            ((engine.evaluate('email').nodeValue -
+              engine.evaluate('email . terminaux . construction').nodeValue) *
+              props.numberEmails *
+              52) /
+            1000,
           to: `/${
-            categories.find((category) => category.id === equivalent.category)
-              .slug
-          }/${equivalent.slug}`,
+            categories.find((category) => category.id === 10).slug
+          }/email`,
           onClick: () =>
             window?._paq?.push([
               'trackEvent',
               'Interaction',
               'Navigation via graph categorie',
-              equivalent.slug,
+              'email',
             ]),
-        }))
-        .sort((a, b) => (a.value > b.value ? 1 : -1)),
+        },
+        {
+          id: `visioconference`,
+          title: `1 an de visioconference (${
+            engine.evaluate('visio . durée').nodeValue
+          } heures)`,
+          emoji: '🎥',
+          color: '#3DC7AB',
+          value:
+            ((engine.evaluate('visio').nodeValue -
+              engine.evaluate('visio . terminaux . construction').nodeValue) *
+              52) /
+            1000,
+          to: `/${
+            categories.find((category) => category.id === 10).slug
+          }/visioconference`,
+          onClick: () =>
+            window?._paq?.push([
+              'trackEvent',
+              'Interaction',
+              'Navigation via graph categorie',
+              'visioconference',
+            ]),
+        },
+        {
+          id: `streaming`,
+          title: `1 an de streaming (${
+            engine.evaluate('streaming . durée').nodeValue
+          } heures)`,
+          emoji: '🎬',
+          color: '#C25166',
+          value:
+            ((engine.evaluate('streaming').nodeValue -
+              engine.evaluate('streaming . terminaux . construction')
+                .nodeValue) *
+              52) /
+            1000,
+          to: `/${
+            categories.find((category) => category.id === 10).slug
+          }/streaming`,
+          onClick: () =>
+            window?._paq?.push([
+              'trackEvent',
+              'Interaction',
+              'Navigation via graph categorie',
+              'streaming',
+            ]),
+        },
+        ...equivalents
+          .filter((equivalent) =>
+            [
+              'smartphone',
+              'tabletteclassique',
+              'ordinateurportable',
+              'ordinateurfixe',
+              'television',
+            ].includes(equivalent.slug)
+          )
+          .map((equivalent) => ({
+            id: `${equivalent.slug}`,
+            title: `Construction d'un ${formatName(equivalent.name, 1)}`,
+            emoji: equivalent.emoji,
+            unit: equivalent.unit,
+            value: formatConstruction(equivalent),
+            to: `/${
+              categories.find((category) => category.id === equivalent.category)
+                .slug
+            }/${equivalent.slug}`,
+            onClick: () =>
+              window?._paq?.push([
+                'trackEvent',
+                'Interaction',
+                'Navigation via graph categorie',
+                equivalent.slug,
+              ]),
+          })),
+      ].sort((a, b) => (a.value > b.value ? 1 : -1)),
 
-    [equivalents, categories]
+    [engine, situation, props.numberEmails, equivalents, categories]
   )
 
   return (
     <Wrapper>
-      <Title>Détail de l'impact</Title>
+      <Title>
+        Détail de l'impact <Color>à l'année</Color>
+      </Title>
       <Text>
         En général, la majorité de votre empreinte numérique provient de la
         construction de vos appareils et pas de l’usage de ces derniers.
