@@ -214,11 +214,17 @@ export default function Tile(props) {
       </EmojiWrapper>
       <Title>
         <Number>
-          <AnimatedNumber
-            value={props.weight / formatTotalByMultiplier(props.equivalent)}
-            duration={500}
-            formatValue={formatNumber}
-          />
+          {props.noAnimation ? (
+            formatNumber(
+              props.weight / formatTotalByMultiplier(props.equivalent)
+            )
+          ) : (
+            <AnimatedNumber
+              value={props.weight / formatTotalByMultiplier(props.equivalent)}
+              duration={500}
+              formatValue={formatNumber}
+            />
+          )}
         </Number>
         <Name>
           {formatName(

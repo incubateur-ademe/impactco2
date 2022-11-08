@@ -81,6 +81,7 @@ export default function Total(props) {
             weight={totalToUse / 1000}
             equivalentPage
             reference
+            noAnimation
           />
         ))}
       </Tiles>
