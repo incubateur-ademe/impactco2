@@ -100,7 +100,9 @@ export default function Detail(props) {
           emoji: '🎥',
           color: '#3DC7AB',
           value:
-            ((engine.evaluate('visio').nodeValue -
+            (((engine.evaluate('visio . durée').nodeValue
+              ? engine.evaluate('visio').nodeValue
+              : 0) -
               engine.evaluate('visio . terminaux . construction').nodeValue) *
               52) /
             1000,
@@ -123,7 +125,9 @@ export default function Detail(props) {
           emoji: '🎬',
           color: '#C25166',
           value:
-            ((engine.evaluate('streaming').nodeValue -
+            (((engine.evaluate('streaming . durée').nodeValue
+              ? engine.evaluate('streaming').nodeValue
+              : 0) -
               engine.evaluate('streaming . terminaux . construction')
                 .nodeValue) *
               52) /

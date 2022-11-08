@@ -54,8 +54,12 @@ export default function Total(props) {
   const total = useMemo(
     () =>
       engine.evaluate('email').nodeValue * props.numberEmails +
-      engine.evaluate('streaming').nodeValue +
-      engine.evaluate('visio').nodeValue,
+      (engine.evaluate('streaming . durée').nodeValue
+        ? engine.evaluate('streaming').nodeValue
+        : 0) +
+      (engine.evaluate('visio . durée').nodeValue
+        ? engine.evaluate('visio').nodeValue
+        : 0),
     [engine, situation, props.numberEmails]
   )
   const construction = useMemo(
@@ -70,6 +74,8 @@ export default function Total(props) {
     () => (props.construction ? total : total - construction),
     [total, props.construction]
   )
+
+  console.log(totalToUse)
 
   return engine ? (
     <Wrapper>

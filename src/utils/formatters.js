@@ -1,6 +1,6 @@
 export function formatNumber(value, noformat) {
   if (!value) {
-    return
+    return 0
   }
   let tempTotal =
     value > 0.0000001 ? Math.round(value * 10000000) / 10000000 : value
