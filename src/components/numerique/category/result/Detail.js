@@ -62,7 +62,7 @@ export default function Detail(props) {
           device.name === engine.evaluate('visio . appareil').nodeValue ||
           displayAll
       ),
-    [situation, engine]
+    [situation, engine, displayAll]
   )
 
   const equivalentsOfCategory = useMemo(
@@ -188,7 +188,6 @@ export default function Detail(props) {
         construction de vos appareils et pas de l’usage de ces derniers.
       </Text>
       <Top className='noscreenshot'>
-        <Instruction />
         <Top.Checkboxes visible>
           <Checkbox
             name='displayAll'
@@ -211,6 +210,7 @@ export default function Detail(props) {
         items={equivalentsOfCategory}
         max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
       />
+      <Instruction />
     </Wrapper>
   )
 }
