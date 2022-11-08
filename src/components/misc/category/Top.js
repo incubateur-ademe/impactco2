@@ -19,7 +19,7 @@ const Checkboxes = styled.div`
   visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   transition: opacity 200ms;
 
-  > div {
+  > label {
     font-size: 0.875rem;
   }
 
