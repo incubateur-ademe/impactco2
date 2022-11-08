@@ -94,7 +94,7 @@ export default function Detail(props) {
         },
         {
           id: `visioconference`,
-          title: `1 an de streaming (${formatNumber(
+          title: `1 an de visoconférence (${formatNumber(
             (engine.evaluate('visio . durée').nodeValue / 60) * 52
           )} heures)`,
           emoji: '🎥',
@@ -134,7 +134,7 @@ export default function Detail(props) {
             1000,
           to: `/${
             categories.find((category) => category.id === 10).slug
-          }/streaming`,
+          }/streamingvideo`,
           onClick: () =>
             window?._paq?.push([
               'trackEvent',
