@@ -1,10 +1,13 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { formatName, formatNumber, formatConstruction } from 'utils/formatters'
 import RulesContext from 'components/numerique/RulesProvider'
 import DataContext from 'components/providers/DataProvider'
+import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
+import Top from 'components/misc/category/Top'
+import Instruction from 'components/misc/category/Instruction'
 
 const Wrapper = styled.div`
   padding: 1.5rem;
@@ -28,6 +31,7 @@ export default function Detail(props) {
   const { engine, situation } = useContext(RulesContext)
   const { equivalents, categories } = useContext(DataContext)
 
+  const [displayAll, setDisplayAll] = useState(false)
   const devicesToDisplay = useMemo(
     () =>
       [
@@ -55,11 +59,12 @@ export default function Detail(props) {
         (device) =>
           device.name === engine.evaluate('email . appareil').nodeValue ||
           device.name === engine.evaluate('streaming . appareil').nodeValue ||
-          device.name === engine.evaluate('visio . appareil').nodeValue
+          device.name === engine.evaluate('visio . appareil').nodeValue ||
+          displayAll
       ),
     [situation, engine]
   )
-  console.log(devicesToDisplay)
+
   const equivalentsOfCategory = useMemo(
     () =>
       [
@@ -159,7 +164,6 @@ export default function Detail(props) {
               ]),
           })),
       ].sort((a, b) => (a.value > b.value ? 1 : -1)),
-
     [
       engine,
       situation,
@@ -179,6 +183,26 @@ export default function Detail(props) {
         En général, la majorité de votre empreinte numérique provient de la
         construction de vos appareils et pas de l’usage de ces derniers.
       </Text>
+      <Top className='noscreenshot'>
+        <Instruction />
+        <Top.Checkboxes visible>
+          <Checkbox
+            name='displayAll'
+            checked={displayAll}
+            onChange={() => {
+              setDisplayAll((prevDisplayAll) => !prevDisplayAll)
+              window?._paq?.push([
+                'trackEvent',
+                'Interaction',
+                'Voir tous les équivalents',
+                props.category.name,
+              ])
+            }}
+          >
+            Voir tous les équivalents
+          </Checkbox>
+        </Top.Checkboxes>
+      </Top>
       <BarChart
         items={equivalentsOfCategory}
         max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}

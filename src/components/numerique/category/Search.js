@@ -113,12 +113,10 @@ export default function Search(props) {
           }
           color='#6C8CC1'
         >
-          <option value={`'smartphone'`}>📱 Smartphone</option>
-          <option value={`'tablette'`}>📱 Tablette</option>
-          <option value={`'ordinateur portable'`}>
-            💻 Ordinateur portable
-          </option>
-          <option value={`'ordinateur et écran'`}>🖥 Ordinateur fixe</option>
+          <option value={`'smartphone'`}>Smartphone</option>
+          <option value={`'tablette'`}>Tablette</option>
+          <option value={`'ordinateur portable'`}>Ordinateur portable</option>
+          <option value={`'ordinateur et écran'`}>Ordinateur fixe</option>
         </StyledSelect>
         <Parameters>
           <StyledHorizontalRadio
@@ -176,13 +174,11 @@ export default function Search(props) {
           }
           color='#C25166'
         >
-          <option value={`'smartphone'`}>📱 Smartphone</option>
-          <option value={`'tablette'`}>📱 Tablette</option>
-          <option value={`'ordinateur portable'`}>
-            💻 Ordinateur portable
-          </option>
-          <option value={`'ordinateur et écran'`}>🖥 Ordinateur fixe</option>
-          <option value={`'TV'`}>📺 Télévision</option>
+          <option value={`'smartphone'`}>Smartphone</option>
+          <option value={`'tablette'`}>Tablette</option>
+          <option value={`'ordinateur portable'`}>Ordinateur portable</option>
+          <option value={`'ordinateur et écran'`}>Ordinateur fixe</option>
+          <option value={`'TV'`}>Télévision</option>
         </StyledSelect>
         <Parameters>
           <StyledHorizontalRadio
@@ -247,13 +243,11 @@ export default function Search(props) {
           }
           color='#3DC7AB'
         >
-          <option value={`'smartphone'`}>📱 Smartphone</option>
-          <option value={`'tablette'`}>📱 Tablette</option>
-          <option value={`'ordinateur portable'`}>
-            💻 Ordinateur portable
-          </option>
-          <option value={`'ordinateur et écran'`}>🖥 Ordinateur fixe</option>
-          <option value={`'TV'`}>📺 Télévision</option>
+          <option value={`'smartphone'`}>Smartphone</option>
+          <option value={`'tablette'`}>Tablette</option>
+          <option value={`'ordinateur portable'`}>Ordinateur portable</option>
+          <option value={`'ordinateur et écran'`}>Ordinateur fixe</option>
+          <option value={`'TV'`}>Télévision</option>
         </StyledSelect>
         <Parameters>
           <StyledHorizontalRadio
