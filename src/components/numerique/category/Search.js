@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.small} {
     flex-direction: column;
     gap: 1.5rem;
+    margin-bottom: 1rem;
   }
 `
 const Column = styled.div``

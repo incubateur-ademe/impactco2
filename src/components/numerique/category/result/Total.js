@@ -12,10 +12,19 @@ const Wrapper = styled.div`
 const Text = styled.p`
   font-size: 1.125rem;
   text-align: center;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.875rem;
+  }
 `
 const Big = styled.span`
   font-size: 1.375rem;
   font-weight: bold;
+
+  ${(props) => props.theme.mq.small} {
+    display: block;
+    font-size: 1.25rem;
+  }
 `
 const Color = styled.span`
   color: ${(props) => props.theme.colors.main};

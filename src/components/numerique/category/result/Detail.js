@@ -56,8 +56,8 @@ export default function Detail(props) {
         },
         {
           id: `visioconference`,
-          title: `1 an de visioconference (${formatNumber(
-            engine.evaluate('visio . durée').nodeValue
+          title: `1 an de streaming (${formatNumber(
+            (engine.evaluate('visio . durée').nodeValue / 60) * 52
           )} heures)`,
           emoji: '🎥',
           color: '#3DC7AB',
@@ -80,7 +80,7 @@ export default function Detail(props) {
         {
           id: `streaming`,
           title: `1 an de streaming (${formatNumber(
-            engine.evaluate('streaming . durée').nodeValue
+            (engine.evaluate('streaming . durée').nodeValue / 60) * 52
           )} heures)`,
           emoji: '🎬',
           color: '#C25166',
