@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { formatName, formatConstruction } from 'utils/formatters'
+import { formatName, formatNumber, formatConstruction } from 'utils/formatters'
 import RulesContext from 'components/numerique/RulesProvider'
 import DataContext from 'components/providers/DataProvider'
 import BarChart from 'components/charts/BarChart'
@@ -32,7 +32,9 @@ export default function Detail(props) {
       [
         {
           id: `email`,
-          title: `1 an d'emails (${props.numberEmails * 52} emails)`,
+          title: `1 an d'emails (${formatNumber(
+            props.numberEmails * 52
+          )} emails)`,
           emoji: '📧',
           color: '#6C8CC1',
           value:
@@ -54,9 +56,9 @@ export default function Detail(props) {
         },
         {
           id: `visioconference`,
-          title: `1 an de visioconference (${
+          title: `1 an de visioconference (${formatNumber(
             engine.evaluate('visio . durée').nodeValue
-          } heures)`,
+          )} heures)`,
           emoji: '🎥',
           color: '#3DC7AB',
           value:
@@ -77,9 +79,9 @@ export default function Detail(props) {
         },
         {
           id: `streaming`,
-          title: `1 an de streaming (${
+          title: `1 an de streaming (${formatNumber(
             engine.evaluate('streaming . durée').nodeValue
-          } heures)`,
+          )} heures)`,
           emoji: '🎬',
           color: '#C25166',
           value:
