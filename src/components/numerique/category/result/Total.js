@@ -75,8 +75,6 @@ export default function Total(props) {
     [total, props.construction]
   )
 
-  console.log(totalToUse)
-
   return engine ? (
     <Wrapper>
       <Text>
@@ -103,7 +101,7 @@ export default function Total(props) {
           <Tile
             key={equivalent.slug}
             equivalent={equivalent}
-            weight={totalToUse / 1000}
+            weight={(totalToUse / 1000) * 52}
             equivalentPage
             reference
             noAnimation

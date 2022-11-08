@@ -5,6 +5,7 @@ import RulesContext from '../RulesProvider'
 import Slider from 'components/base/Slider'
 import Select from 'components/base/Select'
 import HorizontalRadio from 'components/base/HorizontalRadio'
+import Checkbox from 'components/base/Checkbox'
 
 const Wrapper = styled.div`
   display: flex;
@@ -50,6 +51,7 @@ const Parameters = styled.div`
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;
+  align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
 
@@ -142,6 +144,17 @@ export default function Search(props) {
             ]}
             color='#6C8CC1'
           />
+          <Checkbox
+            name='piecejointe'
+            checked={engine.evaluate('email . taille').nodeValue === 1}
+            onChange={(value) =>
+              setSituation({ ['email . taille']: value ? 1 : 0.2 })
+            }
+            color='#6C8CC1'
+            small
+          >
+            Pièce-jointe
+          </Checkbox>
         </Parameters>
       </Column>
       <Column>
