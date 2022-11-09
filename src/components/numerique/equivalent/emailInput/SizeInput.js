@@ -9,7 +9,7 @@ export default function DurationInput(props) {
 
   return (
     <SliderWrapper>
-      <SliderWrapper.Label>Taille de la pièce jointe</SliderWrapper.Label>
+      <SliderWrapper.Label>Poids de l'email</SliderWrapper.Label>
       <SliderWrapper.Slider>
         <Slider
           value={engine.evaluate(`${props.name} . taille`).nodeValue}
