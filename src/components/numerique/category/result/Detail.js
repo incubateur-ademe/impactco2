@@ -151,7 +151,11 @@ export default function Detail(props) {
           )
           .map((equivalent) => ({
             id: `${equivalent.slug}`,
-            title: `Construction d'un ${formatName(equivalent.name, 1)}`,
+            title: `Construction d'un${
+              ['tabletteclassique', 'television'].includes(equivalent.slug)
+                ? 'e'
+                : ''
+            } ${formatName(equivalent.name, 1)}`,
             emoji: equivalent.emoji,
             unit: equivalent.unit,
             value: formatConstruction(equivalent),
@@ -167,7 +171,9 @@ export default function Detail(props) {
                 equivalent.slug,
               ]),
           })),
-      ].sort((a, b) => (a.value > b.value ? 1 : -1)),
+      ]
+        .filter((item) => item.value)
+        .sort((a, b) => (a.value > b.value ? 1 : -1)),
     [
       engine,
       situation,
@@ -181,7 +187,7 @@ export default function Detail(props) {
   return (
     <Wrapper>
       <Title>
-        Détail de l'impact <Color>à l'année</Color>
+        Détail de mon impact <Color>à l'année</Color>
       </Title>
       <Text>
         En général, la majorité de votre empreinte numérique provient de la
@@ -202,7 +208,7 @@ export default function Detail(props) {
               ])
             }}
           >
-            Voir tous les équivalents
+            Voir tous les appareils
           </Checkbox>
         </Top.Checkboxes>
       </Top>
