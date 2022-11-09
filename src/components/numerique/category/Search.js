@@ -58,6 +58,9 @@ const Parameters = styled.div`
   ${(props) => props.theme.mq.small} {
   }
 `
+const StyledCheckbox = styled(Checkbox)`
+  margin-right: 1rem;
+`
 const StyledSelect = styled(Select)`
   flex: 1;
   margin: 0;
@@ -144,7 +147,7 @@ export default function Search(props) {
             ]}
             color='#6C8CC1'
           />
-          <Checkbox
+          <StyledCheckbox
             name='piecejointe'
             checked={engine.evaluate('email . taille').nodeValue === 1}
             onChange={(value) =>
@@ -154,7 +157,7 @@ export default function Search(props) {
             small
           >
             Pièce-jointe
-          </Checkbox>
+          </StyledCheckbox>
         </Parameters>
       </Column>
       <Column>
