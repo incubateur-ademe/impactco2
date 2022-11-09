@@ -57,12 +57,15 @@ export default function Detail(props) {
         },
       ].filter(
         (device) =>
-          device.name === engine.evaluate('email . appareil').nodeValue ||
-          device.name === engine.evaluate('streaming . appareil').nodeValue ||
-          device.name === engine.evaluate('visio . appareil').nodeValue ||
+          (device.name === engine.evaluate('email . appareil').nodeValue &&
+            props.numberEmails) ||
+          (device.name === engine.evaluate('streaming . appareil').nodeValue &&
+            engine.evaluate('streaming . durée').nodeValue) ||
+          (device.name === engine.evaluate('visio . appareil').nodeValue &&
+            engine.evaluate('visio . durée').nodeValue) ||
           displayAll
       ),
-    [situation, engine, displayAll]
+    [situation, engine, displayAll, props.numberEmails]
   )
 
   const equivalentsOfCategory = useMemo(
