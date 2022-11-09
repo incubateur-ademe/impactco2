@@ -29,6 +29,9 @@ const Big = styled.span`
 const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
 `
+const Disclaimer = styled.span`
+  display: block;
+`
 const Tiles = styled.div`
   display: flex;
   gap: 1.5rem;
@@ -83,8 +86,7 @@ export default function Total(props) {
           {formatNumber(totalToUse / 1000)} kg CO<sub>2</sub>e{' '}
           <Color>par semaine</Color>
         </Big>{' '}
-        <br />
-        (hors construction de vos appareils).
+        <Disclaimer>(hors construction de vos appareils).</Disclaimer>
       </Text>
       <Text>
         Soit{' '}
@@ -92,9 +94,10 @@ export default function Total(props) {
           {formatNumber((totalToUse / 1000) * 52)} kg CO<sub>2</sub>e{' '}
           <Color>par an</Color>{' '}
         </Big>
-        <br />
-        ce qui représente autant d’émissions que pour fabriquer, consommer ou
-        parcourir :
+        <Disclaimer>
+          ce qui représente autant d’émissions que pour fabriquer, consommer ou
+          parcourir :
+        </Disclaimer>
       </Text>
       <Tiles>
         {equivalentsToShow.map((equivalent) => (
