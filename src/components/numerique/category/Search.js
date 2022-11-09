@@ -85,7 +85,7 @@ export default function Search(props) {
       ['streaming . durée']: 420,
       ['visio . durée']: 180,
       ['email . appareil']: `'smartphone'`,
-      ['email . taille']: 0.2,
+      ['email . taille']: 0.075,
       ['streaming . appareil']: `'TV'`,
       ['visio . appareil']: `'ordinateur portable'`,
       ['visio . emplacements']: 1,
@@ -147,17 +147,17 @@ export default function Search(props) {
             ]}
             color='#6C8CC1'
           />
-          <StyledCheckbox
-            name='piecejointe'
-            checked={engine.evaluate('email . taille').nodeValue === 1}
-            onChange={(value) =>
-              setSituation({ ['email . taille']: value ? 1 : 0.2 })
+          <StyledSelect
+            value={engine.evaluate('email . taille').nodeValue}
+            onChange={({ value }) =>
+              setSituation({ ['email . taille']: value })
             }
             color='#6C8CC1'
-            small
           >
-            Pièce-jointe
-          </StyledCheckbox>
+            <option value={0.075}>Sans pièce jointe</option>
+            <option value={1}>Pièce jointe 1Mo</option>
+            <option value={10}>Pièce jointe 5Mo</option>
+          </StyledSelect>
         </Parameters>
       </Column>
       <Column>
