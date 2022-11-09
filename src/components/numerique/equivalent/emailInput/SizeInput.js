@@ -14,15 +14,19 @@ export default function DurationInput(props) {
         <Slider
           value={engine.evaluate(`${props.name} . taille`).nodeValue}
           min={0}
-          max={25}
+          max={10}
+          step={0.01}
           onChange={(value) =>
             setSituation({
               [`${props.name} . taille`]: value,
             })
           }
         />
-        <SliderWrapper.Value width={6}>
-          {engine.evaluate(`${props.name} . taille`).nodeValue} Mo
+        <SliderWrapper.Value>
+          {Math.round(
+            engine.evaluate(`${props.name} . taille`).nodeValue * 10
+          ) / 10}{' '}
+          Mo
         </SliderWrapper.Value>
       </SliderWrapper.Slider>
     </SliderWrapper>
