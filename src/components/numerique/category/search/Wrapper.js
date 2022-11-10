@@ -14,10 +14,12 @@ const Wrapper = styled.div`
   border-radius: 1rem;
 
   ${(props) => props.theme.mq.medium} {
-    flex-direction: column;
-    gap: 0.5rem;
     margin-bottom: 1rem;
     padding: 1rem;
+  }
+  ${(props) => props.theme.mq.iframemedium} {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 `
 Wrapper.Column = styled.div``
@@ -37,7 +39,7 @@ Wrapper.Small = styled.span`
   display: block;
   font-size: 0.75rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.iframemedium} {
     display: inline;
   }
 `
@@ -59,12 +61,12 @@ Wrapper.ShowMore = styled.button`
       fill: ${(props) => props.color || props.theme.colors.main};
     }
   }
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.iframemedium} {
     display: block;
   }
 `
 Wrapper.Desktop = styled.div`
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.iframemedium} {
     display: ${(props) => (props.visible ? 'flex' : 'none')};
     gap: 0.5rem;
     margin: 0.5rem 0 0.75rem;
@@ -78,7 +80,7 @@ Wrapper.Parameters = styled.div`
   gap: 0.5rem;
   margin: 0.5rem 0 0.75rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.iframemedium} {
     margin: 0;
   }
 `

@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   border-radius: 1rem;
   transition: all 300ms ease-out;
 
-  ${(props) => props.theme.mq.small} {
+  ${(props) => props.theme.mq.medium} {
     border: none;
   }
 `
@@ -28,8 +28,8 @@ const Content = styled.div`
   height: 100%;
   padding: 1.5rem;
 
-  ${(props) => props.theme.mq.small} {
-    padding: 0.75rem 0.75rem 1.5rem;
+  ${(props) => props.theme.mq.medium} {
+    padding: 1.5rem 0.75rem;
   }
 `
 export default function Background(props) {
