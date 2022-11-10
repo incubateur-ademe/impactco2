@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Slider from 'components/base/Slider'
 import Select from 'components/base/Select'
 import HorizontalRadio from 'components/base/HorizontalRadio'
-import Checkbox from 'components/base/Checkbox'
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,6 +17,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    padding: 1rem;
   }
 `
 Wrapper.Column = styled.div``
@@ -65,7 +65,9 @@ Wrapper.ShowMore = styled.button`
 `
 Wrapper.Desktop = styled.div`
   ${(props) => props.theme.mq.medium} {
-    display: ${(props) => (props.visible ? 'block' : 'none')};
+    display: ${(props) => (props.visible ? 'flex' : 'none')};
+    gap: 0.5rem;
+    margin: 0.5rem 0 0.75rem;
   }
 `
 Wrapper.Parameters = styled.div`
@@ -75,9 +77,10 @@ Wrapper.Parameters = styled.div`
   align-items: center;
   gap: 0.5rem;
   margin: 0.5rem 0 0.75rem;
-`
-Wrapper.StyledCheckbox = styled(Checkbox)`
-  margin-right: 1rem;
+
+  ${(props) => props.theme.mq.medium} {
+    margin: 0;
+  }
 `
 Wrapper.StyledSelect = styled(Select)`
   flex: 1;
@@ -86,6 +89,11 @@ Wrapper.StyledSelect = styled(Select)`
 
   select {
     width: 100%;
+    min-width: 5rem;
+  }
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 0.75rem;
   }
 `
 Wrapper.StyledHorizontalRadio = styled(HorizontalRadio)`
@@ -93,6 +101,10 @@ Wrapper.StyledHorizontalRadio = styled(HorizontalRadio)`
 
   & label {
     padding: 0.5em;
+  }
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 0.75rem;
   }
 `
 
