@@ -2,7 +2,7 @@
   {
     "id": 27012,
     "name": "Smartphone[s]",
-    "subtitle": "5 pouces",
+    "subtitle": "> 5,5 pouces",
     "synonyms": [
       "telephone",
       "gsm",
@@ -68,8 +68,8 @@
     "default": true,
     "tile": true,
     "meta": {
-      "title": "Impact climat d'un smartphone 5 pouces",
-      "description": "Découvrez le détail de l'empreinte carbone d'un smartphone 5 pouces : impact de ses matières premières, de son assemblage, son approvisionnement..."
+      "title": "Impact climat d'un smartphone",
+      "description": "Découvrez le détail de l'empreinte carbone d'un smartphone : impact de ses matières premières, de son assemblage, son approvisionnement..."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
