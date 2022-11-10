@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import useIframe from 'hooks/useIframe'
+
 const Wrapper = styled.div`
   position: absolute;
   top: 0;
@@ -17,7 +19,7 @@ const Wrapper = styled.div`
   transition: all 300ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
-    border: none;
+    border-width: ${(props) => (props.iframe ? '0.125rem' : 0)};
   }
 `
 const Content = styled.div`
@@ -33,12 +35,15 @@ const Content = styled.div`
   }
 `
 export default function Background(props) {
+  const iframe = useIframe()
+
   return (
     <>
       <Wrapper
         className='noscreenshot'
         background={props.background}
         hover={props.hover}
+        iframe={iframe}
       />
       <Content>{props.children}</Content>
     </>
