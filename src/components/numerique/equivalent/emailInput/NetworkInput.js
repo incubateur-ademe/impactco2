@@ -18,6 +18,7 @@ export default function DeviceInput(props) {
       <SliderWrapper>
         <SliderWrapper.Label>Type de réseau</SliderWrapper.Label>
         <HorizontalRadio
+          name={'network'}
           value={`'${
             engine.evaluate(props.name + ' . transmission . émetteur . réseau')
               .nodeValue
