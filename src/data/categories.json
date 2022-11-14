@@ -148,7 +148,7 @@
     "title": "Empreinte carbone de mes usages numériques",
     "description": "Découvrez l'impact sur le climat de certains usages numériques et comparez leurs empreintes carbones.",
     "divider": 1,
-    "display": false,
+    "display": true,
     "unit": "",
     "include": "",
     "list": true,
