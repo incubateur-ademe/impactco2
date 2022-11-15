@@ -7,6 +7,7 @@ import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
 import Text from 'components/views/equivalent/Text'
 import Equivalent from 'components/numerique/Equivalent'
+import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
 const equivalents = [...usagenumerique].map((equivalent) => ({
   ...equivalent,
@@ -30,6 +31,7 @@ export default function EmailPage(props) {
           category={props.category}
           name='email'
         />
+        <VisualizationSlider equivalent={props.equivalent} />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>
