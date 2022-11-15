@@ -13,6 +13,7 @@ export default function DeviceInput(props) {
         Qualité de la {props.name === 'streaming' ? 'vidéo' : 'communication'}
       </SliderWrapper.Label>
       <HorizontalRadio
+        name='quality'
         value={`'${engine.evaluate(props.name + ' . qualité').nodeValue}'`}
         onChange={(value) =>
           setSituation({ [props.name + ' . qualité']: value })
