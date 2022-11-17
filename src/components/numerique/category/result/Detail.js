@@ -97,7 +97,7 @@ export default function Detail(props) {
         },
         {
           id: `visioconference`,
-          title: `1 an de visoconférence (${formatNumber(
+          title: `1 an de visioconférence (${formatNumber(
             (engine.evaluate('visio . durée').nodeValue / 60) * 52
           )} heures)`,
           emoji: '🎥',
