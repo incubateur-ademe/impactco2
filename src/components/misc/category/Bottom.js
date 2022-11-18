@@ -30,19 +30,10 @@ export default function Bottom(props) {
       </Disclaimer>
       <Button
         className={'noscreenshot'}
-        onClick={() => {
-          !props.iframe && alert('Bientôt disponible')
-          window?._paq?.push([
-            'trackEvent',
-            'Interaction',
-            'Comparer catégories',
-            props.category.name,
-          ])
-        }}
-        to={props.iframe ? 'https://impactco2.fr' : null}
+        to={props.iframe ? 'https://impactco2.fr' : '/'}
         hollow
       >
-        {props.iframe ? <>Voir</> : <>Comparer</>} toutes les catégories
+        Voir toutes les catégories
       </Button>
     </Wrapper>
   )
