@@ -39,11 +39,6 @@ const StyledSection = styled(Section)`
 `
 
 export default function Visualization(props) {
-  const [currentSlide, setCurrentSlide] = useQueryParam(
-    'slide',
-    withDefault(NumberParam, 0)
-  )
-
   return visualizations[props.equivalent.slug] ? (
     <StyledSection>
       <Section.Content>
@@ -55,10 +50,6 @@ export default function Visualization(props) {
           slidesToScroll={1}
           autoplay={true}
           autoplaySpeed={5000}
-          initialSlide={Number(currentSlide)}
-          afterChange={(index) => {
-            setCurrentSlide(index)
-          }}
           responsive={[
             {
               breakpoint: 830,
