@@ -21,6 +21,7 @@ export default function EcvModal() {
         ' . terminaux . construction',
         ' . terminaux . usage',
         ' . transmission',
+        ' . data center',
         ' . data center . construction',
         ' . data center . usage',
       ].includes(open) && <Numerique />}
