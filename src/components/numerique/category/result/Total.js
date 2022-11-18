@@ -89,7 +89,7 @@ export default function Total(props) {
           <Color>par semaine</Color>
         </Big>{' '}
         <Disclaimer>
-          Cette valeur comprends l’utilisation de vos appareils, la transmission
+          Cette valeur comprend l’utilisation de vos appareils, la transmission
           de la donnée et la construction et l’usage des data-centers.
           <br />
           <strong>
