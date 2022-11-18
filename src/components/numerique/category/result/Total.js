@@ -31,6 +31,8 @@ const Color = styled.span`
 `
 const Disclaimer = styled.span`
   display: block;
+  font-size: 0.75rem;
+  font-weight: 300;
 `
 const Tiles = styled.div`
   display: flex;
@@ -86,7 +88,15 @@ export default function Total(props) {
           {formatNumber(totalToUse / 1000)} kg CO<sub>2</sub>e{' '}
           <Color>par semaine</Color>
         </Big>{' '}
-        <Disclaimer>(hors construction de vos appareils).</Disclaimer>
+        <Disclaimer>
+          Cette valeur comprends l’utilisation de vos appareils, la transmission
+          de la donnée et la construction et l’usage des data-centers.
+          <br />
+          <strong>
+            L’impact de la construction de vos appareils n’est pas incluse mais
+            est abordée plus bas dans la page.
+          </strong>
+        </Disclaimer>
       </Text>
       <Text>
         Soit{' '}
@@ -94,10 +104,10 @@ export default function Total(props) {
           {formatNumber((totalToUse / 1000) * 52)} kg CO<sub>2</sub>e{' '}
           <Color>par an</Color>{' '}
         </Big>
-        <Disclaimer>
+        <div>
           ce qui représente autant d’émissions que pour fabriquer, consommer ou
           parcourir :
-        </Disclaimer>
+        </div>
       </Text>
       <Tiles>
         {equivalentsToShow.map((equivalent) => (
