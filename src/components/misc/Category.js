@@ -6,7 +6,6 @@ import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Wrapper from './category/Wrapper'
-import Description from './category/Description'
 import Top from './category/Top'
 import Instruction from './category/Instruction'
 import List from './category/List'
@@ -54,9 +53,10 @@ export default function CategoryList(props) {
       <Section.Content>
         <Wrapper
           name={props.category.title || props.category.name}
+          description={props.category.description}
+          descriptionKeyword={props.category.descriptionKeyword}
           slug={props.category.slug}
         >
-          <Description description={props.category.description} />
           <Top className='noscreenshot'>
             <Instruction />
             <Top.Checkboxes
