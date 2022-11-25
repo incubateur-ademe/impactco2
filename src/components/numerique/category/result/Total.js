@@ -43,10 +43,12 @@ const Tiles = styled.div`
     gap: 0.75rem;
   }
 `
+
 export default function Total(props) {
   const { engine, situation } = useContext(RulesContext)
 
   const { equivalents } = useContext(DataContext)
+
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter((equivalent) =>
@@ -94,7 +96,7 @@ export default function Total(props) {
           <br />
           <strong>
             L’impact de la construction de vos appareils n’est pas incluse mais
-            est abordée plus bas dans la page.
+            est abordée plus bas dans la page.{' '}
           </strong>
         </Disclaimer>
       </Text>
