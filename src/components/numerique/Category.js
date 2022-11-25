@@ -2,10 +2,10 @@ import React, { useState, useContext } from 'react'
 
 import Section from 'components/base/Section'
 import Wrapper from 'components/misc/category/Wrapper'
-import Description from 'components/misc/category/Description'
 import Search from './category/Search'
 import Result from './category/Result'
 import Hypothèses from './category/Hypothèses'
+import Description from 'components/misc/category/Description'
 
 export default function Category(props) {
   const [numberEmails, setNumberEmails] = useState(50)

@@ -28,6 +28,7 @@ const Header = styled.div`
 const Title = styled.h1`
   margin-bottom: 1rem;
   text-align: center;
+  font-size: 180%;
 `
 const StyledButtons = styled(Buttons)`
   margin: -1rem 0 0.5rem;
@@ -55,7 +56,11 @@ export default function Wrapper(props) {
                 onMouseLeave={() => setHover(false)}
                 slug={`${props.slug}`}
               />
-              <Title>{props.name}</Title>
+              <Title
+                dangerouslySetInnerHTML={{
+                  __html: props.name,
+                }}
+              />
             </Header>
             {props.children}
           </Background>

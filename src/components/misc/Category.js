@@ -6,12 +6,12 @@ import Section from 'components/base/Section'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Wrapper from './category/Wrapper'
-import Description from './category/Description'
 import Top from './category/Top'
 import Instruction from './category/Instruction'
 import List from './category/List'
 import CategoryLegend from './category/CategoryLegend'
 import Bottom from './category/Bottom'
+import Description from './category/Description'
 
 export default function CategoryList(props) {
   const { equivalents, categories } = useContext(DataContext)
