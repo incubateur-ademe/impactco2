@@ -56,7 +56,11 @@ export default function Wrapper(props) {
                 onMouseLeave={() => setHover(false)}
                 slug={`${props.slug}`}
               />
-              <Title>{props.name}</Title>
+              <Title
+                dangerouslySetInnerHTML={{
+                  __html: props.name,
+                }}
+              />
             </Header>
             {props.children}
           </Background>
