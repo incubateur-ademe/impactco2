@@ -12,20 +12,5 @@ const Wrapper = styled.p`
   }
 `
 export default function Description(props) {
-  const boldString = (str, substr) => str.replaceAll(substr, `<b>${substr}</b>`)
-  return (
-    props.description && (
-      <Wrapper>
-        {props.description && props.descriptionKeyword ? (
-          <span
-            dangerouslySetInnerHTML={{
-              __html: boldString(props.description, props.descriptionKeyword),
-            }}
-          ></span>
-        ) : (
-          props.description
-        )}
-      </Wrapper>
-    )
-  )
+  return props.description && <Wrapper>{props.description}</Wrapper>
 }
