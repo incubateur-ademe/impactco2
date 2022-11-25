@@ -14,8 +14,6 @@ export default function Category(props) {
       <Section.Content>
         <Wrapper
           name={props.category.title || props.category.name}
-          description={props.category.description}
-          descriptionKeyword={props.category.descriptionKeyword}
           slug={props.category.slug}
         >
           <Search

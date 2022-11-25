@@ -28,8 +28,7 @@ const Header = styled.div`
 const Title = styled.h1`
   margin-bottom: 1rem;
   text-align: center;
-  font-weight: normal;
-  font-size: 150%;
+  font-size: 180%;
 `
 const StyledButtons = styled(Buttons)`
   margin: -1rem 0 0.5rem;
@@ -45,8 +44,6 @@ export default function Wrapper(props) {
     props.slug || 'impactco2'
   )
 
-  const boldString = (str, substr) => str.replaceAll(substr, `<b>${substr}</b>`)
-
   return (
     <SizerWrapper>
       <Sizer className={props.className}>
@@ -59,21 +56,7 @@ export default function Wrapper(props) {
                 onMouseLeave={() => setHover(false)}
                 slug={`${props.slug}`}
               />
-              <Title>
-                {' '}
-                {props.description && props.descriptionKeyword ? (
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: boldString(
-                        props.description,
-                        props.descriptionKeyword
-                      ),
-                    }}
-                  ></span>
-                ) : (
-                  props.description
-                )}
-              </Title>
+              <Title>{props.name}</Title>
             </Header>
             {props.children}
           </Background>

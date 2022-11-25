@@ -11,6 +11,7 @@ import Instruction from './category/Instruction'
 import List from './category/List'
 import CategoryLegend from './category/CategoryLegend'
 import Bottom from './category/Bottom'
+import Description from './category/Description'
 
 export default function CategoryList(props) {
   const { equivalents, categories } = useContext(DataContext)
@@ -53,10 +54,9 @@ export default function CategoryList(props) {
       <Section.Content>
         <Wrapper
           name={props.category.title || props.category.name}
-          description={props.category.description}
-          descriptionKeyword={props.category.descriptionKeyword}
           slug={props.category.slug}
         >
+          <Description description={props.category.description} />
           <Top className='noscreenshot'>
             <Instruction />
             <Top.Checkboxes
