@@ -30,24 +30,24 @@ export default function Learning(props) {
         assiettes, c’est autant que le logement ou le transport !
       </Strong>
       <Text>
-        Un repas végétarien ou végétalien (0,5 et 0,4 kg{' '}
+        Un repas végétarien ou végétalien (0,5 et 0,4&thinsp;kg{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>
         ) a beacoup moins d'impact pour la planète qu’un repas avec du bœuf ou
-        du poulet (7 kg{' '}
+        du poulet (7&thinsp;kg{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        et 1,6 kg{' '}
+        et 1,6&thinsp;kg{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>
-        ) ou encore avec du poisson (gras 1,1 kg{' '}
+        ) ou encore avec du poisson (gras 1,1&thinsp;kg{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        et blanc 2 kg{' '}
+        et blanc 2&thinsp;kg{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>
@@ -83,11 +83,11 @@ export default function Learning(props) {
       <Title>Quel est l'impact du mobilier sur le climat ?</Title>
       <Text>
         L'impact carbone d'un meuble comprenant la fabrication, la distribution
-        et l’usage, peut aller de 19kg d’émissions de{' '}
+        et l’usage, peut aller de 19&thinsp;kg d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        avec la chaise en bois, jusqu’à 907kg d’émissions de{' '}
+        avec la chaise en bois, jusqu’à 907&thinsp;kg d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
@@ -101,11 +101,11 @@ export default function Learning(props) {
       <Title>Quel est l’impact sur le climat d'un vêtement ?</Title>
       <Text>
         L’impact carbone d’ un habit comprenant la fabrication, la distribution
-        et l’usage, peut aller de 6kg d’émissions de{' '}
+        et l’usage, peut aller de 6&thinsp;kg d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        pour un t-shirt en polyester, jusqu’à 99kg d’émissions de{' '}
+        pour un t-shirt en polyester, jusqu’à 99&thinsp;kg d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
@@ -127,11 +127,11 @@ export default function Learning(props) {
       </Strong>
       <Text>
         L’impact carbone d'un déplacement d'une distance de 10km peut aller de
-        0kg d’émission de{' '}
+        0&thinsp;kg d’émission de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        avec la marche ou le vélo, jusqu’à 2,2kg d’émissions de{' '}
+        avec la marche ou le vélo, jusqu’à 2,2&thinsp;kg d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
@@ -145,12 +145,12 @@ export default function Learning(props) {
       <Title> Quel est l’impact carbone du secteur de l’électroménager ?</Title>
       <Text>
         L’impact carbone du secteur de l’électroménager comprenant la
-        fabrication, la distribution et l’usage, peut aller de 41kg d’émissions
-        de{' '}
+        fabrication, la distribution et l’usage, peut aller de 41&thinsp;kg
+        d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        avec une bouilloire, jusqu’à 513kg d’émissions de{' '}
+        avec une bouilloire, jusqu’à 513&thinsp;kg d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
@@ -166,12 +166,12 @@ export default function Learning(props) {
       </Title>
       <Text>
         Que ce soit pour une maison ou un appartement, l’impact carbone du
-        chauffage domestique par m2 et par année, peut aller de 3,7kg
+        chauffage domestique par m2 et par année, peut aller de 3,7&thinsp;kg
         d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
-        avec le chauffage électrique, jusqu’à 53kg d’émissions de{' '}
+        avec le chauffage électrique, jusqu’à 53&thinsp;kg d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
@@ -184,12 +184,13 @@ export default function Learning(props) {
     <>
       <Title> Quel est l’impact sur le climat des boissons ?</Title>
       <Text>
-        L’impact carbone des boissons peut aller de 0,0001kg d’émissions de{' '}
+        L’impact carbone des boissons peut aller de 0,0001&thinsp;kg d’émissions
+        de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
-        </ButtonLink>
+        </ButtonLink>{' '}
         avec l’eau du robinet, comprenant l'impact de toute la gestion du réseau
-        d'eau potable, jusqu’à 1,5kg d’émissions de{' '}
+        d'eau potable, jusqu’à 1,5&thinsp;kg d’émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
