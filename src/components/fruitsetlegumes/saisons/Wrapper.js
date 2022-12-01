@@ -62,7 +62,8 @@ export default function Wrapper(props) {
                 slug={`${props.slug}`}
               />
               <Title>
-                Les fruits et légumes de <MonthSelector month={props.month} />
+                Découvrez les fruits et légumes de{' '}
+                <MonthSelector month={props.month} />
               </Title>
             </Header>
             {props.children}
