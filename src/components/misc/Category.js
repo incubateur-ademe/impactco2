@@ -12,6 +12,8 @@ import Instruction from './category/Instruction'
 import List from './category/List'
 import CategoryLegend from './category/CategoryLegend'
 import Bottom from './category/Bottom'
+import Learning from './category/Learning'
+import Contact from 'components/misc/Contact'
 
 export default function CategoryList(props) {
   const { equivalents, categories } = useContext(DataContext)
@@ -105,6 +107,8 @@ export default function CategoryList(props) {
             </>
           )}
           <Bottom category={props.category} />
+          <Learning category={props.category} />
+          <Contact />
         </Wrapper>
       </Section.Content>
     </Section>

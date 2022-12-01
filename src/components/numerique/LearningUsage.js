@@ -13,25 +13,6 @@ import List from 'components/misc/category/List'
 const StyledSection = styled(Section)`
   margin-top: 5rem;
 `
-const Statistic = styled.h2`
-  margin-bottom: 1.375rem;
-  font-size: 5rem;
-  font-weight: bold;
-  line-height: 1;
-  text-align: left;
-
-  button {
-    text-decoration: none;
-  }
-
-  ${(props) => props.theme.mq.medium} {
-    font-size: 2rem;
-  }
-`
-const Number = styled.span`
-  font-size: 2.25em;
-  color: ${(props) => props.theme.colors.main};
-`
 const Strong = styled.p`
   font-size: 1.5rem;
   font-weight: bold;
