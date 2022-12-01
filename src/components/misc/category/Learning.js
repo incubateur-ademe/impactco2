@@ -24,10 +24,10 @@ export default function Learning(props) {
 
   const repas = (
     <>
-      <Title>Quel est l’impact climat d'un repas ?</Title>
+      <Title>Quel est l’impact climat d'un repas&nbsp;?</Title>
       <Strong>
         Le quart des émissions de gaz à effet de serre en France provient de nos
-        assiettes, c’est autant que le logement ou le transport !
+        assiettes, c’est autant que le logement ou le transport&nbsp;!
       </Strong>
       <Text>
         Un repas végétarien ou végétalien (0,5 et 0,4&thinsp;kg{' '}
@@ -60,7 +60,7 @@ export default function Learning(props) {
   const numerique = (
     <>
       <Title>
-        Quel est l’impact sur le climat du numérique dans votre quotidien ?
+        Quel est l’impact sur le climat du numérique dans votre quotidien&nbsp;?
       </Title>
       <Strong>
         L’empreinte carbone du secteur du numérique représente aujourd’hui 3 à
@@ -80,7 +80,7 @@ export default function Learning(props) {
 
   const mobilier = (
     <>
-      <Title>Quel est l'impact du mobilier sur le climat ?</Title>
+      <Title>Quel est l'impact du mobilier sur le climat&nbsp;?</Title>
       <Text>
         L'impact carbone d'un meuble comprenant la fabrication, la distribution
         et l’usage, peut aller de 19&thinsp;kg d’émissions de{' '}
@@ -98,7 +98,7 @@ export default function Learning(props) {
 
   const habillement = (
     <>
-      <Title>Quel est l’impact sur le climat d'un vêtement ?</Title>
+      <Title>Quel est l’impact sur le climat d'un vêtement&nbsp;?</Title>
       <Text>
         L’impact carbone d’ un habit comprenant la fabrication, la distribution
         et l’usage, peut aller de 6&thinsp;kg d’émissions de{' '}
@@ -116,7 +116,9 @@ export default function Learning(props) {
 
   const transport = (
     <>
-      <Title> Quel est l’impact sur le climat du secteur du transport ?</Title>
+      <Title>
+        Quel est l’impact sur le climat du secteur du transport&nbsp;?
+      </Title>
       <Strong>
         Avec 30% des émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
@@ -142,7 +144,9 @@ export default function Learning(props) {
 
   const electromenager = (
     <>
-      <Title> Quel est l’impact carbone du secteur de l’électroménager ?</Title>
+      <Title>
+        Quel est l’impact carbone du secteur de l’électroménager&nbsp;?
+      </Title>
       <Text>
         L’impact carbone du secteur de l’électroménager comprenant la
         fabrication, la distribution et l’usage, peut aller de 41&thinsp;kg
@@ -162,7 +166,7 @@ export default function Learning(props) {
   const chauffage = (
     <>
       <Title>
-        Quel est l’impact sur le climat du chauffage d'un logement ?
+        Quel est l’impact sur le climat du chauffage d'un logement&nbsp;?
       </Title>
       <Text>
         Que ce soit pour une maison ou un appartement, l’impact carbone du
@@ -182,7 +186,7 @@ export default function Learning(props) {
 
   const boisson = (
     <>
-      <Title> Quel est l’impact sur le climat des boissons ?</Title>
+      <Title>Quel est l’impact sur le climat des boissons&nbsp;?</Title>
       <Text>
         L’impact carbone des boissons peut aller de 0,0001&thinsp;kg d’émissions
         de{' '}
@@ -204,8 +208,8 @@ export default function Learning(props) {
   const usagenumerique = (
     <>
       <Title>
-        {' '}
-        Quel est l’impact sur le climat des usages numériques du quotidien ?
+        Quel est l’impact sur le climat des usages numériques du
+        quotidien&nbsp;?
       </Title>
       <Strong>
         L’empreinte carbone du secteur du numérique représente aujourd’hui 3 à
