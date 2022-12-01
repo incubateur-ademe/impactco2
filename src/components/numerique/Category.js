@@ -5,7 +5,7 @@ import Wrapper from 'components/misc/category/Wrapper'
 import Description from 'components/misc/category/Description'
 import Search from './category/Search'
 import Result from './category/Result'
-import Learning from './LearningUsage'
+import Learning from 'components/misc/category/Learning'
 
 export default function Category(props) {
   const [numberEmails, setNumberEmails] = useState(50)

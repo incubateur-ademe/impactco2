@@ -5,7 +5,7 @@ import categories from 'data/categories.json'
 import { TransportProvider } from 'components/transport/TransportProvider'
 import Web from 'components/layout/Web'
 import Itinerary from 'components/transport/Itinerary'
-import Learning from 'components/transport/Learning'
+import Learning from 'components/misc/category/Learning'
 
 export default function ItinerairePage(props) {
   return (
@@ -19,7 +19,7 @@ export default function ItinerairePage(props) {
     >
       <TransportProvider>
         <Itinerary category={props.category} />
-        <Learning />
+        <Learning category={props.category} />
       </TransportProvider>
     </Web>
   )
