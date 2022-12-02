@@ -5,8 +5,6 @@ import { useRouter } from 'next/router'
 import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Dropdown from './menu/Dropdown'
-import categories from 'data/categories.json'
-import { independantCategories } from '../../../../../pages/[category]'
 
 const Wrapper = styled.nav`
   display: flex;
@@ -20,35 +18,30 @@ export default function Menu() {
   const { categories } = useContext(DataContext)
 
   const router = useRouter()
-  const pathnames = independantCategories
-    .map((id) => {
-      return `/${categories.find((category) => category.id === id).slug}`
-    })
-    .concat(['/[category]'])
+  const slugs = router.asPath.split('/').filter((slug) => slug)
 
   return (
     <Wrapper>
       <Dropdown
         label={'Catégories'}
-        current={pathnames.includes(router.pathname)}
+        current={categories.find((category) => slugs.includes(category.slug))}
       >
-        {categories &&
-          categories
-            .filter((category) => category.display)
-            .map((category) => (
-              <Dropdown.Item
-                key={category.id}
-                to={`/${category.slug}`}
-                current={router.asPath.split('/')[1] === category.slug}
-              >
-                <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
-              </Dropdown.Item>
-            ))}
+        {categories
+          ?.filter((category) => category.display)
+          .map((category) => (
+            <Dropdown.Item
+              key={category.id}
+              to={`/${category.slug}`}
+              current={slugs.includes(category.slug)}
+            >
+              <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
+            </Dropdown.Item>
+          ))}
       </Dropdown>
       <Dropdown
         label={'Convertisseur'}
         to='/convertisseur'
-        current={router.pathname.includes('/convertisseur')}
+        current={slugs.includes('convertisseur')}
       />
     </Wrapper>
   )
