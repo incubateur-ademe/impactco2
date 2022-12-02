@@ -18,27 +18,30 @@ export default function Menu() {
   const { categories } = useContext(DataContext)
 
   const router = useRouter()
+  const slugs = router.asPath.split('/').filter((slug) => slug)
 
   return (
     <Wrapper>
-      <Dropdown label={'Catégories'} current={router.pathname.includes('')}>
-        {categories &&
-          categories
-            .filter((category) => category.display)
-            .map((category) => (
-              <Dropdown.Item
-                key={category.id}
-                to={`/${category.slug}`}
-                current={router.pathname.includes(category.slug)}
-              >
-                <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
-              </Dropdown.Item>
-            ))}
+      <Dropdown
+        label={'Catégories'}
+        current={categories.find((category) => slugs.includes(category.slug))}
+      >
+        {categories
+          ?.filter((category) => category.display)
+          .map((category) => (
+            <Dropdown.Item
+              key={category.id}
+              to={`/${category.slug}`}
+              current={slugs.includes(category.slug)}
+            >
+              <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
+            </Dropdown.Item>
+          ))}
       </Dropdown>
       <Dropdown
         label={'Convertisseur'}
         to='/convertisseur'
-        current={router.pathname.includes('/convertisseur')}
+        current={slugs.includes('convertisseur')}
       />
     </Wrapper>
   )
