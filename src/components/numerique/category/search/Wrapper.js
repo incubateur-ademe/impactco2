@@ -7,14 +7,12 @@ import HorizontalRadio from 'components/base/HorizontalRadio'
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
   padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
 
   ${(props) => props.theme.mq.medium} {
-    margin-bottom: 1rem;
     padding: 1rem;
   }
   ${(props) => props.theme.mq.iframemedium} {
