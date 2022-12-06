@@ -227,6 +227,30 @@ export default function Learning(props) {
     </>
   )
 
+  const fruitsetlegumes = (
+    <>
+      <Title>
+        Quel est l’impact sur le climat des fruits et légumes&nbsp;?
+      </Title>
+      <Strong>
+        Aujourd’hui 75% de Français déclarent consommer des tomates en hiver. Or
+        une tomate produite hors saison présente une empreinte carbone bien plus
+        élevée puisqu'elle génère 4 fois plus d’émissions de{' '}
+        <ButtonLink onClick={() => setCo2e(true)}>
+          CO<sub>2</sub>e
+        </ButtonLink>{' '}
+        que la même tomate produite durant la bonne saison.
+      </Strong>
+      <Text>
+        Afin de limiter ces émissions de gaz à effet de serre responsable du
+        changement climatique, il est donc important de consommer les fruits &
+        légumes du mois. Manger au moins 5 fruits et légumes par jour c’est bien
+        pour la santé, mais s’ils sont de saison c’est encore mieux pour la
+        planète et pour vos papilles !
+      </Text>
+    </>
+  )
+
   return (
     <StyledSection>
       <Section.Content>
@@ -241,6 +265,7 @@ export default function Learning(props) {
             chauffage,
             boisson,
             usagenumerique,
+            fruitsetlegumes,
           }[props.category.slug]
         }
       </Section.Content>
