@@ -24,7 +24,7 @@ export default function Learning(props) {
 
   const repas = (
     <>
-      <Title>Quel est l’impact climat d'un repas&nbsp;?</Title>
+      <Title>Quel est l’impact sur le climat d'un repas&nbsp;?</Title>
       <Strong>
         Le quart des émissions de gaz à effet de serre en France provient de nos
         assiettes, c’est autant que le logement ou le transport&nbsp;!
@@ -60,7 +60,7 @@ export default function Learning(props) {
   const numerique = (
     <>
       <Title>
-        Quel est l’impact sur le climat du numérique dans votre quotidien&nbsp;?
+        Quel est l’impact sur le climat des appareils numériques&nbsp;?
       </Title>
       <Strong>
         L’empreinte carbone du secteur du numérique représente aujourd’hui 3 à
@@ -80,7 +80,7 @@ export default function Learning(props) {
 
   const mobilier = (
     <>
-      <Title>Quel est l'impact du mobilier sur le climat&nbsp;?</Title>
+      <Title>Quel est l'impact sur le climat du mobilier&nbsp;?</Title>
       <Text>
         L'impact carbone d'un meuble comprenant la fabrication, la distribution
         et l’usage, peut aller de 19&thinsp;kg d’émissions de{' '}
@@ -116,9 +116,7 @@ export default function Learning(props) {
 
   const transport = (
     <>
-      <Title>
-        Quel est l’impact sur le climat du secteur du transport&nbsp;?
-      </Title>
+      <Title>Quel est l’impact sur le climat des déplacements&nbsp;?</Title>
       <Strong>
         Avec 30% des émissions de{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
@@ -145,7 +143,7 @@ export default function Learning(props) {
   const electromenager = (
     <>
       <Title>
-        Quel est l’impact carbone du secteur de l’électroménager&nbsp;?
+        Quel est l'impact sur le climat d'un appareil électroménager&nbsp;?
       </Title>
       <Text>
         L’impact carbone du secteur de l’électroménager comprenant la
@@ -200,7 +198,8 @@ export default function Learning(props) {
         </ButtonLink>{' '}
         avec le lait de vache. Pour les boissons embouteillées, les valeurs
         affichées comprennent l'impact de leur fabrication, de l'emballage, du
-        transport, de toute la chaîne distribution y compris les supermarchés.
+        transport, de toute la chaîne de distribution y compris les
+        supermarchés.
       </Text>
     </>
   )
