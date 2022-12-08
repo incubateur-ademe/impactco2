@@ -19,7 +19,7 @@ export default function Category(props) {
           name={props.category.title || props.category.name}
           slug={props.category.slug}
         >
-          <Description description={props.category.description} />
+          <Description description={props.category.description} large />
           <Search
             numberEmails={numberEmails}
             setNumberEmails={setNumberEmails}
