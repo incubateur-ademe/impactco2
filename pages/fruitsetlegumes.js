@@ -5,7 +5,7 @@ import categories from 'data/categories.json'
 import { slugs, getMonth } from 'utils/months'
 import Web from 'components/layout/Web'
 import Saisons from 'components/fruitsetlegumes/Saisons'
-import Learning from 'components/fruitsetlegumes/Learning'
+import Learning from 'components/misc/category/Learning'
 
 export default function Transport(props) {
   const date = new Date()
@@ -25,7 +25,7 @@ export default function Transport(props) {
       }}
     >
       <Saisons category={props.category} month={month} />
-      <Learning />
+      <Learning category={props.category} />
     </Web>
   )
 }

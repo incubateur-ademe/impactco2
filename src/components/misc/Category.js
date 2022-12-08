@@ -11,6 +11,8 @@ import Instruction from './category/Instruction'
 import List from './category/List'
 import CategoryLegend from './category/CategoryLegend'
 import Bottom from './category/Bottom'
+import Learning from './category/Learning'
+import Contact from 'components/misc/Contact'
 import Description from './category/Description'
 
 export default function CategoryList(props) {
@@ -105,6 +107,8 @@ export default function CategoryList(props) {
             </>
           )}
           <Bottom category={props.category} />
+          <Learning category={props.category} />
+          <Contact />
         </Wrapper>
       </Section.Content>
     </Section>
