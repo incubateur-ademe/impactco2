@@ -28,6 +28,8 @@ import Manteau from './Manteau'
 import Chauffage from './Chauffage'
 
 import StockageEmails from 'components/numerique/equivalent/StockageEmails'
+import Liseuse from './Liseuse'
+import LiseuseBookComparator from 'components/numerique/equivalent/LiseuseBookComparator'
 
 const visualizations = {
   smartphone: [
@@ -72,6 +74,10 @@ const visualizations = {
   email: [<StockageEmails key='StockageEmails' />],
   emailpiecejointe: [<StockageEmails key='StockageEmails' />],
   stockageemail: [<StockageEmails key='StockageEmails' />],
+  liseuse: [
+    <LiseuseBookComparator key='simulator' />,
+    <Liseuse key='liseuse' />,
+  ],
 }
 
 export const home = [
