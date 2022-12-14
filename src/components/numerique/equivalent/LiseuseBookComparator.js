@@ -83,7 +83,7 @@ export default function LiseuseBookComparator() {
     <>
       <Title>Devriez-vous acheter une liseuse ?</Title>
       <Text>Je lis en moyenne</Text>
-      <RangeWrapper>
+      <RangeWrapper onMouseDown={(e) => e.stopPropagation()}>
         <Range
           step={1}
           min={0}
