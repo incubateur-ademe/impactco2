@@ -112,6 +112,9 @@ export default function LiseuseBookComparator() {
 
   return (
     <Wrapper>
+      <Title>
+        Livres papier ou liseuse ? Comparez leur impact sur le climat
+      </Title>
       <Question>
         <Text>Je lis en moyenne</Text>
         <RangeWrapper
@@ -146,7 +149,12 @@ export default function LiseuseBookComparator() {
               {Math.ceil(
                 formatTotal(liseuse) / (formatTotal(livre) * numBookPerYear)
               )}{' '}
-              ans
+              an
+              {Math.ceil(
+                formatTotal(liseuse) / (formatTotal(livre) * numBookPerYear)
+              ) > 1
+                ? 's'
+                : ''}
               <br />
             </strong>{' '}
             avant qu'elle émette moins de{' '}

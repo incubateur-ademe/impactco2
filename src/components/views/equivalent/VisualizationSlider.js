@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
-import { useQueryParam, NumberParam, withDefault } from 'use-query-params'
 
-import visualizations from 'components/visualizations/list'
+import visualizations, { noAutoplay } from 'components/visualizations/list'
 import Section from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import Tiles from 'components/misc/Tiles'
@@ -48,7 +47,7 @@ export default function Visualization(props) {
           speed={500}
           slidesToShow={1}
           slidesToScroll={1}
-          autoplay={true}
+          autoplay={!noAutoplay.includes(props.equivalent.slug)}
           autoplaySpeed={5000}
           responsive={[
             {

@@ -114,4 +114,6 @@ export const test = {
   'numérique . TV . présent': <SmartphoneCategory />,
 }
 
+export const noAutoplay = ['liseuse']
+
 export default visualizations
