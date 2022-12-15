@@ -11,7 +11,7 @@ import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
   height: 100%;
-  margin: 2rem 0;
+  margin: 0 0 2rem;
 `
 const Question = styled.div`
   margin-bottom: 2.5rem;
@@ -113,7 +113,8 @@ export default function LiseuseBookComparator() {
   return (
     <Wrapper>
       <Title>
-        Livres papier ou liseuse ? Comparez leur impact sur le climat
+        Livres papier ou liseuse ?<br />
+        Comparez leur impact sur le climat !
       </Title>
       <Question>
         <Text>Je lis en moyenne</Text>
