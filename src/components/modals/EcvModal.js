@@ -11,7 +11,7 @@ import Transport from './ecvModal/Transport'
 const Title = styled.h2``
 export default function EcvModal() {
   const { ecv: open, setEcv: setOpen } = useContext(ModalContext)
-  console.log('ecv', open)
+
   return (
     <Modal open={open} setOpen={setOpen}>
       <Title>Étapes du cycle de vie</Title>
