@@ -30,6 +30,9 @@ export default function Ecv(props) {
   const [ecvToDisplay, setEcvToDisplay] = useState([])
 
   const [usage, setUsage] = useState(props.equivalent?.usage?.defaultyears || 0)
+  useEffect(() => {
+    setUsage(props.equivalent?.usage?.defaultyears || 0)
+  }, [props.equivalent])
 
   useEffect(() => {
     if (props.equivalent?.ecv && ecv.length) {
@@ -43,7 +46,7 @@ export default function Ecv(props) {
           label: item.name,
           onClick: () => setEcv(item.id),
         }))
-      if (usage) {
+      if (usage && props.equivalent?.usage) {
         tempEcvToDisplay.push({
           value: props.equivalent.usage.peryear * usage,
           ...ecv.find((step) => step.id === 8),
