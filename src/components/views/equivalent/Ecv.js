@@ -48,7 +48,7 @@ export default function Ecv(props) {
           value: props.equivalent.usage.peryear * usage,
           ...ecv.find((step) => step.id === 8),
           label: ecv.find((step) => step.id === 8).name,
-          onClick: () => setEcv(true),
+          onClick: () => setEcv(4),
         })
       }
       setEcvToDisplay(tempEcvToDisplay.sort((a, b) => (a.id > b.id ? 1 : -1)))
