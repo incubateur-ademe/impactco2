@@ -175,7 +175,7 @@ export default function StockageEmails() {
           <MagicLink to='/usagenumerique/stockagedonnee'>
             facteur d'émission
           </MagicLink>{' '}
-          (529,80 g CO<sub>2</sub>e / Go / année).
+          (0,24 g CO<sub>2</sub>e / Go / année).
         </More>
       )}
     </>

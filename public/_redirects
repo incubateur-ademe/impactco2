@@ -14,6 +14,7 @@ http://co2e.fr/*                            https://impactco2.fr/:splat  301!
 https://co2e.fr/*                           https://impactco2.fr/:splat  301!
 http://quelimpactco2.fr/*                   https://impactco2.fr/:splat  301!
 https://quelimpactco2.fr/*                  https://impactco2.fr/:splat  301!
+https://impactco2.ademe.fr/*                https://impactco2.fr/:splat  301!
 
 https://monconvertisseurco2.fr/*            https://impactco2.fr/:splat  301!
 https://www.monconvertisseurco2.fr/*        https://impactco2.fr/:splat  301!
