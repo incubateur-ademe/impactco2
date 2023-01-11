@@ -21,6 +21,7 @@ export default function Emoji(props) {
           .parse(props.children, {
             folder: 'svg',
             ext: '.svg',
+            base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
           })
           .replace(props.children, props.alt || ''),
       }}
