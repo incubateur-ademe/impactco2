@@ -55,6 +55,7 @@ export default function Teletravail(props) {
         Math.round(
           (formatTotal(currentTransportation) *
             (distance - distance * extraKm) *
+            2 *
             teletravail *
             (52 - holidays - 1)) /
             1000
@@ -65,6 +66,7 @@ export default function Teletravail(props) {
           (formatTotal(currentTransportation) *
             distance *
             presentiel *
+            2 *
             (52 - holidays - 1)) /
             1000
         )
