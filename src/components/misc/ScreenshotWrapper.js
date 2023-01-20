@@ -42,6 +42,7 @@ export default function ScreenshotWrapper(props) {
         takeScreenshot={takeScreenshot}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+        slug={props.equivalent?.slug}
       />
 
       {isScreenshotting && <Signature />}

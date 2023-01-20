@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
 import { useQueryParam, StringParam, withDefault } from 'use-query-params'
 
+import DataContext from 'components/providers/DataProvider'
 import Web from 'components/layout/Web'
 import Section from 'components/base/Section'
 import Configurator from 'components/views/integration/Configurator'
@@ -23,25 +24,65 @@ const StyledSectionContent = styled(Section.Content)`
   }
 `
 export default function Integration() {
+  const { equivalents, categories } = useContext(DataContext)
+
   const [theme, setTheme] = useState('default')
 
-  const [type, setType] = useQueryParam(
+  // We keep "type" in url (and not 'slug") because of possible legacy links
+  const [slug, setSlug] = useQueryParam(
     'type',
     withDefault(StringParam, 'tuiles')
   )
+  const type = useMemo(() => {
+    const equivalent = equivalents.find(
+      (equivalentItem) => equivalentItem.slug === slug
+    )
+    const category = categories.find(
+      (categoryItem) => categoryItem.slug === slug
+    )
+    if (equivalent) {
+      return 'equivalent'
+    }
+    if (category) {
+      return 'category'
+    }
+    return 'tuiles'
+  }, [slug])
+
+  const path = useMemo(() => {
+    if (type === 'tuiles') {
+      return 'tuiles'
+    }
+    if (type === 'category') {
+      return slug
+    }
+    if (type === 'equivalent') {
+      const equivalentSelected = equivalents.find(
+        (equivalentItem) => equivalentItem.slug === slug
+      )
+      const categoryOfEquivalent = categories.find(
+        (categoryItem) => categoryItem.id === equivalentSelected.category
+      )
+      return `${categoryOfEquivalent?.slug}/${slug}`
+    }
+  }, [categories, equivalents, type, slug])
 
   return (
     <Web>
       <Section>
         <StyledSectionContent flex>
           <Configurator
+            equivalents={equivalents}
+            categories={categories}
             theme={theme}
             setTheme={setTheme}
             type={type}
-            setType={setType}
+            slug={slug}
+            setSlug={setSlug}
+            path={path}
           />
           <StyledIframeResizer
-            src={`/iframes/${type}?theme=${theme}`}
+            src={`/iframes/${path}?theme=${theme}`}
             allowfullscreen='true'
             webkitallowfullscreen='true'
             mozallowfullscreen='true'
