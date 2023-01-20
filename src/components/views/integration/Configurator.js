@@ -83,7 +83,7 @@ export default function Configurator(props) {
         <option value='default'>Clair</option>
         <option value='night'>Sombre</option>
       </Select>
-      <Code type={props.type} theme={props.theme} />
+      <Code type={props.path} theme={props.theme} />
     </Wrapper>
   )
 }

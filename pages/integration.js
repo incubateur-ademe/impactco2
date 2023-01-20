@@ -50,7 +50,6 @@ export default function Integration() {
   }, [slug])
 
   const path = useMemo(() => {
-    console.log(type)
     if (type === 'tuiles') {
       return 'tuiles'
     }
@@ -62,7 +61,7 @@ export default function Integration() {
         (equivalentItem) => equivalentItem.slug === slug
       )
       const categoryOfEquivalent = categories.find(
-        (categoryItem) => categoryItem.id === equivalentSelected.id
+        (categoryItem) => categoryItem.id === equivalentSelected.category
       )
       return `${categoryOfEquivalent?.slug}/${slug}`
     }
@@ -80,6 +79,7 @@ export default function Integration() {
             type={type}
             slug={slug}
             setSlug={setSlug}
+            path={path}
           />
           <StyledIframeResizer
             src={`/iframes/${path}?theme=${theme}`}
