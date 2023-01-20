@@ -51,7 +51,9 @@ export default function Configurator(props) {
           name='type'
         >
           {props.categories.map((category) => (
-            <option value={category.slug}>{category.name}</option>
+            <option key={category.slug} value={category.slug}>
+              {category.name}
+            </option>
           ))}
         </Select>
       )}
@@ -64,7 +66,7 @@ export default function Configurator(props) {
           {props.equivalents
             .sort((a, b) => (a.slug > b.slug ? 1 : -1))
             .map((equivalent) => (
-              <option value={equivalent.slug}>
+              <option key={equivalent.slug} value={equivalent.slug}>
                 {formatName(equivalent.name, 1, true).replace(
                   '(ou trottinette)',
                   ''
