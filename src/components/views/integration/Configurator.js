@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import { formatName } from 'utils/formatters'
 import Select from 'components/base/Select'
 import Code from './configurator/Code'
 
@@ -28,23 +29,50 @@ export default function Configurator(props) {
         votre iframe
       </Title>
       <Select
-        onChange={(e) => props.setType(e.value)}
-        value={props.type}
+        onChange={(e) => props.setSlug(e.value)}
+        value={
+          props.type === 'category'
+            ? 'numerique'
+            : props.type === 'equivalent'
+            ? 'abricot'
+            : 'tuiles'
+        }
         label={`1) Choisissez le type d'iframe que vous souhaitez intégrer.`}
         name='type'
       >
         <option value='tuiles'>Tuiles</option>
-        <option disabled>-----------</option>
-        <option value='numerique'>Numérique</option>
-        <option value='repas'>Repas</option>
-        <option value='boisson'>Boisson</option>
-        <option value='transport'>Transport</option>
-        <option value='habillement'>Habillement</option>
-        <option value='electromenager'>Électroménager</option>
-        <option value='mobilier'>Mobilier</option>
-        <option value='chauffage'>Chauffage</option>
-        <option value='fruitsetlegumes'>Fruits et légumes</option>
+        <option value='numerique'>Categorie</option>
+        <option value='abricot'>Equivalent</option>
       </Select>
+      {props.type === 'category' && (
+        <Select
+          onChange={(e) => props.setSlug(e.value)}
+          value={props.slug}
+          name='type'
+        >
+          {props.categories.map((category) => (
+            <option value={category.slug}>{category.name}</option>
+          ))}
+        </Select>
+      )}
+      {props.type === 'equivalent' && (
+        <Select
+          onChange={(e) => props.setSlug(e.value)}
+          value={props.slug}
+          name='type'
+        >
+          {props.equivalents
+            .sort((a, b) => (a.slug > b.slug ? 1 : -1))
+            .map((equivalent) => (
+              <option value={equivalent.slug}>
+                {formatName(equivalent.name, 1, true).replace(
+                  '(ou trottinette)',
+                  ''
+                )}
+              </option>
+            ))}
+        </Select>
+      )}
       <Select
         onChange={({ value }) => props.setTheme(value)}
         label={`2) Choisissez la palette de couleurs de votre iframe.`}
