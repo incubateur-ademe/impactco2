@@ -154,7 +154,29 @@
     "slug": "fourelectrique",
     "emoji": "🎛",
     "category": 6,
-    "total": 217,
+    "ecv": [
+      {
+        "value": 110.7134,
+        "id": 1
+      },
+      {
+        "value": 4.7439,
+        "id": 2
+      },
+      {
+        "value": 3.4356,
+        "id": 3
+      },
+      {
+        "value": 18.5069,
+        "id": 4
+      }
+    ],
+    "usage": {
+      "peryear": 6.29728333,
+      "defaultyears": 12
+    },
+    "end": -30.0927,
     "default": true,
     "tile": false,
     "meta": {
