@@ -4,7 +4,8 @@ exports.handler = function (event) {
   console.log(event)
   if (
     event.headers.referrer.includes('impactco2.fr') ||
-    event.headers.referrer.includes('monimpacttransport.fr')
+    event.headers.referrer.includes('monimpacttransport.fr') ||
+    true
   ) {
     return axios
       .get(
