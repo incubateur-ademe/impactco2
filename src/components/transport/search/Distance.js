@@ -84,13 +84,10 @@ const Edit = styled.div`
 `
 export default function Distance() {
   const { km, setKm } = useContext(TransportContext)
+
   const convertSliderPositionToDistance = (pos) => {
     // Please don't ask
-    return (
-      Math.round(
-        (Math.log((pos > 10000 ? 10000 : pos) * 10) / Math.log(10) - 1) * 1000
-      ) / 1000
-    )
+    return Math.round((Math.log(pos * 10) / Math.log(10) - 1) * 1000) / 1000
   }
 
   const [position, setPosition] = useState(convertSliderPositionToDistance(km))
@@ -111,7 +108,7 @@ export default function Distance() {
             if (km !== '') {
               // Forces the user to enter a number and avoid the convertion of '' to -inf by JS.
               setPosition(convertSliderPositionToDistance(km))
-              requestAnimationFrame(() => setKm(km > 10000 ? 10000 : km))
+              // requestAnimationFrame(() => setKm(km > 10000 ? 10000 : km))
               setOpenTextInput(false)
             }
           }}
@@ -143,7 +140,7 @@ export default function Distance() {
             step={0.001}
             min={0}
             max={4}
-            values={[position]}
+            values={[position > 4 ? 4 : position]}
             onChange={(values) => {
               setPosition(values[0])
             }}
