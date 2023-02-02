@@ -1,6 +1,7 @@
 const axios = require('axios')
 
 exports.handler = function (event) {
+  console.log(event.headers.referrer)
   if (
     event.headers.referrer.includes('impactco2.fr') ||
     event.headers.referrer.includes('monimpacttransport.fr')
