@@ -2,11 +2,7 @@ const axios = require('axios')
 
 exports.handler = function (event) {
   console.log(event)
-  if (
-    event.headers.referrer.includes('impactco2.fr') ||
-    event.headers.referrer.includes('monimpacttransport.fr') ||
-    true
-  ) {
+  if (true) {
     return axios
       .get(
         `https://maps.googleapis.com/maps/api/distancematrix/json?${event.rawQuery}&key=${process.env.GMAP_API_KEY}`
