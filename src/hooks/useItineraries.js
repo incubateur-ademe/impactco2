@@ -3,7 +3,6 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 export function useItinerary(start, end, mode) {
-  console.log(start, end)
   return useQuery(
     ['car', start, end, mode],
     () =>
