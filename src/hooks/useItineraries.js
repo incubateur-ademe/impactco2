@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 export function useItinerary(start, end, mode) {
+  console.log(start, end)
   return useQuery(
     ['car', start, end, mode],
     () =>
@@ -12,7 +13,7 @@ export function useItinerary(start, end, mode) {
         )
         .then((res) => res.data.rows),
     {
-      enabled: start && end && mode ? true : false,
+      enabled: start.latitude && end.latitude && mode ? true : false,
       keepPreviousData: false,
       refetchOnWindowFocus: false,
       staleTime: Infinity,
