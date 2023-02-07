@@ -12,7 +12,7 @@ export function useItinerary(start, end, mode) {
         )
         .then((res) => res.data.rows),
     {
-      enabled: start && end && mode ? true : false,
+      enabled: start.latitude && end.latitude && mode ? true : false,
       keepPreviousData: false,
       refetchOnWindowFocus: false,
       staleTime: Infinity,
