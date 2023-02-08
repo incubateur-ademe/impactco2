@@ -4,12 +4,14 @@
     "plugin:react/recommended",
     "next",
     "prettier",
+    "plugin:prettier/recommended",
     "next/core-web-vitals"
   ],
   "rules": {
     "react/no-unescaped-entities": "off",
     "no-irregular-whitespace": "off",
-    "better-styled-components/sort-declarations-alphabetically": 2
+    "better-styled-components/sort-declarations-alphabetically": 2,
+    "prettier/prettier": ["error", { "singleQuote": true, "semi": false }]
   },
   "plugins": ["better-styled-components", "styled-components-a11y"],
   "env": {

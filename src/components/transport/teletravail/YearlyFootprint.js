@@ -56,7 +56,7 @@ const Small = styled.span`
   font-weight: 300;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity ${(props) => (props.visible ? 300 : 0)}ms
-    ${(props) => (props.visible ? 200 : 0)}ms; ;
+    ${(props) => (props.visible ? 200 : 0)}ms;
 `
 const Number = styled.span`
   font-size: 2em;
