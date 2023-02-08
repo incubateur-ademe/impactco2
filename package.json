@@ -60,6 +60,14 @@
     "webpack-cli": "^5.0.1"
   },
   "lint-staged": {
-    "**/*": "yarn lint --fix && prettier --write --ignore-unknown"
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{html,css,less,ejs}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
