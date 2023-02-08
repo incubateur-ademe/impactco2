@@ -16,21 +16,21 @@ Application web sous Next.js permettant de comparer la consommation en CO2e de d
 
 ## Déploiement
 
-Le site est hébergé sur [Netlify](<[https://www.netlify.com/](https://www.netlify.com/)>) via des serveurs en Europe. Aucune donnée ne transite en dehors de l’UE.
+Le site est hébergé sur [Netlify](https://www.netlify.com/](https://www.netlify.com/) via des serveurs en Europe. Aucune donnée ne transite en dehors de l’UE.
 
 ## Développement
 
-L’organisation du développement suit le workflow [Gitflow](<[https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow)>) :
+L’organisation du développement suit le workflow [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) :
 
-- La branche de production est `master`. Seul les releases et hotfix peuvent être mergées directement dans master. [Elle est visible ici](<[https://impactco2.fr/](https://impactco2.fr/)>)
-- La branche de développement est `develop`. C’est sur cette branche qu’est visible le travail en cours. [Elle est visible ici](<[https://develop--impactco2.netlify.app/](https://develop--impactco2.netlify.app/)>)
-- On crée une issue et une branche pour chaque nouvelle fonctionnalité (nom de la branche : numéro de l’issue associée). Cette branche utilise la branche `develop` comme parent. Elle donne lieu à une PR vers la branche `develop` (nom de la PR : `[nom_de_lissue] (issue [numero_de_lissue])`). [Les commits sont conventionnés](<[https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)>)
-- À la fin de chaque cycle de développement, on crée une branche `release` à partir de `develop`. Cette branche est ensuite mergée dans `master` et tagguée avec [un numéro de release](<[https://semver.org/](https://semver.org/)>).
+- La branche de production est `master`. Seul les releases et hotfix peuvent être mergées directement dans master. [Elle est visible ici](https://impactco2.fr/](https://impactco2.fr/)
+- La branche de développement est `develop`. C’est sur cette branche qu’est visible le travail en cours. [Elle est visible ici](https://develop--impactco2.netlify.app/](https://develop--impactco2.netlify.app/)
+- On crée une issue et une branche pour chaque nouvelle fonctionnalité (nom de la branche : numéro de l’issue associée). Cette branche utilise la branche `develop` comme parent. Elle donne lieu à une PR vers la branche `develop` (nom de la PR : `[nom_de_lissue] (issue [numero_de_lissue])`). [Les commits sont conventionnés](https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)
+- À la fin de chaque cycle de développement, on crée une branche `release` à partir de `develop`. Cette branche est ensuite mergée dans `master` et tagguée avec [un numéro de release](https://semver.org/](https://semver.org/).
 - Les hotfix sont créé sur des branches dédiées (issues de `master`), associées ou non à une issue. Elles peuvent être mergées directement dans `master`.
 
 ## Architecture
 
-Le projet utilise React avec (entre autre) [Nextjs](<[https://nextjs.org/](https://nextjs.org/)>), [React Query](<[https://react-query-v3.tanstack.com/](https://react-query-v3.tanstack.com/)>) et [Styled Components](<[https://styled-components.com/](https://styled-components.com/)>). Le state est simplement géré par [Context](<[https://reactjs.org/docs/context.html](https://reactjs.org/docs/context.html)>).
+Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/](https://nextjs.org/), [React Query](https://react-query-v3.tanstack.com/](https://react-query-v3.tanstack.com/) et [Styled Components](https://styled-components.com/](https://styled-components.com/). Le state est simplement géré par [Context](https://reactjs.org/docs/context.html](https://reactjs.org/docs/context.html).
 
 Le repo est architecturé avec les dossiers suivants :
 
