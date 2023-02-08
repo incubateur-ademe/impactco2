@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import AnimatedNumber from 'animated-number-react'
 
 import useOnScreen from 'hooks/useOnScreen'
-
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
