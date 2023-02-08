@@ -9,15 +9,15 @@ import Section from 'components/base/Section'
 import Configurator from 'components/views/integration/Configurator'
 
 const StyledIframeResizer = styled(IframeResizer)`
-  flex: 1;
-  width: 100%;
   border: 0.125rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+  flex: 1;
+  width: 100%;
 `
 const StyledSectionContent = styled(Section.Content)`
   align-items: flex-start;
-  width: 75rem;
   max-width: 100vw;
+  width: 75rem;
 
   ${(props) => props.theme.mq.medium} {
     display: block;

@@ -8,14 +8,14 @@ import MagicLink from 'components/base/MagicLink'
 import Chart from './item/Chart'
 
 const Wrapper = styled(MagicLink)`
-  position: relative;
-  width: calc(33.3333% - 1rem);
-  padding: 1rem;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
-  text-decoration: none;
   color: ${(props) => props.theme.colors.text};
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
   transition: background-color 200ms ease-out;
+  width: calc(33.3333% - 1rem);
 
   ${(props) => props.theme.mq.small} {
     width: calc(50% - 0.375rem);
@@ -26,18 +26,18 @@ const Wrapper = styled(MagicLink)`
   }
 `
 const Header = styled.div`
+  color: ${(props) => props.theme.colors.main};
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.75rem;
-  color: ${(props) => props.theme.colors.main};
 `
 const Title = styled.div`
   font-weight: bold;
 `
 const Value = styled.div`
-  margin-bottom: 1rem;
   font-size: 2rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 `
 const Unit = styled.span`
   font-size: 0.5em;

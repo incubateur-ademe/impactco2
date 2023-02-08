@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  margin: 0 1rem 1rem;
-  padding: 1rem 1.5rem;
   background-color: ${(props) => props.theme.colors.textLight};
   border-radius: 1rem;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1.5rem;
 
   ${(props) => props.theme.mq.small} {
     margin: 0 0.75rem 1rem;
@@ -15,20 +15,20 @@ const Title = styled.div`
   text-align: center;
 `
 const Content = styled.div`
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `
 const Button = styled.button`
-  padding: 0;
-  border: none;
   background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
 
   svg {
     display: block;
-    width: 1.5rem;
     height: auto;
+    width: 1.5rem;
 
     path {
       fill: ${(props) => props.theme.colors.main};
@@ -40,9 +40,9 @@ const Value = styled.div`
   font-weight: bold;
 `
 const Text = styled.p`
-  margin: 0;
   font-size: 0.875rem;
   font-weight: 300;
+  margin: 0;
   text-align: center;
 `
 export default function Selector(props) {

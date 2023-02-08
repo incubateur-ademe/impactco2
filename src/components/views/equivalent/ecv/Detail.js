@@ -7,23 +7,23 @@ import ButtonLink from 'components/base/ButtonLink'
 
 const Toggle = styled(ButtonLink)`
   align-self: center;
-  margin-bottom: 1rem;
   font-size: 0.875rem;
   font-weight: 300;
+  margin-bottom: 1rem;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2rem;
   }
 `
 const Wrapper = styled.table`
-  margin-bottom: 2.5rem;
-  padding: 0.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 0.5rem;
 
   ${(props) => props.theme.mq.small} {
-    padding: 0.25rem;
     font-size: 0.75rem;
+    padding: 0.25rem;
   }
 `
 const Item = styled.tr`

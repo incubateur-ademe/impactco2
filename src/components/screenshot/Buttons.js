@@ -69,20 +69,20 @@ const Wrapper = styled.div`
   }
 `
 const Button = styled(MagicLink)`
-  position: relative;
-  z-index: 12;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 2rem;
-  height: 2rem;
-  margin: 0;
-  padding: ${(props) => (props.large ? 0.1875 : 0.3125)}rem;
   background: transparent;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  margin: 0;
   overflow: hidden;
+  padding: ${(props) => (props.large ? 0.1875 : 0.3125)}rem;
+  position: relative;
+  width: 2rem;
+  z-index: 12;
 
   &:hover {
     .slide {
@@ -92,20 +92,20 @@ const Button = styled(MagicLink)`
       animation: ${jump} 600ms infinite;
     }
     .outline {
-      animation-name: ${share};
       animation-duration: 400ms;
+      animation-name: ${share};
     }
   }
 
   ${(props) => props.theme.mq.small} {
-    width: 1.75rem;
     height: 1.75rem;
+    width: 1.75rem;
   }
 `
 const Svg = styled.svg`
   display: block;
-  width: ${(props) => (props.large ? 150 : 100)}%;
   height: auto;
+  width: ${(props) => (props.large ? 150 : 100)}%;
 
   path {
     fill: ${(props) => props.theme.colors.main};

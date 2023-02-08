@@ -1,8 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
-const generateToken = () => (Math.random() + 1).toString(36).substring(2)
-
 export function useSuggestions(search, focus) {
   return useQuery(
     ['search', search],

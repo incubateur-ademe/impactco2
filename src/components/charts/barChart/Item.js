@@ -8,14 +8,14 @@ import Bar from './item/Bar'
 import useIframe from 'hooks/useIframe'
 
 const Wrapper = styled(MagicLink)`
-  position: relative;
-  display: flex;
   align-items: flex-end;
-  padding: 0.875rem 0.875rem 1rem;
-  text-decoration: none;
   background-color: ${(props) =>
     props.current ? props.theme.colors.second : 'transparent'};
   border-radius: 1rem;
+  display: flex;
+  padding: 0.875rem 0.875rem 1rem;
+  position: relative;
+  text-decoration: none;
   transition: background-color 200ms ease-out;
 
   &:hover {

@@ -4,17 +4,17 @@ import styled from 'styled-components'
 import ModalContext from 'components/providers/ModalProvider'
 
 const Wrapper = styled.button`
-  position: relative;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  width: calc(33.3333% - 1rem);
-  padding: 1rem;
-  color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};
   border: none;
   border-radius: 1rem;
+  color: ${(props) => props.theme.colors.background};
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: relative;
+  width: calc(33.3333% - 1rem);
 
   &:hover h4,
   &:focus h4 {
@@ -29,15 +29,15 @@ const Wrapper = styled.button`
   }
 `
 const Title = styled.div`
-  height: 5rem;
-  margin-bottom: 0.5rem;
   font-size: 5rem;
+  height: 5rem;
   line-height: 1;
+  margin-bottom: 0.5rem;
   transition: transform 300ms ease-out;
 `
 const Text = styled.p`
-  max-width: 8rem;
   font-size: 0.875rem;
+  max-width: 8rem;
   text-align: center;
 `
 export default function AddButton() {

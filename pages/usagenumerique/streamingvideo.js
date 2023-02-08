@@ -36,7 +36,7 @@ export default function StreamingVideoPage(props) {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   return {
     props: {
       equivalent: equivalents.find(

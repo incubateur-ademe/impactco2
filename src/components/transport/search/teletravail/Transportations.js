@@ -10,8 +10,8 @@ const Wrapper = styled.div`
 `
 const List = styled.div`
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 0 -0.375rem 0.125rem;
 `
 const Result = styled.div`

@@ -6,8 +6,8 @@ import Button from 'components/base/Button'
 import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
-  max-width: 40rem;
   margin: 0 auto 2rem;
+  max-width: 40rem;
 `
 const Text = styled.p`
   font-weight: 300;

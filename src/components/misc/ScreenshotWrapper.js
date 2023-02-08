@@ -7,13 +7,13 @@ import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
 
 const Wrapper = styled.div`
-  position: relative;
-  height: 100%;
   background-color: ${(props) => props.theme.colors.background};
+  height: 100%;
+  position: relative;
 `
 const StyledButtons = styled(Buttons)`
-  position: absolute;
   bottom: 1rem;
+  position: absolute;
   right: 1rem;
 
   ${(props) => props.theme.mq.small} {

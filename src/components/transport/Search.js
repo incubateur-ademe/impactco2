@@ -8,19 +8,19 @@ import Itinerary from './search/Itinerary'
 import Teletravail from './search/Teletravail'
 
 const Wrapper = styled.div`
-  position: relative;
-  margin-bottom: 0.5rem;
-  padding: 1.5rem 2rem;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 1.5rem 2rem;
+  position: relative;
 
   ${(props) => props.theme.mq.small} {
     padding: 1rem;
   }
 `
 const Text = styled.p`
-  max-width: 26rem;
   margin: 0 auto 1rem;
+  max-width: 26rem;
   text-align: center;
 
   ${(props) => props.theme.mq.small} {
@@ -28,11 +28,11 @@ const Text = styled.p`
   }
 `
 const Color = styled.button`
-  padding: 0;
-  color: ${(props) => props.theme.colors.main};
   background: transparent;
   border: none;
+  color: ${(props) => props.theme.colors.main};
   cursor: pointer;
+  padding: 0;
 
   &:hover {
     text-decoration: underline;

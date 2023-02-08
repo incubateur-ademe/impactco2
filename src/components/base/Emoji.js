@@ -9,8 +9,8 @@ const Wrapper = styled.span`
 
   img {
     display: inline-block;
-    width: auto;
     height: 1em;
+    width: auto;
   }
 `
 export default function Emoji(props) {

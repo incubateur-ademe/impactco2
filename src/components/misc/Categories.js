@@ -11,16 +11,16 @@ const Title = styled.h1`
   text-align: left;
 `
 const Text = styled.p`
-  max-width: 30rem;
-  margin: 0 ${(props) => (props.main ? 0 : 'auto')} 1.5rem;
   font-weight: ${(props) => (props.main ? 'normal' : 300)};
+  margin: 0 ${(props) => (props.main ? 0 : 'auto')} 1.5rem;
+  max-width: 30rem;
   text-align: ${(props) => (props.main ? 'left' : 'center')};
 `
 const List = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1.5rem;
+  justify-content: center;
 
   ${(props) => props.theme.mq.medium} {
     gap: 0.75rem;

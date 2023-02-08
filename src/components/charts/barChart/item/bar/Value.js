@@ -4,22 +4,22 @@ import styled from 'styled-components'
 import { formatNumber } from 'utils/formatters'
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: ${(props) => (props.inside ? 'auto' : '100%')};
-  right: ${(props) => (props.inside ? '1rem' : 'auto')};
-  color: ${(props) => props.theme.colors[props.inside ? 'background' : 'main']};
-  transform: translateY(-50%);
-  display: flex;
   align-items: baseline;
-  padding-left: ${(props) => (props.noBar ? 0 : 0.5)}rem;
+  color: ${(props) => props.theme.colors[props.inside ? 'background' : 'main']};
+  display: flex;
+  left: ${(props) => (props.inside ? 'auto' : '100%')};
   line-height: 0.7;
+  padding-left: ${(props) => (props.noBar ? 0 : 0.5)}rem;
+  position: absolute;
+  right: ${(props) => (props.inside ? '1rem' : 'auto')};
+  top: 50%;
+  transform: translateY(-50%);
   transition: color 200ms ease-out;
 `
 const Number = styled.span`
-  margin-right: 0.6rem;
   font-size: 1.25rem;
   font-weight: 700;
+  margin-right: 0.6rem;
 
   ${(props) => props.theme.mq.small} {
     font-size: 1rem;

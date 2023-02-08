@@ -8,27 +8,27 @@ import TextInput from './searchBar/TextInput'
 import Suggestions from './searchBar/Suggestions'
 
 const Wrapper = styled.form`
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
   background-color: ${(props) =>
     props.focus ? props.theme.colors.background : 'transparent'};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.625em;
   box-shadow: ${(props) =>
     props.focus ? '-0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05)' : 'none'};
+  left: 0;
   overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: box-shadow 300ms ease-out, background-color 300ms ease-out;
+  z-index: 100;
 
   ${(props) => props.theme.mq.small} {
-    left: ${(props) => (props.home ? 0 : 'auto')};
-    width: ${(props) =>
-      props.home ? 'auto' : props.focus ? 'calc(100vw - 1.5rem)' : '2.375rem'};
     border-radius: ${(props) =>
       props.home || props.focus ? ' 0.625em' : '4rem'};
+    left: ${(props) => (props.home ? 0 : 'auto')};
     transition: box-shadow 300ms ease-out, width 200ms ease-out;
+    width: ${(props) =>
+      props.home ? 'auto' : props.focus ? 'calc(100vw - 1.5rem)' : '2.375rem'};
   }
 `
 

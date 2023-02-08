@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import ModalContext from 'components/providers/ModalProvider'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
-import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
 
 const StyledSection = styled(Section)`
@@ -12,8 +10,8 @@ const StyledSection = styled(Section)`
 `
 const Strong = styled.p`
   font-size: 1.5rem;
-  font-weight: bold;
   font-style: italic;
+  font-weight: bold;
 
   ${(props) => props.theme.mq.medium}  {
     font-size: 1.125rem;
@@ -22,8 +20,6 @@ const Strong = styled.p`
 const Title = styled.h2``
 const Text = styled.p``
 export default function Learning() {
-  const { setCo2e } = useContext(ModalContext)
-
   return (
     <StyledSection>
       <Section.Content>

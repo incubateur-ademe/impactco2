@@ -21,12 +21,12 @@ export const StyledSection = styled(Section)`
 `
 export const Title = styled.h1``
 const Questions = styled.div`
+  align-items: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
   margin: 1rem 0;
 
   ${(props) => props.theme.mq.medium} {

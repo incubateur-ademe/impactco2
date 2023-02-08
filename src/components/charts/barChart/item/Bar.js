@@ -4,26 +4,26 @@ import styled from 'styled-components'
 import Value from './bar/Value'
 
 const Wrapper = styled.div`
-  position: relative;
-  width: ${(props) => props.percent * 100}%;
   height: 1.75rem;
+  position: relative;
   transform-origin: left;
+  width: ${(props) => props.percent * 100}%;
 `
 const Container = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
   background-color: ${(props) => props.color || props.theme.colors.main};
   border-radius: 1rem;
+  height: 100%;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 `
 const Usage = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: ${(props) => props.percent * 100}%;
   background-color: ${(props) => props.color || props.theme.colors.mainDark};
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: ${(props) => props.percent * 100}%;
 `
 export default function Bar(props) {
   return (

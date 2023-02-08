@@ -6,8 +6,8 @@ import Emoji from 'components/base/Emoji'
 
 export const Title = styled.h3`
   font-weight: normal;
-  text-align: center;
   margin-bottom: 2rem;
+  text-align: center;
 `
 export const Equivalents = styled.div`
   display: flex;
@@ -19,10 +19,10 @@ export const Equivalents = styled.div`
   }
 `
 export const Equivalent = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
   width: ${(props) => props.size[0]}rem;
 
   ${(props) => props.theme.mq.medium} {
@@ -33,17 +33,17 @@ export const Equivalent = styled.div`
   }
 `
 export const Emojis = styled(Emoji)`
-  flex: 1;
+  align-items: center;
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
+  font-size: ${(props) => (props.small ? 1 : props.xsmall ? 0.5 : 2)}rem;
   gap: ${(props) =>
     props.small ? '0.125rem 0.25rem' : props.xsmall ? 0 : '0.25rem 0.75rem'};
   justify-content: center;
-  align-items: center;
-  width: ${(props) => (props.margin ? props.margin : 100)}%;
   margin: 0 auto 0.75rem;
-  font-size: ${(props) => (props.small ? 1 : props.xsmall ? 0.5 : 2)}rem;
   text-align: center;
+  width: ${(props) => (props.margin ? props.margin : 100)}%;
 
   ${(props) => props.theme.mq.medium} {
     font-size: ${(props) =>
@@ -56,13 +56,13 @@ export const Emojis = styled(Emoji)`
   }
 `
 export const Label = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  text-align: center;
   font-size: 0.875rem;
   font-weight: 300;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 100%;
 
   strong {
     font-weight: normal;
@@ -73,12 +73,12 @@ export const Label = styled.div`
   }
 `
 export const Equals = styled.div`
-  display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  display: flex;
   font-size: 3.5rem;
   font-weight: bold;
   line-height: 1;
+  margin-bottom: 1rem;
 
   ${(props) => props.theme.mq.medium} {
     font-size: 2.5rem;
@@ -95,17 +95,17 @@ export const Small = styled.p`
   }
 `
 export const LinkWrapper = styled.div`
-  width: 100%;
   text-align: center;
+  width: 100%;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2rem;
   }
 `
 export const StyledMagicLink = styled(MagicLink)`
+  font-size: 0.875rem;
   position: relative;
   z-index: 12;
-  font-size: 0.875rem;
 `
 export function CenterLink(props) {
   return (

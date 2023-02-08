@@ -2,7 +2,6 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import Submit from './textInput/Submit'
-import Geoloc from './textInput/Geoloc'
 
 const loading = keyframes`
   from {
@@ -21,28 +20,28 @@ const Wrapper = styled.div`
   position: relative;
 
   &:before {
+    animation: ${(props) => (props.isFetching ? loading : 'none')} 1s infinite;
+    background-color: ${(props) => props.theme.colors.second};
     content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: ${(props) => props.theme.colors.second};
-    pointer-events: none;
-    opacity: 0;
-    animation: ${(props) => (props.isFetching ? loading : 'none')} 1s infinite;
   }
 `
 const Input = styled.input`
-  position: relative;
-  width: 100%;
-  padding: 0.5rem 0 0.5rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: ${(props) => props.theme.colors.text};
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.25;
-  color: ${(props) => props.theme.colors.text};
-  background: transparent;
-  border: none;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  width: 100%;
 
   &::placeholder {
     color: ${(props) => props.theme.colors.text};
@@ -67,13 +66,6 @@ export default React.forwardRef(function TextInput(props, ref) {
       <Submit
         visible={props.suggestion && props.suggestionVisible && props.search}
         setFocus={props.setFocus}
-      />
-      <Geoloc
-        visible={
-          props.focus &&
-          !(props.suggestion && props.suggestionVisible && props.search)
-        }
-        navigateToPlace={props.navigateToPlace}
       />
     </Wrapper>
   )

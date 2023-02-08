@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.button`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  padding-right: 0.5em;
   background: ${(props) => props.theme.colors.background};
   border: none;
+  bottom: 0;
   opacity: ${(props) => (props.visible ? 1 : 0)};
+  padding-right: 0.5em;
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: opacity ${(props) => (props.visible ? 600 : 0)}ms;
 
   &:focus {
@@ -19,8 +19,8 @@ const Wrapper = styled.button`
 
   svg {
     display: block;
-    width: 1.5em;
     height: auto;
+    width: 1.5em;
 
     path {
       fill: ${(props) => props.theme.colors.main};

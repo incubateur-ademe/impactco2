@@ -2,28 +2,28 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.span`
-  position: relative;
+  color: ${(props) => props.color || props.theme.colors.main};
   display: inline-block;
   line-height: 1.3;
-  color: ${(props) => props.color || props.theme.colors.main};
+  position: relative;
 `
 const Value = styled.span``
 const Input = styled.select`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: inherit;
-  font-weight: inherit;
-  color: transparent;
+  appearance: none;
   background-color: transparent;
   border: none;
   box-shadow: 0px 0.1em 0px 0px
     ${(props) => props.color || props.theme.colors.main};
-  transition: box-shadow 300ms ease-out;
-  appearance: none;
+  color: transparent;
   cursor: pointer;
+  font-size: inherit;
+  font-weight: inherit;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: box-shadow 300ms ease-out;
+  width: 100%;
 `
 export default function FancySelect(props) {
   return (

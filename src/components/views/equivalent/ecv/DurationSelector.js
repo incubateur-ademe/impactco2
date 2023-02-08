@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  display: flex;
   align-items: center;
-  margin: 0 auto;
+  display: flex;
   font-size: 0.875rem;
+  margin: 0 auto;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2rem;
@@ -15,28 +15,28 @@ const Label = styled.div`
   font-weight: 300;
 `
 const Selector = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  width: 1.5rem;
-  margin: 0 0.5rem;
-  padding: 0.375rem 0.375rem;
-  color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
+  color: ${(props) => props.theme.colors.background};
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+  justify-content: space-between;
+  margin: 0 0.5rem;
+  padding: 0.375rem 0.375rem;
+  width: 1.5rem;
 `
 const Button = styled.button`
-  padding: 0;
-  border: none;
   background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
 
   svg {
     display: block;
-    width: 0.625rem;
     height: auto;
+    width: 0.625rem;
 
     path {
       fill: ${(props) => props.theme.colors.background};

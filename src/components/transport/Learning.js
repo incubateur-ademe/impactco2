@@ -12,10 +12,10 @@ const StyledSection = styled(Section)`
   margin-top: 5rem;
 `
 const Statistic = styled.div`
-  margin-bottom: 1em;
   font-size: 4.3rem;
   font-weight: bold;
   line-height: 0.9;
+  margin-bottom: 1em;
   text-align: right;
 
   ${(props) => props.theme.mq.small} {
@@ -25,10 +25,10 @@ const Statistic = styled.div`
 `
 const FirstLine = styled.div``
 const Number = styled.span`
-  font-size: 14.5rem;
-  text-align: right;
   color: ${(props) => props.theme.colors.main};
+  font-size: 14.5rem;
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
+  text-align: right;
   transition: opacity 1000ms;
 
   ${(props) => props.theme.mq.small} {
@@ -42,8 +42,8 @@ const Color = styled.span`
 `
 const Strong = styled.p`
   font-size: 1.45rem;
-  font-weight: 700;
   font-style: italic;
+  font-weight: 700;
 
   ${(props) => props.theme.mq.small} {
     margin-left: 0;

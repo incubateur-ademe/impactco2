@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import Search from './address/Search'
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
   height: 2.5rem;
   margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
 `
 
 const displayAddress = (address) =>

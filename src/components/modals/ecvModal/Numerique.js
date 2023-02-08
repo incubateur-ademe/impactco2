@@ -1,7 +1,5 @@
 import React from 'react'
 
-import MagicLink from 'components/base/MagicLink'
-
 export default function Numerique() {
   return (
     <>

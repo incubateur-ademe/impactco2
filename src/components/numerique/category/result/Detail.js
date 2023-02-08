@@ -10,10 +10,10 @@ import Top from 'components/misc/category/Top'
 import Instruction from 'components/misc/category/Instruction'
 
 const Wrapper = styled.div`
-  padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+  padding: 1.5rem;
 `
 const Title = styled.h3`
   text-align: center;
@@ -22,9 +22,9 @@ const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
 `
 const Text = styled.p`
-  max-width: 29rem;
-  margin: 0 auto 0.5rem;
   font-size: 0.875rem;
+  margin: 0 auto 0.5rem;
+  max-width: 29rem;
   text-align: center;
 `
 export default function Detail(props) {

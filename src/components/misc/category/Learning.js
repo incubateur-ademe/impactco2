@@ -11,8 +11,8 @@ const StyledSection = styled(Section)`
 const Title = styled.h2``
 const Strong = styled.p`
   font-size: 1.5rem;
-  font-weight: bold;
   font-style: italic;
+  font-weight: bold;
 
   ${(props) => props.theme.mq.medium}  {
     font-size: 1.125rem;

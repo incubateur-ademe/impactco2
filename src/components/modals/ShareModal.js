@@ -19,8 +19,8 @@ const Wrapper = styled.div`
 
   svg {
     display: block;
-    width: 3.5rem;
     height: auto;
+    width: 3.5rem;
 
     path {
       fill: ${(props) => props.theme.colors.main};

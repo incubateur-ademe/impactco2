@@ -7,19 +7,19 @@ import TextInput from './search/TextInput'
 import Suggestions from './search/Suggestions'
 
 const Wrapper = styled.form`
-  position: absolute;
-  z-index: ${(props) => (props.focus ? 100 : 1)};
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 22rem;
   background-color: ${(props) => props.theme.colors.background};
   border: 0.125rem solid ${(props) => props.theme.colors.second};
   border-radius: 1.5rem;
-  transition: box-shadow 200ms ease-out;
-  transition: border 200ms ease-out, top 300ms ease-out;
+  left: 50%;
+  max-width: 22rem;
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  transition: border 200ms ease-out, top 300ms ease-out;
+  transition: box-shadow 200ms ease-out;
+  width: 100%;
+  z-index: ${(props) => (props.focus ? 100 : 1)};
 `
 
 export default function Search(props) {

@@ -2,16 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  position: relative;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  height: 1.75rem;
-  width: 1.75rem;
   background-color: ${(props) => props.theme.colors.background};
   border: 0.125rem solid ${(props) => props.theme.colors.text};
   border-radius: 0.5rem;
+  display: flex;
+  height: 1.75rem;
+  justify-content: center;
+  position: relative;
   transition: border 200ms ease-out, background-color 300ms ease-out;
+  width: 1.75rem;
 
   ${(props) => props.theme.mq.small} {
     height: 1.5rem;
@@ -19,8 +19,8 @@ const Wrapper = styled.div`
   }
 `
 const Check = styled.svg`
-  width: auto;
   height: 1.2rem;
+  width: auto;
 
   ${(props) => props.theme.mq.small} {
     height: 1rem;
@@ -29,9 +29,9 @@ const Check = styled.svg`
   path {
     fill: none;
     stroke: ${(props) => props.theme.colors.main};
-    stroke-width: 600;
     stroke-dasharray: 4322.794921875;
     stroke-dashoffset: ${(props) => (props.checked ? 0 : 4322.794921875)};
+    stroke-width: 600;
     transition: stroke-dashoffset ${(props) => (props.checked ? '200ms' : '0')}
       ease-out;
   }

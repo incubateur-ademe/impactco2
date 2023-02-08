@@ -9,26 +9,26 @@ const Wrapper = styled.div`
   }
 
   input {
-    position: absolute;
-    height: 0;
-    width: 0;
-    opacity: 0;
     cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
   }
 `
 const Label = styled.label`
-  position: relative;
-  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0.75rem;
-  font-size: 1rem;
-  color: ${(props) =>
-    props.theme.colors[props.checked ? 'background' : 'main']};
-  line-height: 1.2;
   background-color: ${(props) =>
     props.checked ? props.theme.colors.main : 'transparent'};
+  color: ${(props) =>
+    props.theme.colors[props.checked ? 'background' : 'main']};
   cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  gap: 0.75rem;
+  line-height: 1.2;
+  padding: 0.5rem 0.75rem;
+  position: relative;
   transition: all 300ms ease-out;
 
   ${(props) => props.theme.mq.small} {
