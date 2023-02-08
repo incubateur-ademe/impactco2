@@ -24,9 +24,20 @@ L’organisation du développement suit le workflow [Gitflow](https://www.atlass
 
 - La branche de production est `master`. Seul les releases et hotfix peuvent être mergées directement dans master. [Elle est visible ici](https://impactco2.fr/)
 - La branche de développement est `develop`. C’est sur cette branche qu’est visible le travail en cours. [Elle est visible ici](https://develop--impactco2.netlify.app/)
-- On crée une issue et une branche pour chaque nouvelle fonctionnalité (nom de la branche : numéro de l’issue associée). Cette branche utilise la branche `develop` comme parent. Elle donne lieu à une PR vers la branche `develop` (nom de la PR : `[nom_de_lissue] (issue [numero_de_lissue])`). [Les commits sont conventionnés](https://www.conventionalcommits.org/en/v1.0.0/)
+- On crée une issue et une branche pour chaque nouvelle fonctionnalité (nom de la branche : numéro de l’issue associée). Cette branche utilise la branche `develop` comme parent. Elle donne lieu à une PR vers la branche `develop` (nom de la PR : `[nom_de_lissue] (issue [numero_de_lissue])`).
 - À la fin de chaque cycle de développement, on crée une branche `release` à partir de `develop`. Cette branche est ensuite mergée dans `master` et tagguée avec [un numéro de release](https://semver.org/).
 - Les hotfix sont créé sur des branches dédiées (issues de `master`), associées ou non à une issue. Elles peuvent être mergées directement dans `master`.
+
+[Les commits sont conventionnés](https://www.conventionalcommits.org/en/v1.0.0/). Les types suivants sont acceptés :
+
+- `build`
+- `docs`
+- `feat`
+- `fix`
+- `perf`
+- `refactor`
+- `style`
+- `test`
 
 ## Architecture 🏛️
 
