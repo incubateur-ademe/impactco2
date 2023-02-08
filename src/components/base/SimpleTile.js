@@ -5,17 +5,17 @@ import Emoji from 'components/base/Emoji'
 import Button from 'components/base/Button'
 
 const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  width: calc(${(props) => (props.column === 2 ? 50 : 33.3333)}% - 1rem);
-  padding-bottom: 1rem;
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
+  padding-bottom: 1rem;
+  position: relative;
+  width: calc(${(props) => (props.column === 2 ? 50 : 33.3333)}% - 1rem);
 
   ${(props) => props.theme.mq.medium} {
     width: calc(${(props) => (props.column === 2 ? 50 : 33.3333)}% - 0.5rem);
@@ -25,14 +25,14 @@ const Wrapper = styled.div`
   }
 `
 const Top = styled.div`
-  position: relative;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
 `
 const StyledEmoji = styled(Emoji)`
-  margin: 1.25rem 0 0;
   font-size: 2rem;
+  margin: 1.25rem 0 0;
   text-align: center;
 
   ${(props) => props.theme.mq.small} {
@@ -40,35 +40,35 @@ const StyledEmoji = styled(Emoji)`
   }
 `
 const Title = styled.p`
-  display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0.875rem 0.5rem 0.625rem;
+  color: ${(props) => props.theme.colors.text};
+  display: flex;
   font-size: ${(props) => (props.small ? 1 : 1.125)}rem;
   font-weight: bold;
+  justify-content: center;
+  margin: 0.875rem 0.5rem 0.625rem;
   text-align: center;
-  color: ${(props) => props.theme.colors.text};
 
   ${(props) => props.theme.mq.small} {
     font-size: 1rem;
   }
 `
 const Text = styled.p`
-  margin: 0 0.5rem 0.625rem;
   font-size: 0.875rem;
+  margin: 0 0.5rem 0.625rem;
   text-align: center;
 `
 const StyledButton = styled(Button)`
-  padding: 0.375rem 1rem;
   font-size: 0.875rem;
+  padding: 0.375rem 1rem;
 
   ${(props) => props.theme.mq.small} {
     font-size: 0.75rem;
   }
 `
 const Svg = styled.svg`
-  width: 1em;
   height: auto;
+  width: 1em;
 `
 export default function SimpleTile(props) {
   return (
@@ -107,8 +107,8 @@ export default function SimpleTile(props) {
 SimpleTile.Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1.5rem;
+  justify-content: center;
 
   ${(props) => props.theme.mq.medium} {
     gap: 0.75rem;

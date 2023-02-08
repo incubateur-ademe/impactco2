@@ -45,8 +45,8 @@ const StyledButton = styled(Button)`
 `
 const Svg = styled.svg`
   display: block;
-  width: 1.125rem;
   height: auto;
+  width: 1.125rem;
 
   path {
     &.outline1 {

@@ -1,21 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
 const Svg = styled.svg`
   display: inline-block;
-  width: 0.75em;
   height: auto;
   margin-left: 0.3em;
+  width: 0.75em;
 
   path {
     fill: ${(props) => props.theme.colors.main};
   }
 `
 export default function MagicLink(props) {
-  const router = useRouter()
-
   return !props.to ? (
     <button
       className={props.className}

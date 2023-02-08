@@ -6,19 +6,19 @@ import { themes } from 'utils/styles'
 import StyleContext from 'components/providers/StyleProvider'
 
 const Wrapper = styled.label`
-  position: absolute;
-  top: 0.75rem;
-  right: 0;
   display: flex;
+  position: absolute;
+  right: 0;
+  top: 0.75rem;
 `
 const Svg = styled.svg`
-  position: absolute;
   display: block;
-  top: 50%;
+  height: auto;
   left: 50%;
+  position: absolute;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 1.2rem;
-  height: auto;
 `
 export default function ThemeToggle(props) {
   const { theme, setTheme } = useContext(StyleContext)

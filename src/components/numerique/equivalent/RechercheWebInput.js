@@ -5,11 +5,11 @@ import TypingInput from './emailInput/TypingInput'
 import NetworkInput from './videoInput/NetworkInput'
 
 const Wrapper = styled.div`
-  width: calc(50% - 1rem);
-  padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+  padding: 1.5rem;
+  width: calc(50% - 1rem);
 
   ${(props) => props.theme.mq.medium} {
     width: 100%;

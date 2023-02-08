@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.p`
-  max-width: ${(props) => (props.large ? 'none' : '33rem')};
-  margin: 0 auto 1rem;
   font-size: 1rem;
+  margin: 0 auto 1rem;
+  max-width: ${(props) => (props.large ? 'none' : '33rem')};
   text-align: center;
 
   ${(props) => props.theme.mq.small} {

@@ -6,22 +6,22 @@ import TransportContext from 'components/transport/TransportProvider'
 import NumberInput from './distance/NumberInput'
 
 const Wrapper = styled.div`
-  display: flex;
   align-items: center;
-  max-width: 30rem;
+  display: flex;
   height: 2.5rem;
   margin: 0 auto;
+  max-width: 30rem;
 `
 const Button = styled.button`
-  padding: 0;
-  border: none;
   background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
 
   svg {
     display: block;
-    width: 1.5rem;
     height: auto;
+    width: 1.5rem;
 
     path {
       fill: ${(props) => props.theme.colors.main};
@@ -29,37 +29,37 @@ const Button = styled.button`
   }
 `
 const Track = styled.div`
-  position: relative;
   flex: 1;
   height: 0.125rem;
   margin: 0 3.75rem;
+  position: relative;
 
   &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -2.75rem;
-    right: -2.75rem;
     background-color: ${(props) => props.theme.colors.mainLight};
+    bottom: 0;
+    content: '';
+    left: -2.75rem;
+    position: absolute;
+    right: -2.75rem;
+    top: 0;
   }
 `
 const Thumb = styled.div`
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
-  width: 7rem;
-  height: 2.5rem;
-  padding: 0 0.6rem 0 0.1rem;
-  font-weight: 700;
-  text-align: center;
-  color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
+  color: ${(props) => props.theme.colors.background};
+  display: flex;
+  font-weight: 700;
+  height: 2.5rem;
+  justify-content: flex-end;
+  padding: 0 0.6rem 0 0.1rem;
+  text-align: center;
+  width: 7rem;
 
   &:focus {
-    outline: none;
     box-shadow: 0 0 0 0.125rem ${(props) => props.theme.colors.mainLight};
+    outline: none;
   }
 `
 const Kilometers = styled.div`
@@ -67,15 +67,15 @@ const Kilometers = styled.div`
   text-align: center;
 `
 const Edit = styled.div`
-  display: block;
-  width: 1rem;
-  margin-bottom: 0.2rem;
   cursor: pointer;
+  display: block;
+  margin-bottom: 0.2rem;
+  width: 1rem;
 
   svg {
     display: block;
-    width: 100%;
     height: auto;
+    width: 100%;
 
     path {
       fill: ${(props) => props.theme.colors.background};
@@ -154,7 +154,7 @@ export default function Distance() {
               <Thumb {...props} aria-label='Distance'>
                 <Kilometers>{km} km</Kilometers>
                 <Edit
-                  onClick={(e) => {
+                  onClick={() => {
                     setOpenTextInput(true)
                   }}
                   onMouseDown={(e) => {

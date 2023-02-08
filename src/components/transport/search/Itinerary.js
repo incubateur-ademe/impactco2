@@ -5,10 +5,10 @@ import TransportContext from 'components/transport/TransportProvider'
 import Address from './itinerary/Address'
 
 const Wrapper = styled.div`
-  position: relative;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  position: relative;
   width: 100%;
 `
 

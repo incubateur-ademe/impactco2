@@ -1,6 +1,20 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "next",
+    "prettier",
+    "next/core-web-vitals"
+  ],
   "rules": {
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "no-irregular-whitespace": "off",
+    "better-styled-components/sort-declarations-alphabetically": 2
+  },
+  "plugins": ["better-styled-components", "styled-components-a11y"],
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
   }
 }

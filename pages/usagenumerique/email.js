@@ -38,7 +38,7 @@ export default function EmailPage(props) {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   return {
     props: {
       equivalent: equivalents.find((equivalent) => equivalent.slug === 'email'),

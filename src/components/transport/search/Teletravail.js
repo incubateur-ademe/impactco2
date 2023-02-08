@@ -8,15 +8,15 @@ import Days from './teletravail/Days'
 
 const Wrapper = styled.div``
 const Details = styled.button`
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  font-size: 0.875rem;
-  color: ${(props) => props.theme.colors.main};
-  text-decoration: underline;
   background: transparent;
   border: none;
+  color: ${(props) => props.theme.colors.main};
   cursor: pointer;
+  display: block;
+  font-size: 0.875rem;
+  margin: 0 auto;
+  padding: 0;
+  text-decoration: underline;
 `
 export default function Teletravail() {
   const {

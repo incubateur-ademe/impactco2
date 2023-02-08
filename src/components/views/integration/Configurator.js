@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
@@ -6,15 +6,15 @@ import Select from 'components/base/Select'
 import Code from './configurator/Code'
 
 const Wrapper = styled.div`
-  width: 24rem;
-  margin-right: 2rem;
-  padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+  margin-right: 2rem;
+  padding: 1.5rem;
+  width: 24rem;
 
   ${(props) => props.theme.mq.medium} {
-    width: 100%;
     margin-bottom: 1.5rem;
+    width: 100%;
   }
 `
 const Title = styled.h1`

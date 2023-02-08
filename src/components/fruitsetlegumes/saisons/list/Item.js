@@ -9,15 +9,15 @@ import MagicLink from 'components/base/MagicLink'
 import Chart from './item/Chart'
 
 const Wrapper = styled(MagicLink)`
-  position: relative;
-  width: calc(33.3333% - 1rem);
-  padding: 1rem;
   background-color: ${(props) =>
     props.theme.colors[props.season ? 'second' : 'errorLight']};
   border-radius: 1rem;
-  text-decoration: none;
   color: ${(props) => props.theme.colors.text};
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
   transition: background-color 200ms ease-out;
+  width: calc(33.3333% - 1rem);
 
   ${(props) => props.theme.mq.small} {
     width: calc(50% - 0.375rem);
@@ -28,17 +28,17 @@ const Wrapper = styled(MagicLink)`
   }
 `
 const Header = styled.div`
+  color: ${(props) => props.theme.colors.main};
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-  color: ${(props) => props.theme.colors.main};
 `
 const Title = styled.div`
   font-weight: bold;
 `
 const Season = styled.div`
-  margin-bottom: 1rem;
   font-size: 0.875rem;
+  margin-bottom: 1rem;
   text-align: center;
 `
 const Value = styled.div`

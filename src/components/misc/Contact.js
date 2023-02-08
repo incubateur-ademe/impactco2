@@ -15,7 +15,7 @@ const Br = styled.br`
     display: none;
   }
 `
-export default function Contact(props) {
+export default function Contact() {
   return (
     <StyledSection>
       <Section.Content>

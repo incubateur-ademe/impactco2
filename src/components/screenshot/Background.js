@@ -4,11 +4,6 @@ import styled from 'styled-components'
 import useIframe from 'hooks/useIframe'
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-color: ${(props) =>
     !props.background || props.hover
       ? 'transparent'
@@ -16,6 +11,11 @@ const Wrapper = styled.div`
   border: 0.125rem solid
     ${(props) => (props.hover ? props.theme.colors.main : 'transparent')};
   border-radius: 1rem;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: all 300ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
@@ -23,12 +23,12 @@ const Wrapper = styled.div`
   }
 `
 const Content = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
+  justify-content: space-between;
   padding: 1.5rem;
+  position: relative;
 
   ${(props) => props.theme.mq.medium} {
     padding: 1.5rem 0.75rem;

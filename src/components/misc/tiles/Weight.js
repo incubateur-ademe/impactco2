@@ -5,35 +5,35 @@ import { useDroppable } from '@dnd-kit/core'
 import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: calc(33.3333% - 1rem);
-  padding: 1.125rem 1.5rem 1.375rem;
   background-color: ${(props) =>
     props.theme.colors[props.background ? 'textLight' : 'second']};
-  font-size: 2rem;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  justify-content: center;
+  padding: 1.125rem 1.5rem 1.375rem;
+  width: calc(33.3333% - 1rem);
 
   ${(props) => props.theme.mq.medium} {
-    width: calc(33.3333% - 0.5rem);
     padding: 1.125rem 1rem 1.375rem;
+    width: calc(33.3333% - 0.5rem);
   }
   ${(props) => props.theme.mq.small} {
     width: calc(50% - 0.375rem);
   }
 `
 const Label = styled.label`
-  margin-bottom: 0.875rem;
   font-size: 0.875rem;
   font-weight: 300;
+  margin-bottom: 0.875rem;
   text-align: center;
 `
 const StyledTextInput = styled(TextInput)`
-  position: relative;
-  margin-bottom: 0.5rem;
   display: block;
+  margin-bottom: 0.5rem;
+  position: relative;
 
   input {
     font-weight: bold;
