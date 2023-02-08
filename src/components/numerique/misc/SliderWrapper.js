@@ -1,28 +1,28 @@
 import styled from 'styled-components'
 
 const SliderWrapper = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 `
 SliderWrapper.Slider = styled.div`
-  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  width: 100%;
 `
 SliderWrapper.Value = styled.div`
-  width: ${(props) => props.width || 3.5}rem;
   text-align: right;
   white-space: nowrap;
+  width: ${(props) => props.width || 3.5}rem;
 `
 SliderWrapper.Label = styled.label`
-  margin-bottom: 0.5rem;
   font-size: 1rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   white-space: nowrap;
 `

@@ -5,9 +5,9 @@ import NumberInput from './question/NumberInput'
 import ChoicesInput from './question/ChoicesInput'
 
 const Wrapper = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `
 const Label = styled.p`
   margin-bottom: 0.5rem;

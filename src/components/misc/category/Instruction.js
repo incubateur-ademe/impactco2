@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.p`
-  margin: 0;
   font-size: 0.875rem;
   font-weight: 300;
+  margin: 0;
   text-align: center;
 `
 export default function Instruction() {

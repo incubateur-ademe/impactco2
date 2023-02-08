@@ -5,7 +5,7 @@ import { QueryParamProvider } from 'use-query-params'
 import { init } from '@socialgouv/matomo-next'
 
 import { GlobalStyle } from 'utils/styles'
-import fonts from 'utils/fonts.css'
+import 'utils/fonts.css'
 
 import { StyleProvider } from 'components/providers/StyleProvider'
 import { ModalProvider } from 'components/providers/ModalProvider'

@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.svg`
+  height: auto;
+  left: 0.5em;
   position: absolute;
   top: 50%;
-  left: 0.5em;
   transform: translateY(-50%);
   width: 1.5em;
-  height: auto;
 
   path {
     fill: ${(props) => props.theme.colors.text};

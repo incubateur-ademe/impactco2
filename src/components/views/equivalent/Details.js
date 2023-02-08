@@ -35,9 +35,9 @@ const StyledSectionContent = styled(Section.Content)`
   }
 `
 const Disclaimer = styled.p`
-  max-width: 27.25rem;
-  margin-bottom: 0.5rem;
   font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  max-width: 27.25rem;
 `
 const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;

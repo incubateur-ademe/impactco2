@@ -4,19 +4,19 @@ import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled(MagicLink)`
-  display: flex;
   align-items: center;
-  text-decoration: none;
+  display: flex;
   margin: 0 0.75em;
+  text-decoration: none;
 
   ${(props) => props.theme.mq.small} {
     font-size: 0.75rem;
   }
 
   svg {
-    width: auto;
     height: 3.5em;
     margin-right: 0.5em;
+    width: auto;
   }
 
   &:hover {
@@ -63,11 +63,11 @@ const HollowCircle2 = styled(HollowCircle1)`
   }
 `
 const Title = styled.div`
-  margin: 0;
+  color: ${(props) => props.theme.colors.main};
   font-size: 1.5em;
   font-weight: bold;
   line-height: 1;
-  color: ${(props) => props.theme.colors.main};
+  margin: 0;
 `
 export default function Logo(props) {
   return (

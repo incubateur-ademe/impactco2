@@ -2,43 +2,43 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.label`
-  position: relative;
+  cursor: pointer;
   display: flex;
   font-size: ${(props) => (props.small ? '1em' : '1.2em')};
-  cursor: pointer;
+  position: relative;
 
   &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 1.1em;
-    width: 1.1em;
     border: 2px solid ${(props) => props.color || props.theme.colors.main};
     border-radius: 0.25rem;
+    content: '';
+    height: 1.1em;
+    left: 0;
     pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 1.1em;
   }
 
   &:after {
-    content: '✓';
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
     color: ${(props) => props.color || props.theme.colors.main};
+    content: '✓';
+    display: flex;
     font-size: 1.75em;
+    justify-content: center;
+    left: 0;
     line-height: 0.7;
     opacity: ${(props) => (props.checked ? 1 : 0)};
     pointer-events: none;
+    position: absolute;
+    top: 0;
   }
 `
 const Input = styled.input`
-  margin-right: ${(props) => (props.label ? '0.625em' : 0)};
-  opacity: 0;
   cursor: pointer;
   height: 0;
+  margin-right: ${(props) => (props.label ? '0.625em' : 0)};
+  opacity: 0;
 
   &:focus {
     opacity: 0.5;

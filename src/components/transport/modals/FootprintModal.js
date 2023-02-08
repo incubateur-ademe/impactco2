@@ -4,27 +4,17 @@ import styled from 'styled-components'
 import TransportContext from '../TransportProvider'
 import Modal from 'components/base/Modal'
 import Button from 'components/base/Button'
-import TextInput from 'components/base/TextInput'
 import MagicLink from 'components/base/MagicLink'
 
 const Title = styled.h2``
 const Text = styled.p``
-const StyledTextInput = styled(TextInput)`
-  display: inline-block;
-  width: 4.5rem;
-  margin: 0;
-`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 `
 export default function SetFootprintModal() {
-  const {
-    yearlyFootprint,
-    setYearlyFootprint,
-    footprintModal: open,
-    setFootprintModal: setOpen,
-  } = useContext(TransportContext)
+  const { footprintModal: open, setFootprintModal: setOpen } =
+    useContext(TransportContext)
 
   const [pristine, setPristine] = useState(true)
   useEffect(() => {

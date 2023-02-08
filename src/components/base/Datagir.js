@@ -10,7 +10,7 @@ const Color = styled.path`
   transition: fill 30ms ${(props) => (props.hover ? '75ms' : 0)};
 `
 const Square = styled.path`
-  fill: ${(props) => '#1FC58E'};
+  fill: #1fc58e;
   transform: translateX(${(props) => (props.hover ? '-50%' : 0)});
   transition: transform 175ms ease-in-out;
 `

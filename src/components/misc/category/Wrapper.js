@@ -8,8 +8,8 @@ import Signature from 'components/screenshot/Signature'
 
 const SizerWrapper = styled.div``
 const Sizer = styled.div`
-  position: relative;
   margin: -1.5rem;
+  position: relative;
 
   ${(props) => props.theme.mq.medium} {
     margin: -0.75rem;
@@ -20,15 +20,15 @@ const Content = styled.div`
     props.hover ? props.theme.colors.background : 'transparent'};
 `
 const Header = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 `
 const Title = styled.h1`
+  font-size: 180%;
   margin-bottom: 1rem;
   text-align: center;
-  font-size: 180%;
 `
 const StyledButtons = styled(Buttons)`
   margin: -1rem 0 0.5rem;

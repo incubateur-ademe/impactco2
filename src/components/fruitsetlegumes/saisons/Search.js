@@ -5,40 +5,40 @@ import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
-  position: relative;
   align-self: flex-end;
   display: flex;
   gap: 0.5rem;
   margin-top: 1rem;
+  position: relative;
 
   ${(props) => props.theme.mq.small} {
-    margin: 0;
     align-self: center;
+    margin: 0;
   }
 `
 const SortButton = styled(Button)`
-  padding: 0.5em;
-  font-size: 0.875rem;
   border-radius: 0.625em;
+  font-size: 0.875rem;
+  padding: 0.5em;
 
   svg {
-    width: 1rem;
     height: auto;
+    width: 1rem;
   }
 `
 const SearchInput = styled(TextInput)`
-  width: 12rem;
-  margin: 0;
   font-size: 0.875rem;
+  margin: 0;
+  width: 12rem;
 `
 const SortPanel = styled.div`
-  position: absolute;
-  right: 2.5rem;
-  z-index: 120;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 0.5rem;
   box-shadow: -0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  position: absolute;
+  right: 2.5rem;
+  z-index: 120;
 
   ${(props) => props.theme.mq.small} {
     right: auto;
@@ -46,16 +46,16 @@ const SortPanel = styled.div`
   }
 `
 const Option = styled.button`
-  display: block;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  text-align: left;
-  white-space: nowrap;
   background-color: ${(props) =>
     props.selected ? props.theme.colors.secondDark : 'transparent'};
   border: none;
   cursor: pointer;
+  display: block;
+  padding: 0.75rem 1rem;
+  text-align: left;
   transition: background-color 200ms ease-out;
+  white-space: nowrap;
+  width: 100%;
 
   &:hover {
     background-color: ${(props) =>

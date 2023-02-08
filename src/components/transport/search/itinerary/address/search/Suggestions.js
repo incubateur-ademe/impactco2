@@ -11,30 +11,30 @@ const displayAddress = (address) =>
   } ${address.properties.country}`
 
 const Wrapper = styled.div`
-  position: relative;
   background-color: ${(props) => props.theme.colors.background};
+  border-radius: 0 0 1.375rem 1.375rem;
   max-height: 20rem;
   overflow-y: auto;
 
-  border-radius: 0 0 1.375rem 1.375rem;
+  position: relative;
 `
 const Suggestion = styled.div`
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: background-color 200ms ease-out,
-    opacity ${(props) => (props.isFetching ? 300 : 0)}ms ease-out;
   background-color: ${(props) =>
     props.theme.colors[props.current ? 'secondLight' : 'background']};
+  cursor: pointer;
+  font-size: 0.875rem;
   opacity: ${(props) => (props.isFetching ? 0.3 : 1)};
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  transition: background-color 200ms ease-out,
+    opacity ${(props) => (props.isFetching ? 300 : 0)}ms ease-out;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.mainLight};
   }
 
   mark {
-    color: ${(props) => props.theme.colors.text};
     background-color: transparent;
+    color: ${(props) => props.theme.colors.text};
     opacity: 0.8;
   }
 `

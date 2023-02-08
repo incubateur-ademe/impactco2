@@ -21,14 +21,14 @@ const Equivalents = styled.div`
   margin-bottom: 3rem;
 `
 const StyledButtonWrapper = styled(Button.Wrapper)`
-  position: fixed;
+  background-color: ${(props) => props.theme.colors.background};
+  border-radius: 0 0 1rem 1rem;
+  border-top: 0.0625rem solid ${(props) => props.theme.colors.textLight};
   bottom: 0;
   left: 0.5rem;
-  right: 0.5rem;
   padding: 0.5rem;
-  background-color: ${(props) => props.theme.colors.background};
-  border-top: 0.0625rem solid ${(props) => props.theme.colors.textLight};
-  border-radius: 0 0 1rem 1rem;
+  position: fixed;
+  right: 0.5rem;
 `
 export default function TilesModal() {
   const { tiles: open, setTiles: setOpen } = useContext(ModalContext)

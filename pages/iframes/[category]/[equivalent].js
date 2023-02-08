@@ -7,7 +7,7 @@ import Details from 'components/views/equivalent/Details'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 import Ecv from 'components/views/equivalent/Ecv'
 
-export default function Equivalent(props) {
+export default function Equivalent() {
   const { query } = useRouter()
   const { equivalents, categories } = useContext(DataContext)
 

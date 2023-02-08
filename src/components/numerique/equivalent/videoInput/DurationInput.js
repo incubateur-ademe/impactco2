@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
 
 import RulesContext from 'components/numerique/RulesProvider'
 import Slider from 'components/base/Slider'

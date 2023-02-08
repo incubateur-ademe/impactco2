@@ -12,17 +12,17 @@ const emailWeight = 0.0001 //ko
 
 export const Title = styled.h3`
   font-weight: normal;
-  text-align: center;
   margin-bottom: 1.5rem;
+  text-align: center;
 `
 const TilesWrapper = styled.div`
   position: relative;
 `
 const Tiles = styled.div`
   display: flex;
+  filter: blur(${(props) => (props.blur ? '1rem' : 0)});
   gap: 1.5rem;
   margin-bottom: 2.5rem;
-  filter: blur(${(props) => (props.blur ? '1rem' : 0)});
   transition: filter 500ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
@@ -30,32 +30,32 @@ const Tiles = styled.div`
   }
 `
 const ButtonResults = styled(Button)`
+  font-size: 1.25rem;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -100%);
-  font-size: 1.25rem;
 `
 const Input = styled.input`
-  width: ${(props) => (props.mode === 'emails' ? 6 : 4.5)}rem;
-  margin: 0 0.5rem 1rem;
-  padding: 0.5rem;
-  font-size: 1.125rem;
-  text-align: right;
-  color: ${(props) => props.theme.colors.text};
   background-color: transparent;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.75rem;
+  color: ${(props) => props.theme.colors.text};
+  font-size: 1.125rem;
+  margin: 0 0.5rem 1rem;
+  padding: 0.5rem;
+  text-align: right;
   transition: box-shadow 300ms ease-out;
+  width: ${(props) => (props.mode === 'emails' ? 6 : 4.5)}rem;
 
   &:focus {
-    outline: none;
     box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
+    outline: none;
   }
 `
 const Text = styled.p`
-  text-align: center;
   filter: blur(${(props) => (props.blur ? '1rem' : 0)});
+  text-align: center;
   transition: filter 500ms ease-out;
 `
 const StyledButtonLink = styled(ButtonLink)`
@@ -93,7 +93,10 @@ export default function StockageEmails() {
   const [mode, setMode] = useState('emails')
   const [weight, setWeight] = useState(2)
 
-  const totalWeight = useMemo(() => formatTotal(gigabyte) * weight, [weight])
+  const totalWeight = useMemo(
+    () => formatTotal(gigabyte) * weight,
+    [weight, gigabyte]
+  )
   return (
     <>
       <Title>Découvrez l'impact de votre boite mail sur le climat</Title>

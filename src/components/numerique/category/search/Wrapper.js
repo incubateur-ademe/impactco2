@@ -5,12 +5,12 @@ import Select from 'components/base/Select'
 import HorizontalRadio from 'components/base/HorizontalRadio'
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem;
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
 
   ${(props) => props.theme.mq.medium} {
     padding: 1rem;
@@ -22,9 +22,9 @@ const Wrapper = styled.div`
 `
 Wrapper.Column = styled.div``
 Wrapper.Label = styled.p`
-  margin-bottom: 0.5rem;
   font-size: 1.125rem;
   font-weight: 300;
+  margin-bottom: 0.5rem;
 
   strong {
     font-weight: bold;
@@ -45,15 +45,15 @@ Wrapper.StyledSlider = styled(Slider)`
   min-width: 11rem;
 `
 Wrapper.ShowMore = styled.button`
+  background-color: transparent;
+  border: none;
   display: none;
   margin: 0;
   padding: 0;
-  border: none;
-  background-color: transparent;
 
   svg {
-    width: 1.5rem;
     height: auto;
+    width: 1.5rem;
 
     path {
       fill: ${(props) => props.color || props.theme.colors.main};
@@ -71,11 +71,11 @@ Wrapper.Desktop = styled.div`
   }
 `
 Wrapper.Parameters = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: flex-start;
-  align-items: center;
   gap: 0.5rem;
+  justify-content: flex-start;
   margin: 0.5rem 0 0.75rem;
 
   ${(props) => props.theme.mq.iframemedium} {
@@ -84,12 +84,12 @@ Wrapper.Parameters = styled.div`
 `
 Wrapper.StyledSelect = styled(Select)`
   flex: 1;
-  margin: 0;
   font-size: 0.875rem;
+  margin: 0;
 
   select {
-    width: 100%;
     min-width: 5rem;
+    width: 100%;
   }
 
   ${(props) => props.theme.mq.medium} {

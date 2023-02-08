@@ -3,57 +3,57 @@ import styled from 'styled-components'
 import copy from 'copy-to-clipboard'
 
 const Wrapper = styled.div`
-  position: relative;
   margin-bottom: 3rem;
+  position: relative;
 `
 const Text = styled.input`
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0.3rem 0;
-  color: ${(props) => props.theme.colors.text};
-  font-family: 'Courier New', Courier, monospace;
-  line-height: inherit;
-  white-space: nowrap;
   background: transparent;
   border: none;
   border-bottom: 1px solid ${(props) => props.theme.colors.main};
+  color: ${(props) => props.theme.colors.text};
   cursor: pointer;
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: inherit;
   overflow: hidden;
+  padding: 0.3rem 0;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
 
   &:before {
-    content: 'Copié !';
-    position: absolute;
     bottom: 0;
-    right: 0;
-    font-size: 0.875em;
     color: ${(props) => props.theme.colors.main};
+    content: 'Copié !';
+    font-size: 0.875em;
     opacity: ${(props) => (props.copied ? 1 : 0)};
+    position: absolute;
+    right: 0;
     transition: opacity 200ms ease-out;
   }
 `
 const Copy = styled.button`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  padding: 0.5rem 0.3rem 0.5rem 1rem;
-  color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};
   border: none;
   border-radius: 0.5rem 0.5rem 0 0;
+  bottom: 0;
+  color: ${(props) => props.theme.colors.background};
   cursor: pointer;
+  height: 100%;
+  padding: 0.5rem 0.3rem 0.5rem 1rem;
+  position: absolute;
+  right: 0;
 
   &:focus {
     outline: none;
   }
 `
 const Check = styled.svg`
-  width: 1rem;
   height: auto;
-  vertical-align: top;
   opacity: ${(props) => (props.copied ? 1 : 0)};
   transition: opacity 200ms ease-out;
+  vertical-align: top;
+  width: 1rem;
   path {
     fill: ${(props) => props.theme.colors.background};
   }
