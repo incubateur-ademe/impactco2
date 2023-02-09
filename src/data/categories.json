@@ -56,7 +56,7 @@
     "divider": 1,
     "display": true,
     "unit": "km",
-    "include": "par personne en France. Sont incluses les émissions directes, et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
+    "include": "par personne en France. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
     "meta": {
       "title": "Empreinte carbone de vos déplacements",
       "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO2 vous connaitrez votre impact sur le climat"
