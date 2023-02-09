@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
 import Section from 'components/base/Section'
-import Wrapper from 'components/misc/category/Wrapper'
-import Search from './category/Search'
-import Result from './category/Result'
-import Learning from 'components/misc/category/Learning'
-import Hypothèses from './category/Hypothèses'
 import Description from 'components/misc/category/Description'
+import Learning from 'components/misc/category/Learning'
+import Wrapper from 'components/misc/category/Wrapper'
+
+import Hypothèses from './category/Hypothèses'
+import Result from './category/Result'
+import Search from './category/Search'
 
 export default function Category(props) {
   const [numberEmails, setNumberEmails] = useState(50)

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import styled, { keyframes } from 'styled-components'
 import copy from 'copy-to-clipboard'
+import React, { useEffect, useState } from 'react'
+import styled, { keyframes } from 'styled-components'
 
 const flash = (props) => keyframes`
   from,

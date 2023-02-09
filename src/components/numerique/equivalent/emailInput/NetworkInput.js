@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import RulesContext from 'components/numerique/RulesProvider'
 import HorizontalRadio from 'components/base/HorizontalRadio'
+import RulesContext from 'components/numerique/RulesProvider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
 const Wrapper = styled.div`

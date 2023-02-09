@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import UXContext from 'utils/UXContext'
-import ShareWrapper from 'components/wrappers/ShareWrapper'
-import EmbedWrapper from 'components/wrappers/EmbedWrapper'
-import ContactWrapper from 'components/wrappers/ContactWrapper'
+
 import MagicLink from 'components/base/MagicLink'
+import ContactWrapper from 'components/wrappers/ContactWrapper'
+import EmbedWrapper from 'components/wrappers/EmbedWrapper'
+import ShareWrapper from 'components/wrappers/ShareWrapper'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight};

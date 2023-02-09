@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 
-import ModalContext from 'components/providers/ModalProvider'
 import DataContext from 'components/providers/DataProvider'
-import Modal from 'components/base/Modal'
+import ModalContext from 'components/providers/ModalProvider'
+
 import Button from 'components/base/Button'
+import Modal from 'components/base/Modal'
 import TextInput from 'components/base/TextInput'
+
+import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import Equivalent from './tilesModal/Equivalent'
 
 const StyledModal = styled(Modal)`

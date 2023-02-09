@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+
 import { themes } from 'utils/styles'
 
 const StyleContext = React.createContext({})

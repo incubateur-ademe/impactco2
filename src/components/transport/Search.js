@@ -2,9 +2,10 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import TransportContext from 'components/transport/TransportProvider'
-import ModeSelector from './search/ModeSelector'
+
 import Distance from './search/Distance'
 import Itinerary from './search/Itinerary'
+import ModeSelector from './search/ModeSelector'
 import Teletravail from './search/Teletravail'
 
 const Wrapper = styled.div`

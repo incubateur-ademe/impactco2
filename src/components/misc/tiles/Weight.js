@@ -1,6 +1,6 @@
+import { useDroppable } from '@dnd-kit/core'
 import React from 'react'
 import styled from 'styled-components'
-import { useDroppable } from '@dnd-kit/core'
 
 import TextInput from 'components/base/TextInput'
 

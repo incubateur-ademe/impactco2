@@ -1,15 +1,16 @@
 import React from 'react'
 
 import {
-  Title,
-  Equivalents,
-  Equivalent,
-  Emojis,
-  Label,
-  Equals,
   CenterLink,
+  Emojis,
+  Equals,
+  Equivalent,
+  Equivalents,
+  Label,
   Small,
+  Title,
 } from 'components/misc/Visualization'
+
 export default function Eau() {
   return (
     <>

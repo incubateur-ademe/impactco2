@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import Select from 'components/base/Select'
+
 import Code from './configurator/Code'
 
 const Wrapper = styled.div`

@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
+
 import ButtonLink from 'components/base/ButtonLink'
+import Section from 'components/base/Section'
 
 const StyledSection = styled(Section)`
   margin: 5rem 0;

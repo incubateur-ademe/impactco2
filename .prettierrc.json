@@ -10,5 +10,14 @@
   "bracketSpacing": true,
   "jsxBracketSameLine": true,
   "arrowParens": "always",
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "importOrder": [
+    "utils/(.*)$",
+    "hooks/(.*)$",
+    "components/providers/(.*)$",
+    "components/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

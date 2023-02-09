@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import MagicLink from 'components/base/MagicLink'
-import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
 import Datagir from 'components/base/Datagir'
+import MagicLink from 'components/base/MagicLink'
+import Marianne from 'components/base/Marianne'
 
 const LogosWrapper = styled.div`
   background-color: #fff;

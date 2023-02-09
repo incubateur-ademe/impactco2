@@ -1,4 +1,4 @@
-import { useMemo, useContext } from 'react'
+import { useContext, useMemo } from 'react'
 
 import {
   formatName,
@@ -6,9 +6,11 @@ import {
   formatTotalByKm,
   formatUsage,
 } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
-import TransportContext from 'components/transport/TransportProvider'
+
 import Carpool from 'components/transport/Carpool'
+import TransportContext from 'components/transport/TransportProvider'
 
 // C'est un peu austère, déso
 export default function useTransportations(itineraries) {

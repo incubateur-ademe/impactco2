@@ -1,12 +1,14 @@
-import React, { useState, useContext, useMemo } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 import { formatNumber, formatTotal } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
-import Tile from 'components/misc/tiles/Tile'
+
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
+import Tile from 'components/misc/tiles/Tile'
 
 const emailWeight = 0.0001 //ko
 

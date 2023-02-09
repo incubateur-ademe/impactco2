@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import NetworkInput from './emailInput/NetworkInput'
+import RecipientInput from './emailInput/RecipientInput'
 import SizeInput from './emailInput/SizeInput'
 import TypingInput from './emailInput/TypingInput'
-import RecipientInput from './emailInput/RecipientInput'
-import NetworkInput from './emailInput/NetworkInput'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};

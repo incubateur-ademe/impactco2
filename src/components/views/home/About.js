@@ -1,12 +1,13 @@
+import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
-import Image from 'next/image'
 
-import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
 import SimpleTile from 'components/base/SimpleTile'
-import nosgestesclimat from './about/nos-gestes-climat.jpg'
+
 import mesfruitsetlegumesdesaison from './about/mes-fruits-et-legumes-de-saison.jpg'
+import nosgestesclimat from './about/nos-gestes-climat.jpg'
 import quefairedemesdechets from './about/que-faire-de-mes-dechets.png'
 
 const Title = styled.h2`

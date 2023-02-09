@@ -1,14 +1,18 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { formatTotal } from 'utils/formatters'
-import DataContext from 'components/providers/DataProvider'
-import TransportContext from 'components/transport/TransportProvider'
+
 import { useItinerary } from 'hooks/useItineraries'
+
+import DataContext from 'components/providers/DataProvider'
+
 import Section from 'components/base/Section'
 import Wrapper from 'components/misc/category/Wrapper'
-import YearlyFootprint from './teletravail/YearlyFootprint'
-import PercentFootprint from './teletravail/PercentFootprint'
+import TransportContext from 'components/transport/TransportProvider'
+
 import Search from './Search'
+import PercentFootprint from './teletravail/PercentFootprint'
+import YearlyFootprint from './teletravail/YearlyFootprint'
 
 export default function Teletravail(props) {
   const { equivalents } = useContext(DataContext)

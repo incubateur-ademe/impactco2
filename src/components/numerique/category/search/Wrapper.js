@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import Slider from 'components/base/Slider'
-import Select from 'components/base/Select'
 import HorizontalRadio from 'components/base/HorizontalRadio'
+import Select from 'components/base/Select'
+import Slider from 'components/base/Slider'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};

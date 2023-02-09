@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 import Co2eModal from 'components/modals/Co2eModal'
-import TilesModal from 'components/modals/TilesModal'
-import ShareModal from 'components/modals/ShareModal'
-import EcvModal from 'components/modals/EcvModal'
-import DevicesModal from 'components/modals/DevicesModal'
 import DetailsUsagesNumModal from 'components/modals/DetailsUsagesNumModal'
+import DevicesModal from 'components/modals/DevicesModal'
+import EcvModal from 'components/modals/EcvModal'
+import ShareModal from 'components/modals/ShareModal'
+import TilesModal from 'components/modals/TilesModal'
 
 const ModalContext = React.createContext({})
 

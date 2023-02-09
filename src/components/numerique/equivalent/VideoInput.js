@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import QualityInput from './videoInput/QualityInput'
 import DurationInput from './videoInput/DurationInput'
-import ParticipantInput from './videoInput/ParticipantsInput'
 import NetworkInput from './videoInput/NetworkInput'
+import ParticipantInput from './videoInput/ParticipantsInput'
+import QualityInput from './videoInput/QualityInput'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};

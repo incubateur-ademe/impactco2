@@ -1,35 +1,30 @@
 import React from 'react'
 
-import SmartphoneGeneral from './SmartphoneGeneral'
-import SmartphoneCategory from './SmartphoneCategory'
-import Smartphone from './Smartphone'
+import LiseuseBookComparator from 'components/numerique/equivalent/LiseuseBookComparator'
+import StockageEmails from 'components/numerique/equivalent/StockageEmails'
+
+import Avion from './Avion'
+import Boeuf from './Boeuf'
+import Chauffage from './Chauffage'
+import ConsoleSalonCategory from './ConsoleSalonCategory'
+import Eau from './Eau'
+import ImprimanteCategory from './ImprimanteCategory'
+import JeansGeneral from './JeansGeneral'
+import Lait from './Lait'
+import Liseuse from './Liseuse'
+import Manteau from './Manteau'
+import Metro from './Metro'
 import Montre from './Montre'
 import MontreCategory from './MontreCategory'
-import ImprimanteCategory from './ImprimanteCategory'
-import ConsoleSalonCategory from './ConsoleSalonCategory'
 import OrdinateurFixeCategory from './OrdinateurFixeCategory'
-
-import Boeuf from './Boeuf'
-import PoissonGras from './PoissonGras'
 import PoissonBlanc from './PoissonBlanc'
-import Vegetalien from './Vegetalien'
-
-import Eau from './Eau'
-import Lait from './Lait'
-
-import Voiture from './Voiture'
-import Metro from './Metro'
-import Avion from './Avion'
-
-import JeansGeneral from './JeansGeneral'
+import PoissonGras from './PoissonGras'
 import PullGeneral from './PullGeneral'
-import Manteau from './Manteau'
-
-import Chauffage from './Chauffage'
-
-import StockageEmails from 'components/numerique/equivalent/StockageEmails'
-import Liseuse from './Liseuse'
-import LiseuseBookComparator from 'components/numerique/equivalent/LiseuseBookComparator'
+import Smartphone from './Smartphone'
+import SmartphoneCategory from './SmartphoneCategory'
+import SmartphoneGeneral from './SmartphoneGeneral'
+import Vegetalien from './Vegetalien'
+import Voiture from './Voiture'
 
 const visualizations = {
   smartphone: [

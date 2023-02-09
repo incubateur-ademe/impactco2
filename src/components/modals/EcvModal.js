@@ -2,10 +2,12 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
+
 import Modal from 'components/base/Modal'
-import Standard from './ecvModal/Standard'
-import Numerique from './ecvModal/Numerique'
+
 import Agribalyse from './ecvModal/Agribalyse'
+import Numerique from './ecvModal/Numerique'
+import Standard from './ecvModal/Standard'
 import Transport from './ecvModal/Transport'
 
 const Title = styled.h2``

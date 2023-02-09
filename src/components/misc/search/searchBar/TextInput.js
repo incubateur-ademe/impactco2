@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import Glass from './textInput/Glass'
 import Submit from './textInput/Submit'
 

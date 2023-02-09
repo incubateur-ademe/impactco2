@@ -1,8 +1,9 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 
-import RulesContext from '../RulesProvider'
 import ButtonLink from 'components/base/ButtonLink'
+
+import RulesContext from '../RulesProvider'
 import Question from './expertMode/Question'
 
 const Wrapper = styled.div`

@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
-import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
 
 import DataContext from 'components/providers/DataProvider'
-import TextInput from './searchBar/TextInput'
+
+import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import Suggestions from './searchBar/Suggestions'
+import TextInput from './searchBar/TextInput'
 
 const Wrapper = styled.form`
   background-color: ${(props) =>

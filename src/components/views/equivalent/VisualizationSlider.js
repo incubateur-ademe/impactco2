@@ -1,10 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 import Slider from 'react-slick'
+import styled from 'styled-components'
 
-import visualizations, { noAutoplay } from 'components/visualizations/list'
 import Section from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
+import visualizations from 'components/visualizations/list'
 
 const StyledSection = styled(Section)`
   margin-bottom: 4rem;
@@ -46,8 +46,6 @@ export default function Visualization(props) {
           speed={500}
           slidesToShow={1}
           slidesToScroll={1}
-          autoplay={!noAutoplay.includes(props.equivalent.slug)}
-          autoplaySpeed={5000}
           responsive={[
             {
               breakpoint: 830,

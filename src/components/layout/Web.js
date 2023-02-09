@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import useInteraction from 'hooks/useInteraction'
-import Seo from './web/Seo'
-import Header from './web/Header'
-import Nav from './web/Nav'
+
 import BreadCrumb from './web/BreadCrumb'
 import Footer from './web/Footer'
+import Header from './web/Header'
+import Nav from './web/Nav'
+import Seo from './web/Seo'
 
 const Wrapper = styled.div`
   display: flex;

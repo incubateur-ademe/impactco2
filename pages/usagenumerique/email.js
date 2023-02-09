@@ -1,12 +1,11 @@
+import categories from 'data/categories.json'
+import usagenumerique from 'data/categories/usagenumerique.json'
 import React from 'react'
 
-import usagenumerique from 'data/categories/usagenumerique.json'
-import categories from 'data/categories.json'
-
-import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
-import Text from 'components/views/equivalent/Text'
 import Equivalent from 'components/numerique/Equivalent'
+import { RulesProvider } from 'components/numerique/RulesProvider'
+import Text from 'components/views/equivalent/Text'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
 const equivalents = [...usagenumerique].map((equivalent) => ({

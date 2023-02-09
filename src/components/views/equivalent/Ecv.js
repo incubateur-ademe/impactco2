@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -6,14 +6,17 @@ import {
   formatNumberPrecision,
   formatTotal,
 } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
+
 import Section from 'components/base/Section'
-import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
-import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
-import DurationSelector from './ecv/DurationSelector'
+import StackedChart from 'components/charts/StackedChart'
+import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
+
 import Detail from './ecv/Detail'
+import DurationSelector from './ecv/DurationSelector'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;

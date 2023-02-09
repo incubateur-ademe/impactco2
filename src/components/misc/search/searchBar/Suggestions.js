@@ -1,7 +1,8 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
