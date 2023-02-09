@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import ModalContext from 'components/providers/ModalProvider'
-import MagicLink from 'components/base/MagicLink'
 import useIframe from 'hooks/useIframe'
+
+import ModalContext from 'components/providers/ModalProvider'
+
+import MagicLink from 'components/base/MagicLink'
 
 const jump = keyframes`
   from,

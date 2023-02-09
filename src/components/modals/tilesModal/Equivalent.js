@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import Emoji from 'components/base/Emoji'
+
 import Checkbox from './equivalent/Checkbox'
 
 const Wrapper = styled.button`

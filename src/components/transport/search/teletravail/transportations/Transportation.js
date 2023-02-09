@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import TransportContext from 'components/transport/TransportProvider'
 import Emoji from 'components/base/Emoji'
+import TransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.button`
   background-color: ${(props) =>

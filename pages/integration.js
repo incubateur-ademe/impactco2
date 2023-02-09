@@ -1,11 +1,12 @@
-import React, { useState, useContext, useMemo } from 'react'
-import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
-import { useQueryParam, StringParam, withDefault } from 'use-query-params'
+import React, { useContext, useMemo, useState } from 'react'
+import styled from 'styled-components'
+import { StringParam, useQueryParam, withDefault } from 'use-query-params'
 
 import DataContext from 'components/providers/DataProvider'
-import Web from 'components/layout/Web'
+
 import Section from 'components/base/Section'
+import Web from 'components/layout/Web'
 import Configurator from 'components/views/integration/Configurator'
 
 const StyledIframeResizer = styled(IframeResizer)`

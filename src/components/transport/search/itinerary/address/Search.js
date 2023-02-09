@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 import { useSuggestions } from 'hooks/useAddress'
 import useDebounce from 'hooks/useDebounce'
-import TextInput from './search/TextInput'
+
 import Suggestions from './search/Suggestions'
+import TextInput from './search/TextInput'
 
 const Wrapper = styled.form`
   background-color: ${(props) => props.theme.colors.background};

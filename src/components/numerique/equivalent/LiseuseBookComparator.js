@@ -1,13 +1,15 @@
-import React, { useState, useContext, useMemo } from 'react'
-import styled from 'styled-components'
+import React, { useContext, useMemo, useState } from 'react'
 import { Range } from 'react-range'
+import styled from 'styled-components'
 
 import { formatTotal } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import { Title } from 'components/misc/Visualization'
+
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
+import { Title } from 'components/misc/Visualization'
 
 const Wrapper = styled.div`
   height: 100%;

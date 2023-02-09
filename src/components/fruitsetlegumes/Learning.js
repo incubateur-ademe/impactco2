@@ -2,10 +2,12 @@ import React, { useContext, useRef } from 'react'
 import styled from 'styled-components'
 
 import useOnScreen from 'hooks/useOnScreen'
+
 import ModalContext from 'components/providers/ModalProvider'
 
-import Section from 'components/base/Section'
 import Button from 'components/base/Button'
+import Section from 'components/base/Section'
+
 import BarChart from './learning/BarChart'
 
 const StyledSection = styled(Section)`

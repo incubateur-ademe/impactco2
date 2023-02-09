@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Total from './result/Total'
 import Detail from './result/Detail'
+import Total from './result/Total'
 
 const Wrapper = styled.div`
   margin-bottom: 2rem;

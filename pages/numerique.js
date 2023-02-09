@@ -1,6 +1,5 @@
-import React from 'react'
-
 import categories from 'data/categories.json'
+import React from 'react'
 
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'

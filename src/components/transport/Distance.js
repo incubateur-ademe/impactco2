@@ -1,16 +1,18 @@
 import React, { useContext } from 'react'
 
 import useTransportations from 'hooks/useTransportations'
-import TransportContext from './TransportProvider'
-import Section from 'components/base/Section'
-import Wrapper from 'components/misc/category/Wrapper'
-import Top from 'components/misc/category/Top'
-import Instruction from 'components/misc/category/Instruction'
-import CategoryLegend from 'components/misc/category/CategoryLegend'
-import Bottom from 'components/misc/category/Bottom'
+
 import Checkbox from 'components/base/Checkbox'
+import Section from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
+import Bottom from 'components/misc/category/Bottom'
+import CategoryLegend from 'components/misc/category/CategoryLegend'
+import Instruction from 'components/misc/category/Instruction'
+import Top from 'components/misc/category/Top'
+import Wrapper from 'components/misc/category/Wrapper'
+
 import Search from './Search'
+import TransportContext from './TransportProvider'
 
 export default function Distance(props) {
   const { displayAll, setDisplayAll, carpool, setCarpool } =

@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import RulesContext from '../RulesProvider'
 import { formatNumber } from 'utils/formatters'
+
 import Emoji from 'components/base/Emoji'
+
+import RulesContext from '../RulesProvider'
 
 const Wrapper = styled.div`
   display: flex;

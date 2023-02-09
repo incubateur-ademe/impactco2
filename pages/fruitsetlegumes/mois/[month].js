@@ -1,11 +1,11 @@
+import categories from 'data/categories.json'
 import React from 'react'
 
-import categories from 'data/categories.json'
+import { getMonth, slugs } from 'utils/months'
 
-import { slugs, getMonth } from 'utils/months'
-import Web from 'components/layout/Web'
-import Saisons from 'components/fruitsetlegumes/Saisons'
 import Learning from 'components/fruitsetlegumes/Learning'
+import Saisons from 'components/fruitsetlegumes/Saisons'
+import Web from 'components/layout/Web'
 
 export default function Transport(props) {
   return (

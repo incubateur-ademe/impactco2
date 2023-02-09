@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import useIframe from 'hooks/useIframe'
+
 import MagicLink from 'components/base/MagicLink'
+
+import Bar from './item/Bar'
 import Emoji from './item/Emoji'
 import Title from './item/Title'
-import Bar from './item/Bar'
-import useIframe from 'hooks/useIframe'
 
 const Wrapper = styled(MagicLink)`
   align-items: flex-end;

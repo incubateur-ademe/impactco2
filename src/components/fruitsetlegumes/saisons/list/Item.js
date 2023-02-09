@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import { getMonth } from 'utils/months'
 import { formatNumber } from 'utils/formatters'
+import { getMonth } from 'utils/months'
+
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
 

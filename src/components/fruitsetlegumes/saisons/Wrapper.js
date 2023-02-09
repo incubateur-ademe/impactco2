@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import useScreenshot from 'hooks/useScreenshot'
+
 import Background from 'components/screenshot/Background'
 import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
+
 import MonthSelector from './wrapper/MonthSelector'
 
 const SizerWrapper = styled.div`

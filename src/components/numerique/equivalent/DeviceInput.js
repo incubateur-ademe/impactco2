@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
 import Slick from 'react-slick'
+import styled from 'styled-components'
 
-import RulesContext from 'components/numerique/RulesProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import LifeSpanInput from './deviceInput/LifespanInput'
-import DailyUsageInput from './deviceInput/DailyUsageInput'
+
 import ButtonLink from 'components/base/ButtonLink'
+import RulesContext from 'components/numerique/RulesProvider'
+
+import DailyUsageInput from './deviceInput/DailyUsageInput'
+import LifeSpanInput from './deviceInput/LifespanInput'
 
 const devices = [
   { name: 'smartphone', label: '📱 Smartphone' },

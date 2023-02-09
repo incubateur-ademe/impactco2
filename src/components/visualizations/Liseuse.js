@@ -1,13 +1,13 @@
 import React from 'react'
 
 import {
-  Title,
-  Equivalents,
-  Equivalent,
   Emojis,
-  Label,
   Equals,
+  Equivalent,
+  Equivalents,
+  Label,
   Small,
+  Title,
 } from 'components/misc/Visualization'
 
 export default function Liseuse() {

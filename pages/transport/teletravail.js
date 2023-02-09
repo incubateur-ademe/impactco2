@@ -1,11 +1,10 @@
+import categories from 'data/categories.json'
 import React from 'react'
 
-import categories from 'data/categories.json'
-
-import { TransportProvider } from 'components/transport/TransportProvider'
 import Web from 'components/layout/Web'
-import Teletravail from 'components/transport/Teletravail'
 import Learning from 'components/misc/category/Learning'
+import Teletravail from 'components/transport/Teletravail'
+import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function TeletravailPage(props) {
   return (

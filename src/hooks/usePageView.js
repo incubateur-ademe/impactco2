@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
 import { useLocation } from '@reach/router'
+import { useEffect } from 'react'
 
 export default function usePageViews(sitename) {
   let location = useLocation()

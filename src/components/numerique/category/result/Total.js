@@ -2,9 +2,11 @@ import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { formatNumber } from 'utils/formatters'
-import RulesContext from 'components/numerique/RulesProvider'
+
 import DataContext from 'components/providers/DataProvider'
+
 import Tile from 'components/misc/tiles/Tile'
+import RulesContext from 'components/numerique/RulesProvider'
 
 const Wrapper = styled.div`
   margin: 0;

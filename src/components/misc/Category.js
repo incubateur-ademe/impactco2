@@ -1,19 +1,22 @@
-import React, { useState, useContext, useMemo } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 
 import { formatName, formatTotal, formatUsage } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+
 import Checkbox from 'components/base/Checkbox'
+import Section from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
-import Wrapper from './category/Wrapper'
-import Top from './category/Top'
-import Instruction from './category/Instruction'
-import List from './category/List'
-import CategoryLegend from './category/CategoryLegend'
-import Bottom from './category/Bottom'
-import Learning from './category/Learning'
 import Contact from 'components/misc/Contact'
+
+import Bottom from './category/Bottom'
+import CategoryLegend from './category/CategoryLegend'
 import Description from './category/Description'
+import Instruction from './category/Instruction'
+import Learning from './category/Learning'
+import List from './category/List'
+import Top from './category/Top'
+import Wrapper from './category/Wrapper'
 
 export default function CategoryList(props) {
   const { equivalents, categories } = useContext(DataContext)

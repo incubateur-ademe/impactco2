@@ -1,11 +1,12 @@
+import AnimatedNumber from 'animated-number-react'
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import AnimatedNumber from 'animated-number-react'
 
 import useOnScreen from 'hooks/useOnScreen'
-import Section from 'components/base/Section'
+
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;

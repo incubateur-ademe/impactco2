@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
-import Section from 'components/base/Section'
+
 import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
 
 const Wrapper = styled.div`
   font-size: 0.75rem;

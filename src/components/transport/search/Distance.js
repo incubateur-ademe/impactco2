@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react'
-import styled from 'styled-components'
+import React, { useContext, useEffect, useState } from 'react'
 import { Range } from 'react-range'
+import styled from 'styled-components'
 
 import TransportContext from 'components/transport/TransportProvider'
+
 import NumberInput from './distance/NumberInput'
 
 const Wrapper = styled.div`

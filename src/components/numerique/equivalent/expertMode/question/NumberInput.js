@@ -1,6 +1,6 @@
+import { serializeUnit } from 'publicodes'
 import React from 'react'
 import styled from 'styled-components'
-import { serializeUnit } from 'publicodes'
 
 const Wrapper = styled.div`
   font-size: 1.25rem;

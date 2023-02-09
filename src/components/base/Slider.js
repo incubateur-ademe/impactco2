@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Range } from 'react-range'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   align-items: center;

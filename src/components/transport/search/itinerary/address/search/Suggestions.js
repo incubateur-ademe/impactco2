@@ -1,7 +1,6 @@
-import React, { useEffect, useCallback } from 'react'
-import styled from 'styled-components'
-
+import React, { useCallback, useEffect } from 'react'
 import Highlighter from 'react-highlight-words'
+import styled from 'styled-components'
 
 const displayAddress = (address) =>
   `${address.properties.name ? address.properties.name + ' ' : ''}${

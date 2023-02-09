@@ -1,10 +1,9 @@
+import categories from 'data/categories.json'
 import React from 'react'
 
-import categories from 'data/categories.json'
-
-import { RulesProvider } from 'components/numerique/RulesProvider'
 import Web from 'components/layout/Web'
 import Category from 'components/numerique/Category'
+import { RulesProvider } from 'components/numerique/RulesProvider'
 
 export default function Numerique(props) {
   return (

@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { formatTotal, formatNumber } from 'utils/formatters'
-import Section from 'components/base/Section'
+import { formatNumber, formatTotal } from 'utils/formatters'
+
 import Emoji from 'components/base/Emoji'
+import Section from 'components/base/Section'
 
 const StyledSection = styled(Section)`
   background-color: ${(props) => props.theme.colors.main};

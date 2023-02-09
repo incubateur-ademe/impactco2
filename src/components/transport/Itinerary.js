@@ -2,14 +2,16 @@ import React, { useContext } from 'react'
 
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
-import TransportContext from 'components/transport/TransportProvider'
-import Section from 'components/base/Section'
-import Wrapper from 'components/misc/category/Wrapper'
-import Top from 'components/misc/category/Top'
-import Instruction from 'components/misc/category/Instruction'
-import Bottom from 'components/misc/category/Bottom'
+
 import Checkbox from 'components/base/Checkbox'
+import Section from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
+import Bottom from 'components/misc/category/Bottom'
+import Instruction from 'components/misc/category/Instruction'
+import Top from 'components/misc/category/Top'
+import Wrapper from 'components/misc/category/Wrapper'
+import TransportContext from 'components/transport/TransportProvider'
+
 import Search from './Search'
 
 export default function Itinerary(props) {
