@@ -42,7 +42,9 @@ export default function SmartphoneCategory() {
         9 tablettes
         <br />
       </Small>
-      <CenterLink to='/numerique'>Voir la catégorie numérique</CenterLink>
+      <CenterLink to='/numerique'>
+        Comparez avec d'autres objets numériques
+      </CenterLink>
     </>
   )
 }

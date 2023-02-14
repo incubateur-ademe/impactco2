@@ -43,7 +43,9 @@ export default function MontreCategory() {
         14 montres connectées
         <br />
       </Small>
-      <CenterLink to='/numerique'>Voir la catégorie numérique</CenterLink>
+      <CenterLink to='/numerique'>
+        Comparez avec d'autres objets numériques
+      </CenterLink>
     </>
   )
 }

@@ -48,7 +48,9 @@ export default function Voiture() {
         <br />
         <strong>445 km en voiture</strong>
       </Small>
-      <CenterLink to='/convertisseur'>Voir plus d&apos;équivalences</CenterLink>
+      <CenterLink to='/convertisseur'>
+        Comparez à d'autres objets du quotidien
+      </CenterLink>
     </>
   )
 }
