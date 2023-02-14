@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import MagicLink from 'components/base/MagicLink'
 import Datagir from 'components/base/Datagir'
 import Logo from 'components/base/Logo'
+import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
-  position: absolute;
   bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 0.875rem;
+  left: 50%;
   pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
 
   ${(props) => props.theme.mq.small} {
     left: auto;
@@ -20,20 +20,20 @@ const Wrapper = styled.div`
   }
 `
 const StyledLogo = styled(Logo)`
-  position: absolute;
   bottom: 1rem;
-  left: 1rem;
   font-size: 0.571428571rem;
+  left: 1rem;
   pointer-events: none;
+  position: absolute;
 `
 const StyledDatagir = styled(Datagir)`
-  position: absolute;
   bottom: 1rem;
-  right: 1rem;
-  width: auto;
   height: 2rem;
   margin: 0;
   pointer-events: none;
+  position: absolute;
+  right: 1rem;
+  width: auto;
 
   ${(props) => props.theme.mq.small} {
     display: none;

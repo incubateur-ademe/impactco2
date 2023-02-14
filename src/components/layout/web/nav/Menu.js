@@ -1,9 +1,11 @@
+import { useRouter } from 'next/router'
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { useRouter } from 'next/router'
 
 import DataContext from 'components/providers/DataProvider'
+
 import Emoji from 'components/base/Emoji'
+
 import Dropdown from './menu/Dropdown'
 
 const Wrapper = styled.nav`
@@ -11,8 +13,8 @@ const Wrapper = styled.nav`
   margin-left: -1.5rem;
 `
 const StyledEmoji = styled(Emoji)`
-  margin: 0 0.25rem 0.25rem 0;
   font-size: 1.25rem;
+  margin: 0 0.25rem 0.25rem 0;
 `
 export default function Menu() {
   const { categories } = useContext(DataContext)

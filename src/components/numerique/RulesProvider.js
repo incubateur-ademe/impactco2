@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react'
 import Engine from 'publicodes'
+import React, { useMemo } from 'react'
 
 import useRules from 'hooks/useRules'
 import useSituation from 'hooks/useSituation'

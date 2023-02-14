@@ -1,10 +1,10 @@
-import React from 'react'
-import { useRouter } from 'next/router'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
+import { useRouter } from 'next/router'
+import React from 'react'
 
-import Web from 'components/layout/Web'
 import Section from 'components/base/Section'
+import Web from 'components/layout/Web'
 
 function useAGB(codeagb) {
   return useQuery(

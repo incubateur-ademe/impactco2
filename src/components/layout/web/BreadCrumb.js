@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
-import Section from 'components/base/Section'
+
 import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
 
 const Wrapper = styled.div`
-  margin-bottom: 1.75rem;
-  height: 1.05rem;
   font-size: 0.75rem;
   font-weight: 300;
+  height: 1.05rem;
+  margin-bottom: 1.75rem;
 `
 export default function BreadCrumb(props) {
   return (

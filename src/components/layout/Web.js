@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import useInteraction from 'hooks/useInteraction'
-import Seo from './web/Seo'
-import Header from './web/Header'
-import Nav from './web/Nav'
+
 import BreadCrumb from './web/BreadCrumb'
 import Footer from './web/Footer'
+import Header from './web/Header'
+import Nav from './web/Nav'
+import Seo from './web/Seo'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,17 +15,17 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `
 const Content = styled.div`
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
 `
 const FullScreen = styled.div`
-  position: relative;
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   min-height: 100vh;
   padding: 0 0 5rem;
+  position: relative;
 `
 export default function Web(props) {
   useInteraction()

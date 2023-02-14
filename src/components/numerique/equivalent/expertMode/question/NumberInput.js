@@ -1,6 +1,6 @@
+import { serializeUnit } from 'publicodes'
 import React from 'react'
 import styled from 'styled-components'
-import { serializeUnit } from 'publicodes'
 
 const Wrapper = styled.div`
   font-size: 1.25rem;
@@ -9,19 +9,19 @@ const Wrapper = styled.div`
   }
 `
 const Input = styled.input`
-  width: 7rem;
-  margin-right: 0.5rem;
-  padding: 0.5rem 1rem;
-  color: ${(props) => props.theme.colors.text};
-  text-align: right;
   background-color: transparent;
   border: 0.125rem solid
     ${(props) => props.theme.colors[props.error ? 'error' : 'main']};
   border-radius: 0.75rem;
+  color: ${(props) => props.theme.colors.text};
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-align: right;
   transition: box-shadow 300ms ease-out;
+  width: 7rem;
   &:focus {
-    outline: none;
     box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
+    outline: none;
   }
 `
 const Unit = styled.span``

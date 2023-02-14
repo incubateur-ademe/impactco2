@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import { WhatsappShareButton } from 'react-share'
+import styled from 'styled-components'
 
 const Svg = styled.svg``
 export default function Whatsapp(props) {

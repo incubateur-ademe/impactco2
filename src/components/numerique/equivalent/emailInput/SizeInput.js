@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
-import RulesContext from 'components/numerique/RulesProvider'
 import Slider from 'components/base/Slider'
+import RulesContext from 'components/numerique/RulesProvider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
 export default function DurationInput(props) {

@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import NumberInput from './question/NumberInput'
 import ChoicesInput from './question/ChoicesInput'
+import NumberInput from './question/NumberInput'
 
 const Wrapper = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `
 const Label = styled.p`
   margin-bottom: 0.5rem;

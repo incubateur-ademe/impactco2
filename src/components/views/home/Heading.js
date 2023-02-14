@@ -2,18 +2,20 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
+
 import ButtonLink from 'components/base/ButtonLink'
+import Section from 'components/base/Section'
 import Search from 'components/misc/Search'
+
 import Categories from './heading/Categories'
 
 const StyledSectionContent = styled(Section.Content)`
   margin-bottom: 6rem;
 `
 const Title = styled.h1`
-  margin: -0.5rem 0 0.75rem;
-  letter-spacing: -0.01em;
   color: ${(props) => props.theme.colors.main};
+  letter-spacing: -0.01em;
+  margin: -0.5rem 0 0.75rem;
   text-align: center;
 `
 const Br = styled.br`
@@ -22,8 +24,8 @@ const Br = styled.br`
   }
 `
 const Text = styled.p`
-  margin: 0 auto 2rem;
   font-size: 1.125rem;
+  margin: 0 auto 2rem;
   text-align: center;
 
   ${(props) => props.theme.mq.medium} {
@@ -31,19 +33,19 @@ const Text = styled.p`
   }
 `
 const StyledSearch = styled(Search)`
-  width: 42rem;
+  font-size: 1.375rem;
   height: 3.0625rem;
   margin: 0 auto 4rem;
-  font-size: 1.375rem;
+  width: 42rem;
 
   ${(props) => props.theme.mq.medium} {
-    width: 100%;
     font-size: 1.25rem;
+    width: 100%;
   }
 
   ${(props) => props.theme.mq.small} {
-    margin-bottom: 2rem;
     font-size: 1rem;
+    margin-bottom: 2rem;
   }
 `
 const StyledButtonLink = styled(ButtonLink)`

@@ -4,14 +4,14 @@ import styled from 'styled-components'
 import Emoji from 'components/base/Emoji'
 
 const Title = styled.h3`
-  margin-bottom: 1rem;
   font-weight: normal;
+  margin-bottom: 1rem;
   text-align: center;
 `
 const Sizes = styled.div`
+  align-items: center;
   display: flex;
   justify-content: space-around;
-  align-items: center;
   margin-bottom: 2.5rem;
 
   ${(props) => props.theme.mq.small} {
@@ -20,39 +20,39 @@ const Sizes = styled.div`
   }
 `
 const Size = styled.p`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: ${(props) => (props.small ? 10 : props.large ? 13.375 : 12)}rem;
-  height: ${(props) => (props.small ? 10 : props.large ? 13.375 : 12)}rem;
-  margin: 0;
-  color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 50rem;
+  color: ${(props) => props.theme.colors.background};
+  display: flex;
+  flex-direction: column;
+  height: ${(props) => (props.small ? 10 : props.large ? 13.375 : 12)}rem;
+  justify-content: center;
+  margin: 0;
+  width: ${(props) => (props.small ? 10 : props.large ? 13.375 : 12)}rem;
 
   ${(props) => props.theme.mq.medium} {
-    width: ${(props) => (props.small ? 20 : props.large ? 28 : 24)}vw;
     height: ${(props) => (props.small ? 20 : props.large ? 28 : 24)}vw;
+    width: ${(props) => (props.small ? 20 : props.large ? 28 : 24)}vw;
   }
   ${(props) => props.theme.mq.small} {
-    width: ${(props) => (props.small ? 30 : props.large ? 40 : 35)}vw;
     height: ${(props) => (props.small ? 30 : props.large ? 40 : 35)}vw;
+    width: ${(props) => (props.small ? 30 : props.large ? 40 : 35)}vw;
   }
 `
 const StyledEmoji = styled(Emoji)`
-  display: flex;
   align-items: flex-end;
+  display: flex;
+  font-size: ${(props) => (props.small ? 2 : props.large ? 4 : 3)}rem;
   height: 2.5rem;
   margin-bottom: 0.5rem;
-  font-size: ${(props) => (props.small ? 2 : props.large ? 4 : 3)}rem;
 
   ${(props) => props.theme.mq.medium} {
     font-size: ${(props) => (props.small ? 3 : props.large ? 5 : 4)}vw;
   }
   ${(props) => props.theme.mq.small} {
-    height: auto;
     font-size: ${(props) => (props.small ? 5 : props.large ? 7 : 6)}vw;
+    height: auto;
   }
 `
 const Label = styled.span`

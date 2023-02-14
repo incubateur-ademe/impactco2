@@ -1,16 +1,17 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 
-import RulesContext from '../RulesProvider'
 import ButtonLink from 'components/base/ButtonLink'
+
+import RulesContext from '../RulesProvider'
 import Question from './expertMode/Question'
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: stretch;
+  display: flex;
   flex-wrap: wrap;
   gap: 2rem 3rem;
+  justify-content: center;
   margin-top: 1rem;
 
   ${(props) => props.theme.mq.medium} {
@@ -18,8 +19,8 @@ const Wrapper = styled.div`
   }
 `
 const StyledButtonLink = styled(ButtonLink)`
-  margin-bottom: 2rem;
   font-size: 0.75rem;
+  margin-bottom: 2rem;
 `
 export default function ExpertMode(props) {
   const { engine, setSituation } = useContext(RulesContext)

@@ -1,20 +1,21 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
+  font-size: clamp(0.75rem, 1em, 1.125rem);
   max-height: 60vh;
   overflow: hidden;
-  font-size: clamp(0.75rem, 1em, 1.125rem);
 `
 const Suggestion = styled.div`
-  padding: 0.75em 0.75em 0.75em 2em;
-  cursor: pointer;
-  transition: background-color 200ms ease-out;
   background-color: ${(props) =>
     props.theme.colors[props.current ? 'second' : 'background']};
+  cursor: pointer;
+  padding: 0.75em 0.75em 0.75em 2em;
+  transition: background-color 200ms ease-out;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.mainLight};
@@ -24,13 +25,13 @@ const Suggestion = styled.div`
   }
 `
 const NotFound = styled.div`
-  padding: 0.75em 0.75em 0.75em 2em;
-  font-weight: 300;
   background-color: ${(props) => props.theme.colors.background};
+  font-weight: 300;
+  padding: 0.75em 0.75em 0.75em 2em;
 `
 const Name = styled.span`
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 0.5rem;
 `
 const Subtitle = styled.span`

@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 
-import ModalContext from 'components/providers/ModalProvider'
 import DataContext from 'components/providers/DataProvider'
-import Modal from 'components/base/Modal'
+import ModalContext from 'components/providers/ModalProvider'
+
 import Button from 'components/base/Button'
+import Modal from 'components/base/Modal'
 import TextInput from 'components/base/TextInput'
+
+import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import Equivalent from './tilesModal/Equivalent'
 
 const StyledModal = styled(Modal)`
@@ -21,14 +23,14 @@ const Equivalents = styled.div`
   margin-bottom: 3rem;
 `
 const StyledButtonWrapper = styled(Button.Wrapper)`
-  position: fixed;
+  background-color: ${(props) => props.theme.colors.background};
+  border-radius: 0 0 1rem 1rem;
+  border-top: 0.0625rem solid ${(props) => props.theme.colors.textLight};
   bottom: 0;
   left: 0.5rem;
-  right: 0.5rem;
   padding: 0.5rem;
-  background-color: ${(props) => props.theme.colors.background};
-  border-top: 0.0625rem solid ${(props) => props.theme.colors.textLight};
-  border-radius: 0 0 1rem 1rem;
+  position: fixed;
+  right: 0.5rem;
 `
 export default function TilesModal() {
   const { tiles: open, setTiles: setOpen } = useContext(ModalContext)

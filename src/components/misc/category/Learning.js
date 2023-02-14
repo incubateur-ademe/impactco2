@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
+
 import ButtonLink from 'components/base/ButtonLink'
+import Section from 'components/base/Section'
 
 const StyledSection = styled(Section)`
   margin: 5rem 0;
@@ -11,8 +12,8 @@ const StyledSection = styled(Section)`
 const Title = styled.h2``
 const Strong = styled.p`
   font-size: 1.5rem;
-  font-weight: bold;
   font-style: italic;
+  font-weight: bold;
 
   ${(props) => props.theme.mq.medium}  {
     font-size: 1.125rem;

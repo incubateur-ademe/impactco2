@@ -2,18 +2,19 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
+
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 
 const Wrapper = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 1.5rem;
 `
 const Disclaimer = styled.p`
-  max-width: 34rem;
   font-size: 0.875rem;
+  max-width: 34rem;
   text-align: center;
 `
 export default function Bottom(props) {

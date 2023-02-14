@@ -2,57 +2,58 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import UXContext from 'utils/UXContext'
-import ShareWrapper from 'components/wrappers/ShareWrapper'
-import EmbedWrapper from 'components/wrappers/EmbedWrapper'
-import ContactWrapper from 'components/wrappers/ContactWrapper'
+
 import MagicLink from 'components/base/MagicLink'
+import ContactWrapper from 'components/wrappers/ContactWrapper'
+import EmbedWrapper from 'components/wrappers/EmbedWrapper'
+import ShareWrapper from 'components/wrappers/ShareWrapper'
 
 const Wrapper = styled.div`
-  display: none;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 37rem;
-  margin: 0 auto ${(props) => (props.iframe ? 0.5 : 2)}rem;
-  padding: ${(props) => (props.iframe ? '1rem 0 0.5rem' : 0)};
   background-color: ${(props) => props.theme.colors.textLight};
   border-radius: 1rem;
+  display: none;
+  justify-content: space-around;
+  margin: 0 auto ${(props) => (props.iframe ? 0.5 : 2)}rem;
+  max-width: 37rem;
+  padding: ${(props) => (props.iframe ? '1rem 0 0.5rem' : 0)};
+  width: 100%;
 
   ${(props) => props.theme.mq.medium} {
     display: flex;
   }
 `
 const Button = styled.button`
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  color: ${(props) => props.theme.colors.main};
   background: none;
   border: none;
-`
-const StyledLink = styled(MagicLink)`
+  color: ${(props) => props.theme.colors.main};
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+`
+const StyledLink = styled(MagicLink)`
   align-items: center;
-
   color: ${(props) => props.theme.colors.main};
+  display: flex;
+
+  flex-direction: column;
   text-decoration: none;
 `
 const Icon = styled.div`
-  position: relative;
-  width: ${(props) => (props.iframe ? 2 : 3)}rem;
-  height: ${(props) => (props.iframe ? 2 : 3)}rem;
-  margin-bottom: ${(props) => (props.iframe ? 0.2 : 0.4)}rem;
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
+  height: ${(props) => (props.iframe ? 2 : 3)}rem;
+  margin-bottom: ${(props) => (props.iframe ? 0.2 : 0.4)}rem;
+  position: relative;
+  width: ${(props) => (props.iframe ? 2 : 3)}rem;
 
   svg {
+    height: auto;
+    left: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    height: auto;
 
     path {
       fill: ${(props) => props.theme.colors.background};

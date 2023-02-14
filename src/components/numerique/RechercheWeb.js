@@ -1,7 +1,8 @@
 import React from 'react'
 
-import Section from 'components/base/Section'
 import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
+
 import Contact from './Contact'
 
 export default function Email() {

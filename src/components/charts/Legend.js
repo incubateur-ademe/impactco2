@@ -3,32 +3,32 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 0.75rem;
   flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
   margin: 0.5rem 0 1.5rem;
 `
 const Item = styled.div`
-  position: relative;
-  padding-left: 1.375rem;
   font-size: 0.75rem;
   font-weight: 300;
+  padding-left: 1.375rem;
+  position: relative;
 
   &:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
-    width: 1.125rem;
-    height: 1.125rem;
     background-color: ${(props) => props.color};
     border-radius: 0.25rem;
+    content: '';
+    height: 1.125rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1.125rem;
   }
 `
 const More = styled.sup`
-  font-size: 0.625em;
   color: ${(props) => props.theme.colors.main};
   cursor: pointer;
+  font-size: 0.625em;
 `
 export default function Legend(props) {
   return (

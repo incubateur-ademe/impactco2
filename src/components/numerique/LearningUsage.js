@@ -2,12 +2,14 @@ import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { formatName, formatTotal, formatUsage } from 'utils/formatters'
-import ModalContext from 'components/providers/ModalProvider'
+
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+import ModalContext from 'components/providers/ModalProvider'
+
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
 import List from 'components/misc/category/List'
 
 const StyledSection = styled(Section)`
@@ -15,8 +17,8 @@ const StyledSection = styled(Section)`
 `
 const Strong = styled.p`
   font-size: 1.5rem;
-  font-weight: bold;
   font-style: italic;
+  font-weight: bold;
 
   ${(props) => props.theme.mq.medium}  {
     font-size: 1.125rem;

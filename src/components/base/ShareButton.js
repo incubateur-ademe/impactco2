@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
+
 import Button from 'components/base/Button'
 
 const hover = keyframes`
@@ -45,8 +46,8 @@ const StyledButton = styled(Button)`
 `
 const Svg = styled.svg`
   display: block;
-  width: 1.125rem;
   height: auto;
+  width: 1.125rem;
 
   path {
     &.outline1 {

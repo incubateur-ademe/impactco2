@@ -1,6 +1,5 @@
-import React from 'react'
-
 import categories from 'data/categories.json'
+import React from 'react'
 
 import Iframe from 'components/layout/Iframe'
 import Category from 'components/misc/Category'

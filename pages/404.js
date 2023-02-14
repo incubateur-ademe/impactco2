@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Web from 'components/layout/Web'
 import Section from 'components/base/Section'
+import Web from 'components/layout/Web'
 
 export default function notfound() {
   return (

@@ -1,29 +1,32 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
-import AnimatedNumber from 'animated-number-react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
+import AnimatedNumber from 'animated-number-react'
+import React, { useContext } from 'react'
+import styled from 'styled-components'
 
-import useIframe from 'hooks/useIframe'
 import {
-  formatNumber,
   formatName,
+  formatNumber,
   formatTotalByMultiplier,
 } from 'utils/formatters'
+
+import useIframe from 'hooks/useIframe'
+
 import DataContext from 'components/providers/DataProvider'
-import Emoji from 'components/base/Emoji'
+
 import Button from 'components/base/Button'
+import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  width: calc(33.3333% - 1rem);
-  padding: 1.125rem 0.25rem;
   background-color: ${(props) =>
     props.theme.colors[props.background ? 'textLight' : 'second']};
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.125rem 0.25rem;
+  position: relative;
+  width: calc(33.3333% - 1rem);
 
   ${(props) => props.theme.mq.medium} {
     width: calc(33.3333% - 0.5rem);
@@ -33,21 +36,21 @@ const Wrapper = styled.div`
   }
 `
 const ButtonDrag = styled.button`
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  height: 1.125rem;
-  margin: 0;
-  padding: 0;
   background: none;
   border: none;
   cursor: grab;
+  height: 1.125rem;
+  left: 0.75rem;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0.75rem;
 
   svg {
-    width: auto;
     height: 100%;
-    transition: transform 300ms ease-out;
     transform-origin: center;
+    transition: transform 300ms ease-out;
+    width: auto;
 
     circle {
       fill: ${(props) => props.theme.colors.main};
@@ -59,21 +62,21 @@ const ButtonDrag = styled.button`
   }
 `
 const ButtonRemove = styled.button`
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 1rem;
-  margin: 0;
-  padding: 0;
   background: none;
   border: none;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  width: 1rem;
 
   svg {
-    width: 100%;
     height: auto;
-    transition: transform 300ms ease-out;
     transform-origin: center;
+    transition: transform 300ms ease-out;
+    width: 100%;
 
     path {
       fill: ${(props) => props.theme.colors.main};
@@ -87,8 +90,8 @@ const ButtonRemove = styled.button`
   }
 `
 const EmojiWrapper = styled.div`
-  margin-bottom: 0.5rem;
   font-size: 2rem;
+  margin-bottom: 0.5rem;
 
   img,
   span {
@@ -96,12 +99,12 @@ const EmojiWrapper = styled.div`
   }
 `
 const Title = styled.p`
-  margin-bottom: 0.25rem;
+  color: ${(props) => props.theme.colors.text};
   font-size: 0.875rem;
   font-weight: normal;
-  text-align: center;
   line-height: 1.2;
-  color: ${(props) => props.theme.colors.text};
+  margin-bottom: 0.25rem;
+  text-align: center;
 `
 const Number = styled.span`
   display: block;
@@ -113,20 +116,20 @@ const Number = styled.span`
   }
 `
 const Name = styled.span`
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   min-height: 2.125rem;
 `
 const Subtitle = styled.span`
   display: block;
-  font-weight: 300;
   font-size: 0.75rem;
+  font-weight: 300;
 `
 const StyledButton = styled(Button)`
-  padding: 0.5em 0.75rem;
   font-size: 0.8125rem;
+  padding: 0.5em 0.75rem;
 
   svg {
     display: block;
@@ -135,8 +138,8 @@ const StyledButton = styled(Button)`
   }
 `
 const Svg = styled.svg`
-  width: 1em;
   height: auto;
+  width: 1em;
 `
 export default function Tile(props) {
   const { categories } = useContext(DataContext)

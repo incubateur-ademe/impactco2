@@ -4,15 +4,15 @@ import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled(MagicLink)`
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
   background-color: ${(props) => props.theme.colors.main};
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  height: 3.5rem;
+  justify-content: center;
+  width: 3.5rem;
 `
 const Svg = styled.svg`
   width: 2.2rem !important;
@@ -24,7 +24,7 @@ const Svg = styled.svg`
     fill: ${(props) => props.theme.colors.background}!important;
   }
 `
-export default function Integration(props) {
+export default function Integration() {
   return (
     <Wrapper to={'/integration'}>
       <Svg

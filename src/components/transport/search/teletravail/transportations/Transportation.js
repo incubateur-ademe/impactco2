@@ -1,29 +1,29 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import TransportContext from 'components/transport/TransportProvider'
 import Emoji from 'components/base/Emoji'
+import TransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.button`
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin: 0.375rem;
-  padding: 0;
-  font-size: 1.5rem;
   background-color: ${(props) =>
     props.active ? props.theme.colors.main : 'transparent'};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.5rem;
   cursor: pointer;
+  font-size: 1.5rem;
+  height: 2.5rem;
+  margin: 0.375rem;
+  padding: 0;
+  position: relative;
   transition: background-color 200ms ease-out;
+  width: 2.5rem;
 `
 const Second = styled.span`
-  position: absolute;
   bottom: 0;
+  font-size: 0.75em;
+  position: absolute;
   right: 0;
   transform: translate(30%, 50%);
-  font-size: 0.75em;
 `
 export default function Transportation(props) {
   const { teletravailTransportation, setTeletravailTransportation } =

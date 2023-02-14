@@ -1,35 +1,36 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
-  position: relative;
   margin-right: 1.25rem;
+  position: relative;
 `
 const List = styled.div`
-  position: absolute;
-  z-index: 12;
-  top: 100%;
-  left: 0;
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 0 0 1rem 1rem;
   box-shadow: -0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05);
+  left: 0;
   overflow: hidden;
+  position: absolute;
+  top: 100%;
+  z-index: 12;
 `
 const ButtonDropdown = styled.button`
-  position: relative;
-  display: flex;
   align-items: center;
-  height: 3rem;
-  padding: 0 1.5rem;
-  font-size: 0.875rem;
-  text-decoration: none;
-  color: ${(props) =>
-    props.theme.colors[props.current || props.open ? 'main' : 'text']};
   background-color: ${(props) =>
     props.open ? props.theme.colors.mainLight : 'transparent'};
   border: none;
+  color: ${(props) =>
+    props.theme.colors[props.current || props.open ? 'main' : 'text']};
   cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  height: 3rem;
+  padding: 0 1.5rem;
+  position: relative;
+  text-decoration: none;
   transition: background-color 200ms ease-out;
 
   &:hover {
@@ -37,14 +38,14 @@ const ButtonDropdown = styled.button`
   }
 
   &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 0.125rem;
     background-color: ${(props) => props.theme.colors.main};
+    bottom: 0;
+    content: '';
+    height: 0.125rem;
+    left: 0;
     opacity: ${(props) => (props.current ? 1 : 0)};
+    position: absolute;
+    right: 0;
   }
 
   svg {
@@ -95,22 +96,22 @@ export default function Dropdown(props) {
   )
 }
 Dropdown.Item = styled(MagicLink)`
-  position: relative;
-  display: block;
-  padding: 0.75rem 2.5rem 0.5rem 1.5rem;
-  font-size: 0.875rem;
   color: ${(props) => props.theme.colors[props.current ? 'main' : 'text']};
+  display: block;
+  font-size: 0.875rem;
+  padding: 0.75rem 2.5rem 0.5rem 1.5rem;
+  position: relative;
   text-decoration: none;
   white-space: nowrap;
 
   &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 1rem;
-    right: 1rem;
-    height: 0.0625rem;
     background-color: ${(props) => props.theme.colors.secondDark};
+    bottom: 0;
+    content: '';
+    height: 0.0625rem;
+    left: 1rem;
+    position: absolute;
+    right: 1rem;
   }
   &:last-child {
     padding: 0.75rem 1.5rem 1rem;

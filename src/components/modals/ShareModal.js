@@ -2,14 +2,16 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
+
 import Modal from 'components/base/Modal'
-import Integration from './shareModal/Integration'
-import Mail from './shareModal/Mail'
+
 import Facebook from './shareModal/Facebook'
-import Twitter from './shareModal/Twitter'
-import Linkedin from './shareModal/Linkedin'
-import Whatsapp from './shareModal/Whatsapp'
+import Integration from './shareModal/Integration'
 import Link from './shareModal/Link'
+import Linkedin from './shareModal/Linkedin'
+import Mail from './shareModal/Mail'
+import Twitter from './shareModal/Twitter'
+import Whatsapp from './shareModal/Whatsapp'
 
 const Title = styled.h2``
 const Wrapper = styled.div`
@@ -19,8 +21,8 @@ const Wrapper = styled.div`
 
   svg {
     display: block;
-    width: 3.5rem;
     height: auto;
+    width: 3.5rem;
 
     path {
       fill: ${(props) => props.theme.colors.main};

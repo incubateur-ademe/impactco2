@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import { init } from '@socialgouv/matomo-next'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { NextAdapter } from 'next-query-params'
+import React, { useEffect, useState } from 'react'
 import { QueryParamProvider } from 'use-query-params'
-import { init } from '@socialgouv/matomo-next'
 
+import 'utils/fonts.css'
 import { GlobalStyle } from 'utils/styles'
-import fonts from 'utils/fonts.css'
 
-import { StyleProvider } from 'components/providers/StyleProvider'
-import { ModalProvider } from 'components/providers/ModalProvider'
 import { DataProvider } from 'components/providers/DataProvider'
+import { ModalProvider } from 'components/providers/ModalProvider'
+import { StyleProvider } from 'components/providers/StyleProvider'
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())

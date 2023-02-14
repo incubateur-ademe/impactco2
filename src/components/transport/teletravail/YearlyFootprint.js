@@ -5,25 +5,25 @@ const Wrapper = styled.div`
   margin-bottom: 2.5rem;
 `
 const Bar = styled.div`
-  position: relative;
-  height: 7rem;
-  margin-bottom: 0.5rem;
   background-color: ${(props) => props.theme.colors.mainLight};
   border-radius: 3.5rem;
+  height: 7rem;
+  margin-bottom: 0.5rem;
+  position: relative;
 `
 const Emitted = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
   align-items: flex-start;
-  width: ${(props) => props.percent}%;
-  height: 100%;
-  color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 3.5rem;
+  color: ${(props) => props.theme.colors.background};
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
   transition: width 300ms ease-out;
+  width: ${(props) => props.percent}%;
 
   ${(props) => props.theme.mq.small} {
     max-width: ${(props) =>
@@ -32,18 +32,18 @@ const Emitted = styled.div`
   }
 `
 const Saved = styled(Emitted)`
+  background-color: transparent;
+  color: ${(props) => props.theme.colors.main};
   left: auto;
   right: 0;
   transform-origin: right;
-  color: ${(props) => props.theme.colors.main};
-  background-color: transparent;
 `
 const Content = styled.p`
+  line-height: 1.4rem;
   margin: 0;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
   padding-top: 2rem;
   text-align: center;
-  line-height: 1.4rem;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity ${(props) => (props.visible ? 300 : 0)}ms
     ${(props) => (props.visible ? 200 : 0)}ms;
 
@@ -56,7 +56,7 @@ const Small = styled.span`
   font-weight: 300;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity ${(props) => (props.visible ? 300 : 0)}ms
-    ${(props) => (props.visible ? 200 : 0)}ms; ;
+    ${(props) => (props.visible ? 200 : 0)}ms;
 `
 const Number = styled.span`
   font-size: 2em;

@@ -1,35 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Ademe from 'components/base/Ademe'
+import Logo from 'components/base/Logo'
 import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
-import Ademe from 'components/base/Ademe'
 import Section from 'components/base/Section'
-import Logo from 'components/base/Logo'
+
 import ThemeToggle from './header/ThemeToggle'
 
 const Wrapper = styled.header`
-  position: relative;
   display: flex;
   justify-content: space-between;
   margin: 0.25rem 0;
+  position: relative;
 
   ${(props) => props.theme.mq.small} {
-    margin-bottom: 0.5rem;
     font-size: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 `
 const Left = styled.div`
-  position: relative;
+  align-items: center;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  position: relative;
 `
 const Logos = styled(MagicLink)`
-  display: flex;
   align-items: center;
-  margin: 0 0 0 -0.75em;
   background-color: #fff;
+  display: flex;
+  margin: 0 0 0 -0.75em;
 `
 export default function Header(props) {
   return (

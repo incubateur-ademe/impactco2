@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import styled, { keyframes } from 'styled-components'
 import copy from 'copy-to-clipboard'
+import React, { useEffect, useState } from 'react'
+import styled, { keyframes } from 'styled-components'
 
 const flash = (props) => keyframes`
   from,
@@ -22,26 +22,26 @@ const Label = styled.label`
   margin-bottom: 0.5rem;
 `
 const Text = styled.code`
-  position: relative;
-  display: block;
-  padding: 1rem 1rem 2rem;
-  font-size: 0.875rem;
-  word-break: break-word;
+  animation: ${(props) => (props.copied ? flash : 'none')} 400ms 1;
   background-color: ${(props) => props.theme.colors.textLight};
   border-radius: 0.5rem;
-  animation: ${(props) => (props.copied ? flash : 'none')} 400ms 1;
+  display: block;
+  font-size: 0.875rem;
+  padding: 1rem 1rem 2rem;
+  position: relative;
+  word-break: break-word;
 `
 const Copy = styled.button`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 0;
-  padding: 0.5rem;
-  color: ${(props) => props.theme.colors.main};
-  text-decoration: underline;
   background: none;
   border: none;
+  bottom: 0;
+  color: ${(props) => props.theme.colors.main};
   cursor: pointer;
+  margin: 0;
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  text-decoration: underline;
 `
 export default function Code(props) {
   const [script, setScript] = useState(null)

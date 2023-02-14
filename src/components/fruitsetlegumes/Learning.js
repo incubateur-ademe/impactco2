@@ -2,20 +2,22 @@ import React, { useContext, useRef } from 'react'
 import styled from 'styled-components'
 
 import useOnScreen from 'hooks/useOnScreen'
+
 import ModalContext from 'components/providers/ModalProvider'
 
-import Section from 'components/base/Section'
 import Button from 'components/base/Button'
+import Section from 'components/base/Section'
+
 import BarChart from './learning/BarChart'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;
 `
 const Statistic = styled.div`
-  display: flex;
-  margin-bottom: 1em;
-  justify-content: flex-end;
   color: ${(props) => props.theme.colors.main};
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
 `
 const Number = styled.div`
   font-size: 21em;
@@ -47,11 +49,11 @@ const StrongWrapper = styled.div`
   justify-content: flex-end;
 `
 const Strong = styled.p`
-  max-width: 23.75em;
-  margin-right: 1em;
   font-size: 1.25em;
-  font-weight: 700;
   font-style: italic;
+  font-weight: 700;
+  margin-right: 1em;
+  max-width: 23.75em;
   text-align: right;
 
   ${(props) => props.theme.mq.small} {

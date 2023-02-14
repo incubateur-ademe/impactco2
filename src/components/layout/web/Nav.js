@@ -1,9 +1,10 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
-import { useRouter } from 'next/router'
 
 import Section from 'components/base/Section'
 import Search from 'components/misc/Search'
+
 import Menu from './nav/Menu'
 
 const StyledSection = styled(Section)`
@@ -15,9 +16,9 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `
 const StyledSearch = styled(Search)`
+  font-size: 0.875rem;
   top: 0.375rem;
   width: 20rem;
-  font-size: 0.875rem;
 
   ${(props) => props.theme.mq.medium} {
     width: 17rem;

@@ -8,10 +8,10 @@ const Section = styled.div`
 Section.Content = styled.div`
   display: ${(props) => (props.flex ? 'flex' : 'block')};
   justify-content: space-between;
-  width: 48rem;
-  max-width: 100%;
   margin: 0 auto;
+  max-width: 100%;
   padding: 0 0.75rem;
+  width: 48rem;
 
   ${(props) => props.theme.mq.medium} {
     width: 100vw;

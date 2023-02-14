@@ -2,10 +2,13 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
-import MagicLink from 'components/base/MagicLink'
+
 import ButtonLink from 'components/base/ButtonLink'
+import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
+
 import Value from './details/Value'
 
 const Title = styled.h1``
@@ -35,9 +38,9 @@ const StyledSectionContent = styled(Section.Content)`
   }
 `
 const Disclaimer = styled.p`
-  max-width: 27.25rem;
-  margin-bottom: 0.5rem;
   font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  max-width: 27.25rem;
 `
 const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;

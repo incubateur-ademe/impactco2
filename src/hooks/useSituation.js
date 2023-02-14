@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useRef, useState } from 'react'
 
 export default function useSituation(engine, defaultSituation) {
   const [localSituation, setLocalSituation] = useState(defaultSituation)

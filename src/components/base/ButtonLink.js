@@ -4,17 +4,17 @@ import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled(MagicLink)`
-  display: inline;
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  color: ${(props) => props.theme.colors.main};
-  text-decoration: underline;
   background: transparent;
   border: none;
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  color: ${(props) => props.theme.colors.main};
   cursor: pointer;
+  display: inline;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  padding: 0;
+  text-decoration: underline;
 
   & sub {
     display: inline-block;

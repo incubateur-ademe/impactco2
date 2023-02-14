@@ -2,19 +2,20 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
+
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;
 `
 const Statistic = styled.h2`
-  margin-bottom: 1.375rem;
   font-size: 5rem;
   font-weight: bold;
   line-height: 1;
+  margin-bottom: 1.375rem;
   text-align: left;
 
   button {
@@ -26,13 +27,13 @@ const Statistic = styled.h2`
   }
 `
 const Number = styled.span`
-  font-size: 2.25em;
   color: ${(props) => props.theme.colors.main};
+  font-size: 2.25em;
 `
 const Strong = styled.p`
   font-size: 1.5rem;
-  font-weight: bold;
   font-style: italic;
+  font-weight: bold;
 
   ${(props) => props.theme.mq.medium}  {
     font-size: 1.125rem;

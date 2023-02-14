@@ -1,13 +1,14 @@
-import React, { useContext, useMemo } from 'react'
 import { useRouter } from 'next/router'
+import React, { useContext, useMemo } from 'react'
 
 import DataContext from 'components/providers/DataProvider'
+
 import Iframe from 'components/layout/Iframe'
 import Details from 'components/views/equivalent/Details'
-import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 import Ecv from 'components/views/equivalent/Ecv'
+import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
-export default function Equivalent(props) {
+export default function Equivalent() {
   const { query } = useRouter()
   const { equivalents, categories } = useContext(DataContext)
 

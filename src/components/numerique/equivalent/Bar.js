@@ -1,31 +1,33 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import RulesContext from '../RulesProvider'
 import { formatNumber } from 'utils/formatters'
+
 import Emoji from 'components/base/Emoji'
 
+import RulesContext from '../RulesProvider'
+
 const Wrapper = styled.div`
-  position: relative;
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
   padding: 0.5rem 0;
+  position: relative;
 
   &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -2000rem;
-    right: -2000rem;
     background-color: ${(props) => props.theme.colors.main};
+    bottom: 0;
+    content: '';
+    left: -2000rem;
+    position: absolute;
+    right: -2000rem;
+    top: 0;
   }
 `
 const Top = styled.div`
-  position: relative;
-  color: ${(props) => props.theme.colors.background};
   border-radius: 1rem 1rem 0 0;
+  color: ${(props) => props.theme.colors.background};
+  position: relative;
   transition: padding 300ms ease-out, margin 300ms ease-out;
 `
 const Number = styled.span`
@@ -51,21 +53,21 @@ const Big = styled.span`
   }
 `
 const StyledEmoji = styled(Emoji)`
-  position: relative;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 4.5rem;
-  height: 4.5rem;
-  margin-top: 0.325rem;
-  font-size: 3rem;
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 5.25rem;
+  display: flex;
+  font-size: 3rem;
+  height: 4.5rem;
+  justify-content: center;
+  margin-top: 0.325rem;
+  position: relative;
+  width: 4.5rem;
 
   ${(props) => props.theme.mq.small} {
-    width: 3.25rem;
-    height: 3.25rem;
     font-size: 2rem;
+    height: 3.25rem;
+    width: 3.25rem;
   }
 `
 

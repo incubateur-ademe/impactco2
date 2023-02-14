@@ -1,13 +1,15 @@
-import React, { useState, useContext, useMemo } from 'react'
-import styled from 'styled-components'
+import React, { useContext, useMemo, useState } from 'react'
 import { Range } from 'react-range'
+import styled from 'styled-components'
 
 import { formatTotal } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import { Title } from 'components/misc/Visualization'
+
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
+import { Title } from 'components/misc/Visualization'
 
 const Wrapper = styled.div`
   height: 100%;
@@ -17,8 +19,8 @@ const Question = styled.div`
   margin-bottom: 2.5rem;
 `
 const Text = styled.p`
-  margin-bottom: 0;
   font-size: 1.125rem;
+  margin-bottom: 0;
   text-align: center;
 
   ${(props) => props.theme.mq.small} {
@@ -26,8 +28,8 @@ const Text = styled.p`
   }
 `
 const Result = styled.p`
-  margin: 0 auto 2.5rem;
   font-size: 1.125rem;
+  margin: 0 auto 2.5rem;
   text-align: center;
 
   ${(props) => props.theme.mq.small} {
@@ -36,8 +38,8 @@ const Result = styled.p`
 
   strong {
     display: block;
-    margin: 0.25rem auto;
     font-size: 1.5rem;
+    margin: 0.25rem auto;
 
     ${(props) => props.theme.mq.small} {
       font-size: 1.125rem;
@@ -45,51 +47,51 @@ const Result = styled.p`
   }
 `
 const RangeWrapper = styled.div`
-  display: flex;
   align-items: center;
-  width: 30rem;
-  max-width: 100%;
+  display: flex;
   height: 2.5rem;
   margin: 0.5rem auto;
+  max-width: 100%;
+  width: 30rem;
 `
 const Track = styled.div`
-  position: relative;
   flex: 1;
   height: 0.125rem;
   margin: 0 3.75rem;
+  position: relative;
 
   &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -2.75rem;
-    right: -2.75rem;
     background-color: ${(props) => props.theme.colors.mainLight};
+    bottom: 0;
+    content: '';
+    left: -2.75rem;
+    position: absolute;
+    right: -2.75rem;
+    top: 0;
   }
 `
 const Thumb = styled.div`
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
-  width: 7.5rem;
-  height: 2.5rem;
-  padding: 0 1rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-align: center;
-  color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
+  color: ${(props) => props.theme.colors.background};
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: 700;
+  height: 2.5rem;
+  justify-content: flex-end;
+  padding: 0 1rem;
+  text-align: center;
+  width: 7.5rem;
 
   &:focus {
-    outline: none;
     box-shadow: 0 0 0 0.125rem ${(props) => props.theme.colors.mainLight};
+    outline: none;
   }
 
   ${(props) => props.theme.mq.small} {
-    width: 6.5rem;
     font-size: 1rem;
+    width: 6.5rem;
   }
 `
 export default function LiseuseBookComparator() {

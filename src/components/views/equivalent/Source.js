@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import Section from 'components/base/Section'
 
 const Title = styled.h2`
-  text-align: center;
   color: ${(props) => props.theme.colors.text};
+  text-align: center;
 `
 const Text = styled.div``
 export default function Details(props) {

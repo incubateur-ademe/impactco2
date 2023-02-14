@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import useScreenshot from 'hooks/useScreenshot'
+
 import Background from 'components/screenshot/Background'
 import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
@@ -12,8 +13,8 @@ const SizerWrapper = styled.div`
   }
 `
 const Sizer = styled.div`
-  position: relative;
   margin: -1.5rem;
+  position: relative;
 
   ${(props) => props.theme.mq.medium} {
     margin: -0.75rem;
@@ -24,9 +25,9 @@ const Content = styled.div`
     props.hover ? props.theme.colors.background : 'transparent'};
 `
 const Header = styled.div`
+  align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
 `
 const Title = styled.h1``
 const StyledButtons = styled(Buttons)`

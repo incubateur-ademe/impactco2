@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import RadioInput from './choicesInput/RadioInput'
 
 const Wrapper = styled.div`
-  display: flex;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 1.5rem;
+  display: flex;
   overflow: hidden;
 `
 export default function ChoicesInput(props) {

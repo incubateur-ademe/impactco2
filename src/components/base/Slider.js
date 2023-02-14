@@ -1,34 +1,34 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Range } from 'react-range'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  flex: 1;
-  display: flex;
   align-items: center;
+  display: flex;
+  flex: 1;
   height: 1.25rem;
 `
 const Track = styled.div`
-  position: relative;
-  width: 100%;
   height: 0.0625rem;
   margin: 0 0.625rem;
+  position: relative;
+  width: 100%;
 
   &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -0.625rem;
-    right: -0.625rem;
     background-color: ${(props) => props.theme.colors.text};
+    bottom: 0;
+    content: '';
+    left: -0.625rem;
+    position: absolute;
+    right: -0.625rem;
+    top: 0;
   }
 `
 const Thumb = styled.div`
-  width: 1.25rem;
-  height: 1.25rem;
   background-color: ${(props) => props.color || props.theme.colors.main};
   border-radius: 1rem;
+  height: 1.25rem;
+  width: 1.25rem;
 `
 export default function Slider(props) {
   return (

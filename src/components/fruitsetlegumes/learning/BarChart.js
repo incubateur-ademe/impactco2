@@ -4,69 +4,69 @@ import styled from 'styled-components'
 import useOnScreen from 'hooks/useOnScreen'
 
 const Wrapper = styled.div`
-  position: relative;
-  max-width: 35em;
   margin: 2em auto;
+  max-width: 35em;
+  position: relative;
 `
 const Product = styled.div`
   display: flex;
 `
 const Label = styled.div`
-  display: flex;
   align-items: center;
-  width: 3rem;
-  padding-bottom: 0.3em;
+  border-right: 1px solid ${(props) => props.theme.colors.main};
+  display: flex;
   font-size: 2em;
   line-height: 1;
-  border-right: 1px solid ${(props) => props.theme.colors.main};
+  padding-bottom: 0.3em;
+  width: 3rem;
 `
 const Bars = styled.div`
   flex: 1;
   padding: 0.5em 0;
 `
 const Bar = styled.div`
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
-  width: ${(props) => props.length}%;
-  height: 1.5em;
-  margin-bottom: 0.5em;
-  padding-right: 1em;
-  font-weight: 700;
-  font-style: italic;
-  line-height: 1;
-  color: ${(props) => props.theme.colors.second};
   background-color: ${(props) =>
     props.theme.colors[props.secondary ? 'main' : 'error']};
+  color: ${(props) => props.theme.colors.second};
+  display: flex;
+  font-style: italic;
+  font-weight: 700;
+  height: 1.5em;
+  justify-content: flex-end;
+  line-height: 1;
+  margin-bottom: 0.5em;
+  padding-right: 1em;
   transform: scaleX(${(props) => (props.isOnScreen ? 1 : 0)});
   transform-origin: left;
   transition: transform 400ms ease-in-out
     ${(props) => props.index * 200 + 1000}ms;
+  width: ${(props) => props.length}%;
 `
 const Axis = styled.div`
-  position: relative;
+  border-top: 1px solid ${(props) => props.theme.colors.main};
   margin-left: 3em;
   padding-top: 1.5em;
-  border-top: 1px solid ${(props) => props.theme.colors.main};
+  position: relative;
 `
 
 const Mark = styled.div`
+  font-size: 0.875em;
+  left: ${(props) => props.position}%;
+  line-height: 1.8;
   position: absolute;
   top: 0;
-  left: ${(props) => props.position}%;
   transform: translateX(-50%);
-  font-size: 0.875em;
-  line-height: 1.8;
 
   &:before {
+    background-color: ${(props) => props.theme.colors.main};
     content: '';
+    height: calc(0.5em + 1px);
+    left: 50%;
     position: absolute;
     top: calc(-0.25em - 1px);
-    left: 50%;
     transform: translateX(-50%);
     width: 1px;
-    height: calc(0.5em + 1px);
-    background-color: ${(props) => props.theme.colors.main};
   }
 `
 const Unit = styled.div`
@@ -74,25 +74,25 @@ const Unit = styled.div`
 `
 const Caption = styled.div`
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
 `
 const Item = styled.div`
-  position: relative;
-  padding-right: 1.5em;
-  font-weight: 700;
   font-style: italic;
+  font-weight: 700;
+  padding-right: 1.5em;
+  position: relative;
   text-align: right;
 
   &:before {
-    content: '';
-    position: absolute;
-    top: 0.2em;
-    right: 0;
-    width: 1em;
-    height: 1em;
     background-color: ${(props) =>
       props.theme.colors[props.secondary ? 'main' : 'error']};
+    content: '';
+    height: 1em;
+    position: absolute;
+    right: 0;
+    top: 0.2em;
+    width: 1em;
   }
 `
 export default function BarChart() {

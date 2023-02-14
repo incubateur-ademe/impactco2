@@ -2,22 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import Glass from './textInput/Glass'
 import Submit from './textInput/Submit'
 
 const Wrapper = styled.div`
-  position: relative;
   overflow: hidden;
+  position: relative;
 `
 const Input = styled.input`
-  width: 100%;
-  padding: 0.5em 2.5em;
+  background: transparent;
+  border: none;
+  color: ${(props) => props.theme.colors.text};
   font-size: 1em;
   font-weight: normal;
   line-height: 1.25;
-  color: ${(props) => props.theme.colors.text};
-  background: transparent;
-  border: none;
+  padding: 0.5em 2.5em;
+  width: 100%;
 
   &::placeholder {
     color: ${(props) => props.theme.colors.text};
@@ -28,36 +29,36 @@ const Input = styled.input`
   }
 `
 const Suggestion = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
   align-items: center;
-  white-space: nowrap;
+  display: flex;
+  left: 0;
   opacity: ${(props) => (props.visible ? 0.75 : 0)};
   pointer-events: none;
+  position: absolute;
+  top: 0;
   transition: opacity ${(props) => (props.visible ? 200 : 0)}ms;
+  white-space: nowrap;
 `
 const Invisible = styled.div`
-  opacity: 0;
-  padding: 0.5em 0.5em 0.5em 2.5em;
   font-size: 1em;
   line-height: 1.25;
+  opacity: 0;
+  padding: 0.5em 0.5em 0.5em 2.5em;
 `
 const Visible = styled.div`
-  position: relative;
   margin-top: 0em;
   padding-left: 1.25em;
+  position: relative;
 
   &:before {
+    background-color: ${(props) => props.theme.colors.text};
     content: '';
+    height: 0.05em;
+    left: 0;
     position: absolute;
     top: 50%;
-    left: 0;
     transform: translateY(-150%);
     width: 0.75em;
-    height: 0.05em;
-    background-color: ${(props) => props.theme.colors.text};
   }
 `
 const Name = styled.span``

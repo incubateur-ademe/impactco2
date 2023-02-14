@@ -2,7 +2,9 @@ import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
 import DataContext from 'components/providers/DataProvider'
+
 import TransportContext from 'components/transport/TransportProvider'
+
 import Transportation from './transportations/Transportation'
 
 const Wrapper = styled.div`
@@ -10,8 +12,8 @@ const Wrapper = styled.div`
 `
 const List = styled.div`
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 0 -0.375rem 0.125rem;
 `
 const Result = styled.div`

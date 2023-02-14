@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
+
 import ButtonLink from 'components/base/ButtonLink'
 
 const Wrapper = styled.div`
@@ -11,8 +12,8 @@ const Wrapper = styled.div`
 
 const StyledButtonLink = styled(ButtonLink)`
   display: block;
-  margin: 0.3rem 0.5rem 0 0;
   font-size: 70%;
+  margin: 0.3rem 0.5rem 0 0;
 `
 export default function Hypothèses() {
   const { setHypothesis } = useContext(ModalContext)
