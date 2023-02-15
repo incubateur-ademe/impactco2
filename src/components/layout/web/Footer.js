@@ -2,16 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Ademe from 'components/base/Ademe'
-import Datagir from 'components/base/Datagir'
-import MagicLink from 'components/base/MagicLink'
+import Logo from 'components/base/Logo'
 import Marianne from 'components/base/Marianne'
 
-const LogosWrapper = styled.div`
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-`
-const Logos = styled(MagicLink)`
+const Logos = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
@@ -34,17 +28,11 @@ const Accessibility = styled.div`
 export default function Footer() {
   return (
     <>
-      <LogosWrapper>
-        <Logos
-          to='https://datagir.ademe.fr/'
-          aria-label='datagir.ademe.fr'
-          noIcon
-        >
-          <Marianne />
-          <Ademe />
-          <Datagir />
-        </Logos>
-      </LogosWrapper>
+      <Logos>
+        <Marianne />
+        <Ademe />
+        <Logo />
+      </Logos>
       <Accessibility>Accessibilité : partiellement conforme</Accessibility>
     </>
   )
