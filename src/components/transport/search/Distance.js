@@ -54,7 +54,6 @@ export default function Distance() {
   const { km, setKm } = useContext(TransportContext)
 
   const getPositionFromKm = (km) => {
-    // lol
     const position =
       Math.round((Math.log(km * 10) / Math.log(10) - 1) * 1000) / 1000
     return position > 4 ? 4 : position
