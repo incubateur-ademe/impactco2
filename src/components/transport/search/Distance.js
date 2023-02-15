@@ -53,6 +53,10 @@ const Thumb = styled.div`
 export default function Distance() {
   const { km, setKm } = useContext(TransportContext)
 
+  const cleanRound = (x) => {
+    return Number(x.toPrecision(1))
+  }
+
   const getPositionFromKm = (km) => {
     const position =
       Math.round((Math.log(km * 10) / Math.log(10) - 1) * 1000) / 1000
@@ -81,7 +85,7 @@ export default function Distance() {
             onClick={() => {
               let position = getPositionFromKm(km)
               position = position - 0.4 < 0 ? 0 : position - 0.4
-              setKm(getKmFromPosition(position))
+              setKm(cleanRound(getKmFromPosition(position)))
             }}
           />
           <Range
@@ -106,7 +110,7 @@ export default function Distance() {
             onClick={() => {
               let position = getPositionFromKm(km)
               position = position + 0.4 > 4 ? 4 : position + 0.4
-              setKm(getKmFromPosition(position))
+              setKm(cleanRound(getKmFromPosition(position)))
             }}
             plus
           />
