@@ -62,7 +62,9 @@ export default function Avion() {
         <br />
         électrique
       </Small>
-      <CenterLink to='/chauffage'>Voir tous les modes de chauffage</CenterLink>
+      <CenterLink to='/chauffage'>
+        Comparez avec d'autres modes de chauffage
+      </CenterLink>
     </>
   )
 }
