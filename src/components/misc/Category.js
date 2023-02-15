@@ -63,7 +63,7 @@ export default function CategoryList(props) {
         >
           <Description description={props.category.description} />
           <Top className='noscreenshot'>
-            <Instruction />
+            <Instruction title={props.category.equivalent} />
             <Top.Checkboxes
               visible={
                 equivalents
