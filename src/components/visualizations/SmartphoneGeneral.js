@@ -59,7 +59,9 @@ export default function SmartphoneGeneral() {
         <strong>5 t-shirts</strong>
         <br />
       </Small>
-      <CenterLink to='/convertisseur'>Voir plus d&apos;équivalences</CenterLink>
+      <CenterLink to='/convertisseur'>
+        Comparez à d'autres objets du quotidien
+      </CenterLink>
     </>
   )
 }

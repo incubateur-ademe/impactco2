@@ -63,7 +63,9 @@ export default function Metro() {
         <br />
         en métro
       </Small>
-      <CenterLink to='/transport'>Voir tous les modes de transport</CenterLink>
+      <CenterLink to='/transport'>
+        Comparez avec d'autres modes de transport
+      </CenterLink>
     </>
   )
 }

@@ -58,7 +58,9 @@ export default function JeansGeneral() {
         <br />
         <strong>4 repas avec du boeuf</strong>
       </Small>
-      <CenterLink to='/convertisseur'>Voir plus d&apos;équivalences</CenterLink>
+      <CenterLink to='/convertisseur'>
+        Comparez à d'autres objets du quotidien
+      </CenterLink>
     </>
   )
 }
