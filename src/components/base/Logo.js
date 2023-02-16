@@ -14,8 +14,8 @@ const Wrapper = styled(MagicLink)`
   }
 
   svg {
-    height: 3.5em;
-    margin-right: 0.5em;
+    height: 4em;
+    margin-right: 1em;
     width: auto;
   }
 
@@ -64,7 +64,7 @@ const HollowCircle2 = styled(HollowCircle1)`
 `
 const Title = styled.div`
   color: ${(props) => props.theme.colors.main};
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: bold;
   line-height: 1;
   margin: 0;
