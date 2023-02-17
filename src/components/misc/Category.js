@@ -63,7 +63,10 @@ export default function CategoryList(props) {
         >
           <Description description={props.category.description} />
           <Top className='noscreenshot'>
-            <Instruction title={props.category.equivalent} />
+            <Instruction
+              title={props.category.equivalent}
+              gender={props.category.gender}
+            />
             <Top.Checkboxes
               visible={
                 equivalents
@@ -87,7 +90,7 @@ export default function CategoryList(props) {
                   ])
                 }}
               >
-                Voir tous les{' '}
+                Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
                 {formatName(props.category.equivalent, 2) || 'équivalents'}
               </Checkbox>
             </Top.Checkboxes>

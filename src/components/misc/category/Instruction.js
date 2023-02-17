@@ -12,8 +12,8 @@ const Wrapper = styled.p`
 export default function Instruction(props) {
   return (
     <Wrapper className={'noscreenshot'}>
-      Cliquez sur un {formatName(props.title) || 'équivalent'} pour voir le
-      détail.
+      Cliquez sur un{props.gender === 'f' ? 'e' : ''}{' '}
+      {formatName(props.title) || 'équivalent'} pour voir le détail.
     </Wrapper>
   )
 }

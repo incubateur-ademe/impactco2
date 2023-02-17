@@ -127,7 +127,10 @@ export default function Distance(props) {
         <Wrapper month={props.month} slug={props.category.slug}>
           <Description description={props.category.description} />
           <StyledTop>
-            <Instruction />
+            <Instruction
+              title={props.category.equivalent}
+              gender={props.category.gender}
+            />
             <Search
               month={props.month}
               search={search}
