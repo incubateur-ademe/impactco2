@@ -33,6 +33,7 @@
     "react-dom": "18.2.0",
     "react-flip-toolkit": "^7.0.17",
     "react-highlight-words": "^0.20.0",
+    "react-hotjar": "^5.4.1",
     "react-range": "^1.8.14",
     "react-share": "^4.4.1",
     "react-slick": "^0.29.0",

@@ -2,6 +2,7 @@ import { init } from '@socialgouv/matomo-next'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { NextAdapter } from 'next-query-params'
 import React, { useEffect, useState } from 'react'
+import { hotjar } from 'react-hotjar'
 import { QueryParamProvider } from 'use-query-params'
 
 import 'utils/fonts.css'
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
     if (process.env.NODE_ENV === 'production') {
       init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
     }
+    hotjar.initialize(3372162, 6)
   }, [])
 
   return (
