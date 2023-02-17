@@ -87,7 +87,8 @@ export default function CategoryList(props) {
                   ])
                 }}
               >
-                Voir tous les équivalents
+                Voir tous les{' '}
+                {formatName(props.category.equivalent, 2) || 'équivalents'}
               </Checkbox>
             </Top.Checkboxes>
           </Top>
