@@ -42,7 +42,9 @@ export default function ImprimanteCategory() {
         5 smartphones
         <br />
       </Small>
-      <CenterLink to='/numerique'>Voir la catégorie numérique</CenterLink>
+      <CenterLink to='/numerique'>
+        Comparez avec d'autres objets numériques
+      </CenterLink>
     </>
   )
 }

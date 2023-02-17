@@ -60,7 +60,7 @@ export default function Boeuf() {
         végétariens
         <br />
       </Small>
-      <CenterLink to='/repas'>Voir tous les repas</CenterLink>
+      <CenterLink to='/repas'>Comparez avec d'autres repas</CenterLink>
     </>
   )
 }

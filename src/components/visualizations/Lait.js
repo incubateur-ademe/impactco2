@@ -44,7 +44,7 @@ export default function Laut() {
         4 litres de lait de soja
         <br />
       </Small>
-      <CenterLink to='/boisson'>Voir la catégorie boisson</CenterLink>{' '}
+      <CenterLink to='/boisson'>Comparez avec d'autres boissons</CenterLink>
     </>
   )
 }
