@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import Co2eModal from 'components/modals/Co2eModal'
+import ContactModal from 'components/modals/ContactModal'
 import DetailsUsagesNumModal from 'components/modals/DetailsUsagesNumModal'
 import DevicesModal from 'components/modals/DevicesModal'
 import EcvModal from 'components/modals/EcvModal'
@@ -16,6 +17,7 @@ export function ModalProvider(props) {
   const [ecv, setEcv] = useState(false)
   const [devices, setDevices] = useState(false)
   const [hypothesis, setHypothesis] = useState(false)
+  const [survey, setSurvey] = useState(false)
 
   return (
     <ModalContext.Provider
@@ -56,6 +58,16 @@ export function ModalProvider(props) {
           ])
           setHypothesis(value)
         },
+        survey,
+        setSurvey: (value) => {
+          window?._paq?.push([
+            'trackEvent',
+            'Interaction',
+            'Modal',
+            'Enquête livraison',
+          ])
+          setSurvey(value)
+        },
       }}
     >
       {props.children}
@@ -65,6 +77,7 @@ export function ModalProvider(props) {
       <EcvModal />
       <DevicesModal />
       <DetailsUsagesNumModal />
+      <ContactModal />
     </ModalContext.Provider>
   )
 }
