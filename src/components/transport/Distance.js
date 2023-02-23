@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 
+import { formatName } from 'utils/formatters'
+
 import useTransportations from 'hooks/useTransportations'
 
 import Checkbox from 'components/base/Checkbox'
@@ -30,7 +32,10 @@ export default function Distance(props) {
           <Search distance iframe={props.iframe} />
           {transportations.length ? (
             <Top className='noscreenshot'>
-              <Instruction />
+              <Instruction
+                title={props.category.equivalent}
+                gender={props.category.gender}
+              />
               <Top.Checkboxes visible>
                 <Checkbox
                   name='displayAll'
@@ -45,7 +50,8 @@ export default function Distance(props) {
                     ])
                   }}
                 >
-                  Afficher tous les modes de transport
+                  Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
+                  {formatName(props.category.equivalent, 2) || 'équivalents'}
                 </Checkbox>
                 <Checkbox
                   name='carpool'
