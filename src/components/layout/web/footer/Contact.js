@@ -22,8 +22,11 @@ const Title = styled.h2`
 `
 const Text = styled.p`
   font-size: 1.125rem;
-  margin-bottom: 1.25rem;
   text-align: center;
+
+  &:last-child {
+    margin-bottom: 1.25rem;
+  }
 
   ${(props) => props.theme.mq.medium} {
     font-size: 1rem;
@@ -44,11 +47,13 @@ export default function Contact() {
         </Title>
         <Image src={simulateurs} alt='Simulateurs' />
         <Text>
-          Intégrez facilement nos simulateurs grace à{' '}
-          <MagicLink to='/integration'>notre configurateur</MagicLink>. Que vous
-          souhaitiez{' '}
+          <MagicLink to='/integration'>Utilisez notre configurateur</MagicLink>{' '}
+          pour intégrer facilement nos simulateurs.
+        </Text>
+        <Text>
+          Que vous souhaitiez{' '}
           <MagicLink to='/integration?type=tuiles'>
-            visualiser un poids en CO2e
+            visualiser une quantité de CO2e
           </MagicLink>
           ,{' '}
           <MagicLink to='/integration?type=transport'>
@@ -58,7 +63,7 @@ export default function Contact() {
           <MagicLink to='/integration?type=usagenumerique'>
             l'impact de vos usages numériques
           </MagicLink>
-          , il y a un simulateur pour vous !
+          , il y a forcément un simulateur pour vous&thinsp;!
         </Text>
         <Button.Wrapper>
           <Button to='/integration'>Voir le configurateur</Button>
