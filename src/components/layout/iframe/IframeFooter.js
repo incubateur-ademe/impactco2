@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import useWindow from 'hooks/useWindow'
+
 import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
 import MagicLink from 'components/base/MagicLink'
@@ -29,10 +31,15 @@ const Logos = styled.div`
     padding: 0 0.25rem;
   }
 `
-export default function IframeFooter(props) {
+export default function IframeFooter() {
+  const window = useWindow()
   return (
     <Wrapper>
-      <StyledMagicLink to={`https://impactco2.fr/${props.url}`}>
+      <StyledMagicLink
+        to={`https://impactco2.fr${
+          window?.location.href.split('iframes')[1] || ''
+        }`}
+      >
         Voir la version détaillée
         <br />
         (et les sources)
