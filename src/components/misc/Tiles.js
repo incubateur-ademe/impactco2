@@ -19,11 +19,7 @@ import AddButton from './tiles/AddButton'
 import Tile from './tiles/Tile'
 import Weight from './tiles/Weight'
 
-const StyledSection = styled(Section)`
-  margin-bottom: ${(props) => (props.iframe ? 0 : '4rem')};
-  padding: ${(props) => (props.background ? 3 : 0)}rem 0
-    ${(props) => (props.iframe ? 0 : '1.5rem')};
-`
+const StyledSection = styled(Section)``
 const Title = styled.h2`
   text-align: center;
 `

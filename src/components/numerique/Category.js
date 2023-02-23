@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import Section from 'components/base/Section'
 import Description from 'components/misc/category/Description'
-import Learning from 'components/misc/category/Learning'
 import Wrapper from 'components/misc/category/Wrapper'
 
 import Hypothèses from './category/Hypothèses'
@@ -29,7 +28,6 @@ export default function Category(props) {
           <Result numberEmails={numberEmails} construction={false} />
         </Wrapper>
       </Section.Content>
-      <Learning category={props.category} />
     </Section>
   )
 }

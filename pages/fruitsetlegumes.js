@@ -5,7 +5,7 @@ import { getMonth, slugs } from 'utils/months'
 
 import Saisons from 'components/fruitsetlegumes/Saisons'
 import Web from 'components/layout/Web'
-import Learning from 'components/misc/category/Learning'
+import Learning from 'components/misc/Learning'
 
 export default function Transport(props) {
   const date = new Date()

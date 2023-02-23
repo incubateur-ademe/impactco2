@@ -5,6 +5,9 @@ import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
 import Marianne from 'components/base/Marianne'
 
+import About from './footer/About'
+import Contact from './footer/Contact'
+
 const Logos = styled.div`
   align-items: center;
   display: flex;
@@ -28,6 +31,8 @@ const Accessibility = styled.div`
 export default function Footer() {
   return (
     <>
+      <Contact />
+      <About />
       <Logos>
         <Marianne />
         <Ademe />
