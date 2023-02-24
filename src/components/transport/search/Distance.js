@@ -70,7 +70,7 @@ export default function Distance() {
     <Wrapper>
       {openTextInput ? (
         <NumberInput
-          min={0}
+          min={1}
           km={km}
           setKm={(km) => {
             if (km !== '') {
