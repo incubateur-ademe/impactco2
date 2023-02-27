@@ -1,5 +1,76 @@
 [
   {
+    "id": 10,
+    "name": "Usage numérique",
+    "emoji": "✉️",
+    "slug": "usagenumerique",
+    "title": "Découvrez l'impact des usages numériques<br/>sur le climat",
+    "description": "Mesurez facilement l'empreinte carbone des mails, du streaming ou de la visioconférence & comparez l'impact de ces usages à celui de la construction de vos appareils",
+    "equivalent": "usage[s] numérique[s]",
+    "gender": "m",
+    "divider": 1,
+    "display": true,
+    "unit": "",
+    "include": "",
+    "list": true,
+    "meta": {
+      "title": "Poids en CO₂e des usages numériques",
+      "description": "Comparez l'impact écologique en CO₂e des emails, de la visioconférence, du streaming, etc."
+    }
+  },
+  {
+    "id": 8,
+    "name": "Chauffage",
+    "emoji": "🏠",
+    "slug": "chauffage",
+    "title": "Découvrez l'impact du chauffage sur le climat",
+    "description": "Comparez l'empreinte carbone des différents type de chauffage (électrique, gaz ou fioul)",
+    "equivalent": "mode[s] de chauffage",
+    "gender": "m",
+    "divider": 1,
+    "display": true,
+    "unit": "m2",
+    "include": "par m2 par année.",
+    "meta": {
+      "title": "Poids en CO₂e d'une année de chauffage",
+      "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée "
+    }
+  },
+  {
+    "id": 4,
+    "name": "Transport",
+    "emoji": "🚴‍♂️",
+    "slug": "transport",
+    "title": "Découvrez l'impact du transport sur le climat",
+    "equivalent": "mode[s] de transport",
+    "gender": "m",
+    "divider": 1,
+    "display": true,
+    "unit": "km",
+    "include": "par personne en France. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
+    "meta": {
+      "title": "Empreinte carbone de vos déplacements",
+      "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO2 vous connaitrez votre impact sur le climat"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Fruits et légumes",
+    "emoji": "🍅",
+    "slug": "fruitsetlegumes",
+    "description": "Retrouvez les fruits et légumes de la saison et comparez leur empreinte carbone",
+    "equivalent": "fruit[s] et légume[s]",
+    "gender": "m",
+    "divider": 1,
+    "display": true,
+    "unit": "kg",
+    "include": "par kg de produit pour des fruits et légumes de saison",
+    "meta": {
+      "title": "Poids en CO₂e des fruits et légumes",
+      "description": "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison"
+    }
+  },
+  {
     "id": 1,
     "name": "Numérique",
     "emoji": "💻",
@@ -36,41 +107,6 @@
     }
   },
   {
-    "id": 3,
-    "name": "Boisson",
-    "emoji": "🍹",
-    "slug": "boisson",
-    "title": "Découvrez l'impact des boissons sur le climat",
-    "description": "Comparez l'empreinte carbone de l'eau, des sodas, des boissons alcoolisées, du lait et des boissons chaudes",
-    "equivalent": "boisson[s]",
-    "gender": "f",
-    "divider": 1,
-    "display": true,
-    "unit": "litre",
-    "include": "par litre de produit comprenant la fabrication, la distribution et la consommation.",
-    "meta": {
-      "title": "L'empreinte carbone de nos boissons",
-      "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
-    }
-  },
-  {
-    "id": 4,
-    "name": "Transport",
-    "emoji": "🚴‍♂️",
-    "slug": "transport",
-    "title": "Découvrez l'impact du transport sur le climat",
-    "equivalent": "mode[s] de transport",
-    "gender": "m",
-    "divider": 1,
-    "display": true,
-    "unit": "km",
-    "include": "par personne en France. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
-    "meta": {
-      "title": "Empreinte carbone de vos déplacements",
-      "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO2 vous connaitrez votre impact sur le climat"
-    }
-  },
-  {
     "id": 5,
     "name": "Habillement",
     "emoji": "👔",
@@ -86,6 +122,25 @@
     "meta": {
       "title": "L'empreinte carbone de vos habits",
       "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
+    }
+  },
+
+  {
+    "id": 7,
+    "name": "Mobilier",
+    "emoji": "🪑",
+    "slug": "mobilier",
+    "title": "Découvrez l'impact du mobilier sur le climat",
+    "description": "Comparez l'empreinte carbone de vos meubles",
+    "equivalent": "meuble[s]",
+    "gender": "m",
+    "divider": 1,
+    "display": true,
+    "unit": "unité",
+    "include": "par produit comprenant la fabrication, la distribution et l'usage.",
+    "meta": {
+      "title": "Quel empreinte carbone a le mobilier ?",
+      "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
     }
   },
   {
@@ -107,75 +162,21 @@
     }
   },
   {
-    "id": 7,
-    "name": "Mobilier",
-    "emoji": "🪑",
-    "slug": "mobilier",
-    "title": "Découvrez l'impact du mobilier sur le climat",
-    "description": "Comparez l'empreinte carbone de vos meubles",
-    "equivalent": "meuble[s]",
-    "gender": "m",
+    "id": 3,
+    "name": "Boisson",
+    "emoji": "🍹",
+    "slug": "boisson",
+    "title": "Découvrez l'impact des boissons sur le climat",
+    "description": "Comparez l'empreinte carbone de l'eau, des sodas, des boissons alcoolisées, du lait et des boissons chaudes",
+    "equivalent": "boisson[s]",
+    "gender": "f",
     "divider": 1,
     "display": true,
-    "unit": "unité",
-    "include": "par produit comprenant la fabrication, la distribution et l'usage.",
+    "unit": "litre",
+    "include": "par litre de produit comprenant la fabrication, la distribution et la consommation.",
     "meta": {
-      "title": "Quel empreinte carbone a le mobilier ?",
-      "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
-    }
-  },
-  {
-    "id": 8,
-    "name": "Chauffage",
-    "emoji": "🏠",
-    "slug": "chauffage",
-    "title": "Découvrez l'impact du chauffage sur le climat",
-    "description": "Comparez l'empreinte carbone des différents type de chauffage (électrique, gaz ou fioul)",
-    "equivalent": "mode[s] de chauffage",
-    "gender": "m",
-    "divider": 1,
-    "display": true,
-    "unit": "m2",
-    "include": "par m2 par année.",
-    "meta": {
-      "title": "Poids en CO₂e d'une année de chauffage",
-      "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée "
-    }
-  },
-  {
-    "id": 9,
-    "name": "Fruits et légumes",
-    "emoji": "🍅",
-    "slug": "fruitsetlegumes",
-    "description": "Retrouvez les fruits et légumes de la saison et comparez leur empreinte carbone",
-    "equivalent": "fruit[s] et légume[s]",
-    "gender": "m",
-    "divider": 1,
-    "display": true,
-    "unit": "kg",
-    "include": "par kg de produit pour des fruits et légumes de saison",
-    "meta": {
-      "title": "Poids en CO₂e des fruits et légumes",
-      "description": "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison"
-    }
-  },
-  {
-    "id": 10,
-    "name": "Usage numérique",
-    "emoji": "✉️",
-    "slug": "usagenumerique",
-    "title": "Découvrez l'impact des usages numériques<br/>sur le climat",
-    "description": "Mesurez facilement l'empreinte carbone des mails, du streaming ou de la visioconférence & comparez l'impact de ces usages à celui de la construction de vos appareils",
-    "equivalent": "usage[s] numérique[s]",
-    "gender": "m",
-    "divider": 1,
-    "display": true,
-    "unit": "",
-    "include": "",
-    "list": true,
-    "meta": {
-      "title": "Poids en CO₂e des usages numériques",
-      "description": "Comparez l'impact écologique en CO₂e des emails, de la visioconférence, du streaming, etc."
+      "title": "L'empreinte carbone de nos boissons",
+      "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
     }
   },
   {
