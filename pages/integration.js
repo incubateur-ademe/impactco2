@@ -32,7 +32,7 @@ export default function Integration() {
   // We keep "type" in url (and not 'slug") because of possible legacy links
   const [slug, setSlug] = useQueryParam(
     'type',
-    withDefault(StringParam, 'tuiles')
+    withDefault(StringParam, 'convertisseur')
   )
   const type = useMemo(() => {
     const equivalent = equivalents.find(
@@ -47,12 +47,12 @@ export default function Integration() {
     if (category) {
       return 'category'
     }
-    return 'tuiles'
+    return 'convertisseur'
   }, [slug])
 
   const path = useMemo(() => {
-    if (type === 'tuiles') {
-      return 'tuiles'
+    if (type === 'convertisseur') {
+      return 'convertisseur'
     }
     if (type === 'category') {
       return slug
