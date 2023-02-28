@@ -52,7 +52,7 @@ export default function Contact() {
         </Text>
         <Text>
           Que vous souhaitiez{' '}
-          <MagicLink to='/integration?type=tuiles'>
+          <MagicLink to='/integration?type=convertisseur'>
             visualiser une quantité de CO2e
           </MagicLink>
           ,{' '}

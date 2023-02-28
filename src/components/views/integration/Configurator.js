@@ -37,12 +37,12 @@ export default function Configurator(props) {
             ? 'numerique'
             : props.type === 'equivalent'
             ? 'abricot'
-            : 'tuiles'
+            : 'convertisseur'
         }
         label={`1) Choisissez le type d'iframe que vous souhaitez intégrer.`}
         name='type'
       >
-        <option value='tuiles'>Tuiles</option>
+        <option value='convertisseur'>Convertisseur</option>
         <option value='numerique'>Categorie</option>
         <option value='abricot'>Equivalent</option>
       </Select>
