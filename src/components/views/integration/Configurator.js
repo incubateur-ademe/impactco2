@@ -47,17 +47,42 @@ export default function Configurator(props) {
         <option value='abricot'>Equivalent</option>
       </Select>
       {props.type === 'category' && (
-        <Select
-          onChange={(e) => props.setSlug(e.value)}
-          value={props.slug}
-          name='type'
-        >
-          {props.categories.map((category) => (
-            <option key={category.slug} value={category.slug}>
-              {category.name}
-            </option>
-          ))}
-        </Select>
+        <>
+          <Select
+            onChange={(e) => props.setSlug(e.value)}
+            value={props.slug.split('/')[0]}
+            name='type'
+          >
+            {props.categories.map((category) => (
+              <option key={category.slug} value={category.slug}>
+                {category.name}
+              </option>
+            ))}
+          </Select>
+          {props.slug.includes('transport') && (
+            <Select
+              onChange={(e) => props.setSlug(e.value)}
+              value={props.slug}
+              name='transport'
+            >
+              <option key={'transport'} value={'transport'}>
+                Distance
+              </option>
+              <option
+                key={'transport/itineraire'}
+                value={'transport/itineraire'}
+              >
+                Itinéraire
+              </option>
+              <option
+                key={'transport/teletravail'}
+                value={'transport/teletravail'}
+              >
+                Téletravail
+              </option>
+            </Select>
+          )}
+        </>
       )}
       {props.type === 'equivalent' && (
         <Select

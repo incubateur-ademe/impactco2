@@ -38,8 +38,8 @@ export default function Integration() {
     const equivalent = equivalents.find(
       (equivalentItem) => equivalentItem.slug === slug
     )
-    const category = categories.find(
-      (categoryItem) => categoryItem.slug === slug
+    const category = categories.find((categoryItem) =>
+      slug.includes(categoryItem.slug)
     )
     if (equivalent) {
       return 'equivalent'
