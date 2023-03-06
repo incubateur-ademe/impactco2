@@ -54,14 +54,16 @@ const StyledButtonLink = styled(ButtonLink)`
   text-align: center;
 `
 export default function Heading() {
-  const { setCo2e, setSurvey } = useContext(ModalContext)
+  const { setCo2e } = useContext(ModalContext)
 
   return (
     <Section>
       <StyledSectionContent>
         <Title>
           Découvrez l’impact sur le climat
-          <Br /> des objets et gestes de votre&nbsp;quotidien
+          <Br /> des objets et gestes de votre
+          <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />
+          quotidien
         </Title>
         <Text>
           On parle de plus en plus de{' '}
@@ -69,12 +71,15 @@ export default function Heading() {
             CO<sub>2</sub>e
           </ButtonLink>
           , mais concrètement quelles sont les émissions nécessaires pour
-          fabriquer et consommer les objets qui nous&nbsp;entourent&thinsp;?
+          fabriquer et consommer les objets qui nous
+          <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />
+          entourent
+          <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />?
         </Text>
         <StyledSearch placeholder={'Entrez un objet, un geste...'} home />
         <Categories />
-        <StyledButtonLink onClick={() => setSurvey(true)}>
-          Participez à notre enquête sur la livraison&thinsp;!
+        <StyledButtonLink onClick={() => setCo2e(true)}>
+          Comprendre le CO<sub>2</sub>e
         </StyledButtonLink>
       </StyledSectionContent>
     </Section>

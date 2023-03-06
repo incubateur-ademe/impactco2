@@ -1,12 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import useWindow from 'hooks/useWindow'
 
-import ModalContext from 'components/providers/ModalProvider'
-
 import Ademe from 'components/base/Ademe'
-import ButtonLink from 'components/base/ButtonLink'
 import Logo from 'components/base/Logo'
 import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
@@ -16,11 +13,6 @@ const Wrapper = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`
-const StyledButtonLink = styled(ButtonLink)`
-  display: block;
-  margin: 0 auto 1rem;
-  text-align: center;
 `
 const StyledMagicLink = styled(MagicLink)`
   display: block;
@@ -41,14 +33,8 @@ const Logos = styled.div`
 `
 export default function IframeFooter() {
   const window = useWindow()
-
-  const { setSurvey } = useContext(ModalContext)
-
   return (
     <Wrapper>
-      <StyledButtonLink onClick={() => setSurvey(true)}>
-        Participez à notre enquête sur la livraison&thinsp;!
-      </StyledButtonLink>
       <StyledMagicLink
         to={`https://impactco2.fr${
           window?.location.href.split('iframes')[1] || ''
