@@ -1,13 +1,12 @@
-import React from 'react'
-
 import categories from 'data/categories.json'
+import React from 'react'
 
 import Iframe from 'components/layout/Iframe'
 import Category from 'components/misc/Category'
 
 export default function CategoryIframe(props) {
   return (
-    <Iframe url={props.category.slug}>
+    <Iframe>
       <Category category={props.category} iframe />
     </Iframe>
   )

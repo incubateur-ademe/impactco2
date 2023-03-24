@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react'
 import { toPng } from 'html-to-image'
+import { useRef, useState } from 'react'
 
 export default function useScreenshot(slug) {
   const ref = useRef(null)

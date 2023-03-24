@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
-import RulesContext from 'components/numerique/RulesProvider'
 import HorizontalRadio from 'components/base/HorizontalRadio'
+import RulesContext from 'components/numerique/RulesProvider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
 export default function DeviceInput(props) {

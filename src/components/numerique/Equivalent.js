@@ -1,20 +1,23 @@
-import React, { useState, useContext, useMemo } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import RulesContext from './RulesProvider'
+
 import Section from 'components/base/Section'
-import StackedChart from 'components/charts/StackedChart'
 import Legend from 'components/charts/Legend'
+import StackedChart from 'components/charts/StackedChart'
 import Detail from 'components/views/equivalent/ecv/Detail'
+
+import RulesContext from './RulesProvider'
 import Wrapper from './Wrapper'
 import Bar from './equivalent/Bar'
-import ExpertMode from './equivalent/ExpertMode'
 import DeviceInput from './equivalent/DeviceInput'
-import VideoInput from './equivalent/VideoInput'
 import EmailInput from './equivalent/EmailInput'
+import ExpertMode from './equivalent/ExpertMode'
+import VideoInput from './equivalent/VideoInput'
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;

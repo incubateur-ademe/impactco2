@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import MagicLink from 'components/base/MagicLink'
 
 const Svg = styled.svg``

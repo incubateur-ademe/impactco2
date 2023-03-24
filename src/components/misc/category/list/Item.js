@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatNumber } from 'utils/formatters'
+
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
 

@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
 import Switch from 'react-switch'
+import styled from 'styled-components'
 
 import { themes } from 'utils/styles'
+
 import StyleContext from 'components/providers/StyleProvider'
 
 const Wrapper = styled.label`

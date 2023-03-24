@@ -2,9 +2,10 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import TransportContext from 'components/transport/TransportProvider'
+
 import Address from './itinerary/Address'
-import Transportations from './teletravail/Transportations'
 import Days from './teletravail/Days'
+import Transportations from './teletravail/Transportations'
 
 const Wrapper = styled.div``
 const Details = styled.button`

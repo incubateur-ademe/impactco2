@@ -1,16 +1,20 @@
 import React, { useContext } from 'react'
 
+import { formatName } from 'utils/formatters'
+
 import useTransportations from 'hooks/useTransportations'
-import TransportContext from './TransportProvider'
-import Section from 'components/base/Section'
-import Wrapper from 'components/misc/category/Wrapper'
-import Top from 'components/misc/category/Top'
-import Instruction from 'components/misc/category/Instruction'
-import CategoryLegend from 'components/misc/category/CategoryLegend'
-import Bottom from 'components/misc/category/Bottom'
+
 import Checkbox from 'components/base/Checkbox'
+import Section from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
+import Bottom from 'components/misc/category/Bottom'
+import CategoryLegend from 'components/misc/category/CategoryLegend'
+import Instruction from 'components/misc/category/Instruction'
+import Top from 'components/misc/category/Top'
+import Wrapper from 'components/misc/category/Wrapper'
+
 import Search from './Search'
+import TransportContext from './TransportProvider'
 
 export default function Distance(props) {
   const { displayAll, setDisplayAll, carpool, setCarpool } =
@@ -28,7 +32,10 @@ export default function Distance(props) {
           <Search distance iframe={props.iframe} />
           {transportations.length ? (
             <Top className='noscreenshot'>
-              <Instruction />
+              <Instruction
+                title={props.category.equivalent}
+                gender={props.category.gender}
+              />
               <Top.Checkboxes visible>
                 <Checkbox
                   name='displayAll'
@@ -43,7 +50,8 @@ export default function Distance(props) {
                     ])
                   }}
                 >
-                  Afficher tous les modes de transport
+                  Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
+                  {formatName(props.category.equivalent, 2) || 'équivalents'}
                 </Checkbox>
                 <Checkbox
                   name='carpool'

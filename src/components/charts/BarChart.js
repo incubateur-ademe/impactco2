@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flipper, Flipped } from 'react-flip-toolkit'
+import { Flipped, Flipper } from 'react-flip-toolkit'
 
 import Item from './barChart/Item'
 

@@ -1,14 +1,14 @@
 import React from 'react'
 
 import {
-  Title,
-  Equivalents,
-  Equivalent,
-  Emojis,
-  Label,
-  Equals,
   CenterLink,
+  Emojis,
+  Equals,
+  Equivalent,
+  Equivalents,
+  Label,
   Small,
+  Title,
 } from 'components/misc/Visualization'
 
 export default function JeansGeneral() {
@@ -58,7 +58,9 @@ export default function JeansGeneral() {
         <br />
         <strong>4 repas avec du boeuf</strong>
       </Small>
-      <CenterLink to='/convertisseur'>Voir plus d&apos;équivalences</CenterLink>
+      <CenterLink to='/convertisseur'>
+        Comparez à d'autres objets du quotidien
+      </CenterLink>
     </>
   )
 }

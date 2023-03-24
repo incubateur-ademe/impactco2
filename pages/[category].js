@@ -1,9 +1,9 @@
-import React from 'react'
-
 import categories from 'data/categories.json'
+import React from 'react'
 
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
+import Learning from 'components/misc/Learning'
 
 export default function CategoryPage(props) {
   return (
@@ -16,11 +16,12 @@ export default function CategoryPage(props) {
       }}
     >
       <Category category={props.category} />
+      <Learning category={props.category} />
     </Web>
   )
 }
 
-const independantCategories = [1, 2, 4, 9, 10]
+const independantCategories = [4, 9, 10]
 
 export async function getStaticPaths() {
   return {

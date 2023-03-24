@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
 import ModalContext from 'components/providers/ModalProvider'
+
 import Modal from 'components/base/Modal'
 
 export default function DetailsUsagesNumModal() {

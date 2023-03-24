@@ -1,10 +1,9 @@
+import categories from 'data/categories.json'
 import React from 'react'
 
-import categories from 'data/categories.json'
-
-import { TransportProvider } from 'components/transport/TransportProvider'
 import Iframe from 'components/layout/Iframe'
 import Distance from 'components/transport/Distance'
+import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function Transport(props) {
   return (

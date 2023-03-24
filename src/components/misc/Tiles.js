@@ -1,25 +1,25 @@
-import React, { useState, useEffect, useContext } from 'react'
-import styled from 'styled-components'
-import { DndContext, closestCenter, MeasuringStrategy } from '@dnd-kit/core'
+import { DndContext, MeasuringStrategy, closestCenter } from '@dnd-kit/core'
 import {
-  arrayMove,
   SortableContext,
+  arrayMove,
   rectSortingStrategy,
 } from '@dnd-kit/sortable'
+import React, { useContext, useEffect, useState } from 'react'
+import styled from 'styled-components'
+
+import { formatTotalByMultiplier } from 'utils/formatters'
 
 import useIframe from 'hooks/useIframe'
-import { formatTotalByMultiplier } from 'utils/formatters'
-import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
-import Weight from './tiles/Weight'
-import Tile from './tiles/Tile'
-import AddButton from './tiles/AddButton'
 
-const StyledSection = styled(Section)`
-  margin-bottom: ${(props) => (props.iframe ? 0 : '4rem')};
-  padding: ${(props) => (props.background ? 3 : 0)}rem 0
-    ${(props) => (props.iframe ? 0 : '1.5rem')};
-`
+import DataContext from 'components/providers/DataProvider'
+
+import Section from 'components/base/Section'
+
+import AddButton from './tiles/AddButton'
+import Tile from './tiles/Tile'
+import Weight from './tiles/Weight'
+
+const StyledSection = styled(Section)``
 const Title = styled.h2`
   text-align: center;
 `

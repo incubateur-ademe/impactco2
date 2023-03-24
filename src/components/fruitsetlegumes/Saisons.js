@@ -1,17 +1,20 @@
-import React, { useState, useEffect, useContext, useMemo } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
-import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import { formatName, formatTotal } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
+
 import Section from 'components/base/Section'
-import Top from 'components/misc/category/Top'
+import Bottom from 'components/misc/category/Bottom'
 import Description from 'components/misc/category/Description'
 import Instruction from 'components/misc/category/Instruction'
-import Bottom from 'components/misc/category/Bottom'
-import Wrapper from './saisons/Wrapper'
-import Search from './saisons/Search'
+import Top from 'components/misc/category/Top'
+
+import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import List from './saisons/List'
+import Search from './saisons/Search'
+import Wrapper from './saisons/Wrapper'
 
 const StyledTop = styled(Top)`
   align-items: center;
@@ -124,7 +127,10 @@ export default function Distance(props) {
         <Wrapper month={props.month} slug={props.category.slug}>
           <Description description={props.category.description} />
           <StyledTop>
-            <Instruction />
+            <Instruction
+              title={props.category.equivalent}
+              gender={props.category.gender}
+            />
             <Search
               month={props.month}
               search={search}

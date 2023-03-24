@@ -1,17 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Logo from 'components/base/Logo'
 import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
-import Ademe from 'components/base/Ademe'
 import Section from 'components/base/Section'
-import Logo from 'components/base/Logo'
+
 import ThemeToggle from './header/ThemeToggle'
 
 const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
-  margin: 0.25rem 0;
   position: relative;
 
   ${(props) => props.theme.mq.small} {
@@ -25,12 +24,7 @@ const Left = styled.div`
   justify-content: flex-start;
   position: relative;
 `
-const Logos = styled(MagicLink)`
-  align-items: center;
-  background-color: #fff;
-  display: flex;
-  margin: 0 0 0 -0.75em;
-`
+const Logos = styled(MagicLink)``
 export default function Header(props) {
   return (
     <Section>
@@ -39,7 +33,6 @@ export default function Header(props) {
           <Left>
             <Logos to='/' aria-label='Accueil'>
               <Marianne />
-              <Ademe />
             </Logos>
             <Logo />
           </Left>

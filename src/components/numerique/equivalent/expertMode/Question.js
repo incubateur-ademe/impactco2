@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import NumberInput from './question/NumberInput'
 import ChoicesInput from './question/ChoicesInput'
+import NumberInput from './question/NumberInput'
 
 const Wrapper = styled.div`
   align-items: center;

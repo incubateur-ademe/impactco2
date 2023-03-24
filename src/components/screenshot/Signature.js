@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import MagicLink from 'components/base/MagicLink'
 import Datagir from 'components/base/Datagir'
 import Logo from 'components/base/Logo'
+import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
   bottom: 1rem;

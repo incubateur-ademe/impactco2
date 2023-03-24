@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 export function useItinerary(start, end, mode) {
   return useQuery(

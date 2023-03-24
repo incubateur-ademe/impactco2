@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import { init } from '@socialgouv/matomo-next'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { NextAdapter } from 'next-query-params'
+import React, { useEffect, useState } from 'react'
+import { hotjar } from 'react-hotjar'
 import { QueryParamProvider } from 'use-query-params'
-import { init } from '@socialgouv/matomo-next'
 
-import { GlobalStyle } from 'utils/styles'
 import 'utils/fonts.css'
+import { GlobalStyle } from 'utils/styles'
 
-import { StyleProvider } from 'components/providers/StyleProvider'
-import { ModalProvider } from 'components/providers/ModalProvider'
 import { DataProvider } from 'components/providers/DataProvider'
+import { ModalProvider } from 'components/providers/ModalProvider'
+import { StyleProvider } from 'components/providers/StyleProvider'
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
     if (process.env.NODE_ENV === 'production') {
       init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
     }
+    hotjar.initialize(3372162, 6)
   }, [])
 
   return (

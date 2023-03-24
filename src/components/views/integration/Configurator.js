@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import Select from 'components/base/Select'
+
 import Code from './configurator/Code'
 
 const Wrapper = styled.div`
@@ -35,27 +37,52 @@ export default function Configurator(props) {
             ? 'numerique'
             : props.type === 'equivalent'
             ? 'abricot'
-            : 'tuiles'
+            : 'convertisseur'
         }
         label={`1) Choisissez le type d'iframe que vous souhaitez intégrer.`}
         name='type'
       >
-        <option value='tuiles'>Tuiles</option>
+        <option value='convertisseur'>Convertisseur</option>
         <option value='numerique'>Categorie</option>
         <option value='abricot'>Equivalent</option>
       </Select>
       {props.type === 'category' && (
-        <Select
-          onChange={(e) => props.setSlug(e.value)}
-          value={props.slug}
-          name='type'
-        >
-          {props.categories.map((category) => (
-            <option key={category.slug} value={category.slug}>
-              {category.name}
-            </option>
-          ))}
-        </Select>
+        <>
+          <Select
+            onChange={(e) => props.setSlug(e.value)}
+            value={props.slug.split('/')[0]}
+            name='type'
+          >
+            {props.categories.map((category) => (
+              <option key={category.slug} value={category.slug}>
+                {category.name}
+              </option>
+            ))}
+          </Select>
+          {props.slug.includes('transport') && (
+            <Select
+              onChange={(e) => props.setSlug(e.value)}
+              value={props.slug}
+              name='transport'
+            >
+              <option key={'transport'} value={'transport'}>
+                Distance
+              </option>
+              <option
+                key={'transport/itineraire'}
+                value={'transport/itineraire'}
+              >
+                Itinéraire
+              </option>
+              <option
+                key={'transport/teletravail'}
+                value={'transport/teletravail'}
+              >
+                Téletravail
+              </option>
+            </Select>
+          )}
+        </>
       )}
       {props.type === 'equivalent' && (
         <Select

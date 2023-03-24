@@ -1,13 +1,15 @@
-import React, { useState, useContext, useMemo } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
-import { formatName, formatNumber, formatConstruction } from 'utils/formatters'
-import RulesContext from 'components/numerique/RulesProvider'
+import { formatConstruction, formatName, formatNumber } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
+
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
-import Top from 'components/misc/category/Top'
 import Instruction from 'components/misc/category/Instruction'
+import Top from 'components/misc/category/Top'
+import RulesContext from 'components/numerique/RulesProvider'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};

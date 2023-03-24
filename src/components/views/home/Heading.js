@@ -2,9 +2,11 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
+
 import ButtonLink from 'components/base/ButtonLink'
+import Section from 'components/base/Section'
 import Search from 'components/misc/Search'
+
 import Categories from './heading/Categories'
 
 const StyledSectionContent = styled(Section.Content)`

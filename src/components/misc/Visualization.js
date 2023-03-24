@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import MagicLink from 'components/base/MagicLink'
 import Emoji from 'components/base/Emoji'
+import MagicLink from 'components/base/MagicLink'
 
 export const Title = styled.h3`
   font-weight: normal;

@@ -1,10 +1,10 @@
+import categories from 'data/categories.json'
 import React from 'react'
 
-import categories from 'data/categories.json'
+import { getMonth, slugs } from 'utils/months'
 
-import { slugs, getMonth } from 'utils/months'
-import Iframe from 'components/layout/Iframe'
 import Saisons from 'components/fruitsetlegumes/Saisons'
+import Iframe from 'components/layout/Iframe'
 
 export default function Transport(props) {
   const date = new Date()

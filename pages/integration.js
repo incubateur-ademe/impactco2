@@ -1,11 +1,12 @@
-import React, { useState, useContext, useMemo } from 'react'
-import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
-import { useQueryParam, StringParam, withDefault } from 'use-query-params'
+import React, { useContext, useMemo, useState } from 'react'
+import styled from 'styled-components'
+import { StringParam, useQueryParam, withDefault } from 'use-query-params'
 
 import DataContext from 'components/providers/DataProvider'
-import Web from 'components/layout/Web'
+
 import Section from 'components/base/Section'
+import Web from 'components/layout/Web'
 import Configurator from 'components/views/integration/Configurator'
 
 const StyledIframeResizer = styled(IframeResizer)`
@@ -31,14 +32,14 @@ export default function Integration() {
   // We keep "type" in url (and not 'slug") because of possible legacy links
   const [slug, setSlug] = useQueryParam(
     'type',
-    withDefault(StringParam, 'tuiles')
+    withDefault(StringParam, 'convertisseur')
   )
   const type = useMemo(() => {
     const equivalent = equivalents.find(
       (equivalentItem) => equivalentItem.slug === slug
     )
-    const category = categories.find(
-      (categoryItem) => categoryItem.slug === slug
+    const category = categories.find((categoryItem) =>
+      slug.includes(categoryItem.slug)
     )
     if (equivalent) {
       return 'equivalent'
@@ -46,12 +47,12 @@ export default function Integration() {
     if (category) {
       return 'category'
     }
-    return 'tuiles'
+    return 'convertisseur'
   }, [slug])
 
   const path = useMemo(() => {
-    if (type === 'tuiles') {
-      return 'tuiles'
+    if (type === 'convertisseur') {
+      return 'convertisseur'
     }
     if (type === 'category') {
       return slug

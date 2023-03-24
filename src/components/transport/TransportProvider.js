@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import OccupancyModal from './modals/OccupancyModal'
 import FootprintModal from './modals/FootprintModal'
+import OccupancyModal from './modals/OccupancyModal'
 import TeletravailModal from './modals/TeletravailModal'
 
 const TransportContext = React.createContext({})

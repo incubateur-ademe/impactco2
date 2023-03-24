@@ -26,3 +26,6 @@ https://www.monconvertisseurco2.fr/*        https://impactco2.fr/:splat  301!
 /iframes/categories/*                       /iframes/:splat
 /iframes/empreinte-carbone/*                /iframes/:splat
 
+/iframes/tuiles                             /iframes/convertisseur
+
+

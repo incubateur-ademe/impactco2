@@ -1,18 +1,21 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
-import AnimatedNumber from 'animated-number-react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
+import AnimatedNumber from 'animated-number-react'
+import React, { useContext } from 'react'
+import styled from 'styled-components'
 
-import useIframe from 'hooks/useIframe'
 import {
-  formatNumber,
   formatName,
+  formatNumber,
   formatTotalByMultiplier,
 } from 'utils/formatters'
+
+import useIframe from 'hooks/useIframe'
+
 import DataContext from 'components/providers/DataProvider'
-import Emoji from 'components/base/Emoji'
+
 import Button from 'components/base/Button'
+import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
   align-items: center;

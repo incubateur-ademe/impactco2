@@ -1,15 +1,16 @@
 import React from 'react'
 
 import {
-  Title,
-  Equivalents,
-  Equivalent,
-  Emojis,
-  Label,
-  Equals,
   CenterLink,
+  Emojis,
+  Equals,
+  Equivalent,
+  Equivalents,
+  Label,
   Small,
+  Title,
 } from 'components/misc/Visualization'
+
 export default function Eau() {
   return (
     <>
@@ -44,7 +45,7 @@ export default function Eau() {
         3 432 litres d&apos;eau du robinet
         <br />
       </Small>
-      <CenterLink to='/boisson'>Voir la catégorie boisson</CenterLink>
+      <CenterLink to='/boisson'>Comparez avec d'autres boissons</CenterLink>
     </>
   )
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 
 import {
-  Title,
-  Equivalents,
-  Equivalent,
-  Emojis,
-  Label,
-  Equals,
   CenterLink,
+  Emojis,
+  Equals,
+  Equivalent,
+  Equivalents,
+  Label,
   Small,
+  Title,
 } from 'components/misc/Visualization'
 
 export default function ImprimanteCategory() {
@@ -42,7 +42,9 @@ export default function ImprimanteCategory() {
         5 smartphones
         <br />
       </Small>
-      <CenterLink to='/numerique'>Voir la catégorie numérique</CenterLink>
+      <CenterLink to='/numerique'>
+        Comparez avec d'autres objets numériques
+      </CenterLink>
     </>
   )
 }

@@ -2,12 +2,10 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
-import ButtonLink from 'components/base/ButtonLink'
 
-const StyledSection = styled(Section)`
-  margin: 5rem 0;
-`
+import ButtonLink from 'components/base/ButtonLink'
+import Section from 'components/base/Section'
+
 const Title = styled.h2``
 const Strong = styled.p`
   font-size: 1.5rem;
@@ -252,7 +250,7 @@ export default function Learning(props) {
   )
 
   return (
-    <StyledSection>
+    <Section background>
       <Section.Content>
         {
           {
@@ -269,6 +267,6 @@ export default function Learning(props) {
           }[props.category.slug]
         }
       </Section.Content>
-    </StyledSection>
+    </Section>
   )
 }

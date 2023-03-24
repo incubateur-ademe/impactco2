@@ -2,10 +2,13 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import { formatName } from 'utils/formatters'
+
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
-import MagicLink from 'components/base/MagicLink'
+
 import ButtonLink from 'components/base/ButtonLink'
+import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
+
 import Value from './details/Value'
 
 const Title = styled.h1``

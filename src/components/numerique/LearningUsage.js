@@ -2,12 +2,14 @@ import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { formatName, formatTotal, formatUsage } from 'utils/formatters'
-import ModalContext from 'components/providers/ModalProvider'
+
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+import ModalContext from 'components/providers/ModalProvider'
+
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
+import Section from 'components/base/Section'
 import List from 'components/misc/category/List'
 
 const StyledSection = styled(Section)`

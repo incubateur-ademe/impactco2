@@ -1,14 +1,14 @@
 import React from 'react'
 
 import {
-  Title,
-  Equivalents,
-  Equivalent,
-  Emojis,
-  Label,
-  Equals,
   CenterLink,
+  Emojis,
+  Equals,
+  Equivalent,
+  Equivalents,
+  Label,
   Small,
+  Title,
 } from 'components/misc/Visualization'
 
 export default function Voiture() {
@@ -63,7 +63,9 @@ export default function Voiture() {
         <br />
         en TGV
       </Small>
-      <CenterLink to='/transport'>Voir tous les modes de transport</CenterLink>
+      <CenterLink to='/transport'>
+        Comparez avec d'autres modes de transport
+      </CenterLink>
     </>
   )
 }

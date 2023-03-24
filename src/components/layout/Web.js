@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import useInteraction from 'hooks/useInteraction'
-import Seo from './web/Seo'
-import Header from './web/Header'
-import Nav from './web/Nav'
+
 import BreadCrumb from './web/BreadCrumb'
 import Footer from './web/Footer'
+import Header from './web/Header'
+import Nav from './web/Nav'
+import Seo from './web/Seo'
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,7 +23,6 @@ const FullScreen = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  min-height: 100vh;
   padding: 0 0 5rem;
   position: relative;
 `

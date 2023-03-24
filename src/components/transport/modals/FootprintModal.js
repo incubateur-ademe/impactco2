@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import TransportContext from '../TransportProvider'
-import Modal from 'components/base/Modal'
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
+import Modal from 'components/base/Modal'
+
+import TransportContext from '../TransportProvider'
 
 const Title = styled.h2``
 const Text = styled.p``

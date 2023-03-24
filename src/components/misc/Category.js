@@ -1,19 +1,20 @@
-import React, { useState, useContext, useMemo } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 
 import { formatName, formatTotal, formatUsage } from 'utils/formatters'
+
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+
 import Checkbox from 'components/base/Checkbox'
+import Section from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
-import Wrapper from './category/Wrapper'
-import Top from './category/Top'
+
+import Bottom from './category/Bottom'
+import CategoryLegend from './category/CategoryLegend'
+import Description from './category/Description'
 import Instruction from './category/Instruction'
 import List from './category/List'
-import CategoryLegend from './category/CategoryLegend'
-import Bottom from './category/Bottom'
-import Learning from './category/Learning'
-import Contact from 'components/misc/Contact'
-import Description from './category/Description'
+import Top from './category/Top'
+import Wrapper from './category/Wrapper'
 
 export default function CategoryList(props) {
   const { equivalents, categories } = useContext(DataContext)
@@ -60,7 +61,10 @@ export default function CategoryList(props) {
         >
           <Description description={props.category.description} />
           <Top className='noscreenshot'>
-            <Instruction />
+            <Instruction
+              title={props.category.equivalent}
+              gender={props.category.gender}
+            />
             <Top.Checkboxes
               visible={
                 equivalents
@@ -84,7 +88,8 @@ export default function CategoryList(props) {
                   ])
                 }}
               >
-                Voir tous les équivalents
+                Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
+                {formatName(props.category.equivalent, 2) || 'équivalents'}
               </Checkbox>
             </Top.Checkboxes>
           </Top>
@@ -107,8 +112,6 @@ export default function CategoryList(props) {
             </>
           )}
           <Bottom category={props.category} />
-          <Learning category={props.category} />
-          <Contact />
         </Wrapper>
       </Section.Content>
     </Section>

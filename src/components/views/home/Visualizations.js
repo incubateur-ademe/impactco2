@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import Slider from 'react-slick'
+import styled from 'styled-components'
 
-import { home } from 'components/visualizations/list'
 import Section from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
+import { home } from 'components/visualizations/list'
 
 const StyledSection = styled(Section)`
   margin-bottom: 6rem;

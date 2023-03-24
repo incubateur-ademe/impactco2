@@ -1,11 +1,10 @@
+import categories from 'data/categories.json'
 import React from 'react'
 
-import categories from 'data/categories.json'
-
-import { TransportProvider } from 'components/transport/TransportProvider'
 import Web from 'components/layout/Web'
+import Learning from 'components/misc/Learning'
 import Itinerary from 'components/transport/Itinerary'
-import Learning from 'components/misc/category/Learning'
+import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function ItinerairePage(props) {
   return (
