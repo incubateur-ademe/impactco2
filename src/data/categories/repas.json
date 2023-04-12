@@ -13,7 +13,7 @@
       "title": "Impact climat d'un repas avec du boeuf",
       "description": "Un repas avec du boeuf a un impact important sur le climat. Mesurez votre impact en découvrant la valeur en CO₂e de votre repas"
     },
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=repas"
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas"
   },
   {
     "id": 20683,
@@ -29,7 +29,7 @@
       "title": "Impact climat d'un repas végétarien",
       "description": "Un repas avec du boeuf, un repas avec du poulet, ou un repas végétarien aura un impact différent sur le climat. Quel est l'impact d'un repas végétarien ?"
     },
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=repas"
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas"
   },
   {
     "id": 20684,
@@ -93,6 +93,6 @@
       "title": "Impact climat d'un repas avec du poulet",
       "description": "Quelle est la différence sur le climat entre un repas avec du poulet, un repas avec du boeuf, ou un repas végétarien ? Mesurez votre impact sur le climat"
     },
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=repas"
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas"
   }
 ]
