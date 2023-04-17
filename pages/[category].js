@@ -30,7 +30,7 @@ export async function getStaticPaths() {
       .map((category) => ({
         params: { category: category.slug },
       })),
-    fallback: false,
+    fallback: true,
   }
 }
 export async function getStaticProps({ params }) {
