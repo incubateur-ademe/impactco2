@@ -82,7 +82,7 @@
     "display": {
       "min": 400
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
     "hypothesis": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>126 gCO2e/km/personne sans l'impact des traînées,<br/>230 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 3 500 km, >220 sièges :<br/>97,7 gCO2e/km/personne sans l'impact des traînées,<br/>178,4 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, >220 sièges :<br/>83,06 gCO2e/km/personne sans l'impact des traînées,<br/>151,66 gCO2e/km/personne avec l'impact des traînées",
     "meta": {
       "title": "Calcul empreinte carbone voyage avion",
@@ -113,7 +113,7 @@
     "display": {
       "min": 150
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "L'empreinte carbone d'un trajet en TGV",
       "description": "Découvrez l'émission de CO₂e lors d'un voyage en TGV et comparez le à d'autres moyens de transport"
@@ -143,7 +143,7 @@
     "display": {
       "min": 31
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=train",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "L'empreinte carbone d'un trajet en intercités",
       "description": "Découvrez l'émission de CO₂e lors d'un voyage en intercités et comparez le à d'autres moyens de transport"
@@ -171,7 +171,7 @@
     ],
     "default": true,
     "tile": true,
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Poids CO₂e d'une voiture thermique",
       "description": "Connaître l'empreinte écologique d'un trajet avec une voiture à moteur thermique par rapport aux autres moyens de transport"
@@ -200,7 +200,7 @@
     ],
     "default": true,
     "tile": false,
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Poids CO₂e d'une voiture électrique ",
       "description": "Découvrez l'émission de CO₂e lors d'un trajet en voiture électrique et comparez le à d'autres moyens de transport"
@@ -231,7 +231,7 @@
     "display": {
       "min": 16
     },
-    "source": "https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?routier2.htm",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "",
       "description": "Découvrez l'émission de CO₂e lors d'un voyage en car et comparez le à d'autres moyens de transport"
@@ -288,7 +288,7 @@
     "display": {
       "max": 30
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=velo",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "",
       "description": "Découvrez l'impact CO₂e d'un trajet en velo ou trotinette électrique et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements."
@@ -319,7 +319,7 @@
     "display": {
       "max": 15
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Émission de CO₂e lors d'un trajet en bus",
       "description": "Découvrez l'impact CO₂e d'un trajet en bus et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements."
@@ -349,7 +349,7 @@
     "display": {
       "max": 12
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tramway",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "L'empreinte carbone d'un trajet en tramway",
       "description": "Découvrez l'impact CO₂e d'un trajet en tramway et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements."
@@ -379,7 +379,7 @@
     "display": {
       "max": 12
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "Empreinte carbone d'un trajet en métro",
       "description": "Impact CO2 vous indique l'impact écologique d'un trajet en métro par rapport à d'autres moyens de transport"
@@ -409,7 +409,7 @@
     "display": {
       "max": 50
     },
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=moto",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "",
       "description": "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
@@ -438,7 +438,7 @@
     "display": {
       "min": 51
     },
-    "source": "https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=moto",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "",
       "description": "Découvrez l'impact CO₂e d'un trajet en moto et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
@@ -469,7 +469,7 @@
       "min": 11,
       "max": 100
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "L'empreinte carbone d'un trajet en RER",
       "description": "Découvrez l'impact CO₂e d'un trajet en RER et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
@@ -499,7 +499,7 @@
     "display": {
       "max": 150
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "L'empreinte carbone d'un trajet en TER",
       "description": "Découvrez l'impact CO₂e d'un trajet en TER et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
@@ -531,7 +531,7 @@
     "display": {
       "max": 15
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Émission de CO₂e lors d'un trajet en bus électrique",
       "description": "Découvrez l'impact CO₂e d'un trajet en bus électrique et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
@@ -562,7 +562,7 @@
     "display": {
       "max": 15
     },
-    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Émission de CO₂e lors d'un trajet en bus GNV",
       "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
