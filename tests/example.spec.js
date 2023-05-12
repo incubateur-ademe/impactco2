@@ -14,9 +14,7 @@ test('La barre de recherche renvoie des résultats', async ({ page }) => {
   await page
     .getByRole('textbox', { name: 'Entrez un objet, un geste...' })
     .click({ force: true })
-  await page
-    .getByRole('textbox', { name: 'Entrez un objet, un geste...' })
-    .type('Hello World!')
+  await page.locator('#searchbar > div > form > div > input').type('hey')
   // Expect a title "to contain" a substring.
   // await expect(page).toHaveContent(/rer ou transilien/);
 })
