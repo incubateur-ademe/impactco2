@@ -9,14 +9,29 @@ test("Le titre de la page d'accueil est bien renseigné", async ({ page }) => {
 })
 
 test('La barre de recherche renvoie des résultats', async ({ page }) => {
+  const WAIT = 400
   await page.goto('/')
   // await page.type('input#main_search', 'train', { delay: 200 });
   await page
     .getByRole('textbox', { name: 'Entrez un objet, un geste...' })
     .click({ force: true })
-  await page.locator('#searchbar > div > form > div > input').type('hey')
+  await page.keyboard.type('t')
+  await page.waitForTimeout(WAIT)
+  await page.keyboard.type('r')
+  await page.waitForTimeout(WAIT)
+  await page.keyboard.type('a')
+  await page.waitForTimeout(WAIT)
+  await page.keyboard.type('i')
+  await page.waitForTimeout(WAIT)
+  await page.keyboard.type('n')
+  await page.waitForTimeout(WAIT)
+  page.keyboard.press('Tab')
+  await page.waitForTimeout(WAIT)
+  page.keyboard.press('Enter')
+  await page.waitForTimeout(WAIT)
+  // await page.locator('#searchbar > div > form > div > input').type('hey')
   // Expect a title "to contain" a substring.
-  // await expect(page).toHaveContent(/rer ou transilien/);
+  await expect(page).toHaveURL(/.*transport/)
 })
 
 // test('has title', async ({ page }) => {
