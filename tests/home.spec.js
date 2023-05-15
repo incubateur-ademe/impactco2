@@ -8,7 +8,7 @@ test("Le titre de la page d'accueil est bien renseigné", async ({ page }) => {
   await expect(page).toHaveTitle(/Impact sur le climat des objets et gestes/)
 })
 
-test.only("La barre de recherche de la page d'accueil suggère (ou pas) des résultats", async ({
+test("La barre de recherche de la page d'accueil suggère (ou pas) des résultats", async ({
   page,
 }) => {
   // Chargement de la page
