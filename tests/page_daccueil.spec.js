@@ -9,7 +9,7 @@ test("Le titre de la page d'accueil est bien renseigné", async ({ page }) => {
   await expect(page).toHaveTitle(/Impact sur le climat des objets et gestes/)
 })
 
-test("La barre de recherche de la page d'accueil suggère (ou pas) des résultats", async ({
+test("La barre de recherche de la page d'accueil ne suggère pas de résultats", async ({
   page,
 }) => {
   // Ouverture de la page d'accueil dans le navigateur
@@ -36,16 +36,9 @@ test("La barre de recherche de la page d'accueil suggère (ou pas) des résultat
   expect(await page.getByTitle('simple suggestion').count()).toEqual(0)
   // ...Et un message "non trouvé" s'affiche
   expect(await page.getByTestId('notfound').count()).toEqual(1)
-
-  // Supprimer un caractère
-  await page.keyboard.press('Backspace')
-  // Entrer un nouveau caractère...
-  await page.keyboard.type('r')
-  // Et un troisième
-  await page.keyboard.type('a')
 })
 
-test("Le clic sur la suggestion d'un résultat de la page d'accueil redirige vers le détail", async ({
+test("La barre de recherche de la page d'accueil suggère des résultats", async ({
   page,
 }) => {
   // Ouverture de la page d'accueil dans le navigateur
