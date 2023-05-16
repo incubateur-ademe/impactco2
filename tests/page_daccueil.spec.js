@@ -1,6 +1,5 @@
 // @ts-check
-const { test, expect } = require('@playwright/test')
-
+const { test, expect } = require('playwright-test-coverage')
 test('Le titre', async ({ page }) => {
   await test.step("On charge la page d'accueil dans le navigateur", async () => {
     await page.goto('/')
