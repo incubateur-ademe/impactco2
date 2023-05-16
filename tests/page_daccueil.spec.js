@@ -1,7 +1,7 @@
 // @ts-check
 const { test, expect } = require('@playwright/test')
 
-test("Le titre de la page d'accueil est bien renseigné", async ({ page }) => {
+test('Le titre', async ({ page }) => {
   await test.step("On charge la page d'accueil dans le navigateur", async () => {
     await page.goto('/')
   })
@@ -10,86 +10,69 @@ test("Le titre de la page d'accueil est bien renseigné", async ({ page }) => {
   })
 })
 
-test("La barre de recherche de la page d'accueil ne suggère pas de résultats", async ({
-  page,
-}) => {
-  // Ouverture de la page d'accueil dans le navigateur
-  await page.goto('/')
+test('Barre de recherche (sans résultat)', async ({ page }) => {
+  await test.step("On charge la page d'accueil dans le navigateur", async () => {
+    await page.goto('/')
+  })
 
-  // Comptage du nombre de message affichant "non trouvé"
-  let nb_of_notfound = await page.getByTestId('notfound').count()
+  await test.step('On clique sur la barre de recherche', async () => {
+    await page
+      .getByRole('textbox', { name: 'Entrez un objet, un geste...' })
+      .click({ force: true })
+  })
 
-  // Pas de "non trouvé" explicite au départ
-  expect(nb_of_notfound).toEqual(0)
+  await test.step('On rentre une première lettre', async () => {
+    await page.keyboard.type('t')
+  })
 
-  // Comptage des suggestions
-  let nb_of_suggestions = await page.getByTitle('simple suggestion').count()
+  await test.step('Pas de suggestion affichée', async () => {
+    let nb_of_suggestions = await page.getByTitle('simple suggestion').count()
+    expect(nb_of_suggestions).toEqual(0)
+  })
 
-  // Pas de suggestion au départ
-  expect(nb_of_suggestions).toEqual(0)
+  await test.step('On rentre une 2ème lettre ayant peu de chance de retourner un résultat', async () => {
+    await page.keyboard.type('x')
+  })
 
-  // Click sur la barre de recherche
-  await page
-    .getByRole('textbox', { name: 'Entrez un objet, un geste...' })
-    .click({ force: true })
+  await test.step('Toujours pas de suggestion affichée', async () => {
+    let nb_of_suggestions = await page.getByTitle('simple suggestion').count()
+    expect(nb_of_suggestions).toEqual(0)
+  })
 
-  // Entrer un seul caractère
-  await page.keyboard.type('t')
-
-  // Nouveau comptage des suggestions
-  nb_of_suggestions = await page.getByTitle('simple suggestion').count()
-
-  // Toujours pas de suggestion
-  expect(nb_of_suggestions).toEqual(0)
-
-  // Entrer un caractère bizarre
-  await page.keyboard.type('w')
-
-  // Encore un comptage des suggestions
-  nb_of_suggestions = await page.getByTitle('simple suggestion').count()
-
-  // Toujours pas de suggestion
-  expect(nb_of_suggestions).toEqual(0)
-
-  // Comptage du nombre de message affichant "non trouvé"
-  nb_of_notfound = await page.getByTestId('notfound').count()
-
-  // Cette fois-ci, un message "non trouvé" s'affiche
-  expect(nb_of_notfound).toEqual(1)
+  await test.step("Cette fois, en plus, un message explicite l'absence de résultat", async () => {
+    let nb_of_notfound = await page.getByTestId('notfound').count()
+    expect(nb_of_notfound).toEqual(1)
+  })
 })
 
-test("La barre de recherche de la page d'accueil suggère des résultats", async ({
-  page,
-}) => {
-  // Ouverture de la page d'accueil dans le navigateur
-  await page.goto('/')
+test('Barre de recherche (avec résultats)', async ({ page }) => {
+  await test.step('On clique sur la barre de recherche', async () => {
+    await page.goto('/')
+  })
 
-  // Click sur la barre de recherche
-  await page
-    .getByRole('textbox', { name: 'Entrez un objet, un geste...' })
-    .click({ force: true })
+  await test.step('On clique sur la barre de recherche', async () => {
+    await page
+      .getByRole('textbox', { name: 'Entrez un objet, un geste...' })
+      .click({ force: true })
+  })
 
-  // L'utilisateur entre un texte en rapport avec les transports
-  await page.keyboard.type('t')
+  await test.step('On entre plusieurs caractères qui forment une syllabe facile', async () => {
+    await page.keyboard.type('t')
+    await page.keyboard.type('r')
+    await page.keyboard.type('a')
+  })
 
-  // Entrer un nouveau caractère...
-  await page.keyboard.type('r')
+  await test.step('Il y a bien des suggestions qui apparaissent', async () => {
+    let nb_of_suggestions = await page.getByTitle('simple suggestion').count()
+    expect(nb_of_suggestions).toBeGreaterThan(0)
+  })
 
-  // Et un troisième
-  await page.keyboard.type('a')
+  await test.step('Au clavier, on peut valider la première suggestion', async () => {
+    await page.keyboard.press('Tab')
+    await page.keyboard.press('Enter')
+  })
 
-  // Comptage des suggestions
-  let nb_of_suggestions = await page.getByTitle('simple suggestion').count()
-
-  // Il y a bien des suggestions
-  expect(nb_of_suggestions).toBeGreaterThan(0)
-
-  // L'utilisateur appui sur la touche "Tab"
-  await page.keyboard.press('Tab')
-
-  // L'utilisateur appui sur la touche "Entrée"
-  await page.keyboard.press('Enter')
-
-  // L'utilisateur est redirigé vers une URL qui concerne les transports
-  await expect(page).toHaveURL(/.*transport/)
+  await test.step("On est redirigé vers l'écran correspondant", async () => {
+    await expect(page).toHaveURL(/.*transport/)
+  })
 })
