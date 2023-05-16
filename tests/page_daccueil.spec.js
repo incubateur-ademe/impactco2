@@ -2,11 +2,12 @@
 const { test, expect } = require('@playwright/test')
 
 test("Le titre de la page d'accueil est bien renseigné", async ({ page }) => {
-  // Ouverture de la page d'accueil dans le navigateur
-  await page.goto('/')
-
-  // Le titre de la page est bien renseigné
-  await expect(page).toHaveTitle(/Impact sur le climat des objets et gestes/)
+  await test.step("On charge la page d'accueil dans le navigateur", async () => {
+    await page.goto('/')
+  })
+  await test.step("L'onglet s'affiche avec un titre correct", async () => {
+    await expect(page).toHaveTitle(/Impact sur le climat des objets et gestes/)
+  })
 })
 
 test("La barre de recherche de la page d'accueil ne suggère pas de résultats", async ({
