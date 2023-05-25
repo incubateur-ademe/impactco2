@@ -107,6 +107,7 @@ export const StyledMagicLink = styled(MagicLink)`
   position: relative;
   z-index: 12;
 `
+
 export function CenterLink(props) {
   return (
     <LinkWrapper>

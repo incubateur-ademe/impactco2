@@ -26,6 +26,7 @@ export default function Emoji(props) {
           .replace(props.children, props.alt || ''),
       }}
       className={props.className}
+      title={props.title}
       onClick={props.onClick || (() => null)}
     />
   ) : (
