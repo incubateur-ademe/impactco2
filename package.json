@@ -8,6 +8,7 @@
     "postbuild": "next-sitemap",
     "iframe": "webpack",
     "start": "next start",
+    "test": "playwright test",
     "lint": "next lint",
     "prepare": "husky install"
   },
