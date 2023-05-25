@@ -34,3 +34,6 @@ yarn-error.log*
 /public/iframe.js
 
 /public/sitemap*
+/test-results/
+/playwright-report/
+/playwright/.cache/
