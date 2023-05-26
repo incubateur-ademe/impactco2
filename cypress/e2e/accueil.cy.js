@@ -3,7 +3,7 @@ describe('Home page', () => {
   const typeSearchBar = (cy, letter) => {
     cy.get('#searchbar > div > form > div > input')
       .focus()
-      .type(letter, { delay: 100, force: true })
+      .type(letter, { delay: 300, force: true })
   }
 
   it('has Title', () => {
