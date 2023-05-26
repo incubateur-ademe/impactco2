@@ -34,6 +34,12 @@ yarn-error.log*
 /public/iframe.js
 
 /public/sitemap*
+
+# tests
 /test-results/
 /playwright-report/
 /playwright/.cache/
+/playwright
+cypress/screenshots/
+cypress/videos/
+cypress/results/
