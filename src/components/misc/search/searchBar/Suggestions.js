@@ -73,7 +73,7 @@ export default function Suggestions(props) {
                   key={product.item.id}
                   onClick={() => props.handleSuggestionClick(product)}
                   onMouseDown={(e) => e.preventDefault()}
-                  title={`simple suggestion`}
+                  title='simple suggestion'
                 >
                   <Name>
                     <Emoji>{product.item.emoji}</Emoji>
@@ -95,7 +95,7 @@ export default function Suggestions(props) {
             <NotFound
               onMouseDown={(e) => e.preventDefault()}
               small
-              data-testid='notfound'
+              title='pas de résultat'
             >
               Nous n&apos;avons rien trouvé :(
               <br />

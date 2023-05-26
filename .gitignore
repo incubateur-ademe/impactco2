@@ -40,3 +40,6 @@ yarn-error.log*
 /playwright-report/
 /playwright/.cache/
 /playwright
+cypress/screenshots/
+cypress/videos/
+cypress/results/
