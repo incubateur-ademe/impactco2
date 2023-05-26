@@ -10,8 +10,11 @@ jobs:
         uses: actions/checkout@v3
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
+      - name: Cypress check e2e
         uses: cypress-io/github-action@v5
         with:
-          browser: firefox
           command: yarn test:e2e
+      - name: Cypress check components
+        uses: cypress-io/github-action@v5
+        with:
+          command: yarn test:component
