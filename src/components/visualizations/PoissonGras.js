@@ -28,9 +28,9 @@ export default function PoissonGras() {
         </Equivalent>
         <Equals>=</Equals>
         <Equivalent size={[10, 7, 22]}>
-          <Emojis margin={70}>🐟🐟🐟🐟</Emojis>
+          <Emojis margin={70}>🐟🐟🐟🐟🐟🐟🐟</Emojis>
           <Label>
-            4 repas avec
+            7 repas avec
             <br />
             du poisson gras
           </Label>

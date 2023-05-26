@@ -28,9 +28,9 @@ export default function PoissonBlanc() {
         </Equivalent>
         <Equals>=</Equals>
         <Equivalent size={[12, 7, 30]}>
-          <Emojis>🐟🐟🐟🐟🐟🐟🐟</Emojis>
+          <Emojis>🐟🐟🐟🐟</Emojis>
           <Label>
-            7 repas avec
+            4 repas avec
             <br />
             du poisson blanc
           </Label>
