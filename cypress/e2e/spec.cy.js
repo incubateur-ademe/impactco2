@@ -4,13 +4,21 @@ describe('Home page', () => {
     cy.visit('/')
     cy.get('h1').should('contain', 'Découvrez l’impact sur le climat')
   })
-  it('has search bar', () => {
+
+  it('Barre de recherche', () => {
     cy.visit('/')
-    // cy.click('#searchbar > div > form > div > input')
-    cy.get('#searchbar > div > form > div > input').focus().type('train', {
-      // force: true,
-      delay: 500,
-      // waitForAnimations: true
-    })
+    cy.get('#searchbar > div > form > div > input')
+      .focus()
+      .type('t', { delay: 500, force: true })
+    cy.get('[title="simple suggestion"]').should('not.exist')
+    cy.get('#searchbar > div > form > div > input')
+      .focus()
+      .type('r', { delay: 500, force: true })
+    cy.get('[title="simple suggestion"]')
+      .its('length')
+      .should('be.greaterThan', 0)
+    cy.get('#searchbar > div > form > div > input')
+      .focus()
+      .type('a', { delay: 500, force: true })
   })
 })

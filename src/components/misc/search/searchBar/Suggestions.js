@@ -73,6 +73,7 @@ export default function Suggestions(props) {
                   key={product.item.id}
                   onClick={() => props.handleSuggestionClick(product)}
                   onMouseDown={(e) => e.preventDefault()}
+                  title='simple suggestion'
                 >
                   <Name>
                     <Emoji>{product.item.emoji}</Emoji>
