@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 describe('Home page', () => {
-  const SEARCH_BAR = '#searchbar > div > form > div > input'
-
   const typeSearchBar = (cy, letter) => {
-    cy.get(SEARCH_BAR).focus().type(letter, { delay: 100, force: true })
+    cy.get('#searchbar > div > form > div > input')
+      .focus()
+      .type(letter, { delay: 100, force: true })
   }
 
   it('has Title', () => {
@@ -31,28 +31,4 @@ describe('Home page', () => {
     typeSearchBar(cy, 'a')
     cy.findAllByTitle('simple suggestion', { timeout: 2000 }).should('exist')
   })
-
-  // it('Barre de recherche', () => {
-  //   cy.visit('/')
-
-  //   // Pas de suggestion par défaut
-  //   // cy.get('[title="simple suggestion"]').should('not.exist')
-
-  //   // Pas de "non trouvé"
-  //   // Pas de suggestion
-  //   cy.findByTitle('simple suggestion', { timeout: 2000 }).should('not.exist')
-
-  //   cy.get('#searchbar > div > form > div > input')
-  //   .focus()
-  //   .type('w', { delay: 100, force: true })
-
-  //   // "non trouvé" - OUI
-  //   cy.findByTitle('pas de résultat', { timeout: 2000 }).should('exist')
-
-  //   cy.get('[title="simple suggestion"]').then(($suggestions) => {
-  //     cy.wrap($suggestions)
-  //       .its('length')
-  //       .should('be.greaterThan', 42)
-  //   })
-  // })
 })
