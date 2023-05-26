@@ -13,9 +13,9 @@ describe('<PoissonBlanc />', () => {
       </StyleProvider>
     )
     cy.get('[alt="🐟"]').should('exist')
-    cy.get('[alt="🐟"]').its('length').should('equal', 7)
+    cy.get('[alt="🐟"]').its('length').should('equal', 4)
   })
-  it("Le texte indique bien qu'un repas avec du boeuf vaut 7 repas avec du poisson blanc", () => {
+  it("Le texte indique bien qu'un repas avec du boeuf vaut 4 repas avec du poisson blanc", () => {
     cy.mount(
       <StyleProvider>
         <PoissonBlanc />
@@ -23,7 +23,7 @@ describe('<PoissonBlanc />', () => {
     )
     cy.get('body').should(
       'contains.text',
-      '1 repas avecdu boeuf=7 repas avecdu poisson blanc'
+      '1 repas avecdu boeuf=4 repas avecdu poisson blanc'
     )
   })
 })
