@@ -1,24 +1,58 @@
 /* eslint-disable no-undef */
 describe('Home page', () => {
+  const SEARCH_BAR = '#searchbar > div > form > div > input'
+
+  const typeSearchBar = (cy, letter) => {
+    cy.get(SEARCH_BAR).focus().type(letter, { delay: 100, force: true })
+  }
+
   it('has Title', () => {
     cy.visit('/')
     cy.get('h1').should('contain', 'Découvrez l’impact sur le climat')
   })
 
-  it('Barre de recherche', () => {
+  it('Barre de recherche, pas de résultat pour une simple lettre', () => {
     cy.visit('/')
-    cy.get('#searchbar > div > form > div > input')
-      .focus()
-      .type('t', { delay: 500, force: true })
-    cy.get('[title="simple suggestion"]').should('not.exist')
-    cy.get('#searchbar > div > form > div > input')
-      .focus()
-      .type('r', { delay: 500, force: true })
-    cy.get('[title="simple suggestion"]')
-      .its('length')
-      .should('be.greaterThan', 0)
-    cy.get('#searchbar > div > form > div > input')
-      .focus()
-      .type('a', { delay: 500, force: true })
+    typeSearchBar(cy, 't')
+    cy.findByTitle('simple suggestion', { timeout: 2000 }).should('not.exist')
   })
+
+  it("Barre de recherche, message explicite d'absence de résultat, si syllabe trop complexe en entrée", () => {
+    cy.visit('/')
+    typeSearchBar(cy, 't')
+    typeSearchBar(cy, 'w')
+    cy.findByTitle('pas de résultat', { timeout: 2000 }).should('exist')
+  })
+
+  it('Barre de recherche, la liste de suggestion apparaît, pour une syllable simple en entrée', () => {
+    cy.visit('/')
+    typeSearchBar(cy, 't')
+    typeSearchBar(cy, 'r')
+    typeSearchBar(cy, 'a')
+    cy.findAllByTitle('simple suggestion', { timeout: 2000 }).should('exist')
+  })
+
+  // it('Barre de recherche', () => {
+  //   cy.visit('/')
+
+  //   // Pas de suggestion par défaut
+  //   // cy.get('[title="simple suggestion"]').should('not.exist')
+
+  //   // Pas de "non trouvé"
+  //   // Pas de suggestion
+  //   cy.findByTitle('simple suggestion', { timeout: 2000 }).should('not.exist')
+
+  //   cy.get('#searchbar > div > form > div > input')
+  //   .focus()
+  //   .type('w', { delay: 100, force: true })
+
+  //   // "non trouvé" - OUI
+  //   cy.findByTitle('pas de résultat', { timeout: 2000 }).should('exist')
+
+  //   cy.get('[title="simple suggestion"]').then(($suggestions) => {
+  //     cy.wrap($suggestions)
+  //       .its('length')
+  //       .should('be.greaterThan', 42)
+  //   })
+  // })
 })

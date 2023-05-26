@@ -92,7 +92,11 @@ export default function Suggestions(props) {
           )
         ) : (
           <>
-            <NotFound onMouseDown={(e) => e.preventDefault()} small>
+            <NotFound
+              onMouseDown={(e) => e.preventDefault()}
+              small
+              title='pas de résultat'
+            >
               Nous n&apos;avons rien trouvé :(
               <br />
               Essayez de naviguer par catégorie

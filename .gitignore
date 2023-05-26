@@ -36,6 +36,7 @@ yarn-error.log*
 /public/sitemap*
 
 # tests
+cypress/screenshots/
 cypress/videos/
 cypress/results/
 playwright-report/
