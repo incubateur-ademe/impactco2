@@ -6,13 +6,6 @@ import { StyleProvider } from 'components/providers/StyleProvider'
 import PoissonGras from './PoissonGras'
 
 describe('<PoissonGras />', () => {
-  it('Affichage correct', () => {
-    cy.mount(
-      <StyleProvider>
-        <PoissonGras />
-      </StyleProvider>
-    )
-  })
   it('On voit bien 4 poissons', () => {
     cy.mount(
       <StyleProvider>
