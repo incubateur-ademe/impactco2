@@ -89,7 +89,6 @@ export default function TilesModal() {
         value={search}
         onChange={({ value }) => setSearch(value)}
         placeholder={'Entrez un objet, un geste...'}
-        title='barre de recherche'
       />
       {open && (
         <Equivalents>
