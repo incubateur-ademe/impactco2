@@ -15,8 +15,7 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test:e2e": "start-server-and-test dev http://localhost:3000 cy:run",
-    "test:component": "cypress run --component",
-    "test:full": "cypress run --component && start-server-and-test dev http://localhost:3000 cy:run"
+    "test:component": "cypress run --component"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.0.7",
