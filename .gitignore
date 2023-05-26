@@ -38,3 +38,4 @@ yarn-error.log*
 # tests
 cypress/videos/
 cypress/results/
+playwright-report/
