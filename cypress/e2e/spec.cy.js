@@ -6,8 +6,11 @@ describe('Home page', () => {
   })
   it('has search bar', () => {
     cy.visit('/')
-    cy.get('#searchbar > div > form > div > input').type('train', {
-      force: true,
+    // cy.click('#searchbar > div > form > div > input')
+    cy.get('#searchbar > div > form > div > input').focus().type('train', {
+      // force: true,
+      delay: 500,
+      // waitForAnimations: true
     })
   })
 })
