@@ -1,0 +1,50 @@
+name: Cypress Tests
+
+on: push
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+
+      - name: Cypress check components
+        uses: cypress-io/github-action@v5
+        with:
+          command: yarn test:component
+
+      - name: Upload component testing HTML
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-results-components-html
+          path: cypress/results
+
+      - name: Upload component testing videos
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-results-components-videos
+          path: cypress/videos
+
+      - name: Cypress check e2e
+        uses: cypress-io/github-action@v5
+        with:
+          command: yarn test:e2e
+
+      - name: Upload e2e testing HTML
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-results-e2e-html
+          path: cypress/results
+
+      - name: Upload e2e testing videos
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-results-e2e-videos
+          path: cypress/videos

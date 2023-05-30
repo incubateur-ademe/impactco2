@@ -76,7 +76,9 @@ export default function Heading() {
           entourent
           <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />?
         </Text>
-        <StyledSearch placeholder={'Entrez un objet, un geste...'} home />
+        <div id='searchbar'>
+          <StyledSearch placeholder={'Entrez un objet, un geste...'} home />
+        </div>
         <Categories />
         <StyledButtonLink onClick={() => setCo2e(true)}>
           Comprendre le CO<sub>2</sub>e
