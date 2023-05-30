@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+var shell = require('shelljs')
 
 const nextConfig = {
   reactStrictMode: true,
@@ -8,6 +8,10 @@ const nextConfig = {
   i18n: {
     locales: ['fr'],
     defaultLocale: 'fr',
+  },
+  env: {
+    thebuildid: shell.exec('git describe --long  --abbrev=10 --tags'),
+    customKey: 'my-value',
   },
 }
 

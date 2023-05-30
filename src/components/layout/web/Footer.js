@@ -39,6 +39,7 @@ export default function Footer() {
         <Logo />
       </Logos>
       <Accessibility>Accessibilité : partiellement conforme</Accessibility>
+      <Accessibility>Version : {process.env.thebuildid}</Accessibility>
     </>
   )
 }
