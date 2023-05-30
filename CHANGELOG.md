@@ -6,6 +6,7 @@
 * Suppression de Cypress
 * Ajout du versionning
 * Ajout du CHANGELOG
+* Ajout de la page par défaut d'impact livraison
 
 ## 1.0.1 (30/5/2023)
 
