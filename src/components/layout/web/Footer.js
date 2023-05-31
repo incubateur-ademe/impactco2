@@ -28,11 +28,15 @@ const Accessibility = styled.div`
   padding-bottom: 1rem;
   text-align: center;
 `
-export default function Footer() {
+export default function Footer(props) {
   return (
     <>
-      <Contact />
-      <About />
+      {props.isRawFooter ? null : (
+        <>
+          <Contact />
+          <About />
+        </>
+      )}
       <Logos>
         <Marianne />
         <Ademe />

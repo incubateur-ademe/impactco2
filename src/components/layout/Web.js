@@ -44,7 +44,7 @@ export default function Web(props) {
             <BreadCrumb breadcrumb={props.breadcrumb} />
             {props.children}
           </FullScreen>
-          <Footer />
+          <Footer isRawFooter={props.isRawFooter} />
         </Content>
       </Wrapper>
     </>

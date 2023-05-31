@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
+    "test": "playwright test",
+    "test:watch": "playwright test --ui",
     "dev": "next dev",
     "build": "yarn iframe && next build",
     "postbuild": "next-sitemap",
@@ -48,6 +50,7 @@
     "use-query-params": "^2.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.33.0",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
