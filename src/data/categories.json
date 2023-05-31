@@ -19,6 +19,25 @@
     }
   },
   {
+    "id": 12,
+    "name": "Impact livraison",
+    "emoji": "📦",
+    "slug": "impactlivraison",
+    "title": "Découvrez l'impact des livraison de colis<br/>sur le climat",
+    "description": "Mesurez facilement l'empreinte carbone d'une livraison",
+    "equivalent": "impact[s] livraison[s]",
+    "gender": "m",
+    "divider": 1,
+    "display": true,
+    "unit": "",
+    "include": "",
+    "list": true,
+    "meta": {
+      "title": "Poids en CO₂e des livraisons de colis",
+      "description": "Comparez l'impact écologique en CO₂e d'une livraison de colis dans diverses situations"
+    }
+  },
+  {
     "id": 8,
     "name": "Chauffage",
     "emoji": "🏠",
