@@ -8,16 +8,14 @@ import Marianne from 'components/base/Marianne'
 import Section2 from 'components/base/Section2'
 import Nav2 from 'components/layout/web/Nav2.js'
 
-const Wrapper = styled.header`
-  background-color: whitesmoke;
-`
+const Wrapper = styled.header``
 
 const Logos = styled(MagicLink)``
 
 export default function Header2() {
   return (
     <Section2>
-      <Section2.Content>
+      <Section2.WideContent>
         <Wrapper>
           <Flex.Between>
             <Flex>
@@ -29,7 +27,7 @@ export default function Header2() {
             <Nav2 />
           </Flex.Between>
         </Wrapper>
-      </Section2.Content>
+      </Section2.WideContent>
     </Section2>
   )
 }
