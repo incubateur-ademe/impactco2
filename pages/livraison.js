@@ -1,8 +1,20 @@
 import categories from 'data/categories.json'
 import React from 'react'
 
-export default function Livraison() {
-  return <div>Impact Livraison</div>
+import Web from 'components/layout/Web'
+
+export default function Livraison(props) {
+  return (
+    <Web
+      title={props.category.meta.title}
+      description={props.category.meta.description}
+      breadcrumb={{
+        type: 'equivalent',
+        category: props.category,
+      }}
+      isRawFooter={true}
+    ></Web>
+  )
 }
 export async function getStaticProps() {
   return {

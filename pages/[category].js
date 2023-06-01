@@ -14,6 +14,7 @@ export default function CategoryPage(props) {
         type: 'equivalent',
         category: props.category,
       }}
+      isRawFooter={props.category.slug === 'impactlivraison'}
     >
       <Category category={props.category} />
       <Learning category={props.category} />

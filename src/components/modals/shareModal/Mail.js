@@ -7,9 +7,7 @@ const Svg = styled.svg``
 export default function Mail(props) {
   return (
     <MagicLink
-      to={`mailto:?subject=${encodeURI(props.subject)}&body=${encodeURI(
-        props.url
-      )}`}
+      to={` :?subject=${encodeURI(props.subject)}}`}
       onClick={() =>
         window._paq?.push(['trackEvent', 'Share', 'Email', props.url])
       }
