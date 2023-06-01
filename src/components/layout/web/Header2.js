@@ -9,7 +9,8 @@ import Section2 from 'components/base/Section2'
 import Nav2 from 'components/layout/web/Nav2.js'
 
 const Header = styled.header`
-  border-bottom: 1px solid black;
+  box-shadow: 0px 2px 6px #f3f6ff;
+  position: relative; // or box-shadow will not appear
 `
 
 const Logos = styled(MagicLink)``
@@ -19,15 +20,17 @@ export default function Header2() {
     <Section2>
       <Section2.WideContent>
         <Header>
-          <Flex.Between>
-            <Flex>
-              <Logos to='/' aria-label='Accueil'>
-                <Marianne />
-              </Logos>
-              <Logo />
-            </Flex>
-            <Nav2 />
-          </Flex.Between>
+          <Section2.InnerMargin>
+            <Flex.Between>
+              <Flex>
+                <Logos to='/' aria-label='Accueil'>
+                  <Marianne />
+                </Logos>
+                <Logo />
+              </Flex>
+              <Nav2 />
+            </Flex.Between>
+          </Section2.InnerMargin>
         </Header>
       </Section2.WideContent>
     </Section2>
