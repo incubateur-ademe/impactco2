@@ -8,13 +8,13 @@ Section2.WideContent = styled.div`
   }
 `
 Section2.InnerMargin = styled.div`
-  margin-left: 11rem;
-  margin-right: 11rem;
-  ${(props) => props.theme.mq.large} {
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }
+  margin-left: 8rem;
+  margin-right: 8rem;
   ${(props) => props.theme.mq.medium} {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  ${(props) => props.theme.mq.small} {
     margin-left: 1rem;
     margin-right: 1rem;
   }

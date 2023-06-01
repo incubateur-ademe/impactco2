@@ -14,10 +14,32 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: flex-end;
 `
+const SearchBar2Container = styled.div`
+  max-width: 2rem;
+`
 const StyledEmoji = styled(Emoji)`
   font-size: 1.25rem;
   margin: 0 0.25rem 0.25rem 0;
 `
+const ShowMedium = styled.span`
+  display: block;
+  ${(props) => props.theme.mq.medium} {
+    display: none;
+  }
+`
+const ShowLarge = styled.span`
+  display: block;
+  ${(props) => props.theme.mq.large} {
+    display: none;
+  }
+`
+const ShowSmall = styled.span`
+  display: block;
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
+`
+
 export default function Menu() {
   const { categories } = useContext(DataContext)
 
@@ -42,13 +64,21 @@ export default function Menu() {
             </Dropdown.Item>
           ))}
       </Dropdown>
-      <Dropdown
-        label={'Convertisseur'}
-        to='/convertisseur'
-        current={slugs.includes('convertisseur')}
-      />
-      <SearchBar2 />
-      <ThemeToggle2 />
+      <ShowLarge>
+        <Dropdown
+          label={'Convertisseur'}
+          to='/convertisseur'
+          current={slugs.includes('convertisseur')}
+        />
+      </ShowLarge>
+      <ShowMedium>
+        <SearchBar2Container>
+          <SearchBar2 />
+        </SearchBar2Container>
+      </ShowMedium>
+      <ShowSmall>
+        <ThemeToggle2 />
+      </ShowSmall>
     </Wrapper>
   )
 }

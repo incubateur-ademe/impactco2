@@ -27,6 +27,7 @@ export const themes = {
       small: `@media screen and (max-width: ${36}em)`,
       iframemedium: `@media screen and (max-width: ${42}em)`,
       medium: `@media screen and (max-width: ${48}em)`,
+      large: `@media screen and (max-width: ${60}em)`,
     },
   },
   night: {

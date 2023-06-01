@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.svg`
+  ${(props) => props.theme.mq.small} {
+    margin: 1em 0 1em 0;
+  }
   display: block;
   height: 3em;
   margin: 1em 1em 1em 0;
