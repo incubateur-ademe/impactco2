@@ -4,14 +4,15 @@ import styled from 'styled-components'
 import Logo from 'components/base/Logo'
 import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
-import Section from 'components/base/Section'
+import Section2 from 'components/base/Section2'
 import Nav2 from 'components/layout/web/Nav2.js'
 
 const Wrapper = styled.header`
+  box-shadow: 0px 2px 6px #f3f6ff;
+
   display: flex;
   justify-content: space-between;
   position: relative;
-
   ${(props) => props.theme.mq.small} {
     font-size: 0.75rem;
     margin-bottom: 0.5rem;
@@ -27,8 +28,8 @@ const Logos = styled(MagicLink)``
 
 export default function Header2(props) {
   return (
-    <Section>
-      <Section.Content>
+    <Section2>
+      <Section2.Content>
         <Wrapper className={props.className}>
           <Left>
             <Logos to='/' aria-label='Accueil'>
@@ -38,7 +39,7 @@ export default function Header2(props) {
             <Nav2 />
           </Left>
         </Wrapper>
-      </Section.Content>
-    </Section>
+      </Section2.Content>
+    </Section2>
   )
 }

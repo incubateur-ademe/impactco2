@@ -8,23 +8,9 @@ import Footer2 from './web/Footer2'
 import Header2 from './web/Header2'
 import Seo from './web/Seo'
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-const Content = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-`
-const FullScreen = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 0 0 5rem;
-  position: relative;
-`
+const Wrapper = styled.div``
+const Content = styled.div``
+const FullScreen = styled.div``
 export default function Web2(props) {
   useInteraction()
 
