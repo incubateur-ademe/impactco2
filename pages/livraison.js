@@ -12,10 +12,15 @@ const MainColorSpan = styled.span`
 const SmallText = styled.div`
   font-size: 14px;
   font-weight: 300;
+  margin-bottom: 2rem;
 `
 
 const BlueLink = styled.a`
   color: #457be7;
+`
+
+const RegularParagraph = styled.p`
+  margin: 0;
 `
 
 export default function Livraison() {
@@ -34,6 +39,15 @@ export default function Livraison() {
           <span> · </span>
           <span>Mise à jour le 26/05/2023 </span>
         </SmallText>
+        <RegularParagraph>
+          <strong>80 % des Français</strong> de 11 ans et plus font des achats
+          en ligne.
+        </RegularParagraph>
+        <RegularParagraph>
+          En moyenne, cela représente{' '}
+          <strong>1 milliard de colis par an</strong>, soit{' '}
+          <strong>deux colis par personne par mois</strong>.
+        </RegularParagraph>
       </Section2.InnerMargin>
     </Section2>
   )
