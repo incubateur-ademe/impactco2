@@ -20,6 +20,7 @@ const Wrapper = styled.form`
   box-shadow: ${(props) =>
     props.focus ? '-0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05)' : 'none'};
   left: ${(props) => (props.home ? 0 : 'auto')};
+  max-width: 12rem;
   right: 0;
   top: 0;
   transition: box-shadow 300ms ease-out, background-color 300ms ease-out;

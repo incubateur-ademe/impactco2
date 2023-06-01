@@ -40,6 +40,7 @@
     "react-share": "^4.4.1",
     "react-slick": "^0.29.0",
     "react-switch": "^7.0.0",
+    "react-toggle-dark-mode": "^1.1.1",
     "react-tooltip": "^5.7.5",
     "react-use-query-param-string": "^2.0.10",
     "sib-api-v3-sdk": "^8.5.0",

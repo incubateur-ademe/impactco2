@@ -6,11 +6,7 @@ import { themes } from 'utils/styles'
 
 import StyleContext from 'components/providers/StyleProvider'
 
-const Wrapper = styled.label`
-  ${(props) => props.theme.mq[props.hideon]} {
-    display: none;
-  }
-`
+const Wrapper = styled.label``
 const Svg = styled.svg`
   display: block;
   height: auto;
@@ -24,7 +20,7 @@ export default function ThemeToggle2(props) {
   const { theme, setTheme } = useContext(StyleContext)
 
   return (
-    <Wrapper mobile={props.mobile} hideon={props.hideon}>
+    <Wrapper mobile={props.mobile}>
       <Switch
         onChange={() =>
           setTheme((prevTheme) =>
