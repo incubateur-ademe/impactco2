@@ -11,6 +11,7 @@ import Seo from './web/Seo'
 const Wrapper = styled.div``
 const Content = styled.div``
 const FullScreen = styled.div``
+
 export default function Web2(props) {
   useInteraction()
 
