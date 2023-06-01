@@ -4,9 +4,8 @@ import styled from 'styled-components'
 import useInteraction from 'hooks/useInteraction'
 
 import BreadCrumb from './web/BreadCrumb'
-import Footer from './web/Footer'
-import Header from './web/Header'
-import Nav from './web/Nav'
+import Footer2 from './web/Footer2'
+import Header2 from './web/Header2'
 import Seo from './web/Seo'
 
 const Wrapper = styled.div`
@@ -26,7 +25,7 @@ const FullScreen = styled.div`
   padding: 0 0 5rem;
   position: relative;
 `
-export default function Web(props) {
+export default function Web2(props) {
   useInteraction()
 
   return (
@@ -39,12 +38,11 @@ export default function Web(props) {
       <Wrapper>
         <Content>
           <FullScreen>
-            <Header />
-            <Nav />
+            <Header2 />
             <BreadCrumb breadcrumb={props.breadcrumb} />
             {props.children}
           </FullScreen>
-          <Footer />
+          <Footer2 />
         </Content>
       </Wrapper>
     </>

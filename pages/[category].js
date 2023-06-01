@@ -2,23 +2,38 @@ import categories from 'data/categories.json'
 import React from 'react'
 
 import Web from 'components/layout/Web'
+import Web2 from 'components/layout/Web2'
 import Category from 'components/misc/Category'
 import Learning from 'components/misc/Learning'
 
 export default function CategoryPage(props) {
   return (
-    <Web
-      title={props.category.meta.title}
-      description={props.category.meta.description}
-      breadcrumb={{
-        type: 'equivalent',
-        category: props.category,
-      }}
-      isRawFooter={props.category.slug === 'impactlivraison'}
-    >
-      <Category category={props.category} />
-      <Learning category={props.category} />
-    </Web>
+    <>
+      {props.category.slug === 'impactlivraison' ? (
+        <>
+          <Web2
+            title={props.category.meta.title}
+            description={props.category.meta.description}
+            breadcrumb={{
+              type: 'equivalent',
+              category: props.category,
+            }}
+          ></Web2>
+        </>
+      ) : (
+        <Web
+          title={props.category.meta.title}
+          description={props.category.meta.description}
+          breadcrumb={{
+            type: 'equivalent',
+            category: props.category,
+          }}
+        >
+          <Category category={props.category} />
+          <Learning category={props.category} />
+        </Web>
+      )}
+    </>
   )
 }
 

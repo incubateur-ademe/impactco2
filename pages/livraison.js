@@ -12,7 +12,6 @@ export default function Livraison(props) {
         type: 'equivalent',
         category: props.category,
       }}
-      isRawFooter={true}
     ></Web>
   )
 }
