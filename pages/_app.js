@@ -6,9 +6,6 @@ import { hotjar } from 'react-hotjar'
 import { QueryParamProvider } from 'use-query-params'
 
 import 'utils/fonts.css'
-// New global styles : tailwind-based
-import 'utils/globals.css'
-// Old global styles : custom GlobalStyle
 import { GlobalStyle } from 'utils/styles'
 
 import { DataProvider } from 'components/providers/DataProvider'
