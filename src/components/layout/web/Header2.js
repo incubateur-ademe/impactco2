@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import tw from 'twin.macro'
 
 import Flex from 'components/base/Flex'
 import Logo from 'components/base/Logo'
@@ -9,8 +8,8 @@ import Marianne from 'components/base/Marianne'
 import Section2 from 'components/base/Section2'
 import Nav2 from 'components/layout/web/Nav2.js'
 
-const Header = tw.header`
-  border-solid border-2 border-indigo-600
+const Header = styled.header`
+  border-bottom: 1px solid black;
 `
 
 const Logos = styled(MagicLink)``
