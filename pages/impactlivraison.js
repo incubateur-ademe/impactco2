@@ -23,7 +23,7 @@ const RegularParagraph = styled.p`
   margin: 0;
 `
 
-export default function Livraison() {
+export default function Impactlivraison() {
   return (
     <Section2>
       <Section2.InnerMargin>
@@ -55,7 +55,7 @@ export default function Livraison() {
 export async function getStaticProps() {
   return {
     props: {
-      category: categories.find((item) => item.slug === 'impactlivraison'),
+      category: categories.find((item) => item.slug === 'livraison'),
     },
   }
 }

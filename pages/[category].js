@@ -6,12 +6,12 @@ import Web2 from 'components/layout/Web2'
 import Category from 'components/misc/Category'
 import Learning from 'components/misc/Learning'
 
-import Livraison from './livraison'
+import Impactlivraison from './impactlivraison'
 
 export default function CategoryPage(props) {
   return (
     <>
-      {['impactlivraison'].includes(props.category.slug) ? (
+      {['livraison'].includes(props.category.slug) ? (
         <>
           <Web2
             title={props.category.meta.title}
@@ -21,7 +21,7 @@ export default function CategoryPage(props) {
               category: props.category,
             }}
           >
-            {props.category.slug === 'impactlivraison' ? <Livraison /> : null}
+            {props.category.slug === 'livraison' ? <Impactlivraison /> : null}
           </Web2>
         </>
       ) : (

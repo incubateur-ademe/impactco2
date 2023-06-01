@@ -20,9 +20,9 @@
   },
   {
     "id": 12,
-    "name": "Impact de la livraison de colis",
+    "name": "Livraison",
     "emoji": "📦",
-    "slug": "impactlivraison",
+    "slug": "livraison",
     "title": "Découvrez l'impact des livraison de colis<br/>sur le climat",
     "description": "Mesurez facilement l'empreinte carbone d'une livraison",
     "equivalent": "impact[s] livraison[s]",
