@@ -1,7 +1,7 @@
 // @ts-check
 const { test, expect } = require('@playwright/test')
 
-test('Accès à Impact-Livraison', async ({ page }) => {
+test('U1 - Affichage simulateur et source', async ({ page }) => {
   await test.step("Depuis l'accueil, on accède à impact-livraison depuis les catégories ", async () => {
     // Given
     await page.goto('/')
@@ -35,7 +35,7 @@ test('Accès à Impact-Livraison', async ({ page }) => {
       /Mesurer l'impact carbone de la livraison de colis/
     )
   })
-  await test.step("J'ai bien le titre, le fil d'ariane, le texte, et le lien qui s'affichent", async () => {
+  await test.step("J'ai bien le titre de l'onglet, le fil d'ariane, et le lien vers la source qui s'affichent", async () => {
     await expect(page).toHaveTitle(
       /Mesurer l'impact carbone de la livraison de colis/
     )
@@ -47,6 +47,11 @@ test('Accès à Impact-Livraison', async ({ page }) => {
     )
     await expect(page.getByTestId('lien-etude-ademe')).toHaveText(
       'Commerce en ligne - Étude ADEME 2023 '
+    )
+  })
+  await test.step("J'ai bien le texte explicatif qui s'affiche", async () => {
+    await expect(page.getByTestId('paragraph1')).toHaveText(
+      '80 % des Français de 11 ans et plus font des achats en ligne.'
     )
   })
 })
