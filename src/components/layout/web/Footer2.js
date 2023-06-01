@@ -22,7 +22,8 @@ const Accessibility = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   font-size: 0.75rem;
   font-weight: 300;
-  padding-bottom: 1rem;
+  padding-bottom: ${(props) => (props.breath ? '1rem' : '0')};
+
   text-align: center;
 `
 export default function Footer2() {
@@ -34,7 +35,7 @@ export default function Footer2() {
         <Logo />
       </Logos>
       <Accessibility>Accessibilité : partiellement conforme</Accessibility>
-      <Accessibility>Version : {process.env.thebuildid}</Accessibility>
+      <Accessibility breath>Version : {process.env.thebuildid}</Accessibility>
     </>
   )
 }
