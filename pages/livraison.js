@@ -9,6 +9,14 @@ const H1Title = styled.h1`
 const MainColorSpan = styled.span`
   color: ${(props) => props.theme.colors.main};
 `
+const SmallText = styled.div`
+  font-size: 14px;
+  font-weight: 300;
+`
+
+const BlueLink = styled.a`
+  color: #457be7;
+`
 
 export default function Livraison() {
   return (
@@ -18,6 +26,14 @@ export default function Livraison() {
           Mesurer l'impact carbone de la{' '}
           <MainColorSpan>livraison de colis</MainColorSpan>
         </H1Title>
+        <SmallText>
+          <span> Source : </span>
+          <BlueLink href='https://lequipe.fr' target='_blank'>
+            Commerce en ligne – Étude ADEME 2023
+          </BlueLink>
+          <span> · </span>
+          <span>Mise à jour le 26/05/2023 </span>
+        </SmallText>
       </Section2.InnerMargin>
     </Section2>
   )
