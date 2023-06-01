@@ -9,6 +9,9 @@ import Suggestions from './searchBar/Suggestions'
 import TextInput from './searchBar/TextInput'
 
 const Wrapper = styled.form`
+  ${(props) => props.theme.mq[props.hideon]} {
+    display: none;
+  }
   background-color: ${(props) =>
     props.focus ? props.theme.colors.background : 'transparent'};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
@@ -108,6 +111,7 @@ export default function SearchBar2(props) {
         }
       }}
       className={props.className}
+      hideon={props.hideon}
     >
       <TextInput
         placeholder={props.placeholder}

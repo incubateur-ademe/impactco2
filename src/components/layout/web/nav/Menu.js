@@ -27,6 +27,7 @@ export default function Menu() {
       <Dropdown
         label={'Catégories'}
         current={categories.find((category) => slugs.includes(category.slug))}
+        hideon={'never'}
       >
         {categories
           ?.filter((category) => category.display)
@@ -44,6 +45,7 @@ export default function Menu() {
         label={'Convertisseur'}
         to='/convertisseur'
         current={slugs.includes('convertisseur')}
+        hideon={'never'}
       />
     </Wrapper>
   )

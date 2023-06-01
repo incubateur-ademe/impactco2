@@ -7,6 +7,9 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.small} {
     margin-right: 0.25rem;
   }
+  ${(props) => props.theme.mq[props.hideon]} {
+    display: none;
+  }
   margin-right: 1.25rem;
   position: relative;
 `
@@ -78,7 +81,7 @@ export default function Dropdown(props) {
   }, [])
 
   return (
-    <Wrapper>
+    <Wrapper hideon={props.hideon}>
       <ButtonDropdown
         to={props.to}
         onClick={(e) => {
