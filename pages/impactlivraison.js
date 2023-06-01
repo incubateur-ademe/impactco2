@@ -39,8 +39,9 @@ export default function Impactlivraison() {
           <BlueLink
             href='https://presse.ademe.fr/2023/04/e-commerce-un-outil-pour-evaluer-et-reduire-limpact-environnemental-de-la-logistique-des-transports-et-des-deplacements.html'
             target='_blank'
+            data-testid='lien-etude-ademe'
           >
-            Commerce en ligne – Étude ADEME 2023{' '}
+            Commerce en ligne - Étude ADEME 2023{' '}
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'

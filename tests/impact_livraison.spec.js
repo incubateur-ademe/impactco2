@@ -45,8 +45,8 @@ test('Accès à Impact-Livraison', async ({ page }) => {
     await expect(page.getByTestId('paragraph1')).toHaveText(
       '80 % des Français de 11 ans et plus font des achats en ligne.'
     )
-    await expect(page.getByRole('link')).toHaveText(
-      'Commerce en ligne - Étude ADEME 2023'
+    await expect(page.getByTestId('lien-etude-ademe')).toHaveText(
+      'Commerce en ligne - Étude ADEME 2023 '
     )
   })
 })
