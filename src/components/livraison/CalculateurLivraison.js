@@ -20,8 +20,12 @@ export default function CalculateurLivraison() {
 
   const [cO2eq, setCO2eq] = useState(0)
 
-  const changeProduit = (evt) => {
-    console.log('changeProduit', evt)
+  const changeProduit = (produit) => {
+    console.log('changeProduit', produit)
+    engine.setSituation({
+      'livraison colis . informations . catégorie': `'${produit.publicode}'`,
+    })
+    setCO2eq(engine.evaluate('livraison colis').nodeValue)
   }
 
   const changeRetrait = (retrait) => {
