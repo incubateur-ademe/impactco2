@@ -2,7 +2,7 @@ import categories from 'data/categories.json'
 
 import Section2 from 'components/base/Section2'
 
-import EntreesLivraison from './impactlivraison/EntreesLivraison'
+import CalculateurLivraison from './impactlivraison/CalculateurLivraison'
 import IntroLivraison from './impactlivraison/IntroLivraison'
 
 export default function Impactlivraison() {
@@ -10,7 +10,7 @@ export default function Impactlivraison() {
     <Section2>
       <Section2.InnerMargin>
         <IntroLivraison />
-        <EntreesLivraison />
+        <CalculateurLivraison />
       </Section2.InnerMargin>
     </Section2>
   )
