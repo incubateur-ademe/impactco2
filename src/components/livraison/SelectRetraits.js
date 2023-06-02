@@ -10,12 +10,19 @@ const StyledSelect = styled(Select)`
 `
 
 const retraits = [
-  { displayed: '<choisir>', uid: 'vide' },
-  { displayed: 'livraison à domicile', uid: 'domicile' },
-  { displayed: 'point relais', uid: 'relais' },
-  { displayed: 'click & collect', uid: 'click' },
-  { displayed: 'drive', uid: 'drive' },
-  { displayed: 'achat direct en magasin', uid: 'magasin' },
+  { displayed: '<choisir>', uid: 'vide', publicode: '' },
+  { displayed: 'livraison à domicile', uid: 'domicile', publicode: 'domicile' },
+  { displayed: 'point relais', uid: 'relais', publicode: 'point de retrait' },
+  {
+    displayed: 'click & collect',
+    uid: 'click',
+    publicode: 'click and collect',
+  },
+  {
+    displayed: 'achat direct en magasin',
+    uid: 'magasin',
+    publicode: 'magasin traditionnel',
+  },
 ]
 
 export default function SelectRetraits(props) {
@@ -23,7 +30,9 @@ export default function SelectRetraits(props) {
     <>
       <StyledSelect
         onChange={(e) => {
-          console.log(e)
+          props.changeRetrait(
+            retraits.find((retrait) => retrait.uid === e.value)
+          )
         }}
         value={props.uid}
         label='Que vous faites livrer en'

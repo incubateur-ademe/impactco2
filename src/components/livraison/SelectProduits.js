@@ -35,7 +35,6 @@ export default function SelectProduits(props) {
     <>
       <StyledSelect
         onChange={(e) => {
-          console.log('e', e)
           props.changeProduit(
             produits.find((produit) => produit.uid === e.value)
           )

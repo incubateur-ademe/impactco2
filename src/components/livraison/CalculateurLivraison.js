@@ -29,12 +29,16 @@ export default function CalculateurLivraison() {
     console.log('changeProduit', evt)
   }
 
+  const changeRetrait = (evt) => {
+    console.log('changeRetrait', evt)
+  }
+
   return (
     <>
       <H2Title>Estimez l'impact de vos livraisons</H2Title>
       <Flex>
         <SelectProduits changeProduit={changeProduit} />
-        <SelectRetraits />
+        <SelectRetraits changeRetrait={changeRetrait} />
         <SelectFrequences />
       </Flex>
       <Resultat />
