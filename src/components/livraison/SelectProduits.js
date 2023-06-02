@@ -10,11 +10,24 @@ const StyledSelect = styled(Select)`
 `
 
 const produits = [
-  { displayed: '<choisir>', uid: 'vide' },
-  { displayed: 'produits de grande consommation', uid: 'consommation' },
-  { displayed: 'habillement', uid: 'habillement' },
-  { displayed: 'produits culturels physiques', uid: 'culturel' },
-  { displayed: "biens d'équipements volumineux", uid: 'volumineux' },
+  { displayed: '<choisir>', uid: 'vide', publicode: '' },
+  {
+    displayed: 'produits de grande consommation',
+    uid: 'consommation',
+    publicode: 'grande consommation',
+  },
+  { displayed: 'habillement', uid: 'habillement', publicode: 'habillement' },
+  {
+    displayed: 'produits culturels physiques',
+    uid: 'culturel',
+    publicode: 'culturel',
+  },
+  {
+    displayed: "biens d'équipements volumineux",
+    uid: 'volumineux',
+    publicode: 'équipements volumineux',
+  },
+  { displayed: 'autre', uid: 'autre', publicode: 'autre' },
 ]
 
 export default function SelectProduits(props) {
@@ -22,7 +35,10 @@ export default function SelectProduits(props) {
     <>
       <StyledSelect
         onChange={(e) => {
-          console.log(e)
+          console.log('e', e)
+          props.changeProduit(
+            produits.find((produit) => produit.uid === e.value)
+          )
         }}
         value={props.uid}
         label='Vous commandez en majorité'

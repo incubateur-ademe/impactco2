@@ -18,15 +18,22 @@ const H2Title = styled.h2`
 export default function CalculateurLivraison() {
   const { engine } = useContext(RulesContextLivraison)
 
-  let result = engine.evaluate('livraison colis')
-  console.log('result---------------------------')
+  let result = engine.evaluate('livraison colis').nodeValue
+  engine.setSituation({
+    'livraison colis . scénario': "'click and collect'",
+  })
+  result = engine.evaluate('livraison colis').nodeValue
   console.log(result)
+
+  const changeProduit = (evt) => {
+    console.log('changeProduit', evt)
+  }
 
   return (
     <>
       <H2Title>Estimez l'impact de vos livraisons</H2Title>
       <Flex>
-        <SelectProduits />
+        <SelectProduits changeProduit={changeProduit} />
         <SelectRetraits />
         <SelectFrequences />
       </Flex>
