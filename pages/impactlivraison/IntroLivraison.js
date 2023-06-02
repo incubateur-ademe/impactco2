@@ -29,7 +29,8 @@ const Separator = styled.hr`
   color: #457be7;
   height: 4px;
   margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin-left: 0;
+  margin-top: 2rem;
   width: 56px;
 `
 
