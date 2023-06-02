@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   margin-top: 2rem;
 `
 export default function BreadCrumb2(props) {
+  const naming =
+    props.breadcrumb.category.breadcrumb || props.breadcrumb.category.name
+
   return (
     <Section2>
       <Section2.InnerMargin>
@@ -25,13 +28,13 @@ export default function BreadCrumb2(props) {
               {props.breadcrumb.equivalent ? (
                 <>
                   <MagicLink to={`/${props.breadcrumb.category.slug}`}>
-                    {props.breadcrumb.category.name}
+                    {naming}
                   </MagicLink>
                   {' > '}
-                  {formatName(props.breadcrumb.equivalent.name, 1, true)}
+                  {formatName(naming, 1, true)}
                 </>
               ) : (
-                props.breadcrumb.category.name
+                naming
               )}
             </>
           )}
