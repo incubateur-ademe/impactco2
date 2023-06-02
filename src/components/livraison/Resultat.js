@@ -21,11 +21,11 @@ const Wrapper = styled.div`
   margin-top: 1rem;
 `
 
-export default function Resultat() {
+export default function Resultat(props) {
   return (
     <Wrapper>
       <div>
-        <ActualResult>0 </ActualResult>
+        <ActualResult>{props.co2eq}</ActualResult>
         <Units>kg de CO2e </Units>
       </div>
       <div>

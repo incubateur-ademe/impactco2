@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 
 import Flex from 'components/base/Flex'
@@ -18,12 +18,7 @@ const H2Title = styled.h2`
 export default function CalculateurLivraison() {
   const { engine } = useContext(RulesContextLivraison)
 
-  let result = engine.evaluate('livraison colis').nodeValue
-  engine.setSituation({
-    'livraison colis . scénario': "'click and collect'",
-  })
-  result = engine.evaluate('livraison colis').nodeValue
-  console.log(result)
+  const [cO2eq, setCO2eq] = useState(0)
 
   const changeProduit = (evt) => {
     console.log('changeProduit', evt)
@@ -32,11 +27,9 @@ export default function CalculateurLivraison() {
   const changeRetrait = (retrait) => {
     console.log('changeRetrait', retrait)
     engine.setSituation({
-      // 'livraison colis . scénario': "'click and collect'",
       'livraison colis . scénario': `'${retrait.publicode}'`,
     })
-    result = engine.evaluate('livraison colis').nodeValue
-    console.log(result)
+    setCO2eq(engine.evaluate('livraison colis').nodeValue)
   }
 
   return (
@@ -47,7 +40,7 @@ export default function CalculateurLivraison() {
         <SelectRetraits changeRetrait={changeRetrait} />
         <SelectFrequences />
       </Flex>
-      <Resultat />
+      <Resultat co2eq={cO2eq} />
     </>
   )
 }
