@@ -3687,9 +3687,9 @@ proxy-from-env@1.1.0, proxy-from-env@^1.1.0:
   integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
 
 publicodes@^1.0.0-beta.66:
-  version "1.0.0-beta.66"
-  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.66.tgz#e8149733431268c764ea150dc82d3ce3709d20db"
-  integrity sha512-9lnLnbMM8Mz2+WvNK3/DttRbu6UvpoRx/B9XrMWUSgsb760uwQEqdpkHbl1gPlz2WpYSRuKZVyuW8LdfxTFRXw==
+  version "1.0.0-beta.69"
+  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.69.tgz#9d03383a677b0f9507017c49d11390af1645ff23"
+  integrity sha512-/RuvmEO2+39M9C92dzsugnDzldxq0zf7mJFGok8YPqdKmH2DQ5Qfqdyw6XsOU1oBRPzM8VU7UUqzRIEb/d9wug==
 
 pump@^3.0.0:
   version "3.0.0"

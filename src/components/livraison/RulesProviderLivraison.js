@@ -4,18 +4,20 @@ import React, { useMemo } from 'react'
 import useRulesLivraison from 'hooks/useRulesLivraison'
 import useSituation from 'hooks/useSituation'
 
-const RulesContext = React.createContext({})
+const RulesContextLivraison = React.createContext({})
 
-export function RulesProvider(props) {
+export function RulesProviderLivraison(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   const { data: rules } = useRulesLivraison()
+  console.log('rules')
+  console.log(rules)
   const engine = useMemo(() => (rules ? new Engine(rules) : null), [rules])
 
   const { situation, setSituation } = useSituation(engine)
 
   return (
-    <RulesContext.Provider
+    <RulesContextLivraison.Provider
       value={{
         engine,
         situation,
@@ -23,8 +25,8 @@ export function RulesProvider(props) {
       }}
     >
       {engine && props.children}
-    </RulesContext.Provider>
+    </RulesContextLivraison.Provider>
   )
 }
 
-export default RulesContext
+export default RulesContextLivraison
