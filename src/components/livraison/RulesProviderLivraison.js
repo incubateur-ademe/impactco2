@@ -10,8 +10,6 @@ export function RulesProviderLivraison(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   const { data: rules } = useRulesLivraison()
-  console.log('rules')
-  console.log(rules)
   const engine = useMemo(() => (rules ? new Engine(rules) : null), [rules])
 
   const { situation, setSituation } = useSituation(engine)

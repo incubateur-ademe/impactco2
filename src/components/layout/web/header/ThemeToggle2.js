@@ -2,13 +2,13 @@ import React, { useContext } from 'react'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
 import styled from 'styled-components'
 
+import { hideon } from 'utils/hideon'
+
 import StyleContext from 'components/providers/StyleProvider'
 
 const Wrapper = styled.div`
   height: 32px;
-  ${(props) => props.theme.mq[props.hideon]} {
-    display: none;
-  }
+  ${hideon}
 `
 
 export default function ThemeToggle2(props) {
