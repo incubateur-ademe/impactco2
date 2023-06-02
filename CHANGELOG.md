@@ -7,11 +7,11 @@
 
 ## 1.1.0 (31/05/2023)
 
+* U1 - Ajout de la page par défaut d'impact livraison
 * Suppression de Cypress
 * Ajout de Playwright
 * Ajout du versionning
 * Ajout du CHANGELOG
-* U1 - Ajout de la page par défaut d'impact livraison
 
 ## 1.0.1 (30/5/2023)
 

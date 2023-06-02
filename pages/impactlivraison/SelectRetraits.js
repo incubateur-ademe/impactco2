@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Select from 'components/base/Select'
 
 const StyledSelect = styled(Select)`
+  margin: 1rem;
   > select {
     border: none;
   }
@@ -17,7 +18,7 @@ const retraits = [
   { displayed: 'achat direct en magasin', uid: 'magasin' },
 ]
 
-export default function SelectCommandes(props) {
+export default function SelectRetraits(props) {
   return (
     <>
       <StyledSelect

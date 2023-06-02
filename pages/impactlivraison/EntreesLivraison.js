@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import Flex from 'components/base/Flex'
 
+import SelectFrequences from './SelectFrequences'
 import SelectProduits from './SelectProduits'
 import SelectRetraits from './SelectRetraits'
 
@@ -15,10 +16,11 @@ export default function EntreesLivraison() {
   return (
     <>
       <H2Title>Estimez l'impact de vos livraisons</H2Title>
-      <Flex.Between>
+      <Flex>
         <SelectProduits />
         <SelectRetraits />
-      </Flex.Between>
+        <SelectFrequences />
+      </Flex>
     </>
   )
 }
