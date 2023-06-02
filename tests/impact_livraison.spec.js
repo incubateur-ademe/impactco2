@@ -39,7 +39,7 @@ test('U1 - Affichage simulateur et source', async ({ page }) => {
     await expect(page).toHaveTitle(
       /Mesurer l'impact carbone de la livraison de colis/
     )
-    await expect(page.getByRole('heading')).toHaveText(
+    await expect(page.getByRole('heading').first()).toHaveText(
       "Mesurer l'impact carbone de la livraison de colis"
     )
     await expect(page.getByTestId('paragraph1')).toHaveText(
