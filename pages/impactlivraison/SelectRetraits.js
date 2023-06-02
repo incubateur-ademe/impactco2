@@ -8,12 +8,13 @@ const StyledSelect = styled(Select)`
   }
 `
 
-const commandes = [
+const retraits = [
   { displayed: '<choisir>', uid: 'vide' },
-  { displayed: 'produits de grande consommation', uid: 'consommation' },
-  { displayed: 'habillement', uid: 'habillement' },
-  { displayed: 'produits culturels physiques', uid: 'culturel' },
-  { displayed: "biens d'équipements volumineux", uid: 'volumineux' },
+  { displayed: 'livraison à domicile', uid: 'domicile' },
+  { displayed: 'point relais', uid: 'relais' },
+  { displayed: 'click & collect', uid: 'click' },
+  { displayed: 'drive', uid: 'drive' },
+  { displayed: 'achat direct en magasin', uid: 'magasin' },
 ]
 
 export default function SelectCommandes(props) {
@@ -24,12 +25,12 @@ export default function SelectCommandes(props) {
           console.log(e)
         }}
         value={props.uid}
-        label='Vous commandez en majorité'
+        label='Que vous faites livrer en'
         name='type'
       >
-        {commandes.map((commande) => (
-          <option key={commande.uid} value={commande.uid}>
-            {commande.displayed}
+        {retraits.map((retrait) => (
+          <option key={retrait.uid} value={retrait.uid}>
+            {retrait.displayed}
           </option>
         ))}
       </StyledSelect>

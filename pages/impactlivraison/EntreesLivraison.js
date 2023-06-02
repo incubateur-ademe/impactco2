@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-import SelectCommandes from './SelectCommandes'
+import Flex from 'components/base/Flex'
+
+import SelectProduits from './SelectProduits'
+import SelectRetraits from './SelectRetraits'
 
 const H2Title = styled.h2`
   font-size: 22px;
@@ -12,7 +15,10 @@ export default function EntreesLivraison() {
   return (
     <>
       <H2Title>Estimez l'impact de vos livraisons</H2Title>
-      <SelectCommandes />
+      <Flex.Between>
+        <SelectProduits />
+        <SelectRetraits />
+      </Flex.Between>
     </>
   )
 }
