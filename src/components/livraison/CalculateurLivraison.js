@@ -29,8 +29,14 @@ export default function CalculateurLivraison() {
     console.log('changeProduit', evt)
   }
 
-  const changeRetrait = (evt) => {
-    console.log('changeRetrait', evt)
+  const changeRetrait = (retrait) => {
+    console.log('changeRetrait', retrait)
+    engine.setSituation({
+      // 'livraison colis . scénario': "'click and collect'",
+      'livraison colis . scénario': `'${retrait.publicode}'`,
+    })
+    result = engine.evaluate('livraison colis').nodeValue
+    console.log(result)
   }
 
   return (
