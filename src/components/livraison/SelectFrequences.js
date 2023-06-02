@@ -22,7 +22,9 @@ export default function SelectFrequences(props) {
     <>
       <StyledSelect
         onChange={(e) => {
-          console.log(e)
+          props.changeFrequence(
+            frequences.find((frequence) => frequence.uid === e.value)
+          )
         }}
         value={props.uid}
         label='A la fréquence de'

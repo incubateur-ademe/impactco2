@@ -21,7 +21,6 @@ export default function CalculateurLivraison() {
   const [cO2eq, setCO2eq] = useState(0)
 
   const changeProduit = (produit) => {
-    console.log('changeProduit', produit)
     engine.setSituation({
       'livraison colis . informations . catégorie': `'${produit.publicode}'`,
     })
@@ -29,11 +28,25 @@ export default function CalculateurLivraison() {
   }
 
   const changeRetrait = (retrait) => {
-    console.log('changeRetrait', retrait)
     engine.setSituation({
       'livraison colis . scénario': `'${retrait.publicode}'`,
     })
     setCO2eq(engine.evaluate('livraison colis').nodeValue)
+  }
+
+  const changeFrequence = (frequence) => {
+    console.log('changeFrequence', frequence)
+    const multiplicators = {
+      jour: 365,
+      semaine: 52,
+      mois: 12,
+      annee: 1,
+      vide: 1,
+    }
+    setCO2eq(
+      engine.evaluate('livraison colis').nodeValue *
+        multiplicators[frequence.uid]
+    )
   }
 
   return (
@@ -42,7 +55,7 @@ export default function CalculateurLivraison() {
       <Flex>
         <SelectProduits changeProduit={changeProduit} />
         <SelectRetraits changeRetrait={changeRetrait} />
-        <SelectFrequences />
+        <SelectFrequences changeFrequence={changeFrequence} />
       </Flex>
       <Resultat co2eq={cO2eq} />
     </>

@@ -35,7 +35,7 @@ export default function Resultat(props) {
     <Wrapper>
       <div>
         <ActualResult>{convertGramsToKilograms(props.co2eq)}</ActualResult>
-        <Units>kg de CO2e </Units>
+        <Units> kg de CO2e </Units>
       </div>
       <div>
         <Subexplain>par an</Subexplain>
