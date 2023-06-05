@@ -21,6 +21,7 @@ const DropList = styled.div`
   > div > label {
     color: #746770;
     font-size: 14px;
+    margin-bottom: 0;
   }
   > div > select {
     width: 320px;
