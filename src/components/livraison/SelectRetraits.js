@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Select from 'components/base/Select'
@@ -10,7 +11,6 @@ const StyledSelect = styled(Select)`
 `
 
 const retraits = [
-  { displayed: ' ', uid: 'vide', publicode: ' ' },
   { displayed: 'Livraison à domicile', uid: 'domicile', publicode: 'domicile' },
   { displayed: 'Point relais', uid: 'relais', publicode: 'point de retrait' },
   {
@@ -26,15 +26,18 @@ const retraits = [
 ]
 
 export default function SelectRetraits(props) {
+  const [value, setValue] = useState('domicile')
+
   return (
     <>
       <StyledSelect
         onChange={(e) => {
+          setValue(e.value)
           props.changeRetrait(
             retraits.find((retrait) => retrait.uid === e.value)
           )
         }}
-        value={props.uid}
+        value={value}
         label='Que vous faites livrer en'
         name='retraits'
       >

@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Select from 'components/base/Select'
@@ -10,7 +11,6 @@ const StyledSelect = styled(Select)`
 `
 
 const produits = [
-  { displayed: ' ', uid: 'vide', publicode: ' ' },
   {
     displayed: 'Produits de grande consommation',
     uid: 'consommation',
@@ -31,15 +31,18 @@ const produits = [
 ]
 
 export default function SelectProduits(props) {
+  const [value, setValue] = useState('culturel')
+
   return (
     <>
       <StyledSelect
         onChange={(e) => {
+          setValue(e.value)
           props.changeProduit(
             produits.find((produit) => produit.uid === e.value)
           )
         }}
-        value={props.uid}
+        value={value}
         label='Vous commandez en majorité'
         name='produits'
       >
