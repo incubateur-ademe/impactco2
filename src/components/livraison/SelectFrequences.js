@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 import Select from 'components/base/Select'
 
+import { frequences } from './data.js'
+
 const StyledSelect = styled(Select)`
   margin: 1rem;
   > select {
@@ -11,13 +13,6 @@ const StyledSelect = styled(Select)`
     width: 300px;
   }
 `
-
-const frequences = [
-  { displayed: 'Jour', uid: 'jour' },
-  { displayed: 'Semaine', uid: 'semaine' },
-  { displayed: 'Mois', uid: 'mois' },
-  { displayed: 'Année', uid: 'annee' },
-]
 
 export default function SelectFrequences(props) {
   return (

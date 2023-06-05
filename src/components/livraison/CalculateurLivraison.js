@@ -7,6 +7,7 @@ import Resultat from './Resultat'
 import SelectFrequences from './SelectFrequences'
 import SelectProduits from './SelectProduits'
 import SelectRetraits from './SelectRetraits'
+import { frequences, produits, retraits } from './data.js'
 
 const H2Title = styled.h2`
   font-size: 22px;
@@ -58,25 +59,24 @@ export default function CalculateurLivraison() {
     frequence: 'mois',
   })
 
-  const getMult = () => {
-    return {
-      jour: 365,
-      semaine: 52,
-      mois: 12,
-      annee: 1,
-      vide: 1,
-    }
-  }
-
   const calculateResult = (valuesArg) => {
-    engine.setSituation({
-      'livraison colis . informations . catégorie': `'${valuesArg.produit}'`,
-      'livraison colis . scénario': `'${valuesArg.retrait}'`,
-    })
-    setCO2eq(
-      engine.evaluate('livraison colis').nodeValue *
-        getMult()[valuesArg.frequence]
-    )
+    let freqMultBy = frequences.find(
+      (freq) => freq.uid === valuesArg.frequence
+    ).mult
+    let produitPublicode = produits.find(
+      (produit) => produit.uid === valuesArg.produit
+    ).publicode
+    let retraitPublicode = retraits.find(
+      (retrait) => retrait.uid === valuesArg.retrait
+    ).publicode
+
+    let newSituation = {
+      'livraison colis . informations . catégorie': `'${produitPublicode}'`,
+      'livraison colis . scénario': `'${retraitPublicode}'`,
+    }
+
+    engine.setSituation(newSituation)
+    setCO2eq(engine.evaluate('livraison colis').nodeValue * freqMultBy)
   }
 
   useMemo(() => {
