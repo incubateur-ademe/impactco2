@@ -89,7 +89,7 @@ export default function CalculateurLivraison() {
       <DropList>
         <SelectProduits changeProduit={changeProduit} />
         <SelectRetraits changeRetrait={changeRetrait} />
-        <SelectFrequences changeFrequence={changeFrequence} />
+        <SelectFrequences changeFrequence={changeFrequence} eee={'mois'} />
       </DropList>
       <Resultat co2eq={cO2eq} />
     </>

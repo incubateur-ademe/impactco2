@@ -10,7 +10,7 @@ const StyledSelect = styled(Select)`
 `
 
 const retraits = [
-  { displayed: '', uid: 'vide', publicode: '' },
+  { displayed: ' ', uid: 'vide', publicode: ' ' },
   { displayed: 'Livraison à domicile', uid: 'domicile', publicode: 'domicile' },
   { displayed: 'Point relais', uid: 'relais', publicode: 'point de retrait' },
   {
