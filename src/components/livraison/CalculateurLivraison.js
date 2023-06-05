@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
@@ -52,6 +52,25 @@ export default function CalculateurLivraison() {
 
   const [cO2eq, setCO2eq] = useState(0)
 
+  const getMult = () => {
+    return {
+      jour: 365,
+      semaine: 52,
+      mois: 12,
+      annee: 1,
+      vide: 1,
+    }
+  }
+
+  useMemo(() => {
+    engine.setSituation({
+      'livraison colis . informations . catégorie': `'culturel'`,
+      'livraison colis . scénario': `'domicile'`,
+    })
+
+    setCO2eq(engine.evaluate('livraison colis').nodeValue * getMult()['mois'])
+  }, [engine])
+
   const changeProduit = (produit) => {
     engine.setSituation({
       'livraison colis . informations . catégorie': `'${produit.publicode}'`,
@@ -67,16 +86,8 @@ export default function CalculateurLivraison() {
   }
 
   const changeFrequence = (frequence) => {
-    const multiplicators = {
-      jour: 365,
-      semaine: 52,
-      mois: 12,
-      annee: 1,
-      vide: 1,
-    }
     setCO2eq(
-      engine.evaluate('livraison colis').nodeValue *
-        multiplicators[frequence.uid]
+      engine.evaluate('livraison colis').nodeValue * getMult()[frequence.uid]
     )
   }
 
