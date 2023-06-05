@@ -1,5 +1,12 @@
+import { mockRoutes } from '../test-mock/mock-route.js'
+
 // @ts-check
 const { test, expect } = require('@playwright/test')
+
+test.beforeEach(async ({ page }, testInfo) => {
+  console.log(`Running ${testInfo.title}`)
+  mockRoutes(page)
+})
 
 test('Le titre', async ({ page }) => {
   await test.step("On charge la page d'accueil dans le navigateur", async () => {
