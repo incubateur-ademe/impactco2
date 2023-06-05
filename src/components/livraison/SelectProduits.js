@@ -10,7 +10,7 @@ const StyledSelect = styled(Select)`
 `
 
 const produits = [
-  { displayed: '<choisir>', uid: 'vide', publicode: '' },
+  { displayed: '', uid: 'vide', publicode: '' },
   {
     displayed: 'produits de grande consommation',
     uid: 'consommation',

@@ -13,7 +13,7 @@ const StyledSelect = styled(Select)`
 `
 
 const frequences = [
-  { displayed: '<choisir>', uid: 'vide' },
+  { displayed: '', uid: 'vide' },
   { displayed: 'jour', uid: 'jour' },
   { displayed: 'semaine', uid: 'semaine' },
   { displayed: 'mois', uid: 'mois' },
