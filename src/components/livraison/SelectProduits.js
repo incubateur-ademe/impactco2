@@ -12,18 +12,18 @@ const StyledSelect = styled(Select)`
 const produits = [
   { displayed: '', uid: 'vide', publicode: '' },
   {
-    displayed: 'produits de grande consommation',
+    displayed: 'Produits de grande consommation',
     uid: 'consommation',
     publicode: 'grande consommation',
   },
-  { displayed: 'habillement', uid: 'habillement', publicode: 'habillement' },
+  { displayed: 'Habillement', uid: 'habillement', publicode: 'habillement' },
   {
-    displayed: 'produits culturels physiques',
+    displayed: 'Produit culturel physique',
     uid: 'culturel',
     publicode: 'culturel',
   },
   {
-    displayed: "biens d'équipements volumineux",
+    displayed: "Bien d'équipement volumineux",
     uid: 'volumineux',
     publicode: 'équipements volumineux',
   },

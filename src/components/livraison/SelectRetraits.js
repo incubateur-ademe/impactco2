@@ -11,15 +11,15 @@ const StyledSelect = styled(Select)`
 
 const retraits = [
   { displayed: '', uid: 'vide', publicode: '' },
-  { displayed: 'livraison à domicile', uid: 'domicile', publicode: 'domicile' },
-  { displayed: 'point relais', uid: 'relais', publicode: 'point de retrait' },
+  { displayed: 'Livraison à domicile', uid: 'domicile', publicode: 'domicile' },
+  { displayed: 'Point relais', uid: 'relais', publicode: 'point de retrait' },
   {
-    displayed: 'click & collect',
+    displayed: 'Click & collect',
     uid: 'click',
     publicode: 'click and collect',
   },
   {
-    displayed: 'achat direct en magasin',
+    displayed: 'Achat direct en magasin',
     uid: 'magasin',
     publicode: 'magasin traditionnel',
   },

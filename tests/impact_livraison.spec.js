@@ -67,7 +67,6 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
   await test.step("On peut sélectionner le type de produit, le mode de livraison, et la fréquence d'achat", async () => {
     // Given
     await page.goto('/livraison')
-    // When
     await expect(
       page.getByRole('combobox', { name: 'Vous commandez en majorité' })
     ).toBeVisible()
@@ -77,6 +76,37 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
     await expect(
       page.getByRole('combobox', { name: 'A la fréquence de' })
     ).toBeVisible()
-    // Then
+  })
+  await test.step('La liste déroulante “Vous commandez en majorité” a bien les options “Produits de grande consommation”, “Habillement”, “Produits culturel physique”, “bien d’équipement volumineux”, et “autre”', async () => {
+    await page
+      .locator('select#produits')
+      .selectOption({ label: 'Produits de grande consommation' })
+    await page.locator('select#produits').selectOption({ label: 'Habillement' })
+    await page
+      .locator('select#produits')
+      .selectOption({ label: 'Produit culturel physique' })
+    await page
+      .locator('select#produits')
+      .selectOption({ label: "Bien d'équipement volumineux" })
+  })
+  await test.step('La liste déroulante “Que vous faites livrer” a bien 4 options', async () => {
+    await page
+      .locator('select#retraits')
+      .selectOption({ label: 'Livraison à domicile' })
+    await page
+      .locator('select#retraits')
+      .selectOption({ label: 'Point relais' })
+    await page
+      .locator('select#retraits')
+      .selectOption({ label: 'Click & collect' })
+    await page
+      .locator('select#retraits')
+      .selectOption({ label: 'Achat direct en magasin' })
+  })
+  await test.step('La fréquence est par jour, semaine, mois ou année', async () => {
+    await page.locator('select#frequences').selectOption({ label: 'Jour' })
+    await page.locator('select#frequences').selectOption({ label: 'Semaine' })
+    await page.locator('select#frequences').selectOption({ label: 'Mois' })
+    await page.locator('select#frequences').selectOption({ label: 'Année' })
   })
 })

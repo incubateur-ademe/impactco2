@@ -14,10 +14,10 @@ const StyledSelect = styled(Select)`
 
 const frequences = [
   { displayed: '', uid: 'vide' },
-  { displayed: 'jour', uid: 'jour' },
-  { displayed: 'semaine', uid: 'semaine' },
-  { displayed: 'mois', uid: 'mois' },
-  { displayed: 'annee', uid: 'annee' },
+  { displayed: 'Jour', uid: 'jour' },
+  { displayed: 'Semaine', uid: 'semaine' },
+  { displayed: 'Mois', uid: 'mois' },
+  { displayed: 'Année', uid: 'annee' },
 ]
 
 export default function SelectFrequences(props) {
