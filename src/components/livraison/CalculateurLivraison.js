@@ -79,7 +79,6 @@ export default function CalculateurLivraison() {
     )
   }
 
-  // First rendering calculation
   useMemo(() => {
     calculateResult(values)
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -115,14 +114,8 @@ export default function CalculateurLivraison() {
         En vous basant sur les commandes que vous effectuez le plus...
       </Subtitle>
       <DropList>
-        <SelectProduits
-          changeProduit={changeProduit}
-          defaultValue={values.produit}
-        />
-        <SelectRetraits
-          changeRetrait={changeRetrait}
-          defaultValue={values.retrait}
-        />
+        <SelectProduits changeProduit={changeProduit} value={values.produit} />
+        <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
         <SelectFrequences
           changeFrequence={changeFrequence}
           value={values.frequence}

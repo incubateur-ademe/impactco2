@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Select from 'components/base/Select'
@@ -26,18 +25,15 @@ const retraits = [
 ]
 
 export default function SelectRetraits(props) {
-  const [value, setValue] = useState(props.defaultValue)
-
   return (
     <>
       <StyledSelect
         onChange={(e) => {
-          setValue(e.value)
           props.changeRetrait(
             retraits.find((retrait) => retrait.uid === e.value)
           )
         }}
-        value={value}
+        value={props.value}
         label='Que vous faites livrer en'
         name='retraits'
       >

@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Select from 'components/base/Select'
@@ -31,18 +30,15 @@ const produits = [
 ]
 
 export default function SelectProduits(props) {
-  const [value, setValue] = useState(props.defaultValue)
-
   return (
     <>
       <StyledSelect
         onChange={(e) => {
-          setValue(e.value)
           props.changeProduit(
             produits.find((produit) => produit.uid === e.value)
           )
         }}
-        value={value}
+        value={props.value}
         label='Vous commandez en majorité'
         name='produits'
       >
