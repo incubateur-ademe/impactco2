@@ -1,8 +1,8 @@
-export const mockRoutes = (page) =>
-  page.route(
+export const mockRoutes = async (page) =>
+  await page.route(
     'https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json',
-    (route) => {
-      route.fulfill({
+    async (route) => {
+      await route.fulfill({
         body: JSON.stringify({
           'livraison colis . commande en ligne': {
             titre: 'Processus de commande en ligne',

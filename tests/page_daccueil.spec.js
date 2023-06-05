@@ -5,7 +5,7 @@ const { test, expect } = require('@playwright/test')
 
 test.beforeEach(async ({ page }, testInfo) => {
   console.log(`Running ${testInfo.title}`)
-  mockRoutes(page)
+  await mockRoutes(page)
 })
 
 test('Le titre', async ({ page }) => {
