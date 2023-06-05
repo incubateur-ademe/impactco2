@@ -40,6 +40,7 @@ export default function IntroLivraison() {
       <H1Title>
         Mesurer l'impact carbone de la{' '}
         <MainColorSpan>livraison de colis</MainColorSpan>
+        <MainColorSpan> {process.env.NODE_ENV}</MainColorSpan>
       </H1Title>
       <SmallText>
         <span> Source : </span>
