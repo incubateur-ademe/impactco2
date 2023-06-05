@@ -77,6 +77,13 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
       page.getByRole('combobox', { name: 'A la fréquence de' })
     ).toBeVisible()
   })
+  await test.step('Le produit par défaut est le produit culturel physique', async () => {
+    let currentFrequence = await page.$eval(
+      'select#produits',
+      (sel) => sel.options[sel.options.selectedIndex].textContent
+    )
+    expect(currentFrequence).toEqual('Produit culturel physique')
+  })
   await test.step('La liste déroulante “Vous commandez en majorité” a bien les options “Produits de grande consommation”, “Habillement”, “Produits culturel physique”, “bien d’équipement volumineux”, et “autre”', async () => {
     await page
       .locator('select#produits')
@@ -88,6 +95,13 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
     await page
       .locator('select#produits')
       .selectOption({ label: "Bien d'équipement volumineux" })
+  })
+  await test.step('Le mode de retrait par défaut est à domicile', async () => {
+    let currentFrequence = await page.$eval(
+      'select#retraits',
+      (sel) => sel.options[sel.options.selectedIndex].textContent
+    )
+    expect(currentFrequence).toEqual('Livraison à domicile')
   })
   await test.step('La liste déroulante “Que vous faites livrer” a bien 4 options', async () => {
     await page
