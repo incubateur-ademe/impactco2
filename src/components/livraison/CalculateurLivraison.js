@@ -59,20 +59,14 @@ export default function CalculateurLivraison() {
     frequence: 'mois',
   })
 
-  const calculateResult = (valuesArg) => {
-    let freqMultBy = frequences.find(
-      (freq) => freq.uid === valuesArg.frequence
-    ).mult
-    let produitPublicode = produits.find(
-      (produit) => produit.uid === valuesArg.produit
-    ).publicode
-    let retraitPublicode = retraits.find(
-      (retrait) => retrait.uid === valuesArg.retrait
-    ).publicode
+  const calculateResult = (v) => {
+    let freqMultBy = frequences.find((f) => f.uid === v.frequence).mult
+    let produitCode = produits.find((p) => p.uid === v.produit).publicode
+    let retraitCode = retraits.find((r) => r.uid === v.retrait).publicode
 
     let newSituation = {
-      'livraison colis . informations . catégorie': `'${produitPublicode}'`,
-      'livraison colis . scénario': `'${retraitPublicode}'`,
+      'livraison colis . informations . catégorie': `'${produitCode}'`,
+      'livraison colis . scénario': `'${retraitCode}'`,
     }
 
     engine.setSituation(newSituation)
