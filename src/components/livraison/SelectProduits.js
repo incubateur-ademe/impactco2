@@ -31,7 +31,7 @@ const produits = [
 ]
 
 export default function SelectProduits(props) {
-  const [value, setValue] = useState('culturel')
+  const [value, setValue] = useState(props.defaultValue)
 
   return (
     <>

@@ -26,7 +26,7 @@ const retraits = [
 ]
 
 export default function SelectRetraits(props) {
-  const [value, setValue] = useState('domicile')
+  const [value, setValue] = useState(props.defaultValue)
 
   return (
     <>

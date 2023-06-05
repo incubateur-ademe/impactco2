@@ -21,7 +21,7 @@ const frequences = [
 ]
 
 export default function SelectFrequences(props) {
-  const [value, setValue] = useState('mois')
+  const [value, setValue] = useState(props.defaultValue)
 
   return (
     <>

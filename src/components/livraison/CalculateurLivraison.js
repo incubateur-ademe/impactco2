@@ -52,6 +52,13 @@ export default function CalculateurLivraison() {
 
   const [cO2eq, setCO2eq] = useState(0)
 
+  const [values, setValues] = useState({
+    produit: 'culturel',
+    retrait: 'domicile',
+    frequence: 'mois',
+  })
+  console.log('setValues', setValues)
+
   const getMult = () => {
     return {
       jour: 365,
@@ -98,9 +105,18 @@ export default function CalculateurLivraison() {
         En vous basant sur les commandes que vous effectuez le plus...
       </Subtitle>
       <DropList>
-        <SelectProduits changeProduit={changeProduit} />
-        <SelectRetraits changeRetrait={changeRetrait} />
-        <SelectFrequences changeFrequence={changeFrequence} />
+        <SelectProduits
+          changeProduit={changeProduit}
+          defaultValue={values.produit}
+        />
+        <SelectRetraits
+          changeRetrait={changeRetrait}
+          defaultValue={values.retrait}
+        />
+        <SelectFrequences
+          changeFrequence={changeFrequence}
+          defaultValue={values.frequence}
+        />
       </DropList>
       <Resultat co2eq={cO2eq} />
     </>
