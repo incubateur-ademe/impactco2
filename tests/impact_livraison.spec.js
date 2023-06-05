@@ -36,12 +36,6 @@ test('U1 - Affichage simulateur et source', async ({ page }) => {
     // Then
     await expect(page).toHaveURL('/livraison')
   })
-  await test.step("On peut accèder à impact-livraison directement depuis l'URL du navigateur", async () => {
-    await page.goto('/livraison')
-    await expect(page).toHaveTitle(
-      /Mesurer l'impact carbone de la livraison de colis/
-    )
-  })
   await test.step("J'ai bien le titre de l'onglet, le fil d'ariane, et le lien vers la source qui s'affichent", async () => {
     await expect(page).toHaveTitle(
       /Mesurer l'impact carbone de la livraison de colis/
@@ -64,26 +58,86 @@ test('U1 - Affichage simulateur et source', async ({ page }) => {
 })
 
 test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
-  await test.step("On peut sélectionner le type de produit, le mode de livraison, et la fréquence d'achat", async () => {
-    // Given
+  await test.step("On peut accèder à impact-livraison directement depuis l'URL du navigateur", async () => {
     await page.goto('/livraison')
-    await expect(
-      page.getByRole('combobox', { name: 'Vous commandez en majorité' })
-    ).toBeVisible()
-    await expect(
-      page.getByRole('combobox', { name: 'Que vous faites livrer en' })
-    ).toBeVisible()
-    await expect(
-      page.getByRole('combobox', { name: 'A la fréquence de' })
-    ).toBeVisible()
+    await expect(page).toHaveTitle(
+      /Mesurer l'impact carbone de la livraison de colis/
+    )
   })
   await test.step('Le produit par défaut est le produit culturel physique', async () => {
-    let currentFrequence = await page.$eval(
+    let currentProduit = await page.$eval(
       'select#produits',
       (sel) => sel.options[sel.options.selectedIndex].textContent
     )
-    expect(currentFrequence).toEqual('Produit culturel physique')
+    expect(currentProduit).toEqual('Produit culturel physique')
   })
+  await test.step('Le mode de retrait par défaut est à domicile', async () => {
+    let currentRetrait = await page.$eval(
+      'select#retraits',
+      (sel) => sel.options[sel.options.selectedIndex].textContent
+    )
+    expect(currentRetrait).toEqual('Livraison à domicile')
+  })
+  await test.step('La fréquence par défaut est par mois', async () => {
+    let currentFrequence = await page.$eval(
+      'select#frequences',
+      (sel) => sel.options[sel.options.selectedIndex].textContent
+    )
+    expect(currentFrequence).toEqual('Mois')
+  })
+
+  await test.step('Par défaut un calcul de CO2 est affiché', async () => {
+    // Given
+    await expect(page.getByTestId('resultAsText')).toHaveText(
+      '3,17 kg de CO2e '
+    )
+  })
+
+  await test.step('Si on augmente la fréquence de livraison, on a bien une augmentation de CO2', async () => {
+    // Given
+    await page
+      .locator('select#retraits')
+      .selectOption({ label: 'Livraison à domicile' })
+    await page.locator('select#frequences').selectOption({ label: 'Semaine' }) // Ici
+    await page
+      .locator('select#produits')
+      .selectOption({ label: 'Produit culturel physique' })
+    // When-Then
+    await expect(page.getByTestId('resultAsText')).toHaveText(
+      '13,76 kg de CO2e '
+    )
+  })
+
+  await test.step('Si on prend un mode de retrait plus consommateur, on a bien une augmentation de CO2', async () => {
+    // Given
+    await page
+      .locator('select#retraits')
+      .selectOption({ label: 'Achat direct en magasin' }) // Ici
+    await page.locator('select#frequences').selectOption({ label: 'Mois' })
+    await page
+      .locator('select#produits')
+      .selectOption({ label: 'Produit culturel physique' })
+    // When-Then
+    await expect(page.getByTestId('resultAsText')).toHaveText(
+      '52,98 kg de CO2e '
+    )
+  })
+
+  await test.step('Si on prend un colis volumineux, on a bien une augmentation de CO2', async () => {
+    // Given
+    await page
+      .locator('select#retraits')
+      .selectOption({ label: 'Livraison à domicile' })
+    await page.locator('select#frequences').selectOption({ label: 'Mois' })
+    await page
+      .locator('select#produits')
+      .selectOption({ label: "Bien d'équipement volumineux" }) // Ici
+    // When-Then
+    await expect(page.getByTestId('resultAsText')).toHaveText(
+      '843,19 kg de CO2e '
+    )
+  })
+
   await test.step('La liste déroulante “Vous commandez en majorité” a bien les options “Produits de grande consommation”, “Habillement”, “Produits culturel physique”, “bien d’équipement volumineux”, et “autre”', async () => {
     await page
       .locator('select#produits')
@@ -96,13 +150,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
       .locator('select#produits')
       .selectOption({ label: "Bien d'équipement volumineux" })
   })
-  await test.step('Le mode de retrait par défaut est à domicile', async () => {
-    let currentFrequence = await page.$eval(
-      'select#retraits',
-      (sel) => sel.options[sel.options.selectedIndex].textContent
-    )
-    expect(currentFrequence).toEqual('Livraison à domicile')
-  })
+
   await test.step('La liste déroulante “Que vous faites livrer” a bien 4 options', async () => {
     await page
       .locator('select#retraits')
@@ -117,13 +165,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
       .locator('select#retraits')
       .selectOption({ label: 'Achat direct en magasin' })
   })
-  await test.step('La fréquence par défaut est par mois', async () => {
-    let currentFrequence = await page.$eval(
-      'select#frequences',
-      (sel) => sel.options[sel.options.selectedIndex].textContent
-    )
-    expect(currentFrequence).toEqual('Mois')
-  })
+
   await test.step('La fréquence est par jour, semaine, mois ou année', async () => {
     await page.locator('select#frequences').selectOption({ label: 'Jour' })
     await page.locator('select#frequences').selectOption({ label: 'Semaine' })
