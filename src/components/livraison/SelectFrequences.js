@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Select from 'components/base/Select'
@@ -21,18 +20,15 @@ const frequences = [
 ]
 
 export default function SelectFrequences(props) {
-  const [value, setValue] = useState(props.defaultValue)
-
   return (
     <>
       <StyledSelect
         onChange={(e) => {
-          setValue(e.value)
           props.changeFrequence(
             frequences.find((frequence) => frequence.uid === e.value)
           )
         }}
-        value={value}
+        value={props.value}
         label='A la fréquence de'
         name='frequences'
       >

@@ -57,7 +57,6 @@ export default function CalculateurLivraison() {
     retrait: 'domicile',
     frequence: 'mois',
   })
-  console.log('setValues', setValues)
 
   const getMult = () => {
     return {
@@ -69,33 +68,44 @@ export default function CalculateurLivraison() {
     }
   }
 
-  useMemo(() => {
+  const calculateResult = (valuesArg) => {
     engine.setSituation({
-      'livraison colis . informations . catégorie': `'culturel'`,
-      'livraison colis . scénario': `'domicile'`,
+      'livraison colis . informations . catégorie': `'${valuesArg.produit}'`,
+      'livraison colis . scénario': `'${valuesArg.retrait}'`,
     })
+    setCO2eq(
+      engine.evaluate('livraison colis').nodeValue *
+        getMult()[valuesArg.frequence]
+    )
+  }
 
-    setCO2eq(engine.evaluate('livraison colis').nodeValue * getMult()['mois'])
-  }, [engine])
+  // First rendering calculation
+  useMemo(() => {
+    calculateResult(values)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values])
 
   const changeProduit = (produit) => {
-    engine.setSituation({
-      'livraison colis . informations . catégorie': `'${produit.publicode}'`,
-    })
-    setCO2eq(engine.evaluate('livraison colis').nodeValue)
+    let localValues = clonedValues()
+    localValues.produit = produit.uid
+    setValues(localValues)
+    console.log('localValues', localValues)
   }
 
   const changeRetrait = (retrait) => {
-    engine.setSituation({
-      'livraison colis . scénario': `'${retrait.publicode}'`,
-    })
-    setCO2eq(engine.evaluate('livraison colis').nodeValue)
+    let localValues = clonedValues()
+    localValues.retrait = retrait.uid
+    setValues(localValues)
   }
 
   const changeFrequence = (frequence) => {
-    setCO2eq(
-      engine.evaluate('livraison colis').nodeValue * getMult()[frequence.uid]
-    )
+    let localValues = clonedValues()
+    localValues.frequence = frequence.uid
+    setValues(localValues)
+  }
+
+  const clonedValues = () => {
+    return JSON.parse(JSON.stringify(values))
   }
 
   return (
@@ -115,7 +125,7 @@ export default function CalculateurLivraison() {
         />
         <SelectFrequences
           changeFrequence={changeFrequence}
-          defaultValue={values.frequence}
+          value={values.frequence}
         />
       </DropList>
       <Resultat co2eq={cO2eq} />
