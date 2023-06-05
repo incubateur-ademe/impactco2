@@ -25,6 +25,7 @@ export const themes = {
     },
     mq: {
       never: `@media screen and (max-width: ${0}em)`, // HACK
+      xsmall: `@media screen and (max-width: ${30}em)`,
       small: `@media screen and (max-width: ${36}em)`,
       iframemedium: `@media screen and (max-width: ${42}em)`,
       medium: `@media screen and (max-width: ${48}em)`,
@@ -53,6 +54,7 @@ export const themes = {
     },
     mq: {
       never: `@media screen and (max-width: ${0}em)`, // HACK
+      xsmall: `@media screen and (max-width: ${30}em)`,
       small: `@media screen and (max-width: ${36}em)`,
       iframemedium: `@media screen and (max-width: ${42}em)`,
       medium: `@media screen and (max-width: ${48}em)`,

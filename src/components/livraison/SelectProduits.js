@@ -41,7 +41,7 @@ export default function SelectProduits(props) {
         }}
         value={props.uid}
         label='Vous commandez en majorité'
-        name='type'
+        name='produits'
       >
         {produits.map((produit) => (
           <option key={produit.uid} value={produit.uid}>

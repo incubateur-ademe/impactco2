@@ -14,13 +14,25 @@ const H2Title = styled.h2`
   margin-top: 0;
 `
 const DropList = styled.div`
+  border: 1px solid #e2dce0;
+  border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  > div > label {
+    color: #746770;
+    font-size: 14px;
+  }
+  > div > select {
+    width: 320px;
+    color: #1c9b93;
+    padding-left: 0;
+    ${(props) => props.theme.mq.xsmall} {
+      width: auto;
+      font-size: 12px;
+    }
+  }
   ${(props) => props.theme.mq.xlarge} {
     grid-template-columns: repeat(1, 1fr);
-  }
-  > div {
-    background-color: red;
   }
 `
 

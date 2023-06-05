@@ -7,6 +7,9 @@ const StyledSelect = styled(Select)`
   > select {
     border: none;
   }
+  > option {
+    width: 300px;
+  }
 `
 
 const frequences = [
@@ -28,7 +31,7 @@ export default function SelectFrequences(props) {
         }}
         value={props.uid}
         label='A la fréquence de'
-        name='type'
+        name='frequences'
       >
         {frequences.map((frequence) => (
           <option key={frequence.uid} value={frequence.uid}>

@@ -36,7 +36,7 @@ export default function SelectRetraits(props) {
         }}
         value={props.uid}
         label='Que vous faites livrer en'
-        name='type'
+        name='retraits'
       >
         {retraits.map((retrait) => (
           <option key={retrait.uid} value={retrait.uid}>
