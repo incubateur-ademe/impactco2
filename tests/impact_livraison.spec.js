@@ -103,6 +103,13 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
       .locator('select#retraits')
       .selectOption({ label: 'Achat direct en magasin' })
   })
+  await test.step('La fréquence par défaut est par mois', async () => {
+    let currentFrequence = await page.$eval(
+      'select#frequences',
+      (sel) => sel.options[sel.options.selectedIndex].textContent
+    )
+    expect(currentFrequence).toEqual('Mois')
+  })
   await test.step('La fréquence est par jour, semaine, mois ou année', async () => {
     await page.locator('select#frequences').selectOption({ label: 'Jour' })
     await page.locator('select#frequences').selectOption({ label: 'Semaine' })
