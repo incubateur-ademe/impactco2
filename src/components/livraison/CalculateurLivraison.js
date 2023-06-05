@@ -70,6 +70,10 @@ export default function CalculateurLivraison() {
     }
 
     engine.setSituation(newSituation)
+    console.log('produitCode', produitCode)
+    console.log('retraitCode', retraitCode)
+    console.log('freqMultBy', freqMultBy)
+    console.log('newSituation', newSituation)
     setCO2eq(engine.evaluate('livraison colis').nodeValue * freqMultBy)
   }
 
