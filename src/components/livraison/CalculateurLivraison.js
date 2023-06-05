@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 
-import Flex from 'components/base/Flex'
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 
 import Resultat from './Resultat'
@@ -13,6 +12,16 @@ const H2Title = styled.h2`
   font-size: 22px;
   font-weight: 700;
   margin-top: 0;
+`
+const DropList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  ${(props) => props.theme.mq.xlarge} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  > div {
+    background-color: red;
+  }
 `
 
 export default function CalculateurLivraison() {
@@ -52,11 +61,11 @@ export default function CalculateurLivraison() {
   return (
     <>
       <H2Title>Estimez l'impact de vos livraisons</H2Title>
-      <Flex>
+      <DropList>
         <SelectProduits changeProduit={changeProduit} />
         <SelectRetraits changeRetrait={changeRetrait} />
         <SelectFrequences changeFrequence={changeFrequence} />
-      </Flex>
+      </DropList>
       <Resultat co2eq={cO2eq} />
     </>
   )
