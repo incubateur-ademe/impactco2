@@ -8,6 +8,7 @@
 ## 1.2.0 (02/05/2023)
 
 * U2 - Livraison : calcul simple CO2e
+* Close [274](https://github.com/datagir/impactco2/issues/274)
 
 ## 1.1.0 (31/05/2023)
 
