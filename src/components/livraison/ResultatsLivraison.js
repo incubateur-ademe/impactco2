@@ -17,7 +17,6 @@ const Wrapper = styled.div`
 `
 
 export default function ResultatsLivraison(props) {
-  console.log('sssssss---------', props.co2eq)
   return (
     <Wrapper>
       <div className='item item1'>
