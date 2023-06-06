@@ -73,7 +73,7 @@
       "eslint --fix"
     ],
     "*.{html,css,less,ejs}": [
-      "prettier --write"
+      "prettier --write --print-width 120"
     ]
   }
 }
