@@ -3,19 +3,9 @@ import styled from 'styled-components'
 
 import DataContext from 'components/providers/DataProvider'
 
-import Tile from 'components/misc/tiles/Tile'
+import Tile2 from 'components/misc/tiles/Tile2'
 
 import ResultatLivraison from './ResultatLivraison'
-
-const Tiles = styled.div`
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-
-  ${(props) => props.theme.mq.medium} {
-    gap: 0.75rem;
-  }
-`
 
 const Wrapper = styled.div`
   background-color: whitesmoke;
@@ -47,22 +37,16 @@ export default function ResultatsLivraison(props) {
       <div className='item item1'>
         <ResultatLivraison co2eq={props.co2eq} />
       </div>
-      <div className='item item2'>
-        <Tiles>
-          {equivalentsToShow.map((equivalent) => (
-            <Tile
-              key={equivalent.slug}
-              equivalent={equivalent}
-              weight={(2100 / 1000) * 52}
-              equivalentPage
-              reference
-              noAnimation
-            />
-          ))}
-        </Tiles>
-      </div>
-      <div className='item item3'></div>
-      <div className='item4'></div>
+      {equivalentsToShow.map((equivalent) => (
+        <Tile2
+          key={equivalent.slug}
+          equivalent={equivalent}
+          weight={(props.co2eq / 1000) * props.freqMultBy}
+          equivalentPage
+          reference
+          noAnimation
+        />
+      ))}
     </Wrapper>
   )
 }

@@ -17,24 +17,7 @@ import DataContext from 'components/providers/DataProvider'
 import Button from 'components/base/Button'
 import Emoji from 'components/base/Emoji'
 
-const Wrapper = styled.div`
-  align-items: center;
-  background-color: ${(props) =>
-    props.theme.colors[props.background ? 'textLight' : 'second']};
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  padding: 1.125rem 0.25rem;
-  position: relative;
-  width: calc(33.3333% - 1rem);
-
-  ${(props) => props.theme.mq.medium} {
-    width: calc(33.3333% - 0.5rem);
-  }
-  ${(props) => props.theme.mq.small} {
-    width: calc(50% - 0.375rem);
-  }
-`
+const Wrapper = styled.div``
 const ButtonDrag = styled.button`
   background: none;
   border: none;

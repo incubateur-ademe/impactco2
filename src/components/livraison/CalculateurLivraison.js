@@ -115,7 +115,10 @@ export default function CalculateurLivraison() {
           value={values.frequence}
         />
       </DropList>
-      <ResultatsLivraison co2eq={cO2eq} />
+      <ResultatsLivraison
+        co2eq={cO2eq}
+        freqMultBy={frequences.find((f) => f.uid === values.frequence).mult}
+      />
     </>
   )
 }
