@@ -26,7 +26,7 @@ export default function ResultatsLivraison(props) {
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter((equivalent) =>
-        ['voiturethermique', 'repasavecduboeuf', 'tshirtencoton'].includes(
+        ['voiturethermique', 'repasavecduboeuf', 'streamingvideo'].includes(
           equivalent.slug
         )
       ),
