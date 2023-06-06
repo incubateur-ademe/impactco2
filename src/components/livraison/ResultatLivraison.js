@@ -23,9 +23,7 @@ const Wrapper = styled.div`
   color: white;
   display: grid;
   grid-template-columns: 30px 1fr;
-  margin-top: 1rem;
   max-width: 350px;
-  padding: 0.5rem;
   > .item1 {
     align-items: center;
     display: flex;
