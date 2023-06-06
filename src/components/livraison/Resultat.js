@@ -25,6 +25,7 @@ const Wrapper = styled.div`
   grid-template-columns: 30px 1fr;
   margin-top: 1rem;
   max-width: 350px;
+  padding: 0.5rem;
   > .item1 {
     align-items: center;
     display: flex;
@@ -53,13 +54,18 @@ export default function Resultat(props) {
     <Wrapper>
       <div className='item1'>
         <svg
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          width='16'
-          height='16'
-          fill='#AEC8FC'
-          viewBox='0 0 16 16'
         >
-          <path d='M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z' />
+          <path
+            fillRule='evenodd'
+            clipRule='evenodd'
+            d='M6 3C9.49 3 12.383 5.554 12.913 8.895C14.088 7.724 15.71 7 17.5 7H22V9.5C22 13.09 19.09 16 15.5 16H13V21H11V13H9C5.134 13 2 9.866 2 6V3H6ZM20 9H17.5C15.015 9 13 11.015 13 13.5V14H15.5C17.985 14 20 11.985 20 9.5V9ZM6 5H4V6C4 8.761 6.239 11 9 11H11V10C11 7.239 8.761 5 6 5Z'
+            fill='#90B3F8'
+          />
         </svg>
       </div>
       <div className='item2' data-testid='resultAsText'>
