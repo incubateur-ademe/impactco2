@@ -1,9 +1,13 @@
 
 # CHANGELOG
 
+## 1.3.0 (06/05/2023)
+
+* U4 - Livraison : Calcul des équivalents CO2
+
 ## 1.2.0 (02/05/2023)
 
-* U2 - Calcul simple CO2e
+* U2 - Livraison : calcul simple CO2e
 
 ## 1.1.0 (31/05/2023)
 
