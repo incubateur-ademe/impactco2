@@ -35,7 +35,7 @@ const DropList = styled.div`
     margin-bottom: 0;
   }
   > div > select {
-    width: 320px;
+    width: 240px;
     color: #1c9b93;
     padding-left: 0;
     ${(props) => props.theme.mq.xsmall} {

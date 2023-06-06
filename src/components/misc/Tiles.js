@@ -76,6 +76,8 @@ export default function Tiles(props) {
     )
   }, [tiles])
 
+  console.log('tiles', tiles)
+
   return (
     <StyledSection background={props.background} iframe={iframe}>
       <Section.Content>
