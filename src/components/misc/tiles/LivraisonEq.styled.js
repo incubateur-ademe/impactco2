@@ -13,6 +13,17 @@ export const EmojiWrapper = styled.div``;
 
 export const Title = styled.p``;
 
-export const Number = styled.div``;
+export const Number = styled.div`
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 32px;
+`;
 
-export const OfWhat = styled.div``;
+export const OfWhat = styled.div`
+  color: #746770;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 16px;
+`;

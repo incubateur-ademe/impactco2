@@ -18,13 +18,11 @@ const Wrapper = styled.div`
 
 export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
-  const equivalentsToShow = useMemo(
-    () =>
-      equivalents.filter((equivalent) =>
-        ["voiturethermique", "repasavecduboeuf", "streamingvideo"].includes(equivalent.slug)
-      ),
-    [equivalents]
-  );
+  const equivalentsToShow = useMemo(() => {
+    let a = ["voiturethermique", "repasavecduboeuf", "streamingvideo"];
+    let res = equivalents.filter((e) => a.includes(e.slug));
+    return res;
+  }, [equivalents]);
   return (
     <Wrapper>
       <div className="item item1">
