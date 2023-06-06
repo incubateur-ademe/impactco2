@@ -18,19 +18,25 @@ const Wrapper = styled.div`
 
 export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
-  const equivalentsToShow = useMemo(() => {
-    let a = ["voiturethermique", "repasavecduboeuf", "streamingvideo"];
-    let res = equivalents.filter((e) => a.includes(e.slug));
-    return res;
-  }, [equivalents]);
+  const equivalentsToShow = useMemo(
+    () =>
+      equivalents.filter((equivalent) =>
+        ["voiturethermique", "repasavecduboeuf", "streamingvideo"].includes(equivalent.slug)
+      ),
+    [equivalents]
+  );
   return (
     <Wrapper>
       <div className="item item1">
         <ResultatLivraison co2eq={props.co2eq} />
       </div>
-      {equivalentsToShow.map((equivalent) => (
-        <LivraisonEq key={equivalent.slug} equivalent={equivalent} weight={(props.co2eq / 1000) * props.freqMultBy} />
-      ))}
+      {equivalentsToShow
+        .sort(function (a, b) {
+          return a < b;
+        })
+        .map((equivalent) => (
+          <LivraisonEq key={equivalent.slug} equivalent={equivalent} weight={(props.co2eq / 1000) * props.freqMultBy} />
+        ))}
     </Wrapper>
   );
 }
