@@ -5,11 +5,9 @@ import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background-color: whitesmoke;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   > div {
-    background-color: grey;
     padding: 0.5rem;
   }
   ${(props) => props.theme.mq.xlarge} {

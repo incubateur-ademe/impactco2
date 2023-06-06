@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 30px 1fr;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const EmojiWrapper = styled.div``;
