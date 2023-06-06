@@ -49,7 +49,9 @@ function convertGramsToKilograms(grams) {
   return formattedKilograms
 }
 
-export default function Resultat(props) {
+export default function ResultatLivraison(props) {
+  console.log('iiinnnsssiidde---------', props)
+
   return (
     <Wrapper>
       <div className='item1'>

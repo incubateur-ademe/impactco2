@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 
-import Resultat from './Resultat'
+import ResultatsLivraison from './ResultatsLivraison'
 import SelectFrequences from './SelectFrequences'
 import SelectProduits from './SelectProduits'
 import SelectRetraits from './SelectRetraits'
@@ -70,10 +70,6 @@ export default function CalculateurLivraison() {
     }
 
     engine.setSituation(newSituation)
-    console.log('produitCode', produitCode)
-    console.log('retraitCode', retraitCode)
-    console.log('freqMultBy', freqMultBy)
-    console.log('newSituation', newSituation)
     setCO2eq(engine.evaluate('livraison colis').nodeValue * freqMultBy)
   }
 
@@ -119,7 +115,7 @@ export default function CalculateurLivraison() {
           value={values.frequence}
         />
       </DropList>
-      <Resultat co2eq={cO2eq} />
+      <ResultatsLivraison co2eq={cO2eq} />
     </>
   )
 }
