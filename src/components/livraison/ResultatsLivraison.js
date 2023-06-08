@@ -1,23 +1,12 @@
 import ResultatLivraison from "./ResultatLivraison";
+import { Wrapper } from "./ResultatsLivraison.styles";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useMemo } from "react";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  > div {
-    padding: 0.5rem;
-  }
-  ${(props) => props.theme.mq.xlarge} {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-  }
-`;
 
 export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
+  console.log("equivalents", equivalents);
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter((equivalent) =>
@@ -25,6 +14,7 @@ export default function ResultatsLivraison(props) {
       ),
     [equivalents]
   );
+  console.log("equivalentsToShow", equivalentsToShow);
   return (
     <Wrapper>
       <div className="item item1">
@@ -32,7 +22,7 @@ export default function ResultatsLivraison(props) {
       </div>
       {equivalentsToShow
         .sort(function (a, b) {
-          return a < b;
+          return a.category < b.category;
         })
         .map((equivalent) => (
           <LivraisonEq key={equivalent.slug} equivalent={equivalent} weight={(props.co2eq / 1000) * props.freqMultBy} />

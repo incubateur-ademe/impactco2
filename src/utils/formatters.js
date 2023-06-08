@@ -22,8 +22,6 @@ export function formatNumberPrecision(value) {
   );
 }
 export function formatName(name = "", value = 1, capital) {
-  console.log("name", name);
-  console.log("capital", capital);
   const newName = name.replaceAll("[s]", value > 1 ? "s" : "").replaceAll("[x]", value > 1 ? "x" : "");
 
   return capital ? newName : newName.toLowerCase();
@@ -84,4 +82,15 @@ export function formatUsage(equivalent, years) {
     return usage;
   }
   return 0;
+}
+
+export function fullSentenceFormat(obj) {
+  return (
+    formatNumber(obj.weight / formatTotalByMultiplier(obj.equivalent)) +
+    " " +
+    formatName(
+      (obj.equivalent.prefix || "") + obj.equivalent.name,
+      obj.weight / formatTotalByMultiplier(obj.equivalent)
+    )
+  );
 }

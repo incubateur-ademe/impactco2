@@ -1,42 +1,33 @@
-import { DndContext, MeasuringStrategy, closestCenter } from '@dnd-kit/core'
-import {
-  SortableContext,
-  arrayMove,
-  rectSortingStrategy,
-} from '@dnd-kit/sortable'
-import React, { useContext, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import AddButton from "./tiles/AddButton";
+import Tile from "./tiles/Tile";
+import Weight from "./tiles/Weight";
+import { DndContext, MeasuringStrategy, closestCenter } from "@dnd-kit/core";
+import { SortableContext, arrayMove, rectSortingStrategy } from "@dnd-kit/sortable";
+import Section from "components/base/Section";
+import DataContext from "components/providers/DataProvider";
+import useIframe from "hooks/useIframe";
+import React, { useContext, useEffect, useState } from "react";
+import styled from "styled-components";
+import { formatTotalByMultiplier } from "utils/formatters";
 
-import { formatTotalByMultiplier } from 'utils/formatters'
-
-import useIframe from 'hooks/useIframe'
-
-import DataContext from 'components/providers/DataProvider'
-
-import Section from 'components/base/Section'
-
-import AddButton from './tiles/AddButton'
-import Tile from './tiles/Tile'
-import Weight from './tiles/Weight'
-
-const StyledSection = styled(Section)``
+const StyledSection = styled(Section)``;
 const Title = styled.h2`
   text-align: center;
-`
+`;
 const Br = styled.br`
   ${(props) => props.theme.mq.small} {
     display: none;
   }
-`
+`;
 const Reference = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
-`
+`;
 const Text = styled.p`
   margin-bottom: 1.5rem;
   text-align: center;
-`
+`;
 const TilesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -46,37 +37,31 @@ const TilesWrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     gap: 0.75rem;
   }
-`
+`;
 export default function Tiles(props) {
-  const { equivalents, tiles, setTiles } = useContext(DataContext)
+  const { equivalents, tiles, setTiles } = useContext(DataContext);
 
-  const iframe = useIframe()
+  const iframe = useIframe();
 
-  const [curEquivalent, setCurEquivalent] = useState(props.equivalent)
+  const [curEquivalent, setCurEquivalent] = useState(props.equivalent);
   useEffect(() => {
     if (!tiles.length) {
-      setTiles(equivalents.filter((equivalent) => equivalent.tile))
+      setTiles(equivalents.filter((equivalent) => equivalent.tile));
     }
-  }, [tiles, equivalents, setTiles])
+  }, [tiles, equivalents, setTiles]);
 
-  const [weight, setWeight] = useState(2000)
+  const [weight, setWeight] = useState(2000);
   useEffect(() => {
-    curEquivalent && setWeight(formatTotalByMultiplier(curEquivalent))
-  }, [curEquivalent])
+    curEquivalent && setWeight(formatTotalByMultiplier(curEquivalent));
+  }, [curEquivalent]);
 
-  const [showSubtitle, setShowSubtitle] = useState(false)
+  const [showSubtitle, setShowSubtitle] = useState(false);
   useEffect(() => {
     setShowSubtitle(
-      tiles.filter((tile) =>
-        tiles.find(
-          (otherTile) =>
-            otherTile.name === tile.name && otherTile.slug !== tile.slug
-        )
-      ).length
-    )
-  }, [tiles])
-
-  console.log('tiles', tiles)
+      tiles.filter((tile) => tiles.find((otherTile) => otherTile.name === tile.name && otherTile.slug !== tile.slug))
+        .length
+    );
+  }, [tiles]);
 
   return (
     <StyledSection background={props.background} iframe={iframe}>
@@ -92,20 +77,14 @@ export default function Tiles(props) {
           measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
           onDragEnd={({ active, over }) => {
             if (active.id !== over.id) {
-              if (over.id === curEquivalent?.id || over.id === 'weight') {
-                setCurEquivalent(
-                  equivalents.find((equivalent) => equivalent.id === active.id)
-                )
+              if (over.id === curEquivalent?.id || over.id === "weight") {
+                setCurEquivalent(equivalents.find((equivalent) => equivalent.id === active.id));
               } else {
                 setTiles((items) => {
-                  const oldIndex = items.indexOf(
-                    items.find((item) => item.id === active.id)
-                  )
-                  const newIndex = items.indexOf(
-                    items.find((item) => item.id === over.id)
-                  )
-                  return arrayMove(items, oldIndex, newIndex)
-                })
+                  const oldIndex = items.indexOf(items.find((item) => item.id === active.id));
+                  const newIndex = items.indexOf(items.find((item) => item.id === over.id));
+                  return arrayMove(items, oldIndex, newIndex);
+                });
               }
             }
           }}
@@ -123,11 +102,7 @@ export default function Tiles(props) {
                   reference
                 />
               ) : (
-                <Weight
-                  weight={weight}
-                  setWeight={setWeight}
-                  background={props.background}
-                />
+                <Weight weight={weight} setWeight={setWeight} background={props.background} />
               )}
             </Reference>
           </SortableContext>
@@ -137,16 +112,10 @@ export default function Tiles(props) {
             fabriquer, consommer ou parcourir :
           </Text>
 
-          <SortableContext
-            items={[...tiles, { id: 'weight' }]}
-            strategy={rectSortingStrategy}
-          >
+          <SortableContext items={[...tiles, { id: "weight" }]} strategy={rectSortingStrategy}>
             <TilesWrapper>
               {tiles
-                .filter(
-                  (equivalent) =>
-                    !curEquivalent || equivalent.slug !== curEquivalent.slug
-                )
+                .filter((equivalent) => !curEquivalent || equivalent.slug !== curEquivalent.slug)
                 .map((equivalent) => (
                   <Tile
                     equivalent={equivalent}
@@ -155,9 +124,7 @@ export default function Tiles(props) {
                     background={props.background}
                     showSubtitle={showSubtitle}
                     removeEquivalent={(id) =>
-                      setTiles((equivalents) =>
-                        equivalents.filter((equivalent) => equivalent.id !== id)
-                      )
+                      setTiles((equivalents) => equivalents.filter((equivalent) => equivalent.id !== id))
                     }
                     setCurEquivalent={setCurEquivalent}
                   />
@@ -168,5 +135,5 @@ export default function Tiles(props) {
         </DndContext>
       </Section.Content>
     </StyledSection>
-  )
+  );
 }
