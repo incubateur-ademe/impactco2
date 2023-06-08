@@ -6,7 +6,6 @@ import React, { useContext, useMemo } from "react";
 
 export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
-  console.log("equivalents", equivalents);
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter((equivalent) =>
@@ -14,7 +13,6 @@ export default function ResultatsLivraison(props) {
       ),
     [equivalents]
   );
-  console.log("equivalentsToShow", equivalentsToShow);
   return (
     <Wrapper>
       <div className="item item1">
