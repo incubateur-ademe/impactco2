@@ -9,6 +9,11 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 30px 1fr 30px;
   max-width: 350px;
+  ${(props) => props.theme.mq.xlarge} {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 16px;
+    max-width: 100%;
+  }
   > .item1 {
     align-items: center;
     display: flex;
@@ -29,6 +34,9 @@ const Wrapper = styled.div`
       transform: rotate(90deg);
       left: -16px;
       top: 44px;
+      ${(props) => props.theme.mq.xlarge} {
+        display: none;
+      }
     }
   }
   > .item4 {
