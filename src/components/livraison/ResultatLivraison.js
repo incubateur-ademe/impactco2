@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 30px 1fr 30px;
   max-width: 350px;
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
   > .item1 {
     align-items: center;
     display: flex;
@@ -20,25 +19,12 @@ const Wrapper = styled.div`
   > .item3 {
     grid-row: span 3;
     > div {
-      position: relative;
-      background: green;
-      height: 100%;
-      width: 0;
-    }
-    > div::after,
-    div::before {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      bottom: 0;
-      margin: auto 0;
-      width: 58px;
-      height: 58px;
-      background: #457be7;
-      transform: rotate(-45deg);
-      clip-path: polygon(100% 2%, 2% 100%, 100% 100%);
-      border-radius: 0 0 20px 0;
+      width: 7em;
+      height: 7em;
+      border-radius: 0 0 2em 0;
+      margin: 5em;
+      transform: rotate(45deg);
+      background: linear-gradient(-45deg, black 50%, transparent 50%);
     }
   }
   > .item4 {
