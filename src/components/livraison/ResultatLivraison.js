@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   border-top-left-radius: 16px;
   color: white;
   display: grid;
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: 30px 1fr 30px;
   max-width: 350px;
   > .item1 {
     align-items: center;
@@ -59,9 +59,11 @@ export default function ResultatLivraison(props) {
         <Units> kg de CO2e </Units>
       </div>
       <div className="item3"></div>
-      <div className="item4">
+      <div className="item4"></div>
+      <div className="item5">
         <Subexplain>par an</Subexplain>
       </div>
+      <div className="item6"></div>
     </Wrapper>
   );
 }
