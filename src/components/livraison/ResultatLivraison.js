@@ -16,6 +16,9 @@ const Wrapper = styled.div`
     margin-right: 4px;
     margin-top: 7px;
   }
+  > .item3 {
+    grid-row: span 2;
+  }
   > .item4 {
     color: #aec8fc;
     margin-bottom: 1rem;
