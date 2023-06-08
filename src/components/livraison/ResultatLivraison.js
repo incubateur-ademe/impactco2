@@ -18,13 +18,17 @@ const Wrapper = styled.div`
   }
   > .item3 {
     grid-row: span 3;
+    position: relative;
     > div {
-      width: 7em;
-      height: 7em;
-      border-radius: 0 0 2em 0;
-      margin: 5em;
-      transform: rotate(45deg);
-      background: linear-gradient(-45deg, black 50%, transparent 50%);
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 0 54px 17px 54px;
+      border-color: transparent transparent #457be7 transparent;
+      transform: rotate(90deg);
+      left: -16px;
+      top: 44px;
     }
   }
   > .item4 {
