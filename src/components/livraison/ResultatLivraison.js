@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 30px 1fr 30px;
   max-width: 350px;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
   > .item1 {
     align-items: center;
     display: flex;
@@ -17,11 +18,35 @@ const Wrapper = styled.div`
     margin-top: 7px;
   }
   > .item3 {
-    grid-row: span 2;
+    grid-row: span 3;
+    > div {
+      position: relative;
+      background: green;
+      height: 100%;
+      width: 0;
+    }
+    > div::after,
+    div::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      width: 58px;
+      height: 58px;
+      background: #457be7;
+      transform: rotate(-45deg);
+      clip-path: polygon(100% 2%, 2% 100%, 100% 100%);
+      border-radius: 0 0 20px 0;
+    }
   }
   > .item4 {
     color: #aec8fc;
     margin-bottom: 1rem;
+    margin-top: -5px;
+  }
+  > .item5 {
     margin-top: -5px;
   }
 `;
@@ -39,6 +64,7 @@ const Units = styled.span`
 `;
 
 const Subexplain = styled.span`
+  color: #aec8fc;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
@@ -61,12 +87,28 @@ export default function ResultatLivraison(props) {
         <ActualResult>{convertGramsToKilograms(props.co2eq)}</ActualResult>
         <Units> kg de CO2e </Units>
       </div>
-      <div className="item3"></div>
+      <div className="item3">
+        <div></div>
+      </div>
       <div className="item4"></div>
       <div className="item5">
-        <Subexplain>par an</Subexplain>
+        <Subexplain>
+          <strong>par an</strong>, soit l'équivalent de
+        </Subexplain>
       </div>
       <div className="item6"></div>
+      <div className="item7">
+        <UnderstandLink>Comprendre le calcul</UnderstandLink>
+      </div>
+      <div className="item8"></div>
     </Wrapper>
   );
 }
+
+const UnderstandLink = styled.div`
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 24px;
+  margin-top: 0.5rem;
+`;
