@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   background-color: #457be7;
-  border-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
   color: white;
   display: grid;
   grid-template-columns: 30px 1fr;
