@@ -40,7 +40,7 @@ export default function ResultatLivraison(props) {
         </div>
       </BlueGrid>
       <Arrow>
-        <div className="arrow">ee</div>
+        <div className="arrow"></div>
       </Arrow>
     </Wrapper>
   );
@@ -120,6 +120,20 @@ const UnderstandLink = styled.div`
 
 const Arrow = styled.div`
   background-color: red;
+  .arrow {
+    position: relative;
+    height: 100%;
+    width: 30px;
+  }
+  .arrow:before,
+  .arrow:after {
+    background: green;
+    clip-path: polygon(25% 25%, 52.5% 49.75%, 52.5% 52.5%, 25% 75%);
+    content: "";
+    inset: 0 0 0 0;
+    position: absolute;
+    z-index: 333;
+  }
 `;
 
 const Wrapper = styled.div`
