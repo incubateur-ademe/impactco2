@@ -8,7 +8,7 @@ const getTitle = () => {
     <Title>
       Comprendre{" "}
       <GreenText>
-        L&apos;équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
+        l&apos;équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
       </GreenText>
     </Title>
   );
@@ -24,10 +24,10 @@ export default function Co2eModal2() {
         <sub>2</sub> (kgCO<sub>2</sub>e).
       </Text>
       <Text>
-        Chaque gaz à effet est de serre est ramené à un équivalent en CO
-        <sub>2</sub> selon son pouvoir de réchauffement. Par exemple, 1 kg de méthane équivaut à 28 kg de CO<sub>2</sub>{" "}
-        car il est 28 fois plus réchauffant. Si la fabrication d&apos;un produit a émis 1 kg de méthane et 1 kg de CO
-        <sub>2</sub>, alors l&apos;impact total de ce produit est de 29 kg d&apos;équivalent CO<sub>2</sub>.
+        <strong>
+          Chaque gaz à effet est de serre est ramené à un équivalent en CO
+          <sub>2</sub> selon son pouvoir de réchauffement.
+        </strong>
       </Text>
     </Modal2>
   );
@@ -37,6 +37,8 @@ const GreenText = styled.span`
   color: #1c9b93;
 `;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  margin: 1rem 0;
+`;
 
 const Text = styled.p``;
