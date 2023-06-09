@@ -17,7 +17,7 @@ const getTitle = () => {
 export default function Co2eModal2() {
   const { Co2e: open, setCo2e: setOpen } = useContext(ModalContext);
   return (
-    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle}>
+    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width="50rem">
       <Text>
         Le dérèglement climatique actuel est une conséquence de nos émissions importantes de différents gaz à effet de
         serre. Nous pouvons mesurer ces émissions avec un indice simple : les kilogrammes d&apos;équivalent CO
