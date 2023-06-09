@@ -4,17 +4,19 @@ export default function ResultatLivraison() {
   return (
     <Wrapper>
       <BlueGrid>
-        <div>
-          <ActualResult>1</ActualResult>
-          <Units> kg de méthane </Units>
-        </div>
-        <Subexplain>
-          <div>ex. : si la fabrication d'un</div>
-          <div>produit émet</div>
+        <BlueGridInsider>
           <div>
-            <strong>1kg de méthane + 1kg de CO2</strong>
+            <ActualResult>1</ActualResult>
+            <Units> kg de méthane </Units>
           </div>
-        </Subexplain>
+          <Subexplain>
+            <div>ex. : si la fabrication d'un</div>
+            <div>produit émet</div>
+            <div>
+              <strong>1kg de méthane + 1kg de CO2</strong>
+            </div>
+          </Subexplain>
+        </BlueGridInsider>
       </BlueGrid>
       <Arrow></Arrow>
     </Wrapper>
@@ -70,4 +72,12 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.xlarge} {
     flex-direction: column;
   }
+`;
+
+const BlueGridInsider = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  padding-top: 0.35rem;
+  width: 15rem;
 `;
