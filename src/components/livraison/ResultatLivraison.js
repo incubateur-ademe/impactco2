@@ -57,6 +57,15 @@ const BlueGrid = styled.div`
     border-bottom-left-radius: 0;
     border-top-right-radius: 16px;
     max-width: 100%;
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+  ${(props) => props.theme.mq.medium} {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+  ${(props) => props.theme.mq.small} {
+    padding: 0.5rem 1rem 1rem 1rem;
   }
   > .item1 {
     align-items: center;
