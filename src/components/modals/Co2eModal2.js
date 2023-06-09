@@ -1,4 +1,5 @@
 import Modal2 from "components/base/Modal2";
+import ExplainArrowContainer from "components/modals/ExplainArrowContainer.js";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -29,6 +30,7 @@ export default function Co2eModal2() {
           <sub>2</sub> selon son pouvoir de réchauffement.
         </strong>
       </Text>
+      <ExplainArrowContainer></ExplainArrowContainer>
     </Modal2>
   );
 }
@@ -41,4 +43,7 @@ const Title = styled.h2`
   margin: 1rem 0;
 `;
 
-const Text = styled.p``;
+const Text = styled.p`
+  margin-bottom: 2rem;
+  margin-top: 0;
+`;
