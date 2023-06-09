@@ -121,8 +121,17 @@ const Arrow = styled.div`
   clip-path: polygon(0% 0%, 52.5% 49.75%, 52.5% 52.5%, 0% 100%);
   height: 100%;
   width: 30px;
+  ${(props) => props.theme.mq.xlarge} {
+    clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
+    height: 30px;
+    margin-top: -1px;
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
   display: flex;
+  ${(props) => props.theme.mq.xlarge} {
+    flex-direction: column;
+  }
 `;
