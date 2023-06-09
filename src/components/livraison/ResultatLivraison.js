@@ -26,19 +26,17 @@ export default function ResultatLivraison(props) {
       <div className="item3">
         <div></div>
       </div>
-      <div className="item4"></div>
-      <div className="item5">
+      <div className="item4">
         <Subexplain>
           <strong>par an</strong>, soit l'équivalent de
         </Subexplain>
       </div>
-      <div className="item6"></div>
-      <div className="item7">
+      <div className="item5"></div>
+      <div className="item6">
         <UnderstandLink>
           <ButtonLink onClick={() => setCo2e(true)}>Comprendre le calcul</ButtonLink>
         </UnderstandLink>
       </div>
-      <div className="item8"></div>
     </Wrapper>
   );
 }
@@ -49,7 +47,7 @@ const Wrapper = styled.div`
   border-top-left-radius: 16px;
   color: white;
   display: grid;
-  grid-template-columns: 30px 1fr 30px;
+  grid-template-columns: 30px 1fr;
   max-width: 350px;
   padding: 0.5rem 1rem 1rem 1rem;
   ${(props) => props.theme.mq.xlarge} {
@@ -76,7 +74,7 @@ const Wrapper = styled.div`
   }
   > .item4 {
     color: #aec8fc;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     margin-top: -5px;
   }
   > .item5 {
@@ -108,9 +106,9 @@ const UnderstandLink = styled.div`
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 24px;
-  margin-top: 0.5rem;
   > button {
     color: white;
     text-decoration: underline;
+    text-underline-offset: 5px;
   }
 `;
