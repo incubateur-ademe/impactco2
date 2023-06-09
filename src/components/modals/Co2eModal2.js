@@ -3,16 +3,21 @@ import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import styled from "styled-components";
 
+const getTitle = () => {
+  return (
+    <Title>
+      Comprendre{" "}
+      <GreenText>
+        L&apos;équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
+      </GreenText>
+    </Title>
+  );
+};
+
 export default function Co2eModal2() {
   const { Co2e: open, setCo2e: setOpen } = useContext(ModalContext);
   return (
-    <Modal2 open={open} setOpen={setOpen}>
-      <Title>
-        Comprendre{" "}
-        <GreenText>
-          L&apos;équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
-        </GreenText>
-      </Title>
+    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle}>
       <Text>
         Le dérèglement climatique actuel est une conséquence de nos émissions importantes de différents gaz à effet de
         serre. Nous pouvons mesurer ces émissions avec un indice simple : les kilogrammes d&apos;équivalent CO
