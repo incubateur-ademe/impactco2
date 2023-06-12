@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.3.1 (12/05/2023)
+
+* U1, U2 - retours de recette
+
 ## 1.3.0 (06/05/2023)
 
 * U4 - Livraison : Calcul des équivalents CO2
