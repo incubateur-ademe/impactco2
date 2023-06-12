@@ -29,20 +29,20 @@ test("U1 - Affichage simulateur et source", async ({ page }) => {
 });
 
 test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
-  await test.step("Le produit par défaut est le produit culturel physique", async () => {
+  await test.step("Le produit par défaut est l'habillement", async () => {
     await page.goto("/livraison");
     let currentProduit = await page.$eval(
       "select#produits",
       (sel) => sel.options[sel.options.selectedIndex].textContent
     );
-    expect(currentProduit).toEqual("Produit culturel physique");
+    expect(currentProduit).toEqual("Habillement");
   });
-  await test.step("Le mode de retrait par défaut est à domicile", async () => {
+  await test.step("Le mode de retrait par défaut est le point relais", async () => {
     let currentRetrait = await page.$eval(
       "select#retraits",
       (sel) => sel.options[sel.options.selectedIndex].textContent
     );
-    expect(currentRetrait).toEqual("Livraison à domicile");
+    expect(currentRetrait).toEqual("Point relais");
   });
   await test.step("La fréquence par défaut est par mois", async () => {
     let currentFrequence = await page.$eval(
@@ -54,7 +54,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
 
   await test.step("Par défaut un calcul de CO2 est affiché", async () => {
     // Given
-    await expect(page.getByTestId("resultAsText")).toHaveText("3,17 kg de CO2e ");
+    await expect(page.getByTestId("resultAsText")).toHaveText("33,76 kg de CO2e ");
   });
 
   await test.step("Si on augmente la fréquence de livraison, on a bien une augmentation de CO2", async () => {
@@ -112,9 +112,9 @@ test("U4 - Equivalences", async ({ page }) => {
     // When
     await page.goto("/livraison");
     // Then
-    await expect(page.getByText("175 km")).toHaveCount(1);
-    await expect(page.getByText("595 heures")).toHaveCount(1);
-    await expect(page.getByText("5 repas")).toHaveCount(1);
+    await expect(page.getByText("1 862 km")).toHaveCount(1);
+    await expect(page.getByText("6 328 heures")).toHaveCount(1);
+    await expect(page.getByText("56 repas")).toHaveCount(1);
   });
   await test.step("Une modale d'explication s'affiche", async () => {
     // Given

@@ -52,8 +52,8 @@ export default function CalculateurLivraison() {
   const [cO2eq, setCO2eq] = useState(0);
 
   const [values, setValues] = useState({
-    produit: "culturel",
-    retrait: "domicile",
+    produit: "habillement",
+    retrait: "relais",
     frequence: "mois",
   });
 
