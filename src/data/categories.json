@@ -29,7 +29,7 @@
     "equivalent": "impact[s] livraison[s]",
     "gender": "m",
     "divider": 1,
-    "display": true,
+    "display": false,
     "unit": "",
     "include": "",
     "list": true,
