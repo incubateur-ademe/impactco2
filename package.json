@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "playwright test",
-    "test:watch": "playwright test --ui",
+    "test:ui": "playwright test --ui",
     "dev": "next dev",
     "build": "yarn iframe && next build",
     "postbuild": "next-sitemap",

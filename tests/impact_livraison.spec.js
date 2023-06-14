@@ -44,44 +44,26 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
     );
     expect(currentRetrait).toEqual("Point relais");
   });
-  await test.step("La fréquence par défaut est par mois", async () => {
-    let currentFrequence = await page.$eval(
-      "select#frequences",
-      (sel) => sel.options[sel.options.selectedIndex].textContent
-    );
-    expect(currentFrequence).toEqual("Mois");
-  });
 
   await test.step("Par défaut un calcul de CO2 est affiché", async () => {
     // Given
-    await expect(page.getByTestId("resultAsText")).toHaveText("33,76 kg de CO2e ");
-  });
-
-  await test.step("Si on augmente la fréquence de livraison, on a bien une augmentation de CO2", async () => {
-    // Given
-    await page.locator("select#retraits").selectOption({ label: "Livraison à domicile" });
-    await page.locator("select#frequences").selectOption({ label: "Semaine" }); // Ici
-    await page.locator("select#produits").selectOption({ label: "Produit culturel physique" });
-    // When-Then
-    await expect(page.getByTestId("resultAsText")).toHaveText("13,76 kg de CO2e ");
+    await expect(page.getByTestId("resultAsText")).toHaveText("2,81 kg de CO2e ");
   });
 
   await test.step("Si on prend un mode de retrait plus consommateur, on a bien une augmentation de CO2", async () => {
     // Given
     await page.locator("select#retraits").selectOption({ label: "Achat direct en magasin" }); // Ici
-    await page.locator("select#frequences").selectOption({ label: "Mois" });
     await page.locator("select#produits").selectOption({ label: "Produit culturel physique" });
     // When-Then
-    await expect(page.getByTestId("resultAsText")).toHaveText("52,98 kg de CO2e ");
+    await expect(page.getByTestId("resultAsText")).toHaveText("4,41 kg de CO2e ");
   });
 
   await test.step("Si on prend un colis volumineux, on a bien une augmentation de CO2", async () => {
     // Given
     await page.locator("select#retraits").selectOption({ label: "Livraison à domicile" });
-    await page.locator("select#frequences").selectOption({ label: "Mois" });
     await page.locator("select#produits").selectOption({ label: "Bien d'équipement volumineux" }); // Ici
     // When-Then
-    await expect(page.getByTestId("resultAsText")).toHaveText("843,19 kg de CO2e ");
+    await expect(page.getByTestId("resultAsText")).toHaveText("70,27 kg de CO2e ");
   });
 
   await test.step("La liste déroulante “Vous commandez en majorité” a bien les options “Produits de grande consommation”, “Habillement”, “Produits culturel physique”, “bien d’équipement volumineux”, et “autre”", async () => {
@@ -97,13 +79,6 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
     await page.locator("select#retraits").selectOption({ label: "Click & collect" });
     await page.locator("select#retraits").selectOption({ label: "Achat direct en magasin" });
   });
-
-  await test.step("La fréquence est par jour, semaine, mois ou année", async () => {
-    await page.locator("select#frequences").selectOption({ label: "Jour" });
-    await page.locator("select#frequences").selectOption({ label: "Semaine" });
-    await page.locator("select#frequences").selectOption({ label: "Mois" });
-    await page.locator("select#frequences").selectOption({ label: "Année" });
-  });
 });
 
 test("U4 - Equivalences", async ({ page }) => {
@@ -112,9 +87,9 @@ test("U4 - Equivalences", async ({ page }) => {
     // When
     await page.goto("/livraison");
     // Then
-    await expect(page.getByText("1 862 km")).toHaveCount(1);
-    await expect(page.getByText("6 328 heures")).toHaveCount(1);
-    await expect(page.getByText("56 repas")).toHaveCount(1);
+    await expect(page.getByText("en voiture")).toHaveCount(1);
+    await expect(page.getByText("de streaming vidéo")).toHaveCount(1);
+    await expect(page.getByText("avec du boeuf")).toHaveCount(1);
   });
   await test.step("Une modale d'explication s'affiche", async () => {
     // Given

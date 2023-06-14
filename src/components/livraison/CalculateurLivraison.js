@@ -1,8 +1,7 @@
 import ResultatsLivraison from "./ResultatsLivraison";
-import SelectFrequences from "./SelectFrequences";
 import SelectProduits from "./SelectProduits";
 import SelectRetraits from "./SelectRetraits";
-import { frequences, produits, retraits } from "./data.js";
+import { produits, retraits } from "./data.js";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
 import React, { useContext, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -58,7 +57,6 @@ export default function CalculateurLivraison() {
   });
 
   const calculateResult = (v) => {
-    let freqMultBy = frequences.find((f) => f.uid === v.frequence).mult;
     let produitCode = produits.find((p) => p.uid === v.produit).publicode;
     let retraitCode = retraits.find((r) => r.uid === v.retrait).publicode;
 
@@ -68,7 +66,7 @@ export default function CalculateurLivraison() {
     };
 
     engine.setSituation(newSituation);
-    setCO2eq(engine.evaluate("livraison colis").nodeValue * freqMultBy);
+    setCO2eq(engine.evaluate("livraison colis").nodeValue);
   };
 
   useMemo(() => {
@@ -88,12 +86,6 @@ export default function CalculateurLivraison() {
     setValues(localValues);
   };
 
-  const changeFrequence = (frequence) => {
-    let localValues = clonedValues();
-    localValues.frequence = frequence.uid;
-    setValues(localValues);
-  };
-
   const clonedValues = () => {
     return JSON.parse(JSON.stringify(values));
   };
@@ -105,9 +97,8 @@ export default function CalculateurLivraison() {
       <DropList>
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
-        <SelectFrequences changeFrequence={changeFrequence} value={values.frequence} />
       </DropList>
-      <ResultatsLivraison co2eq={cO2eq} freqMultBy={frequences.find((f) => f.uid === values.frequence).mult} />
+      <ResultatsLivraison co2eq={cO2eq} />
     </>
   );
 }
