@@ -1,3 +1,4 @@
+import OptionalKm from "./OptionalKm";
 import OptionalRelay from "./OptionalRelay";
 import ResultatsLivraison from "./ResultatsLivraison";
 import SelectProduits from "./SelectProduits";
@@ -62,6 +63,7 @@ export default function CalculateurLivraison() {
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
       <OptionalRelay displayOption={displayOption}></OptionalRelay>
+      <OptionalKm displayOption={displayOption}></OptionalKm>
       <ResultatsLivraison co2eq={cO2eq} />
     </>
   );

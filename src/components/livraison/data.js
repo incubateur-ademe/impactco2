@@ -43,3 +43,9 @@ export const relays = [
   { displayed: "En vélo", uid: "magasin", publicode: "" },
   { displayed: "En transport en commun", uid: "transport", publicode: "" },
 ];
+
+export const trajs = [
+  { displayed: "Domicile-Travail", uid: "dom_tra", publicode: "" },
+  { displayed: "Point de retrait-domicile", uid: "ret_dom", publicode: "" },
+  { displayed: "Domicile-magasin de proximité ", uid: "dom_mag", publicode: "" },
+];
