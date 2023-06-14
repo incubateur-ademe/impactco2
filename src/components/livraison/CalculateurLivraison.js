@@ -90,6 +90,7 @@ const DropList = styled.div`
   border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  position: relative;
   > div > label {
     color: #746770;
     font-size: 14px;
