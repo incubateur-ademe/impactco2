@@ -3,7 +3,7 @@ import Select from "components/base/Select";
 import styled from "styled-components";
 
 const StyledSelect = styled(Select)`
-  margin: 1rem;
+  margin: 0;
   > select {
     border: none;
   }

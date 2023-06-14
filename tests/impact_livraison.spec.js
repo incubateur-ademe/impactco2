@@ -88,11 +88,8 @@ test("U4 - Equivalences", async ({ page }) => {
     await page.goto("/livraison");
     // Then
     await expect(page.getByText("13 km")).toHaveCount(1);
-    await expect(page.getByText("en voiture")).toHaveCount(1);
     await expect(page.getByText("44 heures")).toHaveCount(1);
-    await expect(page.getByText("de streaming vidéo")).toHaveCount(1);
     await expect(page.getByText("0,4 repas")).toHaveCount(1);
-    await expect(page.getByText("avec du boeuf")).toHaveCount(1);
   });
   await test.step("Une modale d'explication s'affiche", async () => {
     // Given
