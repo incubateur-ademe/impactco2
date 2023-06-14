@@ -53,7 +53,6 @@ export default function CalculateurLivraison() {
   const [values, setValues] = useState({
     produit: "habillement",
     retrait: "relais",
-    frequence: "mois",
   });
 
   const calculateResult = (v) => {

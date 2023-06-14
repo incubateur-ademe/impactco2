@@ -35,7 +35,7 @@ export default function ResultatsLivraison(props) {
           return a.category < b.category;
         })
         .map((equivalent) => (
-          <LivraisonEq key={equivalent.slug} equivalent={equivalent} weight={(props.co2eq / 1000) * props.freqMultBy} />
+          <LivraisonEq key={equivalent.slug} equivalent={equivalent} weight={props.co2eq / 1000} />
         ))}
     </Wrapper>
   );

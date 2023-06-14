@@ -29,7 +29,10 @@ export default function ResultatLivraison(props) {
         </div>
         <div className="item4">
           <Subexplain>
-            <strong>par an</strong>, soit l'équivalent de
+            <div>
+              <strong>par livraison</strong>,
+            </div>
+            <div>soit l'équivalent de</div>
           </Subexplain>
         </div>
         <div className="item5"></div>
