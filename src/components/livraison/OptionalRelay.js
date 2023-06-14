@@ -33,6 +33,7 @@ const GridContainer = styled.div`
 
 const Wrapper = styled.div`
   background-color: #f9f7f8;
+  padding: 0.5rem 1rem;
 `;
 
 const Text = styled.div`
