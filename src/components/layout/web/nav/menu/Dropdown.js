@@ -4,6 +4,12 @@ import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
+  ${(props) => props.theme.mq.small} {
+    margin-right: 0.25rem;
+  }
+  ${(props) => props.theme.mq[props.hideon]} {
+    display: none;
+  }
   margin-right: 1.25rem;
   position: relative;
 `
@@ -18,6 +24,9 @@ const List = styled.div`
   z-index: 12;
 `
 const ButtonDropdown = styled.button`
+  ${(props) => props.theme.mq.small} {
+    padding: 0;
+  }
   align-items: center;
   background-color: ${(props) =>
     props.open ? props.theme.colors.mainLight : 'transparent'};
@@ -72,7 +81,7 @@ export default function Dropdown(props) {
   }, [])
 
   return (
-    <Wrapper>
+    <Wrapper hideon={props.hideon}>
       <ButtonDropdown
         to={props.to}
         onClick={(e) => {

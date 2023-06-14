@@ -5,17 +5,21 @@ import styled from 'styled-components'
 import DataContext from 'components/providers/DataProvider'
 
 import Emoji from 'components/base/Emoji'
+import ThemeToggle2 from 'components/layout/web/header/ThemeToggle2.js'
+import SearchBar2 from 'components/misc/search/SearchBar2'
 
 import Dropdown from './menu/Dropdown'
 
 const Wrapper = styled.nav`
   display: flex;
-  margin-left: -1.5rem;
+  justify-content: flex-end;
 `
+
 const StyledEmoji = styled(Emoji)`
   font-size: 1.25rem;
   margin: 0 0.25rem 0.25rem 0;
 `
+
 export default function Menu() {
   const { categories } = useContext(DataContext)
 
@@ -45,8 +49,10 @@ export default function Menu() {
         label={'Convertisseur'}
         to='/convertisseur'
         current={slugs.includes('convertisseur')}
-        hideon={'never'}
+        hideon={'large'}
       />
+      <SearchBar2 hideon={'large'} />
+      <ThemeToggle2 hideon={'small'} />
     </Wrapper>
   )
 }
