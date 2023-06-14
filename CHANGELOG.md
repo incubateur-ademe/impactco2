@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.4.0 (15/05/2023)
+
+* U3 - options dans le simulateur
+
 ## 1.4.0 (14/05/2023)
 
 * U13 - impact à l'année
