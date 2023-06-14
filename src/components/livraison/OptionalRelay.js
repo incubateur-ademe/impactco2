@@ -38,8 +38,11 @@ const GridContainer = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: #f9f7f8;
+  background-color: ${(props) => props.theme.colors.textLight};
+  margin-top: -10px;
   padding: 0.5rem 1rem;
+  position: relative;
+  z-index: -1;
 `;
 
 const Text = styled.div`

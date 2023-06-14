@@ -83,6 +83,7 @@ const Subtitle = styled.p`
 `;
 
 const DropList = styled.div`
+  background-color: ${(props) => props.theme.colors.background};
   border: 1px solid #e2dce0;
   border-radius: 16px;
   display: grid;
