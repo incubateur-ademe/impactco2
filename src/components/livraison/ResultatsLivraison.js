@@ -5,7 +5,6 @@ import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
 
 export default function ResultatsLivraison(props) {
-  console.log("props.co2eq", props.co2eq);
   const { equivalents } = useContext(DataContext);
   const equivalentsToShow = useMemo(
     () =>

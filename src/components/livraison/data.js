@@ -35,3 +35,11 @@ export const retraits = [
     publicode: "magasin traditionnel",
   },
 ];
+
+export const relays = [
+  { displayed: "En voiture thermique", uid: "voiture_thermique", publicode: "" },
+  { displayed: "En voiture électrique", uid: "voiture_electrique", publicode: "" },
+  { displayed: "Marche", uid: "marche", publicode: "" },
+  { displayed: "En vélo", uid: "magasin", publicode: "" },
+  { displayed: "En transport en commun", uid: "transport", publicode: "" },
+];
