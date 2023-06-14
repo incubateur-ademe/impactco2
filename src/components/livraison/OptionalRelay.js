@@ -11,8 +11,10 @@ export default function OptionalRelay(props) {
 }
 
 const Wrapper = styled.div`
+  align-items: center;
   background-color: #f9f7f8;
   display: flex;
+  justify-content: left;
 `;
 
 const Text = styled.div`
