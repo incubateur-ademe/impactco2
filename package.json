@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
+    "test": "playwright test",
+    "test:watch": "playwright test --ui",
     "dev": "next dev",
     "build": "yarn iframe && next build",
     "postbuild": "next-sitemap",
@@ -38,6 +40,7 @@
     "react-share": "^4.4.1",
     "react-slick": "^0.29.0",
     "react-switch": "^7.0.0",
+    "react-toggle-dark-mode": "^1.1.1",
     "react-tooltip": "^5.7.5",
     "react-use-query-param-string": "^2.0.10",
     "sib-api-v3-sdk": "^8.5.0",
@@ -48,7 +51,9 @@
     "use-query-params": "^2.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.33.0",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "babel-plugin-tailwind-components": "^0.5.10",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "eslint-config-prettier": "^8.6.0",

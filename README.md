@@ -41,7 +41,7 @@ L’organisation du développement suit le workflow [Gitflow](https://www.atlass
 
 ## Architecture 🏛️
 
-Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/), [React Query](https://react-query-v3.tanstack.com/) et [Styled Components](https://styled-components.com/). Le state est simplement géré par [Context](https://reactjs.org/docs/context.html).
+Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/), [React Query](https://tanstack.com/query/v4) et [Styled Components](https://styled-components.com/). Le state est simplement géré par [Context](https://react.dev/learn/passing-data-deeply-with-context).
 
 Le repo est architecturé avec les dossiers suivants :
 

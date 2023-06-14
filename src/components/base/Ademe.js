@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.svg`
   display: block;
-  height: 5.746875em;
+  height: 4.746875em;
   padding: 0.75em;
   width: auto;
 `

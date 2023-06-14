@@ -24,9 +24,13 @@ export const themes = {
       title: '"Marianne", Arial, sans-serif',
     },
     mq: {
+      never: `@media screen and (max-width: ${0}em)`, // HACK
+      xsmall: `@media screen and (max-width: ${30}em)`,
       small: `@media screen and (max-width: ${36}em)`,
       iframemedium: `@media screen and (max-width: ${42}em)`,
       medium: `@media screen and (max-width: ${48}em)`,
+      large: `@media screen and (max-width: ${60}em)`,
+      xlarge: `@media screen and (max-width: ${72}em)`,
     },
   },
   night: {
@@ -49,8 +53,13 @@ export const themes = {
       title: '"Marianne", Arial, sans-serif',
     },
     mq: {
+      never: `@media screen and (max-width: ${0}em)`, // HACK
+      xsmall: `@media screen and (max-width: ${30}em)`,
       small: `@media screen and (max-width: ${36}em)`,
+      iframemedium: `@media screen and (max-width: ${42}em)`,
       medium: `@media screen and (max-width: ${48}em)`,
+      large: `@media screen and (max-width: ${60}em)`,
+      xlarge: `@media screen and (max-width: ${72}em)`,
     },
   },
 }
@@ -94,6 +103,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
+    -webkit-font-smoothing: antialiased;
   } 
 
   *, *:before, *:after {
