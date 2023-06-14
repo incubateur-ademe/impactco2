@@ -31,10 +31,10 @@ const GridContainer = styled.div`
     align-items: center;
     display: flex;
   }
-
   .item2 {
     padding-left: 1rem;
   }
+  padding-top: 5px;
 `;
 
 const Wrapper = styled.div`
