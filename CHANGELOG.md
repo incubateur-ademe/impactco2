@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.4.0 (14/05/2023)
+
+* U13 - impact à l'année
+
 ## 1.3.1 (12/05/2023)
 
 * U1, U2 - retours de recette
