@@ -1,4 +1,5 @@
 import SelectTrajs from "./SelectTrajs";
+import { convertGramsToKilograms } from "./utils";
 import styled from "styled-components";
 
 export default function OptionalTraj(props) {
@@ -7,7 +8,13 @@ export default function OptionalTraj(props) {
       <GridContainer>
         <div className="item1">
           <Text>Je parcours une distance de&nbsp;</Text>
-          <Input type="number" value={props.km} onChange={(e) => props.changeKm(e.target.value)}></Input>
+          <Input
+            type="number"
+            value={props.km}
+            onChange={(e) => props.changeKm(e.target.value)}
+            min="0"
+            step="1"
+          ></Input>
           <Text>&nbsp;km pour un trajet dédié</Text>
         </div>
         <div className="item2">
@@ -16,7 +23,7 @@ export default function OptionalTraj(props) {
         <div className="item3"></div>
         <div className="item4">
           <Addendum>
-            <span className="plus">+</span> 0 kg de CO2e
+            <span className="plus">+</span> {convertGramsToKilograms(props.diffKm0)} kg de CO2e
           </Addendum>
         </div>
       </GridContainer>

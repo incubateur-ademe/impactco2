@@ -3,6 +3,7 @@ import OptionalTraj from "./OptionalTraj";
 import ResultatsLivraison from "./ResultatsLivraison";
 import SelectProduits from "./SelectProduits";
 import SelectRetraits from "./SelectRetraits";
+import { calculateResultFunction } from "./calculateur_livraison_funtions.js";
 import { produits, retraits } from "./data.js";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
 import React, { useContext, useMemo, useState } from "react";
@@ -22,22 +23,16 @@ export default function CalculateurLivraison() {
     km: "7",
   });
 
-  const calculateResult = (vs = values, ps = produits, rs = retraits, ng = engine) => {
-    let produitCode = ps.find((p) => p.uid === vs.produit).publicode;
-    let retraitCode = rs.find((r) => r.uid === vs.retrait).publicode;
+  const [diffs, setDiffs] = useState({
+    diffKm0: 0,
+  });
 
-    let newSituation = {
-      "livraison colis . informations . catégorie": `'${produitCode}'`,
-      "livraison colis . scénario": `'${retraitCode}'`,
-      "livraison colis . déplacement consommateur . distance": `'${vs.km}'`,
-    };
-
-    ng.setSituation(newSituation);
-    setCO2eq(ng.evaluate("livraison colis").nodeValue);
+  const calculateResult = () => {
+    calculateResultFunction(values, produits, retraits, engine, diffs, setDiffs, setCO2eq);
   };
 
   useMemo(() => {
-    calculateResult(values);
+    calculateResult();
     setShowOptional(values.retrait === "relais");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
@@ -86,6 +81,7 @@ export default function CalculateurLivraison() {
         changeKm={changeKm}
         changeTraj={changeTraj}
         value={values.traj}
+        diffKm0={diffs.diffKm0}
       ></OptionalTraj>
       <ResultatsLivraison co2eq={cO2eq} />
     </>
