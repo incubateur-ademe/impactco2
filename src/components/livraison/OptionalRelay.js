@@ -14,7 +14,7 @@ export default function OptionalRelay(props) {
         <div className="item3"></div>
         <div className="item4">
           <Addendum>
-            <span className="plus">+</span> 0 kg de CO2e
+            <span className="plus">+</span> {props.diffRelay} kg de CO2e
           </Addendum>
         </div>
       </GridContainer>

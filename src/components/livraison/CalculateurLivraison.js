@@ -29,8 +29,7 @@ export default function CalculateurLivraison() {
     diffRelay: 0,
   });
 
-  const calculateResult = () =>
-    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq);
+  const calculateResult = () => calculateResultFunction(values, produits, retraits, relays, engine, setDiffs, setCO2eq);
 
   useMemo(() => {
     calculateResult();
@@ -53,7 +52,12 @@ export default function CalculateurLivraison() {
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
       <Hideable></Hideable>
-      <OptionalRelay show={showOptional} changeRelay={changeRelay} value={values.relay}></OptionalRelay>
+      <OptionalRelay
+        show={showOptional}
+        changeRelay={changeRelay}
+        value={values.relay}
+        diffRelay={diffs.diffRelay}
+      ></OptionalRelay>
       <OptionalTraj
         show={showOptional}
         km={values.km}

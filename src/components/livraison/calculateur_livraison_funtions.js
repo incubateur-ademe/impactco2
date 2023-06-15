@@ -1,4 +1,4 @@
-export const calculateResultFunction = (values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq) => {
+export const calculateResultFunction = (values, produits, retraits, relays, engine, setDiffs, setCO2eq) => {
   let produitCode = produits.find((p) => p.uid === values.produit).publicode;
   let retraitCode = retraits.find((r) => r.uid === values.retrait).publicode;
   let relayCode = relays.find((r) => r.uid === values.relay).publicode;
