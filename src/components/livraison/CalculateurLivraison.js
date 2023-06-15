@@ -9,6 +9,7 @@ import React, { useContext, useMemo, useState } from "react";
 import styled from "styled-components";
 
 export default function CalculateurLivraison() {
+  // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison);
 
   const [cO2eq, setCO2eq] = useState(0);
@@ -21,17 +22,18 @@ export default function CalculateurLivraison() {
     km: "7",
   });
 
-  const calculateResult = (v) => {
-    let produitCode = produits.find((p) => p.uid === v.produit).publicode;
-    let retraitCode = retraits.find((r) => r.uid === v.retrait).publicode;
+  const calculateResult = (vs = values, ps = produits, rs = retraits, ng = engine) => {
+    let produitCode = ps.find((p) => p.uid === vs.produit).publicode;
+    let retraitCode = rs.find((r) => r.uid === vs.retrait).publicode;
 
     let newSituation = {
       "livraison colis . informations . catégorie": `'${produitCode}'`,
       "livraison colis . scénario": `'${retraitCode}'`,
+      "livraison colis . déplacement consommateur . distance": `'${vs.km}'`,
     };
 
-    engine.setSituation(newSituation);
-    setCO2eq(engine.evaluate("livraison colis").nodeValue);
+    ng.setSituation(newSituation);
+    setCO2eq(ng.evaluate("livraison colis").nodeValue);
   };
 
   useMemo(() => {
