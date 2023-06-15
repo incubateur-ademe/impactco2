@@ -6,7 +6,9 @@ export default function OptionalTraj(props) {
     <Wrapper>
       <GridContainer>
         <div className="item1">
-          <Text>Je parcours une distance de</Text>
+          <Text>Je parcours une distance de&nbsp;</Text>
+          <Input type="number"></Input>
+          <Text>&nbsp;km pour un trajet dédié</Text>
         </div>
         <div className="item2">
           <SelectTrajs changeRelay={props.changeRelay}></SelectTrajs>
@@ -60,4 +62,13 @@ const Addendum = styled.div`
   > .plus {
     font-size: 28px;
   }
+`;
+
+const Input = styled.input`
+  border-color: ${(props) => props.theme.colors.text};
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  text-align: right;
+  width: 2rem;
 `;
