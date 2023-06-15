@@ -37,11 +37,7 @@ export default function CalculateurLivraison() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
-  const changeProduit = (produit) => {
-    let localValues = clonedValues();
-    localValues.produit = produit.uid;
-    setValues(localValues);
-  };
+  const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
 
   const changeRetrait = (retrait) => {
     let localValues = clonedValues();
