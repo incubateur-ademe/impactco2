@@ -2,39 +2,32 @@ export const calculateResultFunction = (values, produits, retraits, relays, engi
   let produitCode = produits.find((p) => p.uid === values.produit).publicode;
   let retraitCode = retraits.find((r) => r.uid === values.retrait).publicode;
   let relayCode = relays.find((r) => r.uid === values.relay).publicode;
+  console.log("relayCode", relayCode);
 
-  const baseSituation = {
+  const produitsEtRetraits = {
     "livraison colis . informations . catégorie": `'${produitCode}'`,
     "livraison colis . scénario": `'${retraitCode}'`,
-    "livraison colis . déplacement consommateur . distance": `'0'`,
     "livraison colis . déplacement consommateur . mode de déplacement": `'marche'`,
   };
-  let baseCO2 = engine.evaluate("livraison colis").nodeValue;
+
+  let newSituation0km = {
+    ...produitsEtRetraits,
+    "livraison colis . déplacement consommateur . distance": `'0'`,
+  };
 
   let newSituationWithKm = {
-    ...baseSituation,
+    ...produitsEtRetraits,
     "livraison colis . déplacement consommateur . distance": `'${values.km}'`,
   };
+
+  engine.setSituation(newSituation0km);
+  let zeroKmCO2 = engine.evaluate("livraison colis").nodeValue;
+  console.log("zeroKmCO2", zeroKmCO2);
+
   engine.setSituation(newSituationWithKm);
-  let addedCO2 = engine.evaluate("livraison colis").nodeValue;
+  let actualKmCO2 = engine.evaluate("livraison colis").nodeValue;
+  console.log("actualKmCO2", actualKmCO2);
 
-  let newSituationWithRelay = {
-    ...baseSituation,
-    "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
-  };
-  engine.setSituation(newSituationWithRelay);
-  let addedRelay = engine.evaluate("livraison colis").nodeValue;
-
-  setDiffs({ ...diffs, diffRelay: addedRelay - baseCO2, diffKm0: addedCO2 - baseCO2 });
-
-  const fullSituation = {
-    "livraison colis . informations . catégorie": `'${produitCode}'`,
-    "livraison colis . scénario": `'${retraitCode}'`,
-    "livraison colis . déplacement consommateur . distance": `'${values.km}'`,
-    "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
-  };
-
-  engine.setSituation(fullSituation);
-  console.log("fullSituation", fullSituation);
+  setDiffs({ ...diffs, diffKm0: actualKmCO2 - zeroKmCO2 });
   setCO2eq(engine.evaluate("livraison colis").nodeValue);
 };
