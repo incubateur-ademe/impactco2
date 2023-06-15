@@ -27,9 +27,7 @@ export default function CalculateurLivraison() {
     diffKm0: 0,
   });
 
-  const calculateResult = () => {
-    calculateResultFunction(values, produits, retraits, engine, diffs, setDiffs, setCO2eq);
-  };
+  const calculateResult = () => calculateResultFunction(values, produits, retraits, engine, diffs, setDiffs, setCO2eq);
 
   useMemo(() => {
     calculateResult();
@@ -38,28 +36,9 @@ export default function CalculateurLivraison() {
   }, [values]);
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
-
-  const changeRetrait = (retrait) => {
-    let localValues = clonedValues();
-    localValues.retrait = retrait.uid;
-    setValues(localValues);
-  };
-
-  const changeTraj = (traj) => {
-    let localValues = clonedValues();
-    localValues.traj = traj.uid;
-    setValues(localValues);
-  };
-
-  const changeKm = (km) => {
-    let localValues = clonedValues();
-    localValues.km = km;
-    setValues(localValues);
-  };
-
-  const clonedValues = () => {
-    return JSON.parse(JSON.stringify(values));
-  };
+  const changeRetrait = (retrait) => setValues({ ...values, retrait: retrait.uid });
+  const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
+  const changeKm = (km) => setValues({ ...values, km: km });
 
   return (
     <>
