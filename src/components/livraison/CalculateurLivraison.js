@@ -55,15 +55,12 @@ export default function CalculateurLivraison() {
   const changeTraj = (traj) => {
     let localValues = clonedValues();
     localValues.traj = traj.uid;
-    console.log("localValues", localValues);
     setValues(localValues);
   };
 
   const changeKm = (km) => {
-    console.log("km", km);
     let localValues = clonedValues();
     localValues.km = km;
-    console.log("localValues", localValues);
     setValues(localValues);
   };
 
