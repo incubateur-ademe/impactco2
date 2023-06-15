@@ -2,8 +2,9 @@ import SelectRelays from "./SelectRelays";
 import styled from "styled-components";
 
 export default function OptionalRelay(props) {
+  console.log("props", props);
   return (
-    <Wrapper>
+    <Wrapper show={props.displayOption}>
       <GridContainer>
         <div className="item1">
           <Text>Vous effectuez généralement le trajet jusqu'au point relais</Text>
@@ -39,6 +40,7 @@ const GridContainer = styled.div`
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight};
+  display: ${(props) => (props.show ? "block" : "none")};
   margin-top: -10px;
   padding: 0.5rem 1rem;
   z-index: -1;

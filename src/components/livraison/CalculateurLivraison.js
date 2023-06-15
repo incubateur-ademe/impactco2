@@ -13,7 +13,6 @@ export default function CalculateurLivraison() {
 
   const [cO2eq, setCO2eq] = useState(0);
   const [displayOption, setDisplayOption] = useState(true);
-  console.log("setDisplayOption", setDisplayOption);
 
   const [values, setValues] = useState({
     produit: "habillement",
@@ -35,6 +34,9 @@ export default function CalculateurLivraison() {
 
   useMemo(() => {
     calculateResult(values);
+    setDisplayOption(values.retrait === "relais");
+    console.log('values.retrait === "relais"', values.retrait === "relais");
+    console.log("values.retrait", values.retrait);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
@@ -47,6 +49,7 @@ export default function CalculateurLivraison() {
   const changeRetrait = (retrait) => {
     let localValues = clonedValues();
     localValues.retrait = retrait.uid;
+    console.log("retrait", retrait);
     setValues(localValues);
   };
 
@@ -62,6 +65,7 @@ export default function CalculateurLivraison() {
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
+      <Hideable></Hideable>
       <OptionalRelay displayOption={displayOption}></OptionalRelay>
       <OptionalTraj displayOption={displayOption}></OptionalTraj>
       <ResultatsLivraison co2eq={cO2eq} />
@@ -109,3 +113,5 @@ const DropList = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
+
+const Hideable = styled.div``;
