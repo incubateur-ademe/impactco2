@@ -28,6 +28,15 @@ export const calculateResultFunction = (values, produits, retraits, relays, engi
   let actualKmCO2 = engine.evaluate("livraison colis").nodeValue;
   console.log("actualKmCO2", actualKmCO2);
 
+  let newSituationRelay = {
+    ...produitsEtRetraits,
+    "livraison colis . déplacement consommateur . distance": `'${values.km}'`,
+    "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
+  };
+  engine.setSituation(newSituationRelay);
+  let actualRelay = engine.evaluate("livraison colis").nodeValue;
+  console.log("actualRelay", actualRelay);
+
   setDiffs({ ...diffs, diffKm0: actualKmCO2 - zeroKmCO2 });
   setCO2eq(engine.evaluate("livraison colis").nodeValue);
 };
