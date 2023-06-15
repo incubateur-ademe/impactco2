@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function OptionalTraj(props) {
   return (
-    <Wrapper>
+    <Wrapper show={props.displayOption}>
       <GridContainer>
         <div className="item1">
           <Text>Je parcours une distance de&nbsp;</Text>
@@ -41,6 +41,7 @@ const GridContainer = styled.div`
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight};
+  display: ${(props) => (props.show ? "block" : "none")};
   margin-top: -10px;
   padding: 0.5rem 1rem;
   z-index: -1;

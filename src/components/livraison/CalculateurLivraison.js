@@ -35,8 +35,6 @@ export default function CalculateurLivraison() {
   useMemo(() => {
     calculateResult(values);
     setDisplayOption(values.retrait === "relais");
-    console.log('values.retrait === "relais"', values.retrait === "relais");
-    console.log("values.retrait", values.retrait);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
@@ -66,8 +64,8 @@ export default function CalculateurLivraison() {
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
       <Hideable></Hideable>
-      <OptionalRelay displayOption={displayOption}></OptionalRelay>
-      <OptionalTraj displayOption={displayOption}></OptionalTraj>
+      <OptionalRelay show={displayOption}></OptionalRelay>
+      <OptionalTraj show={displayOption}></OptionalTraj>
       <ResultatsLivraison co2eq={cO2eq} />
     </>
   );

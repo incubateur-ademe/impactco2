@@ -2,9 +2,8 @@ import SelectRelays from "./SelectRelays";
 import styled from "styled-components";
 
 export default function OptionalRelay(props) {
-  console.log("props", props);
   return (
-    <Wrapper show={props.displayOption}>
+    <Wrapper show={props.show}>
       <GridContainer>
         <div className="item1">
           <Text>Vous effectuez généralement le trajet jusqu'au point relais</Text>
