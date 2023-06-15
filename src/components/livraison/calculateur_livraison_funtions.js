@@ -1,28 +1,41 @@
-export const calculateResultFunction = (values, produits, retraits, engine, diffs, setDiffs, setCO2eq) => {
+export const calculateResultFunction = (values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq) => {
   let produitCode = produits.find((p) => p.uid === values.produit).publicode;
   let retraitCode = retraits.find((r) => r.uid === values.retrait).publicode;
+  let relayCode = relays.find((r) => r.uid === values.relay).publicode;
 
-  const produitsEtRetraits = {
-    "livraison colis . informations . catégorie": `'${produitCode}'`,
-    "livraison colis . scénario": `'${retraitCode}'`,
-  };
-
-  let newSituation0km = {
-    ...produitsEtRetraits,
-    "livraison colis . déplacement consommateur . distance": `'0'`,
-  };
+  const zeroAddendumProps = getProps(produitCode, retraitCode, "marche", "0");
 
   let newSituationWithKm = {
-    ...produitsEtRetraits,
+    ...zeroAddendumProps,
     "livraison colis . déplacement consommateur . distance": `'${values.km}'`,
   };
+  let newSituationWithRelay = {
+    ...zeroAddendumProps,
+    "livraison colis . déplacement consommateur": `'${relayCode}'`,
+  };
 
-  engine.setSituation(newSituation0km);
-  let zeroKmCO2 = engine.evaluate("livraison colis").nodeValue;
+  engine.setSituation(zeroAddendumProps);
+  let zeroAddendumValue = engine.evaluate("livraison colis").nodeValue;
 
   engine.setSituation(newSituationWithKm);
   let actualKmCO2 = engine.evaluate("livraison colis").nodeValue;
 
-  setDiffs({ ...diffs, diffKm0: actualKmCO2 - zeroKmCO2 });
+  engine.setSituation(newSituationWithRelay);
+  let actualRelayCO2 = engine.evaluate("livraison colis").nodeValue;
+
+  setDiffs({ diffRelay: actualRelayCO2 - zeroAddendumValue, diffKm0: actualKmCO2 - zeroAddendumValue });
+
+  let fullAddendumProps = getProps(produitCode, retraitCode, relayCode, values.km);
+
+  engine.setSituation(fullAddendumProps);
   setCO2eq(engine.evaluate("livraison colis").nodeValue);
+};
+
+const getProps = (produitCode, retraitCode, relay, km) => {
+  return {
+    "livraison colis . informations . catégorie": `'${produitCode}'`,
+    "livraison colis . scénario": `'${retraitCode}'`,
+    "livraison colis . déplacement consommateur": `'${relay}'`,
+    "livraison colis . déplacement consommateur . distance": `'${km}'`,
+  };
 };

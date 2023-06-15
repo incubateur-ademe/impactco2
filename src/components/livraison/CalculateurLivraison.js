@@ -4,7 +4,7 @@ import ResultatsLivraison from "./ResultatsLivraison";
 import SelectProduits from "./SelectProduits";
 import SelectRetraits from "./SelectRetraits";
 import { calculateResultFunction } from "./calculateur_livraison_funtions.js";
-import { produits, retraits } from "./data.js";
+import { produits, retraits, relays } from "./data.js";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
 import React, { useContext, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -26,9 +26,11 @@ export default function CalculateurLivraison() {
 
   const [diffs, setDiffs] = useState({
     diffKm0: 0,
+    diffRelay: 0,
   });
 
-  const calculateResult = () => calculateResultFunction(values, produits, retraits, engine, diffs, setDiffs, setCO2eq);
+  const calculateResult = () =>
+    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq);
 
   useMemo(() => {
     calculateResult();
