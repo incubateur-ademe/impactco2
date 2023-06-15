@@ -1,7 +1,7 @@
 
 # CHANGELOG
 
-## 1.4.0 (15/05/2023)
+## 1.5.0 (15/05/2023)
 
 * U3 - options dans le simulateur
 
