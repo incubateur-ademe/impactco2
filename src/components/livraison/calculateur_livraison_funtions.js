@@ -1,41 +1,40 @@
-export const calculateResultFunction = (values, produits, retraits, relays, engine, setDiffs, setCO2eq) => {
+export const calculateResultFunction = (values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq) => {
   let produitCode = produits.find((p) => p.uid === values.produit).publicode;
   let retraitCode = retraits.find((r) => r.uid === values.retrait).publicode;
   let relayCode = relays.find((r) => r.uid === values.relay).publicode;
 
-  const zeroAddendumProps = getProps(produitCode, retraitCode, "marche", "0");
-
-  let newSituationWithKm = {
-    ...zeroAddendumProps,
-    "livraison colis . déplacement consommateur . distance": `'${values.km}'`,
-  };
-  let newSituationWithRelay = {
-    ...zeroAddendumProps,
-    "livraison colis . déplacement consommateur": `'${relayCode}'`,
-  };
-
-  engine.setSituation(zeroAddendumProps);
-  let zeroAddendumValue = engine.evaluate("livraison colis").nodeValue;
-
-  engine.setSituation(newSituationWithKm);
-  let actualKmCO2 = engine.evaluate("livraison colis").nodeValue;
-
-  engine.setSituation(newSituationWithRelay);
-  let actualRelayCO2 = engine.evaluate("livraison colis").nodeValue;
-
-  setDiffs({ diffRelay: actualRelayCO2 - zeroAddendumValue, diffKm0: actualKmCO2 - zeroAddendumValue });
-
-  let fullAddendumProps = getProps(produitCode, retraitCode, relayCode, values.km);
-
-  engine.setSituation(fullAddendumProps);
-  setCO2eq(engine.evaluate("livraison colis").nodeValue);
-};
-
-const getProps = (produitCode, retraitCode, relay, km) => {
-  return {
+  const baseSituation = {
     "livraison colis . informations . catégorie": `'${produitCode}'`,
     "livraison colis . scénario": `'${retraitCode}'`,
-    "livraison colis . déplacement consommateur": `'${relay}'`,
-    "livraison colis . déplacement consommateur . distance": `'${km}'`,
+    "livraison colis . déplacement consommateur . distance": `'0'`,
+    "livraison colis . déplacement consommateur . mode de déplacement": `'marche'`,
   };
+  let baseCO2 = engine.evaluate("livraison colis").nodeValue;
+
+  let newSituationWithKm = {
+    ...baseSituation,
+    "livraison colis . déplacement consommateur . distance": `'${values.km}'`,
+  };
+  engine.setSituation(newSituationWithKm);
+  let addedCO2 = engine.evaluate("livraison colis").nodeValue;
+
+  let newSituationWithRelay = {
+    ...baseSituation,
+    "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
+  };
+  engine.setSituation(newSituationWithRelay);
+  let addedRelay = engine.evaluate("livraison colis").nodeValue;
+
+  setDiffs({ ...diffs, diffRelay: addedRelay - baseCO2, diffKm0: addedCO2 - baseCO2 });
+
+  const fullSituation = {
+    "livraison colis . informations . catégorie": `'${produitCode}'`,
+    "livraison colis . scénario": `'${retraitCode}'`,
+    "livraison colis . déplacement consommateur . distance": `'${values.km}'`,
+    "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
+  };
+
+  engine.setSituation(fullSituation);
+  console.log("fullSituation", fullSituation);
+  setCO2eq(engine.evaluate("livraison colis").nodeValue);
 };

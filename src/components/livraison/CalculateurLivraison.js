@@ -29,7 +29,8 @@ export default function CalculateurLivraison() {
     diffRelay: 0,
   });
 
-  const calculateResult = () => calculateResultFunction(values, produits, retraits, relays, engine, setDiffs, setCO2eq);
+  const calculateResult = () =>
+    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq);
 
   useMemo(() => {
     calculateResult();
