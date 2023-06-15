@@ -19,8 +19,9 @@ export default function CalculateurLivraison() {
   const [values, setValues] = useState({
     produit: "habillement",
     retrait: "relais",
-    traj: "ret_dom",
+    relay: "marche",
     km: "7",
+    traj: "ret_dom",
   });
 
   const [diffs, setDiffs] = useState({
@@ -37,6 +38,7 @@ export default function CalculateurLivraison() {
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
   const changeRetrait = (retrait) => setValues({ ...values, retrait: retrait.uid });
+  const changeRelay = (relay) => setValues({ ...values, relay: relay.uid });
   const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
   const changeKm = (km) => setValues({ ...values, km: km });
 
@@ -49,7 +51,7 @@ export default function CalculateurLivraison() {
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
       <Hideable></Hideable>
-      <OptionalRelay show={showOptional}></OptionalRelay>
+      <OptionalRelay show={showOptional} changeRelay={changeRelay} value={values.relay}></OptionalRelay>
       <OptionalTraj
         show={showOptional}
         km={values.km}

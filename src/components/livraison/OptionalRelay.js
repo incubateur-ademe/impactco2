@@ -9,7 +9,7 @@ export default function OptionalRelay(props) {
           <Text>Vous effectuez généralement le trajet jusqu'au point relais</Text>
         </div>
         <div className="item2">
-          <SelectRelays changeRelay={props.changeRelay}></SelectRelays>
+          <SelectRelays changeRelay={props.changeRelay} value={props.value}></SelectRelays>
         </div>
         <div className="item3"></div>
         <div className="item4">
