@@ -51,7 +51,6 @@ export default function CalculateurLivraison() {
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
-      <Hideable></Hideable>
       <OptionalRelay
         show={showOptional}
         changeRelay={changeRelay}
@@ -111,5 +110,3 @@ const DropList = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
-
-const Hideable = styled.div``;
