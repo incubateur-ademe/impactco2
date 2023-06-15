@@ -11,7 +11,7 @@ export default function OptionalTraj(props) {
           <Text>&nbsp;km pour un trajet dédié</Text>
         </div>
         <div className="item2">
-          <SelectTrajs changeTraj={props.changeTraj}></SelectTrajs>
+          <SelectTrajs changeTraj={props.changeTraj} value={props.value}></SelectTrajs>
         </div>
         <div className="item3"></div>
         <div className="item4">

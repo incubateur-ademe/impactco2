@@ -12,12 +12,13 @@ export default function CalculateurLivraison() {
   const { engine } = useContext(RulesContextLivraison);
 
   const [cO2eq, setCO2eq] = useState(0);
-  const [displayOption, setDisplayOption] = useState(true);
+  const [showOptional, setShowOptional] = useState(true);
 
   const [values, setValues] = useState({
     produit: "habillement",
     retrait: "relais",
-    km: 7,
+    traj: "ret_dom",
+    km: "7",
   });
 
   const calculateResult = (v) => {
@@ -35,7 +36,7 @@ export default function CalculateurLivraison() {
 
   useMemo(() => {
     calculateResult(values);
-    setDisplayOption(values.retrait === "relais");
+    setShowOptional(values.retrait === "relais");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
@@ -48,6 +49,13 @@ export default function CalculateurLivraison() {
   const changeRetrait = (retrait) => {
     let localValues = clonedValues();
     localValues.retrait = retrait.uid;
+    setValues(localValues);
+  };
+
+  const changeTraj = (traj) => {
+    let localValues = clonedValues();
+    localValues.traj = traj.uid;
+    console.log("localValues", localValues);
     setValues(localValues);
   };
 
@@ -68,8 +76,14 @@ export default function CalculateurLivraison() {
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
       <Hideable></Hideable>
-      <OptionalRelay show={displayOption}></OptionalRelay>
-      <OptionalTraj show={displayOption} km={values.km} changeKm={changeKm}></OptionalTraj>
+      <OptionalRelay show={showOptional}></OptionalRelay>
+      <OptionalTraj
+        show={showOptional}
+        km={values.km}
+        changeKm={changeKm}
+        changeTraj={changeTraj}
+        value={values.traj}
+      ></OptionalTraj>
       <ResultatsLivraison co2eq={cO2eq} />
     </>
   );
