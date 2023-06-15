@@ -17,6 +17,7 @@ export default function CalculateurLivraison() {
   const [values, setValues] = useState({
     produit: "habillement",
     retrait: "relais",
+    km: 7,
   });
 
   const calculateResult = (v) => {
@@ -47,8 +48,11 @@ export default function CalculateurLivraison() {
   const changeRetrait = (retrait) => {
     let localValues = clonedValues();
     localValues.retrait = retrait.uid;
-    console.log("retrait", retrait);
     setValues(localValues);
+  };
+
+  const changeKm = (km) => {
+    console.log("km", km);
   };
 
   const clonedValues = () => {
@@ -65,7 +69,7 @@ export default function CalculateurLivraison() {
       </DropList>
       <Hideable></Hideable>
       <OptionalRelay show={displayOption}></OptionalRelay>
-      <OptionalTraj show={displayOption}></OptionalTraj>
+      <OptionalTraj show={displayOption} km={values.km} changeKm={changeKm}></OptionalTraj>
       <ResultatsLivraison co2eq={cO2eq} />
     </>
   );

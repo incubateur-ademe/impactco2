@@ -7,11 +7,11 @@ export default function OptionalTraj(props) {
       <GridContainer>
         <div className="item1">
           <Text>Je parcours une distance de&nbsp;</Text>
-          <Input type="number"></Input>
+          <Input type="number" value={props.km} onChange={(e) => props.changeKm(parseInt(e.target.value, 10))}></Input>
           <Text>&nbsp;km pour un trajet dédié</Text>
         </div>
         <div className="item2">
-          <SelectTrajs changeRelay={props.changeRelay}></SelectTrajs>
+          <SelectTrajs changeTraj={props.changeTraj}></SelectTrajs>
         </div>
         <div className="item3"></div>
         <div className="item4">
