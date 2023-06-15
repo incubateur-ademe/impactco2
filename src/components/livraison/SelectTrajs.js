@@ -14,7 +14,7 @@ const StyledSelect = styled(Select)`
   }
 `;
 
-export default function SelectTrajs(props) {
+export default function SelectTrajs2(props) {
   return (
     <>
       <StyledSelect
