@@ -32,7 +32,6 @@ export default function ResultatLivraison(props) {
             <div>
               <strong>par livraison</strong>,
             </div>
-            <div>soit l'équivalent de</div>
           </Subexplain>
         </div>
         <div className="item5"></div>

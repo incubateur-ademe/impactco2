@@ -3,6 +3,7 @@ import OptionalTraj from "./OptionalTraj";
 import ResultatsLivraison from "./ResultatsLivraison";
 import SelectProduits from "./SelectProduits";
 import SelectRetraits from "./SelectRetraits";
+import YearlyLivraison from "./YearlyLivraison";
 import { calculateResultFunction } from "./calculateur_livraison_funtions.js";
 import { produits, retraits, relays } from "./data.js";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
@@ -66,6 +67,7 @@ export default function CalculateurLivraison() {
         diffKm0={diffs.diffKm0}
       ></OptionalTraj>
       <ResultatsLivraison co2eq={cO2eq} />
+      <YearlyLivraison co2eq={cO2eq} />
     </>
   );
 }
