@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.6.0 (16/05/2023)
+
+* U9 - Personnalisation des équivalences
+
 ## 1.5.0 (15/05/2023)
 
 * U3 - options dans le simulateur
