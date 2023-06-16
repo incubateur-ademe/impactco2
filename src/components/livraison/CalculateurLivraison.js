@@ -82,7 +82,16 @@ const DropList = styled.div`
   border: 1px solid #e2dce0;
   border-radius: 16px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  ${(props) => props.theme.mq.xlarge} {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  ${(props) => props.theme.mq.small} {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: start;
+  }
   position: relative;
   > div > label {
     color: #746770;
@@ -90,15 +99,12 @@ const DropList = styled.div`
     margin-bottom: 0;
   }
   > div > select {
-    width: 240px;
     color: #1c9b93;
     padding-left: 0;
+    width: 240px;
     ${(props) => props.theme.mq.xsmall} {
-      width: auto;
       font-size: 12px;
+      width: auto;
     }
-  }
-  ${(props) => props.theme.mq.xlarge} {
-    grid-template-columns: repeat(1, 1fr);
   }
 `;
