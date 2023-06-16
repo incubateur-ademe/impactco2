@@ -7,7 +7,7 @@ export const calculateResultFunction = (values, produits, retraits, relays, engi
   const produitsEtRetraits = {
     "livraison colis . informations . catégorie": `'${produitCode}'`,
     "livraison colis . scénario": `'${retraitCode}'`,
-    "livraison colis . déplacement consommateur . mode de déplacement": `'marche'`,
+    "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
   };
 
   let newSituation0km = {
