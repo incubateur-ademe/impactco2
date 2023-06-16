@@ -47,7 +47,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
 
   await test.step("Par défaut un calcul de CO2 est affiché", async () => {
     // Given
-    await expect(page.getByTestId("resultAsText")).toHaveText("2,81 kg de CO2e ");
+    await expect(page.getByTestId("resultAsText")).toHaveText("1,86 kg de CO2e ");
   });
 
   await test.step("Si on prend un mode de retrait plus consommateur, on a bien une augmentation de CO2", async () => {
@@ -87,9 +87,9 @@ test("U4 - Equivalences", async ({ page }) => {
     // When
     await page.goto("/livraison");
     // Then
-    await expect(page.getByText("13 km")).toHaveCount(1);
-    await expect(page.getByText("44 heures")).toHaveCount(1);
-    await expect(page.getByText("0,4 repas")).toHaveCount(1);
+    await expect(page.getByText("9 km")).toHaveCount(1);
+    await expect(page.getByText("29 heures")).toHaveCount(1);
+    await expect(page.getByText("0,3 repas")).toHaveCount(1);
   });
   await test.step("Une modale d'explication s'affiche", async () => {
     // Given

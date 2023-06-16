@@ -21,7 +21,7 @@ export default function CalculateurLivraison() {
     retrait: "relais",
     relay: "marche",
     km: "7",
-    traj: "ret_dom",
+    traj: "dom_tra",
   });
 
   const [diffs, setDiffs] = useState({
