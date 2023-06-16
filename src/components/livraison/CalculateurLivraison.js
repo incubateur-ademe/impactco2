@@ -47,7 +47,6 @@ export default function CalculateurLivraison() {
   return (
     <>
       <H2Title>Estimez l'impact de vos livraisons</H2Title>
-      <Subtitle>En vous basant sur les commandes que vous effectuez le plus...</Subtitle>
       <DropList>
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
@@ -76,14 +75,6 @@ const H2Title = styled.h2`
   font-weight: 700;
   margin-bottom: 0.5rem;
   margin-top: 0;
-`;
-
-const Subtitle = styled.p`
-  color: #564d53;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-  margin-bottom: 2rem;
 `;
 
 const DropList = styled.div`
