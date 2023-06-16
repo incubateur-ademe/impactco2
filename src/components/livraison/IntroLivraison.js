@@ -66,8 +66,16 @@ export default function IntroLivraison() {
         <strong>80 % des Français</strong> de 11 ans et plus font des achats en ligne.
       </RegularParagraph>
       <RegularParagraph>
-        En moyenne, cela représente <strong>1 milliard de colis par an</strong>, soit{" "}
-        <strong>deux colis par personne par mois</strong>.
+        En moyenne, cela représente <strong>1 milliard de colis livrés par an</strong>, soit{" "}
+        <strong>deux colis livrés par personne par mois</strong>.
+      </RegularParagraph>
+      <br />
+      <RegularParagraph>
+        <strong>
+          Vous vous faites souvent livrer vos achats ? Estimez l'impact carbone de vos livraisons grâce à notre
+          simulateur.
+        </strong>
+        .
       </RegularParagraph>
       <Separator />
     </>
