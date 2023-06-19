@@ -16,7 +16,7 @@ export default function EqModal3() {
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} width="45rem">
-      Modal num 3
+      <Intro>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Intro>
     </Modal3>
   );
 }
@@ -28,4 +28,11 @@ const Title = styled.h2`
 
 const GreenText = styled.span`
   color: #1c9b93;
+`;
+
+const Intro = styled.div`
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0em;
+  line-height: 24px;
 `;

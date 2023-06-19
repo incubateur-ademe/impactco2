@@ -32,7 +32,7 @@ const Header = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 1.5rem;
 `;
 
 const Wrapper = styled.div`
