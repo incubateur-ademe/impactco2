@@ -2,6 +2,7 @@ import Co2eModal2 from "components/modals/Co2eModal2";
 import DetailsUsagesNumModal from "components/modals/DetailsUsagesNumModal";
 import DevicesModal from "components/modals/DevicesModal";
 import EcvModal from "components/modals/EcvModal";
+import EqModal3 from "components/modals/EqModal3";
 import ShareModal from "components/modals/ShareModal";
 import TilesModal from "components/modals/TilesModal";
 import React, { useState } from "react";
@@ -54,6 +55,7 @@ export function ModalProvider(props) {
     >
       {props.children}
       <Co2eModal2 />
+      <EqModal3 />
       <TilesModal />
       <ShareModal />
       <EcvModal />
