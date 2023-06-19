@@ -9,7 +9,7 @@ export default function NumSearch(props) {
   /** */
   const { equivalents, tiles, setTiles } = useContext(DataContext);
 
-  const NUMERIQUE_CATEGORY = 10;
+  const NUMERIQUE_CATEGORY = 1;
 
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);

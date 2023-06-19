@@ -9,8 +9,8 @@ export default function OtherSearch(props) {
   /** */
   const { equivalents, tiles, setTiles } = useContext(DataContext);
 
-  const NUMERIQUE_CATEGORY = 10;
-  const FRUIT_CATEGORY = 7;
+  const NUMERIQUE_CATEGORY = 1;
+  const FRUIT_CATEGORY = 9;
 
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
@@ -63,7 +63,7 @@ export default function OtherSearch(props) {
       {props.open && (
         <Equivalents>
           {results
-            .filter((r) => r.item.category !== NUMERIQUE_CATEGORY && r.item.category !== FRUIT_CATEGORY)
+            .filter((r) => ![NUMERIQUE_CATEGORY, FRUIT_CATEGORY].includes(r.item.category))
             .slice(0, 3)
             .map(({ item }) => (
               <Equivalent
