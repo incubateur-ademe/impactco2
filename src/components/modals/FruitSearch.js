@@ -1,5 +1,5 @@
 import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
-import Equivalent from "./tilesModal/Equivalent";
+import EquivalentRadio from "./tilesModal/EquivalentRadio";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useEffect, useState } from "react";
@@ -65,7 +65,7 @@ export default function FruitSearch(props) {
             .filter((r) => r.item.category === FRUIT_CATEGORY)
             .slice(0, 3)
             .map(({ item }) => (
-              <Equivalent
+              <EquivalentRadio
                 key={item.slug}
                 equivalent={item}
                 checked={tiles.find((tile) => tile === item)}
