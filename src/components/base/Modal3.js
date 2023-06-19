@@ -32,14 +32,14 @@ const Header = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem;
 `;
 
 const Wrapper = styled.div`
   align-items: center;
   display: flex;
   height: 100%;
-  justify-content: center;
+  justify-content: flex-end;
   left: 0;
   pointer-events: ${(props) => (props.open ? "inherit" : "none")};
   position: fixed;
@@ -61,13 +61,10 @@ const Background = styled.div`
 
 const Content = styled.div`
   background-color: ${(props) => props.theme.colors.background};
-  border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  margin: 1rem;
-  max-height: 90vh;
-  max-width: 90vw;
+  height: 100%;
   opacity: ${(props) => (props.open ? 1 : 0)};
   position: relative;
   transform: scale(${(props) => (props.open ? 1 : 0.7)}) translateY(${(props) => (props.open ? 0 : "10em")});
