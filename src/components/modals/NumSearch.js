@@ -5,11 +5,11 @@ import DataContext from "components/providers/DataProvider";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
-export default function FruitSearch(props) {
+export default function NumSearch(props) {
   /** */
   const { equivalents, tiles, setTiles } = useContext(DataContext);
 
-  const FRUIT_CATEGORY = 9;
+  const NUMERIQUE_CATEGORY = 10;
 
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
@@ -57,12 +57,12 @@ export default function FruitSearch(props) {
       <SearchInput
         value={search}
         onChange={({ value }) => setSearch(value)}
-        placeholder={"Recherchez un fruit ou un légume"}
+        placeholder={"Recherchez un objet ou un usage numérique"}
       />
       {props.open && (
         <Equivalents>
           {results
-            .filter((r) => r.item.category === FRUIT_CATEGORY)
+            .filter((r) => r.item.category === NUMERIQUE_CATEGORY)
             .slice(0, 3)
             .map(({ item }) => (
               <Equivalent

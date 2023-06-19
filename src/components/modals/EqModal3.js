@@ -1,4 +1,5 @@
 import FruitSearch from "./FruitSearch";
+import NumSearch from "./NumSearch";
 import Modal3 from "components/base/Modal3";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
@@ -21,6 +22,7 @@ export default function EqModal3() {
       <H2Title>Fruits et légumes</H2Title>
       <FruitSearch open={open}></FruitSearch>
       <H2Title>Usages du numérique</H2Title>
+      <NumSearch open={open}></NumSearch>
     </Modal3>
   );
 }
