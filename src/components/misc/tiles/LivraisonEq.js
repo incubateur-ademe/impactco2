@@ -8,7 +8,7 @@ const first2WordsOnly = (sentence) => sentence.split(" ").slice(0, 2).join(" ");
 const first2WordsRemoved = (sentence) => sentence.split(" ").slice(2).join(" ");
 
 export default function LivraisonEq(props) {
-  const { setEcv } = useContext(ModalContext);
+  const { setEqv } = useContext(ModalContext);
 
   return (
     <Wrapper background={props.background}>
@@ -20,7 +20,7 @@ export default function LivraisonEq(props) {
       <OfWhat>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
       <div></div>
       <div>
-        <ButtonChange onClick={() => setEcv(true)}>Changer</ButtonChange>
+        <ButtonChange onClick={() => setEqv(true)}>Changer</ButtonChange>
       </div>
     </Wrapper>
   );

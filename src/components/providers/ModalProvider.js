@@ -14,6 +14,7 @@ export function ModalProvider(props) {
   const [tiles, setTiles] = useState(false);
   const [share, setShare] = useState(false);
   const [ecv, setEcv] = useState(false);
+  const [eqv, setEqv] = useState(false);
   const [devices, setDevices] = useState(false);
   const [hypothesis, setHypothesis] = useState(false);
 
@@ -35,11 +36,15 @@ export function ModalProvider(props) {
           window?._paq?.push(["trackEvent", "Interaction", "Modal", "Partage"]);
           setShare(value);
         },
-
         ecv,
         setEcv: (value) => {
           window?._paq?.push(["trackEvent", "Interaction", "Modal", "ECV"]);
           setEcv(value);
+        },
+        eqv,
+        setEqv: (value) => {
+          window?._paq?.push(["trackEvent", "Interaction", "Modal", "EQV"]);
+          setEqv(value);
         },
         devices,
         setDevices: (value) => {
