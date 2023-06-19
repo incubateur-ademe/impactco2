@@ -55,11 +55,7 @@ export default function OtherSearch(props) {
 
   return (
     <Wrapper>
-      <SearchInput
-        value={search}
-        onChange={({ value }) => setSearch(value)}
-        placeholder={"Recherchez un objet ou un usage"}
-      />
+      <SearchInput value={search} onChange={({ value }) => setSearch(value)} placeholder={"Recherchez un autre item"} />
       {props.open && (
         <Equivalents>
           {results
