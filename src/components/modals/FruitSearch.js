@@ -5,7 +5,7 @@ import DataContext from "components/providers/DataProvider";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
-export default function FruitSearch() {
+export default function FruitSearch(props) {
   /** */
   const { equivalents, tiles, setTiles } = useContext(DataContext);
 
@@ -59,7 +59,7 @@ export default function FruitSearch() {
         onChange={({ value }) => setSearch(value)}
         placeholder={"Recherchez un objet ou un geste"}
       />
-      {open && (
+      {props.open && (
         <Equivalents>
           {results
             .filter((r) => r.item.category === FRUIT_CATEGORY)
