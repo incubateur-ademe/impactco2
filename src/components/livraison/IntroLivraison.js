@@ -71,11 +71,8 @@ export default function IntroLivraison() {
       </RegularParagraph>
       <br />
       <RegularParagraph>
-        <strong>
-          Vous vous faites souvent livrer vos achats ? Estimez l'impact carbone de vos livraisons grâce à notre
-          simulateur.
-        </strong>
-        .
+        Vous vous faites souvent livrer vos achats ? Estimez l'impact carbone de vos livraisons grâce à notre
+        simulateur.
       </RegularParagraph>
       <Separator />
     </>
