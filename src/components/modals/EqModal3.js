@@ -1,5 +1,4 @@
 import Modal3 from "components/base/Modal3";
-import ExplainArrowContainer from "components/modals/ExplainArrowContainer.js";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -16,7 +15,8 @@ const getTitle = () => {
 };
 
 export default function EqModal3() {
-  const { Co2e: open, setCo2e: setOpen } = useContext(ModalContext);
+  const { ecv: open, setEcv: setOpen } = useContext(ModalContext);
+
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} width="50rem">
       <Text>
@@ -30,7 +30,6 @@ export default function EqModal3() {
           <sub>2</sub> selon son pouvoir de réchauffement.
         </strong>
       </Text>
-      <ExplainArrowContainer></ExplainArrowContainer>
     </Modal3>
   );
 }
