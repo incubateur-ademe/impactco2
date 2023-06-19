@@ -74,7 +74,6 @@ export default function NumSearch(props) {
                   setTiles((prevTiles) => {
                     return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
                   });
-                  window?._paq?.push(["trackEvent", "Interaction", "Ajouter tuile", item.slug]);
                 }}
               />
             ))}
