@@ -20,7 +20,7 @@ export default function LivraisonEq(props) {
       <OfWhat>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
       <div></div>
       <div>
-        <ButtonChange onClick={() => setEqv(true)}>Changer</ButtonChange>
+        <ButtonChange onClick={() => setEqv(props.slug)}>Changer</ButtonChange>
       </div>
     </Wrapper>
   );

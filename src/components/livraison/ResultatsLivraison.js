@@ -5,7 +5,9 @@ import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
 
 export default function ResultatsLivraison(props) {
-  const { equivalents, tiles } = useContext(DataContext);
+  const { eqv1, eqv2, eqv3, equivalents, tiles } = useContext(DataContext);
+  console.log("eqv3", eqv3);
+  console.log("eqv2", eqv2);
 
   const equivalentsToShow = useMemo(
     () =>
@@ -22,10 +24,11 @@ export default function ResultatsLivraison(props) {
         .sort(function (a, b) {
           return a.category < b.category;
         })
-        .map((equivalent) => (
-          <LivraisonEq key={equivalent.slug} equivalent={equivalent} weight={props.co2eq / 1000} />
+        .map((equivalent, indx) => (
+          <LivraisonEq key={equivalent.slug} slug={indx + 1} equivalent={equivalent} weight={props.co2eq / 1000} />
         ))}
       <div>
+        {JSON.stringify(eqv1, null, 2)}
         {JSON.stringify(
           tiles.map((t) => t.slug),
           null,

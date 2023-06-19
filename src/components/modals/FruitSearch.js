@@ -7,7 +7,8 @@ import styled from "styled-components";
 
 export default function FruitSearch(props) {
   /** */
-  const { equivalents, tiles, setTiles } = useContext(DataContext);
+  const { equivalents, tiles, setTiles, setEqv1, setEqv2, setEqv3 } = useContext(DataContext);
+  console.log("setTiles", setTiles);
 
   const FRUIT_CATEGORY = 9;
 
@@ -59,6 +60,7 @@ export default function FruitSearch(props) {
         onChange={({ value }) => setSearch(value)}
         placeholder={"Recherchez un fruit ou un légume"}
       />
+      {props.open}
       {props.open && (
         <Equivalents>
           {results
@@ -70,9 +72,19 @@ export default function FruitSearch(props) {
                 equivalent={item}
                 checked={tiles.find((tile) => tile === item)}
                 setChecked={(checked) => {
-                  setTiles((prevTiles) => {
-                    return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
-                  });
+                  console.log("checked", checked);
+                  // setTiles((prevTiles) => {
+                  //   return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
+                  // });
+                  if (props.open === 1) {
+                    setEqv1(item.slug);
+                  }
+                  if (props.open === 2) {
+                    setEqv2(item.slug);
+                  }
+                  if (props.open === 3) {
+                    setEqv3(item.slug);
+                  }
                 }}
               />
             ))}
