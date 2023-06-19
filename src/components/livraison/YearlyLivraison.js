@@ -29,10 +29,10 @@ export default function YearlyLivraison(props) {
 
 const Wrapper = styled.div``;
 
-const Text = styled.p`
+const Text = styled.div`
   font-size: 1.125rem;
+  margin-top: 1rem;
   text-align: left;
-
   ${(props) => props.theme.mq.small} {
     font-size: 0.875rem;
   }
