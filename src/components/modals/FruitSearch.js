@@ -53,7 +53,7 @@ export default function FruitSearch(props) {
   /** */
 
   return (
-    <>
+    <Wrapper>
       <SearchInput
         value={search}
         onChange={({ value }) => setSearch(value)}
@@ -71,6 +71,7 @@ export default function FruitSearch(props) {
                 checked={tiles.find((tile) => tile === item)}
                 setChecked={(checked) => {
                   setTiles((prevTiles) => {
+                    console.log("prevTiles", prevTiles);
                     return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
                   });
                   window?._paq?.push(["trackEvent", "Interaction", "Ajouter tuile", item.slug]);
@@ -79,7 +80,7 @@ export default function FruitSearch(props) {
             ))}
         </Equivalents>
       )}
-    </>
+    </Wrapper>
   );
 }
 
@@ -88,5 +89,10 @@ const SearchInput = styled(TextInput)`
 `;
 
 const Equivalents = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: 0;
+  > button {
+    padding: 0;
+  }
 `;
+
+const Wrapper = styled.div``;

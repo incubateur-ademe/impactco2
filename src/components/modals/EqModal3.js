@@ -49,4 +49,5 @@ const H2Title = styled.div`
   font-weight: 700;
   letter-spacing: 0em;
   line-height: 24px;
+  margin-top: 2rem;
 `;

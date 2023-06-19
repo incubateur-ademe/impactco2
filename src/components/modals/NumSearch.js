@@ -53,7 +53,7 @@ export default function NumSearch(props) {
   /** */
 
   return (
-    <>
+    <Wrapper>
       <SearchInput
         value={search}
         onChange={({ value }) => setSearch(value)}
@@ -79,7 +79,7 @@ export default function NumSearch(props) {
             ))}
         </Equivalents>
       )}
-    </>
+    </Wrapper>
   );
 }
 
@@ -89,4 +89,9 @@ const SearchInput = styled(TextInput)`
 
 const Equivalents = styled.div`
   margin-bottom: 3rem;
+  > button {
+    padding: 0;
+  }
 `;
+
+const Wrapper = styled.div``;
