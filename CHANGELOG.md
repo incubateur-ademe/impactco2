@@ -1,7 +1,11 @@
 
 # CHANGELOG
 
-## 1.5.1 (19/05/2023)
+## 1.6.0 (19/05/2023)
+
+* U9 - équivalences
+
+## 1.5.1 (16/05/2023)
 
 * BSR - corrections wording, retours U13
 
