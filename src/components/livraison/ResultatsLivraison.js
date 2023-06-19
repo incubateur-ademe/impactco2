@@ -5,7 +5,8 @@ import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
 
 export default function ResultatsLivraison(props) {
-  const { equivalents } = useContext(DataContext);
+  const { equivalents, tiles } = useContext(DataContext);
+
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter((equivalent) =>
@@ -13,6 +14,7 @@ export default function ResultatsLivraison(props) {
       ),
     [equivalents]
   );
+
   return (
     <Wrapper>
       <ResultatLivraison co2eq={props.co2eq} />
@@ -23,6 +25,13 @@ export default function ResultatsLivraison(props) {
         .map((equivalent) => (
           <LivraisonEq key={equivalent.slug} equivalent={equivalent} weight={props.co2eq / 1000} />
         ))}
+      <div>
+        {JSON.stringify(
+          tiles.map((t) => t.slug),
+          null,
+          2
+        )}
+      </div>
     </Wrapper>
   );
 }

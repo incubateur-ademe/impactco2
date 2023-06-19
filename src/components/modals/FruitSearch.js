@@ -71,7 +71,6 @@ export default function FruitSearch(props) {
                 checked={tiles.find((tile) => tile === item)}
                 setChecked={(checked) => {
                   setTiles((prevTiles) => {
-                    console.log("prevTiles", prevTiles);
                     return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
                   });
                 }}

@@ -69,7 +69,9 @@ export default function OtherSearch(props) {
                 checked={tiles.find((tile) => tile === item)}
                 setChecked={(checked) => {
                   setTiles((prevTiles) => {
-                    return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
+                    let res = {};
+                    res = checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
+                    return res;
                   });
                 }}
               />
