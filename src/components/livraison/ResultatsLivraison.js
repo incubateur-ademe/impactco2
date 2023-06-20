@@ -1,21 +1,16 @@
 import ResultatLivraison from "./ResultatLivraison";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
-import React, { useContext, useMemo, useEffect, useState } from "react";
+import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
+import useLocalStorage from "use-local-storage";
 
 export default function ResultatsLivraison(props) {
   // eslint-disable-next-line no-unused-vars
   const { equivalents, whitelist } = useContext(DataContext);
 
   // eslint-disable-next-line no-unused-vars
-  const [eqv1L, setEqv1L] = useState([]);
-  useEffect(() => {
-    const items = localStorage.getItem("eqv1L");
-    if (items) {
-      setEqv1L(items);
-    }
-  }, []);
+  const [eqv1L] = useLocalStorage("eqv1L", "");
 
   const equivalentsToShow = useMemo(
     () =>
@@ -29,13 +24,9 @@ export default function ResultatsLivraison(props) {
   return (
     <Wrapper>
       <ResultatLivraison co2eq={props.co2eq} />
-      {equivalentsToShow
-        .sort(function (a, b) {
-          return a.category < b.category;
-        })
-        .map((equivalent, indx) => (
-          <LivraisonEq key={equivalent.slug} slug={indx + 1} equivalent={equivalent} weight={props.co2eq / 1000} />
-        ))}
+      <LivraisonEq slug={1} equivalent={equivalentsToShow[0]} weight={props.co2eq / 1000} />
+      <LivraisonEq slug={2} equivalent={equivalentsToShow[1]} weight={props.co2eq / 1000} />
+      <LivraisonEq slug={3} equivalent={equivalentsToShow[2]} weight={props.co2eq / 1000} />
       <div>
         {JSON.stringify(eqv1L, null, 2)}
         {JSON.stringify(whitelist, null, 2)}

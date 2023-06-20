@@ -4,7 +4,7 @@ import OtherSearch from "./OtherSearch";
 import Modal3 from "components/base/Modal3";
 import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
@@ -22,6 +22,11 @@ export default function EqModal3() {
 
   // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
+
+  useEffect(() => {
+    console.log("eqv1L changed!");
+    console.log(eqv1L);
+  }, [eqv1L]);
 
   const validateEqv = () => {
     console.log("eqv1L---", eqv1L);
