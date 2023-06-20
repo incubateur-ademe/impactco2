@@ -2,13 +2,23 @@ import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import EquivalentRadio from "./tilesModal/EquivalentRadio";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
+import useLocalStorage from "hooks/useLocalStorage";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function FruitSearch(props) {
-  /** */
-  const { equivalents, tiles, setTiles, setEqv1, setEqv2, setEqv3 } = useContext(DataContext);
+  const { equivalents, tiles, setTiles } = useContext(DataContext);
   console.log("setTiles", setTiles);
+
+  const [eqv1L, setEqv1L] = useLocalStorage("eqv1L");
+  console.log("--eqv1L", eqv1L);
+  console.log("--setEqv1L", setEqv1L);
+  const [eqv2L, setEqv2L] = useLocalStorage("eqv2L");
+  console.log("--eqv2L", eqv2L);
+  console.log("--setEqv2L", setEqv2L);
+  const [eqv3L, setEqv3L] = useLocalStorage("eqv3L");
+  console.log("--setEqv3L", setEqv3L);
+  console.log("--eqv3L", eqv3L);
 
   const FRUIT_CATEGORY = 9;
 
@@ -60,7 +70,6 @@ export default function FruitSearch(props) {
         onChange={({ value }) => setSearch(value)}
         placeholder={"Recherchez un fruit ou un légume"}
       />
-      {props.open}
       {props.open && (
         <Equivalents>
           {results
@@ -77,13 +86,13 @@ export default function FruitSearch(props) {
                   //   return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
                   // });
                   if (props.open === 1) {
-                    setEqv1(item.slug);
+                    setEqv1L(item.slug);
                   }
                   if (props.open === 2) {
-                    setEqv2(item.slug);
+                    setEqv2L(item.slug);
                   }
                   if (props.open === 3) {
-                    setEqv3(item.slug);
+                    setEqv3L(item.slug);
                   }
                 }}
               />

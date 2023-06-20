@@ -17,15 +17,24 @@ const getTitle = () => {
 export default function EqModal3() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
 
+  const validate = () => {
+    console.log("closing modal...");
+    setOpen(false);
+    return;
+  };
+
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} width="45rem">
-      <Intro>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Intro>
+      <Intro>
+        Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée ({open}).
+      </Intro>
       <H2Title>Fruits et légumes</H2Title>
       <FruitSearch open={open}></FruitSearch>
       <H2Title>Usages du numérique</H2Title>
       <NumSearch open={open}></NumSearch>
       <H2Title>Autres catégories</H2Title>
       <OtherSearch open={open}></OtherSearch>
+      <button onClick={validate}>Valider</button>
     </Modal3>
   );
 }
