@@ -27,7 +27,7 @@ const RadioButton = styled.svg`
   }
 
   circle {
-    fill: ${(props) => (props.checked ? "black" : "none")};
+    fill: ${(props) => (props.checked ? props.theme.colors.main : "none")};
   }
 `;
 export default function Radio(props) {
