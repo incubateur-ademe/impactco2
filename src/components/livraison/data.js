@@ -49,3 +49,4 @@ export const trajs = [
   { displayed: "Point de retrait-domicile", uid: "ret_dom", publicode: "" },
   { displayed: "Domicile-magasin de proximité ", uid: "dom_mag", publicode: "" },
 ];
+export const default_eqs = ["voiturethermique", "repasavecduboeuf", "streamingvideo"];

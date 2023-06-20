@@ -2,6 +2,7 @@ import FruitSearch from "./FruitSearch";
 import NumSearch from "./NumSearch";
 import Button from "components/base/Button";
 import Modal3 from "components/base/Modal3";
+import { default_eqs } from "components/livraison/data.js";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -25,14 +26,14 @@ export default function EqModal3() {
   const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const validateEqv = () => {
-    setWhitelist([eqv1L, eqv2L, eqv3L]);
+    setWhitelist([eqv1L || default_eqs[0], eqv2L || default_eqs[1], eqv3L || default_eqs[2]]);
     setOpen(false);
   };
 
   const dismiss = () => {
-    setEqv1L(whitelist[0]);
-    setEqv2L(whitelist[1]);
-    setEqv3L(whitelist[2]);
+    setEqv1L(whitelist[0] || default_eqs[0]);
+    setEqv2L(whitelist[1] || default_eqs[1]);
+    setEqv3L(whitelist[2] || default_eqs[2]);
     setOpen(false);
   };
 

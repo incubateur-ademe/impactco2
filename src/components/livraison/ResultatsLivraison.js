@@ -1,4 +1,5 @@
 import ResultatLivraison from "./ResultatLivraison";
+import { default_eqs } from "components/livraison/data.js";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext } from "react";
@@ -7,7 +8,7 @@ import useLocalStorage from "use-local-storage";
 
 export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
-  const [whitelist] = useLocalStorage("ico2_whitelist", ["voiturethermique", "repasavecduboeuf", "streamingvideo"]);
+  const [whitelist] = useLocalStorage("ico2_whitelist", default_eqs);
 
   const GetEq = (indx) => equivalents.find((e) => e.slug === whitelist[indx]);
 
