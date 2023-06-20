@@ -1,16 +1,21 @@
 import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
-import Equivalent from "./tilesModal/Equivalent";
+import EquivalentRadio from "./tilesModal/EquivalentRadio";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import useLocalStorage from "use-local-storage";
 
 export default function NumSearch(props) {
   /** */
-  const { equivalents, tiles, setTiles } = useContext(DataContext);
+  const { equivalents } = useContext(DataContext);
 
   const NUMERIQUE_CATEGORY = 1;
   const USAGE_NUMERIQUE_CATEGORY = 10;
+
+  const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
+  const [eqv2L, setEqv2L] = useLocalStorage("eqv2L", "");
+  const [eqv3L, setEqv3L] = useLocalStorage("eqv3L", "");
 
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
@@ -66,14 +71,24 @@ export default function NumSearch(props) {
             .filter((r) => [USAGE_NUMERIQUE_CATEGORY, NUMERIQUE_CATEGORY].includes(r.item.category))
             .slice(0, 3)
             .map(({ item }) => (
-              <Equivalent
+              <EquivalentRadio
                 key={item.slug}
                 equivalent={item}
-                checked={tiles.find((tile) => tile === item)}
-                setChecked={(checked) => {
-                  setTiles((prevTiles) => {
-                    return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
-                  });
+                checked={((openVal) => {
+                  if (openVal === 1) return eqv1L === item.slug;
+                  if (openVal === 2) return eqv2L === item.slug;
+                  if (openVal === 3) return eqv3L === item.slug;
+                })(props.open)}
+                setChecked={() => {
+                  if (props.open === 1) {
+                    setEqv1L(item.slug);
+                  }
+                  if (props.open === 2) {
+                    setEqv2L(item.slug);
+                  }
+                  if (props.open === 3) {
+                    setEqv3L(item.slug);
+                  }
                 }}
               />
             ))}

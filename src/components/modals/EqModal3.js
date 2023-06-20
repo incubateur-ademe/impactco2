@@ -22,6 +22,8 @@ export default function EqModal3() {
 
   // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
+  const [eqv2L, setEqv2L] = useLocalStorage("eqv2L", "");
+  const [eqv3L, setEqv3L] = useLocalStorage("eqv3L", "");
 
   useEffect(() => {
     console.log("eqv1L changed!");
@@ -30,20 +32,22 @@ export default function EqModal3() {
 
   const validateEqv = () => {
     console.log("eqv1L---", eqv1L);
-    setWhitelist([eqv1L, "mangue", "voiturethermique"]);
+    console.log("eqv2L---", eqv2L);
+    console.log("eqv3L---", eqv3L);
+    setWhitelist([eqv1L, eqv2L, eqv3L]);
     setOpen(false);
   };
 
   const dismiss = () => {
     setEqv1L(whitelist[0]);
+    setEqv2L(whitelist[1]);
+    setEqv3L(whitelist[2]);
     setOpen(false);
   };
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
-      <Intro>
-        Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée ({open}).
-      </Intro>
+      <Intro>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Intro>
       <H2Title>Fruits et légumes</H2Title>
       <FruitSearch open={open}></FruitSearch>
       <H2Title>Usages du numérique</H2Title>
