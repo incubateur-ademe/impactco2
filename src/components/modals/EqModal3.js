@@ -19,7 +19,9 @@ export default function EqModal3() {
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} width="45rem">
-      <Intro>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Intro>
+      <Intro>
+        Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée ({open}).
+      </Intro>
       <H2Title>Fruits et légumes</H2Title>
       <FruitSearch open={open}></FruitSearch>
       <H2Title>Usages du numérique</H2Title>

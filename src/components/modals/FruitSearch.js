@@ -63,7 +63,6 @@ export default function FruitSearch(props) {
         onChange={({ value }) => setSearch(value)}
         placeholder={"Recherchez un fruit ou un légume"}
       />
-      {props.open}
       {props.open && (
         <Equivalents>
           {results
@@ -73,7 +72,11 @@ export default function FruitSearch(props) {
               <EquivalentRadio
                 key={item.slug}
                 equivalent={item}
-                checked={true}
+                checked={((openVal) => {
+                  if (openVal === 1) {
+                    return eqv1L === item.slug;
+                  }
+                })(props.open)}
                 setChecked={(checked) => {
                   console.log("checked", checked);
                   if (props.open === 1) {
