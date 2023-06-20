@@ -2,15 +2,15 @@ import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import EquivalentRadio from "./tilesModal/EquivalentRadio";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
-import useLocalStorage from "hooks/useLocalStorage";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import useLocalStorage from "use-local-storage";
 
 export default function FruitSearch(props) {
   /** */
+  // eslint-disable-next-line no-unused-vars
   const { equivalents, tiles, setTiles } = useContext(DataContext);
 
-  // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
 
   const FRUIT_CATEGORY = 9;
@@ -72,11 +72,16 @@ export default function FruitSearch(props) {
               <EquivalentRadio
                 key={item.slug}
                 equivalent={item}
-                checked={tiles.find((tile) => tile === item)}
+                checked={((openVal) => {
+                  if (openVal === 1) {
+                    return eqv1L === item.slug;
+                  }
+                })(props.open)}
                 setChecked={(checked) => {
-                  setTiles((prevTiles) => {
-                    return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
-                  });
+                  console.log("checked", checked);
+                  if (props.open === 1) {
+                    setEqv1L(item.slug);
+                  }
                 }}
               />
             ))}

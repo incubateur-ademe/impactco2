@@ -48,6 +48,7 @@
     "styled-normalize": "^8.0.7",
     "twemoji": "^14.0.2",
     "use-animate-number": "^1.0.5",
+    "use-local-storage": "^3.0.0",
     "use-query-params": "^2.2.0"
   },
   "devDependencies": {

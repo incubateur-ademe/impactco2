@@ -6,6 +6,7 @@ import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import styled from "styled-components";
+import useLocalStorage from "use-local-storage";
 
 const getTitle = () => {
   return (
@@ -19,8 +20,12 @@ export default function EqModal3() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
   const { setWhitelist } = useContext(DataContext);
 
+  // eslint-disable-next-line no-unused-vars
+  const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
+
   const validateEqv = () => {
-    setWhitelist(["abricot", "mangue", "voiturethermique"]);
+    console.log("eqv1L---", eqv1L);
+    setWhitelist([eqv1L, "mangue", "voiturethermique"]);
     setOpen(false);
   };
 

@@ -4642,6 +4642,11 @@ use-animate-number@^1.0.5:
   resolved "https://registry.yarnpkg.com/use-animate-number/-/use-animate-number-1.0.5.tgz#c224fd3ce81d0b563a5215d714aaa98ad8c67470"
   integrity sha512-zAavKn83Z6V6wlatpEp+fmbAS6vMA3tISudw04eSeyXc0AZG98JDDK1U+gmMxV/oATcub+ijgrENMPqHue+SiA==
 
+use-local-storage@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/use-local-storage/-/use-local-storage-3.0.0.tgz#ecf90952374150f0c65baf027eaaf2062a4c20c6"
+  integrity sha512-wlPNnBCG3ULIJMr5A+dvWqLiPWCfsN1Kwijq+sAhT5yV4ex0u6XmZuNwP+RerIOfzBuz1pwSZuzhZMiluGQHfQ==
+
 use-query-params@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/use-query-params/-/use-query-params-2.2.0.tgz#921aa5bf5be653260a763e06ad004e7a960807e5"
