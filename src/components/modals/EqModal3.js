@@ -1,5 +1,6 @@
 import FruitSearch from "./FruitSearch";
 import NumSearch from "./NumSearch";
+import Button from "components/base/Button";
 import Modal3 from "components/base/Modal3";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
@@ -42,7 +43,10 @@ export default function EqModal3() {
       <FruitSearch open={open}></FruitSearch>
       <H2Title>Usages du numérique</H2Title>
       <NumSearch open={open}></NumSearch>
-      <button onClick={validateEqv}>Valider</button>
+      <Flex>
+        <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
+        <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
+      </Flex>
     </Modal3>
   );
 }
@@ -70,4 +74,29 @@ const H2Title = styled.div`
   letter-spacing: 0em;
   line-height: 24px;
   margin-top: 2rem;
+`;
+
+const ButtonValidation = styled(Button)`
+  border-radius: 8px;
+`;
+
+const ButtonCancel = styled.button`
+  background-color: white;
+  border-color: #b5abb2;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  color: #564d53;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 24px;
+  margin-left: 0.5rem;
+  padding: 8px 16px 8px 16px;
+  text-align: center;
+`;
+
+const Flex = styled.div`
+  display: flex;
 `;
