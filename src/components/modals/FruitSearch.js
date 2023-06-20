@@ -11,9 +11,9 @@ export default function FruitSearch(props) {
   // eslint-disable-next-line no-unused-vars
   const { equivalents, tiles, setTiles } = useContext(DataContext);
 
-  const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
-  const [eqv2L, setEqv2L] = useLocalStorage("eqv2L", "");
-  const [eqv3L, setEqv3L] = useLocalStorage("eqv3L", "");
+  const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
+  const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
+  const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const FRUIT_CATEGORY = 9;
 

@@ -31,7 +31,6 @@ const equivalents = [
 
 export function DataProvider(props) {
   const [tiles, setTiles] = useState([]);
-  const [whitelist, setWhitelist] = useState(["voiturethermique", "repasavecduboeuf", "streamingvideo"]);
 
   const [eqv1, setEqv1] = useState({});
   const [eqv2, setEqv2] = useState({});
@@ -54,8 +53,6 @@ export function DataProvider(props) {
         setEqvTarget,
         tiles,
         setTiles,
-        whitelist,
-        setWhitelist,
       }}
     >
       {props.children}

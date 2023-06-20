@@ -1,9 +1,8 @@
 import FruitSearch from "./FruitSearch";
 import NumSearch from "./NumSearch";
 import Modal3 from "components/base/Modal3";
-import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
@@ -17,22 +16,14 @@ const getTitle = () => {
 
 export default function EqModal3() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
-  const { whitelist, setWhitelist } = useContext(DataContext);
+  const [whitelist, setWhitelist] = useLocalStorage("ico2_whitelist");
 
   // eslint-disable-next-line no-unused-vars
-  const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
-  const [eqv2L, setEqv2L] = useLocalStorage("eqv2L", "");
-  const [eqv3L, setEqv3L] = useLocalStorage("eqv3L", "");
-
-  useEffect(() => {
-    console.log("eqv1L changed!");
-    console.log(eqv1L);
-  }, [eqv1L]);
+  const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
+  const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
+  const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const validateEqv = () => {
-    console.log("eqv1L---", eqv1L);
-    console.log("eqv2L---", eqv2L);
-    console.log("eqv3L---", eqv3L);
     setWhitelist([eqv1L, eqv2L, eqv3L]);
     setOpen(false);
   };

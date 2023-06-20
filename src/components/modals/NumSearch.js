@@ -13,9 +13,9 @@ export default function NumSearch(props) {
   const NUMERIQUE_CATEGORY = 1;
   const USAGE_NUMERIQUE_CATEGORY = 10;
 
-  const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
-  const [eqv2L, setEqv2L] = useLocalStorage("eqv2L", "");
-  const [eqv3L, setEqv3L] = useLocalStorage("eqv3L", "");
+  const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
+  const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
+  const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
