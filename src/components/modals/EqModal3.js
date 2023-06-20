@@ -18,7 +18,7 @@ const getTitle = () => {
 
 export default function EqModal3() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
-  const { setWhitelist } = useContext(DataContext);
+  const { whitelist, setWhitelist } = useContext(DataContext);
 
   // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
@@ -30,6 +30,7 @@ export default function EqModal3() {
   };
 
   const dismiss = () => {
+    setEqv1L(whitelist[0]);
     setOpen(false);
   };
 
