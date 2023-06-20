@@ -13,7 +13,6 @@ export default function FruitSearch(props) {
 
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
   const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
-  const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const FRUIT_CATEGORY = 9;
 
@@ -77,7 +76,6 @@ export default function FruitSearch(props) {
                 checked={((openVal) => {
                   if (openVal === 1) return eqv1L === item.slug;
                   if (openVal === 2) return eqv2L === item.slug;
-                  if (openVal === 3) return eqv3L === item.slug;
                 })(props.open)}
                 setChecked={() => {
                   if (props.open === 1) {
@@ -85,9 +83,6 @@ export default function FruitSearch(props) {
                   }
                   if (props.open === 2) {
                     setEqv2L(item.slug);
-                  }
-                  if (props.open === 3) {
-                    setEqv3L(item.slug);
                   }
                 }}
               />
