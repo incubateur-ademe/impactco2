@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 export default function FruitSearch(props) {
   /** */
-  const { equivalents } = useContext(DataContext);
+  const { equivalents, tiles, setTiles } = useContext(DataContext);
 
   // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
@@ -72,16 +72,11 @@ export default function FruitSearch(props) {
               <EquivalentRadio
                 key={item.slug}
                 equivalent={item}
-                checked={((openVal) => {
-                  if (openVal === 1) {
-                    return eqv1L === item.slug;
-                  }
-                })(props.open)}
+                checked={tiles.find((tile) => tile === item)}
                 setChecked={(checked) => {
-                  console.log("checked", checked);
-                  if (props.open === 1) {
-                    setEqv1L(item.slug);
-                  }
+                  setTiles((prevTiles) => {
+                    return checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug);
+                  });
                 }}
               />
             ))}

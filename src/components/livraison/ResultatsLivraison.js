@@ -2,25 +2,23 @@ import ResultatLivraison from "./ResultatLivraison";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
 import useLocalStorage from "hooks/useLocalStorage";
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
 
 export default function ResultatsLivraison(props) {
-  const { equivalents, tiles } = useContext(DataContext);
+  // eslint-disable-next-line no-unused-vars
+  const { equivalents, whitelist } = useContext(DataContext);
 
   // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
 
-  // eslint-disable-next-line no-unused-vars
-  const [whiteList, setWhiteList] = useState(["voiturethermique", "repasavecduboeuf", "streamingvideo"]);
-
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter(
-        (equivalent) => whiteList.includes(equivalent.slug)
+        (equivalent) => whitelist.includes(equivalent.slug)
         // trunk-ignore(eslint/react-hooks/exhaustive-deps)
       ),
-    [whiteList]
+    [whitelist]
   );
 
   return (
@@ -35,11 +33,7 @@ export default function ResultatsLivraison(props) {
         ))}
       <div>
         {JSON.stringify(eqv1L, null, 2)}
-        {JSON.stringify(
-          tiles.map((t) => t.slug),
-          null,
-          2
-        )}
+        {JSON.stringify(whitelist, null, 2)}
       </div>
     </Wrapper>
   );

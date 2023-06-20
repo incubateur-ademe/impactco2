@@ -17,10 +17,10 @@ const getTitle = () => {
 
 export default function EqModal3() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
-  const { setTiles } = useContext(DataContext);
+  const { setWhitelist } = useContext(DataContext);
 
   const validateEqv = () => {
-    setTiles(["voiturethermique"]);
+    setWhitelist(["abricot", "mangue", "voiturethermique"]);
     setOpen(false);
   };
 
