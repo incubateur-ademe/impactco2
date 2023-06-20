@@ -2,7 +2,7 @@ import ResultatLivraison from "./ResultatLivraison";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
 import useLocalStorage from "hooks/useLocalStorage";
-import React, { useContext, useMemo } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import styled from "styled-components";
 
 export default function ResultatsLivraison(props) {
@@ -11,12 +11,16 @@ export default function ResultatsLivraison(props) {
   // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
 
+  // eslint-disable-next-line no-unused-vars
+  const [whiteList, setWhiteList] = useState(["voiturethermique", "repasavecduboeuf", "streamingvideo"]);
+
   const equivalentsToShow = useMemo(
     () =>
-      equivalents.filter((equivalent) =>
-        ["voiturethermique", "repasavecduboeuf", "streamingvideo"].includes(equivalent.slug)
+      equivalents.filter(
+        (equivalent) => whiteList.includes(equivalent.slug)
+        // trunk-ignore(eslint/react-hooks/exhaustive-deps)
       ),
-    [equivalents]
+    [whiteList]
   );
 
   return (

@@ -2,6 +2,7 @@ import FruitSearch from "./FruitSearch";
 import NumSearch from "./NumSearch";
 import OtherSearch from "./OtherSearch";
 import Modal3 from "components/base/Modal3";
+import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -16,9 +17,19 @@ const getTitle = () => {
 
 export default function EqModal3() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
+  const { setTiles } = useContext(DataContext);
+
+  const validateEqv = () => {
+    setTiles(["voiturethermique"]);
+    setOpen(false);
+  };
+
+  const dismiss = () => {
+    setOpen(false);
+  };
 
   return (
-    <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} width="45rem">
+    <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
       <Intro>
         Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée ({open}).
       </Intro>
@@ -28,6 +39,7 @@ export default function EqModal3() {
       <NumSearch open={open}></NumSearch>
       <H2Title>Autres catégories</H2Title>
       <OtherSearch open={open}></OtherSearch>
+      <button onClick={validateEqv}>Valider</button>
     </Modal3>
   );
 }
