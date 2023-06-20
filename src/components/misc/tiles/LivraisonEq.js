@@ -20,7 +20,7 @@ export default function LivraisonEq(props) {
       <OfWhat>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
       <div></div>
       <div>
-        <ButtonChange onClick={() => setEqv(props.slug)}>Changer</ButtonChange>
+        <ButtonChange onClick={() => setEqv(props.slug)}>Modifier l'équivalence</ButtonChange>
       </div>
     </Wrapper>
   );
@@ -59,6 +59,18 @@ const OfWhat = styled.div`
 `;
 
 const ButtonChange = styled.button`
-  border-radius: 10px;
+  background-color: white;
+  border-color: #b5abb2;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  color: #564d53;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 24px;
+  margin-top: 0.5rem;
+  padding: 4px 12px 4px 12px;
+  text-align: center;
 `;
