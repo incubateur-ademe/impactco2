@@ -12,6 +12,8 @@ export default function FruitSearch(props) {
   const { equivalents, tiles, setTiles } = useContext(DataContext);
 
   const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
+  const [eqv2L, setEqv2L] = useLocalStorage("eqv2L", "");
+  const [eqv3L, setEqv3L] = useLocalStorage("eqv3L", "");
 
   const FRUIT_CATEGORY = 9;
 
@@ -73,14 +75,19 @@ export default function FruitSearch(props) {
                 key={item.slug}
                 equivalent={item}
                 checked={((openVal) => {
-                  if (openVal === 1) {
-                    return eqv1L === item.slug;
-                  }
+                  if (openVal === 1) return eqv1L === item.slug;
+                  if (openVal === 2) return eqv2L === item.slug;
+                  if (openVal === 3) return eqv3L === item.slug;
                 })(props.open)}
-                setChecked={(checked) => {
-                  console.log("checked", checked);
+                setChecked={() => {
                   if (props.open === 1) {
                     setEqv1L(item.slug);
+                  }
+                  if (props.open === 2) {
+                    setEqv2L(item.slug);
+                  }
+                  if (props.open === 3) {
+                    setEqv3L(item.slug);
                   }
                 }}
               />

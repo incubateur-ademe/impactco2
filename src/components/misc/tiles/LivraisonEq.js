@@ -13,7 +13,7 @@ export default function LivraisonEq(props) {
   return (
     <Wrapper background={props.background}>
       <EmojiWrapper>
-        <Emoji>{props.equivalent.emoji}</Emoji>
+        <Emoji>{props?.equivalent?.emoji}</Emoji>
       </EmojiWrapper>
       <Number>{first2WordsOnly(fullSentenceFormat(props))}</Number>
       <div></div>
