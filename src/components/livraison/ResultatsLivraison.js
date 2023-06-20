@@ -1,13 +1,15 @@
 import ResultatLivraison from "./ResultatLivraison";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
+import useLocalStorage from "hooks/useLocalStorage";
 import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
 
 export default function ResultatsLivraison(props) {
-  const { eqv1, eqv2, eqv3, equivalents, tiles } = useContext(DataContext);
-  console.log("eqv3", eqv3);
-  console.log("eqv2", eqv2);
+  const { equivalents, tiles } = useContext(DataContext);
+
+  // eslint-disable-next-line no-unused-vars
+  const [eqv1L, setEqv1L] = useLocalStorage("eqv1L", "");
 
   const equivalentsToShow = useMemo(
     () =>
@@ -28,7 +30,7 @@ export default function ResultatsLivraison(props) {
           <LivraisonEq key={equivalent.slug} slug={indx + 1} equivalent={equivalent} weight={props.co2eq / 1000} />
         ))}
       <div>
-        {JSON.stringify(eqv1, null, 2)}
+        {JSON.stringify(eqv1L, null, 2)}
         {JSON.stringify(
           tiles.map((t) => t.slug),
           null,
