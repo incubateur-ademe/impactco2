@@ -289,7 +289,7 @@ const getData = () => {
       formule: "distance réelle * empreinte",
     },
     "livraison colis . déplacement consommateur . vélo . autres impacts . empreinte": {
-      formule: 12,
+      formule: 0,
       unité: "gCO2e/km",
     },
     "livraison colis . déplacement consommateur . petit véhicule électrique": {
