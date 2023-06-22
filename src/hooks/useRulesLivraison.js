@@ -8,7 +8,7 @@ export default function useRulesLivraison() {
       axios
         .get(
           // `https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json`
-          `/`
+          `https://dummyjson.com/products/1`
         )
         .then((res) => getData(res)),
     {
@@ -52,6 +52,10 @@ const getData = () => {
             alors: "moto",
           },
           {
+            si: 'mode de déplacement = "electricar"',
+            alors: "electricar",
+          },
+          {
             si: 'mode de déplacement = "commun"',
             alors: "commun",
           },
@@ -78,6 +82,7 @@ const getData = () => {
         somme: [
           "voiture * voiture . part déplacement",
           "moto * moto . part déplacement",
+          "electricar * electricar . part déplacement",
           "commun * commun . part déplacement",
           "marche * marche . part déplacement",
           "vélo * vélo . part déplacement",
@@ -89,7 +94,7 @@ const getData = () => {
       formule: {
         "une possibilité": {
           "choix obligatoire": "oui",
-          possibilités: ["voiture", "moto", "commun", "marche", "vélo", "petit véhicule électrique"],
+          possibilités: ["voiture", "moto", "electricar", "commun", "marche", "vélo", "petit véhicule électrique"],
         },
       },
       "par défaut": "'moyenne'",
@@ -126,6 +131,49 @@ const getData = () => {
     },
     "livraison colis . déplacement consommateur . voiture . autres impacts . empreinte": {
       formule: 90.5,
+      unité: "gCO2e/km",
+    },
+    "livraison colis . déplacement consommateur . electricar": {
+      formule: "usage + autres impacts",
+    },
+    "livraison colis . déplacement consommateur . electricar . part déplacement": {
+      formule: {
+        variations: [
+          {
+            si: "distance < 2",
+            alors: 0.006,
+          },
+          {
+            si: "distance < 5",
+            alors: 0.011,
+          },
+          {
+            si: "distance < 15",
+            alors: 0.008,
+          },
+          {
+            si: "distance < 30",
+            alors: 0.0052,
+          },
+          {
+            sinon: 0.0025,
+          },
+        ],
+      },
+    },
+    "livraison colis . déplacement consommateur . electricar . usage": {
+      formule: "distance réelle * empreinte",
+    },
+    "livraison colis . déplacement consommateur . electricar . usage . empreinte": {
+      formule: 47.134,
+      unité: "gCO2e/km",
+    },
+    "livraison colis . déplacement consommateur . electricar . autres impacts": {
+      titre: "Impacts fabrication, entretien, infrastructures",
+      formule: "distance réelle * empreinte",
+    },
+    "livraison colis . déplacement consommateur . electricar . autres impacts . empreinte": {
+      formule: 7.3,
       unité: "gCO2e/km",
     },
     "livraison colis . déplacement consommateur . moto": {

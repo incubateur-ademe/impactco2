@@ -38,9 +38,10 @@ export const retraits = [
 
 export const relays = [
   { displayed: "En voiture", uid: "voiture_thermique", publicode: "voiture" },
-  { displayed: "En vélo électrique", uid: "electrique", publicode: "petit véhicule électrique" },
+  { displayed: "En voiture électrique", uid: "electricar", publicode: "electricar" },
   { displayed: "Marche", uid: "marche", publicode: "marche" },
   { displayed: "En vélo", uid: "magasin", publicode: "vélo" },
+  { displayed: "En vélo électrique", uid: "veloelectrique", publicode: "petit véhicule électrique" },
   { displayed: "En transport en commun", uid: "transport", publicode: "commun" },
 ];
 
