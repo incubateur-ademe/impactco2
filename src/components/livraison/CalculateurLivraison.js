@@ -4,7 +4,7 @@ import ResultatsLivraison from "./ResultatsLivraison";
 import SelectProduits from "./SelectProduits";
 import SelectRetraits from "./SelectRetraits";
 import YearlyLivraison from "./YearlyLivraison";
-import { calculateResultFunction } from "./calculateur_livraison_funtions.js";
+import { calculateResultFunction } from "./calculateur_livraison_functions.js";
 import { produits, retraits, relays } from "./data.js";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
 import React, { useContext, useMemo, useState } from "react";
