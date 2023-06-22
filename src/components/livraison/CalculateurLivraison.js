@@ -35,7 +35,7 @@ export default function CalculateurLivraison() {
 
   useMemo(() => {
     calculateResult();
-    setShowOptional(values.retrait === "relais");
+    setShowOptional(values.retrait.amongst(["relais", "click", "magasin"]));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 

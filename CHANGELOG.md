@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.6.1 (22/05/2023)
+
+* U3 - retours correctifs
+
 ## 1.6.0 (19/05/2023)
 
 * U9 - équivalences
