@@ -74,21 +74,15 @@ export default function NumSearch(props) {
               <EquivalentRadio
                 key={item.slug}
                 equivalent={item}
-                checked={((openVal) => {
-                  if (openVal === 1) return eqv1L === item.slug;
-                  if (openVal === 2) return eqv2L === item.slug;
-                  if (openVal === 3) return eqv3L === item.slug;
+                checked={(() => {
+                  if (props.open === 1) return eqv1L === item.slug;
+                  if (props.open === 2) return eqv2L === item.slug;
+                  if (props.open === 3) return eqv3L === item.slug;
                 })(props.open)}
                 setChecked={() => {
-                  if (props.open === 1) {
-                    setEqv1L(item.slug);
-                  }
-                  if (props.open === 2) {
-                    setEqv2L(item.slug);
-                  }
-                  if (props.open === 3) {
-                    setEqv3L(item.slug);
-                  }
+                  if (props.open === 1) setEqv1L(item.slug);
+                  if (props.open === 2) setEqv2L(item.slug);
+                  if (props.open === 3) setEqv3L(item.slug);
                 }}
               />
             ))}
