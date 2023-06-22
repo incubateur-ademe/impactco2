@@ -141,22 +141,22 @@ const getData = () => {
         variations: [
           {
             si: "distance < 2",
-            alors: 0.006,
+            alors: 0.012,
           },
           {
             si: "distance < 5",
-            alors: 0.011,
+            alors: 0.0219,
           },
           {
             si: "distance < 15",
-            alors: 0.008,
+            alors: 0.0161,
           },
           {
             si: "distance < 30",
-            alors: 0.0052,
+            alors: 0.0104,
           },
           {
-            sinon: 0.0025,
+            sinon: 0.005,
           },
         ],
       },
@@ -165,7 +165,7 @@ const getData = () => {
       formule: "distance réelle * empreinte",
     },
     "livraison colis . déplacement consommateur . electricar . usage . empreinte": {
-      formule: 47.134,
+      formule: 75.134,
       unité: "gCO2e/km",
     },
     "livraison colis . déplacement consommateur . electricar . autres impacts": {
@@ -173,7 +173,7 @@ const getData = () => {
       formule: "distance réelle * empreinte",
     },
     "livraison colis . déplacement consommateur . electricar . autres impacts . empreinte": {
-      formule: 7.3,
+      formule: 45,
       unité: "gCO2e/km",
     },
     "livraison colis . déplacement consommateur . moto": {
