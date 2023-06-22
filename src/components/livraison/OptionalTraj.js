@@ -22,7 +22,8 @@ export default function OptionalTraj(props) {
         <div className="item3"></div>
         <div className="item4">
           <Addendum>
-            <span className="plus">+</span> {convertGramsToKilograms(props.diffKm0)} kg de CO2e
+            <span className="plus">+</span>
+            <span className="txt">{convertGramsToKilograms(props.diffKm0)} kg de CO2e</span>
           </Addendum>
         </div>
       </GridContainer>
@@ -83,13 +84,23 @@ const Text = styled.div`
 `;
 
 const Addendum = styled.div`
+  align-items: center;
+  background-color: #ebf2ff;
+  border: 1px solid #ccdcfd;
+  border-radius: 8px;
   color: #235dd2;
+  display: flex;
   font-size: 14px;
   font-weight: 400;
+  justify-content: center;
   letter-spacing: 0em;
-  line-height: 16px;
+  line-height: 32px;
+  padding: 0 0.75rem;
   > .plus {
     font-size: 28px;
+    line-height: 32px;
+    margin-right: 5px;
+    margin-top: -8px;
   }
 `;
 
