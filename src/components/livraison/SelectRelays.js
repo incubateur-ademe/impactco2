@@ -6,7 +6,7 @@ const StyledSelect = styled(Select)`
   margin: 0;
   > select {
     border: none;
-    color: ${(props) => props.theme.colors.main};
+    color: ${(props) => props.theme.colors.main2};
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0em;

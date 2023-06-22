@@ -105,10 +105,12 @@ const Addendum = styled.div`
 `;
 
 const Input = styled.input`
-  border-color: ${(props) => props.theme.colors.text};
+  background-color: inherit;
+  border-color: lightgray;
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
+  color: #39a69e;
   text-align: right;
   width: 2rem;
 `;
