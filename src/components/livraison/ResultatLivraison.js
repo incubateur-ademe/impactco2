@@ -30,7 +30,7 @@ export default function ResultatLivraison(props) {
         <div className="item4">
           <Subexplain>
             <div>
-              <strong>par livraison</strong>
+              <strong>par livraison</strong>, soit...
             </div>
           </Subexplain>
         </div>
