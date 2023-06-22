@@ -43,10 +43,10 @@ const GridContainer = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight};
+  background-color: ${(props) => props.theme.colors.textLight2};
   display: ${(props) => (props.show ? "block" : "none")};
   margin-top: -10px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3rem;
   ${(props) => props.theme.mq.xlarge} {
     padding: 2rem 1rem 0.5rem 1rem;
   }

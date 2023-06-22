@@ -1,4 +1,3 @@
-import SelectTrajs from "./SelectTrajs";
 import { convertGramsToKilograms } from "./utils";
 import styled from "styled-components";
 
@@ -8,7 +7,7 @@ export default function OptionalTraj(props) {
       <GridContainer>
         <div className="item1">
           <FlexCenter>
-            <Text>Je parcours une distance de&nbsp;</Text>
+            <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
             <Input
               type="number"
               value={props.km}
@@ -16,15 +15,10 @@ export default function OptionalTraj(props) {
               min="0"
               step="1"
             ></Input>
-            <Text>km&nbsp;</Text>
-          </FlexCenter>
-          <FlexCenter>
-            <Text>pour un trajet dédié</Text>
+            <Text>&nbsp;km</Text>
           </FlexCenter>
         </div>
-        <div className="item2">
-          <SelectTrajs changeTraj={props.changeTraj} value={props.value}></SelectTrajs>
-        </div>
+        <div className="item2"></div>
         <div className="item3"></div>
         <div className="item4">
           <Addendum>
@@ -37,10 +31,12 @@ export default function OptionalTraj(props) {
 }
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight};
+  background-color: ${(props) => props.theme.colors.textLight2};
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   display: ${(props) => (props.show ? "block" : "none")};
   margin-top: -10px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3rem;
   ${(props) => props.theme.mq.xlarge} {
     padding: 1rem 1rem 1.5rem 1rem;
   }
