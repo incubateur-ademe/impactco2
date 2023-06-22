@@ -4,7 +4,7 @@ const H1Title = styled.h1`
   margin-top: 0;
 `;
 const MainColorSpan = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: ${(props) => props.theme.colors.main2};
 `;
 const SmallText = styled.div`
   font-size: 14px;
