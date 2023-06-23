@@ -89,10 +89,11 @@ export default function CalculateurLivraison() {
 
 const Optionals = styled.div`
   background-color: #f9f7f8;
-  border: 1px solid #e2dce0;
-  border-radius: 16px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-top: -10px;
+  position: relative;
+  z-index: -1;
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
   }
@@ -125,6 +126,9 @@ const H2Title = styled.h2`
 `;
 
 const DropList = styled.div`
+  background-color: ${(props) => props.theme.colors.background};
+  border: 1px solid #e2dce0;
+  border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;

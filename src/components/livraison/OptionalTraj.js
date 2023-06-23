@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   display: ${(props) => (props.show ? "block" : "none")};
-  padding: 1rem 0rem 1rem 2rem;
+  padding: 0.25rem 0rem 1rem 2rem;
   ${(props) => props.theme.mq.xlarge} {
     padding: 0 1rem 1.5rem 1rem;
   }
