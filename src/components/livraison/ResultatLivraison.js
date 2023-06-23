@@ -123,6 +123,7 @@ const Arrow = styled.div`
   background: #457be7;
   clip-path: polygon(0% 0%, 52.5% 49.75%, 52.5% 52.5%, 0% 100%);
   height: 100%;
+  margin-left: -1px;
   width: 30px;
   ${(props) => props.theme.mq.xlarge} {
     clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
