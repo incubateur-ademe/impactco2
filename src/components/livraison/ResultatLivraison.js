@@ -55,6 +55,7 @@ const BlueGrid = styled.div`
   color: white;
   display: grid;
   grid-template-columns: 30px 1fr;
+  margin: auto;
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
   ${(props) => props.theme.mq.xlarge} {
