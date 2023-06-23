@@ -1,5 +1,4 @@
-import FruitSearch from "./FruitSearch";
-import NumSearch from "./NumSearch";
+import AllSearch from "./AllSearch";
 import Button from "components/base/Button";
 import Modal3 from "components/base/Modal3";
 import { default_eqs } from "components/livraison/data.js";
@@ -11,7 +10,7 @@ import useLocalStorage from "use-local-storage";
 const getTitle = () => {
   return (
     <Title>
-      Choisir <GreenText>d&apos;autres équivalences</GreenText>
+      Choisir <GreenText>une autre équivalence</GreenText>
     </Title>
   );
 };
@@ -39,11 +38,9 @@ export default function EqModal3() {
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
-      <Intro>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Intro>
-      <H2Title>Fruits et légumes</H2Title>
-      <FruitSearch open={open}></FruitSearch>
-      <H2Title>Usages du numérique</H2Title>
-      <NumSearch open={open}></NumSearch>
+      <Intro>Sélectionnez (ou désélectionnez) un équivalent pour créer votre infographie personnalisée.</Intro>
+      <H2Title>Choisir un autre équivalent</H2Title>
+      <AllSearch open={open}></AllSearch>
       <Flex>
         <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
         <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>

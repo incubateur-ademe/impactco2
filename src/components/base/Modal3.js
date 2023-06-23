@@ -78,7 +78,7 @@ const Content = styled.div`
   height: 100%;
   opacity: ${(props) => (props.open ? 1 : 0)};
   position: relative;
-  transform: scale(${(props) => (props.open ? 1 : 0.7)}) translateY(${(props) => (props.open ? 0 : "10em")});
+  transform: translateX(${(props) => (props.open ? 0 : "10em")});
   transition: all ${(props) => (props.open && !props.noAnimation ? "300ms" : "1ms")} ease-in-out;
   visibility: ${(props) => (props.open ? "visible" : "hidden")};
   width: ${(props) => props.width || "40em"};
