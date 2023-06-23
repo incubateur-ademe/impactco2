@@ -93,7 +93,6 @@ const Optionals = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: -10px;
   position: relative;
-  z-index: -1;
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
   }
@@ -141,6 +140,7 @@ const DropList = styled.div`
     justify-items: start;
   }
   position: relative;
+  z-index: 1;
   > div > label {
     color: #746770;
     font-size: 14px;
