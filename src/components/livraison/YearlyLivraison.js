@@ -24,7 +24,7 @@ const Text = styled.div`
   margin-top: 1rem;
   text-align: left;
   ${(props) => props.theme.mq.small} {
-    font-size: 0.4rem;
+    font-size: 0.75rem;
   }
 `;
 

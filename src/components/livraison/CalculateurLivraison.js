@@ -169,6 +169,9 @@ const Addendum = styled.div`
   justify-content: center;
   letter-spacing: 0em;
   line-height: 32px;
+  ${(props) => props.theme.mq.large} {
+    margin-right: 1rem;
+  }
   padding: 0 0.75rem;
   > .plus {
     font-size: 28px;

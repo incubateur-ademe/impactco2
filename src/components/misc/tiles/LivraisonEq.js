@@ -30,6 +30,14 @@ const Wrapper = styled.div`
   align-content: center;
   display: grid;
   grid-template-columns: 40px 1fr;
+  ${(props) => props.theme.mq.large} {
+    grid-template-columns: 1fr;
+    > div {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
