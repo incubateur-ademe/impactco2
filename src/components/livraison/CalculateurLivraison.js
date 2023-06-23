@@ -6,6 +6,7 @@ import SelectRetraits from "./SelectRetraits";
 import YearlyLivraison from "./YearlyLivraison";
 import { calculateResultFunction } from "./calculateur_livraison_functions.js";
 import { produits, retraits, relays } from "./data.js";
+import { convertGramsToKilograms } from "./utils";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
 import React, { useContext, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -52,25 +53,69 @@ export default function CalculateurLivraison() {
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
-      <OptionalRelay
-        show={showOptional}
-        changeRelay={changeRelay}
-        value={values.relay}
-        diffRelay={diffs.diffRelay}
-      ></OptionalRelay>
-      <OptionalTraj
-        show={showOptional}
-        km={values.km}
-        changeKm={changeKm}
-        changeTraj={changeTraj}
-        value={values.traj}
-        diffKm0={diffs.diffKm0}
-      ></OptionalTraj>
+      <Optionals>
+        <div className="item1">
+          <OptionalRelay
+            show={showOptional}
+            changeRelay={changeRelay}
+            value={values.relay}
+            diffRelay={diffs.diffRelay}
+          ></OptionalRelay>
+        </div>
+        <div className="item2">
+          <Addendum>
+            <span className="plus">+</span>
+            <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
+          </Addendum>
+        </div>
+        <div className="item3">
+          <OptionalTraj
+            show={showOptional}
+            km={values.km}
+            changeKm={changeKm}
+            changeTraj={changeTraj}
+            value={values.traj}
+          ></OptionalTraj>
+        </div>
+        <div className="item4"></div>
+        <div className="item5"></div>
+        <div className="item6"></div>
+      </Optionals>
       <ResultatsLivraison co2eq={cO2eq} />
       <YearlyLivraison co2eq={cO2eq} />
     </>
   );
 }
+
+const Optionals = styled.div`
+  background-color: #f9f7f8;
+  border: 1px solid #e2dce0;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  ${(props) => props.theme.mq.small} {
+    grid-template-columns: 1fr;
+  }
+  > .item1 {
+    grid-column: span 2;
+  }
+  > .item2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: span 2;
+    ${(props) => props.theme.mq.small} {
+      order: 1;
+      grid-column: span 3;
+      justify-content: flex-start;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  > .item3 {
+    grid-column: span 2;
+  }
+`;
 
 const H2Title = styled.h2`
   font-size: 22px;
@@ -80,9 +125,6 @@ const H2Title = styled.h2`
 `;
 
 const DropList = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
-  border: 1px solid #e2dce0;
-  border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -108,5 +150,26 @@ const DropList = styled.div`
       font-size: 12px;
       width: auto;
     }
+  }
+`;
+
+const Addendum = styled.div`
+  align-items: center;
+  background-color: #ebf2ff;
+  border: 1px solid #ccdcfd;
+  border-radius: 8px;
+  color: #235dd2;
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0em;
+  line-height: 32px;
+  padding: 0 0.75rem;
+  > .plus {
+    font-size: 28px;
+    line-height: 32px;
+    margin-right: 5px;
+    margin-top: -8px;
   }
 `;

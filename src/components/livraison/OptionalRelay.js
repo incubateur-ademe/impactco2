@@ -1,5 +1,4 @@
 import SelectRelays from "./SelectRelays";
-import { convertGramsToKilograms } from "./utils";
 import styled from "styled-components";
 
 export default function OptionalRelay(props) {
@@ -13,14 +12,7 @@ export default function OptionalRelay(props) {
           <SelectRelays changeRelay={props.changeRelay} value={props.value}></SelectRelays>
         </div>
         <div className="item3"></div>
-        <div className="item4">
-          <div className="item4">
-            <Addendum>
-              <span className="plus">+</span>
-              <span className="txt">{convertGramsToKilograms(props.diffKm0)} kg de CO2e</span>
-            </Addendum>
-          </div>
-        </div>
+        <div className="item4"></div>
       </GridContainer>
     </Wrapper>
   );
@@ -53,12 +45,10 @@ const GridContainer = styled.div`
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
   display: ${(props) => (props.show ? "block" : "none")};
-  margin-top: -10px;
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 0rem 0.5rem 2rem;
   ${(props) => props.theme.mq.xlarge} {
     padding: 2rem 1rem 0.5rem 1rem;
   }
-  z-index: -1;
 `;
 
 const Text = styled.div`
@@ -69,25 +59,4 @@ const Text = styled.div`
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 24px;
-`;
-
-const Addendum = styled.div`
-  align-items: center;
-  background-color: #ebf2ff;
-  border: 1px solid #ccdcfd;
-  border-radius: 8px;
-  color: #235dd2;
-  display: flex;
-  font-size: 14px;
-  font-weight: 400;
-  justify-content: center;
-  letter-spacing: 0em;
-  line-height: 32px;
-  padding: 0 0.75rem;
-  > .plus {
-    font-size: 28px;
-    line-height: 32px;
-    margin-right: 5px;
-    margin-top: -8px;
-  }
 `;
