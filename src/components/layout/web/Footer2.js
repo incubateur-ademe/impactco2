@@ -1,6 +1,7 @@
 import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
 import Marianne from "components/base/Marianne";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -33,7 +34,9 @@ export default function Footer2() {
         <Ademe />
         <Logo />
       </Logos>
-      <Accessibility>Accessibilité : non-conforme</Accessibility>
+      <Accessibility>
+        <Link href="/accessibilite">Accessibilité : non-conforme</Link>
+      </Accessibility>
       <Accessibility breath>Version : {process.env.thebuildid}</Accessibility>
     </>
   );
