@@ -66,12 +66,15 @@ export default function Accessibilite() {
 
           <p>
             <strong>Non-conformité</strong>
+            <div>Néant</div>
           </p>
           <p>
             <strong>Dérogations pour charge disproportionnée</strong>
+            <div>Néant</div>
           </p>
           <p>
             <strong>Contenus non soumis à l’obligation d’accessibilité</strong>
+            <div>Néant</div>
           </p>
 
           <h2 id="établissement-de-cette-déclaration-daccessibilité">
