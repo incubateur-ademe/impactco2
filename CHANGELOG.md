@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.6.3 (26/05/2023)
+
+* BSR - données agribalyse
+
 ## 1.6.2 (26/05/2023)
 
 * BSR - amélioration de la déclaration d'accessibilité
