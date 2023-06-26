@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.6.2 (26/05/2023)
+
+* BSR - amélioration de la déclaration d'accessibilité
+
 ## 1.6.1 (22/05/2023)
 
 * U3 - retours correctifs
