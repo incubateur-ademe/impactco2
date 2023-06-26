@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.7.0 (27/05/2023)
+
+* U6 - intégrer l'iframe
+
 ## 1.6.2 (26/05/2023)
 
 * BSR - amélioration de la déclaration d'accessibilité
