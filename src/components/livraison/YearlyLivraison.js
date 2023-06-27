@@ -7,7 +7,7 @@ export default function YearlyLivraison(props) {
       <Text>
         Vos usages émettent donc{" "}
         <Color>
-          {convertGramsToKilograms(props.co2eq)} kg CO<sub>2</sub>e
+          {convertGramsToKilograms(props.co2eq * 12)} kg CO<sub>2</sub>e
         </Color>{" "}
         <strong>par an</strong>
         <span> (cette valeur se base sur la fréquence d'une commande par mois).</span>
