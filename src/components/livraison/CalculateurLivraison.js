@@ -120,7 +120,7 @@ const DropList = styled.div`
   border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
+  justify-items: left;
   ${(props) => props.theme.mq.xlarge} {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
