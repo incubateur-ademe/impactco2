@@ -53,14 +53,9 @@ export default function CalculateurLivraison() {
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
-      <Optionals>
+      <Optionals show={showOptional}>
         <div className="item1">
-          <OptionalRelay
-            show={showOptional}
-            changeRelay={changeRelay}
-            value={values.relay}
-            diffRelay={diffs.diffRelay}
-          ></OptionalRelay>
+          <OptionalRelay changeRelay={changeRelay} value={values.relay} diffRelay={diffs.diffRelay}></OptionalRelay>
         </div>
         <div className="item2">
           <Addendum>
@@ -69,13 +64,7 @@ export default function CalculateurLivraison() {
           </Addendum>
         </div>
         <div className="item3">
-          <OptionalTraj
-            show={showOptional}
-            km={values.km}
-            changeKm={changeKm}
-            changeTraj={changeTraj}
-            value={values.traj}
-          ></OptionalTraj>
+          <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
         </div>
         <div className="item4"></div>
         <div className="item5"></div>
@@ -89,10 +78,11 @@ export default function CalculateurLivraison() {
 
 const Optionals = styled.div`
   background-color: #f9f7f8;
-  display: grid;
+  display: ${(props) => (props.show ? "grid" : "none")};
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: -10px;
   position: relative;
+
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
   }

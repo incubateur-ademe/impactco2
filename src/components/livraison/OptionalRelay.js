@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function OptionalRelay(props) {
   return (
-    <Wrapper show={props.show}>
+    <Wrapper>
       <GridContainer>
         <div className="item1">
           <Text>Vous effectuez généralement le trajet jusqu'au point relais</Text>
@@ -44,7 +44,6 @@ const GridContainer = styled.div`
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
-  display: ${(props) => (props.show ? "block" : "none")};
   padding: 1rem 0rem 0.5rem 2rem;
   ${(props) => props.theme.mq.xlarge} {
     padding: 1.75rem 1rem 0.5rem 1rem;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function OptionalTraj(props) {
   return (
-    <Wrapper show={props.show}>
+    <Wrapper>
       <GridContainer>
         <div className="item1">
           <FlexCenter>
@@ -31,7 +31,6 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-  display: ${(props) => (props.show ? "block" : "none")};
   padding: 0.25rem 0rem 1rem 2rem;
   ${(props) => props.theme.mq.xlarge} {
     padding: 0 1rem 1.5rem 1rem;
