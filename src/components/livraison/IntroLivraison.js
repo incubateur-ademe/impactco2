@@ -70,10 +70,6 @@ export default function IntroLivraison() {
         <strong>deux colis livrés par personne par mois</strong>.
       </RegularParagraph>
       <br />
-      <RegularParagraph>
-        Vous vous faites souvent livrer vos achats ? Estimez l'impact carbone de vos livraisons grâce à notre
-        simulateur.
-      </RegularParagraph>
       <Separator />
     </>
   );
