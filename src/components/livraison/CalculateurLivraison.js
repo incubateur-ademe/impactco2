@@ -52,7 +52,18 @@ export default function CalculateurLivraison() {
     <>
       <Flex>
         <H2Title>Estimez l'impact de vos livraisons</H2Title>
-        <ButtonChange onClick={() => setIfl(true)}>Partager</ButtonChange>
+        <ButtonChange onClick={() => setIfl(true)}>
+          <svg width="16px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+            />
+          </svg>
+          &nbsp;Intégrer le simulateur
+        </ButtonChange>
       </Flex>
       <DropList>
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
@@ -115,7 +126,7 @@ const Optionals = styled.div`
 const H2Title = styled.h2`
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
   margin-top: 0;
 `;
 
@@ -188,11 +199,16 @@ const ButtonChange = styled.button`
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 24px;
-  margin-top: 0.5rem;
+  margin-left: 1rem;
   padding: 4px 12px 4px 12px;
   text-align: center;
 `;
 
 const Flex = styled.div`
+  align-items: center;
   display: flex;
+  margin-bottom: 1rem;
+  ${(props) => props.theme.mq.large} {
+    flex-direction: column;
+  }
 `;
