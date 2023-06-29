@@ -1,3 +1,4 @@
+import IflCode from "./IflCode";
 import Select from "components/base/Select";
 import React from "react";
 import styled from "styled-components";
@@ -28,6 +29,7 @@ export default function IflConfigurator(props) {
         <option value="default">Clair</option>
         <option value="night">Sombre</option>
       </Select>
+      <IflCode type={props.path} theme={props.theme}></IflCode>
     </Wrapper>
   );
 }
