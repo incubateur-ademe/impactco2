@@ -68,9 +68,7 @@ const flash = (props) => keyframes`
   }
 `;
 
-const Wrapper = styled.div`
-  position: relative;
-`;
+const Wrapper = styled.div``;
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
@@ -82,7 +80,6 @@ const Text = styled.code`
   display: block;
   font-size: 0.875rem;
   padding: 1rem 1rem 2rem;
-  position: relative;
   word-break: break-word;
 `;
 const Copy = styled.button`

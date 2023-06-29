@@ -24,9 +24,7 @@ export default function IFrameLivraisonModal3() {
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
-      <div>
-        <IflConfigurator theme={theme} setTheme={setTheme}></IflConfigurator>
-      </div>
+      <IflConfigurator theme={theme} setTheme={setTheme}></IflConfigurator>
     </Modal3>
   );
 }

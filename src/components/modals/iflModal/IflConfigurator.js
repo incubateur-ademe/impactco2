@@ -3,16 +3,6 @@ import Select from "components/base/Select";
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
-  margin-right: 2rem;
-  padding: 1.5rem;
-
-  ${(props) => props.theme.mq.medium} {
-    margin-bottom: 1.5rem;
-    width: 100%;
-  }
-`;
-
 const getLabel = () => {
   return (
     <span>
@@ -29,6 +19,33 @@ export default function IflConfigurator(props) {
         <option value="night">Sombre</option>
       </Select>
       <IflCode type={props.path} theme={props.theme}></IflCode>
+      <BottomAdvice>
+        <p>
+          Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe à
+          impactco2@ademe.fr.
+        </p>
+        <p>
+          Pour réutiliser le code du simulateur, consultez le code du site Impact CO2, développé de manière ouverte
+          (open source).
+        </p>
+      </BottomAdvice>
     </Wrapper>
   );
 }
+
+const BottomAdvice = styled.div`
+  margin-top: auto;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-right: 2rem;
+  padding: 1.5rem;
+  padding-bottom: 0;
+  ${(props) => props.theme.mq.medium} {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+`;
