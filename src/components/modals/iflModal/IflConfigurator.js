@@ -6,7 +6,6 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   margin-right: 2rem;
   padding: 1.5rem;
-  width: 24rem;
 
   ${(props) => props.theme.mq.medium} {
     margin-bottom: 1.5rem;

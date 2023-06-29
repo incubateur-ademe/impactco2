@@ -12,6 +12,7 @@ export const themes = {
       mainDark: "#1D625E",
       second: "#EFF4F9",
       secondDark: "#B1D4F6",
+      thirdDark: "#457be7",
       background: "#ffffff",
       text: "#383838",
       textLight: "#FBFBFC",
