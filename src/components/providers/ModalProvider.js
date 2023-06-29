@@ -3,6 +3,7 @@ import DetailsUsagesNumModal from "components/modals/DetailsUsagesNumModal";
 import DevicesModal from "components/modals/DevicesModal";
 import EcvModal from "components/modals/EcvModal";
 import EqModal3 from "components/modals/EqModal3";
+import IFrameLivraisonModal3 from "components/modals/IFrameLivraisonModal3";
 import ShareModal from "components/modals/ShareModal";
 import TilesModal from "components/modals/TilesModal";
 import React, { useState } from "react";
@@ -15,6 +16,7 @@ export function ModalProvider(props) {
   const [share, setShare] = useState(false);
   const [ecv, setEcv] = useState(false);
   const [eqv, setEqv] = useState(false);
+  const [ifl, setIfl] = useState(false); //Ifl == IFrameLivraison
   const [devices, setDevices] = useState(false);
   const [hypothesis, setHypothesis] = useState(false);
 
@@ -46,6 +48,11 @@ export function ModalProvider(props) {
           window?._paq?.push(["trackEvent", "Interaction", "Modal", "EQV"]);
           setEqv(value);
         },
+        ifl,
+        setIfl: (value) => {
+          window?._paq?.push(["trackEvent", "Interaction", "Modal", "IFL"]);
+          setIfl(value);
+        },
         devices,
         setDevices: (value) => {
           window?._paq?.push(["trackEvent", "Interaction", "Modal", "Devices"]);
@@ -61,6 +68,7 @@ export function ModalProvider(props) {
       {props.children}
       <Co2eModal2 />
       <EqModal3 />
+      <IFrameLivraisonModal3 />
       <TilesModal />
       <ShareModal />
       <EcvModal />
