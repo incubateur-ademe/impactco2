@@ -1,4 +1,5 @@
 import IflCode from "./IflCode";
+import MagicLink from "components/base/MagicLink";
 import Select from "components/base/Select";
 import React from "react";
 import styled from "styled-components";
@@ -22,15 +23,35 @@ export default function IflConfigurator(props) {
       <BottomAdvice>
         <GoFurther>
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" />
+            <svg width="11" height="17" viewBox="0 0 22 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M22 10.92C22 17.359 17 18.359 17 24.36C17 27.458 13.877 27.719 11.5 27.719C9.447 27.719 4.914 26.94 4.914 24.358C4.914 18.36 0 17.36 0 10.92C0 4.889 5.285 0 11.083 0C16.883 0 22 4.889 22 10.92Z"
+                fill="#FFD983"
+              />
+              <path
+                d="M15.167 32.36C15.167 33.188 12.933 34.86 11 34.86C9.067 34.86 6.833 33.188 6.833 32.36C6.833 31.532 9.066 31.86 11 31.86C12.933 31.86 15.167 31.532 15.167 32.36Z"
+                fill="#CCD6DD"
+              />
+              <path
+                d="M15.707 10.153C15.316 9.76201 14.684 9.76201 14.293 10.153L11 13.446L7.707 10.153C7.316 9.76201 6.684 9.76201 6.293 10.153C5.902 10.544 5.902 11.176 6.293 11.567L10 15.274V25.86C10 26.413 10.448 26.86 11 26.86C11.552 26.86 12 26.413 12 25.86V15.274L15.707 11.567C16.098 11.176 16.098 10.544 15.707 10.153Z"
+                fill="#FFCC4D"
+              />
+              <path
+                d="M17 30.86C17 31.964 16.104 32.86 15 32.86H7C5.896 32.86 5 31.964 5 30.86V24.86H17V30.86Z"
+                fill="#99AAB5"
+              />
+              <path
+                d="M4.999 31.86C4.519 31.86 4.095 31.513 4.014 31.024C3.923 30.48 4.291 29.964 4.836 29.874L16.836 27.874C17.38 27.776 17.896 28.151 17.986 28.696C18.077 29.24 17.709 29.756 17.164 29.846L5.164 31.846C5.109 31.856 5.053 31.86 4.999 31.86ZM4.999 27.86C4.519 27.86 4.095 27.513 4.014 27.024C3.923 26.48 4.291 25.964 4.836 25.874L16.836 23.874C17.38 23.777 17.896 24.151 17.986 24.696C18.077 25.24 17.709 25.756 17.164 25.846L5.164 27.846C5.109 27.856 5.053 27.86 4.999 27.86Z"
+                fill="#CCD6DD"
+              />
             </svg>
           </div>
-          <div>Aller plus loin</div>
+          <div>&nbsp;Aller plus loin</div>
         </GoFurther>
         <p>
-          Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe à
-          impactco2@ademe.fr.
+          Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
+          à&nbsp;
+          <MagicLink to="impactco2@ademe.fr">impactco2@ademe.fr</MagicLink>.
         </p>
         <p>
           Pour réutiliser le code du simulateur, consultez le code du site Impact CO2, développé de manière ouverte
