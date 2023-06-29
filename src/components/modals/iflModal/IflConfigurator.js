@@ -3,8 +3,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
-  border-radius: 1rem;
   margin-right: 2rem;
   padding: 1.5rem;
   width: 24rem;
@@ -15,14 +13,18 @@ const Wrapper = styled.div`
   }
 `;
 
+const getLabel = () => {
+  return (
+    <span>
+      1) Choisissez le <strong>thème</strong> de votre iframe.
+    </span>
+  );
+};
+
 export default function IflConfigurator(props) {
   return (
     <Wrapper>
-      <Select
-        onChange={({ value }) => props.setTheme(value)}
-        label={`<span>1) Choisissez le thème de votre iframe.</span>`}
-        name="theme"
-      >
+      <Select onChange={({ value }) => props.setTheme(value)} getLabel={getLabel} name="theme">
         <option value="default">Clair</option>
         <option value="night">Sombre</option>
       </Select>
