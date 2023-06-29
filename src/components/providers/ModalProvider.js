@@ -2,6 +2,7 @@ import Co2eModal2 from "components/modals/Co2eModal2";
 import DetailsUsagesNumModal from "components/modals/DetailsUsagesNumModal";
 import DevicesModal from "components/modals/DevicesModal";
 import EcvModal from "components/modals/EcvModal";
+import EqModal3 from "components/modals/EqModal3";
 import ShareModal from "components/modals/ShareModal";
 import TilesModal from "components/modals/TilesModal";
 import React, { useState } from "react";
@@ -13,6 +14,7 @@ export function ModalProvider(props) {
   const [tiles, setTiles] = useState(false);
   const [share, setShare] = useState(false);
   const [ecv, setEcv] = useState(false);
+  const [eqv, setEqv] = useState(false);
   const [devices, setDevices] = useState(false);
   const [hypothesis, setHypothesis] = useState(false);
 
@@ -34,11 +36,15 @@ export function ModalProvider(props) {
           window?._paq?.push(["trackEvent", "Interaction", "Modal", "Partage"]);
           setShare(value);
         },
-
         ecv,
         setEcv: (value) => {
           window?._paq?.push(["trackEvent", "Interaction", "Modal", "ECV"]);
           setEcv(value);
+        },
+        eqv,
+        setEqv: (value) => {
+          window?._paq?.push(["trackEvent", "Interaction", "Modal", "EQV"]);
+          setEqv(value);
         },
         devices,
         setDevices: (value) => {
@@ -54,6 +60,7 @@ export function ModalProvider(props) {
     >
       {props.children}
       <Co2eModal2 />
+      <EqModal3 />
       <TilesModal />
       <ShareModal />
       <EcvModal />

@@ -4,7 +4,7 @@ const H1Title = styled.h1`
   margin-top: 0;
 `;
 const MainColorSpan = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: ${(props) => props.theme.colors.main2};
 `;
 const SmallText = styled.div`
   font-size: 14px;
@@ -66,9 +66,10 @@ export default function IntroLivraison() {
         <strong>80 % des Français</strong> de 11 ans et plus font des achats en ligne.
       </RegularParagraph>
       <RegularParagraph>
-        En moyenne, cela représente <strong>1 milliard de colis par an</strong>, soit{" "}
-        <strong>deux colis par personne par mois</strong>.
+        En moyenne, cela représente <strong>1 milliard de colis livrés par an</strong>, soit{" "}
+        <strong>deux colis livrés par personne par mois</strong>.
       </RegularParagraph>
+      <br />
       <Separator />
     </>
   );
