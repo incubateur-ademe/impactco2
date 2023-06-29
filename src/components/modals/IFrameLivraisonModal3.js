@@ -12,7 +12,7 @@ const getTitle = () => {
 };
 
 export default function IFrameLivraisonModal3() {
-  const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
+  const { ifl: open, setIfl: setOpen } = useContext(ModalContext);
 
   const dismiss = () => {
     setOpen(false);

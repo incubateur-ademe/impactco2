@@ -8,12 +8,14 @@ import { calculateResultFunction } from "./calculateur_livraison_functions.js";
 import { produits, retraits, relays } from "./data.js";
 import { convertGramsToKilograms } from "./utils";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
+import ModalContext from "components/providers/ModalProvider";
 import React, { useContext, useMemo, useState } from "react";
 import styled from "styled-components";
 
 export default function CalculateurLivraison() {
   // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison);
+  const { setIfl } = useContext(ModalContext);
 
   const [cO2eq, setCO2eq] = useState(0);
   const [showOptional, setShowOptional] = useState(true);
@@ -48,7 +50,10 @@ export default function CalculateurLivraison() {
 
   return (
     <>
-      <H2Title>Estimez l'impact de vos livraisons</H2Title>
+      <Flex>
+        <H2Title>Estimez l'impact de vos livraisons</H2Title>
+        <ButtonChange onClick={() => setIfl(true)}>Partager</ButtonChange>
+      </Flex>
       <DropList>
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
@@ -169,4 +174,25 @@ const Addendum = styled.div`
     margin-right: 5px;
     margin-top: -8px;
   }
+`;
+
+const ButtonChange = styled.button`
+  background-color: white;
+  border-color: #b5abb2;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  color: #564d53;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 24px;
+  margin-top: 0.5rem;
+  padding: 4px 12px 4px 12px;
+  text-align: center;
+`;
+
+const Flex = styled.div`
+  display: flex;
 `;
