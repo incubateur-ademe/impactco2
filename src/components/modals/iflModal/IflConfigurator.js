@@ -34,7 +34,10 @@ export default function IflConfigurator(props) {
 }
 
 const BottomAdvice = styled.div`
+  background-color: #ebf2ff;
+  border-radius: 8px;
   margin-top: auto;
+  padding: 24px;
 `;
 
 const Wrapper = styled.div`
