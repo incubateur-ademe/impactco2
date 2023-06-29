@@ -1,12 +1,13 @@
 import Modal3 from "components/base/Modal3";
+import IflConfigurator from "components/modals/iflModal/IflConfigurator";
 import ModalContext from "components/providers/ModalProvider";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
 const getTitle = () => {
   return (
     <Title>
-      Choisir <GreenText>une autre équivalence</GreenText>
+      Intégrer <GreenText>le simulateur</GreenText>
     </Title>
   );
 };
@@ -18,9 +19,14 @@ export default function IFrameLivraisonModal3() {
     setOpen(false);
   };
 
+  const [theme, setTheme] = useState("default");
+  console.log("theme", theme);
+
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
-      <Intro>Texte d'intro.</Intro>
+      <div>
+        <IflConfigurator theme={theme} setTheme={setTheme}></IflConfigurator>
+      </div>
     </Modal3>
   );
 }
@@ -32,11 +38,4 @@ const Title = styled.h2`
 
 const GreenText = styled.span`
   color: #1c9b93;
-`;
-
-const Intro = styled.div`
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: 0em;
-  line-height: 24px;
 `;
