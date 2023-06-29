@@ -28,7 +28,7 @@ export default function IflCode(props) {
         {script}
         <Flex>
           <div>
-            <svg ariaHidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20" width="16px">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20" width="16px">
               {" "}
               <path
                 stroke="#457be7"
