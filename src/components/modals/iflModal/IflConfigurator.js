@@ -51,11 +51,11 @@ export default function IflConfigurator(props) {
         <p>
           Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
           à&nbsp;
-          <MagicLink to="impactco2@ademe.fr">impactco2@ademe.fr</MagicLink>.
+          <BlackMagicLink to="mailto:impactco2@ademe.fr">impactco2@ademe.fr</BlackMagicLink>.
         </p>
         <p>
-          Pour réutiliser le code du simulateur, consultez le code du site Impact CO2, développé de manière ouverte
-          (open source).
+          Pour réutiliser <BlackMagicLink to="https://github.com/incubateur-ademe/impactco2/">le code</BlackMagicLink>{" "}
+          du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (open source).
         </p>
       </BottomAdvice>
     </Wrapper>
@@ -97,4 +97,11 @@ const GoFurther = styled.div`
   padding: 8px;
   position: absolute;
   top: -21px;
+`;
+
+const BlackMagicLink = styled(MagicLink)`
+  color: ${(props) => props.theme.colors.text};
+  > svg {
+    display: none;
+  }
 `;
