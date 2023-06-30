@@ -20,9 +20,9 @@ export default function CalculateurLivraison() {
   const { setIfl } = useContext(ModalContext);
 
   const [cO2eq, setCO2eq] = useState(0);
-  const [showOptional, setShowOptional] = useState(true);
 
   const [isHabit, setIsHabit] = useState(true);
+  const [showToggleContainer, setShowToggleContainer] = useState(true);
 
   const [values, setValues] = useState({
     produit: "habillement",
@@ -42,7 +42,7 @@ export default function CalculateurLivraison() {
 
   useMemo(() => {
     calculateResult();
-    setShowOptional(values.retrait.amongst(["relais", "click", "magasin"]));
+    setShowToggleContainer(values.retrait.amongst(["relais", "click", "magasin"]));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
@@ -73,7 +73,7 @@ export default function CalculateurLivraison() {
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
-      <ToggleContainer>
+      <ToggleContainer show={showToggleContainer}>
         <ToggleHabitContainer>
           <FlexHabit>
             <div className="item1">
@@ -93,7 +93,7 @@ export default function CalculateurLivraison() {
             <div className="item3">addendum</div>
           </FlexHabit>
         </ToggleHabitContainer>
-        <Optionals show={showOptional}>
+        <Optionals show={!isHabit}>
           <div className="item1">
             <OptionalRelay changeRelay={changeRelay} value={values.relay} diffRelay={diffs.diffRelay}></OptionalRelay>
           </div>
@@ -119,7 +119,6 @@ export default function CalculateurLivraison() {
 }
 
 const Optionals = styled.div`
-  background-color: #f9f7f8;
   display: ${(props) => (props.show ? "grid" : "none")};
   grid-template-columns: 1fr 1fr 1fr;
   position: relative;
@@ -238,7 +237,10 @@ const Flex = styled.div`
   }
 `;
 
-const ToggleContainer = styled.div``;
+const ToggleContainer = styled.div`
+  background-color: #f9f7f8;
+  display: ${(props) => (props.show ? "block" : "none")};
+`;
 
 const ToggleHabitContainer = styled.div``;
 
