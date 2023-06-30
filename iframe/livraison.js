@@ -1,7 +1,7 @@
 import { iframeResize } from "iframe-resizer";
 
 const script = document.getElementById("impact-livraison");
-const src = `https://impactco2.fr/iframes/livraison/simulation`;
+const src = `https://deploy-preview-306--impactco2.netlify.app/iframes/livraison/simulation`;
 
 const iframe = document.createElement("iframe");
 
