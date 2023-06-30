@@ -18,7 +18,6 @@ export default function useRulesLivraison() {
     ["rules"],
     () =>
       axios.get(`https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json`).then((res) => {
-        console.log("res.data", res.data);
         let obj = res.data;
         removePropertiesThatDontStartsWith(obj, "livraison");
         return obj;
