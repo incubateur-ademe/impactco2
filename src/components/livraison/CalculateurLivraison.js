@@ -69,23 +69,33 @@ export default function CalculateurLivraison() {
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
         <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
       </DropList>
-      <Optionals show={showOptional}>
-        <div className="item1">
-          <OptionalRelay changeRelay={changeRelay} value={values.relay} diffRelay={diffs.diffRelay}></OptionalRelay>
-        </div>
-        <div className="item2">
-          <Addendum>
-            <span className="plus">+</span>
-            <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
-          </Addendum>
-        </div>
-        <div className="item3">
-          <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
-        </div>
-        <div className="item4"></div>
-        <div className="item5"></div>
-        <div className="item6"></div>
-      </Optionals>
+      <ToggleContainer>
+        <ToggleHabitContainer>
+          <FlexHabit>
+            <div className="item1">switch...</div>
+            <div className="item2">Le point relais est sur votre trajet habituel</div>
+            <div className="item3">addendum</div>
+          </FlexHabit>
+        </ToggleHabitContainer>
+        <Optionals show={showOptional}>
+          <div className="item1">
+            <OptionalRelay changeRelay={changeRelay} value={values.relay} diffRelay={diffs.diffRelay}></OptionalRelay>
+          </div>
+          <div className="item2">
+            <Addendum>
+              <span className="plus">+</span>
+              <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
+            </Addendum>
+          </div>
+          <div className="item3">
+            <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
+          </div>
+          <div className="item4"></div>
+          <div className="item5"></div>
+          <div className="item6"></div>
+        </Optionals>
+        <TogglePlaneContainer></TogglePlaneContainer>
+      </ToggleContainer>
       <ResultatsLivraison co2eq={cO2eq} />
       <YearlyLivraison co2eq={cO2eq} />
     </>
@@ -96,7 +106,6 @@ const Optionals = styled.div`
   background-color: #f9f7f8;
   display: ${(props) => (props.show ? "grid" : "none")};
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: -10px;
   position: relative;
 
   ${(props) => props.theme.mq.small} {
@@ -210,5 +219,18 @@ const Flex = styled.div`
   margin-bottom: 1rem;
   ${(props) => props.theme.mq.large} {
     flex-direction: column;
+  }
+`;
+
+const ToggleContainer = styled.div``;
+
+const ToggleHabitContainer = styled.div``;
+
+const TogglePlaneContainer = styled.div``;
+
+const FlexHabit = styled.div`
+  display: flex;
+  > .item3 {
+    margin-left: auto;
   }
 `;
