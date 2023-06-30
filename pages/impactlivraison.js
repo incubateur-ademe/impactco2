@@ -7,7 +7,7 @@ import categories from "data/categories.json";
 export default function Impactlivraison() {
   return (
     <Section2>
-      <Section2.InnerMargin id="impact-livraison">
+      <Section2.InnerMargin>
         <RulesProviderLivraison>
           <IntroLivraison />
           <CalculateurLivraison />
