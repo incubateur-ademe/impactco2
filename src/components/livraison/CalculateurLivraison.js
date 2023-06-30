@@ -10,7 +10,9 @@ import { convertGramsToKilograms } from "./utils";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext, useMemo, useState } from "react";
+import Switch from "react-switch";
 import styled from "styled-components";
+import { themes } from "utils/styles";
 
 export default function CalculateurLivraison() {
   // trunk-ignore(eslint/no-unused-vars)
@@ -19,6 +21,8 @@ export default function CalculateurLivraison() {
 
   const [cO2eq, setCO2eq] = useState(0);
   const [showOptional, setShowOptional] = useState(true);
+
+  const [isHabit, setIsHabit] = useState(true);
 
   const [values, setValues] = useState({
     produit: "habillement",
@@ -72,7 +76,19 @@ export default function CalculateurLivraison() {
       <ToggleContainer>
         <ToggleHabitContainer>
           <FlexHabit>
-            <div className="item1">switch...</div>
+            <div className="item1">
+              <Switch
+                checked={isHabit}
+                onChange={setIsHabit}
+                offColor={themes.night.colors.background}
+                onColor={themes.default.colors.background}
+                offHandleColor={themes.default.colors.background}
+                onHandleColor={themes.night.colors.background}
+                aria-label="Changer de thème"
+                uncheckedIcon={""}
+                checkedIcon={""}
+              />
+            </div>
             <div className="item2">Le point relais est sur votre trajet habituel</div>
             <div className="item3">addendum</div>
           </FlexHabit>
