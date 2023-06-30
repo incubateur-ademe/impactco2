@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.7.0 (30/05/2023)
+
+* U17 - hors domicile, avec toggle
+
 ## 1.6.5 (29/05/2023)
 
 * U6 - iframe pour la livraison
