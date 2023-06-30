@@ -1,3 +1,4 @@
+import Section2 from "components/base/Section2";
 import Iframe from "components/layout/Iframe";
 import CalculateurLivraison from "components/livraison/CalculateurLivraison";
 import IntroLivraison from "components/livraison/IntroLivraison";
@@ -7,10 +8,14 @@ import React from "react";
 export default function Default() {
   return (
     <Iframe>
-      <RulesProviderLivraison>
-        <IntroLivraison />
-        <CalculateurLivraison />
-      </RulesProviderLivraison>
+      <Section2>
+        <Section2.InnerMargin>
+          <RulesProviderLivraison>
+            <IntroLivraison />
+            <CalculateurLivraison />
+          </RulesProviderLivraison>
+        </Section2.InnerMargin>
+      </Section2>
     </Iframe>
   );
 }
