@@ -3,8 +3,8 @@ import styled from "styled-components";
 export default function OptionalTraj(props) {
   return (
     <Wrapper>
-      <GridContainer>
-        <div className="item1"></div>
+      <FlexContainer>
+        <div className="emptySpace"></div>
         <div className="item2">
           <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
         </div>
@@ -22,8 +22,12 @@ export default function OptionalTraj(props) {
             </Flex>
           </FlexCenter>
         </div>
-        <div className="item4"></div>
-      </GridContainer>
+        <div className="break"></div>
+        <div className="emptySpace"></div>
+        <div className="item4">
+          Exemple: si vous faites un détour de 2km sur votre trajet domicile-travail, indiquez ces 2km.
+        </div>
+      </FlexContainer>
     </Wrapper>
   );
 }
@@ -33,19 +37,32 @@ const Wrapper = styled.div`
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   padding: 0.25rem 0rem 1rem 2rem;
-  ${(props) => props.theme.mq.xlarge} {
+  /* ${(props) => props.theme.mq.xlarge} {
     padding: 0 1rem 1.5rem 1rem;
-  }
+  } */
 `;
 
-const GridContainer = styled.div`
+const FlexContainer = styled.div`
   display: flex;
-  > .item1 {
+  flex-wrap: wrap;
+  > .emptySpace {
     width: 6rem;
+    ${(props) => props.theme.mq.small} {
+      width: 0;
+    }
   }
   > .item2 {
     align-items: center;
     display: flex;
+  }
+  > .item4 {
+    color: grey;
+    font-size: 14px;
+    margin-top: 0.5rem;
+  }
+  .break {
+    flex-basis: 100%;
+    height: 0;
   }
 `;
 

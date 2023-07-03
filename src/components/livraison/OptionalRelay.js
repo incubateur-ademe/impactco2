@@ -5,7 +5,7 @@ export default function OptionalRelay(props) {
   return (
     <Wrapper>
       <FlexContainer>
-        <div className="item1"></div>
+        <div className="emptySpace"></div>
         <div className="item2">
           <Text>Vous effectuez généralement le trajet jusqu'au point relais</Text>
         </div>
@@ -20,10 +20,17 @@ export default function OptionalRelay(props) {
 
 const FlexContainer = styled.div`
   display: flex;
-  > .item1 {
+  > .emptySpace {
     width: 6rem;
+    ${(props) => props.theme.mq.medium} {
+      width: 0;
+    }
   }
   > .item2 {
+    align-items: center;
+    display: flex;
+  }
+  > .item3 {
     align-items: center;
     display: flex;
   }
@@ -32,9 +39,9 @@ const FlexContainer = styled.div`
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
   padding: 1rem 0rem 0.5rem 2rem;
-  ${(props) => props.theme.mq.xlarge} {
+  /* ${(props) => props.theme.mq.xlarge} {
     padding: 1.75rem 1rem 0.5rem 1rem;
-  }
+  } */
 `;
 
 const Text = styled.div`

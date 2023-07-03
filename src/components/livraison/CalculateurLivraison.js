@@ -128,30 +128,16 @@ export default function CalculateurLivraison() {
 
 const Optionals = styled.div`
   display: ${(props) => (props.show ? "block" : "none")};
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  position: relative;
-
-  ${(props) => props.theme.mq.small} {
-    /* grid-template-columns: 1fr; */
-  }
-  .item1 .toggle {
-    /* grid-column: span 2; */
-  }
   > .item2 {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    /* grid-row: span 2; */
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
     ${(props) => props.theme.mq.small} {
-      /* order: 1; */
-      /* grid-column: span 3; */
       justify-content: flex-start;
-      margin-left: 1rem;
       margin-bottom: 1rem;
+      margin-left: 1rem;
     }
-  }
-  > .item3 {
-    /* grid-column: span 2; */
   }
 `;
 
@@ -209,6 +195,9 @@ const Addendum = styled.div`
   line-height: 32px;
   ${(props) => props.theme.mq.large} {
     margin-right: 1rem;
+  }
+  ${(props) => props.theme.mq.medium} {
+    margin-right: 0;
   }
   padding: 0 0.75rem;
   > .plus {
@@ -271,6 +260,9 @@ const FlexHabit = styled.div`
   display: flex;
   margin-top: -1rem;
   padding: 2rem 0 1rem 2rem;
+  ${(props) => props.theme.mq.small} {
+    padding: 2rem 0 1rem 1rem;
+  }
   > .item1 {
     align-items: center;
     display: flex;
@@ -280,9 +272,15 @@ const FlexHabit = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
+    ${(props) => props.theme.mq.small} {
+      font-size: 14px;
+    }
   }
   > .item3 {
     margin-left: auto;
     margin-right: 2rem;
+    ${(props) => props.theme.mq.small} {
+      margin-right: 1rem;
+    }
   }
 `;
