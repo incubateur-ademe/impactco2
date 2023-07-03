@@ -21,9 +21,9 @@ export default function OptionalRelay(props) {
 const FlexContainer = styled.div`
   display: flex;
   > .emptySpace {
-    width: 6rem;
+    min-width: 6rem;
     ${(props) => props.theme.mq.medium} {
-      width: 0;
+      min-width: 0;
     }
   }
   > .item2 {
@@ -39,9 +39,6 @@ const FlexContainer = styled.div`
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
   padding: 1rem 0rem 0.5rem 2rem;
-  /* ${(props) => props.theme.mq.xlarge} {
-    padding: 1.75rem 1rem 0.5rem 1rem;
-  } */
 `;
 
 const Text = styled.div`

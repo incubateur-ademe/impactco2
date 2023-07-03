@@ -37,18 +37,15 @@ const Wrapper = styled.div`
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   padding: 0.25rem 0rem 1rem 2rem;
-  /* ${(props) => props.theme.mq.xlarge} {
-    padding: 0 1rem 1.5rem 1rem;
-  } */
 `;
 
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   > .emptySpace {
-    width: 6rem;
-    ${(props) => props.theme.mq.small} {
-      width: 0;
+    min-width: 6rem;
+    ${(props) => props.theme.mq.medium} {
+      min-width: 0;
     }
   }
   > .item2 {
