@@ -3,31 +3,28 @@ import styled from "styled-components";
 export default function OptionalTraj(props) {
   return (
     <Wrapper>
-      <FlexContainer>
-        <div className="emptySpace"></div>
-        <div className="item2">
+      <div className="item1"></div>
+      <div className="item2">
+        <FlexCenter>
           <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
-        </div>
-        <div className="item3">
-          <FlexCenter>
-            <Flex>
-              <Input
-                type="number"
-                value={props.km}
-                onChange={(e) => props.changeKm(e.target.value)}
-                min="0"
-                step="1"
-              ></Input>
-              <Text>&nbsp;km</Text>
-            </Flex>
-          </FlexCenter>
-        </div>
-        <div className="break"></div>
-        <div className="emptySpace"></div>
-        <div className="item4">
+          <Flex>
+            <Input
+              type="number"
+              value={props.km}
+              onChange={(e) => props.changeKm(e.target.value)}
+              min="0"
+              step="1"
+            ></Input>
+            <Text>&nbsp;km</Text>
+          </Flex>
+        </FlexCenter>
+      </div>
+      <div className="item3"></div>
+      <div className="item4">
+        <SmallExplanation>
           Exemple: si vous faites un détour de 2km sur votre trajet domicile-travail, indiquez ces 2km.
-        </div>
-      </FlexContainer>
+        </SmallExplanation>
+      </div>
     </Wrapper>
   );
 }
@@ -36,30 +33,14 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
+  display: grid;
+  grid-template-columns: 6rem auto;
+  ${(props) => props.theme.mq.medium} {
+    grid-template-columns: 0 auto;
+  }
   padding: 0.25rem 0rem 1rem 2rem;
-`;
-
-const FlexContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  > .emptySpace {
-    min-width: 6rem;
-    ${(props) => props.theme.mq.medium} {
-      min-width: 0;
-    }
-  }
-  > .item2 {
-    align-items: center;
-    display: flex;
-  }
-  > .item4 {
-    color: grey;
-    font-size: 14px;
-    margin-top: 0.5rem;
-  }
-  .break {
-    flex-basis: 100%;
-    height: 0;
+  ${(props) => props.theme.mq.small} {
+    padding: 0.25rem 0rem 1rem 1rem;
   }
 `;
 
@@ -87,12 +68,19 @@ const Input = styled.input`
 const FlexCenter = styled.div`
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   ${(props) => props.theme.mq.small} {
     align-items: flex-start;
     flex-direction: column;
   }
 `;
+
 const Flex = styled.div`
   display: flex;
+`;
+
+const SmallExplanation = styled.div`
+  color: grey;
+  font-size: 14px;
+  padding-right: 0.5rem;
 `;

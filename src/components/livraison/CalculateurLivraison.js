@@ -247,6 +247,7 @@ const ToggleHabitContainer = styled.div`
       border: 1px solid #39a69e !important;
     }
     .react-switch-bg {
+      border-radius: 13px !important;
       > div > svg {
         display: none;
       }
