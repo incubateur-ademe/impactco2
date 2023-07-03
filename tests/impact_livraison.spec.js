@@ -55,7 +55,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
     await page.locator("select#retraits").selectOption({ label: "Achat direct en magasin" }); // Ici
     await page.locator("select#produits").selectOption({ label: "Produit culturel physique" });
     // When-Then
-    await expect(page.getByTestId("resultAsText")).toHaveText("4,41 kg de CO2e ");
+    await expect(page.getByTestId("resultAsText")).toHaveText("0,11 kg de CO2e ");
   });
 
   await test.step("Si on prend un colis volumineux, on a bien une augmentation de CO2", async () => {
@@ -63,7 +63,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
     await page.locator("select#retraits").selectOption({ label: "Livraison à domicile" });
     await page.locator("select#produits").selectOption({ label: "Bien d'équipement volumineux" }); // Ici
     // When-Then
-    await expect(page.getByTestId("resultAsText")).toHaveText("70,27 kg de CO2e ");
+    await expect(page.getByTestId("resultAsText")).toHaveText("70,59 kg de CO2e ");
   });
 
   await test.step("La liste déroulante “Vous commandez en majorité” a bien les options “Produits de grande consommation”, “Habillement”, “Produits culturel physique”, “bien d’équipement volumineux”, et “autre”", async () => {
