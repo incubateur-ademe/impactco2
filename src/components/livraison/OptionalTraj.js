@@ -4,9 +4,12 @@ export default function OptionalTraj(props) {
   return (
     <Wrapper>
       <GridContainer>
-        <div className="item1">
+        <div className="item1"></div>
+        <div className="item2">
+          <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
+        </div>
+        <div className="item3">
           <FlexCenter>
-            <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
             <Flex>
               <Input
                 type="number"
@@ -19,9 +22,7 @@ export default function OptionalTraj(props) {
             </Flex>
           </FlexCenter>
         </div>
-        <div className="item2"></div>
         <div className="item4"></div>
-        <div className="item3"></div>
       </GridContainer>
     </Wrapper>
   );
@@ -38,19 +39,19 @@ const Wrapper = styled.div`
 `;
 
 const GridContainer = styled.div`
-  display: grid;
+  /* display: grid; */
   ${(props) => props.theme.mq.xlarge} {
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
   }
-  grid-template-columns: auto auto 1fr auto;
+  /* grid-template-columns: auto auto 1fr auto; */
   > .item1 {
     display: flex;
     ${(props) => props.theme.mq.medium} {
-      flex-direction: column;
       align-items: flex-start;
+      flex-direction: column;
     }
   }
-  > .item2,
+  /* > .item2,
   .item4 {
     align-items: center;
   }
@@ -63,7 +64,7 @@ const GridContainer = styled.div`
       }
     }
   }
-  padding-top: 5px;
+  padding-top: 5px; */
 `;
 
 const Text = styled.div`

@@ -5,13 +5,13 @@ export default function OptionalRelay(props) {
   return (
     <Wrapper>
       <GridContainer>
-        <div className="item1">
+        <div className="item1"></div>
+        <div className="item2">
           <Text>Vous effectuez généralement le trajet jusqu'au point relais</Text>
         </div>
-        <div className="item2">
+        <div className="item3">
           <SelectRelays changeRelay={props.changeRelay} value={props.value}></SelectRelays>
         </div>
-        <div className="item3"></div>
         <div className="item4"></div>
       </GridContainer>
     </Wrapper>
@@ -19,12 +19,12 @@ export default function OptionalRelay(props) {
 }
 
 const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: auto auto 1fr auto;
+  display: flex;
+  /* grid-template-columns: auto auto 1fr auto; */
   ${(props) => props.theme.mq.xlarge} {
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
   }
-  > .item1,
+  /* > .item1,
   .item2,
   .item4 {
     align-items: center;
@@ -39,7 +39,7 @@ const GridContainer = styled.div`
       }
     }
   }
-  padding-top: 5px;
+  padding-top: 5px; */
 `;
 
 const Wrapper = styled.div`

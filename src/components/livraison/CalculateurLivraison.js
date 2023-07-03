@@ -14,6 +14,16 @@ import Switch from "react-switch";
 import styled from "styled-components";
 import { themes } from "utils/styles";
 
+const Svg = styled.svg`
+  display: block;
+  height: auto;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.2rem;
+`;
+
 export default function CalculateurLivraison() {
   // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison);
@@ -78,37 +88,35 @@ export default function CalculateurLivraison() {
           <FlexHabit>
             <div className="item1">
               <Switch
+                className="toggle"
                 checked={isHabit}
                 onChange={setIsHabit}
-                offColor={themes.night.colors.background}
-                onColor={themes.default.colors.background}
-                offHandleColor={themes.default.colors.background}
-                onHandleColor={themes.night.colors.background}
+                offColor={themes.default.colors.background}
+                onColor={themes.default.colors.main2}
                 aria-label="Changer de thème"
-                uncheckedIcon={""}
-                checkedIcon={""}
+                uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
+                checkedHandleIcon={
+                  <Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16">
+                    <path
+                      fill="#39a69e"
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+                    />
+                  </Svg>
+                }
               />
             </div>
             <div className="item2">Le point relais est sur votre trajet habituel</div>
-            <div className="item3">addendum</div>
+            <div className="item3">
+              <Addendum>
+                <span className="plus">+</span>
+                <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
+              </Addendum>
+            </div>
           </FlexHabit>
         </ToggleHabitContainer>
         <Optionals show={!isHabit}>
-          <div className="item1">
-            <OptionalRelay changeRelay={changeRelay} value={values.relay} diffRelay={diffs.diffRelay}></OptionalRelay>
-          </div>
-          <div className="item2">
-            <Addendum>
-              <span className="plus">+</span>
-              <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
-            </Addendum>
-          </div>
-          <div className="item3">
-            <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
-          </div>
-          <div className="item4"></div>
-          <div className="item5"></div>
-          <div className="item6"></div>
+          <OptionalRelay changeRelay={changeRelay} value={values.relay} diffRelay={diffs.diffRelay}></OptionalRelay>
+          <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
         </Optionals>
         <TogglePlaneContainer></TogglePlaneContainer>
       </ToggleContainer>
@@ -119,31 +127,31 @@ export default function CalculateurLivraison() {
 }
 
 const Optionals = styled.div`
-  display: ${(props) => (props.show ? "grid" : "none")};
-  grid-template-columns: 1fr 1fr 1fr;
+  display: ${(props) => (props.show ? "block" : "none")};
+  /* grid-template-columns: 1fr 1fr 1fr; */
   position: relative;
 
   ${(props) => props.theme.mq.small} {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
-  > .item1 {
-    grid-column: span 2;
+  .item1 .toggle {
+    /* grid-column: span 2; */
   }
   > .item2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-row: span 2;
+    /* grid-row: span 2; */
     ${(props) => props.theme.mq.small} {
-      order: 1;
-      grid-column: span 3;
+      /* order: 1; */
+      /* grid-column: span 3; */
       justify-content: flex-start;
       margin-left: 1rem;
       margin-bottom: 1rem;
     }
   }
   > .item3 {
-    grid-column: span 2;
+    /* grid-column: span 2; */
   }
 `;
 
@@ -242,7 +250,20 @@ const ToggleContainer = styled.div`
   display: ${(props) => (props.show ? "block" : "none")};
 `;
 
-const ToggleHabitContainer = styled.div``;
+const ToggleHabitContainer = styled.div`
+  .toggle {
+    border: 1px solid #39a69e;
+    .react-switch-handle {
+      background: white !important;
+      border: 1px solid #39a69e !important;
+    }
+    .react-switch-bg {
+      > div > svg {
+        display: none;
+      }
+    }
+  }
+`;
 
 const TogglePlaneContainer = styled.div``;
 
