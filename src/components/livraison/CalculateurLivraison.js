@@ -274,6 +274,7 @@ const FlexHabit = styled.div`
     display: flex;
     justify-content: center;
     ${(props) => props.theme.mq.small} {
+      padding-left: 0.25rem;
       font-size: 14px;
     }
   }
