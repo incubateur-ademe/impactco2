@@ -270,12 +270,11 @@ const TogglePlaneContainer = styled.div``;
 const FlexHabit = styled.div`
   display: flex;
   margin-top: -1rem;
-  padding: 2rem 0 1rem 0;
+  padding: 2rem 0 1rem 2rem;
   > .item1 {
     align-items: center;
     display: flex;
-    justify-content: center;
-    width: 8rem;
+    width: 6rem;
   }
   > .item2 {
     align-items: center;

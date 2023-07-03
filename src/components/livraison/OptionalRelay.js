@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function OptionalRelay(props) {
   return (
     <Wrapper>
-      <GridContainer>
+      <FlexContainer>
         <div className="item1"></div>
         <div className="item2">
           <Text>Vous effectuez généralement le trajet jusqu'au point relais</Text>
@@ -13,13 +13,20 @@ export default function OptionalRelay(props) {
           <SelectRelays changeRelay={props.changeRelay} value={props.value}></SelectRelays>
         </div>
         <div className="item4"></div>
-      </GridContainer>
+      </FlexContainer>
     </Wrapper>
   );
 }
 
-const GridContainer = styled.div`
+const FlexContainer = styled.div`
   display: flex;
+  > .item1 {
+    width: 6rem;
+  }
+  > .item2 {
+    align-items: center;
+    display: flex;
+  }
   /* grid-template-columns: auto auto 1fr auto; */
   ${(props) => props.theme.mq.xlarge} {
     /* grid-template-columns: repeat(1, 1fr); */
