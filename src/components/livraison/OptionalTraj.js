@@ -80,7 +80,7 @@ const Flex = styled.div`
 `;
 
 const SmallExplanation = styled.div`
-  color: grey;
+  color: ${(props) => props.theme.colors.textGray};
   font-size: 14px;
   padding-right: 0.5rem;
 `;

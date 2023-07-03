@@ -239,7 +239,7 @@ const Flex = styled.div`
 `;
 
 const ToggleContainer = styled.div`
-  background-color: #f9f7f8;
+  background-color: ${(props) => props.theme.colors.textLight2};
   display: ${(props) => (props.show ? "block" : "none")};
 `;
 
