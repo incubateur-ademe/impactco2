@@ -27,26 +27,6 @@ const FlexContainer = styled.div`
     align-items: center;
     display: flex;
   }
-  /* grid-template-columns: auto auto 1fr auto; */
-  ${(props) => props.theme.mq.xlarge} {
-    /* grid-template-columns: repeat(1, 1fr); */
-  }
-  /* > .item1,
-  .item2,
-  .item4 {
-    align-items: center;
-    display: flex;
-  }
-  .item2 {
-    padding-left: 1rem;
-    ${(props) => props.theme.mq.xlarge} {
-      padding-left: 0;
-      > div > select {
-        padding-left: 0;
-      }
-    }
-  }
-  padding-top: 5px; */
 `;
 
 const Wrapper = styled.div`

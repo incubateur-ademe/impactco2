@@ -39,32 +39,14 @@ const Wrapper = styled.div`
 `;
 
 const GridContainer = styled.div`
-  /* display: grid; */
-  ${(props) => props.theme.mq.xlarge} {
-    /* grid-template-columns: repeat(1, 1fr); */
-  }
-  /* grid-template-columns: auto auto 1fr auto; */
+  display: flex;
   > .item1 {
-    display: flex;
-    ${(props) => props.theme.mq.medium} {
-      align-items: flex-start;
-      flex-direction: column;
-    }
+    width: 6rem;
   }
-  /* > .item2,
-  .item4 {
+  > .item2 {
     align-items: center;
+    display: flex;
   }
-  .item2 {
-    padding-left: 1rem;
-    ${(props) => props.theme.mq.xlarge} {
-      padding-left: 0;
-      > div > select {
-        padding-left: 0;
-      }
-    }
-  }
-  padding-top: 5px; */
 `;
 
 const Text = styled.div`
