@@ -60,7 +60,7 @@ const Input = styled.input`
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
-  color: #39a69e;
+  color: ${(props) => props.theme.colors.main2};
   text-align: right;
   width: 2rem;
 `;
