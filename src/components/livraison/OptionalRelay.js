@@ -38,9 +38,9 @@ const FlexContainer = styled.div`
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
-  padding: 1rem 0rem 0.5rem 2rem;
+  padding: 0 0 0.5rem 2rem;
   ${(props) => props.theme.mq.small} {
-    padding: 1rem 0rem 0.5rem 1rem;
+    padding: 0 0 0.5rem 1rem;
   }
 `;
 
