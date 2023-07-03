@@ -91,7 +91,7 @@ export default function CalculateurLivraison() {
                 className="toggle"
                 checked={isHabit}
                 onChange={setIsHabit}
-                offColor={themes.default.colors.background}
+                offColor={"#fff"}
                 onColor={themes.default.colors.main2}
                 aria-label="Changer de thème"
                 uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
