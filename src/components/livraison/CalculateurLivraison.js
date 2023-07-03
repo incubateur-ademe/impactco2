@@ -47,14 +47,18 @@ export default function CalculateurLivraison() {
     diffRelay: 0,
   });
 
+  const toggleSwitch = () => {
+    setIsHabit(!isHabit);
+  };
+
   const calculateResult = () =>
-    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq);
+    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit);
 
   useMemo(() => {
     calculateResult();
     setShowToggleContainer(values.retrait.amongst(["relais", "click", "magasin"]));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [values]);
+  }, [values, isHabit]);
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
   const changeRetrait = (retrait) => setValues({ ...values, retrait: retrait.uid });
@@ -90,7 +94,7 @@ export default function CalculateurLivraison() {
               <Switch
                 className="toggle"
                 checked={isHabit}
-                onChange={setIsHabit}
+                onChange={toggleSwitch}
                 offColor={"#fff"}
                 onColor={themes.default.colors.main2}
                 aria-label="Changer de thème"

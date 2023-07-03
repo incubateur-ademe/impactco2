@@ -1,4 +1,14 @@
-export const calculateResultFunction = (values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq) => {
+export const calculateResultFunction = (
+  values,
+  produits,
+  retraits,
+  relays,
+  engine,
+  diffs,
+  setDiffs,
+  setCO2eq,
+  isHabit
+) => {
   let produitCode = produits.find((p) => p.uid === values.produit).publicode;
   let retraitCode = retraits.find((r) => r.uid === values.retrait).publicode;
   let relayCode = relays.find((r) => r.uid === values.relay).publicode;
@@ -11,8 +21,13 @@ export const calculateResultFunction = (values, produits, retraits, relays, engi
   engine.setSituation(kmCodes);
   let actualKmCO2 = engine.evaluate("livraison colis").nodeValue;
 
-  setDiffs({ ...diffs, diffKm0: actualKmCO2 - zeroKmCO2 });
-  setCO2eq(actualKmCO2);
+  if (isHabit) {
+    setDiffs({ ...diffs, diffKm0: 0 });
+    setCO2eq(zeroKmCO2);
+  } else {
+    setDiffs({ ...diffs, diffKm0: actualKmCO2 - zeroKmCO2 });
+    setCO2eq(actualKmCO2);
+  }
 };
 
 const getPublicodes = (produitCode, retraitCode, relayCode, km) => {
