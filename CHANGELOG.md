@@ -2,9 +2,13 @@
 # CHANGELOG
 
 
-## 1.8.0 (04/07/2023)
+## 1.9.0 (04/07/2023)
 
-* U17 - hors domicile, avec toggle
+* U19 - fréquence
+
+## 1.8.0 (03/07/2023)
+
+* U15 - livraison par avion
 
 ## 1.7.0 (30/06/2023)
 
