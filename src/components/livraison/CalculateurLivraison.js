@@ -119,11 +119,10 @@ export default function CalculateurLivraison() {
           <OptionalRelay changeRelay={changeRelay} value={values.relay}></OptionalRelay>
           <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
         </Optionals>
-        <TogglePlaneContainer></TogglePlaneContainer>
       </ToggleContainer>
-      <ToggleContainer show={true}>
+      <ToggleContainerBottom>
         <ToggleHabitContainer>
-          <FlexHabit>
+          <FlexHabitBottom>
             <div className="item1">
               <Switch
                 className="toggle"
@@ -150,9 +149,9 @@ export default function CalculateurLivraison() {
                 <span className="txt">{convertGramsToKilograms(diffs.diffPlane)} kg de CO2e</span>
               </Addendum>
             </div>
-          </FlexHabit>
+          </FlexHabitBottom>
         </ToggleHabitContainer>
-      </ToggleContainer>
+      </ToggleContainerBottom>
       <ResultatsLivraison co2eq={cO2eq} />
       <YearlyLivraison co2eq={cO2eq} />
     </>
@@ -288,12 +287,44 @@ const ToggleHabitContainer = styled.div`
   }
 `;
 
-const TogglePlaneContainer = styled.div``;
-
 const FlexHabit = styled.div`
   display: flex;
   margin-top: -1rem;
   padding: 2rem 0 1rem 2rem;
+  ${(props) => props.theme.mq.small} {
+    padding: 2rem 0 1rem 1rem;
+  }
+  > .item1 {
+    align-items: center;
+    display: flex;
+    width: 6rem;
+  }
+  > .item2 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    ${(props) => props.theme.mq.small} {
+      padding-left: 0.25rem;
+      font-size: 14px;
+    }
+  }
+  > .item3 {
+    margin-left: auto;
+    margin-right: 2rem;
+    ${(props) => props.theme.mq.small} {
+      margin-right: 1rem;
+    }
+  }
+`;
+
+const ToggleContainerBottom = styled.div`
+  background-color: ${(props) => props.theme.colors.textLight2};
+`;
+
+const FlexHabitBottom = styled.div`
+  border-top: 1px solid #d8dbe1;
+  display: flex;
+  padding: 1rem 0 1rem 2rem;
   ${(props) => props.theme.mq.small} {
     padding: 2rem 0 1rem 1rem;
   }

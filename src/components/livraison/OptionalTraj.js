@@ -38,9 +38,9 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     grid-template-columns: 0 auto;
   }
-  padding: 0 0 1rem 2rem;
+  padding: 0 0 1.5rem 2rem;
   ${(props) => props.theme.mq.small} {
-    padding: 0 0 1rem 1rem;
+    padding: 0 0 1.5rem 1rem;
   }
 `;
 

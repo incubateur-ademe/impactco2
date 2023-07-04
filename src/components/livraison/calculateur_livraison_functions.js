@@ -14,16 +14,16 @@ export const calculateResultFunction = (
   let retraitCode = retraits.find((r) => r.uid === values.retrait).publicode;
   let relayCode = relays.find((r) => r.uid === values.relay).publicode;
 
-  const baseCodes = getPublicodes(produitCode, retraitCode, relayCode, "0", "non");
+  const baseCodes = getPublicodes(produitCode, retraitCode, relayCode, "0");
   engine.setSituation(baseCodes);
   let zeroKmCO2 = engine.evaluate("livraison colis").nodeValue;
 
-  const kmCodes = getPublicodes(produitCode, retraitCode, relayCode, values.km, "non");
+  const kmCodes = getPublicodes(produitCode, retraitCode, relayCode, values.km);
   engine.setSituation(kmCodes);
   let actualKmCO2 = engine.evaluate("livraison colis").nodeValue;
   let diffKm0 = isHabit ? 0 : actualKmCO2 - zeroKmCO2;
 
-  const kmPlane = getPublicodes(produitCode, retraitCode, relayCode, "0", "oui");
+  const kmPlane = getPublicodes(produitCode, retraitCode, relayCode, "0");
   engine.setSituation(kmPlane);
   let kmCO2Plane = engine.evaluate("livraison colis par avion").nodeValue;
   let diffPlane = isPlane ? kmCO2Plane - zeroKmCO2 : 0;
@@ -32,12 +32,12 @@ export const calculateResultFunction = (
   setCO2eq(zeroKmCO2 + diffPlane + diffKm0);
 };
 
-const getPublicodes = (produitCode, retraitCode, relayCode, km, planeStr) => {
+const getPublicodes = (produitCode, retraitCode, relayCode, km) => {
   return {
     "livraison colis . informations . catégorie": `'${produitCode}'`,
     "livraison colis . scénario": `'${retraitCode}'`,
     "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
     "livraison colis . déplacement consommateur . distance": `'${km}'`,
-    "livraison colis . transport inter plateformes . option transport aérien": `'${planeStr}'`,
+    // "livraison colis . transport inter plateformes . option transport aérien": `'${planeStr}'`,
   };
 };
