@@ -47,15 +47,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
 
   await test.step("Par défaut un calcul de CO2 est affiché", async () => {
     // Given
-    await expect(page.getByTestId("resultAsText")).toHaveText("1,80 kg de CO2e ");
-  });
-
-  await test.step("Si on prend un mode de retrait plus consommateur, on a bien une augmentation de CO2", async () => {
-    // Given
-    await page.locator("select#retraits").selectOption({ label: "Achat direct en magasin" }); // Ici
-    await page.locator("select#produits").selectOption({ label: "Produit culturel physique" });
-    // When-Then
-    await expect(page.getByTestId("resultAsText")).toHaveText("0,11 kg de CO2e ");
+    await expect(page.getByTestId("resultAsText")).toHaveText("3,31 kg de CO2e ");
   });
 
   await test.step("Si on prend un colis volumineux, on a bien une augmentation de CO2", async () => {
@@ -73,11 +65,10 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
     await page.locator("select#produits").selectOption({ label: "Bien d'équipement volumineux" });
   });
 
-  await test.step("La liste déroulante “Que vous faites livrer” a bien 4 options", async () => {
+  await test.step("La liste déroulante “Que vous faites livrer” a bien 3 options", async () => {
     await page.locator("select#retraits").selectOption({ label: "Livraison à domicile" });
     await page.locator("select#retraits").selectOption({ label: "Point relais" });
     await page.locator("select#retraits").selectOption({ label: "Click & collect" });
-    await page.locator("select#retraits").selectOption({ label: "Achat direct en magasin" });
   });
 });
 
@@ -86,9 +77,9 @@ test("U4 - Equivalences", async ({ page }) => {
     // Given
     // When
     // Then
-    await expect(page.getByText("8 km")).toHaveCount(1);
-    await expect(page.getByText("28 heures")).toHaveCount(1);
-    await expect(page.getByText("0,3 repas")).toHaveCount(1);
+    await expect(page.getByText("15 km")).toHaveCount(1);
+    await expect(page.getByText("52 heures")).toHaveCount(1);
+    await expect(page.getByText("0,5 repas")).toHaveCount(1);
   });
 
   await test.step("Une modale d'explication s'affiche", async () => {
