@@ -47,10 +47,6 @@ export default function CalculateurLivraison() {
     diffRelay: 0,
   });
 
-  const toggleSwitch = () => {
-    setIsHabit(!isHabit);
-  };
-
   const calculateResult = () =>
     calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit);
 
@@ -94,7 +90,7 @@ export default function CalculateurLivraison() {
               <Switch
                 className="toggle"
                 checked={isHabit}
-                onChange={toggleSwitch}
+                onChange={() => setIsHabit(!isHabit)}
                 offColor={"#fff"}
                 onColor={themes.default.colors.main2}
                 aria-label="Changer de thème"
@@ -123,6 +119,38 @@ export default function CalculateurLivraison() {
           <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
         </Optionals>
         <TogglePlaneContainer></TogglePlaneContainer>
+      </ToggleContainer>
+      <ToggleContainer show={true}>
+        <ToggleHabitContainer>
+          <FlexHabit>
+            <div className="item1">
+              <Switch
+                className="toggle"
+                checked={isHabit}
+                onChange={() => setIsHabit(!isHabit)}
+                offColor={"#fff"}
+                onColor={themes.default.colors.main2}
+                aria-label="Changer de thème"
+                uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
+                checkedHandleIcon={
+                  <Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16">
+                    <path
+                      fill="#39a69e"
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+                    />
+                  </Svg>
+                }
+              />
+            </div>
+            <div className="item2">Votre article vient de loin (transport par avion).</div>
+            <div className="item3">
+              <Addendum>
+                <span className="plus">+</span>
+                <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
+              </Addendum>
+            </div>
+          </FlexHabit>
+        </ToggleHabitContainer>
       </ToggleContainer>
       <ResultatsLivraison co2eq={cO2eq} />
       <YearlyLivraison co2eq={cO2eq} />
