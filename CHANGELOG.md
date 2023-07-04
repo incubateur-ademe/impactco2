@@ -2,9 +2,13 @@
 # CHANGELOG
 
 
-## 1.8.0 (04/07/2023)
+## 1.8.1 (04/07/2023)
 
-* U17 - hors domicile, avec toggle
+* U17V2 - hors domicile, avec toggle, corrections
+
+## 1.8.0 (03/07/2023)
+
+* U15 - avion
 
 ## 1.7.0 (30/06/2023)
 
