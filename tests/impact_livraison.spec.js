@@ -90,6 +90,7 @@ test("U4 - Equivalences", async ({ page }) => {
     await expect(page.getByText("28 heures")).toHaveCount(1);
     await expect(page.getByText("0,3 repas")).toHaveCount(1);
   });
+
   await test.step("Une modale d'explication s'affiche", async () => {
     // Given
     await expect(page.getByText("Comprendre l'équivalent CO2 (CO2e)Fermer")).not.toBeVisible();

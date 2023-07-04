@@ -38,6 +38,5 @@ const getPublicodes = (produitCode, retraitCode, relayCode, km) => {
     "livraison colis . scénario": `'${retraitCode}'`,
     "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
     "livraison colis . déplacement consommateur . distance": `'${km}'`,
-    // "livraison colis . transport inter plateformes . option transport aérien": `'${planeStr}'`,
   };
 };
