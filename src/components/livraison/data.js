@@ -29,11 +29,6 @@ export const retraits = [
     uid: "click",
     publicode: "click and collect",
   },
-  {
-    displayed: "Achat direct en magasin",
-    uid: "magasin",
-    publicode: "magasin traditionnel",
-  },
 ];
 
 export const relays = [

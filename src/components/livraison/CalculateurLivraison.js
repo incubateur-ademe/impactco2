@@ -31,14 +31,14 @@ export default function CalculateurLivraison() {
 
   const [cO2eq, setCO2eq] = useState(0);
 
-  const [isHabit, setIsHabit] = useState(true);
+  const [isHabit, setIsHabit] = useState(false);
   const [isPlane, setIsPlane] = useState(false);
   const [showToggleContainer, setShowToggleContainer] = useState(true);
-
+  const [point, setPoint] = useState("point relais");
   const [values, setValues] = useState({
     produit: "habillement",
     retrait: "relais",
-    relay: "marche",
+    relay: "voiture_thermique",
     km: "7",
     traj: "dom_tra",
   });
@@ -53,12 +53,16 @@ export default function CalculateurLivraison() {
 
   useMemo(() => {
     calculateResult();
-    setShowToggleContainer(values.retrait.amongst(["relais", "click", "magasin"]));
+    setShowToggleContainer(values.retrait.amongst(["relais", "click"]));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values, isHabit, isPlane]);
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
-  const changeRetrait = (retrait) => setValues({ ...values, retrait: retrait.uid });
+  const changeRetrait = (retrait) => {
+    setPoint(retrait.uid === "click" ? "magasin" : retrait.uid === "relais" ? "point relais" : "");
+    console.log("retrait.uid", retrait.uid);
+    setValues({ ...values, retrait: retrait.uid });
+  };
   const changeRelay = (relay) => setValues({ ...values, relay: relay.uid });
   const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
   const changeKm = (km) => setValues({ ...values, km: km });
@@ -106,7 +110,7 @@ export default function CalculateurLivraison() {
                 }
               />
             </div>
-            <div className="item2">Le point relais est sur votre trajet habituel</div>
+            <div className="item2">Le {point} est sur votre trajet habituel</div>
             <div className="item3">
               <Addendum>
                 <span className="plus">+</span>
@@ -116,7 +120,7 @@ export default function CalculateurLivraison() {
           </FlexHabit>
         </ToggleHabitContainer>
         <Optionals show={!isHabit}>
-          <OptionalRelay changeRelay={changeRelay} value={values.relay}></OptionalRelay>
+          <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point}></OptionalRelay>
           <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
         </Optionals>
       </ToggleContainer>

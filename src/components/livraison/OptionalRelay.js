@@ -7,7 +7,7 @@ export default function OptionalRelay(props) {
       <FlexContainer>
         <div className="emptySpace"></div>
         <div className="item2">
-          <Text>Vous effectuez généralement le trajet jusqu'au point relais</Text>
+          <Text>Vous effectuez généralement le trajet jusqu'au {props.point}</Text>
         </div>
         <div className="item3">
           <SelectRelays changeRelay={props.changeRelay} value={props.value}></SelectRelays>
