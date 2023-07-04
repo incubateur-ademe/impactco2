@@ -32,6 +32,7 @@ export default function CalculateurLivraison() {
   const [cO2eq, setCO2eq] = useState(0);
 
   const [isHabit, setIsHabit] = useState(true);
+  const [isPlane, setIsPlane] = useState(false);
   const [showToggleContainer, setShowToggleContainer] = useState(true);
 
   const [values, setValues] = useState({
@@ -44,17 +45,17 @@ export default function CalculateurLivraison() {
 
   const [diffs, setDiffs] = useState({
     diffKm0: 0,
-    diffRelay: 0,
+    diffPlane: 0,
   });
 
   const calculateResult = () =>
-    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit);
+    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit, isPlane);
 
   useMemo(() => {
     calculateResult();
     setShowToggleContainer(values.retrait.amongst(["relais", "click", "magasin"]));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [values, isHabit]);
+  }, [values, isHabit, isPlane]);
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
   const changeRetrait = (retrait) => setValues({ ...values, retrait: retrait.uid });
@@ -115,7 +116,7 @@ export default function CalculateurLivraison() {
           </FlexHabit>
         </ToggleHabitContainer>
         <Optionals show={!isHabit}>
-          <OptionalRelay changeRelay={changeRelay} value={values.relay} diffRelay={diffs.diffRelay}></OptionalRelay>
+          <OptionalRelay changeRelay={changeRelay} value={values.relay}></OptionalRelay>
           <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
         </Optionals>
         <TogglePlaneContainer></TogglePlaneContainer>
@@ -126,8 +127,8 @@ export default function CalculateurLivraison() {
             <div className="item1">
               <Switch
                 className="toggle"
-                checked={isHabit}
-                onChange={() => setIsHabit(!isHabit)}
+                checked={isPlane}
+                onChange={() => setIsPlane(!isPlane)}
                 offColor={"#fff"}
                 onColor={themes.default.colors.main2}
                 aria-label="Changer de thème"
@@ -146,7 +147,7 @@ export default function CalculateurLivraison() {
             <div className="item3">
               <Addendum>
                 <span className="plus">+</span>
-                <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
+                <span className="txt">{convertGramsToKilograms(diffs.diffPlane)} kg de CO2e</span>
               </Addendum>
             </div>
           </FlexHabit>

@@ -7,34 +7,37 @@ export const calculateResultFunction = (
   diffs,
   setDiffs,
   setCO2eq,
-  isHabit
+  isHabit,
+  isPlane
 ) => {
   let produitCode = produits.find((p) => p.uid === values.produit).publicode;
   let retraitCode = retraits.find((r) => r.uid === values.retrait).publicode;
   let relayCode = relays.find((r) => r.uid === values.relay).publicode;
 
-  const baseCodes = getPublicodes(produitCode, retraitCode, relayCode, "0");
+  const baseCodes = getPublicodes(produitCode, retraitCode, relayCode, "0", "non");
   engine.setSituation(baseCodes);
   let zeroKmCO2 = engine.evaluate("livraison colis").nodeValue;
 
-  const kmCodes = getPublicodes(produitCode, retraitCode, relayCode, values.km);
+  const kmCodes = getPublicodes(produitCode, retraitCode, relayCode, values.km, "non");
   engine.setSituation(kmCodes);
   let actualKmCO2 = engine.evaluate("livraison colis").nodeValue;
+  let diffKm0 = isHabit ? 0 : actualKmCO2 - zeroKmCO2;
 
-  if (isHabit) {
-    setDiffs({ ...diffs, diffKm0: 0 });
-    setCO2eq(zeroKmCO2);
-  } else {
-    setDiffs({ ...diffs, diffKm0: actualKmCO2 - zeroKmCO2 });
-    setCO2eq(actualKmCO2);
-  }
+  const kmPlane = getPublicodes(produitCode, retraitCode, relayCode, "0", "oui");
+  engine.setSituation(kmPlane);
+  let kmCO2Plane = engine.evaluate("livraison colis").nodeValue;
+  let diffPlane = isPlane ? kmCO2Plane - zeroKmCO2 : 0;
+
+  setDiffs({ ...diffs, diffPlane: diffPlane, diffKm0: diffKm0 });
+  setCO2eq(zeroKmCO2 + diffPlane + diffKm0);
 };
 
-const getPublicodes = (produitCode, retraitCode, relayCode, km) => {
+const getPublicodes = (produitCode, retraitCode, relayCode, km, planeStr) => {
   return {
     "livraison colis . informations . catégorie": `'${produitCode}'`,
     "livraison colis . scénario": `'${retraitCode}'`,
     "livraison colis . déplacement consommateur . mode de déplacement": `'${relayCode}'`,
     "livraison colis . déplacement consommateur . distance": `'${km}'`,
+    "livraison colis . transport inter plateformes . option transport aérien": `'${planeStr}'`,
   };
 };
