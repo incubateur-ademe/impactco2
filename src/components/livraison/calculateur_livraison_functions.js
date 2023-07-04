@@ -25,7 +25,7 @@ export const calculateResultFunction = (
 
   const kmPlane = getPublicodes(produitCode, retraitCode, relayCode, "0", "oui");
   engine.setSituation(kmPlane);
-  let kmCO2Plane = engine.evaluate("livraison colis").nodeValue;
+  let kmCO2Plane = engine.evaluate("livraison colis par avion").nodeValue;
   let diffPlane = isPlane ? kmCO2Plane - zeroKmCO2 : 0;
 
   setDiffs({ ...diffs, diffPlane: diffPlane, diffKm0: diffKm0 });
