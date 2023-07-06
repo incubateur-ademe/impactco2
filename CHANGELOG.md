@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.8.2 (06/07/2023)
+
+* BSR - réparation de la "home"
+
 ## 1.8.1 (04/07/2023)
 
 * U17V2 - hors domicile, avec toggle, corrections
