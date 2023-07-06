@@ -1,3 +1,4 @@
+import SelectFrequences from "./SelectFrequences";
 import { convertGramsToKilograms } from "./utils";
 import styled from "styled-components";
 
@@ -9,6 +10,7 @@ export default function YearlyLivraison(props) {
         <Color>
           {convertGramsToKilograms(props.co2eq * 12)} kg CO<sub>2</sub>e
         </Color>{" "}
+        <SelectFrequences></SelectFrequences>
         <strong>par an</strong>
         <span> (cette valeur se base sur la fréquence d'une commande par mois).</span>
       </Text>
