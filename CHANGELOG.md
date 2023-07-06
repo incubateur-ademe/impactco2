@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.9.0 (07/07/2023)
+
+* U19 - fréquence d'achat
+
 ## 1.8.2 (06/07/2023)
 
 * BSR - réparation de la "home"
