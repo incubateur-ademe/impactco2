@@ -1,7 +1,6 @@
 
 # CHANGELOG
 
-
 ## 1.9.0 (07/07/2023)
 
 * U19 - fréquence d'achat
