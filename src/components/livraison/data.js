@@ -1,3 +1,10 @@
+export const frequences = [
+  { displayed: "jour", uid: "jour", mult: 365 },
+  { displayed: "semaine", uid: "semaine", mult: 52 },
+  { displayed: "mois", uid: "mois", mult: 12 },
+  { displayed: "an", uid: "annee", mult: 1 },
+];
+
 export const produits = [
   {
     displayed: "Produits de grande consommation",

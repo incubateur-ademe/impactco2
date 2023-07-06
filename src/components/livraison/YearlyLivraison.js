@@ -1,17 +1,26 @@
 import SelectFrequences from "./SelectFrequences";
 import { convertGramsToKilograms } from "./utils";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function YearlyLivraison(props) {
+  const [multiplicator, setMultiplicator] = useState(1);
+  const [textual, setTextual] = useState("an");
+
+  const changeFrequence = (e) => {
+    setMultiplicator(e.mult);
+    setTextual(e.displayed);
+  };
+
   return (
     <Wrapper>
       <Text>
         Vos usages émettent donc{" "}
         <Color>
-          {convertGramsToKilograms(props.co2eq * 12)} kg CO<sub>2</sub>e
+          {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e
         </Color>{" "}
-        <SelectFrequences></SelectFrequences>
-        <strong>par an</strong>
+        <SelectFrequences changeFrequence={changeFrequence}></SelectFrequences>
+        <strong>par {textual}</strong>
         <span> (cette valeur se base sur la fréquence d'une commande par mois).</span>
       </Text>
       <br />
