@@ -1,12 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-
-import Ademe from 'components/base/Ademe'
-import Logo from 'components/base/Logo'
-import Marianne from 'components/base/Marianne'
-
-import About from './footer/About'
-import Contact from './footer/Contact'
+import About from "./footer/About";
+import Contact from "./footer/Contact";
+import Ademe from "components/base/Ademe";
+import Logo from "components/base/Logo";
+import Marianne from "components/base/Marianne";
+import Link from "next/link";
+import React from "react";
+import styled from "styled-components";
 
 const Logos = styled.div`
   align-items: center;
@@ -20,14 +19,14 @@ const Logos = styled.div`
     font-size: ${(props) => (props.iframe ? 0.75 : 1)}rem;
     padding: 0 0.25rem;
   }
-`
+`;
 const Accessibility = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   font-size: 0.75rem;
   font-weight: 300;
-  padding-bottom: 1rem;
+  padding-bottom: ${(props) => props.pb || "1rem"};
   text-align: center;
-`
+`;
 export default function Footer() {
   return (
     <>
@@ -38,8 +37,10 @@ export default function Footer() {
         <Ademe />
         <Logo />
       </Logos>
-      <Accessibility>Accessibilité : partiellement conforme</Accessibility>
+      <Accessibility pb={"0"}>
+        <Link href="/accessibilite">Accessibilité : non-conforme</Link>
+      </Accessibility>
       <Accessibility>Version : {process.env.thebuildid}</Accessibility>
     </>
-  )
+  );
 }
