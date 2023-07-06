@@ -16,7 +16,6 @@ const StyledSection = styled(Section)`
   }
 `;
 const Title = styled.h2`
-  margin-top: 4rem;
   text-align: center;
 `;
 const Text = styled.p`
