@@ -6,10 +6,12 @@ import styled from "styled-components";
 export default function YearlyLivraison(props) {
   const [multiplicator, setMultiplicator] = useState(1);
   const [textual, setTextual] = useState("an");
+  const [uid, setUid] = useState("an");
 
   const changeFrequence = (e) => {
     setMultiplicator(e.mult);
     setTextual(e.displayed);
+    setUid(e.uid);
   };
 
   return (
@@ -20,7 +22,7 @@ export default function YearlyLivraison(props) {
           {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e*
         </Color>
         <strong>&nbsp;par&nbsp;</strong>
-        <SelectFrequences changeFrequence={changeFrequence}></SelectFrequences>
+        <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
       </FlexText>
       <SubText>
         <span>
