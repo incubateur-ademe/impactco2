@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.9.1 (07/07/2023)
+
+* BSR - nettoyage iframe et preparation MEP
+
 ## 1.9.0 (07/07/2023)
 
 * U19 - fréquence d'achat
