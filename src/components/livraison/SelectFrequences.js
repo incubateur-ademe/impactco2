@@ -3,9 +3,10 @@ import Select from "components/base/Select";
 import styled from "styled-components";
 
 const StyledSelect = styled(Select)`
-  margin: 1rem;
+  margin: 0;
   > select {
     border: none;
+    padding: 0 2rem 0 0;
   }
   > option {
     width: 300px;
@@ -20,7 +21,8 @@ export default function SelectFrequences(props) {
           props.changeFrequence && props.changeFrequence(frequences.find((frequence) => frequence.uid === e.value));
         }}
         value={props.value}
-        label="A la fréquence de"
+        className="freq"
+        label=""
         name="frequences"
       >
         {frequences.map((frequence) => (
