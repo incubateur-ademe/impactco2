@@ -51,7 +51,7 @@ export default function IflConfigurator(props) {
         <p>
           Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
           à&nbsp;
-          <BlackMagicLink to="mailto:impactco2@ademe.fr">impactco2@ademe.fr</BlackMagicLink>.
+          <BlackMagicLink to="mailto:datagir@ademe.fr">datagir@ademe.fr</BlackMagicLink>.
         </p>
         <p>
           Pour réutiliser <BlackMagicLink to="https://github.com/incubateur-ademe/impactco2/">le code</BlackMagicLink>{" "}
