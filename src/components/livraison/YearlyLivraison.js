@@ -1,12 +1,14 @@
 import SelectFrequences from "./SelectFrequences";
+import { frequences } from "./data.js";
 import { convertGramsToKilograms } from "./utils";
 import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function YearlyLivraison(props) {
-  const [multiplicator, setMultiplicator] = useState(1);
-  const [textual, setTextual] = useState("an");
-  const [uid, setUid] = useState("an");
+  const defaultFrequence = frequences.find((f) => f.isDefault);
+  const [multiplicator, setMultiplicator] = useState(defaultFrequence.mult);
+  const [textual, setTextual] = useState(defaultFrequence.displayed);
+  const [uid, setUid] = useState(defaultFrequence.uid);
 
   const changeFrequence = (e) => {
     setMultiplicator(e.mult);
@@ -25,10 +27,8 @@ export default function YearlyLivraison(props) {
         <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
       </FlexText>
       <SubText>
-        <span>
-          *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour une commande par{" "}
-          {textual}.
-        </span>
+        *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour une commande par {textual}
+        .
       </SubText>
       <br />
     </Wrapper>

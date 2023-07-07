@@ -1,6 +1,6 @@
 export const frequences = [
   { displayed: "jour", uid: "par_jour", mult: 365 },
-  { displayed: "semaine", uid: "par_semaine", mult: 52 },
+  { displayed: "semaine", uid: "par_semaine", mult: 52, isDefault: true },
   { displayed: "mois", uid: "par_mois", mult: 12 },
   { displayed: "an", uid: "par_an", mult: 1 },
 ];
