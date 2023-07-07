@@ -9,7 +9,7 @@ export default function YearlyLivraison(props) {
 
   const changeFrequence = (e) => {
     setMultiplicator(e.mult);
-    setTextual(e.display);
+    setTextual(e.displayed);
   };
 
   return (

@@ -6,7 +6,7 @@ const StyledSelect = styled(Select)`
   margin: 0;
   > select {
     border: none;
-    padding: 0 2rem 0 0;
+    padding: 0 2rem 0 0.5rem;
   }
   > option {
     width: 300px;
