@@ -5,9 +5,11 @@ import styled from "styled-components";
 
 export default function YearlyLivraison(props) {
   const [multiplicator, setMultiplicator] = useState(1);
+  const [textual, setTextual] = useState("an");
 
   const changeFrequence = (e) => {
     setMultiplicator(e.mult);
+    setTextual(e.display);
   };
 
   return (
@@ -15,14 +17,17 @@ export default function YearlyLivraison(props) {
       <FlexText>
         Vos usages émettent donc&nbsp;
         <Color>
-          {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e
+          {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e*
         </Color>
         <strong>&nbsp;par&nbsp;</strong>
         <SelectFrequences changeFrequence={changeFrequence}></SelectFrequences>
       </FlexText>
-      <FlexText>
-        <span> (cette valeur se base sur la fréquence d'une commande par mois).</span>
-      </FlexText>
+      <SubText>
+        <span>
+          *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour une commande par{" "}
+          {textual}.
+        </span>
+      </SubText>
       <br />
     </Wrapper>
   );
@@ -43,4 +48,9 @@ const FlexText = styled.div`
 const Color = styled.span`
   color: #457be7;
   font-weight: bold;
+`;
+
+const SubText = styled.div`
+  color: grey;
+  font-size: 14px;
 `;
