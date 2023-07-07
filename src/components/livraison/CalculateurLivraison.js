@@ -256,7 +256,11 @@ const ButtonChange = styled.button`
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 24px;
-  margin-left: 1rem;
+  margin-left: auto;
+  ${(props) => props.theme.mq.large} {
+    margin-left: auto;
+    margin-right: auto;
+  }
   padding: 4px 12px 4px 12px;
   text-align: center;
 `;
