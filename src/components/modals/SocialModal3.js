@@ -5,7 +5,7 @@ import Twitter2 from "./shareModal/Twitter2";
 import Whatsapp2 from "./shareModal/Whatsapp2";
 import Modal3 from "components/base/Modal3";
 import ModalContext from "components/providers/ModalProvider";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
 const href = typeof window !== "undefined" ? window?.location?.href : "";
@@ -20,15 +20,17 @@ const getTitle = () => {
 
 export default function SocialModal3() {
   const { social: open, setSocial: setOpen } = useContext(ModalContext);
+  const [copied, setCopied] = useState(false);
 
   const dismiss = () => {
+    setCopied(false);
     setOpen(false);
   };
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
       <br />
-      <CopyUrl url={href} />
+      <CopyUrl url={href} copied={copied} setCopied={setCopied} />
       <WrapperSocial>
         <Facebook2
           className="item1"
