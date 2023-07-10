@@ -3,18 +3,26 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  background: #f9f7f8;
+  display: flex;
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+  }
   margin-bottom: 1rem;
-  position: relative;
+  padding: 1rem 2rem;
 `;
+
 const Text = styled.input`
   background: #f9f7f8;
   border: none;
   color: ${(props) => props.theme.colors.text};
   cursor: pointer;
   display: block;
+  ${(props) => props.theme.mq.small} {
+    font-size: 14px;
+  }
   line-height: inherit;
   overflow: hidden;
-  padding: 1rem 2rem;
   position: relative;
   white-space: nowrap;
   width: 100%;
@@ -30,6 +38,7 @@ const Text = styled.input`
     transition: opacity 200ms ease-out;
   }
 `;
+
 const Copy = styled.button`
   background-color: transparent;
   border: none;
@@ -37,11 +46,14 @@ const Copy = styled.button`
   bottom: 0;
   color: #457be7;
   cursor: pointer;
+  display: block;
   height: 100%;
   padding: 0.5rem 0.3rem 0.5rem 1rem;
-  position: absolute;
-  right: 0;
-
+  width: 220px;
+  ${(props) => props.theme.mq.small} {
+    text-align: left;
+    padding: 0.5rem 0.3rem 0.5rem 0;
+  }
   &:focus {
     outline: none;
   }

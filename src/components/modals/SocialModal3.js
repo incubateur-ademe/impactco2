@@ -65,13 +65,16 @@ const GreenText = styled.span`
 const WrapperSocial = styled.div`
   align-items: center;
   display: flex;
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     flex-direction: column;
   }
   flex-wrap: wrap;
   justify-content: center;
   button + button {
     margin-left: 1rem;
+    ${(props) => props.theme.mq.small} {
+      margin-left: 0rem;
+    }
   }
 `;
 
