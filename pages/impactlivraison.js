@@ -1,9 +1,8 @@
-import categories from 'data/categories.json'
-
-import Section2 from 'components/base/Section2'
-import CalculateurLivraison from 'components/livraison/CalculateurLivraison'
-import IntroLivraison from 'components/livraison/IntroLivraison'
-import { RulesProviderLivraison } from 'components/livraison/RulesProviderLivraison'
+import Section2 from "components/base/Section2";
+import CalculateurLivraison from "components/livraison/CalculateurLivraison";
+import IntroLivraison from "components/livraison/IntroLivraison";
+import { RulesProviderLivraison } from "components/livraison/RulesProviderLivraison";
+import categories from "data/categories.json";
 
 export default function Impactlivraison() {
   return (
@@ -15,12 +14,12 @@ export default function Impactlivraison() {
         </RulesProviderLivraison>
       </Section2.InnerMargin>
     </Section2>
-  )
+  );
 }
 export async function getStaticProps() {
   return {
     props: {
-      category: categories.find((item) => item.slug === 'livraison'),
+      category: categories.find((item) => item.slug === "livraison"),
     },
-  }
+  };
 }

@@ -8,6 +8,9 @@ const StyledSelect = styled(Select)`
     border: none;
     color: ${(props) => props.theme.colors.main2};
     font-size: 16px;
+    ${(props) => props.theme.mq.small} {
+      font-size: 12px;
+    }
     font-weight: 500;
     letter-spacing: 0em;
     line-height: 24px;
