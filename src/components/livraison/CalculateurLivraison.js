@@ -28,7 +28,7 @@ export default function CalculateurLivraison() {
   // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison);
   const { setIfl } = useContext(ModalContext);
-  const { setShare } = useContext(ModalContext);
+  const { setSocial } = useContext(ModalContext);
 
   const [cO2eq, setCO2eq] = useState(0);
 
@@ -73,7 +73,7 @@ export default function CalculateurLivraison() {
       <Flex>
         <H2Title>Estimez l'impact de vos livraisons</H2Title>
         <div className="buttons">
-          <ButtonChange onClick={() => setShare(true)}>
+          <ButtonChange onClick={() => setSocial(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
               <path
                 fill="#564d53"
