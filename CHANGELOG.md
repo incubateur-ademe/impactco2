@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.9.2 (10/07/2023)
+
+* BSR - nettoyage fréquences
+
 ## 1.9.1 (07/07/2023)
 
 * BSR - nettoyage iframe et preparation MEP
