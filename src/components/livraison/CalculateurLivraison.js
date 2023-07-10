@@ -28,6 +28,7 @@ export default function CalculateurLivraison() {
   // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison);
   const { setIfl } = useContext(ModalContext);
+  const { setShare } = useContext(ModalContext);
 
   const [cO2eq, setCO2eq] = useState(0);
 
@@ -71,18 +72,29 @@ export default function CalculateurLivraison() {
     <>
       <Flex>
         <H2Title>Estimez l'impact de vos livraisons</H2Title>
-        <ButtonChange onClick={() => setIfl(true)}>
-          <svg width="16px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
-            />
-          </svg>
-          &nbsp;Intégrer le simulateur
-        </ButtonChange>
+        <div className="buttons">
+          <ButtonChange onClick={() => setShare(true)}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
+              <path
+                fill="#564d53"
+                d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"
+              />
+            </svg>
+            &nbsp;Partagez
+          </ButtonChange>
+          <ButtonChange onClick={() => setIfl(true)}>
+            <svg width="16px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+              />
+            </svg>
+            &nbsp;Intégrer le simulateur
+          </ButtonChange>
+        </div>
       </Flex>
       <DropList>
         <SelectProduits changeProduit={changeProduit} value={values.produit} />
@@ -256,10 +268,12 @@ const ButtonChange = styled.button`
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 24px;
-  margin-left: auto;
   ${(props) => props.theme.mq.large} {
     margin-left: auto;
     margin-right: auto;
+  }
+  ${(props) => props.theme.mq.medium} {
+    font-size: 12px;
   }
   padding: 4px 12px 4px 12px;
   text-align: center;
@@ -269,6 +283,19 @@ const Flex = styled.div`
   align-items: center;
   display: flex;
   margin-bottom: 1rem;
+  > .buttons {
+    margin-left: auto;
+    ${(props) => props.theme.mq.large} {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button + button {
+      margin-left: 0.5rem;
+      ${(props) => props.theme.mq.medium} {
+        margin-left: 0.125rem;
+      }
+    }
+  }
   ${(props) => props.theme.mq.large} {
     flex-direction: column;
   }
