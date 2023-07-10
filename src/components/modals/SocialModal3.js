@@ -24,19 +24,23 @@ export default function SocialModal3() {
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
-      <Wrapper>
-        <Facebook2 quote={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"} url={"href"} />
+      <WrapperSocial>
+        <Facebook2
+          className="item1"
+          quote={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"}
+          url={"href"}
+        />
         <Twitter2
           title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2"}
           url={"href"}
         />
+        <Whatsapp2 title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"} url={"href"} />
         <Linkedin2
           title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"}
           summary={"Impact CO2"}
           url={"href"}
         />
-        <Whatsapp2 title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"} url={"href"} />
-      </Wrapper>
+      </WrapperSocial>
     </Modal3>
   );
 }
@@ -50,4 +54,12 @@ const GreenText = styled.span`
   color: #1c9b93;
 `;
 
-const Wrapper = styled.div``;
+const WrapperSocial = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  button + button {
+    margin-left: 1rem;
+  }
+`;
