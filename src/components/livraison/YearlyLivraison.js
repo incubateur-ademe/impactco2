@@ -7,12 +7,14 @@ import styled from "styled-components";
 export default function YearlyLivraison(props) {
   const defaultFrequence = frequences.find((f) => f.isDefault);
   const [multiplicator, setMultiplicator] = useState(defaultFrequence.mult);
-  const [textual, setTextual] = useState(defaultFrequence.displayed);
+  const [baseNumber, setBaseNumber] = useState(defaultFrequence.baseNumber);
+  const [baseText, setBaseText] = useState(defaultFrequence.baseText);
   const [uid, setUid] = useState(defaultFrequence.uid);
 
   const changeFrequence = (e) => {
     setMultiplicator(e.mult);
-    setTextual(e.displayed);
+    setBaseNumber(e.baseNumber);
+    setBaseText(e.baseText);
     setUid(e.uid);
   };
 
@@ -27,8 +29,8 @@ export default function YearlyLivraison(props) {
         <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
       </FlexText>
       <SubText>
-        *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour une commande par {textual}
-        .
+        *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour {baseNumber} commande{" "}
+        {baseText}.
       </SubText>
       <br />
     </Wrapper>
