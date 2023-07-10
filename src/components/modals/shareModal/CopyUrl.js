@@ -1,5 +1,5 @@
 import copy from "copy-to-clipboard";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -54,11 +54,10 @@ const Check = styled.svg`
   vertical-align: top;
   width: 1rem;
   path {
-    fill: ${(props) => props.theme.colors.background};
+    fill: #457be7;
   }
 `;
 const UnCheck = styled.svg`
-  color: red;
   display: ${(props) => (props.copied ? "none" : "inline-block")};
   height: auto;
   opacity: ${(props) => (props.copied ? 0 : 1)};
@@ -66,18 +65,12 @@ const UnCheck = styled.svg`
   vertical-align: top;
   width: 1rem;
   path {
-    fill: ${(props) => props.theme.colors.background};
+    fill: #457be7;
   }
 `;
 
 export default function CopyUrl(props) {
   const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      setCopied(false);
-    };
-  }, [props.url]);
 
   return (
     <Wrapper>
@@ -97,11 +90,12 @@ export default function CopyUrl(props) {
           }
         }}
       >
-        <Check copied={copied} height="417pt" viewBox="0 -46 417.81333 417" width="417pt">
-          <path d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0" />
+        <Check copied={copied} height="16px" viewBox="0 0 16 16" width="16px">
+          <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+          <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
         </Check>
-        <UnCheck copied={copied} height="417pt" viewBox="0 -46 417.81333 417" width="417pt">
-          <path d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0" />
+        <UnCheck copied={copied} height="16px" viewBox="0 0 16 16" width="16px">
+          <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
         </UnCheck>
         Copier le lien{" "}
       </Copy>
