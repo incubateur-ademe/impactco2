@@ -1,5 +1,5 @@
+import CopyUrl from "./shareModal/CopyUrl";
 import Facebook2 from "./shareModal/Facebook2";
-import Link from "./shareModal/Link";
 import Linkedin2 from "./shareModal/Linkedin2";
 import Twitter2 from "./shareModal/Twitter2";
 import Whatsapp2 from "./shareModal/Whatsapp2";
@@ -27,7 +27,8 @@ export default function SocialModal3() {
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
-      <Link url={href} />
+      <br />
+      <CopyUrl url={href} />
       <WrapperSocial>
         <Facebook2
           className="item1"

@@ -12,7 +12,7 @@ export default function Facebook2(props) {
       onClick={() => window._paq?.push(["trackEvent", "Share", "Facebook", props.url])}
     >
       <Svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" filRule="evenodd">
+        <g id="Page-1" stroke="none" strokeWidth="1" fill="none" filRule="evenodd">
           <g id="fbz">
             <rect id="Rectangle" fill="#1B9B93" x="0" y="0" width="60" height="60" rx="8"></rect>
             <path
