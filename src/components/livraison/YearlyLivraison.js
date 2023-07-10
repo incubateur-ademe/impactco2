@@ -1,17 +1,37 @@
+import SelectFrequences from "./SelectFrequences";
+import { frequences } from "./data.js";
 import { convertGramsToKilograms } from "./utils";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function YearlyLivraison(props) {
+  const defaultFrequence = frequences.find((f) => f.isDefault);
+  const [multiplicator, setMultiplicator] = useState(defaultFrequence.mult);
+  const [baseNumber, setBaseNumber] = useState(defaultFrequence.baseNumber);
+  const [baseText, setBaseText] = useState(defaultFrequence.baseText);
+  const [uid, setUid] = useState(defaultFrequence.uid);
+
+  const changeFrequence = (e) => {
+    setMultiplicator(e.mult);
+    setBaseNumber(e.baseNumber);
+    setBaseText(e.baseText);
+    setUid(e.uid);
+  };
+
   return (
     <Wrapper>
-      <Text>
-        Vos usages émettent donc{" "}
+      <FlexText>
+        Vos usages émettent donc&nbsp;
         <Color>
-          {convertGramsToKilograms(props.co2eq * 12)} kg CO<sub>2</sub>e
-        </Color>{" "}
-        <strong>par an</strong>
-        <span> (cette valeur se base sur la fréquence d'une commande par mois).</span>
-      </Text>
+          {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e*
+        </Color>
+        <strong>&nbsp;par&nbsp;</strong>
+        <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
+      </FlexText>
+      <SubText>
+        *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour {baseNumber} commande{" "}
+        {baseText}.
+      </SubText>
       <br />
     </Wrapper>
   );
@@ -19,7 +39,8 @@ export default function YearlyLivraison(props) {
 
 const Wrapper = styled.div``;
 
-const Text = styled.div`
+const FlexText = styled.div`
+  display: flex;
   font-size: 1rem;
   margin-top: 1rem;
   text-align: left;
@@ -31,4 +52,9 @@ const Text = styled.div`
 const Color = styled.span`
   color: #457be7;
   font-weight: bold;
+`;
+
+const SubText = styled.div`
+  color: grey;
+  font-size: 14px;
 `;

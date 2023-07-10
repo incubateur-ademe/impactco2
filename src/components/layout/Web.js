@@ -1,5 +1,5 @@
 import BreadCrumb from "./web/BreadCrumb";
-import Footer2 from "./web/Footer2";
+import Footer from "./web/Footer";
 import Header from "./web/Header";
 import Nav from "./web/Nav";
 import Seo from "./web/Seo";
@@ -38,7 +38,7 @@ export default function Web(props) {
             <BreadCrumb breadcrumb={props.breadcrumb} />
             {props.children}
           </FullScreen>
-          <Footer2 />
+          <Footer />
         </Content>
       </Wrapper>
     </>

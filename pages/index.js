@@ -1,9 +1,8 @@
-import React from 'react'
-
-import Web from 'components/layout/Web'
-import Tiles from 'components/misc/Tiles'
-import Heading from 'components/views/home/Heading'
-import Visualization from 'components/views/home/Visualizations'
+import Web from "components/layout/Web";
+import Tiles from "components/misc/Tiles";
+import Heading from "components/views/home/Heading";
+import Visualization from "components/views/home/Visualizations";
+import React from "react";
 
 export default function Home() {
   return (
@@ -12,5 +11,5 @@ export default function Home() {
       <Visualization />
       <Tiles background title />
     </Web>
-  )
+  );
 }

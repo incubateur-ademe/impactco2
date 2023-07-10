@@ -3,26 +3,28 @@ import styled from "styled-components";
 export default function OptionalTraj(props) {
   return (
     <Wrapper>
-      <GridContainer>
-        <div className="item1">
-          <FlexCenter>
-            <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
-            <Flex>
-              <Input
-                type="number"
-                value={props.km}
-                onChange={(e) => props.changeKm(e.target.value)}
-                min="0"
-                step="1"
-              ></Input>
-              <Text>&nbsp;km</Text>
-            </Flex>
-          </FlexCenter>
-        </div>
-        <div className="item2"></div>
-        <div className="item4"></div>
-        <div className="item3"></div>
-      </GridContainer>
+      <div className="item1"></div>
+      <div className="item2">
+        <FlexCenter>
+          <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
+          <Flex>
+            <Input
+              type="number"
+              value={props.km}
+              onChange={(e) => props.changeKm(e.target.value)}
+              min="0"
+              step="1"
+            ></Input>
+            <Text>&nbsp;km</Text>
+          </Flex>
+        </FlexCenter>
+      </div>
+      <div className="item3"></div>
+      <div className="item4">
+        <SmallExplanation>
+          Exemple: si vous faites un détour de 2km sur votre trajet domicile-travail, indiquez ces 2km.
+        </SmallExplanation>
+      </div>
     </Wrapper>
   );
 }
@@ -31,39 +33,15 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-  padding: 0.25rem 0rem 1rem 2rem;
-  ${(props) => props.theme.mq.xlarge} {
-    padding: 0 1rem 1.5rem 1rem;
-  }
-`;
-
-const GridContainer = styled.div`
   display: grid;
-  ${(props) => props.theme.mq.xlarge} {
-    grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 6rem auto;
+  ${(props) => props.theme.mq.medium} {
+    grid-template-columns: 0 auto;
   }
-  grid-template-columns: auto auto 1fr auto;
-  > .item1 {
-    display: flex;
-    ${(props) => props.theme.mq.medium} {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  padding: 0 0 1.5rem 2rem;
+  ${(props) => props.theme.mq.small} {
+    padding: 0 0 1.5rem 1rem;
   }
-  > .item2,
-  .item4 {
-    align-items: center;
-  }
-  .item2 {
-    padding-left: 1rem;
-    ${(props) => props.theme.mq.xlarge} {
-      padding-left: 0;
-      > div > select {
-        padding-left: 0;
-      }
-    }
-  }
-  padding-top: 5px;
 `;
 
 const Text = styled.div`
@@ -82,7 +60,7 @@ const Input = styled.input`
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
-  color: #39a69e;
+  color: ${(props) => props.theme.colors.main2};
   text-align: right;
   width: 2rem;
 `;
@@ -90,12 +68,19 @@ const Input = styled.input`
 const FlexCenter = styled.div`
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   ${(props) => props.theme.mq.small} {
     align-items: flex-start;
     flex-direction: column;
   }
 `;
+
 const Flex = styled.div`
   display: flex;
+`;
+
+const SmallExplanation = styled.div`
+  color: ${(props) => props.theme.colors.textGray};
+  font-size: 14px;
+  padding-right: 0.5rem;
 `;
