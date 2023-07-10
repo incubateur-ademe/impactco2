@@ -31,6 +31,7 @@ export default function SocialModal3() {
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
       <br />
       <CopyUrl url={href} copied={copied} setCopied={setCopied} />
+      <Alternative>- ou -</Alternative>
       <WrapperSocial>
         <Facebook2
           className="item1"
@@ -64,9 +65,19 @@ const GreenText = styled.span`
 const WrapperSocial = styled.div`
   align-items: center;
   display: flex;
+  ${(props) => props.theme.mq.medium} {
+    flex-direction: column;
+  }
   flex-wrap: wrap;
   justify-content: center;
   button + button {
     margin-left: 1rem;
   }
+`;
+
+const Alternative = styled.div`
+  color: #746770;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 `;

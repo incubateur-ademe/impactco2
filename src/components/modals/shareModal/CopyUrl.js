@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   position: relative;
 `;
 const Text = styled.input`
