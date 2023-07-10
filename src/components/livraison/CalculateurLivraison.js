@@ -28,7 +28,8 @@ export default function CalculateurLivraison() {
   // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison);
   const { setIfl } = useContext(ModalContext);
-  const { setSocial } = useContext(ModalContext);
+  // eslint-disable-next-line no-unused-vars
+  const { setSocial, setShare } = useContext(ModalContext);
 
   const [cO2eq, setCO2eq] = useState(0);
 
