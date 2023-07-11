@@ -42,20 +42,16 @@ const Text = styled.input`
 const Copy = styled.button`
   background-color: transparent;
   border: none;
-  border-radius: 0.5rem 0.5rem 0 0;
   bottom: 0;
   color: #457be7;
   cursor: pointer;
   display: block;
   height: 100%;
-  padding: 0.5rem 0.3rem 0.5rem 1rem;
+  padding: 0.5rem 0.3rem 0.5rem 0.5rem;
   width: 220px;
   ${(props) => props.theme.mq.small} {
-    text-align: left;
     padding: 0.5rem 0.3rem 0.5rem 0;
-  }
-  &:focus {
-    outline: none;
+    text-align: left;
   }
 `;
 const Check = styled.svg`

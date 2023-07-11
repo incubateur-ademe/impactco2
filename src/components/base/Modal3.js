@@ -1,41 +1,47 @@
+import FocusTrap from "focus-trap-react";
 import React from "react";
 import styled from "styled-components";
 
 export default function Modal3(props) {
   return (
-    <Wrapper open={props.open}>
-      <Background
-        open={props.open}
-        onClick={() => {
-          props.dismiss();
-          props.setOpen(false);
-        }}
-      />
-      <Content
-        open={props.open}
-        width={props.width}
-        textColor={props.textColor}
-        backgroundColor={props.backgroundColor}
-        noAnimation={props.noAnimation}
-      >
-        <Header>
-          {props.getTitle ? props.getTitle() : "Titre"}
-          <ButtonClose
+    props.open && (
+      <FocusTrap focusTrapOptions={{ initialFocus: "#button-close" }}>
+        <Wrapper open={props.open}>
+          <Background
+            open={props.open}
             onClick={() => {
               props.dismiss();
               props.setOpen(false);
             }}
+          />
+          <Content
+            open={props.open}
+            width={props.width}
+            textColor={props.textColor}
+            backgroundColor={props.backgroundColor}
+            noAnimation={props.noAnimation}
           >
-            Fermer
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-            </svg>
-          </ButtonClose>
-        </Header>
+            <Header>
+              {props.getTitle ? props.getTitle() : "Titre"}
+              <ButtonClose
+                id="button-close"
+                onClick={() => {
+                  props.dismiss();
+                  props.setOpen(false);
+                }}
+              >
+                Fermer
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                </svg>
+              </ButtonClose>
+            </Header>
 
-        <Scroll className={props.className}>{props.children}</Scroll>
-      </Content>
-    </Wrapper>
+            <Scroll className={props.className}>{props.children}</Scroll>
+          </Content>
+        </Wrapper>
+      </FocusTrap>
+    )
   );
 }
 
@@ -84,12 +90,19 @@ const Content = styled.div`
   width: ${(props) => props.width || "40em"};
 `;
 
-const ButtonClose = styled.div`
+const ButtonClose = styled.button`
   align-items: center;
+  background: inherit;
+  border: none;
   cursor: pointer;
   display: flex;
   > svg {
     margin-left: 0.5rem;
+  }
+  &:focus {
+    border-radius: 2pt;
+    outline: solid;
+    outline-color: revert;
   }
 `;
 

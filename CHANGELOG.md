@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.10.1 (11/07/2023)
+
+* BSR - essai de trappe pour modale accessible
+
 ## 1.10.0 (11/07/2023)
 
 * U5 - partage
