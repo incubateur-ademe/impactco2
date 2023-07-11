@@ -12,10 +12,10 @@ test.beforeEach(async ({ page }, testInfo) => {
 
 test("U1 - Affichage simulateur et source", async ({ page }) => {
   await test.step("On peut accèder à impact-livraison directement depuis l'URL du navigateur", async () => {
-    await expect(page).toHaveTitle(/Mesurer l'impact carbone de la livraison de colis/);
+    await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO2/);
   });
   await test.step("J'ai bien le titre de l'onglet, le fil d'ariane, et le lien vers la source qui s'affichent", async () => {
-    await expect(page).toHaveTitle(/Mesurer l'impact carbone de la livraison de colis/);
+    await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO2/);
     await expect(page.getByRole("heading").first()).toHaveText("Mesurer l'impact carbone de la livraison de colis");
     await expect(page.getByTestId("paragraph1")).toHaveText(
       "80 % des Français de 11 ans et plus font des achats en ligne."
