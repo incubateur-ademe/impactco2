@@ -11,11 +11,12 @@ import numerique from "data/categories/numerique.json";
 import repas from "data/categories/repas.json";
 import usagenumerique from "data/categories/usagenumerique.json";
 import ecv from "data/ecv.json";
+import useFruitsEtLegumes from "hooks/useFruitsEtLegumes";
 import React, { useState } from "react";
 
 const DataContext = React.createContext({});
 
-const equivalents = [
+let equivalents = [
   ...boisson,
   ...deplacement,
   ...electromenager,
@@ -36,6 +37,28 @@ export function DataProvider(props) {
   const [eqv2, setEqv2] = useState({});
   const [eqv3, setEqv3] = useState({});
   const [eqvTarget, setEqvTarget] = useState("");
+
+  const { data: fetchedFl } = useFruitsEtLegumes();
+  console.log("fetchedFl", fetchedFl);
+
+  if (Array.isArray(fetchedFl)) {
+    console.log("fetchedFl is array, mehhhhhhhhhhh--------------");
+    equivalents = [
+      ...boisson,
+      ...deplacement,
+      ...electromenager,
+      ...habillement,
+      ...mobilier,
+      ...numerique,
+      ...usagenumerique,
+      ...repas,
+      ...chauffage,
+      ...fetchedFl,
+      ...divers,
+    ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }));
+  } else {
+    console.log("fetchedFl is bwaarf");
+  }
 
   return (
     <DataContext.Provider

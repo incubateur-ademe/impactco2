@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.10.2 (12/07/2023)
+
+* BSR - connexion Agribalyse
+
 ## 1.10.1 (11/07/2023)
 
 * BSR - essai de trappe pour modale accessible
