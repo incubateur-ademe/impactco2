@@ -6,9 +6,9 @@ let rawdata = fs.readFileSync("src/data/categories/fruitsetlegumes.json");
 let fruitsetlegumes = JSON.parse(rawdata);
 
 const AGRICULTURE_ID = 30;
-const TRANSPORT_ID = 33;
-const EMBALLAGE_ID = 32;
 const TRANSFORMATION_ID = 31;
+const EMBALLAGE_ID = 32;
+const TRANSPORT_ID = 33;
 const SUPERMARCHE_ID = 34;
 const CONSOMMATION_ID = 35;
 
