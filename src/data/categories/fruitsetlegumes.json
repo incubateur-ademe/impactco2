@@ -385,10 +385,10 @@
     }
   },
   {
-    "name": "Champignon de Paris",
+    "name": "Champignon (morille crue)",
     "Code_CIQUAL": 20105,
     "prefix": "kg de ",
-    "slug": "champignondeparis",
+    "slug": "champignonmorille",
     "synonyms": ["manger, fruit"],
     "emoji": "🍄",
     "category": 9,
@@ -1732,7 +1732,7 @@
   },
   {
     "name": "Mandarine",
-    "Code_CIQUAL": 13090,
+    "Code_CIQUAL": 13024,
     "prefix": "kg de ",
     "slug": "mandarine",
     "synonyms": ["manger, fruit"],

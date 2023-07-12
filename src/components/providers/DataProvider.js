@@ -39,10 +39,10 @@ export function DataProvider(props) {
   const [eqvTarget, setEqvTarget] = useState("");
 
   const { data: fetchedFl } = useFruitsEtLegumes();
-  console.log("fetchedFl", fetchedFl);
+  // console.log("fetchedFl", fetchedFl);
 
   if (Array.isArray(fetchedFl)) {
-    console.log("fetchedFl is array, mehhhhhhhhhhh--------------");
+    // console.log("fetchedFl is array, mehhhhhhhhhhh--------------");
     equivalents = [
       ...boisson,
       ...deplacement,
@@ -57,7 +57,7 @@ export function DataProvider(props) {
       ...divers,
     ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }));
   } else {
-    console.log("fetchedFl is bwaarf");
+    // console.log("fetchedFl is bwaarf");
   }
 
   return (

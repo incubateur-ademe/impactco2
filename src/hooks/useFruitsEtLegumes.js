@@ -3,10 +3,17 @@ import axios from "axios";
 import fruitsetlegumes from "data/categories/fruitsetlegumes.json";
 import useLocalStorage from "use-local-storage";
 
+const AGRICULTURE = 30;
+// const TRANSFORMATION = 31;
+// const EMBALLAGE = 32;
+// const TRANSPORT = 33;
+// const SUPERMARCHE = 34;
+// const CONSOMMATION = 35;
+
 export default function useFruitsEtLegumes() {
   const [fel, setFel] = useLocalStorage("ico2_fruitsetlegumes");
 
-  let slugs = fruitsetlegumes.map((e) => e.slug);
+  let slugs = fruitsetlegumes.map((e) => e.name);
   let joined = '"' + slugs.join('" | "') + '"';
   let encoded = encodeURIComponent(joined);
 
@@ -17,12 +24,12 @@ export default function useFruitsEtLegumes() {
       fel ||
       axios
         .get(
-          `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-detail-par-etape/lines?select=Code_CIQUAL%2CNom_du_Produit_en_Fran%C3%A7ais%2CScore_unique_EF_-_Agriculture%2CScore_unique_EF_-_Transport%2CScore_unique_EF_-_Supermarch%C3%A9_et_distribution%2CScore_unique_EF_-_Consommation&size=500&q=${encoded}`
+          `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-detail-par-etape/lines?select=Code_CIQUAL%2CNom_du_Produit_en_Fran%C3%A7ais%2CScore_unique_EF_-_Agriculture%2CScore_unique_EF_-_Transport%2CScore_unique_EF_-_Supermarch%C3%A9_et_distribution%2CScore_unique_EF_-_Consommation&size=600&q=${encoded}`
         )
         .then((res) => {
           let remoteData = res.data;
           console.log("remoteData", remoteData);
-          let finalResult = adaptEcv(remoteData);
+          let finalResult = adaptEcv(remoteData.results);
           setFel(finalResult);
           return finalResult;
         }),
@@ -34,7 +41,17 @@ export default function useFruitsEtLegumes() {
   );
 }
 
-const adaptEcv = (remoteData) => {
-  console.log("remoteData", remoteData);
+const adaptEcv = (remotes) => {
+  console.log("remotes", remotes);
+  fruitsetlegumes.map((fruit) => {
+    let remote = remotes.find((r) => r.Code_CIQUAL === fruit.Code_CIQUAL);
+    // console.log('remote', remote);
+    if (!remote) {
+      console.log(fruit.slug + " is not defined...");
+    }
+    let localFruit = JSON.parse(JSON.stringify(fruit));
+    let agricultureEcv = localFruit.ecv.find((e) => e.id === AGRICULTURE);
+    agricultureEcv.value;
+  });
   return fruitsetlegumes;
 };
