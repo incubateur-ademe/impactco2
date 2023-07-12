@@ -43,15 +43,22 @@ export default function useFruitsEtLegumes() {
 
 const adaptEcv = (remotes) => {
   console.log("remotes", remotes);
-  fruitsetlegumes.map((fruit) => {
+  let newList = fruitsetlegumes.map((fruit) => {
     let remote = remotes.find((r) => r.Code_CIQUAL === fruit.Code_CIQUAL);
-    // console.log('remote', remote);
+    if (fruit.Code_CIQUAL === 20019) console.log("remote", remote);
     if (!remote) {
-      console.log(fruit.slug + " is not defined...");
+      console.warn(fruit.slug + " is not defined...");
     }
     let localFruit = JSON.parse(JSON.stringify(fruit));
     let agricultureEcv = localFruit.ecv.find((e) => e.id === AGRICULTURE);
-    agricultureEcv.value;
+    if (fruit.Code_CIQUAL === 20019) console.log("old value is " + agricultureEcv.value);
+    agricultureEcv.value = remote["Score_unique_EF_-_Agriculture"];
+    if (fruit.Code_CIQUAL === 20019) console.log("new value is " + agricultureEcv.value);
+    if (fruit.Code_CIQUAL === 20019) console.log("localFruit", localFruit);
+    if (fruit.Code_CIQUAL === 20019) console.log("---");
+    if (fruit.Code_CIQUAL === 20019) console.log("");
+    return localFruit;
   });
-  return fruitsetlegumes;
+  console.log("newList", newList);
+  return newList;
 };

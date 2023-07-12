@@ -20,7 +20,6 @@ export default function IFrameLivraisonModal3() {
   };
 
   const [theme, setTheme] = useState("default");
-  console.log("theme", theme);
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
