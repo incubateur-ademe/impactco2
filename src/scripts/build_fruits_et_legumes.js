@@ -33,7 +33,7 @@ axios.get(remote_url).then((res) => {
 const adaptEcv = (remotes) => {
   let newList = fruitsetlegumes.map((fruit) => {
     let remote = remotes.find((r) => r.Code_CIQUAL === fruit.Code_CIQUAL);
-    if (fruit.Code_CIQUAL === 20019) console.log("remote", remote);
+    // if (fruit.Code_CIQUAL === 20019) console.log("remote", remote);
     if (!remote) {
       console.warn(fruit.slug + " is not defined...");
     }
@@ -41,37 +41,43 @@ const adaptEcv = (remotes) => {
 
     let agriculture = localFruit.ecv.find((e) => e.id === AGRICULTURE_ID);
     agriculture.id = AGRICULTURE_ID;
+    agriculture.name = "agriculture";
     agriculture.value = remote["Score_unique_EF_-_Agriculture"];
     upsert(localFruit.ecv, agriculture);
 
     let transformation = localFruit.ecv.find((e) => e.id === TRANSFORMATION_ID) || {};
     transformation.id = TRANSFORMATION_ID;
+    transformation.name = "transformation";
     transformation.value = remote["Score_unique_EF_-_Transformation"];
     upsert(localFruit.ecv, transformation);
 
     let emballage = localFruit.ecv.find((e) => e.id === EMBALLAGE_ID) || {};
     emballage.id = EMBALLAGE_ID;
+    emballage.name = "emballage";
     emballage.value = remote["Score_unique_EF_-_Emballage"];
     upsert(localFruit.ecv, emballage);
 
     let transport = localFruit.ecv.find((e) => e.id === TRANSPORT_ID) || {};
     transport.id = TRANSPORT_ID;
+    transport.name = "transport";
     transport.value = remote["Score_unique_EF_-_Transport"];
     upsert(localFruit.ecv, transport);
 
     let supermarche = localFruit.ecv.find((e) => e.id === SUPERMARCHE_ID) || {};
     supermarche.id = SUPERMARCHE_ID;
+    supermarche.name = "supermarche";
     supermarche.value = remote["Score_unique_EF_-_Supermarché_et_distribution"];
     upsert(localFruit.ecv, supermarche);
 
     let consommation = localFruit.ecv.find((e) => e.id === CONSOMMATION_ID) || {};
     consommation.id = CONSOMMATION_ID;
+    consommation.name = "consommation";
     consommation.value = remote["Score_unique_EF_-_Consommation"];
     upsert(localFruit.ecv, supermarche);
 
-    if (fruit.Code_CIQUAL === 20019) console.log("localFruit", localFruit);
-    if (fruit.Code_CIQUAL === 20019) console.log("---");
-    if (fruit.Code_CIQUAL === 20019) console.log("");
+    console.log("localFruit", localFruit);
+    // if (fruit.Code_CIQUAL === 20019) console.log("---");
+    // if (fruit.Code_CIQUAL === 20019) console.log("");
     return localFruit;
   });
   // console.log('newList', newList);
