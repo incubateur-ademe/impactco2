@@ -1646,7 +1646,7 @@
   },
   {
     "name": "Groseille",
-
+    "Code_CIQUAL": 13019,
     "prefix": "kg de ",
     "slug": "groseille",
     "synonyms": ["manger, fruit"],
@@ -1689,7 +1689,7 @@
   },
   {
     "name": "Kiwi",
-
+    "Code_CIQUAL": 13021,
     "prefix": "kg de ",
     "slug": "kiwi",
     "synonyms": ["manger, fruit"],
@@ -1732,7 +1732,7 @@
   },
   {
     "name": "Mandarine",
-
+    "Code_CIQUAL": 13090,
     "prefix": "kg de ",
     "slug": "mandarine",
     "synonyms": ["manger, fruit"],
@@ -1775,7 +1775,7 @@
   },
   {
     "name": "Melon",
-
+    "Code_CIQUAL": 13026,
     "prefix": "kg de ",
     "slug": "melon",
     "synonyms": ["manger, fruit"],
@@ -1818,7 +1818,7 @@
   },
   {
     "name": "Mûre",
-
+    "Code_CIQUAL": 13071,
     "prefix": "kg de ",
     "slug": "mure",
     "synonyms": ["manger, fruit"],
@@ -1861,7 +1861,7 @@
   },
   {
     "name": "Nectarine",
-
+    "Code_CIQUAL": 13030,
     "prefix": "kg de ",
     "slug": "nectarine",
     "synonyms": ["manger, fruit"],
@@ -1904,7 +1904,7 @@
   },
   {
     "name": "Myrtille",
-
+    "Code_CIQUAL": 13028,
     "prefix": "kg de ",
     "slug": "myrtille",
     "synonyms": ["manger, fruit"],
@@ -1947,7 +1947,7 @@
   },
   {
     "name": "Noisette",
-
+    "Code_CIQUAL": 15004,
     "prefix": "kg de ",
     "slug": "noisette",
     "synonyms": ["manger, fruit"],
@@ -1990,6 +1990,7 @@
   },
   {
     "name": "Noix",
+    "Code_CIQUAL": 15023,
 
     "prefix": "kg de ",
     "slug": "noix",
@@ -2033,7 +2034,7 @@
   },
   {
     "name": "Prune",
-
+    "Code_CIQUAL": 13100,
     "prefix": "kg de ",
     "slug": "prune",
     "synonyms": ["manger, fruit"],
@@ -2077,7 +2078,7 @@
 
   {
     "name": "Reine Claude",
-
+    "Code_CIQUAL": 13041,
     "prefix": "kg de ",
     "slug": "reineclaude",
     "synonyms": ["manger, fruit"],
@@ -2120,7 +2121,7 @@
   },
   {
     "name": "Rhubarbe",
-
+    "Code_CIQUAL": 13047,
     "prefix": "kg de ",
     "slug": "rhubarbe",
     "synonyms": ["manger, fruit"],
@@ -2163,7 +2164,7 @@
   },
   {
     "name": "Pêche",
-
+    "Code_CIQUAL": 13043,
     "prefix": "kg de ",
     "slug": "peche",
     "synonyms": ["manger, fruit"],
@@ -2206,7 +2207,7 @@
   },
   {
     "name": "Cerise",
-
+    "Code_CIQUAL": 13008,
     "prefix": "kg de ",
     "slug": "cerise",
     "synonyms": ["manger, fruit"],
@@ -2249,7 +2250,7 @@
   },
   {
     "name": "Abricot",
-
+    "Code_CIQUAL": 13000,
     "prefix": "kg de ",
     "slug": "abricot",
     "synonyms": ["manger, fruit"],
@@ -2292,7 +2293,7 @@
   },
   {
     "name": "Framboise",
-
+    "Code_CIQUAL": 13015,
     "prefix": "kg de ",
     "slug": "framboise",
     "synonyms": ["manger, fruit"],
@@ -2335,7 +2336,7 @@
   },
   {
     "name": "Poire",
-
+    "Code_CIQUAL": 13107,
     "prefix": "kg de ",
     "slug": "poire",
     "synonyms": ["manger, fruit"],
@@ -2378,7 +2379,7 @@
   },
   {
     "name": "Raisin",
-
+    "Code_CIQUAL": 13112,
     "prefix": "kg de ",
     "slug": "raisin",
     "synonyms": ["manger, fruit"],
@@ -2421,7 +2422,7 @@
   },
   {
     "name": "Aubergine",
-
+    "Code_CIQUAL": 20053,
     "prefix": "kg de ",
     "slug": "aubergine",
     "synonyms": ["manger, fruit"],
@@ -2464,7 +2465,7 @@
   },
   {
     "name": "Brocoli",
-
+    "Code_CIQUAL": 20057,
     "prefix": "kg de ",
     "slug": "brocoli",
     "synonyms": ["manger, fruit"],
@@ -2507,7 +2508,7 @@
   },
   {
     "name": "Tomate",
-
+    "Code_CIQUAL": 20047,
     "prefix": "kg de ",
     "slug": "tomate",
     "synonyms": ["manger, fruit"],
@@ -2550,7 +2551,7 @@
   },
   {
     "name": "Ananas",
-
+    "Code_CIQUAL": 13002,
     "prefix": "kg de ",
     "slug": "ananas",
     "synonyms": ["manger, fruit"],
@@ -2593,7 +2594,7 @@
   },
   {
     "name": "Banane",
-
+    "Code_CIQUAL": 13005,
     "prefix": "kg de ",
     "slug": "banane",
     "synonyms": ["manger, fruit"],
@@ -2636,7 +2637,7 @@
   },
   {
     "name": "Avocat",
-
+    "Code_CIQUAL": 13004,
     "prefix": "kg de ",
     "slug": "avocat",
     "synonyms": ["manger, fruit"],
@@ -2679,7 +2680,7 @@
   },
   {
     "name": "Carambole",
-
+    "Code_CIQUAL": 13054,
     "prefix": "kg de ",
     "slug": "carambole",
     "synonyms": ["manger, fruit"],
@@ -2722,7 +2723,7 @@
   },
   {
     "name": "Datte",
-
+    "Code_CIQUAL": 13011,
     "prefix": "kg de ",
     "slug": "datte",
     "synonyms": ["manger, fruit"],
@@ -2765,7 +2766,7 @@
   },
   {
     "name": "Fruit de la passion",
-
+    "Code_CIQUAL": 13016,
     "prefix": "kg de ",
     "slug": "fruitdelapassion",
     "synonyms": ["manger, fruit"],
@@ -2808,6 +2809,7 @@
   },
   {
     "name": "Grenade",
+    "Code_CIQUAL": 13018,
 
     "prefix": "kg de ",
     "slug": "grenade",
@@ -2851,6 +2853,7 @@
   },
   {
     "name": "Kaki",
+    "Code_CIQUAL": 13066,
 
     "prefix": "kg de ",
     "slug": "kaki",
@@ -2894,6 +2897,7 @@
   },
   {
     "name": "Noix de coco",
+    "Code_CIQUAL": 15006,
 
     "prefix": "kg de ",
     "slug": "noixdecoco",
@@ -2937,6 +2941,7 @@
   },
   {
     "name": "Pastèque",
+    "Code_CIQUAL": 13036,
 
     "prefix": "kg de ",
     "slug": "pasteque",
