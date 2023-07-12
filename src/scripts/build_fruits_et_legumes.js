@@ -15,25 +15,24 @@ const CONSOMMATION_ID = 35;
 const ciquals = fruitsetlegumes.map((e) => e.Code_CIQUAL).join(",");
 const remote_url = `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-detail-par-etape/lines?size=100&select=Code_CIQUAL%2CNom_du_Produit_en_Fran%C3%A7ais%2CScore_unique_EF_-_Agriculture%2CScore_unique_EF_-_Transformation%2CScore_unique_EF_-_Emballage%2CScore_unique_EF_-_Transport%2CScore_unique_EF_-_Supermarch%C3%A9_et_distribution%2CScore_unique_EF_-_Consommation&Code_CIQUAL_in=${ciquals}`;
 
+// See https://stackoverflow.com/a/49375465/2595513
 function upsert(array, element) {
-  // (1)
   const i = array.findIndex((_element) => _element.id === element.id);
-  if (i > -1) array[i] = element; // (2)
+  if (i > -1) array[i] = element;
   else array.push(element);
 }
-
-console.log("remote_url", remote_url);
 
 axios.get(remote_url).then((res) => {
   let remoteData = res.data;
   let finalResult = adaptEcv(remoteData.results);
+  console.log("finalResult", finalResult);
+  fs.writeFileSync("src/data/categories/fruitsetlegumes.json", JSON.stringify(finalResult, null, 2));
   return finalResult;
 });
 
 const adaptEcv = (remotes) => {
   let newList = fruitsetlegumes.map((fruit) => {
     let remote = remotes.find((r) => r.Code_CIQUAL === fruit.Code_CIQUAL);
-    // if (fruit.Code_CIQUAL === 20019) console.log("remote", remote);
     if (!remote) {
       console.warn(fruit.slug + " is not defined...");
     }
@@ -76,10 +75,7 @@ const adaptEcv = (remotes) => {
     upsert(localFruit.ecv, supermarche);
 
     console.log("localFruit", localFruit);
-    // if (fruit.Code_CIQUAL === 20019) console.log("---");
-    // if (fruit.Code_CIQUAL === 20019) console.log("");
     return localFruit;
   });
-  // console.log('newList', newList);
   return newList;
 };
