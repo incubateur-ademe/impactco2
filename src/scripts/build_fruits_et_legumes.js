@@ -38,7 +38,7 @@ function upsert(array, element) {
 axios.get(remote_url).then((res) => {
   let remoteData = res.data;
   let finalResult = adaptEcv(remoteData.results);
-  // console.dir(finalResult, { depth: null });
+  console.dir(finalResult, { depth: null });
   fs.writeFileSync("src/data/categories/fruitsetlegumes.json", JSON.stringify(finalResult, null, 2));
   return finalResult;
 });
@@ -62,12 +62,6 @@ const adaptEcv = (remotes) => {
     const finalC02 = sumValues("Changement_climatique_-_", remote, finalities);
     const finalEF = sumValues("Score_unique_EF_-_", remote, finalities);
     const delta = finalC02 / finalEF;
-    console.log("delta", delta);
-    console.log("finalC02", finalC02);
-    console.log("finalEF", finalEF);
-    console.log(localFruit.name);
-    console.log(localFruit.Code_CIQUAL);
-    console.log("----");
 
     let agriculture = localFruit.ecv.find((e) => e.id === AGRICULTURE_ID) || {};
     agriculture.id = AGRICULTURE_ID;
