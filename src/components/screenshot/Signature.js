@@ -1,9 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-
-import Datagir from 'components/base/Datagir'
-import Logo from 'components/base/Logo'
-import MagicLink from 'components/base/MagicLink'
+import Logo from "components/base/Logo";
+import MagicLink from "components/base/MagicLink";
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   bottom: 1rem;
@@ -18,37 +16,24 @@ const Wrapper = styled.div`
     right: 1rem;
     transform: none;
   }
-`
+`;
 const StyledLogo = styled(Logo)`
   bottom: 1rem;
   font-size: 0.571428571rem;
   left: 1rem;
   pointer-events: none;
   position: absolute;
-`
-const StyledDatagir = styled(Datagir)`
-  bottom: 1rem;
-  height: 2rem;
-  margin: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 1rem;
-  width: auto;
+`;
 
-  ${(props) => props.theme.mq.small} {
-    display: none;
-  }
-`
 export default function Signature() {
   return (
     <>
       <StyledLogo />
       <Wrapper>
-        <MagicLink to='https://impactco2.fr' noIcon>
+        <MagicLink to="https://impactco2.fr" noIcon>
           impactco2.fr
         </MagicLink>
       </Wrapper>
-      <StyledDatagir />
     </>
-  )
+  );
 }
