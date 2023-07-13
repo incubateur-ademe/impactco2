@@ -12,7 +12,7 @@ const SUPERMARCHE_ID = 34;
 const CONSOMMATION_ID = 35;
 
 const ciquals = fruitsetlegumes.map((e) => e.Code_CIQUAL).join(",");
-const remote_url = `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-detail-par-etape/lines?size=100&select=Code_CIQUAL%2CNom_du_Produit_en_Fran%C3%A7ais%2CScore_unique_EF_-_Agriculture%2CScore_unique_EF_-_Transformation%2CScore_unique_EF_-_Emballage%2CScore_unique_EF_-_Transport%2CScore_unique_EF_-_Supermarch%C3%A9_et_distribution%2CScore_unique_EF_-_Consommation&Code_CIQUAL_in=${ciquals}`;
+const remote_url = `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-detail-par-etape/lines?size=${fruitsetlegumes.length}&select=Code_CIQUAL%2CNom_du_Produit_en_Fran%C3%A7ais%2CChangement_climatique_-_Agriculture%2CChangement_climatique_-_Transformation%2CChangement_climatique_-_Emballage%2CChangement_climatique_-_Transport%2CChangement_climatique_-_Supermarch%C3%A9_et_distribution%2CChangement_climatique_-_Consommation&Code_CIQUAL_in=${ciquals}`;
 
 // See https://stackoverflow.com/a/49375465/2595513
 function upsert(array, element) {
@@ -37,40 +37,40 @@ const adaptEcv = (remotes) => {
     }
     let localFruit = JSON.parse(JSON.stringify(fruit));
 
-    let agriculture = localFruit.ecv.find((e) => e.id === AGRICULTURE_ID);
+    let agriculture = localFruit.ecv.find((e) => e.id === AGRICULTURE_ID) || {};
     agriculture.id = AGRICULTURE_ID;
     agriculture.name = "agriculture";
-    agriculture.value = remote["Score_unique_EF_-_Agriculture"] * 7;
+    agriculture.value = remote["Changement_climatique_-_Agriculture"];
     upsert(localFruit.ecv, agriculture);
 
     let transformation = localFruit.ecv.find((e) => e.id === TRANSFORMATION_ID) || {};
     transformation.id = TRANSFORMATION_ID;
     transformation.name = "transformation";
-    transformation.value = remote["Score_unique_EF_-_Transformation"] * 7;
+    transformation.value = remote["Changement_climatique_-_Transformation"];
     upsert(localFruit.ecv, transformation);
 
     let emballage = localFruit.ecv.find((e) => e.id === EMBALLAGE_ID) || {};
     emballage.id = EMBALLAGE_ID;
     emballage.name = "emballage";
-    emballage.value = remote["Score_unique_EF_-_Emballage"] * 7;
+    emballage.value = remote["Changement_climatique_-_Emballage"];
     upsert(localFruit.ecv, emballage);
 
     let transport = localFruit.ecv.find((e) => e.id === TRANSPORT_ID) || {};
     transport.id = TRANSPORT_ID;
     transport.name = "transport";
-    transport.value = remote["Score_unique_EF_-_Transport"] * 7;
+    transport.value = remote["Changement_climatique_-_Transport"];
     upsert(localFruit.ecv, transport);
 
     let supermarche = localFruit.ecv.find((e) => e.id === SUPERMARCHE_ID) || {};
     supermarche.id = SUPERMARCHE_ID;
     supermarche.name = "supermarche";
-    supermarche.value = remote["Score_unique_EF_-_Supermarché_et_distribution"] * 7;
+    supermarche.value = remote["Changement_climatique_-_Supermarché_et_distribution"];
     upsert(localFruit.ecv, supermarche);
 
     let consommation = localFruit.ecv.find((e) => e.id === CONSOMMATION_ID) || {};
     consommation.id = CONSOMMATION_ID;
     consommation.name = "consommation";
-    consommation.value = remote["Score_unique_EF_-_Consommation"] * 7;
+    consommation.value = remote["Changement_climatique_-_Consommation"];
     upsert(localFruit.ecv, supermarche);
 
     return localFruit;

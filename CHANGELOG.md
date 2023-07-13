@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.10.3 (13/07/2023)
+
+* BSR - correction FE Agribalyse
+
 ## 1.10.2 (12/07/2023)
 
 * BSR - connexion Agribalyse
