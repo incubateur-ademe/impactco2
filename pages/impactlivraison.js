@@ -9,8 +9,10 @@ export default function Impactlivraison() {
     <Section2>
       <Section2.InnerMargin>
         <RulesProviderLivraison>
-          <IntroLivraison />
-          <CalculateurLivraison />
+          <main>
+            <IntroLivraison />
+            <CalculateurLivraison />
+          </main>
         </RulesProviderLivraison>
       </Section2.InnerMargin>
     </Section2>

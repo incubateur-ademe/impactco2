@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.11.1 (13/07/2023)
+
+* BSR - zones (accessibilité)
+
 ## 1.11.0 (13/07/2023)
 
 * U7 - telechargement

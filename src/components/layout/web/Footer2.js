@@ -29,15 +29,17 @@ const Accessibility = styled.div`
 export default function Footer2() {
   return (
     <>
-      <Logos>
-        <Marianne />
-        <Ademe />
-        <Logo />
-      </Logos>
-      <Accessibility>
-        <Link href="/accessibilite">Accessibilité : non-conforme</Link>
-      </Accessibility>
-      <Accessibility breath>Version : {process.env.thebuildid}</Accessibility>
+      <footer aria-label="footer">
+        <Logos>
+          <Marianne />
+          <Ademe />
+          <Logo />
+        </Logos>
+        <Accessibility>
+          <Link href="/accessibilite">Accessibilité : non-conforme</Link>
+        </Accessibility>
+        <Accessibility breath>Version : {process.env.thebuildid}</Accessibility>
+      </footer>
     </>
   );
 }
