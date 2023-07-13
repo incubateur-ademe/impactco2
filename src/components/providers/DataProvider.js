@@ -15,7 +15,7 @@ import React, { useState } from "react";
 
 const DataContext = React.createContext({});
 
-let equivalents = [
+const equivalents = [
   ...boisson,
   ...deplacement,
   ...electromenager,
