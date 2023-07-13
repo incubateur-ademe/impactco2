@@ -12,7 +12,10 @@ const SUPERMARCHE_ID = 34;
 const CONSOMMATION_ID = 35;
 
 const ciquals = fruitsetlegumes.map((e) => e.Code_CIQUAL).join(",");
-const remote_url = `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-detail-par-etape/lines?size=${fruitsetlegumes.length}&select=Code_CIQUAL%2CNom_du_Produit_en_Fran%C3%A7ais%2CChangement_climatique_-_Agriculture%2CChangement_climatique_-_Transformation%2CChangement_climatique_-_Emballage%2CChangement_climatique_-_Transport%2CChangement_climatique_-_Supermarch%C3%A9_et_distribution%2CChangement_climatique_-_Consommation&Code_CIQUAL_in=${ciquals}`;
+const remote_url = `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-detail-par-etape/lines?size=${
+  fruitsetlegumes.length + 100
+}&select=Code_CIQUAL%2CNom_du_Produit_en_Fran%C3%A7ais%2CChangement_climatique_-_Agriculture%2CChangement_climatique_-_Transformation%2CChangement_climatique_-_Emballage%2CChangement_climatique_-_Transport%2CChangement_climatique_-_Supermarch%C3%A9_et_distribution%2CChangement_climatique_-_Consommation&Code_CIQUAL_in=${ciquals}`;
+console.log("remote_url ------------------------------- ", remote_url);
 
 // See https://stackoverflow.com/a/49375465/2595513
 function upsert(array, element) {
@@ -24,7 +27,7 @@ function upsert(array, element) {
 axios.get(remote_url).then((res) => {
   let remoteData = res.data;
   let finalResult = adaptEcv(remoteData.results);
-  console.log("finalResult", finalResult);
+  console.dir(finalResult, { depth: null });
   fs.writeFileSync("src/data/categories/fruitsetlegumes.json", JSON.stringify(finalResult, null, 2));
   return finalResult;
 });
@@ -33,7 +36,7 @@ const adaptEcv = (remotes) => {
   let newList = fruitsetlegumes.map((fruit) => {
     let remote = remotes.find((r) => r.Code_CIQUAL === fruit.Code_CIQUAL);
     if (!remote) {
-      console.warn(fruit.slug + " is not defined...");
+      console.warn("!!! " + fruit.slug + " is not defined...");
     }
     let localFruit = JSON.parse(JSON.stringify(fruit));
 
@@ -72,6 +75,8 @@ const adaptEcv = (remotes) => {
     consommation.name = "consommation";
     consommation.value = remote["Changement_climatique_-_Consommation"];
     upsert(localFruit.ecv, supermarche);
+
+    localFruit.ecv = localFruit.ecv.filter((e) => e.value !== 0);
 
     return localFruit;
   });
