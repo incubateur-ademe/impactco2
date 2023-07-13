@@ -15,9 +15,9 @@ export default function BreadCrumb(props) {
     <Section>
       <Section.Content>
         <Wrapper>
-          <nav aria-label="fil d'ariane">
-            {props.breadcrumb && props.breadcrumb.type === "equivalent" && (
-              <>
+          {props.breadcrumb && props.breadcrumb.type === "equivalent" && (
+            <>
+              <nav aria-label="fil d'ariane">
                 <MagicLink to="/categories">Catégories</MagicLink>
                 {" > "}{" "}
                 {props.breadcrumb.equivalent ? (
@@ -29,9 +29,9 @@ export default function BreadCrumb(props) {
                 ) : (
                   props.breadcrumb.category.name
                 )}
-              </>
-            )}
-          </nav>
+              </nav>
+            </>
+          )}
         </Wrapper>
       </Section.Content>
     </Section>
