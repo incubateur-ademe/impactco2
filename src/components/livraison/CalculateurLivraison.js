@@ -71,7 +71,7 @@ export default function CalculateurLivraison() {
   const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
   const changeKm = (km) => setValues({ ...values, km: km });
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison");
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison", "jpg");
 
   return (
     <>

@@ -1,39 +1,40 @@
-import { toPng } from 'html-to-image'
-import { useRef, useState } from 'react'
+import { toPng, toJpeg } from "html-to-image";
+import { useRef, useState } from "react";
 
-export default function useScreenshot(slug) {
-  const ref = useRef(null)
+export default function useScreenshot(slug, format = "png") {
+  const ref = useRef(null);
 
-  const [isScreenshotting, setIsScreenshotting] = useState(false)
+  const transformFn = format === "png" ? toPng : toJpeg;
+  console.log("transformFn", transformFn);
+
+  const [isScreenshotting, setIsScreenshotting] = useState(false);
 
   const takeScreenshot = () => {
-    setIsScreenshotting(true)
+    setIsScreenshotting(true);
     setTimeout(() => {
       if (ref.current === null) {
-        return
+        return;
       }
-      toPng(ref.current, {
+      transformFn(ref.current, {
         cacheBust: true,
         filter: (node) => {
-          return !node.className || !node.className.includes
-            ? true
-            : !node.className?.includes('noscreenshot')
+          return !node.className || !node.className.includes ? true : !node.className?.includes("noscreenshot");
         },
       })
         .then((dataUrl) => {
-          const link = document.createElement('a')
-          link.download = `${slug}.png`
-          link.href = dataUrl
-          link.click()
+          const link = document.createElement("a");
+          link.download = `${slug}.${format}`;
+          link.href = dataUrl;
+          link.click();
 
-          setIsScreenshotting(false)
+          setIsScreenshotting(false);
         })
         .catch((err) => {
-          console.log(err)
-        })
-    }, 20)
-    window?._paq?.push(['trackEvent', 'Interaction', 'Screenshot', slug])
-  }
+          console.log(err);
+        });
+    }, 20);
+    window?._paq?.push(["trackEvent", "Interaction", "Screenshot", slug]);
+  };
 
-  return { ref, takeScreenshot, isScreenshotting }
+  return { ref, takeScreenshot, isScreenshotting };
 }
