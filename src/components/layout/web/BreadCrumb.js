@@ -17,19 +17,17 @@ export default function BreadCrumb(props) {
         <Wrapper>
           {props.breadcrumb && props.breadcrumb.type === "equivalent" && (
             <>
-              <nav aria-label="fil d'ariane">
-                <MagicLink to="/categories">Catégories</MagicLink>
-                {" > "}{" "}
-                {props.breadcrumb.equivalent ? (
-                  <>
-                    <MagicLink to={`/${props.breadcrumb.category.slug}`}>{props.breadcrumb.category.name}</MagicLink>
-                    {" > "}
-                    {formatName(props.breadcrumb.equivalent.name, 1, true)}
-                  </>
-                ) : (
-                  props.breadcrumb.category.name
-                )}
-              </nav>
+              <MagicLink to="/categories">Catégories</MagicLink>
+              {" > "}{" "}
+              {props.breadcrumb.equivalent ? (
+                <>
+                  <MagicLink to={`/${props.breadcrumb.category.slug}`}>{props.breadcrumb.category.name}</MagicLink>
+                  {" > "}
+                  {formatName(props.breadcrumb.equivalent.name, 1, true)}
+                </>
+              ) : (
+                props.breadcrumb.category.name
+              )}
             </>
           )}
         </Wrapper>
