@@ -5,7 +5,6 @@ export default function useScreenshot(slug, format = "png") {
   const ref = useRef(null);
 
   const transformFn = format === "png" ? toPng : toJpeg;
-  console.log("transformFn", transformFn);
 
   const [isScreenshotting, setIsScreenshotting] = useState(false);
 
