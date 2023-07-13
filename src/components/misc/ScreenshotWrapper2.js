@@ -7,6 +7,9 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   height: 100%;
   position: relative;
+  > div + div {
+    padding: 0;
+  }
 `;
 
 export default function ScreenshotWrapper2(props) {
@@ -18,6 +21,7 @@ export default function ScreenshotWrapper2(props) {
 
       {props.isScreenshotting && (
         <>
+          <br />
           <br />
           <Signature />
         </>
