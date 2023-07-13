@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.11.0 (13/07/2023)
+
+* U7 - telechargement
+
 ## 1.10.3 (13/07/2023)
 
 * BSR - correction FE Agribalyse
