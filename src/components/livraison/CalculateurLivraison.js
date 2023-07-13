@@ -8,7 +8,9 @@ import { calculateResultFunction } from "./calculateur_livraison_functions.js";
 import { produits, retraits, relays } from "./data.js";
 import { convertGramsToKilograms } from "./utils";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
+import ScreenshotWrapper2 from "components/misc/ScreenshotWrapper2";
 import ModalContext from "components/providers/ModalProvider";
+import useScreenshot from "hooks/useScreenshot";
 import React, { useContext, useMemo, useState } from "react";
 import Switch from "react-switch";
 import styled from "styled-components";
@@ -69,6 +71,8 @@ export default function CalculateurLivraison() {
   const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
   const changeKm = (km) => setValues({ ...values, km: km });
 
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison");
+
   return (
     <>
       <Flex>
@@ -95,82 +99,91 @@ export default function CalculateurLivraison() {
             </svg>
             &nbsp;Intégrer le simulateur
           </ButtonChange>
+          <ButtonChange onClick={takeScreenshot}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+            </svg>
+            &nbsp;Téléchargez
+          </ButtonChange>
         </div>
       </Flex>
-      <DropList>
-        <SelectProduits changeProduit={changeProduit} value={values.produit} />
-        <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
-      </DropList>
-      <ToggleContainer show={showToggleContainer}>
-        <ToggleHabitContainer>
-          <FlexHabit>
-            <div className="item1">
-              <Switch
-                className="toggle"
-                checked={isHabit}
-                onChange={() => setIsHabit(!isHabit)}
-                offColor={"#fff"}
-                onColor={themes.default.colors.main2}
-                aria-label="Changer de thème"
-                uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
-                checkedHandleIcon={
-                  <Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16">
-                    <path
-                      fill="#39a69e"
-                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
-                    />
-                  </Svg>
-                }
-              />
-            </div>
-            <div className="item2">Le {point} est sur votre trajet habituel</div>
-            <div className="item3">
-              <Addendum>
-                <span className="plus">+</span>
-                <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
-              </Addendum>
-            </div>
-          </FlexHabit>
-        </ToggleHabitContainer>
-        <Optionals show={!isHabit}>
-          <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point}></OptionalRelay>
-          <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
-        </Optionals>
-      </ToggleContainer>
-      <ToggleContainerBottom>
-        <ToggleHabitContainer>
-          <FlexHabitBottom>
-            <div className="item1">
-              <Switch
-                className="toggle"
-                checked={isPlane}
-                onChange={() => setIsPlane(!isPlane)}
-                offColor={"#fff"}
-                onColor={themes.default.colors.main2}
-                aria-label="Changer de thème"
-                uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
-                checkedHandleIcon={
-                  <Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16">
-                    <path
-                      fill="#39a69e"
-                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
-                    />
-                  </Svg>
-                }
-              />
-            </div>
-            <div className="item2">Votre article vient de loin (transport par avion).</div>
-            <div className="item3">
-              <Addendum>
-                <span className="plus">+</span>
-                <span className="txt">{convertGramsToKilograms(diffs.diffPlane)} kg de CO2e</span>
-              </Addendum>
-            </div>
-          </FlexHabitBottom>
-        </ToggleHabitContainer>
-      </ToggleContainerBottom>
-      <ResultatsLivraison co2eq={cO2eq} />
-      <YearlyLivraison co2eq={cO2eq} />
+      <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
+        <DropList>
+          <SelectProduits changeProduit={changeProduit} value={values.produit} />
+          <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
+        </DropList>
+        <ToggleContainer show={showToggleContainer}>
+          <ToggleHabitContainer>
+            <FlexHabit>
+              <div className="item1">
+                <Switch
+                  className="toggle"
+                  checked={isHabit}
+                  onChange={() => setIsHabit(!isHabit)}
+                  offColor={"#fff"}
+                  onColor={themes.default.colors.main2}
+                  aria-label="Changer de thème"
+                  uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
+                  checkedHandleIcon={
+                    <Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16">
+                      <path
+                        fill="#39a69e"
+                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+                      />
+                    </Svg>
+                  }
+                />
+              </div>
+              <div className="item2">Le {point} est sur votre trajet habituel</div>
+              <div className="item3">
+                <Addendum>
+                  <span className="plus">+</span>
+                  <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
+                </Addendum>
+              </div>
+            </FlexHabit>
+          </ToggleHabitContainer>
+          <Optionals show={!isHabit}>
+            <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point}></OptionalRelay>
+            <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj}></OptionalTraj>
+          </Optionals>
+        </ToggleContainer>
+        <ToggleContainerBottom>
+          <ToggleHabitContainer>
+            <FlexHabitBottom>
+              <div className="item1">
+                <Switch
+                  className="toggle"
+                  checked={isPlane}
+                  onChange={() => setIsPlane(!isPlane)}
+                  offColor={"#fff"}
+                  onColor={themes.default.colors.main2}
+                  aria-label="Changer de thème"
+                  uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
+                  checkedHandleIcon={
+                    <Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16">
+                      <path
+                        fill="#39a69e"
+                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+                      />
+                    </Svg>
+                  }
+                />
+              </div>
+              <div className="item2">Votre article vient de loin (transport par avion).</div>
+              <div className="item3">
+                <Addendum>
+                  <span className="plus">+</span>
+                  <span className="txt">{convertGramsToKilograms(diffs.diffPlane)} kg de CO2e</span>
+                </Addendum>
+              </div>
+            </FlexHabitBottom>
+          </ToggleHabitContainer>
+        </ToggleContainerBottom>
+        <ResultatsLivraison co2eq={cO2eq} />
+        <YearlyLivraison co2eq={cO2eq} />
+      </ScreenshotWrapper2>
     </>
   );
 }
