@@ -73,7 +73,6 @@ const adaptEcv = (remotes) => {
     consommation.value = remote["Score_unique_EF_-_Consommation"] * 7;
     upsert(localFruit.ecv, supermarche);
 
-    console.log("localFruit", localFruit);
     return localFruit;
   });
   return newList;
