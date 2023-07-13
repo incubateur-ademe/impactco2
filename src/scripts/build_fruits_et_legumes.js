@@ -22,7 +22,6 @@ console.log("remote_url ------------------------------- ", remote_url);
 function sumValues(prefix = "", remote = {}, array = []) {
   let res = 0;
   array.forEach((acc) => {
-    console.log(`${prefix}${acc}`, remote[`${prefix}${acc}`]);
     res += remote[`${prefix}${acc}`];
   });
   return res;
