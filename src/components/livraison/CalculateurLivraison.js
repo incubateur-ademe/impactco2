@@ -75,40 +75,41 @@ export default function CalculateurLivraison() {
 
   return (
     <>
-      <Flex>
-        <H2Title>Estimez l'impact de vos livraisons</H2Title>
-        <div className="buttons">
-          <ButtonChange onClick={() => setSocial(true)}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
-              <path
-                fill="#564d53"
-                d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"
-              />
-            </svg>
-            &nbsp;Partagez
-          </ButtonChange>
-          <ButtonChange onClick={() => setIfl(true)}>
-            <svg width="16px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
-              />
-            </svg>
-            &nbsp;Intégrer le simulateur
-          </ButtonChange>
-          <ButtonChange onClick={takeScreenshot}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-            </svg>
-            &nbsp;Téléchargez
-          </ButtonChange>
-        </div>
-      </Flex>
       <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
+        <Flex>
+          <H2Title>Estimez l'impact de vos livraisons</H2Title>
+          <div className="buttons">
+            <ButtonChange onClick={() => setSocial(true)} className="noscreenshot">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
+                <path
+                  fill="#564d53"
+                  d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"
+                />
+              </svg>
+              &nbsp;Partagez
+            </ButtonChange>
+            <ButtonChange onClick={() => setIfl(true)} className="noscreenshot">
+              <svg width="16px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+                />
+              </svg>
+              &nbsp;Intégrer le simulateur
+            </ButtonChange>
+            <ButtonChange onClick={takeScreenshot} className="noscreenshot">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+              </svg>
+              &nbsp;Téléchargez
+            </ButtonChange>
+          </div>
+        </Flex>
+
         <DropList>
           <SelectProduits changeProduit={changeProduit} value={values.produit} />
           <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
