@@ -35,16 +35,19 @@ export default function SocialModal3() {
       <WrapperSocial>
         <Facebook2
           className="item1"
-          quote={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"}
+          quote={"Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2"}
           url={href}
         />
         <Twitter2
-          title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2"}
+          title={"Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2"}
           url={href}
         />
-        <Whatsapp2 title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"} url={href} />
+        <Whatsapp2
+          title={"Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2"}
+          url={href}
+        />
         <Linkedin2
-          title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"}
+          title={"Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2"}
           summary={"Impact CO2"}
           url={href}
         />
