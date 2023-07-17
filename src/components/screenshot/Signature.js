@@ -1,39 +1,43 @@
+import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
 import MagicLink from "components/base/MagicLink";
+import Marianne from "components/base/Marianne";
 import React from "react";
 import styled from "styled-components";
-
-const Wrapper = styled.div`
-  bottom: 1rem;
-  font-size: 0.875rem;
-  left: 50%;
-  pointer-events: none;
-  position: absolute;
-  transform: translateX(-50%);
-
-  ${(props) => props.theme.mq.small} {
-    left: auto;
-    right: 1rem;
-    transform: none;
-  }
-`;
-const StyledLogo = styled(Logo)`
-  bottom: 1rem;
-  font-size: 0.571428571rem;
-  left: 1rem;
-  pointer-events: none;
-  position: absolute;
-`;
 
 export default function Signature() {
   return (
     <>
-      <StyledLogo />
-      <Wrapper>
-        <MagicLink to="https://impactco2.fr" noIcon>
-          impactco2.fr
-        </MagicLink>
-      </Wrapper>
+      <OutsideGrid>
+        <StyledLogo />
+        <MiddleWrapper>
+          <MagicLink to="https://impactco2.fr" noIcon>
+            impactco2.fr
+          </MagicLink>
+        </MiddleWrapper>
+        <LastWrapper>
+          <Ademe />
+          <Marianne />
+        </LastWrapper>
+      </OutsideGrid>
     </>
   );
 }
+
+const StyledLogo = styled(Logo)``;
+
+const OutsideGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+`;
+
+const LastWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const MiddleWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
