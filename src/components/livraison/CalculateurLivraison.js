@@ -297,17 +297,27 @@ const ButtonChange = styled.button`
 const Flex = styled.div`
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
   > .buttons {
+    display: flex;
     margin-left: auto;
     ${(props) => props.theme.mq.large} {
       margin-left: auto;
       margin-right: auto;
     }
+    ${(props) => props.theme.mq.large} {
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      margin-top: 0.5rem;
+    }
     button + button {
       margin-left: 0.5rem;
-      ${(props) => props.theme.mq.medium} {
-        margin-left: 0.125rem;
+      ${(props) => props.theme.mq.large} {
+        margin-left: auto;
       }
     }
   }
