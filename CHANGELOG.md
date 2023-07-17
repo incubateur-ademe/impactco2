@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.11.4 (17/07/2023)
+
+* BSR: injection de l'URL de base et de son préfixe (https)
+
 ## 1.11.3 (17/07/2023)
 
 * U7 - telechargement, corrections
