@@ -17,6 +17,8 @@ export default function IFrameLivraisonModal3() {
 
   const dismiss = () => {
     console.log("process.env.NEXT_PUBLIC_SITE_URL", process.env.NEXT_PUBLIC_SITE_URL);
+    console.log("process.env.NEXT_PUBLIC_URL", process.env.NEXT_PUBLIC_URL);
+    console.log("process.env.URL", process.env.URL);
     setOpen(false);
   };
 
