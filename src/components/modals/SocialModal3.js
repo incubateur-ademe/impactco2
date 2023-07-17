@@ -47,7 +47,10 @@ export default function SocialModal3() {
           url={href}
         />
         <Linkedin2
-          title={"Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2"}
+          title={
+            "Découvrez, visualisez et comprenez l’impact carbone de la livraison d’un colis grâce au nouveau simulateur d'impactCO2. "
+          }
+          source="https://impactco2.fr"
           summary={"Impact CO2"}
           url={href}
         />
