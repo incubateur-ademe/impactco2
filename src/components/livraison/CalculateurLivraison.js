@@ -86,7 +86,7 @@ export default function CalculateurLivraison() {
                   d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"
                 />
               </svg>
-              &nbsp;Partagez
+              &nbsp;Partager
             </ButtonChange>
             <ButtonChange onClick={() => setIfl(true)} className="noscreenshot">
               <svg width="16px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -297,17 +297,27 @@ const ButtonChange = styled.button`
 const Flex = styled.div`
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
   > .buttons {
+    display: flex;
     margin-left: auto;
     ${(props) => props.theme.mq.large} {
       margin-left: auto;
       margin-right: auto;
     }
+    ${(props) => props.theme.mq.large} {
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      margin-top: 0.5rem;
+    }
     button + button {
       margin-left: 0.5rem;
-      ${(props) => props.theme.mq.medium} {
-        margin-left: 0.125rem;
+      ${(props) => props.theme.mq.large} {
+        margin-left: auto;
       }
     }
   }
