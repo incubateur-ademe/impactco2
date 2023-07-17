@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.11.2 (17/07/2023)
+
+* U5 - partage, corrections
+
 ## 1.11.1 (13/07/2023)
 
 * BSR - zones (accessibilité)
