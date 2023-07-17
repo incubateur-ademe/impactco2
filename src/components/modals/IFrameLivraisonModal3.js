@@ -16,9 +16,6 @@ export default function IFrameLivraisonModal3() {
   const { ifl: open, setIfl: setOpen } = useContext(ModalContext);
 
   const dismiss = () => {
-    console.log("process42.env.NEXT_PUBLIC_SITE_URL", process.env.NEXT_PUBLIC_SITE_URL);
-    console.log("process42.env.NEXT_PUBLIC_URL", process.env.NEXT_PUBLIC_URL);
-    console.log("process42.env.URL", process.env.URL);
     setOpen(false);
   };
 
