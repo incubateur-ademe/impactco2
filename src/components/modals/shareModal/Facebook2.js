@@ -8,7 +8,7 @@ export default function Facebook2(props) {
   return (
     <FacebookShareButton
       url={props.url}
-      title={props.title}
+      quote={props.quote}
       onClick={() => window._paq?.push(["trackEvent", "Share", "Facebook", props.url])}
     >
       <Svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
