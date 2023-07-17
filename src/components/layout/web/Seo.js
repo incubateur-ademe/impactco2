@@ -10,8 +10,8 @@ export default function Seo(props) {
     description:
       props.description ||
       `Découvrez l’impact sur le climat des objets et gestes de votre quotidien comme votre mobilier, vos habits ou encore vos repas`,
-    image: `https://develop--impactco2.netlify.app/${props.image || "metaimage.png"}`,
-    url: `https://develop--impactco2.netlify.app${router.asPath}`,
+    image: `${process.env.NEXT_PUBLIC_SITE_URL}/${props.image || "metaimage.png"}`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}${router.asPath}`,
   };
 
   return (
