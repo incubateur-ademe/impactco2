@@ -22,7 +22,6 @@ export default function ScreenshotWrapper2(props) {
       {props.isScreenshotting && (
         <>
           <br />
-          <br />
           <Signature />
         </>
       )}
