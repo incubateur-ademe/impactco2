@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.11.3 (17/07/2023)
+
+* U7 - telechargement, corrections
+
 ## 1.11.2 (17/07/2023)
 
 * U5 - partage, corrections
