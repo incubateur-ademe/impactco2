@@ -1162,7 +1162,7 @@
     }
   },
   {
-    "name": "Haricot vert",
+    "name": "Haricot vert importé par avion",
     "Code_CIQUAL": 20061,
     "prefix": "kg de ",
     "slug": "haricotvert",
@@ -1204,8 +1204,8 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20061_2#Haricot_vert,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un kg d'haricot vert",
-      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert : de l'agriculture à la distribution et la consommation"
+      "title": "Empreinte carbone d'un kg d'haricot vert importé par avion, cru",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert importé par avion : de l'agriculture à la distribution et la consommation"
     }
   },
   {
