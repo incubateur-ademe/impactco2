@@ -27,12 +27,16 @@ export default function ConclusionLivraison() {
 
 const Wrapper = styled.div`
   background-color: #ebf2ff;
+  border-bottom: 1px solid #6f87ae;
   margin-bottom: 2rem;
   margin-top: 2.5rem;
 `;
 
 const SimpleText = styled.div`
   color: ${(props) => props.theme.colors.deepDark};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 `;
 
 const UpperBubble = styled.div`
@@ -48,7 +52,8 @@ const Icon = styled.div`
     display: block;
     font-size: 2rem;
     margin-bottom: 0;
-    padding: 0.3rem;
+    padding: 0.25rem;
+    padding-top: 0.1rem;
     text-align: left;
   }
 `;
