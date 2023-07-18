@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.11.5 (18/07/2023)
+
+* BSR: agribalyse 3.1
+
 ## 1.11.4 (17/07/2023)
 
 * BSR: injection de l'URL de base et de son préfixe (https)
