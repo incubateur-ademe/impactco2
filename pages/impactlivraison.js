@@ -1,21 +1,18 @@
-import Section2 from "components/base/Section2";
 import CalculateurLivraison from "components/livraison/CalculateurLivraison";
+import ConclusionLivraison from "components/livraison/ConclusionLivraison";
 import IntroLivraison from "components/livraison/IntroLivraison";
 import { RulesProviderLivraison } from "components/livraison/RulesProviderLivraison";
 import categories from "data/categories.json";
 
 export default function Impactlivraison() {
   return (
-    <Section2>
-      <Section2.InnerMargin>
-        <RulesProviderLivraison>
-          <main>
-            <IntroLivraison />
-            <CalculateurLivraison />
-          </main>
-        </RulesProviderLivraison>
-      </Section2.InnerMargin>
-    </Section2>
+    <RulesProviderLivraison>
+      <main>
+        <IntroLivraison />
+        <CalculateurLivraison />
+        <ConclusionLivraison />
+      </main>
+    </RulesProviderLivraison>
   );
 }
 export async function getStaticProps() {
