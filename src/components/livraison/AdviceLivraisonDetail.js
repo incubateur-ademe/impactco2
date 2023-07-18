@@ -12,7 +12,7 @@ export default function AdviceLivraisonDetail(props) {
   return (
     <>
       <Wrapper collapsed={isCollapsed}>
-        <Header>
+        <Header collapsed={isCollapsed}>
           <Collapser onClick={collapserClicked} collapsed={isCollapsed}>
             {isCollapsed ? <>+</> : <>_</>}
           </Collapser>
@@ -83,7 +83,7 @@ const Wrapper = styled.section`
   background-color: ${(props) => props.theme.colors.darkBackground};
   border-radius: 8px;
   padding: 1.5rem 1rem;
-  padding: ${(props) => (!props.collapsed ? "1.5rem 1rem" : "1rem 1rem 0 1rem")};
+  padding: ${(props) => (!props.collapsed ? "1.5rem 1rem 1.5rem 1rem" : "1.5rem 1rem 0 1rem")};
 `;
 
 const H3Title = styled.h3`
@@ -96,7 +96,7 @@ const H3Title = styled.h3`
 
 const Header = styled.header`
   display: flex;
-  margin-bottom: 1rem;
+  padding-bottom: ${(props) => (!props.collapsed ? "1rem" : "0.5rem")};
 `;
 
 const Line = styled.div`
@@ -107,7 +107,7 @@ const Line = styled.div`
 
 const Icon = styled.div`
   margin-right: 0.5rem;
-  width: 40px;
+  min-width: 40px;
   > span {
     margin-bottom: 0;
   }
