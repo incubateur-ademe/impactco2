@@ -1162,7 +1162,8 @@
     }
   },
   {
-    "name": "Haricot vert importé par avion",
+    "name": "Haricot vert",
+    "subtitle": "Importé par avion",
     "Code_CIQUAL": 20061,
     "prefix": "kg de ",
     "slug": "haricotvert",
