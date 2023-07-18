@@ -13,7 +13,9 @@ export default function AdviceLivraisonDetail(props) {
     <>
       <Wrapper>
         <Header>
-          <Collapser onClick={collapserClicked}>{isCollapsed ? <>+</> : <>-</>}</Collapser>
+          <Collapser onClick={collapserClicked} collapsed={isCollapsed}>
+            {isCollapsed ? <>+</> : <>_</>}
+          </Collapser>
           <H3Title>{props.title}</H3Title>
         </Header>
         <TextContent collapsed={isCollapsed}>
@@ -88,11 +90,12 @@ const H3Title = styled.h3`
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
+  margin-left: 0.5rem;
 `;
 
 const Header = styled.header`
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 `;
 
 const Line = styled.div`
@@ -129,9 +132,10 @@ const Collapser = styled.button`
   background: transparent;
   border: 0;
   cursor: pointer;
-  font-size: 32px;
+  font-size: "48px";
   height: 1.5rem;
   line-height: 1rem;
+  margin-top: ${(props) => (!props.collapsed ? "-8px" : "-2px")};
   padding: 0;
 `;
 
