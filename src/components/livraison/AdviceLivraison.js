@@ -1,3 +1,4 @@
+import AdviceLivraisonDetail from "./AdviceLivraisonDetail";
 import React from "react";
 import styled from "styled-components";
 
@@ -6,6 +7,15 @@ export default function AdviceLivraison() {
     <>
       <Separator />
       <H2Title>Conseils pour réduire l'impact carbone de vos livraisons</H2Title>
+      <AdviceLivraisonDetail
+        title="Veiller au dernier km"
+        line1Emoji="moto"
+        line1Title="Aller chercher son colis à pied ou à vélo."
+        line1Descr="... ou utiliser son trajet domicile-travail pour éviter un trajet spécifique en voiture."
+        line2Emoji="maison"
+        line2Title="Se faire livrer à domicile uniquement lorsque l'on est présent•e"
+        line2Descr="a minima indiquer ses préférences de livraison en cas d'absence (laisser le colis à un endroit ou chez un voisin)"
+      />
     </>
   );
 }
