@@ -16,6 +16,7 @@ export default function AdviceLivraison() {
         line2Title="Se faire livrer à domicile uniquement lorsque l'on est présent•e"
         line2Descr="a minima indiquer ses préférences de livraison en cas d'absence (laisser le colis à un endroit ou chez un voisin)"
       />
+      <AdviceLivraisonDetail title="Éviter les allers-retours de colis" />
     </>
   );
 }

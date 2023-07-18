@@ -5,7 +5,10 @@ export default function AdviceLivraisonDetail(props) {
   return (
     <>
       <Wrapper>
-        <H3Title>{props.title}</H3Title>
+        <Heading>
+          <H3Title>{props.title}</H3Title>
+        </Heading>
+        {props.line1Title ? <>oui</> : <>non</>}
       </Wrapper>
     </>
   );
@@ -22,3 +25,5 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.darkBackground};
   border-radius: 8px;
 `;
+
+const Heading = styled.div``;
