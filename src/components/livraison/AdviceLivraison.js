@@ -49,9 +49,9 @@ const Separator = styled.hr`
   border: none;
   color: #457be7;
   height: 4px;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   margin-left: 0;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   width: 56px;
 `;
 
