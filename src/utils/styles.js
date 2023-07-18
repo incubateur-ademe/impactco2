@@ -13,7 +13,7 @@ export const themes = {
       mainDark: "#1D625E",
       second: "#EFF4F9",
       secondDark: "#B1D4F6",
-      thirdDark: "#457be7",
+      firstBlue: "#457be7",
       background: "#ffffff",
       darkBackground: "#F9F7F8",
       text: "#383838",

@@ -1,5 +1,6 @@
 import Section2 from "components/base/Section2";
 import { Emojis } from "components/misc/Visualization";
+import Link from "next/link";
 import styled from "styled-components";
 
 export default function ConclusionLivraison() {
@@ -15,7 +16,13 @@ export default function ConclusionLivraison() {
             </UpperBubble>
             <TextContainer>
               <SimpleText>
-                Pour plus de conseils, télécharger le guide de l’ADEME « E-consommateur & responsable »
+                Pour plus de conseils,{" "}
+                <Link
+                  target="_blank"
+                  href="https://librairie.ademe.fr/cadic/4466/guide-pratique-econsommateur-responsable.pdf"
+                >
+                  télécharger le guide de l’ADEME « E-consommateur & responsable »
+                </Link>
               </SimpleText>
             </TextContainer>
           </Section2.InnerMargin>
@@ -37,6 +44,9 @@ const SimpleText = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  > a {
+    color: ${(props) => props.theme.colors.firstBlue};
+  }
 `;
 
 const UpperBubble = styled.div`
