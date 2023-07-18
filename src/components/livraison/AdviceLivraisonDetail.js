@@ -50,17 +50,17 @@ export default function AdviceLivraisonDetail(props) {
   );
 }
 
+const Wrapper = styled.div`
+  background-color: ${(props) => props.theme.colors.darkBackground};
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+`;
+
 const H3Title = styled.h3`
   color: ${(props) => props.theme.colors.main3};
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
-`;
-
-const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.darkBackground};
-  border-radius: 8px;
-  padding: 2rem;
 `;
 
 const Heading = styled.div``;

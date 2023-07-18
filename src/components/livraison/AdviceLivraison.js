@@ -18,6 +18,16 @@ export default function AdviceLivraison() {
         line2Subtext="a minima indiquer ses préférences de livraison en cas d'absence (laisser le colis à un endroit ou chez un voisin)"
       />
       <br />
+      <AdviceLivraisonDetail
+        title="Éviter les allers-retours de colis"
+        line1Emoji="📧"
+        line1Text="Retourner un produit doit rester exceptionnel."
+        line1Subtext="Cette pratique a pour effet de démultiplier les transports, même si, comme 32 % des e-acheteurs, on détient un abonnement incluant des offres de livraison gratuites et illimitées."
+        line2Emoji="📦"
+        line2Text="Une seule commande vaut mieux que plusieurs petites."
+        line2Subtext="C’est moins de transport et moins d’emballages. D’ailleurs, pourquoi ne pas faire des achats groupés entre amis ou proches ?"
+      />
+      <br />
       <AdviceLivraisonDetail title="Éviter les allers-retours de colis" />
     </>
   );
