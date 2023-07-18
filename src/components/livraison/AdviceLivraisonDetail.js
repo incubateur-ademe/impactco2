@@ -12,10 +12,10 @@ export default function AdviceLivraisonDetail(props) {
   return (
     <>
       <Wrapper>
-        <Heading>
-          <Collapser onClick={collapserClicked}></Collapser>
+        <Header>
+          <Collapser onClick={collapserClicked}>{isCollapsed ? <>+</> : <>-</>}</Collapser>
           <H3Title>{props.title}</H3Title>
-        </Heading>
+        </Header>
         <TextContent collapsed={isCollapsed}>
           {props.line1Text ? (
             <>
@@ -77,7 +77,7 @@ export default function AdviceLivraisonDetail(props) {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   background-color: ${(props) => props.theme.colors.darkBackground};
   border-radius: 8px;
   padding: 1.5rem 1rem;
@@ -90,7 +90,7 @@ const H3Title = styled.h3`
   line-height: 24px;
 `;
 
-const Heading = styled.div`
+const Header = styled.header`
   display: flex;
   margin-bottom: 2rem;
 `;
@@ -126,12 +126,13 @@ const Item = styled.div`
 `;
 
 const Collapser = styled.button`
+  background: transparent;
+  border: 0;
   cursor: pointer;
-  height: 0.1rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  padding: 0rem 0.5rem;
+  font-size: 32px;
+  height: 1.5rem;
+  line-height: 1rem;
+  padding: 0;
 `;
 
 const TextContent = styled.div`
