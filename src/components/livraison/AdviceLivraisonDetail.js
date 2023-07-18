@@ -11,7 +11,7 @@ export default function AdviceLivraisonDetail(props) {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper collapsed={isCollapsed}>
         <Header>
           <Collapser onClick={collapserClicked} collapsed={isCollapsed}>
             {isCollapsed ? <>+</> : <>_</>}
@@ -83,6 +83,7 @@ const Wrapper = styled.section`
   background-color: ${(props) => props.theme.colors.darkBackground};
   border-radius: 8px;
   padding: 1.5rem 1rem;
+  padding: ${(props) => (!props.collapsed ? "1.5rem 1rem" : "1rem 1rem 0 1rem")};
 `;
 
 const H3Title = styled.h3`
