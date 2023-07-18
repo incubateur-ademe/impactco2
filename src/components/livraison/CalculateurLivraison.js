@@ -1,3 +1,4 @@
+import AdviceLivraison from "./AdviceLivraison";
 import OptionalRelay from "./OptionalRelay";
 import OptionalTraj from "./OptionalTraj";
 import ResultatsLivraison from "./ResultatsLivraison";
@@ -185,21 +186,10 @@ export default function CalculateurLivraison() {
         <ResultatsLivraison co2eq={cO2eq} />
         <YearlyLivraison co2eq={cO2eq} />
       </ScreenshotWrapper2>
-      <Separator />
+      <AdviceLivraison />
     </>
   );
 }
-
-const Separator = styled.hr`
-  background-color: #457be7;
-  border: none;
-  color: #457be7;
-  height: 4px;
-  margin-bottom: 2rem;
-  margin-left: 0;
-  margin-top: 1rem;
-  width: 56px;
-`;
 
 const Optionals = styled.div`
   display: ${(props) => (props.show ? "block" : "none")};
