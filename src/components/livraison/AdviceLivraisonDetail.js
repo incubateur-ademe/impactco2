@@ -45,6 +45,24 @@ export default function AdviceLivraisonDetail(props) {
         ) : (
           <></>
         )}
+        {props.line3Text ? (
+          <>
+            <Item>
+              <Line>
+                <Icon>
+                  <Emojis>{props.line3Emoji}</Emojis>
+                </Icon>
+                <Text>{props.line3Text}</Text>
+              </Line>
+              <Line>
+                <Icon></Icon>
+                <Subtext>{props.line3Subtext}</Subtext>
+              </Line>
+            </Item>
+          </>
+        ) : (
+          <></>
+        )}
       </Wrapper>
     </>
   );
@@ -63,7 +81,9 @@ const H3Title = styled.h3`
   line-height: 24px;
 `;
 
-const Heading = styled.div``;
+const Heading = styled.div`
+  margin-bottom: 2rem;
+`;
 
 const Line = styled.div`
   align-items: center;

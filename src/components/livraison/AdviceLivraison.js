@@ -28,7 +28,18 @@ export default function AdviceLivraison() {
         line2Subtext="C’est moins de transport et moins d’emballages. D’ailleurs, pourquoi ne pas faire des achats groupés entre amis ou proches ?"
       />
       <br />
-      <AdviceLivraisonDetail title="Éviter les allers-retours de colis" />
+      <AdviceLivraisonDetail
+        title="Limiter le suremballage"
+        line1Emoji="💬"
+        line1Text="Indiquer au vendeur que le produit était inutilement suremballé ou livré dans un trop un emballage trop grand."
+        line1Subtext="Laisser un commentaire sur le site du vendeur pourra l’aider à progresser dans sa démarche."
+        line2Emoji="🛍️"
+        line2Text="Garder les emballages pour les réutiliser."
+        line2Subtext="Vous en aurez certainement besoin si vous vendez également des objets sur des plateformes en ligne ou pour un éventuel déménagement."
+        line3Emoji="♻️"
+        line3Text="Une seule commande vaut mieux que plusieurs petites."
+        line3Subtext="C’est moins de transport et moins d’emballages. D’ailleurs, pourquoi ne pas faire des achats groupés entre amis ou proches ?"
+      />
     </>
   );
 }
