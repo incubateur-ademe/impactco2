@@ -55,5 +55,16 @@ const Icon = styled.div`
   margin-right: 0.5rem;
   width: 40px;
 `;
-const Text = styled.div``;
-const Subtext = styled.div``;
+
+const Text = styled.div`
+  color: ${(props) => props.theme.colors.deepDark};
+  font-size: 16px;
+  line-height: 24px;
+`;
+
+const Subtext = styled.div`
+  color: ${(props) => props.theme.colors.textGray2};
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: -5px;
+`;
