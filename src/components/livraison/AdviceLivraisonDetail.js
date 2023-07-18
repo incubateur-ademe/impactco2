@@ -1,68 +1,77 @@
 import { Emojis } from "components/misc/Visualization";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function AdviceLivraisonDetail(props) {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const collapserClicked = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
   return (
     <>
       <Wrapper>
         <Heading>
+          <Collapser onClick={collapserClicked}></Collapser>
           <H3Title>{props.title}</H3Title>
         </Heading>
-        {props.line1Text ? (
-          <>
-            <Item>
-              <Line>
-                <Icon>
-                  <Emojis>{props.line1Emoji}</Emojis>
-                </Icon>
-                <Text>{props.line1Text}</Text>
-              </Line>
-              <Line>
-                <Icon></Icon>
-                <Subtext>{props.line1Subtext}</Subtext>
-              </Line>
-            </Item>
-          </>
-        ) : (
-          <></>
-        )}
-        {props.line2Text ? (
-          <>
-            <Item>
-              <Line>
-                <Icon>
-                  <Emojis>{props.line2Emoji}</Emojis>
-                </Icon>
-                <Text>{props.line2Text}</Text>
-              </Line>
-              <Line>
-                <Icon></Icon>
-                <Subtext>{props.line2Subtext}</Subtext>
-              </Line>
-            </Item>
-          </>
-        ) : (
-          <></>
-        )}
-        {props.line3Text ? (
-          <>
-            <Item>
-              <Line>
-                <Icon>
-                  <Emojis>{props.line3Emoji}</Emojis>
-                </Icon>
-                <Text>{props.line3Text}</Text>
-              </Line>
-              <Line>
-                <Icon></Icon>
-                <Subtext>{props.line3Subtext}</Subtext>
-              </Line>
-            </Item>
-          </>
-        ) : (
-          <></>
-        )}
+        <TextContent collapsed={isCollapsed}>
+          {props.line1Text ? (
+            <>
+              <Item>
+                <Line>
+                  <Icon>
+                    <Emojis>{props.line1Emoji}</Emojis>
+                  </Icon>
+                  <Text>{props.line1Text}</Text>
+                </Line>
+                <Line>
+                  <Icon></Icon>
+                  <Subtext>{props.line1Subtext}</Subtext>
+                </Line>
+              </Item>
+            </>
+          ) : (
+            <></>
+          )}
+          {props.line2Text ? (
+            <>
+              <Item>
+                <Line>
+                  <Icon>
+                    <Emojis>{props.line2Emoji}</Emojis>
+                  </Icon>
+                  <Text>{props.line2Text}</Text>
+                </Line>
+                <Line>
+                  <Icon></Icon>
+                  <Subtext>{props.line2Subtext}</Subtext>
+                </Line>
+              </Item>
+            </>
+          ) : (
+            <></>
+          )}
+          {props.line3Text ? (
+            <>
+              <Item>
+                <Line>
+                  <Icon>
+                    <Emojis>{props.line3Emoji}</Emojis>
+                  </Icon>
+                  <Text>{props.line3Text}</Text>
+                </Line>
+                <Line>
+                  <Icon></Icon>
+                  <Subtext>{props.line3Subtext}</Subtext>
+                </Line>
+              </Item>
+            </>
+          ) : (
+            <></>
+          )}
+        </TextContent>
       </Wrapper>
     </>
   );
@@ -82,6 +91,7 @@ const H3Title = styled.h3`
 `;
 
 const Heading = styled.div`
+  display: flex;
   margin-bottom: 2rem;
 `;
 
@@ -113,4 +123,17 @@ const Subtext = styled.div`
 
 const Item = styled.div`
   margin-bottom: 1rem;
+`;
+
+const Collapser = styled.button`
+  cursor: pointer;
+  height: 0.1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0rem 0.5rem;
+`;
+
+const TextContent = styled.div`
+  display: ${(props) => (!props.collapsed ? "block" : "none")};
 `;
