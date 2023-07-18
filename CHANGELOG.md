@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.13.0 (19/07/2023)
+
+* U11 - partage ADEME
+
 ## 1.12.0 (18/07/2023)
 
 * U10 - conseil ademe
