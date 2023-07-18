@@ -1106,7 +1106,7 @@
       10,
       11
     ],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13025_1#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
+    "source": "https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une mangue",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de mangues : de l'agriculture à la distribution et la consommation"
@@ -1163,6 +1163,7 @@
   },
   {
     "name": "Haricot vert",
+    "subtitle": "Importé par avion",
     "Code_CIQUAL": 20061,
     "prefix": "kg de ",
     "slug": "haricotvert",
@@ -1204,8 +1205,8 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20061_2#Haricot_vert,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un kg d'haricot vert",
-      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert : de l'agriculture à la distribution et la consommation"
+      "title": "Empreinte carbone d'un kg d'haricot vert importé par avion, cru",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert importé par avion : de l'agriculture à la distribution et la consommation"
     }
   },
   {
