@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.12.0 (18/07/2023)
+
+* U10 - conseil ademe
+
 ## 1.11.5 (18/07/2023)
 
 * BSR: agribalyse 3.1
