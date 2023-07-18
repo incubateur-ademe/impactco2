@@ -48,6 +48,7 @@ export const themes = {
       main3: "#26827C",
       mainLight: "#17635E",
       mainDark: "#1D625E",
+      firstBlue: "#457be7",
       second: "#383838",
       background: "#000",
       darkBackground: "#F9F7F8",
