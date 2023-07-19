@@ -18,6 +18,32 @@ Application web sous Next.js permettant de comparer la consommation en CO2e de d
 
 Le site est hébergé sur [Netlify](https://www.netlify.com/) via des serveurs en Europe. Aucune donnée ne transite en dehors de l’UE.
 
+## Variable d'environnement
+
+Pour l'instant il n'y a que des variables d'environnement "publiques",
+
+Il vous faut un fichier `.env.local` à la racine
+
+```bash
+NEXT_PUBLIC_SITE_URL=localhost:3000
+```
+
+`NEXT_PUBLIC_SITE_URL` est le nom de domaine du site, sans le protocole (mais avec le port éventuellement).
+
+A vous de renseigner la/les valeurs sur l'ensemble des sites déployés.
+
+
+## Connexion à Agribalyse
+
+Parfois les données sont extraites par API.
+
+Parfois les données sont codées en dur.
+
+Il y a un cas de figure entre les deux : un fichier batch se connecte à une API et modifie un fichier .json (qui sera considéré comme "en dur" par l'appli une fois lancée). C'est le cas d'Agribalyse.
+
+Pour mettre à jour ce fichier, lancer `yarn buildfruit`
+
+
 ## Développement ⚙️
 
 L’organisation du développement suit le workflow [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) :
