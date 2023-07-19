@@ -1,4 +1,5 @@
 import Modal2 from "components/base/Modal2";
+import ExplainArrowContainer from "components/modals/ExplainArrowContainer.js";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -18,12 +19,18 @@ export default function Co2eModal2() {
   const { Co2e: open, setCo2e: setOpen } = useContext(ModalContext);
   return (
     <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width="50rem">
-      <h2>Les hypothèses retenues pour la livraison de colis </h2>
-      <p>L'ensemble des calculs sont issus de ...</p>
-      <h3>Pour les colis : </h3>
-      <p>On considère que...</p>
-      <h3>Pour les modes de transports :</h3>
-      <p>On considère que ...</p>
+      <Text>
+        Le dérèglement climatique actuel est une conséquence de nos émissions importantes de différents gaz à effet de
+        serre. Nous pouvons mesurer ces émissions avec un indice simple : les kilogrammes d&apos;équivalent CO
+        <sub>2</sub> (kgCO<sub>2</sub>e).
+      </Text>
+      <Text>
+        <strong>
+          Chaque gaz à effet est de serre est ramené à un équivalent en CO
+          <sub>2</sub> selon son pouvoir de réchauffement.
+        </strong>
+      </Text>
+      <ExplainArrowContainer></ExplainArrowContainer>
     </Modal2>
   );
 }
@@ -34,4 +41,9 @@ const GreenText = styled.span`
 
 const Title = styled.h2`
   margin: 1rem 0;
+`;
+
+const Text = styled.p`
+  margin-bottom: 2rem;
+  margin-top: 0;
 `;

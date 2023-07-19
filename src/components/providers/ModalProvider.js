@@ -1,4 +1,5 @@
 import Co2eModal2 from "components/modals/Co2eModal2";
+import DetailLivraisonModal2 from "components/modals/DetailLivraisonModal2";
 import DetailsUsagesNumModal from "components/modals/DetailsUsagesNumModal";
 import DevicesModal from "components/modals/DevicesModal";
 import EcvModal from "components/modals/EcvModal";
@@ -23,6 +24,7 @@ export function ModalProvider(props) {
   const [ifl, setIfl] = useState(false); //Ifl == IFrameLivraison
   const [devices, setDevices] = useState(false);
   const [hypothesis, setHypothesis] = useState(false);
+  const [hypothesisLivraison, setHypothesisLivraison] = useState(false);
 
   return (
     <ModalContext.Provider
@@ -77,6 +79,11 @@ export function ModalProvider(props) {
           window?._paq?.push(["trackEvent", "Interaction", "Modal", "Hypothèses usages numériques"]);
           setHypothesis(value);
         },
+        hypothesisLivraison,
+        setHypothesisLivraison: (value) => {
+          window?._paq?.push(["trackEvent", "Interaction", "Modal", "Hypothèses livraison"]);
+          setHypothesisLivraison(value);
+        },
       }}
     >
       {props.children}
@@ -90,6 +97,7 @@ export function ModalProvider(props) {
       <EcvModal />
       <DevicesModal />
       <DetailsUsagesNumModal />
+      <DetailLivraisonModal2 />
     </ModalContext.Provider>
   );
 }
