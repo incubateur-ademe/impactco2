@@ -39,6 +39,32 @@ L’organisation du développement suit le workflow [Gitflow](https://www.atlass
 - `style`
 - `test`
 
+## Variable d'environnement
+
+Pour l'instant il n'y a que des variables d'environnement "publiques",
+
+Il vous faut un fichier `.env.local` à la racine
+
+```bash
+NEXT_PUBLIC_SITE_URL=localhost:3000
+```
+
+`NEXT_PUBLIC_SITE_URL` est le nom de domaine du site, sans le protocole (mais avec le port éventuellement).
+
+A vous de renseigner la/les valeurs sur l'ensemble des sites déployés.
+
+
+## Connexion à Agribalyse
+
+Parfois les données sont extraites par API.
+
+Parfois les données sont codées en dur.
+
+Il y a un cas de figure entre les deux : un fichier batch se connecte à une API et modifie un fichier .json (qui sera considéré comme "en dur" par l'appli une fois lancée). C'est le cas d'Agribalyse.
+
+Pour mettre à jour ce fichier, lancer `yarn buildfruit`
+
+
 ## Architecture 🏛️
 
 Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/), [React Query](https://tanstack.com/query/v4) et [Styled Components](https://styled-components.com/). Le state est simplement géré par [Context](https://react.dev/learn/passing-data-deeply-with-context).
