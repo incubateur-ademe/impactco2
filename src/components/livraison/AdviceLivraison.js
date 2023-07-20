@@ -56,7 +56,7 @@ const Separator = styled.hr`
 `;
 
 const H2Title = styled.h2`
-  font-size: 22px;
+  font-size: 1.375rem; // 22px/16px
   font-weight: 700;
   margin-bottom: 0;
   margin-top: 0;
