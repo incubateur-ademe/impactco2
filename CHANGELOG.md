@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.13.0 (20/07/2023)
+
+* U11 - livraison, telechargement partie conseil
+
 ## 1.12.1 (20/07/2023)
 
 * U10 - conseil ademe, corrections
