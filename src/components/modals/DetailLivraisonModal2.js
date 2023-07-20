@@ -12,7 +12,7 @@ export default function DetailLivraisonModal2() {
   };
   const { hypothesisLivraison: open, setHypothesisLivraison: setOpen } = useContext(ModalContext);
   return (
-    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle}>
+    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width={"80em"}>
       <p>
         L'ensemble des calculs sont issus de{" "}
         <MagicLink to="https://librairie.ademe.fr/mobilite-et-transport/6261-e-commerce-modelisation-des-impacts-et-recommandations-filieres-et-grand-public.html">
