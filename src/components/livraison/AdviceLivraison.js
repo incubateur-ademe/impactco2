@@ -1,12 +1,29 @@
 import AdviceLivraisonDetail from "./AdviceLivraisonDetail";
-import React from "react";
+import ModalContext from "components/providers/ModalProvider";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 export default function AdviceLivraison() {
+  const { setReduire } = useContext(ModalContext);
+
   return (
     <>
       <Separator />
-      <H2Title>Conseil pour réduire l’impact carbone de vos livraisons</H2Title>
+      <Flex>
+        <H2Title id="ressource">Conseil pour réduire l’impact carbone de vos livraisons</H2Title>
+        <div className="buttons">
+          <ButtonChange onClick={() => setReduire(true)} className="noscreenshot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
+              <path
+                fill="#564d53"
+                d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"
+              />
+            </svg>
+            &nbsp;Partager
+          </ButtonChange>
+        </div>
+      </Flex>
+
       <br />
       <AdviceLivraisonDetail
         title="Veiller au dernier km"
@@ -60,4 +77,59 @@ const H2Title = styled.h2`
   font-weight: 700;
   margin-bottom: 0;
   margin-top: 0;
+`;
+
+const Flex = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  > .buttons {
+    display: flex;
+    margin-left: auto;
+    ${(props) => props.theme.mq.large} {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ${(props) => props.theme.mq.large} {
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      margin-top: 0.5rem;
+    }
+    button + button {
+      margin-left: 0.5rem;
+      ${(props) => props.theme.mq.large} {
+        margin-left: auto;
+      }
+    }
+  }
+  ${(props) => props.theme.mq.large} {
+    flex-direction: column;
+  }
+`;
+
+const ButtonChange = styled.button`
+  background-color: white;
+  border-color: #b5abb2;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  color: #564d53;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 24px;
+  ${(props) => props.theme.mq.large} {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  ${(props) => props.theme.mq.medium} {
+    font-size: 12px;
+  }
+  padding: 4px 12px 4px 12px;
+  text-align: center;
 `;
