@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.12.1 (20/07/2023)
+
+* U10 - conseil ademe, corrections
+
 ## 1.12.0 (18/07/2023)
 
 * U10 - conseil ademe

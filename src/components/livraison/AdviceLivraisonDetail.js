@@ -88,7 +88,10 @@ const Wrapper = styled.section`
 
 const H3Title = styled.h3`
   color: ${(props) => props.theme.colors.main3};
-  font-size: 16px;
+  font-size: 1rem;
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.875rem;
+  }
   font-weight: 700;
   line-height: 24px;
   margin-left: 0.5rem;
@@ -115,13 +118,16 @@ const Icon = styled.div`
 
 const Text = styled.div`
   color: ${(props) => props.theme.colors.deepDark};
-  font-size: 16px;
+  font-size: 1rem;
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.875rem;
+  }
   line-height: 24px;
 `;
 
 const Subtext = styled.div`
   color: ${(props) => props.theme.colors.textGray2};
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 16px;
 `;
 
