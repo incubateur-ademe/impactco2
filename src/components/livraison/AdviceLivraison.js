@@ -6,7 +6,7 @@ export default function AdviceLivraison() {
   return (
     <>
       <Separator />
-      <H2Title>Conseils pour réduire son empreinte carbone</H2Title>
+      <H2Title>Conseil pour réduire l’impact carbone de vos livraisons</H2Title>
       <br />
       <AdviceLivraisonDetail
         title="Veiller au dernier km"
