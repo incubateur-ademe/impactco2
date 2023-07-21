@@ -6,6 +6,10 @@ import styled from "styled-components";
 
 const Title = styled.h2``;
 
+const DetailsTitle = styled.h4`
+  display: inline;
+`;
+
 export default function DetailLivraisonModal2() {
   const getTitle = () => {
     return <Title>Les hypothèses retenues</Title>;
@@ -32,23 +36,120 @@ export default function DetailLivraisonModal2() {
       </p>
       <h3>Les scénarios de livraison</h3>
       <p>
+        Dans cette première version, 3 scénarios sont proposés: la livraison{" "}
+        <b> à domicile, en point relais ou en click & collect</b>, tous adaptables à l'option{" "}
+        <b>"colis qui vient de loin"</b>.
+      </p>
+      <p>
         Pour chaque scénario, nous prenons en compte l'<b>ensemble des étapes d'un processus de livraison</b> : commande
         en ligne, emballage, entrepôt de stockage, plateformes de tri, transport inter-platerformes mais également
-        l'infrastruture de collecte et le déplacement consommateur dans le cas d'une livraison en point relais, click
-        and collect ou achat en magasin traditionnel. (Pour l'achat en magasin traditionnel, sont exclues les étapes de
-        commande en ligne et d'emballage). Nous avons fait l'hypothèse que la livraison se fait depuis un entrepôt
-        français Pour un article "qui vient de loin", nous avons fait l'hypothèse que le colis arrive par avion depuis
-        la Chine.
+        l'infrastruture de collecte et le déplacement consommateur dans le cas d'une livraison en point relais ou click
+        & collect (<i>Voir ci-dessous pour le détail de scénarios</i>). Pour un article <b>"qui vient de loin"</b>, nous
+        avons fait l'hypothèse que le colis arrive <b>par avion depuis la Chine</b> via une étpae de transport
+        supplémentaire (9000km parcourus par avion, mix électrique de l'entrepôt de départ adapté).{" "}
       </p>
-      <h3>Et d'autres paramètres...</h3>
+      <h3>Des informations supplémentaires sur les paramètres...</h3>
+      <p>
+        Pour le processus de <b>comande en ligne</b>, le type de produit impacte le temps de recherche web et donc
+        l'empreinte de l'utilisation du terminal pour effectuer effectuer l'achat. Néanmoins, les différences se jouent
+        au centième de grammes de CO2... On conserve donc une valeur unique (5,4 gCO2e) par commande quel que soit le
+        produit.
+      </p>
       <p>
         Un <b>emballage carton</b> a été attribué à chaque type de colis selon sa taille.
       </p>
       <p>
-        En ce qui concerne les <b>camions de livraison, pour le transport longue distance</b>, nous avons considéré un
+        Pour les étapes de <b>stockage</b> en entrepôt, on considère un entrepôt de 10 000 m2. Le nombre de jour de
+        stockage dépend du type de produit.
+      </p>
+      <p>
+        En ce qui concerne les <b>camions de livraison</b>, pour le transport longue distance, nous avons considéré un
         poids lourd moyen (type 44 tonnes) tandis que pour les derniers kilomètres de livraison, nous avons considéré un
         véhicule utilisaire léger.{" "}
       </p>
+      <h3>Le détails des processus</h3>
+      <details>
+        <summary>
+          <DetailsTitle>Livraison à domicile</DetailsTitle>
+        </summary>
+        <ul>
+          <li>Processus de commande en ligne</li>
+          <li>
+            Entrepôt initial de stockage et de préparation du colis (emballé et stocké entre 15 et 40 jours dans un
+            entrepôt de 10000 m2)
+          </li>
+          <li>
+            Transport entrepôt - plateforme 1: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de
+            retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+          </li>
+          <li>Plateforme 1 (stocké 1 jour dans un entrepôt de 10000 m2)</li>
+          <li>
+            Transport plateforme 1 - plateforme 2: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de
+            retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+          </li>
+          <li>Plateforme 2 (stocké 1 jour dans un entrepôt de 10000 m2)</li>
+          <li>
+            Transport plateforme 2 - domicile: 70 km (VUL, taux de remplissage de 15% et un taux de retour à vide de 20%
+            roulant à une vitesse moyenne de 30 km/h)
+          </li>
+        </ul>
+      </details>
+      <details>
+        <summary>
+          <DetailsTitle>Livraison en point relais</DetailsTitle>
+        </summary>
+        <ul>
+          <li>Processus de commande en ligne</li>
+          <li>
+            Entrepôt initial de stockage et de préparation du colis (emballé et stocké entre 15 et 40 jours dans un
+            entrepôt de 10000 m2)
+          </li>
+          <li>
+            Transport entrepôt - plateforme 1: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de
+            retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+          </li>
+          <li>Plateforme 1 (stocké 1 jour dans un entrepôt de 10000 m2)</li>
+          <li>
+            Transport plateforme 1 - plateforme 2: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de
+            retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+          </li>
+          <li>Plateforme 2 (stocké 1 jour dans un entrepôt de 10000 m2)</li>
+          <li>
+            Transport plateforme 2 - point de retrait: 70 km (VUL, taux de remplissage de 15% et un taux de retour à
+            vide de 20% roulant à une vitesse moyenne de 30 km/h)
+          </li>
+          <li>Point de retrait (stocké 1 jour dans une enseigne type "magasin traditionnel" de 10 m2)</li>
+          <li>Déplacement consommateur</li>
+        </ul>
+      </details>
+      <details>
+        <summary>
+          <DetailsTitle>Livraison en click & collect</DetailsTitle>
+        </summary>
+        <ul>
+          <li>Processus de commande en ligne</li>
+          <li>
+            Entrepôt initial de stockage et de préparation du colis (emballé et stocké entre 15 et 40 jours dans un
+            entrepôt de 10000 m2)
+          </li>
+          <li>
+            Transport entrepôt - plateforme 1: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de
+            retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+          </li>
+          <li>Plateforme 1 (stocké 1 jour dans un entrepôt de 10000 m2)</li>
+          <li>
+            Transport plateforme 1 - plateforme 2: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de
+            retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+          </li>
+          <li>Plateforme 2 (stocké 1 jour dans un entrepôt de 10000 m2)</li>
+          <li>
+            Transport plateforme 2 - magasin: 70 km (VUL, taux de remplissage de 15% et un taux de retour à vide de 20%
+            roulant à une vitesse moyenne de 30 km/h)
+          </li>
+          <li>Magasin (stocké 28 jours dans une enseigne type "supermarchés" de 2000 m2)</li>
+          <li>Déplacement consommateur</li>
+        </ul>
+      </details>
     </Modal2>
   );
 }
