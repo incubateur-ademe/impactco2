@@ -7,6 +7,7 @@ import styled from "styled-components";
 const Title = styled.h2``;
 
 const DetailsTitle = styled.h4`
+  cursor: pointer;
   display: inline;
 `;
 
