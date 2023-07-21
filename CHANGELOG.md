@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.14.0 (21/07/2023)
+
+* U12 - livraison, screenshot
+
 ## 1.13.1 (21/07/2023)
 
 * U8 - hypotheses de calcul
