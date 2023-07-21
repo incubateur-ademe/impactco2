@@ -84,10 +84,10 @@ test("U4 - Equivalences", async ({ page }) => {
 
   await test.step("Une modale d'explication s'affiche", async () => {
     // Given
-    await expect(page.getByText("Comprendre l'équivalent CO2 (CO2e)Fermer")).not.toBeVisible();
+    await expect(page.getByRole("button", { name: "Fermer" })).not.toBeVisible();
     // When
     await page.getByRole("button", { name: "Comprendre le calcul" }).click();
     // Then
-    await expect(page.getByText("Comprendre l'équivalent CO2 (CO2e)Fermer")).toBeVisible();
+    await expect(page.getByRole("button", { name: "Fermer" })).toBeVisible();
   });
 });
