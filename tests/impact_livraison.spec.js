@@ -58,7 +58,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
     await expect(page.getByTestId("resultAsText")).toHaveText("70,59 kg de CO2e ");
   });
 
-  await test.step("La liste déroulante “Vous commandez en majorité” a bien les options “Produits de grande consommation”, “Habillement”, “Produits culturel physique”, “bien d’équipement volumineux”, et “autre”", async () => {
+  await test.step("La liste déroulante “Vous commandez a bien les options “Produits de grande consommation”, “Habillement”, “Produits culturel physique”, “bien d’équipement volumineux”, et “autre”", async () => {
     await page.locator("select#produits").selectOption({ label: "Produits de grande consommation" });
     await page.locator("select#produits").selectOption({ label: "Habillement" });
     await page.locator("select#produits").selectOption({ label: "Produit culturel physique" });

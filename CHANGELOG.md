@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.14.3 (24/07/2023)
+
+* U26 - modification label
+
 ## 1.14.2 (24/07/2023)
 
 * U11 - ancre partie conseils ADEME
