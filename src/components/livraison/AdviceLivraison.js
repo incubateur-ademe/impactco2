@@ -1,5 +1,4 @@
 import AdviceLivraisonDetail from "./AdviceLivraisonDetail";
-import { setAdvicesInOgTags } from "components/livraison/utils.js";
 import ScreenshotWrapper2 from "components/misc/ScreenshotWrapper2";
 import ModalContext from "components/providers/ModalProvider";
 import useScreenshot from "hooks/useScreenshot";
@@ -11,7 +10,6 @@ export default function AdviceLivraison() {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison", "jpg");
 
   const openModal = () => {
-    setAdvicesInOgTags();
     setReduire(true);
   };
 

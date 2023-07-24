@@ -4,7 +4,6 @@ import Linkedin2 from "./shareModal/Linkedin2";
 import Twitter2 from "./shareModal/Twitter2";
 import Whatsapp2 from "./shareModal/Whatsapp2";
 import Modal3 from "components/base/Modal3";
-import { removeAdvicesFromOgTags } from "components/livraison/utils.js";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
@@ -26,7 +25,6 @@ export default function ReduireModal3() {
   const [copied, setCopied] = useState(false);
 
   const dismiss = () => {
-    removeAdvicesFromOgTags();
     setCopied(false);
     setOpen(false);
   };
