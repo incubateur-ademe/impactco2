@@ -4,7 +4,7 @@
 
 ## 1.14.1 (24/07/2023)
 
-* BSR - source negaoctet
+* BSR - source negaoctet, outbound link refactorisé
 
 ## 1.14.0 (21/07/2023)
 

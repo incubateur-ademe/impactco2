@@ -6,7 +6,13 @@ export default function OutboundLink(props) {
   return (
     <>
       <Wrapper>
-        <Link title={props.title} target="_blank" rel="noreferrer noopener" href={props.href}>
+        <Link
+          title={props.title}
+          target="_blank"
+          rel="noreferrer noopener"
+          href={props.href}
+          data-testid={props["data-testid"]}
+        >
           {props.children}
           <svg
             xmlns="http://www.w3.org/2000/svg"
