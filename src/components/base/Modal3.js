@@ -94,6 +94,7 @@ const ButtonClose = styled.button`
   align-items: center;
   background: inherit;
   border: none;
+  color: ${(props) => props.theme.colors.text};
   cursor: pointer;
   display: flex;
   > svg {

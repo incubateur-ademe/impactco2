@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const Text = styled.input`
   background: #f9f7f8;
   border: none;
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.persistentText};
   cursor: pointer;
   display: block;
   ${(props) => props.theme.mq.small} {
