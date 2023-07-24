@@ -6,22 +6,22 @@ export const frequences = [
 
 export const produits = [
   {
-    displayed: "Produits de grande consommation",
+    displayed: "Produits de grande consommation (aliments, épicerie, boissons…)",
     uid: "consommation",
     publicode: "grande consommation",
   },
   {
-    displayed: "Habillement",
+    displayed: "Habillement (vêtements, chaussures, accessoires…)",
     uid: "habillement",
     publicode: "habillement",
   },
   {
-    displayed: "Produit culturel physique",
+    displayed: "Produits culturels (CD, livres, DVD…)",
     uid: "culturel",
     publicode: "culturel",
   },
   {
-    displayed: "Bien d'équipement volumineux",
+    displayed: "Mobilier et gros électroménager.",
     uid: "volumineux",
     publicode: "équipements volumineux",
   },
