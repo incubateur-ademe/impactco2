@@ -29,8 +29,8 @@ export default function YearlyLivraison(props) {
         <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
       </FlexText>
       <SubText>
-        *cette valeur se base sur les paramètres que vous <a href="#ressource">avez saisis</a> dans le simulateur pour{" "}
-        {baseNumber} commande {baseText}.
+        *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour {baseNumber} commande{" "}
+        {baseText}.
       </SubText>
       <br />
     </Wrapper>
