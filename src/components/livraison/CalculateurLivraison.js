@@ -1,4 +1,3 @@
-import AdviceLivraison from "./AdviceLivraison";
 import OptionalRelay from "./OptionalRelay";
 import OptionalTraj from "./OptionalTraj";
 import ResultatsLivraison from "./ResultatsLivraison";
@@ -206,7 +205,6 @@ export default function CalculateurLivraison() {
             <ResultatsLivraison co2eq={cO2eq} />
             <YearlyLivraison co2eq={cO2eq} />
           </ScreenshotWrapper2>
-          <AdviceLivraison />
         </Section2.InnerMargin>
       </Section2>
     </>

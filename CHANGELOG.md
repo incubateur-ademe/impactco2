@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.14.2 (24/07/2023)
+
+* U11 - ancre partie conseils ADEME
+
 ## 1.14.1 (24/07/2023)
 
 * BSR - source negaoctet, outbound link refactorisé
