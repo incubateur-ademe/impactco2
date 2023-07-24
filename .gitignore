@@ -43,3 +43,6 @@ yarn-error.log*
 cypress/screenshots/
 cypress/videos/
 cypress/results/
+
+# Local Netlify folder
+.netlify

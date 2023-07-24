@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
+    "buildfruit": "node src/scripts/build_fruits_et_legumes.js",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "dev": "next dev",
@@ -22,6 +23,7 @@
     "axios": "^1.3.2",
     "chrome-aws-lambda": "^10.1.0",
     "copy-to-clipboard": "^3.3.3",
+    "focus-trap-react": "^10.2.1",
     "fuse.js": "^6.6.2",
     "html-to-image": "^1.11.11",
     "iframe-resizer-react": "^1.1.0",

@@ -13,8 +13,8 @@ export default function Web2(props) {
 
   return (
     <>
-      <VerticalContainer>
-        <Seo title={props.title} description={props.description} image={props.image} />
+      <VerticalContainer className={props.theme === "night" ? "bl" : "r"}>
+        <Seo title={props.title} description={props.description} image={"metalivraison.png"} />
         <Header2 />
         <BreadCrumb2 breadcrumb={props.breadcrumb} />
         {props.children}

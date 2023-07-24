@@ -2,6 +2,74 @@
 # CHANGELOG
 
 
+## 1.14.2 (24/07/2023)
+
+* U11 - ancre partie conseils ADEME
+
+## 1.14.1 (24/07/2023)
+
+* BSR - source negaoctet, outbound link refactorisé
+
+## 1.14.0 (21/07/2023)
+
+* U12 - livraison, screenshot
+
+## 1.13.1 (21/07/2023)
+
+* U8 - hypotheses de calcul
+
+## 1.13.0 (20/07/2023)
+
+* U11 - livraison, telechargement partie conseil
+
+## 1.12.1 (20/07/2023)
+
+* U10 - conseil ademe, corrections
+
+## 1.12.0 (18/07/2023)
+
+* U10 - conseil ademe
+
+## 1.11.5 (18/07/2023)
+
+* BSR: agribalyse 3.1
+
+## 1.11.4 (17/07/2023)
+
+* BSR: injection de l'URL de base et de son préfixe (https)
+
+## 1.11.3 (17/07/2023)
+
+* U7 - telechargement, corrections
+
+## 1.11.2 (17/07/2023)
+
+* U5 - partage, corrections
+
+## 1.11.1 (13/07/2023)
+
+* BSR - zones (accessibilité)
+
+## 1.11.0 (13/07/2023)
+
+* U7 - telechargement
+
+## 1.10.3 (13/07/2023)
+
+* BSR - correction FE Agribalyse
+
+## 1.10.2 (12/07/2023)
+
+* BSR - connexion Agribalyse
+
+## 1.10.1 (11/07/2023)
+
+* BSR - essai de trappe pour modale accessible
+
+## 1.10.0 (11/07/2023)
+
+* U5 - partage
+
 ## 1.9.2 (10/07/2023)
 
 * BSR - nettoyage fréquences

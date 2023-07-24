@@ -1,33 +1,43 @@
 [
   {
     "name": "Fraise",
-
+    "Code_CIQUAL": 13014,
     "prefix": "kg de ",
     "slug": "fraise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍓",
     "category": 9,
     "ecv": [
       {
-        "value": 0.27104474,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.403378715789251
       },
       {
-        "value": 0.1547714,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.07051244300040983
       },
       {
-        "value": 0.032937006,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.0031563718128996385
       },
       {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.001512350997439496
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6],
+    "months": [
+      4,
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13014_1#Fraise_de_saison,_crue",
     "meta": {
       "title": "Empreinte carbone d'une fraise",
@@ -36,33 +46,49 @@
   },
   {
     "name": "Pomme",
-
+    "Code_CIQUAL": 13039,
     "prefix": "kg de ",
     "slug": "pomme",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍏",
     "category": 9,
     "ecv": [
       {
-        "value": 0.098391782,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.2559129814792743
       },
       {
-        "value": 0.14056627,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.11461477444336095
       },
       {
-        "value": 0.032937006,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.01896975032453209
       },
       {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.00797761375283263
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Empreinte carbone d'une pomme",
@@ -71,34 +97,44 @@
   },
   {
     "name": "Orange",
-
+    "Code_CIQUAL": 13034,
     "prefix": "kg de ",
     "slug": "orange",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
       {
-        "value": 0.52762271,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.4853070956023481
       },
       {
-        "value": 0.13445761,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.12447650776517885
       },
       {
-        "value": 0.012612199,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.012052666027820748
       },
       {
-        "value": 0.01550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.014102649604652356
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      0,
+      1,
+      2
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/13034#Orange,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une orange",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'oranges : de l'agriculture à la distribution et la consommation"
@@ -106,34 +142,43 @@
   },
   {
     "name": "Citron",
-
+    "Code_CIQUAL": 13009,
     "prefix": "kg de ",
     "slug": "citron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍋",
     "category": 9,
     "ecv": [
       {
-        "value": 0.30402273,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5512608265199933
       },
       {
-        "value": 0.29856854,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.12449435974229199
       },
       {
-        "value": 0.042612199,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.013549784353277456
       },
       {
-        "value": 0.26550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.023412630384437187
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      0,
+      1
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/13009",
     "meta": {
       "title": "Empreinte carbone d'un citron",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de citrons : de l'agriculture à la distribution et la consommation"
@@ -141,34 +186,47 @@
   },
   {
     "name": "Ail",
-
+    "Code_CIQUAL": 11000,
     "prefix": "kg de ",
     "slug": "ail",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.06811426,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.22783751315605302
       },
       {
-        "value": 0.17538905,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.07852574638258768
       },
       {
-        "value": 0.031675203,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.03141138566452823
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.018347801796831025
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/11000",
     "meta": {
       "title": "Empreinte carbone d'un kg d'ail",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'ail : de l'agriculture à la distribution et la consommation"
@@ -176,34 +234,46 @@
   },
   {
     "name": "Artichaut",
-
+    "Code_CIQUAL": 20052,
     "prefix": "kg de ",
     "slug": "artichaut",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 1.5015528,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 2.2691018928655398
       },
       {
-        "value": 0.68174641,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.8912514128736877
       },
       {
-        "value": 0.19340077,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.17825032616060396
       },
       {
-        "value": 1.593037,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.5459027441001691
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/20052",
     "meta": {
       "title": "Empreinte carbone d'un artichaut",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'artichaut : de l'agriculture à la distribution et la consommation"
@@ -211,34 +281,44 @@
   },
   {
     "name": "Asperge",
-
+    "Code_CIQUAL": 20279,
     "prefix": "kg de ",
     "slug": "asperge",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 1.0563045,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.3284998362325249
       },
       {
-        "value": 0.18387517,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.15811555549161002
       },
       {
-        "value": 0.048350192,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.02996479975854298
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.04580143051732235
       }
     ],
     "default": true,
     "tile": false,
-    "months": [3, 4, 5],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      3,
+      4,
+      5
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/20279",
     "meta": {
       "title": "Empreinte carbone d'une asperge",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'asperge : de l'agriculture à la distribution et la consommation"
@@ -246,34 +326,47 @@
   },
   {
     "name": "Betterave",
-
+    "Code_CIQUAL": 20091,
     "prefix": "kg de ",
     "slug": "betterave",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍠",
     "category": 9,
     "ecv": [
       {
-        "value": 0.072311127,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.21876388033993266
       },
       {
-        "value": 0.14056627,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.1232361024793188
       },
       {
-        "value": 0.024105619,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.01454612099412839
       },
       {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.0085776901866202
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/20091",
     "meta": {
       "title": "Empreinte carbone d'une betterave",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de betterave : de l'agriculture à la distribution et la consommation"
@@ -281,34 +374,47 @@
   },
   {
     "name": "Blette",
-
+    "Code_CIQUAL": 20004,
     "prefix": "kg de ",
     "slug": "blette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.15247388,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.1985876752860186
       },
       {
-        "value": 0.1704366,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.19979107910201133
       },
       {
-        "value": 0.057494804,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.11489451499542937
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.030593640616540727
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8, 9, 10],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/20004",
     "meta": {
       "title": "Empreinte carbone d'une blette",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de blette : de l'agriculture à la distribution et la consommation"
@@ -316,34 +422,48 @@
   },
   {
     "name": "Carotte",
-
+    "Code_CIQUAL": 20009,
     "prefix": "kg de ",
     "slug": "carotte",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥕",
     "category": 9,
     "ecv": [
       {
-        "value": 0.087677241,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.21876388033993266
       },
       {
-        "value": 0.1704366,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.1232361024793188
       },
       {
-        "value": 0.029228063,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.01454612099412839
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.0085776901866202
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      0,
+      1,
+      2,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/20009",
     "meta": {
       "title": "Empreinte carbone d'une carotte",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de carottes : de l'agriculture à la distribution et la consommation"
@@ -351,33 +471,46 @@
   },
   {
     "name": "Céleri",
-
+    "Code_CIQUAL": 20023,
     "prefix": "kg de ",
     "slug": "celeri",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.47540799,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.4834482835682689
       },
       {
-        "value": 0.14056627,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.17249200650860572
       },
       {
-        "value": 0.032937006,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.02036002060453995
       },
       {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.00396202251858535
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru",
     "meta": {
       "title": "Empreinte carbone d'un celeri",
@@ -385,34 +518,53 @@
     }
   },
   {
-    "name": "Champignon de Paris",
-
+    "name": "Champignon (morille crue)",
+    "Code_CIQUAL": 20105,
     "prefix": "kg de ",
-    "slug": "champignondeparis",
-    "synonyms": ["manger, fruit"],
+    "slug": "champignonmorille",
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍄",
     "category": 9,
     "ecv": [
       {
-        "value": 0.074925686,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.269354345043757
       },
       {
-        "value": 0.1704366,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.12877603452677186
       },
       {
-        "value": 0.057494804,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.07405565902386264
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.01971923740560865
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue",
     "meta": {
       "title": "Empreinte carbone d'un kg de champignons de paris",
@@ -421,33 +573,46 @@
   },
   {
     "name": "Chou",
-
+    "Code_CIQUAL": 20069,
     "prefix": "kg de ",
     "slug": "chou",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥬",
     "category": 9,
     "ecv": [
       {
-        "value": 0.50051761,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5294818186174728
       },
       {
-        "value": 0.2272488,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.2079683656976474
       },
       {
-        "value": 0.064466923,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.04159368573158975
       },
       {
-        "value": 0.26550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.08492216895329015
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru",
     "meta": {
       "title": "Empreinte carbone d'un chou",
@@ -456,33 +621,46 @@
   },
   {
     "name": "Chou de Bruxelles",
-
+    "Code_CIQUAL": 20058,
     "prefix": "kg de ",
     "slug": "choudebruxelles",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥬",
     "category": 9,
     "ecv": [
       {
-        "value": 0.30959852,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.38994735256291974
       },
       {
-        "value": 0.14056627,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.15316241503364714
       },
       {
-        "value": 0.039876447,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.030632491923721538
       },
       {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.003682464579711384
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru",
     "meta": {
       "title": "Empreinte carbone d'un chou",
@@ -491,33 +669,47 @@
   },
   {
     "name": "Chou-fleur",
-
+    "Code_CIQUAL": 20016,
     "prefix": "kg de ",
     "slug": "choufleur",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥦",
     "category": 9,
     "ecv": [
       {
-        "value": 0.30959852,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.4697287391059323
       },
       {
-        "value": 0.14056627,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.1844987207457885
       },
       {
-        "value": 0.047418395,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.054881533251026175
       },
       {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.028251949897253124
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru",
     "meta": {
       "title": "Empreinte carbone d'un chou",
@@ -526,33 +718,46 @@
   },
   {
     "name": "Concombre",
-
+    "Code_CIQUAL": 20019,
     "prefix": "kg de ",
     "slug": "concombre",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥒",
     "category": 9,
     "ecv": [
       {
-        "value": 0.30332143,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.28312090632292514
       },
       {
-        "value": 0.148387334,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.1548271890094394
       },
       {
-        "value": 0.023993612,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.025625257591983433
       },
       {
-        "value": 0.0099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.01077654707565205
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8, 9],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru",
     "meta": {
       "title": "Empreinte carbone d'un concombre",
@@ -561,33 +766,45 @@
   },
   {
     "name": "Courge",
-
+    "Code_CIQUAL": 20139,
     "prefix": "kg de ",
     "slug": "courge",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.20516352,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.39778349911464284
       },
       {
-        "value": 0.19594288,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.16866267118115974
       },
       {
-        "value": 0.048350192,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.030526109024484965
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02337202767971242
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 8, 9, 10, 11],
+    "months": [
+      0,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue",
     "meta": {
       "title": "Empreinte carbone d'une courge",
@@ -596,33 +813,46 @@
   },
   {
     "name": "Courgette",
-
+    "Code_CIQUAL": 20020,
     "prefix": "kg de ",
     "slug": "courgette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.21625003,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.32736161780736733
       },
       {
-        "value": 0.14056627,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.12560945244147365
       },
       {
-        "value": 0.036575546,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.02306161859726602
       },
       {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.008742884153892962
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8, 9],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Empreinte carbone d'une courgette",
@@ -631,34 +861,53 @@
   },
   {
     "name": "Cresson",
-
+    "Code_CIQUAL": 20199,
     "prefix": "kg de ",
     "slug": "cresson",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.20329851,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5368806588313528
       },
       {
-        "value": 0.2272488,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.21875339323489149
       },
       {
-        "value": 0.076659738,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.12579923369568738
       },
       {
-        "value": 0.26550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.06699460723806831
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/20199",
     "meta": {
       "title": "Empreinte carbone d'un cresson",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de cressons : de l'agriculture à la distribution et la consommation"
@@ -666,33 +915,43 @@
   },
   {
     "name": "Échalote",
-
+    "Code_CIQUAL": 20097,
     "prefix": "kg de ",
     "slug": "echalote",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.074925686,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.23143765143437925
       },
       {
-        "value": 0.1704366,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.11064838249462071
       },
       {
-        "value": 0.029958116,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.013422982221099618
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.007701538149900379
       }
     ],
     "default": true,
     "tile": false,
-    "months": [9, 10, 11],
+    "months": [
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue",
     "meta": {
       "title": "Empreinte carbone d'une echalote",
@@ -701,33 +960,46 @@
   },
   {
     "name": "Endive",
-
+    "Code_CIQUAL": 20026,
     "prefix": "kg de ",
     "slug": "endive",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.46720987,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.647059582420112
       },
       {
-        "value": 0.1704366,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.16557078217296495
       },
       {
-        "value": 0.057494804,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.09521533594332131
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.025353549463601868
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 9],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue",
     "meta": {
       "title": "Empreinte carbone d'une endive",
@@ -736,34 +1008,50 @@
   },
   {
     "name": "Épinard",
-
+    "Code_CIQUAL": 20059,
     "prefix": "kg de ",
     "slug": "epinard",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.12575165,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.15040066616760575
       },
       {
-        "value": 0.14056627,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.15131207463416535
       },
       {
-        "value": 0.047418395,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.08701553131888874
       },
       {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.003475534079340197
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/",
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/20059",
     "meta": {
       "title": "Empreinte carbone d'un epinard",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'epinards : de l'agriculture à la distribution et la consommation"
@@ -772,34 +1060,53 @@
   {
     "name": "Mangue",
     "subtitle": "Importée par avion",
-
+    "Code_CIQUAL": 13025,
     "prefix": "kg de ",
     "slug": "mangue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥭",
     "category": 9,
     "ecv": [
       {
-        "value": 1.86989903,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.8066619435403268
       },
       {
-        "value": 8.288919,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 8.766674625759265
       },
       {
-        "value": 0.03993612,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.04151922003474507
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.03841344466566426
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13025_1#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une mangue",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de mangues : de l'agriculture à la distribution et la consommation"
@@ -807,33 +1114,47 @@
   },
   {
     "name": "Fenouil",
-
+    "Code_CIQUAL": 20028,
     "prefix": "kg de ",
     "slug": "fenouil",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.53978325,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.6213094084309185
       },
       {
-        "value": 0.28395814,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.28406584894324216
       },
       {
-        "value": 0.048350192,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.03669788773934232
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02809739188649703
       }
     ],
     "default": true,
     "tile": false,
-    "months": [3, 5, 6, 7, 8, 9, 10],
+    "months": [
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru",
     "meta": {
       "title": "Empreinte carbone d'un fenouil",
@@ -842,68 +1163,93 @@
   },
   {
     "name": "Haricot vert",
-
+    "subtitle": "Importé par avion",
+    "Code_CIQUAL": 20061,
     "prefix": "kg de ",
     "slug": "haricotvert",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.14847666,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.027976370796432
       },
       {
-        "value": 0.1704366,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 5.3797049439283215
       },
       {
-        "value": 0.057494804,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.058357700572977476
       },
       {
-        "value": 0.10436412,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.044624837702269604
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8, 9],
+    "months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20061_2#Haricot_vert,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un kg d'haricot vert",
-      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert : de l'agriculture à la distribution et la consommation"
+      "title": "Empreinte carbone d'un kg d'haricot vert importé par avion, cru",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert importé par avion : de l'agriculture à la distribution et la consommation"
     }
   },
   {
     "name": "Laitue",
-
+    "Code_CIQUAL": 20031,
     "prefix": "kg de ",
     "slug": "laitue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.31309977,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5368806588313528
       },
       {
-        "value": 0.2272488,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.21875339323489149
       },
       {
-        "value": 0.076659738,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.12579923369568738
       },
       {
-        "value": 0.26550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.06699460723806831
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue",
     "meta": {
       "title": "Empreinte carbone d'une laitue",
@@ -912,33 +1258,45 @@
   },
   {
     "name": "Mâche",
-
+    "Code_CIQUAL": 20099,
     "prefix": "kg de ",
     "slug": "mache",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥗",
     "category": 9,
     "ecv": [
       {
-        "value": 0.31309977,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5368806588313528
       },
       {
-        "value": 0.2272488,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.21875339323489149
       },
       {
-        "value": 0.076659738,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.12579923369568738
       },
       {
-        "value": 0.26550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.06699460723806831
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue",
     "meta": {
       "title": "Empreinte carbone d'un kg de mache",
@@ -947,33 +1305,48 @@
   },
   {
     "name": "Navet",
-
+    "Code_CIQUAL": 20064,
     "prefix": "kg de ",
     "slug": "navet",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.087677241,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.21876388033993266
       },
       {
-        "value": 0.1704366,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.1232361024793188
       },
       {
-        "value": 0.029228063,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.01454612099412839
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.0085776901866202
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru",
     "meta": {
       "title": "Empreinte carbone d'un navet",
@@ -982,33 +1355,43 @@
   },
   {
     "name": "Maïs",
-
+    "Code_CIQUAL": 9200,
     "prefix": "kg de ",
     "slug": "mais",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌽",
     "category": 9,
     "ecv": [
       {
-        "value": 0.19397987,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.562633027242422
       },
       {
-        "value": 0.26940995,
-        "id": 32
+        "id": 32,
+        "name": "emballage",
+        "value": 0.14359279924001617
       },
       {
-        "value": 0.1616359,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.06857716905445875
       },
       {
-        "value": 0.030159429,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.03695951446310307
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru",
     "meta": {
       "title": "Empreinte carbone d'un kg de mais",
@@ -1017,33 +1400,48 @@
   },
   {
     "name": "Oignon",
-
+    "Code_CIQUAL": 20034,
     "prefix": "kg de ",
     "slug": "oignon",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.1089838,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.2456216245633911
       },
       {
-        "value": 0.17697494,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.12016604739363188
       },
       {
-        "value": 0.029958116,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.014545709802099162
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.008125706240877847
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru",
     "meta": {
       "title": "Empreinte carbone d'un oignon",
@@ -1052,33 +1450,46 @@
   },
   {
     "name": "Panais",
-
+    "Code_CIQUAL": 20181,
     "prefix": "kg de ",
     "slug": "panais",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.087677241,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.26732491323255037
       },
       {
-        "value": 0.1704366,
-        "id": 33
+        "id": 33,
+        "name": "transport",
+        "value": 0.15059195558029742
       },
       {
-        "value": 0.029228063,
-        "id": 34
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.01777505790032935
       },
       {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02305986928682294
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru",
     "meta": {
       "title": "Empreinte carbone d'un panais",
@@ -1087,41 +1498,38 @@
   },
   {
     "name": "Petit pois",
-
+    "Code_CIQUAL": 20072,
     "prefix": "kg de ",
     "slug": "petitpois",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.23557796,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5186553946385324
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.11416310284452087
       },
       {
-        "value": 0,
-        "id": 32
-      },
-      {
-        "value": 0.13634928,
-        "id": 33
-      },
-      {
-        "value": 0.019299477,
-        "id": 34
-      },
-      {
-        "value": 0,
-        "id": 35
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.03336232851694665
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6],
+    "months": [
+      4,
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus",
     "meta": {
       "title": "Empreinte carbone d'un kg de petit pois",
@@ -1130,41 +1538,48 @@
   },
   {
     "name": "Poireau",
-
+    "Code_CIQUAL": 20039,
     "prefix": "kg de ",
     "slug": "poireau",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.41437532,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5558619976134935
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.16959752793817434
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.021131275809086504
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.029958116,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02597015763924565
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru",
     "meta": {
       "title": "Empreinte carbone d'un poireau",
@@ -1173,41 +1588,44 @@
   },
   {
     "name": "Poivron",
-
+    "Code_CIQUAL": 20168,
     "prefix": "kg de ",
     "slug": "poivron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌶️",
     "category": 9,
     "ecv": [
       {
-        "value": 0.53935177,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.8031081301168407
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.2899951681399075
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.05649280804931792
       },
       {
-        "value": 0.22610913,
-        "id": 33
-      },
-      {
-        "value": 0.057494804,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.03586335469393384
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru",
     "meta": {
       "title": "Empreinte carbone d'un poivron",
@@ -1216,41 +1634,45 @@
   },
   {
     "name": "Potiron",
-
+    "Code_CIQUAL": 20044,
     "prefix": "kg de ",
     "slug": "potiron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🎃",
     "category": 9,
     "ecv": [
       {
-        "value": 0.20516352,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.39778349911464284
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.16866267118115974
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.030526109024484965
       },
       {
-        "value": 0.19594288,
-        "id": 33
-      },
-      {
-        "value": 0.048350192,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02337202767971242
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 8, 9, 10, 11],
+    "months": [
+      0,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru",
     "meta": {
       "title": "Empreinte carbone d'un potiron",
@@ -1259,41 +1681,44 @@
   },
   {
     "name": "Radis",
-
+    "Code_CIQUAL": 20045,
     "prefix": "kg de ",
     "slug": "radis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.072311127,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.3892471671512124
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.18750395049564939
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.02213194902648198
       },
       {
-        "value": 0.14056627,
-        "id": 33
-      },
-      {
-        "value": 0.024105619,
-        "id": 34
-      },
-      {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.004306836526656162
       }
     ],
     "default": true,
     "tile": false,
-    "months": [2, 3, 4, 5],
+    "months": [
+      2,
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru",
     "meta": {
       "title": "Empreinte carbone d'un radis",
@@ -1302,41 +1727,45 @@
   },
   {
     "name": "Salsifis",
-
+    "Code_CIQUAL": 20197,
     "prefix": "kg de ",
     "slug": "salsifis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.087677241,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.26732491323255037
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.15059195558029742
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.01777505790032935
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.029228063,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02305986928682294
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru",
     "meta": {
       "title": "Empreinte carbone d'un salsifis",
@@ -1345,41 +1774,44 @@
   },
   {
     "name": "Topinambour",
-
+    "Code_CIQUAL": 20196,
     "prefix": "kg de ",
     "slug": "topinambour",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.3753882,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.383235283270511
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.09477300825738438
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.01776728041960104
       },
       {
-        "value": 0.26920619,
-        "id": 33
-      },
-      {
-        "value": 0.10566,
-        "id": 34
-      },
-      {
-        "value": 0.10556394,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.010477173052503754
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru",
     "meta": {
       "title": "Empreinte carbone d'un topinambour",
@@ -1388,41 +1820,43 @@
   },
   {
     "name": "Cassis",
-
+    "Code_CIQUAL": 13007,
     "prefix": "kg de ",
     "slug": "cassis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍇",
     "category": 9,
     "ecv": [
       {
-        "value": 1.4452434,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.5964099510490413
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.164674284795805
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.027255037686659152
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02521627046849469
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru",
     "meta": {
       "title": "Empreinte carbone d'un kg de cassis",
@@ -1431,41 +1865,42 @@
   },
   {
     "name": "Châtaigne",
-
+    "Code_CIQUAL": 15024,
     "prefix": "kg de ",
     "slug": "chataigne",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌰",
     "category": 9,
     "ecv": [
       {
-        "value": 1.3964351,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.8051574361541334
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.04560925757601594
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.027077869299881065
       },
       {
-        "value": 0.15119955,
-        "id": 33
-      },
-      {
-        "value": 0.040547779,
-        "id": 34
-      },
-      {
-        "value": 0.044251023,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.005516332969969233
       }
     ],
     "default": true,
     "tile": false,
-    "months": [9, 10],
+    "months": [
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue",
     "meta": {
       "title": "Empreinte carbone d'une chataigne",
@@ -1474,41 +1909,44 @@
   },
   {
     "name": "Clémentine",
-
+    "Code_CIQUAL": 13082,
     "prefix": "kg de ",
     "slug": "clementine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
       {
-        "value": 0.10169226,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.0853808532120204
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.10272683088620989
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.011180638313368473
       },
       {
-        "value": 0.29856854,
-        "id": 33
-      },
-      {
-        "value": 0.042612199,
-        "id": 34
-      },
-      {
-        "value": 0.26550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02578157758840135
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une clementine",
@@ -1517,41 +1955,46 @@
   },
   {
     "name": "Pamplemousse",
-
+    "Code_CIQUAL": 13040,
     "prefix": "kg de ",
     "slug": "pamplemousse",
-    "synonyms": ["manger, fruit", "pomelo"],
+    "synonyms": [
+      "manger, fruit",
+      "pomelo"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
       {
-        "value": 0.18270046,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.1001720870552563
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.06414408958834136
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.004833985608001232
       },
       {
-        "value": 0.3190708,
-        "id": 33
-      },
-      {
-        "value": 0.031959149,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.008352628748401175
       }
     ],
     "default": true,
     "tile": false,
-    "months": [1, 2, 3, 4, 5],
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru",
     "meta": {
       "title": "Empreinte carbone d'un pamplemousse",
@@ -1560,41 +2003,41 @@
   },
   {
     "name": "Coing",
-
+    "Code_CIQUAL": 13010,
     "prefix": "kg de ",
     "slug": "coing",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.11930004,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.32832661650385303
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.184408933732366
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.007049168766991203
       },
       {
-        "value": 0.22955684,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.022516943596789726
       }
     ],
     "default": true,
     "tile": false,
-    "months": [9],
+    "months": [
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru",
     "meta": {
       "title": "Empreinte carbone d'un coing",
@@ -1603,41 +2046,44 @@
   },
   {
     "name": "Figue",
-
+    "Code_CIQUAL": 13012,
     "prefix": "kg de ",
     "slug": "figue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥭",
     "category": 9,
     "ecv": [
       {
-        "value": 0.23909936,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.52862665611801
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.0686091683972838
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.010098640650199399
       },
       {
-        "value": 0.19840735,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.009343228834506792
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8, 9],
+    "months": [
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue",
     "meta": {
       "title": "Empreinte carbone d'une figue",
@@ -1646,41 +2092,43 @@
   },
   {
     "name": "Groseille",
-
+    "Code_CIQUAL": 13019,
     "prefix": "kg de ",
     "slug": "groseille",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 1.4452434,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.6057567750605246
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.16563843661544997
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.007940441660032042
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02536390926399337
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue",
     "meta": {
       "title": "Empreinte carbone d'un kg de groseille",
@@ -1689,41 +2137,50 @@
   },
   {
     "name": "Kiwi",
-
+    "Code_CIQUAL": 13021,
     "prefix": "kg de ",
     "slug": "kiwi",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥝",
     "category": 9,
     "ecv": [
       {
-        "value": 0.60379477,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.7383850835421583
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 31,
+        "name": "transformation",
+        "value": 0.01901106215653529
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 33,
+        "name": "transport",
+        "value": 0.21359254983083753
       },
       {
-        "value": 0.18018326,
-        "id": 33
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.002316084063813601
       },
       {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.019087206606655145
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru",
     "meta": {
       "title": "Empreinte carbone d'un kiwi",
@@ -1732,41 +2189,44 @@
   },
   {
     "name": "Mandarine",
-
+    "Code_CIQUAL": 13024,
     "prefix": "kg de ",
     "slug": "mandarine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
       {
-        "value": 0.10169226,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.3314219356726389
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.07547529714446874
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.008214621096963097
       },
       {
-        "value": 0.29856854,
-        "id": 33
-      },
-      {
-        "value": 0.042612199,
-        "id": 34
-      },
-      {
-        "value": 0.26550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.009471100385929307
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une mandarine",
@@ -1775,41 +2235,44 @@
   },
   {
     "name": "Melon",
-
+    "Code_CIQUAL": 13026,
     "prefix": "kg de ",
     "slug": "melon",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍈",
     "category": 9,
     "ecv": [
       {
-        "value": 0.30901715,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.6673589467444592
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.18507767963795024
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.027141415211145523
       },
       {
-        "value": 0.24449853,
-        "id": 33
-      },
-      {
-        "value": 0.05324816,
-        "id": 34
-      },
-      {
-        "value": 0.26550617,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.053814103406445005
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru",
     "meta": {
       "title": "Empreinte carbone d'une melon",
@@ -1818,41 +2281,42 @@
   },
   {
     "name": "Mûre",
-
+    "Code_CIQUAL": 13071,
     "prefix": "kg de ",
     "slug": "mure",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍓",
     "category": 9,
     "ecv": [
       {
-        "value": 0.53507426,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.1099283309388273
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.0769096261007815
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.012729217317949227
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.011777029642441839
       }
     ],
     "default": true,
     "tile": false,
-    "months": [7, 8],
+    "months": [
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue",
     "meta": {
       "title": "Empreinte carbone d'un kg de mure",
@@ -1861,41 +2325,42 @@
   },
   {
     "name": "Nectarine",
-
+    "Code_CIQUAL": 13030,
     "prefix": "kg de ",
     "slug": "nectarine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
       {
-        "value": 0.26173451,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5541434636982604
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.06628731316512972
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.010238865744326628
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.010150454392283481
       }
     ],
     "default": true,
     "tile": false,
-    "months": [7, 8],
+    "months": [
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Empreinte carbone d'une nectarine",
@@ -1904,41 +2369,43 @@
   },
   {
     "name": "Myrtille",
-
+    "Code_CIQUAL": 13028,
     "prefix": "kg de ",
     "slug": "myrtille",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🫐",
     "category": 9,
     "ecv": [
       {
-        "value": 1.1919533,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.8192886979748665
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.05523915555758005
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.009142564331835792
       },
       {
-        "value": 0.14056627,
-        "id": 33
-      },
-      {
-        "value": 0.032937006,
-        "id": 34
-      },
-      {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.0012688053357177004
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue",
     "meta": {
       "title": "Empreinte carbone d'un kg de myrtille",
@@ -1947,41 +2414,43 @@
   },
   {
     "name": "Noisette",
-
+    "Code_CIQUAL": 15004,
     "prefix": "kg de ",
     "slug": "noisette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌰",
     "category": 9,
     "ecv": [
       {
-        "value": 4.1455765,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 4.433231579544985
       },
       {
-        "value": 0.068974455,
-        "id": 31
+        "id": 31,
+        "name": "transformation",
+        "value": 0.06726836314034383
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 33,
+        "name": "transport",
+        "value": 0.1248978766186456
       },
       {
-        "value": 0.25999545,
-        "id": 33
-      },
-      {
-        "value": 0.036493002,
-        "id": 34
-      },
-      {
-        "value": 0,
-        "id": 35
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.03511793569602675
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9, 10],
+    "months": [
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15004#Noisette",
     "meta": {
       "title": "Empreinte carbone d'un kg de noisette",
@@ -1990,41 +2459,47 @@
   },
   {
     "name": "Noix",
-
+    "Code_CIQUAL": 15023,
     "prefix": "kg de ",
     "slug": "noix",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌰",
     "category": 9,
     "ecv": [
       {
-        "value": 2.5135833,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 3.772394629078588
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 32,
+        "name": "emballage",
+        "value": 0.19262033246449295
       },
       {
-        "value": 0.53881991,
-        "id": 32
+        "id": 33,
+        "name": "transport",
+        "value": 0.09199177495877192
       },
       {
-        "value": 0.26464914,
-        "id": 33
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.05658698163708793
       },
       {
-        "value": 0.072986004,
-        "id": 34
-      },
-      {
-        "value": 0.39825926,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.057639811861059334
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9],
+    "months": [
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche",
     "meta": {
       "title": "Empreinte carbone d'un kg de noix",
@@ -2033,85 +2508,86 @@
   },
   {
     "name": "Prune",
-
+    "Code_CIQUAL": 13100,
     "prefix": "kg de ",
     "slug": "prune",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🫐",
     "category": 9,
     "ecv": [
       {
-        "value": 0.59669943,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.9272116728485386
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.04042124000653024
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.0019377295792954179
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.006189630165635735
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue",
     "meta": {
       "title": "Empreinte carbone d'une prune",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de prunes : de l'agriculture à la distribution et la consommation"
     }
   },
-
   {
     "name": "Reine Claude",
-
+    "Code_CIQUAL": 13041,
     "prefix": "kg de ",
     "slug": "reineclaude",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍈",
     "category": 9,
     "ecv": [
       {
-        "value": 0.59669943,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.9310922391748409
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.040590410981648395
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.006718068837484897
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.00621553500602589
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8],
+    "months": [
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue",
     "meta": {
       "title": "Empreinte carbone d'une reine-claude",
@@ -2120,41 +2596,43 @@
   },
   {
     "name": "Rhubarbe",
-
+    "Code_CIQUAL": 13047,
     "prefix": "kg de ",
     "slug": "rhubarbe",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.3753882,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.4882383374121024
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.19176886822602737
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.009193092747514557
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.029365214214355652
       }
     ],
     "default": true,
     "tile": false,
-    "months": [3, 4, 5],
+    "months": [
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue",
     "meta": {
       "title": "Empreinte carbone d'une rhubarbe",
@@ -2163,41 +2641,44 @@
   },
   {
     "name": "Pêche",
-
+    "Code_CIQUAL": 13043,
     "prefix": "kg de ",
     "slug": "peche",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍑",
     "category": 9,
     "ecv": [
       {
-        "value": 0.38438194,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.5224991629398071
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.06418521018458785
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.002896208735985168
       },
       {
-        "value": 0.29694292,
-        "id": 33
-      },
-      {
-        "value": 0.063897792,
-        "id": 34
-      },
-      {
-        "value": 0.39825926,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.009251270739619828
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Empreinte carbone d'une peche",
@@ -2206,41 +2687,47 @@
   },
   {
     "name": "Cerise",
-
+    "Code_CIQUAL": 13008,
     "prefix": "kg de ",
     "slug": "cerise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍒",
     "category": 9,
     "ecv": [
       {
-        "value": 0.59669943,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.2045357814408217
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 32,
+        "name": "emballage",
+        "value": 0.07248497386881318
       },
       {
-        "value": 0.35727452,
-        "id": 32
+        "id": 33,
+        "name": "transport",
+        "value": 0.054801948882367814
       },
       {
-        "value": 0.17724117,
-        "id": 33
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.008691033988323852
       },
       {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.008040915819673478
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6],
+    "months": [
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue",
     "meta": {
       "title": "Empreinte carbone d'une cerise",
@@ -2249,41 +2736,48 @@
   },
   {
     "name": "Abricot",
-
+    "Code_CIQUAL": 13000,
     "prefix": "kg de ",
     "slug": "abricot",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍑",
     "category": 9,
     "ecv": [
       {
-        "value": 0.18771307,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.423183515798164
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 32,
+        "name": "emballage",
+        "value": 0.23173841873537715
       },
       {
-        "value": 0.35727452,
-        "id": 32
+        "id": 33,
+        "name": "transport",
+        "value": 0.17520482245880986
       },
       {
-        "value": 0.17724117,
-        "id": 33
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.0277857101428319
       },
       {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.025707246864817287
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru",
     "meta": {
       "title": "Empreinte carbone d'un abricot",
@@ -2292,41 +2786,43 @@
   },
   {
     "name": "Framboise",
-
+    "Code_CIQUAL": 13015,
     "prefix": "kg de ",
     "slug": "framboise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍓",
     "category": 9,
     "ecv": [
       {
-        "value": 0.50243788,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.2886447398394225
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.17467728822077527
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.003957208076973288
       },
       {
-        "value": 0.35872609,
-        "id": 33
-      },
-      {
-        "value": 0.032937006,
-        "id": 34
-      },
-      {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.0018960654628290693
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue",
     "meta": {
       "title": "Empreinte carbone d'une framboise",
@@ -2335,41 +2831,48 @@
   },
   {
     "name": "Poire",
-
+    "Code_CIQUAL": 13107,
     "prefix": "kg de ",
     "slug": "poire",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍐",
     "category": 9,
     "ecv": [
       {
-        "value": 0.058136545,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.2740061413051722
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.08244793528394287
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.0037645840095870465
       },
       {
-        "value": 0.14931767,
-        "id": 33
-      },
-      {
-        "value": 0.032937006,
-        "id": 34
-      },
-      {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.005465952501297958
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une poire",
@@ -2378,41 +2881,42 @@
   },
   {
     "name": "Raisin",
-
+    "Code_CIQUAL": 13112,
     "prefix": "kg de ",
     "slug": "raisin",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍇",
     "category": 9,
     "ecv": [
       {
-        "value": 0.29161536,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.3137794503788738
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.11926733425000698
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.017451705983434557
       },
       {
-        "value": 0.19725844,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.007339209387684606
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9],
+    "months": [
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru",
     "meta": {
       "title": "Empreinte carbone d'un kg de raisin",
@@ -2421,41 +2925,44 @@
   },
   {
     "name": "Aubergine",
-
+    "Code_CIQUAL": 20053,
     "prefix": "kg de ",
     "slug": "aubergine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍆",
     "category": 9,
     "ecv": [
       {
-        "value": 5.0919415,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.3132243279629721
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.1201849397931832
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.0220656900318644
       },
       {
-        "value": 0.16952471,
-        "id": 33
-      },
-      {
-        "value": 0.036575546,
-        "id": 34
-      },
-      {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.0028895913119802654
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue",
     "meta": {
       "title": "Empreinte carbone d'une aubergine",
@@ -2464,41 +2971,43 @@
   },
   {
     "name": "Brocoli",
-
+    "Code_CIQUAL": 20057,
     "prefix": "kg de ",
     "slug": "brocoli",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥦",
     "category": 9,
     "ecv": [
       {
-        "value": 0.47868232,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.6083616590157137
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.20659114217066407
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.06145321004165059
       },
       {
-        "value": 0.14056627,
-        "id": 33
-      },
-      {
-        "value": 0.047418395,
-        "id": 34
-      },
-      {
-        "value": 0.012317297,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.03163492177197185
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9, 10],
+    "months": [
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru",
     "meta": {
       "title": "Empreinte carbone d'un brocoli",
@@ -2507,41 +3016,44 @@
   },
   {
     "name": "Tomate",
-
+    "Code_CIQUAL": 20047,
     "prefix": "kg de ",
     "slug": "tomate",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍅",
     "category": 9,
     "ecv": [
       {
-        "value": 0.19941101,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.3386610578174048
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.18519981586959255
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.030652193008441513
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02835930730456118
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20047_1#Tomate_de_saison,_crue",
     "meta": {
       "title": "Empreinte carbone d'une tomate",
@@ -2550,41 +3062,52 @@
   },
   {
     "name": "Ananas",
-
+    "Code_CIQUAL": 13002,
     "prefix": "kg de ",
     "slug": "ananas",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍍",
     "category": 9,
     "ecv": [
       {
-        "value": 0.22738276,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.7845329384097066
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.404358094026432
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.011859463533714353
       },
       {
-        "value": 0.45643934,
-        "id": 33
-      },
-      {
-        "value": 0.063897792,
-        "id": 34
-      },
-      {
-        "value": 0.39825926,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.09470580103014703
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine ",
     "meta": {
       "title": "Empreinte carbone d'un ananas",
@@ -2593,41 +3116,57 @@
   },
   {
     "name": "Banane",
-
+    "Code_CIQUAL": 13005,
     "prefix": "kg de ",
     "slug": "banane",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.65574971,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.30286391265088936
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 31,
+        "name": "transformation",
+        "value": 0.23823026920379933
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 33,
+        "name": "transport",
+        "value": 0.2704907880633539
       },
       {
-        "value": 0.53372688,
-        "id": 33
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.03007064855679703
       },
       {
-        "value": 0.07987224,
-        "id": 34
-      },
-      {
-        "value": 0.59738888,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.04169478852516042
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une banane",
@@ -2636,41 +3175,52 @@
   },
   {
     "name": "Avocat",
-
+    "Code_CIQUAL": 13004,
     "prefix": "kg de ",
     "slug": "avocat",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥑",
     "category": 9,
     "ecv": [
       {
-        "value": 1.7728241,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.2468616150748997
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.1932445771906265
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.018100142732379493
       },
       {
-        "value": 0.51466861,
-        "id": 33
-      },
-      {
-        "value": 0.063897792,
-        "id": 34
-      },
-      {
-        "value": 0.39825926,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.025096952002094334
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru",
     "meta": {
       "title": "Empreinte carbone d'un avocat",
@@ -2679,41 +3229,43 @@
   },
   {
     "name": "Carambole",
-
+    "Code_CIQUAL": 13054,
     "prefix": "kg de ",
     "slug": "carambole",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.16989903,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.4528686933291521
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.06288160064226464
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.010407456133345431
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.009628943895237782
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 10, 11],
+    "months": [
+      0,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une carambole",
@@ -2722,41 +3274,44 @@
   },
   {
     "name": "Datte",
-
+    "Code_CIQUAL": 13011,
     "prefix": "kg de ",
     "slug": "datte",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 3.4383911,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 2.4013452664573927
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 32,
+        "name": "emballage",
+        "value": 0.18915109040104938
       },
       {
-        "value": 0.28581962,
-        "id": 32
+        "id": 33,
+        "name": "transport",
+        "value": 0.13232813232177199
       },
       {
-        "value": 0.17465584,
-        "id": 33
-      },
-      {
-        "value": 0.045995843,
-        "id": 34
-      },
-      {
-        "value": 0,
-        "id": 35
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.04004505781978601
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 9, 10, 11],
+    "months": [
+      0,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che",
     "meta": {
       "title": "Empreinte carbone d'une datte",
@@ -2765,41 +3320,52 @@
   },
   {
     "name": "Fruit de la passion",
-
+    "Code_CIQUAL": 13016,
     "prefix": "kg de ",
     "slug": "fruitdelapassion",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
-        "value": 0.60379477,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.670890545151551
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.17082370446852668
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.026385757582973693
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.026157919796948807
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru",
     "meta": {
       "title": "Empreinte carbone d'un fruit de la passion",
@@ -2808,41 +3374,44 @@
   },
   {
     "name": "Grenade",
-
+    "Code_CIQUAL": 13018,
     "prefix": "kg de ",
     "slug": "grenade",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥭",
     "category": 9,
     "ecv": [
       {
-        "value": 0.11930004,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.3164401254847031
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.14172283414859108
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.006793965938376394
       },
       {
-        "value": 0.1704366,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.02170175702832946
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue",
     "meta": {
       "title": "Empreinte carbone d'une grenade",
@@ -2851,41 +3420,44 @@
   },
   {
     "name": "Kaki",
-
+    "Code_CIQUAL": 13066,
     "prefix": "kg de ",
     "slug": "kaki",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍈",
     "category": 9,
     "ecv": [
       {
-        "value": 0.53935177,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.6324222762704144
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.2379184482354431
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.008960680665468181
       },
       {
-        "value": 0.22708192,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.028622827428674478
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 9, 10, 11],
+    "months": [
+      0,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru",
     "meta": {
       "title": "Empreinte carbone d'une kaki",
@@ -2894,41 +3466,49 @@
   },
   {
     "name": "Noix de coco",
-
+    "Code_CIQUAL": 15006,
     "prefix": "kg de ",
     "slug": "noixdecoco",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥥",
     "category": 9,
     "ecv": [
       {
-        "value": 1.3841849,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 1.8149469843232353
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 32,
+        "name": "emballage",
+        "value": 0.2556860766341414
       },
       {
-        "value": 0.53881991,
-        "id": 32
+        "id": 33,
+        "name": "transport",
+        "value": 0.28250579786380225
       },
       {
-        "value": 0.50581205,
-        "id": 33
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.07511410212118856
       },
       {
-        "value": 0.11361344,
-        "id": 34
-      },
-      {
-        "value": 0.39825926,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.07651163905763173
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche",
     "meta": {
       "title": "Empreinte carbone d'une noix de coco",
@@ -2937,41 +3517,44 @@
   },
   {
     "name": "Pastèque",
-
+    "Code_CIQUAL": 13036,
     "prefix": "kg de ",
     "slug": "pasteque",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍉",
     "category": 9,
     "ecv": [
       {
-        "value": 0.23176286,
-        "id": 30
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.4715614289885942
       },
       {
-        "value": 0,
-        "id": 31
+        "id": 33,
+        "name": "transport",
+        "value": 0.14647013193144806
       },
       {
-        "value": 0,
-        "id": 32
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.005952143201527482
       },
       {
-        "value": 0.21406438,
-        "id": 33
-      },
-      {
-        "value": 0.03993612,
-        "id": 34
-      },
-      {
-        "value": 0.099564814,
-        "id": 35
+        "id": 35,
+        "name": "consommation",
+        "value": 0.019012748478430208
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue",
     "meta": {
       "title": "Empreinte carbone d'une pasteque",

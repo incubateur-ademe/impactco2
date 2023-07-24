@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 export default function ResultatLivraison(props) {
-  const { setCo2e } = useContext(ModalContext);
+  const { setHypothesisLivraison } = useContext(ModalContext);
 
   return (
     <Wrapper>
@@ -38,7 +38,7 @@ export default function ResultatLivraison(props) {
           <div className="item5"></div>
           <div className="item6">
             <UnderstandLink>
-              <ButtonLink onClick={() => setCo2e(true)}>Comprendre le calcul</ButtonLink>
+              <ButtonLink onClick={() => setHypothesisLivraison(true)}>Comprendre le calcul</ButtonLink>
             </UnderstandLink>
           </div>
         </BlueGrid>

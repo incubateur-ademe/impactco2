@@ -86,7 +86,7 @@ const Text = styled.code`
 const Copy = styled.button`
   background: none;
   border: none;
-  color: ${(props) => props.theme.colors.thirdDark};
+  color: ${(props) => props.theme.colors.firstBlue};
   cursor: pointer;
   margin: 0;
   padding: 0.5rem;
