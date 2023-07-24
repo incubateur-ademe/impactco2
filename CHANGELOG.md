@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.14.4 (24/07/2023)
+
+* U27 - Clarifier les choix d’items livrés
+
 ## 1.14.3 (24/07/2023)
 
 * U26 - modification label
