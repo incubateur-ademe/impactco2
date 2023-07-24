@@ -258,10 +258,9 @@ const DropList = styled.div`
   > div > select {
     color: #1c9b93;
     padding-left: 0;
-    width: 240px;
+    width: 100%;
     ${(props) => props.theme.mq.xsmall} {
       font-size: 12px;
-      width: auto;
     }
   }
 `;
