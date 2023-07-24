@@ -7,18 +7,29 @@ export const convertGramsToKilograms = (grams) => {
   return formattedKilograms;
 };
 
-const metaNamed = (name) => {
-  return document.head.children.namedItem(name);
+const metaOf = (name) => {
+  let res = {};
+  if (typeof window !== "undefined") {
+    res = document.querySelector(`meta[property="${name}"]`);
+    if (!res) {
+      res = document.querySelector(`meta[name="${name}"]`);
+    }
+  }
+  return res;
 };
 
+const adviceDescription = "Découvrez les conseils de l’ADEME pour réduire l’impact de la livraison grâce à #impactCO2";
+const originalDescription =
+  "Découvrez l’impact carbone de la livraison d’un colis sur le climat et les conseils pour la réduire";
+
 export const setAdvicesInOgTags = () => {
-  if (typeof window !== "undefined") {
-    metaNamed("twitter:description").content =
-      "Découvrez les conseils de l’ADEME pour réduire l’impact de la livraison grâce à #impactCO2";
-  }
+  metaOf("twitter:description").content = adviceDescription;
+  metaOf("og:description").content = adviceDescription;
+  metaOf("description").content = adviceDescription;
 };
 
 export const removeAdvicesFromOgTags = () => {
-  metaNamed("twitter:description").content =
-    "Découvrez l’impact carbone de la livraison d’un colis sur le climat et les conseils pour la réduire";
+  metaOf("twitter:description").content = originalDescription;
+  metaOf("og:description").content = originalDescription;
+  metaOf("description").content = originalDescription;
 };
