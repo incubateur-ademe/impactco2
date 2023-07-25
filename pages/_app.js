@@ -31,22 +31,22 @@ function MyApp({ Component, pageProps }) {
               <nav className="fr-container" role="navigation" aria-label="Accès rapide">
                 <ul className="fr-skiplinks__list">
                   <li>
-                    <a className="fr-link screenreader-text" href="#contenu">
+                    <a className="fr-link visible-hidden" href="#contenu">
                       Contenu
                     </a>
                   </li>
                   <li>
-                    <a className="fr-link screenreader-text" href="#header-navigation">
+                    <a className="fr-link visible-hidden" href="#header-navigation">
                       Menu
                     </a>
                   </li>
                   <li>
-                    <a className="fr-link screenreader-text" href="#header-search">
+                    <a className="fr-link visible-hidden" href="#header-search">
                       Recherche
                     </a>
                   </li>
                   <li>
-                    <a className="fr-link screenreader-text" href="#footer">
+                    <a className="fr-link visible-hidden" href="#footer">
                       Pied de page
                     </a>
                   </li>
@@ -71,7 +71,11 @@ export default MyApp;
 
 const SkipLinks = styled.div`
   .fr-skiplinks {
-    background-color: purple;
+    background-color: whitesmoke;
+    height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
   }
 
   .visible-hidden {
