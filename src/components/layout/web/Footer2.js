@@ -29,7 +29,7 @@ const Accessibility = styled.div`
 export default function Footer2() {
   return (
     <>
-      <footer aria-label="footer">
+      <footer aria-label="footer" id="footer">
         <Logos>
           <Marianne />
           <Ademe />
