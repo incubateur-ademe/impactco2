@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.14.5 (25/07/2023)
+
+* A4 - Img alt
+
 ## 1.14.4 (24/07/2023)
 
 * U27 - Clarifier les choix d’items livrés
