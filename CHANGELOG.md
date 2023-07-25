@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.14.6 (25/07/2023)
+
+* A3 - Liens d'accès rapide (a11y)
+
 ## 1.14.5 (25/07/2023)
 
 * A4 - Img alt
