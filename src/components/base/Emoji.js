@@ -24,7 +24,7 @@ export default function Emoji(props) {
       base: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/",
     });
 
-    stringDOMforEmoji = parsed.replaceAll(/alt=".*?"/g, "");
+    stringDOMforEmoji = parsed.replaceAll(/alt=".*?"/g, 'alt=""');
   }
 
   return stringDOMforEmoji ? (
