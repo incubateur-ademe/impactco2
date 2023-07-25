@@ -82,14 +82,6 @@ const SkipLinks = styled.div`
     margin: 0;
   }
 
-  .fr-skiplinks {
-    background-color: whitesmoke;
-    height: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
-  }
-
   .visible-hidden {
     clip: rect(1px, 1px, 1px, 1px);
     height: 1px;
