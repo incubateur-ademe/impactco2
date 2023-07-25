@@ -70,6 +70,18 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 
 const SkipLinks = styled.div`
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
   .fr-skiplinks {
     background-color: whitesmoke;
     height: 0;
