@@ -11,7 +11,7 @@ export default function Default() {
       <Section2>
         <Section2.InnerMargin>
           <RulesProviderLivraison>
-            <main id="main">
+            <main id="contenu">
               <IntroLivraison />
               <CalculateurLivraison />
             </main>

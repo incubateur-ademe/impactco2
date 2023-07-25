@@ -24,7 +24,7 @@ export default function Menu2() {
   const slugs = router.asPath.split("/").filter((slug) => slug);
 
   return (
-    <nav aria-label="Menu principal">
+    <nav aria-label="Menu principal" id="header-navigation">
       <Wrapper>
         <Dropdown
           label={"Catégories"}
