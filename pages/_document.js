@@ -24,32 +24,6 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="fr">
-        <div class="fr-skiplinks">
-          <nav class="fr-container" role="navigation" aria-label="Accès rapide">
-            <ul class="fr-skiplinks__list">
-              <li>
-                <a class="fr-link" href="#contenu">
-                  Contenu
-                </a>
-              </li>
-              <li>
-                <a class="fr-link" href="#header-navigation">
-                  Menu
-                </a>
-              </li>
-              <li>
-                <a class="fr-link" href="#header-search">
-                  Recherche
-                </a>
-              </li>
-              <li>
-                <a class="fr-link" href="#footer">
-                  Pied de page
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
         <Head>
           <link rel="preload" href="/fonts/Marianne-Light.woff2" as="font" type="font/woff" crossOrigin="" />
           <link rel="preload" href="/fonts/Marianne-ExtraBold.woff2" as="font" type="font/woff" crossOrigin="" />
