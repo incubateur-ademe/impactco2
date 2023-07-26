@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.14.7 (26/07/2023)
+
+* BSR - inversion des logos lors du téléchargement
+
 ## 1.14.6 (25/07/2023)
 
 * A3 - Liens d'accès rapide (a11y)
