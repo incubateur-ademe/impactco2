@@ -9,31 +9,34 @@ export default function Signature() {
   return (
     <>
       <OutsideGrid>
-        <StyledLogo />
+        <FirstWrapper>
+          <Ademe />
+          <Marianne />
+        </FirstWrapper>
         <MiddleWrapper>
           <MagicLink to="https://impactco2.fr" noIcon>
             impactco2.fr
           </MagicLink>
         </MiddleWrapper>
-        <LastWrapper>
-          <Ademe />
-          <Marianne />
-        </LastWrapper>
+        <StyledLogo />
       </OutsideGrid>
     </>
   );
 }
 
-const StyledLogo = styled(Logo)``;
+const StyledLogo = styled(Logo)`
+  display: flex;
+  justify-content: flex-end;
+`;
 
 const OutsideGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 `;
 
-const LastWrapper = styled.div`
+const FirstWrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 `;
 
 const MiddleWrapper = styled.div`
