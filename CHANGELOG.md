@@ -4,7 +4,8 @@
 
 ## 1.14.7 (26/07/2023)
 
-* BSR - inversion des logos lors du téléchargement
+* A12a - inversion des logos lors du téléchargement
+* A12b - bug lors du passage vers usagenumerique
 
 ## 1.14.6 (25/07/2023)
 
