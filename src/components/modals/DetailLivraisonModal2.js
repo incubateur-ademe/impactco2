@@ -152,7 +152,7 @@ export default function DetailLivraisonModal2() {
       </details>
       <H3Title>Pour aller plus loin</H3Title>
       <InboundLink href="/livraison/documentation" title="Afficher le détail du calcul">
-        Voir de détail du calcul
+        Consultez notre documentation
       </InboundLink>
     </Modal2>
   );
