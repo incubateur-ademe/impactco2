@@ -173,7 +173,7 @@
     "tile": true,
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
-      "title": "Poids CO₂e d'une voiture thermique",
+      "title": "Voiture thermique",
       "description": "Connaître l'empreinte écologique d'un trajet avec une voiture à moteur thermique par rapport aux autres moyens de transport"
     }
   },
