@@ -12,7 +12,7 @@ export default function Documentation() {
   return (
     <RulePage
       engine={engine}
-      documentationPath="/documentation"
+      documentationPath="/livraison/documentation"
       rulePath={slug.join("/")}
       language="fr"
       renderers={{
