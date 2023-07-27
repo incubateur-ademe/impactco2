@@ -52,7 +52,7 @@
     "unit": "m2",
     "include": "par m2 par année.",
     "meta": {
-      "title": "Poids en CO₂e d'une année de chauffage",
+      "title": "Chauffage",
       "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée "
     }
   },
