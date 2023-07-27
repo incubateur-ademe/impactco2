@@ -98,21 +98,4 @@ const SkipLinks = styled.div`
     position: absolute;
     width: auto;
   }
-
-  .screenreader-text {
-    position: absolute;
-    left: -999px;
-    width: 1px;
-    height: 1px;
-    top: auto;
-  }
-
-  .screenreader-text:focus {
-    color: black;
-    display: inline-block;
-    height: auto;
-    margin: auto;
-    position: static;
-    width: auto;
-  }
 `;
