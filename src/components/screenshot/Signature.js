@@ -10,8 +10,8 @@ export default function Signature() {
     <>
       <OutsideGrid>
         <FirstWrapper>
-          <Ademe />
           <Marianne />
+          <Ademe />
         </FirstWrapper>
         <MiddleWrapper>
           <MagicLink to="https://impactco2.fr" noIcon>
@@ -37,6 +37,7 @@ const OutsideGrid = styled.div`
 const FirstWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
+  margin-left: 1.25rem;
 `;
 
 const MiddleWrapper = styled.div`
