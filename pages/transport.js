@@ -1,18 +1,17 @@
-import categories from 'data/categories.json'
-import React from 'react'
-
-import Web from 'components/layout/Web'
-import Learning from 'components/misc/Learning'
-import Distance from 'components/transport/Distance'
-import { TransportProvider } from 'components/transport/TransportProvider'
+import Web from "components/layout/Web";
+import Learning from "components/misc/Learning";
+import Distance from "components/transport/Distance";
+import { TransportProvider } from "components/transport/TransportProvider";
+import categories from "data/categories.json";
+import React from "react";
 
 export default function Transport(props) {
   return (
     <Web
-      title={props.category.meta.title}
+      title={props.category.name} // ?seo
       description={props.category.meta.description}
       breadcrumb={{
-        type: 'equivalent',
+        type: "equivalent",
         category: props.category,
       }}
     >
@@ -21,12 +20,12 @@ export default function Transport(props) {
         <Learning category={props.category} />
       </TransportProvider>
     </Web>
-  )
+  );
 }
 export async function getStaticProps() {
   return {
     props: {
       category: categories.find((item) => item.id === 4),
     },
-  }
+  };
 }
