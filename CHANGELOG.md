@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.14.8 (27/07/2023)
+
+* A12c - inversion des logos RF et Ademe
+
 ## 1.14.7 (26/07/2023)
 
 * A12a - inversion des logos lors du téléchargement
