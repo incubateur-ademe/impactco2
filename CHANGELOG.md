@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.15.0 (27/07/2023)
+
+* U25 - Documentation publicode
+
 ## 1.14.9 (27/07/2023)
 
 * A6 - titre des pages
