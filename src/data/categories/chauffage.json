@@ -12,7 +12,7 @@
     "tile": false,
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=gaz",
     "meta": {
-      "title": "Un an de chauffage au gaz en maison",
+      "title": "Chauffage au gaz",
       "description": "Découvrez à quoi correspond une année de chauffage au gaz dans une maison en kgCO₂e émis (CO₂e)"
     },
     "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
@@ -84,7 +84,7 @@
     "tile": false,
     "source": " https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Electricite_reglementaire",
     "meta": {
-      "title": "Impact d'une année de chauffage maison",
+      "title": "Chauffage électrique",
       "description": "Découvrez à quoi correspond une année de chauffage électrique dans une maison en kgCO₂e émis (CO₂e)"
     },
     "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
