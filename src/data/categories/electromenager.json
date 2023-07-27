@@ -30,7 +30,7 @@
     "default": false,
     "tile": false,
     "meta": {
-      "title": "Impact sur le climat d'une bouilloire",
+      "title": "Bouilloire",
       "description": "Avec Impact CO2, découvrez l'impact sur le climat d'une bouilloire, avec son poids en CO₂e comprenant sa fabrication et sa distribution."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -68,7 +68,7 @@
     "default": false,
     "tile": false,
     "meta": {
-      "title": "Poids CO₂e d'une cafetière à dosettes",
+      "title": "Cafetière à dosettes",
       "description": "Saviez-vous que votre cafetière à dosettes a un impact écologique ? Impact CO2 vous indique l'empreinte carbone de votre appareil"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -105,7 +105,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Poids CO₂e d'une cafetière à filtres",
+      "title": "Cafetière à filtres",
       "description": "Saviez-vous que votre cafetière à filtres a un impact écologique ? Impact CO2 vous indique l'empreinte carbone de votre appareil"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -143,7 +143,7 @@
     "default": false,
     "tile": false,
     "meta": {
-      "title": "Poids CO₂e d'une cafetière expresso",
+      "title": "Cafetière expresso",
       "description": "Comparer la valeur d'émission en CO₂e de votre cafetière par rapport à d'autres actions du quotidien."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -180,7 +180,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "L'empreinte carbone d'un four électrique",
+      "title": "Four électrique",
       "description": "Découvrez l'impact écologique, exprimé en kgCO₂e, de votre four électrique, de la fabrication à l'utlisation"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -216,7 +216,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "L'empreinte carbone d'un lave-vaisselle",
+      "title": "Lave-vaisselle",
       "description": "Quelle est l'empreinte carbone pour la fabrication d'un lave-vaisselle ? Maintenant grâce à Impact CO2, vous allez pouvoir le savoir !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -289,7 +289,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Poids CO₂e d'un réfrigérateur",
+      "title": "Réfrigérateur",
       "description": "La fabrication et la distribution d'une réfrigérateur a un impact sur le climat. Découvrez son poids en CO₂e et son équivalence avec d'autres produits."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -303,7 +303,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Impact sur le climat d'un aspirateur",
+      "title": "Aspirateur",
       "description": "Découvrez la valeurs exprimée en kg CO₂e émis par un aspirateur comprenant la fabrication et la distribution."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -340,7 +340,7 @@
     "default": false,
     "tile": false,
     "meta": {
-      "title": "Empreinte carbone d'un climatiseur",
+      "title": "Climatiseur",
       "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre climatiseur ? Impact CO2 vous dit tout !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
