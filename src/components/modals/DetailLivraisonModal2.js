@@ -1,3 +1,4 @@
+import InboundLink from "components/base/InboundLink";
 import MagicLink from "components/base/MagicLink";
 import Modal2 from "components/base/Modal2";
 import ModalContext from "components/providers/ModalProvider";
@@ -5,6 +6,11 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 const Title = styled.h2``;
+
+const H3Title = styled.h3`
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+`;
 
 const DetailsTitle = styled.h4`
   cursor: pointer;
@@ -26,7 +32,7 @@ export default function DetailLivraisonModal2() {
         à destination des professionels du E-commerce. L'outil ECEL à l'origine des calculs de cette étude a été adapté
         au contexte des particuliers sous forme de simulateur.
       </p>
-      <h3>Les différents type de produits</h3>
+      <H3Title>Les différents type de produits</H3Title>
       <p>
         L'<b>habillement</b> correspond à un produit textile qui va de la paire de chaussures, au manteau en passant par
         le t-shirt. Par défaut, nous considérons une <b>boite à chaussures</b>. Les <b>produits culturels</b>{" "}
@@ -35,7 +41,7 @@ export default function DetailLivraisonModal2() {
         défaut, nous considérons un <b>lave-vaisselle</b>.Pour <b>les produits de grande consommation</b>, nous avons
         considéré un carton de <b>produits secs de supermarchés</b>.
       </p>
-      <h3>Les scénarios de livraison</h3>
+      <H3Title>Les scénarios de livraison</H3Title>
       <p>
         Dans cette première version, 3 scénarios sont proposés: la livraison{" "}
         <b> à domicile, en point relais ou en click & collect</b>, tous adaptables à l'option{" "}
@@ -49,7 +55,7 @@ export default function DetailLivraisonModal2() {
         nous avons fait l'hypothèse que le colis arrive <b>par avion depuis la Chine</b> via une étape de transport
         supplémentaire (9000km parcourus par avion, mix électrique de l'entrepôt de départ adapté).{" "}
       </p>
-      <h3>Des informations supplémentaires sur les paramètres...</h3>
+      <H3Title>Des informations supplémentaires sur les paramètres...</H3Title>
       <p>
         Pour le processus de <b>commande en ligne</b>, le type de produit impacte le temps de recherche web et donc
         l'empreinte de l'utilisation du terminal pour effectuer effectuer l'achat. On conserve donc une valeur unique
@@ -67,7 +73,7 @@ export default function DetailLivraisonModal2() {
         poids lourd moyen (type 44 tonnes) tandis que pour les derniers kilomètres de livraison, nous avons considéré un
         véhicule utilisaire léger.{" "}
       </p>
-      <h3>Le détails des processus</h3>
+      <H3Title>Le détails des processus</H3Title>
       <details>
         <summary>
           <DetailsTitle>Livraison à domicile</DetailsTitle>
@@ -144,6 +150,10 @@ export default function DetailLivraisonModal2() {
           <li>Déplacement consommateur</li>
         </ul>
       </details>
+      <H3Title>Pour aller plus loin</H3Title>
+      <InboundLink href="/livraison/documentation" title="Afficher le détail du calcul">
+        Voir de détail du calcul
+      </InboundLink>
     </Modal2>
   );
 }
