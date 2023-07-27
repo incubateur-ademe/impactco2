@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.14.9 (27/07/2023)
+
+* A6 - titres HTML
+
 ## 1.14.8 (27/07/2023)
 
 * A12c - inversion des logos RF et Ademe
