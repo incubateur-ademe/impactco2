@@ -5,7 +5,7 @@ import categories from "data/categories.json";
 import React from "react";
 import { getMonth, slugs } from "utils/months";
 
-export default function Transport(props) {
+export default function Fruitsetlegumes(props) {
   const date = new Date();
   const month = {
     slug: slugs[date.getMonth()],
@@ -15,7 +15,7 @@ export default function Transport(props) {
 
   return (
     <Web
-      title={"Fruits et légumes"}
+      title={props.category.name}
       description={props.category.meta.description}
       breadcrumb={{
         type: "equivalent",
