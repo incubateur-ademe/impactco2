@@ -48,7 +48,7 @@
     "tile": false,
     "source": " https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=New_liquides",
     "meta": {
-      "title": "Un an de chauffage au fioul en maison",
+      "title": "Chauffage au fioul",
       "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul pour une maison"
     },
     "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
