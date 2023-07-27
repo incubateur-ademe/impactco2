@@ -14,7 +14,7 @@
     "include": "",
     "list": true,
     "meta": {
-      "title": "Poids en CO₂e des usages numériques",
+      "title": "Usage numérique",
       "description": "Comparez l'impact écologique en CO₂e des emails, de la visioconférence, du streaming, etc."
     }
   },
@@ -34,7 +34,7 @@
     "include": "",
     "list": true,
     "meta": {
-      "title": "Impact Carbone de la livraison de colis",
+      "title": "Livraison",
       "description": "Découvrez l’impact carbone de la livraison d’un colis sur le climat et les conseils pour la réduire"
     }
   },
@@ -52,7 +52,7 @@
     "unit": "m2",
     "include": "par m2 par année.",
     "meta": {
-      "title": "Poids en CO₂e d'une année de chauffage",
+      "title": "Chauffage",
       "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée "
     }
   },
@@ -69,7 +69,7 @@
     "unit": "km",
     "include": "par personne en France. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
     "meta": {
-      "title": "Empreinte carbone de vos déplacements",
+      "title": "Transport",
       "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO2 vous connaitrez votre impact sur le climat"
     }
   },
@@ -86,7 +86,7 @@
     "unit": "kg",
     "include": "par kg de produit pour des fruits et légumes de saison",
     "meta": {
-      "title": "Poids en CO₂e des fruits et légumes",
+      "title": "Fruits et légumes",
       "description": "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison"
     }
   },
@@ -104,7 +104,7 @@
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
-      "title": "Empreinte carbone objets numériques",
+      "title": "Numérique",
       "description": "Le secteur du numérique représente 2,5% des émissions carbone en France. Comment réduire son impact numérique et agir pour le climat à son échelle ?"
     }
   },
@@ -122,7 +122,7 @@
     "unit": "repas",
     "include": "par repas comprenant la fabrication, la distribution et la consommation.",
     "meta": {
-      "title": "Empreinte carbone d'un repas",
+      "title": "Repas",
       "description": "Repas végétalien, végétarien, avec du boeuf, avec du poulet, avec du poisson gras, ou avec du poisson blanc... Découvrez leur valeur en CO₂e"
     }
   },
@@ -140,7 +140,7 @@
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
-      "title": "L'empreinte carbone de vos habits",
+      "title": "Habillement",
       "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
     }
   },
@@ -159,7 +159,7 @@
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
-      "title": "Quel empreinte carbone a le mobilier ?",
+      "title": "Mobilier",
       "description": "Le mobilier a un impact sur le climat ! Découvrez le poids en CO₂e de votre mobilier : chaise, table, canapé, lit, armoire..."
     }
   },
@@ -177,7 +177,7 @@
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
-      "title": "L'empreinte carbone de l'électroménager",
+      "title": "Électroménager",
       "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Impact CO2 vous indique le poids CO₂e de chaque appareil !"
     }
   },
@@ -195,7 +195,7 @@
     "unit": "litre",
     "include": "par litre de produit comprenant la fabrication, la distribution et la consommation.",
     "meta": {
-      "title": "L'empreinte carbone de nos boissons",
+      "title": "Boisson",
       "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
     }
   },
@@ -209,7 +209,7 @@
     "unit": "unité",
     "include": "par unité.",
     "meta": {
-      "title": "",
+      "title": "Divers",
       "description": ""
     }
   }
