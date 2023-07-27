@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <Web>
+    <Web title={"Accueil"}>
       <Heading />
       <Visualization />
       <Tiles background title />
