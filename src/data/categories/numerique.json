@@ -68,7 +68,7 @@
     "default": true,
     "tile": true,
     "meta": {
-      "title": "Impact climat d'un smartphone",
+      "title": "Smartphone",
       "description": "Découvrez le détail de l'empreinte carbone d'un smartphone : impact de ses matières premières, de son assemblage, son approvisionnement..."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -408,7 +408,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Poids CO₂e d'une télévision",
+      "title": "Télévision",
       "description": "Quel est l'empreinte carbone d'une télévision 40-49 pouces ? Découvrez son poids carbone et son équivalence avec des ordinateurs et smartphones"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -445,7 +445,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Poids CO₂e d'un ordinateur portable",
+      "title": "Ordinateur portable",
       "description": "Quel est l'empreinte carbone d'un ordinateur portable ? Découvrez son poids en CO₂e et mesurez ainsi votre impact sur le climat"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -483,7 +483,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Poids CO₂e ordinateur fixe avec écran",
+      "title": "Ordinateur fixe",
       "description": "Quel est l'empreinte carbone d'un ordinateur fixe avec écran ? Impact CO2 vous permet de mesurer votre impact sur le climat !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -521,7 +521,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Impact climat d'une montre connectée",
+      "title": "Montre connectée",
       "description": "Découvrez l'impact sur le climat d'une montre connectée et comparez son poids CO₂e à d'autres produits comme un ordinateur, un smartphone..."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -738,7 +738,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Impact climat d'une console de salon",
+      "title": "Console de salon",
       "description": "Saviez-vous que l'achat et l'utilisation d'une console de salon avait un impact sur le climat ? Découvrez son poids en CO₂e et les détails de son empreinte"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
@@ -889,7 +889,7 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Empreinte carbone d'une imprimante",
+      "title": "Imprimante",
       "description": "Quelles sont les émissions CO₂e d'une imprimante et à quoi correspondent-elles ? Découvrez ces informations avec Impact CO2"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"

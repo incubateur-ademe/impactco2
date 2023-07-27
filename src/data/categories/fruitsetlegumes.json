@@ -40,7 +40,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13014_1#Fraise_de_saison,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une fraise",
+      "title": "Fraise",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de fraises : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -91,7 +91,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une pomme",
+      "title": "Pomme",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de pommes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -136,7 +136,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13034#Orange,_pulpe,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une orange",
+      "title": "Orange",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'oranges : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -180,7 +180,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13009",
     "meta": {
-      "title": "Empreinte carbone d'un citron",
+      "title": "Citron",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de citrons : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -228,7 +228,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/11000",
     "meta": {
-      "title": "Empreinte carbone d'un kg d'ail",
+      "title": "Ail",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'ail : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -275,7 +275,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20052",
     "meta": {
-      "title": "Empreinte carbone d'un artichaut",
+      "title": "Artichaut",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'artichaut : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -320,7 +320,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20279",
     "meta": {
-      "title": "Empreinte carbone d'une asperge",
+      "title": "Asperge",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'asperge : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -368,7 +368,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20091",
     "meta": {
-      "title": "Empreinte carbone d'une betterave",
+      "title": "Betterave",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de betterave : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -416,7 +416,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20004",
     "meta": {
-      "title": "Empreinte carbone d'une blette",
+      "title": "Blette",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de blette : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -465,7 +465,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20009",
     "meta": {
-      "title": "Empreinte carbone d'une carotte",
+      "title": "Carotte",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de carottes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -513,7 +513,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un celeri",
+      "title": "Celeri",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de celeris : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -567,7 +567,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue",
     "meta": {
-      "title": "Empreinte carbone d'un kg de champignons de paris",
+      "title": "Kg de champignons de paris",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de champignons de paris : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -615,7 +615,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un chou",
+      "title": "Chou",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -663,7 +663,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un chou",
+      "title": "Chou",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -712,7 +712,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un chou",
+      "title": "Chou",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -760,7 +760,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un concombre",
+      "title": "Concombre",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de concombres : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -807,7 +807,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une courge",
+      "title": "Courge",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de courges : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -855,7 +855,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une courgette",
+      "title": "Courgette",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de courgettes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -909,7 +909,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20199",
     "meta": {
-      "title": "Empreinte carbone d'un cresson",
+      "title": "Cresson",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de cressons : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -954,7 +954,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une echalote",
+      "title": "Echalote",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'echalotes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1002,7 +1002,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une endive",
+      "title": "Endive",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'endives : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1053,7 +1053,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20059",
     "meta": {
-      "title": "Empreinte carbone d'un epinard",
+      "title": "Epinard",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'epinards : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1108,7 +1108,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une mangue",
+      "title": "Mangue",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de mangues : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1157,7 +1157,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un fenouil",
+      "title": "Fenouil",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de fenouils : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1205,7 +1205,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20061_2#Haricot_vert,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un kg d'haricot vert importé par avion, cru",
+      "title": "Kg d'haricot vert importé par avion, cru",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert importé par avion : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1252,7 +1252,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une laitue",
+      "title": "Laitue",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de laitues : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1299,7 +1299,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue",
     "meta": {
-      "title": "Empreinte carbone d'un kg de mache",
+      "title": "Kg de mache",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de maches : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1349,7 +1349,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un navet",
+      "title": "Navet",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de navets : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1394,7 +1394,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un kg de mais",
+      "title": "Kg de mais",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de maiss : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1444,7 +1444,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un oignon",
+      "title": "Oignon",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de oignons : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1492,7 +1492,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un panais",
+      "title": "Panais",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de panais : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1532,7 +1532,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus",
     "meta": {
-      "title": "Empreinte carbone d'un kg de petit pois",
+      "title": "Kg de petit pois",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de petit pois : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1582,7 +1582,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un poireau",
+      "title": "Poireau",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de poireau : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1628,7 +1628,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un poivron",
+      "title": "Poivron",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de poivrons : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1675,7 +1675,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un potiron",
+      "title": "Potiron",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de potirons : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1721,7 +1721,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un radis",
+      "title": "Radis",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de radis : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1768,7 +1768,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un salsifis",
+      "title": "Salsifis",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de salsifis : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1814,7 +1814,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un topinambour",
+      "title": "Topinambour",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de topinambours : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1859,7 +1859,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un kg de cassis",
+      "title": "Kg de cassis",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de cassis : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1903,7 +1903,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une chataigne",
+      "title": "Chataigne",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de chataignes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1949,7 +1949,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une clementine",
+      "title": "Clementine",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de clementines : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -1997,7 +1997,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un pamplemousse",
+      "title": "Pamplemousse",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de pamplemousses : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2040,7 +2040,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un coing",
+      "title": "Coing",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de coings : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2086,7 +2086,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une figue",
+      "title": "Figue",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de figues : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2131,7 +2131,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue",
     "meta": {
-      "title": "Empreinte carbone d'un kg de groseille",
+      "title": "Kg de groseille",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de groseilles : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2183,7 +2183,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un kiwi",
+      "title": "Kiwi",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de kiwis : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2229,7 +2229,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une mandarine",
+      "title": "Mandarine",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de mandarines : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2275,7 +2275,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru",
     "meta": {
-      "title": "Empreinte carbone d'une melon",
+      "title": "Melon",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de melons : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2319,7 +2319,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue",
     "meta": {
-      "title": "Empreinte carbone d'un kg de mure",
+      "title": "Kg de mure",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de mures : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2363,7 +2363,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une nectarine",
+      "title": "Nectarine",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de nectarines : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2408,7 +2408,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue",
     "meta": {
-      "title": "Empreinte carbone d'un kg de myrtille",
+      "title": "Kg de myrtille",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de myrtilles : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2453,7 +2453,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15004#Noisette",
     "meta": {
-      "title": "Empreinte carbone d'un kg de noisette",
+      "title": "Kg de noisette",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de noisette : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2502,7 +2502,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche",
     "meta": {
-      "title": "Empreinte carbone d'un kg de noix",
+      "title": "Kg de noix",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de noix : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2547,7 +2547,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une prune",
+      "title": "Prune",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de prunes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2590,7 +2590,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une reine-claude",
+      "title": "Reine-claude",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de reine-claudes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2635,7 +2635,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une rhubarbe",
+      "title": "Rhubarbe",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de rhubarbes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2681,7 +2681,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une peche",
+      "title": "Peche",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de peches : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2730,7 +2730,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une cerise",
+      "title": "Cerise",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de cerises : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2780,7 +2780,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un abricot",
+      "title": "Abricot",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de abricots : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2825,7 +2825,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une framboise",
+      "title": "Framboise",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de framboises : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2875,7 +2875,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une poire",
+      "title": "Poire",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de poires : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2919,7 +2919,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un kg de raisin",
+      "title": "Kg de raisin",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de raisin : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -2965,7 +2965,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une aubergine",
+      "title": "Aubergine",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de aubergines : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3010,7 +3010,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un brocoli",
+      "title": "Brocoli",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de brocolis : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3056,7 +3056,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20047_1#Tomate_de_saison,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une tomate",
+      "title": "Tomate",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de tomates : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3110,7 +3110,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine ",
     "meta": {
-      "title": "Empreinte carbone d'un ananas",
+      "title": "Ananas",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de ananas : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3169,7 +3169,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une banane",
+      "title": "Banane",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de bananes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3223,7 +3223,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un avocat",
+      "title": "Avocat",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de avocats : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3268,7 +3268,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une carambole",
+      "title": "Carambole",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de caramboles : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3314,7 +3314,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che",
     "meta": {
-      "title": "Empreinte carbone d'une datte",
+      "title": "Datte",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de dattes : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3368,7 +3368,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru",
     "meta": {
-      "title": "Empreinte carbone d'un fruit de la passion",
+      "title": "Fruit de la passion",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de fruit de la passion : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3414,7 +3414,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une grenade",
+      "title": "Grenade",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de grenades : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3460,7 +3460,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru",
     "meta": {
-      "title": "Empreinte carbone d'une kaki",
+      "title": "Kaki",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de kakis : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3511,7 +3511,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche",
     "meta": {
-      "title": "Empreinte carbone d'une noix de coco",
+      "title": "Noix de coco",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de noix de coco : de l'agriculture à la distribution et la consommation"
     }
   },
@@ -3557,7 +3557,7 @@
     ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue",
     "meta": {
-      "title": "Empreinte carbone d'une pasteque",
+      "title": "Pasteque",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de pasteques : de l'agriculture à la distribution et la consommation"
     }
   }

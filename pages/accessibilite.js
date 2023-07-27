@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export default function Accessibilite() {
   return (
-    <Web>
+    <Web title={"Accessibilité"}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
