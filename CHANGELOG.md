@@ -4,7 +4,7 @@
 
 ## 1.15.0 (28/07/2023)
 
-* U26 - matomo custom event
+* U24 - matomo custom event
 
 ## 1.14.9 (27/07/2023)
 
