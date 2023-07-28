@@ -79,6 +79,11 @@ export default function CalculateurLivraison() {
     takeScreenshot(evt);
   };
 
+  const integrerClicked = () => {
+    window?._paq?.push(["trackEvent", "Interaction", "Integrate", "impact_livraison"]);
+    setIfl(true);
+  };
+
   return (
     <>
       <Section2>
@@ -96,7 +101,7 @@ export default function CalculateurLivraison() {
                   </svg>
                   &nbsp;Partager
                 </ButtonChange>
-                <ButtonChange onClick={() => setIfl(true)} className="noscreenshot">
+                <ButtonChange onClick={integrerClicked} className="noscreenshot">
                   <svg
                     width="16px"
                     aria-hidden="true"
