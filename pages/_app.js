@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
 
   const wrapper = (fn) => {
     function wrappedFunction() {
+      console.log("arguments-- ", arguments);
       if (arguments[0]) {
         console.info(`Event emitted : ${arguments[0]}`);
       }
@@ -26,7 +27,7 @@ function MyApp({ Component, pageProps }) {
   };
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
+    if (process?.env?.NODE_ENV === "production") {
       init({ url: "https://stats.data.gouv.fr", siteId: 156 });
     }
     hotjar.initialize(3372162, 6);
