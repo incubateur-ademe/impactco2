@@ -16,12 +16,13 @@ function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient());
 
   const wrapper = (fn) => {
-    return function () {
+    function wrappedFunction() {
       if (arguments[0]) {
         console.info(`Event emitted : ${arguments[0]}`);
       }
-      return fn();
-    };
+      return fn(...arguments);
+    }
+    return wrappedFunction;
   };
 
   useEffect(() => {
@@ -33,7 +34,11 @@ function MyApp({ Component, pageProps }) {
     if (typeof window !== "undefined") {
       if (typeof window._paq === "undefined") {
         console.log("Redefining window._paq...");
-        window._paq = { push: () => {} };
+        window._paq = {
+          push: () => {
+            console.log("fake _paq called! ");
+          },
+        };
       } else {
         console.log("window._paq already given...");
       }
