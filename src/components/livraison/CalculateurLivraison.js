@@ -64,8 +64,8 @@ export default function CalculateurLivraison() {
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
   const changeRetrait = (retrait) => {
+    window?._paq?.push(["trackEvent", "Interaction", "Select", `retrait_${retrait.uid}`]);
     setPoint(retrait.uid === "click" ? "magasin" : retrait.uid === "relais" ? "point relais" : "");
-    console.log("retrait.uid", retrait.uid);
     setValues({ ...values, retrait: retrait.uid });
   };
   const changeRelay = (relay) => setValues({ ...values, relay: relay.uid });
