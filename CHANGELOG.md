@@ -5,6 +5,7 @@
 ## 1.15.0 (28/07/2023)
 
 * U24 - matomo custom event
+* BSR - chgt lien calendrier fruits et légumes
 
 ## 1.14.9 (27/07/2023)
 
