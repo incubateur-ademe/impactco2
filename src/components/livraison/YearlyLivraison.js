@@ -12,6 +12,7 @@ export default function YearlyLivraison(props) {
   const [uid, setUid] = useState(defaultFrequence.uid);
 
   const changeFrequence = (e) => {
+    window?.please?.track(["trackEvent", "Interaction", "Select", `Frequency_${e.uid}`]);
     setMultiplicator(e.mult);
     setBaseNumber(e.baseNumber);
     setBaseText(e.baseText);

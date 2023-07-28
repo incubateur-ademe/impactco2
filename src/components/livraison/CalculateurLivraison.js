@@ -64,8 +64,8 @@ export default function CalculateurLivraison() {
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
   const changeRetrait = (retrait) => {
+    window?.please?.track(["trackEvent", "Interaction", "Select", `retrait_${retrait.uid}`]);
     setPoint(retrait.uid === "click" ? "magasin" : retrait.uid === "relais" ? "point relais" : "");
-    console.log("retrait.uid", retrait.uid);
     setValues({ ...values, retrait: retrait.uid });
   };
   const changeRelay = (relay) => setValues({ ...values, relay: relay.uid });
@@ -73,6 +73,21 @@ export default function CalculateurLivraison() {
   const changeKm = (km) => setValues({ ...values, km: km });
 
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison", "jpg");
+
+  const integrerClicked = () => {
+    window?.please?.track(["trackEvent", "Interaction", "Integrate", "impact_livraison_integrate"]);
+    setIfl(true);
+  };
+
+  const habitClicked = () => {
+    window?.please?.track(["trackEvent", "Interaction", "Toggle", "impact_livraison_habit"]);
+    setIsHabit(!isHabit);
+  };
+
+  const farawayClicked = () => {
+    window?.please?.track(["trackEvent", "Interaction", "Toggle", "impact_livraison_faraway"]);
+    setIsPlane(!isPlane);
+  };
 
   return (
     <>
@@ -91,7 +106,7 @@ export default function CalculateurLivraison() {
                   </svg>
                   &nbsp;Partager
                 </ButtonChange>
-                <ButtonChange onClick={() => setIfl(true)} className="noscreenshot">
+                <ButtonChange onClick={integrerClicked} className="noscreenshot">
                   <svg
                     width="16px"
                     aria-hidden="true"
@@ -136,7 +151,7 @@ export default function CalculateurLivraison() {
                     <Switch
                       className="toggle"
                       checked={isHabit}
-                      onChange={() => setIsHabit(!isHabit)}
+                      onChange={habitClicked}
                       offColor={"#fff"}
                       onColor={themes.default.colors.main2}
                       aria-label="Changer de thème"
@@ -177,7 +192,7 @@ export default function CalculateurLivraison() {
                     <Switch
                       className="toggle"
                       checked={isPlane}
-                      onChange={() => setIsPlane(!isPlane)}
+                      onChange={farawayClicked}
                       offColor={"#fff"}
                       onColor={themes.default.colors.main2}
                       aria-label="Changer de thème"

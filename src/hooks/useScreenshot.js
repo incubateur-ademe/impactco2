@@ -32,7 +32,7 @@ export default function useScreenshot(slug, format = "png") {
           console.log(err);
         });
     }, 20);
-    window?._paq?.push(["trackEvent", "Interaction", "Screenshot", slug]);
+    window?.please?.track(["trackEvent", "Interaction", "Screenshot", slug]);
   };
 
   return { ref, takeScreenshot, isScreenshotting };

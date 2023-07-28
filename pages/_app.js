@@ -16,10 +16,18 @@ function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient());
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
+    if (process?.env?.NODE_ENV === "production") {
       init({ url: "https://stats.data.gouv.fr", siteId: 156 });
     }
     hotjar.initialize(3372162, 6);
+
+    if (typeof window !== "undefined" && typeof window.please === "undefined") {
+      window.please = {};
+      window.please.track = function (ary) {
+        console.log(`Event emitted : ${ary}`);
+        window?._paq?.push(ary);
+      };
+    }
   }, []);
 
   return (

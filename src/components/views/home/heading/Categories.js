@@ -1,21 +1,19 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
-
-import DataContext from 'components/providers/DataProvider'
-
-import Button from 'components/base/Button'
-import Emoji from 'components/base/Emoji'
+import Button from "components/base/Button";
+import Emoji from "components/base/Emoji";
+import DataContext from "components/providers/DataProvider";
+import React, { useContext } from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   margin: 0 auto 2rem;
   max-width: 40rem;
-`
+`;
 const Text = styled.p`
   font-weight: 300;
   text-align: center;
-`
+`;
 export default function Categories() {
-  const { categories } = useContext(DataContext)
+  const { categories } = useContext(DataContext);
   return (
     <Wrapper>
       <Text>En panne d’inspiration ? Naviguez par catégories :</Text>
@@ -27,14 +25,7 @@ export default function Categories() {
               key={category.slug}
               to={`/${category.slug}`}
               small
-              onClick={() =>
-                window?._paq?.push([
-                  'trackEvent',
-                  'Interaction',
-                  'Suggestion',
-                  category.name,
-                ])
-              }
+              onClick={() => window?.please?.track(["trackEvent", "Interaction", "Suggestion", category.name])}
             >
               <Emoji>{category.emoji}</Emoji>
               {category.name}
@@ -42,5 +33,5 @@ export default function Categories() {
           ))}
       </Button.Wrapper>
     </Wrapper>
-  )
+  );
 }
