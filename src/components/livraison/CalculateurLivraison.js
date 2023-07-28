@@ -64,7 +64,7 @@ export default function CalculateurLivraison() {
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
   const changeRetrait = (retrait) => {
-    window?._paq?.push(["trackEvent", "Interaction", "Select", `retrait_${retrait.uid}`]);
+    window?.please?.track(["trackEvent", "Interaction", "Select", `retrait_${retrait.uid}`]);
     setPoint(retrait.uid === "click" ? "magasin" : retrait.uid === "relais" ? "point relais" : "");
     setValues({ ...values, retrait: retrait.uid });
   };
@@ -75,17 +75,17 @@ export default function CalculateurLivraison() {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison", "jpg");
 
   const integrerClicked = () => {
-    window?._paq?.push(["trackEvent", "Interaction", "Integrate", "impact_livraison_integrate"]);
+    window?.please?.track(["trackEvent", "Interaction", "Integrate", "impact_livraison_integrate"]);
     setIfl(true);
   };
 
   const habitClicked = () => {
-    window?._paq?.push(["trackEvent", "Interaction", "Toggle", "impact_livraison_habit"]);
+    window?.please?.track(["trackEvent", "Interaction", "Toggle", "impact_livraison_habit"]);
     setIsHabit(!isHabit);
   };
 
   const farawayClicked = () => {
-    window?._paq?.push(["trackEvent", "Interaction", "Toggle", "impact_livraison_faraway"]);
+    window?.please?.track(["trackEvent", "Interaction", "Toggle", "impact_livraison_faraway"]);
     setIsPlane(!isPlane);
   };
 

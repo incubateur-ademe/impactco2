@@ -14,7 +14,7 @@ export default function SelectProduits(props) {
     <>
       <StyledSelect
         onChange={(e) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Select", `Products_${e.value}`]);
+          window?.please?.track(["trackEvent", "Interaction", "Select", `Products_${e.value}`]);
           props.changeProduit(produits.find((produit) => produit.uid === e.value));
         }}
         value={props.value}
