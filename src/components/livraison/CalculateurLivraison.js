@@ -89,6 +89,11 @@ export default function CalculateurLivraison() {
     setIsHabit(!isHabit);
   };
 
+  const farawayClicked = () => {
+    window?._paq?.push(["trackEvent", "Interaction", "Toggle", "impact_livraison_faraway"]);
+    setIsPlane(!isPlane);
+  };
+
   return (
     <>
       <Section2>
@@ -192,7 +197,7 @@ export default function CalculateurLivraison() {
                     <Switch
                       className="toggle"
                       checked={isPlane}
-                      onChange={() => setIsPlane(!isPlane)}
+                      onChange={farawayClicked}
                       offColor={"#fff"}
                       onColor={themes.default.colors.main2}
                       aria-label="Changer de thème"
