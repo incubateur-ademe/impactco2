@@ -15,11 +15,25 @@ import { GlobalStyle } from "utils/styles";
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient());
 
+  const wrapper = (fn) => {
+    return function () {
+      if (arguments[0]) {
+        console.info(`Event emitted : ${arguments[0]}`);
+      }
+      return fn();
+    };
+  };
+
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
       init({ url: "https://stats.data.gouv.fr", siteId: 156 });
     }
     hotjar.initialize(3372162, 6);
+
+    if (typeof window !== "undefined") {
+      window._paq ||= { push: () => {} };
+      window._paq.push = wrapper(window?._paq?.push);
+    }
   }, []);
 
   return (
