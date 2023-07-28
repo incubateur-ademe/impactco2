@@ -84,6 +84,11 @@ export default function CalculateurLivraison() {
     setIfl(true);
   };
 
+  const habitClicked = () => {
+    window?._paq?.push(["trackEvent", "Interaction", "Toggle", "impact_livraison_habit"]);
+    setIsHabit(!isHabit);
+  };
+
   return (
     <>
       <Section2>
@@ -146,7 +151,7 @@ export default function CalculateurLivraison() {
                     <Switch
                       className="toggle"
                       checked={isHabit}
-                      onChange={() => setIsHabit(!isHabit)}
+                      onChange={habitClicked}
                       offColor={"#fff"}
                       onColor={themes.default.colors.main2}
                       aria-label="Changer de thème"
