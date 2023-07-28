@@ -31,8 +31,17 @@ function MyApp({ Component, pageProps }) {
     hotjar.initialize(3372162, 6);
 
     if (typeof window !== "undefined") {
-      window._paq ||= { push: () => {} };
-      window._paq.push = wrapper(window?._paq?.push);
+      if (typeof window._paq === "undefined") {
+        console.log("Redefining window._paq...");
+        window._paq = { push: () => {} };
+      }
+      if (window.already_wrapped_paq) {
+        console.log("_paq already wrapped...");
+      } else {
+        console.log("Wrapping _paq...");
+        window.already_wrapped_paq = true;
+        window._paq.push = wrapper(window?._paq?.push);
+      }
     }
   }, []);
 
