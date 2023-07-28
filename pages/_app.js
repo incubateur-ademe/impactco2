@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }) {
       if (window.already_wrapped_paq) {
         console.log("_paq already wrapped...");
       } else {
-        console.log("Wrapping _paq...");
+        console.log("Wrapping _paq.push... " + window._paq.push);
         window.already_wrapped_paq = true;
         window._paq.push = wrapper(window?._paq?.push);
       }
