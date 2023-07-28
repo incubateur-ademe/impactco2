@@ -74,13 +74,8 @@ export default function CalculateurLivraison() {
 
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison", "jpg");
 
-  const downloadClicked = (evt) => {
-    window?._paq?.push(["trackEvent", "Interaction", "Screenshot", "impact_livraison"]);
-    takeScreenshot(evt);
-  };
-
   const integrerClicked = () => {
-    window?._paq?.push(["trackEvent", "Interaction", "Integrate", "impact_livraison"]);
+    window?._paq?.push(["trackEvent", "Interaction", "Integrate", "impact_livraison_integrate"]);
     setIfl(true);
   };
 
@@ -129,7 +124,7 @@ export default function CalculateurLivraison() {
                   </svg>
                   &nbsp;Intégrer le simulateur
                 </ButtonChange>
-                <ButtonChange onClick={downloadClicked} className="noscreenshot">
+                <ButtonChange onClick={takeScreenshot} className="noscreenshot">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
