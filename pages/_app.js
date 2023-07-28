@@ -34,6 +34,8 @@ function MyApp({ Component, pageProps }) {
       if (typeof window._paq === "undefined") {
         console.log("Redefining window._paq...");
         window._paq = { push: () => {} };
+      } else {
+        console.log("window._paq already given...");
       }
       if (window.already_wrapped_paq) {
         console.log("_paq already wrapped...");
