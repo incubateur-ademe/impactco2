@@ -68,7 +68,11 @@ export default function CalculateurLivraison() {
     setPoint(retrait.uid === "click" ? "magasin" : retrait.uid === "relais" ? "point relais" : "");
     setValues({ ...values, retrait: retrait.uid });
   };
-  const changeRelay = (relay) => setValues({ ...values, relay: relay.uid });
+  const changeRelay = (relay) => {
+    window?.please?.track(["trackEvent", "Interaction", "Select", `dernierkm_${relay.uid}`]);
+    setValues({ ...values, relay: relay.uid });
+  };
+
   const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
   const changeKm = (km) => setValues({ ...values, km: km });
 
