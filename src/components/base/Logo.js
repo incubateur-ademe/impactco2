@@ -33,7 +33,6 @@ const Wrapper = styled(MagicLink)`
 `;
 const Path = styled.path`
   fill: ${(props) => props.theme.colors.main};
-  z-index: 1;
 `;
 const Circle = styled.circle`
   fill: ${(props) => props.theme.colors.main};
@@ -56,13 +55,11 @@ const HollowCircle1 = styled.circle`
     transform: rotate(-180deg);
     transition: transform 600ms ease-out, fill 300ms ease-out;
   }
-  z-index: -1;
 `;
 const HollowCircle2 = styled(HollowCircle1)`
   ${Wrapper}:hover & {
     transition: transform 400ms ease-out 300ms, fill 300ms ease-in 200ms;
   }
-  z-index: -1;
 `;
 const Title = styled.div`
   color: ${(props) => props.theme.colors.main};
