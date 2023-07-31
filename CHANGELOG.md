@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.15.2 (31/07/2023)
+
+* A24b - amélioration des métriques
+
 ## 1.15.1 (31/07/2023)
 
 * A12b - crop image téléchargement
