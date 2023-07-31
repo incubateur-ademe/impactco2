@@ -33,6 +33,7 @@ const Wrapper = styled(MagicLink)`
 `;
 const Path = styled.path`
   fill: ${(props) => props.theme.colors.main};
+  z-index: 1;
 `;
 const Circle = styled.circle`
   fill: ${(props) => props.theme.colors.main};
@@ -55,11 +56,13 @@ const HollowCircle1 = styled.circle`
     transform: rotate(-180deg);
     transition: transform 600ms ease-out, fill 300ms ease-out;
   }
+  z-index: -1;
 `;
 const HollowCircle2 = styled(HollowCircle1)`
   ${Wrapper}:hover & {
     transition: transform 400ms ease-out 300ms, fill 300ms ease-in 200ms;
   }
+  z-index: -1;
 `;
 const Title = styled.div`
   color: ${(props) => props.theme.colors.main};
@@ -71,7 +74,13 @@ const Title = styled.div`
 export default function Logo(props) {
   return (
     <Wrapper to="/" className={props.className}>
-      <svg width="333" height="333" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="333"
+        height="333"
+        viewBox={props.viewBox || "0 0 333 333"}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <title>Impact CO2</title>
         <Path
           fillRule="evenodd"
