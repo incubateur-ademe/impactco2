@@ -102,7 +102,7 @@
     "divider": 1,
     "display": true,
     "unit": "unité",
-    "include": "par produit comprenant la fabrication, la distribution et l'usage.",
+    "include": "par produit comprenant la fabrication, la distribution, la fin de vie et l'usage.",
     "meta": {
       "title": "Numérique",
       "description": "Le secteur du numérique représente 2,5% des émissions carbone en France. Comment réduire son impact numérique et agir pour le climat à son échelle ?"
