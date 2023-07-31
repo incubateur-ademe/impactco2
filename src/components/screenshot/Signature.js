@@ -18,13 +18,21 @@ export default function Signature() {
             impactco2.fr
           </MagicLink>
         </MiddleWrapper>
-        <StyledLogo />
+        <StyledLogo viewBox={"10 10 313 313"} />
       </OutsideGrid>
     </>
   );
 }
 
 const StyledLogo = styled(Logo)`
+  // Hack nécessaire : bug firefox lors des screenshots d'écran
+  svg {
+    border: 2px solid #26827c;
+    padding: 0;
+    > path {
+      display: none;
+    }
+  }
   display: flex;
   justify-content: flex-end;
 `;

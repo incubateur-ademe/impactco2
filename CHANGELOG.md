@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.15.1 (31/07/2023)
+
+* A12b - crop image téléchargement
+
 ## 1.15.0 (28/07/2023)
 
 * U24 - matomo custom event
