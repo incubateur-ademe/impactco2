@@ -50,12 +50,23 @@ export default function IflConfigurator(props) {
           <div>&nbsp;Utiliser cette ressource</div>
         </GoFurther>
         <p>
-          Utilisez les kits de diffusion Impact CO2 pour vous emparer facilement du simulateur et l’intégrer à votre
-          site.
+          Utilisez les
+          <OutboundLink
+            color={"black"}
+            href="https://giant-carbon-bac.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733"
+            title="Découvrir des exemples de réutilisation – Nouvelle fenêtre"
+          >
+            kits de diffusion Impact CO2
+          </OutboundLink>
+          pour vous emparer facilement du simulateur et l’intégrer à votre site.
         </p>
         <p>Besoin d'inspiration?</p>
         <p>
-          <OutboundLink href="https://example.com" title="Découvrir des exemples de réutilisation – Nouvelle fenêtre">
+          <OutboundLink
+            color={"black"}
+            href="https://giant-carbon-bac.notion.site/2274283430e94d1db71eced54c338997?v=3edb1996a5074f658a079a97a368b61c"
+            title="Découvrir des exemples de réutilisation – Nouvelle fenêtre"
+          >
             Découvrez des exemples de réutilisation
           </OutboundLink>
         </p>
