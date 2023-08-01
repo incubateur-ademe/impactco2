@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.16.3 (01/08/2023)
+
+* U24b - Matomo segmentation
+
 ## 1.16.2 (01/08/2023)
 
 * B1 - titre usage numérique
