@@ -70,6 +70,9 @@ export default function IflConfigurator(props) {
             Découvrez des exemples de réutilisation
           </OutboundLink>
         </p>
+      </BottomAdvice>
+      <details>
+        <summary>Pour aller plus loin</summary>
         <p>
           Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
           à&nbsp;
@@ -79,7 +82,7 @@ export default function IflConfigurator(props) {
           Pour réutiliser <BlackMagicLink to="https://github.com/incubateur-ademe/impactco2/">le code</BlackMagicLink>{" "}
           du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (open source).
         </p>
-      </BottomAdvice>
+      </details>
     </Wrapper>
   );
 }
