@@ -17,7 +17,6 @@ const Wrapper = styled.button`
   opacity: ${(props) => (props.disabled ? 0.3 : 1)};
   padding: 0.75rem 1.5rem 0.75rem 1rem;
   position: relative;
-  transition: background-color 200ms ease-out;
   width: 100%;
 
   &:hover {

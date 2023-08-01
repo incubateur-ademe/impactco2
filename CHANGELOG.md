@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.16.1 (01/08/2023)
+
+* A8 - suppression des animations CSS
+
 ## 1.16.0 (01/08/2023)
 
 * U23 - modale partager V2

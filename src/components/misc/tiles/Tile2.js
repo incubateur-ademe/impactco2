@@ -24,7 +24,6 @@ const ButtonDrag = styled.button`
   svg {
     height: 100%;
     transform-origin: center;
-    transition: transform 300ms ease-out;
     width: auto;
 
     circle {
@@ -50,7 +49,6 @@ const ButtonRemove = styled.button`
   svg {
     height: auto;
     transform-origin: center;
-    transition: transform 300ms ease-out;
     width: 100%;
 
     path {

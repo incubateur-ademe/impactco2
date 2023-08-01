@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-
-import Button from 'components/base/Button'
-import TextInput from 'components/base/TextInput'
+import Button from "components/base/Button";
+import TextInput from "components/base/TextInput";
+import React, { useState } from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   align-self: flex-end;
@@ -15,7 +14,7 @@ const Wrapper = styled.div`
     align-self: center;
     margin: 0;
   }
-`
+`;
 const SortButton = styled(Button)`
   border-radius: 0.625em;
   font-size: 0.875rem;
@@ -25,12 +24,12 @@ const SortButton = styled(Button)`
     height: auto;
     width: 1rem;
   }
-`
+`;
 const SearchInput = styled(TextInput)`
   font-size: 0.875rem;
   margin: 0;
   width: 12rem;
-`
+`;
 const SortPanel = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 0.5rem;
@@ -44,47 +43,38 @@ const SortPanel = styled.div`
     right: auto;
     top: 2.5rem;
   }
-`
+`;
 const Option = styled.button`
-  background-color: ${(props) =>
-    props.selected ? props.theme.colors.secondDark : 'transparent'};
+  background-color: ${(props) => (props.selected ? props.theme.colors.secondDark : "transparent")};
   border: none;
   cursor: pointer;
   display: block;
   padding: 0.75rem 1rem;
   text-align: left;
-  transition: background-color 200ms ease-out;
   white-space: nowrap;
   width: 100%;
 
   &:hover {
-    background-color: ${(props) =>
-      props.theme.colors[props.selected ? 'secondDark' : 'mainLight']};
+    background-color: ${(props) => props.theme.colors[props.selected ? "secondDark" : "mainLight"]};
   }
-`
+`;
 export default function Search(props) {
-  const [displaySort, setDisplaySort] = useState(false)
+  const [displaySort, setDisplaySort] = useState(false);
 
   return (
     <Wrapper>
-      <SearchInput
-        value={props.search}
-        onChange={({ value }) => props.setSearch(value)}
-        placeholder={'Recherchez'}
-      />
-      <SortButton
-        onClick={() => setDisplaySort((prevDisplaySort) => !prevDisplaySort)}
-      >
-        <svg x='0px' y='0px' viewBox='0 0 489.389 489.389'>
+      <SearchInput value={props.search} onChange={({ value }) => props.setSearch(value)} placeholder={"Recherchez"} />
+      <SortButton onClick={() => setDisplaySort((prevDisplaySort) => !prevDisplaySort)}>
+        <svg x="0px" y="0px" viewBox="0 0 489.389 489.389">
           <path
-            d='M261.294,326.102c-8.3-7.3-21.8-6.2-29.1,2.1l-77,86.8v-346.9c0-11.4-9.4-20.8-20.8-20.8s-20.8,9.4-20.8,20.8v346.9
+            d="M261.294,326.102c-8.3-7.3-21.8-6.2-29.1,2.1l-77,86.8v-346.9c0-11.4-9.4-20.8-20.8-20.8s-20.8,9.4-20.8,20.8v346.9
 			l-77-86.8c-8.3-8.3-20.8-9.4-29.1-2.1c-8.3,8.3-9.4,20.8-2.1,29.1l113.4,126.9c8.5,10.5,23.5,8.9,30.2,0l114.4-126.9
-			C270.694,347.002,269.694,333.402,261.294,326.102z'
+			C270.694,347.002,269.694,333.402,261.294,326.102z"
           />
           <path
-            d='M483.994,134.702l-112.4-126.9c-10-10.1-22.5-10.7-31.2,0l-114.4,126.9c-7.3,8.3-6.2,21.8,2.1,29.1
+            d="M483.994,134.702l-112.4-126.9c-10-10.1-22.5-10.7-31.2,0l-114.4,126.9c-7.3,8.3-6.2,21.8,2.1,29.1
 			c12.8,10.2,25.7,3.2,29.1-2.1l77-86.8v345.9c0,11.4,9.4,20.8,20.8,20.8s20.8-8.3,20.8-19.8v-346.8l77,86.8
-			c8.3,8.3,20.8,9.4,29.1,2.1C490.194,155.502,491.294,143.002,483.994,134.702z'
+			c8.3,8.3,20.8,9.4,29.1,2.1C490.194,155.502,491.294,143.002,483.994,134.702z"
           />
         </svg>
       </SortButton>
@@ -92,42 +82,42 @@ export default function Search(props) {
         <SortPanel>
           <Option
             onClick={() => {
-              props.setSorting('alph_desc')
-              setDisplaySort(false)
+              props.setSorting("alph_desc");
+              setDisplaySort(false);
             }}
-            selected={props.sorting === 'alph_desc'}
+            selected={props.sorting === "alph_desc"}
           >
             A =&gt; Z
           </Option>
           <Option
             onClick={() => {
-              props.setSorting('alph_asc')
-              setDisplaySort(false)
+              props.setSorting("alph_asc");
+              setDisplaySort(false);
             }}
-            selected={props.sorting === 'alph_asc'}
+            selected={props.sorting === "alph_asc"}
           >
             Z =&gt; A
           </Option>
           <Option
             onClick={() => {
-              props.setSorting('co2_desc')
-              setDisplaySort(false)
+              props.setSorting("co2_desc");
+              setDisplaySort(false);
             }}
-            selected={props.sorting === 'co2_desc'}
+            selected={props.sorting === "co2_desc"}
           >
             Du + émetteur au - émetteur
           </Option>
           <Option
             onClick={() => {
-              props.setSorting('co2_asc')
-              setDisplaySort(false)
+              props.setSorting("co2_asc");
+              setDisplaySort(false);
             }}
-            selected={props.sorting === 'co2_asc'}
+            selected={props.sorting === "co2_asc"}
           >
             Du - émetteur au + émetteur
           </Option>
         </SortPanel>
       )}
     </Wrapper>
-  )
+  );
 }

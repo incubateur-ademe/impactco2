@@ -1,12 +1,10 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
-
-import Emoji from 'components/base/Emoji'
-import TransportContext from 'components/transport/TransportProvider'
+import Emoji from "components/base/Emoji";
+import TransportContext from "components/transport/TransportProvider";
+import React, { useContext } from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.button`
-  background-color: ${(props) =>
-    props.active ? props.theme.colors.main : 'transparent'};
+  background-color: ${(props) => (props.active ? props.theme.colors.main : "transparent")};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.5rem;
   cursor: pointer;
@@ -15,19 +13,17 @@ const Wrapper = styled.button`
   margin: 0.375rem;
   padding: 0;
   position: relative;
-  transition: background-color 200ms ease-out;
   width: 2.5rem;
-`
+`;
 const Second = styled.span`
   bottom: 0;
   font-size: 0.75em;
   position: absolute;
   right: 0;
   transform: translate(30%, 50%);
-`
+`;
 export default function Transportation(props) {
-  const { teletravailTransportation, setTeletravailTransportation } =
-    useContext(TransportContext)
+  const { teletravailTransportation, setTeletravailTransportation } = useContext(TransportContext);
 
   return (
     <Wrapper
@@ -41,5 +37,5 @@ export default function Transportation(props) {
         </Second>
       )}
     </Wrapper>
-  )
+  );
 }

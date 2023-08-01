@@ -20,7 +20,6 @@ const Number = styled.div`
   font-weight: 900;
   line-height: 0.71;
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
-  transition: opacity 1000ms;
 
   ${(props) => props.theme.mq.small} {
     font-size: 49vw;
@@ -38,7 +37,6 @@ const BigText = styled.div`
 `;
 const Line = styled.div`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
-  transition: opacity 1000ms ${(props) => (props.bottom ? "800ms" : "400ms")};
 `;
 const StrongWrapper = styled.div`
   display: flex;
