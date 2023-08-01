@@ -74,7 +74,9 @@ export default function IflConfigurator(props) {
       <br />
       <GoFurther>
         <details>
-          <summary>Pour aller plus loin</summary>
+          <summary>
+            <span>Aller plus loin</span>
+          </summary>
           <GoFurtherFirstParagraph>
             Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
             à&nbsp;
@@ -82,10 +84,11 @@ export default function IflConfigurator(props) {
           </GoFurtherFirstParagraph>
           <GoFurtherSecondParagraph>
             Pour réutiliser <BlackMagicLink to="https://github.com/incubateur-ademe/impactco2/">le code</BlackMagicLink>{" "}
-            du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (open source).
+            du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (<i>open source</i>).
           </GoFurtherSecondParagraph>
         </details>
       </GoFurther>
+      <br />
     </Wrapper>
   );
 }
@@ -139,10 +142,18 @@ const GoFurther = styled.div`
   border-radius: 8px;
   padding: 1rem;
   details > summary {
-    list-style-type: ">";
+    /* list-style-type: ">"; */
+    padding-right: 1rem;
   }
-  details[open] > summary {
-    list-style-type: "∨";
+  /* details[open] > summary {
+    list-style-type: "v";
+  } */
+  summary {
+    font-size: 1rem;
+    font-weight: 700;
+    span {
+      padding-left: 0.5rem;
+    }
   }
 `;
 
