@@ -23,7 +23,6 @@ const Wrapper = styled.form`
   margin-right: ${(props) => (props.focus ? "1rem" : "0")};
   right: 0;
   top: 0;
-  transition: box-shadow 300ms ease-out, background-color 300ms ease-out;
   width: ${(props) => (props.home ? "auto" : props.focus ? "calc(100vw - 1.5rem)" : "1rem")}
   z-index: 100;
 `;

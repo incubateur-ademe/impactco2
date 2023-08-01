@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Top = styled.div`
   display: flex;
@@ -9,15 +9,14 @@ const Top = styled.div`
     gap: 0.5rem;
     margin-bottom: 0.5rem;
   }
-`
+`;
 const Checkboxes = styled.div`
   align-items: flex-end;
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
   opacity: ${(props) => (props.visible ? 1 : 0)};
-  transition: opacity 200ms;
-  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
 
   > label {
     font-size: 0.875rem;
@@ -26,7 +25,7 @@ const Checkboxes = styled.div`
   ${(props) => props.theme.mq.small} {
     align-items: center;
   }
-`
+`;
 
-Top.Checkboxes = Checkboxes
-export default Top
+Top.Checkboxes = Checkboxes;
+export default Top;

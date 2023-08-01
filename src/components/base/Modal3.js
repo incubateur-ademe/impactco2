@@ -72,7 +72,6 @@ const Background = styled.div`
   left: 0;
   position: absolute;
   top: 0;
-  transition: background-color ${(props) => (props.open ? "300ms" : "1ms")} ease-in-out;
   width: 100%;
 `;
 
@@ -85,7 +84,6 @@ const Content = styled.div`
   opacity: ${(props) => (props.open ? 1 : 0)};
   position: relative;
   transform: translateX(${(props) => (props.open ? 0 : "10em")});
-  transition: all ${(props) => (props.open && !props.noAnimation ? "300ms" : "1ms")} ease-in-out;
   visibility: ${(props) => (props.open ? "visible" : "hidden")};
   width: ${(props) => props.width || "40em"};
 `;

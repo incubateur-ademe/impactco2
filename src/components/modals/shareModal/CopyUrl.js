@@ -35,7 +35,6 @@ const Text = styled.input`
     opacity: ${(props) => (props.copied ? 1 : 0)};
     position: absolute;
     right: 0;
-    transition: opacity 200ms ease-out;
   }
 `;
 
@@ -58,7 +57,6 @@ const Check = styled.svg`
   display: ${(props) => (props.copied ? "inline-block" : "none")};
   height: auto;
   opacity: ${(props) => (props.copied ? 1 : 0)};
-  transition: opacity 200ms ease-out;
   vertical-align: top;
   width: 1rem;
   path {
@@ -69,7 +67,6 @@ const UnCheck = styled.svg`
   display: ${(props) => (props.copied ? "none" : "inline-block")};
   height: auto;
   opacity: ${(props) => (props.copied ? 0 : 1)};
-  transition: opacity 200ms ease-out;
   vertical-align: top;
   width: 1rem;
   path {

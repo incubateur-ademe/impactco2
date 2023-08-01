@@ -1,16 +1,15 @@
-import React, { useRef } from 'react'
-import styled from 'styled-components'
-
-import useOnScreen from 'hooks/useOnScreen'
+import useOnScreen from "hooks/useOnScreen";
+import React, { useRef } from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   margin: 2em auto;
   max-width: 35em;
   position: relative;
-`
+`;
 const Product = styled.div`
   display: flex;
-`
+`;
 const Label = styled.div`
   align-items: center;
   border-right: 1px solid ${(props) => props.theme.colors.main};
@@ -19,15 +18,14 @@ const Label = styled.div`
   line-height: 1;
   padding-bottom: 0.3em;
   width: 3rem;
-`
+`;
 const Bars = styled.div`
   flex: 1;
   padding: 0.5em 0;
-`
+`;
 const Bar = styled.div`
   align-items: center;
-  background-color: ${(props) =>
-    props.theme.colors[props.secondary ? 'main' : 'error']};
+  background-color: ${(props) => props.theme.colors[props.secondary ? "main" : "error"]};
   color: ${(props) => props.theme.colors.second};
   display: flex;
   font-style: italic;
@@ -39,16 +37,14 @@ const Bar = styled.div`
   padding-right: 1em;
   transform: scaleX(${(props) => (props.isOnScreen ? 1 : 0)});
   transform-origin: left;
-  transition: transform 400ms ease-in-out
-    ${(props) => props.index * 200 + 1000}ms;
   width: ${(props) => props.length}%;
-`
+`;
 const Axis = styled.div`
   border-top: 1px solid ${(props) => props.theme.colors.main};
   margin-left: 3em;
   padding-top: 1.5em;
   position: relative;
-`
+`;
 
 const Mark = styled.div`
   font-size: 0.875em;
@@ -60,7 +56,7 @@ const Mark = styled.div`
 
   &:before {
     background-color: ${(props) => props.theme.colors.main};
-    content: '';
+    content: "";
     height: calc(0.5em + 1px);
     left: 50%;
     position: absolute;
@@ -68,15 +64,15 @@ const Mark = styled.div`
     transform: translateX(-50%);
     width: 1px;
   }
-`
+`;
 const Unit = styled.div`
   text-align: center;
-`
+`;
 const Caption = styled.div`
   position: absolute;
   right: 0;
   top: 0;
-`
+`;
 const Item = styled.div`
   font-style: italic;
   font-weight: 700;
@@ -85,19 +81,18 @@ const Item = styled.div`
   text-align: right;
 
   &:before {
-    background-color: ${(props) =>
-      props.theme.colors[props.secondary ? 'main' : 'error']};
-    content: '';
+    background-color: ${(props) => props.theme.colors[props.secondary ? "main" : "error"]};
+    content: "";
     height: 1em;
     position: absolute;
     right: 0;
     top: 0.2em;
     width: 1em;
   }
-`
+`;
 export default function BarChart() {
-  const ref = useRef()
-  const isOnScreen = useOnScreen(ref, '-100px')
+  const ref = useRef();
+  const isOnScreen = useOnScreen(ref, "-100px");
   return (
     <Wrapper ref={ref}>
       <Caption>
@@ -107,12 +102,7 @@ export default function BarChart() {
       <Product>
         <Label>🍓</Label>
         <Bars>
-          <Bar
-            index={0}
-            length={(0.47 / 2) * 100}
-            secondary
-            isOnScreen={isOnScreen}
-          >
+          <Bar index={0} length={(0.47 / 2) * 100} secondary isOnScreen={isOnScreen}>
             0.47
           </Bar>
           <Bar index={1} length={(0.67 / 2) * 100} isOnScreen={isOnScreen}>
@@ -123,12 +113,7 @@ export default function BarChart() {
       <Product>
         <Label>🍅</Label>
         <Bars>
-          <Bar
-            index={2}
-            length={(0.51 / 2) * 100}
-            secondary
-            isOnScreen={isOnScreen}
-          >
+          <Bar index={2} length={(0.51 / 2) * 100} secondary isOnScreen={isOnScreen}>
             0.51
           </Bar>
           <Bar index={3} length={(1.88 / 2) * 100} isOnScreen={isOnScreen}>
@@ -147,5 +132,5 @@ export default function BarChart() {
         </Unit>
       </Axis>
     </Wrapper>
-  )
+  );
 }
