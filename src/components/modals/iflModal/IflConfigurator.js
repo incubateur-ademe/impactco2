@@ -1,5 +1,6 @@
 import IflCode from "./IflCode";
 import MagicLink from "components/base/MagicLink";
+import OutboundLink from "components/base/OutboundLink";
 import Select from "components/base/Select";
 import React from "react";
 import styled from "styled-components";
@@ -46,8 +47,18 @@ export default function IflConfigurator(props) {
               />
             </svg>
           </div>
-          <div>&nbsp;Aller plus loin</div>
+          <div>&nbsp;Utiliser cette ressource</div>
         </GoFurther>
+        <p>
+          Utilisez les kits de diffusion Impact CO2 pour vous emparer facilement du simulateur et l’intégrer à votre
+          site.
+        </p>
+        <p>Besoin d'inspiration?</p>
+        <p>
+          <OutboundLink href="https://example.com" title="Découvrir des exemples de réutilisation – Nouvelle fenêtre">
+            Découvrez des exemples de réutilisation
+          </OutboundLink>
+        </p>
         <p>
           Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
           à&nbsp;
