@@ -17,19 +17,6 @@ const Wrapper = styled(MagicLink)`
     margin-right: 1em;
     width: auto;
   }
-
-  &:hover {
-    .circle1 {
-      fill: ${(props) => props.theme.colors.main};
-      transition: fill 300ms ease-in 200ms;
-    }
-
-    .circle2 {
-    }
-    .circle3 {
-      transition: fill 300ms ease-out;
-    }
-  }
 `;
 const Path = styled.path`
   fill: ${(props) => props.theme.colors.main};
@@ -37,30 +24,13 @@ const Path = styled.path`
 const Circle = styled.circle`
   fill: ${(props) => props.theme.colors.main};
   stroke: ${(props) => props.theme.colors.main};
-  transition: fill 300ms ease-out;
-
-  ${Wrapper}:hover & {
-    fill: ${(props) => props.theme.colors.background};
-    transition: fill 300ms ease-in-out 400ms;
-  }
 `;
 const HollowCircle1 = styled.circle`
   fill: ${(props) => props.theme.colors.background};
   stroke: ${(props) => props.theme.colors.main};
   transform-origin: center;
-  transition: fill 300ms ease-out;
-
-  ${Wrapper}:hover & {
-    fill: ${(props) => props.theme.colors.main};
-    transform: rotate(-180deg);
-    transition: transform 600ms ease-out, fill 300ms ease-out;
-  }
 `;
-const HollowCircle2 = styled(HollowCircle1)`
-  ${Wrapper}:hover & {
-    transition: transform 400ms ease-out 300ms, fill 300ms ease-in 200ms;
-  }
-`;
+const HollowCircle2 = styled(HollowCircle1)``;
 const Title = styled.div`
   color: ${(props) => props.theme.colors.main};
   font-size: 1.15em;
