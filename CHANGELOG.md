@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.16.0 (01/08/2023)
+
+* U23 - modale partager V2
+
 ## 1.15.2 (31/07/2023)
 
 * A24b - amélioration des métriques
