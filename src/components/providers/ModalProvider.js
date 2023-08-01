@@ -46,7 +46,7 @@ export function ModalProvider(props) {
         },
         social,
         setSocial: (value) => {
-          window?.please?.track(["trackEvent", "Interaction", "Modal", "Social"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_Social"]);
           setSocial(value);
         },
         reduire,
@@ -61,12 +61,12 @@ export function ModalProvider(props) {
         },
         eqv,
         setEqv: (value) => {
-          window?.please?.track(["trackEvent", "Interaction", "Modal", "EQV"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "modal_livraison_EQV"]);
           setEqv(value);
         },
         ifl,
         setIfl: (value) => {
-          window?.please?.track(["trackEvent", "Interaction", "Modal", "IFL"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "modal_livraison_IFL"]);
           setIfl(value);
         },
         devices,
@@ -81,7 +81,7 @@ export function ModalProvider(props) {
         },
         hypothesisLivraison,
         setHypothesisLivraison: (value) => {
-          window?.please?.track(["trackEvent", "Interaction", "Modal", "Hypothèses livraison"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "modal_livraison_hypotheses"]);
           setHypothesisLivraison(value);
         },
       }}
