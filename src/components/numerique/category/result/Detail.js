@@ -17,9 +17,7 @@ const Wrapper = styled.div`
 const Title = styled.h3`
   text-align: center;
 `;
-const Color = styled.span`
-  color: ${(props) => props.theme.colors.main};
-`;
+
 const Text = styled.p`
   font-size: 0.875rem;
   margin: 0 auto 0.5rem;
@@ -137,9 +135,7 @@ export default function Detail(props) {
 
   return (
     <Wrapper>
-      <Title>
-        Détail de mon impact <Color>par année</Color>
-      </Title>
+      <Title>Détail de mon impact</Title>
       <Text>
         En général, la majorité de votre empreinte numérique provient de la construction de vos appareils et pas de
         l’usage de ces derniers.
