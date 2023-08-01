@@ -64,12 +64,12 @@ export default function CalculateurLivraison() {
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
   const changeRetrait = (retrait) => {
-    window?.please?.track(["trackEvent", "Interaction", "Select", `retrait_${retrait.uid}`]);
+    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_retrait_${retrait.uid}`]);
     setPoint(retrait.uid === "click" ? "magasin" : retrait.uid === "relais" ? "point relais" : "");
     setValues({ ...values, retrait: retrait.uid });
   };
   const changeRelay = (relay) => {
-    window?.please?.track(["trackEvent", "Interaction", "Select", `dernierkm_${relay.uid}`]);
+    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_dernierkm_${relay.uid}`]);
     setValues({ ...values, relay: relay.uid });
   };
 
