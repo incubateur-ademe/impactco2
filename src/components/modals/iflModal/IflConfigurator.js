@@ -71,6 +71,7 @@ export default function IflConfigurator(props) {
           </OutboundLink>
         </p>
       </BottomAdvice>
+      <br />
       <details>
         <summary>Pour aller plus loin</summary>
         <p>
@@ -90,7 +91,7 @@ export default function IflConfigurator(props) {
 const BottomAdvice = styled.div`
   background-color: #ebf2ff;
   border-radius: 8px;
-  margin-top: auto;
+  margin-top: 2rem;
   padding: 24px;
   position: relative;
 `;
