@@ -21,8 +21,8 @@ export default function IflConfigurator(props) {
         <option value="night">Sombre</option>
       </Select>
       <IflCode type={props.path} theme={props.theme}></IflCode>
-      <BottomAdvice>
-        <GoFurther>
+      <UseBulb>
+        <UseBulbTitle>
           <div>
             <svg width="11" height="17" viewBox="0 0 22 35" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -48,7 +48,7 @@ export default function IflConfigurator(props) {
             </svg>
           </div>
           <div>&nbsp;Utiliser cette ressource</div>
-        </GoFurther>
+        </UseBulbTitle>
         <p>
           Utilisez les{" "}
           <OutboundLink
@@ -61,34 +61,36 @@ export default function IflConfigurator(props) {
           pour vous emparer facilement du simulateur et l’intégrer à votre site.
         </p>
         <p>Besoin d'inspiration?</p>
-        <p>
+        <p style={{ "margin-bottom": 0 }}>
           <OutboundLink
             color={"black"}
-            href="https://giant-carbon-bac.notion.site/2274283430e94d1db71eced54c338997?v=3edb1996a5074f658a079a97a368b61c"
+            href="https://giant-carbon-bac.notion.site/2274283430e94d1db71eced54c338997?v=3edb1996a5074f658a079a97a368b61c&pvs=4"
             title="Découvrir des exemples de réutilisation – Nouvelle fenêtre"
           >
             Découvrez des exemples de réutilisation
           </OutboundLink>
         </p>
-      </BottomAdvice>
+      </UseBulb>
       <br />
-      <details>
-        <summary>Pour aller plus loin</summary>
-        <p>
-          Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
-          à&nbsp;
-          <BlackMagicLink to="mailto:datagir@ademe.fr">datagir@ademe.fr</BlackMagicLink>.
-        </p>
-        <p>
-          Pour réutiliser <BlackMagicLink to="https://github.com/incubateur-ademe/impactco2/">le code</BlackMagicLink>{" "}
-          du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (open source).
-        </p>
-      </details>
+      <GoFurther>
+        <details>
+          <summary>Pour aller plus loin</summary>
+          <p>
+            Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
+            à&nbsp;
+            <BlackMagicLink to="mailto:datagir@ademe.fr">datagir@ademe.fr</BlackMagicLink>.
+          </p>
+          <p>
+            Pour réutiliser <BlackMagicLink to="https://github.com/incubateur-ademe/impactco2/">le code</BlackMagicLink>{" "}
+            du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (open source).
+          </p>
+        </details>
+      </GoFurther>
     </Wrapper>
   );
 }
 
-const BottomAdvice = styled.div`
+const UseBulb = styled.div`
   background-color: #ebf2ff;
   border-radius: 8px;
   margin-top: 2rem;
@@ -109,7 +111,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const GoFurther = styled.div`
+const UseBulbTitle = styled.div`
   align-items: center;
   background-color: white;
   border: 2px solid #ebf2ff;
@@ -131,3 +133,5 @@ const BlackMagicLink = styled(MagicLink)`
     display: none;
   }
 `;
+
+const GoFurther = styled.div``;
