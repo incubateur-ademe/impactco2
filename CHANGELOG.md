@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.16.2 (01/08/2023)
+
+* B1 - titre usage numérique
+
 ## 1.16.1 (01/08/2023)
 
 * A8 - suppression des animations CSS
