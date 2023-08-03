@@ -1,7 +1,7 @@
 export const frequences = [
-  { displayed: "semaine", uid: "par_semaine", mult: 1, baseNumber: 1, baseText: "par semaine" },
-  { displayed: "mois", uid: "par_mois", mult: 4, baseNumber: 1, baseText: "par semaine" },
-  { displayed: "an", uid: "par_an", mult: 12, baseNumber: 1, baseText: "par mois", isDefault: true },
+  { displayed: "semaine", uid: "par_semaine", mult: 52 },
+  { displayed: "mois", uid: "par_mois", mult: 12 },
+  { displayed: "an", uid: "par_an", mult: 1, isDefault: true },
 ];
 
 export const produits = [
