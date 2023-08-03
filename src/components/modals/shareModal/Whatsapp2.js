@@ -9,7 +9,7 @@ export default function Whatsapp2(props) {
     <WhatsappShareButton
       url={props.url}
       title={props.title}
-      onClick={() => window._paq?.push(["trackEvent", "Share", "Whatsapp", props.url])}
+      onClick={() => window?.please?.track(["trackEvent", "Share", "livraison_sharing", `whatsapp_${props.url}`])}
     >
       <Svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
