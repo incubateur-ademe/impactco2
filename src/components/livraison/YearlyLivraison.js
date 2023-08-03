@@ -25,15 +25,20 @@ export default function YearlyLivraison(props) {
   return (
     <Wrapper>
       <FlexText>
-        Si je commande&nbsp;
-        <SelectNumber changeNumber={changeNumber} value={number}></SelectNumber>
-        <strong>&nbsp;colis par &nbsp;</strong>
-        <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
-        <span>, alors cette livraison émets&nbsp;</span>
-        <Color>
-          {convertGramsToKilograms(props.co2eq * multiplicator * number)} kg CO<sub>2</sub>e*
-        </Color>
-        <strong>&nbsp;par an&nbsp;</strong>.
+        <Induction>
+          <span>Si je commande&nbsp;</span>
+          <SelectNumber changeNumber={changeNumber} value={number}></SelectNumber>
+          <strong>&nbsp;colis par &nbsp;</strong>
+          <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
+          <span>,&nbsp;</span>
+        </Induction>
+        <Deduction>
+          <span>alors cette livraison émets&nbsp;</span>
+          <Color>
+            {convertGramsToKilograms(props.co2eq * multiplicator * number)} kg CO<sub>2</sub>e*
+          </Color>
+          <strong>&nbsp;par an&nbsp;</strong>.
+        </Deduction>
       </FlexText>
       <br />
     </Wrapper>
@@ -44,6 +49,10 @@ const Wrapper = styled.div``;
 
 const FlexText = styled.div`
   display: flex;
+  flex-direction: row;
+  ${(props) => props.theme.mq.large} {
+    flex-direction: column;
+  }
   font-size: 1rem;
   margin-top: 1rem;
   text-align: left;
@@ -55,4 +64,17 @@ const FlexText = styled.div`
 const Color = styled.span`
   color: #457be7;
   font-weight: bold;
+`;
+
+const Deduction = styled.div`
+  ${(props) => props.theme.mq.xsmall} {
+    font-size: 0.65rem;
+  }
+`;
+
+const Induction = styled.div`
+  display: flex;
+  ${(props) => props.theme.mq.xsmall} {
+    font-size: 0.65rem;
+  }
 `;
