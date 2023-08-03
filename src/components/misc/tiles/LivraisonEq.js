@@ -10,6 +10,11 @@ const first2WordsRemoved = (sentence) => sentence.split(" ").slice(2).join(" ");
 export default function LivraisonEq(props) {
   const { setEqv } = useContext(ModalContext);
 
+  const changeClicked = () => {
+    window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_modifier_equivalent"]);
+    setEqv(props.slug);
+  };
+
   return (
     <Wrapper background={props.background}>
       <EmojiWrapper>
@@ -20,7 +25,7 @@ export default function LivraisonEq(props) {
       <OfWhat>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
       <div></div>
       <div>
-        <ButtonChange onClick={() => setEqv(props.slug)}>Modifier l'équivalence</ButtonChange>
+        <ButtonChange onClick={changeClicked}>Modifier l'équivalence</ButtonChange>
       </div>
     </Wrapper>
   );
