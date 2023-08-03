@@ -76,10 +76,14 @@ export default function CalculateurLivraison() {
   const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
   const changeKm = (km) => setValues({ ...values, km: km });
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison", "jpg");
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
+    "impactco2_livraison",
+    "jpg",
+    "livraison_simulateur_screenshot"
+  );
 
   const integrerClicked = () => {
-    window?.please?.track(["trackEvent", "Interaction", "Integrate", "impact_livraison_integrate"]);
+    window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_simulateur_integrate"]);
     setIfl(true);
   };
 
