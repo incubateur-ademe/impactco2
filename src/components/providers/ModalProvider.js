@@ -47,13 +47,13 @@ export function ModalProvider(props) {
         social,
         setSocial: (value) => {
           if (value === true) {
-            window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_Social"]);
+            window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_simulateur_share"]);
           }
           setSocial(value);
         },
         reduire,
         setReduire: (value) => {
-          window?.please?.track(["trackEvent", "Interaction", "Modal", "Reduire"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_ressource_share"]);
           setReduire(value);
         },
         ecv,
@@ -70,9 +70,6 @@ export function ModalProvider(props) {
         },
         ifl,
         setIfl: (value) => {
-          if (value === true) {
-            window?.please?.track(["trackEvent", "Interaction", "Modal", "modal_livraison_IFL"]);
-          }
           setIfl(value);
         },
         devices,

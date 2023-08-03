@@ -7,7 +7,11 @@ import styled from "styled-components";
 
 export default function AdviceLivraison() {
   const { setReduire } = useContext(ModalContext);
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison", "jpg");
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
+    "impactco2_livraison",
+    "jpg",
+    "livraison_ressource_screenshot"
+  );
 
   const openModal = () => {
     setReduire(true);
