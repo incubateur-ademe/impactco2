@@ -32,7 +32,7 @@ export default function YearlyLivraison(props) {
             <Colis>&nbsp;colis&nbsp;</Colis>
           </InductionIntro>
           <InductionOutro>
-            <strong>par&nbsp;</strong>
+            <strong>par</strong>
             <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
             <span>,&nbsp;</span>
           </InductionOutro>
@@ -85,6 +85,9 @@ const InductionOutro = styled.div`
   display: flex;
 `;
 
-const Colis = styled.span`
-  margin-left: -11px;
+const Colis = styled.strong`
+  margin-left: -5px;
+  ${(props) => props.theme.mq.small} {
+    margin-left: -11px;
+  }
 `;
