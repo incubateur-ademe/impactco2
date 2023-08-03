@@ -8,43 +8,33 @@ import styled from "styled-components";
 export default function YearlyLivraison(props) {
   const defaultFrequence = frequences.find((f) => f.isDefault);
   const [multiplicator, setMultiplicator] = useState(defaultFrequence.mult);
-  const [baseNumber, setBaseNumber] = useState(defaultFrequence.baseNumber);
-  const [baseText, setBaseText] = useState(defaultFrequence.baseText);
   const [uid, setUid] = useState(defaultFrequence.uid);
+  const [number, setNumber] = useState(1);
 
   const changeFrequence = (e) => {
     window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_Frequency_${e.uid}`]);
     setMultiplicator(e.mult);
-    setBaseNumber(e.baseNumber);
-    setBaseText(e.baseText);
     setUid(e.uid);
+  };
+
+  const changeNumber = (number) => {
+    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_Number_${number}`]);
+    setNumber(number);
   };
 
   return (
     <Wrapper>
       <FlexText>
         Si je commande&nbsp;
-        <SelectNumber changeFrequence={changeFrequence} value={uid}></SelectNumber>
+        <SelectNumber changeNumber={changeNumber} value={number}></SelectNumber>
         <strong>&nbsp;colis par &nbsp;</strong>
         <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
-        <span>Alors cette livraison émets&nbsp;</span>
+        <span>, alors cette livraison émets&nbsp;</span>
         <Color>
-          {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e*
+          {convertGramsToKilograms(props.co2eq * multiplicator * number)} kg CO<sub>2</sub>e*
         </Color>
-        <strong>&nbsp;par an&nbsp;</strong>
+        <strong>&nbsp;par an&nbsp;</strong>.
       </FlexText>
-      <FlexText>
-        Vos usages émettent donc&nbsp;
-        <Color>
-          {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e*
-        </Color>
-        <strong>&nbsp;par&nbsp;</strong>
-        <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
-      </FlexText>
-      <SubText>
-        *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour {baseNumber} commande{" "}
-        {baseText}.
-      </SubText>
       <br />
     </Wrapper>
   );
@@ -65,10 +55,4 @@ const FlexText = styled.div`
 const Color = styled.span`
   color: #457be7;
   font-weight: bold;
-`;
-
-const SubText = styled.div`
-  color: grey;
-  font-size: 14px;
-  margin-top: 0.5rem;
 `;
