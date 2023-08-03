@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.1 (03/08/2023)
+
+* U24c - Matomo dernier retours
+
 ## 1.17.0 (03/08/2023)
 
 * U22 - Affiner sa fréquence d'achat
