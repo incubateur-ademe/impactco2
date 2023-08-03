@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.0 (03/08/2023)
+
+* U22 - Affiner sa fréquence d'achat
+
 ## 1.16.4 (03/08/2023)
 
 * A15 - Nouvelle adresse e-mail dans le footer
