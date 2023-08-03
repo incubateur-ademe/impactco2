@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.16.4 (03/08/2023)
+
+* A15 - Nouvelle adresse e-mail dans le footer
+
 ## 1.16.3 (01/08/2023)
 
 * U24b - Matomo segmentation
