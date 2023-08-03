@@ -1,4 +1,5 @@
 import SelectFrequences from "./SelectFrequences";
+import SelectNumber from "./SelectNumber";
 import { frequences } from "./data.js";
 import { convertGramsToKilograms } from "./utils";
 import React, { useState } from "react";
@@ -21,6 +22,17 @@ export default function YearlyLivraison(props) {
 
   return (
     <Wrapper>
+      <FlexText>
+        Si je commande&nbsp;
+        <SelectNumber changeFrequence={changeFrequence} value={uid}></SelectNumber>
+        <strong>&nbsp;colis par &nbsp;</strong>
+        <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
+        <span>Alors cette livraison émets&nbsp;</span>
+        <Color>
+          {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e*
+        </Color>
+        <strong>&nbsp;par an&nbsp;</strong>
+      </FlexText>
       <FlexText>
         Vos usages émettent donc&nbsp;
         <Color>
