@@ -33,7 +33,7 @@ export default function DetailLivraisonModal2() {
         correspondent aux livres, jeux de société, CD/vinyles, jeux vidéos, etc. Par défaut, nous considérons un{" "}
         <b>livre</b>. Les <b>équipements volumineux</b> correspondent aux gros électroménagers, l'ameublement, etc. Par
         défaut, nous considérons un <b>lave-vaisselle</b>.Pour <b>les produits de grande consommation</b>, nous avons
-        considéré un carton de <b>produits secs de supermarchés</b>.
+        considéré <b>une commande de produits alimentaires secs</b>.
       </p>
       <h3>Les scénarios de livraison</h3>
       <p>
