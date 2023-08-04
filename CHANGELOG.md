@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.3 (04/08/2023)
+
+* B2 - bug URL calendrier fruits et légumes
+
 ## 1.17.2 (04/08/2023)
 
 * U22b - Fréquence d'achat, correction graphique en mobile
