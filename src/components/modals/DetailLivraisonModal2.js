@@ -67,6 +67,16 @@ export default function DetailLivraisonModal2() {
         poids lourd moyen (type 44 tonnes) tandis que pour les derniers kilomètres de livraison, nous avons considéré un
         véhicule utilisaire léger.{" "}
       </p>
+      <h3>Fréquences de livraison</h3>
+      <p>
+        Pour calculer l’impact annuel de la livraison de colis en fonction de votre fréquence de livraison nous faisons
+        les calculs suivants :
+      </p>
+      <ul>
+        <li>X colis x 1 si par an</li>
+        <li>X colis x 12 si par mois</li>
+        <li>X colis x 52 si par semaine</li>
+      </ul>
       <h3>Le détails des processus</h3>
       <details>
         <summary>

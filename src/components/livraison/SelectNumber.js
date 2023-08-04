@@ -12,7 +12,8 @@ const StyledSelect = styled(Select)`
   }
 `;
 
-const numbers = [1, 2, 3, 4, 5, 6];
+// Will create an array from 1 to 30 : [1, 2, 3, ..., 29, 30]
+const numbers = Array.from({ length: 30 }, (_, i) => i + 1);
 
 export default function SelectNumber(props) {
   return (
