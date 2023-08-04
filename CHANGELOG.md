@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.2 (04/08/2023)
+
+* U22b - Fréquence d'achat, correction graphique en mobile
+
 ## 1.17.1 (03/08/2023)
 
 * U24c - Matomo dernier retours

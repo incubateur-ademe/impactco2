@@ -26,11 +26,16 @@ export default function YearlyLivraison(props) {
     <Wrapper>
       <FlexText>
         <Induction>
-          <span>Si je commande&nbsp;</span>
-          <SelectNumber changeNumber={changeNumber} value={number}></SelectNumber>
-          <strong>&nbsp;colis par &nbsp;</strong>
-          <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
-          <span>,&nbsp;</span>
+          <InductionIntro>
+            <span>Si je commande&nbsp;</span>
+            <SelectNumber changeNumber={changeNumber} value={number}></SelectNumber>
+            <Colis>&nbsp;colis&nbsp;</Colis>
+          </InductionIntro>
+          <InductionOutro>
+            <strong>par</strong>
+            <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
+            <span>,&nbsp;</span>
+          </InductionOutro>
         </Induction>
         <Deduction>
           <span>alors cette livraison émets&nbsp;</span>
@@ -56,9 +61,6 @@ const FlexText = styled.div`
   font-size: 1rem;
   margin-top: 1rem;
   text-align: left;
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.75rem;
-  }
 `;
 
 const Color = styled.span`
@@ -66,15 +68,26 @@ const Color = styled.span`
   font-weight: bold;
 `;
 
-const Deduction = styled.div`
-  ${(props) => props.theme.mq.xsmall} {
-    font-size: 0.65rem;
-  }
-`;
+const Deduction = styled.div``;
 
 const Induction = styled.div`
   display: flex;
-  ${(props) => props.theme.mq.xsmall} {
-    font-size: 0.65rem;
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+  }
+`;
+
+const InductionIntro = styled.div`
+  display: flex;
+`;
+
+const InductionOutro = styled.div`
+  display: flex;
+`;
+
+const Colis = styled.strong`
+  margin-left: -5px;
+  ${(props) => props.theme.mq.small} {
+    margin-left: -11px;
   }
 `;
