@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.17.5 (04/08/2023)
+
+* A14 - Modale hypothèse
+
 ## 1.17.4 (04/08/2023)
 
 * U22c - Fréquence d'achat, dernières corrections
