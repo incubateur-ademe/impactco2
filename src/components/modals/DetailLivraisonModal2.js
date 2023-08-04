@@ -186,7 +186,7 @@ export default function DetailLivraisonModal2() {
             </i>
             )
           </li>
-          <li>Magasin (stocké 28 jours dans une enseigne type "supermarchés" de 2000 m2)</li>
+          <li>Magasin</li>
           <li>Déplacement consommateur</li>
         </ul>
       </details>
