@@ -1,6 +1,6 @@
+import LearningFruit from "components/fruitsetlegumes/LearningFruit";
 import Saisons from "components/fruitsetlegumes/Saisons";
 import Web from "components/layout/Web";
-import Learning from "components/misc/Learning";
 import categories from "data/categories.json";
 import React from "react";
 import { getMonth, slugs } from "utils/months";
@@ -23,7 +23,7 @@ export default function Fruitsetlegumes(props) {
       }}
     >
       <Saisons category={props.category} month={month} />
-      <Learning category={props.category} />
+      <LearningFruit />
     </Web>
   );
 }

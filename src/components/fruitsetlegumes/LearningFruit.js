@@ -65,7 +65,7 @@ const StyledLink = styled.span`
   color: ${(props) => props.theme.colors.main};
   cursor: pointer;
 `;
-export default function Learning() {
+export default function LearningFruit() {
   const { setCo2e } = useContext(ModalContext);
 
   const ref = useRef();
