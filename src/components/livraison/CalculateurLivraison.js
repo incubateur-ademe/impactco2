@@ -215,7 +215,7 @@ export default function CalculateurLivraison() {
                       }
                     />
                   </div>
-                  <div className="item2">Votre article vient de loin (transport par avion).</div>
+                  <div className="item2">Votre colis vient de loin (transport par avion).</div>
                   <div className="item3">
                     <Addendum>
                       <span className="plus">+</span>
