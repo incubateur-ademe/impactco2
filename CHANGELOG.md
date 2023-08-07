@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.8 (07/08/2023)
+
+* B2b - bug page fruits et légumes
+
 ## 1.17.7 (07/08/2023)
 
 * A14b - sauts ligne modale hypothèse
