@@ -80,8 +80,8 @@ export default function DetailLivraisonModal2() {
         </p>
         <p>
           En ce qui concerne les <b>camions de livraison</b>, pour le <b>transport longue distance</b>, nous avons
-          considéré un <b>poids lourd moyen</b> (type 44 tonnes) tandis que pour les <b>derniers kilomètres</b> de
-          livraison, nous avons considéré un <b>véhicule utilisaire léger</b>.{" "}
+          considéré un <b>poids lourd moyen</b> type 44 tonnes) tandis que pour les <b>derniers kilomètres</b> de
+          livraison, nous avons considéré un <b>véhicule utilitaire léger</b>.{" "}
         </p>
         <h3>Fréquences de livraison</h3>
         <p>
