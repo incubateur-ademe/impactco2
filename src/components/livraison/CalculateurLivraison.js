@@ -103,7 +103,7 @@ export default function CalculateurLivraison() {
         <Section2.InnerMargin>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>
-              <H2Title>Estimez l'impact de vos livraisons</H2Title>
+              <H2Title>Estimez l'impact de votre livraison</H2Title>
               <div className="buttons">
                 <ButtonChange onClick={() => setSocial(true)} className="noscreenshot">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
@@ -215,7 +215,7 @@ export default function CalculateurLivraison() {
                       }
                     />
                   </div>
-                  <div className="item2">Votre article vient de loin (transport par avion).</div>
+                  <div className="item2">Votre colis vient de loin (transport par avion).</div>
                   <div className="item3">
                     <Addendum>
                       <span className="plus">+</span>
@@ -281,9 +281,11 @@ const DropList = styled.div`
   > div > select {
     color: #1c9b93;
     padding-left: 0;
+    white-space: normal;
     width: 100%;
+    word-wrap: break-word;
     ${(props) => props.theme.mq.xsmall} {
-      font-size: 12px;
+      font-size: 0.75rem;
     }
   }
 `;

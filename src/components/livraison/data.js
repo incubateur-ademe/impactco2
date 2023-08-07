@@ -21,7 +21,7 @@ export const produits = [
     publicode: "culturel",
   },
   {
-    displayed: "Mobilier et gros électroménager.",
+    displayed: "Mobilier et gros électroménager",
     uid: "volumineux",
     publicode: "équipements volumineux",
   },
