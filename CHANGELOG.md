@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.18.0 (07/08/2023)
+
+* U28 - Un bouton pour toutes les équivalences (livraison)
+
 ## 1.17.6 (07/08/2023)
 
 * A20 - Changement de clé d'API Google
