@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.9 (07/08/2023)
+
+* U27b - clarifier choix d'items livrés
+
 ## 1.17.8 (07/08/2023)
 
 * B2b - bug page fruits et légumes
