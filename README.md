@@ -47,12 +47,24 @@ Il vous faut un fichier `.env.local` à la racine
 
 ```bash
 NEXT_PUBLIC_SITE_URL=localhost:3000
+SENDINBLUE_API_KEY=une_valeur_compliquee
+GMAP_API_KEY=une_autre_valeur_compliquee
 ```
 
 `NEXT_PUBLIC_SITE_URL` est le nom de domaine du site, sans le protocole (mais avec le port éventuellement).
 
 A vous de renseigner la/les valeurs sur l'ensemble des sites déployés.
 
+Pour retrouver l'ensemble des variables d'environnements utilisées dans l'application, vous pouvez faire une recherche globale sur "process.env" et/ou "process?.env".
+
+## Gmap API
+
+Vous pouvez restreindre les sites appelant l'API Gmap à 2 endroits :
+
+ - Dans le code, en dur `event.headers.referer.includes('impactco2.fr')`
+ - Dans la console Google (https://console.cloud.google.com/), vous pouvez filtrer les sites appelants.
+
+Pour l'instant seuls la recette et la production sont autorisés à appeler la GMap API.
 
 ## Connexion à Agribalyse
 

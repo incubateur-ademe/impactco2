@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.17.6 (07/08/2023)
+
+* A20 - Changement de clé d'API Google
+
 ## 1.17.5 (04/08/2023)
 
 * A14 - Modale hypothèse
