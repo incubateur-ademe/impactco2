@@ -103,7 +103,7 @@ export default function CalculateurLivraison() {
         <Section2.InnerMargin>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>
-              <H2Title>Estimez l'impact de vos livraisons</H2Title>
+              <H2Title>Estimez l'impact de votre livraison</H2Title>
               <div className="buttons">
                 <ButtonChange onClick={() => setSocial(true)} className="noscreenshot">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
