@@ -57,6 +57,8 @@ A vous de renseigner la/les valeurs sur l'ensemble des sites déployés.
 
 Pour retrouver l'ensemble des variables d'environnements utilisées dans l'application, vous pouvez faire une recherche globale sur "process.env" et/ou "process?.env".
 
+Autre possibilité : vous pouvez configurer les variables d'environnement sur https://app.netlify.com/sites/impactco2/configuration/env
+
 ## Gmap API
 
 Vous pouvez restreindre les sites appelant l'API Gmap à 2 endroits :
