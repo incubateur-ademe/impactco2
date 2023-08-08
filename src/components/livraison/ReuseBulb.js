@@ -34,21 +34,21 @@ export default function ReuseBulb() {
           <div>&nbsp;Utiliser cette ressource</div>
         </UseBulbTitle>
         <p>
-          Utilisez les{" "}
+          Consultez le{" "}
           <OutboundLink
             color={"black"}
-            href="https://giant-carbon-bac.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733"
+            href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
             title="Découvrir des exemples de réutilisation – Nouvelle fenêtre"
           >
             kits de diffusion Impact CO2
           </OutboundLink>{" "}
-          pour vous emparer facilement du simulateur et l’intégrer à votre site.
+          pour vous emparer facilement du simulateur et l’intégrer à votre publication.
         </p>
         <p>Besoin d'inspiration?</p>
         <p style={{ "margin-bottom": 0 }}>
           <OutboundLink
             color={"black"}
-            href="https://giant-carbon-bac.notion.site/2274283430e94d1db71eced54c338997?v=3edb1996a5074f658a079a97a368b61c&pvs=4"
+            href="https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997? "
             title="Découvrir des exemples de réutilisation – Nouvelle fenêtre"
           >
             Découvrez des exemples de réutilisation
@@ -62,9 +62,8 @@ export default function ReuseBulb() {
             <span>Aller plus loin</span>
           </summary>
           <GoFurtherFirstParagraph>
-            Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe
-            à&nbsp;
-            <BlackMagicLink to="mailto:impactco2@ademe.fr">impactco2@ademe.fr</BlackMagicLink>.
+            Pour réutiliser les données brutes ou obtenir de l’aide pour intégrer ce simulateur, contactez-nous par mail
+            à <BlackMagicLink to="mailto:impactco2@ademe.fr">impactco2@ademe.fr</BlackMagicLink>.
           </GoFurtherFirstParagraph>
           <GoFurtherSecondParagraph>
             Pour réutiliser <BlackMagicLink to="https://github.com/incubateur-ademe/impactco2/">le code</BlackMagicLink>{" "}

@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.11 (08/08/2023)
+
+* U23b - corrections modale de partage
+
 ## 1.17.10 (08/08/2023)
 
 * A4b - alternative image, wording
