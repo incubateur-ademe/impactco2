@@ -17,7 +17,7 @@ export default function ResultatsLivraison(props) {
       <ResultatLivraison co2eq={props.co2eq} />
       <LivraisonEq slug={1} equivalent={GetEq(0)} weight={props.co2eq / 1000} />
       <LivraisonEq slug={2} equivalent={GetEq(1)} weight={props.co2eq / 1000} />
-      <LivraisonEq slug={3} equivalent={GetEq(2)} weight={props.co2eq / 1000} />
+      <LivraisonEq slug={3} equivalent={GetEq(2)} weight={props.co2eq / 1000} modifyEq={true} />
     </Wrapper>
   );
 }
