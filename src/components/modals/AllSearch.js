@@ -1,5 +1,5 @@
 import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
-import EquivalentRadio from "./tilesModal/EquivalentRadio";
+import EquivalentCheckbox from "./tilesModal/EquivalentCheckbox";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useEffect, useState } from "react";
@@ -66,7 +66,7 @@ export default function AllSearch(props) {
       {props.open && (
         <Equivalents>
           {results.slice(0, 9).map(({ item }) => (
-            <EquivalentRadio
+            <EquivalentCheckbox
               key={item.slug}
               equivalent={item}
               checked={(() => {
