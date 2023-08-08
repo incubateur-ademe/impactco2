@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.10 (08/08/2023)
+
+* A4b - alternative image, wording
+
 ## 1.17.9 (07/08/2023)
 
 * U27b - clarifier choix d'items livrés
