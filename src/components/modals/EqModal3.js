@@ -19,7 +19,6 @@ export default function EqModal3() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
   const [whitelist, setWhitelist] = useLocalStorage("ico2_whitelist");
 
-  // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
   const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
   const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");

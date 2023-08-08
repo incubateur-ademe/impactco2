@@ -8,8 +8,7 @@ import useLocalStorage from "use-local-storage";
 
 export default function FruitSearch(props) {
   /** */
-  // eslint-disable-next-line no-unused-vars
-  const { equivalents, tiles, setTiles } = useContext(DataContext);
+  const { equivalents } = useContext(DataContext);
 
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
   const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");

@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.0 (08/08/2023)
+
+* U28 - un seul bouton pour modifier les équivalences (livraison)
+
 ## 1.17.12 (08/08/2023)
 
 * A8b - animations, corrections

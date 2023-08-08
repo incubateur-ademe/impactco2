@@ -24,9 +24,9 @@ export default function LivraisonEq(props) {
       <div></div>
       <OfWhat>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
       <div></div>
-      <div>
-        <ButtonChange onClick={changeClicked}>Modifier l'équivalence</ButtonChange>
-      </div>
+      <ButtonContainer>
+        {props.modifyEq ? <ButtonChange onClick={changeClicked}>Modifier les équivalences</ButtonChange> : ""}
+      </ButtonContainer>
     </Wrapper>
   );
 }
@@ -83,7 +83,11 @@ const ButtonChange = styled.button`
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 24px;
-  margin-top: 0.5rem;
+  margin-top: 1.25rem;
   padding: 4px 12px 4px 12px;
   text-align: center;
+`;
+
+const ButtonContainer = styled.div`
+  height: 3rem;
 `;
