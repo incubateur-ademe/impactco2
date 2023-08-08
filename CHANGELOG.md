@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.1 (08/08/2023)
+
+* U28b - rollback, fonctionnalité pas encore mûre
+
 ## 1.18.0 (08/08/2023)
 
 * U28 - un seul bouton pour modifier les équivalences (livraison)
