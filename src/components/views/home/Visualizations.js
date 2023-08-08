@@ -65,7 +65,8 @@ export default function Visualization() {
         <Slider
           dots={false}
           infinite={true}
-          speed={1}
+          speed={200}
+          fade={true}
           slidesToShow={1}
           slidesToScroll={1}
           autoplay={false}

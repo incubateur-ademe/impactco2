@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.17.12 (08/08/2023)
+
+* A8b - animations, corrections
+
 ## 1.17.11 (08/08/2023)
 
 * U23b - corrections modale de partage

@@ -40,7 +40,7 @@ export default function ReuseBulb() {
             href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
             title="Découvrir des exemples de réutilisation – Nouvelle fenêtre"
           >
-            kits de diffusion Impact CO2
+            kit de diffusion Impact CO2
           </OutboundLink>{" "}
           pour vous emparer facilement du simulateur et l’intégrer à votre publication.
         </p>
