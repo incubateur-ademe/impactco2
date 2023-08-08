@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.2 (09/08/2023)
+
+* A22 - FE boissons Agribalyse 3.1.1
+
 ## 1.18.1 (08/08/2023)
 
 * U28b - rollback, fonctionnalité pas encore mûre
