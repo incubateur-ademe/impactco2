@@ -10,6 +10,10 @@ export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
   const [whitelist] = useLocalStorage("ico2_whitelist", default_eqs);
 
+  useLocalStorage("ico2_eqv1L", whitelist[0]);
+  useLocalStorage("ico2_eqv2L", whitelist[1]);
+  useLocalStorage("ico2_eqv3L", whitelist[2]);
+
   const GetEq = (indx) => equivalents.find((e) => e.slug === whitelist[indx]);
 
   return (
