@@ -70,14 +70,31 @@ export default function AllSearch(props) {
               key={item.slug}
               equivalent={item}
               checked={(() => {
-                if (props.open === 1) return eqv1L === item.slug;
-                if (props.open === 2) return eqv2L === item.slug;
-                if (props.open === 3) return eqv3L === item.slug;
+                return [eqv1L, eqv2L, eqv3L].includes(item.slug);
               })(props.open)}
               setChecked={() => {
-                if (props.open === 1) setEqv1L(item.slug);
-                if (props.open === 2) setEqv2L(item.slug);
-                if (props.open === 3) setEqv3L(item.slug);
+                let cancelled = false;
+                if (eqv1L === item.slug) {
+                  cancelled = true;
+                  setEqv1L(null);
+                } else if (eqv2L === item.slug) {
+                  cancelled = true;
+                  setEqv2L(null);
+                } else if (eqv3L === item.slug) {
+                  cancelled = true;
+                  setEqv3L(null);
+                }
+                if (!cancelled) {
+                  if (eqv1L === null) {
+                    setEqv1L(item.slug);
+                  } else if (eqv2L === null) {
+                    setEqv2L(item.slug);
+                  } else if (eqv3L === null) {
+                    setEqv3L(item.slug);
+                  } else {
+                    setEqv1L(item.slug);
+                  }
+                }
               }}
             />
           ))}
