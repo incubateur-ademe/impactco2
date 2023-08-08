@@ -7,7 +7,6 @@ import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
 export default function FruitSearch(props) {
-  /** */
   const { equivalents } = useContext(DataContext);
 
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");

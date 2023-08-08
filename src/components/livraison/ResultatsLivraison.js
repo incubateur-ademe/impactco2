@@ -10,10 +10,6 @@ export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
   const [whitelist] = useLocalStorage("ico2_whitelist", default_eqs);
 
-  useLocalStorage("ico2_eqv1L", whitelist[0]);
-  useLocalStorage("ico2_eqv2L", whitelist[1]);
-  useLocalStorage("ico2_eqv3L", whitelist[2]);
-
   const GetEq = (indx) => equivalents.find((e) => e.slug === whitelist[indx]);
 
   return (
@@ -21,7 +17,7 @@ export default function ResultatsLivraison(props) {
       <ResultatLivraison co2eq={props.co2eq} />
       <LivraisonEq slug={1} equivalent={GetEq(0)} weight={props.co2eq / 1000} />
       <LivraisonEq slug={2} equivalent={GetEq(1)} weight={props.co2eq / 1000} />
-      <LivraisonEq slug={3} equivalent={GetEq(2)} weight={props.co2eq / 1000} modifyEq={true} />
+      <LivraisonEq slug={3} equivalent={GetEq(2)} weight={props.co2eq / 1000} />
     </Wrapper>
   );
 }
