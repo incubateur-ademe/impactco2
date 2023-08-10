@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export default function Accessibilite() {
   return (
-    <Web>
+    <Web title={"Accessibilité"}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
@@ -115,7 +115,7 @@ export default function Accessibilite() {
 
             <p>
               L’ADEME invite les personnes qui rencontreraient des difficultés à la contacter par courriel à{" "}
-              <a href="mailto:datagir@ademe.fr">datagir@ademe.fr</a> afin qu’une assistance puisse être apportée
+              <a href="mailto:impactco2@ademe.fr">impactco2@ademe.fr</a> afin qu’une assistance puisse être apportée
               (alternative accessible, information et contenu donnés sous une autre forme).
             </p>
 

@@ -1,7 +1,7 @@
 import { toPng, toJpeg } from "html-to-image";
 import { useRef, useState } from "react";
 
-export default function useScreenshot(slug, format = "png") {
+export default function useScreenshot(slug, format = "png", eventName = null) {
   const ref = useRef(null);
 
   const transformFn = format === "png" ? toPng : toJpeg;
@@ -32,7 +32,7 @@ export default function useScreenshot(slug, format = "png") {
           console.log(err);
         });
     }, 20);
-    window?._paq?.push(["trackEvent", "Interaction", "Screenshot", slug]);
+    window?.please?.track(["trackEvent", "Interaction", "Screenshot", eventName || slug]);
   };
 
   return { ref, takeScreenshot, isScreenshotting };

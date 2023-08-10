@@ -1,27 +1,24 @@
-import React, { useContext, useEffect, useState } from 'react'
-import styled from 'styled-components'
-
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
-
-import Button from 'components/base/Button'
-import Modal from 'components/base/Modal'
-import TextInput from 'components/base/TextInput'
-
-import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
-import Equivalent from './tilesModal/Equivalent'
+import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
+import Equivalent from "./tilesModal/Equivalent";
+import Button from "components/base/Button";
+import Modal from "components/base/Modal";
+import TextInput from "components/base/TextInput";
+import DataContext from "components/providers/DataProvider";
+import ModalContext from "components/providers/ModalProvider";
+import React, { useContext, useEffect, useState } from "react";
+import styled from "styled-components";
 
 const StyledModal = styled(Modal)`
   height: 90vh;
-`
-const Title = styled.h1``
-const Text = styled.p``
+`;
+const Title = styled.h1``;
+const Text = styled.p``;
 const SearchInput = styled(TextInput)`
   margin: 0.5rem;
-`
+`;
 const Equivalents = styled.div`
   margin-bottom: 3rem;
-`
+`;
 const StyledButtonWrapper = styled(Button.Wrapper)`
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 0 0 1rem 1rem;
@@ -31,64 +28,59 @@ const StyledButtonWrapper = styled(Button.Wrapper)`
   padding: 0.5rem;
   position: fixed;
   right: 0.5rem;
-`
+`;
 export default function TilesModal() {
-  const { tiles: open, setTiles: setOpen } = useContext(ModalContext)
+  const { tiles: open, setTiles: setOpen } = useContext(ModalContext);
 
-  const { equivalents, tiles, setTiles } = useContext(DataContext)
+  const { equivalents, tiles, setTiles } = useContext(DataContext);
 
-  const [search, setSearch] = useState('')
-  const [results, setResults] = useState([])
-  const [fuse, setFuse] = useState(null)
+  const [search, setSearch] = useState("");
+  const [results, setResults] = useState([]);
+  const [fuse, setFuse] = useState(null);
   useEffect(() => {
     if (equivalents) {
       setFuse(
         new Fuse(equivalents, {
           keys: [
             {
-              name: 'name',
+              name: "name",
               weight: 1,
             },
             {
-              name: 'slug',
+              name: "slug",
               weight: 0.7,
             },
             {
-              name: 'subtitle',
+              name: "subtitle",
               weight: 0.4,
             },
             {
-              name: 'synonyms',
+              name: "synonyms",
               weight: 0.2,
             },
           ],
           threshold: 0.3,
           ignoreLocation: true,
         })
-      )
+      );
     }
-  }, [equivalents])
+  }, [equivalents]);
   useEffect(() => {
     setResults(
       fuse && search.length > 0
-        ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-        : equivalents
-            .map((equivalent) => ({ item: equivalent }))
-            .sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
-    )
-  }, [search, fuse, equivalents])
+        ? fuse.search(search.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+        : equivalents.map((equivalent) => ({ item: equivalent })).sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
+    );
+  }, [search, fuse, equivalents]);
 
   return (
     <StyledModal open={open} setOpen={setOpen}>
       <Title>Ajouter ou enlever des équivalents</Title>
-      <Text>
-        Sélectionnez (ou désélectionnez) des équivalents pour créer votre
-        infographie personnalisée.
-      </Text>
+      <Text>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Text>
       <SearchInput
         value={search}
         onChange={({ value }) => setSearch(value)}
-        placeholder={'Entrez un objet, un geste...'}
+        placeholder={"Entrez un objet, un geste..."}
       />
       {open && (
         <Equivalents>
@@ -99,16 +91,9 @@ export default function TilesModal() {
               checked={tiles.find((tile) => tile === item)}
               setChecked={(checked) => {
                 setTiles((prevTiles) =>
-                  checked
-                    ? [...prevTiles, item]
-                    : prevTiles.filter((tile) => tile.id !== item.slug)
-                )
-                window?._paq?.push([
-                  'trackEvent',
-                  'Interaction',
-                  'Ajouter tuile',
-                  item.slug,
-                ])
+                  checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug)
+                );
+                window?.please?.track(["trackEvent", "Interaction", "Ajouter tuile", item.slug]);
               }}
             />
           ))}
@@ -118,5 +103,5 @@ export default function TilesModal() {
         <Button onClick={() => setOpen(false)}>Valider et fermer</Button>
       </StyledButtonWrapper>
     </StyledModal>
-  )
+  );
 }

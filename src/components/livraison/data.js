@@ -1,27 +1,27 @@
 export const frequences = [
-  { displayed: "semaine", uid: "par_semaine", mult: 1, baseNumber: 1, baseText: "par semaine" },
-  { displayed: "mois", uid: "par_mois", mult: 4, baseNumber: 1, baseText: "par semaine" },
-  { displayed: "an", uid: "par_an", mult: 12, baseNumber: 1, baseText: "par mois", isDefault: true },
+  { displayed: "semaine", uid: "par_semaine", mult: 52 },
+  { displayed: "mois", uid: "par_mois", mult: 12 },
+  { displayed: "an", uid: "par_an", mult: 1, isDefault: true },
 ];
 
 export const produits = [
   {
-    displayed: "Produits de grande consommation",
+    displayed: "Produits de grande consommation (aliments, épicerie, boissons…)",
     uid: "consommation",
     publicode: "grande consommation",
   },
   {
-    displayed: "Habillement",
+    displayed: "Habillement (vêtements, chaussures, accessoires…)",
     uid: "habillement",
     publicode: "habillement",
   },
   {
-    displayed: "Produit culturel physique",
+    displayed: "Produits culturels (CD, livres, DVD…)",
     uid: "culturel",
     publicode: "culturel",
   },
   {
-    displayed: "Bien d'équipement volumineux",
+    displayed: "Mobilier et gros électroménager",
     uid: "volumineux",
     publicode: "équipements volumineux",
   },
@@ -41,7 +41,7 @@ export const relays = [
   { displayed: "En voiture", uid: "voiture_thermique", publicode: "voiture thermique" },
   { displayed: "En voiture électrique", uid: "electricar", publicode: "voiture électrique" },
   { displayed: "Marche", uid: "marche", publicode: "marche" },
-  { displayed: "En vélo", uid: "magasin", publicode: "vélo" },
+  { displayed: "En vélo", uid: "velo", publicode: "vélo" },
   { displayed: "En vélo électrique", uid: "veloelectrique", publicode: "petit véhicule électrique" },
   { displayed: "En transport en commun", uid: "transport", publicode: "commun" },
 ];

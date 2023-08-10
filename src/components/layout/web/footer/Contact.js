@@ -43,7 +43,7 @@ export default function Contact() {
           Intégrez nos simulateurs
           <Br /> à votre article, site ou application&thinsp;!
         </Title>
-        <Image src={simulateurs} alt="Simulateurs" />
+        <Image src={simulateurs} alt="Capture d’écran représentant des graphiques dans les simulateurs" />
         <Text>
           <MagicLink to="/integration">Utilisez notre configurateur</MagicLink> pour intégrer facilement nos
           simulateurs.

@@ -31,57 +31,62 @@ export function ModalProvider(props) {
       value={{
         Co2e,
         setCo2e: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "CO2e"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "CO2e"]);
           setCo2e(value);
         },
         tiles,
         setTiles: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "Tuiles"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "Tuiles"]);
           setTiles(value);
         },
         share,
         setShare: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "Partage"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "Partage"]);
           setShare(value);
         },
         social,
         setSocial: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "Social"]);
+          if (value === true) {
+            window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_simulateur_share"]);
+          }
           setSocial(value);
         },
         reduire,
         setReduire: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "Reduire"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_ressource_share"]);
           setReduire(value);
         },
         ecv,
         setEcv: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "ECV"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "ECV"]);
           setEcv(value);
         },
         eqv,
         setEqv: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "EQV"]);
+          if (value === true) {
+            window?.please?.track(["trackEvent", "Interaction", "Modal", "modal_livraison_EQV"]);
+          }
           setEqv(value);
         },
         ifl,
         setIfl: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "IFL"]);
           setIfl(value);
         },
         devices,
         setDevices: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "Devices"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "Devices"]);
           setDevices(value);
         },
         hypothesis,
         setHypothesis: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "Hypothèses usages numériques"]);
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "Hypothèses usages numériques"]);
           setHypothesis(value);
         },
         hypothesisLivraison,
         setHypothesisLivraison: (value) => {
-          window?._paq?.push(["trackEvent", "Interaction", "Modal", "Hypothèses livraison"]);
+          if (value === true) {
+            window?.please?.track(["trackEvent", "Interaction", "Modal", "modal_livraison_hypotheses"]);
+          }
           setHypothesisLivraison(value);
         },
       }}

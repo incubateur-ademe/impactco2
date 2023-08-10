@@ -1,4 +1,5 @@
 import SelectFrequences from "./SelectFrequences";
+import SelectNumber from "./SelectNumber";
 import { frequences } from "./data.js";
 import { convertGramsToKilograms } from "./utils";
 import React, { useState } from "react";
@@ -7,31 +8,43 @@ import styled from "styled-components";
 export default function YearlyLivraison(props) {
   const defaultFrequence = frequences.find((f) => f.isDefault);
   const [multiplicator, setMultiplicator] = useState(defaultFrequence.mult);
-  const [baseNumber, setBaseNumber] = useState(defaultFrequence.baseNumber);
-  const [baseText, setBaseText] = useState(defaultFrequence.baseText);
   const [uid, setUid] = useState(defaultFrequence.uid);
+  const [number, setNumber] = useState(1);
 
   const changeFrequence = (e) => {
+    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_Frequency_${e.uid}`]);
     setMultiplicator(e.mult);
-    setBaseNumber(e.baseNumber);
-    setBaseText(e.baseText);
     setUid(e.uid);
+  };
+
+  const changeNumber = (number) => {
+    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_Number_${number}`]);
+    setNumber(number);
   };
 
   return (
     <Wrapper>
       <FlexText>
-        Vos usages émettent donc&nbsp;
-        <Color>
-          {convertGramsToKilograms(props.co2eq * multiplicator)} kg CO<sub>2</sub>e*
-        </Color>
-        <strong>&nbsp;par&nbsp;</strong>
-        <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
+        <Induction>
+          <InductionIntro>
+            <span>Si je commande&nbsp;</span>
+            <SelectNumber changeNumber={changeNumber} value={number}></SelectNumber>
+            <Colis>&nbsp;colis&nbsp;</Colis>
+          </InductionIntro>
+          <InductionOutro>
+            <strong>par</strong>
+            <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
+            <span>,&nbsp;</span>
+          </InductionOutro>
+        </Induction>
+        <Deduction>
+          <span>alors cette livraison émets&nbsp;</span>
+          <Color>
+            {convertGramsToKilograms(props.co2eq * multiplicator * number)} kg CO<sub>2</sub>e
+          </Color>
+          <strong>&nbsp;par an&nbsp;</strong>.
+        </Deduction>
       </FlexText>
-      <SubText>
-        *cette valeur se base sur les paramètres que vous avez saisis dans le simulateur pour {baseNumber} commande{" "}
-        {baseText}.
-      </SubText>
       <br />
     </Wrapper>
   );
@@ -41,12 +54,13 @@ const Wrapper = styled.div``;
 
 const FlexText = styled.div`
   display: flex;
+  flex-direction: row;
+  ${(props) => props.theme.mq.large} {
+    flex-direction: column;
+  }
   font-size: 1rem;
   margin-top: 1rem;
   text-align: left;
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.75rem;
-  }
 `;
 
 const Color = styled.span`
@@ -54,8 +68,26 @@ const Color = styled.span`
   font-weight: bold;
 `;
 
-const SubText = styled.div`
-  color: grey;
-  font-size: 14px;
-  margin-top: 0.5rem;
+const Deduction = styled.div``;
+
+const Induction = styled.div`
+  display: flex;
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+  }
+`;
+
+const InductionIntro = styled.div`
+  display: flex;
+`;
+
+const InductionOutro = styled.div`
+  display: flex;
+`;
+
+const Colis = styled.strong`
+  margin-left: -5px;
+  ${(props) => props.theme.mq.small} {
+    margin-left: -11px;
+  }
 `;

@@ -64,15 +64,38 @@ export default function CalculateurLivraison() {
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
   const changeRetrait = (retrait) => {
+    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_retrait_${retrait.uid}`]);
     setPoint(retrait.uid === "click" ? "magasin" : retrait.uid === "relais" ? "point relais" : "");
-    console.log("retrait.uid", retrait.uid);
     setValues({ ...values, retrait: retrait.uid });
   };
-  const changeRelay = (relay) => setValues({ ...values, relay: relay.uid });
+  const changeRelay = (relay) => {
+    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_dernierkm_${relay.uid}`]);
+    setValues({ ...values, relay: relay.uid });
+  };
+
   const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
   const changeKm = (km) => setValues({ ...values, km: km });
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot("impactco2_livraison", "jpg");
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
+    "impactco2_livraison",
+    "jpg",
+    "livraison_simulateur_screenshot"
+  );
+
+  const integrerClicked = () => {
+    window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_simulateur_integrate"]);
+    setIfl(true);
+  };
+
+  const habitClicked = () => {
+    window?.please?.track(["trackEvent", "Interaction", "Toggle", "impact_livraison_habit"]);
+    setIsHabit(!isHabit);
+  };
+
+  const farawayClicked = () => {
+    window?.please?.track(["trackEvent", "Interaction", "Toggle", "impact_livraison_faraway"]);
+    setIsPlane(!isPlane);
+  };
 
   return (
     <>
@@ -80,7 +103,7 @@ export default function CalculateurLivraison() {
         <Section2.InnerMargin>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>
-              <H2Title>Estimez l'impact de vos livraisons</H2Title>
+              <H2Title>Estimez l'impact de votre livraison</H2Title>
               <div className="buttons">
                 <ButtonChange onClick={() => setSocial(true)} className="noscreenshot">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
@@ -91,7 +114,7 @@ export default function CalculateurLivraison() {
                   </svg>
                   &nbsp;Partager
                 </ButtonChange>
-                <ButtonChange onClick={() => setIfl(true)} className="noscreenshot">
+                <ButtonChange onClick={integrerClicked} className="noscreenshot">
                   <svg
                     width="16px"
                     aria-hidden="true"
@@ -136,7 +159,7 @@ export default function CalculateurLivraison() {
                     <Switch
                       className="toggle"
                       checked={isHabit}
-                      onChange={() => setIsHabit(!isHabit)}
+                      onChange={habitClicked}
                       offColor={"#fff"}
                       onColor={themes.default.colors.main2}
                       aria-label="Changer de thème"
@@ -177,7 +200,7 @@ export default function CalculateurLivraison() {
                     <Switch
                       className="toggle"
                       checked={isPlane}
-                      onChange={() => setIsPlane(!isPlane)}
+                      onChange={farawayClicked}
                       offColor={"#fff"}
                       onColor={themes.default.colors.main2}
                       aria-label="Changer de thème"
@@ -192,7 +215,7 @@ export default function CalculateurLivraison() {
                       }
                     />
                   </div>
-                  <div className="item2">Votre article vient de loin (transport par avion).</div>
+                  <div className="item2">Votre colis vient de loin (transport par avion).</div>
                   <div className="item3">
                     <Addendum>
                       <span className="plus">+</span>
@@ -258,10 +281,11 @@ const DropList = styled.div`
   > div > select {
     color: #1c9b93;
     padding-left: 0;
-    width: 240px;
+    white-space: normal;
+    width: 100%;
+    word-wrap: break-word;
     ${(props) => props.theme.mq.xsmall} {
-      font-size: 12px;
-      width: auto;
+      font-size: 0.75rem;
     }
   }
 `;

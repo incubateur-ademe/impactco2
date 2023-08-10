@@ -1,28 +1,25 @@
-import styled from 'styled-components'
-
-import Select from 'components/base/Select'
-
-import { produits } from './data.js'
+import { produits } from "./data.js";
+import Select from "components/base/Select";
+import styled from "styled-components";
 
 const StyledSelect = styled(Select)`
   margin: 1rem;
   > select {
     border: none;
   }
-`
+`;
 
 export default function SelectProduits(props) {
   return (
     <>
       <StyledSelect
         onChange={(e) => {
-          props.changeProduit(
-            produits.find((produit) => produit.uid === e.value)
-          )
+          window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_Products_${e.value}`]);
+          props.changeProduit(produits.find((produit) => produit.uid === e.value));
         }}
         value={props.value}
-        label='Vous commandez en majorité'
-        name='produits'
+        label="Vous commandez"
+        name="produits"
       >
         {produits.map((produit) => (
           <option key={produit.uid} value={produit.uid}>
@@ -31,5 +28,5 @@ export default function SelectProduits(props) {
         ))}
       </StyledSelect>
     </>
-  )
+  );
 }

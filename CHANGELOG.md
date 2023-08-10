@@ -2,6 +2,128 @@
 # CHANGELOG
 
 
+## 1.18.1 (08/08/2023)
+
+* U28b - rollback, fonctionnalité pas encore mûre
+
+## 1.18.0 (08/08/2023)
+
+* U28 - un seul bouton pour modifier les équivalences (livraison)
+
+## 1.17.12 (08/08/2023)
+
+* A8b - animations, corrections
+
+## 1.17.11 (08/08/2023)
+
+* U23b - corrections modale de partage
+
+## 1.17.10 (08/08/2023)
+
+* A4b - alternative image, wording
+
+## 1.17.9 (07/08/2023)
+
+* U27b - clarifier choix d'items livrés
+
+## 1.17.8 (07/08/2023)
+
+* B2b - bug page fruits et légumes
+
+## 1.17.7 (07/08/2023)
+
+* A14b - sauts ligne modale hypothèse
+
+## 1.17.6 (07/08/2023)
+
+* A20 - Changement de clé d'API Google
+
+## 1.17.5 (04/08/2023)
+
+* A14 - Modale hypothèse
+
+## 1.17.4 (04/08/2023)
+
+* U22c - Fréquence d'achat, dernières corrections
+
+## 1.17.3 (04/08/2023)
+
+* B2 - bug URL calendrier fruits et légumes
+
+## 1.17.2 (04/08/2023)
+
+* U22b - Fréquence d'achat, correction graphique en mobile
+
+## 1.17.1 (03/08/2023)
+
+* U24c - Matomo dernier retours
+
+## 1.17.0 (03/08/2023)
+
+* U22 - Affiner sa fréquence d'achat
+
+## 1.16.4 (03/08/2023)
+
+* A15 - Nouvelle adresse e-mail dans le footer
+
+## 1.16.3 (01/08/2023)
+
+* U24b - Matomo segmentation
+
+## 1.16.2 (01/08/2023)
+
+* B1 - titre usage numérique
+
+## 1.16.1 (01/08/2023)
+
+* A8 - suppression des animations CSS
+
+## 1.16.0 (01/08/2023)
+
+* U23 - modale partager V2
+
+## 1.15.2 (31/07/2023)
+
+* A24b - amélioration des métriques
+
+## 1.15.1 (31/07/2023)
+
+* A12b - crop image téléchargement
+
+## 1.15.0 (28/07/2023)
+
+* U24 - matomo custom event
+* BSR - chgt lien calendrier fruits et légumes
+
+## 1.14.9 (27/07/2023)
+
+* A6 - titre des pages
+
+## 1.14.8 (27/07/2023)
+
+* A12c - inversion des logos RF et Ademe
+
+## 1.14.7 (26/07/2023)
+
+* A12a - inversion des logos lors du téléchargement
+* A12b - bug lors du passage vers usagenumerique
+
+## 1.14.6 (25/07/2023)
+
+* A3 - Liens d'accès rapide (a11y)
+
+## 1.14.5 (25/07/2023)
+
+* A4 - Img alt
+
+## 1.14.4 (24/07/2023)
+
+* U27 - Clarifier les choix d’items livrés
+
+## 1.14.3 (24/07/2023)
+
+* U26 - modification label
+
 ## 1.14.2 (24/07/2023)
 
 * U11 - ancre partie conseils ADEME

@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   height: 1.75rem;
   justify-content: center;
   position: relative;
-  transition: border 200ms ease-out, background-color 300ms ease-out;
   width: 1.75rem;
 
   ${(props) => props.theme.mq.small} {

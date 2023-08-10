@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function OutboundLink(props) {
   return (
     <>
-      <Wrapper>
+      <Wrapper color={props.color}>
         <Link
           title={props.title}
           target="_blank"
@@ -39,7 +39,9 @@ export default function OutboundLink(props) {
 
 const Wrapper = styled.span`
   > a {
-    color: ${(props) => props.theme.colors.firstBlue};
+    color: ${(props) => () => {
+      return props.color === "black" ? props.theme.colors.persistentText : props.theme.colors.firstBlue;
+    }};
   }
   svg {
     margin-left: 0.25rem;

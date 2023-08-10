@@ -35,7 +35,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
       "select#produits",
       (sel) => sel.options[sel.options.selectedIndex].textContent
     );
-    expect(currentProduit).toEqual("Habillement");
+    expect(currentProduit).toEqual("Habillement (vêtements, chaussures, accessoires…)");
   });
   await test.step("Le mode de retrait par défaut est le point relais", async () => {
     let currentRetrait = await page.$eval(
@@ -53,16 +53,18 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
   await test.step("Si on prend un colis volumineux, on a bien une augmentation de CO2", async () => {
     // Given
     await page.locator("select#retraits").selectOption({ label: "Livraison à domicile" });
-    await page.locator("select#produits").selectOption({ label: "Bien d'équipement volumineux" }); // Ici
+    await page.locator("select#produits").selectOption({ label: "Mobilier et gros électroménager" }); // Ici
     // When-Then
     await expect(page.getByTestId("resultAsText")).toHaveText("70,59 kg de CO2e ");
   });
 
-  await test.step("La liste déroulante “Vous commandez en majorité” a bien les options “Produits de grande consommation”, “Habillement”, “Produits culturel physique”, “bien d’équipement volumineux”, et “autre”", async () => {
-    await page.locator("select#produits").selectOption({ label: "Produits de grande consommation" });
-    await page.locator("select#produits").selectOption({ label: "Habillement" });
-    await page.locator("select#produits").selectOption({ label: "Produit culturel physique" });
-    await page.locator("select#produits").selectOption({ label: "Bien d'équipement volumineux" });
+  await test.step("La liste déroulante “Vous commandez a bien les options “grande consommation”, “Habillement”, “Produits culturel“, “mobilier”", async () => {
+    await page
+      .locator("select#produits")
+      .selectOption({ label: "Produits de grande consommation (aliments, épicerie, boissons…)" });
+    await page.locator("select#produits").selectOption({ label: "Habillement (vêtements, chaussures, accessoires…)" });
+    await page.locator("select#produits").selectOption({ label: "Produits culturels (CD, livres, DVD…)" });
+    await page.locator("select#produits").selectOption({ label: "Mobilier et gros électroménager" });
   });
 
   await test.step("La liste déroulante “Que vous faites livrer” a bien 3 options", async () => {

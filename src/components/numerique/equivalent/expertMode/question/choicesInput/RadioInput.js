@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   border-right: 0.125rem solid ${(props) => props.theme.colors.main};
@@ -15,13 +15,11 @@ const Wrapper = styled.div`
     position: absolute;
     width: 0;
   }
-`
+`;
 const Label = styled.label`
   align-items: center;
-  background-color: ${(props) =>
-    props.checked ? props.theme.colors.main : 'transparent'};
-  color: ${(props) =>
-    props.theme.colors[props.checked ? 'background' : 'main']};
+  background-color: ${(props) => (props.checked ? props.theme.colors.main : "transparent")};
+  color: ${(props) => props.theme.colors[props.checked ? "background" : "main"]};
   cursor: pointer;
   display: flex;
   font-size: 1rem;
@@ -29,17 +27,16 @@ const Label = styled.label`
   line-height: 1.2;
   padding: 0.5rem 0.75rem;
   position: relative;
-  transition: all 300ms ease-out;
 
   ${(props) => props.theme.mq.small} {
     font-size: 1rem;
   }
-`
+`;
 export default function RadioInput(props) {
   return (
     <Wrapper>
       <input
-        type='radio'
+        type="radio"
         id={props.id}
         name={props.name}
         value={props.value}
@@ -50,5 +47,5 @@ export default function RadioInput(props) {
         {props.label}
       </Label>
     </Wrapper>
-  )
+  );
 }

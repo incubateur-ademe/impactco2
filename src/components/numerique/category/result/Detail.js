@@ -17,9 +17,7 @@ const Wrapper = styled.div`
 const Title = styled.h3`
   text-align: center;
 `;
-const Color = styled.span`
-  color: ${(props) => props.theme.colors.main};
-`;
+
 const Text = styled.p`
   font-size: 0.875rem;
   margin: 0 auto 0.5rem;
@@ -80,7 +78,8 @@ export default function Detail(props) {
               52) /
             1000,
           to: `/${categories.find((category) => category.id === 10).slug}/email`,
-          onClick: () => window?._paq?.push(["trackEvent", "Interaction", "Navigation via graph categorie", "email"]),
+          onClick: () =>
+            window?.please?.track(["trackEvent", "Interaction", "Navigation via graph categorie", "email"]),
         },
         {
           id: `visioconference`,
@@ -96,7 +95,7 @@ export default function Detail(props) {
             1000,
           to: `/${categories.find((category) => category.id === 10).slug}/visioconference`,
           onClick: () =>
-            window?._paq?.push(["trackEvent", "Interaction", "Navigation via graph categorie", "visioconference"]),
+            window?.please?.track(["trackEvent", "Interaction", "Navigation via graph categorie", "visioconference"]),
         },
         {
           id: `streaming`,
@@ -112,7 +111,7 @@ export default function Detail(props) {
             1000,
           to: `/${categories.find((category) => category.id === 10).slug}/streamingvideo`,
           onClick: () =>
-            window?._paq?.push(["trackEvent", "Interaction", "Navigation via graph categorie", "streaming"]),
+            window?.please?.track(["trackEvent", "Interaction", "Navigation via graph categorie", "streaming"]),
         },
         ...equivalents
           .filter((equivalent) => devicesToDisplay.map((device) => device.slug).includes(equivalent.slug))
@@ -126,7 +125,7 @@ export default function Detail(props) {
             value: formatConstruction(equivalent),
             to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
             onClick: () =>
-              window?._paq?.push(["trackEvent", "Interaction", "Navigation via graph categorie", equivalent.slug]),
+              window?.please?.track(["trackEvent", "Interaction", "Navigation via graph categorie", equivalent.slug]),
           })),
       ]
         .filter((item) => item.value)
@@ -136,9 +135,7 @@ export default function Detail(props) {
 
   return (
     <Wrapper>
-      <Title>
-        Détail de mon impact <Color>par année</Color>
-      </Title>
+      <Title>Détail de mon impact</Title>
       <Text>
         En général, la majorité de votre empreinte numérique provient de la construction de vos appareils et pas de
         l’usage de ces derniers.
@@ -150,7 +147,7 @@ export default function Detail(props) {
             checked={displayAll}
             onChange={() => {
               setDisplayAll((prevDisplayAll) => !prevDisplayAll);
-              window?._paq?.push(["trackEvent", "Interaction", "Voir tous les équivalents", props.category.name]);
+              window?.please?.track(["trackEvent", "Interaction", "Voir tous les équivalents", props.category.name]);
             }}
           >
             Voir tous les appareils
