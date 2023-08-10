@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.6 (10/08/2023)
+
+* BSR - arrondi CO2e
+
 ## 1.18.5 (10/08/2023)
 
 * A25 - disclaimer Négaoctet
