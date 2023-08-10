@@ -102,11 +102,6 @@ const adaptEcv = (remotes) => {
     consommation.value = remote["Score_unique_EF_-_Consommation"] * delta;
     upsert(localBoisson.ecv, consommation);
 
-    if (localBoisson.slug === "eauenbouteille") {
-      console.log("eauenbouteille-----------------------------------------------------------");
-      console.log(localBoisson.ecv);
-    }
-
     localBoisson.ecv = localBoisson.ecv.filter((e) => e.value !== 0);
 
     return localBoisson;
