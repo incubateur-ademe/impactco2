@@ -229,6 +229,9 @@
     "slug": "laitdesoja",
     "emoji": "🍈",
     "category": 3,
+    "ecv": [
+
+    ],
     "total": 0.42,
     "default": false,
     "tile": false,
