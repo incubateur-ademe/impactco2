@@ -6,7 +6,6 @@ let rawboissons = JSON.parse(rawdata);
 let boissons = rawboissons.filter((e) => !!e?.Code_CIQUAL);
 
 let boissons_hors_calcul = rawboissons.filter((e) => !e?.Code_CIQUAL);
-console.log("boissons_hors_calcul", boissons_hors_calcul);
 
 const AGRICULTURE_ID = 30;
 const TRANSFORMATION_ID = 31;
