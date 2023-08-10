@@ -9,6 +9,7 @@ import ReduireModal3 from "components/modals/ReduireModal3";
 import ShareModal from "components/modals/ShareModal";
 import SocialModal3 from "components/modals/SocialModal3";
 import TilesModal from "components/modals/TilesModal";
+import WarningNegaoctet from "components/modals/WarningNegaoctet";
 import React, { useState } from "react";
 
 const ModalContext = React.createContext({});
@@ -25,6 +26,7 @@ export function ModalProvider(props) {
   const [devices, setDevices] = useState(false);
   const [hypothesis, setHypothesis] = useState(false);
   const [hypothesisLivraison, setHypothesisLivraison] = useState(false);
+  const [warningNegaoctet, setWarningNegaoctet] = useState(false);
 
   return (
     <ModalContext.Provider
@@ -82,6 +84,11 @@ export function ModalProvider(props) {
           window?.please?.track(["trackEvent", "Interaction", "Modal", "Hypothèses usages numériques"]);
           setHypothesis(value);
         },
+        warningNegaoctet,
+        setWarningNegaoctet: (value) => {
+          window?.please?.track(["trackEvent", "Interaction", "Modal", "Avertissement négaoctet"]);
+          setWarningNegaoctet(value);
+        },
         hypothesisLivraison,
         setHypothesisLivraison: (value) => {
           if (value === true) {
@@ -103,6 +110,7 @@ export function ModalProvider(props) {
       <DevicesModal />
       <DetailsUsagesNumModal />
       <DetailLivraisonModal2 />
+      <WarningNegaoctet />
     </ModalContext.Provider>
   );
 }

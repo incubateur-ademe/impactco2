@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.5 (10/08/2023)
+
+* A25 - disclaimer Négaoctet
+
 ## 1.18.4 (10/08/2023)
 
 * B5 - modal wording
