@@ -7,11 +7,11 @@ let boissons = rawboissons.filter((e) => !!e?.Code_CIQUAL);
 // console.log("boissons", boissons);
 
 const AGRICULTURE_ID = 30;
-// const TRANSFORMATION_ID = 31;
-// const EMBALLAGE_ID = 32;
-// const TRANSPORT_ID = 33;
-// const SUPERMARCHE_ID = 34;
-// const CONSOMMATION_ID = 35;
+const TRANSFORMATION_ID = 31;
+const EMBALLAGE_ID = 32;
+const TRANSPORT_ID = 33;
+const SUPERMARCHE_ID = 34;
+const CONSOMMATION_ID = 35;
 
 const ciquals = boissons.map((e) => e.Code_CIQUAL).join(",");
 // console.log("ciquals", ciquals);
@@ -20,13 +20,13 @@ const remote_url = `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-3
   ciquals.length + 100
 }&select=Code_CIQUAL%2CNom_du_Produit_en_Fran%C3%A7ais%2CChangement_climatique_-_Agriculture%2CChangement_climatique_-_Transformation%2CChangement_climatique_-_Emballage%2CChangement_climatique_-_Transport%2CChangement_climatique_-_Supermarch%C3%A9_et_distribution%2CChangement_climatique_-_Consommation%2CScore_unique_EF_-_Agriculture%2CScore_unique_EF_-_Transformation%2CScore_unique_EF_-_Emballage%2CScore_unique_EF_-_Transport%2CScore_unique_EF_-_Supermarch%C3%A9_et_distribution%2CScore_unique_EF_-_Consommation&Code_CIQUAL_in=${ciquals}`;
 
-// console.log("remote_url ------------------------------- ", remote_url);
+console.log("remote_url ------------------------------- ", remote_url);
 
 axios.get(remote_url).then((res) => {
   let remoteData = res.data;
   let finalResult = adaptEcv(remoteData.results);
-  // console.dir(finalResult, { depth: null });
-  // fs.writeFileSync("src/data/categories/boisson.json", JSON.stringify(finalResult, null, 2));
+  console.dir(finalResult, { depth: null });
+  fs.writeFileSync("src/data/categories/boisson.json", JSON.stringify(finalResult, null, 2));
   return finalResult;
 });
 
@@ -72,11 +72,41 @@ const adaptEcv = (remotes) => {
     agriculture.id = AGRICULTURE_ID;
     agriculture.name = "agriculture";
     agriculture.value = remote["Score_unique_EF_-_Agriculture"] * delta;
-    console.log("agriculture", agriculture);
     upsert(localBoisson.ecv, agriculture);
-    console.log("localBoisson.ecv", localBoisson.ecv);
-    console.log("====================================================================================");
-    console.log("\\");
+
+    let transformation = localBoisson.ecv.find((e) => e.id === TRANSFORMATION_ID) || {};
+    transformation.id = TRANSFORMATION_ID;
+    transformation.name = "transformation";
+    transformation.value = remote["Score_unique_EF_-_Transformation"] * delta;
+    upsert(localBoisson.ecv, transformation);
+
+    let emballage = localBoisson.ecv.find((e) => e.id === EMBALLAGE_ID) || {};
+    emballage.id = EMBALLAGE_ID;
+    emballage.name = "emballage";
+    emballage.value = remote["Score_unique_EF_-_Emballage"] * delta;
+    upsert(localBoisson.ecv, emballage);
+
+    let transport = localBoisson.ecv.find((e) => e.id === TRANSPORT_ID) || {};
+    transport.id = TRANSPORT_ID;
+    transport.name = "transport";
+    transport.value = remote["Score_unique_EF_-_Transport"] * delta;
+    upsert(localBoisson.ecv, transport);
+
+    let supermarche = localBoisson.ecv.find((e) => e.id === SUPERMARCHE_ID) || {};
+    supermarche.id = SUPERMARCHE_ID;
+    supermarche.name = "supermarche";
+    supermarche.value = remote["Score_unique_EF_-_Supermarché_et_distribution"] * delta;
+    upsert(localBoisson.ecv, supermarche);
+
+    let consommation = localBoisson.ecv.find((e) => e.id === CONSOMMATION_ID) || {};
+    consommation.id = CONSOMMATION_ID;
+    consommation.name = "consommation";
+    consommation.value = remote["Score_unique_EF_-_Consommation"] * delta;
+    upsert(localBoisson.ecv, supermarche);
+
+    localBoisson.ecv = localBoisson.ecv.filter((e) => e.value !== 0);
+
+    return localBoisson;
   });
   return newList;
 };

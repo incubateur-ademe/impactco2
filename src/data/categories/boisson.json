@@ -1,46 +1,35 @@
 [
   {
-    "id": 24283,
-    "name": "Eau du robinet",
-    "prefix": "Litre[s] d'",
-    "synonyms": ["boire"],
-    "slug": "eaudurobinet",
-    "emoji": "🚰",
-    "category": 3,
-    "total": 0.000132,
-    "default": true,
-    "tile": false,
-    "source": "https://base-empreinte.ademe.fr/documentation/base-impact",
-    "meta": {
-      "title": "Eau du robinet",
-      "description": "Connaître l'impact environnemental d'un litre d'eau du robinet, comprenant la fabrication, la distribution et la consommation"
-    }
-  },
-  {
     "id": 31000,
     "Code_CIQUAL": 18430,
     "name": "Eau en bouteille",
     "prefix": "Litre[s] d'",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "eauenbouteille",
     "emoji": "💧",
     "category": 3,
     "ecv": [
       {
-        "value": 0.0052740241,
-        "id": 30
+        "value": 0.00627936183931169,
+        "id": 30,
+        "name": "agriculture"
       },
       {
-        "value": 0.3314434,
-        "id": 32
+        "value": 0.1644216369370999,
+        "id": 32,
+        "name": "emballage"
       },
       {
-        "value": 0.10355029,
-        "id": 33
+        "value": 0.060627659447665315,
+        "id": 33,
+        "name": "transport"
       },
       {
-        "value": 0.012364537,
-        "id": 34
+        "value": 0.03314741952995768,
+        "id": 34,
+        "name": "supermarche"
       }
     ],
     "default": true,
@@ -56,34 +45,42 @@
     "Code_CIQUAL": 18026,
     "name": "Soda",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "soda",
     "emoji": "🥤",
     "category": 3,
     "ecv": [
       {
-        "value": 0.078511019,
-        "id": 30
+        "value": 0.10413263417225606,
+        "id": 30,
+        "name": "agriculture"
       },
       {
-        "value": 0.030061611,
-        "id": 31
+        "value": 0.01732426171634879,
+        "id": 31,
+        "name": "transformation"
       },
       {
-        "value": 0.22265825,
-        "id": 32
+        "value": 0.22981063504556215,
+        "id": 32,
+        "name": "emballage"
       },
       {
-        "value": 0.20722133,
-        "id": 33
+        "value": 0.0927866316818457,
+        "id": 33,
+        "name": "transport"
       },
       {
-        "value": 0.028932423,
-        "id": 34
+        "value": 0.05269734860648784,
+        "id": 34,
+        "name": "supermarche"
       },
       {
-        "value": 0.0047993021,
-        "id": 35
+        "value": 0.014473543677499461,
+        "id": 35,
+        "name": "consommation"
       }
     ],
     "default": true,
@@ -99,34 +96,42 @@
     "Code_CIQUAL": 5001,
     "name": "Bière",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "biere",
     "emoji": "🍺",
     "category": 3,
     "ecv": [
       {
-        "value": 0.044404353,
-        "id": 30
+        "value": 0.07616837712773988,
+        "id": 30,
+        "name": "agriculture"
       },
       {
-        "value": 0.25081748,
-        "id": 31
+        "value": 0.28598336634616334,
+        "id": 31,
+        "name": "transformation"
       },
       {
-        "value": 0.49690685,
-        "id": 32
+        "value": 0.4592427423084754,
+        "id": 32,
+        "name": "emballage"
       },
       {
-        "value": 0.268586,
-        "id": 33
+        "value": 0.19457960320640558,
+        "id": 33,
+        "name": "transport"
       },
       {
-        "value": 0.028932423,
-        "id": 34
+        "value": 0.08111568200617866,
+        "id": 34,
+        "name": "supermarche"
       },
       {
-        "value": 0.0047993021,
-        "id": 35
+        "value": 0.022278755905036994,
+        "id": 35,
+        "name": "consommation"
       }
     ],
     "default": true,
@@ -142,34 +147,42 @@
     "Code_CIQUAL": 5214,
     "name": "Vin",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "vin",
     "emoji": "🍷",
     "category": 3,
     "ecv": [
       {
-        "value": 0.22376566,
-        "id": 30
+        "value": 0.4466926087371023,
+        "id": 30,
+        "name": "agriculture"
       },
       {
-        "value": 0.10399603,
-        "id": 31
+        "value": 0.2238691136524353,
+        "id": 31,
+        "name": "transformation"
       },
       {
-        "value": 0.58993207,
-        "id": 32
+        "value": 0.3805008451464189,
+        "id": 32,
+        "name": "emballage"
       },
       {
-        "value": 0.1915867,
-        "id": 33
+        "value": 0.0957903376190315,
+        "id": 33,
+        "name": "transport"
       },
       {
-        "value": 0.012389304,
-        "id": 34
+        "value": 0.02810785880459748,
+        "id": 34,
+        "name": "supermarche"
       },
       {
-        "value": 0.0047993021,
-        "id": 35
+        "value": 0.015393454940414143,
+        "id": 35,
+        "name": "consommation"
       }
     ],
     "default": true,
@@ -186,30 +199,37 @@
     "name": "Lait",
     "subtitle": "De vache",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "laitdevache",
     "emoji": "🥛",
     "category": 3,
     "ecv": [
       {
-        "value": 1.1888463,
-        "id": 30
+        "value": 0.799152957419679,
+        "id": 30,
+        "name": "agriculture"
       },
       {
-        "value": 0.01061493,
-        "id": 31
+        "value": 0.015443376410528314,
+        "id": 31,
+        "name": "transformation"
       },
       {
-        "value": 0.17188731,
-        "id": 32
+        "value": 0.15286265337366634,
+        "id": 32,
+        "name": "emballage"
       },
       {
-        "value": 0.10315961,
-        "id": 33
+        "value": 0.16535549763055887,
+        "id": 33,
+        "name": "transport"
       },
       {
-        "value": 0.012078628,
-        "id": 34
+        "value": 0.049326298165567405,
+        "id": 34,
+        "name": "supermarche"
       }
     ],
     "default": true,
@@ -225,12 +245,38 @@
     "Code_CIQUAL": 18900,
     "subtitle": "De soja",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "laitdesoja",
     "emoji": "🍈",
     "category": 3,
     "ecv": [
-
+      {
+        "id": 30,
+        "name": "agriculture",
+        "value": 0.13061776408521542
+      },
+      {
+        "id": 31,
+        "name": "transformation",
+        "value": 0.06453821103848224
+      },
+      {
+        "id": 32,
+        "name": "emballage",
+        "value": 0.10069163573007085
+      },
+      {
+        "id": 33,
+        "name": "transport",
+        "value": 0.10676070898306896
+      },
+      {
+        "id": 34,
+        "name": "supermarche",
+        "value": 0.043041239163162597
+      }
     ],
     "total": 0.42,
     "default": false,
@@ -250,24 +296,29 @@
     "category": 3,
     "ecv": [
       {
-        "value": 0.038005953,
-        "id": 30
+        "value": 0.024523553789156976,
+        "id": 30,
+        "name": "agriculture"
       },
       {
-        "value": 0.0026754522,
-        "id": 32
+        "value": 0.0006555673797149555,
+        "id": 32,
+        "name": "emballage"
       },
       {
-        "value": 0.0024293426,
-        "id": 33
+        "value": 0.0006900499206393253,
+        "id": 33,
+        "name": "transport"
       },
       {
-        "value": 0.00012657062,
-        "id": 34
+        "value": 0.00013555602943513944,
+        "id": 34,
+        "name": "supermarche"
       },
       {
-        "value": 0.00820303408,
-        "id": 35
+        "value": 0.0131566263810536,
+        "id": 35,
+        "name": "consommation"
       }
     ],
     "default": true,
@@ -288,28 +339,34 @@
     "category": 3,
     "ecv": [
       {
-        "value": 0.50941142,
-        "id": 30
+        "value": 0.5360726648026617,
+        "id": 30,
+        "name": "agriculture"
       },
       {
-        "value": 0.014778142,
-        "id": 31
+        "value": 0.020654948604764477,
+        "id": 31,
+        "name": "transformation"
       },
       {
-        "value": 0.00576222432,
-        "id": 32
+        "value": 0.003083304397760912,
+        "id": 32,
+        "name": "emballage"
       },
       {
-        "value": 0.017587285,
-        "id": 33
+        "value": 0.009655399325691972,
+        "id": 33,
+        "name": "transport"
       },
       {
-        "value": 0.000738286432,
-        "id": 34
+        "value": 0.0013928452705040861,
+        "id": 34,
+        "name": "supermarche"
       },
       {
-        "value": 0.00823889548,
-        "id": 35
+        "value": 0.023365480858616866,
+        "id": 35,
+        "name": "consommation"
       }
     ],
     "default": true,
