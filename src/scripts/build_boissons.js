@@ -5,6 +5,9 @@ let rawdata = fs.readFileSync("src/data/categories/boisson.json");
 let rawboissons = JSON.parse(rawdata);
 let boissons = rawboissons.filter((e) => !!e?.Code_CIQUAL);
 
+let boissons_hors_calcul = rawboissons.filter((e) => !e?.Code_CIQUAL);
+console.log("boissons_hors_calcul", boissons_hors_calcul);
+
 const AGRICULTURE_ID = 30;
 const TRANSFORMATION_ID = 31;
 const EMBALLAGE_ID = 32;
@@ -24,7 +27,8 @@ axios.get(remote_url).then((res) => {
   let remoteData = res.data;
   let finalResult = adaptEcv(remoteData.results);
   console.dir(finalResult, { depth: null });
-  fs.writeFileSync("src/data/categories/boisson.json", JSON.stringify(finalResult, null, 2));
+  let mergedArrays = [...boissons_hors_calcul, ...finalResult];
+  fs.writeFileSync("src/data/categories/boisson.json", JSON.stringify(mergedArrays, null, 2));
   return finalResult;
 });
 
