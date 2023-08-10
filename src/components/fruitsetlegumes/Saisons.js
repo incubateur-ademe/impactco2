@@ -20,7 +20,7 @@ const StyledTop = styled(Top)`
     margin: 0;
   }
 `;
-export default function Distance(props) {
+export default function Saisons(props) {
   const { equivalents, categories } = useContext(DataContext);
 
   const [sorting, setSorting] = useState("alph_desc");
@@ -103,6 +103,7 @@ export default function Distance(props) {
   return (
     <Section>
       <Section.Content>
+        <Source>Source : Agribalyse 3.1.1 - Mise à jour le 10/10/2023</Source>
         <Wrapper month={props.month} slug={props.category.slug}>
           <Description description={props.category.description} />
           <StyledTop>
@@ -122,3 +123,5 @@ export default function Distance(props) {
     </Section>
   );
 }
+
+const Source = styled.div``;
