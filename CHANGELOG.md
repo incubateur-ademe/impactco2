@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.3 (10/08/2023)
+
+* A21 - FE fruits et légumes Agribalyse 3.1.1
+
 ## 1.18.2 (10/08/2023)
 
 * A22 - FE boissons Agribalyse 3.1.1
