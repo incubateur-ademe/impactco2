@@ -1,5 +1,3 @@
-import React from 'react'
-
 import {
   CenterLink,
   Emojis,
@@ -9,7 +7,8 @@ import {
   Label,
   Small,
   Title,
-} from 'components/misc/Visualization'
+} from "components/misc/Visualization";
+import React from "react";
 
 export default function Laut() {
   return (
@@ -29,9 +28,9 @@ export default function Laut() {
         <Equals>=</Equals>
 
         <Equivalent size={[14, 8, 30]}>
-          <Emojis margin={50}>🍈🍈🍈🍈</Emojis>
+          <Emojis margin={50}>🍈🍈🍈</Emojis>
           <Label>
-            4 litres
+            3 litres
             <br />
             de lait de soja
           </Label>
@@ -44,7 +43,7 @@ export default function Laut() {
         4 litres de lait de soja
         <br />
       </Small>
-      <CenterLink to='/boisson'>Comparez avec d'autres boissons</CenterLink>
+      <CenterLink to="/boisson">Comparez avec d'autres boissons</CenterLink>
     </>
-  )
+  );
 }
