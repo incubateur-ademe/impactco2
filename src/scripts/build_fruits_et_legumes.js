@@ -96,7 +96,7 @@ const adaptEcv = (remotes) => {
     consommation.id = CONSOMMATION_ID;
     consommation.name = "consommation";
     consommation.value = remote["Score_unique_EF_-_Consommation"] * delta;
-    upsert(localFruit.ecv, supermarche);
+    upsert(localFruit.ecv, consommation);
 
     localFruit.ecv = localFruit.ecv.filter((e) => e.value !== 0);
 

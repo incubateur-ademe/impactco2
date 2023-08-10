@@ -49,6 +49,11 @@
         "value": 0.03314741952995768,
         "id": 34,
         "name": "supermarche"
+      },
+      {
+        "id": 35,
+        "name": "consommation",
+        "value": 0.002598542165965415
       }
     ],
     "default": true,
