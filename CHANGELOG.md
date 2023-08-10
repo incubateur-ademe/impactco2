@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.4 (10/08/2023)
+
+* B5 - modal wording
+
 ## 1.18.3 (10/08/2023)
 
 * A21 - FE fruits et légumes Agribalyse 3.1.1

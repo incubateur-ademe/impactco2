@@ -26,7 +26,7 @@ export default function Co2eModal2() {
       </Text>
       <Text>
         <strong>
-          Chaque gaz à effet est de serre est ramené à un équivalent en CO
+          Chaque gaz à effet de serre est ramené à un équivalent en CO
           <sub>2</sub> selon son pouvoir de réchauffement.
         </strong>
       </Text>
