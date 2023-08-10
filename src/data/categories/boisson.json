@@ -1,5 +1,24 @@
 [
   {
+    "id": 24283,
+    "name": "Eau du robinet",
+    "prefix": "Litre[s] d'",
+    "synonyms": [
+      "boire"
+    ],
+    "slug": "eaudurobinet",
+    "emoji": "🚰",
+    "category": 3,
+    "total": 0.000132,
+    "default": true,
+    "tile": false,
+    "source": "https://base-empreinte.ademe.fr/documentation/base-impact",
+    "meta": {
+      "title": "Eau du robinet",
+      "description": "Connaître l'impact environnemental d'un litre d'eau du robinet, comprenant la fabrication, la distribution et la consommation"
+    }
+  },
+  {
     "id": 31000,
     "Code_CIQUAL": 18430,
     "name": "Eau en bouteille",
@@ -30,6 +49,11 @@
         "value": 0.03314741952995768,
         "id": 34,
         "name": "supermarche"
+      },
+      {
+        "id": 35,
+        "name": "consommation",
+        "value": 0.002598542165965415
       }
     ],
     "default": true,

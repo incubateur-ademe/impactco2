@@ -5,6 +5,8 @@ let rawdata = fs.readFileSync("src/data/categories/boisson.json");
 let rawboissons = JSON.parse(rawdata);
 let boissons = rawboissons.filter((e) => !!e?.Code_CIQUAL);
 
+let boissons_hors_calcul = rawboissons.filter((e) => !e?.Code_CIQUAL);
+
 const AGRICULTURE_ID = 30;
 const TRANSFORMATION_ID = 31;
 const EMBALLAGE_ID = 32;
@@ -24,7 +26,8 @@ axios.get(remote_url).then((res) => {
   let remoteData = res.data;
   let finalResult = adaptEcv(remoteData.results);
   console.dir(finalResult, { depth: null });
-  fs.writeFileSync("src/data/categories/boisson.json", JSON.stringify(finalResult, null, 2));
+  let mergedArrays = [...boissons_hors_calcul, ...finalResult];
+  fs.writeFileSync("src/data/categories/boisson.json", JSON.stringify(mergedArrays, null, 2));
   return finalResult;
 });
 
@@ -96,7 +99,7 @@ const adaptEcv = (remotes) => {
     consommation.id = CONSOMMATION_ID;
     consommation.name = "consommation";
     consommation.value = remote["Score_unique_EF_-_Consommation"] * delta;
-    upsert(localBoisson.ecv, supermarche);
+    upsert(localBoisson.ecv, consommation);
 
     localBoisson.ecv = localBoisson.ecv.filter((e) => e.value !== 0);
 
