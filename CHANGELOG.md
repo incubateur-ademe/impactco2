@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.7 (10/08/2023)
+
+* A22 - boissons, corrections
+
 ## 1.18.6 (10/08/2023)
 
 * BSR - arrondi CO2eq à 2 chiffres après la virgule
