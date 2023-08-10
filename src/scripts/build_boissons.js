@@ -4,7 +4,6 @@ const fs = require("fs");
 let rawdata = fs.readFileSync("src/data/categories/boisson.json");
 let rawboissons = JSON.parse(rawdata);
 let boissons = rawboissons.filter((e) => !!e?.Code_CIQUAL);
-// console.log("boissons", boissons);
 
 const AGRICULTURE_ID = 30;
 const TRANSFORMATION_ID = 31;
@@ -14,7 +13,6 @@ const SUPERMARCHE_ID = 34;
 const CONSOMMATION_ID = 35;
 
 const ciquals = boissons.map((e) => e.Code_CIQUAL).join(",");
-// console.log("ciquals", ciquals);
 
 const remote_url = `https://data.ademe.fr/data-fair/api/v1/datasets/agribalyse-31-detail-par-etape/lines?size=${
   ciquals.length + 100
