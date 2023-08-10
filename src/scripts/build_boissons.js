@@ -49,7 +49,6 @@ const adaptEcv = (remotes) => {
       throw new Error("BUG! " + boisson.slug + " is not defined...");
     }
     let localBoisson = JSON.parse(JSON.stringify(boisson));
-    console.log(localBoisson);
 
     const finalities = [
       "Agriculture",
@@ -60,11 +59,8 @@ const adaptEcv = (remotes) => {
       "Consommation",
     ];
     const finalC02 = sumValues("Changement_climatique_-_", remote, finalities);
-    console.log("finalC02", finalC02);
     const finalEF = sumValues("Score_unique_EF_-_", remote, finalities);
-    console.log("finalEF", finalEF);
     const delta = finalC02 / finalEF;
-    console.log("delta", delta);
 
     let agriculture = localBoisson.ecv.find((e) => e.id === AGRICULTURE_ID) || {};
     agriculture.id = AGRICULTURE_ID;
