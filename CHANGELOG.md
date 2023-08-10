@@ -4,7 +4,7 @@
 
 ## 1.18.6 (10/08/2023)
 
-* BSR - arrondi CO2e
+* BSR - arrondi CO2eq à 2 chiffres après la virgule
 
 ## 1.18.5 (10/08/2023)
 
