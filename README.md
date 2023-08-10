@@ -76,7 +76,10 @@ Parfois les données sont codées en dur.
 
 Il y a un cas de figure entre les deux : un fichier batch se connecte à une API et modifie un fichier .json (qui sera considéré comme "en dur" par l'appli une fois lancée). C'est le cas d'Agribalyse.
 
-Pour mettre à jour ce fichier, lancer `yarn buildfruit`
+Pour mettre à jour ce fichier,
+
+ - lancer `yarn build:fruit` pour les fruits et légumes,
+ - lancer `yarn build:boisson` pour les boissons.
 
 
 ## Architecture 🏛️
