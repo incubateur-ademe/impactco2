@@ -23,7 +23,7 @@ export default function SourceAgribalyse() {
         Agribalyse 3.1.1{" "}
       </OutboundLink>
       <span> - </span>
-      <span>Mise à jour le 10/10/2023 </span>
+      <span>Mise à jour le 10/08/2023 </span>
     </Wrapper>
   );
 }
