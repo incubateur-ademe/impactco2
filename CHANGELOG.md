@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.8 (10/08/2023)
+
+* A22b - affichage des sources
+
 ## 1.18.7 (10/08/2023)
 
 * A22 - boissons, corrections

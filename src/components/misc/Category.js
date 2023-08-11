@@ -8,6 +8,7 @@ import Wrapper from "./category/Wrapper";
 import Checkbox from "components/base/Checkbox";
 import Section from "components/base/Section";
 import BarChart from "components/charts/BarChart";
+import SourceAgribalyse from "components/misc/SourceAgribalyse.js";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useMemo, useState } from "react";
 import { formatName, formatTotal, formatUsage } from "utils/formatters";
@@ -43,6 +44,7 @@ export default function CategoryList(props) {
   return (
     <Section>
       <Section.Content>
+        {props?.category?.slug === "boisson" ? <SourceAgribalyse /> : <></>}
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Description description={props.category.description} />
           <Top className="noscreenshot">
