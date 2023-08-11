@@ -4,7 +4,7 @@
 
 ## 1.18.9 (11/08/2023)
 
-* BSR - hotfix date mise à jour, et valeur stockage de données
+* B7 - bugs post-MEP : hotfix date mise à jour, et valeur stockage de données
 
 ## 1.18.8 (10/08/2023)
 
