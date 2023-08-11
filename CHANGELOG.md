@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.10 (11/08/2023)
+
+* BSR : tests de non-régression pour la partie livraison
+
 ## 1.18.9 (11/08/2023)
 
 * B7 - bugs post-MEP : hotfix date mise à jour, et valeur stockage de données
