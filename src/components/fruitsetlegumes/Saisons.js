@@ -23,14 +23,15 @@ const StyledTop = styled(Top)`
 `;
 
 const SmallText = styled.div`
-  /* display: flex; */
   font-size: 14px;
   font-weight: 400;
-  /* justify-content: flex-end; */
   margin-bottom: 2rem;
   text-align: right;
   ${(props) => props.theme.mq.medium} {
     margin-bottom: 1rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 0;
   }
 `;
 
