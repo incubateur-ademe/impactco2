@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.9 (10/08/2023)
+
+* BSR - tests de non-régression sur la partie livraison
+
 ## 1.18.8 (10/08/2023)
 
 * A22b - affichage des sources
