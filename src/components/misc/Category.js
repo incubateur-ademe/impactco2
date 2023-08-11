@@ -6,11 +6,26 @@ import List from "./category/List";
 import Top from "./category/Top";
 import Wrapper from "./category/Wrapper";
 import Checkbox from "components/base/Checkbox";
+import OutboundLink from "components/base/OutboundLink.js";
 import Section from "components/base/Section";
 import BarChart from "components/charts/BarChart";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useMemo, useState } from "react";
+import styled from "styled-components";
 import { formatName, formatTotal, formatUsage } from "utils/formatters";
+
+const SmallText = styled.div`
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: right;
+  ${(props) => props.theme.mq.medium} {
+    margin-bottom: 1rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 0;
+  }
+`;
 
 export default function CategoryList(props) {
   const { equivalents, categories } = useContext(DataContext);
@@ -43,6 +58,18 @@ export default function CategoryList(props) {
   return (
     <Section>
       <Section.Content>
+        {props?.category?.slug === "boisson" ? (
+          <SmallText>
+            <span> Source : </span>
+            <OutboundLink title="Agribalyse 3.1.1" href="https://agribalyse.ademe.fr/app" data-testid="lien-agribalyse">
+              Agribalyse 3.1.1{" "}
+            </OutboundLink>
+            <span> - </span>
+            <span>Mise à jour le 10/10/2023 </span>
+          </SmallText>
+        ) : (
+          <></>
+        )}
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Description description={props.category.description} />
           <Top className="noscreenshot">
