@@ -2,7 +2,7 @@ import Emoji from "components/base/Emoji";
 import Section from "components/base/Section";
 import React from "react";
 import styled from "styled-components";
-import { getFrenchFormattedNumber, getNumberWithNDigitsAfterComma, formatTotal } from "utils/formatters";
+import { getFrenchFormattedNumber, getNumberWithNDigitsAfterComma, formatTotal, formatNumber } from "utils/formatters";
 
 const StyledSection = styled(Section)`
   background-color: ${(props) => props.theme.colors.main};
@@ -54,13 +54,16 @@ const StyledEmoji = styled(Emoji)`
   }
 `;
 export default function Value(props) {
+  let numberToDisplay = formatTotal(props.equivalent);
   return (
     <StyledSection>
       <Section.Content flex>
         <Top>
           <div>
             <Number>
-              {getFrenchFormattedNumber(getNumberWithNDigitsAfterComma(formatTotal(props.equivalent), 2))}
+              {numberToDisplay < 0.02
+                ? formatNumber(formatTotal(props.equivalent))
+                : getFrenchFormattedNumber(getNumberWithNDigitsAfterComma(formatTotal(props.equivalent), 2))}
             </Number>{" "}
             <Unit>
               kg <Big>CO2</Big>e{" "}
