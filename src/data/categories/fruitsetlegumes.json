@@ -13,22 +13,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.403378715789251
+        "value": 0.40146402806811304
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.07051244300040983
+        "value": 0.07100668042349577
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.0031563718128996385
+        "value": 0.0031098418161205356
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.001512350997439496
+        "value": 0.0014852275922706364
       }
     ],
     "default": true,
@@ -58,22 +58,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.2559129814792743
+        "value": 0.2547701865767705
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.11461477444336095
+        "value": 0.11500545989914154
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.01896975032453209
+        "value": 0.018931904779608256
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.00797761375283263
+        "value": 0.007807531744479746
       }
     ],
     "default": true,
@@ -109,22 +109,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.4853070956023481
+        "value": 0.4846464505613365
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.12447650776517885
+        "value": 0.12374803403082975
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.012052666027820748
+        "value": 0.011901309567525144
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.014102649604652356
+        "value": 0.013668524840308626
       }
     ],
     "default": true,
@@ -154,22 +154,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5512608265199933
+        "value": 0.5512462253829189
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.12449435974229199
+        "value": 0.12390561297084524
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.013549784353277456
+        "value": 0.013388383947377347
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.023412630384437187
+        "value": 0.022722851698858557
       }
     ],
     "default": true,
@@ -198,22 +198,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.22783751315605302
+        "value": 0.2318884350768168
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.07852574638258768
+        "value": 0.07749464346752033
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.03141138566452823
+        "value": 0.031008194059212856
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.018347801796831025
+        "value": 0.017651621396450073
       }
     ],
     "default": true,
@@ -246,22 +246,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 2.2691018928655398
+        "value": 2.1967691892319436
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.8912514128736877
+        "value": 0.9352055719787857
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.17825032616060396
+        "value": 0.1862461113598876
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.5459027441001691
+        "value": 0.5587081954293829
       }
     ],
     "default": true,
@@ -293,22 +293,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.3284998362325249
+        "value": 1.327629397818207
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.15811555549161002
+        "value": 0.157476163593698
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.02996479975854298
+        "value": 0.029714931935578007
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.04580143051732235
+        "value": 0.04448858765251692
       }
     ],
     "default": true,
@@ -338,22 +338,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.21876388033993266
+        "value": 0.21870781928982266
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.1232361024793188
+        "value": 0.12288446318909398
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.01454612099412839
+        "value": 0.014386392186676835
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.0085776901866202
+        "value": 0.008342424334406453
       }
     ],
     "default": true,
@@ -386,22 +386,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.1985876752860186
+        "value": 0.19855569551839136
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.19979107910201133
+        "value": 0.19964778729974922
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.11489451499542937
+        "value": 0.11473182070388491
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.030593640616540727
+        "value": 0.02981827147797449
       }
     ],
     "default": true,
@@ -434,22 +434,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.21876388033993266
+        "value": 0.21870781928982266
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.1232361024793188
+        "value": 0.12288446318909398
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.01454612099412839
+        "value": 0.014386392186676835
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.0085776901866202
+        "value": 0.008342424334406453
       }
     ],
     "default": true,
@@ -483,22 +483,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.4834482835682689
+        "value": 0.48095696660704207
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.17249200650860572
+        "value": 0.17206273471044398
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.02036002060453995
+        "value": 0.020143815778269795
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.00396202251858535
+        "value": 0.003854568004244177
       }
     ],
     "default": true,
@@ -531,22 +531,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.269354345043757
+        "value": 0.2744686179990303
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.12877603452677186
+        "value": 0.12717084462453185
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.07405565902386264
+        "value": 0.07308141373145949
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.01971923740560865
+        "value": 0.018993522644978326
       }
     ],
     "default": true,
@@ -585,22 +585,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5294818186174728
+        "value": 0.5131364995464165
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.2079683656976474
+        "value": 0.21845176415253645
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.04159368573158975
+        "value": 0.04350465054337229
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.08492216895329015
+        "value": 0.08700460775767485
       }
     ],
     "default": true,
@@ -633,22 +633,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.38994735256291974
+        "value": 0.3788543057978092
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.15316241503364714
+        "value": 0.1612853340230889
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.030632491923721538
+        "value": 0.0321199608362954
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.003682464579711384
+        "value": 0.0035590722428065053
       }
     ],
     "default": true,
@@ -681,22 +681,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.4697287391059323
+        "value": 0.45524941290667564
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.1844987207457885
+        "value": 0.19380815332134424
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.054881533251026175
+        "value": 0.057508549205910114
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.028251949897253124
+        "value": 0.028946096566070008
       }
     ],
     "default": true,
@@ -730,22 +730,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.28312090632292514
+        "value": 0.2829827597867092
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.1548271890094394
+        "value": 0.15433472453021685
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.025625257591983433
+        "value": 0.025406187771915913
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.01077654707565205
+        "value": 0.010477530911158064
       }
     ],
     "default": true,
@@ -778,22 +778,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.39778349911464284
+        "value": 0.3948815373068884
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.16866267118115974
+        "value": 0.17027309100485266
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.030526109024484965
+        "value": 0.03068313947282174
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02337202767971242
+        "value": 0.023011113215437206
       }
     ],
     "default": true,
@@ -825,22 +825,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.32736161780736733
+        "value": 0.3249566112753587
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.12560945244147365
+        "value": 0.1267880175884188
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.02306161859726602
+        "value": 0.023167730906306763
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.008742884153892962
+        "value": 0.008607430229915764
       }
     ],
     "default": true,
@@ -873,22 +873,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5368806588313528
+        "value": 0.5250268671805667
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.21875339323489149
+        "value": 0.22207954480171793
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.12579923369568738
+        "value": 0.1276227005592863
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.06699460723806831
+        "value": 0.06633710645842904
       }
     ],
     "default": true,
@@ -927,22 +927,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.23143765143437925
+        "value": 0.2353107991992817
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.11064838249462071
+        "value": 0.10902766714087424
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.013422982221099618
+        "value": 0.013123084645555706
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.007701538149900379
+        "value": 0.007401709214288363
       }
     ],
     "default": true,
@@ -972,22 +972,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.647059582420112
+        "value": 0.6518647722304847
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.16557078217296495
+        "value": 0.16598537558972426
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.09521533594332131
+        "value": 0.09538700432995566
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.025353549463601868
+        "value": 0.024790642849835256
       }
     ],
     "default": true,
@@ -1020,22 +1020,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.15040066616760575
+        "value": 0.15016138782912167
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.15131207463416535
+        "value": 0.15098729419749254
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.08701553131888874
+        "value": 0.08676803636837424
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.003475534079340197
+        "value": 0.003382433705011497
       }
     ],
     "default": true,
@@ -1072,22 +1072,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.8066619435403268
+        "value": 1.8072992522991684
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 8.766674625759265
+        "value": 8.755759543156284
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.04151922003474507
+        "value": 0.04115101307427565
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.03841344466566426
+        "value": 0.03733555847027189
       }
     ],
     "default": true,
@@ -1126,22 +1126,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.6213094084309185
+        "value": 0.6167064670815313
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.28406584894324216
+        "value": 0.2823070232147077
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.03669788773934232
+        "value": 0.036295342373374985
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02809739188649703
+        "value": 0.027220038330385988
       }
     ],
     "default": true,
@@ -1176,22 +1176,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.027976370796432
+        "value": 0.9890750151607365
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 5.3797049439283215
+        "value": 5.377127646444478
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.058357700572977476
+        "value": 0.05802468583450164
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.044624837702269604
+        "value": 0.04414659456028242
       }
     ],
     "default": true,
@@ -1223,22 +1223,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5368806588313528
+        "value": 0.5250268671805667
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.21875339323489149
+        "value": 0.22207954480171793
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.12579923369568738
+        "value": 0.1276227005592863
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.06699460723806831
+        "value": 0.06633710645842904
       }
     ],
     "default": true,
@@ -1270,22 +1270,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5368806588313528
+        "value": 0.5250268671805667
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.21875339323489149
+        "value": 0.22207954480171793
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.12579923369568738
+        "value": 0.1276227005592863
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.06699460723806831
+        "value": 0.06633710645842904
       }
     ],
     "default": true,
@@ -1317,22 +1317,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.21876388033993266
+        "value": 0.2187078192898227
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.1232361024793188
+        "value": 0.122884463189094
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.01454612099412839
+        "value": 0.014386392186676842
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.0085776901866202
+        "value": 0.008342424334406455
       }
     ],
     "default": true,
@@ -1367,22 +1367,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.562633027242422
+        "value": 0.5590874300039954
       },
       {
         "id": 32,
         "name": "emballage",
-        "value": 0.14359279924001617
+        "value": 0.14492032711285208
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.06857716905445875
+        "value": 0.06918517048486783
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.03695951446310307
+        "value": 0.03729287339828466
       }
     ],
     "default": true,
@@ -1412,22 +1412,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.2456216245633911
+        "value": 0.2488429591112444
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.12016604739363188
+        "value": 0.11861897696298362
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.014545709802099162
+        "value": 0.014250534193702704
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.008125706240877847
+        "value": 0.007823657732069384
       }
     ],
     "default": true,
@@ -1462,22 +1462,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.26732491323255037
+        "value": 0.267491959110919
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.15059195558029742
+        "value": 0.1502946069120538
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.01777505790032935
+        "value": 0.017595366153782457
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02305986928682294
+        "value": 0.022447157823244808
       }
     ],
     "default": true,
@@ -1510,17 +1510,17 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5186553946385324
+        "value": 0.5180955567960798
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.11416310284452087
+        "value": 0.11384770088796828
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.03336232851694665
+        "value": 0.03318591931595206
       }
     ],
     "default": true,
@@ -1550,22 +1550,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5558619976134935
+        "value": 0.5518885583147793
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.16959752793817434
+        "value": 0.17044406082494665
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.021131275809086504
+        "value": 0.02107649884179719
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02597015763924565
+        "value": 0.025456567018476744
       }
     ],
     "default": true,
@@ -1600,22 +1600,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.8031081301168407
+        "value": 0.8018993677679973
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.2899951681399075
+        "value": 0.29034903892726466
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.05649280804931792
+        "value": 0.056358660423640364
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.03586335469393384
+        "value": 0.03501270688109747
       }
     ],
     "default": true,
@@ -1646,22 +1646,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.39778349911464284
+        "value": 0.3948815373068884
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.16866267118115974
+        "value": 0.17027309100485266
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.030526109024484965
+        "value": 0.03068313947282174
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02337202767971242
+        "value": 0.023011113215437206
       }
     ],
     "default": true,
@@ -1693,22 +1693,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.3892471671512124
+        "value": 0.38815472659069905
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.18750395049564939
+        "value": 0.1875360939015891
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.02213194902648198
+        "value": 0.021955320736283847
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.004306836526656162
+        "value": 0.004201203871427946
       }
     ],
     "default": true,
@@ -1739,22 +1739,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.26732491323255037
+        "value": 0.267491959110919
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.15059195558029742
+        "value": 0.15029460691205382
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.01777505790032935
+        "value": 0.01759536615378246
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02305986928682294
+        "value": 0.022447157823244815
       }
     ],
     "default": true,
@@ -1786,22 +1786,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.383235283270511
+        "value": 0.37484185214687293
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.09477300825738438
+        "value": 0.100514588828102
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.01776728041960104
+        "value": 0.018682097933140285
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.010477173052503754
+        "value": 0.010833431091884844
       }
     ],
     "default": true,
@@ -1832,22 +1832,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.5964099510490413
+        "value": 1.5808848689288106
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.164674284795805
+        "value": 0.16400856157383012
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.027255037686659152
+        "value": 0.026998669479118702
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02521627046849469
+        "value": 0.024495397018240356
       }
     ],
     "default": true,
@@ -1877,22 +1877,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.8051574361541334
+        "value": 1.8023380399713715
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.04560925757601594
+        "value": 0.04549092139611165
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.027077869299881065
+        "value": 0.02701232284999322
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.005516332969969233
+        "value": 0.005363840782523507
       }
     ],
     "default": true,
@@ -1919,24 +1919,24 @@
     "category": 9,
     "ecv": [
       {
-        "id": 30,
-        "name": "agriculture",
-        "value": 1.0853808532120204
-      },
-      {
         "id": 33,
         "name": "transport",
-        "value": 0.10272683088620989
+        "value": 0.10209270185223396
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.011180638313368473
+        "value": 0.011031431598929678
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02578157758840135
+        "value": 0.024985651438883212
+      },
+      {
+        "id": 31,
+        "name": "transformation",
+        "value": 1.0833147091099529
       }
     ],
     "default": true,
@@ -1968,22 +1968,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.1001720870552563
+        "value": 0.726023664597355
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.06414408958834136
+        "value": 0.12219019567494512
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.004833985608001232
+        "value": 0.009137511017664302
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.008352628748401175
+        "value": 0.015508242710035574
       }
     ],
     "default": true,
@@ -2015,22 +2015,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.32832661650385303
+        "value": 0.32696964988622773
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.184408933732366
+        "value": 0.18515294196122195
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.007049168766991203
+        "value": 0.006923273026071387
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.022516943596789726
+        "value": 0.022044246826478944
       }
     ],
     "default": true,
@@ -2058,22 +2058,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.52862665611801
+        "value": 0.5264847662963503
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.0686091683972838
+        "value": 0.06806288156514599
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.010098640650199399
+        "value": 0.009963001152310288
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.009343228834506792
+        "value": 0.009039247986193464
       }
     ],
     "default": true,
@@ -2104,22 +2104,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.6057567750605246
+        "value": 1.5901941672341455
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.16563843661544997
+        "value": 0.1649743527293582
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.007940441660032042
+        "value": 0.007738389579073022
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02536390926399337
+        "value": 0.024639642157423022
       }
     ],
     "default": true,
@@ -2149,27 +2149,27 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.7383850835421583
+        "value": 0.7254928911153846
       },
       {
         "id": 31,
         "name": "transformation",
-        "value": 0.01901106215653529
+        "value": 0.018875390793624165
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.21359254983083753
+        "value": 0.21183823246585762
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.002316084063813601
+        "value": 0.0021630305838026376
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.019087206606655145
+        "value": 0.018445638741330768
       }
     ],
     "default": true,
@@ -2201,22 +2201,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.3314219356726389
+        "value": 0.33080235322545093
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.07547529714446874
+        "value": 0.07471912513665556
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.008214621096963097
+        "value": 0.008073632430015852
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.009471100385929307
+        "value": 0.0091431905078776
       }
     ],
     "default": true,
@@ -2247,22 +2247,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.6673589467444592
+        "value": 0.6671106652173151
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.18507767963795024
+        "value": 0.1848975025015616
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.027141415211145523
+        "value": 0.026953165351735784
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.053814103406445005
+        "value": 0.05243365092938753
       }
     ],
     "default": true,
@@ -2293,22 +2293,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.1099283309388273
+        "value": 1.105821313370722
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.0769096261007815
+        "value": 0.07630630439580667
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.012729217317949227
+        "value": 0.012561348455141478
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.011777029642441839
+        "value": 0.011396680778329766
       }
     ],
     "default": true,
@@ -2337,22 +2337,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5541434636982604
+        "value": 0.5516745396456768
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.06628731316512972
+        "value": 0.06577248673377466
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.010238865744326628
+        "value": 0.010099314647502546
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.010150454392283481
+        "value": 0.009823408973046163
       }
     ],
     "default": true,
@@ -2381,22 +2381,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.8192886979748665
+        "value": 0.81634159152278
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.05523915555758005
+        "value": 0.05489349981435049
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.009142564331835792
+        "value": 0.009036427639252406
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.0012688053357177004
+        "value": 0.0012297301236171496
       }
     ],
     "default": true,
@@ -2426,22 +2426,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 4.433231579544985
+        "value": 4.4273156212923395
       },
       {
         "id": 31,
         "name": "transformation",
-        "value": 0.06726836314034383
+        "value": 0.06631423045897496
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.1248978766186456
+        "value": 0.1243784389891823
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.03511793569602675
+        "value": 0.034957130259502846
       }
     ],
     "default": true,
@@ -2471,27 +2471,27 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 3.772394629078588
+        "value": 3.7682299167498408
       },
       {
         "id": 32,
         "name": "emballage",
-        "value": 0.19262033246449295
+        "value": 0.19227068360559735
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.09199177495877192
+        "value": 0.09179029158898216
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.05658698163708793
+        "value": 0.05647588702076113
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.057639811861059334
+        "value": 0.05607213303481815
       }
     ],
     "default": true,
@@ -2520,22 +2520,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.9272116728485386
+        "value": 0.9153825473257319
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.04042124000653024
+        "value": 0.03982863631175173
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.0019377295792954179
+        "value": 0.0018682267824330797
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.006189630165635735
+        "value": 0.0059485812800832245
       }
     ],
     "default": true,
@@ -2565,22 +2565,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.9310922391748409
+        "value": 0.9193106557979828
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.040590410981648395
+        "value": 0.039999549777593374
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.006718068837484897
+        "value": 0.006584623469626956
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.00621553500602589
+        "value": 0.00597410795479691
       }
     ],
     "default": true,
@@ -2608,22 +2608,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.4882383374121024
+        "value": 0.4748974093662753
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.19176886822602737
+        "value": 0.20217267132475336
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.009193092747514557
+        "value": 0.00948323704302927
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.029365214214355652
+        "value": 0.030195373965942157
       }
     ],
     "default": true,
@@ -2653,22 +2653,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.5224991629398071
+        "value": 0.5203124812236186
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.06418521018458785
+        "value": 0.06366413517604866
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.002896208735985168
+        "value": 0.002810672523080817
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.009251270739619828
+        "value": 0.008949402777251819
       }
     ],
     "default": true,
@@ -2699,27 +2699,27 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.2045357814408217
+        "value": 1.193131040702151
       },
       {
         "id": 32,
         "name": "emballage",
-        "value": 0.07248497386881318
+        "value": 0.07171672834715612
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.054801948882367814
+        "value": 0.05417833774270202
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.008691033988323852
+        "value": 0.008545880115061162
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.008040915819673478
+        "value": 0.007753520092929479
       }
     ],
     "default": true,
@@ -2748,27 +2748,27 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.423183515798164
+        "value": 0.42247817556364853
       },
       {
         "id": 32,
         "name": "emballage",
-        "value": 0.23173841873537715
+        "value": 0.23107612594473056
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.17520482245880986
+        "value": 0.17456625091857256
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.0277857101428319
+        "value": 0.027535400948818504
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.025707246864817287
+        "value": 0.024982363624229915
       }
     ],
     "default": true,
@@ -2798,22 +2798,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.2886447398394225
+        "value": 1.2954829217552046
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.17467728822077527
+        "value": 0.1738618215393397
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.003957208076973288
+        "value": 0.003852778366645959
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.0018960654628290693
+        "value": 0.0018400462388097818
       }
     ],
     "default": true,
@@ -2843,22 +2843,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.2740061413051722
+        "value": 0.27341934474951646
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.08244793528394287
+        "value": 0.08190737602897352
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.0037645840095870465
+        "value": 0.0036594786082843286
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.005465952501297958
+        "value": 0.005296394613225656
       }
     ],
     "default": true,
@@ -2893,22 +2893,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.3137794503788738
+        "value": 0.3135493456304906
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.11926733425000698
+        "value": 0.11876845385012552
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.017451705983434557
+        "value": 0.017282838108235988
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.007339209387684606
+        "value": 0.007127455411147958
       }
     ],
     "default": true,
@@ -2937,22 +2937,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.3132243279629721
+        "value": 0.31094313792574774
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.1201849397931832
+        "value": 0.12132039377688243
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.0220656900318644
+        "value": 0.022168642510005814
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.0028895913119802654
+        "value": 0.002677168687364001
       }
     ],
     "default": true,
@@ -2983,22 +2983,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.6083616590157137
+        "value": 0.6052678990137963
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.20659114217066407
+        "value": 0.20558117492666145
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.06145321004165059
+        "value": 0.06100194915162366
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.03163492177197185
+        "value": 0.030704448907918618
       }
     ],
     "default": true,
@@ -3028,22 +3028,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.3386610578174048
+        "value": 0.3387797113397952
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.18519981586959255
+        "value": 0.18476558024305728
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.030652193008441513
+        "value": 0.030415636746221317
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02835930730456118
+        "value": 0.02759554867092626
       }
     ],
     "default": true,
@@ -3054,7 +3054,7 @@
       7,
       8
     ],
-    "source": "https://agribalyse.ademe.fr/app/aliments/20047_1#Tomate_de_saison,_crue",
+    "source": "https://agribalyse.ademe.fr/app/aliments/20047_2#Tomate_de_saison,_crue",
     "meta": {
       "title": "Tomate",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de tomates : de l'agriculture à la distribution et la consommation"
@@ -3074,22 +3074,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.7845329384097066
+        "value": 0.784887627238915
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.404358094026432
+        "value": 0.40369427532200425
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.011859463533714353
+        "value": 0.011573429169881933
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.09470580103014703
+        "value": 0.09212677426919891
       }
     ],
     "default": true,
@@ -3128,27 +3128,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.30286391265088936
-      },
-      {
-        "id": 31,
-        "name": "transformation",
-        "value": 0.23823026920379933
+        "value": 0.5414110726969145
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.2704907880633539
+        "value": 0.26905091124465946
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.03007064855679703
+        "value": 0.029727700179135168
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.04169478852516042
+        "value": 0.0404212088792907
       }
     ],
     "default": true,
@@ -3187,22 +3182,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.2468616150748997
+        "value": 1.245661481703931
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.1932445771906265
+        "value": 0.1925264065004108
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.018100142732379493
+        "value": 0.017918409364132016
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.025096952002094334
+        "value": 0.024363935431526183
       }
     ],
     "default": true,
@@ -3241,22 +3236,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.4528686933291521
+        "value": 0.4510695936352177
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.06288160064226464
+        "value": 0.06239045780565181
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.010407456133345431
+        "value": 0.010270557419573601
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.009628943895237782
+        "value": 0.009318288139556933
       }
     ],
     "default": true,
@@ -3286,22 +3281,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 2.4013452664573927
+        "value": 2.406885789206207
       },
       {
         "id": 32,
         "name": "emballage",
-        "value": 0.18915109040104938
+        "value": 0.1848272926269017
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.13232813232177199
+        "value": 0.1293980331458001
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.04004505781978601
+        "value": 0.038999873021091015
       }
     ],
     "default": true,
@@ -3332,22 +3327,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.670890545151551
+        "value": 0.6704029253772589
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.17082370446852668
+        "value": 0.17070675301295968
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.026385757582973693
+        "value": 0.026211890362449766
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.026157919796948807
+        "value": 0.025495801247331758
       }
     ],
     "default": true,
@@ -3386,22 +3381,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.3164401254847031
+        "value": 0.3153061169059525
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.14172283414859108
+        "value": 0.14233190293683579
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.006793965938376394
+        "value": 0.006676308748808555
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.02170175702832946
+        "value": 0.021257893108403186
       }
     ],
     "default": true,
@@ -3432,22 +3427,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.6324222762704144
+        "value": 0.6276714194919251
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.2379184482354431
+        "value": 0.2363260098786109
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.008960680665468181
+        "value": 0.008707752440716822
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.028622827428674478
+        "value": 0.027726169888747185
       }
     ],
     "default": true,
@@ -3478,27 +3473,27 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 1.8149469843232353
+        "value": 1.809626612518601
       },
       {
         "id": 32,
         "name": "emballage",
-        "value": 0.2556860766341414
+        "value": 0.25422073154537705
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.28250579786380225
+        "value": 0.28110383195738514
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.07511410212118856
+        "value": 0.07467254520477501
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.07651163905763173
+        "value": 0.07413870077386148
       }
     ],
     "default": true,
@@ -3529,22 +3524,22 @@
       {
         "id": 30,
         "name": "agriculture",
-        "value": 0.4715614289885942
+        "value": 0.4709379119589202
       },
       {
         "id": 33,
         "name": "transport",
-        "value": 0.14647013193144806
+        "value": 0.14620600161122316
       },
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.005952143201527482
+        "value": 0.005812488083516295
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.019012748478430208
+        "value": 0.018507420046340314
       }
     ],
     "default": true,

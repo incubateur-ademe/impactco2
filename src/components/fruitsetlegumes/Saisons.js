@@ -3,6 +3,7 @@ import List from "./saisons/List";
 import Search from "./saisons/Search";
 import Wrapper from "./saisons/Wrapper";
 import Section from "components/base/Section";
+import SourceAgribalyse from "components/misc/SourceAgribalyse.js";
 import Bottom from "components/misc/category/Bottom";
 import Description from "components/misc/category/Description";
 import Instruction from "components/misc/category/Instruction";
@@ -20,7 +21,8 @@ const StyledTop = styled(Top)`
     margin: 0;
   }
 `;
-export default function Distance(props) {
+
+export default function Saisons(props) {
   const { equivalents, categories } = useContext(DataContext);
 
   const [sorting, setSorting] = useState("alph_desc");
@@ -103,6 +105,7 @@ export default function Distance(props) {
   return (
     <Section>
       <Section.Content>
+        <SourceAgribalyse />
         <Wrapper month={props.month} slug={props.category.slug}>
           <Description description={props.category.description} />
           <StyledTop>

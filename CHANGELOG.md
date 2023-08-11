@@ -2,6 +2,34 @@
 # CHANGELOG
 
 
+## 1.18.8 (10/08/2023)
+
+* A22b - affichage des sources
+
+## 1.18.7 (10/08/2023)
+
+* A22 - boissons, corrections
+
+## 1.18.6 (10/08/2023)
+
+* BSR - arrondi CO2eq à 2 chiffres après la virgule
+
+## 1.18.5 (10/08/2023)
+
+* A25 - disclaimer Négaoctet
+
+## 1.18.4 (10/08/2023)
+
+* B5 - modal wording
+
+## 1.18.3 (10/08/2023)
+
+* A21 - FE fruits et légumes Agribalyse 3.1.1
+
+## 1.18.2 (10/08/2023)
+
+* A22 - FE boissons Agribalyse 3.1.1
+
 ## 1.18.1 (08/08/2023)
 
 * U28b - rollback, fonctionnalité pas encore mûre

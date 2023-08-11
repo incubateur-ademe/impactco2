@@ -25,7 +25,7 @@ const Content = styled.div`
   position: relative;
 
   ${(props) => props.theme.mq.medium} {
-    padding: 1.5rem 0.75rem;
+    padding: 2rem 0.75rem;
   }
 `;
 export default function Background(props) {
