@@ -2,6 +2,7 @@ import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import List from "./saisons/List";
 import Search from "./saisons/Search";
 import Wrapper from "./saisons/Wrapper";
+import OutboundLink from "components/base/OutboundLink.js";
 import Section from "components/base/Section";
 import Bottom from "components/misc/category/Bottom";
 import Description from "components/misc/category/Description";
@@ -20,6 +21,19 @@ const StyledTop = styled(Top)`
     margin: 0;
   }
 `;
+
+const SmallText = styled.div`
+  /* display: flex; */
+  font-size: 14px;
+  font-weight: 400;
+  /* justify-content: flex-end; */
+  margin-bottom: 2rem;
+  text-align: right;
+  ${(props) => props.theme.mq.medium} {
+    margin-bottom: 1rem;
+  }
+`;
+
 export default function Saisons(props) {
   const { equivalents, categories } = useContext(DataContext);
 
@@ -103,7 +117,14 @@ export default function Saisons(props) {
   return (
     <Section>
       <Section.Content>
-        <Source>Source : Agribalyse 3.1.1 - Mise à jour le 10/10/2023</Source>
+        <SmallText>
+          <span> Source : </span>
+          <OutboundLink title="Agribalyse 3.1.1" href="https://agribalyse.ademe.fr/app" data-testid="lien-agribalyse">
+            Agribalyse 3.1.1{" "}
+          </OutboundLink>
+          <span> - </span>
+          <span>Mise à jour le 10/10/2023 </span>
+        </SmallText>
         <Wrapper month={props.month} slug={props.category.slug}>
           <Description description={props.category.description} />
           <StyledTop>
@@ -123,5 +144,3 @@ export default function Saisons(props) {
     </Section>
   );
 }
-
-const Source = styled.div``;
