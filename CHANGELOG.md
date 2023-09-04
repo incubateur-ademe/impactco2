@@ -2,7 +2,7 @@
 # CHANGELOG
 
 
-## 1.18.10 (11/08/2023)
+## 1.18.10 (04/09/2023)
 
 * BSR : tests de non-régression pour la partie livraison
 
