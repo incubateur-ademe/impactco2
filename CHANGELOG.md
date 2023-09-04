@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.11 (04/09/2023)
+
+* U21 – Recette UI Impact Livraison
+
 ## 1.18.10 (04/09/2023)
 
 * BSR : tests de non-régression pour la partie livraison
