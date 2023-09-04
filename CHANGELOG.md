@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.11 (04/09/2023)
+
+* U30 - Reprendre la page statistiques de Datagir sur impactCO2.fr
+
 ## 1.18.10 (04/09/2023)
 
 * BSR : tests de non-régression pour la partie livraison
