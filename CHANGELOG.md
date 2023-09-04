@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.11 (04/09/2023)
+
+* B8 - Module de transport cassé
+
 ## 1.18.10 (04/09/2023)
 
 * BSR : tests de non-régression pour la partie livraison
