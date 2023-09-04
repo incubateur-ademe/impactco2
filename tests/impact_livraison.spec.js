@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }, testInfo) => {
   await expect(page.getByText("par livraison")).toHaveCount(1);
 });
 
-test("U1 - Affichage simulateur et source", async ({ page }) => {
+test("Affichage simulateur et source", async ({ page }) => {
   await test.step("On peut accèder à impact-livraison directement depuis l'URL du navigateur", async () => {
     await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO2/);
   });
@@ -29,7 +29,7 @@ test("U1 - Affichage simulateur et source", async ({ page }) => {
   });
 });
 
-test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
+test("Calcul de l'impact d'une livraison", async ({ page }) => {
   await test.step("Le produit par défaut est l'habillement", async () => {
     let currentProduit = await page.$eval(
       "select#produits",
@@ -74,7 +74,7 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
   });
 });
 
-test("U4 - Equivalences", async ({ page }) => {
+test("Equivalences", async ({ page }) => {
   await test.step("Les équivalences s'affichent", async () => {
     // Given
     // When
@@ -90,6 +90,15 @@ test("U4 - Equivalences", async ({ page }) => {
     // When
     await page.getByRole("button", { name: "Comprendre le calcul" }).click();
     // Then
-    await expect(page.getByRole("button", { name: "Fermer" })).toBeVisible();
+    await page.getByRole("button", { name: "Fermer" }).click();
+  });
+
+  await test.step("On peut choisir une équivalence", async () => {
+    // Given
+    await expect(page.getByRole("heading", { name: "Choisir une autre équivalence" })).not.toBeVisible();
+    // When
+    await page.locator("#button_change_eq_1").click();
+    // Then
+    await expect(page.getByRole("heading", { name: "Choisir une autre équivalence" })).toBeVisible();
   });
 });

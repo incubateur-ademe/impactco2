@@ -25,7 +25,9 @@ export default function LivraisonEq(props) {
       <OfWhat>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
       <div></div>
       <div>
-        <ButtonChange onClick={changeClicked}>Modifier l'équivalence</ButtonChange>
+        <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
+          Modifier l'équivalence
+        </ButtonChange>
       </div>
     </Wrapper>
   );
