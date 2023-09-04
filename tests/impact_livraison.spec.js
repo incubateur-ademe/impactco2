@@ -75,13 +75,15 @@ test("Calcul de l'impact d'une livraison", async ({ page }) => {
 });
 
 test("Equivalences", async ({ page }) => {
-  await test.step("Les équivalences s'affichent", async () => {
-    // Given
-    // When
-    // Then
-    await expect(page.getByText("15 km")).toHaveCount(1);
-    await expect(page.getByText("52 heures")).toHaveCount(1);
-    await expect(page.getByText("0,5 repas")).toHaveCount(1);
+  await test.step("Les équivalences par défaut s'affichent", async () => {
+    await expect(page.locator("#eq_nb_1")).toHaveText("15 km");
+    await expect(page.locator("#eq_what_1")).toHaveText("en voiture");
+
+    await expect(page.locator("#eq_nb_2")).toHaveText("0,5 repas");
+    await expect(page.locator("#eq_what_2")).toHaveText("avec du boeuf");
+
+    await expect(page.locator("#eq_nb_3")).toHaveText("52 heures");
+    await expect(page.locator("#eq_what_3")).toHaveText("de streaming vidéo");
   });
 
   await test.step("Une modale d'explication s'affiche", async () => {
@@ -93,12 +95,22 @@ test("Equivalences", async ({ page }) => {
     await page.getByRole("button", { name: "Fermer" }).click();
   });
 
-  await test.step("On peut choisir une équivalence", async () => {
+  await test.step("On peut ouvrir une modale pour choisir une autre équivalence", async () => {
     // Given
     await expect(page.getByRole("heading", { name: "Choisir une autre équivalence" })).not.toBeVisible();
     // When
     await page.locator("#button_change_eq_1").click();
     // Then
     await expect(page.getByRole("heading", { name: "Choisir une autre équivalence" })).toBeVisible();
+  });
+
+  await test.step("Une liste réduite s'affiche si on cherche une autre équivalence", async () => {
+    // Given
+    await page.getByPlaceholder("Recherchez un autre équivalent").click({ force: true });
+    await page.keyboard.type("b");
+    await page.keyboard.type("a");
+
+    await page.getByRole("button", { name: "Banane" }).click();
+    await page.getByRole("button", { name: "Valider et fermer" }).click();
   });
 });

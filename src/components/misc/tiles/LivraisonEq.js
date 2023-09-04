@@ -20,9 +20,9 @@ export default function LivraisonEq(props) {
       <EmojiWrapper>
         <Emoji>{props?.equivalent?.emoji}</Emoji>
       </EmojiWrapper>
-      <Number>{first2WordsOnly(fullSentenceFormat(props))}</Number>
+      <Number id={`eq_nb_${props.slug}`}>{first2WordsOnly(fullSentenceFormat(props))}</Number>
       <div></div>
-      <OfWhat>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
+      <OfWhat id={`eq_what_${props.slug}`}>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
       <div></div>
       <div>
         <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>

@@ -42,7 +42,7 @@ const StyledEmoji = styled(Emoji)`
 `;
 export default function EquivalentRadio(props) {
   return (
-    <Wrapper checked={props.checked} onClick={() => props.setChecked(!props.checked)}>
+    <Wrapper checked={props.checked} onClick={() => props.setChecked(!props.checked)} className="equivalent-radio">
       <Left>
         <Radio checked={props.checked} />
 
