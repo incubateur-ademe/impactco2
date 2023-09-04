@@ -106,11 +106,19 @@ test("Equivalences", async ({ page }) => {
 
   await test.step("Une liste réduite s'affiche si on cherche une autre équivalence", async () => {
     // Given
+    await expect(page.locator(".equivalent-radio")).toHaveCount(9);
+
     await page.getByPlaceholder("Recherchez un autre équivalent").click({ force: true });
     await page.keyboard.type("b");
     await page.keyboard.type("a");
-
+  });
+  await test.step("On peut choisir une autre équivalence", async () => {
+    // Given
     await page.getByRole("button", { name: "Banane" }).click();
+    // When
     await page.getByRole("button", { name: "Valider et fermer" }).click();
+    // Then
+    await expect(page.locator("#eq_nb_1")).toHaveText("3,8 kg");
+    await expect(page.locator("#eq_what_1")).toHaveText("de banane");
   });
 });
