@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.11 (04/09/2023)
+
+* A26 - Modifier texte modale disclaimer stockage de données 1 Go
+
 ## 1.18.10 (04/09/2023)
 
 * BSR : tests de non-régression pour la partie livraison
