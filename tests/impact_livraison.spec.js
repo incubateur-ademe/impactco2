@@ -108,9 +108,13 @@ test("Equivalences", async ({ page }) => {
     // Given
     await expect(page.locator(".equivalent-radio")).toHaveCount(9);
 
+    // When
     await page.getByPlaceholder("Recherchez un autre équivalent").click({ force: true });
     await page.keyboard.type("b");
     await page.keyboard.type("a");
+
+    // Then
+    await expect(page.locator(".equivalent-radio")).toHaveCount(3);
   });
   await test.step("On peut choisir une autre équivalence", async () => {
     // Given
@@ -120,5 +124,21 @@ test("Equivalences", async ({ page }) => {
     // Then
     await expect(page.locator("#eq_nb_1")).toHaveText("3,8 kg");
     await expect(page.locator("#eq_what_1")).toHaveText("de banane");
+  });
+});
+
+test("Fréquences", async ({ page }) => {
+  await test.step("Le bilan carbone s'alourdit avec le nb de colis par mois", async () => {
+    // Given
+    await expect(page.locator("#kgCo2e")).toHaveText("3,31 kg CO2e");
+    // When
+    await page.locator("select#numbers").selectOption({ value: "2" });
+    // Then
+    await expect(page.locator("#kgCo2e")).toHaveText("6,63 kg CO2e");
+  });
+  await test.step("Le bilan carbone s'alourdit avec la fréquence", async () => {
+    await expect(page.locator("#kgCo2e")).toHaveText("6,63 kg CO2e");
+    await page.locator("select#frequences").selectOption({ value: "par_mois" });
+    await expect(page.locator("#kgCo2e")).toHaveText("79,53 kg CO2e");
   });
 });

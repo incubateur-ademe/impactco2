@@ -39,7 +39,7 @@ export default function YearlyLivraison(props) {
         </Induction>
         <Deduction>
           <span>alors cette livraison émets&nbsp;</span>
-          <Color>
+          <Color id="kgCo2e">
             {convertGramsToKilograms(props.co2eq * multiplicator * number)} kg CO<sub>2</sub>e
           </Color>
           <strong>&nbsp;par an&nbsp;</strong>.
