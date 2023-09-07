@@ -6,7 +6,7 @@ export default function useRulesLivraison() {
     ["rulesLivraison"],
     () =>
       axios.get(`https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json`).then((res) => {
-        console.log("publicodes", res.data);
+        removeProperties(res.data, "livraison colis");
         return res.data;
       }),
     {
@@ -15,4 +15,16 @@ export default function useRulesLivraison() {
       staleTime: Infinity,
     }
   );
+}
+
+function removeProperties(obj, word) {
+  let propsToDelete = [];
+  for (let prop in obj) {
+    if (!prop.startsWith(word)) {
+      propsToDelete.push(prop);
+    }
+  }
+  for (let propToDelete of propsToDelete) {
+    delete obj[propToDelete];
+  }
 }
