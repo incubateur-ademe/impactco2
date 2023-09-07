@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.11 (07/09/2023)
+
+* U25 : documentation publicode
+
 ## 1.18.10 (04/09/2023)
 
 * BSR : tests de non-régression pour la partie livraison
