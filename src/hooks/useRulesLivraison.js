@@ -6,7 +6,7 @@ export default function useRulesLivraison() {
     ["rulesLivraison"],
     () =>
       axios.get(`https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json`).then((res) => {
-        removeProperties(res.data, "livraison colis");
+        removePropsNotStartingWith(res.data, "livraison colis");
         return res.data;
       }),
     {
@@ -17,7 +17,7 @@ export default function useRulesLivraison() {
   );
 }
 
-function removeProperties(obj, word) {
+function removePropsNotStartingWith(obj, word) {
   let propsToDelete = [];
   for (let prop in obj) {
     if (!prop.startsWith(word)) {
