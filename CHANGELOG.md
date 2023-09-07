@@ -2,7 +2,7 @@
 # CHANGELOG
 
 
-## 1.18.11 (04/09/2023)
+## 1.18.11 (07/09/2023)
 
 * U25 : documentation publicode
 
