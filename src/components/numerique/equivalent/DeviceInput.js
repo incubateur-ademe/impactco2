@@ -4,7 +4,7 @@ import ButtonLink from "components/base/ButtonLink";
 import RulesContext from "components/numerique/RulesProvider";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
-import Slider from "react-slick";
+import Slick from "react-slick";
 import styled from "styled-components";
 
 const devices = [
@@ -79,7 +79,7 @@ export default function DeviceInput(props) {
 
   return (
     <Wrapper>
-      <Slider
+      <Slick
         dots={true}
         infinite={true}
         speed={200}
@@ -126,7 +126,7 @@ export default function DeviceInput(props) {
             </StyledButtonLink>
           </Slide>
         ))}
-      </Slider>
+      </Slick>
     </Wrapper>
   );
 }
