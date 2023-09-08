@@ -4,7 +4,7 @@ import ButtonLink from "components/base/ButtonLink";
 import RulesContext from "components/numerique/RulesProvider";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
-import Slick from "react-slick";
+import Slider from "react-slick";
 import styled from "styled-components";
 
 const devices = [
@@ -79,8 +79,8 @@ export default function DeviceInput(props) {
 
   return (
     <Wrapper>
-      <Slick
-        dots={false}
+      <Slider
+        dots={true}
         infinite={true}
         speed={200}
         fade={true}
@@ -91,7 +91,7 @@ export default function DeviceInput(props) {
             [props.name + " . appareil"]: `'${devices[index - 1]?.name || "moyenne"}'`,
           });
         }}
-        touchMove={false}
+        touchMove={true}
         responsive={[
           {
             breakpoint: 830,
@@ -126,7 +126,7 @@ export default function DeviceInput(props) {
             </StyledButtonLink>
           </Slide>
         ))}
-      </Slick>
+      </Slider>
     </Wrapper>
   );
 }
