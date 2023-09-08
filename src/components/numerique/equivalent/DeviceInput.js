@@ -17,7 +17,32 @@ const devices = [
 
 const Wrapper = styled.div`
   margin-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   width: 100%;
+  .carousel.carousel-slider {
+    overflow: inherit;
+  }
+  .carousel .control-prev.control-arrow:before {
+    border-right: 14px solid #39a69e;
+  }
+  .carousel .control-prev.control-arrow {
+    left: -35px;
+  }
+  .carousel .control-next.control-arrow:before {
+    border-left: 14px solid #39a69e;
+  }
+  .carousel .control-next.control-arrow {
+    right: -35px;
+  }
+  .carousel .control-arrow:before,
+  .carousel.carousel-slider .control-arrow:before {
+    border-bottom: 14px solid transparent;
+    border-top: 14px solid transparent;
+  }
+  .carousel.carousel-slider .control-arrow:hover {
+    background: inherit;
+  }
 `;
 
 const Slide = styled.div`
@@ -71,6 +96,13 @@ export default function DeviceInput(props) {
         centerMode={false}
         showArrows={true}
         useKeyboardArrows={true}
+        transitionTime={1}
+        infiniteLoop={true}
+        labels={{ leftArrow: "item précédent", rightArrow: "item suivant", item: "item" }}
+        onClickThumb={() => {
+          console.info("hello");
+        }}
+        showThumbs={false}
       >
         <Slide>
           <Label>Terminal utilisé</Label>
