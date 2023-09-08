@@ -15,6 +15,7 @@ const devices = [
 ];
 
 const Wrapper = styled.div`
+  margin-bottom: 1rem;
   width: 100%;
 
   .slick-track {
@@ -43,6 +44,7 @@ const Wrapper = styled.div`
     right: -1rem;
   }
 `;
+
 const Slide = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
