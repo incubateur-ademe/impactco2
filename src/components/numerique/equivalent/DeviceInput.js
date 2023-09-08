@@ -23,6 +23,14 @@ const Wrapper = styled.div`
   .carousel.carousel-slider {
     overflow: inherit;
   }
+  .carousel .control-dots {
+    bottom: -35px;
+  }
+  .carousel .control-dots .dot {
+    border: 1px solid black;
+    width: 12px;
+    height: 12px;
+  }
   .carousel .control-prev.control-arrow:before {
     border-right: 14px solid #39a69e;
   }
