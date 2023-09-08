@@ -4,7 +4,8 @@ import ButtonLink from "components/base/ButtonLink";
 import RulesContext from "components/numerique/RulesProvider";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
-import Slick from "react-slick";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
 
 const devices = [
@@ -15,41 +16,50 @@ const devices = [
 ];
 
 const Wrapper = styled.div`
+  margin-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   width: 100%;
-
-  .slick-track {
-    display: flex !important;
+  .carousel.carousel-slider {
+    overflow: inherit;
   }
-
-  .slick-slide {
-    height: inherit !important;
-
-    & > div {
-      height: 100%;
-    }
+  .carousel .control-dots {
+    bottom: -35px;
   }
-
-  .slick-prev {
-    background-image: url("data:image/svg+xml,%3Csvg width='27' height='31' viewBox='0 0 27 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 17.9187C-0.499999 16.764 -0.500001 13.8772 1.5 12.7225L22.5 0.598169C24.5 -0.556532 27 0.886842 27 3.19624L27 27.445C27 29.7544 24.5 31.1977 22.5 30.043L1.5 17.9187Z' fill='%23${(
-      props
-    ) => props.theme.colors.main.replace("#", "")}'/%3E%3C/svg%3E%0A");
-    left: -1rem;
+  .carousel .control-dots .dot {
+    border: 1px solid black;
+    width: 12px;
+    height: 12px;
   }
-
-  .slick-next {
-    background-image: url("data:image/svg+xml,%3Csvg width='27' height='31' viewBox='0 0 27 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.5 12.7224C27.5 13.8771 27.5 16.7639 25.5 17.9186L4.5 30.0429C2.5 31.1976 -1.38802e-06 29.7543 -1.28708e-06 27.4449L-2.27131e-07 3.19616C-1.26184e-07 0.886754 2.5 -0.556626 4.5 0.598075L25.5 12.7224Z' fill='%23${(
-      props
-    ) => props.theme.colors.main.replace("#", "")}'/%3E%3C/svg%3E%0A");
-    right: -1rem;
+  .carousel .control-prev.control-arrow:before {
+    border-right: 14px solid #39a69e;
+  }
+  .carousel .control-prev.control-arrow {
+    left: -35px;
+  }
+  .carousel .control-next.control-arrow:before {
+    border-left: 14px solid #39a69e;
+  }
+  .carousel .control-next.control-arrow {
+    right: -35px;
+  }
+  .carousel .control-arrow:before,
+  .carousel.carousel-slider .control-arrow:before {
+    border-bottom: 14px solid transparent;
+    border-top: 14px solid transparent;
+  }
+  .carousel.carousel-slider .control-arrow:hover {
+    background: inherit;
   }
 `;
+
 const Slide = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
   height: 100%;
   padding: 1.5rem;
-  width: calc(50% - 1rem);
+  /* width: calc(50% - 1rem); */
 `;
 const Label = styled.label`
   display: block;
@@ -79,28 +89,28 @@ export default function DeviceInput(props) {
 
   return (
     <Wrapper>
-      <Slick
-        dots={false}
-        infinite={true}
-        speed={200}
-        fade={true}
-        slidesToShow={1}
-        slidesToScroll={1}
-        afterChange={(index) => {
+      <Carousel
+        onChange={(index) => {
           setSituation({
             [props.name + " . appareil"]: `'${devices[index - 1]?.name || "moyenne"}'`,
           });
         }}
-        touchMove={false}
-        responsive={[
-          {
-            breakpoint: 830,
-            settings: {
-              dots: true,
-              arrows: false,
-            },
-          },
-        ]}
+        statusFormatter={(currentItem, total) => {
+          return `${currentItem} sur ${total}`;
+        }}
+        swipeable={true}
+        emulateTouch={false}
+        autoFocus={true}
+        centerMode={false}
+        showArrows={true}
+        useKeyboardArrows={true}
+        transitionTime={1}
+        infiniteLoop={true}
+        labels={{ leftArrow: "item précédent", rightArrow: "item suivant", item: "item" }}
+        onClickThumb={() => {
+          console.info("hello");
+        }}
+        showThumbs={false}
       >
         <Slide>
           <Label>Terminal utilisé</Label>
@@ -126,7 +136,7 @@ export default function DeviceInput(props) {
             </StyledButtonLink>
           </Slide>
         ))}
-      </Slick>
+      </Carousel>
     </Wrapper>
   );
 }

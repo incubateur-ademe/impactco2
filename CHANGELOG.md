@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.12 (08/09/2023)
+
+* B3 : bug slider
+
 ## 1.18.11 (07/09/2023)
 
 * U25 : documentation publicode
