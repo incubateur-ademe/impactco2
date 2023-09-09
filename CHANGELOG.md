@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.13 (09/09/2023)
+
+* B3 : bug slider responsive
+
 ## 1.18.12 (08/09/2023)
 
 * B3 : bug slider
