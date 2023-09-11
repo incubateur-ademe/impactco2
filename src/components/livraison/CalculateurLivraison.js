@@ -425,6 +425,8 @@ const FlexHabit = styled.div`
 
 const ToggleContainerBottom = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 `;
 
 const FlexHabitBottom = styled.div`
