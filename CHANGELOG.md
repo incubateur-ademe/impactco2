@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.14 (11/09/2023)
+
+* U29 – Tag livraison
+
 ## 1.18.13 (09/09/2023)
 
 * B3 : bug slider responsive
