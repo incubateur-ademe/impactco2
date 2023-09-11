@@ -32,6 +32,13 @@ export default function DetailLivraisonModal2() {
           à destination des professionels du E-commerce. L'outil ECEL à l'origine des calculs de cette étude a été
           adapté au contexte des particuliers sous forme de simulateur.
         </p>
+        <p>
+          Pour aller plus loin consultez{" "}
+          <MagicLink to="/documentation/livraison-colis" internal={true}>
+            notre documentation
+          </MagicLink>
+          .{" "}
+        </p>
         <h3>Les différents type de produits</h3>
         <p>
           L'<b>habillement</b> correspond à un produit textile qui va de la paire de chaussures, au manteau en passant
