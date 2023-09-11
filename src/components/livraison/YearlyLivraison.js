@@ -45,16 +45,16 @@ export default function YearlyLivraison(props) {
           <strong>&nbsp;par an*</strong>.
         </Deduction>
       </FlexText>
-      <SmallText>
-        <i>* Le calcul se base sur les mêmes éléments renseignés dans le simulateur</i>
-      </SmallText>
+      <SmallText>* Le calcul se base sur les mêmes éléments renseignés dans le simulateur.</SmallText>
       <br />
     </Wrapper>
   );
 }
 
 const SmallText = styled.div`
+  color: ${(props) => props.theme.colors.textGray};
   font-size: 0.85rem;
+  font-style: italic;
   margin-top: 0.8rem;
 `;
 
