@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.15 (11/09/2023)
+
+* B10 - coquille de texte
+
 ## 1.18.14 (11/09/2023)
 
 * U29 – Tag livraison
