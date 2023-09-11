@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.16 (11/09/2023)
+
+* A28 - syntaxe disclaimer
+
 ## 1.18.15 (11/09/2023)
 
 * B10 - coquille de texte
