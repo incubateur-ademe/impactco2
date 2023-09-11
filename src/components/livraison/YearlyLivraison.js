@@ -38,17 +38,25 @@ export default function YearlyLivraison(props) {
           </InductionOutro>
         </Induction>
         <Deduction>
-          <span>alors cette livraison émets&nbsp;</span>
+          <span>alors l’impact carbone de mes livraisons est de&nbsp;</span>
           <Color id="kgCo2e">
             {convertGramsToKilograms(props.co2eq * multiplicator * number)} kg CO<sub>2</sub>e
           </Color>
-          <strong>&nbsp;par an&nbsp;</strong>.
+          <strong>&nbsp;par an*</strong>.
         </Deduction>
       </FlexText>
+      <SmallText>* Le calcul se base sur les mêmes éléments renseignés dans le simulateur.</SmallText>
       <br />
     </Wrapper>
   );
 }
+
+const SmallText = styled.div`
+  color: ${(props) => props.theme.colors.textGray};
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.8rem;
+`;
 
 const Wrapper = styled.div``;
 
