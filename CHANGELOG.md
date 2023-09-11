@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.17 (11/09/2023)
+
+* U21 - améliorations UI
+
 ## 1.18.16 (11/09/2023)
 
 * A28 - syntaxe disclaimer
