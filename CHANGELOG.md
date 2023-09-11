@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.13 (11/09/2023)
+
+* U25 : lien vers documentation
+
 ## 1.18.13 (09/09/2023)
 
 * B3 : bug slider responsive
