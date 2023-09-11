@@ -143,10 +143,10 @@ const Wrapper = styled.div`
 
 const CenteredBlock = styled.div`
   background-color: #457be7;
-  border-bottom-left-radius: 16px;
+  border-bottom-left-radius: 14px;
   ${(props) => props.theme.mq.xlarge} {
     border-bottom-left-radius: 0;
   }
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 `;
