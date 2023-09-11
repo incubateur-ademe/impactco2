@@ -7,6 +7,7 @@ exports.handler = function (event) {
     event.headers.referer.includes("impactco2.netlify.app") ||
     event.headers.referer.includes("monimpacttransport.fr")
   ) {
+    console.log("process.env.GMAP_API_KEY---", process.env.GMAP_API_KEY);
     return axios
       .get(`https://maps.googleapis.com/maps/api/distancematrix/json?${event.rawQuery}&key=${process.env.GMAP_API_KEY}`)
       .then((res) => ({
