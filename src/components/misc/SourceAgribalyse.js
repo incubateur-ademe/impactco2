@@ -14,7 +14,9 @@ const Wrapper = styled.div`
     margin-bottom: 0;
   }
 `;
-
+const UpdatedAt = styled.span`
+  color: #564d53;
+`;
 export default function SourceAgribalyse() {
   return (
     <Wrapper>
@@ -23,7 +25,7 @@ export default function SourceAgribalyse() {
         Agribalyse 3.1.1{" "}
       </OutboundLink>
       <span> - </span>
-      <span>Mise à jour le 10/08/2023 </span>
+      <UpdatedAt>Mise à jour le 10/08/2023 </UpdatedAt>
     </Wrapper>
   );
 }

@@ -30,6 +30,10 @@ const Separator = styled.hr`
   width: 56px;
 `;
 
+const UpdatedAt = styled.span`
+  color: #564d53;
+`;
+
 export default function IntroLivraison() {
   return (
     <>
@@ -48,7 +52,7 @@ export default function IntroLivraison() {
               Commerce en ligne - Étude ADEME 2023{" "}
             </OutboundLink>
             <span> · </span>
-            <span>Mise à jour le 26/05/2023 </span>
+            <UpdatedAt>Mise à jour le 26/05/2023 </UpdatedAt>
           </SmallText>
           <RegularParagraph data-testid="paragraph1">
             <strong>80 % des Français</strong> de 11 ans et plus font des achats en ligne.

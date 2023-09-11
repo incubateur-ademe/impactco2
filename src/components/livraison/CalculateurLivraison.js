@@ -302,15 +302,22 @@ const Addendum = styled.div`
   justify-content: center;
   letter-spacing: 0em;
   line-height: 32px;
+  min-width: 100px;
   ${(props) => props.theme.mq.large} {
     margin-right: 1rem;
   }
   ${(props) => props.theme.mq.medium} {
     margin-right: 0;
   }
-  padding: 0 0.75rem;
+  padding: 0 0.65rem;
+  ${(props) => props.theme.mq.xsmall} {
+    padding: 0 0.25rem;
+  }
   > .plus {
     font-size: 28px;
+    ${(props) => props.theme.mq.xsmall} {
+      font-size: 14px;
+    }
     line-height: 32px;
     margin-right: 5px;
     margin-top: -8px;
@@ -383,9 +390,17 @@ const ToggleHabitContainer = styled.div`
     .react-switch-handle {
       background: white !important;
       border: 1px solid #39a69e !important;
+      height: 19px !important;
+      width: 19px !important;
+      svg {
+        left: 35% !important;
+        top: 35% !important;
+      }
     }
     .react-switch-bg {
       border-radius: 13px !important;
+      height: 21px !important;
+      width: 50px !important;
       > div > svg {
         display: none;
       }
@@ -425,6 +440,8 @@ const FlexHabit = styled.div`
 
 const ToggleContainerBottom = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 `;
 
 const FlexHabitBottom = styled.div`
