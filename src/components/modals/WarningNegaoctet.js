@@ -14,12 +14,12 @@ export default function WarningNegaoctet() {
   return (
     <Modal2 open={open} setOpen={setOpen} getTitle={getTitle}>
       <p>
-        Les données et les calculs sont issues de&nbsp;
+        Les données et les calculs sont issues du projet&nbsp;
         <OutboundLink
           href="https://base-empreinte.ademe.fr/documentation/base-impact"
           title="Base impact, étude réalisée par Negaoctet"
         >
-          l'étude NégaOctet 2022
+          NégaOctet (lauréat de l'appel à projet PERFECTO 2018)
         </OutboundLink>
         .
       </p>
