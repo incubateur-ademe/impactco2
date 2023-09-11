@@ -63,7 +63,7 @@ const BlueGrid = styled.div`
     border-top-right-radius: 16px;
   }
   > .item1 {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     justify-content: end;
     margin-right: 4px;
@@ -136,8 +136,10 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
+  width: 312px;
   ${(props) => props.theme.mq.xlarge} {
     flex-direction: column;
+    width: inherit;
   }
 `;
 
