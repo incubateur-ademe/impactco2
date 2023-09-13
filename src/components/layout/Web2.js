@@ -1,6 +1,7 @@
 import BreadCrumb2 from "./web/BreadCrumb2";
 import Footer2 from "./web/Footer2";
-import Header2 from "./web/Header2";
+import Header from "./web/Header";
+import Nav from "./web/Nav";
 import Seo from "./web/Seo";
 import useInteraction from "hooks/useInteraction";
 import React from "react";
@@ -15,7 +16,8 @@ export default function Web2(props) {
     <>
       <VerticalContainer className={props.theme === "night" ? "bl" : "r"}>
         <Seo title={props.title} description={props.description} image={"metalivraison.png"} />
-        <Header2 />
+        <Header />
+        <Nav />
         <BreadCrumb2 breadcrumb={props.breadcrumb} />
         {props.children}
         <Footer2 />
