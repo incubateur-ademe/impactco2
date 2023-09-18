@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = [
   {
@@ -18,5 +19,10 @@ module.exports = [
       filename: "iframelivraison.js",
       path: path.resolve(__dirname, "public"),
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        ZZZ: `'${process.env.ZZZ}'`, // Note that the raw string is wrapped in quotes
+      }),
+    ],
   },
 ];
