@@ -55,6 +55,9 @@ export default function Integration() {
     }
   }, [categories, equivalents, type, slug]);
 
+  let actualSrc =
+    path == "livraison" ? `/iframes/livraison/simulation?theme=${theme}` : `/iframes/${path}?theme=${theme}`;
+
   return (
     <Web title={"Intégrer l'outil"}>
       <Section>
@@ -69,23 +72,12 @@ export default function Integration() {
             setSlug={setSlug}
             path={path}
           />
-          {type == "category" && path == "livraison" ? (
-            <>
-              <StyledIframeResizer
-                src={`/iframes/livraison/simulation?theme=${theme}`}
-                allowfullscreen="true"
-                webkitallowfullscreen="true"
-                mozallowfullscreen="true"
-              />
-            </>
-          ) : (
-            <StyledIframeResizer
-              src={`/iframes/${path}?theme=${theme}`}
-              allowfullscreen="true"
-              webkitallowfullscreen="true"
-              mozallowfullscreen="true"
-            />
-          )}
+          <StyledIframeResizer
+            src={actualSrc}
+            allowfullscreen="true"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+          />
         </StyledSectionContent>
       </Section>
     </Web>
