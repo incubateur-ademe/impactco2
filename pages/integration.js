@@ -69,12 +69,23 @@ export default function Integration() {
             setSlug={setSlug}
             path={path}
           />
-          <StyledIframeResizer
-            src={`/iframes/${path}?theme=${theme}`}
-            allowfullscreen="true"
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-          />
+          {type == "category" && path == "livraison" ? (
+            <>
+              <StyledIframeResizer
+                src={`/iframes/livraison/simulation?theme=${theme}`}
+                allowfullscreen="true"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+              />
+            </>
+          ) : (
+            <StyledIframeResizer
+              src={`/iframes/${path}?theme=${theme}`}
+              allowfullscreen="true"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+            />
+          )}
         </StyledSectionContent>
       </Section>
     </Web>
