@@ -34,8 +34,6 @@ export default function ConclusionLivraison() {
 
 const Wrapper = styled.div`
   background-color: #ebf2ff;
-  border-bottom: 1px solid #6f87ae;
-  margin-bottom: 2rem;
   margin-top: 2.5rem;
 `;
 

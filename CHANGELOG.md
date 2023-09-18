@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.0 (18/09/2023)
+
+* U37 - je donne mon avis
+
 ## 1.18.18 (18/09/2023)
 
 * BSR - bug integration iframe
