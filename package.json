@@ -10,7 +10,7 @@
     "dev": "next dev",
     "build": "yarn iframe && next build",
     "postbuild": "next-sitemap",
-    "iframe": "dotenv -e .env.local node src/scripts/build_iframe.js",
+    "iframe": "dotenv -e .env.local webpack",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"
