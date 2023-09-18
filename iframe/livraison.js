@@ -1,7 +1,6 @@
 import { iframeResize } from "iframe-resizer";
 
 const script = document.getElementById("impact-livraison");
-`${process?.env?.NEXT_PUBLIC_SITE_URL}/livraison#ressource`;
 const src = `https://${process?.env?.NEXT_PUBLIC_SITE_URL}/iframes/livraison/simulation`;
 
 const iframe = document.createElement("iframe");
