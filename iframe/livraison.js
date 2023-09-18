@@ -2,7 +2,7 @@ import { iframeResize } from "iframe-resizer";
 
 const script = document.getElementById("impact-livraison");
 // eslint-disable-next-line no-undef
-const src = `https://${ZZZ}/iframes/livraison/simulation`;
+const src = `https://${SITE_URL}/iframes/livraison/simulation`;
 
 const iframe = document.createElement("iframe");
 

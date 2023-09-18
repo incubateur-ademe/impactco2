@@ -21,7 +21,7 @@ module.exports = [
     },
     plugins: [
       new webpack.DefinePlugin({
-        ZZZ: `'${process.env.ZZZ}'`, // Note that the raw string is wrapped in quotes
+        SITE_URL: `'${process.env.NEXT_PUBLIC_SITE_URL}'`, // Note that the raw string is wrapped in quotes
       }),
     ],
   },
