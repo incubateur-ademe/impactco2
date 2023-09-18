@@ -1,5 +1,6 @@
 import Section2 from "components/base/Section2";
 import AdviceLivraison from "components/livraison/AdviceLivraison";
+import AvisLivraison from "components/livraison/AvisLivraison";
 import CalculateurLivraison from "components/livraison/CalculateurLivraison";
 import ConclusionLivraison from "components/livraison/ConclusionLivraison";
 import IntroLivraison from "components/livraison/IntroLivraison";
@@ -19,6 +20,7 @@ export default function Impactlivraison() {
         </Section2.InnerMargin>
       </Section2>
       <ConclusionLivraison />
+      <AvisLivraison />
     </main>
   );
 }
