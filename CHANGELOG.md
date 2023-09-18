@@ -4,7 +4,7 @@
 
 ## 1.19.2 (18/09/2023)
 
-* B12 - prévisulisation horizontale
+* B12 - prévisualisation iframe horizontale
 
 ## 1.19.1 (18/09/2023)
 
