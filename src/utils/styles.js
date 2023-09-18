@@ -61,7 +61,7 @@ export const themes = {
       textLight2: "#a6a8ab",
       textGray: "#eceef0",
       textGray2: "#746770",
-      deepDark: "#a6a8ab",
+      deepDark: "#272124",
       error: "#ff5655",
       warning: "#fc5d00",
     },
