@@ -1,6 +1,7 @@
 import { iframeResize } from "iframe-resizer";
 
 const script = document.getElementById("impact-livraison");
+// below : injected WEBPACK_SITE_URL constant from env var, see webpack.config.js
 // eslint-disable-next-line no-undef
 const src = `https://${WEBPACK_SITE_URL}/iframes/livraison/simulation`;
 
