@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.2 (18/09/2023)
+
+* B12 - prévisulisation horizontale
+
 ## 1.19.1 (18/09/2023)
 
 * U37b - couleur darkMode
