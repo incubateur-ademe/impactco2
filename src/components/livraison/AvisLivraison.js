@@ -64,7 +64,7 @@ const ButtonPart = styled.div`
 `;
 
 const H3Title = styled.h3`
-  color: ${(props) => props.theme.colors.deepDark};
+  color: ${(props) => props.theme.colors.deepDarkReversible};
   font-size: 1.375rem;
   font-weight: 700;
   letter-spacing: 0em;
@@ -73,7 +73,7 @@ const H3Title = styled.h3`
 `;
 
 const Subtitle = styled.div`
-  color: ${(props) => props.theme.colors.deepDark};
+  color: ${(props) => props.theme.colors.deepDarkReversible};
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0em;
