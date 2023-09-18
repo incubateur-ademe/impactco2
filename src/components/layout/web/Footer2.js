@@ -26,20 +26,27 @@ const Accessibility = styled.div`
 
   text-align: center;
 `;
+
+const Wrapper = styled.div`
+  margin-top: 1rem;
+`;
+
 export default function Footer2() {
   return (
     <>
-      <footer aria-label="footer" id="footer">
-        <Logos>
-          <Marianne />
-          <Ademe />
-          <Logo />
-        </Logos>
-        <Accessibility>
-          <Link href="/accessibilite">Accessibilité : non-conforme</Link>
-        </Accessibility>
-        <Accessibility breath>Version : {process.env.thebuildid}</Accessibility>
-      </footer>
+      <Wrapper>
+        <footer aria-label="footer" id="footer">
+          <Logos>
+            <Marianne />
+            <Ademe />
+            <Logo />
+          </Logos>
+          <Accessibility>
+            <Link href="/accessibilite">Accessibilité : non-conforme</Link>
+          </Accessibility>
+          <Accessibility breath>Version : {process.env.thebuildid}</Accessibility>
+        </footer>
+      </Wrapper>
     </>
   );
 }
