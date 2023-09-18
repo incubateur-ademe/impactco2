@@ -1,5 +1,5 @@
-import Button from "components/base/Button";
 import Section2 from "components/base/Section2";
+import Link from "next/link";
 import styled from "styled-components";
 
 export default function AvisLivraison() {
@@ -9,14 +9,19 @@ export default function AvisLivraison() {
         <Section2>
           <Section2.InnerMargin>
             <FlexContainer>
-              <TextPart>
+              <div>
                 <H3Title>Un avis, une suggestion ? </H3Title>
                 <Subtitle>Vos retours sont précieux pour améliorer le site Impact CO2.</Subtitle>
-              </TextPart>
+              </div>
               <ButtonPart>
-                <StyledButtonWrapper>
-                  <Button>Faire une suggestion</Button>
-                </StyledButtonWrapper>
+                <Link
+                  title={"Faire une suggestion"}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href={"https://tally.so/r/nP1e9b"}
+                >
+                  Faire une suggestion
+                </Link>
               </ButtonPart>
             </FlexContainer>
           </Section2.InnerMargin>
@@ -39,11 +44,23 @@ const FlexContainer = styled.div`
   }
 `;
 
-const TextPart = styled.div``;
-
 const ButtonPart = styled.div`
+  align-items: center;
+  display: flex;
   margin-left: auto;
   margin-right: 1rem;
+  ${(props) => props.theme.mq.medium} {
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 0.75rem;
+  }
+  a {
+    background-color: #26827c;
+    border-radius: 0.5rem;
+    color: ${(props) => props.theme.colors.darkBackground};
+    padding: 1rem;
+    text-decoration: none;
+  }
 `;
 
 const H3Title = styled.h3`
@@ -61,11 +78,4 @@ const Subtitle = styled.div`
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 1.5rem;
-`;
-
-const StyledButtonWrapper = styled(Button.Wrapper)`
-  background-color: ${(props) => props.theme.colors.background};
-  border-radius: 0 0 1rem 1rem;
-  border-top: 0.0625rem solid ${(props) => props.theme.colors.textLight};
-  padding: 0.5rem;
 `;
