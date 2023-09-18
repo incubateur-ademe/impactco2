@@ -58,7 +58,7 @@ const ButtonPart = styled.div`
     background-color: #26827c;
     border-radius: 0.5rem;
     color: ${(props) => props.theme.colors.darkBackground};
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     text-decoration: none;
   }
 `;
