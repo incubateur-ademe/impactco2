@@ -10,7 +10,7 @@
     "dev": "next dev",
     "build": "yarn iframe && next build",
     "postbuild": "next-sitemap",
-    "iframe": "webpack",
+    "iframe": "node src/scripts/build_iframe.js",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"
