@@ -1,7 +1,9 @@
 import { iframeResize } from "iframe-resizer";
 
 const script = document.getElementById("impact-livraison");
-const src = `https://deploy-preview-306--impactco2.netlify.app/iframes/livraison/simulation`;
+// below : injected WEBPACK_SITE_URL constant from env var, see webpack.config.js
+// eslint-disable-next-line no-undef
+const src = `https://${WEBPACK_SITE_URL}/iframes/livraison/simulation`;
 
 const iframe = document.createElement("iframe");
 

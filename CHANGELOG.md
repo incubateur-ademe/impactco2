@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.18.18 (18/09/2023)
+
+* BSR - bug integration iframe
+
 ## 1.18.17 (11/09/2023)
 
 * U21 - améliorations UI

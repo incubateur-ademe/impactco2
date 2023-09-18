@@ -55,6 +55,9 @@ export default function Integration() {
     }
   }, [categories, equivalents, type, slug]);
 
+  let actualSrc =
+    path == "livraison" ? `/iframes/livraison/simulation?theme=${theme}` : `/iframes/${path}?theme=${theme}`;
+
   return (
     <Web title={"Intégrer l'outil"}>
       <Section>
@@ -70,7 +73,7 @@ export default function Integration() {
             path={path}
           />
           <StyledIframeResizer
-            src={`/iframes/${path}?theme=${theme}`}
+            src={actualSrc}
             allowfullscreen="true"
             webkitallowfullscreen="true"
             mozallowfullscreen="true"
