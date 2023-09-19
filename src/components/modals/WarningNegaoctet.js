@@ -25,7 +25,7 @@ export default function WarningNegaoctet() {
       </p>
       <p>
         ⚠️ <strong>Attention</strong> : aujourd’hui pour calculer l’impact carbone de Stocker un Go de données, nous ne
-        prenons pas en compte dans nos calculs l’impact carbone de la transmission.
+        prenons pas en compte dans nos calculs <strong>l’impact carbone de la transmission</strong>.
       </p>
       <p>
         Ces calculs expliquent la différence de résultat entre l'impact carbone que l'on a sur le site&nbsp;
