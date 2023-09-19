@@ -116,6 +116,7 @@ const GoFurther = styled.div`
     padding-right: 1rem;
   }
   summary {
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 700;
     span {
