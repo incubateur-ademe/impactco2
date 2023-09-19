@@ -2,7 +2,11 @@
 # CHANGELOG
 
 
-## 1.19.2 (18/09/2023)
+## 1.19.3 (19/09/2023)
+
+* B9 - réparation SEO : ajout du robots.txt
+
+## 1.19.2 (19/09/2023)
 
 * B12 - prévisualisation iframe horizontale
 

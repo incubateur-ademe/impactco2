@@ -24,7 +24,7 @@ const Separator = styled.hr`
   border: none;
   color: #457be7;
   height: 4px;
-  margin-bottom: 3rem;
+  margin-bottom: ${(props) => (props.skipSmallText ? 1.5 : 3)}rem;
   margin-left: 0;
   margin-top: 2rem;
   width: 56px;
@@ -34,7 +34,7 @@ const UpdatedAt = styled.span`
   color: #564d53;
 `;
 
-export default function IntroLivraison() {
+export default function IntroLivraison(props) {
   return (
     <>
       <Section2>
@@ -54,15 +54,21 @@ export default function IntroLivraison() {
             <span> · </span>
             <UpdatedAt>Mise à jour le 26/05/2023 </UpdatedAt>
           </SmallText>
-          <RegularParagraph data-testid="paragraph1">
-            <strong>80 % des Français</strong> de 11 ans et plus font des achats en ligne.
-          </RegularParagraph>
-          <RegularParagraph>
-            En moyenne, cela représente <strong>1 milliard de colis livrés par an</strong>, soit{" "}
-            <strong>deux colis livrés par personne par mois</strong>.
-          </RegularParagraph>
-          <br />
-          <Separator />
+          {props.skipSmallText ? (
+            <></>
+          ) : (
+            <>
+              <RegularParagraph data-testid="paragraph1">
+                <strong>80 % des Français</strong> de 11 ans et plus font des achats en ligne.
+              </RegularParagraph>
+              <RegularParagraph>
+                En moyenne, cela représente <strong>1 milliard de colis livrés par an</strong>, soit{" "}
+                <strong>deux colis livrés par personne par mois</strong>.
+              </RegularParagraph>
+              <br />
+            </>
+          )}
+          <Separator skipSmallText={props.skipSmallText} />
         </Section2.InnerMargin>
       </Section2>
     </>
