@@ -9,7 +9,7 @@ export default function Default() {
     <Iframe>
       <RulesProviderLivraison>
         <main id="contenu">
-          <IntroLivraison />
+          <IntroLivraison skipSmallText={true} />
           <CalculateurLivraison />
         </main>
       </RulesProviderLivraison>
