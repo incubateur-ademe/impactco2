@@ -54,7 +54,10 @@ const BlueGrid = styled.div`
   border-top-left-radius: 16px;
   color: white;
   display: grid;
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: 30px 240px;
+  ${(props) => props.theme.mq.xlarge} {
+    grid-template-columns: 30px 1fr;
+  }
   margin: auto;
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
@@ -63,7 +66,7 @@ const BlueGrid = styled.div`
     border-top-right-radius: 16px;
   }
   > .item1 {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     justify-content: end;
     margin-right: 4px;
@@ -122,9 +125,9 @@ const UnderstandLink = styled.div`
 
 const Arrow = styled.div`
   background: #457be7;
-  clip-path: polygon(0% 0%, 52.5% 49.75%, 52.5% 52.5%, 0% 100%);
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
   height: 100%;
-  margin-left: -1px;
+  /* margin-left: px; */
   width: 30px;
   ${(props) => props.theme.mq.xlarge} {
     clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
@@ -136,17 +139,19 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
+  width: 312px;
   ${(props) => props.theme.mq.xlarge} {
     flex-direction: column;
+    width: inherit;
   }
 `;
 
 const CenteredBlock = styled.div`
   background-color: #457be7;
-  border-bottom-left-radius: 16px;
+  border-bottom-left-radius: 14px;
   ${(props) => props.theme.mq.xlarge} {
     border-bottom-left-radius: 0;
   }
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 `;

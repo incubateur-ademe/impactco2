@@ -22,6 +22,12 @@ const StyledSectionContent = styled(Section.Content)`
     display: block;
   }
 `;
+const ConfiguratorWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
 export default function Integration() {
   const { equivalents, categories } = useContext(DataContext);
 
@@ -58,7 +64,7 @@ export default function Integration() {
   return (
     <Web title={"Intégrer l'outil"}>
       <Section>
-        <StyledSectionContent flex>
+        <ConfiguratorWrapper>
           <Configurator
             equivalents={equivalents}
             categories={categories}
@@ -69,12 +75,27 @@ export default function Integration() {
             setSlug={setSlug}
             path={path}
           />
-          <StyledIframeResizer
-            src={`/iframes/${path}?theme=${theme}`}
-            allowfullscreen="true"
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-          />
+        </ConfiguratorWrapper>
+        <StyledSectionContent flex>
+          {path == "livraison" ? (
+            <>
+              <StyledIframeResizer
+                src={`/iframes/livraison/simulation?theme=${theme}`}
+                allowFullScreen={true}
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+              />
+            </>
+          ) : (
+            <>
+              <StyledIframeResizer
+                src={`/iframes/${path}?theme=${theme}`}
+                allowFullScreen={true}
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+              />
+            </>
+          )}
         </StyledSectionContent>
       </Section>
     </Web>

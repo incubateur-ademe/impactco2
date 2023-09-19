@@ -14,6 +14,8 @@ const StyledSelect = styled(Select)`
     font-weight: 500;
     letter-spacing: 0em;
     line-height: 24px;
+    margin-left: 0.5rem;
+    padding: 0.5em 0.3rem;
   }
 `;
 

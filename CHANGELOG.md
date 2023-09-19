@@ -2,6 +2,74 @@
 # CHANGELOG
 
 
+## 1.19.7 (19/09/2023)
+
+* BSR - voir les sources
+
+## 1.19.6 (19/09/2023)
+
+* B12 - alignements boutons
+
+## 1.19.5 (19/09/2023)
+
+* A26 - texte modale stockage 1 Go
+
+## 1.19.4 (19/09/2023)
+
+* B12 - bugs UI iframe horizontale
+
+## 1.19.3 (19/09/2023)
+
+* B9 - réparation SEO : ajout du robots.txt
+
+## 1.19.2 (19/09/2023)
+
+* B12 - prévisualisation iframe horizontale
+
+## 1.19.1 (18/09/2023)
+
+* U37b - couleur darkMode
+
+## 1.19.0 (18/09/2023)
+
+* U37 - je donne mon avis
+
+## 1.18.18 (18/09/2023)
+
+* BSR - bug integration iframe
+
+## 1.18.17 (11/09/2023)
+
+* U21 - améliorations UI
+
+## 1.18.16 (11/09/2023)
+
+* A28 - syntaxe disclaimer
+
+## 1.18.15 (11/09/2023)
+
+* B10 - coquille de texte
+
+## 1.18.14 (11/09/2023)
+
+* U29 – Tag livraison
+
+## 1.18.13 (09/09/2023)
+
+* B3 : bug slider responsive
+
+## 1.18.12 (08/09/2023)
+
+* B3 : bug slider
+
+## 1.18.11 (07/09/2023)
+
+* U25 : documentation publicode
+
+## 1.18.10 (04/09/2023)
+
+* BSR : tests de non-régression pour la partie livraison
+
 ## 1.18.9 (11/08/2023)
 
 * B7 - bugs post-MEP : hotfix date mise à jour, et valeur stockage de données

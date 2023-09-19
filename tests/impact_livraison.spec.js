@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }, testInfo) => {
   await expect(page.getByText("par livraison")).toHaveCount(1);
 });
 
-test("U1 - Affichage simulateur et source", async ({ page }) => {
+test("Affichage simulateur et source", async ({ page }) => {
   await test.step("On peut accèder à impact-livraison directement depuis l'URL du navigateur", async () => {
     await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO2/);
   });
@@ -29,7 +29,7 @@ test("U1 - Affichage simulateur et source", async ({ page }) => {
   });
 });
 
-test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
+test("Calcul de l'impact d'une livraison", async ({ page }) => {
   await test.step("Le produit par défaut est l'habillement", async () => {
     let currentProduit = await page.$eval(
       "select#produits",
@@ -74,14 +74,16 @@ test("U2 - Calcul de l'impact d'une livraison", async ({ page }) => {
   });
 });
 
-test("U4 - Equivalences", async ({ page }) => {
-  await test.step("Les équivalences s'affichent", async () => {
-    // Given
-    // When
-    // Then
-    await expect(page.getByText("15 km")).toHaveCount(1);
-    await expect(page.getByText("52 heures")).toHaveCount(1);
-    await expect(page.getByText("0,5 repas")).toHaveCount(1);
+test("Equivalences", async ({ page }) => {
+  await test.step("Les équivalences par défaut s'affichent", async () => {
+    await expect(page.locator("#eq_nb_1")).toHaveText("15 km");
+    await expect(page.locator("#eq_what_1")).toHaveText("en voiture");
+
+    await expect(page.locator("#eq_nb_2")).toHaveText("0,5 repas");
+    await expect(page.locator("#eq_what_2")).toHaveText("avec du boeuf");
+
+    await expect(page.locator("#eq_nb_3")).toHaveText("52 heures");
+    await expect(page.locator("#eq_what_3")).toHaveText("de streaming vidéo");
   });
 
   await test.step("Une modale d'explication s'affiche", async () => {
@@ -90,6 +92,53 @@ test("U4 - Equivalences", async ({ page }) => {
     // When
     await page.getByRole("button", { name: "Comprendre le calcul" }).click();
     // Then
-    await expect(page.getByRole("button", { name: "Fermer" })).toBeVisible();
+    await page.getByRole("button", { name: "Fermer" }).click();
+  });
+
+  await test.step("On peut ouvrir une modale pour choisir une autre équivalence", async () => {
+    // Given
+    await expect(page.getByRole("heading", { name: "Choisir une autre équivalence" })).not.toBeVisible();
+    // When
+    await page.locator("#button_change_eq_1").click();
+    // Then
+    await expect(page.getByRole("heading", { name: "Choisir une autre équivalence" })).toBeVisible();
+  });
+
+  await test.step("Une liste réduite s'affiche si on cherche une autre équivalence", async () => {
+    // Given
+    await expect(page.locator(".equivalent-radio")).toHaveCount(9);
+
+    // When
+    await page.getByPlaceholder("Recherchez un autre équivalent").click({ force: true });
+    await page.keyboard.type("b");
+    await page.keyboard.type("a");
+
+    // Then
+    await expect(page.locator(".equivalent-radio")).toHaveCount(3);
+  });
+  await test.step("On peut choisir une autre équivalence", async () => {
+    // Given
+    await page.getByRole("button", { name: "Banane" }).click();
+    // When
+    await page.getByRole("button", { name: "Valider et fermer" }).click();
+    // Then
+    await expect(page.locator("#eq_nb_1")).toHaveText("3,8 kg");
+    await expect(page.locator("#eq_what_1")).toHaveText("de banane");
+  });
+});
+
+test("Fréquences", async ({ page }) => {
+  await test.step("Le bilan carbone s'alourdit avec le nb de colis par mois", async () => {
+    // Given
+    await expect(page.locator("#kgCo2e")).toHaveText("3,31 kg CO2e");
+    // When
+    await page.locator("select#numbers").selectOption({ value: "2" });
+    // Then
+    await expect(page.locator("#kgCo2e")).toHaveText("6,63 kg CO2e");
+  });
+  await test.step("Le bilan carbone s'alourdit avec la fréquence", async () => {
+    await expect(page.locator("#kgCo2e")).toHaveText("6,63 kg CO2e");
+    await page.locator("select#frequences").selectOption({ value: "par_mois" });
+    await expect(page.locator("#kgCo2e")).toHaveText("79,53 kg CO2e");
   });
 });

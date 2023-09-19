@@ -14,28 +14,27 @@ export default function WarningNegaoctet() {
   return (
     <Modal2 open={open} setOpen={setOpen} getTitle={getTitle}>
       <p>
-        Les données et les calculs sont issues de&nbsp;
+        Les données et les calculs sont issues du projet&nbsp;
         <OutboundLink
           href="https://base-empreinte.ademe.fr/documentation/base-impact"
           title="Base impact, étude réalisée par Negaoctet"
         >
-          l'étude NégaOctet 2022
+          NégaOctet (lauréat de l'appel à projet PERFECTO 2018)
         </OutboundLink>
         .
       </p>
       <p>
-        ⚠️ Attention : aujourd’hui pour calculer l’impact carbone de Stocker un Go de données, nous ne prenons pas en
-        compte dans nos calculs l’impact carbone de la transmission ni celui du stockage effectué par l'appareil,
-        puisque nous estimions que ce dernier étant partagé par beaucoup de personnes, était amorti.
+        ⚠️ <strong>Attention</strong> : aujourd’hui pour calculer l’impact carbone de Stocker un Go de données, nous ne
+        prenons pas en compte dans nos calculs <strong>l’impact carbone de la transmission</strong>.
       </p>
       <p>
-        Ces calculs, expliquent la différence d’impact carbone que l’on a entre le site&nbsp;
+        Ces calculs expliquent la différence de résultat entre l'impact carbone que l'on a sur le site&nbsp;
         <OutboundLink href="https://impactco2.fr" title="site Internet impactCO2">
           impactco2.fr
         </OutboundLink>{" "}
-        et les données NO.{" "}
+        et les données NO partagées sur la base Empreinte de l'ADEME.
       </p>
-      <p>Nous travaillons à affiner ce calcul et le mettre à jour.</p>
+      <p>Nous mettrons prochainement à jour ces calculs pour intégrer la transmission.</p>
     </Modal2>
   );
 }

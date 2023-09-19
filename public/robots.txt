@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://impactco2.fr/sitemap.xml
