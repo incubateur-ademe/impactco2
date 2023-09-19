@@ -24,17 +24,17 @@ export default function WarningNegaoctet() {
         .
       </p>
       <p>
-        ⚠️ Attention : aujourd’hui pour calculer l’impact carbone de Stocker un Go de données, nous ne prenons pas en
-        compte dans nos calculs l’impact carbone de la transmission.
+        ⚠️ <strong>Attention</strong> : aujourd’hui pour calculer l’impact carbone de Stocker un Go de données, nous ne
+        prenons pas en compte dans nos calculs l’impact carbone de la transmission.
       </p>
       <p>
-        Ces calculs, expliquent la différence d’impact carbone que l’on a entre le site&nbsp;
+        Ces calculs expliquent la différence de résultat entre l'impact carbone que l'on a sur le site&nbsp;
         <OutboundLink href="https://impactco2.fr" title="site Internet impactCO2">
           impactco2.fr
         </OutboundLink>{" "}
-        et les données NO.{" "}
+        et les données NO partagées sur la base Empreinte de l'ADEME.
       </p>
-      <p>Nous travaillons à affiner ce calcul et le mettre à jour.</p>
+      <p>Nous mettrons prochainement à jour ces calculs pour intégrer la transmission.</p>
     </Modal2>
   );
 }

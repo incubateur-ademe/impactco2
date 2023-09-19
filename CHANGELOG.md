@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.5 (19/09/2023)
+
+* A26 - texte modale stockage 1 Go
+
 ## 1.19.4 (19/09/2023)
 
 * B12 - bugs UI iframe horizontale
