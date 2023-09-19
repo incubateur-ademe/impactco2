@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.4 (19/09/2023)
+
+* B12 - bugs UI iframe horizontale
+
 ## 1.19.3 (19/09/2023)
 
 * B9 - réparation SEO : ajout du robots.txt

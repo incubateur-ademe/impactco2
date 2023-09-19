@@ -55,7 +55,6 @@ export default function ReuseBulb() {
           </OutboundLink>
         </p>
       </UseBulb>
-      <br />
       <GoFurther>
         <details>
           <summary>
@@ -111,6 +110,7 @@ const BlackMagicLink = styled(MagicLink)`
 const GoFurther = styled.div`
   border: 1px solid #eae5e8;
   border-radius: 8px;
+  margin-top: 1rem;
   padding: 1rem;
   details > summary {
     padding-right: 1rem;
