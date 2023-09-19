@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.6 (19/09/2023)
+
+* B12 - alignements boutons
+
 ## 1.19.5 (19/09/2023)
 
 * A26 - texte modale stockage 1 Go
