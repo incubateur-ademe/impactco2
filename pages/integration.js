@@ -58,22 +58,22 @@ export default function Integration() {
   return (
     <Web title={"Intégrer l'outil"}>
       <Section>
+        <Configurator
+          equivalents={equivalents}
+          categories={categories}
+          theme={theme}
+          setTheme={setTheme}
+          type={type}
+          slug={slug}
+          setSlug={setSlug}
+          path={path}
+        />
         <StyledSectionContent flex>
-          <Configurator
-            equivalents={equivalents}
-            categories={categories}
-            theme={theme}
-            setTheme={setTheme}
-            type={type}
-            slug={slug}
-            setSlug={setSlug}
-            path={path}
-          />
           {path == "livraison" ? (
             <>
-              <IframeResizer
+              <StyledIframeResizer
                 src={`/iframes/livraison/simulation?theme=${theme}`}
-                allowfullscreen="true"
+                allowFullScreen={true}
                 webkitallowfullscreen="true"
                 mozallowfullscreen="true"
               />
@@ -82,7 +82,7 @@ export default function Integration() {
             <>
               <StyledIframeResizer
                 src={`/iframes/${path}?theme=${theme}`}
-                allowfullscreen="true"
+                allowFullScreen={true}
                 webkitallowfullscreen="true"
                 mozallowfullscreen="true"
               />

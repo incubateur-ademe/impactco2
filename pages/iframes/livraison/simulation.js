@@ -9,14 +9,12 @@ export default function Default() {
   return (
     <Iframe>
       <Section2>
-        <Section2.InnerMargin>
-          <RulesProviderLivraison>
-            <main id="contenu">
-              <IntroLivraison />
-              <CalculateurLivraison />
-            </main>
-          </RulesProviderLivraison>
-        </Section2.InnerMargin>
+        <RulesProviderLivraison>
+          <main id="contenu">
+            <IntroLivraison />
+            <CalculateurLivraison />
+          </main>
+        </RulesProviderLivraison>
       </Section2>
     </Iframe>
   );
