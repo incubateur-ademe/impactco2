@@ -69,7 +69,6 @@ export default function IntroLivraison() {
               <br />
             </>
           )}
-
           <Separator />
         </Section2.InnerMargin>
       </Section2>
