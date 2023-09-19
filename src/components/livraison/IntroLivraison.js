@@ -35,6 +35,7 @@ const UpdatedAt = styled.span`
 `;
 
 export default function IntroLivraison() {
+  const isIframe = typeof window !== "undefined" && window.self !== window.top;
   return (
     <>
       <Section2>
@@ -54,14 +55,21 @@ export default function IntroLivraison() {
             <span> · </span>
             <UpdatedAt>Mise à jour le 26/05/2023 </UpdatedAt>
           </SmallText>
-          <RegularParagraph data-testid="paragraph1">
-            <strong>80 % des Français</strong> de 11 ans et plus font des achats en ligne.
-          </RegularParagraph>
-          <RegularParagraph>
-            En moyenne, cela représente <strong>1 milliard de colis livrés par an</strong>, soit{" "}
-            <strong>deux colis livrés par personne par mois</strong>.
-          </RegularParagraph>
-          <br />
+          {isIframe ? (
+            <></>
+          ) : (
+            <>
+              <RegularParagraph data-testid="paragraph1">
+                <strong>80 % des Français</strong> de 11 ans et plus font des achats en ligne.
+              </RegularParagraph>
+              <RegularParagraph>
+                En moyenne, cela représente <strong>1 milliard de colis livrés par an</strong>, soit{" "}
+                <strong>deux colis livrés par personne par mois</strong>.
+              </RegularParagraph>
+              <br />
+            </>
+          )}
+
           <Separator />
         </Section2.InnerMargin>
       </Section2>
