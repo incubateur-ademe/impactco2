@@ -22,7 +22,9 @@ export default function LivraisonEq(props) {
       </EmojiWrapper>
       <Number id={`eq_nb_${props.slug}`}>{first2WordsOnly(fullSentenceFormat(props))}</Number>
       <div></div>
-      <OfWhat id={`eq_what_${props.slug}`}>{first2WordsRemoved(fullSentenceFormat(props))}</OfWhat>
+      <OfWhat id={`eq_what_${props.slug}`}>
+        {first2WordsRemoved(fullSentenceFormat(props)) || <span>&nbsp;</span>}
+      </OfWhat>
       <div></div>
       <div>
         <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
