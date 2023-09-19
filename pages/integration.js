@@ -22,6 +22,12 @@ const StyledSectionContent = styled(Section.Content)`
     display: block;
   }
 `;
+const ConfiguratorWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
 export default function Integration() {
   const { equivalents, categories } = useContext(DataContext);
 
@@ -58,16 +64,18 @@ export default function Integration() {
   return (
     <Web title={"Intégrer l'outil"}>
       <Section>
-        <Configurator
-          equivalents={equivalents}
-          categories={categories}
-          theme={theme}
-          setTheme={setTheme}
-          type={type}
-          slug={slug}
-          setSlug={setSlug}
-          path={path}
-        />
+        <ConfiguratorWrapper>
+          <Configurator
+            equivalents={equivalents}
+            categories={categories}
+            theme={theme}
+            setTheme={setTheme}
+            type={type}
+            slug={slug}
+            setSlug={setSlug}
+            path={path}
+          />
+        </ConfiguratorWrapper>
         <StyledSectionContent flex>
           {path == "livraison" ? (
             <>
