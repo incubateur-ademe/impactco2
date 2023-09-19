@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.7 (19/09/2023)
+
+* BSR - voir les sources
+
 ## 1.19.6 (19/09/2023)
 
 * B12 - alignements boutons
