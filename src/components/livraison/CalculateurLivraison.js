@@ -99,7 +99,7 @@ export default function CalculateurLivraison(props) {
 
   return (
     <>
-      <Section2 embedded={props.embedded}>
+      <Section2>
         <Section2.InnerMargin embedded={props.embedded}>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>

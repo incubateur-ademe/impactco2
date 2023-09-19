@@ -37,7 +37,7 @@ const UpdatedAt = styled.span`
 export default function IntroLivraison(props) {
   return (
     <>
-      <Section2 embedded={props.embedded}>
+      <Section2>
         <Section2.InnerMargin embedded={props.embedded}>
           <H1Title>
             Mesurer l'impact carbone de la <MainColorSpan>livraison de colis</MainColorSpan>
