@@ -27,7 +27,7 @@ const Svg = styled.svg`
   width: 1.2rem;
 `;
 
-export default function CalculateurLivraison() {
+export default function CalculateurLivraison(props) {
   // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison);
   const { setIfl } = useContext(ModalContext);
@@ -100,7 +100,7 @@ export default function CalculateurLivraison() {
   return (
     <>
       <Section2>
-        <Section2.InnerMargin>
+        <Section2.InnerMargin embedded={props.embedded}>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>
               <H2Title>Estimez l'impact de votre livraison</H2Title>
