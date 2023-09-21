@@ -22,17 +22,21 @@ const FlexContainer = styled.div`
   display: flex;
   > .emptySpace {
     min-width: 6rem;
-    ${(props) => props.theme.mq.medium} {
+    ${(props) => props.theme.mq.large} {
       min-width: 0;
     }
   }
   > .item2 {
     align-items: center;
     display: flex;
+    ${(props) => props.theme.mq.large} {
+      flex-basis: 33%;
+    }
   }
   > .item3 {
     align-items: center;
     display: flex;
+    min-width: 6rem;
   }
 `;
 
