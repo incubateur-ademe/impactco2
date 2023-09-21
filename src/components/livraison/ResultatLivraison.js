@@ -70,7 +70,6 @@ const BlueGrid = styled.div`
     display: flex;
     justify-content: end;
     margin-right: 4px;
-    margin-top: 7px;
   }
   > .item3 {
     grid-row: span 3;

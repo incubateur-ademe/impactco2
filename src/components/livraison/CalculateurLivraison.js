@@ -313,6 +313,11 @@ const Addendum = styled.div`
   ${(props) => props.theme.mq.xsmall} {
     padding: 0 0.25rem;
   }
+  > .txt {
+    ${(props) => props.theme.mq.large} {
+      line-height: 20px;
+    }
+  }
   > .plus {
     font-size: 28px;
     ${(props) => props.theme.mq.xsmall} {
