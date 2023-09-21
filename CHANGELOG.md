@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.8 (21/09/2023)
+
+* U21 - visuels livraison
+
 ## 1.19.7 (19/09/2023)
 
 * BSR - voir les sources

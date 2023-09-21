@@ -43,7 +43,7 @@ export const relays = [
   { displayed: "Marche", uid: "marche", publicode: "marche" },
   { displayed: "En vélo", uid: "velo", publicode: "vélo" },
   { displayed: "En vélo électrique", uid: "veloelectrique", publicode: "petit véhicule électrique" },
-  { displayed: "En transport en commun", uid: "transport", publicode: "commun" },
+  { displayed: "Transport en commun", uid: "transport", publicode: "commun" },
 ];
 
 export const trajs = [

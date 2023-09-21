@@ -262,12 +262,8 @@ const DropList = styled.div`
   border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: left;
+  justify-items: start;
   ${(props) => props.theme.mq.xlarge} {
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-  }
-  ${(props) => props.theme.mq.small} {
     grid-template-columns: repeat(1, 1fr);
     justify-items: start;
   }
@@ -312,6 +308,11 @@ const Addendum = styled.div`
   padding: 0 0.65rem;
   ${(props) => props.theme.mq.xsmall} {
     padding: 0 0.25rem;
+  }
+  > .txt {
+    ${(props) => props.theme.mq.large} {
+      line-height: 20px;
+    }
   }
   > .plus {
     font-size: 28px;

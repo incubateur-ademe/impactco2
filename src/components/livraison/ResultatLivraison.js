@@ -66,11 +66,10 @@ const BlueGrid = styled.div`
     border-top-right-radius: 16px;
   }
   > .item1 {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     justify-content: end;
     margin-right: 4px;
-    margin-top: 7px;
   }
   > .item3 {
     grid-row: span 3;

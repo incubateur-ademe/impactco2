@@ -15,7 +15,6 @@ const StyledSelect = styled(Select)`
     letter-spacing: 0em;
     line-height: 24px;
     margin-left: 0.5rem;
-    padding: 0.5em 0.3rem;
   }
 `;
 
