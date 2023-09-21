@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   border-bottom-right-radius: 16px;
   display: grid;
   grid-template-columns: 6rem auto;
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.large} {
     grid-template-columns: 0 auto;
   }
   padding: 0 0 1.5rem 2rem;
