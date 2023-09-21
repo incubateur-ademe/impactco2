@@ -29,6 +29,9 @@ const FlexContainer = styled.div`
   > .item2 {
     align-items: center;
     display: flex;
+    ${(props) => props.theme.mq.xlarge} {
+      flex-basis: 40%;
+    }
     ${(props) => props.theme.mq.large} {
       flex-basis: 33%;
     }
