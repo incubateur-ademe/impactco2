@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.11 (21/09/2023)
+
+* B14 - nouvelles proportions en mode mobile
+
 ## 1.19.10 (21/09/2023)
 
 * U21 - chevauchement select livraison
