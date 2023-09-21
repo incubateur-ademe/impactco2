@@ -20,6 +20,9 @@ export default function OptionalRelay(props) {
 
 const FlexContainer = styled.div`
   display: flex;
+  ${(props) => props.theme.mq.medium} {
+    flex-direction: column;
+  }
   > .emptySpace {
     min-width: 6rem;
     ${(props) => props.theme.mq.large} {
@@ -31,9 +34,6 @@ const FlexContainer = styled.div`
     display: flex;
     ${(props) => props.theme.mq.xlarge} {
       flex-basis: 40%;
-    }
-    ${(props) => props.theme.mq.large} {
-      flex-basis: 33%;
     }
   }
   > .item3 {
@@ -53,10 +53,11 @@ const Wrapper = styled.div`
 
 const Text = styled.div`
   font-size: 16px;
-  ${(props) => props.theme.mq.large} {
+  ${(props) => props.theme.mq.small} {
     font-size: 14px;
   }
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 24px;
+  margin-right: 0.25rem;
 `;

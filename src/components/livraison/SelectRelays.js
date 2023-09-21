@@ -19,6 +19,10 @@ const StyledSelect = styled(Select)`
     letter-spacing: 0em;
     line-height: 24px;
     margin-left: 0.5rem;
+    ${(props) => props.theme.mq.medium} {
+      margin-left: 0;
+      padding-left: 0;
+    }
   }
 `;
 
