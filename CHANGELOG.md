@@ -2,7 +2,7 @@
 # CHANGELOG
 
 
-## 1.19.11 (21/09/2023)
+## 1.19.11 (22/09/2023)
 
 * B14 - nouvelles proportions en mode mobile
 
