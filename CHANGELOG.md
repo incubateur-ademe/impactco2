@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.19.12 (22/09/2023)
+
+* B13 - tentative de blocage du scroll sous une modale
+
 ## 1.19.11 (22/09/2023)
 
 * B14 - nouvelles proportions en mode mobile

@@ -1,8 +1,11 @@
 import FocusTrap from "focus-trap-react";
+import { useDisableBodyScroll } from "hooks/useDisableBodyScroll";
 import React from "react";
 import styled from "styled-components";
 
 export default function Modal3(props) {
+  useDisableBodyScroll(props.open);
+
   return (
     props.open && (
       <FocusTrap focusTrapOptions={{ initialFocus: "#button-close" }}>
