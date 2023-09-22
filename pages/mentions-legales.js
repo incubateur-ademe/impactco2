@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-export default function Accessibilite() {
+export default function MetionsLegales() {
   return (
     <Web title={"Mentions légales"}>
       <Section2>
@@ -35,7 +35,7 @@ export default function Accessibilite() {
             </p>
             <h2>Direction de publication</h2>
             <p>
-              Le directeur de publication est M. Boris RAVIGNON, agissant en qualité de Président-directeur général de
+              Le directeur de publication est M. Sylvain WASERMAN, agissant en qualité de Président-directeur général de
               l’ADEME.
             </p>
             <p>
