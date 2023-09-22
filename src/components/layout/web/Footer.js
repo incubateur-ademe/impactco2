@@ -4,6 +4,7 @@ import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
 import Marianne from "components/base/Marianne";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 
@@ -28,10 +29,18 @@ const FooterLink = styled.div`
   text-align: center;
 `;
 export default function Footer() {
+  const router = useRouter();
+  const isSimpleFooter = ["/mentions-legales", "/cookies"].includes(router.pathname);
   return (
     <>
-      <Contact />
-      <About />
+      {isSimpleFooter ? (
+        <></>
+      ) : (
+        <>
+          <Contact />
+          <About />
+        </>
+      )}
       <Logos>
         <Marianne />
         <Ademe />
