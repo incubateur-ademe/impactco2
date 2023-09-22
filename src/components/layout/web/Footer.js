@@ -40,6 +40,9 @@ export default function Footer() {
       <Accessibility pb={"0"}>
         <Link href="/accessibilite">Accessibilité : non-conforme</Link>
       </Accessibility>
+      <Accessibility>
+        <Link href="/mentions-legales">Mentions légales</Link>
+      </Accessibility>
       <Accessibility>Version : {process.env.thebuildid}</Accessibility>
     </>
   );
