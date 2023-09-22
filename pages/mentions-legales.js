@@ -10,7 +10,7 @@ export default function MetionsLegales() {
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
-            <h1 class="fr-header__body">Mentions légales</h1>
+            <h1>Mentions légales</h1>
             <h2>Informations légales</h2>
             <p>
               Impact CO2&nbsp;
