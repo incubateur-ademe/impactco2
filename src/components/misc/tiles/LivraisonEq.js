@@ -90,6 +90,7 @@ const ButtonChange = styled.button`
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 24px;
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
   padding: 4px 12px 4px 12px;
   ${(props) => props.theme.mq.large} {

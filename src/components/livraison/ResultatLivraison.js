@@ -58,13 +58,13 @@ const BlueGrid = styled.div`
   ${(props) => props.theme.mq.large} {
     grid-template-columns: 1px 140px;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     grid-template-columns: 30px 1fr;
   }
   margin: auto;
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     border-bottom-left-radius: 0;
     border-top-right-radius: 16px;
   }
@@ -79,7 +79,7 @@ const BlueGrid = styled.div`
     position: relative;
     > div {
       clip-path: polygon(100% 49%, 83% 0, 84% 99%);
-      ${(props) => props.theme.mq.medium} {
+      ${(props) => props.theme.mq.small} {
         display: none;
       }
     }
@@ -134,7 +134,7 @@ const Arrow = styled.div`
   height: 100%;
   /* margin-left: px; */
   width: 30px;
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
     height: 30px;
     margin-top: -1px;
@@ -144,7 +144,7 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     flex-direction: column;
     width: inherit;
   }
@@ -153,7 +153,7 @@ const Wrapper = styled.div`
 const CenteredBlock = styled.div`
   background-color: #457be7;
   border-bottom-left-radius: 14px;
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     border-bottom-left-radius: 0;
   }
   border-top-left-radius: 14px;

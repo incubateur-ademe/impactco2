@@ -27,6 +27,9 @@ const Wrapper = styled.div`
   border-radius: 16px;
   display: grid;
   grid-template-columns: 230px repeat(3, 1fr);
+  ${(props) => props.theme.mq.large} {
+    grid-template-columns: 205px repeat(3, 1fr);
+  }
   margin-top: 1rem;
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
