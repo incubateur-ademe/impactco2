@@ -44,9 +44,6 @@ export default function Footer2() {
           <Accessibility>
             <Link href="/accessibilite">Accessibilité : non-conforme</Link>
           </Accessibility>
-          <Accessibility>
-            <Link href="/mentions-legales">Mentions légales</Link>
-          </Accessibility>
           <Accessibility breath>Version : {process.env.thebuildid}</Accessibility>
         </footer>
       </Wrapper>
