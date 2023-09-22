@@ -4,6 +4,10 @@
 
 ## 1.19.11 (22/09/2023)
 
+* B13 - tentative de blocage du scroll sous une iframe
+
+## 1.19.11 (22/09/2023)
+
 * B14 - nouvelles proportions en mode mobile
 
 ## 1.19.10 (21/09/2023)
