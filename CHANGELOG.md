@@ -2,7 +2,7 @@
 # CHANGELOG
 
 
-## 1.19.12 (22/09/2023)
+## 1.20.0 (22/09/2023)
 
 * U33 - page mentions légales et gestion des cookies
 
