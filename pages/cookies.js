@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export default function Cookies() {
   return (
-    <Web title={"Mentions légales"}>
+    <Web title={"Cookies"}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
