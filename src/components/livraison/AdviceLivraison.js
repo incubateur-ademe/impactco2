@@ -31,14 +31,14 @@ export default function AdviceLivraison() {
                   d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"
                 />
               </svg>
-              &nbsp;Partager
+              <HideableSpan>&nbsp;Partager</HideableSpan>
             </ButtonChange>
             <ButtonChange onClick={takeScreenshot} className="noscreenshot">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
               </svg>
-              &nbsp;Télécharger
+              <HideableSpan>&nbsp;Télécharger</HideableSpan>
             </ButtonChange>
           </div>
         </Flex>
@@ -105,29 +105,13 @@ const Flex = styled.div`
   flex-wrap: wrap;
   margin-bottom: 1rem;
   > .buttons {
-    display: flex;
     margin-left: auto;
-    ${(props) => props.theme.mq.large} {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    ${(props) => props.theme.mq.large} {
-      flex-direction: column;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    button {
-      margin-top: 0.5rem;
-    }
-    button + button {
-      margin-left: 0.5rem;
-      ${(props) => props.theme.mq.large} {
-        margin-left: auto;
-      }
+    ${(props) => props.theme.mq.xlarge} {
+      margin-left: 0;
     }
   }
-  ${(props) => props.theme.mq.large} {
-    flex-direction: column;
+  button + button {
+    margin-left: 0.5rem;
   }
 `;
 
@@ -152,4 +136,9 @@ const ButtonChange = styled.button`
   }
   padding: 4px 12px 4px 12px;
   text-align: center;
+`;
+const HideableSpan = styled.span`
+  ${(props) => props.theme.mq.xsmall} {
+    display: none;
+  }
 `;

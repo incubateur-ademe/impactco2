@@ -60,7 +60,10 @@ const EmojiWrapper = styled.div`
 `;
 
 const Number = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
+  ${(props) => props.theme.mq.large} {
+    font-size: 1rem;
+  }
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 32px;
@@ -87,7 +90,12 @@ const ButtonChange = styled.button`
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 24px;
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
   padding: 4px 12px 4px 12px;
+  ${(props) => props.theme.mq.large} {
+    max-width: 6rem;
+    padding: 0.1rem;
+  }
   text-align: center;
 `;
