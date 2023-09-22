@@ -20,7 +20,7 @@ const Logos = styled.div`
     padding: 0 0.25rem;
   }
 `;
-const Accessibility = styled.div`
+const FooterLink = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   font-size: 0.75rem;
   font-weight: 300;
@@ -37,13 +37,13 @@ export default function Footer() {
         <Ademe />
         <Logo />
       </Logos>
-      <Accessibility pb={"0"}>
+      <FooterLink pb={"0"}>
         <Link href="/accessibilite">Accessibilité : non-conforme</Link>
-      </Accessibility>
-      <Accessibility>
+      </FooterLink>
+      <FooterLink>
         <Link href="/mentions-legales">Mentions légales</Link>
-      </Accessibility>
-      <Accessibility>Version : {process.env.thebuildid}</Accessibility>
+      </FooterLink>
+      <FooterLink>Version : {process.env.thebuildid}</FooterLink>
     </>
   );
 }

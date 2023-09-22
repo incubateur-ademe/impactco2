@@ -44,8 +44,8 @@ export default function Accessibilite() {
               juridiques.
             </p>
             <h2>Hébergement du site</h2>
-            <p>Scalingo</p>
-            <p>15 avenue du Rhin 67100 Strasbourg</p>
+            <p>Netlify</p>
+            <p>44 Montgomery Street, Suite 300, San Francisco, California 94104</p>
             <h2>Attribution</h2>
             <p>Certaines illustrations sont réalisées par Storyset de www.flaticon.com</p>
             <h2>Modification des mentions légales</h2>
