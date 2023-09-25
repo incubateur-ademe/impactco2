@@ -40,6 +40,10 @@ const link = document.createElement("div");
 link.innerHTML = `<a href="https://impactco2.fr" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`;
 link.style.cssText = `margin: 0.5rem auto 1rem;text-align: center`;
 
+console.log("isFig", isFigaro);
+console.log("window.location.ancestorOrigins[0]", window.location.ancestorOrigins[0]);
+console.log("document.referrer", document.referrer);
+
 if (!isFigaro) {
   script.parentNode.insertBefore(iframe, script);
   script.parentNode.insertBefore(link, script);
