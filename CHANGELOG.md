@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.20.3 (25/09/2023)
+
+* Ucut - petite iframe : modification CTA
+
 
 ## 1.20.2 (25/09/2023)
 
