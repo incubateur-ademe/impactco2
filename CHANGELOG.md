@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.20.1 (25/09/2023)
+
+* Ucut - couper le trafic en provenance du figaro
+
 ## 1.20.0 (22/09/2023)
 
 * U33 - page mentions légales et gestion des cookies
