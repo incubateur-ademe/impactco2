@@ -1,6 +1,42 @@
 
 # CHANGELOG
 
+## 1.20.3 (25/09/2023)
+
+* Ucut - petite iframe : modification CTA
+
+
+## 1.20.2 (25/09/2023)
+
+* U33b - page politique de confidentialité
+
+## 1.20.1 (25/09/2023)
+
+* Ucut - couper le trafic en provenance du figaro
+
+## 1.20.0 (22/09/2023)
+
+* U33 - page mentions légales et gestion des cookies
+
+## 1.19.12 (22/09/2023)
+
+* B13 - tentative de blocage du scroll sous une modale
+
+## 1.19.11 (22/09/2023)
+
+* B14 - nouvelles proportions en mode mobile
+
+## 1.19.10 (21/09/2023)
+
+* U21 - chevauchement select livraison
+
+## 1.19.9 (21/09/2023)
+
+* U21 - taille select livraison
+
+## 1.19.8 (21/09/2023)
+
+* U21 - visuels livraison
 
 ## 1.19.7 (19/09/2023)
 

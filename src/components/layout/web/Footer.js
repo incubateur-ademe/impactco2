@@ -4,6 +4,7 @@ import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
 import Marianne from "components/base/Marianne";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 
@@ -20,7 +21,7 @@ const Logos = styled.div`
     padding: 0 0.25rem;
   }
 `;
-const Accessibility = styled.div`
+const FooterLink = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   font-size: 0.75rem;
   font-weight: 300;
@@ -28,19 +29,33 @@ const Accessibility = styled.div`
   text-align: center;
 `;
 export default function Footer() {
+  const router = useRouter();
+  const isSimpleFooter = ["/mentions-legales", "/politique-de-confidentialite"].includes(router.pathname);
   return (
     <>
-      <Contact />
-      <About />
+      {isSimpleFooter ? (
+        <></>
+      ) : (
+        <>
+          <Contact />
+          <About />
+        </>
+      )}
       <Logos>
         <Marianne />
         <Ademe />
         <Logo />
       </Logos>
-      <Accessibility pb={"0"}>
+      <FooterLink pb={"0"}>
         <Link href="/accessibilite">Accessibilité : non-conforme</Link>
-      </Accessibility>
-      <Accessibility>Version : {process.env.thebuildid}</Accessibility>
+      </FooterLink>
+      <FooterLink pb={"0"}>
+        <Link href="/mentions-legales">Mentions légales</Link>
+      </FooterLink>
+      <FooterLink>
+        <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
+      </FooterLink>
+      <FooterLink>Version : {process.env.thebuildid}</FooterLink>
     </>
   );
 }

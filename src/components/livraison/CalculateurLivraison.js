@@ -112,7 +112,7 @@ export default function CalculateurLivraison(props) {
                       d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"
                     />
                   </svg>
-                  &nbsp;Partager
+                  <HideableSpan>&nbsp;Partager</HideableSpan>
                 </ButtonChange>
                 <ButtonChange onClick={integrerClicked} className="noscreenshot">
                   <svg
@@ -130,7 +130,7 @@ export default function CalculateurLivraison(props) {
                       d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
                     />
                   </svg>
-                  &nbsp;Intégrer le simulateur
+                  <HideableSpan>&nbsp;Intégrer le simulateur</HideableSpan>
                 </ButtonChange>
                 <ButtonChange onClick={takeScreenshot} className="noscreenshot">
                   <svg
@@ -143,7 +143,7 @@ export default function CalculateurLivraison(props) {
                     <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
                     <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
                   </svg>
-                  &nbsp;Télécharger
+                  <HideableSpan>&nbsp;Télécharger</HideableSpan>
                 </ButtonChange>
               </div>
             </Flex>
@@ -253,6 +253,7 @@ const H2Title = styled.h2`
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 0;
+  margin-right: 0.5rem;
   margin-top: 0;
 `;
 
@@ -262,12 +263,8 @@ const DropList = styled.div`
   border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: left;
+  justify-items: start;
   ${(props) => props.theme.mq.xlarge} {
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-  }
-  ${(props) => props.theme.mq.small} {
     grid-template-columns: repeat(1, 1fr);
     justify-items: start;
   }
@@ -313,6 +310,11 @@ const Addendum = styled.div`
   ${(props) => props.theme.mq.xsmall} {
     padding: 0 0.25rem;
   }
+  > .txt {
+    ${(props) => props.theme.mq.large} {
+      line-height: 20px;
+    }
+  }
   > .plus {
     font-size: 28px;
     ${(props) => props.theme.mq.xsmall} {
@@ -353,29 +355,13 @@ const Flex = styled.div`
   flex-wrap: wrap;
   margin-bottom: 1rem;
   > .buttons {
-    display: flex;
     margin-left: auto;
-    ${(props) => props.theme.mq.large} {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    ${(props) => props.theme.mq.large} {
-      flex-direction: column;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    button {
-      margin-top: 0.5rem;
-    }
-    button + button {
-      margin-left: 0.5rem;
-      ${(props) => props.theme.mq.large} {
-        margin-left: auto;
-      }
+    ${(props) => props.theme.mq.xlarge} {
+      margin-left: 0;
     }
   }
-  ${(props) => props.theme.mq.large} {
-    flex-direction: column;
+  button + button {
+    margin-left: 0.5rem;
   }
 `;
 
@@ -471,5 +457,11 @@ const FlexHabitBottom = styled.div`
     ${(props) => props.theme.mq.small} {
       margin-right: 1rem;
     }
+  }
+`;
+
+const HideableSpan = styled.span`
+  ${(props) => props.theme.mq.xsmall} {
+    display: none;
   }
 `;

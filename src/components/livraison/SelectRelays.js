@@ -11,11 +11,18 @@ const StyledSelect = styled(Select)`
     ${(props) => props.theme.mq.small} {
       font-size: 12px;
     }
+    ${(props) => props.theme.mq.xsmall} {
+      margin-left: 0;
+      padding-left: 0.2rem;
+    }
     font-weight: 500;
     letter-spacing: 0em;
     line-height: 24px;
     margin-left: 0.5rem;
-    padding: 0.5em 0.3rem;
+    ${(props) => props.theme.mq.medium} {
+      margin-left: 0;
+      padding-left: 0;
+    }
   }
 `;
 

@@ -54,30 +54,32 @@ const BlueGrid = styled.div`
   border-top-left-radius: 16px;
   color: white;
   display: grid;
-  grid-template-columns: 30px 240px;
-  ${(props) => props.theme.mq.xlarge} {
+  grid-template-columns: 30px 140px;
+  ${(props) => props.theme.mq.large} {
+    grid-template-columns: 1px 140px;
+  }
+  ${(props) => props.theme.mq.small} {
     grid-template-columns: 30px 1fr;
   }
   margin: auto;
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
-  ${(props) => props.theme.mq.xlarge} {
+  ${(props) => props.theme.mq.small} {
     border-bottom-left-radius: 0;
     border-top-right-radius: 16px;
   }
   > .item1 {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     justify-content: end;
     margin-right: 4px;
-    margin-top: 7px;
   }
   > .item3 {
     grid-row: span 3;
     position: relative;
     > div {
       clip-path: polygon(100% 49%, 83% 0, 84% 99%);
-      ${(props) => props.theme.mq.xlarge} {
+      ${(props) => props.theme.mq.small} {
         display: none;
       }
     }
@@ -93,7 +95,10 @@ const BlueGrid = styled.div`
 `;
 
 const ActualResult = styled.span`
-  font-size: 36px;
+  font-size: 2.25rem;
+  ${(props) => props.theme.mq.large} {
+    font-size: 1.5rem;
+  }
   font-weight: 700;
   line-height: 56px;
 `;
@@ -129,7 +134,7 @@ const Arrow = styled.div`
   height: 100%;
   /* margin-left: px; */
   width: 30px;
-  ${(props) => props.theme.mq.xlarge} {
+  ${(props) => props.theme.mq.small} {
     clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
     height: 30px;
     margin-top: -1px;
@@ -139,8 +144,7 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  width: 312px;
-  ${(props) => props.theme.mq.xlarge} {
+  ${(props) => props.theme.mq.small} {
     flex-direction: column;
     width: inherit;
   }
@@ -149,7 +153,7 @@ const Wrapper = styled.div`
 const CenteredBlock = styled.div`
   background-color: #457be7;
   border-bottom-left-radius: 14px;
-  ${(props) => props.theme.mq.xlarge} {
+  ${(props) => props.theme.mq.small} {
     border-bottom-left-radius: 0;
   }
   border-top-left-radius: 14px;
