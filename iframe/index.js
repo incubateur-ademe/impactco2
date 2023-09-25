@@ -17,7 +17,8 @@ const type = script.dataset.type
 const search = script.dataset.search || "";
 const source = window.location.href.toString();
 
-const src = `https://impactco2.fr/iframes/${type}${search}${search ? "&" : "?"}source=${source}`;
+// eslint-disable-next-line no-undef
+const src = `https://${WEBPACK_SITE_URL}/iframes/${type}${search}${search ? "&" : "?"}source=${source}`;
 
 const iframe = document.createElement("iframe");
 
