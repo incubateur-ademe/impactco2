@@ -5,24 +5,26 @@ import categories from "data/categories.json";
 import React, { useEffect, useState } from "react";
 
 export default function Itineraire(props) {
-  const [isClient, setIsClient] = useState(false);
+  const [isFig, setIsFig] = useState(false);
 
   useEffect(() => {
-    setIsClient(typeof window !== "undefined");
+    setIsFig(typeof window !== "undefined" && !new URL(window.location.href).searchParams.get("source"));
   }, []);
 
   return (
-    <Iframe>
-      {isClient ? (
-        <>In the window... {window.location.href}</>
+    <>
+      {isFig ? (
+        <>In the window... {window.location.search}</>
       ) : (
         <>
-          <TransportProvider>
-            <Itinerary category={props.category} iframe />
-          </TransportProvider>
+          <Iframe>
+            <TransportProvider>
+              <Itinerary category={props.category} iframe />
+            </TransportProvider>
+          </Iframe>
         </>
       )}
-    </Iframe>
+    </>
   );
 }
 export async function getStaticProps() {
