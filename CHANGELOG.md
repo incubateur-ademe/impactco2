@@ -2,6 +2,10 @@
 # CHANGELOG
 
 
+## 1.20.2 (25/09/2023)
+
+* U33b - page politique de confidentialité
+
 ## 1.20.1 (25/09/2023)
 
 * Ucut - couper le trafic en provenance du figaro
