@@ -19,7 +19,7 @@ export default function Politique() {
               consultées, le temps passé, les interactions avec nos simulateurs et nos ressources dans l'unique but de
               l'améliorer.
             </p>
-            <p>Toutefois ce site n'utilise pas de cookie.</p>
+            <p>Toutefois ce site n'utilise pas de cookies.</p>
             <p>
               Nous sommes ainsi en conformité avec la réglementation « Cookies » de la CNIL et exemptés d’autorisation
               préalable. C’est pour cela que vous n’avez pas eu besoin de cliquer sur un bloc pour accepter le dépôt de
