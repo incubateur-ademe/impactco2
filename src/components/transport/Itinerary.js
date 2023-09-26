@@ -23,7 +23,6 @@ export default function Itinerary(props) {
       <Section.Content>
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Search itineraire iframe={props.iframe} />
-          {props.iframe ? <>YesIFrame</> : <>NoIframe</>}
           {transportations.length ? (
             <Top>
               <Instruction />
