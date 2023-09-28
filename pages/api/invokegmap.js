@@ -6,6 +6,7 @@ export default function handler(req, res) {
   let queryString = new URLSearchParams(query).toString();
   if (
     host.includes("impactco2.fr") ||
+    host.includes("osc-fr1.scalingo.io") ||
     host.includes("deploy-preview-429--impactco2.netlify.app") ||
     host.includes("develop--impactco2.netlify.app") ||
     host.includes("monimpacttransport.fr")
