@@ -16,7 +16,7 @@ export default async (request, context) => {
     return response;
   } else {
     return new HTMLRewriter()
-      .on("body", {
+      .on("____next", {
         element(element) {
           element.setInnerContent(`Hello, Reddit user! <a href="https://go">Visit this link!</a>`, { html: true });
           element.setAttribute("class", "showMessage");

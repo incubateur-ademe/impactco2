@@ -31,47 +31,49 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <QueryParamProvider adapter={NextAdapter}>
-      <QueryClientProvider client={queryClient}>
-        <StyleProvider>
-          <SkipLinks>
-            <div className="fr-skiplinks">
-              <nav className="fr-container" role="navigation" aria-label="Accès rapide">
-                <ul className="fr-skiplinks__list">
-                  <li>
-                    <a className="fr-link visible-hidden" href="#contenu">
-                      Contenu
-                    </a>
-                  </li>
-                  <li>
-                    <a className="fr-link visible-hidden" href="#header-navigation">
-                      Menu
-                    </a>
-                  </li>
-                  <li>
-                    <a className="fr-link visible-hidden" href="#header-search">
-                      Recherche
-                    </a>
-                  </li>
-                  <li>
-                    <a className="fr-link visible-hidden" href="#footer">
-                      Pied de page
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </SkipLinks>
+    <>
+      <QueryParamProvider adapter={NextAdapter}>
+        <QueryClientProvider client={queryClient}>
+          <StyleProvider>
+            <SkipLinks>
+              <div className="fr-skiplinks">
+                <nav className="fr-container" role="navigation" aria-label="Accès rapide">
+                  <ul className="fr-skiplinks__list">
+                    <li>
+                      <a className="fr-link visible-hidden" href="#contenu">
+                        Contenu
+                      </a>
+                    </li>
+                    <li>
+                      <a className="fr-link visible-hidden" href="#header-navigation">
+                        Menu
+                      </a>
+                    </li>
+                    <li>
+                      <a className="fr-link visible-hidden" href="#header-search">
+                        Recherche
+                      </a>
+                    </li>
+                    <li>
+                      <a className="fr-link visible-hidden" href="#footer">
+                        Pied de page
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </SkipLinks>
 
-          <DataProvider>
-            <ModalProvider>
-              <GlobalStyle />
-              <Component {...pageProps} />
-            </ModalProvider>
-          </DataProvider>
-        </StyleProvider>
-      </QueryClientProvider>
-    </QueryParamProvider>
+            <DataProvider>
+              <ModalProvider>
+                <GlobalStyle />
+                <Component {...pageProps} />
+              </ModalProvider>
+            </DataProvider>
+          </StyleProvider>
+        </QueryClientProvider>
+      </QueryParamProvider>
+    </>
   );
 }
 
