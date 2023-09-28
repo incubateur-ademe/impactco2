@@ -2,9 +2,8 @@ const axios = require("axios");
 
 export default function handler(req, res) {
   let host = req.headers.host;
-  let params = req.headers["x-invoke-query"];
-  let q = JSON.parse(decodeURIComponent(params));
-  let queryString = new URLSearchParams(q).toString();
+  let query = req.query;
+  let queryString = new URLSearchParams(query).toString();
   if (
     host.includes("impactco2.fr") ||
     host.includes("deploy-preview-429--impactco2.netlify.app") ||
