@@ -44,7 +44,6 @@ const StyledMagicLink = styled(MagicLink)`
 
 export default function Details(props) {
   const { setCo2e, setWarningNegaoctet } = useContext(ModalContext);
-  console.log(props);
   return (
     <>
       <Section>

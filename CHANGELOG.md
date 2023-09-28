@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.20.6 (28/09/2023)
+
+* Bmit - Bug API monimpacttransport
+
 ## 1.20.5 (28/09/2023)
 
 * Ubug - API ne fonctionne plus
