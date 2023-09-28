@@ -3,7 +3,7 @@ https://api.monimpacttransport.fr/beta/*    https://impactco2.fr/.netlify/functi
 
 http://teletravail.monimpacttransport.fr/*  https://impactco2.fr/transport/teletravail/:splat 301!
 https://teletravail.monimpacttransport.fr/* https://impactco2.fr/transport/teletravail/:splat 301!
-https://monimpacttransport.fr/iframe.js     https://impactco2.fr/iframe.js 
+https://monimpacttransport.fr/iframe.js     https://impactco2.fr/iframe.js
 
 http://api.monimpacttransport.fr/*          https://impactco2.fr/transport/:splat  301!
 https://api.monimpacttransport.fr/*         https://impactco2.fr/transport/:splat  301!
@@ -27,5 +27,5 @@ https://www.monconvertisseurco2.fr/*        https://impactco2.fr/:splat  301!
 /iframes/empreinte-carbone/*                /iframes/:splat
 
 /iframes/tuiles                             /iframes/convertisseur
-
+/iframes/transport/itineraire               /button.html
 
