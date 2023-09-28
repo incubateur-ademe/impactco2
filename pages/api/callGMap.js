@@ -2,8 +2,10 @@ const axios = require("axios");
 
 export default function handler(req, res) {
   console.log(req.headers);
+  console.log(req.headers.referer);
   if (
     req.headers.referer.includes("impactco2.fr") ||
+    req.headers.referer.includes("deploy-preview-429--impactco2.netlify.app") ||
     req.headers.referer.includes("develop--impactco2.netlify.app") ||
     req.headers.referer.includes("monimpacttransport.fr")
   ) {
