@@ -12,5 +12,7 @@ export function middleware(request) {
       `,
       { status: 200, headers: { "content-type": "text/html", charset: "utf-8" } }
     );
+  } else {
+    return NextResponse.next();
   }
 }
