@@ -27,5 +27,3 @@ https://www.monconvertisseurco2.fr/*        https://impactco2.fr/:splat  301!
 /iframes/empreinte-carbone/*                /iframes/:splat
 
 /iframes/tuiles                             /iframes/convertisseur
-/iframes/transport/itineraire               /button.html
-
