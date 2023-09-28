@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   let host = req.headers.host;
   let query = req.query;
   let queryString = new URLSearchParams(query).toString();
@@ -11,12 +11,13 @@ export default function handler(req, res) {
     host.includes("develop--impactco2.netlify.app") ||
     host.includes("monimpacttransport.fr")
   ) {
-    return axios
+    const data = await axios
       .get(`https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&key=${process.env.GMAP_API_KEY}`)
       .then((resp) => ({
         statusCode: 200,
-        body: JSON.stringify(resp.data),
+        body: resp.data,
       }));
+    return res.status(200).json(data);
   } else {
     return res.status(401).json(JSON.stringify("Unauthorized"));
   }
