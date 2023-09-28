@@ -1,3 +1,7 @@
 export default function handler(req, res) {
-  res.status(200).json({ name: "John Doe" });
+  let host = req.headers.host;
+  let params = req.headers["x-invoke-query"];
+  let q = JSON.parse(decodeURIComponent(params));
+  let queryString = new URLSearchParams(q).toString();
+  res.status(200).json({ h: host, q: q, d: queryString });
 }
