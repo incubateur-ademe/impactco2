@@ -6,5 +6,5 @@ export default function handler(req, res) {
   // let params = req.headers["x-invoke-query"];
   // let q = JSON.parse(decodeURIComponent(params));
   // res.status(200).json({ h: host, q: q, d: queryString });
-  res.status(200).json({ h: headers, q: query, qs: queryString });
+  res.status(200).json({ h: headers, q: query, qs: queryString, def: !!process.env.GMAP_API_KEY });
 }
