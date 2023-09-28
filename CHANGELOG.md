@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## 1.20.5 (28/09/2023)
+
+* Ubug - API ne fonctionne plus
+
 ## 1.20.4 (28/09/2023)
 
 * Ucut - suppression du traffic iframe trop important grâce à un middleware

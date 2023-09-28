@@ -15,6 +15,10 @@
     "lint": "next lint",
     "prepare": "husky install"
   },
+  "engines": {
+    "node": "18",
+    "npm": "8"
+  },
   "dependencies": {
     "@dnd-kit/core": "^6.0.7",
     "@dnd-kit/sortable": "^7.0.2",
