@@ -8,8 +8,8 @@ export function useItinerary(start, end, mode) {
     () =>
       axios
         .get(
-          `https://impactco2.fr/.netlify/functions/callGMap/?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
-          // `/api/invokegmap/?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
+          // `https://impactco2.fr/.netlify/functions/callGMap/?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
+          `/api/invokegmap/?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
         )
         .then((res) => res.data.rows),
     {

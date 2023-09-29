@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 export function useSuggestions(search, focus) {
-  console.log("search------------------------------------", search);
   return useQuery(
     ["search", search],
     () =>
