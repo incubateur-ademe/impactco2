@@ -30,7 +30,7 @@ const nextConfig = {
     defaultLocale: "fr",
   },
   env: {
-    thebuildid: getLastVersion() + "-" + (process.env.CONTAINER_VERSION || shell.exec("git rev-parse --short HEAD")),
+    thebuildid: getLastVersion() + "-" + shell.exec("git rev-parse --short HEAD"),
     customKey: "my-value",
   },
   async redirects() {
