@@ -48,3 +48,4 @@ cypress/results/
 .netlify
 
 # current Git (short) SHA commit
+.sha
