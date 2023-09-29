@@ -11,11 +11,24 @@ const fs = require("fs");
 
 const filePath = "./version.txt";
 
-fs.writeFile(filePath, version + "\n", (err) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
+writeToFile(filePath, version);
 
-  console.log("Version was successfully written to the file.");
-});
+// fs.writeFile(filePath, version + "\n", (err) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+
+//   console.log("Version was successfully written to the file.");
+// });
+
+async function writeToFile(filePath, text) {
+  // Open the file for writing
+  const fileHandle = await fs.promises.open(filePath, "w");
+
+  // Write the text to the file
+  await fs.promises.writeFile(fileHandle, text);
+
+  // Close the file
+  await fileHandle.close();
+}
