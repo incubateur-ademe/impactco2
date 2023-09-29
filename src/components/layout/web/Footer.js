@@ -57,7 +57,8 @@ export default function Footer() {
       </FooterLink>
       <FooterLink>
         Version : {process.env.thebuildid}
-        {process.env.SOURCE_VERSION}
+        {process.env.CONTAINER_VERSION}
+        {process.env.APP}
       </FooterLink>
     </>
   );
