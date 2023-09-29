@@ -5,7 +5,10 @@ npx lint-staged
 
 echo "hello-------------"
 
-commit_hash=$(git rev-parse --verify HEAD)
+git describe --all --long > .sha
+git add .sha
 
-# Write it
-echo -e "commit_hash='$commit_hash'\n"
+# commit_hash=$(git rev-parse --verify HEAD)
+
+# # Write it
+# echo -e "commit_hash='$commit_hash'\n"
