@@ -46,3 +46,6 @@ cypress/results/
 
 # Local Netlify folder
 .netlify
+
+# current Git (short) SHA commit
+.sha
