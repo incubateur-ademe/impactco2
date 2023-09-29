@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         statusCode: 200,
         body: resp.data,
       }));
-    return res.status(200).json(data);
+    return res.status(200).json(data?.body || {});
   } else {
     return res.status(401).json(JSON.stringify("Unauthorized"));
   }
