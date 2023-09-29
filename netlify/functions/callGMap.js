@@ -3,6 +3,7 @@ const axios = require("axios");
 exports.handler = function (event) {
   console.log(event.headers);
   if (
+    !event.headers.referer ||
     event.headers.referer.includes("impactco2.fr") ||
     event.headers.referer.includes("develop--impactco2.netlify.app") ||
     event.headers.referer.includes("monimpacttransport.fr")
