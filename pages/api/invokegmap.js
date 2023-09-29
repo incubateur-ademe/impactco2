@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   if (
     host.includes("impactco2.fr") ||
     host.includes("osc-fr1.scalingo.io") ||
-    host.includes("deploy-preview-429--impactco2.netlify.app") ||
+    host.includes("--impactco2.netlify.app") ||
     host.includes("develop--impactco2.netlify.app") ||
     host.includes("monimpacttransport.fr")
   ) {
