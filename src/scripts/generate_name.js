@@ -11,7 +11,7 @@ const fs = require("fs");
 
 const filePath = "./version.txt";
 
-fs.appendFile(filePath, version + "\n", (err) => {
+fs.writeFile(filePath, version + "\n", (err) => {
   if (err) {
     console.log(err);
     return;
