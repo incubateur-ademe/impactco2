@@ -2,3 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged
+
+commit=$(git log -1 --pretty="%h") # hash \n date
+commit_hash=$(echo "$commit" | head -1)
+echo "$commit_hash" > gitcommit.txt

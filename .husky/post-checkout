@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-commit_hash=$(git rev-parse --short HEAD)
-echo -e "commit_hash is '$commit_hash'"
-echo "$commit_hash" > .sha
