@@ -1,9 +1,5 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx lint-staged
-
-versionfilename="gitcommit.txt"
-echo $(git rev-parse --short HEAD) > $versionfilename
-
-exec git add $versionfilename
+yarn generatename
+# versionfilename="version.txt"
+# echo $(git rev-parse --short HEAD) > $versionfilename
+# exec git add $versionfilename
