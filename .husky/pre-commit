@@ -5,8 +5,16 @@ npx lint-staged
 
 echo "hello-------------"
 
-git rev-parse --short HEAD > .sha
-git add .sha
+# git rev-parse --short HEAD > .sha
+# git add .sha
+
+ver_file=version.txt
+> $ver_file
+date +"%Y-%m-%d %T %:z" >> $ver_file
+echo -n "Parent: " >> $ver_file
+git rev-parse HEAD >> $ver_file
+git add $ver_file
+echo "Date-time and parent commit added to '$ver_file'"
 
 # commit_hash=$(git rev-parse --verify HEAD)
 
