@@ -21,8 +21,8 @@ const getLastVersion = function () {
 
 const getBeforeLastSha = function () {
   let result = "unknown";
-  result = fs.readFileSync("./gitcommit.txt", "utf8");
-  console.log("Latest short SHA is:", result);
+  result = fs.readFileSync("./version.txt", "utf8");
+  console.log("Current name is :", result);
   return result;
 };
 
