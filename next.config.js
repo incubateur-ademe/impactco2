@@ -1,4 +1,3 @@
-var shell = require("shelljs");
 var fs = require("fs");
 
 const getLastVersion = function () {
@@ -20,6 +19,13 @@ const getLastVersion = function () {
   return result;
 };
 
+const getBeforeLastSha = function () {
+  let result = "unknown";
+  result = fs.readFileSync("./gitcommit.txt", "utf8");
+  console.log("Latest short SHA is:", result);
+  return result;
+};
+
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
@@ -30,7 +36,7 @@ const nextConfig = {
     defaultLocale: "fr",
   },
   env: {
-    thebuildid: getLastVersion() + "-" + shell.exec("git rev-parse --short HEAD"),
+    thebuildid: getLastVersion() + "-" + getBeforeLastSha(),
     customKey: "my-value",
   },
   async redirects() {
