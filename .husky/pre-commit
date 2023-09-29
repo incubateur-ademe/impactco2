@@ -3,6 +3,7 @@
 
 npx lint-staged
 
-commit=$(git log -1 --pretty="%h")
-commit_hash=$(echo "$commit" | head)
-echo "$commit_hash" > gitcommit.txt
+versionfilename="gitcommit.txt"
+echo $(git rev-parse --short HEAD) > $versionfilename
+
+exec git add $versionfilename
