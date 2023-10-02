@@ -54,22 +54,22 @@ const nextConfig = {
       },
 
       {
-        source: "/categories/*",
+        source: "/categories/:slug*",
         destination: "/:slug*",
         permanent: false,
       },
       {
-        source: "/empreinte-carbone/*",
+        source: "/empreinte-carbone/:slug*",
         destination: "/:slug*",
         permanent: false,
       },
       {
-        source: "/iframes/categories/*",
+        source: "/iframes/categories/:slug*",
         destination: "/iframes/:slug*",
         permanent: false,
       },
       {
-        source: "/iframes/empreinte-carbone/*",
+        source: "/iframes/empreinte-carbone/:slug*",
         destination: "/iframes/:slug*",
         permanent: false,
       },
