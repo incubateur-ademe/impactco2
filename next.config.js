@@ -49,22 +49,22 @@ const nextConfig = {
 
       {
         source: "http://api.monimpacttransport.fr/beta/:slug*",
-        destination: "https://impactco2.fr/.netlify/functions/:slug*",
+        destination: "https://impactco2.fr/api/:slug*",
         permanent: false,
       },
       {
         source: "https://api.monimpacttransport.fr/beta/:slug*",
-        destination: "https://impactco2.fr/.netlify/functions/:slug*",
+        destination: "https://impactco2.fr/api/:slug*",
         permanent: false,
       },
 
       {
-        source: "http://teletravail.monimpacttransport.fr/*",
+        source: "http://teletravail.monimpacttransport.fr/:slug*",
         destination: "https://impactco2.fr/transport/teletravail/:slug*",
         permanent: false,
       },
       {
-        source: "https://teletravail.monimpacttransport.fr/*",
+        source: "https://teletravail.monimpacttransport.fr/:slug*",
         destination: "https://impactco2.fr/transport/teletravail/:slug*",
         permanent: true,
       },
@@ -93,6 +93,76 @@ const nextConfig = {
         source: "https://www.monimpacttransport.fr/:slug*",
         destination: "https://impactco2.fr/transport/:slug*",
         permanent: true,
+      },
+
+      {
+        source: "http://co2e.fr/:slug*",
+        destination: "https://impactco2.fr/:slug*",
+        permanent: true,
+      },
+      {
+        source: "https://co2e.fr/:slug*",
+        destination: "https://impactco2.fr/:slug*",
+        permanent: true,
+      },
+      {
+        source: "http://quelimpactco2.fr/:slug*",
+        destination: "https://impactco2.fr/:slug*",
+        permanent: true,
+      },
+      {
+        source: "https://quelimpactco2.fr/:slug*",
+        destination: "https://impactco2.fr/:slug*",
+        permanent: true,
+      },
+      {
+        source: "https://impactco2.ademe.fr/:slug*",
+        destination: "https://impactco2.fr/:slug*",
+        permanent: true,
+      },
+
+      {
+        source: "https://monconvertisseurco2.fr/:slug*",
+        destination: "https://impactco2.fr/:slug*",
+        permanent: true,
+      },
+      {
+        source: "https://www.monconvertisseurco2.fr/:slug*",
+        destination: "https://impactco2.fr/:slug*",
+        permanent: true,
+      },
+
+      {
+        source: "/categories/deplacement/:slug*",
+        destination: "/transport/:slug*",
+        permanent: true,
+      },
+
+      {
+        source: "/categories/*",
+        destination: "/:slug*",
+        permanent: false,
+      },
+      {
+        source: "/empreinte-carbone/*",
+        destination: "/:slug*",
+        permanent: false,
+      },
+      {
+        source: "/iframes/categories/*",
+        destination: "/iframes/:slug*",
+        permanent: false,
+      },
+      {
+        source: "/iframes/empreinte-carbone/*",
+        destination: "/iframes/:slug*",
+        permanent: false,
+      },
+
+      {
+        source: "/iframes/tuiles",
+        destination: "/iframes/convertisseur",
+        permanent: false,
       },
     ];
   },
