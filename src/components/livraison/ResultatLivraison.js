@@ -54,13 +54,7 @@ const BlueGrid = styled.div`
   border-top-left-radius: 16px;
   color: white;
   display: grid;
-  grid-template-columns: 30px 140px;
-  ${(props) => props.theme.mq.large} {
-    grid-template-columns: 1px 140px;
-  }
-  ${(props) => props.theme.mq.small} {
-    grid-template-columns: 30px 1fr;
-  }
+  grid-template-columns: 30px 1fr;
   margin: auto;
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
@@ -141,11 +135,11 @@ const Wrapper = styled.div`
 `;
 
 const CenteredBlock = styled.div`
-  background-color: #457be7;
+  /* background-color: #457be7;
   border-bottom-left-radius: 14px;
   ${(props) => props.theme.mq.small} {
     border-bottom-left-radius: 0;
   }
   border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
+  border-top-right-radius: 14px; */
 `;
