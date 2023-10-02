@@ -50,8 +50,8 @@ export default function ResultatLivraison(props) {
 
 const BlueGrid = styled.div`
   background-color: #457be7;
-  border-bottom-left-radius: 16px;
-  border-top-left-radius: 16px;
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
   color: white;
   display: grid;
   grid-template-columns: 30px 1fr;

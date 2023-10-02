@@ -1,6 +1,6 @@
 import Emoji from "components/base/Emoji";
-import ModalContext from "components/providers/ModalProvider";
-import React, { useContext } from "react";
+// import ModalContext from "components/providers/ModalProvider";
+// import React, { useContext } from "react";
 import styled from "styled-components";
 import { fullSentenceFormat } from "utils/formatters";
 
@@ -8,12 +8,12 @@ const first2WordsOnly = (sentence) => sentence.split(" ").slice(0, 2).join(" ");
 const first2WordsRemoved = (sentence) => sentence.split(" ").slice(2).join(" ");
 
 export default function LivraisonEq(props) {
-  const { setEqv } = useContext(ModalContext);
+  // const { setEqv } = useContext(ModalContext);
 
-  const changeClicked = () => {
-    window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_modifier_equivalent"]);
-    setEqv(props.slug);
-  };
+  // const changeClicked = () => {
+  //   window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_modifier_equivalent"]);
+  //   setEqv(props.slug);
+  // };
 
   return (
     <Wrapper background={props.background}>
@@ -27,9 +27,9 @@ export default function LivraisonEq(props) {
       </OfWhat>
       <div></div>
       <div>
-        <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
+        {/* <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
           Modifier l'équivalence
-        </ButtonChange>
+        </ButtonChange> */}
       </div>
     </Wrapper>
   );
@@ -78,24 +78,24 @@ const OfWhat = styled.div`
   margin-top: -8px;
 `;
 
-const ButtonChange = styled.button`
-  background-color: white;
-  border-color: #b5abb2;
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 1px;
-  color: #564d53;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0em;
-  line-height: 24px;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  padding: 4px 12px 4px 12px;
-  ${(props) => props.theme.mq.large} {
-    max-width: 6rem;
-    padding: 0.1rem;
-  }
-  text-align: center;
-`;
+// const ButtonChange = styled.button`
+//   background-color: white;
+//   border-color: #b5abb2;
+//   border-radius: 8px;
+//   border-style: solid;
+//   border-width: 1px;
+//   color: #564d53;
+//   cursor: pointer;
+//   font-size: 14px;
+//   font-weight: 500;
+//   letter-spacing: 0em;
+//   line-height: 24px;
+//   margin-right: 0.5rem;
+//   margin-top: 0.5rem;
+//   padding: 4px 12px 4px 12px;
+//   ${(props) => props.theme.mq.large} {
+//     max-width: 6rem;
+//     padding: 0.1rem;
+//   }
+//   text-align: center;
+// `;
