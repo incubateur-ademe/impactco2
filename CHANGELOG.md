@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.21.0 (02/10/2023)
+
+* U28 - Un seul bouton pour les équivalences de la livraison
+
 ## 1.20.7 (29/09/2023)
 
 * Userver - Scalingo : séparation des fonctions API
