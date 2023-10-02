@@ -13,15 +13,6 @@ const filePath = "./version.txt";
 
 writeToFile(filePath, version);
 
-// fs.writeFile(filePath, version + "\n", (err) => {
-//   if (err) {
-//     console.log(err);
-//     return;
-//   }
-
-//   console.log("Version was successfully written to the file.");
-// });
-
 async function writeToFile(filePath, text) {
   // Open the file for writing
   const fileHandle = await fs.promises.open(filePath, "w");

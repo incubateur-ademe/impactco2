@@ -9,7 +9,6 @@ var transportations = require("./transportations.json");
 export default async function handler(req, res) {
   let host = req.headers.host;
   let queryObj = req.query;
-  // let queryString = new URLSearchParams(queryObj).toString();
   if (
     host.includes("impactco2.fr") ||
     host.includes("osc-fr1.scalingo.io") ||

@@ -55,9 +55,7 @@ export default function Footer() {
       <FooterLink>
         <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
       </FooterLink>
-      <FooterLink>
-        Version : {process.env.thebuildid}-{(!!process?.env?.NETLIFY).toString()}
-      </FooterLink>
+      <FooterLink>Version : {process.env.thebuildid}</FooterLink>
     </>
   );
 }

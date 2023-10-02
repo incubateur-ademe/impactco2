@@ -3,7 +3,6 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "hello": "echo 'blabla'",
     "generatename": "node src/scripts/generate_name.js",
     "build:fruit": "node src/scripts/build_fruits_et_legumes.js",
     "build:boisson": "node src/scripts/build_boissons.js",

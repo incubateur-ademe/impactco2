@@ -1,5 +1,3 @@
 #!/usr/bin/env sh
+
 yarn generatename
-# versionfilename="version.txt"
-# echo $(git rev-parse --short HEAD) > $versionfilename
-# exec git add $versionfilename
