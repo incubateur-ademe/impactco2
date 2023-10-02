@@ -130,16 +130,8 @@ const UnderstandLink = styled.div`
 
 const Arrow = styled.div`
   background: #457be7;
-  clip-path: polygon(100% 50%, 0 0, 0 100%);
   height: 100%;
-  /* margin-left: px; */
   width: 30px;
-  ${(props) => props.theme.mq.small} {
-    clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
-    height: 30px;
-    margin-top: -1px;
-    width: 100%;
-  }
 `;
 
 const Wrapper = styled.div`
