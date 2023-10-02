@@ -130,8 +130,6 @@ const UnderstandLink = styled.div`
 
 const Arrow = styled.div`
   background: #457be7;
-  height: 100%;
-  width: 30px;
 `;
 
 const Wrapper = styled.div`

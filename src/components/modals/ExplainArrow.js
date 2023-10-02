@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function ResultatLivraison() {
+export default function ExplainArrow() {
   return (
     <Wrapper>
       <BlueGrid>
