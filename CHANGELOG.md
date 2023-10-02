@@ -1,5 +1,8 @@
-
 # CHANGELOG
+
+## 1.20.7 (29/09/2023)
+
+* Userver - Scalingo : séparation des fonctions API
 
 ## 1.20.6 (28/09/2023)
 

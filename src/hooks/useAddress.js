@@ -1,16 +1,13 @@
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 export function useSuggestions(search, focus) {
   return useQuery(
-    ['search', search],
+    ["search", search],
     () =>
       search && search.length > 2
-        ? axios
-            .get(
-              `https://impactco2.fr/.netlify/functions/callGMapSearch?${search}`
-            )
-            .then((res) => res.data.features)
+        ? // ? axios.get(`https://impactco2.fr/.netlify/functions/callGMapSearch?${search}`).then((res) => res.data.features)
+          axios.get(`/api/callGMapSearch?${search}`).then((res) => res.data.features)
         : Promise.resolve([]),
     {
       keepPreviousData: true,
@@ -18,11 +15,11 @@ export function useSuggestions(search, focus) {
       staleTime: Infinity,
       enabled: focus,
     }
-  )
+  );
 }
 export function usePosition(position) {
   return useQuery(
-    ['position', position?.timestamp],
+    ["position", position?.timestamp],
     () =>
       axios
         .get(
@@ -34,5 +31,5 @@ export function usePosition(position) {
       staleTime: Infinity,
       refetchOnWindowFocus: false,
     }
-  )
+  );
 }
