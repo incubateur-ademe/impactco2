@@ -46,6 +46,54 @@ const nextConfig = {
         destination: "/button.html",
         permanent: false,
       },
+
+      {
+        source: "http://api.monimpacttransport.fr/beta/:slug*",
+        destination: "https://impactco2.fr/.netlify/functions/:slug*",
+        permanent: false,
+      },
+      {
+        source: "https://api.monimpacttransport.fr/beta/:slug*",
+        destination: "https://impactco2.fr/.netlify/functions/:slug*",
+        permanent: false,
+      },
+
+      {
+        source: "http://teletravail.monimpacttransport.fr/*",
+        destination: "https://impactco2.fr/transport/teletravail/:slug*",
+        permanent: false,
+      },
+      {
+        source: "https://teletravail.monimpacttransport.fr/*",
+        destination: "https://impactco2.fr/transport/teletravail/:slug*",
+        permanent: true,
+      },
+      {
+        source: "https://monimpacttransport.fr/iframe.js",
+        destination: "https://impactco2.fr/iframe.js",
+        permanent: true,
+      },
+
+      {
+        source: "http://api.monimpacttransport.fr/:slug*",
+        destination: "https://impactco2.fr/transport/:slug*",
+        permanent: true,
+      },
+      {
+        source: "https://api.monimpacttransport.fr/:slug*",
+        destination: "https://impactco2.fr/transport/:slug*",
+        permanent: true,
+      },
+      {
+        source: "https://monimpacttransport.fr/:slug*",
+        destination: "https://impactco2.fr/transport/:slug*",
+        permanent: true,
+      },
+      {
+        source: "https://www.monimpacttransport.fr/:slug*",
+        destination: "https://impactco2.fr/transport/:slug*",
+        permanent: true,
+      },
     ];
   },
 };
