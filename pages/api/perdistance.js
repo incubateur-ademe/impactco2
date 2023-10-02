@@ -4,7 +4,7 @@ var MatomoTracker = require("matomo-tracker");
 
 var matomo = new MatomoTracker(156, "https://stats.data.gouv.fr/matomo.php");
 
-var transportations = require("./data/transportations.json");
+var transportations = require("./transportations.json");
 
 export default async function handler(req, res) {
   let host = req.headers.host;
