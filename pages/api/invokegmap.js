@@ -8,7 +8,6 @@ export default async function handler(req, res) {
     host.includes("impactco2.fr") ||
     host.includes("osc-fr1.scalingo.io") ||
     host.includes("--impactco2.netlify.app") ||
-    host.includes("develop--impactco2.netlify.app") ||
     host.includes("monimpacttransport.fr")
   ) {
     const data = await axios
