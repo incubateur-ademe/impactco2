@@ -29,6 +29,9 @@ export default async function handler(req, res) {
     const fields = (queryObj.fields || "").split(",");
 
     const respObj = buildRespObj(transportations, activeTransportations, ignoreRadiativeForcing, filter, km, fields);
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTION");
     return res.status(200).json(respObj || {});
   } else {
     return res.status(401).json(JSON.stringify("Unauthorized"));
