@@ -1,4 +1,5 @@
 import Emoji from "components/base/Emoji";
+import { Media, MediaBody, MediaFigure } from "components/base/Media";
 // import ModalContext from "components/providers/ModalProvider";
 // import React, { useContext } from "react";
 import styled from "styled-components";
@@ -17,20 +18,26 @@ export default function LivraisonEq(props) {
 
   return (
     <Wrapper background={props.background}>
-      <EmojiWrapper>
-        <Emoji>{props?.equivalent?.emoji}</Emoji>
-      </EmojiWrapper>
-      <Number id={`eq_nb_${props.slug}`}>{first2WordsOnly(fullSentenceFormat(props))}</Number>
-      <div></div>
-      <OfWhat id={`eq_what_${props.slug}`}>
-        {first2WordsRemoved(fullSentenceFormat(props)) || <span>&nbsp;</span>}
-      </OfWhat>
-      <div></div>
-      <div>
-        {/* <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
-          Modifier l'équivalence
-        </ButtonChange> */}
-      </div>
+      <Media>
+        <MediaFigure>
+          <EmojiWrapper>
+            <Emoji>{props?.equivalent?.emoji}</Emoji>
+          </EmojiWrapper>
+        </MediaFigure>
+        <MediaBody>
+          <Number id={`eq_nb_${props.slug}`}>{first2WordsOnly(fullSentenceFormat(props))}</Number>
+          <div></div>
+          <OfWhat id={`eq_what_${props.slug}`}>
+            {first2WordsRemoved(fullSentenceFormat(props)) || <span>&nbsp;</span>}
+          </OfWhat>
+          <div></div>
+          <div>
+            {/* <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
+              Modifier l'équivalence
+            </ButtonChange> */}
+          </div>
+        </MediaBody>
+      </Media>
     </Wrapper>
   );
 }
