@@ -64,10 +64,7 @@ const Wrapper = styled.div`
   border: 1px solid #457be7;
   border-radius: 16px;
   display: grid;
-  grid-template-columns: 280px repeat(1, 1fr);
-  ${(props) => props.theme.mq.large} {
-    grid-template-columns: 205px repeat(1, 1fr);
-  }
+  grid-template-columns: auto repeat(1, 1fr);
   margin-top: 1rem;
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;

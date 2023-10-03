@@ -68,6 +68,10 @@ const BlueGrid = styled.div`
     justify-content: end;
     margin-right: 4px;
   }
+  > .item2 {
+    display: flex;
+    flex-direction: column;
+  }
   > .item3 {
     grid-row: span 3;
     position: relative;
@@ -94,13 +98,11 @@ const ActualResult = styled.span`
     font-size: 1.5rem;
   }
   font-weight: 700;
-  line-height: 56px;
 `;
 
 const Units = styled.span`
   font-size: 18px;
   font-weight: 400;
-  line-height: 40px;
 `;
 
 const Subexplain = styled.span`
