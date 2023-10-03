@@ -10,7 +10,7 @@ import useLocalStorage from "use-local-storage";
 const getTitle = () => {
   return (
     <Title>
-      Choisir <GreenText>une autre équivalence</GreenText>
+      Choisir <GreenText>d'autres équivalences</GreenText>
     </Title>
   );
 };
@@ -37,7 +37,9 @@ export default function EqModal3() {
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
-      <Intro>Sélectionnez (ou désélectionnez) un équivalent pour créer votre infographie personnalisée.</Intro>
+      <Intro>
+        Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
+      </Intro>
       <H2Title>Choisir un autre équivalent</H2Title>
       <AllSearch open={open}></AllSearch>
       <Flex>

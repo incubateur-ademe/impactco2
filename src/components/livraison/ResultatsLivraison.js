@@ -17,7 +17,7 @@ export default function ResultatsLivraison(props) {
 
   const changeClicked = () => {
     window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_modifier_equivalent"]);
-    setEqv(props.slug);
+    setEqv("nonecheck");
   };
 
   return (
