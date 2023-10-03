@@ -40,7 +40,9 @@ export default function EqModal4() {
       <Intro>
         Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
       </Intro>
-      <AllSearch open={open}></AllSearch>
+      <Scroll>
+        <AllSearch open={open}></AllSearch>
+      </Scroll>
       <ValidationZone>
         <ValidationButtons>
           <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
@@ -50,6 +52,14 @@ export default function EqModal4() {
     </Modal4>
   );
 }
+const Scroll = styled.div`
+  /* height: 100%; */
+  /* overflow-y: scroll; */
+  /* padding: 1rem 1.5rem; */
+  height: 35rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+`;
 
 const Title = styled.h2`
   font-size: 22px;

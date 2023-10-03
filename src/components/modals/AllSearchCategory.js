@@ -16,7 +16,7 @@ export default function AllSearchCategory(props) {
       {items && items.length > 0 ? <>{theCategory.name}</> : <></>}
       <Equivalents>
         {items.map(({ item }) => (
-          <EquivalentSquare key={item.slug} checked={false} equivalent={item} />
+          <EquivalentSquare key={item.slug} checked={false} equivalent={item} setChecked={() => {}} />
         ))}
       </Equivalents>
     </Wrapper>

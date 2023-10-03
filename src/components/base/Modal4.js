@@ -40,7 +40,7 @@ export default function Modal3(props) {
               </ButtonClose>
             </Header>
 
-            <Scroll className={props.className}>{props.children}</Scroll>
+            <div className={props.className}>{props.children}</div>
           </Content>
         </Wrapper>
       </FocusTrap>
@@ -106,10 +106,4 @@ const ButtonClose = styled.button`
     outline: solid;
     outline-color: revert;
   }
-`;
-
-const Scroll = styled.div`
-  height: 100%;
-  overflow-y: auto;
-  padding: 1rem 1.5rem;
 `;
