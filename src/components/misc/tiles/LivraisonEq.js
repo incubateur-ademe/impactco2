@@ -74,25 +74,3 @@ const OfWhat = styled.div`
   line-height: 16px;
   margin-top: -8px;
 `;
-
-// const ButtonChange = styled.button`
-//   background-color: white;
-//   border-color: #b5abb2;
-//   border-radius: 8px;
-//   border-style: solid;
-//   border-width: 1px;
-//   color: #564d53;
-//   cursor: pointer;
-//   font-size: 14px;
-//   font-weight: 500;
-//   letter-spacing: 0em;
-//   line-height: 24px;
-//   margin-right: 0.5rem;
-//   margin-top: 0.5rem;
-//   padding: 4px 12px 4px 12px;
-//   ${(props) => props.theme.mq.large} {
-//     max-width: 6rem;
-//     padding: 0.1rem;
-//   }
-//   text-align: center;
-// `;
