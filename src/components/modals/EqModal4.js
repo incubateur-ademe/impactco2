@@ -1,4 +1,5 @@
 import AllSearch from "./AllSearch";
+import SelectedEqs from "./SelectedEqs";
 import Button from "components/base/Button";
 import Modal4 from "components/base/Modal4";
 import { default_eqs } from "components/livraison/data.js";
@@ -36,26 +37,30 @@ export default function EqModal4() {
   };
 
   return (
-    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
+    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="55rem">
       <Intro>
         Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
       </Intro>
-      <Scroll>
-        <AllSearch open={open}></AllSearch>
-      </Scroll>
-      <ValidationZone>
-        <ValidationButtons>
-          <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
-          <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
-        </ValidationButtons>
-      </ValidationZone>
+      <GridSplit>
+        <GridSplitLeft>
+          <SelectedEqs />
+        </GridSplitLeft>
+        <GridSplitRight>
+          <Scroll>
+            <AllSearch open={open}></AllSearch>
+          </Scroll>
+          <ValidationZone>
+            <ValidationButtons>
+              <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
+              <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
+            </ValidationButtons>
+          </ValidationZone>
+        </GridSplitRight>
+      </GridSplit>
     </Modal4>
   );
 }
 const Scroll = styled.div`
-  /* height: 100%; */
-  /* overflow-y: scroll; */
-  /* padding: 1rem 1.5rem; */
   height: 35rem;
   overflow-x: hidden;
   overflow-y: auto;
@@ -114,3 +119,13 @@ const ValidationButtons = styled.div`
   margin-right: 1rem;
   padding: 1rem 0;
 `;
+
+const GridSplit = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+`;
+
+const GridSplitLeft = styled.div``;
+
+const GridSplitRight = styled.div``;

@@ -61,7 +61,7 @@ export default function AllSearch(props) {
       <SearchInput
         value={search}
         onChange={({ value }) => setSearch(value)}
-        placeholder={"Recherchez un autre équivalent"}
+        placeholder={"Recherchez un objet ou un geste"}
       />
       {props.open && (
         <>
