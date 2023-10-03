@@ -35,7 +35,7 @@ const Check = styled.svg`
 `;
 export default function Checkbox(props) {
   return (
-    <Wrapper checkbox={props.checkbox}>
+    <Wrapper>
       <Check checked={props.checked} width="3213" height="2768" viewBox="0 0 3213 2768">
         <path id="check" d="M165 1360C165 1360 1153 2220 1277 2336C1885.14 828 3101 224 3101 224" />
       </Check>
