@@ -42,10 +42,10 @@ export default function EqModal3() {
       </Intro>
       <H2Title>Choisir un autre équivalent</H2Title>
       <AllSearch open={open}></AllSearch>
-      <Flex>
+      <ValidationZone>
         <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
         <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
-      </Flex>
+      </ValidationZone>
     </Modal3>
   );
 }
@@ -96,6 +96,9 @@ const ButtonCancel = styled.button`
   text-align: center;
 `;
 
-const Flex = styled.div`
+const ValidationZone = styled.div`
+  bottom: 0;
   display: flex;
+  position: fixed;
+  right: 0;
 `;
