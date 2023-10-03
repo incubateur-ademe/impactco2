@@ -2,7 +2,7 @@ import Wrapper from "components/misc/category/Wrapper";
 import React from "react";
 import styled from "styled-components";
 
-export default function SelectedEqs() {
+export default function ShortList() {
   let textObjs = [
     { slug: "streamingvideo", text: "Streaming vidéo" },
     { slug: "voiturethermique", text: "Voiture thermique" },

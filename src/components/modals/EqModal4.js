@@ -1,5 +1,5 @@
 import AllSearch from "./AllSearch";
-import SelectedEqs from "./SelectedEqs";
+import ShortList from "./ShortList";
 import Button from "components/base/Button";
 import Modal4 from "components/base/Modal4";
 import { default_eqs } from "components/livraison/data.js";
@@ -43,7 +43,7 @@ export default function EqModal4() {
       </Intro>
       <GridSplit>
         <GridSplitLeft>
-          <SelectedEqs />
+          <ShortList />
         </GridSplitLeft>
         <GridSplitRight>
           <Scroll>
