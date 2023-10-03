@@ -40,7 +40,6 @@ export default function EqModal3() {
       <Intro>
         Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
       </Intro>
-      <H2Title>Choisir un autre équivalent</H2Title>
       <AllSearch open={open}></AllSearch>
       <ValidationZone>
         <ValidationButtons>
@@ -66,15 +65,6 @@ const Intro = styled.div`
   font-weight: 300;
   letter-spacing: 0em;
   line-height: 24px;
-`;
-
-const H2Title = styled.div`
-  color: #1c9b93;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0em;
-  line-height: 24px;
-  margin-top: 2rem;
 `;
 
 const ButtonValidation = styled(Button)`
