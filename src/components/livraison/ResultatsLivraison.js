@@ -27,8 +27,6 @@ export default function ResultatsLivraison(props) {
         <LivraisonEq slug={1} equivalent={GetEq(0)} weight={props.co2eq / 1000} />
         <LivraisonEq slug={2} equivalent={GetEq(1)} weight={props.co2eq / 1000} />
         <LivraisonEq slug={3} equivalent={GetEq(2)} weight={props.co2eq / 1000} />
-        <div></div>
-        <div></div>
         <ButtonContainer>
           <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
             Modifier les équivalences
@@ -74,12 +72,14 @@ const Wrapper = styled.div`
 
 const UpperEq = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   grid-template-rows: 1.25fr 1fr;
 `;
 
 const ButtonContainer = styled.div`
   align-items: center;
   display: flex;
+  grid-column: span 3;
   justify-content: flex-end;
+  min-width: 220px;
 `;
