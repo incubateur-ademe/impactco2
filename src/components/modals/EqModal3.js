@@ -43,8 +43,10 @@ export default function EqModal3() {
       <H2Title>Choisir un autre équivalent</H2Title>
       <AllSearch open={open}></AllSearch>
       <ValidationZone>
-        <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
-        <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
+        <ValidationButtons>
+          <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
+          <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
+        </ValidationButtons>
       </ValidationZone>
     </Modal3>
   );
@@ -97,8 +99,16 @@ const ButtonCancel = styled.button`
 `;
 
 const ValidationZone = styled.div`
+  background-color: white;
   bottom: 0;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   display: flex;
+  left: 0;
   position: fixed;
-  right: 0;
+  width: 100%;
+`;
+
+const ValidationButtons = styled.div`
+  margin-right: 1rem;
+  padding: 1rem 0;
 `;
