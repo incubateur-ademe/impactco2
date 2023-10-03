@@ -42,7 +42,12 @@ export default function LivraisonEq(props) {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  border-bottom: 1px solid #eae5e8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const EmojiWrapper = styled.div`
   > span > img.emoji {
