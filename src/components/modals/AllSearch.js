@@ -1,19 +1,20 @@
 import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
-import EquivalentSquare from "./tilesModal/EquivalentSquare";
+// import useLocalStorage from "use-local-storage";
+import AllSearchCategory from "./AllSearchCategory.js";
+// import EquivalentSquare from "./tilesModal/EquivalentSquare";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import useLocalStorage from "use-local-storage";
 
 export default function AllSearch(props) {
   /** */
   // eslint-disable-next-line no-unused-vars
   const { equivalents } = useContext(DataContext);
 
-  const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
-  const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
-  const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
+  // const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
+  // const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
+  // const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
@@ -54,7 +55,6 @@ export default function AllSearch(props) {
         : equivalents.map((equivalent) => ({ item: equivalent })).sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
     );
   }, [search, fuse, equivalents]);
-  /** */
 
   return (
     <Wrapper>
@@ -64,24 +64,10 @@ export default function AllSearch(props) {
         placeholder={"Recherchez un autre équivalent"}
       />
       {props.open && (
-        <Equivalents>
-          {results.map(({ item }) => (
-            <EquivalentSquare
-              key={item.slug}
-              equivalent={item}
-              checked={(() => {
-                if (props.open === 1) return eqv1L === item.slug;
-                if (props.open === 2) return eqv2L === item.slug;
-                if (props.open === 3) return eqv3L === item.slug;
-              })(props.open)}
-              setChecked={() => {
-                if (props.open === 1) setEqv1L(item.slug);
-                if (props.open === 2) setEqv2L(item.slug);
-                if (props.open === 3) setEqv3L(item.slug);
-              }}
-            />
-          ))}
-        </Equivalents>
+        <>
+          <AllSearchCategory items={results} cat={"fruitsetlegumes"} />
+          <AllSearchCategory items={results} cat={"usagenumerique"} />
+        </>
       )}
     </Wrapper>
   );
@@ -89,13 +75,6 @@ export default function AllSearch(props) {
 
 const SearchInput = styled(TextInput)`
   margin: 0.5rem;
-`;
-
-const Equivalents = styled.div`
-  margin-bottom: 0;
-  > button {
-    padding: 0;
-  }
 `;
 
 const Wrapper = styled.div`
