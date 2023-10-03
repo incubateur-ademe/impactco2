@@ -65,7 +65,7 @@ export default function AllSearch(props) {
       />
       {props.open && (
         <Equivalents>
-          {results.slice(0, 9).map(({ item }) => (
+          {results.map(({ item }) => (
             <EquivalentSquare
               key={item.slug}
               equivalent={item}
@@ -81,7 +81,6 @@ export default function AllSearch(props) {
               }}
             />
           ))}
-          <ThreeLittleDots>...</ThreeLittleDots>
         </Equivalents>
       )}
     </Wrapper>
@@ -102,8 +101,4 @@ const Equivalents = styled.div`
 const Wrapper = styled.div`
   margin-bottom: 2rem;
   margin-top: 1rem;
-`;
-
-const ThreeLittleDots = styled.div`
-  margin-left: 2.5rem;
 `;
