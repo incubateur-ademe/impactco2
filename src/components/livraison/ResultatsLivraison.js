@@ -31,7 +31,7 @@ export default function ResultatsLivraison(props) {
         <div></div>
         <ButtonContainer>
           <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
-            Modifier l'équivalence
+            Modifier les équivalences
           </ButtonChange>
         </ButtonContainer>
       </UpperEq>
@@ -52,7 +52,6 @@ const ButtonChange = styled.button`
   letter-spacing: 0em;
   line-height: 24px;
   margin-right: 0.5rem;
-  margin-top: 0.5rem;
   padding: 4px 12px 4px 12px;
   ${(props) => props.theme.mq.large} {
     max-width: 6rem;
@@ -79,7 +78,7 @@ const Wrapper = styled.div`
 const UpperEq = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1.25fr 1fr;
 `;
 
 const ButtonContainer = styled.div`
