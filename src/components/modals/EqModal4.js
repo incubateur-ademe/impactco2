@@ -1,6 +1,6 @@
 import AllSearch from "./AllSearch";
 import Button from "components/base/Button";
-import Modal3 from "components/base/Modal3";
+import Modal4 from "components/base/Modal4";
 import { default_eqs } from "components/livraison/data.js";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
@@ -15,7 +15,7 @@ const getTitle = () => {
   );
 };
 
-export default function EqModal3() {
+export default function EqModal4() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
   const [whitelist, setWhitelist] = useLocalStorage("ico2_whitelist");
 
@@ -36,7 +36,7 @@ export default function EqModal3() {
   };
 
   return (
-    <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
+    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
       <Intro>
         Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
       </Intro>
@@ -47,7 +47,7 @@ export default function EqModal3() {
           <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
         </ValidationButtons>
       </ValidationZone>
-    </Modal3>
+    </Modal4>
   );
 }
 
@@ -99,6 +99,8 @@ const ValidationZone = styled.div`
 `;
 
 const ValidationButtons = styled.div`
+  display: flex;
+  margin-left: auto;
   margin-right: 1rem;
   padding: 1rem 0;
 `;
