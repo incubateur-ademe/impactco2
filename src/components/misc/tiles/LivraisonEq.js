@@ -1,7 +1,5 @@
 import Emoji from "components/base/Emoji";
 import { Media, MediaBody, MediaFigure } from "components/base/Media";
-// import ModalContext from "components/providers/ModalProvider";
-// import React, { useContext } from "react";
 import styled from "styled-components";
 import { fullSentenceFormat } from "utils/formatters";
 
@@ -9,13 +7,6 @@ const first2WordsOnly = (sentence) => sentence.split(" ").slice(0, 2).join(" ");
 const first2WordsRemoved = (sentence) => sentence.split(" ").slice(2).join(" ");
 
 export default function LivraisonEq(props) {
-  // const { setEqv } = useContext(ModalContext);
-
-  // const changeClicked = () => {
-  //   window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_modifier_equivalent"]);
-  //   setEqv(props.slug);
-  // };
-
   return (
     <Wrapper background={props.background}>
       <Media>
@@ -31,11 +22,7 @@ export default function LivraisonEq(props) {
             {first2WordsRemoved(fullSentenceFormat(props)) || <span>&nbsp;</span>}
           </OfWhat>
           <div></div>
-          <div>
-            {/* <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
-              Modifier l'équivalence
-            </ButtonChange> */}
-          </div>
+          <div></div>
         </MediaBody>
       </Media>
     </Wrapper>
