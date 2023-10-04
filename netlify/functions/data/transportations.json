@@ -1,0 +1,463 @@
+[
+  {
+    "id": 1,
+    "label": {
+      "fr": "Avion"
+    },
+    "uncertainty": true,
+    "description": {
+      "fr": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>126 gCO2e/km/personne sans l'impact des traînées,<br/>230 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 2 000 km, 101 à 220 sièges :<br/>102 gCO2e/km/personne sans l'impact des traînées,<br/>186 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 2 000 à 3 500 km, >220 sièges<br/>: 97,4 gCO2e/km/personne sans l'impact des traînées,<br/>178 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, >220 sièges :<br/>82,8 gCO2e/km/personne sans l'impact des traînées,<br/>151 gCO2e/km/personne avec l'impact des traînées"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion",
+    "emoji": {
+      "main": "✈️"
+    },
+    "default": true,
+    "display": {
+      "min": 500
+    },
+    "values": [
+      {
+        "max": 1000,
+        "value": 126,
+        "uncertainty": 230
+      },
+      {
+        "max": 2000,
+        "value": 102,
+        "uncertainty": 186
+      },
+      {
+        "max": 3500,
+        "value": 97.4,
+        "uncertainty": 178
+      },
+      {
+        "max": 100000000000000000,
+        "value": 82.8,
+        "uncertainty": 151
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "label": {
+      "fr": "TGV"
+    },
+    "description": {
+      "fr": "1,73 gCO2e/km/personne : Base Carbone ADEME"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv",
+    "emoji": {
+      "main": "🚄"
+    },
+    "default": true,
+    "display": {
+      "min": 150
+    },
+    "values": [
+      {
+        "value": 1.73
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "label": {
+      "fr": "Intercités"
+    },
+    "description": {
+      "fr": "5,29 gCO2e/km/personne ; Base Carbone ADEME"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Train",
+    "emoji": {
+      "main": "🚈"
+    },
+    "default": true,
+    "display": {
+      "min": 31
+    },
+    "values": [
+      {
+        "value": 5.29
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "label": {
+      "fr": "Voiture (thermique)"
+    },
+    "description": {
+      "fr": "193 gCO2e/km/véhicule ; Base Carbone ADEME, moyenne nationale toutes distances, toutes carburations. <br/>Les données intègrent l’amont et la combustion du carburant. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières."
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
+    "emoji": {
+      "main": "🚗"
+    },
+    "default": true,
+    "display": {},
+    "values": [
+      {
+        "value": 193
+      }
+    ],
+    "carpool": 5
+  },
+  {
+    "id": 5,
+    "label": {
+      "fr": "Voiture (électrique)"
+    },
+    "description": {
+      "fr": "19,8 gCO2e/km/véhicule ; Base Carbone ADEME, Véhicule Electrique compact - \"Coeur de gamme\". <br/>Les données intègrent les émissions liées à l'électricité pour recharger le véhicule. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières."
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
+    "emoji": {
+      "main": "🚗",
+      "secondary": "⚡"
+    },
+    "default": true,
+    "display": {},
+    "values": [
+      {
+        "value": 19.8
+      }
+    ],
+    "carpool": 5
+  },
+  {
+    "id": 6,
+    "label": {
+      "fr": "Autocar"
+    },
+    "description": {
+      "fr": "35,2 gCO2e/km/personne ; Taux de remplissage : 30 personnes (62%) ; Base Carbone ADEME, Autocar - Gazole"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autocar",
+    "emoji": {
+      "main": "🚌"
+    },
+    "default": true,
+    "display": {
+      "min": 16
+    },
+    "values": [
+      {
+        "value": 35.2
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "label": {
+      "fr": "Vélo ou marche"
+    },
+    "description": {
+      "fr": "0 gCO2e/km/personne ; ADEME"
+    },
+    "emoji": {
+      "main": "🚴"
+    },
+    "default": true,
+    "display": {
+      "max": 30
+    },
+    "values": [
+      {
+        "value": 0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "label": {
+      "fr": "Vélo (ou trottinette) à assistance électrique"
+    },
+    "description": {
+      "fr": " 2 gCO2e/km/personne pour la phase d'usage ; Etude ADEME \"Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement \"<br/><br/>Hypothèses Vélo Électrique :<br/>- Capacité de la batterie : 11,6 Ah<br/>- Tension : 36 V<br/>- Capacité énergétique 417,6 Wh<br/>- Distance de 40 km par charge complète<br/>- 2 500 km/an<br/><br/>Hypothèses Trotinette Électrique :<br/>- Capacité de la batterie : 2,5 Ah<br/>- Tension : 36 V<br/>- Capacité énergétique : 90 Wh<br/>- 300 charges par an<br/>- 1 000 km/an"
+    },
+    "emoji": {
+      "main": "🚴",
+      "secondary": "⚡"
+    },
+    "default": true,
+    "display": {
+      "max": 30
+    },
+    "values": [
+      {
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "label": {
+      "fr": "Bus (thermique)"
+    },
+    "description": {
+      "fr": "103 gCO2e/km/personne ; Taux de remplissage : 10 personnes ; Base Carbone ADEME, Autobus - Gazole"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "emoji": {
+      "main": "🚌"
+    },
+    "default": true,
+    "display": {
+      "max": 15
+    },
+    "values": [
+      {
+        "value": 103
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "label": {
+      "fr": "Tramway"
+    },
+    "description": {
+      "fr": "2,2 gCO2e/km/personne ; Base Carbone ADEME, Tramway - Ile de France"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tramway",
+    "emoji": {
+      "main": "🚋"
+    },
+    "default": false,
+    "display": {
+      "max": 12
+    },
+    "values": [
+      {
+        "value": 2.2
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "label": {
+      "fr": "Métro"
+    },
+    "description": {
+      "fr": "2,5 gCO2e/km/personne ; Base Carbone ADEME, Métro - Ile de France"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro",
+    "emoji": {
+      "main": "🚇"
+    },
+    "default": true,
+    "display": {
+      "max": 20
+    },
+    "values": [
+      {
+        "value": 2.5
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "label": {
+      "fr": "Scooter et moto légère"
+    },
+    "description": {
+      "fr": "Deux roues thermiques < 250cm3 ; <br/>61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)"
+    },
+    "source": "https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf",
+    "emoji": {
+      "main": "🛵"
+    },
+    "default": true,
+    "display": {
+      "max": 50
+    },
+    "values": [
+      {
+        "value": 61.6
+      }
+    ],
+    "carpool": 2
+  },
+  {
+    "id": 13,
+    "label": {
+      "fr": "Moto"
+    },
+    "description": {
+      "fr": "Deux roues thermiques > 250cm3 ;<br/>168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)"
+    },
+    "emoji": {
+      "main": "🏍️"
+    },
+    "default": true,
+    "display": {
+      "min": 51
+    },
+    "values": [
+      {
+        "value": 168
+      }
+    ],
+    "carpool": 2
+  },
+  {
+    "id": 14,
+    "label": {
+      "fr": "RER ou Transilien"
+    },
+    "description": {
+      "fr": "4,1 gCO2e/km/personne ; Base Carbone ADEME"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=rer",
+    "emoji": {
+      "main": "🚃"
+    },
+    "default": true,
+    "display": {
+      "min": 11,
+      "max": 100
+    },
+    "values": [
+      {
+        "value": 4.1
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "label": {
+      "fr": "TER"
+    },
+    "description": {
+      "fr": "24,8 gCO2e/km/personne ; Base Carbone ADEME"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter",
+    "emoji": {
+      "main": "🚈"
+    },
+    "default": false,
+    "display": {
+      "max": 150
+    },
+    "values": [
+      {
+        "value": 24.8
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "label": {
+      "fr": "Bus (électrique)"
+    },
+    "description": {
+      "fr": "9,5 gCO2e/km/personne ; Base Carbone ADEME, Autobus - Electrique"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "emoji": {
+      "main": "🚌",
+      "secondary": "⚡"
+    },
+    "default": false,
+    "display": {
+      "max": 15
+    },
+    "values": [
+      {
+        "value": 9.5
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "label": {
+      "fr": "Véhicule hydrogène"
+    },
+    "description": {
+      "fr": "Pas de donnée disponible pour ce mode de transport"
+    },
+    "emoji": {
+      "main": "🚗",
+      "secondary": "💦"
+    },
+    "default": false
+  },
+  {
+    "id": 18,
+    "label": {
+      "fr": "Ferry"
+    },
+    "description": {
+      "fr": "Pas de donnée disponible pour ce mode de transport"
+    },
+    "emoji": {
+      "main": "⛴️"
+    },
+    "default": false
+  },
+  {
+    "id": 19,
+    "label": {
+      "fr": "Bateau à moteur"
+    },
+    "description": {
+      "fr": "Pas de donnée disponible pour ce mode de transport"
+    },
+    "emoji": {
+      "main": "🚢"
+    },
+    "default": false
+  },
+  {
+    "id": 20,
+    "label": {
+      "fr": "Scooter et moto légère (électrique)"
+    },
+    "description": {
+      "fr": "Pas de donnée disponible pour ce mode de transport"
+    },
+    "emoji": {
+      "main": "🛵",
+      "secondary": "⚡"
+    },
+    "default": false
+  },
+  {
+    "id": 21,
+    "label": {
+      "fr": "Bus (GNV)"
+    },
+    "description": {
+      "fr": "113 gCO2e/km/personne ; Taux de remplissage : 10 personnes ; Base Carbone ADEME, Autobus - GNV"
+    },
+    "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
+    "emoji": {
+      "main": "🚌",
+      "secondary": "💨"
+    },
+    "default": false,
+    "display": {
+      "max": 15
+    },
+    "values": [
+      {
+        "value": 113
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "label": {
+      "fr": "Camping Car"
+    },
+    "description": {
+      "fr": "Pas de donnée disponible pour ce mode de transport"
+    },
+    "emoji": {
+      "main": "🚙"
+    },
+    "default": false
+  }
+]
