@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.20.10 (04/10/2023)
+
+* Userver - Bouchonner l'absence éventuelle d'une variable d'environnement sur l'URL courante
+
 ## 1.20.9 (04/10/2023)
 
 * Userver - Appel fonctions d'API par Netlify
