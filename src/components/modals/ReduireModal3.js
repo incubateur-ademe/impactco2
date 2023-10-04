@@ -9,9 +9,8 @@ import ModalContext from "components/providers/ModalProvider";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
-const href = `${process?.env?.NEXT_PUBLIC_SITE_URL?.includes("localhost") ? "http" : "https"}://${
-  process?.env?.NEXT_PUBLIC_SITE_URL
-}/livraison#ressource`;
+const href =
+  typeof window !== "undefined" ? window?.location?.href + "#ressource" : "https://impactco2.fr/livraison#ressource";
 
 const getTitle = () => {
   return (
