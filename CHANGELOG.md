@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.20.9 (04/10/2023)
+
+* Userver - Appel fonctions d'API par Netlify
+
 ## 1.20.8 (04/10/2023)
 
 * Userver - Réparation LeFigaro
