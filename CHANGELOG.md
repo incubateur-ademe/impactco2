@@ -1,5 +1,16 @@
-
 # CHANGELOG
+
+## 1.20.9 (04/10/2023)
+
+* Userver - Appel fonctions d'API par Netlify
+
+## 1.20.8 (04/10/2023)
+
+* Userver - Réparation LeFigaro
+
+## 1.20.7 (29/09/2023)
+
+* Userver - Scalingo : séparation des fonctions API
 
 ## 1.20.6 (28/09/2023)
 

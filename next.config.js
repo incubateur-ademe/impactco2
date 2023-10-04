@@ -1,4 +1,3 @@
-var shell = require("shelljs");
 var fs = require("fs");
 
 const getLastVersion = function () {
@@ -20,6 +19,13 @@ const getLastVersion = function () {
   return result;
 };
 
+const getBeforeLastSha = function () {
+  let result = "unknown";
+  result = fs.readFileSync("./version.txt", "utf8");
+  console.log("Current name is :", result);
+  return result;
+};
+
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
@@ -30,14 +36,41 @@ const nextConfig = {
     defaultLocale: "fr",
   },
   env: {
-    thebuildid: getLastVersion() + "-" + shell.exec("git rev-parse --short HEAD"),
+    thebuildid: getLastVersion() + "-" + getBeforeLastSha(),
     customKey: "my-value",
   },
   async redirects() {
     return [
       {
-        source: "/iframes/transport/itineraire",
-        destination: "/button.html",
+        source: "/categories/deplacement/:slug*",
+        destination: "/transport/:slug*",
+        permanent: true,
+      },
+
+      {
+        source: "/categories/:slug*",
+        destination: "/:slug*",
+        permanent: false,
+      },
+      {
+        source: "/empreinte-carbone/:slug*",
+        destination: "/:slug*",
+        permanent: false,
+      },
+      {
+        source: "/iframes/categories/:slug*",
+        destination: "/iframes/:slug*",
+        permanent: false,
+      },
+      {
+        source: "/iframes/empreinte-carbone/:slug*",
+        destination: "/iframes/:slug*",
+        permanent: false,
+      },
+
+      {
+        source: "/iframes/tuiles",
+        destination: "/iframes/convertisseur",
         permanent: false,
       },
     ];

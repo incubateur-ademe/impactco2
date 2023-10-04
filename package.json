@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
+    "generatename": "node src/scripts/generate_name.js",
     "build:fruit": "node src/scripts/build_fruits_et_legumes.js",
     "build:boisson": "node src/scripts/build_boissons.js",
     "test": "playwright test",
@@ -31,6 +32,7 @@
     "dotenv-cli": "^7.3.0",
     "focus-trap-react": "^10.2.1",
     "fuse.js": "^6.6.2",
+    "haikunator": "^2.1.2",
     "html-to-image": "^1.11.11",
     "iframe-resizer-react": "^1.1.0",
     "matomo-tracker": "^2.2.4",
@@ -60,7 +62,6 @@
     "use-animate-number": "^1.0.5",
     "use-local-storage": "^3.0.0",
     "use-query-params": "^2.2.0",
-    "shelljs": "^0.8.5",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },

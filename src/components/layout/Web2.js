@@ -1,5 +1,5 @@
 import BreadCrumb2 from "./web/BreadCrumb2";
-import Footer2 from "./web/Footer2";
+import Footer from "./web/Footer";
 import Header from "./web/Header";
 import Nav from "./web/Nav";
 import Seo from "./web/Seo";
@@ -20,7 +20,7 @@ export default function Web2(props) {
         <Nav />
         <BreadCrumb2 breadcrumb={props.breadcrumb} />
         {props.children}
-        <Footer2 />
+        <Footer />
       </VerticalContainer>
     </>
   );
