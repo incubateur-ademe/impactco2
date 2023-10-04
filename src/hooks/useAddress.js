@@ -6,7 +6,8 @@ export function useSuggestions(search, focus) {
     ["search", search],
     () =>
       search && search.length > 2
-        ? // ? axios.get(`https://impactco2.fr/.netlify/functions/callGMapSearch?${search}`).then((res) => res.data.features)
+        ? // API for now
+          // axios.get(`https://impactco2.fr/.netlify/functions/callGMapSearch?${search}`).then((res) => res.data.features)
           axios.get(`/api/callGMapSearch?${search}`).then((res) => res.data.features)
         : Promise.resolve([]),
     {

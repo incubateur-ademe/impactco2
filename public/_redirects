@@ -1,5 +1,5 @@
-http://api.monimpacttransport.fr/beta/*     https://impactco2.fr/.netlify/functions/:splat 200
-https://api.monimpacttransport.fr/beta/*    https://impactco2.fr/.netlify/functions/:splat 200
+http://api.monimpacttransport.fr/beta/*     https://impactco2.fr/api/:splat 200
+https://api.monimpacttransport.fr/beta/*    https://impactco2.fr/api/:splat 200
 
 http://teletravail.monimpacttransport.fr/*  https://impactco2.fr/transport/teletravail/:splat 301!
 https://teletravail.monimpacttransport.fr/* https://impactco2.fr/transport/teletravail/:splat 301!
