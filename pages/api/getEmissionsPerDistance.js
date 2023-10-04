@@ -7,34 +7,25 @@ var matomo = new MatomoTracker(156, "https://stats.data.gouv.fr/matomo.php");
 var transportations = require("./transportations.json");
 
 export default async function handler(req, res) {
-  let host = req.headers.host;
   let queryObj = req.query;
-  if (
-    host.includes("impactco2.fr") ||
-    host.includes("osc-fr1.scalingo.io") ||
-    host.includes("--impactco2.netlify.app") ||
-    host.includes("monimpacttransport.fr")
-  ) {
-    trackMatomoOnce(queryObj.km);
-    trackMatomoTwice(queryObj.km);
 
-    const km = queryObj.km || 1;
-    const filter = queryObj.filter || (queryObj.transportations ? "all" : "smart");
-    const activeTransportations = queryObj.transportations
-      ? queryObj.transportations.split(",").map((id) => Number(id))
-      : [];
+  trackMatomoOnce(queryObj.km);
+  trackMatomoTwice(queryObj.km);
 
-    const ignoreRadiativeForcing = queryObj.ignoreRadiativeForcing || false;
-    const fields = (queryObj.fields || "").split(",");
+  const km = queryObj.km || 1;
+  const filter = queryObj.filter || (queryObj.transportations ? "all" : "smart");
+  const activeTransportations = queryObj.transportations
+    ? queryObj.transportations.split(",").map((id) => Number(id))
+    : [];
 
-    const respObj = buildRespObj(transportations, activeTransportations, ignoreRadiativeForcing, filter, km, fields);
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTION");
-    return res.status(200).json(respObj || {});
-  } else {
-    return res.status(401).json(JSON.stringify("Unauthorized"));
-  }
+  const ignoreRadiativeForcing = queryObj.ignoreRadiativeForcing || false;
+  const fields = (queryObj.fields || "").split(",");
+
+  const respObj = buildRespObj(transportations, activeTransportations, ignoreRadiativeForcing, filter, km, fields);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTION");
+  return res.status(200).json(respObj || {});
 }
 
 function trackMatomoOnce(km) {
