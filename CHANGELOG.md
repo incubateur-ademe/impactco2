@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.20.8 (04/10/2023)
+
+* Userver - Réparation LeFigaro
+
 ## 1.20.7 (29/09/2023)
 
 * Userver - Scalingo : séparation des fonctions API

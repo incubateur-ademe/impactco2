@@ -42,12 +42,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/iframes/transport/itineraire",
-        destination: "/button.html",
-        permanent: false,
-      },
-
-      {
         source: "/categories/deplacement/:slug*",
         destination: "/transport/:slug*",
         permanent: true,
