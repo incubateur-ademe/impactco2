@@ -34,6 +34,7 @@ export default function AllSearchCategory(props) {
             equivalent={item}
             checked={Array.isArray(eqvArray) && eqvArray.includes(item.slug)}
             setChecked={() => {
+              console.log("item", item);
               itemChosen(JSON.parse(JSON.stringify(eqvArray)), item.slug, setEqvArray);
             }}
           />

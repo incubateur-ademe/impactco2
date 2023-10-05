@@ -1,4 +1,3 @@
-import Checkbox from "./equivalent/Checkbox";
 import Emoji from "components/base/Emoji";
 import React from "react";
 import styled from "styled-components";
@@ -43,8 +42,7 @@ export default function EquivalentSquare(props) {
   return (
     <Wrapper checked={props.checked} onClick={() => props.setChecked(!props.checked)} className="equivalent-radio">
       <Left>
-        <Checkbox checked={props.checked} />
-
+        <GreenSquare>&nbsp;</GreenSquare>
         <Label>
           {formatName(props.equivalent.name, 1, true)}{" "}
           {props.equivalent.subtitle && <Subtitle>({formatName(props.equivalent.subtitle, 1)})</Subtitle>}
@@ -54,3 +52,10 @@ export default function EquivalentSquare(props) {
     </Wrapper>
   );
 }
+
+const GreenSquare = styled.div`
+  border: 1px solid #26827c;
+  border-radius: 4px;
+  height: 24px;
+  width: 24px;
+`;
