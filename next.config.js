@@ -1,7 +1,7 @@
 var fs = require("fs");
 var execSync = require("child_process").execSync;
 
-const getGitCommitHash = function () {
+const getLocalGitCommitHash = function () {
   let res = "";
   try {
     res = execSync("git rev-parse HEAD").toString().trim();
@@ -35,11 +35,9 @@ const buildFullVersionNumber = function () {
   return semver;
 };
 
-const buildShortSha = function () {
-  // process.env.SOURCE_VERSION for Scalingo
-  // process.env.COMMIT_REF for Netlify
-  // getGitCommitHash for local (dev) machine
-  const shortSha = getShortSha(process.env.COMMIT_REF || getGitCommitHash());
+const buildShortSha = function (scalingoLongSha) {
+  const netlifySha = process.env.COMMIT_REF;
+  const shortSha = getShortSha(scalingoLongSha || netlifySha || getLocalGitCommitHash());
   console.log("Current shortSha is: ", shortSha);
   return shortSha;
 };
@@ -62,7 +60,7 @@ const nextConfig = {
     defaultLocale: "fr",
   },
   env: {
-    thebuildid: buildFullVersionNumber() + "-" + (buildShortSha() || process.env.SOURCE_VERSION),
+    thebuildid: buildFullVersionNumber() + "-" + buildShortSha(process.env.SOURCE_VERSION),
     customKey: "my-value",
   },
   async redirects() {
