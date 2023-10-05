@@ -19,6 +19,18 @@ const getLastVersion = function () {
   return result;
 };
 
+const getShortSha = function (str) {
+  let res = "";
+  if (isString(str) && str.length > 0) {
+    res = str.substring(0, 7);
+  }
+  return res;
+};
+
+const isString = function (x) {
+  return Object.prototype.toString.call(x) === "[object String]";
+};
+
 const getBeforeLastSha = function () {
   let result = "unknown";
   result = fs.readFileSync("./version.txt", "utf8");
@@ -38,7 +50,7 @@ const nextConfig = {
   env: {
     thebuildid: getLastVersion() + "-" + getBeforeLastSha(),
     customKey: "my-value",
-    thesha: process.env.SOURCE_VERSION || process.env.COMMIT_REF,
+    thesha: getShortSha(process.env.SOURCE_VERSION || process.env.COMMIT_REF),
   },
   async redirects() {
     return [

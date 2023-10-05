@@ -19,6 +19,9 @@ const getTitle = () => {
 export default function EqModal4() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
   const [whitelist, setWhitelist] = useLocalStorage("ico2_whitelist");
+  const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", []);
+  console.log("setEqvArray", setEqvArray);
+  console.log("eqvArray", eqvArray);
 
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
   const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
