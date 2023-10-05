@@ -1,25 +1,30 @@
+import { useState } from "react";
 import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
 export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
 
-  const choiceCliked = (slug) => {
-    console.log("slug", slug);
+  const MAX_CHOICES = 3;
+  const [counter, setCounter] = useState(MAX_CHOICES);
+
+  const removeChoice = (slug) => {
     let clonedArray = JSON.parse(JSON.stringify(eqvArray));
     const filteredAndClonedArray = clonedArray.filter((e) => e !== slug);
-    console.log("filteredAndClonedArray", filteredAndClonedArray);
+    setCounter(filteredAndClonedArray.length);
     setEqvArray(filteredAndClonedArray);
   };
 
   return (
     <Wrapper>
-      <UpperSide>3 / 3 équivalences sélectionnées</UpperSide>
+      <UpperSide>
+        {counter} / {MAX_CHOICES} équivalences sélectionnées
+      </UpperSide>
       <Choices>
         {eqvArray.map((slug) => {
           return (
             <Choice key={slug}>
-              <Button onClick={() => choiceCliked(slug)}>ClickHere</Button>
+              <Button onClick={() => removeChoice(slug)}>ClickHere</Button>
               {slug}
             </Choice>
           );
