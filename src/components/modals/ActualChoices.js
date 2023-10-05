@@ -9,7 +9,7 @@ export default function ActualChoices() {
   const [counter, setCounter] = useState(eqvArray?.length || 0);
 
   const removeChoice = (slug) => {
-    const newArray = eqvArray.filter((e) => e !== slug);
+    const newArray = eqvArray.filter((ticked) => ticked.slug !== slug);
     setCounter(newArray.length);
     setEqvArray(newArray);
   };
@@ -20,13 +20,13 @@ export default function ActualChoices() {
         {counter} / {MAX_CHOICES} équivalences sélectionnées
       </UpperSide>
       <Choices>
-        {eqvArray.map((slug) => {
+        {eqvArray.map((ticked) => {
           return (
-            <Choice key={slug}>
-              <ChoiceTick onClick={() => removeChoice(slug)}>
+            <Choice key={ticked.slug}>
+              <ChoiceTick onClick={() => removeChoice(ticked.slug)}>
                 <Tick></Tick>
               </ChoiceTick>
-              <div>{slug}</div>
+              <div>{ticked.name}</div>
             </Choice>
           );
         })}

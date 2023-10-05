@@ -2,7 +2,7 @@ import ActualChoices from "./ActualChoices";
 import AllSearch from "./AllSearch";
 import Button from "components/base/Button";
 import Modal4 from "components/base/Modal4";
-import { default_eqs } from "components/livraison/data.js";
+import { default_eqs, default_eqs_ticked } from "components/livraison/data.js";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -19,6 +19,7 @@ const getTitle = () => {
 export default function EqModal4() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
   const [whitelist, setWhitelist] = useLocalStorage("ico2_whitelist");
+  // eslint-disable-next-line no-unused-vars
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", []);
 
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
@@ -26,7 +27,7 @@ export default function EqModal4() {
   const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const validateEqv = () => {
-    setEqvArray([eqvArray[0] || default_eqs[0], eqvArray[1] || default_eqs[1], eqvArray[2] || default_eqs[2]]);
+    setEqvArray([default_eqs_ticked[0], default_eqs_ticked[1], default_eqs_ticked[2]]);
     setWhitelist([eqv1L || default_eqs[0], eqv2L || default_eqs[1], eqv3L || default_eqs[2]]);
     setOpen(false);
   };

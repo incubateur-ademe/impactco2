@@ -3,6 +3,7 @@ import categories from "data/categories.json";
 import React from "react";
 import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
+import { pick } from "utils/utils";
 
 export default function AllSearchCategory(props) {
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
@@ -15,11 +16,11 @@ export default function AllSearchCategory(props) {
     return oneItem.item.category === theCategory.id && !eqvArray.includes(oneItem.item.slug);
   });
 
-  const itemChosen = (newArray, slug) => {
+  const itemChosen = (newArray, ticked) => {
     if (newArray.length > 2) {
-      newArray[newArray.length - 1] = slug;
+      newArray[newArray.length - 1] = ticked;
     } else {
-      newArray.push(slug);
+      newArray.push(ticked);
     }
     setEqvArray(newArray);
   };
@@ -32,10 +33,11 @@ export default function AllSearchCategory(props) {
           <EquivalentSquare
             key={item.slug}
             equivalent={item}
-            checked={Array.isArray(eqvArray) && eqvArray.includes(item.slug)}
+            checked={false}
             setChecked={() => {
-              console.log("item", item);
-              itemChosen(JSON.parse(JSON.stringify(eqvArray)), item.slug);
+              let ticked = pick(item, "slug", "name");
+              console.log("ticked", ticked);
+              itemChosen(JSON.parse(JSON.stringify(eqvArray)), ticked);
             }}
           />
         ))}
