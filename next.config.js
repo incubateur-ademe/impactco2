@@ -1,4 +1,10 @@
 var fs = require("fs");
+var execSync = require("child_process").execSync;
+
+const getGitCommitHash = function () {
+  const gitCommand = "git rev-parse HEAD";
+  return execSync(gitCommand).toString().trim();
+};
 
 const getLastVersion = function () {
   let result = "unknown";
@@ -12,30 +18,33 @@ const getLastVersion = function () {
   if (versions && versions.length > 1) {
     // The latest version will be the second match
     result = versions[1];
-    console.log("Latest release version:", result);
   } else {
-    console.log("No release versions found in the CHANGELOG.");
+    result = "No release versions found in the CHANGELOG.";
   }
   return result;
+};
+
+const buildFullVersionNumber = function () {
+  const semver = getLastVersion();
+  console.log("Current semver version:", semver);
+  return semver;
+};
+
+const buildShortSha = function () {
+  // process.env.SOURCE_VERSION for Scalingo
+  // process.env.COMMIT_REF for Netlify
+  // getGitCommitHash for local (dev) machine
+  const shortSha = getShortSha(process.env.SOURCE_VERSION || process.env.COMMIT_REF || getGitCommitHash());
+  console.log("Current shortSha is: ", shortSha);
+  return shortSha;
 };
 
 const getShortSha = function (str) {
   let res = "";
-  if (isString(str) && str.length > 0) {
+  if (typeof str === "string" && str.length > 0) {
     res = str.substring(0, 7);
   }
   return res;
-};
-
-const isString = function (x) {
-  return Object.prototype.toString.call(x) === "[object String]";
-};
-
-const getBeforeLastSha = function () {
-  let result = "unknown";
-  result = fs.readFileSync("./version.txt", "utf8");
-  console.log("Current name is :", result);
-  return result;
 };
 
 const nextConfig = {
@@ -48,9 +57,8 @@ const nextConfig = {
     defaultLocale: "fr",
   },
   env: {
-    thebuildid: getLastVersion() + "-" + getBeforeLastSha(),
+    thebuildid: buildFullVersionNumber() + "-" + buildShortSha(),
     customKey: "my-value",
-    thesha: getShortSha(process.env.SOURCE_VERSION || process.env.COMMIT_REF),
   },
   async redirects() {
     return [

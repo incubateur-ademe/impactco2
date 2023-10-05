@@ -5,7 +5,7 @@ import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
 export default function AllSearchCategory(props) {
-  const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", []);
+  const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
 
   const theCategory = categories.find((oneCat) => {
     return oneCat.slug === props.cat;
@@ -25,7 +25,10 @@ export default function AllSearchCategory(props) {
             equivalent={item}
             checked={Array.isArray(eqvArray) && eqvArray.includes(item.slug)}
             setChecked={() => {
-              setEqvArray(structuredClone(eqvArray).push(item.slug));
+              let clonedArray = JSON.parse(JSON.stringify(eqvArray));
+              console.log("clonedArray", clonedArray);
+              console.log("item.slug", item.slug);
+              setEqvArray(clonedArray.toString());
             }}
           />
         ))}
