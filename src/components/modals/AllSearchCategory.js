@@ -15,6 +15,15 @@ export default function AllSearchCategory(props) {
     return oneItem.item.category === theCategory.id && !eqvArray.includes(oneItem.item.slug);
   });
 
+  const itemChosen = (newArray, slug, setFn) => {
+    if (newArray.length > 2) {
+      newArray[newArray.length - 1] = slug;
+    } else {
+      newArray.push(slug);
+    }
+    setFn(newArray);
+  };
+
   return (
     <Wrapper>
       {items && items.length > 0 ? <>{theCategory.name}</> : <></>}
@@ -25,9 +34,7 @@ export default function AllSearchCategory(props) {
             equivalent={item}
             checked={Array.isArray(eqvArray) && eqvArray.includes(item.slug)}
             setChecked={() => {
-              let clonedArray = JSON.parse(JSON.stringify(eqvArray));
-              clonedArray.push(item.slug);
-              setEqvArray(clonedArray);
+              itemChosen(JSON.parse(JSON.stringify(eqvArray)), item.slug, setEqvArray);
             }}
           />
         ))}

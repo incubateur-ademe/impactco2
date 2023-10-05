@@ -1,7 +1,5 @@
 import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
-// import useLocalStorage from "use-local-storage";
 import AllSearchCategory from "./AllSearchCategory.js";
-// import EquivalentSquare from "./tilesModal/EquivalentSquare";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useEffect, useState } from "react";
@@ -11,10 +9,6 @@ export default function AllSearch(props) {
   /** */
   // eslint-disable-next-line no-unused-vars
   const { equivalents } = useContext(DataContext);
-
-  // const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
-  // const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
-  // const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);

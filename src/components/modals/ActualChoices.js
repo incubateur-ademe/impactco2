@@ -6,13 +6,12 @@ export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
 
   const MAX_CHOICES = 3;
-  const [counter, setCounter] = useState(MAX_CHOICES);
+  const [counter, setCounter] = useState(eqvArray?.length || 0);
 
   const removeChoice = (slug) => {
-    let clonedArray = JSON.parse(JSON.stringify(eqvArray));
-    const filteredAndClonedArray = clonedArray.filter((e) => e !== slug);
-    setCounter(filteredAndClonedArray.length);
-    setEqvArray(filteredAndClonedArray);
+    const newArray = eqvArray.filter((e) => e !== slug);
+    setCounter(newArray.length);
+    setEqvArray(newArray);
   };
 
   return (
