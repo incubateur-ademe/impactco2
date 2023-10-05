@@ -2,8 +2,13 @@ var fs = require("fs");
 var execSync = require("child_process").execSync;
 
 const getGitCommitHash = function () {
-  const gitCommand = "git rev-parse HEAD";
-  return execSync(gitCommand).toString().trim();
+  let res = "";
+  try {
+    res = execSync("git rev-parse HEAD").toString().trim();
+  } catch (e) {
+    console.log("Git is not executable here...");
+  }
+  return res;
 };
 
 const getLastVersion = function () {
@@ -34,7 +39,7 @@ const buildShortSha = function () {
   // process.env.SOURCE_VERSION for Scalingo
   // process.env.COMMIT_REF for Netlify
   // getGitCommitHash for local (dev) machine
-  const shortSha = getShortSha(process.env.SOURCE_VERSION || process.env.COMMIT_REF || getGitCommitHash());
+  const shortSha = getShortSha(process.env.COMMIT_REF || getGitCommitHash());
   console.log("Current shortSha is: ", shortSha);
   return shortSha;
 };
@@ -57,7 +62,7 @@ const nextConfig = {
     defaultLocale: "fr",
   },
   env: {
-    thebuildid: buildFullVersionNumber() + "-" + buildShortSha(),
+    thebuildid: buildFullVersionNumber() + "-" + (buildShortSha() || process.env.SOURCE_VERSION),
     customKey: "my-value",
   },
   async redirects() {
