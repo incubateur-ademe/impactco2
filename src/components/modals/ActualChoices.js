@@ -1,13 +1,17 @@
 import styled from "styled-components";
+import useLocalStorage from "use-local-storage";
 
 export default function ActualChoices() {
+  const [eqvArray] = useLocalStorage("ico2_eqv_array");
+  console.log("eqvArray in...", eqvArray);
+
   return (
     <Wrapper>
       <UpperSide>3 / 3 équivalences sélectionnées</UpperSide>
       <Choices>
-        <Choice>Streaming</Choice>
-        <Choice>Voiture</Choice>
-        <Choice>Repas au boeuf</Choice>
+        {eqvArray.map((slug) => {
+          return <Choice key={slug}>{slug}</Choice>;
+        })}
       </Choices>
     </Wrapper>
   );

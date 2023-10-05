@@ -20,14 +20,13 @@ export default function EqModal4() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
   const [whitelist, setWhitelist] = useLocalStorage("ico2_whitelist");
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", []);
-  console.log("setEqvArray", setEqvArray);
-  console.log("eqvArray", eqvArray);
 
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
   const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
   const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
 
   const validateEqv = () => {
+    setEqvArray([eqvArray[0] || default_eqs[0], eqvArray[1] || default_eqs[1], eqvArray[2] || default_eqs[2]]);
     setWhitelist([eqv1L || default_eqs[0], eqv2L || default_eqs[1], eqv3L || default_eqs[2]]);
     setOpen(false);
   };
