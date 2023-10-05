@@ -1,6 +1,7 @@
 import AllSearch from "./AllSearch";
+import ShortList from "./ShortList";
 import Button from "components/base/Button";
-import Modal3 from "components/base/Modal3";
+import Modal4 from "components/base/Modal4";
 import { default_eqs } from "components/livraison/data.js";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
@@ -10,12 +11,12 @@ import useLocalStorage from "use-local-storage";
 const getTitle = () => {
   return (
     <Title>
-      Choisir <GreenText>une autre équivalence</GreenText>
+      Choisir <GreenText>d'autres équivalences</GreenText>
     </Title>
   );
 };
 
-export default function EqModal3() {
+export default function EqModal4() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
   const [whitelist, setWhitelist] = useLocalStorage("ico2_whitelist");
 
@@ -36,17 +37,34 @@ export default function EqModal3() {
   };
 
   return (
-    <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
-      <Intro>Sélectionnez (ou désélectionnez) un équivalent pour créer votre infographie personnalisée.</Intro>
-      <H2Title>Choisir un autre équivalent</H2Title>
-      <AllSearch open={open}></AllSearch>
-      <Flex>
-        <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
-        <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
-      </Flex>
-    </Modal3>
+    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="55rem">
+      <Intro>
+        Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
+      </Intro>
+      <GridSplit>
+        <GridSplitLeft>
+          <ShortList />
+        </GridSplitLeft>
+        <GridSplitRight>
+          <Scroll>
+            <AllSearch open={open}></AllSearch>
+          </Scroll>
+          <ValidationZone>
+            <ValidationButtons>
+              <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
+              <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
+            </ValidationButtons>
+          </ValidationZone>
+        </GridSplitRight>
+      </GridSplit>
+    </Modal4>
   );
 }
+const Scroll = styled.div`
+  height: 35rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+`;
 
 const Title = styled.h2`
   font-size: 22px;
@@ -62,15 +80,6 @@ const Intro = styled.div`
   font-weight: 300;
   letter-spacing: 0em;
   line-height: 24px;
-`;
-
-const H2Title = styled.div`
-  color: #1c9b93;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0em;
-  line-height: 24px;
-  margin-top: 2rem;
 `;
 
 const ButtonValidation = styled(Button)`
@@ -94,6 +103,29 @@ const ButtonCancel = styled.button`
   text-align: center;
 `;
 
-const Flex = styled.div`
+const ValidationZone = styled.div`
+  background-color: white;
+  bottom: 0;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   display: flex;
+  left: 0;
+  position: fixed;
+  width: 100%;
 `;
+
+const ValidationButtons = styled.div`
+  display: flex;
+  margin-left: auto;
+  margin-right: 1rem;
+  padding: 1rem 0;
+`;
+
+const GridSplit = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+`;
+
+const GridSplitLeft = styled.div``;
+
+const GridSplitRight = styled.div``;

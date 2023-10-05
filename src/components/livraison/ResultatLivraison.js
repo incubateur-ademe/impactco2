@@ -50,17 +50,11 @@ export default function ResultatLivraison(props) {
 
 const BlueGrid = styled.div`
   background-color: #457be7;
-  border-bottom-left-radius: 16px;
-  border-top-left-radius: 16px;
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
   color: white;
   display: grid;
-  grid-template-columns: 30px 140px;
-  ${(props) => props.theme.mq.large} {
-    grid-template-columns: 1px 140px;
-  }
-  ${(props) => props.theme.mq.small} {
-    grid-template-columns: 30px 1fr;
-  }
+  grid-template-columns: 30px 1fr;
   margin: auto;
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
@@ -73,6 +67,10 @@ const BlueGrid = styled.div`
     display: flex;
     justify-content: end;
     margin-right: 4px;
+  }
+  > .item2 {
+    display: flex;
+    flex-direction: column;
   }
   > .item3 {
     grid-row: span 3;
@@ -100,13 +98,11 @@ const ActualResult = styled.span`
     font-size: 1.5rem;
   }
   font-weight: 700;
-  line-height: 56px;
 `;
 
 const Units = styled.span`
   font-size: 18px;
   font-weight: 400;
-  line-height: 40px;
 `;
 
 const Subexplain = styled.span`
@@ -130,16 +126,6 @@ const UnderstandLink = styled.div`
 
 const Arrow = styled.div`
   background: #457be7;
-  clip-path: polygon(100% 50%, 0 0, 0 100%);
-  height: 100%;
-  /* margin-left: px; */
-  width: 30px;
-  ${(props) => props.theme.mq.small} {
-    clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
-    height: 30px;
-    margin-top: -1px;
-    width: 100%;
-  }
 `;
 
 const Wrapper = styled.div`
@@ -151,11 +137,11 @@ const Wrapper = styled.div`
 `;
 
 const CenteredBlock = styled.div`
-  background-color: #457be7;
+  /* background-color: #457be7;
   border-bottom-left-radius: 14px;
   ${(props) => props.theme.mq.small} {
     border-bottom-left-radius: 0;
   }
   border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
+  border-top-right-radius: 14px; */
 `;
