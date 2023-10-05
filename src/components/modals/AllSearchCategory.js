@@ -26,9 +26,10 @@ export default function AllSearchCategory(props) {
             checked={Array.isArray(eqvArray) && eqvArray.includes(item.slug)}
             setChecked={() => {
               let clonedArray = JSON.parse(JSON.stringify(eqvArray));
+              clonedArray.push(item.slug);
               console.log("clonedArray", clonedArray);
               console.log("item.slug", item.slug);
-              setEqvArray(clonedArray.toString());
+              setEqvArray(clonedArray);
             }}
           />
         ))}
