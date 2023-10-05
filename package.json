@@ -32,7 +32,6 @@
     "dotenv-cli": "^7.3.0",
     "focus-trap-react": "^10.2.1",
     "fuse.js": "^6.6.2",
-    "haikunator": "^2.1.2",
     "html-to-image": "^1.11.11",
     "iframe-resizer-react": "^1.1.0",
     "matomo-tracker": "^2.2.4",
