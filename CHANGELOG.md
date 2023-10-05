@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.21.0 (05/10/2023)
+
+* U28 - Un seul bouton pour modifier les équivalences de la livraison
+
 ## 1.20.11 (04/10/2023)
 
 * Userver - Modifications pré-migration Scalingo
