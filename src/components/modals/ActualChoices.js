@@ -23,8 +23,10 @@ export default function ActualChoices() {
         {eqvArray.map((slug) => {
           return (
             <Choice key={slug}>
-              <Button onClick={() => removeChoice(slug)}>ClickHere</Button>
-              {slug}
+              <ChoiceTick onClick={() => removeChoice(slug)}>
+                <Tick></Tick>
+              </ChoiceTick>
+              <div>{slug}</div>
             </Choice>
           );
         })}
@@ -38,8 +40,24 @@ const Wrapper = styled.div``;
 const UpperSide = styled.div``;
 const Choices = styled.div``;
 
-const Choice = styled.div``;
+const ChoiceTick = styled.div`
+  background-color: #26827c;
+  border: 1px solid #26827c;
+  border-radius: 4px;
+  height: 24px;
+  width: 24px;
+`;
 
-const Button = styled.button`
-  cursor: pointer;
+const Choice = styled.div`
+  display: flex;
+`;
+const Tick = styled.div`
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  display: inline-block;
+  height: 10px;
+  margin-bottom: 2px;
+  margin-left: 35%;
+  transform: rotate(45deg);
+  width: 5px;
 `;

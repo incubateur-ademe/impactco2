@@ -15,13 +15,13 @@ export default function AllSearchCategory(props) {
     return oneItem.item.category === theCategory.id && !eqvArray.includes(oneItem.item.slug);
   });
 
-  const itemChosen = (newArray, slug, setFn) => {
+  const itemChosen = (newArray, slug) => {
     if (newArray.length > 2) {
       newArray[newArray.length - 1] = slug;
     } else {
       newArray.push(slug);
     }
-    setFn(newArray);
+    setEqvArray(newArray);
   };
 
   return (
@@ -35,7 +35,7 @@ export default function AllSearchCategory(props) {
             checked={Array.isArray(eqvArray) && eqvArray.includes(item.slug)}
             setChecked={() => {
               console.log("item", item);
-              itemChosen(JSON.parse(JSON.stringify(eqvArray)), item.slug, setEqvArray);
+              itemChosen(JSON.parse(JSON.stringify(eqvArray)), item.slug);
             }}
           />
         ))}
