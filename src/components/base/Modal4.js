@@ -3,7 +3,7 @@ import { useDisableBodyScroll } from "hooks/useDisableBodyScroll";
 import React from "react";
 import styled from "styled-components";
 
-export default function Modal3(props) {
+export default function Modal4(props) {
   useDisableBodyScroll(props.open);
 
   return (
