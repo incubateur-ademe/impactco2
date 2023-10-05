@@ -12,7 +12,7 @@ export default function AllSearchCategory(props) {
   });
 
   const items = props.items.filter((oneItem) => {
-    return oneItem.item.category === theCategory.id;
+    return oneItem.item.category === theCategory.id && !eqvArray.includes(oneItem.item.slug);
   });
 
   return (
@@ -27,8 +27,6 @@ export default function AllSearchCategory(props) {
             setChecked={() => {
               let clonedArray = JSON.parse(JSON.stringify(eqvArray));
               clonedArray.push(item.slug);
-              console.log("clonedArray", clonedArray);
-              console.log("item.slug", item.slug);
               setEqvArray(clonedArray);
             }}
           />
