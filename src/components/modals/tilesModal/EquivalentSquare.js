@@ -39,7 +39,7 @@ const Left = styled.div`
 const StyledEmoji = styled(Emoji)`
   font-size: 1.25rem;
 `;
-export default function EquivalentRadio(props) {
+export default function EquivalentSquare(props) {
   return (
     <Wrapper checked={props.checked} onClick={() => props.setChecked(!props.checked)} className="equivalent-radio">
       <Left>
