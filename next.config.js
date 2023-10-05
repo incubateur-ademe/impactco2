@@ -38,6 +38,7 @@ const nextConfig = {
   env: {
     thebuildid: getLastVersion() + "-" + getBeforeLastSha(),
     customKey: "my-value",
+    thesha: process.env.SOURCE_VERSION || process.env.COMMIT_REF,
   },
   async redirects() {
     return [

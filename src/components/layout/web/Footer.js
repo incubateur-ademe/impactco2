@@ -56,6 +56,7 @@ export default function Footer() {
         <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
       </FooterLink>
       <FooterLink>Version : {process.env.thebuildid}</FooterLink>
+      <FooterLink>Sha : {process.env.thesha}</FooterLink>
     </>
   );
 }
