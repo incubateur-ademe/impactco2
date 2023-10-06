@@ -64,7 +64,9 @@ export default function ActualChoices() {
       </SelectionBox>
       {eqvError ? (
         <>
-          <ErrorBox>⚠️ {eqvError}</ErrorBox>
+          <ShowDesktopOnly>
+            <ErrorBox>⚠️ {eqvError}</ErrorBox>
+          </ShowDesktopOnly>
         </>
       ) : (
         <></>
@@ -72,6 +74,13 @@ export default function ActualChoices() {
     </Wrapper>
   );
 }
+
+const ShowDesktopOnly = styled.div`
+  display: block;
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
+`;
 
 const Wrapper = styled.div`
   margin-left: 1.5rem;

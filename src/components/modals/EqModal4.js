@@ -23,6 +23,7 @@ export default function EqModal4() {
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L", default_eqs[0]);
   const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L", default_eqs[1]);
   const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L", default_eqs[2]);
+
   // eslint-disable-next-line no-unused-vars
   const [eqvError, setEqvError] = useLocalStorage("eqvError", "");
 
@@ -46,7 +47,13 @@ export default function EqModal4() {
   return (
     <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="55rem">
       <Intro>
-        Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
+        {!eqvError ? (
+          <>Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.</>
+        ) : (
+          <>
+            <strong>⚠️ Erreur : {eqvError}</strong>
+          </>
+        )}
       </Intro>
       <GridSplit>
         <GridSplitLeft>
@@ -57,9 +64,16 @@ export default function EqModal4() {
             <AllSearch open={open}></AllSearch>
           </Scroll>
           <ValidationZone>
+            <ValidationMsg>{eqvError ? <>⚠️ Erreur : {eqvError}</> : <></>}</ValidationMsg>
             <ValidationButtons>
-              <ButtonValidation onClick={validateEqv}>Valider et fermer</ButtonValidation>
-              <ButtonCancel onClick={dismiss}>Annuler</ButtonCancel>
+              <ButtonValidation onClick={validateEqv}>
+                <ShowDesktop>Valider et fermer</ShowDesktop>
+                <ShowMobile>Valider</ShowMobile>
+              </ButtonValidation>
+              <ButtonCancel onClick={dismiss}>
+                <ShowDesktop>Annuler</ShowDesktop>
+                <ShowMobile>X</ShowMobile>
+              </ButtonCancel>
             </ValidationButtons>
           </ValidationZone>
         </GridSplitRight>
@@ -93,6 +107,9 @@ const Intro = styled.div`
 
 const ButtonValidation = styled(Button)`
   border-radius: 8px;
+  ${(props) => props.theme.mq.medium} {
+    padding: 2px 4px 2px 4px;
+  }
 `;
 
 const ButtonCancel = styled.button`
@@ -141,3 +158,27 @@ const GridSplit = styled.div`
 const GridSplitLeft = styled.div``;
 
 const GridSplitRight = styled.div``;
+
+const ValidationMsg = styled.div`
+  align-items: center;
+  border-radius: 0.25rem;
+  display: flex;
+  padding: 1rem;
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.75rem;
+    padding-right: 0.1rem;
+  }
+`;
+
+const ShowMobile = styled.span`
+  display: none;
+  ${(props) => props.theme.mq.medium} {
+    display: inline;
+  }
+`;
+const ShowDesktop = styled.span`
+  display: inline;
+  ${(props) => props.theme.mq.medium} {
+    display: none;
+  }
+`;
