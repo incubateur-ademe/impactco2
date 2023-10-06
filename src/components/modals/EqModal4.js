@@ -51,7 +51,12 @@ export default function EqModal4() {
           <>Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.</>
         ) : (
           <>
-            <strong>⚠️ Erreur : {eqvError}</strong>
+            <ShowDesktop>
+              Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
+            </ShowDesktop>
+            <div>
+              <strong>⚠️ Erreur : {eqvError}</strong>
+            </div>
           </>
         )}
       </Intro>

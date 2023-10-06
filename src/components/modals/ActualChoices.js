@@ -6,7 +6,7 @@ import useLocalStorage from "use-local-storage";
 export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
   const { equivalents } = useContext(DataContext);
-  const [eqvError, setEqvError] = useLocalStorage("eqvError");
+  const [, setEqvError] = useLocalStorage("eqvError");
 
   useEffect(() => {
     if (eqvArray && eqvArray.length >= 2) {
@@ -62,25 +62,9 @@ export default function ActualChoices() {
           )}
         </Choices>
       </SelectionBox>
-      {eqvError ? (
-        <>
-          <ShowDesktopOnly>
-            <ErrorBox>⚠️ {eqvError}</ErrorBox>
-          </ShowDesktopOnly>
-        </>
-      ) : (
-        <></>
-      )}
     </Wrapper>
   );
 }
-
-const ShowDesktopOnly = styled.div`
-  display: block;
-  ${(props) => props.theme.mq.small} {
-    display: none;
-  }
-`;
 
 const Wrapper = styled.div`
   margin-left: 1.5rem;
@@ -148,11 +132,4 @@ const MaxCount = styled.span`
 const EmptyChoice = styled.div`
   font-style: italic;
   margin-top: 1rem;
-`;
-
-const ErrorBox = styled.div`
-  border: 1px solid black;
-  border-radius: 0.25rem;
-  margin-top: 1rem;
-  padding: 1rem;
 `;
