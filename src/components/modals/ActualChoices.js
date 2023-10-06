@@ -15,12 +15,17 @@ export default function ActualChoices() {
 
   return (
     <Wrapper>
-      <UpperSide>{counter} / 3 équivalences sélectionnées</UpperSide>
+      <UpperSide>
+        <UpperSideCounting>
+          <Count>{counter}</Count>/<MaxCount>3</MaxCount>
+        </UpperSideCounting>{" "}
+        équivalences sélectionnées
+      </UpperSide>
       <Choices>
         {eqvArray.map((ticked) => {
           return (
-            <Choice key={ticked.slug}>
-              <ChoiceTick onClick={() => removeChoice(ticked.slug)}>
+            <Choice key={ticked.slug} onClick={() => removeChoice(ticked.slug)}>
+              <ChoiceTick>
                 <Tick></Tick>
               </ChoiceTick>
               <ChoiceText>{ticked.name}</ChoiceText>
@@ -53,8 +58,9 @@ const ChoiceTick = styled.div`
 `;
 
 const Choice = styled.div`
+  cursor: pointer;
   display: flex;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 `;
 const Tick = styled.div`
   border-bottom: 2px solid white;
@@ -69,4 +75,19 @@ const Tick = styled.div`
 
 const ChoiceText = styled.div`
   margin-left: 0.75rem;
+`;
+
+const UpperSideCounting = styled.div`
+  background-color: #a0f5ee;
+  border-radius: 0.25rem;
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+`;
+
+const Count = styled.strong`
+  margin-right: 0.1rem;
+`;
+
+const MaxCount = styled.span`
+  margin-left: 0.1rem;
 `;
