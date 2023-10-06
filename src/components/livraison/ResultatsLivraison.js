@@ -34,11 +34,11 @@ export default function ResultatsLivraison(props) {
   return (
     <Wrapper>
       <ResultatLivraison co2eq={props.co2eq} />
-      <UpperEq>
+      <UpperEq nbCol={eqvChosen.length}>
         {buildLivraisonEq(0)}
         {buildLivraisonEq(1)}
         {buildLivraisonEq(2)}
-        <ButtonContainer>
+        <ButtonContainer nbCol={eqvChosen.length}>
           <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
             Modifier les équivalences
           </ButtonChange>
@@ -83,14 +83,14 @@ const Wrapper = styled.div`
 
 const UpperEq = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: ${(props) => (props.nbCol === 3 ? "repeat(3, auto)" : "repeat(2, auto)")};
   grid-template-rows: 1.25fr 1fr;
 `;
 
 const ButtonContainer = styled.div`
   align-items: center;
   display: flex;
-  grid-column: span 3;
+  grid-column: ${(props) => (props.nbCol === 3 ? "span 3" : "span 2")};
   justify-content: flex-end;
   min-width: 220px;
 `;
