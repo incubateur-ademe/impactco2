@@ -1,11 +1,14 @@
+import DataContext from "components/providers/DataProvider";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
 export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
+  const { equivalents } = useContext(DataContext);
 
   const removeChoice = (slug) => {
-    const newArray = eqvArray.filter((ticked) => ticked.slug !== slug);
+    const newArray = eqvArray.filter((ticked) => ticked !== slug);
     setEqvArray(newArray);
   };
 
@@ -15,6 +18,10 @@ export default function ActualChoices() {
       res += "s";
     }
     return res;
+  };
+
+  const nameOf = (ticked) => {
+    return equivalents.find((e) => e.slug === ticked).name;
   };
 
   return (
@@ -30,11 +37,11 @@ export default function ActualChoices() {
           <>
             {eqvArray.map((ticked) => {
               return (
-                <Choice key={ticked.slug} onClick={() => removeChoice(ticked.slug)}>
+                <Choice key={ticked} onClick={() => removeChoice(ticked)}>
                   <ChoiceTick>
                     <Tick></Tick>
                   </ChoiceTick>
-                  <ChoiceText>{ticked.name}</ChoiceText>
+                  <ChoiceText>{nameOf(ticked)}</ChoiceText>
                 </Choice>
               );
             })}

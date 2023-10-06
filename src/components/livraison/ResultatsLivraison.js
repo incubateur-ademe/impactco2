@@ -9,10 +9,6 @@ import useLocalStorage from "use-local-storage";
 
 export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
-  // const [whitelist] = useLocalStorage("ico2_whitelist", default_eqs);
-
-  // eslint-disable-next-line no-unused-vars
-  // const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", default_eqs_ticked);
 
   // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
