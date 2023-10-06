@@ -1,5 +1,5 @@
 import ResultatLivraison from "./ResultatLivraison";
-// import { default_eqs } from "components/livraison/data.js";
+import { default_eqs } from "components/livraison/data.js";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
@@ -12,6 +12,9 @@ export default function ResultatsLivraison(props) {
   // const [whitelist] = useLocalStorage("ico2_whitelist", default_eqs);
 
   // eslint-disable-next-line no-unused-vars
+  // const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", default_eqs_ticked);
+
+  // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
   // eslint-disable-next-line no-unused-vars
   const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
@@ -20,11 +23,11 @@ export default function ResultatsLivraison(props) {
 
   const GetEq = (indx) => {
     if (indx === 0) {
-      return equivalents.find((e) => e.slug === eqv1L);
+      return equivalents.find((e) => e.slug === (eqv1L || default_eqs[0]));
     } else if (indx === 1) {
-      return equivalents.find((e) => e.slug === eqv2L);
+      return equivalents.find((e) => e.slug === (eqv2L || default_eqs[1]));
     } else if (indx === 2) {
-      return equivalents.find((e) => e.slug === eqv3L);
+      return equivalents.find((e) => e.slug === (eqv3L || default_eqs[2]));
     }
   };
 
