@@ -63,7 +63,7 @@ const BlueGrid = styled.div`
   }
   ${(props) => props.theme.mq.small} {
     border-bottom-left-radius: 0;
-    border-top-right-radius: 16px;
+    border-top-right-radius: 14px;
   }
   > .item1 {
     align-items: center;
