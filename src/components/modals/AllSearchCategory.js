@@ -27,7 +27,13 @@ export default function AllSearchCategory(props) {
 
   return (
     <Wrapper>
-      {items && items.length > 0 ? <>{theCategory.name}</> : <></>}
+      {items && items.length > 0 ? (
+        <>
+          <TheCategoryName>{theCategory.name}</TheCategoryName>
+        </>
+      ) : (
+        <></>
+      )}
       <Equivalents>
         {items.map(({ item }) => (
           <EquivalentSquare
@@ -55,4 +61,10 @@ const Equivalents = styled.div`
 const Wrapper = styled.div`
   margin-bottom: 2rem;
   margin-top: 1rem;
+`;
+
+const TheCategoryName = styled.div`
+  color: #26827c;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 `;

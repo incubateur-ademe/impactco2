@@ -59,8 +59,16 @@ export default function AllSearch(props) {
       />
       {props.open && (
         <>
-          <AllSearchCategory items={results} cat={"fruitsetlegumes"} />
+          <AllSearchCategory items={results} cat={"numerique"} />
           <AllSearchCategory items={results} cat={"usagenumerique"} />
+          <AllSearchCategory items={results} cat={"fruitsetlegumes"} />
+          <AllSearchCategory items={results} cat={"repas"} />
+          <AllSearchCategory items={results} cat={"chauffage"} />
+          <AllSearchCategory items={results} cat={"transport"} />
+          <AllSearchCategory items={results} cat={"habillement"} />
+          <AllSearchCategory items={results} cat={"electromenager"} />
+          <AllSearchCategory items={results} cat={"boisson"} />
+          <AllSearchCategory items={results} cat={"mobilier"} />
         </>
       )}
     </Wrapper>
@@ -81,11 +89,12 @@ const SearchInput = styled(TextInput)`
   ${(props) => props.theme.mq.small} {
     background-size: 5%;
   }
-  margin: 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
 `;
 
 const Wrapper = styled.div`
   margin: 1rem 2rem 1rem 1rem;
-  /* margin-bottom: 2rem;
-  margin-top: 1rem; */
+  ${(props) => props.theme.mq.medium} {
+    margin-left: 2.25rem;
+  }
 `;
