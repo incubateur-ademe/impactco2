@@ -1,11 +1,19 @@
 import DataContext from "components/providers/DataProvider";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
 export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
   const { equivalents } = useContext(DataContext);
+  const [eqvError, setEqvError] = useLocalStorage("eqvError");
+
+  useEffect(() => {
+    if (eqvArray && eqvArray.length >= 2) {
+      setEqvError("");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [eqvArray]);
 
   const removeChoice = (slug) => {
     const newArray = eqvArray.filter((ticked) => ticked !== slug);
@@ -26,41 +34,53 @@ export default function ActualChoices() {
 
   return (
     <Wrapper>
-      <UpperSide>
-        <UpperSideCounting>
-          <Count>{eqvArray.length}</Count>/<MaxCount>3</MaxCount>
-        </UpperSideCounting>{" "}
-        <strong>{getPluralOf("équivalence")}</strong> {getPluralOf("sélectionnée")}
-      </UpperSide>
-      <Choices>
-        {eqvArray.length > 0 ? (
-          <>
-            {eqvArray.map((ticked) => {
-              return (
-                <Choice key={ticked} onClick={() => removeChoice(ticked)}>
-                  <ChoiceTick>
-                    <Tick></Tick>
-                  </ChoiceTick>
-                  <ChoiceText>{nameOf(ticked)}</ChoiceText>
-                </Choice>
-              );
-            })}
-          </>
-        ) : (
-          <>
-            <EmptyChoice>Veuillez choisir des items dans l'autre colonne</EmptyChoice>
-          </>
-        )}
-      </Choices>
+      <SelectionBox>
+        <UpperSide>
+          <UpperSideCounting>
+            <Count>{eqvArray.length}</Count>/<MaxCount>3</MaxCount>
+          </UpperSideCounting>{" "}
+          <strong>{getPluralOf("équivalence")}</strong> {getPluralOf("sélectionnée")}
+        </UpperSide>
+        <Choices>
+          {eqvArray.length > 0 ? (
+            <>
+              {eqvArray.map((ticked) => {
+                return (
+                  <Choice key={ticked} onClick={() => removeChoice(ticked)}>
+                    <ChoiceTick>
+                      <Tick></Tick>
+                    </ChoiceTick>
+                    <ChoiceText>{nameOf(ticked)}</ChoiceText>
+                  </Choice>
+                );
+              })}
+            </>
+          ) : (
+            <>
+              <EmptyChoice>Veuillez choisir au moins 2 items ci-contre.</EmptyChoice>
+            </>
+          )}
+        </Choices>
+      </SelectionBox>
+      {eqvError ? (
+        <>
+          <ErrorBox>⚠️ {eqvError}</ErrorBox>
+        </>
+      ) : (
+        <></>
+      )}
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  background-color: #ebfffe;
-  border-radius: 1rem;
   margin-left: 1.5rem;
   margin-right: 1rem;
+`;
+
+const SelectionBox = styled.div`
+  background-color: #ebfffe;
+  border-radius: 1rem;
   padding: 1rem;
 `;
 
@@ -119,4 +139,11 @@ const MaxCount = styled.span`
 const EmptyChoice = styled.div`
   font-style: italic;
   margin-top: 1rem;
+`;
+
+const ErrorBox = styled.div`
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  padding: 1rem;
 `;
