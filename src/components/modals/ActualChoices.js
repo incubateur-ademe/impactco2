@@ -26,16 +26,24 @@ export default function ActualChoices() {
         <strong>{getPluralOf("équivalence")}</strong> {getPluralOf("sélectionnée")}
       </UpperSide>
       <Choices>
-        {eqvArray.map((ticked) => {
-          return (
-            <Choice key={ticked.slug} onClick={() => removeChoice(ticked.slug)}>
-              <ChoiceTick>
-                <Tick></Tick>
-              </ChoiceTick>
-              <ChoiceText>{ticked.name}</ChoiceText>
-            </Choice>
-          );
-        })}
+        {eqvArray.length > 0 ? (
+          <>
+            {eqvArray.map((ticked) => {
+              return (
+                <Choice key={ticked.slug} onClick={() => removeChoice(ticked.slug)}>
+                  <ChoiceTick>
+                    <Tick></Tick>
+                  </ChoiceTick>
+                  <ChoiceText>{ticked.name}</ChoiceText>
+                </Choice>
+              );
+            })}
+          </>
+        ) : (
+          <>
+            <EmptyChoice>Veuillez choisir des items dans l'autre colonne</EmptyChoice>
+          </>
+        )}
       </Choices>
     </Wrapper>
   );
@@ -74,7 +82,7 @@ const Tick = styled.div`
   display: inline-block;
   height: 10px;
   margin-bottom: 2px;
-  margin-left: 35%;
+  margin-left: 42%;
   transform: rotate(45deg);
   width: 5px;
 `;
@@ -96,4 +104,9 @@ const Count = styled.strong`
 
 const MaxCount = styled.span`
   margin-left: 0.1rem;
+`;
+
+const EmptyChoice = styled.div`
+  font-style: italic;
+  margin-top: 1rem;
 `;
