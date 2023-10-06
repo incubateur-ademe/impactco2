@@ -17,7 +17,9 @@ export default function AllSearchCategory(props) {
 
   const itemChosen = (newArray, ticked) => {
     if (newArray.length > 2) {
-      newArray[newArray.length - 1] = ticked;
+      newArray[2] = newArray[1];
+      newArray[1] = newArray[0];
+      newArray[0] = ticked;
     } else {
       newArray.push(ticked);
     }
