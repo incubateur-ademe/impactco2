@@ -18,30 +18,28 @@ const getTitle = () => {
 
 export default function EqModal4() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
-  // const [whitelist, setWhitelist] = useLocalStorage("ico2_whitelist");
-  // eslint-disable-next-line no-unused-vars
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", [default_eqs[0], default_eqs[1], default_eqs[2]]);
 
-  // eslint-disable-next-line no-unused-vars
   const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L", default_eqs[0]);
-  // eslint-disable-next-line no-unused-vars
   const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L", default_eqs[1]);
-  // eslint-disable-next-line no-unused-vars
   const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L", default_eqs[2]);
+  // eslint-disable-next-line no-unused-vars
+  const [eqvError, setEqvError] = useLocalStorage("eqvError", "");
 
   const validateEqv = () => {
-    // setEqvArray([default_eqs_ticked[0], default_eqs_ticked[1], default_eqs_ticked[2]]);
-    // setWhitelist([eqv1L || default_eqs[0], eqv2L || default_eqs[1], eqv3L || default_eqs[2]]);
-    setEqv1L(eqvArray[0] || default_eqs[0]);
-    setEqv2L(eqvArray[1] || default_eqs[1]);
-    setEqv3L(eqvArray[2] || default_eqs[2]);
-    setOpen(false);
+    if (eqvArray.length >= 2) {
+      setEqv1L(eqvArray[0] || default_eqs[0]);
+      setEqv2L(eqvArray[1] || default_eqs[1]);
+      setEqv3L(eqvArray[2] || default_eqs[2]);
+      setEqvError("");
+      setOpen(false);
+    } else {
+      setEqvError("Au moins 2 équivalences doivent être sélectionnées.");
+    }
   };
 
   const dismiss = () => {
-    // setEqv1L(whitelist[0] || default_eqs[0]);
-    // setEqv2L(whitelist[1] || default_eqs[1]);
-    // setEqv3L(whitelist[2] || default_eqs[2]);
+    setEqvArray([eqv1L, eqv2L, eqv3L]);
     setOpen(false);
   };
 
