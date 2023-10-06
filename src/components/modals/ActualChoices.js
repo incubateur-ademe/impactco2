@@ -75,6 +75,9 @@ const Choice = styled.div`
   cursor: pointer;
   display: flex;
   margin-top: 0.75rem;
+  &:hover {
+    background-color: #dfeceb;
+  }
 `;
 const Tick = styled.div`
   border-bottom: 2px solid white;

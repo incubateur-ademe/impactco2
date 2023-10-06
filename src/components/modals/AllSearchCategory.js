@@ -25,9 +25,17 @@ export default function AllSearchCategory(props) {
     setEqvArray(newArray);
   };
 
+  const shouldDisplayCategoryName = (theItems, theSingleton) => {
+    let res = false;
+    let hasAtLeastOneItemInCategory = theItems && theItems.length > 0;
+    let globalSearchHasOnlyOneResult = theSingleton;
+    res = hasAtLeastOneItemInCategory && !globalSearchHasOnlyOneResult;
+    return res;
+  };
+
   return (
     <Wrapper>
-      {items && items.length > 0 ? (
+      {shouldDisplayCategoryName(items, props.singleton) ? (
         <>
           <TheCategoryName>{theCategory.name}</TheCategoryName>
         </>
