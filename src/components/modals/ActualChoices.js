@@ -9,13 +9,21 @@ export default function ActualChoices() {
     setEqvArray(newArray);
   };
 
+  const getPluralOf = (word) => {
+    let res = word;
+    if (eqvArray.length > 1) {
+      res += "s";
+    }
+    return res;
+  };
+
   return (
     <Wrapper>
       <UpperSide>
         <UpperSideCounting>
           <Count>{eqvArray.length}</Count>/<MaxCount>3</MaxCount>
         </UpperSideCounting>{" "}
-        équivalences sélectionnées
+        <strong>{getPluralOf("équivalence")}</strong> {getPluralOf("sélectionnée")}
       </UpperSide>
       <Choices>
         {eqvArray.map((ticked) => {
@@ -36,6 +44,8 @@ export default function ActualChoices() {
 const Wrapper = styled.div`
   background-color: #ebfffe;
   border-radius: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1rem;
   padding: 1rem;
 `;
 
