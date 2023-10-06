@@ -8,7 +8,7 @@ const first2WordsRemoved = (sentence) => sentence.split(" ").slice(2).join(" ");
 
 export default function LivraisonEq(props) {
   return (
-    <Wrapper background={props.background}>
+    <Wrapper nbCol={props.nbCol}>
       <Media>
         <MediaFigure>
           <EmojiWrapper>
@@ -30,10 +30,18 @@ export default function LivraisonEq(props) {
 }
 
 const Wrapper = styled.div`
+  align-items: ${(props) => (props.nbCol === 3 ? "inherit" : "center")};
   border-bottom: 1px solid #eae5e8;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 1.5rem;
+  ${(props) => props.theme.mq.large} {
+    padding-left: 1rem;
+  }
+  ${(props) => props.theme.mq.medium} {
+    padding-left: 0.5rem;
+  }
 `;
 
 const EmojiWrapper = styled.div`

@@ -25,7 +25,7 @@ export default function ResultatsLivraison(props) {
   const buildLivraisonEq = (indx) => {
     let eq = getEq(indx);
     if (eq) {
-      return <LivraisonEq position={indx} equivalent={eq} weight={props.co2eq / 1000} />;
+      return <LivraisonEq position={indx} equivalent={eq} weight={props.co2eq / 1000} nbCol={eqvChosen.length} />;
     } else {
       return <></>;
     }
