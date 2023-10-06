@@ -1,15 +1,11 @@
-import { useState } from "react";
 import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
 export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
 
-  const [counter, setCounter] = useState(eqvArray?.length || 0);
-
   const removeChoice = (slug) => {
     const newArray = eqvArray.filter((ticked) => ticked.slug !== slug);
-    setCounter(newArray.length);
     setEqvArray(newArray);
   };
 
@@ -17,7 +13,7 @@ export default function ActualChoices() {
     <Wrapper>
       <UpperSide>
         <UpperSideCounting>
-          <Count>{counter}</Count>/<MaxCount>3</MaxCount>
+          <Count>{eqvArray.length}</Count>/<MaxCount>3</MaxCount>
         </UpperSideCounting>{" "}
         équivalences sélectionnées
       </UpperSide>

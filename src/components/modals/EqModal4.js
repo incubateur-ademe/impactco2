@@ -83,6 +83,8 @@ const Intro = styled.div`
   font-weight: 300;
   letter-spacing: 0em;
   line-height: 24px;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
 `;
 
 const ButtonValidation = styled(Button)`
