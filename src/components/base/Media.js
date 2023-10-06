@@ -6,6 +6,9 @@ export const Media = styled.div`
 `;
 export const MediaFigure = styled.div`
   margin-right: 1em;
+  ${(props) => props.theme.mq.medium} {
+    margin-right: 0.2em;
+  }
 `;
 export const MediaBody = styled.div`
   flex: 1;

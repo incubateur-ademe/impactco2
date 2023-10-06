@@ -57,7 +57,11 @@ export default function ActualChoices() {
             </>
           ) : (
             <>
-              <EmptyChoice>Veuillez choisir au moins 2 items ci-contre.</EmptyChoice>
+              <EmptyChoice>
+                Veuillez choisir au moins 2 items ci-
+                <ShowMobile>dessous</ShowMobile>
+                <ShowDesktop>contre</ShowDesktop>.
+              </EmptyChoice>
             </>
           )}
         </Choices>
@@ -132,4 +136,20 @@ const MaxCount = styled.span`
 const EmptyChoice = styled.div`
   font-style: italic;
   margin-top: 1rem;
+  ${(props) => props.theme.mq.large} {
+    font-size: 0.9rem;
+  }
+`;
+
+const ShowMobile = styled.span`
+  display: none;
+  ${(props) => props.theme.mq.medium} {
+    display: inline;
+  }
+`;
+const ShowDesktop = styled.span`
+  display: inline;
+  ${(props) => props.theme.mq.medium} {
+    display: none;
+  }
 `;

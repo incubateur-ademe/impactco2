@@ -41,6 +41,10 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     padding-left: 0.5rem;
   }
+  ${(props) => props.theme.mq.xsmall} {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
 `;
 
 const EmojiWrapper = styled.div`
@@ -55,9 +59,11 @@ const Number = styled.div`
   ${(props) => props.theme.mq.large} {
     font-size: 1rem;
   }
+  ${(props) => props.theme.mq.medium} {
+    font-size: 0.9rem;
+  }
   font-weight: 500;
   letter-spacing: 0em;
-  line-height: 32px;
 `;
 
 const OfWhat = styled.div`
@@ -66,5 +72,5 @@ const OfWhat = styled.div`
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 16px;
-  margin-top: -8px;
+  margin-top: -2px;
 `;

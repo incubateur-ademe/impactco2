@@ -60,6 +60,7 @@ const ButtonChange = styled.button`
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 24px;
+  min-width: 190px;
   padding: 4px 12px 4px 12px;
   ${(props) => props.theme.mq.large} {
     max-width: 6rem;
@@ -76,7 +77,7 @@ const Wrapper = styled.div`
   margin-top: 1rem;
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 `;
 

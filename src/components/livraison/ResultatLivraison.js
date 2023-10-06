@@ -59,6 +59,9 @@ const BlueGrid = styled.div`
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
   ${(props) => props.theme.mq.small} {
+    width: auto;
+  }
+  ${(props) => props.theme.mq.small} {
     border-bottom-left-radius: 0;
     border-top-right-radius: 16px;
   }
