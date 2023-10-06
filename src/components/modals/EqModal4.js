@@ -64,7 +64,7 @@ export default function EqModal4() {
   );
 }
 const Scroll = styled.div`
-  height: 35rem;
+  height: 38rem;
   overflow-x: hidden;
   overflow-y: auto;
 `;

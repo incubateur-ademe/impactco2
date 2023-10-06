@@ -72,6 +72,7 @@ const SearchInput = styled(TextInput)`
 `;
 
 const Wrapper = styled.div`
-  margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin: 1rem 2rem 1rem 1rem;
+  /* margin-bottom: 2rem;
+  margin-top: 1rem; */
 `;
