@@ -16,9 +16,9 @@ export default function LivraisonEq(props) {
           </EmojiWrapper>
         </MediaFigure>
         <MediaBody>
-          <Number id={`eq_nb_${props.slug}`}>{first2WordsOnly(fullSentenceFormat(props))}</Number>
+          <Number id={`eq_nb_${props.position}`}>{first2WordsOnly(fullSentenceFormat(props))}</Number>
           <div></div>
-          <OfWhat id={`eq_what_${props.slug}`}>
+          <OfWhat id={`eq_what_${props.position}`}>
             {first2WordsRemoved(fullSentenceFormat(props)) || <span>&nbsp;</span>}
           </OfWhat>
           <div></div>

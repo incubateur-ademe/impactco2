@@ -18,20 +18,15 @@ const getTitle = () => {
 
 export default function EqModal4() {
   const { eqv: open, setEqv: setOpen } = useContext(ModalContext);
-  const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", [default_eqs[0], default_eqs[1], default_eqs[2]]);
-
-  const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L", default_eqs[0]);
-  const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L", default_eqs[1]);
-  const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L", default_eqs[2]);
+  const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array", default_eqs);
+  const [eqvChosen, setEqvChosen] = useLocalStorage("ico2_eqv_chosen", default_eqs);
 
   // eslint-disable-next-line no-unused-vars
   const [eqvError, setEqvError] = useLocalStorage("eqvError", "");
 
   const validateEqv = () => {
     if (eqvArray.length >= 2) {
-      setEqv1L(eqvArray[0] || default_eqs[0]);
-      setEqv2L(eqvArray[1] || default_eqs[1]);
-      setEqv3L(eqvArray[2] || default_eqs[2]);
+      setEqvChosen(JSON.parse(JSON.stringify(eqvArray)));
       setEqvError("");
       setOpen(false);
     } else {
@@ -40,7 +35,7 @@ export default function EqModal4() {
   };
 
   const dismiss = () => {
-    setEqvArray([eqv1L, eqv2L, eqv3L]);
+    setEqvArray(JSON.parse(JSON.stringify(eqvChosen)));
     setOpen(false);
   };
 

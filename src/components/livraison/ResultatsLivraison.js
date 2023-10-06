@@ -1,5 +1,5 @@
 import ResultatLivraison from "./ResultatLivraison";
-import { default_eqs } from "components/livraison/data.js";
+import { default_eqs } from "components/livraison/data";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
@@ -8,24 +8,8 @@ import styled from "styled-components";
 import useLocalStorage from "use-local-storage";
 
 export default function ResultatsLivraison(props) {
+  const [eqvChosen] = useLocalStorage("ico2_eqv_chosen", default_eqs);
   const { equivalents } = useContext(DataContext);
-
-  // eslint-disable-next-line no-unused-vars
-  const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
-  // eslint-disable-next-line no-unused-vars
-  const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
-  // eslint-disable-next-line no-unused-vars
-  const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
-
-  const GetEq = (indx) => {
-    if (indx === 0) {
-      return equivalents.find((e) => e.slug === (eqv1L || default_eqs[0]));
-    } else if (indx === 1) {
-      return equivalents.find((e) => e.slug === (eqv2L || default_eqs[1]));
-    } else if (indx === 2) {
-      return equivalents.find((e) => e.slug === (eqv3L || default_eqs[2]));
-    }
-  };
 
   const { setEqv } = useContext(ModalContext);
 
@@ -34,13 +18,26 @@ export default function ResultatsLivraison(props) {
     setEqv("nonecheck");
   };
 
+  const getEq = (indx) => {
+    return equivalents.find((e) => e.slug === eqvChosen[indx]);
+  };
+
+  const buildLivraisonEq = (indx) => {
+    let eq = getEq(indx);
+    if (eq) {
+      return <LivraisonEq position={indx} equivalent={eq} weight={props.co2eq / 1000} />;
+    } else {
+      return <></>;
+    }
+  };
+
   return (
     <Wrapper>
       <ResultatLivraison co2eq={props.co2eq} />
       <UpperEq>
-        <LivraisonEq slug={1} equivalent={GetEq(0)} weight={props.co2eq / 1000} />
-        <LivraisonEq slug={2} equivalent={GetEq(1)} weight={props.co2eq / 1000} />
-        <LivraisonEq slug={3} equivalent={GetEq(2)} weight={props.co2eq / 1000} />
+        {buildLivraisonEq(0)}
+        {buildLivraisonEq(1)}
+        {buildLivraisonEq(2)}
         <ButtonContainer>
           <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
             Modifier les équivalences
