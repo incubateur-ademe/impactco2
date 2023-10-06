@@ -31,7 +31,6 @@ export default function LivraisonEq(props) {
 
 const Wrapper = styled.div`
   align-items: ${(props) => (props.nbCol === 3 ? "inherit" : "center")};
-  border-bottom: 1px solid #eae5e8;
   display: flex;
   flex-direction: column;
   justify-content: center;

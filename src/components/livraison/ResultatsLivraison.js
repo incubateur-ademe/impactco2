@@ -60,7 +60,6 @@ const ButtonChange = styled.button`
   font-weight: 500;
   letter-spacing: 0em;
   line-height: 24px;
-  margin-right: 0.5rem;
   padding: 4px 12px 4px 12px;
   ${(props) => props.theme.mq.large} {
     max-width: 6rem;
@@ -89,8 +88,11 @@ const UpperEq = styled.div`
 
 const ButtonContainer = styled.div`
   align-items: center;
+  border-top: 1px solid #eae5e8;
   display: flex;
   grid-column: ${(props) => (props.nbCol === 3 ? "span 3" : "span 2")};
   justify-content: flex-end;
+  margin-left: 1rem;
+  margin-right: 1rem;
   min-width: 220px;
 `;
