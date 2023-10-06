@@ -128,6 +128,9 @@ const ValidationButtons = styled.div`
 const GridSplit = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  ${(props) => props.theme.mq.medium} {
+    grid-template-columns: repeat(1, 1fr);
+  }
   grid-template-rows: 1fr;
 `;
 

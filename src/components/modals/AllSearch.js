@@ -55,7 +55,7 @@ export default function AllSearch(props) {
       <SearchInput
         value={search}
         onChange={({ value }) => setSearch(value)}
-        placeholder={"Recherchez un objet ou un geste"}
+        placeholder={"Rechercher un objet ou un geste"}
       />
       {props.open && (
         <>
@@ -72,6 +72,15 @@ const SearchInput = styled(TextInput)`
   background-position: 98% 53%;
   background-repeat: no-repeat;
   background-size: 4%;
+  input::placeholder {
+    font-weight: 300;
+  }
+  ${(props) => props.theme.mq.medium} {
+    background-size: 3%;
+  }
+  ${(props) => props.theme.mq.small} {
+    background-size: 5%;
+  }
   margin: 0.5rem;
 `;
 
