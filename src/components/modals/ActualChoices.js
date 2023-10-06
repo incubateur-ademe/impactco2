@@ -5,7 +5,6 @@ import useLocalStorage from "use-local-storage";
 export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage("ico2_eqv_array");
 
-  const MAX_CHOICES = 3;
   const [counter, setCounter] = useState(eqvArray?.length || 0);
 
   const removeChoice = (slug) => {
@@ -16,9 +15,7 @@ export default function ActualChoices() {
 
   return (
     <Wrapper>
-      <UpperSide>
-        {counter} / {MAX_CHOICES} équivalences sélectionnées
-      </UpperSide>
+      <UpperSide>{counter} / 3 équivalences sélectionnées</UpperSide>
       <Choices>
         {eqvArray.map((ticked) => {
           return (
@@ -26,7 +23,7 @@ export default function ActualChoices() {
               <ChoiceTick onClick={() => removeChoice(ticked.slug)}>
                 <Tick></Tick>
               </ChoiceTick>
-              <div>{ticked.name}</div>
+              <ChoiceText>{ticked.name}</ChoiceText>
             </Choice>
           );
         })}
@@ -35,9 +32,16 @@ export default function ActualChoices() {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  background-color: #ebfffe;
+  border-radius: 1rem;
+  padding: 1rem;
+`;
 
-const UpperSide = styled.div``;
+const UpperSide = styled.div`
+  border-bottom: 1px solid #a0f5ee;
+  padding-bottom: 1rem;
+`;
 const Choices = styled.div``;
 
 const ChoiceTick = styled.div`
@@ -50,6 +54,7 @@ const ChoiceTick = styled.div`
 
 const Choice = styled.div`
   display: flex;
+  margin-top: 1rem;
 `;
 const Tick = styled.div`
   border-bottom: 2px solid white;
@@ -60,4 +65,8 @@ const Tick = styled.div`
   margin-left: 35%;
   transform: rotate(45deg);
   width: 5px;
+`;
+
+const ChoiceText = styled.div`
+  margin-left: 0.75rem;
 `;

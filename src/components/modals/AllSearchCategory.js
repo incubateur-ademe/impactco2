@@ -13,7 +13,7 @@ export default function AllSearchCategory(props) {
   });
 
   const items = props.items.filter((oneItem) => {
-    return oneItem.item.category === theCategory.id && !eqvArray.includes(oneItem.item.slug);
+    return oneItem.item.category === theCategory.id && !eqvArray.find((e) => e.slug === oneItem.item.slug);
   });
 
   const itemChosen = (newArray, ticked) => {
@@ -36,7 +36,6 @@ export default function AllSearchCategory(props) {
             checked={false}
             setChecked={() => {
               let ticked = pick(item, "slug", "name");
-              console.log("ticked", ticked);
               itemChosen(JSON.parse(JSON.stringify(eqvArray)), ticked);
             }}
           />
