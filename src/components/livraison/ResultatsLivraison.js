@@ -1,5 +1,5 @@
 import ResultatLivraison from "./ResultatLivraison";
-import { default_eqs } from "components/livraison/data.js";
+// import { default_eqs } from "components/livraison/data.js";
 import LivraisonEq from "components/misc/tiles/LivraisonEq";
 import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
@@ -9,9 +9,24 @@ import useLocalStorage from "use-local-storage";
 
 export default function ResultatsLivraison(props) {
   const { equivalents } = useContext(DataContext);
-  const [whitelist] = useLocalStorage("ico2_whitelist", default_eqs);
+  // const [whitelist] = useLocalStorage("ico2_whitelist", default_eqs);
 
-  const GetEq = (indx) => equivalents.find((e) => e.slug === whitelist[indx]);
+  // eslint-disable-next-line no-unused-vars
+  const [eqv1L, setEqv1L] = useLocalStorage("ico2_eqv1L");
+  // eslint-disable-next-line no-unused-vars
+  const [eqv2L, setEqv2L] = useLocalStorage("ico2_eqv2L");
+  // eslint-disable-next-line no-unused-vars
+  const [eqv3L, setEqv3L] = useLocalStorage("ico2_eqv3L");
+
+  const GetEq = (indx) => {
+    if (indx === 0) {
+      return equivalents.find((e) => e.slug === eqv1L);
+    } else if (indx === 1) {
+      return equivalents.find((e) => e.slug === eqv2L);
+    } else if (indx === 2) {
+      return equivalents.find((e) => e.slug === eqv3L);
+    }
+  };
 
   const { setEqv } = useContext(ModalContext);
 
