@@ -61,7 +61,7 @@ const nextConfig = {
   },
   env: {
     thebuildid: buildFullVersionNumber() + "-" + buildShortSha(process.env.SOURCE_VERSION),
-    customKey: "my-value",
+    websiteurl: process.env.WEBSITE_URL,
   },
   async redirects() {
     return [
