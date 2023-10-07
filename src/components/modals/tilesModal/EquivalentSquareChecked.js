@@ -4,6 +4,7 @@ import { formatName } from "utils/formatters";
 
 const Wrapper = styled.button`
   align-items: center;
+  background-color: transparent;
   &:hover {
     background-color: ${(props) => props.theme.colors[props.checked ? "mainLight" : "background"]};
   }

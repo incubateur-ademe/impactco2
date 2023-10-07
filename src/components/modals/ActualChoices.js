@@ -86,7 +86,10 @@ const UpperSide = styled.div`
   border-bottom: 1px solid #a0f5ee;
   padding-bottom: 1rem;
 `;
-const Choices = styled.div``;
+
+const Choices = styled.div`
+  margin-top: 1.25rem;
+`;
 
 const UpperSideCounting = styled.div`
   background-color: #a0f5ee;
