@@ -30,7 +30,7 @@ export default function EqModal4() {
       setEqvError("");
       setOpen(false);
     } else {
-      setEqvError("Au moins 2 équivalences doivent être sélectionnées.");
+      setEqvError("Merci de sélectionner au moins deux objets pour effectuer une comparaison.");
     }
   };
 
@@ -50,7 +50,7 @@ export default function EqModal4() {
               Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
             </ShowDesktop>
             <div>
-              <strong>⚠️ Erreur : {eqvError}</strong>
+              <strong>⚠️ {eqvError}</strong>
             </div>
           </>
         )}
@@ -64,7 +64,7 @@ export default function EqModal4() {
             <AllSearch open={open}></AllSearch>
           </Scroll>
           <ValidationZone>
-            <ValidationMsg>{eqvError ? <>⚠️ Erreur : {eqvError}</> : <></>}</ValidationMsg>
+            <ValidationMsg>{eqvError ? <>⚠️ {eqvError}</> : <></>}</ValidationMsg>
             <ValidationButtons>
               <ButtonValidation onClick={validateEqv}>
                 <ShowDesktop>Valider et fermer</ShowDesktop>
@@ -107,8 +107,10 @@ const Intro = styled.div`
 
 const ButtonValidation = styled(Button)`
   border-radius: 8px;
+  width: 200px;
   ${(props) => props.theme.mq.medium} {
     padding: 2px 4px 2px 4px;
+    width: 80px;
   }
 `;
 
@@ -163,10 +165,13 @@ const ValidationMsg = styled.div`
   align-items: center;
   border-radius: 0.25rem;
   display: flex;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 2rem;
   ${(props) => props.theme.mq.small} {
     font-size: 0.75rem;
-    padding-right: 0.1rem;
+    padding-right: 0.25rem;
+  }
+  ${(props) => props.theme.mq.xsmall} {
+    padding-left: 0.2rem;
   }
 `;
 
