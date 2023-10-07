@@ -1,3 +1,4 @@
+import EquivalentSquareChecked from "./tilesModal/EquivalentSquareChecked";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
@@ -28,8 +29,8 @@ export default function ActualChoices() {
     return res;
   };
 
-  const nameOf = (ticked) => {
-    return equivalents.find((e) => e.slug === ticked).name;
+  const eqOf = (ticked) => {
+    return equivalents.find((e) => e.slug === ticked);
   };
 
   return (
@@ -46,12 +47,12 @@ export default function ActualChoices() {
             <>
               {eqvArray.map((ticked) => {
                 return (
-                  <Choice key={ticked} onClick={() => removeChoice(ticked)}>
-                    <ChoiceTick>
-                      <Tick></Tick>
-                    </ChoiceTick>
-                    <ChoiceText>{nameOf(ticked)}</ChoiceText>
-                  </Choice>
+                  <EquivalentSquareChecked
+                    key={ticked}
+                    equivalent={eqOf(ticked)}
+                    checked={false}
+                    setChecked={() => removeChoice(ticked)}
+                  />
                 );
               })}
             </>
@@ -86,37 +87,6 @@ const UpperSide = styled.div`
   padding-bottom: 1rem;
 `;
 const Choices = styled.div``;
-
-const ChoiceTick = styled.div`
-  background-color: #26827c;
-  border: 1px solid #26827c;
-  border-radius: 4px;
-  height: 24px;
-  width: 24px;
-`;
-
-const Choice = styled.div`
-  cursor: pointer;
-  display: flex;
-  margin-top: 0.75rem;
-  &:hover {
-    background-color: #dfeceb;
-  }
-`;
-const Tick = styled.div`
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  display: inline-block;
-  height: 10px;
-  margin-bottom: 2px;
-  margin-left: 42%;
-  transform: rotate(45deg);
-  width: 5px;
-`;
-
-const ChoiceText = styled.div`
-  margin-left: 0.75rem;
-`;
 
 const UpperSideCounting = styled.div`
   background-color: #a0f5ee;

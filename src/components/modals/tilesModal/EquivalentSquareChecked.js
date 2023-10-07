@@ -1,25 +1,22 @@
-import Emoji from "components/base/Emoji";
 import React from "react";
 import styled from "styled-components";
 import { formatName } from "utils/formatters";
 
 const Wrapper = styled.button`
   align-items: center;
-  background-color: ${(props) => props.theme.colors[props.checked ? "mainLight" : "background"]};
+  &:hover {
+    background-color: ${(props) => props.theme.colors[props.checked ? "mainLight" : "background"]};
+  }
   border: none;
   border-radius: 0.5rem;
   color: ${(props) => props.theme.colors.text};
   cursor: ${(props) => (props.disabled ? "normal" : "pointer")};
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   opacity: ${(props) => (props.disabled ? 0.3 : 1)};
-  padding: 0.75rem 1.5rem 0.75rem 1rem;
   position: relative;
   width: 100%;
-  &:hover {
-    background-color: ${(props) => props.theme.colors.mainLight};
-  }
 `;
 const Label = styled.span`
   display: block;
@@ -35,10 +32,24 @@ const Left = styled.div`
   display: flex;
   gap: 0.75rem;
 `;
-const StyledEmoji = styled(Emoji)`
-  font-size: 1.25rem;
+const GreenSquare = styled.div`
+  background-color: #26827c;
+  border: 1px solid #26827c;
+  border-radius: 4px;
+  height: 24px;
+  width: 24px;
 `;
-export default function EquivalentSquare(props) {
+const Tick = styled.div`
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  display: inline-block;
+  height: 10px;
+  margin-bottom: 0px;
+  margin-left: 10%;
+  transform: rotate(45deg);
+  width: 5px;
+`;
+export default function EquivalentSquareChecked(props) {
   return (
     <Wrapper
       type="checkbox"
@@ -47,20 +58,14 @@ export default function EquivalentSquare(props) {
       className="equivalent-radio"
     >
       <Left>
-        <GreenSquare>&nbsp;</GreenSquare>
+        <GreenSquare>
+          <Tick></Tick>
+        </GreenSquare>
         <Label>
           {formatName(props.equivalent.name, 1, true)}{" "}
           {props.equivalent.subtitle && <Subtitle>({formatName(props.equivalent.subtitle, 1)})</Subtitle>}
         </Label>
       </Left>
-      <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
     </Wrapper>
   );
 }
-
-const GreenSquare = styled.div`
-  border: 1px solid #26827c;
-  border-radius: 4px;
-  height: 24px;
-  width: 24px;
-`;
