@@ -50,7 +50,7 @@ export default function EqModal4() {
               Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
             </ShowDesktop>
             <div>
-              <strong>⚠️ {eqvError}</strong>
+              <EqvError>⚠️ {eqvError}</EqvError>
             </div>
           </>
         )}
@@ -64,7 +64,15 @@ export default function EqModal4() {
             <AllSearch open={open}></AllSearch>
           </Scroll>
           <ValidationZone>
-            <ValidationMsg>{eqvError ? <>⚠️ {eqvError}</> : <></>}</ValidationMsg>
+            <ValidationMsg>
+              {eqvError ? (
+                <>
+                  <EqvError>⚠️ {eqvError}</EqvError>
+                </>
+              ) : (
+                <></>
+              )}
+            </ValidationMsg>
             <ValidationButtons>
               <ButtonValidation onClick={validateEqv}>
                 <ShowDesktop>Valider et fermer</ShowDesktop>
@@ -186,4 +194,9 @@ const ShowDesktop = styled.span`
   ${(props) => props.theme.mq.medium} {
     display: none;
   }
+`;
+
+const EqvError = styled.div`
+  color: red;
+  font-weight: bold;
 `;

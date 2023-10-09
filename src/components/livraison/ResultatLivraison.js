@@ -10,6 +10,7 @@ export default function ResultatLivraison(props) {
   return (
     <Wrapper>
       <CenteredBlock>
+        <EqualSign>=</EqualSign>
         <BlueGrid>
           <div className="item1">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,6 +141,7 @@ const Wrapper = styled.div`
 `;
 
 const CenteredBlock = styled.div`
+  position: relative;
   /* background-color: #457be7;
   border-bottom-left-radius: 14px;
   ${(props) => props.theme.mq.small} {
@@ -147,4 +149,17 @@ const CenteredBlock = styled.div`
   }
   border-top-left-radius: 14px;
   border-top-right-radius: 14px; */
+`;
+
+const EqualSign = styled.div`
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 3rem;
+  display: flex;
+  font-size: 3rem;
+  height: 3rem;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  position: absolute;
+  width: 3rem;
 `;
