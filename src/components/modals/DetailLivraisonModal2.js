@@ -1,6 +1,7 @@
 import MagicLink from "components/base/MagicLink";
 import Modal2 from "components/base/Modal2";
 import ModalContext from "components/providers/ModalProvider";
+import Link from "next/link";
 import React, { useContext } from "react";
 import styled from "styled-components";
 
@@ -203,6 +204,10 @@ export default function DetailLivraisonModal2() {
             <li>Déplacement consommateur</li>
           </ul>
         </details>
+        <h3>Pour aller plus loin</h3>
+        <p>
+          <Link href="/documentation/livraison-colis">Consultez notre documentation</Link>
+        </p>
       </FormattedText>
     </Modal2>
   );
