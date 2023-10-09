@@ -21,6 +21,9 @@ const Wrapper = styled.button`
 `;
 const Label = styled.span`
   color: ${(props) => props.theme.colors.persistentText};
+  &:hover {
+    color: ${(props) => props.theme.colors.main};
+  }
   display: block;
   font-size: ${(props) => (props.small ? 0.875 : 1)}rem;
   line-height: 1.2;
