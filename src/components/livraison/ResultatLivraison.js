@@ -106,6 +106,8 @@ const ActualResult = styled.span`
 const Units = styled.span`
   font-size: 18px;
   font-weight: 400;
+  margin-bottom: 13px;
+  margin-top: -5px;
 `;
 
 const Subexplain = styled.span`
