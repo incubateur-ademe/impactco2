@@ -115,7 +115,9 @@ const Intro = styled.div`
 
 const ButtonValidation = styled(Button)`
   border-radius: 8px;
-  color: ${(props) => props.theme.colors.mainWhite};
+  &:hover {
+    color: ${(props) => props.theme.colors.persistentText};
+  }
   width: 200px;
   ${(props) => props.theme.mq.medium} {
     padding: 2px 4px 2px 4px;
