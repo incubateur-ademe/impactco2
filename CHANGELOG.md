@@ -2,7 +2,7 @@
 
 ## 1.21.2 (11/10/2023)
 
-* U25 - Publicode : ajout du markown pour rendre le corps de texte lisible
+* U25 - Publicode : ajout du markdown pour rendre le corps de texte lisible
 
 ## 1.21.1 (10/10/2023)
 
