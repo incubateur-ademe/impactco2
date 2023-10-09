@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
   ${(props) => props.theme.mq.large} {
     padding-left: 1rem;
   }

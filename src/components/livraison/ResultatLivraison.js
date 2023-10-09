@@ -10,7 +10,6 @@ export default function ResultatLivraison(props) {
   return (
     <Wrapper>
       <CenteredBlock>
-        <EqualSign>=</EqualSign>
         <BlueGrid>
           <div className="item1">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,6 +41,7 @@ export default function ResultatLivraison(props) {
               <ButtonLink onClick={() => setHypothesisLivraison(true)}>Comprendre le calcul</ButtonLink>
             </UnderstandLink>
           </div>
+          <EqualSign>=</EqualSign>
         </BlueGrid>
       </CenteredBlock>
       <Arrow></Arrow>
@@ -142,24 +142,21 @@ const Wrapper = styled.div`
 
 const CenteredBlock = styled.div`
   position: relative;
-  /* background-color: #457be7;
-  border-bottom-left-radius: 14px;
-  ${(props) => props.theme.mq.small} {
-    border-bottom-left-radius: 0;
-  }
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px; */
 `;
 
 const EqualSign = styled.div`
   align-items: center;
-  border: 1px solid black;
+  background-color: white;
+  border: 1px solid #eae5e8;
   border-radius: 3rem;
+  color: #457be7;
   display: flex;
-  font-size: 3rem;
-  height: 3rem;
+  font-size: 2rem;
+  height: 2.2rem;
   justify-content: center;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
   position: absolute;
-  width: 3rem;
+  right: -1.05rem;
+  top: 1.25rem;
+  width: 2.2rem;
 `;
