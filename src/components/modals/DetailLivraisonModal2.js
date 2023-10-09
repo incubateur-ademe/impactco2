@@ -206,7 +206,14 @@ export default function DetailLivraisonModal2() {
         </details>
         <h3>Pour aller plus loin</h3>
         <p>
-          <Link href="/documentation/livraison-colis">Consultez notre documentation</Link>
+          <Link
+            href="/documentation/livraison-colis"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            Consultez notre documentation
+          </Link>
         </p>
       </FormattedText>
     </Modal2>
