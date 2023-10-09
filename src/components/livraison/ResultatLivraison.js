@@ -60,11 +60,10 @@ const BlueGrid = styled.div`
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
   ${(props) => props.theme.mq.small} {
-    width: auto;
-  }
-  ${(props) => props.theme.mq.small} {
+    padding: 0.5rem 1rem 1.5rem 1rem;
     border-bottom-left-radius: 0;
     border-top-right-radius: 14px;
+    width: auto;
   }
   > .item1 {
     align-items: center;
@@ -159,4 +158,9 @@ const EqualSign = styled.div`
   right: -1.05rem;
   top: 1.25rem;
   width: 2.2rem;
+  ${(props) => props.theme.mq.small} {
+    bottom: -1rem;
+    right: 50%;
+    top: inherit;
+  }
 `;
