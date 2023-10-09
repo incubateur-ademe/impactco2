@@ -90,9 +90,24 @@ export default function EqModal4() {
   );
 }
 const Scroll = styled.div`
-  height: 38rem;
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: 600px;
+  overflow: auto;
+  padding-bottom: 100px;
+  &:after {
+    content: "";
+    display: block;
+    height: 0px;
+    ${(props) => props.theme.mq.medium} {
+      height: 120px;
+    }
+    ${(props) => props.theme.mq.small} {
+      height: 150px;
+    }
+    ${(props) => props.theme.mq.xsmall} {
+      height: 190px;
+    }
+    width: 100%;
+  }
 `;
 
 const Title = styled.h2`
