@@ -146,14 +146,14 @@ const CenteredBlock = styled.div`
 const EqualSign = styled.div`
   align-items: center;
   background-color: white;
-  border: 1px solid #eae5e8;
+  border: 2px solid #eae5e8;
   border-radius: 3rem;
   color: #457be7;
   display: flex;
   font-size: 2rem;
   height: 2.2rem;
   justify-content: center;
-  outline: 1px solid white;
+  outline: 2px solid white;
   padding-bottom: 0.4rem;
   position: absolute;
   right: -1.05rem;
