@@ -1,3 +1,4 @@
+import Markdown from "./Markdown";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
 import Head from "next/head";
 import Link from "next/link";
@@ -16,6 +17,7 @@ export default function DocumentationLivraison(props) {
       renderers={{
         Head,
         Link: ({ to, children }) => <Link href={to}>{children}</Link>,
+        Text: ({ children }) => <Markdown>{children}</Markdown>,
       }}
     />
   );
