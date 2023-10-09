@@ -23,6 +23,8 @@
   "dependencies": {
     "@dnd-kit/core": "^6.0.7",
     "@dnd-kit/sortable": "^7.0.2",
+    "@incubateur-ademe/publicodes-impact-livraison": "^0.2.0",
+    "@incubateur-ademe/publicodes-negaoctet": "^0.2.2",
     "@socialgouv/matomo-next": "^1.6.1",
     "@tanstack/react-query": "^4.24.4",
     "animated-number-react": "^0.1.2",

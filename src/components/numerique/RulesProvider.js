@@ -1,18 +1,16 @@
-import Engine from 'publicodes'
-import React, { useMemo } from 'react'
+import rules from "@incubateur-ademe/publicodes-negaoctet";
+import useSituation from "hooks/useSituation";
+import Engine from "publicodes";
+import React from "react";
 
-import useRules from 'hooks/useRules'
-import useSituation from 'hooks/useSituation'
-
-const RulesContext = React.createContext({})
+const RulesContext = React.createContext({});
 
 export function RulesProvider(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
-  const { data: rules } = useRules()
-  const engine = useMemo(() => (rules ? new Engine(rules) : null), [rules])
+  const engine = new Engine(rules);
 
-  const { situation, setSituation } = useSituation(engine)
+  const { situation, setSituation } = useSituation(engine);
 
   return (
     <RulesContext.Provider
@@ -24,7 +22,7 @@ export function RulesProvider(props) {
     >
       {engine && props.children}
     </RulesContext.Provider>
-  )
+  );
 }
 
-export default RulesContext
+export default RulesContext;

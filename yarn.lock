@@ -1451,6 +1451,20 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@incubateur-ademe/publicodes-impact-livraison@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-impact-livraison/-/publicodes-impact-livraison-0.2.0.tgz#e896ebb62a568cadcbdc36e7ad07b6fafb067d9c"
+  integrity sha512-+ynUvJTAqaDf7ew4qFYsbvKZrWz83BK/6ARaLisZkdOpq8B8rMDy4fL+B4LCmEciW6WWy6gMktTMvUK6zAm3uQ==
+  dependencies:
+    publicodes "^1.0.0-beta.74"
+
+"@incubateur-ademe/publicodes-negaoctet@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-negaoctet/-/publicodes-negaoctet-0.2.2.tgz#dde17679ded3dd6d10849346fcbfaa14c13db72d"
+  integrity sha512-6cHo2DkHhpeU7bdMVd7tRTsG+V4qTXuUFKLitVGEcBLZdEDx/bRJ0rUlLQJ8vp9CPgQdW39WFYr4VWMeJZNIkg==
+  dependencies:
+    publicodes "^1.0.0-beta.71"
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.2.tgz#c1aedc61e853f2bb9f5dfe6d4442d3b565b253b9"
@@ -5013,6 +5027,11 @@ publicodes@1.0.0-beta.72:
   version "1.0.0-beta.72"
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.72.tgz#4cc2900a8c2f316b92bf4bae2f8411f6ad235a3a"
   integrity sha512-spk7twEF7c8OOX2grUlLSHUr35YDhSxOAxAlW/RmNtRNDEkTeFzDDLqxtdLWNrIkz0GIKmkVZZaiqantgHR10w==
+
+publicodes@^1.0.0-beta.71, publicodes@^1.0.0-beta.74:
+  version "1.0.0-beta.76"
+  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.76.tgz#07b740f18f4846aaa70b5a9c83109658c3c010c4"
+  integrity sha512-lnhRD4UIufN/N4T1LcgheEKX4bF6gSCYroE2po1Cfk0kkmgPn+ORKVT2M+HpHeVlTbPFAjVE1p5hL6P3zXUlLQ==
 
 pump@^3.0.0:
   version "3.0.0"
