@@ -66,6 +66,10 @@ const ButtonChange = styled.button`
     max-width: 6rem;
     padding: 0.1rem;
   }
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
   text-align: center;
 `;
 
@@ -77,7 +81,7 @@ const Wrapper = styled.div`
   margin-top: 1rem;
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr;
   }
 `;
 
@@ -85,12 +89,19 @@ const UpperEq = styled.div`
   display: grid;
   grid-template-columns: ${(props) => (props.nbCol === 3 ? "repeat(3, auto)" : "repeat(2, auto)")};
   grid-template-rows: 1.25fr 1fr;
+  ${(props) => props.theme.mq.small} {
+    grid-template-columns: ${(props) => (props.nbCol === 3 ? "1fr" : "1fr")};
+    margin-top: 1.5rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
   align-items: center;
   border-top: 1px solid #eae5e8;
   display: flex;
+  ${(props) => props.theme.mq.small} {
+    grid-column: ${(props) => (props.nbCol === 3 ? "inherit" : "inherit")};
+  }
   grid-column: ${(props) => (props.nbCol === 3 ? "span 3" : "span 2")};
   justify-content: flex-end;
   margin-left: 1rem;

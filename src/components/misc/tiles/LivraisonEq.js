@@ -39,11 +39,19 @@ const Wrapper = styled.div`
     padding-left: 1rem;
   }
   ${(props) => props.theme.mq.medium} {
-    padding-left: 0.5rem;
+    padding-left: 1rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    align-items: center;
   }
   ${(props) => props.theme.mq.xsmall} {
     padding-left: 0.1rem;
     padding-right: 0.1rem;
+  }
+  > div {
+    ${(props) => props.theme.mq.small} {
+      margin-bottom: 1rem;
+    }
   }
 `;
 
