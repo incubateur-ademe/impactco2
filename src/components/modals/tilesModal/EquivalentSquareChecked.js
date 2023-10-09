@@ -20,6 +20,7 @@ const Wrapper = styled.button`
   width: 100%;
 `;
 const Label = styled.span`
+  color: ${(props) => props.theme.colors.persistentText};
   display: block;
   font-size: ${(props) => (props.small ? 0.875 : 1)}rem;
   line-height: 1.2;

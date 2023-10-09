@@ -82,13 +82,14 @@ const SelectionBox = styled.div`
   padding: 1rem;
 `;
 
-const UpperSide = styled.div`
-  border-bottom: 1px solid #a0f5ee;
-  padding-bottom: 1rem;
-`;
-
 const Choices = styled.div`
   margin-top: 1.25rem;
+`;
+
+const UpperSide = styled.div`
+  border-bottom: 1px solid #a0f5ee;
+  color: ${(props) => props.theme.colors.persistentText};
+  padding-bottom: 1rem;
 `;
 
 const UpperSideCounting = styled.div`
