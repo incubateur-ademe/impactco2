@@ -153,6 +153,7 @@ const EqualSign = styled.div`
   font-size: 2rem;
   height: 2.2rem;
   justify-content: center;
+  outline: 1px solid white;
   padding-bottom: 0.4rem;
   position: absolute;
   right: -1.05rem;
