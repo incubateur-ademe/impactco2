@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.21.0 (10/10/2023)
+
+* B15 - bug sur le partage de la ressource
+
 ## 1.21.0 (05/10/2023)
 
 * U28 - Un seul bouton pour modifier les équivalences de la livraison
