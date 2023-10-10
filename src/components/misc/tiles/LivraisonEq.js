@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   > div {
     ${(props) => props.theme.mq.small} {
       margin-bottom: 1rem;
-      width: 10rem;
+      width: ${(props) => (props.nbCol === 3 ? "10rem" : "inherit")};
     }
   }
 `;
