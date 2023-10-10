@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.21.0 (10/10/2023)
+## 1.21.1 (10/10/2023)
 
 * B15 - bug sur le partage de la ressource
 
