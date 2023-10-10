@@ -80,6 +80,7 @@ export default function CopyUrl(props) {
       <Text
         readOnly={true}
         value={props.url}
+        id="shareUrl"
         onClick={() => {
           if (copy(props.url)) {
             props.setCopied(true);
