@@ -35,7 +35,7 @@ export default function AllSearchCategory(props) {
   };
 
   return (
-    <Wrapper>
+    <Wrapper mb={props.mb || "2rem"}>
       {shouldDisplayCategoryName(items, props.singleton) ? (
         <>
           <TheCategoryName>{theCategory.name}</TheCategoryName>
@@ -61,7 +61,7 @@ export default function AllSearchCategory(props) {
 }
 
 const Equivalents = styled.div`
-  margin-bottom: 0;
+  margin-bottom: ${(props) => props.mb};
   > button {
     padding: 0;
   }

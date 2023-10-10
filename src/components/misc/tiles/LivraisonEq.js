@@ -42,15 +42,16 @@ const Wrapper = styled.div`
     padding-left: 1rem;
   }
   ${(props) => props.theme.mq.small} {
-    align-items: center;
+    align-items: ${(props) => (props.nbCol === 3 ? "center" : "flex-start")};
   }
   ${(props) => props.theme.mq.xsmall} {
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   > div {
     ${(props) => props.theme.mq.small} {
       margin-bottom: 1rem;
+      width: 10rem;
     }
   }
 `;

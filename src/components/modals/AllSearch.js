@@ -68,7 +68,7 @@ export default function AllSearch(props) {
           <AllSearchCategory items={results} cat={"habillement"} singleton={results?.length === 1} />
           <AllSearchCategory items={results} cat={"electromenager"} singleton={results?.length === 1} />
           <AllSearchCategory items={results} cat={"boisson"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"mobilier"} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={"mobilier"} singleton={results?.length === 1} mb={"17rem"} />
         </>
       )}
     </Wrapper>
