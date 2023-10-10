@@ -41,6 +41,7 @@ export default function ResultatLivraison(props) {
               <ButtonLink onClick={() => setHypothesisLivraison(true)}>Comprendre le calcul</ButtonLink>
             </UnderstandLink>
           </div>
+          <EqualSign>=</EqualSign>
         </BlueGrid>
       </CenteredBlock>
       <Arrow></Arrow>
@@ -50,29 +51,29 @@ export default function ResultatLivraison(props) {
 
 const BlueGrid = styled.div`
   background-color: #457be7;
-  border-bottom-left-radius: 16px;
-  border-top-left-radius: 16px;
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
   color: white;
   display: grid;
-  grid-template-columns: 30px 140px;
-  ${(props) => props.theme.mq.large} {
-    grid-template-columns: 1px 140px;
-  }
-  ${(props) => props.theme.mq.small} {
-    grid-template-columns: 30px 1fr;
-  }
+  grid-template-columns: 30px 1fr;
   margin: auto;
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
   ${(props) => props.theme.mq.small} {
+    padding: 0.5rem 1rem 1.5rem 1rem;
     border-bottom-left-radius: 0;
-    border-top-right-radius: 16px;
+    border-top-right-radius: 14px;
+    width: auto;
   }
   > .item1 {
     align-items: center;
     display: flex;
     justify-content: end;
     margin-right: 4px;
+  }
+  > .item2 {
+    display: flex;
+    flex-direction: column;
   }
   > .item3 {
     grid-row: span 3;
@@ -100,13 +101,13 @@ const ActualResult = styled.span`
     font-size: 1.5rem;
   }
   font-weight: 700;
-  line-height: 56px;
 `;
 
 const Units = styled.span`
   font-size: 18px;
   font-weight: 400;
-  line-height: 40px;
+  margin-bottom: 13px;
+  margin-top: -5px;
 `;
 
 const Subexplain = styled.span`
@@ -130,16 +131,6 @@ const UnderstandLink = styled.div`
 
 const Arrow = styled.div`
   background: #457be7;
-  clip-path: polygon(100% 50%, 0 0, 0 100%);
-  height: 100%;
-  /* margin-left: px; */
-  width: 30px;
-  ${(props) => props.theme.mq.small} {
-    clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
-    height: 30px;
-    margin-top: -1px;
-    width: 100%;
-  }
 `;
 
 const Wrapper = styled.div`
@@ -151,11 +142,28 @@ const Wrapper = styled.div`
 `;
 
 const CenteredBlock = styled.div`
-  background-color: #457be7;
-  border-bottom-left-radius: 14px;
+  position: relative;
+`;
+
+const EqualSign = styled.div`
+  align-items: center;
+  background-color: white;
+  border: 2px solid #eae5e8;
+  border-radius: 3rem;
+  color: #457be7;
+  display: flex;
+  font-size: 2rem;
+  height: 2.2rem;
+  justify-content: center;
+  outline: 2px solid white;
+  padding-bottom: 0.4rem;
+  position: absolute;
+  right: -1.05rem;
+  top: 1.25rem;
+  width: 2.2rem;
   ${(props) => props.theme.mq.small} {
-    border-bottom-left-radius: 0;
+    bottom: -1rem;
+    right: 50%;
+    top: inherit;
   }
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
 `;
