@@ -2,7 +2,7 @@
 
 ## 1.21.1 (10/10/2023)
 
-* U28 - Un seul bouton pour modifier les équivalences de la livraison
+* B15 - Livraison : bug dans l'URL de partage
 
 ## 1.21.0 (05/10/2023)
 
