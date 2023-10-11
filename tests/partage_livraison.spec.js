@@ -3,8 +3,7 @@ import { mockRoutes } from "../test-mock/mock-route.js";
 // @ts-check
 const { test, expect } = require("@playwright/test");
 
-test.beforeEach(async ({ page }, testInfo) => {
-  console.log(`Running ${testInfo.title}`);
+test.beforeEach(async ({ page }) => {
   mockRoutes(page);
   await page.goto("/livraison");
   await expect(page.getByText("par livraison")).toHaveCount(1);

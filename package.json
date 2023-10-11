@@ -6,7 +6,7 @@
     "generatename": "node src/scripts/generate_name.js",
     "build:fruit": "node src/scripts/build_fruits_et_legumes.js",
     "build:boisson": "node src/scripts/build_boissons.js",
-    "test": "NODE_ENV=test playwright test",
+    "test": "NODE_ENV=test playwright test --reporter=list",
     "test:ui": "NODE_ENV=test playwright test --ui",
     "dev": "next dev",
     "build": "yarn iframe && next build",
