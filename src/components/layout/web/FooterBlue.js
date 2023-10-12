@@ -26,22 +26,20 @@ export default function FooterBlue(props) {
                   <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
                 </FooterExplain>
               </div>
-              <div className="c">
-                <FooterLinks>
-                  <FooterLink pb={"0"}>
-                    <Link href="/plan-du-site">Plan du site</Link>
-                  </FooterLink>
-                  <FooterLink pb={"0"}>
-                    <Link href="/accessibilite">Accessibilité : non-conforme</Link>
-                  </FooterLink>
-                  <FooterLink pb={"0"}>
-                    <Link href="/mentions-legales">Mentions légales</Link>
-                  </FooterLink>
-                  <FooterLink>
-                    <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
-                  </FooterLink>
-                  <Version>Version : {process.env.thebuildid}</Version>
-                </FooterLinks>
+              <div className="gridlinks">
+                <FooterLink>
+                  <Link href="/plan-du-site">Plan du site</Link>
+                </FooterLink>
+                <FooterLink>
+                  <Link href="/accessibilite">Accessibilité : non-conforme</Link>
+                </FooterLink>
+                <FooterLink>
+                  <Link href="/mentions-legales">Mentions légales</Link>
+                </FooterLink>
+                <FooterLink>
+                  <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
+                </FooterLink>
+                <Version>Version : {process.env.thebuildid}</Version>
               </div>
             </Grid>
           </Section3.InnerMargin>
@@ -71,7 +69,9 @@ const FooterLink = styled.div`
     font-weight: 400;
     letter-spacing: 0em;
     margin-left: 0.5rem;
-    padding-bottom: ${(props) => props.pb || "1rem"};
+    ${(props) => props.theme.mq.medium} {
+      margin-left: inherit;
+    }
     text-decoration: none;
   }
 `;
@@ -87,23 +87,24 @@ const Grid = styled.div`
   ${(props) => props.theme.mq.medium} {
     grid-template-columns: repeat(1, 1fr);
   }
-  > .c {
+  > .gridlinks {
+    display: flex;
     grid-column: span 2;
     ${(props) => props.theme.mq.medium} {
+      flex-direction: column;
       grid-column: inherit;
     }
+    margin-bottom: 1rem;
   }
 `;
 
 const FooterExplain = styled.div``;
 
-const FooterLinks = styled.div`
-  display: flex;
-  margin-bottom: 1rem;
-`;
-
 const Version = styled.div`
   font-size: 0.75rem;
   font-weight: 300;
-  text-align: right;
+  margin-left: auto;
+  ${(props) => props.theme.mq.medium} {
+    margin-left: inherit;
+  }
 `;
