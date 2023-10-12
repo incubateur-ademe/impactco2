@@ -49,6 +49,14 @@ export default function PlanDuSite() {
               </Link>
               {buildLevel2For("usagenumerique")}
               {buildLevel2For("numerique")}
+              {buildLevel2For("fruitsetlegumes")}
+              {buildLevel2For("repas")}
+              {buildLevel2For("chauffage")}
+              {buildLevel2For("transport")}
+              {buildLevel2For("habillement")}
+              {buildLevel2For("electromenager")}
+              {buildLevel2For("boisson")}
+              {buildLevel2For("mobilier")}
             </Level1>
             <Level1>
               <Link href="/" title="Calculateur carbone">
@@ -81,7 +89,7 @@ export default function PlanDuSite() {
               </Link>
             </Level1>
             <Level1>
-              <Link href="/" title="Accessibilité (non conforme)">
+              <Link href="/accessibilite" title="Accessibilité (non conforme)">
                 Accessibilité (non conforme)
               </Link>
             </Level1>
@@ -91,12 +99,12 @@ export default function PlanDuSite() {
               </Link>
             </Level1>
             <Level1>
-              <Link href="/" title="Mentions légales">
+              <Link href="/mentions-legales" title="Mentions légales">
                 Mentions légales
               </Link>
             </Level1>
             <Level1>
-              <Link href="/" title="Gestion des cookies">
+              <Link href="/politique-de-confidentialite" title="Gestion des cookies">
                 Gestion des cookies
               </Link>
             </Level1>
