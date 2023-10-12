@@ -85,4 +85,15 @@ const FormatText = styled.div`
   }
 `;
 
-const Level1 = styled.div``;
+const Level1 = styled.div`
+  margin-top: 1.75rem;
+  a {
+    color: ${(props) => props.theme.colors.text};
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    line-height: 2rem;
+    text-decoration-color: ${(props) => props.theme.colors.main4};
+    text-underline-offset: 8px;
+  }
+`;
