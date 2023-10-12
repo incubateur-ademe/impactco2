@@ -13,20 +13,20 @@ export default function FooterBlue(props) {
         <Section3.WideContent>
           <Section3.InnerMargin>
             <Grid>
-              <GridItem>
+              <div>
                 <Logos>
                   <Marianne />
                   <Ademe />
                   <Logo />
                 </Logos>
-              </GridItem>
-              <GridItem>
+              </div>
+              <div>
                 <FooterExplain>
                   <strong>Impact CO2</strong>
                   <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
                 </FooterExplain>
-              </GridItem>
-              <GridItem>
+              </div>
+              <div className="c">
                 <FooterLinks>
                   <FooterLink pb={"0"}>
                     <Link href="/plan-du-site">Plan du site</Link>
@@ -40,11 +40,9 @@ export default function FooterBlue(props) {
                   <FooterLink>
                     <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
                   </FooterLink>
+                  <Version>Version : {process.env.thebuildid}</Version>
                 </FooterLinks>
-              </GridItem>
-              <GridItem>
-                <FooterLink>Version : {process.env.thebuildid}</FooterLink>
-              </GridItem>
+              </div>
             </Grid>
           </Section3.InnerMargin>
         </Section3.WideContent>
@@ -67,26 +65,45 @@ const Logos = styled.div`
   }
 `;
 const FooterLink = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
-  font-size: 0.75rem;
-  font-weight: 300;
-  padding-bottom: ${(props) => props.pb || "1rem"};
-  text-align: center;
+  a {
+    background-color: ${(props) => props.theme.colors.background};
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    margin-left: 0.5rem;
+    padding-bottom: ${(props) => props.pb || "1rem"};
+    text-decoration: none;
+  }
 `;
 
 const Wrapper = styled.div`
+  background-color: #b5d0fa;
   margin-top: ${(props) => props.mt || "0"};
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  ${(props) => props.theme.mq.medium} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  > .c {
+    grid-column: span 2;
+    ${(props) => props.theme.mq.medium} {
+      grid-column: inherit;
+    }
+  }
 `;
-
-const GridItem = styled.div``;
 
 const FooterExplain = styled.div``;
 
 const FooterLinks = styled.div`
   display: flex;
+  margin-bottom: 1rem;
+`;
+
+const Version = styled.div`
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-align: right;
 `;
