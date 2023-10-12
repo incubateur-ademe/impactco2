@@ -1,10 +1,7 @@
-import About from "./footer/About";
-import Contact from "./footer/Contact";
 import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
 import Marianne from "components/base/Marianne";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 
@@ -33,20 +30,9 @@ const Wrapper = styled.div`
   margin-top: ${(props) => props.mt || "0"};
 `;
 
-export default function Footer(props) {
-  const router = useRouter();
-  const pathesWithSimpleFooter = ["/mentions-legales", "/politique-de-confidentialite"];
-  const isSimpleFooter = pathesWithSimpleFooter.includes(router.pathname) || props.simple;
+export default function FooterBlue(props) {
   return (
     <Wrapper mt={props.mt}>
-      {isSimpleFooter ? (
-        <></>
-      ) : (
-        <>
-          <Contact />
-          <About />
-        </>
-      )}
       <Logos>
         <Marianne />
         <Ademe />
