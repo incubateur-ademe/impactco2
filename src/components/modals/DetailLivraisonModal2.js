@@ -1,5 +1,6 @@
 import MagicLink from "components/base/MagicLink";
 import Modal2 from "components/base/Modal2";
+import NewTabIcon from "components/base/NewTabIcon";
 import ModalContext from "components/providers/ModalProvider";
 import Link from "next/link";
 import React, { useContext } from "react";
@@ -206,13 +207,8 @@ export default function DetailLivraisonModal2() {
         </details>
         <h3>Pour aller plus loin</h3>
         <p>
-          <Link
-            href="/documentation/livraison-colis"
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            Consultez notre documentation
+          <Link href={"/documentation/livraison-colis"} title="Documentation (ouvre un nouvel onglet)" target="_blank">
+            Consultez notre documentation <NewTabIcon></NewTabIcon>
           </Link>
         </p>
       </FormattedText>

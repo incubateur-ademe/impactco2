@@ -99,6 +99,7 @@ const DocWrapper = styled.div`
   }
   button {
     color: inherit;
+    cursor: pointer;
   }
   span {
     background: inherit;
