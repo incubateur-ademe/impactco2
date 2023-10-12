@@ -8,13 +8,11 @@ import styled from "styled-components";
 
 export default function PlanDuSite() {
   const { equivalents } = useContext(DataContext);
-  console.log("equivalents", equivalents);
-  console.log("categories", categories);
 
-  const buildLevel3For = (subcategories) => {
+  const buildLevel3For = (catSlug, subcategories) => {
     return subcategories.map((subcategory) => (
       <Level3 key={subcategory.id}>
-        <Link href={`/${subcategory.slug}`} title={subcategory.name}>
+        <Link href={`/${catSlug}/${subcategory.slug}`} title={subcategory.name}>
           {subcategory.name}
         </Link>
       </Level3>
@@ -23,15 +21,13 @@ export default function PlanDuSite() {
 
   const buildLevel2For = (catSlug) => {
     const category = categories.find((cat) => cat.slug === catSlug);
-    console.log("category", category);
     const subcategories = equivalents.filter((eq) => eq.category === category.id);
-    console.log("subcategories", subcategories);
     return (
       <Level2>
         <Link href={`/${category.slug}`} title={category.name}>
           {category.name}
         </Link>
-        <div>{buildLevel3For(subcategories)}</div>
+        <div>{buildLevel3For(category.slug, subcategories)}</div>
       </Level2>
     );
   };
@@ -133,11 +129,14 @@ const Level1 = styled.div`
     letter-spacing: 0em;
     line-height: 2rem;
     text-decoration-color: ${(props) => props.theme.colors.main4};
+    text-decoration-thickness: 1px;
     text-underline-offset: 0.75rem;
   }
 `;
 
 const Level2 = styled.div`
+  margin-left: 1.5rem;
+  margin-top: 1.25rem;
   > a {
     color: ${(props) => props.theme.colors.main4};
     font-size: 1rem;
@@ -147,11 +146,11 @@ const Level2 = styled.div`
     text-decoration-thickness: 1px;
     text-underline-offset: 0.5rem;
   }
-  margin-top: 2rem;
 `;
 
 const Level3 = styled.div`
-  margin-top: 1rem;
+  margin-left: 1.5rem;
+  margin-top: 0.75rem;
   > a {
     color: ${(props) => props.theme.colors.linkGray};
     font-size: 1rem;
