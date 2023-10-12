@@ -28,11 +28,9 @@ export default function PlanDuSite() {
     console.log("subcategories", subcategories);
     return (
       <Level2>
-        <div>
-          <Link href={`/${category.slug}`} title={category.name}>
-            {category.name}
-          </Link>
-        </div>
+        <Link href={`/${category.slug}`} title={category.name}>
+          {category.name}
+        </Link>
         <div>{buildLevel3For(subcategories)}</div>
       </Level2>
     );
@@ -128,21 +126,40 @@ const FormatText = styled.div`
 
 const Level1 = styled.div`
   margin-top: 1.75rem;
-  a {
+  > a {
     color: ${(props) => props.theme.colors.text};
     font-size: 1.125rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0em;
     line-height: 2rem;
     text-decoration-color: ${(props) => props.theme.colors.main4};
-    text-underline-offset: 8px;
+    text-underline-offset: 0.75rem;
   }
 `;
 
 const Level2 = styled.div`
+  > a {
+    color: ${(props) => props.theme.colors.main4};
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+    line-height: 2rem;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.5rem;
+  }
   margin-top: 2rem;
 `;
 
 const Level3 = styled.div`
   margin-top: 1rem;
+  > a {
+    color: ${(props) => props.theme.colors.linkGray};
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 2rem;
+    text-decoration-color: ${(props) => props.theme.colors.firstBlue};
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.5rem;
+  }
 `;
