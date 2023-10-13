@@ -1,5 +1,3 @@
-import Glass from "./textInput/Glass";
-import Submit from "./textInput/Submit";
 import React from "react";
 import styled from "styled-components";
 import { formatName } from "utils/formatters";
@@ -15,7 +13,7 @@ const Input = styled.input`
   font-size: 1em;
   font-weight: normal;
   line-height: 1.25;
-  padding: 0.5em 2.5em;
+  padding: 0.5em;
   width: 100%;
 
   &::placeholder {
@@ -66,13 +64,6 @@ const Subtitle = styled.span`
 export default React.forwardRef(function TextInput(props, ref) {
   return (
     <Wrapper>
-      {props.hideSubmit ? (
-        <></>
-      ) : (
-        <>
-          <Glass onClick={() => ref.current.focus()} />
-        </>
-      )}
       <Input
         ref={ref}
         type="text"
@@ -91,13 +82,6 @@ export default React.forwardRef(function TextInput(props, ref) {
           </Visible>
         )}
       </Suggestion>
-      {props.hideSubmit ? (
-        <></>
-      ) : (
-        <>
-          <Submit visible={props.suggestion && props.suggestionVisible && props.search} setFocus={props.setFocus} />
-        </>
-      )}
     </Wrapper>
   );
 });
