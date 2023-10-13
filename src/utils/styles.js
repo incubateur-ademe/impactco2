@@ -15,6 +15,7 @@ export const themes = {
       mainDark: "#1D625E",
       second: "#EFF4F9",
       secondDark: "#B1D4F6",
+      sky: "#b5d0fa",
       firstBlue: "#457be7",
       background: "#ffffff",
       darkBackground: "#F9F7F8",
@@ -71,6 +72,7 @@ export const themes = {
       deepDark: "#272124",
       deepDarkReversible: "#eceef0",
       error: "#ff5655",
+      sky: "#383838",
       warning: "#fc5d00",
     },
     fonts: {

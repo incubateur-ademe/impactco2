@@ -9,6 +9,7 @@ import styled from "styled-components";
 export default function FooterBlue(props) {
   return (
     <Wrapper mt={props.mt}>
+      <LinearGradient>&nbsp;</LinearGradient>
       <Section3>
         <Section3.WideContent>
           <Section3.InnerMargin>
@@ -99,7 +100,7 @@ const FooterLink = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: #b5d0fa;
+  background-color: ${(props) => props.theme.colors.sky};
   margin-top: ${(props) => props.mt || "0"};
 `;
 
@@ -129,4 +130,9 @@ const Version = styled.div`
     margin-left: inherit;
     margin-top: 1rem;
   }
+`;
+
+const LinearGradient = styled.div`
+  background: ${(props) => `linear-gradient(white, ${props.theme.colors.sky})`};
+  height: 8rem;
 `;
