@@ -59,43 +59,33 @@ export default function PlanDuSite() {
               {buildLevel2For("mobilier")}
             </Level1>
             <Level1>
-              <Link href="/" title="Calculateur carbone">
+              <Link href="/convertisseur" title="Calculateur carbone">
                 Calculateur carbone
               </Link>
             </Level1>
             <Level1>
-              <Link href="/" title="Diffuser les ressources">
+              <Link
+                href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
+                title="Diffuser les ressources"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 Diffuser les ressources
               </Link>
             </Level1>
             <Level1>
-              <Link href="/" title="Intégrer les ressources">
+              <Link href="/integration" title="Intégrer les ressources">
                 Intégrer les ressources
               </Link>
             </Level1>
             <Level1>
-              <Link href="/" title="Qui sommes-nous ?">
-                Qui sommes-nous ?
-              </Link>
-            </Level1>
-            <Level1>
-              <Link href="/" title="Statistiques">
+              <Link href="/stats" title="Statistiques">
                 Statistiques
-              </Link>
-            </Level1>
-            <Level1>
-              <Link href="/" title="Nouveautés">
-                Nouveautés
               </Link>
             </Level1>
             <Level1>
               <Link href="/accessibilite" title="Accessibilité (non conforme)">
                 Accessibilité (non conforme)
-              </Link>
-            </Level1>
-            <Level1>
-              <Link href="/" title="Diffuser">
-                Diffuser
               </Link>
             </Level1>
             <Level1>
