@@ -10,7 +10,7 @@ const Wrapper = styled.form`
   background-color: ${(props) => (props.focus ? props.theme.colors.background : "transparent")};
   border: 1px solid #eae5e8;
   border-radius: 0.625em;
-  box-shadow: ${(props) => (props.focus ? "-0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05)" : "none")};
+  box-shadow: 0px 4px 10px 0px rgba(0, 17, 51, 0.06);
   left: 0;
   overflow: hidden;
   position: absolute;
