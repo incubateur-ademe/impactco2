@@ -1,3 +1,6 @@
+import Ademe from "components/base/Ademe";
+import Logo from "components/base/Logo";
+import Marianne from "components/base/Marianne";
 import Section2 from "components/base/Section2";
 import React from "react";
 import styled from "styled-components";
@@ -14,7 +17,11 @@ export default function HeaderSweet() {
         <Header aria-label="En-tête">
           <Section2.InnerMargin>
             <LogoBar>
-              <Logos>logos...</Logos>
+              <Logos>
+                <Marianne />
+                <Ademe />
+                <Logo />
+              </Logos>
               <Actions>actions...</Actions>
             </LogoBar>
             <NavBar></NavBar>
@@ -31,5 +38,7 @@ const LogoBar = styled.div`
 `;
 const NavBar = styled.div``;
 
-const Logos = styled.div``;
+const Logos = styled.div`
+  display: flex;
+`;
 const Actions = styled.div``;
