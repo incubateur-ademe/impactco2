@@ -114,6 +114,7 @@ export default function NavSearchBar(props) {
         suggestionVisible={focus}
         setSearch={setSearch}
         setFocus={setFocus}
+        hideSubmit={true}
       />
       {focus && (
         <Suggestions
