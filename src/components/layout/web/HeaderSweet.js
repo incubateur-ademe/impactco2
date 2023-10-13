@@ -2,6 +2,7 @@ import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
 import Marianne from "components/base/Marianne";
 import Section2 from "components/base/Section2";
+import SearchBar2 from "components/misc/search/SearchBar2";
 import React from "react";
 import styled from "styled-components";
 
@@ -22,7 +23,11 @@ export default function HeaderSweet() {
                 <Ademe />
                 <Logo />
               </Logos>
-              <Actions>actions...</Actions>
+              <Actions>
+                <div>
+                  <SearchBar2 hideon={"large"} />
+                </div>
+              </Actions>
             </LogoBar>
             <NavBar></NavBar>
           </Section2.InnerMargin>

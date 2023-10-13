@@ -7,23 +7,23 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.form`
-  height: 100%;
   > input {
     height: 100%;
   }
   ${(props) => props.theme.mq[props.hideon]} {
     display: none;
   }
-  border:  ${(props) => (props.focus ? `0.125rem solid ${props.theme.colors.main}` : "none")};
+  border: ${(props) => (props.focus ? `0.125rem solid ${props.theme.colors.main}` : "none")};
   border-radius: ${(props) => (props.home || props.focus ? " 0.625em" : "4rem")};
   box-shadow: ${(props) => (props.focus ? "-0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05)" : "none")};
   cursor: pointer;
+  height: 100%;
   left: ${(props) => (props.home ? 0 : "auto")};
-  max-width: ${(props) => (props.focus ? "calc(100vw - 1.5rem)" : "2.75rem")};
   margin-right: ${(props) => (props.focus ? "1rem" : "0")};
+  max-width: ${(props) => (props.focus ? "calc(100vw - 1.5rem)" : "2.75rem")};
   right: 0;
   top: 0;
-  width: ${(props) => (props.home ? "auto" : props.focus ? "calc(100vw - 1.5rem)" : "1rem")}
+  width: ${(props) => (props.home ? "auto" : props.focus ? "calc(100vw - 1.5rem)" : "1rem")};
   z-index: 100;
 `;
 
