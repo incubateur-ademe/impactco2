@@ -27,7 +27,13 @@ export default function PlanDuSite() {
         <Link href={`/${category.slug}`} title={category.name}>
           {category.name}
         </Link>
-        <div>{buildLevel3For(category.slug, subcategories)}</div>
+        {subcategories?.length > 0 ? (
+          <>
+            <div>{buildLevel3For(category.slug, subcategories)}</div>
+          </>
+        ) : (
+          <></>
+        )}
       </Level2>
     );
   };
@@ -48,15 +54,16 @@ export default function PlanDuSite() {
                 Par thématique
               </Link>
               {buildLevel2For("usagenumerique")}
-              {buildLevel2For("numerique")}
-              {buildLevel2For("fruitsetlegumes")}
-              {buildLevel2For("repas")}
+              {buildLevel2For("livraison")}
               {buildLevel2For("chauffage")}
               {buildLevel2For("transport")}
+              {buildLevel2For("fruitsetlegumes")}
+              {buildLevel2For("numerique")}
+              {buildLevel2For("repas")}
               {buildLevel2For("habillement")}
+              {buildLevel2For("mobilier")}
               {buildLevel2For("electromenager")}
               {buildLevel2For("boisson")}
-              {buildLevel2For("mobilier")}
             </Level1>
             <Level1>
               <Link href="/convertisseur" title="Calculateur carbone">
