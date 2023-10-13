@@ -66,13 +66,7 @@ const Subtitle = styled.span`
 export default React.forwardRef(function TextInput(props, ref) {
   return (
     <Wrapper>
-      {props.hideSubmit ? (
-        <></>
-      ) : (
-        <>
-          <Glass onClick={() => ref.current.focus()} />
-        </>
-      )}
+      <Glass onClick={() => ref.current.focus()} />
       <Input
         ref={ref}
         type="text"
@@ -91,13 +85,8 @@ export default React.forwardRef(function TextInput(props, ref) {
           </Visible>
         )}
       </Suggestion>
-      {props.hideSubmit ? (
-        <></>
-      ) : (
-        <>
-          <Submit visible={props.suggestion && props.suggestionVisible && props.search} setFocus={props.setFocus} />
-        </>
-      )}
+
+      <Submit visible={props.suggestion && props.suggestionVisible && props.search} setFocus={props.setFocus} />
     </Wrapper>
   );
 });
