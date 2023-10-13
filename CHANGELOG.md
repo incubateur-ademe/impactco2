@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.23.0 (13/10/2023)
+
+* A5.2 - Nouveau header
+
 ## 1.22.0 (11/10/2023)
 
 * A5.1 - Nouvelle page : plan du site
