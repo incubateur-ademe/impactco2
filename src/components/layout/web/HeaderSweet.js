@@ -1,3 +1,4 @@
+import MenuSweet from "./nav/MenuSweet";
 import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
 import Marianne from "components/base/Marianne";
@@ -31,9 +32,7 @@ export default function HeaderSweet() {
             <Section2.InnerMargin>
               <NavLinks>
                 <NavLink>
-                  <Link href="/plan-du-site" title="Par thématique">
-                    Par thématique
-                  </Link>
+                  <MenuSweet />
                 </NavLink>
                 <NavLink>
                   <Link href="/convertisseur" title="Calculateur carbone">
