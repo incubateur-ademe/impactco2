@@ -31,7 +31,7 @@ const Logos = styled.div`
 `;
 export default function IframeFooter() {
   const window = useWindow();
-  const siteUrl = process?.env?.NEXT_PUBLIC_SITE_URL || "impactco2.fr";
+  const siteUrl = process?.env?.websiteurl || "impactco2.fr";
   const protocol = siteUrl.indexOf("localhost") >= 0 ? "http://" : "https://";
   const baseUrl = `${protocol}${siteUrl}`;
   let actualSrc = window?.location.href.split("iframes")[1] || "";

@@ -46,12 +46,12 @@ Pour l'instant il n'y a que des variables d'environnement "publiques",
 Il vous faut un fichier `.env.local` à la racine
 
 ```bash
-NEXT_PUBLIC_SITE_URL=localhost:3000
+WEBSITE_URL=localhost:3000
 SENDINBLUE_API_KEY=une_valeur_compliquee
 GMAP_API_KEY=une_autre_valeur_compliquee
 ```
 
-`NEXT_PUBLIC_SITE_URL` est le nom de domaine du site, sans le protocole (mais avec le port éventuellement).
+`WEBSITE_URL` est le nom de domaine du site, sans le protocole (mais avec le port éventuellement).
 
 A vous de renseigner la/les valeurs sur l'ensemble des sites déployés.
 
