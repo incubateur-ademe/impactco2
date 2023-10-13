@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.form`
   background-color: ${(props) => (props.focus ? props.theme.colors.background : "transparent")};
-  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border: 1px solid #eae5e8;
   border-radius: 0.625em;
   box-shadow: ${(props) => (props.focus ? "-0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05)" : "none")};
   left: 0;
@@ -106,7 +106,7 @@ export default function NavSearchBar(props) {
       className={props.className}
     >
       <TextInput
-        placeholder={props.placeholder}
+        placeholder={"Rechercher..."}
         ref={input}
         search={search}
         focus={focus}
