@@ -85,8 +85,13 @@ export default React.forwardRef(function TextInput(props, ref) {
           </Visible>
         )}
       </Suggestion>
-
-      <Submit visible={props.suggestion && props.suggestionVisible && props.search} setFocus={props.setFocus} />
+      {props.hideSubmit ? (
+        <></>
+      ) : (
+        <>
+          <Submit visible={props.suggestion && props.suggestionVisible && props.search} setFocus={props.setFocus} />
+        </>
+      )}
     </Wrapper>
   );
 });
