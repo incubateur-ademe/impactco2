@@ -1,6 +1,6 @@
 import Fuse from "../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import Suggestions from "./searchBar/Suggestions";
-import TextInput from "./searchBar/TextInput";
+import TextInputSmall from "./searchBar/TextInputSmall";
 import DataContext from "components/providers/DataProvider";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useRef, useState } from "react";
@@ -105,7 +105,7 @@ export default function NavSearchBar(props) {
       }}
       className={props.className}
     >
-      <TextInput
+      <TextInputSmall
         placeholder={"Rechercher..."}
         ref={input}
         search={search}
