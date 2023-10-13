@@ -29,26 +29,38 @@ export default function HeaderSweet() {
           </Header>
           <NavBar>
             <Section2.InnerMargin>
-              <NavLink>
-                <Link href="/plan-du-site" title="Plan du site">
-                  Plan du site
-                </Link>
-              </NavLink>
-              <NavLink>
-                <Link href="/accessibilite" title="Accessibilité (non conforme)">
-                  Accessibilité
-                </Link>
-              </NavLink>
-              <NavLink>
-                <Link href="/mentions-legales" title="Mentions légales">
-                  Mentions légales
-                </Link>
-              </NavLink>
-              <NavLink>
-                <Link href="/politique-de-confidentialite" title="Gestion des cookies">
-                  Gestion des cookies
-                </Link>
-              </NavLink>
+              <NavLinks>
+                <NavLink>
+                  <Link href="/plan-du-site" title="Par thématique">
+                    Par thématique
+                  </Link>
+                </NavLink>
+                <NavLink>
+                  <Link href="/convertisseur" title="Calculateur carbone">
+                    Calculateur carbone
+                  </Link>
+                </NavLink>
+                <NavLink>
+                  <Link
+                    href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
+                    title="Diffuser les ressources"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    Diffuser les ressources
+                  </Link>
+                </NavLink>
+                <NavLink>
+                  <Link href="/integration" title="Intégrer les ressources">
+                    Intégrer les ressources
+                  </Link>
+                </NavLink>
+                <NavLink>
+                  <Link href="/stats" title="Statistiques">
+                    Statistiques
+                  </Link>
+                </NavLink>
+              </NavLinks>
             </Section2.InnerMargin>
           </NavBar>
         </Section2.WideContent>
@@ -77,16 +89,15 @@ const ActionSearch = styled.div`
   width: 282px;
 `;
 
-const NavBar = styled.div`
+const NavBar = styled.nav`
   border-top: 1px solid #eae5e8;
-  display: flex;
   padding: 1rem 0;
 `;
 
 const NavLink = styled.div`
   a {
-    color: ${(props) => props.theme.colors.deepDarkReversible};
-    font-size: 0.75rem;
+    color: #161616;
+    font-size: 0.875rem;
     font-weight: 400;
     letter-spacing: 0em;
     margin-right: 1.5rem;
@@ -99,4 +110,8 @@ const NavLink = styled.div`
 
 const BoxedShadow = styled.div`
   box-shadow: 0px 2px 6px #f3f6ff;
+`;
+
+const NavLinks = styled.div`
+  display: flex;
 `;
