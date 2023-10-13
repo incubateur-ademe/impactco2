@@ -2,8 +2,7 @@ import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
 import Marianne from "components/base/Marianne";
 import Section2 from "components/base/Section2";
-import SearchBar2 from "components/misc/search/SearchBar2";
-import React from "react";
+import NavSearchBar from "components/misc/search/NavSearchBar";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -24,9 +23,9 @@ export default function HeaderSweet() {
                 <Logo />
               </Logos>
               <Actions>
-                <div>
-                  <SearchBar2 hideon={"large"} />
-                </div>
+                <ActionSearch>
+                  <NavSearchBar></NavSearchBar>
+                </ActionSearch>
               </Actions>
             </LogoBar>
             <NavBar></NavBar>
@@ -47,3 +46,9 @@ const Logos = styled.div`
   display: flex;
 `;
 const Actions = styled.div``;
+
+const ActionSearch = styled.div`
+  position: relative;
+  top: 25%;
+  width: 282px;
+`;
