@@ -21,7 +21,7 @@ export default function Menu() {
   return (
     <Wrapper>
       <DropdownSweet
-        label={"Catégories"}
+        label={"Par thématique"}
         current={categories.find((category) => slugs.includes(category.slug))}
         hideon={"never"}
       >
