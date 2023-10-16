@@ -5,6 +5,7 @@ import categories from "data/categories.json";
 import Link from "next/link";
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { formatName } from "utils/formatters";
 
 export default function PlanDuSite() {
   const { equivalents } = useContext(DataContext);
@@ -13,7 +14,8 @@ export default function PlanDuSite() {
     return subcategories.map((subcategory) => (
       <Level3 key={subcategory.id}>
         <Link href={`/${catSlug}/${subcategory.slug}`} title={subcategory.name}>
-          {subcategory.name}
+          {formatName(subcategory.name, 1, true)}{" "}
+          {subcategory.subtitle && <Subtitle>({formatName(subcategory.subtitle, 1)})</Subtitle>}
         </Link>
       </Level3>
     ));
@@ -166,4 +168,8 @@ const Level3 = styled.div`
     text-decoration-thickness: 1px;
     text-underline-offset: 0.5rem;
   }
+`;
+
+const Subtitle = styled.span`
+  font-weight: 300;
 `;
