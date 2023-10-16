@@ -6,26 +6,6 @@ import { useRouter } from "next/router";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.form`
-  background-color: ${(props) => (props.focus ? props.theme.colors.background : "transparent")};
-  border: 1px solid #eae5e8;
-  border-radius: 0.625em;
-  box-shadow: ${(props) =>
-    props.focus ? "0px 4px 10px 0px rgba(0, 17, 51, 0.08)" : "0px 4px 10px 0px rgba(0, 17, 51, 0.04)"};
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 100;
-
-  ${(props) => props.theme.mq.small} {
-    border-radius: ${(props) => (props.home || props.focus ? " 0.625em" : "4rem")};
-    left: ${(props) => (props.home ? 0 : "auto")};
-    width: ${(props) => (props.home ? "auto" : props.focus ? "calc(100vw - 1.5rem)" : "2.375rem")};
-  }
-`;
-
 export default function NavSearchBar(props) {
   const { equivalents, categories } = useContext(DataContext);
   const [search, setSearch] = useState("");
@@ -106,28 +86,75 @@ export default function NavSearchBar(props) {
       }}
       className={props.className}
     >
-      <TextInputSmall
-        placeholder={"Rechercher..."}
-        ref={input}
-        search={search}
-        focus={focus}
-        suggestion={results[current]}
-        suggestionVisible={focus}
-        setSearch={setSearch}
-        setFocus={setFocus}
-        hideSubmit={true}
-      />
-      {focus && (
-        <Suggestions
-          enabled={search.length > 1}
-          results={results}
-          categories={categories}
-          focus={focus}
-          current={current}
-          setCurrent={setCurrent}
-          handleSuggestionClick={navigateToItem}
-        />
-      )}
+      <NavActions>
+        <NavCta>
+          <ButtonCta>Go</ButtonCta>
+        </NavCta>
+        <NavSearch>
+          <SearchContainer>
+            <TextInputSmall
+              placeholder={"Rechercher..."}
+              ref={input}
+              search={search}
+              focus={focus}
+              suggestion={results[current]}
+              suggestionVisible={focus}
+              setSearch={setSearch}
+              setFocus={setFocus}
+              hideSubmit={true}
+            />
+            {focus && (
+              <Suggestions
+                enabled={search.length > 1}
+                results={results}
+                categories={categories}
+                focus={focus}
+                current={current}
+                setCurrent={setCurrent}
+                handleSuggestionClick={navigateToItem}
+              />
+            )}
+          </SearchContainer>
+        </NavSearch>
+      </NavActions>
     </Wrapper>
   );
 }
+
+const Wrapper = styled.form``;
+
+const NavCta = styled.div``;
+
+const NavSearch = styled.div`
+  position: relative;
+  width: 300px;
+  ${(props) => props.theme.mq.medium} {
+    display: none;
+  }
+`;
+
+const ButtonCta = styled.button``;
+
+const NavActions = styled.div`
+  display: flex;
+`;
+
+const SearchContainer = styled.div`
+  background-color: ${(props) => (props.focus ? props.theme.colors.background : "transparent")};
+  border: 1px solid #eae5e8;
+  border-radius: 0.625em;
+  box-shadow: ${(props) =>
+    props.focus ? "0px 4px 10px 0px rgba(0, 17, 51, 0.08)" : "0px 4px 10px 0px rgba(0, 17, 51, 0.04)"};
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  ${(props) => props.theme.mq.small} {
+    border-radius: ${(props) => (props.home || props.focus ? " 0.625em" : "4rem")};
+    left: ${(props) => (props.home ? 0 : "auto")};
+    width: ${(props) => (props.home ? "auto" : props.focus ? "calc(100vw - 1.5rem)" : "2.375rem")};
+  }
+`;
