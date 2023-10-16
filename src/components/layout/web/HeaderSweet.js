@@ -86,14 +86,11 @@ const ActionSearch = styled.div`
   position: relative;
   top: 25%;
   width: 282px;
-  ${(props) => props.theme.mq.medium} {
-    display: none;
-  }
 `;
 
 const NavBar = styled.nav`
   border-top: 1px solid #eae5e8;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   ${(props) => props.theme.mq.small} {
     padding: 0;
   }
