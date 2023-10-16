@@ -44,7 +44,7 @@ export default function IframeFooter() {
     <Wrapper>
       <StyledMagicLink to={fullUrl}>
         Voir la version détaillée
-        <br />
+        <br id="br" />
         (et les sources)
       </StyledMagicLink>
       <Logos>
