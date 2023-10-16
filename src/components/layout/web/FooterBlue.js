@@ -44,8 +44,8 @@ export default function FooterBlue(props) {
                   </Link>
                 </FooterLink>
                 <FooterLink>
-                  <Link href="/politique-de-confidentialite" title="Gestion des cookies">
-                    Gestion des cookies
+                  <Link href="/politique-de-confidentialite" title="Politique de confidentialité">
+                    Politique de confidentialité
                   </Link>
                 </FooterLink>
                 <Version>Version : {process.env.thebuildid}</Version>
@@ -88,6 +88,7 @@ const FooterExplain = styled.div`
 const FooterLink = styled.div`
   a {
     color: ${(props) => props.theme.colors.deepDarkReversible};
+    cursor: pointer;
     font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0em;
