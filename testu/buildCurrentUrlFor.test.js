@@ -1,7 +1,6 @@
-import { test, expect } from "@playwright/test";
 import { buildCurrentUrlFor } from "utils/urls";
 
-test.describe("buildCurrentUrlFor", () => {
+describe("buildCurrentUrlFor", () => {
   test("returns an URL with http (without s) for a local URL", () => {
     let res = buildCurrentUrlFor("localhost:3000", "");
     expect(res).toEqual("http://localhost:3000");
