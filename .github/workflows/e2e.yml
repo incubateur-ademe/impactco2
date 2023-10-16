@@ -1,4 +1,4 @@
-name: E2E Tests with Playwright
+name: Run full test suite
 on:
   push:
 jobs:
@@ -12,10 +12,12 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: yarn
+    - name: Component tests with Jest
+      run: yarn testc
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps chromium
-    - name: Run Full test suite
-      run: yarn test
+    - name: E2E test with Playwright
+      run: yarn teste
     - uses: actions/upload-artifact@v3
       if: always()
       with:
