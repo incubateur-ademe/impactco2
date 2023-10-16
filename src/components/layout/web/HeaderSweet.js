@@ -35,8 +35,8 @@ export default function HeaderSweet() {
                   <MenuSweet />
                 </NavLink>
                 <NavLink>
-                  <Link href="/convertisseur" title="Calculateur carbone">
-                    Calculateur carbone
+                  <Link href="/convertisseur" title="Comparateur carbone">
+                    Comparateur carbone
                   </Link>
                 </NavLink>
                 <NavLink>
@@ -79,6 +79,14 @@ const LogoBar = styled.div`
 
 const Logos = styled.div`
   display: flex;
+  ${(props) => props.theme.mq.small} {
+    > svg {
+      height: 2em;
+    }
+    > svg.svgademe {
+      height: 4em;
+    }
+  }
 `;
 const Actions = styled.div``;
 
@@ -118,6 +126,7 @@ const NavLink = styled.div`
 
 const BoxedShadow = styled.div`
   box-shadow: 0px 2px 6px #f3f6ff;
+  position: relative;
 `;
 
 const NavLinks = styled.div`
