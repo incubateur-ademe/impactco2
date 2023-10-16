@@ -33,8 +33,8 @@ const ButtonDropdown = styled.button`
   cursor: pointer;
   display: flex;
   font-size: 0.875rem;
-  height: 3rem;
-  padding: 0 1.5rem;
+  height: 2rem;
+  padding: 0 0.25rem 0 0;
   position: relative;
   text-decoration: none;
 

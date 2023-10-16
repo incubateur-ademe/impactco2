@@ -95,9 +95,12 @@ const NavBar = styled.nav`
 
 const NavLink = styled.div`
   a {
+    align-items: center;
     color: #161616;
+    display: flex;
     font-size: 0.875rem;
     font-weight: 400;
+    height: 2rem;
     letter-spacing: 0em;
     margin-right: 1.5rem;
     ${(props) => props.theme.mq.medium} {
