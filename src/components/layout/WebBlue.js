@@ -1,7 +1,6 @@
 import BreadCrumb from "./web/BreadCrumb";
 import FooterBlue from "./web/FooterBlue";
-import Header from "./web/Header";
-import Nav from "./web/Nav";
+import HeaderSweet from "./web/HeaderSweet";
 import Seo from "./web/Seo";
 import useInteraction from "hooks/useInteraction";
 import React from "react";
@@ -33,8 +32,7 @@ export default function WebBlue(props) {
       <Wrapper>
         <Content>
           <FullScreen>
-            <Header />
-            <Nav />
+            <HeaderSweet />
             <BreadCrumb breadcrumb={props.breadcrumb} />
             {props.children}
           </FullScreen>
