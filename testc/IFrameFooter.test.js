@@ -11,6 +11,6 @@ describe("IframeFooter", () => {
       </StyleProvider>
     );
     // check if all components are rendered
-    expect(screen.getByTestId("magic-link")).toBeInTheDocument();
+    expect(screen.getByTestId("magic-link")).toHaveAttribute("href", "https://notdefined");
   });
 });
