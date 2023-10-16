@@ -8,7 +8,7 @@
     "build:boisson": "node src/scripts/build_boissons.js",
     "test": "NODE_ENV=test playwright test --reporter=list",
     "test:ui": "NODE_ENV=test playwright test --ui",
-    "testloc": "NODE_ENV=test jest --watch",
+    "testloc": "NODE_ENV=test jest --watch ./testc",
     "dev": "next dev",
     "build": "yarn iframe && next build",
     "postbuild": "next-sitemap",
