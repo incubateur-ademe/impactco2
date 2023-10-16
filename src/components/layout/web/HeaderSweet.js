@@ -94,6 +94,9 @@ const ActionSearch = styled.div`
 const NavBar = styled.nav`
   border-top: 1px solid #eae5e8;
   padding: 1rem 0;
+  ${(props) => props.theme.mq.small} {
+    padding: 0;
+  }
 `;
 
 const NavLink = styled.div`
@@ -122,4 +125,7 @@ const BoxedShadow = styled.div`
 
 const NavLinks = styled.div`
   display: flex;
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+  }
 `;
