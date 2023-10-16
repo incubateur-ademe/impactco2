@@ -13,14 +13,21 @@ const Wrapper = styled.div`
   position: relative;
 `;
 const List = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: white;
   border-radius: 0 0 1rem 1rem;
   box-shadow: -0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05);
   left: 0;
   overflow: hidden;
   position: absolute;
   top: 100%;
-  z-index: 12;
+  z-index: 999;
+  > a {
+    height: 3rem;
+    width: 300px;
+    ${(props) => props.theme.mq.small} {
+      width: inherit;
+    }
+  }
 `;
 const ButtonDropdown = styled.button`
   ${(props) => props.theme.mq.small} {
