@@ -14,7 +14,7 @@ jobs:
       run: yarn
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps chromium
-    - name: Run Playwright tests
+    - name: Run Full test suite
       run: yarn test
     - uses: actions/upload-artifact@v3
       if: always()
