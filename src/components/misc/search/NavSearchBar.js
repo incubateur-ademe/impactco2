@@ -87,9 +87,6 @@ export default function NavSearchBar(props) {
       className={props.className}
     >
       <NavActions>
-        <NavCta>
-          <ButtonCta>Go</ButtonCta>
-        </NavCta>
         <NavSearch>
           <SearchContainer>
             <TextInputSmall
@@ -116,6 +113,9 @@ export default function NavSearchBar(props) {
             )}
           </SearchContainer>
         </NavSearch>
+        {/* <NavCta>
+          <ButtonCta>Go</ButtonCta>
+        </NavCta> */}
       </NavActions>
     </Wrapper>
   );
@@ -123,7 +123,7 @@ export default function NavSearchBar(props) {
 
 const Wrapper = styled.form``;
 
-const NavCta = styled.div``;
+// const NavCta = styled.div``;
 
 const NavSearch = styled.div`
   position: relative;
@@ -133,7 +133,7 @@ const NavSearch = styled.div`
   }
 `;
 
-const ButtonCta = styled.button``;
+// const ButtonCta = styled.button``;
 
 const NavActions = styled.div`
   display: flex;
