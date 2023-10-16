@@ -86,6 +86,9 @@ const ActionSearch = styled.div`
   position: relative;
   top: 25%;
   width: 282px;
+  ${(props) => props.theme.mq.medium} {
+    display: none;
+  }
 `;
 
 const NavBar = styled.nav`
@@ -99,6 +102,9 @@ const NavLink = styled.div`
     color: #161616;
     display: flex;
     font-size: 0.875rem;
+    ${(props) => props.theme.mq.medium} {
+      font-size: 0.75rem;
+    }
     font-weight: 400;
     height: 2rem;
     letter-spacing: 0em;
