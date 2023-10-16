@@ -35,7 +35,7 @@ export default function FooterBlue(props) {
                 </FooterLink>
                 <FooterLink>
                   <Link href="/accessibilite" title="Accessibilité (non conforme)">
-                    Accessibilité
+                    Accessibilité (non conforme)
                   </Link>
                 </FooterLink>
                 <FooterLink>

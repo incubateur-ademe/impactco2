@@ -66,8 +66,8 @@ export default function PlanDuSite() {
               {buildLevel2For("boisson")}
             </Level1>
             <Level1>
-              <Link href="/convertisseur" title="Calculateur carbone">
-                Calculateur carbone
+              <Link href="/convertisseur" title="Comparateur carbone">
+                Comparateur carbone
               </Link>
             </Level1>
             <Level1>
@@ -101,8 +101,8 @@ export default function PlanDuSite() {
               </Link>
             </Level1>
             <Level1>
-              <Link href="/politique-de-confidentialite" title="Gestion des cookies">
-                Gestion des cookies
+              <Link href="/politique-de-confidentialite" title="Politique de confidentialité">
+                Politique de confidentialité
               </Link>
             </Level1>
           </FormatText>
