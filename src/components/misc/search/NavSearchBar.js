@@ -113,17 +113,12 @@ export default function NavSearchBar(props) {
             )}
           </SearchContainer>
         </NavSearch>
-        {/* <NavCta>
-          <ButtonCta>Go</ButtonCta>
-        </NavCta> */}
       </NavActions>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.form``;
-
-// const NavCta = styled.div``;
 
 const NavSearch = styled.div`
   position: relative;
@@ -132,8 +127,6 @@ const NavSearch = styled.div`
     display: none;
   }
 `;
-
-// const ButtonCta = styled.button``;
 
 const NavActions = styled.div`
   display: flex;
