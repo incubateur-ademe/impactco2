@@ -128,7 +128,7 @@ const Wrapper = styled.form``;
 const NavSearch = styled.div`
   position: relative;
   width: 300px;
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     display: none;
   }
 `;

@@ -203,14 +203,14 @@ const BoxedShadow = styled.div`
 const Hideable = styled.div`
   align-items: center;
   display: flex;
-  ${(props) => props.theme.mq.small} {
+  ${(props) => props.theme.mq.medium} {
     display: none;
   }
 `;
 const NonHideable = styled.div`
   align-items: center;
   display: flex;
-  ${(props) => props.theme.mq.small} {
+  ${(props) => props.theme.mq.medium} {
     padding: 0.75em 0.75em 0.75em 0;
   }
 `;
