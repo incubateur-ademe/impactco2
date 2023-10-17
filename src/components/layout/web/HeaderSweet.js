@@ -25,10 +25,14 @@ export default function HeaderSweet() {
               <LogoBar>
                 <Logos>
                   <Hideable>
-                    <Marianne />
+                    <Link href="/">
+                      <Marianne />
+                    </Link>
                   </Hideable>
                   <Hideable>
-                    <Ademe />
+                    <Link href="/">
+                      <Ademe />
+                    </Link>
                   </Hideable>
                   <NonHideable>
                     <Logo />
