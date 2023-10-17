@@ -87,8 +87,8 @@ export default function NavSearchBar(props) {
       className={props.className}
     >
       <NavActions>
-        <NavSearch>
-          <SearchContainer>
+        <NavSearch className="navSearch">
+          <SearchContainer className="searchContainer">
             <TextInputSmall
               placeholder={"Rechercher..."}
               ref={input}

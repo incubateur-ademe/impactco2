@@ -53,6 +53,11 @@ export default function HeaderSweet() {
             <Section2.InnerMargin>
               <NavLinksMobile shouldDisplay={hamburgerOpened}>
                 <NavLink>
+                  <SmallActionSearch>
+                    <NavSearchBar />
+                  </SmallActionSearch>
+                </NavLink>
+                <NavLink>
                   <MenuSweet />
                 </NavLink>
                 <NavLink>
@@ -164,6 +169,20 @@ const ActionSearch = styled.div`
   width: 282px;
   ${(props) => props.theme.mq.small} {
     width: 0px;
+  }
+`;
+
+const SmallActionSearch = styled.div`
+  position: relative;
+  top: 25%;
+  width: 282px;
+  .navSearch {
+    display: flex;
+  }
+  .searchContainer {
+    border-radius: 1rem;
+    position: inherit;
+    width: 200px;
   }
 `;
 
