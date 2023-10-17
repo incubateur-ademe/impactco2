@@ -1,3 +1,4 @@
+import Hamburger from "./Hamburger";
 import MenuSweet from "./nav/MenuSweet";
 import Ademe from "components/base/Ademe";
 import Logo from "components/base/Logo";
@@ -5,9 +6,16 @@ import Marianne from "components/base/Marianne";
 import Section2 from "components/base/Section2";
 import NavSearchBar from "components/misc/search/NavSearchBar";
 import Link from "next/link";
+import { useState } from "react";
 import styled from "styled-components";
 
 export default function HeaderSweet() {
+  const [hamburgerOpened, setHamburgerOpened] = useState(false);
+
+  const hamburgerClicked = () => {
+    setHamburgerOpened(!hamburgerOpened);
+  };
+
   return (
     <BoxedShadow>
       <Section2>
@@ -16,14 +24,23 @@ export default function HeaderSweet() {
             <Section2.InnerMargin>
               <LogoBar>
                 <Logos>
-                  <Marianne />
-                  <Ademe />
-                  <Logo />
+                  <Hideable>
+                    <Marianne />
+                  </Hideable>
+                  <Hideable>
+                    <Ademe />
+                  </Hideable>
+                  <NonHideable>
+                    <Logo />
+                  </NonHideable>
                 </Logos>
                 <Actions>
                   <ActionSearch>
                     <NavSearchBar></NavSearchBar>
                   </ActionSearch>
+                  <HamburgerContainer>
+                    <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked}></Hamburger>
+                  </HamburgerContainer>
                 </Actions>
               </LogoBar>
             </Section2.InnerMargin>
@@ -88,7 +105,9 @@ const Logos = styled.div`
     }
   }
 `;
-const Actions = styled.div``;
+const Actions = styled.div`
+  display: flex;
+`;
 
 const ActionSearch = styled.div`
   position: relative;
@@ -134,4 +153,24 @@ const NavLinks = styled.div`
   ${(props) => props.theme.mq.small} {
     flex-direction: column;
   }
+`;
+
+const Hideable = styled.div`
+  align-items: center;
+  display: flex;
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
+`;
+const NonHideable = styled.div`
+  align-items: center;
+  display: flex;
+  ${(props) => props.theme.mq.small} {
+    padding: 0.75em 0.75em 0.75em 0;
+  }
+`;
+
+const HamburgerContainer = styled.div`
+  align-items: center;
+  display: flex;
 `;
