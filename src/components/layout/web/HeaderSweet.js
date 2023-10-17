@@ -47,7 +47,7 @@ export default function HeaderSweet() {
           </Header>
           <NavBar>
             <Section2.InnerMargin>
-              <NavLinks>
+              <NavLinks shouldDisplay={hamburgerOpened}>
                 <NavLink>
                   <MenuSweet />
                 </NavLink>
@@ -149,7 +149,7 @@ const BoxedShadow = styled.div`
 `;
 
 const NavLinks = styled.div`
-  display: flex;
+  display: ${(props) => (props.shouldDisplay ? "flex" : "none")};
   ${(props) => props.theme.mq.small} {
     flex-direction: column;
   }
@@ -171,6 +171,9 @@ const NonHideable = styled.div`
 `;
 
 const HamburgerContainer = styled.div`
-  align-items: center;
-  display: flex;
+  display: none;
+  ${(props) => props.theme.mq.small} {
+    align-items: center;
+    display: flex;
+  }
 `;

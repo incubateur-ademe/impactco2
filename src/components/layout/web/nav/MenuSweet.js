@@ -12,14 +12,14 @@ const StyledEmoji = styled(Emoji)`
   font-size: 1.25rem;
   margin: 0 0.25rem 0.25rem 0;
 `;
-export default function Menu() {
+export default function MenuSweet(props) {
   const { categories } = useContext(DataContext);
 
   const router = useRouter();
   const slugs = router.asPath.split("/").filter((slug) => slug);
 
   return (
-    <Wrapper>
+    <Wrapper shouldDisplay={props.shouldDisplay}>
       <DropdownSweet
         label={"Par thématique"}
         current={categories.find((category) => slugs.includes(category.slug))}
