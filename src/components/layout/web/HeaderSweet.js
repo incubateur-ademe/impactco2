@@ -178,11 +178,12 @@ const SmallActionSearch = styled.div`
   width: 282px;
   .navSearch {
     display: flex;
+    margin-top: 0.5rem;
   }
   .searchContainer {
     border-radius: 1rem;
     position: inherit;
-    width: 200px;
+    width: 230px;
   }
 `;
 
@@ -202,6 +203,9 @@ const NavLink = styled.div`
     font-size: 0.875rem;
     ${(props) => props.theme.mq.medium} {
       font-size: 0.75rem;
+    }
+    ${(props) => props.theme.mq.small} {
+      font-size: 0.875rem;
     }
     font-weight: 400;
     height: 2rem;

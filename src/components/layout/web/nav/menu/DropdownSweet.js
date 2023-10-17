@@ -44,6 +44,10 @@ const ButtonDropdown = styled.button`
     font-size: 0.75rem;
     margin-right: 1.5rem;
   }
+  ${(props) => props.theme.mq.small} {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
   height: 2rem;
   padding: 0 0.25rem 0 0;
   position: relative;
