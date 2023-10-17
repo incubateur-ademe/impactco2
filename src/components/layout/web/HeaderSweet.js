@@ -47,7 +47,7 @@ export default function HeaderSweet() {
           </Header>
           <NavBar>
             <Section2.InnerMargin>
-              <NavLinks shouldDisplay={hamburgerOpened}>
+              <NavLinksMobile shouldDisplay={hamburgerOpened} hideAboveSmall={true}>
                 <NavLink>
                   <MenuSweet />
                 </NavLink>
@@ -76,7 +76,37 @@ export default function HeaderSweet() {
                     Statistiques
                   </Link>
                 </NavLink>
-              </NavLinks>
+              </NavLinksMobile>
+              <NavLinksDesktop shouldDisplay={true} hideUnderSmall={true}>
+                <NavLink>
+                  <MenuSweet />
+                </NavLink>
+                <NavLink>
+                  <Link href="/convertisseur" title="Comparateur carbone">
+                    Comparateur carbone
+                  </Link>
+                </NavLink>
+                <NavLink>
+                  <Link
+                    href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
+                    title="Diffuser les ressources"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    Diffuser les ressources
+                  </Link>
+                </NavLink>
+                <NavLink>
+                  <Link href="/integration" title="Intégrer les ressources">
+                    Intégrer les ressources
+                  </Link>
+                </NavLink>
+                <NavLink>
+                  <Link href="/stats" title="Statistiques">
+                    Statistiques
+                  </Link>
+                </NavLink>
+              </NavLinksDesktop>
             </Section2.InnerMargin>
           </NavBar>
         </Section2.WideContent>
@@ -84,6 +114,20 @@ export default function HeaderSweet() {
     </BoxedShadow>
   );
 }
+
+const NavLinksMobile = styled.div`
+  display: none;
+  ${(props) => props.theme.mq.small} {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+const NavLinksDesktop = styled.div`
+  display: flex;
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
+`;
 
 const Header = styled.header`
   position: relative; // or box-shadow will not appear
@@ -113,6 +157,9 @@ const ActionSearch = styled.div`
   position: relative;
   top: 25%;
   width: 282px;
+  ${(props) => props.theme.mq.small} {
+    width: 0px;
+  }
 `;
 
 const NavBar = styled.nav`
@@ -146,13 +193,6 @@ const NavLink = styled.div`
 const BoxedShadow = styled.div`
   box-shadow: 0px 2px 6px #f3f6ff;
   position: relative;
-`;
-
-const NavLinks = styled.div`
-  display: ${(props) => (props.shouldDisplay ? "flex" : "none")};
-  ${(props) => props.theme.mq.small} {
-    flex-direction: column;
-  }
 `;
 
 const Hideable = styled.div`
