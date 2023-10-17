@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.23.0 (17/10/2023)
+
+* UH1 - Nouvelle home
+
 ## 1.21.2 (11/10/2023)
 
 * U25 - Publicode : ajout du markdown pour rendre le corps de texte lisible
