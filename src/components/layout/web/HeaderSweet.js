@@ -117,6 +117,7 @@ export default function HeaderSweet() {
 
 const NavLinksMobile = styled.div`
   display: none;
+  padding: 0.5rem 0;
   ${(props) => props.theme.mq.small} {
     display: ${(props) => (props.shouldDisplay ? "flex" : "none")};
     flex-direction: column;
