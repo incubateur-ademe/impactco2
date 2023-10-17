@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.0 (17/10/2023)
+
+* UH1 - Nouvelle Home
+
 ## 1.23.0 (13/10/2023)
 
 * A5.2 - Nouveau header
