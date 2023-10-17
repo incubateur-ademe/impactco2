@@ -16,5 +16,8 @@ export default function Hamburger(props) {
 
 const Wrapper = styled.div``;
 const Button = styled.button`
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 4px;
   cursor: pointer;
 `;

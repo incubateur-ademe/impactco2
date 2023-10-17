@@ -47,7 +47,7 @@ export default function HeaderSweet() {
           </Header>
           <NavBar>
             <Section2.InnerMargin>
-              <NavLinksMobile shouldDisplay={hamburgerOpened} hideAboveSmall={true}>
+              <NavLinksMobile shouldDisplay={hamburgerOpened}>
                 <NavLink>
                   <MenuSweet />
                 </NavLink>
@@ -77,7 +77,7 @@ export default function HeaderSweet() {
                   </Link>
                 </NavLink>
               </NavLinksMobile>
-              <NavLinksDesktop shouldDisplay={true} hideUnderSmall={true}>
+              <NavLinksDesktop>
                 <NavLink>
                   <MenuSweet />
                 </NavLink>
@@ -118,7 +118,7 @@ export default function HeaderSweet() {
 const NavLinksMobile = styled.div`
   display: none;
   ${(props) => props.theme.mq.small} {
-    display: flex;
+    display: ${(props) => (props.shouldDisplay ? "flex" : "none")};
     flex-direction: column;
   }
 `;
