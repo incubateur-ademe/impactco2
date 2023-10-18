@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function ResultatLivraison() {
+export default function ExplainArrow() {
   return (
     <Wrapper>
       <BlueGrid>
@@ -25,8 +25,8 @@ export default function ResultatLivraison() {
 
 const BlueGrid = styled.div`
   background-color: #457be7;
-  border-bottom-left-radius: 16px;
-  border-top-left-radius: 16px;
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
   color: white;
   ${(props) => props.theme.mq.xlarge} {
     border-bottom-left-radius: 0;

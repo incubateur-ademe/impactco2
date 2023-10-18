@@ -3,7 +3,7 @@ import DetailLivraisonModal2 from "components/modals/DetailLivraisonModal2";
 import DetailsUsagesNumModal from "components/modals/DetailsUsagesNumModal";
 import DevicesModal from "components/modals/DevicesModal";
 import EcvModal from "components/modals/EcvModal";
-import EqModal3 from "components/modals/EqModal3";
+import EqModal4 from "components/modals/EqModal4";
 import IFrameLivraisonModal3 from "components/modals/IFrameLivraisonModal3";
 import ReduireModal3 from "components/modals/ReduireModal3";
 import ShareModal from "components/modals/ShareModal";
@@ -100,7 +100,7 @@ export function ModalProvider(props) {
     >
       {props.children}
       <Co2eModal2 />
-      <EqModal3 />
+      <EqModal4 />
       <IFrameLivraisonModal3 />
       <SocialModal3 />
       <ReduireModal3 />

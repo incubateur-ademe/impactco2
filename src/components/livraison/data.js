@@ -52,3 +52,8 @@ export const trajs = [
   { displayed: "Domicile-magasin de proximité ", uid: "dom_mag", publicode: "" },
 ];
 export const default_eqs = ["voiturethermique", "repasavecduboeuf", "streamingvideo"];
+export const default_eqs_ticked = [
+  { slug: "voiturethermique", name: "Voiture thermique" },
+  { slug: "repasavecduboeuf", name: "Repas avec du boeuf" },
+  { slug: "streamingvideo", name: "Streaming vidéo" },
+];

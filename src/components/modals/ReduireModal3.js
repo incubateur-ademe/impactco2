@@ -8,9 +8,9 @@ import ReuseBulb from "components/livraison/ReuseBulb";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import { buildCurrentUrlFor } from "utils/urls";
 
-const href =
-  typeof window !== "undefined" ? window?.location?.href + "#ressource" : "https://impactco2.fr/livraison#ressource";
+const href = buildCurrentUrlFor(process.env.websiteurl, "/livraison#ressource");
 
 const getTitle = () => {
   return (

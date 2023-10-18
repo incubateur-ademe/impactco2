@@ -32,9 +32,6 @@ const equivalents = [
 export function DataProvider(props) {
   const [tiles, setTiles] = useState([]);
 
-  const [eqv1, setEqv1] = useState({});
-  const [eqv2, setEqv2] = useState({});
-  const [eqv3, setEqv3] = useState({});
   const [eqvTarget, setEqvTarget] = useState("");
 
   return (
@@ -43,12 +40,6 @@ export function DataProvider(props) {
         equivalents,
         categories,
         ecv,
-        eqv1,
-        setEqv1,
-        eqv2,
-        setEqv2,
-        eqv3,
-        setEqv3,
         eqvTarget,
         setEqvTarget,
         tiles,

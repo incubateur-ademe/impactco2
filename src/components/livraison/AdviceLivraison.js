@@ -24,7 +24,7 @@ export default function AdviceLivraison() {
         <Flex>
           <H2Title id="ressource">Conseil pour réduire l’impact carbone de vos livraisons</H2Title>
           <div className="buttons">
-            <ButtonChange onClick={openModal} className="noscreenshot">
+            <ButtonChange onClick={openModal} className="noscreenshot" id="shareDown">
               <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
                 <path
                   fill="#564d53"
