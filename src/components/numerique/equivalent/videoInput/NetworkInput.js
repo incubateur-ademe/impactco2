@@ -1,30 +1,25 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
-
-import HorizontalRadio from 'components/base/HorizontalRadio'
-import RulesContext from 'components/numerique/RulesProvider'
-import SliderWrapper from 'components/numerique/misc/SliderWrapper'
+import HorizontalRadio from "components/base/HorizontalRadio";
+import RulesContextNumérique from "components/numerique/RulesProviderNumérique";
+import SliderWrapper from "components/numerique/misc/SliderWrapper";
+import React, { useContext } from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-`
+`;
 export default function DeviceInput(props) {
-  const { engine, setSituation } = useContext(RulesContext)
+  const { engine, setSituation } = useContext(RulesContextNumérique);
 
   return (
     <Wrapper>
       <SliderWrapper>
         <SliderWrapper.Label>Type de réseau</SliderWrapper.Label>
         <HorizontalRadio
-          name='network'
-          value={`'${
-            engine.evaluate(props.name + ' . transmission . réseau').nodeValue
-          }'`}
-          onChange={(value) =>
-            setSituation({ [props.name + ' . transmission . réseau']: value })
-          }
+          name="network"
+          value={`'${engine.evaluate(props.name + " . transmission . réseau").nodeValue}'`}
+          onChange={(value) => setSituation({ [props.name + " . transmission . réseau"]: value })}
           options={[
             {
               value: `'fixe FR'`,
@@ -38,5 +33,5 @@ export default function DeviceInput(props) {
         />
       </SliderWrapper>
     </Wrapper>
-  )
+  );
 }

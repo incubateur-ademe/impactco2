@@ -1,13 +1,12 @@
-import React, { useContext } from 'react'
-
-import Slider from 'components/base/Slider'
-import RulesContext from 'components/numerique/RulesProvider'
-import SliderWrapper from 'components/numerique/misc/SliderWrapper'
+import Slider from "components/base/Slider";
+import RulesContextNumérique from "components/numerique/RulesProviderNumérique";
+import SliderWrapper from "components/numerique/misc/SliderWrapper";
+import React, { useContext } from "react";
 
 export default function ParticipantInput(props) {
-  const { engine, setSituation } = useContext(RulesContext)
+  const { engine, setSituation } = useContext(RulesContextNumérique);
 
-  return props.name === 'visio' ? (
+  return props.name === "visio" ? (
     <SliderWrapper>
       <SliderWrapper.Label>Nombre de participants</SliderWrapper.Label>
       <SliderWrapper.Slider>
@@ -21,10 +20,8 @@ export default function ParticipantInput(props) {
             })
           }
         />
-        <SliderWrapper.Value>
-          {engine.evaluate(`${props.name} . emplacements`).nodeValue}
-        </SliderWrapper.Value>
+        <SliderWrapper.Value>{engine.evaluate(`${props.name} . emplacements`).nodeValue}</SliderWrapper.Value>
       </SliderWrapper.Slider>
     </SliderWrapper>
-  ) : null
+  ) : null;
 }

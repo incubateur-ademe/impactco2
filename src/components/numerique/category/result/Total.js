@@ -1,5 +1,5 @@
 import Tile from "components/misc/tiles/Tile";
-import RulesContext from "components/numerique/RulesProvider";
+import RulesContextNumérique from "components/numerique/RulesProviderNumérique";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
@@ -44,7 +44,7 @@ const Tiles = styled.div`
 `;
 
 export default function Total(props) {
-  const { engine, situation } = useContext(RulesContext);
+  const { engine, situation } = useContext(RulesContextNumérique);
 
   const { equivalents } = useContext(DataContext);
 

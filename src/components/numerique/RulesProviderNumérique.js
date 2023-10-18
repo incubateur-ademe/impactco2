@@ -3,9 +3,9 @@ import useSituation from "hooks/useSituation";
 import Engine from "publicodes";
 import React, { useMemo } from "react";
 
-const RulesContext = React.createContext({});
+const RulesContextNumérique = React.createContext({});
 
-export function RulesProvider(props) {
+export function RulesProviderNumérique(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   // @Clemog: We make unit errors silent.
@@ -14,7 +14,7 @@ export function RulesProvider(props) {
   const { situation, setSituation } = useSituation(engine);
 
   return (
-    <RulesContext.Provider
+    <RulesContextNumérique.Provider
       value={{
         engine,
         situation,
@@ -22,8 +22,8 @@ export function RulesProvider(props) {
       }}
     >
       {engine && props.children}
-    </RulesContext.Provider>
+    </RulesContextNumérique.Provider>
   );
 }
 
-export default RulesContext;
+export default RulesContextNumérique;

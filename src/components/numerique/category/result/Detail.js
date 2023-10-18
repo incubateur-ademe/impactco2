@@ -2,7 +2,7 @@ import Checkbox from "components/base/Checkbox";
 import BarChart from "components/charts/BarChart";
 import Instruction from "components/misc/category/Instruction";
 import Top from "components/misc/category/Top";
-import RulesContext from "components/numerique/RulesProvider";
+import RulesContextNumérique from "components/numerique/RulesProviderNumérique";
 import DataContext from "components/providers/DataProvider";
 import React, { useContext, useMemo, useState } from "react";
 import styled from "styled-components";
@@ -25,7 +25,7 @@ const Text = styled.p`
   text-align: center;
 `;
 export default function Detail(props) {
-  const { engine, situation } = useContext(RulesContext);
+  const { engine, situation } = useContext(RulesContextNumérique);
   const { equivalents, categories } = useContext(DataContext);
 
   const [displayAll, setDisplayAll] = useState(false);

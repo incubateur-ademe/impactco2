@@ -1,28 +1,24 @@
-import React, { useContext, useMemo, useState } from 'react'
-import styled from 'styled-components'
-
-import { formatName } from 'utils/formatters'
-
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
-
-import Section from 'components/base/Section'
-import Legend from 'components/charts/Legend'
-import StackedChart from 'components/charts/StackedChart'
-import Detail from 'components/views/equivalent/ecv/Detail'
-
-import RulesContext from './RulesProvider'
-import Wrapper from './Wrapper'
-import Bar from './equivalent/Bar'
-import DeviceInput from './equivalent/DeviceInput'
-import EmailInput from './equivalent/EmailInput'
-import ExpertMode from './equivalent/ExpertMode'
-import VideoInput from './equivalent/VideoInput'
+import RulesContextNumérique from "./RulesProviderNumérique";
+import Wrapper from "./Wrapper";
+import Bar from "./equivalent/Bar";
+import DeviceInput from "./equivalent/DeviceInput";
+import EmailInput from "./equivalent/EmailInput";
+import ExpertMode from "./equivalent/ExpertMode";
+import VideoInput from "./equivalent/VideoInput";
+import Section from "components/base/Section";
+import Legend from "components/charts/Legend";
+import StackedChart from "components/charts/StackedChart";
+import DataContext from "components/providers/DataProvider";
+import ModalContext from "components/providers/ModalProvider";
+import Detail from "components/views/equivalent/ecv/Detail";
+import React, { useContext, useMemo, useState } from "react";
+import styled from "styled-components";
+import { formatName } from "utils/formatters";
 
 export const StyledSection = styled(Section)`
   margin-bottom: 4rem;
-`
-export const Title = styled.h1``
+`;
+export const Title = styled.h1``;
 const Questions = styled.div`
   align-items: stretch;
   display: flex;
@@ -35,49 +31,42 @@ const Questions = styled.div`
   ${(props) => props.theme.mq.medium} {
     flex-direction: column;
   }
-`
+`;
 export default function Simulateur(props) {
-  const { ecv } = useContext(DataContext)
+  const { ecv } = useContext(DataContext);
 
-  const { setEcv } = useContext(ModalContext)
+  const { setEcv } = useContext(ModalContext);
 
-  const { engine, situation } = useContext(RulesContext)
+  const { engine, situation } = useContext(RulesContextNumérique);
 
-  const [construction, setConstruction] = useState(true)
+  const [construction, setConstruction] = useState(true);
 
   const ecvToDisplay = useMemo(
     () =>
       engine && ecv
         ? engine
             .evaluate(props.name)
-            .traversedVariables.filter((variable) =>
-              ecv.find((item) => props.name + item.id === variable)
-            )
-            .filter(
-              (variable) =>
-                construction ||
-                !variable.includes(' . terminaux . construction')
-            )
+            .traversedVariables.filter((variable) => ecv.find((item) => props.name + item.id === variable))
+            .filter((variable) => construction || !variable.includes(" . terminaux . construction"))
             .map((variable) => {
-              const step = ecv.find((item) => props.name + item.id === variable)
+              const step = ecv.find((item) => props.name + item.id === variable);
               return {
                 id: step.name,
                 color: step.color,
                 label: step.name,
                 value: engine.evaluate(variable).nodeValue,
                 onClick: () => setEcv(step.id),
-              }
+              };
             })
         : [],
     [ecv, engine, situation, construction]
-  )
+  );
 
   const total = useMemo(() =>
     construction
       ? engine.evaluate(props.name).nodeValue
-      : engine.evaluate(props.name).nodeValue -
-        engine.evaluate(`${props.name} . terminaux . construction`).nodeValue
-  )
+      : engine.evaluate(props.name).nodeValue - engine.evaluate(`${props.name} . terminaux . construction`).nodeValue
+  );
 
   const questions = useMemo(
     () =>
@@ -89,21 +78,13 @@ export default function Simulateur(props) {
             .filter((rule) => rule.rawNode.question !== undefined)
         : [],
     [engine, situation, props.name]
-  )
+  );
 
   return engine ? (
     <StyledSection>
       <Section.Content>
-        <Wrapper
-          name={formatName(props.equivalent.name, 1, true)}
-          slug={props.equivalent.slug}
-        >
-          <Bar
-            total={total}
-            equivalent={props.equivalent}
-            category={props.category}
-            name={props.name}
-          />
+        <Wrapper name={formatName(props.equivalent.name, 1, true)} slug={props.equivalent.slug}>
+          <Bar total={total} equivalent={props.equivalent} category={props.category} name={props.name} />
           <StackedChart items={ecvToDisplay} total={total} />
           <Legend items={ecvToDisplay} />
           <Detail
@@ -114,43 +95,27 @@ export default function Simulateur(props) {
             total={total / 1000}
           />
           <Questions>
-            {props.name === 'streaming' && (
+            {props.name === "streaming" && (
               <>
-                <DeviceInput
-                  construction={construction}
-                  setConstruction={setConstruction}
-                  name={props.name}
-                />
+                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
                 <VideoInput name={props.name} />
               </>
             )}
-            {props.name === 'visio' && (
+            {props.name === "visio" && (
               <>
-                <DeviceInput
-                  construction={construction}
-                  setConstruction={setConstruction}
-                  name={props.name}
-                />
+                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
                 <VideoInput name={props.name} />
               </>
             )}
-            {props.name === 'email' && (
+            {props.name === "email" && (
               <>
-                <DeviceInput
-                  construction={construction}
-                  setConstruction={setConstruction}
-                  name={props.name}
-                />
+                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
                 <EmailInput name={props.name} />
               </>
             )}
-            {props.name === 'recherche web' && (
+            {props.name === "recherche web" && (
               <>
-                <DeviceInput
-                  construction={construction}
-                  setConstruction={setConstruction}
-                  name={props.name}
-                />
+                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
               </>
             )}
           </Questions>
@@ -158,5 +123,5 @@ export default function Simulateur(props) {
         </Wrapper>
       </Section.Content>
     </StyledSection>
-  ) : null
+  ) : null;
 }

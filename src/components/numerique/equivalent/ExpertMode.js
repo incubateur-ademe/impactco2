@@ -1,10 +1,8 @@
-import React, { useContext, useState } from 'react'
-import styled from 'styled-components'
-
-import ButtonLink from 'components/base/ButtonLink'
-
-import RulesContext from '../RulesProvider'
-import Question from './expertMode/Question'
+import RulesContextNumérique from "../RulesProviderNumérique";
+import Question from "./expertMode/Question";
+import ButtonLink from "components/base/ButtonLink";
+import React, { useContext, useState } from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   align-items: stretch;
@@ -17,21 +15,18 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     flex-direction: column;
   }
-`
+`;
 const StyledButtonLink = styled(ButtonLink)`
   font-size: 0.75rem;
   margin-bottom: 2rem;
-`
+`;
 export default function ExpertMode(props) {
-  const { engine, setSituation } = useContext(RulesContext)
+  const { engine, setSituation } = useContext(RulesContextNumérique);
 
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <>
-      <StyledButtonLink
-        onClick={() => setOpen((prevOpen) => !prevOpen)}
-        className='noscreenshot'
-      >
+      <StyledButtonLink onClick={() => setOpen((prevOpen) => !prevOpen)} className="noscreenshot">
         Voir plus d'options
       </StyledButtonLink>
       {open && (
@@ -48,5 +43,5 @@ export default function ExpertMode(props) {
         </Wrapper>
       )}
     </>
-  )
+  );
 }

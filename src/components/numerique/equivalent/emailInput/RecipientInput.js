@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
-
-import Slider from 'components/base/Slider'
-import RulesContext from 'components/numerique/RulesProvider'
-import SliderWrapper from 'components/numerique/misc/SliderWrapper'
+import Slider from "components/base/Slider";
+import RulesContextNumérique from "components/numerique/RulesProviderNumérique";
+import SliderWrapper from "components/numerique/misc/SliderWrapper";
+import React, { useContext } from "react";
 
 export default function RecipientInput(props) {
-  const { engine, setSituation } = useContext(RulesContext)
+  const { engine, setSituation } = useContext(RulesContextNumérique);
 
   return (
     <SliderWrapper>
@@ -21,10 +20,8 @@ export default function RecipientInput(props) {
             })
           }
         />
-        <SliderWrapper.Value>
-          {engine.evaluate(`${props.name} . destinataires`).nodeValue}
-        </SliderWrapper.Value>
+        <SliderWrapper.Value>{engine.evaluate(`${props.name} . destinataires`).nodeValue}</SliderWrapper.Value>
       </SliderWrapper.Slider>
     </SliderWrapper>
-  )
+  );
 }

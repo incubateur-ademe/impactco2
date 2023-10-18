@@ -1,4 +1,4 @@
-import RulesContext from "../RulesProvider";
+import RulesContextNumérique from "../RulesProviderNumérique";
 import Emoji from "components/base/Emoji";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -68,7 +68,7 @@ const StyledEmoji = styled(Emoji)`
 `;
 
 export default function Bar(props) {
-  const { engine } = useContext(RulesContext);
+  const { engine } = useContext(RulesContextNumérique);
 
   return (
     <Wrapper>

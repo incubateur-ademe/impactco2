@@ -1,7 +1,7 @@
 import DailyUsageInput from "./deviceInput/DailyUsageInput";
 import LifeSpanInput from "./deviceInput/LifespanInput";
 import ButtonLink from "components/base/ButtonLink";
-import RulesContext from "components/numerique/RulesProvider";
+import RulesContextNumérique from "components/numerique/RulesProviderNumérique";
 import ModalContext from "components/providers/ModalProvider";
 import React, { useContext } from "react";
 import { Carousel } from "react-responsive-carousel";
@@ -86,7 +86,7 @@ const StyledButtonLink = styled(ButtonLink)`
   margin: 0 auto;
 `;
 export default function DeviceInput(props) {
-  const { setSituation } = useContext(RulesContext);
+  const { setSituation } = useContext(RulesContextNumérique);
 
   const { setDevices } = useContext(ModalContext);
 
