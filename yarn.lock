@@ -1458,12 +1458,12 @@
   dependencies:
     publicodes "^1.0.0-beta.77"
 
-"@incubateur-ademe/publicodes-negaoctet@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-negaoctet/-/publicodes-negaoctet-0.2.2.tgz#dde17679ded3dd6d10849346fcbfaa14c13db72d"
-  integrity sha512-6cHo2DkHhpeU7bdMVd7tRTsG+V4qTXuUFKLitVGEcBLZdEDx/bRJ0rUlLQJ8vp9CPgQdW39WFYr4VWMeJZNIkg==
+"@incubateur-ademe/publicodes-negaoctet@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-negaoctet/-/publicodes-negaoctet-1.0.1.tgz#e8e5c01e312390a52a2a85c822a8026c63f3aa4c"
+  integrity sha512-IYUhGhMdaTs9M8jEoGsmvRgSuE3WgG+vohM0W8ctxTZVmsSQe+ZU7rMVLr82aQuabaN30pIz6lkoymEsEgtn5g==
   dependencies:
-    publicodes "^1.0.0-beta.71"
+    publicodes "^1.0.0-beta.77"
 
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.2"
@@ -5008,11 +5008,6 @@ publicodes@1.0.0-beta.72:
   version "1.0.0-beta.72"
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.72.tgz#4cc2900a8c2f316b92bf4bae2f8411f6ad235a3a"
   integrity sha512-spk7twEF7c8OOX2grUlLSHUr35YDhSxOAxAlW/RmNtRNDEkTeFzDDLqxtdLWNrIkz0GIKmkVZZaiqantgHR10w==
-
-publicodes@^1.0.0-beta.71:
-  version "1.0.0-beta.76"
-  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.76.tgz#07b740f18f4846aaa70b5a9c83109658c3c010c4"
-  integrity sha512-lnhRD4UIufN/N4T1LcgheEKX4bF6gSCYroE2po1Cfk0kkmgPn+ORKVT2M+HpHeVlTbPFAjVE1p5hL6P3zXUlLQ==
 
 publicodes@^1.0.0-beta.77:
   version "1.0.0-beta.77"
