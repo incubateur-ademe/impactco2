@@ -1451,12 +1451,12 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@incubateur-ademe/publicodes-impact-livraison@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-impact-livraison/-/publicodes-impact-livraison-0.2.0.tgz#e896ebb62a568cadcbdc36e7ad07b6fafb067d9c"
-  integrity sha512-+ynUvJTAqaDf7ew4qFYsbvKZrWz83BK/6ARaLisZkdOpq8B8rMDy4fL+B4LCmEciW6WWy6gMktTMvUK6zAm3uQ==
+"@incubateur-ademe/publicodes-impact-livraison@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-impact-livraison/-/publicodes-impact-livraison-0.2.1.tgz#e32673eb7418523dc26223cf88e6cca0003e4266"
+  integrity sha512-ErSCPgLc1/+Z2vdp1sb+Rc64O75E9DEkePTJCB9RiixnxUx4QuUPtbrDTp9lwClUqqKFef9McbUJ98efB5VRsg==
   dependencies:
-    publicodes "^1.0.0-beta.74"
+    publicodes "^1.0.0-beta.77"
 
 "@incubateur-ademe/publicodes-negaoctet@^0.2.2":
   version "0.2.2"
@@ -5009,10 +5009,15 @@ publicodes@1.0.0-beta.72:
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.72.tgz#4cc2900a8c2f316b92bf4bae2f8411f6ad235a3a"
   integrity sha512-spk7twEF7c8OOX2grUlLSHUr35YDhSxOAxAlW/RmNtRNDEkTeFzDDLqxtdLWNrIkz0GIKmkVZZaiqantgHR10w==
 
-publicodes@^1.0.0-beta.71, publicodes@^1.0.0-beta.74:
+publicodes@^1.0.0-beta.71:
   version "1.0.0-beta.76"
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.76.tgz#07b740f18f4846aaa70b5a9c83109658c3c010c4"
   integrity sha512-lnhRD4UIufN/N4T1LcgheEKX4bF6gSCYroE2po1Cfk0kkmgPn+ORKVT2M+HpHeVlTbPFAjVE1p5hL6P3zXUlLQ==
+
+publicodes@^1.0.0-beta.77:
+  version "1.0.0-beta.77"
+  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.77.tgz#45e3c4d2a46bfadcc932e1405ea037e659c28134"
+  integrity sha512-F8U3WGUWMo3/rxhWYS1gWIiG20g1Yy/+PpXdHM99d6ZHKWnnyh/4txVEuyVE75glgDs+mTjwZPnmoKWsTMXluA==
 
 pump@^3.0.0:
   version "3.0.0"
