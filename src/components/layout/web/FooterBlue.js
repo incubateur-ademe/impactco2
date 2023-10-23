@@ -1,5 +1,5 @@
 import Ademe from "components/base/Ademe";
-import Logo from "components/base/Logo";
+import FooterLogo from "components/base/FooterLogo";
 import Marianne from "components/base/Marianne";
 import Section3 from "components/base/Section3";
 import Link from "next/link";
@@ -18,7 +18,7 @@ export default function FooterBlue(props) {
                 <Logos>
                   <Marianne />
                   <Ademe />
-                  <Logo />
+                  <FooterLogo />
                 </Logos>
               </div>
               <div>
