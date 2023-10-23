@@ -176,6 +176,9 @@ const SmallActionSearch = styled.div`
   position: relative;
   top: 25%;
   width: 282px;
+  ${(props) => props.theme.mq.small} {
+    width: auto;
+  }
   .navSearch {
     display: flex;
     margin-top: 0.5rem;
@@ -184,6 +187,9 @@ const SmallActionSearch = styled.div`
     border-radius: 1rem;
     position: inherit;
     width: 230px;
+    ${(props) => props.theme.mq.small} {
+      width: 100%;
+    }
   }
 `;
 

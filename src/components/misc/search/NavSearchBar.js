@@ -125,6 +125,7 @@ const NavSearch = styled.div`
   width: 300px;
   ${(props) => props.theme.mq.small} {
     display: none;
+    width: 100%;
   }
 `;
 

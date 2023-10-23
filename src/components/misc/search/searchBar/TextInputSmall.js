@@ -11,6 +11,12 @@ const Input = styled.input`
   background-position: 96% 53%;
   background-repeat: no-repeat;
   background-size: 6%;
+  ${(props) => props.theme.mq.small} {
+    background-size: 4%;
+  }
+  ${(props) => props.theme.mq.xsmall} {
+    background-size: 6%;
+  }
   border: none;
   color: ${(props) => props.theme.colors.text};
   font-size: 1em;
