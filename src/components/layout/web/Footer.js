@@ -53,6 +53,9 @@ export default function Footer(props) {
         <Logo />
       </Logos>
       <FooterLink pb={"0"}>
+        <Link href="/plan-du-site">Plan du site</Link>
+      </FooterLink>
+      <FooterLink pb={"0"}>
         <Link href="/accessibilite">Accessibilité : non-conforme</Link>
       </FooterLink>
       <FooterLink pb={"0"}>

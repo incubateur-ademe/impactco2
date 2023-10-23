@@ -44,8 +44,8 @@ export default function MetionsLegales() {
               juridiques.
             </p>
             <h2>Hébergement du site</h2>
-            <p>Netlify</p>
-            <p>44 Montgomery Street, Suite 300, San Francisco, California 94104</p>
+            <p>Scalingo</p>
+            <p>13 rue Jacques Peirotes 67000 Strasbourg, France</p>
             <h2>Attribution</h2>
             <p>Certaines illustrations sont réalisées par Storyset de www.flaticon.com</p>
             <h2>Modification des mentions légales</h2>

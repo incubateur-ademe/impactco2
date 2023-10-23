@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.22.0 (11/10/2023)
+
+* A5.1 - Nouvelle page : plan du site
+
 ## 1.21.2 (11/10/2023)
 
 * U25 - Publicode : ajout du markdown pour rendre le corps de texte lisible

@@ -5,6 +5,7 @@ import Marianne from "components/base/Marianne";
 import useWindow from "hooks/useWindow";
 import React from "react";
 import styled from "styled-components";
+import { buildCurrentUrlFor } from "utils/urls";
 
 const Wrapper = styled.footer`
   align-items: center;
@@ -12,6 +13,7 @@ const Wrapper = styled.footer`
   flex-direction: column;
   justify-content: center;
 `;
+
 const StyledMagicLink = styled(MagicLink)`
   display: block;
   font-size: 0.75rem;
@@ -19,6 +21,7 @@ const StyledMagicLink = styled(MagicLink)`
   margin: 0.75rem auto;
   text-align: center;
 `;
+
 const Logos = styled.div`
   align-items: center;
   display: flex;
@@ -29,18 +32,17 @@ const Logos = styled.div`
     padding: 0 0.25rem;
   }
 `;
+
 export default function IframeFooter() {
   const window = useWindow();
-  const siteUrl = process?.env?.NEXT_PUBLIC_SITE_URL || "impactco2.fr";
-  const protocol = siteUrl.indexOf("localhost") >= 0 ? "http://" : "https://";
-  const baseUrl = `${protocol}${siteUrl}`;
   let actualSrc = window?.location.href.split("iframes")[1] || "";
   if (actualSrc.indexOf("livraison") > 0) {
     actualSrc = "/livraison";
   }
+  let fullUrl = buildCurrentUrlFor(process?.env?.websiteurl, actualSrc);
   return (
     <Wrapper>
-      <StyledMagicLink to={`${baseUrl}${actualSrc}`}>
+      <StyledMagicLink to={fullUrl}>
         Voir la version détaillée
         <br />
         (et les sources)

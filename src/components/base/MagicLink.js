@@ -21,6 +21,7 @@ export default function MagicLink(props) {
       target={props.to.includes(":") || props.to.includes(".") ? "_blank" : "_self"}
       rel="noreferrer noopener"
       aria-label={props["aria-label"]}
+      data-testid="magic-link"
     >
       {props.children}
       {!props.noIcon && <NewTabIcon></NewTabIcon>}
