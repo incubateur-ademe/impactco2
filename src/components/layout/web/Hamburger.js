@@ -29,7 +29,7 @@ const Button = styled.button`
   color: #746770;
   cursor: pointer;
   height: 2rem;
-  padding: ${(props) => (props.opened ? "0" : "1rem")};
+  padding: ${(props) => (props.opened ? "0" : ".9rem 1rem 1rem 1rem")};
   width: 2rem;
 `;
 
