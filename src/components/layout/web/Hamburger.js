@@ -7,6 +7,7 @@ export default function Hamburger(props) {
         onClick={() => {
           props.hamburgerClicked();
         }}
+        opened={props.hamburgerOpened}
       >
         {props.hamburgerOpened ? (
           <>X</>
@@ -27,8 +28,9 @@ const Button = styled.button`
   border-radius: 4px;
   color: #746770;
   cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: 2rem;
+  padding: ${(props) => (props.opened ? "0" : "1rem")};
+  width: 2rem;
 `;
 
 const Rotate = styled.div`
