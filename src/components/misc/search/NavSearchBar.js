@@ -1,33 +1,12 @@
 import Fuse from "../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import Suggestions from "./searchBar/Suggestions";
-import TextInput from "./searchBar/TextInput";
+import TextInputSmall from "./searchBar/TextInputSmall";
 import DataContext from "components/providers/DataProvider";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.form`
-  > input {
-    height: 100%;
-  }
-  ${(props) => props.theme.mq[props.hideon]} {
-    display: none;
-  }
-  border: ${(props) => (props.focus ? `0.125rem solid ${props.theme.colors.main}` : "none")};
-  border-radius: ${(props) => (props.home || props.focus ? " 0.625em" : "4rem")};
-  box-shadow: ${(props) => (props.focus ? "-0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05)" : "none")};
-  cursor: pointer;
-  height: 100%;
-  left: ${(props) => (props.home ? 0 : "auto")};
-  margin-right: ${(props) => (props.focus ? "1rem" : "0")};
-  max-width: ${(props) => (props.focus ? "calc(100vw - 1.5rem)" : "2.75rem")};
-  right: 0;
-  top: 0;
-  width: ${(props) => (props.home ? "auto" : props.focus ? "calc(100vw - 1.5rem)" : "1rem")};
-  z-index: 100;
-`;
-
-export default function SearchBar2(props) {
+export default function NavSearchBar(props) {
   const { equivalents, categories } = useContext(DataContext);
   const [search, setSearch] = useState("");
 
@@ -106,30 +85,70 @@ export default function SearchBar2(props) {
         }
       }}
       className={props.className}
-      hideon={props.hideon}
-      id="header-search"
     >
-      <TextInput
-        placeholder={props.placeholder}
-        ref={input}
-        search={search}
-        focus={focus}
-        suggestion={results[current]}
-        suggestionVisible={focus}
-        setSearch={setSearch}
-        setFocus={setFocus}
-      />
-      {focus && (
-        <Suggestions
-          enabled={search.length > 1}
-          results={results}
-          categories={categories}
-          focus={focus}
-          current={current}
-          setCurrent={setCurrent}
-          handleSuggestionClick={navigateToItem}
-        />
-      )}
+      <NavActions>
+        <NavSearch className="navSearch">
+          <SearchContainer className="searchContainer">
+            <TextInputSmall
+              placeholder={"Rechercher..."}
+              ref={input}
+              search={search}
+              focus={focus}
+              suggestion={results[current]}
+              suggestionVisible={focus}
+              setSearch={setSearch}
+              setFocus={setFocus}
+              hideSubmit={true}
+            />
+            {focus && (
+              <Suggestions
+                enabled={search.length > 1}
+                results={results}
+                categories={categories}
+                focus={focus}
+                current={current}
+                setCurrent={setCurrent}
+                handleSuggestionClick={navigateToItem}
+              />
+            )}
+          </SearchContainer>
+        </NavSearch>
+      </NavActions>
     </Wrapper>
   );
 }
+
+const Wrapper = styled.form``;
+
+const NavSearch = styled.div`
+  position: relative;
+  width: 300px;
+  ${(props) => props.theme.mq.small} {
+    display: none;
+    width: 100%;
+  }
+`;
+
+const NavActions = styled.div`
+  display: flex;
+`;
+
+const SearchContainer = styled.div`
+  background-color: ${(props) => (props.focus ? props.theme.colors.background : "transparent")};
+  border: 1px solid #eae5e8;
+  border-radius: 0.625em;
+  box-shadow: ${(props) =>
+    props.focus ? "0px 4px 10px 0px rgba(0, 17, 51, 0.08)" : "0px 4px 10px 0px rgba(0, 17, 51, 0.04)"};
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  ${(props) => props.theme.mq.small} {
+    border-radius: ${(props) => (props.home || props.focus ? " 0.625em" : "4rem")};
+    left: ${(props) => (props.home ? 0 : "auto")};
+    width: ${(props) => (props.home ? "auto" : props.focus ? "calc(100vw - 1.5rem)" : "2.375rem")};
+  }
+`;

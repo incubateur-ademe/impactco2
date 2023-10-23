@@ -100,10 +100,12 @@ const SkipLinks = styled.div`
   }
 
   .visible-hidden:focus {
+    background-color: white;
     clip: auto;
     height: auto;
     overflow: auto;
     position: absolute;
     width: auto;
+    z-index: 9;
   }
 `;

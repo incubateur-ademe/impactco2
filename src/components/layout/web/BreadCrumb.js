@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   font-weight: 300;
   height: 1.05rem;
   margin-bottom: 1.75rem;
+  margin-top: 1rem;
 `;
 export default function BreadCrumb(props) {
   return (
