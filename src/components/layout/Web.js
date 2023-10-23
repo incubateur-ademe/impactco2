@@ -1,5 +1,5 @@
 import BreadCrumb from "./web/BreadCrumb";
-import Footer from "./web/Footer";
+import FooterBlue from "./web/FooterBlue";
 import HeaderSweet from "./web/HeaderSweet";
 import Seo from "./web/Seo";
 import useInteraction from "hooks/useInteraction";
@@ -36,7 +36,7 @@ export default function Web(props) {
             <BreadCrumb breadcrumb={props.breadcrumb} />
             {props.children}
           </FullScreen>
-          <Footer />
+          <FooterBlue />
         </Content>
       </Wrapper>
     </>
