@@ -1,5 +1,4 @@
-import BreadCrumb from "./web/BreadCrumb";
-
+import BreadCrumb2 from "./web/BreadCrumb2";
 import FooterBlue from "./web/FooterBlue";
 import HeaderSweet from "./web/HeaderSweet";
 import Seo from "./web/Seo";
@@ -34,7 +33,7 @@ export default function Web(props) {
         <Content>
           <FullScreen>
             <HeaderSweet />
-            <BreadCrumb breadcrumb={props.breadcrumb} />
+            <BreadCrumb2 breadcrumb={props.breadcrumb} />
             {props.children}
           </FullScreen>
           <FooterBlue />
