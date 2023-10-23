@@ -1,11 +1,11 @@
 import Section2 from "components/base/Section2";
-import Web from "components/layout/Web";
+import WebBlue from "components/layout/WebBlue";
 import React from "react";
 import styled from "styled-components";
 
 export default function Politique() {
   return (
-    <Web title={"Politique de confidentialité"}>
+    <WebBlue title={"Politique de confidentialité"}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
@@ -28,7 +28,7 @@ export default function Politique() {
           </FormatText>
         </Section2.InnerMargin>
       </Section2>
-    </Web>
+    </WebBlue>
   );
 }
 

@@ -1,4 +1,4 @@
-import Web from "components/layout/Web";
+import WebBlue from "components/layout/WebBlue";
 import Tiles from "components/misc/Tiles";
 import Heading from "components/views/home/Heading";
 import Visualization from "components/views/home/Visualizations";
@@ -6,10 +6,10 @@ import React from "react";
 
 export default function Home() {
   return (
-    <Web title={"Accueil"}>
+    <WebBlue title={"Accueil"}>
       <Heading />
       <Visualization />
       <Tiles background title />
-    </Web>
+    </WebBlue>
   );
 }

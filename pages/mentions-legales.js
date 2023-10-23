@@ -1,12 +1,12 @@
 import Section2 from "components/base/Section2";
-import Web from "components/layout/Web";
+import WebBlue from "components/layout/WebBlue";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
 export default function MetionsLegales() {
   return (
-    <Web title={"Mentions légales"}>
+    <WebBlue title={"Mentions légales"}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
@@ -56,7 +56,7 @@ export default function MetionsLegales() {
           </FormatText>
         </Section2.InnerMargin>
       </Section2>
-    </Web>
+    </WebBlue>
   );
 }
 

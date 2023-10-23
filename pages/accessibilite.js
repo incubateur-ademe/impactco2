@@ -1,18 +1,18 @@
 import Section2 from "components/base/Section2";
-import Web from "components/layout/Web";
+import WebBlue from "components/layout/WebBlue";
 import React from "react";
 import styled from "styled-components";
 
 export default function Accessibilite() {
   return (
-    <Web title={"Accessibilité"}>
+    <WebBlue title={"Accessibilité"}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
             <h1>Déclaration d'accessibilité</h1>
             <h2 id="quest-ce-que-laccessibilité-numérique-">Qu’est-ce que l’accessibilité numérique ?</h2>
             <p>
-              Un site web accessible est un site qui permet à tous les internautes d’accéder à ses contenus sans
+              Un site webBlue accessible est un site qui permet à tous les internautes d’accéder à ses contenus sans
               difficulté, y compris aux personnes qui présentent un handicap et utilisent des logiciels ou matériels
               spécialisés.
             </p>
@@ -27,7 +27,7 @@ export default function Accessibilite() {
             <ul>
               <li>
                 <a
-                  href="https://librairie.ademe.fr/institutionnel/4817-schema-pluriannuel-de-mise-en-accessibilite-des-sites-web-de-l-ademe-2021-2023.html"
+                  href="https://librairie.ademe.fr/institutionnel/4817-schema-pluriannuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe-2021-2023.html"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -36,7 +36,7 @@ export default function Accessibilite() {
               </li>
               <li>
                 <a
-                  href="https://librairie.ademe.fr/institutionnel/6257-plan-annuel-de-mise-en-accessibilite-des-sites-web-de-l-ademe.html"
+                  href="https://librairie.ademe.fr/institutionnel/6257-plan-annuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe.html"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -99,8 +99,8 @@ export default function Accessibilite() {
             </h3>
             <ul>
               <li>
-                Les tests des pages web ont été effectués avec les combinaisons de navigateurs web et lecteurs d’écran
-                suivants : Néant
+                Les tests des pages webBlue ont été effectués avec les combinaisons de navigateurs webBlue et lecteurs
+                d’écran suivants : Néant
               </li>
               <li>Les outils suivants ont été utilisés lors de l’évaluation : Néant</li>
               <li>Pages du site ayant fait l’objet de la vérification de conformité : Néant</li>
@@ -150,7 +150,7 @@ export default function Accessibilite() {
           </FormatText>
         </Section2.InnerMargin>
       </Section2>
-    </Web>
+    </WebBlue>
   );
 }
 

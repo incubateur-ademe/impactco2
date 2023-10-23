@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.23.1 (23/10/2023)
+
+* A5.3 - Nouveau footer sur toutes les pages
+
 ## 1.23.0 (20/10/2023)
 
 * A5.2 - Nouveau header
