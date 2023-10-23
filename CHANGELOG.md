@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.23.2 (23/10/2023)
+
+* A5.4 - Amélioration du fil d'ariane
+
 ## 1.23.1 (23/10/2023)
 
 * A5.3 - Nouveau footer sur toutes les pages
