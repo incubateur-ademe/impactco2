@@ -66,6 +66,21 @@ export default function PlanDuSite() {
               {buildLevel2For("mobilier")}
               {buildLevel2For("electromenager")}
               {buildLevel2For("boisson")}
+              <Level2>
+                <Link href="/documentation" title="Documentation">
+                  Documentation
+                </Link>
+                <Level3>
+                  <Link href="/documentation/livraison-colis" title="Livraison de colis">
+                    Livraison de colis
+                  </Link>
+                </Level3>
+                <Level3>
+                  <Link href="/documentation/livraison-colis-par-avion" title="Livraison de colis par avion">
+                    Livraison de colis par avion
+                  </Link>
+                </Level3>
+              </Level2>
             </Level1>
             <Level1>
               <Link href="/convertisseur" title="Comparateur carbone">
