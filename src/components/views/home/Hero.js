@@ -105,12 +105,28 @@ const Layout = styled.div`
 
 const PictureContainer = styled.div`
   text-align: right;
-  ${(props) => props.theme.mq.xxlarge} {
+  ${(props) => props.theme.mq.medium} {
     display: none;
   }
+  /* > svg {
+    margin-top: -31rem;
+    max-height: 62rem;
+    max-width: 100%;
+  } */
   > svg {
-    margin-top: -12rem;
+    margin-top: -25rem;
     width: 553px;
+    ${(props) => props.theme.mq.xxlarge} {
+      margin-top: -25rem;
+      width: 386px;
+    }
+    ${(props) => props.theme.mq.xlarge} {
+      margin-top: -11rem;
+      width: 309px;
+    }
+  }
+  ${(props) => props.theme.mq.large} {
+    display: none;
   }
 `;
 
