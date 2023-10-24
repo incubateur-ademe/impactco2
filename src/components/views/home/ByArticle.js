@@ -341,13 +341,7 @@ const ReuseCardTag = styled.div`
   background-color: white;
   border-radius: 4px;
   color: #d47909;
-  font-size: 0.75rem;
-  ${(props) => props.theme.mq.large} {
-    font-size: 0.55rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    font-size: 0.75rem;
-  }
+  font-size: 0.8rem;
   font-weight: 700;
   left: 0.5rem;
   letter-spacing: 0em;
