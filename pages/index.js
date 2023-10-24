@@ -1,15 +1,19 @@
 import WebBlue from "components/layout/WebBlue";
-import Tiles from "components/misc/Tiles";
-import Heading from "components/views/home/Heading";
-import Visualization from "components/views/home/Visualizations";
+import ByArticle from "components/views/home/ByArticle";
+import ByOrder from "components/views/home/ByOrder";
+import ByTheme from "components/views/home/ByTheme";
+import Hero from "components/views/home/Hero";
+import NGCCard from "components/views/home/NGCCard";
 import React from "react";
 
 export default function Home() {
   return (
     <WebBlue title={"Accueil"}>
-      <Heading />
-      <Visualization />
-      <Tiles background title />
+      <Hero />
+      <ByTheme />
+      <ByOrder />
+      <ByArticle />
+      <NGCCard />
     </WebBlue>
   );
 }
