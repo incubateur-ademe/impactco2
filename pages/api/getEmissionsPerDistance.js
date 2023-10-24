@@ -1,52 +1,52 @@
-const axios = require("axios");
+const axios = require('axios')
 
-var MatomoTracker = require("matomo-tracker");
+var MatomoTracker = require('matomo-tracker')
 
-var matomo = new MatomoTracker(156, "https://stats.data.gouv.fr/matomo.php");
+var matomo = new MatomoTracker(156, 'https://stats.data.gouv.fr/matomo.php')
 
-var transportations = require("./transportations.json");
+var transportations = require('./transportations.json')
 
 export default async function handler(req, res) {
-  let queryObj = req.query;
+  let queryObj = req.query
 
-  trackMatomoOnce(queryObj.km);
-  trackMatomoTwice(queryObj.km);
+  trackMatomoOnce(queryObj.km)
+  trackMatomoTwice(queryObj.km)
 
-  const km = queryObj.km || 1;
-  const filter = queryObj.filter || (queryObj.transportations ? "all" : "smart");
+  const km = queryObj.km || 1
+  const filter = queryObj.filter || (queryObj.transportations ? 'all' : 'smart')
   const activeTransportations = queryObj.transportations
-    ? queryObj.transportations.split(",").map((id) => Number(id))
-    : [];
+    ? queryObj.transportations.split(',').map((id) => Number(id))
+    : []
 
-  const ignoreRadiativeForcing = queryObj.ignoreRadiativeForcing || false;
-  const fields = (queryObj.fields || "").split(",");
+  const ignoreRadiativeForcing = queryObj.ignoreRadiativeForcing || false
+  const fields = (queryObj.fields || '').split(',')
 
-  const respObj = buildRespObj(transportations, activeTransportations, ignoreRadiativeForcing, filter, km, fields);
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTION");
-  return res.status(200).json(respObj || {});
+  const respObj = buildRespObj(transportations, activeTransportations, ignoreRadiativeForcing, filter, km, fields)
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTION')
+  return res.status(200).json(respObj || {})
 }
 
 function trackMatomoOnce(km) {
-  matomo.track(`https://api.impactco2.fr/beta/getEmissionsPerDistance?km=${km}`);
+  matomo.track(`https://api.impactco2.fr/beta/getEmissionsPerDistance?km=${km}`)
 }
 async function trackMatomoTwice(km) {
-  const genRanHex = (size) => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join("");
+  const genRanHex = (size) => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('')
 
-  const id = genRanHex(16);
-  const rand = genRanHex(16);
+  const id = genRanHex(16)
+  const rand = genRanHex(16)
 
   await axios
     .post(
       `https://stats.data.gouv.fr/matomo.php?idsite=156&rec=1&_id=${id}&rand=${rand}&url=https%3A%2F%2Fapi.impactco2.fr%2Fbeta%2FgetEmissionsPerDistance%3Fkm%3D${km}`
     )
     .then(() => {
-      console.log("tracked successfully");
+      console.log('tracked successfully')
     })
     .catch((error) => {
-      console.log("tracked failed", error);
-    });
+      console.log('tracked failed', error)
+    })
 }
 function buildRespObj(transportations, activeTransportations, ignoreRadiativeForcing, filter, km, fields) {
   return (
@@ -55,7 +55,7 @@ function buildRespObj(transportations, activeTransportations, ignoreRadiativeFor
       .filter((transportation) => transportation.values)
       // Filter transportations via filter parameter
       .filter((transportation) =>
-        filter === "all"
+        filter === 'all'
           ? true
           : //Not set
             ((!transportation.display.min && !transportation.display.max) ||
@@ -75,7 +75,7 @@ function buildRespObj(transportations, activeTransportations, ignoreRadiativeFor
       .map((transportation) => {
         const value = ignoreRadiativeForcing
           ? transportation.values[0].value
-          : transportation.values[0].uncertainty || transportation.values[0].value;
+          : transportation.values[0].uncertainty || transportation.values[0].value
         return {
           ...transportation,
           emissions: {
@@ -83,7 +83,7 @@ function buildRespObj(transportations, activeTransportations, ignoreRadiativeFor
             kgco2e: (value * km) / 1000,
             tco2e: (value * km) / 1000000,
           },
-        };
+        }
       })
       // Set response according to field parameter
       .map((transportation) => {
@@ -91,11 +91,11 @@ function buildRespObj(transportations, activeTransportations, ignoreRadiativeFor
           id: transportation.id,
           name: transportation.label.fr,
           emissions: transportation.emissions,
-        };
-        for (let field of fields) {
-          response[field] = (transportation[field] && transportation[field].fr) || transportation[field];
         }
-        return response;
+        for (let field of fields) {
+          response[field] = (transportation[field] && transportation[field].fr) || transportation[field]
+        }
+        return response
       })
-  );
+  )
 }

@@ -1,60 +1,61 @@
-import { init } from "@socialgouv/matomo-next";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { DataProvider } from "components/providers/DataProvider";
-import { ModalProvider } from "components/providers/ModalProvider";
-import { StyleProvider } from "components/providers/StyleProvider";
-import { NextAdapter } from "next-query-params";
-import React, { useEffect, useState } from "react";
-import { hotjar } from "react-hotjar";
-import styled from "styled-components";
-import { QueryParamProvider } from "use-query-params";
-import "utils/augmenters";
-import "utils/fonts.css";
-import { GlobalStyle } from "utils/styles";
+import { init } from '@socialgouv/matomo-next'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { DataProvider } from 'components/providers/DataProvider'
+import { ModalProvider } from 'components/providers/ModalProvider'
+import { StyleProvider } from 'components/providers/StyleProvider'
+import { NextAdapter } from 'next-query-params'
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import { QueryParamProvider } from 'use-query-params'
+import 'utils/augmenters'
+import 'utils/fonts.css'
+import { GlobalStyle } from 'utils/styles'
 
 function MyApp({ Component, pageProps }) {
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = useState(() => new QueryClient())
 
   useEffect(() => {
-    if (process?.env?.NODE_ENV === "production") {
-      init({ url: "https://stats.data.gouv.fr", siteId: 156 });
+    if (process?.env?.NODE_ENV === 'production') {
+      init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
     }
-    hotjar.initialize(3372162, 6);
+    import('react-hotjar').then((hotjarLib) => {
+      hotjarLib.hotjar.initialize(3372162, 6)
+    })
 
-    if (typeof window !== "undefined" && typeof window.please === "undefined") {
-      window.please = {};
+    if (typeof window !== 'undefined' && typeof window.please === 'undefined') {
+      window.please = {}
       window.please.track = function (ary) {
-        console.log(`Event emitted : ${ary}`);
-        window?._paq?.push(ary);
-      };
+        console.log(`Event emitted : ${ary}`)
+        window?._paq?.push(ary)
+      }
     }
-  }, []);
+  }, [])
 
   return (
     <QueryParamProvider adapter={NextAdapter}>
       <QueryClientProvider client={queryClient}>
         <StyleProvider>
           <SkipLinks>
-            <div className="fr-skiplinks">
-              <nav className="fr-container" role="navigation" aria-label="Accès rapide">
-                <ul className="fr-skiplinks__list">
+            <div className='fr-skiplinks'>
+              <nav className='fr-container' role='navigation' aria-label='Accès rapide'>
+                <ul className='fr-skiplinks__list'>
                   <li>
-                    <a className="fr-link visible-hidden" href="#contenu">
+                    <a className='fr-link visible-hidden' href='#contenu'>
                       Contenu
                     </a>
                   </li>
                   <li>
-                    <a className="fr-link visible-hidden" href="#header-navigation">
+                    <a className='fr-link visible-hidden' href='#header-navigation'>
                       Menu
                     </a>
                   </li>
                   <li>
-                    <a className="fr-link visible-hidden" href="#header-search">
+                    <a className='fr-link visible-hidden' href='#header-search'>
                       Recherche
                     </a>
                   </li>
                   <li>
-                    <a className="fr-link visible-hidden" href="#footer">
+                    <a className='fr-link visible-hidden' href='#footer'>
                       Pied de page
                     </a>
                   </li>
@@ -72,10 +73,10 @@ function MyApp({ Component, pageProps }) {
         </StyleProvider>
       </QueryClientProvider>
     </QueryParamProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
 
 const SkipLinks = styled.div`
   ul {
@@ -108,4 +109,4 @@ const SkipLinks = styled.div`
     width: auto;
     z-index: 9;
   }
-`;
+`
