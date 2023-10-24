@@ -111,20 +111,12 @@ const Layout = styled.div`
 
 const PictureContainer = styled.div`
   text-align: right;
+  ${(props) => props.theme.mq.xxlarge} {
+    display: none;
+  }
   > svg {
     margin-top: -12rem;
     width: 553px;
-    ${(props) => props.theme.mq.xxlarge} {
-      margin-top: -13rem;
-      width: 386px;
-    }
-    ${(props) => props.theme.mq.xlarge} {
-      margin-top: -11rem;
-      width: 309px;
-    }
-  }
-  ${(props) => props.theme.mq.large} {
-    display: none;
   }
 `;
 
@@ -166,6 +158,10 @@ const MiniCard = styled.div`
   ${(props) => props.theme.mq.small} {
     align-items: flex-start;
     flex-direction: column;
+  }
+  margin-bottom: 0;
+  ${(props) => props.theme.mq.xxlarge} {
+    margin-bottom: 4rem;
   }
 `;
 
