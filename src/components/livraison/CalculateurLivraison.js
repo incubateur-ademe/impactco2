@@ -105,7 +105,7 @@ export default function CalculateurLivraison(props) {
             <Flex>
               <H2Title>Estimez l'impact de votre livraison</H2Title>
               <div className="buttons">
-                <ButtonChange onClick={() => setSocial(true)} className="noscreenshot">
+                <ButtonChange onClick={() => setSocial(true)} className="noscreenshot" id="shareUp">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
                     <path
                       fill="#564d53"

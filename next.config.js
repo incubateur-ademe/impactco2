@@ -1,4 +1,15 @@
 var fs = require("fs");
+var execSync = require("child_process").execSync;
+
+const getLocalGitCommitHash = function () {
+  let res = "";
+  try {
+    res = execSync("git rev-parse HEAD").toString().trim();
+  } catch (e) {
+    console.log("Git is not executable here...");
+  }
+  return res;
+};
 
 const getLastVersion = function () {
   let result = "unknown";
@@ -12,18 +23,31 @@ const getLastVersion = function () {
   if (versions && versions.length > 1) {
     // The latest version will be the second match
     result = versions[1];
-    console.log("Latest release version:", result);
   } else {
-    console.log("No release versions found in the CHANGELOG.");
+    result = "No release versions found in the CHANGELOG.";
   }
   return result;
 };
 
-const getBeforeLastSha = function () {
-  let result = "unknown";
-  result = fs.readFileSync("./version.txt", "utf8");
-  console.log("Current name is :", result);
-  return result;
+const buildFullVersionNumber = function () {
+  const semver = getLastVersion();
+  console.log("Current semver version:", semver);
+  return semver;
+};
+
+const buildShortSha = function (scalingoLongSha) {
+  const netlifySha = process.env.COMMIT_REF;
+  const shortSha = getShortSha(scalingoLongSha || netlifySha || getLocalGitCommitHash());
+  console.log("Current shortSha is: ", shortSha);
+  return shortSha;
+};
+
+const getShortSha = function (str) {
+  let res = "";
+  if (typeof str === "string" && str.length > 0) {
+    res = str.substring(0, 7);
+  }
+  return res;
 };
 
 const nextConfig = {
@@ -36,8 +60,8 @@ const nextConfig = {
     defaultLocale: "fr",
   },
   env: {
-    thebuildid: getLastVersion() + "-" + getBeforeLastSha(),
-    customKey: "my-value",
+    thebuildid: buildFullVersionNumber() + "-" + buildShortSha(process.env.SOURCE_VERSION),
+    websiteurl: process.env.WEBSITE_URL,
   },
   async redirects() {
     return [

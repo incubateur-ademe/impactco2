@@ -28,11 +28,17 @@ const FooterLink = styled.div`
   padding-bottom: ${(props) => props.pb || "1rem"};
   text-align: center;
 `;
-export default function Footer() {
+
+const Wrapper = styled.div`
+  margin-top: ${(props) => props.mt || "0"};
+`;
+
+export default function Footer(props) {
   const router = useRouter();
-  const isSimpleFooter = ["/mentions-legales", "/politique-de-confidentialite"].includes(router.pathname);
+  const pathesWithSimpleFooter = ["/mentions-legales", "/politique-de-confidentialite"];
+  const isSimpleFooter = pathesWithSimpleFooter.includes(router.pathname) || props.simple;
   return (
-    <>
+    <Wrapper mt={props.mt}>
       {isSimpleFooter ? (
         <></>
       ) : (
@@ -47,6 +53,9 @@ export default function Footer() {
         <Logo />
       </Logos>
       <FooterLink pb={"0"}>
+        <Link href="/plan-du-site">Plan du site</Link>
+      </FooterLink>
+      <FooterLink pb={"0"}>
         <Link href="/accessibilite">Accessibilité : non-conforme</Link>
       </FooterLink>
       <FooterLink pb={"0"}>
@@ -56,6 +65,6 @@ export default function Footer() {
         <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
       </FooterLink>
       <FooterLink>Version : {process.env.thebuildid}</FooterLink>
-    </>
+    </Wrapper>
   );
 }

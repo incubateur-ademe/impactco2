@@ -21,7 +21,7 @@ module.exports = [
     },
     plugins: [
       new webpack.DefinePlugin({
-        WEBPACK_SITE_URL: `'${process.env.NEXT_PUBLIC_SITE_URL}'`,
+        WEBPACK_SITE_URL: `'${process.env.WEBSITE_URL}'`,
       }),
     ],
   },

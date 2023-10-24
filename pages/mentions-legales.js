@@ -1,12 +1,12 @@
 import Section2 from "components/base/Section2";
-import Web from "components/layout/Web";
+import WebBlue from "components/layout/WebBlue";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
 export default function MetionsLegales() {
   return (
-    <Web title={"Mentions légales"}>
+    <WebBlue title={"Mentions légales"}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
@@ -44,8 +44,8 @@ export default function MetionsLegales() {
               juridiques.
             </p>
             <h2>Hébergement du site</h2>
-            <p>Netlify</p>
-            <p>44 Montgomery Street, Suite 300, San Francisco, California 94104</p>
+            <p>Scalingo</p>
+            <p>13 rue Jacques Peirotes 67000 Strasbourg, France</p>
             <h2>Attribution</h2>
             <p>Certaines illustrations sont réalisées par Storyset de www.flaticon.com</p>
             <h2>Modification des mentions légales</h2>
@@ -56,7 +56,7 @@ export default function MetionsLegales() {
           </FormatText>
         </Section2.InnerMargin>
       </Section2>
-    </Web>
+    </WebBlue>
   );
 }
 

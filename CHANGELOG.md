@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## 1.23.2 (23/10/2023)
+
+* A5.4 - Amélioration du fil d'ariane
+
+## 1.23.1 (23/10/2023)
+
+* A5.3 - Nouveau footer sur toutes les pages
+
+## 1.23.0 (20/10/2023)
+
+* A5.2 - Nouveau header
+
+## 1.22.0 (11/10/2023)
+
+* A5.1 - Nouvelle page : plan du site
+
+## 1.21.2 (11/10/2023)
+
+* U25 - Publicode : ajout du markdown pour rendre le corps de texte lisible
+
+## 1.21.1 (10/10/2023)
+
+* B15 - Livraison : bug dans l'URL de partage
+
+## 1.21.0 (05/10/2023)
+
+* U28 - Un seul bouton pour modifier les équivalences de la livraison
+
 ## 1.20.11 (04/10/2023)
 
 * Userver - Modifications pré-migration Scalingo

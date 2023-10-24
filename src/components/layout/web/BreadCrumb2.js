@@ -9,11 +9,11 @@ const Wrapper = styled.div`
   font-weight: 400;
   height: 3.05rem;
   margin-bottom: 1rem;
-  margin-top: 1rem;
-  padding: 1rem;
+  margin-top: 0.5rem;
+  padding: 1rem 1rem 1rem 0;
 `;
 export default function BreadCrumb2(props) {
-  const naming = props.breadcrumb.category.breadcrumb || props.breadcrumb.category.name;
+  const naming = props?.breadcrumb?.category?.breadcrumb || props?.breadcrumb?.category?.name;
 
   return (
     <Section2>
@@ -22,7 +22,7 @@ export default function BreadCrumb2(props) {
           <Wrapper>
             {props.breadcrumb && props.breadcrumb.type === "equivalent" && (
               <>
-                <MagicLink to="/categories">Catégories</MagicLink>
+                <MagicLink to="/categories">Thématique</MagicLink>
                 {" > "}{" "}
                 {props.breadcrumb.equivalent ? (
                   <>
