@@ -105,9 +105,8 @@ const Separator = styled.div`
 const CtaContainer = styled.div`
   margin-left: auto;
   margin-right: 2rem;
-  ${(props) => props.theme.mq.large} {
+  ${(props) => props.theme.mq.xlarge} {
     font-size: 0.875rem;
-    margin-left: 0;
     margin-top: 1.5rem;
   }
   > a {

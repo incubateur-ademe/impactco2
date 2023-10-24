@@ -121,7 +121,7 @@ const PictureContainer = styled.div`
       width: 386px;
     }
     ${(props) => props.theme.mq.xlarge} {
-      margin-top: -11rem;
+      margin-top: -26rem;
       width: 309px;
     }
   }
