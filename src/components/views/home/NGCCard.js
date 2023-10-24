@@ -78,8 +78,8 @@ const FlexLine2 = styled.div`
     display: none;
   }
   > svg {
-    border-bottom-right-radius: 14px;
-    border-top-right-radius: 14px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
     height: 100%;
   }
 `;

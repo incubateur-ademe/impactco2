@@ -108,11 +108,6 @@ const PictureContainer = styled.div`
   ${(props) => props.theme.mq.medium} {
     display: none;
   }
-  /* > svg {
-    margin-top: -31rem;
-    max-height: 62rem;
-    max-width: 100%;
-  } */
   > svg {
     margin-top: -25rem;
     width: 553px;
