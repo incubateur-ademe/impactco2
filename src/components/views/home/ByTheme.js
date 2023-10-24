@@ -73,7 +73,7 @@ const Wrapper = styled.div`
   padding: 6rem 0;
   ${(props) => props.theme.mq.large} {
     margin-top: -23rem;
-    margin-top: 1rem;
+    margin-top: -1rem;
     padding: 1rem 0;
   }
 `;
