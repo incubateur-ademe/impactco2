@@ -123,10 +123,10 @@ export default function ByArticle() {
                   <WinkWinkLeft>
                     <ChtingLeft />
                   </WinkWinkLeft>
-                  {buildReuseCardFor("twomorrow")}
-                  {buildReuseCardFor("yami")}
-                  {buildReuseCardFor("teamfortheplanet")}
-                  {buildReuseCardFor("greengo")}
+                  {buildReuseCardFor("card_1")}
+                  {buildReuseCardFor("card_2")}
+                  {buildReuseCardFor("card_3")}
+                  {buildReuseCardFor("card_4")}
                   <WinkWinkRight>
                     <ChtingRight />
                   </WinkWinkRight>

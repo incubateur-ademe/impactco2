@@ -59,12 +59,6 @@ const H1Title = styled.div`
   ${(props) => props.theme.mq.xlarge} {
     font-size: 1.75rem;
   }
-  ${(props) => props.theme.mq.large} {
-    font-size: 2.25rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    font-size: 1.75rem;
-  }
   ${(props) => props.theme.mq.small} {
     font-size: 1.5rem;
     line-height: 2.25rem;
