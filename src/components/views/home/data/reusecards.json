@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "twomorrow",
+    "tagtext": "TWOMORROW",
+    "color": "#e6f2e6",
+    "img": "/images/twomorrow.png",
+    "link": "https://www.instagram.com/p/Ct_Hqn1rF9e/?igshid=NTc4MTIwNjQ2YQ%3D%3D",
+    "title": "6 simulateurs pour calculer ton impact écolo",
+    "paragraph": "Empreinte hydrique, écologique, numérique, financière… Tu pourras tout calculer avec ce post ! 🤓"
+  },
+  {
+    "slug": "yami",
+    "tagtext": "YAMI",
+    "color": "#e4b47f",
+    "img": "/images/yami.png",
+    "link": "https://www.tf1info.fr/environnement-ecologie/alimentation-transports-ecrans-ces-gestes-du-quotidien-qui-peuvent-aider-a-sauver-la-planete-2269524.html",
+    "title": "Nos éco-gestes individuels",
+    "paragraph": "Face au réchauffement climatique, agir individuellement est essentiel..."
+  },
+  {
+    "slug": "teamfortheplanet",
+    "tagtext": "TEAM FOR THE PLANET",
+    "color": "black",
+    "img": "/images/team.png",
+    "link": "https://www.linkedin.com/posts/tftp_une-vie-enti%C3%A8re-denvoi-demails-ne-suffirait-activity-7109071360856895488-q5H0/?utm_source=share&utm_medium=member_desktop",
+    "title": "1 tonne de CO2, ça correspond à quoi ?",
+    "paragraph": "C’est quoi le point commun entre faire 10 fois le tour de la Terre en train et acheter 2 lave-vaisselles ?"
+  },
+  {
+    "slug": "greengo",
+    "tagtext": "GREEN GO",
+    "color": "#ffdc9e",
+    "img": "/images/train.png",
+    "link": "https://www.sogoodfestival.com/infos-pratiques",
+    "title": "Comparez l’impact carbone de votre voyage !",
+    "paragraph": "Empreinte hydrique, écologique, numérique, financière… Tu pourras tout calculer avec ce post ! 🤓"
+  }
+]
