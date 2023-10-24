@@ -275,7 +275,7 @@ const ReuseGrid = styled.div`
   position: relative;
 `;
 
-const ReuseCard = styled.a`
+const ReuseCard = styled.div`
   background-color: white;
   border-color: #ccdcfd;
   border-radius: 16px;
@@ -288,7 +288,7 @@ const ReuseCardImg = styled.div`
   background: url(${(props) => props.img});
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
   height: 8rem;
@@ -296,27 +296,38 @@ const ReuseCardImg = styled.div`
 `;
 const ReuseCardTxt = styled.div`
   font-size: 1rem;
-  height: 14rem;
+  height: 20rem;
   ${(props) => props.theme.mq.xlarge} {
-    height: 18rem;
+    height: 21rem;
   }
   ${(props) => props.theme.mq.large} {
-    height: 23rem;
+    height: 11rem;
   }
   ${(props) => props.theme.mq.medium} {
-    height: 10rem;
-  }
-  ${(props) => props.theme.mq.small} {
     height: 12rem;
   }
+  ${(props) => props.theme.mq.small} {
+    height: 10rem;
+  }
   ${(props) => props.theme.mq.xsmall} {
-    height: 13rem;
+    height: 15rem;
   }
   padding: 1rem;
 `;
 const ReuseCardTitle = styled.div`
   font-size: 1rem;
-  margin-top: 1rem;
+  height: 5.5rem;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  ${(props) => props.theme.mq.xlarge} {
+    height: 5rem;
+  }
+  ${(props) => props.theme.mq.large} {
+    height: 2.5rem;
+  }
+  ${(props) => props.theme.mq.xsmall} {
+    height: 3.5rem;
+  }
 `;
 const ReuseCardParagraph = styled.div`
   ${(props) => props.theme.mq.small} {
@@ -348,7 +359,7 @@ const ReuseCardTag = styled.div`
 `;
 
 const ReuseCardWrapper = styled.div`
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.large} {
     margin: 1rem;
   }
   a {
@@ -362,10 +373,10 @@ const ReuseCardWrapper = styled.div`
       }
     }
   }
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.large} {
     grid-column: span 3/4;
   }
-  ${(props) => props.theme.mq.xsmall} {
+  ${(props) => props.theme.mq.small} {
     grid-column: none;
   }
 `;
@@ -378,7 +389,7 @@ const ReuseCardImgContainer = styled.div`
 
 const WinkWink = styled.div`
   position: absolute;
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.large} {
     display: none;
   }
 `;
