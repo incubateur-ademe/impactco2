@@ -1,7 +1,7 @@
 import Markdown from "./Markdown";
 import Section2 from "components/base/Section2";
 import BreadCrumb3 from "components/layout/web/BreadCrumb3";
-import Footer from "components/layout/web/Footer";
+import FooterBlue from "components/layout/web/FooterBlue";
 import HeaderSweet from "components/layout/web/HeaderSweet";
 import Seo from "components/layout/web/Seo";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
@@ -36,7 +36,10 @@ export default function DocumentationLivraison(props) {
           </DocWrapper>
         </Section2.InnerMargin>
       </Section2>
-      <Footer simple={true} mt={"3rem"} />
+      <br />
+      <br />
+      <br />
+      <FooterBlue />
     </VerticalContainer>
   );
 }

@@ -64,11 +64,11 @@ export default function ByArticle() {
                         >
                           kit de diffusion
                         </Link>
-                        , pensé pour vous épauler dans la rédaction de vos contenusen lien avec l’impact carbone.
+                        , pensé pour vous épauler dans la rédaction de vos contenus en lien avec l’impact carbone.
                       </MiddleLi>
                       <MiddleLi>
-                        <Link href="/convertisseur">Configurez et personnalisez</Link> le simulateur de votre choix
-                        grâce à une intégration
+                        <Link href="/integration">Configurez et personnalisez</Link> le simulateur de votre choix grâce
+                        à une intégration
                       </MiddleLi>
                       <MiddleLi>
                         Inspirez-vous d'
@@ -106,8 +106,12 @@ export default function ByArticle() {
                         </Link>{" "}
                         pour trouver des éléments de réponse pertinents.
                       </MiddleLi>
-                      <MiddleLi>Gagnez du temps et laissez-vous guider pour l’intégration de nos ressources.</MiddleLi>
-                      <MiddleLi>Échangez avec l’équipe sur vos besoins spécifiques d’intégration.</MiddleLi>
+                      <MiddleLi>
+                        Gagnez du temps et laissez-vous guider pour <strong>l’intégration de nos ressources</strong>.
+                      </MiddleLi>
+                      <MiddleLi>
+                        Échangez avec l’équipe sur vos <strong>besoins spécifiques d’intégration</strong>.
+                      </MiddleLi>
                     </MiddleUl>
                     <MiddleRightCta>
                       <Link href="https://tally.so/r/nrOv5N" rel="noreferrer noopener">

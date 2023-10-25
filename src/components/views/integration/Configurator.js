@@ -7,7 +7,7 @@ import { formatName } from "utils/formatters";
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0;
   max-width: 73.5rem;
   padding: 2rem;
 
