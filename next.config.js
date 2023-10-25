@@ -1,5 +1,7 @@
-var fs = require('fs')
-var execSync = require('child_process').execSync
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { withSentryConfig } = require('@sentry/nextjs')
+const { execSync } = require('child_process')
+const { readFileSync } = require('fs')
 
 const getLocalGitCommitHash = function () {
   let res = ''
@@ -13,7 +15,7 @@ const getLocalGitCommitHash = function () {
 
 const getLastVersion = function () {
   let result = 'unknown'
-  const data = fs.readFileSync('./CHANGELOG.md', 'utf8')
+  const data = readFileSync('./CHANGELOG.md', 'utf8')
   // Define the regular expression pattern to match version numbers
   const versionPattern = /^##\s\[?(\d+\.\d+\.\d+)\]?(?:.*?)$/m
 
@@ -63,6 +65,14 @@ const nextConfig = {
     thebuildid: buildFullVersionNumber() + '-' + buildShortSha(process.env.SOURCE_VERSION),
     websiteurl: process.env.WEBSITE_URL,
   },
+  // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+  sentry: {
+    autoInstrumentServerFunctions: true,
+    autoInstrumentMiddleware: true,
+    tunnelRoute: '/monitoring',
+    widenClientFileUpload: true,
+    hideSourceMaps: true,
+  },
   async redirects() {
     return [
       {
@@ -106,4 +116,10 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+// For all available options, see:
+// https://github.com/getsentry/sentry-webpack-plugin#options.
+const sentryWebpackPluginOptions = {
+  silent: true, // Suppresses all logs
+}
+
+module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)

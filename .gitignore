@@ -48,3 +48,6 @@ cypress/results/
 # Local Netlify folder
 .netlify
 
+
+# Sentry Config File
+.sentryclirc
