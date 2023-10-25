@@ -2,14 +2,13 @@ import Markdown from "./Markdown";
 import Section2 from "components/base/Section2";
 import BreadCrumb3 from "components/layout/web/BreadCrumb3";
 import Footer from "components/layout/web/Footer";
-import Header from "components/layout/web/Header";
-import Nav from "components/layout/web/Nav";
+import HeaderSweet from "components/layout/web/HeaderSweet";
 import Seo from "components/layout/web/Seo";
 import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
 import Head from "next/head";
 import Link from "next/link";
 import { RulePage } from "publicodes-react";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 
 export default function DocumentationLivraison(props) {
@@ -18,8 +17,7 @@ export default function DocumentationLivraison(props) {
   return (
     <VerticalContainer className={props.theme === "night" ? "bl" : "r"}>
       <Seo title={props.title} description={"Documentation de l'impact de la livraison"} image={"metalivraison.png"} />
-      <Header />
-      <Nav />
+      <HeaderSweet />
       <BreadCrumb3></BreadCrumb3>
       <Section2>
         <Section2.InnerMargin>
