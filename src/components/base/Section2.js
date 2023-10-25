@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Section2 = styled.div``;
+const Section2 = styled.section``;
 
 Section2.WideContent = styled.div`
   ${(props) => props.theme.mq.medium} {

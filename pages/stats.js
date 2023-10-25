@@ -1,3 +1,4 @@
+import OutboundLink from "components/base/OutboundLink";
 import Section2 from "components/base/Section2";
 import WebBlue from "components/layout/WebBlue";
 import React from "react";
@@ -11,7 +12,11 @@ export default function Statistiques() {
           <FormatText>
             <h1>Statistiques</h1>
             <h2>Information</h2>
-            <p>Cette page est en cours de développement, merci pour votre patience!</p>
+            <p>
+              <OutboundLink href="https://stats.data.gouv.fr/index.php?module=CoreHome&action=index&date=yesterday&period=week&idSite=156#?idSite=156&period=week&date=yesterday&category=Dashboard_Dashboard&subcategory=6">
+                Découvrez les statistiques du site Impact CO2 sur le tableau de bord de notre outil de suivi Matomo
+              </OutboundLink>
+            </p>
           </FormatText>
         </Section2.InnerMargin>
       </Section2>
@@ -20,8 +25,10 @@ export default function Statistiques() {
 }
 
 const FormatText = styled.div`
+  margin-bottom: 5rem;
   h1 {
     font-size: 3rem;
+    margin-top: 3rem;
   }
   > h2 {
     margin-top: 3rem;

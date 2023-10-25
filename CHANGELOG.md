@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.24.1 (25/10/2023)
+
+* U45 - Documentation avec nouveau header et footer
+
+## 1.24.0 (24/10/2023)
+
+* UH1 - Nouvelle Home
+
 ## 1.23.2 (23/10/2023)
 
 * A5.4 - Amélioration du fil d'ariane

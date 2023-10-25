@@ -45,7 +45,7 @@ export default function PlanDuSite() {
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
-            <h1>Plan du site</h1>
+            <H1Title>Plan du site</H1Title>
             <Level1>
               <Link href="/" title="Page d'accueil">
                 Page d'accueil
@@ -187,4 +187,8 @@ const Level3 = styled.div`
 
 const Subtitle = styled.span`
   font-weight: 300;
+`;
+
+const H1Title = styled.h1`
+  margin-top: 3rem;
 `;
