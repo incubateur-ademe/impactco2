@@ -5,6 +5,19 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: impactco2
+          POSTGRES_PASSWORD: impactco2
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -19,6 +32,8 @@ jobs:
         run: yarn lint
       - name: Run build
         run: yarn build
+      - name: Migrate db
+        run: yarn prisma migrate deploy
       - name: Start server
         run: yarn start &
       - name: Unit tests => with Jest

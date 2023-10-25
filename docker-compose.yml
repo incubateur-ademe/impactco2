@@ -1,0 +1,9 @@
+version: '3'
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: impactco2
+      POSTGRES_PASSWORD: impactco2
+    ports:
+      - '5432:5432'

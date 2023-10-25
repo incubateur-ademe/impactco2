@@ -1,6 +1,6 @@
-const axios = require('axios')
+import axios from 'axios'
+import fs from 'fs'
 
-const fs = require('fs')
 let rawdata = fs.readFileSync('src/data/categories/fruitsetlegumes.json')
 let fruitsetlegumes = JSON.parse(rawdata)
 

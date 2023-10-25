@@ -1,10 +1,8 @@
-const axios = require('axios')
-
-var MatomoTracker = require('matomo-tracker')
+import axios from 'axios'
+import MatomoTracker from 'matomo-tracker'
+import transportations from './transportations.json'
 
 var matomo = new MatomoTracker(156, 'https://stats.data.gouv.fr/matomo.php')
-
-var transportations = require('./transportations.json')
 
 export default async function handler(req, res) {
   let queryObj = req.query

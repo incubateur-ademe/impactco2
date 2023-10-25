@@ -5,14 +5,23 @@
     "next",
     "prettier",
     "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "next/core-web-vitals"
   ],
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "react/no-unescaped-entities": "off",
     "no-irregular-whitespace": "off",
     "better-styled-components/sort-declarations-alphabetically": 2
   },
-  "plugins": ["prettier", "better-styled-components", "styled-components-a11y", "jest"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "better-styled-components",
+    "styled-components-a11y",
+    "jest"
+  ],
   "env": {
     "browser": true,
     "es2022": true,

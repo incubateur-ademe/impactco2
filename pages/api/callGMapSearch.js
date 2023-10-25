@@ -1,5 +1,5 @@
-const axios = require('axios')
-const countries = require('./countries.json')
+import axios from 'axios'
+import countries from './countries.json'
 
 export default async function handler(req, res) {
   let query = req.query

@@ -1,6 +1,6 @@
-const axios = require('axios')
+import axios from 'axios'
+import fs from 'fs'
 
-const fs = require('fs')
 let rawdata = fs.readFileSync('src/data/categories/boisson.json')
 let rawboissons = JSON.parse(rawdata)
 let boissons = rawboissons.filter((e) => !!e?.Code_CIQUAL)
