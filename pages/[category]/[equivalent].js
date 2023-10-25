@@ -65,11 +65,20 @@ export async function getStaticPaths() {
     fallback: 'blocking',
   }
 }
+
 export async function getStaticProps({ params }) {
+  const category = categories?.find((category) => category.slug === params.category)
+  if (!category) {
+    return { notFound: true }
+  }
+  const equivalent = equivalents.find((equivalent) => equivalent.slug === params.equivalent)
+  if (!equivalent) {
+    return { notFound: true }
+  }
   return {
     props: {
-      equivalent: equivalents.find((equivalent) => equivalent.slug === params.equivalent),
-      category: categories.find((category) => category.slug === params.category),
+      category,
+      equivalent,
     },
   }
 }

@@ -50,9 +50,13 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps({ params }) {
+  const category = categories?.find((category) => category.slug === params.category)
+  if (!category) {
+    return { notFound: true }
+  }
   return {
     props: {
-      category: categories?.find((category) => category.slug === params.category),
+      category,
     },
   }
 }
