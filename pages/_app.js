@@ -17,10 +17,11 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (process?.env?.NODE_ENV === 'production') {
       init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
+
+      import('react-hotjar').then((hotjarLib) => {
+        hotjarLib.hotjar.initialize(3372162, 6)
+      })
     }
-    import('react-hotjar').then((hotjarLib) => {
-      hotjarLib.hotjar.initialize(3372162, 6)
-    })
 
     if (typeof window !== 'undefined' && typeof window.please === 'undefined') {
       window.please = {}
