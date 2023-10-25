@@ -20,8 +20,6 @@ export default function Documentation() {
               </li>
             </ul>
           </FormatText>
-          <br></br>
-          <br></br>
         </Section2.InnerMargin>
       </Section2>
     </WebBlue>
@@ -29,8 +27,10 @@ export default function Documentation() {
 }
 
 const FormatText = styled.div`
+  margin-bottom: 10rem;
   h1 {
     font-size: 3rem;
+    margin-top: 3rem;
   }
   > h2 {
     margin-top: 3rem;

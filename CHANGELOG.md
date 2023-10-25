@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.1 (25/10/2023)
+
+* U45 - Documentation avec nouveau header et footer
+
 ## 1.24.0 (24/10/2023)
 
 * UH1 - Nouvelle Home
