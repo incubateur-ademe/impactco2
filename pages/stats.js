@@ -22,6 +22,7 @@ export default function Statistiques() {
 const FormatText = styled.div`
   h1 {
     font-size: 3rem;
+    margin-top: 3rem;
   }
   > h2 {
     margin-top: 3rem;

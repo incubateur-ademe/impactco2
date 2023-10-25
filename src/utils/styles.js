@@ -44,6 +44,7 @@ export const themes = {
       medium: `@media screen and (max-width: ${48}em)`,
       large: `@media screen and (max-width: ${60}em)`,
       xlarge: `@media screen and (max-width: ${72}em)`,
+      xxlarge: `@media screen and (max-width: ${90}em)`, // 1440px
     },
   },
   night: {

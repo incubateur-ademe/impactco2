@@ -1,0 +1,36 @@
+[
+  {
+    "slug": "smartphone",
+    "text": "smartphone",
+    "value": 1
+  },
+  {
+    "slug": "voiturethermique",
+    "text": "en voiture",
+    "value": 143,
+    "unit": "km"
+  },
+  {
+    "slug": "velo",
+    "text": "en vélo (ou trotinette)",
+    "value": 2903,
+    "unit": "km"
+  },
+  {
+    "slug": "chemiseencoton",
+    "text": "chemises (en coton)",
+    "value": "2,4"
+  },
+  {
+    "slug": "soda",
+    "text": "de soda",
+    "value": 61,
+    "unit": "litres"
+  },
+  {
+    "slug": "tomate",
+    "text": "de tomates",
+    "value": 53,
+    "unit": "kg"
+  }
+]

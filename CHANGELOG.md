@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.0 (24/10/2023)
+
+* UH1 - Nouvelle Home
+
 ## 1.23.2 (23/10/2023)
 
 * A5.4 - Amélioration du fil d'ariane

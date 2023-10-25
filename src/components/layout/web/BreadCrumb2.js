@@ -16,28 +16,34 @@ export default function BreadCrumb2(props) {
   const naming = props?.breadcrumb?.category?.breadcrumb || props?.breadcrumb?.category?.name;
 
   return (
-    <Section2>
-      <Section2.InnerMargin>
-        <nav aria-label="fil d'ariane">
-          <Wrapper>
-            {props.breadcrumb && props.breadcrumb.type === "equivalent" && (
-              <>
-                <MagicLink to="/categories">Thématique</MagicLink>
-                {" > "}{" "}
-                {props.breadcrumb.equivalent ? (
+    <>
+      {props?.breadcrumb ? (
+        <Section2>
+          <Section2.InnerMargin>
+            <nav aria-label="fil d'ariane">
+              <Wrapper>
+                {props.breadcrumb && props.breadcrumb.type === "equivalent" && (
                   <>
-                    <MagicLink to={`/${props.breadcrumb.category.slug}`}>{naming}</MagicLink>
-                    {" > "}
-                    {formatName(naming, 1, true)}
+                    <MagicLink to="/categories">Thématique</MagicLink>
+                    {" > "}{" "}
+                    {props.breadcrumb.equivalent ? (
+                      <>
+                        <MagicLink to={`/${props.breadcrumb.category.slug}`}>{naming}</MagicLink>
+                        {" > "}
+                        {formatName(naming, 1, true)}
+                      </>
+                    ) : (
+                      naming
+                    )}
                   </>
-                ) : (
-                  naming
                 )}
-              </>
-            )}
-          </Wrapper>
-        </nav>
-      </Section2.InnerMargin>
-    </Section2>
+              </Wrapper>
+            </nav>
+          </Section2.InnerMargin>
+        </Section2>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }

@@ -45,7 +45,7 @@ export default function PlanDuSite() {
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
-            <h1>Plan du site</h1>
+            <H1Title>Plan du site</H1Title>
             <Level1>
               <Link href="/" title="Page d'accueil">
                 Page d'accueil
@@ -66,21 +66,6 @@ export default function PlanDuSite() {
               {buildLevel2For("mobilier")}
               {buildLevel2For("electromenager")}
               {buildLevel2For("boisson")}
-              <Level2>
-                <Link href="/documentation" title="Documentation">
-                  Documentation
-                </Link>
-                <Level3>
-                  <Link href="/documentation/livraison-colis" title="Livraison de colis">
-                    Livraison de colis
-                  </Link>
-                </Level3>
-                <Level3>
-                  <Link href="/documentation/livraison-colis-par-avion" title="Livraison de colis par avion">
-                    Livraison de colis par avion
-                  </Link>
-                </Level3>
-              </Level2>
             </Level1>
             <Level1>
               <Link href="/convertisseur" title="Comparateur carbone">
@@ -187,4 +172,8 @@ const Level3 = styled.div`
 
 const Subtitle = styled.span`
   font-weight: 300;
+`;
+
+const H1Title = styled.h1`
+  margin-top: 3rem;
 `;
