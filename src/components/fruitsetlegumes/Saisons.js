@@ -1,4 +1,3 @@
-import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import List from "./saisons/List";
 import Search from "./saisons/Search";
 import Wrapper from "./saisons/Wrapper";
@@ -9,6 +8,7 @@ import Description from "components/misc/category/Description";
 import Instruction from "components/misc/category/Instruction";
 import Top from "components/misc/category/Top";
 import DataContext from "components/providers/DataProvider";
+import Fuse from "fuse.js";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { formatName, formatTotal } from "utils/formatters";

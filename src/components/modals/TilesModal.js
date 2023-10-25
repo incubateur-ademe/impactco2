@@ -1,10 +1,10 @@
-import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import Equivalent from "./tilesModal/Equivalent";
 import Button from "components/base/Button";
 import Modal from "components/base/Modal";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
+import Fuse from "fuse.js";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
