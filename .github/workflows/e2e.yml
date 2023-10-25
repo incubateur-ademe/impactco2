@@ -11,6 +11,8 @@ jobs:
         with:
           node-version: 20
           cache: 'yarn'
+      - name: Copy .env
+        run: cp .env.dist .env
       - name: Install dependencies
         run: yarn
       - name: Linter
