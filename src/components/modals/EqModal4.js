@@ -39,9 +39,8 @@ export default function EqModal4() {
     setOpen(false);
   };
 
-  console.log("------------open", open);
   return (
-    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="55rem">
+    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="55rem" data-testid="eqs_modal">
       <Intro data-testid="intro">
         {!eqvError ? (
           <>Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.</>
