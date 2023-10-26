@@ -9,6 +9,9 @@ import { StyleProvider } from "components/providers/StyleProvider";
 describe("EqModal4", () => {
   it("renders a Modal to change equivalences", () => {
     const { methods } = localStorageImpl.register();
+    // renderWithWrapper(
+    //   <EqModal4 open={true}/>
+    // )
     render(
       <DataProvider>
         <StyleProvider>

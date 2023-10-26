@@ -5,7 +5,6 @@ import React, { useContext } from "react";
 
 export default function DetailsUsagesNumModal() {
   const { hypothesis: open, setHypothesis: setOpen } = useContext(ModalContext);
-  console.log("-------------open", open);
   return (
     <>
       {!open ? (
