@@ -36,7 +36,7 @@ export default function ActualChoices() {
   return (
     <Wrapper>
       <SelectionBox>
-        <UpperSide>
+        <UpperSide data-testid="eqs_selected">
           <UpperSideCounting>
             <Count>{eqvArray.length}</Count>/<MaxCount>3</MaxCount>
           </UpperSideCounting>{" "}

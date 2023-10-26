@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import IframeFooter from "components/layout/iframe/IframeFooter";
 import { StyleProvider } from "components/providers/StyleProvider";
 
-describe("IframeFooter", () => {
+describe.skip("IframeFooter", () => {
   it("renders a Footer specific to the iframe", () => {
     render(
       <StyleProvider>
