@@ -16,3 +16,7 @@ export default function EqModal4Opener() {
     </>
   );
 }
+
+export const openModal = (screen) => {
+  screen.getByTestId("modalOpener").click();
+};

@@ -1,6 +1,6 @@
 import { localStorageImpl } from "../test-utils/mock-local-storage";
 import { renderWithWrapper } from "../test-utils/render-with-wrapper";
-import EqModal4Opener from "./EqModal4/EqModal4Opener";
+import EqModal4Opener, { openModal } from "./EqModal4/EqModal4Opener";
 import "@testing-library/jest-dom";
 import { act, screen } from "@testing-library/react";
 
@@ -21,7 +21,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("eqs_modal_intro")).not.toBeInTheDocument();
     // When
     act(() => {
-      screen.getByTestId("modalOpener").click();
+      openModal(screen);
     });
     // Then
     expect(screen.getByTestId("eqs_modal_intro")).toHaveTextContent(
@@ -44,19 +44,33 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     renderWithWrapper(<EqModal4Opener />);
     // When
     act(() => {
-      screen.getByTestId("modalOpener").click();
+      openModal(screen);
     });
     // Then
     expect(screen.getByTestId("chosen-voiturethermique")).toHaveTextContent("Voiture (moteur thermique)");
     expect(screen.getByTestId("chosen-repasavecduboeuf")).toHaveTextContent("Repas avec du boeuf");
     expect(screen.getByTestId("chosen-streamingvideo")).toHaveTextContent("Streaming vidéo");
   });
+  it("Les valeurs choisies s'affichent dans la colonne de gauche, même si ne sont pas celles par défaut", () => {
+    //Given
+    window.localStorage.setItem("ico2_eqv_chosen", JSON.stringify(["ail", "abricot", "banane"]));
+    window.localStorage.setItem("ico2_eqv_array", JSON.stringify(["ail", "abricot", "banane"]));
+    renderWithWrapper(<EqModal4Opener />);
+    // // When
+    act(() => {
+      openModal(screen);
+    });
+    // // Then
+    expect(screen.getByTestId("chosen-banane")).toHaveTextContent("Banane");
+    expect(screen.getByTestId("chosen-abricot")).toHaveTextContent("Abricot");
+    expect(screen.getByTestId("chosen-ail")).toHaveTextContent("Ail");
+  });
   it("Affiche le nombre d'options choisies, et le nombre d'options max", () => {
     //Given
     renderWithWrapper(<EqModal4Opener />);
     // When
     act(() => {
-      screen.getByTestId("modalOpener").click();
+      openModal(screen);
     });
     // Then
     expect(screen.getByTestId("eqs_selected")).toHaveTextContent("3/3 équivalences sélectionnées");
@@ -65,7 +79,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     //Given
     renderWithWrapper(<EqModal4Opener />);
     act(() => {
-      screen.getByTestId("modalOpener").click();
+      openModal(screen);
     });
     expect(screen.queryByTestId("chosen-voiturethermique")).toBeInTheDocument();
 
@@ -81,7 +95,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     //Given
     renderWithWrapper(<EqModal4Opener />);
     act(() => {
-      screen.getByTestId("modalOpener").click();
+      openModal(screen);
     });
     expect(screen.getByTestId("eqs_selected")).toHaveTextContent("3/3 équivalences sélectionnées");
 
