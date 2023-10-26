@@ -51,6 +51,7 @@ export default function ActualChoices() {
                     key={ticked}
                     equivalent={eqOf(ticked)}
                     checked={false}
+                    data-testid={`chosen-${ticked}`}
                     setChecked={() => removeChoice(ticked)}
                   />
                 );
