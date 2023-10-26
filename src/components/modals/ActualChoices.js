@@ -59,7 +59,7 @@ export default function ActualChoices() {
             </>
           ) : (
             <>
-              <EmptyChoice>
+              <EmptyChoice data-testid="emptyChoice">
                 Veuillez choisir au moins 2 items ci-
                 <ShowMobile>dessous</ShowMobile>
                 <ShowDesktop>contre</ShowDesktop>.

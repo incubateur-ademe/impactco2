@@ -8,7 +8,7 @@ export default function Modal4(props) {
 
   return (
     props.open && (
-      <FocusTrap focusTrapOptions={{ initialFocus: "#button-close" }}>
+      <FocusTrap focusTrapOptions={{ initialFocus: "#button-close" }} data-testid={props["data-testid"]}>
         <Wrapper open={props.open}>
           <Background
             open={props.open}

@@ -106,7 +106,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     // Then
     expect(screen.getByTestId("eqs_selected")).toHaveTextContent("3/3 équivalences sélectionnées");
   });
-  it("Retire une option si un utilisateur clique dessus", () => {
+  it("On peut retirer une équivalence précédemment choisie", () => {
     //Given
     renderWithWrapper(<EqModal4Opener />);
     act(() => {
@@ -138,6 +138,30 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     // Then
     expect(screen.getByTestId("eqs_selected")).toHaveTextContent("2/3 équivalences sélectionnées");
     expect(container.getElementsByClassName("equivalent-checked").length).toBe(2);
+  });
+  it("On peut ne choisir aucune équivalence, auquel cas un petit message s'affiche", () => {
+    //Given
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+
+    // When
+    act(() => {
+      screen.getByTestId("EqModal4").querySelector("button.equivalent-checked").click();
+    });
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("2/3 équivalences sélectionnées");
+    act(() => {
+      screen.getByTestId("EqModal4").querySelector("button.equivalent-checked").click();
+    });
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("1/3 équivalence sélectionnée");
+    act(() => {
+      screen.getByTestId("EqModal4").querySelector("button.equivalent-checked").click();
+    });
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("0/3 équivalence sélectionnée");
+
+    // Then
+    expect(screen.getByTestId("emptyChoice")).toHaveTextContent("Veuillez choisir au moins 2 items ci-dessous");
   });
   it("Mets à jour le compteur si un utilisateur retire une option", () => {
     //Given
