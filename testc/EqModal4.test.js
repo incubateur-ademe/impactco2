@@ -122,6 +122,23 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     // Then
     expect(screen.queryByTestId("chosen-voiturethermique")).not.toBeInTheDocument();
   });
+  it("Le nombre d'équivalences choisies correspond bien au nombre d'équivalences affichées", () => {
+    //Given
+    const { container } = renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("3/3 équivalences sélectionnées");
+    expect(container.getElementsByClassName("equivalent-checked").length).toBe(3);
+    // When
+    act(() => {
+      screen.getByTestId("chosen-voiturethermique").click();
+    });
+
+    // Then
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("2/3 équivalences sélectionnées");
+    expect(container.getElementsByClassName("equivalent-checked").length).toBe(2);
+  });
   it("Mets à jour le compteur si un utilisateur retire une option", () => {
     //Given
     renderWithWrapper(<EqModal4Opener />);
