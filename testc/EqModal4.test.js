@@ -1,16 +1,14 @@
 import { localStorageImpl } from "../test-utils/mock-local-storage";
+import { renderWithWrapper } from "../test-utils/render-with-wrapper";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
-import { DataProvider } from "components/providers/DataProvider";
-import ModalContext, { ModalProvider } from "components/providers/ModalProvider";
-import { StyleProvider } from "components/providers/StyleProvider";
+import { act, screen } from "@testing-library/react";
+import ModalContext from "components/providers/ModalProvider";
 import { useContext } from "react";
 
 const EqModal4Opener = () => {
   const { setEqv } = useContext(ModalContext);
 
   const clicked = () => {
-    console.log("clicked");
     setEqv(true);
   };
 
@@ -24,26 +22,18 @@ const EqModal4Opener = () => {
 };
 
 describe("EqModal4", () => {
-  it("renders a Modal to change equivalences", () => {
-    // const { methods } = localStorageImpl.register();
-    // renderWithWrapper(
-    //   <EqModal4 open={true}/>
-    // )
-    render(
-      <DataProvider>
-        <StyleProvider>
-          <ModalProvider>
-            <EqModal4Opener />
-          </ModalProvider>
-        </StyleProvider>
-      </DataProvider>
-    );
-    // check if all components are rendered
-    // expect(screen.getByTestId("eqs_selected")).toHaveText("blabla");
+  it("Will render only if required", () => {
+    const { methods } = localStorageImpl.register();
+    renderWithWrapper(<EqModal4Opener />);
 
-    expect(screen.queryByTestId("eqs_modal")).not.toBeInTheDocument();
-    // expect(screen.getByTestId("intro")).toHaveTextContent('some text');
-    // expect(methods.setItem).toBeCalledTimes(1);
+    expect(screen.queryByTestId("eqs_modal_intro")).not.toBeInTheDocument();
+    act(() => {
+      screen.getByTestId("modalOpener").click();
+    });
+    expect(screen.getByTestId("eqs_modal_intro")).toHaveTextContent(
+      "Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée."
+    );
+    expect(methods.setItem).toBeCalledTimes(15);
 
     localStorageImpl.unregister();
   });
