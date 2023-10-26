@@ -5,11 +5,11 @@ import "@testing-library/jest-dom";
 import { act, screen } from "@testing-library/react";
 
 describe("EqModal4 - Modale pour modifier les équivalences de la partie livraison", () => {
-  let test_storage;
+  let local_storage;
 
   beforeEach(async () => {
     const { storage } = localStorageImpl.register();
-    test_storage = storage;
+    local_storage = storage;
   });
   afterEach(async () => {
     localStorageImpl.unregister();
@@ -31,11 +31,11 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
 
   it("Stocke en local les options par défaut - voiturethermique, repasavecduboeuf, streamingvideo", () => {
     // Given
-    expect(test_storage.ico2_eqv_chosen).toEqual(undefined);
+    expect(local_storage.ico2_eqv_chosen).toEqual(undefined);
     // When
     renderWithWrapper(<EqModal4Opener />);
     // Then
-    expect(test_storage.ico2_eqv_chosen).toEqual(
+    expect(local_storage.ico2_eqv_chosen).toEqual(
       JSON.stringify(["voiturethermique", "repasavecduboeuf", "streamingvideo"])
     );
   });
@@ -67,6 +67,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     act(() => {
       screen.getByTestId("modalOpener").click();
     });
+    expect(screen.queryByTestId("chosen-voiturethermique")).toBeInTheDocument();
 
     // When
     act(() => {
@@ -74,7 +75,22 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     });
 
     // Then
-    // expect(screen.getElementsByClassName('equivalent-radio').length).toBe(1);
+    expect(screen.queryByTestId("chosen-voiturethermique")).not.toBeInTheDocument();
+  });
+  it("Mets à jour le compteur si un utilisateur retire l'option", () => {
+    //Given
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      screen.getByTestId("modalOpener").click();
+    });
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("3/3 équivalences sélectionnées");
+
+    // When
+    act(() => {
+      screen.getByTestId("chosen-voiturethermique").click();
+    });
+
+    // Then
     expect(screen.getByTestId("eqs_selected")).toHaveTextContent("2/3 équivalences sélectionnées");
   });
 });
