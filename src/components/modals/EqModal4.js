@@ -39,6 +39,7 @@ export default function EqModal4() {
     setOpen(false);
   };
 
+  console.log("------------open", open);
   return (
     <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="55rem">
       <Intro data-testid="intro">

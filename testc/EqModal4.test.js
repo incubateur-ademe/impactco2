@@ -3,8 +3,25 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import EqModal4 from "components/modals/EqModal4";
 import { DataProvider } from "components/providers/DataProvider";
-import { ModalProvider } from "components/providers/ModalProvider";
+import ModalContext, { ModalProvider } from "components/providers/ModalProvider";
 import { StyleProvider } from "components/providers/StyleProvider";
+import { useContext, useEffect } from "react";
+
+const ModalOpener = () => {
+  const { setEqv } = useContext(ModalContext);
+
+  useEffect(() => {
+    setEqv(true);
+  }, []);
+
+  return (
+    <>
+      <button data-testid="modalopener" id="button-close">
+        Open modal
+      </button>
+    </>
+  );
+};
 
 describe("EqModal4", () => {
   it("renders a Modal to change equivalences", () => {
@@ -16,6 +33,7 @@ describe("EqModal4", () => {
       <DataProvider>
         <StyleProvider>
           <ModalProvider>
+            <ModalOpener />
             <EqModal4 />
           </ModalProvider>
         </StyleProvider>
@@ -23,6 +41,7 @@ describe("EqModal4", () => {
     );
     // check if all components are rendered
     // expect(screen.getByTestId("eqs_selected")).toHaveText("blabla");
+
     expect(screen.getByTestId("intro")).toHaveText("blabla");
     expect(methods.setItem).toBeCalledTimes(1);
 
