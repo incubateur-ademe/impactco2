@@ -1,25 +1,8 @@
 import { localStorageImpl } from "../test-utils/mock-local-storage";
 import { renderWithWrapper } from "../test-utils/render-with-wrapper";
+import EqModal4Opener from "./EqModal4/EqModal4Opener";
 import "@testing-library/jest-dom";
 import { act, screen } from "@testing-library/react";
-import ModalContext from "components/providers/ModalProvider";
-import { useContext } from "react";
-
-const EqModal4Opener = () => {
-  const { setEqv } = useContext(ModalContext);
-
-  const clicked = () => {
-    setEqv(true);
-  };
-
-  return (
-    <>
-      <button data-testid="modalOpener" onClick={clicked}>
-        Open modal
-      </button>
-    </>
-  );
-};
 
 describe("EqModal4", () => {
   it("Will render only if required", () => {

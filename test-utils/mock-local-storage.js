@@ -1,3 +1,4 @@
+// See https://stackoverflow.com/a/70188009/2595513
 export const localStorageImpl = {
   register: () => {
     let storage = window.customLocalStorage;
