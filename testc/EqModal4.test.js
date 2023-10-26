@@ -23,18 +23,31 @@ const EqModal4Opener = () => {
 
 describe("EqModal4", () => {
   it("Will render only if required", () => {
-    const { methods } = localStorageImpl.register();
+    // Given
     renderWithWrapper(<EqModal4Opener />);
-
     expect(screen.queryByTestId("eqs_modal_intro")).not.toBeInTheDocument();
+    // When
     act(() => {
       screen.getByTestId("modalOpener").click();
     });
+    // Then
     expect(screen.getByTestId("eqs_modal_intro")).toHaveTextContent(
       "Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée."
     );
-    expect(methods.setItem).toBeCalledTimes(15);
+  });
 
+  it("Will choose voiturethermique, repasavecduboeuf and streamingvideo by default", () => {
+    // Setup
+    const { storage } = localStorageImpl.register();
+
+    // Given
+    expect(storage.ico2_eqv_chosen).toEqual(undefined);
+    // When
+    renderWithWrapper(<EqModal4Opener />);
+    // Then
+    expect(storage.ico2_eqv_chosen).toEqual(JSON.stringify(["voiturethermique", "repasavecduboeuf", "streamingvideo"]));
+
+    // TearDown
     localStorageImpl.unregister();
   });
 });

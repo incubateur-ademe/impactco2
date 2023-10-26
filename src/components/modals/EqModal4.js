@@ -40,7 +40,7 @@ export default function EqModal4() {
   };
 
   return (
-    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="55rem" data-testid="eqs_modal">
+    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="55rem">
       <Intro data-testid="eqs_modal_intro">
         {!eqvError ? (
           <>Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.</>
