@@ -64,6 +64,37 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.getByTestId("chosen-banane")).toHaveTextContent("Banane");
     expect(screen.getByTestId("chosen-abricot")).toHaveTextContent("Abricot");
     expect(screen.getByTestId("chosen-ail")).toHaveTextContent("Ail");
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("3/3 équivalences sélectionnées");
+  });
+  it("Les valeurs s'affichent dans la colonne de gauche, même s'il n'y en a que 2", () => {
+    //Given
+    window.localStorage.setItem("ico2_eqv_chosen", JSON.stringify(["ail", "abricot"]));
+    window.localStorage.setItem("ico2_eqv_array", JSON.stringify(["ail", "abricot"]));
+    renderWithWrapper(<EqModal4Opener />);
+    // When
+    act(() => {
+      openModal(screen);
+    });
+    // Then
+    expect(screen.getByTestId("chosen-abricot")).toHaveTextContent("Abricot");
+    expect(screen.getByTestId("chosen-ail")).toHaveTextContent("Ail");
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("2/3 équivalences sélectionnées");
+  });
+  it("On peut rajouter une option", () => {
+    //Given
+    window.localStorage.setItem("ico2_eqv_chosen", JSON.stringify(["ail", "abricot"]));
+    window.localStorage.setItem("ico2_eqv_array", JSON.stringify(["ail", "abricot"]));
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("2/3 équivalences sélectionnées");
+    // When
+    act(() => {
+      screen.getByTestId("unchecked-coing").click();
+    });
+    // Then
+    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("3/3 équivalences sélectionnées");
   });
   it("Affiche le nombre d'options choisies, et le nombre d'options max", () => {
     //Given
@@ -91,7 +122,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     // Then
     expect(screen.queryByTestId("chosen-voiturethermique")).not.toBeInTheDocument();
   });
-  it("Mets à jour le compteur si un utilisateur retire l'option", () => {
+  it("Mets à jour le compteur si un utilisateur retire une option", () => {
     //Given
     renderWithWrapper(<EqModal4Opener />);
     act(() => {
