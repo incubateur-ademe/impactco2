@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Emoji from 'components/base/Emoji'
 
 const Title = styled.h3`

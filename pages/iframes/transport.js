@@ -1,6 +1,5 @@
-import categories from 'data/categories.json'
 import React from 'react'
-
+import categories from 'data/categories.json'
 import Iframe from 'components/layout/Iframe'
 import Distance from 'components/transport/Distance'
 import { TransportProvider } from 'components/transport/TransportProvider'

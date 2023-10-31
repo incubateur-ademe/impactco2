@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import ModalContext from 'components/providers/ModalProvider'
-
 import MagicLink from 'components/base/MagicLink'
 import Modal from 'components/base/Modal'
 
@@ -13,10 +11,7 @@ export default function DevicesModal() {
   return (
     <Modal open={open} setOpen={setOpen}>
       <Title>Moyenne des terminaux</Title>
-      <Text>
-        Nous utilisons pour la valeur par défaut un agrégat de terminaux
-        spécifique à chaque usage :
-      </Text>
+      <Text>Nous utilisons pour la valeur par défaut un agrégat de terminaux spécifique à chaque usage :</Text>
       <Text>
         <strong>Emails :</strong>
         <br />

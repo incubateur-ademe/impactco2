@@ -1,15 +1,5 @@
 import React from 'react'
-
-import {
-  CenterLink,
-  Emojis,
-  Equals,
-  Equivalent,
-  Equivalents,
-  Label,
-  Small,
-  Title,
-} from 'components/misc/Visualization'
+import { CenterLink, Emojis, Equals, Equivalent, Equivalents, Label, Small, Title } from 'components/misc/Visualization'
 
 export default function JeansGeneral() {
   return (
@@ -58,9 +48,7 @@ export default function JeansGeneral() {
         <br />
         <strong>4 repas avec du boeuf</strong>
       </Small>
-      <CenterLink to='/convertisseur'>
-        Comparez à d'autres objets du quotidien
-      </CenterLink>
+      <CenterLink to='/convertisseur'>Comparez à d'autres objets du quotidien</CenterLink>
     </>
   )
 }

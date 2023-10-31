@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
-
 import useIframe from 'hooks/useIframe'
-
 import ModalContext from 'components/providers/ModalProvider'
-
 import Modal from 'components/base/Modal'
 
 const StyledModal = styled(Modal)`
@@ -35,8 +32,7 @@ export default function SurveyModal() {
           }
           frameBorder='0'
           width='100%'
-          height='533'
-        ></iframe>
+          height='533'></iframe>
       ) : null}
     </StyledModal>
   )

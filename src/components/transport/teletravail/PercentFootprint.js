@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
-
 import TransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.div`
@@ -44,9 +43,7 @@ export default function PercentFootprint(props) {
 
   const [percent, setPercent] = useState(0)
   useEffect(() => {
-    setPercent(
-      Math.round((props.saved / (yearlyFootprint * 1000)) * 10000) / 100
-    )
+    setPercent(Math.round((props.saved / (yearlyFootprint * 1000)) * 10000) / 100)
   }, [yearlyFootprint, props.saved])
   return (
     <Wrapper>
@@ -55,9 +52,7 @@ export default function PercentFootprint(props) {
         <br />
         d&apos;économisé sur mon empreinte carbone annuelle
       </Result>
-      <Details onClick={() => setFootprintModal(true)}>
-        Préciser ou calculer mon empreinte carbone
-      </Details>
+      <Details onClick={() => setFootprintModal(true)}>Préciser ou calculer mon empreinte carbone</Details>
     </Wrapper>
   )
 }

@@ -1,10 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import ModalContext from 'components/providers/ModalProvider'
-
 import Modal from 'components/base/Modal'
-
 import Facebook from './shareModal/Facebook'
 import Integration from './shareModal/Integration'
 import Link from './shareModal/Link'
@@ -39,37 +36,18 @@ export default function CO2EModal() {
       <Title>Partager</Title>
       <Wrapper>
         <Integration />
-        <Mail
-          subject={
-            'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'
-          }
-          url={href}
-        />
-        <Facebook
-          quote={
-            'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'
-          }
-          url={href}
-        />
+        <Mail subject={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
+        <Facebook quote={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
         <Twitter
-          title={
-            'Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2'
-          }
+          title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2'}
           url={href}
         />
         <Linkedin
-          title={
-            'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'
-          }
+          title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'}
           summary={'Impact CO2'}
           url={href}
         />
-        <Whatsapp
-          title={
-            'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'
-          }
-          url={href}
-        />
+        <Whatsapp title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
       </Wrapper>
       <Link url={href} />
     </Modal>

@@ -1,30 +1,30 @@
-import BreadCrumb2 from "./web/BreadCrumb2";
-import FooterBlue from "./web/FooterBlue";
-import HeaderSweet from "./web/HeaderSweet";
-import Seo from "./web/Seo";
-import useInteraction from "hooks/useInteraction";
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import useInteraction from 'hooks/useInteraction'
+import BreadCrumb2 from './web/BreadCrumb2'
+import FooterBlue from './web/FooterBlue'
+import HeaderSweet from './web/HeaderSweet'
+import Seo from './web/Seo'
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`;
+`
 const Content = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-`;
+`
 const FullScreen = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
   padding: 0 0 5rem;
   position: relative;
-`;
+`
 export default function WebBlue(props) {
-  useInteraction();
+  useInteraction()
 
   return (
     <>
@@ -40,5 +40,5 @@ export default function WebBlue(props) {
         </Content>
       </Wrapper>
     </>
-  );
+  )
 }

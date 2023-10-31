@@ -63,8 +63,8 @@ Autre possibilité : vous pouvez configurer les variables d'environnement sur ht
 
 Vous pouvez restreindre les sites appelant l'API Gmap à 2 endroits :
 
- - Dans le code, en dur `event.headers.referer.includes('impactco2.fr')`
- - Dans la console Google (https://console.cloud.google.com/), vous pouvez filtrer les sites appelants.
+- Dans le code, en dur `event.headers.referer.includes('impactco2.fr')`
+- Dans la console Google (https://console.cloud.google.com/), vous pouvez filtrer les sites appelants.
 
 Pour l'instant seuls la recette et la production sont autorisés à appeler la GMap API.
 
@@ -78,9 +78,8 @@ Il y a un cas de figure entre les deux : un fichier batch se connecte à une API
 
 Pour mettre à jour ce fichier,
 
- - lancer `yarn build:fruit` pour les fruits et légumes,
- - lancer `yarn build:boisson` pour les boissons.
-
+- lancer `yarn build:fruit` pour les fruits et légumes,
+- lancer `yarn build:boisson` pour les boissons.
 
 ## Architecture 🏛️
 

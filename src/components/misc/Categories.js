@@ -1,11 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import DataContext from 'components/providers/DataProvider'
-
 import Section from 'components/base/Section'
 import ShareButton from 'components/base/ShareButton'
-
 import Category from './categories/Category'
 
 const Title = styled.h1`
@@ -45,8 +42,8 @@ export default function Categories(props) {
         <Section.Content>
           {props.main ? (
             <Text main>
-              Selectionnez une catégorie pour visualiser facilement l’empreinte
-              carbone des objets et gestes de votre quotidien.
+              Selectionnez une catégorie pour visualiser facilement l’empreinte carbone des objets et gestes de votre
+              quotidien.
             </Text>
           ) : (
             <Text>Vous pouvez aussi naviguer par catégorie :</Text>

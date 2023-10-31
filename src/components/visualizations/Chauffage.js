@@ -1,15 +1,5 @@
 import React from 'react'
-
-import {
-  CenterLink,
-  Emojis,
-  Equals,
-  Equivalent,
-  Equivalents,
-  Label,
-  Small,
-  Title,
-} from 'components/misc/Visualization'
+import { CenterLink, Emojis, Equals, Equivalent, Equivalents, Label, Small, Title } from 'components/misc/Visualization'
 
 export default function Avion() {
   return (
@@ -37,9 +27,7 @@ export default function Avion() {
         </Equivalent>
         <Equals>=</Equals>
         <Equivalent size={[18, 16, 24]}>
-          <Emojis>
-            ⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️
-          </Emojis>
+          <Emojis>⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️</Emojis>
           <Label>
             <strong>18 ans de chauffage</strong>
             <br />
@@ -62,9 +50,7 @@ export default function Avion() {
         <br />
         électrique
       </Small>
-      <CenterLink to='/chauffage'>
-        Comparez avec d'autres modes de chauffage
-      </CenterLink>
+      <CenterLink to='/chauffage'>Comparez avec d'autres modes de chauffage</CenterLink>
     </>
   )
 }

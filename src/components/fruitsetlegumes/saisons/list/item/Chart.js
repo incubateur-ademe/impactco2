@@ -11,13 +11,7 @@ const Wrapper = styled.div`
 
   &:before {
     background-color: ${(props) =>
-      props.theme.colors[
-        props.percent > 0.5
-          ? 'error'
-          : props.percent > 0.075
-          ? 'warning'
-          : 'main'
-      ]};
+      props.theme.colors[props.percent > 0.5 ? 'error' : props.percent > 0.075 ? 'warning' : 'main']};
     bottom: 0;
     content: '';
     left: 0;

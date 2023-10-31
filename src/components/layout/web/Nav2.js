@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Menu2 from './nav/Menu2'
 
 const Wrapper = styled.div`

@@ -1,8 +1,8 @@
-import Cards from "./img/Cards";
-import Section2 from "components/base/Section2";
-import Link from "next/link";
-import React from "react";
-import styled from "styled-components";
+import Link from 'next/link'
+import React from 'react'
+import styled from 'styled-components'
+import Section2 from 'components/base/Section2'
+import Cards from './img/Cards'
 
 export default function Hero() {
   return (
@@ -36,7 +36,7 @@ export default function Hero() {
                 </MiniCardText>
                 <MiniCardCta>
                   <div>
-                    <Link href="https://tally.so/r/nrOv5N" rel="noreferrer noopener">
+                    <Link href='https://tally.so/r/nrOv5N' rel='noreferrer noopener'>
                       Prendre rendez-vous
                     </Link>
                   </div>
@@ -50,7 +50,7 @@ export default function Hero() {
         </Section2.InnerMargin>
       </Section2.WideContent>
     </Section2>
-  );
+  )
 }
 
 const H1Title = styled.div`
@@ -74,15 +74,15 @@ const H1Title = styled.div`
       display: inline;
     }
   }
-`;
+`
 
 const H1Line1 = styled.span`
   color: ${(props) => props.theme.colors.main2};
-`;
+`
 
-const H1Line2 = styled.span``;
+const H1Line2 = styled.span``
 
-const H1Line3 = styled.span``;
+const H1Line3 = styled.span``
 
 const Layout = styled.div`
   display: grid;
@@ -101,7 +101,7 @@ const Layout = styled.div`
   }
   overflow: hidden;
   padding-top: 2rem;
-`;
+`
 
 const PictureContainer = styled.div`
   text-align: right;
@@ -123,9 +123,9 @@ const PictureContainer = styled.div`
   ${(props) => props.theme.mq.large} {
     display: none;
   }
-`;
+`
 
-const TextContainer = styled.div``;
+const TextContainer = styled.div``
 
 const Subtitle = styled.p`
   font-size: 1.125rem;
@@ -146,11 +146,11 @@ const Subtitle = styled.p`
       display: inline;
     }
   }
-`;
+`
 
-const Subtitle1 = styled.span``;
+const Subtitle1 = styled.span``
 
-const Subtitle2 = styled.span``;
+const Subtitle2 = styled.span``
 
 const MiniCard = styled.div`
   align-items: center;
@@ -168,7 +168,7 @@ const MiniCard = styled.div`
   ${(props) => props.theme.mq.xxlarge} {
     margin-bottom: 4rem;
   }
-`;
+`
 
 const MiniCardEmoji = styled.div`
   margin-left: 1rem;
@@ -181,7 +181,7 @@ const MiniCardEmoji = styled.div`
   ${(props) => props.theme.mq.small} {
     margin-top: 0.8rem;
   }
-`;
+`
 
 const MiniCardCta = styled.div`
   display: flex;
@@ -216,7 +216,7 @@ const MiniCardCta = styled.div`
     }
     text-decoration: none;
   }
-`;
+`
 
 const MiniCardText = styled.p`
   font-size: 1rem;
@@ -232,19 +232,19 @@ const MiniCardText = styled.p`
     font-size: 0.85rem;
     margin: 0.75rem 0 0.75rem 0.75rem;
   }
-`;
+`
 
 const MiniCardText1 = styled.strong`
   display: block;
-`;
+`
 
 const MiniCardText2 = styled.strong`
   display: block;
-`;
+`
 
 const HideAboveMedium = styled.span`
   display: none;
   ${(props) => props.theme.mq.medium} {
     display: inline-block;
   }
-`;
+`

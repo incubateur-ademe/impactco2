@@ -1,10 +1,10 @@
-import Impactlivraison from './impactlivraison'
+import React from 'react'
+import categories from 'data/categories.json'
 import Web from 'components/layout/Web'
 import WebBlue from 'components/layout/WebBlue'
 import Category from 'components/misc/Category'
 import Learning from 'components/misc/Learning'
-import categories from 'data/categories.json'
-import React from 'react'
+import Impactlivraison from './impactlivraison'
 
 export default function CategoryPage(props) {
   return (
@@ -17,8 +17,7 @@ export default function CategoryPage(props) {
             breadcrumb={{
               type: 'equivalent',
               category: props.category,
-            }}
-          >
+            }}>
             {props.category.slug === 'livraison' ? <Impactlivraison /> : null}
           </WebBlue>
         </>
@@ -29,8 +28,7 @@ export default function CategoryPage(props) {
           breadcrumb={{
             type: 'equivalent',
             category: props.category,
-          }}
-        >
+          }}>
           <Category category={props.category} />
           <Learning category={props.category} />
         </Web>

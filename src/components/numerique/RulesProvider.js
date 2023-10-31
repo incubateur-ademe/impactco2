@@ -1,6 +1,5 @@
 import Engine from 'publicodes'
 import React, { useMemo } from 'react'
-
 import useRules from 'hooks/useRules'
 import useSituation from 'hooks/useSituation'
 
@@ -20,8 +19,7 @@ export function RulesProvider(props) {
         engine,
         situation,
         setSituation,
-      }}
-    >
+      }}>
       {engine && props.children}
     </RulesContext.Provider>
   )

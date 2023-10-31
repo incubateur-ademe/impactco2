@@ -1,20 +1,20 @@
-import { mockRoutes } from "../test-mock/mock-route.js";
+import { mockRoutes } from '../test-mock/mock-route.js'
 
 // @ts-check
-const { test, expect } = require("@playwright/test");
+const { test, expect } = require('@playwright/test')
 
 test.beforeEach(async ({ page }) => {
-  await mockRoutes(page);
-});
+  await mockRoutes(page)
+})
 
-test("Le titre", async ({ page }) => {
+test('Le titre', async ({ page }) => {
   await test.step("On charge la page d'accueil dans le navigateur", async () => {
-    await page.goto("/");
-  });
+    await page.goto('/')
+  })
   await test.step("L'onglet s'affiche avec un titre correct", async () => {
-    await expect(page).toHaveTitle(/Accueil | Impact CO2/);
-  });
-});
+    await expect(page).toHaveTitle(/Accueil | Impact CO2/)
+  })
+})
 
 // test("Barre de recherche (sans résultat)", async ({ page }) => {
 //   await test.step("On charge la page d'accueil dans le navigateur", async () => {

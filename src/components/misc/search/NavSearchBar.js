@@ -1,96 +1,95 @@
-import Fuse from "../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
-import Suggestions from "./searchBar/Suggestions";
-import TextInputSmall from "./searchBar/TextInputSmall";
-import DataContext from "components/providers/DataProvider";
-import { useRouter } from "next/router";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import { useRouter } from 'next/router'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
+import DataContext from 'components/providers/DataProvider'
+import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
+import Suggestions from './searchBar/Suggestions'
+import TextInputSmall from './searchBar/TextInputSmall'
 
 export default function NavSearchBar(props) {
-  const { equivalents, categories } = useContext(DataContext);
-  const [search, setSearch] = useState("");
+  const { equivalents, categories } = useContext(DataContext)
+  const [search, setSearch] = useState('')
 
-  const [results, setResults] = useState([]);
-  const [fuse, setFuse] = useState(null);
+  const [results, setResults] = useState([])
+  const [fuse, setFuse] = useState(null)
   useEffect(() => {
     if (equivalents) {
       setFuse(
         new Fuse(equivalents, {
           keys: [
             {
-              name: "name",
+              name: 'name',
               weight: 1,
             },
             {
-              name: "slug",
+              name: 'slug',
               weight: 0.7,
             },
             {
-              name: "subtitle",
+              name: 'subtitle',
               weight: 0.4,
             },
             {
-              name: "synonyms",
+              name: 'synonyms',
               weight: 0.2,
             },
           ],
           threshold: 0.3,
           ignoreLocation: true,
         })
-      );
+      )
     }
-  }, [equivalents]);
+  }, [equivalents])
 
   useEffect(() => {
     if (fuse && search.length > 1) {
-      setResults(fuse.search(search.normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
+      setResults(fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')))
     } else {
-      setResults([]);
+      setResults([])
     }
-  }, [search, fuse]);
+  }, [search, fuse])
 
-  const [focus, setFocus] = useState(false);
-  const input = useRef(null);
-  const [current, setCurrent] = useState(0);
+  const [focus, setFocus] = useState(false)
+  const input = useRef(null)
+  const [current, setCurrent] = useState(0)
 
   useEffect(() => {
-    setCurrent(0);
+    setCurrent(0)
     if (!focus) {
-      input.current && input.current.blur();
+      input.current && input.current.blur()
     }
-  }, [focus, results]);
+  }, [focus, results])
 
-  const router = useRouter();
+  const router = useRouter()
 
   const navigateToItem = ({ item }) => {
     router.push(
       item.category
         ? `/${categories.find((category) => category.id === item.category).slug}/${item.slug}`
         : `/${item.slug}`
-    );
-  };
+    )
+  }
 
   return (
     <Wrapper
       focus={focus}
       home={props.home}
       onSubmit={(e) => {
-        e.preventDefault();
+        e.preventDefault()
         if (search.length > 1) {
           if (results[current]) {
-            navigateToItem(results[current]);
+            navigateToItem(results[current])
           } else {
-            navigateToItem({ item: categories[current] });
+            navigateToItem({ item: categories[current] })
           }
         }
       }}
-      className={props.className}
-    >
+      className={props.className}>
       <NavActions>
-        <NavSearch className="navSearch">
-          <SearchContainer className="searchContainer">
+        <NavSearch className='navSearch'>
+          <SearchContainer className='searchContainer'>
             <TextInputSmall
-              placeholder={"Rechercher..."}
+              placeholder={'Rechercher...'}
               ref={input}
               search={search}
               focus={focus}
@@ -115,10 +114,10 @@ export default function NavSearchBar(props) {
         </NavSearch>
       </NavActions>
     </Wrapper>
-  );
+  )
 }
 
-const Wrapper = styled.form``;
+const Wrapper = styled.form``
 
 const NavSearch = styled.div`
   position: relative;
@@ -127,18 +126,18 @@ const NavSearch = styled.div`
     display: none;
     width: 100%;
   }
-`;
+`
 
 const NavActions = styled.div`
   display: flex;
-`;
+`
 
 const SearchContainer = styled.div`
-  background-color: ${(props) => (props.focus ? props.theme.colors.background : "transparent")};
+  background-color: ${(props) => (props.focus ? props.theme.colors.background : 'transparent')};
   border: 1px solid #eae5e8;
   border-radius: 0.625em;
   box-shadow: ${(props) =>
-    props.focus ? "0px 4px 10px 0px rgba(0, 17, 51, 0.08)" : "0px 4px 10px 0px rgba(0, 17, 51, 0.04)"};
+    props.focus ? '0px 4px 10px 0px rgba(0, 17, 51, 0.08)' : '0px 4px 10px 0px rgba(0, 17, 51, 0.04)'};
   left: 0;
   overflow: hidden;
   position: absolute;
@@ -147,8 +146,8 @@ const SearchContainer = styled.div`
   z-index: 100;
 
   ${(props) => props.theme.mq.small} {
-    border-radius: ${(props) => (props.home || props.focus ? " 0.625em" : "4rem")};
-    left: ${(props) => (props.home ? 0 : "auto")};
-    width: ${(props) => (props.home ? "auto" : props.focus ? "calc(100vw - 1.5rem)" : "2.375rem")};
+    border-radius: ${(props) => (props.home || props.focus ? ' 0.625em' : '4rem')};
+    left: ${(props) => (props.home ? 0 : 'auto')};
+    width: ${(props) => (props.home ? 'auto' : props.focus ? 'calc(100vw - 1.5rem)' : '2.375rem')};
   }
-`;
+`

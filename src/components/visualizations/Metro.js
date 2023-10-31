@@ -1,15 +1,5 @@
 import React from 'react'
-
-import {
-  CenterLink,
-  Emojis,
-  Equals,
-  Equivalent,
-  Equivalents,
-  Label,
-  Small,
-  Title,
-} from 'components/misc/Visualization'
+import { CenterLink, Emojis, Equals, Equivalent, Equivalents, Label, Small, Title } from 'components/misc/Visualization'
 
 export default function Metro() {
   return (
@@ -63,9 +53,7 @@ export default function Metro() {
         <br />
         en métro
       </Small>
-      <CenterLink to='/transport'>
-        Comparez avec d'autres modes de transport
-      </CenterLink>
+      <CenterLink to='/transport'>Comparez avec d'autres modes de transport</CenterLink>
     </>
   )
 }

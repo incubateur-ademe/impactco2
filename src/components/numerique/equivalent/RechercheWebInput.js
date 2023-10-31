@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import TypingInput from './emailInput/TypingInput'
 import NetworkInput from './videoInput/NetworkInput'
 

@@ -2,7 +2,6 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import React from 'react'
-
 import Section from 'components/base/Section'
 import Web from 'components/layout/Web'
 
@@ -22,7 +21,6 @@ export default function Importagb() {
   const { codeagb } = router.query
 
   const { data } = useAGB(codeagb)
-  console.log(data)
   return (
     <Web>
       <Section>

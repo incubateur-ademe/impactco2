@@ -4,6 +4,7 @@
     "plugin:react/recommended",
     "next",
     "prettier",
+    "plugin:prettier/recommended",
     "next/core-web-vitals"
   ],
   "rules": {
@@ -11,11 +12,7 @@
     "no-irregular-whitespace": "off",
     "better-styled-components/sort-declarations-alphabetically": 2
   },
-  "plugins": [
-    "better-styled-components",
-    "styled-components-a11y",
-    "jest"
-  ],
+  "plugins": ["prettier", "better-styled-components", "styled-components-a11y", "jest"],
   "env": {
     "browser": true,
     "es2022": true,

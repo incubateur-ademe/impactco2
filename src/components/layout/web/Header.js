@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Logo from 'components/base/Logo'
 import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 import Section from 'components/base/Section'
-
 import ThemeToggle from './header/ThemeToggle'
 
 const Wrapper = styled.header`

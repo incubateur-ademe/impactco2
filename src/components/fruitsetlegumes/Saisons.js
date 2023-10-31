@@ -1,17 +1,17 @@
-import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
-import List from "./saisons/List";
-import Search from "./saisons/Search";
-import Wrapper from "./saisons/Wrapper";
-import Section from "components/base/Section";
-import SourceAgribalyse from "components/misc/SourceAgribalyse.js";
-import Bottom from "components/misc/category/Bottom";
-import Description from "components/misc/category/Description";
-import Instruction from "components/misc/category/Instruction";
-import Top from "components/misc/category/Top";
-import DataContext from "components/providers/DataProvider";
-import React, { useContext, useEffect, useMemo, useState } from "react";
-import styled from "styled-components";
-import { formatName, formatTotal } from "utils/formatters";
+import React, { useContext, useEffect, useMemo, useState } from 'react'
+import styled from 'styled-components'
+import { formatName, formatTotal } from 'utils/formatters'
+import DataContext from 'components/providers/DataProvider'
+import Section from 'components/base/Section'
+import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
+import Bottom from 'components/misc/category/Bottom'
+import Description from 'components/misc/category/Description'
+import Instruction from 'components/misc/category/Instruction'
+import Top from 'components/misc/category/Top'
+import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
+import List from './saisons/List'
+import Search from './saisons/Search'
+import Wrapper from './saisons/Wrapper'
 
 const StyledTop = styled(Top)`
   align-items: center;
@@ -20,49 +20,49 @@ const StyledTop = styled(Top)`
   p {
     margin: 0;
   }
-`;
+`
 
 export default function Saisons(props) {
-  const { equivalents, categories } = useContext(DataContext);
+  const { equivalents, categories } = useContext(DataContext)
 
-  const [sorting, setSorting] = useState("alph_desc");
+  const [sorting, setSorting] = useState('alph_desc')
 
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('')
 
-  const [results, setResults] = useState([]);
-  const [fuse, setFuse] = useState(null);
+  const [results, setResults] = useState([])
+  const [fuse, setFuse] = useState(null)
   useEffect(() => {
     if (equivalents) {
       setFuse(
         new Fuse(equivalents, {
           keys: [
             {
-              name: "name",
+              name: 'name',
               weight: 1,
             },
             {
-              name: "slug",
+              name: 'slug',
               weight: 0.7,
             },
             {
-              name: "subtitle",
+              name: 'subtitle',
               weight: 0.4,
             },
           ],
           threshold: 0.3,
           ignoreLocation: false,
         })
-      );
+      )
     }
-  }, [equivalents]);
+  }, [equivalents])
 
   useEffect(() => {
     if (fuse && search.length > 0) {
-      setResults(fuse.search(search.normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
+      setResults(fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')))
     } else {
-      setResults(null);
+      setResults(null)
     }
-  }, [search, fuse]);
+  }, [search, fuse])
 
   const equivalentsOfTheMonth = useMemo(
     () =>
@@ -80,27 +80,27 @@ export default function Saisons(props) {
           months: equivalent.months,
           to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
           onClick: () =>
-            window?.please?.track(["trackEvent", "Interaction", "Navigation via graph categorie", equivalent.slug]),
+            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
         }))
         .sort((a, b) =>
-          sorting.includes("alph")
+          sorting.includes('alph')
             ? a.id > b.id
-              ? sorting.includes("desc")
+              ? sorting.includes('desc')
                 ? 1
                 : -1
-              : sorting.includes("desc")
+              : sorting.includes('desc')
               ? -1
               : 1
             : a.value > b.value
-            ? sorting.includes("desc")
+            ? sorting.includes('desc')
               ? -1
               : 1
-            : sorting.includes("desc")
+            : sorting.includes('desc')
             ? 1
             : -1
         ),
     [equivalents, categories, props.category, props.month, results, sorting]
-  );
+  )
 
   return (
     <Section>
@@ -123,5 +123,5 @@ export default function Saisons(props) {
         </Wrapper>
       </Section.Content>
     </Section>
-  );
+  )
 }

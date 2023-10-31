@@ -1,14 +1,14 @@
-import DataContext from "components/providers/DataProvider";
-import Carpool from "components/transport/Carpool";
-import TransportContext from "components/transport/TransportProvider";
-import { useContext, useMemo } from "react";
-import { formatName, formatNumber, formatTotalByKm, formatUsage } from "utils/formatters";
+import { useContext, useMemo } from 'react'
+import { formatName, formatNumber, formatTotalByKm, formatUsage } from 'utils/formatters'
+import DataContext from 'components/providers/DataProvider'
+import Carpool from 'components/transport/Carpool'
+import TransportContext from 'components/transport/TransportProvider'
 
 // C'est un peu austère, déso
 export default function useTransportations(itineraries) {
-  const { equivalents, categories } = useContext(DataContext);
+  const { equivalents, categories } = useContext(DataContext)
 
-  const { km, displayAll, carpool } = useContext(TransportContext);
+  const { km, displayAll, carpool } = useContext(TransportContext)
 
   const transportations = useMemo(
     () =>
@@ -18,7 +18,7 @@ export default function useTransportations(itineraries) {
         .filter((equivalent) => equivalent.default || displayAll)
         .reduce(
           (acc, cur) =>
-            cur.carpool ? [...acc, cur, { ...cur, id: cur.slug + "_nocarpool", carpool: false }] : [...acc, cur],
+            cur.carpool ? [...acc, cur, { ...cur, id: cur.slug + '_nocarpool', carpool: false }] : [...acc, cur],
           []
         )
         .filter((equivalent) => carpool || !equivalent.carpool)
@@ -46,9 +46,9 @@ export default function useTransportations(itineraries) {
               ? `(${
                   equivalent?.ecvs?.find((ecv) => ecv.max > (itineraries ? itineraries[equivalent.type] : km))?.subtitle
                 })`
-              : ((displayAll || equivalent.name === "Voiture") && equivalent.subtitle
+              : ((displayAll || equivalent.name === 'Voiture') && equivalent.subtitle
                   ? `(${equivalent.subtitle})`
-                  : "") + (itineraries ? ` - ${formatNumber(itineraries ? itineraries[equivalent.type] : km)} km` : "")
+                  : '') + (itineraries ? ` - ${formatNumber(itineraries ? itineraries[equivalent.type] : km)} km` : '')
           ),
           emoji: equivalent.emoji,
           secondEmoji: equivalent.secondEmoji,
@@ -61,11 +61,11 @@ export default function useTransportations(itineraries) {
           component: equivalent.carpool && <Carpool />,
           to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
           onClick: () =>
-            window?.please?.track(["trackEvent", "Interaction", "Navigation via graph categorie", equivalent.slug]),
+            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
         }))
         .sort((a, b) => (a.value > b.value ? 1 : -1)),
     [categories, equivalents, km, displayAll, carpool, itineraries]
-  );
+  )
 
-  return transportations;
+  return transportations
 }

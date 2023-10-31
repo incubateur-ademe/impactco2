@@ -1,16 +1,12 @@
 import React, { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
-
 import { formatName } from 'utils/formatters'
-
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-
 import Section from 'components/base/Section'
 import Legend from 'components/charts/Legend'
 import StackedChart from 'components/charts/StackedChart'
 import Detail from 'components/views/equivalent/ecv/Detail'
-
 import RulesContext from './RulesProvider'
 import Wrapper from './Wrapper'
 import Bar from './equivalent/Bar'
@@ -50,14 +46,8 @@ export default function Simulateur(props) {
       engine && ecv
         ? engine
             .evaluate(props.name)
-            .traversedVariables.filter((variable) =>
-              ecv.find((item) => props.name + item.id === variable)
-            )
-            .filter(
-              (variable) =>
-                construction ||
-                !variable.includes(' . terminaux . construction')
-            )
+            .traversedVariables.filter((variable) => ecv.find((item) => props.name + item.id === variable))
+            .filter((variable) => construction || !variable.includes(' . terminaux . construction'))
             .map((variable) => {
               const step = ecv.find((item) => props.name + item.id === variable)
               return {
@@ -75,8 +65,7 @@ export default function Simulateur(props) {
   const total = useMemo(() =>
     construction
       ? engine.evaluate(props.name).nodeValue
-      : engine.evaluate(props.name).nodeValue -
-        engine.evaluate(`${props.name} . terminaux . construction`).nodeValue
+      : engine.evaluate(props.name).nodeValue - engine.evaluate(`${props.name} . terminaux . construction`).nodeValue
   )
 
   const questions = useMemo(
@@ -94,16 +83,8 @@ export default function Simulateur(props) {
   return engine ? (
     <StyledSection>
       <Section.Content>
-        <Wrapper
-          name={formatName(props.equivalent.name, 1, true)}
-          slug={props.equivalent.slug}
-        >
-          <Bar
-            total={total}
-            equivalent={props.equivalent}
-            category={props.category}
-            name={props.name}
-          />
+        <Wrapper name={formatName(props.equivalent.name, 1, true)} slug={props.equivalent.slug}>
+          <Bar total={total} equivalent={props.equivalent} category={props.category} name={props.name} />
           <StackedChart items={ecvToDisplay} total={total} />
           <Legend items={ecvToDisplay} />
           <Detail
@@ -116,41 +97,25 @@ export default function Simulateur(props) {
           <Questions>
             {props.name === 'streaming' && (
               <>
-                <DeviceInput
-                  construction={construction}
-                  setConstruction={setConstruction}
-                  name={props.name}
-                />
+                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
                 <VideoInput name={props.name} />
               </>
             )}
             {props.name === 'visio' && (
               <>
-                <DeviceInput
-                  construction={construction}
-                  setConstruction={setConstruction}
-                  name={props.name}
-                />
+                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
                 <VideoInput name={props.name} />
               </>
             )}
             {props.name === 'email' && (
               <>
-                <DeviceInput
-                  construction={construction}
-                  setConstruction={setConstruction}
-                  name={props.name}
-                />
+                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
                 <EmailInput name={props.name} />
               </>
             )}
             {props.name === 'recherche web' && (
               <>
-                <DeviceInput
-                  construction={construction}
-                  setConstruction={setConstruction}
-                  name={props.name}
-                />
+                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
               </>
             )}
           </Questions>

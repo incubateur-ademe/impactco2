@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import HorizontalRadio from 'components/base/HorizontalRadio'
 import RulesContext from 'components/numerique/RulesProvider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
@@ -19,10 +18,7 @@ export default function DeviceInput(props) {
         <SliderWrapper.Label>Type de réseau</SliderWrapper.Label>
         <HorizontalRadio
           name={'network'}
-          value={`'${
-            engine.evaluate(props.name + ' . transmission . émetteur . réseau')
-              .nodeValue
-          }'`}
+          value={`'${engine.evaluate(props.name + ' . transmission . émetteur . réseau').nodeValue}'`}
           onChange={(value) =>
             setSituation({
               [props.name + ' . transmission . émetteur . réseau']: value,

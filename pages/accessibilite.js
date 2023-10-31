@@ -1,23 +1,23 @@
-import Section2 from "components/base/Section2";
-import WebBlue from "components/layout/WebBlue";
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import Section2 from 'components/base/Section2'
+import WebBlue from 'components/layout/WebBlue'
 
 export default function Accessibilite() {
   return (
-    <WebBlue title={"Accessibilité"}>
+    <WebBlue title={'Accessibilité'}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
             <h1>Déclaration d'accessibilité</h1>
-            <h2 id="quest-ce-que-laccessibilité-numérique-">Qu’est-ce que l’accessibilité numérique ?</h2>
+            <h2 id='quest-ce-que-laccessibilité-numérique-'>Qu’est-ce que l’accessibilité numérique ?</h2>
             <p>
               Un site webBlue accessible est un site qui permet à tous les internautes d’accéder à ses contenus sans
               difficulté, y compris aux personnes qui présentent un handicap et utilisent des logiciels ou matériels
               spécialisés.
             </p>
 
-            <h2 id="politique-daccessibilité">Politique d’accessibilité</h2>
+            <h2 id='politique-daccessibilité'>Politique d’accessibilité</h2>
             <p>
               L’Agence de la transition écologique (ADEME) accorde une réelle importance à la qualité de réalisation et
               à l’expérience utilisateur de ses services numériques et s’engage à rendre ses sites internet, intranet,
@@ -27,19 +27,17 @@ export default function Accessibilite() {
             <ul>
               <li>
                 <a
-                  href="https://librairie.ademe.fr/institutionnel/4817-schema-pluriannuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe-2021-2023.html"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
+                  href='https://librairie.ademe.fr/institutionnel/4817-schema-pluriannuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe-2021-2023.html'
+                  target='_blank'
+                  rel='noreferrer noopener'>
                   Schéma pluriannuel en cours
                 </a>
               </li>
               <li>
                 <a
-                  href="https://librairie.ademe.fr/institutionnel/6257-plan-annuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe.html"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
+                  href='https://librairie.ademe.fr/institutionnel/6257-plan-annuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe.html'
+                  target='_blank'
+                  rel='noreferrer noopener'>
                   Plan d’action de l’année en cours
                 </a>
               </li>
@@ -51,7 +49,7 @@ export default function Accessibilite() {
               attendant l’accompagnement par des experts tiers dans le cadre d’un futur audit du site.
             </p>
 
-            <h2 id="état-de-conformité">État de conformité</h2>
+            <h2 id='état-de-conformité'>État de conformité</h2>
 
             <p>
               Le site ImpactCO2 est non conforme avec le Référentiel général d’amélioration de l’accessibilité, RGAA
@@ -59,11 +57,11 @@ export default function Accessibilite() {
               de ces critères.
             </p>
 
-            <h2 id="résultats-des-tests">Résultats des tests</h2>
+            <h2 id='résultats-des-tests'>Résultats des tests</h2>
 
             <p>En l’absence d’audit de conformité il n’y a pas de résultats de tests.</p>
 
-            <h2 id="contenus-non-accessibles">Contenus non accessibles</h2>
+            <h2 id='contenus-non-accessibles'>Contenus non accessibles</h2>
 
             <p>Les contenus listés ci-dessous ne sont pas accessibles pour les raisons suivantes.</p>
 
@@ -80,12 +78,12 @@ export default function Accessibilite() {
               <div>Néant</div>
             </p>
 
-            <h2 id="établissement-de-cette-déclaration-daccessibilité">
+            <h2 id='établissement-de-cette-déclaration-daccessibilité'>
               Établissement de cette déclaration d’accessibilité
             </h2>
             <p>Cette déclaration a été établie le 26 juin 2023.</p>
 
-            <h3 id="technologies-utilisées-pour-la-réalisation-du-site">
+            <h3 id='technologies-utilisées-pour-la-réalisation-du-site'>
               Technologies utilisées pour la réalisation du site
             </h3>
             <ul>
@@ -94,7 +92,7 @@ export default function Accessibilite() {
               <li>Javascript</li>
             </ul>
 
-            <h3 id="agents-utilisateurs-technologies-dassistance-et-outils-utilisés-pour-vérifier-laccessibilité">
+            <h3 id='agents-utilisateurs-technologies-dassistance-et-outils-utilisés-pour-vérifier-laccessibilité'>
               Agents utilisateurs, technologies d’assistance et outils utilisés pour vérifier l’accessibilité
             </h3>
             <ul>
@@ -106,7 +104,7 @@ export default function Accessibilite() {
               <li>Pages du site ayant fait l’objet de la vérification de conformité : Néant</li>
             </ul>
 
-            <h2 id="retour-dinformation-et-contact">Retour d’information et contact</h2>
+            <h2 id='retour-dinformation-et-contact'>Retour d’information et contact</h2>
             <p>
               L’ADEME s’engage à prendre les moyens nécessaires afin de donner accès, dans un délai raisonnable, aux
               informations et fonctionnalités recherchées par la personne handicapée, que le contenu fasse l’objet d’une
@@ -114,12 +112,12 @@ export default function Accessibilite() {
             </p>
 
             <p>
-              L’ADEME invite les personnes qui rencontreraient des difficultés à la contacter par courriel à{" "}
-              <a href="mailto:impactco2@ademe.fr">impactco2@ademe.fr</a> afin qu’une assistance puisse être apportée
+              L’ADEME invite les personnes qui rencontreraient des difficultés à la contacter par courriel à{' '}
+              <a href='mailto:impactco2@ademe.fr'>impactco2@ademe.fr</a> afin qu’une assistance puisse être apportée
               (alternative accessible, information et contenu donnés sous une autre forme).
             </p>
 
-            <h2 id="défenseur-des-droits">Défenseur des droits</h2>
+            <h2 id='défenseur-des-droits'>Défenseur des droits</h2>
             <p>
               Si vous constatez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du
               site, que vous nous le signalez et que vous ne parvenez pas à obtenir une réponse rapide de notre part,
@@ -129,15 +127,14 @@ export default function Accessibilite() {
             <ul>
               <li>
                 <a
-                  href="https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=accueil_2016"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
+                  href='https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=accueil_2016'
+                  target='_blank'
+                  rel='noreferrer noopener'>
                   un formulaire de contact
                 </a>
               </li>
               <li>
-                <a href="https://www.defenseurdesdroits.fr/office/" target="_blank" rel="noreferrer noopener">
+                <a href='https://www.defenseurdesdroits.fr/office/' target='_blank' rel='noreferrer noopener'>
                   la liste des délégués de votre région
                 </a>
               </li>
@@ -151,7 +148,7 @@ export default function Accessibilite() {
         </Section2.InnerMargin>
       </Section2>
     </WebBlue>
-  );
+  )
 }
 
 const FormatText = styled.div`
@@ -161,4 +158,4 @@ const FormatText = styled.div`
   > h2 {
     margin-top: 3rem;
   }
-`;
+`

@@ -9,8 +9,7 @@ const Wrapper = styled.div`
   position: relative;
 
   &:before {
-    background-color: ${(props) =>
-      props.error ? props.theme.colors.error : props.theme.colors.main};
+    background-color: ${(props) => (props.error ? props.theme.colors.error : props.theme.colors.main)};
     bottom: 0;
     content: '';
     left: 0;

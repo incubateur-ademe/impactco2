@@ -1,16 +1,16 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   margin-bottom: 2.5rem;
-`;
+`
 const Bar = styled.div`
   background-color: ${(props) => props.theme.colors.mainLight};
   border-radius: 3.5rem;
   height: 7rem;
   margin-bottom: 0.5rem;
   position: relative;
-`;
+`
 const Emitted = styled.div`
   align-items: flex-start;
   background-color: ${(props) => props.theme.colors.main};
@@ -25,17 +25,17 @@ const Emitted = styled.div`
   width: ${(props) => props.percent}%;
 
   ${(props) => props.theme.mq.small} {
-    max-width: ${(props) => (props.percent !== 100 ? "calc(100% - 5rem)" : "auto")};
-    min-width: ${(props) => (props.percent ? "5rem" : "auto")};
+    max-width: ${(props) => (props.percent !== 100 ? 'calc(100% - 5rem)' : 'auto')};
+    min-width: ${(props) => (props.percent ? '5rem' : 'auto')};
   }
-`;
+`
 const Saved = styled(Emitted)`
   background-color: transparent;
   color: ${(props) => props.theme.colors.main};
   left: auto;
   right: 0;
   transform-origin: right;
-`;
+`
 const Content = styled.p`
   line-height: 1.4rem;
   margin: 0;
@@ -46,21 +46,21 @@ const Content = styled.p`
   ${(props) => props.theme.mq.small} {
     font-size: 0.875rem;
   }
-`;
+`
 const Small = styled.span`
   font-size: 0.875rem;
   font-weight: 300;
   opacity: ${(props) => (props.visible ? 1 : 0)};
-`;
+`
 const Number = styled.span`
   font-size: 2em;
   font-weight: bold;
-`;
+`
 const Disclaimer = styled.p`
   font-size: 0.875rem;
   font-weight: 300;
   text-align: center;
-`;
+`
 export default function YearlyFootprint(props) {
   return (
     <Wrapper>
@@ -72,7 +72,7 @@ export default function YearlyFootprint(props) {
             émis
             <br />
             <Small visible={(props.emitted / (props.emitted + props.saved)) * 100 >= 25}>
-              sur {props.presentiel} jour{props.presentiel > 1 && "s"}
+              sur {props.presentiel} jour{props.presentiel > 1 && 's'}
             </Small>
           </Content>
         </Emitted>
@@ -81,11 +81,11 @@ export default function YearlyFootprint(props) {
           <Content visible={props.saved} small={(props.saved / (props.emitted + props.saved)) * 100 < 25}>
             <Number>{props.saved}</Number> kgCO<sub>2</sub>e
             <br />
-            évité{props.saved > 1 && "s"}
+            évité{props.saved > 1 && 's'}
             <br />
             <Small visible={(props.saved / (props.emitted + props.saved)) * 100 >= 25}>
-              {" "}
-              sur {props.teletravail} jour{props.teletravail > 1 && "s"}
+              {' '}
+              sur {props.teletravail} jour{props.teletravail > 1 && 's'}
             </Small>
           </Content>
         </Saved>
@@ -96,5 +96,5 @@ export default function YearlyFootprint(props) {
         (d&apos;autres émissions ont peut-être augmenté)
       </Disclaimer>
     </Wrapper>
-  );
+  )
 }

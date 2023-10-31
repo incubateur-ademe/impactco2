@@ -1,36 +1,36 @@
-import MagicLink from "components/base/MagicLink";
-import Modal2 from "components/base/Modal2";
-import NewTabIcon from "components/base/NewTabIcon";
-import ModalContext from "components/providers/ModalProvider";
-import Link from "next/link";
-import React, { useContext } from "react";
-import styled from "styled-components";
+import Link from 'next/link'
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import ModalContext from 'components/providers/ModalProvider'
+import MagicLink from 'components/base/MagicLink'
+import Modal2 from 'components/base/Modal2'
+import NewTabIcon from 'components/base/NewTabIcon'
 
-const Title = styled.h2``;
+const Title = styled.h2``
 
 const DetailsTitle = styled.h4`
   cursor: pointer;
   display: inline;
-`;
+`
 const FormattedText = styled.div`
   h3 {
     margin-top: 2rem;
   }
-`;
+`
 
 export default function DetailLivraisonModal2() {
   const getTitle = () => {
-    return <Title>Les hypothèses retenues</Title>;
-  };
-  const { hypothesisLivraison: open, setHypothesisLivraison: setOpen } = useContext(ModalContext);
+    return <Title>Les hypothèses retenues</Title>
+  }
+  const { hypothesisLivraison: open, setHypothesisLivraison: setOpen } = useContext(ModalContext)
   return (
-    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width={"80em"}>
+    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width={'80em'}>
       <FormattedText>
         <p>
-          L'ensemble des calculs sont issus de{" "}
-          <MagicLink to="https://librairie.ademe.fr/mobilite-et-transport/6261-e-commerce-modelisation-des-impacts-et-recommandations-filieres-et-grand-public.html">
+          L'ensemble des calculs sont issus de{' '}
+          <MagicLink to='https://librairie.ademe.fr/mobilite-et-transport/6261-e-commerce-modelisation-des-impacts-et-recommandations-filieres-et-grand-public.html'>
             l’étude Commerce en ligne - 2023
-          </MagicLink>{" "}
+          </MagicLink>{' '}
           à destination des professionels du E-commerce. L'outil ECEL à l'origine des calculs de cette étude a été
           adapté au contexte des particuliers sous forme de simulateur.
         </p>
@@ -48,22 +48,22 @@ export default function DetailLivraisonModal2() {
           considérons un <b>lave-vaisselle</b>.
         </p>
         <p>
-          Pour <b>les produits de grande consommation</b>, nous avons considéré{" "}
+          Pour <b>les produits de grande consommation</b>, nous avons considéré{' '}
           <b>une commande de produits alimentaires secs</b>.
         </p>
 
         <h3>Les scénarios de livraison</h3>
         <p>
-          Dans cette première version, 3 scénarios sont proposés: la livraison{" "}
-          <b> à domicile, en point relais ou en click & collect</b>, tous adaptables à l'option{" "}
+          Dans cette première version, 3 scénarios sont proposés: la livraison{' '}
+          <b> à domicile, en point relais ou en click & collect</b>, tous adaptables à l'option{' '}
           <b>"colis qui vient de loin"</b>.
         </p>
         <p>
           Pour chaque scénario, nous prenons en compte l'<b>ensemble des étapes d'un processus de livraison</b> :
           commande en ligne, emballage, entrepôt de stockage, plateformes de tri, transport inter-platerformes,
           infrastruture de collecte, et enfin, le déplacement consommateur dans le cas d'une livraison en point relais
-          ou click & collect (<i>Voir ci-dessous pour le détail des processus de livraison</i>). Pour un article{" "}
-          <b>"qui vient de loin"</b>, nous avons fait l'hypothèse que le colis arrive <b>par avion depuis la Chine</b>{" "}
+          ou click & collect (<i>Voir ci-dessous pour le détail des processus de livraison</i>). Pour un article{' '}
+          <b>"qui vient de loin"</b>, nous avons fait l'hypothèse que le colis arrive <b>par avion depuis la Chine</b>{' '}
           via une étape de transport supplémentaire (9000km parcourus par avion, mix électrique de l'entrepôt de départ
           adapté). Nous ne prenons pas en compte les trainées de condensation pour l’aérien.
         </p>
@@ -83,7 +83,7 @@ export default function DetailLivraisonModal2() {
         <p>
           En ce qui concerne les <b>camions de livraison</b>, pour le <b>transport longue distance</b>, nous avons
           considéré un <b>poids lourd moyen</b> type 44 tonnes) tandis que pour les <b>derniers kilomètres</b> de
-          livraison, nous avons considéré un <b>véhicule utilitaire léger</b>.{" "}
+          livraison, nous avons considéré un <b>véhicule utilitaire léger</b>.{' '}
         </p>
         <h3>Fréquences de livraison</h3>
         <p>
@@ -207,11 +207,11 @@ export default function DetailLivraisonModal2() {
         </details>
         <h3>Pour aller plus loin</h3>
         <p>
-          <Link href={"/documentation/livraison-colis"} title="Documentation (ouvre un nouvel onglet)" target="_blank">
+          <Link href={'/documentation/livraison-colis'} title='Documentation (ouvre un nouvel onglet)' target='_blank'>
             Consultez notre documentation <NewTabIcon></NewTabIcon>
           </Link>
         </p>
       </FormattedText>
     </Modal2>
-  );
+  )
 }

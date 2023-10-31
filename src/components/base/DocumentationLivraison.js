@@ -1,32 +1,32 @@
-import Markdown from "./Markdown";
-import Section2 from "components/base/Section2";
-import BreadCrumb3 from "components/layout/web/BreadCrumb3";
-import FooterBlue from "components/layout/web/FooterBlue";
-import HeaderSweet from "components/layout/web/HeaderSweet";
-import Seo from "components/layout/web/Seo";
-import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
-import Head from "next/head";
-import Link from "next/link";
-import { RulePage } from "publicodes-react";
-import { useContext } from "react";
-import styled from "styled-components";
+import Head from 'next/head'
+import Link from 'next/link'
+import { RulePage } from 'publicodes-react'
+import { useContext } from 'react'
+import styled from 'styled-components'
+import Section2 from 'components/base/Section2'
+import BreadCrumb3 from 'components/layout/web/BreadCrumb3'
+import FooterBlue from 'components/layout/web/FooterBlue'
+import HeaderSweet from 'components/layout/web/HeaderSweet'
+import Seo from 'components/layout/web/Seo'
+import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
+import Markdown from './Markdown'
 
 export default function DocumentationLivraison(props) {
-  const { engine } = useContext(RulesContextLivraison);
+  const { engine } = useContext(RulesContextLivraison)
 
   return (
-    <VerticalContainer className={props.theme === "night" ? "bl" : "r"}>
-      <Seo title={props.title} description={"Documentation de l'impact de la livraison"} image={"metalivraison.png"} />
+    <VerticalContainer className={props.theme === 'night' ? 'bl' : 'r'}>
+      <Seo title={props.title} description={"Documentation de l'impact de la livraison"} image={'metalivraison.png'} />
       <HeaderSweet />
       <BreadCrumb3></BreadCrumb3>
       <Section2>
         <Section2.InnerMargin>
           <DocWrapper>
             <RulePage
-              documentationPath="/documentation"
+              documentationPath='/documentation'
               rulePath={props.slug}
               engine={engine}
-              language="fr"
+              language='fr'
               renderers={{
                 Head,
                 Link: ({ to, children }) => <Link href={to}>{children}</Link>,
@@ -41,14 +41,14 @@ export default function DocumentationLivraison(props) {
       <br />
       <FooterBlue />
     </VerticalContainer>
-  );
+  )
 }
 
 const DocWrapper = styled.div`
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   * {
     --textColor: #2975d1;
@@ -71,7 +71,9 @@ const DocWrapper = styled.div`
 
     background: linear-gradient(60deg, var(--darkColor) 0%, var(--color) 100%);
     padding: 0.6rem 1rem;
-    box-shadow: 0 1px 3px rgba(var(--rgbColor), 0.12), 0 1px 2px rgba(var(--rgbColor), 0.24);
+    box-shadow:
+      0 1px 3px rgba(var(--rgbColor), 0.12),
+      0 1px 2px rgba(var(--rgbColor), 0.24);
     border-radius: 0.4rem;
   }
   small {
@@ -116,6 +118,6 @@ const DocWrapper = styled.div`
   #documentation-rule-root > article {
     max-width: 800px;
   }
-`;
+`
 
-const VerticalContainer = styled.div``;
+const VerticalContainer = styled.div``

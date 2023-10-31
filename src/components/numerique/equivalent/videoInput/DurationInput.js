@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-
 import Slider from 'components/base/Slider'
 import RulesContext from 'components/numerique/RulesProvider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
@@ -9,9 +8,7 @@ export default function DurationInput(props) {
 
   return (
     <SliderWrapper>
-      <SliderWrapper.Label>
-        Durée de la {props.name === 'streaming' ? 'vidéo' : 'communication'}
-      </SliderWrapper.Label>
+      <SliderWrapper.Label>Durée de la {props.name === 'streaming' ? 'vidéo' : 'communication'}</SliderWrapper.Label>
       <SliderWrapper.Slider>
         <Slider
           value={engine.evaluate(`${props.name} . durée`).nodeValue}
@@ -23,9 +20,7 @@ export default function DurationInput(props) {
             })
           }
         />
-        <SliderWrapper.Value>
-          {engine.evaluate(`${props.name} . durée`).nodeValue} min
-        </SliderWrapper.Value>
+        <SliderWrapper.Value>{engine.evaluate(`${props.name} . durée`).nodeValue} min</SliderWrapper.Value>
       </SliderWrapper.Slider>
     </SliderWrapper>
   )

@@ -1,9 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
-
 import TransportContext from 'components/transport/TransportProvider'
-
 import NumberInput from './distance/NumberInput'
 import PlusOrMinusButton from './distance/PlusOrMinusButton'
 import ThumbContent from './distance/ThumbContent'
@@ -58,8 +56,7 @@ export default function Distance() {
   }
 
   const getPositionFromKm = (km) => {
-    const position =
-      Math.round((Math.log(km * 10) / Math.log(10) - 1) * 1000) / 1000
+    const position = Math.round((Math.log(km * 10) / Math.log(10) - 1) * 1000) / 1000
     return position > 4 ? 4 : position
   }
   const getKmFromPosition = (position) => Math.round(Math.pow(10, position))
@@ -96,9 +93,7 @@ export default function Distance() {
             onChange={(values) => {
               setKm(getKmFromPosition(values[0]))
             }}
-            renderTrack={({ props, children }) => (
-              <Track {...props}>{children}</Track>
-            )}
+            renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}
             renderThumb={({ props }) => (
               // Thumb can't be in his own component (don't know why)
               <Thumb {...props} aria-label='Distance'>

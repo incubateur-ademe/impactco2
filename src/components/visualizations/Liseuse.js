@@ -1,14 +1,5 @@
 import React from 'react'
-
-import {
-  Emojis,
-  Equals,
-  Equivalent,
-  Equivalents,
-  Label,
-  Small,
-  Title,
-} from 'components/misc/Visualization'
+import { Emojis, Equals, Equivalent, Equivalents, Label, Small, Title } from 'components/misc/Visualization'
 
 export default function Liseuse() {
   return (
@@ -25,8 +16,7 @@ export default function Liseuse() {
         <Equals>=</Equals>
         <Equivalent size={[29, 18, 66]}>
           <Emojis>
-            📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗
-            📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗
+            📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗 📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗📗
           </Emojis>
           <Label>50 livres papier</Label>
         </Equivalent>

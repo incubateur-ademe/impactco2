@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 import React from 'react'
-
 import { StyleProvider } from 'components/providers/StyleProvider'
-
 import PoissonGras from './PoissonGras'
 
 describe('<PoissonGras />', () => {
@@ -21,9 +19,6 @@ describe('<PoissonGras />', () => {
         <PoissonGras />
       </StyleProvider>
     )
-    cy.get('body').should(
-      'contains.text',
-      '1 repas avecdu boeuf=7 repas avecdu poisson gras'
-    )
+    cy.get('body').should('contains.text', '1 repas avecdu boeuf=7 repas avecdu poisson gras')
   })
 })

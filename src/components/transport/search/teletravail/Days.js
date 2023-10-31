@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
-
 import TransportContext from 'components/transport/TransportProvider'
-
 import Selector from './days/Selector'
 
 const Wrapper = styled.div`
@@ -11,16 +9,8 @@ const Wrapper = styled.div`
   margin: 0 -0.75rem;
 `
 export default function Days() {
-  const {
-    start,
-    end,
-    teletravailTransportation,
-    presentiel,
-    setPresentiel,
-    teletravail,
-    setTeletravail,
-    days,
-  } = useContext(TransportContext)
+  const { start, end, teletravailTransportation, presentiel, setPresentiel, teletravail, setTeletravail, days } =
+    useContext(TransportContext)
 
   useEffect(() => {
     if (presentiel + teletravail !== days) {

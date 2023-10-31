@@ -1,10 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import ModalContext from 'components/providers/ModalProvider'
-
 import Modal from 'components/base/Modal'
-
 import Agribalyse from './ecvModal/Agribalyse'
 import Numerique from './ecvModal/Numerique'
 import Standard from './ecvModal/Standard'

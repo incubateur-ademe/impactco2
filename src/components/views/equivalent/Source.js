@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Section from 'components/base/Section'
 
 const Title = styled.h2`

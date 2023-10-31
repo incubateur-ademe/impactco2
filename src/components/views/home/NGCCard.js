@@ -1,8 +1,8 @@
-import LogoNGC from "./img/LogoNGC";
-import OutboundLink from "components/base/OutboundLink";
-import Section2 from "components/base/Section2";
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import OutboundLink from 'components/base/OutboundLink'
+import Section2 from 'components/base/Section2'
+import LogoNGC from './img/LogoNGC'
 
 export default function NGCCard() {
   return (
@@ -18,12 +18,12 @@ export default function NGCCard() {
                   </CardTitle>
                   <CardText1>
                     Vous souhaitez aller plus loin en mesurant votre empreinte sur le climat ou celle d’un groupe de
-                    personnes ?{" "}
+                    personnes ?{' '}
                   </CardText1>
                   <CardText2>
                     Rendez-vous sur le simulateur&nbsp;
                     <strong>
-                      <OutboundLink title="Nos Gestes Climat" href="https://nosgestesclimat.fr">
+                      <OutboundLink title='Nos Gestes Climat' href='https://nosgestesclimat.fr'>
                         Nos Gestes Climat
                       </OutboundLink>
                     </strong>
@@ -38,23 +38,23 @@ export default function NGCCard() {
         </Section2.WideContent>
       </Section2>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.div`
   margin-top: 3rem;
-`;
+`
 const Card = styled.div`
   border: 1px solid #ccdcfd;
   border-radius: 1rem;
-`;
+`
 
 const CardTitle = styled.div`
   color: ${(props) => props.theme.colors.main};
-`;
+`
 const CardText1 = styled.div`
   margin-top: 1rem;
-`;
+`
 const CardText2 = styled.div`
   margin-top: 0.25rem;
   ${(props) => props.theme.mq.small} {
@@ -63,14 +63,14 @@ const CardText2 = styled.div`
   a {
     text-underline-offset: 6px;
   }
-`;
+`
 
 const FlexContainer = styled.div`
   display: flex;
-`;
+`
 const FlexLine1 = styled.div`
   padding: 1rem;
-`;
+`
 
 const FlexLine2 = styled.div`
   margin-left: auto;
@@ -82,4 +82,4 @@ const FlexLine2 = styled.div`
     border-top-right-radius: 15px;
     height: 100%;
   }
-`;
+`

@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
-import CountUp from 'react-countup'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import Button from 'components/base/Button'
-import Emoji from 'components/base/Emoji'
-import DataContext from 'components/providers/DataProvider'
-import useIframe from 'hooks/useIframe'
+import React, { useContext } from 'react'
+import CountUp from 'react-countup'
 import styled from 'styled-components'
 import { formatName, formatNumber, formatTotalByMultiplier } from 'utils/formatters'
+import useIframe from 'hooks/useIframe'
+import DataContext from 'components/providers/DataProvider'
+import Button from 'components/base/Button'
+import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -152,8 +152,7 @@ export default function Tile(props) {
           {...attributes}
           {...listeners}
           onMouseDown={() => window?.please?.track(['trackEvent', 'Interaction', 'Drag tuile', props.equivalent.slug])}
-          aria-label={'Déplacer'}
-        >
+          aria-label={'Déplacer'}>
           <svg width='12' height='16' viewBox='0 0 12 16' fill='none'>
             <circle cx='2' cy='2' r='2' />
             <circle cx='10' cy='2' r='2' />
@@ -170,8 +169,7 @@ export default function Tile(props) {
             props.removeEquivalent(props.equivalent.id)
             window?.please?.track(['trackEvent', 'Interaction', 'Supprimer tuile', props.equivalent.slug])
           }}
-          aria-label={'Supprimer'}
-        >
+          aria-label={'Supprimer'}>
           <svg x='0px' y='0px' width='41.756px' height='41.756px' viewBox='0 0 41.756 41.756'>
             <path
               // eslint-disable-next-line max-len
@@ -211,8 +209,7 @@ export default function Tile(props) {
             <StyledButton
               to={`${iframe ? 'https://impactco2.fr' : ''}/${
                 categories.find((category) => category.id === props.equivalent.category)?.slug
-              }/${props.equivalent.slug}`}
-            >
+              }/${props.equivalent.slug}`}>
               Voir le détail
               {iframe && (
                 <Svg x='0px' y='0px' viewBox='0 0 283.178 283.178'>
@@ -240,8 +237,7 @@ export default function Tile(props) {
               props.setCurEquivalent(props.equivalent)
               window?.please?.track(['trackEvent', 'Interaction', 'Comparer tuile', props.equivalent.slug])
             }}
-            hollow
-          >
+            hollow>
             <svg width='292' height='388' viewBox='0 0 292 388' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <path d='M168.627 9.37298C162.378 3.12397 154.19 -4.25109e-05 146 -4.32269e-05C137.812 -4.39427e-05 129.62 3.12497 123.373 9.37297L9.99496 122.75C-2.50204 135.247 -2.50205 155.508 9.99495 168.005C22.492 180.502 42.753 180.502 55.25 168.005L114 109.255L114 356.001C114 373.674 128.327 388.001 146 388.001C163.673 388.001 178 373.674 178 356.001L178 109.255L236.75 168.005C249.247 180.502 269.508 180.502 282.005 168.005C294.502 155.508 294.502 135.247 282.005 122.75L168.627 9.37298Z' />
             </svg>

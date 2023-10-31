@@ -12,9 +12,5 @@ const Wrapper = styled.p`
   }
 `
 export default function Description(props) {
-  return (
-    props.description && (
-      <Wrapper large={props.large}>{props.description}</Wrapper>
-    )
-  )
+  return props.description && <Wrapper large={props.large}>{props.description}</Wrapper>
 }

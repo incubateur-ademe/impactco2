@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import TransportContext from 'components/transport/TransportProvider'
-
 import Address from './itinerary/Address'
 
 const Wrapper = styled.div`
@@ -18,11 +16,7 @@ export default function Itinerary() {
 
   return (
     <Wrapper>
-      <Address
-        placeholder='Départ'
-        address={start?.address}
-        setPlace={setStart}
-      />
+      <Address placeholder='Départ' address={start?.address} setPlace={setStart} />
       <Address placeholder='Arrivée' address={end?.address} setPlace={setEnd} />
     </Wrapper>
   )

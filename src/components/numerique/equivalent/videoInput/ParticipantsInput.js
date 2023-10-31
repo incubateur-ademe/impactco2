@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-
 import Slider from 'components/base/Slider'
 import RulesContext from 'components/numerique/RulesProvider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
@@ -21,9 +20,7 @@ export default function ParticipantInput(props) {
             })
           }
         />
-        <SliderWrapper.Value>
-          {engine.evaluate(`${props.name} . emplacements`).nodeValue}
-        </SliderWrapper.Value>
+        <SliderWrapper.Value>{engine.evaluate(`${props.name} . emplacements`).nodeValue}</SliderWrapper.Value>
       </SliderWrapper.Slider>
     </SliderWrapper>
   ) : null

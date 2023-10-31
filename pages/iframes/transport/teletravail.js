@@ -1,6 +1,5 @@
-import categories from 'data/categories.json'
 import React from 'react'
-
+import categories from 'data/categories.json'
 import Iframe from 'components/layout/Iframe'
 import Teletravail from 'components/transport/Teletravail'
 import { TransportProvider } from 'components/transport/TransportProvider'

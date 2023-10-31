@@ -1,24 +1,23 @@
-import LearningFruit from "components/fruitsetlegumes/LearningFruit";
-import Saisons from "components/fruitsetlegumes/Saisons";
-import Web from "components/layout/Web";
-import categories from "data/categories.json";
-import React from "react";
-import { getMonth, slugs } from "utils/months";
+import React from 'react'
+import categories from 'data/categories.json'
+import { getMonth, slugs } from 'utils/months'
+import LearningFruit from 'components/fruitsetlegumes/LearningFruit'
+import Saisons from 'components/fruitsetlegumes/Saisons'
+import Web from 'components/layout/Web'
 
 export default function Month(props) {
   return (
     <Web
-      title={props.month.long + " | " + props.category.title}
+      title={props.month.long + ' | ' + props.category.title}
       description={props.category.description}
       breadcrumb={{
-        type: "equivalent",
+        type: 'equivalent',
         category: props.category,
-      }}
-    >
+      }}>
       <Saisons category={props.category} month={props.month} />
       <LearningFruit />
     </Web>
-  );
+  )
 }
 export async function getStaticPaths() {
   return {
@@ -26,7 +25,7 @@ export async function getStaticPaths() {
       params: { month: slug },
     })),
     fallback: false,
-  };
+  }
 }
 export async function getStaticProps({ params }) {
   return {
@@ -38,5 +37,5 @@ export async function getStaticProps({ params }) {
         ...getMonth(slugs.indexOf(params.month)),
       },
     },
-  };
+  }
 }

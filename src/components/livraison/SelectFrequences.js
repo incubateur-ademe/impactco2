@@ -1,6 +1,6 @@
-import { frequences } from "./data.js";
-import Select from "components/base/Select";
-import styled from "styled-components";
+import styled from 'styled-components'
+import Select from 'components/base/Select'
+import { frequences } from './data.js'
 
 const StyledSelect = styled(Select)`
   margin: 0;
@@ -11,20 +11,19 @@ const StyledSelect = styled(Select)`
   > option {
     width: 300px;
   }
-`;
+`
 
 export default function SelectFrequences(props) {
   return (
     <>
       <StyledSelect
         onChange={(e) => {
-          props.changeFrequence && props.changeFrequence(frequences.find((frequence) => frequence.uid === e.value));
+          props.changeFrequence && props.changeFrequence(frequences.find((frequence) => frequence.uid === e.value))
         }}
         value={props.value}
-        className="freq"
-        label=""
-        name="frequences"
-      >
+        className='freq'
+        label=''
+        name='frequences'>
         {frequences.map((frequence) => (
           <option key={frequence.uid} value={frequence.uid}>
             {frequence.displayed}
@@ -32,5 +31,5 @@ export default function SelectFrequences(props) {
         ))}
       </StyledSelect>
     </>
-  );
+  )
 }
