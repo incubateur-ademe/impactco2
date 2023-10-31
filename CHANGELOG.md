@@ -1,5 +1,6 @@
 # CHANGELOG
 
+
 ## 1.24.2 (26/10/2023)
 
 * BSR - tests refactoring
