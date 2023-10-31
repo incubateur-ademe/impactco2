@@ -82,7 +82,7 @@ export default function EqModal4() {
                   <ShowMobile>Valider</ShowMobile>
                 </ButtonValidation>
                 <ButtonCancel onClick={dismiss}>
-                  <ShowDesktop>Annuler</ShowDesktop>
+                  <ShowDesktop data-testid="cancelEqs">Annuler</ShowDesktop>
                   <ShowMobile>X</ShowMobile>
                 </ButtonCancel>
               </ValidationButtons>
