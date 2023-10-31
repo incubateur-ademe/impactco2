@@ -2,6 +2,9 @@
 const { withSentryConfig } = require('@sentry/nextjs')
 const { execSync } = require('child_process')
 const { readFileSync } = require('fs')
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 const getLocalGitCommitHash = function () {
   let res = ''
@@ -122,4 +125,4 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
 }
 
-module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)
+module.exports = withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
