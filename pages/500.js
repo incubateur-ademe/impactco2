@@ -2,7 +2,7 @@ import React from 'react'
 import Section from 'components/base/Section'
 import Web from 'components/layout/Web'
 
-export default function notfound() {
+export default function error() {
   return (
     <Web>
       <Section>

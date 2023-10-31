@@ -69,11 +69,8 @@ export default function ByTheme() {
 
 const Wrapper = styled.div`
   background-color: #ebf2ff;
-  margin-top: -25rem;
   padding: 6rem 0;
   ${(props) => props.theme.mq.large} {
-    margin-top: -23rem;
-    margin-top: -1rem;
     padding: 1rem 0;
   }
 `

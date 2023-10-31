@@ -40,6 +40,7 @@ export default function TextInput(props) {
         max={props.max}
         value={props.value}
         error={props.error}
+        required={props.required}
         onChange={(e) => {
           props.onChange({ value: e.currentTarget.value, name: props.name })
         }}

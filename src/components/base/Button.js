@@ -6,14 +6,13 @@ const Wrapper = styled(MagicLink)`
   align-items: center;
   background-color: ${(props) => (props.hollow ? 'transparent' : props.theme.colors.main)};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'background']};
   cursor: pointer;
   display: flex;
   font-size: ${(props) => (props.small ? '0.875em' : '1em')};
   gap: ${(props) => (props.small ? '0.375em' : '0.5em')};
   justify-content: center;
-  line-height: 1.2;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   padding: 0.5em 1.5em;
   pointer-events: ${(props) => (props.disabled ? 'none' : 'inherit')};
