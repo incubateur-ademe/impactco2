@@ -29,11 +29,11 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
       openModal(screen);
     });
     // Then
-    expect(container.getElementsByClassName("equivalent-checked").length).toBe(3);
-    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("3/3 équivalences sélectionnées");
-    expect(screen.getByTestId("chosen-streamingvideo")).toHaveTextContent("Streaming vidéo");
-    expect(screen.getByTestId("chosen-repasavecduboeuf")).toHaveTextContent("Repas avec du boeuf");
-    expect(screen.getByTestId("chosen-voiturethermique")).toHaveTextContent("Voiture");
+    expect(container.getElementsByClassName("eq-is-checked").length).toBe(3);
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("3/3 équivalences sélectionnées");
+    expect(screen.getByTestId("eq-streamingvideo")).toHaveTextContent("Streaming vidéo");
+    expect(screen.getByTestId("eq-repasavecduboeuf")).toHaveTextContent("Repas avec du boeuf");
+    expect(screen.getByTestId("eq-voiturethermique")).toHaveTextContent("Voiture");
   });
 
   it("Peut afficher d'autres sélections par défaut", () => {
@@ -45,9 +45,9 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
       openModal(screen);
     });
     // Then
-    expect(container.getElementsByClassName("equivalent-checked").length).toBe(2);
-    expect(screen.getByTestId("eqs_selected")).toHaveTextContent("2/3 équivalences sélectionnées");
-    expect(screen.getByTestId("chosen-abricot")).toHaveTextContent("Abricot");
-    expect(screen.getByTestId("chosen-ail")).toHaveTextContent("Ail");
+    expect(container.getElementsByClassName("eq-is-checked").length).toBe(2);
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("2/3 équivalences sélectionnées");
+    expect(screen.getByTestId("eq-abricot")).toHaveTextContent("Abricot");
+    expect(screen.getByTestId("eq-ail")).toHaveTextContent("Ail");
   });
 });
