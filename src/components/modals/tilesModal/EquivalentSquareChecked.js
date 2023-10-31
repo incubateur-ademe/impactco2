@@ -60,7 +60,7 @@ export default function EquivalentSquareChecked(props) {
       type="checkbox"
       checked={props.checked}
       onClick={() => props.setChecked(!props.checked)}
-      className="eq-is-checked"
+      className="checked-eq"
       data-testid={props["data-testid"]}
     >
       <Left>

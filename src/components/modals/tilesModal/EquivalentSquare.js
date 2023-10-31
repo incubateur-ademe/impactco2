@@ -45,7 +45,7 @@ export default function EquivalentSquare(props) {
       checked={props.checked}
       onClick={() => props.setChecked(!props.checked)}
       className="equivalent-unchecked"
-      data-testid={`unchecked-${props.equivalent.slug}`}
+      data-testid={`unchecked-eq-${props.equivalent.slug}`}
     >
       <Left>
         <GreenSquare>&nbsp;</GreenSquare>
