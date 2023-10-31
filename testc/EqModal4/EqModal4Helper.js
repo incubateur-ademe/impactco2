@@ -20,3 +20,7 @@ export function EqModal4Opener() {
 export const openModal = (screen) => {
   screen.getByTestId("modalOpener").click();
 };
+export const initializeWith = (array) => {
+  window.localStorage.setItem("ico2_eqv_chosen", JSON.stringify(array));
+  window.localStorage.setItem("ico2_eqv_array", JSON.stringify(array));
+};
