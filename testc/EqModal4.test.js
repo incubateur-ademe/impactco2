@@ -51,7 +51,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.getByTestId("checked-eq-ail")).toHaveTextContent("Ail");
   });
 
-  it("On peut rajouter une équivalence, si il y en moins de 3 au départ, la nouvelle équivalence s'ajoute à la liste", () => {
+  it("On peut rajouter une équivalence, si il y en moins de 3 au départ, la nouvelle équivalence s'ajoute à la liste, et le titre se mets à jour", () => {
     // Given
     initializeWith(["ail", "abricot"]);
     const { container } = renderWithWrapper(<EqModal4Opener />);
@@ -69,7 +69,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.getByTestId("checked-eq-ail")).toHaveTextContent("Ail");
     expect(screen.getByTestId("checked-eq-ananas")).toHaveTextContent("Ananas");
   });
-  it("On peut rajouter une équivalence, elle disparaît alors de la liste des équivalences non-cochées", () => {
+  it("On peut rajouter une équivalence pas encore choisie, elle disparaît alors de la liste des équivalences non-cochées, et réapparaît dans l'autre liste", () => {
     // Given
     initializeWith(["ail", "abricot"]);
     renderWithWrapper(<EqModal4Opener />);
@@ -82,8 +82,9 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     });
     // Then
     expect(screen.queryByTestId("unchecked-eq-ananas")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-ananas")).toBeInTheDocument();
   });
-  it("On peut supprimer une équivalence, elle disparaît alors de la liste des équivalences cochées", () => {
+  it("On peut supprimer une équivalence déjà cochée, elle disparaît alors de la liste des équivalences cochées, et réapparaît dans l'autre liste", () => {
     // Given
     initializeWith(["ail", "abricot", "ananas"]);
     renderWithWrapper(<EqModal4Opener />);
@@ -96,5 +97,6 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     });
     // Then
     expect(screen.queryByTestId("checked-eq-ananas")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("unchecked-eq-ananas")).toBeInTheDocument();
   });
 });
