@@ -2,10 +2,10 @@ import ModalContext from "components/providers/ModalProvider";
 import { useContext } from "react";
 
 export function EqModal4Opener() {
-  const { setEqv } = useContext(ModalContext);
+  const { eqv, setEqv } = useContext(ModalContext);
 
   const clicked = () => {
-    setEqv(true);
+    setEqv(!eqv);
   };
 
   return (

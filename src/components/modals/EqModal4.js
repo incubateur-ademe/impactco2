@@ -78,7 +78,7 @@ export default function EqModal4() {
               </ValidationMsg>
               <ValidationButtons>
                 <ButtonValidation onClick={validateEqv}>
-                  <ShowDesktop>Valider et fermer</ShowDesktop>
+                  <ShowDesktop data-testid="validateAndClose">Valider et fermer</ShowDesktop>
                   <ShowMobile>Valider</ShowMobile>
                 </ButtonValidation>
                 <ButtonCancel onClick={dismiss}>

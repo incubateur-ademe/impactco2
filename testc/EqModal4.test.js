@@ -16,7 +16,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
       openModal(screen);
     });
     // Then
-    expect(screen.getByTestId("eqs_modal_intro")).toHaveTextContent(
+    expect(screen.queryByTestId("eqs_modal_intro")).toHaveTextContent(
       "Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée."
     );
   });
@@ -170,5 +170,69 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("checked-eq-abricot")).toBeInTheDocument();
     expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
     expect(screen.queryByTestId("checked-eq-artichaut")).toBeInTheDocument();
+  });
+  it("Validation : on peut choisir 3 items différents, valider, et rouvrir la modale : les nouveaux choix apparaissent", () => {
+    //Given
+    initializeWith([]);
+    const { container } = renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    expect(screen.queryByTestId("EqModal4")).toBeInTheDocument();
+    act(() => {
+      screen.getByTestId("unchecked-eq-ail").click();
+    });
+    act(() => {
+      screen.getByTestId("unchecked-eq-abricot").click();
+    });
+    act(() => {
+      screen.getByTestId("unchecked-eq-ananas").click();
+    });
+    // When
+    act(() => {
+      screen.getByTestId("validateAndClose").click();
+    });
+    // Then
+    expect(screen.queryByTestId("EqModal4")).not.toBeInTheDocument();
+    act(() => {
+      openModal(screen);
+    });
+    expect(container.getElementsByClassName("checked-eq").length).toBe(3);
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("3/3 équivalences sélectionnées");
+    expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-abricot")).toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-ananas")).toBeInTheDocument();
+  });
+  it("Validation : on peut choisir 3 items différents, annuler, et rouvrir la modale : les anciens choix apparaissent", () => {
+    //Given
+    initializeWith([]);
+    const { container } = renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    expect(screen.queryByTestId("EqModal4")).toBeInTheDocument();
+    act(() => {
+      screen.getByTestId("unchecked-eq-ail").click();
+    });
+    act(() => {
+      screen.getByTestId("unchecked-eq-abricot").click();
+    });
+    act(() => {
+      screen.getByTestId("unchecked-eq-ananas").click();
+    });
+    // When
+    act(() => {
+      screen.getByTestId("validateAndClose").click();
+    });
+    // Then
+    expect(screen.queryByTestId("EqModal4")).not.toBeInTheDocument();
+    act(() => {
+      openModal(screen);
+    });
+    expect(container.getElementsByClassName("checked-eq").length).toBe(3);
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("3/3 équivalences sélectionnées");
+    expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-abricot")).toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-ananas")).toBeInTheDocument();
   });
 });
