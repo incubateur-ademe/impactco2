@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
 
-export const Title = styled.h3`
+export const Title = styled.h2`
+  font-size: 22px;
   font-weight: normal;
   margin-bottom: 2rem;
   text-align: center;

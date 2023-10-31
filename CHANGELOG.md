@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.4 (06/11/2023)
+
+- A7 - A11Y Amelioration de la hierarchie des titres
+
 ## 1.24.3 (06/11/2023)
 
 - CHORE - Mise à jour des frameworks
