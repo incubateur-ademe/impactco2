@@ -83,4 +83,18 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     // Then
     expect(screen.queryByTestId("unchecked-eq-ananas")).not.toBeInTheDocument();
   });
+  it("On peut supprimer une équivalence, elle disparaît alors de la liste des équivalences cochées", () => {
+    // Given
+    initializeWith(["ail", "abricot", "ananas"]);
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    // When
+    act(() => {
+      screen.getByTestId("checked-eq-ananas").click();
+    });
+    // Then
+    expect(screen.queryByTestId("checked-eq-ananas")).not.toBeInTheDocument();
+  });
 });
