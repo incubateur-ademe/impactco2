@@ -76,6 +76,8 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     act(() => {
       openModal(screen);
     });
+    expect(screen.queryByTestId("unchecked-eq-ananas")).toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-ananas")).not.toBeInTheDocument();
     // When
     act(() => {
       screen.getByTestId("unchecked-eq-ananas").click();
@@ -91,6 +93,8 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     act(() => {
       openModal(screen);
     });
+    expect(screen.queryByTestId("checked-eq-ananas")).toBeInTheDocument();
+    expect(screen.queryByTestId("unchecked-eq-ananas")).not.toBeInTheDocument();
     // When
     act(() => {
       screen.getByTestId("checked-eq-ananas").click();
@@ -98,5 +102,69 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     // Then
     expect(screen.queryByTestId("checked-eq-ananas")).not.toBeInTheDocument();
     expect(screen.queryByTestId("unchecked-eq-ananas")).toBeInTheDocument();
+  });
+  it("On peut supprimer toutes les équivalences, le titre s'orthographie correctement au fur et à mesure, de plus, un message d'alerte s'affiche à la fin", () => {
+    //Given
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    expect(screen.queryByTestId("emptyChoice")).not.toBeInTheDocument();
+    // When
+    act(() => {
+      screen.getByTestId("EqModal4").querySelector("button.checked-eq").click();
+    });
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("2/3 équivalences sélectionnées");
+    act(() => {
+      screen.getByTestId("EqModal4").querySelector("button.checked-eq").click();
+    });
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("1/3 équivalence sélectionnée");
+    act(() => {
+      screen.getByTestId("EqModal4").querySelector("button.checked-eq").click();
+    });
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("0/3 équivalence sélectionnée");
+
+    // Then
+    expect(screen.getByTestId("emptyChoice")).toHaveTextContent("Veuillez choisir au moins 2 items ci-dessous");
+  });
+  it("Le message d'alerte à propos de la liste vide disparaît dès qu'on fait un choix", () => {
+    //Given
+    initializeWith([]);
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    expect(screen.queryByTestId("emptyChoice")).toBeInTheDocument();
+    // When
+    act(() => {
+      screen.getByTestId("unchecked-eq-ail").click();
+    });
+    // Then
+    expect(screen.queryByTestId("emptyChoice")).not.toBeInTheDocument();
+  });
+  it("On peut partir de zéro et rajouter 4 équivalences, auquel cas la liste reste à 3 sélection, car l'équivalence choisie la plus ancienne disparaît", () => {
+    //Given
+    initializeWith([]);
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    // When
+    act(() => {
+      screen.getByTestId("unchecked-eq-ail").click();
+    });
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("1/3 équivalence sélectionnée");
+    act(() => {
+      screen.getByTestId("unchecked-eq-abricot").click();
+    });
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("2/3 équivalences sélectionnées");
+    act(() => {
+      screen.getByTestId("unchecked-eq-ananas").click();
+    });
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("3/3 équivalences sélectionnées");
+    act(() => {
+      screen.getByTestId("unchecked-eq-artichaut").click();
+    });
+    expect(screen.getByTestId("eqs-title")).toHaveTextContent("3/3 équivalences sélectionnées");
   });
 });
