@@ -17,4 +17,16 @@ describe("formatName", () => {
     let res = formatName("le[s] cadeau[x]", 2);
     expect(res).toEqual("les cadeaux");
   });
+  test("tous les [s] et [x] sont remplacés, même si il y en a plusieurs", () => {
+    let res = formatName("le[s] cadeau[x] de[s] chou[x]", 2);
+    expect(res).toEqual("les cadeaux des choux");
+  });
+  test("le résultat peut éventuellement garder ses majuscules originales", () => {
+    let res = formatName("Le[s] Cadeau[x] De[s] Chou[x]", 2, true);
+    expect(res).toEqual("Les Cadeaux Des Choux");
+  });
+  test("le résultat perd ses majuscules, par défaut", () => {
+    let res = formatName("Le[s] Cadeau[x] De[s] Chou[x]", 2);
+    expect(res).toEqual("les cadeaux des choux");
+  });
 });
