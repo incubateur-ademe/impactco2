@@ -154,24 +154,21 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
       screen.getByTestId("unchecked-eq-ail").click();
     });
     expect(screen.getByTestId("eqs-title")).toHaveTextContent("1/3 équivalence sélectionnée");
-    expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
     act(() => {
       screen.getByTestId("unchecked-eq-abricot").click();
     });
     expect(screen.getByTestId("eqs-title")).toHaveTextContent("2/3 équivalences sélectionnées");
-    expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
     act(() => {
       screen.getByTestId("unchecked-eq-ananas").click();
     });
     expect(screen.getByTestId("eqs-title")).toHaveTextContent("3/3 équivalences sélectionnées");
-    expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
     act(() => {
       screen.getByTestId("unchecked-eq-artichaut").click();
     });
     expect(screen.getByTestId("eqs-title")).toHaveTextContent("3/3 équivalences sélectionnées");
-    // expect(screen.queryByTestId("checked-eq-ail")).not.toBeInTheDocument();
-    // expect(screen.queryByTestId("checked-eq-abricot")).toBeInTheDocument();
-    // expect(screen.queryByTestId("checked-eq-ananas")).toBeInTheDocument();
-    // expect(screen.queryByTestId("checked-eq-artichaut")).toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-ananas")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-abricot")).toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
+    expect(screen.queryByTestId("checked-eq-artichaut")).toBeInTheDocument();
   });
 });
