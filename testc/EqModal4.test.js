@@ -282,4 +282,21 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("EqModal4")).toBeInTheDocument();
     expect(screen.queryByTestId("validationError")).toBeInTheDocument();
   });
+  it("Validation : si on choisit zéro item et qu'on valide, la modale ne se ferme pas et un message d'erreur apparaît", () => {
+    //Given
+    initializeWith([]);
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    expect(screen.queryByTestId("EqModal4")).toBeInTheDocument();
+    expect(screen.queryByTestId("validationError")).not.toBeInTheDocument();
+    // When
+    act(() => {
+      screen.getByTestId("validateAndClose").click();
+    });
+    // Then
+    expect(screen.queryByTestId("EqModal4")).toBeInTheDocument();
+    expect(screen.queryByTestId("validationError")).toBeInTheDocument();
+  });
 });
