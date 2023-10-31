@@ -69,4 +69,18 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.getByTestId("checked-eq-ail")).toHaveTextContent("Ail");
     expect(screen.getByTestId("checked-eq-ananas")).toHaveTextContent("Ananas");
   });
+  it("On peut rajouter une équivalence, elle disparaît alors de la liste des équivalences non-cochées", () => {
+    // Given
+    initializeWith(["ail", "abricot"]);
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    // When
+    act(() => {
+      screen.getByTestId("unchecked-eq-ananas").click();
+    });
+    // Then
+    expect(screen.queryByTestId("unchecked-eq-ananas")).not.toBeInTheDocument();
+  });
 });
