@@ -262,4 +262,24 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("checked-eq-repasavecduboeuf")).toBeInTheDocument();
     expect(screen.queryByTestId("checked-eq-voiturethermique")).toBeInTheDocument();
   });
+  it("Validation : si on ne choisit qu'un seul item et qu'on valide, la modale ne se ferme pas et un message d'erreur apparaît", () => {
+    //Given
+    initializeWith([]);
+    renderWithWrapper(<EqModal4Opener />);
+    act(() => {
+      openModal(screen);
+    });
+    expect(screen.queryByTestId("EqModal4")).toBeInTheDocument();
+    expect(screen.queryByTestId("validationError")).not.toBeInTheDocument();
+    act(() => {
+      screen.getByTestId("unchecked-eq-ail").click();
+    });
+    // When
+    act(() => {
+      screen.getByTestId("validateAndClose").click();
+    });
+    // Then
+    expect(screen.queryByTestId("EqModal4")).toBeInTheDocument();
+    expect(screen.queryByTestId("validationError")).toBeInTheDocument();
+  });
 });

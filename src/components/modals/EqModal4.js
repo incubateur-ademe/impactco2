@@ -70,7 +70,7 @@ export default function EqModal4() {
               <ValidationMsg>
                 {eqvError ? (
                   <>
-                    <EqvError>⚠️ {eqvError}</EqvError>
+                    <EqvError data-testid="validationError">⚠️ {eqvError}</EqvError>
                   </>
                 ) : (
                   <></>
