@@ -7,7 +7,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
   beforeEach(async () => {
     window.localStorage.clear();
   });
-  it("Ne s'affiche pas, sauf si on lui demande", () => {
+  test("Ne s'affiche pas, sauf si on lui demande", () => {
     // Given
     renderWithWrapper(<EqModal4Opener />);
     expect(screen.queryByTestId("eqs_modal_intro")).not.toBeInTheDocument();
@@ -21,7 +21,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     );
   });
 
-  it("Affiche 3 sélections, par défaut", () => {
+  test("Affiche 3 sélections, par défaut", () => {
     // Given
     const { container } = renderWithWrapper(<EqModal4Opener />);
     // When
@@ -36,7 +36,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.getByTestId("checked-eq-voiturethermique")).toHaveTextContent("Voiture");
   });
 
-  it("Peut afficher d'autres sélections par défaut", () => {
+  test("Peut afficher d'autres sélections par défaut", () => {
     // Given
     initializeWith(["ail", "abricot"]);
     const { container } = renderWithWrapper(<EqModal4Opener />);
@@ -51,7 +51,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.getByTestId("checked-eq-ail")).toHaveTextContent("Ail");
   });
 
-  it("On peut rajouter une équivalence, si il y en moins de 3 au départ, la nouvelle équivalence s'ajoute à la liste, et le titre se mets à jour", () => {
+  test("On peut rajouter une équivalence, si il y en moins de 3 au départ, la nouvelle équivalence s'ajoute à la liste, et le titre se mets à jour", () => {
     // Given
     initializeWith(["ail", "abricot"]);
     const { container } = renderWithWrapper(<EqModal4Opener />);
@@ -69,7 +69,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.getByTestId("checked-eq-ail")).toHaveTextContent("Ail");
     expect(screen.getByTestId("checked-eq-ananas")).toHaveTextContent("Ananas");
   });
-  it("On peut rajouter une équivalence pas encore choisie, elle disparaît alors de la liste des équivalences non-cochées, et réapparaît dans l'autre liste", () => {
+  test("On peut rajouter une équivalence pas encore choisie, elle disparaît alors de la liste des équivalences non-cochées, et réapparaît dans l'autre liste", () => {
     // Given
     initializeWith(["ail", "abricot"]);
     renderWithWrapper(<EqModal4Opener />);
@@ -86,7 +86,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("unchecked-eq-ananas")).not.toBeInTheDocument();
     expect(screen.queryByTestId("checked-eq-ananas")).toBeInTheDocument();
   });
-  it("On peut supprimer une équivalence déjà cochée, elle disparaît alors de la liste des équivalences cochées, et réapparaît dans l'autre liste", () => {
+  test("On peut supprimer une équivalence déjà cochée, elle disparaît alors de la liste des équivalences cochées, et réapparaît dans l'autre liste", () => {
     // Given
     initializeWith(["ail", "abricot", "ananas"]);
     renderWithWrapper(<EqModal4Opener />);
@@ -103,7 +103,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("checked-eq-ananas")).not.toBeInTheDocument();
     expect(screen.queryByTestId("unchecked-eq-ananas")).toBeInTheDocument();
   });
-  it("On peut supprimer toutes les équivalences, le titre s'orthographie correctement au fur et à mesure, de plus, un message d'alerte s'affiche à la fin", () => {
+  test("On peut supprimer toutes les équivalences, le titre s'orthographie correctement au fur et à mesure, de plus, un message d'alerte s'affiche à la fin", () => {
     //Given
     renderWithWrapper(<EqModal4Opener />);
     act(() => {
@@ -127,7 +127,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     // Then
     expect(screen.getByTestId("emptyChoice")).toHaveTextContent("Veuillez choisir au moins 2 items ci-dessous");
   });
-  it("Le message d'alerte à propos de la liste vide disparaît dès qu'on fait un choix", () => {
+  test("Le message d'alerte à propos de la liste vide disparaît dès qu'on fait un choix", () => {
     //Given
     initializeWith([]);
     renderWithWrapper(<EqModal4Opener />);
@@ -142,7 +142,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     // Then
     expect(screen.queryByTestId("emptyChoice")).not.toBeInTheDocument();
   });
-  it("On peut partir de zéro et rajouter 4 équivalences, auquel cas la liste reste à 3 sélection, car l'équivalence choisie la plus ancienne disparaît", () => {
+  test("On peut partir de zéro et rajouter 4 équivalences, auquel cas la liste reste à 3 sélection, car l'équivalence choisie la plus ancienne disparaît", () => {
     //Given
     initializeWith([]);
     renderWithWrapper(<EqModal4Opener />);
@@ -171,7 +171,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
     expect(screen.queryByTestId("checked-eq-artichaut")).toBeInTheDocument();
   });
-  it("Validation : on peut choisir 3 items différents, valider, et rouvrir la modale : les nouveaux choix apparaissent", () => {
+  test("Validation : on peut choisir 3 items différents, valider, et rouvrir la modale : les nouveaux choix apparaissent", () => {
     //Given
     const { container } = renderWithWrapper(<EqModal4Opener />);
     act(() => {
@@ -202,7 +202,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("checked-eq-abricot")).toBeInTheDocument();
     expect(screen.queryByTestId("checked-eq-ananas")).toBeInTheDocument();
   });
-  it("Validation : on peut choisir 2 items différents, valider, et rouvrir la modale : les nouveaux choix apparaissent", () => {
+  test("Validation : on peut choisir 2 items différents, valider, et rouvrir la modale : les nouveaux choix apparaissent", () => {
     //Given
     initializeWith([]);
     const { container } = renderWithWrapper(<EqModal4Opener />);
@@ -230,7 +230,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("checked-eq-ail")).toBeInTheDocument();
     expect(screen.queryByTestId("checked-eq-abricot")).toBeInTheDocument();
   });
-  it("Validation : on peut choisir 3 items différents, annuler, et rouvrir la modale : les anciens choix apparaissent", () => {
+  test("Validation : on peut choisir 3 items différents, annuler, et rouvrir la modale : les anciens choix apparaissent", () => {
     //Given
     const { container } = renderWithWrapper(<EqModal4Opener />);
     act(() => {
@@ -262,7 +262,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("checked-eq-repasavecduboeuf")).toBeInTheDocument();
     expect(screen.queryByTestId("checked-eq-voiturethermique")).toBeInTheDocument();
   });
-  it("Validation : si on ne choisit qu'un seul item et qu'on valide, la modale ne se ferme pas et un message d'erreur apparaît", () => {
+  test("Validation : si on ne choisit qu'un seul item et qu'on valide, la modale ne se ferme pas et un message d'erreur apparaît", () => {
     //Given
     initializeWith([]);
     renderWithWrapper(<EqModal4Opener />);
@@ -282,7 +282,7 @@ describe("EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId("EqModal4")).toBeInTheDocument();
     expect(screen.queryByTestId("validationError")).toBeInTheDocument();
   });
-  it("Validation : si on choisit zéro item et qu'on valide, la modale ne se ferme pas et un message d'erreur apparaît", () => {
+  test("Validation : si on choisit zéro item et qu'on valide, la modale ne se ferme pas et un message d'erreur apparaît", () => {
     //Given
     initializeWith([]);
     renderWithWrapper(<EqModal4Opener />);
