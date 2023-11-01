@@ -7,6 +7,11 @@ describe("convertGramsToKilograms", () => {
     expect(convertGramsToKilograms(500)).toBe("0,50");
   });
 
+  test("Converti en arrondissant correctement", () => {
+    expect(convertGramsToKilograms(1539)).toBe("1,54");
+    expect(convertGramsToKilograms(2141)).toBe("2,14");
+  });
+
   test("Est capable de convertir un poids nul", () => {
     expect(convertGramsToKilograms(0)).toBe("0,00");
   });
