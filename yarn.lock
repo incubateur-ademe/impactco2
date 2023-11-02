@@ -5587,6 +5587,11 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   integrity sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==
 
+json-stringify-safe@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
+  integrity sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==
+
 json2mq@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/json2mq/-/json2mq-0.2.0.tgz#b637bd3ba9eabe122c83e9720483aeb10d2c904a"
@@ -5999,6 +6004,15 @@ next@^13.1.6:
     "@next/swc-win32-arm64-msvc" "13.4.2"
     "@next/swc-win32-ia32-msvc" "13.4.2"
     "@next/swc-win32-x64-msvc" "13.4.2"
+
+nock@^13.3.7:
+  version "13.3.7"
+  resolved "https://registry.yarnpkg.com/nock/-/nock-13.3.7.tgz#27c8a2709d602a0570e45d3f182db342c6bd5551"
+  integrity sha512-z3voRxo6G0JxqCsjuzERh1ReFC4Vp2b7JpSgcMJB6jnJbUszf88awAeQLIID2UNMwbMh9/Zm5sFscagj0QYHEg==
+  dependencies:
+    debug "^4.1.0"
+    json-stringify-safe "^5.0.1"
+    propagate "^2.0.0"
 
 node-fetch@2.6.7:
   version "2.6.7"
@@ -6456,6 +6470,11 @@ prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.7.2, 
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.13.1"
+
+propagate@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/propagate/-/propagate-2.0.1.tgz#40cdedab18085c792334e64f0ac17256d38f9a45"
+  integrity sha512-vGrhOavPSTz4QVNuBNdcNXePNdNMaO1xj9yBeH1ScQPjk/rhg9sSlCXPhMkFuaNNW/syTvYqsnbIJxMBfRbbag==
 
 proxy-from-env@1.1.0, proxy-from-env@^1.1.0:
   version "1.1.0"

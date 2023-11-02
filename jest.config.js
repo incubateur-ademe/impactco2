@@ -6,5 +6,6 @@ const customJestConfig = {
   moduleDirectories: ["node_modules", "<rootDir>/", "<rootDir>/src/"],
   testEnvironment: "jest-environment-jsdom",
   testMatch: ["**/testc/**/*.test.js", "**/testu/**/*.test.js"],
+  setupFiles: ["./jest.setup.js"],
 };
 module.exports = createJestConfig(customJestConfig);

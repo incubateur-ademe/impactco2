@@ -103,7 +103,7 @@ export default function CalculateurLivraison(props) {
         <Section2.InnerMargin embedded={props.embedded}>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>
-              <H2Title>Estimez l'impact de votre livraison</H2Title>
+              <H2Title data-testid="calculateurTitleH2">Estimez l'impact de votre livraison</H2Title>
               <div className="buttons">
                 <ButtonChange onClick={() => setSocial(true)} className="noscreenshot" id="shareUp">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
