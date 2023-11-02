@@ -46,7 +46,7 @@ test("Calcul de l'impact d'une livraison", async ({ page }) => {
 
   await test.step("Par défaut un calcul de CO2 est affiché", async () => {
     // Given
-    await expect(page.getByTestId("resultAsText")).toHaveText("3,31 kg de CO2e ");
+    await expect(page.getByTestId("bcTotal")).toHaveText("3,31 kg de CO2e ");
   });
 
   await test.step("Si on prend un colis volumineux, on a bien une augmentation de CO2", async () => {
@@ -54,7 +54,7 @@ test("Calcul de l'impact d'une livraison", async ({ page }) => {
     await page.locator("select#retraits").selectOption({ label: "Livraison à domicile" });
     await page.locator("select#produits").selectOption({ label: "Mobilier et gros électroménager" }); // Ici
     // When-Then
-    await expect(page.getByTestId("resultAsText")).toHaveText("70,59 kg de CO2e ");
+    await expect(page.getByTestId("bcTotal")).toHaveText("70,59 kg de CO2e ");
   });
 
   await test.step("La liste déroulante “Vous commandez a bien les options “grande consommation”, “Habillement”, “Produits culturel“, “mobilier”", async () => {

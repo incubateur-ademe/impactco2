@@ -39,4 +39,18 @@ describe("CalculateurLivraison - composant principal de la partie livraison", ()
     expect(await screen.queryByTestId("bcTrajet").textContent).toBe("1,51 kg de CO2e");
     expect(await screen.queryByTestId("bcAvion").textContent).toBe("0,00 kg de CO2e");
   });
+  test("Par défaut, affiche une commande habillement en point relais, en voiture, de 7km, hors trajet habituel (BC non nul), hors transport par avion (BC nul), et un BC total non nul", async () => {
+    // Given
+    renderWithWrapper(<CalculateurLivraison />);
+    // When
+    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
+    // Then
+    expect(await screen.queryByTestId("produits").value).toBe("habillement");
+    expect(await screen.queryByTestId("retraits").value).toBe("relais");
+    expect(await screen.queryByTestId("relays").value).toBe("voiture_thermique");
+    expect(await screen.queryByTestId("kms").value).toBe("7");
+    expect(await screen.queryByTestId("bcTrajet").textContent).toBe("1,51 kg de CO2e");
+    expect(await screen.queryByTestId("bcAvion").textContent).toBe("0,00 kg de CO2e");
+    expect(await screen.queryByTestId("bcTotal").textContent).toBe("3,31 kg de CO2e ");
+  });
 });
