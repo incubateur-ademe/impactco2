@@ -7,8 +7,6 @@ import CalculateurLivraison from "components/livraison/CalculateurLivraison";
 
 describe("CalculateurLivraison - composant principal de la partie livraison", () => {
   beforeEach(async () => {
-    jest.spyOn(axios, "get").mockReturnValue(Promise.resolve({ data: livraisonjson }));
-
     const mockGet = jest.spyOn(axios, "get");
     mockGet.mockImplementation((url) => {
       switch (url) {
