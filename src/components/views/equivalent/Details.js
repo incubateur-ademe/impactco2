@@ -47,7 +47,7 @@ export default function Details(props) {
   return (
     <>
       <Section>
-        <Section.Content flex>
+        <Section.Content $flex>
           <Title>
             {props.equivalent.prefix && <>{formatName(props.equivalent.prefix, 1, true)}</>}
             {formatName(props.equivalent.name, 1, !props.equivalent.prefix)}
@@ -57,7 +57,7 @@ export default function Details(props) {
       </Section>
       <Value equivalent={props.equivalent} category={props.category} />
       <Section>
-        <StyledSectionContent flex>
+        <StyledSectionContent $flex>
           <Disclaimer>
             Valeurs exprimées en kg{' '}
             <ButtonLink onClick={() => setCo2e(true)}>

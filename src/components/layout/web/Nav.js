@@ -26,7 +26,7 @@ export default function Nav() {
   const router = useRouter()
 
   return (
-    <StyledSection background slim>
+    <StyledSection $background $slim>
       <Section.Content>
         <Wrapper>
           <Menu />

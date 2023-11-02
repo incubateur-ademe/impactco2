@@ -76,7 +76,7 @@ export default function Integration() {
             path={path}
           />
         </ConfiguratorWrapper>
-        <StyledSectionContent flex>
+        <StyledSectionContent $flex>
           {path == 'livraison' ? (
             <>
               <StyledIframeResizer

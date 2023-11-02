@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => (!props.background || props.$hover ? 'transparent' : props.theme.colors.second)};
+  background-color: ${(props) => (!props.$background || props.$hover ? 'transparent' : props.theme.colors.second)};
   border: 0.125rem solid ${(props) => (props.$hover ? props.theme.colors.main : 'transparent')};
   border-radius: 1rem;
   bottom: 0;
@@ -30,7 +30,7 @@ const Content = styled.div`
 export default function Background(props) {
   return (
     <>
-      <Wrapper className='noscreenshot' background={props.background} $hover={props.hover} />
+      <Wrapper className='noscreenshot' $background={props.background} $hover={props.hover} />
       <Content>{props.children}</Content>
     </>
   )

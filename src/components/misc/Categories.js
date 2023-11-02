@@ -32,7 +32,7 @@ export default function Categories(props) {
     <>
       {props.main && (
         <Section>
-          <Section.Content flex>
+          <Section.Content $flex>
             <Title>Catégories</Title>
             <ShareButton title />
           </Section.Content>
