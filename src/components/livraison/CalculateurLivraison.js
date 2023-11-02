@@ -58,7 +58,7 @@ export default function CalculateurLivraison(props) {
 
   useMemo(() => {
     calculateResult();
-    setShowToggleContainer(values.retrait.amongst(["relais", "click"]));
+    setShowToggleContainer(["relais", "click"].includes(values.retrait));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values, isHabit, isPlane]);
 
