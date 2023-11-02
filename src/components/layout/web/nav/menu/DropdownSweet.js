@@ -3,13 +3,9 @@ import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
-  ${(props) => props.theme.mq.small} {
-    margin-right: 0.25rem;
-  }
   ${(props) => props.theme.mq[props.hideon]} {
     display: none;
   }
-  margin-right: 1.25rem;
   position: relative;
 `
 const List = styled.div`
@@ -22,17 +18,11 @@ const List = styled.div`
   top: 100%;
   z-index: 999;
   > a {
-    height: 3rem;
+    padding: 0.5rem 0.75rem;
     width: 300px;
-    ${(props) => props.theme.mq.small} {
-      width: inherit;
-    }
   }
 `
 const ButtonDropdown = styled.button`
-  ${(props) => props.theme.mq.small} {
-    padding: 0;
-  }
   align-items: center;
   background-color: ${(props) => (props.open ? props.theme.colors.mainLight : 'transparent')};
   border: none;
@@ -40,18 +30,18 @@ const ButtonDropdown = styled.button`
   cursor: pointer;
   display: flex;
   font-size: 0.875rem;
+  height: 100%;
   ${(props) => props.theme.mq.medium} {
     font-size: 0.75rem;
-    margin-right: 1.5rem;
   }
   ${(props) => props.theme.mq.small} {
-    margin-top: 0.5rem;
     font-size: 0.875rem;
   }
-  height: 2rem;
-  padding: 0 0.25rem 0 0;
+  line-height: 1.4;
+  padding: 1rem 0.75rem;
   position: relative;
   text-decoration: none;
+  width: 100%;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.mainLight};
@@ -87,7 +77,6 @@ export default function Dropdown(props) {
           setOpen((prevOpen) => !prevOpen)
         }}
         open={open}
-        current={props.current}
         as={props.children ? 'button' : MagicLink}>
         {props.label}
         {'  '}
