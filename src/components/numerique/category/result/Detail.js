@@ -64,6 +64,8 @@ export default function Detail(props) {
     [situation, engine, displayAll, props.numberEmails]
   )
 
+  const category = useMemo(() => categories.find((c) => c.id === 10), [categories])
+
   const equivalentsOfCategory = useMemo(
     () =>
       [
@@ -77,7 +79,7 @@ export default function Detail(props) {
               props.numberEmails *
               52) /
             1000,
-          to: `/${categories.find((category) => category.id === 10).slug}/email`,
+          to: `/${category.slug}/email`,
           onClick: () =>
             window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'email']),
         },
@@ -93,7 +95,7 @@ export default function Detail(props) {
               engine.evaluate('visio . terminaux . construction').nodeValue) *
               52) /
             1000,
-          to: `/${categories.find((category) => category.id === 10).slug}/visioconference`,
+          to: `/${category.slug}/visioconference`,
           onClick: () =>
             window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'visioconference']),
         },
@@ -109,7 +111,7 @@ export default function Detail(props) {
               engine.evaluate('streaming . terminaux . construction').nodeValue) *
               52) /
             1000,
-          to: `/${categories.find((category) => category.id === 10).slug}/streamingvideo`,
+          to: `/${category.slug}/streamingvideo`,
           onClick: () =>
             window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'streaming']),
         },
@@ -147,7 +149,7 @@ export default function Detail(props) {
             checked={displayAll}
             onChange={() => {
               setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-              window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', props.category.name])
+              window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
             }}>
             Voir tous les appareils
           </Checkbox>
