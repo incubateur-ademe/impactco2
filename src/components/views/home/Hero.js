@@ -1,8 +1,8 @@
+import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 import Section2 from 'components/base/Section2'
 import Meeting from 'components/meeting/Meeting'
-import Cards from './img/Cards'
 
 export default function Hero() {
   return (
@@ -38,7 +38,7 @@ export default function Hero() {
               </MiniCard>
             </div>
             <PictureContainer>
-              <Cards />
+              <Image width={560} height={976} src='/images/cards.svg' alt='' />
             </PictureContainer>
           </Layout>
         </Section2.InnerMargin>
@@ -97,7 +97,7 @@ const PictureContainer = styled.div`
   ${(props) => props.theme.mq.large} {
     display: none;
   }
-  > svg {
+  > img {
     max-width: 100%;
     position: absolute;
     right: 0;

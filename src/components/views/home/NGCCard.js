@@ -1,8 +1,8 @@
+import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 import OutboundLink from 'components/base/OutboundLink'
 import Section2 from 'components/base/Section2'
-import LogoNGC from './img/LogoNGC'
 
 export default function NGCCard() {
   return (
@@ -30,7 +30,7 @@ export default function NGCCard() {
                   </CardText2>
                 </FlexLine1>
                 <FlexLine2>
-                  <LogoNGC />
+                  <Image src='/images/logoNGC.svg' alt='' width={196} height={152} />
                 </FlexLine2>
               </FlexContainer>
             </Card>
@@ -77,7 +77,7 @@ const FlexLine2 = styled.div`
   ${(props) => props.theme.mq.medium} {
     display: none;
   }
-  > svg {
+  > img {
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
     height: 100%;

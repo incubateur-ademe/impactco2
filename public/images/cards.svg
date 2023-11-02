@@ -1,7 +1,4 @@
-import React from 'react'
 
-const Cards = () => {
-  return (
     <svg width='682' height='1189' viewBox='0 0 682 1189' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <mask
         id='path-1-outside-1_1213_4567'
@@ -603,7 +600,3 @@ const Cards = () => {
         mask='url(#path-109-outside-12_1213_4567)'
       />
     </svg>
-  )
-}
-
-export default Cards
