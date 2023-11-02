@@ -116,4 +116,14 @@ describe("CalculateurLivraison - composant principal de la partie livraison", ()
     expect(await screen.findByTestId("partieMagasin")).not.toBeVisible();
     expect(await screen.findByTestId("partieAvion")).toBeVisible();
   });
+  test("Si coche la partie avion, le bilan carbone s'alourdit", async () => {
+    // Given
+    const { container } = renderWithWrapper(<CalculateurLivraison />);
+    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
+    expect(await screen.queryByTestId("bcTotal").textContent).toBe("3,31 kg de CO2e ");
+    // When
+    await userEvent.click(container.querySelectorAll(".react-switch-handle")[1]);
+    // Then
+    expect(await screen.queryByTestId("bcTotal").textContent).toBe("19,56 kg de CO2e ");
+  });
 });
