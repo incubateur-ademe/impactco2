@@ -152,7 +152,7 @@ export default function CalculateurLivraison(props) {
               <SelectProduits changeProduit={changeProduit} value={values.produit} />
               <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
             </DropList>
-            <ToggleContainer show={showToggleContainer}>
+            <ToggleContainer show={showToggleContainer} data-testid="partieMagasin">
               <ToggleHabitContainer>
                 <FlexHabit>
                   <div className="item1">
@@ -195,7 +195,7 @@ export default function CalculateurLivraison(props) {
                 ></OptionalTraj>
               </Optionals>
             </ToggleContainer>
-            <ToggleContainerBottom>
+            <ToggleContainerBottom data-testid="partieAvion">
               <ToggleHabitContainer>
                 <FlexHabitBottom>
                   <div className="item1">
