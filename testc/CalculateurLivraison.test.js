@@ -126,4 +126,14 @@ describe("CalculateurLivraison - composant principal de la partie livraison", ()
     // Then
     expect(await screen.queryByTestId("bcTotal").textContent).toBe("19,56 kg de CO2e ");
   });
+  test("Si coche la partie trajet habituel, il n'y a pas de surplus de bilan carbone", async () => {
+    // Given
+    const { container } = renderWithWrapper(<CalculateurLivraison />);
+    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
+    expect(await screen.queryByTestId("bcTrajet").textContent).toBe("1,51 kg de CO2e");
+    // When
+    await userEvent.click(container.querySelectorAll(".react-switch-handle")[0]);
+    // Then
+    expect(await screen.queryByTestId("bcTrajet").textContent).toBe("0,00 kg de CO2e");
+  });
 });
