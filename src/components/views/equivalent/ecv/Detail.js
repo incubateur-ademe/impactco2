@@ -84,7 +84,6 @@ export default function Detail(props) {
               .map((item) => (
                 <Item key={item.label}>
                   <Label>{item.label}</Label>
-
                   <Percent>{formatPercent(item.value, props.total)} %</Percent>
                   <Value>
                     <strong>{formatNumberPrecision(item.value)}</strong> CO
@@ -92,7 +91,7 @@ export default function Detail(props) {
                   </Value>
                 </Item>
               ))}
-            <Item key={'total'}>
+            <Item>
               <Label>
                 <strong>Total</strong>
               </Label>

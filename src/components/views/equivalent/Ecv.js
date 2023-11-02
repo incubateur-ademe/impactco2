@@ -69,7 +69,6 @@ export default function Ecv(props) {
           <StackedChart items={ecvToDisplay} total={formatTotal(props.equivalent, usage)} />
           <Legend items={ecvToDisplay} />
           {usage ? <DurationSelector duration={usage} setDuration={setUsage} /> : null}
-
           <Detail ecv={ecvToDisplay} total={formatTotal(props.equivalent, usage)} />
         </ScreenshotWrapper>
       </Section.Content>

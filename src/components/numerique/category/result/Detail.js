@@ -24,6 +24,7 @@ const Text = styled.p`
   max-width: 29rem;
   text-align: center;
 `
+
 export default function Detail(props) {
   const { engine, situation } = useContext(RulesContext)
   const { equivalents, categories } = useContext(DataContext)
