@@ -26,4 +26,14 @@ describe("CalculateurLivraison - composant principal de la partie livraison", ()
     expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
     expect(await screen.queryByTestId("calculateurTitleH2")).toHaveTextContent("Estimez l'impact de votre livraison");
   });
+  test("Par défaut, affiche une commande habillement en point relais, hors trajet habituel (BC non nul), hors transport par avion (BC nul), et un BC total non nul", async () => {
+    // Given
+    // expect(screen.queryByTestId("calculateurTitleH2")).not.toBeInTheDocument();
+    // When
+    renderWithWrapper(<CalculateurLivraison />);
+    // Then
+    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
+    expect(await screen.queryByTestId("produits").value).toBe("habillement");
+    expect(await screen.queryByTestId("retraits").value).toBe("relais");
+  });
 });
