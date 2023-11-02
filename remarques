@@ -1,0 +1,4 @@
+- Beaucoup de properties qui se retrouvent dans le dom
+- Duplication de code (exemple: Visualization, page d'accueil, Modal)
+- Twemoji ? 
+- JSON et Modal loadée sur toutes les pages

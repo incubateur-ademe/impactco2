@@ -6,7 +6,7 @@ import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
-import { Title } from 'components/misc/Visualization'
+import { Title } from 'components/visualizations/Visualization.styles'
 
 const Wrapper = styled.div`
   height: 100%;

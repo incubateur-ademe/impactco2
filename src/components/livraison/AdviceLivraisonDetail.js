@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Emojis } from 'components/misc/Visualization'
+import { Emojis } from 'components/visualizations/Visualization.styles'
 
 export default function AdviceLivraisonDetail(props) {
   const [isCollapsed, setIsCollapsed] = useState(false)
