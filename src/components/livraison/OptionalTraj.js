@@ -10,6 +10,7 @@ export default function OptionalTraj(props) {
           <Flex>
             <Input
               type="number"
+              data-testid="kms"
               value={props.km}
               onChange={(e) => props.changeKm(e.target.value)}
               min="0"
