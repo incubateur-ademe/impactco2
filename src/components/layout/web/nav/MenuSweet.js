@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
-import DropdownSweet from './menu/DropdownSweet'
+import DropdownSweet from './DropdownSweet'
 
 const Wrapper = styled.nav`
   display: flex;
