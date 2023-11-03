@@ -101,7 +101,7 @@ const PictureContainer = styled.div`
     max-width: 100%;
     position: absolute;
     right: 0;
-    top: -370px;
+    top: -270px;
   }
 `
 
