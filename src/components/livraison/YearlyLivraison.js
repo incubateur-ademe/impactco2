@@ -25,7 +25,7 @@ export default function YearlyLivraison(props) {
   return (
     <Wrapper>
       <FlexText>
-        <Induction>
+        <Induction data-testid="induction">
           <InductionIntro>
             <span>Si je commande&nbsp;</span>
             <SelectNumber changeNumber={changeNumber} value={number}></SelectNumber>
@@ -37,7 +37,7 @@ export default function YearlyLivraison(props) {
             <span>,&nbsp;</span>
           </InductionOutro>
         </Induction>
-        <Deduction>
+        <Deduction data-testid="deduction">
           <span>alors l’impact carbone de mes livraisons est de&nbsp;</span>
           <Color id="kgCo2e">
             {convertGramsToKilograms(props.co2eq * multiplicator * number)} kg CO<sub>2</sub>e
