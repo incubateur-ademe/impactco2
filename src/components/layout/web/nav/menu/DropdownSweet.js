@@ -10,15 +10,17 @@ const Wrapper = styled.div`
 `
 const List = styled.div`
   background-color: white;
+  border: solid 1px #ccdcfd;
   border-radius: 0 0 1rem 1rem;
+  border-top: 0;
   box-shadow: -0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05);
   left: 0;
   overflow: hidden;
   position: absolute;
   top: 100%;
   z-index: 999;
-  > a {
-    padding: 0.5rem 0.75rem;
+  a {
+    padding: 0.5rem 0.75rem !important;
     width: 300px;
   }
 `
@@ -99,7 +101,7 @@ Dropdown.Item = styled(MagicLink)`
   text-decoration: none;
   white-space: nowrap;
 
-  &:before {
+  &:not(:last-child)::before {
     background-color: ${(props) => props.theme.colors.secondDark};
     bottom: 0;
     content: '';
@@ -107,9 +109,6 @@ Dropdown.Item = styled(MagicLink)`
     left: 1rem;
     position: absolute;
     right: 1rem;
-  }
-  &:last-child {
-    padding: 0.75rem 1.5rem 1rem;
   }
 
   &:hover {

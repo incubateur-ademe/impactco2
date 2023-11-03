@@ -1,23 +1,10 @@
-import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import categories from 'data/categories.json'
 import Section2 from 'components/base/Section2'
+import ThemeCard from './ThemeCard'
 import Header from './heading/Header'
 
 export default function ByTheme() {
-  const buildThemeCardFor = (slug) => {
-    const item = categories.find((e) => e.slug === slug)
-    return (
-      <ThemeCard>
-        <ThemeCardIcon>{item.emoji}</ThemeCardIcon>
-        <ThemeCardLink>
-          <Link href={'/' + item.slug}>{item.name}</Link>
-        </ThemeCardLink>
-      </ThemeCard>
-    )
-  }
-
   return (
     <Wrapper>
       <Section2>
@@ -37,21 +24,21 @@ export default function ByTheme() {
               />
               <div>
                 <ThemeCards>
-                  <ThemeCardsLine1>
-                    {buildThemeCardFor('usagenumerique')}
-                    {buildThemeCardFor('chauffage')}
-                    {buildThemeCardFor('transport')}
-                    {buildThemeCardFor('repas')}
-                    {buildThemeCardFor('habillement')}
-                    {buildThemeCardFor('boisson')}
-                  </ThemeCardsLine1>
-                  <ThemeCardsLine2>
+                  <div>
+                    <ThemeCard slug='usagenumerique' />
+                    <ThemeCard slug='chauffage' />
+                    <ThemeCard slug='transport' />
+                    <ThemeCard slug='repas' />
+                    <ThemeCard slug='habillement' />
+                    <ThemeCard slug='boisson' />
+                  </div>
+                  <div>
                     <ThemeCardBlue1>&nbsp;</ThemeCardBlue1>
-                    {buildThemeCardFor('mobilier')}
-                    {buildThemeCardFor('electromenager')}
-                    {buildThemeCardFor('livraison')}
+                    <ThemeCard slug='mobilier' />
+                    <ThemeCard slug='electromenager' />
+                    <ThemeCard slug='livraison' />
                     <ThemeCardBlue2 />
-                  </ThemeCardsLine2>
+                  </div>
                 </ThemeCards>
               </div>
             </Layout>
@@ -80,6 +67,7 @@ const Layout = styled.div`
 const ThemeCards = styled.div`
   > div {
     display: flex;
+    gap: 16px;
     justify-content: center;
     margin-top: 1rem;
     div + div {
@@ -98,33 +86,6 @@ const ThemeCards = styled.div`
         margin-top: 1rem;
       }
     }
-  }
-`
-
-const ThemeCardsLine1 = styled.div``
-const ThemeCardsLine2 = styled.div``
-
-const ThemeCard = styled.div`
-  align-items: center;
-  background-color: white;
-  border-radius: 8px;
-  display: flex;
-  height: 2rem;
-  padding: 1rem 1rem;
-`
-
-const ThemeCardIcon = styled.div`
-  ${(props) => props.theme.mq.large} {
-    margin-right: 0.5rem;
-  }
-`
-const ThemeCardLink = styled.div`
-  a {
-    color: #235dd2;
-    &:hover {
-      color: #2e5199;
-    }
-    text-decoration: none;
   }
 `
 

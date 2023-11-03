@@ -44,7 +44,7 @@ export default function ByArticle() {
                   <>
                     <span>Utiliser nos ressources&nbsp;</span>
                     <span>
-                      dans des <b>&nbsp;articles, sites ou applications</b>
+                      dans des <b>articles, sites ou applications</b>
                     </span>
                   </>
                 }
