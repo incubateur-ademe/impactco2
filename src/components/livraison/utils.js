@@ -11,6 +11,6 @@ export const convertGramsToKilograms = (grams) => {
   }
 };
 
-function isReallyNumber(data) {
+export function isReallyNumber(data) {
   return typeof data === "number" && !isNaN(data);
 }
