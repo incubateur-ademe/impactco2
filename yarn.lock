@@ -5350,11 +5350,6 @@ markdown-to-jsx@^7.3.2:
   resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.3.2.tgz#f286b4d112dad3028acc1e77dfe1f653b347e131"
   integrity sha512-B+28F5ucp83aQm+OxNrPkS8z0tMKaeHiy0lHJs3LqCyDQFtWuenaIrkaVTgAm1pf1AU85LXltva86hlaT17i8Q==
 
-matomo-tracker@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/matomo-tracker/-/matomo-tracker-2.2.4.tgz#ee397d915d7b2e7964996ca28a0a03f4f0692453"
-  integrity sha512-7fDy4wRhDQ1dnSxVqmnVqmmos9ACKag0fCBtBD3/Qeoqks7MFqXcO35nfS6S8xU/IXNf7534q/4Gx8fuWKYW6A==
-
 memoize-one@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-4.1.0.tgz#a2387c58c03fff27ca390c31b764a79addf3f906"

@@ -1,11 +1,10 @@
 import axios from 'axios'
-import MatomoTracker from 'matomo-tracker'
 import transportations from './transportations.json'
 
-var matomo = new MatomoTracker(156, 'https://stats.data.gouv.fr/matomo.php')
+const transportationsWithValues = transportations.filter((transportation) => transportation.values)
 
 export default async function handler(req, res) {
-  let queryObj = req.query
+  const queryObj = req.query
 
   trackMatomoOnce(queryObj.km)
   trackMatomoTwice(queryObj.km)
@@ -16,10 +15,10 @@ export default async function handler(req, res) {
     ? queryObj.transportations.split(',').map((id) => Number(id))
     : []
 
-  const ignoreRadiativeForcing = queryObj.ignoreRadiativeForcing || false
+  const ignoreRadiativeForcing = !!queryObj.ignoreRadiativeForcing || false
   const fields = (queryObj.fields || '').split(',')
 
-  const respObj = buildRespObj(transportations, activeTransportations, ignoreRadiativeForcing, filter, km, fields)
+  const respObj = buildRespObj(activeTransportations, ignoreRadiativeForcing, filter, km, fields)
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTION')
@@ -27,40 +26,45 @@ export default async function handler(req, res) {
 }
 
 function trackMatomoOnce(km) {
-  matomo.track(`https://api.impactco2.fr/beta/getEmissionsPerDistance?km=${km}`)
+  return axios
+    .post(
+      `https://stats.data.gouv.fr/matomo.php??idsite=156&rec=1&url=https%3A%2F%2Fapi.impactco2.fr%2Fbeta%2FgetEmissionsPerDistance%3Fkm%3D${km}`
+    )
+    .catch((error) => {
+      console.error('tracked failed', error)
+    })
 }
-async function trackMatomoTwice(km) {
-  const genRanHex = (size) => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('')
 
+const genRanHex = (size) => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('')
+
+function trackMatomoTwice(km) {
   const id = genRanHex(16)
   const rand = genRanHex(16)
 
-  await axios
+  return axios
     .post(
       `https://stats.data.gouv.fr/matomo.php?idsite=156&rec=1&_id=${id}&rand=${rand}&url=https%3A%2F%2Fapi.impactco2.fr%2Fbeta%2FgetEmissionsPerDistance%3Fkm%3D${km}`
     )
     .catch((error) => {
-      console.log('tracked failed', error)
+      console.error('tracked failed', error)
     })
 }
-function buildRespObj(transportations, activeTransportations, ignoreRadiativeForcing, filter, km, fields) {
+
+function buildRespObj(activeTransportations, ignoreRadiativeForcing, filter, km, fields) {
   return (
-    transportations
-      // Remove transportations without data
-      .filter((transportation) => transportation.values)
+    transportationsWithValues
       // Filter transportations via filter parameter
       .filter((transportation) =>
         filter === 'all'
           ? true
           : //Not set
-            ((!transportation.display.min && !transportation.display.max) ||
-              //Only max
-              (!transportation.display.min && transportation.display.max >= km) ||
-              //Only min
-              (!transportation.display.max && transportation.display.min <= km) ||
-              //Both min and max
-              (transportation.display.min <= km && transportation.display.max >= km)) &&
-            true
+            (!transportation.display.min && !transportation.display.max) ||
+            //Only max
+            (!transportation.display.min && transportation.display.max >= km) ||
+            //Only min
+            (!transportation.display.max && transportation.display.min <= km) ||
+            //Both min and max
+            (transportation.display.min <= km && transportation.display.max >= km)
       )
       // Filter transportations via transportations parameter
       .filter((transportation) =>
@@ -82,12 +86,12 @@ function buildRespObj(transportations, activeTransportations, ignoreRadiativeFor
       })
       // Set response according to field parameter
       .map((transportation) => {
-        let response = {
+        const response = {
           id: transportation.id,
           name: transportation.label.fr,
           emissions: transportation.emissions,
         }
-        for (let field of fields) {
+        for (const field of fields) {
           response[field] = (transportation[field] && transportation[field].fr) || transportation[field]
         }
         return response
