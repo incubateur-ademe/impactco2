@@ -39,9 +39,6 @@ async function trackMatomoTwice(km) {
     .post(
       `https://stats.data.gouv.fr/matomo.php?idsite=156&rec=1&_id=${id}&rand=${rand}&url=https%3A%2F%2Fapi.impactco2.fr%2Fbeta%2FgetEmissionsPerDistance%3Fkm%3D${km}`
     )
-    .then(() => {
-      console.log('tracked successfully')
-    })
     .catch((error) => {
       console.log('tracked failed', error)
     })
