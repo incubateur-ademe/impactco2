@@ -12,7 +12,8 @@ const Hamburger = ({
       onClick={() => {
         hamburgerClicked()
       }}
-      $opened={hamburgerOpened}>
+      $opened={hamburgerOpened}
+    >
       {hamburgerOpened ? (
         <>X</>
       ) : (

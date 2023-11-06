@@ -26,7 +26,7 @@ export default function ResultatLivraison(props) {
             <Units> kg de CO2e </Units>
           </div>
           <div className='item3'>
-            <div></div>
+            <div />
           </div>
           <div className='item4'>
             <Subexplain>
@@ -35,7 +35,7 @@ export default function ResultatLivraison(props) {
               </div>
             </Subexplain>
           </div>
-          <div className='item5'></div>
+          <div className='item5' />
           <div className='item6'>
             <UnderstandLink>
               <ButtonLink onClick={() => setHypothesisLivraison(true)}>Comprendre le calcul</ButtonLink>
@@ -44,7 +44,7 @@ export default function ResultatLivraison(props) {
           <EqualSign>=</EqualSign>
         </BlueGrid>
       </CenteredBlock>
-      <Arrow></Arrow>
+      <Arrow />
     </Wrapper>
   )
 }

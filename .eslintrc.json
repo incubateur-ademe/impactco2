@@ -13,7 +13,8 @@
   "rules": {
     "react/no-unescaped-entities": "off",
     "no-irregular-whitespace": "off",
-    "better-styled-components/sort-declarations-alphabetically": 2
+    "better-styled-components/sort-declarations-alphabetically": 2,
+    "react/self-closing-comp": "error"
   },
   "plugins": ["@typescript-eslint", "prettier", "better-styled-components", "styled-components-a11y", "jest"],
   "env": {

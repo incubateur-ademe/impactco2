@@ -55,7 +55,7 @@ export default function ByOrder() {
               </Separator>
               <DownSide>
                 <Grid>
-                  <GridItemTopEmpty></GridItemTopEmpty>
+                  <GridItemTopEmpty />
                   <GridItemTopArrow>
                     <ArrowLeft />
                   </GridItemTopArrow>
@@ -69,7 +69,7 @@ export default function ByOrder() {
                   <GridItemTopArrow>
                     <ArrowRight />
                   </GridItemTopArrow>
-                  <GridItemTopEmpty></GridItemTopEmpty>
+                  <GridItemTopEmpty />
                   <GridItemSub1>{buildMinicardFor('voiturethermique')}</GridItemSub1>
                   <GridItemSub2>{buildMinicardFor('velo')}</GridItemSub2>
                   <GridItemSub3>{buildMinicardFor('chemiseencoton')}</GridItemSub3>

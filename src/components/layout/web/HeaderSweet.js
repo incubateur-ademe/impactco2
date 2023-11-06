@@ -40,7 +40,7 @@ export default function HeaderSweet() {
                 </Logos>
                 <Actions>
                   <ActionSearch>
-                    <NavSearchBar></NavSearchBar>
+                    <NavSearchBar />
                   </ActionSearch>
                   <HamburgerContainer>
                     <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked} />

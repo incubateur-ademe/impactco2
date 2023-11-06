@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export default function OptionalTraj(props) {
   return (
     <Wrapper>
-      <div className='item1'></div>
+      <div className='item1' />
       <div className='item2'>
         <FlexCenter>
           <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
@@ -14,12 +14,13 @@ export default function OptionalTraj(props) {
               value={props.km}
               onChange={(e) => props.changeKm(e.target.value)}
               min='0'
-              step='1'></Input>
+              step='1'
+            />
             <Text>&nbsp;km</Text>
           </Flex>
         </FlexCenter>
       </div>
-      <div className='item3'></div>
+      <div className='item3' />
       <div className='item4'>
         <SmallExplanation>
           Exemple: si vous faites un détour de 2km sur votre trajet domicile-travail, indiquez ces 2km.

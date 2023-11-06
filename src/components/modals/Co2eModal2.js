@@ -30,7 +30,7 @@ export default function Co2eModal2() {
           <sub>2</sub> selon son pouvoir de réchauffement.
         </strong>
       </Text>
-      <ExplainArrowContainer></ExplainArrowContainer>
+      <ExplainArrowContainer />
     </Modal2>
   )
 }

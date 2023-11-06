@@ -96,7 +96,7 @@ export default function Detail(props) {
               <Label>
                 <strong>Total</strong>
               </Label>
-              <Percent></Percent>
+              <Percent />
               <Value>
                 <strong>{formatNumberPrecision(props.total)}</strong> CO
                 <sub>2</sub>e

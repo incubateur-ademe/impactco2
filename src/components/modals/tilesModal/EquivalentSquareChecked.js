@@ -64,7 +64,7 @@ export default function EquivalentSquareChecked(props) {
       data-testid={props['data-testid']}>
       <Left>
         <GreenSquare>
-          <Tick></Tick>
+          <Tick />
         </GreenSquare>
         <Label>
           {formatName(props.equivalent.name, 1, true)}{' '}

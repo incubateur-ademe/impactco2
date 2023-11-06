@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 export default function ExplainArrowContainer() {
   return (
     <Wrapper>
-      <ExplainArrow></ExplainArrow>
+      <ExplainArrow />
       <ExplainEqContainer>
         <ExplainEq>
           <div>

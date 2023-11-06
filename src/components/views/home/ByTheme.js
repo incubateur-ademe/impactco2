@@ -55,7 +55,7 @@ export default function ByTheme() {
                     {buildThemeCardFor('mobilier')}
                     {buildThemeCardFor('electromenager')}
                     {buildThemeCardFor('livraison')}
-                    <ThemeCardBlue2></ThemeCardBlue2>
+                    <ThemeCardBlue2 />
                   </ThemeCardsLine2>
                 </ThemeCards>
               </DownSide>

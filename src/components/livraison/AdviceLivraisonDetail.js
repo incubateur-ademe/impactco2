@@ -29,7 +29,7 @@ export default function AdviceLivraisonDetail(props) {
                   <Text>{props.line1Text}</Text>
                 </Line>
                 <Line>
-                  <Icon></Icon>
+                  <Icon />
                   <Subtext>{props.line1Subtext}</Subtext>
                 </Line>
               </Item>
@@ -47,7 +47,7 @@ export default function AdviceLivraisonDetail(props) {
                   <Text>{props.line2Text}</Text>
                 </Line>
                 <Line>
-                  <Icon></Icon>
+                  <Icon />
                   <Subtext>{props.line2Subtext}</Subtext>
                 </Line>
               </Item>
@@ -65,7 +65,7 @@ export default function AdviceLivraisonDetail(props) {
                   <Text>{props.line3Text}</Text>
                 </Line>
                 <Line>
-                  <Icon></Icon>
+                  <Icon />
                   <Subtext>{props.line3Subtext}</Subtext>
                 </Line>
               </Item>

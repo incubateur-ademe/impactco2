@@ -17,12 +17,12 @@ export default function LivraisonEq(props) {
         </MediaFigure>
         <MediaBody>
           <Number id={`eq_nb_${props.position}`}>{first2WordsOnly(fullSentenceFormat(props))}</Number>
-          <div></div>
+          <div />
           <OfWhat id={`eq_what_${props.position}`}>
             {first2WordsRemoved(fullSentenceFormat(props)) || <span>&nbsp;</span>}
           </OfWhat>
-          <div></div>
-          <div></div>
+          <div />
+          <div />
         </MediaBody>
       </Media>
     </Wrapper>

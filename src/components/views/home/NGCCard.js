@@ -30,7 +30,7 @@ export default function NGCCard() {
                   </CardText2>
                 </FlexLine1>
                 <FlexLine2>
-                  <LogoNGC></LogoNGC>
+                  <LogoNGC />
                 </FlexLine2>
               </FlexContainer>
             </Card>
