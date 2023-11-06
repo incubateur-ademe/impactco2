@@ -29,23 +29,10 @@ describe("CalculateurLivraison - composant principal de la partie livraison", ()
   });
   test("Par défaut, affiche une commande habillement en point relais, en voiture, de 7km, hors trajet habituel (BC non nul), hors transport par avion (BC nul), et un BC total non nul", async () => {
     // Given
-    renderWithWrapper(<CalculateurLivraison />);
     // When
-    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
-    // Then
-    expect(await screen.queryByTestId("produits").value).toBe("habillement");
-    expect(await screen.queryByTestId("retraits").value).toBe("relais");
-    expect(await screen.queryByTestId("relays").value).toBe("voiture_thermique");
-    expect(await screen.queryByTestId("kms").value).toBe("7");
-    expect(await screen.queryByTestId("bcTrajet").textContent).toBe("1,51 kg de CO2e");
-    expect(await screen.queryByTestId("bcAvion").textContent).toBe("0,00 kg de CO2e");
-  });
-  test("Par défaut, affiche une commande habillement en point relais, en voiture, de 7km, hors trajet habituel (BC non nul), hors transport par avion (BC nul), et un BC total non nul", async () => {
-    // Given
     renderWithWrapper(<CalculateurLivraison />);
-    // When
-    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
     // Then
+    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
     expect(await screen.queryByTestId("produits").value).toBe("habillement");
     expect(await screen.queryByTestId("retraits").value).toBe("relais");
     expect(await screen.queryByTestId("relays").value).toBe("voiture_thermique");
@@ -57,39 +44,39 @@ describe("CalculateurLivraison - composant principal de la partie livraison", ()
   test("Un produit de grande consommation augmente le bilan carbone (BC)", async () => {
     // Given
     renderWithWrapper(<CalculateurLivraison />);
-    // When
     expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
-    // Then
+    // When
     await userEvent.selectOptions(screen.getByTestId("produits"), ["consommation"]);
+    // Then
     expect(await screen.queryByTestId("produits").value).toBe("consommation");
     expect(await screen.queryByTestId("bcTotal").textContent).toBe("21,54 kg de CO2e ");
   });
   test("Un produit culturel diminue le bilan carbone (BC)", async () => {
     // Given
     renderWithWrapper(<CalculateurLivraison />);
-    // When
     expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
-    // Then
+    // When
     await userEvent.selectOptions(screen.getByTestId("produits"), ["culturel"]);
+    // Then
     expect(await screen.queryByTestId("produits").value).toBe("culturel");
     expect(await screen.queryByTestId("bcTotal").textContent).toBe("1,78 kg de CO2e ");
   });
   test("Un produit volumineux augmente le bilan carbone (BC)", async () => {
     // Given
     renderWithWrapper(<CalculateurLivraison />);
-    // When
     expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
-    // Then
+    // When
     await userEvent.selectOptions(screen.getByTestId("produits"), ["volumineux"]);
+    // Then
     expect(await screen.queryByTestId("produits").value).toBe("volumineux");
     expect(await screen.queryByTestId("bcTotal").textContent).toBe("72,15 kg de CO2e ");
   });
   test("La partie magasin et la partie avion s'affichent par défaut", async () => {
     // Given
-    renderWithWrapper(<CalculateurLivraison />);
     // When
-    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
+    renderWithWrapper(<CalculateurLivraison />);
     // Then
+    expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
     expect(await screen.queryByTestId("retraits").value).toBe("relais");
     expect(await screen.findByTestId("partieMagasin")).toBeVisible();
     expect(await screen.findByTestId("partieAvion")).toBeVisible();
@@ -97,8 +84,8 @@ describe("CalculateurLivraison - composant principal de la partie livraison", ()
   test("Si on choisit le click&collect, la partie magasin et avions s'affichent également", async () => {
     // Given
     renderWithWrapper(<CalculateurLivraison />);
-    // When
     expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
+    // When
     await userEvent.selectOptions(screen.getByTestId("retraits"), ["click"]);
     // Then
     expect(await screen.queryByTestId("retraits").value).toBe("click");
@@ -108,8 +95,8 @@ describe("CalculateurLivraison - composant principal de la partie livraison", ()
   test("Si on choisit la livraison à domicile, la partie magasin n'a pas de sens et ne s'affiche pas, mais le colis peut toujours venir de loin", async () => {
     // Given
     renderWithWrapper(<CalculateurLivraison />);
-    // When
     expect(await screen.findByTestId("calculateurTitleH2")).toBeInTheDocument();
+    // When
     await userEvent.selectOptions(screen.getByTestId("retraits"), ["domicile"]);
     // Then
     expect(await screen.queryByTestId("retraits").value).toBe("domicile");

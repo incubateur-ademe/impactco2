@@ -26,7 +26,7 @@ export default function SurveyModal() {
         <></>
       ) : (
         <StyledModal open={open} setOpen={setOpen}>
-          {open || iframe ? (
+          {iframe ? (
             <iframe
               title="enquete"
               src={
