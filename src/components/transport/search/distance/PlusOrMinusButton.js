@@ -20,13 +20,7 @@ const Wrapper = styled.button`
 export default function PlusOrMinusButton(props) {
   return props.plus ? (
     <Wrapper aria-label='plus' onClick={props.onClick}>
-      <svg
-        width='24'
-        height='24'
-        viewBox='0 0 24 24'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
+      <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <path
           d='M0 12C0 9.79086 1.79086 8 4 8H20C22.2091 8 24 9.79086 24 12C24 14.2091 22.2091 16 20 16H4C1.79086 16 0 14.2091 0 12Z'
           fill='#DE0244'
@@ -39,13 +33,7 @@ export default function PlusOrMinusButton(props) {
     </Wrapper>
   ) : (
     <Wrapper aria-label='moins' onClick={props.onClick}>
-      <svg
-        width='24'
-        height='24'
-        viewBox='0 0 24 24'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
+      <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <path
           d='M0 12C0 9.79086 1.79086 8 4 8H20C22.2091 8 24 9.79086 24 12C24 14.2091 22.2091 16 20 16H4C1.79086 16 0 14.2091 0 12Z'
           fill='#DE0244'

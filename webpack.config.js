@@ -1,23 +1,23 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = [
   {
-    name: "if1",
-    mode: "production",
-    entry: "./iframe/index.js",
+    name: 'if1',
+    mode: 'production',
+    entry: './iframe/index.js',
     output: {
-      filename: "iframe.js",
-      path: path.resolve(__dirname, "public"),
+      filename: 'iframe.js',
+      path: path.resolve(__dirname, 'public'),
     },
   },
   {
-    name: "if2",
-    mode: "production",
-    entry: "./iframe/livraison.js",
+    name: 'if2',
+    mode: 'production',
+    entry: './iframe/livraison.js',
     output: {
-      filename: "iframelivraison.js",
-      path: path.resolve(__dirname, "public"),
+      filename: 'iframelivraison.js',
+      path: path.resolve(__dirname, 'public'),
     },
     plugins: [
       new webpack.DefinePlugin({
@@ -25,4 +25,4 @@ module.exports = [
       }),
     ],
   },
-];
+]

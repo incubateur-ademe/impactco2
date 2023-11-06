@@ -1,8 +1,8 @@
-import Code from "./configurator/Code";
-import Select from "components/base/Select";
-import React from "react";
-import styled from "styled-components";
-import { formatName } from "utils/formatters";
+import React from 'react'
+import styled from 'styled-components'
+import { formatName } from 'utils/formatters'
+import Select from 'components/base/Select'
+import Code from './configurator/Code'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
@@ -15,14 +15,14 @@ const Wrapper = styled.div`
     margin-bottom: 1.5rem;
     width: 100%;
   }
-`;
+`
 const Title = styled.h1`
   font-size: 2rem;
   text-align: center;
   ${(props) => props.theme.mq.large} {
     text-align: left;
   }
-`;
+`
 const Grid = styled.div`
   display: grid;
   gap: 1rem;
@@ -30,10 +30,10 @@ const Grid = styled.div`
   ${(props) => props.theme.mq.large} {
     grid-template-columns: repeat(1, 1fr);
   }
-`;
-const GridItem1 = styled.div``;
-const GridItem2 = styled.div``;
-const GridItem3 = styled.div``;
+`
+const GridItem1 = styled.div``
+const GridItem2 = styled.div``
+const GridItem3 = styled.div``
 export default function Configurator(props) {
   return (
     <Wrapper>
@@ -42,45 +42,44 @@ export default function Configurator(props) {
         <GridItem1>
           <Select
             onChange={(e) => props.setSlug(e.value)}
-            value={props.type === "category" ? "numerique" : props.type === "equivalent" ? "abricot" : "convertisseur"}
+            value={props.type === 'category' ? 'numerique' : props.type === 'equivalent' ? 'abricot' : 'convertisseur'}
             label={`1) Choisissez le type d'iframe que vous souhaitez intégrer.`}
-            name="type"
-          >
-            <option value="convertisseur">Convertisseur</option>
-            <option value="numerique">Categorie</option>
-            <option value="abricot">Equivalent</option>
+            name='type'>
+            <option value='convertisseur'>Convertisseur</option>
+            <option value='numerique'>Categorie</option>
+            <option value='abricot'>Equivalent</option>
           </Select>
-          {props.type === "category" && (
+          {props.type === 'category' && (
             <>
-              <Select onChange={(e) => props.setSlug(e.value)} value={props.slug.split("/")[0]} name="type">
+              <Select onChange={(e) => props.setSlug(e.value)} value={props.slug.split('/')[0]} name='type'>
                 {props.categories.map((category) => (
                   <option key={category.slug} value={category.slug}>
                     {category.name}
                   </option>
                 ))}
               </Select>
-              {props.slug.includes("transport") && (
-                <Select onChange={(e) => props.setSlug(e.value)} value={props.slug} name="transport">
-                  <option key={"transport"} value={"transport"}>
+              {props.slug.includes('transport') && (
+                <Select onChange={(e) => props.setSlug(e.value)} value={props.slug} name='transport'>
+                  <option key={'transport'} value={'transport'}>
                     Distance
                   </option>
-                  <option key={"transport/itineraire"} value={"transport/itineraire"}>
+                  <option key={'transport/itineraire'} value={'transport/itineraire'}>
                     Itinéraire
                   </option>
-                  <option key={"transport/teletravail"} value={"transport/teletravail"}>
+                  <option key={'transport/teletravail'} value={'transport/teletravail'}>
                     Téletravail
                   </option>
                 </Select>
               )}
             </>
           )}
-          {props.type === "equivalent" && (
-            <Select onChange={(e) => props.setSlug(e.value)} value={props.slug} name="type">
+          {props.type === 'equivalent' && (
+            <Select onChange={(e) => props.setSlug(e.value)} value={props.slug} name='type'>
               {props.equivalents
                 .sort((a, b) => (a.slug > b.slug ? 1 : -1))
                 .map((equivalent) => (
                   <option key={equivalent.slug} value={equivalent.slug}>
-                    {formatName(equivalent.name, 1, true).replace("(ou trottinette)", "")}
+                    {formatName(equivalent.name, 1, true).replace('(ou trottinette)', '')}
                   </option>
                 ))}
             </Select>
@@ -90,10 +89,9 @@ export default function Configurator(props) {
           <Select
             onChange={({ value }) => props.setTheme(value)}
             label={`2) Choisissez la palette de couleurs de votre iframe.`}
-            name="theme"
-          >
-            <option value="default">Clair</option>
-            <option value="night">Sombre</option>
+            name='theme'>
+            <option value='default'>Clair</option>
+            <option value='night'>Sombre</option>
           </Select>
         </GridItem2>
         <GridItem3>
@@ -101,5 +99,5 @@ export default function Configurator(props) {
         </GridItem3>
       </Grid>
     </Wrapper>
-  );
+  )
 }

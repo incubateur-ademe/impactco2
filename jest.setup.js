@@ -1,5 +1,5 @@
-const nock = require("nock");
+import { emitter } from 'nock'
 
-nock.emitter.on("no match", (req) => {
-  throw new Error(`Unexpected request was sent to ${req.path}`);
-});
+emitter.on('no match', (req) => {
+  throw new Error(`Unexpected request was sent to ${req.path}`)
+})

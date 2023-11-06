@@ -1,12 +1,12 @@
-import Section2 from "components/base/Section2";
-import WebBlue from "components/layout/WebBlue";
-import Link from "next/link";
-import React from "react";
-import styled from "styled-components";
+import Link from 'next/link'
+import React from 'react'
+import styled from 'styled-components'
+import Section2 from 'components/base/Section2'
+import WebBlue from 'components/layout/WebBlue'
 
 export default function MetionsLegales() {
   return (
-    <WebBlue title={"Mentions légales"}>
+    <WebBlue title={'Mentions légales'}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
@@ -14,12 +14,12 @@ export default function MetionsLegales() {
             <h2>Informations légales</h2>
             <p>
               Impact CO2&nbsp;
-              <Link href="/">(https://impactco2.fr)</Link> est un service créé par&nbsp;
-              <a href="https://www.ademe.fr/" target="_blank" rel="noreferrer noopener">
+              <Link href='/'>(https://impactco2.fr)</Link> est un service créé par&nbsp;
+              <a href='https://www.ademe.fr/' target='_blank' rel='noreferrer noopener'>
                 l’ADEME
               </a>
               &nbsp;en partenariat avec&nbsp;
-              <a href="https://beta.gouv.fr/" target="_blank" rel="noreferrer noopener">
+              <a href='https://beta.gouv.fr/' target='_blank' rel='noreferrer noopener'>
                 beta.gouv.fr
               </a>
               .
@@ -57,7 +57,7 @@ export default function MetionsLegales() {
         </Section2.InnerMargin>
       </Section2>
     </WebBlue>
-  );
+  )
 }
 
 const FormatText = styled.div`
@@ -67,4 +67,4 @@ const FormatText = styled.div`
   > h2 {
     margin-top: 3rem;
   }
-`;
+`

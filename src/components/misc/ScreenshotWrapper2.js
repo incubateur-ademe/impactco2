@@ -1,7 +1,7 @@
-import Background from "components/screenshot/Background";
-import Signature from "components/screenshot/Signature";
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import Background from 'components/screenshot/Background'
+import Signature from 'components/screenshot/Signature'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.background};
@@ -10,12 +10,12 @@ const Wrapper = styled.div`
   > div + div {
     padding: 0;
   }
-`;
+`
 
 export default function ScreenshotWrapper2(props) {
   return (
     <Wrapper className={props.className} ref={props.innerRef}>
-      <Background className="noscreenshot" background={props.background}>
+      <Background className='noscreenshot' background={props.background}>
         <DynamicBackgroundPadding isScreenshotting={props.isScreenshotting}>{props.children}</DynamicBackgroundPadding>
       </Background>
 
@@ -26,9 +26,9 @@ export default function ScreenshotWrapper2(props) {
         </>
       )}
     </Wrapper>
-  );
+  )
 }
 
 const DynamicBackgroundPadding = styled.div`
-  padding: ${(props) => (props.isScreenshotting ? "1rem" : "0")};
-`;
+  padding: ${(props) => (props.isScreenshotting ? '1rem' : '0')};
+`

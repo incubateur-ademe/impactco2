@@ -1,10 +1,10 @@
-import Modal from "components/base/Modal";
-import OutboundLink from "components/base/OutboundLink";
-import ModalContext from "components/providers/ModalProvider";
-import React, { useContext } from "react";
+import React, { useContext } from 'react'
+import ModalContext from 'components/providers/ModalProvider'
+import Modal from 'components/base/Modal'
+import OutboundLink from 'components/base/OutboundLink'
 
 export default function DetailsUsagesNumModal() {
-  const { hypothesis: open, setHypothesis: setOpen } = useContext(ModalContext);
+  const { hypothesis: open, setHypothesis: setOpen } = useContext(ModalContext)
   return (
     <>
       {!open ? (
@@ -14,11 +14,10 @@ export default function DetailsUsagesNumModal() {
           <Modal open={open} setOpen={setOpen}>
             <h2>Les hypothèses sur cette page</h2>
             <p>
-              L'ensemble des calculs sont issus d'une{" "}
+              L'ensemble des calculs sont issus d'une{' '}
               <OutboundLink
-                href="https://base-empreinte.ademe.fr/documentation/base-impact"
-                title="Base impact, étude réalisée par Negaoctet"
-              >
+                href='https://base-empreinte.ademe.fr/documentation/base-impact'
+                title='Base impact, étude réalisée par Negaoctet'>
                 étude réalisée par Négaoctet
               </OutboundLink>
               .
@@ -49,5 +48,5 @@ export default function DetailsUsagesNumModal() {
         </>
       )}
     </>
-  );
+  )
 }

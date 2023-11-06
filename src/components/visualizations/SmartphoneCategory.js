@@ -1,15 +1,5 @@
 import React from 'react'
-
-import {
-  CenterLink,
-  Emojis,
-  Equals,
-  Equivalent,
-  Equivalents,
-  Label,
-  Small,
-  Title,
-} from 'components/misc/Visualization'
+import { CenterLink, Emojis, Equals, Equivalent, Equivalents, Label, Small, Title } from 'components/misc/Visualization'
 
 export default function SmartphoneCategory() {
   return (
@@ -42,9 +32,7 @@ export default function SmartphoneCategory() {
         13 smartphones
         <br />
       </Small>
-      <CenterLink to='/numerique'>
-        Comparez avec d'autres objets numériques
-      </CenterLink>
+      <CenterLink to='/numerique'>Comparez avec d'autres objets numériques</CenterLink>
     </>
   )
 }

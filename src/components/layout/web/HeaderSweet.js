@@ -1,36 +1,36 @@
-import Hamburger from "./Hamburger";
-import MenuSweet from "./nav/MenuSweet";
-import Ademe from "components/base/Ademe";
-import Logo from "components/base/Logo";
-import Marianne from "components/base/Marianne";
-import Section2 from "components/base/Section2";
-import NavSearchBar from "components/misc/search/NavSearchBar";
-import Link from "next/link";
-import { useState } from "react";
-import styled from "styled-components";
+import Link from 'next/link'
+import { useState } from 'react'
+import styled from 'styled-components'
+import Ademe from 'components/base/Ademe'
+import Logo from 'components/base/Logo'
+import Marianne from 'components/base/Marianne'
+import Section2 from 'components/base/Section2'
+import NavSearchBar from 'components/misc/search/NavSearchBar'
+import Hamburger from './Hamburger'
+import MenuSweet from './nav/MenuSweet'
 
 export default function HeaderSweet() {
-  const [hamburgerOpened, setHamburgerOpened] = useState(false);
+  const [hamburgerOpened, setHamburgerOpened] = useState(false)
 
   const hamburgerClicked = () => {
-    setHamburgerOpened(!hamburgerOpened);
-  };
+    setHamburgerOpened(!hamburgerOpened)
+  }
 
   return (
     <BoxedShadow>
       <Section2>
         <Section2.WideContent>
-          <Header aria-label="En-tête">
+          <Header aria-label='En-tête'>
             <Section2.InnerMargin>
               <LogoBar>
                 <Logos>
                   <Hideable>
-                    <Link href="/">
+                    <Link href='/'>
                       <Marianne />
                     </Link>
                   </Hideable>
                   <Hideable>
-                    <Link href="/">
+                    <Link href='/'>
                       <Ademe />
                     </Link>
                   </Hideable>
@@ -61,27 +61,26 @@ export default function HeaderSweet() {
                   <MenuSweet />
                 </NavLink>
                 <NavLink>
-                  <Link href="/convertisseur" title="Comparateur carbone">
+                  <Link href='/convertisseur' title='Comparateur carbone'>
                     Comparateur carbone
                   </Link>
                 </NavLink>
                 <NavLink>
                   <Link
-                    href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
-                    title="Diffuser les ressources"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
+                    href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                    title='Diffuser les ressources'
+                    target='_blank'
+                    rel='noreferrer noopener'>
                     Diffuser les ressources
                   </Link>
                 </NavLink>
                 <NavLink>
-                  <Link href="/integration" title="Intégrer les ressources">
+                  <Link href='/integration' title='Intégrer les ressources'>
                     Intégrer les ressources
                   </Link>
                 </NavLink>
                 <NavLink>
-                  <Link href="/stats" title="Statistiques">
+                  <Link href='/stats' title='Statistiques'>
                     Statistiques
                   </Link>
                 </NavLink>
@@ -91,27 +90,26 @@ export default function HeaderSweet() {
                   <MenuSweet />
                 </NavLink>
                 <NavLink>
-                  <Link href="/convertisseur" title="Comparateur carbone">
+                  <Link href='/convertisseur' title='Comparateur carbone'>
                     Comparateur carbone
                   </Link>
                 </NavLink>
                 <NavLink>
                   <Link
-                    href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
-                    title="Diffuser les ressources"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
+                    href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                    title='Diffuser les ressources'
+                    target='_blank'
+                    rel='noreferrer noopener'>
                     Diffuser les ressources
                   </Link>
                 </NavLink>
                 <NavLink>
-                  <Link href="/integration" title="Intégrer les ressources">
+                  <Link href='/integration' title='Intégrer les ressources'>
                     Intégrer les ressources
                   </Link>
                 </NavLink>
                 <NavLink>
-                  <Link href="/stats" title="Statistiques">
+                  <Link href='/stats' title='Statistiques'>
                     Statistiques
                   </Link>
                 </NavLink>
@@ -121,32 +119,32 @@ export default function HeaderSweet() {
         </Section2.WideContent>
       </Section2>
     </BoxedShadow>
-  );
+  )
 }
 
 const NavLinksMobile = styled.div`
   display: none;
   padding: 0.5rem 0;
   ${(props) => props.theme.mq.small} {
-    display: ${(props) => (props.shouldDisplay ? "flex" : "none")};
+    display: ${(props) => (props.shouldDisplay ? 'flex' : 'none')};
     flex-direction: column;
   }
-`;
+`
 const NavLinksDesktop = styled.div`
   display: flex;
   ${(props) => props.theme.mq.small} {
     display: none;
   }
-`;
+`
 
 const Header = styled.header`
   position: relative; // or box-shadow will not appear
-`;
+`
 
 const LogoBar = styled.div`
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const Logos = styled.div`
   display: flex;
@@ -158,10 +156,10 @@ const Logos = styled.div`
       height: 4em;
     }
   }
-`;
+`
 const Actions = styled.div`
   display: flex;
-`;
+`
 
 const ActionSearch = styled.div`
   position: relative;
@@ -170,7 +168,7 @@ const ActionSearch = styled.div`
   ${(props) => props.theme.mq.small} {
     width: 0px;
   }
-`;
+`
 
 const SmallActionSearch = styled.div`
   position: relative;
@@ -191,7 +189,7 @@ const SmallActionSearch = styled.div`
       width: 100%;
     }
   }
-`;
+`
 
 const NavBar = styled.nav`
   border-top: 1px solid #eae5e8;
@@ -199,7 +197,7 @@ const NavBar = styled.nav`
   ${(props) => props.theme.mq.small} {
     padding: 0;
   }
-`;
+`
 
 const NavLink = styled.div`
   a {
@@ -222,12 +220,12 @@ const NavLink = styled.div`
     }
     text-decoration: none;
   }
-`;
+`
 
 const BoxedShadow = styled.div`
   box-shadow: 0px 2px 6px #f3f6ff;
   position: relative;
-`;
+`
 
 const Hideable = styled.div`
   align-items: center;
@@ -235,14 +233,14 @@ const Hideable = styled.div`
   ${(props) => props.theme.mq.medium} {
     display: none;
   }
-`;
+`
 const NonHideable = styled.div`
   align-items: center;
   display: flex;
   ${(props) => props.theme.mq.medium} {
     padding: 0.75em 0.75em 0.75em 0;
   }
-`;
+`
 
 const HamburgerContainer = styled.div`
   display: none;
@@ -250,4 +248,4 @@ const HamburgerContainer = styled.div`
     align-items: center;
     display: flex;
   }
-`;
+`

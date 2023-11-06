@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
-
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
 import Modal from 'components/base/Modal'
-
 import TransportContext from '../TransportProvider'
 
 const Title = styled.h2``
@@ -14,8 +12,7 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `
 export default function SetFootprintModal() {
-  const { footprintModal: open, setFootprintModal: setOpen } =
-    useContext(TransportContext)
+  const { footprintModal: open, setFootprintModal: setOpen } = useContext(TransportContext)
 
   const [pristine, setPristine] = useState(true)
   useEffect(() => {
@@ -25,8 +22,7 @@ export default function SetFootprintModal() {
     <Modal open={open} setOpen={setOpen}>
       <Title>Mon empreinte carbone</Title>
       <Text>
-        Aujourd&apos;hui, un·e français·e en émet en moyenne 9,9 tonnes de gaz à
-        effet de serre (GES) par an (
+        Aujourd&apos;hui, un·e français·e en émet en moyenne 9,9 tonnes de gaz à effet de serre (GES) par an (
         <MagicLink to='https://www.statistiques.developpement-durable.gouv.fr/estimation-de-lempreinte-carbone-de-1995-2019'>
           source
         </MagicLink>
@@ -34,21 +30,14 @@ export default function SetFootprintModal() {
       </Text>
       <Text>
         La cible à atteindre pour{' '}
-        <MagicLink
-          to={
-            'https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/'
-          }
-        >
+        <MagicLink to={'https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/'}>
           respecter l&apos;accord de Paris
         </MagicLink>{' '}
         est de moins de 2 tonnes de GES par an et par personne d&apos;ici 2050.
       </Text>
       <Text>
-        Si vous ne la connaissez pas encore votre empreinte carbone, vous pouvez
-        la calculer simplement grâce à notre simulateur{' '}
-        <MagicLink to={`https://nosgestesclimat.fr/`}>
-          Nos Gestes Climat
-        </MagicLink>
+        Si vous ne la connaissez pas encore votre empreinte carbone, vous pouvez la calculer simplement grâce à notre
+        simulateur <MagicLink to={`https://nosgestesclimat.fr/`}>Nos Gestes Climat</MagicLink>
       </Text>
       {!pristine && (
         <ButtonWrapper>

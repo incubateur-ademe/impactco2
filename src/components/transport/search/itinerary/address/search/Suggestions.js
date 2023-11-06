@@ -1,13 +1,13 @@
-import React, { useCallback, useEffect } from "react";
-import Highlighter from "react-highlight-words";
-import styled from "styled-components";
+import React, { useCallback, useEffect } from 'react'
+import Highlighter from 'react-highlight-words'
+import styled from 'styled-components'
 
 const displayAddress = (address) =>
-  `${address.properties.name ? address.properties.name + " " : ""}${
-    address.properties.housenumber ? address.properties.housenumber + " " : ""
-  }${address.properties.street ? address.properties.street + ", " : ""}${
-    address.properties.city ? address.properties.city + " " : ""
-  } ${address.properties.country}`;
+  `${address.properties.name ? address.properties.name + ' ' : ''}${
+    address.properties.housenumber ? address.properties.housenumber + ' ' : ''
+  }${address.properties.street ? address.properties.street + ', ' : ''}${
+    address.properties.city ? address.properties.city + ' ' : ''
+  } ${address.properties.country}`
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.background};
@@ -16,9 +16,9 @@ const Wrapper = styled.div`
   overflow-y: auto;
 
   position: relative;
-`;
+`
 const Suggestion = styled.div`
-  background-color: ${(props) => props.theme.colors[props.current ? "secondLight" : "background"]};
+  background-color: ${(props) => props.theme.colors[props.current ? 'secondLight' : 'background']};
   cursor: pointer;
   font-size: 0.875rem;
   opacity: ${(props) => (props.isFetching ? 0.3 : 1)};
@@ -33,32 +33,32 @@ const Suggestion = styled.div`
     color: ${(props) => props.theme.colors.text};
     opacity: 0.8;
   }
-`;
-const Name = styled.span``;
+`
+const Name = styled.span``
 export default function Suggestions(props) {
-  const maxSuggestions = 7;
+  const maxSuggestions = 7
 
   const onKeyDown = useCallback(
     (e) => {
-      if (e.code === "ArrowDown") {
-        e.preventDefault();
-        props.current < maxSuggestions - 1 ? props.setCurrent((prevCurrent) => prevCurrent + 1) : props.setCurrent(0);
+      if (e.code === 'ArrowDown') {
+        e.preventDefault()
+        props.current < maxSuggestions - 1 ? props.setCurrent((prevCurrent) => prevCurrent + 1) : props.setCurrent(0)
       }
-      if (e.code === "ArrowUp") {
-        e.preventDefault();
-        props.current > 0 && props.setCurrent((prevCurrent) => prevCurrent - 1);
+      if (e.code === 'ArrowUp') {
+        e.preventDefault()
+        props.current > 0 && props.setCurrent((prevCurrent) => prevCurrent - 1)
       }
     },
     [props]
-  );
+  )
 
   useEffect(() => {
-    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener('keydown', onKeyDown)
 
     return () => {
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [onKeyDown]);
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [onKeyDown])
 
   return (
     <Wrapper>
@@ -70,11 +70,10 @@ export default function Suggestions(props) {
               key={result.place_id}
               isFetching={props.isFetching}
               onClick={() => props.handleSuggestionClick(result)}
-              onMouseDown={(e) => e.preventDefault()}
-            >
+              onMouseDown={(e) => e.preventDefault()}>
               <Name>
                 <Highlighter
-                  searchWords={props.search.split(" ")}
+                  searchWords={props.search.split(' ')}
                   autoEscape={true}
                   textToHighlight={displayAddress(result)}
                 />
@@ -83,5 +82,5 @@ export default function Suggestions(props) {
           )
       )}
     </Wrapper>
-  );
+  )
 }

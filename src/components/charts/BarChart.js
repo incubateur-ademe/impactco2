@@ -1,14 +1,10 @@
 import React from 'react'
 import { Flipped, Flipper } from 'react-flip-toolkit'
-
 import Item from './barChart/Item'
 
 export default function BarChart(props) {
   return (
-    <Flipper
-      className={props.className}
-      flipKey={props.items.map((item) => item.id).join()}
-    >
+    <Flipper className={props.className} flipKey={props.items.map((item) => item.id).join()}>
       {props.items.map((item) => (
         <Flipped flipId={item.id} key={item.id}>
           <Item

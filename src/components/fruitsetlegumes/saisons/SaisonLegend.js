@@ -1,6 +1,5 @@
 import React from 'react'
 import { useTheme } from 'styled-components'
-
 import Legend from 'components/charts/Legend'
 
 export default function SaisonLegend() {

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Value from './bar/Value'
 
 const Wrapper = styled.div`
@@ -29,9 +28,7 @@ export default function Bar(props) {
   return (
     <Wrapper percent={props.value / props.max}>
       <Container color={props.color}>
-        {props.usage && (
-          <Usage percent={props.usage / props.value} color={props.color} />
-        )}
+        {props.usage && <Usage percent={props.usage / props.value} color={props.color} />}
       </Container>
       <Value value={props.value} max={props.max} />
     </Wrapper>

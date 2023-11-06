@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Detail from './result/Detail'
 import Total from './result/Total'
 
@@ -14,10 +13,7 @@ const Wrapper = styled.div`
 export default function Result(props) {
   return (
     <Wrapper>
-      <Total
-        numberEmails={props.numberEmails}
-        construction={props.construction}
-      />
+      <Total numberEmails={props.numberEmails} construction={props.construction} />
       <Detail numberEmails={props.numberEmails} />
     </Wrapper>
   )

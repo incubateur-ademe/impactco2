@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-
 import Slider from 'components/base/Slider'
 import RulesContext from 'components/numerique/RulesProvider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
@@ -22,9 +21,7 @@ export default function DurationInput(props) {
             })
           }
         />
-        <SliderWrapper.Value>
-          {engine.evaluate(`${props.name} . taille`).nodeValue} Mo
-        </SliderWrapper.Value>
+        <SliderWrapper.Value>{engine.evaluate(`${props.name} . taille`).nodeValue} Mo</SliderWrapper.Value>
       </SliderWrapper.Slider>
     </SliderWrapper>
   )

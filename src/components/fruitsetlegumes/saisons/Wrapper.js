@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-
 import useScreenshot from 'hooks/useScreenshot'
-
 import Background from 'components/screenshot/Background'
 import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
-
 import MonthSelector from './wrapper/MonthSelector'
 
 const SizerWrapper = styled.div`
@@ -23,8 +20,7 @@ const Sizer = styled.div`
   }
 `
 const Content = styled.div`
-  background-color: ${(props) =>
-    props.hover ? props.theme.colors.background : 'transparent'};
+  background-color: ${(props) => (props.hover ? props.theme.colors.background : 'transparent')};
 `
 const Header = styled.div`
   align-items: center;
@@ -47,9 +43,7 @@ const StyledButtons = styled(Buttons)`
 export default function Wrapper(props) {
   const [hover, setHover] = useState(false)
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    props.slug || 'impactco2'
-  )
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(props.slug || 'impactco2')
 
   return (
     <SizerWrapper>
@@ -64,8 +58,7 @@ export default function Wrapper(props) {
                 slug={`${props.slug}`}
               />
               <Title>
-                Découvrez les fruits et légumes de{' '}
-                <MonthSelector month={props.month} />
+                Découvrez les fruits et légumes de <MonthSelector month={props.month} />
               </Title>
             </Header>
             {props.children}

@@ -1,8 +1,6 @@
 import React from 'react'
-
 import LiseuseBookComparator from 'components/numerique/equivalent/LiseuseBookComparator'
 import StockageEmails from 'components/numerique/equivalent/StockageEmails'
-
 import Avion from './Avion'
 import Boeuf from './Boeuf'
 import Chauffage from './Chauffage'
@@ -34,19 +32,13 @@ const visualizations = {
   ],
   ordinateurportable: [<SmartphoneCategory key='SmartphoneCategory' />],
   television: [<SmartphoneCategory key='SmartphoneCategory' />],
-  montreconnectee: [
-    <Montre key='Montre' />,
-    <MontreCategory key='MontreCategory' />,
-  ],
+  montreconnectee: [<Montre key='Montre' />, <MontreCategory key='MontreCategory' />],
   imprimantejetdencre: [<ImprimanteCategory key='ImprimanteCategory' />],
   consoledesalon: [<ConsoleSalonCategory key='ConsoleSalonCategory' />],
   ordinateurfixe: [<OrdinateurFixeCategory key='OrdinateurFixeCategory' />],
   repasvegetalien: [<Vegetalien key='Vegetalien' />],
   repasvegetarien: [<Boeuf key='Boeuf' />],
-  repasavecduboeuf: [
-    <Boeuf key='Boeuf' />,
-    <SmartphoneGeneral key='SmartphoneGeneral' />,
-  ],
+  repasavecduboeuf: [<Boeuf key='Boeuf' />, <SmartphoneGeneral key='SmartphoneGeneral' />],
   repasavecdupoulet: [<Boeuf key='Boeuf' />],
   repasavecdupoissongras: [<PoissonGras key='PoissonGras' />],
   repasavecdupoissonblanc: [<PoissonBlanc key='PoissonBlanc' />],
@@ -69,10 +61,7 @@ const visualizations = {
   email: [<StockageEmails key='StockageEmails' />],
   emailpiecejointe: [<StockageEmails key='StockageEmails' />],
   stockageemail: [<StockageEmails key='StockageEmails' />],
-  liseuse: [
-    <LiseuseBookComparator key='simulator' />,
-    <Liseuse key='liseuse' />,
-  ],
+  liseuse: [<LiseuseBookComparator key='simulator' />, <Liseuse key='liseuse' />],
 }
 
 export const home = [

@@ -1,22 +1,22 @@
-import Divider from "./img/Divider";
-import Section2 from "components/base/Section2";
-import categories from "data/categories.json";
-import Link from "next/link";
-import React from "react";
-import styled from "styled-components";
+import Link from 'next/link'
+import React from 'react'
+import styled from 'styled-components'
+import categories from 'data/categories.json'
+import Section2 from 'components/base/Section2'
+import Divider from './img/Divider'
 
 export default function ByTheme() {
   const buildThemeCardFor = (slug) => {
-    const item = categories.find((e) => e.slug === slug);
+    const item = categories.find((e) => e.slug === slug)
     return (
       <ThemeCard>
         <ThemeCardIcon>{item.emoji}</ThemeCardIcon>
         <ThemeCardLink>
-          <Link href={"/" + item.slug}>{item.name}</Link>
+          <Link href={'/' + item.slug}>{item.name}</Link>
         </ThemeCardLink>
       </ThemeCard>
-    );
-  };
+    )
+  }
 
   return (
     <Wrapper>
@@ -34,7 +34,7 @@ export default function ByTheme() {
                   </H2Title>
                 </TitleContainer>
                 <CtaContainer>
-                  <Link href="/categories">Explorer les thématiques</Link>
+                  <Link href='/categories'>Explorer les thématiques</Link>
                 </CtaContainer>
               </UpperSide>
               <Separator>
@@ -43,18 +43,18 @@ export default function ByTheme() {
               <DownSide>
                 <ThemeCards>
                   <ThemeCardsLine1>
-                    {buildThemeCardFor("usagenumerique")}
-                    {buildThemeCardFor("chauffage")}
-                    {buildThemeCardFor("transport")}
-                    {buildThemeCardFor("repas")}
-                    {buildThemeCardFor("habillement")}
-                    {buildThemeCardFor("boisson")}
+                    {buildThemeCardFor('usagenumerique')}
+                    {buildThemeCardFor('chauffage')}
+                    {buildThemeCardFor('transport')}
+                    {buildThemeCardFor('repas')}
+                    {buildThemeCardFor('habillement')}
+                    {buildThemeCardFor('boisson')}
                   </ThemeCardsLine1>
                   <ThemeCardsLine2>
                     <ThemeCardBlue1>&nbsp;</ThemeCardBlue1>
-                    {buildThemeCardFor("mobilier")}
-                    {buildThemeCardFor("electromenager")}
-                    {buildThemeCardFor("livraison")}
+                    {buildThemeCardFor('mobilier')}
+                    {buildThemeCardFor('electromenager')}
+                    {buildThemeCardFor('livraison')}
                     <ThemeCardBlue2></ThemeCardBlue2>
                   </ThemeCardsLine2>
                 </ThemeCards>
@@ -64,7 +64,7 @@ export default function ByTheme() {
         </Section2.WideContent>
       </Section2>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.div`
@@ -76,32 +76,32 @@ const Wrapper = styled.div`
     margin-top: -1rem;
     padding: 1rem 0;
   }
-`;
+`
 
 const Layout = styled.div`
   ${(props) => props.theme.mq.large} {
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
-`;
+`
 
 const UpperSide = styled.div`
   display: flex;
   ${(props) => props.theme.mq.large} {
     flex-direction: column;
   }
-`;
-const DownSide = styled.div``;
+`
+const DownSide = styled.div``
 
-const TitleContainer = styled.div``;
+const TitleContainer = styled.div``
 
 const ColoredTitle = styled.span`
   color: ${(props) => props.theme.colors.main};
-`;
+`
 
 const Separator = styled.div`
   margin: 1.5rem 0 2rem 0;
-`;
+`
 
 const CtaContainer = styled.div`
   margin-left: auto;
@@ -117,7 +117,7 @@ const CtaContainer = styled.div`
     padding: 0.5rem 1rem;
     text-decoration: none;
   }
-`;
+`
 
 const H2Title = styled.h2`
   font-size: 1.75rem;
@@ -131,9 +131,9 @@ const H2Title = styled.h2`
       display: inline;
     }
   }
-`;
-const H2TitleLine1 = styled.span``;
-const H2TitleLine2 = styled.span``;
+`
+const H2TitleLine1 = styled.span``
+const H2TitleLine2 = styled.span``
 
 const ThemeCards = styled.div`
   > div {
@@ -157,10 +157,10 @@ const ThemeCards = styled.div`
       }
     }
   }
-`;
+`
 
-const ThemeCardsLine1 = styled.div``;
-const ThemeCardsLine2 = styled.div``;
+const ThemeCardsLine1 = styled.div``
+const ThemeCardsLine2 = styled.div``
 
 const ThemeCard = styled.div`
   align-items: center;
@@ -169,13 +169,13 @@ const ThemeCard = styled.div`
   display: flex;
   height: 2rem;
   padding: 1rem 1rem;
-`;
+`
 
 const ThemeCardIcon = styled.div`
   ${(props) => props.theme.mq.large} {
     margin-right: 0.5rem;
   }
-`;
+`
 const ThemeCardLink = styled.div`
   a {
     color: #235dd2;
@@ -184,7 +184,7 @@ const ThemeCardLink = styled.div`
     }
     text-decoration: none;
   }
-`;
+`
 
 const ThemeCardBlue1 = styled.div`
   background: linear-gradient(90deg, #ebf2ff -0.22%, #ccdcfd 99.78%);
@@ -193,7 +193,7 @@ const ThemeCardBlue1 = styled.div`
   ${(props) => props.theme.mq.large} {
     display: none;
   }
-`;
+`
 const ThemeCardBlue2 = styled.div`
   background: linear-gradient(270deg, #ebf2ff -0.22%, #ccdcfd 99.78%);
   border-radius: 8px;
@@ -201,4 +201,4 @@ const ThemeCardBlue2 = styled.div`
   ${(props) => props.theme.mq.large} {
     display: none;
   }
-`;
+`

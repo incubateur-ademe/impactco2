@@ -1,18 +1,18 @@
-import reusecards from "./data/reusecards.json";
-import ChtingLeft from "./img/ChtingLeft";
-import ChtingRight from "./img/ChtingRight";
-import Divider from "./img/Divider";
-import Section2 from "components/base/Section2";
-import Link from "next/link";
-import React from "react";
-import styled from "styled-components";
+import Link from 'next/link'
+import React from 'react'
+import styled from 'styled-components'
+import reusecards from './data/reusecards.json'
+import Section2 from 'components/base/Section2'
+import ChtingLeft from './img/ChtingLeft'
+import ChtingRight from './img/ChtingRight'
+import Divider from './img/Divider'
 
 export default function ByArticle() {
   const buildReuseCardFor = (slug) => {
-    let reuseCard = reusecards.find((e) => e.slug === slug);
+    let reuseCard = reusecards.find((e) => e.slug === slug)
     return (
       <ReuseCardWrapper>
-        <a href={reuseCard.link} target="_blank" rel="noreferrer noopener">
+        <a href={reuseCard.link} target='_blank' rel='noreferrer noopener'>
           <ReuseCard>
             <ReuseCardImgContainer color={reuseCard.color}>
               <ReuseCardImg img={reuseCard.img}>
@@ -28,8 +28,8 @@ export default function ByArticle() {
           </ReuseCard>
         </a>
       </ReuseCardWrapper>
-    );
-  };
+    )
+  }
 
   return (
     <Wrapper>
@@ -56,38 +56,35 @@ export default function ByArticle() {
                     <H3Title>En toute autonomie</H3Title>
                     <MiddleUl>
                       <MiddleLi>
-                        Appuyez-vous sur le{" "}
+                        Appuyez-vous sur le{' '}
                         <Link
-                          href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
+                          href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                          target='_blank'
+                          rel='noreferrer noopener'>
                           kit de diffusion
                         </Link>
                         , pensé pour vous épauler dans la rédaction de vos contenus en lien avec l’impact carbone.
                       </MiddleLi>
                       <MiddleLi>
-                        <Link href="/integration">Configurez et personnalisez</Link> le simulateur de votre choix grâce
+                        <Link href='/integration'>Configurez et personnalisez</Link> le simulateur de votre choix grâce
                         à une intégration
                       </MiddleLi>
                       <MiddleLi>
                         Inspirez-vous d'
                         <Link
-                          href="https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
+                          href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
+                          target='_blank'
+                          rel='noreferrer noopener'>
                           exemples concrets
-                        </Link>{" "}
+                        </Link>{' '}
                         déjà créés par des médias, entreprises, associations...
                       </MiddleLi>
                     </MiddleUl>
                     <MiddleLeftCta>
                       <Link
-                        href="https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
+                        href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                        target='_blank'
+                        rel='noreferrer noopener'>
                         Consulter le kit de diffusion
                       </Link>
                     </MiddleLeftCta>
@@ -98,12 +95,11 @@ export default function ByArticle() {
                       <MiddleLi>
                         Enrichissez vos contenus grâce à notre&nbsp;
                         <Link
-                          href="https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
+                          href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
+                          target='_blank'
+                          rel='noreferrer noopener'>
                           Foire aux Questions
-                        </Link>{" "}
+                        </Link>{' '}
                         pour trouver des éléments de réponse pertinents.
                       </MiddleLi>
                       <MiddleLi>
@@ -114,7 +110,7 @@ export default function ByArticle() {
                       </MiddleLi>
                     </MiddleUl>
                     <MiddleRightCta>
-                      <Link href="https://tally.so/r/nrOv5N" rel="noreferrer noopener">
+                      <Link href='https://tally.so/r/nrOv5N' rel='noreferrer noopener'>
                         Prendre rendez-vous avec l’équipe
                       </Link>
                     </MiddleRightCta>
@@ -127,10 +123,10 @@ export default function ByArticle() {
                   <WinkWinkLeft>
                     <ChtingLeft />
                   </WinkWinkLeft>
-                  {buildReuseCardFor("card_1")}
-                  {buildReuseCardFor("card_2")}
-                  {buildReuseCardFor("card_3")}
-                  {buildReuseCardFor("card_4")}
+                  {buildReuseCardFor('card_1')}
+                  {buildReuseCardFor('card_2')}
+                  {buildReuseCardFor('card_3')}
+                  {buildReuseCardFor('card_4')}
                   <WinkWinkRight>
                     <ChtingRight />
                   </WinkWinkRight>
@@ -141,7 +137,7 @@ export default function ByArticle() {
         </Section2.WideContent>
       </Section2>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.div`
@@ -152,34 +148,34 @@ const Wrapper = styled.div`
     margin-top: 2rem;
     padding: 1rem 0;
   }
-`;
+`
 
 const Layout = styled.div`
   ${(props) => props.theme.mq.large} {
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
-`;
+`
 
 const UpperSide = styled.div`
   display: flex;
   ${(props) => props.theme.mq.large} {
     flex-direction: column;
   }
-`;
+`
 const DownSide = styled.div`
   padding-top: 5rem;
-`;
+`
 
-const TitleContainer = styled.div``;
+const TitleContainer = styled.div``
 
 const ColoredTitle = styled.span`
   color: ${(props) => props.theme.colors.main};
-`;
+`
 
 const Separator = styled.div`
   margin: 1.5rem 0 2rem 0;
-`;
+`
 
 const H2Title = styled.h2`
   font-size: 1.75rem;
@@ -193,11 +189,11 @@ const H2Title = styled.h2`
       display: inline;
     }
   }
-`;
-const H2TitleLine1 = styled.span``;
-const H2TitleLine2 = styled.span``;
+`
+const H2TitleLine1 = styled.span``
+const H2TitleLine2 = styled.span``
 
-const MiddleSide = styled.div``;
+const MiddleSide = styled.div``
 
 const MiddleGrid = styled.div`
   display: grid;
@@ -205,13 +201,13 @@ const MiddleGrid = styled.div`
   ${(props) => props.theme.mq.medium} {
     grid-template-columns: 1fr;
   }
-`;
+`
 
 const PartMiddleGrid = styled.div`
   padding-right: 1rem;
-`;
-const LeftMiddleGrid = styled(PartMiddleGrid)``;
-const RightMiddleGrid = styled(PartMiddleGrid)``;
+`
+const LeftMiddleGrid = styled(PartMiddleGrid)``
+const RightMiddleGrid = styled(PartMiddleGrid)``
 
 const H3Title = styled.h3`
   color: #235dd2;
@@ -219,12 +215,12 @@ const H3Title = styled.h3`
   font-weight: 700;
   letter-spacing: 0em;
   line-height: 2.5rem;
-`;
+`
 const H3Title2 = styled(H3Title)`
   ${(props) => props.theme.mq.medium} {
     margin-top: 2rem;
   }
-`;
+`
 
 const MiddleUl = styled.ul`
   height: 13rem;
@@ -241,9 +237,9 @@ const MiddleUl = styled.ul`
   > li + li {
     margin-top: 1.25rem;
   }
-`;
+`
 const MiddleLi = styled.li`
-  background: url("/images/tik.svg") no-repeat;
+  background: url('/images/tik.svg') no-repeat;
   background-position: top 4px left;
   font-size: 1rem;
   font-weight: 400;
@@ -256,7 +252,7 @@ const MiddleLi = styled.li`
     font-weight: 700;
     text-underline-offset: 6px;
   }
-`;
+`
 
 const MiddleCta = styled.div`
   a {
@@ -269,15 +265,15 @@ const MiddleCta = styled.div`
       font-size: 0.85rem;
     }
   }
-`;
-const MiddleLeftCta = styled(MiddleCta)``;
-const MiddleRightCta = styled(MiddleCta)``;
+`
+const MiddleLeftCta = styled(MiddleCta)``
+const MiddleRightCta = styled(MiddleCta)``
 
 const ReuseGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   position: relative;
-`;
+`
 
 const ReuseCard = styled.div`
   background-color: white;
@@ -287,7 +283,7 @@ const ReuseCard = styled.div`
   border-width: 1px 4px 4px 1px;
   display: block;
   margin-right: 1rem;
-`;
+`
 const ReuseCardImg = styled.div`
   background: url(${(props) => props.img});
   background-position: center center;
@@ -297,7 +293,7 @@ const ReuseCardImg = styled.div`
   border-top-right-radius: 13px;
   height: 8rem;
   position: relative;
-`;
+`
 const ReuseCardTxt = styled.div`
   font-size: 1rem;
   height: 20rem;
@@ -317,7 +313,7 @@ const ReuseCardTxt = styled.div`
     height: 15rem;
   }
   padding: 1rem;
-`;
+`
 const ReuseCardTitle = styled.div`
   font-size: 1rem;
   height: 5.5rem;
@@ -332,7 +328,7 @@ const ReuseCardTitle = styled.div`
   ${(props) => props.theme.mq.xsmall} {
     height: 3.5rem;
   }
-`;
+`
 const ReuseCardParagraph = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 0.9rem;
@@ -340,7 +336,7 @@ const ReuseCardParagraph = styled.div`
   color: #3a3a3a;
   margin-bottom: 1rem;
   margin-top: 1rem;
-`;
+`
 const ReuseCardTag = styled.div`
   background-color: white;
   border-radius: 4px;
@@ -354,7 +350,7 @@ const ReuseCardTag = styled.div`
   padding-right: 0.25rem;
   position: absolute;
   top: 0.5rem;
-`;
+`
 
 const ReuseCardWrapper = styled.div`
   ${(props) => props.theme.mq.large} {
@@ -377,26 +373,26 @@ const ReuseCardWrapper = styled.div`
   ${(props) => props.theme.mq.small} {
     grid-column: none;
   }
-`;
+`
 
 const ReuseCardImgContainer = styled.div`
   background-color: ${(props) => props.color};
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
-`;
+`
 
 const WinkWink = styled.div`
   position: absolute;
   ${(props) => props.theme.mq.large} {
     display: none;
   }
-`;
+`
 
 const WinkWinkLeft = styled(WinkWink)`
   left: -2.5rem;
   top: 40%;
-`;
+`
 const WinkWinkRight = styled(WinkWink)`
   right: -1.5rem;
   top: 40%;
-`;
+`

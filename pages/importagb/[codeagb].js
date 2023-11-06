@@ -2,21 +2,18 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import React from 'react'
-
 import Section from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 function useAGB(codeagb) {
-  return useQuery(
-    ['codeagb', codeagb],
-    () =>
+  return useQuery({
+    queryKey: ['codeagb', codeagb],
+    queryFn: () =>
       axios
-        .get(
-          `https://data.ademe.fr/data-fair/api/v1/datasets//agribalyse-detail-etape/lines?Code_AGB_in=${codeagb}`
-        )
+        .get(`https://data.ademe.fr/data-fair/api/v1/datasets//agribalyse-detail-etape/lines?Code_AGB_in=${codeagb}`)
         .then((res) => res.data.results[0]),
-    { enabled: codeagb ? true : false }
-  )
+    enabled: codeagb ? true : false,
+  })
 }
 
 export default function Importagb() {
@@ -24,7 +21,6 @@ export default function Importagb() {
   const { codeagb } = router.query
 
   const { data } = useAGB(codeagb)
-  console.log(data)
   return (
     <Web>
       <Section>
@@ -34,12 +30,7 @@ export default function Importagb() {
             "ecv": [<br />
             &#123;
             <br />
-            "value":{' '}
-            {
-              data[
-                'Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Agriculture'
-              ]
-            }
+            "value": {data['Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Agriculture']}
             ,
             <br />
             "id": 30
@@ -48,12 +39,7 @@ export default function Importagb() {
             <br />
             &#123;
             <br />
-            "value":{' '}
-            {
-              data[
-                'Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Transformation'
-              ]
-            }
+            "value": {data['Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Transformation']}
             ,
             <br />
             "id": 31
@@ -62,48 +48,28 @@ export default function Importagb() {
             <br />
             &#123;
             <br />
-            "value":{' '}
-            {
-              data[
-                'Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Emballage'
-              ]
-            }
+            "value": {data['Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Emballage']}
             ,
             <br />
             "id": 32 &#125;,
             <br />
             &#123;
             <br />
-            "value":{' '}
-            {
-              data[
-                'Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Transport'
-              ]
-            }
+            "value": {data['Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Transport']}
             ,
             <br />
             "id": 33 &#125;,
             <br />
             &#123;
             <br />
-            "value":{' '}
-            {
-              data[
-                'Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Supermarché_et_distribution'
-              ]
-            }
+            "value": {data['Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Supermarché_et_distribution']}
             ,
             <br /> "id": 34
             <br /> &#125;,
             <br />
             &#123;
             <br />
-            "value":{' '}
-            {
-              data[
-                'Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Consommation'
-              ]
-            }
+            "value": {data['Changement_climatique_(kg_CO2_eq/kg_de_produit)_-_Consommation']}
             ,
             <br /> "id": 35
             <br /> &#125;

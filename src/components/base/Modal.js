@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -7,13 +7,13 @@ const Wrapper = styled.div`
   height: 100%;
   justify-content: center;
   left: 0;
-  pointer-events: ${(props) => (props.open ? "inherit" : "none")};
+  pointer-events: ${(props) => (props.open ? 'inherit' : 'none')};
   position: fixed;
   top: 0;
   transform: translate3d(0, 0, 1em);
   width: 100%;
   z-index: 900;
-`;
+`
 const Background = styled.div`
   background-color: rgba(0, 0, 0, ${(props) => (props.open ? 0.6 : 0)});
   height: 100%;
@@ -21,7 +21,7 @@ const Background = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-`;
+`
 const Content = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 1em;
@@ -33,10 +33,10 @@ const Content = styled.div`
   max-width: 90vw;
   opacity: ${(props) => (props.open ? 1 : 0)};
   position: relative;
-  transform: scale(${(props) => (props.open ? 1 : 0.7)}) translateY(${(props) => (props.open ? 0 : "10em")});
-  visibility: ${(props) => (props.open ? "visible" : "hidden")};
-  width: ${(props) => props.width || "40em"};
-`;
+  transform: scale(${(props) => (props.open ? 1 : 0.7)}) translateY(${(props) => (props.open ? 0 : '10em')});
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
+  width: ${(props) => props.width || '40em'};
+`
 const ButtonClose = styled.div`
   cursor: pointer;
   font-size: 2rem;
@@ -47,11 +47,11 @@ const ButtonClose = styled.div`
   top: 0.5em;
   transform: rotate(45deg);
   z-index: 12;
-`;
+`
 const Scroll = styled.div`
   overflow-y: auto;
   padding: 2rem 1.5rem;
-`;
+`
 export default function Modal(props) {
   return (
     <Wrapper open={props.open}>
@@ -61,11 +61,10 @@ export default function Modal(props) {
         width={props.width}
         textColor={props.textColor}
         backgroundColor={props.backgroundColor}
-        noAnimation={props.noAnimation}
-      >
+        noAnimation={props.noAnimation}>
         <ButtonClose onClick={() => props.setOpen(false)}>+</ButtonClose>
         <Scroll className={props.className}>{props.children}</Scroll>
       </Content>
     </Wrapper>
-  );
+  )
 }

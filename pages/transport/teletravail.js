@@ -1,6 +1,5 @@
-import categories from 'data/categories.json'
 import React from 'react'
-
+import categories from 'data/categories.json'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Teletravail from 'components/transport/Teletravail'
@@ -14,8 +13,7 @@ export default function TeletravailPage(props) {
       breadcrumb={{
         type: 'equivalent',
         category: props.category,
-      }}
-    >
+      }}>
       <TransportProvider>
         <Teletravail category={props.category} />
         <Learning category={props.category} />

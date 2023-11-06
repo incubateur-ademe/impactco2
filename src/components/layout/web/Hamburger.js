@@ -1,14 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export default function Hamburger(props) {
   return (
     <Wrapper>
       <Button
         onClick={() => {
-          props.hamburgerClicked();
+          props.hamburgerClicked()
         }}
-        opened={props.hamburgerOpened}
-      >
+        opened={props.hamburgerOpened}>
         {props.hamburgerOpened ? (
           <>X</>
         ) : (
@@ -18,10 +17,10 @@ export default function Hamburger(props) {
         )}
       </Button>
     </Wrapper>
-  );
+  )
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div``
 const Button = styled.button`
   background-color: transparent;
   border: 1px solid gainsboro;
@@ -29,10 +28,10 @@ const Button = styled.button`
   color: #746770;
   cursor: pointer;
   height: 2rem;
-  padding: ${(props) => (props.opened ? "0" : ".9rem 1rem 1rem 1rem")};
+  padding: ${(props) => (props.opened ? '0' : '.9rem 1rem 1rem 1rem')};
   width: 2rem;
-`;
+`
 
 const Rotate = styled.div`
   transform: rotate(-90deg);
-`;
+`

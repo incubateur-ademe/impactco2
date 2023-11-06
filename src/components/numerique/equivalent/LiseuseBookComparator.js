@@ -1,12 +1,9 @@
 import React, { useContext, useMemo, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
-
 import { formatTotal } from 'utils/formatters'
-
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
 import { Title } from 'components/misc/Visualization'
@@ -98,16 +95,9 @@ export default function LiseuseBookComparator() {
   const { setCo2e } = useContext(ModalContext)
 
   const { equivalents } = useContext(DataContext)
-  const liseuse = useMemo(
-    () =>
-      equivalents.find((equivalent) => ['liseuse'].includes(equivalent.slug)),
-    [equivalents]
-  )
+  const liseuse = useMemo(() => equivalents.find((equivalent) => ['liseuse'].includes(equivalent.slug)), [equivalents])
   const livre = useMemo(
-    () =>
-      equivalents.find((equivalent) =>
-        ['livredepoche'].includes(equivalent.slug)
-      ),
+    () => equivalents.find((equivalent) => ['livredepoche'].includes(equivalent.slug)),
     [equivalents]
   )
   const [numBookPerYear, setNumBookPerYear] = useState(10)
@@ -120,10 +110,7 @@ export default function LiseuseBookComparator() {
       </Title>
       <Question>
         <Text>Je lis en moyenne</Text>
-        <RangeWrapper
-          onMouseDown={(e) => e.stopPropagation()}
-          onTouchStart={(e) => e.stopPropagation()}
-        >
+        <RangeWrapper onMouseDown={(e) => e.stopPropagation()} onTouchStart={(e) => e.stopPropagation()}>
           <Range
             step={1}
             min={0}
@@ -132,9 +119,7 @@ export default function LiseuseBookComparator() {
             onChange={(values) => {
               setNumBookPerYear(values[0])
             }}
-            renderTrack={({ props, children }) => (
-              <Track {...props}>{children}</Track>
-            )}
+            renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}
             renderThumb={({ props }) => (
               <Thumb {...props} aria-label='Nombre de livres'>
                 {numBookPerYear} livre{numBookPerYear > 1 ? 's' : ''}
@@ -149,15 +134,8 @@ export default function LiseuseBookComparator() {
           <Result>
             Il faudrait que j'utilise ma liseuse pendant au moins{' '}
             <strong>
-              {Math.ceil(
-                formatTotal(liseuse) / (formatTotal(livre) * numBookPerYear)
-              )}{' '}
-              an
-              {Math.ceil(
-                formatTotal(liseuse) / (formatTotal(livre) * numBookPerYear)
-              ) > 1
-                ? 's'
-                : ''}
+              {Math.ceil(formatTotal(liseuse) / (formatTotal(livre) * numBookPerYear))} an
+              {Math.ceil(formatTotal(liseuse) / (formatTotal(livre) * numBookPerYear)) > 1 ? 's' : ''}
               <br />
             </strong>{' '}
             avant qu'elle émette moins de{' '}
@@ -170,11 +148,8 @@ export default function LiseuseBookComparator() {
           <Result>
             Vous ne devriez probablement pas acheter de liseuse.
             <br />
-            Si vous en possédez déjà une, vous pouvez lui donner une seconde
-            vie. Découvrez comment avec notre site{' '}
-            <MagicLink to='https://longuevieauxobjets.gouv.fr/'>
-              Longue Vie Aux Objets
-            </MagicLink>
+            Si vous en possédez déjà une, vous pouvez lui donner une seconde vie. Découvrez comment avec notre site{' '}
+            <MagicLink to='https://longuevieauxobjets.gouv.fr/'>Longue Vie Aux Objets</MagicLink>
           </Result>
         )}
       </div>

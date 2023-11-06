@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
-
 import ModalContext from 'components/providers/ModalProvider'
-
 import Button from 'components/base/Button'
 
 const hover = keyframes`
@@ -62,19 +60,8 @@ export default function ShareButton(props) {
   const { setShare } = useContext(ModalContext)
   return (
     <Wrapper title={props.title}>
-      <StyledButton
-        hollow
-        small
-        onClick={() => setShare(true)}
-        aria-label={'Partager'}
-      >
-        <Svg
-          width='512'
-          height='512'
-          viewBox='0 0 512 512'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
+      <StyledButton hollow small onClick={() => setShare(true)} aria-label={'Partager'}>
+        <Svg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path d='M474.332 85.332C474.332 123.625 443.293 154.668 405 154.668C366.707 154.668 335.668 123.625 335.668 85.332C335.668 47.043 366.707 16 405 16C443.293 16 474.332 47.043 474.332 85.332V85.332Z' />
           <path
             d='M405 170.668C357.938 170.668 319.668 132.395 319.668 85.332C319.668 38.2734 357.938 0 405 0C452.062 0 490.332 38.2734 490.332 85.332C490.332 132.395 452.062 170.668 405 170.668ZM405 32C375.582 32 351.668 55.9375 351.668 85.332C351.668 114.73 375.582 138.668 405 138.668C434.418 138.668 458.332 114.73 458.332 85.332C458.332 55.9375 434.418 32 405 32Z'

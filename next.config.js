@@ -1,54 +1,59 @@
-var fs = require("fs");
-var execSync = require("child_process").execSync;
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { withSentryConfig } = require('@sentry/nextjs')
+const { execSync } = require('child_process')
+const { readFileSync } = require('fs')
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 const getLocalGitCommitHash = function () {
-  let res = "";
+  let res = ''
   try {
-    res = execSync("git rev-parse HEAD").toString().trim();
+    res = execSync('git rev-parse HEAD').toString().trim()
   } catch (e) {
-    console.log("Git is not executable here...");
+    console.log('Git is not executable here...')
   }
-  return res;
-};
+  return res
+}
 
 const getLastVersion = function () {
-  let result = "unknown";
-  const data = fs.readFileSync("./CHANGELOG.md", "utf8");
+  let result = 'unknown'
+  const data = readFileSync('./CHANGELOG.md', 'utf8')
   // Define the regular expression pattern to match version numbers
-  const versionPattern = /^##\s\[?(\d+\.\d+\.\d+)\]?(?:.*?)$/m;
+  const versionPattern = /^##\s\[?(\d+\.\d+\.\d+)\]?(?:.*?)$/m
 
   // Search for version numbers in the CHANGELOG
-  const versions = data.match(versionPattern);
+  const versions = data.match(versionPattern)
 
   if (versions && versions.length > 1) {
     // The latest version will be the second match
-    result = versions[1];
+    result = versions[1]
   } else {
-    result = "No release versions found in the CHANGELOG.";
+    result = 'No release versions found in the CHANGELOG.'
   }
-  return result;
-};
+  return result
+}
 
 const buildFullVersionNumber = function () {
-  const semver = getLastVersion();
-  console.log("Current semver version:", semver);
-  return semver;
-};
+  const semver = getLastVersion()
+  console.log('Current semver version:', semver)
+  return semver
+}
 
 const buildShortSha = function (scalingoLongSha) {
-  const netlifySha = process.env.COMMIT_REF;
-  const shortSha = getShortSha(scalingoLongSha || netlifySha || getLocalGitCommitHash());
-  console.log("Current shortSha is: ", shortSha);
-  return shortSha;
-};
+  const netlifySha = process.env.COMMIT_REF
+  const shortSha = getShortSha(scalingoLongSha || netlifySha || getLocalGitCommitHash())
+  console.log('Current shortSha is: ', shortSha)
+  return shortSha
+}
 
 const getShortSha = function (str) {
-  let res = "";
-  if (typeof str === "string" && str.length > 0) {
-    res = str.substring(0, 7);
+  let res = ''
+  if (typeof str === 'string' && str.length > 0) {
+    res = str.substring(0, 7)
   }
-  return res;
-};
+  return res
+}
 
 const nextConfig = {
   reactStrictMode: true,
@@ -56,54 +61,68 @@ const nextConfig = {
     styledComponents: true,
   },
   i18n: {
-    locales: ["fr"],
-    defaultLocale: "fr",
+    locales: ['fr'],
+    defaultLocale: 'fr',
   },
   env: {
-    thebuildid: buildFullVersionNumber() + "-" + buildShortSha(process.env.SOURCE_VERSION),
+    thebuildid: buildFullVersionNumber() + '-' + buildShortSha(process.env.SOURCE_VERSION),
     websiteurl: process.env.WEBSITE_URL,
+  },
+  // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+  sentry: {
+    autoInstrumentServerFunctions: true,
+    autoInstrumentMiddleware: true,
+    tunnelRoute: '/monitoring',
+    widenClientFileUpload: true,
+    hideSourceMaps: true,
   },
   async redirects() {
     return [
       {
-        source: "/beta/:slug*",
-        destination: "/api/:slug*",
+        source: '/beta/:slug*',
+        destination: '/api/:slug*',
         permanent: true,
       },
       {
-        source: "/categories/deplacement/:slug*",
-        destination: "/transport/:slug*",
+        source: '/categories/deplacement/:slug*',
+        destination: '/transport/:slug*',
         permanent: true,
       },
 
       {
-        source: "/categories/:slug*",
-        destination: "/:slug*",
+        source: '/categories/:slug*',
+        destination: '/:slug*',
         permanent: false,
       },
       {
-        source: "/empreinte-carbone/:slug*",
-        destination: "/:slug*",
+        source: '/empreinte-carbone/:slug*',
+        destination: '/:slug*',
         permanent: false,
       },
       {
-        source: "/iframes/categories/:slug*",
-        destination: "/iframes/:slug*",
+        source: '/iframes/categories/:slug*',
+        destination: '/iframes/:slug*',
         permanent: false,
       },
       {
-        source: "/iframes/empreinte-carbone/:slug*",
-        destination: "/iframes/:slug*",
+        source: '/iframes/empreinte-carbone/:slug*',
+        destination: '/iframes/:slug*',
         permanent: false,
       },
 
       {
-        source: "/iframes/tuiles",
-        destination: "/iframes/convertisseur",
+        source: '/iframes/tuiles',
+        destination: '/iframes/convertisseur',
         permanent: false,
       },
-    ];
+    ]
   },
-};
+}
 
-module.exports = nextConfig;
+// For all available options, see:
+// https://github.com/getsentry/sentry-webpack-plugin#options.
+const sentryWebpackPluginOptions = {
+  silent: true, // Suppresses all logs
+}
+
+module.exports = withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))

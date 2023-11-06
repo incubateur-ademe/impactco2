@@ -1,15 +1,5 @@
 import React from 'react'
-
-import {
-  CenterLink,
-  Emojis,
-  Equals,
-  Equivalent,
-  Equivalents,
-  Label,
-  Small,
-  Title,
-} from 'components/misc/Visualization'
+import { CenterLink, Emojis, Equals, Equivalent, Equivalents, Label, Small, Title } from 'components/misc/Visualization'
 
 export default function MontreCategory() {
   return (
@@ -43,9 +33,7 @@ export default function MontreCategory() {
         14 montres connectées
         <br />
       </Small>
-      <CenterLink to='/numerique'>
-        Comparez avec d'autres objets numériques
-      </CenterLink>
+      <CenterLink to='/numerique'>Comparez avec d'autres objets numériques</CenterLink>
     </>
   )
 }

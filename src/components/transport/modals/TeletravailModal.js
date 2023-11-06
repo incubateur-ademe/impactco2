@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
-
 import Button from 'components/base/Button'
 import FancySelect from 'components/base/FancySelect'
 import MagicLink from 'components/base/MagicLink'
 import Modal from 'components/base/Modal'
-
 import TransportContext from '../TransportProvider'
 
 const Title = styled.h2``
@@ -98,8 +96,8 @@ export default function TeletravailModal() {
             { value: '0.50', label: `50 %` },
           ]}
         />{' '}
-        des émissions évitées via le télétravail sont émises pour d&apos;autres
-        trajets (courses, école, etc.). Cette valeur par défaut (25
+        des émissions évitées via le télétravail sont émises pour d&apos;autres trajets (courses, école, etc.). Cette
+        valeur par défaut (25
         <span
           dangerouslySetInnerHTML={{
             __html: '&nbsp;',
@@ -112,12 +110,10 @@ export default function TeletravailModal() {
         .
       </Text>
       <Text>
-        Les autres effets rebonds non liés aux déplacements (consommation
-        d&apos;électricité du foyer, achat de matériel pour le télétravail,
-        etc.) ne sont pas modélisés ici. Pour donner un ordre de grandeur,{' '}
+        Les autres effets rebonds non liés aux déplacements (consommation d&apos;électricité du foyer, achat de matériel
+        pour le télétravail, etc.) ne sont pas modélisés ici. Pour donner un ordre de grandeur,{' '}
         <MagicLink to='https://impactco2.fr/?co2=248&equivalents=27006_27002_27976_27010_206589'>
-          la fabrication d&apos;un écran d&apos;ordinateur émet autant que 1 285
-          km de voiture (248 kgCO2e)
+          la fabrication d&apos;un écran d&apos;ordinateur émet autant que 1 285 km de voiture (248 kgCO2e)
         </MagicLink>
         .
       </Text>

@@ -1,6 +1,5 @@
-import categories from 'data/categories.json'
 import React from 'react'
-
+import categories from 'data/categories.json'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Itinerary from 'components/transport/Itinerary'
@@ -14,8 +13,7 @@ export default function ItinerairePage(props) {
       breadcrumb={{
         type: 'equivalent',
         category: props.category,
-      }}
-    >
+      }}>
       <TransportProvider>
         <Itinerary category={props.category} />
         <Learning category={props.category} />

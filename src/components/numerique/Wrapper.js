@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-
 import useScreenshot from 'hooks/useScreenshot'
-
 import Background from 'components/screenshot/Background'
 import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
@@ -21,8 +19,7 @@ const Sizer = styled.div`
   }
 `
 const Content = styled.div`
-  background-color: ${(props) =>
-    props.hover ? props.theme.colors.background : 'transparent'};
+  background-color: ${(props) => (props.hover ? props.theme.colors.background : 'transparent')};
 `
 const Header = styled.div`
   align-items: flex-start;
@@ -36,9 +33,7 @@ const StyledButtons = styled(Buttons)`
 export default function Wrapper(props) {
   const [hover, setHover] = useState(false)
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    props.slug || 'impactco2'
-  )
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(props.slug || 'impactco2')
 
   return (
     <SizerWrapper>

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
 
@@ -38,16 +37,14 @@ export const Emojis = styled(Emoji)`
   flex: 1;
   flex-wrap: wrap;
   font-size: ${(props) => (props.small ? 1 : props.xsmall ? 0.5 : 2)}rem;
-  gap: ${(props) =>
-    props.small ? '0.125rem 0.25rem' : props.xsmall ? 0 : '0.25rem 0.75rem'};
+  gap: ${(props) => (props.small ? '0.125rem 0.25rem' : props.xsmall ? 0 : '0.25rem 0.75rem')};
   justify-content: center;
   margin: 0 auto 0.75rem;
   text-align: center;
   width: ${(props) => (props.margin ? props.margin : 100)}%;
 
   ${(props) => props.theme.mq.medium} {
-    font-size: ${(props) =>
-      props.small ? 0.75 : props.xsmall ? 0.375 : 1.5}rem;
+    font-size: ${(props) => (props.small ? 0.75 : props.xsmall ? 0.375 : 1.5)}rem;
     gap: ${(props) => (props.xsmall ? 0 : 0.25)}rem;
   }
   ${(props) => props.theme.mq.small} {

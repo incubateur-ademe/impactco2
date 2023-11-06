@@ -1,13 +1,13 @@
-import MagicLink from "components/base/MagicLink";
-import Modal from "components/base/Modal";
-import ModalContext from "components/providers/ModalProvider";
-import React, { useContext } from "react";
-import styled from "styled-components";
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import ModalContext from 'components/providers/ModalProvider'
+import MagicLink from 'components/base/MagicLink'
+import Modal from 'components/base/Modal'
 
-const Title = styled.h2``;
-const Text = styled.p``;
+const Title = styled.h2``
+const Text = styled.p``
 export default function DevicesModal() {
-  const { devices: open, setDevices: setOpen } = useContext(ModalContext);
+  const { devices: open, setDevices: setOpen } = useContext(ModalContext)
   return (
     <>
       {!open ? (
@@ -63,17 +63,17 @@ export default function DevicesModal() {
             <br />
           </Text>
           <Text>
-            Ces chiffres sont basés sur ces deux études :<br />-{" "}
-            <MagicLink to="https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf">
+            Ces chiffres sont basés sur ces deux études :<br />-{' '}
+            <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
               rapport-barometre-numerique-edition-2021.pdf
             </MagicLink>
-            <br />-{" "}
-            <MagicLink to="https://www.carbonbrief.org/factcheck-what-is-the-carbon-footprint-of-streaming-video-on-netflix/">
+            <br />-{' '}
+            <MagicLink to='https://www.carbonbrief.org/factcheck-what-is-the-carbon-footprint-of-streaming-video-on-netflix/'>
               factcheck-what-is-the-carbon-footprint-of-streaming-video-on-netflix
             </MagicLink>
           </Text>
         </Modal>
       )}
     </>
-  );
+  )
 }

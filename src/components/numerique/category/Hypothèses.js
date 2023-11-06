@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import ModalContext from 'components/providers/ModalProvider'
-
 import ButtonLink from 'components/base/ButtonLink'
 
 const Wrapper = styled.div`
@@ -19,9 +17,7 @@ export default function Hypothèses() {
   const { setHypothesis } = useContext(ModalContext)
   return (
     <Wrapper>
-      <StyledButtonLink onClick={() => setHypothesis(true)}>
-        Sources et hypothèses
-      </StyledButtonLink>{' '}
+      <StyledButtonLink onClick={() => setHypothesis(true)}>Sources et hypothèses</StyledButtonLink>{' '}
     </Wrapper>
   )
 }

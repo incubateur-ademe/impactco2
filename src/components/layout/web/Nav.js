@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
-
 import Section from 'components/base/Section'
 import Search from 'components/misc/Search'
-
 import Menu from './nav/Menu'
 
 const StyledSection = styled(Section)`

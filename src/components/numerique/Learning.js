@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import ModalContext from 'components/providers/ModalProvider'
-
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
@@ -54,11 +52,7 @@ export default function Learning() {
           </ButtonLink>
         </Statistic>
         <Strong>
-          La{' '}
-          <MagicLink to='/numerique/television'>
-            production d’une télé
-          </MagicLink>{' '}
-          émet autant de{' '}
+          La <MagicLink to='/numerique/television'>production d’une télé</MagicLink> émet autant de{' '}
           <ButtonLink onClick={() => setCo2e(true)}>
             CO<sub>2</sub>e
           </ButtonLink>{' '}
@@ -69,10 +63,9 @@ export default function Learning() {
           .
         </Strong>
         <Text>
-          Le <strong>secteur du numérique</strong> est en plein essor. En effet,
-          aujourd’hui, les appareils numériques et leurs usages font partie
-          intégrante de notre quotidien. Mais saviez-vous que le{' '}
-          <strong>numérique</strong> représente jusqu’à{' '}
+          Le <strong>secteur du numérique</strong> est en plein essor. En effet, aujourd’hui, les appareils numériques
+          et leurs usages font partie intégrante de notre quotidien. Mais saviez-vous que le <strong>numérique</strong>{' '}
+          représente jusqu’à{' '}
           <strong>
             2,5% des émissions de{' '}
             <ButtonLink onClick={() => setCo2e(true)}>
@@ -81,55 +74,38 @@ export default function Learning() {
             totale en France ?
           </strong>
         </Text>
-        <Title>
-          Réduire son impact numérique avec des gestes simples, c’est possible ?
-        </Title>
+        <Title>Réduire son impact numérique avec des gestes simples, c’est possible ?</Title>
         <Text>
           Pour{' '}
           <MagicLink to='https://agirpourlatransition.ademe.fr/particuliers/bureau/bons-gestes/gardons-controle-pratiques-numeriques'>
             réduire notre impact numérique
           </MagicLink>
           , il existe de nombreux gestes à adopter ! Parce que{' '}
-          <strong>
-            les terminaux (ordinateurs, smartphones…) sont à l’origine de
-            l’essentiel des impacts
-          </strong>{' '}
-          (de 65 à 90 %) en particulier pour leur fabrication, vous pouvez agir
-          en gardant le plus longtemps possible ces appareils ou en privilégiant
-          les <strong>appareils reconditionnés</strong> plutôt que neufs.
-          Eteindre vos appareils à la fin de chaque utilisation, limiter la très
-          haute définition, faire du{' '}
-          <strong>ménage dans votre cloud (photo, vidéo)</strong> comme dans vos
-          mails sont d’autres axes pour diminuer votre empreinte numérique.
+          <strong>les terminaux (ordinateurs, smartphones…) sont à l’origine de l’essentiel des impacts</strong> (de 65
+          à 90 %) en particulier pour leur fabrication, vous pouvez agir en gardant le plus longtemps possible ces
+          appareils ou en privilégiant les <strong>appareils reconditionnés</strong> plutôt que neufs. Eteindre vos
+          appareils à la fin de chaque utilisation, limiter la très haute définition, faire du{' '}
+          <strong>ménage dans votre cloud (photo, vidéo)</strong> comme dans vos mails sont d’autres axes pour diminuer
+          votre empreinte numérique.
         </Text>
         <Text>
-          Et pour aller plus loin, vous pouvez éteindre votre box internet la
-          nuit et pendant vos absences, et surtout, limiter les objets connectés
-          et <strong>recycler</strong> vos{' '}
-          <strong>anciens équipements informatiques</strong>. En effet, la
-          plupart des matériaux contenus dans les{' '}
-          <strong>équipements numériques</strong> sont{' '}
-          <strong>recyclables</strong> : quand ils ne peuvent pas être réparés,
-          vos smartphones par exemple peuvent être en revanche recyclés jusqu’à
-          80 % !
+          Et pour aller plus loin, vous pouvez éteindre votre box internet la nuit et pendant vos absences, et surtout,
+          limiter les objets connectés et <strong>recycler</strong> vos{' '}
+          <strong>anciens équipements informatiques</strong>. En effet, la plupart des matériaux contenus dans les{' '}
+          <strong>équipements numériques</strong> sont <strong>recyclables</strong> : quand ils ne peuvent pas être
+          réparés, vos smartphones par exemple peuvent être en revanche recyclés jusqu’à 80 % !
         </Text>
-        <Title>
-          Comment va évoluer l'impact du numérique dans les prochaines années ?
-        </Title>
+        <Title>Comment va évoluer l'impact du numérique dans les prochaines années ?</Title>
         <Text>
           D’après une{' '}
           <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/etude-numerique-environnement-ademe-arcep-note-synthese_janv2022.pdf'>
             étude ADEME – ARCEP
           </MagicLink>
-          , l’empreinte carbone du numérique pourrait augmenter de manière
-          significative si rien n’est fait pour la limiter (+ 60 % d’ici à 2040
-          soit 6,7 % de l’empreinte carbone nationale). Quant aux objets
-          connectés (comme les{' '}
-          <MagicLink to='/numerique/montreconnectee'>
-            montres connectées
-          </MagicLink>
-          ), ils risquent de représenter 18 à 23% de l’empreinte carbone d’ici
-          2025, contre 1% en 2020. Il est donc important de limiter son{' '}
+          , l’empreinte carbone du numérique pourrait augmenter de manière significative si rien n’est fait pour la
+          limiter (+ 60 % d’ici à 2040 soit 6,7 % de l’empreinte carbone nationale). Quant aux objets connectés (comme
+          les <MagicLink to='/numerique/montreconnectee'>montres connectées</MagicLink>
+          ), ils risquent de représenter 18 à 23% de l’empreinte carbone d’ici 2025, contre 1% en 2020. Il est donc
+          important de limiter son{' '}
           <strong>
             empreinte{' '}
             <ButtonLink onClick={() => setCo2e(true)}>
@@ -140,20 +116,14 @@ export default function Learning() {
         </Text>
 
         <Text>
-          Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
-          calculer{' '}
-          <strong>l&apos;ensemble de votre empreinte sur le climat</strong>{' '}
-          grace à notre{' '}
-          <MagicLink to={'https://nosgestesclimat.fr/'}>
-            simulateur Nos Gestes Climat
-          </MagicLink>
+          Si vous souhaitez aller plus loin dans votre démarche, vous pouvez calculer{' '}
+          <strong>l&apos;ensemble de votre empreinte sur le climat</strong> grace à notre{' '}
+          <MagicLink to={'https://nosgestesclimat.fr/'}>simulateur Nos Gestes Climat</MagicLink>
           <br />
           <br />
         </Text>
         <Button.Wrapper>
-          <Button to={'https://nosgestesclimat.fr/'}>
-            Découvrir Nos Gestes Climat
-          </Button>
+          <Button to={'https://nosgestesclimat.fr/'}>Découvrir Nos Gestes Climat</Button>
         </Button.Wrapper>
       </Section.Content>
     </StyledSection>

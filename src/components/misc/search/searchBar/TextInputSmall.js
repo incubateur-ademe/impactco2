@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { formatName } from "utils/formatters";
+import React from 'react'
+import styled from 'styled-components'
+import { formatName } from 'utils/formatters'
 
 const Wrapper = styled.div`
   overflow: hidden;
   position: relative;
-`;
+`
 const Input = styled.input`
   background-image: url("data:image/svg+xml,%3Csvg width='72px' height='68px' viewBox='0 0 72 68' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='imgloop' transform='translate(5.000000, 5.000000)' stroke='%23B5ABB2' stroke-width='10'%3E%3Ccircle id='Oval' cx='25.5' cy='25.5' r='25.5'%3E%3C/circle%3E%3Cpath d='M47.5,43.5 L59.5415946,55.5415946' id='Line' stroke-linecap='square'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-position: 96% 53%;
@@ -32,7 +32,7 @@ const Input = styled.input`
   &:focus {
     outline: none;
   }
-`;
+`
 const Suggestion = styled.div`
   align-items: center;
   display: flex;
@@ -42,13 +42,13 @@ const Suggestion = styled.div`
   position: absolute;
   top: 0;
   white-space: nowrap;
-`;
+`
 const Invisible = styled.div`
   font-size: 1em;
   line-height: 1.25;
   opacity: 0;
   padding: 0.5em 0.5em 0.5em 2.5em;
-`;
+`
 const Visible = styled.div`
   margin-top: 0em;
   padding-left: 1.25em;
@@ -56,7 +56,7 @@ const Visible = styled.div`
 
   &:before {
     background-color: ${(props) => props.theme.colors.text};
-    content: "";
+    content: '';
     height: 0.05em;
     left: 0;
     position: absolute;
@@ -64,18 +64,18 @@ const Visible = styled.div`
     transform: translateY(-150%);
     width: 0.75em;
   }
-`;
-const Name = styled.span``;
+`
+const Name = styled.span``
 const Subtitle = styled.span`
   font-weight: 300;
-`;
+`
 
 export default React.forwardRef(function TextInput(props, ref) {
   return (
     <Wrapper>
       <Input
         ref={ref}
-        type="text"
+        type='text'
         placeholder={props.placeholder}
         value={props.search}
         onChange={(e) => props.setSearch(e.target.value)}
@@ -92,5 +92,5 @@ export default React.forwardRef(function TextInput(props, ref) {
         )}
       </Suggestion>
     </Wrapper>
-  );
-});
+  )
+})

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-
 import HorizontalRadio from 'components/base/HorizontalRadio'
 import RulesContext from 'components/numerique/RulesProvider'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
@@ -9,15 +8,11 @@ export default function DeviceInput(props) {
 
   return (
     <SliderWrapper>
-      <SliderWrapper.Label>
-        Qualité de la {props.name === 'streaming' ? 'vidéo' : 'communication'}
-      </SliderWrapper.Label>
+      <SliderWrapper.Label>Qualité de la {props.name === 'streaming' ? 'vidéo' : 'communication'}</SliderWrapper.Label>
       <HorizontalRadio
         name='quality'
         value={`'${engine.evaluate(props.name + ' . qualité').nodeValue}'`}
-        onChange={(value) =>
-          setSituation({ [props.name + ' . qualité']: value })
-        }
+        onChange={(value) => setSituation({ [props.name + ' . qualité']: value })}
         options={
           props.name === 'streaming'
             ? [

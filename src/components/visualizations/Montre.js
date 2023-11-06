@@ -1,15 +1,5 @@
 import React from 'react'
-
-import {
-  CenterLink,
-  Emojis,
-  Equals,
-  Equivalent,
-  Equivalents,
-  Label,
-  Small,
-  Title,
-} from 'components/misc/Visualization'
+import { CenterLink, Emojis, Equals, Equivalent, Equivalents, Label, Small, Title } from 'components/misc/Visualization'
 
 export default function Montre() {
   return (
@@ -59,9 +49,7 @@ export default function Montre() {
         <strong>2 t-shirts</strong>
         <br />
       </Small>
-      <CenterLink to='/convertisseur'>
-        Comparez à d'autres objets du quotidien
-      </CenterLink>
+      <CenterLink to='/convertisseur'>Comparez à d'autres objets du quotidien</CenterLink>
     </>
   )
 }

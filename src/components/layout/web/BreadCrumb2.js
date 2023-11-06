@@ -1,8 +1,8 @@
-import MagicLink from "components/base/MagicLink";
-import Section2 from "components/base/Section2";
-import React from "react";
-import styled from "styled-components";
-import { formatName } from "utils/formatters";
+import React from 'react'
+import styled from 'styled-components'
+import { formatName } from 'utils/formatters'
+import MagicLink from 'components/base/MagicLink'
+import Section2 from 'components/base/Section2'
 
 const Wrapper = styled.div`
   font-size: 0.75rem;
@@ -11,9 +11,9 @@ const Wrapper = styled.div`
   margin-bottom: 1rem;
   margin-top: 0.5rem;
   padding: 1rem 1rem 1rem 0;
-`;
+`
 export default function BreadCrumb2(props) {
-  const naming = props?.breadcrumb?.category?.breadcrumb || props?.breadcrumb?.category?.name;
+  const naming = props?.breadcrumb?.category?.breadcrumb || props?.breadcrumb?.category?.name
 
   return (
     <>
@@ -22,14 +22,14 @@ export default function BreadCrumb2(props) {
           <Section2.InnerMargin>
             <nav aria-label="fil d'ariane">
               <Wrapper>
-                {props.breadcrumb && props.breadcrumb.type === "equivalent" && (
+                {props.breadcrumb && props.breadcrumb.type === 'equivalent' && (
                   <>
-                    <MagicLink to="/categories">Thématique</MagicLink>
-                    {" > "}{" "}
+                    <MagicLink to='/categories'>Thématique</MagicLink>
+                    {' > '}{' '}
                     {props.breadcrumb.equivalent ? (
                       <>
                         <MagicLink to={`/${props.breadcrumb.category.slug}`}>{naming}</MagicLink>
-                        {" > "}
+                        {' > '}
                         {formatName(naming, 1, true)}
                       </>
                     ) : (
@@ -45,5 +45,5 @@ export default function BreadCrumb2(props) {
         <></>
       )}
     </>
-  );
+  )
 }

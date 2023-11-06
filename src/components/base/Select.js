@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   margin-bottom: 1.5rem;
-`;
+`
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
-`;
+`
 const Input = styled.select`
   appearance: none;
   background-color: transparent;
@@ -15,8 +15,8 @@ const Input = styled.select`
     props
   ) =>
     (props.color || props.theme.colors.main).replace(
-      "#",
-      ""
+      '#',
+      ''
     )}' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
   background-position: calc(100% - 0.5em) 50%;
   background-repeat: no-repeat;
@@ -26,7 +26,7 @@ const Input = styled.select`
   color: ${(props) => props.theme.colors.text};
   cursor: pointer;
   padding: 0.5em 2em 0.5em 1em;
-`;
+`
 export default function Select(props) {
   return (
     <Wrapper className={props.className}>
@@ -34,16 +34,15 @@ export default function Select(props) {
       {props.getLabel && <Label htmlFor={props.name}>{props.getLabel()}</Label>}
       <Input
         id={props.name}
-        data-testid={props["data-testid"]}
+        data-testid={props['data-testid']}
         name={props.name}
         value={props.value}
         color={props.color}
         onChange={(e) => {
-          props.onChange({ value: e.currentTarget.value, name: props.name });
-        }}
-      >
+          props.onChange({ value: e.currentTarget.value, name: props.name })
+        }}>
         {props.children}
       </Input>
     </Wrapper>
-  );
+  )
 }

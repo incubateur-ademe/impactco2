@@ -1,11 +1,11 @@
-import Section2 from "components/base/Section2";
-import WebBlue from "components/layout/WebBlue";
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import Section2 from 'components/base/Section2'
+import WebBlue from 'components/layout/WebBlue'
 
 export default function Politique() {
   return (
-    <WebBlue title={"Politique de confidentialité"}>
+    <WebBlue title={'Politique de confidentialité'}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
@@ -29,7 +29,7 @@ export default function Politique() {
         </Section2.InnerMargin>
       </Section2>
     </WebBlue>
-  );
+  )
 }
 
 const FormatText = styled.div`
@@ -39,4 +39,4 @@ const FormatText = styled.div`
   > h2 {
     margin-top: 3rem;
   }
-`;
+`

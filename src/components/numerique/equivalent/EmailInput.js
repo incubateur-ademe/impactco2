@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import NetworkInput from './emailInput/NetworkInput'
 import RecipientInput from './emailInput/RecipientInput'
 import SizeInput from './emailInput/SizeInput'

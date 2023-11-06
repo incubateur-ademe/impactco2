@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import UXContext from 'utils/UXContext'
-
 import MagicLink from 'components/base/MagicLink'
 import ContactWrapper from 'components/wrappers/ContactWrapper'
 import EmbedWrapper from 'components/wrappers/EmbedWrapper'
@@ -78,21 +76,13 @@ const Label = styled.div`
   text-align: center;
 `
 export default function MobileButtons(props) {
-  const { setEmbedOpen, setShareOpen, setContactOpen, installPrompt } =
-    useContext(UXContext)
+  const { setEmbedOpen, setShareOpen, setContactOpen, installPrompt } = useContext(UXContext)
   return (
     <>
       <Wrapper iframe={props.iframe}>
         <Button onClick={() => setEmbedOpen(true)}>
           <Icon iframe={props.iframe}>
-            <Embed
-              iframe={props.iframe}
-              x='0px'
-              y='0px'
-              width='94.504px'
-              height='94.504px'
-              viewBox='0 0 94.504 94.504'
-            >
+            <Embed iframe={props.iframe} x='0px' y='0px' width='94.504px' height='94.504px' viewBox='0 0 94.504 94.504'>
               <path d='M93.918,45.833L69.799,21.714c-0.75-0.75-2.077-0.75-2.827,0l-5.229,5.229c-0.781,0.781-0.781,2.047,0,2.828    l17.477,17.475L61.744,64.724c-0.781,0.781-0.781,2.047,0,2.828l5.229,5.229c0.375,0.375,0.884,0.587,1.414,0.587    c0.529,0,1.039-0.212,1.414-0.587l24.117-24.118C94.699,47.881,94.699,46.614,93.918,45.833z' />
               <path d='M32.759,64.724L15.285,47.248l17.477-17.475c0.375-0.375,0.586-0.883,0.586-1.414c0-0.53-0.21-1.039-0.586-1.414    l-5.229-5.229c-0.375-0.375-0.884-0.586-1.414-0.586c-0.53,0-1.039,0.211-1.414,0.586L0.585,45.833    c-0.781,0.781-0.781,2.047,0,2.829L24.704,72.78c0.375,0.375,0.884,0.587,1.414,0.587c0.53,0,1.039-0.212,1.414-0.587l5.229-5.229    C33.542,66.771,33.542,65.505,32.759,64.724z' />
               <path d='M60.967,13.6c-0.254-0.466-0.682-0.812-1.19-0.962l-4.239-1.251c-1.058-0.314-2.172,0.293-2.484,1.352L33.375,79.382    c-0.15,0.509-0.092,1.056,0.161,1.521c0.253,0.467,0.682,0.812,1.19,0.963l4.239,1.251c0.189,0.056,0.38,0.083,0.567,0.083    c0.863,0,1.66-0.564,1.917-1.435l19.679-66.644C61.278,14.612,61.221,14.065,60.967,13.6z' />
@@ -102,12 +92,7 @@ export default function MobileButtons(props) {
         </Button>
         <Button onClick={() => setShareOpen(true)}>
           <Icon iframe={props.iframe}>
-            <Share
-              iframe={props.iframe}
-              height='512pt'
-              viewBox='-21 0 512 512'
-              width='512pt'
-            >
+            <Share iframe={props.iframe} height='512pt' viewBox='-21 0 512 512' width='512pt'>
               <path d='m453.332031 85.332031c0 38.292969-31.039062 69.335938-69.332031 69.335938s-69.332031-31.042969-69.332031-69.335938c0-38.289062 31.039062-69.332031 69.332031-69.332031s69.332031 31.042969 69.332031 69.332031zm0 0' />
               <path d='m384 170.667969c-47.0625 0-85.332031-38.273438-85.332031-85.335938 0-47.058593 38.269531-85.332031 85.332031-85.332031s85.332031 38.273438 85.332031 85.332031c0 47.0625-38.269531 85.335938-85.332031 85.335938zm0-138.667969c-29.417969 0-53.332031 23.9375-53.332031 53.332031 0 29.398438 23.914062 53.335938 53.332031 53.335938s53.332031-23.9375 53.332031-53.335938c0-29.394531-23.914062-53.332031-53.332031-53.332031zm0 0' />
               <path d='m453.332031 426.667969c0 38.289062-31.039062 69.332031-69.332031 69.332031s-69.332031-31.042969-69.332031-69.332031c0-38.292969 31.039062-69.335938 69.332031-69.335938s69.332031 31.042969 69.332031 69.335938zm0 0' />
@@ -123,12 +108,7 @@ export default function MobileButtons(props) {
         {installPrompt && (
           <Button onClick={() => installPrompt.prompt()}>
             <Icon iframe={props.iframe}>
-              <Install
-                iframe={props.iframe}
-                x='0px'
-                y='0px'
-                viewBox='0 0 512 512'
-              >
+              <Install iframe={props.iframe} x='0px' y='0px' viewBox='0 0 512 512'>
                 <path
                   d='M339.093,246.464c-3.627-7.232-11.008-11.797-19.093-11.797h-42.667V21.333C277.333,9.557,267.797,0,256,0
 			s-21.333,9.557-21.333,21.333v213.333H192c-8.085,0-15.467,4.565-19.093,11.797c-3.584,7.232-2.816,15.872,2.027,22.336l64,85.333
@@ -163,12 +143,7 @@ export default function MobileButtons(props) {
         {props.iframe && (
           <StyledLink to={'https://impactco2.fr'}>
             <Icon iframe={props.iframe}>
-              <Eye
-                iframe={props.iframe}
-                x='0px'
-                y='0px'
-                viewBox='0 0 469.333 469.333'
-              >
+              <Eye iframe={props.iframe} x='0px' y='0px' viewBox='0 0 469.333 469.333'>
                 <path d='M234.667,170.667c-35.307,0-64,28.693-64,64s28.693,64,64,64s64-28.693,64-64S269.973,170.667,234.667,170.667z' />
                 <path d='M234.667,74.667C128,74.667,36.907,141.013,0,234.667c36.907,93.653,128,160,234.667,160     c106.773,0,197.76-66.347,234.667-160C432.427,141.013,341.44,74.667,234.667,74.667z M234.667,341.333     c-58.88,0-106.667-47.787-106.667-106.667S175.787,128,234.667,128s106.667,47.787,106.667,106.667     S293.547,341.333,234.667,341.333z' />
               </Eye>

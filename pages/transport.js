@@ -1,6 +1,5 @@
-import categories from 'data/categories.json'
 import React from 'react'
-
+import categories from 'data/categories.json'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Distance from 'components/transport/Distance'
@@ -14,8 +13,7 @@ export default function Transport(props) {
       breadcrumb={{
         type: 'equivalent',
         category: props.category,
-      }}
-    >
+      }}>
       <TransportProvider>
         <Distance category={props.category} />
         <Learning category={props.category} />

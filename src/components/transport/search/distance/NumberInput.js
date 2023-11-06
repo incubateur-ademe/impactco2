@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-
 import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.form`
@@ -54,8 +53,7 @@ export default function NumberInput(props) {
       onSubmit={(e) => {
         e.preventDefault()
         props.setKm(km)
-      }}
-    >
+      }}>
       <StyledTextInput
         type='number'
         min={props.min}

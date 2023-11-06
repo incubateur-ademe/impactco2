@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import MarkdownToJsx from "markdown-to-jsx";
-import NextLink from "next/link";
+import MarkdownToJsx from 'markdown-to-jsx'
+import NextLink from 'next/link'
 
 export default function Markdown({ children, components = {}, ...otherProps }) {
   return (
@@ -14,9 +14,8 @@ export default function Markdown({ children, components = {}, ...otherProps }) {
           a: NextLink,
           ...components,
         },
-      }}
-    >
+      }}>
       {children}
     </MarkdownToJsx>
-  );
+  )
 }

@@ -32,13 +32,7 @@
     "formule": {
       "une possibilité": {
         "choix obligatoire": "non",
-        "possibilités": [
-          "Ordinateur fixe",
-          "Ordinateur portable",
-          "Tablette",
-          "Smartphone",
-          "Télévision"
-        ]
+        "possibilités": ["Ordinateur fixe", "Ordinateur portable", "Tablette", "Smartphone", "Télévision"]
       }
     }
   },

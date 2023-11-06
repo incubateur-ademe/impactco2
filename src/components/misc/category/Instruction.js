@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import { formatName } from 'utils/formatters'
 
 const Wrapper = styled.p`
@@ -12,8 +11,7 @@ const Wrapper = styled.p`
 export default function Instruction(props) {
   return (
     <Wrapper className={'noscreenshot'}>
-      Cliquez sur un{props.gender === 'f' ? 'e' : ''}{' '}
-      {formatName(props.title) || 'équivalent'} pour voir le détail.
+      Cliquez sur un{props.gender === 'f' ? 'e' : ''} {formatName(props.title) || 'équivalent'} pour voir le détail.
     </Wrapper>
   )
 }

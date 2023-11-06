@@ -239,14 +239,7 @@
   },
   {
     "name": "Vélo ou marche",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager",
-      "marcher",
-      "pedaler"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "marcher", "pedaler"],
     "slug": "velo",
 
     "type": "foot",

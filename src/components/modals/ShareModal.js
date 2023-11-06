@@ -1,16 +1,16 @@
-import Facebook from "./shareModal/Facebook";
-import Integration from "./shareModal/Integration";
-import Link from "./shareModal/Link";
-import Linkedin from "./shareModal/Linkedin";
-import Mail from "./shareModal/Mail";
-import Twitter from "./shareModal/Twitter";
-import Whatsapp from "./shareModal/Whatsapp";
-import Modal from "components/base/Modal";
-import ModalContext from "components/providers/ModalProvider";
-import React, { useContext } from "react";
-import styled from "styled-components";
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import ModalContext from 'components/providers/ModalProvider'
+import Modal from 'components/base/Modal'
+import Facebook from './shareModal/Facebook'
+import Integration from './shareModal/Integration'
+import Link from './shareModal/Link'
+import Linkedin from './shareModal/Linkedin'
+import Mail from './shareModal/Mail'
+import Twitter from './shareModal/Twitter'
+import Whatsapp from './shareModal/Whatsapp'
 
-const Title = styled.h2``;
+const Title = styled.h2``
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -25,11 +25,11 @@ const Wrapper = styled.div`
       fill: ${(props) => props.theme.colors.main};
     }
   }
-`;
+`
 export default function CO2EModal() {
-  const { share: open, setShare: setOpen } = useContext(ModalContext);
+  const { share: open, setShare: setOpen } = useContext(ModalContext)
 
-  const href = typeof window !== "undefined" ? window?.location?.href : "";
+  const href = typeof window !== 'undefined' ? window?.location?.href : ''
 
   return (
     <>
@@ -40,22 +40,22 @@ export default function CO2EModal() {
           <Title>Partager</Title>
           <Wrapper>
             <Integration />
-            <Mail subject={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"} url={href} />
-            <Facebook quote={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"} url={href} />
+            <Mail subject={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
+            <Facebook quote={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
             <Twitter
-              title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2"}
+              title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2'}
               url={href}
             />
             <Linkedin
-              title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"}
-              summary={"Impact CO2"}
+              title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'}
+              summary={'Impact CO2'}
               url={href}
             />
-            <Whatsapp title={"Découvrez l’impact sur le climat des objets et gestes de votre quotidien"} url={href} />
+            <Whatsapp title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
           </Wrapper>
           <Link url={href} />
         </Modal>
       )}
     </>
-  );
+  )
 }

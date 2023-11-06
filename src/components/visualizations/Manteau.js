@@ -1,15 +1,5 @@
 import React from 'react'
-
-import {
-  CenterLink,
-  Emojis,
-  Equals,
-  Equivalent,
-  Equivalents,
-  Label,
-  Small,
-  Title,
-} from 'components/misc/Visualization'
+import { CenterLink, Emojis, Equals, Equivalent, Equivalents, Label, Small, Title } from 'components/misc/Visualization'
 
 export default function Voiture() {
   return (
@@ -48,9 +38,7 @@ export default function Voiture() {
         <br />
         <strong>445 km en voiture</strong>
       </Small>
-      <CenterLink to='/convertisseur'>
-        Comparez à d'autres objets du quotidien
-      </CenterLink>
+      <CenterLink to='/convertisseur'>Comparez à d'autres objets du quotidien</CenterLink>
     </>
   )
 }

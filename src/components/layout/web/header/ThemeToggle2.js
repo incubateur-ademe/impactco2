@@ -1,9 +1,7 @@
 import React, { useContext } from 'react'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
 import styled from 'styled-components'
-
 import { hideon } from 'utils/hideon'
-
 import StyleContext from 'components/providers/StyleProvider'
 
 const Wrapper = styled.div`
@@ -23,12 +21,7 @@ export default function ThemeToggle2(props) {
 
   return (
     <Wrapper mobile={props.mobile} hideon={props.hideon}>
-      <DarkModeSwitch
-        style={{ marginBottom: '2rem' }}
-        checked={isDarkMode}
-        onChange={toggleDarkMode}
-        size={32}
-      />
+      <DarkModeSwitch style={{ marginBottom: '2rem' }} checked={isDarkMode} onChange={toggleDarkMode} size={32} />
     </Wrapper>
   )
 }

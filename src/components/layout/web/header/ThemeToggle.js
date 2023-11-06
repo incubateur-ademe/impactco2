@@ -1,9 +1,7 @@
 import React, { useContext } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
-
 import { themes } from 'utils/styles'
-
 import StyleContext from 'components/providers/StyleProvider'
 
 const Wrapper = styled.label`
@@ -27,11 +25,7 @@ export default function ThemeToggle(props) {
   return (
     <Wrapper mobile={props.mobile}>
       <Switch
-        onChange={() =>
-          setTheme((prevTheme) =>
-            prevTheme === 'default' ? 'night' : 'default'
-          )
-        }
+        onChange={() => setTheme((prevTheme) => (prevTheme === 'default' ? 'night' : 'default'))}
         checked={theme === 'night'}
         offColor={themes.night.colors.background}
         onColor={themes.default.colors.background}

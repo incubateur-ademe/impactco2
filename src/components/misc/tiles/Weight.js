@@ -1,13 +1,11 @@
 import { useDroppable } from '@dnd-kit/core'
 import React from 'react'
 import styled from 'styled-components'
-
 import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) =>
-    props.theme.colors[props.background ? 'textLight' : 'second']};
+  background-color: ${(props) => props.theme.colors[props.background ? 'textLight' : 'second']};
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -57,12 +55,7 @@ export default function Weight(props) {
       <Label htmlFor='co2'>
         Entrez une quantité de CO<sub>2</sub>e ci-dessous
       </Label>
-      <StyledTextInput
-        name='co2'
-        type='number'
-        value={props.weight}
-        onChange={(e) => props.setWeight(e.value)}
-      />
+      <StyledTextInput name='co2' type='number' value={props.weight} onChange={(e) => props.setWeight(e.value)} />
       <Unit>
         kg CO<sub>2</sub>
         <Small>e</Small>

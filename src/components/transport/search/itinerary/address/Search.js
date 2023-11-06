@@ -1,9 +1,9 @@
-import Suggestions from "./search/Suggestions";
-import TextInput from "./search/TextInput";
-import { useSuggestions } from "hooks/useAddress";
-import useDebounce from "hooks/useDebounce";
-import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import React, { useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
+import { useSuggestions } from 'hooks/useAddress'
+import useDebounce from 'hooks/useDebounce'
+import Suggestions from './search/Suggestions'
+import TextInput from './search/TextInput'
 
 const Wrapper = styled.form`
   background-color: ${(props) => props.theme.colors.background};
@@ -17,47 +17,46 @@ const Wrapper = styled.form`
   transform: translateX(-50%);
   width: 100%;
   z-index: ${(props) => (props.focus ? 100 : 1)};
-`;
+`
 
 export default function Search(props) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('')
   useEffect(() => {
-    setSearch(props.address);
-  }, [props.address]);
-  const debouncedSearch = useDebounce(search);
+    setSearch(props.address)
+  }, [props.address])
+  const debouncedSearch = useDebounce(search)
 
-  const [focus, setFocus] = useState(false);
+  const [focus, setFocus] = useState(false)
 
-  const { data, isFetching } = useSuggestions(debouncedSearch, focus);
+  const { data, isFetching } = useSuggestions(debouncedSearch, focus)
 
-  const input = useRef(null);
-  const [current, setCurrent] = useState(0);
+  const input = useRef(null)
+  const [current, setCurrent] = useState(0)
 
   useEffect(() => {
     if (!focus) {
-      setCurrent(0);
-      input.current && input.current.blur();
+      setCurrent(0)
+      input.current && input.current.blur()
     }
-  }, [focus]);
+  }, [focus])
 
   const navigateToPlace = (place) => {
     if (place) {
-      props.setAddress(place);
-      setFocus(false);
+      props.setAddress(place)
+      setFocus(false)
     }
-  };
+  }
 
   return (
     <Wrapper
       focus={focus}
       addressSet={props.address}
       onSubmit={(e) => {
-        e.preventDefault();
+        e.preventDefault()
         if (current > -1) {
-          navigateToPlace(data[current]);
+          navigateToPlace(data[current])
         }
-      }}
-    >
+      }}>
       <TextInput
         ref={input}
         search={search}
@@ -82,5 +81,5 @@ export default function Search(props) {
         />
       )}
     </Wrapper>
-  );
+  )
 }

@@ -1,20 +1,20 @@
-import BarChart from "./learning/BarChart";
-import Button from "components/base/Button";
-import Section from "components/base/Section";
-import ModalContext from "components/providers/ModalProvider";
-import useOnScreen from "hooks/useOnScreen";
-import React, { useContext, useRef } from "react";
-import styled from "styled-components";
+import React, { useContext, useRef } from 'react'
+import styled from 'styled-components'
+import useOnScreen from 'hooks/useOnScreen'
+import ModalContext from 'components/providers/ModalProvider'
+import Button from 'components/base/Button'
+import Section from 'components/base/Section'
+import BarChart from './learning/BarChart'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;
-`;
+`
 const Statistic = styled.div`
   color: ${(props) => props.theme.colors.main};
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1em;
-`;
+`
 const Number = styled.div`
   font-size: 21em;
   font-weight: 900;
@@ -24,7 +24,7 @@ const Number = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 49vw;
   }
-`;
+`
 const BigText = styled.div`
   font-size: 9.5em;
   font-weight: 900;
@@ -34,14 +34,14 @@ const BigText = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 22vw;
   }
-`;
+`
 const Line = styled.div`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
-`;
+`
 const StrongWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-`;
+`
 const Strong = styled.p`
   font-size: 1.25em;
   font-style: italic;
@@ -54,22 +54,22 @@ const Strong = styled.p`
     margin-right: 0;
     text-align: left;
   }
-`;
-const Text = styled.p``;
+`
+const Text = styled.p``
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin: 2rem 0;
-`;
+`
 const StyledLink = styled.span`
   color: ${(props) => props.theme.colors.main};
   cursor: pointer;
-`;
+`
 export default function LearningFruit() {
-  const { setCo2e } = useContext(ModalContext);
+  const { setCo2e } = useContext(ModalContext)
 
-  const ref = useRef();
-  const isOnScreen = useOnScreen(ref, "-100px");
+  const ref = useRef()
+  const isOnScreen = useOnScreen(ref, '-100px')
 
   return (
     <StyledSection>
@@ -85,10 +85,10 @@ export default function LearningFruit() {
         </Statistic>
         <StrongWrapper>
           <Strong>
-            de{" "}
+            de{' '}
             <StyledLink onClick={() => setCo2e(true)}>
               kgCO<sub>2</sub>e
-            </StyledLink>{" "}
+            </StyledLink>{' '}
             générés par une tomate produite hors saison par rapport à la même tomate produite à la bonne saison.
           </Strong>
         </StrongWrapper>
@@ -100,7 +100,7 @@ export default function LearningFruit() {
         </Text>
         <BarChart />
         <ButtonWrapper>
-          <Button to={"https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html"}>
+          <Button to={'https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html'}>
             Je télécharge le calendrier des fruits et légumes de saison
           </Button>
         </ButtonWrapper>
@@ -111,15 +111,15 @@ export default function LearningFruit() {
         </Text>
         <Text>
           Si vous souhaitez aller plus loin dans votre démarche, vous pouvez calculer votre empreinte sur le climat
-          grace à notre simulateur{" "}
-          <a href={"https://nosgestesclimat.fr/"} target="_blank" rel="noopener noreferrer">
+          grace à notre simulateur{' '}
+          <a href={'https://nosgestesclimat.fr/'} target='_blank' rel='noopener noreferrer'>
             Nos Gestes Climat
           </a>
         </Text>
         <ButtonWrapper>
-          <Button to={"https://nosgestesclimat.fr/"}>Je calcule mon empreinte carbone</Button>
+          <Button to={'https://nosgestesclimat.fr/'}>Je calcule mon empreinte carbone</Button>
         </ButtonWrapper>
       </Section.Content>
     </StyledSection>
-  );
+  )
 }

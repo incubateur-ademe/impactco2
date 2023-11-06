@@ -55,8 +55,7 @@ export default function Checkbox(props) {
       small={props.small}
       color={props.color}
       className={props.className}
-      htmlFor={props.name}
-    >
+      htmlFor={props.name}>
       <Input
         id={props.name}
         type='checkbox'
@@ -64,9 +63,7 @@ export default function Checkbox(props) {
         label={props.children || props.label}
         onChange={(e) => props.onChange(e.target.checked)}
       />
-      {(props.children || props.label) && (
-        <Label>{props.children || props.label}</Label>
-      )}
+      {(props.children || props.label) && <Label>{props.children || props.label}</Label>}
     </Wrapper>
   )
 }

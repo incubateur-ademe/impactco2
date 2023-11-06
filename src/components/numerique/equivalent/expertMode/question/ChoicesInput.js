@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
-
 import RadioInput from './choicesInput/RadioInput'
 
 const Wrapper = styled.div`
@@ -13,9 +12,7 @@ export default function ChoicesInput(props) {
   const choices = useMemo(() => {
     if (props.rule.rawNode.formule) {
       if (props.rule.rawNode.formule['une possibilité']) {
-        return props.rule.rawNode.formule['une possibilité'][
-          'possibilités'
-        ].map((choice) => ({
+        return props.rule.rawNode.formule['une possibilité']['possibilités'].map((choice) => ({
           value: `'${choice}'`,
           label: choice,
         }))

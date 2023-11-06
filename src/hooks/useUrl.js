@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 export function useUrl() {
-  const [currentUrl, setCurrentUrl] = useState(null);
+  const [currentUrl, setCurrentUrl] = useState(null)
   useEffect(() => {
-    setCurrentUrl(window.location.href);
-  }, []);
-  return currentUrl ? new URL(currentUrl) : null;
+    setCurrentUrl(window.location.href)
+  }, [])
+  return currentUrl ? new URL(currentUrl) : null
 }

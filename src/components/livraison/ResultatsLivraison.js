@@ -1,35 +1,35 @@
-import ResultatLivraison from "./ResultatLivraison";
-import { default_eqs } from "components/livraison/data";
-import LivraisonEq from "components/misc/tiles/LivraisonEq";
-import DataContext from "components/providers/DataProvider";
-import ModalContext from "components/providers/ModalProvider";
-import React, { useContext } from "react";
-import styled from "styled-components";
-import useLocalStorage from "use-local-storage";
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import useLocalStorage from 'use-local-storage'
+import DataContext from 'components/providers/DataProvider'
+import ModalContext from 'components/providers/ModalProvider'
+import { default_eqs } from 'components/livraison/data'
+import LivraisonEq from 'components/misc/tiles/LivraisonEq'
+import ResultatLivraison from './ResultatLivraison'
 
 export default function ResultatsLivraison(props) {
-  const [eqvChosen] = useLocalStorage("ico2_eqv_chosen", default_eqs);
-  const { equivalents } = useContext(DataContext);
+  const [eqvChosen] = useLocalStorage('ico2_eqv_chosen', default_eqs)
+  const { equivalents } = useContext(DataContext)
 
-  const { setEqv } = useContext(ModalContext);
+  const { setEqv } = useContext(ModalContext)
 
   const changeClicked = () => {
-    window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_modifier_equivalent"]);
-    setEqv("nonecheck");
-  };
+    window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'livraison_modifier_equivalent'])
+    setEqv('nonecheck')
+  }
 
   const getEq = (indx) => {
-    return equivalents.find((e) => e.slug === eqvChosen[indx]);
-  };
+    return equivalents.find((e) => e.slug === eqvChosen[indx])
+  }
 
   const buildLivraisonEq = (indx) => {
-    let eq = getEq(indx);
+    let eq = getEq(indx)
     if (eq) {
-      return <LivraisonEq position={indx} equivalent={eq} weight={props.co2eq / 1000} nbCol={eqvChosen.length} />;
+      return <LivraisonEq position={indx} equivalent={eq} weight={props.co2eq / 1000} nbCol={eqvChosen.length} />
     } else {
-      return <></>;
+      return <></>
     }
-  };
+  }
 
   return (
     <Wrapper>
@@ -45,7 +45,7 @@ export default function ResultatsLivraison(props) {
         </ButtonContainer>
       </UpperEq>
     </Wrapper>
-  );
+  )
 }
 
 const ButtonChange = styled.button`
@@ -71,7 +71,7 @@ const ButtonChange = styled.button`
     margin-top: 0.5rem;
   }
   text-align: center;
-`;
+`
 
 const Wrapper = styled.div`
   border: 1px solid #457be7;
@@ -83,28 +83,28 @@ const Wrapper = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
-`;
+`
 
 const UpperEq = styled.div`
   display: grid;
-  grid-template-columns: ${(props) => (props.nbCol === 3 ? "repeat(3, auto)" : "repeat(2, auto)")};
+  grid-template-columns: ${(props) => (props.nbCol === 3 ? 'repeat(3, auto)' : 'repeat(2, auto)')};
   grid-template-rows: 1.25fr 1fr;
   ${(props) => props.theme.mq.small} {
-    grid-template-columns: ${(props) => (props.nbCol === 3 ? "1fr" : "repeat(2, 1fr)")};
+    grid-template-columns: ${(props) => (props.nbCol === 3 ? '1fr' : 'repeat(2, 1fr)')};
     margin-top: 1.5rem;
   }
-`;
+`
 
 const ButtonContainer = styled.div`
   align-items: center;
   border-top: 1px solid #eae5e8;
   display: flex;
   ${(props) => props.theme.mq.small} {
-    grid-column: ${(props) => (props.nbCol === 3 ? "inherit" : "span 2")};
+    grid-column: ${(props) => (props.nbCol === 3 ? 'inherit' : 'span 2')};
   }
-  grid-column: ${(props) => (props.nbCol === 3 ? "span 3" : "span 2")};
+  grid-column: ${(props) => (props.nbCol === 3 ? 'span 3' : 'span 2')};
   justify-content: flex-end;
   margin-left: 1rem;
   margin-right: 1rem;
   min-width: 220px;
-`;
+`
