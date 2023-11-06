@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.2 (26/10/2023)
+
+* BSR - tests refactoring
+
 ## 1.24.1 (25/10/2023)
 
 * U45 - Documentation avec nouveau header et footer

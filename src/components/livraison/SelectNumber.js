@@ -25,6 +25,7 @@ export default function SelectNumber(props) {
         value={props.value}
         label=""
         name="numbers"
+        data-testid="numbers"
       >
         {numbers.map((number) => (
           <option key={number} value={number}>

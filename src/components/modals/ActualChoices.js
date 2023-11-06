@@ -36,7 +36,7 @@ export default function ActualChoices() {
   return (
     <Wrapper>
       <SelectionBox>
-        <UpperSide>
+        <UpperSide data-testid="eqs-title">
           <UpperSideCounting>
             <Count>{eqvArray.length}</Count>/<MaxCount>3</MaxCount>
           </UpperSideCounting>{" "}
@@ -51,6 +51,7 @@ export default function ActualChoices() {
                     key={ticked}
                     equivalent={eqOf(ticked)}
                     checked={false}
+                    data-testid={`checked-eq-${ticked}`}
                     setChecked={() => removeChoice(ticked)}
                   />
                 );
@@ -58,7 +59,7 @@ export default function ActualChoices() {
             </>
           ) : (
             <>
-              <EmptyChoice>
+              <EmptyChoice data-testid="emptyChoice">
                 Veuillez choisir au moins 2 items ci-
                 <ShowMobile>dessous</ShowMobile>
                 <ShowDesktop>contre</ShowDesktop>.

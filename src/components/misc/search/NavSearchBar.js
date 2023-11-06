@@ -1,7 +1,7 @@
-import Fuse from "../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import Suggestions from "./searchBar/Suggestions";
 import TextInputSmall from "./searchBar/TextInputSmall";
 import DataContext from "components/providers/DataProvider";
+import Fuse from "fuse.js";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import styled from "styled-components";

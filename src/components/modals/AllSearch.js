@@ -1,7 +1,7 @@
-import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import AllSearchCategory from "./AllSearchCategory.js";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
+import Fuse from "fuse.js";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 

@@ -8,7 +8,6 @@ import React, { useEffect, useState } from "react";
 import { hotjar } from "react-hotjar";
 import styled from "styled-components";
 import { QueryParamProvider } from "use-query-params";
-import "utils/augmenters";
 import "utils/fonts.css";
 import { GlobalStyle } from "utils/styles";
 

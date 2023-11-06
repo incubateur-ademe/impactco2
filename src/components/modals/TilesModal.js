@@ -1,10 +1,10 @@
-import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 import Equivalent from "./tilesModal/Equivalent";
 import Button from "components/base/Button";
 import Modal from "components/base/Modal";
 import TextInput from "components/base/TextInput";
 import DataContext from "components/providers/DataProvider";
 import ModalContext from "components/providers/ModalProvider";
+import Fuse from "fuse.js";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -74,34 +74,40 @@ export default function TilesModal() {
   }, [search, fuse, equivalents]);
 
   return (
-    <StyledModal open={open} setOpen={setOpen}>
-      <Title>Ajouter ou enlever des équivalents</Title>
-      <Text>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Text>
-      <SearchInput
-        value={search}
-        onChange={({ value }) => setSearch(value)}
-        placeholder={"Entrez un objet, un geste..."}
-      />
-      {open && (
-        <Equivalents>
-          {results.map(({ item }) => (
-            <Equivalent
-              key={item.slug}
-              equivalent={item}
-              checked={tiles.find((tile) => tile === item)}
-              setChecked={(checked) => {
-                setTiles((prevTiles) =>
-                  checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug)
-                );
-                window?.please?.track(["trackEvent", "Interaction", "Ajouter tuile", item.slug]);
-              }}
-            />
-          ))}
-        </Equivalents>
+    <>
+      {!open ? (
+        <></>
+      ) : (
+        <StyledModal open={open} setOpen={setOpen}>
+          <Title>Ajouter ou enlever des équivalents</Title>
+          <Text>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Text>
+          <SearchInput
+            value={search}
+            onChange={({ value }) => setSearch(value)}
+            placeholder={"Entrez un objet, un geste..."}
+          />
+          {open && (
+            <Equivalents>
+              {results.map(({ item }) => (
+                <Equivalent
+                  key={item.slug}
+                  equivalent={item}
+                  checked={tiles.find((tile) => tile === item)}
+                  setChecked={(checked) => {
+                    setTiles((prevTiles) =>
+                      checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug)
+                    );
+                    window?.please?.track(["trackEvent", "Interaction", "Ajouter tuile", item.slug]);
+                  }}
+                />
+              ))}
+            </Equivalents>
+          )}
+          <StyledButtonWrapper>
+            <Button onClick={() => setOpen(false)}>Valider et fermer</Button>
+          </StyledButtonWrapper>
+        </StyledModal>
       )}
-      <StyledButtonWrapper>
-        <Button onClick={() => setOpen(false)}>Valider et fermer</Button>
-      </StyledButtonWrapper>
-    </StyledModal>
+    </>
   );
 }

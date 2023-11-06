@@ -46,7 +46,7 @@ test("Calcul de l'impact d'une livraison", async ({ page }) => {
 
   await test.step("Par défaut un calcul de CO2 est affiché", async () => {
     // Given
-    await expect(page.getByTestId("resultAsText")).toHaveText("3,31 kg de CO2e ");
+    await expect(page.getByTestId("bcTotal")).toHaveText("3,31 kg de CO2e ");
   });
 
   await test.step("Si on prend un colis volumineux, on a bien une augmentation de CO2", async () => {
@@ -54,7 +54,7 @@ test("Calcul de l'impact d'une livraison", async ({ page }) => {
     await page.locator("select#retraits").selectOption({ label: "Livraison à domicile" });
     await page.locator("select#produits").selectOption({ label: "Mobilier et gros électroménager" }); // Ici
     // When-Then
-    await expect(page.getByTestId("resultAsText")).toHaveText("70,59 kg de CO2e ");
+    await expect(page.getByTestId("bcTotal")).toHaveText("70,59 kg de CO2e ");
   });
 
   await test.step("La liste déroulante “Vous commandez a bien les options “grande consommation”, “Habillement”, “Produits culturel“, “mobilier”", async () => {
@@ -73,58 +73,27 @@ test("Calcul de l'impact d'une livraison", async ({ page }) => {
   });
 });
 
-// test("Equivalences", async ({ page }) => {
-//   await test.step("Les équivalences par défaut s'affichent", async () => {
-//     await expect(page.locator("#eq_nb_1")).toHaveText("15 km");
-//     await expect(page.locator("#eq_what_1")).toHaveText("en voiture");
+test("Equivalences", async ({ page }) => {
+  await test.step("Les équivalences par défaut s'affichent", async () => {
+    await expect(page.locator("#eq_nb_0")).toHaveText("15 km");
+    await expect(page.locator("#eq_what_0")).toHaveText("en voiture");
 
-//     await expect(page.locator("#eq_nb_2")).toHaveText("0,5 repas");
-//     await expect(page.locator("#eq_what_2")).toHaveText("avec du boeuf");
+    await expect(page.locator("#eq_nb_1")).toHaveText("0,5 repas");
+    await expect(page.locator("#eq_what_1")).toHaveText("avec du boeuf");
 
-//     await expect(page.locator("#eq_nb_3")).toHaveText("52 heures");
-//     await expect(page.locator("#eq_what_3")).toHaveText("de streaming vidéo");
-//   });
+    await expect(page.locator("#eq_nb_2")).toHaveText("52 heures");
+    await expect(page.locator("#eq_what_2")).toHaveText("de streaming vidéo");
+  });
 
-//   await test.step("Une modale d'explication s'affiche", async () => {
-//     // Given
-//     await expect(page.getByRole("button", { name: "Fermer" })).not.toBeVisible();
-//     // When
-//     await page.getByRole("button", { name: "Comprendre le calcul" }).click();
-//     // Then
-//     await page.getByRole("button", { name: "Fermer" }).click();
-//   });
-
-//   await test.step("On peut ouvrir une modale pour choisir une autre équivalence", async () => {
-//     // Given
-//     await expect(page.getByRole("heading", { name: "Choisir une autre équivalence" })).not.toBeVisible();
-//     // When
-//     await page.locator("#button_change_eq_1").click();
-//     // Then
-//     await expect(page.getByRole("heading", { name: "Choisir une autre équivalence" })).toBeVisible();
-//   });
-
-//   await test.step("Une liste réduite s'affiche si on cherche une autre équivalence", async () => {
-//     // Given
-//     await expect(page.locator(".equivalent-radio")).toHaveCount(9);
-
-//     // When
-//     await page.getByPlaceholder("Recherchez un autre équivalent").click({ force: true });
-//     await page.keyboard.type("b");
-//     await page.keyboard.type("a");
-
-//     // Then
-//     await expect(page.locator(".equivalent-radio")).toHaveCount(3);
-//   });
-//   await test.step("On peut choisir une autre équivalence", async () => {
-//     // Given
-//     await page.getByRole("button", { name: "Banane" }).click();
-//     // When
-//     await page.getByRole("button", { name: "Valider et fermer" }).click();
-//     // Then
-//     await expect(page.locator("#eq_nb_1")).toHaveText("3,8 kg");
-//     await expect(page.locator("#eq_what_1")).toHaveText("de banane");
-//   });
-// });
+  await test.step("Une modale d'explication s'affiche", async () => {
+    // Given
+    await expect(page.getByRole("button", { name: "Fermer" })).not.toBeVisible();
+    // When
+    await page.getByRole("button", { name: "Comprendre le calcul" }).click();
+    // Then
+    await page.getByRole("button", { name: "Fermer" }).click();
+  });
+});
 
 test("Fréquences", async ({ page }) => {
   await test.step("Le bilan carbone s'alourdit avec le nb de colis par mois", async () => {
