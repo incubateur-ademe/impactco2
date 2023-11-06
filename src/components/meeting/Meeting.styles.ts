@@ -10,6 +10,9 @@ export const Container = styled.form`
     flex-grow: 1;
     margin-bottom: 0;
     min-width: 250px;
+    input {
+      height: 36px;
+    }
   }
 `
 
