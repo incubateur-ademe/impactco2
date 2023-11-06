@@ -20,7 +20,7 @@ const Sizer = styled.div`
   }
 `
 const Content = styled.div`
-  background-color: ${(props) => (props.hover ? props.theme.colors.background : 'transparent')};
+  background-color: ${(props) => (props.$hover ? props.theme.colors.background : 'transparent')};
 `
 const Header = styled.div`
   align-items: center;
@@ -48,7 +48,7 @@ export default function Wrapper(props) {
   return (
     <SizerWrapper>
       <Sizer className={props.className}>
-        <Content ref={ref} hover={hover}>
+        <Content ref={ref} $hover={hover}>
           <Background hover={hover}>
             <Header>
               <StyledButtons

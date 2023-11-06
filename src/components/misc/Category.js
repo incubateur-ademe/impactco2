@@ -50,7 +50,7 @@ export default function CategoryList(props) {
           <Top className='noscreenshot'>
             <Instruction title={props.category.equivalent} gender={props.category.gender} />
             <Top.Checkboxes
-              visible={
+              $visible={
                 equivalents
                   .filter((equivalent) => equivalent.category === props.category.id)
                   .find((equivalent) => !equivalent.default) && !props.category.list

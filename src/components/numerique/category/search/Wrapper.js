@@ -64,7 +64,7 @@ Wrapper.ShowMore = styled.button`
 `
 Wrapper.Desktop = styled.div`
   ${(props) => props.theme.mq.iframemedium} {
-    display: ${(props) => (props.visible ? 'flex' : 'none')};
+    display: ${(props) => (props.$visible ? 'flex' : 'none')};
     gap: 0.5rem;
     margin: 0.5rem 0 0.75rem;
   }

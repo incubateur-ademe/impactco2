@@ -34,11 +34,11 @@ export default function ResultatsLivraison(props) {
   return (
     <Wrapper>
       <ResultatLivraison co2eq={props.co2eq} />
-      <UpperEq nbCol={eqvChosen.length}>
+      <UpperEq $nbCol={eqvChosen.length}>
         {buildLivraisonEq(0)}
         {buildLivraisonEq(1)}
         {buildLivraisonEq(2)}
-        <ButtonContainer nbCol={eqvChosen.length}>
+        <ButtonContainer $nbCol={eqvChosen.length}>
           <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
             Modifier les équivalences
           </ButtonChange>
@@ -87,10 +87,10 @@ const Wrapper = styled.div`
 
 const UpperEq = styled.div`
   display: grid;
-  grid-template-columns: ${(props) => (props.nbCol === 3 ? 'repeat(3, auto)' : 'repeat(2, auto)')};
+  grid-template-columns: ${(props) => (props.$nbCol === 3 ? 'repeat(3, auto)' : 'repeat(2, auto)')};
   grid-template-rows: 1.25fr 1fr;
   ${(props) => props.theme.mq.small} {
-    grid-template-columns: ${(props) => (props.nbCol === 3 ? '1fr' : 'repeat(2, 1fr)')};
+    grid-template-columns: ${(props) => (props.$nbCol === 3 ? '1fr' : 'repeat(2, 1fr)')};
     margin-top: 1.5rem;
   }
 `
@@ -100,9 +100,9 @@ const ButtonContainer = styled.div`
   border-top: 1px solid #eae5e8;
   display: flex;
   ${(props) => props.theme.mq.small} {
-    grid-column: ${(props) => (props.nbCol === 3 ? 'inherit' : 'span 2')};
+    grid-column: ${(props) => (props.$nbCol === 3 ? 'inherit' : 'span 2')};
   }
-  grid-column: ${(props) => (props.nbCol === 3 ? 'span 3' : 'span 2')};
+  grid-column: ${(props) => (props.$nbCol === 3 ? 'span 3' : 'span 2')};
   justify-content: flex-end;
   margin-left: 1rem;
   margin-right: 1rem;

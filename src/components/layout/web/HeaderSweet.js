@@ -43,7 +43,7 @@ export default function HeaderSweet() {
                     <NavSearchBar></NavSearchBar>
                   </ActionSearch>
                   <HamburgerContainer>
-                    <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked}></Hamburger>
+                    <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked} />
                   </HamburgerContainer>
                 </Actions>
               </LogoBar>
@@ -51,7 +51,7 @@ export default function HeaderSweet() {
           </Header>
           <NavBar>
             <Section2.InnerMargin>
-              <NavLinksMobile shouldDisplay={hamburgerOpened}>
+              <NavLinksMobile $shouldDisplay={hamburgerOpened}>
                 <NavLink>
                   <SmallActionSearch>
                     <NavSearchBar />
@@ -126,7 +126,7 @@ const NavLinksMobile = styled.div`
   display: none;
   padding: 0.5rem 0;
   ${(props) => props.theme.mq.small} {
-    display: ${(props) => (props.shouldDisplay ? 'flex' : 'none')};
+    display: ${(props) => (props.$shouldDisplay ? 'flex' : 'none')};
     flex-direction: column;
   }
 `

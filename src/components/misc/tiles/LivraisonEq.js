@@ -8,7 +8,7 @@ const first2WordsRemoved = (sentence) => sentence.split(' ').slice(2).join(' ')
 
 export default function LivraisonEq(props) {
   return (
-    <Wrapper nbCol={props.nbCol}>
+    <Wrapper $nbCol={props.nbCol}>
       <Media>
         <MediaFigure>
           <EmojiWrapper>
@@ -30,7 +30,7 @@ export default function LivraisonEq(props) {
 }
 
 const Wrapper = styled.div`
-  align-items: ${(props) => (props.nbCol === 3 ? 'inherit' : 'center')};
+  align-items: ${(props) => (props.$nbCol === 3 ? 'inherit' : 'center')};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
     padding-left: 1rem;
   }
   ${(props) => props.theme.mq.small} {
-    align-items: ${(props) => (props.nbCol === 3 ? 'center' : 'flex-start')};
+    align-items: ${(props) => (props.$nbCol === 3 ? 'center' : 'flex-start')};
   }
   ${(props) => props.theme.mq.xsmall} {
     padding-left: 0.5rem;
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   > div {
     ${(props) => props.theme.mq.small} {
       margin-bottom: 1rem;
-      width: ${(props) => (props.nbCol === 3 ? '10rem' : 'inherit')};
+      width: ${(props) => (props.$nbCol === 3 ? '10rem' : 'inherit')};
     }
   }
 `

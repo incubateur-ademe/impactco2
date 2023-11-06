@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import useIframe from 'hooks/useIframe'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => (!props.background || props.hover ? 'transparent' : props.theme.colors.second)};
-  border: 0.125rem solid ${(props) => (props.hover ? props.theme.colors.main : 'transparent')};
+  background-color: ${(props) => (!props.background || props.$hover ? 'transparent' : props.theme.colors.second)};
+  border: 0.125rem solid ${(props) => (props.$hover ? props.theme.colors.main : 'transparent')};
   border-radius: 1rem;
   bottom: 0;
   left: 0;
@@ -29,11 +28,9 @@ const Content = styled.div`
   }
 `
 export default function Background(props) {
-  const iframe = useIframe()
-
   return (
     <>
-      <Wrapper className='noscreenshot' background={props.background} hover={props.hover} iframe={iframe} />
+      <Wrapper className='noscreenshot' background={props.background} $hover={props.hover} />
       <Content>{props.children}</Content>
     </>
   )

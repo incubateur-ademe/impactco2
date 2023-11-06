@@ -218,7 +218,7 @@ export default function Learning(props) {
   )
 
   return (
-    <Section background>
+    <Section $background>
       <Section.Content>
         {
           {

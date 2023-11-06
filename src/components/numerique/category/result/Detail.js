@@ -141,7 +141,7 @@ export default function Detail(props) {
         l’usage de ces derniers.
       </Text>
       <Top className='noscreenshot'>
-        <Top.Checkboxes visible>
+        <Top.Checkboxes $visible>
           <Checkbox
             name='displayAll'
             checked={displayAll}

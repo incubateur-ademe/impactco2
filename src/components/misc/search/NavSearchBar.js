@@ -71,9 +71,7 @@ export default function NavSearchBar(props) {
   }
 
   return (
-    <Wrapper
-      focus={focus}
-      home={props.home}
+    <form
       onSubmit={(e) => {
         e.preventDefault()
         if (search.length > 1) {
@@ -113,11 +111,9 @@ export default function NavSearchBar(props) {
           </SearchContainer>
         </NavSearch>
       </NavActions>
-    </Wrapper>
+    </form>
   )
 }
-
-const Wrapper = styled.form``
 
 const NavSearch = styled.div`
   position: relative;

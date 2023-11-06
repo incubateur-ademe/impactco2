@@ -4,13 +4,13 @@ import { formatNumber } from 'utils/formatters'
 
 const Wrapper = styled.div`
   align-items: baseline;
-  color: ${(props) => props.theme.colors[props.inside ? 'background' : 'main']};
+  color: ${(props) => props.theme.colors[props.$inside ? 'background' : 'main']};
   display: flex;
-  left: ${(props) => (props.inside ? 'auto' : '100%')};
+  left: ${(props) => (props.$inside ? 'auto' : '100%')};
   line-height: 0.7;
-  padding-left: ${(props) => (props.noBar ? 0 : 0.5)}rem;
+  padding-left: ${(props) => (props.$noBar ? 0 : 0.5)}rem;
   position: absolute;
-  right: ${(props) => (props.inside ? '1rem' : 'auto')};
+  right: ${(props) => (props.$inside ? '1rem' : 'auto')};
   top: 50%;
   transform: translateY(-50%);
 `
@@ -30,7 +30,7 @@ const Unit = styled.span`
 `
 export default function Value(props) {
   return (
-    <Wrapper noBar={props.value / props.max === 0} inside={props.value / props.max > 0.7}>
+    <Wrapper $noBar={props.value / props.max === 0} $inside={props.value / props.max > 0.7}>
       <Number>{formatNumber(props.value)}</Number>
       <Unit>
         {' '}

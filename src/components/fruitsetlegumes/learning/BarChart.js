@@ -25,7 +25,7 @@ const Bars = styled.div`
 `
 const Bar = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors[props.secondary ? 'main' : 'error']};
+  background-color: ${(props) => props.theme.colors[props.$secondary ? 'main' : 'error']};
   color: ${(props) => props.theme.colors.second};
   display: flex;
   font-style: italic;
@@ -35,7 +35,7 @@ const Bar = styled.div`
   line-height: 1;
   margin-bottom: 0.5em;
   padding-right: 1em;
-  transform: scaleX(${(props) => (props.isOnScreen ? 1 : 0)});
+  transform: scaleX(${(props) => (props.$isOnScreen ? 1 : 0)});
   transform-origin: left;
   width: ${(props) => props.length}%;
 `
@@ -81,7 +81,7 @@ const Item = styled.div`
   text-align: right;
 
   &:before {
-    background-color: ${(props) => props.theme.colors[props.secondary ? 'main' : 'error']};
+    background-color: ${(props) => props.theme.colors[props.$secondary ? 'main' : 'error']};
     content: '';
     height: 1em;
     position: absolute;
@@ -96,16 +96,16 @@ export default function BarChart() {
   return (
     <Wrapper ref={ref}>
       <Caption>
-        <Item secondary>En saison</Item>
+        <Item $secondary>En saison</Item>
         <Item>Hors saison</Item>
       </Caption>
       <Product>
         <Label>🍓</Label>
         <Bars>
-          <Bar index={0} length={(0.47 / 2) * 100} secondary isOnScreen={isOnScreen}>
+          <Bar index={0} length={(0.47 / 2) * 100} $secondary $isOnScreen={isOnScreen}>
             0.47
           </Bar>
-          <Bar index={1} length={(0.67 / 2) * 100} isOnScreen={isOnScreen}>
+          <Bar index={1} length={(0.67 / 2) * 100} $isOnScreen={isOnScreen}>
             0.67
           </Bar>
         </Bars>
@@ -113,10 +113,10 @@ export default function BarChart() {
       <Product>
         <Label>🍅</Label>
         <Bars>
-          <Bar index={2} length={(0.51 / 2) * 100} secondary isOnScreen={isOnScreen}>
+          <Bar index={2} length={(0.51 / 2) * 100} $secondary $isOnScreen={isOnScreen}>
             0.51
           </Bar>
-          <Bar index={3} length={(1.88 / 2) * 100} isOnScreen={isOnScreen}>
+          <Bar index={3} length={(1.88 / 2) * 100} $isOnScreen={isOnScreen}>
             1.88
           </Bar>
         </Bars>
