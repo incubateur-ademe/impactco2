@@ -36,6 +36,7 @@ export default function SelectRelays(props) {
         value={props.value}
         label=""
         name="relays"
+        data-testid="relays"
       >
         {relays.map((relay) => (
           <option key={relay.uid} value={relay.uid}>

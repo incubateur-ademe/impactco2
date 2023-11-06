@@ -25,6 +25,7 @@ export default function SelectRetraits(props) {
         value={props.value}
         label="Que vous faites livrer en"
         name="retraits"
+        data-testid="retraits"
       >
         {retraits.map((retrait) => (
           <option key={retrait.uid} value={retrait.uid}>

@@ -46,7 +46,7 @@ export default function Button(props) {
       className={props.className}
       type={props.type}
       aria-label={props.children}
-      data-testid={props.dataTestid}
+      data-testid={props["data-testid"]}
       noIcon
     >
       {props.children}

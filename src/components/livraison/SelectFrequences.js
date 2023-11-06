@@ -24,6 +24,7 @@ export default function SelectFrequences(props) {
         className="freq"
         label=""
         name="frequences"
+        data-testid="frequences"
       >
         {frequences.map((frequence) => (
           <option key={frequence.uid} value={frequence.uid}>
