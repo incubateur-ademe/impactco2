@@ -21,7 +21,7 @@ export default function ResultatLivraison(props) {
               />
             </svg>
           </div>
-          <div className='item2' data-testid='resultAsText'>
+          <div className='item2' data-testid='bcTotal'>
             <ActualResult>{convertGramsToKilograms(props.co2eq)}</ActualResult>
             <Units> kg de CO2e </Units>
           </div>

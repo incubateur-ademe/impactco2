@@ -34,6 +34,7 @@ export default function Select(props) {
       {props.getLabel && <Label htmlFor={props.name}>{props.getLabel()}</Label>}
       <Input
         id={props.name}
+        data-testid={props['data-testid']}
         name={props.name}
         value={props.value}
         color={props.color}

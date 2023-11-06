@@ -19,7 +19,8 @@ export default function SelectProduits(props) {
         }}
         value={props.value}
         label='Vous commandez'
-        name='produits'>
+        name='produits'
+        data-testid='produits'>
         {produits.map((produit) => (
           <option key={produit.uid} value={produit.uid}>
             {produit.displayed}

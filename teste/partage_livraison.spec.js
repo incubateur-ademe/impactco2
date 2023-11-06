@@ -1,7 +1,5 @@
+import { expect, test } from '@playwright/test'
 import { mockRoutes } from '../test-mock/mock-route.js'
-
-// @ts-check
-const { test, expect } = require('@playwright/test')
 
 test.beforeEach(async ({ page }) => {
   mockRoutes(page)

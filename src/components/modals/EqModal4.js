@@ -41,51 +41,55 @@ export default function EqModal4() {
 
   return (
     <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width='55rem'>
-      <Intro>
-        {!eqvError ? (
-          <>Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.</>
-        ) : (
-          <>
-            <ShowDesktop>
+      <div data-testid='EqModal4'>
+        <Intro data-testid='eqs_modal_intro'>
+          {!eqvError ? (
+            <>
               Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
-            </ShowDesktop>
-            <div>
-              <EqvError>⚠️ {eqvError}</EqvError>
-            </div>
-          </>
-        )}
-      </Intro>
-      <GridSplit>
-        <GridSplitLeft>
-          <ActualChoices></ActualChoices>
-        </GridSplitLeft>
-        <GridSplitRight>
-          <Scroll>
-            <AllSearch open={open}></AllSearch>
-          </Scroll>
-          <ValidationZone>
-            <ValidationMsg>
-              {eqvError ? (
-                <>
-                  <EqvError>⚠️ {eqvError}</EqvError>
-                </>
-              ) : (
-                <></>
-              )}
-            </ValidationMsg>
-            <ValidationButtons>
-              <ButtonValidation onClick={validateEqv}>
-                <ShowDesktop>Valider et fermer</ShowDesktop>
-                <ShowMobile>Valider</ShowMobile>
-              </ButtonValidation>
-              <ButtonCancel onClick={dismiss}>
-                <ShowDesktop>Annuler</ShowDesktop>
-                <ShowMobile>X</ShowMobile>
-              </ButtonCancel>
-            </ValidationButtons>
-          </ValidationZone>
-        </GridSplitRight>
-      </GridSplit>
+            </>
+          ) : (
+            <>
+              <ShowDesktop>
+                Sélectionnez plusieurs équivalences pour comparer votre impact et créer votre infographie personnalisée.
+              </ShowDesktop>
+              <div>
+                <EqvError>⚠️ {eqvError}</EqvError>
+              </div>
+            </>
+          )}
+        </Intro>
+        <GridSplit>
+          <GridSplitLeft>
+            <ActualChoices></ActualChoices>
+          </GridSplitLeft>
+          <GridSplitRight>
+            <Scroll>
+              <AllSearch open={open}></AllSearch>
+            </Scroll>
+            <ValidationZone>
+              <ValidationMsg>
+                {eqvError ? (
+                  <>
+                    <EqvError data-testid='validationError'>⚠️ {eqvError}</EqvError>
+                  </>
+                ) : (
+                  <></>
+                )}
+              </ValidationMsg>
+              <ValidationButtons>
+                <ButtonValidation onClick={validateEqv}>
+                  <ShowDesktop data-testid='validateAndClose'>Valider et fermer</ShowDesktop>
+                  <ShowMobile>Valider</ShowMobile>
+                </ButtonValidation>
+                <ButtonCancel onClick={dismiss}>
+                  <ShowDesktop data-testid='cancelEqs'>Annuler</ShowDesktop>
+                  <ShowMobile>X</ShowMobile>
+                </ButtonCancel>
+              </ValidationButtons>
+            </ValidationZone>
+          </GridSplitRight>
+        </GridSplit>
+      </div>
     </Modal4>
   )
 }

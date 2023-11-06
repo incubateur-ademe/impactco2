@@ -1,8 +1,8 @@
+import Fuse from 'fuse.js'
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import DataContext from 'components/providers/DataProvider'
 import TextInput from 'components/base/TextInput'
-import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 import AllSearchCategory from './AllSearchCategory.js'
 
 export default function AllSearch(props) {

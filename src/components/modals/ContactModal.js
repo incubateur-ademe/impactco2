@@ -21,19 +21,25 @@ export default function SurveyModal() {
   }, [])
 
   return (
-    <StyledModal open={open} setOpen={setOpen}>
-      {open || iframe ? (
-        <iframe
-          title='enquete'
-          src={
-            isIframe
-              ? 'https://airtable.com/embed/shroo5L79RYqx60WZ?backgroundColor=teal'
-              : 'https://airtable.com/embed/shroHVp7DyXVn9YMf?backgroundColor=cyan'
-          }
-          frameBorder='0'
-          width='100%'
-          height='533'></iframe>
-      ) : null}
-    </StyledModal>
+    <>
+      {!open ? (
+        <></>
+      ) : (
+        <StyledModal open={open} setOpen={setOpen}>
+          {iframe ? (
+            <iframe
+              title='enquete'
+              src={
+                isIframe
+                  ? 'https://airtable.com/embed/shroo5L79RYqx60WZ?backgroundColor=teal'
+                  : 'https://airtable.com/embed/shroHVp7DyXVn9YMf?backgroundColor=cyan'
+              }
+              frameBorder='0'
+              width='100%'
+              height='533'></iframe>
+          ) : null}
+        </StyledModal>
+      )}
+    </>
   )
 }

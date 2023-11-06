@@ -4,6 +4,18 @@ import { StyleProvider } from 'components/providers/StyleProvider'
 import IframeFooter from 'components/layout/iframe/IframeFooter'
 
 describe('IframeFooter', () => {
+  // See https://webtips.dev/how-to-mock-processenv-in-jest
+  const env = process.env
+
+  beforeEach(() => {
+    jest.resetModules()
+    process.env = { ...env, websiteurl: 'example.com' }
+  })
+
+  afterEach(() => {
+    process.env = env
+  })
+
   it('renders a Footer specific to the iframe', () => {
     render(
       <StyleProvider>
@@ -11,6 +23,6 @@ describe('IframeFooter', () => {
       </StyleProvider>
     )
     // check if all components are rendered
-    expect(screen.getByTestId('magic-link')).toHaveAttribute('href', 'https://notdefined')
+    expect(screen.getByTestId('magic-link')).toHaveAttribute('href', 'https://example.com')
   })
 })

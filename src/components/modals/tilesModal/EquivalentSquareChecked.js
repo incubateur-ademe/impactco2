@@ -60,7 +60,8 @@ export default function EquivalentSquareChecked(props) {
       type='checkbox'
       checked={props.checked}
       onClick={() => props.setChecked(!props.checked)}
-      className='equivalent-radio'>
+      className='checked-eq'
+      data-testid={props['data-testid']}>
       <Left>
         <GreenSquare>
           <Tick></Tick>

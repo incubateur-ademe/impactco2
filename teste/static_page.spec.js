@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test')
+import { expect, test } from '@playwright/test'
 
 test('Affichage sans erreur des pages statiques', async ({ page }) => {
   await test.step('On peut accèder au plan du site', async () => {

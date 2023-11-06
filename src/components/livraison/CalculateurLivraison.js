@@ -58,7 +58,7 @@ export default function CalculateurLivraison(props) {
 
   useMemo(() => {
     calculateResult()
-    setShowToggleContainer(values.retrait.amongst(['relais', 'click']))
+    setShowToggleContainer(['relais', 'click'].includes(values.retrait))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values, isHabit, isPlane])
 
@@ -99,11 +99,11 @@ export default function CalculateurLivraison(props) {
 
   return (
     <>
-      <Section2>
+      <Section2 data-testid='calculateurLivraison'>
         <Section2.InnerMargin embedded={props.embedded}>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>
-              <H2Title>Estimez l'impact de votre livraison</H2Title>
+              <H2Title data-testid='calculateurTitleH2'>Estimez l'impact de votre livraison</H2Title>
               <div className='buttons'>
                 <ButtonChange onClick={() => setSocial(true)} className='noscreenshot' id='shareUp'>
                   <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 -2 24 24'>
@@ -150,7 +150,7 @@ export default function CalculateurLivraison(props) {
               <SelectProduits changeProduit={changeProduit} value={values.produit} />
               <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
             </DropList>
-            <ToggleContainer show={showToggleContainer}>
+            <ToggleContainer show={showToggleContainer} data-testid='partieMagasin'>
               <ToggleHabitContainer>
                 <FlexHabit>
                   <div className='item1'>
@@ -176,7 +176,9 @@ export default function CalculateurLivraison(props) {
                   <div className='item3'>
                     <Addendum>
                       <span className='plus'>+</span>
-                      <span className='txt'>{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
+                      <span className='txt' data-testid='bcTrajet'>
+                        {convertGramsToKilograms(diffs.diffKm0)} kg de CO2e
+                      </span>
                     </Addendum>
                   </div>
                 </FlexHabit>
@@ -190,7 +192,7 @@ export default function CalculateurLivraison(props) {
                   value={values.traj}></OptionalTraj>
               </Optionals>
             </ToggleContainer>
-            <ToggleContainerBottom>
+            <ToggleContainerBottom data-testid='partieAvion'>
               <ToggleHabitContainer>
                 <FlexHabitBottom>
                   <div className='item1'>
@@ -216,7 +218,9 @@ export default function CalculateurLivraison(props) {
                   <div className='item3'>
                     <Addendum>
                       <span className='plus'>+</span>
-                      <span className='txt'>{convertGramsToKilograms(diffs.diffPlane)} kg de CO2e</span>
+                      <span className='txt' data-testid='bcAvion'>
+                        {convertGramsToKilograms(diffs.diffPlane)} kg de CO2e
+                      </span>
                     </Addendum>
                   </div>
                 </FlexHabitBottom>
