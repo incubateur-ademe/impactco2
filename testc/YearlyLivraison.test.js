@@ -37,7 +37,7 @@ describe("YearlyLivraison - afficher le bilan carbone selon la fréquence d'acha
     expect(await screen.queryByTestId("frequences").value).toBe("par_mois");
     expect(await screen.queryByTestId("kgCo2e")).toHaveTextContent("25,60 kg CO2e");
   });
-  test("Multiplie par 52 le bilan carbone si on passe à une fréquence par jour", async () => {
+  test("Multiplie par 52 le bilan carbone si on passe à une fréquence par semaine", async () => {
     // Given
     renderWithStyle(<YearlyLivraison co2eq={2133} />);
     // When
