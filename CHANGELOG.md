@@ -1,10 +1,16 @@
 # CHANGELOG
 
-## 1.24.4 (06/11/2023)
+## 1.25.2 (07/11/2023)
+
+- BSR - Améliorations de la taille du bundle
+- CHORE - Ajout de storybook
+- UI - Amélioration de la page d'accueil
+
+## 1.25.2 (06/11/2023)
 
 - A7 - A11Y Amelioration de la hierarchie des titres
 
-## 1.24.3 (06/11/2023)
+## 1.25.1 (06/11/2023)
 
 - CHORE - Mise à jour des frameworks
 - CHORE - Ajoute de Sentry et d'un base de données
