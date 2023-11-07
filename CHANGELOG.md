@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.25.2 (07/11/2023)
+## 1.25.3 (07/11/2023)
 
 - BSR - Améliorations de la taille du bundle
 - CHORE - Ajout de storybook
