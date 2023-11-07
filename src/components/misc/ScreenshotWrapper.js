@@ -31,14 +31,16 @@ export default function ScreenshotWrapper(props) {
       <Background className='noscreenshot' background={props.background} hover={hover}>
         {props.children}
       </Background>
-      <StyledButtons
-        takeScreenshot={takeScreenshot}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        slug={props.equivalent?.slug}
-      />
-
-      {isScreenshotting && <Signature />}
+      {isScreenshotting ? (
+        <Signature />
+      ) : (
+        <StyledButtons
+          takeScreenshot={takeScreenshot}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+          slug={props.equivalent?.slug}
+        />
+      )}
     </Wrapper>
   )
 }

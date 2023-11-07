@@ -22,7 +22,7 @@ export default function MagicLink(props) {
       aria-label={props['aria-label']}
       data-testid='magic-link'>
       {props.children}
-      {!props.noIcon && <NewTabIcon></NewTabIcon>}
+      {!props.noIcon && <NewTabIcon />}
     </a>
   ) : (
     <Link href={props.to} className={props.className} onClick={props.onClick || null} aria-label={props['aria-label']}>

@@ -19,7 +19,7 @@ const Number = styled.div`
   font-size: 21em;
   font-weight: 900;
   line-height: 0.71;
-  opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
+  opacity: ${(props) => (props.$isOnScreen ? 1 : 0)};
 
   ${(props) => props.theme.mq.small} {
     font-size: 49vw;
@@ -36,7 +36,7 @@ const BigText = styled.div`
   }
 `
 const Line = styled.div`
-  opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
+  opacity: ${(props) => (props.$isOnScreen ? 1 : 0)};
 `
 const StrongWrapper = styled.div`
   display: flex;
@@ -75,12 +75,10 @@ export default function LearningFruit() {
     <StyledSection>
       <Section.Content>
         <Statistic ref={ref}>
-          <Number isOnScreen={isOnScreen}>4</Number>
+          <Number $isOnScreen={isOnScreen}>4</Number>
           <BigText>
-            <Line isOnScreen={isOnScreen}>fois</Line>
-            <Line isOnScreen={isOnScreen} bottom>
-              plus
-            </Line>
+            <Line $isOnScreen={isOnScreen}>fois</Line>
+            <Line $isOnScreen={isOnScreen}>plus</Line>
           </BigText>
         </Statistic>
         <StrongWrapper>

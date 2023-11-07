@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
@@ -18,7 +17,7 @@ export const Equivalents = styled.div`
     margin-bottom: 1rem;
   }
 `
-export const Equivalent = styled.div`
+export const Equivalent = styled.div<{ size: [number, number, number] }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -85,7 +84,7 @@ export const Equals = styled.div`
     font-size: 8vw;
   }
 `
-export const Small = styled.p`
+export const Small = styled.div`
   display: none;
   text-align: center;
   ${(props) => props.theme.mq.small} {
@@ -105,12 +104,3 @@ export const StyledMagicLink = styled(MagicLink)`
   position: relative;
   z-index: 12;
 `
-export function CenterLink(props) {
-  return (
-    <LinkWrapper>
-      <StyledMagicLink to={props.to} className='noscreenshot'>
-        {props.children}
-      </StyledMagicLink>
-    </LinkWrapper>
-  )
-}

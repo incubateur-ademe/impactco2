@@ -5,14 +5,14 @@ export default function OptionalRelay(props) {
   return (
     <Wrapper>
       <FlexContainer>
-        <div className='emptySpace'></div>
+        <div className='emptySpace' />
         <div className='item2'>
           <Text>Vous effectuez généralement le trajet jusqu'au {props.point}</Text>
         </div>
         <div className='item3'>
-          <SelectRelays changeRelay={props.changeRelay} value={props.value}></SelectRelays>
+          <SelectRelays changeRelay={props.changeRelay} value={props.value} />
         </div>
-        <div className='item4'></div>
+        <div className='item4' />
       </FlexContainer>
     </Wrapper>
   )

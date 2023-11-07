@@ -5,9 +5,9 @@ import minicards from './data/minicards.json'
 import categories from 'data/categories.json'
 import DataContext from 'components/providers/DataProvider'
 import Section2 from 'components/base/Section2'
+import Header from './heading/Header'
 import ArrowLeft from './img/ArrowLeft'
 import ArrowRight from './img/ArrowRight'
-import Divider from './img/Divider'
 
 export default function ByOrder() {
   const { equivalents } = useContext(DataContext)
@@ -37,25 +37,20 @@ export default function ByOrder() {
         <Section2.WideContent>
           <Section2.InnerMargin>
             <Layout>
-              <UpperSide>
-                <TitleContainer>
-                  <H2Title>
-                    <H2TitleLine1>Comparer et communiquer facilement&nbsp;</H2TitleLine1>
-                    <H2TitleLine2>
-                      les bons<ColoredTitle>&nbsp;ordres de grandeur&nbsp;</ColoredTitle>
-                    </H2TitleLine2>
-                  </H2Title>
-                </TitleContainer>
-                <CtaContainer>
-                  <Link href='/convertisseur'>Découvrer le calculateur carbone</Link>
-                </CtaContainer>
-              </UpperSide>
-              <Separator>
-                <Divider />
-              </Separator>
-              <DownSide>
+              <Header
+                title={
+                  <>
+                    <span>Comparer et communiquer facilement&nbsp;</span>
+                    <span>
+                      les bons<b>&nbsp;ordres de grandeur&nbsp;</b>
+                    </span>
+                  </>
+                }
+                cta={{ to: '/convertisseur', label: 'Découvrer le calculateur carbone' }}
+              />
+              <div>
                 <Grid>
-                  <GridItemTopEmpty></GridItemTopEmpty>
+                  <GridItemTopEmpty />
                   <GridItemTopArrow>
                     <ArrowLeft />
                   </GridItemTopArrow>
@@ -69,14 +64,14 @@ export default function ByOrder() {
                   <GridItemTopArrow>
                     <ArrowRight />
                   </GridItemTopArrow>
-                  <GridItemTopEmpty></GridItemTopEmpty>
+                  <GridItemTopEmpty />
                   <GridItemSub1>{buildMinicardFor('voiturethermique')}</GridItemSub1>
                   <GridItemSub2>{buildMinicardFor('velo')}</GridItemSub2>
                   <GridItemSub3>{buildMinicardFor('chemiseencoton')}</GridItemSub3>
                   <GridItemSub4>{buildMinicardFor('soda')}</GridItemSub4>
                   <GridItemSub5>{buildMinicardFor('tomate')}</GridItemSub5>
                 </Grid>
-              </DownSide>
+              </div>
             </Layout>
           </Section2.InnerMargin>
         </Section2.WideContent>
@@ -101,60 +96,6 @@ const Layout = styled.div`
     margin-top: 2rem;
   }
 `
-
-const UpperSide = styled.div`
-  display: flex;
-  ${(props) => props.theme.mq.large} {
-    flex-direction: column;
-  }
-`
-const DownSide = styled.div``
-
-const TitleContainer = styled.div``
-
-const ColoredTitle = styled.span`
-  color: ${(props) => props.theme.colors.main};
-`
-
-const Separator = styled.div`
-  margin: 1.5rem 0 2rem 0;
-`
-
-const CtaContainer = styled.div`
-  margin-left: auto;
-  margin-right: 2rem;
-  ${(props) => props.theme.mq.large} {
-    font-size: 0.875rem;
-    margin-left: 0;
-    margin-top: 1.5rem;
-  }
-  ${(props) => props.theme.mq.xsmall} {
-    font-size: 0.8rem;
-  }
-  > a {
-    background-color: ${(props) => props.theme.colors.main};
-    border-radius: 8px;
-    color: ${(props) => props.theme.colors.mainWhite};
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-  }
-`
-
-const H2Title = styled.h2`
-  font-size: 1.75rem;
-  ${(props) => props.theme.mq.large} {
-    font-size: 1.25rem;
-  }
-  margin-bottom: 0;
-  > span {
-    display: block;
-    ${(props) => props.theme.mq.small} {
-      display: inline;
-    }
-  }
-`
-const H2TitleLine1 = styled.span``
-const H2TitleLine2 = styled.span``
 
 const Grid = styled.div`
   display: grid;

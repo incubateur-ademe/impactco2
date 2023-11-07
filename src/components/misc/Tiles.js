@@ -3,7 +3,6 @@ import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortab
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { formatTotalByMultiplier } from 'utils/formatters'
-import useIframe from 'hooks/useIframe'
 import DataContext from 'components/providers/DataProvider'
 import Section from 'components/base/Section'
 import AddButton from './tiles/AddButton'
@@ -37,8 +36,6 @@ const TilesWrapper = styled.div`
 export default function Tiles(props) {
   const { equivalents, tiles, setTiles } = useContext(DataContext)
 
-  const iframe = useIframe()
-
   const [curEquivalent, setCurEquivalent] = useState(props.equivalent)
   useEffect(() => {
     if (!tiles.length) {
@@ -60,7 +57,7 @@ export default function Tiles(props) {
   }, [tiles])
 
   return (
-    <StyledSection background={props.background} iframe={iframe}>
+    <StyledSection background={props.background}>
       <Section.Content>
         {props.title && <Title>{props.title}</Title>}
         <DndContext

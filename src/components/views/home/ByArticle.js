@@ -2,11 +2,12 @@ import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 import reusecards from './data/reusecards.json'
+import Button from 'components/base/Button'
 import Section2 from 'components/base/Section2'
 import Meeting from 'components/meeting/Meeting'
+import Header from './heading/Header'
 import ChtingLeft from './img/ChtingLeft'
 import ChtingRight from './img/ChtingRight'
-import Divider from './img/Divider'
 
 export default function ByArticle() {
   const buildReuseCardFor = (slug) => {
@@ -38,20 +39,17 @@ export default function ByArticle() {
         <Section2.WideContent>
           <Section2.InnerMargin>
             <Layout>
-              <UpperSide>
-                <TitleContainer>
-                  <H2Title>
-                    <H2TitleLine1>Utiliser nos ressources&nbsp;</H2TitleLine1>
-                    <H2TitleLine2>
-                      dans des <ColoredTitle>&nbsp;articles, sites ou applications</ColoredTitle>
-                    </H2TitleLine2>
-                  </H2Title>
-                </TitleContainer>
-              </UpperSide>
-              <Separator>
-                <Divider />
-              </Separator>
-              <MiddleSide>
+              <Header
+                title={
+                  <>
+                    <span>Utiliser nos ressources&nbsp;</span>
+                    <span>
+                      dans des <b>articles, sites ou applications</b>
+                    </span>
+                  </>
+                }
+              />
+              <div>
                 <MiddleGrid>
                   <LeftMiddleGrid>
                     <H3Title>En toute autonomie</H3Title>
@@ -82,12 +80,12 @@ export default function ByArticle() {
                       </MiddleLi>
                     </MiddleUl>
                     <MiddleCta>
-                      <Link
-                        href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                      <Button
+                        to='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
                         target='_blank'
                         rel='noreferrer noopener'>
                         Consulter le kit de diffusion
-                      </Link>
+                      </Button>
                     </MiddleCta>
                   </LeftMiddleGrid>
                   <RightMiddleGrid>
@@ -113,7 +111,7 @@ export default function ByArticle() {
                     <Meeting />
                   </RightMiddleGrid>
                 </MiddleGrid>
-              </MiddleSide>
+              </div>
               <DownSide>
                 <H3Title>Quelques exemples d’utilisation de nos ressources</H3Title>
                 <ReuseGrid>
@@ -154,43 +152,9 @@ const Layout = styled.div`
   }
 `
 
-const UpperSide = styled.div`
-  display: flex;
-  ${(props) => props.theme.mq.large} {
-    flex-direction: column;
-  }
-`
 const DownSide = styled.div`
   padding-top: 5rem;
 `
-
-const TitleContainer = styled.div``
-
-const ColoredTitle = styled.span`
-  color: ${(props) => props.theme.colors.main};
-`
-
-const Separator = styled.div`
-  margin: 1.5rem 0 2rem 0;
-`
-
-const H2Title = styled.h2`
-  font-size: 1.75rem;
-  ${(props) => props.theme.mq.large} {
-    font-size: 1.25rem;
-  }
-  margin-bottom: 0;
-  > span {
-    display: block;
-    ${(props) => props.theme.mq.small} {
-      display: inline;
-    }
-  }
-`
-const H2TitleLine1 = styled.span``
-const H2TitleLine2 = styled.span``
-
-const MiddleSide = styled.div``
 
 const MiddleGrid = styled.div`
   display: grid;
@@ -252,17 +216,7 @@ const MiddleLi = styled.li`
 `
 
 const MiddleCta = styled.div`
-  margin-top: 1.5rem;
-  a {
-    background-color: ${(props) => props.theme.colors.main};
-    border-radius: 8px;
-    color: ${(props) => props.theme.colors.mainWhite};
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    ${(props) => props.theme.mq.medium} {
-      font-size: 0.85rem;
-    }
-  }
+  width: fit-content;
 `
 
 const ReuseGrid = styled.div`

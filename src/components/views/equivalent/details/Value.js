@@ -57,7 +57,7 @@ export default function Value(props) {
   let numberToDisplay = formatTotal(props.equivalent)
   return (
     <StyledSection>
-      <Section.Content flex>
+      <Section.Content $flex>
         <Top>
           <div>
             <Number>

@@ -18,7 +18,7 @@ export default function ExplainArrow() {
           </Subexplain>
         </BlueGridInsider>
       </BlueGrid>
-      <Arrow></Arrow>
+      <Arrow />
     </Wrapper>
   )
 }

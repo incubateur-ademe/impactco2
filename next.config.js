@@ -76,6 +76,16 @@ const nextConfig = {
     widenClientFileUpload: true,
     hideSourceMaps: true,
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      Object.assign(config.resolve.alias, {
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat',
+      })
+    }
+    return config
+  },
   async redirects() {
     return [
       {
@@ -88,32 +98,36 @@ const nextConfig = {
         destination: '/transport/:slug*',
         permanent: true,
       },
-
+      {
+        source: '/categories',
+        destination: '/',
+        permanent: true,
+      },
       {
         source: '/categories/:slug*',
         destination: '/:slug*',
-        permanent: false,
+        permanent: true,
       },
       {
         source: '/empreinte-carbone/:slug*',
         destination: '/:slug*',
-        permanent: false,
+        permanent: true,
       },
       {
         source: '/iframes/categories/:slug*',
         destination: '/iframes/:slug*',
-        permanent: false,
+        permanent: true,
       },
       {
         source: '/iframes/empreinte-carbone/:slug*',
         destination: '/iframes/:slug*',
-        permanent: false,
+        permanent: true,
       },
 
       {
         source: '/iframes/tuiles',
         destination: '/iframes/convertisseur',
-        permanent: false,
+        permanent: true,
       },
     ]
   },

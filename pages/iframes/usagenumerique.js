@@ -8,7 +8,7 @@ export default function Numerique(props) {
   return (
     <Iframe url='usagenumerique'>
       <RulesProvider>
-        <Category category={props.category} />{' '}
+        <Category category={props.category} />
       </RulesProvider>
     </Iframe>
   )

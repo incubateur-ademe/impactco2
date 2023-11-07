@@ -150,7 +150,7 @@ export default function CalculateurLivraison(props) {
               <SelectProduits changeProduit={changeProduit} value={values.produit} />
               <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
             </DropList>
-            <ToggleContainer show={showToggleContainer} data-testid='partieMagasin'>
+            <ToggleContainer $show={showToggleContainer} data-testid='partieMagasin'>
               <ToggleHabitContainer>
                 <FlexHabit>
                   <div className='item1'>
@@ -161,7 +161,7 @@ export default function CalculateurLivraison(props) {
                       offColor={'#fff'}
                       onColor={themes.default.colors.main2}
                       aria-label='Changer de thème'
-                      uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'></Svg>}
+                      uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                       checkedHandleIcon={
                         <Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'>
                           <path
@@ -183,13 +183,9 @@ export default function CalculateurLivraison(props) {
                   </div>
                 </FlexHabit>
               </ToggleHabitContainer>
-              <Optionals show={!isHabit}>
-                <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point}></OptionalRelay>
-                <OptionalTraj
-                  km={values.km}
-                  changeKm={changeKm}
-                  changeTraj={changeTraj}
-                  value={values.traj}></OptionalTraj>
+              <Optionals $show={!isHabit}>
+                <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point} />
+                <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj} />
               </Optionals>
             </ToggleContainer>
             <ToggleContainerBottom data-testid='partieAvion'>
@@ -203,7 +199,7 @@ export default function CalculateurLivraison(props) {
                       offColor={'#fff'}
                       onColor={themes.default.colors.main2}
                       aria-label='Changer de thème'
-                      uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'></Svg>}
+                      uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                       checkedHandleIcon={
                         <Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'>
                           <path
@@ -236,7 +232,7 @@ export default function CalculateurLivraison(props) {
 }
 
 const Optionals = styled.div`
-  display: ${(props) => (props.show ? 'block' : 'none')};
+  display: ${(props) => (props.$show ? 'block' : 'none')};
   > .item2 {
     align-items: center;
     display: flex;
@@ -368,7 +364,7 @@ const Flex = styled.div`
 
 const ToggleContainer = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
-  display: ${(props) => (props.show ? 'block' : 'none')};
+  display: ${(props) => (props.$show ? 'block' : 'none')};
 `
 
 const ToggleHabitContainer = styled.div`

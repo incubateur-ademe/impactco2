@@ -44,7 +44,7 @@ export default function Search(props) {
             onChange={props.setNumberEmails}
           />
         </Wrapper.Parameters>
-        <Wrapper.Desktop visible={display === 'email'}>
+        <Wrapper.Desktop $visible={display === 'email'}>
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('email . appareil').nodeValue}'`}
             onChange={({ value }) => setSituation({ ['email . appareil']: value })}
@@ -115,7 +115,7 @@ export default function Search(props) {
             }
           />
         </Wrapper.Parameters>
-        <Wrapper.Desktop visible={display === 'streaming'}>
+        <Wrapper.Desktop $visible={display === 'streaming'}>
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
             onChange={({ value }) => setSituation({ ['streaming . appareil']: value })}
@@ -187,7 +187,7 @@ export default function Search(props) {
             }
           />
         </Wrapper.Parameters>
-        <Wrapper.Desktop visible={display === 'visio'}>
+        <Wrapper.Desktop $visible={display === 'visio'}>
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('visio . appareil').nodeValue}'`}
             onChange={({ value }) => setSituation({ ['visio . appareil']: value })}

@@ -28,12 +28,12 @@ export default function YearlyLivraison(props) {
         <Induction data-testid='induction'>
           <InductionIntro>
             <span>Si je commande&nbsp;</span>
-            <SelectNumber changeNumber={changeNumber} value={number}></SelectNumber>
+            <SelectNumber changeNumber={changeNumber} value={number} />
             <Colis>&nbsp;colis&nbsp;</Colis>
           </InductionIntro>
           <InductionOutro>
             <strong>par</strong>
-            <SelectFrequences changeFrequence={changeFrequence} value={uid}></SelectFrequences>
+            <SelectFrequences changeFrequence={changeFrequence} value={uid} />
             <span>,&nbsp;</span>
           </InductionOutro>
         </Induction>

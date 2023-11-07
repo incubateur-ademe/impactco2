@@ -15,8 +15,8 @@ const Checkboxes = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  visibility: ${(props) => (props.$visible ? 'visible' : 'hidden')};
 
   > label {
     font-size: 0.875rem;

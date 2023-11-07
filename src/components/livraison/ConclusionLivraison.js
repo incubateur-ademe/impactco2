@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import OutboundLink from 'components/base/OutboundLink'
 import Section2 from 'components/base/Section2'
-import { Emojis } from 'components/misc/Visualization'
+import { Emojis } from 'components/visualizations/Visualization.styles'
 
 export default function ConclusionLivraison() {
   return (

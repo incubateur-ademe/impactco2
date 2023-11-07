@@ -36,7 +36,8 @@ export default function SurveyModal() {
               }
               frameBorder='0'
               width='100%'
-              height='533'></iframe>
+              height='533'
+            />
           ) : null}
         </StyledModal>
       )}

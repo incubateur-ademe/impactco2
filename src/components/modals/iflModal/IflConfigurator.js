@@ -19,9 +19,9 @@ export default function IflConfigurator(props) {
         <option value='default'>Clair</option>
         <option value='night'>Sombre</option>
       </Select>
-      <IflCode type={props.path} theme={props.theme}></IflCode>
+      <IflCode type={props.path} theme={props.theme} />
       <br />
-      <ReuseBulb></ReuseBulb>
+      <ReuseBulb />
     </Wrapper>
   )
 }

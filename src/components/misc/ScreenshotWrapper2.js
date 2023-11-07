@@ -16,7 +16,7 @@ export default function ScreenshotWrapper2(props) {
   return (
     <Wrapper className={props.className} ref={props.innerRef}>
       <Background className='noscreenshot' background={props.background}>
-        <DynamicBackgroundPadding isScreenshotting={props.isScreenshotting}>{props.children}</DynamicBackgroundPadding>
+        <DynamicBackgroundPadding $isScreenshotting={props.isScreenshotting}>{props.children}</DynamicBackgroundPadding>
       </Background>
 
       {props.isScreenshotting && (
@@ -30,5 +30,5 @@ export default function ScreenshotWrapper2(props) {
 }
 
 const DynamicBackgroundPadding = styled.div`
-  padding: ${(props) => (props.isScreenshotting ? '1rem' : '0')};
+  padding: ${({ $isScreenshotting }) => ($isScreenshotting ? '1rem' : '0')};
 `

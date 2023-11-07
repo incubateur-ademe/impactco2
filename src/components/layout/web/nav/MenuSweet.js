@@ -3,23 +3,25 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
-import DropdownSweet from './menu/DropdownSweet'
+import DropdownSweet from './DropdownSweet'
 
 const Wrapper = styled.nav`
   display: flex;
+  height: 100%;
+  width: 100%;
 `
 const StyledEmoji = styled(Emoji)`
   font-size: 1.25rem;
-  margin: 0 0.25rem 0.25rem 0;
+  margin: 0.25rem 0.25rem 0 0;
 `
-export default function MenuSweet(props) {
+export default function MenuSweet() {
   const { categories } = useContext(DataContext)
 
   const router = useRouter()
   const slugs = router.asPath.split('/').filter((slug) => slug)
 
   return (
-    <Wrapper shouldDisplay={props.shouldDisplay}>
+    <Wrapper>
       <DropdownSweet
         label={'Par thématique'}
         current={categories.find((category) => slugs.includes(category.slug))}

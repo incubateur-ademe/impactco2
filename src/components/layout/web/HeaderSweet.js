@@ -40,10 +40,10 @@ export default function HeaderSweet() {
                 </Logos>
                 <Actions>
                   <ActionSearch>
-                    <NavSearchBar></NavSearchBar>
+                    <NavSearchBar />
                   </ActionSearch>
                   <HamburgerContainer>
-                    <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked}></Hamburger>
+                    <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked} />
                   </HamburgerContainer>
                 </Actions>
               </LogoBar>
@@ -51,7 +51,7 @@ export default function HeaderSweet() {
           </Header>
           <NavBar>
             <Section2.InnerMargin>
-              <NavLinksMobile shouldDisplay={hamburgerOpened}>
+              <NavLinksMobile $shouldDisplay={hamburgerOpened}>
                 <NavLink>
                   <SmallActionSearch>
                     <NavSearchBar />
@@ -126,7 +126,7 @@ const NavLinksMobile = styled.div`
   display: none;
   padding: 0.5rem 0;
   ${(props) => props.theme.mq.small} {
-    display: ${(props) => (props.shouldDisplay ? 'flex' : 'none')};
+    display: ${(props) => (props.$shouldDisplay ? 'flex' : 'none')};
     flex-direction: column;
   }
 `
@@ -193,10 +193,7 @@ const SmallActionSearch = styled.div`
 
 const NavBar = styled.nav`
   border-top: 1px solid #eae5e8;
-  padding: 0.75rem 0;
-  ${(props) => props.theme.mq.small} {
-    padding: 0;
-  }
+  margin: 0 -0.75rem;
 `
 
 const NavLink = styled.div`
@@ -205,20 +202,24 @@ const NavLink = styled.div`
     color: #161616;
     display: flex;
     font-size: 0.875rem;
+    font-weight: 400;
     ${(props) => props.theme.mq.medium} {
       font-size: 0.75rem;
     }
     ${(props) => props.theme.mq.small} {
       font-size: 0.875rem;
     }
-    font-weight: 400;
-    height: 2rem;
-    letter-spacing: 0em;
-    margin-right: 1.5rem;
+    height: 100%;
+    min-height: 2rem;
+    padding: 1rem 0.75rem;
     ${(props) => props.theme.mq.medium} {
       margin-left: inherit;
     }
     text-decoration: none;
+
+    &:hover {
+      background-color: ${(props) => props.theme.colors.mainLight};
+    }
   }
 `
 

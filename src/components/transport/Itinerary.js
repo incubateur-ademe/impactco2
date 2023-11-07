@@ -26,7 +26,7 @@ export default function Itinerary(props) {
           {transportations.length ? (
             <Top>
               <Instruction />
-              <Top.Checkboxes visible>
+              <Top.Checkboxes $visible>
                 <Checkbox
                   name='displayAll'
                   checked={displayAll}

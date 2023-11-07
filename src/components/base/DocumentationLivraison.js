@@ -18,7 +18,7 @@ export default function DocumentationLivraison(props) {
     <VerticalContainer className={props.theme === 'night' ? 'bl' : 'r'}>
       <Seo title={props.title} description={"Documentation de l'impact de la livraison"} image={'metalivraison.png'} />
       <HeaderSweet />
-      <BreadCrumb3></BreadCrumb3>
+      <BreadCrumb3 />
       <Section2>
         <Section2.InnerMargin>
           <DocWrapper>

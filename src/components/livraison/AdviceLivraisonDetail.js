@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Emojis } from 'components/misc/Visualization'
+import { Emojis } from 'components/visualizations/Visualization.styles'
 
 export default function AdviceLivraisonDetail(props) {
   const [isCollapsed, setIsCollapsed] = useState(false)
@@ -11,14 +11,14 @@ export default function AdviceLivraisonDetail(props) {
 
   return (
     <>
-      <Wrapper collapsed={isCollapsed}>
-        <Header collapsed={isCollapsed}>
-          <Collapser onClick={collapserClicked} collapsed={isCollapsed}>
+      <Wrapper $collapsed={isCollapsed}>
+        <Header $collapsed={isCollapsed}>
+          <Collapser onClick={collapserClicked} $collapsed={isCollapsed}>
             {isCollapsed ? <>+</> : <>_</>}
           </Collapser>
           <H3Title>{props.title}</H3Title>
         </Header>
-        <TextContent collapsed={isCollapsed}>
+        <TextContent $collapsed={isCollapsed}>
           {props.line1Text ? (
             <>
               <Item>
@@ -29,7 +29,7 @@ export default function AdviceLivraisonDetail(props) {
                   <Text>{props.line1Text}</Text>
                 </Line>
                 <Line>
-                  <Icon></Icon>
+                  <Icon />
                   <Subtext>{props.line1Subtext}</Subtext>
                 </Line>
               </Item>
@@ -47,7 +47,7 @@ export default function AdviceLivraisonDetail(props) {
                   <Text>{props.line2Text}</Text>
                 </Line>
                 <Line>
-                  <Icon></Icon>
+                  <Icon />
                   <Subtext>{props.line2Subtext}</Subtext>
                 </Line>
               </Item>
@@ -65,7 +65,7 @@ export default function AdviceLivraisonDetail(props) {
                   <Text>{props.line3Text}</Text>
                 </Line>
                 <Line>
-                  <Icon></Icon>
+                  <Icon />
                   <Subtext>{props.line3Subtext}</Subtext>
                 </Line>
               </Item>
@@ -83,7 +83,7 @@ const Wrapper = styled.section`
   background-color: ${(props) => props.theme.colors.darkBackground};
   border-radius: 8px;
   padding: 1.5rem 1rem;
-  padding: ${(props) => (!props.collapsed ? '1.5rem 1rem 1.5rem 1rem' : '1.5rem 1rem 0 1rem')};
+  padding: ${(props) => (!props.$collapsed ? '1.5rem 1rem 1.5rem 1rem' : '1.5rem 1rem 0 1rem')};
 `
 
 const H3Title = styled.h3`
@@ -99,7 +99,7 @@ const H3Title = styled.h3`
 
 const Header = styled.header`
   display: flex;
-  padding-bottom: ${(props) => (!props.collapsed ? '1rem' : '0.5rem')};
+  padding-bottom: ${(props) => (!props.$collapsed ? '1rem' : '0.5rem')};
 `
 
 const Line = styled.div`
@@ -142,10 +142,10 @@ const Collapser = styled.button`
   font-size: '48px';
   height: 1.5rem;
   line-height: 1rem;
-  margin-top: ${(props) => (!props.collapsed ? '-8px' : '-2px')};
+  margin-top: ${(props) => (!props.$collapsed ? '-8px' : '-2px')};
   padding: 0;
 `
 
 const TextContent = styled.div`
-  display: ${(props) => (!props.collapsed ? 'block' : 'none')};
+  display: ${(props) => (!props.$collapsed ? 'block' : 'none')};
 `

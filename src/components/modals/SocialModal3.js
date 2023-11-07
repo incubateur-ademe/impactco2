@@ -51,7 +51,7 @@ export default function SocialModal3() {
         <Linkedin2 url={href} />
       </WrapperSocial>
       <br />
-      <ReuseBulb></ReuseBulb>
+      <ReuseBulb />
     </Modal3>
   )
 }

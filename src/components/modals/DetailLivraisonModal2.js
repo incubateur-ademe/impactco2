@@ -208,7 +208,7 @@ export default function DetailLivraisonModal2() {
         <h3>Pour aller plus loin</h3>
         <p>
           <Link href={'/documentation/livraison-colis'} title='Documentation (ouvre un nouvel onglet)' target='_blank'>
-            Consultez notre documentation <NewTabIcon></NewTabIcon>
+            Consultez notre documentation <NewTabIcon />
           </Link>
         </p>
       </FormattedText>

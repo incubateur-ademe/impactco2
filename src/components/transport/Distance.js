@@ -25,7 +25,7 @@ export default function Distance(props) {
           {transportations.length ? (
             <Top className='noscreenshot'>
               <Instruction title={props.category.equivalent} gender={props.category.gender} />
-              <Top.Checkboxes visible>
+              <Top.Checkboxes $visible>
                 <Checkbox
                   name='displayAll'
                   checked={displayAll}
