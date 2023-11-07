@@ -5,6 +5,10 @@
 - CHORE - Mise à jour des frameworks
 - CHORE - Ajoute de Sentry et d'un base de données
 
+## 1.25.0 (07/11/2023)
+
+- A1 UH1 - Ajout du formulaire de contact
+
 ## 1.24.2 (26/10/2023)
 
 - BSR - tests refactoring

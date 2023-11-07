@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 import Section2 from 'components/base/Section2'
+import Meeting from 'components/meeting/Meeting'
 import Cards from './img/Cards'
 
 export default function Hero() {
@@ -10,41 +10,35 @@ export default function Hero() {
       <Section2.WideContent>
         <Section2.InnerMargin>
           <Layout>
-            <TextContainer>
+            <div>
               <H1Title>
                 <H1Line1>Informer, comparer, diffuser</H1Line1>
-                <H1Line2>
+                <span>
                   <HideAboveMedium>&nbsp;</HideAboveMedium>des ressources sur l’impact carbone
-                </H1Line2>
-                <H1Line3>
+                </span>
+                <sapn>
                   <HideAboveMedium>&nbsp;</HideAboveMedium>des gestes et objets du quotidien
-                </H1Line3>
+                </sapn>
               </H1Title>
               <Subtitle>
-                <Subtitle1>
+                <span>
                   Sensibilisez votre communauté grâce à une<strong>&nbsp;information fiable&nbsp;</strong>
-                </Subtitle1>
-                <Subtitle2>
+                </span>
+                <span>
                   <strong>et sourcée</strong>&nbsp;issue des données environnementales de l'ADEME.
-                </Subtitle2>
+                </span>
               </Subtitle>
               <MiniCard>
-                <MiniCardEmoji>🤓</MiniCardEmoji>
                 <MiniCardText>
-                  <MiniCardText1>Vous souhaitez intégrer gratuitement</MiniCardText1>
-                  <MiniCardText2>nos ressources ?</MiniCardText2>
+                  <MiniCardEmoji>🤓</MiniCardEmoji>
+                  <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
                 </MiniCardText>
-                <MiniCardCta>
-                  <div>
-                    <Link href='https://tally.so/r/nrOv5N' rel='noreferrer noopener'>
-                      Prendre rendez-vous
-                    </Link>
-                  </div>
-                </MiniCardCta>
+                <p>Laissez-nous votre email, et nous vous recontacterons très prochainement pour échanger ensemble.</p>
+                <Meeting />
               </MiniCard>
-            </TextContainer>
+            </div>
             <PictureContainer>
-              <Cards></Cards>
+              <Cards />
             </PictureContainer>
           </Layout>
         </Section2.InnerMargin>
@@ -66,7 +60,6 @@ const H1Title = styled.div`
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 2.75rem;
-  margin-top: 3rem;
   text-align: left;
   > span {
     display: block;
@@ -80,13 +73,10 @@ const H1Line1 = styled.span`
   color: ${(props) => props.theme.colors.main2};
 `
 
-const H1Line2 = styled.span``
-
-const H1Line3 = styled.span``
-
 const Layout = styled.div`
   display: grid;
   grid-template-columns: 39rem auto;
+  overflow: hidden;
   ${(props) => props.theme.mq.xlarge} {
     grid-template-columns: 30rem auto;
   }
@@ -99,33 +89,21 @@ const Layout = styled.div`
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
   }
-  overflow: hidden;
-  padding-top: 2rem;
+  padding: 6rem 0;
 `
 
 const PictureContainer = styled.div`
-  text-align: right;
-  ${(props) => props.theme.mq.medium} {
-    display: none;
-  }
-  > svg {
-    margin-top: -25rem;
-    width: 553px;
-    ${(props) => props.theme.mq.xxlarge} {
-      margin-top: -25rem;
-      width: 386px;
-    }
-    ${(props) => props.theme.mq.xlarge} {
-      margin-top: -26rem;
-      width: 309px;
-    }
-  }
+  position: relative;
   ${(props) => props.theme.mq.large} {
     display: none;
   }
+  > svg {
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: -370px;
+  }
 `
-
-const TextContainer = styled.div``
 
 const Subtitle = styled.p`
   font-size: 1.125rem;
@@ -148,98 +126,23 @@ const Subtitle = styled.p`
   }
 `
 
-const Subtitle1 = styled.span``
-
-const Subtitle2 = styled.span``
-
 const MiniCard = styled.div`
-  align-items: center;
   border-color: #ccdcfd;
   border-radius: 16px;
   border-style: solid;
   border-width: 1px 4px 4px 1px;
-  display: flex;
+  gap: 2rem;
   justify-content: flex-start;
-  ${(props) => props.theme.mq.small} {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  margin-bottom: 0;
-  ${(props) => props.theme.mq.xxlarge} {
-    margin-bottom: 4rem;
-  }
+  padding: 1.5rem;
 `
 
-const MiniCardEmoji = styled.div`
-  margin-left: 1rem;
-  ${(props) => props.theme.mq.xlarge} {
-    margin-left: 0.5rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    margin-top: 0rem;
-  }
-  ${(props) => props.theme.mq.small} {
-    margin-top: 0.8rem;
-  }
-`
-
-const MiniCardCta = styled.div`
-  display: flex;
-  flex-grow: 1;
-  margin-right: 1rem;
-  ${(props) => props.theme.mq.xlarge} {
-    font-size: 0.875rem;
-    margin-right: 0.5rem;
-  }
-  ${(props) => props.theme.mq.large} {
-    font-size: 1rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    font-size: 0.875rem;
-  }
-  > div {
-    margin-left: auto;
-    ${(props) => props.theme.mq.small} {
-      margin-bottom: 0.8rem;
-    }
-  }
-  > div > a {
-    background-color: ${(props) => props.theme.colors.main};
-    border-radius: 8px;
-    color: ${(props) => props.theme.colors.mainWhite};
-    ${(props) => props.theme.mq.medium} {
-      margin-left: 0.5rem;
-    }
-    padding: 0.5rem 1rem;
-    ${(props) => props.theme.mq.medium} {
-      display: block;
-    }
-    text-decoration: none;
-  }
+const MiniCardEmoji = styled.span`
+  margin-right: 0.5rem;
 `
 
 const MiniCardText = styled.p`
   font-size: 1rem;
-  margin: 1rem 0 1rem 1rem;
-  ${(props) => props.theme.mq.xlarge} {
-    font-size: 0.85rem;
-    margin-left: 0.5rem;
-  }
-  ${(props) => props.theme.mq.large} {
-    font-size: 1rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    font-size: 0.85rem;
-    margin: 0.75rem 0 0.75rem 0.75rem;
-  }
-`
-
-const MiniCardText1 = styled.strong`
-  display: block;
-`
-
-const MiniCardText2 = styled.strong`
-  display: block;
+  margin-bottom: 0.5rem;
 `
 
 const HideAboveMedium = styled.span`

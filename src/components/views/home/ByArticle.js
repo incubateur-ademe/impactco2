@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import reusecards from './data/reusecards.json'
 import Section2 from 'components/base/Section2'
+import Meeting from 'components/meeting/Meeting'
 import ChtingLeft from './img/ChtingLeft'
 import ChtingRight from './img/ChtingRight'
 import Divider from './img/Divider'
@@ -80,14 +81,14 @@ export default function ByArticle() {
                         déjà créés par des médias, entreprises, associations...
                       </MiddleLi>
                     </MiddleUl>
-                    <MiddleLeftCta>
+                    <MiddleCta>
                       <Link
                         href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
                         target='_blank'
                         rel='noreferrer noopener'>
                         Consulter le kit de diffusion
                       </Link>
-                    </MiddleLeftCta>
+                    </MiddleCta>
                   </LeftMiddleGrid>
                   <RightMiddleGrid>
                     <H3Title2>Avec de l'aide</H3Title2>
@@ -109,11 +110,7 @@ export default function ByArticle() {
                         Échangez avec l’équipe sur vos <strong>besoins spécifiques d’intégration</strong>.
                       </MiddleLi>
                     </MiddleUl>
-                    <MiddleRightCta>
-                      <Link href='https://tally.so/r/nrOv5N' rel='noreferrer noopener'>
-                        Prendre rendez-vous avec l’équipe
-                      </Link>
-                    </MiddleRightCta>
+                    <Meeting />
                   </RightMiddleGrid>
                 </MiddleGrid>
               </MiddleSide>
@@ -255,6 +252,7 @@ const MiddleLi = styled.li`
 `
 
 const MiddleCta = styled.div`
+  margin-top: 1.5rem;
   a {
     background-color: ${(props) => props.theme.colors.main};
     border-radius: 8px;
@@ -266,8 +264,6 @@ const MiddleCta = styled.div`
     }
   }
 `
-const MiddleLeftCta = styled(MiddleCta)``
-const MiddleRightCta = styled(MiddleCta)``
 
 const ReuseGrid = styled.div`
   display: grid;
