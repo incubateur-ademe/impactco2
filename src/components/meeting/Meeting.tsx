@@ -22,7 +22,7 @@ const Meeting = () => {
   }
 
   return sent ? (
-    <SentMessage>Merci, l’équipe vous recontactera très prochainement !</SentMessage>
+    <SentMessage>Votre adresse a été prise en compte. L’équipe vous recontactera très prochainement !</SentMessage>
   ) : (
     <Container onSubmit={onSubmit}>
       <TextInput
