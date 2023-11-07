@@ -60,11 +60,11 @@ export default function EqModal4() {
         </Intro>
         <GridSplit>
           <GridSplitLeft>
-            <ActualChoices></ActualChoices>
+            <ActualChoices />
           </GridSplitLeft>
           <GridSplitRight>
             <Scroll>
-              <AllSearch open={open}></AllSearch>
+              <AllSearch open={open} />
             </Scroll>
             <ValidationZone>
               <ValidationMsg>
