@@ -33,10 +33,7 @@ export default function Hero() {
                   <MiniCardEmoji>🤓</MiniCardEmoji>
                   <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
                 </MiniCardText>
-                <p>
-                  Laissez-nous votre adresse email, nous reviendrons vers vous très rapidement pour convenir d'un temps
-                  d'échange à ce sujet.
-                </p>
+                <p>Laissez-nous votre email, et nous vous recontacterons très prochainement pour échanger ensemble.</p>
                 <Meeting />
               </MiniCard>
             </div>
