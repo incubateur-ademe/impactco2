@@ -10,10 +10,10 @@ const Title = styled.h1`
   text-align: left;
 `
 const Text = styled.p`
-  font-weight: ${(props) => (props.main ? 'normal' : 300)};
-  margin: 0 ${(props) => (props.main ? 0 : 'auto')} 1.5rem;
+  font-weight: ${(props) => (props.$main ? 'normal' : 300)};
+  margin: 0 ${(props) => (props.$main ? 0 : 'auto')} 1.5rem;
   max-width: 30rem;
-  text-align: ${(props) => (props.main ? 'left' : 'center')};
+  text-align: ${(props) => (props.$main ? 'left' : 'center')};
 `
 const List = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ export default function Categories(props) {
       {props.main && (
         <Section>
           <Section.Content $flex>
-            <Title>Catégories</Title>
+            <Title>Thématiques</Title>
             <ShareButton title />
           </Section.Content>
         </Section>
@@ -41,12 +41,12 @@ export default function Categories(props) {
       <Section>
         <Section.Content>
           {props.main ? (
-            <Text main>
-              Selectionnez une catégorie pour visualiser facilement l’empreinte carbone des objets et gestes de votre
+            <Text $main>
+              Sélectionnez une thématique pour visualiser facilement l’impact carbone des objets et gestes de votre
               quotidien.
             </Text>
           ) : (
-            <Text>Vous pouvez aussi naviguer par catégorie :</Text>
+            <Text>Vous pouvez aussi naviguer par thématique :</Text>
           )}
           <List>
             {categories

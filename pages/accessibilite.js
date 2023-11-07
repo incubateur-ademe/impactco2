@@ -3,13 +3,17 @@ import styled from 'styled-components'
 import Section2 from 'components/base/Section2'
 import WebBlue from 'components/layout/WebBlue'
 
+const H1Title = styled.h1`
+  margin-top: 3rem;
+`
+
 export default function Accessibilite() {
   return (
     <WebBlue title={'Accessibilité'}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
-            <h1>Déclaration d'accessibilité</h1>
+            <H1Title>Déclaration d'accessibilité</H1Title>
             <h2 id='quest-ce-que-laccessibilité-numérique-'>Qu’est-ce que l’accessibilité numérique ?</h2>
             <p>
               Un site webBlue accessible est un site qui permet à tous les internautes d’accéder à ses contenus sans

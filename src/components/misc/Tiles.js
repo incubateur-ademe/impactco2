@@ -9,11 +9,10 @@ import AddButton from './tiles/AddButton'
 import Tile from './tiles/Tile'
 import Weight from './tiles/Weight'
 
-const StyledSection = styled(Section)``
 const Title = styled.h1`
-  margin-top: 2rem;
   text-align: center;
 `
+
 const Reference = styled.div`
   display: flex;
   justify-content: center;
@@ -57,7 +56,7 @@ export default function Tiles(props) {
   }, [tiles])
 
   return (
-    <StyledSection background={props.background}>
+    <Section>
       <Section.Content>
         {props.title && <Title>{props.title}</Title>}
         <DndContext
@@ -82,14 +81,13 @@ export default function Tiles(props) {
                 <Tile
                   equivalent={curEquivalent}
                   weight={formatTotalByMultiplier(curEquivalent)}
-                  background={props.background}
                   showSubtitle={showSubtitle}
                   equivalentPage={props.equivalent?.slug === curEquivalent.slug}
                   removeEquivalent={() => setCurEquivalent(null)}
                   reference
                 />
               ) : (
-                <Weight weight={weight} setWeight={setWeight} background={props.background} />
+                <Weight weight={weight} setWeight={setWeight} />
               )}
             </Reference>
           </SortableContext>
@@ -108,7 +106,6 @@ export default function Tiles(props) {
                     equivalent={equivalent}
                     weight={weight}
                     key={equivalent.id}
-                    background={props.background}
                     showSubtitle={showSubtitle}
                     removeEquivalent={(id) =>
                       setTiles((equivalents) => equivalents.filter((equivalent) => equivalent.id !== id))
@@ -121,6 +118,6 @@ export default function Tiles(props) {
           </SortableContext>
         </DndContext>
       </Section.Content>
-    </StyledSection>
+    </Section>
   )
 }

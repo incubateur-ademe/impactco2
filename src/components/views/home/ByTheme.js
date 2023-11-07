@@ -20,7 +20,7 @@ export default function ByTheme() {
                     <span>à aborder dans vos contenus</span>
                   </>
                 }
-                cta={{ to: '/categories', label: 'Explorer les thématiques' }}
+                cta={{ to: '/thematiques', label: 'Explorer les thématiques' }}
               />
               <div>
                 <ThemeCards>

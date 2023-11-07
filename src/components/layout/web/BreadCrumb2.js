@@ -24,7 +24,7 @@ export default function BreadCrumb2(props) {
               <Wrapper>
                 {props.breadcrumb && props.breadcrumb.type === 'equivalent' && (
                   <>
-                    <MagicLink to='/categories'>Thématique</MagicLink>
+                    <MagicLink to='/thematiques'>Thématiques</MagicLink>
                     {' > '}{' '}
                     {props.breadcrumb.equivalent ? (
                       <>
@@ -35,6 +35,12 @@ export default function BreadCrumb2(props) {
                     ) : (
                       naming
                     )}
+                  </>
+                )}
+                {props.breadcrumb && props.breadcrumb.type === 'accueil' && (
+                  <>
+                    <MagicLink to='/'>Page d’accueil</MagicLink>
+                    {' > '} {props.breadcrumb.page}
                   </>
                 )}
               </Wrapper>
