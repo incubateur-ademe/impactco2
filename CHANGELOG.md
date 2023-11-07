@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.24.3 (06/11/2023)
+
+- CHORE - Mise à jour des frameworks
+- CHORE - Ajoute de Sentry et d'un base de données
+
 ## 1.24.2 (26/10/2023)
 
 - BSR - tests refactoring
