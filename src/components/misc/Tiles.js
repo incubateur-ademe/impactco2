@@ -11,13 +11,9 @@ import Tile from './tiles/Tile'
 import Weight from './tiles/Weight'
 
 const StyledSection = styled(Section)``
-const Title = styled.h2`
+const Title = styled.h1`
+  margin-top: 2rem;
   text-align: center;
-`
-const Br = styled.br`
-  ${(props) => props.theme.mq.small} {
-    display: none;
-  }
 `
 const Reference = styled.div`
   display: flex;
@@ -66,12 +62,7 @@ export default function Tiles(props) {
   return (
     <StyledSection background={props.background} iframe={iframe}>
       <Section.Content>
-        {props.title && (
-          <Title>
-            Visualisez facilement
-            <Br /> une quantité de CO<sub>2</sub>e
-          </Title>
-        )}
+        {props.title && <Title>{props.title}</Title>}
         <DndContext
           collisionDetection={closestCenter}
           measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
