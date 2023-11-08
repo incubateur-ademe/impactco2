@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.26.0 (10/11/2023)
+
+- Amélioration des chiffres de comparaisons
+
 ## 1.25.7 (09/11/2023)
 
 - T25 - Sécurisation d'une partie de l'API
