@@ -2,14 +2,14 @@ import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 import OutboundLink from 'components/base/OutboundLink'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
 
 export default function NGCCard() {
   return (
     <Wrapper>
       <Section2>
-        <Section2.WideContent>
-          <Section2.InnerMargin>
+        <Section2WideContent>
+          <Section2InnerMargin>
             <Card>
               <CardImage>
                 <Image src='/images/logoNGC.svg' alt='' width={196} height={152} />
@@ -29,8 +29,8 @@ export default function NGCCard() {
                 </strong>
               </CardText>
             </Card>
-          </Section2.InnerMargin>
-        </Section2.WideContent>
+          </Section2InnerMargin>
+        </Section2WideContent>
       </Section2>
     </Wrapper>
   )

@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import categories from 'data/categories.json'
 import { formatName } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
-import Section2 from 'components/base/Section2'
-import WebBlue from 'components/layout/WebBlue'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import Web from 'components/layout/Web'
 
 export default function PlanDuSite() {
   const { equivalents } = useContext(DataContext)
@@ -41,11 +41,11 @@ export default function PlanDuSite() {
   }
 
   return (
-    <WebBlue title='Plan du site'>
+    <Web title='Plan du site'>
       <Section2>
-        <Section2.InnerMargin>
+        <Section2InnerMargin>
           <FormatText>
-            <H1Title>Plan du site</H1Title>
+            <h1>Plan du site</h1>
             <Level1>
               <Link href='/' title="Page d'accueil">
                 Page d'accueil
@@ -122,9 +122,9 @@ export default function PlanDuSite() {
               </Link>
             </Level1>
           </FormatText>
-        </Section2.InnerMargin>
+        </Section2InnerMargin>
       </Section2>
-    </WebBlue>
+    </Web>
   )
 }
 
@@ -134,6 +134,7 @@ const FormatText = styled.div`
     font-weight: 800;
     line-height: 44px;
     letter-spacing: -0.01em;
+    margin-top: 3rem;
     margin-bottom: 2rem;
   }
   > h2 {
@@ -186,8 +187,4 @@ const Level3 = styled.div`
 
 const Subtitle = styled.span`
   font-weight: 300;
-`
-
-const H1Title = styled.h1`
-  margin-top: 3rem;
 `

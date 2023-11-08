@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { RulePage } from 'publicodes-react'
 import { useContext } from 'react'
 import styled from 'styled-components'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
 import BreadCrumb3 from 'components/layout/web/BreadCrumb3'
 import FooterBlue from 'components/layout/web/FooterBlue'
 import HeaderSweet from 'components/layout/web/HeaderSweet'
@@ -20,7 +20,7 @@ export default function DocumentationLivraison(props) {
       <HeaderSweet />
       <BreadCrumb3 />
       <Section2>
-        <Section2.InnerMargin>
+        <Section2InnerMargin>
           <DocWrapper>
             <RulePage
               documentationPath='/documentation'
@@ -34,7 +34,7 @@ export default function DocumentationLivraison(props) {
               }}
             />
           </DocWrapper>
-        </Section2.InnerMargin>
+        </Section2InnerMargin>
       </Section2>
       <br />
       <br />

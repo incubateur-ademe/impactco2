@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
 import Meeting from 'components/meeting/Meeting'
 
 export default function Hero() {
   return (
     <Section2>
-      <Section2.WideContent>
-        <Section2.InnerMargin>
+      <Section2WideContent>
+        <Section2InnerMargin>
           <Layout>
             <div>
               <H1Title>
@@ -41,8 +41,8 @@ export default function Hero() {
               <Image width={560} height={976} src='/images/cards.svg' alt='' />
             </PictureContainer>
           </Layout>
-        </Section2.InnerMargin>
-      </Section2.WideContent>
+        </Section2InnerMargin>
+      </Section2WideContent>
     </Section2>
   )
 }

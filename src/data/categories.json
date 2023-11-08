@@ -23,7 +23,6 @@
     "name": "Livraison",
     "emoji": "📦",
     "slug": "livraison",
-    "breadcrumb": "Livraison",
     "title": "Découvrez l'impact des livraison de colis<br/>sur le climat",
     "description": "Mesurez facilement l'empreinte carbone d'une livraison",
     "equivalent": "impact[s] livraison[s]",
@@ -144,7 +143,6 @@
       "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
     }
   },
-
   {
     "id": 7,
     "name": "Mobilier",

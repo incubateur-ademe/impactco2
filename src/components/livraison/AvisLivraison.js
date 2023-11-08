@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
 
 export default function AvisLivraison() {
   return (
     <>
       <Wrapper>
         <Section2>
-          <Section2.InnerMargin>
+          <Section2InnerMargin>
             <FlexContainer>
               <div>
                 <H3Title>Un avis, une suggestion ? </H3Title>
@@ -23,7 +23,7 @@ export default function AvisLivraison() {
                 </Link>
               </ButtonPart>
             </FlexContainer>
-          </Section2.InnerMargin>
+          </Section2InnerMargin>
         </Section2>
       </Wrapper>
     </>

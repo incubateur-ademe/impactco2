@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useUrl } from 'hooks/useUrl'
 import MagicLink from 'components/base/MagicLink'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
 
 const Wrapper = styled.div`
   font-size: 0.75rem;
@@ -16,7 +16,7 @@ export default function BreadCrumb3() {
 
   return (
     <Section2>
-      <Section2.InnerMargin>
+      <Section2InnerMargin>
         <nav aria-label="fil d'ariane">
           <Wrapper>
             <MagicLink to='/'>Accueil</MagicLink>
@@ -33,7 +33,7 @@ export default function BreadCrumb3() {
             )}
           </Wrapper>
         </nav>
-      </Section2.InnerMargin>
+      </Section2InnerMargin>
     </Section2>
   )
 }

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { themes } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
 import ModalContext from 'components/providers/ModalProvider'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
 import OptionalRelay from './OptionalRelay'
@@ -100,7 +100,7 @@ export default function CalculateurLivraison(props) {
   return (
     <>
       <Section2 data-testid='calculateurLivraison'>
-        <Section2.InnerMargin embedded={props.embedded}>
+        <Section2InnerMargin $embedded={props.embedded}>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>
               <H2Title data-testid='calculateurTitleH2'>Estimez l'impact de votre livraison</H2Title>
@@ -225,7 +225,7 @@ export default function CalculateurLivraison(props) {
             <ResultatsLivraison co2eq={cO2eq} />
             <YearlyLivraison co2eq={cO2eq} />
           </ScreenshotWrapper2>
-        </Section2.InnerMargin>
+        </Section2InnerMargin>
       </Section2>
     </>
   )
