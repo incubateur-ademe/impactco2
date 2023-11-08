@@ -1,0 +1,13 @@
+{
+  "formation": {
+    "web": {
+      "amount": 1,
+      "size": "S"
+    }
+  },
+  "env": {
+    "NEXT_PUBLIC_SENTRY_ENVIRONMENT": {
+      "value": "REVIEW_APP"
+    }
+  }
+}
