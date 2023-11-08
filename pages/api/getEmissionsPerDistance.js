@@ -1,13 +1,12 @@
-import axios from 'axios'
+import { trackAPIRequest } from 'utils/middleware'
 import transportations from './transportations.json'
 
 const transportationsWithValues = transportations.filter((transportation) => transportation.values)
 
 export default async function handler(req, res) {
-  const queryObj = req.query
+  await trackAPIRequest(req, 'getEmissionsPerDistance', JSON.stringify(req.query))
 
-  trackMatomoOnce(queryObj.km)
-  trackMatomoTwice(queryObj.km)
+  const queryObj = req.query
 
   const km = queryObj.km || 1
   const filter = queryObj.filter || (queryObj.transportations ? 'all' : 'smart')
@@ -23,31 +22,6 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTION')
   return res.status(200).json(respObj || {})
-}
-
-function trackMatomoOnce(km) {
-  return axios
-    .post(
-      `https://stats.data.gouv.fr/matomo.php??idsite=156&rec=1&url=https%3A%2F%2Fapi.impactco2.fr%2Fbeta%2FgetEmissionsPerDistance%3Fkm%3D${km}`
-    )
-    .catch((error) => {
-      console.error('tracked failed', error)
-    })
-}
-
-const genRanHex = (size) => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('')
-
-function trackMatomoTwice(km) {
-  const id = genRanHex(16)
-  const rand = genRanHex(16)
-
-  return axios
-    .post(
-      `https://stats.data.gouv.fr/matomo.php?idsite=156&rec=1&_id=${id}&rand=${rand}&url=https%3A%2F%2Fapi.impactco2.fr%2Fbeta%2FgetEmissionsPerDistance%3Fkm%3D${km}`
-    )
-    .catch((error) => {
-      console.error('tracked failed', error)
-    })
 }
 
 function buildRespObj(activeTransportations, ignoreRadiativeForcing, filter, km, fields) {

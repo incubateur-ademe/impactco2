@@ -1,5 +1,6 @@
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { trackAPIRequest } from 'utils/middleware'
 import { NotionCommandValidation } from 'utils/notion'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -13,6 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return
   }
 
+  await trackAPIRequest(req, 'notion', JSON.stringify(inputs))
   try {
     await axios.post(
       'https://api.notion.com/v1/pages',

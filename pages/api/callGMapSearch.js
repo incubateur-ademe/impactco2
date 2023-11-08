@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { trackAPIRequest } from 'utils/middleware'
 import countries from './countries.json'
 
 export default async function handler(req, res) {
@@ -9,6 +10,7 @@ export default async function handler(req, res) {
     country = countries['FR']
   }
 
+  await trackAPIRequest(req, 'callGMapSearch', queryString)
   const data = await axios
     .get(`https://photon.komoot.io/api/?q=${queryString}&lat=${country[0]}&lon=${country[1]}&lang=fr`)
     .then((resp) => ({

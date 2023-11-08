@@ -1,5 +1,10 @@
 # CHANGELOG
 
+
+## 1.25.5 (09/11/2023)
+
+- CHORE - Tracking de l'utilisation de l'API
+
 ## 1.25.4 (07/11/2023)
 
 - B21 - Correction des titres et liens de la page des thématiques
