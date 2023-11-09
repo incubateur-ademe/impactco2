@@ -29,7 +29,7 @@ test('Affichage simulateur et source', async ({ page }) => {
 test("Calcul de l'impact d'une livraison", async ({ page }) => {
   await test.step('Par défaut un calcul de CO2 est affiché', async () => {
     // Given
-    await expect(page.getByTestId('bcTotal')).toHaveText('3,31 kg de CO2e ')
+    await expect(page.getByTestId('bcTotal')).toHaveText('2,46 kg de CO2e ')
   })
 
   await test.step('Si on prend un colis volumineux, on a bien une augmentation de CO2', async () => {
@@ -37,19 +37,19 @@ test("Calcul de l'impact d'une livraison", async ({ page }) => {
     await page.locator('select#retraits').selectOption({ label: 'Livraison à domicile' })
     await page.locator('select#produits').selectOption({ label: 'Mobilier et gros électroménager' })
     // When-Then
-    await expect(page.getByTestId('bcTotal')).toHaveText('70,59 kg de CO2e ')
+    await expect(page.getByTestId('bcTotal')).toHaveText('30,96 kg de CO2e ')
   })
 })
 
 test('Equivalences', async ({ page }) => {
   await test.step("Les équivalences par défaut s'affichent", async () => {
-    await expect(page.locator('#eq_nb_0')).toHaveText('15 km')
+    await expect(page.locator('#eq_nb_0')).toHaveText('11 km')
     await expect(page.locator('#eq_what_0')).toHaveText('en voiture')
 
-    await expect(page.locator('#eq_nb_1')).toHaveText('0,5 repas')
+    await expect(page.locator('#eq_nb_1')).toHaveText('0,3 repas')
     await expect(page.locator('#eq_what_1')).toHaveText('avec du boeuf')
 
-    await expect(page.locator('#eq_nb_2')).toHaveText('52 heures')
+    await expect(page.locator('#eq_nb_2')).toHaveText('39 heures')
     await expect(page.locator('#eq_what_2')).toHaveText('de streaming vidéo')
   })
 
@@ -66,15 +66,15 @@ test('Equivalences', async ({ page }) => {
 test('Fréquences', async ({ page }) => {
   await test.step("Le bilan carbone s'alourdit avec le nb de colis par mois", async () => {
     // Given
-    await expect(page.locator('#kgCo2e')).toHaveText('3,31 kg CO2e')
+    await expect(page.locator('#kgCo2e')).toHaveText('2,46 kg CO2e')
     // When
     await page.locator('select#numbers').selectOption({ value: '2' })
     // Then
-    await expect(page.locator('#kgCo2e')).toHaveText('6,63 kg CO2e')
+    await expect(page.locator('#kgCo2e')).toHaveText('4,93 kg CO2e')
   })
   await test.step("Le bilan carbone s'alourdit avec la fréquence", async () => {
-    await expect(page.locator('#kgCo2e')).toHaveText('6,63 kg CO2e')
+    await expect(page.locator('#kgCo2e')).toHaveText('4,93 kg CO2e')
     await page.locator('select#frequences').selectOption({ value: 'par_mois' })
-    await expect(page.locator('#kgCo2e')).toHaveText('79,53 kg CO2e')
+    await expect(page.locator('#kgCo2e')).toHaveText('59,12 kg CO2e')
   })
 })
