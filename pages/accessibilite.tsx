@@ -1,17 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-import Section2 from 'components/base/Section2'
-import WebBlue from 'components/layout/WebBlue'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import Web from 'components/layout/Web'
 
 const H1Title = styled.h1`
   margin-top: 3rem;
 `
 
+const FormatText = styled.div`
+  h1 {
+    font-size: 3rem;
+  }
+  > h2 {
+    margin-top: 3rem;
+  }
+`
+
 export default function Accessibilite() {
   return (
-    <WebBlue title={'Accessibilité'}>
+    <Web title='Accessibilité'>
       <Section2>
-        <Section2.InnerMargin>
+        <Section2InnerMargin>
           <FormatText>
             <H1Title>Déclaration d'accessibilité</H1Title>
             <h2 id='quest-ce-que-laccessibilité-numérique-'>Qu’est-ce que l’accessibilité numérique ?</h2>
@@ -149,17 +158,8 @@ export default function Accessibilite() {
               </li>
             </ul>
           </FormatText>
-        </Section2.InnerMargin>
+        </Section2InnerMargin>
       </Section2>
-    </WebBlue>
+    </Web>
   )
 }
-
-const FormatText = styled.div`
-  h1 {
-    font-size: 3rem;
-  }
-  > h2 {
-    margin-top: 3rem;
-  }
-`

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
 import ThemeCard from './ThemeCard'
 import Header from './heading/Header'
 
@@ -8,8 +8,8 @@ export default function ByTheme() {
   return (
     <Wrapper>
       <Section2>
-        <Section2.WideContent>
-          <Section2.InnerMargin>
+        <Section2WideContent>
+          <Section2InnerMargin>
             <Layout>
               <Header
                 title={
@@ -42,8 +42,8 @@ export default function ByTheme() {
                 </ThemeCards>
               </div>
             </Layout>
-          </Section2.InnerMargin>
-        </Section2.WideContent>
+          </Section2InnerMargin>
+        </Section2WideContent>
       </Section2>
     </Wrapper>
   )

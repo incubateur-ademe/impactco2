@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Category } from 'types/category'
+import { Equivalent } from 'types/equivalent'
 import { formatName } from 'utils/formatters'
 import MagicLink from 'components/base/MagicLink'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
 
 const Wrapper = styled.div`
   font-size: 0.75rem;
@@ -12,40 +14,50 @@ const Wrapper = styled.div`
   margin-top: 0.5rem;
   padding: 1rem 1rem 1rem 0;
 `
-export default function BreadCrumb2(props) {
-  const naming = props?.breadcrumb?.category?.breadcrumb || props?.breadcrumb?.category?.name
 
+export type BreadcrumbProps =
+  | {
+      type: 'equivalent'
+      category: Category
+      equivalent?: Equivalent
+    }
+  | {
+      type: 'accueil'
+      page: string
+    }
+
+export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProps }) {
   return (
     <>
-      {props?.breadcrumb ? (
+      {breadcrumb ? (
         <Section2>
-          <Section2.InnerMargin>
+          <Section2InnerMargin>
             <nav aria-label="fil d'ariane">
               <Wrapper>
-                {props.breadcrumb && props.breadcrumb.type === 'equivalent' && (
+                {breadcrumb && breadcrumb.type === 'equivalent' && (
                   <>
                     <MagicLink to='/thematiques'>Thématiques</MagicLink>
                     {' > '}{' '}
-                    {props.breadcrumb.equivalent ? (
+                    {breadcrumb.equivalent ? (
                       <>
-                        <MagicLink to={`/${props.breadcrumb.category.slug}`}>{naming}</MagicLink>
+                        <MagicLink to={`/${breadcrumb.category.slug}`}>{breadcrumb.category.name}</MagicLink>
                         {' > '}
-                        {formatName(naming, 1, true)}
+                        {formatName(breadcrumb.equivalent.name, 1, true)}
                       </>
                     ) : (
-                      naming
+                      breadcrumb.category.name
                     )}
                   </>
                 )}
-                {props.breadcrumb && props.breadcrumb.type === 'accueil' && (
+                {breadcrumb && breadcrumb.type === 'accueil' && (
                   <>
                     <MagicLink to='/'>Page d’accueil</MagicLink>
-                    {' > '} {props.breadcrumb.page}
+                    {' > '} {breadcrumb.page}
                   </>
                 )}
               </Wrapper>
             </nav>
-          </Section2.InnerMargin>
+          </Section2InnerMargin>
         </Section2>
       ) : (
         <></>

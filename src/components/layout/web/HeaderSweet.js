@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
 import Marianne from 'components/base/Marianne'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
 import NavSearchBar from 'components/misc/search/NavSearchBar'
 import Hamburger from './Hamburger'
 import MenuSweet from './nav/MenuSweet'
@@ -19,9 +19,9 @@ export default function HeaderSweet() {
   return (
     <BoxedShadow>
       <Section2>
-        <Section2.WideContent>
+        <Section2WideContent>
           <Header aria-label='En-tête'>
-            <Section2.InnerMargin>
+            <Section2InnerMargin>
               <LogoBar>
                 <Logos>
                   <Hideable>
@@ -47,10 +47,10 @@ export default function HeaderSweet() {
                   </HamburgerContainer>
                 </Actions>
               </LogoBar>
-            </Section2.InnerMargin>
+            </Section2InnerMargin>
           </Header>
           <NavBar>
-            <Section2.InnerMargin>
+            <Section2InnerMargin>
               <NavLinksMobile $shouldDisplay={hamburgerOpened}>
                 <NavLink>
                   <SmallActionSearch>
@@ -114,9 +114,9 @@ export default function HeaderSweet() {
                   </Link>
                 </NavLink>
               </NavLinksDesktop>
-            </Section2.InnerMargin>
+            </Section2InnerMargin>
           </NavBar>
-        </Section2.WideContent>
+        </Section2WideContent>
       </Section2>
     </BoxedShadow>
   )

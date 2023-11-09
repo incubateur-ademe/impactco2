@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import OutboundLink from 'components/base/OutboundLink'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
 import { Emojis } from 'components/visualizations/Visualization.styles'
 
 export default function ConclusionLivraison() {
@@ -8,7 +8,7 @@ export default function ConclusionLivraison() {
     <>
       <Wrapper>
         <Section2>
-          <Section2.InnerMargin>
+          <Section2InnerMargin>
             <UpperBubble>
               <Icon>
                 <Emojis>📖</Emojis>
@@ -24,7 +24,7 @@ export default function ConclusionLivraison() {
                 </OutboundLink>
               </SimpleText>
             </TextContainer>
-          </Section2.InnerMargin>
+          </Section2InnerMargin>
         </Section2>
       </Wrapper>
     </>

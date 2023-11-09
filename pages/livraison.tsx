@@ -1,12 +1,12 @@
 import React from 'react'
 import { Category } from 'types/category'
 import categories from 'data/categories.json'
-import WebBlue from 'components/layout/WebBlue'
+import Web from 'components/layout/Web'
 import Impactlivraison from './impactlivraison'
 
 export default function CategoryPage({ category }: { category: Category }) {
   return (
-    <WebBlue
+    <Web
       title={category.meta.title}
       description={category.meta.description}
       breadcrumb={{
@@ -14,7 +14,7 @@ export default function CategoryPage({ category }: { category: Category }) {
         category: category,
       }}>
       <Impactlivraison />
-    </WebBlue>
+    </Web>
   )
 }
 

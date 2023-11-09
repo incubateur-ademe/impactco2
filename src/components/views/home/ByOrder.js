@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import minicards from './data/minicards.json'
 import categories from 'data/categories.json'
 import DataContext from 'components/providers/DataProvider'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
 import Header from './heading/Header'
 import ArrowLeft from './img/ArrowLeft'
 import ArrowRight from './img/ArrowRight'
@@ -34,8 +34,8 @@ export default function ByOrder() {
   return (
     <Wrapper>
       <Section2>
-        <Section2.WideContent>
-          <Section2.InnerMargin>
+        <Section2WideContent>
+          <Section2InnerMargin>
             <Layout>
               <Header
                 title={
@@ -73,8 +73,8 @@ export default function ByOrder() {
                 </Grid>
               </div>
             </Layout>
-          </Section2.InnerMargin>
-        </Section2.WideContent>
+          </Section2InnerMargin>
+        </Section2WideContent>
       </Section2>
     </Wrapper>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import WebBlue from 'components/layout/WebBlue'
+import Web from 'components/layout/Web'
 import ByArticle from 'components/views/home/ByArticle'
 import ByOrder from 'components/views/home/ByOrder'
 import ByTheme from 'components/views/home/ByTheme'
@@ -8,12 +8,12 @@ import NGCCard from 'components/views/home/NGCCard'
 
 export default function Home() {
   return (
-    <WebBlue title={'Accueil'}>
+    <Web title='Accueil'>
       <Hero />
       <ByTheme />
       <ByOrder />
       <ByArticle />
       <NGCCard />
-    </WebBlue>
+    </Web>
   )
 }

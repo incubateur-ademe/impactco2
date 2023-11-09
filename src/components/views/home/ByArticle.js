@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import reusecards from './data/reusecards.json'
 import Button from 'components/base/Button'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
 import Meeting from 'components/meeting/Meeting'
 import Header from './heading/Header'
 import ChtingLeft from './img/ChtingLeft'
@@ -36,8 +36,8 @@ export default function ByArticle() {
   return (
     <Wrapper>
       <Section2>
-        <Section2.WideContent>
-          <Section2.InnerMargin>
+        <Section2WideContent>
+          <Section2InnerMargin>
             <Layout>
               <Header
                 title={
@@ -128,8 +128,8 @@ export default function ByArticle() {
                 </ReuseGrid>
               </DownSide>
             </Layout>
-          </Section2.InnerMargin>
-        </Section2.WideContent>
+          </Section2InnerMargin>
+        </Section2WideContent>
       </Section2>
     </Wrapper>
   )

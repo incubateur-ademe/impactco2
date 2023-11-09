@@ -1,4 +1,4 @@
-import { withThemeFromJSXProvider } from '@storybook/addon-themes';
+import { withThemeFromJSXProvider } from '@storybook/addon-themes'
 import { Preview } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 import { themes } from '../src/utils/styles'
@@ -20,6 +20,7 @@ export const decorators = [
     themes,
     defaultTheme: 'default',
     Provider: ThemeProvider,
-  })];
+  }),
+]
 
 export default preview

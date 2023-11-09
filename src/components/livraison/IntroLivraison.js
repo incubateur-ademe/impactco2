@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import OutboundLink from 'components/base/OutboundLink'
-import Section2 from 'components/base/Section2'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
 
 const H1Title = styled.h1`
   margin-top: 0;
@@ -38,7 +38,7 @@ export default function IntroLivraison(props) {
   return (
     <>
       <Section2>
-        <Section2.InnerMargin embedded={props.embedded}>
+        <Section2InnerMargin $embedded={props.embedded}>
           <H1Title>
             Mesurer l'impact carbone de la <MainColorSpan>livraison de colis</MainColorSpan>
           </H1Title>
@@ -68,7 +68,7 @@ export default function IntroLivraison(props) {
             </>
           )}
           <Separator embedded={props.embedded} />
-        </Section2.InnerMargin>
+        </Section2InnerMargin>
       </Section2>
     </>
   )

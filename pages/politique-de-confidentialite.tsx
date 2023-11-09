@@ -1,28 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import Section2 from 'components/base/Section2'
-import WebBlue from 'components/layout/WebBlue'
-
-const H1Title = styled.h1`
-  margin-top: 3rem;
-`
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import Web from 'components/layout/Web'
 
 const FormatText = styled.div`
   h1 {
     font-size: 3rem;
-  }
-  > h2 {
     margin-top: 3rem;
   }
 `
 
 export default function Politique() {
   return (
-    <WebBlue title={'Politique de confidentialité'}>
+    <Web title='Politique de confidentialité'>
       <Section2>
-        <Section2.InnerMargin>
+        <Section2InnerMargin>
           <FormatText>
-            <H1Title>Politique de confidentialité</H1Title>
+            <h1>Politique de confidentialité</h1>
             <p>
               La simulation et les calculs se font dans votre navigateur Web, donc nous ne collectons aucune données de
               simulation.
@@ -39,8 +33,8 @@ export default function Politique() {
               cookies !
             </p>
           </FormatText>
-        </Section2.InnerMargin>
+        </Section2InnerMargin>
       </Section2>
-    </WebBlue>
+    </Web>
   )
 }
