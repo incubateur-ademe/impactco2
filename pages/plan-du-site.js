@@ -41,7 +41,7 @@ export default function PlanDuSite() {
   }
 
   return (
-    <WebBlue title={'Plan du site'}>
+    <WebBlue title='Plan du site'>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>

@@ -100,7 +100,7 @@ const nextConfig = {
       },
       {
         source: '/categories',
-        destination: '/',
+        destination: '/thematiques',
         permanent: true,
       },
       {

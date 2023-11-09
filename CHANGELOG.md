@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.25.4 (07/11/2023)
+
+- B21 - Correction des titres et liens de la page des thématiques
+
 ## 1.25.3 (07/11/2023)
 
 - BSR - Améliorations de la taille du bundle

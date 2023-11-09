@@ -4,13 +4,17 @@ import styled from 'styled-components'
 import Section2 from 'components/base/Section2'
 import WebBlue from 'components/layout/WebBlue'
 
+const H1Title = styled.h1`
+  margin-top: 3rem;
+`
+
 export default function MetionsLegales() {
   return (
     <WebBlue title={'Mentions légales'}>
       <Section2>
         <Section2.InnerMargin>
           <FormatText>
-            <h1>Mentions légales</h1>
+            <H1Title>Mentions légales</H1Title>
             <h2>Informations légales</h2>
             <p>
               Impact CO2&nbsp;
