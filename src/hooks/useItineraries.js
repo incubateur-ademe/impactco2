@@ -8,9 +8,7 @@ export function useItinerary(start, end, mode) {
     queryFn: () =>
       axios
         .get(
-          // API for now
-          // `https://impactco2.fr/.netlify/functions/callGMap/?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
-          `/api/callGMap/?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
+          `/api/callGMap?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
         )
         .then((res) => res.data.rows),
     enabled: start.latitude && end.latitude && mode ? true : false,
