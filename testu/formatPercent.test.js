@@ -21,7 +21,7 @@ describe('formatPercent', () => {
     expect(formatPercent(3, 7)).toBe('42,9')
   })
 
-  test('Devrait gérer correctement la valeur zéro pour le total', () => {
+  test('Ne peut pas gérer un 2è argument à zéro', () => {
     expect(formatPercent(25, 0)).toBe('∞')
   })
 
