@@ -1,14 +1,14 @@
 import '@testing-library/jest-dom'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import axios from 'axios'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper'
+import axiosClient from 'utils/axios'
 import CalculateurLivraison from 'components/livraison/CalculateurLivraison'
 import livraisonjson from '../test-mock/livraison.json'
 
 describe('CalculateurLivraison - composant principal de la partie livraison', () => {
   beforeEach(async () => {
-    const mockGet = jest.spyOn(axios, 'get')
+    const mockGet = jest.spyOn(axiosClient, 'get')
     mockGet.mockImplementation((url) => {
       if (url === 'https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json') {
         return Promise.resolve({ data: livraisonjson })

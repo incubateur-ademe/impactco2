@@ -1,5 +1,6 @@
-import axios, { AxiosResponse } from 'axios'
+import { AxiosResponse } from 'axios'
 import React, { FormEvent, useState } from 'react'
+import axiosClient from 'utils/axios'
 import { NotionCommand } from 'utils/notion'
 import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
@@ -14,7 +15,7 @@ const Meeting = () => {
     setSending(true)
     e.preventDefault()
 
-    await axios.post<string, AxiosResponse, NotionCommand>('/api/notion', {
+    await axiosClient.post<string, AxiosResponse, NotionCommand>('/api/notion', {
       type: 'contact',
       email,
     })

@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+import axiosClient from 'utils/axios'
 
 export function useSuggestions(search, focus) {
   return useQuery({
@@ -8,7 +8,7 @@ export function useSuggestions(search, focus) {
       search && search.length > 2
         ? // API for now
           // axios.get(`https://impactco2.fr/.netlify/functions/callGMapSearch?${search}`).then((res) => res.data.features)
-          axios.get(`/api/callGMapSearch?${search}`).then((res) => res.data.features)
+          axiosClient.get(`/api/callGMapSearch?${search}`).then((res) => res.data.features)
         : Promise.resolve([]),
     keepPreviousData: true,
     refetchOnWindowFocus: false,
@@ -20,7 +20,7 @@ export function usePosition(position) {
   return useQuery(
     ['position', position?.timestamp],
     () =>
-      axios
+      axiosClient
         .get(
           `https://api-adresse.data.gouv.fr/reverse/?lon=${position.coords.longitude}&lat=${position.coords.latitude}`
         )

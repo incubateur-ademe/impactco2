@@ -12,7 +12,7 @@ datasource db {
 
 model ApiKey {
   id    String @id @default(cuid())
-  key   String @db.Uuid
+  key   String @unique @db.Uuid
   owner String
 
   @@map("api_keys")

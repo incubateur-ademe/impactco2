@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+import axiosClient from 'utils/axios'
 
 export default function useRulesLivraison() {
   return useQuery({
     queryKey: ['rulesLivraison'],
     queryFn: () =>
-      axios.get(`https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json`).then((res) => {
+      axiosClient.get(`https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json`).then((res) => {
         removePropsNotStartingWith(res.data, 'livraison colis')
         return res.data
       }),
