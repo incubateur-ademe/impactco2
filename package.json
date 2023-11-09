@@ -54,6 +54,8 @@
     "preact": "^10.18.2",
     "publicodes": "1.0.0-beta.77",
     "publicodes-react": "1.0.0-beta.77",
+    "@incubateur-ademe/publicodes-impact-livraison": "^0.2.1",
+    "@incubateur-ademe/publicodes-negaoctet": "^1.0.1",
     "puppeteer-core": "^21.4.1",
     "react": "18.2.0",
     "react-countup": "^6.4.2",
