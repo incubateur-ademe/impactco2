@@ -72,7 +72,6 @@ const nextConfig = {
   sentry: {
     autoInstrumentServerFunctions: true,
     autoInstrumentMiddleware: true,
-    tunnelRoute: '/monitoring',
     widenClientFileUpload: true,
     hideSourceMaps: true,
   },
