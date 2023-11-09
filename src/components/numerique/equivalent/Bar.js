@@ -1,8 +1,8 @@
-import RulesContext from "../RulesProvider";
-import Emoji from "components/base/Emoji";
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { formatNumber } from "utils/formatters";
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import { formatNumber } from 'utils/formatters'
+import Emoji from 'components/base/Emoji'
+import RulesContext from '../RulesProvider'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,18 +14,18 @@ const Wrapper = styled.div`
   &:before {
     background-color: ${(props) => props.theme.colors.main};
     bottom: 0;
-    content: "";
+    content: '';
     left: -2000rem;
     position: absolute;
     right: -2000rem;
     top: 0;
   }
-`;
+`
 const Top = styled.div`
   border-radius: 1rem 1rem 0 0;
   color: ${(props) => props.theme.colors.background};
   position: relative;
-`;
+`
 const Number = styled.span`
   font-size: 3.75rem;
   font-weight: bold;
@@ -33,21 +33,21 @@ const Number = styled.span`
   ${(props) => props.theme.mq.small} {
     font-size: 3rem;
   }
-`;
+`
 const Unit = styled.span`
   font-size: 1rem;
 
   ${(props) => props.theme.mq.small} {
     font-size: 0.75rem;
   }
-`;
+`
 const Big = styled.span`
   font-size: 1.25rem;
 
   ${(props) => props.theme.mq.small} {
     font-size: 1rem;
   }
-`;
+`
 const StyledEmoji = styled(Emoji)`
   align-items: center;
   background-color: ${(props) => props.theme.colors.background};
@@ -65,21 +65,21 @@ const StyledEmoji = styled(Emoji)`
     height: 3.25rem;
     width: 3.25rem;
   }
-`;
+`
 
 export default function Bar(props) {
-  const { engine } = useContext(RulesContext);
+  const { engine } = useContext(RulesContext)
 
   return (
     <Wrapper>
       <Top>
-        <Number>{formatNumber(props.total)}</Number>{" "}
+        <Number>{formatNumber(props.total)}</Number>{' '}
         <Unit>
-          g <Big>CO2</Big>e{" "}
+          g <Big>CO2</Big>e{' '}
           {props.equivalent.unit || props.category.unit ? (
             <>/ {props.equivalent.unit || props.category.unit}</>
           ) : engine.evaluate(`${props.name} . durée`).nodeValue === 60 ? (
-            "/ heure"
+            '/ heure'
           ) : (
             <>/ {engine.evaluate(`${props.name} . durée`).nodeValue} minutes</>
           )}
@@ -87,5 +87,5 @@ export default function Bar(props) {
       </Top>
       <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
     </Wrapper>
-  );
+  )
 }

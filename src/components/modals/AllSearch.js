@@ -1,18 +1,18 @@
-import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
-import AllSearchCategory from "./AllSearchCategory.js";
-import TextInput from "components/base/TextInput";
-import DataContext from "components/providers/DataProvider";
-import React, { useContext, useEffect, useState } from "react";
-import styled from "styled-components";
+import Fuse from 'fuse.js'
+import React, { useContext, useEffect, useState } from 'react'
+import styled from 'styled-components'
+import DataContext from 'components/providers/DataProvider'
+import TextInput from 'components/base/TextInput'
+import AllSearchCategory from './AllSearchCategory.js'
 
 export default function AllSearch(props) {
   /** */
   // eslint-disable-next-line no-unused-vars
-  const { equivalents } = useContext(DataContext);
+  const { equivalents } = useContext(DataContext)
 
-  const [search, setSearch] = useState("");
-  const [results, setResults] = useState([]);
-  const [fuse, setFuse] = useState(null);
+  const [search, setSearch] = useState('')
+  const [results, setResults] = useState([])
+  const [fuse, setFuse] = useState(null)
 
   useEffect(() => {
     if (equivalents) {
@@ -20,59 +20,59 @@ export default function AllSearch(props) {
         new Fuse(equivalents, {
           keys: [
             {
-              name: "name",
+              name: 'name',
               weight: 1,
             },
             {
-              name: "slug",
+              name: 'slug',
               weight: 0.7,
             },
             {
-              name: "subtitle",
+              name: 'subtitle',
               weight: 0.4,
             },
             {
-              name: "synonyms",
+              name: 'synonyms',
               weight: 0.2,
             },
           ],
           threshold: 0.3,
           ignoreLocation: true,
         })
-      );
+      )
     }
-  }, [equivalents]);
+  }, [equivalents])
   useEffect(() => {
     setResults(
       fuse && search.length > 0
-        ? fuse.search(search.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+        ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
         : equivalents.map((equivalent) => ({ item: equivalent })).sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
-    );
-  }, [search, fuse, equivalents]);
+    )
+  }, [search, fuse, equivalents])
 
   return (
     <Wrapper>
       <SearchInput
         value={search}
         onChange={({ value }) => setSearch(value)}
-        placeholder={"Rechercher un objet ou un geste"}
+        placeholder={'Rechercher un objet ou un geste'}
       />
       {props.open && (
         <>
-          <AllSearchCategory items={results} cat={"numerique"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"usagenumerique"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"fruitsetlegumes"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"repas"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"chauffage"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"transport"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"habillement"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"electromenager"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"boisson"} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={"mobilier"} singleton={results?.length === 1} mb={"17rem"} />
+          <AllSearchCategory items={results} cat={'numerique'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'usagenumerique'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'fruitsetlegumes'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'repas'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'chauffage'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'transport'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'habillement'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'electromenager'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'boisson'} singleton={results?.length === 1} />
+          <AllSearchCategory items={results} cat={'mobilier'} singleton={results?.length === 1} mb={'17rem'} />
         </>
       )}
     </Wrapper>
-  );
+  )
 }
 
 const SearchInput = styled(TextInput)`
@@ -90,11 +90,11 @@ const SearchInput = styled(TextInput)`
     background-size: 5%;
   }
   margin: 0.5rem 0.5rem 0.5rem 0;
-`;
+`
 
 const Wrapper = styled.div`
   margin: 1rem 2rem 1rem 1rem;
   ${(props) => props.theme.mq.medium} {
     margin-left: 2.25rem;
   }
-`;
+`

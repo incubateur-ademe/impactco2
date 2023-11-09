@@ -1,5 +1,5 @@
-import ExplainArrow from "components/modals/ExplainArrow.js";
-import styled from "styled-components";
+import styled from 'styled-components'
+import ExplainArrow from 'components/modals/ExplainArrow.js'
 
 const Wrapper = styled.div`
   border: 1px solid #457be7;
@@ -11,12 +11,12 @@ const Wrapper = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
   }
-`;
+`
 
 export default function ExplainArrowContainer() {
   return (
     <Wrapper>
-      <ExplainArrow></ExplainArrow>
+      <ExplainArrow />
       <ExplainEqContainer>
         <ExplainEq>
           <div>
@@ -31,27 +31,27 @@ export default function ExplainArrowContainer() {
         </ExplainEq>
       </ExplainEqContainer>
     </Wrapper>
-  );
+  )
 }
 
 const ActualResult = styled.span`
   font-size: 36px;
   font-weight: 700;
   line-height: 56px;
-`;
+`
 
 const Units = styled.span`
   font-size: 18px;
   font-weight: 400;
   line-height: 40px;
-`;
+`
 
 const GreyText = styled.div`
   color: #746770;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
-`;
+`
 
 const ExplainEq = styled.div`
   padding: 0.5rem;
@@ -59,9 +59,9 @@ const ExplainEq = styled.div`
     padding: 1rem;
   }
   width: 15rem;
-`;
+`
 
 const ExplainEqContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
-`;
+`

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import DurationInput from './videoInput/DurationInput'
 import NetworkInput from './videoInput/NetworkInput'
 import ParticipantInput from './videoInput/ParticipantsInput'

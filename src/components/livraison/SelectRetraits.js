@@ -1,6 +1,6 @@
-import { retraits } from "./data.js";
-import Select from "components/base/Select";
-import styled from "styled-components";
+import styled from 'styled-components'
+import Select from 'components/base/Select'
+import { retraits } from './data.js'
 
 const StyledSelect = styled(Select)`
   border-left: 1px solid #e2dce0;
@@ -13,19 +13,19 @@ const StyledSelect = styled(Select)`
   > select {
     border: none;
   }
-`;
+`
 
 export default function SelectRetraits(props) {
   return (
     <>
       <StyledSelect
         onChange={(e) => {
-          props.changeRetrait(retraits.find((retrait) => retrait.uid === e.value));
+          props.changeRetrait(retraits.find((retrait) => retrait.uid === e.value))
         }}
         value={props.value}
-        label="Que vous faites livrer en"
-        name="retraits"
-      >
+        label='Que vous faites livrer en'
+        name='retraits'
+        data-testid='retraits'>
         {retraits.map((retrait) => (
           <option key={retrait.uid} value={retrait.uid}>
             {retrait.displayed}
@@ -33,5 +33,5 @@ export default function SelectRetraits(props) {
         ))}
       </StyledSelect>
     </>
-  );
+  )
 }

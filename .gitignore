@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -47,3 +48,6 @@ cypress/results/
 # Local Netlify folder
 .netlify
 
+
+# Sentry Config File
+.sentryclirc

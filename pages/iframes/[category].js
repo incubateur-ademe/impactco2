@@ -1,6 +1,5 @@
-import categories from 'data/categories.json'
 import React from 'react'
-
+import categories from 'data/categories.json'
 import Iframe from 'components/layout/Iframe'
 import Category from 'components/misc/Category'
 
@@ -22,12 +21,15 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
+
 export async function getStaticProps({ params }) {
+  const category = categories?.find((category) => category.slug === params.category)
+  if (!category) {
+    return { notFound: true }
+  }
   return {
     props: {
-      category: categories?.find(
-        (category) => category.slug === params.category
-      ),
+      category,
     },
   }
 }

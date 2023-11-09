@@ -1,69 +1,69 @@
-import CopyUrl from "./shareModal/CopyUrl";
-import Facebook2 from "./shareModal/Facebook2";
-import Linkedin2 from "./shareModal/Linkedin2";
-import Twitter2 from "./shareModal/Twitter2";
-import Whatsapp2 from "./shareModal/Whatsapp2";
-import Modal3 from "components/base/Modal3";
-import ReuseBulb from "components/livraison/ReuseBulb";
-import ModalContext from "components/providers/ModalProvider";
-import React, { useContext, useState } from "react";
-import styled from "styled-components";
-import { buildCurrentUrlFor } from "utils/urls";
+import React, { useContext, useState } from 'react'
+import styled from 'styled-components'
+import { buildCurrentUrlFor } from 'utils/urls'
+import ModalContext from 'components/providers/ModalProvider'
+import Modal3 from 'components/base/Modal3'
+import ReuseBulb from 'components/livraison/ReuseBulb'
+import CopyUrl from './shareModal/CopyUrl'
+import Facebook2 from './shareModal/Facebook2'
+import Linkedin2 from './shareModal/Linkedin2'
+import Twitter2 from './shareModal/Twitter2'
+import Whatsapp2 from './shareModal/Whatsapp2'
 
-const href = buildCurrentUrlFor(process.env.websiteurl, "/livraison#ressource");
+const href = buildCurrentUrlFor(process.env.websiteurl, '/livraison#ressource')
 
 const getTitle = () => {
   return (
     <Title>
       Partager <GreenText>la ressource</GreenText>
     </Title>
-  );
-};
+  )
+}
 
 export default function ReduireModal3() {
-  const { reduire: open, setReduire: setOpen } = useContext(ModalContext);
-  const [copied, setCopied] = useState(false);
+  const { reduire: open, setReduire: setOpen } = useContext(ModalContext)
+  const [copied, setCopied] = useState(false)
 
   const dismiss = () => {
-    setCopied(false);
-    setOpen(false);
-  };
+    setCopied(false)
+    setOpen(false)
+  }
 
   return (
-    <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width="45rem">
+    <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width='45rem'>
       <br />
       <CopyUrl url={href} copied={copied} setCopied={setCopied} />
       <Alternative>- ou -</Alternative>
       <WrapperSocial>
         <Facebook2
-          className="item1"
-          quote={"Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2"}
+          className='item1'
+          quote={'Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2'}
           url={href}
         />
         <Twitter2
-          title={"Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2"}
+          title={'Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2'}
           url={href}
         />
         <Whatsapp2
-          title={"Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2"}
+          title={'Découvrez l’impact carbone de la livraison d’un colis grâce au simulateur d’#impactCO2'}
           url={href}
         />
         <Linkedin2 url={href} />
       </WrapperSocial>
       <br />
-      <ReuseBulb></ReuseBulb>
+      <ReuseBulb />
     </Modal3>
-  );
+  )
 }
 
 const Title = styled.h2`
   font-size: 22px;
   margin: 1rem 0;
-`;
+`
 
 const GreenText = styled.span`
   color: #1c9b93;
-`;
+`
 
 const WrapperSocial = styled.div`
   align-items: center;
@@ -79,11 +79,11 @@ const WrapperSocial = styled.div`
       margin-left: 0rem;
     }
   }
-`;
+`
 
 const Alternative = styled.div`
   color: #746770;
   margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
-`;
+`

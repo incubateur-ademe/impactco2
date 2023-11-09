@@ -1,21 +1,21 @@
-import OptionalRelay from "./OptionalRelay";
-import OptionalTraj from "./OptionalTraj";
-import ResultatsLivraison from "./ResultatsLivraison";
-import SelectProduits from "./SelectProduits";
-import SelectRetraits from "./SelectRetraits";
-import YearlyLivraison from "./YearlyLivraison";
-import { calculateResultFunction } from "./calculateur_livraison_functions.js";
-import { produits, retraits, relays } from "./data.js";
-import { convertGramsToKilograms } from "./utils";
-import Section2 from "components/base/Section2";
-import RulesContextLivraison from "components/livraison/RulesProviderLivraison";
-import ScreenshotWrapper2 from "components/misc/ScreenshotWrapper2";
-import ModalContext from "components/providers/ModalProvider";
-import useScreenshot from "hooks/useScreenshot";
-import React, { useContext, useMemo, useState } from "react";
-import Switch from "react-switch";
-import styled from "styled-components";
-import { themes } from "utils/styles";
+import React, { useContext, useMemo, useState } from 'react'
+import Switch from 'react-switch'
+import styled from 'styled-components'
+import { themes } from 'utils/styles'
+import useScreenshot from 'hooks/useScreenshot'
+import ModalContext from 'components/providers/ModalProvider'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
+import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
+import OptionalRelay from './OptionalRelay'
+import OptionalTraj from './OptionalTraj'
+import ResultatsLivraison from './ResultatsLivraison'
+import SelectProduits from './SelectProduits'
+import SelectRetraits from './SelectRetraits'
+import YearlyLivraison from './YearlyLivraison'
+import { calculateResultFunction } from './calculateur_livraison_functions.js'
+import { produits, relays, retraits } from './data.js'
+import { convertGramsToKilograms } from './utils'
 
 const Svg = styled.svg`
   display: block;
@@ -25,123 +25,121 @@ const Svg = styled.svg`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 1.2rem;
-`;
+`
 
 export default function CalculateurLivraison(props) {
   // trunk-ignore(eslint/no-unused-vars)
-  const { engine } = useContext(RulesContextLivraison);
-  const { setIfl } = useContext(ModalContext);
+  const { engine } = useContext(RulesContextLivraison)
+  const { setIfl } = useContext(ModalContext)
   // eslint-disable-next-line no-unused-vars
-  const { setSocial } = useContext(ModalContext);
+  const { setSocial } = useContext(ModalContext)
 
-  const [cO2eq, setCO2eq] = useState(0);
+  const [cO2eq, setCO2eq] = useState(0)
 
-  const [isHabit, setIsHabit] = useState(false);
-  const [isPlane, setIsPlane] = useState(false);
-  const [showToggleContainer, setShowToggleContainer] = useState(true);
-  const [point, setPoint] = useState("point relais");
+  const [isHabit, setIsHabit] = useState(false)
+  const [isPlane, setIsPlane] = useState(false)
+  const [showToggleContainer, setShowToggleContainer] = useState(true)
+  const [point, setPoint] = useState('point relais')
   const [values, setValues] = useState({
-    produit: "habillement",
-    retrait: "relais",
-    relay: "voiture_thermique",
-    km: "7",
-    traj: "dom_tra",
-  });
+    produit: 'habillement',
+    retrait: 'relais',
+    relay: 'voiture_thermique',
+    km: '7',
+    traj: 'dom_tra',
+  })
 
   const [diffs, setDiffs] = useState({
     diffKm0: 0,
     diffPlane: 0,
-  });
+  })
 
   const calculateResult = () =>
-    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit, isPlane);
+    calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit, isPlane)
 
   useMemo(() => {
-    calculateResult();
-    setShowToggleContainer(values.retrait.amongst(["relais", "click"]));
+    calculateResult()
+    setShowToggleContainer(['relais', 'click'].includes(values.retrait))
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [values, isHabit, isPlane]);
+  }, [values, isHabit, isPlane])
 
-  const changeProduit = (produit) => setValues({ ...values, produit: produit.uid });
+  const changeProduit = (produit) => setValues({ ...values, produit: produit.uid })
   const changeRetrait = (retrait) => {
-    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_retrait_${retrait.uid}`]);
-    setPoint(retrait.uid === "click" ? "magasin" : retrait.uid === "relais" ? "point relais" : "");
-    setValues({ ...values, retrait: retrait.uid });
-  };
+    window?.please?.track(['trackEvent', 'Interaction', 'Select', `livraison_retrait_${retrait.uid}`])
+    setPoint(retrait.uid === 'click' ? 'magasin' : retrait.uid === 'relais' ? 'point relais' : '')
+    setValues({ ...values, retrait: retrait.uid })
+  }
   const changeRelay = (relay) => {
-    window?.please?.track(["trackEvent", "Interaction", "Select", `livraison_dernierkm_${relay.uid}`]);
-    setValues({ ...values, relay: relay.uid });
-  };
+    window?.please?.track(['trackEvent', 'Interaction', 'Select', `livraison_dernierkm_${relay.uid}`])
+    setValues({ ...values, relay: relay.uid })
+  }
 
-  const changeTraj = (traj) => setValues({ ...values, traj: traj.uid });
-  const changeKm = (km) => setValues({ ...values, km: km });
+  const changeTraj = (traj) => setValues({ ...values, traj: traj.uid })
+  const changeKm = (km) => setValues({ ...values, km: km })
 
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    "impactco2_livraison",
-    "jpg",
-    "livraison_simulateur_screenshot"
-  );
+    'impactco2_livraison',
+    'jpg',
+    'livraison_simulateur_screenshot'
+  )
 
   const integrerClicked = () => {
-    window?.please?.track(["trackEvent", "Interaction", "Modal", "livraison_simulateur_integrate"]);
-    setIfl(true);
-  };
+    window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'livraison_simulateur_integrate'])
+    setIfl(true)
+  }
 
   const habitClicked = () => {
-    window?.please?.track(["trackEvent", "Interaction", "Toggle", "impact_livraison_habit"]);
-    setIsHabit(!isHabit);
-  };
+    window?.please?.track(['trackEvent', 'Interaction', 'Toggle', 'impact_livraison_habit'])
+    setIsHabit(!isHabit)
+  }
 
   const farawayClicked = () => {
-    window?.please?.track(["trackEvent", "Interaction", "Toggle", "impact_livraison_faraway"]);
-    setIsPlane(!isPlane);
-  };
+    window?.please?.track(['trackEvent', 'Interaction', 'Toggle', 'impact_livraison_faraway'])
+    setIsPlane(!isPlane)
+  }
 
   return (
     <>
-      <Section2>
-        <Section2.InnerMargin embedded={props.embedded}>
+      <Section2 data-testid='calculateurLivraison'>
+        <Section2InnerMargin $embedded={props.embedded}>
           <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
             <Flex>
-              <H2Title>Estimez l'impact de votre livraison</H2Title>
-              <div className="buttons">
-                <ButtonChange onClick={() => setSocial(true)} className="noscreenshot" id="shareUp">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -2 24 24">
+              <H2Title data-testid='calculateurTitleH2'>Estimez l'impact de votre livraison</H2Title>
+              <div className='buttons'>
+                <ButtonChange onClick={() => setSocial(true)} className='noscreenshot' id='shareUp'>
+                  <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 -2 24 24'>
                     <path
-                      fill="#564d53"
-                      d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"
+                      fill='#564d53'
+                      d='M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z'
                     />
                   </svg>
                   <HideableSpan>&nbsp;Partager</HideableSpan>
                 </ButtonChange>
-                <ButtonChange onClick={integrerClicked} className="noscreenshot">
+                <ButtonChange onClick={integrerClicked} className='noscreenshot'>
                   <svg
-                    width="16px"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 20 16"
-                  >
+                    width='16px'
+                    aria-hidden='true'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 20 16'>
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+                      stroke='currentColor'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
+                      d='M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15'
                     />
                   </svg>
                   <HideableSpan>&nbsp;Intégrer le simulateur</HideableSpan>
                 </ButtonChange>
-                <ButtonChange onClick={takeScreenshot} className="noscreenshot">
+                <ButtonChange onClick={takeScreenshot} className='noscreenshot'>
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    viewBox='0 0 16 16'>
+                    <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
+                    <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z' />
                   </svg>
                   <HideableSpan>&nbsp;Télécharger</HideableSpan>
                 </ButtonChange>
@@ -152,74 +150,73 @@ export default function CalculateurLivraison(props) {
               <SelectProduits changeProduit={changeProduit} value={values.produit} />
               <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
             </DropList>
-            <ToggleContainer show={showToggleContainer}>
+            <ToggleContainer $show={showToggleContainer} data-testid='partieMagasin'>
               <ToggleHabitContainer>
                 <FlexHabit>
-                  <div className="item1">
+                  <div className='item1'>
                     <Switch
-                      className="toggle"
+                      className='toggle'
                       checked={isHabit}
                       onChange={habitClicked}
-                      offColor={"#fff"}
+                      offColor={'#fff'}
                       onColor={themes.default.colors.main2}
-                      aria-label="Changer de thème"
-                      uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
+                      aria-label='Changer de thème'
+                      uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                       checkedHandleIcon={
-                        <Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16">
+                        <Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'>
                           <path
-                            fill="#39a69e"
-                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+                            fill='#39a69e'
+                            d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'
                           />
                         </Svg>
                       }
                     />
                   </div>
-                  <div className="item2">Le {point} est sur votre trajet habituel</div>
-                  <div className="item3">
+                  <div className='item2'>Le {point} est sur votre trajet habituel</div>
+                  <div className='item3'>
                     <Addendum>
-                      <span className="plus">+</span>
-                      <span className="txt">{convertGramsToKilograms(diffs.diffKm0)} kg de CO2e</span>
+                      <span className='plus'>+</span>
+                      <span className='txt' data-testid='bcTrajet'>
+                        {convertGramsToKilograms(diffs.diffKm0)} kg de CO2e
+                      </span>
                     </Addendum>
                   </div>
                 </FlexHabit>
               </ToggleHabitContainer>
-              <Optionals show={!isHabit}>
-                <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point}></OptionalRelay>
-                <OptionalTraj
-                  km={values.km}
-                  changeKm={changeKm}
-                  changeTraj={changeTraj}
-                  value={values.traj}
-                ></OptionalTraj>
+              <Optionals $show={!isHabit}>
+                <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point} />
+                <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj} />
               </Optionals>
             </ToggleContainer>
-            <ToggleContainerBottom>
+            <ToggleContainerBottom data-testid='partieAvion'>
               <ToggleHabitContainer>
                 <FlexHabitBottom>
-                  <div className="item1">
+                  <div className='item1'>
                     <Switch
-                      className="toggle"
+                      className='toggle'
                       checked={isPlane}
                       onChange={farawayClicked}
-                      offColor={"#fff"}
+                      offColor={'#fff'}
                       onColor={themes.default.colors.main2}
-                      aria-label="Changer de thème"
-                      uncheckedHandleIcon={<Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16"></Svg>}
+                      aria-label='Changer de thème'
+                      uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                       checkedHandleIcon={
-                        <Svg x="0px" y="0px" width="16" height="16" viewBox="0 0 16 16">
+                        <Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'>
                           <path
-                            fill="#39a69e"
-                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+                            fill='#39a69e'
+                            d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'
                           />
                         </Svg>
                       }
                     />
                   </div>
-                  <div className="item2">Votre colis vient de loin (transport par avion).</div>
-                  <div className="item3">
+                  <div className='item2'>Votre colis vient de loin (transport par avion).</div>
+                  <div className='item3'>
                     <Addendum>
-                      <span className="plus">+</span>
-                      <span className="txt">{convertGramsToKilograms(diffs.diffPlane)} kg de CO2e</span>
+                      <span className='plus'>+</span>
+                      <span className='txt' data-testid='bcAvion'>
+                        {convertGramsToKilograms(diffs.diffPlane)} kg de CO2e
+                      </span>
                     </Addendum>
                   </div>
                 </FlexHabitBottom>
@@ -228,14 +225,14 @@ export default function CalculateurLivraison(props) {
             <ResultatsLivraison co2eq={cO2eq} />
             <YearlyLivraison co2eq={cO2eq} />
           </ScreenshotWrapper2>
-        </Section2.InnerMargin>
+        </Section2InnerMargin>
       </Section2>
     </>
-  );
+  )
 }
 
 const Optionals = styled.div`
-  display: ${(props) => (props.show ? "block" : "none")};
+  display: ${(props) => (props.$show ? 'block' : 'none')};
   > .item2 {
     align-items: center;
     display: flex;
@@ -247,7 +244,7 @@ const Optionals = styled.div`
       margin-left: 1rem;
     }
   }
-`;
+`
 
 const H2Title = styled.h2`
   font-size: 22px;
@@ -255,7 +252,7 @@ const H2Title = styled.h2`
   margin-bottom: 0;
   margin-right: 0.5rem;
   margin-top: 0;
-`;
+`
 
 const DropList = styled.div`
   background-color: ${(props) => props.theme.colors.background};
@@ -285,7 +282,7 @@ const DropList = styled.div`
       font-size: 0.75rem;
     }
   }
-`;
+`
 
 const Addendum = styled.div`
   align-items: center;
@@ -324,7 +321,7 @@ const Addendum = styled.div`
     margin-right: 5px;
     margin-top: -8px;
   }
-`;
+`
 
 const ButtonChange = styled.button`
   background-color: white;
@@ -347,7 +344,7 @@ const ButtonChange = styled.button`
   }
   padding: 4px 12px 4px 12px;
   text-align: center;
-`;
+`
 
 const Flex = styled.div`
   align-items: center;
@@ -363,12 +360,12 @@ const Flex = styled.div`
   button + button {
     margin-left: 0.5rem;
   }
-`;
+`
 
 const ToggleContainer = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
-  display: ${(props) => (props.show ? "block" : "none")};
-`;
+  display: ${(props) => (props.$show ? 'block' : 'none')};
+`
 
 const ToggleHabitContainer = styled.div`
   .toggle {
@@ -392,7 +389,7 @@ const ToggleHabitContainer = styled.div`
       }
     }
   }
-`;
+`
 
 const FlexHabit = styled.div`
   display: flex;
@@ -422,13 +419,13 @@ const FlexHabit = styled.div`
       margin-right: 1rem;
     }
   }
-`;
+`
 
 const ToggleContainerBottom = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-`;
+`
 
 const FlexHabitBottom = styled.div`
   border-top: 1px solid #d8dbe1;
@@ -458,10 +455,10 @@ const FlexHabitBottom = styled.div`
       margin-right: 1rem;
     }
   }
-`;
+`
 
 const HideableSpan = styled.span`
   ${(props) => props.theme.mq.xsmall} {
     display: none;
   }
-`;
+`

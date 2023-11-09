@@ -1,16 +1,16 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 const handleInteraction = () => {
-  window?.please?.track(["trackEvent", "Interaction", "Click", null]);
-  document.body.removeEventListener("click", handleInteraction);
-};
+  window?.please?.track(['trackEvent', 'Interaction', 'Click', null])
+  document.body.removeEventListener('click', handleInteraction)
+}
 export default function useInteraction() {
   useEffect(() => {
-    window?.please?.track(["trackEvent", "User", "Branche", process.env.BRANCH]);
+    window?.please?.track(['trackEvent', 'User', 'Branche', process.env.BRANCH])
 
-    document.body.addEventListener("click", handleInteraction);
+    document.body.addEventListener('click', handleInteraction)
     return () => {
-      document.body.removeEventListener("click", handleInteraction);
-    };
-  }, []);
+      document.body.removeEventListener('click', handleInteraction)
+    }
+  }, [])
 }

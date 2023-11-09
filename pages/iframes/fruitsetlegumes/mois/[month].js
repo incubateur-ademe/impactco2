@@ -1,8 +1,6 @@
-import categories from 'data/categories.json'
 import React from 'react'
-
+import categories from 'data/categories.json'
 import { getMonth, slugs } from 'utils/months'
-
 import Saisons from 'components/fruitsetlegumes/Saisons'
 import Iframe from 'components/layout/Iframe'
 

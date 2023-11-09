@@ -1,7 +1,7 @@
-import ButtonLink from "components/base/ButtonLink";
-import React, { useState } from "react";
-import styled from "styled-components";
-import { formatNumberPrecision, formatPercent } from "utils/formatters";
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { formatNumberPrecision, formatPercent } from 'utils/formatters'
+import ButtonLink from 'components/base/ButtonLink'
 
 const Toggle = styled(ButtonLink)`
   align-self: center;
@@ -12,7 +12,7 @@ const Toggle = styled(ButtonLink)`
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2rem;
   }
-`;
+`
 const Wrapper = styled.table`
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
@@ -23,7 +23,7 @@ const Wrapper = styled.table`
     font-size: 0.75rem;
     padding: 0.25rem;
   }
-`;
+`
 const Item = styled.tr`
   td {
     padding: 0.5rem;
@@ -39,8 +39,8 @@ const Item = styled.tr`
       border: none;
     }
   }
-`;
-const Label = styled.td``;
+`
+const Label = styled.td``
 const Value = styled.td`
   font-size: 0.625em;
   font-weight: 300;
@@ -49,42 +49,41 @@ const Value = styled.td`
   strong {
     font-size: 1.6em;
   }
-`;
+`
 const Percent = styled.td`
   text-align: right;
-`;
+`
 export default function Detail(props) {
-  const [details, setDetails] = useState(false);
+  const [details, setDetails] = useState(false)
 
   const order = [
-    "Agriculture",
-    "Transformation",
-    "Emballage",
-    "Transport",
-    "Supermarché et distribution",
-    "Consommation",
-  ];
+    'Agriculture',
+    'Transformation',
+    'Emballage',
+    'Transport',
+    'Supermarché et distribution',
+    'Consommation',
+  ]
 
   return (
     <>
-      <Toggle onClick={() => setDetails((prevDetails) => !prevDetails)} className="noscreenshot">
-        {details ? "Cacher" : "Voir"} le détail
+      <Toggle onClick={() => setDetails((prevDetails) => !prevDetails)} className='noscreenshot'>
+        {details ? 'Cacher' : 'Voir'} le détail
       </Toggle>
       {details && (
         <Wrapper>
           <tbody>
             {props.ecv
               .sort((a, b) => {
-                let res = a.value < b.value ? 1 : -1;
+                let res = a.value < b.value ? 1 : -1
                 if (a.label && b.label) {
-                  res = order.indexOf(a.label) > order.indexOf(b.label) ? 1 : -1;
+                  res = order.indexOf(a.label) > order.indexOf(b.label) ? 1 : -1
                 }
-                return res;
+                return res
               })
               .map((item) => (
                 <Item key={item.label}>
                   <Label>{item.label}</Label>
-
                   <Percent>{formatPercent(item.value, props.total)} %</Percent>
                   <Value>
                     <strong>{formatNumberPrecision(item.value)}</strong> CO
@@ -92,11 +91,11 @@ export default function Detail(props) {
                   </Value>
                 </Item>
               ))}
-            <Item key={"total"}>
+            <Item>
               <Label>
                 <strong>Total</strong>
               </Label>
-              <Percent></Percent>
+              <Percent />
               <Value>
                 <strong>{formatNumberPrecision(props.total)}</strong> CO
                 <sub>2</sub>e
@@ -106,5 +105,5 @@ export default function Detail(props) {
         </Wrapper>
       )}
     </>
-  );
+  )
 }

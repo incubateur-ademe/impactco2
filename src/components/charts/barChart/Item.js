@@ -1,14 +1,14 @@
-import Bar from "./item/Bar";
-import Emoji from "./item/Emoji";
-import Title from "./item/Title";
-import MagicLink from "components/base/MagicLink";
-import useIframe from "hooks/useIframe";
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import useIframe from 'hooks/useIframe'
+import MagicLink from 'components/base/MagicLink'
+import Bar from './item/Bar'
+import Emoji from './item/Emoji'
+import Title from './item/Title'
 
 const Wrapper = styled(MagicLink)`
   align-items: flex-end;
-  background-color: ${(props) => (props.current ? props.theme.colors.second : "transparent")};
+  background-color: ${(props) => (props.current ? props.theme.colors.second : 'transparent')};
   border-radius: 1rem;
   display: flex;
   padding: 0.875rem 0.875rem 1rem;
@@ -22,19 +22,19 @@ const Wrapper = styled(MagicLink)`
   ${(props) => props.theme.mq.small} {
     padding: 0.25rem 0.125rem 1rem;
   }
-`;
+`
 const ChartWrapper = styled.div`
   flex: 1;
-`;
+`
 export default function Item(props) {
-  const iframe = useIframe();
+  const iframe = useIframe()
   return (
-    <Wrapper {...props} to={(iframe ? "https://impactco2.fr" : "") + props.to} onClick={props.onClick || null} noIcon>
+    <Wrapper {...props} to={(iframe ? 'https://impactco2.fr' : '') + props.to} onClick={props.onClick || null} noIcon>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
         <Title title={props.title} subtitle={props.subtitle} component={props.component} />
         <Bar value={props.value} usage={props.usage} max={props.max} color={props.color} />
       </ChartWrapper>
     </Wrapper>
-  );
+  )
 }

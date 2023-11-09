@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
-
 import ChoicesInput from './question/ChoicesInput'
 import NumberInput from './question/NumberInput'
 
@@ -22,8 +21,7 @@ export default function Question(props) {
     }
     if (
       props.evaluation.unit === undefined &&
-      (props.rule.rawNode.type === 'booléen' ||
-        props.rule.rawNode.type === undefined) &&
+      (props.rule.rawNode.type === 'booléen' || props.rule.rawNode.type === undefined) &&
       typeof props.evaluation.nodeValue !== 'number'
     ) {
       return 'choices'

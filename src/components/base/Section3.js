@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-const Section3 = styled.div``;
+const Section3 = styled.div``
 
 Section3.WideContent = styled.div`
   ${(props) => props.theme.mq.medium} {
     width: 100vw;
   }
-`;
+`
 Section3.InnerMargin = styled.div`
   margin-left: ${(props) => (props.embedded ? 2 : 4)}rem;
   margin-right: ${(props) => (props.embedded ? 2 : 4)}rem;
@@ -26,6 +26,6 @@ Section3.InnerMargin = styled.div`
     margin-left: ${(props) => (props.embedded ? 0.5 : 0.75)}rem;
     margin-right: ${(props) => (props.embedded ? 0.5 : 0.75)}rem;
   }
-`;
+`
 
-export default Section3;
+export default Section3

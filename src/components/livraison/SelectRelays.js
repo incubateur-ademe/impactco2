@@ -1,6 +1,6 @@
-import { relays } from "./data.js";
-import Select from "components/base/Select";
-import styled from "styled-components";
+import styled from 'styled-components'
+import Select from 'components/base/Select'
+import { relays } from './data.js'
 
 const StyledSelect = styled(Select)`
   margin: 0;
@@ -24,19 +24,19 @@ const StyledSelect = styled(Select)`
       padding-left: 0;
     }
   }
-`;
+`
 
 export default function SelectRelays(props) {
   return (
     <>
       <StyledSelect
         onChange={(e) => {
-          props.changeRelay && props.changeRelay(relays.find((relay) => relay.uid === e.value));
+          props.changeRelay && props.changeRelay(relays.find((relay) => relay.uid === e.value))
         }}
         value={props.value}
-        label=""
-        name="relays"
-      >
+        label=''
+        name='relays'
+        data-testid='relays'>
         {relays.map((relay) => (
           <option key={relay.uid} value={relay.uid}>
             {relay.displayed}
@@ -44,5 +44,5 @@ export default function SelectRelays(props) {
         ))}
       </StyledSelect>
     </>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import Ademe from "components/base/Ademe";
-import FooterLogo from "components/base/FooterLogo";
-import Marianne from "components/base/Marianne";
-import Section3 from "components/base/Section3";
-import Link from "next/link";
-import React from "react";
-import styled from "styled-components";
+import Link from 'next/link'
+import React from 'react'
+import styled from 'styled-components'
+import Ademe from 'components/base/Ademe'
+import FooterLogo from 'components/base/FooterLogo'
+import Marianne from 'components/base/Marianne'
+import Section3 from 'components/base/Section3'
 
 export default function FooterBlue(props) {
   return (
@@ -27,24 +27,24 @@ export default function FooterBlue(props) {
                   <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
                 </FooterExplain>
               </div>
-              <div className="gridlinks">
+              <div className='gridlinks'>
                 <FooterLink>
-                  <Link href="/plan-du-site" title="Plan du site">
+                  <Link href='/plan-du-site' title='Plan du site'>
                     Plan du site
                   </Link>
                 </FooterLink>
                 <FooterLink>
-                  <Link href="/accessibilite" title="Accessibilité (non conforme)">
+                  <Link href='/accessibilite' title='Accessibilité (non conforme)'>
                     Accessibilité (non conforme)
                   </Link>
                 </FooterLink>
                 <FooterLink>
-                  <Link href="/mentions-legales" title="Mentions légales">
+                  <Link href='/mentions-legales' title='Mentions légales'>
                     Mentions légales
                   </Link>
                 </FooterLink>
                 <FooterLink>
-                  <Link href="/politique-de-confidentialite" title="Politique de confidentialité">
+                  <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
                     Politique de confidentialité
                   </Link>
                 </FooterLink>
@@ -55,7 +55,7 @@ export default function FooterBlue(props) {
         </Section3.WideContent>
       </Section3>
     </Wrapper>
-  );
+  )
 }
 
 const Logos = styled.div`
@@ -73,7 +73,7 @@ const Logos = styled.div`
   ${(props) => props.theme.mq.medium} {
     margin: 1.5rem 0 0 0;
   }
-`;
+`
 
 const FooterExplain = styled.div`
   margin: 3rem 0 3rem 0;
@@ -83,7 +83,7 @@ const FooterExplain = styled.div`
   ${(props) => props.theme.mq.medium} {
     margin: 1.5rem 0 1.5rem 0;
   }
-`;
+`
 
 const FooterLink = styled.div`
   a {
@@ -98,12 +98,12 @@ const FooterLink = styled.div`
     }
     text-decoration: none;
   }
-`;
+`
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.sky};
-  margin-top: ${(props) => props.mt || "0"};
-`;
+  margin-top: ${(props) => props.mt || '0'};
+`
 
 const Grid = styled.div`
   display: grid;
@@ -120,7 +120,7 @@ const Grid = styled.div`
     }
     margin-bottom: 1rem;
   }
-`;
+`
 
 const Version = styled.div`
   font-size: 0.75rem;
@@ -131,9 +131,9 @@ const Version = styled.div`
     margin-left: inherit;
     margin-top: 1rem;
   }
-`;
+`
 
 const LinearGradient = styled.div`
   background: ${(props) => `linear-gradient(white, ${props.theme.colors.sky})`};
   height: 8rem;
-`;
+`

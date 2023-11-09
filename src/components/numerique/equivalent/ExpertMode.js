@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
-
 import ButtonLink from 'components/base/ButtonLink'
-
 import RulesContext from '../RulesProvider'
 import Question from './expertMode/Question'
 
@@ -28,10 +26,7 @@ export default function ExpertMode(props) {
   const [open, setOpen] = useState(false)
   return (
     <>
-      <StyledButtonLink
-        onClick={() => setOpen((prevOpen) => !prevOpen)}
-        className='noscreenshot'
-      >
+      <StyledButtonLink onClick={() => setOpen((prevOpen) => !prevOpen)} className='noscreenshot'>
         Voir plus d'options
       </StyledButtonLink>
       {open && (

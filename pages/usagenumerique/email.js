@@ -1,7 +1,6 @@
+import React from 'react'
 import categories from 'data/categories.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
-import React from 'react'
-
 import Web from 'components/layout/Web'
 import Equivalent from 'components/numerique/Equivalent'
 import { RulesProvider } from 'components/numerique/RulesProvider'
@@ -22,14 +21,9 @@ export default function EmailPage(props) {
         type: 'equivalent',
         category: props.category,
         equivalent: props.equivalent,
-      }}
-    >
+      }}>
       <RulesProvider>
-        <Equivalent
-          equivalent={props.equivalent}
-          category={props.category}
-          name='email'
-        />
+        <Equivalent equivalent={props.equivalent} category={props.category} name='email' />
         <VisualizationSlider equivalent={props.equivalent} />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
@@ -41,9 +35,7 @@ export async function getStaticProps() {
   return {
     props: {
       equivalent: equivalents.find((equivalent) => equivalent.slug === 'email'),
-      category: categories.find(
-        (category) => category.slug === 'usagenumerique'
-      ),
+      category: categories.find((category) => category.slug === 'usagenumerique'),
     },
   }
 }

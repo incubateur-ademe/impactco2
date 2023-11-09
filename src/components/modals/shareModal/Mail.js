@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import MagicLink from 'components/base/MagicLink'
 
 const Svg = styled.svg``
@@ -8,11 +7,8 @@ export default function Mail(props) {
   return (
     <MagicLink
       to={` :?subject=${encodeURI(props.subject)}}`}
-      onClick={() =>
-        window._paq?.push(['trackEvent', 'Share', 'Email', props.url])
-      }
-      noIcon
-    >
+      onClick={() => window._paq?.push(['trackEvent', 'Share', 'Email', props.url])}
+      noIcon>
       <Svg height='448pt' viewBox='0 0 448 448' width='448pt'>
         <path d='m314.375 144h-180.75l90.375 77.464844zm0 0' />
         <path d='m224 240c-1.910156 0-3.757812-.683594-5.207031-1.929688l-98.792969-84.679687v150.609375h208v-150.609375l-98.792969 84.679687c-1.449219 1.246094-3.296875 1.929688-5.207031 1.929688zm0 0' />

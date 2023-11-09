@@ -1,14 +1,14 @@
-import OutboundLink from "components/base/OutboundLink";
-import Section2 from "components/base/Section2";
-import { Emojis } from "components/misc/Visualization";
-import styled from "styled-components";
+import styled from 'styled-components'
+import OutboundLink from 'components/base/OutboundLink'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Emojis } from 'components/visualizations/Visualization.styles'
 
 export default function ConclusionLivraison() {
   return (
     <>
       <Wrapper>
         <Section2>
-          <Section2.InnerMargin>
+          <Section2InnerMargin>
             <UpperBubble>
               <Icon>
                 <Emojis>📖</Emojis>
@@ -16,26 +16,25 @@ export default function ConclusionLivraison() {
             </UpperBubble>
             <TextContainer>
               <SimpleText>
-                Pour plus de conseils,{" "}
+                Pour plus de conseils,{' '}
                 <OutboundLink
-                  title="télécharger le guide de l’ADEME - Nouvelle fenêtre"
-                  href="https://librairie.ademe.fr/cadic/4466/guide-pratique-econsommateur-responsable.pdf"
-                >
+                  title='télécharger le guide de l’ADEME - Nouvelle fenêtre'
+                  href='https://librairie.ademe.fr/cadic/4466/guide-pratique-econsommateur-responsable.pdf'>
                   télécharger le guide de l’ADEME « E-consommateur & responsable »
                 </OutboundLink>
               </SimpleText>
             </TextContainer>
-          </Section2.InnerMargin>
+          </Section2InnerMargin>
         </Section2>
       </Wrapper>
     </>
-  );
+  )
 }
 
 const Wrapper = styled.div`
   background-color: #ebf2ff;
   margin-top: 2.5rem;
-`;
+`
 
 const SimpleText = styled.div`
   color: ${(props) => props.theme.colors.deepDark};
@@ -48,11 +47,11 @@ const SimpleText = styled.div`
   svg {
     margin-left: 0.25rem;
   }
-`;
+`
 
 const UpperBubble = styled.div`
   position: relative;
-`;
+`
 
 const Icon = styled.div`
   background: #ebf2ff;
@@ -67,8 +66,8 @@ const Icon = styled.div`
     padding-top: 0.1rem;
     text-align: left;
   }
-`;
+`
 
 const TextContainer = styled.div`
   padding: 1.5rem 0 1.5rem 3rem;
-`;
+`

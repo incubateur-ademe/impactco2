@@ -1,13 +1,13 @@
-import Section2 from "components/base/Section2";
-import Link from "next/link";
-import styled from "styled-components";
+import Link from 'next/link'
+import styled from 'styled-components'
+import { Section2, Section2InnerMargin } from 'components/base/Section2'
 
 export default function AvisLivraison() {
   return (
     <>
       <Wrapper>
         <Section2>
-          <Section2.InnerMargin>
+          <Section2InnerMargin>
             <FlexContainer>
               <div>
                 <H3Title>Un avis, une suggestion ? </H3Title>
@@ -15,34 +15,33 @@ export default function AvisLivraison() {
               </div>
               <ButtonPart>
                 <Link
-                  title={"Faire une suggestion"}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href={"https://tally.so/r/nP1e9b"}
-                >
+                  title={'Faire une suggestion'}
+                  target='_blank'
+                  rel='noreferrer noopener'
+                  href={'https://tally.so/r/nP1e9b'}>
                   Faire une suggestion
                 </Link>
               </ButtonPart>
             </FlexContainer>
-          </Section2.InnerMargin>
+          </Section2InnerMargin>
         </Section2>
       </Wrapper>
     </>
-  );
+  )
 }
 
 const Wrapper = styled.div`
   border-bottom: 1px solid #6f87ae;
   margin-top: 1.5rem;
   padding-bottom: 2rem;
-`;
+`
 
 const FlexContainer = styled.div`
   display: flex;
   ${(props) => props.theme.mq.medium} {
     flex-direction: column;
   }
-`;
+`
 
 const ButtonPart = styled.div`
   align-items: center;
@@ -61,7 +60,7 @@ const ButtonPart = styled.div`
     padding: 0.5rem 1rem;
     text-decoration: none;
   }
-`;
+`
 
 const H3Title = styled.h3`
   color: ${(props) => props.theme.colors.deepDarkReversible};
@@ -70,7 +69,7 @@ const H3Title = styled.h3`
   letter-spacing: 0em;
   line-height: 2.5rem;
   margin: 0;
-`;
+`
 
 const Subtitle = styled.div`
   color: ${(props) => props.theme.colors.deepDarkReversible};
@@ -78,4 +77,4 @@ const Subtitle = styled.div`
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 1.5rem;
-`;
+`

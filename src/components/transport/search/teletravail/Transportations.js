@@ -1,10 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import styled from 'styled-components'
-
 import DataContext from 'components/providers/DataProvider'
-
 import TransportContext from 'components/transport/TransportProvider'
-
 import Transportation from './transportations/Transportation'
 
 const Wrapper = styled.div`
@@ -39,16 +36,12 @@ export default function Transportations() {
           .filter((transportation) => transportation.default)
           .sort((a, b) => (a.id > b.id ? 1 : -1))
           .map((transportation) => (
-            <Transportation
-              key={transportation.id}
-              transportation={transportation}
-            />
+            <Transportation key={transportation.id} transportation={transportation} />
           ))}
       </List>
       <Result>
-        {transportations.find(
-          (transportation) => transportation.id === teletravailTransportation
-        )?.name || 'Choisissez votre mode de transport'}
+        {transportations.find((transportation) => transportation.id === teletravailTransportation)?.name ||
+          'Choisissez votre mode de transport'}
       </Result>
     </Wrapper>
   ) : null

@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import ModalContext from 'components/providers/ModalProvider'
-
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 
@@ -29,11 +27,7 @@ export default function Bottom(props) {
         </ButtonLink>{' '}
         émis {props.category?.include}
       </Disclaimer>
-      <Button
-        className={'noscreenshot'}
-        to={props.iframe ? 'https://impactco2.fr' : '/'}
-        hollow
-      >
+      <Button className={'noscreenshot'} to={props.iframe ? 'https://impactco2.fr' : '/'} hollow>
         Voir toutes les catégories
       </Button>
     </Wrapper>

@@ -1,6 +1,6 @@
-import OutboundLink from "components/base/OutboundLink.js";
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import OutboundLink from 'components/base/OutboundLink.js'
 
 const Wrapper = styled.div`
   font-size: 14px;
@@ -13,19 +13,19 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.small} {
     margin-bottom: 0;
   }
-`;
+`
 const UpdatedAt = styled.span`
   color: #564d53;
-`;
+`
 export default function SourceAgribalyse() {
   return (
     <Wrapper>
       <span> Source : </span>
-      <OutboundLink title="Agribalyse 3.1.1" href="https://agribalyse.ademe.fr/app" data-testid="lien-agribalyse">
-        Agribalyse 3.1.1{" "}
+      <OutboundLink title='Agribalyse 3.1.1' href='https://agribalyse.ademe.fr/app' data-testid='lien-agribalyse'>
+        Agribalyse 3.1.1{' '}
       </OutboundLink>
       <span> - </span>
       <UpdatedAt>Mise à jour le 10/08/2023 </UpdatedAt>
     </Wrapper>
-  );
+  )
 }

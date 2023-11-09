@@ -5,10 +5,7 @@ export default function usePageViews(sitename) {
   let location = useLocation()
   useEffect(() => {
     if (window._paq) {
-      window._paq.push([
-        'setCustomUrl',
-        location.pathname + (location.href || ''),
-      ])
+      window._paq.push(['setCustomUrl', location.pathname + (location.href || '')])
       window._paq.push(['setDocumentTitle', sitename])
 
       // remove all previously assigned custom variables, requires Matomo (formerly Piwik) 3.0.2

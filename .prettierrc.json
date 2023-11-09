@@ -1,5 +1,5 @@
 {
-  "printWidth": 80,
+  "printWidth": 120,
   "tabWidth": 2,
   "useTabs": false,
   "semi": false,
@@ -12,12 +12,15 @@
   "arrowParens": "always",
   "endOfLine": "lf",
   "importOrder": [
+    "data/(.*)$",
     "utils/(.*)$",
     "hooks/(.*)$",
     "components/providers/(.*)$",
     "components/(.*)$",
     "^[./]"
   ],
-  "importOrderSeparation": true,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+  ],
   "importOrderSortSpecifiers": true
 }

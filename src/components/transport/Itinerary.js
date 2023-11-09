@@ -1,22 +1,22 @@
-import Search from "./Search";
-import Checkbox from "components/base/Checkbox";
-import Section from "components/base/Section";
-import BarChart from "components/charts/BarChart";
-import Bottom from "components/misc/category/Bottom";
-import Instruction from "components/misc/category/Instruction";
-import Top from "components/misc/category/Top";
-import Wrapper from "components/misc/category/Wrapper";
-import TransportContext from "components/transport/TransportProvider";
-import useItineraries from "hooks/useItineraries";
-import useTransportations from "hooks/useTransportations";
-import React, { useContext } from "react";
+import React, { useContext } from 'react'
+import useItineraries from 'hooks/useItineraries'
+import useTransportations from 'hooks/useTransportations'
+import Checkbox from 'components/base/Checkbox'
+import Section from 'components/base/Section'
+import BarChart from 'components/charts/BarChart'
+import Bottom from 'components/misc/category/Bottom'
+import Instruction from 'components/misc/category/Instruction'
+import Top from 'components/misc/category/Top'
+import Wrapper from 'components/misc/category/Wrapper'
+import TransportContext from 'components/transport/TransportProvider'
+import Search from './Search'
 
 export default function Itinerary(props) {
-  const { displayAll, setDisplayAll, start, end } = useContext(TransportContext);
+  const { displayAll, setDisplayAll, start, end } = useContext(TransportContext)
 
-  const itineraries = useItineraries(start, end);
+  const itineraries = useItineraries(start, end)
 
-  const transportations = useTransportations(itineraries);
+  const transportations = useTransportations(itineraries)
 
   return (
     <Section>
@@ -26,20 +26,19 @@ export default function Itinerary(props) {
           {transportations.length ? (
             <Top>
               <Instruction />
-              <Top.Checkboxes visible>
+              <Top.Checkboxes $visible>
                 <Checkbox
-                  name="displayAll"
+                  name='displayAll'
                   checked={displayAll}
                   onChange={() => {
-                    setDisplayAll((prevDisplayAll) => !prevDisplayAll);
+                    setDisplayAll((prevDisplayAll) => !prevDisplayAll)
                     window?.please?.track([
-                      "trackEvent",
-                      "Interaction",
-                      "Voir tous les équivalents",
+                      'trackEvent',
+                      'Interaction',
+                      'Voir tous les équivalents',
                       props.category.name,
-                    ]);
-                  }}
-                >
+                    ])
+                  }}>
                   Voir tous les équivalents
                 </Checkbox>
               </Top.Checkboxes>
@@ -50,5 +49,5 @@ export default function Itinerary(props) {
         </Wrapper>
       </Section.Content>
     </Section>
-  );
+  )
 }

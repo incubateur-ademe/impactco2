@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export default function ExplainArrow() {
   return (
@@ -18,9 +18,9 @@ export default function ExplainArrow() {
           </Subexplain>
         </BlueGridInsider>
       </BlueGrid>
-      <Arrow></Arrow>
+      <Arrow />
     </Wrapper>
-  );
+  )
 }
 
 const BlueGrid = styled.div`
@@ -33,26 +33,26 @@ const BlueGrid = styled.div`
     border-top-right-radius: 16px;
     max-width: 100%;
   }
-`;
+`
 
 const ActualResult = styled.span`
   font-size: 36px;
   font-weight: 700;
   line-height: 56px;
-`;
+`
 
 const Units = styled.span`
   font-size: 18px;
   font-weight: 400;
   line-height: 40px;
-`;
+`
 
 const Subexplain = styled.span`
   color: #aec8fc;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
-`;
+`
 
 const Arrow = styled.div`
   background: #457be7;
@@ -66,14 +66,14 @@ const Arrow = styled.div`
     margin-top: -1px;
     width: 100%;
   }
-`;
+`
 
 const Wrapper = styled.div`
   display: flex;
   ${(props) => props.theme.mq.xlarge} {
     flex-direction: column;
   }
-`;
+`
 
 const BlueGridInsider = styled.div`
   margin-left: auto;
@@ -81,4 +81,4 @@ const BlueGridInsider = styled.div`
   padding: 1rem;
   padding-top: 0.35rem;
   width: 15rem;
-`;
+`

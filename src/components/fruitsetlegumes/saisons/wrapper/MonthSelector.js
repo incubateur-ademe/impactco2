@@ -1,10 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
-
 import { getMonth, slugs } from 'utils/months'
-
 import useIframe from 'hooks/useIframe'
-
 import FancySelect from 'components/base/FancySelect'
 
 export default function MonthSelector(props) {

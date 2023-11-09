@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-
 import TransportContext from 'components/transport/TransportProvider'
-
 import Distance from './search/Distance'
 import Itinerary from './search/Itinerary'
 import ModeSelector from './search/ModeSelector'
@@ -55,20 +53,14 @@ export default function Search(props) {
           <>
             <Text>
               Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancyModal(true)}>
-                (par personne)
-              </Color>{' '}
-              pour ce trajet
+              <Color onClick={() => setOccupancyModal(true)}>(par personne)</Color> pour ce trajet
             </Text>
             <Itinerary />
           </>
         )}
         {props.teletravail && (
           <>
-            <Text>
-              Découvrez la quantité de CO2e que vous économisez (à l&apos;année)
-              en travaillant de chez vous
-            </Text>
+            <Text>Découvrez la quantité de CO2e que vous économisez (à l&apos;année) en travaillant de chez vous</Text>
             <Teletravail />
           </>
         )}
@@ -76,10 +68,7 @@ export default function Search(props) {
           <>
             <Text>
               Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancyModal(true)}>
-                (par personne)
-              </Color>{' '}
-              pour cette distance
+              <Color onClick={() => setOccupancyModal(true)}>(par personne)</Color> pour cette distance
             </Text>
             <Distance />
           </>

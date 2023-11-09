@@ -1,7 +1,6 @@
+import React from 'react'
 import categories from 'data/categories.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
-import React from 'react'
-
 import Web from 'components/layout/Web'
 import Equivalent from 'components/numerique/Equivalent'
 import { RulesProvider } from 'components/numerique/RulesProvider'
@@ -21,14 +20,9 @@ export default function StreamingVideoPage(props) {
         type: 'equivalent',
         category: props.category,
         equivalent: props.equivalent,
-      }}
-    >
+      }}>
       <RulesProvider>
-        <Equivalent
-          equivalent={props.equivalent}
-          category={props.category}
-          name='streaming'
-        />
+        <Equivalent equivalent={props.equivalent} category={props.category} name='streaming' />
       </RulesProvider>
       <Text equivalent={props.equivalent} />
     </Web>
@@ -38,12 +32,8 @@ export default function StreamingVideoPage(props) {
 export async function getStaticProps() {
   return {
     props: {
-      equivalent: equivalents.find(
-        (equivalent) => equivalent.slug === 'streamingvideo'
-      ),
-      category: categories.find(
-        (category) => category.slug === 'usagenumerique'
-      ),
+      equivalent: equivalents.find((equivalent) => equivalent.slug === 'streamingvideo'),
+      category: categories.find((category) => category.slug === 'usagenumerique'),
     },
   }
 }

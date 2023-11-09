@@ -1,14 +1,14 @@
-import Emoji from "components/base/Emoji";
-import { Media, MediaBody, MediaFigure } from "components/base/Media";
-import styled from "styled-components";
-import { fullSentenceFormat } from "utils/formatters";
+import styled from 'styled-components'
+import { fullSentenceFormat } from 'utils/formatters'
+import Emoji from 'components/base/Emoji'
+import { Media, MediaBody, MediaFigure } from 'components/base/Media'
 
-const first2WordsOnly = (sentence) => sentence.split(" ").slice(0, 2).join(" ");
-const first2WordsRemoved = (sentence) => sentence.split(" ").slice(2).join(" ");
+const first2WordsOnly = (sentence) => sentence.split(' ').slice(0, 2).join(' ')
+const first2WordsRemoved = (sentence) => sentence.split(' ').slice(2).join(' ')
 
 export default function LivraisonEq(props) {
   return (
-    <Wrapper nbCol={props.nbCol}>
+    <Wrapper $nbCol={props.nbCol}>
       <Media>
         <MediaFigure>
           <EmojiWrapper>
@@ -17,20 +17,20 @@ export default function LivraisonEq(props) {
         </MediaFigure>
         <MediaBody>
           <Number id={`eq_nb_${props.position}`}>{first2WordsOnly(fullSentenceFormat(props))}</Number>
-          <div></div>
+          <div />
           <OfWhat id={`eq_what_${props.position}`}>
             {first2WordsRemoved(fullSentenceFormat(props)) || <span>&nbsp;</span>}
           </OfWhat>
-          <div></div>
-          <div></div>
+          <div />
+          <div />
         </MediaBody>
       </Media>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.div`
-  align-items: ${(props) => (props.nbCol === 3 ? "inherit" : "center")};
+  align-items: ${(props) => (props.$nbCol === 3 ? 'inherit' : 'center')};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
     padding-left: 1rem;
   }
   ${(props) => props.theme.mq.small} {
-    align-items: ${(props) => (props.nbCol === 3 ? "center" : "flex-start")};
+    align-items: ${(props) => (props.$nbCol === 3 ? 'center' : 'flex-start')};
   }
   ${(props) => props.theme.mq.xsmall} {
     padding-left: 0.5rem;
@@ -51,17 +51,17 @@ const Wrapper = styled.div`
   > div {
     ${(props) => props.theme.mq.small} {
       margin-bottom: 1rem;
-      width: ${(props) => (props.nbCol === 3 ? "10rem" : "inherit")};
+      width: ${(props) => (props.$nbCol === 3 ? '10rem' : 'inherit')};
     }
   }
-`;
+`
 
 const EmojiWrapper = styled.div`
   > span > img.emoji {
     height: 32px;
     width: 32px;
   }
-`;
+`
 
 const Number = styled.div`
   font-size: 1.125rem;
@@ -73,7 +73,7 @@ const Number = styled.div`
   }
   font-weight: 500;
   letter-spacing: 0em;
-`;
+`
 
 const OfWhat = styled.div`
   color: ${(props) => props.theme.colors.textGray};
@@ -82,4 +82,4 @@ const OfWhat = styled.div`
   letter-spacing: 0em;
   line-height: 16px;
   margin-top: -2px;
-`;
+`

@@ -1,21 +1,21 @@
-import SelectRelays from "./SelectRelays";
-import styled from "styled-components";
+import styled from 'styled-components'
+import SelectRelays from './SelectRelays'
 
 export default function OptionalRelay(props) {
   return (
     <Wrapper>
       <FlexContainer>
-        <div className="emptySpace"></div>
-        <div className="item2">
+        <div className='emptySpace' />
+        <div className='item2'>
           <Text>Vous effectuez généralement le trajet jusqu'au {props.point}</Text>
         </div>
-        <div className="item3">
-          <SelectRelays changeRelay={props.changeRelay} value={props.value}></SelectRelays>
+        <div className='item3'>
+          <SelectRelays changeRelay={props.changeRelay} value={props.value} />
         </div>
-        <div className="item4"></div>
+        <div className='item4' />
       </FlexContainer>
     </Wrapper>
-  );
+  )
 }
 
 const FlexContainer = styled.div`
@@ -41,7 +41,7 @@ const FlexContainer = styled.div`
     display: flex;
     min-width: 6rem;
   }
-`;
+`
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.textLight2};
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.small} {
     padding: 0 0 0.5rem 1rem;
   }
-`;
+`
 
 const Text = styled.div`
   font-size: 16px;
@@ -60,4 +60,4 @@ const Text = styled.div`
   letter-spacing: 0em;
   line-height: 24px;
   margin-right: 0.25rem;
-`;
+`
