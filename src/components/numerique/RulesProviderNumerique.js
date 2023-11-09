@@ -7,7 +7,7 @@ const RulesContextNumerique = React.createContext({})
 
 export function RulesProviderNumerique(props) {
   // @Clemog: We make unit errors silent.
-  const engine = useMemo(() => new Engine(rules, { logger: { log: () => {}, warn: () => {}, err: () => {} } }), [])
+  const engine = useMemo(() => new Engine(rules), [])
 
   const { situation, setSituation } = useSituation(engine)
 
