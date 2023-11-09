@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import RulesContext from '../RulesProvider'
+import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
 
 export default function Search(props) {
-  const { engine, setSituation } = useContext(RulesContext)
+  const { engine, setSituation } = useContext(RulesContextNumerique)
 
   useEffect(() => {
     setSituation({

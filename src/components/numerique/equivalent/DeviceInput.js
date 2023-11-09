@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styled from 'styled-components'
 import ModalContext from 'components/providers/ModalProvider'
 import ButtonLink from 'components/base/ButtonLink'
-import RulesContext from 'components/numerique/RulesProvider'
+import RulesContextNumerique from '../RulesProviderNumerique'
 import DailyUsageInput from './deviceInput/DailyUsageInput'
 import LifeSpanInput from './deviceInput/LifespanInput'
 
@@ -86,7 +86,7 @@ const StyledButtonLink = styled(ButtonLink)`
   margin: 0 auto;
 `
 export default function DeviceInput(props) {
-  const { setSituation } = useContext(RulesContext)
+  const { setSituation } = useContext(RulesContextNumerique)
 
   const { setDevices } = useContext(ModalContext)
 
