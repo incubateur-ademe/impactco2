@@ -23,7 +23,9 @@ const Meeting = () => {
   }
 
   return sent ? (
-    <SentMessage>Votre adresse a été prise en compte. L’équipe vous recontactera très prochainement !</SentMessage>
+    <SentMessage data-testid='sentMessage'>
+      Votre adresse a été prise en compte. L’équipe vous recontactera très prochainement !
+    </SentMessage>
   ) : (
     <Container onSubmit={onSubmit}>
       <TextInput
@@ -31,6 +33,7 @@ const Meeting = () => {
         required
         placeholder='Votre adresse email'
         type='email'
+        data-testid='emailInput'
         value={email}
         onChange={(e: { value: string; name: string }) => setEmail(e.value)}
       />
