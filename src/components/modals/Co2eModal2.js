@@ -6,7 +6,7 @@ import ExplainArrowContainer from 'components/modals/ExplainArrowContainer.js'
 
 const getTitle = () => {
   return (
-    <Title>
+    <Title data-testid='modalTitleEqCO2e'>
       Comprendre{' '}
       <GreenText>
         l&apos;équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
