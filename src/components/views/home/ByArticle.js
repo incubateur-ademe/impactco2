@@ -96,7 +96,8 @@ export default function ByArticle() {
                         <Link
                           href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
                           target='_blank'
-                          rel='noreferrer noopener'>
+                          rel='noreferrer noopener'
+                          data-testid='byArticleFaq'>
                           Foire aux Questions
                         </Link>{' '}
                         pour trouver des éléments de réponse pertinents.
