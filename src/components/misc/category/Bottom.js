@@ -22,7 +22,7 @@ export default function Bottom(props) {
     <Wrapper>
       <Disclaimer data-testid='bottomText'>
         Valeurs exprimées en {props.category.divider === 1 ? 'kg' : 'g'}{' '}
-        <ButtonLink onClick={() => setCo2e(true)} data-testid='co2eLink'>
+        <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
         émis {props.category?.include}
