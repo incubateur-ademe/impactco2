@@ -1,9 +1,12 @@
 # CHANGELOG
 
+## 1.25.7 (09/11/2023)
+
+- T25 - Sécurisation d'une partie de l'API
+
 ## 1.25.6 (07/11/2023)
 
 - B20 - Correction du fil d'arianne des pages d'équivalents
-
 
 ## 1.25.5 (09/11/2023)
 

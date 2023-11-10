@@ -41,6 +41,8 @@
     "chrome-aws-lambda": "^10.1.0",
     "copy-to-clipboard": "^3.3.3",
     "dotenv-cli": "^7.3.0",
+    "express-rate-limit": "^7.1.4",
+    "express-slow-down": "^2.0.0",
     "focus-trap-react": "^10.2.3",
     "fuse.js": "^6.6.2",
     "html-to-image": "^1.11.11",

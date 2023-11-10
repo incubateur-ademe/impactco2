@@ -6,9 +6,7 @@ export function useSuggestions(search, focus) {
     queryKey: ['search', search],
     queryFn: () =>
       search && search.length > 2
-        ? // API for now
-          // axios.get(`https://impactco2.fr/.netlify/functions/callGMapSearch?${search}`).then((res) => res.data.features)
-          axiosClient.get(`/api/callGMapSearch?${search}`).then((res) => res.data.features)
+        ? axiosClient.get(`/api/callGMapSearch?${search}`).then((res) => res.data.features)
         : Promise.resolve([]),
     keepPreviousData: true,
     refetchOnWindowFocus: false,
