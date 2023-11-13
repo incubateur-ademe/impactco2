@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.25.10 (13/11/2023)
+
+- T26 - Publicodes via librairies
+
 ## 1.25.9 (13/11/2023)
 
 - CHORE - Amélioration de log pour les api keys

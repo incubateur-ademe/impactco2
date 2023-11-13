@@ -7,7 +7,7 @@ import Section from 'components/base/Section'
 import Legend from 'components/charts/Legend'
 import StackedChart from 'components/charts/StackedChart'
 import Detail from 'components/views/equivalent/ecv/Detail'
-import RulesContext from './RulesProvider'
+import RulesContextNumerique from './RulesProviderNumerique'
 import Wrapper from './Wrapper'
 import Bar from './equivalent/Bar'
 import DeviceInput from './equivalent/DeviceInput'
@@ -37,7 +37,7 @@ export default function Simulateur(props) {
 
   const { setEcv } = useContext(ModalContext)
 
-  const { engine, situation } = useContext(RulesContext)
+  const { engine, situation } = useContext(RulesContextNumerique)
 
   const [construction, setConstruction] = useState(true)
 

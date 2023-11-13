@@ -34,6 +34,7 @@ export default function TextInput(props) {
       <Input
         type={props.type || 'text'}
         id={props.name}
+        data-testid={props['data-testid']}
         name={props.name}
         placeholder={props.placeholder}
         min={props.min}

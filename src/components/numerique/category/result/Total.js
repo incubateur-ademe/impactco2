@@ -1,9 +1,9 @@
-import React, { useContext, useMemo } from 'react'
+import { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import { formatNumber } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Tile from 'components/misc/tiles/Tile'
-import RulesContext from 'components/numerique/RulesProvider'
+import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 
 const Wrapper = styled.div`
   margin: 0;
@@ -44,7 +44,7 @@ const Tiles = styled.div`
 `
 
 export default function Total(props) {
-  const { engine, situation } = useContext(RulesContext)
+  const { engine, situation } = useContext(RulesContextNumerique)
 
   const { equivalents } = useContext(DataContext)
 
@@ -75,7 +75,7 @@ export default function Total(props) {
     <Wrapper>
       <Text>
         Vos usages émettent{' '}
-        <Big>
+        <Big data-testid='impactNumeriqueTotal'>
           {formatNumber(totalToUse / 1000)} kg CO<sub>2</sub>e <Color>par semaine</Color>
         </Big>{' '}
         <Disclaimer>
