@@ -69,4 +69,18 @@ describe('Seo', () => {
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[name="twitter:creator"]')[0].content).toBe('ademe')
   })
+  it('La meta twitter:title vaut la même chose que le titre', () => {
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[name="twitter:title"]')[0].content).toBe(default_title)
+  })
+  it('La meta twitter:description vaut la même chose que la description', () => {
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[name="twitter:description"]')[0].content).toBe(default_description)
+  })
+  it("La meta twitter:image vaut la même chose que l'image", () => {
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[name="twitter:image"]')[0].content).toBe(
+      'https://example.com/metaimage.png'
+    )
+  })
 })
