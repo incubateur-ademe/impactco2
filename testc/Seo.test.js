@@ -83,4 +83,12 @@ describe('Seo', () => {
       'https://example.com/metaimage.png'
     )
   })
+  it('La balise title peut être personnalisée', () => {
+    render(<Seo title='aaa' />)
+    expect(document.title).toBe('aaa | Impact CO2')
+  })
+  it('La meta image peut être personnalisée', () => {
+    const { container } = render(<Seo image={'myimage.png'} />)
+    expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('https://example.com/myimage.png')
+  })
 })
