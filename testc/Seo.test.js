@@ -48,10 +48,15 @@ describe('Seo', () => {
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[name=description]')[0].content).toBe(default_description)
   })
-  it("La meta og:url représente bien l'URL courante", () => {
+  it("La meta og:url représente bien l'URL courante (version simple)", () => {
     mockRouter.push('/current-path')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[property="og:url"]')[0].content).toBe('https://example.com/current-path')
+  })
+  it("La meta og:url représente bien l'URL courante (version compliquée)", () => {
+    mockRouter.push('/another/a?b=c')
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[property="og:url"]')[0].content).toBe('https://example.com/another/a?b=c')
   })
   it('La meta og:title vaut la même chose que le title', () => {
     const { container } = render(<Seo />)
@@ -90,5 +95,9 @@ describe('Seo', () => {
   it('La meta image peut être personnalisée', () => {
     const { container } = render(<Seo image={'myimage.png'} />)
     expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('https://example.com/myimage.png')
+  })
+  it('La description peut être personnalisée', () => {
+    const { container } = render(<Seo description={'my description'} />)
+    expect(container.querySelectorAll('meta[name=description]')[0].content).toBe('my description')
   })
 })
