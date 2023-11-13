@@ -94,9 +94,10 @@ export default function ByArticle() {
                       <MiddleLi>
                         Enrichissez vos contenus grâce à notre&nbsp;
                         <Link
-                          href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
+                          href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
                           target='_blank'
-                          rel='noreferrer noopener'>
+                          rel='noreferrer noopener'
+                          data-testid='byArticleFaq'>
                           Foire aux Questions
                         </Link>{' '}
                         pour trouver des éléments de réponse pertinents.

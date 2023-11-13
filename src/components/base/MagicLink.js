@@ -9,6 +9,7 @@ export default function MagicLink(props) {
       onClick={props.onClick}
       aria-label={props['aria-label']}
       disabled={props.disabled}
+      data-testid='magic-link'
       type={props.type}>
       {props.children}
     </button>
