@@ -75,7 +75,7 @@ export default function Total(props) {
     <Wrapper>
       <Text>
         Vos usages émettent{' '}
-        <Big>
+        <Big data-testid='impactNumeriqueTotal'>
           {formatNumber(totalToUse / 1000)} kg CO<sub>2</sub>e <Color>par semaine</Color>
         </Big>{' '}
         <Disclaimer>
