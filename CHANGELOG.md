@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.25.11 (14/11/2023)
+
+- B33 - Homepage : mettre le bon lien de redirection
+
 ## 1.25.10 (13/11/2023)
 
 - T26 - Publicodes via librairies
