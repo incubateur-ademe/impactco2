@@ -44,6 +44,7 @@ const Defi = () => {
       />
       <Question
         title='✨ Vos achats de neuf'
+        withSource
         description={
           <>
             Combien de paires de <b>chaussures neuves</b> avez-vous acheté cette année ?
