@@ -33,7 +33,7 @@ describe('Seo', () => {
 
   it('La balise title a bien la valeur par défaut', () => {
     render(<Seo />)
-    expect(document.title).toBe('Impact sur le climat des objets et gestes | Impact CO2')
+    expect(document.title).toBe(default_title)
   })
   it('La meta image est /metaimage.png par défaut', () => {
     const { container } = render(<Seo />)
