@@ -4,6 +4,7 @@ import categories from 'data/categories.json'
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
 import Learning from 'components/misc/Learning'
+import OsezChanger from 'components/osezchanger/OsezChanger'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
   return (
@@ -16,6 +17,7 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
       }}>
       <Category category={category} />
       <Learning category={category} />
+      {category.slug === 'habillement' && <OsezChanger />}
     </Web>
   )
 }

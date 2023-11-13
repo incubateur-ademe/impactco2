@@ -1,7 +1,7 @@
 import { toJpeg, toPng } from 'html-to-image'
 import { useRef, useState } from 'react'
 
-export default function useScreenshot(slug, format = 'png', eventName = null) {
+export default function useScreenshot(slug: string, format: string = 'png', eventName: string | null = null) {
   const ref = useRef(null)
 
   const transformFn = format === 'png' ? toPng : toJpeg

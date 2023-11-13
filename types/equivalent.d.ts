@@ -1,5 +1,5 @@
 export type Equivalent = {
-  id: string
+  id?: string | number
   name: string
   prefix?: string
   subtitle?: string
