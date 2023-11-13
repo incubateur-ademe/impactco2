@@ -18,6 +18,10 @@ describe('Seo', () => {
   // See https://webtips.dev/how-to-mock-processenv-in-jest
   const env = process.env
 
+  const default_description =
+    "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME."
+  const default_title = 'Impact sur le climat des objets et gestes | Impact CO2'
+
   beforeEach(() => {
     jest.resetModules()
     process.env = { ...env, websiteurl: 'example.com' }
@@ -27,33 +31,40 @@ describe('Seo', () => {
     process.env = env
   })
 
+  it("La balise title vaut 'Impact Carbone de la livraison de colis | Impact CO2' par défaut", () => {
+    mockRouter.push('/')
+    render(<Seo />)
+    expect(document.title).toBe('Impact sur le climat des objets et gestes | Impact CO2')
+  })
   it('La meta image est /metaimage.png par défaut', () => {
     mockRouter.push('/')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('https://example.com/metaimage.png')
   })
+  it('En local, je peux lire la meta-image, sans le "s" de "https"', () => {
+    process.env = { ...env, websiteurl: 'localhost:3000' }
+    mockRouter.push('/')
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('http://localhost:3000/metaimage.png')
+  })
   it('La meta description est "sensibilisez..." par défaut', () => {
     mockRouter.push('/')
     const { container } = render(<Seo />)
-    expect(container.querySelectorAll('meta[name=description]')[0].content).toBe(
-      "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME."
-    )
+    expect(container.querySelectorAll('meta[name=description]')[0].content).toBe(default_description)
   })
   it("La meta og:url représente bien l'URL courante", () => {
     mockRouter.push('/current-path')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[property="og:url"]')[0].content).toBe('https://example.com/current-path')
   })
-  it("La balise title vaut 'Impact Carbone de la livraison de colis | Impact CO2' par défaut", () => {
-    mockRouter.push('/')
-    render(<Seo />)
-    expect(document.title).toBe('Impact sur le climat des objets et gestes | Impact CO2')
-  })
   it('La meta og:title vaut la même chose que le title', () => {
     mockRouter.push('/')
     const { container } = render(<Seo />)
-    expect(container.querySelectorAll('meta[property="og:title"]')[0].content).toBe(
-      'Impact sur le climat des objets et gestes | Impact CO2'
-    )
+    expect(container.querySelectorAll('meta[property="og:title"]')[0].content).toBe(default_title)
+  })
+  it('La meta og:description vaut la même chose que la description', () => {
+    mockRouter.push('/')
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[property="og:description"]')[0].content).toBe(default_description)
   })
 })
