@@ -31,24 +31,20 @@ describe('Seo', () => {
     process.env = env
   })
 
-  it("La balise title vaut 'Impact Carbone de la livraison de colis | Impact CO2' par défaut", () => {
-    mockRouter.push('/')
+  it('La balise title a bien la valeur par défaut', () => {
     render(<Seo />)
     expect(document.title).toBe('Impact sur le climat des objets et gestes | Impact CO2')
   })
   it('La meta image est /metaimage.png par défaut', () => {
-    mockRouter.push('/')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('https://example.com/metaimage.png')
   })
   it('En local, je peux lire la meta-image, sans le "s" de "https"', () => {
     process.env = { ...env, websiteurl: 'localhost:3000' }
-    mockRouter.push('/')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('http://localhost:3000/metaimage.png')
   })
   it('La meta description est "sensibilisez..." par défaut', () => {
-    mockRouter.push('/')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[name=description]')[0].content).toBe(default_description)
   })
@@ -58,13 +54,19 @@ describe('Seo', () => {
     expect(container.querySelectorAll('meta[property="og:url"]')[0].content).toBe('https://example.com/current-path')
   })
   it('La meta og:title vaut la même chose que le title', () => {
-    mockRouter.push('/')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[property="og:title"]')[0].content).toBe(default_title)
   })
   it('La meta og:description vaut la même chose que la description', () => {
-    mockRouter.push('/')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[property="og:description"]')[0].content).toBe(default_description)
+  })
+  it('La meta twitter:card vaut la constante summary_large_image', () => {
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[name="twitter:card"]')[0].content).toBe('summary_large_image')
+  })
+  it('La meta twitter:creator est pour le compte ademe', () => {
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[name="twitter:creator"]')[0].content).toBe('ademe')
   })
 })

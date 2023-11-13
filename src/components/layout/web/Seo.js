@@ -25,7 +25,7 @@ export default function Seo(props) {
       <meta property='og:description' content={description} />
       <meta property='og:image' content={image} />
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:creator' content={'_datagir'} />
+      <meta name='twitter:creator' content={'ademe'} />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:image' content={image} />
