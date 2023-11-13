@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.25.8 (13/11/2023)
+
+- CHORE - Suppression de hotjar
+
 ## 1.25.7 (09/11/2023)
 
 - T25 - Sécurisation d'une partie de l'API
