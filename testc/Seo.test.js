@@ -44,9 +44,16 @@ describe('Seo', () => {
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[property="og:url"]')[0].content).toBe('https://example.com/current-path')
   })
-  it("La meta og:url représente bien l'URL courante", () => {
-    mockRouter.push('/current-path')
+  it("La balise title vaut 'Impact Carbone de la livraison de colis | Impact CO2' par défaut", () => {
+    mockRouter.push('/')
+    render(<Seo />)
+    expect(document.title).toBe('Impact sur le climat des objets et gestes | Impact CO2')
+  })
+  it('La meta og:title vaut la même chose que le title', () => {
+    mockRouter.push('/')
     const { container } = render(<Seo />)
-    expect(container.querySelectorAll('meta[property="og:url"]')[0].content).toBe('https://example.com/current-path')
+    expect(container.querySelectorAll('meta[property="og:title"]')[0].content).toBe(
+      'Impact sur le climat des objets et gestes | Impact CO2'
+    )
   })
 })
