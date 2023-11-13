@@ -47,7 +47,7 @@ export default function Hero() {
   )
 }
 
-const H1Title = styled.div`
+const H1Title = styled.h1`
   color: ${(props) => props.theme.colors.linkGrey};
   font-size: 2.25rem;
   ${(props) => props.theme.mq.xlarge} {
