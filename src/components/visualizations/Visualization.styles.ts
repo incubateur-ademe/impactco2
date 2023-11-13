@@ -19,10 +19,11 @@ export const Equivalents = styled.div`
     margin-bottom: 1rem;
   }
 `
-export const Equivalent = styled.div<{ size: [number, number, number] }>`
+export const Equivalent = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: space-between;
   position: relative;
 `
@@ -50,6 +51,7 @@ export const Emojis = styled(Emoji)`
 export const Label = styled.div`
   font-size: 0.875rem;
   font-weight: 300;
+  height: 20px;
   max-width: 130px;
   text-align: center;
   top: 100%;
@@ -69,7 +71,7 @@ export const Equals = styled.div`
   font-size: 3.5rem;
   font-weight: bold;
   line-height: 1;
-  margin-bottom: 0.75rem;
+  margin-bottom: 2rem;
 
   ${(props) => props.theme.mq.medium} {
     font-size: 2.5rem;

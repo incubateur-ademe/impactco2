@@ -107,7 +107,7 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
           .flatMap((equivalent) => {
             const value = Math.round(factor / getEquivalentValue(equivalent))
             return [
-              <Equivalent key={equivalent.slug} size={[7.5, 6, 8]}>
+              <Equivalent key={equivalent.slug}>
                 <Emojis {...getSize(value)}>{[...Array(value)].map(() => equivalent.emoji).join('')}</Emojis>
                 <Label>
                   {value} {equivalent.prefix && formatName(equivalent.prefix, value)}
