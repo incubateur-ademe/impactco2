@@ -1,11 +1,10 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
-import { useRouter } from 'next/router'
+import mockRouter from 'next-router-mock'
 import Seo from 'components/layout/web/Seo'
 
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}))
+jest.mock('next/router', () => jest.requireActual('next-router-mock'))
+
 jest.mock('next/head', () => {
   return {
     __esModule: true,
@@ -28,9 +27,26 @@ describe('Seo', () => {
     process.env = env
   })
 
-  it('renders metaimage.png by default', () => {
-    useRouter.mockReturnValue({ query: {} })
+  it('La meta image est /metaimage.png par défaut', () => {
+    mockRouter.push('/')
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('https://example.com/metaimage.png')
+  })
+  it('La meta description est "sensibilisez..." par défaut', () => {
+    mockRouter.push('/')
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[name=description]')[0].content).toBe(
+      "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME."
+    )
+  })
+  it("La meta og:url représente bien l'URL courante", () => {
+    mockRouter.push('/current-path')
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[property="og:url"]')[0].content).toBe('https://example.com/current-path')
+  })
+  it("La meta og:url représente bien l'URL courante", () => {
+    mockRouter.push('/current-path')
+    const { container } = render(<Seo />)
+    expect(container.querySelectorAll('meta[property="og:url"]')[0].content).toBe('https://example.com/current-path')
   })
 })
