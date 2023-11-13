@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.25.9 (13/11/2023)
+
+- CHORE - Amélioration de log pour les api keys
+
 ## 1.25.8 (13/11/2023)
 
 - CHORE - Suppression de hotjar

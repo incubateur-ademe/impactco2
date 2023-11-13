@@ -23,7 +23,7 @@ export async function trackAPIRequest(request: NextApiRequest, api: string, para
       method: 'POST',
     })
   } catch (error) {
-    console.error('tracking failed', error)
+    console.error(`tracking failed - ${request.headers.authorization}`, error)
   }
 }
 
