@@ -10,7 +10,7 @@ export default function Seo(props) {
     title: `${props.title || `Impact sur le climat des objets et gestes`} | Impact CO2`,
     description:
       props.description ||
-      `Découvrez l’impact sur le climat des objets et gestes de votre quotidien comme votre mobilier, vos habits ou encore vos repas`,
+      `Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME.`,
     image: `${buildCurrentUrlFor(process?.env?.websiteurl, '/' + (props.image || 'metaimage.png'))}`,
     url: `${buildCurrentUrlFor(process?.env?.websiteurl, router.asPath)}`,
   }
