@@ -1,8 +1,6 @@
 import { expect, test } from '@playwright/test'
-import { mockRoutes } from '../test-mock/mock-route.js'
 
 test.beforeEach(async ({ page }) => {
-  mockRoutes(page)
   await page.goto('/usagenumerique')
 })
 

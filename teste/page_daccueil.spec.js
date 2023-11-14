@@ -1,9 +1,4 @@
 import { expect, test } from '@playwright/test'
-import { mockRoutes } from '../test-mock/mock-route.js'
-
-test.beforeEach(async ({ page }) => {
-  await mockRoutes(page)
-})
 
 test('Le titre', async ({ page }) => {
   await test.step("On charge la page d'accueil dans le navigateur", async () => {
