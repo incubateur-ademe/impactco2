@@ -14,8 +14,8 @@ export default function ByArticle() {
     let reuseCard = reusecards.find((e) => e.slug === slug)
     return (
       <ReuseCardWrapper>
-        <a href={reuseCard.link} target='_blank' rel='noreferrer noopener'>
-          <ReuseCard>
+        <ReuseCard>
+          <a href={reuseCard.link} target='_blank' rel='noreferrer noopener'>
             <ReuseCardImgContainer color={reuseCard.color}>
               <ReuseCardImg img={reuseCard.img}>
                 <ReuseCardTag>{reuseCard.tagtext}</ReuseCardTag>
@@ -27,8 +27,8 @@ export default function ByArticle() {
               </ReuseCardTitle>
               <ReuseCardParagraph>{reuseCard.paragraph}</ReuseCardParagraph>
             </ReuseCardTxt>
-          </ReuseCard>
-        </a>
+          </a>
+        </ReuseCard>
       </ReuseCardWrapper>
     )
   }
@@ -51,22 +51,22 @@ export default function ByArticle() {
               />
               <div>
                 <MiddleGrid>
-                  <LeftMiddleGrid>
+                  <div>
                     <H3Title>En toute autonomie</H3Title>
                     <MiddleUl>
                       <MiddleLi>
-                        Appuyez-vous sur le{' '}
+                        Utilisez le{' '}
                         <Link
                           href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
                           target='_blank'
                           rel='noreferrer noopener'>
-                          kit de diffusion
-                        </Link>
-                        , pensé pour vous épauler dans la rédaction de vos contenus en lien avec l’impact carbone.
+                          Kit de diffusion
+                        </Link>{' '}
+                        pour vous épauler dans la rédaction de vos contenus.
                       </MiddleLi>
                       <MiddleLi>
-                        <Link href='/integration'>Configurez et personnalisez</Link> le simulateur de votre choix grâce
-                        à une intégration
+                        Personnalisez le simulateur de votre choix grâce à notre{' '}
+                        <Link href='/integration'>configurateur</Link>.
                       </MiddleLi>
                       <MiddleLi>
                         Inspirez-vous d'
@@ -87,12 +87,12 @@ export default function ByArticle() {
                         Consulter le kit de diffusion
                       </Button>
                     </MiddleCta>
-                  </LeftMiddleGrid>
-                  <RightMiddleGrid>
+                  </div>
+                  <div>
                     <H3Title2>Avec de l'aide</H3Title2>
                     <MiddleUl>
                       <MiddleLi>
-                        Enrichissez vos contenus grâce à notre&nbsp;
+                        Consultez notre{' '}
                         <Link
                           href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
                           target='_blank'
@@ -100,7 +100,7 @@ export default function ByArticle() {
                           data-testid='byArticleFaq'>
                           Foire aux Questions
                         </Link>{' '}
-                        pour trouver des éléments de réponse pertinents.
+                        pour trouver des éléments de réponse.
                       </MiddleLi>
                       <MiddleLi>
                         Gagnez du temps et laissez-vous guider pour <strong>l’intégration de nos ressources</strong>.
@@ -110,7 +110,7 @@ export default function ByArticle() {
                       </MiddleLi>
                     </MiddleUl>
                     <Meeting />
-                  </RightMiddleGrid>
+                  </div>
                 </MiddleGrid>
               </div>
               <DownSide>
@@ -159,17 +159,12 @@ const DownSide = styled.div`
 
 const MiddleGrid = styled.div`
   display: grid;
+  gap: 0 2rem;
   grid-template-columns: 1fr 1fr;
   ${(props) => props.theme.mq.medium} {
     grid-template-columns: 1fr;
   }
 `
-
-const PartMiddleGrid = styled.div`
-  padding-right: 1rem;
-`
-const LeftMiddleGrid = styled(PartMiddleGrid)``
-const RightMiddleGrid = styled(PartMiddleGrid)``
 
 const H3Title = styled.h3`
   color: #235dd2;
@@ -177,7 +172,12 @@ const H3Title = styled.h3`
   font-weight: 700;
   letter-spacing: 0em;
   line-height: 2.5rem;
+
+  ${(props) => props.theme.mq.large} {
+    font-size: 1.125rem;
+  }
 `
+
 const H3Title2 = styled(H3Title)`
   ${(props) => props.theme.mq.medium} {
     margin-top: 2rem;
@@ -233,6 +233,7 @@ const ReuseCard = styled.div`
   border-style: solid;
   border-width: 1px 4px 4px 1px;
   display: block;
+  height: 100%;
   margin-right: 1rem;
 `
 const ReuseCardImg = styled.div`
@@ -247,46 +248,19 @@ const ReuseCardImg = styled.div`
 `
 const ReuseCardTxt = styled.div`
   font-size: 1rem;
-  height: 20rem;
-  ${(props) => props.theme.mq.xlarge} {
-    height: 21rem;
-  }
-  ${(props) => props.theme.mq.large} {
-    height: 11rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    height: 12rem;
-  }
-  ${(props) => props.theme.mq.small} {
-    height: 10rem;
-  }
-  ${(props) => props.theme.mq.xsmall} {
-    height: 15rem;
-  }
   padding: 1rem;
 `
+
 const ReuseCardTitle = styled.div`
   font-size: 1rem;
-  height: 5.5rem;
-  margin-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  ${(props) => props.theme.mq.xlarge} {
-    height: 5rem;
-  }
-  ${(props) => props.theme.mq.large} {
-    height: 2.5rem;
-  }
-  ${(props) => props.theme.mq.xsmall} {
-    height: 3.5rem;
-  }
+  height: 72px;
+  margin: 0.5rem 0;
 `
 const ReuseCardParagraph = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 0.9rem;
   }
   color: #3a3a3a;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
 `
 const ReuseCardTag = styled.div`
   background-color: white;
