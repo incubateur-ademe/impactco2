@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.26.0 (14/11/2023)
+
+- Amélioration des chiffres de comparaisons
+
 ## 1.25.12 (14/11/2023)
 
 - Homepage: Améliorations graphiques

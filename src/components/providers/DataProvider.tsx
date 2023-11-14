@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction, useState } from 'react'
+import { Category } from 'types/category'
+import { ECV } from 'types/ecv'
+import { Equivalent } from 'types/equivalent'
 import categories from 'data/categories.json'
 import boisson from 'data/categories/boisson.json'
 import chauffage from 'data/categories/chauffage.json'
@@ -13,7 +16,21 @@ import repas from 'data/categories/repas.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import ecv from 'data/ecv.json'
 
-const DataContext = React.createContext({})
+const DataContext = React.createContext<{
+  equivalents: Equivalent[]
+  categories: Category[]
+  ecv: ECV[]
+  eqvTarget: string
+  setEqvTarget?: Dispatch<SetStateAction<string>>
+  tiles: Equivalent[]
+  setTiles?: Dispatch<SetStateAction<Equivalent[]>>
+}>({
+  equivalents: [],
+  categories: [],
+  ecv: [],
+  eqvTarget: '',
+  tiles: [],
+})
 
 const equivalents = [
   ...boisson,
@@ -29,8 +46,8 @@ const equivalents = [
   ...divers,
 ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
 
-export function DataProvider(props) {
-  const [tiles, setTiles] = useState([])
+export function DataProvider({ children }: { children: ReactNode }) {
+  const [tiles, setTiles] = useState<Equivalent[]>([])
 
   const [eqvTarget, setEqvTarget] = useState('')
 
@@ -45,7 +62,7 @@ export function DataProvider(props) {
         tiles,
         setTiles,
       }}>
-      {props.children}
+      {children}
     </DataContext.Provider>
   )
 }

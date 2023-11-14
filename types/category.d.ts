@@ -3,15 +3,15 @@ export type Category = {
   name: string
   emoji: string
   slug: string
-  title: string
-  description: string
-  equivalent: string
-  gender: string
+  title?: string
+  description?: string
+  equivalent?: string
+  gender?: string
   divider: number
   display: boolean
   unit: string
   include: string
-  list: boolean
+  list?: boolean
   meta: {
     title: string
     description: string
