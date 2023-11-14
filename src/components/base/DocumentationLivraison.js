@@ -4,10 +4,6 @@ import { RulePage } from 'publicodes-react'
 import { useContext } from 'react'
 import styled from 'styled-components'
 import { Section2, Section2InnerMargin } from 'components/base/Section2'
-import BreadCrumb3 from 'components/layout/web/BreadCrumb3'
-import Footer from 'components/layout/web/Footer'
-import HeaderSweet from 'components/layout/web/HeaderSweet'
-import Seo from 'components/layout/web/Seo'
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import Markdown from './Markdown'
 
@@ -15,16 +11,7 @@ export default function DocumentationLivraison(props) {
   const { engine } = useContext(RulesContextLivraison)
 
   return (
-    <VerticalContainer className={props.theme === 'night' ? 'bl' : 'r'}>
-      <Seo
-        title={"Documentation du simulateur d'impact carbone de la livraison"}
-        description={
-          "Découvrez notre documentation et les hypothèses de calculs du simulateur d'impact carbone de la livraison"
-        }
-        image={'metaimage.png'}
-      />
-      <HeaderSweet />
-      <BreadCrumb3 />
+    <>
       <Section2>
         <Section2InnerMargin>
           <DocWrapper>
@@ -42,11 +29,7 @@ export default function DocumentationLivraison(props) {
           </DocWrapper>
         </Section2InnerMargin>
       </Section2>
-      <br />
-      <br />
-      <br />
-      <Footer />
-    </VerticalContainer>
+    </>
   )
 }
 
@@ -125,5 +108,3 @@ const DocWrapper = styled.div`
     max-width: 800px;
   }
 `
-
-const VerticalContainer = styled.div``

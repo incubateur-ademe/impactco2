@@ -6,7 +6,9 @@ const Convertisseur = () => {
   return (
     <Web
       title={'Comparateur carbone'}
-      description={`Calculez l'équivalent de votre émission CO₂e grâce au comparateur CO2 et mesurez votre impact sur le climat`}
+      description={
+        'Comparer et visualiser facilement une quantité de CO2e grâce au comparateur d’Impact CO2 et à ses équivalents pour avoir en tête les bons ordres de grandeur.'
+      }
       breadcrumb={{
         type: 'accueil',
         page: 'Comparateur carbone',
