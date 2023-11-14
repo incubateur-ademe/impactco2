@@ -10,6 +10,6 @@ type Story = StoryObj<typeof Visualization>
 
 export const Eau: Story = {
   args: {
-    type: 'eau',
+    types: ['eauenbouteille', 'eaudurobinet'],
   },
 }
