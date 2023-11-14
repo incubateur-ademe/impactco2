@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import styled from 'styled-components'
 import { Section2, Section2InnerMargin } from 'components/base/Section2'
 import BreadCrumb3 from 'components/layout/web/BreadCrumb3'
-import FooterBlue from 'components/layout/web/FooterBlue'
+import Footer from 'components/layout/web/Footer'
 import HeaderSweet from 'components/layout/web/HeaderSweet'
 import Seo from 'components/layout/web/Seo'
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
@@ -39,7 +39,7 @@ export default function DocumentationLivraison(props) {
       <br />
       <br />
       <br />
-      <FooterBlue />
+      <Footer />
     </VerticalContainer>
   )
 }
