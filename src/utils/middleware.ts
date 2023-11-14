@@ -17,7 +17,7 @@ export async function trackAPIRequest(request: NextApiRequest, api: string, para
       }
     }
 
-    const param = `e_c=API${name ? `_${name}` : ''}&e_a=called&e_n=${api}&e_v=${params}`
+    const param = `e_c=API${name ? `_${name}` : ''}&e_a=${api}&e_n=${params}&e_v=called`
 
     await fetch(`https://stats.data.gouv.fr/matomo.php?idsite=${process.env.MATOMO_SIDE_ID}&rec=1&${param}`, {
       method: 'POST',
