@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.25.13 (14/11/2023)
+
+- CHORE - Amélioration des perfs de la page de livraison
+
 ## 1.25.12 (14/11/2023)
 
 - Homepage: Améliorations graphiques
