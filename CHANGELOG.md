@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.26.1 (14/11/2023)
+
+- CHORE - Amélioration des perfs de la page de livraison
+
 ## 1.26.0 (14/11/2023)
 
 - Amélioration des chiffres de comparaisons

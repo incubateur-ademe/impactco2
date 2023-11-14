@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
 import { themes } from 'utils/styles'
@@ -28,10 +28,8 @@ const Svg = styled.svg`
 `
 
 export default function CalculateurLivraison(props) {
-  // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison)
   const { setIfl } = useContext(ModalContext)
-  // eslint-disable-next-line no-unused-vars
   const { setSocial } = useContext(ModalContext)
 
   const [cO2eq, setCO2eq] = useState(0)
@@ -53,13 +51,9 @@ export default function CalculateurLivraison(props) {
     diffPlane: 0,
   })
 
-  const calculateResult = () =>
+  useEffect(() => {
     calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit, isPlane)
-
-  useMemo(() => {
-    calculateResult()
     setShowToggleContainer(['relais', 'click'].includes(values.retrait))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values, isHabit, isPlane])
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid })
