@@ -103,6 +103,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/convertisseur',
+        destination: '/comparateur',
+        permanent: true,
+      },
+      {
         source: '/categories/:slug*',
         destination: '/:slug*',
         permanent: true,

@@ -83,7 +83,7 @@ export default function PlanDuSite() {
               </Level2>
             </Level1>
             <Level1>
-              <Link href='/convertisseur' title='Comparateur carbone'>
+              <Link href='/comparateur' title='Comparateur carbone'>
                 Comparateur carbone
               </Link>
             </Level1>

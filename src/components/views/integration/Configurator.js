@@ -45,8 +45,8 @@ export default function Configurator(props) {
             value={props.type === 'category' ? 'numerique' : props.type === 'equivalent' ? 'abricot' : 'convertisseur'}
             label={`1) Choisissez le type d'iframe que vous souhaitez intégrer.`}
             name='type'>
-            <option value='convertisseur'>Convertisseur</option>
-            <option value='numerique'>Categorie</option>
+            <option value='convertisseur'>Comparateur</option>
+            <option value='numerique'>Thématique</option>
             <option value='abricot'>Equivalent</option>
           </Select>
           {props.type === 'category' && (

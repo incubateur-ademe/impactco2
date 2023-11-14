@@ -61,7 +61,7 @@ export default function HeaderSweet() {
                   <MenuSweet />
                 </NavLink>
                 <NavLink>
-                  <Link href='/convertisseur' title='Comparateur carbone'>
+                  <Link href='/comparateur' title='Comparateur carbone'>
                     Comparateur carbone
                   </Link>
                 </NavLink>
@@ -90,7 +90,7 @@ export default function HeaderSweet() {
                   <MenuSweet />
                 </NavLink>
                 <NavLink>
-                  <Link href='/convertisseur' title='Comparateur carbone'>
+                  <Link href='/comparateur' title='Comparateur carbone'>
                     Comparateur carbone
                   </Link>
                 </NavLink>

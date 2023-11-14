@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.26.2 (14/11/2023)
+
+- FIX - Bug bouton de la home
+
 ## 1.26.1 (14/11/2023)
 
 - CHORE - Amélioration des perfs de la page de livraison
