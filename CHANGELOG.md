@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.26.3 (15/11/2023)
+
+- SEO : modifications des meta
+
 ## 1.26.2 (14/11/2023)
 
 - FIX - Bug bouton de la home
