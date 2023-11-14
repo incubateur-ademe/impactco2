@@ -136,7 +136,7 @@ export default function LearningUsage(props) {
           <span dangerouslySetInnerHTML={{ __html: '&#8239;' }} />?
         </Title>
         <Text>
-          N'hésitez pas à <MagicLink to='/'>découvrir nos autres catégories</MagicLink> pour voir lesquelles sont les
+          N'hésitez pas à <MagicLink to='/'>découvrir nos autres thématiques</MagicLink> pour voir lesquelles sont les
           plus émettrices.
         </Text>
         <Text>
