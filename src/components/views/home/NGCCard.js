@@ -15,7 +15,7 @@ export default function NGCCard() {
                 <Image src='/images/logoNGC.svg' alt='' width={196} height={152} />
               </CardImage>
               <CardTitle>
-                <strong>Calculer votre empreinte globale sur le climat</strong>
+                <strong>Calculez votre empreinte globale sur le climat</strong>
               </CardTitle>
               <CardText>
                 Vous souhaitez aller plus loin en mesurant votre empreinte sur le climat ou celle d’un groupe de

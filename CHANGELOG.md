@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.25.12 (14/11/2023)
+
+- Homepage: Améliorations graphiques
+
 ## 1.25.11 (14/11/2023)
 
 - B33 - Homepage : mettre le bon lien de redirection

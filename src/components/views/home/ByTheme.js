@@ -76,6 +76,7 @@ const ThemeCards = styled.div`
     ${(props) => props.theme.mq.large} {
       flex-direction: column;
       margin-top: 0;
+      margin-bottom: 1rem;
       width: 200px;
       div + div {
         margin-left: 0;
