@@ -3,7 +3,7 @@ import categories from 'data/categories.json'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Category from 'components/numerique/Category'
-import { RulesProvider } from 'components/numerique/RulesProvider'
+import { RulesProviderNumerique } from 'components/numerique/RulesProviderNumerique'
 
 export default function Numerique(props) {
   return (
@@ -14,10 +14,10 @@ export default function Numerique(props) {
         type: 'equivalent',
         category: props.category,
       }}>
-      <RulesProvider>
+      <RulesProviderNumerique>
         <Category category={props.category} />
         <Learning category={props.category} />
-      </RulesProvider>
+      </RulesProviderNumerique>
     </Web>
   )
 }

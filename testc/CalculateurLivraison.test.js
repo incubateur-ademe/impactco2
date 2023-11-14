@@ -1,23 +1,10 @@
 import '@testing-library/jest-dom'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import axios from 'axios'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper'
 import CalculateurLivraison from 'components/livraison/CalculateurLivraison'
-import livraisonjson from '../test-mock/livraison.json'
 
 describe('CalculateurLivraison - composant principal de la partie livraison', () => {
-  beforeEach(async () => {
-    const mockGet = jest.spyOn(axios, 'get')
-    mockGet.mockImplementation((url) => {
-      if (url === 'https://deploy-preview-1895--ecolab-data.netlify.app/co2-model.FR-lang.fr.json') {
-        return Promise.resolve({ data: livraisonjson })
-      } else {
-        return Promise.resolve({ data: 'mocked endpoint, unknown URL' })
-      }
-    })
-    jest.spyOn(console, 'warn').mockImplementation(() => {})
-  })
   test("S'affiche sans erreur, avec un titre de niveau h2", async () => {
     // Given
     expect(screen.queryByTestId('calculateurTitleH2')).not.toBeInTheDocument()

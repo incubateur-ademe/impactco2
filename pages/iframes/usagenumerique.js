@@ -2,14 +2,14 @@ import React from 'react'
 import categories from 'data/categories.json'
 import Iframe from 'components/layout/Iframe'
 import Category from 'components/numerique/Category'
-import { RulesProvider } from 'components/numerique/RulesProvider'
+import { RulesProviderNumerique } from 'components/numerique/RulesProviderNumerique'
 
 export default function Numerique(props) {
   return (
     <Iframe url='usagenumerique'>
-      <RulesProvider>
+      <RulesProviderNumerique>
         <Category category={props.category} />
-      </RulesProvider>
+      </RulesProviderNumerique>
     </Iframe>
   )
 }

@@ -1,8 +1,29 @@
 # CHANGELOG
 
-## 1.26.0 (10/11/2023)
+## 1.26.0 (14/11/2023)
 
 - Amélioration des chiffres de comparaisons
+
+## 1.25.12 (14/11/2023)
+
+- Homepage: Améliorations graphiques
+
+## 1.25.11 (14/11/2023)
+
+- B33 - Homepage : mettre le bon lien de redirection
+- B32 - Redirection bouton “Voir toutes les catégories” 
+
+## 1.25.10 (13/11/2023)
+
+- T26 - Publicodes via librairies
+
+## 1.25.9 (13/11/2023)
+
+- CHORE - Amélioration de log pour les api keys
+
+## 1.25.8 (13/11/2023)
+
+- CHORE - Suppression de hotjar
 
 ## 1.25.7 (09/11/2023)
 

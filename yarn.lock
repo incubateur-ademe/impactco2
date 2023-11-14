@@ -1536,6 +1536,20 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.1.tgz#e5211452df060fa8522b55c7b3c0c4d1981cb044"
   integrity sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==
 
+"@incubateur-ademe/publicodes-impact-livraison@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-impact-livraison/-/publicodes-impact-livraison-0.2.1.tgz#e32673eb7418523dc26223cf88e6cca0003e4266"
+  integrity sha512-ErSCPgLc1/+Z2vdp1sb+Rc64O75E9DEkePTJCB9RiixnxUx4QuUPtbrDTp9lwClUqqKFef9McbUJ98efB5VRsg==
+  dependencies:
+    publicodes "^1.0.0-beta.77"
+
+"@incubateur-ademe/publicodes-negaoctet@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-negaoctet/-/publicodes-negaoctet-1.0.1.tgz#e8e5c01e312390a52a2a85c822a8026c63f3aa4c"
+  integrity sha512-IYUhGhMdaTs9M8jEoGsmvRgSuE3WgG+vohM0W8ctxTZVmsSQe+ZU7rMVLr82aQuabaN30pIz6lkoymEsEgtn5g==
+  dependencies:
+    publicodes "^1.0.0-beta.77"
+
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@isaacs/cliui/-/cliui-8.0.2.tgz#b37667b7bc181c168782259bab42474fbf52b550"
@@ -10686,7 +10700,7 @@ publicodes-react@1.0.0-beta.77:
   dependencies:
     styled-components "^6.0.8"
 
-publicodes@1.0.0-beta.77:
+publicodes@1.0.0-beta.77, publicodes@^1.0.0-beta.77:
   version "1.0.0-beta.77"
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.77.tgz#45e3c4d2a46bfadcc932e1405ea037e659c28134"
   integrity sha512-F8U3WGUWMo3/rxhWYS1gWIiG20g1Yy/+PpXdHM99d6ZHKWnnyh/4txVEuyVE75glgDs+mTjwZPnmoKWsTMXluA==
@@ -10946,11 +10960,6 @@ react-highlight-words@^0.20.0:
     highlight-words-core "^1.2.0"
     memoize-one "^4.0.0"
     prop-types "^15.5.8"
-
-react-hotjar@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-6.1.0.tgz#910dd5d002f5043a6f34ae7ada545b2aace1edae"
-  integrity sha512-V1UJixDMspAIrbGIFG282U7mH2aK1JBid0YR8F9oscb6lTkjMga+gst2gesxJDsqsax+k+lM1LqRXYzmUu8izA==
 
 react-inspector@^6.0.0:
   version "6.0.2"
