@@ -17,9 +17,11 @@ export default function DocumentationLivraison(props) {
   return (
     <VerticalContainer className={props.theme === 'night' ? 'bl' : 'r'}>
       <Seo
+        title={"Documentation du simulateur d'impact carbone de la livraison"}
         description={
           "Découvrez notre documentation et les hypothèses de calculs du simulateur d'impact carbone de la livraison"
         }
+        image={'metaimage.png'}
       />
       <HeaderSweet />
       <BreadCrumb3 />
