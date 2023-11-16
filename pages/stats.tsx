@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import OutboundLink from 'components/base/OutboundLink'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 const FormatText = styled.div`
   margin-bottom: 5rem;
   h1 {
     font-size: 3rem;
-    margin-top: 3rem;
   }
   > h2 {
     margin-top: 3rem;
@@ -18,8 +17,8 @@ const FormatText = styled.div`
 export default function Statistiques() {
   return (
     <Web title='Statistiques'>
-      <Section2>
-        <Section2InnerMargin>
+      <Section>
+        <SectionWideContent>
           <FormatText>
             <h1>Statistiques</h1>
             <h2>Information</h2>
@@ -29,8 +28,8 @@ export default function Statistiques() {
               </OutboundLink>
             </p>
           </FormatText>
-        </Section2InnerMargin>
-      </Section2>
+        </SectionWideContent>
+      </Section>
     </Web>
   )
 }

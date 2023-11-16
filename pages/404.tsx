@@ -1,12 +1,12 @@
 import React from 'react'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 export default function notfound() {
   return (
     <Web>
       <Section>
-        <Section.Content>
+        <SectionWideContent>
           <br />
           <br />
           <h1>Page non trouvée</h1>
@@ -15,7 +15,7 @@ export default function notfound() {
           peut-être plus disponible.
           <br />
           Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil.
-        </Section.Content>
+        </SectionWideContent>
       </Section>
     </Web>
   )

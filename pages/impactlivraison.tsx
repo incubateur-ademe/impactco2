@@ -1,4 +1,3 @@
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
 import AdviceLivraison from 'components/livraison/AdviceLivraison'
 import AvisLivraison from 'components/livraison/AvisLivraison'
 import CalculateurLivraison from 'components/livraison/CalculateurLivraison'
@@ -13,11 +12,7 @@ export default function Impactlivraison() {
       <RulesProviderLivraison>
         <CalculateurLivraison />
       </RulesProviderLivraison>
-      <Section2>
-        <Section2InnerMargin>
-          <AdviceLivraison />
-        </Section2InnerMargin>
-      </Section2>
+      <AdviceLivraison />
       <ConclusionLivraison />
       <AvisLivraison />
     </main>

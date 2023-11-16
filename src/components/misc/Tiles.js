@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { formatTotalByMultiplier } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import AddButton from './tiles/AddButton'
 import Tile from './tiles/Tile'
 import Weight from './tiles/Weight'
@@ -57,7 +57,7 @@ export default function Tiles(props) {
 
   return (
     <Section>
-      <Section.Content>
+      <SectionWideContent $small>
         {props.title && <Title>{props.title}</Title>}
         <DndContext
           collisionDetection={closestCenter}
@@ -117,7 +117,7 @@ export default function Tiles(props) {
             </TilesWrapper>
           </SortableContext>
         </DndContext>
-      </Section.Content>
+      </SectionWideContent>
     </Section>
   )
 }

@@ -4,56 +4,54 @@ import styled from 'styled-components'
 import Ademe from 'components/base/Ademe'
 import FooterLogo from 'components/base/FooterLogo'
 import Marianne from 'components/base/Marianne'
-import Section3 from 'components/base/Section3'
+import { Section, SectionWideContent } from 'components/base/Section'
 
-export default function Footer(props) {
+export default function Footer() {
   return (
-    <Wrapper mt={props.mt}>
+    <Wrapper>
       <LinearGradient>&nbsp;</LinearGradient>
-      <Section3>
-        <Section3.WideContent>
-          <Section3.InnerMargin>
-            <Grid>
-              <div>
-                <Logos>
-                  <Marianne />
-                  <Ademe />
-                  <FooterLogo />
-                </Logos>
-              </div>
-              <div>
-                <FooterExplain>
-                  <strong>Impact CO2</strong>
-                  <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
-                </FooterExplain>
-              </div>
-              <div className='gridlinks'>
-                <FooterLink>
-                  <Link href='/plan-du-site' title='Plan du site'>
-                    Plan du site
-                  </Link>
-                </FooterLink>
-                <FooterLink>
-                  <Link href='/accessibilite' title='Accessibilité (non conforme)'>
-                    Accessibilité (non conforme)
-                  </Link>
-                </FooterLink>
-                <FooterLink>
-                  <Link href='/mentions-legales' title='Mentions légales'>
-                    Mentions légales
-                  </Link>
-                </FooterLink>
-                <FooterLink>
-                  <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
-                    Politique de confidentialité
-                  </Link>
-                </FooterLink>
-                <Version>Version : {process.env.thebuildid}</Version>
-              </div>
-            </Grid>
-          </Section3.InnerMargin>
-        </Section3.WideContent>
-      </Section3>
+      <Section>
+        <SectionWideContent>
+          <Grid>
+            <div>
+              <Logos>
+                <Marianne />
+                <Ademe />
+                <FooterLogo />
+              </Logos>
+            </div>
+            <div>
+              <FooterExplain>
+                <strong>Impact CO2</strong>
+                <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
+              </FooterExplain>
+            </div>
+            <div className='gridlinks'>
+              <FooterLink>
+                <Link href='/plan-du-site' title='Plan du site'>
+                  Plan du site
+                </Link>
+              </FooterLink>
+              <FooterLink>
+                <Link href='/accessibilite' title='Accessibilité (non conforme)'>
+                  Accessibilité (non conforme)
+                </Link>
+              </FooterLink>
+              <FooterLink>
+                <Link href='/mentions-legales' title='Mentions légales'>
+                  Mentions légales
+                </Link>
+              </FooterLink>
+              <FooterLink>
+                <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
+                  Politique de confidentialité
+                </Link>
+              </FooterLink>
+              <Version>Version : {process.env.thebuildid}</Version>
+            </div>
+          </Grid>
+        </SectionWideContent>
+      </Section>
     </Wrapper>
   )
 }
@@ -67,7 +65,7 @@ const Logos = styled.div`
   text-decoration: none;
 
   ${(props) => props.theme.mq.small} {
-    font-size: ${(props) => (props.iframe ? 0.75 : 1)}rem;
+    font-size: 1rem;
     padding: 0 0.25rem;
   }
   ${(props) => props.theme.mq.medium} {
@@ -102,7 +100,7 @@ const FooterLink = styled.div`
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.sky};
-  margin-top: ${(props) => props.mt || '0'};
+  margin-top: 0;
 `
 
 const Grid = styled.div`

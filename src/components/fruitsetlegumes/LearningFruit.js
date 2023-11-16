@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import useOnScreen from 'hooks/useOnScreen'
 import ModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/Button'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from './learning/BarChart'
 
 const StyledSection = styled(Section)`
@@ -73,7 +73,7 @@ export default function LearningFruit() {
 
   return (
     <StyledSection>
-      <Section.Content>
+      <SectionWideContent>
         <Statistic ref={ref}>
           <Number $isOnScreen={isOnScreen}>4</Number>
           <BigText>
@@ -117,7 +117,7 @@ export default function LearningFruit() {
         <ButtonWrapper>
           <Button to={'https://nosgestesclimat.fr/'}>Je calcule mon empreinte carbone</Button>
         </ButtonWrapper>
-      </Section.Content>
+      </SectionWideContent>
     </StyledSection>
   )
 }

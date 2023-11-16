@@ -3,7 +3,7 @@ import React, { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { StringParam, useQueryParam, withDefault } from 'use-query-params'
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 import Configurator from 'components/views/integration/Configurator'
 
@@ -13,7 +13,7 @@ const StyledIframeResizer = styled(IframeResizer)`
   flex: 1;
   width: 100%;
 `
-const StyledSectionContent = styled(Section.Content)`
+const StyledSectionContent = styled(SectionWideContent)`
   align-items: flex-start;
   max-width: 100vw;
   width: 75rem;
@@ -76,6 +76,8 @@ export default function Integration() {
             path={path}
           />
         </ConfiguratorWrapper>
+      </Section>
+      <Section $withoutPadding>
         <StyledSectionContent $flex>
           {path == 'livraison' ? (
             <>

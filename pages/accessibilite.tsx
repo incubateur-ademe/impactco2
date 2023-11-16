@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
-
-const H1Title = styled.h1`
-  margin-top: 3rem;
-`
 
 const FormatText = styled.div`
   h1 {
@@ -19,10 +15,10 @@ const FormatText = styled.div`
 export default function Accessibilite() {
   return (
     <Web title='Accessibilité'>
-      <Section2>
-        <Section2InnerMargin>
+      <Section>
+        <SectionWideContent>
           <FormatText>
-            <H1Title>Déclaration d'accessibilité</H1Title>
+            <h1>Déclaration d'accessibilité</h1>
             <h2 id='quest-ce-que-laccessibilité-numérique-'>Qu’est-ce que l’accessibilité numérique ?</h2>
             <p>
               Un site webBlue accessible est un site qui permet à tous les internautes d’accéder à ses contenus sans
@@ -158,8 +154,8 @@ export default function Accessibilite() {
               </li>
             </ul>
           </FormatText>
-        </Section2InnerMargin>
-      </Section2>
+        </SectionWideContent>
+      </Section>
     </Web>
   )
 }

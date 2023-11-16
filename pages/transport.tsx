@@ -1,22 +1,23 @@
 import React from 'react'
+import { Category } from 'types/category'
 import categories from 'data/categories.json'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Distance from 'components/transport/Distance'
 import { TransportProvider } from 'components/transport/TransportProvider'
 
-export default function Transport(props) {
+export default function Transport({ category }: { category: Category }) {
   return (
     <Web
-      title={props.category.meta.title}
-      description={props.category.meta.description}
+      title={category.meta.title}
+      description={category.meta.description}
       breadcrumb={{
         type: 'equivalent',
-        category: props.category,
+        category: category,
       }}>
       <TransportProvider>
-        <Distance category={props.category} />
-        <Learning category={props.category} />
+        <Distance category={category} />
+        <Learning category={category} />
       </TransportProvider>
     </Web>
   )

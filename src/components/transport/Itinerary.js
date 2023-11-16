@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
 import Checkbox from 'components/base/Checkbox'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
 import Bottom from 'components/misc/category/Bottom'
 import Instruction from 'components/misc/category/Instruction'
@@ -19,8 +19,8 @@ export default function Itinerary(props) {
   const transportations = useTransportations(itineraries)
 
   return (
-    <Section>
-      <Section.Content>
+    <Section $withoutPadding>
+      <SectionWideContent $small>
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Search itineraire iframe={props.iframe} />
           {transportations.length ? (
@@ -47,7 +47,7 @@ export default function Itinerary(props) {
           <BarChart items={transportations} max={transportations[transportations.length - 1]?.value} />
           {transportations.length ? <Bottom category={props.category} /> : null}
         </Wrapper>
-      </Section.Content>
+      </SectionWideContent>
     </Section>
   )
 }

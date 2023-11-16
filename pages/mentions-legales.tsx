@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 const FormatText = styled.div`
   h1 {
-    margin-top: 3rem;
     font-size: 3rem;
   }
   > h2 {
@@ -17,8 +16,8 @@ const FormatText = styled.div`
 export default function MetionsLegales() {
   return (
     <Web title='Mentions légales'>
-      <Section2>
-        <Section2InnerMargin>
+      <Section>
+        <SectionWideContent>
           <FormatText>
             <h1>Mentions légales</h1>
             <h2>Informations légales</h2>
@@ -64,8 +63,8 @@ export default function MetionsLegales() {
               lié par les conditions en vigueur lors de sa visite.
             </p>
           </FormatText>
-        </Section2InnerMargin>
-      </Section2>
+        </SectionWideContent>
+      </Section>
     </Web>
   )
 }

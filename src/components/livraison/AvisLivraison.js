@@ -1,40 +1,30 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 
 export default function AvisLivraison() {
   return (
-    <>
-      <Wrapper>
-        <Section2>
-          <Section2InnerMargin>
-            <FlexContainer>
-              <div>
-                <H3Title>Un avis, une suggestion ? </H3Title>
-                <Subtitle>Vos retours sont précieux pour améliorer le site Impact CO2.</Subtitle>
-              </div>
-              <ButtonPart>
-                <Link
-                  title={'Faire une suggestion'}
-                  target='_blank'
-                  rel='noreferrer noopener'
-                  href={'https://tally.so/r/nP1e9b'}>
-                  Faire une suggestion
-                </Link>
-              </ButtonPart>
-            </FlexContainer>
-          </Section2InnerMargin>
-        </Section2>
-      </Wrapper>
-    </>
+    <Section $withoutPadding>
+      <SectionWideContent>
+        <FlexContainer>
+          <div>
+            <H3Title>Un avis, une suggestion ? </H3Title>
+            <Subtitle>Vos retours sont précieux pour améliorer le site Impact CO2.</Subtitle>
+          </div>
+          <ButtonPart>
+            <Link
+              title={'Faire une suggestion'}
+              target='_blank'
+              rel='noreferrer noopener'
+              href={'https://tally.so/r/nP1e9b'}>
+              Faire une suggestion
+            </Link>
+          </ButtonPart>
+        </FlexContainer>
+      </SectionWideContent>
+    </Section>
   )
 }
-
-const Wrapper = styled.div`
-  border-bottom: 1px solid #6f87ae;
-  margin-top: 1.5rem;
-  padding-bottom: 2rem;
-`
 
 const FlexContainer = styled.div`
   display: flex;

@@ -21,7 +21,7 @@ export default function Search(props) {
 
   return engine ? (
     <Wrapper>
-      <Wrapper.Column>
+      <div>
         <Wrapper.Label>
           <strong>
             {props.numberEmails} <Wrapper.Color color='#6C8CC1'>email{props.numberEmails > 1 ? 's' : ''}</Wrapper.Color>
@@ -85,8 +85,8 @@ export default function Search(props) {
             </Wrapper.StyledSelect>
           </Wrapper.Parameters>
         </Wrapper.Desktop>
-      </Wrapper.Column>
-      <Wrapper.Column>
+      </div>
+      <div>
         <Wrapper.Label>
           <strong>{engine.evaluate(`streaming . durée`).nodeValue / 60}h</strong> de{' '}
           <strong>
@@ -157,8 +157,8 @@ export default function Search(props) {
             </Wrapper.StyledSelect>
           </Wrapper.Parameters>
         </Wrapper.Desktop>
-      </Wrapper.Column>
-      <Wrapper.Column>
+      </div>
+      <div>
         <Wrapper.Label>
           <strong>{engine.evaluate(`visio . durée`).nodeValue / 60}h</strong> de{' '}
           <strong>
@@ -229,7 +229,7 @@ export default function Search(props) {
             </Wrapper.StyledSelect>
           </Wrapper.Parameters>
         </Wrapper.Desktop>
-      </Wrapper.Column>
+      </div>
     </Wrapper>
   ) : null
 }

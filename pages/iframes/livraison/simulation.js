@@ -9,8 +9,8 @@ export default function Default() {
     <Iframe>
       <RulesProviderLivraison>
         <main id='contenu'>
-          <IntroLivraison embedded={true} />
-          <CalculateurLivraison embedded={true} />
+          <IntroLivraison />
+          <CalculateurLivraison />
         </main>
       </RulesProviderLivraison>
     </Iframe>

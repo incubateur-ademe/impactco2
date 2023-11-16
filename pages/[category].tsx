@@ -1,20 +1,21 @@
 import React from 'react'
+import { Category as CategoryType } from 'types/category'
 import categories from 'data/categories.json'
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
 import Learning from 'components/misc/Learning'
 
-export default function CategoryPage(props) {
+export default function CategoryPage({ category }: { category: CategoryType }) {
   return (
     <Web
-      title={props.category.meta.title}
-      description={props.category.meta.description}
+      title={category.meta.title}
+      description={category.meta.description}
       breadcrumb={{
         type: 'equivalent',
-        category: props.category,
+        category: category,
       }}>
-      <Category category={props.category} />
-      <Learning category={props.category} />
+      <Category category={category} />
+      <Learning category={category} />
     </Web>
   )
 }
@@ -31,7 +32,7 @@ export async function getStaticPaths() {
     fallback: 'blocking',
   }
 }
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { category: string } }) {
   const category = categories?.find((category) => category.slug === params.category)
   if (!category) {
     return { notFound: true }
