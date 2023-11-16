@@ -1,12 +1,12 @@
 import React from 'react'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 
 export default function Text(props) {
   return props.equivalent.hypothesis ? (
     <Section>
-      <Section.Content>
+      <SectionWideContent $small>
         <p dangerouslySetInnerHTML={{ __html: props.equivalent.hypothesis }} />
-      </Section.Content>
+      </SectionWideContent>
     </Section>
   ) : null
 }

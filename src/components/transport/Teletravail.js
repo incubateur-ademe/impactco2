@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { formatTotal } from 'utils/formatters'
 import { useItinerary } from 'hooks/useItineraries'
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Wrapper from 'components/misc/category/Wrapper'
 import TransportContext from 'components/transport/TransportProvider'
 import Search from './Search'
@@ -48,8 +48,8 @@ export default function Teletravail(props) {
   }, [presentiel, teletravail, holidays, extraKm, distance, currentTransportation])
 
   return (
-    <Section>
-      <Section.Content>
+    <Section $withoutPadding>
+      <SectionWideContent $small>
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Search teletravail iframe={props.iframe} />
           {distance && currentTransportation ? (
@@ -57,7 +57,7 @@ export default function Teletravail(props) {
           ) : null}
           {distance && currentTransportation ? <PercentFootprint saved={saved} /> : null}
         </Wrapper>
-      </Section.Content>
+      </SectionWideContent>
     </Section>
   )
 }

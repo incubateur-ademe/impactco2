@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
 import Marianne from 'components/base/Marianne'
-import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import NavSearchBar from 'components/misc/search/NavSearchBar'
 import Hamburger from './Hamburger'
 import MenuSweet from './nav/MenuSweet'
@@ -18,106 +18,106 @@ export default function HeaderSweet() {
 
   return (
     <BoxedShadow>
-      <Section2>
-        <Section2WideContent>
+      <Section $withoutPadding>
+        <SectionWideContent>
           <Header aria-label='En-tête'>
-            <Section2InnerMargin>
-              <LogoBar>
-                <Logos>
-                  <Hideable>
-                    <Link href='/'>
-                      <Marianne />
-                    </Link>
-                  </Hideable>
-                  <Hideable>
-                    <Link href='/'>
-                      <Ademe />
-                    </Link>
-                  </Hideable>
-                  <NonHideable>
-                    <Logo />
-                  </NonHideable>
-                </Logos>
-                <Actions>
-                  <ActionSearch>
-                    <NavSearchBar />
-                  </ActionSearch>
-                  <HamburgerContainer>
-                    <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked} />
-                  </HamburgerContainer>
-                </Actions>
-              </LogoBar>
-            </Section2InnerMargin>
+            <LogoBar>
+              <Logos>
+                <Hideable>
+                  <Link href='/'>
+                    <Marianne />
+                  </Link>
+                </Hideable>
+                <Hideable>
+                  <Link href='/'>
+                    <Ademe />
+                  </Link>
+                </Hideable>
+                <NonHideable>
+                  <Logo />
+                </NonHideable>
+              </Logos>
+              <Actions>
+                <ActionSearch>
+                  <NavSearchBar />
+                </ActionSearch>
+                <HamburgerContainer>
+                  <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked} />
+                </HamburgerContainer>
+              </Actions>
+            </LogoBar>
           </Header>
-          <NavBar>
-            <Section2InnerMargin>
-              <NavLinksMobile $shouldDisplay={hamburgerOpened}>
-                <NavLink>
-                  <SmallActionSearch>
-                    <NavSearchBar />
-                  </SmallActionSearch>
-                </NavLink>
-                <NavLink>
-                  <MenuSweet />
-                </NavLink>
-                <NavLink>
-                  <Link href='/comparateur' title='Comparateur carbone'>
-                    Comparateur carbone
-                  </Link>
-                </NavLink>
-                <NavLink>
-                  <Link
-                    href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                    title='Diffuser les ressources'
-                    target='_blank'
-                    rel='noreferrer noopener'>
-                    Diffuser les ressources
-                  </Link>
-                </NavLink>
-                <NavLink>
-                  <Link href='/integration' title='Intégrer les ressources'>
-                    Intégrer les ressources
-                  </Link>
-                </NavLink>
-                <NavLink>
-                  <Link href='/stats' title='Statistiques'>
-                    Statistiques
-                  </Link>
-                </NavLink>
-              </NavLinksMobile>
-              <NavLinksDesktop>
-                <NavLink>
-                  <MenuSweet />
-                </NavLink>
-                <NavLink>
-                  <Link href='/comparateur' title='Comparateur carbone'>
-                    Comparateur carbone
-                  </Link>
-                </NavLink>
-                <NavLink>
-                  <Link
-                    href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                    title='Diffuser les ressources'
-                    target='_blank'
-                    rel='noreferrer noopener'>
-                    Diffuser les ressources
-                  </Link>
-                </NavLink>
-                <NavLink>
-                  <Link href='/integration' title='Intégrer les ressources'>
-                    Intégrer les ressources
-                  </Link>
-                </NavLink>
-                <NavLink>
-                  <Link href='/stats' title='Statistiques'>
-                    Statistiques
-                  </Link>
-                </NavLink>
-              </NavLinksDesktop>
-            </Section2InnerMargin>
-          </NavBar>
-        </Section2WideContent>
-      </Section2>
+        </SectionWideContent>
+      </Section>
+      <NavBar>
+        <Section $withoutPadding>
+          <SectionWideContent>
+            <NavLinksMobile $shouldDisplay={hamburgerOpened}>
+              <NavLink>
+                <SmallActionSearch>
+                  <NavSearchBar />
+                </SmallActionSearch>
+              </NavLink>
+              <NavLink>
+                <MenuSweet />
+              </NavLink>
+              <NavLink>
+                <Link href='/comparateur' title='Comparateur carbone'>
+                  Comparateur carbone
+                </Link>
+              </NavLink>
+              <NavLink>
+                <Link
+                  href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                  title='Diffuser les ressources'
+                  target='_blank'
+                  rel='noreferrer noopener'>
+                  Diffuser les ressources
+                </Link>
+              </NavLink>
+              <NavLink>
+                <Link href='/integration' title='Intégrer les ressources'>
+                  Intégrer les ressources
+                </Link>
+              </NavLink>
+              <NavLink>
+                <Link href='/stats' title='Statistiques'>
+                  Statistiques
+                </Link>
+              </NavLink>
+            </NavLinksMobile>
+            <NavLinksDesktop>
+              <NavLink>
+                <MenuSweet />
+              </NavLink>
+              <NavLink>
+                <Link href='/comparateur' title='Comparateur carbone'>
+                  Comparateur carbone
+                </Link>
+              </NavLink>
+              <NavLink>
+                <Link
+                  href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                  title='Diffuser les ressources'
+                  target='_blank'
+                  rel='noreferrer noopener'>
+                  Diffuser les ressources
+                </Link>
+              </NavLink>
+              <NavLink>
+                <Link href='/integration' title='Intégrer les ressources'>
+                  Intégrer les ressources
+                </Link>
+              </NavLink>
+              <NavLink>
+                <Link href='/stats' title='Statistiques'>
+                  Statistiques
+                </Link>
+              </NavLink>
+            </NavLinksDesktop>
+          </SectionWideContent>
+        </Section>
+      </NavBar>
     </BoxedShadow>
   )
 }
@@ -135,6 +135,7 @@ const NavLinksDesktop = styled.div`
   ${(props) => props.theme.mq.small} {
     display: none;
   }
+  margin: 0 -0.75rem;
 `
 
 const Header = styled.header`
@@ -193,7 +194,6 @@ const SmallActionSearch = styled.div`
 
 const NavBar = styled.nav`
   border-top: 1px solid #eae5e8;
-  margin: 0 -0.75rem;
 `
 
 const NavLink = styled.div`

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { formatName } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Legend from 'components/charts/Legend'
 import StackedChart from 'components/charts/StackedChart'
 import Detail from 'components/views/equivalent/ecv/Detail'
@@ -82,7 +82,7 @@ export default function Simulateur(props) {
 
   return engine ? (
     <StyledSection>
-      <Section.Content>
+      <SectionWideContent>
         <Wrapper name={formatName(props.equivalent.name, 1, true)} slug={props.equivalent.slug}>
           <Bar total={total} equivalent={props.equivalent} category={props.category} name={props.name} />
           <StackedChart items={ecvToDisplay} total={total} />
@@ -121,7 +121,7 @@ export default function Simulateur(props) {
           </Questions>
           <ExpertMode questions={questions} />
         </Wrapper>
-      </Section.Content>
+      </SectionWideContent>
     </StyledSection>
   ) : null
 }

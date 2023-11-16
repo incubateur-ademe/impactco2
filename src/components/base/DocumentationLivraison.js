@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { RulePage } from 'publicodes-react'
 import { useContext } from 'react'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import Markdown from './Markdown'
 
@@ -12,8 +12,8 @@ export default function DocumentationLivraison(props) {
 
   return (
     <>
-      <Section2>
-        <Section2InnerMargin>
+      <Section $withoutPadding>
+        <SectionWideContent>
           <DocWrapper>
             <RulePage
               documentationPath='/documentation'
@@ -27,8 +27,8 @@ export default function DocumentationLivraison(props) {
               }}
             />
           </DocWrapper>
-        </Section2InnerMargin>
-      </Section2>
+        </SectionWideContent>
+      </Section>
     </>
   )
 }

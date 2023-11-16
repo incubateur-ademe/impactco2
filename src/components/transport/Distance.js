@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { formatName } from 'utils/formatters'
 import useTransportations from 'hooks/useTransportations'
 import Checkbox from 'components/base/Checkbox'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
 import Bottom from 'components/misc/category/Bottom'
 import CategoryLegend from 'components/misc/category/CategoryLegend'
@@ -18,8 +18,8 @@ export default function Distance(props) {
   const transportations = useTransportations()
 
   return (
-    <Section>
-      <Section.Content>
+    <Section $withoutPadding>
+      <SectionWideContent $small>
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Search distance iframe={props.iframe} />
           {transportations.length ? (
@@ -61,7 +61,7 @@ export default function Distance(props) {
             </>
           )}
         </Wrapper>
-      </Section.Content>
+      </SectionWideContent>
     </Section>
   )
 }

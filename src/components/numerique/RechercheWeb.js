@@ -1,12 +1,12 @@
 import React from 'react'
 import MagicLink from 'components/base/MagicLink'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Contact from './Contact'
 
 export default function Email() {
   return (
     <Section>
-      <Section.Content>
+      <SectionWideContent>
         <h2>Sources et hypothèses</h2>
         <p>
           Le périmètre de cet équivalent comprend une recherche effectuée sur un moteur de recherche et la consultation
@@ -31,7 +31,7 @@ export default function Email() {
         <Contact>
           Vous pourrez bientôt personnaliser ces données (types de terminaux, réseau fixe ou mobile, etc.)
         </Contact>
-      </Section.Content>
+      </SectionWideContent>
     </Section>
   )
 }

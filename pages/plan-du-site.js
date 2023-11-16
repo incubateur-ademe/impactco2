@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import categories from 'data/categories.json'
 import { formatName } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 export default function PlanDuSite() {
@@ -42,8 +42,8 @@ export default function PlanDuSite() {
 
   return (
     <Web title='Plan du site'>
-      <Section2>
-        <Section2InnerMargin>
+      <Section>
+        <SectionWideContent>
           <FormatText>
             <h1>Plan du site</h1>
             <Level1>
@@ -122,8 +122,8 @@ export default function PlanDuSite() {
               </Link>
             </Level1>
           </FormatText>
-        </Section2InnerMargin>
-      </Section2>
+        </SectionWideContent>
+      </Section>
     </Web>
   )
 }
@@ -134,7 +134,6 @@ const FormatText = styled.div`
     font-weight: 800;
     line-height: 44px;
     letter-spacing: -0.01em;
-    margin-top: 3rem;
     margin-bottom: 2rem;
   }
   > h2 {

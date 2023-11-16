@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.26.4 (16/11/2023)
+
+- Feat - Améliorations de l'espacement et de la largeur du site
+
 ## 1.26.3 (15/11/2023)
 
 - SEO : modifications des meta
@@ -23,7 +27,7 @@
 ## 1.25.11 (14/11/2023)
 
 - B33 - Homepage : mettre le bon lien de redirection
-- B32 - Redirection bouton “Voir toutes les catégories” 
+- B32 - Redirection bouton “Voir toutes les catégories”
 
 ## 1.25.10 (13/11/2023)
 

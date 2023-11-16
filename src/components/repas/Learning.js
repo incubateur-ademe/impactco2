@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;
@@ -21,7 +21,7 @@ const Text = styled.p``
 export default function Learning() {
   return (
     <StyledSection>
-      <Section.Content>
+      <SectionWideContent>
         <Title>
           <MagicLink to='/repas/repasavecduboeuf'>Produire 1kg de viande</MagicLink> émet 5 à 20 fois plus de gaz à
           effet de serre que produire 1kg de céréales.
@@ -65,7 +65,7 @@ export default function Learning() {
         <Button.Wrapper>
           <Button to={'https://nosgestesclimat.fr/'}>Découvrir Nos Gestes Climat</Button>
         </Button.Wrapper>
-      </Section.Content>
+      </SectionWideContent>
     </StyledSection>
   )
 }

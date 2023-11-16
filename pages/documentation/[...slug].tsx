@@ -24,10 +24,7 @@ export default function Documentation() {
         />
         <HeaderSweet />
         <BreadCrumb3 />
-        <DocumentationLivraison slug={router?.query?.slug?.join('/') || rootDoc} />
-        <br />
-        <br />
-        <br />
+        <DocumentationLivraison slug={(router?.query?.slug as string[])?.join('/') || rootDoc} />
         <Footer />
       </RulesProviderLivraison>
     </>

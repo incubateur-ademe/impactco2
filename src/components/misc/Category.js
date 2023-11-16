@@ -2,7 +2,7 @@ import React, { useContext, useMemo, useState } from 'react'
 import { formatName, formatTotal, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
 import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
 import Bottom from './category/Bottom'
@@ -42,8 +42,8 @@ export default function CategoryList(props) {
   )
 
   return (
-    <Section>
-      <Section.Content>
+    <Section $withoutPadding>
+      <SectionWideContent $small>
         {props?.category?.slug === 'boisson' ? <SourceAgribalyse /> : <></>}
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Description description={props.category.description} />
@@ -80,7 +80,7 @@ export default function CategoryList(props) {
           )}
           <Bottom category={props.category} />
         </Wrapper>
-      </Section.Content>
+      </SectionWideContent>
     </Section>
   )
 }
