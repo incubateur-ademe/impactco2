@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
+import { buildCurrentUrlFor } from 'utils/urls'
 
 export default function Seo(props) {
   const router = useRouter()
@@ -9,9 +10,9 @@ export default function Seo(props) {
     title: `${props.title || `Impact sur le climat des objets et gestes`} | Impact CO2`,
     description:
       props.description ||
-      `Découvrez l’impact sur le climat des objets et gestes de votre quotidien comme votre mobilier, vos habits ou encore vos repas`,
-    image: `https://${process.env.websiteurl || 'impactco2.fr'}/${props.image || 'metaimage.png'}`,
-    url: `https://${process.env.websiteurl || 'impactco2.fr'}${router.asPath}`,
+      `Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME.`,
+    image: `${buildCurrentUrlFor(process?.env?.websiteurl, '/' + (props.image || 'metaimage.png'))}`,
+    url: `${buildCurrentUrlFor(process?.env?.websiteurl, router.asPath)}`,
   }
 
   return (
@@ -24,7 +25,7 @@ export default function Seo(props) {
       <meta property='og:description' content={description} />
       <meta property='og:image' content={image} />
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:creator' content={'_datagir'} />
+      <meta name='twitter:creator' content={'ademe'} />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:image' content={image} />

@@ -1,5 +1,9 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import BreadCrumb3 from 'components/layout/web/BreadCrumb3'
+import Footer from 'components/layout/web/Footer'
+import HeaderSweet from 'components/layout/web/HeaderSweet'
+import Seo from 'components/layout/web/Seo'
 import { RulesProviderLivraison } from 'components/livraison/RulesProviderLivraison'
 
 export default function Documentation() {
@@ -13,7 +17,18 @@ export default function Documentation() {
   return (
     <>
       <RulesProviderLivraison>
+        <Seo
+          title={"Documentation de l'impact de la livraison"}
+          description={"Documentation de l'impact de la livraison d’un colis sur le climat"}
+          image={'metalivraison.png'}
+        />
+        <HeaderSweet />
+        <BreadCrumb3 />
         <DocumentationLivraison slug={router?.query?.slug?.join('/') || rootDoc} />
+        <br />
+        <br />
+        <br />
+        <Footer />
       </RulesProviderLivraison>
     </>
   )
