@@ -1,10 +1,22 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { Dispatch, ReactNode, SetStateAction, useState } from 'react'
 import categories from '../../data/categories.json'
 import habillement from '../../data/categories/habillement.json'
 import Modal from 'components/base/Modal'
 import Details from 'components/views/equivalent/Details'
-import { QuestionCard, QuestionInput, Tag, Title } from './Question.styles'
+import {
+  Button,
+  Content,
+  Description,
+  Header,
+  Input,
+  QuestionCard,
+  QuestionInput,
+  SourceButton,
+  Tag,
+  Title,
+} from './Question.styles'
 
 const equivalent = habillement.find((equivalent) => equivalent.slug === 'chaussuresentissu')
 const category = categories.find((category) => category.slug === 'habillement')
@@ -17,6 +29,7 @@ const Question = ({
   tag,
   customBorderRadius,
   withSource,
+  children,
 }: {
   title: string
   description: ReactNode
@@ -25,6 +38,7 @@ const Question = ({
   tag?: string | false
   customBorderRadius?: boolean
   withSource?: boolean
+  children?: ReactNode
 }) => {
   const [open, setOpen] = useState(false)
   return (
@@ -41,15 +55,21 @@ const Question = ({
         </Modal>
       )}
       <QuestionCard $customBorderRadius={customBorderRadius}>
-        <div>
+        <Header>
           <Title>
-            {title} {withSource && <button onClick={() => setOpen(true)}>(i)</button>}
+            {title}
+            {withSource && (
+              <SourceButton onClick={() => setOpen(true)}>
+                <Image src='/icons/information.svg' alt='' width={16} height={16} />
+              </SourceButton>
+            )}
           </Title>
-          {description}
-        </div>
-        <div>
+          {tag && <Tag>{tag}</Tag>}
+        </Header>
+        <Content>
+          <Description>{description}</Description>
           <QuestionInput>
-            <button
+            <Button
               onClick={() => {
                 if (value === undefined) {
                   setValue(0)
@@ -58,15 +78,16 @@ const Question = ({
                 }
               }}>
               -
-            </button>
-            <input
+            </Button>
+            <Input
               type='number'
               value={value === undefined ? '' : value}
               onChange={(e) => setValue(Number.parseInt(e.target.value) || undefined)}
               step={1}
               min={0}
+              max={99}
             />
-            <button
+            <Button
               onClick={() => {
                 if (value === undefined) {
                   setValue(1)
@@ -75,11 +96,10 @@ const Question = ({
                 }
               }}>
               +
-            </button>
+            </Button>
           </QuestionInput>
-          Paires
-        </div>
-        {tag && <Tag>{tag}</Tag>}
+        </Content>
+        {children}
       </QuestionCard>
     </>
   )

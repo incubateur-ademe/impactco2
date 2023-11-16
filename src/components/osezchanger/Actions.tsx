@@ -1,29 +1,28 @@
+import Image from 'next/image'
 import React from 'react'
 import Action from './Action'
-import { Container, Separator } from './Actions.styles'
+import { Title } from './Actions.styles'
+import { Description } from './OsezChanger.styles'
 
 const Actions = () => {
   return (
-    <div>
-      Il est parfois difficile de prendre conscience de ce que l'on possède réellement chez soi. La phase de "comptage"
-      est un incontournable pour mieux visualiser le contenu de notre penderie. Au final, avons-nous réellement besoin
-      de toutes ces paires de chaussures ?<h3>2 pistes pour agir</h3>
-      <Separator />
-      <Container>
-        <Action
-          image=''
-          imageAlt=''
-          text='Se poser les bonnes questions avant d’acheter : en ai-je vraiment besoin ?'
-          href='https://librairie.ademe.fr/cadic/1529/le-revers-de-mon-look.pdf'
-        />
-        <Action
-          image=''
-          imageAlt=''
-          text='Avez-vous songé à donner une seconde vie à vos chaussures non utilisées ?'
-          href='https://quefairedemesobjets.fr'
-        />
-      </Container>
-    </div>
+    <>
+      <Title>2 pistes pour agir</Title>
+      <Image color='var(--primary-40' src='/images/separator.svg' alt='' width={36} height={20} />
+      <Description>
+        Prendre conscience de ce que l’on possède est une excellente première étape. Pour aller plus loin :
+      </Description>
+      <Action
+        image='/images/osez-changer-questions.png'
+        text='Se poser les bonnes questions avant d’acheter : en ai-je vraiment besoin ?'
+        href='https://librairie.ademe.fr/cadic/1529/le-revers-de-mon-look.pdf'
+      />
+      <Action
+        image='/images/osez-changer-deuxieme-vie.png'
+        text='Avez-vous songé à donner une seconde vie à vos chaussures non utilisées ?'
+        href='https://quefairedemesobjets.fr'
+      />
+    </>
   )
 }
 
