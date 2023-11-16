@@ -230,14 +230,16 @@ const ReuseCardTxt = styled.div`
 
 const ReuseCardTitle = styled.div`
   font-size: 1rem;
-  height: 72px;
-  margin: 0.5rem 0;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
 `
 const ReuseCardParagraph = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 0.9rem;
   }
   color: #3a3a3a;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
 `
 const ReuseCardTag = styled.div`
   background-color: white;
