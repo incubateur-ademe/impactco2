@@ -1,11 +1,12 @@
+import Image from 'next/image'
 import React from 'react'
-import { Container } from './Action.styles'
+import { Container, Text } from './Action.styles'
 
-const Action = ({ image, imageAlt, text, href }: { image: string; imageAlt: string; text: string; href: string }) => {
+const Action = ({ image, text, href }: { image: string; text: string; href: string }) => {
   return (
     <Container href={href} target='_blank' rel='noreferrer noopener'>
-      <img src={image} alt={imageAlt} />
-      {text}
+      <Image src={image} alt='' width={100} height={86} />
+      <Text>{text}</Text>
     </Container>
   )
 }

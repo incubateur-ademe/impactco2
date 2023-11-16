@@ -2,6 +2,7 @@ import { withThemeFromJSXProvider } from '@storybook/addon-themes'
 import { Preview } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 import { themes } from '../src/utils/styles'
+import '../src/utils/variables.css'
 
 const preview: Preview = {
   parameters: {

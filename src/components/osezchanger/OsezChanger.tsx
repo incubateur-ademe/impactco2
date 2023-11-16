@@ -1,9 +1,10 @@
+import Image from 'next/image'
 import React, { useState } from 'react'
 import useScreenshot from 'hooks/useScreenshot'
 import Signature from 'components/screenshot/Signature'
 import Actions from './Actions'
 import Defi from './Defi'
-import { Container, DefiButton, Description } from './OsezChanger.styles'
+import { Container, DefiButton, Description, Title } from './OsezChanger.styles'
 import Share from './Share'
 
 const OsezChanger = () => {
@@ -11,12 +12,11 @@ const OsezChanger = () => {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_osez_changer', 'png', 'osez_changer')
 
   return (
-    <Container>
+    <Container $defiMode={defiMode}>
+      <Title>{defiMode ? 'Challenge chaussures' : '✨ Challengez votre communauté'}</Title>
+      <Image color='var(--primary-40' src='/images/separator.svg' alt='' width={36} height={20} />
       <Description>
-        <h2>{defiMode ? 'Challenge chaussures' : '✨ Challengez votre communauté'}</h2>
-        En moyenne les français ont trois fois plus de paires de chaussures qu'ils n'en n'ont besoin...
-        <br />
-        Et vous ?
+        En moyenne, les Français ont trois fois plus de paires de chaussures qu’ils n’en ont besoin... et vous ?
       </Description>
       {defiMode ? (
         <>

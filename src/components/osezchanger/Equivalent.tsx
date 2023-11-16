@@ -5,39 +5,34 @@ import numerique from '../../data/categories/numerique.json'
 import repas from '../../data/categories/repas.json'
 import { formatName } from 'utils/formatters'
 import Emoji from 'components/base/Emoji'
+import { Card, Name, Value } from './Equivalent.styles'
 
 type Types = 'tshirt' | 'smartphone' | 'vegetarian'
-const equivalents: Record<Types, { values: EquivalentType | undefined; label: string }> = {
-  tshirt: {
-    values: habillement.find((equivalent) => equivalent.slug === 'tshirtencoton'),
-    label: 'Tshirt[s]',
-  },
-  smartphone: {
-    values: numerique.find((equivalent) => equivalent.slug === 'smartphone'),
-    label: 'Smartphone[s]',
-  },
-  vegetarian: {
-    values: repas.find((equivalent) => equivalent.slug === 'repasvegetarien'),
-    label: 'Repas végétarien[s]',
-  },
+const equivalents: Record<Types, EquivalentType | undefined> = {
+  tshirt: habillement.find((equivalent) => equivalent.slug === 'tshirtencoton'),
+  smartphone: numerique.find((equivalent) => equivalent.slug === 'smartphone'),
+  vegetarian: repas.find((equivalent) => equivalent.slug === 'repasvegetarien'),
 }
 
 const Equivalent = ({ value, type }: { value: number; type: Types }) => {
   const equivalent = equivalents[type]
-  if (!equivalent.values) {
+  if (!equivalent) {
     return null
   }
 
-  const co2 =
-    equivalent.values.total ||
-    (equivalent.values.ecv ? equivalent.values.ecv.reduce((sum, { value }) => sum + value, 0) : 0)
+  const co2 = equivalent.total || (equivalent.ecv ? equivalent.ecv.reduce((sum, { value }) => sum + value, 0) : 0)
 
-  console.log(equivalent.values)
   return (
-    <div>
-      <Emoji>{equivalent.values.emoji}</Emoji>
-      {Math.round(value / co2)} {formatName(equivalent.label, Math.round(value / co2))}
-    </div>
+    <Card>
+      <Emoji big>{equivalent.emoji}</Emoji>
+      <Value>
+        {(value / co2).toLocaleString('fr-fr', {
+          maximumFractionDigits: 1,
+          minimumFractionDigits: 0,
+        })}
+      </Value>
+      <Name>{formatName(equivalent.name, Math.round(value / co2), true)}</Name>
+    </Card>
   )
 }
 

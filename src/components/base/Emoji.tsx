@@ -2,23 +2,34 @@ import React from 'react'
 import styled from 'styled-components'
 import twemoji from 'twemoji'
 
-const Wrapper = styled.span`
+const Wrapper = styled.span<{ $big?: boolean }>`
   display: inline-block;
   font-style: normal;
+  height: ${({ $big }) => ($big ? '1.5' : '1')}em;
   vertical-align: middle;
 
   img {
     display: inline-block;
-    height: 1em;
+    height: 100%;
     width: auto;
   }
 `
 
-export default function Emoji(props) {
+export default function Emoji({
+  children,
+  className,
+  onClick,
+  big,
+}: {
+  children: string
+  className?: string
+  onClick?: () => void
+  big?: boolean
+}) {
   let stringDOMforEmoji = null
 
-  if (props.children) {
-    let parsed = twemoji.parse(props.children, {
+  if (children) {
+    const parsed = twemoji.parse(children, {
       folder: 'svg',
       ext: '.svg',
       base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
@@ -29,11 +40,12 @@ export default function Emoji(props) {
 
   return stringDOMforEmoji ? (
     <Wrapper
+      $big={big}
       dangerouslySetInnerHTML={{
         __html: stringDOMforEmoji,
       }}
-      className={props.className}
-      onClick={props.onClick || (() => null)}
+      className={className}
+      onClick={onClick || (() => null)}
     />
   ) : (
     ''
