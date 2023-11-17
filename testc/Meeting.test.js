@@ -53,13 +53,11 @@ describe('Meeting', () => {
   const server = setupServer(http.post('/api/notion', () => HttpResponse.json({})))
 
   server.events.on('request:start', async ({ request }) => {
-    console.log('MSW intercepted:', request.method, request.url, request.headers)
     callsHistory.push({
       body: JSON.parse(await request.clone().text()),
       method: request.method,
       pathname: new URL(request.url).pathname,
     })
-    console.log('callsHistory: ', callsHistory)
   })
   beforeEach(() => (callsHistory = []))
   beforeAll(() => server.listen())
