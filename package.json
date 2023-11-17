@@ -118,6 +118,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-mock-axios": "^4.7.3",
     "lint-staged": "^15.0.2",
+    "msw": "^2.0.8",
     "next-router-mock": "^0.9.10",
     "next-test-api-route-handler": "^3.1.10",
     "nextjs-http-supertest": "^1.0.12",

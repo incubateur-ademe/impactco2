@@ -1,14 +1,12 @@
-export default function handler(req, res) {
-  return res.status(200).json({
-    hello: 'world',
+import axios from 'axios'
+
+export default async function handler(req, res) {
+  const data = await axios.get('https://jsonplaceholder.typicode.com/posts/1').then((resp) => {
+    console.log('resp: ', resp)
+    return {
+      statusCode: 200,
+      body: resp.data,
+    }
   })
-}
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '1kb',
-    },
-  },
-  // Specifies the maximum allowed duration for this function to execute (in seconds)
-  maxDuration: 5,
+  return res.status(200).json(data?.body || { hello: 'world' })
 }
