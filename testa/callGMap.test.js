@@ -3,6 +3,7 @@ import { HttpResponse, http } from 'msw'
 import { setupServer } from 'msw/node'
 import { createMocks } from 'node-mocks-http'
 import callGMap from 'pages/api/callGMap'
+import matrixJson from 'test-mock/matrix.json'
 import { tryParseJSONObject } from 'test-utils/try-json-parse'
 
 describe('CallGMap with msw', () => {
@@ -21,7 +22,7 @@ describe('CallGMap with msw', () => {
 
     // Assert the expected behavior
     expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toStrictEqual({ called: 'api' })
+    expect(JSON.parse(res._getData())).toStrictEqual(matrixJson)
   })
   test('200: Should reach the distancematrix API (nominal scenario)', async () => {
     // Create mock request and response objects
@@ -52,7 +53,7 @@ describe('CallGMap with msw', () => {
 
   // Mock & check HTTP call
   let callsHistory = []
-  const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json({ called: 'api' })))
+  const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json(matrixJson)))
 
   server.events.on('request:start', async ({ request }) => {
     console.log(request.url)
