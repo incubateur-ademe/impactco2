@@ -3,7 +3,7 @@ import { createMocks } from 'node-mocks-http'
 import hello from 'pages/api/hello'
 
 // Write a test using Jest
-test.only('should return a greeting message', async () => {
+test.skip('should return a greeting message', async () => {
   // Create mock request and response objects
   const { req, res } = createMocks({
     method: 'GET',

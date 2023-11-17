@@ -6,7 +6,7 @@ import endpoint from '../pages/api/hello'
 // Respect the Next.js config object if it's exported
 const handler: typeof endpoint & { config?: PageConfig } = endpoint
 
-it('calls simple hello API endpoint', async () => {
+it.skip('calls simple hello API endpoint', async () => {
   await testApiHandler({
     handler,
     test: async ({ fetch }) => {

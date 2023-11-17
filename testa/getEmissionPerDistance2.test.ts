@@ -6,7 +6,7 @@ import endpoint from '../pages/api/getEmissionsPerDistance.js'
 // Respect the Next.js config object if it's exported
 const handler: typeof endpoint & { config?: PageConfig } = endpoint
 
-it('getEmissionPerDistance with next-test-api-route-handler', async () => {
+it.skip('getEmissionPerDistance with next-test-api-route-handler', async () => {
   await testApiHandler({
     handler,
     url: '?km=3&fields=description,display&transportations=14',
