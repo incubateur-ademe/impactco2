@@ -23,6 +23,6 @@ export const Name = styled.div`
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  max-width: 50px;
+  max-width: 75px;
   text-align: center;
 `

@@ -4,11 +4,13 @@ import useScreenshot from 'hooks/useScreenshot'
 import Signature from 'components/screenshot/Signature'
 import Actions from './Actions'
 import Defi from './Defi'
-import { Container, DefiButton, Description, Title } from './OsezChanger.styles'
-import Share from './Share'
+import { Container, DefiButton, Description, Logos, Screenshot, Title } from './OsezChanger.styles'
+import Resources from './Resources'
+import Modal, { ModalType } from './modals/Modal'
 
-const OsezChanger = () => {
-  const [defiMode, setDefiMode] = useState(false)
+const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
+  const [defiMode, setDefiMode] = useState(iframe || false)
+  const [modal, setModal] = useState<ModalType | undefined>()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_osez_changer', 'png', 'osez_changer')
 
   return (
@@ -20,15 +22,27 @@ const OsezChanger = () => {
       </Description>
       {defiMode ? (
         <>
-          <div ref={ref} data-testid='defi'>
-            <Defi />
-            {isScreenshotting && <Signature />}
-          </div>
-          <Actions />
-          <Share takeScreenshot={takeScreenshot} />
+          <Screenshot ref={ref} data-testid='defi' $isScreenshotting={isScreenshotting}>
+            <Defi setModal={setModal} />
+            {isScreenshotting && <Signature noMargin />}
+          </Screenshot>
+          <Resources />
+          {iframe && (
+            <Logos>
+              <Signature noMargin noLink />
+            </Logos>
+          )}
+          <Actions takeScreenshot={takeScreenshot} setModal={setModal} />
+          {modal && <Modal type={modal} onClose={() => setModal(undefined)} />}
         </>
       ) : (
-        <DefiButton onClick={() => setDefiMode(true)}>Relever le défi</DefiButton>
+        <DefiButton
+          onClick={() => {
+            window?.please?.track(['trackEvent', 'OsezChanger', 'Start', 'osez_changer_start'])
+            setDefiMode(true)
+          }}>
+          Relever le défi
+        </DefiButton>
       )}
     </Container>
   )

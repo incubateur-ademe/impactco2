@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
-export const Title = styled.div`
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20px;
-  margin-top: 24px;
+export const Container = styled.div`
+  border-top: 1px solid var(--secondary-20);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 24px -24px 0 -24px;
+  padding-top: 12px;
 `

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.27.0 (11/11/2023)
+
+- Feat - Osez Changer 
+
 ## 1.26.5 (21/11/2023)
 
 - Fix - Interactions avec la liseuse

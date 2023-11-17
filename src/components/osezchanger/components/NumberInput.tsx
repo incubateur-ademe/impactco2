@@ -13,6 +13,7 @@ const NumberInput = ({
   return (
     <Container>
       <LeftButton
+        name='-'
         disabled={value === 0}
         onClick={() => {
           if (value === undefined) {
@@ -42,6 +43,7 @@ const NumberInput = ({
         max={99}
       />
       <RightButton
+        name='+'
         onClick={() => {
           if (value === undefined) {
             setValue(1)

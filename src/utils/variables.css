@@ -2,6 +2,7 @@ body {
   --primary-10: #e0f4f3;
   --primary-20: #c4eae7;
   --primary-40: #35a099;
+  --primary-50: #26827c;
   --primary-60: #13706d;
   --primary-70: #0c5956;
   --primary-80: #003332;
@@ -13,5 +14,6 @@ body {
   --secondary-70: #00205f;
   --secondary-80: #013;
   --neutral-50: #6a5f66;
+  --neutral-70: #3a3236;
   --neutral-80: #110d10;
 }
