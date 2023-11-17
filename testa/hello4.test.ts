@@ -17,7 +17,7 @@ server.events.on('request:start', ({ request }) => {
   console.log('MSW intercepted:', request.method, request.url)
 })
 
-beforeAll(() => server.listen())
+beforeAll(() => server.listen({ onUnhandledRequest: 'warn' }))
 afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
 
