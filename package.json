@@ -120,6 +120,7 @@
     "next-test-api-route-handler": "^3.1.10",
     "nextjs-http-supertest": "^1.0.12",
     "nock": "^13.3.7",
+    "node-mocks-http": "^1.13.0",
     "prettier": "^3.0.3",
     "prisma": "^5.5.0",
     "storybook": "^7.5.2",

@@ -1,7 +1,7 @@
 import server from 'nextjs-http-supertest'
 import request from 'supertest'
 
-describe.skip('getEmissionPerDistance', () => {
+describe.skip('getEmissionPerDistance with supertest', () => {
   afterAll(() => {
     server.close()
   })
