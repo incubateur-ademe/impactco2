@@ -40,6 +40,8 @@ jobs:
         run: yarn testu
       - name: Component tests => with Jest
         run: yarn testc
+      - name: API tests => with Jest & Supertest
+        run: yarn testa
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps chromium
       - name: E2E test  => with Playwright
