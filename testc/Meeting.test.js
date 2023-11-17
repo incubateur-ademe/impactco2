@@ -24,12 +24,7 @@ describe('Meeting', () => {
   })
   it("Lorsque un utilisateur entre son email et valide, l'email est envoyé à l'API pour traitement", async () => {
     // Given
-    expect(apiNotionCall).toStrictEqual({
-      nbOfCall: 0,
-      method: '',
-      urlPath: '',
-      body: {},
-    })
+    expect(callsHistory).toStrictEqual([])
     render(
       <StyleProvider>
         <Meeting />
@@ -41,10 +36,10 @@ describe('Meeting', () => {
     await userEvent.type(screen.queryByTestId('emailInput'), 'aa@bb.com')
     await userEvent.click(screen.getByLabelText('Prendre rendez-vous'))
     // Then
-    expect(apiNotionCall).toStrictEqual({
-      nbOfCall: 1,
+    expect(callsHistory.length).toBe(1)
+    expect(callsHistory[0]).toStrictEqual({
       method: 'POST',
-      urlPath: '/api/notion',
+      pathname: '/api/notion',
       body: {
         email: 'aa@bb.com',
         type: 'contact',
@@ -54,30 +49,19 @@ describe('Meeting', () => {
 
   // Mock & check HTTP call
   // Using https://mswjs.io/docs/integrations/node
-  let apiNotionCall = {}
-  const server = setupServer(
-    http.post('/api/notion', async () => {
-      return HttpResponse.json({})
-    })
-  )
+  let callsHistory = []
+  const server = setupServer(http.post('/api/notion', () => HttpResponse.json({})))
 
   server.events.on('request:start', async ({ request }) => {
     console.log('MSW intercepted:', request.method, request.url, request.headers)
-    apiNotionCall.nbOfCall += 1
-    apiNotionCall.body = JSON.parse(await request.clone().text())
-    apiNotionCall.method = 'POST'
-    apiNotionCall.urlPath = '/api/notion'
-    console.log('apiNotionCall: ', apiNotionCall)
+    callsHistory.push({
+      body: JSON.parse(await request.clone().text()),
+      method: request.method,
+      pathname: new URL(request.url).pathname,
+    })
+    console.log('callsHistory: ', callsHistory)
   })
-  beforeEach(
-    () =>
-      (apiNotionCall = {
-        nbOfCall: 0,
-        urlPath: '',
-        method: '',
-        body: {},
-      })
-  )
+  beforeEach(() => (callsHistory = []))
   beforeAll(() => server.listen())
   afterEach(() => server.resetHandlers())
   afterAll(() => server.close())
