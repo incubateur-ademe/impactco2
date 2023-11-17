@@ -10,6 +10,9 @@ jest.mock('utils/axios', () => ({
 }))
 
 describe('Meeting', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
   it("Lorsque un utilisateur entre son email et valide, un message de confirmation s'affiche à l'écran", async () => {
     // Given
     render(
