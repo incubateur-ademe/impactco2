@@ -20,7 +20,7 @@ const OsezChanger = () => {
       </Description>
       {defiMode ? (
         <>
-          <div ref={ref}>
+          <div ref={ref} data-testid='defi'>
             <Defi />
             {isScreenshotting && <Signature />}
           </div>

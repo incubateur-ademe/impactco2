@@ -23,9 +23,9 @@ const Equivalent = ({ value, type }: { value: number; type: Types }) => {
   const co2 = equivalent.total || (equivalent.ecv ? equivalent.ecv.reduce((sum, { value }) => sum + value, 0) : 0)
 
   return (
-    <Card>
+    <Card data-testid={`defi-equivalent-${type}`}>
       <Emoji big>{equivalent.emoji}</Emoji>
-      <Value>
+      <Value data-testid={`defi-equivalent-${type}-value`}>
         {(value / co2).toLocaleString('fr-fr', {
           maximumFractionDigits: 1,
           minimumFractionDigits: 0,
