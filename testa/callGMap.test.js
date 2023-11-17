@@ -10,21 +10,7 @@ describe('CallGMap with msw', () => {
   const DISTANCE_MATRIX_ENDPOINT =
     'https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY'
 
-  test('200: Should return the body of the response of the distancematrix API', async () => {
-    // Create mock request and response objects
-    const { req, res } = createMocks({
-      method: 'GET',
-      url: '/api/callGMap?nantes',
-    })
-
-    // Call the route function with the mock objects
-    await callGMap(req, res)
-
-    // Assert the expected behavior
-    expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toStrictEqual(matrixJson)
-  })
-  test('200: Should reach the distancematrix API (nominal scenario)', async () => {
+  test("Doit appeler l'API distanceMatrix", async () => {
     // Create mock request and response objects
     const { req, res } = createMocks({
       method: 'GET',
@@ -41,6 +27,34 @@ describe('CallGMap with msw', () => {
       body: {},
       searchParams: 'nantes=&key=MOCKED_GMAP_KEY',
     })
+  })
+  test('Doit retourner la même réponse que la distanceMatrix API', async () => {
+    // Create mock request and response objects
+    const { req, res } = createMocks({
+      method: 'GET',
+      url: '/api/callGMap?nantes',
+    })
+
+    // Call the route function with the mock objects
+    await callGMap(req, res)
+
+    // Assert the expected behavior
+    expect(res._getStatusCode()).toBe(200)
+    expect(JSON.parse(res._getData())).toStrictEqual(matrixJson)
+  })
+  test('Si la limite est activée, refuse un appel ne provenant du site appelant', async () => {
+    // Create mock request and response objects
+    const { req, res } = createMocks({
+      method: 'GET',
+      url: '/api/callGMap?nantes',
+    })
+    process.env = { ...process.env, LIMIT_API: 'activated' }
+    // Call the route function with the mock objects
+    await callGMap(req, res)
+
+    // Assert the expected behavior
+    expect(res._getStatusCode()).toBe(403)
+    expect(res._getData()).toStrictEqual('Not authorized')
   })
   //---------
   // STUBBING PART BELOW
