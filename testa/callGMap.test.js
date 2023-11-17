@@ -1,4 +1,5 @@
 // Import the route file and the library
+import { rateLimit } from 'express-rate-limit'
 import slowDown from 'express-slow-down'
 import { HttpResponse, http } from 'msw'
 import { setupServer } from 'msw/node'
@@ -10,13 +11,17 @@ import { tryParseJSONObject } from 'test-utils/try-json-parse'
 jest.mock('express-slow-down', () =>
   jest.fn().mockImplementation(() => {
     return (req, res, next) => {
-      // Mock the behavior of the rateLimit middleware
-      // You can customize this implementation based on your test requirements
       return next()
     }
   })
 )
-
+jest.mock('express-rate-limit', () => ({
+  rateLimit: jest.fn().mockImplementation(() => {
+    return (req, res, next) => {
+      return next()
+    }
+  }),
+}))
 describe('CallGMap with msw', () => {
   const DISTANCE_MATRIX_ENDPOINT =
     'https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY'
@@ -77,7 +82,7 @@ describe('CallGMap with msw', () => {
     // Then
     expect(res._getStatusCode()).toBe(200)
   })
-  test("Si la limite est activée, peut ralentir l'exécution", async () => {
+  test("Si la limite est activée, peut ralentir ou stopper l'exécution", async () => {
     // Given
     const { req, res } = createMocks({
       method: 'GET',
@@ -91,6 +96,7 @@ describe('CallGMap with msw', () => {
     await callGMap(req, res)
     // Then
     expect(slowDown).toHaveBeenCalledTimes(1)
+    expect(rateLimit).toHaveBeenCalledTimes(1)
     expect(res._getStatusCode()).toBe(200)
   })
   //---------
