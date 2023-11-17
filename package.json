@@ -129,7 +129,8 @@
     "storybook": "^7.5.2",
     "supertest": "^6.3.3",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "undici": "^5.27.2"
   },
   "lint-staged": {
     "*.{js,jsx}": [
