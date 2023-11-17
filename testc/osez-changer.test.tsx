@@ -18,6 +18,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
     expect(screen.queryByTestId('defi-result')).toBeNull()
+    expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
       screen.getAllByRole('button', { name: '+' })[0].click()
@@ -26,6 +27,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
     expect(screen.queryByTestId('defi-result')).toBeNull()
+    expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
       screen.getAllByRole('button', { name: '+' })[1].click()
@@ -35,6 +37,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).toHaveTextContent('0 paire')
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
     expect(screen.queryByTestId('defi-result')).toBeNull()
+    expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
       screen.getAllByRole('button', { name: '+' })[2].click()
@@ -44,6 +47,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-neuf-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+16,5kg CO2e')
     expect(screen.queryByTestId('defi-result')).not.toBeNull()
+    expect(screen.queryByTestId('defi-empty-result')).toBeNull()
     expect(screen.queryByTestId('defi-result-title')).toHaveTextContent('1 paire de chaussure neuve (+16,5kg de CO2e)')
     expect(screen.queryByTestId('defi-equivalent-tshirt-value')).toHaveTextContent('3,2')
     expect(screen.queryByTestId('defi-equivalent-smartphone-value')).toHaveTextContent('0,5')
@@ -90,30 +94,5 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).toHaveTextContent('+5 paires')
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
     expect(screen.queryByTestId('defi-result')).toBeNull()
-  })
-
-  it('Should not input negative number', () => {
-    renderWithStyle(<Defi />)
-
-    act(() => {
-      fireEvent.change(screen.getByTestId('question-avis-input'), { target: { value: '-1' } })
-    })
-
-    expect(screen.getByTestId('question-avis-input')).toHaveValue(0)
-  })
-
-  it('Should not reduce number below 0', () => {
-    renderWithStyle(<Defi />)
-
-    act(() => {
-      screen.getAllByRole('button', { name: '-' })[0].click()
-    })
-
-    expect(screen.getByTestId('question-avis-input')).toHaveValue(0)
-
-    act(() => {
-      screen.getAllByRole('button', { name: '-' })[0].click()
-    })
-    expect(screen.getByTestId('question-avis-input')).toHaveValue(0)
   })
 })

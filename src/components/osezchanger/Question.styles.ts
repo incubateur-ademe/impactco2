@@ -26,16 +26,6 @@ export const Title = styled.div`
   margin-bottom: 4px;
 `
 
-export const SourceButton = styled.button`
-  background-color: transparent;
-  border: none;
-  color: var(--primary-60);
-  cursor: pointer;
-  margin-left: 8px;
-  padding: 0;
-  vertical-align: middle;
-`
-
 export const Description = styled.div`
   color: var(--secondary-70);
   flex: 1 0 0;
@@ -43,40 +33,6 @@ export const Description = styled.div`
   font-weight: 400;
   line-height: 20px;
   min-width: 200px;
-`
-
-export const QuestionInput = styled.div`
-  border: 1px solid var(--secondary-20);
-  border-radius: 4px;
-  display: flex;
-`
-
-export const Input = styled.input`
-  -moz-appearance: textfield;
-  border: none;
-  border-left: 1px solid var(--secondary-20);
-  border-right: 1px solid var(--secondary-20);
-  font-weight: 700;
-  padding-block: 0;
-  padding-inline: 0;
-  text-align: center;
-  width: 36px;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-`
-
-export const Button = styled.button`
-  background-color: transparent;
-  border: none;
-  color: var(--secondary-60);
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 700;
-  height: 36px;
-  width: 36px;
 `
 
 export const Tag = styled.div`

@@ -20,7 +20,7 @@ const Actions = () => {
       <Action
         image='/images/osez-changer-deuxieme-vie.png'
         text='Avez-vous songé à donner une seconde vie à vos chaussures non utilisées ?'
-        href='https://quefairedemesobjets.fr'
+        href='https://longuevieauxobjets.ademe.fr/'
       />
     </>
   )
