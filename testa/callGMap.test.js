@@ -22,7 +22,7 @@ jest.mock('express-rate-limit', () => ({
     }
   }),
 }))
-describe('CallGMap with msw', () => {
+describe('CallGMap', () => {
   const DISTANCE_MATRIX_ENDPOINT =
     'https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY'
 

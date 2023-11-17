@@ -1,7 +1,7 @@
 import { createMocks } from 'node-mocks-http'
 import getEmissionsPerDistance from 'pages/api/getEmissionsPerDistance.js'
 
-it('getEmissionPerDistance with mocks', async () => {
+it('getEmissionPerDistance', async () => {
   // Create mock request and response objects
   const { req, res } = createMocks({
     method: 'GET',
