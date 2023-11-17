@@ -7,26 +7,6 @@ import { StyleProvider } from 'components/providers/StyleProvider'
 import Meeting from 'components/meeting/Meeting'
 
 describe('Meeting', () => {
-  // Mock & check HTTP call
-  // Using https://mswjs.io/docs/integrations/node
-  let apiNotionCalledNthTime = 0
-  const server = setupServer(
-    http.post('/api/notion', ({ request }) => {
-      console.log('request: ', request)
-      return HttpResponse.json({ calledApiNotion: 'yes' })
-    })
-  )
-  server.events.on('request:start', ({ request }) => {
-    console.log('MSW intercepted:', request.method, request.url)
-    if (request.url === 'http://localhost/api/notion') {
-      apiNotionCalledNthTime += 1
-    }
-  })
-  beforeEach(() => (apiNotionCalledNthTime = 0))
-  beforeAll(() => server.listen())
-  afterEach(() => server.resetHandlers())
-  afterAll(() => server.close())
-
   it("Lorsque un utilisateur entre son email et valide, un message de confirmation s'affiche à l'écran", async () => {
     // Given
     render(
@@ -44,6 +24,12 @@ describe('Meeting', () => {
   })
   it("Lorsque un utilisateur entre son email et valide, l'email est envoyé à l'API pour traitement", async () => {
     // Given
+    expect(apiNotionCall).toStrictEqual({
+      nbOfCall: 0,
+      method: '',
+      urlPath: '',
+      body: {},
+    })
     render(
       <StyleProvider>
         <Meeting />
@@ -55,6 +41,44 @@ describe('Meeting', () => {
     await userEvent.type(screen.queryByTestId('emailInput'), 'aa@bb.com')
     await userEvent.click(screen.getByLabelText('Prendre rendez-vous'))
     // Then
-    expect(apiNotionCalledNthTime).toBe(1)
+    expect(apiNotionCall).toStrictEqual({
+      nbOfCall: 1,
+      method: 'POST',
+      urlPath: '/api/notion',
+      body: {
+        email: 'aa@bb.com',
+        type: 'contact',
+      },
+    })
   })
+
+  // Mock & check HTTP call
+  // Using https://mswjs.io/docs/integrations/node
+  let apiNotionCall = {}
+  const server = setupServer(
+    http.post('/api/notion', async () => {
+      return HttpResponse.json({})
+    })
+  )
+
+  server.events.on('request:start', async ({ request }) => {
+    console.log('MSW intercepted:', request.method, request.url, request.headers)
+    apiNotionCall.nbOfCall += 1
+    apiNotionCall.body = JSON.parse(await request.clone().text())
+    apiNotionCall.method = 'POST'
+    apiNotionCall.urlPath = '/api/notion'
+    console.log('apiNotionCall: ', apiNotionCall)
+  })
+  beforeEach(
+    () =>
+      (apiNotionCall = {
+        nbOfCall: 0,
+        urlPath: '',
+        method: '',
+        body: {},
+      })
+  )
+  beforeAll(() => server.listen())
+  afterEach(() => server.resetHandlers())
+  afterAll(() => server.close())
 })
