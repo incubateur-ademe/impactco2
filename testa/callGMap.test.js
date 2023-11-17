@@ -102,18 +102,10 @@ describe('CallGMap', () => {
   //---------
   // STUBBING PART BELOW
   //----------
-  // Mock & check HTTP call
-  // Using https://mswjs.io/docs/integrations/node
-  beforeAll(() => server.listen())
-  afterEach(() => server.resetHandlers())
-  afterAll(() => server.close())
-
-  // Mock & check HTTP call
   let callsHistory = []
   const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json(matrixJson)))
 
   server.events.on('request:start', async ({ request }) => {
-    console.log(request.url)
     callsHistory.push({
       body: tryParseJSONObject(await request.clone().text()),
       method: request.method,
