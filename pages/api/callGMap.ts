@@ -27,7 +27,6 @@ const applyMiddleware = (middleware: Function) => (req: NextApiRequest, res: Nex
 const middlewares = getRateLimitMiddlewares().map(applyMiddleware)
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log('reached1-----------------------: ')
   if (process.env.LIMIT_API) {
     if (!req.headers.referer?.startsWith(`https://${process.env.WEBSITE_URL}`)) {
       return res.status(403).send('Not authorized')
@@ -38,15 +37,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(429).send('Too Many Requests')
     }
   }
-  console.log('reached2-----------------------: ')
 
   const queryString = new URLSearchParams(req.query as Record<string, string>).toString()
   await trackAPIRequest(req, 'callGMap', queryString)
 
   const url = `https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&key=${process.env.GMAP_API_KEY}`
   console.log('url: ', url)
-
-  console.log('reached3-----------------------: ')
 
   const data = await axios.get(url).then((resp) => {
     console.log('resp: ', resp)
@@ -55,6 +51,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       body: resp.data,
     }
   })
-  console.log('reached4-----------------------: ')
   return res.status(200).json(data?.body || {})
 }
