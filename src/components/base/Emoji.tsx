@@ -2,15 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import twemoji from 'twemoji'
 
-const Wrapper = styled.span<{ $big?: boolean }>`
-  display: inline-block;
+const Wrapper = styled.span<{ $height?: string }>`
   font-style: normal;
-  height: ${({ $big }) => ($big ? '1.5' : '1')}em;
+  ${({ $height }) => $height && `height: ${$height};`}
   vertical-align: middle;
 
   img {
     display: inline-block;
-    height: 100%;
+    height: ${({ $height }) => ($height ? $height : '1em')};
     width: auto;
   }
 `
@@ -19,12 +18,12 @@ export default function Emoji({
   children,
   className,
   onClick,
-  big,
+  height,
 }: {
   children: string
   className?: string
   onClick?: () => void
-  big?: boolean
+  height?: string
 }) {
   let stringDOMforEmoji = null
 
@@ -40,7 +39,7 @@ export default function Emoji({
 
   return stringDOMforEmoji ? (
     <Wrapper
-      $big={big}
+      $height={height}
       dangerouslySetInnerHTML={{
         __html: stringDOMforEmoji,
       }}

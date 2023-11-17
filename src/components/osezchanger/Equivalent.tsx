@@ -24,7 +24,7 @@ const Equivalent = ({ value, type }: { value: number; type: Types }) => {
 
   return (
     <Card data-testid={`defi-equivalent-${type}`}>
-      <Emoji big>{equivalent.emoji}</Emoji>
+      <Emoji height='24px'>{equivalent.emoji}</Emoji>
       <Value data-testid={`defi-equivalent-${type}-value`}>
         {(value / co2).toLocaleString('fr-fr', {
           maximumFractionDigits: 1,

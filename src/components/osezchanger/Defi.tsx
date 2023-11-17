@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { formatName } from 'utils/formatters'
 import { Equivalents, Result, ResultValue } from './Defi.styles'
+import EmptyResult from './EmptyResult'
 import Equivalent from './Equivalent'
 import Question from './Question'
 
@@ -68,7 +69,9 @@ const Defi = () => {
               <Equivalent type='vegetarian' value={newValue * shoesImpact} />
             </Equivalents>
           </Result>
-        ) : null}
+        ) : (
+          <EmptyResult />
+        )}
       </Question>
     </div>
   )
