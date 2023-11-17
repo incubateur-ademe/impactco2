@@ -42,10 +42,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   await trackAPIRequest(req, 'callGMap', queryString)
 
   const url = `https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&key=${process.env.GMAP_API_KEY}`
-  console.log('url: ', url)
 
   const data = await axios.get(url).then((resp) => {
-    console.log('resp: ', resp)
     return {
       statusCode: 200,
       body: resp.data,

@@ -5,30 +5,25 @@ import { createMocks } from 'node-mocks-http'
 import callGMap from 'pages/api/callGMap'
 
 describe('CallGMap with msw', () => {
-  const env = process.env
-
   // Please read https://mswjs.io/docs/integrations/node
   const handlers = [
     http.get('https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY', () => {
       return HttpResponse.json({ calledDistanceMatrixApi: 'yes' })
     }),
   ]
-
   const server = setupServer(...handlers)
-
   server.events.on('request:start', ({ request }) => {
     console.log('MSW intercepted:', request.method, request.url)
   })
-
   beforeAll(() => server.listen())
   afterEach(() => server.resetHandlers())
   afterAll(() => server.close())
 
+  const env = process.env
   beforeEach(() => {
     jest.resetModules()
     process.env = { ...env, GMAP_API_KEY: 'MOCKED_GMAP_KEY' }
   })
-
   afterEach(() => {
     process.env = env
   })
@@ -45,6 +40,5 @@ describe('CallGMap with msw', () => {
     // Assert the expected behavior
     expect(res._getStatusCode()).toBe(200)
     expect(JSON.parse(res._getData())).toStrictEqual({ calledDistanceMatrixApi: 'yes' })
-    // expect(mockAxios.get).toHaveBeenCalledWith('/web-service-url/', { data: 'clientMessage' })
   })
 })

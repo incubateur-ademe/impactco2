@@ -17,9 +17,9 @@ server.events.on('request:start', ({ request }) => {
   console.log('MSW intercepted:', request.method, request.url)
 })
 
-beforeAll(() => server.listen({ onUnhandledRequest: 'warn' }))
+beforeEach(() => server.listen({ onUnhandledRequest: 'warn' }))
 afterEach(() => server.resetHandlers())
-afterAll(() => server.close())
+afterEach(() => server.close())
 
 // Write a test using Jest
 test('should return a greeting message', async () => {
