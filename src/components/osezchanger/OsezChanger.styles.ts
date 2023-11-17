@@ -1,15 +1,22 @@
 import styled from 'styled-components'
 import Button from 'components/base/Button'
 
+export const Screenshot = styled.div<{ $isScreenshotting: boolean }>`
+  background-color: var(--secondary-10);
+  ${({ $isScreenshotting }) => $isScreenshotting && 'padding: 0 16px;'}
+`
+
 export const Container = styled.div<{ $defiMode?: boolean }>`
   background-color: var(--secondary-10);
   border-radius: 8px;
   color: var(--natural-80);
   flex: 1 0 0;
+  font-family: Marianne;
   height: fit-content;
   max-width: 440px;
   min-width: 312px;
   padding: 24px;
+  position: relative;
   ${({ $defiMode }) => $defiMode && 'padding-bottom: 12px;'}
 `
 
@@ -28,4 +35,10 @@ export const Description = styled.div`
 
 export const DefiButton = styled(Button)`
   margin: auto;
+`
+
+export const Logos = styled.div`
+  border-top: 1px solid var(--secondary-20);
+  margin-top: 24px;
+  padding-top: 24px;
 `

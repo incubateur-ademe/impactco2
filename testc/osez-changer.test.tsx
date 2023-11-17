@@ -54,8 +54,62 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('defi-equivalent-vegetarian-value')).toHaveTextContent('32,4')
   })
 
+  it('Should render hyopthesis modal', () => {
+    renderWithStyle(<OsezChanger />)
+    act(() => {
+      screen.getByLabelText('Relever le défi').click()
+    })
+
+    expect(screen.queryByTestId('hypothesis-modal')).toBeNull()
+    act(() => {
+      screen.getByTestId('hypothesis-button').click()
+    })
+
+    expect(screen.queryByTestId('hypothesis-modal')).not.toBeNull()
+    act(() => {
+      screen.getByRole('button', { name: 'Fermer' }).click()
+    })
+    expect(screen.queryByTestId('hypothesis-modal')).toBeNull()
+  })
+
+  it('Should render share modal', () => {
+    renderWithStyle(<OsezChanger />)
+    act(() => {
+      screen.getByLabelText('Relever le défi').click()
+    })
+
+    expect(screen.queryByTestId('share-modal')).toBeNull()
+    act(() => {
+      screen.getByRole('button', { name: 'Partager' }).click()
+    })
+
+    expect(screen.queryByTestId('share-modal')).not.toBeNull()
+    act(() => {
+      screen.getByRole('button', { name: 'Annuler' }).click()
+    })
+    expect(screen.queryByTestId('share-modal')).toBeNull()
+  })
+
+  it('Should render integration modal', () => {
+    renderWithStyle(<OsezChanger />)
+    act(() => {
+      screen.getByLabelText('Relever le défi').click()
+    })
+
+    expect(screen.queryByTestId('integration-modal')).toBeNull()
+    act(() => {
+      screen.getByRole('button', { name: 'Intégrer' }).click()
+    })
+
+    expect(screen.queryByTestId('integration-modal')).not.toBeNull()
+    act(() => {
+      screen.getByRole('button', { name: 'Annuler' }).click()
+    })
+    expect(screen.queryByTestId('integration-modal')).toBeNull()
+  })
+
   it('Should calculate co2e value based on input', () => {
-    renderWithStyle(<Defi />)
+    renderWithStyle(<Defi setModal={() => console.log} />)
 
     act(() => {
       fireEvent.change(screen.getByTestId('question-neuf-input'), { target: { value: '3' } })
@@ -71,7 +125,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should calculate shoes value based on input', () => {
-    renderWithStyle(<Defi />)
+    renderWithStyle(<Defi setModal={() => console.log} />)
 
     act(() => {
       fireEvent.change(screen.getByTestId('question-avis-input'), { target: { value: '5' } })

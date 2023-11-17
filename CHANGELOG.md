@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.27.0 (11/11/2023)
+
+- Feat - Osez Changer 
+
 ## 1.26.4 (16/11/2023)
 
 - Feat - Améliorations de l'espacement et de la largeur du site

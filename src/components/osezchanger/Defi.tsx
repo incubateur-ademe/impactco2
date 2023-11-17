@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import { formatName } from 'utils/formatters'
 import { Equivalents, Result, ResultValue } from './Defi.styles'
 import EmptyResult from './EmptyResult'
 import Equivalent from './Equivalent'
 import Question from './Question'
+import { ModalType } from './modals/Modal'
 
 const shoesImpact = 16.5
 
-const Defi = () => {
+const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | undefined>> }) => {
   const [thinkingValue, setThinkingValue] = useState<number | undefined>()
   const [realValue, setRealValue] = useState<number | undefined>()
   const [newValue, setNewValue] = useState<number | undefined>()
@@ -46,7 +47,7 @@ const Defi = () => {
       <Question
         data-testid='question-neuf'
         title='✨ Vos achats de neuf'
-        withSource
+        source={() => setModal('hypothesis')}
         description={
           <>
             Combien de paires de <b>chaussures neuves</b> avez-vous acheté cette année ?

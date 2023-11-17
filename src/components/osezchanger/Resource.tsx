@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import { Container, Text } from './Action.styles'
+import { Container, Text } from './Resource.styles'
 
-const Action = ({ image, text, href }: { image: string; text: string; href: string }) => {
+const Resource = ({ image, text, href }: { image: string; text: string; href: string }) => {
   return (
     <Container href={href} target='_blank' rel='noreferrer noopener'>
       <Image src={image} alt='' width={100} height={86} />
@@ -11,4 +11,4 @@ const Action = ({ image, text, href }: { image: string; text: string; href: stri
   )
 }
 
-export default Action
+export default Resource

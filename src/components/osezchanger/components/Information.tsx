@@ -4,7 +4,7 @@ import { Button } from './Information.styles'
 
 const Information = ({ onClick }: { onClick: () => void }) => {
   return (
-    <Button onClick={onClick}>
+    <Button data-testid='hypothesis-button' onClick={onClick}>
       <Icon iconId='information' />
     </Button>
   )

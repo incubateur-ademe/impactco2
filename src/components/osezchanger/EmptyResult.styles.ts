@@ -8,11 +8,10 @@ export const Container = styled.div`
   color: var(--secondary-40);
   display: flex;
   flex-direction: column;
-  font-family: Marianne;
   font-size: 14px;
   font-weight: 500;
   gap: 16px;
-  height: 204px;
+  height: 215px;
   justify-content: center;
   line-height: 20px;
   margin-top: 32px;
