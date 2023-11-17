@@ -14,6 +14,7 @@ const Defi = () => {
   return (
     <div>
       <Question
+        data-testid='question-avis'
         title='🧠 À votre avis...'
         description={
           <>
@@ -24,6 +25,7 @@ const Defi = () => {
         setValue={setThinkingValue}
       />
       <Question
+        data-testid='question-vraie'
         title='👉 Dans la vraie vie'
         description={
           <>
@@ -41,6 +43,7 @@ const Defi = () => {
         }
       />
       <Question
+        data-testid='question-neuf'
         title='✨ Vos achats de neuf'
         withSource
         description={
@@ -50,12 +53,13 @@ const Defi = () => {
         }
         value={newValue}
         setValue={setNewValue}
-        tag={newValue ? `+ ${newValue * shoesImpact}kg CO2e` : false}
+        tag={newValue ? `+${(newValue * shoesImpact).toLocaleString('fr-FR')}kg CO2e` : false}
         customBorderRadius={!!newValue}>
         {newValue ? (
-          <Result>
-            <ResultValue>
-              {newValue} {formatName('paire[s]', newValue)} de chaussures neuves ({newValue * shoesImpact}kg de CO2e)
+          <Result data-testid='defi-result'>
+            <ResultValue data-testid='defi-result-title'>
+              {newValue.toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue)} (+
+              {(newValue * shoesImpact).toLocaleString('fr-FR')}kg de CO2e)
             </ResultValue>
             C’est autant d’émissions que pour fabriquer, consommer ou parcourir...
             <Equivalents>

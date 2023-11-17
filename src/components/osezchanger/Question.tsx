@@ -30,6 +30,7 @@ const Question = ({
   customBorderRadius,
   withSource,
   children,
+  'data-testid': dataTestId,
 }: {
   title: string
   description: ReactNode
@@ -39,8 +40,10 @@ const Question = ({
   customBorderRadius?: boolean
   withSource?: boolean
   children?: ReactNode
+  ['data-testid']: string
 }) => {
   const [open, setOpen] = useState(false)
+
   return (
     <>
       {withSource && (
@@ -54,7 +57,7 @@ const Question = ({
           </Link>
         </Modal>
       )}
-      <QuestionCard $customBorderRadius={customBorderRadius}>
+      <QuestionCard $customBorderRadius={customBorderRadius} data-testid={dataTestId}>
         <Header>
           <Title>
             {title}
@@ -64,7 +67,7 @@ const Question = ({
               </SourceButton>
             )}
           </Title>
-          {tag && <Tag>{tag}</Tag>}
+          {tag && <Tag data-testid={`${dataTestId}-tag`}>{tag}</Tag>}
         </Header>
         <Content>
           <Description>{description}</Description>
@@ -80,9 +83,19 @@ const Question = ({
               -
             </Button>
             <Input
+              data-testid={`${dataTestId}-input`}
               type='number'
               value={value === undefined ? '' : value}
-              onChange={(e) => setValue(Number.parseInt(e.target.value) || undefined)}
+              onChange={(e) => {
+                const numberValue = Number.parseInt(e.target.value)
+                if (Number.isNaN(numberValue)) {
+                  setValue(undefined)
+                } else if (numberValue < 0) {
+                  setValue(0)
+                } else {
+                  setValue(numberValue)
+                }
+              }}
               step={1}
               min={0}
               max={99}
