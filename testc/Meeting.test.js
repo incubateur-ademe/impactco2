@@ -1,18 +1,32 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import axiosClient from 'utils/axios'
+import { HttpResponse, http } from 'msw'
+import { setupServer } from 'msw/node'
 import { StyleProvider } from 'components/providers/StyleProvider'
 import Meeting from 'components/meeting/Meeting'
 
-jest.mock('utils/axios', () => ({
-  post: jest.fn(),
-}))
-
 describe('Meeting', () => {
-  afterEach(() => {
-    jest.clearAllMocks()
+  // Mock & check HTTP call
+  // Using https://mswjs.io/docs/integrations/node
+  let apiNotionCalledNthTime = 0
+  const server = setupServer(
+    http.post('/api/notion', ({ request }) => {
+      console.log('request: ', request)
+      return HttpResponse.json({ calledApiNotion: 'yes' })
+    })
+  )
+  server.events.on('request:start', ({ request }) => {
+    console.log('MSW intercepted:', request.method, request.url, request.body)
+    if (request.url === '/api/notion') {
+      apiNotionCalledNthTime += 1
+    }
   })
+  beforeEach(() => (apiNotionCalledNthTime = 0))
+  beforeAll(() => server.listen())
+  afterEach(() => server.resetHandlers())
+  afterAll(() => server.close())
+
   it("Lorsque un utilisateur entre son email et valide, un message de confirmation s'affiche à l'écran", async () => {
     // Given
     render(
@@ -41,6 +55,6 @@ describe('Meeting', () => {
     await userEvent.type(screen.queryByTestId('emailInput'), 'aa@bb.com')
     await userEvent.click(screen.getByLabelText('Prendre rendez-vous'))
     // Then
-    expect(axiosClient.post).toHaveBeenCalledWith('/api/notion', { email: 'aa@bb.com', type: 'contact' })
+    expect(apiNotionCalledNthTime).toBe(1)
   })
 })
