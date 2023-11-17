@@ -29,6 +29,7 @@ const middlewares = getRateLimitMiddlewares().map(applyMiddleware)
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (process.env.LIMIT_API) {
     if (!req.headers.referer?.startsWith(`https://${process.env.WEBSITE_URL}`)) {
+      console.log('req.headers----------------: ', req.headers)
       return res.status(403).send('Not authorized')
     }
     try {

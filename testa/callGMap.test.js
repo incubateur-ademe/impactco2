@@ -42,7 +42,7 @@ describe('CallGMap with msw', () => {
     expect(res._getStatusCode()).toBe(200)
     expect(JSON.parse(res._getData())).toStrictEqual(matrixJson)
   })
-  test('Si la limite est activée, refuse un appel ne provenant du site appelant', async () => {
+  test('Si la limite est activée, refuse un appel ne provenant pas du site appelant', async () => {
     // Create mock request and response objects
     const { req, res } = createMocks({
       method: 'GET',
@@ -55,6 +55,22 @@ describe('CallGMap with msw', () => {
     // Assert the expected behavior
     expect(res._getStatusCode()).toBe(403)
     expect(res._getData()).toStrictEqual('Not authorized')
+  })
+  test('Si la limite est activée, accepte un simple appel provenant du site appelant', async () => {
+    // Create mock request and response objects
+    const { req, res } = createMocks({
+      method: 'GET',
+      url: '/api/callGMap?nantes',
+      headers: {
+        referer: 'https://example.com/any',
+      },
+    })
+    process.env = { ...process.env, LIMIT_API: 'activated', WEBSITE_URL: 'example' }
+    // Call the route function with the mock objects
+    await callGMap(req, res)
+
+    // Assert the expected behavior
+    expect(res._getStatusCode()).toBe(200)
   })
   //---------
   // STUBBING PART BELOW
