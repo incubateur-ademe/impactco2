@@ -1,4 +1,5 @@
 // Import the route file and the library
+import slowDown from 'express-slow-down'
 import { HttpResponse, http } from 'msw'
 import { setupServer } from 'msw/node'
 import { createMocks } from 'node-mocks-http'
@@ -6,21 +7,29 @@ import callGMap from 'pages/api/callGMap'
 import matrixJson from 'test-mock/matrix.json'
 import { tryParseJSONObject } from 'test-utils/try-json-parse'
 
+jest.mock('express-slow-down', () =>
+  jest.fn().mockImplementation(() => {
+    return (req, res, next) => {
+      // Mock the behavior of the rateLimit middleware
+      // You can customize this implementation based on your test requirements
+      return next()
+    }
+  })
+)
+
 describe('CallGMap with msw', () => {
   const DISTANCE_MATRIX_ENDPOINT =
     'https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY'
 
   test("Doit appeler l'API distanceMatrix", async () => {
-    // Create mock request and response objects
+    // Given
     const { req, res } = createMocks({
       method: 'GET',
       url: '/api/callGMap?nantes',
     })
-
-    // Call the route function with the mock objects
+    // When
     await callGMap(req, res)
-
-    // Assert the expected behavior
+    // Then
     expect(callsHistory[0]).toStrictEqual({
       pathname: '/maps/api/distancematrix/json',
       method: 'GET',
@@ -29,35 +38,32 @@ describe('CallGMap with msw', () => {
     })
   })
   test('Doit retourner la même réponse que la distanceMatrix API', async () => {
-    // Create mock request and response objects
+    // Given
     const { req, res } = createMocks({
       method: 'GET',
       url: '/api/callGMap?nantes',
     })
-
-    // Call the route function with the mock objects
+    // When
     await callGMap(req, res)
-
-    // Assert the expected behavior
+    // Then
     expect(res._getStatusCode()).toBe(200)
     expect(JSON.parse(res._getData())).toStrictEqual(matrixJson)
   })
   test('Si la limite est activée, refuse un appel ne provenant pas du site appelant', async () => {
-    // Create mock request and response objects
+    // Given
     const { req, res } = createMocks({
       method: 'GET',
       url: '/api/callGMap?nantes',
     })
     process.env = { ...process.env, LIMIT_API: 'activated' }
-    // Call the route function with the mock objects
+    // When
     await callGMap(req, res)
-
-    // Assert the expected behavior
+    // Then
     expect(res._getStatusCode()).toBe(403)
     expect(res._getData()).toStrictEqual('Not authorized')
   })
   test('Si la limite est activée, accepte un simple appel provenant du site appelant', async () => {
-    // Create mock request and response objects
+    // Given
     const { req, res } = createMocks({
       method: 'GET',
       url: '/api/callGMap?nantes',
@@ -66,10 +72,25 @@ describe('CallGMap with msw', () => {
       },
     })
     process.env = { ...process.env, LIMIT_API: 'activated', WEBSITE_URL: 'example' }
-    // Call the route function with the mock objects
+    // When
     await callGMap(req, res)
-
-    // Assert the expected behavior
+    // Then
+    expect(res._getStatusCode()).toBe(200)
+  })
+  test("Si la limite est activée, peut ralentir l'exécution", async () => {
+    // Given
+    const { req, res } = createMocks({
+      method: 'GET',
+      url: '/api/callGMap?nantes',
+      headers: {
+        referer: 'https://example.com/any',
+      },
+    })
+    process.env = { ...process.env, LIMIT_API: 'activated', WEBSITE_URL: 'example' }
+    // When
+    await callGMap(req, res)
+    // Then
+    expect(slowDown).toHaveBeenCalledTimes(1)
     expect(res._getStatusCode()).toBe(200)
   })
   //---------
