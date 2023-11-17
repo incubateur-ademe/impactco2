@@ -20,29 +20,24 @@ describe('CallGMap with msw', () => {
 
     // Assert the expected behavior
     expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toStrictEqual({ calledDistanceMatrixApi: 'yes' })
+    expect(JSON.parse(res._getData())).toStrictEqual({ called: 'api' })
   })
   //---------
   // STUBBING PART BELOW
   //----------
   // Mock & check HTTP call
   // Using https://mswjs.io/docs/integrations/node
-  // const server = setupServer(
-  //   http.get('https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY', () => {
-  //     return HttpResponse.json({ calledDistanceMatrixApi: 'yes' })
-  //   })
-  // )
   beforeAll(() => server.listen())
   afterEach(() => server.resetHandlers())
   afterAll(() => server.close())
 
   // Mock & check HTTP call
   let callsHistory = []
-  const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json({})))
+  const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json({ called: 'api' })))
 
   server.events.on('request:start', async ({ request }) => {
     callsHistory.push({
-      body: JSON.parse(await request.clone().text()),
+      bodystr: tryParseJSONObject(await request.clone().text()) || {},
       method: request.method,
       pathname: new URL(request.url).pathname,
     })
@@ -61,4 +56,21 @@ describe('CallGMap with msw', () => {
   afterEach(() => {
     process.env = env
   })
+  // See https://stackoverflow.com/a/20392392/2595513
+  function tryParseJSONObject(jsonString) {
+    try {
+      var o = JSON.parse(jsonString)
+
+      // Handle non-exception-throwing cases:
+      // Neither JSON.parse(false) or JSON.parse(1234) throw errors, hence the type-checking,
+      // but... JSON.parse(null) returns null, and typeof null === "object",
+      // so we must check for that, too. Thankfully, null is falsey, so this suffices:
+      if (o && typeof o === 'object') {
+        return o
+      }
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
+
+    return false
+  }
 })
