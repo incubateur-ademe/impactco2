@@ -5,29 +5,9 @@ import { createMocks } from 'node-mocks-http'
 import callGMap from 'pages/api/callGMap'
 
 describe('CallGMap with msw', () => {
-  // Mock & check HTTP call
-  // Using https://mswjs.io/docs/integrations/node
-  const server = setupServer(
-    http.get('https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY', () => {
-      return HttpResponse.json({ calledDistanceMatrixApi: 'yes' })
-    })
-  )
-  server.events.on('request:start', ({ request }) => {
-    console.log('MSW intercepted:', request.method, request.url)
-  })
-  beforeAll(() => server.listen())
-  afterEach(() => server.resetHandlers())
-  afterAll(() => server.close())
+  const DISTANCE_MATRIX_ENDPOINT =
+    'https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY'
 
-  // Mocking ENV variables
-  const env = process.env
-  beforeEach(() => {
-    jest.resetModules()
-    process.env = { ...env, GMAP_API_KEY: 'MOCKED_GMAP_KEY' }
-  })
-  afterEach(() => {
-    process.env = env
-  })
   test('200: Should reach the distancematrix API (nominal scenario)', async () => {
     // Create mock request and response objects
     const { req, res } = createMocks({
@@ -41,5 +21,44 @@ describe('CallGMap with msw', () => {
     // Assert the expected behavior
     expect(res._getStatusCode()).toBe(200)
     expect(JSON.parse(res._getData())).toStrictEqual({ calledDistanceMatrixApi: 'yes' })
+  })
+  //---------
+  // STUBBING PART BELOW
+  //----------
+  // Mock & check HTTP call
+  // Using https://mswjs.io/docs/integrations/node
+  // const server = setupServer(
+  //   http.get('https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY', () => {
+  //     return HttpResponse.json({ calledDistanceMatrixApi: 'yes' })
+  //   })
+  // )
+  beforeAll(() => server.listen())
+  afterEach(() => server.resetHandlers())
+  afterAll(() => server.close())
+
+  // Mock & check HTTP call
+  let callsHistory = []
+  const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json({})))
+
+  server.events.on('request:start', async ({ request }) => {
+    callsHistory.push({
+      body: JSON.parse(await request.clone().text()),
+      method: request.method,
+      pathname: new URL(request.url).pathname,
+    })
+  })
+  beforeEach(() => (callsHistory = []))
+  beforeAll(() => server.listen())
+  afterEach(() => server.resetHandlers())
+  afterAll(() => server.close())
+
+  // Mocking ENV variables
+  const env = process.env
+  beforeEach(() => {
+    jest.resetModules()
+    process.env = { ...env, GMAP_API_KEY: 'MOCKED_GMAP_KEY' }
+  })
+  afterEach(() => {
+    process.env = env
   })
 })

@@ -48,7 +48,6 @@ describe('Meeting', () => {
   })
 
   // Mock & check HTTP call
-  // Using https://mswjs.io/docs/integrations/node
   let callsHistory = []
   const server = setupServer(http.post('/api/notion', () => HttpResponse.json({})))
 
