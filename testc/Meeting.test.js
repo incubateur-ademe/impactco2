@@ -17,8 +17,8 @@ describe('Meeting', () => {
     })
   )
   server.events.on('request:start', ({ request }) => {
-    console.log('MSW intercepted:', request.method, request.url, request.body)
-    if (request.url === '/api/notion') {
+    console.log('MSW intercepted:', request.method, request.url)
+    if (request.url === 'http://localhost/api/notion') {
       apiNotionCalledNthTime += 1
     }
   })
