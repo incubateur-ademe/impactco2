@@ -3,16 +3,16 @@ import getEmissionsPerDistance from 'pages/api/getEmissionsPerDistance.js'
 
 describe('getEmissionPerDistance', () => {
   test('peut être filtré par champ', async () => {
-    // Create mock request and response objects
+    // Given
     const { req, res } = createMocks({
       method: 'GET',
       url: '/api/getEmissionsPerDistance?km=3&fields=description,emoji,display&transportations=14',
     })
 
-    // Call the route function with the mock objects
+    // When
     await getEmissionsPerDistance(req, res)
 
-    // Assert the expected behavior
+    // Then
     expect(res._getStatusCode()).toBe(200)
     expect(JSON.parse(res._getData())).toEqual([
       {
@@ -26,16 +26,16 @@ describe('getEmissionPerDistance', () => {
     ])
   })
   test('peut renvoyer toutes les données de manière brute', async () => {
-    // Create mock request and response objects
+    // Given
     const { req, res } = createMocks({
       method: 'GET',
       url: '/api/getEmissionsPerDistance',
     })
 
-    // Call the route function with the mock objects
+    // When
     await getEmissionsPerDistance(req, res)
 
-    // Assert the expected behavior
+    // Then
     expect(res._getStatusCode()).toBe(200)
     expect(JSON.parse(res._getData())).toEqual([
       { id: 4, name: 'Voiture (thermique)', emissions: { gco2e: 193, kgco2e: 0.193, tco2e: 0.000193 } },
