@@ -1,5 +1,4 @@
-import { getFrenchFormattedNumber } from 'utils/formatters';
-
+import { getFrenchFormattedNumber } from 'utils/formatters'
 
 describe('getFrenchFormattedNumber', () => {
   test('Donne un nombre au format Français', () => {
