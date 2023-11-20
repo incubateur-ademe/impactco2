@@ -105,7 +105,7 @@ describe('/api/notion', () => {
     // Assert the expected behavior
     expect(trackAPIRequest).not.toHaveBeenCalled()
   })
-  test("N'appelle pas notion si les entrées sont invalides", async () => {
+  test("N'appelle pas l'API notion si les entrées sont invalides", async () => {
     // Create mock request and response objects
     const { req, res } = createMocks({
       method: 'POST',
@@ -121,5 +121,22 @@ describe('/api/notion', () => {
 
     // Assert the expected behavior
     expect(axios).not.toHaveBeenCalled()
+  })
+  test("Appelle l'API notion si les entrées sont valides", async () => {
+    // Create mock request and response objects
+    const { req, res } = createMocks({
+      method: 'POST',
+      url: '/api/notion',
+      body: {
+        type: 'contact',
+        email: 'valid@email.com',
+      },
+    })
+
+    // Call the route function with the mock objects
+    await notion(req, res)
+
+    // Assert the expected behavior
+    expect(axios.post).toHaveBeenCalledWith('https://api.notion.com/v1/pages', expect.any(Object), expect.any(Object))
   })
 })
