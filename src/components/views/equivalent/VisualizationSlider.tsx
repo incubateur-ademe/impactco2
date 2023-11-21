@@ -1,21 +1,28 @@
 import React from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
+import { Equivalent } from 'types/equivalent'
 import { Section, SectionWideContent } from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import visualizations from 'components/visualizations/list'
 
 const StyledSection = styled(Section)`
+  width: 100vw;
   .slick-track {
     display: flex !important;
   }
 
   .slick-slide {
+    position: relative;
     height: inherit !important;
 
     & > div {
       height: 100%;
     }
+  }
+
+  .slick-slide.slick-current {
+    z-index: 2;
   }
 
   .slick-prev {
@@ -33,28 +40,29 @@ const StyledSection = styled(Section)`
   }
 `
 
-export default function Visualization(props) {
-  return visualizations[props.equivalent.slug] ? (
+export default function Visualization({ equivalent }: { equivalent: Equivalent }) {
+  const content = visualizations[equivalent.slug]
+  return content ? (
     <StyledSection>
       <SectionWideContent $small>
         <Slider
           dots={false}
-          infinite={true}
+          infinite
           speed={200}
-          fade={true}
+          fade
           slidesToShow={1}
           slidesToScroll={1}
           responsive={[
             {
-              breakpoint: 830,
+              breakpoint: 930,
               settings: {
                 dots: true,
                 arrows: false,
               },
             },
           ]}>
-          {visualizations[props.equivalent.slug].map((visualization) => (
-            <ScreenshotWrapper key={props.equivalent.slug} equivalent={props.equivalent} background>
+          {content.map((visualization) => (
+            <ScreenshotWrapper key={equivalent.slug} equivalent={equivalent} background>
               {visualization}
             </ScreenshotWrapper>
           ))}
