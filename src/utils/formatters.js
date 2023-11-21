@@ -15,21 +15,6 @@ export function formatNumber(value, noformat) {
   return noformat ? tempTotal : tempTotal.toLocaleString('fr-fr', { maximumFractionDigits: 11 })
 }
 
-export function getFrenchFormattedNumber(number) {
-  // Check if the number is a valid number.
-  if (!Number.isFinite(number)) {
-    return NaN
-  }
-
-  // Get the number in string format.
-  const numberString = number.toString()
-
-  // Replace the decimal point with a comma.
-  const formattedNumberString = numberString.replace('.', ',')
-
-  return formattedNumberString
-}
-
 export function getNumberWithNDigitsAfterComma(number, n) {
   // Check if the number is a valid number.
   if (!Number.isFinite(number)) {
