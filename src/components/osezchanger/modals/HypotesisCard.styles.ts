@@ -1,15 +1,18 @@
+import Link from 'next/link'
 import styled from 'styled-components'
 
-export const Card = styled.div`
+export const Card = styled(Link)`
   background-color: white;
   border: 1px solid var(--secondary-20);
   border-radius: 4px;
+  color: var(--neutral-70);
   display: flex;
   font-size: 16px;
   font-weight: 700;
   gap: 12px;
   line-height: 20px;
   padding: 12px;
+  text-decoration: none;
 `
 
 export const Bar = styled.div<{ $width: number }>`

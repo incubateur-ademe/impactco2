@@ -28,7 +28,8 @@ const Hypotesis = () => {
         Soit : (13 + 17 + 19)/3 = 16,5 kg CO2e.
         <br />
         <br />
-        naître l’impact carbone du nombre de paires de chaussures neuves achetées nous faisons donc le calcul suivant :
+        Pour connaître l’impact carbone du nombre de paires de chaussures neuves achetées nous faisons donc le calcul
+        suivant :
         <br />
         <br />
         <b>facteur d’émission moyen d’une paire de chaussure neuve * nombre de paires de chaussures achetées</b>

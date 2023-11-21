@@ -13,7 +13,7 @@ const HypotesisCard = ({ slug }: { slug: string }) => {
 
   const ecv = values.ecv?.reduce((sum, { value }) => sum + value, 0) || 0
   return (
-    <Card>
+    <Card href={`/habillement/${slug}`}>
       <Emoji height='40px'>{values.emoji}</Emoji>
       <div>
         <div>
