@@ -12,7 +12,7 @@ const Usage = () => {
       </p>
       Consultez le{' '}
       <Link
-        href='https://www.notion.so/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+        href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733'
         target='_blank'
         rel='noreferrer noopener'>
         kit de diffusion Impact CO2
@@ -24,7 +24,7 @@ const Usage = () => {
       Besoin d'inspiration?
       <br />
       <Link
-        href='https://www.notion.so/2274283430e94d1db71eced54c338997?pvs=4'
+        href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
         target='_blank'
         rel='noreferrer noopener'>
         Découvrez des exemples de réutilisation
