@@ -27,7 +27,7 @@ export const Equivalent = styled.div`
   justify-content: space-between;
   position: relative;
 `
-export const Emojis = styled(Emoji)`
+export const Emojis = styled(Emoji)<{ small?: boolean; xsmall?: boolean; margin?: number }>`
   align-items: center;
   display: flex;
   flex: 1;
