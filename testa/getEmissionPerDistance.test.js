@@ -15,7 +15,7 @@ describe('getEmissionPerDistance', () => {
 
     // Then
     expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toEqual([
+    expect(tryParseJSONObject(res._getData())).toEqual([
       {
         description: '4,1 gCO2e/km/personne ; Base Carbone ADEME',
         display: { max: 100, min: 11 },
