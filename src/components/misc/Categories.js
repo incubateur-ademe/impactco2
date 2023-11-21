@@ -31,7 +31,7 @@ export default function Categories(props) {
   return (
     <>
       {props.main && (
-        <Section>
+        <Section $withoutPadding>
           <SectionWideContent $flex>
             <Title>Thématiques</Title>
             <ShareButton title />
