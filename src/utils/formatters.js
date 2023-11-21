@@ -25,10 +25,6 @@ export function formatNumberPrecision(value) {
   )
 }
 
-export function formatPercent(value, total, noformat) {
-  let tempPercent = (value / total) * 100
-  return noformat ? tempPercent : tempPercent.toLocaleString('fr-fr', { maximumFractionDigits: 1 })
-}
 export function formatTotal(equivalent, years, end) {
   let total =
     equivalent.total || equivalent.total === 0
