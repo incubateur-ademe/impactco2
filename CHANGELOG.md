@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.26.5 (21/11/2023)
+
+- Fix - Interactions avec la liseuse
+
 ## 1.26.4 (16/11/2023)
 
 - Feat - Améliorations de l'espacement et de la largeur du site

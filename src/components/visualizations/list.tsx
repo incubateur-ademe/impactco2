@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import LiseuseBookComparator from 'components/numerique/equivalent/LiseuseBookComparator'
 import StockageEmails from 'components/numerique/equivalent/StockageEmails'
 import Smartphone from './Smartphone'
 import Visualization from './Visualization'
 
-const visualizations = {
+const visualizations: Record<string, ReactNode[]> = {
   smartphone: [
     <Visualization types={['smartphone', 'repasavecduboeuf', 'tshirtencoton']} key='SmartphoneGeneral' />,
     <Visualization types={['television', 'ordinateurportable', 'smartphone']} key='SmartphoneCategory' />,
