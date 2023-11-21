@@ -1,3 +1,4 @@
+import { useSearchParams } from 'next/navigation'
 import React from 'react'
 import styled from 'styled-components'
 import { Category as CategoryType } from 'types/category'
@@ -9,10 +10,19 @@ import Learning from 'components/misc/Learning'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
+  const searchParams = useSearchParams()
+  const osezChanger = searchParams.get('osez-changer')
+
+  const description = osezChanger
+    ? 'En moyenne, les Français ont trois fois plus de paires de chaussures qu’ils n’en ont besoin... et vous ? Faites le test avec Impact CO2 et notre simulateur !'
+    : category.meta.title
+
+  const image = osezChanger ? '/meta/osez-changer.png' : undefined
   return (
     <Web
       title={category.meta.title}
-      description={category.meta.description}
+      description={description}
+      image={image}
       breadcrumb={{
         type: 'equivalent',
         category: category,

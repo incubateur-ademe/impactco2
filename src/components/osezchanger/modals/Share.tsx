@@ -5,7 +5,7 @@ import ClipboardBox from './ClipboardBox'
 import { Button, Buttons, Text } from './Share.styles'
 import Usage from './Usage'
 
-const url = 'https://impactco2.fr/habillement'
+const url = 'https://impactco2.fr/habillement?osez-changer=true'
 const Share = () => {
   return (
     <div data-testid='share-modal'>
