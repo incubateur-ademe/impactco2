@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import Select from 'components/base/Select'
 import Code from './configurator/Code'
 

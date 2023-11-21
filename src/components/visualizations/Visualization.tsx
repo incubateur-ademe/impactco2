@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Category } from 'types/category'
 import { Equivalent as EquivalentType } from 'types/equivalent'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import DataContext from 'components/providers/DataProvider'
 import {
   Emojis,

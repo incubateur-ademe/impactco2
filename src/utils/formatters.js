@@ -1,3 +1,5 @@
+import formatName from './formatName'
+
 export function formatNumber(value, noformat) {
   if (!value) {
     return 0
@@ -55,11 +57,6 @@ export function formatNumberPrecision(value) {
       minimumFractionDigits: 2,
     }) + (value < 1 ? ' g' : ' kg')
   )
-}
-export function formatName(name = '', value = 1, capital) {
-  const newName = name.replaceAll('[s]', value > 1 ? 's' : '').replaceAll('[x]', value > 1 ? 'x' : '')
-
-  return capital ? newName : newName.toLowerCase()
 }
 
 export function formatPercent(value, total, noformat) {

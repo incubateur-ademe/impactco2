@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import { Equivalent } from 'types/equivalent'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
 
