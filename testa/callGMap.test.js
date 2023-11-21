@@ -52,7 +52,8 @@ describe('CallGMap', () => {
     await callGMap(req, res)
     // Then
     expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toStrictEqual(matrixJson)
+    expect(tryParseJSONObject(res._getData())).toStrictEqual(matrixJson)
+    console.log('res: ', res)
   })
   test('Si la limite est activée, refuse un appel ne provenant pas du site appelant', async () => {
     // Given
@@ -104,7 +105,7 @@ describe('CallGMap', () => {
   //----------
   let callsHistory = []
   const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json(matrixJson)))
-
+  const env = process.env
   server.events.on('request:start', async ({ request }) => {
     callsHistory.push({
       body: tryParseJSONObject(await request.clone().text()),
@@ -113,18 +114,15 @@ describe('CallGMap', () => {
       searchParams: new URL(request.url).searchParams.toString(),
     })
   })
-  beforeEach(() => (callsHistory = []))
   beforeAll(() => server.listen())
-  afterEach(() => server.resetHandlers())
-  afterAll(() => server.close())
-
-  // Mocking ENV variables
-  const env = process.env
   beforeEach(() => {
+    callsHistory = []
     jest.resetModules()
     process.env = { ...env, GMAP_API_KEY: 'MOCKED_GMAP_KEY' }
   })
   afterEach(() => {
     process.env = env
+    server.resetHandlers()
   })
+  afterAll(() => server.close())
 })
