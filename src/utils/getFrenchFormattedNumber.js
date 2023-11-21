@@ -1,4 +1,4 @@
-export function getFrenchFormattedNumber(number) {
+export default function getFrenchFormattedNumber(number) {
   // Check if the number is a valid number.
   if (!Number.isFinite(number)) {
     return NaN

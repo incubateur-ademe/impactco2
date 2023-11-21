@@ -1,4 +1,4 @@
-import { getNumberWithNDigitsAfterComma } from 'utils/formatters'
+import getNumberWithNDigitsAfterComma from 'utils/getNumberWithNDigitsAfterComma'
 
 describe('getNumberWithNDigitsAfterComma', () => {
   test('Ne donne aucun chiffre après la virgule pour un chiffre entier', () => {
