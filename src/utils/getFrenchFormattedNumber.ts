@@ -1,9 +1,4 @@
-export default function getFrenchFormattedNumber(number) {
-  // Check if the number is a valid number.
-  if (!Number.isFinite(number)) {
-    return NaN
-  }
-
+export default function getFrenchFormattedNumber(number: number) {
   // Get the number in string format.
   const numberString = number.toString()
 
