@@ -22,11 +22,6 @@ const FullScreen = styled.div`
   flex-direction: column;
   position: relative;
 `
-
-const Children = styled.div`
-  position: relative;
-`
-
 export default function Web({
   title,
   description,
@@ -50,7 +45,7 @@ export default function Web({
           <FullScreen>
             <HeaderSweet />
             {breadcrumb && <BreadCrumb2 breadcrumb={breadcrumb} />}
-            <Children>{children}</Children>
+            {children}
           </FullScreen>
           <Footer />
         </Content>

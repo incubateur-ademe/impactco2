@@ -1,12 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Category as CategoryType } from 'types/category'
 import categories from 'data/categories.json'
-import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
 import Learning from 'components/misc/Learning'
-import OsezChanger from 'components/osezchanger/OsezChanger'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
   return (
@@ -17,12 +14,7 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
         type: 'equivalent',
         category: category,
       }}>
-      <Section $withoutPadding>
-        <Container>
-          <Category category={category} />
-          {category.slug === 'habillement' && <OsezChanger />}
-        </Container>
-      </Section>
+      <Category category={category} />
       <Learning category={category} />
     </Web>
   )
@@ -51,11 +43,3 @@ export async function getStaticProps({ params }: { params: { category: string } 
     },
   }
 }
-
-const Container = styled(SectionWideContent)`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px 64px;
-  justify-content: space-between;
-  margin-bottom: 32px;
-`

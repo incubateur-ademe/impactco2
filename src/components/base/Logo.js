@@ -5,6 +5,7 @@ import MagicLink from 'components/base/MagicLink'
 const Wrapper = styled(MagicLink)`
   align-items: center;
   display: flex;
+  margin: 0 0.75em;
   text-decoration: none;
 
   ${(props) => props.theme.mq.small} {
@@ -39,12 +40,12 @@ const Circle = styled.circle`
   transition: fill 300ms ease-out;
 
   ${Wrapper}:hover & {
-    fill: transparent;
+    fill: ${(props) => props.theme.colors.background};
     transition: fill 300ms ease-in-out 400ms;
   }
 `
 const HollowCircle1 = styled.circle`
-  fill: transparent;
+  fill: ${(props) => props.theme.colors.background};
   stroke: ${(props) => props.theme.colors.main};
   transform-origin: center;
   transition: fill 300ms ease-out;
