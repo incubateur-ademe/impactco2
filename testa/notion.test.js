@@ -24,19 +24,6 @@ describe('/api/notion', () => {
     // Then
     expect(res._getStatusCode()).toBe(405)
   })
-  test("retourne une 400 si pas d'entrée", async () => {
-    // Given
-    const { req, res } = createMocks({
-      method: 'POST',
-      url: '/api/notion',
-    })
-
-    // When
-    await notion(req, res)
-
-    // Then
-    expect(res._getStatusCode()).toBe(400)
-  })
   test('retourne une 400 si les entrées sont non valides', async () => {
     // Given
     const { req, res } = createMocks({

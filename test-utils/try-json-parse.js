@@ -1,13 +1,12 @@
-// See https://stackoverflow.com/a/20392392/2595513
+// Voir https://stackoverflow.com/a/20392392/2595513
+// Converti une String en objet JSON
+// Renvoi un objet vide si la conversion n'est pas possible
+// Est utile dans les tests, pour éviter de trop charger la partie des assertions
 export function tryParseJSONObject(jsonString) {
   let result = {}
   try {
     var o = JSON.parse(jsonString)
 
-    // Handle non-exception-throwing cases:
-    // Neither JSON.parse(false) or JSON.parse(1234) throw errors, hence the type-checking,
-    // but... JSON.parse(null) returns null, and typeof null === "object",
-    // so we must check for that, too. Thankfully, null is falsey, so this suffices:
     if (o && typeof o === 'object') {
       return o
     }

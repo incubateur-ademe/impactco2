@@ -49,5 +49,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       body: resp.data,
     }
   })
-  return res.status(200).json(data?.body || {})
+  return res.status(data?.statusCode).json(data?.body || {})
 }

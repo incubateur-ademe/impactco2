@@ -1,5 +1,6 @@
 import { createMocks } from 'node-mocks-http'
 import getEmissionsPerDistance from 'pages/api/getEmissionsPerDistance.js'
+import { tryParseJSONObject } from 'test-utils/try-json-parse'
 
 describe('getEmissionPerDistance', () => {
   test('peut être filtré par champ', async () => {
@@ -37,7 +38,7 @@ describe('getEmissionPerDistance', () => {
 
     // Then
     expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toEqual([
+    expect(tryParseJSONObject(res._getData())).toEqual([
       { id: 4, name: 'Voiture (thermique)', emissions: { gco2e: 193, kgco2e: 0.193, tco2e: 0.000193 } },
       { id: 5, name: 'Voiture (électrique)', emissions: { gco2e: 19.8, kgco2e: 0.0198, tco2e: 0.0000198 } },
       { id: 7, name: 'Vélo ou marche', emissions: { gco2e: 0, kgco2e: 0, tco2e: 0 } },
