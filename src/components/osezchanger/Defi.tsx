@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import { formatName } from 'utils/formatters'
-import { Equivalents, Result, ResultValue } from './Defi.styles'
+import { Equivalents, Result, ResultDescription, ResultValue } from './Defi.styles'
 import EmptyResult from './EmptyResult'
 import Equivalent from './Equivalent'
 import Question from './Question'
@@ -28,7 +28,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
       />
       <Question
         data-testid='question-vraie'
-        title='👉 Dans la vraie vie'
+        title='👉 Dans ma penderie'
         description={
           <>
             Combien de chaussures <b>possédez-vous réellement ?</b>
@@ -63,7 +63,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
               {newValue.toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue)} (+
               {(newValue * shoesImpact).toLocaleString('fr-FR')}kg de CO2e)
             </ResultValue>
-            C’est autant d’émissions que pour fabriquer, consommer ou parcourir...
+            <ResultDescription>C’est autant d’émissions que pour fabriquer ou consommer...</ResultDescription>
             <Equivalents>
               <Equivalent type='tshirt' value={newValue * shoesImpact} />
               <Equivalent type='smartphone' value={newValue * shoesImpact} />

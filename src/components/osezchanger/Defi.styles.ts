@@ -4,6 +4,11 @@ export const Result = styled.div`
   margin-top: 32px;
 `
 
+export const ResultDescription = styled.span`
+  color: var(--neutral-70);
+  font-size: 12px;
+`
+
 export const ResultValue = styled.div`
   color: var(--primary-60);
   font-size: 14px;
