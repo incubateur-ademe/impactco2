@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import React, { useContext, useEffect, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
@@ -9,13 +10,16 @@ import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
 import OptionalRelay from './OptionalRelay'
 import OptionalTraj from './OptionalTraj'
-import ResultatsLivraison from './ResultatsLivraison'
 import SelectProduits from './SelectProduits'
 import SelectRetraits from './SelectRetraits'
 import YearlyLivraison from './YearlyLivraison'
 import { calculateResultFunction } from './calculateur_livraison_functions.js'
 import { produits, relays, retraits } from './data.js'
 import { convertGramsToKilograms } from './utils'
+
+const ResultatsLivraison = dynamic(() => import('./ResultatsLivraison'), {
+  ssr: false,
+})
 
 const Svg = styled.svg`
   display: block;
