@@ -2,18 +2,18 @@
   {
     "slug": "smartphone",
     "text": "smartphone",
-    "value": 1
+    "value": "1"
   },
   {
     "slug": "voiturethermique",
-    "text": "en voiture",
-    "value": 143,
+    "text": "en voiture (thermique)",
+    "value": "143",
     "unit": "km"
   },
   {
     "slug": "velo",
     "text": "en vélo (ou trotinette)",
-    "value": 2903,
+    "value": "2 903",
     "unit": "km"
   },
   {
@@ -24,13 +24,13 @@
   {
     "slug": "soda",
     "text": "de soda",
-    "value": 61,
+    "value": "61",
     "unit": "litres"
   },
   {
     "slug": "tomate",
     "text": "de tomates",
-    "value": 53,
+    "value": "53",
     "unit": "kg"
   }
 ]

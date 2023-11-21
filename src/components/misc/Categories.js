@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import ShareButton from 'components/base/ShareButton'
 import Category from './categories/Category'
 
@@ -32,14 +32,14 @@ export default function Categories(props) {
     <>
       {props.main && (
         <Section>
-          <Section.Content $flex>
+          <SectionWideContent $flex>
             <Title>Thématiques</Title>
             <ShareButton title />
-          </Section.Content>
+          </SectionWideContent>
         </Section>
       )}
       <Section>
-        <Section.Content>
+        <SectionWideContent>
           {props.main ? (
             <Text $main>
               Sélectionnez une thématique pour visualiser facilement l’impact carbone des objets et gestes de votre
@@ -55,7 +55,7 @@ export default function Categories(props) {
                 <Category key={category.slug} category={category} />
               ))}
           </List>
-        </Section.Content>
+        </SectionWideContent>
       </Section>
     </>
   )

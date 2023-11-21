@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import reusecards from './data/reusecards.json'
 import Button from 'components/base/Button'
-import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Meeting from 'components/meeting/Meeting'
 import Header from './heading/Header'
 import ChtingLeft from './img/ChtingLeft'
@@ -14,8 +14,8 @@ export default function ByArticle() {
     let reuseCard = reusecards.find((e) => e.slug === slug)
     return (
       <ReuseCardWrapper>
-        <a href={reuseCard.link} target='_blank' rel='noreferrer noopener'>
-          <ReuseCard>
+        <ReuseCard>
+          <a href={reuseCard.link} target='_blank' rel='noreferrer noopener'>
             <ReuseCardImgContainer color={reuseCard.color}>
               <ReuseCardImg img={reuseCard.img}>
                 <ReuseCardTag>{reuseCard.tagtext}</ReuseCardTag>
@@ -27,130 +27,108 @@ export default function ByArticle() {
               </ReuseCardTitle>
               <ReuseCardParagraph>{reuseCard.paragraph}</ReuseCardParagraph>
             </ReuseCardTxt>
-          </ReuseCard>
-        </a>
+          </a>
+        </ReuseCard>
       </ReuseCardWrapper>
     )
   }
 
   return (
-    <Wrapper>
-      <Section2>
-        <Section2WideContent>
-          <Section2InnerMargin>
-            <Layout>
-              <Header
-                title={
-                  <>
-                    <span>Utiliser nos ressources&nbsp;</span>
-                    <span>
-                      dans des <b>articles, sites ou applications</b>
-                    </span>
-                  </>
-                }
-              />
-              <div>
-                <MiddleGrid>
-                  <LeftMiddleGrid>
-                    <H3Title>En toute autonomie</H3Title>
-                    <MiddleUl>
-                      <MiddleLi>
-                        Appuyez-vous sur le{' '}
-                        <Link
-                          href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                          target='_blank'
-                          rel='noreferrer noopener'>
-                          kit de diffusion
-                        </Link>
-                        , pensé pour vous épauler dans la rédaction de vos contenus en lien avec l’impact carbone.
-                      </MiddleLi>
-                      <MiddleLi>
-                        <Link href='/integration'>Configurez et personnalisez</Link> le simulateur de votre choix grâce
-                        à une intégration
-                      </MiddleLi>
-                      <MiddleLi>
-                        Inspirez-vous d'
-                        <Link
-                          href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
-                          target='_blank'
-                          rel='noreferrer noopener'>
-                          exemples concrets
-                        </Link>{' '}
-                        déjà créés par des médias, entreprises, associations...
-                      </MiddleLi>
-                    </MiddleUl>
-                    <MiddleCta>
-                      <Button
-                        to='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                        target='_blank'
-                        rel='noreferrer noopener'>
-                        Consulter le kit de diffusion
-                      </Button>
-                    </MiddleCta>
-                  </LeftMiddleGrid>
-                  <RightMiddleGrid>
-                    <H3Title2>Avec de l'aide</H3Title2>
-                    <MiddleUl>
-                      <MiddleLi>
-                        Enrichissez vos contenus grâce à notre&nbsp;
-                        <Link
-                          href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
-                          target='_blank'
-                          rel='noreferrer noopener'>
-                          Foire aux Questions
-                        </Link>{' '}
-                        pour trouver des éléments de réponse pertinents.
-                      </MiddleLi>
-                      <MiddleLi>
-                        Gagnez du temps et laissez-vous guider pour <strong>l’intégration de nos ressources</strong>.
-                      </MiddleLi>
-                      <MiddleLi>
-                        Échangez avec l’équipe sur vos <strong>besoins spécifiques d’intégration</strong>.
-                      </MiddleLi>
-                    </MiddleUl>
-                    <Meeting />
-                  </RightMiddleGrid>
-                </MiddleGrid>
-              </div>
-              <DownSide>
-                <H3Title>Quelques exemples d’utilisation de nos ressources</H3Title>
-                <ReuseGrid>
-                  <WinkWinkLeft>
-                    <ChtingLeft />
-                  </WinkWinkLeft>
-                  {buildReuseCardFor('card_1')}
-                  {buildReuseCardFor('card_2')}
-                  {buildReuseCardFor('card_3')}
-                  {buildReuseCardFor('card_4')}
-                  <WinkWinkRight>
-                    <ChtingRight />
-                  </WinkWinkRight>
-                </ReuseGrid>
-              </DownSide>
-            </Layout>
-          </Section2InnerMargin>
-        </Section2WideContent>
-      </Section2>
-    </Wrapper>
+    <Section $theme='color'>
+      <SectionWideContent>
+        <Header
+          title={
+            <>
+              <span>Utiliser nos ressources&nbsp;</span>
+              <span>
+                dans des <b>articles, sites ou applications</b>
+              </span>
+            </>
+          }
+        />
+        <div>
+          <MiddleGrid>
+            <div>
+              <H3Title>En toute autonomie</H3Title>
+              <MiddleUl>
+                <MiddleLi>
+                  Utilisez le{' '}
+                  <Link
+                    href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                    target='_blank'
+                    rel='noreferrer noopener'>
+                    Kit de diffusion
+                  </Link>{' '}
+                  pour vous épauler dans la rédaction de vos contenus.
+                </MiddleLi>
+                <MiddleLi>
+                  Personnalisez le simulateur de votre choix grâce à notre{' '}
+                  <Link href='/integration'>configurateur</Link>.
+                </MiddleLi>
+                <MiddleLi>
+                  Inspirez-vous d'
+                  <Link
+                    href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
+                    target='_blank'
+                    rel='noreferrer noopener'>
+                    exemples concrets
+                  </Link>{' '}
+                  déjà créés par des médias, entreprises, associations...
+                </MiddleLi>
+              </MiddleUl>
+              <MiddleCta>
+                <Button
+                  to='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                  target='_blank'
+                  rel='noreferrer noopener'>
+                  Consulter le kit de diffusion
+                </Button>
+              </MiddleCta>
+            </div>
+            <div>
+              <H3Title2>Avec de l'aide</H3Title2>
+              <MiddleUl>
+                <MiddleLi>
+                  Consultez notre{' '}
+                  <Link
+                    href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
+                    target='_blank'
+                    rel='noreferrer noopener'
+                    data-testid='byArticleFaq'>
+                    Foire aux Questions
+                  </Link>{' '}
+                  pour trouver des éléments de réponse.
+                </MiddleLi>
+                <MiddleLi>
+                  Gagnez du temps et laissez-vous guider pour <strong>l’intégration de nos ressources</strong>.
+                </MiddleLi>
+                <MiddleLi>
+                  Échangez avec l’équipe sur vos <strong>besoins spécifiques d’intégration</strong>.
+                </MiddleLi>
+              </MiddleUl>
+              <Meeting />
+            </div>
+          </MiddleGrid>
+        </div>
+        <DownSide>
+          <H3Title>Quelques exemples d’utilisation de nos ressources</H3Title>
+          <ReuseGrid>
+            <WinkWinkLeft>
+              <ChtingLeft />
+            </WinkWinkLeft>
+            {buildReuseCardFor('card_1')}
+            {buildReuseCardFor('card_2')}
+            {buildReuseCardFor('card_3')}
+            {buildReuseCardFor('card_4')}
+            <WinkWinkRight>
+              <ChtingRight />
+            </WinkWinkRight>
+          </ReuseGrid>
+        </DownSide>
+      </SectionWideContent>
+    </Section>
   )
 }
-
-const Wrapper = styled.div`
-  background-color: #ebf2ff;
-  margin-top: -0.5rem;
-  padding: 6rem 0;
-  ${(props) => props.theme.mq.large} {
-    margin-top: 2rem;
-    padding: 1rem 0;
-  }
-`
-
-const Layout = styled.div`
-  ${(props) => props.theme.mq.large} {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-  }
-`
 
 const DownSide = styled.div`
   padding-top: 5rem;
@@ -158,17 +136,12 @@ const DownSide = styled.div`
 
 const MiddleGrid = styled.div`
   display: grid;
+  gap: 0 2rem;
   grid-template-columns: 1fr 1fr;
   ${(props) => props.theme.mq.medium} {
     grid-template-columns: 1fr;
   }
 `
-
-const PartMiddleGrid = styled.div`
-  padding-right: 1rem;
-`
-const LeftMiddleGrid = styled(PartMiddleGrid)``
-const RightMiddleGrid = styled(PartMiddleGrid)``
 
 const H3Title = styled.h3`
   color: #235dd2;
@@ -176,7 +149,12 @@ const H3Title = styled.h3`
   font-weight: 700;
   letter-spacing: 0em;
   line-height: 2.5rem;
+
+  ${(props) => props.theme.mq.large} {
+    font-size: 1.125rem;
+  }
 `
+
 const H3Title2 = styled(H3Title)`
   ${(props) => props.theme.mq.medium} {
     margin-top: 2rem;
@@ -232,6 +210,7 @@ const ReuseCard = styled.div`
   border-style: solid;
   border-width: 1px 4px 4px 1px;
   display: block;
+  height: 100%;
   margin-right: 1rem;
 `
 const ReuseCardImg = styled.div`
@@ -246,46 +225,21 @@ const ReuseCardImg = styled.div`
 `
 const ReuseCardTxt = styled.div`
   font-size: 1rem;
-  height: 20rem;
-  ${(props) => props.theme.mq.xlarge} {
-    height: 21rem;
-  }
-  ${(props) => props.theme.mq.large} {
-    height: 11rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    height: 12rem;
-  }
-  ${(props) => props.theme.mq.small} {
-    height: 10rem;
-  }
-  ${(props) => props.theme.mq.xsmall} {
-    height: 15rem;
-  }
   padding: 1rem;
 `
+
 const ReuseCardTitle = styled.div`
   font-size: 1rem;
-  height: 5.5rem;
-  margin-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  ${(props) => props.theme.mq.xlarge} {
-    height: 5rem;
-  }
-  ${(props) => props.theme.mq.large} {
-    height: 2.5rem;
-  }
-  ${(props) => props.theme.mq.xsmall} {
-    height: 3.5rem;
-  }
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
 `
 const ReuseCardParagraph = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 0.9rem;
   }
   color: #3a3a3a;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
 `
 const ReuseCardTag = styled.div`
   background-color: white;

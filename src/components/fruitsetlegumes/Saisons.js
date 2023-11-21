@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { formatName, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
 import Bottom from 'components/misc/category/Bottom'
 import Description from 'components/misc/category/Description'
@@ -103,8 +103,8 @@ export default function Saisons(props) {
   )
 
   return (
-    <Section>
-      <Section.Content>
+    <Section $withoutPadding>
+      <SectionWideContent $small>
         <SourceAgribalyse />
         <Wrapper month={props.month} slug={props.category.slug}>
           <Description description={props.category.description} />
@@ -121,7 +121,7 @@ export default function Saisons(props) {
           <List items={equivalentsOfTheMonth} max={equivalentsOfTheMonth[equivalentsOfTheMonth.length - 1]?.value} />
           <Bottom category={props.category} iframe={props.iframe} />
         </Wrapper>
-      </Section.Content>
+      </SectionWideContent>
     </Section>
   )
 }

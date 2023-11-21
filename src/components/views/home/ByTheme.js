@@ -1,68 +1,47 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import ThemeCard from './ThemeCard'
 import Header from './heading/Header'
 
 export default function ByTheme() {
   return (
-    <Wrapper>
-      <Section2>
-        <Section2WideContent>
-          <Section2InnerMargin>
-            <Layout>
-              <Header
-                title={
-                  <>
-                    <span>
-                      Identifier la <b>thématique environnementale&nbsp;</b>
-                    </span>
-                    <span>à aborder dans vos contenus</span>
-                  </>
-                }
-                cta={{ to: '/thematiques', label: 'Explorer les thématiques' }}
-              />
-              <div>
-                <ThemeCards>
-                  <div>
-                    <ThemeCard slug='usagenumerique' />
-                    <ThemeCard slug='chauffage' />
-                    <ThemeCard slug='transport' />
-                    <ThemeCard slug='repas' />
-                    <ThemeCard slug='habillement' />
-                    <ThemeCard slug='boisson' />
-                  </div>
-                  <div>
-                    <ThemeCardBlue1>&nbsp;</ThemeCardBlue1>
-                    <ThemeCard slug='mobilier' />
-                    <ThemeCard slug='electromenager' />
-                    <ThemeCard slug='livraison' />
-                    <ThemeCardBlue2 />
-                  </div>
-                </ThemeCards>
-              </div>
-            </Layout>
-          </Section2InnerMargin>
-        </Section2WideContent>
-      </Section2>
-    </Wrapper>
+    <Section $theme='color'>
+      <SectionWideContent>
+        <Header
+          title={
+            <>
+              <span>
+                Identifier la <b>thématique environnementale&nbsp;</b>
+              </span>
+              <span>à aborder dans vos contenus</span>
+            </>
+          }
+          cta={{ to: '/thematiques', label: 'Explorer les thématiques' }}
+        />
+        <div>
+          <ThemeCards>
+            <div>
+              <ThemeCard slug='usagenumerique' />
+              <ThemeCard slug='chauffage' />
+              <ThemeCard slug='transport' />
+              <ThemeCard slug='repas' />
+              <ThemeCard slug='habillement' />
+              <ThemeCard slug='boisson' />
+            </div>
+            <div>
+              <ThemeCardBlue1>&nbsp;</ThemeCardBlue1>
+              <ThemeCard slug='mobilier' />
+              <ThemeCard slug='electromenager' />
+              <ThemeCard slug='livraison' />
+              <ThemeCardBlue2 />
+            </div>
+          </ThemeCards>
+        </div>
+      </SectionWideContent>
+    </Section>
   )
 }
-
-const Wrapper = styled.div`
-  background-color: #ebf2ff;
-  padding: 6rem 0;
-  ${(props) => props.theme.mq.large} {
-    padding: 1rem 0;
-  }
-`
-
-const Layout = styled.div`
-  ${(props) => props.theme.mq.large} {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-  }
-`
 
 const ThemeCards = styled.div`
   > div {
@@ -76,6 +55,7 @@ const ThemeCards = styled.div`
     ${(props) => props.theme.mq.large} {
       flex-direction: column;
       margin-top: 0;
+      margin-bottom: 1rem;
       width: 200px;
       div + div {
         margin-left: 0;

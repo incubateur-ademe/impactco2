@@ -3,16 +3,13 @@ import styled from 'styled-components'
 import { formatName, formatNumberPrecision, formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Legend from 'components/charts/Legend'
 import StackedChart from 'components/charts/StackedChart'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import Detail from './ecv/Detail'
 import DurationSelector from './ecv/DurationSelector'
 
-export const StyledSection = styled(Section)`
-  margin-bottom: 4rem;
-`
 export const Title = styled.h3`
   font-weight: normal;
   text-align: center;
@@ -54,8 +51,8 @@ export default function Ecv(props) {
   }, [props.equivalent, ecv, setEcv, usage])
 
   return ecvToDisplay.length ? (
-    <StyledSection>
-      <Section.Content>
+    <Section>
+      <SectionWideContent $small>
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
             Détail de l&apos;empreinte de 1 {props.equivalent.prefix && <>{formatName(props.equivalent.prefix)} </>}
@@ -71,7 +68,7 @@ export default function Ecv(props) {
           {usage ? <DurationSelector duration={usage} setDuration={setUsage} /> : null}
           <Detail ecv={ecvToDisplay} total={formatTotal(props.equivalent, usage)} />
         </ScreenshotWrapper>
-      </Section.Content>
-    </StyledSection>
+      </SectionWideContent>
+    </Section>
   ) : null
 }

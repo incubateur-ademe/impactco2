@@ -1,10 +1,10 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
 import { themes } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
 import ModalContext from 'components/providers/ModalProvider'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
 import OptionalRelay from './OptionalRelay'
@@ -28,10 +28,8 @@ const Svg = styled.svg`
 `
 
 export default function CalculateurLivraison(props) {
-  // trunk-ignore(eslint/no-unused-vars)
   const { engine } = useContext(RulesContextLivraison)
   const { setIfl } = useContext(ModalContext)
-  // eslint-disable-next-line no-unused-vars
   const { setSocial } = useContext(ModalContext)
 
   const [cO2eq, setCO2eq] = useState(0)
@@ -53,13 +51,9 @@ export default function CalculateurLivraison(props) {
     diffPlane: 0,
   })
 
-  const calculateResult = () =>
+  useEffect(() => {
     calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit, isPlane)
-
-  useMemo(() => {
-    calculateResult()
     setShowToggleContainer(['relais', 'click'].includes(values.retrait))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values, isHabit, isPlane])
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid })
@@ -98,136 +92,124 @@ export default function CalculateurLivraison(props) {
   }
 
   return (
-    <>
-      <Section2 data-testid='calculateurLivraison'>
-        <Section2InnerMargin $embedded={props.embedded}>
-          <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
-            <Flex>
-              <H2Title data-testid='calculateurTitleH2'>Estimez l'impact de votre livraison</H2Title>
-              <div className='buttons'>
-                <ButtonChange onClick={() => setSocial(true)} className='noscreenshot' id='shareUp'>
-                  <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 -2 24 24'>
-                    <path
-                      fill='#564d53'
-                      d='M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z'
-                    />
-                  </svg>
-                  <HideableSpan>&nbsp;Partager</HideableSpan>
-                </ButtonChange>
-                <ButtonChange onClick={integrerClicked} className='noscreenshot'>
-                  <svg
-                    width='16px'
-                    aria-hidden='true'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 20 16'>
-                    <path
-                      stroke='currentColor'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      d='M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15'
-                    />
-                  </svg>
-                  <HideableSpan>&nbsp;Intégrer le simulateur</HideableSpan>
-                </ButtonChange>
-                <ButtonChange onClick={takeScreenshot} className='noscreenshot'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='16'
-                    height='16'
-                    fill='currentColor'
-                    viewBox='0 0 16 16'>
-                    <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
-                    <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z' />
-                  </svg>
-                  <HideableSpan>&nbsp;Télécharger</HideableSpan>
-                </ButtonChange>
-              </div>
-            </Flex>
+    <Section data-testid='calculateurLivraison' $withoutPadding>
+      <SectionWideContent $embedded={props.embedded}>
+        <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
+          <Flex>
+            <H2Title data-testid='calculateurTitleH2'>Estimez l'impact de votre livraison</H2Title>
+            <div className='buttons'>
+              <ButtonChange onClick={() => setSocial(true)} className='noscreenshot' id='shareUp'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 -2 24 24'>
+                  <path
+                    fill='#564d53'
+                    d='M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z'
+                  />
+                </svg>
+                <HideableSpan>&nbsp;Partager</HideableSpan>
+              </ButtonChange>
+              <ButtonChange onClick={integrerClicked} className='noscreenshot'>
+                <svg width='16px' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 16'>
+                  <path
+                    stroke='currentColor'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15'
+                  />
+                </svg>
+                <HideableSpan>&nbsp;Intégrer le simulateur</HideableSpan>
+              </ButtonChange>
+              <ButtonChange onClick={takeScreenshot} className='noscreenshot'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
+                  <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
+                  <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z' />
+                </svg>
+                <HideableSpan>&nbsp;Télécharger</HideableSpan>
+              </ButtonChange>
+            </div>
+          </Flex>
 
-            <DropList>
-              <SelectProduits changeProduit={changeProduit} value={values.produit} />
-              <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
-            </DropList>
-            <ToggleContainer $show={showToggleContainer} data-testid='partieMagasin'>
-              <ToggleHabitContainer>
-                <FlexHabit>
-                  <div className='item1'>
-                    <Switch
-                      className='toggle'
-                      checked={isHabit}
-                      onChange={habitClicked}
-                      offColor={'#fff'}
-                      onColor={themes.default.colors.main2}
-                      aria-label='Changer de thème'
-                      uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
-                      checkedHandleIcon={
-                        <Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'>
-                          <path
-                            fill='#39a69e'
-                            d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'
-                          />
-                        </Svg>
-                      }
-                    />
-                  </div>
-                  <div className='item2'>Le {point} est sur votre trajet habituel</div>
-                  <div className='item3'>
-                    <Addendum>
-                      <span className='plus'>+</span>
-                      <span className='txt' data-testid='bcTrajet'>
-                        {convertGramsToKilograms(diffs.diffKm0)} kg de CO2e
-                      </span>
-                    </Addendum>
-                  </div>
-                </FlexHabit>
-              </ToggleHabitContainer>
-              <Optionals $show={!isHabit}>
-                <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point} />
-                <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj} />
-              </Optionals>
-            </ToggleContainer>
-            <ToggleContainerBottom data-testid='partieAvion'>
-              <ToggleHabitContainer>
-                <FlexHabitBottom>
-                  <div className='item1'>
-                    <Switch
-                      className='toggle'
-                      checked={isPlane}
-                      onChange={farawayClicked}
-                      offColor={'#fff'}
-                      onColor={themes.default.colors.main2}
-                      aria-label='Changer de thème'
-                      uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
-                      checkedHandleIcon={
-                        <Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'>
-                          <path
-                            fill='#39a69e'
-                            d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'
-                          />
-                        </Svg>
-                      }
-                    />
-                  </div>
-                  <div className='item2'>Votre colis vient de loin (transport par avion).</div>
-                  <div className='item3'>
-                    <Addendum>
-                      <span className='plus'>+</span>
-                      <span className='txt' data-testid='bcAvion'>
-                        {convertGramsToKilograms(diffs.diffPlane)} kg de CO2e
-                      </span>
-                    </Addendum>
-                  </div>
-                </FlexHabitBottom>
-              </ToggleHabitContainer>
-            </ToggleContainerBottom>
-            <ResultatsLivraison co2eq={cO2eq} />
-            <YearlyLivraison co2eq={cO2eq} />
-          </ScreenshotWrapper2>
-        </Section2InnerMargin>
-      </Section2>
-    </>
+          <DropList>
+            <SelectProduits changeProduit={changeProduit} value={values.produit} />
+            <SelectRetraits changeRetrait={changeRetrait} value={values.retrait} />
+          </DropList>
+          <ToggleContainer $show={showToggleContainer} data-testid='partieMagasin'>
+            <ToggleHabitContainer>
+              <FlexHabit>
+                <div className='item1'>
+                  <Switch
+                    className='toggle'
+                    checked={isHabit}
+                    onChange={habitClicked}
+                    offColor={'#fff'}
+                    onColor={themes.default.colors.main2}
+                    aria-label='Changer de thème'
+                    uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
+                    checkedHandleIcon={
+                      <Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'>
+                        <path
+                          fill='#39a69e'
+                          d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'
+                        />
+                      </Svg>
+                    }
+                  />
+                </div>
+                <div className='item2'>Le {point} est sur votre trajet habituel</div>
+                <div className='item3'>
+                  <Addendum>
+                    <span className='plus'>+</span>
+                    <span className='txt' data-testid='bcTrajet'>
+                      {convertGramsToKilograms(diffs.diffKm0)} kg de CO2e
+                    </span>
+                  </Addendum>
+                </div>
+              </FlexHabit>
+            </ToggleHabitContainer>
+            <Optionals $show={!isHabit}>
+              <OptionalRelay changeRelay={changeRelay} value={values.relay} point={point} />
+              <OptionalTraj km={values.km} changeKm={changeKm} changeTraj={changeTraj} value={values.traj} />
+            </Optionals>
+          </ToggleContainer>
+          <ToggleContainerBottom data-testid='partieAvion'>
+            <ToggleHabitContainer>
+              <FlexHabitBottom>
+                <div className='item1'>
+                  <Switch
+                    className='toggle'
+                    checked={isPlane}
+                    onChange={farawayClicked}
+                    offColor={'#fff'}
+                    onColor={themes.default.colors.main2}
+                    aria-label='Changer de thème'
+                    uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
+                    checkedHandleIcon={
+                      <Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16'>
+                        <path
+                          fill='#39a69e'
+                          d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'
+                        />
+                      </Svg>
+                    }
+                  />
+                </div>
+                <div className='item2'>Votre colis vient de loin (transport par avion).</div>
+                <div className='item3'>
+                  <Addendum>
+                    <span className='plus'>+</span>
+                    <span className='txt' data-testid='bcAvion'>
+                      {convertGramsToKilograms(diffs.diffPlane)} kg de CO2e
+                    </span>
+                  </Addendum>
+                </div>
+              </FlexHabitBottom>
+            </ToggleHabitContainer>
+          </ToggleContainerBottom>
+          <ResultatsLivraison co2eq={cO2eq} />
+          <YearlyLivraison co2eq={cO2eq} />
+        </ScreenshotWrapper2>
+      </SectionWideContent>
+    </Section>
   )
 }
 

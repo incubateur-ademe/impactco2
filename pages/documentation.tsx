@@ -1,22 +1,21 @@
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 const FormatText = styled.div`
   margin-bottom: 10rem;
   h1 {
     font-size: 3rem;
-    margin-top: 3rem;
   }
 `
 
 export default function Documentation() {
   return (
     <Web title='Documentation'>
-      <Section2>
-        <Section2InnerMargin>
+      <Section>
+        <SectionWideContent>
           <FormatText>
             <h1>Documentation</h1>
             <ul>
@@ -28,8 +27,8 @@ export default function Documentation() {
               </li>
             </ul>
           </FormatText>
-        </Section2InnerMargin>
-      </Section2>
+        </SectionWideContent>
+      </Section>
     </Web>
   )
 }

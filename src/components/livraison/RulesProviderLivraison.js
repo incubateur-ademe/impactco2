@@ -1,15 +1,13 @@
+import rules from '@incubateur-ademe/publicodes-impact-livraison'
 import Engine from 'publicodes'
 import React, { useMemo } from 'react'
-import useRulesLivraison from 'hooks/useRulesLivraison'
 import useSituation from 'hooks/useSituation'
 
 const RulesContextLivraison = React.createContext({})
 
 export function RulesProviderLivraison(props) {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  const { data: rules } = useRulesLivraison()
-  const engine = useMemo(() => (rules ? new Engine(rules) : null), [rules])
+  // @Clemog: We make unit errors silent.
+  const engine = useMemo(() => new Engine(rules, { logger: { log: () => {}, warn: () => {}, err: () => {} } }), [])
 
   const { situation, setSituation } = useSituation(engine)
 

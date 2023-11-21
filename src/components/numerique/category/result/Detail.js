@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react'
+import { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { formatConstruction, formatName, formatNumber } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
@@ -6,7 +6,7 @@ import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Instruction from 'components/misc/category/Instruction'
 import Top from 'components/misc/category/Top'
-import RulesContext from 'components/numerique/RulesProvider'
+import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
@@ -26,7 +26,7 @@ const Text = styled.p`
 `
 
 export default function Detail(props) {
-  const { engine, situation } = useContext(RulesContext)
+  const { engine, situation } = useContext(RulesContextNumerique)
   const { equivalents, categories } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)

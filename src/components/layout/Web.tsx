@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import useInteraction from 'hooks/useInteraction'
 import BreadCrumb2, { BreadcrumbProps } from './web/BreadCrumb2'
-import FooterBlue from './web/FooterBlue'
+import Footer from './web/Footer'
 import HeaderSweet from './web/HeaderSweet'
 import Seo from './web/Seo'
 
@@ -20,9 +20,13 @@ const FullScreen = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 0 0 5rem;
   position: relative;
 `
+
+const Children = styled.div`
+  position: relative;
+`
+
 export default function Web({
   title,
   description,
@@ -46,9 +50,9 @@ export default function Web({
           <FullScreen>
             <HeaderSweet />
             {breadcrumb && <BreadCrumb2 breadcrumb={breadcrumb} />}
-            {children}
+            <Children>{children}</Children>
           </FullScreen>
-          <FooterBlue />
+          <Footer />
         </Content>
       </Wrapper>
     </>

@@ -1,13 +1,11 @@
 import React from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import ScreenshotWrapper from 'components/misc/ScreenshotWrapper'
 import visualizations from 'components/visualizations/list'
 
 const StyledSection = styled(Section)`
-  margin-bottom: 4rem;
-
   .slick-track {
     display: flex !important;
   }
@@ -38,7 +36,7 @@ const StyledSection = styled(Section)`
 export default function Visualization(props) {
   return visualizations[props.equivalent.slug] ? (
     <StyledSection>
-      <Section.Content>
+      <SectionWideContent $small>
         <Slider
           dots={false}
           infinite={true}
@@ -61,7 +59,7 @@ export default function Visualization(props) {
             </ScreenshotWrapper>
           ))}
         </Slider>
-      </Section.Content>
+      </SectionWideContent>
     </StyledSection>
   ) : null
 }

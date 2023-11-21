@@ -1,9 +1,57 @@
 # CHANGELOG
 
+## 1.27.0 (11/11/2023)
+
+- Feat - Osez Changer 
+
+## 1.26.4 (16/11/2023)
+
+- Feat - Améliorations de l'espacement et de la largeur du site
+
+## 1.26.3 (15/11/2023)
+
+- SEO : modifications des meta
+
+## 1.26.2 (14/11/2023)
+
+- FIX - Bug bouton de la home
+
+## 1.26.1 (14/11/2023)
+
+- CHORE - Amélioration des perfs de la page de livraison
+
+## 1.26.0 (14/11/2023)
+
+- Amélioration des chiffres de comparaisons
+
+## 1.25.12 (14/11/2023)
+
+- Homepage: Améliorations graphiques
+
+## 1.25.11 (14/11/2023)
+
+- B33 - Homepage : mettre le bon lien de redirection
+- B32 - Redirection bouton “Voir toutes les catégories”
+
+## 1.25.10 (13/11/2023)
+
+- T26 - Publicodes via librairies
+
+## 1.25.9 (13/11/2023)
+
+- CHORE - Amélioration de log pour les api keys
+
+## 1.25.8 (13/11/2023)
+
+- CHORE - Suppression de hotjar
+
+## 1.25.7 (09/11/2023)
+
+- T25 - Sécurisation d'une partie de l'API
+
 ## 1.25.6 (07/11/2023)
 
 - B20 - Correction du fil d'arianne des pages d'équivalents
-
 
 ## 1.25.5 (09/11/2023)
 

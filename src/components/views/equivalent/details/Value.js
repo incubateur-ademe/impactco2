@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { formatNumber, formatTotal, getFrenchFormattedNumber, getNumberWithNDigitsAfterComma } from 'utils/formatters'
 import Emoji from 'components/base/Emoji'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 
-const StyledSection = styled(Section)`
-  background-color: ${(props) => props.theme.colors.main};
-  margin-bottom: 0.75rem;
+const Wrapper = styled.div`
+  margin-bottom: 1rem;
   padding: 0.5rem 0;
 `
+
 const Top = styled.div`
   border-radius: 1rem 1rem 0 0;
   color: ${(props) => props.theme.colors.background};
@@ -56,23 +56,27 @@ const StyledEmoji = styled(Emoji)`
 export default function Value(props) {
   let numberToDisplay = formatTotal(props.equivalent)
   return (
-    <StyledSection>
-      <Section.Content $flex>
-        <Top>
-          <div>
-            <Number>
-              {numberToDisplay < 0.02
-                ? formatNumber(formatTotal(props.equivalent))
-                : getFrenchFormattedNumber(getNumberWithNDigitsAfterComma(formatTotal(props.equivalent), 2))}
-            </Number>{' '}
-            <Unit>
-              kg <Big>CO2</Big>e{' '}
-              {(props.equivalent.unit || props.category.unit) && <>/ {props.equivalent.unit || props.category.unit}</>}
-            </Unit>
-          </div>
-        </Top>
-        <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
-      </Section.Content>
-    </StyledSection>
+    <Wrapper>
+      <Section $withoutPadding $theme='main'>
+        <SectionWideContent $flex $small>
+          <Top>
+            <div>
+              <Number>
+                {numberToDisplay < 0.02
+                  ? formatNumber(formatTotal(props.equivalent))
+                  : getFrenchFormattedNumber(getNumberWithNDigitsAfterComma(formatTotal(props.equivalent), 2))}
+              </Number>{' '}
+              <Unit>
+                kg <Big>CO2</Big>e{' '}
+                {(props.equivalent.unit || props.category.unit) && (
+                  <>/ {props.equivalent.unit || props.category.unit}</>
+                )}
+              </Unit>
+            </div>
+          </Top>
+          <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
+        </SectionWideContent>
+      </Section>
+    </Wrapper>
   )
 }

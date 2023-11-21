@@ -2,43 +2,35 @@ import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 import OutboundLink from 'components/base/OutboundLink'
-import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 
 export default function NGCCard() {
   return (
-    <Wrapper>
-      <Section2>
-        <Section2WideContent>
-          <Section2InnerMargin>
-            <Card>
-              <CardImage>
-                <Image src='/images/logoNGC.svg' alt='' width={196} height={152} />
-              </CardImage>
-              <CardTitle>
-                <strong>Calculer votre empreinte globale sur le climat</strong>
-              </CardTitle>
-              <CardText>
-                Vous souhaitez aller plus loin en mesurant votre empreinte sur le climat ou celle d’un groupe de
-                personnes ?
-                <br />
-                Rendez-vous sur le simulateur&nbsp;
-                <strong>
-                  <OutboundLink title='Nos Gestes Climat' href='https://nosgestesclimat.fr'>
-                    Nos Gestes Climat
-                  </OutboundLink>
-                </strong>
-              </CardText>
-            </Card>
-          </Section2InnerMargin>
-        </Section2WideContent>
-      </Section2>
-    </Wrapper>
+    <Section>
+      <SectionWideContent>
+        <Card>
+          <CardImage>
+            <Image src='/images/logoNGC.svg' alt='' width={196} height={152} />
+          </CardImage>
+          <CardTitle>
+            <strong>Calculez votre empreinte globale sur le climat</strong>
+          </CardTitle>
+          <CardText>
+            Vous souhaitez aller plus loin en mesurant votre empreinte sur le climat ou celle d’un groupe de personnes ?
+            <br />
+            Rendez-vous sur le simulateur&nbsp;
+            <strong>
+              <OutboundLink title='Nos Gestes Climat' href='https://nosgestesclimat.fr'>
+                Nos Gestes Climat
+              </OutboundLink>
+            </strong>
+          </CardText>
+        </Card>
+      </SectionWideContent>
+    </Section>
   )
 }
 
-const Wrapper = styled.div`
-  margin-top: 3rem;
-`
 const Card = styled.div`
   border: 1px solid #ccdcfd;
   border-radius: 2rem;

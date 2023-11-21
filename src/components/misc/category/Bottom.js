@@ -20,16 +20,21 @@ export default function Bottom(props) {
 
   return (
     <Wrapper>
-      <Disclaimer>
+      <Disclaimer data-testid='bottomText'>
         Valeurs exprimées en {props.category.divider === 1 ? 'kg' : 'g'}{' '}
         <ButtonLink onClick={() => setCo2e(true)}>
           CO<sub>2</sub>e
         </ButtonLink>{' '}
         émis {props.category?.include}
       </Disclaimer>
-      <Button className={'noscreenshot'} to={props.iframe ? 'https://impactco2.fr' : '/'} hollow>
-        Voir toutes les catégories
-      </Button>
+      <div data-testid='bottomButton'>
+        <Button
+          className={'noscreenshot'}
+          to={props.iframe ? 'https://impactco2.fr/thematiques' : '/thematiques'}
+          hollow>
+          Voir toutes les thématiques
+        </Button>
+      </div>
     </Wrapper>
   )
 }

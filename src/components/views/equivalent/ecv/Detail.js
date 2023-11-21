@@ -17,6 +17,7 @@ const Wrapper = styled.table`
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
   margin-bottom: 2.5rem;
+  margin-top: 1rem;
   padding: 0.5rem;
 
   ${(props) => props.theme.mq.small} {

@@ -4,7 +4,7 @@ import ModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;
@@ -44,7 +44,7 @@ export default function Learning() {
 
   return (
     <StyledSection>
-      <Section.Content>
+      <SectionWideContent>
         <Statistic>
           <Number>2,5%</Number> des émissions de{' '}
           <ButtonLink onClick={() => setCo2e(true)}>
@@ -125,7 +125,7 @@ export default function Learning() {
         <Button.Wrapper>
           <Button to={'https://nosgestesclimat.fr/'}>Découvrir Nos Gestes Climat</Button>
         </Button.Wrapper>
-      </Section.Content>
+      </SectionWideContent>
     </StyledSection>
   )
 }

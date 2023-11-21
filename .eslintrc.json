@@ -24,13 +24,7 @@
       }
     ]
   },
-  "plugins": [
-    "@typescript-eslint",
-    "prettier",
-    "better-styled-components",
-    "styled-components-a11y",
-    "jest"
-  ],
+  "plugins": ["@typescript-eslint", "prettier", "better-styled-components", "styled-components-a11y", "jest"],
   "env": {
     "browser": true,
     "es2022": true,

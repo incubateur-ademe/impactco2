@@ -10,7 +10,7 @@
   },
   {
     "slug": "card_2",
-    "tagtext": "TF1 Info",
+    "tagtext": "TF1 INFO",
     "color": "#e4b47f",
     "img": "/images/home_img_2.png",
     "link": "https://www.tf1info.fr/environnement-ecologie/alimentation-transports-ecrans-ces-gestes-du-quotidien-qui-peuvent-aider-a-sauver-la-planete-2269524.html",
@@ -28,11 +28,11 @@
   },
   {
     "slug": "card_4",
-    "tagtext": "So Good Festival",
+    "tagtext": "SO GOOD FESTIVAL",
     "color": "#ffdc9e",
     "img": "/images/home_img_4.png",
     "link": "https://www.sogoodfestival.com/infos-pratiques",
     "title": "Venir au So Good Festival",
-    "paragraph": "Calcule l’impact carbone de ton déplacement jusqu’au festival avec Impact CO2 (ADEME) !"
+    "paragraph": "Calcule l’impact carbone de ton déplacement jusqu’au festival avec Impact CO2 (ADEME) !"
   }
 ]

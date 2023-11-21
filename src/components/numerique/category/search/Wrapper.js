@@ -8,18 +8,16 @@ const Wrapper = styled.div`
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
   display: flex;
+  gap: 0.5rem;
   justify-content: space-between;
   padding: 1.5rem;
-
   ${(props) => props.theme.mq.medium} {
     padding: 1rem;
   }
   ${(props) => props.theme.mq.iframemedium} {
     flex-direction: column;
-    gap: 0.5rem;
   }
 `
-Wrapper.Column = styled.div``
 Wrapper.Label = styled.p`
   font-size: 1.125rem;
   font-weight: 300;

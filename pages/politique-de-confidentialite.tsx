@@ -1,20 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 const FormatText = styled.div`
   h1 {
     font-size: 3rem;
-    margin-top: 3rem;
   }
 `
 
 export default function Politique() {
   return (
     <Web title='Politique de confidentialité'>
-      <Section2>
-        <Section2InnerMargin>
+      <Section>
+        <SectionWideContent>
           <FormatText>
             <h1>Politique de confidentialité</h1>
             <p>
@@ -33,8 +32,8 @@ export default function Politique() {
               cookies !
             </p>
           </FormatText>
-        </Section2InnerMargin>
-      </Section2>
+        </SectionWideContent>
+      </Section>
     </Web>
   )
 }

@@ -3,11 +3,7 @@ import Link from 'next/link'
 import { RulePage } from 'publicodes-react'
 import { useContext } from 'react'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin } from 'components/base/Section2'
-import BreadCrumb3 from 'components/layout/web/BreadCrumb3'
-import FooterBlue from 'components/layout/web/FooterBlue'
-import HeaderSweet from 'components/layout/web/HeaderSweet'
-import Seo from 'components/layout/web/Seo'
+import { Section, SectionWideContent } from 'components/base/Section'
 import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import Markdown from './Markdown'
 
@@ -15,12 +11,9 @@ export default function DocumentationLivraison(props) {
   const { engine } = useContext(RulesContextLivraison)
 
   return (
-    <VerticalContainer className={props.theme === 'night' ? 'bl' : 'r'}>
-      <Seo title={props.title} description={"Documentation de l'impact de la livraison"} image={'metalivraison.png'} />
-      <HeaderSweet />
-      <BreadCrumb3 />
-      <Section2>
-        <Section2InnerMargin>
+    <>
+      <Section $withoutPadding>
+        <SectionWideContent>
           <DocWrapper>
             <RulePage
               documentationPath='/documentation'
@@ -34,13 +27,9 @@ export default function DocumentationLivraison(props) {
               }}
             />
           </DocWrapper>
-        </Section2InnerMargin>
-      </Section2>
-      <br />
-      <br />
-      <br />
-      <FooterBlue />
-    </VerticalContainer>
+        </SectionWideContent>
+      </Section>
+    </>
   )
 }
 
@@ -119,5 +108,3 @@ const DocWrapper = styled.div`
     max-width: 800px;
   }
 `
-
-const VerticalContainer = styled.div``

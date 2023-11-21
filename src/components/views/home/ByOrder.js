@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import minicards from './data/minicards.json'
 import categories from 'data/categories.json'
 import DataContext from 'components/providers/DataProvider'
-import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Header from './heading/Header'
 import ArrowLeft from './img/ArrowLeft'
 import ArrowRight from './img/ArrowRight'
@@ -32,70 +32,47 @@ export default function ByOrder() {
   }
 
   return (
-    <Wrapper>
-      <Section2>
-        <Section2WideContent>
-          <Section2InnerMargin>
-            <Layout>
-              <Header
-                title={
-                  <>
-                    <span>Comparer et communiquer facilement&nbsp;</span>
-                    <span>
-                      les bons<b>&nbsp;ordres de grandeur&nbsp;</b>
-                    </span>
-                  </>
-                }
-                cta={{ to: '/convertisseur', label: 'Découvrer le calculateur carbone' }}
-              />
-              <div>
-                <Grid>
-                  <GridItemTopEmpty />
-                  <GridItemTopArrow>
-                    <ArrowLeft />
-                  </GridItemTopArrow>
-                  <GridItemTopCard>{buildMinicardFor('smartphone')}</GridItemTopCard>
-                  <GridItemTopText>
-                    <p>
-                      C’est autant d’émissions que pour <strong>fabriquer</strong>, <strong>consommer</strong> ou{' '}
-                      <strong>parcourir</strong>...
-                    </p>
-                  </GridItemTopText>
-                  <GridItemTopArrow>
-                    <ArrowRight />
-                  </GridItemTopArrow>
-                  <GridItemTopEmpty />
-                  <GridItemSub1>{buildMinicardFor('voiturethermique')}</GridItemSub1>
-                  <GridItemSub2>{buildMinicardFor('velo')}</GridItemSub2>
-                  <GridItemSub3>{buildMinicardFor('chemiseencoton')}</GridItemSub3>
-                  <GridItemSub4>{buildMinicardFor('soda')}</GridItemSub4>
-                  <GridItemSub5>{buildMinicardFor('tomate')}</GridItemSub5>
-                </Grid>
-              </div>
-            </Layout>
-          </Section2InnerMargin>
-        </Section2WideContent>
-      </Section2>
-    </Wrapper>
+    <Section>
+      <SectionWideContent>
+        <Header
+          title={
+            <>
+              <span>Comparer et communiquer facilement&nbsp;</span>
+              <span>
+                les bons<b>&nbsp;ordres de grandeur&nbsp;</b>
+              </span>
+            </>
+          }
+          cta={{ to: '/comparateur', label: 'Découvrer le comparateur carbone' }}
+        />
+        <div>
+          <Grid>
+            <GridItemTopEmpty />
+            <GridItemTopArrow>
+              <ArrowLeft />
+            </GridItemTopArrow>
+            <GridItemTopCard>{buildMinicardFor('smartphone')}</GridItemTopCard>
+            <GridItemTopText>
+              <p>
+                C’est autant d’émissions que pour <strong>fabriquer</strong>, <strong>consommer</strong> ou{' '}
+                <strong>parcourir</strong>...
+              </p>
+            </GridItemTopText>
+            <GridItemTopArrow>
+              <ArrowRight />
+            </GridItemTopArrow>
+            <GridItemTopEmpty />
+            <GridItemSub1>{buildMinicardFor('voiturethermique')}</GridItemSub1>
+            <GridItemSub2>{buildMinicardFor('velo')}</GridItemSub2>
+            <GridItemSub3>{buildMinicardFor('chemiseencoton')}</GridItemSub3>
+            <GridItemSub4>{buildMinicardFor('soda')}</GridItemSub4>
+            <GridItemSub5>{buildMinicardFor('tomate')}</GridItemSub5>
+          </Grid>
+        </div>
+      </SectionWideContent>
+    </Section>
   )
 }
-
-const Wrapper = styled.div`
-  background-color: white;
-  margin-top: -0.5rem;
-  padding: 6rem 0;
-  ${(props) => props.theme.mq.large} {
-    margin-top: 2rem;
-    padding: 1rem 0;
-  }
-`
-
-const Layout = styled.div`
-  ${(props) => props.theme.mq.large} {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-  }
-`
 
 const Grid = styled.div`
   display: grid;

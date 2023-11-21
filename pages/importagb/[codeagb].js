@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import React from 'react'
-import Section from 'components/base/Section'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 function useAGB(codeagb) {
@@ -25,7 +25,7 @@ export default function Importagb() {
     <Web>
       <Section>
         {data && (
-          <Section.Content>
+          <SectionWideContent>
             <h1>{codeagb}</h1>
             "ecv": [<br />
             &#123;
@@ -75,7 +75,7 @@ export default function Importagb() {
             <br /> &#125;
             <br /> ],
             <br />
-          </Section.Content>
+          </SectionWideContent>
         )}
       </Section>
     </Web>

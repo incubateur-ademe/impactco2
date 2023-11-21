@@ -1,53 +1,52 @@
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
-import { Section2, Section2InnerMargin, Section2WideContent } from 'components/base/Section2'
+import { Section, SectionWideContent } from 'components/base/Section'
 import Meeting from 'components/meeting/Meeting'
 
 export default function Hero() {
   return (
-    <Section2>
-      <Section2WideContent>
-        <Section2InnerMargin>
-          <Layout>
-            <div>
-              <H1Title>
-                <H1Line1>Informer, comparer, diffuser</H1Line1>
-                <span>
-                  <HideAboveMedium>&nbsp;</HideAboveMedium>des ressources sur l’impact carbone
-                </span>
-                <sapn>
-                  <HideAboveMedium>&nbsp;</HideAboveMedium>des gestes et objets du quotidien
-                </sapn>
-              </H1Title>
-              <Subtitle>
-                <span>
-                  Sensibilisez votre communauté grâce à une<strong>&nbsp;information fiable&nbsp;</strong>
-                </span>
-                <span>
-                  <strong>et sourcée</strong>&nbsp;issue des données environnementales de l'ADEME.
-                </span>
-              </Subtitle>
-              <MiniCard>
-                <MiniCardText>
-                  <MiniCardEmoji>🤓</MiniCardEmoji>
-                  <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
-                </MiniCardText>
-                <p>Laissez-nous votre email, et nous vous recontacterons très prochainement pour échanger ensemble.</p>
-                <Meeting />
-              </MiniCard>
-            </div>
-            <PictureContainer>
-              <Image width={560} height={976} src='/images/cards.svg' alt='' />
-            </PictureContainer>
-          </Layout>
-        </Section2InnerMargin>
-      </Section2WideContent>
-    </Section2>
+    <Section $withoutPadding>
+      <SectionWideContent>
+        <Layout>
+          <div>
+            <H1Title>
+              <H1Line1>Informer, comparer, diffuser</H1Line1>
+              <span>
+                <HideAboveMedium>&nbsp;</HideAboveMedium>des ressources sur l’impact carbone
+              </span>
+              <sapn>
+                <HideAboveMedium>&nbsp;</HideAboveMedium>des gestes et objets du quotidien
+              </sapn>
+            </H1Title>
+            <Subtitle>
+              <span>
+                Sensibilisez votre communauté grâce à une<strong>&nbsp;information fiable&nbsp;</strong>
+              </span>
+              <span>
+                <strong>et sourcée</strong>&nbsp;issue des données environnementales de l'ADEME.
+              </span>
+            </Subtitle>
+            <MiniCard>
+              <MiniCardText>
+                <MiniCardEmoji>🤓</MiniCardEmoji>
+                <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
+              </MiniCardText>
+              <p>Laissez-nous votre email, et nous vous recontacterons très prochainement pour échanger ensemble.</p>
+              <Meeting />
+            </MiniCard>
+          </div>
+
+          <PictureContainer>
+            <Image width={560} height={976} src='/images/cards.svg' alt='' />
+          </PictureContainer>
+        </Layout>
+      </SectionWideContent>
+    </Section>
   )
 }
 
-const H1Title = styled.div`
+const H1Title = styled.h1`
   color: ${(props) => props.theme.colors.linkGrey};
   font-size: 2.25rem;
   ${(props) => props.theme.mq.xlarge} {
@@ -90,6 +89,9 @@ const Layout = styled.div`
     grid-template-columns: 1fr;
   }
   padding: 6rem 0;
+  ${(props) => props.theme.mq.large} {
+    padding: 3rem 0;
+  }
 `
 
 const PictureContainer = styled.div`

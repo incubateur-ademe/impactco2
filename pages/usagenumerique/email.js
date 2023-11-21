@@ -3,7 +3,7 @@ import categories from 'data/categories.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import Web from 'components/layout/Web'
 import Equivalent from 'components/numerique/Equivalent'
-import { RulesProvider } from 'components/numerique/RulesProvider'
+import { RulesProviderNumerique } from 'components/numerique/RulesProviderNumerique'
 import Text from 'components/views/equivalent/Text'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
@@ -22,10 +22,10 @@ export default function EmailPage(props) {
         category: props.category,
         equivalent: props.equivalent,
       }}>
-      <RulesProvider>
+      <RulesProviderNumerique>
         <Equivalent equivalent={props.equivalent} category={props.category} name='email' />
         <VisualizationSlider equivalent={props.equivalent} />
-      </RulesProvider>
+      </RulesProviderNumerique>
       <Text equivalent={props.equivalent} />
     </Web>
   )
