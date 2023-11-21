@@ -92,6 +92,10 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
     (slug) => equivalents.find((equivalent: EquivalentType) => equivalent.slug === slug) as EquivalentType
   )
 
+  if (values.length === 0) {
+    return null
+  }
+
   const factor = getEquivalentValue(values[0]) * (base || 1)
   return (
     <>
