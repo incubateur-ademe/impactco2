@@ -13,7 +13,7 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
     <Web
       title='Osez changer'
       description='En moyenne, les Français ont trois fois plus de paires de chaussures qu’ils n’en ont besoin... et vous ? Faites le test avec Impact CO2 et notre simulateur !'
-      image='/meta/osez-changer.png'
+      image='meta/osez-changer.png'
       breadcrumb={{
         type: 'equivalent',
         category: category,
