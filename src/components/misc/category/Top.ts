@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Top = styled.div`
+export const Top = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -10,7 +10,7 @@ const Top = styled.div`
     margin-bottom: 0.5rem;
   }
 `
-const Checkboxes = styled.div`
+export const Checkboxes = styled.div<{ $visible: boolean }>`
   align-items: flex-end;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,3 @@ const Checkboxes = styled.div`
     align-items: center;
   }
 `
-
-Top.Checkboxes = Checkboxes
-export default Top

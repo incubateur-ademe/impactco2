@@ -16,4 +16,25 @@ export type Equivalent = {
   }
   total?: number
   ecv?: { value: number; id: number; name?: string }[]
+  type?: string
+  carpool?: boolean
+  display?:
+  | {
+    min: number
+    max: undefined
+  }
+  | {
+    max: number
+    min: undefined
+  }
+  | {
+    min: number
+    max: number
+  }
+  ecvs?: {
+    max: number
+    subtitle: string
+    ecv: { value: number; id: number; name?: string }[]
+  }[]
+  secondEmoji?: string
 }
