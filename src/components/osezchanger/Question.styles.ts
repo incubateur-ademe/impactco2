@@ -8,8 +8,7 @@ export const QuestionCard = styled.div<{ $customBorderRadius?: boolean }>`
 `
 
 export const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
+  position: relative;
 `
 
 export const Content = styled.div`
@@ -24,7 +23,6 @@ export const Title = styled.div`
   font-weight: 700;
   line-height: 20px;
   margin-bottom: 4px;
-  width: max-content;
 `
 
 export const Description = styled.div`
@@ -46,4 +44,7 @@ export const Tag = styled.div`
   font-weight: 700;
   height: 16px;
   padding: 2px 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
 `
