@@ -23,7 +23,6 @@ export default function SelectNumber(props) {
           props.changeNumber && props.changeNumber(e.value)
         }}
         value={props.value}
-        label=''
         name='numbers'
         data-testid='numbers'>
         {numbers.map((number) => (

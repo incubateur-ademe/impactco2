@@ -22,7 +22,6 @@ export default function SelectFrequences(props) {
         }}
         value={props.value}
         className='freq'
-        label=''
         name='frequences'
         data-testid='frequences'>
         {frequences.map((frequence) => (
