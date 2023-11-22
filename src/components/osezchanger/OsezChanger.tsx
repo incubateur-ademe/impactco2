@@ -4,7 +4,7 @@ import useScreenshot from 'hooks/useScreenshot'
 import Signature from 'components/screenshot/Signature'
 import Actions from './Actions'
 import Defi from './Defi'
-import { Container, DefiButton, Description, Logos, Screenshot, Title } from './OsezChanger.styles'
+import { BottomLogos, Container, DefiButton, Description, Logos, Screenshot, Title } from './OsezChanger.styles'
 import Resources from './Resources'
 import Modal, { ModalType } from './modals/Modal'
 
@@ -24,13 +24,17 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
         <>
           <Screenshot ref={ref} data-testid='defi' $isScreenshotting={isScreenshotting}>
             <Defi setModal={setModal} />
-            {isScreenshotting && <Signature noMargin />}
+            {isScreenshotting && (
+              <Logos>
+                <Signature noMargin />
+              </Logos>
+            )}
           </Screenshot>
           <Resources />
           {iframe && (
-            <Logos>
+            <BottomLogos>
               <Signature noMargin noLink />
-            </Logos>
+            </BottomLogos>
           )}
           <Actions takeScreenshot={takeScreenshot} setModal={setModal} />
           {modal && <Modal type={modal} onClose={() => setModal(undefined)} />}

@@ -21,6 +21,7 @@ export const Buttons = styled.div`
     border-radius: 4px;
     color: var(--secondary-60) !important;
     cursor: pointer;
+    line-height: 0 !important;
     padding: 14px !important;
 
     &:hover {

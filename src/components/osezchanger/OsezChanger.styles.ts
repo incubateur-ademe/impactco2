@@ -3,7 +3,12 @@ import Button from 'components/base/Button'
 
 export const Screenshot = styled.div<{ $isScreenshotting: boolean }>`
   background-color: var(--secondary-10);
-  ${({ $isScreenshotting }) => $isScreenshotting && 'padding: 0 16px;'}
+  ${({ $isScreenshotting }) =>
+    $isScreenshotting &&
+    `
+      margin-right: -16px;
+      padding: 0 16px 16px 16px;
+  `}
 `
 
 export const Container = styled.div<{ $defiMode?: boolean }>`
@@ -38,7 +43,10 @@ export const DefiButton = styled(Button)`
 `
 
 export const Logos = styled.div`
-  border-top: 1px solid var(--secondary-20);
   margin-top: 24px;
+`
+
+export const BottomLogos = styled(Logos)`
+  border-top: 1px solid var(--secondary-20);
   padding-top: 24px;
 `
