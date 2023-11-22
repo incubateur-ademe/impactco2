@@ -28,7 +28,8 @@ export const Container = styled(Link)`
     img {
       border-right: 1px solid var(--secondary-40);
     }
-    outline: 3px solid var(--secondary-30);
+    outline: 3px solid var(--secondary-40);
+    outline-offset: 2px;
   }
 `
 
