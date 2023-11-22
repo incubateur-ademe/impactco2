@@ -14,7 +14,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_osez_changer', 'png', 'osez_changer')
 
   return (
-    <Container $defiMode={defiMode}>
+    <Container $defiMode={defiMode} id='osez-changer'>
       <Title>{defiMode ? 'Challenge chaussures' : '✨ Challengez votre communauté'}</Title>
       <Image color='var(--primary-40' src='/images/separator.svg' alt='' width={36} height={20} />
       <Description>
