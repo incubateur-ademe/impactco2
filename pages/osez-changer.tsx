@@ -11,8 +11,9 @@ import OsezChanger from 'components/osezchanger/OsezChanger'
 export default function CategoryPage({ category }: { category: CategoryType }) {
   return (
     <Web
-      title={category.meta.title}
-      description={category.meta.description}
+      title='Osez changer'
+      description='En moyenne, les Français ont trois fois plus de paires de chaussures qu’ils n’en ont besoin... et vous ? Faites le test avec Impact CO2 et notre simulateur !'
+      image='/meta/osez-changer.png'
       breadcrumb={{
         type: 'equivalent',
         category: category,
@@ -20,7 +21,7 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
       <Section $withoutPadding>
         <Container>
           <Category category={category} />
-          {category.slug === 'habillement' && <OsezChanger />}
+          <OsezChanger />
         </Container>
       </Section>
       <Learning category={category} />
@@ -28,20 +29,8 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
   )
 }
 
-const independantCategories = [4, 9, 10, 12]
-
-export async function getStaticPaths() {
-  return {
-    paths: categories
-      .filter((category) => !independantCategories.includes(category.id))
-      .map((category) => ({
-        params: { category: category.slug },
-      })),
-    fallback: 'blocking',
-  }
-}
-export async function getStaticProps({ params }: { params: { category: string } }) {
-  const category = categories?.find((category) => category.slug === params.category)
+export async function getStaticProps() {
+  const category = categories?.find((category) => category.slug === 'habillement')
   if (!category) {
     return { notFound: true }
   }
