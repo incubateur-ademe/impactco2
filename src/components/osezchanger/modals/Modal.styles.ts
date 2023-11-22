@@ -18,7 +18,7 @@ export const Shadow = styled.div`
   background-color: #001133;
   border-radius: 8px 8px 0 0;
   flex: 1;
-  opacity: 0.8;
+  opacity: 0.15;
 `
 
 export const Content = styled.div`
