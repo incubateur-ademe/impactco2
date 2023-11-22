@@ -57,7 +57,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         setValue={setNewValue}
         tag={newValue ? `+${(newValue * shoesImpact).toLocaleString('fr-FR')}kg CO2e` : false}
         customBorderRadius={!!newValue}>
-        <Result data-testid='defi-result'>
+        <Result>
           <ResultValue data-testid='defi-result-title'>
             {(newValue || 0).toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue || 0)}{' '}
             (+

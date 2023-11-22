@@ -17,7 +17,6 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-avis-tag')).toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
-    expect(screen.queryByTestId('defi-result')).toBeNull()
     expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
@@ -26,7 +25,6 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-avis-tag')).toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
-    expect(screen.queryByTestId('defi-result')).toBeNull()
     expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
@@ -36,7 +34,6 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toHaveTextContent('0 paire')
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
-    expect(screen.queryByTestId('defi-result')).toBeNull()
     expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
@@ -46,7 +43,6 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+16,5kg CO2e')
-    expect(screen.queryByTestId('defi-result')).not.toBeNull()
     expect(screen.queryByTestId('defi-empty-result')).toBeNull()
     expect(screen.queryByTestId('defi-result-title')).toHaveTextContent('1 paire de chaussure neuve (+16,5kg de CO2e)')
     expect(screen.queryByTestId('defi-equivalent-tshirt-value')).toHaveTextContent('3,2')
@@ -115,7 +111,6 @@ describe('Osez Changer', () => {
       fireEvent.change(screen.getByTestId('question-neuf-input'), { target: { value: '3' } })
     })
     expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+49,5kg CO2e')
-    expect(screen.queryByTestId('defi-result')).not.toBeNull()
     expect(screen.queryByTestId('defi-result-title')).toHaveTextContent(
       '3 paires de chaussures neuves (+49,5kg de CO2e)'
     )
@@ -138,7 +133,6 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toHaveTextContent('+1 paire')
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
-    expect(screen.queryByTestId('defi-result')).toBeNull()
 
     act(() => {
       fireEvent.change(screen.getByTestId('question-vraie-input'), { target: { value: '10' } })
@@ -147,6 +141,5 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toHaveTextContent('+5 paires')
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
-    expect(screen.queryByTestId('defi-result')).toBeNull()
   })
 })
