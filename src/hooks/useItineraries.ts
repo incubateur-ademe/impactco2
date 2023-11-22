@@ -1,21 +1,20 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { CallGMapResponse } from 'pages/api/callGMap'
+import { CallGMapDistances } from 'pages/api/callGMap'
 
 export type Point = {
   latitude: number
   longitude: number
 }
 
-export default function useItineraries(start: Point, end: Point, mode?: 'driving' | 'walking' | 'driving') {
+export default function useItineraries(start: Point, end: Point) {
   const { data } = useQuery({
-    queryKey: [start, end, mode],
+    queryKey: [start, end],
     queryFn: () =>
       axios
-        .post<CallGMapResponse>('/api/callGMap', {
+        .post<CallGMapDistances>('/api/callGMap', {
           destinations: start,
           origins: end,
-          mode,
         })
         .then((res) => res.data),
     enabled: !!(start.latitude && end.latitude),

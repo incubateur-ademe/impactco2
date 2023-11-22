@@ -5,7 +5,17 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { ZodError, z } from 'zod'
 import { trackAPIRequest } from 'utils/middleware'
 
-type GMapResponse = { status: string; rows: { elements: { status: string; distance: { value: number } }[] }[] }
+type GMapDistance = { elements: { status: string; distance: { value: number } }[] }
+type GMapDistances = { rows: GMapDistance[] }
+
+const getValue = (distance: GMapDistances) => {
+  if (!distance) {
+    return 0
+  }
+
+  const element = distance.rows[0].elements[0]
+  return (element.status === 'OK' && element.distance.value / 1000) || 0
+}
 
 export const GMapValidation = z.object({
   destinations: z.object({
@@ -16,10 +26,9 @@ export const GMapValidation = z.object({
     latitude: z.number(),
     longitude: z.number(),
   }),
-  mode: z.string(z.enum(['driving', 'walking', 'driving'])).optional(),
 })
 
-export type CallGMapResponse = {
+export type CallGMapDistances = {
   car: number
   foot: number
   rail: number
@@ -48,7 +57,10 @@ const applyMiddleware = (middleware: Function) => (req: NextApiRequest, res: Nex
 
 const middlewares = getRateLimitMiddlewares().map(applyMiddleware)
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<CallGMapResponse | ZodError | string>) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<CallGMapDistances | ZodError | string>
+) {
   const inputs = GMapValidation.safeParse(req.body)
   if (!inputs.success) {
     res.status(400).json(inputs.error)
@@ -67,22 +79,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   }
 
   const queryString = `destinations=${inputs.data.origins.latitude}%2C${inputs.data.origins.longitude}&origins=${inputs.data.destinations.latitude}%2C${inputs.data.destinations.longitude}`
-  await trackAPIRequest(req, 'callGMap', `${queryString}${inputs.data.mode ? `&mode={mode}` : ''}`)
-
-  if (inputs.data.mode) {
-    const data = await axios
-      .get<GMapResponse>(
-        `https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&mode=${mode}&key=${process.env.GMAP_API_KEY}`
-      )
-      .then((response) => response.data)
-    const distance = (data && data.status === 'OK' && data.rows[0].elements[0].distance.value / 1000) || 0
-    return res.status(200).json({
-      car: distance,
-      foot: distance,
-      rail: distance,
-      plane: distance,
-    })
-  }
+  await trackAPIRequest(req, 'callGMap', `${queryString}`)
 
   const R = 6371e3 // metres
   const φ1 = (inputs.data.origins.latitude * Math.PI) / 180 // φ, λ in radians
@@ -96,31 +93,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const planeDistance = (R * c) / 1000
   const [driving, walking, transit] = await Promise.all([
     axios
-      .get<GMapResponse>(
+      .get<GMapDistances>(
         `https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&mode=driving&key=${process.env.GMAP_API_KEY}`
       )
       .then((response) => response.data),
     axios
-      .get<GMapResponse>(
+      .get<GMapDistances>(
         `https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&mode=walking&key=${process.env.GMAP_API_KEY}`
       )
       .then((response) => response.data),
     axios
-      .get<GMapResponse>(
+      .get<GMapDistances>(
         `https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&mode=transit&key=${process.env.GMAP_API_KEY}`
       )
       .then((response) => response.data),
   ])
 
+  console.log(driving.rows[0].elements)
   return res.status(200).json({
-    car: (driving && driving.status === 'OK' && driving.rows[0].elements[0].distance.value / 1000) || 0,
-    foot: (walking && walking.status === 'OK' && walking.rows[0].elements[0].distance.value / 1000) || 0,
-    rail:
-      (transit &&
-        (transit.status === 'OK'
-          ? transit.rows[0].elements[0].distance.value / 1000
-          : driving && driving.status === 'OK' && driving.rows[0].elements[0].distance.value / 1000)) ||
-      0,
+    car: getValue(driving),
+    foot: getValue(walking),
+    rail: getValue(transit) || getValue(driving),
     plane: planeDistance,
   })
 }

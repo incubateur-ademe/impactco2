@@ -30,24 +30,28 @@ export default function Itinerary({ category, iframe }: { category: Category; if
       <SectionWideContent $small>
         <Wrapper name={category.title || category.name} slug={category.slug}>
           <Search itineraire iframe={iframe} />
-          {transportations.length ? (
-            <Top>
-              <Instruction />
-              <Checkboxes $visible>
-                <Checkbox
-                  name='displayAll'
-                  checked={displayAll}
-                  onChange={() => {
-                    setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-                    window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
-                  }}>
-                  Voir tous les équivalents
-                </Checkbox>
-              </Checkboxes>
-            </Top>
-          ) : null}
-          <BarChart items={transportations} max={transportations[transportations.length - 1]?.value} />
-          {transportations.length ? <Bottom category={category} /> : null}
+          {itineraries && (
+            <>
+              {transportations.length ? (
+                <Top>
+                  <Instruction />
+                  <Checkboxes $visible>
+                    <Checkbox
+                      name='displayAll'
+                      checked={displayAll}
+                      onChange={() => {
+                        setDisplayAll((prevDisplayAll) => !prevDisplayAll)
+                        window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
+                      }}>
+                      Voir tous les équivalents
+                    </Checkbox>
+                  </Checkboxes>
+                </Top>
+              ) : null}
+              <BarChart items={transportations} max={transportations[transportations.length - 1]?.value} />
+              {transportations.length ? <Bottom category={category} /> : null}
+            </>
+          )}
         </Wrapper>
       </SectionWideContent>
     </Section>

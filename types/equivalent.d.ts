@@ -18,18 +18,9 @@ export type Equivalent = {
   ecv?: { value: number; id: number; name?: string }[]
   type?: string
   carpool?: boolean
-  display?:
-  | {
-    min: number
-    max: undefined
-  }
-  | {
-    max: number
-    min: undefined
-  }
-  | {
-    min: number
-    max: number
+  display?: {
+    min?: number
+    max?: number
   }
   ecvs?: {
     max: number
