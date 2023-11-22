@@ -24,6 +24,7 @@ export const Title = styled.div`
   font-weight: 700;
   line-height: 20px;
   margin-bottom: 4px;
+  width: max-content;
 `
 
 export const Description = styled.div`

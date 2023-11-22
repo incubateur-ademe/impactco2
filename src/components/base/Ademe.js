@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.svg`
   display: block;
-  height: 4.746875em;
+  height: 48px;
   width: auto;
 `
 export default function Ademe() {
