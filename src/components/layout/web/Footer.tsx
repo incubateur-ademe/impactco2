@@ -47,7 +47,6 @@ export default function Footer() {
                   Politique de confidentialité
                 </Link>
               </FooterLink>
-              <Version>Version : {process.env.thebuildid}</Version>
             </div>
           </Grid>
         </SectionWideContent>
@@ -117,17 +116,6 @@ const Grid = styled.div`
       grid-column: inherit;
     }
     margin-bottom: 1rem;
-  }
-`
-
-const Version = styled.div`
-  font-size: 0.75rem;
-  font-weight: 300;
-  margin-left: auto;
-  margin-top: inherit;
-  ${(props) => props.theme.mq.medium} {
-    margin-left: inherit;
-    margin-top: 1rem;
   }
 `
 
