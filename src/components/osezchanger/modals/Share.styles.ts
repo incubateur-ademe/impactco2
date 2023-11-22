@@ -14,41 +14,36 @@ export const Buttons = styled.div`
   gap: 12px;
   justify-content: center;
   margin-bottom: 32px;
-`
 
-export const Button = styled.div`
-  background-color: transparent;
-  border: 1px solid var(--secondary-20);
-  border-radius: 4px;
-  color: var(--secondary-60);
-  cursor: pointer;
-  height: 50px;
-  padding: 14px;
+  button {
+    background-color: transparent !important;
+    border: 1px solid var(--secondary-20) !important;
+    border-radius: 4px;
+    color: var(--secondary-60) !important;
+    cursor: pointer;
+    padding: 14px !important;
 
-  &:hover {
-    background-color: var(--secondary-20);
-    border: 1px solid var(--secondary-30);
-    color: var(--secondary-70);
-  }
+    &:hover {
+      background-color: var(--secondary-20) !important;
+      border: 1px solid var(--secondary-30) !important;
+      color: var(--secondary-70) !important;
+    }
 
-  &:focus {
-    background-color: var(--secondary-20);
-    border: 1px solid var(--secondary-10);
-    color: var(--secondary-70);
-    outline: 3px solid var(--secondary-40);
-  }
+    &:focus {
+      outline: 3px solid var(--secondary-40) !important;
+      outline-offset: 2px !important;
+    }
 
-  &:active {
-    background-color: var(--secondary-30);
-    border: 1px solid var(--secondary-40);
-    color: var(--secondary-80);
-    outline: none;
-  }
+    &:active {
+      background-color: var(--secondary-30) !important;
+      color: var(--secondary-80) !important;
+    }
 
-  &:disabled {
-    background-color: transparent;
-    border: 1px solid var(--secondary-20);
-    color: var(--secondary-30);
-    cursor: not-allowed;
+    &:disabled {
+      background-color: transparent !important;
+      border: 1px solid var(--secondary-20) !important;
+      color: var(--secondary-30) !important;
+      cursor: not-allowed !important;
+    }
   }
 `

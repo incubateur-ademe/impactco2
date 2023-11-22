@@ -19,15 +19,14 @@ export const Button = styled.button<{ $reverse: boolean }>`
   }
 
   &:focus {
-    background-color: var(--secondary-20);
     color: var(--secondary-70);
     outline: 3px solid var(--secondary-40);
+    outline-offset: 2px;
   }
 
   &:active {
     background-color: var(--secondary-30);
     color: var(--secondary-80);
-    outline: none;
   }
 
   &:disabled {

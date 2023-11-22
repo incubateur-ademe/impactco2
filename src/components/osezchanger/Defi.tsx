@@ -57,22 +57,20 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         setValue={setNewValue}
         tag={newValue ? `+${(newValue * shoesImpact).toLocaleString('fr-FR')}kg CO2e` : false}
         customBorderRadius={!!newValue}>
-        {newValue ? (
-          <Result data-testid='defi-result'>
-            <ResultValue data-testid='defi-result-title'>
-              {newValue.toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue)} (+
-              {(newValue * shoesImpact).toLocaleString('fr-FR')}kg de CO2e)
-            </ResultValue>
-            <ResultDescription>C’est autant d’émissions que pour fabriquer ou consommer...</ResultDescription>
-            <Equivalents>
-              <Equivalent type='tshirt' value={newValue * shoesImpact} />
-              <Equivalent type='smartphone' value={newValue * shoesImpact} />
-              <Equivalent type='vegetarian' value={newValue * shoesImpact} />
-            </Equivalents>
-          </Result>
-        ) : (
-          <EmptyResult />
-        )}
+        <Result data-testid='defi-result'>
+          <ResultValue data-testid='defi-result-title'>
+            {(newValue || 0).toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue || 0)}{' '}
+            (+
+            {((newValue || 0) * shoesImpact).toLocaleString('fr-FR')}kg de CO2e)
+          </ResultValue>
+          <ResultDescription>C’est autant d’émissions que pour fabriquer ou consommer...</ResultDescription>
+          <Equivalents>
+            <Equivalent type='tshirt' value={(newValue || 0) * shoesImpact} />
+            <Equivalent type='smartphone' value={(newValue || 0) * shoesImpact} />
+            <Equivalent type='vegetarian' value={(newValue || 0) * shoesImpact} />
+          </Equivalents>
+          {!newValue && <EmptyResult />}
+        </Result>
       </Question>
     </div>
   )

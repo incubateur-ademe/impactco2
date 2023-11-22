@@ -1,25 +1,32 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  align-items: center;
   background: var(--secondary-20);
   border: 1px solid var(--secondary-20);
   border-radius: 4px;
   color: var(--secondary-40);
-  display: flex;
-  flex-direction: column;
   font-size: 14px;
   font-weight: 500;
-  gap: 16px;
-  height: 215px;
-  justify-content: center;
+  height: 100%;
+  left: 0;
   line-height: 20px;
-  margin-top: 32px;
-  opacity: 0.5;
+  opacity: 1;
+  position: absolute;
   text-align: center;
+  top: 0;
 
   svg {
     height: 64px;
     width: 64px;
+  }
+
+  div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    justify-content: center;
+    opacity: 0.5;
   }
 `

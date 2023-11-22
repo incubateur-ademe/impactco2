@@ -8,8 +8,8 @@ export const Container = styled.div`
 export const Input = styled.input`
   -moz-appearance: textfield;
   border: 1px solid var(--secondary-20);
-  border-radius: 1px;
   font-weight: 700;
+  margin: 0 -1px;
   padding-block: 0;
   padding-inline: 0;
   text-align: center;
@@ -20,9 +20,14 @@ export const Input = styled.input`
     -webkit-appearance: none;
   }
 
+  &:hover {
+    border: 1px solid var(--secondary-30);
+  }
+
   &:focus {
-    border: 1px solid var(--secondary-40);
-    outline: 3px solid var(--secondary-30);
+    outline: 3px solid var(--secondary-40);
+    outline-offset: 2px;
+    z-index: 3;
   }
 `
 
@@ -39,20 +44,19 @@ const Button = styled.button`
 
   &:hover {
     background-color: var(--secondary-20);
+    border: 1px solid var(--secondary-30);
     color: var(--secondary-70);
   }
 
   &:focus {
-    background: var(--secondary-20);
-    color: var(--secondary-70);
     outline: 3px solid var(--secondary-40);
+    color: var(--secondary-70);
+    outline-offset: 2px;
   }
 
   &:active {
     background: var(--secondary-30);
     border: 1px solid var(--secondary-40);
-    color: var(--secondary-80);
-    outline: none;
   }
 
   &:disabled {

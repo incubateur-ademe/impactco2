@@ -13,6 +13,15 @@ export const Card = styled(Link)`
   line-height: 20px;
   padding: 12px;
   text-decoration: none;
+
+  &:hover {
+    border: 1px solid var(--secondary-30);
+  }
+
+  &:focus {
+    outline: 3px solid var(--secondary-40);
+    outline-offset: 2px;
+  }
 `
 
 export const Bar = styled.div<{ $width: number }>`

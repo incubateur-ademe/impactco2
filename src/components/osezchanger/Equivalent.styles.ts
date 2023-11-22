@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
+export const Card = styled.div<{ $withShadow: boolean }>`
   align-items: center;
   background: white;
   border: 1px solid var(--secondary-20);
   border-radius: 4px;
-  box-shadow: 4px 4px 0px 0px var(--secondary-20);
+  ${({ $withShadow }) => $withShadow && 'box-shadow: 4px 4px 0px 0px var(--secondary-20);'}
   display: flex;
   flex: 1 1 0px;
   flex-direction: column;

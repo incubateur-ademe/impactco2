@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Result = styled.div`
   margin-top: 32px;
+  position: relative;
 `
 
 export const ResultDescription = styled.span`
