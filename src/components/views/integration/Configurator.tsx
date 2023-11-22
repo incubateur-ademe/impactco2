@@ -113,7 +113,7 @@ export default function Configurator({
         </div>
         <div>
           <Select
-            value={slug === 'habillement/osez-changer' ? 'default' : theme}
+            value={theme}
             onChange={({ value }) => setTheme(value)}
             label='2) Choisissez la palette de couleurs de votre iframe.'
             name='theme'>
@@ -122,7 +122,7 @@ export default function Configurator({
           </Select>
         </div>
         <div>
-          <Code type={path} theme={slug === 'habillement/osez-changer' ? 'default' : theme} />
+          <Code type={path} theme={theme} />
         </div>
       </Grid>
     </Wrapper>
