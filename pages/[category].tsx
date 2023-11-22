@@ -6,6 +6,7 @@ import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
 import Learning from 'components/misc/Learning'
+import MobileAction from 'components/osezchanger/MobileAction'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
@@ -19,6 +20,7 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
       }}>
       <Section $withoutPadding>
         <Container>
+          {category.slug === 'habillement' && <MobileAction />}
           <Category category={category} />
           {category.slug === 'habillement' && <OsezChanger />}
         </Container>
