@@ -5,7 +5,7 @@ const MobileAction = () => {
   return (
     <Container href='#osez-changer'>
       <Tag>Nouveau</Tag>
-      <Text>Relever le challenge chaussures !</Text>
+      <Text>Découvrir le challenge chaussures !</Text>
     </Container>
   )
 }
