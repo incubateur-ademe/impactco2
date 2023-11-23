@@ -3,7 +3,10 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
+import Tag from 'components/misc/tag/Tag'
 import DropdownSweet from './DropdownSweet'
+
+const news = ['habillement']
 
 const Wrapper = styled.nav`
   display: flex;
@@ -30,7 +33,10 @@ export default function MenuSweet() {
           ?.filter((category) => category.display)
           .map((category) => (
             <DropdownSweet.Item key={category.id} to={`/${category.slug}`} current={slugs.includes(category.slug)}>
-              <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
+              <div>
+                <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
+              </div>
+              {news.includes(category.slug) && <Tag text='Nouveau' />}
             </DropdownSweet.Item>
           ))}
       </DropdownSweet>
