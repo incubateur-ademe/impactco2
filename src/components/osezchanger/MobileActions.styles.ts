@@ -36,15 +36,6 @@ export const Container = styled(Link)`
   }
 `
 
-export const Tag = styled.div`
-  background-color: var(--primary-30);
-  border-radius: 2px;
-  color: var(--primary-70);
-  font-size: 0.75rem;
-  padding: 0.125rem 0.5rem;
-  width: fit-content;
-`
-
 export const Text = styled.div`
   min-width: 240xp;
 `
