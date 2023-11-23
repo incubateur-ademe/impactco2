@@ -13,6 +13,10 @@ export const Header = styled.div`
   gap: 0.25rem 0.5rem;
   justify-content: space-between;
   margin-bottom: 0.25rem;
+
+  button {
+    margin-top: -0.25rem;
+  }
 `
 
 export const Content = styled.div`
@@ -23,8 +27,6 @@ export const Content = styled.div`
 `
 
 export const Title = styled.div`
-  align-items: center;
-  display: flex;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;

@@ -5,10 +5,11 @@ export const Result = styled.div`
   position: relative;
 `
 
-export const ResultDescription = styled.span`
+export const ResultDescription = styled.div`
   color: var(--neutral-70);
   font-size: 0.75rem;
   line-height: 1rem;
+  margin-top: 0.5rem;
 `
 
 export const ResultValue = styled.div`

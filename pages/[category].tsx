@@ -21,7 +21,9 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
       <Section $withoutPadding>
         <Container>
           {category.slug === 'habillement' && <MobileAction />}
-          <Category category={category} />
+          <div>
+            <Category category={category} />
+          </div>
           {category.slug === 'habillement' && <OsezChanger />}
         </Container>
       </Section>
