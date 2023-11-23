@@ -42,7 +42,11 @@ export default function Footer() {
                 </Link>
               </FooterLink>
               <FooterLink>
-                <Link href={`mailto:${process?.env?.CONTACT_EMAIL}`} title='Nous contacter'>
+                <Link
+                  href={`mailto:${process.env.CONTACT_EMAIL}`}
+                  target='_blank'
+                  rel='noreferrer noopener'
+                  title='Nous contacter'>
                   Contact
                 </Link>
               </FooterLink>

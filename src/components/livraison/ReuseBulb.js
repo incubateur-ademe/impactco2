@@ -60,10 +60,10 @@ export default function ReuseBulb() {
           </summary>
           <GoFurtherFirstParagraph>
             Pour réutiliser les données brutes ou obtenir de l’aide pour intégrer ce simulateur, contactez-nous par mail
-            à <BlackMagicLink to='mailto:impactco2@ademe.fr'>impactco2@ademe.fr</BlackMagicLink>.
+            à <BlackMagicLink to={`mailto:${process.env.CONTACT_EMAIL}`}>{process.env.CONTACT_EMAIL}</BlackMagicLink>.
           </GoFurtherFirstParagraph>
           <GoFurtherSecondParagraph>
-            Pour réutiliser <BlackMagicLink to='https://github.com/incubateur-ademe/impactco2/'>le code</BlackMagicLink>{' '}
+            Pour réutiliser <BlackMagicLink to='ttps://github.com/incubateur-ademe/impactco2/'>le code</BlackMagicLink>{' '}
             du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (<i>open source</i>).
           </GoFurtherSecondParagraph>
         </details>
