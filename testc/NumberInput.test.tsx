@@ -24,10 +24,10 @@ describe('Number Input', () => {
     renderWithStyle(<Wrapper />)
 
     act(() => {
-      screen.getByRole('button', { name: '-' }).click()
+      screen.getByRole('button', { name: 'moins' }).click()
     })
 
     expect(screen.getByTestId('question-input')).toHaveValue(0)
-    expect(screen.getByRole('button', { name: '-' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'moins' })).toBeDisabled()
   })
 })

@@ -14,7 +14,7 @@ const NumberInput = ({
   return (
     <Container>
       <LeftButton
-        name='-'
+        aria-label='moins'
         disabled={value === 0}
         onClick={() => {
           if (value === undefined) {
@@ -44,7 +44,7 @@ const NumberInput = ({
         max={99}
       />
       <RightButton
-        name='+'
+        aria-label='plus'
         onClick={() => {
           if (value === undefined) {
             setValue(1)

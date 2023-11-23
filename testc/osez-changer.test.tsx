@@ -20,7 +20,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
-      screen.getAllByRole('button', { name: '+' })[0].click()
+      screen.getAllByRole('button', { name: 'plus' })[0].click()
     })
     expect(screen.queryByTestId('question-avis-tag')).toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toBeNull()
@@ -28,7 +28,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
-      screen.getAllByRole('button', { name: '+' })[1].click()
+      screen.getAllByRole('button', { name: 'plus' })[1].click()
     })
     expect(screen.queryByTestId('question-avis-tag')).toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()
@@ -37,7 +37,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
 
     act(() => {
-      screen.getAllByRole('button', { name: '+' })[2].click()
+      screen.getAllByRole('button', { name: 'plus' })[2].click()
     })
     expect(screen.queryByTestId('question-avis-tag')).toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()

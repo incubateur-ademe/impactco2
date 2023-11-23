@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const Container = styled(Link)`
   align-items: center;
+  align-items: stretch;
   background-color: white;
   border: 1px solid var(--secondary-20);
   border-radius: 4px;
@@ -14,6 +15,8 @@ export const Container = styled(Link)`
   img {
     border-right: 1px solid var(--secondary-20);
     border-radius: 4px 0 0 4px;
+    object-fit: cover;
+    height: auto;
   }
 
   &:hover {
