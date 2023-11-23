@@ -29,7 +29,8 @@ const Question = ({
       <QuestionCard $customBorderRadius={customBorderRadius} data-testid={dataTestId}>
         <Header>
           <Title>
-            {title}
+            {/* https://github.com/bubkoo/html-to-image/issues/132 */}
+            {title.replaceAll(' ', ' ')}
             {source && <ClickableIcon onClick={source} />}
           </Title>
           {tag && <Tag data-testid={`${dataTestId}-tag`}>{tag}</Tag>}
