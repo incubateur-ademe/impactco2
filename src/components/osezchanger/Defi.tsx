@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import formatName from 'utils/formatName'
-import { Equivalents, Result, ResultDescription, ResultValue } from './Defi.styles'
+import { Equivalents, NonEmptyResult, Result, ResultDescription, ResultValue } from './Defi.styles'
 import EmptyResult from './EmptyResult'
 import Equivalent from './Equivalent'
 import Question from './Question'
@@ -58,18 +58,20 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         tag={newValue ? `+${(newValue * shoesImpact).toLocaleString('fr-FR')}kg CO2e` : false}
         customBorderRadius={!!newValue}>
         <Result>
-          <ResultValue data-testid='defi-result-title'>
-            {(newValue || 0).toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue || 0)}{' '}
-            (+
-            {((newValue || 0) * shoesImpact).toLocaleString('fr-FR')}kg de CO2e)
-          </ResultValue>
-          <ResultDescription>C’est autant d’émissions que pour fabriquer ou consommer...</ResultDescription>
-          <Equivalents>
-            <Equivalent type='tshirt' value={(newValue || 0) * shoesImpact} />
-            <Equivalent type='smartphone' value={(newValue || 0) * shoesImpact} />
-            <Equivalent type='vegetarian' value={(newValue || 0) * shoesImpact} />
-          </Equivalents>
-          {!newValue && <EmptyResult />}
+          <NonEmptyResult $visible={!!newValue}>
+            <ResultValue data-testid='defi-result-title'>
+              {(newValue || 0).toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue || 0)}{' '}
+              (+
+              {((newValue || 0) * shoesImpact).toLocaleString('fr-FR')}kg de CO2e)
+            </ResultValue>
+            <ResultDescription>C’est autant d’émissions que pour fabriquer ou consommer...</ResultDescription>
+            <Equivalents>
+              <Equivalent type='tshirt' value={(newValue || 0) * shoesImpact} />
+              <Equivalent type='smartphone' value={(newValue || 0) * shoesImpact} />
+              <Equivalent type='vegetarian' value={(newValue || 0) * shoesImpact} />
+            </Equivalents>
+          </NonEmptyResult>
+          <EmptyResult hidden={!!newValue} />
         </Result>
       </Question>
     </div>

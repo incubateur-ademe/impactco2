@@ -1,8 +1,18 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Result = styled.div`
   margin-top: 2rem;
   position: relative;
+`
+
+export const NonEmptyResult = styled.div<{ $visible: boolean }>`
+  opacity: 0;
+  ${({ $visible }) =>
+    $visible &&
+    css`
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    `}
 `
 
 export const ResultDescription = styled.div`

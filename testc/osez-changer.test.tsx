@@ -17,7 +17,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-avis-tag')).toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
-    expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
+    expect(screen.queryByTestId('defi-empty-result')).toBeVisible()
 
     act(() => {
       screen.getAllByRole('button', { name: 'plus' })[0].click()
@@ -25,7 +25,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-avis-tag')).toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
-    expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
+    expect(screen.queryByTestId('defi-empty-result')).toBeVisible()
 
     act(() => {
       screen.getAllByRole('button', { name: 'plus' })[1].click()
@@ -34,7 +34,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).toHaveTextContent('0 paire')
     expect(screen.queryByTestId('question-neuf-tag')).toBeNull()
-    expect(screen.queryByTestId('defi-empty-result')).not.toBeNull()
+    expect(screen.queryByTestId('defi-empty-result')).toBeVisible()
 
     act(() => {
       screen.getAllByRole('button', { name: 'plus' })[2].click()
@@ -43,7 +43,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+16,5kg CO2e')
-    expect(screen.queryByTestId('defi-empty-result')).toBeNull()
+    expect(screen.queryByTestId('defi-empty-result')).not.toBeVisible()
     expect(screen.queryByTestId('defi-result-title')).toHaveTextContent('1 paire de chaussure neuve (+16,5kg de CO2e)')
     expect(screen.queryByTestId('defi-equivalent-tshirt-value')).toHaveTextContent('3,2')
     expect(screen.queryByTestId('defi-equivalent-smartphone-value')).toHaveTextContent('0,5')
