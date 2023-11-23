@@ -44,7 +44,7 @@ export async function getStaticProps() {
 const Container = styled(SectionWideContent)`
   display: flex;
   flex-wrap: wrap;
-  gap: 40px 64px;
+  gap: 2.5rem 4rem;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 `

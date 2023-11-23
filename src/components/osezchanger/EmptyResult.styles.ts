@@ -5,11 +5,11 @@ export const Container = styled.div`
   border: 1px solid var(--secondary-20);
   border-radius: 4px;
   color: var(--secondary-40);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   height: 100%;
   left: 0;
-  line-height: 20px;
+  line-height: 1.25rem;
   opacity: 1;
   position: absolute;
   text-align: center;
@@ -24,7 +24,7 @@ export const Container = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
     height: 100%;
     justify-content: center;
     opacity: 0.5;

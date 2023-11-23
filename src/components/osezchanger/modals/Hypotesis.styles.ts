@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2rem;
 `
 
 export const Text = styled.div`
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   a {
     color: var(--neutral-80);
   }
@@ -17,5 +17,5 @@ export const Text = styled.div`
 export const Cards = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 `

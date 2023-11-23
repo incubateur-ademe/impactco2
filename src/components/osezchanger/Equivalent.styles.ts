@@ -7,22 +7,22 @@ export const Card = styled.div<{ $withShadow: boolean }>`
   border-radius: 4px;
   ${({ $withShadow }) => $withShadow && 'box-shadow: 4px 4px 0px 0px var(--secondary-20);'}
   display: flex;
-  flex: 1 1 0px;
+  flex: 1 1 0;
   flex-direction: column;
-  gap: 4px;
-  padding: 20px 8px 12px 8px;
+  gap: 0.25rem;
+  padding: 1.25rem 0.5rem 0.75rem 0.5rem;
 `
 export const Value = styled.div`
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 800;
-  line-height: 32px;
+  line-height: 2rem;
 `
 
 export const Name = styled.div`
   color: var(--neutral-50);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 1rem;
   max-width: 75px;
   text-align: center;
 `

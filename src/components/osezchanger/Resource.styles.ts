@@ -8,7 +8,7 @@ export const Container = styled(Link)`
   border-radius: 4px;
   color: var(--neutral-80);
   display: flex;
-  margin-top: 8px;
+  margin-top: 0.5rem;
   text-decoration: none;
 
   img {
@@ -34,8 +34,8 @@ export const Container = styled(Link)`
 `
 
 export const Text = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
-  line-height: 18px;
-  padding: 12px;
+  line-height: 1.125rem;
+  padding: 0.75rem;
 `

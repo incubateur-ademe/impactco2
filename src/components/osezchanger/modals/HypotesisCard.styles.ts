@@ -7,11 +7,11 @@ export const Card = styled(Link)`
   border-radius: 4px;
   color: var(--neutral-70);
   display: flex;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
-  gap: 12px;
-  line-height: 20px;
-  padding: 12px;
+  gap: 0.75rem;
+  line-height: 1.25rem;
+  padding: 0.75rem;
   text-decoration: none;
 
   &:hover {
@@ -27,21 +27,21 @@ export const Card = styled(Link)`
 export const Bar = styled.div<{ $width: number }>`
   background-color: var(--primary-50);
   border-radius: 40px;
-  height: 20px;
+  height: 1.25rem;
   width: ${({ $width }) => $width}px;
 `
 export const Values = styled.span`
   align-items: center;
   color: var(--primary-60);
   display: flex;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
-  gap: 16px;
-  line-height: 20px;
-  margin-top: 8px;
-  max-height: 20px;
+  gap: 1rem;
+  line-height: 1.25rem;
+  margin-top: 0.5rem;
+  max-height: 1.25rem;
 `
 
 export const Value = styled.span`
-  font-size: 20px;
+  font-size: 1.25rem;
 `

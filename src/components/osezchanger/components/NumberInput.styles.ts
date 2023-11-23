@@ -36,7 +36,7 @@ const Button = styled.button`
   border: 1px solid var(--secondary-20);
   color: var(--secondary-60);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   height: 36px;
   width: 36px;

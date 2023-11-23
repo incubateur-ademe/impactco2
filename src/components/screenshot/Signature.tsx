@@ -33,7 +33,7 @@ const OutsideGrid = styled.div<{ $noMargin?: boolean }>`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0.5rem;
   justify-content: space-around;
   ${({ $noMargin }) => !$noMargin && 'margin-left: 1.25rem;'}
 `

@@ -9,9 +9,9 @@ export const Button = styled.button<{ $reverse: boolean }>`
   cursor: pointer;
   display: flex;
   flex-direction: ${({ $reverse }) => ($reverse ? 'row-reverse' : 'row')};
-  font-size: 14px;
-  gap: 8px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+  line-height: 1.25rem;
 
   &:hover {
     background-color: var(--secondary-20);

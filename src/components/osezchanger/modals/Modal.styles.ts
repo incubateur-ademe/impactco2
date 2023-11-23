@@ -24,27 +24,27 @@ export const Shadow = styled.div`
 export const Content = styled.div`
   background-color: var(--secondary-10);
   border-radius: 0 0 8px 8px;
-  padding: 0 24px;
+  padding: 0 1.5rem;
 `
 
 export const Children = styled.div`
-  margin: 32px 0;
+  margin: 2rem 0;
 `
 
 export const Header = styled.div`
   align-items: center;
   border-bottom: 1px solid var(--secondary-20);
   display: flex;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   justify-content: space-between;
-  line-height: 20px;
-  padding: 16px 0;
+  line-height: 1.25rem;
+  padding: 1rem 0;
 `
 
 export const Footer = styled.div`
   border-top: 1px solid var(--secondary-20);
-  margin: 0 -24px;
+  margin: 0 -1.5rem;
   padding: 12px 0;
   button {
     margin: auto;

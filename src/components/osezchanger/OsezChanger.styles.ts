@@ -6,8 +6,8 @@ export const Screenshot = styled.div<{ $isScreenshotting: boolean }>`
   ${({ $isScreenshotting }) =>
     $isScreenshotting &&
     `
-      margin-right: -16px;
-      padding: 0 16px 16px 16px;
+      margin-right: -1rem;
+      padding: 0 1rem 1rem 1rem;
   `}
 `
 
@@ -18,23 +18,23 @@ export const Container = styled.div<{ $defiMode?: boolean }>`
   flex: 1 0 0;
   font-family: Marianne;
   height: fit-content;
-  max-width: 440px;
-  min-width: 312px;
-  padding: 24px;
+  max-width: 27.5rem;
+  min-width: 19.5rem;
+  padding: 1.5rem;
   position: relative;
-  ${({ $defiMode }) => $defiMode && 'padding-bottom: 12px;'}
+  ${({ $defiMode }) => $defiMode && 'padding-bottom: 0.75rem;'}
 `
 
 export const Title = styled.div`
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: 28px;
+  line-height: 1.75rem;
 `
 
 export const Description = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.25rem;
   margin-bottom: 8px;
 `
 
@@ -43,10 +43,10 @@ export const DefiButton = styled(Button)`
 `
 
 export const Logos = styled.div`
-  margin-top: 24px;
+  margin-top: 1.5rem;
 `
 
 export const BottomLogos = styled(Logos)`
   border-top: 1px solid var(--secondary-20);
-  padding-top: 24px;
+  padding-top: 1.5rem;
 `

@@ -6,11 +6,11 @@ export const Button = styled.button`
   border-radius: 50%;
   color: var(--primary-60);
   cursor: pointer;
-  height: 20px;
-  margin-left: 8px;
+  height: 1.25rem;
+  margin-left: 0.5rem;
   padding: 0;
   vertical-align: middle;
-  width: 20px;
+  width: 1.25rem;
 
   &:hover {
     background-color: var(--primary-20);

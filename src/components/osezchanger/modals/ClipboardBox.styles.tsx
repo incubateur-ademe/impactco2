@@ -6,10 +6,10 @@ export const Box = styled.button`
   border-radius: 4px;
   color: var(--neutral-50);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 16px;
-  padding: 12px 52px 12px 16px;
+  line-height: 1rem;
+  padding: 0.75rem 3.25rem 0.75rem 1rem;
   position: relative;
   text-align: left;
   width: 100%;
@@ -18,8 +18,8 @@ export const Box = styled.button`
 export const Copy = styled.div`
   color: var(--secondary-60);
   position: absolute;
-  right: 16px;
-  top: calc(50% - 14px);
+  right: 1rem;
+  top: calc(50% - 0.75rem);
 `
 
 export const Copied = styled.div`
@@ -27,6 +27,6 @@ export const Copied = styled.div`
   color: var(--secondary-60);
   padding: 8px;
   position: absolute;
-  right: 16px;
-  top: calc(50% - 16px);
+  right: 1rem;
+  top: calc(50% - 1rem);
 `
