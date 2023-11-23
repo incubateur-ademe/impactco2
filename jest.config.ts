@@ -15,6 +15,7 @@ const customJestConfig = {
     '**/testa/**/*.test.ts',
     '**/testc/**/*.test.js',
     '**/testc/**/*.test.ts',
+    '**/testc/**/*.test.tsx',
     '**/testu/**/*.test.js',
     '**/testu/**/*.test.ts',
   ],

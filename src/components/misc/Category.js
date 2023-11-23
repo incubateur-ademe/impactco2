@@ -3,7 +3,6 @@ import formatName from 'utils/formatName'
 import { formatTotal, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
-import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
 import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
 import Bottom from './category/Bottom'
@@ -43,45 +42,43 @@ export default function CategoryList(props) {
   )
 
   return (
-    <Section $withoutPadding>
-      <SectionWideContent $small>
-        {props?.category?.slug === 'boisson' ? <SourceAgribalyse /> : <></>}
-        <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
-          <Description description={props.category.description} />
-          <Top className='noscreenshot'>
-            <Instruction title={props.category.equivalent} gender={props.category.gender} />
-            <Top.Checkboxes
-              $visible={
-                equivalents
-                  .filter((equivalent) => equivalent.category === props.category.id)
-                  .find((equivalent) => !equivalent.default) && !props.category.list
-              }>
-              <Checkbox
-                name='displayAll'
-                checked={displayAll}
-                onChange={() => {
-                  setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-                  window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', props.category.name])
-                }}>
-                Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
-                {formatName(props.category.equivalent, 2) || 'équivalents'}
-              </Checkbox>
-            </Top.Checkboxes>
-          </Top>
-          {props.category.list ? (
-            <List items={equivalentsOfCategory} max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value} />
-          ) : (
-            <>
-              <BarChart
-                items={equivalentsOfCategory}
-                max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
-              />
-              {![2, 3].includes(props.category.id) && <CategoryLegend />}
-            </>
-          )}
-          <Bottom category={props.category} />
-        </Wrapper>
-      </SectionWideContent>
-    </Section>
+    <>
+      {props?.category?.slug === 'boisson' ? <SourceAgribalyse /> : <></>}
+      <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
+        <Description description={props.category.description} />
+        <Top className='noscreenshot'>
+          <Instruction title={props.category.equivalent} gender={props.category.gender} />
+          <Top.Checkboxes
+            $visible={
+              equivalents
+                .filter((equivalent) => equivalent.category === props.category.id)
+                .find((equivalent) => !equivalent.default) && !props.category.list
+            }>
+            <Checkbox
+              name='displayAll'
+              checked={displayAll}
+              onChange={() => {
+                setDisplayAll((prevDisplayAll) => !prevDisplayAll)
+                window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', props.category.name])
+              }}>
+              Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
+              {formatName(props.category.equivalent, 2) || 'équivalents'}
+            </Checkbox>
+          </Top.Checkboxes>
+        </Top>
+        {props.category.list ? (
+          <List items={equivalentsOfCategory} max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value} />
+        ) : (
+          <>
+            <BarChart
+              items={equivalentsOfCategory}
+              max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
+            />
+            {![2, 3].includes(props.category.id) && <CategoryLegend />}
+          </>
+        )}
+        <Bottom category={props.category} />
+      </Wrapper>
+    </>
   )
 }

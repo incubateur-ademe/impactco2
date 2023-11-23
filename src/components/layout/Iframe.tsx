@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import useInteraction from 'hooks/useInteraction'
 import IframeFooter from './iframe/IframeFooter'
@@ -8,7 +8,7 @@ import IframeFooter from './iframe/IframeFooter'
 const Wrapper = styled.div`
   padding: 1rem 0;
 `
-export default function Iframe(props) {
+export default function Iframe({ children, noLogo }: { children: ReactNode; noLogo?: boolean }) {
   useInteraction()
 
   return (
@@ -17,8 +17,8 @@ export default function Iframe(props) {
         <Head>
           <meta name='robots' content='noindex' />
         </Head>
-        {props.children}
-        <IframeFooter url={props.url} />
+        {children}
+        {!noLogo && <IframeFooter />}
       </Wrapper>
       <Script
         src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js'
