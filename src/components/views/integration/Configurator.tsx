@@ -90,10 +90,10 @@ export default function Configurator({
               {slug.startsWith('habillement') && (
                 <Select onChange={(e) => setSlug(e.value)} value={slug} name='habillement'>
                   <option key='habillement' value='habillement'>
-                    Empreinte carbone
+                    Impact de la mode
                   </option>
                   <option key='habillement/osez-changer' value='habillement/osez-changer'>
-                    Challenge chaussure
+                    Challenge chaussures
                   </option>
                 </Select>
               )}

@@ -18,7 +18,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
       <Title>{defiMode ? 'Challenge chaussures' : '✨ Challengez votre communauté'}</Title>
       <Image color='var(--primary-40' src='/images/separator.svg' alt='' width={36} height={20} />
       <Description>
-        En moyenne, les Français ont trois fois plus de paires de chaussures qu’ils n’en ont besoin... et vous ?
+        En moyenne, les Français ont trois fois plus de paires de chaussures qu’ils n’en ont besoin... Et vous ?
       </Description>
       {defiMode ? (
         <>

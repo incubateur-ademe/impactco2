@@ -20,7 +20,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         title='🧠 À votre avis...'
         description={
           <>
-            De combien de paires de chaussures <b>pensez vous avoir besoin ?</b>
+            De combien de paires de chaussures <b>pensez-vous avoir besoin ?</b>
           </>
         }
         value={thinkingValue}
