@@ -34,7 +34,6 @@ export default function SelectRelays(props) {
           props.changeRelay && props.changeRelay(relays.find((relay) => relay.uid === e.value))
         }}
         value={props.value}
-        label=''
         name='relays'
         data-testid='relays'>
         {relays.map((relay) => (

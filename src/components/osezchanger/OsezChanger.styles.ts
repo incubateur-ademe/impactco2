@@ -18,6 +18,7 @@ export const Container = styled.div<{ $defiMode?: boolean }>`
   flex: 1 0 0;
   font-family: Marianne;
   height: fit-content;
+  margin: 0 auto;
   max-width: 27.5rem;
   min-width: 19.5rem;
   padding: 1.5rem;
