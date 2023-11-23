@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Tag, Text } from './MobileActions.styles'
+import Tag from 'components/misc/tag/Tag'
+import { Container, Text } from './MobileActions.styles'
 
 const MobileAction = () => {
   return (
     <Container href='#osez-changer'>
-      <Tag>Nouveau</Tag>
+      <Tag text='Nouveau' />
       <Text>Découvrir le challenge chaussures !</Text>
     </Container>
   )
