@@ -36,7 +36,7 @@ export const Description = styled.div`
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 `
 
 export const DefiButton = styled(Button)`

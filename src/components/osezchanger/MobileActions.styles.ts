@@ -9,9 +9,9 @@ export const Container = styled(Link)`
   color: var(--primary-60);
   display: none;
   flex-wrap: wrap;
-  font-size: 14px;
-  gap: 8px;
-  padding: 12px 16px;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
   text-decoration: none;
   @media screen and (max-width: 1100px) {
     display: flex;
@@ -40,8 +40,8 @@ export const Tag = styled.div`
   background-color: var(--primary-30);
   border-radius: 2px;
   color: var(--primary-70);
-  font-size: 12px;
-  padding: 2px 8px;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
   width: fit-content;
 `
 
