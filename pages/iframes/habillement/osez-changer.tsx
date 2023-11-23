@@ -1,8 +1,13 @@
 import React from 'react'
+import Iframe from 'components/layout/Iframe'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 
 const OsezChangerIframe = () => {
-  return <OsezChanger iframe />
+  return (
+    <Iframe noLogo>
+      <OsezChanger iframe />
+    </Iframe>
+  )
 }
 
 export default OsezChangerIframe
