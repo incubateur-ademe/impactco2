@@ -1,5 +1,10 @@
 # CHANGELOG
 
+
+## 1.26.6 (21/11/2023)
+
+- Fix - Test unitaire de la protection de l'API
+
 ## 1.26.5 (21/11/2023)
 
 - Fix - Interactions avec la liseuse

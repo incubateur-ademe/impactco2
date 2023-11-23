@@ -1,5 +1,6 @@
 import React, { useContext, useMemo, useState } from 'react'
-import { formatName, formatTotal, formatUsage } from 'utils/formatters'
+import formatName from 'utils/formatName'
+import { formatTotal, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import { Section, SectionWideContent } from 'components/base/Section'

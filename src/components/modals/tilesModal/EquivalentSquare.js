@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.button`

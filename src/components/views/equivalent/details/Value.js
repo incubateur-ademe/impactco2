@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatNumber, formatTotal, getFrenchFormattedNumber, getNumberWithNDigitsAfterComma } from 'utils/formatters'
+import { formatNumber, formatTotal } from 'utils/formatters'
+import getFrenchFormattedNumber from 'utils/getFrenchFormattedNumber'
+import getNumberWithNDigitsAfterComma from 'utils/getNumberWithNDigitsAfterComma'
 import Emoji from 'components/base/Emoji'
 import { Section, SectionWideContent } from 'components/base/Section'
 
