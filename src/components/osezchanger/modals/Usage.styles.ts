@@ -8,7 +8,11 @@ export const Container = styled.div`
   padding-top: 2rem;
 
   a {
-    color: var(--neutral-20);
+    color: var(--neutral-70);
+
+    &:hover {
+      color: var(--primary-60);
+    }
   }
 
   p {

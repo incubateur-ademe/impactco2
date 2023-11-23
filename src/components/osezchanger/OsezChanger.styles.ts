@@ -40,7 +40,7 @@ export const Description = styled.div`
 `
 
 export const DefiButton = styled(Button)`
-  margin: auto;
+  margin: 1.5rem auto 0 auto;
 `
 
 export const Logos = styled.div`

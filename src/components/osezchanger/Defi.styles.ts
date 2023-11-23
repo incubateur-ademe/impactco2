@@ -8,6 +8,7 @@ export const Result = styled.div`
 export const ResultDescription = styled.span`
   color: var(--neutral-70);
   font-size: 0.75rem;
+  line-height: 1rem;
 `
 
 export const ResultValue = styled.div`

@@ -11,6 +11,7 @@ export const Container = styled.div`
   left: 0;
   line-height: 1.25rem;
   opacity: 1;
+  padding: 1rem;
   position: absolute;
   text-align: center;
   top: 0;

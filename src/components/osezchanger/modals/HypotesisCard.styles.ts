@@ -30,6 +30,7 @@ export const Bar = styled.div<{ $width: number }>`
   height: 1.25rem;
   width: ${({ $width }) => $width}px;
 `
+
 export const Values = styled.span`
   align-items: center;
   color: var(--primary-60);

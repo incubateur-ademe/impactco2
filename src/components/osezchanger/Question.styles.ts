@@ -19,6 +19,8 @@ export const Content = styled.div`
 `
 
 export const Title = styled.div`
+  align-items: center;
+  display: flex;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
@@ -41,8 +43,7 @@ export const Tag = styled.div`
   color: var(--primary-10);
   display: flex;
   font-size: 0.75rem;
-  font-weight: 700;
-  height: 1rem;
+  font-weight: 400;
   padding: 0.125rem 0.5rem;
   position: absolute;
   right: 0;

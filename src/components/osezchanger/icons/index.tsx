@@ -8,6 +8,8 @@ import download from './download'
 import facebook from './facebook'
 import information from './information'
 import linkedin from './linkedin'
+import minus from './minus'
+import plus from './plus'
 import sendPlane from './send-plane'
 import sprinkles from './sprinkles'
 import twitter from './twitter'
@@ -28,6 +30,8 @@ export type IconId =
   | 'twitter'
   | 'linkedin'
   | 'whatsapp'
+  | 'plus'
+  | 'minus'
 
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
@@ -59,6 +63,10 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return linkedin
     case 'whatsapp':
       return whatsapp
+    case 'plus':
+      return plus
+    case 'minus':
+      return minus
     default:
       return null
   }

@@ -1,4 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react'
+import { Icon } from '../icons'
 import { Container, Input, LeftButton, RightButton } from './NumberInput.styles'
 
 const NumberInput = ({
@@ -22,7 +23,7 @@ const NumberInput = ({
             setValue(value - 1)
           }
         }}>
-        -
+        <Icon iconId='minus' />
       </LeftButton>
       <Input
         data-testid={`${dataTestId}-input`}
@@ -51,7 +52,7 @@ const NumberInput = ({
             setValue(value + 1)
           }
         }}>
-        +
+        <Icon iconId='plus' />
       </RightButton>
     </Container>
   )

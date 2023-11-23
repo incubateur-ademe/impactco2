@@ -32,13 +32,16 @@ export const Input = styled.input`
 `
 
 const Button = styled.button`
+  align-items: center;
   background-color: transparent;
   border: 1px solid var(--secondary-20);
   color: var(--secondary-60);
   cursor: pointer;
+  display: flex;
   font-size: 0.75rem;
   font-weight: 700;
   height: 36px;
+  justify-content: center;
   width: 36px;
   z-index: 1;
 
@@ -49,8 +52,8 @@ const Button = styled.button`
   }
 
   &:focus {
-    outline: 3px solid var(--secondary-40);
     color: var(--secondary-70);
+    outline: 3px solid var(--secondary-40);
     outline-offset: 2px;
   }
 

@@ -45,7 +45,7 @@ export const Header = styled.div`
 export const Footer = styled.div`
   border-top: 1px solid var(--secondary-20);
   margin: 0 -1.5rem;
-  padding: 0.75rempx 0;
+  padding: 0.75rem 0;
   button {
     margin: auto;
   }

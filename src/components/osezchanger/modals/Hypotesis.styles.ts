@@ -11,6 +11,10 @@ export const Text = styled.div`
   line-height: 1.5rem;
   a {
     color: var(--neutral-80);
+
+    &:hover {
+      color: var(--primary-60);
+    }
   }
 `
 
