@@ -14,7 +14,7 @@ export const Screenshot = styled.div<{ $isScreenshotting: boolean }>`
 export const Container = styled.div<{ $defiMode?: boolean }>`
   background-color: var(--secondary-10);
   border-radius: 8px;
-  color: var(--natural-80);
+  color: var(--neutral-80);
   flex: 1 0 0;
   font-family: Marianne;
   height: fit-content;
