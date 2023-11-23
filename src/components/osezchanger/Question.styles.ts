@@ -50,5 +50,6 @@ export const Tag = styled.div`
   display: flex;
   font-size: 0.75rem;
   font-weight: 400;
+  height: 20px;
   padding: 0.125rem 0.5rem;
 `
