@@ -20,5 +20,5 @@ export const ResultValue = styled.div`
 export const Equivalents = styled.div`
   display: flex;
   gap: 0.75rem;
-  margin: 0.75rem 0 8px 0;
+  margin: 0.75rem 0 0.5rem 0;
 `

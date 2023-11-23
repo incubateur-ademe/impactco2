@@ -25,7 +25,7 @@ export const Copy = styled.div`
 export const Copied = styled.div`
   background-color: var(--secondary-20);
   color: var(--secondary-60);
-  padding: 8px;
+  padding: 0.5rem;
   position: absolute;
   right: 1rem;
   top: calc(50% - 1rem);
