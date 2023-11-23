@@ -1,8 +1,28 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 const { withSentryConfig } = require('@sentry/nextjs')
+const { execSync } = require('child_process')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+
+const getLocalGitCommitHash = function () {
+  let res = ''
+  try {
+    res = execSync('git rev-parse HEAD').toString().trim()
+  } catch (e) {
+    console.log('Git is not executable here...')
+  }
+  return res
+}
+
+const getShortSha = function (str) {
+  let res = ''
+  if (typeof str === 'string' && str.length > 0) {
+    res = str.substring(0, 7)
+  }
+  return res
+}
 
 const nextConfig = {
   reactStrictMode: true,
@@ -91,4 +111,10 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
 }
 
-module.exports = withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
+module.exports = (phase) => {
+  if (phase === PHASE_PRODUCTION_BUILD) {
+    console.log('Current shortSha is: ', getShortSha(getLocalGitCommitHash()))
+  }
+
+  return withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
+}
