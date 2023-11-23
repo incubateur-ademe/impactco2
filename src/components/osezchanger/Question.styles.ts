@@ -30,6 +30,7 @@ export const Title = styled.div`
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
+  width: 200px;
 `
 
 export const Description = styled.div`
