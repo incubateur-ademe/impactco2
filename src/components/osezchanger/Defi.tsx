@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction, useState } from 'react'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import { Equivalents, Result, ResultDescription, ResultValue } from './Defi.styles'
 import EmptyResult from './EmptyResult'
 import Equivalent from './Equivalent'

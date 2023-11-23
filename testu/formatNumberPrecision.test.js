@@ -1,4 +1,4 @@
-import { formatNumberPrecision } from 'utils/formatters'
+import formatNumberPrecision from 'utils/formatNumberPrecision'
 
 describe('formatNumberPrecision', () => {
   test('devrait formater un nombre inférieur à 1 kg (strictement) en grammes avec 2 décimales', () => {

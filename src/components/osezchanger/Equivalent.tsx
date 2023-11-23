@@ -3,7 +3,7 @@ import { Equivalent as EquivalentType } from 'types/equivalent'
 import habillement from '../../data/categories/habillement.json'
 import numerique from '../../data/categories/numerique.json'
 import repas from '../../data/categories/repas.json'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import Emoji from 'components/base/Emoji'
 import { Card, Name, Value } from './Equivalent.styles'
 

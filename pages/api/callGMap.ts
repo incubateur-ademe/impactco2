@@ -41,11 +41,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const queryString = new URLSearchParams(req.query as Record<string, string>).toString()
   await trackAPIRequest(req, 'callGMap', queryString)
 
-  const data = await axios
-    .get(`https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&key=${process.env.GMAP_API_KEY}`)
-    .then((resp) => ({
-      statusCode: 200,
-      body: resp.data,
-    }))
-  return res.status(200).json(data?.body || {})
+  const url = `https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}&key=${process.env.GMAP_API_KEY}`
+
+  const response = await axios.get(url)
+  return res.status(response.status).json(response.data)
 }

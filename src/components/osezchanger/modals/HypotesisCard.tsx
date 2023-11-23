@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import { Bar, Card, Value, Values } from './HypotesisCard.styles'

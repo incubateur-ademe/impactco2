@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import { Equivalent } from 'types/equivalent'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import Select from 'components/base/Select'
 import Code from './configurator/Code'
 

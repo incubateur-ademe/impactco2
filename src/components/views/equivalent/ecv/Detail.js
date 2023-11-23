@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { formatNumberPrecision, formatPercent } from 'utils/formatters'
+import formatNumberPrecision from 'utils/formatNumberPrecision'
+import formatPercent from 'utils/formatPercent'
 import ButtonLink from 'components/base/ButtonLink'
 
 const Toggle = styled(ButtonLink)`
