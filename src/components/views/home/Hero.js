@@ -91,7 +91,7 @@ const Layout = styled.div`
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
   }
-  padding: 3rem 0;
+  padding: 5rem 0;
   ${(props) => props.theme.mq.xlarge} {
     padding: 3rem 0;
   }
