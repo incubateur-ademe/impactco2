@@ -18,9 +18,22 @@ Application web sous Next.js permettant de comparer la consommation en CO2e de d
 
 Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en France. Aucune donnée ne transite en dehors de l’UE.
 
-## Développement ⚙️
+## Développement en local
 
-L’organisation du développement suit le workflow [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) :
+- `yarn dev` lance le serveur web local
+
+- `yarn testa:local` lance les tests de l'API en continu (avec Jest et msw)
+- `yarn testc:local` lance les tests des composants front en continu (avec Jest)
+- `yarn testu:local` lance les tests unitaires en continu (avec Jest)
+- `yarn teste:local` lance les tests de bout en bout ("end-to-end") en continu (avec Playwright)
+
+Lors du premier lancement des tests end-to-end, une installation de Playwright peut être demandée.
+
+Les tests end-to-end nécessitent que le serveur web local soit lancé.
+
+## Workflow Git ⚙️
+
+L’organisation du développement suit le workflow [Gitflow](https://mindsers.blog/fr/post/gitflow-la-methodologie-et-la-pratique/) :
 
 - La branche de production est `main`. Seul les releases et hotfix peuvent être mergées directement dans main. [Elle est visible ici](https://impactco2.fr/)
 - La branche de développement est `develop`. C’est sur cette branche qu’est visible le travail en cours. [Elle est visible ici](https://preimpactco2.osc-fr1.scalingo.io/)
