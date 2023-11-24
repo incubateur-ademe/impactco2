@@ -18,7 +18,7 @@ Application web sous Next.js permettant de comparer la consommation en CO2e de d
 
 Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en France. Aucune donnée ne transite en dehors de l’UE.
 
-## Développement en local
+## Développement ⚙️
 
 - `yarn dev` lance le serveur web local
 
@@ -30,6 +30,10 @@ Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en 
 Lors du premier lancement des tests end-to-end, une installation de Playwright peut être demandée.
 
 Les tests end-to-end nécessitent que le serveur web local soit lancé.
+
+## Variable d'environnement
+
+Il vous faut un fichier `.env.local` dont les valeurs sont documentées dans `.env.dist`
 
 ## Workflow Git ⚙️
 
@@ -51,12 +55,6 @@ L’organisation du développement suit le workflow [Gitflow](https://mindsers.b
 - `refactor`
 - `style`
 - `test`
-
-## Variable d'environnement
-
-Pour l'instant il n'y a que des variables d'environnement "publiques",
-
-Il vous faut un fichier `.env.local` dont les valeurs sont documentées dans `.env.dist`
 
 ## Connexion à Agribalyse
 
