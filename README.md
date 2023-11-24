@@ -45,15 +45,6 @@ Pour l'instant il n'y a que des variables d'environnement "publiques",
 
 Il vous faut un fichier `.env.local` dont les valeurs sont documentées dans `.env.dist`
 
-## Gmap API
-
-Vous pouvez restreindre les sites appelant l'API Gmap à 2 endroits :
-
-- Dans le code, en dur `event.headers.referer.includes('impactco2.fr')`
-- Dans la console Google (https://console.cloud.google.com/), vous pouvez filtrer les sites appelants.
-
-Pour l'instant seuls la recette et la production sont autorisés à appeler la GMap API.
-
 ## Connexion à Agribalyse
 
 Parfois les données sont extraites par API.
@@ -74,6 +65,10 @@ Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/), [React
 Le repo est architecturé avec les dossiers suivants :
 
 - `pages` avec l'ensemble des pages du site.
+- `testu` contient les tests unitaires (au sens strict, c'est-à-dire les tests d'une fonction)
+- `testa` contient les tests de l'API (toutes les fonction sous le répertoire /api)
+- `testc` contient les tests de composants front
+- `teste` contient les tests end-to-end
 - `src` avec tout le reste du code.
   - `components` avec l'ensemble des composants
     - `base` avec les composants simple réutilisés partout (un peu comme les atomes pour [l'atomic design](https://atomicdesign.bradfrost.com/))
