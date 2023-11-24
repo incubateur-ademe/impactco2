@@ -11,9 +11,9 @@ describe('formatNumber', () => {
     expect(formatNumber(123.39)).toBe('123')
     expect(formatNumber(123.89)).toBe('124')
   })
-  it('Un nombre à décimale, inférieur à 5, garde sa décimale', () => {
+  it("Un nombre à décimale, inférieur à 5, ne garde qu'une seule décimale", () => {
     expect(formatNumber(3.39)).toBe('3,4')
-    expect(formatNumber(3.89)).toBe('3,9')
+    expect(formatNumber(3.897)).toBe('3,9')
   })
   it("Un nombre à décimale est arrondi de manière à ne garder qu'un seul chiffre significatif", () => {
     expect(formatNumber(0.456)).toBe('0,5')
