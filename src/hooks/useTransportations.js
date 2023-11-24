@@ -1,6 +1,7 @@
 import { useContext, useMemo } from 'react'
 import formatName from 'utils/formatName'
-import { formatNumber, formatTotalByKm, formatUsage } from 'utils/formatters'
+import formatNumber from 'utils/formatNumber'
+import { formatTotalByKm, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Carpool from 'components/transport/Carpool'
 import TransportContext from 'components/transport/TransportProvider'
