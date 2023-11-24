@@ -16,17 +16,17 @@ Application web sous Next.js permettant de comparer la consommation en CO2e de d
 
 ## Déploiement 🚀
 
-Le site est hébergé sur [Netlify](https://www.netlify.com/) via des serveurs en Europe. Aucune donnée ne transite en dehors de l’UE.
+Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en France. Aucune donnée ne transite en dehors de l’UE.
 
 ## Développement ⚙️
 
 L’organisation du développement suit le workflow [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) :
 
-- La branche de production est `master`. Seul les releases et hotfix peuvent être mergées directement dans master. [Elle est visible ici](https://impactco2.fr/)
-- La branche de développement est `develop`. C’est sur cette branche qu’est visible le travail en cours. [Elle est visible ici](https://develop--impactco2.netlify.app/)
-- On crée une issue et une branche pour chaque nouvelle fonctionnalité (nom de la branche : numéro de l’issue associée). Cette branche utilise la branche `develop` comme parent. Elle donne lieu à une PR vers la branche `develop` (nom de la PR : `[nom_de_lissue] (issue [numero_de_lissue])`).
-- À la fin de chaque cycle de développement, on crée une branche `release` à partir de `develop`. Cette branche est ensuite mergée dans `master` et tagguée avec [un numéro de release](https://semver.org/).
-- Les hotfix sont créé sur des branches dédiées (issues de `master`), associées ou non à une issue. Elles peuvent être mergées directement dans `master`.
+- La branche de production est `main`. Seul les releases et hotfix peuvent être mergées directement dans main. [Elle est visible ici](https://impactco2.fr/)
+- La branche de développement est `develop`. C’est sur cette branche qu’est visible le travail en cours. [Elle est visible ici](https://preimpactco2.osc-fr1.scalingo.io/)
+- On crée une issue et une branche pour chaque nouvelle fonctionnalité (nom de la branche : numéro de l’issue associée). Cette branche utilise la branche `develop` comme parent. Elle donne lieu à une PR vers la branche `develop` (nom de la PR : `fix/my-hotfix` ou `feat/my-feature`).
+- À la fin de chaque cycle de développement, on crée une branche `release` à partir de `develop`. Cette branche est ensuite mergée dans `main` et tagguée avec [un numéro de release](https://semver.org/).
+- Les hotfix sont créé sur des branches dédiées (issues de `main`), associées ou non à une issue. Elles peuvent être mergées directement dans `main`.
 
 [Les commits sont conventionnés](https://www.conventionalcommits.org/en/v1.0.0/). Les types suivants sont acceptés :
 
@@ -43,21 +43,7 @@ L’organisation du développement suit le workflow [Gitflow](https://www.atlass
 
 Pour l'instant il n'y a que des variables d'environnement "publiques",
 
-Il vous faut un fichier `.env.local` à la racine
-
-```bash
-WEBSITE_URL=localhost:3000
-SENDINBLUE_API_KEY=une_valeur_compliquee
-GMAP_API_KEY=une_autre_valeur_compliquee
-```
-
-`WEBSITE_URL` est le nom de domaine du site, sans le protocole (mais avec le port éventuellement).
-
-A vous de renseigner la/les valeurs sur l'ensemble des sites déployés.
-
-Pour retrouver l'ensemble des variables d'environnements utilisées dans l'application, vous pouvez faire une recherche globale sur "process.env" et/ou "process?.env".
-
-Autre possibilité : vous pouvez configurer les variables d'environnement sur https://app.netlify.com/sites/impactco2/configuration/env
+Il vous faut un fichier `.env.local` dont les valeurs sont documentées dans `.env.dist`
 
 ## Gmap API
 
