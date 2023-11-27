@@ -41,7 +41,7 @@ const nextConfig = {
     autoInstrumentServerFunctions: true,
     autoInstrumentMiddleware: true,
     widenClientFileUpload: true,
-    hideSourceMaps: true,
+    hideSourceMaps: false,
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {

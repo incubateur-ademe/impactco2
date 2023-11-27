@@ -90,15 +90,15 @@ export default function Saisons(props) {
                 ? 1
                 : -1
               : sorting.includes('desc')
-              ? -1
-              : 1
+                ? -1
+                : 1
             : a.value > b.value
-            ? sorting.includes('desc')
-              ? -1
-              : 1
-            : sorting.includes('desc')
-            ? 1
-            : -1
+              ? sorting.includes('desc')
+                ? -1
+                : 1
+              : sorting.includes('desc')
+                ? 1
+                : -1
         ),
     [equivalents, categories, props.category, props.month, results, sorting]
   )
