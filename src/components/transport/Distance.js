@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import useTransportations from 'hooks/useTransportations'
 import Checkbox from 'components/base/Checkbox'
 import { Section, SectionWideContent } from 'components/base/Section'

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Category } from 'types/category'
 import { Equivalent as EquivalentType } from 'types/equivalent'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import DataContext from 'components/providers/DataProvider'
 import {
   Emojis,
@@ -91,10 +91,6 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
   const values = types.map(
     (slug) => equivalents.find((equivalent: EquivalentType) => equivalent.slug === slug) as EquivalentType
   )
-
-  if (values.length === 0) {
-    return null
-  }
 
   const factor = getEquivalentValue(values[0]) * (base || 1)
   return (

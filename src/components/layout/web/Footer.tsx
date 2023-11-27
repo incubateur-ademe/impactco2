@@ -1,10 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import Ademe from 'components/base/Ademe'
-import FooterLogo from 'components/base/FooterLogo'
-import Marianne from 'components/base/Marianne'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Signature from 'components/screenshot/Signature'
 
 export default function Footer() {
   return (
@@ -13,13 +11,9 @@ export default function Footer() {
       <Section>
         <SectionWideContent>
           <Grid>
-            <div>
-              <Logos>
-                <Marianne />
-                <Ademe />
-                <FooterLogo />
-              </Logos>
-            </div>
+            <Logos>
+              <Signature noMargin noLink />
+            </Logos>
             <div>
               <FooterExplain>
                 <strong>Impact CO2</strong>
@@ -47,7 +41,6 @@ export default function Footer() {
                   Politique de confidentialité
                 </Link>
               </FooterLink>
-              <Version>Version : {process.env.thebuildid}</Version>
             </div>
           </Grid>
         </SectionWideContent>
@@ -57,20 +50,7 @@ export default function Footer() {
 }
 
 const Logos = styled.div`
-  align-items: center;
   display: flex;
-  justify-content: flex-start;
-  margin: 3rem 0 3rem 0;
-  padding: 0 0.75rem;
-  text-decoration: none;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1rem;
-    padding: 0 0.25rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    margin: 1.5rem 0 0 0;
-  }
 `
 
 const FooterExplain = styled.div`
@@ -90,7 +70,7 @@ const FooterLink = styled.div`
     font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0em;
-    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     ${(props) => props.theme.mq.medium} {
       margin-left: inherit;
     }
@@ -117,17 +97,6 @@ const Grid = styled.div`
       grid-column: inherit;
     }
     margin-bottom: 1rem;
-  }
-`
-
-const Version = styled.div`
-  font-size: 0.75rem;
-  font-weight: 300;
-  margin-left: auto;
-  margin-top: inherit;
-  ${(props) => props.theme.mq.medium} {
-    margin-left: inherit;
-    margin-top: 1rem;
   }
 `
 

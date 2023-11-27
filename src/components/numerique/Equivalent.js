@@ -1,6 +1,6 @@
 import React, { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'

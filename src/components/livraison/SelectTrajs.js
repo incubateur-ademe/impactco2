@@ -23,7 +23,6 @@ export default function SelectTrajs2(props) {
           props.changeTraj && props.changeTraj(trajs.find((traj) => traj.uid === evt.value))
         }}
         value={props.value}
-        label=''
         name='trajs'>
         {trajs.map((traj) => (
           <option key={traj.uid} value={traj.uid}>

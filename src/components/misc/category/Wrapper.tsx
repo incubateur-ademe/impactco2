@@ -56,8 +56,8 @@ export default function Wrapper({ slug, name, children }: { slug: string; name: 
             />
           </Header>
           {children}
+          {isScreenshotting && <Signature />}
         </Background>
-        {isScreenshotting && <Signature />}
       </Content>
     </Sizer>
   )
