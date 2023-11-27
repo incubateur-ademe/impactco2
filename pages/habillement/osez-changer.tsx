@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { Category as CategoryType } from 'types/category'
 import categories from 'data/categories.json'
@@ -10,6 +10,15 @@ import MobileAction from 'components/osezchanger/MobileAction'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
+  useEffect(() => {
+    const challenge = document.getElementById('osez-changer')
+    if (challenge) {
+      window.scrollTo({
+        top: challenge.offsetTop,
+        behavior: 'smooth',
+      })
+    }
+  }, [])
   return (
     <Web
       title='Osez changer'
