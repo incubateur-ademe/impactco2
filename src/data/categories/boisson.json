@@ -3,7 +3,9 @@
     "id": 24283,
     "name": "Eau du robinet",
     "prefix": "Litre[s] d'",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "eaudurobinet",
     "emoji": "🚰",
     "category": 3,
@@ -21,35 +23,37 @@
     "Code_CIQUAL": 18430,
     "name": "Eau en bouteille",
     "prefix": "Litre[s] d'",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "eauenbouteille",
     "emoji": "💧",
     "category": 3,
     "ecv": [
       {
-        "value": 0.00627936183931169,
+        "value": 0.006279361839311691,
         "id": 30,
         "name": "agriculture"
       },
       {
-        "value": 0.1644216369370999,
+        "value": 0.16442163693709994,
         "id": 32,
         "name": "emballage"
       },
       {
-        "value": 0.060627659447665315,
+        "value": 0.06062765944766532,
         "id": 33,
         "name": "transport"
       },
       {
-        "value": 0.03314741952995768,
+        "value": 0.033147419529957686,
         "id": 34,
         "name": "supermarche"
       },
       {
         "id": 35,
         "name": "consommation",
-        "value": 0.002598542165965415
+        "value": 0.002598542165965416
       }
     ],
     "default": true,
@@ -65,13 +69,15 @@
     "Code_CIQUAL": 18026,
     "name": "Soda",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "soda",
     "emoji": "🥤",
     "category": 3,
     "ecv": [
       {
-        "value": 0.10413263417225606,
+        "value": 0.10413263417225607,
         "id": 30,
         "name": "agriculture"
       },
@@ -81,22 +87,22 @@
         "name": "transformation"
       },
       {
-        "value": 0.22981063504556215,
+        "value": 0.22981063504556218,
         "id": 32,
         "name": "emballage"
       },
       {
-        "value": 0.0927866316818457,
+        "value": 0.09278663168184571,
         "id": 33,
         "name": "transport"
       },
       {
-        "value": 0.05269734860648784,
+        "value": 0.052697348606487844,
         "id": 34,
         "name": "supermarche"
       },
       {
-        "value": 0.014473543677499461,
+        "value": 0.014473543677499463,
         "id": 35,
         "name": "consommation"
       }
@@ -114,7 +120,9 @@
     "Code_CIQUAL": 5001,
     "name": "Bière",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "biere",
     "emoji": "🍺",
     "category": 3,
@@ -163,38 +171,40 @@
     "Code_CIQUAL": 5214,
     "name": "Vin",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "vin",
     "emoji": "🍷",
     "category": 3,
     "ecv": [
       {
-        "value": 0.4466926087371023,
+        "value": 0.44669260873710237,
         "id": 30,
         "name": "agriculture"
       },
       {
-        "value": 0.2238691136524353,
+        "value": 0.22386911365243536,
         "id": 31,
         "name": "transformation"
       },
       {
-        "value": 0.3805008451464189,
+        "value": 0.38050084514641896,
         "id": 32,
         "name": "emballage"
       },
       {
-        "value": 0.0957903376190315,
+        "value": 0.09579033761903151,
         "id": 33,
         "name": "transport"
       },
       {
-        "value": 0.02810785880459748,
+        "value": 0.028107858804597485,
         "id": 34,
         "name": "supermarche"
       },
       {
-        "value": 0.015393454940414143,
+        "value": 0.015393454940414145,
         "id": 35,
         "name": "consommation"
       }
@@ -213,7 +223,9 @@
     "name": "Lait",
     "subtitle": "De vache",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "laitdevache",
     "emoji": "🥛",
     "category": 3,
@@ -257,7 +269,9 @@
     "Code_CIQUAL": 18900,
     "subtitle": "De soja",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "laitdesoja",
     "emoji": "🍈",
     "category": 3,
@@ -275,7 +289,7 @@
       {
         "id": 32,
         "name": "emballage",
-        "value": 0.10069163573007085
+        "value": 0.10069163573007084
       },
       {
         "id": 33,
@@ -285,7 +299,7 @@
       {
         "id": 34,
         "name": "supermarche",
-        "value": 0.043041239163162597
+        "value": 0.0430412391631626
       }
     ],
     "total": 0.42,
@@ -306,17 +320,17 @@
     "category": 3,
     "ecv": [
       {
-        "value": 0.024523553789156976,
+        "value": 0.02452355378915698,
         "id": 30,
         "name": "agriculture"
       },
       {
-        "value": 0.0006555673797149555,
+        "value": 0.0006555673797149556,
         "id": 32,
         "name": "emballage"
       },
       {
-        "value": 0.0006900499206393253,
+        "value": 0.0006900499206393254,
         "id": 33,
         "name": "transport"
       },
