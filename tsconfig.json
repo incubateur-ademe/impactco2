@@ -43,7 +43,10 @@
     "module": "esnext"
   },
   "ts-node": {
-    "experimentalResolver": true
+    "experimentalResolver": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   },
   "include": [
     "next-env.d.ts",

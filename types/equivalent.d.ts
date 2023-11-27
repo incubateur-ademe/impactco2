@@ -1,3 +1,5 @@
+export type EquivalentValue = { value: number; id: number }
+
 export type Equivalent = {
   id?: string | number
   name: string
@@ -15,7 +17,6 @@ export type Equivalent = {
     description: string
   }
   total?: number
-  ecv?: { value: number; id: number; name?: string }[]
   type?: string
   carpool?: boolean
   display?: {
@@ -28,4 +29,6 @@ export type Equivalent = {
     ecv: { value: number; id: number; name?: string }[]
   }[]
   secondEmoji?: string
+  Code_CIQUAL?: number
+  ecv?: EquivalentValue[]
 }
