@@ -1,0 +1,6 @@
+{
+  "all": true,
+  "include": ["**/*.tsx", "**/*.ts"],
+  "exclude": ["**/*.config.ts", "**/*.config.js", "**/*.d.ts", "__tests__", "testa", "testu", "testc", "teste"],
+  "reporter": ["html"]
+}
