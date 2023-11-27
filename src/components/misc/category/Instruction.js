@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 
 const Wrapper = styled.p`
   font-size: 0.875rem;

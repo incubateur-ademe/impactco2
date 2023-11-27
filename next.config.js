@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 const { withSentryConfig } = require('@sentry/nextjs')
 const { execSync } = require('child_process')
-const { readFileSync } = require('fs')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -14,37 +14,6 @@ const getLocalGitCommitHash = function () {
     console.log('Git is not executable here...')
   }
   return res
-}
-
-const getLastVersion = function () {
-  let result = 'unknown'
-  const data = readFileSync('./CHANGELOG.md', 'utf8')
-  // Define the regular expression pattern to match version numbers
-  const versionPattern = /^##\s\[?(\d+\.\d+\.\d+)\]?(?:.*?)$/m
-
-  // Search for version numbers in the CHANGELOG
-  const versions = data.match(versionPattern)
-
-  if (versions && versions.length > 1) {
-    // The latest version will be the second match
-    result = versions[1]
-  } else {
-    result = 'No release versions found in the CHANGELOG.'
-  }
-  return result
-}
-
-const buildFullVersionNumber = function () {
-  const semver = getLastVersion()
-  console.log('Current semver version:', semver)
-  return semver
-}
-
-const buildShortSha = function (scalingoLongSha) {
-  const netlifySha = process.env.COMMIT_REF
-  const shortSha = getShortSha(scalingoLongSha || netlifySha || getLocalGitCommitHash())
-  console.log('Current shortSha is: ', shortSha)
-  return shortSha
 }
 
 const getShortSha = function (str) {
@@ -65,7 +34,6 @@ const nextConfig = {
     defaultLocale: 'fr',
   },
   env: {
-    thebuildid: buildFullVersionNumber() + '-' + buildShortSha(process.env.SOURCE_VERSION),
     websiteurl: process.env.WEBSITE_URL,
   },
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
@@ -73,7 +41,7 @@ const nextConfig = {
     autoInstrumentServerFunctions: true,
     autoInstrumentMiddleware: true,
     widenClientFileUpload: true,
-    hideSourceMaps: true,
+    hideSourceMaps: false,
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -143,4 +111,10 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
 }
 
-module.exports = withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
+module.exports = (phase) => {
+  if (phase === PHASE_PRODUCTION_BUILD) {
+    console.log('Current shortSha is: ', getShortSha(getLocalGitCommitHash()))
+  }
+
+  return withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
+}

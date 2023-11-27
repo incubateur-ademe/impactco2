@@ -94,8 +94,9 @@ export default function Dropdown(props) {
 }
 Dropdown.Item = styled(MagicLink)`
   color: ${(props) => props.theme.colors[props.current ? 'main' : 'text']};
-  display: block;
+  display: flex;
   font-size: 0.875rem;
+  justify-content: space-between;
   padding: 0.75rem 2.5rem 0.5rem 1.5rem;
   position: relative;
   text-decoration: none;

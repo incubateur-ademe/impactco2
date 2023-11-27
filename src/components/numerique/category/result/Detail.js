@@ -1,6 +1,7 @@
 import { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { formatConstruction, formatName, formatNumber } from 'utils/formatters'
+import formatName from 'utils/formatName'
+import { formatConstruction, formatNumber } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'

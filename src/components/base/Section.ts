@@ -5,8 +5,8 @@ export const Section = styled.section<{ $theme?: 'color' | 'main'; $withoutPaddi
     $theme === 'color'
       ? `background-color: #ebf2ff;`
       : $theme === 'main'
-      ? `background-color: ${theme.colors.main};`
-      : ''}
+        ? `background-color: ${theme.colors.main};`
+        : ''}
   ${({ $withoutPadding, theme }) =>
     !$withoutPadding &&
     css`

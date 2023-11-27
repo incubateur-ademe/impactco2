@@ -1,4 +1,4 @@
-import { formatPercent } from 'utils/formatters'
+import formatPercent from 'utils/formatPercent'
 
 describe('formatPercent', () => {
   test('Devrait calculer le pourcentage correctement sans formatage', () => {

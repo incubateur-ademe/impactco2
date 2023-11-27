@@ -1,4 +1,4 @@
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 
 describe('formatName', () => {
   test("transforme les s entre crochet par un simple s, par ex 'les' devient 'le'", () => {

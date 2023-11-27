@@ -149,6 +149,8 @@ const LogoBar = styled.div`
 
 const Logos = styled.div`
   display: flex;
+  gap: 16px;
+  padding: 16px 0;
   ${(props) => props.theme.mq.small} {
     > svg {
       height: 2em;

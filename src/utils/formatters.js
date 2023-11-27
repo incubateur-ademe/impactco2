@@ -1,3 +1,5 @@
+import formatName from './formatName'
+
 export function formatNumber(value, noformat) {
   if (!value) {
     return 0
@@ -13,59 +15,6 @@ export function formatNumber(value, noformat) {
   return noformat ? tempTotal : tempTotal.toLocaleString('fr-fr', { maximumFractionDigits: 11 })
 }
 
-export function getFrenchFormattedNumber(number) {
-  // Check if the number is a valid number.
-  if (!Number.isFinite(number)) {
-    return NaN
-  }
-
-  // Get the number in string format.
-  const numberString = number.toString()
-
-  // Replace the decimal point with a comma.
-  const formattedNumberString = numberString.replace('.', ',')
-
-  return formattedNumberString
-}
-
-export function getNumberWithNDigitsAfterComma(number, n) {
-  // Check if the number is a valid number.
-  if (!Number.isFinite(number)) {
-    return NaN
-  }
-
-  // Get the number of digits after the decimal point.
-  const decimalPointIndex = number.toString().indexOf('.')
-  const numberOfDigitsAfterComma = decimalPointIndex === -1 ? 0 : number.toString().length - decimalPointIndex - 1
-
-  // If the number of digits after the decimal point is less than or equal to N, then simply return the number.
-  if (numberOfDigitsAfterComma <= n) {
-    return number
-  }
-
-  // Otherwise, round the number to N digits after the decimal point and return it.
-  return Math.round(number * 10 ** n) / 10 ** n
-}
-
-export function formatNumberPrecision(value) {
-  const tempValue = value < 1 ? value * 1000 : value
-  return (
-    tempValue.toLocaleString('fr-fr', {
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 2,
-    }) + (value < 1 ? ' g' : ' kg')
-  )
-}
-export function formatName(name = '', value = 1, capital) {
-  const newName = name.replaceAll('[s]', value > 1 ? 's' : '').replaceAll('[x]', value > 1 ? 'x' : '')
-
-  return capital ? newName : newName.toLowerCase()
-}
-
-export function formatPercent(value, total, noformat) {
-  let tempPercent = (value / total) * 100
-  return noformat ? tempPercent : tempPercent.toLocaleString('fr-fr', { maximumFractionDigits: 1 })
-}
 export function formatTotal(equivalent, years, end) {
   let total =
     equivalent.total || equivalent.total === 0

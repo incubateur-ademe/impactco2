@@ -4,18 +4,17 @@ import Select from 'components/base/Select'
 import ReuseBulb from 'components/livraison/ReuseBulb'
 import IflCode from './IflCode'
 
-const getLabel = () => {
-  return (
-    <span>
-      1) Choisissez le <strong>thème</strong> de votre iframe.
-    </span>
-  )
-}
-
 export default function IflConfigurator(props) {
   return (
     <Wrapper>
-      <Select onChange={({ value }) => props.setTheme(value)} getLabel={getLabel} name='theme'>
+      <Select
+        onChange={({ value }) => props.setTheme(value)}
+        label={
+          <span>
+            1) Choisissez le <strong>thème</strong> de votre iframe.
+          </span>
+        }
+        name='theme'>
         <option value='default'>Clair</option>
         <option value='night'>Sombre</option>
       </Select>

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { formatName } from 'utils/formatters'
+import formatName from 'utils/formatName'
 import ModalContext from 'components/providers/ModalProvider'
 import ButtonLink from 'components/base/ButtonLink'
 import MagicLink from 'components/base/MagicLink'

@@ -1,7 +1,8 @@
 import Fuse from 'fuse.js'
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { formatName, formatTotal } from 'utils/formatters'
+import formatName from 'utils/formatName'
+import { formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
@@ -89,15 +90,15 @@ export default function Saisons(props) {
                 ? 1
                 : -1
               : sorting.includes('desc')
-              ? -1
-              : 1
+                ? -1
+                : 1
             : a.value > b.value
-            ? sorting.includes('desc')
-              ? -1
-              : 1
-            : sorting.includes('desc')
-            ? 1
-            : -1
+              ? sorting.includes('desc')
+                ? -1
+                : 1
+              : sorting.includes('desc')
+                ? 1
+                : -1
         ),
     [equivalents, categories, props.category, props.month, results, sorting]
   )

@@ -1,5 +1,5 @@
 import { NotionCommand, NotionCommandValidation } from '../src/utils/notion'
-import { expectZodValidationToFail } from './zodValidationTest'
+import { expectZodValidationToFail } from '../test-utils/zodValidationTest'
 
 describe('Notion api command', () => {
   const validCommand: NotionCommand = {
