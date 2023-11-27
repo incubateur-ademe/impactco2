@@ -109,7 +109,6 @@ export default async function handler(
       .then((response) => response.data),
   ])
 
-  console.log(driving.rows[0].elements)
   return res.status(200).json({
     car: getValue(driving),
     foot: getValue(walking),
