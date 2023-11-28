@@ -23,7 +23,6 @@ describe('buildCurrentUrlFor', () => {
   })
 
   test('may say that base URL is not defined', () => {
-    jest.resetModules()
     process.env = { ...env, NEXT_PUBLIC_URL: undefined }
     const res = buildCurrentUrlFor('/livraison')
     expect(res).toEqual('undefined/livraison')
