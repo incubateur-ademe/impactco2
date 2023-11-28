@@ -41,7 +41,7 @@ export default function IframeFooter() {
   if (actualSrc.indexOf('livraison') > 0) {
     actualSrc = '/livraison'
   }
-  const fullUrl = buildCurrentUrlFor(process?.env?.websiteurl, actualSrc)
+  const fullUrl = buildCurrentUrlFor(actualSrc)
   return (
     <Wrapper>
       <StyledMagicLink to={fullUrl}>

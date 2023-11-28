@@ -1,5 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
-const webpack = require('webpack')
 
 module.exports = [
   {
@@ -19,10 +19,5 @@ module.exports = [
       filename: 'iframelivraison.js',
       path: path.resolve(__dirname, 'public'),
     },
-    plugins: [
-      new webpack.DefinePlugin({
-        WEBPACK_SITE_URL: `'${process.env.WEBSITE_URL}'`,
-      }),
-    ],
   },
 ]

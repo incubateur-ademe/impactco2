@@ -9,7 +9,7 @@ describe('IframeFooter', () => {
 
   beforeEach(() => {
     jest.resetModules()
-    process.env = { ...env, websiteurl: 'example.com' }
+    process.env = { ...env, NEXT_PUBLIC_URL: 'https://example.com' }
   })
 
   afterEach(() => {
@@ -23,6 +23,6 @@ describe('IframeFooter', () => {
       </StyleProvider>
     )
     // check if all components are rendered
-    expect(screen.getByTestId('magic-link')).toHaveAttribute('href', 'https://example.com')
+    expect(screen.getByTestId('magic-link')).toHaveAttribute('href', 'https://example.com/')
   })
 })

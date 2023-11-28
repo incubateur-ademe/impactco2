@@ -9,7 +9,7 @@
     "NEXT_PUBLIC_SENTRY_ENVIRONMENT": {
       "value": "REVIEW_APP"
     },
-    "CANONICAL_HOST_URL": {
+    "NEXT_PUBLIC_URL": {
       "generator": "url"
     }
   }

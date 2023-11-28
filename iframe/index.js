@@ -12,14 +12,14 @@ const script =
 const type = script.dataset.type
   ? script.dataset.type
   : document.getElementById('mon-impact-transport') ||
-    document.getElementById('datagir-teletravail') ||
-    document.getElementById('ecolab-transport')
-  ? 'empreinte-carbone/transport'
-  : 'tuiles'
+      document.getElementById('datagir-teletravail') ||
+      document.getElementById('ecolab-transport')
+    ? 'empreinte-carbone/transport'
+    : 'tuiles'
 const search = script.dataset.search || ''
 const source = window.location.href.toString()
 
-const src = `https://impactco2.fr/iframes/${type}${search}${search ? '&' : '?'}source=${source}`
+const src = `${process.env.NEXT_PUBLIC_URL}/iframes/${type}${search}${search ? '&' : '?'}source=${source}`
 
 const iframe = document.createElement('iframe')
 
@@ -37,7 +37,7 @@ for (var key in iframeAttributes) {
 iframeResize({}, iframe)
 
 const link = document.createElement('div')
-link.innerHTML = `<a href="https://impactco2.fr" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`
+link.innerHTML = `<a href="${process.env.NEXT_PUBLIC_URL}" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`
 link.style.cssText = `margin: 0.5rem auto 1rem;text-align: center`
 
 if (!isFigaro) {
@@ -47,7 +47,7 @@ if (!isFigaro) {
   let simpleButtonScreen = document.createElement('div')
   simpleButtonScreen.innerHTML = `
   <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-  <a target="_blank" title="Impact carbone de vos déplacements (ouvre le site impactCO2 dans un nouvel onglet)" href="https://impactco2.fr/transport/itineraire" style="background-color: rgb(38, 130, 124); color:white; cursor:pointer; display:block; padding:1rem; border-radius:8px; text-decoration: none; text-align: center;">
+  <a target="_blank" title="Impact carbone de vos déplacements (ouvre le site impactCO2 dans un nouvel onglet)" href="${process.env.NEXT_PUBLIC_URL}/transport/itineraire" style="background-color: rgb(38, 130, 124); color:white; cursor:pointer; display:block; padding:1rem; border-radius:8px; text-decoration: none; text-align: center;">
     Découvrez l'impact carbone de vos déplacements
   </a>
   </div>

@@ -68,7 +68,7 @@ export default async function handler(
   }
 
   if (process.env.LIMIT_API) {
-    if (!req.headers.referer?.startsWith(`https://${process.env.WEBSITE_URL}`)) {
+    if (!process.env.NEXT_PUBLIC_URL || !req.headers.referer?.startsWith(process.env.NEXT_PUBLIC_URL)) {
       return res.status(403).send('Not authorized')
     }
     try {

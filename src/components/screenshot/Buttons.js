@@ -80,7 +80,7 @@ export default function Buttons(props) {
       {props.slug && (
         <Button
           className='noscreenshot'
-          to={`${iframe ? 'https://impactco2.fr' : ''}/integration${props.slug ? `?type=${props.slug}` : ''}`}
+          to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${props.slug ? `?type=${props.slug}` : ''}`}
           large
           noIcon>
           <Svg x='0px' y='0px' width='94.504px' height='94.504px' viewBox='0 0 94.504 94.504'>

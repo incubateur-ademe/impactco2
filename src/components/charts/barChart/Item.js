@@ -29,7 +29,11 @@ const ChartWrapper = styled.div`
 export default function Item(props) {
   const iframe = useIframe()
   return (
-    <Wrapper {...props} to={(iframe ? 'https://impactco2.fr' : '') + props.to} onClick={props.onClick || null} noIcon>
+    <Wrapper
+      {...props}
+      to={(iframe ? process.env.NEXT_PUBLIC_URL : '') + props.to}
+      onClick={props.onClick || null}
+      noIcon>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
         <Title title={props.title} subtitle={props.subtitle} component={props.component} />
