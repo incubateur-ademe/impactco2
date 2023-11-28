@@ -39,7 +39,7 @@ Il vous faut un fichier `.env` dont les valeurs sont documentées dans `.env.dis
 
 L’organisation du développement suit le workflow [Gitflow](https://mindsers.blog/fr/post/gitflow-la-methodologie-et-la-pratique/) :
 
-- La branche de production est `main`. Seule  `develop` peut être mergée directement dans main.
+- La branche de production est `main`. Seule `develop` peut être mergée directement dans main.
 - Les hotfix, comme les features (ou tout autre type de fonctionnalité) sont créés sur des branches dédiées issues de `develop`.
 - Une fois que le code est revu par un pair, et la fonctionnalité recettée par le métier depuis la review app dédiée, il est possible de merger la branche dans `develop`.
 - La branche du travail validé et recetté est donc `develop`. Elle possède sa propre review app. [Elle est visible ici](https://preimpactco2.osc-fr1.scalingo.io/).
@@ -113,6 +113,27 @@ Les fonctions appelées dans le jsx ne sont pas nommées, afin de simplifier la 
 Le contenu peut être intégré par nos utilisateurs directement dans leur propre site web grâce aux iframes.
 
 Le contenu des iframes est disponible dans le code dans le répertoire `pages/iframes`.
- 
+
 Ce contenu est donc disponible en ligne à l'URL `/iframes/...` comme par exemple l'[habillement](https://impactco2.fr/iframes/habillement) ou la [livraison](https://impactco2.fr/iframes/livraison/simulation).
 
+Mais ces pages ne sont pas faites pour être lues "telles quelles" dans notre site, mais pour être intégrées dans un autre site.
+
+Ces pages deviennent disponibles à nos utilisateurs grâce à un script qui construit une iframe et l'insère dans le DOM de leur site web.
+
+Il y a pour l'instant 2 versions de ce script :
+
+- iframe/index.js
+- iframe/livraison.js
+
+Ce script est minifié, renommé et placé dans le répertoire /public à chaque `build` du projet NextJS, grâce au fichier `webpack.config.js`. Ainsi,
+
+- iframe/index.js devient accessible publiquement sous l'URL /iframe.js,
+- iframe/livraison.js devient accessible publiquement sous l'URL /iframelivraison.js
+
+Les utilisateurs qui veulent cette iframe dans leur projet n'ont plus qu'à copier/coller le code suivant dans la page web de leur choix (exemple pour la livraison) :
+
+```html
+<script id="impact-livraison" src="https://impactco2.fr/iframelivraison.js" data-search="?theme=default"></script>
+```
+
+Les attributs "data" permettant de paramétrer cette iframe.
