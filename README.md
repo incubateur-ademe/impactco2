@@ -33,17 +33,17 @@ Les tests end-to-end nécessitent que le serveur web local soit lancé.
 
 ## Variable d'environnement
 
-Il vous faut un fichier `.env.local` dont les valeurs sont documentées dans `.env.dist`
+Il vous faut un fichier `.env` dont les valeurs sont documentées dans `.env.dist`
 
 ## Workflow Git ⚙️
 
 L’organisation du développement suit le workflow [Gitflow](https://mindsers.blog/fr/post/gitflow-la-methodologie-et-la-pratique/) :
 
-- La branche de production est `main`. Seul les releases et hotfix peuvent être mergées directement dans main. [Elle est visible ici](https://impactco2.fr/)
+- La branche de production est `main`. Seule  `develop` peut être mergée directement dans main.
+- Les hotfix, comme les features (ou tout autre type de fonctionnalité) sont créés sur des branches dédiées issues de `develop`.
+- Une fois que la fonctionnalité est revue par un pair, et recettée par le métier depuis la review 
 - La branche de développement est `develop`. C’est sur cette branche qu’est visible le travail en cours. [Elle est visible ici](https://preimpactco2.osc-fr1.scalingo.io/)
-- On crée une issue et une branche pour chaque nouvelle fonctionnalité (nom de la branche : numéro de l’issue associée). Cette branche utilise la branche `develop` comme parent. Elle donne lieu à une PR vers la branche `develop` (nom de la PR : `fix/my-hotfix` ou `feat/my-feature`).
-- À la fin de chaque cycle de développement, on crée une branche `release` à partir de `develop`. Cette branche est ensuite mergée dans `main` et tagguée avec [un numéro de release](https://semver.org/).
-- Les hotfix sont créé sur des branches dédiées (issues de `main`), associées ou non à une issue. Elles peuvent être mergées directement dans `main`.
+- À la fin de chaque cycle de développement, on merge `develop` dans `main`. Cette version est alors tagguée avec [un numéro de release](https://semver.org/).
 
 [Les commits sont conventionnés](https://www.conventionalcommits.org/en/v1.0.0/). Les types suivants sont acceptés :
 
@@ -55,6 +55,7 @@ L’organisation du développement suit le workflow [Gitflow](https://mindsers.b
 - `refactor`
 - `style`
 - `test`
+- `chore`
 
 ## Connexion à Agribalyse
 
