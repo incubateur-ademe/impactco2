@@ -42,7 +42,7 @@ L’organisation du développement suit le workflow [Gitflow](https://mindsers.b
 - La branche de production est `main`. Seule  `develop` peut être mergée directement dans main.
 - Les hotfix, comme les features (ou tout autre type de fonctionnalité) sont créés sur des branches dédiées issues de `develop`.
 - Une fois que le code est revu par un pair, et la fonctionnalité recettée par le métier depuis la review app dédiée, il est possible de merger la branche dans `develop`.
-- La branche du travail en cours validé est donc `develop`. Elle possède sa propre review app. [Elle est visible ici](https://preimpactco2.osc-fr1.scalingo.io/).
+- La branche du travail validé et recetté est donc `develop`. Elle possède sa propre review app. [Elle est visible ici](https://preimpactco2.osc-fr1.scalingo.io/).
 - Chaque mise en production consiste à merger `develop` dans `main`. Cette version est alors tagguée avec [un numéro de release](https://semver.org/).
 
 [Les commits sont conventionnés](https://www.conventionalcommits.org/en/v1.0.0/). Les types suivants sont acceptés :
@@ -107,3 +107,12 @@ L'intérieur de ce fichier est structuré comme suit :
 - Déclaration et export du composant
 
 Les fonctions appelées dans le jsx ne sont pas nommées, afin de simplifier la lecture. On essaie de maintenir les fichiers de composants bien en dessous de 100 lignes
+
+## Les iframes
+
+Le contenu peut être intégré par nos utilisateurs directement dans leur propre site web grâce aux iframes.
+
+Le contenu des iframes est disponible dans le code dans le répertoire `pages/iframes`.
+ 
+Ce contenu est donc disponible en ligne à l'URL `/iframes/...` comme par exemple l'[habillement](https://impactco2.fr/iframes/habillement) ou la [livraison](https://impactco2.fr/iframes/livraison/simulation).
+
