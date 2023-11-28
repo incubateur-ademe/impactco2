@@ -113,4 +113,4 @@ L'intérieur de ce fichier est structuré comme suit :
 - Déclaration des Styled-Components, par ordre d'apparition dans le composant
 - Déclaration et export du composant
 
-Les fonctions appelées dans le jsx ne sont pas nommées, afin de simplifier la lecture. On essaie de maintenir les fichiers de composants bien en dessous de 100 lignes
+Les fonctions appelées dans le jsx ne sont pas nommées, afin de simplifier la lecture. On essaie de maintenir les fichiers de composants bien en dessous de 100 lignes.
