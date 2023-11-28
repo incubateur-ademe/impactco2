@@ -1,50 +1,70 @@
-import Image from 'next/image'
-import React from 'react'
 import styled from 'styled-components'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Meeting from 'components/meeting/Meeting'
 
 export default function Hero() {
   return (
-    <Section $withoutPadding>
-      <SectionWideContent>
-        <Layout>
-          <div>
-            <H1Title>
-              <H1Line1>Informer, comparer, diffuser</H1Line1>
-              <span>
-                <HideAboveMedium>&nbsp;</HideAboveMedium>des ressources sur l’impact carbone
-              </span>
-              <sapn>
-                <HideAboveMedium>&nbsp;</HideAboveMedium>des gestes et objets du quotidien
-              </sapn>
-            </H1Title>
-            <Subtitle>
-              <span>
-                Sensibilisez votre communauté grâce à une<strong>&nbsp;information fiable&nbsp;</strong>
-              </span>
-              <span>
-                <strong>et sourcée</strong>&nbsp;issue des données environnementales de l'ADEME.
-              </span>
-            </Subtitle>
-            <MiniCard>
-              <MiniCardText>
-                <MiniCardEmoji>🤓</MiniCardEmoji>
-                <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
-              </MiniCardText>
-              <p>Laissez-nous votre email, et nous vous recontacterons très prochainement pour échanger ensemble.</p>
-              <Meeting />
-            </MiniCard>
-          </div>
+    <HeroDiv>
+      <Section $withoutPadding>
+        <SectionWideContent>
+          <Layout>
+            <div>
+              <H1Title>
+                <H1Line1>Informer, comparer, diffuser</H1Line1>
+                <span>
+                  <HideAboveMedium>&nbsp;</HideAboveMedium>des ressources sur l’impact carbone
+                </span>
+                <span>
+                  <HideAboveMedium>&nbsp;</HideAboveMedium>des gestes et objets du quotidien
+                </span>
+              </H1Title>
+              <Subtitle>
+                <span>
+                  Sensibilisez votre communauté grâce à une<strong>&nbsp;information fiable&nbsp;</strong>
+                </span>
+                <span>
+                  <strong>et sourcée</strong>&nbsp;issue des données environnementales de l'ADEME.
+                </span>
+              </Subtitle>
+              <MiniCard>
+                <MiniCardText>
+                  <MiniCardEmoji>🤓</MiniCardEmoji>
+                  <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
+                </MiniCardText>
+                <p>Laissez-nous votre email, et nous vous recontacterons très prochainement pour échanger ensemble.</p>
+                <Meeting />
+              </MiniCard>
+            </div>
 
-          <PictureContainer>
-            <Image width={560} height={976} src='/images/cards.svg' alt='' />
-          </PictureContainer>
-        </Layout>
-      </SectionWideContent>
-    </Section>
+            <PictureContainer />
+          </Layout>
+        </SectionWideContent>
+      </Section>
+    </HeroDiv>
   )
 }
+
+const HeroDiv = styled.div`
+  > section {
+    background-image: url(/images/cards.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    ${(props) => props.theme.mq.xlarge} {
+      background-position-x: 52vw;
+      background-position-y: center;
+      background-size: 56%;
+    }
+    ${(props) => props.theme.mq.large} {
+      background-position-x: 82vw;
+      background-position-y: center;
+      background-size: 56%;
+    }
+    ${(props) => props.theme.mq.medium} {
+      background-image: none;
+    }
+  }
+`
 
 const H1Title = styled.h1`
   color: ${(props) => props.theme.colors.linkGrey};
