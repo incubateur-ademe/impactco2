@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatNumber, formatTotal } from 'utils/formatters'
+import { computeECV } from 'utils/computeECV'
+import { formatNumber } from 'utils/formatters'
 import getFrenchFormattedNumber from 'utils/getFrenchFormattedNumber'
 import getNumberWithNDigitsAfterComma from 'utils/getNumberWithNDigitsAfterComma'
 import Emoji from 'components/base/Emoji'
@@ -56,7 +57,7 @@ const StyledEmoji = styled(Emoji)`
   }
 `
 export default function Value(props) {
-  let numberToDisplay = formatTotal(props.equivalent)
+  let numberToDisplay = computeECV(props.equivalent)
   return (
     <Wrapper>
       <Section $withoutPadding $theme='main'>
@@ -65,8 +66,8 @@ export default function Value(props) {
             <div>
               <Number>
                 {numberToDisplay < 0.02
-                  ? formatNumber(formatTotal(props.equivalent))
-                  : getFrenchFormattedNumber(getNumberWithNDigitsAfterComma(formatTotal(props.equivalent), 2))}
+                  ? formatNumber(numberToDisplay)
+                  : getFrenchFormattedNumber(getNumberWithNDigitsAfterComma(numberToDisplay, 2))}
               </Number>{' '}
               <Unit>
                 kg <Big>CO2</Big>e{' '}

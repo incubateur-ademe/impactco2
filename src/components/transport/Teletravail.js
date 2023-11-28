@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { formatTotal } from 'utils/formatters'
+import { computeECV } from 'utils/computeECV'
 import useItineraries from 'hooks/useItineraries'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -32,7 +32,7 @@ export default function Teletravail(props) {
     if (distance && currentTransportation) {
       setSaved(
         Math.round(
-          (formatTotal(currentTransportation) *
+          (computeECV(currentTransportation) *
             (distance - distance * extraKm) *
             2 *
             teletravail *
@@ -41,7 +41,7 @@ export default function Teletravail(props) {
         )
       )
       setEmitted(
-        Math.round((formatTotal(currentTransportation) * distance * presentiel * 2 * (52 - holidays - 1)) / 1000)
+        Math.round((computeECV(currentTransportation) * distance * presentiel * 2 * (52 - holidays - 1)) / 1000)
       )
     }
   }, [presentiel, teletravail, holidays, extraKm, distance, currentTransportation])

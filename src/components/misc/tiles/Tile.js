@@ -3,8 +3,9 @@ import { CSS } from '@dnd-kit/utilities'
 import React, { useContext } from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
+import { computeECVWithMultiplier } from 'utils/computeECV'
 import formatName from 'utils/formatName'
-import { formatNumber, formatTotalByMultiplier } from 'utils/formatters'
+import { formatNumber } from 'utils/formatters'
 import useIframe from 'hooks/useIframe'
 import DataContext from 'components/providers/DataProvider'
 import Button from 'components/base/Button'
@@ -185,19 +186,19 @@ export default function Tile(props) {
       <Title>
         <Number>
           {props.noAnimation ? (
-            formatNumber(props.weight / formatTotalByMultiplier(props.equivalent))
+            formatNumber(props.weight / computeECVWithMultiplier(props.equivalent))
           ) : (
-            <CountUp end={props.weight / formatTotalByMultiplier(props.equivalent)} duration={0.5} separator=' ' />
+            <CountUp end={props.weight / computeECVWithMultiplier(props.equivalent)} duration={0.5} separator=' ' />
           )}
         </Number>
         <Name>
           {formatName(
             (props.equivalent.prefix || '') + props.equivalent.name,
-            props.weight / formatTotalByMultiplier(props.equivalent)
+            props.weight / computeECVWithMultiplier(props.equivalent)
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (
             <Subtitle>
-              {formatName(props.equivalent.subtitle, props.weight / formatTotalByMultiplier(props.equivalent))}
+              {formatName(props.equivalent.subtitle, props.weight / computeECVWithMultiplier(props.equivalent))}
             </Subtitle>
           ) : (
             ''

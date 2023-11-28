@@ -1,3 +1,4 @@
+import { computeECVWithMultiplier } from './computeECV'
 import formatName from './formatName'
 
 export function formatNumber(value, noformat) {
@@ -15,43 +16,6 @@ export function formatNumber(value, noformat) {
   return noformat ? tempTotal : tempTotal.toLocaleString('fr-fr', { maximumFractionDigits: 11 })
 }
 
-export function formatTotal(equivalent, years, end) {
-  let total =
-    equivalent.total || equivalent.total === 0
-      ? equivalent.total
-      : equivalent.ecv.reduce((acc, cur) => acc + cur.value, 0)
-
-  if (years !== 0 && equivalent.usage) {
-    total += (years || equivalent.usage.defaultyears) * equivalent.usage.peryear
-  }
-
-  if (end) {
-    total += equivalent.end
-  }
-  return total
-}
-export function formatTotalByMultiplier(equivalent) {
-  let total =
-    equivalent.total || equivalent.total === 0
-      ? equivalent.total
-      : equivalent.ecv.reduce((acc, cur) => acc + cur.value, 0)
-
-  if (equivalent.usage) {
-    total += equivalent.usage.defaultyears * equivalent.usage.peryear
-  }
-
-  return equivalent.multiplier ? total * equivalent.multiplier : total
-}
-export function formatTotalByKm(equivalent, km) {
-  return (
-    (equivalent.total || equivalent.total === 0
-      ? equivalent.total
-      : (equivalent?.ecvs?.find((ecv) => ecv.max > km)?.ecv || equivalent.ecv).reduce(
-          (acc, cur) => acc + cur.value,
-          0
-        )) * km
-  )
-}
 export function formatConstruction(equivalent) {
   return equivalent.total || equivalent.total === 0
     ? equivalent.total
@@ -70,11 +34,11 @@ export function formatUsage(equivalent, years) {
 
 export function fullSentenceFormat(obj) {
   return (
-    formatNumber(obj.weight / formatTotalByMultiplier(obj.equivalent)) +
+    formatNumber(obj.weight / computeECVWithMultiplier(obj.equivalent)) +
     ' ' +
     formatName(
       (obj.equivalent.prefix || '') + obj.equivalent.name,
-      obj.weight / formatTotalByMultiplier(obj.equivalent)
+      obj.weight / computeECVWithMultiplier(obj.equivalent)
     )
   )
 }
