@@ -50,6 +50,9 @@ const H1Title = styled.h1`
   color: ${(props) => props.theme.colors.linkGrey};
   font-size: 2.25rem;
   ${(props) => props.theme.mq.xlarge} {
+    font-size: 1.35rem;
+  }
+  ${(props) => props.theme.mq.large} {
     font-size: 1.75rem;
   }
   ${(props) => props.theme.mq.small} {
@@ -77,7 +80,7 @@ const Layout = styled.div`
   grid-template-columns: 39rem auto;
   overflow: hidden;
   ${(props) => props.theme.mq.xlarge} {
-    grid-template-columns: 30rem auto;
+    grid-template-columns: 24rem auto;
   }
   ${(props) => props.theme.mq.large} {
     grid-template-columns: 39rem auto;
@@ -88,8 +91,8 @@ const Layout = styled.div`
   ${(props) => props.theme.mq.small} {
     grid-template-columns: 1fr;
   }
-  padding: 6rem 0;
-  ${(props) => props.theme.mq.large} {
+  padding: 5rem 0;
+  ${(props) => props.theme.mq.xlarge} {
     padding: 3rem 0;
   }
 `
@@ -104,6 +107,9 @@ const PictureContainer = styled.div`
     position: absolute;
     right: 0;
     top: -270px;
+    ${(props) => props.theme.mq.xlarge} {
+      top: -205px;
+    }
   }
 `
 
@@ -122,6 +128,12 @@ const Subtitle = styled.p`
   margin-top: 1.5rem;
   > span {
     display: block;
+    ${(props) => props.theme.mq.xlarge} {
+      display: inline;
+    }
+    ${(props) => props.theme.mq.large} {
+      display: block;
+    }
     ${(props) => props.theme.mq.medium} {
       display: inline;
     }
