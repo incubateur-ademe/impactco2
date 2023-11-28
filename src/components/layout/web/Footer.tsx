@@ -41,6 +41,15 @@ export default function Footer() {
                   Politique de confidentialité
                 </Link>
               </FooterLink>
+              <FooterLink>
+                <Link
+                  href={`mailto:${process.env.CONTACT_EMAIL}`}
+                  target='_blank'
+                  rel='noreferrer noopener'
+                  title='Nous contacter'>
+                  Contact
+                </Link>
+              </FooterLink>
             </div>
           </Grid>
         </SectionWideContent>
