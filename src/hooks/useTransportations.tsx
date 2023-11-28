@@ -1,7 +1,8 @@
 import { useContext, useMemo } from 'react'
 import { Equivalent } from 'types/equivalent'
+import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
-import { formatNumber, formatTotalByKm, formatUsage } from 'utils/formatters'
+import { formatNumber, formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Carpool from 'components/transport/Carpool'
 import TransportContext from 'components/transport/TransportProvider'
@@ -66,7 +67,7 @@ export default function useTransportations(itineraries: Record<string, number> |
               emoji: equivalent.emoji,
               secondEmoji: equivalent.secondEmoji,
               value:
-                formatTotalByKm(equivalent, itineraries && equivalent.type ? itineraries[equivalent.type] : km) /
+                (computeECV(equivalent) * (itineraries && equivalent.type ? itineraries[equivalent.type] : km)) /
                 (equivalent.carpool && carpool ? carpool : 1),
               usage:
                 (formatUsage(equivalent) * (itineraries && equivalent.type ? itineraries[equivalent.type] : km)) /

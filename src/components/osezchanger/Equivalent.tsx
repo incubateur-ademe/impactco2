@@ -3,6 +3,7 @@ import { Equivalent as EquivalentType } from 'types/equivalent'
 import habillement from '../../data/categories/habillement.json'
 import numerique from '../../data/categories/numerique.json'
 import repas from '../../data/categories/repas.json'
+import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import Emoji from 'components/base/Emoji'
 import { Card, Name, Value } from './Equivalent.styles'
@@ -20,7 +21,7 @@ const Equivalent = ({ value, type }: { value: number; type: Types }) => {
     return null
   }
 
-  const co2 = equivalent.total || (equivalent.ecv ? equivalent.ecv.reduce((sum, { value }) => sum + value, 0) : 0)
+  const co2 = computeECV(equivalent)
 
   return (
     <Card data-testid={`defi-equivalent-${type}`} $withShadow={!!value}>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Category } from 'types/category'
 import { Equivalent as EquivalentType } from 'types/equivalent'
+import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import DataContext from 'components/providers/DataProvider'
 import {
@@ -61,18 +62,6 @@ const CenterLink = ({ category }: { category?: Category }) => {
   )
 }
 
-const getEquivalentValue = (equivalent: EquivalentType) => {
-  if (equivalent.total) {
-    return equivalent.total
-  }
-
-  if (equivalent.ecv) {
-    return equivalent.ecv.reduce((sum, current) => sum + current.value, 0)
-  }
-
-  return 0
-}
-
 const getSize = (value: number) => {
   if (value > 2000) {
     return { xsmall: true }
@@ -92,7 +81,7 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
     (slug) => equivalents.find((equivalent: EquivalentType) => equivalent.slug === slug) as EquivalentType
   )
 
-  const factor = getEquivalentValue(values[0]) * (base || 1)
+  const factor = computeECV(values[0]) * (base || 1)
   return (
     <>
       <Title>
@@ -101,7 +90,7 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
       <Equivalents>
         {values
           .flatMap((equivalent) => {
-            const value = Math.round(factor / getEquivalentValue(equivalent))
+            const value = Math.round(factor / computeECV(equivalent))
             return [
               <Equivalent key={equivalent.slug}>
                 <Emojis {...getSize(value)}>{[...Array(value)].map(() => equivalent.emoji).join('')}</Emojis>
@@ -121,7 +110,7 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
       <Small>
         {values
           .flatMap((equivalent) => {
-            const value = Math.round(factor / getEquivalentValue(equivalent))
+            const value = Math.round(factor / computeECV(equivalent))
             return [
               <div key={equivalent.slug}>
                 {value} {equivalent.prefix && formatName(equivalent.prefix, value)}

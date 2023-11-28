@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
-import { formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -58,17 +58,17 @@ export default function Ecv(props) {
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
             Détail de l&apos;empreinte de 1 {props.equivalent.prefix && <>{formatName(props.equivalent.prefix)} </>}
-            {formatName(props.equivalent.name, 1)} ({formatNumberPrecision(formatTotal(props.equivalent, usage))}{' '}
+            {formatName(props.equivalent.name, 1)} ({formatNumberPrecision(computeECV(props.equivalent, usage))}{' '}
             <span>
               CO
               <sub>2</sub>e
             </span>
             )
           </Title>
-          <StackedChart items={ecvToDisplay} total={formatTotal(props.equivalent, usage)} />
+          <StackedChart items={ecvToDisplay} total={computeECV(props.equivalent, usage)} />
           <Legend items={ecvToDisplay} />
           {usage ? <DurationSelector duration={usage} setDuration={setUsage} /> : null}
-          <Detail ecv={ecvToDisplay} total={formatTotal(props.equivalent, usage)} />
+          <Detail ecv={ecvToDisplay} total={computeECV(props.equivalent, usage)} />
         </ScreenshotWrapper>
       </SectionWideContent>
     </Section>

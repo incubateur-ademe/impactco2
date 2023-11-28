@@ -14,6 +14,12 @@ export type Equivalent = {
     title: string
     description: string
   }
+  usage?: {
+    peryear: number
+    defaultyears: number
+  }
+  end?: number
+  multiplier?: number
   total?: number
   ecv?: { value: number; id: number; name?: string }[]
   type?: string
