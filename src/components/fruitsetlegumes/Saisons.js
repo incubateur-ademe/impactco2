@@ -1,8 +1,8 @@
 import Fuse from 'fuse.js'
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
+import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
-import { formatTotal } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
@@ -76,7 +76,7 @@ export default function Saisons(props) {
           id: `${equivalent.slug}`,
           title: formatName(equivalent.name, 1, true),
           emoji: equivalent.emoji,
-          value: formatTotal(equivalent),
+          value: computeECV(equivalent),
           season: equivalent.months.includes(props.month.index),
           months: equivalent.months,
           to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
