@@ -9,7 +9,7 @@ import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
 import Bottom from 'components/misc/category/Bottom'
 import Description from 'components/misc/category/Description'
 import Instruction from 'components/misc/category/Instruction'
-import Top from 'components/misc/category/Top'
+import { Top } from 'components/misc/category/Top'
 import List from './saisons/List'
 import Search from './saisons/Search'
 import Wrapper from './saisons/Wrapper'
@@ -90,15 +90,15 @@ export default function Saisons(props) {
                 ? 1
                 : -1
               : sorting.includes('desc')
-              ? -1
-              : 1
+                ? -1
+                : 1
             : a.value > b.value
-            ? sorting.includes('desc')
-              ? -1
-              : 1
-            : sorting.includes('desc')
-            ? 1
-            : -1
+              ? sorting.includes('desc')
+                ? -1
+                : 1
+              : sorting.includes('desc')
+                ? 1
+                : -1
         ),
     [equivalents, categories, props.category, props.month, results, sorting]
   )

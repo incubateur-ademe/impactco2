@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { formatTotal } from 'utils/formatters'
-import { useItinerary } from 'hooks/useItineraries'
+import useItineraries from 'hooks/useItineraries'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Wrapper from 'components/misc/category/Wrapper'
@@ -21,11 +21,10 @@ export default function Teletravail(props) {
   }, [equivalents, teletravailTransportation])
 
   const [distance, setDistance] = useState(0)
-  const types = { car: 'driving', foot: 'walking', rail: 'driving' }
-  const { data: itinerary } = useItinerary(start, end, types[currentTransportation?.type])
+  const itinerary = useItineraries(start, end)
   useEffect(() => {
-    setDistance(itinerary && itinerary[0].elements[0].status === 'OK' && itinerary[0].elements[0].distance.value)
-  }, [itinerary])
+    setDistance(itinerary && itinerary[currentTransportation?.type] * 1000)
+  }, [itinerary, currentTransportation])
 
   const [emitted, setEmitted] = useState(0)
   const [saved, setSaved] = useState(0)

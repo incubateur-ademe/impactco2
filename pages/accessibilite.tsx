@@ -122,8 +122,11 @@ export default function Accessibilite() {
 
             <p>
               L’ADEME invite les personnes qui rencontreraient des difficultés à la contacter par courriel à{' '}
-              <a href='mailto:impactco2@ademe.fr'>impactco2@ademe.fr</a> afin qu’une assistance puisse être apportée
-              (alternative accessible, information et contenu donnés sous une autre forme).
+              <a href={`mailto:${process.env.CONTACT_EMAIL}`} target='_blank' rel='noreferrer noopener'>
+                {process.env.CONTACT_EMAIL}
+              </a>{' '}
+              afin qu’une assistance puisse être apportée (alternative accessible, information et contenu donnés sous
+              une autre forme).
             </p>
 
             <h2 id='défenseur-des-droits'>Défenseur des droits</h2>

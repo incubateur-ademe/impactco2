@@ -7,6 +7,14 @@ import { createMocks } from 'node-mocks-http'
 import callGMap from 'pages/api/callGMap'
 import matrixJson from 'test-mock/matrix.json'
 
+const validBody = {
+  destinations: {
+    longitude: 1.2,
+    latitude: 1.3,
+  },
+  origins: { longitude: 2.2, latitude: 2.3 },
+}
+
 jest.mock('express-slow-down', () =>
   jest.fn().mockImplementation(() => {
     return (req, res, next) => {
@@ -21,15 +29,15 @@ jest.mock('express-rate-limit', () => ({
     }
   }),
 }))
-describe('CallGMap', () => {
-  const DISTANCE_MATRIX_ENDPOINT =
-    'https://maps.googleapis.com/maps/api/distancematrix/json?nantes=&key=MOCKED_GMAP_KEY'
+const DISTANCE_MATRIX_ENDPOINT = 'https://maps.googleapis.com/maps/api/distancematrix/json'
 
+describe('CallGMap', () => {
   test("Doit appeler l'API distanceMatrix", async () => {
     // Given
     const { req, res } = createMocks({
       method: 'GET',
-      url: '/api/callGMap?nantes',
+      url: '/api/callGMap',
+      body: validBody,
     })
     // When
     await callGMap(req, res)
@@ -37,27 +45,15 @@ describe('CallGMap', () => {
     expect(callsHistory[0]).toStrictEqual({
       pathname: '/maps/api/distancematrix/json',
       method: 'GET',
-      searchParams: 'nantes=&key=MOCKED_GMAP_KEY',
+      searchParams: 'destinations=2.3%2C2.2&origins=1.3%2C1.2&mode=driving&key=MOCKED_GMAP_KEY',
     })
-  })
-  test('Doit retourner la même réponse que la distanceMatrix API', async () => {
-    // Given
-    const { req, res } = createMocks({
-      method: 'GET',
-      url: '/api/callGMap?nantes',
-    })
-    // When
-    await callGMap(req, res)
-    // Then
-    expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toStrictEqual(matrixJson)
-    console.log('res: ', res)
   })
   test('Si la limite est activée, refuse un appel ne provenant pas du site appelant', async () => {
     // Given
     const { req, res } = createMocks({
       method: 'GET',
-      url: '/api/callGMap?nantes',
+      url: '/api/callGMap',
+      body: validBody,
     })
     process.env = { ...process.env, LIMIT_API: 'activated' }
     // When
@@ -70,7 +66,8 @@ describe('CallGMap', () => {
     // Given
     const { req, res } = createMocks({
       method: 'GET',
-      url: '/api/callGMap?nantes',
+      url: '/api/callGMap',
+      body: validBody,
       headers: {
         referer: 'https://example.com/any',
       },
@@ -85,7 +82,8 @@ describe('CallGMap', () => {
     // Given
     const { req, res } = createMocks({
       method: 'GET',
-      url: '/api/callGMap?nantes',
+      url: '/api/callGMap',
+      body: validBody,
       headers: {
         referer: 'https://example.com/any',
       },

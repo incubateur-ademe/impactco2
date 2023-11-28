@@ -6,7 +6,7 @@ import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Instruction from 'components/misc/category/Instruction'
-import Top from 'components/misc/category/Top'
+import { Checkboxes, Top } from 'components/misc/category/Top'
 import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 
 const Wrapper = styled.div`
@@ -145,7 +145,7 @@ export default function Detail(props) {
         l’usage de ces derniers.
       </Text>
       <Top className='noscreenshot'>
-        <Top.Checkboxes $visible>
+        <Checkboxes $visible>
           <Checkbox
             name='displayAll'
             checked={displayAll}
@@ -155,7 +155,7 @@ export default function Detail(props) {
             }}>
             Voir tous les appareils
           </Checkbox>
-        </Top.Checkboxes>
+        </Checkboxes>
       </Top>
       <BarChart items={equivalentsOfCategory} max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value} />
       <Instruction />

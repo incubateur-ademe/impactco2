@@ -7,7 +7,7 @@ import BarChart from 'components/charts/BarChart'
 import Bottom from 'components/misc/category/Bottom'
 import CategoryLegend from 'components/misc/category/CategoryLegend'
 import Instruction from 'components/misc/category/Instruction'
-import Top from 'components/misc/category/Top'
+import { Checkboxes, Top } from 'components/misc/category/Top'
 import Wrapper from 'components/misc/category/Wrapper'
 import Search from './Search'
 import TransportContext from './TransportProvider'
@@ -25,7 +25,7 @@ export default function Distance(props) {
           {transportations.length ? (
             <Top className='noscreenshot'>
               <Instruction title={props.category.equivalent} gender={props.category.gender} />
-              <Top.Checkboxes $visible>
+              <Checkboxes $visible>
                 <Checkbox
                   name='displayAll'
                   checked={displayAll}
@@ -50,7 +50,7 @@ export default function Distance(props) {
                   }}>
                   Afficher le covoiturage
                 </Checkbox>
-              </Top.Checkboxes>
+              </Checkboxes>
             </Top>
           ) : null}
           <BarChart items={transportations} max={transportations[transportations.length - 1]?.value} />

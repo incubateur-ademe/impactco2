@@ -1,229 +1,31 @@
 {
-  "features": [
+  "destination_addresses": [
+    "5 Rue Casimir Périer, 75007 Paris, France"
+  ],
+  "origin_addresses": [
+    "56 Rue Auvry, 93300 Aubervilliers, France"
+  ],
+  "rows": [
     {
-      "geometry": {
-        "coordinates": [
-          -1.5541362,
-          47.2186371
-        ],
-        "type": "Point"
-      },
-      "type": "Feature",
-      "properties": {
-        "osm_type": "R",
-        "osm_id": 59874,
-        "extent": [
-          -1.6418115,
-          47.2958583,
-          -1.4788443,
-          47.1805856
-        ],
-        "country": "France",
-        "osm_key": "place",
-        "countrycode": "FR",
-        "osm_value": "city",
-        "postcode": "44000;44100;44200;44300",
-        "name": "Nantes",
-        "county": "Loire-Atlantique",
-        "state": "Pays de la Loire",
-        "type": "city"
-      }
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          2.6497409,
-          46.6092801
-        ],
-        "type": "Point"
-      },
-      "type": "Feature",
-      "properties": {
-        "osm_id": 7411641591,
-        "country": "France",
-        "city": "Meaulne-Vitray",
-        "countrycode": "FR",
-        "postcode": "03360",
-        "county": "Allier",
-        "type": "locality",
-        "osm_type": "N",
-        "osm_key": "place",
-        "district": "Les Aumes",
-        "osm_value": "locality",
-        "name": "Les Nantes",
-        "state": "Auvergne-Rhône-Alpes"
-      }
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          1.654392,
-          46.9532333
-        ],
-        "type": "Point"
-      },
-      "type": "Feature",
-      "properties": {
-        "osm_id": 1996987703,
-        "country": "France",
-        "city": "Levroux",
-        "countrycode": "FR",
-        "postcode": "36110",
-        "county": "Indre",
-        "type": "locality",
-        "osm_type": "N",
-        "osm_key": "place",
-        "district": "Levroux",
-        "osm_value": "locality",
-        "name": "La Pièce de Nantes",
-        "state": "Centre-Val de Loire"
-      }
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          3.4207798,
-          46.1341079
-        ],
-        "type": "Point"
-      },
-      "type": "Feature",
-      "properties": {
-        "osm_id": 33901955,
-        "extent": [
-          3.4191308,
-          46.1341831,
-          3.4230661,
-          46.1340074
-        ],
-        "country": "France",
-        "city": "Vichy",
-        "countrycode": "FR",
-        "postcode": "03200",
-        "county": "Allier",
-        "type": "street",
-        "osm_type": "W",
-        "osm_key": "highway",
-        "osm_value": "residential",
-        "name": "Rue de Nantes",
-        "state": "Auvergne-Rhône-Alpes"
-      }
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          3.1695935,
-          45.7035414
-        ],
-        "type": "Point"
-      },
-      "type": "Feature",
-      "properties": {
-        "osm_id": 294917899,
-        "extent": [
-          3.1694603,
-          45.7036033,
-          3.1697491,
-          45.7034956
-        ],
-        "country": "France",
-        "city": "Orcet",
-        "countrycode": "FR",
-        "postcode": "63670",
-        "county": "Puy-de-Dôme",
-        "type": "street",
-        "osm_type": "W",
-        "osm_key": "highway",
-        "osm_value": "residential",
-        "name": "Impasse du Pont de Nantes",
-        "state": "Auvergne-Rhône-Alpes"
-      }
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          1.6253308,
-          47.3814352
-        ],
-        "type": "Point"
-      },
-      "type": "Feature",
-      "properties": {
-        "osm_type": "N",
-        "osm_id": 10195291913,
-        "country": "France",
-        "osm_key": "place",
-        "city": "Lassay-sur-Croisne",
-        "countrycode": "FR",
-        "osm_value": "hamlet",
-        "postcode": "41230",
-        "name": "Nantes",
-        "county": "Loir-et-Cher",
-        "state": "Centre-Val de Loire",
-        "type": "district"
-      }
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          2.9423597,
-          47.4017629
-        ],
-        "type": "Point"
-      },
-      "type": "Feature",
-      "properties": {
-        "osm_id": 95695339,
-        "extent": [
-          2.9413524,
-          47.4025784,
-          2.9442795,
-          47.4011486
-        ],
-        "country": "France",
-        "city": "Cosne-Cours-sur-Loire",
-        "countrycode": "FR",
-        "postcode": "58200",
-        "county": "Nièvre",
-        "type": "street",
-        "osm_type": "W",
-        "osm_key": "highway",
-        "osm_value": "residential",
-        "name": "Rue du Patis de Nantes",
-        "state": "Bourgogne-Franche-Comté"
-      }
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          0.3392126,
-          46.5903985
-        ],
-        "type": "Point"
-      },
-      "type": "Feature",
-      "properties": {
-        "osm_id": 972131766,
-        "extent": [
-          0.3391166,
-          46.5904599,
-          0.3393115,
-          46.5903262
-        ],
-        "country": "France",
-        "city": "Poitiers",
-        "countrycode": "FR",
-        "postcode": "86000",
-        "locality": "Trois Quartiers",
-        "county": "Vienne",
-        "type": "street",
-        "osm_type": "W",
-        "osm_key": "highway",
-        "osm_value": "primary",
-        "name": "Avenue de Nantes",
-        "state": "Nouvelle-Aquitaine"
-      }
+      "elements": [
+        {
+          "distance": {
+            "text": "11.0 km",
+            "value": 10963
+          },
+          "duration": {
+            "text": "42 mins",
+            "value": 2547
+          },
+          "fare": {
+            "currency": "EUR",
+            "text": "€2.10",
+            "value": 2.1
+          },
+          "status": "OK"
+        }
+      ]
     }
   ],
-  "type": "FeatureCollection"
+  "status": "OK"
 }

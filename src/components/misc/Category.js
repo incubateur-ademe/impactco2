@@ -10,7 +10,7 @@ import CategoryLegend from './category/CategoryLegend'
 import Description from './category/Description'
 import Instruction from './category/Instruction'
 import List from './category/List'
-import Top from './category/Top'
+import { Checkboxes, Top } from './category/Top'
 import Wrapper from './category/Wrapper'
 
 export default function CategoryList(props) {
@@ -48,7 +48,7 @@ export default function CategoryList(props) {
         <Description description={props.category.description} />
         <Top className='noscreenshot'>
           <Instruction title={props.category.equivalent} gender={props.category.gender} />
-          <Top.Checkboxes
+          <Checkboxes
             $visible={
               equivalents
                 .filter((equivalent) => equivalent.category === props.category.id)
@@ -64,7 +64,7 @@ export default function CategoryList(props) {
               Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
               {formatName(props.category.equivalent, 2) || 'équivalents'}
             </Checkbox>
-          </Top.Checkboxes>
+          </Checkboxes>
         </Top>
         {props.category.list ? (
           <List items={equivalentsOfCategory} max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value} />
