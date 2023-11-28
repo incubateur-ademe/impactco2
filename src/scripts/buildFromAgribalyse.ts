@@ -1,16 +1,19 @@
 import axios from 'axios'
 import fs from 'fs'
-import { Equivalent, EquivalentValue } from 'types/equivalent'
 import boissons from '../data/categories/boisson.json'
 import fruitsetlegumes from '../data/categories/fruitsetlegumes.json'
 import ecv from '../data/ecv.json'
+import { BoissonEquivalent, EquivalentValue, FruitsEtLegumesEquivalent } from '../../types/equivalent'
 
 enum AgrybalisePrefixEnum {
   ChangementClimatique = 'Changement_climatique_-_',
   ScoreUniqueEF = 'Score_unique_EF_-_',
 }
 
-const existingEquivalentsByCategory: Record<string, { file: string; values: Equivalent[] }> = {
+const existingEquivalentsByCategory: Record<
+  string,
+  { file: string; values: (BoissonEquivalent | FruitsEtLegumesEquivalent)[] }
+> = {
   boissons: { file: 'boisson.json', values: boissons },
   fruitsetlegumes: { file: 'fruitsetlegumes.json', values: fruitsetlegumes },
 }
@@ -54,9 +57,12 @@ function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) 
   return res
 }
 
-const updateEquivalents = (equivalents: Equivalent[], values: (Record<string, number> & { Code_CIQUAL: number })[]) => {
+const updateEquivalents = (
+  equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
+  values: (Record<string, number> & { Code_CIQUAL: number })[]
+) => {
   return equivalents.map((equivalent) => {
-    if (!equivalent.Code_CIQUAL) {
+    if (!('Code_CIQUAL' in equivalent)) {
       return equivalent
     }
 
@@ -94,7 +100,7 @@ const buildFromAgribalyse = async (key: string) => {
   }
 
   const ciquals = existingEquivalents.values
-    .map((equivalent) => equivalent.Code_CIQUAL)
+    .map((equivalent) => ('Code_CIQUAL' in equivalent ? equivalent.Code_CIQUAL : ''))
     .filter((code) => !!code)
     .join(',')
   const remote_url = encodeURI(
