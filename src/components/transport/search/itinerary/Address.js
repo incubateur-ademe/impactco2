@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: 100%;
 `
 
-const displayAddress = (address) =>
+export const displayAddress = (address) =>
   `${address.properties.name ? address.properties.name + ' ' : ''}${
     address.properties.housenumber ? address.properties.housenumber + ' ' : ''
   }${address.properties.street ? address.properties.street + ', ' : ''}${

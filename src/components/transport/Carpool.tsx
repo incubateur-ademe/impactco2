@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { Dispatch, SetStateAction, useContext } from 'react'
 import styled from 'styled-components'
 import TransportContext from 'components/transport/TransportProvider'
 
@@ -30,8 +30,8 @@ const Number = styled.span`
   min-width: 0.6em;
   text-align: center;
 `
-const Plural = styled.span`
-  opacity: ${(props) => (props.visible ? 1 : 0)};
+const Plural = styled.span<{ $visible: boolean }>`
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
 `
 const ButtonMore = styled.button`
   background: transparent;
@@ -45,8 +45,13 @@ const ButtonMore = styled.button`
 const ButtonLess = styled(ButtonMore)`
   padding: 0.2rem 0.4rem 0.2rem 0.8rem;
 `
+
 export default function Carpool() {
-  const { carpool, setCarpool } = useContext(TransportContext)
+  const { carpool, setCarpool } = useContext<{ carpool: number; setCarpool: Dispatch<SetStateAction<number>> }>(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: TODO
+    TransportContext
+  )
 
   return (
     <>
@@ -60,7 +65,7 @@ export default function Carpool() {
         <Carpoolers>
           <Start>avec </Start>
           <Number>{carpool - 1}</Number> covoitureur
-          <Plural visible={carpool > 2}>s</Plural>
+          <Plural $visible={carpool > 2}>s</Plural>
         </Carpoolers>
         <ButtonMore onClick={() => setCarpool((prevCarpool) => (prevCarpool < 5 ? prevCarpool + 1 : prevCarpool))}>
           +

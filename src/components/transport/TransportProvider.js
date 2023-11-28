@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
+import { searchAddress } from 'hooks/useAddress'
 import FootprintModal from './modals/FootprintModal'
 import OccupancyModal from './modals/OccupancyModal'
 import TeletravailModal from './modals/TeletravailModal'
+import { displayAddress } from './search/itinerary/Address'
 
 const TransportContext = React.createContext({})
 
 export function TransportProvider(props) {
+  const router = useRouter()
+
   const [displayAll, setDisplayAll] = useState(false)
 
   const [carpool, setCarpool] = useState(false)
@@ -26,6 +31,33 @@ export function TransportProvider(props) {
   const [occupancyModal, setOccupancyModal] = useState(false)
   const [teletravailModal, setTeletravailModal] = useState(false)
   const [footprintModal, setFootprintModal] = useState(false)
+
+  useEffect(() => {
+    if (router.query.start) {
+      searchAddress(router.query.start, 1).then((result) => {
+        if (result.length > 0) {
+          const address = result[0]
+          setStart({
+            latitude: address.geometry.coordinates[1],
+            longitude: address.geometry.coordinates[0],
+            address: displayAddress(address),
+          })
+        }
+      })
+    }
+    if (router.query.end) {
+      searchAddress(router.query.end, 1).then((result) => {
+        if (result.length > 0) {
+          const address = result[0]
+          setEnd({
+            latitude: address.geometry.coordinates[1],
+            longitude: address.geometry.coordinates[0],
+            address: displayAddress(address),
+          })
+        }
+      })
+    }
+  }, [router])
 
   return (
     <TransportContext.Provider
