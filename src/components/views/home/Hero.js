@@ -35,8 +35,7 @@ export default function Hero() {
                 <Meeting />
               </MiniCard>
             </div>
-
-            <PictureContainer />
+            <div />
           </Layout>
         </SectionWideContent>
       </Section>
@@ -111,19 +110,6 @@ const Layout = styled.div`
   padding: 6rem 0;
   ${(props) => props.theme.mq.large} {
     padding: 3rem 0;
-  }
-`
-
-const PictureContainer = styled.div`
-  position: relative;
-  ${(props) => props.theme.mq.large} {
-    display: none;
-  }
-  > img {
-    max-width: 100%;
-    position: absolute;
-    right: 0;
-    top: -270px;
   }
 `
 
