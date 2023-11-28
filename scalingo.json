@@ -8,6 +8,9 @@
   "env": {
     "NEXT_PUBLIC_SENTRY_ENVIRONMENT": {
       "value": "REVIEW_APP"
+    },
+    "CANONICAL_HOST_URL": {
+      "generator": "url"
     }
   }
 }
