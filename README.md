@@ -137,3 +137,9 @@ Les utilisateurs qui veulent cette iframe dans leur projet n'ont plus qu'à copi
 ```
 
 Les attributs "data" permettant de paramétrer cette iframe.
+
+## API
+
+Une API du site est actuellement disponible, sa documentation publique est en cours de construction.
+
+Toutefois, pour les développeurs, afin de comprendre son utilisation et les retours attendus, le répertoire `testa` regroupe les tests automatisés concernant l'API uniquement.
