@@ -11,6 +11,11 @@ module.exports = [
       filename: 'iframe.js',
       path: path.resolve(__dirname, 'public'),
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        WEBPACK_SITE_URL: `'${process.env.NEXT_PUBLIC_URL}'`,
+      }),
+    ],
   },
   {
     name: 'if2',

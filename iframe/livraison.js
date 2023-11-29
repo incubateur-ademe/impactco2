@@ -20,6 +20,7 @@ for (var key in iframeAttributes) {
 iframeResize({}, iframe)
 
 const link = document.createElement('div')
+// below : injected WEBPACK_SITE_URL constant from env var, see webpack.config.js
 // eslint-disable-next-line no-undef
 link.innerHTML = `<a href="${WEBPACK_SITE_URL}/livraison" target="_blank">Découvrez l'empreinte carbone de la livraison de colis</a>`
 link.style.cssText = `
