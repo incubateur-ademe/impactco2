@@ -4,6 +4,7 @@ import NumberInput from './components/NumberInput'
 import { Content, Description, Header, QuestionCard, Tag, Title } from './Question.styles'
 
 const Question = ({
+  tracking,
   title,
   description,
   value,
@@ -14,6 +15,7 @@ const Question = ({
   children,
   'data-testid': dataTestId,
 }: {
+  tracking: string
   title: string
   description: ReactNode
   value: number | undefined
@@ -37,7 +39,7 @@ const Question = ({
         </Header>
         <Content>
           <Description>{description}</Description>
-          <NumberInput data-testid={dataTestId} value={value} setValue={setValue} />
+          <NumberInput data-testid={dataTestId} value={value} setValue={setValue} tracking={tracking} />
         </Content>
         {children}
       </QuestionCard>
