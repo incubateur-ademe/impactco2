@@ -15,10 +15,11 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
 
   return (
     <Container $defiMode={defiMode} id='osez-changer'>
-      <Title>{defiMode ? 'Challenge chaussures' : '✨ Challengez votre communauté'}</Title>
+      <Title>{defiMode ? 'Comptez vos chaussures !' : '✨ Challengez votre communauté'}</Title>
       <Image color='var(--primary-40' src='/images/separator.svg' alt='' width={36} height={20} />
       <Description>
-        En moyenne, les Français ont trois fois plus de paires de chaussures qu’ils n’en ont besoin... Et vous ?
+        En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on les aidait à
+        désencombrer les placards ?
       </Description>
       {defiMode ? (
         <>
@@ -45,7 +46,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
             window?.please?.track(['trackEvent', 'OsezChanger', 'Start', 'osez_changer_start'])
             setDefiMode(true)
           }}>
-          Relever le défi
+          Découvrir le défi
         </DefiButton>
       )}
     </Container>
