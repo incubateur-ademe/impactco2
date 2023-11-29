@@ -28,7 +28,7 @@ export default function Itinerary({ category, iframe }: { category: Category; if
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
-        <Wrapper name={category.title || category.name} slug={category.slug}>
+        <Wrapper name={category.title || category.name} slug='transport/itineraire'>
           <Search itineraire iframe={iframe} />
           {itineraries && (
             <>
