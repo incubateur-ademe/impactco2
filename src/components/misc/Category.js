@@ -1,6 +1,7 @@
 import React, { useContext, useMemo, useState } from 'react'
+import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
-import { formatTotal, formatUsage } from 'utils/formatters'
+import { formatUsage } from 'utils/formatters'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
@@ -30,7 +31,7 @@ export default function CategoryList(props) {
           subtitle: displayAll ? formatName(equivalent.subtitle) : null,
           emoji: equivalent.emoji,
           unit: equivalent.unit,
-          value: formatTotal(equivalent),
+          value: computeECV(equivalent),
           usage: formatUsage(equivalent),
           to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
           onClick: () =>

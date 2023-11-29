@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
-import { formatTotal } from 'utils/formatters'
+import { computeECV } from 'utils/computeECV'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import ButtonLink from 'components/base/ButtonLink'
@@ -134,8 +134,8 @@ export default function LiseuseBookComparator() {
           <Result>
             Il faudrait que j'utilise ma liseuse pendant au moins{' '}
             <strong>
-              {Math.ceil(formatTotal(liseuse) / (formatTotal(livre) * numBookPerYear))} an
-              {Math.ceil(formatTotal(liseuse) / (formatTotal(livre) * numBookPerYear)) > 1 ? 's' : ''}
+              {Math.ceil(computeECV(liseuse) / (computeECV(livre) * numBookPerYear))} an
+              {Math.ceil(computeECV(liseuse) / (computeECV(livre) * numBookPerYear)) > 1 ? 's' : ''}
               <br />
             </strong>{' '}
             avant qu'elle émette moins de{' '}

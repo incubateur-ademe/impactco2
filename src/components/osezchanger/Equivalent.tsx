@@ -22,6 +22,7 @@ const Equivalent = ({ value, type }: { value: number; type: Types }) => {
   }
 
   const co2 = computeECV(equivalent)
+
   return (
     <Card data-testid={`defi-equivalent-${type}`} $withShadow={!!value}>
       <Emoji height='24px'>{equivalent.emoji}</Emoji>

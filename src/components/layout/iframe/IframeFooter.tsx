@@ -25,21 +25,23 @@ const StyledMagicLink = styled(MagicLink)`
 const Logos = styled.div`
   align-items: center;
   display: flex;
+  gap: 32px;
   justify-content: center;
   text-decoration: none;
   overflow: hidden ${(props) => props.theme.mq.small} {
-    font-size: ${(props) => (props.iframe ? 0.75 : 1)}rem;
+    font-size: 0.75rem;
     padding: 0 0.25rem;
   }
 `
 
 export default function IframeFooter() {
   const window = useWindow()
+  // @ts-expect-error: TODO
   let actualSrc = window?.location.href.split('iframes')[1] || ''
   if (actualSrc.indexOf('livraison') > 0) {
     actualSrc = '/livraison'
   }
-  let fullUrl = buildCurrentUrlFor(process?.env?.websiteurl, actualSrc)
+  const fullUrl = buildCurrentUrlFor(process?.env?.websiteurl, actualSrc)
   return (
     <Wrapper>
       <StyledMagicLink to={fullUrl}>

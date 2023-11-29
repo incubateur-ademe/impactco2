@@ -11,7 +11,6 @@ export const computeECV = (equivalent: Equivalent, yearsOfUsage?: number) => {
   if ('usage' in equivalent) {
     total += (yearsOfUsage || equivalent.usage.defaultyears) * equivalent.usage.peryear
   }
-
   if ('end' in equivalent) {
     total += equivalent.end
   }
