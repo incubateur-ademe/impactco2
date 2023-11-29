@@ -2,7 +2,12 @@ import { useQuery } from '@tanstack/react-query'
 import axiosClient from 'utils/axios'
 
 export const searchAddress = (search: string, limit?: number) =>
-  axiosClient.get(`/api/callGMapSearch?${search}${limit ? `&limit=${limit}` : ''}`).then((res) => res.data.features)
+  axiosClient
+    .post('/api/search', {
+      search,
+      limit,
+    })
+    .then((res) => res.data.features)
 
 export function useSuggestions(search: string, focus: boolean) {
   return useQuery({
