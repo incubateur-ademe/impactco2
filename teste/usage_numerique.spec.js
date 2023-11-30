@@ -50,14 +50,15 @@ const slugify = (str) =>
     .replace(/^-+|-+$/g, '')
 
 function getValidObject(obj) {
+  let res = null
   let localObj = JSON.parse(JSON.stringify(obj))
   if (localObj && localObj.path) {
     localObj.path = localObj.path.replaceAll('_N_E/', '')
     localObj.path = localObj.path.split('?')[0]
-    if (localObj.path.indexOf('impactco2/src') > 0) {
+    if (localObj.path.indexOf('impactco2/src') > 0 || localObj.path.indexOf('impactco2/pages') > 0) {
       console.log('ok for ' + localObj.path)
+      res = localObj
     }
-    return localObj
   }
-  return null
+  return res
 }
