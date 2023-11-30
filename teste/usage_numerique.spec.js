@@ -57,7 +57,8 @@ function getValidObject(obj) {
     localObj.path = localObj.path.split('?')[0]
     if (localObj.path.indexOf('impactco2/src') > 0 || localObj.path.indexOf('impactco2/pages') > 0) {
       console.log('ok for ' + localObj.path)
-      res = localObj
+      res = {}
+      res[localObj.path] = localObj
     }
   }
   return res
