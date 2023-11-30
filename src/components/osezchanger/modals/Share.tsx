@@ -15,25 +15,25 @@ const Share = () => {
         <FacebookShareButton
           url={url}
           title='Partager sur facebook'
-          onClick={() => window?.please?.track(['trackEvent', 'Share', 'Facebook', 'osez_changer_facebook'])}>
+          onClick={() => window.please?.track(['trackEvent', 'Share', 'Facebook', 'osez_changer_facebook'])}>
           <Icon iconId='facebook' />
         </FacebookShareButton>
         <TwitterShareButton
           url={url}
           title='Partager sur twitter'
-          onClick={() => window?.please?.track(['trackEvent', 'Share', 'Twitter', 'osez_changer_twitter'])}>
+          onClick={() => window.please?.track(['trackEvent', 'Share', 'Twitter', 'osez_changer_twitter'])}>
           <Icon iconId='twitter' />
         </TwitterShareButton>
         <WhatsappShareButton
           url={url}
           title='Partager sur whatsapp'
-          onClick={() => window?.please?.track(['trackEvent', 'Share', 'Whatsapp', 'osez_changer_whatsapp'])}>
+          onClick={() => window.please?.track(['trackEvent', 'Share', 'Whatsapp', 'osez_changer_whatsapp'])}>
           <Icon iconId='whatsapp' />
         </WhatsappShareButton>
         <LinkedinShareButton
           url={url}
           title='Partager sur linkedin'
-          onClick={() => window?.please?.track(['trackEvent', 'Share', 'Linkedin', 'osez_changer_linkedin'])}>
+          onClick={() => window.please?.track(['trackEvent', 'Share', 'Linkedin', 'osez_changer_linkedin'])}>
           <Icon iconId='linkedin' />
         </LinkedinShareButton>
       </Buttons>

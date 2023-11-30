@@ -16,6 +16,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
   return (
     <div>
       <Question
+        tracking='avis'
         data-testid='question-avis'
         title='🧠 À votre avis...'
         description={
@@ -27,6 +28,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         setValue={setThinkingValue}
       />
       <Question
+        tracking='penderie'
         data-testid='question-vraie'
         title='👉 Dans ma penderie'
         description={
@@ -45,9 +47,13 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         }
       />
       <Question
+        tracking='neuf'
         data-testid='question-neuf'
         title='✨ Vos achats de neuf'
-        source={() => setModal('hypothesis')}
+        source={() => {
+          window.please?.track(['trackEvent', 'OsezChanger', 'Hypotheses', 'osez_changer_hypotheses'])
+          setModal('hypothesis')
+        }}
         description={
           <>
             Combien de paires de <b>chaussures neuves</b> avez-vous acheté cette année ?

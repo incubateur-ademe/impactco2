@@ -6,7 +6,7 @@ import NumberInput from 'components/osezchanger/components/NumberInput'
 
 const Wrapper = () => {
   const [value, setValue] = useState<number | undefined>()
-  return <NumberInput value={value} setValue={setValue} data-testid='question' />
+  return <NumberInput value={value} setValue={setValue} data-testid='question' tracking='nop' />
 }
 
 describe('Number Input', () => {
