@@ -18,8 +18,9 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
       <Title>{defiMode ? 'Comptez vos chaussures !' : '✨ Challengez votre communauté'}</Title>
       <Image color='var(--primary-40' src='/images/separator.svg' alt='' width={36} height={20} />
       <Description>
-        En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on les aidait à
-        désencombrer les placards ?
+        {defiMode
+          ? 'En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on désencombrait les placards ?'
+          : 'En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on les aidait à désencombrer les placards ?'}
       </Description>
       {defiMode ? (
         <>
