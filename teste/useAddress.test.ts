@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test'
 import { searchAddress } from 'hooks/useAddress'
 
+// On se permet de tester directement l'api Photomon parceque ce n'est pas tres bien documenté
+// On test donc les use cases en entier
 test('search for an adress', async () => {
   const result = await searchAddress('6 rue du chemin vert')
 
