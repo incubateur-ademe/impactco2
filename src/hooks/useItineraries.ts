@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
 import { CallGMapDistances } from 'pages/api/callGMap'
+import axiosClient from 'utils/axios'
 
 export type Point = {
   latitude: number
@@ -11,7 +11,7 @@ export default function useItineraries(start: Point, end: Point) {
   const { data } = useQuery({
     queryKey: [start, end],
     queryFn: () =>
-      axios
+      axiosClient
         .post<CallGMapDistances>('/api/callGMap', {
           destinations: start,
           origins: end,

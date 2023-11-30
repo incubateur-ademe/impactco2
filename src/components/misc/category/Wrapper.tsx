@@ -47,7 +47,7 @@ export default function Wrapper({ slug, name, children }: { slug: string; name: 
               takeScreenshot={takeScreenshot}
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
-              slug={`${slug}`}
+              slug={slug}
             />
             <Title
               dangerouslySetInnerHTML={{
