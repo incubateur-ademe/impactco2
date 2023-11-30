@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import configurePlaywrightCoverage from 'test-utils/before-each-e2e'
+import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 
 configurePlaywrightCoverage(test)
 test.beforeEach(async ({ page }) => {
