@@ -2,27 +2,29 @@ import fs from 'fs'
 import v8toIstanbul from 'v8-to-istanbul'
 
 export default function configurePlaywrightCoverage(test) {
-  test.beforeEach(async ({ page }) => {
-    await page.coverage.startJSCoverage()
-  })
-  test.afterEach(async ({ page }, testInfo) => {
-    const coverage = await page.coverage.stopJSCoverage()
-    let finalCovObj = {}
-    for (const entry of coverage) {
-      const converter = v8toIstanbul('', 0, { source: entry.source })
-      await converter.load()
-      converter.applyCoverage(entry.functions)
-      const jsonCovered = converter.toIstanbul()
-      const validObject = getValidObject(Object.values(jsonCovered)[0])
-      if (validObject) {
-        finalCovObj = { ...finalCovObj, ...validObject }
+  if (process.env.COVERAGE) {
+    test.beforeEach(async ({ page }) => {
+      await page.coverage.startJSCoverage()
+    })
+    test.afterEach(async ({ page }, testInfo) => {
+      const coverage = await page.coverage.stopJSCoverage()
+      let finalCovObj = {}
+      for (const entry of coverage) {
+        const converter = v8toIstanbul('', 0, { source: entry.source })
+        await converter.load()
+        converter.applyCoverage(entry.functions)
+        const jsonCovered = converter.toIstanbul()
+        const validObject = getValidObject(Object.values(jsonCovered)[0])
+        if (validObject) {
+          finalCovObj = { ...finalCovObj, ...validObject }
+        }
       }
-    }
-    if (!fs.existsSync('coverage')) {
-      fs.mkdirSync('coverage')
-    }
-    fs.writeFileSync(`coverage/coverage-${slugify(testInfo.title)}.json`, JSON.stringify(finalCovObj, null, 1))
-  })
+      if (!fs.existsSync('coverage')) {
+        fs.mkdirSync('coverage')
+      }
+      fs.writeFileSync(`coverage/coverage-${slugify(testInfo.title)}.json`, JSON.stringify(finalCovObj, null, 1))
+    })
+  }
 }
 
 const slugify = (str) =>
@@ -40,7 +42,6 @@ function getValidObject(obj) {
     localObj.path = localObj.path.replaceAll('_N_E/', '')
     localObj.path = localObj.path.split('?')[0]
     if (localObj.path.indexOf('impactco2/src') > 0 || localObj.path.indexOf('impactco2/pages') > 0) {
-      console.log('ok for ' + localObj.path)
       res = {}
       res[localObj.path] = localObj
     }
