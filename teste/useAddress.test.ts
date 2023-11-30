@@ -2,23 +2,23 @@ import { expect, test } from '@playwright/test'
 import { searchAddress } from 'hooks/useAddress'
 
 // On se permet de tester directement l'api Photomon parceque ce n'est pas tres bien documenté
-// On test donc les use cases en entier
+// On teste donc les use cases en entier
 test('search for an adress', async () => {
   const result = await searchAddress('6 rue du chemin vert')
 
-  expect(result.length).toEqual(15)
-  expect(result[0].geometry.coordinates).toEqual([3.1162161, 49.5861023])
+  expect(result.length).toEqual(14)
+  expect(result[0].geometry.coordinates).toEqual([2.9573404, 49.1788636])
   expect(result[0].properties).toEqual({
-    extent: [3.11406, 49.5872215, 3.1183041, 49.5845896],
+    extent: [2.957282, 49.18005, 2.9573441, 49.17808],
     type: 'street',
     osm_type: 'W',
     osm_key: 'highway',
     name: 'Rue du Chemin Vert',
-    osm_value: 'track',
-    postcode: '60400',
+    osm_value: 'residential',
+    postcode: '60620',
     state: 'Hauts-de-France',
-    osm_id: 40880992,
-    city: 'Appilly',
+    osm_id: 108860210,
+    city: 'Bargny',
     country: 'France',
     countrycode: 'FR',
     county: 'Oise',
@@ -77,17 +77,17 @@ test('return french results first', async () => {
 
   expect(result.length).toEqual(15)
   expect(result[0].properties).toEqual({
-    extent: [2.0097893, 43.9648686, 2.0524487, 43.9414185],
+    extent: [0.1505383, 46.0758734, 0.1874942, 46.0327634],
     osm_key: 'place',
     osm_type: 'R',
     type: 'city',
     country: 'France',
     countrycode: 'FR',
     osm_value: 'village',
-    postcode: '81150',
-    state: 'Occitanie',
+    postcode: '16700',
+    state: 'Nouvelle-Aquitaine',
     name: 'Bernac',
-    osm_id: 135610,
-    county: 'Tarn',
+    osm_id: 254307,
+    county: 'Charente',
   })
 })
