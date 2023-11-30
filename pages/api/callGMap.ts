@@ -2,6 +2,7 @@ import axios from 'axios'
 import { ValueDeterminingMiddleware, rateLimit } from 'express-rate-limit'
 import slowDown from 'express-slow-down'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { DeplacementType } from 'types/equivalent'
 import { ZodError, z } from 'zod'
 import { trackAPIRequest } from 'utils/middleware'
 
@@ -28,12 +29,7 @@ export const GMapValidation = z.object({
   }),
 })
 
-export type CallGMapDistances = {
-  car: number
-  foot: number
-  rail: number
-  plane: number
-}
+export type CallGMapDistances = Record<DeplacementType, number>
 
 // Largement inspiré de https://kittygiraudel.com/2022/05/16/rate-limit-nextjs-api-routes/
 const getIP: ValueDeterminingMiddleware<string> = (request) =>
