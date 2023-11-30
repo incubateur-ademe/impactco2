@@ -4,7 +4,6 @@ import v8toIstanbul from 'v8-to-istanbul'
 export default function configurePlaywrightCoverage(test) {
   test.beforeEach(async ({ page }) => {
     await page.coverage.startJSCoverage()
-    await page.goto('/usagenumerique')
   })
   test.afterEach(async ({ page }, testInfo) => {
     const coverage = await page.coverage.stopJSCoverage()
