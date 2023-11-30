@@ -7,8 +7,8 @@ const script =
   document.getElementById('datagir-teletravail') ||
   document.getElementById('ecolab-transport') ||
   document.getElementById('datagir-mon-convertisseur-co2') ||
-  document.getElementById('datagir-impact-co2')
-document.getElementById('impact-co2')
+  document.getElementById('datagir-impact-co2') ||
+  document.getElementById('impact-co2')
 
 const type = script.dataset.type
   ? script.dataset.type
