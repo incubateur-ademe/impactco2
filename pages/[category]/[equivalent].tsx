@@ -1,4 +1,6 @@
 import React from 'react'
+import { Category } from 'types/category'
+import { Equivalent as EquivalentType } from 'types/equivalent'
 import categories from 'data/categories.json'
 import boisson from 'data/categories/boisson.json'
 import chauffage from 'data/categories/chauffage.json'
@@ -17,7 +19,7 @@ import Ecv from 'components/views/equivalent/Ecv'
 import Text from 'components/views/equivalent/Text'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
-const equivalents = [
+const equivalents: EquivalentType[] = [
   ...boisson,
   ...deplacement,
   ...electromenager,
@@ -31,20 +33,20 @@ const equivalents = [
   ...divers,
 ].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
 
-export default function Equivalent(props) {
+export default function Equivalent({ category, equivalent }: { category: Category; equivalent: EquivalentType }) {
   return (
     <Web
-      title={props.equivalent.meta.title}
-      description={props.equivalent.meta.description}
+      title={equivalent.meta.title}
+      description={equivalent.meta.description}
       breadcrumb={{
         type: 'equivalent',
-        category: props.category,
-        equivalent: props.equivalent,
+        category: category,
+        equivalent: equivalent,
       }}>
-      <Details equivalent={props.equivalent} category={props.category} />
-      <VisualizationSlider equivalent={props.equivalent} />
-      <Ecv equivalent={props.equivalent} />
-      <Text equivalent={props.equivalent} />
+      <Details equivalent={equivalent} category={category} />
+      <VisualizationSlider equivalent={equivalent} />
+      <Ecv equivalent={equivalent} />
+      <Text equivalent={equivalent} />
     </Web>
   )
 }
@@ -57,16 +59,21 @@ export async function getStaticPaths() {
           !['email', 'visioconference', 'audioconference', 'rechercheweb', 'streamingvideo'].includes(equivalent.slug)
       )
       .map((equivalent) => ({
+        equivalent: equivalent,
+        category: categories.find((category) => category.id === equivalent.category),
+      }))
+      .filter((params) => params.equivalent && params.category)
+      .map((params) => ({
         params: {
-          equivalent: equivalent.slug,
-          category: categories.find((category) => category.id === equivalent.category).slug,
+          equivalent: params.equivalent.slug,
+          category: params.category?.slug,
         },
       })),
     fallback: 'blocking',
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { category: string; equivalent: string } }) {
   const category = categories?.find((category) => category.slug === params.category)
   if (!category) {
     return { notFound: true }

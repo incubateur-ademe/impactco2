@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import DataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
@@ -11,7 +12,7 @@ const HypotesisCard = ({ slug }: { slug: string }) => {
     return null
   }
 
-  const ecv = values.ecv?.reduce((sum, { value }) => sum + value, 0) || 0
+  const ecv = computeECV(values)
   return (
     <Card href={`/habillement/${slug}`} target='_blank' rel='noreferrer noopener'>
       <Emoji height='40px'>{values.emoji}</Emoji>

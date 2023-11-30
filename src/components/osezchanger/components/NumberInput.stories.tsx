@@ -11,7 +11,7 @@ type Story = StoryObj<typeof NumberInput>
 
 const Template = () => {
   const [value, setValue] = useState<number | undefined>()
-  return <NumberInput value={value} setValue={setValue} />
+  return <NumberInput value={value} setValue={setValue} tracking='nop' />
 }
 
 const render = () => <Template />

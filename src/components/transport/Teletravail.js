@@ -49,7 +49,7 @@ export default function Teletravail(props) {
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
-        <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
+        <Wrapper name={props.category.title} slug='transport/teletravail'>
           <Search teletravail iframe={props.iframe} />
           {distance && currentTransportation ? (
             <YearlyFootprint emitted={emitted} saved={saved} presentiel={presentiel} teletravail={teletravail} />

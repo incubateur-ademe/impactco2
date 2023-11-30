@@ -4,6 +4,18 @@ import { renderWithModal } from 'test-utils/render-with-modal'
 import Bottom from 'components/misc/category/Bottom'
 
 describe('Bottom - Texte et bouton affichés en bas de chaque thématique', () => {
+  // See https://webtips.dev/how-to-mock-processenv-in-jest
+  const env = process.env
+
+  beforeEach(() => {
+    jest.resetModules()
+    process.env = { ...env, NEXT_PUBLIC_URL: 'https://example.com' }
+  })
+
+  afterEach(() => {
+    process.env = env
+  })
+
   test('Affiche un texte et un bouton par défaut', async () => {
     // When
     renderWithModal(<Bottom category={{ divider: 1 }} />)
@@ -35,11 +47,11 @@ describe('Bottom - Texte et bouton affichés en bas de chaque thématique', () =
     // Then
     expect(await actionButton(screen)).toHaveAttribute('href', '/thematiques')
   })
-  test('Le bouton redirige bien vers https://impactco2.fr/thematiques si la propriété iframe est présente', async () => {
+  test('Le bouton redirige bien vers https://example.com/thematiques si la propriété iframe est présente', async () => {
     // When
     renderWithModal(<Bottom category={{ divider: 1 }} iframe />)
     // Then
-    expect(await actionButton(screen)).toHaveAttribute('href', 'https://impactco2.fr/thematiques')
+    expect(await actionButton(screen)).toHaveAttribute('href', 'https://example.com/thematiques')
   })
 })
 

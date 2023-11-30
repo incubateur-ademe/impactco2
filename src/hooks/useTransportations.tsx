@@ -1,5 +1,5 @@
 import { useContext, useMemo } from 'react'
-import { Equivalent } from 'types/equivalent'
+import { DeplacementEquivalent, DeplacementType } from 'types/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import { formatNumber, formatUsage } from 'utils/formatters'
@@ -7,7 +7,7 @@ import DataContext from 'components/providers/DataProvider'
 import Carpool from 'components/transport/Carpool'
 import TransportContext from 'components/transport/TransportProvider'
 
-const filterByDistance = (equivalent: Equivalent, value: number) => {
+const filterByDistance = (equivalent: DeplacementEquivalent, value: number) => {
   if (!equivalent.display || (!equivalent.display.min && !equivalent.display.max)) {
     return true
   }
@@ -24,7 +24,7 @@ const filterByDistance = (equivalent: Equivalent, value: number) => {
 }
 
 // C'est un peu austère, déso
-export default function useTransportations(itineraries: Record<string, number> | undefined) {
+export default function useTransportations(itineraries: Record<DeplacementType, number> | undefined) {
   const { equivalents, categories } = useContext(DataContext)
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -36,18 +36,24 @@ export default function useTransportations(itineraries: Record<string, number> |
       itineraries || km
         ? equivalents
             .filter((equivalent) => equivalent.category === 4)
-            .filter((equivalent) => (itineraries && equivalent.type ? itineraries[equivalent.type] : km))
+            .map((equivalent) => equivalent as DeplacementEquivalent)
+            .filter((equivalent) =>
+              itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+            )
             .filter((equivalent) => equivalent.default || displayAll)
             .reduce(
               (acc, cur) =>
                 cur.carpool ? [...acc, cur, { ...cur, id: cur.slug + '_nocarpool', carpool: false }] : [...acc, cur],
-              [] as Equivalent[]
+              [] as DeplacementEquivalent[]
             )
             .filter((equivalent) => carpool || !equivalent.carpool)
             .filter(
               (equivalent) =>
                 displayAll ||
-                filterByDistance(equivalent, itineraries && equivalent.type ? itineraries[equivalent.type] : km)
+                filterByDistance(
+                  equivalent,
+                  itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                )
             )
             .map((equivalent) => ({
               id: `${equivalent.id || equivalent.slug}`,
@@ -55,22 +61,28 @@ export default function useTransportations(itineraries: Record<string, number> |
               subtitle: formatName(
                 equivalent?.ecvs
                   ? `(${equivalent?.ecvs?.find(
-                      (ecv) => ecv.max > (itineraries && equivalent.type ? itineraries[equivalent.type] : km)
+                      (ecv) =>
+                        ecv.max >
+                        (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)
                     )?.subtitle})`
                   : ((displayAll || equivalent.name === 'Voiture') && equivalent.subtitle
                       ? `(${equivalent.subtitle})`
                       : '') +
                       (itineraries
-                        ? ` - ${formatNumber(itineraries && equivalent.type ? itineraries[equivalent.type] : km)} km`
+                        ? ` - ${formatNumber(
+                            itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                          )} km`
                         : '')
               ),
               emoji: equivalent.emoji,
               secondEmoji: equivalent.secondEmoji,
               value:
-                (computeECV(equivalent) * (itineraries && equivalent.type ? itineraries[equivalent.type] : km)) /
+                (computeECV(equivalent) *
+                  (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
                 (equivalent.carpool && carpool ? carpool : 1),
               usage:
-                (formatUsage(equivalent) * (itineraries && equivalent.type ? itineraries[equivalent.type] : km)) /
+                (formatUsage(equivalent) *
+                  (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
                 (equivalent.carpool && carpool ? carpool : 1),
               component: equivalent.carpool && <Carpool />,
               to: `/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,

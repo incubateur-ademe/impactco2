@@ -209,7 +209,7 @@ export default function Tile(props) {
         !props.equivalentPage && (
           <Button.Wrapper>
             <StyledButton
-              to={`${iframe ? 'https://impactco2.fr' : ''}/${
+              to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/${
                 categories.find((category) => category.id === props.equivalent.category)?.slug
               }/${props.equivalent.slug}`}>
               Voir le détail

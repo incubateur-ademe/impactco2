@@ -44,7 +44,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
       ) : (
         <DefiButton
           onClick={() => {
-            window?.please?.track(['trackEvent', 'OsezChanger', 'Start', 'osez_changer_start'])
+            window.please?.track(['trackEvent', 'OsezChanger', 'Start', 'osez_changer_start'])
             setDefiMode(true)
           }}>
           Découvrir le défi
