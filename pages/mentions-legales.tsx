@@ -23,7 +23,7 @@ export default function MetionsLegales() {
             <h2>Informations légales</h2>
             <p>
               Impact CO2&nbsp;
-              <Link href='/'>(https://impactco2.fr)</Link> est un service créé par&nbsp;
+              <Link href='/'>({process.env.NEXT_PUBLIC_URL})</Link> est un service créé par&nbsp;
               <a href='https://www.ademe.fr/' target='_blank' rel='noreferrer noopener'>
                 l’ADEME
               </a>

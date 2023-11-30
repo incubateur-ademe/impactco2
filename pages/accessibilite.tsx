@@ -53,9 +53,10 @@ export default function Accessibilite() {
             </ul>
 
             <p>
-              La présente déclaration d’accessibilité s’applique au site impactCO2 (https://impactco2.fr) dont toute
-              l’équipe de conception et de développement est impliquée dans une approche globale de l’accessibilité en
-              attendant l’accompagnement par des experts tiers dans le cadre d’un futur audit du site.
+              La présente déclaration d’accessibilité s’applique au site impactCO2 ({process.env.NEXT_PUBLIC_URL}) dont
+              toute l’équipe de conception et de développement est impliquée dans une approche globale de
+              l’accessibilité en attendant l’accompagnement par des experts tiers dans le cadre d’un futur audit du
+              site.
             </p>
 
             <h2 id='état-de-conformité'>État de conformité</h2>

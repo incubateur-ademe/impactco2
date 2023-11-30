@@ -18,18 +18,18 @@ describe('Seo', () => {
   // See https://webtips.dev/how-to-mock-processenv-in-jest
   const env = process.env
 
-  const default_description =
-    "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME."
-  const default_title = 'Impact sur le climat des objets et gestes | Impact CO2'
-
   beforeEach(() => {
     jest.resetModules()
-    process.env = { ...env, websiteurl: 'example.com' }
+    process.env = { ...env, NEXT_PUBLIC_URL: 'https://example.com' }
   })
 
   afterEach(() => {
     process.env = env
   })
+
+  const default_description =
+    "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME."
+  const default_title = 'Impact sur le climat des objets et gestes | Impact CO2'
 
   it('La balise title a bien la valeur par défaut', () => {
     render(<Seo />)
@@ -38,11 +38,6 @@ describe('Seo', () => {
   it('La meta image est /metaimage.png par défaut', () => {
     const { container } = render(<Seo />)
     expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('https://example.com/metaimage.png')
-  })
-  it('En local, je peux lire la meta-image, sans le "s" de "https"', () => {
-    process.env = { ...env, websiteurl: 'localhost:3000' }
-    const { container } = render(<Seo />)
-    expect(container.querySelectorAll('meta[name=image]')[0].content).toBe('http://localhost:3000/metaimage.png')
   })
   it('La meta description est "sensibilisez..." par défaut', () => {
     const { container } = render(<Seo />)

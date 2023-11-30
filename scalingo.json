@@ -8,6 +8,9 @@
   "env": {
     "NEXT_PUBLIC_SENTRY_ENVIRONMENT": {
       "value": "REVIEW_APP"
+    },
+    "NEXT_PUBLIC_URL": {
+      "generator": "url"
     }
   }
 }

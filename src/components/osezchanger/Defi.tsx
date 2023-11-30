@@ -30,7 +30,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
       <Question
         tracking='penderie'
         data-testid='question-vraie'
-        title='👉 Dans ma penderie'
+        title='👉 Dans vos placards'
         description={
           <>
             Combien de chaussures <b>possédez-vous réellement ?</b>
@@ -49,7 +49,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
       <Question
         tracking='neuf'
         data-testid='question-neuf'
-        title='✨ Vos achats de neuf'
+        title='✨ Vos achats récents'
         source={() => {
           window.please?.track(['trackEvent', 'OsezChanger', 'Hypotheses', 'osez_changer_hypotheses'])
           setModal('hypothesis')

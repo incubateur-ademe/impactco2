@@ -17,7 +17,7 @@
   },
   {
     "id": 20683,
-    "name": "Repas végétarien",
+    "name": "Repas végétarien[s]",
     "synonyms": ["manger", "alimenter"],
     "slug": "repasvegetarien",
     "emoji": "🥗",
@@ -33,7 +33,7 @@
   },
   {
     "id": 20684,
-    "name": "Repas végétalien",
+    "name": "Repas végétalien[s]",
     "synonyms": ["manger", "alimenter"],
     "slug": "repasvegetalien",
     "emoji": "🍎",

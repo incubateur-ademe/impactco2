@@ -11,8 +11,8 @@ export default function Seo(props) {
     description:
       props.description ||
       `Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME.`,
-    image: `${buildCurrentUrlFor(process?.env?.websiteurl, '/' + (props.image || 'metaimage.png'))}`,
-    url: `${buildCurrentUrlFor(process?.env?.websiteurl, router.asPath)}`,
+    image: `${buildCurrentUrlFor(props.image || 'metaimage.png')}`,
+    url: `${buildCurrentUrlFor(router.asPath)}`,
   }
 
   return (

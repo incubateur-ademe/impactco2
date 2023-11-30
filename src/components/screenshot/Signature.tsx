@@ -17,7 +17,7 @@ export default function Signature({ noMargin, noLink }: { noMargin?: boolean; no
       </div>
       <div>
         {!noLink && (
-          <MagicLink to='https://impactco2.fr' noIcon>
+          <MagicLink to={process.env.NEXT_PUBLIC_URL} noIcon>
             impactco2.fr
           </MagicLink>
         )}
