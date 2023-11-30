@@ -1,13 +1,27 @@
 import { useQuery } from '@tanstack/react-query'
-import axiosClient from 'utils/axios'
+import axios from 'axios'
+import { Address } from 'types/address'
+
+const layers = ['city', 'street', 'house']
 
 export const searchAddress = (search: string, limit?: number) =>
-  axiosClient
-    .post('/api/search', {
-      search,
-      limit,
+  axios
+    .get<{ features: Address[] }>(
+      `https://photon.komoot.io/api/?q=${search}${limit ? `&limit=${limit}` : ''}&${layers
+        .map((layer) => `layer=${layer}`)
+        .join('&')}&lang=fr`
+    )
+    .then((res) => {
+      return res.data.features.sort((a, b) => {
+        if (a.properties.country === 'France' && b.properties.country !== 'France') {
+          return -1
+        }
+        if (a.properties.country !== 'France' && b.properties.country === 'France') {
+          return 1
+        }
+        return 0
+      })
     })
-    .then((res) => res.data.features)
 
 export function useSuggestions(search: string, focus: boolean) {
   return useQuery({

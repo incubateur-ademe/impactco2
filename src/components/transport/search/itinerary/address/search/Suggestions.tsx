@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { Address } from 'types/address'
 
 const displayAddress = (address: Address) => {
-  console.log(address)
   // an address can have multiple postcode, display the first
   const postcode = (address.properties.postcode || '').split(';')
   const { name, housenumber, street, city, country } = address.properties
@@ -76,20 +75,27 @@ const Suggestions = ({
 
   return (
     <Wrapper>
-      {results.map((result, index) => {
-        return (
-          index < maxSuggestions && (
-            <Suggestion
-              $current={index === current}
-              $isFetching={isFetching}
-              key={result.properties.osm_id}
-              onClick={() => handleSuggestionClick(result)}
-              onMouseDown={(e) => e.preventDefault()}>
-              <Highlighter searchWords={search.split(' ')} autoEscape={true} textToHighlight={displayAddress(result)} />
-            </Suggestion>
+      {results
+        .map((result) => ({ ...result, display: displayAddress(result) }))
+        .filter((result, index, array) => array.findIndex((adress) => adress.display === result.display) === index)
+        .map((result, index) => {
+          return (
+            index < maxSuggestions && (
+              <Suggestion
+                $current={index === current}
+                $isFetching={isFetching}
+                key={result.properties.osm_id}
+                onClick={() => handleSuggestionClick(result)}
+                onMouseDown={(e) => e.preventDefault()}>
+                <Highlighter
+                  searchWords={search.split(' ')}
+                  autoEscape={true}
+                  textToHighlight={displayAddress(result)}
+                />
+              </Suggestion>
+            )
           )
-        )
-      })}
+        })}
     </Wrapper>
   )
 }
