@@ -92,18 +92,15 @@ export default function Learning({ category }: { category: Category }) {
 
       habillement: (
         <>
-          <h2>Quel est l’impact sur le climat d'un vêtement&nbsp;?</h2>
+          <h2>Comment est calculé l’impact carbone des vêtements ?</h2>
           <p>
-            L’impact carbone d’ un habit comprenant la fabrication, la distribution et l’usage, peut aller de
-            6&thinsp;kg d’émissions de{' '}
+            Pour calculer l’impact carbone, on prend en compte les émissions de{' '}
             <ButtonLink onClick={() => setCo2e(true)}>
               CO<sub>2</sub>e
             </ButtonLink>{' '}
-            pour un t-shirt en polyester, jusqu’à 99&thinsp;kg d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)}>
-              CO<sub>2</sub>e
-            </ButtonLink>{' '}
-            pour un manteau.
+            à toutes les étapes de la vie du vêtement : depuis la production de matières premières (coton, laine,
+            polyester…), en passant par sa fabrication, sa distribution dans des magasins ou en ligne, son utilisation
+            et son entretien (lavage, séchage en machine).
           </p>
         </>
       ),
