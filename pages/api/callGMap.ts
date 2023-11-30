@@ -79,7 +79,7 @@ export default async function handler(
   }
 
   const queryString = `destinations=${inputs.data.origins.latitude}%2C${inputs.data.origins.longitude}&origins=${inputs.data.destinations.latitude}%2C${inputs.data.destinations.longitude}`
-  await trackAPIRequest(req, 'callGMap', `${queryString}`)
+  await trackAPIRequest(req, 'callGMap', queryString)
 
   const R = 6371e3 // metres
   const φ1 = (inputs.data.origins.latitude * Math.PI) / 180 // φ, λ in radians
