@@ -3,8 +3,7 @@ import { iframeResize } from 'iframe-resizer'
 const script = document.getElementById('impact-livraison')
 // below : injected WEBPACK_SITE_URL constant from env var, see webpack.config.js
 // eslint-disable-next-line no-undef
-const src = `https://${WEBPACK_SITE_URL}/iframes/livraison/simulation`
-
+const src = `${WEBPACK_SITE_URL}/iframes/livraison/simulation`
 const iframe = document.createElement('iframe')
 
 const iframeAttributes = {
@@ -21,7 +20,9 @@ for (var key in iframeAttributes) {
 iframeResize({}, iframe)
 
 const link = document.createElement('div')
-link.innerHTML = `<a href="https://impactco2.fr/livraison" target="_blank">Découvrez l'empreinte carbone de la livraison de colis</a>`
+// below : injected WEBPACK_SITE_URL constant from env var, see webpack.config.js
+// eslint-disable-next-line no-undef
+link.innerHTML = `<a href="${WEBPACK_SITE_URL}/livraison" target="_blank">Découvrez l'empreinte carbone de la livraison de colis</a>`
 link.style.cssText = `
   margin: 0.5rem auto 1rem;
   text-align: center

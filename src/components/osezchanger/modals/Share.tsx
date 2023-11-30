@@ -1,11 +1,12 @@
 import React from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
+import { buildCurrentUrlFor } from 'utils/urls'
 import { Icon } from '../icons'
 import ClipboardBox from './ClipboardBox'
 import { Buttons, Text } from './Share.styles'
 import Usage from './Usage'
 
-const url = 'https://impactco2.fr/habillement/osez-changer'
+const url = buildCurrentUrlFor('/habillement/osez-changer')
 const Share = () => {
   return (
     <div data-testid='share-modal'>

@@ -1,4 +1,3 @@
-// Import the route file and the library
 import { rateLimit } from 'express-rate-limit'
 import slowDown from 'express-slow-down'
 import { HttpResponse, http } from 'msw'
@@ -72,7 +71,7 @@ describe('CallGMap', () => {
         referer: 'https://example.com/any',
       },
     })
-    process.env = { ...process.env, LIMIT_API: 'activated', WEBSITE_URL: 'example' }
+    process.env = { ...process.env, LIMIT_API: 'activated', NEXT_PUBLIC_URL: 'https://example.com' }
     // When
     await callGMap(req, res)
     // Then
@@ -88,7 +87,7 @@ describe('CallGMap', () => {
         referer: 'https://example.com/any',
       },
     })
-    process.env = { ...process.env, LIMIT_API: 'activated', WEBSITE_URL: 'example' }
+    process.env = { ...process.env, LIMIT_API: 'activated', NEXT_PUBLIC_URL: 'https://example.com' }
     // When
     await callGMap(req, res)
     // Then

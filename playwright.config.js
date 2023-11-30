@@ -29,6 +29,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'http://127.0.0.1:3000',
+    NEXT_PUBLIC_URL: 'http://localhost:3000',
 
     /* Collect trace. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',

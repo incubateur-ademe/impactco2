@@ -33,9 +33,6 @@ const nextConfig = {
     locales: ['fr'],
     defaultLocale: 'fr',
   },
-  env: {
-    websiteurl: process.env.WEBSITE_URL,
-  },
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
   sentry: {
     autoInstrumentServerFunctions: true,

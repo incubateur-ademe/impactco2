@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const webpack = require('webpack')
 
@@ -10,6 +11,11 @@ module.exports = [
       filename: 'iframe.js',
       path: path.resolve(__dirname, 'public'),
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        WEBPACK_SITE_URL: `'${process.env.NEXT_PUBLIC_URL}'`,
+      }),
+    ],
   },
   {
     name: 'if2',
@@ -21,7 +27,7 @@ module.exports = [
     },
     plugins: [
       new webpack.DefinePlugin({
-        WEBPACK_SITE_URL: `'${process.env.WEBSITE_URL}'`,
+        WEBPACK_SITE_URL: `'${process.env.NEXT_PUBLIC_URL}'`,
       }),
     ],
   },

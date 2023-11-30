@@ -10,7 +10,7 @@ import Linkedin2 from './shareModal/Linkedin2'
 import Twitter2 from './shareModal/Twitter2'
 import Whatsapp2 from './shareModal/Whatsapp2'
 
-const href = buildCurrentUrlFor(process.env.websiteurl, '/livraison#ressource')
+const href = buildCurrentUrlFor('/livraison#ressource')
 
 const getTitle = () => {
   return (
