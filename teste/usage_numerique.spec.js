@@ -9,10 +9,4 @@ test('La page des usages numériques se charge correctement', async ({ page }) =
 })
 test("Par défaut, des valeurs s'affichent pour les usages", async ({ page }) => {
   await expect(page.getByTestId('impactNumeriqueTotal')).toHaveText('0,3 kg CO2e par semaine')
-  // for (const entry of coverage) {
-  //   const converter = v8toIstanbul('', 0, { source: entry.source })
-  //   await converter.load()
-  //   converter.applyCoverage(entry.functions)
-  //   // console.log(JSON.stringify(converter.toIstanbul()))
-  // }
 })
