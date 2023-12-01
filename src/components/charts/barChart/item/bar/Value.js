@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatNumber } from 'utils/formatters'
+import formatNumber from 'utils/formatNumber'
 
 const Wrapper = styled.div`
   align-items: baseline;

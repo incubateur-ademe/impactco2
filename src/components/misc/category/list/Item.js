@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatNumber } from 'utils/formatters'
+import formatNumber from 'utils/formatNumber'
 import Emoji from 'components/base/Emoji'
 import MagicLink from 'components/base/MagicLink'
 import Chart from './item/Chart'

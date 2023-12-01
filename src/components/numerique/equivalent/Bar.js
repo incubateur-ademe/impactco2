@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
-import { formatNumber } from 'utils/formatters'
+import formatNumber from 'utils/formatNumber'
 import Emoji from 'components/base/Emoji'
 import RulesContextNumerique from '../RulesProviderNumerique'
 
