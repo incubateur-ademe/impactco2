@@ -42,8 +42,8 @@ export default function Categories(props) {
         <SectionWideContent>
           {props.main ? (
             <Text $main>
-              Sélectionnez une thématique pour visualiser facilement l’impact carbone des objets et gestes de votre
-              quotidien.
+              Sélectionnez une thématique pour découvrir des ressources ludiques et pédagogiques sur l’impact carbone
+              des objets et gestes de votre quotidien.
             </Text>
           ) : (
             <Text>Vous pouvez aussi naviguer par thématique :</Text>
