@@ -14,6 +14,8 @@
     "cov:pw" : "NODE_ENV=test COVERAGE=true playwright test",
     "cov:jest" : "NODE_ENV=test jest --collectCoverage --collectCoverageFrom='./src/**' --collectCoverageFrom='./pages/**' --coverageReporters=json --coverageDirectory='./coverage'",
     "cov:report" : "nyc report --reporter html --reporter text -t coverage --report-dir coverage/summary",
+    "cov:show" : "open coverage/summary/index.html",
+    "cov:full" : "yarn cov:clean && yarn cov:pw && yarn cov:jest && yarn cov:report && yarn cov:show",
     "jest:local": "NODE_ENV=test jest --watch",
     "testa:local": "NODE_ENV=test jest --watch ./testa",
     "testc:local": "DEBUG_PRINT_LIMIT=10000 NODE_ENV=test jest --watch ./testc",
