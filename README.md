@@ -81,7 +81,9 @@ Autre possibilité : vous pouvez configurer les variables d'environnement sur ht
 
 Vous pouvez calculer la couverture de test sur votre machine locale.
 
-Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez le projet avec la commande `yarn`, puis lancez le serveur avec `yarn dev`. 
+Si vous n'avez jamais lancé de tests e2e avant, vous devrez installez Playwright en local avec `yarn install playwright`.
+
+Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez les dépendances avec la commande `yarn`, puis lancez le serveur local avec `yarn dev`. 
 
 Ouvrez un autre terminal et lancez les commandes suivantes dans l'ordre :
 
