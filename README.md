@@ -90,7 +90,7 @@ Ouvrez un autre terminal et lancez les commandes suivantes dans l'ordre :
 1 - `yarn cov:clean` : Supprime le répertoire "coverage" pour partir d'un état propre. 
 2 - `yarn cov:pw` : Lance les tests Playwright avec la couverture. Le répertoire "coverage" est alors créé, et contient des fichiers de couverture au format JSON.
 3 - `yarn cov:jest` : Lance les tests Jest, couverture incluse. Le répertoire "coverage" s'enrichit du fichier de couverture des tests Jest, au format JSON.
-4 - `yarn cov:report` : Merge tous les rapports JSON précédents, calcule la couverture finale, et créé un rapport facilement lisible. Le répertoire `coverage/summary` est alors créé, le fichier `index.html` contient le rapport final. Ouvrez-le dans un navigateur.
+4 - `yarn cov:report` : Merge tous les rapports JSON précédents, calcule la couverture finale, et créé un rapport facilement lisible. Le répertoire `coverage/summary` est alors créé, le fichier `index.html` contenant le rapport final.
 5 - `yarn cov:show` : Affiche dans votre navigateur le rapport de couverture final (sous `coverage/summary/index.html`)
 
 La commande `yarn cov:full` permet de réaliser toutes les étapes de 1 à 5 en une seule fois.
