@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test'
+import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 
+configurePlaywrightCoverage(test)
 test('Affichage sans erreur des pages statiques', async ({ page }) => {
   await test.step('On peut accèder au plan du site', async () => {
     await page.goto('/plan-du-site')

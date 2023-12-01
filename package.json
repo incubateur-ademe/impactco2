@@ -115,6 +115,7 @@
     "husky": "^8.0.3",
     "istanbul": "^0.4.5",
     "istanbul-merge": "^2.0.0",
+    "istanbul-tolerant-merge": "^1.2.5",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.1.0",
