@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import React from 'react'
 import styled from 'styled-components'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Meeting from 'components/meeting/Meeting'
@@ -7,7 +5,7 @@ import Meeting from 'components/meeting/Meeting'
 export default function Hero() {
   return (
     <Section $withoutPadding>
-      <SectionWideContent>
+      <HeroWideContent>
         <Layout>
           <div>
             <H1Title>
@@ -15,9 +13,9 @@ export default function Hero() {
               <span>
                 <HideAboveMedium>&nbsp;</HideAboveMedium>des ressources sur l’impact carbone
               </span>
-              <sapn>
+              <span>
                 <HideAboveMedium>&nbsp;</HideAboveMedium>des gestes et objets du quotidien
-              </sapn>
+              </span>
             </H1Title>
             <Subtitle>
               <span>
@@ -36,15 +34,32 @@ export default function Hero() {
               <Meeting />
             </MiniCard>
           </div>
-
-          <PictureContainer>
-            <Image width={560} height={976} src='/images/cards.svg' alt='' />
-          </PictureContainer>
+          <div />
         </Layout>
-      </SectionWideContent>
+      </HeroWideContent>
     </Section>
   )
 }
+
+const HeroWideContent = styled(SectionWideContent)`
+  background-image: url(/images/cards.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  ${(props) => props.theme.mq.xlarge} {
+    background-position-x: 52vw;
+    background-position-y: center;
+    background-size: 56%;
+  }
+  ${(props) => props.theme.mq.large} {
+    background-position-x: 82vw;
+    background-position-y: center;
+    background-size: 56%;
+  }
+  ${(props) => props.theme.mq.medium} {
+    background-image: none;
+  }
+`
 
 const H1Title = styled.h1`
   color: ${(props) => props.theme.colors.linkGrey};
@@ -91,19 +106,6 @@ const Layout = styled.div`
   padding: 6rem 0;
   ${(props) => props.theme.mq.large} {
     padding: 3rem 0;
-  }
-`
-
-const PictureContainer = styled.div`
-  position: relative;
-  ${(props) => props.theme.mq.large} {
-    display: none;
-  }
-  > img {
-    max-width: 100%;
-    position: absolute;
-    right: 0;
-    top: -270px;
   }
 `
 
