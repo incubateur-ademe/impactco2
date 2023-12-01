@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test'
+import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 import { searchAddress } from 'hooks/useAddress'
 
+configurePlaywrightCoverage(test)
 // On se permet de tester directement l'api Photomon parceque ce n'est pas tres bien documenté
 // On teste donc les use cases en entier
 test('search for an adress', async () => {
