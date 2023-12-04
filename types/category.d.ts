@@ -6,8 +6,7 @@ export type Category = {
   title?: string
   description?: string
   equivalent?: string
-  gender?: string
-  divider: number
+  gender: string
   display: boolean
   unit: string
   include: string
@@ -16,4 +15,11 @@ export type Category = {
     title: string
     description: string
   }
+}
+
+export type APICategoryV1 = {
+  id: number
+  name: string
+  emoji: string
+  slug: string
 }

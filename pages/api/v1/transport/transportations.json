@@ -371,60 +371,6 @@
     ]
   },
   {
-    "id": 17,
-    "label": {
-      "fr": "Véhicule hydrogène"
-    },
-    "description": {
-      "fr": "Pas de donnée disponible pour ce mode de transport"
-    },
-    "emoji": {
-      "main": "🚗",
-      "secondary": "💦"
-    },
-    "default": false
-  },
-  {
-    "id": 18,
-    "label": {
-      "fr": "Ferry"
-    },
-    "description": {
-      "fr": "Pas de donnée disponible pour ce mode de transport"
-    },
-    "emoji": {
-      "main": "⛴️"
-    },
-    "default": false
-  },
-  {
-    "id": 19,
-    "label": {
-      "fr": "Bateau à moteur"
-    },
-    "description": {
-      "fr": "Pas de donnée disponible pour ce mode de transport"
-    },
-    "emoji": {
-      "main": "🚢"
-    },
-    "default": false
-  },
-  {
-    "id": 20,
-    "label": {
-      "fr": "Scooter et moto légère (électrique)"
-    },
-    "description": {
-      "fr": "Pas de donnée disponible pour ce mode de transport"
-    },
-    "emoji": {
-      "main": "🛵",
-      "secondary": "⚡"
-    },
-    "default": false
-  },
-  {
     "id": 21,
     "label": {
       "fr": "Bus (GNV)"
@@ -446,18 +392,5 @@
         "value": 113
       }
     ]
-  },
-  {
-    "id": 22,
-    "label": {
-      "fr": "Camping Car"
-    },
-    "description": {
-      "fr": "Pas de donnée disponible pour ce mode de transport"
-    },
-    "emoji": {
-      "main": "🚙"
-    },
-    "default": false
   }
 ]

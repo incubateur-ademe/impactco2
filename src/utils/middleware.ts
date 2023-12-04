@@ -1,9 +1,9 @@
 import { NextApiRequest } from 'next'
 import { prismaClient } from 'utils/prismaClient'
 
-export async function trackAPIRequest(request: NextApiRequest, api: string, params: string) {
+export async function trackAPIRequest(request: NextApiRequest, api: string, params?: string) {
   if (!process.env.TRACK_API) {
-    return
+    return false
   }
 
   try {
@@ -17,11 +17,12 @@ export async function trackAPIRequest(request: NextApiRequest, api: string, para
       }
     }
 
-    const param = `e_c=API${name ? `_${name}` : ''}&e_a=${api}&e_n=${params}&e_v=called`
+    const param = `e_c=API${name ? `_${name}` : ''}&e_a=${api}&e_n=${params || ''}&e_v=called`
 
     await fetch(`https://stats.data.gouv.fr/matomo.php?idsite=${process.env.MATOMO_SIDE_ID}&rec=1&${param}`, {
       method: 'POST',
     })
+    return !!name
   } catch (error) {
     console.error(`tracking failed - ${request.headers.authorization}`, error)
   }

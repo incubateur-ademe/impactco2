@@ -96,3 +96,9 @@ export type Equivalent =
   | RepasEquivalent
   | UsageNumeriqueEquivalent
   | FruitsEtLegumesEquivalent
+
+export type APIECVV1 = {
+  name: string
+  ecv: number
+  slug: string
+}
