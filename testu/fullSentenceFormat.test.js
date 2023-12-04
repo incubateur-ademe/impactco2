@@ -2,7 +2,6 @@ import fullSentenceFormat from 'utils/fullSentenceFormat'
 
 describe('fullSentenceFormat', () => {
   test("transforme un objet 'Equivalent' en une phrase", () => {
-    fullSentenceFormat
     let res = fullSentenceFormat(getRealisticObject())
     expect(res).toEqual('39 heures de streaming vidéo')
   })
