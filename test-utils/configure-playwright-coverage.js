@@ -1,6 +1,7 @@
 import fs from 'fs'
 import v8toIstanbul from 'v8-to-istanbul'
 
+// Freely inspired from official docs : https://playwright.dev/docs/api/class-coverage
 export default function configurePlaywrightCoverage(test) {
   if (process.env.COVERAGE) {
     test.beforeEach(async ({ page }) => {
