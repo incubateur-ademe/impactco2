@@ -1,7 +1,38 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { APICategoryV1 } from 'types/category'
 import categories from 'data/categories.json'
 import { trackAPIRequest } from 'utils/middleware'
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Category:
+ *       type: object
+ *       required:
+ *       - id
+ *       - name
+ *       - emoji
+ *       - slug
+ *       properties:
+ *         id:
+ *           type: integer
+ *           example: 10
+ *         name:
+ *           type: string
+ *           example: Usage numérique
+ *         emoji:
+ *           type: string
+ *           example: ✉️
+ *         slug:
+ *           type: string
+ *           example: usagenumerique
+ */
+type APICategoryV1 = {
+  id: number
+  name: string
+  emoji: string
+  slug: string
+}
 
 /**
  * @swagger
@@ -33,27 +64,7 @@ import { trackAPIRequest } from 'utils/middleware'
  *                 data:
  *                   type: array
  *                   items:
- *                     type: object
- *                     required:
- *                     - id
- *                     - name
- *                     - emoji
- *                     - slug
- *                     properties:
- *                       id:
- *                         type: integer
- *                         example: 10
- *                       name:
- *                         type: string
- *                         example: Usage numérique
- *                       emoji:
- *                         type: string
- *                         example: ✉️
- *                       slug:
- *                         type: string
- *                         example: usagenumerique
- *
- *
+ *                     $ref: '#/components/schemas/Category'
  */
 export default async function handler(
   req: NextApiRequest,

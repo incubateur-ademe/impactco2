@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { APIECVV1 } from 'types/equivalent'
 import { ZodError, z } from 'zod'
 import categories from 'data/categories.json'
 import boisson from 'data/categories/boisson.json'
@@ -33,6 +32,34 @@ const equivalents = [
 const categoryValidation = z.object({
   id: z.string(),
 })
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     ECV:
+ *       type: object
+ *       required:
+ *       - name
+ *       - ecv
+ *       - slug
+ *       properties:
+ *         name:
+ *           type: string
+ *           example: Eau en bouteille
+ *         ecv:
+ *           type: number
+ *           example: 50.3
+ *         slug:
+ *           type: string
+ *           example: eauenbouteille
+ */
+
+type APIECVV1 = {
+  name: string
+  ecv: number
+  slug: string
+}
 
 /**
  * @swagger
@@ -73,24 +100,9 @@ const categoryValidation = z.object({
  *                 data:
  *                   type: array
  *                   items:
- *                     type: object
- *                     required:
- *                     - name
- *                     - ecv
- *                     - slug
- *                     properties:
- *                       name:
- *                         type: string
- *                         example: Eau en bouteille
- *                       ecv:
- *                         type: number
- *                         example: 50.3
- *                       slug:
- *                         type: string
- *                         example: eauenbouteille
- *
- *
+ *                     $ref: '#/components/schemas/ECV'
  */
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ data: APIECVV1[]; warning?: string } | string | ZodError>

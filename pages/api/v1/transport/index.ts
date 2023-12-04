@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { TransportEmissionV1 } from 'types/transport'
 import { ZodError, z } from 'zod'
 import { trackAPIRequest } from 'utils/middleware'
 import { filterByDistance } from 'utils/transport'
@@ -40,6 +39,34 @@ export const computeTransportEmission = (
         },
       }
     })
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Transport:
+ *       type: object
+ *       required:
+ *       - id
+ *       - name
+ *       - value
+ *       properties:
+ *         id:
+ *           type: integer
+ *           example: 11
+ *         name:
+ *           type: string
+ *           example: Métro
+ *         value:
+ *           type: number
+ *           description: l'emission en Kg de CO2e pour la distance donnée
+ *           example: 152.3
+ */
+type TransportEmissionV1 = {
+  id: number
+  name: string
+  value: number
+}
 
 /**
  * @swagger
@@ -105,24 +132,7 @@ export const computeTransportEmission = (
  *                 data:
  *                   type: array
  *                   items:
- *                     type: object
- *                     required:
- *                     - id
- *                     - name
- *                     - value
- *                     properties:
- *                       id:
- *                         type: integer
- *                         example: 11
- *                       name:
- *                         type: string
- *                         example: Métro
- *                       value:
- *                         type: number
- *                         description: l'emission en Kg de CO2e pour la distance donnée
- *                         example: 152.3
- *
- *
+ *                     $ref: '#/components/schemas/Transport'
  */
 export default async function handler(
   req: NextApiRequest,
