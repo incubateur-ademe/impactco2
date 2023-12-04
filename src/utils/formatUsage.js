@@ -1,4 +1,6 @@
 export default function formatUsage(equivalent, years) {
+  console.log('years:', years)
+  console.log('equivalent:', equivalent)
   if (equivalent.usage) {
     return (years || equivalent.usage.defaultyears) * equivalent.usage.peryear
   }
