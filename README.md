@@ -6,13 +6,13 @@ Application web sous Next.js permettant de comparer la consommation en CO2e de d
 
 ## Installation 💾
 
-`yarn` pour installer l'application
+`yarn` pour installer l'application
 
-`yarn dev` pour lancer un serveur de développement sur [http://localhost:3000](http://localhost:3000/)
+`yarn dev` pour lancer un serveur de développement sur [http://localhost:3000](http://localhost:3000/)
 
-`yarn build` pour build l'application
+`yarn build` pour build l'application
 
-`yarn start` pour lancer un serveur de production
+`yarn start` pour lancer un serveur de production
 
 ## Déploiement 🚀
 
@@ -22,10 +22,10 @@ Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en 
 
 - `yarn dev` lance le serveur web local
 
-- `yarn testa:local` lance les tests de l'API en continu (avec Jest et msw)
-- `yarn testc:local` lance les tests des composants front en continu (avec Jest)
-- `yarn testu:local` lance les tests unitaires en continu (avec Jest)
-- `yarn teste:local` lance les tests de bout en bout ("end-to-end") en continu (avec Playwright)
+- `yarn testa:local` lance les tests de l'API en continu (avec Jest et msw)
+- `yarn testc:local` lance les tests des composants front en continu (avec Jest)
+- `yarn testu:local` lance les tests unitaires en continu (avec Jest)
+- `yarn teste:local` lance les tests de bout en bout ("end-to-end") en continu (avec Playwright)
 
 Lors du premier lancement des tests end-to-end, une installation de Playwright peut être demandée.
 
@@ -34,6 +34,25 @@ Les tests end-to-end nécessitent que le serveur web local soit lancé.
 ## Variable d'environnement
 
 Il vous faut un fichier `.env` dont les valeurs sont documentées dans `.env.dist`
+
+## Couverture de test
+
+Vous pouvez calculer la couverture de test sur votre machine locale.
+
+Si vous n'avez jamais lancé de tests e2e avant, vous devrez installez Playwright en local avec `yarn install playwright`.
+
+Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez les dépendances avec la commande `yarn`, puis lancez le serveur local avec `yarn dev`. 
+
+Ouvrez un autre terminal et lancez les commandes suivantes dans l'ordre :
+
+1 - `yarn cov:clean` : Supprime le répertoire "coverage" pour partir d'un état propre. 
+2 - `yarn cov:pw` : Lance les tests Playwright avec la couverture. Le répertoire "coverage" est alors créé, et contient des fichiers de couverture au format JSON.
+3 - `yarn cov:jest` : Lance les tests Jest, couverture incluse. Le répertoire "coverage" s'enrichit du fichier de couverture des tests Jest, au format JSON.
+4 - `yarn cov:report` : Merge tous les rapports JSON précédents, calcule la couverture finale, et créé un rapport facilement lisible. Le répertoire `coverage/summary` est alors créé, le fichier `index.html` contenant le rapport final.
+5 - `yarn cov:show` : Affiche dans votre navigateur le rapport de couverture final (sous `coverage/summary/index.html`)
+
+La commande `yarn cov:full` permet de réaliser toutes les étapes de 1 à 5 en une seule fois.
+
 
 ## Workflow Git ⚙️
 
@@ -56,53 +75,6 @@ L’organisation du développement suit le workflow [Gitflow](https://mindsers.b
 - `style`
 - `test`
 - `chore`
-
-## Variable d'environnement
-
-Pour l'instant il n'y a que des variables d'environnement "publiques",
-
-Il vous faut un fichier `.env.local` à la racine
-
-```bash
-WEBSITE_URL=localhost:3000
-SENDINBLUE_API_KEY=une_valeur_compliquee
-GMAP_API_KEY=une_autre_valeur_compliquee
-```
-
-`WEBSITE_URL` est le nom de domaine du site, sans le protocole (mais avec le port éventuellement).
-
-A vous de renseigner la/les valeurs sur l'ensemble des sites déployés.
-
-Pour retrouver l'ensemble des variables d'environnements utilisées dans l'application, vous pouvez faire une recherche globale sur "process.env" et/ou "process?.env".
-
-Autre possibilité : vous pouvez configurer les variables d'environnement sur https://app.netlify.com/sites/impactco2/configuration/env
-
-## Couverture de test
-
-Vous pouvez calculer la couverture de test sur votre machine locale.
-
-Si vous n'avez jamais lancé de tests e2e avant, vous devrez installez Playwright en local avec `yarn install playwright`.
-
-Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez les dépendances avec la commande `yarn`, puis lancez le serveur local avec `yarn dev`. 
-
-Ouvrez un autre terminal et lancez les commandes suivantes dans l'ordre :
-
-1 - `yarn cov:clean` : Supprime le répertoire "coverage" pour partir d'un état propre. 
-2 - `yarn cov:pw` : Lance les tests Playwright avec la couverture. Le répertoire "coverage" est alors créé, et contient des fichiers de couverture au format JSON.
-3 - `yarn cov:jest` : Lance les tests Jest, couverture incluse. Le répertoire "coverage" s'enrichit du fichier de couverture des tests Jest, au format JSON.
-4 - `yarn cov:report` : Merge tous les rapports JSON précédents, calcule la couverture finale, et créé un rapport facilement lisible. Le répertoire `coverage/summary` est alors créé, le fichier `index.html` contenant le rapport final.
-5 - `yarn cov:show` : Affiche dans votre navigateur le rapport de couverture final (sous `coverage/summary/index.html`)
-
-La commande `yarn cov:full` permet de réaliser toutes les étapes de 1 à 5 en une seule fois.
-
-## Gmap API
-
-Vous pouvez restreindre les sites appelant l'API Gmap à 2 endroits :
-
-- Dans le code, en dur `event.headers.referer.includes('impactco2.fr')`
-- Dans la console Google (https://console.cloud.google.com/), vous pouvez filtrer les sites appelants.
-
-Pour l'instant seuls la recette et la production sont autorisés à appeler la GMap API.
 
 ## Connexion à Agribalyse
 
