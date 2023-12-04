@@ -43,7 +43,7 @@ L’organisation du développement suit le workflow [Gitflow](https://mindsers.b
 - Les hotfix, comme les features (ou tout autre type de fonctionnalité) sont créés sur des branches dédiées issues de `develop`.
 - Une fois que le code est revu par un pair, et la fonctionnalité recettée par le métier depuis la review app dédiée, il est possible de merger la branche dans `develop`.
 - La branche du travail validé et recetté est donc `develop`. Elle possède sa propre review app. [Elle est visible ici](https://preimpactco2.osc-fr1.scalingo.io/).
-- Chaque mise en production consiste à merger `develop` dans `main`. Cette version est alors tagguée avec [un numéro de release](https://semver.org/).
+- Chaque mise en production consiste à merger `develop` dans `main`.
 
 [Les commits sont conventionnés](https://www.conventionalcommits.org/en/v1.0.0/). Les types suivants sont acceptés :
 
