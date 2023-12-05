@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
-import { formatNumber } from 'utils/formatters'
+import formatNumber from 'utils/formatNumber'
 import getFrenchFormattedNumber from 'utils/getFrenchFormattedNumber'
 import getNumberWithNDigitsAfterComma from 'utils/getNumberWithNDigitsAfterComma'
 import Emoji from 'components/base/Emoji'

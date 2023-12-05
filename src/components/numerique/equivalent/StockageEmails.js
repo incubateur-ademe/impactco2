@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
-import { formatNumber } from 'utils/formatters'
+import formatNumber from 'utils/formatNumber'
 import DataContext from 'components/providers/DataProvider'
 import Button from 'components/base/Button'
 import ButtonLink from 'components/base/ButtonLink'
