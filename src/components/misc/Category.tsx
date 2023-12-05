@@ -1,4 +1,5 @@
 import React, { useContext, useMemo, useState } from 'react'
+import { Category } from 'types/category'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatUsage from 'utils/formatUsage'
@@ -14,16 +15,16 @@ import List from './category/List'
 import { Checkboxes, Top } from './category/Top'
 import Wrapper from './category/Wrapper'
 
-export default function CategoryList(props) {
+export default function CategoryList({ category }: { category: Category }) {
   const { equivalents, categories } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)
 
   const equivalentsOfCategory = useMemo(
     () =>
-      props.category &&
+      category &&
       equivalents
-        .filter((equivalent) => equivalent.category === props.category.id)
+        .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => equivalent.default || displayAll)
         .map((equivalent) => ({
           id: `${equivalent.slug}`,
@@ -33,41 +34,41 @@ export default function CategoryList(props) {
           unit: equivalent.unit,
           value: computeECV(equivalent),
           usage: formatUsage(equivalent),
-          to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
+          to: `/${category.slug}/${equivalent.slug}`,
           onClick: () =>
             window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
         }))
         .sort((a, b) => (a.value > b.value ? 1 : -1)),
 
-    [equivalents, categories, props.category, displayAll]
+    [equivalents, categories, category, displayAll]
   )
 
   return (
     <>
-      {props?.category?.slug === 'boisson' ? <SourceAgribalyse /> : <></>}
-      <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
-        <Description description={props.category.description} />
+      {category?.slug === 'boisson' ? <SourceAgribalyse /> : <></>}
+      <Wrapper name={category.title || category.name} slug={category.slug}>
+        <Description description={category.description} />
         <Top className='noscreenshot'>
-          <Instruction title={props.category.equivalent} gender={props.category.gender} />
+          <Instruction title={category.equivalent} gender={category.gender} />
           <Checkboxes
             $visible={
               equivalents
-                .filter((equivalent) => equivalent.category === props.category.id)
-                .find((equivalent) => !equivalent.default) && !props.category.list
+                .filter((equivalent) => equivalent.category === category.id)
+                .find((equivalent) => !equivalent.default) && !category.list
             }>
             <Checkbox
               name='displayAll'
               checked={displayAll}
               onChange={() => {
                 setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-                window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', props.category.name])
+                window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
               }}>
-              Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
-              {formatName(props.category.equivalent, 2) || 'équivalents'}
+              Voir {category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
+              {formatName(category.equivalent, 2) || 'équivalents'}
             </Checkbox>
           </Checkboxes>
         </Top>
-        {props.category.list ? (
+        {category.list ? (
           <List items={equivalentsOfCategory} max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value} />
         ) : (
           <>
@@ -75,10 +76,10 @@ export default function CategoryList(props) {
               items={equivalentsOfCategory}
               max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
             />
-            {![2, 3].includes(props.category.id) && <CategoryLegend />}
+            {![2, 3, 8].includes(category.id) && <CategoryLegend />}
           </>
         )}
-        <Bottom category={props.category} />
+        <Bottom category={category} />
       </Wrapper>
     </>
   )

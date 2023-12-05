@@ -16,6 +16,7 @@ type BaseEquivalent = {
   subtitle?: string
   synonyms?: string[]
   hypothesis?: string
+  unit?: string
 }
 
 type BaseEquivalentValue =
@@ -26,7 +27,6 @@ type BaseEquivalentValue =
 
 export type ChauffageEquivalent = BaseEquivalent & {
   total: number
-  multiplier: number
 }
 
 export type RepasEquivalent = BaseEquivalent & {

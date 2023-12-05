@@ -17,6 +17,3 @@ export const computeECV = (equivalent: Equivalent, yearsOfUsage?: number) => {
 
   return total
 }
-
-export const computeECVWithMultiplier = (equivalent: Equivalent) =>
-  computeECV(equivalent) * ('multiplier' in equivalent ? equivalent.multiplier : 1)

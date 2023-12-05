@@ -2,7 +2,7 @@ import { DndContext, MeasuringStrategy, closestCenter } from '@dnd-kit/core'
 import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortable'
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { computeECVWithMultiplier } from 'utils/computeECV'
+import { computeECV } from 'utils/computeECV'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import AddButton from './tiles/AddButton'
@@ -44,7 +44,7 @@ export default function Tiles(props) {
 
   const [weight, setWeight] = useState(2000)
   useEffect(() => {
-    curEquivalent && setWeight(computeECVWithMultiplier(curEquivalent))
+    curEquivalent && setWeight(computeECV(curEquivalent))
   }, [curEquivalent])
 
   const [showSubtitle, setShowSubtitle] = useState(false)
@@ -80,7 +80,7 @@ export default function Tiles(props) {
               {curEquivalent ? (
                 <Tile
                   equivalent={curEquivalent}
-                  weight={computeECVWithMultiplier(curEquivalent)}
+                  weight={computeECV(curEquivalent)}
                   showSubtitle={showSubtitle}
                   equivalentPage={props.equivalent?.slug === curEquivalent.slug}
                   removeEquivalent={() => setCurEquivalent(null)}

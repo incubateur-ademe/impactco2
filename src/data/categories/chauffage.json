@@ -1,110 +1,106 @@
 [
   {
     "name": "Chauffage au gaz",
-    "subtitle": "Maison",
     "prefix": "Année[s] de ",
-    "slug": "chauffagegazmaison",
+    "slug": "chauffagegaz",
     "emoji": "💨",
     "category": 8,
-    "total": 37.682,
-    "multiplier": 113,
+    "total": 28.03,
     "default": true,
     "tile": false,
-    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=gaz",
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-gaz-par-m2",
     "meta": {
       "title": "Chauffage au gaz",
-      "description": "Découvrez à quoi correspond une année de chauffage au gaz dans une maison en kgCO₂e émis (CO₂e)"
-    },
-    "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
-  },
-  {
-    "name": "Chauffage au gaz",
-    "subtitle": "Appartement",
-    "prefix": "Année[s] de ",
-    "slug": "chauffagegazappartement",
-    "emoji": "💨",
-    "category": 8,
-    "total": 28.375,
-    "multiplier": 63,
-    "default": false,
-    "tile": false,
-    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=gaz",
-    "meta": {
-      "title": "Poids CO₂e d'un an de chauffage au gaz",
-      "description": "Découvrez à quoi correspond une année de chauffage au gaz dans un appartement en kgCO₂e émis (CO₂e)"
-    },
-    "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'un appartement en France (63m2)"
+      "description": "Découvrez à quoi correspond une année de chauffage au gaz par m2 en kgCO₂e émis (CO₂e)"
+    }
   },
   {
     "name": "Chauffage au fioul",
-    "subtitle": "Maison",
     "prefix": "Année[s] de ",
-    "slug": "chauffagefioulmaison",
+    "slug": "chauffagefioul",
     "emoji": "🛢",
     "category": 8,
-    "total": 52.668,
-    "multiplier": 113,
+    "total": 34.62,
     "default": true,
     "tile": false,
-    "source": " https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=New_liquides",
+    "source": " https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-fioul-par-m2",
     "meta": {
       "title": "Chauffage au fioul",
-      "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul pour une maison"
-    },
-    "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
-  },
-  {
-    "name": "Chauffage au fioul",
-    "subtitle": "Appartement",
-    "prefix": "Année[s] de ",
-    "slug": "chauffagefioulappartement",
-    "emoji": "🛢",
-    "category": 8,
-    "total": 49.896,
-    "multiplier": 63,
-    "default": false,
-    "tile": false,
-    "source": " https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=New_liquides",
-    "meta": {
-      "title": "Poids CO₂e chauffage fioul appartement",
-      "description": "Connaître l'équivalent en empreinte carbone de la consommation d'une année de chauffage au fioul pour un appartement"
-    },
-    "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'un appartement en France (63m2)"
+      "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul par m2"
+    }
   },
   {
     "name": "Chauffage électrique",
-    "subtitle": "Maison",
     "prefix": "Année[s] de ",
-    "slug": "chauffageelectriquemaison",
+    "slug": "chauffageelectrique",
     "emoji": "⚡️",
     "category": 8,
-    "total": 6.0314,
-    "multiplier": 113,
+    "total": 3.9,
     "default": true,
     "tile": false,
-    "source": " https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Electricite_reglementaire",
+    "source": " https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-%C3%A9lectricit%C3%A9-par-m2",
     "meta": {
       "title": "Chauffage électrique",
-      "description": "Découvrez à quoi correspond une année de chauffage électrique dans une maison en kgCO₂e émis (CO₂e)"
-    },
-    "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'une maison en France (113m2)"
+      "description": "Découvrez à quoi correspond une année de chauffage électrique par m2 en kgCO₂e émis (CO₂e)"
+    }
   },
   {
-    "name": "Chauffage électrique",
-    "subtitle": "Appartement",
-    "prefix": "Année[s] de ",
-    "slug": "chauffageelectriqueappartement",
-    "emoji": "⚡️",
+    "name": "Pompe à chaleur",
+    "slug": "pompeachaleur",
+    "emoji": "🌡️",
     "category": 8,
-    "total": 3.6985,
-    "multiplier": 63,
-    "default": false,
+    "total": 3.9,
+    "default": true,
     "tile": false,
-    "source": " https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Electricite_reglementaire",
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-%C3%A9lectricit%C3%A9-par-m2",
     "meta": {
-      "title": "Impact d'une année de chauffage électrique",
-      "description": "Découvrez à quoi correspond une année de chauffage électrique dans un appartement en kgCO₂e émis (CO₂e)"
-    },
-    "hypothesis": "L'affichage sur cette page est donné par m2. L'affichage sur le convertisseur est donné pour la surface moyenne d'un appartement en France (63m2)"
+      "title": "Pompe à chaleur",
+      "description": "Découvrez à quoi correspond une année de chauffage avec une pompe à chaleur par m2 en kgCO₂e émis (CO₂e)"
+    }
+  },
+  {
+    "name": "Poêle à granulé",
+    "prefix": "Année[s] de chauffage avec un",
+    "slug": "poeleagranule",
+    "emoji": "🔥",
+    "category": 8,
+    "total": 5.15,
+    "default": true,
+    "tile": false,
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-granul%C3%A9s-par-m2",
+    "meta": {
+      "title": "Poêle à granulé",
+      "description": "Découvrez à quoi correspond une année de chauffage avec un poêle à granulé par m2 en kgCO₂e émis (CO₂e)"
+    }
+  },
+  {
+    "name": "Poêle à bois",
+    "prefix": "Année[s] de chauffage avec un",
+    "slug": "poeleabois",
+    "emoji": "🪵",
+    "category": 8,
+    "total": 20.97,
+    "default": true,
+    "tile": false,
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-buches-par-m2",
+    "meta": {
+      "title": "Poêle à bois",
+      "description": "Découvrez à quoi correspond une année de chauffage avec un poêle à bois par m2 en kgCO₂e émis (CO₂e)"
+    }
+  },
+  {
+    "name": "Réseau de chaleur",
+    "prefix": "Année[s] de chauffage via un ",
+    "slug": "reseaudechaleur",
+    "emoji": "🏢",
+    "category": 8,
+    "total": 20.99,
+    "default": true,
+    "tile": false,
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-r%C3%A9seau-de-chaleur-par-m2",
+    "meta": {
+      "title": "Réseau de chaleur",
+      "description": "Découvrez à quoi correspond une année de chauffage via un réseau de chaleur par m2 en kgCO₂e émis (CO₂e)"
+    }
   }
 ]
