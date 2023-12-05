@@ -12,6 +12,7 @@ const config = {
       securitySchemes: {
         APIKey: {
           type: 'http',
+          description: `Nous utilisons des clés API pour monitorer son utilisation. Bien que celle ci ne soit pas obligatoire, nous nous réservons le droit de restreindre l'acces aux utilisateurs ne l'utilisant pas. N'hésitez pas à nous contacter via [${process.env.CONTACT_EMAIL}](mailto:${process.env.CONTACT_EMAIL}) pour en obtenir une gratuitement.`,
           scheme: 'bearer',
           bearerFormat: 'UUID',
         },

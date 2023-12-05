@@ -60,7 +60,6 @@
     "next": "^14.0.3",
     "next-query-params": "^5.0.0",
     "next-sitemap": "^4.2.3",
-    "preact": "^10.19.2",
     "publicodes": "1.0.0-beta.77",
     "publicodes-react": "1.0.0-beta.77",
     "puppeteer-core": "^21.5.2",
