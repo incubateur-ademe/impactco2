@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { EquivalentValue } from 'types/equivalent'
 import { ZodError, z } from 'zod'
 import categories from 'data/categories.json'
 import boisson from 'data/categories/boisson.json'
@@ -12,7 +13,7 @@ import mobilier from 'data/categories/mobilier.json'
 import numerique from 'data/categories/numerique.json'
 import repas from 'data/categories/repas.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
-import { computeECV } from 'utils/computeECV'
+import { computeECV, computeFootprint } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
 
 const equivalents = [
@@ -31,6 +32,7 @@ const equivalents = [
 
 const categoryValidation = z.object({
   id: z.string(),
+  detail: z.coerce.number().int().min(0).max(1).optional().transform(Boolean),
 })
 
 /**
@@ -49,16 +51,75 @@ const categoryValidation = z.object({
  *           example: Eau en bouteille
  *         ecv:
  *           type: number
+ *           description: l'emission totale en g de CO2e
  *           example: 50.3
  *         slug:
  *           type: string
  *           example: eauenbouteille
+ *         footprint:
+ *           type: number
+ *           description: l'emission de base de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           example: 45.2
+ *         footprintDetail:
+ *           description: l'emission de base détaillé de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           type: array
+ *           items:
+ *             type: object
+ *             properties:
+ *               id:
+ *                 type: number
+ *                 description: |-
+ *                   id du poste détaillé
+ *                   - 1: Matières premières
+ *                   - 2: Approvisionnement
+ *                   - 3: Mise en forme
+ *                   - 4: Assemblage et distribution
+ *                   - 5: Construction
+ *                   - 6: Carburant
+ *                   - 7: Trainées de condensation
+ *                   - 8: Usage
+ *                   - 13: Construction des terminaux
+ *                   - 14: Usage des terminaux
+ *                   - 15: Transmission
+ *                   - 16: Construction des data-centers
+ *                   - 17: Usage des data-centers
+ *                   - 30: Agriculture
+ *                   - 31: Transformation
+ *                   - 32: Emballage
+ *                   - 33: Transport
+ *                   - 34: Supermarché et distribution
+ *                   - 35: Consommation
+ *                 example:
+ *               value:
+ *                 type: number
+ *                 description: emission du poste détaillé en g de CO2e
+ *                 example: 12.3
+ *         usage:
+ *           description: l'emission moyenne produite par l'utilisation de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           type: object
+ *           properties:
+ *             peryear:
+ *               type: number
+ *               description: emission produite par l'utilisation de l'objet en g de CO2e par an
+ *               example: 25.3
+ *             defaultyears:
+ *               type: number
+ *               description: duréé de vie moyenne de l'objet
+ *               example: 5
+ *         endOfLife:
+ *           type: number
+ *           description: l'emission générée (ou économisée) en fin de vie de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           example: 45.2
  */
 
 type APIECVV1 = {
   name: string
   ecv: number
   slug: string
+  footprint?: number
+  footprintDetail?: EquivalentValue[]
+  usage?: { peryear: number; defaultyears: number }
+  endOfLife?: number
 }
 
 /**
@@ -77,6 +138,13 @@ type APIECVV1 = {
  *         - type: integer
  *       required: true
  *       description: ID ou Slug de la thématique demandée
+ *     - in: query
+ *       name: detail
+ *       default: 0
+ *       schema:
+ *         type: integer
+ *         enum: [0, 1]
+ *       description: Si 1, retourne le détail du calcul de l'ecv. Sinon retourne uniquement le total
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -116,7 +184,7 @@ export default async function handler(
     return
   }
 
-  const { id } = inputs.data
+  const { id, detail } = inputs.data
   const hasAPIKey = await trackAPIRequest(req, 'category', id)
 
   const idNumber = Number.parseInt(id)
@@ -131,11 +199,22 @@ export default async function handler(
   return res.status(200).json({
     data: equivalents
       .filter((equivalent) => equivalent.category === category.id)
-      .map((equivalent) => ({
-        name: equivalent.name,
-        slug: equivalent.slug,
-        ecv: computeECV(equivalent),
-      })),
+      .map((equivalent) => {
+        const detailedECV = detail
+          ? {
+              footprint: computeFootprint(equivalent),
+              footprintDetail: 'ecv' in equivalent ? equivalent.ecv : undefined,
+              usage: 'usage' in equivalent ? equivalent.usage : undefined,
+              endOfLife: 'end' in equivalent ? equivalent.end : undefined,
+            }
+          : {}
+        return {
+          name: equivalent.name,
+          slug: equivalent.slug,
+          ecv: computeECV(equivalent),
+          ...detailedECV,
+        }
+      }),
     warning: hasAPIKey
       ? undefined
       : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,

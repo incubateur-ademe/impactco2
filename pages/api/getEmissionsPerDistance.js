@@ -15,7 +15,6 @@ export default async function handler(req, res) {
   const ignoreRadiativeForcing = !!queryObj.ignoreRadiativeForcing || false
   const fields = (queryObj.fields || '').split(',')
 
-  console.log(activeTransportations, ignoreRadiativeForcing, filter)
   const respObj = computeTransportEmission(km, activeTransportations, ignoreRadiativeForcing, filter === 'all')
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')

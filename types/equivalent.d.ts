@@ -43,7 +43,6 @@ export type DeplacementEquivalent = BaseEquivalent &
     type: string
     secondEmoji?: string
     carpool?: boolean
-
     display?: {
       min?: number
       max?: number
