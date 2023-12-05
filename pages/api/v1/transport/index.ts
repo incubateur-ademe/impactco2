@@ -104,7 +104,7 @@ type TransportEmissionV1 = {
  *       schema:
  *         type: integer
  *         enum: [0, 1]
- *       description: Si 0, ignore le forçage radiatif dans le calcul des émissions de l'avion. Sinon le prend en compte
+ *       description: Si 0, prend en compte le forçage radiatif dans le calcul des émissions de l'avion. Sinon il est ignoré
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
