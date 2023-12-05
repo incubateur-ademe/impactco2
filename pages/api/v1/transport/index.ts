@@ -8,7 +8,10 @@ const transportValidation = z.object({
   km: z.coerce.number(),
   displayAll: z.coerce.number().int().min(0).max(1).optional().transform(Boolean),
   ignoreRadiativeForcing: z.coerce.number().int().min(0).max(1).optional().transform(Boolean),
-  transports: z.string().transform((value) => value.split(',').map(Number)),
+  transports: z
+    .string()
+    .transform((value) => value.split(',').map(Number))
+    .optional(),
 })
 
 export const computeTransportEmission = (
@@ -88,7 +91,7 @@ type TransportEmissionV1 = {
  *       schema:
  *         type: integer
  *         enum: [0, 1]
- *       description: Si 0, retourne uniquement les transports qui ont du sens pour la distance données. Sinon retourne toutes les valeurs
+ *       description: Si 0, retourne uniquement les transports qui ont du sens pour la distance donnée. Sinon retourne toutes les valeurs
  *     - in: query
  *       name: transports
  *       schema:

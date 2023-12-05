@@ -63,11 +63,11 @@ type APIECVV1 = {
 
 /**
  * @swagger
- * /api/v1/categories/ecv/{id}:
+ * /api/v1/thematiques/ecv/{id}:
  *   get:
  *     tags:
  *     - ECV
- *     description: Retourne les emissions pour une categorie donnée
+ *     description: Retourne les emissions pour une thématique donnée
  *     parameters:
  *     - in: path
  *       name: id
@@ -76,7 +76,7 @@ type APIECVV1 = {
  *         - type: string
  *         - type: integer
  *       required: true
- *       description: ID ou Slug de la categorie demandée
+ *       description: ID ou Slug de la thématique demandée
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP

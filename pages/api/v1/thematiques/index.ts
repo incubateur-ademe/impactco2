@@ -6,7 +6,7 @@ import { trackAPIRequest } from 'utils/middleware'
  * @swagger
  * components:
  *   schemas:
- *     Category:
+ *     Thématique:
  *       type: object
  *       required:
  *       - id
@@ -36,11 +36,11 @@ type APICategoryV1 = {
 
 /**
  * @swagger
- * /api/v1/categories:
+ * /api/v1/thematiques:
  *   get:
  *     tags:
  *     - ECV
- *     description: Retourne les categories gérées par Impact co2 ainsi que leurs metadata
+ *     description: Retourne les thématiques gérées par Impact co2 ainsi que leurs metadata
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -50,7 +50,7 @@ type APICategoryV1 = {
  *               type: string
  *               example: Only GET queries are allowed
  *       200:
- *         description: Les categories et leur metadata
+ *         description: Les thématiques et leur metadata
  *         content:
  *           application/json:
  *             schema:
@@ -64,7 +64,7 @@ type APICategoryV1 = {
  *                 data:
  *                   type: array
  *                   items:
- *                     $ref: '#/components/schemas/Category'
+ *                     $ref: '#/components/schemas/Thématique'
  */
 export default async function handler(
   req: NextApiRequest,
