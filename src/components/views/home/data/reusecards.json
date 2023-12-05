@@ -1,12 +1,12 @@
 [
   {
     "slug": "card_1",
-    "tagtext": "TWOMORROW",
+    "tagtext": "FIGARO IMMOBILIER",
     "color": "#e6f2e6",
     "img": "/images/home_img_1.png",
-    "link": "https://www.instagram.com/p/Ct_Hqn1rF9e/?igshid=NTc4MTIwNjQ2YQ%3D%3D",
-    "title": "21 000 heures de streaming = 4 800kg d'oignons",
-    "paragraph": "On parle toujours des 2 tonnes de CO2e à atteindre pour respecter les Accords de Paris. Mais à quoi cela correspond-il vraiment ?"
+    "link": "https://immobilier.lefigaro.fr/annonces/immobilier-vente-bien-france.html",
+    "title": "Votre projet immobilier",
+    "paragraph": "Vous êtes une plateforme immobilière ? Permettez à vos visiteurs de calculer l’impact carbone de leur futur trajet grâce notre simulateur Impact Transport."
   },
   {
     "slug": "card_2",
