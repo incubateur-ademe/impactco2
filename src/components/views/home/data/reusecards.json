@@ -22,17 +22,17 @@
     "tagtext": "TEAM FOR THE PLANET",
     "color": "black",
     "img": "/images/home_img_3.png",
-    "link": "https://www.linkedin.com/posts/tftp_une-vie-enti%C3%A8re-denvoi-demails-ne-suffirait-activity-7109071360856895488-q5H0/?utm_source=share&utm_medium=member_desktop",
-    "title": "Parlons ordres de grandeur",
-    "paragraph": "Une vie entière d'envoi d'emails ne suffirait pas à polluer comme le remplacement de sa télévision."
+    "link": "https://www.linkedin.com/posts/tftp_une-vie-entière-denvoi-demails-ne-suffirait-activity-7109071360856895488-q5H0/",
+    "title": "Votre empreinte numérique sur le climat",
+    "paragraph": "Vous êtes un acteur engagé dans la sensibilisation aux enjeux climatiques ? Utilisez nos données, simulateurs ou infographies pour faire passer vos messages de façon ludique."
   },
   {
     "slug": "card_4",
-    "tagtext": "SO GOOD FESTIVAL",
+    "tagtext": "THÉÂTRE DE L’EUROPE",
     "color": "#ffdc9e",
-    "img": "/images/home_img_4.png",
-    "link": "https://www.sogoodfestival.com/infos-pratiques",
-    "title": "Venir au So Good Festival",
-    "paragraph": "Calcule l’impact carbone de ton déplacement jusqu’au festival avec Impact CO2 (ADEME) !"
+    "img": "/images/home_img_4.jpeg",
+    "link": "https://www.theatre-odeon.eu/fr/infos-pratiques#acces_et_horaires",
+    "title": "Informations pratiques",
+    "paragraph": "Vous êtes un lieu ou un événement culturel ? Proposez à votre public de calculer l’impact carbone de leur déplacement jusqu’à vous grâce à notre simulateur Impact Transport."
   }
 ]
