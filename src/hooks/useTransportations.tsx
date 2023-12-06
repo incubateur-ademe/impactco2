@@ -25,7 +25,7 @@ const filterByDistance = (equivalent: DeplacementEquivalent, value: number) => {
 }
 
 // C'est un peu austère, déso
-export default function useTransportations(itineraries: Record<DeplacementType, number> | undefined) {
+export default function useTransportations(itineraries?: Record<DeplacementType, number> | undefined) {
   const { equivalents, categories } = useContext(DataContext)
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
