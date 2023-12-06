@@ -41,6 +41,7 @@ export default function Configurator({
   path,
   theme,
   setTheme,
+  extraParams,
 }: {
   slug: string
   setSlug: Dispatch<SetStateAction<string>>
@@ -50,6 +51,7 @@ export default function Configurator({
   path: string
   theme: 'default' | 'night'
   setTheme: Dispatch<SetStateAction<'default' | 'night'>>
+  extraParams: string
 }) {
   return (
     <Wrapper>
@@ -122,7 +124,7 @@ export default function Configurator({
           </Select>
         </div>
         <div>
-          <Code type={path} theme={theme} />
+          <Code type={path} theme={theme} extraParams={extraParams} />
         </div>
       </Grid>
     </Wrapper>

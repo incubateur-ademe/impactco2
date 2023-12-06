@@ -32,6 +32,7 @@ export default function Integration() {
   const { equivalents, categories } = useContext(DataContext)
 
   const [theme, setTheme] = useState('default')
+  const [extraParams, setExtraParams] = useState('')
 
   // We keep "type" in url (and not 'slug") because of possible legacy links
   const [slug, setSlug] = useQueryParam('type', withDefault(StringParam, 'convertisseur'))
@@ -39,6 +40,9 @@ export default function Integration() {
   useEffect(() => {
     if (slug === 'habillement/osez-changer') {
       setTheme('default')
+    }
+    if (slug.startsWith('transport')) {
+      setExtraParams('simple=1')
     }
   }, [slug])
 
@@ -77,6 +81,7 @@ export default function Integration() {
             categories={categories}
             theme={theme}
             setTheme={setTheme}
+            extraParams={extraParams}
             type={type}
             slug={slug}
             setSlug={setSlug}
@@ -89,7 +94,7 @@ export default function Integration() {
           {path == 'livraison' ? (
             <>
               <StyledIframeResizer
-                src={`/iframes/livraison/simulation?theme=${theme}`}
+                src={`/iframes/livraison/simulation?theme=${theme}${extraParams ? `&${extraParams}` : ''}`}
                 allowFullScreen={true}
                 webkitallowfullscreen='true'
                 mozallowfullscreen='true'
@@ -98,7 +103,7 @@ export default function Integration() {
           ) : (
             <>
               <StyledIframeResizer
-                src={`/iframes/${path}?theme=${theme}`}
+                src={`/iframes/${path}?theme=${theme}${extraParams ? `&${extraParams}` : ''}`}
                 allowFullScreen={true}
                 webkitallowfullscreen='true'
                 mozallowfullscreen='true'

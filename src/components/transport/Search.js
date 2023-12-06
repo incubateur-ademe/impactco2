@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import TransportContext from 'components/transport/TransportProvider'
@@ -38,16 +39,19 @@ const Color = styled.button`
   }
 `
 export default function Search(props) {
+  const router = useRouter()
   const { setOccupancyModal } = useContext(TransportContext)
 
   return (
     <>
-      <ModeSelector
-        distance={props.distance}
-        itineraire={props.itineraire}
-        teletravail={props.teletravail}
-        iframe={props.iframe}
-      />
+      {!router.query.simple && (
+        <ModeSelector
+          distance={props.distance}
+          itineraire={props.itineraire}
+          teletravail={props.teletravail}
+          iframe={props.iframe}
+        />
+      )}
       <Wrapper>
         {props.itineraire && (
           <>

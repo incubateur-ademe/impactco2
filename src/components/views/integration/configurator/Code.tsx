@@ -1,18 +1,6 @@
 import copy from 'copy-to-clipboard'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-
-const flash = (props) => keyframes`
-  from,
-  to {
-    background-color: ${props.theme.colors.textLight};
-  }
-
-  35%,
-  55% {
-    background-color: ${props.theme.colors.secondDark};
-  }
-`
 
 const Wrapper = styled.div`
   position: relative;
@@ -21,8 +9,22 @@ const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
 `
-const Text = styled.code`
-  animation: ${(props) => (props.$copied ? flash : 'none')} 400ms 1;
+const Text = styled.code<{ $copied: boolean }>`
+  animation: ${(props) =>
+      props.$copied
+        ? keyframes`
+            from,
+            to {
+              background-color: ${props.theme.colors.textLight};
+            }
+
+            35%,
+            55% {
+              background-color: ${props.theme.colors.secondDark};
+            }
+          `
+        : 'none'}
+    400ms 1;
   background-color: ${(props) => props.theme.colors.textLight};
   border-radius: 0.5rem;
   display: block;
@@ -43,21 +45,28 @@ const Copy = styled.button`
   right: 0;
   text-decoration: underline;
 `
-export default function Code(props) {
-  const [script, setScript] = useState(null)
+export default function Code({ theme, type, extraParams }: { theme: string; type: string; extraParams: string }) {
+  const [script, setScript] = useState('')
 
   useEffect(() => {
     setScript(
-      `<script id="impact-co2" src="${window?.location.origin}/iframe.js" data-type="${props.type}" data-search="?theme=${props.theme}"></script>`
+      `<script id="impact-co2" src="${window?.location
+        .origin}/iframe.js" data-type="${type}" data-search="?theme=${theme}${
+        extraParams ? `&${extraParams}` : ''
+      }"></script>`
     )
-  }, [props.theme, props.type])
+  }, [theme, type, extraParams])
 
   const [copied, setCopied] = useState(false)
 
-  const unsetCopied = () => setCopied(false)
+  const timeout = useRef<NodeJS.Timeout | null>(null)
   useEffect(() => {
-    setTimeout(unsetCopied, 400)
-    return () => clearTimeout(unsetCopied)
+    timeout.current = setTimeout(() => setCopied(false), 400)
+    return () => {
+      if (timeout.current) {
+        clearTimeout(timeout.current)
+      }
+    }
   }, [copied])
 
   return (
@@ -65,9 +74,7 @@ export default function Code(props) {
       <Label htmlFor='code'>
         3) Copiez le code ci-dessous où vous souhaitez afficher l&apos;iframe sur votre site.
       </Label>
-      <Text name='code' $copied={copied}>
-        {script}
-      </Text>
+      <Text $copied={copied}>{script}</Text>
       <Copy
         onClick={() => {
           if (!copied && copy(script)) {
