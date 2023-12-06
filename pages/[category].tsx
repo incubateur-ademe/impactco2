@@ -10,21 +10,23 @@ import MobileAction from 'components/osezchanger/MobileAction'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
+  const isHabillement = category.slug === 'habillement'
   return (
     <Web
       title={category.meta.title}
       description={category.meta.description}
+      image={isHabillement ? 'meta/habillement.png' : undefined}
       breadcrumb={{
         type: 'equivalent',
         category: category,
       }}>
       <Section $withoutPadding>
         <Container>
-          {category.slug === 'habillement' && <MobileAction />}
+          {isHabillement && <MobileAction />}
           <div>
             <Category category={category} />
           </div>
-          {category.slug === 'habillement' && <OsezChanger />}
+          {isHabillement && <OsezChanger />}
         </Container>
       </Section>
       <Learning category={category} />
