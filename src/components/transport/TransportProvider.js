@@ -13,7 +13,7 @@ export function TransportProvider(props) {
 
   const [displayAll, setDisplayAll] = useState(false)
 
-  const [carpool, setCarpool] = useState(2)
+  const [carpool, setCarpool] = useState(0)
 
   const [km, setKm] = useState(10)
 

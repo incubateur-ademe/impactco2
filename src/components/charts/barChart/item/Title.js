@@ -2,7 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  display: inline-block;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.125rem 0.5rem;
   margin-bottom: 0.125rem;
   position: relative;
 `
@@ -19,6 +22,7 @@ const Subtitle = styled.span`
   font-weight: 300;
   line-height: 0;
 `
+
 export default function TitleComponent(props) {
   return (
     <Wrapper>
