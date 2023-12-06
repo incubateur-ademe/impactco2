@@ -38,7 +38,7 @@ const Chauffage = ({ category }: { category: Category }) => {
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
-        <Wrapper name={category.title || category.name} slug={category.slug}>
+        <Wrapper name={category.title || category.name} slug={category.slug} urlParams={`?m2=${value}`}>
           <Simulator text='Indiquer la surface à chauffer pour découvrir la quantité de CO2e émise par mode de chauffage pour cette surface par année.'>
             <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} />
           </Simulator>
