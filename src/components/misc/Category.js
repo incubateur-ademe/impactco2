@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useState } from 'react'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
-import { formatUsage } from 'utils/formatters'
+import formatUsage from 'utils/formatUsage'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'

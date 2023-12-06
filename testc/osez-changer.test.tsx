@@ -50,7 +50,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('defi-equivalent-vegetarian-value')).toHaveTextContent('32,4')
   })
 
-  it('Should render hyopthesis modal', () => {
+  it('Should render hypothesis modal', () => {
     renderWithStyle(<OsezChanger />)
     act(() => {
       screen.getByLabelText('Découvrir le défi').click()

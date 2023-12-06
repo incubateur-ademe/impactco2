@@ -6,27 +6,63 @@ Application web sous Next.js permettant de comparer la consommation en CO2e de d
 
 ## Installation 💾
 
-`yarn` pour installer l'application
+`yarn` pour installer l'application
 
-`yarn dev` pour lancer un serveur de développement sur [http://localhost:3000](http://localhost:3000/)
+`yarn dev` pour lancer un serveur de développement sur [http://localhost:3000](http://localhost:3000/)
 
-`yarn build` pour build l'application
+`yarn build` pour build l'application
 
-`yarn start` pour lancer un serveur de production
+`yarn start` pour lancer un serveur de production
 
 ## Déploiement 🚀
 
-Le site est hébergé sur [Netlify](https://www.netlify.com/) via des serveurs en Europe. Aucune donnée ne transite en dehors de l’UE.
+Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en France. Aucune donnée ne transite en dehors de l’UE.
 
 ## Développement ⚙️
 
-L’organisation du développement suit le workflow [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) :
+- `yarn dev` lance le serveur web local
 
-- La branche de production est `master`. Seul les releases et hotfix peuvent être mergées directement dans master. [Elle est visible ici](https://impactco2.fr/)
-- La branche de développement est `develop`. C’est sur cette branche qu’est visible le travail en cours. [Elle est visible ici](https://develop--impactco2.netlify.app/)
-- On crée une issue et une branche pour chaque nouvelle fonctionnalité (nom de la branche : numéro de l’issue associée). Cette branche utilise la branche `develop` comme parent. Elle donne lieu à une PR vers la branche `develop` (nom de la PR : `[nom_de_lissue] (issue [numero_de_lissue])`).
-- À la fin de chaque cycle de développement, on crée une branche `release` à partir de `develop`. Cette branche est ensuite mergée dans `master` et tagguée avec [un numéro de release](https://semver.org/).
-- Les hotfix sont créé sur des branches dédiées (issues de `master`), associées ou non à une issue. Elles peuvent être mergées directement dans `master`.
+- `yarn testa:local` lance les tests de l'API en continu (avec Jest et msw)
+- `yarn testc:local` lance les tests des composants front en continu (avec Jest)
+- `yarn testu:local` lance les tests unitaires en continu (avec Jest)
+- `yarn teste:local` lance les tests de bout en bout ("end-to-end") en continu (avec Playwright)
+
+Lors du premier lancement des tests end-to-end, une installation de Playwright peut être demandée.
+
+Les tests end-to-end nécessitent que le serveur web local soit lancé.
+
+## Variable d'environnement
+
+Il vous faut un fichier `.env` dont les valeurs sont documentées dans `.env.dist`
+
+## Couverture de test
+
+Vous pouvez calculer la couverture de test sur votre machine locale.
+
+Si vous n'avez jamais lancé de tests e2e avant, vous devrez installez Playwright en local avec `yarn install playwright`.
+
+Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez les dépendances avec la commande `yarn`, puis lancez le serveur local avec `yarn dev`. 
+
+Ouvrez un autre terminal et lancez les commandes suivantes dans l'ordre :
+
+1 - `yarn cov:clean` : Supprime le répertoire "coverage" pour partir d'un état propre. 
+2 - `yarn cov:pw` : Lance les tests Playwright avec la couverture. Le répertoire "coverage" est alors créé, et contient des fichiers de couverture au format JSON.
+3 - `yarn cov:jest` : Lance les tests Jest, couverture incluse. Le répertoire "coverage" s'enrichit du fichier de couverture des tests Jest, au format JSON.
+4 - `yarn cov:report` : Merge tous les rapports JSON précédents, calcule la couverture finale, et créé un rapport facilement lisible. Le répertoire `coverage/summary` est alors créé, le fichier `index.html` contenant le rapport final.
+5 - `yarn cov:show` : Affiche dans votre navigateur le rapport de couverture final (sous `coverage/summary/index.html`)
+
+La commande `yarn cov:full` permet de réaliser toutes les étapes de 1 à 5 en une seule fois.
+
+
+## Workflow Git ⚙️
+
+L’organisation du développement suit le workflow [Gitflow](https://mindsers.blog/fr/post/gitflow-la-methodologie-et-la-pratique/) :
+
+- La branche de production est `main`. Seule `develop` peut être mergée directement dans main.
+- Les hotfix, comme les features (ou tout autre type de fonctionnalité) sont créés sur des branches dédiées issues de `develop`.
+- Une fois que le code est revu par un pair, et la fonctionnalité recettée par le métier depuis la review app dédiée, il est possible de merger la branche dans `develop`.
+- La branche du travail validé et recetté est donc `develop`. Elle possède sa propre review app. [Elle est visible ici](https://preimpactco2.osc-fr1.scalingo.io/).
+- Chaque mise en production consiste à merger `develop` dans `main`.
 
 [Les commits sont conventionnés](https://www.conventionalcommits.org/en/v1.0.0/). Les types suivants sont acceptés :
 
@@ -38,35 +74,7 @@ L’organisation du développement suit le workflow [Gitflow](https://www.atlass
 - `refactor`
 - `style`
 - `test`
-
-## Variable d'environnement
-
-Pour l'instant il n'y a que des variables d'environnement "publiques",
-
-Il vous faut un fichier `.env.local` à la racine
-
-```bash
-WEBSITE_URL=localhost:3000
-SENDINBLUE_API_KEY=une_valeur_compliquee
-GMAP_API_KEY=une_autre_valeur_compliquee
-```
-
-`WEBSITE_URL` est le nom de domaine du site, sans le protocole (mais avec le port éventuellement).
-
-A vous de renseigner la/les valeurs sur l'ensemble des sites déployés.
-
-Pour retrouver l'ensemble des variables d'environnements utilisées dans l'application, vous pouvez faire une recherche globale sur "process.env" et/ou "process?.env".
-
-Autre possibilité : vous pouvez configurer les variables d'environnement sur https://app.netlify.com/sites/impactco2/configuration/env
-
-## Gmap API
-
-Vous pouvez restreindre les sites appelant l'API Gmap à 2 endroits :
-
-- Dans le code, en dur `event.headers.referer.includes('impactco2.fr')`
-- Dans la console Google (https://console.cloud.google.com/), vous pouvez filtrer les sites appelants.
-
-Pour l'instant seuls la recette et la production sont autorisés à appeler la GMap API.
+- `chore`
 
 ## Connexion à Agribalyse
 
@@ -88,6 +96,10 @@ Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/), [React
 Le repo est architecturé avec les dossiers suivants :
 
 - `pages` avec l'ensemble des pages du site.
+- `testu` contient les tests unitaires (au sens strict, c'est-à-dire les tests d'une fonction)
+- `testa` contient les tests de l'API (toutes les fonction sous le répertoire /api)
+- `testc` contient les tests de composants front
+- `teste` contient les tests end-to-end
 - `src` avec tout le reste du code.
   - `components` avec l'ensemble des composants
     - `base` avec les composants simple réutilisés partout (un peu comme les atomes pour [l'atomic design](https://atomicdesign.bradfrost.com/))
@@ -114,3 +126,39 @@ L'intérieur de ce fichier est structuré comme suit :
 - Déclaration et export du composant
 
 Les fonctions appelées dans le jsx ne sont pas nommées, afin de simplifier la lecture. On essaie de maintenir les fichiers de composants bien en dessous de 100 lignes
+
+## Les iframes
+
+Le contenu peut être intégré par nos utilisateurs directement dans leur propre site web grâce aux iframes.
+
+Le contenu des iframes est disponible dans le code dans le répertoire `pages/iframes`.
+
+Ce contenu est donc disponible en ligne à l'URL `/iframes/...` comme par exemple l'[habillement](https://impactco2.fr/iframes/habillement) ou la [livraison](https://impactco2.fr/iframes/livraison/simulation).
+
+Mais ces pages ne sont pas faites pour être lues "telles quelles" dans notre site, mais pour être intégrées dans un autre site.
+
+Ces pages deviennent disponibles à nos utilisateurs grâce à un script qui construit une iframe et l'insère dans le DOM de leur site web.
+
+Il y a pour l'instant 2 versions de ce script :
+
+- iframe/index.js
+- iframe/livraison.js
+
+Ce script est minifié, renommé et placé dans le répertoire /public à chaque `build` du projet NextJS, grâce au fichier `webpack.config.js`. Ainsi,
+
+- iframe/index.js devient accessible publiquement sous l'URL /iframe.js,
+- iframe/livraison.js devient accessible publiquement sous l'URL /iframelivraison.js
+
+Les utilisateurs qui veulent cette iframe dans leur projet n'ont plus qu'à copier/coller le code suivant dans la page web de leur choix (exemple pour la livraison) :
+
+```html
+<script id="impact-livraison" src="https://impactco2.fr/iframelivraison.js" data-search="?theme=default"></script>
+```
+
+Les attributs "data" permettant de paramétrer cette iframe.
+
+## API
+
+Une API du site est actuellement disponible, sa documentation publique est en cours de construction.
+
+Toutefois, pour les développeurs, afin de comprendre son utilisation et les retours attendus, le répertoire `testa` regroupe les tests automatisés concernant l'API uniquement.

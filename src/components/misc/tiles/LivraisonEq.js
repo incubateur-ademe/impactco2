@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { fullSentenceFormat } from 'utils/formatters'
+import fullSentenceFormat from 'utils/fullSentenceFormat'
 import Emoji from 'components/base/Emoji'
 import { Media, MediaBody, MediaFigure } from 'components/base/Media'
 

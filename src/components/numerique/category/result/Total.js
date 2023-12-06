@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react'
 import styled from 'styled-components'
-import { formatNumber } from 'utils/formatters'
+import formatNumber from 'utils/formatNumber'
 import DataContext from 'components/providers/DataProvider'
 import Tile from 'components/misc/tiles/Tile'
 import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
