@@ -11,6 +11,7 @@ type BaseEquivalent = {
   }
 
   id?: string | number
+  secondEmoji?: string
   source?: string
   prefix?: string
   subtitle?: string
@@ -41,7 +42,6 @@ export type DeplacementType = 'car' | 'foot' | 'rail' | 'plane'
 export type DeplacementEquivalent = BaseEquivalent &
   BaseEquivalentValue & {
     type: string
-    secondEmoji?: string
     carpool?: boolean
 
     display?: {

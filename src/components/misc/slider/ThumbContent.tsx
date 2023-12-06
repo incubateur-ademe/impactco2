@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
 
-const Kilometers = styled.div`
+const Value = styled.div`
   flex: 1;
   text-align: center;
 `
@@ -21,13 +21,23 @@ const Edit = styled.div`
     }
   }
 `
-export default function ThumbContent(props) {
+export default function ThumbContent({
+  value,
+  unit,
+  setOpenTextInput,
+}: {
+  value: number
+  unit: string
+  setOpenTextInput: Dispatch<SetStateAction<boolean>>
+}) {
   return (
     <>
-      <Kilometers>{props.km} km</Kilometers>
+      <Value>
+        {value} {unit}
+      </Value>
       <Edit
         onClick={() => {
-          props.setOpenTextInput(true)
+          setOpenTextInput(true)
         }}
         onMouseDown={(e) => {
           e.stopPropagation()

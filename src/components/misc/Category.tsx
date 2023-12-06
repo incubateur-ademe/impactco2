@@ -16,7 +16,7 @@ import { Checkboxes, Top } from './category/Top'
 import Wrapper from './category/Wrapper'
 
 export default function CategoryList({ category }: { category: Category }) {
-  const { equivalents, categories } = useContext(DataContext)
+  const { equivalents } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)
 
@@ -27,20 +27,13 @@ export default function CategoryList({ category }: { category: Category }) {
         .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => equivalent.default || displayAll)
         .map((equivalent) => ({
-          id: `${equivalent.slug}`,
-          title: `${formatName(equivalent.name, 1, true)}`,
-          subtitle: displayAll ? formatName(equivalent.subtitle) : null,
-          emoji: equivalent.emoji,
-          unit: equivalent.unit,
+          ...equivalent,
+          title: formatName(equivalent.name, 1, true),
+          subtitle: displayAll ? formatName(equivalent.subtitle) : undefined,
           value: computeECV(equivalent),
           usage: formatUsage(equivalent),
-          to: `/${category.slug}/${equivalent.slug}`,
-          onClick: () =>
-            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
-        }))
-        .sort((a, b) => (a.value > b.value ? 1 : -1)),
-
-    [equivalents, categories, category, displayAll]
+        })),
+    [equivalents, category, displayAll]
   )
 
   return (
@@ -72,10 +65,7 @@ export default function CategoryList({ category }: { category: Category }) {
           <List items={equivalentsOfCategory} max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value} />
         ) : (
           <>
-            <BarChart
-              items={equivalentsOfCategory}
-              max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value}
-            />
+            <BarChart equivalents={equivalentsOfCategory} category={category} />
             {![2, 3, 8].includes(category.id) && <CategoryLegend />}
           </>
         )}

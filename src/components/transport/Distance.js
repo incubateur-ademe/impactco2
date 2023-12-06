@@ -17,7 +17,7 @@ export default function Distance(props) {
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Search distance iframe={props.iframe} />
           <ResultHeader category={props.category} />
-          <BarChart items={transportations} max={transportations[transportations.length - 1]?.value} />
+          <BarChart equivalents={transportations} category={category} />
           <CategoryLegend />
           <Bottom category={props.category} iframe={props.iframe} />
         </Wrapper>

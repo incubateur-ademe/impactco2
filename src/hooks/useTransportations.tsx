@@ -57,8 +57,8 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
                 )
             )
             .map((equivalent) => ({
-              id: `${equivalent.id || equivalent.slug}`,
-              title: `${formatName(equivalent.name, 1, true)}`,
+              ...equivalent,
+              title: formatName(equivalent.name, 1, true),
               subtitle: formatName(
                 equivalent?.ecvs
                   ? `(${equivalent?.ecvs?.find(
@@ -75,8 +75,7 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
                           )} km`
                         : '')
               ),
-              emoji: equivalent.emoji,
-              secondEmoji: equivalent.secondEmoji,
+              component: equivalent.carpool && <Carpool />,
               value:
                 (computeECV(equivalent) *
                   (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
@@ -85,12 +84,7 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
                 (formatUsage(equivalent) *
                   (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
                 (equivalent.carpool && carpool ? carpool : 1),
-              component: equivalent.carpool && <Carpool />,
-              to: `/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
-              onClick: () =>
-                window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
             }))
-            .sort((a, b) => (a.value > b.value ? 1 : -1))
         : [],
     [categories, equivalents, km, displayAll, carpool, itineraries]
   )

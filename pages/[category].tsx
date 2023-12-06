@@ -34,7 +34,7 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
   )
 }
 
-const independantCategories = [4, 9, 10, 12]
+const independantCategories = [4, 8, 9, 10, 12]
 
 export async function getStaticPaths() {
   return {
