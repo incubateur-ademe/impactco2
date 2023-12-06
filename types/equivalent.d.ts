@@ -14,6 +14,7 @@ type BaseEquivalent = {
   secondEmoji?: string
   source?: string
   prefix?: string
+  prefixEquivalent?: string
   subtitle?: string
   synonyms?: string[]
   hypothesis?: string

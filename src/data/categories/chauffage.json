@@ -1,7 +1,8 @@
 [
   {
     "name": "Chauffage au gaz",
-    "prefix": "Année[s] de ",
+    "suffix": " par m2",
+    "prefixEquivalent": "année[s] de ",
     "slug": "chauffagegaz",
     "emoji": "💨",
     "category": 8,
@@ -16,7 +17,8 @@
   },
   {
     "name": "Chauffage au fioul",
-    "prefix": "Année[s] de ",
+    "suffix": " par m2",
+    "prefixEquivalent": "année[s] de ",
     "slug": "chauffagefioul",
     "emoji": "🛢",
     "category": 8,
@@ -31,7 +33,8 @@
   },
   {
     "name": "Chauffage électrique",
-    "prefix": "Année[s] de ",
+    "suffix": " par m2",
+    "prefixEquivalent": "année[s] de ",
     "slug": "chauffageelectrique",
     "emoji": "⚡️",
     "category": 8,
@@ -45,7 +48,9 @@
     }
   },
   {
-    "name": "Pompe à chaleur",
+    "name": "Chauffage avec une pompe à chaleur",
+    "suffix": " par m2",
+    "prefixEquivalent": "année[s] de ",
     "slug": "pompeachaleur",
     "emoji": "🌡️",
     "category": 8,
@@ -59,8 +64,9 @@
     }
   },
   {
-    "name": "Poêle à granulé",
-    "prefix": "Année[s] de chauffage avec un",
+    "name": "Chauffage avec un poêle à granulé",
+    "suffix": " par m2",
+    "prefixEquivalent": "année[s] de ",
     "slug": "poeleagranule",
     "emoji": "🔥",
     "category": 8,
@@ -74,8 +80,9 @@
     }
   },
   {
-    "name": "Poêle à bois",
-    "prefix": "Année[s] de chauffage avec un",
+    "name": "Chauffage avec un poêle à bois",
+    "suffix": " par m2",
+    "prefixEquivalent": "année[s] de ",
     "slug": "poeleabois",
     "emoji": "🪵",
     "category": 8,
@@ -89,8 +96,9 @@
     }
   },
   {
-    "name": "Réseau de chaleur",
-    "prefix": "Année[s] de chauffage via un ",
+    "name": "Chauffage via un réseau de chaleur",
+    "suffix": " par m2",
+    "prefixEquivalent": "année[s] de ",
     "slug": "reseaudechaleur",
     "emoji": "🏢",
     "category": 8,

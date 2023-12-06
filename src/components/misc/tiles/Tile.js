@@ -193,7 +193,7 @@ export default function Tile(props) {
         </Number>
         <Name>
           {formatName(
-            (props.equivalent.prefix || '') + props.equivalent.name,
+            (props.equivalent.prefix || '') + props.equivalent.name + (props.equivalent.suffix || ''),
             props.weight / computeECV(props.equivalent)
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (
