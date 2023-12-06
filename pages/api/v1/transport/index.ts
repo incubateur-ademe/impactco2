@@ -12,6 +12,7 @@ const transportValidation = z.object({
     .string()
     .transform((value) => value.split(',').map(Number))
     .optional(),
+  numberOfPassenger: z.coerce.number().min(0).max(10).optional(),
 })
 
 export const computeTransportEmission = (
@@ -97,7 +98,6 @@ type TransportEmissionV1 = {
  *       schema:
  *         type: string
  *       description: Liste des id de transport à retourner, séparés par des ','
- *       example: 1,5,12
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0
@@ -105,6 +105,12 @@ type TransportEmissionV1 = {
  *         type: integer
  *         enum: [0, 1]
  *       description: Si 0, prend en compte le forçage radiatif dans le calcul des émissions de l'avion. Sinon il est ignoré
+ *     - in: query
+ *       name: numberOfPassenger
+ *       default: 0
+ *       schema:
+ *         type: integer
+ *       description: Nombre de passager moyen à prendre en compte pour les modes de transports de type voiture ou moto
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -162,7 +168,7 @@ export default async function handler(
     data: emissions.map((emission) => ({
       id: emission.id,
       name: emission.label.fr,
-      value: emission.emissions.kgco2e,
+      value: emission.emissions.kgco2e / (((emission.carpool && inputs.data.numberOfPassenger) || 0) + 1),
     })),
     warning: hasAPIKey
       ? undefined
