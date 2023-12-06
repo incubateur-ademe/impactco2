@@ -77,7 +77,7 @@ type TransportEmissionV1 = {
  * /api/v1/transport:
  *   get:
  *     tags:
- *     - transport
+ *     - Transport
  *     description: Retourne les emissions pour un nombre de km donnée par type de transport
  *     parameters:
  *     - in: query

@@ -6,6 +6,7 @@ const config = {
     openapi: '3.1.0',
     info: {
       title: 'Impact CO2',
+      description: `L'api Impact CO2 vous permet d'automatiser le calcul de l'impact carbone. Si vous avez des idées d'améliorations ou des requêtes plus spécifiques, n'hesitez pas à nous contacter via [${process.env.CONTACT_EMAIL}](mailto:${process.env.CONTACT_EMAIL}).`,
       version: '0.1.0',
     },
     components: {
