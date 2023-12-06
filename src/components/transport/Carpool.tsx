@@ -8,11 +8,6 @@ const Wrapper = styled.div`
   border-radius: 1.5rem;
   color: ${(props) => props.theme.colors.text};
   display: flex;
-  left: calc(100% + 0.25rem);
-  margin-left: 0.4rem;
-  position: absolute;
-  top: 50%;
-  transform: translateY(calc(-100% + 0.25rem));
 `
 const Carpoolers = styled.div`
   cursor: default;

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { Dispatch, SetStateAction, useContext } from 'react'
 import styled from 'styled-components'
 import TransportContext from 'components/transport/TransportProvider'
 import Distance from './search/Distance'
@@ -9,7 +9,7 @@ import Teletravail from './search/Teletravail'
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   padding: 1.5rem 2rem;
   position: relative;
 
@@ -37,19 +37,26 @@ const Color = styled.button`
     text-decoration: underline;
   }
 `
-export default function Search(props) {
-  const { setOccupancyModal } = useContext(TransportContext)
+export default function Search({
+  distance,
+  itineraire,
+  teletravail,
+  iframe,
+}: {
+  distance?: boolean
+  itineraire?: boolean
+  teletravail?: boolean
+  iframe?: boolean
+}) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore: TODO
+  const { setOccupancyModal } = useContext<{ setOccupancyModal: Dispatch<SetStateAction<boolean>> }>(TransportContext)
 
   return (
     <>
-      <ModeSelector
-        distance={props.distance}
-        itineraire={props.itineraire}
-        teletravail={props.teletravail}
-        iframe={props.iframe}
-      />
+      <ModeSelector distance={distance} itineraire={itineraire} teletravail={teletravail} iframe={iframe} />
       <Wrapper>
-        {props.itineraire && (
+        {itineraire && (
           <>
             <Text>
               Découvrez la quantité de CO2e que vous émettez{' '}
@@ -58,13 +65,13 @@ export default function Search(props) {
             <Itinerary />
           </>
         )}
-        {props.teletravail && (
+        {teletravail && (
           <>
             <Text>Découvrez la quantité de CO2e que vous économisez (à l&apos;année) en travaillant de chez vous</Text>
             <Teletravail />
           </>
         )}
-        {props.distance && (
+        {distance && (
           <>
             <Text>
               Découvrez la quantité de CO2e que vous émettez{' '}
