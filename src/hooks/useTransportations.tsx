@@ -46,10 +46,11 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
               title: `${formatName(equivalent.name, 1, true)}`,
               subtitle: formatName(
                 equivalent?.ecvs
-                  ? `(${equivalent?.ecvs?.find(
-                      (ecv) =>
-                        ecv.max >
-                        (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)
+                  ? `(${equivalent?.ecvs?.find((ecv) =>
+                      ecv.max
+                        ? ecv.max >
+                          (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)
+                        : true
                     )?.subtitle})`
                   : ((displayAll || equivalent.name === 'Voiture') && equivalent.subtitle
                       ? `(${equivalent.subtitle})`

@@ -1,13 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { ZodError, z } from 'zod'
+import deplacements from 'data/categories/deplacement.json'
 import { trackAPIRequest } from 'utils/middleware'
 import { filterByDistance } from 'utils/transport'
-import transportations from './transportations.json'
 
 const transportValidation = z.object({
   km: z.coerce.number(),
   displayAll: z.coerce.number().int().min(0).max(1).optional().transform(Boolean),
   ignoreRadiativeForcing: z.coerce.number().int().min(0).max(1).optional().transform(Boolean),
+  includeConstruction: z.coerce.number().int().min(0).max(1).optional().transform(Boolean),
   transports: z
     .string()
     .transform((value) => value.split(',').map(Number))
@@ -19,27 +20,45 @@ export const computeTransportEmission = (
   km: number,
   activeTransportations?: number[],
   ignoreRadiativeForcing?: boolean,
-  filter?: boolean
+  filter?: boolean,
+  includeConstruction?: boolean
 ) =>
-  transportations
+  deplacements
     // Filter transportations via filter parameter
     .filter((transportation) => filter || filterByDistance(transportation.display, km))
     // Filter transportations via transportations parameter
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     // Calculate emissions
     .map((transportation) => {
-      // @ts-expect-error: create proper type
-      const values = transportation.values.find((value) => ('max' in value ? value.max >= km : true)) as {
-        value: number
-        uncertainty?: number
+      let values = [{ id: 6, value: transportation.total || 0 }]
+      if ('ecvs' in transportation && transportation.ecvs) {
+        const currentECV = transportation.ecvs.find((value) => (value.max ? value.max >= km : true))
+        if (currentECV) {
+          values = currentECV.ecv
+        }
+      } else if (transportation.ecv) {
+        values = transportation.ecv
       }
-      const value = !ignoreRadiativeForcing && values.uncertainty ? values.uncertainty : values.value
+
+      const value = values
+        .filter((ecv) => {
+          if (ignoreRadiativeForcing && ecv.id === 7) {
+            return false
+          }
+
+          if (!includeConstruction && ecv.id === 5) {
+            return false
+          }
+
+          return true
+        })
+        .reduce((sum, current) => sum + current.value, 0)
       return {
         ...transportation,
         emissions: {
-          gco2e: value * km,
-          kgco2e: (value * km) / 1000,
-          tco2e: (value * km) / 1000000,
+          gco2e: value * km * 1000,
+          kgco2e: value * km,
+          tco2e: (value * km) / 1000,
         },
       }
     })
@@ -92,7 +111,7 @@ type TransportEmissionV1 = {
  *       schema:
  *         type: integer
  *         enum: [0, 1]
- *       description: Si 0, retourne uniquement les transports qui ont du sens pour la distance donnée. Sinon retourne toutes les valeurs
+ *       description: Si 1, retourne le calcul d'emission pour tout les transports disponibles. Sinon retourne seulement ceux qui ont du sens pour la distance donnée
  *     - in: query
  *       name: transports
  *       schema:
@@ -104,13 +123,19 @@ type TransportEmissionV1 = {
  *       schema:
  *         type: integer
  *         enum: [0, 1]
- *       description: Si 0, prend en compte le forçage radiatif dans le calcul des émissions de l'avion. Sinon il est ignoré
+ *       description: Si 1, ignore le forçage radiatif dans le calcul des émissions de l'avion. Sinon il est pris en compte
  *     - in: query
  *       name: numberOfPassenger
  *       default: 0
  *       schema:
  *         type: integer
  *       description: Nombre de passager moyen à prendre en compte pour les modes de transports de type voiture ou moto
+ *     - in: query
+ *       name: includeConstruction
+ *       default: 0
+ *       schema:
+ *         type: integer
+ *       description: Si 1, prend en compte l'emission lié à la construction. Sinon elle est ignorée
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -162,12 +187,13 @@ export default async function handler(
     inputs.data.km,
     inputs.data.transports,
     inputs.data.ignoreRadiativeForcing,
-    inputs.data.displayAll
+    inputs.data.displayAll,
+    inputs.data.includeConstruction
   )
   return res.status(200).json({
     data: emissions.map((emission) => ({
       id: emission.id,
-      name: emission.label.fr,
+      name: `${emission.name}${emission.subtitle ? ` (${emission.subtitle})` : ''}`,
       value: emission.emissions.kgco2e / (((emission.carpool && inputs.data.numberOfPassenger) || 0) + 1),
     })),
     warning: hasAPIKey

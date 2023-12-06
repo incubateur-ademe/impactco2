@@ -48,7 +48,7 @@ export type DeplacementEquivalent = BaseEquivalent &
       max?: number
     }
     ecvs?: {
-      max: number
+      max?: number
       subtitle: string
       ecv: EquivalentValue[]
     }[]

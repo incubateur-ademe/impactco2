@@ -25,11 +25,11 @@ export default async function handler(req, res) {
         respObj.map((transportation) => {
           const response = {
             id: transportation.id,
-            name: transportation.label.fr,
+            name: `${transportation.name}${transportation.subtitle ? ` (${transportation.subtitle})` : ''}`,
             emissions: transportation.emissions,
           }
           for (const field of fields) {
-            response[field] = (transportation[field] && transportation[field].fr) || transportation[field]
+            response[field] = transportation[field]
           }
           return response
         })
