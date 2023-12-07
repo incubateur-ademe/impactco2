@@ -74,7 +74,7 @@ const Suggestions = ({
   }, [onKeyDown])
 
   return (
-    <Wrapper>
+    <Wrapper data-testid='transportSuggest'>
       {results
         .map((result) => ({ ...result, display: displayAddress(result) }))
         .filter((result, index, array) => array.findIndex((adress) => adress.display === result.display) === index)
