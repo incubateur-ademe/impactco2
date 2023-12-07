@@ -12,13 +12,11 @@ export default function YearlyLivraison(props) {
   const [number, setNumber] = useState(1)
 
   const changeFrequence = (e) => {
-    window?.please?.track(['trackEvent', 'Interaction', 'Select', `livraison_Frequency_${e.uid}`])
     setMultiplicator(e.mult)
     setUid(e.uid)
   }
 
   const changeNumber = (number) => {
-    window?.please?.track(['trackEvent', 'Interaction', 'Select', `livraison_Number_${number}`])
     setNumber(number)
   }
 

@@ -32,70 +32,29 @@ export function ModalProvider(props) {
     <ModalContext.Provider
       value={{
         Co2e,
-        setCo2e: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'CO2e'])
-          setCo2e(value)
-        },
+        setCo2e,
         tiles,
-        setTiles: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'Tuiles'])
-          setTiles(value)
-        },
+        setTiles,
         share,
-        setShare: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'Partage'])
-          setShare(value)
-        },
+        setShare,
         social,
-        setSocial: (value) => {
-          if (value === true) {
-            window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'livraison_simulateur_share'])
-          }
-          setSocial(value)
-        },
+        setSocial,
         reduire,
-        setReduire: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'livraison_ressource_share'])
-          setReduire(value)
-        },
+        setReduire,
         ecv,
-        setEcv: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'ECV'])
-          setEcv(value)
-        },
+        setEcv,
         eqv,
-        setEqv: (value) => {
-          if (value === true) {
-            window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'modal_livraison_EQV'])
-          }
-          setEqv(value)
-        },
+        setEqv,
         ifl,
-        setIfl: (value) => {
-          setIfl(value)
-        },
+        setIfl,
         devices,
-        setDevices: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'Devices'])
-          setDevices(value)
-        },
+        setDevices,
         hypothesis,
-        setHypothesis: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'Hypothèses usages numériques'])
-          setHypothesis(value)
-        },
+        setHypothesis,
         warningNegaoctet,
-        setWarningNegaoctet: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'Avertissement négaoctet'])
-          setWarningNegaoctet(value)
-        },
+        setWarningNegaoctet,
         hypothesisLivraison,
-        setHypothesisLivraison: (value) => {
-          if (value === true) {
-            window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'modal_livraison_hypotheses'])
-          }
-          setHypothesisLivraison(value)
-        },
+        setHypothesisLivraison,
       }}>
       {props.children}
       <Co2eModal2 />

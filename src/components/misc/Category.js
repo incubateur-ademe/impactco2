@@ -34,8 +34,6 @@ export default function CategoryList(props) {
           value: computeECV(equivalent),
           usage: formatUsage(equivalent),
           to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
-          onClick: () =>
-            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
         }))
         .sort((a, b) => (a.value > b.value ? 1 : -1)),
 
@@ -60,7 +58,6 @@ export default function CategoryList(props) {
               checked={displayAll}
               onChange={() => {
                 setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-                window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', props.category.name])
               }}>
               Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
               {formatName(props.category.equivalent, 2) || 'équivalents'}

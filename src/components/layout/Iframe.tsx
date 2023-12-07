@@ -2,15 +2,12 @@ import Head from 'next/head'
 import Script from 'next/script'
 import React, { ReactNode, useEffect } from 'react'
 import styled from 'styled-components'
-import useInteraction from 'hooks/useInteraction'
 import IframeFooter from './iframe/IframeFooter'
 
 const Wrapper = styled.div`
   padding: 1rem 0;
 `
 export default function Iframe({ children, noLogo }: { children: ReactNode; noLogo?: boolean }) {
-  useInteraction()
-
   useEffect(() => {
     if (window) {
       console.log('Iframe')

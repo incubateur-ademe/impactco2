@@ -19,7 +19,6 @@ const NumberInput = ({
         aria-label='moins'
         disabled={value === 0}
         onClick={() => {
-          window.please?.track(['trackEvent', 'OsezChanger', `${tracking}-minus`, `osez_changer_${tracking}_minus`])
           if (value === undefined) {
             setValue(0)
           } else if (value > 0) {
@@ -49,7 +48,6 @@ const NumberInput = ({
       <RightButton
         aria-label='plus'
         onClick={() => {
-          window.please?.track(['trackEvent', 'OsezChanger', `${tracking}-plus`, `osez_changer_${tracking}_plus`])
           if (value === undefined) {
             setValue(1)
           } else {

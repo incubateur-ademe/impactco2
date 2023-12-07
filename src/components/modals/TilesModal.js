@@ -97,7 +97,6 @@ export default function TilesModal() {
                     setTiles((prevTiles) =>
                       checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug)
                     )
-                    window?.please?.track(['trackEvent', 'Interaction', 'Ajouter tuile', item.slug])
                   }}
                 />
               ))}

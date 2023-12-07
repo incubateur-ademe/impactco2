@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import formatName from 'utils/formatName'
+import { track } from 'utils/matomo'
 import { Equivalents, NonEmptyResult, Result, ResultDescription, ResultValue } from './Defi.styles'
 import EmptyResult from './EmptyResult'
 import Equivalent from './Equivalent'
@@ -51,7 +52,6 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         data-testid='question-neuf'
         title='✨ Vos achats récents'
         source={() => {
-          window.please?.track(['trackEvent', 'OsezChanger', 'Hypotheses', 'osez_changer_hypotheses'])
           setModal('hypothesis')
         }}
         description={

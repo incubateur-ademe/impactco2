@@ -150,11 +150,7 @@ export default function Tile(props) {
   return (
     <Wrapper background={props.background} ref={setNodeRef} style={style}>
       {!props.reference && (
-        <ButtonDrag
-          {...attributes}
-          {...listeners}
-          onMouseDown={() => window?.please?.track(['trackEvent', 'Interaction', 'Drag tuile', props.equivalent.slug])}
-          aria-label={'Déplacer'}>
+        <ButtonDrag {...attributes} {...listeners} aria-label={'Déplacer'}>
           <svg width='12' height='16' viewBox='0 0 12 16' fill='none'>
             <circle cx='2' cy='2' r='2' />
             <circle cx='10' cy='2' r='2' />
@@ -169,7 +165,6 @@ export default function Tile(props) {
         <ButtonRemove
           onClick={() => {
             props.removeEquivalent(props.equivalent.id)
-            window?.please?.track(['trackEvent', 'Interaction', 'Supprimer tuile', props.equivalent.slug])
           }}
           aria-label={'Supprimer'}>
           <svg x='0px' y='0px' width='41.756px' height='41.756px' viewBox='0 0 41.756 41.756'>
@@ -237,7 +232,6 @@ export default function Tile(props) {
           <StyledButton
             onClick={() => {
               props.setCurEquivalent(props.equivalent)
-              window?.please?.track(['trackEvent', 'Interaction', 'Comparer tuile', props.equivalent.slug])
             }}
             hollow>
             <svg width='292' height='388' viewBox='0 0 292 388' fill='none' xmlns='http://www.w3.org/2000/svg'>

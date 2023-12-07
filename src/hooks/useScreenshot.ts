@@ -32,7 +32,6 @@ export default function useScreenshot(slug: string, format: string = 'png', even
           console.log(err)
         })
     }, 20)
-    window?.please?.track(['trackEvent', 'Interaction', 'Screenshot', eventName || slug])
   }
 
   return { ref, takeScreenshot, isScreenshotting }

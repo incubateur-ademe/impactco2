@@ -83,8 +83,6 @@ export default function Detail(props) {
               52) /
             1000,
           to: `/${category.slug}/email`,
-          onClick: () =>
-            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'email']),
         },
         {
           id: `visioconference`,
@@ -99,8 +97,6 @@ export default function Detail(props) {
               52) /
             1000,
           to: `/${category.slug}/visioconference`,
-          onClick: () =>
-            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'visioconference']),
         },
         {
           id: `streaming`,
@@ -115,8 +111,6 @@ export default function Detail(props) {
               52) /
             1000,
           to: `/${category.slug}/streamingvideo`,
-          onClick: () =>
-            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'streaming']),
         },
         ...equivalents
           .filter((equivalent) => devicesToDisplay.map((device) => device.slug).includes(equivalent.slug))
@@ -129,8 +123,6 @@ export default function Detail(props) {
             unit: equivalent.unit,
             value: formatConstruction(equivalent),
             to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
-            onClick: () =>
-              window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
           })),
       ]
         .filter((item) => item.value)
@@ -152,7 +144,6 @@ export default function Detail(props) {
             checked={displayAll}
             onChange={() => {
               setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-              window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
             }}>
             Voir tous les appareils
           </Checkbox>

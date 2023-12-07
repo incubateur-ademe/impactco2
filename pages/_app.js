@@ -15,15 +15,13 @@ function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
 
   useEffect(() => {
-    if (process?.env?.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production') {
       init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
-    }
 
-    if (typeof window !== 'undefined' && typeof window.please === 'undefined') {
-      window.please = {}
-      window.please.track = function (ary) {
-        console.log(`Event emitted : ${ary}`)
-        window?._paq?.push(ary)
+      if (typeof window !== 'undefined' && typeof window.please === 'undefined') {
+        window.please = {
+          track: window._paq.push,
+        }
       }
     }
   }, [])

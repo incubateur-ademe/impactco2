@@ -62,12 +62,10 @@ export default function CalculateurLivraison(props) {
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid })
   const changeRetrait = (retrait) => {
-    window?.please?.track(['trackEvent', 'Interaction', 'Select', `livraison_retrait_${retrait.uid}`])
     setPoint(retrait.uid === 'click' ? 'magasin' : retrait.uid === 'relais' ? 'point relais' : '')
     setValues({ ...values, retrait: retrait.uid })
   }
   const changeRelay = (relay) => {
-    window?.please?.track(['trackEvent', 'Interaction', 'Select', `livraison_dernierkm_${relay.uid}`])
     setValues({ ...values, relay: relay.uid })
   }
 
@@ -81,17 +79,14 @@ export default function CalculateurLivraison(props) {
   )
 
   const integrerClicked = () => {
-    window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'livraison_simulateur_integrate'])
     setIfl(true)
   }
 
   const habitClicked = () => {
-    window?.please?.track(['trackEvent', 'Interaction', 'Toggle', 'impact_livraison_habit'])
     setIsHabit(!isHabit)
   }
 
   const farawayClicked = () => {
-    window?.please?.track(['trackEvent', 'Interaction', 'Toggle', 'impact_livraison_faraway'])
     setIsPlane(!isPlane)
   }
 

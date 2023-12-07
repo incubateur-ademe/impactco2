@@ -13,28 +13,16 @@ const Share = () => {
       <ClipboardBox>{url}</ClipboardBox>
       <Text>ou</Text>
       <Buttons>
-        <FacebookShareButton
-          url={url}
-          title='Partager sur facebook'
-          onClick={() => window.please?.track(['trackEvent', 'Share', 'Facebook', 'osez_changer_facebook'])}>
+        <FacebookShareButton url={url} title='Partager sur facebook'>
           <Icon iconId='facebook' />
         </FacebookShareButton>
-        <TwitterShareButton
-          url={url}
-          title='Partager sur twitter'
-          onClick={() => window.please?.track(['trackEvent', 'Share', 'Twitter', 'osez_changer_twitter'])}>
+        <TwitterShareButton url={url} title='Partager sur twitter'>
           <Icon iconId='twitter' />
         </TwitterShareButton>
-        <WhatsappShareButton
-          url={url}
-          title='Partager sur whatsapp'
-          onClick={() => window.please?.track(['trackEvent', 'Share', 'Whatsapp', 'osez_changer_whatsapp'])}>
+        <WhatsappShareButton url={url} title='Partager sur whatsapp'>
           <Icon iconId='whatsapp' />
         </WhatsappShareButton>
-        <LinkedinShareButton
-          url={url}
-          title='Partager sur linkedin'
-          onClick={() => window.please?.track(['trackEvent', 'Share', 'Linkedin', 'osez_changer_linkedin'])}>
+        <LinkedinShareButton url={url} title='Partager sur linkedin'>
           <Icon iconId='linkedin' />
         </LinkedinShareButton>
       </Buttons>

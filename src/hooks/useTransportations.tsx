@@ -87,8 +87,6 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
                 (equivalent.carpool && carpool ? carpool : 1),
               component: equivalent.carpool && <Carpool />,
               to: `/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
-              onClick: () =>
-                window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
             }))
             .sort((a, b) => (a.value > b.value ? 1 : -1))
         : [],

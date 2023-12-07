@@ -25,7 +25,6 @@ const ResultHeader = ({ category }: { category: Category }) => {
           checked={displayAll}
           onChange={() => {
             setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-            window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
           }}>
           Voir {category.gender === 'f' ? 'toutes' : 'tous'} les {formatName(category.equivalent, 2) || 'équivalents'}
         </Checkbox>
@@ -34,7 +33,6 @@ const ResultHeader = ({ category }: { category: Category }) => {
           checked={carpool}
           onChange={() => {
             setCarpool((prevCarpool) => (prevCarpool ? 0 : 2))
-            window?.please?.track(['trackEvent', 'Interaction', 'Covoiturage'])
           }}>
           Afficher le covoiturage
         </Checkbox>
