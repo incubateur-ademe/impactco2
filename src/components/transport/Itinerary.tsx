@@ -22,7 +22,7 @@ export default function Itinerary({ category, iframe }: { category: Category; if
   const transportations = useTransportations(itineraries)
 
   return (
-    <Section $withoutPadding>
+    <Section $withoutPadding data-testid='itineraryWrapper'>
       <SectionWideContent $small>
         <Wrapper name={category.title || category.name} slug='transport/itineraire'>
           <Search itineraire iframe={iframe} />
