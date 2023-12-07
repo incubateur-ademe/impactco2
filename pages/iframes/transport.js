@@ -6,7 +6,7 @@ import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function Transport(props) {
   return (
-    <Iframe url='transport'>
+    <Iframe>
       <TransportProvider>
         <Distance category={props.category} iframe />
       </TransportProvider>

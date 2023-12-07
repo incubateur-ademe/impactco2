@@ -6,7 +6,7 @@ import { RulesProviderNumerique } from 'components/numerique/RulesProviderNumeri
 
 export default function Numerique(props) {
   return (
-    <Iframe url='usagenumerique'>
+    <Iframe>
       <RulesProviderNumerique>
         <Category category={props.category} />
       </RulesProviderNumerique>
