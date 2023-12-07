@@ -62,22 +62,15 @@ export default function Detail(props) {
     const devicesToDisplay = (
       displayAll
         ? devices
-        : devices.filter(({ name }) => {
-            console.log(name, engine.evaluate('email . appareil').nodeValue)
-            console.log(name, engine.evaluate('streaming . appareil').nodeValue)
-            console.log(name, engine.evaluate('streaming . durée').nodeValue)
-            console.log(name, engine.evaluate('visio . appareil').nodeValue)
-            console.log(name, engine.evaluate('visio . durée').nodeValue)
-
-            return (
+        : devices.filter(
+            ({ name }) =>
               (name === engine.evaluate('email . appareil').nodeValue && props.numberEmails) ||
               (name === engine.evaluate('streaming . appareil').nodeValue &&
                 engine.evaluate('streaming . durée').nodeValue) ||
               (name === engine.evaluate('visio . appareil').nodeValue && engine.evaluate('visio . durée').nodeValue)
-            )
-          })
+          )
     ).map((device) => device.slug)
-    console.log(devicesToDisplay)
+
     return [
       {
         id: `email`,
