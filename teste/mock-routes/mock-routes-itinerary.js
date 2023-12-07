@@ -1,4 +1,4 @@
-export const mockRoutes = async (page) => {
+export const mockRoutesItinerary = async (page) => {
   await page.route(
     'https://photon.komoot.io/api/?q=nan&layer=city&layer=street&layer=house&lang=fr&lat=46.227638&lon=2.213749&zoom=7&location_bias_scale=0.9',
     async (route) => {
@@ -331,6 +331,9 @@ export const mockRoutes = async (page) => {
     'https://photon.komoot.io/api/?q=ang&layer=city&layer=street&layer=house&lang=fr&lat=46.227638&lon=2.213749&zoom=7&location_bias_scale=0.9',
     async (route) => {
       await route.fulfill({
+        headers: {
+          Etag: 'mocked, because it was run in a E2E environment',
+        },
         body: JSON.stringify({
           features: [
             {
@@ -612,4 +615,12 @@ export const mockRoutes = async (page) => {
       })
     }
   )
+  await page.route('/api/callGMap', async (route) => {
+    await route.fulfill({
+      headers: {
+        Etag: 'mocked, because it was run in a E2E environment',
+      },
+      body: JSON.stringify({ car: 91.021, foot: 87.914, rail: 91.153, plane: 80.69557099482829 }),
+    })
+  })
 }

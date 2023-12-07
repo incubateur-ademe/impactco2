@@ -1,11 +1,11 @@
 import { expect, test } from '@playwright/test'
 import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
-import { mockRoutes } from './mock-routes/mock-routes'
+import { mockRoutesItinerary } from './mock-routes/mock-routes-itinerary'
 
 configurePlaywrightCoverage(test)
 
 test.beforeEach(async ({ page }) => {
-  await mockRoutes(page)
+  await mockRoutesItinerary(page)
 })
 
 test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
@@ -55,6 +55,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     const angers = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Angers 49000 France' })
     await angers.click()
     expect(page.getByTestId('Address-Arrivée').locator('form')).toHaveAttribute('addressset', 'Angers  France')
+    await page.waitForTimeout(2000)
   })
 })
 
