@@ -2,6 +2,7 @@ import React, { useContext, useMemo, useState } from 'react'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatUsage from 'utils/formatUsage'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
@@ -33,7 +34,8 @@ export default function CategoryList(props) {
           unit: equivalent.unit,
           value: computeECV(equivalent),
           usage: formatUsage(equivalent),
-          to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
+          to: `/${props.category.slug}/${equivalent.slug}`,
+          onClick: () => track(props.category.name, 'Navigation equivalent', equivalent.slug),
         }))
         .sort((a, b) => (a.value > b.value ? 1 : -1)),
 

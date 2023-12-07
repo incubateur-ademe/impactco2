@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import ModalContext from 'components/providers/ModalProvider'
 import ButtonLink from 'components/base/ButtonLink'
 
@@ -17,7 +18,13 @@ export default function Hypothèses() {
   const { setHypothesis } = useContext(ModalContext)
   return (
     <Wrapper>
-      <StyledButtonLink onClick={() => setHypothesis(true)}>Sources et hypothèses</StyledButtonLink>{' '}
+      <StyledButtonLink
+        onClick={() => {
+          track('Usage numérique', 'Hypothèses', 'usage_numerique_hypotheses')
+          setHypothesis(true)
+        }}>
+        Sources et hypothèses
+      </StyledButtonLink>{' '}
     </Wrapper>
   )
 }

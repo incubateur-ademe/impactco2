@@ -40,6 +40,7 @@ export function TransportProvider(props) {
           setStart({
             latitude: address.geometry.coordinates[1],
             longitude: address.geometry.coordinates[0],
+            city: address.properties.city,
             address: displayAddress(address),
           })
         }
@@ -52,6 +53,7 @@ export function TransportProvider(props) {
           setEnd({
             latitude: address.geometry.coordinates[1],
             longitude: address.geometry.coordinates[0],
+            city: address.properties.city,
             address: displayAddress(address),
           })
         }

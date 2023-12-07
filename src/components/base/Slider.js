@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -31,6 +32,7 @@ const Thumb = styled.div`
   width: 1.25rem;
 `
 export default function Slider(props) {
+  const tracked = useRef(false)
   return (
     <Wrapper className={props.className}>
       <Range
@@ -39,6 +41,11 @@ export default function Slider(props) {
         max={props.max || 10}
         values={[props.value]}
         onChange={(values) => {
+          if (!tracked.current) {
+            tracked.current = true
+            track(...props.tracking)
+          }
+
           props.onChange(values[0])
         }}
         renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}

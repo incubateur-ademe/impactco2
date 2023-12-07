@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import useIframe from 'hooks/useIframe'
 import ModalContext from 'components/providers/ModalProvider'
 import MagicLink from 'components/base/MagicLink'
@@ -56,7 +57,12 @@ export default function Buttons(props) {
 
   return (
     <Wrapper className={props.className} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
-      <Button onClick={() => setShare(true)} className='noscreenshot'>
+      <Button
+        onClick={() => {
+          track(props.tracking, 'Partager', `${props.tracking.toLowerCase().replaceAll(' ', '_')}_partager`)
+          setShare(true)
+        }}
+        className='noscreenshot'>
         <Svg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path d='M474.332 85.332C474.332 123.625 443.293 154.668 405 154.668C366.707 154.668 335.668 123.625 335.668 85.332C335.668 47.043 366.707 16 405 16C443.293 16 474.332 47.043 474.332 85.332V85.332Z' />
           <path
@@ -82,7 +88,10 @@ export default function Buttons(props) {
           className='noscreenshot'
           to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${props.slug ? `?type=${props.slug}` : ''}`}
           large
-          noIcon>
+          noIcon
+          onClick={() => {
+            track(props.tracking, 'Intégrer', `${props.tracking.toLowerCase().replaceAll(' ', '_')}_integrer`)
+          }}>
           <Svg x='0px' y='0px' width='94.504px' height='94.504px' viewBox='0 0 94.504 94.504'>
             <path d='M93.918,45.833L69.799,21.714c-0.75-0.75-2.077-0.75-2.827,0l-5.229,5.229c-0.781,0.781-0.781,2.047,0,2.828    l17.477,17.475L61.744,64.724c-0.781,0.781-0.781,2.047,0,2.828l5.229,5.229c0.375,0.375,0.884,0.587,1.414,0.587    c0.529,0,1.039-0.212,1.414-0.587l24.117-24.118C94.699,47.881,94.699,46.614,93.918,45.833z' />
             <path d='M32.759,64.724L15.285,47.248l17.477-17.475c0.375-0.375,0.586-0.883,0.586-1.414c0-0.53-0.21-1.039-0.586-1.414    l-5.229-5.229c-0.375-0.375-0.884-0.586-1.414-0.586c-0.53,0-1.039,0.211-1.414,0.586L0.585,45.833    c-0.781,0.781-0.781,2.047,0,2.829L24.704,72.78c0.375,0.375,0.884,0.587,1.414,0.587c0.53,0,1.039-0.212,1.414-0.587l5.229-5.229    C33.542,66.771,33.542,65.505,32.759,64.724z' />
@@ -93,7 +102,12 @@ export default function Buttons(props) {
           </Svg>
         </Button>
       )}
-      <Button onClick={props.takeScreenshot} className='noscreenshot'>
+      <Button
+        onClick={() => {
+          track(props.tracking, 'Télécharger', `${props.tracking.toLowerCase().replaceAll(' ', '_')}_telecharger`)
+          props.takeScreenshot()
+        }}
+        className='noscreenshot'>
         <Svg width='22' height='25' viewBox='0 0 22 25' fill='none' xmlns='http://www.w3.org/2000/svg' className='jump'>
           <path d='M9.31546 1.68556C9.29953 1.78376 9.29217 1.88314 9.29346 1.98258L9.29346 18.9141L9.12175 18.5449C8.95094 18.184 8.71847 17.8557 8.43487 17.5747L3.68685 12.8267C3.08991 12.2013 2.12963 12.0963 1.41157 12.5777C0.646405 13.138 0.480267 14.2124 1.04055 14.9777C1.08584 15.0395 1.13521 15.0982 1.18834 15.1535L9.77428 23.7394C10.4445 24.4104 11.5318 24.411 12.2028 23.7407L20.79 15.1535C21.4597 14.4819 21.4582 13.3947 20.7867 12.725C20.7338 12.6723 20.6776 12.6231 20.6183 12.5777C19.9003 12.0963 18.94 12.2013 18.343 12.8267L13.5864 17.5661C13.3342 17.818 13.1227 18.1077 12.9597 18.4247L12.7278 18.9399V2.07708C12.7604 1.19986 12.1476 0.430241 11.2854 0.265445C10.3493 0.113635 9.46733 0.749425 9.31546 1.68556Z' />
         </Svg>

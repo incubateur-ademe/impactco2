@@ -46,6 +46,7 @@ export default function Wrapper(props) {
                 takeScreenshot={takeScreenshot}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
+                tracking={props.name}
               />
             </Header>
             {props.children}

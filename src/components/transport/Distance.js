@@ -9,14 +9,14 @@ import ResultHeader from './ResultHeader'
 import Search from './Search'
 
 export default function Distance(props) {
-  const transportations = useTransportations()
+  const transportations = useTransportations('distance')
 
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Search distance iframe={props.iframe} />
-          <ResultHeader category={props.category} />
+          <ResultHeader category={props.category} tracking='distance' />
           <BarChart items={transportations} max={transportations[transportations.length - 1]?.value} />
           <CategoryLegend />
           <Bottom category={props.category} iframe={props.iframe} />

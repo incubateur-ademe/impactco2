@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction, useContext } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import TransportContext from 'components/transport/TransportProvider'
 import Distance from './search/Distance'
 import Itinerary from './search/Itinerary'
@@ -60,7 +61,14 @@ export default function Search({
           <>
             <Text>
               Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancyModal(true)}>(par personne)</Color> pour ce trajet
+              <Color
+                onClick={() => {
+                  track('Transport itinéraire', 'Hypothèses', 'transport_itineraire_hypotheses')
+                  setOccupancyModal(true)
+                }}>
+                (par personne)
+              </Color>{' '}
+              pour ce trajet
             </Text>
             <Itinerary />
           </>
@@ -75,7 +83,14 @@ export default function Search({
           <>
             <Text>
               Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancyModal(true)}>(par personne)</Color> pour cette distance
+              <Color
+                onClick={() => {
+                  track('Transport distance', 'Hypothèses', 'transport_itineraire_hypotheses')
+                  setOccupancyModal(true)
+                }}>
+                (par personne)
+              </Color>{' '}
+              pour cette distance
             </Text>
             <Distance />
           </>

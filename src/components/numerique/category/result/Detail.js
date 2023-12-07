@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import formatConstruction from 'utils/formatConstruction'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
@@ -83,6 +84,7 @@ export default function Detail(props) {
               52) /
             1000,
           to: `/${category.slug}/email`,
+          onClick: () => track('Usage numérique', 'Navigation equivalent', 'email'),
         },
         {
           id: `visioconference`,
@@ -97,6 +99,7 @@ export default function Detail(props) {
               52) /
             1000,
           to: `/${category.slug}/visioconference`,
+          onClick: () => track('Usage numérique', 'Navigation equivalent', 'visioconference'),
         },
         {
           id: `streaming`,
@@ -111,6 +114,7 @@ export default function Detail(props) {
               52) /
             1000,
           to: `/${category.slug}/streamingvideo`,
+          onClick: () => track('Usage numérique', 'Navigation equivalent', 'streaming'),
         },
         ...equivalents
           .filter((equivalent) => devicesToDisplay.map((device) => device.slug).includes(equivalent.slug))
@@ -123,6 +127,7 @@ export default function Detail(props) {
             unit: equivalent.unit,
             value: formatConstruction(equivalent),
             to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
+            onClick: () => track('Usage numérique', 'Navigation equivalent', equivalent.slug),
           })),
       ]
         .filter((item) => item.value)
@@ -143,6 +148,7 @@ export default function Detail(props) {
             name='displayAll'
             checked={displayAll}
             onChange={() => {
+              track('Usage numérique', 'Voir tous les modes', displayAll ? 'faux' : 'vrai')
               setDisplayAll((prevDisplayAll) => !prevDisplayAll)
             }}>
             Voir tous les appareils

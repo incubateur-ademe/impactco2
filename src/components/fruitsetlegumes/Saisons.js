@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
@@ -80,6 +81,7 @@ export default function Saisons(props) {
           season: equivalent.months.includes(props.month.index),
           months: equivalent.months,
           to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
+          onClick: () => track('Fruits et légumes', 'Navigation equivalent', equivalent.slug),
         }))
         .sort((a, b) =>
           sorting.includes('alph')

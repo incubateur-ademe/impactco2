@@ -21,7 +21,7 @@ export default function Teletravail(props) {
   }, [equivalents, teletravailTransportation])
 
   const [distance, setDistance] = useState(0)
-  const itinerary = useItineraries(start, end)
+  const itinerary = useItineraries(start, end, 'télétravail')
   useEffect(() => {
     setDistance(itinerary && itinerary[currentTransportation?.type] * 1000)
   }, [itinerary, currentTransportation])

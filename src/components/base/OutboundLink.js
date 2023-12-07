@@ -11,7 +11,8 @@ export default function OutboundLink(props) {
           target='_blank'
           rel='noreferrer noopener'
           href={props.href}
-          data-testid={props['data-testid']}>
+          data-testid={props['data-testid']}
+          onClick={props.onClick}>
           {props.children}
           <svg
             xmlns='http://www.w3.org/2000/svg'

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 import reusecards from './data/reusecards.json'
+import { track } from 'utils/matomo'
 import Button from 'components/base/Button'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Meeting from 'components/meeting/Meeting'
@@ -15,7 +16,11 @@ export default function ByArticle() {
     return (
       <ReuseCardWrapper>
         <ReuseCard>
-          <a href={reuseCard.link} target='_blank' rel='noreferrer noopener'>
+          <a
+            href={reuseCard.link}
+            target='_blank'
+            rel='noreferrer noopener'
+            onClick={() => track('Click', `Vignette ${reuseCard.tagtext}`, `click_vignette_${reuseCard.tagtext}`)}>
             <ReuseCardImgContainer color={reuseCard.color}>
               <ReuseCardImg img={reuseCard.img}>
                 <ReuseCardTag>{reuseCard.tagtext}</ReuseCardTag>
@@ -56,21 +61,26 @@ export default function ByArticle() {
                   <Link
                     href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
                     target='_blank'
-                    rel='noreferrer noopener'>
+                    rel='noreferrer noopener'
+                    onClick={() => track('Click', 'Kit de diffusion', 'click_kit_diffusion')}>
                     Kit de diffusion
                   </Link>{' '}
                   pour vous épauler dans la rédaction de vos contenus.
                 </MiddleLi>
                 <MiddleLi>
                   Personnalisez le simulateur de votre choix grâce à notre{' '}
-                  <Link href='/integration'>configurateur</Link>.
+                  <Link href='/integration' onClick={() => track('Click', 'Configurateur', 'click_configurateur')}>
+                    configurateur
+                  </Link>
+                  .
                 </MiddleLi>
                 <MiddleLi>
                   Inspirez-vous d'
                   <Link
                     href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
                     target='_blank'
-                    rel='noreferrer noopener'>
+                    rel='noreferrer noopener'
+                    onClick={() => track('Click', 'Exemples concrets', 'click_exemples_concrets')}>
                     exemples concrets
                   </Link>{' '}
                   déjà créés par des médias, entreprises, associations...
@@ -80,7 +90,8 @@ export default function ByArticle() {
                 <Button
                   to='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
                   target='_blank'
-                  rel='noreferrer noopener'>
+                  rel='noreferrer noopener'
+                  onClick={() => track('Click', 'Consulter le kit de diffusion', 'click_consulter_kit_diffusion')}>
                   Consulter le kit de diffusion
                 </Button>
               </MiddleCta>
@@ -94,7 +105,8 @@ export default function ByArticle() {
                     href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
                     target='_blank'
                     rel='noreferrer noopener'
-                    data-testid='byArticleFaq'>
+                    data-testid='byArticleFaq'
+                    onClick={() => track('Click', 'FAQ', 'click_faq')}>
                     Foire aux Questions
                   </Link>{' '}
                   pour trouver des éléments de réponse.

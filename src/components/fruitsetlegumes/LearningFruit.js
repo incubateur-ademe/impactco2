@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import useOnScreen from 'hooks/useOnScreen'
 import ModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/Button'
@@ -98,7 +99,9 @@ export default function LearningFruit() {
         </Text>
         <BarChart />
         <ButtonWrapper>
-          <Button to={'https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html'}>
+          <Button
+            to={'https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html'}
+            onClick={() => track('Fruits et légumes', 'Calendrier', 'fruits_et_legumes_calendrier')}>
             Je télécharge le calendrier des fruits et légumes de saison
           </Button>
         </ButtonWrapper>

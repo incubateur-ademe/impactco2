@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import TransportContext from 'components/transport/TransportProvider'
 import NumberInput from './distance/NumberInput'
 import PlusOrMinusButton from './distance/PlusOrMinusButton'
@@ -50,6 +51,7 @@ const Thumb = styled.div`
 `
 export default function Distance() {
   const { km, setKm } = useContext(TransportContext)
+  const tracked = useRef(false)
 
   const cleanRound = (x) => {
     return Number(x.toPrecision(1))
@@ -73,6 +75,7 @@ export default function Distance() {
             if (km !== '') {
               setKm(km)
               setOpenTextInput(false)
+              track('Transport distance', 'Distance manuel', km)
             }
           }}
         />
@@ -91,6 +94,10 @@ export default function Distance() {
             max={4}
             values={[getPositionFromKm(km)]}
             onChange={(values) => {
+              if (!tracked.current) {
+                tracked.current = true
+                track('Transport distance', 'Distance slider', 'slider-distance')
+              }
               setKm(getKmFromPosition(values[0]))
             }}
             renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}

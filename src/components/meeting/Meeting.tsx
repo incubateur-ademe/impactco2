@@ -1,6 +1,7 @@
 import { AxiosResponse } from 'axios'
 import React, { FormEvent, useState } from 'react'
 import axiosClient from 'utils/axios'
+import { track } from 'utils/matomo'
 import { NotionCommand } from 'utils/notion'
 import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
@@ -37,7 +38,10 @@ const Meeting = () => {
         value={email}
         onChange={(e: { value: string; name: string }) => setEmail(e.value)}
       />
-      <Button disabled={sending} type='submit'>
+      <Button
+        disabled={sending}
+        type='submit'
+        onClick={() => track('Click', 'Prendre rendez-vous', 'click_prendre_rdv')}>
         Prendre rendez-vous
       </Button>
     </Container>

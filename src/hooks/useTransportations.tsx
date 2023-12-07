@@ -4,6 +4,7 @@ import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import Carpool from 'components/transport/Carpool'
 import TransportContext from 'components/transport/TransportProvider'
@@ -25,7 +26,7 @@ const filterByDistance = (equivalent: DeplacementEquivalent, value: number) => {
 }
 
 // C'est un peu austère, déso
-export default function useTransportations(itineraries: Record<DeplacementType, number> | undefined) {
+export default function useTransportations(tracking: string, itineraries: Record<DeplacementType, number> | undefined) {
   const { equivalents, categories } = useContext(DataContext)
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -87,10 +88,11 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
                 (equivalent.carpool && carpool ? carpool : 1),
               component: equivalent.carpool && <Carpool />,
               to: `/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
+              onClick: () => track(`Transport ${tracking}`, 'Navigation equivalent', equivalent.slug),
             }))
             .sort((a, b) => (a.value > b.value ? 1 : -1))
         : [],
-    [categories, equivalents, km, displayAll, carpool, itineraries]
+    [categories, equivalents, km, displayAll, carpool, itineraries, tracking]
   )
 
   return transportations

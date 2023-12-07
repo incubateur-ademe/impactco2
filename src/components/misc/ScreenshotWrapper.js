@@ -39,6 +39,7 @@ export default function ScreenshotWrapper(props) {
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           slug={props.equivalent?.slug}
+          tracking={`${props.equivalent?.slug}-${props.tracking}`}
         />
       )}
     </Wrapper>

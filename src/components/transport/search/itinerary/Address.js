@@ -26,6 +26,7 @@ export default function Address(props) {
           props.setPlace({
             latitude: address.geometry.coordinates[1],
             longitude: address.geometry.coordinates[0],
+            city: address.properties.city,
             address: displayAddress(address),
           })
         }}

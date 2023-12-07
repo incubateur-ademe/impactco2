@@ -1,7 +1,8 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useContext, useMemo, useRef, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import ButtonLink from 'components/base/ButtonLink'
@@ -101,6 +102,7 @@ export default function LiseuseBookComparator() {
     [equivalents]
   )
   const [numBookPerYear, setNumBookPerYear] = useState(10)
+  const tracked = useRef(false)
 
   return (
     <Wrapper>
@@ -117,6 +119,10 @@ export default function LiseuseBookComparator() {
             max={50}
             values={[numBookPerYear]}
             onChange={(values) => {
+              if (!tracked.current) {
+                tracked.current = true
+                track('Liseuse', 'Slider', 'slider-liseuse')
+              }
               setNumBookPerYear(values[0])
             }}
             renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import OutboundLink from 'components/base/OutboundLink'
 import { Section, SectionWideContent } from 'components/base/Section'
 
@@ -20,7 +21,10 @@ export default function NGCCard() {
             <br />
             Rendez-vous sur le simulateur&nbsp;
             <strong>
-              <OutboundLink title='Nos Gestes Climat' href='https://nosgestesclimat.fr'>
+              <OutboundLink
+                title='Nos Gestes Climat'
+                href='https://nosgestesclimat.fr'
+                onClick={() => track('Click', 'NGC', 'click_ngc')}>
                 Nos Gestes Climat
               </OutboundLink>
             </strong>

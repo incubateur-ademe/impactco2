@@ -36,7 +36,7 @@ if (buttonOnly) {
         : 'tuiles'
   const search = script.dataset.search || ''
 
-  const src = `${WEBPACK_SITE_URL}/iframes/${type}${search}`
+  const src = `${WEBPACK_SITE_URL}/iframes/${type}${search}${search ? '&' : '?'}source=${source}`
 
   const iframe = document.createElement('iframe')
 
