@@ -31,9 +31,8 @@ test('Recherche de la ville de départ', async ({ page }) => {
   })
 
   await test.step('Pas de suggestion affichée', async () => {
-    await page.waitForTimeout(1000)
-    let nb_of_suggestions = await page.getByTestId('transportSuggest').locator('div').count()
-    expect(nb_of_suggestions).toEqual(0)
+    const suggestions = await getNbOfSuggestions(page)
+    expect(suggestions).toEqual(0)
   })
 
   await test.step('On rentre une 2ème lettre, et une 3ème', async () => {
@@ -42,8 +41,13 @@ test('Recherche de la ville de départ', async ({ page }) => {
   })
 
   await test.step('Il y a bien des suggestions qui apparaissent', async () => {
-    await page.waitForTimeout(1000)
-    let nb_of_suggestions = await page.getByTestId('transportSuggest').locator('div').count()
-    expect(nb_of_suggestions).toEqual(7)
+    const suggestions = await getNbOfSuggestions(page)
+    expect(suggestions).toEqual(7)
   })
 })
+
+const getNbOfSuggestions = async (page) => {
+  await page.waitForTimeout(1000)
+  const count = await page.getByTestId('transportSuggest').locator('div').count()
+  return count
+}
