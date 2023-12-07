@@ -1,38 +1,38 @@
 [
   {
     "slug": "card_1",
-    "tagtext": "TWOMORROW",
+    "tagtext": "FIGARO IMMOBILIER",
     "color": "#e6f2e6",
-    "img": "/images/home_img_1.png",
-    "link": "https://www.instagram.com/p/Ct_Hqn1rF9e/?igshid=NTc4MTIwNjQ2YQ%3D%3D",
-    "title": "21 000 heures de streaming = 4 800kg d'oignons",
-    "paragraph": "On parle toujours des 2 tonnes de CO2e à atteindre pour respecter les Accords de Paris. Mais à quoi cela correspond-il vraiment ?"
+    "img": "/images/home_img_1.jpg",
+    "link": "https://immobilier.lefigaro.fr/annonces/immobilier-vente-bien-france.html",
+    "title": "Votre projet immobilier",
+    "paragraph": "Vous êtes une plateforme immobilière ? Permettez à vos visiteurs de calculer l’impact carbone de leur futur trajet grâce notre simulateur Impact Transport."
   },
   {
     "slug": "card_2",
     "tagtext": "TF1 INFO",
     "color": "#e4b47f",
-    "img": "/images/home_img_2.png",
+    "img": "/images/home_img_2.jpg",
     "link": "https://www.tf1info.fr/environnement-ecologie/alimentation-transports-ecrans-ces-gestes-du-quotidien-qui-peuvent-aider-a-sauver-la-planete-2269524.html",
-    "title": "Ces gestes du quotidien qui peuvent aider à sauver la planète",
-    "paragraph": "Un repas sans viande plutôt que du bœuf : 6,6 kg d'eCO2 économisés. Et nos assiettes représentent un secteur important pour limiter nos émissions de CO2."
+    "title": "Comment limiter votre empreinte carbone ?",
+    "paragraph": "Vous êtes un média grand public ou spécialisé ? Illustrez votre contenu grâce à nos ressources pédagogiques qui vulgarisent les ordres de grandeur de l’impact carbone."
   },
   {
     "slug": "card_3",
     "tagtext": "TEAM FOR THE PLANET",
     "color": "black",
-    "img": "/images/home_img_3.png",
-    "link": "https://www.linkedin.com/posts/tftp_une-vie-enti%C3%A8re-denvoi-demails-ne-suffirait-activity-7109071360856895488-q5H0/?utm_source=share&utm_medium=member_desktop",
-    "title": "Parlons ordres de grandeur",
-    "paragraph": "Une vie entière d'envoi d'emails ne suffirait pas à polluer comme le remplacement de sa télévision."
+    "img": "/images/home_img_3.jpg",
+    "link": "https://www.linkedin.com/posts/tftp_une-vie-entière-denvoi-demails-ne-suffirait-activity-7109071360856895488-q5H0/",
+    "title": "Votre empreinte numérique sur le climat",
+    "paragraph": "Vous êtes un acteur engagé dans la sensibilisation aux enjeux climatiques ? Utilisez nos données, simulateurs ou infographies pour faire passer vos messages de façon ludique."
   },
   {
     "slug": "card_4",
-    "tagtext": "SO GOOD FESTIVAL",
+    "tagtext": "THÉÂTRE DE L’EUROPE",
     "color": "#ffdc9e",
-    "img": "/images/home_img_4.png",
-    "link": "https://www.sogoodfestival.com/infos-pratiques",
-    "title": "Venir au So Good Festival",
-    "paragraph": "Calcule l’impact carbone de ton déplacement jusqu’au festival avec Impact CO2 (ADEME) !"
+    "img": "/images/home_img_4.jpg",
+    "link": "https://www.theatre-odeon.eu/fr/infos-pratiques#acces_et_horaires",
+    "title": "Informations pratiques",
+    "paragraph": "Vous êtes un lieu ou un événement culturel ? Proposez à votre public de calculer l’impact carbone de leur déplacement jusqu’à vous grâce à notre simulateur Impact Transport."
   }
 ]
