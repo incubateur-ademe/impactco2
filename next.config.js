@@ -92,10 +92,14 @@ const nextConfig = {
         destination: '/iframes/:slug*',
         permanent: true,
       },
-
       {
         source: '/iframes/tuiles',
         destination: '/iframes/convertisseur',
+        permanent: true,
+      },
+      {
+        source: '/iframeslivraison.js',
+        destination: '/iframes.js',
         permanent: true,
       },
     ]

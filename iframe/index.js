@@ -3,7 +3,7 @@
 /* eslint-disable no-undef */
 import { iframeResize } from 'iframe-resizer'
 
-const isFigaro = !!document.getElementById('mon-impact-transport')
+const buttonOnly = !!document.getElementById('mon-impact-transport')
 
 const script =
   document.getElementById('mon-impact-transport') ||
@@ -11,44 +11,10 @@ const script =
   document.getElementById('ecolab-transport') ||
   document.getElementById('datagir-mon-convertisseur-co2') ||
   document.getElementById('datagir-impact-co2') ||
+  document.getElementById('impact-livraison') ||
   document.getElementById('impact-co2')
 
-const type = script.dataset.type
-  ? script.dataset.type
-  : document.getElementById('mon-impact-transport') ||
-      document.getElementById('datagir-teletravail') ||
-      document.getElementById('ecolab-transport')
-    ? 'empreinte-carbone/transport'
-    : 'tuiles'
-const search = script.dataset.search || ''
-const source = window.location.href.toString()
-
-const src = `${WEBPACK_SITE_URL}/iframes/${type}${search}${search ? '&' : '?'}source=${source}`
-
-const iframe = document.createElement('iframe')
-
-const iframeAttributes = {
-  src,
-  style: 'border: none; width: 100%; display: block; margin: 0 auto;',
-  allowfullscreen: true,
-  webkitallowfullscreen: true,
-  mozallowfullscreen: true,
-  allow: 'geolocation',
-}
-for (var key in iframeAttributes) {
-  iframe.setAttribute(key, iframeAttributes[key])
-}
-iframeResize({}, iframe)
-
-const link = document.createElement('div')
-
-link.innerHTML = `<a href="${WEBPACK_SITE_URL}" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`
-link.style.cssText = `margin: 0.5rem auto 1rem;text-align: center`
-
-if (!isFigaro) {
-  script.parentNode.insertBefore(iframe, script)
-  script.parentNode.insertBefore(link, script)
-} else {
+if (buttonOnly) {
   let simpleButtonScreen = document.createElement('div')
   simpleButtonScreen.innerHTML = `
   <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
@@ -58,8 +24,43 @@ if (!isFigaro) {
   </div>
   `
   script.parentNode.insertBefore(simpleButtonScreen, script)
-}
+} else {
+  const type = script.dataset.type
+    ? script.dataset.type
+    : document.getElementById('mon-impact-transport') ||
+        document.getElementById('datagir-teletravail') ||
+        document.getElementById('ecolab-transport')
+      ? 'empreinte-carbone/transport'
+      : document.getElementById('impact-livraison')
+        ? 'livraison'
+        : 'tuiles'
+  const search = script.dataset.search || ''
 
-console.log('isFig', isFigaro)
-console.log('window.location.ancestorOrigins[0]', window.location.ancestorOrigins[0])
-console.log('document.referrer', document.referrer)
+  const src = `${WEBPACK_SITE_URL}/iframes/${type}${search}`
+
+  const iframe = document.createElement('iframe')
+
+  const iframeAttributes = {
+    src,
+    style: 'border: none; width: 100%; display: block; margin: 0 auto;',
+    allowfullscreen: true,
+    webkitallowfullscreen: true,
+    mozallowfullscreen: true,
+    allow: 'geolocation',
+  }
+  for (var key in iframeAttributes) {
+    iframe.setAttribute(key, iframeAttributes[key])
+  }
+  iframeResize({}, iframe)
+
+  const link = document.createElement('div')
+
+  link.innerHTML =
+    type === 'livraison'
+      ? `<a href="${WEBPACK_SITE_URL}/livraison" target="_blank">Découvrez l'empreinte carbone de la livraison de colis</a>`
+      : `<a href="${WEBPACK_SITE_URL}" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`
+  link.style.cssText = `margin: 0.5rem auto 1rem;text-align: center`
+
+  script.parentNode.insertBefore(iframe, script)
+  script.parentNode.insertBefore(link, script)
+}
