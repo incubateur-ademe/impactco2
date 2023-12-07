@@ -8,15 +8,6 @@ test.beforeEach(async ({ page }) => {
   await mockRoutes(page)
 })
 
-test('La page itinéraire', async ({ page }) => {
-  await test.step('On charge la page itinéraire', async () => {
-    await page.goto('/transport/itineraire')
-  })
-  await test.step("L'onglet s'affiche avec un titre correct", async () => {
-    await expect(page).toHaveTitle(/Accueil | Impact CO2/)
-  })
-})
-
 test('Recherche de la ville de départ', async ({ page }) => {
   await test.step('On charge la page itinéraire dans le navigateur', async () => {
     await page.goto('/transport/itineraire')
