@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import slugify from 'utils/slugify'
+import getStringAfterLastSlash from '../../../utils/getStringAfterLastSlash'
 import useIframe from 'hooks/useIframe'
 import MagicLink from 'components/base/MagicLink'
 import Bar from './item/Bar'
@@ -34,7 +34,7 @@ export default function Item(props) {
       {...props}
       to={(iframe ? process.env.NEXT_PUBLIC_URL : '') + props.to}
       onClick={props.onClick || null}
-      data-testid={slugify(props.title || '')}
+      data-testid={getStringAfterLastSlash(props.to)}
       noIcon>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
