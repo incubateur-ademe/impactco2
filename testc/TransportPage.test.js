@@ -20,7 +20,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // When
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
     // Then
-    expect(await screen.findByTestId('vlo-ou-marche')).toBeInTheDocument()
+    expect(await screen.findByTestId('vlo-ou-marche')).toHaveTextContent('Vélo ou marche00 kg CO2e')
   })
 })
 
