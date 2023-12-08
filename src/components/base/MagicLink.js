@@ -26,7 +26,12 @@ export default function MagicLink(props) {
       {!props.noIcon && <NewTabIcon />}
     </a>
   ) : (
-    <Link href={props.to} className={props.className} onClick={props.onClick || null} aria-label={props['aria-label']}>
+    <Link
+      href={props.to}
+      className={props.className}
+      onClick={props.onClick || null}
+      aria-label={props['aria-label']}
+      data-testid={props['data-testid']}>
       {props.children}
     </Link>
   )
