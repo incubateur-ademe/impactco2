@@ -8,10 +8,11 @@ export default function Search(props) {
   const { engine, setSituation } = useContext(RulesContextNumerique)
 
   const [visioDuree, setVisioDuree] = useLocalStorage('visio . durée', 180)
+  const [streamingDuree, setStreamingDuree] = useLocalStorage('streaming . durée', 420)
 
   useEffect(() => {
     setSituation({
-      ['streaming . durée']: 420,
+      ['streaming . durée']: streamingDuree,
       ['visio . durée']: visioDuree,
       ['email . appareil']: `'smartphone'`,
       ['email . taille']: 0.075,
@@ -121,11 +122,12 @@ export default function Search(props) {
             max={4200}
             step={60}
             value={engine.evaluate(`streaming . durée`).nodeValue}
-            onChange={(value) =>
+            onChange={(value) => {
+              setStreamingDuree(value)
               setSituation({
                 [`streaming . durée`]: value,
               })
-            }
+            }}
           />
         </Wrapper.Parameters>
         <Wrapper.Desktop $visible={display === 'streaming'}>
