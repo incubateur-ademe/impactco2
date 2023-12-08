@@ -1,7 +1,9 @@
 import '@testing-library/jest-dom'
-import { screen } from '@testing-library/react'
+import { act, screen } from '@testing-library/react'
 import mockRouter from 'next-router-mock'
 import TransportPage from 'pages/transport.tsx'
+// official hack... see https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
+import '../test-utils/match-media.js'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
@@ -21,6 +23,29 @@ describe('TransportPage - affiche la page itinéraire', () => {
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
     // Then
     expect(await screen.findByTestId('vlo-ou-marche')).toHaveTextContent('Vélo ou marche00 kg CO2e')
+  })
+  test("Par défaut, limite le nombre d'éléments affichés", async () => {
+    // Given
+    mockRouter.push('/transport')
+    // When
+    renderWithWrapper(<TransportPage category={getTransportCategory()} />)
+    // Then
+    const velo = await screen.findByTestId('vlo-ou-marche')
+    const co2list = velo.parentElement.querySelectorAll('a')
+    expect(co2list.length).toBe(7)
+  })
+  test('Peut afficher tous les bilans carbone', async () => {
+    // Given
+    mockRouter.push('/transport')
+    renderWithWrapper(<TransportPage category={getTransportCategory()} />)
+    const velo = await screen.findByTestId('vlo-ou-marche')
+    // When
+    act(() => {
+      screen.getByLabelText('Voir tous les modes de transport').click()
+    })
+    // Then
+    const co2list = velo.parentElement.querySelectorAll('a')
+    expect(co2list.length).toBe(17)
   })
 })
 
