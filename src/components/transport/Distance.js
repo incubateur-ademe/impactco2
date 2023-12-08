@@ -12,7 +12,7 @@ export default function Distance(props) {
   const transportations = useTransportations()
 
   return (
-    <Section $withoutPadding>
+    <Section $withoutPadding data-testid='distanceWrapper'>
       <SectionWideContent $small>
         <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
           <Search distance iframe={props.iframe} />
