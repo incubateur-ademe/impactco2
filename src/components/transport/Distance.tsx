@@ -13,7 +13,7 @@ export default function Distance({ category, iframe }: { category: Category; ifr
   const transportations = useTransportations('distance')
 
   return (
-    <Section $withoutPadding>
+    <Section $withoutPadding data-testid='distanceWrapper'>
       <SectionWideContent $small>
         <Wrapper name={category.title || category.name} slug={category.slug} tracking='distance'>
           <Search distance iframe={iframe} />
