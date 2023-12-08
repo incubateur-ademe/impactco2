@@ -1,4 +1,4 @@
-export default function getStringAfterLastSlash(input: string): string | null {
+export default function getStringAfterLastSlash(input: string): string {
   const lastSlashIndex = input.lastIndexOf('/')
 
   if (lastSlashIndex === -1 || lastSlashIndex === input.length - 1) {
