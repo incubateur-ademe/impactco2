@@ -13,54 +13,60 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.goto('/transport/itineraire')
   })
 
-  await test.step('On clique sur le champ de départ', async () => {
+  await test.step('On clique sur le champ de départ, on rentre une première lettre, pas de suggestion affichée', async () => {
+    // Given
     await page.getByPlaceholder('Départ').click({ force: true })
-  })
-
-  await test.step('On rentre une première lettre', async () => {
     await page.keyboard.type('n')
-  })
-
-  await test.step('Pas de suggestion affichée', async () => {
+    // When
     const suggestions = await getNbOfSuggestions(page)
+    // Then
     expect(suggestions).toEqual(0)
   })
 
-  await test.step('On rentre une 2ème lettre, et une 3ème', async () => {
+  await test.step('On rentre une 2ème lettre, et une 3ème, il y a bien des suggestions qui apparaissent', async () => {
+    // Given
     await page.keyboard.type('a')
     await page.keyboard.type('n')
-  })
-
-  await test.step('Il y a bien des suggestions qui apparaissent', async () => {
+    // When
     const suggestions = await getNbOfSuggestions(page)
+    // Then
     expect(suggestions).toEqual(7)
   })
 
   await test.step('On peut rentrer un des choix', async () => {
+    // Given
     const nantes = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Nantes 44000 France' })
+    // When
     await nantes.click()
     expect(page.getByTestId('Address-Départ').locator('form')).toHaveAttribute('addressset', 'Nantes  France')
   })
 
   await test.step('Arrivée - on peut rentrer directement 3 lettres, il y a aussi des suggestions qui apparaissent', async () => {
+    // Given
     await page.getByPlaceholder('Arrivée').click({ force: true })
     await page.keyboard.type('a')
     await page.keyboard.type('n')
     await page.keyboard.type('g')
+    // When
     const suggestions = await getNbOfSuggestions(page)
+    // Then
     expect(suggestions).toEqual(7)
   })
 
-  await test.step('Arrivée - On peut rentrer un des choix', async () => {
+  await test.step("Arrivée - On peut rentrer un des choix, les bilans carbones s'affichent automatiquement", async () => {
+    // Given
+    await expect(page.getByRole('link', { name: 'Intercités - 91 km 0,5 kg CO2e' })).not.toBeAttached()
     const angers = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Angers 49000 France' })
+    // When
     await angers.click()
-    expect(page.getByTestId('Address-Arrivée').locator('form')).toHaveAttribute('addressset', 'Angers  France')
-    await page.waitForTimeout(2000)
+    // Then
+    await expect(page.getByTestId('Address-Arrivée').locator('form')).toHaveAttribute('addressset', 'Angers  France')
+    await expect(page.getByRole('link', { name: 'Intercités - 91 km 0,5 kg CO2e' })).toBeAttached()
   })
 })
 
 const getNbOfSuggestions = async (page) => {
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(800)
   const count = await page.getByTestId('transportSuggest').locator('div').count()
   return count
 }
