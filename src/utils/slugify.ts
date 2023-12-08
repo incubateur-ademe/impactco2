@@ -1,6 +1,7 @@
 // Create slug from string in Javascript
 export default function slugify(str: string): string {
-  return str
+  const withoutDiacritics = str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  return withoutDiacritics
     .toLowerCase()
     .trim()
     .replace(/[^\w\s-]/g, '')
