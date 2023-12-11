@@ -6,7 +6,9 @@ const config = {
     openapi: '3.1.0',
     info: {
       title: 'Impact CO2',
-      description: `L'api Impact CO2 vous permet d'automatiser le calcul de l'impact carbone. Si vous avez des idées d'améliorations ou des requêtes plus spécifiques, n'hesitez pas à nous contacter via [${process.env.CONTACT_EMAIL}](mailto:${process.env.CONTACT_EMAIL}).
+      description: `
+      ⚠️ Cette section est en construction ⚠️
+      L'api Impact CO2 vous permet d'automatiser le calcul de l'impact carbone. Si vous avez des idées d'améliorations ou des requêtes plus spécifiques, n'hesitez pas à nous contacter via [${process.env.CONTACT_EMAIL}](mailto:${process.env.CONTACT_EMAIL}).
       Vous souhaitez tester un point d'api ? Cliquez sur 'Try it out', remplissez les champs et cliquez sur 'Execute' pour visualiser la donnée. Vous souhaitez recommencez ? Cliquez sur 'Clear'.`,
       version: '0.1.0',
     },
@@ -14,7 +16,7 @@ const config = {
       securitySchemes: {
         APIKey: {
           type: 'http',
-          description: `Nous utilisons des clés API pour monitorer son utilisation. Bien que celle ci ne soit pas obligatoire, nous nous réservons le droit de restreindre l'acces aux utilisateurs ne l'utilisant pas. N'hésitez pas à nous contacter via [${process.env.CONTACT_EMAIL}](mailto:${process.env.CONTACT_EMAIL}) pour en obtenir une gratuitement.`,
+          description: `Nous utilisons des clés API pour monitorer son utilisation. Bien que celles ci ne soient pas obligatoire, nous nous réservons le droit de restreindre l'acces aux utilisateurs ne l'utilisant pas. N'hésitez pas à nous contacter via [${process.env.CONTACT_EMAIL}](mailto:${process.env.CONTACT_EMAIL}) pour en obtenir une gratuitement.`,
           scheme: 'bearer',
           bearerFormat: 'UUID',
         },
