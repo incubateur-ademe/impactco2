@@ -5,13 +5,15 @@ import { track } from 'utils/matomo'
 import OutboundLink from 'components/base/OutboundLink'
 import { Section, SectionWideContent } from 'components/base/Section'
 
+const LOGO_HEIGHT = 152
+
 export default function NGCCard() {
   return (
     <Section>
       <SectionWideContent>
         <Card>
           <CardImage>
-            <Image src='/images/logoNGC.svg' alt='' width={196} height={152} />
+            <Image src='/images/logoNGC.svg' alt='' width={196} height={LOGO_HEIGHT} />
           </CardImage>
           <CardTitle>
             <strong>Calculez votre empreinte globale sur le climat</strong>
@@ -36,8 +38,9 @@ export default function NGCCard() {
 }
 
 const Card = styled.div`
-  border: 1px solid #ccdcfd;
   border-radius: 2rem;
+  min-height: ${LOGO_HEIGHT}px;
+  outline: 1px solid #ccdcfd;
   padding: 2rem 2.5rem;
   position: relative;
 `
@@ -66,8 +69,7 @@ const CardImage = styled.div`
     display: none;
   }
   > img {
-    border-bottom-right-radius: 32px;
-    border-top-right-radius: 32px;
-    height: 100%;
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
   }
 `
