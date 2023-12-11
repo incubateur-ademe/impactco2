@@ -1,11 +1,12 @@
 import React from 'react'
+import { Category as CategoryType } from 'types/category'
 import categories from 'data/categories.json'
 import { getMonth, slugs } from 'utils/months'
 import LearningFruit from 'components/fruitsetlegumes/LearningFruit'
 import Saisons from 'components/fruitsetlegumes/Saisons'
 import Web from 'components/layout/Web'
 
-export default function Fruitsetlegumes(props) {
+export default function Fruitsetlegumes({ category }: { category: CategoryType }) {
   const date = new Date()
   const month = {
     slug: slugs[date.getMonth()],
@@ -15,13 +16,14 @@ export default function Fruitsetlegumes(props) {
 
   return (
     <Web
-      title={props.category.name}
-      description={props.category.meta.description}
+      title={category.name}
+      description={category.meta.description}
+      image={`meta/${category.slug}.png`}
       breadcrumb={{
         type: 'equivalent',
-        category: props.category,
+        category: category,
       }}>
-      <Saisons category={props.category} month={month} />
+      <Saisons category={category} month={month} />
       <LearningFruit />
     </Web>
   )
