@@ -37,11 +37,13 @@ export default function Wrapper({
   slug,
   name,
   children,
+  urlParams,
   tracking,
 }: {
   slug: string
   name: string
   children: ReactNode
+  urlParams?: string
   tracking: string
 }) {
   const [hover, setHover] = useState(false)
@@ -59,6 +61,7 @@ export default function Wrapper({
               onMouseLeave={() => setHover(false)}
               slug={slug}
               tracking={tracking}
+              urlParams={urlParams}
             />
             <Title
               dangerouslySetInnerHTML={{

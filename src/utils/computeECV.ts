@@ -1,12 +1,17 @@
 import { Equivalent } from 'types/equivalent'
 
-export const computeECV = (equivalent: Equivalent, yearsOfUsage?: number) => {
+export const computeFootprint = (equivalent: Equivalent) => {
   let total = 0
   if ('total' in equivalent) {
     total += equivalent.total
   } else if ('ecv' in equivalent) {
     total += equivalent.ecv.reduce((sum, { value }) => sum + value, 0)
   }
+  return total
+}
+
+export const computeECV = (equivalent: Equivalent, yearsOfUsage?: number) => {
+  let total = computeFootprint(equivalent)
 
   if ('usage' in equivalent) {
     total += (yearsOfUsage || equivalent.usage.defaultyears) * equivalent.usage.peryear
@@ -17,6 +22,3 @@ export const computeECV = (equivalent: Equivalent, yearsOfUsage?: number) => {
 
   return total
 }
-
-export const computeECVWithMultiplier = (equivalent: Equivalent) =>
-  computeECV(equivalent) * ('multiplier' in equivalent ? equivalent.multiplier : 1)

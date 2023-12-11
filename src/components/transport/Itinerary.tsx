@@ -29,7 +29,7 @@ export default function Itinerary({ category, iframe }: { category: Category; if
           {itineraries && (
             <>
               {transportations.length ? <ResultHeader category={category} tracking='intinéraire' /> : null}
-              <BarChart items={transportations} max={transportations[transportations.length - 1]?.value} />
+              <BarChart equivalents={transportations} category={category} />
               {transportations.length ? <Bottom category={category} /> : null}
             </>
           )}

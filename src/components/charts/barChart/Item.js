@@ -33,7 +33,8 @@ export default function Item(props) {
       {...props}
       to={(iframe ? process.env.NEXT_PUBLIC_URL : '') + props.to}
       onClick={props.onClick || null}
-      noIcon>
+      noIcon
+      data-testid='bar-chart-item'>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
         <Title title={props.title} subtitle={props.subtitle} component={props.component} />

@@ -37,7 +37,7 @@ const Button = styled(MagicLink)`
 const Svg = styled.svg`
   display: block;
   height: auto;
-  width: ${(props) => (props.large ? 150 : 100)}%;
+  width: 100%;
 
   path {
     fill: ${(props) => props.theme.colors.main};
@@ -50,17 +50,31 @@ const Svg = styled.svg`
     }
   }
 `
-export default function Buttons(props) {
+export default function Buttons({
+  onMouseEnter,
+  onMouseLeave,
+  takeScreenshot,
+  slug,
+  urlParams,
+  tracking,
+}: {
+  onMouseEnter: () => void
+  onMouseLeave: () => void
+  takeScreenshot: () => void
+  slug: string
+  urlParams?: string
+  tracking: string
+}) {
   const { setShare } = useContext(ModalContext)
 
   const iframe = useIframe()
 
   return (
-    <Wrapper className={props.className} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
+    <Wrapper onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <Button
         onClick={() => {
-          track(props.tracking, 'Partager', `${props.tracking.toLowerCase().replaceAll(' ', '_')}_partager`)
-          setShare(true)
+          track(tracking, 'Partager', `${tracking.toLowerCase().replaceAll(' ', '_')}_partager`)
+          setShare(urlParams || true)
         }}
         className='noscreenshot'>
         <Svg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -83,14 +97,14 @@ export default function Buttons(props) {
           <path d='M396.357 461.275C408.062 468.011 424.696 461.054 433.511 445.736C442.326 430.418 439.984 412.54 428.279 405.805L131.576 235.059C119.871 228.324 103.237 235.281 94.4218 250.599C85.6069 265.916 87.9494 283.794 99.6539 290.53L396.357 461.275Z' />
         </Svg>
       </Button>
-      {props.slug && (
+      {slug && (
         <Button
           className='noscreenshot'
-          to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${props.slug ? `?type=${props.slug}` : ''}`}
+          to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${slug ? `?type=${slug}` : ''}`}
           large
           noIcon
           onClick={() => {
-            track(props.tracking, 'Intégrer', `${props.tracking.toLowerCase().replaceAll(' ', '_')}_integrer`)
+            track(tracking, 'Intégrer', `${tracking.toLowerCase().replaceAll(' ', '_')}_integrer`)
           }}>
           <Svg x='0px' y='0px' width='94.504px' height='94.504px' viewBox='0 0 94.504 94.504'>
             <path d='M93.918,45.833L69.799,21.714c-0.75-0.75-2.077-0.75-2.827,0l-5.229,5.229c-0.781,0.781-0.781,2.047,0,2.828    l17.477,17.475L61.744,64.724c-0.781,0.781-0.781,2.047,0,2.828l5.229,5.229c0.375,0.375,0.884,0.587,1.414,0.587    c0.529,0,1.039-0.212,1.414-0.587l24.117-24.118C94.699,47.881,94.699,46.614,93.918,45.833z' />
@@ -104,8 +118,8 @@ export default function Buttons(props) {
       )}
       <Button
         onClick={() => {
-          track(props.tracking, 'Télécharger', `${props.tracking.toLowerCase().replaceAll(' ', '_')}_telecharger`)
-          props.takeScreenshot()
+          track(tracking, 'Télécharger', `${tracking.toLowerCase().replaceAll(' ', '_')}_telecharger`)
+          takeScreenshot()
         }}
         className='noscreenshot'>
         <Svg width='22' height='25' viewBox='0 0 22 25' fill='none' xmlns='http://www.w3.org/2000/svg' className='jump'>

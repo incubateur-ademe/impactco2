@@ -31,7 +31,7 @@ const Unit = styled.span`
 export default function Value(props) {
   return (
     <Wrapper $noBar={props.value / props.max === 0} $inside={props.value / props.max > 0.7}>
-      <Number>{formatNumber(props.value)}</Number>
+      <Number data-testid='bar-chart-item-value'>{formatNumber(props.value)}</Number>
       <Unit>
         {' '}
         kg CO

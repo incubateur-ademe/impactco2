@@ -3,7 +3,7 @@ import { CSS } from '@dnd-kit/utilities'
 import React, { useContext } from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
-import { computeECVWithMultiplier } from 'utils/computeECV'
+import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
@@ -182,20 +182,20 @@ export default function Tile(props) {
       <Title>
         <Number>
           {props.noAnimation ? (
-            formatNumber(props.weight / computeECVWithMultiplier(props.equivalent))
+            formatNumber(props.weight / computeECV(props.equivalent))
           ) : (
-            <CountUp end={props.weight / computeECVWithMultiplier(props.equivalent)} duration={0.5} separator=' ' />
+            <CountUp end={props.weight / computeECV(props.equivalent)} duration={0.5} separator=' ' />
           )}
         </Number>
         <Name>
+          {props.equivalent.prefixEquivalent &&
+            formatName(props.equivalent.prefixEquivalent, props.weight / computeECV(props.equivalent))}
           {formatName(
-            (props.equivalent.prefix || '') + props.equivalent.name,
-            props.weight / computeECVWithMultiplier(props.equivalent)
+            (props.equivalent.prefix || '') + props.equivalent.name + (props.equivalent.suffix || ''),
+            props.weight / computeECV(props.equivalent)
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (
-            <Subtitle>
-              {formatName(props.equivalent.subtitle, props.weight / computeECVWithMultiplier(props.equivalent))}
-            </Subtitle>
+            <Subtitle>{formatName(props.equivalent.subtitle, props.weight / computeECV(props.equivalent))}</Subtitle>
           ) : (
             ''
           )}

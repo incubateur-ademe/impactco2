@@ -5,7 +5,7 @@
     "color": "#e6f2e6",
     "img": "/images/home_img_1.jpg",
     "link": "https://immobilier.lefigaro.fr/annonces/immobilier-vente-bien-france.html",
-    "title": "Votre projet immobilier",
+    "title": "Sensibilisez dans vos annonces immobilières",
     "paragraph": "Vous êtes une plateforme immobilière ? Permettez à vos visiteurs de calculer l’impact carbone de leur futur trajet grâce notre simulateur Impact Transport."
   },
   {
@@ -14,8 +14,8 @@
     "color": "#e4b47f",
     "img": "/images/home_img_2.jpg",
     "link": "https://www.tf1info.fr/environnement-ecologie/alimentation-transports-ecrans-ces-gestes-du-quotidien-qui-peuvent-aider-a-sauver-la-planete-2269524.html",
-    "title": "Comment limiter votre empreinte carbone ?",
-    "paragraph": "Vous êtes un média grand public ou spécialisé ? Illustrez votre contenu grâce à nos ressources pédagogiques qui vulgarisent les ordres de grandeur de l’impact carbone."
+    "title": "Informez sur l’empreinte carbone citoyenne",
+    "paragraph": "Vous êtes un média grand public ou spécialisé ? Illustrez votre contenu grâce à nos ressources ludiques qui éclairent sur de nombreuses thématiques du quotidien."
   },
   {
     "slug": "card_3",
@@ -23,16 +23,16 @@
     "color": "black",
     "img": "/images/home_img_3.jpg",
     "link": "https://www.linkedin.com/posts/tftp_une-vie-entière-denvoi-demails-ne-suffirait-activity-7109071360856895488-q5H0/",
-    "title": "Votre empreinte numérique sur le climat",
-    "paragraph": "Vous êtes un acteur engagé dans la sensibilisation aux enjeux climatiques ? Utilisez nos données, simulateurs ou infographies pour faire passer vos messages de façon ludique."
+    "title": "Communiquez les bons ordres de grandeur",
+    "paragraph": "Vous êtes un acteur engagé dans la sensibilisation aux enjeux climatiques ? Utilisez nos données ou infographies pour faire passer vos messages sur les réseaux sociaux."
   },
   {
     "slug": "card_4",
-    "tagtext": "THÉÂTRE DE L’EUROPE",
+    "tagtext": "THÉÂTRE DE L'EUROPE",
     "color": "#ffdc9e",
     "img": "/images/home_img_4.jpg",
     "link": "https://www.theatre-odeon.eu/fr/infos-pratiques#acces_et_horaires",
-    "title": "Informations pratiques",
+    "title": "Encouragez la mobilité douce dans votre commune",
     "paragraph": "Vous êtes un lieu ou un événement culturel ? Proposez à votre public de calculer l’impact carbone de leur déplacement jusqu’à vous grâce à notre simulateur Impact Transport."
   }
 ]

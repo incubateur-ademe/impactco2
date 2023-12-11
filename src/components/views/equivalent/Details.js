@@ -43,6 +43,7 @@ export default function Details(props) {
           <Title>
             {props.equivalent.prefix && <>{formatName(props.equivalent.prefix, 1, true)}</>}
             {formatName(props.equivalent.name, 1, !props.equivalent.prefix)}
+            {props.equivalent.suffix}
             <Br /> {props.equivalent.subtitle && <Subtitle>({formatName(props.equivalent.subtitle, 1)})</Subtitle>}
           </Title>
         </SectionWideContent>

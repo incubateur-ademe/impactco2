@@ -2,31 +2,12 @@ import React, { Dispatch, SetStateAction, useContext } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import TransportContext from 'components/transport/TransportProvider'
-import Distance from './search/Distance'
+import Simulator from '../misc/Simulator'
+import SliderWithInput from '../misc/slider/SliderWithInput'
 import Itinerary from './search/Itinerary'
 import ModeSelector from './search/ModeSelector'
 import Teletravail from './search/Teletravail'
 
-const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  padding: 1.5rem 2rem;
-  position: relative;
-
-  ${(props) => props.theme.mq.small} {
-    padding: 1rem;
-  }
-`
-const Text = styled.p`
-  margin: 0 auto 1rem;
-  max-width: 26rem;
-  text-align: center;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.875rem;
-  }
-`
 const Color = styled.button`
   background: transparent;
   border: none;
@@ -49,17 +30,21 @@ export default function Search({
   teletravail?: boolean
   iframe?: boolean
 }) {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore: TODO
-  const { setOccupancyModal } = useContext<{ setOccupancyModal: Dispatch<SetStateAction<boolean>> }>(TransportContext)
+  const { setOccupancyModal, km, setKm } = useContext<{
+    setOccupancyModal: Dispatch<SetStateAction<boolean>>
+    km: number
+    setKm: Dispatch<SetStateAction<number>>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: TODO
+  }>(TransportContext)
 
   return (
     <>
       <ModeSelector distance={distance} itineraire={itineraire} teletravail={teletravail} iframe={iframe} />
-      <Wrapper>
-        {itineraire && (
-          <>
-            <Text>
+      {itineraire && (
+        <Simulator
+          text={
+            <>
               Découvrez la quantité de CO2e que vous émettez{' '}
               <Color
                 onClick={() => {
@@ -69,19 +54,20 @@ export default function Search({
                 (par personne)
               </Color>{' '}
               pour ce trajet
-            </Text>
-            <Itinerary />
-          </>
-        )}
-        {teletravail && (
-          <>
-            <Text>Découvrez la quantité de CO2e que vous économisez (à l&apos;année) en travaillant de chez vous</Text>
-            <Teletravail />
-          </>
-        )}
-        {distance && (
-          <>
-            <Text>
+            </>
+          }>
+          <Itinerary />
+        </Simulator>
+      )}
+      {teletravail && (
+        <Simulator text="Découvrez la quantité de CO2e que vous économisez (à l'année) en travaillant de chez vous">
+          <Teletravail />
+        </Simulator>
+      )}
+      {distance && (
+        <Simulator
+          text={
+            <>
               Découvrez la quantité de CO2e que vous émettez{' '}
               <Color
                 onClick={() => {
@@ -91,11 +77,11 @@ export default function Search({
                 (par personne)
               </Color>{' '}
               pour cette distance
-            </Text>
-            <Distance />
-          </>
-        )}
-      </Wrapper>
+            </>
+          }>
+          <SliderWithInput value={km} setValue={setKm} unit='km' digit={4} tracking='Transport distance' />
+        </Simulator>
+      )}
     </>
   )
 }
