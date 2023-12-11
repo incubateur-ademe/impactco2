@@ -27,6 +27,7 @@ export default function Transportation(props) {
 
   return (
     <Wrapper
+      data-testid={`transport-${props.transportation.id}`}
       onClick={() => setTeletravailTransportation(props.transportation.id)}
       active={teletravailTransportation === props.transportation.id}>
       <Emoji>{props.transportation.emoji}</Emoji>
