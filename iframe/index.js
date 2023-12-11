@@ -34,9 +34,9 @@ if (buttonOnly) {
       : document.getElementById('impact-livraison')
         ? 'livraison'
         : 'tuiles'
-  const search = script.dataset.search || ''
 
-  const src = `${WEBPACK_SITE_URL}/iframes/${type}${search}${search ? '&' : '?'}source=${source}`
+  const search = script.dataset.search || ''
+  const src = `${WEBPACK_SITE_URL}/iframes/${type}${search}${search ? '&' : '?'}source=${window.location.href}`
 
   const iframe = document.createElement('iframe')
 
