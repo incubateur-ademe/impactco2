@@ -6,13 +6,21 @@ import { renderWithWrapper } from '../test-utils/render-with-wrapper'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
 describe('TransportPage - affiche la page itinéraire', () => {
-  test('Par défaut, affiche le composant Itineraire', async () => {
+  test('Par défaut, affiche le composant Distance', async () => {
     // Given
     mockRouter.push('/transport')
     // When
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
     // Then
     expect(await screen.findByTestId('distanceWrapper')).toBeInTheDocument()
+  })
+  test('Par défaut, affiche les bilans carbone', async () => {
+    // Given
+    mockRouter.push('/transport')
+    // When
+    renderWithWrapper(<TransportPage category={getTransportCategory()} />)
+    // Then
+    expect(await screen.findByTestId('vlo-ou-marche')).toBeInTheDocument()
   })
 })
 

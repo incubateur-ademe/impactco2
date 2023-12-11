@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import getStringAfterLastSlash from 'utils/getStringAfterLastSlash'
 import useIframe from 'hooks/useIframe'
 import MagicLink from 'components/base/MagicLink'
 import Bar from './item/Bar'
@@ -34,7 +35,8 @@ export default function Item(props) {
       to={(iframe ? process.env.NEXT_PUBLIC_URL : '') + props.to}
       onClick={props.onClick || null}
       noIcon
-      data-testid='bar-chart-item'>
+      className='bar-chart-item'
+      data-testid={`bar-chart-item-${getStringAfterLastSlash(props.to)}`}>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
         <Title title={props.title} subtitle={props.subtitle} component={props.component} />
