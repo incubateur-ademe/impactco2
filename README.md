@@ -150,7 +150,7 @@ Ce script est minifié, renommé et placé dans le répertoire /public à chaque
 Les utilisateurs qui veulent cette iframe dans leur projet n'ont plus qu'à copier/coller le code suivant dans la page web de leur choix (exemple pour la livraison) :
 
 ```html
-<script id="impact-co2" src="https://impactco2.fr/iframe.js" data-type="livraison" data-search="?theme=default"></script>
+<script name="impact-co2" src="https://impactco2.fr/iframe.js" data-type="livraison" data-search="?theme=default"></script>
 ```
 
 Les attributs "data" permettant de paramétrer cette iframe.
