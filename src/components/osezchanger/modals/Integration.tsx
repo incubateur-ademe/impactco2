@@ -6,7 +6,7 @@ import Usage from './Usage'
 const Integration = () => {
   return (
     <div data-testid='integration-modal'>
-      <ClipboardBox>{`<script id="impact-co2" src="${window?.location.origin}/iframe.js" data-type="habillement/osez-changer" data-search="?theme=default"></script>`}</ClipboardBox>
+      <ClipboardBox>{`<script name="impact-co2" src="${window?.location.origin}/iframe.js" data-type="habillement/osez-changer" data-search="?theme=default"></script>`}</ClipboardBox>
       <Separator />
       <Usage />
     </div>

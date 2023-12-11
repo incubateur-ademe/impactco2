@@ -33,10 +33,22 @@ const StyledButtons = styled(Buttons)`
     margin-top: 0;
   }
 `
-export default function Wrapper({ slug, name, children }: { slug: string; name: string; children: ReactNode }) {
+export default function Wrapper({
+  slug,
+  name,
+  children,
+  urlParams,
+  tracking,
+}: {
+  slug: string
+  name: string
+  children: ReactNode
+  urlParams?: string
+  tracking: string
+}) {
   const [hover, setHover] = useState(false)
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(slug || 'impactco2')
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(slug || 'impactco2', tracking)
 
   return (
     <Sizer>
@@ -48,6 +60,8 @@ export default function Wrapper({ slug, name, children }: { slug: string; name: 
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
               slug={slug}
+              tracking={tracking}
+              urlParams={urlParams}
             />
             <Title
               dangerouslySetInnerHTML={{

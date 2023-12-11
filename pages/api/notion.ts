@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return
   }
 
-  await trackAPIRequest(req, 'notion', JSON.stringify(inputs))
+  await trackAPIRequest(req, 'notion', JSON.stringify(inputs.data))
   try {
     await axios.post(
       'https://api.notion.com/v1/pages',

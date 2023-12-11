@@ -48,7 +48,7 @@ export default function Code(props) {
 
   useEffect(() => {
     setScript(
-      `<script id="impact-co2" src="${window?.location.origin}/iframe.js" data-type="${props.type}" data-search="?theme=${props.theme}"></script>`
+      `<script name="impact-co2" src="${window.location.origin}/iframe.js" data-type="${props.type}" data-search="?theme=${props.theme}"></script>`
     )
   }, [props.theme, props.type])
 

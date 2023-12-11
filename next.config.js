@@ -40,16 +40,6 @@ const nextConfig = {
     widenClientFileUpload: true,
     hideSourceMaps: false,
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      Object.assign(config.resolve.alias, {
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
-    }
-    return config
-  },
   async redirects() {
     return [
       {
@@ -92,10 +82,14 @@ const nextConfig = {
         destination: '/iframes/:slug*',
         permanent: true,
       },
-
       {
         source: '/iframes/tuiles',
         destination: '/iframes/convertisseur',
+        permanent: true,
+      },
+      {
+        source: '/iframelivraison.js',
+        destination: '/iframe.js',
         permanent: true,
       },
     ]

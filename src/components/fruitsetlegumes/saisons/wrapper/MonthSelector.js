@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import React from 'react'
+import { track } from 'utils/matomo'
 import { getMonth, slugs } from 'utils/months'
 import useIframe from 'hooks/useIframe'
 import FancySelect from 'components/base/FancySelect'
@@ -13,6 +14,7 @@ export default function MonthSelector(props) {
     <FancySelect
       value={props.month.slug}
       onChange={(value) => {
+        track('Fruits et légumes', 'Mois', value)
         router.push(`${iframe ? '/iframes' : ''}/fruitsetlegumes/mois/${value}`)
       }}
       options={slugs.map((slug, index) => ({

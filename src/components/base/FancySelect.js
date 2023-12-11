@@ -29,8 +29,7 @@ export default function FancySelect(props) {
       <Value
         dangerouslySetInnerHTML={{
           __html: props.options.find((option) => option.value === props.value)
-            ? props.options.find((option) => option.value === props.value).label +
-              (props.suffix ? ' ' + props.suffix : '')
+            ? props.options.find((option) => option.value === props.value).label
             : '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
         }}
       />

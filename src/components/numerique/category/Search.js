@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { track } from 'utils/matomo'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
 
@@ -37,6 +38,7 @@ export default function Search(props) {
             </svg>
           </Wrapper.ShowMore>
           <Wrapper.StyledSlider
+            tracking={['Usage numérique', 'Slider email', 'usage-numerique-slider-email']}
             color='#6C8CC1'
             min={0}
             max={1500}
@@ -47,7 +49,10 @@ export default function Search(props) {
         <Wrapper.Desktop $visible={display === 'email'}>
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('email . appareil').nodeValue}'`}
-            onChange={({ value }) => setSituation({ ['email . appareil']: value })}
+            onChange={({ value }) => {
+              track('Usage numérique', 'Select email appareil', `usage-numerique-email-appareil-${value}`)
+              setSituation({ ['email . appareil']: value })
+            }}
             color='#6C8CC1'>
             <option value={`'smartphone'`}>Smartphone</option>
             <option value={`'tablette'`}>Tablette</option>
@@ -58,11 +63,12 @@ export default function Search(props) {
             <Wrapper.StyledHorizontalRadio
               name='email . transmission . émetteur . réseau'
               value={`'${engine.evaluate('email . transmission . émetteur . réseau').nodeValue}'`}
-              onChange={(value) =>
+              onChange={(value) => {
+                track('Usage numérique', 'Select email réseau', `usage-numerique-email-reseau-${value}`)
                 setSituation({
                   ['email . transmission . émetteur . réseau']: value,
                 })
-              }
+              }}
               options={[
                 {
                   value: `'fixe FR'`,
@@ -77,7 +83,10 @@ export default function Search(props) {
             />
             <Wrapper.StyledSelect
               value={engine.evaluate('email . taille').nodeValue}
-              onChange={({ value }) => setSituation({ ['email . taille']: value })}
+              onChange={({ value }) => {
+                track('Usage numérique', 'Select email taille', `usage-numerique-email-taille-${value}`)
+                setSituation({ ['email . taille']: value })
+              }}
               color='#6C8CC1'>
               <option value={0.075}>Sans pièce jointe</option>
               <option value={1}>Pièce jointe 1Mo</option>
@@ -103,6 +112,7 @@ export default function Search(props) {
             </svg>
           </Wrapper.ShowMore>
           <Wrapper.StyledSlider
+            tracking={['Usage numérique', 'Slider streaming', 'usage-numerique-slider-streaming']}
             color='#C25166'
             min={0}
             max={4200}
@@ -118,7 +128,10 @@ export default function Search(props) {
         <Wrapper.Desktop $visible={display === 'streaming'}>
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
-            onChange={({ value }) => setSituation({ ['streaming . appareil']: value })}
+            onChange={({ value }) => {
+              track('Usage numérique', 'Select streaming appareil', `usage-numerique-streaming-appareil-${value}`)
+              setSituation({ ['streaming . appareil']: value })
+            }}
             color='#C25166'>
             <option value={`'smartphone'`}>Smartphone</option>
             <option value={`'tablette'`}>Tablette</option>
@@ -130,11 +143,12 @@ export default function Search(props) {
             <Wrapper.StyledHorizontalRadio
               name='streaming . transmission . réseau'
               value={`'${engine.evaluate('streaming . transmission . réseau').nodeValue}'`}
-              onChange={(value) =>
+              onChange={(value) => {
+                track('Usage numérique', 'Select streaming réseau', `usage-numerique-streaming-reseau-${value}`)
                 setSituation({
                   ['streaming . transmission . réseau']: value,
                 })
-              }
+              }}
               options={[
                 {
                   value: `'fixe FR'`,
@@ -149,7 +163,10 @@ export default function Search(props) {
             />
             <Wrapper.StyledSelect
               value={`'${engine.evaluate('streaming . qualité').nodeValue}'`}
-              onChange={({ value }) => setSituation({ ['streaming . qualité']: value })}
+              onChange={({ value }) => {
+                track('Usage numérique', 'Select streaming qualité', `usage-numerique-streaming-qualite-${value}`)
+                setSituation({ ['streaming . qualité']: value })
+              }}
               color='#C25166'>
               <option value={`'SD'`}>Basse déf</option>
               <option value={`'HD'`}>Haute Déf</option>
@@ -175,6 +192,7 @@ export default function Search(props) {
             </svg>
           </Wrapper.ShowMore>
           <Wrapper.StyledSlider
+            tracking={['Usage numérique', 'Slider visio', 'usage-numerique-slider-visio']}
             color='#3DC7AB'
             min={0}
             max={4200}
@@ -190,7 +208,10 @@ export default function Search(props) {
         <Wrapper.Desktop $visible={display === 'visio'}>
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('visio . appareil').nodeValue}'`}
-            onChange={({ value }) => setSituation({ ['visio . appareil']: value })}
+            onChange={({ value }) => {
+              track('Usage numérique', 'Select visio appareil', `usage-numerique-visio-appareil-${value}`)
+              setSituation({ ['visio . appareil']: value })
+            }}
             color='#3DC7AB'>
             <option value={`'smartphone'`}>Smartphone</option>
             <option value={`'tablette'`}>Tablette</option>
@@ -202,11 +223,12 @@ export default function Search(props) {
             <Wrapper.StyledHorizontalRadio
               name='visio . transmission . réseau'
               value={`'${engine.evaluate('visio . transmission . réseau').nodeValue}'`}
-              onChange={(value) =>
+              onChange={(value) => {
+                track('Usage numérique', 'Select visio réseau', `usage-numerique-visio-reseau-${value}`)
                 setSituation({
                   ['visio . transmission . réseau']: value,
                 })
-              }
+              }}
               options={[
                 {
                   value: `'fixe FR'`,
@@ -221,7 +243,10 @@ export default function Search(props) {
             />
             <Wrapper.StyledSelect
               value={`'${engine.evaluate('visio . qualité').nodeValue}'`}
-              onChange={({ value }) => setSituation({ ['visio . qualité']: value })}
+              onChange={({ value }) => {
+                track('Usage numérique', 'Select visio qualité', `usage-numerique-visio-qualite-${value}`)
+                setSituation({ ['visio . qualité']: value })
+              }}
               color='#3DC7AB'>
               <option value={`'audio'`}>Audio</option>
               <option value={`'SD'`}>Basse déf</option>

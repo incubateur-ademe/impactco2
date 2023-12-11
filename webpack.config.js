@@ -4,7 +4,7 @@ const webpack = require('webpack')
 
 module.exports = [
   {
-    name: 'if1',
+    name: 'iframe',
     mode: 'production',
     entry: './iframe/index.js',
     output: {
@@ -13,21 +13,7 @@ module.exports = [
     },
     plugins: [
       new webpack.DefinePlugin({
-        WEBPACK_SITE_URL: `'${process.env.NEXT_PUBLIC_URL}'`,
-      }),
-    ],
-  },
-  {
-    name: 'if2',
-    mode: 'production',
-    entry: './iframe/livraison.js',
-    output: {
-      filename: 'iframelivraison.js',
-      path: path.resolve(__dirname, 'public'),
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        WEBPACK_SITE_URL: `'${process.env.NEXT_PUBLIC_URL}'`,
+        WEBPACK_SITE_URL: `'${process.env.NEXT_PUBLIC_URL || 'http://localhost:3000'}'`,
       }),
     ],
   },

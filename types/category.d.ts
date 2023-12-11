@@ -6,8 +6,7 @@ export type Category = {
   title?: string
   description?: string
   equivalent?: string
-  gender?: string
-  divider: number
+  gender: string
   display: boolean
   unit: string
   include: string

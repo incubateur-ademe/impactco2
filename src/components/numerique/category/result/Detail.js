@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import formatConstruction from 'utils/formatConstruction'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
@@ -27,116 +28,105 @@ const Text = styled.p`
   text-align: center;
 `
 
+const devices = [
+  {
+    name: 'smartphone',
+    slug: 'smartphone',
+  },
+  {
+    name: 'tablette',
+    slug: 'tabletteclassique',
+  },
+  {
+    name: 'ordinateur portable',
+    slug: 'ordinateurportable',
+  },
+  {
+    name: 'ordinateur et écran',
+    slug: 'ordinateurfixe',
+  },
+  {
+    name: 'TV',
+    slug: 'television',
+  },
+]
+
 export default function Detail(props) {
   const { engine, situation } = useContext(RulesContextNumerique)
   const { equivalents, categories } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)
-  const devicesToDisplay = useMemo(
-    () =>
-      [
-        {
-          name: 'smartphone',
-          slug: 'smartphone',
-        },
-        {
-          name: 'tablette',
-          slug: 'tabletteclassique',
-        },
-        {
-          name: 'ordinateur portable',
-          slug: 'ordinateurportable',
-        },
-        {
-          name: 'ordinateur et écran',
-          slug: 'ordinateurfixe',
-        },
-        {
-          name: 'TV',
-          slug: 'television',
-        },
-      ].filter(
-        (device) =>
-          (device.name === engine.evaluate('email . appareil').nodeValue && props.numberEmails) ||
-          (device.name === engine.evaluate('streaming . appareil').nodeValue &&
-            engine.evaluate('streaming . durée').nodeValue) ||
-          (device.name === engine.evaluate('visio . appareil').nodeValue &&
-            engine.evaluate('visio . durée').nodeValue) ||
-          displayAll
-      ),
-    [situation, engine, displayAll, props.numberEmails]
-  )
 
   const category = useMemo(() => categories.find((c) => c.id === 10), [categories])
 
-  const equivalentsOfCategory = useMemo(
-    () =>
-      [
-        {
-          id: `email`,
-          title: `1 an d'emails (${formatNumber(props.numberEmails * 52)} emails)`,
-          emoji: '📧',
-          color: '#6C8CC1',
-          value:
-            ((engine.evaluate('email').nodeValue - engine.evaluate('email . terminaux . construction').nodeValue) *
-              props.numberEmails *
-              52) /
-            1000,
-          to: `/${category.slug}/email`,
-          onClick: () =>
-            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'email']),
-        },
-        {
-          id: `visioconference`,
-          title: `1 an de visioconférence (${formatNumber(
-            (engine.evaluate('visio . durée').nodeValue / 60) * 52
-          )} heures)`,
-          emoji: '🎥',
-          color: '#3DC7AB',
-          value:
-            (((engine.evaluate('visio . durée').nodeValue ? engine.evaluate('visio').nodeValue : 0) -
-              engine.evaluate('visio . terminaux . construction').nodeValue) *
-              52) /
-            1000,
-          to: `/${category.slug}/visioconference`,
-          onClick: () =>
-            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'visioconference']),
-        },
-        {
-          id: `streaming`,
-          title: `1 an de streaming (${formatNumber(
-            (engine.evaluate('streaming . durée').nodeValue / 60) * 52
-          )} heures)`,
-          emoji: '🎬',
-          color: '#C25166',
-          value:
-            (((engine.evaluate('streaming . durée').nodeValue ? engine.evaluate('streaming').nodeValue : 0) -
-              engine.evaluate('streaming . terminaux . construction').nodeValue) *
-              52) /
-            1000,
-          to: `/${category.slug}/streamingvideo`,
-          onClick: () =>
-            window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', 'streaming']),
-        },
-        ...equivalents
-          .filter((equivalent) => devicesToDisplay.map((device) => device.slug).includes(equivalent.slug))
-          .map((equivalent) => ({
-            id: `${equivalent.slug}`,
-            title: `Construction d'un${
-              ['tabletteclassique', 'television'].includes(equivalent.slug) ? 'e' : ''
-            } ${formatName(equivalent.name, 1)}`,
-            emoji: equivalent.emoji,
-            unit: equivalent.unit,
-            value: formatConstruction(equivalent),
-            to: `/${categories.find((category) => category.id === equivalent.category).slug}/${equivalent.slug}`,
-            onClick: () =>
-              window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
-          })),
-      ]
-        .filter((item) => item.value)
-        .sort((a, b) => (a.value > b.value ? 1 : -1)),
-    [engine, situation, props.numberEmails, equivalents, categories, devicesToDisplay]
-  )
+  const equivalentsOfCategory = useMemo(() => {
+    const devicesToDisplay = (
+      displayAll
+        ? devices
+        : devices.filter(
+            ({ name }) =>
+              (name === engine.evaluate('email . appareil').nodeValue && props.numberEmails) ||
+              (name === engine.evaluate('streaming . appareil').nodeValue &&
+                engine.evaluate('streaming . durée').nodeValue) ||
+              (name === engine.evaluate('visio . appareil').nodeValue && engine.evaluate('visio . durée').nodeValue)
+          )
+    ).map((device) => device.slug)
+
+    return [
+      {
+        id: `email`,
+        title: `1 an d'emails (${formatNumber(props.numberEmails * 52)} emails)`,
+        emoji: '📧',
+        color: '#6C8CC1',
+        value:
+          ((engine.evaluate('email').nodeValue - engine.evaluate('email . terminaux . construction').nodeValue) *
+            props.numberEmails *
+            52) /
+          1000,
+        onClick: () => track('Usage numérique', 'Navigation equivalent', 'email'),
+      },
+      {
+        id: `visioconference`,
+        title: `1 an de visioconférence (${formatNumber(
+          (engine.evaluate('visio . durée').nodeValue / 60) * 52
+        )} heures)`,
+        emoji: '🎥',
+        color: '#3DC7AB',
+        value:
+          (((engine.evaluate('visio . durée').nodeValue ? engine.evaluate('visio').nodeValue : 0) -
+            engine.evaluate('visio . terminaux . construction').nodeValue) *
+            52) /
+          1000,
+        onClick: () => track('Usage numérique', 'Navigation equivalent', 'visioconference'),
+      },
+      {
+        id: `streaming`,
+        title: `1 an de streaming (${formatNumber((engine.evaluate('streaming . durée').nodeValue / 60) * 52)} heures)`,
+        emoji: '🎬',
+        color: '#C25166',
+        value:
+          (((engine.evaluate('streaming . durée').nodeValue ? engine.evaluate('streaming').nodeValue : 0) -
+            engine.evaluate('streaming . terminaux . construction').nodeValue) *
+            52) /
+          1000,
+        onClick: () => track('Usage numérique', 'Navigation equivalent', 'streaming'),
+      },
+      ...equivalents
+        .filter((equivalent) => devicesToDisplay.includes(equivalent.slug))
+        .map((equivalent) => ({
+          ...equivalent,
+          id: equivalent.slug,
+          title: `Construction d'un${
+            ['tabletteclassique', 'television'].includes(equivalent.slug) ? 'e' : ''
+          } ${formatName(equivalent.name, 1)}`,
+          emoji: equivalent.emoji,
+          unit: equivalent.unit,
+          value: formatConstruction(equivalent),
+          onClick: () => track('Usage numérique', 'Navigation equivalent', equivalent.slug),
+        })),
+    ].filter((item) => item.value)
+    // Situation is needed here because engine is not properly updated
+  }, [engine, props.numberEmails, equivalents, displayAll, situation])
 
   return (
     <Wrapper>
@@ -151,14 +141,14 @@ export default function Detail(props) {
             name='displayAll'
             checked={displayAll}
             onChange={() => {
+              track('Usage numérique', 'Voir tous', displayAll ? 'faux' : 'vrai')
               setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-              window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
             }}>
             Voir tous les appareils
           </Checkbox>
         </Checkboxes>
       </Top>
-      <BarChart items={equivalentsOfCategory} max={equivalentsOfCategory[equivalentsOfCategory.length - 1]?.value} />
+      <BarChart equivalents={equivalentsOfCategory} category={category} />
       <Instruction />
     </Wrapper>
   )

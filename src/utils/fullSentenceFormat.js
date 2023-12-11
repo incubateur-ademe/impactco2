@@ -1,14 +1,11 @@
-import { computeECVWithMultiplier } from './computeECV'
+import { computeECV } from './computeECV'
 import formatName from './formatName'
 import formatNumber from './formatNumber'
 
 export default function fullSentenceFormat(obj) {
   return (
-    formatNumber(obj.weight / computeECVWithMultiplier(obj.equivalent)) +
+    formatNumber(obj.weight / computeECV(obj.equivalent)) +
     ' ' +
-    formatName(
-      (obj.equivalent.prefix || '') + obj.equivalent.name,
-      obj.weight / computeECVWithMultiplier(obj.equivalent)
-    )
+    formatName((obj.equivalent.prefix || '') + obj.equivalent.name, obj.weight / computeECV(obj.equivalent))
   )
 }

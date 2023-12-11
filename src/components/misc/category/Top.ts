@@ -10,11 +10,12 @@ export const Top = styled.div`
     margin-bottom: 0.5rem;
   }
 `
-export const Checkboxes = styled.div<{ $visible: boolean }>`
+export const Checkboxes = styled.div<{ $visible?: boolean }>`
   align-items: flex-end;
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
   opacity: ${(props) => (props.$visible ? 1 : 0)};
   visibility: ${(props) => (props.$visible ? 'visible' : 'hidden')};
 

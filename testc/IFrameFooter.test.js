@@ -23,6 +23,7 @@ describe('IframeFooter', () => {
       </StyleProvider>
     )
     // check if all components are rendered
-    expect(screen.getByTestId('magic-link')).toHaveAttribute('href', 'https://example.com/')
+    expect(screen.getByTestId('magic-link-https://example.com/')).toHaveAttribute('href', 'https://example.com/')
+    expect(screen.getByTestId('magic-link-/')).toHaveAttribute('href', '/')
   })
 })

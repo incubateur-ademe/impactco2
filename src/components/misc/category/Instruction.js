@@ -5,7 +5,7 @@ import formatName from 'utils/formatName'
 const Wrapper = styled.p`
   font-size: 0.875rem;
   font-weight: 300;
-  margin: 0;
+  margin: 0 0 1rem 0;
   text-align: center;
 `
 export default function Instruction(props) {

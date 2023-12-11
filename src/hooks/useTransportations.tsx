@@ -4,28 +4,14 @@ import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
+import { track } from 'utils/matomo'
+import { filterByDistance } from 'utils/transport'
 import DataContext from 'components/providers/DataProvider'
 import Carpool from 'components/transport/Carpool'
 import TransportContext from 'components/transport/TransportProvider'
 
-const filterByDistance = (equivalent: DeplacementEquivalent, value: number) => {
-  if (!equivalent.display || (!equivalent.display.min && !equivalent.display.max)) {
-    return true
-  }
-
-  if (equivalent.display.max && equivalent.display.max < value) {
-    return false
-  }
-
-  if (equivalent.display.min && equivalent.display.min > value) {
-    return false
-  }
-
-  return true
-}
-
 // C'est un peu austère, déso
-export default function useTransportations(itineraries: Record<DeplacementType, number> | undefined) {
+export default function useTransportations(tracking: string, itineraries?: Record<DeplacementType, number>) {
   const { equivalents, categories } = useContext(DataContext)
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -52,19 +38,20 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
               (equivalent) =>
                 displayAll ||
                 filterByDistance(
-                  equivalent,
+                  equivalent.display,
                   itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
                 )
             )
             .map((equivalent) => ({
-              id: `${equivalent.id || equivalent.slug}`,
-              title: `${formatName(equivalent.name, 1, true)}`,
+              ...equivalent,
+              title: formatName(equivalent.name, 1, true),
               subtitle: formatName(
                 equivalent?.ecvs
-                  ? `(${equivalent?.ecvs?.find(
-                      (ecv) =>
-                        ecv.max >
-                        (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)
+                  ? `(${equivalent?.ecvs?.find((ecv) =>
+                      ecv.max
+                        ? ecv.max >
+                          (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)
+                        : true
                     )?.subtitle})`
                   : ((displayAll || equivalent.name === 'Voiture') && equivalent.subtitle
                       ? `(${equivalent.subtitle})`
@@ -75,8 +62,7 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
                           )} km`
                         : '')
               ),
-              emoji: equivalent.emoji,
-              secondEmoji: equivalent.secondEmoji,
+              component: equivalent.carpool && <Carpool />,
               value:
                 (computeECV(equivalent) *
                   (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
@@ -85,14 +71,10 @@ export default function useTransportations(itineraries: Record<DeplacementType, 
                 (formatUsage(equivalent) *
                   (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
                 (equivalent.carpool && carpool ? carpool : 1),
-              component: equivalent.carpool && <Carpool />,
-              to: `/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
-              onClick: () =>
-                window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug]),
+              onClick: () => track(`Transport ${tracking}`, 'Navigation equivalent', equivalent.slug),
             }))
-            .sort((a, b) => (a.value > b.value ? 1 : -1))
         : [],
-    [categories, equivalents, km, displayAll, carpool, itineraries]
+    [categories, equivalents, km, displayAll, carpool, itineraries, tracking]
   )
 
   return transportations

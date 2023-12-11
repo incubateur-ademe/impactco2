@@ -1,4 +1,4 @@
-import { computeECV, computeECVWithMultiplier } from 'utils/computeECV'
+import { computeECV } from 'utils/computeECV'
 
 const equivalent = {
   name: 'test',
@@ -107,15 +107,5 @@ describe('computeECV', () => {
         end: -30,
       })
     ).toEqual(6)
-  })
-})
-
-describe('computeECVWithMultiplier', () => {
-  test('compute regular ecv if no multiplier', () => {
-    expect(computeECVWithMultiplier({ ...equivalent, total: 5 })).toEqual(5)
-  })
-
-  test('compute ecv times multiplier', () => {
-    expect(computeECVWithMultiplier({ ...equivalent, total: 5, multiplier: 10 })).toEqual(50)
   })
 })

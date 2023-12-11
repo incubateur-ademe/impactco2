@@ -11,6 +11,7 @@ export default function Transport({ category }: { category: Category }) {
     <Web
       title={category.meta.title}
       description={category.meta.description}
+      image={`meta/${category.slug}.png`}
       breadcrumb={{
         type: 'equivalent',
         category: category,

@@ -21,7 +21,7 @@ export default function Teletravail(props) {
   }, [equivalents, teletravailTransportation])
 
   const [distance, setDistance] = useState(0)
-  const itinerary = useItineraries(start, end)
+  const itinerary = useItineraries(start, end, 'télétravail')
   useEffect(() => {
     setDistance(itinerary && itinerary[currentTransportation?.type] * 1000)
   }, [itinerary, currentTransportation])
@@ -49,7 +49,7 @@ export default function Teletravail(props) {
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
-        <Wrapper name={props.category.title} slug='transport/teletravail'>
+        <Wrapper name={props.category.title} slug='transport/teletravail' tracking='teletravail'>
           <Search teletravail iframe={props.iframe} />
           {distance && currentTransportation ? (
             <YearlyFootprint emitted={emitted} saved={saved} presentiel={presentiel} teletravail={teletravail} />

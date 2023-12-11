@@ -65,27 +65,17 @@ const visualizations: Record<string, ReactNode[]> = {
   jeans: [<Visualization types={['jeans', 'smartphone', 'repasavecduboeuf']} key='JeansGeneral' />],
   pullenlaine: [<Visualization types={['pullenlaine', 'smartphone', 'enceintebluetooth']} key='PullGeneral' />],
   manteau: [<Visualization types={['manteau', 'voiturethermique']} key='manteau' />],
-  chauffageelectriquemaison: [
-    <Visualization
-      base={2}
-      types={['chauffagefioulmaison', 'chauffagegazmaison', 'chauffageelectriquemaison']}
-      key='Chauffage'
-    />,
+  chauffageelectrique: [
+    <Visualization types={['poeleabois', 'chauffageelectrique', 'poeleagranule']} key='Chauffage' />,
   ],
-  chauffagefioulmaison: [
-    <Visualization
-      base={2}
-      types={['chauffagefioulmaison', 'chauffagegazmaison', 'chauffageelectriquemaison']}
-      key='Chauffage'
-    />,
+  chauffagefioul: [
+    <Visualization types={['chauffagefioul', 'poeleagranule', 'chauffageelectrique']} key='Chauffage' />,
   ],
-  chauffagegazmaison: [
-    <Visualization
-      base={2}
-      types={['chauffagefioulmaison', 'chauffagegazmaison', 'chauffageelectriquemaison']}
-      key='Chauffage'
-    />,
-  ],
+  chauffagegaz: [<Visualization types={['chauffagegaz', 'chauffageelectrique', 'pompeachaleur']} key='Chauffage' />],
+  pompeachaleur: [<Visualization types={['chauffagefioul', 'poeleagranule', 'pompeachaleur']} key='Chauffage' />],
+  poeleagranule: [<Visualization types={['chauffagegaz', 'poeleagranule', 'chauffageelectrique']} key='Chauffage' />],
+  poeleabois: [<Visualization types={['poeleabois', 'poeleagranule', 'chauffageelectrique']} key='Chauffage' />],
+  reseaudechaleur: [<Visualization types={['reseaudechaleur', 'poeleagranule', 'pompeachaleur']} key='Chauffage' />],
   email: [<StockageEmails key='StockageEmails' />],
   emailpiecejointe: [<StockageEmails key='StockageEmails' />],
   stockageemail: [<StockageEmails key='StockageEmails' />],

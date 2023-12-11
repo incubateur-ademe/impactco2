@@ -133,26 +133,24 @@ Le contenu peut être intégré par nos utilisateurs directement dans leur propr
 
 Le contenu des iframes est disponible dans le code dans le répertoire `pages/iframes`.
 
-Ce contenu est donc disponible en ligne à l'URL `/iframes/...` comme par exemple l'[habillement](https://impactco2.fr/iframes/habillement) ou la [livraison](https://impactco2.fr/iframes/livraison/simulation).
+Ce contenu est donc disponible en ligne à l'URL `/iframes/...` comme par exemple l'[habillement](https://impactco2.fr/iframes/habillement) ou la [livraison](https://impactco2.fr/iframes/livraison).
 
 Mais ces pages ne sont pas faites pour être lues "telles quelles" dans notre site, mais pour être intégrées dans un autre site.
 
 Ces pages deviennent disponibles à nos utilisateurs grâce à un script qui construit une iframe et l'insère dans le DOM de leur site web.
 
-Il y a pour l'instant 2 versions de ce script :
+le script est generé via :
 
 - iframe/index.js
-- iframe/livraison.js
 
 Ce script est minifié, renommé et placé dans le répertoire /public à chaque `build` du projet NextJS, grâce au fichier `webpack.config.js`. Ainsi,
 
 - iframe/index.js devient accessible publiquement sous l'URL /iframe.js,
-- iframe/livraison.js devient accessible publiquement sous l'URL /iframelivraison.js
 
 Les utilisateurs qui veulent cette iframe dans leur projet n'ont plus qu'à copier/coller le code suivant dans la page web de leur choix (exemple pour la livraison) :
 
 ```html
-<script id="impact-livraison" src="https://impactco2.fr/iframelivraison.js" data-search="?theme=default"></script>
+<script name="impact-co2" src="https://impactco2.fr/iframe.js" data-type="livraison" data-search="?theme=default"></script>
 ```
 
 Les attributs "data" permettant de paramétrer cette iframe.

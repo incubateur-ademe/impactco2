@@ -39,6 +39,7 @@ export default function TextInput(props) {
         placeholder={props.placeholder}
         min={props.min}
         max={props.max}
+        step={props.step}
         value={props.value}
         error={props.error}
         required={props.required}

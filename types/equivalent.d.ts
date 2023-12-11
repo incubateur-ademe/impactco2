@@ -11,11 +11,14 @@ type BaseEquivalent = {
   }
 
   id?: string | number
+  secondEmoji?: string
   source?: string
   prefix?: string
+  prefixEquivalent?: string
   subtitle?: string
   synonyms?: string[]
   hypothesis?: string
+  unit?: string
 }
 
 type BaseEquivalentValue =
@@ -26,7 +29,6 @@ type BaseEquivalentValue =
 
 export type ChauffageEquivalent = BaseEquivalent & {
   total: number
-  multiplier: number
 }
 
 export type RepasEquivalent = BaseEquivalent & {
@@ -41,15 +43,13 @@ export type DeplacementType = 'car' | 'foot' | 'rail' | 'plane'
 export type DeplacementEquivalent = BaseEquivalent &
   BaseEquivalentValue & {
     type: string
-    secondEmoji?: string
     carpool?: boolean
-
     display?: {
       min?: number
       max?: number
     }
     ecvs?: {
-      max: number
+      max?: number
       subtitle: string
       ecv: EquivalentValue[]
     }[]
