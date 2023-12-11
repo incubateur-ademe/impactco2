@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import ModalContext from 'components/providers/ModalProvider'
 
 const Wrapper = styled.button`
@@ -42,7 +43,11 @@ export default function AddButton() {
   const { setTiles } = useContext(ModalContext)
 
   return (
-    <Wrapper onClick={() => setTiles(true)}>
+    <Wrapper
+      onClick={() => {
+        track('Comparateur', 'Ajouter un équivalent', 'comparateur_ajouter_un_equivalent')
+        setTiles(true)
+      }}>
       <Title>+</Title>
       <Text>Ajouter un équivalent</Text>
     </Wrapper>

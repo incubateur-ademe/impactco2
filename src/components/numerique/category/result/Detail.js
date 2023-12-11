@@ -148,7 +148,7 @@ export default function Detail(props) {
             name='displayAll'
             checked={displayAll}
             onChange={() => {
-              track('Usage numérique', 'Voir tous les modes', displayAll ? 'faux' : 'vrai')
+              track('Usage numérique', 'Voir tous', displayAll ? 'faux' : 'vrai')
               setDisplayAll((prevDisplayAll) => !prevDisplayAll)
             }}>
             Voir tous les appareils

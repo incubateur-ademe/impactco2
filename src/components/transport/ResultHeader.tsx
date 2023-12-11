@@ -25,7 +25,7 @@ const ResultHeader = ({ category, tracking }: { category: Category; tracking: st
           name='displayAll'
           checked={displayAll}
           onChange={() => {
-            track(`Transport ${tracking}`, 'Voir tous les modes', displayAll ? 'faux' : 'vrai')
+            track(`Transport ${tracking}`, 'Voir tous', displayAll ? 'faux' : 'vrai')
             setDisplayAll((prevDisplayAll) => !prevDisplayAll)
           }}>
           Voir {category.gender === 'f' ? 'toutes' : 'tous'} les {formatName(category.equivalent, 2) || 'équivalents'}

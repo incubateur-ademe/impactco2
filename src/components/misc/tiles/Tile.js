@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { computeECVWithMultiplier } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import useIframe from 'hooks/useIframe'
 import DataContext from 'components/providers/DataProvider'
 import Button from 'components/base/Button'
@@ -231,6 +232,7 @@ export default function Tile(props) {
         <Button.Wrapper>
           <StyledButton
             onClick={() => {
+              track('Comparateur', 'Comparer', props.equivalent.slug)
               props.setCurEquivalent(props.equivalent)
             }}
             hollow>

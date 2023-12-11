@@ -62,6 +62,7 @@ export default function CategoryList(props) {
               name='displayAll'
               checked={displayAll}
               onChange={() => {
+                track(props.category.name, 'Voir tous', displayAll ? 'faux' : 'vrai')
                 setDisplayAll((prevDisplayAll) => !prevDisplayAll)
               }}>
               Voir {props.category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
