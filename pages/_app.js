@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_MATOMO === 'true') {
       init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
 
       if (typeof window !== 'undefined' && typeof window.please === 'undefined') {
