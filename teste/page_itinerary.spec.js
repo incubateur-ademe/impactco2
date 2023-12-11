@@ -55,13 +55,14 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
 
   await test.step("Arrivée - On peut rentrer un des choix, les bilans carbones s'affichent automatiquement", async () => {
     // Given
-    await expect(page.getByRole('link', { name: 'Intercités - 91 km 0,5 kg CO2e' })).not.toBeAttached()
+    await expect(page.getByTestId('bar-chart-item-intercites')).not.toBeAttached()
     const angers = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Angers 49000 France' })
     // When
     await angers.click()
     // Then
     await expect(page.getByTestId('Address-Arrivée').locator('form')).toHaveAttribute('addressset', 'Angers  France')
-    await expect(page.getByRole('link', { name: 'Intercités - 91 km 0,5 kg CO2e' })).toBeAttached()
+    await expect(page.getByTestId('bar-chart-item-intercites')).toBeAttached()
+    await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91 km0,8 kg CO2e')
   })
 })
 
