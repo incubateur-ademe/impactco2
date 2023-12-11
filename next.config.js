@@ -98,8 +98,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/iframeslivraison.js',
-        destination: '/iframes.js',
+        source: '/iframelivraison.js',
+        destination: '/iframe.js',
         permanent: true,
       },
     ]
