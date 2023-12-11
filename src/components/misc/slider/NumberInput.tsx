@@ -65,6 +65,7 @@ export default function NumberInput({
         }
       }}>
       <StyledTextInput
+        data-testid='slider-number-input'
         type='number'
         min={1}
         step={1}
@@ -74,7 +75,7 @@ export default function NumberInput({
           setTempValue(event.value)
         }}
       />
-      <Button>Valider</Button>
+      <Button data-testid='slider-number-input-validate'>Valider</Button>
     </Wrapper>
   )
 }

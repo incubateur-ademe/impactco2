@@ -32,7 +32,7 @@ export default function ThumbContent({
 }) {
   return (
     <>
-      <Value>
+      <Value data-testid='slider-thumb-content'>
         {value} {unit}
       </Value>
       <Edit
@@ -46,6 +46,7 @@ export default function ThumbContent({
           e.stopPropagation()
         }}>
         <svg
+          data-testid='slider-thumb-content-edit'
           xmlns='http://www.w3.org/2000/svg'
           enableBackground='new 0 0 512 512'
           height='512'
