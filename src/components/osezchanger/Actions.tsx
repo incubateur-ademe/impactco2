@@ -16,6 +16,7 @@ const Actions = ({
       <GhostButton
         icon='send-plane'
         onClick={() => {
+          track('OsezChanger', 'Partager', 'osez_changer_partager')
           setModal('share')
         }}>
         Partager
@@ -23,6 +24,7 @@ const Actions = ({
       <GhostButton
         icon='code-s-slash'
         onClick={() => {
+          track('OsezChanger', 'Integrer', 'osez_changer_integrer')
           setModal('integration')
         }}>
         Intégrer
@@ -30,6 +32,7 @@ const Actions = ({
       <GhostButton
         icon='download'
         onClick={() => {
+          track('OsezChanger', 'Telecharger', 'osez_changer_telecharger')
           takeScreenshot()
         }}>
         Télécharger

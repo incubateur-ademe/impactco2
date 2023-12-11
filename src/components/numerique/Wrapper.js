@@ -33,7 +33,7 @@ const StyledButtons = styled(Buttons)`
 export default function Wrapper(props) {
   const [hover, setHover] = useState(false)
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(props.slug || 'impactco2')
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(props.slug || 'impactco2', 'Usage numérique')
 
   return (
     <SizerWrapper>

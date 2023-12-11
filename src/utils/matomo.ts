@@ -5,5 +5,7 @@ export const track = (category: string, action: string, name: string) => {
     } else {
       window.please.track(['trackEvent', category, action, name])
     }
+  } else {
+    console.log('Fake matomo event', category, action, name)
   }
 }

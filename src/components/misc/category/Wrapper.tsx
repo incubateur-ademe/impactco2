@@ -46,7 +46,7 @@ export default function Wrapper({
 }) {
   const [hover, setHover] = useState(false)
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(slug || 'impactco2')
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(slug || 'impactco2', tracking)
 
   return (
     <Sizer>

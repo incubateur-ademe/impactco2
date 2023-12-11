@@ -52,6 +52,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         data-testid='question-neuf'
         title='✨ Vos achats récents'
         source={() => {
+          track('OsezChanger', 'Hypotheses', 'osez_changer_hypotheses')
           setModal('hypothesis')
         }}
         description={

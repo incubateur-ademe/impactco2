@@ -72,11 +72,7 @@ export default function CalculateurLivraison(props) {
   const changeTraj = (traj) => setValues({ ...values, traj: traj.uid })
   const changeKm = (km) => setValues({ ...values, km: km })
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(
-    'impactco2_livraison',
-    'jpg',
-    'livraison_simulateur_screenshot'
-  )
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_livraison_calculateur', 'Livraison', 'jpg')
 
   const integrerClicked = () => {
     setIfl(true)

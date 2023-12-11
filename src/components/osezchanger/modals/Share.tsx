@@ -1,5 +1,6 @@
 import React from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
+import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
 import { Icon } from '../icons'
 import ClipboardBox from './ClipboardBox'
@@ -13,16 +14,28 @@ const Share = () => {
       <ClipboardBox>{url}</ClipboardBox>
       <Text>ou</Text>
       <Buttons>
-        <FacebookShareButton url={url} title='Partager sur facebook'>
+        <FacebookShareButton
+          url={url}
+          title='Partager sur facebook'
+          onClick={() => track('OsezChanger', 'Share Facebook', 'osez_changer_facebook')}>
           <Icon iconId='facebook' />
         </FacebookShareButton>
-        <TwitterShareButton url={url} title='Partager sur twitter'>
+        <TwitterShareButton
+          url={url}
+          title='Partager sur twitter'
+          onClick={() => track('OsezChanger', 'Share Twitter', 'osez_changer_twitter')}>
           <Icon iconId='twitter' />
         </TwitterShareButton>
-        <WhatsappShareButton url={url} title='Partager sur whatsapp'>
+        <WhatsappShareButton
+          url={url}
+          title='Partager sur whatsapp'
+          onClick={() => track('OsezChanger', 'Share Whatsapp', 'osez_changer_whatsapp')}>
           <Icon iconId='whatsapp' />
         </WhatsappShareButton>
-        <LinkedinShareButton url={url} title='Partager sur linkedin'>
+        <LinkedinShareButton
+          url={url}
+          title='Partager sur linkedin'
+          onClick={() => track('OsezChanger', 'Share Linkedin', 'osez_changer_linkedin')}>
           <Icon iconId='linkedin' />
         </LinkedinShareButton>
       </Buttons>

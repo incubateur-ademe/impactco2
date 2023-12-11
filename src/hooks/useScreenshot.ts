@@ -1,7 +1,8 @@
 import { toJpeg, toPng } from 'html-to-image'
 import { useRef, useState } from 'react'
+import { track } from 'utils/matomo'
 
-export default function useScreenshot(slug: string, format: string = 'png', eventName: string | null = null) {
+export default function useScreenshot(slug: string, tracking: string, format: string = 'png') {
   const ref = useRef(null)
 
   const transformFn = format === 'png' ? toPng : toJpeg
@@ -9,6 +10,7 @@ export default function useScreenshot(slug: string, format: string = 'png', even
   const [isScreenshotting, setIsScreenshotting] = useState(false)
 
   const takeScreenshot = () => {
+    track(tracking, 'Screenshot', slug)
     setIsScreenshotting(true)
     setTimeout(() => {
       if (ref.current === null) {
