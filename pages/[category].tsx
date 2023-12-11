@@ -15,7 +15,7 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
     <Web
       title={category.meta.title}
       description={category.meta.description}
-      image={isHabillement ? 'meta/habillement.png' : undefined}
+      image={`meta/${category.slug}.png`}
       breadcrumb={{
         type: 'equivalent',
         category: category,
