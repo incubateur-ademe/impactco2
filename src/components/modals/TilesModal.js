@@ -1,6 +1,7 @@
 import Fuse from 'fuse.js'
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/Button'
@@ -103,7 +104,13 @@ export default function TilesModal() {
             </Equivalents>
           )}
           <StyledButtonWrapper>
-            <Button onClick={() => setOpen(false)}>Valider et fermer</Button>
+            <Button
+              onClick={() => {
+                tiles.forEach((tile) => track('Comparateur', 'Nouvel équivalent', tile.slug))
+                setOpen(false)
+              }}>
+              Valider et fermer
+            </Button>
           </StyledButtonWrapper>
         </StyledModal>
       )}
