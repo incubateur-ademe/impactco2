@@ -36,7 +36,7 @@ const Button = styled(MagicLink)`
 const Svg = styled.svg`
   display: block;
   height: auto;
-  width: ${(props) => (props.large ? 150 : 100)}%;
+  width: 100%;
 
   path {
     fill: ${(props) => props.theme.colors.main};
@@ -49,14 +49,26 @@ const Svg = styled.svg`
     }
   }
 `
-export default function Buttons(props) {
+export default function Buttons({
+  onMouseEnter,
+  onMouseLeave,
+  takeScreenshot,
+  slug,
+  urlParams,
+}: {
+  onMouseEnter: () => void
+  onMouseLeave: () => void
+  takeScreenshot: () => void
+  slug: string
+  urlParams?: string
+}) {
   const { setShare } = useContext(ModalContext)
 
   const iframe = useIframe()
 
   return (
-    <Wrapper className={props.className} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
-      <Button onClick={() => setShare(true)} className='noscreenshot'>
+    <Wrapper onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <Button onClick={() => setShare(urlParams || true)} className='noscreenshot'>
         <Svg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path d='M474.332 85.332C474.332 123.625 443.293 154.668 405 154.668C366.707 154.668 335.668 123.625 335.668 85.332C335.668 47.043 366.707 16 405 16C443.293 16 474.332 47.043 474.332 85.332V85.332Z' />
           <path
@@ -77,10 +89,10 @@ export default function Buttons(props) {
           <path d='M396.357 461.275C408.062 468.011 424.696 461.054 433.511 445.736C442.326 430.418 439.984 412.54 428.279 405.805L131.576 235.059C119.871 228.324 103.237 235.281 94.4218 250.599C85.6069 265.916 87.9494 283.794 99.6539 290.53L396.357 461.275Z' />
         </Svg>
       </Button>
-      {props.slug && (
+      {slug && (
         <Button
           className='noscreenshot'
-          to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${props.slug ? `?type=${props.slug}` : ''}`}
+          to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${slug ? `?type=${slug}` : ''}`}
           large
           noIcon>
           <Svg x='0px' y='0px' width='94.504px' height='94.504px' viewBox='0 0 94.504 94.504'>
@@ -93,7 +105,7 @@ export default function Buttons(props) {
           </Svg>
         </Button>
       )}
-      <Button onClick={props.takeScreenshot} className='noscreenshot'>
+      <Button onClick={takeScreenshot} className='noscreenshot'>
         <Svg width='22' height='25' viewBox='0 0 22 25' fill='none' xmlns='http://www.w3.org/2000/svg' className='jump'>
           <path d='M9.31546 1.68556C9.29953 1.78376 9.29217 1.88314 9.29346 1.98258L9.29346 18.9141L9.12175 18.5449C8.95094 18.184 8.71847 17.8557 8.43487 17.5747L3.68685 12.8267C3.08991 12.2013 2.12963 12.0963 1.41157 12.5777C0.646405 13.138 0.480267 14.2124 1.04055 14.9777C1.08584 15.0395 1.13521 15.0982 1.18834 15.1535L9.77428 23.7394C10.4445 24.4104 11.5318 24.411 12.2028 23.7407L20.79 15.1535C21.4597 14.4819 21.4582 13.3947 20.7867 12.725C20.7338 12.6723 20.6776 12.6231 20.6183 12.5777C19.9003 12.0963 18.94 12.2013 18.343 12.8267L13.5864 17.5661C13.3342 17.818 13.1227 18.1077 12.9597 18.4247L12.7278 18.9399V2.07708C12.7604 1.19986 12.1476 0.430241 11.2854 0.265445C10.3493 0.113635 9.46733 0.749425 9.31546 1.68556Z' />
         </Svg>

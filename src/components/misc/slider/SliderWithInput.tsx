@@ -1,10 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
-import TransportContext from 'components/transport/TransportProvider'
-import NumberInput from './distance/NumberInput'
-import PlusOrMinusButton from './distance/PlusOrMinusButton'
-import ThumbContent from './distance/ThumbContent'
+import NumberInput from './NumberInput'
+import PlusOrMinusButton from './PlusOrMinusButton'
+import ThumbContent from './ThumbContent'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -48,18 +47,26 @@ const Thumb = styled.div`
     outline: none;
   }
 `
-export default function Distance() {
-  const { km, setKm } = useContext(TransportContext)
-
-  const cleanRound = (x) => {
+const SliderWithInput = ({
+  value,
+  setValue,
+  unit,
+  digit,
+}: {
+  value: number
+  setValue: Dispatch<SetStateAction<number>>
+  unit: string
+  digit: number
+}) => {
+  const cleanRound = (x: number) => {
     return Number(x.toPrecision(1))
   }
 
-  const getPositionFromKm = (km) => {
+  const getPositionFromKm = (km: number) => {
     const position = Math.round((Math.log(km * 10) / Math.log(10) - 1) * 1000) / 1000
-    return position > 4 ? 4 : position
+    return position > digit ? digit : position
   }
-  const getKmFromPosition = (position) => Math.round(Math.pow(10, position))
+  const getKmFromPosition = (position: number) => Math.round(Math.pow(10, position))
 
   const [openTextInput, setOpenTextInput] = useState(false)
 
@@ -67,45 +74,41 @@ export default function Distance() {
     <Wrapper>
       {openTextInput ? (
         <NumberInput
-          min={1}
-          km={km}
-          setKm={(km) => {
-            if (km !== '') {
-              setKm(km)
-              setOpenTextInput(false)
-            }
+          value={value}
+          max={Math.pow(10, digit)}
+          setValue={(newValue) => {
+            setValue(newValue)
+            setOpenTextInput(false)
           }}
         />
       ) : (
         <>
           <PlusOrMinusButton
             onClick={() => {
-              let position = getPositionFromKm(km)
-              position = position - 0.4 < 0 ? 0 : position - 0.4
-              setKm(cleanRound(getKmFromPosition(position)))
+              const position = getPositionFromKm(value)
+              setValue(cleanRound(getKmFromPosition(position - digit / 10 < 0 ? 0 : position - digit / 10)))
             }}
           />
           <Range
             step={0.001}
             min={0}
-            max={4}
-            values={[getPositionFromKm(km)]}
+            max={digit}
+            values={[getPositionFromKm(value)]}
             onChange={(values) => {
-              setKm(getKmFromPosition(values[0]))
+              setValue(getKmFromPosition(values[0]))
             }}
             renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}
             renderThumb={({ props }) => (
               // Thumb can't be in his own component (don't know why)
               <Thumb {...props} aria-label='Distance'>
-                <ThumbContent km={km} setOpenTextInput={setOpenTextInput} />
+                <ThumbContent value={value} setOpenTextInput={setOpenTextInput} unit={unit} />
               </Thumb>
             )}
           />
           <PlusOrMinusButton
             onClick={() => {
-              let position = getPositionFromKm(km)
-              position = position + 0.4 > 4 ? 4 : position + 0.4
-              setKm(cleanRound(getKmFromPosition(position)))
+              const position = getPositionFromKm(value)
+              setValue(cleanRound(getKmFromPosition(position + digit / 10 > digit ? digit : position + digit / 10)))
             }}
             plus
           />
@@ -114,3 +117,4 @@ export default function Distance() {
     </Wrapper>
   )
 }
+export default SliderWithInput

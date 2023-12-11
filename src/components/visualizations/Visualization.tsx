@@ -95,7 +95,8 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
               <Equivalent key={equivalent.slug}>
                 <Emojis {...getSize(value)}>{[...Array(value)].map(() => equivalent.emoji).join('')}</Emojis>
                 <Label>
-                  {value} {equivalent.prefix && formatName(equivalent.prefix, value)}
+                  {value} {equivalent.prefix && formatName(equivalent.prefix, value)}{' '}
+                  {equivalent.prefixEquivalent && formatName(equivalent.prefixEquivalent, value)}
                   {formatName(equivalent.name, value)} {equivalent.subtitle && formatName(equivalent.subtitle, 1)}
                 </Label>
               </Equivalent>,

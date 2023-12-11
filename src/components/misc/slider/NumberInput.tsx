@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import styled from 'styled-components'
 import TextInput from 'components/base/TextInput'
 
@@ -46,24 +46,36 @@ const Button = styled.button`
   }
 `
 
-export default function NumberInput(props) {
-  const [km, setKm] = useState(props.km)
+export default function NumberInput({
+  value,
+  setValue,
+  max,
+}: {
+  value: number
+  setValue: Dispatch<SetStateAction<number>>
+  max: number
+}) {
+  const [tempValue, setTempValue] = useState(value.toString())
   return (
     <Wrapper
       onSubmit={(e) => {
         e.preventDefault()
-        props.setKm(km)
+        if (tempValue) {
+          setValue(Number.parseInt(tempValue))
+        }
       }}>
       <StyledTextInput
+        data-testid='slider-number-input'
         type='number'
-        min={props.min}
-        max={props.max}
-        value={km}
-        onChange={({ value }) => {
-          setKm(value)
+        min={1}
+        step={1}
+        max={max}
+        value={tempValue}
+        onChange={(event: { value: string }) => {
+          setTempValue(event.value)
         }}
       />
-      <Button>Valider</Button>
+      <Button data-testid='slider-number-input-validate'>Valider</Button>
     </Wrapper>
   )
 }

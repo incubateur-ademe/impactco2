@@ -10,7 +10,7 @@ export const Top = styled.div`
     margin-bottom: 0.5rem;
   }
 `
-export const Checkboxes = styled.div<{ $visible: boolean }>`
+export const Checkboxes = styled.div<{ $visible?: boolean }>`
   align-items: flex-end;
   display: flex;
   flex-direction: column;
