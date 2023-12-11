@@ -32,7 +32,7 @@ export default function Iframe({ children, noLogo }: { children: ReactNode; noLo
   useEffect(() => {
     if (!observed && entry && entry.isIntersecting) {
       setObserved(true)
-      track('IFrame', router.pathname, JSON.stringify(router.query))
+      track('IFrame', window.location.href, router.asPath)
     }
   }, [entry, observed, router])
 
