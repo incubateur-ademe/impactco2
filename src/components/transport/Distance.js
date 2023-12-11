@@ -14,7 +14,7 @@ export default function Distance(props) {
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
-        <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
+        <Wrapper name={props.category.title || props.category.name} slug={props.category.slug} tracking='distance'>
           <Search distance iframe={props.iframe} />
           <ResultHeader category={props.category} tracking='distance' />
           <BarChart items={transportations} max={transportations[transportations.length - 1]?.value} />

@@ -45,7 +45,10 @@ export default function CategoryList(props) {
   return (
     <>
       {props?.category?.slug === 'boisson' ? <SourceAgribalyse /> : <></>}
-      <Wrapper name={props.category.title || props.category.name} slug={props.category.slug}>
+      <Wrapper
+        name={props.category.title || props.category.name}
+        slug={props.category.slug}
+        tracking={props.category.slug}>
         <Description description={props.category.description} />
         <Top className='noscreenshot'>
           <Instruction title={props.category.equivalent} gender={props.category.gender} />
