@@ -18,17 +18,17 @@ export default function Itinerary({ category, iframe }: { category: Category; if
     // @ts-ignore: TODO
   }>(TransportContext)
 
-  const itineraries = useItineraries(start, end)
-  const transportations = useTransportations(itineraries)
+  const itineraries = useItineraries(start, end, 'itinéraire')
+  const transportations = useTransportations('itinéraire', itineraries)
 
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
-        <Wrapper name={category.title || category.name} slug='transport/itineraire'>
+        <Wrapper name={category.title || category.name} slug='transport/itineraire' tracking='Transport itinéraire'>
           <Search itineraire iframe={iframe} />
           {itineraries && (
             <>
-              {transportations.length ? <ResultHeader category={category} /> : null}
+              {transportations.length ? <ResultHeader category={category} tracking='intinéraire' /> : null}
               <BarChart equivalents={transportations} category={category} />
               {transportations.length ? <Bottom category={category} /> : null}
             </>

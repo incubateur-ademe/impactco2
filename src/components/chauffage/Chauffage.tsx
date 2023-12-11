@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { Category } from 'types/category'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
@@ -31,6 +32,7 @@ const Chauffage = ({ category }: { category: Category }) => {
           title: formatName(equivalent.name, 1, true),
           value: computeECV(equivalent) * value,
           usage: 0,
+          onClick: () => track('Chauffage', 'Navigation equivalent', equivalent.slug),
         })),
     [equivalents, category, value]
   )
@@ -38,9 +40,13 @@ const Chauffage = ({ category }: { category: Category }) => {
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
-        <Wrapper name={category.title || category.name} slug={category.slug} urlParams={`?m2=${value}`}>
+        <Wrapper
+          name={category.title || category.name}
+          slug={category.slug}
+          urlParams={`?m2=${value}`}
+          tracking='Chauffage'>
           <Simulator text='Indiquer la surface à chauffer pour découvrir la quantité de CO2e émise par mode de chauffage pour cette surface par année.'>
-            <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} />
+            <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} tracking='Chauffage' />
           </Simulator>
           <BarChart equivalents={equivalentsOfCategory} category={category} />
         </Wrapper>

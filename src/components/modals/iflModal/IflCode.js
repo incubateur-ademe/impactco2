@@ -7,7 +7,7 @@ export default function IflCode(props) {
 
   useEffect(() => {
     setScript(
-      `<script id="impact-co2" src="${window?.location.origin}/iframelivraison.js" data-search="?theme=${props.theme}"></script>`
+      `<script id="impact-co2" src="${window?.location.origin}/iframe.js" data-type="livraison" data-search="?theme=${props.theme}"></script>`
     )
   }, [props.theme, props.type])
 

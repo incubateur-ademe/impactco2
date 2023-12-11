@@ -43,7 +43,7 @@ const StyledButtons = styled(Buttons)`
 export default function Wrapper(props) {
   const [hover, setHover] = useState(false)
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(props.slug || 'impactco2')
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(props.slug || 'impactco2', 'Fruits et légumes')
 
   return (
     <SizerWrapper>
@@ -56,6 +56,7 @@ export default function Wrapper(props) {
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 slug={props.slug}
+                tracking='Fruits et légumes'
               />
               <Title>
                 Découvrez les fruits et légumes de <MonthSelector month={props.month} />

@@ -40,6 +40,7 @@ export function TransportProvider(props) {
           setStart({
             latitude: address.geometry.coordinates[1],
             longitude: address.geometry.coordinates[0],
+            city: address.properties.city,
             address: displayAddress(address),
           })
         }
@@ -52,6 +53,7 @@ export function TransportProvider(props) {
           setEnd({
             latitude: address.geometry.coordinates[1],
             longitude: address.geometry.coordinates[0],
+            city: address.properties.city,
             address: displayAddress(address),
           })
         }
@@ -87,20 +89,11 @@ export function TransportProvider(props) {
         yearlyFootprint,
         setYearlyFootprint,
         occupancyModal,
-        setOccupancyModal: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'Par personne'])
-          setOccupancyModal(value)
-        },
+        setOccupancyModal,
         footprintModal,
-        setFootprintModal: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'Personnaliser empreinte'])
-          setFootprintModal(value)
-        },
+        setFootprintModal,
         teletravailModal,
-        setTeletravailModal: (value) => {
-          window?.please?.track(['trackEvent', 'Interaction', 'Modal', 'Teletravail'])
-          setTeletravailModal(value)
-        },
+        setTeletravailModal,
       }}>
       {props.children}
       <OccupancyModal />

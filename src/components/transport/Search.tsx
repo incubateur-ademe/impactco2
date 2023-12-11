@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction, useContext } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import TransportContext from 'components/transport/TransportProvider'
 import Simulator from '../misc/Simulator'
 import SliderWithInput from '../misc/slider/SliderWithInput'
@@ -45,7 +46,14 @@ export default function Search({
           text={
             <>
               Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancyModal(true)}>(par personne)</Color> pour ce trajet
+              <Color
+                onClick={() => {
+                  track('Transport itinéraire', 'Hypothèses', 'transport_itineraire_hypotheses')
+                  setOccupancyModal(true)
+                }}>
+                (par personne)
+              </Color>{' '}
+              pour ce trajet
             </>
           }>
           <Itinerary />
@@ -61,10 +69,17 @@ export default function Search({
           text={
             <>
               Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancyModal(true)}>(par personne)</Color> pour cette distance
+              <Color
+                onClick={() => {
+                  track('Transport distance', 'Hypothèses', 'transport_itineraire_hypotheses')
+                  setOccupancyModal(true)
+                }}>
+                (par personne)
+              </Color>{' '}
+              pour cette distance
             </>
           }>
-          <SliderWithInput unit='km' value={km} setValue={setKm} digit={4} />
+          <SliderWithInput value={km} setValue={setKm} unit='km' digit={4} tracking='Transport distance' />
         </Simulator>
       )}
     </>

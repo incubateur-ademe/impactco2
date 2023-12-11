@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import useInteraction from 'hooks/useInteraction'
 import BreadCrumb2, { BreadcrumbProps } from './web/BreadCrumb2'
 import Footer from './web/Footer'
 import HeaderSweet from './web/HeaderSweet'
@@ -40,8 +39,6 @@ export default function Web({
   breadcrumb?: BreadcrumbProps
   children: ReactNode
 }) {
-  useInteraction()
-
   return (
     <>
       <Seo title={title} description={description} image={image} />

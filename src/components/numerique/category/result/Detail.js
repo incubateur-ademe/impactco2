@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import formatConstruction from 'utils/formatConstruction'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
@@ -82,6 +83,7 @@ export default function Detail(props) {
             props.numberEmails *
             52) /
           1000,
+        onClick: () => track('Usage numérique', 'Navigation equivalent', 'email'),
       },
       {
         id: `visioconference`,
@@ -95,6 +97,7 @@ export default function Detail(props) {
             engine.evaluate('visio . terminaux . construction').nodeValue) *
             52) /
           1000,
+        onClick: () => track('Usage numérique', 'Navigation equivalent', 'visioconference'),
       },
       {
         id: `streaming`,
@@ -106,6 +109,7 @@ export default function Detail(props) {
             engine.evaluate('streaming . terminaux . construction').nodeValue) *
             52) /
           1000,
+        onClick: () => track('Usage numérique', 'Navigation equivalent', 'streaming'),
       },
       ...equivalents
         .filter((equivalent) => devicesToDisplay.includes(equivalent.slug))
@@ -118,6 +122,7 @@ export default function Detail(props) {
           emoji: equivalent.emoji,
           unit: equivalent.unit,
           value: formatConstruction(equivalent),
+          onClick: () => track('Usage numérique', 'Navigation equivalent', equivalent.slug),
         })),
     ].filter((item) => item.value)
     // Situation is needed here because engine is not properly updated
@@ -136,8 +141,8 @@ export default function Detail(props) {
             name='displayAll'
             checked={displayAll}
             onChange={() => {
+              track('Usage numérique', 'Voir tous', displayAll ? 'faux' : 'vrai')
               setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-              window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
             }}>
             Voir tous les appareils
           </Checkbox>

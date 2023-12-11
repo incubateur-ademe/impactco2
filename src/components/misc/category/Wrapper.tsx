@@ -38,15 +38,17 @@ export default function Wrapper({
   name,
   children,
   urlParams,
+  tracking,
 }: {
   slug: string
   name: string
   children: ReactNode
   urlParams?: string
+  tracking: string
 }) {
   const [hover, setHover] = useState(false)
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(slug || 'impactco2')
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(slug || 'impactco2', tracking)
 
   return (
     <Sizer>
@@ -58,6 +60,7 @@ export default function Wrapper({
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
               slug={slug}
+              tracking={tracking}
               urlParams={urlParams}
             />
             <Title

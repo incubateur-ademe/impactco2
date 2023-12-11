@@ -61,8 +61,8 @@ export default function Visualization({ equivalent }: { equivalent: Equivalent }
               },
             },
           ]}>
-          {content.map((visualization) => (
-            <ScreenshotWrapper key={equivalent.slug} equivalent={equivalent} background>
+          {content.map((visualization, index) => (
+            <ScreenshotWrapper key={index} equivalent={equivalent} background tracking={index}>
               {visualization}
             </ScreenshotWrapper>
           ))}

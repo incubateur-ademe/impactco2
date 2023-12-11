@@ -1,12 +1,13 @@
 import React, { Dispatch, SetStateAction, useContext } from 'react'
 import { Category } from 'types/category'
 import formatName from 'utils/formatName'
+import { track } from 'utils/matomo'
 import Checkbox from 'components/base/Checkbox'
 import Instruction from 'components/misc/category/Instruction'
 import { Checkboxes, Top } from 'components/misc/category/Top'
 import TransportContext from './TransportProvider'
 
-const ResultHeader = ({ category }: { category: Category }) => {
+const ResultHeader = ({ category, tracking }: { category: Category; tracking: string }) => {
   const { displayAll, setDisplayAll, carpool, setCarpool } = useContext<{
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
@@ -24,8 +25,8 @@ const ResultHeader = ({ category }: { category: Category }) => {
           name='displayAll'
           checked={displayAll}
           onChange={() => {
+            track(`Transport ${tracking}`, 'Voir tous', displayAll ? 'faux' : 'vrai')
             setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-            window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
           }}>
           Voir {category.gender === 'f' ? 'toutes' : 'tous'} les {formatName(category.equivalent, 2) || 'équivalents'}
         </Checkbox>
@@ -33,8 +34,8 @@ const ResultHeader = ({ category }: { category: Category }) => {
           name='carpool'
           checked={carpool}
           onChange={() => {
+            track(`Transport ${tracking}`, 'Covoiturage', carpool ? 'faux' : 'vrai')
             setCarpool((prevCarpool) => (prevCarpool ? 0 : 2))
-            window?.please?.track(['trackEvent', 'Interaction', 'Covoiturage'])
           }}>
           Afficher le covoiturage
         </Checkbox>

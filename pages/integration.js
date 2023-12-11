@@ -86,25 +86,12 @@ export default function Integration() {
       </Section>
       <Section $withoutPadding>
         <StyledSectionContent $flex>
-          {path == 'livraison' ? (
-            <>
-              <StyledIframeResizer
-                src={`/iframes/livraison/simulation?theme=${theme}`}
-                allowFullScreen={true}
-                webkitallowfullscreen='true'
-                mozallowfullscreen='true'
-              />
-            </>
-          ) : (
-            <>
-              <StyledIframeResizer
-                src={`/iframes/${path}?theme=${theme}`}
-                allowFullScreen={true}
-                webkitallowfullscreen='true'
-                mozallowfullscreen='true'
-              />
-            </>
-          )}
+          <StyledIframeResizer
+            src={`/iframes/${path}?theme=${theme}`}
+            allowFullScreen={true}
+            webkitallowfullscreen='true'
+            mozallowfullscreen='true'
+          />
         </StyledSectionContent>
       </Section>
     </Web>

@@ -15,6 +15,7 @@ export default function BarChart({
     subtitle?: string
     color?: string
     usage: number
+    onClick: () => void
   })[]
   category: Category
 }) {
@@ -26,9 +27,7 @@ export default function BarChart({
         <Flipped flipId={equivalent.id} key={equivalent.id}>
           <Item
             key={equivalent.id}
-            onClick={() =>
-              window?.please?.track(['trackEvent', 'Interaction', 'Navigation via graph categorie', equivalent.slug])
-            }
+            onClick={equivalent.onClick}
             to={`/${category.slug}/${equivalent.slug}`}
             title={equivalent.title}
             subtitle={equivalent.subtitle}

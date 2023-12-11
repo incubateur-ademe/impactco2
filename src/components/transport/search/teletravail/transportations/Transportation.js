@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import Emoji from 'components/base/Emoji'
 import TransportContext from 'components/transport/TransportProvider'
 
@@ -27,7 +28,10 @@ export default function Transportation(props) {
 
   return (
     <Wrapper
-      onClick={() => setTeletravailTransportation(props.transportation.id)}
+      onClick={() => {
+        track('Transport télétravail', 'Mode de transport', props.transportation.slug)
+        setTeletravailTransportation(props.transportation.id)
+      }}
       active={teletravailTransportation === props.transportation.id}>
       <Emoji>{props.transportation.emoji}</Emoji>
       {props.transportation.secondEmoji && (

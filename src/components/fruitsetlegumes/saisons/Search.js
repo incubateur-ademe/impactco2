@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
 
@@ -63,7 +64,14 @@ export default function Search(props) {
 
   return (
     <Wrapper>
-      <SearchInput value={props.search} onChange={({ value }) => props.setSearch(value)} placeholder={'Recherchez'} />
+      <SearchInput
+        value={props.search}
+        onChange={({ value }) => {
+          track('Fruits et légumes', 'Recherche', value)
+          props.setSearch(value)
+        }}
+        placeholder={'Recherchez'}
+      />
       <SortButton onClick={() => setDisplaySort((prevDisplaySort) => !prevDisplaySort)}>
         <svg x='0px' y='0px' viewBox='0 0 489.389 489.389'>
           <path
@@ -82,6 +90,7 @@ export default function Search(props) {
         <SortPanel>
           <Option
             onClick={() => {
+              track('Fruits et légumes', 'Tri', 'alph_desc')
               props.setSorting('alph_desc')
               setDisplaySort(false)
             }}
@@ -90,6 +99,7 @@ export default function Search(props) {
           </Option>
           <Option
             onClick={() => {
+              track('Fruits et légumes', 'Tri', 'alph_asc')
               props.setSorting('alph_asc')
               setDisplaySort(false)
             }}
@@ -98,6 +108,7 @@ export default function Search(props) {
           </Option>
           <Option
             onClick={() => {
+              track('Fruits et légumes', 'Tri', 'co2_desc')
               props.setSorting('co2_desc')
               setDisplaySort(false)
             }}
@@ -106,6 +117,7 @@ export default function Search(props) {
           </Option>
           <Option
             onClick={() => {
+              track('Fruits et légumes', 'Tri', 'co2_asc')
               props.setSorting('co2_asc')
               setDisplaySort(false)
             }}

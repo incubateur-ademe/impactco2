@@ -13,7 +13,7 @@ export default function Fruitsetlegumes(props) {
   }
 
   return (
-    <Iframe url={'fruitsetlegumes'}>
+    <Iframe>
       <Saisons category={props.category} month={month} />
     </Iframe>
   )

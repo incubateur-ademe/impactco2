@@ -60,7 +60,7 @@ export default function Item(props) {
   }, [props.item])
 
   return (
-    <Wrapper key={props.item.id} to={props.item.to} season={props.item.season}>
+    <Wrapper key={props.item.id} to={props.item.to} season={props.item.season} onClick={props.item.onClick}>
       <Header>
         <Title>{props.item.title}</Title>
         <Emoji>{props.item.emoji}</Emoji>

@@ -24,7 +24,7 @@ const StyledButtons = styled(Buttons)`
 export default function ScreenshotWrapper(props) {
   const [hover, setHover] = useState(false)
 
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(props.equivalent?.slug || 'impactco2')
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(props.equivalent?.slug || 'impactco2', props.tracking)
 
   return (
     <Wrapper className={props.className} ref={ref}>
@@ -39,6 +39,7 @@ export default function ScreenshotWrapper(props) {
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           slug={props.equivalent?.slug}
+          tracking={`${props.equivalent?.slug}-${props.tracking}`}
         />
       )}
     </Wrapper>

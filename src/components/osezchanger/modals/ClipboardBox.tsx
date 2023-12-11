@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { track } from 'utils/matomo'
 import { Icon } from '../icons'
 import { Box, Copied, Copy } from './ClipboardBox.styles'
 
@@ -10,6 +11,7 @@ const ClipboardBox = ({ children }: { children: string }) => {
         setCopied(true)
         setTimeout(() => setCopied(false), 500)
         navigator.clipboard.writeText(children)
+        track('OsezChanger', 'Copy', children)
       }}>
       {children}
       <Copy>

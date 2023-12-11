@@ -1,10 +1,11 @@
-import React, { Dispatch, SetStateAction, useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import NumberInput from './NumberInput'
-import PlusOrMinusButton from './PlusOrMinusButton'
-import ThumbContent from './ThumbContent'
+import TransportContext from 'components/transport/TransportProvider'
+import NumberInput from './distance/NumberInput'
+import PlusOrMinusButton from './distance/PlusOrMinusButton'
+import ThumbContent from './distance/ThumbContent'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -48,30 +49,19 @@ const Thumb = styled.div`
     outline: none;
   }
 `
-const SliderWithInput = ({
-  value,
-  setValue,
-  unit,
-  digit,
-  tracking,
-}: {
-  value: number
-  setValue: Dispatch<SetStateAction<number>>
-  unit: string
-  digit: number
-  tracking: string
-}) => {
+export default function Distance() {
+  const { km, setKm } = useContext(TransportContext)
   const tracked = useRef(false)
 
-  const cleanRound = (x: number) => {
+  const cleanRound = (x) => {
     return Number(x.toPrecision(1))
   }
 
-  const computeLogVallue = (km: number) => {
+  const getPositionFromKm = (km) => {
     const position = Math.round((Math.log(km * 10) / Math.log(10) - 1) * 1000) / 1000
-    return position > digit ? digit : position
+    return position > 4 ? 4 : position
   }
-  const getLogValue = (position: number) => Math.round(Math.pow(10, position))
+  const getKmFromPosition = (position) => Math.round(Math.pow(10, position))
 
   const [openTextInput, setOpenTextInput] = useState(false)
 
@@ -79,46 +69,50 @@ const SliderWithInput = ({
     <Wrapper>
       {openTextInput ? (
         <NumberInput
-          value={value}
-          max={Math.pow(10, digit)}
-          setValue={(newValue) => {
-            setValue(newValue)
-            setOpenTextInput(false)
-            track(tracking, 'Slider manuel', newValue.toString())
+          min={1}
+          km={km}
+          setKm={(km) => {
+            if (km !== '') {
+              setKm(km)
+              setOpenTextInput(false)
+              track('Transport distance', 'Distance manuel', km)
+            }
           }}
         />
       ) : (
         <>
           <PlusOrMinusButton
             onClick={() => {
-              const position = computeLogVallue(value)
-              setValue(cleanRound(getLogValue(position - digit / 10 < 0 ? 0 : position - digit / 10)))
+              let position = getPositionFromKm(km)
+              position = position - 0.4 < 0 ? 0 : position - 0.4
+              setKm(cleanRound(getKmFromPosition(position)))
             }}
           />
           <Range
             step={0.001}
             min={0}
-            max={digit}
-            values={[computeLogVallue(value)]}
+            max={4}
+            values={[getPositionFromKm(km)]}
             onChange={(values) => {
               if (!tracked.current) {
                 tracked.current = true
-                track(tracking, 'Slider', 'slider')
+                track('Transport distance', 'Distance slider', 'slider-distance')
               }
-              setValue(getLogValue(values[0]))
+              setKm(getKmFromPosition(values[0]))
             }}
             renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}
             renderThumb={({ props }) => (
               // Thumb can't be in his own component (don't know why)
-              <Thumb {...props}>
-                <ThumbContent value={value} setOpenTextInput={setOpenTextInput} unit={unit} />
+              <Thumb {...props} aria-label='Distance'>
+                <ThumbContent km={km} setOpenTextInput={setOpenTextInput} />
               </Thumb>
             )}
           />
           <PlusOrMinusButton
             onClick={() => {
-              const position = computeLogVallue(value)
-              setValue(cleanRound(getLogValue(position + digit / 10 > digit ? digit : position + digit / 10)))
+              let position = getPositionFromKm(km)
+              position = position + 0.4 > 4 ? 4 : position + 0.4
+              setKm(cleanRound(getKmFromPosition(position)))
             }}
             plus
           />
@@ -127,4 +121,3 @@ const SliderWithInput = ({
     </Wrapper>
   )
 }
-export default SliderWithInput

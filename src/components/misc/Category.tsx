@@ -3,6 +3,7 @@ import { Category } from 'types/category'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatUsage from 'utils/formatUsage'
+import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
@@ -32,6 +33,7 @@ export default function CategoryList({ category }: { category: Category }) {
           subtitle: displayAll ? formatName(equivalent.subtitle) : undefined,
           value: computeECV(equivalent),
           usage: formatUsage(equivalent),
+          onClick: () => track(category.name, 'Navigation equivalent', equivalent.slug),
         })),
     [equivalents, category, displayAll]
   )
@@ -39,7 +41,7 @@ export default function CategoryList({ category }: { category: Category }) {
   return (
     <>
       {category?.slug === 'boisson' ? <SourceAgribalyse /> : <></>}
-      <Wrapper name={category.title || category.name} slug={category.slug}>
+      <Wrapper name={category.title || category.name} slug={category.slug} tracking={category.slug}>
         <Description description={category.description} />
         <Top className='noscreenshot'>
           <Instruction title={category.equivalent} gender={category.gender} />
@@ -54,7 +56,7 @@ export default function CategoryList({ category }: { category: Category }) {
               checked={displayAll}
               onChange={() => {
                 setDisplayAll((prevDisplayAll) => !prevDisplayAll)
-                window?.please?.track(['trackEvent', 'Interaction', 'Voir tous les équivalents', category.name])
+                track(category.name, 'Voir tous', displayAll ? 'faux' : 'vrai')
               }}>
               Voir {category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
               {formatName(category.equivalent, 2) || 'équivalents'}

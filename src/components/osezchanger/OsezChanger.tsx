@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
 import Signature from 'components/screenshot/Signature'
 import Actions from './Actions'
@@ -11,7 +12,7 @@ import Modal, { ModalType } from './modals/Modal'
 const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
   const [defiMode, setDefiMode] = useState(iframe || false)
   const [modal, setModal] = useState<ModalType | undefined>()
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_osez_changer', 'png', 'osez_changer')
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_osez_changer', 'OsezChanger')
 
   return (
     <Container $defiMode={defiMode} id='osez-changer'>
@@ -44,7 +45,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
       ) : (
         <DefiButton
           onClick={() => {
-            window.please?.track(['trackEvent', 'OsezChanger', 'Start', 'osez_changer_start'])
+            track('OsezChanger', 'Start', 'osez_changer_start')
             setDefiMode(true)
           }}>
           Découvrir le défi
