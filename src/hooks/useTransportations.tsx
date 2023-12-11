@@ -4,25 +4,10 @@ import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
+import { filterByDistance } from 'utils/transport'
 import DataContext from 'components/providers/DataProvider'
 import Carpool from 'components/transport/Carpool'
 import TransportContext from 'components/transport/TransportProvider'
-
-const filterByDistance = (equivalent: DeplacementEquivalent, value: number) => {
-  if (!equivalent.display || (!equivalent.display.min && !equivalent.display.max)) {
-    return true
-  }
-
-  if (equivalent.display.max && equivalent.display.max < value) {
-    return false
-  }
-
-  if (equivalent.display.min && equivalent.display.min > value) {
-    return false
-  }
-
-  return true
-}
 
 // C'est un peu austère, déso
 export default function useTransportations(itineraries?: Record<DeplacementType, number> | undefined) {
@@ -52,7 +37,7 @@ export default function useTransportations(itineraries?: Record<DeplacementType,
               (equivalent) =>
                 displayAll ||
                 filterByDistance(
-                  equivalent,
+                  equivalent.display,
                   itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
                 )
             )
@@ -61,10 +46,11 @@ export default function useTransportations(itineraries?: Record<DeplacementType,
               title: formatName(equivalent.name, 1, true),
               subtitle: formatName(
                 equivalent?.ecvs
-                  ? `(${equivalent?.ecvs?.find(
-                      (ecv) =>
-                        ecv.max >
-                        (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)
+                  ? `(${equivalent?.ecvs?.find((ecv) =>
+                      ecv.max
+                        ? ecv.max >
+                          (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)
+                        : true
                     )?.subtitle})`
                   : ((displayAll || equivalent.name === 'Voiture') && equivalent.subtitle
                       ? `(${equivalent.subtitle})`

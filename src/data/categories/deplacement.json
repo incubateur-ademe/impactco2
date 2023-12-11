@@ -1,8 +1,15 @@
 [
   {
+    "id": 1,
     "name": "Avion",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voler", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voler",
+      "voyager"
+    ],
     "slug": "avion",
     "type": "plane",
     "emoji": "✈️",
@@ -27,15 +34,15 @@
         "subtitle": "Court courrier",
         "ecv": [
           {
-            "value": 0.1256,
+            "value": 0.1412,
             "id": 6
           },
           {
-            "value": 0.000353,
+            "value": 0.000380,
             "id": 5
           },
           {
-            "value": 0.104,
+            "value": 0.117,
             "id": 7
           }
         ]
@@ -45,25 +52,24 @@
         "subtitle": "Moyen courrier",
         "ecv": [
           {
-            "value": 0.0974,
+            "value": 0.1024,
             "id": 6
           },
           {
-            "value": 0.00031,
+            "value": 0.00036,
             "id": 5
           },
           {
-            "value": 0.0807,
+            "value": 0.0848,
             "id": 7
           }
         ]
       },
       {
-        "max": 100000000000000000,
         "subtitle": "Long courrier",
         "ecv": [
           {
-            "value": 0.0828,
+            "value": 0.083,
             "id": 6
           },
           {
@@ -71,7 +77,7 @@
             "id": 5
           },
           {
-            "value": 0.0686,
+            "value": 0.0687,
             "id": 7
           }
         ]
@@ -80,27 +86,33 @@
     "default": true,
     "tile": false,
     "display": {
-      "min": 400
+      "min": 500
     },
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
-    "hypothesis": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>126 gCO2e/km/personne sans l'impact des traînées,<br/>230 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 3 500 km, >220 sièges :<br/>97,7 gCO2e/km/personne sans l'impact des traînées,<br/>178,4 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, >220 sièges :<br/>83,06 gCO2e/km/personne sans l'impact des traînées,<br/>151,66 gCO2e/km/personne avec l'impact des traînées",
+    "hypothesis": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>141 gCO2e/km/personne sans l'impact des traînées,<br/>258 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 3 500 km, 101 à 220 sièges :<br/>103 gCO2e/km/personne sans l'impact des traînées,<br/>187 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, 101 à 220 sièges :<br/>83,2 gCO2e/km/personne sans l'impact des traînées,<br/>152 gCO2e/km/personne avec l'impact des traînées",
     "meta": {
       "title": "Calcul empreinte carbone voyage avion",
       "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO2 permet de mesurer l'impact de vos trajets  en avion sur le climat"
     }
   },
   {
+    "id": 2,
     "name": "TGV",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "train"
+    ],
     "slug": "tgv",
-
     "type": "rail",
     "emoji": "🚅",
     "category": 4,
     "ecv": [
       {
-        "value": 0.00173,
+        "value": 0.00230,
         "id": 6
       },
       {
@@ -120,21 +132,27 @@
     }
   },
   {
+    "id": 3,
     "name": "Intercités",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "train"
+    ],
     "slug": "intercites",
-
     "type": "rail",
     "emoji": "🚈",
     "category": 4,
     "ecv": [
       {
-        "value": 0.00529,
+        "value": 0.0058,
         "id": 6
       },
       {
-        "value": 0.00063,
+        "value": 0.00318,
         "id": 5
       }
     ],
@@ -150,10 +168,17 @@
     }
   },
   {
+    "id": 4,
     "name": "Voiture",
     "subtitle": "Moteur thermique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "conduire",
+      "voyager"
+    ],
     "slug": "voiturethermique",
     "carpool": true,
     "type": "car",
@@ -178,10 +203,17 @@
     }
   },
   {
+    "id": 5,
     "name": "Voiture",
     "subtitle": "Moteur électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "conduire",
+      "voyager"
+    ],
     "slug": "voitureelectrique",
     "carpool": true,
     "type": "car",
@@ -207,11 +239,16 @@
     }
   },
   {
+    "id": 6,
     "name": "Autocar",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "autocar",
-
     "type": "car",
     "emoji": "🚐",
     "category": 4,
@@ -238,10 +275,17 @@
     }
   },
   {
+    "id": 7,
     "name": "Vélo ou marche",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "marcher", "pedaler"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "marcher",
+      "pedaler"
+    ],
     "slug": "velo",
-
     "type": "foot",
     "emoji": "🚶‍♀️",
     "category": 4,
@@ -257,11 +301,17 @@
     }
   },
   {
+    "id": 8,
     "name": "Vélo (ou trottinette) à assistance électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "pedaler"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "pedaler"
+    ],
     "slug": "veloelectrique",
-
     "type": "foot",
     "emoji": "🚴",
     "secondEmoji": "⚡",
@@ -288,12 +338,17 @@
     }
   },
   {
+    "id": 9,
     "name": "Bus",
     "subtitle": "Moteur thermique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "busthermique",
-
     "type": "car",
     "emoji": "🚌",
     "category": 4,
@@ -319,17 +374,22 @@
     }
   },
   {
+    "id": 10,
     "name": "Tramway",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "tramway",
-
     "type": "rail",
     "emoji": "🚌",
     "category": 4,
     "ecv": [
       {
-        "value": 0.0022,
+        "value": 0.0038,
         "id": 6
       },
       {
@@ -349,17 +409,22 @@
     }
   },
   {
+    "id": 11,
     "name": "Métro",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "rail"
+    ],
     "slug": "metro",
-
     "type": "rail",
     "emoji": "🚇",
     "category": 4,
     "ecv": [
       {
-        "value": 0.0025,
+        "value": 0.0042,
         "id": 6
       },
       {
@@ -379,11 +444,15 @@
     }
   },
   {
+    "id": 12,
     "name": "Scooter ou moto légère",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer"
+    ],
     "slug": "scooter",
-
     "type": "car",
     "emoji": "🛵",
     "category": 4,
@@ -409,9 +478,14 @@
     }
   },
   {
+    "id": 13,
     "name": "Moto",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer"
+    ],
     "slug": "moto",
     "type": "car",
     "emoji": "🏍️",
@@ -438,17 +512,23 @@
     }
   },
   {
+    "id": 14,
     "name": "RER ou Transilien",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "train",
+      "rail"
+    ],
     "slug": "rer",
-
     "type": "rail",
     "emoji": "🚃",
     "category": 4,
     "ecv": [
       {
-        "value": 0.0041,
+        "value": 0.0066,
         "id": 6
       },
       {
@@ -469,17 +549,23 @@
     }
   },
   {
+    "id": 15,
     "name": "TER",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "train",
+      "rail"
+    ],
     "slug": "ter",
-
     "type": "rail",
     "emoji": "🚈",
     "category": 4,
     "ecv": [
       {
-        "value": 0.0248,
+        "value": 0.0229,
         "id": 6
       },
       {
@@ -499,12 +585,17 @@
     }
   },
   {
+    "id": 16,
     "name": "Bus",
     "subtitle": "Moteur électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "buselectrique",
-
     "type": "car",
     "emoji": "🚌",
     "secondEmoji": "⚡",
@@ -531,10 +622,16 @@
     }
   },
   {
+    "id": 21,
     "name": "Bus",
     "subtitle": "GNV",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "busgnv",
     "type": "car",
     "emoji": "🚌",

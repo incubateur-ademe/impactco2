@@ -44,13 +44,12 @@ export type DeplacementEquivalent = BaseEquivalent &
   BaseEquivalentValue & {
     type: string
     carpool?: boolean
-
     display?: {
       min?: number
       max?: number
     }
     ecvs?: {
-      max: number
+      max?: number
       subtitle: string
       ecv: EquivalentValue[]
     }[]
