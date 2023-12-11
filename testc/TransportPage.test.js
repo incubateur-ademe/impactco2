@@ -2,7 +2,6 @@ import '@testing-library/jest-dom'
 import { act, screen } from '@testing-library/react'
 import mockRouter from 'next-router-mock'
 import TransportPage from 'pages/transport.tsx'
-// official hack... see https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
 import '../test-utils/match-media.js'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper'
 
@@ -22,7 +21,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // When
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
     // Then
-    expect(await screen.findByTestId('vlo-ou-marche')).toHaveTextContent('Vélo ou marche00 kg CO2e')
+    expect(await screen.findByTestId('velo')).toHaveTextContent('Vélo ou marche00 kg CO2e')
   })
   test("Par défaut, limite le nombre d'éléments affichés", async () => {
     // Given
@@ -30,7 +29,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // When
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
     // Then
-    const velo = await screen.findByTestId('vlo-ou-marche')
+    const velo = await screen.findByTestId('velo')
     const co2list = velo.parentElement.querySelectorAll('a')
     expect(co2list.length).toBe(7)
   })
@@ -38,7 +37,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // Given
     mockRouter.push('/transport')
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
-    const velo = await screen.findByTestId('vlo-ou-marche')
+    const velo = await screen.findByTestId('velo')
     // When
     act(() => {
       screen.getByLabelText('Voir tous les modes de transport').click()
@@ -46,6 +45,19 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // Then
     const co2list = velo.parentElement.querySelectorAll('a')
     expect(co2list.length).toBe(17)
+  })
+  test('Peut afficher le mode covoiturage', async () => {
+    // Given
+    mockRouter.push('/transport')
+    renderWithWrapper(<TransportPage category={getTransportCategory()} />)
+    const velo = await screen.findByTestId('velo')
+    // When
+    act(() => {
+      screen.getByLabelText('Afficher le covoiturage').click()
+    })
+    // Then
+    const co2list = velo.parentElement.querySelectorAll('a')
+    expect(co2list.length).toBe(9)
   })
 })
 
