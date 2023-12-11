@@ -74,6 +74,27 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByText('+').nth(2).click() // Fermer la modale d'explication
     await expect(page.getByRole('heading', { name: 'Mode télétravail' })).not.toBeAttached()
   })
+  await test.step("Le bilan s'affiche, et peut se modifier. Les économies réalisées s'affichent.", async () => {
+    // Given
+    await expect(page.getByText("soit 6.56 %d'économisé sur")).not.toBeAttached()
+
+    await expect(page.getByText('Présentiel5jours par semaine')).toBeAttached()
+    await expect(page.getByText('Télétravail0jours par semaine')).toBeAttached()
+    await expect(page.locator('div').filter({ hasText: /^4329 kgCO2eémissur 5 jours$/ })).toBeAttached()
+    // When
+    await page
+      .locator('div')
+      .filter({ hasText: /^Présentiel5jours par semaine$/ })
+      .getByRole('button')
+      .first()
+      .click() // appui sur le bouton "moins"
+    // Then
+    await expect(page.getByText('Présentiel4jours par semaine')).toBeAttached()
+    await expect(page.getByText('Télétravail1jours par semaine')).toBeAttached()
+    await expect(page.locator('div').filter({ hasText: /^3463 kgCO2eémissur 4 jours$/ })).toBeAttached()
+    await expect(page.getByText("soit 6.56 %d'économisé sur")).toBeAttached()
+    await expect(page.getByTestId('saved')).toHaveText('649 kgCO2eévités sur 1 jour')
+  })
 })
 
 const getNbOfSuggestions = async (page) => {
