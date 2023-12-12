@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import getStringAfterLastSlash from 'utils/getStringAfterLastSlash'
 import useIframe from 'hooks/useIframe'
 import MagicLink from 'components/base/MagicLink'
 import Bar from './item/Bar'
@@ -36,7 +35,7 @@ export default function Item(props) {
       onClick={props.onClick || null}
       noIcon
       className='bar-chart-item'
-      data-testid={`bar-chart-item-${getStringAfterLastSlash(props.to)}`}>
+      data-testid={`bar-chart-item-${props['data-flip-id']}`}>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
         <Title title={props.title} subtitle={props.subtitle} component={props.component} />
