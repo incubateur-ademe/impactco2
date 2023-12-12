@@ -9,6 +9,10 @@ export default function Search(props) {
   const [visioDuree, setVisioDuree] = useSessionStorage('visio . durée', 180)
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streaming . durée', 420)
   const [emailReseau, setEmailReseau] = useSessionStorage('email . transmission . émetteur . réseau', 'fixe FR')
+  const [streamingReseau, setStreamingReseau] = useSessionStorage(
+    'streaming . transmission . émetteur . réseau',
+    'fixe FR'
+  )
 
   useEffect(() => {
     setSituation({
@@ -20,6 +24,7 @@ export default function Search(props) {
       ['visio . appareil']: `'ordinateur portable'`,
       ['visio . emplacements']: 1,
       ['email . transmission . émetteur . réseau']: emailReseau,
+      ['streaming . transmission . réseau']: streamingReseau,
     })
   }, [])
 
@@ -152,6 +157,7 @@ export default function Search(props) {
               value={`'${engine.evaluate('streaming . transmission . réseau').nodeValue}'`}
               onChange={(value) => {
                 track('Usage numérique', 'Select streaming réseau', `usage-numerique-streaming-reseau-${value}`)
+                setStreamingReseau(value)
                 setSituation({
                   ['streaming . transmission . réseau']: value,
                 })
