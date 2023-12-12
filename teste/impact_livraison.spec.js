@@ -25,7 +25,7 @@ test("Affichage simulateur livraison: J'ai bien le titre de l'onglet, le titre d
 }) => {
   await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO2/)
   await expect(page.getByRole('heading').first()).toHaveText("Mesurer l'impact carbone de la livraison de colis")
-  await expect(page.locator('nav[aria-label="fil d\'ariane"]')).toHaveText('Thématiques >  Livraison')
+  await expect(page.locator('nav[aria-label="fil d\'ariane"]')).toHaveText('AccueilThématiquesLivraison')
   await expect(page.getByTestId('lien-etude-ademe')).toHaveText('Commerce en ligne - Étude ADEME 2023 ')
 })
 
