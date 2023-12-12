@@ -15,19 +15,20 @@ export default function Search(props) {
     'fixe FR'
   )
   const [emailAppareil, setEmailAppareil] = useSessionStorage('email . appareil', 'smartphone')
+  const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streaming . appareil', 'TV')
   const [emailTaille, setEmailTaille] = useSessionStorage('email . taille', 0.075)
 
   useEffect(() => {
     setSituation({
-      ['streaming . durée']: streamingDuree,
       ['visio . durée']: visioDuree,
       ['email . appareil']: emailAppareil,
       ['email . taille']: emailTaille,
-      ['streaming . appareil']: `'TV'`,
-      ['visio . appareil']: `'ordinateur portable'`,
-      ['visio . emplacements']: 1,
       ['email . transmission . émetteur . réseau']: emailReseau,
+      ['streaming . durée']: streamingDuree,
+      ['streaming . appareil']: streamingAppareil,
+      ['visio . appareil']: `'ordinateur portable'`,
       ['streaming . transmission . réseau']: streamingReseau,
+      ['visio . emplacements']: 1,
       ['visio . transmission . réseau']: visioReseau,
     })
   }, [])
@@ -148,6 +149,7 @@ export default function Search(props) {
             value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
             onChange={({ value }) => {
               track('Usage numérique', 'Select streaming appareil', `usage-numerique-streaming-appareil-${value}`)
+              setStreamingAppareil(value)
               setSituation({ ['streaming . appareil']: value })
             }}
             color='#C25166'>
