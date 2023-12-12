@@ -3,9 +3,9 @@ export default function buildQueryParamsFromSession(originalHref: string, window
     let queryParamsStr = '?'
     const queryParams = ['emailTaille', 'emailAppareil']
     queryParams.forEach(function (param) {
-      queryParamsStr += param + '=' + window.sessionStorage[param] + '&'
+      queryParamsStr += `${param}=${window.sessionStorage[param]}&`
     })
-    return originalHref + queryParamsStr.slice(0, -1) // slice: remove last '&'
+    return `${originalHref}${queryParamsStr.slice(0, -1)}` // slice: remove last '&'
   } else {
     return originalHref
   }
