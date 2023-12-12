@@ -29,12 +29,7 @@ const Wrapper = styled.div`
 export default function CO2EModal() {
   const { share: open, setShare: setOpen } = useContext(ModalContext)
 
-  let href = `${typeof window !== 'undefined' ? window?.location?.href : ''}${typeof open === 'string' ? open : ''}`
-
-  useEffect(() => {
-    href = buildQueryParamsFromSession(href, window)
-    console.log('href:', encodeURI(href))
-  }, [])
+  const href = `${typeof window !== 'undefined' ? buildQueryParamsFromSession(window?.location?.href, window) : ''}`
 
   return open ? (
     <Modal open={!!open} setOpen={(value) => setOpen(!!value)}>

@@ -5,7 +5,7 @@ export default function buildQueryParamsFromSession(originalHref: string, window
     queryParams.forEach(function (param) {
       queryParamsStr += `${param}=${window.sessionStorage[param]}&`
     })
-    return `${originalHref}${queryParamsStr.slice(0, -1)}` // slice: remove last '&'
+    return encodeURI(`${originalHref}${queryParamsStr.slice(0, -1)}`) // slice: remove last '&'
   } else {
     return originalHref
   }
