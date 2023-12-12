@@ -11,10 +11,16 @@ body {
   --secondary-20: #ccdcfd;
   --secondary-30: #aec8fc;
   --secondary-40: #235dd2;
+  --secondary-50: #0c44b4;
   --secondary-60: #002f8e;
   --secondary-70: #00205f;
   --secondary-80: #013;
+  --neutral-10: #f9f7f8;
+  --neutral-20: #eae5e8;
+  --neutral-30: #d5cdd2;
   --neutral-50: #6a5f66;
+  --neutral-60: #5a5057;
   --neutral-70: #3a3236;
   --neutral-80: #110d10;
+  --success-60: #13701f;
 }

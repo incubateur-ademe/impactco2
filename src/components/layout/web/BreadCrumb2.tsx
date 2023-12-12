@@ -5,14 +5,21 @@ import { Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import { Icon } from 'components/osezchanger/icons'
 
 const Wrapper = styled.div`
-  font-size: 0.75rem;
+  align-items: center;
+  display: flex;
+  font-size: 0.875rem;
   font-weight: 400;
-  height: 3.05rem;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
-  padding: 1rem 1rem 1rem 0;
+  gap: 0.125rem;
+  justify-content: center;
+  line-height: 1.25rem;
+  margin: 1.5rem auto;
+
+  a {
+    font-weight: 500;
+  }
 `
 
 export type BreadcrumbProps =
@@ -34,12 +41,14 @@ export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProp
           <Wrapper>
             {breadcrumb && breadcrumb.type === 'equivalent' && (
               <>
+                <MagicLink to='/'>Accueil</MagicLink>
+                <Icon iconId='dropdown-arrow-right' />
                 <MagicLink to='/thematiques'>Thématiques</MagicLink>
-                {' > '}{' '}
+                <Icon iconId='dropdown-arrow-right' />
                 {breadcrumb.equivalent ? (
                   <>
                     <MagicLink to={`/${breadcrumb.category.slug}`}>{breadcrumb.category.name}</MagicLink>
-                    {' > '}
+                    <Icon iconId='dropdown-arrow-right' />
                     {formatName(breadcrumb.equivalent.name, 1, true)}
                   </>
                 ) : (
@@ -50,7 +59,7 @@ export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProp
             {breadcrumb && breadcrumb.type === 'accueil' && (
               <>
                 <MagicLink to='/'>Page d’accueil</MagicLink>
-                {' > '} {breadcrumb.page}
+                <Icon iconId='dropdown-arrow-right' /> {breadcrumb.page}
               </>
             )}
           </Wrapper>

@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
-import GhostButton from './components/GhostButton'
+import GhostButton from '../base/GhostButton'
 import { Container } from './Actions.styles'
 import { ModalType } from './modals/Modal'
 
@@ -14,6 +14,8 @@ const Actions = ({
   return (
     <Container>
       <GhostButton
+        colored
+        size='sm'
         icon='send-plane'
         onClick={() => {
           track('OsezChanger', 'Partager', 'osez_changer_partager')
@@ -22,6 +24,8 @@ const Actions = ({
         Partager
       </GhostButton>
       <GhostButton
+        colored
+        size='sm'
         icon='code-s-slash'
         onClick={() => {
           track('OsezChanger', 'Integrer', 'osez_changer_integrer')
@@ -30,6 +34,8 @@ const Actions = ({
         Intégrer
       </GhostButton>
       <GhostButton
+        colored
+        size='sm'
         icon='download'
         onClick={() => {
           track('OsezChanger', 'Telecharger', 'osez_changer_telecharger')

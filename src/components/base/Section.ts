@@ -19,7 +19,7 @@ export const Section = styled.section<{ $theme?: 'color' | 'main'; $withoutPaddi
 
 export const SectionWideContent = styled.div<{ $small?: boolean; $noGutter?: boolean; $flex?: boolean }>`
   margin: auto;
-  max-width: ${({ $small }) => ($small ? '54rem' : '1400px')};
+  max-width: ${({ $small }) => ($small ? '1000px' : '1400px')};
   ${({ $flex }) =>
     $flex &&
     css`

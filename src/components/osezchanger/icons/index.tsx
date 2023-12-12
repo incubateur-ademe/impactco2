@@ -1,10 +1,12 @@
 import arrowDown from './arrow-down'
 import arrowLeft from './arrow-left'
 import arrowRight from './arrow-right'
+import check from './check'
 import close from './close'
 import codeSSlash from './code-s-slash'
 import copy from './copy'
 import download from './download'
+import dropdownArrowRight from './dropdown-arrow-right'
 import facebook from './facebook'
 import information from './information'
 import linkedin from './linkedin'
@@ -25,6 +27,7 @@ export type IconId =
   | 'arrow-left'
   | 'arrow-right'
   | 'arrow-down'
+  | 'dropdown-arrow-right'
   | 'copy'
   | 'facebook'
   | 'twitter'
@@ -32,6 +35,7 @@ export type IconId =
   | 'whatsapp'
   | 'plus'
   | 'minus'
+  | 'check'
 
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
@@ -53,6 +57,8 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return arrowRight
     case 'arrow-down':
       return arrowDown
+    case 'dropdown-arrow-right':
+      return dropdownArrowRight
     case 'copy':
       return copy
     case 'facebook':
@@ -67,6 +73,8 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return plus
     case 'minus':
       return minus
+    case 'check':
+      return check
     default:
       return null
   }

@@ -8,12 +8,15 @@ import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
 import Simulator from 'components/misc/Simulator'
-import Wrapper from 'components/misc/category/Wrapper'
+import CategoryWrapper from 'components/misc/category/CategoryWrapper'
+import Header from 'components/misc/category/Header'
 import SliderWithInput from 'components/misc/slider/SliderWithInput'
+
+const DEFAULT_M2 = 63
 
 const Chauffage = ({ category }: { category: Category }) => {
   const router = useRouter()
-  const [value, setValue] = useState(63)
+  const [value, setValue] = useState(DEFAULT_M2)
   const { equivalents } = useContext(DataContext)
 
   useEffect(() => {
@@ -40,16 +43,13 @@ const Chauffage = ({ category }: { category: Category }) => {
   return (
     <Section $withoutPadding>
       <SectionWideContent $small>
-        <Wrapper
-          name={category.title || category.name}
-          slug={category.slug}
-          urlParams={`?m2=${value}`}
-          tracking='Chauffage'>
+        <Header category={category} params={{ m2: value.toString() }} />
+        <CategoryWrapper category={category}>
           <Simulator text='Indiquer la surface à chauffer pour découvrir la quantité de CO2e émise par mode de chauffage pour cette surface par année.'>
             <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} tracking='Chauffage' />
           </Simulator>
           <BarChart equivalents={equivalentsOfCategory} category={category} />
-        </Wrapper>
+        </CategoryWrapper>
       </SectionWideContent>
     </Section>
   )

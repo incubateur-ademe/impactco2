@@ -1,5 +1,5 @@
 import React from 'react'
-import GhostButton from '../components/GhostButton'
+import GhostButton from '../../base/GhostButton'
 import Hypotesis from './Hypotesis'
 import Integration from './Integration'
 import { Children, Container, Content, Footer, Header, Shadow } from './Modal.styles'
@@ -32,18 +32,18 @@ const Modal = ({ type, onClose }: { type: ModalType; onClose: () => void }) => {
       <Content>
         <Header>
           {values.title}
-          <GhostButton icon='close' iconPosition='right' onClick={onClose}>
+          <GhostButton colored icon='close' iconPosition='right' onClick={onClose} size='sm'>
             Fermer
           </GhostButton>
         </Header>
         <Children>{values.children}</Children>
         <Footer>
           {values.cancel ? (
-            <GhostButton icon='close' iconPosition='right' onClick={onClose}>
+            <GhostButton colored icon='close' iconPosition='right' onClick={onClose} size='sm'>
               Annuler
             </GhostButton>
           ) : (
-            <GhostButton icon='arrow-left' onClick={onClose}>
+            <GhostButton colored icon='arrow-left' onClick={onClose} size='sm'>
               Revenir au challenge
             </GhostButton>
           )}
