@@ -6,20 +6,17 @@ import Wrapper from './search/Wrapper'
 
 export default function Search(props) {
   const { engine, setSituation } = useContext(RulesContextNumerique)
-  const [visioAppareil, setVisioAppareil] = useSessionStorage('visio . appareil', 'ordinateur portable')
-  const [visioDuree, setVisioDuree] = useSessionStorage('visio . durée', 180)
-  const [visioQualite, setVisioQualite] = useSessionStorage('visio . qualité', 'audio')
-  const [visioReseau, setVisioReseau] = useSessionStorage('visio . transmission . réseau', 'fixe FR')
-  const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streaming . appareil', 'TV')
-  const [streamingDuree, setStreamingDuree] = useSessionStorage('streaming . durée', 420)
-  const [streamingQualite, setStreamingQualite] = useSessionStorage('streaming . qualité', 'SD')
-  const [streamingReseau, setStreamingReseau] = useSessionStorage(
-    'streaming . transmission . émetteur . réseau',
-    'fixe FR'
-  )
-  const [emailAppareil, setEmailAppareil] = useSessionStorage('email . appareil', 'smartphone')
-  const [emailReseau, setEmailReseau] = useSessionStorage('email . transmission . émetteur . réseau', 'fixe FR')
-  const [emailTaille, setEmailTaille] = useSessionStorage('email . taille', 0.075)
+  const [visioAppareil, setVisioAppareil] = useSessionStorage('visioAppareil', 'ordinateur portable')
+  const [visioDuree, setVisioDuree] = useSessionStorage('visioDuree', 180)
+  const [visioQualite, setVisioQualite] = useSessionStorage('visioQualite', 'audio')
+  const [visioReseau, setVisioReseau] = useSessionStorage('visioReseau', 'fixe FR')
+  const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streamingAppareil', 'TV')
+  const [streamingDuree, setStreamingDuree] = useSessionStorage('streamingDuree', 420)
+  const [streamingQualite, setStreamingQualite] = useSessionStorage('streamingQualite', 'SD')
+  const [streamingReseau, setStreamingReseau] = useSessionStorage('streamingReseau', 'fixe FR')
+  const [emailAppareil, setEmailAppareil] = useSessionStorage('emailAppareil', 'smartphone')
+  const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
+  const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
 
   useEffect(() => {
     setSituation({
