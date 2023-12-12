@@ -27,7 +27,7 @@ test('Chauffage page', async ({ page }) => {
     page.getByTestId('slider-number-input').fill('200')
     page.getByTestId('slider-number-input-validate').click()
 
-    await expect(page.getByTestId('slider-thumb-content')).toHaveText('100 m2')
+    await expect(page.getByTestId('slider-thumb-content')).toHaveText('200 m2')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
     await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('780')
   })
