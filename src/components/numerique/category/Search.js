@@ -16,6 +16,7 @@ export default function Search(props) {
   )
   const [emailAppareil, setEmailAppareil] = useSessionStorage('email . appareil', 'smartphone')
   const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streaming . appareil', 'TV')
+  const [streamingQualite, setStreamingQualite] = useSessionStorage('streaming . qualité', 'SD')
   const [emailTaille, setEmailTaille] = useSessionStorage('email . taille', 0.075)
 
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function Search(props) {
       ['email . transmission . émetteur . réseau']: emailReseau,
       ['streaming . durée']: streamingDuree,
       ['streaming . appareil']: streamingAppareil,
+      ['streaming . qualité']: streamingQualite,
       ['visio . appareil']: `'ordinateur portable'`,
       ['streaming . transmission . réseau']: streamingReseau,
       ['visio . emplacements']: 1,
@@ -186,6 +188,7 @@ export default function Search(props) {
               value={`'${engine.evaluate('streaming . qualité').nodeValue}'`}
               onChange={({ value }) => {
                 track('Usage numérique', 'Select streaming qualité', `usage-numerique-streaming-qualite-${value}`)
+                setStreamingQualite(value)
                 setSituation({ ['streaming . qualité']: value })
               }}
               color='#C25166'>
