@@ -32,6 +32,7 @@ export default function Transportation(props) {
         track('Transport télétravail', 'Mode de transport', props.transportation.slug)
         setTeletravailTransportation(props.transportation.id)
       }}
+      data-testid={`transport-${props.transportation.id}`}
       active={teletravailTransportation === props.transportation.id}>
       <Emoji>{props.transportation.emoji}</Emoji>
       {props.transportation.secondEmoji && (

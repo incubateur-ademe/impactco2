@@ -18,7 +18,7 @@ export const displayAddress = (address) =>
 
 export default function Address(props) {
   return (
-    <Wrapper>
+    <Wrapper data-testid={`Address-${props.placeholder}`}>
       <Search
         placeholder={props.placeholder}
         address={props.address}
