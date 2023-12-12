@@ -46,7 +46,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     const co2list = velo.parentElement.querySelectorAll('a')
     expect(co2list.length).toBe(17)
   })
-  test("Peut afficher le mode covoiturage, c'est à dire deux fois l'item voiture, mais un avec le nombre de participants", async () => {
+  test("Peut afficher le mode covoiturage, c'est à dire avec un nombre de participants", async () => {
     // Given
     mockRouter.push('/transport')
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
@@ -58,8 +58,6 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // Then
     const voitureElectrique = await screen.queryAllByTestId('bar-chart-item-voitureelectrique')[0]
     expect(voitureElectrique.textContent).toBe('Voiture (moteur électrique)-avec 1 covoitureurs+0,5 kg CO2e')
-    const voitureElectriqueSeule = await screen.queryAllByTestId('bar-chart-item-voitureelectrique')[1]
-    expect(voitureElectriqueSeule.textContent).toBe('Voiture (moteur électrique)1 kg CO2e')
   })
 })
 

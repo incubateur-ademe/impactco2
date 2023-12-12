@@ -30,7 +30,10 @@ const Unit = styled.span`
 `
 export default function Value(props) {
   return (
-    <Wrapper $noBar={props.value / props.max === 0} $inside={props.value / props.max > 0.7}>
+    <Wrapper
+      $noBar={props.value / props.max === 0}
+      $inside={props.value / props.max > 0.7}
+      data-testid='bar-chart-str-value'>
       <Number data-testid='bar-chart-item-value'>{formatNumber(props.value)}</Number>
       <Unit>
         {' '}

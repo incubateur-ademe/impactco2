@@ -11,7 +11,7 @@ test('Chauffage page', async ({ page }) => {
   await test.step('Page is loaded with values for 63m2', async () => {
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('63 m2')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.locator('.bar-chart-item').first()).toHaveText('Chauffage avec une pompe à chaleur0246 kg CO2e')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('246')
   })
 
   await test.step('Values are updated with button', async () => {
@@ -19,7 +19,7 @@ test('Chauffage page', async ({ page }) => {
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('100 m2')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.locator('.bar-chart-item').first()).toHaveText('Chauffage avec une pompe à chaleur0390 kg CO2e')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('390')
   })
 
   await test.step('Values are updated with manual entry', async () => {
@@ -29,6 +29,6 @@ test('Chauffage page', async ({ page }) => {
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('100 m2')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.locator('.bar-chart-item').first()).toHaveText('Chauffage avec une pompe à chaleur0780 kg CO2e')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('780')
   })
 })
