@@ -9,22 +9,25 @@ export default function Search(props) {
   const [visioDuree, setVisioDuree] = useSessionStorage('visio . durée', 180)
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streaming . durée', 420)
   const [emailReseau, setEmailReseau] = useSessionStorage('email . transmission . émetteur . réseau', 'fixe FR')
+  const [visioReseau, setVisioReseau] = useSessionStorage('visioReseau', 'fixe FR')
   const [streamingReseau, setStreamingReseau] = useSessionStorage(
     'streaming . transmission . émetteur . réseau',
     'fixe FR'
   )
+  const [emailAppareil, setEmailAppareil] = useSessionStorage('email . appareil', 'smartphone')
 
   useEffect(() => {
     setSituation({
       ['streaming . durée']: streamingDuree,
       ['visio . durée']: visioDuree,
-      ['email . appareil']: `'smartphone'`,
+      ['email . appareil']: emailAppareil,
       ['email . taille']: 0.075,
       ['streaming . appareil']: `'TV'`,
       ['visio . appareil']: `'ordinateur portable'`,
       ['visio . emplacements']: 1,
       ['email . transmission . émetteur . réseau']: emailReseau,
       ['streaming . transmission . réseau']: streamingReseau,
+      ['visio . transmission . réseau']: visioReseau,
     })
   }, [])
 
@@ -61,6 +64,7 @@ export default function Search(props) {
             value={`'${engine.evaluate('email . appareil').nodeValue}'`}
             onChange={({ value }) => {
               track('Usage numérique', 'Select email appareil', `usage-numerique-email-appareil-${value}`)
+              setEmailAppareil(value)
               setSituation({ ['email . appareil']: value })
             }}
             color='#6C8CC1'>
@@ -239,6 +243,7 @@ export default function Search(props) {
               value={`'${engine.evaluate('visio . transmission . réseau').nodeValue}'`}
               onChange={(value) => {
                 track('Usage numérique', 'Select visio réseau', `usage-numerique-visio-reseau-${value}`)
+                setVisioReseau(value)
                 setSituation({
                   ['visio . transmission . réseau']: value,
                 })
