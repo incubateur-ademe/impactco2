@@ -15,13 +15,14 @@ export default function Search(props) {
     'fixe FR'
   )
   const [emailAppareil, setEmailAppareil] = useSessionStorage('email . appareil', 'smartphone')
+  const [emailTaille, setEmailTaille] = useSessionStorage('email . taille', 0.075)
 
   useEffect(() => {
     setSituation({
       ['streaming . durée']: streamingDuree,
       ['visio . durée']: visioDuree,
       ['email . appareil']: emailAppareil,
-      ['email . taille']: 0.075,
+      ['email . taille']: emailTaille,
       ['streaming . appareil']: `'TV'`,
       ['visio . appareil']: `'ordinateur portable'`,
       ['visio . emplacements']: 1,
@@ -100,6 +101,7 @@ export default function Search(props) {
               value={engine.evaluate('email . taille').nodeValue}
               onChange={({ value }) => {
                 track('Usage numérique', 'Select email taille', `usage-numerique-email-taille-${value}`)
+                setEmailTaille(value)
                 setSituation({ ['email . taille']: value })
               }}
               color='#6C8CC1'>
