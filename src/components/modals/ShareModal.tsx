@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import styled from 'styled-components'
 import buildQueryParamsFromSession from 'utils/buildQueryParamsFromSession'
 import ModalContext from 'components/providers/ModalProvider'
