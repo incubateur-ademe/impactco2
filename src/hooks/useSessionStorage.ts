@@ -40,6 +40,7 @@ function useSessionStorage<T>(key: string, defaultValue?: T, options?: Options<T
         : queryParam(key)
           ? queryParam(key)
           : defaultValue
+      console.log('res------:', res)
       return res
     } catch (e) {
       logger(e)
