@@ -19,21 +19,19 @@ export default function Search(props) {
   const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
   const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
 
-  const queryParam = (key) => new URLSearchParams(window.location.search).get(key)
-
   useEffect(() => {
     setSituation({
-      ['email . appareil']: queryParam('emailAppareil') || emailAppareil,
-      ['email . taille']: queryParam('emailTaille') || emailTaille,
-      ['email . transmission . émetteur . réseau']: queryParam('emailReseau') || emailReseau,
-      ['streaming . durée']: queryParam('streamingDuree') || streamingDuree,
-      ['streaming . appareil']: queryParam('streamingAppareil') || streamingAppareil,
-      ['streaming . qualité']: queryParam('streamingQualite') || streamingQualite,
-      ['streaming . transmission . réseau']: queryParam('streamingReseau') || streamingReseau,
-      ['visio . appareil']: queryParam('visioAppareil') || visioAppareil,
-      ['visio . qualité']: queryParam('visioQualite') || visioQualite,
-      ['visio . durée']: queryParam('visioDuree') || visioDuree,
-      ['visio . transmission . réseau']: queryParam('visioReseau') || visioReseau,
+      ['email . appareil']: emailAppareil,
+      ['email . taille']: emailTaille,
+      ['email . transmission . émetteur . réseau']: emailReseau,
+      ['streaming . durée']: streamingDuree,
+      ['streaming . appareil']: streamingAppareil,
+      ['streaming . qualité']: streamingQualite,
+      ['streaming . transmission . réseau']: streamingReseau,
+      ['visio . appareil']: visioAppareil,
+      ['visio . qualité']: visioQualite,
+      ['visio . durée']: visioDuree,
+      ['visio . transmission . réseau']: visioReseau,
       ['visio . emplacements']: 1,
     })
   }, [])

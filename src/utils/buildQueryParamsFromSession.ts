@@ -1,7 +1,19 @@
 export default function buildQueryParamsFromSession(originalHref: string, window: Window): string {
   if (window && window.sessionStorage && window.sessionStorage['emailTaille']) {
     let queryParamsStr = '?'
-    const queryParams = ['emailTaille', 'emailAppareil']
+    const queryParams = [
+      'visioAppareil',
+      'visioDuree',
+      'visioQualite',
+      'visioReseau',
+      'streamingAppareil',
+      'streamingDuree',
+      'streamingQualite',
+      'streamingReseau',
+      'emailTaille',
+      'emailReseau',
+      'emailAppareil',
+    ]
     queryParams.forEach(function (param) {
       queryParamsStr += `${param}=${window.sessionStorage[param]}&`
     })

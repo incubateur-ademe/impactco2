@@ -12,6 +12,8 @@ type Options<T> = Partial<{
   syncData: boolean
 }>
 
+const queryParam = (key: string): string | null => new URLSearchParams(window.location.search).get(key)
+
 function useSessionStorage<T>(key: string, defaultValue: T, options?: Options<T>): [T, Setter<T>]
 function useSessionStorage<T>(key: string, defaultValue?: T, options?: Options<T>) {
   const opts = useMemo(() => {
@@ -33,7 +35,11 @@ function useSessionStorage<T>(key: string, defaultValue?: T, options?: Options<T
 
     try {
       rawValueRef.current = window.sessionStorage.getItem(key)
-      const res: T = rawValueRef.current ? parser(rawValueRef.current) : defaultValue
+      const res: T = rawValueRef.current
+        ? parser(rawValueRef.current)
+        : queryParam(key)
+          ? queryParam(key)
+          : defaultValue
       return res
     } catch (e) {
       logger(e)
