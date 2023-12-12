@@ -43,7 +43,7 @@ export default function ByOrder() {
               </span>
             </>
           }
-          cta={{ to: '/comparateur', label: 'Découvrer le comparateur carbone' }}
+          cta={{ to: '/comparateur', label: 'Découvrir le comparateur carbone' }}
         />
         <div>
           <Grid>
