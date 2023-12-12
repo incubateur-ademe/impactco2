@@ -15,7 +15,7 @@ test('Chauffage page', async ({ page }) => {
   })
 
   await test.step('Values are updated with button', async () => {
-    page.getByTestId('slider-plus-button').click()
+    await page.getByTestId('slider-plus-button').click()
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('100 m2')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
@@ -23,9 +23,9 @@ test('Chauffage page', async ({ page }) => {
   })
 
   await test.step('Values are updated with manual entry', async () => {
-    page.getByTestId('slider-thumb-content-edit').click()
-    page.getByTestId('slider-number-input').fill('200')
-    page.getByTestId('slider-number-input-validate').click()
+    await page.getByTestId('slider-thumb-content-edit').click()
+    await page.getByTestId('slider-number-input').fill('200')
+    await page.getByTestId('slider-number-input-validate').click()
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('200 m2')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
