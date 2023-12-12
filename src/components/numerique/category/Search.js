@@ -7,9 +7,10 @@ import Wrapper from './search/Wrapper'
 export default function Search(props) {
   const { engine, setSituation } = useContext(RulesContextNumerique)
   const [visioDuree, setVisioDuree] = useSessionStorage('visio . durée', 180)
+  const [visioAppareil, setVisioAppareil] = useSessionStorage('visio . appareil', 'ordinateur portable')
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streaming . durée', 420)
   const [emailReseau, setEmailReseau] = useSessionStorage('email . transmission . émetteur . réseau', 'fixe FR')
-  const [visioReseau, setVisioReseau] = useSessionStorage('visioReseau', 'fixe FR')
+  const [visioReseau, setVisioReseau] = useSessionStorage('visio . transmission . réseau', 'fixe FR')
   const [streamingReseau, setStreamingReseau] = useSessionStorage(
     'streaming . transmission . émetteur . réseau',
     'fixe FR'
@@ -28,7 +29,7 @@ export default function Search(props) {
       ['streaming . durée']: streamingDuree,
       ['streaming . appareil']: streamingAppareil,
       ['streaming . qualité']: streamingQualite,
-      ['visio . appareil']: `'ordinateur portable'`,
+      ['visio . appareil']: visioAppareil,
       ['streaming . transmission . réseau']: streamingReseau,
       ['visio . emplacements']: 1,
       ['visio . transmission . réseau']: visioReseau,
@@ -235,6 +236,7 @@ export default function Search(props) {
             value={`'${engine.evaluate('visio . appareil').nodeValue}'`}
             onChange={({ value }) => {
               track('Usage numérique', 'Select visio appareil', `usage-numerique-visio-appareil-${value}`)
+              setVisioAppareil(value)
               setSituation({ ['visio . appareil']: value })
             }}
             color='#3DC7AB'>
