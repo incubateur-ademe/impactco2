@@ -8,6 +8,8 @@ export default function Search(props) {
   const { engine, setSituation } = useContext(RulesContextNumerique)
   const [visioDuree, setVisioDuree] = useSessionStorage('visio . durée', 180)
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streaming . durée', 420)
+  const [emailReseau, setEmailReseau] = useSessionStorage('email . transmission . émetteur . réseau', 'fixe FR')
+
   useEffect(() => {
     setSituation({
       ['streaming . durée']: streamingDuree,
@@ -17,6 +19,7 @@ export default function Search(props) {
       ['streaming . appareil']: `'TV'`,
       ['visio . appareil']: `'ordinateur portable'`,
       ['visio . emplacements']: 1,
+      ['email . transmission . émetteur . réseau']: emailReseau,
     })
   }, [])
 
@@ -67,6 +70,7 @@ export default function Search(props) {
               value={`'${engine.evaluate('email . transmission . émetteur . réseau').nodeValue}'`}
               onChange={(value) => {
                 track('Usage numérique', 'Select email réseau', `usage-numerique-email-reseau-${value}`)
+                setEmailReseau(value)
                 setSituation({
                   ['email . transmission . émetteur . réseau']: value,
                 })
