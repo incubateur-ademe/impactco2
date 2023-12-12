@@ -53,39 +53,41 @@ export default function ByArticle() {
         />
         <div>
           <MiddleGrid>
-            <div>
-              <H3Title>En toute autonomie</H3Title>
-              <MiddleUl>
-                <MiddleLi>
-                  Utilisez le{' '}
-                  <Link
-                    href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                    target='_blank'
-                    rel='noreferrer noopener'
-                    onClick={() => track('Click', 'Kit de diffusion', 'click_kit_diffusion')}>
-                    Kit de diffusion
-                  </Link>{' '}
-                  pour vous épauler dans la rédaction de vos contenus.
-                </MiddleLi>
-                <MiddleLi>
-                  Personnalisez le simulateur de votre choix grâce à notre{' '}
-                  <Link href='/integration' onClick={() => track('Click', 'Configurateur', 'click_configurateur')}>
-                    configurateur
-                  </Link>
-                  .
-                </MiddleLi>
-                <MiddleLi>
-                  Inspirez-vous d'
-                  <Link
-                    href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
-                    target='_blank'
-                    rel='noreferrer noopener'
-                    onClick={() => track('Click', 'Exemples concrets', 'click_exemples_concrets')}>
-                    exemples concrets
-                  </Link>{' '}
-                  déjà créés par des médias, entreprises, associations...
-                </MiddleLi>
-              </MiddleUl>
+            <Box>
+              <div>
+                <H3Title>En toute autonomie</H3Title>
+                <MiddleUl>
+                  <MiddleLi>
+                    Utilisez le{' '}
+                    <Link
+                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                      target='_blank'
+                      rel='noreferrer noopener'
+                      onClick={() => track('Click', 'Kit de diffusion', 'click_kit_diffusion')}>
+                      Kit de diffusion
+                    </Link>{' '}
+                    pour vous épauler dans la rédaction de vos contenus.
+                  </MiddleLi>
+                  <MiddleLi>
+                    Personnalisez le simulateur de votre choix grâce à notre{' '}
+                    <Link href='/integration' onClick={() => track('Click', 'Configurateur', 'click_configurateur')}>
+                      configurateur
+                    </Link>
+                    .
+                  </MiddleLi>
+                  <MiddleLi>
+                    Inspirez-vous d'
+                    <Link
+                      href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
+                      target='_blank'
+                      rel='noreferrer noopener'
+                      onClick={() => track('Click', 'Exemples concrets', 'click_exemples_concrets')}>
+                      exemples concrets
+                    </Link>{' '}
+                    déjà créés par des médias, entreprises, associations...
+                  </MiddleLi>
+                </MiddleUl>
+              </div>
               <MiddleCta>
                 <Button
                   to='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
@@ -95,31 +97,33 @@ export default function ByArticle() {
                   Consulter le kit de diffusion
                 </Button>
               </MiddleCta>
-            </div>
-            <div>
-              <H3Title2>Avec de l'aide</H3Title2>
-              <MiddleUl>
-                <MiddleLi>
-                  Consultez notre{' '}
-                  <Link
-                    href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
-                    target='_blank'
-                    rel='noreferrer noopener'
-                    data-testid='byArticleFaq'
-                    onClick={() => track('Click', 'FAQ', 'click_faq')}>
-                    Foire aux Questions
-                  </Link>{' '}
-                  pour trouver des éléments de réponse.
-                </MiddleLi>
-                <MiddleLi>
-                  Gagnez du temps et laissez-vous guider pour <strong>l’intégration de nos ressources</strong>.
-                </MiddleLi>
-                <MiddleLi>
-                  Échangez avec l’équipe sur vos <strong>besoins spécifiques d’intégration</strong>.
-                </MiddleLi>
-              </MiddleUl>
+            </Box>
+            <Box>
+              <div>
+                <H3Title2>Avec de l'aide</H3Title2>
+                <MiddleUl>
+                  <MiddleLi>
+                    Consultez notre{' '}
+                    <Link
+                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
+                      target='_blank'
+                      rel='noreferrer noopener'
+                      data-testid='byArticleFaq'
+                      onClick={() => track('Click', 'FAQ', 'click_faq')}>
+                      Foire aux Questions
+                    </Link>{' '}
+                    pour trouver des éléments de réponse.
+                  </MiddleLi>
+                  <MiddleLi>
+                    Gagnez du temps et laissez-vous guider pour <strong>l’intégration de nos ressources</strong>.
+                  </MiddleLi>
+                  <MiddleLi>
+                    Échangez avec l’équipe sur vos <strong>besoins spécifiques d’intégration</strong>.
+                  </MiddleLi>
+                </MiddleUl>
+              </div>
               <Meeting />
-            </div>
+            </Box>
           </MiddleGrid>
         </div>
         <DownSide>
@@ -157,36 +161,31 @@ const MiddleGrid = styled.div`
 
 const H3Title = styled.h3`
   color: #235dd2;
-  font-size: 1.375rem;
   font-weight: 700;
   letter-spacing: 0em;
-  line-height: 2.5rem;
 
   ${(props) => props.theme.mq.large} {
     font-size: 1.125rem;
+  }
+  ${(props) => props.theme.mq.medium} {
+    margin-bottom: 1rem;
   }
 `
 
 const H3Title2 = styled(H3Title)`
   ${(props) => props.theme.mq.medium} {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
 `
 
 const MiddleUl = styled.ul`
-  height: 13rem;
-  ${(props) => props.theme.mq.xxlarge} {
-    height: 14rem;
-  }
-  ${(props) => props.theme.mq.large} {
-    height: 18rem;
-  }
-  ${(props) => props.theme.mq.medium} {
-    height: auto;
-  }
+  margin-bottom: 0;
   padding-left: 0;
   > li + li {
     margin-top: 1.25rem;
+    ${(props) => props.theme.mq.medium} {
+      margin-top: 0.75rem;
+    }
   }
 `
 const MiddleLi = styled.li`
@@ -311,4 +310,14 @@ const WinkWinkLeft = styled(WinkWink)`
 const WinkWinkRight = styled(WinkWink)`
   right: -1.5rem;
   top: 40%;
+`
+
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  justify-content: space-between;
+  ${(props) => props.theme.mq.medium} {
+    gap: 1.25rem;
+  }
 `
