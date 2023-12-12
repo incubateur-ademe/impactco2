@@ -6,31 +6,33 @@ import Wrapper from './search/Wrapper'
 
 export default function Search(props) {
   const { engine, setSituation } = useContext(RulesContextNumerique)
-  const [visioDuree, setVisioDuree] = useSessionStorage('visio . durée', 180)
   const [visioAppareil, setVisioAppareil] = useSessionStorage('visio . appareil', 'ordinateur portable')
-  const [streamingDuree, setStreamingDuree] = useSessionStorage('streaming . durée', 420)
-  const [emailReseau, setEmailReseau] = useSessionStorage('email . transmission . émetteur . réseau', 'fixe FR')
+  const [visioDuree, setVisioDuree] = useSessionStorage('visio . durée', 180)
+  const [visioQualite, setVisioQualite] = useSessionStorage('visio . qualité', 'audio')
   const [visioReseau, setVisioReseau] = useSessionStorage('visio . transmission . réseau', 'fixe FR')
+  const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streaming . appareil', 'TV')
+  const [streamingDuree, setStreamingDuree] = useSessionStorage('streaming . durée', 420)
+  const [streamingQualite, setStreamingQualite] = useSessionStorage('streaming . qualité', 'SD')
   const [streamingReseau, setStreamingReseau] = useSessionStorage(
     'streaming . transmission . émetteur . réseau',
     'fixe FR'
   )
   const [emailAppareil, setEmailAppareil] = useSessionStorage('email . appareil', 'smartphone')
-  const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streaming . appareil', 'TV')
-  const [streamingQualite, setStreamingQualite] = useSessionStorage('streaming . qualité', 'SD')
+  const [emailReseau, setEmailReseau] = useSessionStorage('email . transmission . émetteur . réseau', 'fixe FR')
   const [emailTaille, setEmailTaille] = useSessionStorage('email . taille', 0.075)
 
   useEffect(() => {
     setSituation({
-      ['visio . durée']: visioDuree,
       ['email . appareil']: emailAppareil,
       ['email . taille']: emailTaille,
       ['email . transmission . émetteur . réseau']: emailReseau,
       ['streaming . durée']: streamingDuree,
       ['streaming . appareil']: streamingAppareil,
       ['streaming . qualité']: streamingQualite,
-      ['visio . appareil']: visioAppareil,
       ['streaming . transmission . réseau']: streamingReseau,
+      ['visio . appareil']: visioAppareil,
+      ['visio . qualité']: visioQualite,
+      ['visio . durée']: visioDuree,
       ['visio . emplacements']: 1,
       ['visio . transmission . réseau']: visioReseau,
     })
@@ -273,6 +275,7 @@ export default function Search(props) {
               value={`'${engine.evaluate('visio . qualité').nodeValue}'`}
               onChange={({ value }) => {
                 track('Usage numérique', 'Select visio qualité', `usage-numerique-visio-qualite-${value}`)
+                setVisioQualite(value)
                 setSituation({ ['visio . qualité']: value })
               }}
               color='#3DC7AB'>
