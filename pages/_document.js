@@ -25,9 +25,16 @@ export default class MyDocument extends Document {
     return (
       <Html lang='fr'>
         <Head>
-          <link rel='preload' href='/fonts/Marianne-Light.woff2' as='font' type='font/woff' crossOrigin='' />
-          <link rel='preload' href='/fonts/Marianne-ExtraBold.woff2' as='font' type='font/woff' crossOrigin='' />
-          <link rel='preload' href='/fonts/Marianne-Medium.woff2' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-Light.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-Light_Italic.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-Regular.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-Regular_Italic.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-Medium.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-Medium_Italic.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-Bold.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-Bold_Italic.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-ExtraBold.woff' as='font' type='font/woff' crossOrigin='' />
+          <link rel='preload' href='/fonts/Marianne-ExtraBold_Italic.woff' as='font' type='font/woff' crossOrigin='' />
         </Head>
         <body>
           <Main />

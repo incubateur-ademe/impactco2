@@ -1,5 +1,6 @@
 import fs from 'fs'
 import v8toIstanbul from 'v8-to-istanbul'
+import slugify from '../src/utils/slugify'
 
 // Freely inspired from official docs : https://playwright.dev/docs/api/class-coverage
 export default function configurePlaywrightCoverage(test) {
@@ -27,16 +28,6 @@ export default function configurePlaywrightCoverage(test) {
     })
   }
 }
-
-// Create slug from string in Javascript
-// Useful to get a valid filename for coverage file
-const slugify = (str) =>
-  str
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_-]+/g, '-')
-    .replace(/^-+|-+$/g, '')
 
 // HACK : Playwrights generates weird or buggy or unneeded JSON coverage file,
 // so let's simplify them

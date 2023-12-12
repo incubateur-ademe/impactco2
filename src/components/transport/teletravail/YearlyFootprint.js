@@ -77,7 +77,7 @@ export default function YearlyFootprint(props) {
           </Content>
         </Emitted>
         <br />
-        <Saved percent={(props.saved / (props.emitted + props.saved)) * 100}>
+        <Saved percent={(props.saved / (props.emitted + props.saved)) * 100} data-testid='saved'>
           <Content visible={props.saved} small={(props.saved / (props.emitted + props.saved)) * 100 < 25}>
             <Number>{props.saved}</Number> kgCO<sub>2</sub>e
             <br />
