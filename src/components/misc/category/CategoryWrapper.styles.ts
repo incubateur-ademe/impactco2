@@ -29,3 +29,12 @@ export const Logos = styled.div`
   margin-top: 1.5rem;
   padding-bottom: 2rem;
 `
+
+export const Cards = styled.div`
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  > div {
+    flex: 1;
+  }
+`

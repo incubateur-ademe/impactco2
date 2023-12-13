@@ -1,28 +1,57 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 
-export const LeftSide = styled.div`
+export const LeftSide = styled.div<{ $small?: boolean; $color?: 'blue' }>`
   align-items: center;
-  background-color: var(--primary-10);
+  background-color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-10);
+  border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-20);
   border-radius: 16px 0 0 16px;
-  border-right: 1px solid var(--primary-20);
   display: flex;
-  padding: 1.5rem;
+  padding: ${({ $small }) => ($small ? '0.5rem' : '1.5rem')};
 `
-export const ImageContainer = styled.div`
+
+export const ImageContainer = styled.div<{ $small?: boolean }>`
   align-items: center;
   background-color: white;
   border-radius: 50%;
   display: flex;
-  height: 72px;
   justify-content: center;
-  padding: 12px;
-  width: 72px;
+  ${({ $small }) =>
+    $small
+      ? `
+          height: 40px;
+          padding: 8px;
+          width: 40px;
+        `
+      : `
+          height: 72px;
+          padding: 12px;
+          width: 72px;
+        `}
 `
 
-export const Content = styled.div`
+export const Content = styled.div<{ $small?: boolean }>`
+  border: 1px solid var(--neutral-20);
+  border-left: 0;
+  border-radius: 0 16px 16px 0;
   color: var(--neutral-60);
-  padding: 1.5rem;
+  flex: 1;
+  padding: ${({ $small }) => ($small ? '1.25rem' : '1.5rem')};
+  ${({ $small }) =>
+    $small &&
+    `
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+
+      b {
+        font-weight: 500;
+      }
+
+      svg {
+        color: var(--neutral-40);
+      }
+    `}
 
   b {
     color: var(--neutral-70);
@@ -43,47 +72,62 @@ export const LinkText = styled.div`
   }
 `
 
-export const Container = styled(Link)`
-  border: 1px solid var(--primary-20);
-  border-radius: 16px;
-  display: flex;
-  text-decoration: none;
+export const Arrow = styled.div`
+  display: inline-block;
+`
 
-  &:hover {
-    border: 1px solid var(--primary-30);
+export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
+  width: 100%;
+  a,
+  button {
+    background-color: transparent;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
 
-    ${LeftSide} {
-      background-color: var(--primary-20);
-      border-right: 1px solid var(--primary-30);
-    }
+    &:hover {
+      ${LeftSide} {
+        background-color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-20);
+        border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-30);
+      }
 
-    ${Content} {
-      color: var(--neutral-70);
+      ${Content} {
+        border: 1px solid var(--neutral-30);
+        border-left: 0;
+        color: var(--neutral-70);
 
-      b {
-        color: var(--neutral-80);
+        b {
+          color: var(--neutral-80);
+        }
+
+        svg {
+          ${({ $small, $color }) => $small && `color: var(--${$color === 'blue' ? 'secondary' : 'primary'}-50);`}
+        }
+      ${LinkText} {
+        color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-60);
       }
     }
-    ${LinkText} {
-      color: var(--primary-60);
-    }
-  }
 
-  &:focus {
-    outline-offset: 2px;
-    outline: 3px solid var(--primary-40);
-  }
-
-  &:active {
-    border: 1px solid var(--primary-30);
-
-    ${LeftSide} {
-      background-color: var(--primary-20);
-      border-right: 1px solid var(--primary-30);
+    &:focus {
+      outline: 3px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-40);
+      outline-offset: 2px;
     }
 
-    ${Content} {
-      background-color: var(--neutral-10);
+    &:active {
+      ${LeftSide} {
+        background-color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-20);
+        border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-30);
+      }
+
+      ${Content} {
+        background-color: var(--neutral-10);
+        border: 1px solid var(--neutral-30);
+        border-left: 0;
+      }
     }
   }
 `

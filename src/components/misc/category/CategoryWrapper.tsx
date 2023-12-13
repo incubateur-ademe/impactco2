@@ -1,8 +1,9 @@
 import React, { ForwardedRef, ReactNode, forwardRef } from 'react'
 import { Category } from 'types/category'
+import Card from 'components/base/Card'
 import MagicLink from 'components/base/MagicLink'
 import Signature from 'components/screenshot/Signature'
-import { Container, Content, Logos, Screenshot, Sources } from './CategoryWrapper.styles'
+import { Cards, Container, Content, Logos, Screenshot, Sources } from './CategoryWrapper.styles'
 
 const CategoryWrapper = (
   {
@@ -40,6 +41,10 @@ const CategoryWrapper = (
           </Logos>
         )}
       </Screenshot>
+      <Cards>
+        <Card title='Comprendre les données' image='/images/data.png' small color='blue' />
+        <Card title='Aller plus loin' image='/images/hypothesis.png' small />
+      </Cards>
     </Container>
   )
 }
