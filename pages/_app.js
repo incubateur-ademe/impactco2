@@ -19,8 +19,9 @@ function MyApp({ Component, pageProps }) {
       init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
 
       if (typeof window !== 'undefined' && typeof window.please === 'undefined') {
-        window.please = {
-          track: window._paq.push,
+        window.please = {}
+        window.please.track = function (ary) {
+          window?._paq?.push(ary)
         }
       }
     }

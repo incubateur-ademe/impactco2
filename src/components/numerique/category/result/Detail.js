@@ -74,7 +74,8 @@ export default function Detail(props) {
 
     return [
       {
-        id: `email`,
+        id: 'email',
+        slug: 'email',
         title: `1 an d'emails (${formatNumber(props.numberEmails * 52)} emails)`,
         emoji: '📧',
         color: '#6C8CC1',
@@ -86,7 +87,8 @@ export default function Detail(props) {
         onClick: () => track('Usage numérique', 'Navigation equivalent', 'email'),
       },
       {
-        id: `visioconference`,
+        id: 'visioconference',
+        slug: 'visioconference',
         title: `1 an de visioconférence (${formatNumber(
           (engine.evaluate('visio . durée').nodeValue / 60) * 52
         )} heures)`,
@@ -100,7 +102,8 @@ export default function Detail(props) {
         onClick: () => track('Usage numérique', 'Navigation equivalent', 'visioconference'),
       },
       {
-        id: `streaming`,
+        id: 'streaming',
+        slug: 'streamingvideo',
         title: `1 an de streaming (${formatNumber((engine.evaluate('streaming . durée').nodeValue / 60) * 52)} heures)`,
         emoji: '🎬',
         color: '#C25166',
