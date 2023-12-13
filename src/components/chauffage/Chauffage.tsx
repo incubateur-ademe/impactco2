@@ -15,7 +15,7 @@ import SliderWithInput from 'components/misc/slider/SliderWithInput'
 
 const DEFAULT_M2 = 63
 
-const Chauffage = ({ category }: { category: Category }) => {
+const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean }) => {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('chauffage', 'Chauffage')
 
   const router = useRouter()
@@ -43,18 +43,24 @@ const Chauffage = ({ category }: { category: Category }) => {
     [equivalents, category, value]
   )
 
-  return (
+  const content = (
+    <SectionWideContent $size='xs' $noGutter>
+      <CategoryWrapper category={category} ref={ref} isScreenshotting={isScreenshotting} iframe={iframe}>
+        <Simulator text='Indiquer la surface à chauffer pour découvrir la quantité de CO2e émise par mode de chauffage pour cette surface par année.'>
+          <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} tracking='Chauffage' />
+        </Simulator>
+        <BarChart equivalents={equivalentsOfCategory} category={category} />
+      </CategoryWrapper>
+    </SectionWideContent>
+  )
+
+  return iframe ? (
+    content
+  ) : (
     <Section $withoutPadding>
       <SectionWideContent $size='sm'>
         <Header category={category} params={{ m2: value.toString() }} takeScreenshot={takeScreenshot} />
-        <SectionWideContent $size='xs' $noGutter>
-          <CategoryWrapper category={category} ref={ref} isScreenshotting={isScreenshotting}>
-            <Simulator text='Indiquer la surface à chauffer pour découvrir la quantité de CO2e émise par mode de chauffage pour cette surface par année.'>
-              <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} tracking='Chauffage' />
-            </Simulator>
-            <BarChart equivalents={equivalentsOfCategory} category={category} />
-          </CategoryWrapper>
-        </SectionWideContent>
+        {content}
       </SectionWideContent>
     </Section>
   )

@@ -6,8 +6,8 @@ import Iframe from 'components/layout/Iframe'
 
 export default function ChauffageIFrame({ category }: { category: CategoryType }) {
   return (
-    <Iframe>
-      <Chauffage category={category} />
+    <Iframe noLogo>
+      <Chauffage category={category} iframe />
     </Iframe>
   )
 }

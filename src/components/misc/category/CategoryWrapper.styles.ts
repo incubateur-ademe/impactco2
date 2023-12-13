@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.div<{ $iframe?: boolean }>`
   border: 1px solid var(--neutral-20);
   border-radius: 16px;
   margin: auto;
-  padding: 1.5rem;
+  padding: ${({ $iframe }) => ($iframe ? '1.5rem 1.5rem 1rem 1.5rem' : '1.5rem')};
   text-align: center;
 
   h3 {
@@ -37,4 +37,14 @@ export const Cards = styled.div`
   > div {
     flex: 1;
   }
+`
+
+export const IFrameLogos = styled.div`
+  border-bottom: solid 1px var(--neutral-20);
+  border-top: solid 1px var(--neutral-20);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  padding: 1.5rem;
 `

@@ -6,9 +6,17 @@ import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 
 // divs are necessary for better screenshot
-export default function Signature({ noMargin, noLink }: { noMargin?: boolean; noLink?: boolean }) {
+export default function Signature({
+  noMargin,
+  noLink,
+  center,
+}: {
+  noMargin?: boolean
+  noLink?: boolean
+  center?: boolean
+}) {
   return (
-    <OutsideGrid $noMargin={noMargin}>
+    <OutsideGrid $noMargin={noMargin} $center={center}>
       <div>
         <Marianne />
       </div>
@@ -29,11 +37,11 @@ export default function Signature({ noMargin, noLink }: { noMargin?: boolean; no
   )
 }
 
-const OutsideGrid = styled.div<{ $noMargin?: boolean }>`
+const OutsideGrid = styled.div<{ $noMargin?: boolean; $center?: boolean }>`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: space-around;
+  justify-content: ${({ $center }) => ($center ? 'center' : 'space-around')};
   ${({ $noMargin }) => !$noMargin && 'margin-left: 1.25rem;'}
 `
