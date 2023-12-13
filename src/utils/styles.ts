@@ -116,13 +116,12 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    line-height: 1.4;
   }
 
   body {
     font-family: "Marianne", Arial, sans-serif;
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.5;
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
     -webkit-font-smoothing: antialiased;
