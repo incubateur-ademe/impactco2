@@ -275,21 +275,5 @@
       "title": "Boisson",
       "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
     }
-  },
-  {
-    "id": 11,
-    "name": "Divers",
-    "emoji": "⚙️",
-    "slug": "divers",
-    "header": "de divers objets",
-    "gender": "m",
-    "divider": 1,
-    "display": false,
-    "unit": "unité",
-    "include": "par unité.",
-    "meta": {
-      "title": "",
-      "description": ""
-    }
   }
 ]
