@@ -6,6 +6,7 @@ export const Box = styled.button<{ $colored?: boolean }>`
   cursor: pointer;
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5rem;
   justify-content: space-between;
   padding: 0.625rem 0.75rem 0.625rem 1rem;
   position: relative;

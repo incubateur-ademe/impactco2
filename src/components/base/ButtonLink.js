@@ -28,7 +28,8 @@ export default function ButtonLink(props) {
       disabled={props.disabled}
       className={props.className}
       type={props.type}
-      aria-label={props.children}>
+      aria-label={props.children}
+      color={props.color}>
       {props.children}
     </Wrapper>
   )

@@ -23,8 +23,12 @@ export const ActionsButtons = styled.div`
   justify-content: center;
 `
 
+export const Content = styled.div`
+  margin-bottom: 1.5rem;
+  margin-top: 0.75rem;
+`
+
 export const Separator = styled.div`
   border-top: 1px solid var(--neutral-20);
   margin-bottom: 1.5rem;
-  margin-top: 0.75rem;
 `

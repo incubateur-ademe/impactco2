@@ -4,6 +4,7 @@ import { Category } from 'types/category'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
+import useScreenshot from 'hooks/useScreenshot'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
@@ -15,6 +16,8 @@ import SliderWithInput from 'components/misc/slider/SliderWithInput'
 const DEFAULT_M2 = 63
 
 const Chauffage = ({ category }: { category: Category }) => {
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot('chauffage', 'Chauffage')
+
   const router = useRouter()
   const [value, setValue] = useState(DEFAULT_M2)
   const { equivalents } = useContext(DataContext)
@@ -42,14 +45,16 @@ const Chauffage = ({ category }: { category: Category }) => {
 
   return (
     <Section $withoutPadding>
-      <SectionWideContent $small>
-        <Header category={category} params={{ m2: value.toString() }} />
-        <CategoryWrapper category={category}>
-          <Simulator text='Indiquer la surface à chauffer pour découvrir la quantité de CO2e émise par mode de chauffage pour cette surface par année.'>
-            <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} tracking='Chauffage' />
-          </Simulator>
-          <BarChart equivalents={equivalentsOfCategory} category={category} />
-        </CategoryWrapper>
+      <SectionWideContent $size='sm'>
+        <Header category={category} params={{ m2: value.toString() }} takeScreenshot={takeScreenshot} />
+        <SectionWideContent $size='xs' $noGutter>
+          <CategoryWrapper category={category} ref={ref} isScreenshotting={isScreenshotting}>
+            <Simulator text='Indiquer la surface à chauffer pour découvrir la quantité de CO2e émise par mode de chauffage pour cette surface par année.'>
+              <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} tracking='Chauffage' />
+            </Simulator>
+            <BarChart equivalents={equivalentsOfCategory} category={category} />
+          </CategoryWrapper>
+        </SectionWideContent>
       </SectionWideContent>
     </Section>
   )

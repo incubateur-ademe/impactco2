@@ -60,7 +60,7 @@ export default function Value(props) {
   return (
     <Wrapper>
       <Section $withoutPadding $theme='main'>
-        <SectionWideContent $flex $small>
+        <SectionWideContent $flex $size='sm'>
           <Top>
             <div>
               <Number>

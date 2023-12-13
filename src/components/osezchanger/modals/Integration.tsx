@@ -7,7 +7,7 @@ const Integration = () => {
   return (
     <div data-testid='integration-modal'>
       <ClipboardBox
-        colored>{`<script name="impact-co2" src="${window?.location.origin}/iframe.js" data-type="habillement/osez-changer" data-search="?theme=default"></script>`}</ClipboardBox>
+        colored>{`<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="habillement/osez-changer" data-search="?theme=default"></script>`}</ClipboardBox>
       <Separator />
       <Usage />
     </div>

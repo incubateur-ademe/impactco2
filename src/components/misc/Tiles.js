@@ -57,7 +57,7 @@ export default function Tiles(props) {
 
   return (
     <Section>
-      <SectionWideContent $small>
+      <SectionWideContent $size='sm'>
         {props.title && <Title>{props.title}</Title>}
         <DndContext
           collisionDetection={closestCenter}

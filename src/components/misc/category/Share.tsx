@@ -6,7 +6,7 @@ import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
 import ClipboardBox from 'components/base/ClipboardBox'
 import { Icon } from 'components/osezchanger/icons'
-import CustomParam from './CustomParam'
+import CustomParams from './CustomParams'
 import { Buttons, Meta } from './Share.styles'
 
 const Share = ({ category, params }: { category: Category; params?: Record<string, string> }) => {
@@ -37,33 +37,7 @@ const Share = ({ category, params }: { category: Category; params?: Record<strin
   )
   return (
     <>
-      {customValues &&
-        Object.entries(customValues).map(([key, { value, visible }]) => (
-          <CustomParam
-            key={key}
-            slug={key}
-            value={value}
-            visible={visible}
-            setValue={(newValue) =>
-              setCustomValues({
-                ...customValues,
-                [key]: {
-                  value: newValue,
-                  visible: customValues[key].visible,
-                },
-              })
-            }
-            setVisible={(newVisibility) =>
-              setCustomValues({
-                ...customValues,
-                [key]: {
-                  visible: newVisibility,
-                  value: customValues[key].value,
-                },
-              })
-            }
-          />
-        ))}
+      {customValues && <CustomParams customValues={customValues} setCustomValues={setCustomValues} />}
       <ClipboardBox>{url}</ClipboardBox>
       <Meta>
         <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />

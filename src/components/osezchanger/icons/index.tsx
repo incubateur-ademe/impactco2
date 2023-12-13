@@ -8,6 +8,7 @@ import copy from './copy'
 import download from './download'
 import dropdownArrowRight from './dropdown-arrow-right'
 import facebook from './facebook'
+import fullArrowRight from './full-arrow-right'
 import information from './information'
 import linkedin from './linkedin'
 import minus from './minus'
@@ -26,6 +27,7 @@ export type IconId =
   | 'close'
   | 'arrow-left'
   | 'arrow-right'
+  | 'full-arrow-right'
   | 'arrow-down'
   | 'dropdown-arrow-right'
   | 'copy'
@@ -55,6 +57,8 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return arrowLeft
     case 'arrow-right':
       return arrowRight
+    case 'full-arrow-right':
+      return fullArrowRight
     case 'arrow-down':
       return arrowDown
     case 'dropdown-arrow-right':
