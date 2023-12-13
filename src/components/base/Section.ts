@@ -23,6 +23,7 @@ export const SectionWideContent = styled.div<{ $small?: boolean; $noGutter?: boo
   ${({ $flex }) =>
     $flex &&
     css`
+      align-items: center;
       display: flex;
       justify-content: space-between;
     `}

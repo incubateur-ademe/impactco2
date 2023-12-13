@@ -18,7 +18,7 @@ const Share = ({ category, params }: { category: Category; params?: Record<strin
       Object.entries(params).forEach(([key, value]) => {
         values[key] = {
           value,
-          visible: customValues && customValues[key] ? customValues[key].visible : false,
+          visible: customValues && customValues[key] ? customValues[key].visible : true,
         }
       })
       setCustomValues(values)

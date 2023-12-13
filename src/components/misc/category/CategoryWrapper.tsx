@@ -12,7 +12,7 @@ const CategoryWrapper = ({ category, children }: { category: Category; children:
           Source{category.sources.length > 1 ? 's' : ''} :{' '}
           {category.sources
             .flatMap((source) => [
-              <MagicLink key={source.label} to={source.href}>
+              <MagicLink key={source.label} to={source.href} theme='blue'>
                 {source.label}
               </MagicLink>,
               <> • </>,
