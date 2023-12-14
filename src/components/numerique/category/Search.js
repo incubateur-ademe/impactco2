@@ -7,12 +7,11 @@ import Wrapper from './search/Wrapper'
 export default function Search(props) {
   const { engine, setSituation } = useContext(RulesContextNumerique)
 
-  const [visioAppareil, setVisioAppareil] = useSessionStorage('visioAppareil', 'ordinateur portable')
+  const [visioAppareil, setVisioAppareil] = useSessionStorage('visioAppareil', `'ordinateur portable'`)
   const [visioDuree, setVisioDuree] = useSessionStorage('visioDuree', 180)
   const [visioQualite, setVisioQualite] = useSessionStorage('visioQualite', 'audio')
   const [visioReseau, setVisioReseau] = useSessionStorage('visioReseau', 'fixe FR')
-  const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streamingAppareil', 'TV')
-  console.log('streamingAppareilINIT---------:', streamingAppareil)
+  const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streamingAppareil', `'TV'`)
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streamingDuree', 420)
   const [streamingQualite, setStreamingQualite] = useSessionStorage('streamingQualite', 'SD')
   const [streamingReseau, setStreamingReseau] = useSessionStorage('streamingReseau', 'fixe FR')

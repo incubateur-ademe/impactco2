@@ -1,4 +1,5 @@
 export default function buildQueryParamsFromSession(originalHref: string, window: Window): string {
+  const rawHref = originalHref.split('?')[0]
   if (window && window.sessionStorage && window.sessionStorage['emailTaille']) {
     let queryParamsStr = '?'
     const queryParams = [
@@ -19,7 +20,7 @@ export default function buildQueryParamsFromSession(originalHref: string, window
       const unquoted = quoted.slice(1, -1)
       queryParamsStr += param + '=' + unquoted + '&'
     })
-    return `${originalHref}${queryParamsStr.slice(0, -1)}` // slice: remove last '&'
+    return `${rawHref}${queryParamsStr.slice(0, -1)}` // slice: remove last '&'
   } else {
     return originalHref
   }
