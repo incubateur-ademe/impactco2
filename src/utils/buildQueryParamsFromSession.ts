@@ -1,8 +1,3 @@
-// function parseNumber(str: string): number {
-//   if (str == null || str === '') return NaN
-//   return +str
-// }
-
 // See https://stackoverflow.com/a/1830844/2595513
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isNumeric(value: any): boolean {
@@ -37,7 +32,6 @@ export default function buildQueryParamsFromSession(originalHref: string, window
       } else {
         queryValue = queryValue.slice(1, -1)
       }
-      // if (['emailTaille', 'numberEmails'].includes(sessionKey)) {
       queryParamsStr += sessionKey + '=' + queryValue + '&'
     })
     return `${rawHref}${queryParamsStr.slice(0, -1)}` // slice: remove last '&'
