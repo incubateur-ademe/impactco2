@@ -23,6 +23,7 @@ export default function Search(props) {
   const router = useRouter()
   useEffect(() => {
     router.replace('/usagenumerique', undefined, { shallow: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
