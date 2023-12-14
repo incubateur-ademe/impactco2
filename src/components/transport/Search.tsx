@@ -71,7 +71,7 @@ export default function Search({
               Découvrez la quantité de CO2e que vous émettez{' '}
               <Color
                 onClick={() => {
-                  track('Transport distance', 'Hypothèses', 'transport_itineraire_hypotheses')
+                  track('Transport distance', 'Hypothèses', 'transport_distance_hypotheses')
                   setOccupancyModal(true)
                 }}>
                 (par personne)
