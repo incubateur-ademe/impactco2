@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react'
 import { track } from 'utils/matomo'
 import useSessionStorage from 'hooks/useSessionStorage'
@@ -18,6 +19,11 @@ export default function Search(props) {
   const [emailAppareil, setEmailAppareil] = useSessionStorage('emailAppareil', 'smartphone')
   const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
   const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
+
+  const router = useRouter()
+  useEffect(() => {
+    router.replace('/usagenumerique', undefined, { shallow: true })
+  }, [])
 
   useEffect(() => {
     setSituation({
