@@ -3,16 +3,16 @@ export default function buildQueryParamsFromSession(originalHref: string, window
   if (window && window.sessionStorage && window.sessionStorage['emailTaille']) {
     let queryParamsStr = '?'
     const queryParams = [
-      // 'visioAppareil',
-      // 'visioDuree',
-      // 'visioQualite',
-      // 'visioReseau',
-      // 'streamingAppareil',
-      // 'streamingDuree',
-      // 'streamingQualite',
-      // 'streamingReseau',
+      'visioAppareil',
+      'visioDuree',
+      'visioQualite',
+      'visioReseau',
+      'streamingAppareil',
+      'streamingDuree',
+      'streamingQualite',
+      'streamingReseau',
       'emailTaille',
-      // 'emailReseau',
+      'emailReseau',
       'emailAppareil',
     ]
     queryParams.forEach(function (param) {
