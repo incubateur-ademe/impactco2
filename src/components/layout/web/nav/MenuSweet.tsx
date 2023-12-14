@@ -25,14 +25,11 @@ export default function MenuSweet() {
 
   return (
     <Wrapper>
-      <DropdownSweet
-        label={'Par thématique'}
-        current={categories.find((category) => slugs.includes(category.slug))}
-        hideon={'never'}>
+      <DropdownSweet label={'Par thématique'} hideon={'never'}>
         {categories
           ?.filter((category) => category.display)
           .map((category) => (
-            <DropdownSweet.Item key={category.id} to={`/${category.slug}`} current={slugs.includes(category.slug)}>
+            <DropdownSweet.Item key={category.id} to={`/${category.slug}`} $current={slugs.includes(category.slug)}>
               <div>
                 <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
               </div>

@@ -55,6 +55,8 @@ export type DeplacementEquivalent = BaseEquivalent &
     }[]
   }
 
+export type DiversEquivalent = BaseEquivalent & BaseEquivalentValue
+
 export type BoissonEquivalent = BaseEquivalent &
   (
     | {
@@ -89,6 +91,7 @@ export type Equivalent =
   | BoissonEquivalent
   | ChauffageEquivalent
   | DeplacementEquivalent
+  | DiversEquivalent
   | UsableEquivalent
   | RepasEquivalent
   | UsageNumeriqueEquivalent
