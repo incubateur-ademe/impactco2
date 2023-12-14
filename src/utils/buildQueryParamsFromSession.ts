@@ -15,9 +15,9 @@ export default function buildQueryParamsFromSession(originalHref: string, window
       'emailAppareil',
     ]
     queryParams.forEach(function (param) {
-      // queryParamsStr += `${param}=${window.sessionStorage[param]}&`
-      queryParamsStr += param + '=' + window.sessionStorage[param] + '&'
-      console.log('window.sessionStorage[param]:', window.sessionStorage[param])
+      const quoted = window.sessionStorage[param]
+      const unquoted = quoted.slice(1, -1)
+      queryParamsStr += param + '=' + unquoted + '&'
     })
     return `${originalHref}${queryParamsStr.slice(0, -1)}` // slice: remove last '&'
   } else {
