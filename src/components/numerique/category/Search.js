@@ -12,6 +12,7 @@ export default function Search(props) {
   const [visioQualite, setVisioQualite] = useSessionStorage('visioQualite', 'audio')
   const [visioReseau, setVisioReseau] = useSessionStorage('visioReseau', 'fixe FR')
   const [streamingAppareil, setStreamingAppareil] = useSessionStorage('streamingAppareil', 'TV')
+  console.log('streamingAppareilINIT---------:', streamingAppareil)
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streamingDuree', 420)
   const [streamingQualite, setStreamingQualite] = useSessionStorage('streamingQualite', 'SD')
   const [streamingReseau, setStreamingReseau] = useSessionStorage('streamingReseau', 'fixe FR')
@@ -152,6 +153,7 @@ export default function Search(props) {
             value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
             onChange={({ value }) => {
               track('Usage numérique', 'Select streaming appareil', `usage-numerique-streaming-appareil-${value}`)
+              console.log('setStreamingAppareil-------value:', value)
               setStreamingAppareil(value)
               setSituation({ ['streaming . appareil']: value })
             }}
