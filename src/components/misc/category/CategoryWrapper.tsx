@@ -1,4 +1,4 @@
-import React, { ForwardedRef, ReactNode, forwardRef, useState } from 'react'
+import React, { ForwardedRef, ReactNode, forwardRef, useMemo, useState } from 'react'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
 import Card from 'components/base/Card'
@@ -16,15 +16,21 @@ const CategoryWrapper = (
     children,
     isScreenshotting,
     iframe,
+    params,
+    takeScreenshot,
   }: {
     category: Category
     children: ReactNode
     isScreenshotting: boolean
     iframe?: boolean
+    params: Record<string, string>
+    takeScreenshot: () => void
   },
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   const [overScreen, setOverScreen] = useState<OverScreenCategory | undefined>()
+  const overScreenValues = useMemo(() => overScreenCategoryValues(category, params), [category, params])
+
   return (
     <Container $iframe={iframe}>
       <h3>Découvrer l'impact {category.header} sur le climat</h3>
@@ -70,12 +76,15 @@ const CategoryWrapper = (
             <Signature noMargin noLink center />
             <MagicLink to={buildCurrentUrlFor(category.slug)}>version complète</MagicLink>
           </IFrameLogos>
-          <Actions onClick={console.log} category={category} />
+          <Actions
+            onClick={(value) => {
+              value === 'telecharger' ? takeScreenshot() : setOverScreen(value)
+            }}
+            category={category}
+          />
         </>
       )}
-      {overScreen && (
-        <OverScreen values={overScreenCategoryValues[overScreen]} onClose={() => setOverScreen(undefined)} />
-      )}
+      {overScreen && <OverScreen values={overScreenValues[overScreen]} onClose={() => setOverScreen(undefined)} />}
     </Container>
   )
 }

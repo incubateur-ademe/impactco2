@@ -1,1 +1,1 @@
-export type OverScreenCategory = 'hypothesis' | 'data'
+export type OverScreenCategory = 'hypothesis' | 'data' | 'partager' | 'integrer'

@@ -4,7 +4,13 @@ import { track } from 'utils/matomo'
 import GhostButton from 'components/base/GhostButton'
 import { Buttons } from './Actions.styles'
 
-const Actions = ({ onClick, category }: { onClick: (value: string) => void; category: Category }) => {
+const Actions = ({
+  onClick,
+  category,
+}: {
+  onClick: (value: 'partager' | 'integrer' | 'telecharger') => void
+  category: Category
+}) => {
   return (
     <Buttons>
       <GhostButton

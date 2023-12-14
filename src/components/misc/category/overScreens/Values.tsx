@@ -1,11 +1,39 @@
+import { Category } from 'types/category'
+import Card from 'components/base/Card'
 import MagicLink from 'components/base/MagicLink'
 import { OverScreenInfo } from 'components/base/OverScreen'
+import Integrate from '../Integrate'
+import Share from '../Share'
 import { OverScreenCategory } from './Type'
-import { StyledEmoji } from './Values.styles'
+import { Space, StyledEmoji } from './Values.styles'
 
-export const overScreenCategoryValues: Record<OverScreenCategory, OverScreenInfo> = {
+export const overScreenCategoryValues: (
+  category: Category,
+  params: Record<string, string>
+) => Record<OverScreenCategory, OverScreenInfo> = (category, params) => ({
+  partager: { title: 'Partager', children: <Share category={category} params={params} /> },
+  integrer: {
+    title: 'Intégrer',
+    children: (
+      <>
+        <Integrate category={category} params={params} />
+        <Space />
+        <Card
+          href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+          title='Utiliser cette ressource'
+          description='Consultez le kit de diffusion impact C02 pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
+          link='Kit de diffusion'
+          image='/images/ressources.png'
+        />
+      </>
+    ),
+  },
   hypothesis: {
-    title: 'Nos hypothèses de calcul',
+    title: (
+      <div>
+        <StyledEmoji>💡</StyledEmoji>Aller plus loin
+      </div>
+    ),
     children: <></>,
   },
   data: {
@@ -126,4 +154,4 @@ export const overScreenCategoryValues: Record<OverScreenCategory, OverScreenInfo
       </>
     ),
   },
-}
+})
