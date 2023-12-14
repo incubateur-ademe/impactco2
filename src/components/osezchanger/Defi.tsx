@@ -5,11 +5,11 @@ import { Equivalents, NonEmptyResult, Result, ResultDescription, ResultValue } f
 import EmptyResult from './EmptyResult'
 import Equivalent from './Equivalent'
 import Question from './Question'
-import { ModalType } from './modals/Modal'
+import { OverScreenOsezChanger } from './overScreens/Type'
 
 const shoesImpact = 16.5
 
-const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | undefined>> }) => {
+const Defi = ({ setOverScreen }: { setOverScreen: Dispatch<SetStateAction<OverScreenOsezChanger | undefined>> }) => {
   const [thinkingValue, setThinkingValue] = useState<number | undefined>()
   const [realValue, setRealValue] = useState<number | undefined>()
   const [newValue, setNewValue] = useState<number | undefined>()
@@ -53,7 +53,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         title='✨ Vos achats récents'
         source={() => {
           track('OsezChanger', 'Hypotheses', 'osez_changer_hypotheses')
-          setModal('hypothesis')
+          setOverScreen('hypothesis')
         }}
         description={
           <>

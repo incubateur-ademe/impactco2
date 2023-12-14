@@ -5,6 +5,7 @@ export const Container = styled.div<{ $iframe?: boolean }>`
   border-radius: 16px;
   margin: auto;
   padding: ${({ $iframe }) => ($iframe ? '1.5rem 1.5rem 1rem 1.5rem' : '1.5rem')};
+  position: relative;
   text-align: center;
 
   h3 {

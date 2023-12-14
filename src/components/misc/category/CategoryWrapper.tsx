@@ -1,11 +1,14 @@
-import React, { ForwardedRef, ReactNode, forwardRef } from 'react'
+import React, { ForwardedRef, ReactNode, forwardRef, useState } from 'react'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
 import Card from 'components/base/Card'
 import MagicLink from 'components/base/MagicLink'
+import OverScreen from 'components/base/OverScreen'
 import Signature from 'components/screenshot/Signature'
 import Actions from './Actions'
 import { Cards, Container, Content, IFrameLogos, Logos, Screenshot, Sources } from './CategoryWrapper.styles'
+import { OverScreenCategory } from './overScreens/Type'
+import { overScreenCategoryValues } from './overScreens/Values'
 
 const CategoryWrapper = (
   {
@@ -21,6 +24,7 @@ const CategoryWrapper = (
   },
   ref: ForwardedRef<HTMLDivElement>
 ) => {
+  const [overScreen, setOverScreen] = useState<OverScreenCategory | undefined>()
   return (
     <Container $iframe={iframe}>
       <h3>Découvrer l'impact {category.header} sur le climat</h3>
@@ -46,8 +50,19 @@ const CategoryWrapper = (
         )}
       </Screenshot>
       <Cards>
-        <Card title='Comprendre les données' image='/images/data.png' small color='blue' />
-        <Card title='Aller plus loin' image='/images/hypothesis.png' small />
+        <Card
+          title='Comprendre les données'
+          image='/images/data.png'
+          small
+          color='blue'
+          onClick={() => setOverScreen('data')}
+        />
+        <Card
+          title='Aller plus loin'
+          image='/images/hypothesis.png'
+          small
+          onClick={() => setOverScreen('hypothesis')}
+        />
       </Cards>
       {iframe && (
         <>
@@ -57,6 +72,9 @@ const CategoryWrapper = (
           </IFrameLogos>
           <Actions onClick={console.log} category={category} />
         </>
+      )}
+      {overScreen && (
+        <OverScreen values={overScreenCategoryValues[overScreen]} onClose={() => setOverScreen(undefined)} />
       )}
     </Container>
   )

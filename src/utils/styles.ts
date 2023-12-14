@@ -19,7 +19,7 @@ export const themes = {
       firstBlue: '#457be7',
       background: '#ffffff',
       darkBackground: '#F9F7F8',
-      text: '#383838',
+      text: 'var(--neutral-70)',
       persistentText: '#383838',
       textLight: '#FBFBFC',
       textLight2: '#f9f7f8',

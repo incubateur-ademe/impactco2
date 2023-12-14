@@ -15,18 +15,7 @@ export const ImageContainer = styled.div<{ $small?: boolean }>`
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  ${({ $small }) =>
-    $small
-      ? `
-          height: 40px;
-          padding: 8px;
-          width: 40px;
-        `
-      : `
-          height: 72px;
-          padding: 12px;
-          width: 72px;
-        `}
+  padding: ${({ $small }) => ($small ? '8px' : '12px')};
 `
 
 export const Content = styled.div<{ $small?: boolean }>`
@@ -83,6 +72,7 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
     background-color: transparent;
     border: none;
     border-radius: 16px;
+    cursor: pointer;
     display: flex;
     padding: 0;
     text-align: left;
@@ -91,6 +81,7 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
 
     &:hover {
       ${LeftSide} {
+        padding: ${({ $small }) => ($small ? '0.25rem' : '1rem')};
         background-color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-20);
         border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-30);
       }
@@ -99,6 +90,7 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
         border: 1px solid var(--neutral-30);
         border-left: 0;
         color: var(--neutral-70);
+        ${({ $small }) => $small && 'padding-right: 0.75rem;'}
 
         b {
           color: var(--neutral-80);
@@ -107,6 +99,12 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
         svg {
           ${({ $small, $color }) => $small && `color: var(--${$color === 'blue' ? 'secondary' : 'primary'}-50);`}
         }
+      }
+
+      ${ImageContainer} {
+        ${({ $small }) => ($small ? 'padding: 12px' : 'padding: 20px')}
+      }
+
       ${LinkText} {
         color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-60);
       }
