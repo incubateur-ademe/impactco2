@@ -24,9 +24,6 @@ export default function buildQueryParamsFromSession(originalHref: string, window
     ]
     queryParams.forEach(function (sessionKey) {
       let queryValue = window.sessionStorage[sessionKey]
-      console.log('sessionKey:', sessionKey)
-      console.log('queryValue:', queryValue)
-      console.log('--------')
       if (isNumeric(queryValue)) {
         queryValue = Number(queryValue)
       } else {

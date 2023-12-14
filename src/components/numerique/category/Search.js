@@ -152,7 +152,6 @@ export default function Search(props) {
             value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
             onChange={({ value }) => {
               track('Usage numérique', 'Select streaming appareil', `usage-numerique-streaming-appareil-${value}`)
-              console.log('setStreamingAppareil-------value:', value)
               setStreamingAppareil(value)
               setSituation({ ['streaming . appareil']: value })
             }}
