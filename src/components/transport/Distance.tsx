@@ -10,14 +10,14 @@ import ResultHeader from './ResultHeader'
 import Search from './Search'
 
 export default function Distance({ category, iframe }: { category: Category; iframe?: boolean }) {
-  const transportations = useTransportations('distance')
+  const transportations = useTransportations('Transport distance')
 
   return (
     <Section $withoutPadding data-testid='distanceWrapper'>
       <SectionWideContent $size='sm'>
-        <Wrapper name={category.title || category.name} slug={category.slug} tracking='distance'>
+        <Wrapper name={category.title || category.name} slug={category.slug} tracking='Transport distance'>
           <Search distance iframe={iframe} />
-          <ResultHeader category={category} tracking='distance' />
+          <ResultHeader category={category} tracking='Transport distance' />
           <BarChart equivalents={transportations} category={category} />
           <CategoryLegend />
           <Bottom category={category} iframe={iframe} />
