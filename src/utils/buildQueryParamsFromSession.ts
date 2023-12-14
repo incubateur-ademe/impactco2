@@ -1,3 +1,14 @@
+// function parseNumber(str: string): number {
+//   if (str == null || str === '') return NaN
+//   return +str
+// }
+
+// See https://stackoverflow.com/a/1830844/2595513
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function isNumeric(value: any): boolean {
+  return !isNaN(value - parseFloat(value))
+}
+
 export default function buildQueryParamsFromSession(originalHref: string, window: Window): string {
   const rawHref = originalHref.split('?')[0]
   if (window && window.sessionStorage && window.sessionStorage['emailTaille']) {
@@ -11,14 +22,23 @@ export default function buildQueryParamsFromSession(originalHref: string, window
       'streamingDuree',
       'streamingQualite',
       'streamingReseau',
+      'numberEmails',
       'emailTaille',
       'emailReseau',
       'emailAppareil',
     ]
-    queryParams.forEach(function (param) {
-      const quoted = window.sessionStorage[param]
-      const unquoted = quoted.slice(1, -1)
-      queryParamsStr += param + '=' + unquoted + '&'
+    queryParams.forEach(function (sessionKey) {
+      let queryValue = window.sessionStorage[sessionKey]
+      console.log('sessionKey:', sessionKey)
+      console.log('queryValue:', queryValue)
+      console.log('--------')
+      if (isNumeric(queryValue)) {
+        queryValue = Number(queryValue)
+      } else {
+        queryValue = queryValue.slice(1, -1)
+      }
+      // if (['emailTaille', 'numberEmails'].includes(sessionKey)) {
+      queryParamsStr += sessionKey + '=' + queryValue + '&'
     })
     return `${rawHref}${queryParamsStr.slice(0, -1)}` // slice: remove last '&'
   } else {
