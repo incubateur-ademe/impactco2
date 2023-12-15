@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
-import buildQueryParamsFromSession from 'utils/buildQueryParamsFromSession'
 import ModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 import Facebook from './shareModal/Facebook'
@@ -29,8 +28,7 @@ const Wrapper = styled.div`
 export default function CO2EModal() {
   const { share: open, setShare: setOpen } = useContext(ModalContext)
 
-  const href = `${typeof window !== 'undefined' ? buildQueryParamsFromSession(window?.location?.href, window) : ''}`
-
+  const href = `${typeof window !== 'undefined' ? window?.location?.href : ''}${typeof open === 'string' ? open : ''}`
   return open ? (
     <Modal open={!!open} setOpen={(value) => setOpen(!!value)}>
       <h2>Partager</h2>
