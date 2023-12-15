@@ -10,6 +10,7 @@ export const Meta = styled.div`
   img  {
     margin-bottom: 0.5rem;
     width: 100%;
+    height: auto;
   }
 
   p {

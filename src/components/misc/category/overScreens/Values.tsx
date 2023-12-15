@@ -12,7 +12,10 @@ export const overScreenCategoryValues: (
   category: Category,
   params: Record<string, string>
 ) => Record<OverScreenCategory, OverScreenInfo> = (category, params) => ({
-  partager: { title: 'Partager', children: <Share category={category} params={params} /> },
+  partager: {
+    title: 'Partager',
+    children: <Share category={category} params={params} />,
+  },
   integrer: {
     title: 'Intégrer',
     children: (
@@ -35,7 +38,6 @@ export const overScreenCategoryValues: (
         <StyledEmoji>💡</StyledEmoji>Aller plus loin
       </div>
     ),
-    noScroll: true,
     children: (
       <ResourcesContainer>
         <Resource

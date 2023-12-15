@@ -42,6 +42,7 @@ export const Content = styled.div`
   gap: 0.5rem;
   justify-content: center;
   padding: 0.75rem;
+  text-align: left;
 `
 
 export const Text = styled.div`

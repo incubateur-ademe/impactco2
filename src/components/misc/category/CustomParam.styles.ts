@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   align-items: center;
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
   justify-content: space-between;
   margin-bottom: 2rem;
 `
@@ -16,6 +17,7 @@ export const Checkbox = styled.label<{ $checked: boolean }>`
   font-weight: 500;
   gap: 0.5rem;
   position: relative;
+  text-align: left;
 
   input {
     -webkit-appearance: none;
@@ -71,6 +73,7 @@ export const Input = styled.input`
   color: var(--neutral-70);
   display: flex;
   gap: 0.5rem;
+  max-width: 100px;
   min-width: 7.5rem;
   padding: 0.5rem 3rem 0.5rem 1rem;
   position: relative;
@@ -81,8 +84,8 @@ export const Input = styled.input`
   }
 
   &:focus {
-    outline-offset: 2px;
     outline: 3px solid var(--secondary-40);
+    outline-offset: 2px;
   }
 
   &:disabled {

@@ -33,10 +33,16 @@ export const Logos = styled.div`
 
 export const Cards = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
+
   > div {
     flex: 1;
+    min-width: 350px;
+    ${(props) => props.theme.mq.medium} {
+      min-width: 100%;
+    }
   }
 `
 

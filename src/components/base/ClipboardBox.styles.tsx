@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Box = styled.button<{ $colored?: boolean }>`
   border-radius: 4px;
-  color: var(--neutral-50);
   cursor: pointer;
   display: flex;
   flex-wrap: wrap;
@@ -63,7 +62,9 @@ export const Box = styled.button<{ $colored?: boolean }>`
 `
 
 export const Content = styled.div`
-  width: max-content;
+  display: inline-block;
+  width: fit-content;
+  word-break: break-word;
 `
 
 export const Copy = styled.div<{ $copied: boolean }>`

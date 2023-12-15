@@ -236,24 +236,26 @@ export default function Learning({ category }: { category: Category }) {
 
   return (
     <StyledSection $withoutPadding>
-      <SectionWideContent $size='xs' $noGutter>
-        <Cards>
-          <Card
-            href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-            title='Utiliser cette ressource'
-            description='Consultez le kit de diffusion impact C02 pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
-            link='Kit de diffusion'
-            image='/images/ressources.png'
-          />
-          <Card
-            href='/api-doc'
-            title='API'
-            description='Vous souhaitez aller plus loin dans l’intégration de nos données au sein de vos propres contenus ou applications ?'
-            link='Voir la documentation'
-            image='/images/api.png'
-          />
-          <Informations>{learnings[category.slug]}</Informations>
-        </Cards>
+      <SectionWideContent $size='sm'>
+        <SectionWideContent $size='xs' $noGutter>
+          <Cards>
+            <Card
+              href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+              title='Utiliser cette ressource'
+              description='Consultez le kit de diffusion impact C02 pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
+              link='Kit de diffusion'
+              image='/images/ressources.png'
+            />
+            <Card
+              href='/api-doc'
+              title='API'
+              description='Vous souhaitez aller plus loin dans l’intégration de nos données au sein de vos propres contenus ou applications ?'
+              link='Voir la documentation'
+              image='/images/api.png'
+            />
+            <Informations>{learnings[category.slug]}</Informations>
+          </Cards>
+        </SectionWideContent>
       </SectionWideContent>
     </StyledSection>
   )
