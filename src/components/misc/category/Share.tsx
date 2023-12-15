@@ -37,7 +37,14 @@ const Share = ({ category, params }: { category: Category; params?: Record<strin
   )
   return (
     <>
-      {customValues && <CustomParams customValues={customValues} setCustomValues={setCustomValues} />}
+      {customValues && (
+        <CustomParams
+          tracking={category.name}
+          trackingType='Partager'
+          customValues={customValues}
+          setCustomValues={setCustomValues}
+        />
+      )}
       <ClipboardBox>{url}</ClipboardBox>
       <Meta>
         <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />

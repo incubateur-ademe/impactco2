@@ -1,5 +1,6 @@
 import React, { ForwardedRef, ReactNode, forwardRef, useMemo, useState } from 'react'
 import { Category } from 'types/category'
+import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
 import Card from 'components/base/Card'
 import MagicLink from 'components/base/MagicLink'
@@ -39,7 +40,11 @@ const CategoryWrapper = (
           Source{category.sources.length > 1 ? 's' : ''} :{' '}
           {category.sources
             .flatMap((source) => [
-              <MagicLink key={source.label} to={source.href} color='blue'>
+              <MagicLink
+                key={source.label}
+                to={source.href}
+                color='blue'
+                onClick={() => track(category.name, 'Source', source.href)}>
                 {source.label}
               </MagicLink>,
               <span key={`${source.label}-separator`}> • </span>,
@@ -57,6 +62,7 @@ const CategoryWrapper = (
       </Screenshot>
       <Cards>
         <Card
+          tracking={category.name}
           title='Comprendre les données'
           image='/images/data.png'
           small
@@ -64,6 +70,7 @@ const CategoryWrapper = (
           onClick={() => setOverScreen('data')}
         />
         <Card
+          tracking={category.name}
           title='Aller plus loin'
           image='/images/hypothesis.png'
           small

@@ -32,7 +32,14 @@ const Integrate = ({ category, params }: { category: Category; params?: Record<s
 
   return (
     <>
-      {customValues && <CustomParams customValues={customValues} setCustomValues={setCustomValues} />}
+      {customValues && (
+        <CustomParams
+          tracking={category.name}
+          trackingType='Intégrer'
+          customValues={customValues}
+          setCustomValues={setCustomValues}
+        />
+      )}
       <ClipboardBox>{url}</ClipboardBox>
     </>
   )

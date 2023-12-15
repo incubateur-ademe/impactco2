@@ -245,6 +245,7 @@ export default function Learning({ category }: { category: Category }) {
               description='Consultez le kit de diffusion impact C02 pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
               link='Kit de diffusion'
               image='/images/ressources.png'
+              tracking={category.name}
             />
             <Card
               href='/api-doc'
@@ -252,6 +253,7 @@ export default function Learning({ category }: { category: Category }) {
               description='Vous souhaitez aller plus loin dans l’intégration de nos données au sein de vos propres contenus ou applications ?'
               link='Voir la documentation'
               image='/images/api.png'
+              tracking={category.name}
             />
             <Informations>{learnings[category.slug]}</Informations>
           </Cards>

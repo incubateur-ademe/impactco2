@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { track } from 'utils/matomo'
 import { Icon } from 'components/osezchanger/icons'
 import { Container, Content, ImageContainer, LeftSide, LinkText } from './Card.styles'
 
@@ -13,6 +14,7 @@ const Card = ({
   small,
   onClick,
   color,
+  tracking,
 }: {
   href?: string
   title: string
@@ -22,6 +24,7 @@ const Card = ({
   small?: boolean
   onClick?: () => void
   color?: 'blue'
+  tracking: string
 }) => {
   const inside = (
     <>
@@ -50,7 +53,25 @@ const Card = ({
   )
   return (
     <Container $small={small} $color={color}>
-      {href ? <Link href={href}>{inside}</Link> : <button onClick={onClick}>{inside}</button>}
+      {href ? (
+        <Link
+          href={href}
+          onClick={() => {
+            track(tracking, 'Ressource', href)
+          }}>
+          {inside}
+        </Link>
+      ) : (
+        <button
+          onClick={() => {
+            track(tracking, 'Ressource', title)
+            if (onClick) {
+              onClick()
+            }
+          }}>
+          {inside}
+        </button>
+      )}
     </Container>
   )
 }

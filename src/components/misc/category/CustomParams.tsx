@@ -1,12 +1,17 @@
 import React, { Dispatch, SetStateAction } from 'react'
+import { track } from 'utils/matomo'
 import CustomParam from './CustomParam'
 
 const CustomParams = ({
   customValues,
   setCustomValues,
+  tracking,
+  trackingType,
 }: {
   customValues: Record<string, { value: string; visible: boolean }>
   setCustomValues: Dispatch<SetStateAction<Record<string, { value: string; visible: boolean }> | null>>
+  tracking: string
+  trackingType: string
 }) => {
   return Object.entries(customValues).map(([key, { value, visible }]) => (
     <CustomParam
@@ -14,7 +19,8 @@ const CustomParams = ({
       slug={key}
       value={value}
       visible={visible}
-      setValue={(newValue) =>
+      setValue={(newValue) => {
+        track(tracking, `Custom value ${key}`, newValue)
         setCustomValues({
           ...customValues,
           [key]: {
@@ -22,8 +28,9 @@ const CustomParams = ({
             visible: customValues[key].visible,
           },
         })
-      }
-      setVisible={(newVisibility) =>
+      }}
+      setVisible={(newVisibility) => {
+        track(tracking, `${trackingType} Custom visibility ${key}`, newVisibility ? 'vrai' : 'faux')
         setCustomValues({
           ...customValues,
           [key]: {
@@ -31,7 +38,7 @@ const CustomParams = ({
             value: customValues[key].value,
           },
         })
-      }
+      }}
     />
   ))
 }

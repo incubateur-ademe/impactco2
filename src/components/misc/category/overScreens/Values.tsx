@@ -28,6 +28,7 @@ export const overScreenCategoryValues: (
           description='Consultez le kit de diffusion impact C02 pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
           link='Kit de diffusion'
           image='/images/ressources.png'
+          tracking={category.name}
         />
       </>
     ),
