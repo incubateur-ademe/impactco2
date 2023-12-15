@@ -56,6 +56,8 @@ const Card = ({
       {href ? (
         <Link
           href={href}
+          target='_blank'
+          rel='noreferrer noopener'
           onClick={() => {
             track(tracking, 'Ressource', href)
           }}>

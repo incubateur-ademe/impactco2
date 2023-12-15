@@ -34,7 +34,7 @@ const CategoryWrapper = (
 
   return (
     <Container $iframe={iframe}>
-      <h3>Découvrer l'impact {category.header} sur le climat</h3>
+      <h3>Découvrir l'impact {category.header} sur le climat</h3>
       {category.sources && (
         <Sources>
           Source{category.sources.length > 1 ? 's' : ''} :{' '}

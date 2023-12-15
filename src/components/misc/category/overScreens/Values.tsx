@@ -25,7 +25,7 @@ export const overScreenCategoryValues: (
         <Card
           href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
           title='Utiliser cette ressource'
-          description='Consultez le kit de diffusion impact C02 pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
+          description='Consultez le kit de diffusion impact CO2 pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
           link='Kit de diffusion'
           image='/images/ressources.png'
           tracking={category.name}

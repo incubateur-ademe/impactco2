@@ -56,7 +56,7 @@ export const Checkbox = styled.label<{ $checked: boolean }>`
 
 export const Check = styled.div`
   color: white;
-  left: 8px;
+  left: 0.5rem;
   position: absolute;
 `
 

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-export const Container = styled(Link)<{ $color?: 'blue' }>`
+export const LinkContainer = styled(Link)<{ $color?: 'blue' }>`
   align-items: stretch;
   background-color: white;
   border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'neutral')}-20);

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { track } from 'utils/matomo'
 import NewTabIcon from './NewTabIcon'
-import { Container, Content, FakeLink, Text } from './Resource.styles'
+import { Content, FakeLink, LinkContainer, Text } from './Resource.styles'
 
 const Resource = ({
   image,
@@ -20,7 +20,7 @@ const Resource = ({
   color?: 'blue'
 }) => {
   return (
-    <Container
+    <LinkContainer
       $color={color}
       href={href}
       target='_blank'
@@ -38,7 +38,7 @@ const Resource = ({
           </FakeLink>
         )}
       </Content>
-    </Container>
+    </LinkContainer>
   )
 }
 

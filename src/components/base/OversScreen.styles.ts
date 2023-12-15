@@ -29,7 +29,7 @@ export const Content = styled.div<{ $theme?: 'blue' }>`
 `
 
 export const Scroll = styled.div<{ $theme?: 'blue' }>`
-  height: calc(100% - ${({ $theme }) => ($theme === 'blue' ? '55px - 47px' : '68px - 68px')});
+  height: calc(100% - ${({ $theme }) => ($theme === 'blue' ? '6.5rem' : '8.5rem')});
   overflow: auto;
 `
 
