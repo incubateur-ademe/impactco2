@@ -26,12 +26,14 @@ export const Content = styled.div<{ $theme?: 'blue' }>`
   border-radius: 0 0 ${({ $theme }) => ($theme === 'blue' ? '8px 8px' : '16px 16px')};
   max-height: 64%;
   padding: 0 1.5rem;
-  text-align: left;
+  text-ali
+  gn: left;
 `
 export const Scroll = styled.div<{ $theme?: 'blue' }>`
   height: calc(100% - ${({ $theme }) => ($theme === 'blue' ? '55px - 47px' : '68px - 68px')});
   overflow: scroll;
 `
+
 export const Children = styled.div`
   margin: 2rem 0;
 `

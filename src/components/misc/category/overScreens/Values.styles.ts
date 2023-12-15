@@ -8,3 +8,9 @@ export const StyledEmoji = styled(Emoji)`
 export const Space = styled.div`
   height: 4rem;
 `
+
+export const ResourcesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`

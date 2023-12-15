@@ -2,10 +2,11 @@ import { Category } from 'types/category'
 import Card from 'components/base/Card'
 import MagicLink from 'components/base/MagicLink'
 import { OverScreenInfo } from 'components/base/OverScreen'
+import Resource from 'components/base/Resource'
 import Integrate from '../Integrate'
 import Share from '../Share'
 import { OverScreenCategory } from './Type'
-import { Space, StyledEmoji } from './Values.styles'
+import { ResourcesContainer, Space, StyledEmoji } from './Values.styles'
 
 export const overScreenCategoryValues: (
   category: Category,
@@ -34,7 +35,32 @@ export const overScreenCategoryValues: (
         <StyledEmoji>💡</StyledEmoji>Aller plus loin
       </div>
     ),
-    children: <></>,
+    noScroll: true,
+    children: (
+      <ResourcesContainer>
+        <Resource
+          image='/images/osez-changer-tri.jpeg'
+          text='Chauffer à l’électrique : simuler la consommation électrique de son logement avec Wattris'
+          href='https://wattris.ademe.fr/'
+          withLink='Wattris'
+          tracking={category.name}
+        />
+        <Resource
+          image='/images/osez-changer-tri.jpeg'
+          text='Découvrir comment mieux chauffer son logement'
+          href='https://multimedia.ademe.fr/infographies/infographie_mieux_se_chauffer/'
+          withLink='ADEME'
+          tracking={category.name}
+        />
+        <Resource
+          image='/images/osez-changer-tri.jpeg'
+          text='Rénover et changer son système de chauffage'
+          href='https://librairie.ademe.fr/cadic/6566/guide-changer-son-chauffage-0423.pdf'
+          withLink='ADEME'
+          tracking={category.name}
+        />
+      </ResourcesContainer>
+    ),
   },
   data: {
     title: (

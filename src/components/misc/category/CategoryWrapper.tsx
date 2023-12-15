@@ -42,7 +42,7 @@ const CategoryWrapper = (
               <MagicLink key={source.label} to={source.href} color='blue'>
                 {source.label}
               </MagicLink>,
-              <> • </>,
+              <span key={`${source.label}-separator`}> • </span>,
             ])
             .slice(0, category.sources.length * 2 - 1)}
         </Sources>

@@ -2,7 +2,12 @@ import React, { ReactNode } from 'react'
 import GhostButton from './GhostButton'
 import { Children, Container, Content, Footer, Header, Scroll, Shadow } from './OversScreen.styles'
 
-export type OverScreenInfo = { title: ReactNode; children: ReactNode; cancel?: (onClose: () => void) => ReactNode }
+export type OverScreenInfo = {
+  title: ReactNode
+  children: ReactNode
+  cancel?: (onClose: () => void) => ReactNode
+  noScroll?: boolean
+}
 const OverScreen = ({ values, onClose, theme }: { values: OverScreenInfo; onClose: () => void; theme?: 'blue' }) => {
   return (
     <Container>
@@ -19,9 +24,13 @@ const OverScreen = ({ values, onClose, theme }: { values: OverScreenInfo; onClos
             Fermer
           </GhostButton>
         </Header>
-        <Scroll $theme={theme}>
+        {values.noScroll ? (
           <Children>{values.children}</Children>
-        </Scroll>
+        ) : (
+          <Scroll $theme={theme}>
+            <Children>{values.children}</Children>
+          </Scroll>
+        )}
         <Footer $theme={theme}>
           {values.cancel ? (
             values.cancel(onClose)
