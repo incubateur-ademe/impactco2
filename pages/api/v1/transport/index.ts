@@ -93,7 +93,7 @@ type TransportEmissionV1 = {
 
 /**
  * @swagger
- * /api/v1/transport:
+ * /transport:
  *   get:
  *     tags:
  *     - Transport
