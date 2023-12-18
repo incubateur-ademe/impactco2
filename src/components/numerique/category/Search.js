@@ -16,15 +16,16 @@ export default function Search(props) {
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streamingDuree', 420)
   const [streamingQualite, setStreamingQualite] = useSessionStorage('streamingQualite', 'SD')
   const [streamingReseau, setStreamingReseau] = useSessionStorage('streamingReseau', 'fixe FR')
+  // const [emailAppareil, setEmailAppareil] = useSessionStorage('emailAppareil', 'smartphone')
   const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
-  const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
+  // const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
 
   const [situationObj, setSituationObj] = useState({ key: '', value: '' })
 
   useEffect(() => {
     setSituation({
       ['email . appareil']: window.sessionStorage.getItem('email . appareil') || `'tablette'`,
-      ['email . taille']: emailTaille,
+      ['email . taille']: window.sessionStorage.getItem('email . taille') || 0.075,
       ['email . transmission . émetteur . réseau']: emailReseau,
       ['streaming . durée']: streamingDuree,
       ['streaming . appareil']: streamingAppareil,
@@ -117,9 +118,7 @@ export default function Search(props) {
             <Wrapper.StyledSelect
               value={engine.evaluate('email . taille').nodeValue}
               onChange={({ value }) => {
-                track('Usage numérique', 'Select email taille', `usage-numerique-email-taille-${value}`)
-                setEmailTaille(value)
-                setSituation({ ['email . taille']: value })
+                setSituationObj({ key: 'email . taille', value: value })
               }}
               color='#6C8CC1'>
               <option value={0.075}>Sans pièce jointe</option>
