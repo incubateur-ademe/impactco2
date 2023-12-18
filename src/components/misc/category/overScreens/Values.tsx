@@ -42,21 +42,21 @@ export const overScreenCategoryValues: (
     children: (
       <ResourcesContainer>
         <Resource
-          image='/images/osez-changer-tri.jpeg'
+          image='/images/category-wattris.png'
           text='Chauffer à l’électrique : simuler la consommation électrique de son logement avec Wattris'
           href='https://wattris.ademe.fr/'
           withLink='Wattris'
           tracking={category.name}
         />
         <Resource
-          image='/images/osez-changer-tri.jpeg'
+          image='/images/category-mieux-chauffer.png'
           text='Découvrir comment mieux chauffer son logement'
           href='https://multimedia.ademe.fr/infographies/infographie_mieux_se_chauffer/'
           withLink='ADEME'
           tracking={category.name}
         />
         <Resource
-          image='/images/osez-changer-tri.jpeg'
+          image='/images/category-systeme-chauffage.png'
           text='Rénover et changer son système de chauffage'
           href='https://librairie.ademe.fr/cadic/6566/guide-changer-son-chauffage-0423.pdf'
           withLink='ADEME'
