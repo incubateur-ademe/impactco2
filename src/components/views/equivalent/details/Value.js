@@ -47,7 +47,6 @@ const StyledEmoji = styled(Emoji)`
   font-size: 3rem;
   height: 4.5rem;
   justify-content: center;
-  margin-top: 0.325rem;
   width: 4.5rem;
 
   ${(props) => props.theme.mq.small} {
@@ -61,7 +60,7 @@ export default function Value(props) {
   return (
     <Wrapper>
       <Section $withoutPadding $theme='main'>
-        <SectionWideContent $flex $small>
+        <SectionWideContent $flex $size='sm'>
           <Top>
             <div>
               <Number>

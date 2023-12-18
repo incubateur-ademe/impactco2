@@ -6,3 +6,9 @@ export const Title = styled.div`
   line-height: 1.25rem;
   margin-top: 1.5rem;
 `
+
+export const ResourcesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`

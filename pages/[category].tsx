@@ -62,6 +62,6 @@ const Container = styled(SectionWideContent)`
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem 4rem;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 2rem;
 `

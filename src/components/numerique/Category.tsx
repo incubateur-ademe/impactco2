@@ -12,7 +12,7 @@ export default function Category({ category }: { category: CategoryType }) {
 
   return (
     <Section $withoutPadding>
-      <SectionWideContent $small>
+      <SectionWideContent $size='sm'>
         <Wrapper name={category.title || category.name} slug={category.slug} tracking='Usage numérique'>
           <Description description={category.description} large />
           <Search numberEmails={numberEmails} setNumberEmails={setNumberEmails} />

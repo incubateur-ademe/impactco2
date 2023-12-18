@@ -2,8 +2,8 @@ import React from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
 import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
+import ClipboardBox from '../../base/ClipboardBox'
 import { Icon } from '../icons'
-import ClipboardBox from './ClipboardBox'
 import { Buttons, Text } from './Share.styles'
 import Usage from './Usage'
 
@@ -11,7 +11,7 @@ const url = buildCurrentUrlFor('/habillement/osez-changer')
 const Share = () => {
   return (
     <div data-testid='share-modal'>
-      <ClipboardBox>{url}</ClipboardBox>
+      <ClipboardBox colored>{url}</ClipboardBox>
       <Text>ou</Text>
       <Buttons>
         <FacebookShareButton

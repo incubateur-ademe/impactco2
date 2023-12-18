@@ -44,7 +44,7 @@ export default function Visualization({ equivalent }: { equivalent: Equivalent }
   const content = visualizations[equivalent.slug]
   return content ? (
     <StyledSection>
-      <SectionWideContent $small>
+      <SectionWideContent $size='sm'>
         <Slider
           dots={false}
           infinite

@@ -39,7 +39,7 @@ export default function Details(props) {
   return (
     <>
       <Section $withoutPadding>
-        <SectionWideContent $small>
+        <SectionWideContent $size='sm'>
           <Title>
             {props.equivalent.prefix && <>{formatName(props.equivalent.prefix, 1, true)}</>}
             {formatName(props.equivalent.name, 1, !props.equivalent.prefix)}
@@ -50,7 +50,7 @@ export default function Details(props) {
       </Section>
       <Value equivalent={props.equivalent} category={props.category} />
       <Section $withoutPadding>
-        <SectionWideContent $flex $small>
+        <SectionWideContent $flex $size='sm'>
           <Disclaimer>
             Valeurs exprimées en kg{' '}
             <ButtonLink onClick={() => setCo2e(true)}>

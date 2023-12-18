@@ -22,7 +22,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // When
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
     // Then
-    expect(await screen.findByTestId('bar-chart-item-velo')).toHaveTextContent('Vélo ou marche00 kg CO2e')
+    expect(await screen.findByTestId('bar-chart-item-velo')).toHaveTextContent('Vélo ou marche0 kg CO2e')
   })
   test("Par défaut, limite le nombre d'éléments affichés", async () => {
     // Given

@@ -5,7 +5,6 @@ import categories from 'data/categories.json'
 import boisson from 'data/categories/boisson.json'
 import chauffage from 'data/categories/chauffage.json'
 import deplacement from 'data/categories/deplacement.json'
-import divers from 'data/categories/divers.json'
 import electromenager from 'data/categories/electromenager.json'
 import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
 import habillement from 'data/categories/habillement.json'
@@ -27,7 +26,6 @@ const equivalents = [
   ...repas,
   ...chauffage,
   ...fruitsetlegumes,
-  ...divers,
 ]
 
 const categoryValidation = z.object({

@@ -1,21 +1,16 @@
 import { toJpeg, toPng } from 'html-to-image'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
 
 export default function useScreenshot(slug: string, tracking: string, format: string = 'png') {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   const transformFn = format === 'png' ? toPng : toJpeg
 
   const [isScreenshotting, setIsScreenshotting] = useState(false)
 
-  const takeScreenshot = () => {
-    track(tracking, 'Screenshot', slug)
-    setIsScreenshotting(true)
-    setTimeout(() => {
-      if (ref.current === null) {
-        return
-      }
+  useEffect(() => {
+    if (isScreenshotting && ref.current !== null) {
       transformFn(ref.current, {
         cacheBust: true,
         filter: (node) => {
@@ -33,7 +28,12 @@ export default function useScreenshot(slug: string, tracking: string, format: st
         .catch((err) => {
           console.log(err)
         })
-    }, 20)
+    }
+  }, [ref, isScreenshotting, format, slug, transformFn])
+
+  const takeScreenshot = () => {
+    track(tracking, 'Screenshot', slug)
+    setIsScreenshotting(true)
   }
 
   return { ref, takeScreenshot, isScreenshotting }

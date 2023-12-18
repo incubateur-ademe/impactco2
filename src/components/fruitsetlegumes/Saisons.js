@@ -105,7 +105,7 @@ export default function Saisons(props) {
 
   return (
     <Section $withoutPadding>
-      <SectionWideContent $small>
+      <SectionWideContent $size='sm'>
         <SourceAgribalyse />
         <Wrapper month={props.month} slug={props.category.slug}>
           <Description description={props.category.description} />

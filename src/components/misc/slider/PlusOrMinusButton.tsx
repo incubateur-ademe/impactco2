@@ -16,6 +16,12 @@ const Wrapper = styled.button`
       fill: ${(props) => props.theme.colors.main};
     }
   }
+
+  &:focus {
+    border-radius: 2px;
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
 `
 export default function PlusOrMinusButton({ plus, onClick }: { plus?: boolean; onClick: () => void }) {
   return plus ? (
