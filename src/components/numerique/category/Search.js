@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from 'react'
 import { useSessionStorage } from 'usehooks-ts'
+import diff from 'utils/diff'
 import { track } from 'utils/matomo'
 import usePrevious from 'hooks/usePrevious.ts'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
 
 export default function Search(props) {
+  const uniqKeyOfObj = (obj) => Object.keys(obj)[0]
+
   const { engine, setSituation, situation } = useContext(RulesContextNumerique)
   const prevSituation = usePrevious(situation)
   const [visioAppareil, setVisioAppareil] = useSessionStorage('visioAppareil', `'ordinateur portable'`)
@@ -20,8 +23,22 @@ export default function Search(props) {
   const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
   const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
 
+  const mapFn = {
+    'email . appareil': setEmailAppareil,
+    'email . taille': setEmailTaille,
+    'email . transmission . émetteur . réseau': setEmailReseau,
+    'streaming . durée': setStreamingDuree,
+    'streaming . appareil': setStreamingAppareil,
+    'streaming . qualité': setStreamingQualite,
+    'streaming . transmission . réseau': setStreamingReseau,
+    'visio . appareil': setVisioAppareil,
+    'visio . qualité': setVisioQualite,
+    'visio . durée': setVisioDuree,
+    'visio . transmission . réseau': setVisioReseau,
+    'visio . emplacements': setVisioReseau,
+  }
+
   useEffect(() => {
-    console.log('entering [] hook-------------------')
     setSituation({
       ['email . appareil']: emailAppareil,
       ['email . taille']: emailTaille,
@@ -39,22 +56,13 @@ export default function Search(props) {
   }, [])
 
   useEffect(() => {
-    console.log('entering [situation] hook$$$$$$$$$$$$$$$$$$$$$$$$$')
-    console.log(prevSituation)
-    console.log(situation)
-    console.log('------------------------------------')
-    console.log('')
-    setEmailAppareil(situation['email . appareil'])
-    setEmailReseau(emailReseau)
-    setEmailTaille(emailTaille)
-    setVisioAppareil(visioAppareil)
-    setVisioDuree(visioDuree)
-    setVisioQualite(visioQualite)
-    setVisioReseau(visioReseau)
-    setStreamingAppareil(streamingAppareil)
-    setStreamingDuree(streamingDuree)
-    setStreamingQualite(streamingQualite)
-    setStreamingReseau(streamingReseau)
+    const newSituationObj = diff(prevSituation, situation)
+    console.log('newSituationObj:', newSituationObj)
+    const newSituationKey = uniqKeyOfObj(newSituationObj)
+    console.log('newSituationKey:', newSituationKey)
+    if (newSituationKey) {
+      mapFn[newSituationKey].call(null, situation[newSituationKey])
+    }
   }, [situation])
 
   const [display, setDisplay] = useState(null)
