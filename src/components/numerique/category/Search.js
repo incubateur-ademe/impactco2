@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { track } from 'utils/matomo'
+import slugify from 'utils/slugify'
 import useSessionStorage from 'hooks/useSessionStorage'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
@@ -15,13 +16,15 @@ export default function Search(props) {
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streamingDuree', 420)
   const [streamingQualite, setStreamingQualite] = useSessionStorage('streamingQualite', 'SD')
   const [streamingReseau, setStreamingReseau] = useSessionStorage('streamingReseau', 'fixe FR')
-  const [emailAppareil, setEmailAppareil] = useSessionStorage('emailAppareil', 'smartphone')
+  // const [emailAppareil, setEmailAppareil] = useSessionStorage('emailAppareil', 'smartphone')
   const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
   const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
 
+  const [situationObj, setSituationObj] = useState({ key: '', value: '' })
+
   useEffect(() => {
     setSituation({
-      ['email . appareil']: emailAppareil,
+      // ['email . appareil']: emailAppareil,
       ['email . taille']: emailTaille,
       ['email . transmission . émetteur . réseau']: emailReseau,
       ['streaming . durée']: streamingDuree,
@@ -35,6 +38,23 @@ export default function Search(props) {
       ['visio . emplacements']: 1,
     })
   }, [])
+
+  useEffect(() => {
+    console.log('call of useEffect...')
+    console.log('situationObj:', situationObj)
+    console.log('window:', window)
+    console.log('-----------------')
+    if (typeof window !== 'undefined' && situationObj.key) {
+      window.sessionStorage.setItem(situationObj.key, situationObj.value)
+      track(
+        'Usage numérique',
+        `Select ${situationObj.key.replaceAll('. ', '')}`,
+        `usage-numerique-${slugify(situationObj.key)}-${slugify(situationObj.value)}`
+      )
+      setSituation({ [situationObj.key]: situationObj.value })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [situationObj])
 
   const [display, setDisplay] = useState(null)
 
@@ -68,9 +88,7 @@ export default function Search(props) {
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('email . appareil').nodeValue}'`}
             onChange={({ value }) => {
-              track('Usage numérique', 'Select email appareil', `usage-numerique-email-appareil-${value}`)
-              setEmailAppareil(value)
-              setSituation({ ['email . appareil']: value })
+              setSituationObj({ key: 'email . appareil', value: value })
             }}
             color='#6C8CC1'>
             <option value={`'smartphone'`}>Smartphone</option>
