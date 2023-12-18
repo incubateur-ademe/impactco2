@@ -44,8 +44,8 @@ const Thumb = styled.div`
   width: 7rem;
 
   &:focus {
-    box-shadow: 0 0 0 0.125rem ${(props) => props.theme.colors.mainLight};
-    outline: none;
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
   }
 `
 const SliderWithInput = ({

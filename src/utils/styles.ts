@@ -144,32 +144,38 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.2;
   }
 
+  .title-h1,
   h1 {
     font-size: 2.5rem;
     line-height: 3.25rem;
     margin-bottom: 1.5rem;
   }
   
+  .title-h2,
   h2 {
     font-size: 2rem;
     line-height: 2.75rem;
   }
 
+  .title-h3,
   h3 {
     font-size: 1.75rem;
     line-height: 2.25rem;
   }
 
+  .title-h4,
   h4 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
 
+  .title-h5,
   h5 {
     font-size: 1.375rem;
     line-height: 1.75rem;
   }
 
+  .title-h6,
   h6 {
     font-size: 1.25rem;
     line-height: 1.75rem;
