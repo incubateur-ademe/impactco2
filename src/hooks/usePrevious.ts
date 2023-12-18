@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
 
-export default function usePrevious(value) {
-  const ref = useRef()
+// Inspired by https://github.com/kripod/react-hooks/blob/master/packages/state-hooks/src/usePrevious.ts
+export default function usePrevious<T>(value: T): T | undefined {
+  const ref = useRef<T>()
   useEffect(() => {
     ref.current = value
-  }, [value])
+  })
   return ref.current
 }
