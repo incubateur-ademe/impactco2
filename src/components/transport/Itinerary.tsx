@@ -19,7 +19,7 @@ export default function Itinerary({ category, iframe }: { category: Category; if
   }>(TransportContext)
 
   const itineraries = useItineraries(start, end, 'itinéraire')
-  const transportations = useTransportations('itinéraire', itineraries)
+  const transportations = useTransportations('Transport itinéraire', itineraries)
 
   return (
     <Section $withoutPadding data-testid='itineraryWrapper'>
@@ -28,7 +28,7 @@ export default function Itinerary({ category, iframe }: { category: Category; if
           <Search itineraire iframe={iframe} />
           {itineraries && (
             <>
-              {transportations.length ? <ResultHeader category={category} tracking='intinéraire' /> : null}
+              {transportations.length ? <ResultHeader category={category} tracking='Transport itinéraire' /> : null}
               <BarChart equivalents={transportations} category={category} />
               {transportations.length ? <Bottom category={category} /> : null}
             </>

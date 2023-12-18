@@ -25,7 +25,7 @@ const ResultHeader = ({ category, tracking }: { category: Category; tracking: st
           name='displayAll'
           checked={displayAll}
           onChange={() => {
-            track(`Transport ${tracking}`, 'Voir tous', displayAll ? 'faux' : 'vrai')
+            track(tracking, 'Voir tous', displayAll ? 'faux' : 'vrai')
             setDisplayAll((prevDisplayAll) => !prevDisplayAll)
           }}>
           Voir {category.gender === 'f' ? 'toutes' : 'tous'} les {formatName(category.equivalent, 2) || 'équivalents'}
@@ -34,7 +34,7 @@ const ResultHeader = ({ category, tracking }: { category: Category; tracking: st
           name='carpool'
           checked={carpool}
           onChange={() => {
-            track(`Transport ${tracking}`, 'Covoiturage', carpool ? 'faux' : 'vrai')
+            track(tracking, 'Covoiturage', carpool ? 'faux' : 'vrai')
             setCarpool((prevCarpool) => (prevCarpool ? 0 : 2))
           }}>
           Afficher le covoiturage
