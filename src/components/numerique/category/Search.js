@@ -1,6 +1,6 @@
+import { diff } from 'deep-object-diff'
 import { useContext, useEffect, useState } from 'react'
 import { useSessionStorage } from 'usehooks-ts'
-import diff from 'utils/diff'
 import { track } from 'utils/matomo'
 import slugify from 'utils/slugify'
 import usePrevious from 'hooks/usePrevious.ts'
@@ -60,6 +60,7 @@ export default function Search(props) {
   // Inject into sessionStorage new value selected
   useEffect(() => {
     const newSituationObj = diff(prevSituation, situation)
+    console.log('newSituationObj:', newSituationObj)
     const newSituationKey = uniqKeyOfObj(newSituationObj)
     if (newSituationKey) {
       mapFn[newSituationKey].call(null, situation[newSituationKey])

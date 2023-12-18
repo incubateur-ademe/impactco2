@@ -49,6 +49,7 @@
     "axios": "^1.6.2",
     "chrome-aws-lambda": "^10.1.0",
     "copy-to-clipboard": "^3.3.3",
+    "deep-object-diff": "^1.1.9",
     "dotenv-cli": "^7.3.0",
     "express-rate-limit": "^7.1.5",
     "express-slow-down": "^2.0.1",
