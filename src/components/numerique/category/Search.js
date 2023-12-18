@@ -23,8 +23,14 @@ export default function Search(props) {
   const [situationObj, setSituationObj] = useState({ key: '', value: '' })
 
   useEffect(() => {
+    console.log('call of SINGLE useEffect...')
+    console.log('window:', window)
+    console.log("window.sessionStorage.getItem('email . appareil')", window.sessionStorage.getItem('email . appareil'))
+
+    console.log('-----------------')
+
     setSituation({
-      // ['email . appareil']: emailAppareil,
+      ['email . appareil']: window.sessionStorage.getItem('email . appareil') || `'tablette'`,
       ['email . taille']: emailTaille,
       ['email . transmission . émetteur . réseau']: emailReseau,
       ['streaming . durée']: streamingDuree,
