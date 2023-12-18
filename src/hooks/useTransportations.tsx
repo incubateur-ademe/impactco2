@@ -71,7 +71,7 @@ export default function useTransportations(tracking: string, itineraries?: Recor
                 (formatUsage(equivalent) *
                   (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
                 (equivalent.carpool && carpool ? carpool : 1),
-              onClick: () => track(`Transport ${tracking}`, 'Navigation equivalent', equivalent.slug),
+              onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
             }))
         : [],
     [categories, equivalents, km, displayAll, carpool, itineraries, tracking]
