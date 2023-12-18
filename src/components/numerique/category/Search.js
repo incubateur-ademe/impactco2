@@ -16,19 +16,12 @@ export default function Search(props) {
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streamingDuree', 420)
   const [streamingQualite, setStreamingQualite] = useSessionStorage('streamingQualite', 'SD')
   const [streamingReseau, setStreamingReseau] = useSessionStorage('streamingReseau', 'fixe FR')
-  // const [emailAppareil, setEmailAppareil] = useSessionStorage('emailAppareil', 'smartphone')
   const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
   const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
 
   const [situationObj, setSituationObj] = useState({ key: '', value: '' })
 
   useEffect(() => {
-    console.log('call of SINGLE useEffect...')
-    console.log('window:', window)
-    console.log("window.sessionStorage.getItem('email . appareil')", window.sessionStorage.getItem('email . appareil'))
-
-    console.log('-----------------')
-
     setSituation({
       ['email . appareil']: window.sessionStorage.getItem('email . appareil') || `'tablette'`,
       ['email . taille']: emailTaille,
@@ -46,10 +39,6 @@ export default function Search(props) {
   }, [])
 
   useEffect(() => {
-    console.log('call of useEffect...')
-    console.log('situationObj:', situationObj)
-    console.log('window:', window)
-    console.log('-----------------')
     if (typeof window !== 'undefined' && situationObj.key) {
       window.sessionStorage.setItem(situationObj.key, situationObj.value)
       track(
