@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Meta = styled.div`
   border: 1px solid var(--neutral-20);
   border-radius: 4px;
-  margin: 2rem auto;
   padding: 0.75rem;
   text-align: left;
 
@@ -22,6 +21,7 @@ export const Buttons = styled.div`
   display: flex;
   gap: 0.75rem;
   justify-content: center;
+  margin: 2rem auto;
 
   button {
     background-color: transparent !important;

@@ -6,8 +6,10 @@ export const LeftSide = styled.div<{ $small?: boolean; $color?: 'blue' }>`
   border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-20);
   border-radius: 16px 0 0 16px;
   display: flex;
-  padding: ${({ $small }) => ($small ? '0.5rem' : '1.5rem')};
-  transition: padding 0.3s ease-in-out;
+  height: ${({ $small }) => ($small ? '3.625rem' : '10.125rem')};
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  width: ${({ $small }) => ($small ? '3.625rem' : '7.25rem')};
 `
 
 export const ImageContainer = styled.div<{ $small?: boolean }>`

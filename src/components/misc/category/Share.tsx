@@ -46,13 +46,6 @@ const Share = ({ category, params }: { category: Category; params?: Record<strin
         />
       )}
       <ClipboardBox>{url}</ClipboardBox>
-      <Meta>
-        <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />
-        <p>
-          <b>{category.meta.title}</b>
-        </p>
-        <p className='text-sm'>{category.meta.description}</p>
-      </Meta>
       <Buttons>
         <FacebookShareButton
           url={url}
@@ -79,6 +72,13 @@ const Share = ({ category, params }: { category: Category; params?: Record<strin
           <Icon iconId='linkedin' />
         </LinkedinShareButton>
       </Buttons>
+      <Meta>
+        <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />
+        <p>
+          <b>{category.meta.title}</b>
+        </p>
+        <p className='text-sm'>{category.meta.description}</p>
+      </Meta>
     </>
   )
 }

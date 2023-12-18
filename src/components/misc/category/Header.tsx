@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Category } from 'types/category'
 import { SectionWideContent } from 'components/base/Section'
 import Actions from './Actions'
@@ -15,6 +15,7 @@ const Header = ({
   params?: Record<string, string>
   takeScreenshot: () => void
 }) => {
+  const ref = useRef<HTMLDivElement>(null)
   const [opened, setOpened] = useState('')
 
   const open = (section: string) => {
@@ -22,6 +23,10 @@ const Header = ({
       setOpened('')
     } else {
       setOpened(section)
+      ref.current?.scrollIntoView({
+        block: 'start',
+        behavior: 'smooth',
+      })
     }
   }
   return (
@@ -31,7 +36,7 @@ const Header = ({
       </h1>
       <Description className='text-xl'>{category.description}</Description>
       <SectionWideContent $size='xs' $noGutter>
-        <ActionsContainer>
+        <ActionsContainer ref={ref}>
           <Actions
             category={category}
             onClick={(value) => (value === 'telecharger' ? takeScreenshot() : open(value))}
