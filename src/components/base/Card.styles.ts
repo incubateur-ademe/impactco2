@@ -7,6 +7,7 @@ export const LeftSide = styled.div<{ $small?: boolean; $color?: 'blue' }>`
   border-radius: 16px 0 0 16px;
   display: flex;
   padding: ${({ $small }) => ($small ? '0.5rem' : '1.5rem')};
+  transition: padding 0.3s ease-in-out;
 `
 
 export const ImageContainer = styled.div<{ $small?: boolean }>`
@@ -16,6 +17,7 @@ export const ImageContainer = styled.div<{ $small?: boolean }>`
   display: flex;
   justify-content: center;
   padding: ${({ $small }) => ($small ? '8px' : '12px')};
+  transition: padding 0.3s ease-in-out;
 `
 
 export const Content = styled.div<{ $small?: boolean }>`
@@ -63,6 +65,8 @@ export const LinkText = styled.div`
 
 export const Arrow = styled.div`
   display: inline-block;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
 `
 
 export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
@@ -90,7 +94,6 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
         border: 1px solid var(--neutral-30);
         border-left: 0;
         color: var(--neutral-70);
-        ${({ $small }) => $small && 'padding-right: 0.75rem;'}
 
         b {
           color: var(--neutral-80);
@@ -103,6 +106,10 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
 
       ${ImageContainer} {
         ${({ $small }) => ($small ? 'padding: 12px' : 'padding: 20px')}
+      }
+
+      ${Arrow} {
+        transform: translateX(0.5rem);
       }
 
       ${LinkText} {

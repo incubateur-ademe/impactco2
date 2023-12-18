@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { track } from 'utils/matomo'
 import { Icon } from 'components/osezchanger/icons'
-import { Container, Content, ImageContainer, LeftSide, LinkText } from './Card.styles'
+import { Arrow, Container, Content, ImageContainer, LeftSide, LinkText } from './Card.styles'
 
 const Card = ({
   href,
@@ -41,11 +41,15 @@ const Card = ({
           <p>{description}</p>
         </div>
         {small ? (
-          <Icon iconId='full-arrow-right' />
+          <Arrow>
+            <Icon iconId='full-arrow-right' />
+          </Arrow>
         ) : (
           <LinkText>
             {link}
-            <Icon iconId='full-arrow-right' />
+            <Arrow>
+              <Icon iconId='full-arrow-right' />
+            </Arrow>
           </LinkText>
         )}
       </Content>
