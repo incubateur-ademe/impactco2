@@ -192,7 +192,7 @@ export const GlobalStyle = createGlobalStyle`
     -moz-appearance: textfield;
   }
 
-  button, input, optgroup, select, textarea, a {
+  button, input, optgroup, select, textarea {
     line-height: 1;
   }
 

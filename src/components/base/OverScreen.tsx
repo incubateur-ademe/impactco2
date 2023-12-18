@@ -14,7 +14,9 @@ const OverScreen = ({ values, onClose, theme }: { values: OverScreenInfo; onClos
       <Shadow onClick={onClose} />
       <Content $theme={theme}>
         <Header $theme={theme}>
-          {values.title}
+          <span className='text-lg'>
+            <b>{values.title}</b>
+          </span>
           <GhostButton
             colored={theme === 'blue'}
             icon='close'

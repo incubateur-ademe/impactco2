@@ -38,7 +38,7 @@ const Card = ({
           <p className={small ? '' : 'text-xl'}>
             <b>{title}</b>
           </p>
-          <p> {description}</p>
+          <p>{description}</p>
         </div>
         {small ? (
           <Icon iconId='full-arrow-right' />

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Box = styled.button<{ $colored?: boolean }>`
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   flex-wrap: wrap;

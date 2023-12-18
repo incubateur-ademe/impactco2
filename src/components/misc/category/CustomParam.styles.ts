@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Checkbox = styled.label<{ $checked: boolean }>`
   align-items: center;
-  color: var(--neutral-50);
+  color: var(--neutral-${({ $checked }) => ($checked ? '80' : '50')});
   cursor: pointer;
   display: flex;
   font-weight: 500;

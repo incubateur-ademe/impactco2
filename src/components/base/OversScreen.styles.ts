@@ -42,10 +42,7 @@ export const Header = styled.div<{ $theme?: 'blue' }>`
   border-bottom: 1px solid var(--${({ $theme }) => ($theme === 'blue' ? 'secondary' : 'neutral')}-20);
   border-radius: ${({ $theme }) => ($theme === 'blue' ? '8px 8px' : '16px 16px')} 0 0;
   display: flex;
-  font-size: 1rem;
-  font-weight: 700;
   justify-content: space-between;
-  line-height: 1.25rem;
   padding: 1rem 1.5rem;
 `
 

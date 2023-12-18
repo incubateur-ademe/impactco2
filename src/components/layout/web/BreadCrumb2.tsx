@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   gap: 0.125rem;
   justify-content: center;
   line-height: 1.25rem;
-  margin: 1.5rem auto;
+  margin: 3.75rem auto 1.5rem auto;
 
   a {
     font-weight: 500;
