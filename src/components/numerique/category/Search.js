@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from 'react'
+import { useSessionStorage } from 'usehooks-ts'
 import { track } from 'utils/matomo'
-import slugify from 'utils/slugify'
-import useSessionStorage from 'hooks/useSessionStorage'
+import usePrevious from 'hooks/usePrevious.ts'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
 
 export default function Search(props) {
-  const { engine, setSituation } = useContext(RulesContextNumerique)
-
+  const { engine, setSituation, situation } = useContext(RulesContextNumerique)
+  const prevSituation = usePrevious(situation)
   const [visioAppareil, setVisioAppareil] = useSessionStorage('visioAppareil', `'ordinateur portable'`)
   const [visioDuree, setVisioDuree] = useSessionStorage('visioDuree', 180)
   const [visioQualite, setVisioQualite] = useSessionStorage('visioQualite', 'audio')
@@ -16,16 +16,15 @@ export default function Search(props) {
   const [streamingDuree, setStreamingDuree] = useSessionStorage('streamingDuree', 420)
   const [streamingQualite, setStreamingQualite] = useSessionStorage('streamingQualite', 'SD')
   const [streamingReseau, setStreamingReseau] = useSessionStorage('streamingReseau', 'fixe FR')
-  // const [emailAppareil, setEmailAppareil] = useSessionStorage('emailAppareil', 'smartphone')
+  const [emailAppareil, setEmailAppareil] = useSessionStorage('emailAppareil', 'smartphone')
   const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
-  // const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
-
-  const [situationObj, setSituationObj] = useState({ key: '', value: '' })
+  const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
 
   useEffect(() => {
+    console.log('entering [] hook-------------------')
     setSituation({
-      ['email . appareil']: window.sessionStorage.getItem('email . appareil') || `'tablette'`,
-      ['email . taille']: window.sessionStorage.getItem('email . taille') || 0.075,
+      ['email . appareil']: emailAppareil,
+      ['email . taille']: emailTaille,
       ['email . transmission . émetteur . réseau']: emailReseau,
       ['streaming . durée']: streamingDuree,
       ['streaming . appareil']: streamingAppareil,
@@ -40,17 +39,23 @@ export default function Search(props) {
   }, [])
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && situationObj.key) {
-      window.sessionStorage.setItem(situationObj.key, situationObj.value)
-      track(
-        'Usage numérique',
-        `Select ${situationObj.key.replaceAll('. ', '')}`,
-        `usage-numerique-${slugify(situationObj.key)}-${slugify(situationObj.value)}`
-      )
-      setSituation({ [situationObj.key]: situationObj.value })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [situationObj])
+    console.log('entering [situation] hook$$$$$$$$$$$$$$$$$$$$$$$$$')
+    console.log(prevSituation)
+    console.log(situation)
+    console.log('------------------------------------')
+    console.log('')
+    setEmailAppareil(situation['email . appareil'])
+    setEmailReseau(emailReseau)
+    setEmailTaille(emailTaille)
+    setVisioAppareil(visioAppareil)
+    setVisioDuree(visioDuree)
+    setVisioQualite(visioQualite)
+    setVisioReseau(visioReseau)
+    setStreamingAppareil(streamingAppareil)
+    setStreamingDuree(streamingDuree)
+    setStreamingQualite(streamingQualite)
+    setStreamingReseau(streamingReseau)
+  }, [situation])
 
   const [display, setDisplay] = useState(null)
 
@@ -84,7 +89,8 @@ export default function Search(props) {
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('email . appareil').nodeValue}'`}
             onChange={({ value }) => {
-              setSituationObj({ key: 'email . appareil', value: value })
+              track('Usage numérique', 'Select email appareil', `usage-numerique-email-appareil-${value}`)
+              setSituation({ ['email . appareil']: value })
             }}
             color='#6C8CC1'>
             <option value={`'smartphone'`}>Smartphone</option>
@@ -98,7 +104,6 @@ export default function Search(props) {
               value={`'${engine.evaluate('email . transmission . émetteur . réseau').nodeValue}'`}
               onChange={(value) => {
                 track('Usage numérique', 'Select email réseau', `usage-numerique-email-reseau-${value}`)
-                setEmailReseau(value)
                 setSituation({
                   ['email . transmission . émetteur . réseau']: value,
                 })
@@ -118,7 +123,8 @@ export default function Search(props) {
             <Wrapper.StyledSelect
               value={engine.evaluate('email . taille').nodeValue}
               onChange={({ value }) => {
-                setSituationObj({ key: 'email . taille', value: value })
+                track('Usage numérique', 'Select email taille', `usage-numerique-email-taille-${value}`)
+                setSituation({ ['email . taille']: value })
               }}
               color='#6C8CC1'>
               <option value={0.075}>Sans pièce jointe</option>
@@ -152,7 +158,6 @@ export default function Search(props) {
             step={60}
             value={engine.evaluate(`streaming . durée`).nodeValue}
             onChange={(value) => {
-              setStreamingDuree(value)
               setSituation({
                 [`streaming . durée`]: value,
               })
@@ -164,7 +169,6 @@ export default function Search(props) {
             value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
             onChange={({ value }) => {
               track('Usage numérique', 'Select streaming appareil', `usage-numerique-streaming-appareil-${value}`)
-              setStreamingAppareil(value)
               setSituation({ ['streaming . appareil']: value })
             }}
             color='#C25166'>
@@ -180,7 +184,6 @@ export default function Search(props) {
               value={`'${engine.evaluate('streaming . transmission . réseau').nodeValue}'`}
               onChange={(value) => {
                 track('Usage numérique', 'Select streaming réseau', `usage-numerique-streaming-reseau-${value}`)
-                setStreamingReseau(value)
                 setSituation({
                   ['streaming . transmission . réseau']: value,
                 })
@@ -201,7 +204,6 @@ export default function Search(props) {
               value={`'${engine.evaluate('streaming . qualité').nodeValue}'`}
               onChange={({ value }) => {
                 track('Usage numérique', 'Select streaming qualité', `usage-numerique-streaming-qualite-${value}`)
-                setStreamingQualite(value)
                 setSituation({ ['streaming . qualité']: value })
               }}
               color='#C25166'>
@@ -236,7 +238,6 @@ export default function Search(props) {
             step={60}
             value={engine.evaluate(`visio . durée`).nodeValue}
             onChange={(value) => {
-              setVisioDuree(value)
               setSituation({
                 [`visio . durée`]: value,
               })
@@ -248,7 +249,6 @@ export default function Search(props) {
             value={`'${engine.evaluate('visio . appareil').nodeValue}'`}
             onChange={({ value }) => {
               track('Usage numérique', 'Select visio appareil', `usage-numerique-visio-appareil-${value}`)
-              setVisioAppareil(value)
               setSituation({ ['visio . appareil']: value })
             }}
             color='#3DC7AB'>
@@ -264,7 +264,6 @@ export default function Search(props) {
               value={`'${engine.evaluate('visio . transmission . réseau').nodeValue}'`}
               onChange={(value) => {
                 track('Usage numérique', 'Select visio réseau', `usage-numerique-visio-reseau-${value}`)
-                setVisioReseau(value)
                 setSituation({
                   ['visio . transmission . réseau']: value,
                 })
@@ -285,7 +284,6 @@ export default function Search(props) {
               value={`'${engine.evaluate('visio . qualité').nodeValue}'`}
               onChange={({ value }) => {
                 track('Usage numérique', 'Select visio qualité', `usage-numerique-visio-qualite-${value}`)
-                setVisioQualite(value)
                 setSituation({ ['visio . qualité']: value })
               }}
               color='#3DC7AB'>

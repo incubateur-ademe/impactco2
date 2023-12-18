@@ -1,6 +1,6 @@
 import React from 'react'
 import { Category as CategoryType } from 'types/category'
-import useSessionStorage from 'hooks/useSessionStorage'
+import { useSessionStorage } from 'usehooks-ts'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Description from 'components/misc/category/Description'
 import Wrapper from 'components/misc/category/Wrapper'
