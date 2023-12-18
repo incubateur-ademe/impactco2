@@ -8,6 +8,7 @@ import MagicLink from 'components/base/MagicLink'
 const Wrapper = styled.div`
   display: flex;
   gap: 1rem;
+  justify-content: center;
 
   ${(props) => props.theme.mq.small} {
     gap: 0.75rem;

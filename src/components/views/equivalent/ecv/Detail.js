@@ -8,7 +8,6 @@ const Toggle = styled(ButtonLink)`
   align-self: center;
   font-size: 0.875rem;
   font-weight: 300;
-  margin-bottom: 1rem;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2rem;
@@ -17,8 +16,7 @@ const Toggle = styled(ButtonLink)`
 const Wrapper = styled.table`
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
-  margin-bottom: 2.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   padding: 0.5rem;
 
   ${(props) => props.theme.mq.small} {
