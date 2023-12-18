@@ -124,7 +124,7 @@ type APIECVV1 = {
 
 /**
  * @swagger
- * /api/v1/thematiques/ecv/{id}:
+ * /thematiques/ecv/{id}:
  *   get:
  *     tags:
  *     - ECV

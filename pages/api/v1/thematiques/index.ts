@@ -36,7 +36,7 @@ type APICategoryV1 = {
 
 /**
  * @swagger
- * /api/v1/thematiques:
+ * /thematiques:
  *   get:
  *     tags:
  *     - ECV
