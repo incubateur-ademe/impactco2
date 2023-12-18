@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useSessionStorage } from 'usehooks-ts'
 import diff from 'utils/diff'
 import { track } from 'utils/matomo'
+import slugify from 'utils/slugify'
 import usePrevious from 'hooks/usePrevious.ts'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
@@ -38,6 +39,7 @@ export default function Search(props) {
     'visio . emplacements': setVisioReseau,
   }
 
+  // Init situation engine with values in sessionStorage
   useEffect(() => {
     setSituation({
       ['email . appareil']: emailAppareil,
@@ -55,13 +57,17 @@ export default function Search(props) {
     })
   }, [])
 
+  // Inject into sessionStorage new value selected
   useEffect(() => {
     const newSituationObj = diff(prevSituation, situation)
-    console.log('newSituationObj:', newSituationObj)
     const newSituationKey = uniqKeyOfObj(newSituationObj)
-    console.log('newSituationKey:', newSituationKey)
     if (newSituationKey) {
       mapFn[newSituationKey].call(null, situation[newSituationKey])
+      track(
+        'Usage numérique',
+        `Select ${newSituationKey.replaceAll('. ', '')}`,
+        `usage-numerique-${slugify(newSituationKey)}`
+      )
     }
   }, [situation])
 
@@ -97,7 +103,6 @@ export default function Search(props) {
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('email . appareil').nodeValue}'`}
             onChange={({ value }) => {
-              track('Usage numérique', 'Select email appareil', `usage-numerique-email-appareil-${value}`)
               setSituation({ ['email . appareil']: value })
             }}
             color='#6C8CC1'>
@@ -111,7 +116,6 @@ export default function Search(props) {
               name='email . transmission . émetteur . réseau'
               value={`'${engine.evaluate('email . transmission . émetteur . réseau').nodeValue}'`}
               onChange={(value) => {
-                track('Usage numérique', 'Select email réseau', `usage-numerique-email-reseau-${value}`)
                 setSituation({
                   ['email . transmission . émetteur . réseau']: value,
                 })
@@ -131,7 +135,6 @@ export default function Search(props) {
             <Wrapper.StyledSelect
               value={engine.evaluate('email . taille').nodeValue}
               onChange={({ value }) => {
-                track('Usage numérique', 'Select email taille', `usage-numerique-email-taille-${value}`)
                 setSituation({ ['email . taille']: value })
               }}
               color='#6C8CC1'>
@@ -176,7 +179,6 @@ export default function Search(props) {
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('streaming . appareil').nodeValue}'`}
             onChange={({ value }) => {
-              track('Usage numérique', 'Select streaming appareil', `usage-numerique-streaming-appareil-${value}`)
               setSituation({ ['streaming . appareil']: value })
             }}
             color='#C25166'>
@@ -191,7 +193,6 @@ export default function Search(props) {
               name='streaming . transmission . réseau'
               value={`'${engine.evaluate('streaming . transmission . réseau').nodeValue}'`}
               onChange={(value) => {
-                track('Usage numérique', 'Select streaming réseau', `usage-numerique-streaming-reseau-${value}`)
                 setSituation({
                   ['streaming . transmission . réseau']: value,
                 })
@@ -211,7 +212,6 @@ export default function Search(props) {
             <Wrapper.StyledSelect
               value={`'${engine.evaluate('streaming . qualité').nodeValue}'`}
               onChange={({ value }) => {
-                track('Usage numérique', 'Select streaming qualité', `usage-numerique-streaming-qualite-${value}`)
                 setSituation({ ['streaming . qualité']: value })
               }}
               color='#C25166'>
@@ -256,7 +256,6 @@ export default function Search(props) {
           <Wrapper.StyledSelect
             value={`'${engine.evaluate('visio . appareil').nodeValue}'`}
             onChange={({ value }) => {
-              track('Usage numérique', 'Select visio appareil', `usage-numerique-visio-appareil-${value}`)
               setSituation({ ['visio . appareil']: value })
             }}
             color='#3DC7AB'>
@@ -271,7 +270,6 @@ export default function Search(props) {
               name='visio . transmission . réseau'
               value={`'${engine.evaluate('visio . transmission . réseau').nodeValue}'`}
               onChange={(value) => {
-                track('Usage numérique', 'Select visio réseau', `usage-numerique-visio-reseau-${value}`)
                 setSituation({
                   ['visio . transmission . réseau']: value,
                 })
@@ -291,7 +289,6 @@ export default function Search(props) {
             <Wrapper.StyledSelect
               value={`'${engine.evaluate('visio . qualité').nodeValue}'`}
               onChange={({ value }) => {
-                track('Usage numérique', 'Select visio qualité', `usage-numerique-visio-qualite-${value}`)
                 setSituation({ ['visio . qualité']: value })
               }}
               color='#3DC7AB'>
