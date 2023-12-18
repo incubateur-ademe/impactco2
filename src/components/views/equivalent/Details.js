@@ -56,7 +56,7 @@ export default function Details(props) {
             <ButtonLink onClick={() => setCo2e(true)}>
               CO<sub>2</sub>e
             </ButtonLink>{' '}
-            émis {props.equivalent?.include || props.category?.include}.
+            émis {props.equivalent?.include || props.category?.include}
           </Disclaimer>
           {props?.equivalent?.slug === 'stockagedonnee' ? (
             <>
