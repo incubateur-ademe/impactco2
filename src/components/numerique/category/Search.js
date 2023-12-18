@@ -24,7 +24,7 @@ export default function Search(props) {
   const [emailReseau, setEmailReseau] = useSessionStorage('emailReseau', 'fixe FR')
   const [emailTaille, setEmailTaille] = useSessionStorage('emailTaille', 0.075)
 
-  const mapFn = {
+  const sessionFn = {
     'email . appareil': setEmailAppareil,
     'email . taille': setEmailTaille,
     'email . transmission . émetteur . réseau': setEmailReseau,
@@ -60,10 +60,9 @@ export default function Search(props) {
   // Inject into sessionStorage new value selected
   useEffect(() => {
     const newSituationObj = diff(prevSituation, situation)
-    console.log('newSituationObj:', newSituationObj)
     const newSituationKey = uniqKeyOfObj(newSituationObj)
     if (newSituationKey) {
-      mapFn[newSituationKey].call(null, situation[newSituationKey])
+      sessionFn[newSituationKey].call(null, situation[newSituationKey])
       track(
         'Usage numérique',
         `Select ${newSituationKey.replaceAll('. ', '')}`,
