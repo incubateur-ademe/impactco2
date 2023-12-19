@@ -71,7 +71,11 @@ export default function Value({ equivalent, category }: { equivalent: Equivalent
                   : getFrenchFormattedNumber(getNumberWithNDigitsAfterComma(numberToDisplay, 2))}
               </Number>{' '}
               <Unit>
-                kg <Big>CO2</Big>e {(equivalent.unit || category.unit) && <>/ {equivalent.unit || category.unit}</>}
+                kg{' '}
+                <Big>
+                  CO<sub>2</sub>
+                </Big>
+                e {(equivalent.unit || category.unit) && <>/ {equivalent.unit || category.unit}</>}
               </Unit>
             </div>
           </Top>

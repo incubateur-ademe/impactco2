@@ -45,7 +45,7 @@ export default function Search({
         <Simulator
           text={
             <>
-              Découvrez la quantité de CO2e que vous émettez{' '}
+              Découvrez la quantité de CO<sub>2</sub>e que vous émettez{' '}
               <Color
                 onClick={() => {
                   track('Transport itinéraire', 'Hypothèses', 'transport_itineraire_hypotheses')
@@ -60,7 +60,12 @@ export default function Search({
         </Simulator>
       )}
       {teletravail && (
-        <Simulator text="Découvrez la quantité de CO2e que vous économisez (à l'année) en travaillant de chez vous">
+        <Simulator
+          text={
+            <>
+              Découvrez la quantité de CO<sub>2</sub>e que vous économisez (à l'année) en travaillant de chez vous
+            </>
+          }>
           <Teletravail />
         </Simulator>
       )}
@@ -68,7 +73,7 @@ export default function Search({
         <Simulator
           text={
             <>
-              Découvrez la quantité de CO2e que vous émettez{' '}
+              Découvrez la quantité de CO<sub>2</sub>e que vous émettez{' '}
               <Color
                 onClick={() => {
                   track('Transport distance', 'Hypothèses', 'transport_distance_hypotheses')

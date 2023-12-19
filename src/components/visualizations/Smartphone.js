@@ -98,19 +98,25 @@ export default function Smartphone() {
           <StyledEmoji small>📱</StyledEmoji>
           <Label>- de 4,5 pouces</Label>
           <Number>22</Number>
-          <Unit>kg CO2e</Unit>
+          <Unit>
+            kg CO<sub>2</sub>e
+          </Unit>
         </Size>
         <Size>
           <StyledEmoji>📱</StyledEmoji>
           <Label>5 pouces</Label>
           <Number>26</Number>
-          <Unit>kg CO2e</Unit>
+          <Unit>
+            kg CO<sub>2</sub>e
+          </Unit>
         </Size>
         <Size $large>
           <StyledEmoji $large>📱</StyledEmoji>
           <Label>+ de 5,5 pouces</Label>
           <Number>31</Number>
-          <Unit>kg CO2e</Unit>
+          <Unit>
+            kg CO<sub>2</sub>e
+          </Unit>
         </Size>
       </Sizes>
     </>

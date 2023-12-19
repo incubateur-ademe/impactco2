@@ -52,7 +52,13 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
         iframe={iframe}
         params={{ m2: value.toString() }}
         takeScreenshot={takeScreenshot}>
-        <Simulator text='Indiquer la surface à chauffer pour découvrir la quantité de CO2e émise par mode de chauffage pour cette surface par année.'>
+        <Simulator
+          text={
+            <>
+              Indiquer la surface à chauffer pour découvrir la quantité de CO<sub>2</sub>e émise par mode de chauffage
+              pour cette surface par année.
+            </>
+          }>
           <SliderWithInput value={value} setValue={setValue} unit='m2' digit={3} tracking='Chauffage' />
         </Simulator>
         <BarChart equivalents={equivalentsOfCategory} category={category} />

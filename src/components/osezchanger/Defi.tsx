@@ -62,14 +62,23 @@ const Defi = ({ setOverScreen }: { setOverScreen: Dispatch<SetStateAction<OverSc
         }
         value={newValue}
         setValue={setNewValue}
-        tag={newValue ? `+${(newValue * shoesImpact).toLocaleString('fr-FR')}kg CO2e` : false}
+        tag={
+          newValue ? (
+            <>
+              {`+${(newValue * shoesImpact).toLocaleString('fr-FR')}`}kg CO
+              <sub>2</sub>e
+            </>
+          ) : (
+            false
+          )
+        }
         customBorderRadius={!!newValue}>
         <Result>
           <NonEmptyResult $visible={!!newValue}>
             <ResultValue data-testid='defi-result-title'>
               {(newValue || 0).toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue || 0)}{' '}
               (+
-              {((newValue || 0) * shoesImpact).toLocaleString('fr-FR')}kg de CO2e)
+              {((newValue || 0) * shoesImpact).toLocaleString('fr-FR')}kg de CO<sub>2</sub>e)
             </ResultValue>
             <ResultDescription>C’est autant d’émissions que pour fabriquer ou consommer...</ResultDescription>
             <Equivalents>

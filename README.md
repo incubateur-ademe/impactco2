@@ -1,6 +1,6 @@
 # Impact CO2
 
-Application web sous Next.js permettant de comparer la consommation en CO2e de divers équivalents.
+Application web sous Next.js permettant de comparer la consommation en CO<sub>2</sub>e de divers équivalents.
 
 [https://impactco2.fr](https://impactco2.fr/)
 

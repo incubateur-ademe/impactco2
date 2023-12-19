@@ -19,8 +19,9 @@ export default function Transport() {
       <h3>Trainées de condensation</h3>
       <p>
         Du fait que les avions volent à haute altitude, la combustion du kérosène crée des traînées et perturbe les
-        cycles d’autres gaz à effet de serre que le CO2 (vapeur d'eau, eau condensée sous diverses formes, NOx et
-        méthane qui, ensemble, produisent de l'ozone, etc.). Cet impact est appelé forçage radiatif additionnel. Dans l'
+        cycles d’autres gaz à effet de serre que le CO<sub>2</sub> (vapeur d'eau, eau condensée sous diverses formes,
+        NOx et méthane qui, ensemble, produisent de l'ozone, etc.). Cet impact est appelé forçage radiatif additionnel.
+        Dans l'
         <MagicLink to='https://www.ecologie.gouv.fr/information-ges-des-prestations-transport'>
           Information GES des prestations de transport réglementaire
         </MagicLink>

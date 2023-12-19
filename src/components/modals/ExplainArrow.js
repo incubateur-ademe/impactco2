@@ -13,7 +13,9 @@ export default function ExplainArrow() {
             <div>ex. : si la fabrication d'un</div>
             <div>produit émet</div>
             <div>
-              <strong>1kg de méthane + 1kg de CO2</strong>
+              <strong>
+                1kg de méthane + 1kg de CO<sub>2</sub>
+              </strong>
             </div>
           </Subexplain>
         </BlueGridInsider>
