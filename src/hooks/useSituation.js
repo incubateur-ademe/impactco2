@@ -24,10 +24,10 @@ export default function useSituation(engine, defaultSituation) {
     'email . transmission . émetteur . réseau': `'fixe FR'`,
     'streaming . durée': 420,
     'streaming . appareil': `'TV'`,
-    'streaming . qualité': `'SD'`,
+    'streaming . qualité': `'HD'`,
     'streaming . transmission . réseau': `'fixe FR'`,
     'visio . appareil': `'ordinateur portable'`,
-    'visio . qualité': `'audio'`,
+    'visio . qualité': `'SD'`,
     'visio . durée': 180,
     'visio . transmission . réseau': `'fixe FR'`,
     'visio . emplacements': 1,
@@ -36,7 +36,7 @@ export default function useSituation(engine, defaultSituation) {
   if (!already(situation.current, localSituation)) {
     const newSituation = { ...usageNumerique, ...localSituation }
     if (localSituation) {
-      setUsageNumerique({ ...usageNumerique, ...localSituation })
+      setUsageNumerique(newSituation)
     }
     situation.current = newSituation
     engine && engine.setSituation(newSituation)
