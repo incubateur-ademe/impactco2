@@ -2,7 +2,9 @@
   {
     "name": "Jeans",
     "slug": "jeans",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👖",
     "category": 5,
     "ecv": [
@@ -32,14 +34,16 @@
     "tile": true,
     "meta": {
       "title": "Jeans",
-      "description": "Découvrez la quantité de CO₂e émis pour fabriquer et distribuer votre jean grâce à Impact CO2."
+      "description": "Découvrez la quantité de CO₂e émis pour fabriquer et distribuer votre jean grâce à Impact CO₂."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "name": "Polo[s]",
     "slug": "polo",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👚",
     "category": 5,
     "ecv": [
@@ -77,7 +81,9 @@
     "name": "T-shirt[s]",
     "subtitle": "En coton",
     "slug": "tshirtencoton",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👕",
     "category": 5,
     "ecv": [
@@ -107,7 +113,7 @@
     "tile": true,
     "meta": {
       "title": "T-shirt",
-      "description": "Quelle est l'empreinte carbone pour la fabrication d'un T-shirt en coton ? Maintenant grâce à Impact CO2, vous allez pouvoir le savoir !"
+      "description": "Quelle est l'empreinte carbone pour la fabrication d'un T-shirt en coton ? Maintenant grâce à Impact CO₂, vous allez pouvoir le savoir !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -115,7 +121,9 @@
     "name": "T-shirt[s]",
     "subtitle": "En polyester",
     "slug": "tshirtenpolyester",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👕",
     "category": 5,
     "ecv": [
@@ -153,7 +161,9 @@
     "name": "Sweat[s]",
     "subtitle": "En coton",
     "slug": "sweatencoton",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🦺",
     "category": 5,
     "ecv": [
@@ -191,7 +201,9 @@
     "name": "Chemise[s]",
     "subtitle": "En coton",
     "slug": "chemiseencoton",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👚",
     "category": 5,
     "ecv": [
@@ -221,7 +233,7 @@
     "tile": false,
     "meta": {
       "title": "Chemises en coton",
-      "description": "Impact CO2 mesure l'empreinte carbone de votre chemise en coton et de tous types de vêtements !"
+      "description": "Impact CO₂ mesure l'empreinte carbone de votre chemise en coton et de tous types de vêtements !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -229,7 +241,9 @@
     "name": "Chemise[s]",
     "subtitle": "En viscose",
     "slug": "chemiseenviscose",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👚",
     "category": 5,
     "ecv": [
@@ -259,7 +273,7 @@
     "tile": false,
     "meta": {
       "title": "Chemises en viscose",
-      "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre chemise ? Impact CO2 vous dit tout !"
+      "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre chemise ? Impact CO₂ vous dit tout !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -267,7 +281,9 @@
     "name": "Paire[s] de chaussures",
     "subtitle": "En cuir",
     "slug": "chaussuresencuir",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👞",
     "category": 5,
     "ecv": [
@@ -297,7 +313,7 @@
     "tile": false,
     "meta": {
       "title": "Paire de chaussures",
-      "description": "Saviez-vous que vos chaussures en cuir ont un impact écologique ? Impact CO2 vous indique l'empreinte carbone de celles-ci"
+      "description": "Saviez-vous que vos chaussures en cuir ont un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de celles-ci"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -305,7 +321,9 @@
     "name": "Paire[s] de chaussures",
     "subtitle": "En tissu",
     "slug": "chaussuresentissu",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🥾",
     "category": 5,
     "ecv": [
@@ -343,7 +361,9 @@
     "name": "Paire[s] de chaussures",
     "subtitle": "De sport",
     "slug": "chaussuresdesport",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👟",
     "category": 5,
     "ecv": [
@@ -381,7 +401,9 @@
     "name": "Robe[s]",
     "subtitle": "En coton",
     "slug": "robeencoton",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👗",
     "category": 5,
     "ecv": [
@@ -411,7 +433,7 @@
     "tile": false,
     "meta": {
       "title": "Robe en coton",
-      "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en coton grâce à Impact CO2."
+      "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en coton grâce à Impact CO₂."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -419,7 +441,9 @@
     "name": "Robe[s]",
     "subtitle": "En polyester",
     "slug": "robeenpolyester",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👗",
     "category": 5,
     "ecv": [
@@ -449,7 +473,7 @@
     "tile": false,
     "meta": {
       "title": "Robe en polyester",
-      "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en polyester grâce à Impact CO2."
+      "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en polyester grâce à Impact CO₂."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -457,7 +481,9 @@
     "name": "Robe[s]",
     "subtitle": "En viscose",
     "slug": "robeenviscose",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👗",
     "category": 5,
     "ecv": [
@@ -495,7 +521,9 @@
     "name": "Pull[s]",
     "subtitle": "En laine",
     "slug": "pullenlaine",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
@@ -523,14 +551,19 @@
     "end": 1.27881830769189,
     "default": true,
     "tile": false,
-    "meta": { "title": "Pull en laine", "description": "" },
+    "meta": {
+      "title": "Pull en laine",
+      "description": ""
+    },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "name": "Pull[s]",
     "subtitle": "En acrylique",
     "slug": "pullenacrylique",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
@@ -568,7 +601,9 @@
     "name": "Pull[s]",
     "subtitle": "En coton recyclé",
     "slug": "pullencotonrecycle",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
@@ -605,7 +640,9 @@
   {
     "name": "Manteau[s]",
     "slug": "manteau",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧥",
     "category": 5,
     "ecv": [
@@ -642,7 +679,10 @@
   {
     "name": "Veste[s] imperméable[s]",
     "slug": "vesteimpermeable",
-    "synonyms": ["k-way", "anorak"],
+    "synonyms": [
+      "k-way",
+      "anorak"
+    ],
     "emoji": "🧥",
     "category": 5,
     "ecv": [
@@ -679,7 +719,9 @@
   {
     "name": "Veste[s] simili-cuir",
     "slug": "vestesimilicuir",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧥",
     "category": 5,
     "ecv": [

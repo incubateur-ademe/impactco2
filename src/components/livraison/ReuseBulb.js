@@ -39,7 +39,7 @@ export default function ReuseBulb() {
             color={'black'}
             href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
             title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
-            kit de diffusion Impact CO2
+            kit de diffusion Impact CO<sub>2</sub>
           </OutboundLink>{' '}
           pour vous emparer facilement du simulateur et l’intégrer à votre publication.
         </p>
@@ -64,7 +64,8 @@ export default function ReuseBulb() {
           </GoFurtherFirstParagraph>
           <GoFurtherSecondParagraph>
             Pour réutiliser <BlackMagicLink to='https://github.com/incubateur-ademe/impactco2/'>le code</BlackMagicLink>{' '}
-            du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (<i>open source</i>).
+            du simulateur, consultez le code du site Impact CO<sub>2</sub>, développé de manière ouverte (
+            <i>open source</i>).
           </GoFurtherSecondParagraph>
         </details>
       </GoFurther>

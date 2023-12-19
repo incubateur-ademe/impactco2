@@ -7,7 +7,7 @@ export default function Seo(props) {
   const router = useRouter()
 
   const { title, description, image, url } = {
-    title: `${props.title || `Impact sur le climat des objets et gestes`} | Impact CO2`,
+    title: `${props.title || `Impact sur le climat des objets et gestes`} | Impact CO₂`,
     description:
       props.description ||
       `Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME.`,

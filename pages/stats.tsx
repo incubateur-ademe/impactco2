@@ -24,7 +24,7 @@ export default function Statistiques() {
             <h2>Information</h2>
             <p>
               <OutboundLink href='https://stats.data.gouv.fr/index.php?module=CoreHome&action=index&date=yesterday&period=week&idSite=156#?idSite=156&period=week&date=yesterday&category=Dashboard_Dashboard&subcategory=6'>
-                Découvrez les statistiques du site Impact CO2 sur le tableau de bord de notre outil de suivi Matomo
+                Découvrez les statistiques du site Impact CO<sub>2</sub> sur le tableau de bord de notre outil de suivi Matomo
               </OutboundLink>
             </p>
           </FormatText>

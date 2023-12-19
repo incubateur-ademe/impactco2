@@ -53,18 +53,18 @@ export default function Accessibilite() {
             </ul>
 
             <p>
-              La présente déclaration d’accessibilité s’applique au site impact CO2 ({process.env.NEXT_PUBLIC_URL}) dont
-              toute l’équipe de conception et de développement est impliquée dans une approche globale de
-              l’accessibilité en attendant l’accompagnement par des experts tiers dans le cadre d’un futur audit du
-              site.
+              La présente déclaration d’accessibilité s’applique au site impact CO<sub>2</sub> (
+              {process.env.NEXT_PUBLIC_URL}) dont toute l’équipe de conception et de développement est impliquée dans
+              une approche globale de l’accessibilité en attendant l’accompagnement par des experts tiers dans le cadre
+              d’un futur audit du site.
             </p>
 
             <h2 id='état-de-conformité'>État de conformité</h2>
 
             <p>
-              Le site Impact CO2 est non conforme avec le Référentiel général d’amélioration de l’accessibilité, RGAA
-              version 4.1, car il n’existe aucun résultat d’audit en cours de validité permettant de mesurer le respect
-              de ces critères.
+              Le site Impact CO<sub>2</sub> est non conforme avec le Référentiel général d’amélioration de
+              l’accessibilité, RGAA version 4.1, car il n’existe aucun résultat d’audit en cours de validité permettant
+              de mesurer le respect de ces critères.
             </p>
 
             <h2 id='résultats-des-tests'>Résultats des tests</h2>
