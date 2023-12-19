@@ -123,8 +123,8 @@ export default function Accessibilite() {
 
             <p>
               L’ADEME invite les personnes qui rencontreraient des difficultés à la contacter par courriel à{' '}
-              <a href={`mailto:${process.env.CONTACT_EMAIL}`} target='_blank' rel='noreferrer noopener'>
-                {process.env.CONTACT_EMAIL}
+              <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} target='_blank' rel='noreferrer noopener'>
+                {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
               </a>{' '}
               afin qu’une assistance puisse être apportée (alternative accessible, information et contenu donnés sous
               une autre forme).
