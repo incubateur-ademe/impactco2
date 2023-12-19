@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { useSessionStorage } from './useSessionStorage'
 
 // Check if all key/values pair of b
 // already inside object a
@@ -18,20 +19,34 @@ export default function useSituation(engine, defaultSituation) {
   const currentSituation = useRef(null)
   const prevSituation = useRef(null)
 
+  const [usageNumerique, setUsageNumerique] = useSessionStorage('usageNumerique', {
+    'email . appareil': `'smartphone'`,
+    'email . taille': 0.075,
+    'email . transmission . émetteur . réseau': `'fixe FR'`,
+    'streaming . durée': 420,
+    'streaming . appareil': `'TV'`,
+    'streaming . qualité': `'SD'`,
+    'streaming . transmission . réseau': `'fixe FR'`,
+    'visio . appareil': `'ordinateur portable'`,
+    'visio . qualité': `'audio'`,
+    'visio . durée': 180,
+    'visio . transmission . réseau': `'fixe FR'`,
+    'visio . emplacements': 1,
+  })
+
   if (!already(currentSituation.current, localSituation)) {
     prevSituation.current = currentSituation.current
     const newSituation = { ...currentSituation.current, ...localSituation }
+    if (localSituation) {
+      setUsageNumerique({ ...usageNumerique, ...localSituation })
+    }
     currentSituation.current = newSituation
     engine && engine.setSituation(newSituation)
   }
 
-  console.log('prevSituation.current:', prevSituation.current)
-  console.log('currentSituation.current:', currentSituation.current['email . appareil'])
-  console.log('localSituation:', localSituation ? localSituation['email . appareil'] : null)
-  console.log('------------------------')
   return {
     prevSituation: prevSituation.current,
-    currentSituation: currentSituation.current,
+    situation: currentSituation.current,
     setSituation: setLocalSituation,
   }
 }
