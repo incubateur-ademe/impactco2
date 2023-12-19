@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Category } from 'types/category'
+import { Equivalent } from 'types/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import getFrenchFormattedNumber from 'utils/getFrenchFormattedNumber'
@@ -55,8 +57,8 @@ const StyledEmoji = styled(Emoji)`
     width: 3.25rem;
   }
 `
-export default function Value(props) {
-  let numberToDisplay = computeECV(props.equivalent)
+export default function Value({ equivalent, category }: { equivalent: Equivalent; category: Category }) {
+  const numberToDisplay = computeECV(equivalent)
   return (
     <Wrapper>
       <Section $withoutPadding $theme='main'>
@@ -69,14 +71,11 @@ export default function Value(props) {
                   : getFrenchFormattedNumber(getNumberWithNDigitsAfterComma(numberToDisplay, 2))}
               </Number>{' '}
               <Unit>
-                kg <Big>CO2</Big>e{' '}
-                {(props.equivalent.unit || props.category.unit) && (
-                  <>/ {props.equivalent.unit || props.category.unit}</>
-                )}
+                kg <Big>CO2</Big>e {(equivalent.unit || category.unit) && <>/ {equivalent.unit || category.unit}</>}
               </Unit>
             </div>
           </Top>
-          <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
+          <StyledEmoji>{equivalent.emoji}</StyledEmoji>
         </SectionWideContent>
       </Section>
     </Wrapper>

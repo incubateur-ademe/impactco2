@@ -58,7 +58,13 @@ const visualizations: Record<string, ReactNode[]> = {
   bus: [<Visualization types={['voiturethermique', 'busthermique', 'tgv']} key='Voiture' />],
   tgv: [<Visualization types={['voiturethermique', 'busthermique', 'tgv']} key='Voiture' />],
   metro: [<Visualization types={['voiturethermique', 'busthermique', 'metro']} key='Metro' />],
-  avion: [<Visualization key='avion' types={['avion', 'busthermique', 'tgv']} />],
+  avioncourtcourrier: [
+    <Visualization key='avioncourtcourrier' types={['avioncourtcourrier', 'busthermique', 'tgv']} />,
+  ],
+  avionmoyencourrier: [
+    <Visualization key='avionmoyencourrier' types={['avionmoyencourrier', 'busthermique', 'tgv']} />,
+  ],
+  avionlongcourrier: [<Visualization key='avionlongcourrier' types={['avionlongcourrier', 'busthermique', 'tgv']} />],
   tshirtencoton: [
     <Visualization types={['smartphone', 'repasavecduboeuf', 'tshirtencoton']} key='SmartphoneGeneral' />,
   ],

@@ -12,7 +12,7 @@ import TransportContext from 'components/transport/TransportProvider'
 
 // C'est un peu austère, déso
 export default function useTransportations(tracking: string, itineraries?: Record<DeplacementType, number>) {
-  const { equivalents, categories } = useContext(DataContext)
+  const { equivalents } = useContext(DataContext)
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore: TODO
@@ -45,23 +45,13 @@ export default function useTransportations(tracking: string, itineraries?: Recor
             .map((equivalent) => ({
               ...equivalent,
               title: formatName(equivalent.name, 1, true),
-              subtitle: formatName(
-                equivalent?.ecvs
-                  ? `(${equivalent?.ecvs?.find((ecv) =>
-                      ecv.max
-                        ? ecv.max >
-                          (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)
-                        : true
-                    )?.subtitle})`
-                  : ((displayAll || equivalent.name === 'Voiture') && equivalent.subtitle
-                      ? `(${equivalent.subtitle})`
-                      : '') +
-                      (itineraries
-                        ? ` - ${formatNumber(
-                            itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
-                          )} km`
-                        : '')
-              ),
+              subtitle:
+                formatName(equivalent.subtitle ? `(${equivalent.subtitle})` : '') +
+                (itineraries
+                  ? ` - ${formatNumber(
+                      itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                    )} km`
+                  : ''),
               component: equivalent.carpool && <Carpool />,
               value:
                 (computeECV(equivalent) *
@@ -74,7 +64,7 @@ export default function useTransportations(tracking: string, itineraries?: Recor
               onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
             }))
         : [],
-    [categories, equivalents, km, displayAll, carpool, itineraries, tracking]
+    [equivalents, km, displayAll, carpool, itineraries, tracking]
   )
 
   return transportations

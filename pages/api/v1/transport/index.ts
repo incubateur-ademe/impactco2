@@ -31,12 +31,7 @@ export const computeTransportEmission = (
     // Calculate emissions
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
-      if ('ecvs' in transportation && transportation.ecvs) {
-        const currentECV = transportation.ecvs.find((value) => (value.max ? value.max >= km : true))
-        if (currentECV) {
-          values = currentECV.ecv
-        }
-      } else if (transportation.ecv) {
+      if (transportation.ecv) {
         values = transportation.ecv
       }
 
@@ -118,7 +113,6 @@ type TransportEmissionV1 = {
  *         type: string
  *       description: |-
  *         Liste des id de transport à retourner, séparés par des ','
- *         - 1: Avion
  *         - 2: TGV
  *         - 3: Intercités
  *         - 4: Voiture (Moteur thermique)
@@ -135,6 +129,9 @@ type TransportEmissionV1 = {
  *         - 15: TER
  *         - 16: Bus (Moteur électrique)
  *         - 21: Bus (GNV)
+ *         - 31: Avion (court courrier)
+ *         - 32: Avion (moyen courrier)
+ *         - 33: Avion (long courrier)
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0

@@ -25,7 +25,7 @@ const Tab = styled(MagicLink)`
   }
 
   ${(props) => props.theme.mq.small} {
-    display: ${(props) => (props.large ? 'none' : 'flex')};
+    display: ${(props) => (props.$large ? 'none' : 'flex')};
     font-size: 0.875rem;
     margin-bottom: -1.25rem;
     padding: 0.25rem 0 1.25rem;
@@ -52,7 +52,7 @@ export default function ModeSelector(props) {
         current={props.teletravail}
         to={(props.iframe ? '/iframes' : '') + '/transport/teletravail'}
         title={`Télétravail${router.asPath.split() === '/teletravail' ? ' : page actuelle' : ''}`}
-        large>
+        $large>
         Télétravail
       </Tab>
     </Wrapper>

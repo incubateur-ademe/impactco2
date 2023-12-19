@@ -23,7 +23,6 @@ export default function Address(props) {
         placeholder={props.placeholder}
         address={props.address}
         setAddress={(address) => {
-          console.log(address.properties)
           props.setPlace({
             latitude: address.geometry.coordinates[1],
             longitude: address.geometry.coordinates[0],
