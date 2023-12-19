@@ -36,7 +36,7 @@ export default function useSituation(engine, defaultSituation) {
   if (!already(situation.current, localSituation)) {
     const newSituation = { ...usageNumerique, ...localSituation }
     if (localSituation) {
-      setUsageNumerique(newSituation)
+      setUsageNumerique({ ...usageNumerique, ...localSituation })
     }
     situation.current = newSituation
     engine && engine.setSituation(newSituation)
