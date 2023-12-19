@@ -13,6 +13,24 @@
     "meta": {
       "title": "Chauffage au gaz",
       "description": "Découvrez à quoi correspond une année de chauffage au gaz par m2 en kgCO₂e émis (CO₂e)"
+    },
+    "data": {
+      "values": [
+        {
+          "title": "Intensité carbone",
+          "value": "0,213 kg CO2e /kWh PCS *"
+        },
+        {
+          "title": "Consommation par m2",
+          "value": "126,83 kWh/m2",
+          "withSource": true
+        },
+        {
+          "title": "Empreinte carbone par m2",
+          "value": "126,83 kWh/m2 × 0,22 kgCO2e/kWh = 28,03 kgCO2e/m2"
+        }
+      ],
+      "hypothesis": "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation."
     }
   },
   {
@@ -29,6 +47,24 @@
     "meta": {
       "title": "Chauffage au fioul",
       "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul par m2"
+    },
+    "data": {
+      "values": [
+        {
+          "title": "Intensité carbone",
+          "value": "0,32 kgCO2e/kWh"
+        },
+        {
+          "title": "Consommation par m2",
+          "value": "106,84 kWh/m2",
+          "withSource": true
+        },
+        {
+          "title": "Empreinte carbone par m2",
+          "value": "106,84 kWh/m2 × 0,32 kgCO2e/kWh = 34,62 kgCO2e/m2"
+        }
+      ],
+      "hypothesis": "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation."
     }
   },
   {
@@ -45,6 +81,23 @@
     "meta": {
       "title": "Chauffage électrique",
       "description": "Découvrez à quoi correspond une année de chauffage électrique par m2 en kgCO₂e émis (CO₂e)"
+    },
+    "data": {
+      "values": [
+        {
+          "title": "Intensité carbone",
+          "value": "0,052 kgCO2e/kWh (2022)"
+        },
+        {
+          "title": "Consommation par m2",
+          "value": "75,06 kWh/m2 ",
+          "withSource": true
+        },
+        {
+          "title": "Empreinte carbone par m2",
+          "value": "455,95 kWh/m2 × 0,013 kgCO2e/kWh = 5,15 kgCO2e/m2"
+        }
+      ]
     }
   },
   {
@@ -61,6 +114,9 @@
     "meta": {
       "title": "Pompe à chaleur",
       "description": "Découvrez à quoi correspond une année de chauffage avec une pompe à chaleur par m2 en kgCO₂e émis (CO₂e)"
+    },
+    "data": {
+      "values": "La plupart des pompes à chaleur fonctionnent aujourd’hui en grande partie avec de l’électricité. Pour une première version nous reprenons les mêmes hypothèses que pour le calcul de l’electricité."
     }
   },
   {
@@ -77,6 +133,24 @@
     "meta": {
       "title": "Poêle à granulé",
       "description": "Découvrez à quoi correspond une année de chauffage avec un poêle à granulé par m2 en kgCO₂e émis (CO₂e)"
+    },
+    "data": {
+      "values": [
+        {
+          "title": "Intensité carbone",
+          "value": "0,013 kg CO2e/kWh PCI *"
+        },
+        {
+          "title": "Consommation par m2",
+          "value": "455,95 kWh/m2",
+          "withSource": true
+        },
+        {
+          "title": "Empreinte carbone par m2",
+          "value": "455,95 kWh/m2 × 0,013 kgCO2e/kWh = 5,15 kgCO2e/m2"
+        }
+      ],
+      "hypothesis": "* PCI = Pouvoir calorifique inférieur"
     }
   },
   {
@@ -93,6 +167,24 @@
     "meta": {
       "title": "Poêle à bois",
       "description": "Découvrez à quoi correspond une année de chauffage avec un poêle à bois par m2 en kgCO₂e émis (CO₂e)"
+    },
+    "data": {
+      "values": [
+        {
+          "title": "Intensité carbone",
+          "value": "0,046 kg CO2e/kWh"
+        },
+        {
+          "title": "Consommation par m2",
+          "value": "455,95 kWh/m2",
+          "withSource": true
+        },
+        {
+          "title": "Empreinte carbone par m2",
+          "value": "455,95 kWh/m2 × 0,046 kgCO2e/kWh = 20,97 kgCO2e/m2"
+        }
+      ],
+      "hypothesis": "Attention : les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des règles de calcul de la Base Carbone. Il est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en compte les émissions de méthane imbrulé."
     }
   },
   {
@@ -109,6 +201,28 @@
     "meta": {
       "title": "Réseau de chaleur",
       "description": "Découvrez à quoi correspond une année de chauffage via un réseau de chaleur par m2 en kgCO₂e émis (CO₂e)"
+    },
+    "data": {
+      "values": [
+        {
+          "title": "Intensité carbone",
+          "value": "0,112 kg CO2e/kWh",
+          "withSource": {
+            "label": "Étude Fedene 2023",
+            "href": "https://www.fedene.fr/wp-content/uploads/sites/2/2023/11/Fedene_enquete_version-numerique.pdf"
+          }
+        },
+        {
+          "title": "Consommation par m2",
+          "value": "167,93 kWh/m2",
+          "withSource": true
+        },
+        {
+          "title": "Empreinte carbone par m2",
+          "value": "167,93 kWh/m2 × 0,112 kgCO2e/kWh = 18,80 kgCO2e/m2"
+        }
+      ],
+      "hypothesis": "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation."
     }
   }
 ]
