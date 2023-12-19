@@ -13,19 +13,27 @@ function already(a, b) {
   }
 }
 
+function getEngineName(anySituation) {
+  if (anySituation && anySituation['email . appareil']) {
+    return 'usageNumerique'
+  } else {
+    return 'livraison'
+  }
+}
+
 export default function useSituation(engine, defaultSituation) {
-  const [bla, setBla] = useSessionStorage('usageNumerique', defaultSituation)
-  const [localSituation, setLocalSituation] = useState(bla)
+  const [retention, setRetention] = useSessionStorage(getEngineName(defaultSituation), defaultSituation)
+  const [localSituation, setLocalSituation] = useState(retention)
 
   const prevSituation = useRef(null)
 
   if (!already(prevSituation.current, localSituation)) {
-    console.log('localSituation:', localSituation)
     const newSituation = { ...prevSituation.current, ...localSituation }
-    console.log('newSituation:', newSituation)
     prevSituation.current = newSituation
-    engine && engine.setSituation(newSituation)
-    if (typeof window !== 'undefined') setBla(newSituation)
+    if (engine && typeof window !== 'undefined') {
+      engine.setSituation(newSituation)
+      setRetention(newSituation)
+    }
   }
 
   return {
