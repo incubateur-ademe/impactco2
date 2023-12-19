@@ -16,8 +16,7 @@ function already(a, b) {
 export default function useSituation(engine, defaultSituation) {
   const [localSituation, setLocalSituation] = useState(defaultSituation)
 
-  const currentSituation = useRef(null)
-  const prevSituation = useRef(null)
+  const situation = useRef(null)
 
   const [usageNumerique, setUsageNumerique] = useSessionStorage('usageNumerique', {
     'email . appareil': `'smartphone'`,
@@ -34,19 +33,17 @@ export default function useSituation(engine, defaultSituation) {
     'visio . emplacements': 1,
   })
 
-  if (!already(currentSituation.current, localSituation)) {
-    prevSituation.current = currentSituation.current
-    const newSituation = { ...currentSituation.current, ...localSituation }
+  if (!already(situation.current, localSituation)) {
+    const newSituation = { ...usageNumerique, ...localSituation }
     if (localSituation) {
-      setUsageNumerique({ ...usageNumerique, ...localSituation })
+      setUsageNumerique(newSituation)
     }
-    currentSituation.current = newSituation
+    situation.current = newSituation
     engine && engine.setSituation(newSituation)
   }
 
   return {
-    prevSituation: prevSituation.current,
-    situation: currentSituation.current,
+    situation: situation.current,
     setSituation: setLocalSituation,
   }
 }
