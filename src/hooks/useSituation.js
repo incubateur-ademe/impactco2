@@ -13,16 +13,8 @@ function already(a, b) {
   }
 }
 
-function getEngineName(anySituation) {
-  if (anySituation && anySituation['email . appareil']) {
-    return 'usageNumerique'
-  } else {
-    return 'livraison'
-  }
-}
-
-export default function useSituation(engine, defaultSituation) {
-  const [retention, setRetention] = useSessionStorage(getEngineName(defaultSituation), defaultSituation)
+export default function useSituation(engine, engineName, defaultSituation) {
+  const [retention, setRetention] = useSessionStorage(engineName, defaultSituation)
   const [localSituation, setLocalSituation] = useState(retention)
 
   const prevSituation = useRef(null)

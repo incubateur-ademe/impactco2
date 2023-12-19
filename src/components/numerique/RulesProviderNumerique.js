@@ -9,7 +9,7 @@ export function RulesProviderNumerique(props) {
   // @Clemog: We make unit errors silent.
   const engine = useMemo(() => new Engine(rules, { logger: { log: () => {}, warn: () => {}, err: () => {} } }), [])
 
-  const { prevSituation, situation, setSituation } = useSituation(engine, {
+  const { situation, setSituation } = useSituation(engine, 'usageNumerique', {
     'email . appareil': `'smartphone'`,
     'email . taille': 0.075,
     'email . transmission . émetteur . réseau': `'fixe FR'`,
@@ -28,7 +28,6 @@ export function RulesProviderNumerique(props) {
     <RulesContextNumerique.Provider
       value={{
         engine,
-        prevSituation,
         situation,
         setSituation,
       }}>
