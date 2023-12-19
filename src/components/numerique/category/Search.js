@@ -1,9 +1,9 @@
 import { diff } from 'deep-object-diff'
 import { useContext, useEffect, useState } from 'react'
-import { useSessionStorage } from 'usehooks-ts'
 import { track } from 'utils/matomo'
 import slugify from 'utils/slugify'
 import usePrevious from 'hooks/usePrevious.ts'
+import { useSessionStorage } from 'hooks/useSessionStorage'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
 
