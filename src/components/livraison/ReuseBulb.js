@@ -60,7 +60,11 @@ export default function ReuseBulb() {
           </summary>
           <GoFurtherFirstParagraph>
             Pour réutiliser les données brutes ou obtenir de l’aide pour intégrer ce simulateur, contactez-nous par mail
-            à <BlackMagicLink to={`mailto:${process.env.CONTACT_EMAIL}`}>{process.env.CONTACT_EMAIL}</BlackMagicLink>.
+            à{' '}
+            <BlackMagicLink to={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>
+              {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
+            </BlackMagicLink>
+            .
           </GoFurtherFirstParagraph>
           <GoFurtherSecondParagraph>
             Pour réutiliser <BlackMagicLink to='https://github.com/incubateur-ademe/impactco2/'>le code</BlackMagicLink>{' '}

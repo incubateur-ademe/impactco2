@@ -36,7 +36,7 @@ const Usage = () => {
         {open && (
           <BoxContent>
             Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe à{' '}
-            <Link href='mailto:impactco2@ademe.fr'>impactco2@ademe.fr</Link>.
+            <Link href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>impactco2@ademe.fr</Link>.
             <br />
             <br />
             Pour réutiliser{' '}
