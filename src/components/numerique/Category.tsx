@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Category as CategoryType } from 'types/category'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Description from 'components/misc/category/Description'
@@ -6,9 +6,10 @@ import Wrapper from 'components/misc/category/Wrapper'
 import Hypothèses from './category/Hypothèses'
 import Result from './category/Result'
 import Search from './category/Search'
+import { useSessionStorage } from './useSessionStorage'
 
 export default function Category({ category }: { category: CategoryType }) {
-  const [numberEmails, setNumberEmails] = useState(50)
+  const [numberEmails, setNumberEmails] = useSessionStorage('numberEmails', 50)
 
   return (
     <Section $withoutPadding>
