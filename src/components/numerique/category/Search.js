@@ -4,9 +4,11 @@ import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
 
 export default function Search(props) {
-  const { engine, setSituation } = useContext(RulesContextNumerique)
+  const { engine, setSituation, prevSituation } = useContext(RulesContextNumerique)
+  // console.log('prevSituation:', prevSituation)
 
   useEffect(() => {
+    console.log('entering useEffect-------------------------')
     setSituation({
       ['streaming . durée']: 420,
       ['visio . durée']: 180,
@@ -16,7 +18,7 @@ export default function Search(props) {
       ['visio . appareil']: `'ordinateur portable'`,
       ['visio . emplacements']: 1,
     })
-  }, [])
+  }, [prevSituation])
 
   const [display, setDisplay] = useState(null)
 
