@@ -11,7 +11,7 @@ test('Chauffage page', async ({ page }) => {
   await test.step('Page is loaded with values for 63m²', async () => {
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('63 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('246')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('175')
   })
 
   await test.step('Values are updated with button', async () => {
@@ -19,7 +19,7 @@ test('Chauffage page', async ({ page }) => {
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('100 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('390')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('278')
   })
 
   await test.step('Values are updated with manual entry', async () => {
@@ -29,6 +29,6 @@ test('Chauffage page', async ({ page }) => {
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('200 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('780')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('526')
   })
 })

@@ -27,7 +27,7 @@ const Data = () => {
             <Values $withBorder={index !== equivalent.data.values.length - 1} key={equivalent.slug + value.title}>
               <div>
                 {value.title}
-                {value.withSource && (
+                {'withSource' in value && value.withSource && (
                   <span>
                     {' '}
                     •{' '}

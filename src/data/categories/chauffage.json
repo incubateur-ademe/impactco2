@@ -9,7 +9,7 @@
     "total": 35.26,
     "default": true,
     "tile": false,
-    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-gaz-par-m²",
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-gaz-par-m2",
     "meta": {
       "title": "Chauffage au gaz",
       "description": "Découvrez à quoi correspond une année de chauffage au gaz par m² en kgCO₂e émis (CO₂e)"
@@ -43,7 +43,7 @@
     "total": 42.97,
     "default": true,
     "tile": false,
-    "source": " https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-fioul-par-m²",
+    "source": " https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-fioul-par-m2",
     "meta": {
       "title": "Chauffage au fioul",
       "description": "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul par m²"
@@ -74,10 +74,9 @@
     "slug": "chauffageelectrique",
     "emoji": "⚡️",
     "category": 8,
-    "total": 4.98,
+    "total": 4.79,
     "default": true,
     "tile": false,
-    "source": " https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-%C3%A9lectricit%C3%A9-par-m²",
     "meta": {
       "title": "Chauffage électrique",
       "description": "Découvrez à quoi correspond une année de chauffage électrique par m² en kgCO₂e émis (CO₂e)"
@@ -86,16 +85,15 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,052 kgCO₂e/kWh (2022)"
+          "value": "0,05 kgCO₂e/kWh (2022)"
         },
         {
           "title": "Consommation par m²",
-          "value": "95,78 kWh/m² ",
-          "withSource": true
+          "value": "95,78 kWh/m²"
         },
         {
           "title": "Empreinte carbone par m²",
-          "value": "95,78 kWh/m² × 0,052 kgCO₂e/kWh = 4,98 kgCO₂e/m²"
+          "value": "95,78 kWh/m² × 0,05 kgCO₂e/kWh = 4,79 kgCO₂e/m²"
         }
       ]
     }
@@ -107,10 +105,9 @@
     "slug": "pompeachaleur",
     "emoji": "🌡️",
     "category": 8,
-    "total": 4.28,
+    "total": 4.12,
     "default": true,
     "tile": false,
-    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-%C3%A9lectricit%C3%A9-par-m²",
     "meta": {
       "title": "Pompe à chaleur",
       "description": "Découvrez à quoi correspond une année de chauffage avec une pompe à chaleur par m² en kgCO₂e émis (CO₂e)"
@@ -119,16 +116,15 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,052 kgCO₂e/kWh (2022)"
+          "value": "0,05 kgCO₂e/kWh (2022)"
         },
         {
           "title": "Consommation par m²",
-          "value": "82,38 kWh/m² ",
-          "withSource": true
+          "value": "82,38 kWh/m²"
         },
         {
           "title": "Empreinte carbone par m²",
-          "value": "82,38 kWh/m² × 0,052 kgCO₂e/kWh = 4,28 kgCO₂e/m²"
+          "value": "82,38 kWh/m² × 0,05 kgCO₂e/kWh = 4,12 kgCO₂e/m²"
         }
       ]
     }
@@ -140,10 +136,10 @@
     "slug": "poeleagranule",
     "emoji": "🔥",
     "category": 8,
-    "total": 5.15,
+    "total": 2.78,
     "default": true,
     "tile": false,
-    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-granul%C3%A9s-par-m²",
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-granul%C3%A9s-par-m2",
     "meta": {
       "title": "Poêle à granulé",
       "description": "Découvrez à quoi correspond une année de chauffage avec un poêle à granulé par m² en kgCO₂e émis (CO₂e)"
@@ -156,12 +152,12 @@
         },
         {
           "title": "Consommation par m²",
-          "value": "455,95 kWh/m²",
+          "value": "245,98 kWh/m²",
           "withSource": true
         },
         {
           "title": "Empreinte carbone par m²",
-          "value": "455,95 kWh/m² × 0,0113 kgCO₂e/kWh = 5,15 kgCO₂e/m²"
+          "value": "245,98 kWh/m² × 0,0113 kgCO₂e/kWh = 2,78 kgCO₂e/m²"
         }
       ],
       "hypothesis": "* PCI = Pouvoir calorifique inférieur"
@@ -177,7 +173,7 @@
     "total": 11.32,
     "default": true,
     "tile": false,
-    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-buches-par-m²",
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-buches-par-m2",
     "meta": {
       "title": "Poêle à bois",
       "description": "Découvrez à quoi correspond une année de chauffage avec un poêle à bois par m² en kgCO₂e émis (CO₂e)"
@@ -195,7 +191,7 @@
         },
         {
           "title": "Empreinte carbone par m²",
-          "value": "245,98  kWh/m² × 0,046 kgCO₂e/kWh = 11.32 kgCO₂e/m²"
+          "value": "245,98  kWh/m² × 0,046 kgCO₂e/kWh = 11,32 kgCO₂e/m²"
         }
       ],
       "hypothesis": "Attention : les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des règles de calcul de la Base Carbone. Il est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en compte les émissions de méthane imbrulé."
@@ -211,7 +207,7 @@
     "total": 19.61,
     "default": true,
     "tile": false,
-    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-r%C3%A9seau-de-chaleur-par-m²",
+    "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-r%C3%A9seau-de-chaleur-par-m2",
     "meta": {
       "title": "Réseau de chaleur",
       "description": "Découvrez à quoi correspond une année de chauffage via un réseau de chaleur par m² en kgCO₂e émis (CO₂e)"

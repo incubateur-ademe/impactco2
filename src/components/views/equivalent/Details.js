@@ -65,9 +65,7 @@ export default function Details(props) {
               </Disclaimer>
             </>
           ) : (
-            <>
-              <StyledMagicLink to={props.equivalent.source}>Source</StyledMagicLink>
-            </>
+            <>{props.equivalent.source && <StyledMagicLink to={props.equivalent.source}>Source</StyledMagicLink>}</>
           )}
         </SectionWideContent>
       </Section>
