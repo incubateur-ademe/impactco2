@@ -371,7 +371,7 @@
     "tile": false,
     "meta": {
       "title": "Impact sur le climat d'une liseuse",
-      "description": "Saviez-vous qu'une liseuse avait un impact sur le climat ? Découvrez le poids CO₂e d'une liseuse non rétro-éclairé grâce à Impact CO2"
+      "description": "Saviez-vous qu'une liseuse avait un impact sur le climat ? Découvrez le poids CO₂e d'une liseuse non rétro-éclairé grâce à Impact CO₂"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -484,11 +484,10 @@
     "tile": false,
     "meta": {
       "title": "Ordinateur fixe",
-      "description": "Quel est l'empreinte carbone d'un ordinateur fixe avec écran ? Impact CO2 vous permet de mesurer votre impact sur le climat !"
+      "description": "Quel est l'empreinte carbone d'un ordinateur fixe avec écran ? Impact CO₂ vous permet de mesurer votre impact sur le climat !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
-
   {
     "id": 27013,
     "name": "Montre[s] connectée[s]",
@@ -557,7 +556,10 @@
     "end": -1.22372678556011,
     "default": false,
     "tile": false,
-    "meta": { "title": "", "description": "" },
+    "meta": {
+      "title": "",
+      "description": ""
+    },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
@@ -593,7 +595,7 @@
     "tile": false,
     "meta": {
       "title": "Empreinte carbone d'un home cinema",
-      "description": "Avec Impact CO2, découvrez l'impact sur le climat d'un home cinéma avec son poids en CO₂e comprenant sa fabrication et sa distribution"
+      "description": "Avec Impact CO₂, découvrez l'impact sur le climat d'un home cinéma avec son poids en CO₂e comprenant sa fabrication et sa distribution"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -702,7 +704,7 @@
     "tile": false,
     "meta": {
       "title": "Impact climat d'une enceinte bluetooth",
-      "description": "Découvrez l'impact d'une enceinte bluetooth avec Impact CO2 ainsi que le détail de son empreinte carbone"
+      "description": "Découvrez l'impact d'une enceinte bluetooth avec Impact CO₂ ainsi que le détail de son empreinte carbone"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -890,7 +892,7 @@
     "tile": false,
     "meta": {
       "title": "Imprimante",
-      "description": "Quelles sont les émissions CO₂e d'une imprimante et à quoi correspondent-elles ? Découvrez ces informations avec Impact CO2"
+      "description": "Quelles sont les émissions CO₂e d'une imprimante et à quoi correspondent-elles ? Découvrez ces informations avec Impact CO₂"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }

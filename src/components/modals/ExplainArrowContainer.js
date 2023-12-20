@@ -21,12 +21,19 @@ export default function ExplainArrowContainer() {
         <ExplainEq>
           <div>
             <ActualResult>28</ActualResult>
-            <Units> kg de CO2 </Units>
+            <Units>
+              {' '}
+              kg de CO<sub>2</sub>{' '}
+            </Units>
           </div>
           <div>
             <GreyText>...alors l'impact total de ce</GreyText>
-            <GreyText>produit est de 29 kg de CO2e</GreyText>
-            <GreyText>(équivalent CO2).</GreyText>
+            <GreyText>
+              produit est de 29 kg de CO<sub>2</sub>e
+            </GreyText>
+            <GreyText>
+              (équivalent CO<sub>2</sub>).
+            </GreyText>
           </div>
         </ExplainEq>
       </ExplainEqContainer>

@@ -7,7 +7,7 @@ test('Le titre', async ({ page }) => {
     await page.goto('/')
   })
   await test.step("L'onglet s'affiche avec un titre correct", async () => {
-    await expect(page).toHaveTitle(/Accueil | Impact CO2/)
+    await expect(page).toHaveTitle(/Accueil | Impact CO₂/)
   })
 })
 

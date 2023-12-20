@@ -9,7 +9,9 @@ export default function AvisLivraison() {
         <FlexContainer>
           <div>
             <H3Title>Un avis, une suggestion ? </H3Title>
-            <Subtitle>Vos retours sont précieux pour améliorer le site Impact CO2.</Subtitle>
+            <Subtitle>
+              Vos retours sont précieux pour améliorer le site Impact CO<sub>2</sub>.
+            </Subtitle>
           </div>
           <ButtonPart>
             <Link

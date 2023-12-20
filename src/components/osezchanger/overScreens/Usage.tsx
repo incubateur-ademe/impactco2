@@ -15,7 +15,7 @@ const Usage = () => {
         href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733'
         target='_blank'
         rel='noreferrer noopener'>
-        kit de diffusion Impact CO2
+        kit de diffusion Impact CO<sub>2</sub>
       </Link>
       <br />
       pour vous emparer facilement du simulateur et l’intégrer à votre publication.
@@ -36,14 +36,14 @@ const Usage = () => {
         {open && (
           <BoxContent>
             Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe à{' '}
-            <Link href='mailto:impactco2@ademe.fr'>impactco2@ademe.fr</Link>.
+            <Link href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>impactco2@ademe.fr</Link>.
             <br />
             <br />
             Pour réutiliser{' '}
             <Link href='https://github.com/incubateur-ademe/impactco2' target='_blank' rel='noreferrer noopener'>
               le code
             </Link>{' '}
-            du simulateur, consultez le code du site Impact CO2, développé de manière ouverte (open source).
+            du simulateur, consultez le code du site Impact CO<sub>2</sub>, développé de manière ouverte (open source).
           </BoxContent>
         )}
       </Box>

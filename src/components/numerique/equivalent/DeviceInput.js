@@ -77,7 +77,7 @@ const Sliders = styled.div`
   }
 `
 const Text = styled.p`
-  font-size: ${(props) => (props.large ? 1 : 0.75)}rem;
+  font-size: ${(props) => (props.$large ? 1 : 0.75)}rem;
   text-align: center;
 `
 const StyledButtonLink = styled(ButtonLink)`
@@ -116,7 +116,7 @@ export default function DeviceInput(props) {
         showThumbs={false}>
         <Slide>
           <Label>Terminal utilisé</Label>
-          <Text large>
+          <Text $large>
             Pour calculer l'impact de la construction et de l'usage du terminal, nous utilisons pour la valeur par
             défaut <ButtonLink onClick={() => setDevices(true)}>un agrégat de terminaux</ButtonLink>. Vous pouvez
             modifier le terminal utilisé à l'aide des flèches.

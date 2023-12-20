@@ -22,7 +22,7 @@ export default function MetionsLegales() {
             <h1>Mentions légales</h1>
             <h2>Informations légales</h2>
             <p>
-              Impact CO2&nbsp;
+              Impact CO<sub>2</sub>&nbsp;
               <Link href='/'>({process.env.NEXT_PUBLIC_URL})</Link> est un service créé par&nbsp;
               <a href='https://www.ademe.fr/' target='_blank' rel='noreferrer noopener'>
                 l’ADEME
@@ -34,11 +34,11 @@ export default function MetionsLegales() {
               .
             </p>
             <p>
-              Le site constitué par l’ensemble des pages rattachées au nom Impact CO2 est la propriété de l’Agence de
-              l’Environnement et de la Maîtrise de l’Energie (ADEME), Établissement Public à caractère Industriel et
-              Commercial (EPIC) régi par les articles L131-3 à L131-7 et R131-1 à R131-26 du Code de l’environnement,
-              inscrit au registre du commerce d’Angers sous le n° 385 290 309 et ayant son siège social au : 20, avenue
-              du Grésillé - BP 90406 - 49004 Angers Cedex 01
+              Le site constitué par l’ensemble des pages rattachées au nom Impact CO<sub>2</sub> est la propriété de
+              l’Agence de l’Environnement et de la Maîtrise de l’Energie (ADEME), Établissement Public à caractère
+              Industriel et Commercial (EPIC) régi par les articles L131-3 à L131-7 et R131-1 à R131-26 du Code de
+              l’environnement, inscrit au registre du commerce d’Angers sous le n° 385 290 309 et ayant son siège social
+              au : 20, avenue du Grésillé - BP 90406 - 49004 Angers Cedex 01
               <br />
               Tél. 02 41 20 41 20
             </p>

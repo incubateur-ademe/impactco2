@@ -40,7 +40,7 @@ type APICategoryV1 = {
  *   get:
  *     tags:
  *     - ECV
- *     description: Retourne les thématiques gérées par Impact co2 ainsi que leurs metadata
+ *     description: Retourne les thématiques gérées par Impact CO<sub>2</sub> ainsi que leurs metadata
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -84,6 +84,6 @@ export default async function handler(
     })),
     warning: hasAPIKey
       ? undefined
-      : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
+      : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
   })
 }

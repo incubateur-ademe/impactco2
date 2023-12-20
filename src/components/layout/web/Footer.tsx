@@ -16,7 +16,9 @@ export default function Footer() {
             </Logos>
             <div>
               <FooterExplain>
-                <strong>Impact CO2</strong>
+                <strong>
+                  Impact CO<sub>2</sub>
+                </strong>
                 <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
               </FooterExplain>
             </div>
@@ -43,7 +45,7 @@ export default function Footer() {
               </FooterLink>
               <FooterLink>
                 <Link
-                  href={`mailto:${process.env.CONTACT_EMAIL}`}
+                  href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                   target='_blank'
                   rel='noreferrer noopener'
                   title='Nous contacter'>

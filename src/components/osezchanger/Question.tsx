@@ -20,7 +20,7 @@ const Question = ({
   description: ReactNode
   value: number | undefined
   setValue: Dispatch<SetStateAction<number | undefined>>
-  tag?: string | false
+  tag?: ReactNode | false
   customBorderRadius?: boolean
   source?: () => void
   children?: ReactNode

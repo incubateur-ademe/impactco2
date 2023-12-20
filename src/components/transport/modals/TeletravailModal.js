@@ -114,7 +114,7 @@ export default function TeletravailModal() {
         Les autres effets rebonds non liés aux déplacements (consommation d&apos;électricité du foyer, achat de matériel
         pour le télétravail, etc.) ne sont pas modélisés ici. Pour donner un ordre de grandeur,{' '}
         <MagicLink to={buildCurrentUrlFor('/?co2=248&equivalents=27006_27002_27976_27010_206589')}>
-          la fabrication d&apos;un écran d&apos;ordinateur émet autant que 1 285 km de voiture (248 kgCO2e)
+          la fabrication d&apos;un écran d&apos;ordinateur émet autant que 1 285 km de voiture (248 kg CO<sub>2</sub>e)
         </MagicLink>
         .
       </Text>

@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { Category } from 'types/category'
+import { Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import ModalContext from 'components/providers/ModalProvider'
 import ButtonLink from 'components/base/ButtonLink'
@@ -7,7 +9,6 @@ import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Value from './details/Value'
 
-const Title = styled.h1``
 const Subtitle = styled.span`
   font-size: 1.75rem;
   font-weight: 300;
@@ -34,38 +35,52 @@ const StyledMagicLink = styled(MagicLink)`
   font-size: 0.875rem;
 `
 
-export default function Details(props) {
+export default function Details({ equivalent, category }: { equivalent: Equivalent; category: Category }) {
   const { setCo2e, setWarningNegaoctet } = useContext(ModalContext)
   return (
     <>
       <Section $withoutPadding>
         <SectionWideContent $size='sm'>
-          <Title>
-            {props.equivalent.prefix && <>{formatName(props.equivalent.prefix, 1, true)}</>}
-            {formatName(props.equivalent.name, 1, !props.equivalent.prefix)}
-            {props.equivalent.suffix}
-            <Br /> {props.equivalent.subtitle && <Subtitle>({formatName(props.equivalent.subtitle, 1)})</Subtitle>}
-          </Title>
+          <h1>
+            {equivalent.prefix && <>{formatName(equivalent.prefix, 1, true)}</>}
+            {formatName(equivalent.name, 1, !equivalent.prefix)}
+            {equivalent.suffix}
+            <Br /> {equivalent.subtitle && <Subtitle>({formatName(equivalent.subtitle, 1)})</Subtitle>}
+          </h1>
         </SectionWideContent>
       </Section>
-      <Value equivalent={props.equivalent} category={props.category} />
+      <Value equivalent={equivalent} category={category} />
       <Section $withoutPadding>
         <SectionWideContent $flex $size='sm'>
           <Disclaimer>
-            Valeurs exprimées en kg{' '}
-            <ButtonLink onClick={() => setCo2e(true)}>
-              CO<sub>2</sub>e
-            </ButtonLink>{' '}
-            émis {props.equivalent?.include || props.category?.include}
+            {equivalent.include ? (
+              <>
+                {equivalent.include.pre}
+                <br />
+                Valeurs exprimées en kg{' '}
+                <ButtonLink onClick={() => setCo2e(true)}>
+                  CO<sub>2</sub>e
+                </ButtonLink>{' '}
+                émis {equivalent.include.post}
+              </>
+            ) : (
+              <>
+                Valeurs exprimées en kg{' '}
+                <ButtonLink onClick={() => setCo2e(true)}>
+                  CO<sub>2</sub>e
+                </ButtonLink>{' '}
+                émis {category.include}
+              </>
+            )}
           </Disclaimer>
-          {props?.equivalent?.slug === 'stockagedonnee' ? (
+          {equivalent?.slug === 'stockagedonnee' ? (
             <>
               <Disclaimer>
                 <ButtonLink onClick={() => setWarningNegaoctet(true)}>Source</ButtonLink>
               </Disclaimer>
             </>
           ) : (
-            <>{props.equivalent.source && <StyledMagicLink to={props.equivalent.source}>Source</StyledMagicLink>}</>
+            <>{equivalent.source && <StyledMagicLink to={equivalent.source}>Source</StyledMagicLink>}</>
           )}
         </SectionWideContent>
       </Section>
