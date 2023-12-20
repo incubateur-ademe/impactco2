@@ -29,6 +29,6 @@ test('Chauffage page', async ({ page }) => {
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('200 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('526')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('556')
   })
 })
