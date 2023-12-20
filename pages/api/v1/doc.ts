@@ -5,10 +5,10 @@ const config = {
   definition: {
     openapi: '3.1.0',
     info: {
-      title: 'Impact CO2',
+      title: 'Impact CO₂',
       description: `⚠️ Cette section est en construction ⚠️
       <br />
-      L'api Impact CO2 vous permet d'automatiser le calcul de l'impact carbone. Si vous avez des idées d'améliorations ou des requêtes plus spécifiques, n'hesitez pas à nous contacter via [${process.env.NEXT_PUBLIC_CONTACT_EMAIL}](mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}).
+      L'api Impact CO<sub>2</sub> vous permet d'automatiser le calcul de l'impact carbone. Si vous avez des idées d'améliorations ou des requêtes plus spécifiques, n'hesitez pas à nous contacter via [${process.env.NEXT_PUBLIC_CONTACT_EMAIL}](mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}).
       <br />
       Vous souhaitez tester un point d'api ? Cliquez sur 'Try it out', remplissez les champs et cliquez sur 'Execute' pour visualiser la donnée. Vous souhaitez recommencez ? Cliquez sur 'Clear'.`,
       version: '0.1.0',

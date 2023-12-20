@@ -34,18 +34,18 @@ export default function CO2EModal() {
       <h2>Partager</h2>
       <Wrapper>
         <Integration />
-        <Mail subject={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
-        <Facebook quote={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
+        <Mail subject='Découvrez l’impact sur le climat des objets et gestes de votre quotidien' url={href} />
+        <Facebook quote='Découvrez l’impact sur le climat des objets et gestes de votre quotidien' url={href} />
         <Twitter
-          title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2'}
+          title='Découvrez l’impact sur le climat des objets et gestes de votre quotidien #impactco2'
           url={href}
         />
         <Linkedin
-          title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'}
-          summary={'Impact CO2'}
+          title='Découvrez l’impact sur le climat des objets et gestes de votre quotidien'
+          summary='Impact CO₂'
           url={href}
         />
-        <Whatsapp title={'Découvrez l’impact sur le climat des objets et gestes de votre quotidien'} url={href} />
+        <Whatsapp title='Découvrez l’impact sur le climat des objets et gestes de votre quotidien' url={href} />
       </Wrapper>
       <Link url={href} />
     </Modal>

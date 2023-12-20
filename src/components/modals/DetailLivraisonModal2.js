@@ -71,7 +71,11 @@ export default function DetailLivraisonModal2() {
         <p>
           Pour le processus de <b>commande en ligne</b>, le type de produit impacte le temps de recherche web et donc
           l'empreinte de l'utilisation du terminal pour effectuer effectuer l'achat. On conserve donc une valeur unique
-          (<b>5,4 gCO2e</b>) par commande quel que soit le produit.
+          (
+          <b>
+            5,4 gCO<sub>2</sub>e
+          </b>
+          ) par commande quel que soit le produit.
         </p>
         <p>
           Un <b>emballage carton</b> a été attribué à chaque type de colis selon sa taille.

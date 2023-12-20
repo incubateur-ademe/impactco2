@@ -5,10 +5,8 @@ import Tiles from 'components/misc/Tiles'
 const Convertisseur = () => {
   return (
     <Web
-      title={'Comparateur carbone'}
-      description={
-        'Comparer et visualiser facilement une quantité de CO2e grâce au comparateur d’Impact CO2 et à ses équivalents pour avoir en tête les bons ordres de grandeur.'
-      }
+      title='Comparateur carbone'
+      description='Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.'
       breadcrumb={{
         type: 'accueil',
         page: 'Comparateur carbone',

@@ -155,7 +155,7 @@ export default function CalculateurLivraison(props) {
                   <Addendum>
                     <span className='plus'>+</span>
                     <span className='txt' data-testid='bcTrajet'>
-                      {convertGramsToKilograms(diffs.diffKm0)} kg de CO2e
+                      {convertGramsToKilograms(diffs.diffKm0)} kg de CO<sub>2</sub>e
                     </span>
                   </Addendum>
                 </div>
@@ -193,7 +193,7 @@ export default function CalculateurLivraison(props) {
                   <Addendum>
                     <span className='plus'>+</span>
                     <span className='txt' data-testid='bcAvion'>
-                      {convertGramsToKilograms(diffs.diffPlane)} kg de CO2e
+                      {convertGramsToKilograms(diffs.diffPlane)} kg de CO<sub>2</sub>e
                     </span>
                   </Addendum>
                 </div>

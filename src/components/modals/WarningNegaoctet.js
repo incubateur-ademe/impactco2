@@ -28,7 +28,7 @@ export default function WarningNegaoctet() {
       </p>
       <p>
         Ces calculs expliquent la différence de résultat entre l'impact carbone que l'on a sur le site&nbsp;
-        <OutboundLink href={process.env.NEXT_PUBLIC_URL} title='site Internet impactCO2'>
+        <OutboundLink href={process.env.NEXT_PUBLIC_URL} title='site Internet impact CO₂'>
           impactco2.fr
         </OutboundLink>{' '}
         et les données NO partagées sur la base Empreinte de l'ADEME.

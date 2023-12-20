@@ -49,17 +49,17 @@ const categoryValidation = z.object({
  *           example: Eau en bouteille
  *         ecv:
  *           type: number
- *           description: l'emission totale en g de CO2e
+ *           description: l'emission totale en g de CO<sub>2</sub>e
  *           example: 50.3
  *         slug:
  *           type: string
  *           example: eauenbouteille
  *         footprint:
  *           type: number
- *           description: l'emission de base de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           description: l'emission de base de l'objet en g de CO<sub>2</sub>e [disponible uniquement en mode détaillé]
  *           example: 45.2
  *         footprintDetail:
- *           description: l'emission de base détaillé de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           description: l'emission de base détaillé de l'objet en g de CO<sub>2</sub>e [disponible uniquement en mode détaillé]
  *           type: array
  *           items:
  *             type: object
@@ -90,15 +90,15 @@ const categoryValidation = z.object({
  *                 example:
  *               value:
  *                 type: number
- *                 description: emission du poste détaillé en g de CO2e
+ *                 description: emission du poste détaillé en g de CO<sub>2</sub>e
  *                 example: 12.3
  *         usage:
- *           description: l'emission moyenne produite par l'utilisation de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           description: l'emission moyenne produite par l'utilisation de l'objet en g de CO<sub>2</sub>e [disponible uniquement en mode détaillé]
  *           type: object
  *           properties:
  *             peryear:
  *               type: number
- *               description: emission produite par l'utilisation de l'objet en g de CO2e par an
+ *               description: emission produite par l'utilisation de l'objet en g de CO<sub>2</sub>e par an
  *               example: 25.3
  *             defaultyears:
  *               type: number
@@ -106,7 +106,7 @@ const categoryValidation = z.object({
  *               example: 5
  *         endOfLife:
  *           type: number
- *           description: l'emission générée (ou économisée) en fin de vie de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           description: l'emission générée (ou économisée) en fin de vie de l'objet en g de CO<sub>2</sub>e [disponible uniquement en mode détaillé]
  *           example: 45.2
  */
 

@@ -31,14 +31,16 @@
     "tile": false,
     "meta": {
       "title": "Bouilloire",
-      "description": "Avec Impact CO2, découvrez l'impact sur le climat d'une bouilloire, avec son poids en CO₂e comprenant sa fabrication et sa distribution."
+      "description": "Avec Impact CO₂, découvrez l'impact sur le climat d'une bouilloire, avec son poids en CO₂e comprenant sa fabrication et sa distribution."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "name": "Cafetière[s]",
     "subtitle": "À dosettes",
-    "synonyms": ["nespresso"],
+    "synonyms": [
+      "nespresso"
+    ],
     "slug": "cafetieredosette",
     "emoji": "☕️",
     "category": 6,
@@ -69,7 +71,7 @@
     "tile": false,
     "meta": {
       "title": "Cafetière à dosettes",
-      "description": "Saviez-vous que votre cafetière à dosettes a un impact écologique ? Impact CO2 vous indique l'empreinte carbone de votre appareil"
+      "description": "Saviez-vous que votre cafetière à dosettes a un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de votre appareil"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -106,14 +108,16 @@
     "tile": false,
     "meta": {
       "title": "Cafetière à filtres",
-      "description": "Saviez-vous que votre cafetière à filtres a un impact écologique ? Impact CO2 vous indique l'empreinte carbone de votre appareil"
+      "description": "Saviez-vous que votre cafetière à filtres a un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de votre appareil"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
   {
     "name": "Cafetière[s]",
     "subtitle": "Expresso",
-    "synonyms": ["espresso"],
+    "synonyms": [
+      "espresso"
+    ],
     "slug": "cafetiereexpresso",
     "emoji": "☕️",
     "category": 6,
@@ -217,7 +221,7 @@
     "tile": false,
     "meta": {
       "title": "Lave-vaisselle",
-      "description": "Quelle est l'empreinte carbone pour la fabrication d'un lave-vaisselle ? Maintenant grâce à Impact CO2, vous allez pouvoir le savoir !"
+      "description": "Quelle est l'empreinte carbone pour la fabrication d'un lave-vaisselle ? Maintenant grâce à Impact CO₂, vous allez pouvoir le savoir !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -254,7 +258,7 @@
     "tile": false,
     "meta": {
       "title": "L'impact sur le climat d'un lave linge",
-      "description": "Grâce à Impact CO2, découvrez l'impact écologique d'un lave linge comprenant sa fabrication et son usage"
+      "description": "Grâce à Impact CO₂, découvrez l'impact écologique d'un lave linge comprenant sa fabrication et son usage"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   },
@@ -310,7 +314,9 @@
   },
   {
     "name": "Climatiseur[s]",
-    "synonyms": ["climatisation"],
+    "synonyms": [
+      "climatisation"
+    ],
     "slug": "climatiseur",
     "emoji": "❄️",
     "category": 6,
@@ -341,7 +347,7 @@
     "tile": false,
     "meta": {
       "title": "Climatiseur",
-      "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre climatiseur ? Impact CO2 vous dit tout !"
+      "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre climatiseur ? Impact CO₂ vous dit tout !"
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
   }

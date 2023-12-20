@@ -75,7 +75,9 @@ export default function Logo(props) {
   return (
     <Wrapper to='/' className={props.className}>
       <svg width='333' height='333' viewBox='0 0 333 333' fill='none' xmlns='http://www.w3.org/2000/svg'>
-        <title>Impact CO2</title>
+        <title>
+          Impact CO<sub>2</sub>
+        </title>
         <Path
           fillRule='evenodd'
           clipRule='evenodd'

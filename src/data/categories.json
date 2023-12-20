@@ -99,7 +99,7 @@
     "include": "par personne en France. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
     "meta": {
       "title": "Transport",
-      "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO2 vous connaitrez votre impact sur le climat"
+      "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO₂ vous connaitrez votre impact sur le climat"
     }
   },
   {
@@ -190,7 +190,7 @@
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
       "title": "Habillement",
-      "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
+      "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO₂ détaille pour vous le poids en CO₂e de chaque vêtement"
     }
   },
   {
@@ -248,7 +248,7 @@
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
       "title": "Électroménager",
-      "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Impact CO2 vous indique le poids CO₂e de chaque appareil !"
+      "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Impact CO₂ vous indique le poids CO₂e de chaque appareil !"
     }
   },
   {

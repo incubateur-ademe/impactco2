@@ -42,7 +42,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
     "meta": {
       "title": "Calcul empreinte carbone voyage avion",
-      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO2 permet de mesurer l'impact de vos trajets  en avion sur le climat"
+      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO₂ permet de mesurer l'impact de vos trajets  en avion sur le climat"
     }
   },
   {
@@ -88,7 +88,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
     "meta": {
       "title": "Calcul empreinte carbone voyage avion",
-      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO2 permet de mesurer l'impact de vos trajets  en avion sur le climat"
+      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO₂ permet de mesurer l'impact de vos trajets  en avion sur le climat"
     }
   },
   {
@@ -133,7 +133,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
     "meta": {
       "title": "Calcul empreinte carbone voyage avion",
-      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO2 permet de mesurer l'impact de vos trajets  en avion sur le climat"
+      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO₂ permet de mesurer l'impact de vos trajets  en avion sur le climat"
     }
   },
   {
@@ -300,7 +300,7 @@
       },
       {
         "value": 0.00442130627,
-        "_comment": "// = (Valeur en kgCO2e/kg de véhicule * Masse type) / Nombre de passagers / Durée de vie en km = (4 * 12000) / 30 / 361884",
+        "_comment": "// = (Valeur en kgCO<sub>2</sub>e/kg de véhicule * Masse type) / Nombre de passagers / Durée de vie en km = (4 * 12000) / 30 / 361884",
         "id": 5
       }
     ],
@@ -375,7 +375,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Vélo assistance électrique",
-      "description": "Découvrez l'impact CO₂e d'un trajet en velo ou trotinette électrique et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements."
+      "description": "Découvrez l'impact CO₂e d'un trajet en velo ou trotinette électrique et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements."
     }
   },
   {
@@ -411,7 +411,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Bus",
-      "description": "Découvrez l'impact CO₂e d'un trajet en bus et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements."
+      "description": "Découvrez l'impact CO₂e d'un trajet en bus et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements."
     }
   },
   {
@@ -446,7 +446,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "L'empreinte carbone d'un trajet en tramway",
-      "description": "Découvrez l'impact CO₂e d'un trajet en tramway et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements."
+      "description": "Découvrez l'impact CO₂e d'un trajet en tramway et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements."
     }
   },
   {
@@ -481,7 +481,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "Métro",
-      "description": "Impact CO2 vous indique l'impact écologique d'un trajet en métro par rapport à d'autres moyens de transport"
+      "description": "Impact CO₂ vous indique l'impact écologique d'un trajet en métro par rapport à d'autres moyens de transport"
     }
   },
   {
@@ -515,7 +515,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Scooter-moto légère",
-      "description": "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
+      "description": "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
     }
   },
   {
@@ -549,7 +549,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "",
-      "description": "Découvrez l'impact CO₂e d'un trajet en moto et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
+      "description": "Découvrez l'impact CO₂e d'un trajet en moto et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
     }
   },
   {
@@ -586,7 +586,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "L'empreinte carbone d'un trajet en RER",
-      "description": "Découvrez l'impact CO₂e d'un trajet en RER et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
+      "description": "Découvrez l'impact CO₂e d'un trajet en RER et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
     }
   },
   {
@@ -622,7 +622,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2",
     "meta": {
       "title": "L'empreinte carbone d'un trajet en TER",
-      "description": "Découvrez l'impact CO₂e d'un trajet en TER et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
+      "description": "Découvrez l'impact CO₂e d'un trajet en TER et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
     }
   },
   {
@@ -659,7 +659,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Émission de CO₂e lors d'un trajet en bus électrique",
-      "description": "Découvrez l'impact CO₂e d'un trajet en bus électrique et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
+      "description": "Découvrez l'impact CO₂e d'un trajet en bus électrique et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
     }
   },
   {
@@ -696,7 +696,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Émission de CO₂e lors d'un trajet en bus GNV",
-      "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Impact CO2 choisissez le moyen de transport le plus écologique pour vos déplacements. "
+      "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
     }
   }
 ]
