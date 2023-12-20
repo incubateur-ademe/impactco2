@@ -163,7 +163,10 @@
   },
   "livraison colis . déplacement consommateur . moto . usage . empreinte": {
     "formule": {
-      "moyenne": [191, 76.3]
+      "moyenne": [
+        191,
+        76.3
+      ]
     },
     "unité": "gCO2e/km",
     "note": "Base carbone: \nMoyenne entre Moto > 250 cm3/Mixte/2018 : 191 gCO2e/km et Cyclomoteur/Mixte/2018 : 76.3 gCO2e/km.\n"
@@ -342,7 +345,9 @@
   },
   "livraison colis . emballage . poids emballage . surface . surface sphère . rayon sphère": {
     "inversion numérique": {
-      "avec": ["rayon sphère cube"]
+      "avec": [
+        "rayon sphère cube"
+      ]
     },
     "par défaut": {
       "variations": [
@@ -383,7 +388,11 @@
   },
   "livraison colis . empreinte entrepot": {
     "formule": {
-      "somme": ["infrastructures", "électricité", "gaz"]
+      "somme": [
+        "infrastructures",
+        "électricité",
+        "gaz"
+      ]
     }
   },
   "livraison colis . empreinte entrepot . taille": {
@@ -495,7 +504,11 @@
   },
   "livraison colis par avion": {
     "formule": {
-      "somme": ["entrepot stockage chine", "transport inter plateformes chine", "livraison colis"]
+      "somme": [
+        "entrepot stockage chine",
+        "transport inter plateformes chine",
+        "livraison colis"
+      ]
     }
   },
   "livraison colis par avion . entrepot stockage chine": {
@@ -524,7 +537,12 @@
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
-        "possibilités": ["domicile", "point de retrait", "click and collect", "magasin traditionnel"]
+        "possibilités": [
+          "domicile",
+          "point de retrait",
+          "click and collect",
+          "magasin traditionnel"
+        ]
       }
     },
     "par défaut": "'domicile'",
@@ -582,7 +600,13 @@
   "livraison colis . scénario . magasin traditionnel": {
     "titre": "Achat en magasin traditionnel",
     "formule": {
-      "somme": ["entrepot stockage", "transport inter plateformes", "plateforme", "magasin", "déplacement consommateur"]
+      "somme": [
+        "entrepot stockage",
+        "transport inter plateformes",
+        "plateforme",
+        "magasin",
+        "déplacement consommateur"
+      ]
     }
   },
   "livraison colis . informations": null,
@@ -598,7 +622,13 @@
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
-        "possibilités": ["grande consommation", "habillement", "culturel", "équipements volumineux", "autre"]
+        "possibilités": [
+          "grande consommation",
+          "habillement",
+          "culturel",
+          "équipements volumineux",
+          "autre"
+        ]
       }
     },
     "par défaut": "'habillement'",
@@ -665,7 +695,11 @@
   },
   "livraison colis . magasin": {
     "formule": {
-      "somme": ["infrastructures", "électricité", "gaz"]
+      "somme": [
+        "infrastructures",
+        "électricité",
+        "gaz"
+      ]
     }
   },
   "livraison colis . magasin . type": {
@@ -678,7 +712,12 @@
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
-        "possibilités": ["hypermarché", "supermarché", "galerie marchande", "magasin spécialisé"]
+        "possibilités": [
+          "hypermarché",
+          "supermarché",
+          "galerie marchande",
+          "magasin spécialisé"
+        ]
       }
     },
     "par défaut": "'supermarché'"
@@ -861,7 +900,11 @@
   },
   "livraison colis . empreinte plateforme": {
     "formule": {
-      "somme": ["infrastructures", "électricité", "gaz"]
+      "somme": [
+        "infrastructures",
+        "électricité",
+        "gaz"
+      ]
     }
   },
   "livraison colis . empreinte plateforme . taille": {
@@ -923,7 +966,11 @@
   },
   "livraison colis . empreinte point de retrait": {
     "formule": {
-      "somme": ["infrastructures", "électricité", "gaz"]
+      "somme": [
+        "infrastructures",
+        "électricité",
+        "gaz"
+      ]
     }
   },
   "livraison colis . empreinte point de retrait . taille": {
@@ -1097,13 +1144,21 @@
   },
   "livraison colis . transport inter plateformes . empreinte trajet longue distance": {
     "formule": {
-      "moyenne": ["aérien", "ferroviaire", "maritime"]
+      "moyenne": [
+        "aérien",
+        "ferroviaire",
+        "maritime"
+      ]
     },
     "note": "On considère une moyenne de 3 modes de transport pour le cas de la Chine.\n\n![](https://fr.sino-shipping.com/wp-content/uploads/2021/07/fret-ferroviaire-chine-europe.jpg)\n"
   },
   "livraison colis . transport inter plateformes . routier": {
     "formule": {
-      "somme": ["route", "fabrication véhicule", "usage véhicule"]
+      "somme": [
+        "route",
+        "fabrication véhicule",
+        "usage véhicule"
+      ]
     }
   },
   "livraison colis . transport inter plateformes . routier . distance": {
@@ -1137,7 +1192,10 @@
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
-        "possibilités": ["VUL moyen", "PL moyen"]
+        "possibilités": [
+          "VUL moyen",
+          "PL moyen"
+        ]
       }
     },
     "par défaut": "'PL moyen'"
@@ -1285,7 +1343,11 @@
   },
   "livraison colis . transport livraison": {
     "formule": {
-      "somme": ["route", "fabrication véhicule", "usage véhicule"]
+      "somme": [
+        "route",
+        "fabrication véhicule",
+        "usage véhicule"
+      ]
     }
   },
   "livraison colis . transport livraison . distance": {
@@ -1319,7 +1381,10 @@
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
-        "possibilités": ["VUL moyen", "PL moyen"]
+        "possibilités": [
+          "VUL moyen",
+          "PL moyen"
+        ]
       }
     },
     "par défaut": "'VUL moyen'"

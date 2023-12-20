@@ -80,9 +80,7 @@ export default function Details({ equivalent, category }: { equivalent: Equivale
               </Disclaimer>
             </>
           ) : (
-            <>
-              <StyledMagicLink to={equivalent.source}>Source</StyledMagicLink>
-            </>
+            <>{equivalent.source && <StyledMagicLink to={equivalent.source}>Source</StyledMagicLink>}</>
           )}
         </SectionWideContent>
       </Section>

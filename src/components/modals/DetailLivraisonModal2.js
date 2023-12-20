@@ -81,8 +81,11 @@ export default function DetailLivraisonModal2() {
           Un <b>emballage carton</b> a été attribué à chaque type de colis selon sa taille.
         </p>
         <p>
-          Pour les étapes de <b>stockage</b> en entrepôt, on considère un entrepôt de <b>10 000 m2</b>. Le nombre de
-          jour de stockage dépend du type de produit.
+          Pour les étapes de <b>stockage</b> en entrepôt, on considère un entrepôt de{' '}
+          <b>
+            10 000 m<sup>2</sup>
+          </b>
+          . Le nombre de jour de stockage dépend du type de produit.
         </p>
         <p>
           En ce qui concerne les <b>camions de livraison</b>, pour le <b>transport longue distance</b>, nous avons

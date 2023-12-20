@@ -21,6 +21,19 @@ type BaseEquivalent = {
   synonyms?: string[]
   hypothesis?: string
   unit?: string
+  data?: {
+    hypothesis?: string
+    values: {
+      title: string
+      withSource?:
+        | boolean
+        | {
+            label: string
+            href: string
+          }
+      value: string
+    }[]
+  }
 }
 
 type BaseEquivalentValue =
