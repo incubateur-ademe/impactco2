@@ -8,8 +8,8 @@ test('Chauffage page', async ({ page }) => {
     await page.goto('/chauffage')
   })
 
-  await test.step('Page is loaded with values for 63m2', async () => {
-    await expect(page.getByTestId('slider-thumb-content')).toHaveText('63 m2')
+  await test.step('Page is loaded with values for 63m²', async () => {
+    await expect(page.getByTestId('slider-thumb-content')).toHaveText('63 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
     await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('246')
   })
@@ -17,7 +17,7 @@ test('Chauffage page', async ({ page }) => {
   await test.step('Values are updated with button', async () => {
     await page.getByTestId('slider-plus-button').click()
 
-    await expect(page.getByTestId('slider-thumb-content')).toHaveText('100 m2')
+    await expect(page.getByTestId('slider-thumb-content')).toHaveText('100 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
     await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('390')
   })
@@ -27,7 +27,7 @@ test('Chauffage page', async ({ page }) => {
     await page.getByTestId('slider-number-input').fill('200')
     await page.getByTestId('slider-number-input-validate').click()
 
-    await expect(page.getByTestId('slider-thumb-content')).toHaveText('200 m2')
+    await expect(page.getByTestId('slider-thumb-content')).toHaveText('200 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
     await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('780')
   })

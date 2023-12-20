@@ -156,8 +156,8 @@ export default function Learning({ category }: { category: Category }) {
             <b>Quel est l’impact sur le climat du chauffage d'un logement&nbsp;?</b>
           </p>
           <p>
-            Que ce soit pour une maison ou un appartement, l’impact carbone du chauffage domestique par m2 et par année,
-            peut aller de 3,7 kg d’émissions de{' '}
+            Que ce soit pour une maison ou un appartement, l’impact carbone du chauffage domestique par m<sup>2</sup> et
+            par année, peut aller de 3,7 kg d’émissions de{' '}
             <ButtonLink onClick={() => setCo2e(true)} color='blue'>
               CO<sub>2</sub>e
             </ButtonLink>{' '}
