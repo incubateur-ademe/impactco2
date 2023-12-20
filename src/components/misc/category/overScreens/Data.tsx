@@ -23,29 +23,25 @@ const Data = () => {
             <StyledEmoji>{equivalent.emoji}</StyledEmoji>
             <b>{equivalent.name}</b>
           </div>
-          {typeof equivalent.data.values === 'string' ? (
-            <Text>{equivalent.data.values}</Text>
-          ) : (
-            equivalent.data.values.map((value, index) => (
-              <Values $withBorder={index !== equivalent.data.values.length - 1} key={equivalent.slug + value.title}>
-                <div>
-                  {value.title}
-                  {value.withSource && (
-                    <span>
-                      {' '}
-                      •{' '}
-                      {typeof value.withSource === 'boolean' ? (
-                        <MagicLink to={equivalent.source}>Détails</MagicLink>
-                      ) : (
-                        <MagicLink to={value.withSource.href}>{value.withSource.label}</MagicLink>
-                      )}
-                    </span>
-                  )}
-                </div>
-                <Value>{value.value}</Value>
-              </Values>
-            ))
-          )}
+          {equivalent.data.values.map((value, index) => (
+            <Values $withBorder={index !== equivalent.data.values.length - 1} key={equivalent.slug + value.title}>
+              <div>
+                {value.title}
+                {value.withSource && (
+                  <span>
+                    {' '}
+                    •{' '}
+                    {typeof value.withSource === 'boolean' ? (
+                      <MagicLink to={equivalent.source}>Détails</MagicLink>
+                    ) : (
+                      <MagicLink to={value.withSource.href}>{value.withSource.label}</MagicLink>
+                    )}
+                  </span>
+                )}
+              </div>
+              <Value>{value.value}</Value>
+            </Values>
+          ))}
           {equivalent.data.hypothesis && <Hypothesis className='text-sm'>{equivalent.data.hypothesis}</Hypothesis>}
         </div>
       ))}

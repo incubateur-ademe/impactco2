@@ -21,18 +21,16 @@ type BaseEquivalent = {
   unit?: string
   data?: {
     hypothesis?: string
-    values:
-      | string
-      | {
-          title: string
-          withSource?:
-            | boolean
-            | {
-                label: string
-                href: string
-              }
-          value: string
-        }[]
+    values: {
+      title: string
+      withSource?:
+        | boolean
+        | {
+            label: string
+            href: string
+          }
+      value: string
+    }[]
   }
 }
 

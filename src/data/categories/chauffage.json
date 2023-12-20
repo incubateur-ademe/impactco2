@@ -6,7 +6,7 @@
     "slug": "chauffagegaz",
     "emoji": "💨",
     "category": 8,
-    "total": 28.03,
+    "total": 35.26,
     "default": true,
     "tile": false,
     "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-gaz-par-m2",
@@ -18,16 +18,16 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,213 kg CO2e /kWh PCS *"
+          "value": "0,221 kg CO₂e /kWh PCS *"
         },
         {
           "title": "Consommation par m2",
-          "value": "126,83 kWh/m2",
+          "value": "159,57 kWh/m2",
           "withSource": true
         },
         {
           "title": "Empreinte carbone par m2",
-          "value": "126,83 kWh/m2 × 0,22 kgCO2e/kWh = 28,03 kgCO2e/m2"
+          "value": "159,57 kWh/m2 × 0,221 kgCO₂e/kWh = 35,26 kgCO₂e/m2"
         }
       ],
       "hypothesis": "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation."
@@ -40,7 +40,7 @@
     "slug": "chauffagefioul",
     "emoji": "🛢",
     "category": 8,
-    "total": 34.62,
+    "total": 42.97,
     "default": true,
     "tile": false,
     "source": " https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-fioul-par-m2",
@@ -52,16 +52,16 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,32 kgCO2e/kWh"
+          "value": "0,324 kgCO₂e/kWh"
         },
         {
           "title": "Consommation par m2",
-          "value": "106,84 kWh/m2",
+          "value": "132,63 kWh/m2",
           "withSource": true
         },
         {
           "title": "Empreinte carbone par m2",
-          "value": "106,84 kWh/m2 × 0,32 kgCO2e/kWh = 34,62 kgCO2e/m2"
+          "value": "132,63 kWh/m2 × 0,324 kgCO₂e/kWh = 42,97 kgCO₂e/m2"
         }
       ],
       "hypothesis": "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation."
@@ -74,7 +74,7 @@
     "slug": "chauffageelectrique",
     "emoji": "⚡️",
     "category": 8,
-    "total": 3.9,
+    "total": 4.98,
     "default": true,
     "tile": false,
     "source": " https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-%C3%A9lectricit%C3%A9-par-m2",
@@ -86,16 +86,16 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,052 kgCO2e/kWh (2022)"
+          "value": "0,052 kgCO₂e/kWh (2022)"
         },
         {
           "title": "Consommation par m2",
-          "value": "75,06 kWh/m2 ",
+          "value": "95,78 kWh/m2 ",
           "withSource": true
         },
         {
           "title": "Empreinte carbone par m2",
-          "value": "455,95 kWh/m2 × 0,013 kgCO2e/kWh = 5,15 kgCO2e/m2"
+          "value": "95,78 kWh/m2 × 0,052 kgCO₂e/kWh = 4,98 kgCO₂e/m2"
         }
       ]
     }
@@ -107,7 +107,7 @@
     "slug": "pompeachaleur",
     "emoji": "🌡️",
     "category": 8,
-    "total": 3.9,
+    "total": 4.28,
     "default": true,
     "tile": false,
     "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-%C3%A9lectricit%C3%A9-par-m2",
@@ -116,7 +116,21 @@
       "description": "Découvrez à quoi correspond une année de chauffage avec une pompe à chaleur par m2 en kgCO₂e émis (CO₂e)"
     },
     "data": {
-      "values": "La plupart des pompes à chaleur fonctionnent aujourd’hui en grande partie avec de l’électricité. Pour une première version nous reprenons les mêmes hypothèses que pour le calcul de l’electricité."
+      "values": [
+        {
+          "title": "Intensité carbone",
+          "value": "0,052 kgCO₂e/kWh (2022)"
+        },
+        {
+          "title": "Consommation par m2",
+          "value": "82,38 kWh/m2 ",
+          "withSource": true
+        },
+        {
+          "title": "Empreinte carbone par m2",
+          "value": "82,38 kWh/m2 × 0,052 kgCO₂e/kWh = 4,28 kgCO₂e/m2"
+        }
+      ]
     }
   },
   {
@@ -138,7 +152,7 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,013 kg CO2e/kWh PCI *"
+          "value": "0,0113 kg CO₂e/kWh PCI *"
         },
         {
           "title": "Consommation par m2",
@@ -147,7 +161,7 @@
         },
         {
           "title": "Empreinte carbone par m2",
-          "value": "455,95 kWh/m2 × 0,013 kgCO2e/kWh = 5,15 kgCO2e/m2"
+          "value": "455,95 kWh/m2 × 0,0113 kgCO₂e/kWh = 5,15 kgCO₂e/m2"
         }
       ],
       "hypothesis": "* PCI = Pouvoir calorifique inférieur"
@@ -160,7 +174,7 @@
     "slug": "poeleabois",
     "emoji": "🪵",
     "category": 8,
-    "total": 20.97,
+    "total": 11.32,
     "default": true,
     "tile": false,
     "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-buches-par-m2",
@@ -172,16 +186,16 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,046 kg CO2e/kWh"
+          "value": "0,046 kg CO₂e/kWh"
         },
         {
           "title": "Consommation par m2",
-          "value": "455,95 kWh/m2",
+          "value": "245,98  kWh/m2",
           "withSource": true
         },
         {
           "title": "Empreinte carbone par m2",
-          "value": "455,95 kWh/m2 × 0,046 kgCO2e/kWh = 20,97 kgCO2e/m2"
+          "value": "245,98  kWh/m2 × 0,046 kgCO₂e/kWh = 11.32 kgCO₂e/m2"
         }
       ],
       "hypothesis": "Attention : les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des règles de calcul de la Base Carbone. Il est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en compte les émissions de méthane imbrulé."
@@ -194,7 +208,7 @@
     "slug": "reseaudechaleur",
     "emoji": "🏢",
     "category": 8,
-    "total": 18.80,
+    "total": 19.61,
     "default": true,
     "tile": false,
     "source": "https://nosgestesclimat.fr/documentation/parc-fran%C3%A7ais/chauffage/empreinte-r%C3%A9seau-de-chaleur-par-m2",
@@ -206,7 +220,7 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,112 kg CO2e/kWh",
+          "value": "0,112 kg CO₂e/kWh",
           "withSource": {
             "label": "Étude Fedene 2023",
             "href": "https://www.fedene.fr/wp-content/uploads/sites/2/2023/11/Fedene_enquete_version-numerique.pdf"
@@ -214,12 +228,12 @@
         },
         {
           "title": "Consommation par m2",
-          "value": "167,93 kWh/m2",
+          "value": "175,08 kWh/m2",
           "withSource": true
         },
         {
           "title": "Empreinte carbone par m2",
-          "value": "167,93 kWh/m2 × 0,112 kgCO2e/kWh = 18,80 kgCO2e/m2"
+          "value": "175,08 kWh/m2 × 0,112 kgCO₂e/kWh = 19,61 kgCO₂e/m2"
         }
       ],
       "hypothesis": "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation."
