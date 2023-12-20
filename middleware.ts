@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  console.log(request.url)
-  console.log(request.referrer)
+  console.log(request.destination)
+  console.log(request.headers)
+
   if (request.nextUrl.hostname.includes('monconvertisseurco2.fr')) {
     if (request.nextUrl.pathname === 'iframe.js') {
       return NextResponse.redirect('https://impactco2.fr/iframe.js')
