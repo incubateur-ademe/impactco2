@@ -4,10 +4,22 @@
     "name": "Usage numérique",
     "emoji": "✉️",
     "slug": "usagenumerique",
+    "header": "des usages numériques",
+    "sources": [
+      {
+        "label": "Étude NégaOctet - 2022",
+        "href": "https://base-empreinte.ademe.fr/documentation/base-impact?state=aWZCflVtbFNGbzBuREZJYVF5SmNVQUhtQThOQlhQQjBYcnRtZFVUWm96XzBl&session_state=7a05d0ef-f903-4d12-8c46-6d0b8301d7c5&code=b72ffd5d-c06a-4c52-bd55-e553b8ca6eb4.7a05d0ef-f903-4d12-8c46-6d0b8301d7c5.e8e7e1ec-ca0a-42ac-bf39-2abdf82b7fb2"
+      },
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact des usages numériques<br/>sur le climat",
     "description": "Mesurez facilement l'empreinte carbone des mails, du streaming ou de la visioconférence & comparez l'impact de ces usages à celui de la construction de vos appareils",
     "equivalent": "usage[s] numérique[s]",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "",
     "include": "",
@@ -22,10 +34,12 @@
     "name": "Livraison",
     "emoji": "📦",
     "slug": "livraison",
+    "header": "des livraison de colis",
     "title": "Découvrez l'impact des livraison de colis<br/>sur le climat",
     "description": "Mesurez facilement l'empreinte carbone d'une livraison",
     "equivalent": "impact[s] livraison[s]",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "",
     "include": "",
@@ -40,13 +54,25 @@
     "name": "Chauffage",
     "emoji": "🏠",
     "slug": "chauffage",
+    "header": "du chauffage",
+    "sources": [
+      {
+        "label": "Étude : Consommation d’énergie par…",
+        "href": "https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel"
+      },
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact du chauffage sur le climat",
-    "description": "Comparez l'empreinte carbone des différents type de chauffage (électrique, gaz ou fioul)",
+    "description": "Faites découvrir l’impact climatique des modes de chauffage à votre communauté grâce à ce simulateur.",
     "equivalent": "mode[s] de chauffage",
     "gender": "m",
+    "divider": 1,
     "display": true,
-    "unit": "m2",
-    "include": "par m2 par année.",
+    "unit": "m²",
+    "include": "par m² par année.",
     "meta": {
       "title": "Chauffage",
       "description": "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée "
@@ -57,15 +83,23 @@
     "name": "Transport",
     "emoji": "🚴‍♂️",
     "slug": "transport",
+    "header": "du transport",
+    "sources": [
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact du transport sur le climat",
     "equivalent": "mode[s] de transport",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "km",
     "include": "par personne en France. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
     "meta": {
       "title": "Transport",
-      "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO2 vous connaitrez votre impact sur le climat"
+      "description": "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO₂ vous connaitrez votre impact sur le climat"
     }
   },
   {
@@ -73,9 +107,11 @@
     "name": "Fruits et légumes",
     "emoji": "🍅",
     "slug": "fruitsetlegumes",
+    "header": "des fruits et légumes de saisons",
     "description": "Retrouvez les fruits et légumes de la saison et comparez leur empreinte carbone",
     "equivalent": "fruit[s] et légume[s]",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "kg",
     "include": "par kg de produit pour des fruits et légumes de saison",
@@ -89,10 +125,22 @@
     "name": "Numérique",
     "emoji": "💻",
     "slug": "numerique",
+    "header": "du numérique",
+    "sources": [
+      {
+        "label": "Rapport : Modélisation et évaluation...",
+        "href": "https://librairie.ademe.fr/consommer-autrement/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+      },
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact du numérique sur le climat",
     "description": "Comparez l'empreinte carbone des appareils qui le composent, avec leurs usages et leur construction",
     "equivalent": "appareil[s]",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
@@ -106,10 +154,18 @@
     "name": "Repas",
     "emoji": "🍽",
     "slug": "repas",
+    "header": "de l'alimentation",
+    "sources": [
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact de l'alimentation sur le climat",
     "description": "Comparez l'empreinte carbone des différents types de repas",
     "equivalent": "repas",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "repas",
     "include": "par repas comprenant la fabrication, la distribution et la consommation.",
@@ -123,16 +179,18 @@
     "name": "Habillement",
     "emoji": "👔",
     "slug": "habillement",
+    "header": "de la mode",
     "title": "Découvrez l'impact de la mode sur le climat",
     "description": "Comparez l'empreinte carbone de tous vos vêtements",
     "equivalent": "vêtement[s]",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
       "title": "Habillement",
-      "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO2 détaille pour vous le poids en CO₂e de chaque vêtement"
+      "description": "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO₂ détaille pour vous le poids en CO₂e de chaque vêtement"
     }
   },
   {
@@ -140,10 +198,22 @@
     "name": "Mobilier",
     "emoji": "🪑",
     "slug": "mobilier",
+    "header": "du mobilier",
+    "sources": [
+      {
+        "label": "Rapport : Modélisation et évaluation...",
+        "href": "https://librairie.ademe.fr/consommer-autrement/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+      },
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact du mobilier sur le climat",
     "description": "Comparez l'empreinte carbone de vos meubles",
     "equivalent": "meuble[s]",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
@@ -157,16 +227,28 @@
     "name": "Électroménager",
     "emoji": "🛁",
     "slug": "electromenager",
+    "header": "de l'électroménager",
+    "sources": [
+      {
+        "label": "Rapport : Modélisation et évaluation...",
+        "href": "https://librairie.ademe.fr/consommer-autrement/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+      },
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact de l'électroménager sur le climat",
     "description": "Comparez l'empreinte carbone de tous vos équipements",
     "equivalent": "appareil[s]",
     "gender": "m",
+    "divider": 1,
     "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
       "title": "Électroménager",
-      "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Impact CO2 vous indique le poids CO₂e de chaque appareil !"
+      "description": "Connaissez vous l'impact écologique de vos équipements électroménagers ? Impact CO₂ vous indique le poids CO₂e de chaque appareil !"
     }
   },
   {
@@ -174,30 +256,24 @@
     "name": "Boisson",
     "emoji": "🍹",
     "slug": "boisson",
+    "header": "des boissons",
+    "sources": [
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact des boissons sur le climat",
     "description": "Comparez l'empreinte carbone de l'eau, des sodas, des boissons alcoolisées, du lait et des boissons chaudes",
     "equivalent": "boisson[s]",
     "gender": "f",
+    "divider": 1,
     "display": true,
     "unit": "litre",
     "include": "par litre de produit comprenant la fabrication, la distribution et la consommation.",
     "meta": {
       "title": "Boisson",
       "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
-    }
-  },
-  {
-    "id": 11,
-    "name": "Divers",
-    "emoji": "⚙️",
-    "slug": "divers",
-    "display": false,
-    "gender": "m",
-    "unit": "unité",
-    "include": "par unité.",
-    "meta": {
-      "title": "",
-      "description": ""
     }
   }
 ]

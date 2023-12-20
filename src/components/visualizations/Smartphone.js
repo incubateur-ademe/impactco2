@@ -25,32 +25,32 @@ const Size = styled.p`
   color: ${(props) => props.theme.colors.background};
   display: flex;
   flex-direction: column;
-  height: ${(props) => (props.small ? 10 : props.large ? 13.375 : 12)}rem;
+  height: ${(props) => (props.small ? 10 : props.$large ? 13.375 : 12)}rem;
   justify-content: center;
   margin: 0;
-  width: ${(props) => (props.small ? 10 : props.large ? 13.375 : 12)}rem;
+  width: ${(props) => (props.small ? 10 : props.$large ? 13.375 : 12)}rem;
 
   ${(props) => props.theme.mq.medium} {
-    height: ${(props) => (props.small ? 20 : props.large ? 28 : 24)}vw;
-    width: ${(props) => (props.small ? 20 : props.large ? 28 : 24)}vw;
+    height: ${(props) => (props.small ? 20 : props.$large ? 28 : 24)}vw;
+    width: ${(props) => (props.small ? 20 : props.$large ? 28 : 24)}vw;
   }
   ${(props) => props.theme.mq.small} {
-    height: ${(props) => (props.small ? 30 : props.large ? 40 : 35)}vw;
-    width: ${(props) => (props.small ? 30 : props.large ? 40 : 35)}vw;
+    height: ${(props) => (props.small ? 30 : props.$large ? 40 : 35)}vw;
+    width: ${(props) => (props.small ? 30 : props.$large ? 40 : 35)}vw;
   }
 `
 const StyledEmoji = styled(Emoji)`
   align-items: flex-end;
   display: flex;
-  font-size: ${(props) => (props.small ? 2 : props.large ? 4 : 3)}rem;
+  font-size: ${(props) => (props.small ? 2 : props.$large ? 4 : 3)}rem;
   height: 2.5rem;
   margin-bottom: 0.5rem;
 
   ${(props) => props.theme.mq.medium} {
-    font-size: ${(props) => (props.small ? 3 : props.large ? 5 : 4)}vw;
+    font-size: ${(props) => (props.small ? 3 : props.$large ? 5 : 4)}vw;
   }
   ${(props) => props.theme.mq.small} {
-    font-size: ${(props) => (props.small ? 5 : props.large ? 7 : 6)}vw;
+    font-size: ${(props) => (props.small ? 5 : props.$large ? 7 : 6)}vw;
     height: auto;
   }
 `
@@ -98,19 +98,25 @@ export default function Smartphone() {
           <StyledEmoji small>📱</StyledEmoji>
           <Label>- de 4,5 pouces</Label>
           <Number>22</Number>
-          <Unit>kg CO2e</Unit>
+          <Unit>
+            kg CO<sub>2</sub>e
+          </Unit>
         </Size>
         <Size>
           <StyledEmoji>📱</StyledEmoji>
           <Label>5 pouces</Label>
           <Number>26</Number>
-          <Unit>kg CO2e</Unit>
+          <Unit>
+            kg CO<sub>2</sub>e
+          </Unit>
         </Size>
-        <Size large>
-          <StyledEmoji large>📱</StyledEmoji>
+        <Size $large>
+          <StyledEmoji $large>📱</StyledEmoji>
           <Label>+ de 5,5 pouces</Label>
           <Number>31</Number>
-          <Unit>kg CO2e</Unit>
+          <Unit>
+            kg CO<sub>2</sub>e
+          </Unit>
         </Size>
       </Sizes>
     </>

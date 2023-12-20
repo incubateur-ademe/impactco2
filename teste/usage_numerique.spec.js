@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 
 test('La page des usages numériques se charge correctement', async ({ page }) => {
   await test.step("Par défaut, le titre de l'onglet et le titre de la page s'affichent", async () => {
-    await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO2/)
+    await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO₂/)
     await expect(page.getByRole('heading').first()).toHaveText("Découvrez l'impact des usages numériquessur le climat")
   })
 })

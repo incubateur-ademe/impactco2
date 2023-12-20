@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   border-radius: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   padding: 1.5rem 2rem;
   position: relative;
 

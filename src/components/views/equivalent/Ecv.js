@@ -54,7 +54,7 @@ export default function Ecv(props) {
 
   return ecvToDisplay.length ? (
     <Section>
-      <SectionWideContent $small>
+      <SectionWideContent $size='sm'>
         <ScreenshotWrapper equivalent={props.equivalent}>
           <Title>
             Détail de l&apos;empreinte de 1 {props.equivalent.prefix && <>{formatName(props.equivalent.prefix)} </>}

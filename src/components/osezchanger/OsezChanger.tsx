@@ -3,15 +3,17 @@ import React, { useState } from 'react'
 import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
 import Signature from 'components/screenshot/Signature'
+import OverScreen from '../base/OverScreen'
 import Actions from './Actions'
 import Defi from './Defi'
 import { BottomLogos, Container, DefiButton, Description, Logos, Screenshot, Title } from './OsezChanger.styles'
 import Resources from './Resources'
-import Modal, { ModalType } from './modals/Modal'
+import { OverScreenOsezChanger } from './overScreens/Type'
+import { overScreenOsezChangerValues } from './overScreens/Values'
 
 const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
   const [defiMode, setDefiMode] = useState(iframe || false)
-  const [modal, setModal] = useState<ModalType | undefined>()
+  const [overScreen, setOverScreen] = useState<OverScreenOsezChanger | undefined>()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_osez_changer', 'OsezChanger')
 
   return (
@@ -26,7 +28,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
       {defiMode ? (
         <>
           <Screenshot ref={ref} data-testid='defi' $isScreenshotting={isScreenshotting}>
-            <Defi setModal={setModal} />
+            <Defi setOverScreen={setOverScreen} />
             {isScreenshotting && (
               <Logos>
                 <Signature noMargin />
@@ -39,8 +41,14 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
               <Signature noMargin noLink />
             </BottomLogos>
           )}
-          <Actions takeScreenshot={takeScreenshot} setModal={setModal} />
-          {modal && <Modal type={modal} onClose={() => setModal(undefined)} />}
+          <Actions takeScreenshot={takeScreenshot} setOverScreen={setOverScreen} />
+          {overScreen && (
+            <OverScreen
+              theme='blue'
+              values={overScreenOsezChangerValues[overScreen]}
+              onClose={() => setOverScreen(undefined)}
+            />
+          )}
         </>
       ) : (
         <DefiButton

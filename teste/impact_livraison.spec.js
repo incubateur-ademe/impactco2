@@ -23,9 +23,9 @@ test('Affichage simulateur livraison: le chargement de tous les composants fonct
 test("Affichage simulateur livraison: J'ai bien le titre de l'onglet, le titre de niveau 1, le fil d'ariane, et le lien vers la source qui s'affichent", async ({
   page,
 }) => {
-  await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO2/)
+  await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO₂/)
   await expect(page.getByRole('heading').first()).toHaveText("Mesurer l'impact carbone de la livraison de colis")
-  await expect(page.locator('nav[aria-label="fil d\'ariane"]')).toHaveText('Thématiques >  Livraison')
+  await expect(page.locator('nav[aria-label="fil d\'ariane"]')).toHaveText('AccueilThématiquesLivraison')
   await expect(page.getByTestId('lien-etude-ademe')).toHaveText('Commerce en ligne - Étude ADEME 2023 ')
 })
 

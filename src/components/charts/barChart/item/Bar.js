@@ -28,7 +28,7 @@ export default function Bar(props) {
   return (
     <Wrapper percent={props.value / props.max}>
       <Container color={props.color}>
-        {props.usage && <Usage percent={props.usage / props.value} color={props.color} />}
+        {props.usage !== undefined && <Usage percent={props.usage / props.value} color={props.color} />}
       </Container>
       <Value value={props.value} max={props.max} />
     </Wrapper>

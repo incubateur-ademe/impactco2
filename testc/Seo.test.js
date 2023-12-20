@@ -29,7 +29,7 @@ describe('Seo', () => {
 
   const default_description =
     "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME."
-  const default_title = 'Impact sur le climat des objets et gestes | Impact CO2'
+  const default_title = 'Impact sur le climat des objets et gestes | Impact CO₂'
 
   it('La balise title a bien la valeur par défaut', () => {
     render(<Seo />)
@@ -85,7 +85,7 @@ describe('Seo', () => {
   })
   it('La balise title peut être personnalisée', () => {
     render(<Seo title='aaa' />)
-    expect(document.title).toBe('aaa | Impact CO2')
+    expect(document.title).toBe('aaa | Impact CO₂')
   })
   it('La meta image peut être personnalisée', () => {
     const { container } = render(<Seo image={'myimage.png'} />)

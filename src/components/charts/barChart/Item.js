@@ -7,9 +7,9 @@ import Emoji from './item/Emoji'
 import Title from './item/Title'
 
 const Wrapper = styled(MagicLink)`
-  align-items: flex-end;
+  align-items: center;
   background-color: ${(props) => (props.current ? props.theme.colors.second : 'transparent')};
-  border-radius: 1rem;
+  border-radius: 1rem !important;
   display: flex;
   padding: 0.875rem 0.875rem 1rem;
   position: relative;

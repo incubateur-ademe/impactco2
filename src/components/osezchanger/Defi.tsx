@@ -5,11 +5,11 @@ import { Equivalents, NonEmptyResult, Result, ResultDescription, ResultValue } f
 import EmptyResult from './EmptyResult'
 import Equivalent from './Equivalent'
 import Question from './Question'
-import { ModalType } from './modals/Modal'
+import { OverScreenOsezChanger } from './overScreens/Type'
 
 const shoesImpact = 16.5
 
-const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | undefined>> }) => {
+const Defi = ({ setOverScreen }: { setOverScreen: Dispatch<SetStateAction<OverScreenOsezChanger | undefined>> }) => {
   const [thinkingValue, setThinkingValue] = useState<number | undefined>()
   const [realValue, setRealValue] = useState<number | undefined>()
   const [newValue, setNewValue] = useState<number | undefined>()
@@ -53,7 +53,7 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         title='✨ Vos achats récents'
         source={() => {
           track('OsezChanger', 'Hypotheses', 'osez_changer_hypotheses')
-          setModal('hypothesis')
+          setOverScreen('hypothesis')
         }}
         description={
           <>
@@ -62,14 +62,23 @@ const Defi = ({ setModal }: { setModal: Dispatch<SetStateAction<ModalType | unde
         }
         value={newValue}
         setValue={setNewValue}
-        tag={newValue ? `+${(newValue * shoesImpact).toLocaleString('fr-FR')}kg CO2e` : false}
+        tag={
+          newValue ? (
+            <>
+              {`+${(newValue * shoesImpact).toLocaleString('fr-FR')}`}kg CO
+              <sub>2</sub>e
+            </>
+          ) : (
+            false
+          )
+        }
         customBorderRadius={!!newValue}>
         <Result>
           <NonEmptyResult $visible={!!newValue}>
             <ResultValue data-testid='defi-result-title'>
               {(newValue || 0).toLocaleString('fr-FR')} {formatName('paire[s] de chaussure[s] neuve[s]', newValue || 0)}{' '}
               (+
-              {((newValue || 0) * shoesImpact).toLocaleString('fr-FR')}kg de CO2e)
+              {((newValue || 0) * shoesImpact).toLocaleString('fr-FR')}kg de CO<sub>2</sub>e)
             </ResultValue>
             <ResultDescription>C’est autant d’émissions que pour fabriquer ou consommer...</ResultDescription>
             <Equivalents>

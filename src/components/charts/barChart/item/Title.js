@@ -12,6 +12,8 @@ const Wrapper = styled.div`
 const Title = styled.div`
   color: ${(props) => props.theme.colors.text};
   font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
   position: relative;
 
   ${(props) => props.theme.mq.small} {

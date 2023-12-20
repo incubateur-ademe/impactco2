@@ -14,7 +14,7 @@ export default function Distance({ category, iframe }: { category: Category; ifr
 
   return (
     <Section $withoutPadding data-testid='distanceWrapper'>
-      <SectionWideContent $small>
+      <SectionWideContent $size='sm'>
         <Wrapper name={category.title || category.name} slug={category.slug} tracking='Transport distance'>
           <Search distance iframe={iframe} />
           <ResultHeader category={category} tracking='Transport distance' />

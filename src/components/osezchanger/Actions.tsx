@@ -1,35 +1,41 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
-import GhostButton from './components/GhostButton'
+import GhostButton from '../base/GhostButton'
 import { Container } from './Actions.styles'
-import { ModalType } from './modals/Modal'
+import { OverScreenOsezChanger } from './overScreens/Type'
 
 const Actions = ({
   takeScreenshot,
-  setModal,
+  setOverScreen,
 }: {
   takeScreenshot: () => void
-  setModal: Dispatch<SetStateAction<ModalType | undefined>>
+  setOverScreen: Dispatch<SetStateAction<OverScreenOsezChanger | undefined>>
 }) => {
   return (
     <Container>
       <GhostButton
+        colored
+        size='sm'
         icon='send-plane'
         onClick={() => {
           track('OsezChanger', 'Partager', 'osez_changer_partager')
-          setModal('share')
+          setOverScreen('share')
         }}>
         Partager
       </GhostButton>
       <GhostButton
+        colored
+        size='sm'
         icon='code-s-slash'
         onClick={() => {
           track('OsezChanger', 'Integrer', 'osez_changer_integrer')
-          setModal('integration')
+          setOverScreen('integration')
         }}>
         Intégrer
       </GhostButton>
       <GhostButton
+        colored
+        size='sm'
         icon='download'
         onClick={() => {
           track('OsezChanger', 'Telecharger', 'osez_changer_telecharger')

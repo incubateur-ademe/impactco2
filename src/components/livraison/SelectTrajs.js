@@ -19,7 +19,6 @@ export default function SelectTrajs2(props) {
     <>
       <StyledSelect
         onChange={(evt) => {
-          console.log('evt', evt)
           props.changeTraj && props.changeTraj(trajs.find((traj) => traj.uid === evt.value))
         }}
         value={props.value}

@@ -12,13 +12,28 @@ type BaseEquivalent = {
 
   id?: string | number
   secondEmoji?: string
+  include?: { pre: string; post: string }
   source?: string
   prefix?: string
   prefixEquivalent?: string
+  suffix?: string
   subtitle?: string
   synonyms?: string[]
   hypothesis?: string
   unit?: string
+  data?: {
+    hypothesis?: string
+    values: {
+      title: string
+      withSource?:
+        | boolean
+        | {
+            label: string
+            href: string
+          }
+      value: string
+    }[]
+  }
 }
 
 type BaseEquivalentValue =
@@ -48,11 +63,6 @@ export type DeplacementEquivalent = BaseEquivalent &
       min?: number
       max?: number
     }
-    ecvs?: {
-      max?: number
-      subtitle: string
-      ecv: EquivalentValue[]
-    }[]
   }
 
 export type DiversEquivalent = BaseEquivalent & BaseEquivalentValue
@@ -84,7 +94,6 @@ export type UsableEquivalent = BaseEquivalent &
       }
     | { total: number }
   )
-
 export type EquivalentValue = { value: number; id: number }
 
 export type Equivalent =

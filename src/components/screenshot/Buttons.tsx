@@ -8,12 +8,13 @@ import MagicLink from 'components/base/MagicLink'
 const Wrapper = styled.div`
   display: flex;
   gap: 1rem;
+  justify-content: center;
 
   ${(props) => props.theme.mq.small} {
     gap: 0.75rem;
   }
 `
-const Button = styled(MagicLink)`
+const Button = styled(MagicLink)<{ $large: boolean }>`
   align-items: center;
   background: transparent;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
@@ -24,7 +25,7 @@ const Button = styled(MagicLink)`
   justify-content: center;
   margin: 0;
   overflow: hidden;
-  padding: ${(props) => (props.large ? 0.1875 : 0.3125)}rem;
+  padding: ${(props) => (props.$large ? 0.1875 : 0.3125)}rem;
   position: relative;
   width: 2rem;
   z-index: 12;
@@ -101,7 +102,7 @@ export default function Buttons({
         <Button
           className='noscreenshot'
           to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${slug ? `?type=${slug}` : ''}`}
-          large
+          $large
           noIcon
           onClick={() => {
             track(tracking, 'Intégrer', `${tracking.toLowerCase().replaceAll(' ', '_')}_integrer`)

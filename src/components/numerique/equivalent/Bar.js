@@ -75,7 +75,11 @@ export default function Bar(props) {
       <Top>
         <Number>{formatNumber(props.total)}</Number>{' '}
         <Unit>
-          g <Big>CO2</Big>e{' '}
+          g{' '}
+          <Big>
+            CO<sub>2</sub>
+          </Big>
+          e{' '}
           {props.equivalent.unit || props.category.unit ? (
             <>/ {props.equivalent.unit || props.category.unit}</>
           ) : engine.evaluate(`${props.name} . durée`).nodeValue === 60 ? (

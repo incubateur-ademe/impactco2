@@ -5,7 +5,6 @@ import categories from 'data/categories.json'
 import boisson from 'data/categories/boisson.json'
 import chauffage from 'data/categories/chauffage.json'
 import deplacement from 'data/categories/deplacement.json'
-import divers from 'data/categories/divers.json'
 import electromenager from 'data/categories/electromenager.json'
 import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
 import habillement from 'data/categories/habillement.json'
@@ -27,7 +26,6 @@ const equivalents = [
   ...repas,
   ...chauffage,
   ...fruitsetlegumes,
-  ...divers,
 ]
 
 const categoryValidation = z.object({
@@ -51,17 +49,17 @@ const categoryValidation = z.object({
  *           example: Eau en bouteille
  *         ecv:
  *           type: number
- *           description: l'emission totale en g de CO2e
+ *           description: l'emission totale en g de CO<sub>2</sub>e
  *           example: 50.3
  *         slug:
  *           type: string
  *           example: eauenbouteille
  *         footprint:
  *           type: number
- *           description: l'emission de base de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           description: l'emission de base de l'objet en g de CO<sub>2</sub>e [disponible uniquement en mode détaillé]
  *           example: 45.2
  *         footprintDetail:
- *           description: l'emission de base détaillé de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           description: l'emission de base détaillé de l'objet en g de CO<sub>2</sub>e [disponible uniquement en mode détaillé]
  *           type: array
  *           items:
  *             type: object
@@ -92,15 +90,15 @@ const categoryValidation = z.object({
  *                 example:
  *               value:
  *                 type: number
- *                 description: emission du poste détaillé en g de CO2e
+ *                 description: emission du poste détaillé en g de CO<sub>2</sub>e
  *                 example: 12.3
  *         usage:
- *           description: l'emission moyenne produite par l'utilisation de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           description: l'emission moyenne produite par l'utilisation de l'objet en g de CO<sub>2</sub>e [disponible uniquement en mode détaillé]
  *           type: object
  *           properties:
  *             peryear:
  *               type: number
- *               description: emission produite par l'utilisation de l'objet en g de CO2e par an
+ *               description: emission produite par l'utilisation de l'objet en g de CO<sub>2</sub>e par an
  *               example: 25.3
  *             defaultyears:
  *               type: number
@@ -108,7 +106,7 @@ const categoryValidation = z.object({
  *               example: 5
  *         endOfLife:
  *           type: number
- *           description: l'emission générée (ou économisée) en fin de vie de l'objet en g de CO2e [disponible uniquement en mode détaillé]
+ *           description: l'emission générée (ou économisée) en fin de vie de l'objet en g de CO<sub>2</sub>e [disponible uniquement en mode détaillé]
  *           example: 45.2
  */
 
@@ -217,6 +215,6 @@ export default async function handler(
       }),
     warning: hasAPIKey
       ? undefined
-      : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
+      : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
   })
 }

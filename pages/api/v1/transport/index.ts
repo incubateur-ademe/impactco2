@@ -31,12 +31,7 @@ export const computeTransportEmission = (
     // Calculate emissions
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
-      if ('ecvs' in transportation && transportation.ecvs) {
-        const currentECV = transportation.ecvs.find((value) => (value.max ? value.max >= km : true))
-        if (currentECV) {
-          values = currentECV.ecv
-        }
-      } else if (transportation.ecv) {
+      if (transportation.ecv) {
         values = transportation.ecv
       }
 
@@ -82,7 +77,7 @@ export const computeTransportEmission = (
  *           example: Métro
  *         value:
  *           type: number
- *           description: l'emission en Kg de CO2e pour la distance donnée
+ *           description: l'emission en Kg de CO<sub>2</sub>e pour la distance donnée
  *           example: 152.3
  */
 type TransportEmissionV1 = {
@@ -118,7 +113,6 @@ type TransportEmissionV1 = {
  *         type: string
  *       description: |-
  *         Liste des id de transport à retourner, séparés par des ','
- *         - 1: Avion
  *         - 2: TGV
  *         - 3: Intercités
  *         - 4: Voiture (Moteur thermique)
@@ -135,6 +129,9 @@ type TransportEmissionV1 = {
  *         - 15: TER
  *         - 16: Bus (Moteur électrique)
  *         - 21: Bus (GNV)
+ *         - 31: Avion (court courrier)
+ *         - 32: Avion (moyen courrier)
+ *         - 33: Avion (long courrier)
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0
@@ -216,6 +213,6 @@ export default async function handler(
     })),
     warning: hasAPIKey
       ? undefined
-      : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
+      : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
   })
 }

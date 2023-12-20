@@ -23,7 +23,10 @@ export default function ResultatLivraison(props) {
           </div>
           <div className='item2' data-testid='bcTotal'>
             <ActualResult>{convertGramsToKilograms(props.co2eq)}</ActualResult>
-            <Units> kg de CO2e </Units>
+            <Units>
+              {' '}
+              kg de CO<sub>2</sub>e{' '}
+            </Units>
           </div>
           <div className='item3'>
             <div />

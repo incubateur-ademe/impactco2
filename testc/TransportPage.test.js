@@ -22,7 +22,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // When
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
     // Then
-    expect(await screen.findByTestId('bar-chart-item-velo')).toHaveTextContent('Vélo ou marche00 kg CO2e')
+    expect(await screen.findByTestId('bar-chart-item-velo')).toHaveTextContent('Vélo ou marche0 kg CO2e')
   })
   test("Par défaut, limite le nombre d'éléments affichés", async () => {
     // Given
@@ -30,28 +30,25 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // When
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
     // Then
-    const velo = await screen.findByTestId('bar-chart-item-velo')
-    const co2list = velo.parentElement.querySelectorAll('a')
+    const co2list = screen.queryAllByTestId('bar-chart-item-value')
     expect(co2list.length).toBe(7)
   })
   test('Peut afficher tous les bilans carbone', async () => {
     // Given
     mockRouter.push('/transport')
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
-    const velo = await screen.findByTestId('bar-chart-item-velo')
     // When
     act(() => {
       screen.getByLabelText('Voir tous les modes de transport').click()
     })
     // Then
-    const co2list = velo.parentElement.querySelectorAll('a')
-    expect(co2list.length).toBe(17)
+    const co2list = screen.queryAllByTestId('bar-chart-item-value')
+    expect(co2list.length).toBe(19)
   })
   test("Peut afficher le mode covoiturage, c'est à dire avec un nombre de participants", async () => {
     // Given
     mockRouter.push('/transport')
     renderWithWrapper(<TransportPage category={getTransportCategory()} />)
-    await screen.findByTestId('bar-chart-item-velo')
     // When
     act(() => {
       screen.getByLabelText('Afficher le covoiturage').click()
