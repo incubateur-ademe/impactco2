@@ -111,7 +111,7 @@ const categoryValidation = z.object({
  *           example: 45.2
  */
 
-type APIECVV1 = {
+export type APIECVV1 = {
   name: string
   ecv: number
   slug: string

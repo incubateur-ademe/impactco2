@@ -125,23 +125,23 @@ type TransportEmissionV1 = {
  *         type: string
  *       description: |-
  *         Liste des id de transport à retourner, séparés par des ','
- *         - 1: Avion
- *         - 2: TGV
- *         - 3: Intercités
- *         - 4: Voiture (Moteur thermique)
- *         - 5: Voiture (Moteur électrique)
- *         - 6: Autocar
- *         - 7: Vélo ou marche
- *         - 8: Vélo (ou trottinette) à assistance électrique
- *         - 9: Bus (Moteur thermique)
- *         - 10: Tramway
- *         - 11: Métro
- *         - 12: Scooter ou moto légère
- *         - 13: Moto
- *         - 14: RER ou Transilien
- *         - 15: TER
- *         - 16: Bus (Moteur électrique)
- *         - 21: Bus (GNV)
+ *         - 1 : Avion
+ *         - 2 : TGV
+ *         - 3 : Intercités
+ *         - 4 : Voiture (Moteur thermique)
+ *         - 5 : Voiture (Moteur électrique)
+ *         - 6 : Autocar
+ *         - 7 : Vélo ou marche
+ *         - 8 : Vélo (ou trottinette) à assistance électrique
+ *         - 9 : Bus (Moteur thermique)
+ *         - 10 : Tramway
+ *         - 11 : Métro
+ *         - 12 : Scooter ou moto légère
+ *         - 13 : Moto
+ *         - 14 : RER ou Transilien
+ *         - 15 : TER
+ *         - 16 : Bus (Moteur électrique)
+ *         - 21 : Bus (GNV)
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0
