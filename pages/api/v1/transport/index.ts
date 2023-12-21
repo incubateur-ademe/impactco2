@@ -26,12 +26,19 @@ export const computeTransportEmission = (
   deplacements
     // Filter transportations via filter parameter
     .filter((transportation) => filter || filterByDistance(transportation.display, km))
+    // Ugly hack for avion
+    .filter((transportation) => filter || transportation.slug !== 'avion')
     // Filter transportations via transportations parameter
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     // Calculate emissions
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
-      if (transportation.ecv) {
+      if ('ecvs' in transportation && transportation.ecvs) {
+        const currentECV = transportation.ecvs.find((value) => (value.max ? value.max >= km : true))
+        if (currentECV) {
+          values = currentECV.ecv
+        }
+      } else if (transportation.ecv) {
         values = transportation.ecv
       }
 

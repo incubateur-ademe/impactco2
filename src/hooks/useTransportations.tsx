@@ -23,6 +23,7 @@ export default function useTransportations(tracking: string, itineraries?: Recor
       itineraries || km
         ? equivalents
             .filter((equivalent) => equivalent.category === 4)
+            .filter((equivalent) => equivalent.slug !== 'avion')
             .map((equivalent) => equivalent as DeplacementEquivalent)
             .filter((equivalent) =>
               itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km

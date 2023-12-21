@@ -1,5 +1,98 @@
 [
   {
+    "id": 1,
+    "name": "Avion",
+    "prefix": "km en ",
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voler",
+      "voyager"
+    ],
+    "slug": "avion",
+    "type": "plane",
+    "emoji": "✈️",
+    "category": 4,
+    "ecv": [
+      {
+        "value": 0.1256,
+        "id": 6
+      },
+      {
+        "value": 0.00037,
+        "id": 5
+      },
+      {
+        "value": 0.104,
+        "id": 7
+      }
+    ],
+    "ecvs": [
+      {
+        "max": 1000,
+        "subtitle": "Court courrier",
+        "ecv": [
+          {
+            "value": 0.1412,
+            "id": 6
+          },
+          {
+            "value": 0.000380,
+            "id": 5
+          },
+          {
+            "value": 0.117,
+            "id": 7
+          }
+        ]
+      },
+      {
+        "max": 3500,
+        "subtitle": "Moyen courrier",
+        "ecv": [
+          {
+            "value": 0.1024,
+            "id": 6
+          },
+          {
+            "value": 0.00036,
+            "id": 5
+          },
+          {
+            "value": 0.0848,
+            "id": 7
+          }
+        ]
+      },
+      {
+        "subtitle": "Long courrier",
+        "ecv": [
+          {
+            "value": 0.083,
+            "id": 6
+          },
+          {
+            "value": 0.00026,
+            "id": 5
+          },
+          {
+            "value": 0.0687,
+            "id": 7
+          }
+        ]
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
+    "hypothesis": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>141 gCO2e/km/personne sans l'impact des traînées,<br/>258 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 3 500 km, 101 à 220 sièges :<br/>103 gCO2e/km/personne sans l'impact des traînées,<br/>187 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, 101 à 220 sièges :<br/>83,2 gCO2e/km/personne sans l'impact des traînées,<br/>152 gCO2e/km/personne avec l'impact des traînées",
+    "meta": {
+      "title": "Calcul empreinte carbone voyage avion",
+      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO2 permet de mesurer l'impact de vos trajets  en avion sur le climat"
+    }
+  },
+  {
     "id": 31,
     "name": "Avion",
     "subtitle": "Court courrier",
