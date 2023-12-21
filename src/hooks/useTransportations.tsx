@@ -39,7 +39,10 @@ export default function useTransportations(tracking: string, itineraries?: Recor
             )
             .map((equivalent) => {
               if ('ecvs' in equivalent && equivalent.ecvs) {
-                const currentECV = equivalent.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
+                const distance = itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                const currentECV = equivalent.ecvs.find((value) =>
+                  value.display.max ? value.display.max >= distance : true
+                )
                 if (currentECV) {
                   return {
                     ...equivalent,
