@@ -41,7 +41,11 @@ export default function useTransportations(tracking: string, itineraries?: Recor
               if ('ecvs' in equivalent && equivalent.ecvs) {
                 const currentECV = equivalent.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
                 if (currentECV) {
-                  return { ...equivalent, ...currentECV }
+                  return {
+                    ...equivalent,
+                    ...currentECV,
+                    slug: `${equivalent.name} ${currentECV.subtitle}`.replaceAll(' ', '').toLowerCase(),
+                  }
                 }
               }
               return equivalent
