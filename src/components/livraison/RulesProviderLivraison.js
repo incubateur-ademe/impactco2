@@ -9,7 +9,7 @@ export function RulesProviderLivraison(props) {
   // @Clemog: We make unit errors silent.
   const engine = useMemo(() => new Engine(rules, { logger: { log: () => {}, warn: () => {}, err: () => {} } }), [])
 
-  const { situation, setSituation } = useSituation(engine)
+  const { situation, setSituation } = useSituation(engine, 'livraison')
 
   return (
     <RulesContextLivraison.Provider

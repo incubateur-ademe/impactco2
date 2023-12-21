@@ -9,7 +9,20 @@ export function RulesProviderNumerique(props) {
   // @Clemog: We make unit errors silent.
   const engine = useMemo(() => new Engine(rules, { logger: { log: () => {}, warn: () => {}, err: () => {} } }), [])
 
-  const { situation, setSituation } = useSituation(engine)
+  const { situation, setSituation } = useSituation(engine, 'usageNumerique', {
+    'email . appareil': `'smartphone'`,
+    'email . taille': 0.075,
+    'email . transmission . émetteur . réseau': `'fixe FR'`,
+    'streaming . durée': 420,
+    'streaming . appareil': `'TV'`,
+    'streaming . qualité': `'HD'`,
+    'streaming . transmission . réseau': `'fixe FR'`,
+    'visio . appareil': `'ordinateur portable'`,
+    'visio . qualité': `'SD'`,
+    'visio . durée': 180,
+    'visio . transmission . réseau': `'fixe FR'`,
+    'visio . emplacements': 1,
+  })
 
   return (
     <RulesContextNumerique.Provider
