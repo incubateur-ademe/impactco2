@@ -17,7 +17,7 @@ export default function Teletravail(props) {
 
   const [currentTransportation, setCurrentTransportation] = useState(null)
   useEffect(() => {
-    setCurrentTransportation(equivalents.find((transportation) => transportation.id === teletravailTransportation))
+    setCurrentTransportation(equivalents.find((transportation) => transportation.slug === teletravailTransportation))
   }, [equivalents, teletravailTransportation])
 
   const [distance, setDistance] = useState(0)

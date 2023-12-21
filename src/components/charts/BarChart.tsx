@@ -35,6 +35,7 @@ export default function BarChart({
             secondEmoji={equivalent.secondEmoji}
             color={equivalent.color}
             value={equivalent.value}
+            slug={equivalent.slug}
             usage={'usage' in equivalent ? equivalent.usage : undefined}
             component={equivalent.component}
             max={sortedEquivalent[sortedEquivalent.length - 1].value}

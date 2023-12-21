@@ -8,6 +8,7 @@ export default async function handler(req, res) {
 
   const km = queryObj.km || 1
   const filter = queryObj.filter || (queryObj.transportations ? 'all' : 'smart')
+
   const activeTransportations = queryObj.transportations
     ? queryObj.transportations.split(',').map((id) => Number(id))
     : undefined
@@ -15,7 +16,12 @@ export default async function handler(req, res) {
   const ignoreRadiativeForcing = !!queryObj.ignoreRadiativeForcing || false
   const fields = (queryObj.fields || '').split(',')
 
-  const respObj = computeTransportEmission(km, activeTransportations, ignoreRadiativeForcing, filter === 'all')
+  const respObj = computeTransportEmission(
+    km,
+    activeTransportations,
+    ignoreRadiativeForcing,
+    !queryObj.km ? true : filter === 'all'
+  )
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTION')
