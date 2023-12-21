@@ -100,6 +100,7 @@ type TransportEmissionV1 = {
  *   get:
  *     tags:
  *     - Transport
+ *     summary: Récupérer les données pour le transport
  *     description: Retourne les emissions pour un nombre de km donnée par type de transport
  *     parameters:
  *     - in: query
@@ -114,7 +115,10 @@ type TransportEmissionV1 = {
  *       schema:
  *         type: integer
  *         enum: [0, 1]
- *       description: Si 1, retourne le calcul d'emission pour tout les transports disponibles. Sinon retourne seulement ceux qui ont du sens pour la distance donnée
+ *       description: |-
+ *         Si 1, retourne le calcul d'emission pour tout les transports disponibles. Sinon retourne seulement ceux qui ont du sens pour la distance donnée
+ *
+ *         *Exemple : en dessous de 500km les données de l’avion ne seront pas visibles.*
  *     - in: query
  *       name: transports
  *       schema:

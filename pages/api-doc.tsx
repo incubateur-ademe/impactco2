@@ -11,7 +11,7 @@ function ApiDoc({ spec }: InferGetStaticPropsType<typeof getStaticProps>) {
     <Web>
       <Section>
         <SectionWideContent>
-          <SwaggerUI spec={spec} />
+          <SwaggerUI spec={spec}/>
         </SectionWideContent>
       </Section>
     </Web>
