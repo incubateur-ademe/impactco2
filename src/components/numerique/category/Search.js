@@ -1,10 +1,22 @@
-import { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { track } from 'utils/matomo'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import Wrapper from './search/Wrapper'
 
 export default function Search(props) {
   const { engine, setSituation } = useContext(RulesContextNumerique)
+
+  useEffect(() => {
+    setSituation({
+      ['streaming . durée']: 420,
+      ['visio . durée']: 180,
+      ['email . appareil']: `'smartphone'`,
+      ['email . taille']: 0.075,
+      ['streaming . appareil']: `'TV'`,
+      ['visio . appareil']: `'ordinateur portable'`,
+      ['visio . emplacements']: 1,
+    })
+  }, [])
 
   const [display, setDisplay] = useState(null)
 
