@@ -37,8 +37,44 @@ describe('getEmissionPerDistance', () => {
     // Then
     expect(res._getStatusCode()).toBe(200)
     expect(JSON.parse(res._getData())).toEqual([
+      {
+        emissions: {
+          gco2e: 258.2,
+          kgco2e: 0.2582,
+          tco2e: 0.0002582,
+        },
+        id: 1,
+        name: 'Avion (court courrier)',
+      },
+      {
+        emissions: {
+          gco2e: 2.3,
+          kgco2e: 0.0023,
+          tco2e: 0.0000023,
+        },
+        id: 2,
+        name: 'TGV',
+      },
+      {
+        emissions: {
+          gco2e: 5.8,
+          kgco2e: 0.0058,
+          tco2e: 0.0000057999999999999995,
+        },
+        id: 3,
+        name: 'Intercités',
+      },
       { id: 4, name: 'Voiture (Moteur thermique)', emissions: { gco2e: 192, kgco2e: 0.192, tco2e: 0.000192 } },
       { id: 5, name: 'Voiture (Moteur électrique)', emissions: { gco2e: 19.8, kgco2e: 0.0198, tco2e: 0.0000198 } },
+      {
+        emissions: {
+          gco2e: 25,
+          kgco2e: 0.025,
+          tco2e: 0.000025,
+        },
+        id: 6,
+        name: 'Autocar',
+      },
       { id: 7, name: 'Vélo ou marche', emissions: { gco2e: 0, kgco2e: 0, tco2e: 0 } },
       {
         id: 8,
@@ -52,6 +88,25 @@ describe('getEmissionPerDistance', () => {
         id: 12,
         name: 'Scooter ou moto légère',
         emissions: { gco2e: 60.400000000000006, kgco2e: 0.0604, tco2e: 0.000060400000000000004 },
+      },
+
+      {
+        emissions: {
+          gco2e: 165,
+          kgco2e: 0.165,
+          tco2e: 0.000165,
+        },
+        id: 13,
+        name: 'Moto',
+      },
+      {
+        emissions: {
+          gco2e: 6.6,
+          kgco2e: 0.0066,
+          tco2e: 0.0000066,
+        },
+        id: 14,
+        name: 'RER ou Transilien',
       },
       { id: 15, name: 'TER', emissions: { gco2e: 22.9, kgco2e: 0.0229, tco2e: 0.0000229 } },
       { id: 16, name: 'Bus (Moteur électrique)', emissions: { gco2e: 9.5, kgco2e: 0.0095, tco2e: 0.0000095 } },

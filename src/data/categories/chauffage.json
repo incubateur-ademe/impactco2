@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Chauffage au gaz",
     "suffix": " par m²",
     "prefixEquivalent": "année[s] de ",
@@ -34,6 +35,7 @@
     }
   },
   {
+    "id": 2,
     "name": "Chauffage au fioul",
     "suffix": " par m²",
     "prefixEquivalent": "année[s] de ",
@@ -68,6 +70,7 @@
     }
   },
   {
+    "id": 3,
     "name": "Chauffage électrique",
     "suffix": " par m²",
     "prefixEquivalent": "année[s] de ",
@@ -99,6 +102,7 @@
     }
   },
   {
+    "id": 4,
     "name": "Chauffage avec une pompe à chaleur",
     "suffix": " par m²",
     "prefixEquivalent": "année[s] de ",
@@ -130,6 +134,7 @@
     }
   },
   {
+    "id": 5,
     "name": "Chauffage avec un poêle à granulé",
     "suffix": " par m²",
     "prefixEquivalent": "année[s] de ",
@@ -164,6 +169,7 @@
     }
   },
   {
+    "id": 6,
     "name": "Chauffage avec un poêle à bois",
     "suffix": " par m²",
     "prefixEquivalent": "année[s] de ",
@@ -198,6 +204,7 @@
     }
   },
   {
+    "id": 7,
     "name": "Chauffage via un réseau de chaleur",
     "suffix": " par m²",
     "prefixEquivalent": "année[s] de ",

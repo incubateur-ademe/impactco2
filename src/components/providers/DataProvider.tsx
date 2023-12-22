@@ -16,6 +16,17 @@ import repas from 'data/categories/repas.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import ecv from 'data/ecv.json'
 
+export const flattenEquivalents = (equivalents: Equivalent[]) =>
+  equivalents.flatMap((equivalent) =>
+    'ecvs' in equivalent && equivalent.ecvs
+      ? equivalent.ecvs.map((ecv) => ({
+          ...equivalent,
+          ...ecv,
+          slug: `${equivalent.name} ${ecv.subtitle}`.replaceAll(' ', '').toLowerCase(),
+        }))
+      : [equivalent]
+  )
+
 const DataContext = React.createContext<{
   equivalents: Equivalent[]
   categories: Category[]
@@ -34,7 +45,7 @@ const DataContext = React.createContext<{
 
 const equivalents = [
   ...boisson,
-  ...deplacement,
+  ...flattenEquivalents(deplacement),
   ...electromenager,
   ...habillement,
   ...mobilier,
@@ -44,7 +55,7 @@ const equivalents = [
   ...chauffage,
   ...fruitsetlegumes,
   ...divers,
-].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
+]
 
 export function DataProvider({ children }: { children: ReactNode }) {
   const [tiles, setTiles] = useState<Equivalent[]>([])

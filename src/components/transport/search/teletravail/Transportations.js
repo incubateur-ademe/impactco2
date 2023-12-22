@@ -24,7 +24,7 @@ export default function Transportations() {
       equivalents
         .filter((equivalent) => equivalent.category === 4)
         .filter((equivalent) => equivalent.default)
-        .filter((equivalent) => !['avion', 'velo'].includes(equivalent.slug)),
+        .filter((equivalent) => equivalent.slug !== 'velo' && !equivalent.slug.startsWith('avion')),
     [equivalents]
   )
   const { start, end, teletravailTransportation } = useContext(TransportContext)

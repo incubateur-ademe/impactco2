@@ -2,9 +2,9 @@ import { Equivalent } from 'types/equivalent'
 
 export const computeFootprint = (equivalent: Equivalent) => {
   let total = 0
-  if ('total' in equivalent) {
+  if ('total' in equivalent && equivalent.total) {
     total += equivalent.total
-  } else if ('ecv' in equivalent) {
+  } else if ('ecv' in equivalent && equivalent.ecv) {
     total += equivalent.ecv.reduce((sum, { value }) => sum + value, 0)
   }
   return total

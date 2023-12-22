@@ -14,6 +14,7 @@ import repas from 'data/categories/repas.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import { computeECV, computeFootprint } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
+import { flattenEquivalents } from 'components/providers/DataProvider'
 
 const equivalents = [
   ...boisson,
@@ -110,7 +111,7 @@ const categoryValidation = z.object({
  *           example: 45.2
  */
 
-type APIECVV1 = {
+export type APIECVV1 = {
   name: string
   ecv: number
   slug: string
@@ -126,6 +127,7 @@ type APIECVV1 = {
  *   get:
  *     tags:
  *     - ECV
+ *     summary: Récupérer les données carbones pour chaque objet du site
  *     description: Retourne les emissions pour une thématique donnée
  *     parameters:
  *     - in: path
@@ -135,7 +137,18 @@ type APIECVV1 = {
  *         - type: string
  *         - type: integer
  *       required: true
- *       description: ID ou Slug de la thématique demandée
+ *       description:  |-
+ *         ID ou Slug de la thématique demandée
+ *         - 1 : numerique
+ *         - 2 : repas
+ *         - 3 :  boisson
+ *         - 4 : transport
+ *         - 5 : habillement
+ *         - 6 : electromenager
+ *         - 7 : mobilier
+ *         - 8 : chauffage
+ *         - 9 : fruitsetlegumes
+ *         - 10 : usagenumerique
  *     - in: query
  *       name: detail
  *       default: 0
@@ -195,7 +208,7 @@ export default async function handler(
   }
 
   return res.status(200).json({
-    data: equivalents
+    data: flattenEquivalents(equivalents)
       .filter((equivalent) => equivalent.category === category.id)
       .map((equivalent) => {
         const detailedECV = detail
