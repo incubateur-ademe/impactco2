@@ -40,6 +40,7 @@ type APICategoryV1 = {
  *   get:
  *     tags:
  *     - ECV
+ *     summary: Récupérer les thématiques du site
  *     description: Retourne les thématiques gérées par Impact CO<sub>2</sub> ainsi que leurs metadata
  *     responses:
  *       405:
@@ -76,12 +77,15 @@ export default async function handler(
 
   const hasAPIKey = await trackAPIRequest(req, 'categories')
   return res.status(200).json({
-    data: categories.map(({ id, name, emoji, slug }) => ({
-      id,
-      name,
-      emoji,
-      slug,
-    })),
+    data: categories
+      .filter((category) => category.slug !== 'livraison')
+      .map(({ id, name, emoji, slug }) => ({
+        id,
+        name,
+        emoji,
+        slug,
+      }))
+      .sort((a, b) => a.id - b.id),
     warning: hasAPIKey
       ? undefined
       : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
