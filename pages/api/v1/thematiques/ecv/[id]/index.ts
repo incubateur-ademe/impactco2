@@ -14,6 +14,7 @@ import repas from 'data/categories/repas.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import { computeECV, computeFootprint } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
+import { flattenEquivalents } from 'components/providers/DataProvider'
 
 const equivalents = [
   ...boisson,
@@ -195,7 +196,7 @@ export default async function handler(
   }
 
   return res.status(200).json({
-    data: equivalents
+    data: flattenEquivalents(equivalents)
       .filter((equivalent) => equivalent.category === category.id)
       .map((equivalent) => {
         const detailedECV = detail
