@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Avion",
+    "slug": "avion",
     "prefix": "km en ",
     "synonyms": [
       "transport",
@@ -10,27 +11,18 @@
       "voler",
       "voyager"
     ],
-    "slug": "avion",
     "type": "plane",
     "emoji": "✈️",
     "category": 4,
-    "ecv": [
-      {
-        "value": 0.1412,
-        "id": 6
-      },
-      {
-        "value": 0.000380,
-        "id": 5
-      },
-      {
-        "value": 0.117,
-        "id": 7
-      }
-    ],
+    "display": {
+      "min": 500
+    },
     "ecvs": [
       {
-        "max": 1000,
+        "display": {
+          "min": 500,
+          "max": 1000
+        },
         "subtitle": "Court courrier",
         "ecv": [
           {
@@ -48,7 +40,10 @@
         ]
       },
       {
-        "max": 3500,
+        "display": {
+          "min": 1001,
+          "max": 3500
+        },
         "subtitle": "Moyen courrier",
         "ecv": [
           {
@@ -67,6 +62,9 @@
       },
       {
         "subtitle": "Long courrier",
+        "display": {
+          "min": 3501
+        },
         "ecv": [
           {
             "value": 0.083,
@@ -86,147 +84,13 @@
     "default": true,
     "tile": false,
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
-    "hypothesis": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>141 gCO2e/km/personne sans l'impact des traînées,<br/>258 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 3 500 km, 101 à 220 sièges :<br/>103 gCO2e/km/personne sans l'impact des traînées,<br/>187 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, 101 à 220 sièges :<br/>83,2 gCO2e/km/personne sans l'impact des traînées,<br/>152 gCO2e/km/personne avec l'impact des traînées",
+    "include": {
+      "pre": "Taux de remplissage moyen 101-220 passagers",
+      "post": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse."
+    },
     "meta": {
       "title": "Calcul empreinte carbone voyage avion",
       "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO2 permet de mesurer l'impact de vos trajets  en avion sur le climat"
-    }
-  },
-  {
-    "id": 31,
-    "name": "Avion",
-    "subtitle": "Court courrier",
-    "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voler",
-      "voyager"
-    ],
-    "slug": "avioncourtcourrier",
-    "type": "plane",
-    "emoji": "✈️",
-    "category": 4,
-    "include": {
-      "pre": "Taux de remplissage moyen 101-220 passagers",
-      "post": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse."
-    },
-    "ecv": [
-      {
-        "value": 0.1412,
-        "id": 6
-      },
-      {
-        "value": 0.000380,
-        "id": 5
-      },
-      {
-        "value": 0.117,
-        "id": 7
-      }
-    ],
-    "default": true,
-    "tile": false,
-    "display": {
-      "min": 500,
-      "max": 1000
-    },
-    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
-    "meta": {
-      "title": "Calcul empreinte carbone voyage avion",
-      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO₂ permet de mesurer l'impact de vos trajets  en avion sur le climat"
-    }
-  },
-  {
-    "id": 32,
-    "name": "Avion",
-    "subtitle": "Moyen courrier",
-    "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voler",
-      "voyager"
-    ],
-    "slug": "avionmoyencourrier",
-    "type": "plane",
-    "emoji": "✈️",
-    "category": 4,
-    "include": {
-      "pre": "Taux de remplissage moyen 101-220 passagers",
-      "post": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse."
-    },
-    "ecv": [
-      {
-        "value": 0.1024,
-        "id": 6
-      },
-      {
-        "value": 0.00036,
-        "id": 5
-      },
-      {
-        "value": 0.0848,
-        "id": 7
-      }
-    ],
-    "default": true,
-    "tile": false,
-    "display": {
-      "min": 1001,
-      "max": 3500
-    },
-    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
-    "meta": {
-      "title": "Calcul empreinte carbone voyage avion",
-      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO₂ permet de mesurer l'impact de vos trajets  en avion sur le climat"
-    }
-  },
-  {
-    "id": 33,
-    "name": "Avion",
-    "subtitle": "Long courrier",
-    "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voler",
-      "voyager"
-    ],
-    "slug": "avionlongcourrier",
-    "type": "plane",
-    "emoji": "✈️",
-    "category": 4,
-    "include": {
-      "pre": "Taux de remplissage moyen 101-220 passagers",
-      "post": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse."
-    },
-    "ecv": [
-      {
-        "value": 0.083,
-        "id": 6
-      },
-      {
-        "value": 0.00026,
-        "id": 5
-      },
-      {
-        "value": 0.0687,
-        "id": 7
-      }
-    ],
-    "default": true,
-    "tile": false,
-    "display": {
-      "min": 3501
-    },
-    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
-    "meta": {
-      "title": "Calcul empreinte carbone voyage avion",
-      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO₂ permet de mesurer l'impact de vos trajets  en avion sur le climat"
     }
   },
   {

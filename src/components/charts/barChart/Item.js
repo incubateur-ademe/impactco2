@@ -35,7 +35,7 @@ export default function Item(props) {
       onClick={props.onClick || null}
       noIcon
       className='bar-chart-item'
-      data-testid={`bar-chart-item-${props['data-flip-id']}`}>
+      data-testid={`bar-chart-item-${props.slug}`}>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
         <Title title={props.title} subtitle={props.subtitle} component={props.component} />

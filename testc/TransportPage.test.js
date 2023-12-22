@@ -43,7 +43,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     })
     // Then
     const co2list = screen.queryAllByTestId('bar-chart-item-value')
-    expect(co2list.length).toBe(19)
+    expect(co2list.length).toBe(17)
   })
   test("Peut afficher le mode covoiturage, c'est à dire avec un nombre de participants", async () => {
     // Given

@@ -12,6 +12,7 @@ import mobilier from 'data/categories/mobilier.json'
 import numerique from 'data/categories/numerique.json'
 import repas from 'data/categories/repas.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
+import { flattenEquivalents } from 'components/providers/DataProvider'
 import Web from 'components/layout/Web'
 import Details from 'components/views/equivalent/Details'
 import Ecv from 'components/views/equivalent/Ecv'
@@ -20,7 +21,7 @@ import VisualizationSlider from 'components/views/equivalent/VisualizationSlider
 
 const equivalents: EquivalentType[] = [
   ...boisson,
-  ...deplacement,
+  ...flattenEquivalents(deplacement),
   ...electromenager,
   ...habillement,
   ...mobilier,
@@ -29,7 +30,7 @@ const equivalents: EquivalentType[] = [
   ...repas,
   ...chauffage,
   ...fruitsetlegumes,
-].map((equivalent) => ({ ...equivalent, id: equivalent.slug }))
+]
 
 export default function Equivalent({ category, equivalent }: { category: Category; equivalent: EquivalentType }) {
   return (

@@ -55,15 +55,25 @@ export type UsageNumeriqueEquivalent = BaseEquivalent & {
 }
 
 export type DeplacementType = 'car' | 'foot' | 'rail' | 'plane'
-export type DeplacementEquivalent = BaseEquivalent &
-  BaseEquivalentValue & {
-    type: string
-    carpool?: boolean
+export type DeplacementEquivalent = BaseEquivalent & {
+  id: number
+  type: string
+  carpool?: boolean
+  total?: number
+  ecv?: EquivalentValue[]
+  ecvs?: {
     display?: {
       min?: number
       max?: number
     }
+    subtitle: string
+    ecv: EquivalentValue[]
+  }[]
+  display?: {
+    min?: number
+    max?: number
   }
+}
 
 export type DiversEquivalent = BaseEquivalent & BaseEquivalentValue
 

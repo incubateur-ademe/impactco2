@@ -30,10 +30,10 @@ export default function Transportation(props) {
     <Wrapper
       onClick={() => {
         track('Transport télétravail', 'Mode de transport', props.transportation.slug)
-        setTeletravailTransportation(props.transportation.id)
+        setTeletravailTransportation(props.transportation.slug)
       }}
-      data-testid={`transport-${props.transportation.id}`}
-      active={teletravailTransportation === props.transportation.id}>
+      data-testid={`transport-${props.transportation.slug}`}
+      active={teletravailTransportation === props.transportation.slug}>
       <Emoji>{props.transportation.emoji}</Emoji>
       {props.transportation.secondEmoji && (
         <Second>

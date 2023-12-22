@@ -26,17 +26,17 @@ export const computeTransportEmission = (
   deplacements
     // Filter transportations via filter parameter
     .filter((transportation) => filter || filterByDistance(transportation.display, km))
-    // Ugly hack for avion
-    .filter((transportation) => filter || transportation.slug !== 'avion')
     // Filter transportations via transportations parameter
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     // Calculate emissions
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
+      let name = transportation.name
       if ('ecvs' in transportation && transportation.ecvs) {
-        const currentECV = transportation.ecvs.find((value) => (value.max ? value.max >= km : true))
+        const currentECV = transportation.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
         if (currentECV) {
           values = currentECV.ecv
+          name = `${name} (${currentECV.subtitle.toLowerCase()})`
         }
       } else if (transportation.ecv) {
         values = transportation.ecv
@@ -57,6 +57,7 @@ export const computeTransportEmission = (
         .reduce((sum, current) => sum + current.value, 0)
       return {
         ...transportation,
+        name,
         emissions: {
           gco2e: value * km * 1000,
           kgco2e: value * km,
@@ -120,6 +121,7 @@ type TransportEmissionV1 = {
  *         type: string
  *       description: |-
  *         Liste des id de transport à retourner, séparés par des ','
+ *         - 1: Avion
  *         - 2: TGV
  *         - 3: Intercités
  *         - 4: Voiture (Moteur thermique)
@@ -136,9 +138,6 @@ type TransportEmissionV1 = {
  *         - 15: TER
  *         - 16: Bus (Moteur électrique)
  *         - 21: Bus (GNV)
- *         - 31: Avion (court courrier)
- *         - 32: Avion (moyen courrier)
- *         - 33: Avion (long courrier)
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0
