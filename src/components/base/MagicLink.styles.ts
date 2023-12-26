@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-export const Button = styled.button<{ $color?: 'blue' }>`
+export const Button = styled.button<{ $color?: 'secondary' }>`
   ${({ $color }) =>
-    $color === 'blue' &&
+    $color === 'secondary' &&
     `
       color: var(--secondary-50);
 
@@ -18,10 +18,10 @@ export const Button = styled.button<{ $color?: 'blue' }>`
     `}
 `
 
-export const StyledLink = styled(Link)<{ $color?: 'blue' }>`
+export const StyledLink = styled(Link)<{ $color?: 'secondary' }>`
   border-radius: 2px;
   ${({ $color }) =>
-    $color === 'blue'
+    $color === 'secondary'
       ? `
           color: var(--secondary-50);
 

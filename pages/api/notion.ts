@@ -28,6 +28,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             type: 'title',
             title: [{ type: 'text', text: { content: inputs.data.email } }],
           },
+          Besoins: {
+            type: 'rich_text',
+            rich_text: [{ text: { content: inputs.data.needs } }],
+          },
+          Structure: {
+            type: 'rich_text',
+            rich_text: [
+              { text: { content: `${inputs.data.structure}${inputs.data.other ? ` - ${inputs.data.other}` : ''}` } },
+            ],
+          },
+          Origine: {
+            type: 'rich_text',
+            rich_text: [{ text: { content: inputs.data.from } }],
+          },
         },
       },
       {

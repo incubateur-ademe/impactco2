@@ -14,7 +14,7 @@ const MagicLink = ({
   ['data-testid']?: string
   internal?: boolean
   noIcon?: boolean
-  color?: 'blue'
+  color?: 'secondary'
 }) => {
   const external =
     'to' in rest && (rest.to.includes(':') || rest.to.includes('.') || (rest.to.includes('#') && !internal))

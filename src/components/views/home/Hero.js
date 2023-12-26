@@ -25,14 +25,7 @@ export default function Hero() {
                 <strong>et sourcée</strong>&nbsp;issue des données environnementales de l'ADEME.
               </span>
             </Subtitle>
-            <MiniCard>
-              <MiniCardText>
-                <MiniCardEmoji>🤓</MiniCardEmoji>
-                <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
-              </MiniCardText>
-              <p>Laissez-nous votre email, et nous vous recontacterons très prochainement pour échanger ensemble.</p>
-              <Meeting />
-            </MiniCard>
+            <Meeting fromLabel='Accueil' />
           </div>
           <div />
         </Layout>
@@ -128,25 +121,6 @@ const Subtitle = styled.p`
       display: inline;
     }
   }
-`
-
-const MiniCard = styled.div`
-  border-color: #ccdcfd;
-  border-radius: 16px;
-  border-style: solid;
-  border-width: 1px 4px 4px 1px;
-  gap: 2rem;
-  justify-content: flex-start;
-  padding: 1.5rem;
-`
-
-const MiniCardEmoji = styled.span`
-  margin-right: 0.5rem;
-`
-
-const MiniCardText = styled.p`
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
 `
 
 const HideAboveMedium = styled.span`
