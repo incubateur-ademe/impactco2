@@ -65,8 +65,7 @@
           "title": "Empreinte carbone par m²",
           "value": "132,63 kWh/m² × 0,324 kgCO₂e/kWh = 42,97 kgCO₂e/m²"
         }
-      ],
-      "hypothesis": "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation."
+      ]
     }
   },
   {
@@ -238,8 +237,7 @@
           "title": "Empreinte carbone par m²",
           "value": "175,08 kWh/m² × 0,112 kgCO₂e/kWh = 19,61 kgCO₂e/m²"
         }
-      ],
-      "hypothesis": "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation."
+      ]
     }
   }
 ]
