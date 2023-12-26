@@ -43,7 +43,7 @@ const CategoryWrapper = (
               <MagicLink
                 key={source.label}
                 to={source.href}
-                color='blue'
+                color='secondary'
                 onClick={() => track(category.name, 'Source', source.href)}>
                 {source.label}
               </MagicLink>,
@@ -64,15 +64,15 @@ const CategoryWrapper = (
         <Card
           tracking={category.name}
           title='Comprendre les données'
-          image='/images/data.png'
+          image='/images/magnifying-glass.png'
           small
-          color='blue'
+          color='secondary'
           onClick={() => setOverScreen('data')}
         />
         <Card
           tracking={category.name}
           title='Aller plus loin'
-          image='/images/hypothesis.png'
+          image='/images/bulb.png'
           small
           onClick={() => setOverScreen('hypothesis')}
         />

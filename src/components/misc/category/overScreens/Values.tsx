@@ -27,7 +27,7 @@ export const overScreenCategoryValues: (
           title='Utiliser cette ressource'
           description='Consultez le kit de diffusion impact CO₂ pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
           link='Kit de diffusion'
-          image='/images/ressources.png'
+          image='/images/laptop.png'
           tracking={category.name}
         />
       </>

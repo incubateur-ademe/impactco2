@@ -8,41 +8,49 @@ export type OverScreenInfo = {
   cancel?: (onClose: () => void) => ReactNode
   noScroll?: boolean
 }
-const OverScreen = ({ values, onClose, theme }: { values: OverScreenInfo; onClose: () => void; theme?: 'blue' }) => {
+const OverScreen = ({
+  values,
+  onClose,
+  color,
+}: {
+  values: OverScreenInfo
+  onClose: () => void
+  color?: 'secondary'
+}) => {
   return (
     <Container>
       <Shadow onClick={onClose} />
-      <Content $theme={theme}>
-        <Header $theme={theme}>
+      <Content $color={color}>
+        <Header $color={color}>
           <span className='text-lg'>
             <b>{values.title}</b>
           </span>
           <GhostButton
-            colored={theme === 'blue'}
+            colored={color === 'secondary'}
             icon='close'
             iconPosition='right'
             onClick={onClose}
-            size={theme === 'blue' ? 'sm' : undefined}>
+            size={color === 'secondary' ? 'sm' : undefined}>
             Fermer
           </GhostButton>
         </Header>
         {values.noScroll ? (
           <Children>{values.children}</Children>
         ) : (
-          <Scroll $theme={theme}>
+          <Scroll $color={color}>
             <Children>{values.children}</Children>
           </Scroll>
         )}
-        <Footer $theme={theme}>
+        <Footer $color={color}>
           {values.cancel ? (
             values.cancel(onClose)
           ) : (
             <GhostButton
-              colored={theme === 'blue'}
+              colored={color === 'secondary'}
               icon='close'
               iconPosition='right'
               onClick={onClose}
-              size={theme === 'blue' ? 'sm' : undefined}>
+              size={color === 'secondary' ? 'sm' : undefined}>
               Annuler
             </GhostButton>
           )}

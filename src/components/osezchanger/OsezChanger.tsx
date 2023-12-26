@@ -44,7 +44,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
           <Actions takeScreenshot={takeScreenshot} setOverScreen={setOverScreen} />
           {overScreen && (
             <OverScreen
-              theme='blue'
+              color='secondary'
               values={overScreenOsezChangerValues[overScreen]}
               onClose={() => setOverScreen(undefined)}
             />

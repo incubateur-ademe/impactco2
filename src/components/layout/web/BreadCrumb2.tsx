@@ -32,6 +32,11 @@ export type BreadcrumbProps =
       type: 'accueil'
       page: string
     }
+  | {
+      type: 'other'
+      previous: { to: string; label: string }
+      current: string
+    }
 
 export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProps }) {
   return breadcrumb ? (
@@ -60,6 +65,15 @@ export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProp
               <>
                 <MagicLink to='/'>Page d’accueil</MagicLink>
                 <Icon iconId='dropdown-arrow-right' /> {breadcrumb.page}
+              </>
+            )}
+            {breadcrumb && breadcrumb.type === 'other' && (
+              <>
+                <MagicLink to='/'>Page d’accueil</MagicLink>
+                <Icon iconId='dropdown-arrow-right' />
+                <MagicLink to={breadcrumb.previous.to}>{breadcrumb.previous.label}</MagicLink>
+                <Icon iconId='dropdown-arrow-right' />
+                {breadcrumb.current}
               </>
             )}
           </Wrapper>

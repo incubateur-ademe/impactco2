@@ -105,7 +105,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should calculate co2e value based on input', () => {
-    renderWithStyle(<Defi setModal={() => console.log} />)
+    renderWithStyle(<Defi setOverScreen={() => console.log} />)
 
     act(() => {
       fireEvent.change(screen.getByTestId('question-neuf-input'), { target: { value: '3' } })
@@ -120,7 +120,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should calculate shoes value based on input', () => {
-    renderWithStyle(<Defi setModal={() => console.log} />)
+    renderWithStyle(<Defi setOverScreen={() => console.log} />)
 
     act(() => {
       fireEvent.change(screen.getByTestId('question-avis-input'), { target: { value: '5' } })

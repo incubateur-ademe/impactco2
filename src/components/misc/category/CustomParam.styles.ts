@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Input from 'components/form/Input'
 
 export const Container = styled.div`
   align-items: center;
@@ -64,35 +65,9 @@ export const InputContainer = styled.div`
   position: relative;
 `
 
-export const Input = styled.input`
-  align-items: center;
-  background: var(--neutral-10);
-  border: unset;
-  border-bottom: 2px solid var(--neutral-60);
-  border-radius: 0.5rem 0.5rem 0rem 0rem;
-  color: var(--neutral-70);
-  display: flex;
-  gap: 0.5rem;
-  max-width: 100px;
-  min-width: 7.5rem;
+export const StyledInput = styled(Input)`
   padding: 0.5rem 3rem 0.5rem 1rem;
-  position: relative;
   text-align: right;
-
-  &:hover {
-    border-bottom: 2px solid var(--secondary-50);
-  }
-
-  &:focus {
-    outline: 3px solid var(--secondary-40);
-    outline-offset: 2px;
-  }
-
-  &:disabled {
-    background: var(--neutral-10);
-    border-bottom: 2px solid var(--neutral-20);
-    color: var(--neutral-30);
-  }
 `
 
 export const InputSuffix = styled.span<{ $disabled: boolean }>`

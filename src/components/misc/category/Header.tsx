@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { Category } from 'types/category'
+import PageTitle from 'components/base/PageTitle'
 import { SectionWideContent } from 'components/base/Section'
 import Actions from './Actions'
-import { ActionsContainer, Container, Content, Description, Separator } from './Header.styles'
+import { ActionsContainer, Container, Content, Separator } from './Header.styles'
 import Integrate from './Integrate'
 import Share from './Share'
 
@@ -31,10 +32,14 @@ const Header = ({
   }
   return (
     <Container>
-      <h1>
-        Sensibiliser à l'impact <span className='text-secondary'>{category.header} sur le climat</span>
-      </h1>
-      <Description className='text-xl'>{category.description}</Description>
+      <PageTitle
+        title={
+          <>
+            Sensibiliser à l'impact <span className='text-secondary'>{category.header} sur le climat</span>
+          </>
+        }
+        description={category.description}
+      />
       <SectionWideContent $size='xs' $noGutter>
         <ActionsContainer ref={ref}>
           <Actions

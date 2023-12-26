@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from 'components/osezchanger/icons'
-import { Check, Checkbox, Container, Input, InputContainer, InputSuffix } from './CustomParam.styles'
+import { Check, Checkbox, Container, InputContainer, InputSuffix, StyledInput } from './CustomParam.styles'
 
 const configs: Record<string, { label: string; type: 'number' | 'text'; unit: string; min?: number; max?: number }> = {
   m2: { label: 'Afficher une surface personnalisée', type: 'number', unit: 'm²', min: 1 },
@@ -38,13 +38,16 @@ const CustomParam = ({
         )}
       </Checkbox>
       <InputContainer>
-        <Input
+        <StyledInput
+          id={slug}
           disabled={!visible}
           type={config.type}
           value={value}
           onChange={(event) => setValue(event.target.value)}
           min={config.min}
           max={config.max}
+          color='secondary'
+          maxWidth='100px'
         />
         <InputSuffix $disabled={!visible}>{config.unit}</InputSuffix>
       </InputContainer>

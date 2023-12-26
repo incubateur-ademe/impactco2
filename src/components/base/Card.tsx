@@ -23,8 +23,8 @@ const Card = ({
   image: string
   small?: boolean
   onClick?: () => void
-  color?: 'blue'
-  tracking: string
+  color?: 'secondary'
+  tracking?: string
 }) => {
   const inside = (
     <>
@@ -63,14 +63,18 @@ const Card = ({
           target='_blank'
           rel='noreferrer noopener'
           onClick={() => {
-            track(tracking, 'Ressource', href)
+            if (tracking) {
+              track(tracking, 'Ressource', href)
+            }
           }}>
           {inside}
         </Link>
       ) : (
         <button
           onClick={() => {
-            track(tracking, 'Ressource', title)
+            if (tracking) {
+              track(tracking, 'Ressource', title)
+            }
             if (onClick) {
               onClick()
             }
