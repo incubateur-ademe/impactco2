@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { Category } from 'types/category'
 import ClipboardBox from 'components/base/ClipboardBox'
+import { CustomParamType, CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 
-const Integrate = ({ category, params }: { category: Category; params?: Record<string, string> }) => {
-  const [customValues, setCustomValues] = useState<Record<string, { value: string; visible: boolean }> | null>(null)
+const Integrate = ({
+  category,
+  params,
+  tracking,
+}: {
+  category: Category
+  params?: Record<string, CustomParamValue>
+  tracking: string
+}) => {
+  const [customValues, setCustomValues] = useState<Record<string, CustomParamType>>({})
 
   useEffect(() => {
     if (params) {
-      const values: Record<string, { value: string; visible: boolean }> = {}
+      const values: Record<string, CustomParamType> = {}
       Object.entries(params).forEach(([key, value]) => {
         values[key] = {
           value,
@@ -32,14 +41,12 @@ const Integrate = ({ category, params }: { category: Category; params?: Record<s
 
   return (
     <>
-      {customValues && (
-        <CustomParams
-          tracking={category.name}
-          trackingType='Intégrer'
-          customValues={customValues}
-          setCustomValues={setCustomValues}
-        />
-      )}
+      <CustomParams
+        tracking={tracking}
+        trackingType='Intégrer'
+        customValues={customValues}
+        setCustomValues={setCustomValues}
+      />
       <ClipboardBox>{url}</ClipboardBox>
     </>
   )

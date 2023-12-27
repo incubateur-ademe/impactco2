@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   margin-bottom: 1.5rem;
   margin-top: 0.75rem;
+  text-align: left;
 `
 
 export const Separator = styled.div`

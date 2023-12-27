@@ -38,7 +38,9 @@ export default function Item(props) {
       data-testid={`bar-chart-item-${props.slug}`}>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
-        <Title title={props.title} subtitle={props.subtitle} component={props.component} />
+        <Title title={props.title} subtitle={props.subtitle}>
+          {props.children}
+        </Title>
         <Bar value={props.value} usage={props.usage} max={props.max} color={props.color} />
       </ChartWrapper>
     </Wrapper>

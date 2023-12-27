@@ -14,6 +14,7 @@ const Actions = ({
   return (
     <Buttons>
       <GhostButton
+        data-testid='header-share-button'
         icon='send-plane'
         onClick={() => {
           onClick('partager')
@@ -22,6 +23,7 @@ const Actions = ({
         Partager
       </GhostButton>
       <GhostButton
+        data-testid='header-integrate-button'
         icon='code-s-slash'
         onClick={() => {
           onClick('integrer')

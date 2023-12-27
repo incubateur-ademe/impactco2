@@ -31,7 +31,10 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     const nantes = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Nantes 44000 France' })
     // When
     await nantes.click()
-    expect(page.getByTestId('Address-Domicile').locator('form')).toHaveAttribute('addressset', 'Nantes  France')
+    expect(page.getByTestId('Address-Domicile').locator('form').locator('input')).toHaveAttribute(
+      'value',
+      'Nantes  France'
+    )
   })
 
   await test.step('Travail - on peut rentrer directement 3 lettres, il y a aussi des suggestions qui apparaissent', async () => {
@@ -53,7 +56,10 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     // When
     await angers.click()
     // Then
-    await expect(page.getByTestId('Address-Travail').locator('form')).toHaveAttribute('addressset', 'Angers  France')
+    await expect(page.getByTestId('Address-Travail').locator('form').locator('input')).toHaveAttribute(
+      'value',
+      'Angers  France'
+    )
     await expect(page.getByText('Choisissez votre mode de')).toBeAttached()
   })
   await test.step("Mode de transport - on peut choisir un mode de transport, le bilan s'affiche alors", async () => {

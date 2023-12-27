@@ -7,8 +7,8 @@ import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function Itineraire({ category }: { category: Category }) {
   return (
-    <Iframe>
-      <TransportProvider>
+    <Iframe noLogo>
+      <TransportProvider type='itineraire'>
         <Itinerary category={category} iframe />
       </TransportProvider>
     </Iframe>

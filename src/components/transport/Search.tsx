@@ -20,14 +20,10 @@ const Color = styled.button`
   }
 `
 export default function Search({
-  distance,
-  itineraire,
-  teletravail,
+  type,
   iframe,
 }: {
-  distance?: boolean
-  itineraire?: boolean
-  teletravail?: boolean
+  type: 'distance' | 'itineraire' | 'teletravail'
   iframe?: boolean
 }) {
   const { setOccupancyModal, km, setKm } = useContext<{
@@ -40,8 +36,8 @@ export default function Search({
 
   return (
     <>
-      <ModeSelector distance={distance} itineraire={itineraire} teletravail={teletravail} iframe={iframe} />
-      {itineraire && (
+      <ModeSelector type={type} iframe={iframe} />
+      {type === 'itineraire' && (
         <Simulator
           text={
             <>
@@ -59,7 +55,7 @@ export default function Search({
           <Itinerary />
         </Simulator>
       )}
-      {teletravail && (
+      {type === 'teletravail' && (
         <Simulator
           text={
             <>
@@ -69,7 +65,7 @@ export default function Search({
           <Teletravail />
         </Simulator>
       )}
-      {distance && (
+      {type === 'distance' && (
         <Simulator
           text={
             <>

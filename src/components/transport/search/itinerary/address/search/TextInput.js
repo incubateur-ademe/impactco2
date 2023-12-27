@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   position: relative;
 
   &:before {
-    animation: ${(props) => (props.isFetching ? loading : 'none')} 1s infinite;
+    animation: ${(props) => (props.$isFetching ? loading : 'none')} 1s infinite;
     background-color: ${(props) => props.theme.colors.second};
     content: '';
     height: 100%;
@@ -52,7 +52,7 @@ const Input = styled.input`
 `
 export default React.forwardRef(function TextInput(props, ref) {
   return (
-    <Wrapper isFetching={props.isFetching}>
+    <Wrapper $isFetching={props.isFetching}>
       <Input
         ref={ref}
         type='text'

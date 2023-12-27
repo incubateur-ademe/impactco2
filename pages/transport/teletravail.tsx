@@ -11,11 +11,12 @@ export default function TeletravailPage({ category }: { category: Category }) {
     <Web
       title={category.meta.title}
       description={category.meta.description}
+      image={`meta/${category.slug}.png`}
       breadcrumb={{
         type: 'equivalent',
         category: category,
       }}>
-      <TransportProvider>
+      <TransportProvider type='teletravail'>
         <Teletravail category={category} />
         <Learning category={category} />
       </TransportProvider>

@@ -2,13 +2,14 @@ import React, { useContext } from 'react'
 import { Category } from 'types/category'
 import useItineraries, { Point } from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
-import { Section, SectionWideContent } from 'components/base/Section'
 import BarChart from 'components/charts/BarChart'
 import Bottom from 'components/misc/category/Bottom'
-import Wrapper from 'components/misc/category/Wrapper'
 import TransportContext from 'components/transport/TransportProvider'
 import ResultHeader from './ResultHeader'
 import Search from './Search'
+import Transport from './Transport'
+
+const tracking = 'Transport itinéraire'
 
 export default function Itinerary({ category, iframe }: { category: Category; iframe?: boolean }) {
   const { start, end } = useContext<{
@@ -19,22 +20,18 @@ export default function Itinerary({ category, iframe }: { category: Category; if
   }>(TransportContext)
 
   const itineraries = useItineraries(start, end, 'itinéraire')
-  const transportations = useTransportations('Transport itinéraire', itineraries)
+  const transportations = useTransportations(tracking, itineraries)
 
   return (
-    <Section $withoutPadding data-testid='itineraryWrapper'>
-      <SectionWideContent $size='sm'>
-        <Wrapper name={category.title || category.name} slug='transport/itineraire' tracking='Transport itinéraire'>
-          <Search itineraire iframe={iframe} />
-          {itineraries && (
-            <>
-              {transportations.length ? <ResultHeader category={category} tracking='Transport itinéraire' /> : null}
-              <BarChart equivalents={transportations} category={category} />
-              {transportations.length ? <Bottom category={category} /> : null}
-            </>
-          )}
-        </Wrapper>
-      </SectionWideContent>
-    </Section>
+    <Transport category={category} tracking={tracking} iframe={iframe} type='itineraire'>
+      <Search type='itineraire' iframe={iframe} />
+      {itineraries && (
+        <>
+          {transportations.length ? <ResultHeader category={category} tracking={tracking} /> : null}
+          <BarChart equivalents={transportations} category={category} />
+          {transportations.length ? <Bottom category={category} /> : null}
+        </>
+      )}
+    </Transport>
   )
 }

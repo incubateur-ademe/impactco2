@@ -1,4 +1,6 @@
-export const mockRoutesItinerary = async (page) => {
+import { Page } from '@playwright/test'
+
+export const mockRoutesItinerary = async (page: Page) => {
   await page.route(
     'https://photon.komoot.io/api/?q=nan&layer=city&layer=street&layer=house&lang=fr&lat=46.227638&lon=2.213749&zoom=7&location_bias_scale=0.9',
     async (route) => {
