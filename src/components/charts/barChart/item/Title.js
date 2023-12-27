@@ -32,7 +32,7 @@ export default function TitleComponent(props) {
         {props.title}
         {props.subtitle && <Subtitle> {props.subtitle}</Subtitle>}
       </Title>
-      {props.component}
+      {props.children}
     </Wrapper>
   )
 }

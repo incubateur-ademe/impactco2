@@ -6,24 +6,14 @@ import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
 import ClipboardBox from 'components/base/ClipboardBox'
 import { Icon } from 'components/osezchanger/icons'
-import { CustomParamType, CustomParamValue } from './CustomParam'
-import CustomParams from './CustomParams'
 import { Buttons, Meta } from './Share.styles'
 
-const Share = ({
-  category,
-  params,
-  path,
-}: {
-  category: Category
-  params?: Record<string, CustomParamValue>
-  path?: string
-}) => {
-  const [customValues, setCustomValues] = useState<Record<string, CustomParamType> | null>(null)
+const TransportShare = ({ category, params }: { category: Category; params?: Record<string, string> }) => {
+  const [customValues, setCustomValues] = useState<Record<string, { value: string; visible: boolean }> | null>(null)
 
   useEffect(() => {
     if (params) {
-      const values: Record<string, CustomParamType> = {}
+      const values: Record<string, { value: string; visible: boolean }> = {}
       Object.entries(params).forEach(([key, value]) => {
         values[key] = {
           value,
@@ -35,40 +25,17 @@ const Share = ({
   }, [params, setCustomValues])
 
   const url = buildCurrentUrlFor(
-    `${path || category.slug}${
+    `${category.slug}${
       customValues
         ? `?${Object.entries(customValues)
             .filter(([, { visible }]) => visible)
-            .map(([key, { value }]) => {
-              if (typeof value === 'string') {
-                return `${key}=${value}`
-              }
-              if (value.start && value.end) {
-                return `${key}Start=${value.start}&${key}End=${value.end}`
-              }
-
-              if (value.start) {
-                return `${key}Start=${value.start}`
-              }
-
-              if (value.end) {
-                return `${key}End=${value.end}`
-              }
-            })
+            .map(([key, { value }]) => `${key}=${value}`)
             .join('&')}`
         : ''
     }`
   )
   return (
     <>
-      {customValues && (
-        <CustomParams
-          tracking={category.name}
-          trackingType='Partager'
-          customValues={customValues}
-          setCustomValues={setCustomValues}
-        />
-      )}
       <ClipboardBox>{url}</ClipboardBox>
       <Buttons>
         <FacebookShareButton
@@ -107,4 +74,4 @@ const Share = ({
   )
 }
 
-export default Share
+export default TransportShare

@@ -71,7 +71,12 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
   ) : (
     <Section $withoutPadding>
       <SectionWideContent $size='sm'>
-        <Header category={category} params={{ m2: value.toString() }} takeScreenshot={takeScreenshot} />
+        <Header
+          category={category}
+          params={{ m2: value.toString() }}
+          takeScreenshot={takeScreenshot}
+          tracking='Chauffage'
+        />
         {content}
       </SectionWideContent>
     </Section>

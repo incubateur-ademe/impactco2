@@ -39,7 +39,7 @@ const Saved = styled(Emitted)`
 const Content = styled.p`
   line-height: 1.4rem;
   margin: 0;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
   padding-top: 2rem;
   text-align: center;
 
@@ -50,7 +50,7 @@ const Content = styled.p`
 const Small = styled.span`
   font-size: 0.875rem;
   font-weight: 300;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
 `
 const Number = styled.span`
   font-size: 2em;
@@ -66,24 +66,24 @@ export default function YearlyFootprint(props) {
     <Wrapper>
       <Bar>
         <Emitted percent={(props.emitted / (props.emitted + props.saved)) * 100}>
-          <Content visible={props.emitted} small={(props.emitted / (props.emitted + props.saved)) * 100 < 25}>
+          <Content $visible={props.emitted} small={(props.emitted / (props.emitted + props.saved)) * 100 < 25}>
             <Number>{props.emitted}</Number> kgCO<sub>2</sub>e
             <br />
             émis
             <br />
-            <Small visible={(props.emitted / (props.emitted + props.saved)) * 100 >= 25}>
+            <Small $visible={(props.emitted / (props.emitted + props.saved)) * 100 >= 25}>
               sur {props.presentiel} jour{props.presentiel > 1 && 's'}
             </Small>
           </Content>
         </Emitted>
         <br />
         <Saved percent={(props.saved / (props.emitted + props.saved)) * 100} data-testid='saved'>
-          <Content visible={props.saved} small={(props.saved / (props.emitted + props.saved)) * 100 < 25}>
+          <Content $visible={props.saved} small={(props.saved / (props.emitted + props.saved)) * 100 < 25}>
             <Number>{props.saved}</Number> kgCO<sub>2</sub>e
             <br />
             évité{props.saved > 1 && 's'}
             <br />
-            <Small visible={(props.saved / (props.emitted + props.saved)) * 100 >= 25}>
+            <Small $visible={(props.saved / (props.emitted + props.saved)) * 100 >= 25}>
               {' '}
               sur {props.teletravail} jour{props.teletravail > 1 && 's'}
             </Small>

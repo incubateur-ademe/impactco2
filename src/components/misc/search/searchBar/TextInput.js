@@ -30,7 +30,7 @@ const Suggestion = styled.div`
   align-items: center;
   display: flex;
   left: 0;
-  opacity: ${(props) => (props.visible ? 0.75 : 0)};
+  opacity: ${(props) => (props.$visible ? 0.75 : 0)};
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -76,7 +76,7 @@ export default React.forwardRef(function TextInput(props, ref) {
         onFocus={() => props.setFocus(true)}
         onBlur={() => props.setFocus(false)}
       />
-      <Suggestion visible={props.suggestion && props.suggestionVisible && props.search}>
+      <Suggestion $visible={props.suggestion && props.suggestionVisible && props.search}>
         <Invisible>{props.search}</Invisible>
         {props.suggestion && (
           <Visible>

@@ -5,9 +5,9 @@ const Wrapper = styled.button`
   background: ${(props) => props.theme.colors.background};
   border: none;
   bottom: 0;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
   padding-right: 0.5em;
-  pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
+  pointer-events: ${(props) => (props.$visible ? 'inherit' : 'none')};
   position: absolute;
   right: 0;
   top: 0;
@@ -29,7 +29,7 @@ const Wrapper = styled.button`
 export default function Submit(props) {
   return (
     <Wrapper
-      visible={props.visible}
+      $visible={props.visible}
       onFocus={() => props.setFocus(true)}
       onBlur={() => props.setFocus(false)}
       aria-label='Valider'>
