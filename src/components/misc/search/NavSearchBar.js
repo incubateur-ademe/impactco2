@@ -129,11 +129,11 @@ const NavActions = styled.div`
 `
 
 const SearchContainer = styled.div`
-  background-color: ${(props) => (props.focus ? props.theme.colors.background : 'transparent')};
+  background-color: ${(props) => (props.$focus ? props.theme.colors.background : 'transparent')};
   border: 1px solid #eae5e8;
   border-radius: 0.625em;
   box-shadow: ${(props) =>
-    props.focus ? '0px 4px 10px 0px rgba(0, 17, 51, 0.08)' : '0px 4px 10px 0px rgba(0, 17, 51, 0.04)'};
+    props.$focus ? '0px 4px 10px 0px rgba(0, 17, 51, 0.08)' : '0px 4px 10px 0px rgba(0, 17, 51, 0.04)'};
   left: 0;
   overflow: hidden;
   position: absolute;
@@ -142,8 +142,8 @@ const SearchContainer = styled.div`
   z-index: 100;
 
   ${(props) => props.theme.mq.small} {
-    border-radius: ${(props) => (props.home || props.focus ? ' 0.625em' : '4rem')};
+    border-radius: ${(props) => (props.home || props.$focus ? ' 0.625em' : '4rem')};
     left: ${(props) => (props.home ? 0 : 'auto')};
-    width: ${(props) => (props.home ? 'auto' : props.focus ? 'calc(100vw - 1.5rem)' : '2.375rem')};
+    width: ${(props) => (props.home ? 'auto' : props.$focus ? 'calc(100vw - 1.5rem)' : '2.375rem')};
   }
 `

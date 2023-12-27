@@ -20,7 +20,7 @@ export const overScreenCategoryValues: (
     title: 'Intégrer',
     children: (
       <>
-        <Integrate category={category} params={params} />
+        <Integrate category={category} params={params} tracking={category.name} />
         <Space />
         <Card
           href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'

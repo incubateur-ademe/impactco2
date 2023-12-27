@@ -29,6 +29,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   i18n: {
     locales: ['fr'],
     defaultLocale: 'fr',

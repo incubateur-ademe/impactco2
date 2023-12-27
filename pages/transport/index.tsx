@@ -6,7 +6,7 @@ import Learning from 'components/misc/Learning'
 import Distance from 'components/transport/Distance'
 import { TransportProvider } from 'components/transport/TransportProvider'
 
-export default function Transport({ category }: { category: Category }) {
+export default function DistancePage({ category }: { category: Category }) {
   return (
     <Web
       title={category.meta.title}
@@ -16,7 +16,7 @@ export default function Transport({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
-      <TransportProvider>
+      <TransportProvider type='distance'>
         <Distance category={category} />
         <Learning category={category} />
       </TransportProvider>

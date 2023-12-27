@@ -4,10 +4,10 @@ import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled(MagicLink)`
   align-items: center;
-  background-color: ${(props) => (props.hollow ? 'transparent' : props.theme.colors.main)};
+  background-color: ${(props) => (props.$hollow ? 'transparent' : props.theme.colors.main)};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.5rem;
-  color: ${(props) => props.theme.colors[props.hollow ? 'main' : 'background']};
+  color: ${(props) => props.theme.colors[props.$hollow ? 'main' : 'background']};
   cursor: pointer;
   display: flex;
   font-size: ${(props) => (props.small ? '0.875em' : '1em')};
@@ -20,17 +20,17 @@ const Wrapper = styled(MagicLink)`
   text-decoration: none;
 
   path {
-    fill: ${(props) => props.theme.colors[props.hollow ? 'main' : 'background']};
+    fill: ${(props) => props.theme.colors[props.$hollow ? 'main' : 'background']};
   }
 
   &:hover,
   &:focus {
-    background-color: ${(props) => (props.hollow ? props.theme.colors.main : 'transparent')};
-    color: ${(props) => props.theme.colors[props.hollow ? 'background' : 'main']};
+    background-color: ${(props) => (props.$hollow ? props.theme.colors.main : 'transparent')};
+    color: ${(props) => props.theme.colors[props.$hollow ? 'background' : 'main']};
     outline: none;
 
     path {
-      fill: ${(props) => props.theme.colors[props.hollow ? 'background' : 'main']};
+      fill: ${(props) => props.theme.colors[props.$hollow ? 'background' : 'main']};
     }
   }
 `
@@ -40,7 +40,7 @@ export default function Button(props) {
       to={props.to}
       onClick={props.onClick}
       disabled={props.disabled}
-      hollow={props.hollow}
+      $hollow={props.hollow}
       small={props.small}
       className={props.className}
       type={props.type}

@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { computeECV } from 'utils/computeECV'
 import useItineraries from 'hooks/useItineraries'
 import DataContext from 'components/providers/DataProvider'
-import { Section, SectionWideContent } from 'components/base/Section'
-import Wrapper from 'components/misc/category/Wrapper'
 import TransportContext from 'components/transport/TransportProvider'
 import Search from './Search'
+import Transport from './Transport'
 import PercentFootprint from './teletravail/PercentFootprint'
 import YearlyFootprint from './teletravail/YearlyFootprint'
+
+const tracking = 'Transport télétravail'
 
 export default function Teletravail(props) {
   const { equivalents } = useContext(DataContext)
@@ -47,16 +48,12 @@ export default function Teletravail(props) {
   }, [presentiel, teletravail, holidays, extraKm, distance, currentTransportation])
 
   return (
-    <Section $withoutPadding>
-      <SectionWideContent $size='sm'>
-        <Wrapper name={props.category.title} slug='transport/teletravail' tracking='teletravail'>
-          <Search teletravail iframe={props.iframe} />
-          {distance && currentTransportation ? (
-            <YearlyFootprint emitted={emitted} saved={saved} presentiel={presentiel} teletravail={teletravail} />
-          ) : null}
-          {distance && currentTransportation ? <PercentFootprint saved={saved} /> : null}
-        </Wrapper>
-      </SectionWideContent>
-    </Section>
+    <Transport category={props.category} tracking={tracking} iframe={props.iframe} type='teletravail'>
+      <Search type='teletravail' iframe={props.iframe} />
+      {distance && currentTransportation ? (
+        <YearlyFootprint emitted={emitted} saved={saved} presentiel={presentiel} teletravail={teletravail} />
+      ) : null}
+      {distance && currentTransportation ? <PercentFootprint saved={saved} /> : null}
+    </Transport>
   )
 }

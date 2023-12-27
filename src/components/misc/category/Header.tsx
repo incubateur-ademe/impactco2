@@ -3,18 +3,24 @@ import { Category } from 'types/category'
 import PageTitle from 'components/base/PageTitle'
 import { SectionWideContent } from 'components/base/Section'
 import Actions from './Actions'
+import { CustomParamValue } from './CustomParam'
 import { ActionsContainer, Container, Content, Separator } from './Header.styles'
 import Integrate from './Integrate'
 import Share from './Share'
+import TransportIntegrate from './TransportIntegrate'
 
 const Header = ({
   category,
   params,
   takeScreenshot,
+  tracking,
+  type,
 }: {
   category: Category
-  params?: Record<string, string>
+  params?: Record<string, CustomParamValue>
   takeScreenshot: () => void
+  tracking: string
+  type?: 'distance' | 'itineraire' | 'teletravail'
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const [opened, setOpened] = useState('')
@@ -24,10 +30,12 @@ const Header = ({
       setOpened('')
     } else {
       setOpened(section)
-      ref.current?.scrollIntoView({
-        block: 'start',
-        behavior: 'smooth',
-      })
+      if (ref.current && ref.current.scrollIntoView) {
+        ref.current.scrollIntoView({
+          block: 'start',
+          behavior: 'smooth',
+        })
+      }
     }
   }
   return (
@@ -49,8 +57,19 @@ const Header = ({
           {opened && (
             <Content>
               <Separator />
-              {opened === 'partager' && <Share category={category} params={params} />}
-              {opened === 'integrer' && <Integrate category={category} params={params} />}
+              {opened === 'partager' && (
+                <Share
+                  category={category}
+                  params={params}
+                  path={type && type !== 'distance' ? `transport/${type}` : undefined}
+                />
+              )}
+              {opened === 'integrer' &&
+                (type ? (
+                  <TransportIntegrate tracking={tracking} type={type} />
+                ) : (
+                  <Integrate category={category} params={params} tracking={tracking} />
+                ))}
             </Content>
           )}
         </ActionsContainer>
