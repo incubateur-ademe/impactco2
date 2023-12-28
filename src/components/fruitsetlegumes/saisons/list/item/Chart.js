@@ -11,17 +11,17 @@ const Wrapper = styled.div`
 
   &:before {
     background-color: ${(props) =>
-      props.theme.colors[props.percent > 0.5 ? 'error' : props.percent > 0.075 ? 'warning' : 'main']};
+      props.theme.colors[props.$percent > 0.5 ? 'error' : props.$percent > 0.075 ? 'warning' : 'main']};
     bottom: 0;
     content: '';
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
-    transform: scaleX(${(props) => props.percent});
+    transform: scaleX(${(props) => props.$percent});
     transform-origin: left;
   }
 `
 export default function Chart(props) {
-  return <Wrapper percent={props.item.season ? props.item.value / 15 : 15} />
+  return <Wrapper $percent={props.item.season ? props.item.value / 15 : 15} />
 }

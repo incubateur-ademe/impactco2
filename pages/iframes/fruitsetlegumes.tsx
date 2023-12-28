@@ -1,20 +1,13 @@
 import React from 'react'
+import { Category } from 'types/category'
 import categories from 'data/categories.json'
-import { getMonth, slugs } from 'utils/months'
 import Saisons from 'components/fruitsetlegumes/Saisons'
 import Iframe from 'components/layout/Iframe'
 
-export default function Fruitsetlegumes(props) {
-  const date = new Date()
-  const month = {
-    slug: slugs[date.getMonth()],
-    index: date.getMonth(),
-    ...getMonth(date.getMonth()),
-  }
-
+export default function Fruitsetlegumes({ category }: { category: Category }) {
   return (
     <Iframe>
-      <Saisons category={props.category} month={month} />
+      <Saisons category={category} iframe />
     </Iframe>
   )
 }
