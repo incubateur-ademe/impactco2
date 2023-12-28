@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Header = styled.div`
+  margin-bottom: 1.5rem;
   text-align: center;
 
   h2 {
