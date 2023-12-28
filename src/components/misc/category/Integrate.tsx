@@ -3,6 +3,7 @@ import { Category } from 'types/category'
 import ClipboardBox from 'components/base/ClipboardBox'
 import { CustomParamType, CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
+import { buildCustomParamsUrl } from './customParamsUrl'
 
 const Integrate = ({
   category,
@@ -30,14 +31,7 @@ const Integrate = ({
 
   const url = `<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${
     category.slug
-  }" data-search="?theme=default${
-    customValues
-      ? `?${Object.entries(customValues)
-          .filter(([, { visible }]) => visible)
-          .map(([key, { value }]) => `${key}=${value}`)
-          .join('&')}`
-      : ''
-  }"></script>`
+  }" data-search="?theme=default&${buildCustomParamsUrl(customValues)}"></script>`
 
   return (
     <>

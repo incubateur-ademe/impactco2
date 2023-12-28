@@ -100,7 +100,8 @@ const TransportIntegrate = ({
     if (
       tabs.includes(ITINERAIRE) &&
       customValues.itineraire.visible &&
-      typeof customValues.itineraire.value !== 'string'
+      typeof customValues.itineraire.value !== 'string' &&
+      'start' in customValues.itineraire.value
     ) {
       if (customValues.itineraire.value.start) {
         result += `&itineraireStart=${customValues.itineraire.value.start}`
@@ -113,7 +114,8 @@ const TransportIntegrate = ({
     if (
       tabs.includes(TELETRAVAIL) &&
       customValues.teletravail.visible &&
-      typeof customValues.teletravail.value !== 'string'
+      typeof customValues.teletravail.value !== 'string' &&
+      'start' in customValues.teletravail.value
     ) {
       if (customValues.teletravail.value.start) {
         result += `&teletravailStart=${customValues.teletravail.value.start}`
