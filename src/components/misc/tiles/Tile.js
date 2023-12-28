@@ -180,7 +180,7 @@ export default function Tile(props) {
         <Emoji>{props.equivalent.emoji}</Emoji>
       </EmojiWrapper>
       <Title>
-        <Number>
+        <Number data-testid={`tile-${props.equivalent.slug}-value`}>
           {props.noAnimation ? (
             formatNumber(props.weight / computeECV(props.equivalent))
           ) : (

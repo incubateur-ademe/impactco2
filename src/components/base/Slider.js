@@ -48,7 +48,11 @@ export default function Slider(props) {
 
           props.onChange(values[0])
         }}
-        renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}
+        renderTrack={({ props, children }) => (
+          <Track {...props} data-testid='slider-wrapper'>
+            {children}
+          </Track>
+        )}
         renderThumb={({ props: anotherProps }) => (
           <Thumb {...anotherProps} color={props.color} aria-label={props.ariaLabel} />
         )}

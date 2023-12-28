@@ -45,3 +45,20 @@ export const Inputs = styled.div`
     min-width: 300px;
   }
 `
+
+export const Params = styled.div`
+  display: flex;
+  gap: 0.25rem;
+`
+
+export const Param = styled.div`
+  align-items: center;
+  background: var(--neutral-10);
+  border: 1px solid var(--neutral-20);
+  border-radius: 4px;
+  color: var(--neutral-50);
+  display: flex;
+  font-weight: 500;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+`

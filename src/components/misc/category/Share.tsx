@@ -9,6 +9,7 @@ import { Icon } from 'components/osezchanger/icons'
 import { CustomParamType, CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { Buttons, Meta } from './Share.styles'
+import { buildCustomParamsUrl } from './customParamsUrl'
 
 const Share = ({
   category,
@@ -34,31 +35,7 @@ const Share = ({
     }
   }, [params, setCustomValues])
 
-  const url = buildCurrentUrlFor(
-    `${path || category.slug}${
-      customValues
-        ? `?${Object.entries(customValues)
-            .filter(([, { visible }]) => visible)
-            .map(([key, { value }]) => {
-              if (typeof value === 'string') {
-                return `${key}=${value}`
-              }
-              if (value.start && value.end) {
-                return `${key}Start=${value.start}&${key}End=${value.end}`
-              }
-
-              if (value.start) {
-                return `${key}Start=${value.start}`
-              }
-
-              if (value.end) {
-                return `${key}End=${value.end}`
-              }
-            })
-            .join('&')}`
-        : ''
-    }`
-  )
+  const url = buildCurrentUrlFor(`${path || category.slug}?${buildCustomParamsUrl(customValues)}`)
   return (
     <>
       {customValues && (

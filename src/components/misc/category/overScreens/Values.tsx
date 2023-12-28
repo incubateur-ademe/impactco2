@@ -2,6 +2,7 @@ import { Category } from 'types/category'
 import Card from 'components/base/Card'
 import { OverScreenInfo } from 'components/base/OverScreen'
 import Resource from 'components/base/Resource'
+import { CustomParamValue } from '../CustomParam'
 import Integrate from '../Integrate'
 import Share from '../Share'
 import Data from './Data'
@@ -10,7 +11,7 @@ import { ResourcesContainer, Space, StyledEmoji } from './Values.styles'
 
 export const overScreenCategoryValues: (
   category: Category,
-  params: Record<string, string>
+  params: Record<string, CustomParamValue>
 ) => Record<OverScreenCategory, OverScreenInfo> = (category, params) => ({
   partager: {
     title: 'Partager',
