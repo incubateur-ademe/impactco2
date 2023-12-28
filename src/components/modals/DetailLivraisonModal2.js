@@ -1,10 +1,9 @@
-import Link from 'next/link'
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import ModalContext from 'components/providers/ModalProvider'
-import MagicLink from 'components/base/MagicLink'
 import Modal2 from 'components/base/Modal2'
 import NewTabIcon from 'components/base/NewTabIcon'
+import Link from 'components/base/buttons/Link'
 
 const Title = styled.h2``
 
@@ -28,9 +27,9 @@ export default function DetailLivraisonModal2() {
       <FormattedText>
         <p>
           L'ensemble des calculs sont issus de{' '}
-          <MagicLink to='https://librairie.ademe.fr/mobilite-et-transport/6261-e-commerce-modelisation-des-impacts-et-recommandations-filieres-et-grand-public.html'>
+          <Link href='https://librairie.ademe.fr/mobilite-et-transport/6261-e-commerce-modelisation-des-impacts-et-recommandations-filieres-et-grand-public.html'>
             l’étude Commerce en ligne - 2023
-          </MagicLink>{' '}
+          </Link>{' '}
           à destination des professionels du E-commerce. L'outil ECEL à l'origine des calculs de cette étude a été
           adapté au contexte des particuliers sous forme de simulateur.
         </p>

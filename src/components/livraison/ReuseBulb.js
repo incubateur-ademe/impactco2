@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import MagicLink from 'components/base/MagicLink'
-import OutboundLink from 'components/base/OutboundLink'
+import Link from 'components/base/buttons/Link'
 
 export default function ReuseBulb() {
   return (
@@ -35,22 +34,22 @@ export default function ReuseBulb() {
         </UseBulbTitle>
         <p>
           Consultez le{' '}
-          <OutboundLink
-            color={'black'}
+          <Link
+            color='secondary'
             href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
             title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
             kit de diffusion Impact CO<sub>2</sub>
-          </OutboundLink>{' '}
+          </Link>{' '}
           pour vous emparer facilement du simulateur et l’intégrer à votre publication.
         </p>
         <p>Besoin d'inspiration?</p>
         <p style={{ 'margin-bottom': 0 }}>
-          <OutboundLink
-            color={'black'}
+          <Link
+            color='secondary'
             href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997? '
             title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
             Découvrez des exemples de réutilisation
-          </OutboundLink>
+          </Link>
         </p>
       </UseBulb>
       <GoFurther>
@@ -61,14 +60,14 @@ export default function ReuseBulb() {
           <GoFurtherFirstParagraph>
             Pour réutiliser les données brutes ou obtenir de l’aide pour intégrer ce simulateur, contactez-nous par mail
             à{' '}
-            <BlackMagicLink to={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>
+            <BlackLink href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>
               {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
-            </BlackMagicLink>
+            </BlackLink>
             .
           </GoFurtherFirstParagraph>
           <GoFurtherSecondParagraph>
-            Pour réutiliser <BlackMagicLink to='https://github.com/incubateur-ademe/impactco2/'>le code</BlackMagicLink>{' '}
-            du simulateur, consultez le code du site Impact CO<sub>2</sub>, développé de manière ouverte (
+            Pour réutiliser <BlackLink href='https://github.com/incubateur-ademe/impactco2/'>le code</BlackLink> du
+            simulateur, consultez le code du site Impact CO<sub>2</sub>, développé de manière ouverte (
             <i>open source</i>).
           </GoFurtherSecondParagraph>
         </details>
@@ -103,7 +102,7 @@ const UseBulbTitle = styled.div`
   top: -21px;
 `
 
-const BlackMagicLink = styled(MagicLink)`
+const BlackLink = styled(Link)`
   color: ${(props) => props.theme.colors.text};
   > svg {
     display: none;

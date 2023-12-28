@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import useIframe from 'hooks/useIframe'
-import ButtonLink from 'components/base/ButtonLink'
+import Button from 'components/base/buttons/Button'
 import Item from './list/Item'
 
 const Wrapper = styled.div`
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     gap: 0.75rem;
   }
 `
-const StyledButtonLink = styled(ButtonLink)`
+const StyledButtonLink = styled(Button)`
   margin-bottom: 2rem;
 `
 export default function List(props) {
@@ -33,7 +33,9 @@ export default function List(props) {
           ))}
       </Wrapper>
       {iframe && props.items.length > itemPerPage * page ? (
-        <StyledButtonLink onClick={() => setPage((prevPage) => prevPage + 1)}>Voir la suite</StyledButtonLink>
+        <StyledButtonLink asLink onClick={() => setPage((prevPage) => prevPage + 1)}>
+          Voir la suite
+        </StyledButtonLink>
       ) : null}
     </>
   )

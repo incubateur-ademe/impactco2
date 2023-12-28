@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import OutboundLink from 'components/base/OutboundLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import Web from 'components/layout/Web'
 
 const FormatText = styled.div`
@@ -23,10 +23,12 @@ export default function Statistiques() {
             <h1>Statistiques</h1>
             <h2>Information</h2>
             <p>
-              <OutboundLink href='https://stats.data.gouv.fr/index.php?module=CoreHome&action=index&date=yesterday&period=week&idSite=156#?idSite=156&period=week&date=yesterday&category=Dashboard_Dashboard&subcategory=6'>
+              <Link
+                color='secondary'
+                href='https://stats.data.gouv.fr/index.php?module=CoreHome&action=index&date=yesterday&period=week&idSite=156#?idSite=156&period=week&date=yesterday&category=Dashboard_Dashboard&subcategory=6'>
                 Découvrez les statistiques du site Impact CO<sub>2</sub> sur le tableau de bord de notre outil de suivi
                 Matomo
-              </OutboundLink>
+              </Link>
             </p>
           </FormatText>
         </SectionWideContent>

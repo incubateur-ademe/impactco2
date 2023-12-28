@@ -1,9 +1,9 @@
 import React, { ReactNode, useContext, useMemo } from 'react'
 import { Category } from 'types/category'
 import ModalContext from 'components/providers/ModalProvider'
-import ButtonLink from 'components/base/ButtonLink'
 import Card from 'components/base/Card'
 import { SectionWideContent } from 'components/base/Section'
+import Button from 'components/base/buttons/Button'
 import Meeting from 'components/meeting/Meeting'
 import { Cards, Informations, Strong, StyledSection } from './Learning.styles'
 
@@ -25,25 +25,25 @@ export default function Learning({ category }: { category: Category }) {
           </Strong>
           <p>
             Un repas végétarien ou végétalien (0,5 et 0,4 kg{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>
+            </Button>
             ) a beacoup moins d'impact pour la planète qu’un repas avec du bœuf ou du poulet (7 kg{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             et 1,6 kg{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>
+            </Button>
             ) ou encore avec du poisson (gras 1,1 kg{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             et blanc 2 kg{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>
+            </Button>
             ). Il est donc préférable de manger des produits d'origine végétale pour protéger l’écosystème de la
             planète.
           </p>
@@ -76,13 +76,13 @@ export default function Learning({ category }: { category: Category }) {
           <p>
             L'impact carbone d'un meuble comprenant la fabrication, la distribution et l’usage, peut aller de 19 kg
             d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec la chaise en bois, jusqu’à 907 kg d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec l’armoire.
           </p>
         </>
@@ -95,9 +95,9 @@ export default function Learning({ category }: { category: Category }) {
           </p>
           <p>
             Pour calculer l’impact carbone, on prend en compte les émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             à toutes les étapes de la vie du vêtement : depuis la production de matières premières (coton, laine,
             polyester…), en passant par sa fabrication, sa distribution dans des magasins ou en ligne, son utilisation
             et son entretien (lavage, séchage en machine).
@@ -112,20 +112,20 @@ export default function Learning({ category }: { category: Category }) {
           </p>
           <Strong>
             Avec 30% des émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>
+            </Button>
             , le secteur des transports est le 1er secteur émetteur de gaz à effet de serre.
           </Strong>
           <p>
             L’impact carbone d'un déplacement d'une distance de 10km peut aller de 0 kg d’émission de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec la marche ou le vélo, jusqu’à 2,2 kg d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec une voiture thermique.
           </p>
         </>
@@ -139,13 +139,13 @@ export default function Learning({ category }: { category: Category }) {
           <p>
             L’impact carbone du secteur de l’électroménager comprenant la fabrication, la distribution et l’usage, peut
             aller de 41 kg d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec une bouilloire, jusqu’à 513 kg d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec le lave-linge.
           </p>
         </>
@@ -159,13 +159,13 @@ export default function Learning({ category }: { category: Category }) {
           <p>
             Que ce soit pour une maison ou un appartement, l’impact carbone du chauffage domestique par m<sup>2</sup> et
             par année, peut aller de 3,7 kg d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec le chauffage électrique, jusqu’à 53 kg d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec le chauffage au fioul.
           </p>
         </>
@@ -178,14 +178,14 @@ export default function Learning({ category }: { category: Category }) {
           </p>
           <p>
             L’impact carbone des boissons peut aller de 0,0001 kg d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec l’eau du robinet, comprenant l'impact de toute la gestion du réseau d'eau potable, jusqu’à 1,5 kg
             d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             avec le lait de vache. Pour les boissons embouteillées, les valeurs affichées comprennent l'impact de leur
             fabrication, de l'emballage, du transport, de toute la chaîne de distribution y compris les supermarchés.
           </p>
@@ -219,9 +219,9 @@ export default function Learning({ category }: { category: Category }) {
           <Strong>
             Aujourd’hui 75% de Français déclarent consommer des tomates en hiver. Or une tomate produite hors saison
             présente une empreinte carbone bien plus élevée puisqu'elle génère 4 fois plus d’émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)} color='secondary'>
+            <Button asLink onClick={() => setCo2e(true)} color='secondary'>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             que la même tomate produite durant la bonne saison.
           </Strong>
           <p>

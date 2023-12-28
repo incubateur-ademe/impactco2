@@ -5,29 +5,26 @@ import { computeECV } from 'utils/computeECV'
 import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import ButtonLink from 'components/base/ButtonLink'
-import MagicLink from 'components/base/MagicLink'
+import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 import { Title } from 'components/visualizations/Visualization.styles'
 
-const Wrapper = styled.div`
-  height: 100%;
-  margin: 0 0 2rem;
-`
 const Question = styled.div`
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 `
+
 const Text = styled.p`
   font-size: 1.125rem;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
   text-align: center;
 
   ${(props) => props.theme.mq.small} {
     font-size: 1rem;
   }
 `
+
 const Result = styled.p`
   font-size: 1.125rem;
-  margin: 0 auto 2.5rem;
   text-align: center;
 
   ${(props) => props.theme.mq.small} {
@@ -37,21 +34,22 @@ const Result = styled.p`
   strong {
     display: block;
     font-size: 1.5rem;
-    margin: 0.25rem auto;
 
     ${(props) => props.theme.mq.small} {
       font-size: 1.125rem;
     }
   }
 `
+
 const RangeWrapper = styled.div`
   align-items: center;
   display: flex;
   height: 2.5rem;
-  margin: 0.5rem auto;
+  margin: auto;
   max-width: 100%;
   width: 30rem;
 `
+
 const Track = styled.div`
   flex: 1;
   height: 0.125rem;
@@ -68,6 +66,7 @@ const Track = styled.div`
     top: 0;
   }
 `
+
 const Thumb = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.colors.main};
@@ -105,7 +104,7 @@ export default function LiseuseBookComparator() {
   const tracked = useRef(false)
 
   return (
-    <Wrapper>
+    <>
       <Title>
         Livres papier ou liseuse ?<br />
         Comparez leur impact sur le climat !
@@ -145,9 +144,9 @@ export default function LiseuseBookComparator() {
               <br />
             </strong>{' '}
             avant qu'elle émette moins de{' '}
-            <ButtonLink onClick={() => setCo2e(true)}>
+            <Button asLink onClick={() => setCo2e(true)}>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             que l'équivalent en livres papier.
           </Result>
         ) : (
@@ -155,10 +154,10 @@ export default function LiseuseBookComparator() {
             Vous ne devriez probablement pas acheter de liseuse.
             <br />
             Si vous en possédez déjà une, vous pouvez lui donner une seconde vie. Découvrez comment avec notre site{' '}
-            <MagicLink to='https://longuevieauxobjets.gouv.fr/'>Longue Vie Aux Objets</MagicLink>
+            <Link href='https://longuevieauxobjets.gouv.fr/'>Longue Vie Aux Objets</Link>
           </Result>
         )}
       </div>
-    </Wrapper>
+    </>
   )
 }

@@ -2,9 +2,9 @@ import React, { ReactNode } from 'react'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useScreenshot from 'hooks/useScreenshot'
-import MagicLink from 'components/base/MagicLink'
 import OverScreen, { OverScreenInfo } from 'components/base/OverScreen'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import Signature from 'components/screenshot/Signature'
 import { Container, IFrameLogos, Logos } from './ShareableContent.styles'
 import Actions from './category/Actions'
@@ -60,7 +60,7 @@ const ShareableContent = <T extends string>({
               <>
                 <IFrameLogos>
                   <Signature noMargin noLink center />
-                  <MagicLink to={buildCurrentUrlFor(category.slug)}>version complète</MagicLink>
+                  <Link href={buildCurrentUrlFor(category.slug)}>version complète</Link>
                 </IFrameLogos>
                 <Actions
                   onClick={(value) => {

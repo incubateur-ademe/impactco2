@@ -2,9 +2,9 @@ import { AxiosResponse } from 'axios'
 import React, { FormEvent, useState } from 'react'
 import axiosClient from 'utils/axios'
 import { NotionCommand } from 'utils/notion'
-import Button from 'components/base/Button'
 import PageTitle from 'components/base/PageTitle'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Button from 'components/base/buttons/Button'
 import { Form } from 'components/form/Form'
 import FormResult from 'components/form/FormResult'
 import Input from 'components/form/Input'
@@ -154,7 +154,7 @@ const RendezVous = ({ from }: { from: string }) => {
                 data-testid='rendez-vous-email'
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <Button disabled={sending} type='submit' data-testid='rendez-vous-button'>
+              <Button size='lg' disabled={sending} type='submit' data-testid='rendez-vous-button'>
                 Envoyer ma demande
               </Button>
             </Form>

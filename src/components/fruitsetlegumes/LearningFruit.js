@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import useOnScreen from 'hooks/useOnScreen'
 import ModalContext from 'components/providers/ModalProvider'
-import Button from 'components/base/Button'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import BarChart from './learning/BarChart'
 
 const StyledSection = styled(Section)`
@@ -99,11 +99,12 @@ export default function LearningFruit() {
         </Text>
         <BarChart />
         <ButtonWrapper>
-          <Button
-            to={'https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html'}
+          <Link
+            asButton
+            href={'https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html'}
             onClick={() => track('Fruits et légumes', 'Calendrier', 'fruits_et_legumes_calendrier')}>
             Je télécharge le calendrier des fruits et légumes de saison
-          </Button>
+          </Link>
         </ButtonWrapper>
         <Text>
           25% des émissions de gaz à effet de serre d'un Français sont liées à l'alimentation, devant les transports et
@@ -112,13 +113,12 @@ export default function LearningFruit() {
         </Text>
         <Text>
           Si vous souhaitez aller plus loin dans votre démarche, vous pouvez calculer votre empreinte sur le climat
-          grace à notre simulateur{' '}
-          <a href={'https://nosgestesclimat.fr/'} target='_blank' rel='noopener noreferrer'>
-            Nos Gestes Climat
-          </a>
+          grace à notre simulateur <Link href='https://nosgestesclimat.fr/'>Nos Gestes Climat</Link>
         </Text>
         <ButtonWrapper>
-          <Button to={'https://nosgestesclimat.fr/'}>Je calcule mon empreinte carbone</Button>
+          <Link asButton href={'https://nosgestesclimat.fr/'}>
+            Je calcule mon empreinte carbone
+          </Link>
         </ButtonWrapper>
       </SectionWideContent>
     </StyledSection>
