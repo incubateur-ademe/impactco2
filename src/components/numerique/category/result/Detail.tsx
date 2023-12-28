@@ -1,5 +1,6 @@
 import { useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
+import { Category } from 'types/category'
 import formatConstruction from 'utils/formatConstruction'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
@@ -51,13 +52,12 @@ const devices = [
   },
 ]
 
-export default function Detail(props) {
-  const { engine, situation } = useContext(RulesContextNumerique)
-  const { equivalents, categories } = useContext(DataContext)
+export default function Detail({ category }: { category: Category }) {
+  // @ts-expect-error: TODO
+  const { engine, situation, numberEmails } = useContext(RulesContextNumerique)
+  const { equivalents } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)
-
-  const category = useMemo(() => categories.find((c) => c.id === 10), [categories])
 
   const equivalentsOfCategory = useMemo(() => {
     const devicesToDisplay = (
@@ -65,7 +65,7 @@ export default function Detail(props) {
         ? devices
         : devices.filter(
             ({ name }) =>
-              (name === engine.evaluate('email . appareil').nodeValue && props.numberEmails) ||
+              (name === engine.evaluate('email . appareil').nodeValue && numberEmails) ||
               (name === engine.evaluate('streaming . appareil').nodeValue &&
                 engine.evaluate('streaming . durée').nodeValue) ||
               (name === engine.evaluate('visio . appareil').nodeValue && engine.evaluate('visio . durée').nodeValue)
@@ -76,12 +76,12 @@ export default function Detail(props) {
       {
         id: 'email',
         slug: 'email',
-        title: `1 an d'emails (${formatNumber(props.numberEmails * 52)} emails)`,
+        title: `1 an d'emails (${formatNumber(numberEmails * 52)} emails)`,
         emoji: '📧',
         color: '#6C8CC1',
         value:
           ((engine.evaluate('email').nodeValue - engine.evaluate('email . terminaux . construction').nodeValue) *
-            props.numberEmails *
+            numberEmails *
             52) /
           1000,
         onClick: () => track('Usage numérique', 'Navigation equivalent', 'email'),
@@ -129,7 +129,7 @@ export default function Detail(props) {
         })),
     ].filter((item) => item.value)
     // Situation is needed here because engine is not properly updated
-  }, [engine, props.numberEmails, equivalents, displayAll, situation])
+  }, [engine, numberEmails, equivalents, displayAll, situation])
 
   return (
     <Wrapper>

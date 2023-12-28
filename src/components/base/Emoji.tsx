@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import twemoji from 'twemoji'
 
 const Wrapper = styled.span<{ $height?: string }>`
-  font-style: normal;
+  display: inline-flex;
   ${({ $height }) => $height && `height: ${$height};`}
+  font-style: normal;
   vertical-align: middle;
 
   img {
@@ -36,7 +37,6 @@ export default function Emoji({
 
     stringDOMforEmoji = parsed.replaceAll(/alt=".*?"/g, 'alt=""')
   }
-
   return stringDOMforEmoji ? (
     <Wrapper
       $height={height}
