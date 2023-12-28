@@ -22,7 +22,7 @@ export const categoryLinks: Record<string, { to: string; label: string }> = {
     label: "Comparez avec d'autres boissons",
   },
   transport: {
-    to: '/transports',
+    to: '/transport',
     label: "Comparez avec d'autres modes de transport",
   },
   quotidien: {
