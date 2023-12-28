@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   height: 1.75rem;
   position: relative;
   transform-origin: left;
-  width: ${(props) => props.percent * 100}%;
+  width: ${(props) => props.$percent * 100}%;
 `
 const Container = styled.div`
   background-color: ${(props) => props.color || props.theme.colors.main};
@@ -22,13 +22,15 @@ const Usage = styled.div`
   position: absolute;
   right: 0;
   top: 0;
-  width: ${(props) => props.percent * 100}%;
+  width: ${(props) => props.$percent * 100}%;
 `
 export default function Bar(props) {
   return (
-    <Wrapper percent={props.value / props.max}>
+    <Wrapper $percent={props.value / props.max}>
       <Container color={props.color}>
-        {props.usage !== undefined && <Usage percent={props.usage / props.value} color={props.color} />}
+        {props.usage !== undefined && (
+          <Usage $percent={(props.usage.peryear * props.usage.defaultyears) / props.value} color={props.color} />
+        )}
       </Container>
       <Value value={props.value} max={props.max} />
     </Wrapper>

@@ -3,7 +3,7 @@ import HorizontalRadio from 'components/base/HorizontalRadio'
 import Select from 'components/base/Select'
 import Slider from 'components/base/Slider'
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
   border: 0.0625rem solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `
-Wrapper.Label = styled.p`
+export const Label = styled.p`
   font-size: 1.125rem;
   font-weight: 300;
   margin-bottom: 0.5rem;
@@ -27,10 +27,10 @@ Wrapper.Label = styled.p`
     font-weight: bold;
   }
 `
-Wrapper.Color = styled.span`
+export const Color = styled.span`
   color: ${(props) => props.color};
 `
-Wrapper.Small = styled.span`
+export const Small = styled.span`
   display: block;
   font-size: 0.75rem;
 
@@ -38,10 +38,10 @@ Wrapper.Small = styled.span`
     display: inline;
   }
 `
-Wrapper.StyledSlider = styled(Slider)`
+export const StyledSlider = styled(Slider)`
   min-width: 11rem;
 `
-Wrapper.ShowMore = styled.button`
+export const ShowMore = styled.button`
   background-color: transparent;
   border: none;
   display: none;
@@ -60,14 +60,14 @@ Wrapper.ShowMore = styled.button`
     display: block;
   }
 `
-Wrapper.Desktop = styled.div`
+export const Desktop = styled.div<{ $visible: boolean }>`
   ${(props) => props.theme.mq.iframemedium} {
     display: ${(props) => (props.$visible ? 'flex' : 'none')};
     gap: 0.5rem;
     margin: 0.5rem 0 0.75rem;
   }
 `
-Wrapper.Parameters = styled.div`
+export const Parameters = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row-reverse;
@@ -79,7 +79,7 @@ Wrapper.Parameters = styled.div`
     margin: 0;
   }
 `
-Wrapper.StyledSelect = styled(Select)`
+export const StyledSelect = styled(Select)`
   flex: 1;
   font-size: 0.875rem;
   margin: 0;
@@ -93,7 +93,7 @@ Wrapper.StyledSelect = styled(Select)`
     font-size: 0.75rem;
   }
 `
-Wrapper.StyledHorizontalRadio = styled(HorizontalRadio)`
+export const StyledHorizontalRadio = styled(HorizontalRadio)`
   font-size: 0.875rem;
 
   & label {
@@ -104,5 +104,3 @@ Wrapper.StyledHorizontalRadio = styled(HorizontalRadio)`
     font-size: 0.75rem;
   }
 `
-
-export default Wrapper
