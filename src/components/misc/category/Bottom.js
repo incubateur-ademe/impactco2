@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
 `
 const Disclaimer = styled.p`
   font-size: 0.875rem;

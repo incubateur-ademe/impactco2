@@ -68,7 +68,7 @@ const RendezVous = ({ from }: { from: string }) => {
               description={
                 error
                   ? 'Il semble qu’il y ait actuellement un problème avec ce formulaire et nous en avons été alerté. Merci de bien vouloir essayer à nouveau dans quelques instants.'
-                  : "Nous allons vers vous pour convenir d'un temps d'échange."
+                  : "Nous allons revenir vers vous pour convenir d'un temps d'échange."
               }
             />
           ) : (
