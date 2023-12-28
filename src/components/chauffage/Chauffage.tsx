@@ -39,7 +39,7 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
   )
 
   return (
-    <CategoryWrapper category={category} iframe={iframe} params={{ m2: value.toString() }}>
+    <CategoryWrapper category={category} iframe={iframe} params={{ m2: value.toString() }} withFooter>
       <Simulator
         text={
           <>

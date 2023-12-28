@@ -7,16 +7,14 @@ import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
-import SourceAgribalyse from 'components/misc/SourceAgribalyse'
 import Bottom from './category/Bottom'
 import CategoryLegend from './category/CategoryLegend'
-import Description from './category/Description'
+import CategoryWrapper from './category/CategoryWrapper'
 import Instruction from './category/Instruction'
 import List from './category/List'
 import { Checkboxes, Top } from './category/Top'
-import Wrapper from './category/Wrapper'
 
-export default function CategoryList({ category }: { category: Category }) {
+export default function CategoryList({ category, iframe }: { category: Category; iframe?: boolean }) {
   const { equivalents } = useContext(DataContext)
 
   const [displayAll, setDisplayAll] = useState(false)
@@ -40,9 +38,7 @@ export default function CategoryList({ category }: { category: Category }) {
 
   return (
     <>
-      {category?.slug === 'boisson' && <SourceAgribalyse tracking={category.name} />}
-      <Wrapper name={category.title || category.name} slug={category.slug} tracking={category.slug}>
-        <Description description={category.description} />
+      <CategoryWrapper category={category} iframe={iframe}>
         <Top className='noscreenshot'>
           <Instruction title={category.equivalent} gender={category.gender} />
           <Checkboxes
@@ -72,7 +68,7 @@ export default function CategoryList({ category }: { category: Category }) {
           </>
         )}
         <Bottom category={category} />
-      </Wrapper>
+      </CategoryWrapper>
     </>
   )
 }

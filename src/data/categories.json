@@ -257,12 +257,6 @@
     "emoji": "🍹",
     "slug": "boisson",
     "header": "des boissons",
-    "sources": [
-      {
-        "label": "Base Empreinte ADEME",
-        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
-      }
-    ],
     "title": "Découvrez l'impact des boissons sur le climat",
     "description": "Comparez l'empreinte carbone de l'eau, des sodas, des boissons alcoolisées, du lait et des boissons chaudes",
     "equivalent": "boisson[s]",
