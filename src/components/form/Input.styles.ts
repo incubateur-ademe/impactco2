@@ -56,3 +56,7 @@ export const StyledInput = styled.input<{ $maxWidth?: string; $color?: 'secondar
   ${({ $color }) => input($color)}
   ${({ $maxWidth }) => `max-width:${$maxWidth || '560px'};`}
 `
+export const StyledSelect = styled.select<{ $maxWidth?: string; $color?: 'secondary' }>`
+  ${({ $color }) => input($color)}
+  ${({ $maxWidth }) => `max-width:${$maxWidth || '560px'};`}
+`
