@@ -243,7 +243,7 @@ export default function Learning({ category }: { category: Category }) {
             <Card
               href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
               title='Utiliser cette ressource'
-              description='Consultez le kit de diffusion impact CO₂ pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
+              description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
               link='Kit de diffusion'
               image='/images/laptop.png'
               tracking={category.name}
@@ -251,7 +251,7 @@ export default function Learning({ category }: { category: Category }) {
             <Card
               href='/api-doc'
               title="Accéder à l'API"
-              description='Vous souhaitez aller plus loin dans l’intégration de nos données au sein de vos propres contenus ou applications ?'
+              description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
               link='Voir la documentation'
               image='/images/lightning.png'
               tracking={category.name}
