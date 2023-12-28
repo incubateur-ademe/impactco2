@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const Header = styled.div`
   text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
 `
 
 export const Sources = styled.div`

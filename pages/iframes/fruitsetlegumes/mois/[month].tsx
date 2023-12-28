@@ -1,13 +1,14 @@
 import React from 'react'
+import { Category } from 'types/category'
 import categories from 'data/categories.json'
-import { getMonth, slugs } from 'utils/months'
+import { slugs } from 'utils/months'
 import Saisons from 'components/fruitsetlegumes/Saisons'
 import Iframe from 'components/layout/Iframe'
 
-export default function Transport(props) {
+export default function Month({ category, month }: { category: Category; month: number }) {
   return (
     <Iframe>
-      <Saisons category={props.category} month={props.month} />
+      <Saisons category={category} month={month} />
     </Iframe>
   )
 }
@@ -19,15 +20,11 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { month: string } }) {
   return {
     props: {
       category: categories.find((item) => item.id === 9),
-      month: {
-        slug: params.month,
-        index: slugs.indexOf(params.month),
-        ...getMonth(slugs.indexOf(params.month)),
-      },
+      month: slugs.indexOf(params.month),
     },
   }
 }
