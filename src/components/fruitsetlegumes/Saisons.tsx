@@ -34,14 +34,14 @@ export default function Saisons({ category, iframe, month }: { category: Categor
   const [currentMonth, setCurrentMonth] = useState(month)
 
   useEffect(() => {
-    if (router.isReady) {
+    if (router.isReady && month === undefined) {
       if (router.query.month) {
         setCurrentMonth(Number.parseInt(router.query.month as string))
       } else {
         setCurrentMonth(new Date().getMonth())
       }
     }
-  }, [setCurrentMonth, router])
+  }, [setCurrentMonth, router, month])
 
   const { equivalents } = useContext(DataContext)
 
@@ -87,7 +87,7 @@ export default function Saisons({ category, iframe, month }: { category: Categor
 
   const equivalentsOfTheMonth = useMemo(
     () =>
-      currentMonth &&
+      currentMonth !== undefined &&
       category &&
       equivalents
         .filter((equivalent) => equivalent.category === category.id)
@@ -124,11 +124,11 @@ export default function Saisons({ category, iframe, month }: { category: Categor
   )
   const [overScreen, setOverScreen] = useState<OverScreenCategory | undefined>()
   const overScreenValues = useMemo(
-    () => overScreenCategoryValues(category, { month: (currentMonth || '').toString() }),
+    () => overScreenCategoryValues(category, { month: (currentMonth || '0').toString() }),
     [category, currentMonth]
   )
 
-  return currentMonth && equivalentsOfTheMonth ? (
+  return currentMonth !== undefined && equivalentsOfTheMonth ? (
     <ShareableContent<OverScreenCategory>
       category={category}
       params={{ month: currentMonth.toString() }}

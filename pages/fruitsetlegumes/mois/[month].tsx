@@ -7,9 +7,10 @@ import Saisons from 'components/fruitsetlegumes/Saisons'
 import Web from 'components/layout/Web'
 
 export default function Month({ category, month }: { category: Category; month: number }) {
+  console.log(month)
   return (
     <Web
-      title={getMonthLabel(month) + ' | ' + category.title}
+      title={getMonthLabel(month) + ' | ' + category.name}
       description={category.description}
       breadcrumb={{
         type: 'equivalent',

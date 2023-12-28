@@ -4,6 +4,7 @@ import { track } from 'utils/matomo'
 import Card from 'components/base/Card'
 import MagicLink from 'components/base/MagicLink'
 import ShareableContent from '../ShareableContent'
+import SourceAgribalyse from '../SourceAgribalyse'
 import { Cards, Content, Header, Sources } from './CategoryWrapper.styles'
 import { OverScreenCategory } from './overScreens/Type'
 import { overScreenCategoryValues } from './overScreens/Values'
@@ -13,11 +14,13 @@ const CategoryWrapper = ({
   children,
   iframe,
   params,
+  withFooter,
 }: {
   category: Category
   children: ReactNode
   iframe?: boolean
-  params: Record<string, string>
+  params?: Record<string, string>
+  withFooter?: boolean
 }) => {
   const [overScreen, setOverScreen] = useState<OverScreenCategory | undefined>()
   const overScreenValues = useMemo(() => overScreenCategoryValues(category, params), [category, params])
@@ -50,26 +53,29 @@ const CategoryWrapper = ({
                 .slice(0, category.sources.length * 2 - 1)}
             </Sources>
           )}
+          {category.slug === 'boisson' && <SourceAgribalyse tracking={category.name} />}
         </Header>
       }
       footer={
-        <Cards>
-          <Card
-            tracking={category.name}
-            title='Comprendre les données'
-            image='/images/magnifying-glass.png'
-            small
-            color='secondary'
-            onClick={() => setOverScreen('data')}
-          />
-          <Card
-            tracking={category.name}
-            title='Aller plus loin'
-            image='/images/bulb.png'
-            small
-            onClick={() => setOverScreen('hypothesis')}
-          />
-        </Cards>
+        withFooter ? (
+          <Cards>
+            <Card
+              tracking={category.name}
+              title='Comprendre les données'
+              image='/images/magnifying-glass.png'
+              small
+              color='secondary'
+              onClick={() => setOverScreen('data')}
+            />
+            <Card
+              tracking={category.name}
+              title='Aller plus loin'
+              image='/images/bulb.png'
+              small
+              onClick={() => setOverScreen('hypothesis')}
+            />
+          </Cards>
+        ) : null
       }>
       <Content>{children}</Content>
     </ShareableContent>
