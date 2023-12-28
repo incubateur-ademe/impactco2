@@ -20,5 +20,5 @@ export const NotRequired = styled.span`
 export const Inputs = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 2.5rem;
+  gap: 1rem 2.5rem;
 `
