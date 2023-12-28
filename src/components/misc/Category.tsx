@@ -7,7 +7,7 @@ import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
-import SourceAgribalyse from 'components/misc/SourceAgribalyse.js'
+import SourceAgribalyse from 'components/misc/SourceAgribalyse'
 import Bottom from './category/Bottom'
 import CategoryLegend from './category/CategoryLegend'
 import Description from './category/Description'
@@ -40,7 +40,7 @@ export default function CategoryList({ category }: { category: Category }) {
 
   return (
     <>
-      {category?.slug === 'boisson' ? <SourceAgribalyse /> : <></>}
+      {category?.slug === 'boisson' && <SourceAgribalyse tracking={category.name} />}
       <Wrapper name={category.title || category.name} slug={category.slug} tracking={category.slug}>
         <Description description={category.description} />
         <Top className='noscreenshot'>

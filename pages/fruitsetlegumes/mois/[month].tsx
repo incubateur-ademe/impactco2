@@ -1,20 +1,21 @@
 import React from 'react'
+import { Category } from 'types/category'
 import categories from 'data/categories.json'
-import { getMonth, slugs } from 'utils/months'
+import { getMonthLabel, slugs } from 'utils/months'
 import LearningFruit from 'components/fruitsetlegumes/LearningFruit'
 import Saisons from 'components/fruitsetlegumes/Saisons'
 import Web from 'components/layout/Web'
 
-export default function Month(props) {
+export default function Month({ category, month }: { category: Category; month: number }) {
   return (
     <Web
-      title={props.month.long + ' | ' + props.category.title}
-      description={props.category.description}
+      title={getMonthLabel(month) + ' | ' + category.title}
+      description={category.description}
       breadcrumb={{
         type: 'equivalent',
-        category: props.category,
+        category: category,
       }}>
-      <Saisons category={props.category} month={props.month} />
+      <Saisons category={category} month={month} />
       <LearningFruit />
     </Web>
   )
@@ -27,15 +28,12 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
-export async function getStaticProps({ params }) {
+
+export async function getStaticProps({ params }: { params: { month: string } }) {
   return {
     props: {
       category: categories.find((item) => item.id === 9),
-      month: {
-        slug: params.month,
-        index: slugs.indexOf(params.month),
-        ...getMonth(slugs.indexOf(params.month)),
-      },
+      month: slugs.indexOf(params.month),
     },
   }
 }

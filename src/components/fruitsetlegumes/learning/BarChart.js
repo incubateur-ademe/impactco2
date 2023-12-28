@@ -37,7 +37,7 @@ const Bar = styled.div`
   padding-right: 1em;
   transform: scaleX(${(props) => (props.$isOnScreen ? 1 : 0)});
   transform-origin: left;
-  width: ${(props) => props.length}%;
+  width: ${(props) => props.$length}%;
 `
 const Axis = styled.div`
   border-top: 1px solid ${(props) => props.theme.colors.main};
@@ -48,7 +48,7 @@ const Axis = styled.div`
 
 const Mark = styled.div`
   font-size: 0.875em;
-  left: ${(props) => props.position}%;
+  left: ${(props) => props.$position}%;
   line-height: 1.8;
   position: absolute;
   top: 0;
@@ -102,10 +102,10 @@ export default function BarChart() {
       <Product>
         <Label>🍓</Label>
         <Bars>
-          <Bar index={0} length={(0.47 / 2) * 100} $secondary $isOnScreen={isOnScreen}>
+          <Bar $length={(0.47 / 2) * 100} $secondary $isOnScreen={isOnScreen}>
             0.47
           </Bar>
-          <Bar index={1} length={(0.67 / 2) * 100} $isOnScreen={isOnScreen}>
+          <Bar $length={(0.67 / 2) * 100} $isOnScreen={isOnScreen}>
             0.67
           </Bar>
         </Bars>
@@ -113,20 +113,20 @@ export default function BarChart() {
       <Product>
         <Label>🍅</Label>
         <Bars>
-          <Bar index={2} length={(0.51 / 2) * 100} $secondary $isOnScreen={isOnScreen}>
+          <Bar $length={(0.51 / 2) * 100} $secondary $isOnScreen={isOnScreen}>
             0.51
           </Bar>
-          <Bar index={3} length={(1.88 / 2) * 100} $isOnScreen={isOnScreen}>
+          <Bar $length={(1.88 / 2) * 100} $isOnScreen={isOnScreen}>
             1.88
           </Bar>
         </Bars>
       </Product>
       <Axis>
-        <Mark position={0}>0</Mark>
-        <Mark position={(0.5 / 2) * 100}>0.5</Mark>
-        <Mark position={(1 / 2) * 100}>1</Mark>
-        <Mark position={(1.5 / 2) * 100}>1.5</Mark>
-        <Mark position={(2 / 2) * 100}>2</Mark>
+        <Mark $position={0}>0</Mark>
+        <Mark $position={(0.5 / 2) * 100}>0.5</Mark>
+        <Mark $position={(1 / 2) * 100}>1</Mark>
+        <Mark $position={(1.5 / 2) * 100}>1.5</Mark>
+        <Mark $position={(2 / 2) * 100}>2</Mark>
         <Unit>
           kgCO<sub>2</sub>e / kg de produit
         </Unit>
