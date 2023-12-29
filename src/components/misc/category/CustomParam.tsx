@@ -68,7 +68,6 @@ const CustomParam = ({
               value={value}
               onChange={(event) => setValue(event.target.value)}
               color='secondary'
-              maxWidth='100px'
               data-testid={`custom-param-${slug}-select`}>
               {config.options.map((option) => (
                 <option value={option.value} key={option.value}>
