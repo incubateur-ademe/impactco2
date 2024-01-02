@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const ContentHeader = styled.div`
+  margin-bottom: 1.5rem;
+`
+
 export const Container = styled.div<{ $iframe?: boolean }>`
   border: 1px solid var(--neutral-20);
   border-radius: 16px;

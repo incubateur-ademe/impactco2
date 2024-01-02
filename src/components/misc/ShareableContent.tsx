@@ -6,7 +6,7 @@ import OverScreen, { OverScreenInfo } from 'components/base/OverScreen'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import Signature from 'components/screenshot/Signature'
-import { Container, IFrameLogos, Logos } from './ShareableContent.styles'
+import { Container, ContentHeader, IFrameLogos, Logos } from './ShareableContent.styles'
 import Actions from './category/Actions'
 import { CustomParamValue } from './category/CustomParam'
 import Header from './category/Header'
@@ -46,7 +46,7 @@ const ShareableContent = <T extends string>({
         )}
         <SectionWideContent $size='xs' $noGutter>
           <Container $iframe={iframe}>
-            {header}
+            {header && <ContentHeader>{header}</ContentHeader>}
             <div ref={ref}>
               {children}
               {isScreenshotting && (
