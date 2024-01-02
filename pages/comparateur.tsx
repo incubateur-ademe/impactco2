@@ -1,5 +1,6 @@
 import React from 'react'
 import Web from 'components/layout/Web'
+import Learning from 'components/misc/Learning'
 import Tiles from 'components/misc/Tiles'
 
 const Convertisseur = () => {
@@ -18,6 +19,7 @@ const Convertisseur = () => {
           </>
         }
       />
+      <Learning />
     </Web>
   )
 }

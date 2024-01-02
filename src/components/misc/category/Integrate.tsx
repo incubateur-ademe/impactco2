@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { Category } from 'types/category'
 import ClipboardBox from 'components/base/ClipboardBox'
 import { CustomParamType, CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
 const Integrate = ({
-  category,
+  slug,
   params,
   tracking,
 }: {
-  category: Category
+  slug: string
   params?: Record<string, CustomParamValue>
   tracking: string
 }) => {
@@ -29,9 +28,9 @@ const Integrate = ({
     }
   }, [params, setCustomValues])
 
-  const url = `<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${
-    category.slug
-  }" data-search="?theme=default&${buildCustomParamsUrl(customValues)}"></script>`
+  const url = `<script name="impact-co2" src="${
+    process.env.NEXT_PUBLIC_URL
+  }/iframe.js" data-type="${slug}" data-search="?theme=default&${buildCustomParamsUrl(customValues)}"></script>`
 
   return (
     <>

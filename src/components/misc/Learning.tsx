@@ -4,10 +4,9 @@ import ModalContext from 'components/providers/ModalProvider'
 import Card from 'components/base/Card'
 import { SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
-import Meeting from 'components/meeting/Meeting'
 import { Cards, Informations, Strong, StyledSection } from './Learning.styles'
 
-export default function Learning({ category }: { category: Category }) {
+export default function Learning({ category }: { category?: Category }) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore: TODO
   const { setCo2e } = useContext<{ setCo2e: (open: boolean) => void }>(ModalContext)
@@ -246,7 +245,7 @@ export default function Learning({ category }: { category: Category }) {
               description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
               link='Kit de diffusion'
               image='/images/laptop.png'
-              tracking={category.name}
+              tracking={category?.name || 'Comparateur'}
             />
             <Card
               href='/api-doc'
@@ -254,16 +253,16 @@ export default function Learning({ category }: { category: Category }) {
               description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
               link='Voir la documentation'
               image='/images/lightning.png'
-              tracking={category.name}
+              tracking={category?.name || 'Comparateur'}
             />
             <Card
-              href={`/rendez-vous?from=${category.slug}&fromLabel=${category.slug}`}
+              href={`/rendez-vous?from=${category?.slug || 'comparateur'}&fromLabel=${category?.name || 'Comparateur'}`}
               title='Obtenir un accompagnement'
               description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
               link='Prendre rendez-vous'
               image='/images/envelop.png'
             />
-            <Informations>{learnings[category.slug]}</Informations>
+            {category && <Informations>{learnings[category.slug]}</Informations>}
           </Cards>
         </SectionWideContent>
       </SectionWideContent>
