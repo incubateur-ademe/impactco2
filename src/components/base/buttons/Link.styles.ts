@@ -15,6 +15,10 @@ const LinkStyle = (style?: 'secondary') => {
       outline: 3px solid var(--${color}-40);
       outline-offset: 2px;
     }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
   `
 }
 

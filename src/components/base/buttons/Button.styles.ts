@@ -84,6 +84,10 @@ const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
   `
       : ''
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `
 
 export const Button = styled.button<{ $size?: 'sm' | 'lg'; $color?: 'secondary' }>`

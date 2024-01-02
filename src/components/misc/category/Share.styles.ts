@@ -54,5 +54,9 @@ export const Buttons = styled.div`
       color: var(--secondary-30) !important;
       cursor: not-allowed !important;
     }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
   }
 `
