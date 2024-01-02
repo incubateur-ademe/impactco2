@@ -1,15 +1,15 @@
 import React from 'react'
-import Card from 'components/base/Card'
+import { Icon } from 'components/osezchanger/icons'
+import { Arrow, StyledLink } from './Meeting.styles'
 
 const Meeting = ({ from, fromLabel }: { from?: string; fromLabel: string }) => {
   return (
-    <Card
-      href={`/rendez-vous?${from ? `from=${from}&` : ''}fromLabel=${fromLabel}`}
-      title='Obtenir un accompagnement'
-      description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
-      link='Prendre rendez-vous'
-      image='/images/envelop.png'
-    />
+    <StyledLink asButton href={`/rendez-vous?${from ? `from=${from}&` : ''}fromLabel=${fromLabel}`}>
+      Prendre rendez-vous{' '}
+      <Arrow>
+        <Icon iconId='full-arrow-right' />
+      </Arrow>
+    </StyledLink>
   )
 }
 

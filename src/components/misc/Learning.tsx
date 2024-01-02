@@ -256,7 +256,13 @@ export default function Learning({ category }: { category: Category }) {
               image='/images/lightning.png'
               tracking={category.name}
             />
-            <Meeting from={category.slug} fromLabel={category.name} />
+            <Card
+              href={`/rendez-vous?from=${category.slug}&fromLabel=${category.slug}`}
+              title='Obtenir un accompagnement'
+              description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
+              link='Prendre rendez-vous'
+              image='/images/envelop.png'
+            />
             <Informations>{learnings[category.slug]}</Informations>
           </Cards>
         </SectionWideContent>

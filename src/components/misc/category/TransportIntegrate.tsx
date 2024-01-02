@@ -173,6 +173,7 @@ const TransportIntegrate = ({
       {tabs.includes(DISTANCE) && (
         <>
           <CustomParams
+            integration
             title='Distance'
             tracking={tracking}
             trackingType='Intégrer'
@@ -185,6 +186,7 @@ const TransportIntegrate = ({
       {tabs.includes(ITINERAIRE) && (
         <>
           <CustomParams
+            integration
             title='Itinéraire'
             tracking={tracking}
             trackingType='Intégrer'
@@ -197,6 +199,7 @@ const TransportIntegrate = ({
       {tabs.includes(TELETRAVAIL) && (
         <>
           <CustomParams
+            integration
             title='Télétravail'
             tracking={tracking}
             trackingType='Intégrer'

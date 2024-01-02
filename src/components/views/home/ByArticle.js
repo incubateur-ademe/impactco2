@@ -4,6 +4,7 @@ import reusecards from './data/reusecards.json'
 import { track } from 'utils/matomo'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
+import Meeting from 'components/meeting/Meeting'
 import Header from './heading/Header'
 import ChtingLeft from './img/ChtingLeft'
 import ChtingRight from './img/ChtingRight'
@@ -120,9 +121,7 @@ export default function ByArticle() {
                 </MiddleUl>
               </div>
               <MiddleCta>
-                <Link asButton href='/rendez-vous?fromLabel=Accueil Bis'>
-                  Prendre rendez-vous
-                </Link>
+                <Meeting fromLabel='Accueil bis' />
               </MiddleCta>
             </Box>
           </MiddleGrid>

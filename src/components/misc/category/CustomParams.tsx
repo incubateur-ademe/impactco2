@@ -9,12 +9,14 @@ const CustomParams = ({
   setCustomValues,
   tracking,
   trackingType,
+  integration,
 }: {
   title?: string
   customValues: Record<string, CustomParamType>
   setCustomValues: (values: Record<string, CustomParamType>) => void
   tracking: string
   trackingType: string
+  integration?: boolean
 }) => {
   return (
     <>
@@ -23,6 +25,7 @@ const CustomParams = ({
         <CustomParam
           key={key}
           slug={key}
+          integration={integration}
           value={value}
           visible={visible}
           setValue={(newValue) => {

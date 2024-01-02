@@ -23,7 +23,7 @@ const configs: Record<
 }
 
 const arrayConfigs: Record<string, string> = {
-  situation: 'Partager ma propre simulation',
+  situation: '[ACTION] ma propre simulation',
 }
 
 const addressConfigs: Record<string, { label: string; start: string; end: string }> = {
@@ -43,12 +43,14 @@ const CustomParam = ({
   visible,
   setValue,
   setVisible,
+  integration,
 }: {
   slug: string
   value: CustomParamValue
   visible: boolean
   setValue: (value: CustomParamValue) => void
   setVisible: (visbile: boolean) => void
+  integration?: boolean
 }) => {
   if (typeof value === 'string') {
     const config = configs[slug]
@@ -57,7 +59,7 @@ const CustomParam = ({
         <CheckboxInput
           checked={visible}
           setChecked={setVisible}
-          label={config.label}
+          label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
           data-testid={`custom-param-${slug}-checkbox`}
         />
         <InputContainer>
@@ -99,7 +101,11 @@ const CustomParam = ({
     const config = addressConfigs[slug]
     return (
       <Container>
-        <CheckboxInput checked={visible} setChecked={setVisible} label={config.label} />
+        <CheckboxInput
+          checked={visible}
+          setChecked={setVisible}
+          label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
+        />
         <Inputs>
           <Input
             id={`${slug}-start`}
@@ -130,7 +136,7 @@ const CustomParam = ({
       <CheckboxInput
         checked={visible}
         setChecked={setVisible}
-        label={config}
+        label={config.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
         data-testid={`custom-param-${slug}-checkbox`}
       />
       <Params>

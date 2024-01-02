@@ -36,6 +36,7 @@ const Integrate = ({
   return (
     <>
       <CustomParams
+        integration
         tracking={tracking}
         trackingType='Intégrer'
         customValues={customValues}
