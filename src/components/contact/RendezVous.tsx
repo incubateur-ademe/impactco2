@@ -1,7 +1,8 @@
 import { AxiosResponse } from 'axios'
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useMemo, useState } from 'react'
+import { ZodError } from 'zod'
 import axiosClient from 'utils/axios'
-import { NotionCommand } from 'utils/notion'
+import { NotionCommand, NotionCommandValidation } from 'utils/notion'
 import PageTitle from 'components/base/PageTitle'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
@@ -14,6 +15,8 @@ import TextArea from 'components/form/TextArea'
 import { Content } from './RendezVous.styles'
 
 const RendezVous = ({ from }: { from: string }) => {
+  const [errors, setErrors] = useState<ZodError | null>()
+
   const [email, setEmail] = useState('')
   const [needs, setNeeds] = useState('')
   const [structure, setStructure] = useState('')
@@ -23,26 +26,56 @@ const RendezVous = ({ from }: { from: string }) => {
   const [sent, setSent] = useState(false)
   const [error, setError] = useState(false)
 
+  const data = useMemo(() => {
+    const data = {
+      type: 'contact',
+      email,
+      structure,
+      needs,
+      other,
+      from,
+    }
+    if (errors) {
+      const body = NotionCommandValidation.safeParse(data)
+      if (body.success) {
+        setErrors(null)
+      } else {
+        setErrors(body.error)
+        console.log(body.error)
+      }
+    }
+    return data
+    // errors is not needed and cause an infinite refresh !
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [email, needs, other, from, structure])
+
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
     setSending(true)
-    try {
-      await axiosClient.post<string, AxiosResponse, NotionCommand>('/api/notion', {
-        type: 'contact',
-        email,
-        needs,
-        structure,
-        other,
-        from,
-      })
-    } catch {
-      setError(true)
+    setErrors(null)
+
+    const body = NotionCommandValidation.safeParse(data)
+    if (body.success) {
+      try {
+        await axiosClient.post<string, AxiosResponse, NotionCommand>('/api/notion', body.data)
+      } catch {
+        setError(true)
+      }
+      setSent(true)
+    } else {
+      const input = document.getElementById(`input-${body.error.issues[0].path[0]}`)
+      if (input) {
+        input.scrollIntoView({ behavior: 'smooth' })
+        input.focus({ preventScroll: true })
+      }
+      setErrors(body.error)
     }
 
     setSending(false)
-    setSent(true)
   }
 
+  console.log(errors)
   return (
     <Section $withoutPadding>
       <SectionWideContent $size='sm'>
@@ -72,12 +105,13 @@ const RendezVous = ({ from }: { from: string }) => {
               }
             />
           ) : (
-            <Form onSubmit={onSubmit} data-testid='rendez-vous-form'>
+            <Form onSubmit={onSubmit} data-testid='rendez-vous-form' noValidate>
               <Radio
                 required
                 id='structure'
                 label='Structure'
-                hint='Choisissez le type de structure qui vous correspond le mieux'>
+                hint='Choisissez le type de structure qui vous correspond le mieux'
+                errors={errors}>
                 <RadioInput
                   name='structure'
                   required
@@ -127,12 +161,13 @@ const RendezVous = ({ from }: { from: string }) => {
                   selected={structure}
                   setSelected={setStructure}>
                   <Input
-                    id='structure'
+                    id='other'
                     value={structure === 'autre' ? other : ''}
                     onChange={(e) => setOther(e.target.value)}
                     placeholder='précisez...'
                     disabled={structure !== 'autre'}
                     required={structure === 'autre'}
+                    errors={errors}
                   />
                 </RadioInput>
               </Radio>
@@ -153,6 +188,7 @@ const RendezVous = ({ from }: { from: string }) => {
                 value={email}
                 data-testid='rendez-vous-email'
                 onChange={(e) => setEmail(e.target.value)}
+                errors={errors}
               />
               <Button size='lg' disabled={sending} type='submit' data-testid='rendez-vous-button'>
                 Envoyer ma demande
