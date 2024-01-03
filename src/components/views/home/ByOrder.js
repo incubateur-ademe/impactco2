@@ -1,10 +1,10 @@
-import Link from 'next/link'
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import minicards from './data/minicards.json'
 import categories from 'data/categories.json'
 import DataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import Header from './heading/Header'
 import ArrowLeft from './img/ArrowLeft'
 import ArrowRight from './img/ArrowRight'
@@ -25,7 +25,9 @@ export default function ByOrder() {
         </MiniCardEq>
         <MiniCardWhat>{minicard.text}</MiniCardWhat>
         <MiniCardLink>
-          <Link href={`/${cat.slug}/${eq.slug}`}>Visualiser</Link>
+          <Link asButton small color='secondary' href={`/${cat.slug}/${eq.slug}`}>
+            Visualiser
+          </Link>
         </MiniCardLink>
       </MiniCard>
     )
@@ -173,18 +175,6 @@ const MiniCardWhat = styled.div`
 `
 const MiniCardLink = styled.div`
   margin-top: 0.75rem;
-  > a {
-    border: 1px solid #b5abb2;
-    border-radius: 4px;
-    color: #564d53;
-    cursor: pointer;
-    display: block;
-    padding: 0.3rem 0.8rem;
-    text-decoration: none;
-    &:hover {
-      color: #2b272a;
-    }
-  }
 `
 const MiniCardEq = styled.div``
 const MiniCardNumber = styled.span`

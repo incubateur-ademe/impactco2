@@ -33,6 +33,10 @@ export const LinkContainer = styled(Link)<{ $color?: 'secondary' }>`
     outline: 3px solid var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'neutral')}-40);
     outline-offset: 2px;
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `
 
 export const Content = styled.div`

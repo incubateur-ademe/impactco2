@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import useLocalStorage from 'use-local-storage'
 import ModalContext from 'components/providers/ModalProvider'
-import Button from 'components/base/Button'
 import Modal4 from 'components/base/Modal4'
+import Button from 'components/base/buttons/Button'
 import { default_eqs } from 'components/livraison/data.js'
 import ActualChoices from './ActualChoices'
 import AllSearch from './AllSearch'
@@ -77,10 +77,10 @@ export default function EqModal4() {
                 )}
               </ValidationMsg>
               <ValidationButtons>
-                <ButtonValidation onClick={validateEqv}>
+                <Button onClick={validateEqv}>
                   <ShowDesktop data-testid='validateAndClose'>Valider et fermer</ShowDesktop>
                   <ShowMobile>Valider</ShowMobile>
-                </ButtonValidation>
+                </Button>
                 <ButtonCancel onClick={dismiss}>
                   <ShowDesktop data-testid='cancelEqs'>Annuler</ShowDesktop>
                   <ShowMobile>X</ShowMobile>
@@ -130,18 +130,6 @@ const Intro = styled.div`
   line-height: 24px;
   margin: 1rem 0;
   padding-left: 1.5rem;
-`
-
-const ButtonValidation = styled(Button)`
-  border-radius: 8px;
-  &:hover {
-    color: ${(props) => props.theme.colors.persistentText};
-  }
-  width: 200px;
-  ${(props) => props.theme.mq.medium} {
-    padding: 2px 4px 2px 4px;
-    width: 80px;
-  }
 `
 
 const ButtonCancel = styled.button`

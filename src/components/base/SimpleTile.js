@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from 'components/base/Button'
 import Emoji from 'components/base/Emoji'
+import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -57,14 +57,7 @@ const Text = styled.p`
   margin: 0 0.5rem 0.625rem;
   text-align: center;
 `
-const StyledButton = styled(Button)`
-  font-size: 0.875rem;
-  padding: 0.375rem 1rem;
 
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.75rem;
-  }
-`
 const Svg = styled.svg`
   height: auto;
   width: 1em;
@@ -78,7 +71,7 @@ export default function SimpleTile(props) {
         <Title small={props.small}>{props.title}</Title>
         {props.text && <Text>{props.text}</Text>}
       </Top>
-      <StyledButton to={props.url}>
+      <Link asButton size='sm' href={props.url}>
         {props.button || (
           <>
             Découvrir
@@ -98,7 +91,7 @@ export default function SimpleTile(props) {
             </Svg>
           </>
         )}
-      </StyledButton>
+      </Link>
     </Wrapper>
   )
 }

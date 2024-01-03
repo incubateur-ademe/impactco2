@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from 'components/base/Button'
+import Button from 'components/base/buttons/Button'
 
 export const Screenshot = styled.div<{ $isScreenshotting: boolean }>`
   background-color: var(--secondary-10);

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import { track } from 'utils/matomo'
-import Button from 'components/base/Button'
+import Link from 'components/base/buttons/Link'
 import Divider from '../img/Divider'
 import { CtaContainer, H2Title, Separator, UpperSide } from './Header.styles'
 
@@ -12,11 +12,12 @@ const Header = ({ title, cta }: { title: ReactNode; cta?: { to: string; label: s
       </div>
       {cta && (
         <CtaContainer>
-          <Button
-            to={cta.to}
+          <Link
+            asButton
+            href={cta.to}
             onClick={() => track('Click', cta.label, `click_${cta.label.toLowerCase().replaceAll(' ', '_')}`)}>
             {cta.label}
-          </Button>
+          </Link>
         </CtaContainer>
       )}
     </UpperSide>

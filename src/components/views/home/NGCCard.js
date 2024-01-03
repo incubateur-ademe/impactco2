@@ -2,8 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import OutboundLink from 'components/base/OutboundLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 
 const LOGO_HEIGHT = 152
 
@@ -22,14 +22,13 @@ export default function NGCCard() {
             Vous souhaitez aller plus loin en mesurant votre empreinte sur le climat ou celle d’un groupe de personnes ?
             <br />
             Rendez-vous sur le simulateur&nbsp;
-            <strong>
-              <OutboundLink
-                title='Nos Gestes Climat'
-                href='https://nosgestesclimat.fr'
-                onClick={() => track('Click', 'NGC', 'click_ngc')}>
-                Nos Gestes Climat
-              </OutboundLink>
-            </strong>
+            <Link
+              title='Nos Gestes Climat'
+              color='secondary'
+              href='https://nosgestesclimat.fr'
+              onClick={() => track('Click', 'NGC', 'click_ngc')}>
+              Nos Gestes Climat
+            </Link>
           </CardText>
         </Card>
       </SectionWideContent>

@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
-export const Legend = styled.legend`
+export const Legend = styled.legend<{ $error?: boolean }>`
   color: var(--neutral-80);
   display: inline-block;
   font-weight: 500;
   margin-bottom: 0.5rem;
+
+  ${({ $error }) => $error && 'color: var(--critical-50);'}
 `
 
 export const Hint = styled.div`

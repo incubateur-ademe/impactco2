@@ -124,6 +124,10 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'secondary' }>`
       outline-offset: 2px;
     }
 
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
     &:active {
       ${LeftSide} {
         background-color: var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-20);

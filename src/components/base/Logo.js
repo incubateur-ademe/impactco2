@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 
-const Wrapper = styled(MagicLink)`
+const Wrapper = styled(Link)`
   align-items: center;
   display: flex;
   text-decoration: none;
@@ -73,7 +73,7 @@ const Title = styled.div`
 `
 export default function Logo(props) {
   return (
-    <Wrapper to='/' className={props.className}>
+    <Wrapper href='/' className={props.className} data-testid='logo-impact-co2-link'>
       <svg width='333' height='333' viewBox='0 0 333 333' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <title>
           Impact CO<sub>2</sub>
