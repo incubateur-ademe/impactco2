@@ -1,6 +1,6 @@
 import React from 'react'
 import chauffage from 'data/categories/chauffage.json'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 import { Container, Hypothesis, StyledEmoji, Text, Value, Values } from './Data.styles'
 
 const Data = () => {
@@ -9,13 +9,13 @@ const Data = () => {
     <Container>
       <Text>
         L'ensemble des calculs et des hypothèses sont issus de{' '}
-        <MagicLink to='https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel'>
+        <Link href='https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel'>
           l’étude Consommation d'énergie par usage du résidentiel 2023
-        </MagicLink>{' '}
-        et <MagicLink to='https://nosgestesclimat.fr/documentation/logement/chauffage'>des modèles de calcul</MagicLink>{' '}
-        du simulateur citoyen de l’ADEME Nos Gestes Climat. Nous utilisons également les facteurs d’émission de la{' '}
-        <MagicLink to='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</MagicLink> dans nos calculs,
-        qui sont exprimés kgCO2e/kWh.
+        </Link>{' '}
+        et <Link href='https://nosgestesclimat.fr/documentation/logement/chauffage'>des modèles de calcul</Link> du
+        simulateur citoyen de l’ADEME Nos Gestes Climat. Nous utilisons également les facteurs d’émission de la{' '}
+        <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</Link> dans nos calculs, qui
+        sont exprimés kgCO2e/kWh.
       </Text>
       {sortedValues.map((equivalent) => (
         <div key={equivalent.slug}>
@@ -32,9 +32,9 @@ const Data = () => {
                     {' '}
                     •{' '}
                     {typeof value.withSource === 'boolean' ? (
-                      <MagicLink to={equivalent.source}>Détails</MagicLink>
+                      equivalent.source && <Link href={equivalent.source}>Détails</Link>
                     ) : (
-                      <MagicLink to={value.withSource.href}>{value.withSource.label}</MagicLink>
+                      <Link href={value.withSource.href}>{value.withSource.label}</Link>
                     )}
                   </span>
                 )}

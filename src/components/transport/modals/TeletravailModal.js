@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { buildCurrentUrlFor } from 'utils/urls'
-import Button from 'components/base/Button'
 import FancySelect from 'components/base/FancySelect'
-import MagicLink from 'components/base/MagicLink'
 import Modal from 'components/base/Modal'
+import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 import TransportContext from '../TransportProvider'
 
 const Title = styled.h2``
@@ -105,17 +105,17 @@ export default function TeletravailModal() {
           }}
         />
         %) est tirée de cette{' '}
-        <MagicLink to='https://librairie.ademe.fr/mobilite-et-transport/3776-caracterisation-des-effets-rebond-induits-par-le-teletravail.html'>
+        <Link href='https://librairie.ademe.fr/mobilite-et-transport/3776-caracterisation-des-effets-rebond-induits-par-le-teletravail.html'>
           étude de l&apos;ADEME
-        </MagicLink>
+        </Link>
         .
       </Text>
       <Text>
         Les autres effets rebonds non liés aux déplacements (consommation d&apos;électricité du foyer, achat de matériel
         pour le télétravail, etc.) ne sont pas modélisés ici. Pour donner un ordre de grandeur,{' '}
-        <MagicLink to={buildCurrentUrlFor('/?co2=248&equivalents=27006_27002_27976_27010_206589')}>
+        <Link href={buildCurrentUrlFor('/?co2=248&equivalents=27006_27002_27976_27010_206589')}>
           la fabrication d&apos;un écran d&apos;ordinateur émet autant que 1 285 km de voiture (248 kg CO<sub>2</sub>e)
-        </MagicLink>
+        </Link>
         .
       </Text>
       {!pristine && (

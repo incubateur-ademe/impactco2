@@ -68,6 +68,10 @@ const Button = styled.button`
     color: var(--secondary-30);
     cursor: not-allowed;
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `
 
 export const LeftButton = styled(Button)`

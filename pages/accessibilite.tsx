@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import Web from 'components/layout/Web'
 
 const FormatText = styled.div`
@@ -35,20 +36,14 @@ export default function Accessibilite() {
 
             <ul>
               <li>
-                <a
-                  href='https://librairie.ademe.fr/institutionnel/4817-schema-pluriannuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe-2021-2023.html'
-                  target='_blank'
-                  rel='noreferrer noopener'>
+                <Link href='https://librairie.ademe.fr/institutionnel/4817-schema-pluriannuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe-2021-2023.html'>
                   Schéma pluriannuel en cours
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href='https://librairie.ademe.fr/institutionnel/6257-plan-annuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe.html'
-                  target='_blank'
-                  rel='noreferrer noopener'>
+                <Link href='https://librairie.ademe.fr/institutionnel/6257-plan-annuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe.html'>
                   Plan d’action de l’année en cours
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -123,9 +118,9 @@ export default function Accessibilite() {
 
             <p>
               L’ADEME invite les personnes qui rencontreraient des difficultés à la contacter par courriel à{' '}
-              <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} target='_blank' rel='noreferrer noopener'>
+              <Link href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>
                 {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
-              </a>{' '}
+              </Link>{' '}
               afin qu’une assistance puisse être apportée (alternative accessible, information et contenu donnés sous
               une autre forme).
             </p>
@@ -139,17 +134,12 @@ export default function Accessibilite() {
             <p>Plusieurs moyens sont à votre disposition :</p>
             <ul>
               <li>
-                <a
-                  href='https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=accueil_2016'
-                  target='_blank'
-                  rel='noreferrer noopener'>
+                <Link href='https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=accueil_2016'>
                   un formulaire de contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='https://www.defenseurdesdroits.fr/office/' target='_blank' rel='noreferrer noopener'>
-                  la liste des délégués de votre région
-                </a>
+                <Link href='https://www.defenseurdesdroits.fr/office/'>la liste des délégués de votre région</Link>
               </li>
               <li>un numéro de téléphone : 09 69 39 00 00 (coût d’un appel local)</li>
               <li>

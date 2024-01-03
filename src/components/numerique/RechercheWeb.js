@@ -1,6 +1,6 @@
 import React from 'react'
-import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import Contact from './Contact'
 
 export default function Email() {
@@ -20,9 +20,9 @@ export default function Email() {
         <p>
           Nous prenons comme hypothèse une recherche effectuée depuis la France. Cette requête a pris 50 secondes à
           écrire sur{' '}
-          <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
+          <Link href='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
             un agrégat de terminaux
-          </MagicLink>{' '}
+          </Link>{' '}
           (24% ordinateur fixe, 24% ordinateur portable, 8% tablette et 45% smartphone).
           <br />
           Cette requête est envoyée via le réseau internet fixe. Elle pèse 16ko.

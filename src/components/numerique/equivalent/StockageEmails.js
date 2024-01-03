@@ -3,9 +3,8 @@ import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import DataContext from 'components/providers/DataProvider'
-import Button from 'components/base/Button'
-import ButtonLink from 'components/base/ButtonLink'
-import MagicLink from 'components/base/MagicLink'
+import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 import Tile from 'components/misc/tiles/Tile'
 
 const emailWeight = 0.0001 //ko
@@ -55,10 +54,7 @@ const Text = styled.p`
   filter: blur(${(props) => (props.blur ? '1rem' : 0)});
   text-align: center;
 `
-const StyledButtonLink = styled(ButtonLink)`
-  font-size: 0.75rem;
-`
-const ButtonMore = styled(ButtonLink)`
+const StyledButtonLink = styled(Button)`
   font-size: 0.75rem;
 `
 const More = styled.div`
@@ -117,7 +113,7 @@ export default function StockageEmails() {
           />
         )}
         {mode === 'weight' ? `Go d'` : ''}emails stockés.{' '}
-        <StyledButtonLink onClick={() => setMode((prevMode) => (prevMode === 'weight' ? 'emails' : 'weight'))}>
+        <StyledButtonLink asLink onClick={() => setMode((prevMode) => (prevMode === 'weight' ? 'emails' : 'weight'))}>
           (Entrer le {mode === 'emails' ? <>poids en Go</> : <>nombre d'emails</>} plutôt)
         </StyledButtonLink>
       </Text>
@@ -135,23 +131,23 @@ export default function StockageEmails() {
               key={equivalent.slug}
               equivalent={equivalent}
               weight={totalWeight}
-              background={true}
-              equivalentPage={true}
+              background
+              equivalentPage
               reference
             />
           ))}
         </Tiles>
         {!displayResults && <ButtonResults onClick={() => setDisplayResults(true)}>Découvrir l'impact</ButtonResults>}
       </TilesWrapper>
-      <ButtonMore className='noscreenshot' onClick={() => setDisplayMore((prevDisplayMore) => !prevDisplayMore)}>
+      <StyledButtonLink className='noscreenshot' onClick={() => setDisplayMore((prevDisplayMore) => !prevDisplayMore)}>
         En savoir plus
-      </ButtonMore>
+      </StyledButtonLink>
       {displayMore && (
         <More>
           Nous prenons comme hypothèse un poids moyen de 100ko par email.
           <br />
           Est compté seulement le stockage des emails dans les data-centers (et la fabrication des data-centers
-          associée), via ce <MagicLink to='/usagenumerique/stockagedonnee'>facteur d'émission</MagicLink> (0,24 g CO
+          associée), via ce <Link href='/usagenumerique/stockagedonnee'>facteur d'émission</Link> (0,24 g CO
           <sub>2</sub>e / Go / année).
         </More>
       )}

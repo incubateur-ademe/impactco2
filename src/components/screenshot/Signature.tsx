@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
-import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
+import Link from 'components/base/buttons/Link'
 
 // divs are necessary for better screenshot
 export default function Signature({
@@ -25,9 +25,9 @@ export default function Signature({
       </div>
       <div>
         {!noLink && (
-          <MagicLink to={process.env.NEXT_PUBLIC_URL} noIcon>
+          <Link href={process.env.NEXT_PUBLIC_URL as string} noIcon>
             impactco2.fr
-          </MagicLink>
+          </Link>
         )}
       </div>
       <div>
