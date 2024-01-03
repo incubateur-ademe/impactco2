@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import Web from 'components/layout/Web'
 
 const FormatText = styled.div`
@@ -24,14 +24,9 @@ export default function MetionsLegales() {
             <p>
               Impact CO<sub>2</sub>&nbsp;
               <Link href='/'>({process.env.NEXT_PUBLIC_URL})</Link> est un service créé par&nbsp;
-              <a href='https://www.ademe.fr/' target='_blank' rel='noreferrer noopener'>
-                l’ADEME
-              </a>
+              <Link href='https://www.ademe.fr/'>l’ADEME</Link>
               &nbsp;en partenariat avec&nbsp;
-              <a href='https://beta.gouv.fr/' target='_blank' rel='noreferrer noopener'>
-                beta.gouv.fr
-              </a>
-              .
+              <Link href='https://beta.gouv.fr/'>beta.gouv.fr</Link>.
             </p>
             <p>
               Le site constitué par l’ensemble des pages rattachées au nom Impact CO<sub>2</sub> est la propriété de

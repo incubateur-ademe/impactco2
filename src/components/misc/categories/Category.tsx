@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from 'components/base/Button'
+import { Category as CategoryType } from 'types/category'
 import Emoji from 'components/base/Emoji'
+import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -25,6 +26,7 @@ const StyledEmoji = styled(Emoji)`
     font-size: 1.5rem;
   }
 `
+
 const Title = styled.h4`
   align-items: center;
   color: ${(props) => props.theme.colors.text};
@@ -36,21 +38,16 @@ const Title = styled.h4`
   min-height: 3rem;
   text-align: center;
 `
-const StyledButton = styled(Button)`
-  font-size: 0.875rem;
-  padding: 0.375rem 1rem;
 
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.75rem;
-  }
-`
-export default function Category(props) {
+export default function Category({ category }: { category: CategoryType }) {
   return (
     <Wrapper>
-      <StyledEmoji>{props.category.emoji}</StyledEmoji>
-      <Title>{props.category.name}</Title>
+      <StyledEmoji>{category.emoji}</StyledEmoji>
+      <Title>{category.name}</Title>
 
-      <StyledButton to={`/${props.category.slug}`}>Visualiser</StyledButton>
+      <Link asButton size='sm' href={`/${category.slug}`}>
+        Visualiser
+      </Link>
     </Wrapper>
   )
 }

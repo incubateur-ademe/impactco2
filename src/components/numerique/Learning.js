@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import ModalContext from 'components/providers/ModalProvider'
-import Button from 'components/base/Button'
-import ButtonLink from 'components/base/ButtonLink'
-import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;
@@ -47,19 +46,19 @@ export default function Learning() {
       <SectionWideContent>
         <Statistic>
           <Number>2,5%</Number> des émissions de{' '}
-          <ButtonLink onClick={() => setCo2e(true)}>
+          <Button asLink onClick={() => setCo2e(true)}>
             CO<sub>2</sub>e
-          </ButtonLink>
+          </Button>
         </Statistic>
         <Strong>
-          La <MagicLink to='/numerique/television'>production d’une télé</MagicLink> émet autant de{' '}
-          <ButtonLink onClick={() => setCo2e(true)}>
+          La <Link href='/numerique/television'>production d’une télé</Link> émet autant de{' '}
+          <Button asLink onClick={() => setCo2e(true)}>
             CO<sub>2</sub>e
-          </ButtonLink>{' '}
+          </Button>{' '}
           que si vous alliez à Marrakech en avion, soit 350 kg de{' '}
-          <ButtonLink onClick={() => setCo2e(true)}>
+          <Button asLink onClick={() => setCo2e(true)}>
             CO<sub>2</sub>e
-          </ButtonLink>
+          </Button>
           .
         </Strong>
         <Text>
@@ -68,18 +67,18 @@ export default function Learning() {
           représente jusqu’à{' '}
           <strong>
             2,5% des émissions de{' '}
-            <ButtonLink onClick={() => setCo2e(true)}>
+            <Button asLink onClick={() => setCo2e(true)}>
               CO<sub>2</sub>e
-            </ButtonLink>{' '}
+            </Button>{' '}
             totale en France ?
           </strong>
         </Text>
         <Title>Réduire son impact numérique avec des gestes simples, c’est possible ?</Title>
         <Text>
           Pour{' '}
-          <MagicLink to='https://agirpourlatransition.ademe.fr/particuliers/bureau/bons-gestes/gardons-controle-pratiques-numeriques'>
+          <Link href='https://agirpourlatransition.ademe.fr/particuliers/bureau/bons-gestes/gardons-controle-pratiques-numeriques'>
             réduire notre impact numérique
-          </MagicLink>
+          </Link>
           , il existe de nombreux gestes à adopter ! Parce que{' '}
           <strong>les terminaux (ordinateurs, smartphones…) sont à l’origine de l’essentiel des impacts</strong> (de 65
           à 90 %) en particulier pour leur fabrication, vous pouvez agir en gardant le plus longtemps possible ces
@@ -98,19 +97,19 @@ export default function Learning() {
         <Title>Comment va évoluer l'impact du numérique dans les prochaines années ?</Title>
         <Text>
           D’après une{' '}
-          <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/etude-numerique-environnement-ademe-arcep-note-synthese_janv2022.pdf'>
+          <Link href='https://www.arcep.fr/uploads/tx_gspublication/etude-numerique-environnement-ademe-arcep-note-synthese_janv2022.pdf'>
             étude ADEME – ARCEP
-          </MagicLink>
+          </Link>
           , l’empreinte carbone du numérique pourrait augmenter de manière significative si rien n’est fait pour la
           limiter (+ 60 % d’ici à 2040 soit 6,7 % de l’empreinte carbone nationale). Quant aux objets connectés (comme
-          les <MagicLink to='/numerique/montreconnectee'>montres connectées</MagicLink>
+          les <Link href='/numerique/montreconnectee'>montres connectées</Link>
           ), ils risquent de représenter 18 à 23% de l’empreinte carbone d’ici 2025, contre 1% en 2020. Il est donc
           important de limiter son{' '}
           <strong>
             empreinte{' '}
-            <ButtonLink onClick={() => setCo2e(true)}>
+            <Button asLink onClick={() => setCo2e(true)}>
               CO<sub>2</sub>e
-            </ButtonLink>
+            </Button>
           </strong>{' '}
           .
         </Text>
@@ -118,13 +117,11 @@ export default function Learning() {
         <Text>
           Si vous souhaitez aller plus loin dans votre démarche, vous pouvez calculer{' '}
           <strong>l&apos;ensemble de votre empreinte sur le climat</strong> grace à notre{' '}
-          <MagicLink to={'https://nosgestesclimat.fr/'}>simulateur Nos Gestes Climat</MagicLink>
+          <Link href={'https://nosgestesclimat.fr/'}>simulateur Nos Gestes Climat</Link>
           <br />
           <br />
         </Text>
-        <Button.Wrapper>
-          <Button to={'https://nosgestesclimat.fr/'}>Découvrir Nos Gestes Climat</Button>
-        </Button.Wrapper>
+        <Link href={'https://nosgestesclimat.fr/'}>Découvrir Nos Gestes Climat</Link>
       </SectionWideContent>
     </StyledSection>
   )

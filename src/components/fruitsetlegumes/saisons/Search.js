@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
+import Button from 'components/base/buttons/Button'
 
 const Wrapper = styled.div`
   align-self: flex-end;
@@ -16,16 +16,7 @@ const Wrapper = styled.div`
     margin: 0;
   }
 `
-const SortButton = styled(Button)`
-  border-radius: 0.625em;
-  font-size: 0.875rem;
-  padding: 0.5em;
 
-  svg {
-    height: auto;
-    width: 1rem;
-  }
-`
 const SearchInput = styled(TextInput)`
   font-size: 0.875rem;
   margin: 0;
@@ -72,8 +63,8 @@ export default function Search(props) {
         }}
         placeholder={'Recherchez'}
       />
-      <SortButton onClick={() => setDisplaySort((prevDisplaySort) => !prevDisplaySort)}>
-        <svg x='0px' y='0px' viewBox='0 0 489.389 489.389'>
+      <Button size='sm' onClick={() => setDisplaySort((prevDisplaySort) => !prevDisplaySort)}>
+        <svg x='0px' y='0px' width='1rem' height='1rem' fill='currentcolor' viewBox='0 0 489.389 489.389'>
           <path
             d='M261.294,326.102c-8.3-7.3-21.8-6.2-29.1,2.1l-77,86.8v-346.9c0-11.4-9.4-20.8-20.8-20.8s-20.8,9.4-20.8,20.8v346.9
 			l-77-86.8c-8.3-8.3-20.8-9.4-29.1-2.1c-8.3,8.3-9.4,20.8-2.1,29.1l113.4,126.9c8.5,10.5,23.5,8.9,30.2,0l114.4-126.9
@@ -85,7 +76,7 @@ export default function Search(props) {
 			c8.3,8.3,20.8,9.4,29.1,2.1C490.194,155.502,491.294,143.002,483.994,134.702z'
           />
         </svg>
-      </SortButton>
+      </Button>
       {displaySort && (
         <SortPanel>
           <Option

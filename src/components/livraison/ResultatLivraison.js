@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import ModalContext from 'components/providers/ModalProvider'
-import ButtonLink from 'components/base/ButtonLink'
+import Button from 'components/base/buttons/Button'
 import { convertGramsToKilograms } from './utils'
 
 export default function ResultatLivraison(props) {
@@ -41,7 +41,9 @@ export default function ResultatLivraison(props) {
           <div className='item5' />
           <div className='item6'>
             <UnderstandLink>
-              <ButtonLink onClick={() => setHypothesisLivraison(true)}>Comprendre le calcul</ButtonLink>
+              <Button asLink onClick={() => setHypothesisLivraison(true)}>
+                Comprendre le calcul
+              </Button>
             </UnderstandLink>
           </div>
           <EqualSign>=</EqualSign>

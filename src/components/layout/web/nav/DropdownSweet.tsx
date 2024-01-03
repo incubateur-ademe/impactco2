@@ -1,6 +1,6 @@
 import React, { MouseEvent, ReactNode, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div<{ $hideon: string }>`
   ${(props) => props.theme.mq[props.$hideon]} {
@@ -78,7 +78,7 @@ export default function Dropdown({ label, children, hideon }: { label: string; c
           setOpen((prevOpen) => !prevOpen)
         }}
         $open={open}
-        as={children ? 'button' : MagicLink}>
+        as={children ? 'button' : Link}>
         {label}
         {'  '}
         <svg width='10' height='6' viewBox='0 0 10 6'>
@@ -90,7 +90,7 @@ export default function Dropdown({ label, children, hideon }: { label: string; c
   )
 }
 
-Dropdown.Item = styled(MagicLink)<{ $current: boolean }>`
+Dropdown.Item = styled(Link)<{ $current: boolean }>`
   color: ${(props) => props.theme.colors[props.$current ? 'main' : 'text']};
   display: flex;
   font-size: 0.875rem;

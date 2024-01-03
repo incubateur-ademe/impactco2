@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from 'components/base/Button'
-import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;
@@ -23,18 +22,18 @@ export default function Learning() {
     <StyledSection>
       <SectionWideContent>
         <Title>
-          <MagicLink to='/repas/repasavecduboeuf'>Produire 1kg de viande</MagicLink> émet 5 à 20 fois plus de gaz à
-          effet de serre que produire 1kg de céréales.
+          <Link href='/repas/repasavecduboeuf'>Produire 1kg de viande</Link> émet 5 à 20 fois plus de gaz à effet de
+          serre que produire 1kg de céréales.
         </Title>
         <Strong>70 à 80% de la déforestation provient de la production agricole.</Strong>
         <Text>
           Chaque <strong>repas a une empreinte carbone</strong> différente, mais la surconsommation de{' '}
-          <MagicLink to='/repas/repasavecduboeuf'>viande</MagicLink> a un impact considérable sur l’
+          <Link href='/repas/repasavecduboeuf'>viande</Link> a un impact considérable sur l’
           <strong>environnement</strong>. Elle est responsable d’environ{' '}
           <strong>20% des émissions de gaz à effet de serre</strong> et de presque{' '}
           <strong>80% de la déforestation</strong> dans le monde, à elle seule. Les océans sont également concernés car{' '}
           <strong>
-            90% des stocks de <MagicLink to='/repas/repasavecdupoissonblanc'>poisson</MagicLink>
+            90% des stocks de <Link href='/repas/repasavecdupoissonblanc'>poisson</Link>
           </strong>{' '}
           sont surexploités ou pleinement exploités. Et tout cela alors que 1 personne sur 3 ne mange pas à sa faim et
           que 30% de la nourriture est perdue ou gaspillée dans le monde.
@@ -48,7 +47,7 @@ export default function Learning() {
         <Title> Vous connaissez le régime flexitarien ?</Title>
         <Text>
           Le <strong>régime flexitarien</strong> consiste à choisir des produits de saison qualitatifs et à manger moins
-          de viande. En effet, un repas <MagicLink to='/repas/repasvegetarien'>sans viande</MagicLink> a une{' '}
+          de viande. En effet, un repas <Link href='/repas/repasvegetarien'>sans viande</Link> a une{' '}
           <strong>empreinte carbone</strong> beaucoup moins importante. Un <strong>flexitarien</strong> est un
           consommateur qui mange de tout, mais qui raisonne ses quantités et privilégie la qualité. Cela permet de
           couvrir ses <strong>besoins nutritionnels</strong> et aussi de <strong>réduire son empreinte carbone</strong>{' '}
@@ -60,11 +59,11 @@ export default function Learning() {
 
         <Text>
           Si vous souhaitez aller plus loin dans votre démarche, vous pouvez calculer l’ensemble de votre empreinte sur
-          le climat grace à notre <MagicLink to={'https://nosgestesclimat.fr/'}>simulateur Nos Gestes Climat</MagicLink>
+          le climat grace à notre <Link href={'https://nosgestesclimat.fr/'}>simulateur Nos Gestes Climat</Link>
         </Text>
-        <Button.Wrapper>
-          <Button to={'https://nosgestesclimat.fr/'}>Découvrir Nos Gestes Climat</Button>
-        </Button.Wrapper>
+        <Link asButton href={'https://nosgestesclimat.fr/'}>
+          Découvrir Nos Gestes Climat
+        </Link>
       </SectionWideContent>
     </StyledSection>
   )

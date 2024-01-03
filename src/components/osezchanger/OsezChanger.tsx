@@ -52,6 +52,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
         </>
       ) : (
         <DefiButton
+          data-testid='osez-changer-start-button'
           onClick={() => {
             track('OsezChanger', 'Start', 'osez_changer_start')
             setDefiMode(true)
