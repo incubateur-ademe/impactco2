@@ -5,7 +5,7 @@ describe('Notion api command', () => {
   const validCommand: NotionCommand = {
     type: 'contact',
     email: 'test@cool.fr',
-    structure: 'nimps',
+    structure: 'association',
     from: 'test',
   }
 
@@ -14,9 +14,26 @@ describe('Notion api command', () => {
     expect(result.success).toEqual(true)
   })
 
-  it('allows valid command with other structure', () => {
-    const result = NotionCommandValidation.safeParse({ ...validCommand, other: 'autres' })
+  it('allows valid command with other structure and specification', () => {
+    const result = NotionCommandValidation.safeParse({ ...validCommand, structure: 'autre', other: 'autres' })
     expect(result.success).toEqual(true)
+  })
+
+  it('does allows valid command with other structure and no specification', () => {
+    expectZodValidationToFail(
+      // @ts-expect-error: Zod too complex
+      NotionCommandValidation,
+      validCommand,
+      {
+        structure: 'autre',
+      },
+      [
+        {
+          path: ['other'],
+          message: 'Veuillez preciser votre structure.',
+        },
+      ]
+    )
   })
 
   it('allows valid command with needs', () => {
@@ -26,6 +43,7 @@ describe('Notion api command', () => {
 
   it('does not allow empty email', () => {
     expectZodValidationToFail(
+      // @ts-expect-error: Zod too complex
       NotionCommandValidation,
       validCommand,
       {
@@ -42,6 +60,7 @@ describe('Notion api command', () => {
 
   it('does not allow unvalid email', () => {
     expectZodValidationToFail(
+      // @ts-expect-error: Zod too complex
       NotionCommandValidation,
       validCommand,
       {
@@ -58,6 +77,7 @@ describe('Notion api command', () => {
 
   it('does not allow empty structure', () => {
     expectZodValidationToFail(
+      // @ts-expect-error: Zod too complex
       NotionCommandValidation,
       validCommand,
       {
@@ -66,7 +86,7 @@ describe('Notion api command', () => {
       [
         {
           path: ['structure'],
-          message: 'Required',
+          message: 'Veuillez renseigner votre structure.',
         },
       ]
     )
@@ -74,6 +94,7 @@ describe('Notion api command', () => {
 
   it('does not allow empty from', () => {
     expectZodValidationToFail(
+      // @ts-expect-error: Zod too complex
       NotionCommandValidation,
       validCommand,
       {

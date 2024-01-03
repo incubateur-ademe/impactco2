@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
 import { getMonthLabel } from 'utils/months'
 import Emoji from 'components/base/Emoji'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 import Chart from './item/Chart'
 
-const Wrapper = styled(MagicLink)`
+const Wrapper = styled(Link)`
   background-color: ${(props) => props.theme.colors[props.$season ? 'second' : 'errorLight']};
   border-radius: 1rem;
   color: ${(props) => props.theme.colors.text};
@@ -60,7 +60,12 @@ export default function Item(props) {
   }, [props.item])
 
   return (
-    <Wrapper key={props.item.id} to={props.item.to} $season={props.item.season} onClick={props.item.onClick}>
+    <Wrapper
+      key={props.item.id}
+      href={props.item.to}
+      $season={props.item.season}
+      onClick={props.item.onClick}
+      data-testid={`tile-${props.item.title}`}>
       <Header>
         <Title>{props.item.title}</Title>
         <Emoji>{props.item.emoji}</Emoji>

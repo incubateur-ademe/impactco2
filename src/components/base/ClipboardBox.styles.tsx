@@ -59,6 +59,10 @@ export const Box = styled.button<{ $colored?: boolean }>`
             outline: 3px solid var(--secondary-40);
           }
         `}
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `
 
 export const Content = styled.div`

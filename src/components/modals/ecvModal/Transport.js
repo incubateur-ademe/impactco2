@@ -1,5 +1,5 @@
 import React from 'react'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 
 export default function Transport() {
   return (
@@ -22,9 +22,9 @@ export default function Transport() {
         cycles d’autres gaz à effet de serre que le CO<sub>2</sub> (vapeur d'eau, eau condensée sous diverses formes,
         NOx et méthane qui, ensemble, produisent de l'ozone, etc.). Cet impact est appelé forçage radiatif additionnel.
         Dans l'
-        <MagicLink to='https://www.ecologie.gouv.fr/information-ges-des-prestations-transport'>
+        <Link href='https://www.ecologie.gouv.fr/information-ges-des-prestations-transport'>
           Information GES des prestations de transport réglementaire
-        </MagicLink>
+        </Link>
         , cet impact n'est pas inclus mais il est recommandé dans la réglementation pour la réalisation des Bilans GES
         des organisations.
       </p>

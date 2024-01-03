@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import useScreenshot from 'hooks/useScreenshot'
 import ModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Button from 'components/base/buttons/Button'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
 import AdviceLivraisonDetail from './AdviceLivraisonDetail'
 
@@ -24,22 +25,22 @@ export default function AdviceLivraison() {
               Conseil pour réduire l’impact carbone de vos livraisons
             </H2Title>
             <div className='buttons'>
-              <ButtonChange onClick={openModal} className='noscreenshot' id='shareDown'>
+              <Button color='secondary' size='sm' onClick={openModal} className='noscreenshot' id='shareDown'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 -2 24 24'>
                   <path
-                    fill='#564d53'
+                    fill='currentcolor'
                     d='M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z'
                   />
                 </svg>
                 <HideableSpan>&nbsp;Partager</HideableSpan>
-              </ButtonChange>
-              <ButtonChange onClick={takeScreenshot} className='noscreenshot'>
+              </Button>
+              <Button color='secondary' size='sm' onClick={takeScreenshot} className='noscreenshot'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
                   <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
                   <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z' />
                 </svg>
                 <HideableSpan>&nbsp;Télécharger</HideableSpan>
-              </ButtonChange>
+              </Button>
             </div>
           </Flex>
 
@@ -104,40 +105,15 @@ const Flex = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 1rem;
+
   > .buttons {
-    margin-left: auto;
-    ${(props) => props.theme.mq.xlarge} {
-      margin-left: 0;
-    }
-  }
-  button + button {
-    margin-left: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
   }
 `
 
-const ButtonChange = styled.button`
-  background-color: white;
-  border-color: #b5abb2;
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 1px;
-  color: #564d53;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0em;
-  line-height: 24px;
-  ${(props) => props.theme.mq.large} {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  ${(props) => props.theme.mq.medium} {
-    font-size: 12px;
-  }
-  padding: 4px 12px 4px 12px;
-  text-align: center;
-`
 const HideableSpan = styled.span`
   ${(props) => props.theme.mq.xsmall} {
     display: none;

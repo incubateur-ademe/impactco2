@@ -1,5 +1,5 @@
 import React from 'react'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 import { Icon } from 'components/osezchanger/icons'
 import { Description, StyledIcon } from './FormResult.styles'
 
@@ -25,9 +25,9 @@ const FormResult = ({
         </span>
       </div>
       <Description>{description}</Description>
-      <MagicLink internal to={success ? '/' : '#'} onClick={success ? undefined : back}>
+      <Link internal href={success ? '/' : '#'} onClick={success ? undefined : back}>
         {success ? "Retourner à l'accueil" : 'Retourner au formulaire'}
-      </MagicLink>
+      </Link>
     </div>
   )
 }

@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import useIframe from 'hooks/useIframe'
 import ModalContext from 'components/providers/ModalProvider'
-import MagicLink from 'components/base/MagicLink'
+import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,9 +15,31 @@ const Wrapper = styled.div`
     gap: 0.75rem;
   }
 `
-const Button = styled(MagicLink)<{ $large: boolean }>`
+const StyledButton = styled(Button)<{ $large: boolean }>`
   align-items: center;
-  background: transparent;
+  background: transparent !important;
+  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  padding: ${(props) => (props.$large ? 0.1875 : 0.3125)}rem;
+  position: relative;
+  width: 2rem;
+  z-index: 12;
+
+  ${(props) => props.theme.mq.small} {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+`
+
+const StyledLink = styled(Link)<{ $large: boolean }>`
+  align-items: center;
+  background: transparent !important;
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 50%;
   cursor: pointer;
@@ -72,7 +95,7 @@ export default function Buttons({
 
   return (
     <Wrapper onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      <Button
+      <StyledButton
         onClick={() => {
           track(tracking, 'Partager', `${tracking.toLowerCase().replaceAll(' ', '_')}_partager`)
           setShare(urlParams || true)
@@ -97,11 +120,12 @@ export default function Buttons({
           <path d='M421.708 108.657C433.407 101.912 435.734 84.0317 426.906 68.7216C418.078 53.4115 401.437 46.4686 389.739 53.2144L93.1826 224.215C81.4838 230.961 79.1567 248.841 87.9848 264.151C96.813 279.461 113.454 286.404 125.152 279.658L421.708 108.657Z' />
           <path d='M396.357 461.275C408.062 468.011 424.696 461.054 433.511 445.736C442.326 430.418 439.984 412.54 428.279 405.805L131.576 235.059C119.871 228.324 103.237 235.281 94.4218 250.599C85.6069 265.916 87.9494 283.794 99.6539 290.53L396.357 461.275Z' />
         </Svg>
-      </Button>
+      </StyledButton>
       {slug && (
-        <Button
+        <StyledLink
+          asButton
           className='noscreenshot'
-          to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${slug ? `?type=${slug}` : ''}`}
+          href={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${slug ? `?type=${slug}` : ''}`}
           $large
           noIcon
           onClick={() => {
@@ -115,9 +139,9 @@ export default function Buttons({
               d='M60.967,13.6c-0.254-0.466-0.682-0.812-1.19-0.962l-4.239-1.251c-1.058-0.314-2.172,0.293-2.484,1.352L33.375,79.382    c-0.15,0.509-0.092,1.056,0.161,1.521c0.253,0.467,0.682,0.812,1.19,0.963l4.239,1.251c0.189,0.056,0.38,0.083,0.567,0.083    c0.863,0,1.66-0.564,1.917-1.435l19.679-66.644C61.278,14.612,61.221,14.065,60.967,13.6z'
             />
           </Svg>
-        </Button>
+        </StyledLink>
       )}
-      <Button
+      <StyledButton
         onClick={() => {
           track(tracking, 'Télécharger', `${tracking.toLowerCase().replaceAll(' ', '_')}_telecharger`)
           takeScreenshot()
@@ -126,7 +150,7 @@ export default function Buttons({
         <Svg width='22' height='25' viewBox='0 0 22 25' fill='none' xmlns='http://www.w3.org/2000/svg' className='jump'>
           <path d='M9.31546 1.68556C9.29953 1.78376 9.29217 1.88314 9.29346 1.98258L9.29346 18.9141L9.12175 18.5449C8.95094 18.184 8.71847 17.8557 8.43487 17.5747L3.68685 12.8267C3.08991 12.2013 2.12963 12.0963 1.41157 12.5777C0.646405 13.138 0.480267 14.2124 1.04055 14.9777C1.08584 15.0395 1.13521 15.0982 1.18834 15.1535L9.77428 23.7394C10.4445 24.4104 11.5318 24.411 12.2028 23.7407L20.79 15.1535C21.4597 14.4819 21.4582 13.3947 20.7867 12.725C20.7338 12.6723 20.6776 12.6231 20.6183 12.5777C19.9003 12.0963 18.94 12.2013 18.343 12.8267L13.5864 17.5661C13.3342 17.818 13.1227 18.1077 12.9597 18.4247L12.7278 18.9399V2.07708C12.7604 1.19986 12.1476 0.430241 11.2854 0.265445C10.3493 0.113635 9.46733 0.749425 9.31546 1.68556Z' />
         </Svg>
-      </Button>
+      </StyledButton>
     </Wrapper>
   )
 }

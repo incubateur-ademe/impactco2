@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
 import formatPercent from 'utils/formatPercent'
-import ButtonLink from 'components/base/ButtonLink'
+import Button from 'components/base/buttons/Button'
 
-const Toggle = styled(ButtonLink)`
+const Toggle = styled(Button)`
   align-self: center;
   font-size: 0.875rem;
   font-weight: 300;
@@ -67,7 +67,7 @@ export default function Detail(props) {
 
   return (
     <>
-      <Toggle onClick={() => setDetails((prevDetails) => !prevDetails)} className='noscreenshot'>
+      <Toggle asLink onClick={() => setDetails((prevDetails) => !prevDetails)} className='noscreenshot'>
         {details ? 'Cacher' : 'Voir'} le détail
       </Toggle>
       {details && (
