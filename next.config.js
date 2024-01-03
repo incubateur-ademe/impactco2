@@ -31,20 +31,9 @@ if (process.env.UNSAFE_EVAL === 'true') {
 
 const securityHeaders = [
   {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff',
-  },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block',
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'SAMEORIGIN',
-  },
-  {
     key: 'Content-Security-Policy',
     value: Object.keys(csp)
+      .filter((key) => key !== 'frame-ancestors')
       .map((key) => `${key} ${csp[key].join(' ')}`)
       .join(';'),
   },

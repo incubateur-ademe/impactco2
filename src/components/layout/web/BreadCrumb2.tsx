@@ -7,7 +7,7 @@ import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import { Icon } from 'components/osezchanger/icons'
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ $noMargin?: boolean }>`
   align-items: center;
   display: flex;
   font-size: 0.875rem;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   gap: 0.125rem;
   justify-content: center;
   line-height: 1.25rem;
-  margin: 3.75rem auto 1.5rem auto;
+  ${({ $noMargin }) => !$noMargin && 'margin: 3.75rem auto 1.5rem auto;'}
 
   a {
     font-weight: 500;
@@ -38,12 +38,12 @@ export type BreadcrumbProps =
       current: string
     }
 
-export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProps }) {
+export default function BreadCrumb2({ breadcrumb, noMargin }: { breadcrumb: BreadcrumbProps; noMargin?: boolean }) {
   return breadcrumb ? (
     <Section $withoutPadding>
       <SectionWideContent>
         <nav aria-label="fil d'ariane">
-          <Wrapper>
+          <Wrapper $noMargin={noMargin}>
             {breadcrumb && breadcrumb.type === 'equivalent' && (
               <>
                 <Link href='/'>Accueil</Link>
