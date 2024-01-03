@@ -9,9 +9,8 @@ import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import ShareableContent from 'components/misc/ShareableContent'
-import SourceAgribalyse from 'components/misc/SourceAgribalyse'
 import Bottom from 'components/misc/category/Bottom'
-import { Header, Sources } from 'components/misc/category/CategoryWrapper.styles'
+import { Header } from 'components/misc/category/CategoryWrapper.styles'
 import Instruction from 'components/misc/category/Instruction'
 import { Top } from 'components/misc/category/Top'
 import { OverScreenCategory } from 'components/misc/category/overScreens/Type'
@@ -142,9 +141,6 @@ export default function Saisons({ category, iframe, month }: { category: Categor
             <h2 className='title-h3'>
               Découvrez les fruits et légumes de <MonthSelector month={currentMonth} setMonth={setCurrentMonth} />
             </h2>
-            <Sources>
-              <SourceAgribalyse tracking={category.name} />
-            </Sources>
           </Header>
           <StyledTop>
             <Instruction title={category.equivalent} gender={category.gender} />

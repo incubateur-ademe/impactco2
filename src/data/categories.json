@@ -180,6 +180,16 @@
     "emoji": "👔",
     "slug": "habillement",
     "header": "de la mode",
+    "sources": [
+      {
+        "label": "Rapport : Modélisation et évaluation...",
+        "href": "https://librairie.ademe.fr/consommer-autrement/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+      },
+      {
+        "label": "Base Empreinte ADEME",
+        "href": "https://base-empreinte.ademe.fr/donnees/jeu-donnees"
+      }
+    ],
     "title": "Découvrez l'impact de la mode sur le climat",
     "description": "Comparez l'empreinte carbone de tous vos vêtements",
     "equivalent": "vêtement[s]",

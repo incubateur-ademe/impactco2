@@ -1,7 +1,11 @@
 import React from 'react'
+import { track } from 'utils/matomo'
+import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Tiles from 'components/misc/Tiles'
+import { Sources } from 'components/misc/category/CategoryWrapper.styles'
 
 const Convertisseur = () => {
   return (
@@ -19,6 +23,19 @@ const Convertisseur = () => {
           </>
         }
       />
+      <Section $withoutPadding>
+        <SectionWideContent $size='xs'>
+          <Sources>
+            Source :{' '}
+            <Link
+              href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'
+              color='secondary'
+              onClick={() => track('Comparateur', 'Source', 'https://base-empreinte.ademe.fr/donnees/jeu-donnees')}>
+              Base Empreinte ADEME
+            </Link>
+          </Sources>
+        </SectionWideContent>
+      </Section>
       <Learning />
     </Web>
   )
