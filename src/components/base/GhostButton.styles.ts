@@ -64,4 +64,8 @@ export const Button = styled.button<{ $reverse: boolean; $size?: 'sm'; $colored?
             cursor: not-allowed;
           }
         `}
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `

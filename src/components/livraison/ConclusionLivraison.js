@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import OutboundLink from 'components/base/OutboundLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import { Emojis } from 'components/visualizations/Visualization.styles'
 
 export default function ConclusionLivraison() {
@@ -17,11 +17,12 @@ export default function ConclusionLivraison() {
         <SectionWideContent>
           <SimpleText>
             Pour plus de conseils,{' '}
-            <OutboundLink
+            <Link
+              color='secondary'
               title='télécharger le guide de l’ADEME - Nouvelle fenêtre'
               href='https://librairie.ademe.fr/cadic/4466/guide-pratique-econsommateur-responsable.pdf'>
               télécharger le guide de l’ADEME « E-consommateur & responsable »
-            </OutboundLink>
+            </Link>
           </SimpleText>
         </SectionWideContent>
       </Section>

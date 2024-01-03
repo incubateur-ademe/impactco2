@@ -4,8 +4,8 @@ import { buildCurrentUrlFor } from 'utils/urls'
 import useWindow from 'hooks/useWindow'
 import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
-import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
+import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.footer`
   align-items: center;
@@ -14,7 +14,7 @@ const Wrapper = styled.footer`
   justify-content: center;
 `
 
-const StyledMagicLink = styled(MagicLink)`
+const StyledLink = styled(Link)`
   display: block;
   font-size: 0.75rem;
   font-weight: 300;
@@ -44,11 +44,11 @@ export default function IframeFooter() {
   const fullUrl = buildCurrentUrlFor(actualSrc)
   return (
     <Wrapper>
-      <StyledMagicLink to={fullUrl}>
+      <StyledLink href={fullUrl} data-testid='iframe-footer-link'>
         Voir la version détaillée
         <br />
         (et les sources)
-      </StyledMagicLink>
+      </StyledLink>
       <Logos>
         <Marianne />
         <Ademe />

@@ -3,7 +3,7 @@ import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styled from 'styled-components'
 import ModalContext from 'components/providers/ModalProvider'
-import ButtonLink from 'components/base/ButtonLink'
+import Link from 'components/base/buttons/Link'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import DailyUsageInput from './deviceInput/DailyUsageInput'
 import LifeSpanInput from './deviceInput/LifespanInput'
@@ -80,7 +80,7 @@ const Text = styled.p`
   font-size: ${(props) => (props.$large ? 1 : 0.75)}rem;
   text-align: center;
 `
-const StyledButtonLink = styled(ButtonLink)`
+const StyledButtonLink = styled(Link)`
   display: block;
   font-size: 0.75rem;
   margin: 0 auto;
@@ -118,8 +118,8 @@ export default function DeviceInput(props) {
           <Label>Terminal utilisé</Label>
           <Text $large>
             Pour calculer l'impact de la construction et de l'usage du terminal, nous utilisons pour la valeur par
-            défaut <ButtonLink onClick={() => setDevices(true)}>un agrégat de terminaux</ButtonLink>. Vous pouvez
-            modifier le terminal utilisé à l'aide des flèches.
+            défaut <Link onClick={() => setDevices(true)}>un agrégat de terminaux</Link>. Vous pouvez modifier le
+            terminal utilisé à l'aide des flèches.
           </Text>
           <StyledButtonLink onClick={() => props.setConstruction((prevConstruction) => !prevConstruction)}>
             {props.construction ? 'Ne pas a' : 'A'}fficher l’impact de la construction

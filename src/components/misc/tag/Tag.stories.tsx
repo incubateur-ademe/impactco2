@@ -8,7 +8,7 @@ export default {
 
 type Story = StoryObj<typeof Tag>
 
-export const Eau: Story = {
+export const Nouveau: Story = {
   args: {
     text: 'Nouveau',
   },

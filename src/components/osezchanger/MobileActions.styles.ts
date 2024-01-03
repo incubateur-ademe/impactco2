@@ -34,6 +34,10 @@ export const Container = styled(Link)`
     border: 1px solid var(--primary-40);
     color: var(--primary-80);
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `
 
 export const Text = styled.div`

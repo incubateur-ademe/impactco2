@@ -29,7 +29,7 @@ export default function MenuSweet() {
         {categories
           ?.filter((category) => category.display)
           .map((category) => (
-            <DropdownSweet.Item key={category.id} to={`/${category.slug}`} $current={slugs.includes(category.slug)}>
+            <DropdownSweet.Item key={category.id} href={`/${category.slug}`} $current={slugs.includes(category.slug)}>
               <div>
                 <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
               </div>

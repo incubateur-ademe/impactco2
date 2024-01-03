@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.nav`
   display: flex;
 `
-const Tab = styled(MagicLink)<{ $current: boolean; $large?: boolean }>`
+const Tab = styled(Link)<{ $current: boolean; $large?: boolean }>`
   align-items: center;
   background-color: ${(props) => (props.$current ? props.theme.colors.second : 'transparent')};
   border-radius: 1rem 1rem 0 0;
@@ -48,7 +48,7 @@ export default function ModeSelector({
         <Tab
           data-testid='transport-tab-distance'
           $current={type === 'distance'}
-          to={`${iframe ? '/iframes' : ''}/transport${params}`}
+          href={`${iframe ? '/iframes' : ''}/transport${params}`}
           title={`Distance${type === 'distance' ? ' : page actuelle' : ''}`}>
           Distance
         </Tab>
@@ -57,7 +57,7 @@ export default function ModeSelector({
         <Tab
           data-testid='transport-tab-itineraire'
           $current={type === 'itineraire'}
-          to={`${iframe ? '/iframes' : ''}/transport/itineraire${params}`}
+          href={`${iframe ? '/iframes' : ''}/transport/itineraire${params}`}
           title={`Itinéraire${type === 'itineraire' ? ' : page actuelle' : ''}`}>
           Itinéraire
         </Tab>
@@ -66,7 +66,7 @@ export default function ModeSelector({
         <Tab
           data-testid='transport-tab-teletravail'
           $current={type === 'teletravail'}
-          to={`${iframe ? '/iframes' : ''}/transport/teletravail${params}`}
+          href={`${iframe ? '/iframes' : ''}/transport/teletravail${params}`}
           title={`Télétravail${type === 'teletravail' ? ' : page actuelle' : ''}`}
           $large>
           Télétravail

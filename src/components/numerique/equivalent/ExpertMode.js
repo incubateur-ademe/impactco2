@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import styled from 'styled-components'
-import ButtonLink from 'components/base/ButtonLink'
+import Button from 'components/base/buttons/Button'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import Question from './expertMode/Question'
 
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `
-const StyledButtonLink = styled(ButtonLink)`
+const StyledButtonLink = styled(Button)`
   font-size: 0.75rem;
   margin-bottom: 2rem;
 `
@@ -26,7 +26,7 @@ export default function ExpertMode(props) {
   const [open, setOpen] = useState(false)
   return (
     <>
-      <StyledButtonLink onClick={() => setOpen((prevOpen) => !prevOpen)} className='noscreenshot'>
+      <StyledButtonLink asLink onClick={() => setOpen((prevOpen) => !prevOpen)} className='noscreenshot'>
         Voir plus d'options
       </StyledButtonLink>
       {open && (

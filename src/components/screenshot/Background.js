@@ -19,7 +19,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1.5rem;
   position: relative;
 

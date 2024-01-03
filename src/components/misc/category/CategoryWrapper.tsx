@@ -2,7 +2,7 @@ import React, { ReactNode, useMemo, useState } from 'react'
 import { Category } from 'types/category'
 import { track } from 'utils/matomo'
 import Card from 'components/base/Card'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 import ShareableContent from '../ShareableContent'
 import SourceAgribalyse from '../SourceAgribalyse'
 import { Cards, Content, Header, Sources } from './CategoryWrapper.styles'
@@ -42,13 +42,13 @@ const CategoryWrapper = ({
               Source{category.sources.length > 1 ? 's' : ''} :{' '}
               {category.sources
                 .flatMap((source) => [
-                  <MagicLink
+                  <Link
                     key={source.label}
-                    to={source.href}
+                    href={source.href}
                     color='secondary'
                     onClick={() => track(category.name, 'Source', source.href)}>
                     {source.label}
-                  </MagicLink>,
+                  </Link>,
                   <span key={`${source.label}-separator`}> • </span>,
                 ])
                 .slice(0, category.sources.length * 2 - 1)}

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Emoji from 'components/base/Emoji'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 
 export const Title = styled.h2`
   font-size: 22px;
@@ -13,7 +13,7 @@ export const Equivalents = styled.div`
   display: flex;
   gap: 32px;
   justify-content: space-around;
-  margin-bottom: 4.5rem;
+  margin-bottom: 2rem;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 1rem;
@@ -95,7 +95,7 @@ export const LinkWrapper = styled.div`
     margin-bottom: 2rem;
   }
 `
-export const StyledMagicLink = styled(MagicLink)`
+export const StyledLink = styled(Link)`
   font-size: 0.875rem;
   position: relative;
   z-index: 12;
