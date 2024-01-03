@@ -1,22 +1,16 @@
 import styled from 'styled-components'
+import Link from 'components/base/buttons/Link'
 
-export const Container = styled.form`
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-
-  .input {
-    flex-grow: 1;
-    margin-bottom: 0;
-    min-width: 250px;
-    input {
-      height: 36px;
+export const Arrow = styled.div`
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+`
+export const StyledLink = styled(Link)`
+  width: fit-content;
+  &:hover {
+    ${Arrow} {
+      transform: translateX(0.5rem);
     }
   }
-`
-
-export const SentMessage = styled.div`
-  line-height: 1.15;
-  padding: 10px 0;
 `

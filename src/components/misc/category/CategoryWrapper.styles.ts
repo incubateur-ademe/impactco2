@@ -1,20 +1,13 @@
 import styled from 'styled-components'
 
-export const Header = styled.div`
-  margin-bottom: 1.5rem;
+export const Header = styled.h2`
+  margin-bottom: 0rem;
   text-align: center;
-
-  h2 {
-    margin-bottom: 0;
-  }
 `
 
 export const Sources = styled.div`
-  margin-top: 0.5rem;
-`
-
-export const Content = styled.div`
   margin-top: 1.5rem;
+  text-align: center;
 `
 
 export const Cards = styled.div`

@@ -6,7 +6,7 @@ import Iframe from 'components/layout/Iframe'
 
 export default function Fruitsetlegumes({ category }: { category: Category }) {
   return (
-    <Iframe>
+    <Iframe noLogo>
       <Saisons category={category} iframe />
     </Iframe>
   )

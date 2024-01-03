@@ -6,7 +6,7 @@ import OverScreen, { OverScreenInfo } from 'components/base/OverScreen'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import Signature from 'components/screenshot/Signature'
-import { Container, IFrameLogos, Logos } from './ShareableContent.styles'
+import { Container, ContentHeader, IFrameLogos, Logos } from './ShareableContent.styles'
 import Actions from './category/Actions'
 import { CustomParamValue } from './category/CustomParam'
 import Header from './category/Header'
@@ -23,8 +23,10 @@ const ShareableContent = <T extends string>({
   header,
   footer,
   type,
+  size,
+  title,
 }: {
-  category: Category
+  category?: Category
   iframe?: boolean
   tracking: string
   ['data-testid']?: string
@@ -35,6 +37,8 @@ const ShareableContent = <T extends string>({
   header?: ReactNode
   footer?: ReactNode
   type?: 'distance' | 'itineraire' | 'teletravail'
+  size?: 'sm'
+  title?: string
 }) => {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replaceAll(' ', '-').toLowerCase(), tracking)
 
@@ -42,11 +46,18 @@ const ShareableContent = <T extends string>({
     <Section $withoutPadding data-testid={dataTestId}>
       <SectionWideContent $size='sm'>
         {!iframe && (
-          <Header category={category} params={params} takeScreenshot={takeScreenshot} tracking={tracking} type={type} />
+          <Header
+            category={category}
+            params={params}
+            takeScreenshot={takeScreenshot}
+            tracking={tracking}
+            type={type}
+            title={title}
+          />
         )}
-        <SectionWideContent $size='xs' $noGutter>
+        <SectionWideContent $size={size || 'xs'} $noGutter>
           <Container $iframe={iframe}>
-            {header}
+            {header && <ContentHeader>{header}</ContentHeader>}
             <div ref={ref}>
               {children}
               {isScreenshotting && (
@@ -60,13 +71,13 @@ const ShareableContent = <T extends string>({
               <>
                 <IFrameLogos>
                   <Signature noMargin noLink center />
-                  <Link href={buildCurrentUrlFor(category.slug)}>version complète</Link>
+                  <Link href={buildCurrentUrlFor(category ? category.slug : '/comparateur')}>version complète</Link>
                 </IFrameLogos>
                 <Actions
                   onClick={(value) => {
                     value === 'telecharger' ? takeScreenshot() : setOverScreen(value as T)
                   }}
-                  category={category}
+                  tracking={tracking}
                 />
               </>
             )}

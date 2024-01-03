@@ -15,12 +15,14 @@ const Header = ({
   takeScreenshot,
   tracking,
   type,
+  title,
 }: {
-  category: Category
+  category?: Category
   params?: Record<string, CustomParamValue>
   takeScreenshot: () => void
   tracking: string
   type?: 'distance' | 'itineraire' | 'teletravail'
+  title?: string
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const [opened, setOpened] = useState('')
@@ -40,18 +42,22 @@ const Header = ({
   }
   return (
     <Container>
-      <PageTitle
-        title={
-          <>
-            Sensibiliser à l'impact <span className='text-secondary'>{category.header} sur le climat</span>
-          </>
-        }
-        description={category.description}
-      />
+      {category ? (
+        <PageTitle
+          title={
+            <>
+              Sensibiliser à l'impact <span className='text-secondary'>{category.header} sur le climat</span>
+            </>
+          }
+          description={category.description}
+        />
+      ) : (
+        title && <PageTitle title={title} />
+      )}
       <SectionWideContent $size='xs' $noGutter>
         <ActionsContainer ref={ref}>
           <Actions
-            category={category}
+            tracking={tracking}
             onClick={(value) => (value === 'telecharger' ? takeScreenshot() : open(value))}
           />
           {opened && (
@@ -61,14 +67,14 @@ const Header = ({
                 <Share
                   category={category}
                   params={params}
-                  path={type && type !== 'distance' ? `transport/${type}` : undefined}
+                  path={type && type !== 'distance' ? `transport/${type}` : category ? undefined : 'comparateur'}
                 />
               )}
               {opened === 'integrer' &&
                 (type ? (
                   <TransportIntegrate tracking={tracking} type={type} />
                 ) : (
-                  <Integrate category={category} params={params} tracking={tracking} />
+                  <Integrate slug={category ? category.slug : 'convertisseur'} params={params} tracking={tracking} />
                 ))}
             </Content>
           )}
