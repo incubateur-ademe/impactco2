@@ -31,7 +31,7 @@ const transportValidation = z.object({
  *       schema:
  *         type: string
  *       description: |-
- *         Liste des id de chauffage à retourner, séparés par des ','
+ *         Liste des id de chauffage à retourner, séparés par des ','. Si non rempli, retourne l'integralité des résultats.
  *         - 1 : Chauffage au gaz
  *         - 2 : Chauffage au fioul
  *         - 3 : Chauffage électrique
