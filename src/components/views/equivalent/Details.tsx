@@ -4,9 +4,9 @@ import { Category } from 'types/category'
 import { Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import ModalContext from 'components/providers/ModalProvider'
-import ButtonLink from 'components/base/ButtonLink'
-import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 import Value from './details/Value'
 
 const Subtitle = styled.span`
@@ -31,7 +31,7 @@ const Disclaimer = styled.p`
   margin-bottom: 0.5rem;
   max-width: 27.25rem;
 `
-const StyledMagicLink = styled(MagicLink)`
+const StyledLink = styled(Link)`
   font-size: 0.875rem;
 `
 
@@ -58,17 +58,17 @@ export default function Details({ equivalent, category }: { equivalent: Equivale
                 {equivalent.include.pre}
                 <br />
                 Valeurs exprimées en kg{' '}
-                <ButtonLink onClick={() => setCo2e(true)}>
+                <Button asLink onClick={() => setCo2e(true)}>
                   CO<sub>2</sub>e
-                </ButtonLink>{' '}
+                </Button>{' '}
                 émis {equivalent.include.post}
               </>
             ) : (
               <>
                 Valeurs exprimées en kg{' '}
-                <ButtonLink onClick={() => setCo2e(true)}>
+                <Button asLink onClick={() => setCo2e(true)}>
                   CO<sub>2</sub>e
-                </ButtonLink>{' '}
+                </Button>{' '}
                 émis {category.include}
               </>
             )}
@@ -76,11 +76,13 @@ export default function Details({ equivalent, category }: { equivalent: Equivale
           {equivalent?.slug === 'stockagedonnee' ? (
             <>
               <Disclaimer>
-                <ButtonLink onClick={() => setWarningNegaoctet(true)}>Source</ButtonLink>
+                <Button asLink onClick={() => setWarningNegaoctet(true)}>
+                  Source
+                </Button>
               </Disclaimer>
             </>
           ) : (
-            <>{equivalent.source && <StyledMagicLink to={equivalent.source}>Source</StyledMagicLink>}</>
+            <>{equivalent.source && <StyledLink href={equivalent.source}>Source</StyledLink>}</>
           )}
         </SectionWideContent>
       </Section>

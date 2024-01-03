@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import ModalContext from 'components/providers/ModalProvider'
-import MagicLink from 'components/base/MagicLink'
 import Modal from 'components/base/Modal'
+import Link from 'components/base/buttons/Link'
 
 const Title = styled.h2``
 const Text = styled.p``
@@ -64,13 +64,13 @@ export default function DevicesModal() {
           </Text>
           <Text>
             Ces chiffres sont basés sur ces deux études :<br />-{' '}
-            <MagicLink to='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
+            <Link href='https://www.arcep.fr/uploads/tx_gspublication/rapport-barometre-numerique-edition-2021.pdf'>
               rapport-barometre-numerique-edition-2021.pdf
-            </MagicLink>
+            </Link>
             <br />-{' '}
-            <MagicLink to='https://www.carbonbrief.org/factcheck-what-is-the-carbon-footprint-of-streaming-video-on-netflix/'>
+            <Link href='https://www.carbonbrief.org/factcheck-what-is-the-carbon-footprint-of-streaming-video-on-netflix/'>
               factcheck-what-is-the-carbon-footprint-of-streaming-video-on-netflix
-            </MagicLink>
+            </Link>
           </Text>
         </Modal>
       )}

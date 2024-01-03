@@ -15,7 +15,7 @@ test('Page is loaded and month can be selected', async ({ page }) => {
   })
   await test.step('User can change month', async () => {
     await page.getByRole('combobox').selectOption('5')
-    await expect(page.getByTestId('magic-link-/fruitsetlegumes/abricot')).toBeVisible()
+    await expect(page.getByTestId('tile-Abricot')).toBeVisible()
     await page.getByTestId('header-share-button').click()
     await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/fruitsetlegumes?month=5')
     await page.getByTestId('custom-param-month-select').selectOption('9')
@@ -42,11 +42,11 @@ test('Page is loaded with forced month', async ({ page }) => {
     await page.goto('/fruitsetlegumes?month=4')
 
     await expect(page.getByTestId('fancy-select-label')).toHaveText(getMonthLabel(4))
-    await expect(page.getByTestId('magic-link-/fruitsetlegumes/artichaut')).toBeVisible()
+    await expect(page.getByTestId('tile-Artichaut')).toBeVisible()
   } else {
     await page.goto('/fruitsetlegumes?month=5')
 
     await expect(page.getByTestId('fancy-select-label')).toHaveText(getMonthLabel(5))
-    await expect(page.getByTestId('magic-link-/fruitsetlegumes/abricot')).toBeVisible()
+    await expect(page.getByTestId('tile-Abricot')).toBeVisible()
   }
 })

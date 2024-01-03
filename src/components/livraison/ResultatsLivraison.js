@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import useLocalStorage from 'use-local-storage'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
+import Button from 'components/base/buttons/Button'
 import { default_eqs } from 'components/livraison/data'
 import LivraisonEq from 'components/misc/tiles/LivraisonEq'
 import ResultatLivraison from './ResultatLivraison'
@@ -38,39 +39,14 @@ export default function ResultatsLivraison(props) {
         {buildLivraisonEq(1)}
         {buildLivraisonEq(2)}
         <ButtonContainer $nbCol={eqvChosen.length}>
-          <ButtonChange onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
+          <Button color='secondary' size='sm' onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
             Modifier les équivalences
-          </ButtonChange>
+          </Button>
         </ButtonContainer>
       </UpperEq>
     </Wrapper>
   )
 }
-
-const ButtonChange = styled.button`
-  background-color: white;
-  border-color: #b5abb2;
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 1px;
-  color: #564d53;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0em;
-  line-height: 24px;
-  min-width: 190px;
-  padding: 4px 12px 4px 12px;
-  ${(props) => props.theme.mq.large} {
-    max-width: 6rem;
-    padding: 0.1rem;
-  }
-  ${(props) => props.theme.mq.small} {
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-  }
-  text-align: center;
-`
 
 const Wrapper = styled.div`
   border: 1px solid #457be7;

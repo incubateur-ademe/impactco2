@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
-export const Label = styled.label`
+export const Label = styled.label<{ $error?: boolean }>`
   color: var(--neutral-80);
   display: inline-block;
   font-weight: 500;
   margin-bottom: 0.5rem;
+
+  ${({ $error }) => $error && 'color: var(--critical-50);'}
 `
 
 export const Hint = styled.div`
@@ -47,14 +49,18 @@ const input = (color?: 'secondary') => `
   }
 `
 
-export const StyledTextArea = styled.textarea<{ $maxWidth?: string; $color?: 'secondary' }>`
+export const StyledTextArea = styled.textarea<{ $maxWidth?: string; $color?: 'secondary'; $error?: boolean }>`
   ${({ $color }) => input($color)}
   ${({ $maxWidth }) => `max-width:${$maxWidth || '100%'};`}
+
+  ${({ $error }) => $error && 'border-bottom: 2px solid var(--critical-50) !important;'}
 `
 
-export const StyledInput = styled.input<{ $maxWidth?: string; $color?: 'secondary' }>`
+export const StyledInput = styled.input<{ $maxWidth?: string; $color?: 'secondary'; $error?: boolean }>`
   ${({ $color }) => input($color)}
   ${({ $maxWidth }) => `max-width:${$maxWidth || '560px'};`}
+  
+  ${({ $error }) => $error && 'border-bottom: 2px solid var(--critical-50) !important;'}
 `
 
 export const StyledSelect = styled.select<{ $maxWidth?: string; $color?: 'secondary' }>`
@@ -67,4 +73,12 @@ export const StyledSelect = styled.select<{ $maxWidth?: string; $color?: 'second
   background-repeat: no-repeat;
   background-size: 1em;
   padding-right: 2.5rem;
+`
+
+export const Error = styled.div`
+  align-items: center;
+  color: var(--critical-50);
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
 `

@@ -10,7 +10,7 @@ describe('Osez Changer', () => {
 
     expect(screen.queryByTestId('defi')).toBeNull()
     act(() => {
-      screen.getByLabelText('Découvrir le défi').click()
+      screen.getByTestId('osez-changer-start-button').click()
     })
     expect(screen.getByTestId('defi')).not.toBeNull()
 
@@ -53,7 +53,7 @@ describe('Osez Changer', () => {
   it('Should render hypothesis modal', () => {
     renderWithStyle(<OsezChanger />)
     act(() => {
-      screen.getByLabelText('Découvrir le défi').click()
+      screen.getByTestId('osez-changer-start-button').click()
     })
 
     expect(screen.queryByTestId('hypothesis-modal')).toBeNull()
@@ -71,7 +71,7 @@ describe('Osez Changer', () => {
   it('Should render share modal', () => {
     renderWithStyle(<OsezChanger />)
     act(() => {
-      screen.getByLabelText('Découvrir le défi').click()
+      screen.getByTestId('osez-changer-start-button').click()
     })
 
     expect(screen.queryByTestId('share-modal')).toBeNull()
@@ -89,7 +89,7 @@ describe('Osez Changer', () => {
   it('Should render integration modal', () => {
     renderWithStyle(<OsezChanger />)
     act(() => {
-      screen.getByLabelText('Découvrir le défi').click()
+      screen.getByTestId('osez-changer-start-button').click()
     })
 
     expect(screen.queryByTestId('integration-modal')).toBeNull()

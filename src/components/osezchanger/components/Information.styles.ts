@@ -28,4 +28,8 @@ export const Button = styled.button`
     }
     color: var(--primary-80);
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `

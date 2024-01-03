@@ -7,6 +7,7 @@ import codeSSlash from './code-s-slash'
 import copy from './copy'
 import download from './download'
 import dropdownArrowRight from './dropdown-arrow-right'
+import error from './error'
 import facebook from './facebook'
 import fullArrowRight from './full-arrow-right'
 import information from './information'
@@ -38,6 +39,7 @@ export type IconId =
   | 'plus'
   | 'minus'
   | 'check'
+  | 'error'
 
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
@@ -79,6 +81,8 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return minus
     case 'check':
       return check
+    case 'error':
+      return error
     default:
       return null
   }

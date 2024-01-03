@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import OutboundLink from 'components/base/OutboundLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 
 const H1Title = styled.h1`
   margin-top: 0;
@@ -43,12 +43,13 @@ export default function IntroLivraison(props) {
         </H1Title>
         <SmallText>
           <span> Source : </span>
-          <OutboundLink
+          <Link
+            color='secondary'
             title='Commerce en ligne - Étude ADEME 2023 - Nouvelle fenêtre'
             href='https://librairie.ademe.fr/mobilite-et-transport/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'
             data-testid='lien-etude-ademe'>
             Commerce en ligne - Étude ADEME 2023{' '}
-          </OutboundLink>
+          </Link>
           <span> · </span>
           <UpdatedAt>Mise à jour le 26/05/2023 </UpdatedAt>
         </SmallText>

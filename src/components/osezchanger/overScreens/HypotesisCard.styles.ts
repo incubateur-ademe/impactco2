@@ -22,6 +22,10 @@ export const Card = styled(Link)`
     outline: 3px solid var(--secondary-40);
     outline-offset: 2px;
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `
 
 export const Bar = styled.div<{ $width: number }>`
