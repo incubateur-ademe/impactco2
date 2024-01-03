@@ -41,7 +41,6 @@ const RendezVous = ({ from }: { from: string }) => {
         setErrors(null)
       } else {
         setErrors(body.error)
-        console.log(body.error)
       }
     }
     return data
@@ -75,7 +74,6 @@ const RendezVous = ({ from }: { from: string }) => {
     setSending(false)
   }
 
-  console.log(errors)
   return (
     <Section $withoutPadding>
       <SectionWideContent $size='sm'>

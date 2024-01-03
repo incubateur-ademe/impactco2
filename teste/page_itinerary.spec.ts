@@ -201,13 +201,14 @@ test('Default parameters', async ({ page }) => {
 
 test('Load correct number of tabs and redirect with params', async ({ page }) => {
   await page.goto(
-    '/transport/itineraire?km=12&itineraireStart=Paris&itineraireEnd=Lyon&teletravailStart=Nantes&teletravailEnd=Marseille&tabs=distance'
+    '/iframes/transport/itineraire?km=12&itineraireStart=Paris&itineraireEnd=Lyon&teletravailStart=Nantes&teletravailEnd=Marseille&tabs=teletravail,distance'
   )
 
   await test.step('check number of tabs', async () => {
-    await expect(page.getByTestId('transport-tab-teletravail')).not.toBeVisible()
+    await expect(page.getByTestId('teletravail-wrapper')).toBeVisible()
+    await expect(page.getByTestId('transport-tab-teletravail')).toBeVisible()
     await expect(page.getByTestId('transport-tab-distance')).toBeVisible()
-    await expect(page.getByTestId('transport-tab-itineraire')).toBeVisible()
+    await expect(page.getByTestId('transport-tab-itineraire')).not.toBeVisible()
   })
 
   await test.step('test redirection', async () => {

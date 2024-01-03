@@ -1,4 +1,5 @@
-import React, { ReactNode, useContext, useMemo, useState } from 'react'
+import { useRouter } from 'next/router'
+import React, { ReactNode, useContext, useEffect, useMemo, useState } from 'react'
 import { Category } from 'types/category'
 import ShareableContent from 'components/misc/ShareableContent'
 import { CustomParamValue } from 'components/misc/category/CustomParam'
@@ -64,7 +65,23 @@ const Transport = ({
     [category, params, tracking, type]
   )
 
-  return (
+  const router = useRouter()
+  const [isReady, setIsReady] = useState(!iframe)
+  const queries = Object.entries(router.query)
+  const queryParams = queries.length > 0 ? `?${queries.map(([key, value]) => `${key}=${value}`).join('&')}` : ''
+
+  useEffect(() => {
+    if (iframe && router.isReady) {
+      if (router.query.tabs && router.query.tabs.length > 0 && !router.query.tabs.includes(type)) {
+        const newTab = (router.query.tabs as string).split(',')[0]
+        router.push(`/iframes/transport${newTab === 'distance' ? '' : `/${newTab}`}${queryParams}`)
+        return
+      }
+      setIsReady(true)
+    }
+  }, [router, iframe, type, queryParams])
+
+  return isReady ? (
     <ShareableContent<OverScreenTransport>
       category={category}
       iframe={iframe}
@@ -76,7 +93,7 @@ const Transport = ({
       overScreen={overScreen ? overScreenValues[overScreen] : undefined}>
       {children}
     </ShareableContent>
-  )
+  ) : null
 }
 
 export default Transport

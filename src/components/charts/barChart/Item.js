@@ -30,7 +30,6 @@ export default function Item(props) {
   const iframe = useIframe()
   return (
     <Wrapper
-      {...props}
       href={(iframe ? process.env.NEXT_PUBLIC_URL : '') + props.to}
       onClick={props.onClick || null}
       noIcon
