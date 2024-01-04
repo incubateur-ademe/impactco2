@@ -43,7 +43,7 @@ export const Disabled: Story = {
 const body = NotionCommandValidation.safeParse({})
 export const Error: Story = {
   args: {
-    id: 'email',
+    id: 'type',
     label: 'Label',
     hint: 'Description',
     errors: body.success ? null : body.error,

@@ -6,7 +6,15 @@ import { SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import { Cards, Informations, Strong, StyledSection } from './Learning.styles'
 
-export default function Learning({ category }: { category?: Category }) {
+export default function Learning({
+  category,
+  from,
+  fromLabel,
+}: {
+  category?: Category
+  from?: string
+  fromLabel?: string
+}) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore: TODO
   const { setCo2e } = useContext<{ setCo2e: (open: boolean) => void }>(ModalContext)
@@ -245,7 +253,7 @@ export default function Learning({ category }: { category?: Category }) {
               description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
               link='Kit de diffusion'
               image='/images/laptop.png'
-              tracking={category?.name || 'Comparateur'}
+              tracking={fromLabel || category?.name}
             />
             <Card
               href='/api-doc'
@@ -253,10 +261,10 @@ export default function Learning({ category }: { category?: Category }) {
               description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
               link='Voir la documentation'
               image='/images/lightning.png'
-              tracking={category?.name || 'Comparateur'}
+              tracking={fromLabel || category?.name}
             />
             <Card
-              href={`/rendez-vous?from=${category?.slug || 'comparateur'}&fromLabel=${category?.name || 'Comparateur'}`}
+              href={`/rendez-vous?from=${from || category?.slug}&fromLabel=${fromLabel || category?.name}`}
               title='Obtenir un accompagnement'
               description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
               link='Prendre rendez-vous'

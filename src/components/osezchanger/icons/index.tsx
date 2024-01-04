@@ -10,12 +10,14 @@ import dropdownArrowRight from './dropdown-arrow-right'
 import error from './error'
 import facebook from './facebook'
 import fullArrowRight from './full-arrow-right'
+import fullStar from './full-star'
 import information from './information'
 import linkedin from './linkedin'
 import minus from './minus'
 import plus from './plus'
 import sendPlane from './send-plane'
 import sprinkles from './sprinkles'
+import star from './star'
 import twitter from './twitter'
 import whatsapp from './whatsapp'
 
@@ -38,6 +40,8 @@ export type IconId =
   | 'whatsapp'
   | 'plus'
   | 'minus'
+  | 'star'
+  | 'full-star'
   | 'check'
   | 'error'
 
@@ -83,6 +87,10 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return check
     case 'error':
       return error
+    case 'star':
+      return star
+    case 'full-star':
+      return fullStar
     default:
       return null
   }

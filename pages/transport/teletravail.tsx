@@ -1,6 +1,7 @@
 import React from 'react'
 import { Category } from 'types/category'
 import categories from 'data/categories.json'
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Teletravail from 'components/transport/Teletravail'
@@ -18,7 +19,12 @@ export default function TeletravailPage({ category }: { category: Category }) {
       }}>
       <TransportProvider type='teletravail'>
         <Teletravail category={category} />
-        <Learning category={category} />
+        <Learning category={category} from='/transport/itineraire' fromLabel='Transport itinéraire' />
+        <SuggestionBanner
+          from='/transport/teletravail'
+          fromLabel='Transport télétravail'
+          simulatorName='simulateur transport'
+        />
       </TransportProvider>
     </Web>
   )

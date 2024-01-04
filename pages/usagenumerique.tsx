@@ -1,6 +1,7 @@
 import React from 'react'
 import { Category as CategoryType } from 'types/category'
 import categories from 'data/categories.json'
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Category from 'components/numerique/Category'
@@ -19,6 +20,11 @@ export default function Numerique({ category }: { category: CategoryType }) {
       <RulesProviderNumerique>
         <Category category={category} />
         <Learning category={category} />
+        <SuggestionBanner
+          from='/usagenumerique'
+          fromLabel='Usage numérique'
+          simulatorName='simulateur usage numérique'
+        />
       </RulesProviderNumerique>
     </Web>
   )

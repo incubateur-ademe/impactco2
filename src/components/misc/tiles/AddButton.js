@@ -45,7 +45,7 @@ export default function AddButton() {
   return (
     <Wrapper
       onClick={() => {
-        track('Comparateur', 'Ajouter un équivalent', 'comparateur_ajouter_un_equivalent')
+        track('Comparateur carbone', 'Ajouter un équivalent', 'comparateur_ajouter_un_equivalent')
         setTiles(true)
       }}>
       <Title>+</Title>

@@ -5,11 +5,19 @@ export const mockRoutesNotion = async (page: Page, validData: NotionCommand) => 
   await page.route('/api/notion', async (route, request) => {
     const data = request.postDataJSON()
     if (
-      validData.email === data.email &&
-      validData.from === data.from &&
-      validData.structure === data.structure &&
-      validData.type === data.type &&
-      validData.needs === data.needs
+      (validData.type === 'contact' &&
+        validData.email === data.email &&
+        validData.from === data.from &&
+        validData.structure === data.structure &&
+        validData.type === data.type &&
+        validData.needs === data.needs) ||
+      (validData.type === 'suggestion' &&
+        validData.email === data.email &&
+        validData.from === data.from &&
+        validData.suggestionType === data.suggestionType &&
+        validData.type === data.type &&
+        validData.text === data.text &&
+        validData.avis === data.avis)
     ) {
       await route.fulfill({
         headers: {
