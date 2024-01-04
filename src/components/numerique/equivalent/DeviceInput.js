@@ -3,7 +3,7 @@ import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styled from 'styled-components'
 import ModalContext from 'components/providers/ModalProvider'
-import Link from 'components/base/buttons/Link'
+import Button from 'components/base/buttons/Button'
 import RulesContextNumerique from '../RulesProviderNumerique'
 import DailyUsageInput from './deviceInput/DailyUsageInput'
 import LifeSpanInput from './deviceInput/LifespanInput'
@@ -80,11 +80,7 @@ const Text = styled.p`
   font-size: ${(props) => (props.$large ? 1 : 0.75)}rem;
   text-align: center;
 `
-const StyledButtonLink = styled(Link)`
-  display: block;
-  font-size: 0.75rem;
-  margin: 0 auto;
-`
+
 export default function DeviceInput(props) {
   const { setSituation } = useContext(RulesContextNumerique)
 
@@ -118,12 +114,15 @@ export default function DeviceInput(props) {
           <Label>Terminal utilisé</Label>
           <Text $large>
             Pour calculer l'impact de la construction et de l'usage du terminal, nous utilisons pour la valeur par
-            défaut <Link onClick={() => setDevices(true)}>un agrégat de terminaux</Link>. Vous pouvez modifier le
-            terminal utilisé à l'aide des flèches.
+            défaut{' '}
+            <Button asLink onClick={() => setDevices(true)}>
+              un agrégat de terminaux
+            </Button>
+            . Vous pouvez modifier le terminal utilisé à l'aide des flèches.
           </Text>
-          <StyledButtonLink onClick={() => props.setConstruction((prevConstruction) => !prevConstruction)}>
+          <Button asLink onClick={() => props.setConstruction((prevConstruction) => !prevConstruction)}>
             {props.construction ? 'Ne pas a' : 'A'}fficher l’impact de la construction
-          </StyledButtonLink>
+          </Button>
         </Slide>
         {devices.map((device) => (
           <Slide key={device.name}>
@@ -133,9 +132,9 @@ export default function DeviceInput(props) {
               <DailyUsageInput name={props.name} device={device} />
             </Sliders>
             <Text>L’impact de la construction de l’appareil est attribué au prorata de sa durée de vie totale.</Text>
-            <StyledButtonLink onClick={() => props.setConstruction((prevConstruction) => !prevConstruction)}>
+            <Button asLink onClick={() => props.setConstruction((prevConstruction) => !prevConstruction)}>
               {props.construction ? 'Ne pas a' : 'A'}fficher l’impact de la construction
-            </StyledButtonLink>
+            </Button>
           </Slide>
         ))}
       </Carousel>
