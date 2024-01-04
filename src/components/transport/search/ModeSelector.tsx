@@ -30,7 +30,10 @@ const Tab = styled(Link)<{ $current: boolean; $large?: boolean }>`
     margin-bottom: -1.25rem;
     padding: 0.25rem 0 1.25rem;
   }
+
+  ${({ $current }) => $current && 'cursor: default;'}
 `
+
 export default function ModeSelector({
   type,
   iframe,
@@ -42,10 +45,12 @@ export default function ModeSelector({
 
   const queries = Object.entries(router.query)
   const params = queries.length > 0 ? `?${queries.map(([key, value]) => `${key}=${value}`).join('&')}` : ''
+
   return (
     <Wrapper>
       {(type === 'distance' || !router.query.tabs || router.query.tabs.includes('distance')) && (
         <Tab
+          internal
           data-testid='transport-tab-distance'
           $current={type === 'distance'}
           href={`${iframe ? '/iframes' : ''}/transport${params}`}
@@ -55,6 +60,7 @@ export default function ModeSelector({
       )}
       {(type === 'itineraire' || !router.query.tabs || router.query.tabs.includes('itineraire')) && (
         <Tab
+          internal
           data-testid='transport-tab-itineraire'
           $current={type === 'itineraire'}
           href={`${iframe ? '/iframes' : ''}/transport/itineraire${params}`}
@@ -64,6 +70,7 @@ export default function ModeSelector({
       )}
       {(type === 'teletravail' || !router.query.tabs || router.query.tabs.includes('teletravail')) && (
         <Tab
+          internal
           data-testid='transport-tab-teletravail'
           $current={type === 'teletravail'}
           href={`${iframe ? '/iframes' : ''}/transport/teletravail${params}`}

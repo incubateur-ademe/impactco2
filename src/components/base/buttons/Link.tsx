@@ -14,7 +14,7 @@ const Link = ({
   ...rest
 }: { asButton?: boolean; size?: 'sm' | 'lg'; internal?: boolean; color?: 'secondary'; noIcon?: boolean } & LinkProps &
   AnchorHTMLAttributes<HTMLAnchorElement>) => {
-  const external = rest.href.includes(':') || rest.href.includes('.') || (rest.href.includes('#') && !internal)
+  const external = !internal && (rest.href.includes(':') || rest.href.includes('.') || rest.href.includes('#'))
   return asButton ? (
     <ButtonLink
       $size={size}
