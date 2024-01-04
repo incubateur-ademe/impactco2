@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import ModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
-import OutboundLink from 'components/base/OutboundLink'
+import Link from 'components/base/buttons/Link'
 
 export default function DetailsUsagesNumModal() {
   const { hypothesis: open, setHypothesis: setOpen } = useContext(ModalContext)
@@ -15,11 +15,12 @@ export default function DetailsUsagesNumModal() {
             <h2>Les hypothèses sur cette page</h2>
             <p>
               L'ensemble des calculs sont issus d'une{' '}
-              <OutboundLink
+              <Link
+                color='secondary'
                 href='https://base-empreinte.ademe.fr/documentation/base-impact'
                 title='Base impact, étude réalisée par Negaoctet'>
                 étude réalisée par Négaoctet
-              </OutboundLink>
+              </Link>
               .
             </p>
             <h3>Pour l'email : </h3>

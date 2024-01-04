@@ -7,7 +7,6 @@ const Wrapper = styled.span`
   line-height: 1.3;
   position: relative;
 `
-const Value = styled.span``
 const Input = styled.select`
   appearance: none;
   background-color: transparent;
@@ -23,10 +22,12 @@ const Input = styled.select`
   top: 0;
   width: 100%;
 `
+
 export default function FancySelect(props) {
   return (
     <Wrapper color={props.color}>
-      <Value
+      <span
+        data-testid='fancy-select-label'
         dangerouslySetInnerHTML={{
           __html: props.options.find((option) => option.value === props.value)
             ? props.options.find((option) => option.value === props.value).label

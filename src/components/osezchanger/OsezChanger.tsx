@@ -44,7 +44,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
           <Actions takeScreenshot={takeScreenshot} setOverScreen={setOverScreen} />
           {overScreen && (
             <OverScreen
-              theme='blue'
+              color='secondary'
               values={overScreenOsezChangerValues[overScreen]}
               onClose={() => setOverScreen(undefined)}
             />
@@ -52,6 +52,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
         </>
       ) : (
         <DefiButton
+          data-testid='osez-changer-start-button'
           onClick={() => {
             track('OsezChanger', 'Start', 'osez_changer_start')
             setDefiMode(true)

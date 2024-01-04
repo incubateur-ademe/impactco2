@@ -1,5 +1,5 @@
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import AdviceLivraison from 'components/livraison/AdviceLivraison'
-import AvisLivraison from 'components/livraison/AvisLivraison'
 import CalculateurLivraison from 'components/livraison/CalculateurLivraison'
 import ConclusionLivraison from 'components/livraison/ConclusionLivraison'
 import IntroLivraison from 'components/livraison/IntroLivraison'
@@ -14,7 +14,7 @@ export default function Impactlivraison() {
       </RulesProviderLivraison>
       <AdviceLivraison />
       <ConclusionLivraison />
-      <AvisLivraison />
+      <SuggestionBanner from='livraison' fromLabel='Livraison' simulatorName='simulateur livraison' />
     </main>
   )
 }

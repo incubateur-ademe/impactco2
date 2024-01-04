@@ -1,4 +1,5 @@
 import React from 'react'
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import ByArticle from 'components/views/home/ByArticle'
 import ByOrder from 'components/views/home/ByOrder'
@@ -14,6 +15,7 @@ export default function Home() {
       <ByOrder />
       <ByArticle />
       <NGCCard />
+      <SuggestionBanner fromLabel='Accueil' simulatorName='site Impact CO₂' />
     </Web>
   )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import useIframe from 'hooks/useIframe'
-import MagicLink from 'components/base/MagicLink'
+import Link from 'components/base/buttons/Link'
 import Bar from './item/Bar'
 import Emoji from './item/Emoji'
 import Title from './item/Title'
 
-const Wrapper = styled(MagicLink)`
+const Wrapper = styled(Link)`
   align-items: center;
   background-color: ${(props) => (props.current ? props.theme.colors.second : 'transparent')};
   border-radius: 1rem !important;
@@ -30,15 +30,16 @@ export default function Item(props) {
   const iframe = useIframe()
   return (
     <Wrapper
-      {...props}
-      to={(iframe ? process.env.NEXT_PUBLIC_URL : '') + props.to}
+      href={(iframe ? process.env.NEXT_PUBLIC_URL : '') + props.to}
       onClick={props.onClick || null}
       noIcon
       className='bar-chart-item'
       data-testid={`bar-chart-item-${props.slug}`}>
       <Emoji emoji={props.emoji} secondEmoji={props.secondEmoji} />
       <ChartWrapper>
-        <Title title={props.title} subtitle={props.subtitle} component={props.component} />
+        <Title title={props.title} subtitle={props.subtitle}>
+          {props.children}
+        </Title>
         <Bar value={props.value} usage={props.usage} max={props.max} color={props.color} />
       </ChartWrapper>
     </Wrapper>

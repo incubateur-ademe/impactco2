@@ -1,20 +1,20 @@
 import React, { ReactNode, useMemo } from 'react'
 import { Flipped, Flipper } from 'react-flip-toolkit'
 import { Category } from 'types/category'
-import { Equivalent } from 'types/equivalent'
+import { BaseEquivalent } from 'types/equivalent'
 import Item from './barChart/Item'
 
 export default function BarChart({
   equivalents,
   category,
 }: {
-  equivalents: (Equivalent & {
+  equivalents: (Pick<BaseEquivalent, 'id' | 'slug' | 'emoji' | 'secondEmoji'> & {
     value: number
     component?: ReactNode
     title?: string
     subtitle?: string
     color?: string
-    usage: number
+    usage?: number
     onClick: () => void
   })[]
   category: Category
@@ -36,10 +36,10 @@ export default function BarChart({
             color={equivalent.color}
             value={equivalent.value}
             slug={equivalent.slug}
-            usage={'usage' in equivalent ? equivalent.usage : undefined}
-            component={equivalent.component}
-            max={sortedEquivalent[sortedEquivalent.length - 1].value}
-          />
+            usage={equivalent.usage}
+            max={sortedEquivalent[sortedEquivalent.length - 1].value}>
+            {equivalent.component}
+          </Item>
         </Flipped>
       ))}
     </Flipper>

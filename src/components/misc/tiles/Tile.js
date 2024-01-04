@@ -9,8 +9,9 @@ import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import useIframe from 'hooks/useIframe'
 import DataContext from 'components/providers/DataProvider'
-import Button from 'components/base/Button'
 import Emoji from 'components/base/Emoji'
+import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -119,12 +120,18 @@ const Subtitle = styled.span`
   font-size: 0.75rem;
   font-weight: 300;
 `
+const StyledLink = styled(Link)`
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+`
 const StyledButton = styled(Button)`
-  font-size: 0.8125rem;
-  padding: 0.5em 0.75rem;
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
 
   svg {
-    display: block;
+    display: inline-block;
     height: 0.75rem;
     width: auto;
   }
@@ -180,7 +187,7 @@ export default function Tile(props) {
         <Emoji>{props.equivalent.emoji}</Emoji>
       </EmojiWrapper>
       <Title>
-        <Number>
+        <Number data-testid={`tile-${props.equivalent.slug}-value`}>
           {props.noAnimation ? (
             formatNumber(props.weight / computeECV(props.equivalent))
           ) : (
@@ -203,45 +210,44 @@ export default function Tile(props) {
       </Title>
       {props.reference ? (
         !props.equivalentPage && (
-          <Button.Wrapper>
-            <StyledButton
-              to={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/${
-                categories.find((category) => category.id === props.equivalent.category)?.slug
-              }/${props.equivalent.slug}`}>
-              Voir le détail
-              {iframe && (
-                <Svg x='0px' y='0px' viewBox='0 0 283.178 283.178'>
-                  <path
-                    d='M254.812,140.713h-20c-4.142,0-7.5,3.358-7.5,7.5v91.186c0,4.84-3.939,8.778-8.779,8.778H43.776
+          <StyledLink
+            size='sm'
+            asButton
+            href={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/${
+              categories.find((category) => category.id === props.equivalent.category)?.slug
+            }/${props.equivalent.slug}`}>
+            Voir le détail
+            {iframe && (
+              <Svg x='0px' y='0px' fill='currentcolor' viewBox='0 0 283.178 283.178'>
+                <path
+                  d='M254.812,140.713h-20c-4.142,0-7.5,3.358-7.5,7.5v91.186c0,4.84-3.939,8.778-8.779,8.778H43.776
 		c-4.839,0-8.775-3.938-8.775-8.778V64.645c0-4.841,3.936-8.78,8.775-8.78h95.855c4.142,0,7.5-3.358,7.5-7.5v-20
 		c0-4.142-3.358-7.5-7.5-7.5H43.776c-24.138,0-43.775,19.64-43.775,43.78v174.755c0,24.14,19.638,43.778,43.775,43.778h174.756
 		c24.14,0,43.779-19.639,43.779-43.778v-91.186C262.312,144.071,258.954,140.713,254.812,140.713z'
-                  />
-                  <path
-                    d='M275.677,0h-79.553c-4.142,0-7.5,3.358-7.5,7.5v20c0,4.142,3.358,7.5,7.5,7.5h27.304
+                />
+                <path
+                  d='M275.677,0h-79.553c-4.142,0-7.5,3.358-7.5,7.5v20c0,4.142,3.358,7.5,7.5,7.5h27.304
 		L120.683,137.743c-2.929,2.929-2.929,7.677,0,10.607l14.142,14.143c1.407,1.407,3.314,2.197,5.304,2.197
 		c1.989,0,3.897-0.79,5.303-2.197L248.177,59.748v27.303c0,4.142,3.358,7.5,7.5,7.5h20c4.142,0,7.5-3.358,7.5-7.5V7.5
 		C283.177,3.358,279.819,0,275.677,0z'
-                  />
-                </Svg>
-              )}
-            </StyledButton>
-          </Button.Wrapper>
+                />
+              </Svg>
+            )}
+          </StyledLink>
         )
       ) : (
-        <Button.Wrapper>
-          <StyledButton
-            onClick={() => {
-              track('Comparateur', 'Comparer', props.equivalent.slug)
-              props.setCurEquivalent(props.equivalent)
-            }}
-            hollow>
-            <svg width='292' height='388' viewBox='0 0 292 388' fill='none' xmlns='http://www.w3.org/2000/svg'>
-              <path d='M168.627 9.37298C162.378 3.12397 154.19 -4.25109e-05 146 -4.32269e-05C137.812 -4.39427e-05 129.62 3.12497 123.373 9.37297L9.99496 122.75C-2.50204 135.247 -2.50205 155.508 9.99495 168.005C22.492 180.502 42.753 180.502 55.25 168.005L114 109.255L114 356.001C114 373.674 128.327 388.001 146 388.001C163.673 388.001 178 373.674 178 356.001L178 109.255L236.75 168.005C249.247 180.502 269.508 180.502 282.005 168.005C294.502 155.508 294.502 135.247 282.005 122.75L168.627 9.37298Z' />
-            </svg>
-            Comparer
-          </StyledButton>
-        </Button.Wrapper>
+        <StyledButton
+          onClick={() => {
+            track('Comparateur carbone', 'Comparer', props.equivalent.slug)
+            props.setCurEquivalent(props.equivalent)
+          }}
+          size='sm'
+          color='secondary'>
+          <svg width='292' height='388' viewBox='0 0 292 388' fill='currentcolor' xmlns='http://www.w3.org/2000/svg'>
+            <path d='M168.627 9.37298C162.378 3.12397 154.19 -4.25109e-05 146 -4.32269e-05C137.812 -4.39427e-05 129.62 3.12497 123.373 9.37297L9.99496 122.75C-2.50204 135.247 -2.50205 155.508 9.99495 168.005C22.492 180.502 42.753 180.502 55.25 168.005L114 109.255L114 356.001C114 373.674 128.327 388.001 146 388.001C163.673 388.001 178 373.674 178 356.001L178 109.255L236.75 168.005C249.247 180.502 269.508 180.502 282.005 168.005C294.502 155.508 294.502 135.247 282.005 122.75L168.627 9.37298Z' />
+          </svg>
+          Comparer
+        </StyledButton>
       )}
     </Wrapper>
   )

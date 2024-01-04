@@ -33,8 +33,12 @@ export function TransportProvider(props) {
   const [footprintModal, setFootprintModal] = useState(false)
 
   useEffect(() => {
-    if (router.query.start) {
-      searchAddress(router.query.start, 1).then((result) => {
+    const start =
+      router.query.start ||
+      (props.type == 'itineraire' && router.query.itineraireStart) ||
+      (props.type == 'teletravail' && router.query.itineraireStart)
+    if (start) {
+      searchAddress(start, 1).then((result) => {
         if (result.length > 0) {
           const address = result[0]
           setStart({
@@ -46,8 +50,14 @@ export function TransportProvider(props) {
         }
       })
     }
-    if (router.query.end) {
-      searchAddress(router.query.end, 1).then((result) => {
+
+    const end =
+      router.query.end ||
+      (props.type == 'itineraire' && router.query.itineraireEnd) ||
+      (props.type == 'teletravail' && router.query.itineraireEnd)
+
+    if (end) {
+      searchAddress(end, 1).then((result) => {
         if (result.length > 0) {
           const address = result[0]
           setEnd({
@@ -59,7 +69,11 @@ export function TransportProvider(props) {
         }
       })
     }
-  }, [router])
+
+    if (router.query.km) {
+      setKm(router.query.km)
+    }
+  }, [router, props.type])
 
   return (
     <TransportContext.Provider

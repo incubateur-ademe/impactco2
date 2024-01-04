@@ -94,7 +94,6 @@
     "@storybook/addon-essentials": "^7.6.5",
     "@storybook/addon-interactions": "^7.6.5",
     "@storybook/addon-links": "^7.6.5",
-    "@storybook/addon-onboarding": "^1.0.10",
     "@storybook/addon-themes": "^7.6.5",
     "@storybook/blocks": "^7.6.5",
     "@storybook/nextjs": "^7.6.5",

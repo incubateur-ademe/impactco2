@@ -24,6 +24,7 @@ describe('/api/notion', () => {
     // Then
     expect(res._getStatusCode()).toBe(405)
   })
+
   test('retourne une 400 si les entrées sont non valides', async () => {
     // Given
     const { req, res } = createMocks({
@@ -41,6 +42,7 @@ describe('/api/notion', () => {
     // Then
     expect(res._getStatusCode()).toBe(400)
   })
+
   test('retourne une 201 si les entrées sont valides', async () => {
     // Given
     const { req, res } = createMocks({
@@ -49,6 +51,8 @@ describe('/api/notion', () => {
       body: {
         type: 'contact',
         email: 'valid@email.com',
+        structure: 'structure',
+        from: 'from',
       },
     })
 
@@ -58,6 +62,7 @@ describe('/api/notion', () => {
     // Then
     expect(res._getStatusCode()).toBe(201)
   })
+
   test("Demande à l'API d'être tracée si les entrées sont valides", async () => {
     // Given
     const { req, res } = createMocks({
@@ -66,6 +71,8 @@ describe('/api/notion', () => {
       body: {
         type: 'contact',
         email: 'valid@email.com',
+        structure: 'structure',
+        from: 'from',
       },
     })
 
@@ -75,6 +82,7 @@ describe('/api/notion', () => {
     // Then
     expect(trackAPIRequest).toHaveBeenCalled()
   })
+
   test("Ne Demande pas à l'API d'être tracée si les entrées sont invalides", async () => {
     // Given
     const { req, res } = createMocks({
@@ -92,6 +100,7 @@ describe('/api/notion', () => {
     // Then
     expect(trackAPIRequest).not.toHaveBeenCalled()
   })
+
   test("N'appelle pas l'API notion si les entrées sont invalides", async () => {
     // Given
     const { req, res } = createMocks({
@@ -109,6 +118,7 @@ describe('/api/notion', () => {
     // Then
     expect(axios).not.toHaveBeenCalled()
   })
+
   test("Appelle l'API notion si les entrées sont valides", async () => {
     // Given
     const { req, res } = createMocks({
@@ -117,6 +127,8 @@ describe('/api/notion', () => {
       body: {
         type: 'contact',
         email: 'valid@email.com',
+        structure: 'structure',
+        from: 'from',
       },
     })
 

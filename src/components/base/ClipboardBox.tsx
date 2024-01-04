@@ -14,7 +14,7 @@ const ClipboardBox = ({ children, colored }: { children: string; colored?: boole
         navigator.clipboard.writeText(children)
         track('OsezChanger', 'Copy', children)
       }}>
-      <Content>{children}</Content>
+      <Content data-testid='clipboard-box'>{children}</Content>
       <Copy className='clipboard-right-item' $copied={copied}>
         {copied ? 'Copié' : 'Copier'}
         <Icon iconId={copied ? 'check' : 'copy'} />

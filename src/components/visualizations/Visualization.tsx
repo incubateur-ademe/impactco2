@@ -12,7 +12,7 @@ import {
   Label,
   LinkWrapper,
   Small,
-  StyledMagicLink,
+  StyledLink,
   Title,
 } from './Visualization.styles'
 
@@ -55,9 +55,9 @@ const CenterLink = ({ category }: { category?: Category }) => {
   const config = categoryLinks[category.slug]
   return (
     <LinkWrapper>
-      <StyledMagicLink to={config.to} className='noscreenshot'>
+      <StyledLink href={config.to} className='noscreenshot'>
         {config.label}
-      </StyledMagicLink>
+      </StyledLink>
     </LinkWrapper>
   )
 }

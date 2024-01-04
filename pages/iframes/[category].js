@@ -5,7 +5,7 @@ import Category from 'components/misc/Category'
 
 export default function CategoryIframe(props) {
   return (
-    <Iframe>
+    <Iframe noLogo>
       <Category category={props.category} iframe />
     </Iframe>
   )

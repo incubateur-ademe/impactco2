@@ -6,15 +6,27 @@ import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
 import ClipboardBox from 'components/base/ClipboardBox'
 import { Icon } from 'components/osezchanger/icons'
+import { CustomParamType, CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { Buttons, Meta } from './Share.styles'
+import { buildCustomParamsUrl } from './customParamsUrl'
 
-const Share = ({ category, params }: { category: Category; params?: Record<string, string> }) => {
-  const [customValues, setCustomValues] = useState<Record<string, { value: string; visible: boolean }> | null>(null)
+const Share = ({
+  category,
+  params,
+  path,
+  tracking,
+}: {
+  category?: Category
+  params?: Record<string, CustomParamValue>
+  path?: string
+  tracking?: string
+}) => {
+  const [customValues, setCustomValues] = useState<Record<string, CustomParamType> | null>(null)
 
   useEffect(() => {
     if (params) {
-      const values: Record<string, { value: string; visible: boolean }> = {}
+      const values: Record<string, CustomParamType> = {}
       Object.entries(params).forEach(([key, value]) => {
         values[key] = {
           value,
@@ -25,21 +37,14 @@ const Share = ({ category, params }: { category: Category; params?: Record<strin
     }
   }, [params, setCustomValues])
 
-  const url = buildCurrentUrlFor(
-    `${category.slug}${
-      customValues
-        ? `?${Object.entries(customValues)
-            .filter(([, { visible }]) => visible)
-            .map(([key, { value }]) => `${key}=${value}`)
-            .join('&')}`
-        : ''
-    }`
-  )
+  const url = buildCurrentUrlFor(`${path || category?.slug}?${buildCustomParamsUrl(customValues)}`)
+  const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
+  const trackingSlug = trackingValue.replaceAll(' ', '_').toLowerCase
   return (
     <>
       {customValues && (
         <CustomParams
-          tracking={category.name}
+          tracking={trackingValue}
           trackingType='Partager'
           customValues={customValues}
           setCustomValues={setCustomValues}
@@ -50,35 +55,37 @@ const Share = ({ category, params }: { category: Category; params?: Record<strin
         <FacebookShareButton
           url={url}
           title='Partager sur facebook'
-          onClick={() => track(category.name, 'Share Facebook', `${category.slug}_facebook`)}>
+          onClick={() => track(trackingValue, 'Share Facebook', `${trackingSlug}_facebook`)}>
           <Icon iconId='facebook' />
         </FacebookShareButton>
         <TwitterShareButton
           url={url}
           title='Partager sur twitter'
-          onClick={() => track(category.name, 'Share Twitter', `${category.slug}_twitter`)}>
+          onClick={() => track(trackingValue, 'Share Twitter', `${trackingSlug}_twitter`)}>
           <Icon iconId='twitter' />
         </TwitterShareButton>
         <WhatsappShareButton
           url={url}
           title='Partager sur whatsapp'
-          onClick={() => track(category.name, 'Share Whatsapp', `${category.slug}_whatsapp`)}>
+          onClick={() => track(trackingValue, 'Share Whatsapp', `${trackingSlug}_whatsapp`)}>
           <Icon iconId='whatsapp' />
         </WhatsappShareButton>
         <LinkedinShareButton
           url={url}
           title='Partager sur linkedin'
-          onClick={() => track(category.name, 'Share Linkedin', `${category.slug}_linkedin`)}>
+          onClick={() => track(trackingValue, 'Share Linkedin', `${trackingSlug}_linkedin`)}>
           <Icon iconId='linkedin' />
         </LinkedinShareButton>
       </Buttons>
-      <Meta>
-        <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />
-        <p>
-          <b>{category.meta.title}</b>
-        </p>
-        <p className='text-sm'>{category.meta.description}</p>
-      </Meta>
+      {category && (
+        <Meta>
+          <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />
+          <p>
+            <b>{category.meta.title}</b>
+          </p>
+          <p className='text-sm'>{category.meta.description}</p>
+        </Meta>
+      )}
     </>
   )
 }

@@ -22,6 +22,10 @@ const Wrapper = styled.button`
     outline: 3px solid var(--primary-40);
     outline-offset: 2px;
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 `
 export default function PlusOrMinusButton({ plus, onClick }: { plus?: boolean; onClick: () => void }) {
   return plus ? (

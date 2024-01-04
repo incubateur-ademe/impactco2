@@ -17,7 +17,7 @@ const Resource = ({
   href: string
   tracking: string
   withLink?: string
-  color?: 'blue'
+  color?: 'secondary'
 }) => {
   return (
     <LinkContainer

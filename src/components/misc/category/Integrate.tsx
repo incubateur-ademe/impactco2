@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { Category } from 'types/category'
 import ClipboardBox from 'components/base/ClipboardBox'
+import { CustomParamType, CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
+import { buildCustomParamsUrl } from './customParamsUrl'
 
-const Integrate = ({ category, params }: { category: Category; params?: Record<string, string> }) => {
-  const [customValues, setCustomValues] = useState<Record<string, { value: string; visible: boolean }> | null>(null)
+const Integrate = ({
+  slug,
+  params,
+  tracking,
+}: {
+  slug: string
+  params?: Record<string, CustomParamValue>
+  tracking: string
+}) => {
+  const [customValues, setCustomValues] = useState<Record<string, CustomParamType>>({})
 
   useEffect(() => {
     if (params) {
-      const values: Record<string, { value: string; visible: boolean }> = {}
+      const values: Record<string, CustomParamType> = {}
       Object.entries(params).forEach(([key, value]) => {
         values[key] = {
           value,
@@ -19,27 +28,19 @@ const Integrate = ({ category, params }: { category: Category; params?: Record<s
     }
   }, [params, setCustomValues])
 
-  const url = `<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${
-    category.slug
-  }" data-search="?theme=default${
-    customValues
-      ? `?${Object.entries(customValues)
-          .filter(([, { visible }]) => visible)
-          .map(([key, { value }]) => `${key}=${value}`)
-          .join('&')}`
-      : ''
-  }"></script>`
+  const url = `<script name="impact-co2" src="${
+    process.env.NEXT_PUBLIC_URL
+  }/iframe.js" data-type="${slug}" data-search="?theme=default&${buildCustomParamsUrl(customValues)}"></script>`
 
   return (
     <>
-      {customValues && (
-        <CustomParams
-          tracking={category.name}
-          trackingType='Intégrer'
-          customValues={customValues}
-          setCustomValues={setCustomValues}
-        />
-      )}
+      <CustomParams
+        integration
+        tracking={tracking}
+        trackingType='Intégrer'
+        customValues={customValues}
+        setCustomValues={setCustomValues}
+      />
       <ClipboardBox>{url}</ClipboardBox>
     </>
   )

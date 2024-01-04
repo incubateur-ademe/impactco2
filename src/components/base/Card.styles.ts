@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-export const LeftSide = styled.div<{ $small?: boolean; $color?: 'blue' }>`
+export const LeftSide = styled.div<{ $small?: boolean; $color?: 'secondary' }>`
   align-items: center;
-  background-color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-10);
-  border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-20);
+  background-color: var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-10);
+  border: 1px solid var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-20);
   border-radius: 16px 0 0 16px;
   display: flex;
-  height: ${({ $small }) => ($small ? '3.625rem' : '10.125rem')};
   justify-content: center;
+  min-height: ${({ $small }) => ($small ? '3.625rem' : '10.125rem')};
   transition: all 0.3s ease-in-out;
   width: ${({ $small }) => ($small ? '3.625rem' : '7.25rem')};
 `
@@ -71,7 +71,7 @@ export const Arrow = styled.div`
   transition: transform 0.3s ease-in-out;
 `
 
-export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
+export const Container = styled.div<{ $small?: boolean; $color?: 'secondary' }>`
   width: 100%;
   a,
   button {
@@ -88,8 +88,8 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
     &:hover {
       ${LeftSide} {
         padding: ${({ $small }) => ($small ? '0.25rem' : '1rem')};
-        background-color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-20);
-        border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-30);
+        background-color: var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-20);
+        border: 1px solid var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-30);
       }
 
       ${Content} {
@@ -102,7 +102,7 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
         }
 
         svg {
-          ${({ $small, $color }) => $small && `color: var(--${$color === 'blue' ? 'secondary' : 'primary'}-50);`}
+          ${({ $small, $color }) => $small && `color: var(--${$color === 'secondary' ? 'secondary' : 'primary'}-50);`}
         }
       }
 
@@ -115,19 +115,23 @@ export const Container = styled.div<{ $small?: boolean; $color?: 'blue' }>`
       }
 
       ${LinkText} {
-        color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-60);
+        color: var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-60);
       }
     }
 
     &:focus {
-      outline: 3px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-40);
+      outline: 3px solid var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-40);
       outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
     }
 
     &:active {
       ${LeftSide} {
-        background-color: var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-20);
-        border: 1px solid var(--${({ $color }) => ($color === 'blue' ? 'secondary' : 'primary')}-30);
+        background-color: var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-20);
+        border: 1px solid var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'primary')}-30);
       }
 
       ${Content} {

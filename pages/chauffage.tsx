@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Category as CategoryType } from 'types/category'
 import categories from 'data/categories.json'
 import Chauffage from 'components/chauffage/Chauffage'
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 
@@ -20,6 +21,7 @@ export default function ChauffagePage({ category }: { category: CategoryType }) 
         <Chauffage category={category} />
       </Container>
       <Learning category={category} />
+      <SuggestionBanner from='/chauffage' fromLabel='Chauffage' simulatorName='simulateur chauffage' />
     </Web>
   )
 }

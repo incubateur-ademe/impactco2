@@ -30,8 +30,8 @@ export default function Hero() {
                 <MiniCardEmoji>🤓</MiniCardEmoji>
                 <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
               </MiniCardText>
-              <p>Laissez-nous votre email, et nous vous recontacterons très prochainement pour échanger ensemble.</p>
-              <Meeting />
+              <p>Nous vous proposons un accompagnement adapté à vos besoins.</p>
+              <Meeting fromLabel='Accueil' />
             </MiniCard>
           </div>
           <div />
@@ -130,6 +130,13 @@ const Subtitle = styled.p`
   }
 `
 
+const HideAboveMedium = styled.span`
+  display: none;
+  ${(props) => props.theme.mq.medium} {
+    display: inline-block;
+  }
+`
+
 const MiniCard = styled.div`
   border-color: #ccdcfd;
   border-radius: 16px;
@@ -147,11 +154,4 @@ const MiniCardEmoji = styled.span`
 const MiniCardText = styled.p`
   font-size: 1rem;
   margin-bottom: 0.5rem;
-`
-
-const HideAboveMedium = styled.span`
-  display: none;
-  ${(props) => props.theme.mq.medium} {
-    display: inline-block;
-  }
 `

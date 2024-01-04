@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useUrl } from 'hooks/useUrl'
-import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   font-size: 0.75rem;
@@ -19,9 +19,9 @@ export default function BreadCrumb3() {
       <SectionWideContent>
         <nav aria-label="fil d'ariane">
           <Wrapper>
-            <MagicLink to='/'>Accueil</MagicLink>
+            <Link href='/'>Accueil</Link>
             {' > '}
-            <MagicLink to='/documentation'>Documentation</MagicLink>
+            <Link href='/documentation'>Documentation</Link>
             {pathname?.includes('livraison-colis-par-avion') ? (
               <>
                 {' > '} <>Livraison d'un colis par avion</>

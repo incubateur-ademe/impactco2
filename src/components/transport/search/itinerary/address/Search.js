@@ -16,13 +16,13 @@ const Wrapper = styled.form`
   top: 0;
   transform: translateX(-50%);
   width: 100%;
-  z-index: ${(props) => (props.focus ? 100 : 1)};
+  z-index: ${(props) => (props.$focus ? 100 : 1)};
 `
 
 export default function Search(props) {
   const [search, setSearch] = useState('')
   useEffect(() => {
-    setSearch(props.address)
+    setSearch(props.address || '')
   }, [props.address])
   const debouncedSearch = useDebounce(search)
 
@@ -49,8 +49,7 @@ export default function Search(props) {
 
   return (
     <Wrapper
-      focus={focus}
-      addressSet={props.address}
+      $focus={focus}
       onSubmit={(e) => {
         e.preventDefault()
         if (current > -1) {

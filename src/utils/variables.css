@@ -7,6 +7,7 @@ body {
   --primary-60: #13706d;
   --primary-70: #0c5956;
   --primary-80: #003332;
+
   --secondary-10: #ebf2ff;
   --secondary-20: #ccdcfd;
   --secondary-30: #aec8fc;
@@ -15,6 +16,7 @@ body {
   --secondary-60: #002f8e;
   --secondary-70: #00205f;
   --secondary-80: #013;
+
   --neutral-10: #f9f7f8;
   --neutral-20: #eae5e8;
   --neutral-30: #d5cdd2;
@@ -23,5 +25,13 @@ body {
   --neutral-60: #5a5057;
   --neutral-70: #3a3236;
   --neutral-80: #110d10;
+
+  --success-10: #e4f4e0;
+  --success-50: #268232;
   --success-60: #13701f;
+
+  --error-10: #ffeeeb;
+  --error-60: #8a1200;
+
+  --critical-50: #b31800;
 }

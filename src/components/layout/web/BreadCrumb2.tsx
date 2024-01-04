@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Category } from 'types/category'
 import { Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
-import MagicLink from 'components/base/MagicLink'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import { Icon } from 'components/osezchanger/icons'
 
 const Wrapper = styled.div`
@@ -32,6 +32,11 @@ export type BreadcrumbProps =
       type: 'accueil'
       page: string
     }
+  | {
+      type: 'other'
+      previous: { to: string; label: string }
+      current: string
+    }
 
 export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProps }) {
   return breadcrumb ? (
@@ -41,13 +46,13 @@ export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProp
           <Wrapper>
             {breadcrumb && breadcrumb.type === 'equivalent' && (
               <>
-                <MagicLink to='/'>Accueil</MagicLink>
+                <Link href='/'>Accueil</Link>
                 <Icon iconId='dropdown-arrow-right' />
-                <MagicLink to='/thematiques'>Thématiques</MagicLink>
+                <Link href='/thematiques'>Thématiques</Link>
                 <Icon iconId='dropdown-arrow-right' />
                 {breadcrumb.equivalent ? (
                   <>
-                    <MagicLink to={`/${breadcrumb.category.slug}`}>{breadcrumb.category.name}</MagicLink>
+                    <Link href={`/${breadcrumb.category.slug}`}>{breadcrumb.category.name}</Link>
                     <Icon iconId='dropdown-arrow-right' />
                     {formatName(breadcrumb.equivalent.name, 1, true)}
                   </>
@@ -58,8 +63,17 @@ export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProp
             )}
             {breadcrumb && breadcrumb.type === 'accueil' && (
               <>
-                <MagicLink to='/'>Page d’accueil</MagicLink>
+                <Link href='/'>Page d’accueil</Link>
                 <Icon iconId='dropdown-arrow-right' /> {breadcrumb.page}
+              </>
+            )}
+            {breadcrumb && breadcrumb.type === 'other' && (
+              <>
+                <Link href='/'>Page d’accueil</Link>
+                <Icon iconId='dropdown-arrow-right' />
+                <Link href={breadcrumb.previous.to}>{breadcrumb.previous.label}</Link>
+                <Icon iconId='dropdown-arrow-right' />
+                {breadcrumb.current}
               </>
             )}
           </Wrapper>

@@ -1,10 +1,9 @@
-import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 import reusecards from './data/reusecards.json'
 import { track } from 'utils/matomo'
-import Button from 'components/base/Button'
 import { Section, SectionWideContent } from 'components/base/Section'
+import Link from 'components/base/buttons/Link'
 import Meeting from 'components/meeting/Meeting'
 import Header from './heading/Header'
 import ChtingLeft from './img/ChtingLeft'
@@ -61,8 +60,7 @@ export default function ByArticle() {
                     Utilisez le{' '}
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                      target='_blank'
-                      rel='noreferrer noopener'
+                      color='secondary'
                       onClick={() => track('Click', 'Kit de diffusion', 'click_kit_diffusion')}>
                       Kit de diffusion
                     </Link>{' '}
@@ -70,7 +68,10 @@ export default function ByArticle() {
                   </MiddleLi>
                   <MiddleLi>
                     Personnalisez le simulateur de votre choix grâce à notre{' '}
-                    <Link href='/integration' onClick={() => track('Click', 'Configurateur', 'click_configurateur')}>
+                    <Link
+                      color='secondary'
+                      href='/integration'
+                      onClick={() => track('Click', 'Configurateur', 'click_configurateur')}>
                       configurateur
                     </Link>
                     .
@@ -79,8 +80,7 @@ export default function ByArticle() {
                     Inspirez-vous d'
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
-                      target='_blank'
-                      rel='noreferrer noopener'
+                      color='secondary'
                       onClick={() => track('Click', 'Exemples concrets', 'click_exemples_concrets')}>
                       exemples concrets
                     </Link>{' '}
@@ -89,13 +89,12 @@ export default function ByArticle() {
                 </MiddleUl>
               </div>
               <MiddleCta>
-                <Button
-                  to='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                  target='_blank'
-                  rel='noreferrer noopener'
+                <Link
+                  asButton
+                  href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
                   onClick={() => track('Click', 'Consulter le kit de diffusion', 'click_consulter_kit_diffusion')}>
                   Consulter le kit de diffusion
-                </Button>
+                </Link>
               </MiddleCta>
             </Box>
             <Box>
@@ -106,8 +105,7 @@ export default function ByArticle() {
                     Consultez notre{' '}
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
-                      target='_blank'
-                      rel='noreferrer noopener'
+                      color='secondary'
                       data-testid='byArticleFaq'
                       onClick={() => track('Click', 'FAQ', 'click_faq')}>
                       Foire aux Questions
@@ -122,7 +120,9 @@ export default function ByArticle() {
                   </MiddleLi>
                 </MiddleUl>
               </div>
-              <Meeting />
+              <MiddleCta>
+                <Meeting fromLabel='Accueil bis' />
+              </MiddleCta>
             </Box>
           </MiddleGrid>
         </div>
@@ -197,11 +197,6 @@ const MiddleLi = styled.li`
   line-height: 1.5rem;
   list-style-type: none;
   padding: 0px 0 3px 24px;
-  > a {
-    color: #235dd2;
-    font-weight: 700;
-    text-underline-offset: 6px;
-  }
 `
 
 const MiddleCta = styled.div`

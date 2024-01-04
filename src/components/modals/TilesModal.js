@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import DataContext from 'components/providers/DataProvider'
 import ModalContext from 'components/providers/ModalProvider'
-import Button from 'components/base/Button'
 import Modal from 'components/base/Modal'
 import TextInput from 'components/base/TextInput'
+import Button from 'components/base/buttons/Button'
 import Equivalent from './tilesModal/Equivalent'
 
 const StyledModal = styled(Modal)`
@@ -20,16 +20,7 @@ const SearchInput = styled(TextInput)`
 const Equivalents = styled.div`
   margin-bottom: 3rem;
 `
-const StyledButtonWrapper = styled(Button.Wrapper)`
-  background-color: ${(props) => props.theme.colors.background};
-  border-radius: 0 0 1rem 1rem;
-  border-top: 0.0625rem solid ${(props) => props.theme.colors.textLight};
-  bottom: 0;
-  left: 0.5rem;
-  padding: 0.5rem;
-  position: fixed;
-  right: 0.5rem;
-`
+
 export default function TilesModal() {
   const { tiles: open, setTiles: setOpen } = useContext(ModalContext)
 
@@ -103,15 +94,13 @@ export default function TilesModal() {
               ))}
             </Equivalents>
           )}
-          <StyledButtonWrapper>
-            <Button
-              onClick={() => {
-                tiles.forEach((tile) => track('Comparateur', 'Nouvel équivalent', tile.slug))
-                setOpen(false)
-              }}>
-              Valider et fermer
-            </Button>
-          </StyledButtonWrapper>
+          <Button
+            onClick={() => {
+              tiles.forEach((tile) => track('Comparateur carbone', 'Nouvel équivalent', tile.slug))
+              setOpen(false)
+            }}>
+            Valider et fermer
+          </Button>
         </StyledModal>
       )}
     </>

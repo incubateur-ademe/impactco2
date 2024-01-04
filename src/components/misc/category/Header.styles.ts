@@ -5,14 +5,10 @@ export const Container = styled.div`
   text-align: center;
 `
 
-export const Description = styled.div`
-  margin: 0 auto 1.5rem auto;
-  max-width: 40rem;
-`
-
 export const Content = styled.div`
   margin-bottom: 1.5rem;
   margin-top: 0.75rem;
+  text-align: left;
 `
 
 export const Separator = styled.div`
