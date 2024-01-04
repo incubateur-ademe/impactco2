@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 
 const Wrapper = styled.button`
   align-items: center;
@@ -40,7 +40,7 @@ const Text = styled.p`
   text-align: center;
 `
 export default function AddButton() {
-  const { setTiles } = useContext(ModalContext)
+  const { setTiles } = useModalContext()
 
   return (
     <Wrapper

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import Emoji from 'components/base/Emoji'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.button`
   background-color: ${(props) => (props.active ? props.theme.colors.main : 'transparent')};
@@ -24,7 +24,7 @@ const Second = styled.span`
   transform: translate(30%, 50%);
 `
 export default function Transportation(props) {
-  const { teletravailTransportation, setTeletravailTransportation } = useContext(TransportContext)
+  const { teletravailTransportation, setTeletravailTransportation } = useTransportContext()
 
   return (
     <Wrapper

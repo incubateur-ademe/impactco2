@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal2 from 'components/base/Modal2'
 import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
@@ -21,7 +21,7 @@ export default function DetailLivraisonModal2() {
   const getTitle = () => {
     return <Title>Les hypothèses retenues</Title>
   }
-  const { hypothesisLivraison: open, setHypothesisLivraison: setOpen } = useContext(ModalContext)
+  const { hypothesisLivraison: open, setHypothesisLivraison: setOpen } = useModalContext()
   return (
     <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width={'80em'}>
       <FormattedText>

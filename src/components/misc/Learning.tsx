@@ -1,6 +1,6 @@
-import React, { ReactNode, useContext, useMemo } from 'react'
+import React, { ReactNode, useMemo } from 'react'
 import { Category } from 'types/category'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Card from 'components/base/Card'
 import { SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
@@ -15,9 +15,7 @@ export default function Learning({
   from?: string
   fromLabel?: string
 }) {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore: TODO
-  const { setCo2e } = useContext<{ setCo2e: (open: boolean) => void }>(ModalContext)
+  const { setCo2e } = useModalContext()
 
   const learnings = useMemo<Record<string, ReactNode>>(
     () => ({

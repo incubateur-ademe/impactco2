@@ -1,14 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { RulePage } from 'publicodes-react'
-import { useContext } from 'react'
 import styled from 'styled-components'
 import { Section, SectionWideContent } from 'components/base/Section'
-import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
+import useRulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import Markdown from './Markdown'
 
 export default function DocumentationLivraison(props) {
-  const { engine } = useContext(RulesContextLivraison)
+  const { engine } = useRulesContextLivraison()
 
   return (
     <>

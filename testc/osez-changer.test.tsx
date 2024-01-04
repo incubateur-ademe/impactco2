@@ -1,12 +1,17 @@
 import '@testing-library/jest-dom'
 import { act, fireEvent, screen } from '@testing-library/react'
 import { renderWithStyle } from 'test-utils/render-with-style'
+import { DataProvider } from 'components/providers/DataProvider'
 import Defi from 'components/osezchanger/Defi'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 
 describe('Osez Changer', () => {
   it('Should display correct tag when items are filled', () => {
-    renderWithStyle(<OsezChanger />)
+    renderWithStyle(
+      <DataProvider>
+        <OsezChanger />
+      </DataProvider>
+    )
 
     expect(screen.queryByTestId('defi')).toBeNull()
     act(() => {
@@ -51,7 +56,11 @@ describe('Osez Changer', () => {
   })
 
   it('Should render hypothesis modal', () => {
-    renderWithStyle(<OsezChanger />)
+    renderWithStyle(
+      <DataProvider>
+        <OsezChanger />
+      </DataProvider>
+    )
     act(() => {
       screen.getByTestId('osez-changer-start-button').click()
     })
@@ -87,7 +96,11 @@ describe('Osez Changer', () => {
   })
 
   it('Should render integration modal', () => {
-    renderWithStyle(<OsezChanger />)
+    renderWithStyle(
+      <DataProvider>
+        <OsezChanger />
+      </DataProvider>
+    )
     act(() => {
       screen.getByTestId('osez-changer-start-button').click()
     })
@@ -106,7 +119,6 @@ describe('Osez Changer', () => {
 
   it('Should calculate co2e value based on input', () => {
     renderWithStyle(<Defi setOverScreen={() => console.log} />)
-
     act(() => {
       fireEvent.change(screen.getByTestId('question-neuf-input'), { target: { value: '3' } })
     })

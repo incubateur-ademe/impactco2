@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
 import { themes } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
-import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
+import useRulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
 import OptionalRelay from './OptionalRelay'
 import OptionalTraj from './OptionalTraj'
@@ -33,9 +33,9 @@ const Svg = styled.svg`
 `
 
 export default function CalculateurLivraison(props) {
-  const { engine } = useContext(RulesContextLivraison)
-  const { setIfl } = useContext(ModalContext)
-  const { setSocial } = useContext(ModalContext)
+  const { engine } = useRulesContextLivraison()
+  const { setIfl } = useModalContext()
+  const { setSocial } = useModalContext()
 
   const [cO2eq, setCO2eq] = useState(0)
 

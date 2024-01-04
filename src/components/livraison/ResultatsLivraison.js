@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import useLocalStorage from 'use-local-storage'
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
+import useDataContext from 'components/providers/DataProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import { default_eqs } from 'components/livraison/data'
 import LivraisonEq from 'components/misc/tiles/LivraisonEq'
@@ -10,9 +10,9 @@ import ResultatLivraison from './ResultatLivraison'
 
 export default function ResultatsLivraison(props) {
   const [eqvChosen] = useLocalStorage('ico2_eqv_chosen', default_eqs)
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
-  const { setEqv } = useContext(ModalContext)
+  const { setEqv } = useModalContext()
 
   const changeClicked = () => {
     setEqv('nonecheck')

@@ -1,4 +1,4 @@
-import { useContext, useMemo } from 'react'
+import { useMemo } from 'react'
 import { DeplacementType } from 'types/equivalent'
 import equivalents from 'data/categories/deplacement.json'
 import { computeECV } from 'utils/computeECV'
@@ -8,13 +8,11 @@ import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
 import { filterByDistance } from 'utils/transport'
 import Carpool from 'components/transport/Carpool'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 
 // C'est un peu austère, déso
 export default function useTransportations(tracking: string, itineraries?: Record<DeplacementType, number>) {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore: TODO
-  const { km, displayAll, carpool } = useContext<{ km: number; displayAll: boolean; carpool: number }>(TransportContext)
+  const { km, displayAll, carpool } = useTransportContext()
 
   const transportations = useMemo(
     () =>

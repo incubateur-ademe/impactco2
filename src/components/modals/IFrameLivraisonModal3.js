@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal3 from 'components/base/Modal3'
 import IflConfigurator from 'components/modals/iflModal/IflConfigurator'
 
@@ -13,7 +13,7 @@ const getTitle = () => {
 }
 
 export default function IFrameLivraisonModal3() {
-  const { ifl: open, setIfl: setOpen } = useContext(ModalContext)
+  const { ifl: open, setIfl: setOpen } = useModalContext()
 
   const dismiss = () => {
     setOpen(false)

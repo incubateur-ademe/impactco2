@@ -1,8 +1,7 @@
-import { useContext } from 'react'
 import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
 import Emoji from 'components/base/Emoji'
-import RulesContextNumerique from '../RulesProviderNumerique'
+import useRulesContextNumerique from '../RulesProviderNumerique'
 
 const Wrapper = styled.div`
   display: flex;
@@ -68,7 +67,7 @@ const StyledEmoji = styled(Emoji)`
 `
 
 export default function Bar(props) {
-  const { engine } = useContext(RulesContextNumerique)
+  const { engine } = useRulesContextNumerique()
 
   return (
     <Wrapper>

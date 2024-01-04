@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import useLocalStorage from 'use-local-storage'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import EquivalentSquareChecked from './tilesModal/EquivalentSquareChecked'
 
 export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage('ico2_eqv_array')
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
   const [, setEqvError] = useLocalStorage('eqvError')
 
   useEffect(() => {

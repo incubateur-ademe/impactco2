@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 
 const hover = keyframes`
@@ -44,7 +44,7 @@ const Svg = styled.svg`
 `
 
 export default function ShareButton() {
-  const { setShare } = useContext(ModalContext)
+  const { setShare } = useModalContext()
   return (
     <StyledButton color='secondary' onClick={() => setShare(true)} aria-label={'Partager'}>
       <Svg width='512' height='512' viewBox='0 0 512 512' fill='currentcolor' xmlns='http://www.w3.org/2000/svg'>

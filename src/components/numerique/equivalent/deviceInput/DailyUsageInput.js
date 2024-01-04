@@ -1,10 +1,9 @@
-import { useContext } from 'react'
 import Slider from 'components/base/Slider'
-import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
+import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
 export default function DailyUsageInput(props) {
-  const { engine, setSituation } = useContext(RulesContextNumerique)
+  const { engine, setSituation } = useRulesContextNumerique()
 
   return (
     <SliderWrapper>

@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import categories from 'data/categories.json'
 import formatName from 'utils/formatName'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 export default function PlanDuSite() {
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
   const buildLevel3For = (catSlug, subcategories) => {
     return subcategories.map((subcategory) => (

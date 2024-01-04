@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { buildCurrentUrlFor } from 'utils/urls'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal3 from 'components/base/Modal3'
 import ReuseBulb from 'components/livraison/ReuseBulb'
 import CopyUrl from './shareModal/CopyUrl'
@@ -21,7 +21,7 @@ const getTitle = () => {
 }
 
 export default function ReduireModal3() {
-  const { reduire: open, setReduire: setOpen } = useContext(ModalContext)
+  const { reduire: open, setReduire: setOpen } = useModalContext()
   const [copied, setCopied] = useState(false)
 
   const dismiss = () => {

@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { buildCurrentUrlFor } from 'utils/urls'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal3 from 'components/base/Modal3'
 import ReuseBulb from 'components/livraison/ReuseBulb'
 import CopyUrl from './shareModal/CopyUrl'
@@ -21,7 +21,7 @@ const getTitle = () => {
 }
 
 export default function SocialModal3() {
-  const { social: open, setSocial: setOpen } = useContext(ModalContext)
+  const { social: open, setSocial: setOpen } = useModalContext()
   const [copied, setCopied] = useState(false)
 
   const dismiss = () => {

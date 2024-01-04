@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import useScreenshot from 'hooks/useScreenshot'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
 import AdviceLivraisonDetail from './AdviceLivraisonDetail'
 
 export default function AdviceLivraison() {
-  const { setReduire } = useContext(ModalContext)
+  const { setReduire } = useModalContext()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_livraison_advice', 'Livraison', 'jpg')
 
   const openModal = () => {

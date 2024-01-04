@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal2 from 'components/base/Modal2'
 import Link from 'components/base/buttons/Link'
 
 export default function WarningNegaoctet() {
-  const { warningNegaoctet: open, setWarningNegaoctet: setOpen } = useContext(ModalContext)
+  const { warningNegaoctet: open, setWarningNegaoctet: setOpen } = useModalContext()
 
   const getTitle = () => {
     return <Title>Source des données</Title>

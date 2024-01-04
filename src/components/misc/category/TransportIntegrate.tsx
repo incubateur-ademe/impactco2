@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 import { CustomParamType } from './CustomParam'
 import CustomParams from './CustomParams'
 import { Separator } from './TransportIntegrate.styles'
@@ -18,37 +18,21 @@ const TransportIntegrate = ({
   tracking: string
   type: 'distance' | 'itineraire' | 'teletravail'
 }) => {
-  const { km, start, end } = useContext<{
-    km: number
-    start: {
-      latitude: number
-      longitude: number
-      city: string
-      address: string
-    }
-    end: {
-      latitude: number
-      longitude: number
-      city: string
-      address: string
-    }
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: TODO
-  }>(TransportContext)
+  const { km, start, end } = useTransportContext()
 
   const [customValues, setCustomValues] = useState<Record<string, CustomParamType>>({
     km: { value: km.toString(), visible: true },
     itineraire: {
       value: {
-        start: (type === 'itineraire' && start.address) || '',
-        end: (type === 'itineraire' && end.address) || '',
+        start: (type === 'itineraire' && start && start.address) || '',
+        end: (type === 'itineraire' && end && end.address) || '',
       },
       visible: true,
     },
     teletravail: {
       value: {
-        start: (type === 'teletravail' && start.address) || '',
-        end: (type === 'teletravail' && end.address) || '',
+        start: (type === 'teletravail' && start && start.address) || '',
+        end: (type === 'teletravail' && end && end.address) || '',
       },
       visible: true,
     },
@@ -64,7 +48,7 @@ const TransportIntegrate = ({
       setCustomValues({
         ...customValues,
         itineraire: {
-          value: { start: start.address, end: end.address },
+          value: { start: start?.address || '', end: end?.address || '' },
           visible: customValues.itineraire.visible,
         },
       })
@@ -72,7 +56,7 @@ const TransportIntegrate = ({
       setCustomValues({
         ...customValues,
         teletravail: {
-          value: { start: start.address, end: end.address },
+          value: { start: start?.address || '', end: end?.address || '' },
           visible: customValues.itineraire.visible,
         },
       })

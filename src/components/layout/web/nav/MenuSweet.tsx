@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Tag from 'components/misc/tag/Tag'
 import DropdownSweet from './DropdownSweet'
@@ -18,7 +18,7 @@ const StyledEmoji = styled(Emoji)`
   margin: 0.25rem 0.25rem 0 0;
 `
 export default function MenuSweet() {
-  const { categories } = useContext(DataContext)
+  const { categories } = useDataContext()
 
   const router = useRouter()
   const slugs = router.asPath.split('/').filter((slug) => slug)

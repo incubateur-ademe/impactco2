@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import useLocalStorage from 'use-local-storage'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal4 from 'components/base/Modal4'
 import Button from 'components/base/buttons/Button'
 import { default_eqs } from 'components/livraison/data.js'
@@ -17,7 +17,7 @@ const getTitle = () => {
 }
 
 export default function EqModal4() {
-  const { eqv: open, setEqv: setOpen } = useContext(ModalContext)
+  const { eqv: open, setEqv: setOpen } = useModalContext()
   const [eqvArray, setEqvArray] = useLocalStorage('ico2_eqv_array', default_eqs)
   const [eqvChosen, setEqvChosen] = useLocalStorage('ico2_eqv_chosen', default_eqs)
 

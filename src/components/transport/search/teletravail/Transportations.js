@@ -1,7 +1,7 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
-import DataContext from 'components/providers/DataProvider'
-import TransportContext from 'components/transport/TransportProvider'
+import useDataContext from 'components/providers/DataProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 import Transportation from './transportations/Transportation'
 
 const Wrapper = styled.div`
@@ -18,7 +18,7 @@ const Result = styled.div`
   text-align: center;
 `
 export default function Transportations() {
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
   const transportations = useMemo(
     () =>
       equivalents
@@ -27,9 +27,9 @@ export default function Transportations() {
         .filter((equivalent) => equivalent.slug !== 'velo' && !equivalent.slug.startsWith('avion')),
     [equivalents]
   )
-  const { start, end, teletravailTransportation } = useContext(TransportContext)
+  const { start, end, teletravailTransportation } = useTransportContext()
 
-  return start.address && end.address ? (
+  return start && start.address && end && end.address ? (
     <Wrapper>
       <List>
         {transportations

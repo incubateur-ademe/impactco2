@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import minicards from './data/minicards.json'
 import categories from 'data/categories.json'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import Header from './heading/Header'
@@ -10,7 +10,7 @@ import ArrowLeft from './img/ArrowLeft'
 import ArrowRight from './img/ArrowRight'
 
 export default function ByOrder() {
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
   const buildMinicardFor = (slug) => {
     let eq = equivalents.find((eq) => eq.slug === slug)

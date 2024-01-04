@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { buildCurrentUrlFor } from 'utils/urls'
 import FancySelect from 'components/base/FancySelect'
 import Modal from 'components/base/Modal'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
-import TransportContext from '../TransportProvider'
+import useTransportContext from '../TransportProvider'
 
 const Title = styled.h2``
 const Text = styled.p``
@@ -23,7 +23,7 @@ export default function TeletravailModal() {
     setExtraKm,
     teletravailModal: open,
     setTeletravailModal: setOpen,
-  } = useContext(TransportContext)
+  } = useTransportContext()
 
   const [pristine, setPristine] = useState(true)
   useEffect(() => {

@@ -1,11 +1,10 @@
 import { render } from '@testing-library/react'
-import { useContext } from 'react'
 import { DataProvider } from 'components/providers/DataProvider'
-import ModalContext, { ModalProvider } from 'components/providers/ModalProvider'
+import useModalContext, { ModalProvider } from 'components/providers/ModalProvider'
 import { StyleProvider } from 'components/providers/StyleProvider'
 
 export function EqModal4Opener() {
-  const { eqv, setEqv } = useContext(ModalContext)
+  const { eqv, setEqv } = useModalContext()
 
   const clicked = () => {
     setEqv(!eqv)

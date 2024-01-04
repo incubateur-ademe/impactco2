@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.div`
   margin-bottom: 2.5rem;
@@ -39,7 +39,7 @@ const Details = styled.button`
   text-decoration: underline;
 `
 export default function PercentFootprint(props) {
-  const { setFootprintModal, yearlyFootprint } = useContext(TransportContext)
+  const { setFootprintModal, yearlyFootprint } = useTransportContext()
 
   const [percent, setPercent] = useState(0)
   useEffect(() => {

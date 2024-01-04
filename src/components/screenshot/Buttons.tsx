@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import useIframe from 'hooks/useIframe'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 
@@ -89,7 +89,7 @@ export default function Buttons({
   urlParams?: string
   tracking: string
 }) {
-  const { setShare } = useContext(ModalContext)
+  const { setShare } = useModalContext()
 
   const iframe = useIframe()
 

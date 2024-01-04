@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import { convertGramsToKilograms } from './utils'
 
 export default function ResultatLivraison(props) {
-  const { setHypothesisLivraison } = useContext(ModalContext)
+  const { setHypothesisLivraison } = useModalContext()
 
   return (
     <Wrapper>

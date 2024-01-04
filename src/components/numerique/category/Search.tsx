@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { track } from 'utils/matomo'
-import RulesContextNumerique from '../RulesProviderNumerique'
+import useRulesContextNumerique, { evaluateNumber } from '../RulesProviderNumerique'
 import {
   Color,
   Desktop,
@@ -15,8 +15,7 @@ import {
 } from './Search.styles'
 
 export default function Search() {
-  // @ts-expect-error: TODO
-  const { engine, setSituation, numberEmails, setNumberEmails } = useContext(RulesContextNumerique)
+  const { engine, setSituation, numberEmails, setNumberEmails } = useRulesContextNumerique()
 
   const [display, setDisplay] = useState('')
 
@@ -84,7 +83,7 @@ export default function Search() {
             />
             <StyledSelect
               name='email . taille'
-              value={engine.evaluate('email . taille').nodeValue}
+              value={engine.evaluate('email . taille').nodeValue as string}
               onChange={({ value }) => {
                 track('Usage numérique', 'Select email taille', `usage-numerique-email-taille-${value}`)
                 setSituation({ ['email . taille']: value })
@@ -99,7 +98,7 @@ export default function Search() {
       </div>
       <div>
         <Label>
-          <strong>{engine.evaluate(`streaming . durée`).nodeValue / 60}h</strong> de{' '}
+          <strong>{evaluateNumber(engine, `streaming . durée`) / 60}h</strong> de{' '}
           <strong>
             <Color color='#C25166'>streaming</Color>
           </strong>{' '}
@@ -181,7 +180,7 @@ export default function Search() {
       </div>
       <div>
         <Label>
-          <strong>{engine.evaluate(`visio . durée`).nodeValue / 60}h</strong> de{' '}
+          <strong>{evaluateNumber(engine, `visio . durée`) / 60}h</strong> de{' '}
           <strong>
             <Color color='#3DC7AB'>visioconférence</Color>
           </strong>{' '}

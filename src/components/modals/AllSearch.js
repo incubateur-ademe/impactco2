@@ -1,14 +1,14 @@
 import Fuse from 'fuse.js'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import TextInput from 'components/base/TextInput'
 import AllSearchCategory from './AllSearchCategory.js'
 
 export default function AllSearch(props) {
   /** */
   // eslint-disable-next-line no-unused-vars
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])

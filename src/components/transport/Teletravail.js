@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { computeECV } from 'utils/computeECV'
 import useItineraries from 'hooks/useItineraries'
-import DataContext from 'components/providers/DataProvider'
-import TransportContext from 'components/transport/TransportProvider'
+import useDataContext from 'components/providers/DataProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 import Search from './Search'
 import Transport from './Transport'
 import PercentFootprint from './teletravail/PercentFootprint'
@@ -11,10 +11,9 @@ import YearlyFootprint from './teletravail/YearlyFootprint'
 const tracking = 'Transport télétravail'
 
 export default function Teletravail(props) {
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
-  const { start, end, teletravailTransportation, presentiel, teletravail, holidays, extraKm } =
-    useContext(TransportContext)
+  const { start, end, teletravailTransportation, presentiel, teletravail, holidays, extraKm } = useTransportContext()
 
   const [currentTransportation, setCurrentTransportation] = useState(null)
   useEffect(() => {

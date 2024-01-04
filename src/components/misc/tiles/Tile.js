@@ -1,6 +1,6 @@
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import React, { useContext } from 'react'
+import React from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
@@ -8,7 +8,7 @@ import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import useIframe from 'hooks/useIframe'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
@@ -141,7 +141,7 @@ const Svg = styled.svg`
   width: 1em;
 `
 export default function Tile(props) {
-  const { categories } = useContext(DataContext)
+  const { categories } = useDataContext()
 
   const iframe = useIframe()
 

@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import ModalContext from 'components/providers/ModalProvider'
+import React from 'react'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 import Link from 'components/base/buttons/Link'
 
 export default function DetailsUsagesNumModal() {
-  const { hypothesis: open, setHypothesis: setOpen } = useContext(ModalContext)
+  const { hypothesis: open, setHypothesis: setOpen } = useModalContext()
   return (
     <>
       {!open ? (

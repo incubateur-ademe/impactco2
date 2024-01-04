@@ -7,12 +7,17 @@ export type Point = {
   latitude: number
   longitude: number
   city: string
+  address: string
 }
 
-export default function useItineraries(start: Point, end: Point, category: string) {
+export default function useItineraries(start: Point | undefined, end: Point | undefined, category: string) {
   const { data } = useQuery({
     queryKey: [start, end],
     queryFn: () => {
+      if (!start || !end) {
+        return
+      }
+
       track(`Transport ${category}`, 'Recherche', `${start.city}-${end.city}`)
       return axiosClient
         .post<CallGMapDistances>('/api/callGMap', {
@@ -27,7 +32,7 @@ export default function useItineraries(start: Point, end: Point, category: strin
         })
         .then((res) => res.data)
     },
-    enabled: !!(start.latitude && end.latitude),
+    enabled: start && end && !!start.latitude && !!end.latitude,
     refetchOnWindowFocus: false,
     staleTime: Infinity,
   })

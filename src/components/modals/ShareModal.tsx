@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 import Facebook from './shareModal/Facebook'
 import Integration from './shareModal/Integration'
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   }
 `
 export default function CO2EModal() {
-  const { share: open, setShare: setOpen } = useContext(ModalContext)
+  const { share: open, setShare: setOpen } = useModalContext()
 
   const href = `${typeof window !== 'undefined' ? window?.location?.href : ''}${typeof open === 'string' ? open : ''}`
   return open ? (

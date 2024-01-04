@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import { Bar, Card, Value, Values } from './HypotesisCard.styles'
 
 const HypotesisCard = ({ slug }: { slug: string }) => {
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
   const values = equivalents.find((equivalent) => equivalent.slug === slug)
   if (!values) {
     return null
