@@ -96,7 +96,7 @@ export default function TilesModal() {
           )}
           <Button
             onClick={() => {
-              tiles.forEach((tile) => track('Comparateur', 'Nouvel équivalent', tile.slug))
+              tiles.forEach((tile) => track('Comparateur carbone', 'Nouvel équivalent', tile.slug))
               setOpen(false)
             }}>
             Valider et fermer

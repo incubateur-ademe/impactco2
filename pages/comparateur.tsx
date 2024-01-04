@@ -2,6 +2,7 @@ import React from 'react'
 import { track } from 'utils/matomo'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Tiles from 'components/misc/Tiles'
@@ -30,13 +31,16 @@ const Convertisseur = () => {
             <Link
               href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'
               color='secondary'
-              onClick={() => track('Comparateur', 'Source', 'https://base-empreinte.ademe.fr/donnees/jeu-donnees')}>
+              onClick={() =>
+                track('Comparateur carbone', 'Source', 'https://base-empreinte.ademe.fr/donnees/jeu-donnees')
+              }>
               Base Empreinte ADEME
             </Link>
           </Sources>
         </SectionWideContent>
       </Section>
-      <Learning />
+      <Learning from='/comparateur' fromLabel='Comparateur carbone' />
+      <SuggestionBanner from='/comparateur' fromLabel='Comparateur carbone' simulatorName='comparateur carbone' />
     </Web>
   )
 }

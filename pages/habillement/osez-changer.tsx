@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Category as CategoryType } from 'types/category'
 import categories from 'data/categories.json'
 import { Section, SectionWideContent } from 'components/base/Section'
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
 import Learning from 'components/misc/Learning'
@@ -31,11 +32,18 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
       <Section $withoutPadding>
         <Container>
           <MobileAction />
-          <Category category={category} />
+          <div>
+            <Category category={category} />
+          </div>
           <OsezChanger />
         </Container>
       </Section>
       <Learning category={category} />
+      <SuggestionBanner
+        from={category.slug}
+        fromLabel={category.name}
+        simulatorName={`comparateur ${category.name.toLowerCase()}`}
+      />
     </Web>
   )
 }

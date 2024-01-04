@@ -238,7 +238,7 @@ export default function Tile(props) {
       ) : (
         <StyledButton
           onClick={() => {
-            track('Comparateur', 'Comparer', props.equivalent.slug)
+            track('Comparateur carbone', 'Comparer', props.equivalent.slug)
             props.setCurEquivalent(props.equivalent)
           }}
           size='sm'

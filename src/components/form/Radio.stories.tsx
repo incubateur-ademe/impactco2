@@ -62,7 +62,7 @@ const body = NotionCommandValidation.safeParse({})
 export const Error: Story = {
   render: () =>
     render({
-      id: 'structure',
+      id: 'type',
       label: 'Label',
       required: true,
       hint: 'Description',

@@ -2,6 +2,7 @@ import React from 'react'
 import { Category } from 'types/category'
 import categories from 'data/categories.json'
 import { getMonthLabel, slugs } from 'utils/months'
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import LearningFruit from 'components/fruitsetlegumes/LearningFruit'
 import Saisons from 'components/fruitsetlegumes/Saisons'
 import Web from 'components/layout/Web'
@@ -17,6 +18,11 @@ export default function Month({ category, month }: { category: Category; month: 
       }}>
       <Saisons category={category} month={month} />
       <LearningFruit />
+      <SuggestionBanner
+        from={category.slug}
+        fromLabel={category.name}
+        simulatorName={`comparateur ${category.name.toLowerCase()}`}
+      />
     </Web>
   )
 }

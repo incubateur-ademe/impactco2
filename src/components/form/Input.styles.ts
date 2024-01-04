@@ -75,6 +75,31 @@ export const StyledSelect = styled.select<{ $maxWidth?: string; $color?: 'second
   padding-right: 2.5rem;
 `
 
+export const StarsButtons = styled.div`
+  align-items: center;
+  display: flex;
+  margin: 0 -0.25rem;
+
+  button {
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    color: var(--primary-50);
+    cursor: pointer;
+    padding: 0;
+    padding: 0.25rem;
+
+    &:focus {
+      outline: 3px solid var(--primary-50);
+      outline-offset: -2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+`
+
 export const Error = styled.div`
   align-items: center;
   color: var(--critical-50);

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Category } from 'types/category'
 import categories from 'data/categories.json'
+import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Distance from 'components/transport/Distance'
@@ -18,7 +19,8 @@ export default function DistancePage({ category }: { category: Category }) {
       }}>
       <TransportProvider type='distance'>
         <Distance category={category} />
-        <Learning category={category} />
+        <Learning category={category} fromLabel='Transport distance' />
+        <SuggestionBanner from={category.slug} fromLabel='Transport distance' simulatorName='simulateur transport' />
       </TransportProvider>
     </Web>
   )
