@@ -4,21 +4,21 @@ import { Container } from './SkipLinks.styles'
 const SkipLinks = () => {
   return (
     <Container>
-      <div className='fr-skiplinks'>
-        <div className='fr-container' aria-label='Accès rapide'>
-          <ul className='fr-skiplinks__list'>
+      <div>
+        <div>
+          <ul>
             <li>
-              <a className='fr-link visible-hidden' href='#contenu'>
+              <a className='visible-hidden' href='#contenu'>
                 Contenu
               </a>
             </li>
             <li>
-              <a className='fr-link visible-hidden' href='#header-navigation'>
+              <a className='visible-hidden' href='#header-navigation'>
                 Menu
               </a>
             </li>
             <li>
-              <a className='fr-link visible-hidden' href='#footer'>
+              <a className='visible-hidden' href='#footer'>
                 Pied de page
               </a>
             </li>

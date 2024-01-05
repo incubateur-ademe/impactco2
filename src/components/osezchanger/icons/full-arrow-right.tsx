@@ -1,6 +1,6 @@
 export default (
   <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'>
-    <g clipPath='url(#clip0_481_2281)'>
+    <g>
       <path
         fillRule='evenodd'
         clipRule='evenodd'
@@ -9,7 +9,7 @@ export default (
       />
     </g>
     <defs>
-      <clipPath id='clip0_481_2281'>
+      <clipPath>
         <rect width='12' height='10.5' fill='white' transform='translate(0 0.75)' />
       </clipPath>
     </defs>

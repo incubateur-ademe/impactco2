@@ -7,26 +7,17 @@ const Hamburger = ({
   hamburgerOpened: boolean
   hamburgerClicked: () => void
 }) => (
-  <Wrapper>
-    <Button
-      onClick={() => {
-        hamburgerClicked()
-      }}
-      $opened={hamburgerOpened}>
-      {hamburgerOpened ? (
-        <>X</>
-      ) : (
-        <>
-          <Rotate>III</Rotate>
-        </>
-      )}
-    </Button>
-  </Wrapper>
+  <Button
+    onClick={() => {
+      hamburgerClicked()
+    }}
+    $opened={hamburgerOpened}>
+    {hamburgerOpened ? <>X</> : <Rotate>III</Rotate>}
+  </Button>
 )
 
 export default Hamburger
 
-const Wrapper = styled.div``
 const Button = styled.button<{ $opened: boolean }>`
   background-color: transparent;
   border: 1px solid gainsboro;
@@ -38,6 +29,7 @@ const Button = styled.button<{ $opened: boolean }>`
   width: 2rem;
 `
 
-const Rotate = styled.div`
+const Rotate = styled.span`
+  display: block;
   transform: rotate(-90deg);
 `

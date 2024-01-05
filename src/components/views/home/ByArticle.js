@@ -20,8 +20,8 @@ export default function ByArticle() {
             target='_blank'
             rel='noreferrer noopener'
             onClick={() => track('Click', `Vignette ${reuseCard.tagtext}`, `click_vignette_${reuseCard.tagtext}`)}>
-            <ReuseCardImgContainer color={reuseCard.color}>
-              <ReuseCardImg img={reuseCard.img}>
+            <ReuseCardImgContainer $color={reuseCard.color}>
+              <ReuseCardImg $img={reuseCard.img}>
                 <ReuseCardTag>{reuseCard.tagtext}</ReuseCardTag>
               </ReuseCardImg>
             </ReuseCardImgContainer>
@@ -220,7 +220,7 @@ const ReuseCard = styled.div`
   margin-right: 1rem;
 `
 const ReuseCardImg = styled.div`
-  background: url(${(props) => props.img});
+  background: url(${(props) => props.$img});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -286,7 +286,7 @@ const ReuseCardWrapper = styled.div`
 `
 
 const ReuseCardImgContainer = styled.div`
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.$color};
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
 `

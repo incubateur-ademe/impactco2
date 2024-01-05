@@ -25,7 +25,7 @@ export default function ByOrder() {
         </MiniCardEq>
         <MiniCardWhat>{minicard.text}</MiniCardWhat>
         <MiniCardLink>
-          <Link asButton small color='secondary' href={`/${cat.slug}/${eq.slug}`}>
+          <Link asButton color='secondary' href={`/${cat.slug}/${eq.slug}`}>
             Visualiser
           </Link>
         </MiniCardLink>
