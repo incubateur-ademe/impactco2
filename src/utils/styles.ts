@@ -7,7 +7,6 @@ export const themes = {
     name: 'Clair',
     colors: {
       main: '#26827C',
-      main2: '#39a69e',
       main3: '#1C9B93',
       main4: '#34A59E',
       mainLight: '#DFECEB',
@@ -47,7 +46,6 @@ export const themes = {
     name: 'Sombre',
     colors: {
       main: '#E8F8F7',
-      main2: '#dcf8f6',
       main3: '#26827C',
       main4: '#dcf8f6',
       mainLight: '#17635E',

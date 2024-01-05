@@ -89,7 +89,7 @@ const FooterLink = styled.div`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   background-color: ${(props) => props.theme.colors.sky};
   margin-top: 0;
 `

@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'components/base/buttons/Link'
 
-const Wrapper = styled.nav`
+const Wrapper = styled.div`
   display: flex;
 `
 const Tab = styled(Link)<{ $current: boolean; $large?: boolean }>`
