@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   border-radius: 1rem;
   padding: 1.5rem;
 `
-const Title = styled.h3`
+const Title = styled.h2`
   text-align: center;
 `
 
@@ -130,7 +130,7 @@ export default function Detail({ category }: { category: Category }) {
 
   return (
     <Wrapper>
-      <Title>Détail de mon impact</Title>
+      <Title className='title-h3'>Détail de mon impact</Title>
       <Text>
         En général, la majorité de votre empreinte numérique provient de la construction de vos appareils et pas de
         l’usage de ces derniers.

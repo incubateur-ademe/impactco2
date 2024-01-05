@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { HiddenLabel } from 'components/form/HiddenLabel'
 import SelectFrequences from './SelectFrequences'
 import SelectNumber from './SelectNumber'
 import { frequences } from './data.js'
@@ -91,10 +92,6 @@ const InductionIntro = styled.div`
 
 const InductionOutro = styled.div`
   display: flex;
-`
-
-const HiddenLabel = styled.label`
-  left: -9999px;
 `
 
 const Colis = styled.strong`

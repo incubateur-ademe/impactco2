@@ -82,7 +82,7 @@ export const Parameters = styled.div`
 export const StyledSelect = styled(Select)`
   flex: 1;
   font-size: 0.875rem;
-  margin: 0;
+  margin-bottom: 0;
 
   select {
     min-width: 5rem;
