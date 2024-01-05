@@ -24,7 +24,7 @@ export default function Code(props) {
       <Label htmlFor='code'>
         3) Copiez le code ci-dessous où vous souhaitez afficher l&apos;iframe sur votre site.
       </Label>
-      <ClipboardBox>{script}</ClipboardBox>
+      <ClipboardBox tracking='Integration'>{script}</ClipboardBox>
     </Wrapper>
   )
 }

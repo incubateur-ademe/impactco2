@@ -30,7 +30,7 @@ export default function ReduireModal3() {
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width='45rem'>
       <br />
-      <ClipboardBox>{href}</ClipboardBox>
+      <ClipboardBox tracking='Livraison'>{href}</ClipboardBox>
       <br />
       <Alternative>- ou -</Alternative>
       <WrapperSocial>

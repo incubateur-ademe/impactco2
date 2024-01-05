@@ -41,7 +41,7 @@ const Integrate = ({
         customValues={customValues}
         setCustomValues={setCustomValues}
       />
-      <ClipboardBox>{url}</ClipboardBox>
+      <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>
   )
 }

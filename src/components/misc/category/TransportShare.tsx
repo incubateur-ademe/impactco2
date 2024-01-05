@@ -36,7 +36,7 @@ const TransportShare = ({ category, params }: { category: Category; params?: Rec
   )
   return (
     <>
-      <ClipboardBox>{url}</ClipboardBox>
+      <ClipboardBox tracking={category.name}>{url}</ClipboardBox>
       <Buttons>
         <FacebookShareButton
           url={url}

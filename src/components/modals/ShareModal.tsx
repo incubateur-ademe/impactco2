@@ -47,7 +47,7 @@ export default function CO2EModal() {
         />
         <Whatsapp title='Découvrez l’impact sur le climat des objets et gestes de votre quotidien' url={href} />
       </Wrapper>
-      <ClipboardBox>{href}</ClipboardBox>
+      <ClipboardBox tracking='Comparateur'>{href}</ClipboardBox>
     </Modal>
   ) : null
 }

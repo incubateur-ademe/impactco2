@@ -50,7 +50,7 @@ const Share = ({
           setCustomValues={setCustomValues}
         />
       )}
-      <ClipboardBox>{url}</ClipboardBox>
+      <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
       <Buttons>
         <FacebookShareButton
           url={url}
