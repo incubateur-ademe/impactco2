@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import useModalContext from 'components/providers/ModalProvider'
+import ClipboardBox from 'components/base/ClipboardBox'
 import Modal from 'components/base/Modal'
 import Facebook from './shareModal/Facebook'
 import Integration from './shareModal/Integration'
-import Link from './shareModal/Link'
 import Linkedin from './shareModal/Linkedin'
 import Mail from './shareModal/Mail'
 import Twitter from './shareModal/Twitter'
@@ -47,7 +47,7 @@ export default function CO2EModal() {
         />
         <Whatsapp title='Découvrez l’impact sur le climat des objets et gestes de votre quotidien' url={href} />
       </Wrapper>
-      <Link url={href} />
+      <ClipboardBox>{href}</ClipboardBox>
     </Modal>
   ) : null
 }

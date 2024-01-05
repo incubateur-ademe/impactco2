@@ -2,6 +2,7 @@ import React from 'react'
 import { monthsOptions } from 'utils/months'
 import Emoji from 'components/base/Emoji'
 import CheckboxInput from 'components/form/CheckboxInput'
+import { HiddenLabel } from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import Select from 'components/form/Select'
 import { Container, InputContainer, InputSuffix, Inputs, Param, Params, StyledInput } from './CustomParam.styles'
@@ -10,6 +11,7 @@ const configs: Record<
   string,
   {
     label: string
+    inputLabel: string
     type: 'number' | 'text' | 'select'
     unit?: string
     min?: number
@@ -17,9 +19,9 @@ const configs: Record<
     options?: { label: string; value: string | number }[]
   }
 > = {
-  m2: { label: 'Afficher une surface personnalisée', type: 'number', unit: 'm²', min: 1 },
-  km: { label: 'Afficher une distance personnalisée', type: 'number', unit: 'km', min: 1 },
-  month: { label: 'Personnaliser le mois à afficher', type: 'select', options: monthsOptions },
+  m2: { label: 'Afficher une surface personnalisée', type: 'number', unit: 'm²', min: 1, inputLabel: 'Surface' },
+  km: { label: 'Afficher une distance personnalisée', type: 'number', unit: 'km', min: 1, inputLabel: 'Distance' },
+  month: { label: 'Personnaliser le mois à afficher', type: 'select', options: monthsOptions, inputLabel: 'Mois' },
 }
 
 const arrayConfigs: Record<string, string> = {
@@ -63,6 +65,7 @@ const CustomParam = ({
           data-testid={`custom-param-${slug}-checkbox`}
         />
         <InputContainer>
+          <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>{config.inputLabel}</HiddenLabel>
           {config.options ? (
             <Select
               id={slug}

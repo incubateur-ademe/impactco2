@@ -6,7 +6,7 @@ import Signature from 'components/screenshot/Signature'
 
 export default function Footer() {
   return (
-    <Wrapper>
+    <Wrapper id='footer'>
       <LinearGradient>&nbsp;</LinearGradient>
       <Section>
         <SectionWideContent>

@@ -42,7 +42,7 @@ export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProp
   return breadcrumb ? (
     <Section $withoutPadding>
       <SectionWideContent>
-        <nav aria-label="fil d'ariane">
+        <div aria-label="fil d'ariane">
           <Wrapper>
             {breadcrumb && breadcrumb.type === 'equivalent' && (
               <>
@@ -77,7 +77,7 @@ export default function BreadCrumb2({ breadcrumb }: { breadcrumb: BreadcrumbProp
               </>
             )}
           </Wrapper>
-        </nav>
+        </div>
       </SectionWideContent>
     </Section>
   ) : (

@@ -7,6 +7,7 @@ import Marianne from 'components/base/Marianne'
 import { Section, SectionWideContent } from 'components/base/Section'
 import NavSearchBar from 'components/misc/search/NavSearchBar'
 import Hamburger from './Hamburger'
+import SkipLinks from './SkipLinks'
 import MenuSweet from './nav/MenuSweet'
 
 export default function HeaderSweet() {
@@ -19,6 +20,7 @@ export default function HeaderSweet() {
   return (
     <BoxedShadow>
       <header aria-label='En-tête'>
+        <SkipLinks />
         <Section $withoutPadding>
           <SectionWideContent>
             <Header>
@@ -51,7 +53,7 @@ export default function HeaderSweet() {
           </SectionWideContent>
         </Section>
       </header>
-      <NavBar>
+      <NavBar id='header-navigation'>
         <Section $withoutPadding>
           <SectionWideContent>
             <NavLinksMobile $shouldDisplay={hamburgerOpened}>

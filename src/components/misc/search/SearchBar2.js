@@ -106,8 +106,7 @@ export default function SearchBar2(props) {
         }
       }}
       className={props.className}
-      $hideon={props.hideon}
-      id='header-search'>
+      $hideon={props.hideon}>
       <TextInput
         placeholder={props.placeholder}
         ref={input}

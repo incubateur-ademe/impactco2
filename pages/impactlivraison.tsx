@@ -7,7 +7,7 @@ import { RulesProviderLivraison } from 'components/livraison/RulesProviderLivrai
 
 export default function Impactlivraison() {
   return (
-    <div id='contenu'>
+    <>
       <IntroLivraison />
       <RulesProviderLivraison>
         <CalculateurLivraison />
@@ -15,6 +15,6 @@ export default function Impactlivraison() {
       <AdviceLivraison />
       <ConclusionLivraison />
       <SuggestionBanner from='livraison' fromLabel='Livraison' simulatorName='simulateur livraison' />
-    </div>
+    </>
   )
 }

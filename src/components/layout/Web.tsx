@@ -27,7 +27,7 @@ export default function Web({
       <Seo title={title} description={description} image={image} />
       <HeaderSweet />
       {breadcrumb && <BreadCrumb2 breadcrumb={breadcrumb} />}
-      <Children>{children}</Children>
+      <Children id='contenu'>{children}</Children>
       <Footer />
     </>
   )

@@ -75,7 +75,7 @@ export default function Configurator({
                 ))}
               </Select>
               {slug.startsWith('transport') && (
-                <Select onChange={(e) => setSlug(e.value)} value={slug} name='transport'>
+                <Select onChange={(e) => setSlug(e.value)} value={slug} name='type'>
                   <option key='transport' value='transport'>
                     Distance
                   </option>
@@ -88,7 +88,7 @@ export default function Configurator({
                 </Select>
               )}
               {slug.startsWith('habillement') && (
-                <Select onChange={(e) => setSlug(e.value)} value={slug} name='habillement'>
+                <Select onChange={(e) => setSlug(e.value)} value={slug} name='type'>
                   <option key='habillement' value='habillement'>
                     Impact de la mode
                   </option>

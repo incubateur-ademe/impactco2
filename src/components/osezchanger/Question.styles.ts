@@ -33,7 +33,7 @@ export const Title = styled.div`
   width: 200px;
 `
 
-export const Description = styled.div`
+export const Description = styled.label`
   color: var(--secondary-70);
   flex: 1 0 0;
   font-size: 0.875rem;
