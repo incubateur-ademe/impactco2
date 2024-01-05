@@ -28,12 +28,24 @@ jobs:
         run: cp .env.dist .env
       - name: Install dependencies
         run: yarn
+      - name: Linter
+        run: yarn lint
       - name: Run build
         run: yarn build
       - name: Migrate db
         run: yarn prisma migrate deploy
       - name: Start server
         run: yarn start &
+      - name: Unit tests => with Jest
+        run: yarn testu
+      - name: Component tests => with Jest
+        run: yarn testc
+      - name: API tests => with Jest & MSW
+        run: yarn testa
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps chromium
+      - name: E2E test  => with Playwright
+        run: yarn teste
       - run: mkdir -p ${{ github.workspace }}/tmp/artifacts
       - name: Lighthouse Check
         uses: foo-software/lighthouse-check-action@master
