@@ -74,7 +74,14 @@ export default function Search({
               pour cette distance
             </>
           }>
-          <SliderWithInput value={km} setValue={setKm} unit='km' digit={4} tracking='Transport distance' />
+          <SliderWithInput
+            value={km}
+            setValue={setKm}
+            unit='km'
+            digit={4}
+            tracking='Transport distance'
+            aria-label='Distance en km'
+          />
         </Simulator>
       )}
     </>
