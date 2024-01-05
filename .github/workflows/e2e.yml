@@ -46,8 +46,8 @@ jobs:
         uses: foo-software/lighthouse-check-status-action@master
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: '83'
-          minBestPracticesScore: '92'
+          minAccessibilityScore: '97'
+          minBestPracticesScore: '100'
       - name: Upload playwright artifacts
         uses: actions/upload-artifact@v3
         if: always()
