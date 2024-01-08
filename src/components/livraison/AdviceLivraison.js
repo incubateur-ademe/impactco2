@@ -26,7 +26,7 @@ export default function AdviceLivraison() {
             </H2Title>
             <div className='buttons'>
               <Button
-                color='secondary'
+                priority='secondary'
                 size='sm'
                 onClick={openModal}
                 className='noscreenshot'
@@ -41,7 +41,7 @@ export default function AdviceLivraison() {
                 <HideableSpan>&nbsp;Partager</HideableSpan>
               </Button>
               <Button
-                color='secondary'
+                priority='secondary'
                 size='sm'
                 onClick={takeScreenshot}
                 className='noscreenshot'

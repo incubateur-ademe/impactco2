@@ -35,7 +35,7 @@ export default function ReuseBulb() {
         <p>
           Consultez le{' '}
           <Link
-            color='secondary'
+            priority='secondary'
             href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
             title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
             kit de diffusion Impact CO<sub>2</sub>
@@ -45,7 +45,7 @@ export default function ReuseBulb() {
         <p>Besoin d'inspiration?</p>
         <p style={{ 'margin-bottom': 0 }}>
           <Link
-            color='secondary'
+            priority='secondary'
             href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997? '
             title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
             Découvrez des exemples de réutilisation

@@ -24,7 +24,7 @@ export default function NGCCard() {
             Rendez-vous sur le simulateur&nbsp;
             <Link
               title='Nos Gestes Climat'
-              color='secondary'
+              priority='secondary'
               href='https://nosgestesclimat.fr'
               onClick={() => track('Click', 'NGC', 'click_ngc')}>
               Nos Gestes Climat

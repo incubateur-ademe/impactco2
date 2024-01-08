@@ -3,11 +3,12 @@ import React, { AnchorHTMLAttributes } from 'react'
 import NewTabIcon from '../NewTabIcon'
 import { ButtonLink } from './Button.styles'
 import { StyledLink } from './Link.styles'
+import { Priority } from './priority'
 
 const Link = ({
   asButton,
   internal,
-  color,
+  priority,
   noIcon,
   children,
   size,
@@ -16,7 +17,7 @@ const Link = ({
   asButton?: boolean
   size?: 'sm' | 'lg'
   internal?: boolean
-  color?: 'secondary' | 'secondary-dark'
+  priority?: Priority
   noIcon?: boolean
 } & LinkProps &
   AnchorHTMLAttributes<HTMLAnchorElement>) => {
@@ -24,7 +25,7 @@ const Link = ({
   return asButton ? (
     <ButtonLink
       $size={size}
-      $color={color}
+      $priority={priority}
       target={external ? '_blank' : '_self'}
       rel={external ? 'noreferrer noopener' : undefined}
       {...rest}>
@@ -32,7 +33,7 @@ const Link = ({
     </ButtonLink>
   ) : (
     <StyledLink
-      $color={color}
+      $priority={priority}
       target={external ? '_blank' : '_self'}
       rel={external ? 'noreferrer noopener' : undefined}
       {...rest}>

@@ -39,7 +39,7 @@ export default function ResultatsLivraison(props) {
         {buildLivraisonEq(1)}
         {buildLivraisonEq(2)}
         <ButtonContainer $nbCol={eqvChosen.length}>
-          <Button color='secondary' size='sm' onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
+          <Button priority='secondary' size='sm' onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
             Modifier les équivalences
           </Button>
         </ButtonContainer>

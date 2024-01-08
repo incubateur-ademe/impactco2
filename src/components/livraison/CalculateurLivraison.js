@@ -95,7 +95,7 @@ export default function CalculateurLivraison(props) {
             <H2Title data-testid='calculateurTitleH2'>Estimez l'impact de votre livraison</H2Title>
             <div className='buttons'>
               <Button
-                color='secondary'
+                priority='secondary'
                 size='sm'
                 onClick={() => setSocial(true)}
                 className='noscreenshot'
@@ -110,7 +110,7 @@ export default function CalculateurLivraison(props) {
                 <HideableSpan>Partager</HideableSpan>
               </Button>
               <Button
-                color='secondary'
+                priority='secondary'
                 size='sm'
                 onClick={integrerClicked}
                 className='noscreenshot'
@@ -127,7 +127,7 @@ export default function CalculateurLivraison(props) {
                 <HideableSpan>Intégrer le simulateur</HideableSpan>
               </Button>
               <Button
-                color='secondary'
+                priority='secondary'
                 size='sm'
                 onClick={takeScreenshot}
                 className='noscreenshot'
