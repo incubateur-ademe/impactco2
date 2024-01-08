@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const Section = styled.section<{ $theme?: 'color' | 'main'; $withoutPadding?: boolean }>`
   ${({ $theme, theme }) =>
     $theme === 'color'
-      ? `background-color: #ebf2ff;`
+      ? `background-color: var(--secondary-10);`
       : $theme === 'main'
         ? `background-color: ${theme.colors.main};`
         : ''}

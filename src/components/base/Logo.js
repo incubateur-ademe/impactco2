@@ -19,7 +19,7 @@ const Wrapper = styled(Link)`
 
   &:hover {
     .circle1 {
-      fill: ${(props) => props.theme.colors.main};
+      fill: ${(props) => props.$color || props.theme.colors.main};
       transition: fill 300ms ease-in 200ms;
     }
 
@@ -31,11 +31,11 @@ const Wrapper = styled(Link)`
   }
 `
 const Path = styled.path`
-  fill: ${(props) => props.theme.colors.main};
+  fill: ${(props) => props.$color || props.theme.colors.main};
 `
 const Circle = styled.circle`
-  fill: ${(props) => props.theme.colors.main};
-  stroke: ${(props) => props.theme.colors.main};
+  fill: ${(props) => props.$color || props.theme.colors.main};
+  stroke: ${(props) => props.$color || props.theme.colors.main};
   transition: fill 300ms ease-out;
 
   ${Wrapper}:hover & {
@@ -45,12 +45,12 @@ const Circle = styled.circle`
 `
 const HollowCircle1 = styled.circle`
   fill: transparent;
-  stroke: ${(props) => props.theme.colors.main};
+  stroke: ${(props) => props.$color || props.theme.colors.main};
   transform-origin: center;
   transition: fill 300ms ease-out;
 
   ${Wrapper}:hover & {
-    fill: ${(props) => props.theme.colors.main};
+    fill: ${(props) => props.$color || props.theme.colors.main};
     transform: rotate(-180deg);
     transition:
       transform 600ms ease-out,
@@ -65,7 +65,7 @@ const HollowCircle2 = styled(HollowCircle1)`
   }
 `
 const Title = styled.div`
-  color: ${(props) => props.theme.colors.main};
+  color: ${(props) => props.$color || props.theme.colors.main};
   font-size: 1.15em;
   font-weight: bold;
   line-height: 1;
@@ -73,7 +73,7 @@ const Title = styled.div`
 `
 export default function Logo(props) {
   return (
-    <Wrapper href='/' className={props.className} data-testid='logo-impact-co2-link'>
+    <Wrapper href='/' className={props.className} data-testid='logo-impact-co2-link' $color={props.color}>
       <svg width='333' height='333' viewBox='0 0 333 333' fill='none' xmlns='http://www.w3.org/2000/svg'>
         <title>Impact CO₂</title>
         <Path
@@ -85,12 +85,12 @@ export default function Logo(props) {
           <path d='M13.875 13.8738H319.125V319.124H13.875V13.8738Z' fill='#fff' />
         </mask>
         <g>
-          <HollowCircle1 cx='52.4974' cy='51.4973' r='81.1898' strokeWidth='25' />
-          <Circle cx='167.317' cy='166.317' r='81.1898' strokeWidth='25' />
-          <HollowCircle2 cx='282.137' cy='281.137' r='81.1898' strokeWidth='25' />
+          <HollowCircle1 cx='52.4974' cy='51.4973' r='81.1898' strokeWidth='25' $color={props.color} />
+          <Circle cx='167.317' cy='166.317' r='81.1898' strokeWidth='25' $color={props.color} />
+          <HollowCircle2 cx='282.137' cy='281.137' r='81.1898' strokeWidth='25' $color={props.color} />
         </g>
       </svg>
-      <Title>
+      <Title $color={props.color}>
         Impact
         <br />
         CO<sub>2</sub>

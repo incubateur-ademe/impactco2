@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
+const button = (color?: 'secondary' | 'secondary-dark', size?: 'sm' | 'lg') => `
   -webkit-appearance: none;
   appearance: none;
   border: none;
@@ -19,22 +19,22 @@ const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
     color === 'secondary'
       ? `
         background-color: transparent;
-        color: var(--primary-50);
-        border: solid 1px var(--primary-50);
+        color: var(--primary-60);
+        border: solid 1px var(--primary-60);
 
         &:hover {
-          color: var(--primary-70);
-          border: solid 1px var(--primary-70);
+          color: var(--primary-80);
+          border: solid 1px var(--primary-80);
         }
 
         &:focus {
-          outline: 3px solid var(--primary-50);
+          outline: 3px solid var(--primary-60);
           outline-offset: 2px;
         }
 
         &:active {
-          color: var(--primary-60);
-          border: solid 1px var(--primary-60);
+          color: var(--primary-70);
+          border: solid 1px var(--primary-70);
         }
         
         &:disabled {
@@ -44,18 +44,18 @@ const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
         }`
       : `
         color: white;
-        background-color: var(--primary-50);
+        background-color: var(--primary-60);
         &:hover {
-          background: var(--primary-70);
+          background: var(--primary-80);
         }
 
         &:focus {
-          outline: 3px solid var(--primary-50);
+          outline: 3px solid var(--primary-60);
           outline-offset: 2px;
         }
 
         &:active {
-          background-color: var(--primary-60);
+          background-color: var(--primary-70);
         }
         
         &:disabled {
@@ -94,7 +94,7 @@ export const Button = styled.button<{ $size?: 'sm' | 'lg'; $color?: 'secondary' 
   ${({ $color, $size }) => button($color, $size)}
 `
 
-export const ButtonLink = styled(Link)<{ $size?: 'sm' | 'lg'; $color?: 'secondary' }>`
+export const ButtonLink = styled(Link)<{ $size?: 'sm' | 'lg'; $color?: 'secondary' | 'secondary-dark' }>`
   font-size: 1rem;
   line-height: 1.5;
   text-decoration: none;

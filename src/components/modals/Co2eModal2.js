@@ -36,7 +36,7 @@ export default function Co2eModal2() {
 }
 
 const GreenText = styled.span`
-  color: #1c9b93;
+  color: var(--primary-50);
 `
 
 const Title = styled.h2`

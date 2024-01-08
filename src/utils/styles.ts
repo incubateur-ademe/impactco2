@@ -6,13 +6,12 @@ export const themes = {
   default: {
     name: 'Clair',
     colors: {
-      main: '#26827C',
-      main3: '#1C9B93',
+      main: 'var(--primary-50)',
       main4: '#34A59E',
-      mainLight: '#DFECEB',
+      mainLight: 'var(--primary-10)',
       mainWhite: '#ffffff',
       mainDark: '#1D625E',
-      second: '#EFF4F9',
+      second: 'var(--secondary-10)',
       secondDark: '#B1D4F6',
       sky: '#b5d0fa',
       firstBlue: '#457be7',
@@ -46,7 +45,6 @@ export const themes = {
     name: 'Sombre',
     colors: {
       main: '#E8F8F7',
-      main3: '#26827C',
       main4: '#dcf8f6',
       mainLight: '#17635E',
       mainWhite: '#DFECEB26827C',

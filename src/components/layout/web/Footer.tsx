@@ -12,7 +12,7 @@ export default function Footer() {
         <SectionWideContent>
           <Grid>
             <Logos>
-              <Signature noMargin noLink />
+              <Signature noMargin noLink color='var(--primary-70)' />
             </Logos>
             <div>
               <FooterExplain>

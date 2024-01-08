@@ -11,7 +11,7 @@ import Teletravail from './search/Teletravail'
 const Color = styled.button`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-60);
   cursor: pointer;
   padding: 0;
 

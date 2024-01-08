@@ -62,7 +62,7 @@ const Input = styled.input`
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-60);
   text-align: right;
   width: 2rem;
 `
@@ -82,7 +82,7 @@ const Flex = styled.div`
 `
 
 const SmallExplanation = styled.div`
-  color: ${(props) => props.theme.colors.textGray};
+  color: var(--neutral-50);
   font-size: 14px;
   padding-right: 0.5rem;
 `

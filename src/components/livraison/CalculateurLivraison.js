@@ -267,7 +267,7 @@ const DropList = styled.div`
     margin-bottom: 0;
   }
   > div > select {
-    color: #1c9b93;
+    color: var(--primary-50);
     padding-left: 0;
     white-space: normal;
     width: 100%;
