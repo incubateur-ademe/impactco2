@@ -13,7 +13,6 @@ const Text = styled.input`
   color: ${(props) => props.theme.colors.text};
   cursor: pointer;
   display: block;
-  font-family: 'Courier New', Courier, monospace;
   line-height: inherit;
   overflow: hidden;
   padding: 0.3rem 0;

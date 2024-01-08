@@ -19,15 +19,15 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'yarn'
       - name: Copy .env
         run: cp .env.dist .env
       - name: Install dependencies
-        run: yarn
+        run: yarn install --immutable --immutable-cache --check-cache
       - name: Linter
         run: yarn lint
       - name: Run build
