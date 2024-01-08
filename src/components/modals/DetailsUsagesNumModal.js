@@ -16,7 +16,7 @@ export default function DetailsUsagesNumModal() {
             <p>
               L'ensemble des calculs sont issus d'une{' '}
               <Link
-                color='secondary'
+                priority='secondary'
                 href='https://base-empreinte.ademe.fr/documentation/base-impact'
                 title='Base impact, étude réalisée par Negaoctet'>
                 étude réalisée par Négaoctet

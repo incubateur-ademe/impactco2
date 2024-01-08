@@ -47,7 +47,14 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
             pour cette surface par année.
           </>
         }>
-        <SliderWithInput value={value} setValue={setValue} unit='m²' digit={3} tracking='Chauffage' />
+        <SliderWithInput
+          value={value}
+          setValue={setValue}
+          unit='m²'
+          digit={3}
+          tracking='Chauffage'
+          aria-label='Surface à chauffer'
+        />
       </Simulator>
       <BarChart equivalents={equivalentsOfCategory} category={category} />
     </CategoryWrapper>

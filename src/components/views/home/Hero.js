@@ -84,7 +84,7 @@ const H1Title = styled.h1`
 `
 
 const H1Line1 = styled.span`
-  color: ${(props) => props.theme.colors.main2};
+  color: ${(props) => props.theme.colors.main};
 `
 
 const Layout = styled.div`

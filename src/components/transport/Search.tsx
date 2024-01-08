@@ -11,7 +11,7 @@ import Teletravail from './search/Teletravail'
 const Color = styled.button`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-60);
   cursor: pointer;
   padding: 0;
 
@@ -74,7 +74,14 @@ export default function Search({
               pour cette distance
             </>
           }>
-          <SliderWithInput value={km} setValue={setKm} unit='km' digit={4} tracking='Transport distance' />
+          <SliderWithInput
+            value={km}
+            setValue={setKm}
+            unit='km'
+            digit={4}
+            tracking='Transport distance'
+            aria-label='Distance en km'
+          />
         </Simulator>
       )}
     </>

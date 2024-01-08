@@ -31,7 +31,7 @@ export const Large: Story = {
 export const Secondary: Story = {
   args: {
     children: 'em kcilC',
-    color: 'secondary',
+    priority: 'secondary',
   },
 }
 

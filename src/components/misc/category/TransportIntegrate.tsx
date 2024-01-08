@@ -193,7 +193,7 @@ const TransportIntegrate = ({
           <Separator />
         </>
       )}
-      <ClipboardBox>{url}</ClipboardBox>
+      <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>
   )
 }

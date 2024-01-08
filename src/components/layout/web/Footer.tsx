@@ -6,13 +6,13 @@ import Signature from 'components/screenshot/Signature'
 
 export default function Footer() {
   return (
-    <Wrapper>
+    <Wrapper id='footer'>
       <LinearGradient>&nbsp;</LinearGradient>
       <Section>
         <SectionWideContent>
           <Grid>
             <Logos>
-              <Signature noMargin noLink />
+              <Signature noMargin noLink color='var(--primary-70)' />
             </Logos>
             <div>
               <FooterExplain>
@@ -89,7 +89,7 @@ const FooterLink = styled.div`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   background-color: ${(props) => props.theme.colors.sky};
   margin-top: 0;
 `

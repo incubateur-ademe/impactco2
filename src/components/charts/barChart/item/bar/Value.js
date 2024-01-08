@@ -4,7 +4,7 @@ import formatNumber from 'utils/formatNumber'
 
 const Wrapper = styled.div`
   align-items: baseline;
-  color: ${(props) => props.theme.colors[props.$inside ? 'background' : 'main']};
+  color: ${(props) => (props.$inside ? props.theme.colors.background : 'var(--primary-60)')};
   display: flex;
   left: ${(props) => (props.$inside ? 'auto' : '100%')};
   line-height: 0.7;

@@ -8,7 +8,7 @@ import DropdownSweet from './DropdownSweet'
 
 const news = ['habillement', 'chauffage']
 
-const Wrapper = styled.nav`
+const Wrapper = styled.div`
   display: flex;
   height: 100%;
   width: 100%;

@@ -28,6 +28,7 @@ export default function Transportation(props) {
 
   return (
     <Wrapper
+      aria-label={`Transport par ${props.transportation.name}`}
       onClick={() => {
         track('Transport télétravail', 'Mode de transport', props.transportation.slug)
         setTeletravailTransportation(props.transportation.slug)

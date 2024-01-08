@@ -6,7 +6,7 @@ const StyledSelect = styled(Select)`
   margin: 0;
   > select {
     border: none;
-    color: ${(props) => props.theme.colors.main2};
+    color: ${(props) => props.theme.colors.main};
     font-size: 16px;
     ${(props) => props.theme.mq.small} {
       font-size: 12px;

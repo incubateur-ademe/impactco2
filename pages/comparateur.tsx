@@ -30,7 +30,7 @@ const Convertisseur = () => {
             Source :{' '}
             <Link
               href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'
-              color='secondary'
+              priority='secondary'
               onClick={() =>
                 track('Comparateur carbone', 'Source', 'https://base-empreinte.ademe.fr/donnees/jeu-donnees')
               }>

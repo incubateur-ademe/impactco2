@@ -27,15 +27,9 @@ const StyledEmoji = styled(Emoji)`
   }
 `
 
-const Title = styled.h4`
-  align-items: center;
+const Title = styled.span`
   color: ${(props) => props.theme.colors.text};
-  display: flex;
-  font-size: 1.25rem;
-  font-weight: normal;
-  justify-content: center;
   margin-bottom: 0.5rem;
-  min-height: 3rem;
   text-align: center;
 `
 
@@ -43,8 +37,7 @@ export default function Category({ category }: { category: CategoryType }) {
   return (
     <Wrapper>
       <StyledEmoji>{category.emoji}</StyledEmoji>
-      <Title>{category.name}</Title>
-
+      <Title className='text-xl'>{category.name}</Title>
       <Link asButton size='sm' href={`/${category.slug}`}>
         Visualiser
       </Link>

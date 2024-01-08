@@ -55,7 +55,7 @@ export default function ResultatLivraison(props) {
 }
 
 const BlueGrid = styled.div`
-  background-color: #457be7;
+  background-color: var(--secondary-50);
   border-bottom-left-radius: 14px;
   border-top-left-radius: 14px;
   color: white;

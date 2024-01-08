@@ -39,6 +39,7 @@ const Stars = ({ value, setValue, id, label, required, hint, errors }: StarsProp
       <StarsButtons onMouseLeave={() => setHovered(0)}>
         {Array.from({ length: 5 }, (_, i) => i + 1).map((index) => (
           <button
+            aria-label={`Avis ${index} étoile${index === 1 ? '' : 's'}`}
             type='button'
             key={index}
             onClick={() => setValue(index)}

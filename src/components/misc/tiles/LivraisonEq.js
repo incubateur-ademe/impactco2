@@ -76,7 +76,7 @@ const Number = styled.div`
 `
 
 const OfWhat = styled.div`
-  color: ${(props) => props.theme.colors.textGray};
+  color: var(--neutral-50);
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0em;

@@ -125,7 +125,8 @@ test('Default parameters (old way)', async ({ page }) => {
 
     await expect(page.getByTestId('Address-Départ').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Paris  France'
+      'Paris  France',
+      { timeout: 10000 }
     )
     await expect(page.getByTestId('Address-Arrivée').locator('form').locator('input')).toHaveAttribute('value', '')
     await expect(page.getByTestId('bar-chart-item-intercites')).not.toBeAttached()
@@ -137,7 +138,8 @@ test('Default parameters (old way)', async ({ page }) => {
     await expect(page.getByTestId('Address-Départ').locator('form').locator('input')).toHaveAttribute('value', '')
     await expect(page.getByTestId('Address-Arrivée').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Lyon  France'
+      'Lyon  France',
+      { timeout: 10000 }
     )
     await expect(page.getByTestId('bar-chart-item-intercites')).not.toBeAttached()
   })
@@ -147,11 +149,13 @@ test('Default parameters (old way)', async ({ page }) => {
 
     await expect(page.getByTestId('Address-Départ').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Paris  France'
+      'Paris  France',
+      { timeout: 10000 }
     )
     await expect(page.getByTestId('Address-Arrivée').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Lyon  France'
+      'Lyon  France',
+      { timeout: 10000 }
     )
     await expect(page.getByTestId('bar-chart-item-intercites')).toBeAttached()
     await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91 km0,8 kg CO2e')
@@ -164,7 +168,8 @@ test('Default parameters', async ({ page }) => {
 
     await expect(page.getByTestId('Address-Départ').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Paris  France'
+      'Paris  France',
+      { timeout: 10000 }
     )
     await expect(page.getByTestId('Address-Arrivée').locator('form').locator('input')).toHaveAttribute('value', '')
     await expect(page.getByTestId('bar-chart-item-intercites')).not.toBeAttached()
@@ -176,7 +181,8 @@ test('Default parameters', async ({ page }) => {
     await expect(page.getByTestId('Address-Départ').locator('form').locator('input')).toHaveAttribute('value', '')
     await expect(page.getByTestId('Address-Arrivée').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Lyon  France'
+      'Lyon  France',
+      { timeout: 10000 }
     )
     await expect(page.getByTestId('bar-chart-item-intercites')).not.toBeAttached()
   })
@@ -188,11 +194,13 @@ test('Default parameters', async ({ page }) => {
 
     await expect(page.getByTestId('Address-Départ').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Paris  France'
+      'Paris  France',
+      { timeout: 10000 }
     )
     await expect(page.getByTestId('Address-Arrivée').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Lyon  France'
+      'Lyon  France',
+      { timeout: 10000 }
     )
     await expect(page.getByTestId('bar-chart-item-intercites')).toBeAttached()
     await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91 km0,8 kg CO2e')

@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   border-radius: 1rem;
   padding: 1.5rem;
 `
-const Title = styled.h3`
+const Title = styled.h2`
   text-align: center;
 `
 
@@ -77,7 +77,7 @@ export default function Detail({ category }: { category: Category }) {
         slug: 'email',
         title: `1 an d'emails (${formatNumber(numberEmails * 52)} emails)`,
         emoji: '📧',
-        color: '#6C8CC1',
+        color: '#436CB0',
         value:
           ((evaluateNumber(engine, 'email') - evaluateNumber(engine, 'email . terminaux . construction')) *
             numberEmails *
@@ -90,7 +90,7 @@ export default function Detail({ category }: { category: Category }) {
         slug: 'visioconference',
         title: `1 an de visioconférence (${formatNumber((evaluateNumber(engine, 'visio . durée') / 60) * 52)} heures)`,
         emoji: '🎥',
-        color: '#3DC7AB',
+        color: '#227A6A',
         value:
           (((evaluateNumber(engine, 'visio . durée') ? evaluateNumber(engine, 'visio') : 0) -
             evaluateNumber(engine, 'visio . terminaux . construction')) *
@@ -103,7 +103,7 @@ export default function Detail({ category }: { category: Category }) {
         slug: 'streamingvideo',
         title: `1 an de streaming (${formatNumber((evaluateNumber(engine, 'streaming . durée') / 60) * 52)} heures)`,
         emoji: '🎬',
-        color: '#C25166',
+        color: '#B93C69',
         value:
           (((evaluateNumber(engine, 'streaming . durée') ? evaluateNumber(engine, 'streaming') : 0) -
             evaluateNumber(engine, 'streaming . terminaux . construction')) *
@@ -130,7 +130,7 @@ export default function Detail({ category }: { category: Category }) {
 
   return (
     <Wrapper>
-      <Title>Détail de mon impact</Title>
+      <Title className='title-h3'>Détail de mon impact</Title>
       <Text>
         En général, la majorité de votre empreinte numérique provient de la construction de vos appareils et pas de
         l’usage de ces derniers.

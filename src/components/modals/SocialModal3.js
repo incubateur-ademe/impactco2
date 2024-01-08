@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useModalContext from 'components/providers/ModalProvider'
+import ClipboardBox from 'components/base/ClipboardBox'
 import Modal3 from 'components/base/Modal3'
 import ReuseBulb from 'components/livraison/ReuseBulb'
-import CopyUrl from './shareModal/CopyUrl'
 import Facebook2 from './shareModal/Facebook2'
 import Linkedin2 from './shareModal/Linkedin2'
 import Twitter2 from './shareModal/Twitter2'
@@ -22,17 +22,16 @@ const getTitle = () => {
 
 export default function SocialModal3() {
   const { social: open, setSocial: setOpen } = useModalContext()
-  const [copied, setCopied] = useState(false)
 
   const dismiss = () => {
-    setCopied(false)
     setOpen(false)
   }
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width='45rem'>
       <br />
-      <CopyUrl url={href} copied={copied} setCopied={setCopied} />
+      <ClipboardBox tracking='Livraison'>{href}</ClipboardBox>
+      <br />
       <Alternative>- ou -</Alternative>
       <WrapperSocial>
         <Facebook2
@@ -62,7 +61,7 @@ const Title = styled.h2`
 `
 
 const GreenText = styled.span`
-  color: #1c9b93;
+  color: var(--primary-50);
 `
 
 const WrapperSocial = styled.div`
