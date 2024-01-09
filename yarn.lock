@@ -2847,13 +2847,6 @@
     "@storybook/global" "^5.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-themes@^7.6.5":
-  version "7.6.5"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-themes/-/addon-themes-7.6.5.tgz#573a32101d01fac532a568f88d25882bd5080cdf"
-  integrity sha512-TzGCxwdYAAlgeYuTYhMnL5KLutLVHrAXjVtWsYCYV+SVx+JklqCTk4zNUod64Z+sIYRMYd+YVC1KsWF2LHirow==
-  dependencies:
-    ts-dedent "^2.0.0"
-
 "@storybook/addon-toolbars@7.6.5":
   version "7.6.5"
   resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-7.6.5.tgz#a7e49640daad1b45926e453e36d8d8fecd88becf"
@@ -5763,6 +5756,11 @@ chownr@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
+
+chromatic@^10.2.0:
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-10.2.0.tgz#04c96ce86c39a2ef54153bb5f98427912386c99b"
+  integrity sha512-UDVGWa2Fx9CLCpwnyfvFHGr0vGF0ooB1TugUdgOcjC9pJXiFa67i7oaXMyTfVRIFxlt/QkqOJwdqDqqlLFffCw==
 
 chrome-aws-lambda@^10.1.0:
   version "10.1.0"

@@ -16,7 +16,6 @@ export const Container = styled.div<{ $defiMode?: boolean }>`
   border-radius: 8px;
   color: var(--neutral-80);
   flex: 1 0 0;
-  font-family: Marianne;
   height: fit-content;
   margin: 0 auto;
   max-width: 27.5rem;

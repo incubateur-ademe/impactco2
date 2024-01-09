@@ -43,8 +43,7 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
       <Simulator
         text={
           <>
-            Indiquer la surface à chauffer pour découvrir la quantité de CO<sub>2</sub>e émise par mode de chauffage
-            pour cette surface par année.
+            Découvrez la quantité de CO<sub>2</sub>e que vous émettez pour chauffer cette surface par année
           </>
         }>
         <SliderWithInput
