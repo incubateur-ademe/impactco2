@@ -95,7 +95,6 @@ const Copy = styled.button`
 const Flex = styled.div`
   align-items: center;
   display: flex;
-  font-family: 'Marianne';
   justify-content: flex-end;
   margin-top: 1.5rem;
 `

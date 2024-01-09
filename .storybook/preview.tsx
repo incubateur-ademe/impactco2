@@ -1,7 +1,7 @@
-import { withThemeFromJSXProvider } from '@storybook/addon-themes'
+import React from 'react'
 import { Preview } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
-import { themes } from '../src/utils/styles'
+import { GlobalStyle, themes } from '../src/utils/styles'
+import { StyleProvider } from '../src/components/providers/StyleProvider'
 import '../src/utils/variables.css'
 import '../src/utils/fonts.css'
 
@@ -18,11 +18,7 @@ const preview: Preview = {
 }
 
 export const decorators = [
-  withThemeFromJSXProvider({
-    themes,
-    defaultTheme: 'default',
-    Provider: ThemeProvider,
-  }),
+  (story) => <StyleProvider><GlobalStyle/>{story()}</StyleProvider>
 ]
 
 export default preview
