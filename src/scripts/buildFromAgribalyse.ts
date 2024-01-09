@@ -66,7 +66,13 @@ const updateEquivalents = (
       return equivalent
     }
 
-    const value = values.find((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)
+    let defaultIndex = 0
+    if (equivalent.Code_CIQUAL === 20061) {
+      // Haricot vert cru
+      defaultIndex = 1
+    }
+
+    const value = values.filter((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)[defaultIndex]
     if (!value) {
       throw new Error('BUG! ' + equivalent.slug + ' is not defined...')
     }
