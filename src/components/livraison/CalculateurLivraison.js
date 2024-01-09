@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
 import { themes } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
-import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
+import useRulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
 import OptionalRelay from './OptionalRelay'
 import OptionalTraj from './OptionalTraj'
@@ -33,9 +33,9 @@ const Svg = styled.svg`
 `
 
 export default function CalculateurLivraison(props) {
-  const { engine } = useContext(RulesContextLivraison)
-  const { setIfl } = useContext(ModalContext)
-  const { setSocial } = useContext(ModalContext)
+  const { engine } = useRulesContextLivraison()
+  const { setIfl } = useModalContext()
+  const { setSocial } = useModalContext()
 
   const [cO2eq, setCO2eq] = useState(0)
 
@@ -94,7 +94,13 @@ export default function CalculateurLivraison(props) {
           <Flex>
             <H2Title data-testid='calculateurTitleH2'>Estimez l'impact de votre livraison</H2Title>
             <div className='buttons'>
-              <Button color='secondary' size='sm' onClick={() => setSocial(true)} className='noscreenshot' id='shareUp'>
+              <Button
+                priority='secondary'
+                size='sm'
+                onClick={() => setSocial(true)}
+                className='noscreenshot'
+                id='shareUp'
+                aria-label='Partarger'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 -2 24 24'>
                   <path
                     fill='currentcolor'
@@ -103,7 +109,12 @@ export default function CalculateurLivraison(props) {
                 </svg>
                 <HideableSpan>Partager</HideableSpan>
               </Button>
-              <Button color='secondary' size='sm' onClick={integrerClicked} className='noscreenshot'>
+              <Button
+                priority='secondary'
+                size='sm'
+                onClick={integrerClicked}
+                className='noscreenshot'
+                aria-label='Intégrer'>
                 <svg width='16px' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 16'>
                   <path
                     stroke='currentColor'
@@ -115,7 +126,12 @@ export default function CalculateurLivraison(props) {
                 </svg>
                 <HideableSpan>Intégrer le simulateur</HideableSpan>
               </Button>
-              <Button color='secondary' size='sm' onClick={takeScreenshot} className='noscreenshot'>
+              <Button
+                priority='secondary'
+                size='sm'
+                onClick={takeScreenshot}
+                className='noscreenshot'
+                aria-label='Télécharger'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
                   <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
                   <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z' />
@@ -138,7 +154,7 @@ export default function CalculateurLivraison(props) {
                     checked={isHabit}
                     onChange={habitClicked}
                     offColor={'#fff'}
-                    onColor={themes.default.colors.main2}
+                    onColor={themes.default.colors.main}
                     aria-label='Changer de thème'
                     uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                     checkedHandleIcon={
@@ -176,7 +192,7 @@ export default function CalculateurLivraison(props) {
                     checked={isPlane}
                     onChange={farawayClicked}
                     offColor={'#fff'}
-                    onColor={themes.default.colors.main2}
+                    onColor={themes.default.colors.main}
                     aria-label='Changer de thème'
                     uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                     checkedHandleIcon={
@@ -251,7 +267,7 @@ const DropList = styled.div`
     margin-bottom: 0;
   }
   > div > select {
-    color: #1c9b93;
+    color: var(--primary-50);
     padding-left: 0;
     white-space: normal;
     width: 100%;

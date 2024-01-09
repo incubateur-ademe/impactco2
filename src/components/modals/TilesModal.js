@@ -1,9 +1,9 @@
 import Fuse from 'fuse.js'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
+import useDataContext from 'components/providers/DataProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 import TextInput from 'components/base/TextInput'
 import Button from 'components/base/buttons/Button'
@@ -22,9 +22,9 @@ const Equivalents = styled.div`
 `
 
 export default function TilesModal() {
-  const { tiles: open, setTiles: setOpen } = useContext(ModalContext)
+  const { tiles: open, setTiles: setOpen } = useModalContext()
 
-  const { equivalents, tiles, setTiles } = useContext(DataContext)
+  const { equivalents, tiles, setTiles } = useDataContext()
 
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])

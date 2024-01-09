@@ -1,6 +1,6 @@
-import React, { Dispatch, SetStateAction, useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -42,11 +42,7 @@ const ButtonLess = styled(ButtonMore)`
 `
 
 export default function Carpool() {
-  const { carpool, setCarpool } = useContext<{ carpool: number; setCarpool: Dispatch<SetStateAction<number>> }>(
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: TODO
-    TransportContext
-  )
+  const { carpool, setCarpool } = useTransportContext()
 
   return (
     <>

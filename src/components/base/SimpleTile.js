@@ -42,7 +42,7 @@ const Title = styled.p`
   align-items: center;
   color: ${(props) => props.theme.colors.text};
   display: flex;
-  font-size: ${(props) => (props.small ? 1 : 1.125)}rem;
+  font-size: ${(props) => (props.$small ? 1 : 1.125)}rem;
   font-weight: bold;
   justify-content: center;
   margin: 0.875rem 0.5rem 0.625rem;
@@ -68,7 +68,7 @@ export default function SimpleTile(props) {
       <Top>
         {props.emoji && <StyledEmoji>{props.emoji}</StyledEmoji>}
         {props.children}
-        <Title small={props.small}>{props.title}</Title>
+        <Title $small={props.small}>{props.title}</Title>
         {props.text && <Text>{props.text}</Text>}
       </Top>
       <Link asButton size='sm' href={props.url}>

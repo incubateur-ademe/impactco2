@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
+import ClipboardBox from 'components/base/ClipboardBox'
 import Modal from 'components/base/Modal'
 import Facebook from './shareModal/Facebook'
 import Integration from './shareModal/Integration'
-import Link from './shareModal/Link'
 import Linkedin from './shareModal/Linkedin'
 import Mail from './shareModal/Mail'
 import Twitter from './shareModal/Twitter'
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   }
 `
 export default function CO2EModal() {
-  const { share: open, setShare: setOpen } = useContext(ModalContext)
+  const { share: open, setShare: setOpen } = useModalContext()
 
   const href = `${typeof window !== 'undefined' ? window?.location?.href : ''}${typeof open === 'string' ? open : ''}`
   return open ? (
@@ -47,7 +47,7 @@ export default function CO2EModal() {
         />
         <Whatsapp title='Découvrez l’impact sur le climat des objets et gestes de votre quotidien' url={href} />
       </Wrapper>
-      <Link url={href} />
+      <ClipboardBox tracking='Comparateur'>{href}</ClipboardBox>
     </Modal>
   ) : null
 }

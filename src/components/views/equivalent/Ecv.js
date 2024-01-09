@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
+import useDataContext from 'components/providers/DataProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Legend from 'components/charts/Legend'
 import StackedChart from 'components/charts/StackedChart'
@@ -17,9 +17,9 @@ export const Title = styled.h3`
   text-align: center;
 `
 export default function Ecv(props) {
-  const { ecv } = useContext(DataContext)
+  const { ecv } = useDataContext()
 
-  const { setEcv } = useContext(ModalContext)
+  const { setEcv } = useModalContext()
 
   const [ecvToDisplay, setEcvToDisplay] = useState([])
 

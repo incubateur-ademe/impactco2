@@ -1,8 +1,8 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 import Tile from 'components/misc/tiles/Tile'
@@ -65,7 +65,7 @@ export default function StockageEmails() {
 
   const [displayResults, setDisplayResults] = useState(false)
 
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter((equivalent) =>

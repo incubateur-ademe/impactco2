@@ -63,7 +63,7 @@ export default function Search(props) {
         }}
         placeholder={'Recherchez'}
       />
-      <Button size='sm' onClick={() => setDisplaySort((prevDisplaySort) => !prevDisplaySort)}>
+      <Button size='sm' onClick={() => setDisplaySort((prevDisplaySort) => !prevDisplaySort)} aria-label='Trier par'>
         <svg x='0px' y='0px' width='1rem' height='1rem' fill='currentcolor' viewBox='0 0 489.389 489.389'>
           <path
             d='M261.294,326.102c-8.3-7.3-21.8-6.2-29.1,2.1l-77,86.8v-346.9c0-11.4-9.4-20.8-20.8-20.8s-20.8,9.4-20.8,20.8v346.9

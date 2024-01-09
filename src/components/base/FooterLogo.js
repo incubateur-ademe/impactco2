@@ -84,10 +84,10 @@ export default function FooterLogo(props) {
           clipRule='evenodd'
           d='M319.125 13.875H13.875V319.125H319.125V13.875ZM0 0V333H333V0H0Z'
         />
-        <mask id='mask0_1984_4271' maskUnits='userSpaceOnUse' x='13' y='13' width='307' height='307'>
+        <mask maskUnits='userSpaceOnUse' x='13' y='13' width='307' height='307'>
           <path d='M13.875 13.8738H319.125V319.124H13.875V13.8738Z' fill='#b5d0fa' />
         </mask>
-        <g mask='url(#mask0_1984_4271)'>
+        <g>
           <HollowCircle1 cx='52.4974' cy='51.4973' r='81.1898' strokeWidth='25' />
           <Circle cx='167.317' cy='166.317' r='81.1898' strokeWidth='25' />
           <HollowCircle2 cx='282.137' cy='281.137' r='81.1898' strokeWidth='25' />

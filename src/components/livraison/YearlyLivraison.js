@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { HiddenLabel } from 'components/form/HiddenLabel'
 import SelectFrequences from './SelectFrequences'
 import SelectNumber from './SelectNumber'
 import { frequences } from './data.js'
@@ -26,11 +27,13 @@ export default function YearlyLivraison(props) {
         <Induction data-testid='induction'>
           <InductionIntro>
             <span>Si je commande&nbsp;</span>
+            <HiddenLabel htmlFor='numbers'>Nombre de colis</HiddenLabel>
             <SelectNumber changeNumber={changeNumber} value={number} />
             <Colis>&nbsp;colis&nbsp;</Colis>
           </InductionIntro>
           <InductionOutro>
             <strong>par</strong>
+            <HiddenLabel htmlFor='frequences'>Féquence des colis</HiddenLabel>
             <SelectFrequences changeFrequence={changeFrequence} value={uid} />
             <span>,&nbsp;</span>
           </InductionOutro>
@@ -50,7 +53,7 @@ export default function YearlyLivraison(props) {
 }
 
 const SmallText = styled.div`
-  color: ${(props) => props.theme.colors.textGray};
+  color: var(--neutral-50);
   font-size: 0.85rem;
   font-style: italic;
   margin-top: 0.8rem;
@@ -70,7 +73,7 @@ const FlexText = styled.div`
 `
 
 const Color = styled.span`
-  color: #457be7;
+  color: var(--secondary-50);
   font-weight: bold;
 `
 

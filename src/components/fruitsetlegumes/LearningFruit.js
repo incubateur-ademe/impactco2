@@ -1,8 +1,8 @@
-import React, { useContext, useRef } from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import useOnScreen from 'hooks/useOnScreen'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import BarChart from './learning/BarChart'
@@ -67,7 +67,7 @@ const StyledLink = styled.span`
   cursor: pointer;
 `
 export default function LearningFruit() {
-  const { setCo2e } = useContext(ModalContext)
+  const { setCo2e } = useModalContext()
 
   const ref = useRef()
   const isOnScreen = useOnScreen(ref, '-100px')

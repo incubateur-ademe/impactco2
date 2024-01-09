@@ -1,13 +1,13 @@
 import Fuse, { FuseResult } from 'fuse.js'
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import { Equivalent, FruitsEtLegumesEquivalent } from 'types/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import ShareableContent from 'components/misc/ShareableContent'
 import Bottom from 'components/misc/category/Bottom'
 import { Header } from 'components/misc/category/CategoryWrapper.styles'
@@ -42,7 +42,7 @@ export default function Saisons({ category, iframe, month }: { category: Categor
     }
   }, [setCurrentMonth, router, month])
 
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
   const [sorting, setSorting] = useState('alph_desc')
 

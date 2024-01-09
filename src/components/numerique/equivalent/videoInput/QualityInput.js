@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import HorizontalRadio from 'components/base/HorizontalRadio'
-import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
+import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
 export default function DeviceInput(props) {
-  const { engine, setSituation } = useContext(RulesContextNumerique)
+  const { engine, setSituation } = useRulesContextNumerique()
 
   return (
     <SliderWrapper>

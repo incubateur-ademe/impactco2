@@ -8,10 +8,8 @@ export default function Default() {
   return (
     <Iframe>
       <RulesProviderLivraison>
-        <main id='contenu'>
-          <IntroLivraison />
-          <CalculateurLivraison />
-        </main>
+        <IntroLivraison />
+        <CalculateurLivraison />
       </RulesProviderLivraison>
     </Iframe>
   )

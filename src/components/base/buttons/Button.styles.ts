@@ -1,12 +1,17 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { getBaseColor } from './colors'
+import { Priority } from './priority'
 
-const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
+const button = (priority?: Priority, size?: 'sm' | 'lg') => {
+  const baseColor = getBaseColor(priority)
+
+  return `
   -webkit-appearance: none;
   appearance: none;
   border: none;
   border-radius: 8px;
-  padding: ${color === 'secondary' ? 'calc(0.5rem - 1px) calc(1.25rem - 1px)' : '0.5rem 1.25rem'};
+  padding: ${baseColor.color === 'secondary' ? 'calc(0.5rem - 1px) calc(1.25rem - 1px)' : '0.5rem 1.25rem'};
   cursor: pointer;
   font-weight: 500;
   font-size: 1rem;
@@ -16,25 +21,25 @@ const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
   gap: 0.5rem;
   
   ${
-    color === 'secondary'
+    baseColor.color === 'secondary'
       ? `
         background-color: transparent;
-        color: var(--primary-50);
-        border: solid 1px var(--primary-50);
+        color: var(--primary-${baseColor.base + 10});
+        border: solid 1px var(--primary-${baseColor.base + 10});
 
         &:hover {
-          color: var(--primary-70);
-          border: solid 1px var(--primary-70);
+          color: var(--primary-${baseColor.base + 30});
+          border: solid 1px var(--primary-${baseColor.base + 30});
         }
 
         &:focus {
-          outline: 3px solid var(--primary-50);
+          outline: 3px solid var(--primary-${baseColor.base + 10});
           outline-offset: 2px;
         }
 
         &:active {
-          color: var(--primary-60);
-          border: solid 1px var(--primary-60);
+          color: var(--primary-${baseColor.base + 20});
+          border: solid 1px var(--primary-${baseColor.base + 20});
         }
         
         &:disabled {
@@ -44,18 +49,18 @@ const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
         }`
       : `
         color: white;
-        background-color: var(--primary-50);
+        background-color: var(--primary-${baseColor.base + 10});
         &:hover {
-          background: var(--primary-70);
+          background: var(--primary-${baseColor.base + 30});
         }
 
         &:focus {
-          outline: 3px solid var(--primary-50);
+          outline: 3px solid var(--primary-${baseColor.base + 10});
           outline-offset: 2px;
         }
 
         &:active {
-          background-color: var(--primary-60);
+          background-color: var(--primary-${baseColor.base + 20});
         }
         
         &:disabled {
@@ -68,7 +73,7 @@ const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
   ${
     size === 'sm'
       ? `
-    padding: ${color === 'secondary' ? 'calc(0.5rem - 1px) calc(1rem - 1px)' : '0.5rem 1rem'};
+    padding: ${baseColor.color === 'secondary' ? 'calc(0.5rem - 1px) calc(1rem - 1px)' : '0.5rem 1rem'};
     font-size: 0.875rem;
     line-height: 1rem;
   `
@@ -78,7 +83,7 @@ const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
   ${
     size === 'lg'
       ? `
-    padding: ${color === 'secondary' ? 'calc(1rem - 1px) calc(2rem - 1px)' : '1rem 2rem'};
+    padding: ${baseColor.color === 'secondary' ? 'calc(1rem - 1px) calc(2rem - 1px)' : '1rem 2rem'};
     font-size: 1.125rem;
     line-height: 1.75rem;
   `
@@ -89,14 +94,15 @@ const button = (color?: 'secondary', size?: 'sm' | 'lg') => `
     outline: none;
   }
 `
+}
 
-export const Button = styled.button<{ $size?: 'sm' | 'lg'; $color?: 'secondary' }>`
-  ${({ $color, $size }) => button($color, $size)}
+export const Button = styled.button<{ $size?: 'sm' | 'lg'; $priority?: Priority }>`
+  ${({ $priority, $size }) => button($priority, $size)}
 `
 
-export const ButtonLink = styled(Link)<{ $size?: 'sm' | 'lg'; $color?: 'secondary' }>`
+export const ButtonLink = styled(Link)<{ $size?: 'sm' | 'lg'; $priority?: Priority }>`
   font-size: 1rem;
   line-height: 1.5;
   text-decoration: none;
-  ${({ $color, $size }) => button($color, $size)}
+  ${({ $priority, $size }) => button($priority, $size)}
 `

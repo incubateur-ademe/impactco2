@@ -1,9 +1,9 @@
-import { useContext, useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Tile from 'components/misc/tiles/Tile'
-import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
+import useRulesContextNumerique, { evaluateNumber } from 'components/numerique/RulesProviderNumerique'
 
 const Wrapper = styled.div`
   margin-bottom: 2.5rem;
@@ -43,10 +43,9 @@ const Tiles = styled.div`
 `
 
 export default function Total() {
-  // @ts-expect-error: TODO
-  const { engine, situation, numberEmails } = useContext(RulesContextNumerique)
+  const { engine, situation, numberEmails } = useRulesContextNumerique()
 
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
   const equivalentsToShow = useMemo(
     () =>
@@ -57,12 +56,12 @@ export default function Total() {
   )
   const total = useMemo(
     () =>
-      engine.evaluate('email').nodeValue * numberEmails +
-      (engine.evaluate('streaming . durée').nodeValue ? engine.evaluate('streaming').nodeValue : 0) +
-      (engine.evaluate('visio . durée').nodeValue ? engine.evaluate('visio').nodeValue : 0) -
-      (engine.evaluate('email . terminaux . construction').nodeValue * numberEmails +
-        engine.evaluate('streaming . terminaux . construction').nodeValue +
-        engine.evaluate('visio . terminaux . construction').nodeValue),
+      evaluateNumber(engine, 'email') * numberEmails +
+      (evaluateNumber(engine, 'streaming . durée') ? evaluateNumber(engine, 'streaming') : 0) +
+      (evaluateNumber(engine, 'visio . durée') ? evaluateNumber(engine, 'visio') : 0) -
+      (evaluateNumber(engine, 'email . terminaux . construction') * numberEmails +
+        evaluateNumber(engine, 'streaming . terminaux . construction') +
+        evaluateNumber(engine, 'visio . terminaux . construction')),
     [engine, situation, numberEmails]
   )
 

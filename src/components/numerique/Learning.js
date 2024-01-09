@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
@@ -39,7 +39,7 @@ const Strong = styled.p`
 const Title = styled.h2``
 const Text = styled.p``
 export default function Learning() {
-  const { setCo2e } = useContext(ModalContext)
+  const { setCo2e } = useModalContext()
 
   return (
     <StyledSection>

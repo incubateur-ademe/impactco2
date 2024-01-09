@@ -1,16 +1,16 @@
-import { useContext, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import formatConstruction from 'utils/formatConstruction'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Instruction from 'components/misc/category/Instruction'
 import { Checkboxes, Top } from 'components/misc/category/Top'
-import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
+import useRulesContextNumerique, { evaluateNumber } from 'components/numerique/RulesProviderNumerique'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.second};
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   border-radius: 1rem;
   padding: 1.5rem;
 `
-const Title = styled.h3`
+const Title = styled.h2`
   text-align: center;
 `
 
@@ -53,9 +53,8 @@ const devices = [
 ]
 
 export default function Detail({ category }: { category: Category }) {
-  // @ts-expect-error: TODO
-  const { engine, situation, numberEmails } = useContext(RulesContextNumerique)
-  const { equivalents } = useContext(DataContext)
+  const { engine, situation, numberEmails } = useRulesContextNumerique()
+  const { equivalents } = useDataContext()
 
   const [displayAll, setDisplayAll] = useState(false)
 
@@ -78,9 +77,9 @@ export default function Detail({ category }: { category: Category }) {
         slug: 'email',
         title: `1 an d'emails (${formatNumber(numberEmails * 52)} emails)`,
         emoji: '📧',
-        color: '#6C8CC1',
+        color: '#436CB0',
         value:
-          ((engine.evaluate('email').nodeValue - engine.evaluate('email . terminaux . construction').nodeValue) *
+          ((evaluateNumber(engine, 'email') - evaluateNumber(engine, 'email . terminaux . construction')) *
             numberEmails *
             52) /
           1000,
@@ -89,14 +88,12 @@ export default function Detail({ category }: { category: Category }) {
       {
         id: 'visioconference',
         slug: 'visioconference',
-        title: `1 an de visioconférence (${formatNumber(
-          (engine.evaluate('visio . durée').nodeValue / 60) * 52
-        )} heures)`,
+        title: `1 an de visioconférence (${formatNumber((evaluateNumber(engine, 'visio . durée') / 60) * 52)} heures)`,
         emoji: '🎥',
-        color: '#3DC7AB',
+        color: '#227A6A',
         value:
-          (((engine.evaluate('visio . durée').nodeValue ? engine.evaluate('visio').nodeValue : 0) -
-            engine.evaluate('visio . terminaux . construction').nodeValue) *
+          (((evaluateNumber(engine, 'visio . durée') ? evaluateNumber(engine, 'visio') : 0) -
+            evaluateNumber(engine, 'visio . terminaux . construction')) *
             52) /
           1000,
         onClick: () => track('Usage numérique', 'Navigation equivalent', 'visioconference'),
@@ -104,12 +101,12 @@ export default function Detail({ category }: { category: Category }) {
       {
         id: 'streaming',
         slug: 'streamingvideo',
-        title: `1 an de streaming (${formatNumber((engine.evaluate('streaming . durée').nodeValue / 60) * 52)} heures)`,
+        title: `1 an de streaming (${formatNumber((evaluateNumber(engine, 'streaming . durée') / 60) * 52)} heures)`,
         emoji: '🎬',
-        color: '#C25166',
+        color: '#B93C69',
         value:
-          (((engine.evaluate('streaming . durée').nodeValue ? engine.evaluate('streaming').nodeValue : 0) -
-            engine.evaluate('streaming . terminaux . construction').nodeValue) *
+          (((evaluateNumber(engine, 'streaming . durée') ? evaluateNumber(engine, 'streaming') : 0) -
+            evaluateNumber(engine, 'streaming . terminaux . construction')) *
             52) /
           1000,
         onClick: () => track('Usage numérique', 'Navigation equivalent', 'streaming'),
@@ -133,7 +130,7 @@ export default function Detail({ category }: { category: Category }) {
 
   return (
     <Wrapper>
-      <Title>Détail de mon impact</Title>
+      <Title className='title-h3'>Détail de mon impact</Title>
       <Text>
         En général, la majorité de votre empreinte numérique provient de la construction de vos appareils et pas de
         l’usage de ces derniers.

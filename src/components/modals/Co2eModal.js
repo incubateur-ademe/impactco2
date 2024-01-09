@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 
 const Title = styled.h2``
 const Text = styled.p``
 export default function Co2eModal() {
-  const { Co2e: open, setCo2e: setOpen } = useContext(ModalContext)
+  const { Co2e: open, setCo2e: setOpen } = useModalContext()
   return (
     <Modal open={open} setOpen={setOpen}>
       <Title>

@@ -6,9 +6,10 @@ export default function OptionalTraj(props) {
       <div className='item1' />
       <div className='item2'>
         <FlexCenter>
-          <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
+          <Text htmlFor='km-input'>Pour cela, vous parcourez une distance de&nbsp;</Text>
           <Flex>
             <Input
+              id='km-input'
               type='number'
               data-testid='kms'
               value={props.km}
@@ -30,7 +31,7 @@ export default function OptionalTraj(props) {
   )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
   background-color: ${(props) => props.theme.colors.textLight2};
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
@@ -61,7 +62,7 @@ const Input = styled.input`
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
-  color: ${(props) => props.theme.colors.main2};
+  color: var(--primary-60);
   text-align: right;
   width: 2rem;
 `
@@ -81,7 +82,7 @@ const Flex = styled.div`
 `
 
 const SmallExplanation = styled.div`
-  color: ${(props) => props.theme.colors.textGray};
+  color: var(--neutral-50);
   font-size: 14px;
   padding-right: 0.5rem;
 `

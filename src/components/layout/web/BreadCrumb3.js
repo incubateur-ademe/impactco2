@@ -17,7 +17,7 @@ export default function BreadCrumb3() {
   return (
     <Section $withoutPadding>
       <SectionWideContent>
-        <nav aria-label="fil d'ariane">
+        <div aria-label="fil d'ariane">
           <Wrapper>
             <Link href='/'>Accueil</Link>
             {' > '}
@@ -32,7 +32,7 @@ export default function BreadCrumb3() {
               </>
             )}
           </Wrapper>
-        </nav>
+        </div>
       </SectionWideContent>
     </Section>
   )

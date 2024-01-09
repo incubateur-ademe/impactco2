@@ -7,6 +7,7 @@ import Marianne from 'components/base/Marianne'
 import { Section, SectionWideContent } from 'components/base/Section'
 import NavSearchBar from 'components/misc/search/NavSearchBar'
 import Hamburger from './Hamburger'
+import SkipLinks from './SkipLinks'
 import MenuSweet from './nav/MenuSweet'
 
 export default function HeaderSweet() {
@@ -18,38 +19,41 @@ export default function HeaderSweet() {
 
   return (
     <BoxedShadow>
-      <Section $withoutPadding>
-        <SectionWideContent>
-          <Header aria-label='En-tête'>
-            <LogoBar>
-              <Logos>
-                <Hideable>
-                  <Link href='/'>
-                    <Marianne />
-                  </Link>
-                </Hideable>
-                <Hideable>
-                  <Link href='/'>
-                    <Ademe />
-                  </Link>
-                </Hideable>
-                <NonHideable>
-                  <Logo />
-                </NonHideable>
-              </Logos>
-              <Actions>
-                <ActionSearch>
-                  <NavSearchBar />
-                </ActionSearch>
-                <HamburgerContainer>
-                  <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked} />
-                </HamburgerContainer>
-              </Actions>
-            </LogoBar>
-          </Header>
-        </SectionWideContent>
-      </Section>
-      <NavBar>
+      <header aria-label='En-tête'>
+        <SkipLinks />
+        <Section $withoutPadding>
+          <SectionWideContent>
+            <Header>
+              <LogoBar>
+                <Logos>
+                  <Hideable>
+                    <Link href='/' aria-label="Logo Marianne, redirection vers l'accueil">
+                      <Marianne />
+                    </Link>
+                  </Hideable>
+                  <Hideable>
+                    <Link href='/' aria-label="Logo ADEME, redirection vers l'accueil">
+                      <Ademe />
+                    </Link>
+                  </Hideable>
+                  <NonHideable>
+                    <Logo />
+                  </NonHideable>
+                </Logos>
+                <Actions>
+                  <ActionSearch>
+                    <NavSearchBar />
+                  </ActionSearch>
+                  <HamburgerContainer>
+                    <Hamburger hamburgerOpened={hamburgerOpened} hamburgerClicked={hamburgerClicked} />
+                  </HamburgerContainer>
+                </Actions>
+              </LogoBar>
+            </Header>
+          </SectionWideContent>
+        </Section>
+      </header>
+      <NavBar id='header-navigation'>
         <Section $withoutPadding>
           <SectionWideContent>
             <NavLinksMobile $shouldDisplay={hamburgerOpened}>
@@ -138,7 +142,7 @@ const NavLinksDesktop = styled.div`
   margin: 0 -0.75rem;
 `
 
-const Header = styled.header`
+const Header = styled.div`
   position: relative; // or box-shadow will not appear
 `
 

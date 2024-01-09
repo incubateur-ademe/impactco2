@@ -1,7 +1,7 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import Button from 'components/base/buttons/Button'
-import RulesContextNumerique from '../RulesProviderNumerique'
+import useRulesContextNumerique from '../RulesProviderNumerique'
 import Question from './expertMode/Question'
 
 const Wrapper = styled.div`
@@ -21,7 +21,7 @@ const StyledButtonLink = styled(Button)`
   margin-bottom: 2rem;
 `
 export default function ExpertMode(props) {
-  const { engine, setSituation } = useContext(RulesContextNumerique)
+  const { engine, setSituation } = useRulesContextNumerique()
 
   const [open, setOpen] = useState(false)
   return (

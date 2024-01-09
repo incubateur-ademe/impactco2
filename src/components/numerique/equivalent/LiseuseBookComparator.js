@@ -1,10 +1,10 @@
-import React, { useContext, useMemo, useRef, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import { track } from 'utils/matomo'
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
+import useDataContext from 'components/providers/DataProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 import { Title } from 'components/visualizations/Visualization.styles'
@@ -92,9 +92,9 @@ const Thumb = styled.div`
   }
 `
 export default function LiseuseBookComparator() {
-  const { setCo2e } = useContext(ModalContext)
+  const { setCo2e } = useModalContext()
 
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
   const liseuse = useMemo(() => equivalents.find((equivalent) => ['liseuse'].includes(equivalent.slug)), [equivalents])
   const livre = useMemo(
     () => equivalents.find((equivalent) => ['livredepoche'].includes(equivalent.slug)),

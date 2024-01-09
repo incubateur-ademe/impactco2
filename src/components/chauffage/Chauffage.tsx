@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Category } from 'types/category'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import BarChart from 'components/charts/BarChart'
 import Simulator from 'components/misc/Simulator'
 import CategoryWrapper from 'components/misc/category/CategoryWrapper'
@@ -15,7 +15,7 @@ const DEFAULT_M2 = 63
 const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean }) => {
   const router = useRouter()
   const [value, setValue] = useState(DEFAULT_M2)
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
   useEffect(() => {
     if (router.query.m2) {
@@ -46,7 +46,14 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
             Découvrez la quantité de CO<sub>2</sub>e que vous émettez pour chauffer cette surface par année
           </>
         }>
-        <SliderWithInput value={value} setValue={setValue} unit='m²' digit={3} tracking='Chauffage' />
+        <SliderWithInput
+          value={value}
+          setValue={setValue}
+          unit='m²'
+          digit={3}
+          tracking='Chauffage'
+          aria-label='Surface à chauffer'
+        />
       </Simulator>
       <BarChart equivalents={equivalentsOfCategory} category={category} />
     </CategoryWrapper>

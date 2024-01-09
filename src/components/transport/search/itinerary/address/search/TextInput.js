@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import Submit from './textInput/Submit'
 
 const loading = keyframes`
   from {
@@ -62,7 +61,6 @@ export default React.forwardRef(function TextInput(props, ref) {
         onFocus={() => props.setFocus(true)}
         onBlur={() => props.setFocus(false)}
       />
-      <Submit visible={props.suggestion && props.suggestionVisible && props.search} setFocus={props.setFocus} />
     </Wrapper>
   )
 })

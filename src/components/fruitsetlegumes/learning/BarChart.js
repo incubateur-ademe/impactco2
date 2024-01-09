@@ -26,7 +26,7 @@ const Bars = styled.div`
 const Bar = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.colors[props.$secondary ? 'main' : 'error']};
-  color: ${(props) => props.theme.colors.second};
+  color: ${(props) => props.theme.colors.background};
   display: flex;
   font-style: italic;
   font-weight: 700;

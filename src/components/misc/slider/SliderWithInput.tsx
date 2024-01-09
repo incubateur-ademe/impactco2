@@ -58,12 +58,14 @@ const SliderWithInput = ({
   unit,
   digit,
   tracking,
+  'aria-label': ariaLabel,
 }: {
   value: number
   setValue: Dispatch<SetStateAction<number>>
   unit: string
   digit: number
   tracking: string
+  ['aria-label']: string
 }) => {
   const tracked = useRef(false)
 
@@ -114,7 +116,7 @@ const SliderWithInput = ({
             renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}
             renderThumb={({ props }) => (
               // Thumb can't be in his own component (don't know why)
-              <Thumb {...props}>
+              <Thumb {...props} aria-label={ariaLabel}>
                 <ThumbContent value={value} setOpenTextInput={setOpenTextInput} unit={unit} />
               </Thumb>
             )}

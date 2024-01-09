@@ -16,7 +16,7 @@ const Wrapper = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: ${(props) => (props.current ? 'var(--secondary-20)' : props.theme.colors.mainLight)};
   }
 
   ${(props) => props.theme.mq.small} {

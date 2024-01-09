@@ -20,8 +20,8 @@ export default function ByArticle() {
             target='_blank'
             rel='noreferrer noopener'
             onClick={() => track('Click', `Vignette ${reuseCard.tagtext}`, `click_vignette_${reuseCard.tagtext}`)}>
-            <ReuseCardImgContainer color={reuseCard.color}>
-              <ReuseCardImg img={reuseCard.img}>
+            <ReuseCardImgContainer $color={reuseCard.color}>
+              <ReuseCardImg $img={reuseCard.img}>
                 <ReuseCardTag>{reuseCard.tagtext}</ReuseCardTag>
               </ReuseCardImg>
             </ReuseCardImgContainer>
@@ -60,7 +60,7 @@ export default function ByArticle() {
                     Utilisez le{' '}
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                      color='secondary'
+                      priority='secondary'
                       onClick={() => track('Click', 'Kit de diffusion', 'click_kit_diffusion')}>
                       Kit de diffusion
                     </Link>{' '}
@@ -69,7 +69,7 @@ export default function ByArticle() {
                   <MiddleLi>
                     Personnalisez le simulateur de votre choix grâce à notre{' '}
                     <Link
-                      color='secondary'
+                      priority='secondary'
                       href='/integration'
                       onClick={() => track('Click', 'Configurateur', 'click_configurateur')}>
                       configurateur
@@ -80,7 +80,7 @@ export default function ByArticle() {
                     Inspirez-vous d'
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
-                      color='secondary'
+                      priority='secondary'
                       onClick={() => track('Click', 'Exemples concrets', 'click_exemples_concrets')}>
                       exemples concrets
                     </Link>{' '}
@@ -105,7 +105,7 @@ export default function ByArticle() {
                     Consultez notre{' '}
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
-                      color='secondary'
+                      priority='secondary'
                       data-testid='byArticleFaq'
                       onClick={() => track('Click', 'FAQ', 'click_faq')}>
                       Foire aux Questions
@@ -220,7 +220,7 @@ const ReuseCard = styled.div`
   margin-right: 1rem;
 `
 const ReuseCardImg = styled.div`
-  background: url(${(props) => props.img});
+  background: url(${(props) => props.$img});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -250,7 +250,7 @@ const ReuseCardParagraph = styled.div`
 const ReuseCardTag = styled.div`
   background-color: white;
   border-radius: 4px;
-  color: #d47909;
+  color: #a35b01;
   font-size: 0.8rem;
   font-weight: 700;
   left: 0.5rem;
@@ -286,7 +286,7 @@ const ReuseCardWrapper = styled.div`
 `
 
 const ReuseCardImgContainer = styled.div`
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.$color};
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
 `

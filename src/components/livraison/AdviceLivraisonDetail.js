@@ -87,7 +87,7 @@ const Wrapper = styled.section`
 `
 
 const H3Title = styled.h3`
-  color: ${(props) => props.theme.colors.main3};
+  color: var(--primary-60);
   font-size: 1rem;
   ${(props) => props.theme.mq.small} {
     font-size: 0.875rem;

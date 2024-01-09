@@ -1,13 +1,13 @@
 import Fuse from 'fuse.js'
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Suggestions from './searchBar/Suggestions'
 import TextInputSmall from './searchBar/TextInputSmall'
 
 export default function NavSearchBar(props) {
-  const { equivalents, categories } = useContext(DataContext)
+  const { equivalents, categories } = useDataContext()
   const [search, setSearch] = useState('')
 
   const [results, setResults] = useState([])

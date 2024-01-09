@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 import Address from './itinerary/Address'
 import Days from './teletravail/Days'
 import Transportations from './teletravail/Transportations'
@@ -18,7 +18,7 @@ const Details = styled.button`
   text-decoration: underline;
 `
 export default function Teletravail() {
-  const { start, setStart, end, setEnd, teletravailTransportation, setTeletravailModal } = useContext(TransportContext)
+  const { start, setStart, end, setEnd, teletravailTransportation, setTeletravailModal } = useTransportContext()
 
   return (
     <Wrapper>

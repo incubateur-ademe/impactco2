@@ -10,10 +10,12 @@ export default function Signature({
   noMargin,
   noLink,
   center,
+  color,
 }: {
   noMargin?: boolean
   noLink?: boolean
   center?: boolean
+  color?: string
 }) {
   return (
     <OutsideGrid $noMargin={noMargin} $center={center}>
@@ -31,7 +33,7 @@ export default function Signature({
         )}
       </div>
       <div>
-        <Logo viewBox={'10 10 313 313'} />
+        <Logo viewBox={'10 10 313 313'} color={color} />
       </div>
     </OutsideGrid>
   )

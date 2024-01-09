@@ -6,7 +6,7 @@ const Svg = styled.svg``
 
 export default function Facebook2(props) {
   return (
-    <FacebookShareButton url={props.url} quote={props.quote}>
+    <FacebookShareButton url={props.url} quote={props.quote} aria-label='Partager sur facebook'>
       <Svg width='60px' height='60px' viewBox='0 0 60 60' version='1.1' xmlns='http://www.w3.org/2000/svg'>
         <g id='Page-1' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
           <g id='fbz'>

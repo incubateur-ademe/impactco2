@@ -7,7 +7,7 @@ export default function OptionalRelay(props) {
       <FlexContainer>
         <div className='emptySpace' />
         <div className='item2'>
-          <Text>Vous effectuez généralement le trajet jusqu'au {props.point}</Text>
+          <Text htmlFor='relays'>Vous effectuez généralement le trajet jusqu'au {props.point}</Text>
         </div>
         <div className='item3'>
           <SelectRelays changeRelay={props.changeRelay} value={props.value} />
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   }
 `
 
-const Text = styled.div`
+const Text = styled.label`
   font-size: 16px;
   ${(props) => props.theme.mq.small} {
     font-size: 14px;

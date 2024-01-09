@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import { Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
@@ -36,7 +36,7 @@ const StyledLink = styled(Link)`
 `
 
 export default function Details({ equivalent, category }: { equivalent: Equivalent; category: Category }) {
-  const { setCo2e, setWarningNegaoctet } = useContext(ModalContext)
+  const { setCo2e, setWarningNegaoctet } = useModalContext()
   return (
     <>
       <Section $withoutPadding>

@@ -24,7 +24,7 @@ const Wrapper = styled(Link)`
   }
 `
 const Header = styled.div`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-60);
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;

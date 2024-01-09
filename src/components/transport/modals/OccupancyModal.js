@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Modal from 'components/base/Modal'
 import Link from 'components/base/buttons/Link'
-import TransportContext from '../TransportProvider'
+import useTransportContext from '../TransportProvider'
 
 const Title = styled.h2``
 const Text = styled.p``
 export default function Occupancy() {
-  const { occupancyModal: open, setOccupancyModal: setOpen } = useContext(TransportContext)
+  const { occupancyModal: open, setOccupancyModal: setOpen } = useTransportContext()
   return (
     <Modal open={open} setOpen={setOpen}>
       <Title>Taux de remplissage des véhicules</Title>

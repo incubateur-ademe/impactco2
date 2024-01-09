@@ -1,8 +1,8 @@
 import IframeResizer from 'iframe-resizer-react'
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { StringParam, useQueryParam, withDefault } from 'use-query-params'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 import Configurator from 'components/views/integration/Configurator'
@@ -29,7 +29,7 @@ const ConfiguratorWrapper = styled.div`
 `
 
 export default function Integration() {
-  const { equivalents, categories } = useContext(DataContext)
+  const { equivalents, categories } = useDataContext()
 
   const [theme, setTheme] = useState('default')
 

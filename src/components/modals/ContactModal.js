@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import useIframe from 'hooks/useIframe'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 
 const StyledModal = styled(Modal)`
   padding: 0;
 `
 export default function SurveyModal() {
-  const { survey: open, setSurvey: setOpen } = useContext(ModalContext)
+  const { survey: open, setSurvey: setOpen } = useModalContext()
 
   const isIframe = useIframe()
   const [iframe, setIframe] = useState(false)

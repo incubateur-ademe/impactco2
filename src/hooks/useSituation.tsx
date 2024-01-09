@@ -1,9 +1,12 @@
+import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import { useRef, useState } from 'react'
 
-export default function useSituation(engine, defaultSituation) {
+export default function useSituation(
+  engine: Engine,
+  defaultSituation?: Partial<Record<string, PublicodesExpression | ASTNode>>
+) {
   const [localSituation, setLocalSituation] = useState(defaultSituation)
-
-  const prevSituation = useRef(null)
+  const prevSituation = useRef(defaultSituation)
 
   if (prevSituation.current !== localSituation) {
     const newSituation = { ...prevSituation.current, ...localSituation }

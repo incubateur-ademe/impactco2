@@ -19,7 +19,7 @@ export const Secondary: Story = {
   args: {
     children: 'em wolloF',
     href: '/',
-    color: 'secondary',
+    priority: 'secondary',
   },
 }
 

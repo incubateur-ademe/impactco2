@@ -1,9 +1,9 @@
 import { DndContext, MeasuringStrategy, closestCenter } from '@dnd-kit/core'
 import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortable'
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import ShareableContent from './ShareableContent'
 import { overScreenCategoryValues } from './category/overScreens/Values'
 import AddButton from './tiles/AddButton'
@@ -30,7 +30,7 @@ const TilesWrapper = styled.div`
   }
 `
 export default function Tiles(props) {
-  const { equivalents, tiles, setTiles } = useContext(DataContext)
+  const { equivalents, tiles, setTiles } = useDataContext()
 
   const [overScreen, setOverScreen] = useState()
   const overScreenValues = useMemo(() => overScreenCategoryValues(), [])

@@ -9,17 +9,17 @@ test.beforeEach(async ({ page }) => {
 
 test('On clique sur le bouton de partage en haut, une URL correcte est proposée', async ({ page }) => {
   // Given
-  expect(page.locator('#shareUrl')).not.toBeAttached()
+  expect(page.getByTestId('clipboard-box')).not.toBeAttached()
   // When
   await page.locator('#shareUp').click()
   // Then
-  await expect(page.locator('#shareUrl')).toHaveValue('http://localhost:3000/livraison')
+  await expect(page.getByTestId('clipboard-box')).toHaveText('http://localhost:3000/livraison')
 })
 test('On clique sur le bouton de partage en bas, une URL correcte est proposée', async ({ page }) => {
   // Given
-  expect(page.locator('#shareUrl')).not.toBeAttached()
+  expect(page.getByTestId('clipboard-box')).not.toBeAttached()
   // When
   await page.locator('#shareDown').click()
   // Then
-  await expect(page.locator('#shareUrl')).toHaveValue('http://localhost:3000/livraison#ressource')
+  await expect(page.getByTestId('clipboard-box')).toHaveText('http://localhost:3000/livraison#ressource')
 })

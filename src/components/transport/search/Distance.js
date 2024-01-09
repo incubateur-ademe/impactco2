@@ -1,8 +1,8 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 import NumberInput from './distance/NumberInput'
 import PlusOrMinusButton from './distance/PlusOrMinusButton'
 import ThumbContent from './distance/ThumbContent'
@@ -50,7 +50,7 @@ const Thumb = styled.div`
   }
 `
 export default function Distance() {
-  const { km, setKm } = useContext(TransportContext)
+  const { km, setKm } = useTransportContext()
   const tracked = useRef(false)
 
   const cleanRound = (x) => {

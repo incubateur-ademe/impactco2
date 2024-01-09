@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Slider from 'components/base/Slider'
-import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
+import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
 export default function ParticipantInput(props) {
-  const { engine, setSituation } = useContext(RulesContextNumerique)
+  const { engine, setSituation } = useRulesContextNumerique()
 
   return props.name === 'visio' ? (
     <SliderWrapper>

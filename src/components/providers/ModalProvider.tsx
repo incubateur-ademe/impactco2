@@ -1,4 +1,4 @@
-import React, { Dispatch, ReactNode, SetStateAction, useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react'
 import Co2eModal2 from 'components/modals/Co2eModal2'
 import DetailLivraisonModal2 from 'components/modals/DetailLivraisonModal2'
 import DetailsUsagesNumModal from 'components/modals/DetailsUsagesNumModal'
@@ -37,8 +37,7 @@ const ModalContext = React.createContext<{
   setHypothesisLivraison: Dispatch<SetStateAction<boolean>>
   warningNegaoctet: boolean
   setWarningNegaoctet: Dispatch<SetStateAction<boolean>>
-  //@ts-expect-error: empty init
-}>({})
+} | null>(null)
 
 export function ModalProvider({ children }: { children: ReactNode }) {
   const [Co2e, setCo2e] = useState(false)
@@ -99,4 +98,14 @@ export function ModalProvider({ children }: { children: ReactNode }) {
   )
 }
 
-export default ModalContext
+const useModalContext = () => {
+  const context = useContext(ModalContext)
+
+  if (!context) {
+    throw new Error('useModalContext has to be used within <ModalProvider>')
+  }
+
+  return context
+}
+
+export default useModalContext

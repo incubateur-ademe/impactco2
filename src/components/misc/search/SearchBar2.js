@@ -1,8 +1,8 @@
 import Fuse from 'fuse.js'
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Suggestions from './searchBar/Suggestions'
 import TextInput from './searchBar/TextInput'
 
@@ -28,7 +28,7 @@ const Wrapper = styled.form`
 `
 
 export default function SearchBar2(props) {
-  const { equivalents, categories } = useContext(DataContext)
+  const { equivalents, categories } = useDataContext()
   const [search, setSearch] = useState('')
 
   const [results, setResults] = useState([])
@@ -106,8 +106,7 @@ export default function SearchBar2(props) {
         }
       }}
       className={props.className}
-      $hideon={props.hideon}
-      id='header-search'>
+      $hideon={props.hideon}>
       <TextInput
         placeholder={props.placeholder}
         ref={input}

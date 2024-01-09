@@ -1,16 +1,21 @@
 import React, { ButtonHTMLAttributes } from 'react'
 import { Button as StyledButton } from './Button.styles'
 import { Button as LinkButton } from './Link.styles'
+import { Priority } from './priority'
 
 const Button = ({
   asLink,
-  color,
+  priority,
   size,
   ...rest
-}: { size?: 'sm' | 'lg'; color?: 'secondary' } & ButtonHTMLAttributes<HTMLButtonElement> & {
+}: { size?: 'sm' | 'lg'; priority?: Priority } & ButtonHTMLAttributes<HTMLButtonElement> & {
     asLink?: boolean
   }) => {
-  return asLink ? <LinkButton $color={color} {...rest} /> : <StyledButton $size={size} $color={color} {...rest} />
+  return asLink ? (
+    <LinkButton $priority={priority} {...rest} />
+  ) : (
+    <StyledButton $size={size} $priority={priority} {...rest} />
+  )
 }
 
 export default Button

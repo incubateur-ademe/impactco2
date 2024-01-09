@@ -1,9 +1,8 @@
-import React from 'react'
 import { Preview } from '@storybook/react'
+import React from 'react'
 import { GlobalStyle, themes } from '../src/utils/styles'
-import { StyleProvider } from '../src/components/providers/StyleProvider'
 import '../src/utils/variables.css'
-import '../src/utils/fonts.css'
+import { StyleProvider } from '../src/components/providers/StyleProvider'
 
 const preview: Preview = {
   parameters: {
@@ -18,7 +17,12 @@ const preview: Preview = {
 }
 
 export const decorators = [
-  (story) => <StyleProvider><GlobalStyle/>{story()}</StyleProvider>
+  (story) => (
+    <StyleProvider>
+      <GlobalStyle />
+      {story()}
+    </StyleProvider>
+  ),
 ]
 
 export default preview
