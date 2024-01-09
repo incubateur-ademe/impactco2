@@ -213,16 +213,16 @@ test('Load correct number of tabs and redirect with params', async ({ page }) =>
   )
 
   await test.step('check number of tabs', async () => {
-    await expect(page.getByTestId('teletravail-wrapper')).toBeVisible()
-    await expect(page.getByTestId('transport-tab-teletravail')).toBeVisible()
-    await expect(page.getByTestId('transport-tab-distance')).toBeVisible()
-    await expect(page.getByTestId('transport-tab-itineraire')).not.toBeVisible()
+    await expect(page.getByTestId('teletravail-wrapper')).toBeVisible({ timeout: 5000 })
+    await expect(page.getByTestId('transport-tab-teletravail')).toBeVisible({ timeout: 5000 })
+    await expect(page.getByTestId('transport-tab-distance')).toBeVisible({ timeout: 5000 })
+    await expect(page.getByTestId('transport-tab-itineraire')).not.toBeVisible({ timeout: 5000 })
   })
 
   await test.step('test redirection', async () => {
     await page.getByTestId('transport-tab-distance').click()
 
-    await expect(page.getByTestId('distance-wrapper')).toBeVisible()
+    await expect(page.getByTestId('distance-wrapper')).toBeVisible({ timeout: 5000 })
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('12 km')
 
     await expect(page.getByTestId('bar-chart-item-busthermique')).toBeAttached()

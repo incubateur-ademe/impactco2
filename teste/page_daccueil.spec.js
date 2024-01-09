@@ -69,6 +69,6 @@ test('Barre de recherche (avec résultats)', async ({ page }) => {
   })
 
   await test.step("On est redirigé vers l'écran correspondant", async () => {
-    await expect(page).toHaveURL(/.*transport/)
+    await expect(page).toHaveURL(/.*transport/, { timeout: 5000 })
   })
 })
