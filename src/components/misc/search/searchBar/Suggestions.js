@@ -9,19 +9,19 @@ const Wrapper = styled.div`
   overflow: hidden;
 `
 const Suggestion = styled.div`
-  background-color: ${(props) => props.theme.colors[props.current ? 'second' : 'background']};
+  background-color: ${(props) => (props.current ? 'var(--secondary-10)' : 'var(--neutral-00)')};
   cursor: pointer;
   padding: 0.75em 0.75em 0.75em 2em;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: var(--primary-10);
   }
   &:last-child {
     padding-bottom: 1em;
   }
 `
 const NotFound = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   font-weight: 300;
   padding: 0.75em 0.75em 0.75em 2em;
 `

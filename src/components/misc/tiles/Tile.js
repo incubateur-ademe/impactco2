@@ -7,6 +7,7 @@ import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
+import { MEDIA } from 'utils/styles'
 import useIframe from 'hooks/useIframe'
 import useDataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
@@ -15,7 +16,7 @@ import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors[props.background ? 'textLight' : 'second']};
+  background-color: ${(props) => (props.background ? 'var(--neutral-10)' : 'var(--secondary-10)')};
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -23,10 +24,10 @@ const Wrapper = styled.div`
   position: relative;
   width: calc(33.3333% - 1rem);
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     width: calc(33.3333% - 0.5rem);
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     width: calc(50% - 0.375rem);
   }
 `
@@ -47,11 +48,11 @@ const ButtonDrag = styled.button`
     width: auto;
 
     circle {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     display: none;
   }
 `
@@ -72,7 +73,7 @@ const ButtonRemove = styled.button`
     width: 100%;
 
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 
@@ -92,7 +93,7 @@ const EmojiWrapper = styled.div`
   }
 `
 const Title = styled.p`
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.2;
@@ -104,7 +105,7 @@ const Number = styled.span`
   font-size: 2rem;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1.75rem;
   }
 `

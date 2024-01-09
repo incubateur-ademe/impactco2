@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.mainLight};
+  background-color: var(--primary-10);
   border-radius: 0.125rem;
   height: 0.25rem;
   margin-bottom: 0.5rem;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 100%;
 
   &:before {
-    background-color: ${(props) => props.theme.colors.main};
+    background-color: var(--primary-50);
     bottom: 0;
     content: '';
     left: 0;

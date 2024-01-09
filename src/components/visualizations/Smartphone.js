@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
 
 const Title = styled.h3`
@@ -13,16 +14,16 @@ const Sizes = styled.div`
   justify-content: space-around;
   margin-bottom: 2.5rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     flex-direction: column;
     gap: 2vw;
   }
 `
 const Size = styled.p`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: var(--primary-50);
   border-radius: 50rem;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   display: flex;
   flex-direction: column;
   height: ${(props) => (props.small ? 10 : props.$large ? 13.375 : 12)}rem;
@@ -30,11 +31,11 @@ const Size = styled.p`
   margin: 0;
   width: ${(props) => (props.small ? 10 : props.$large ? 13.375 : 12)}rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     height: ${(props) => (props.small ? 20 : props.$large ? 28 : 24)}vw;
     width: ${(props) => (props.small ? 20 : props.$large ? 28 : 24)}vw;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     height: ${(props) => (props.small ? 30 : props.$large ? 40 : 35)}vw;
     width: ${(props) => (props.small ? 30 : props.$large ? 40 : 35)}vw;
   }
@@ -46,10 +47,10 @@ const StyledEmoji = styled(Emoji)`
   height: 2.5rem;
   margin-bottom: 0.5rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: ${(props) => (props.small ? 3 : props.$large ? 5 : 4)}vw;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: ${(props) => (props.small ? 5 : props.$large ? 7 : 6)}vw;
     height: auto;
   }
@@ -57,10 +58,10 @@ const StyledEmoji = styled(Emoji)`
 const Label = styled.span`
   display: block;
   margin-bottom: 0.5rem;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 2vw;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 3.5vw;
   }
 `
@@ -70,10 +71,10 @@ const Number = styled.span`
   font-weight: bold;
   line-height: 1;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 4vw;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 7vw;
   }
 `
@@ -82,10 +83,10 @@ const Unit = styled.span`
   font-size: 0.75rem;
   font-weight: 300;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 1.5vw;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 2.5vw;
   }
 `

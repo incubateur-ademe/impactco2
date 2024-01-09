@@ -78,9 +78,9 @@ export default function ReuseBulb() {
 }
 
 const UseBulb = styled.div`
-  background-color: #ebf2ff;
+  background-color: var(--secondary-10);
   border-radius: 8px;
-  color: ${(props) => props.theme.colors.persistentText};
+  color: var(--neutral-70);
   margin-top: 2rem;
   padding: 24px;
   position: relative;
@@ -88,7 +88,7 @@ const UseBulb = styled.div`
 
 const UseBulbTitle = styled.div`
   align-items: center;
-  background-color: white;
+  background-color: var(--neutral-00);
   border: 2px solid #ebf2ff;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 2px;
@@ -103,7 +103,7 @@ const UseBulbTitle = styled.div`
 `
 
 const BlackLink = styled(Link)`
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   > svg {
     display: none;
   }

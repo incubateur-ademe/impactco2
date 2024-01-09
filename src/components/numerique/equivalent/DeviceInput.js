@@ -1,6 +1,7 @@
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import useRulesContextNumerique from '../RulesProviderNumerique'
@@ -53,8 +54,8 @@ const Wrapper = styled.div`
 `
 
 const Slide = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
-  border: 0.0625rem solid ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
+  border: 0.0625rem solid var(--secondary-10);
   border-radius: 1rem;
   height: 100%;
   padding: 1.5rem;
@@ -71,7 +72,7 @@ const Sliders = styled.div`
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     flex-direction: column;
   }
 `

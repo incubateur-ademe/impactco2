@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 export const Card = styled(Link)`
-  background-color: white;
+  background-color: var(--neutral-00);
   border: 1px solid var(--secondary-20);
   border-radius: 4px;
   color: var(--neutral-70);

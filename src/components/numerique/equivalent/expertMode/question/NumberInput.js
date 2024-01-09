@@ -1,24 +1,25 @@
 import { serializeUnit } from 'publicodes'
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
   font-size: 1.25rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1.125rem;
   }
 `
 const Input = styled.input`
   background-color: transparent;
-  border: 0.125rem solid ${(props) => props.theme.colors[props.error ? 'error' : 'main']};
+  border: 0.125rem solid ${(props) => (props.error ? 'var(--critical-50)' : 'var(--primary-50)')};
   border-radius: 0.75rem;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   margin-right: 0.5rem;
   padding: 0.5rem 1rem;
   text-align: right;
   width: 7rem;
   &:focus {
-    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
+    box-shadow: 0 -0 0px 1px var(--primary-50);
     outline: none;
   }
 `

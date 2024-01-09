@@ -11,26 +11,26 @@ const displayAddress = (address: Address) => {
 }
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   border-radius: 0 0 1.375rem 1.375rem;
   max-height: 20rem;
   overflow-y: auto;
 
   position: relative;
 `
-const Suggestion = styled.div<{ $current: boolean; $isFetching: boolean }>`
-  background-color: ${(props) => props.theme.colors[props.$current ? 'mainLight' : 'background']};
+const Suggestion = styled.div<{ $current: boolean }>`
+  background-color: ${(props) => (props.$current ? 'var(--secondary-10)' : 'var(--neutral-00)')};
   cursor: pointer;
   font-size: 0.875rem;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: var(--primary-10);
   }
 
   mark {
     background-color: transparent;
-    color: ${(props) => props.theme.colors.text};
+    color: var(--neutral-70);
     opacity: 0.8;
   }
 `
@@ -38,7 +38,6 @@ const Suggestions = ({
   search,
   current,
   setCurrent,
-  isFetching,
   results,
   handleSuggestionClick,
 }: {
@@ -83,7 +82,6 @@ const Suggestions = ({
             index < maxSuggestions && (
               <Suggestion
                 $current={index === current}
-                $isFetching={isFetching}
                 key={result.properties.osm_id}
                 onClick={() => handleSuggestionClick(result)}
                 onMouseDown={(e) => e.preventDefault()}>

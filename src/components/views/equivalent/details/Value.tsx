@@ -6,6 +6,7 @@ import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import getFrenchFormattedNumber from 'utils/getFrenchFormattedNumber'
 import getNumberWithNDigitsAfterComma from 'utils/getNumberWithNDigitsAfterComma'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
 import { Section, SectionWideContent } from 'components/base/Section'
 
@@ -16,34 +17,34 @@ const Wrapper = styled.div`
 
 const Top = styled.div`
   border-radius: 1rem 1rem 0 0;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   position: relative;
 `
 const Number = styled.span`
   font-size: 3.75rem;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 3rem;
   }
 `
 const Unit = styled.span`
   font-size: 1rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.75rem;
   }
 `
 const Big = styled.span`
   font-size: 1.25rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
   }
 `
 const StyledEmoji = styled(Emoji)`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   border-radius: 5.25rem;
   display: flex;
   font-size: 3rem;
@@ -51,7 +52,7 @@ const StyledEmoji = styled(Emoji)`
   justify-content: center;
   width: 4.5rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 2rem;
     height: 3.25rem;
     width: 3.25rem;

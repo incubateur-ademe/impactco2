@@ -26,7 +26,7 @@ const Item = styled.div`
   }
 `
 const More = styled.sup`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   cursor: pointer;
   font-size: 0.625em;
 `

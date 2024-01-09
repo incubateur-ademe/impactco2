@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
 import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -126,7 +127,7 @@ const Flex = styled.div`
 `
 
 const HideableSpan = styled.span`
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     display: none;
   }
 `

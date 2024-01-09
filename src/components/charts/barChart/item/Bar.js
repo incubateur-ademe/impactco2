@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: ${(props) => props.$percent * 100}%;
 `
 const Container = styled.div`
-  background-color: ${(props) => props.color || props.theme.colors.main};
+  background-color: ${(props) => props.color || 'var(--primary-50)'};
   border-radius: 1rem;
   height: 100%;
   overflow: hidden;
@@ -17,7 +17,7 @@ const Container = styled.div`
   width: 100%;
 `
 const Usage = styled.div`
-  background-color: ${(props) => props.color || props.theme.colors.mainDark};
+  background-color: ${(props) => props.color || 'var(--primary-80)'};
   bottom: 0;
   position: absolute;
   right: 0;

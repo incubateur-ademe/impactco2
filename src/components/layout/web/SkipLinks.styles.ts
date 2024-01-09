@@ -23,7 +23,7 @@ export const Container = styled.div`
   }
 
   .visible-hidden:focus {
-    background-color: white;
+    background-color: var(--neutral-00);
     clip: auto;
     height: auto;
     overflow: auto;

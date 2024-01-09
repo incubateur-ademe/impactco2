@@ -1,17 +1,17 @@
 import '@testing-library/jest-dom'
 import { act, fireEvent, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { useState } from 'react'
-import { renderWithStyle } from 'test-utils/render-with-style'
 import NumberInput from 'components/osezchanger/components/NumberInput'
 
 const Wrapper = () => {
   const [value, setValue] = useState<number | undefined>()
-  return <NumberInput value={value} setValue={setValue} data-testid='question' tracking='nop' />
+  return <NumberInput id='nop' value={value} setValue={setValue} data-testid='question' tracking='nop' />
 }
 
 describe('Number Input', () => {
   it('Should not input negative number', () => {
-    renderWithStyle(<Wrapper />)
+    render(<Wrapper />)
 
     act(() => {
       fireEvent.change(screen.getByTestId('question-input'), { target: { value: '-1' } })
@@ -21,7 +21,7 @@ describe('Number Input', () => {
   })
 
   it('Should not reduce number below 0', () => {
-    renderWithStyle(<Wrapper />)
+    render(<Wrapper />)
 
     act(() => {
       screen.getByRole('button', { name: 'moins' }).click()

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -7,7 +8,7 @@ const Wrapper = styled.div`
   font-size: 0.875rem;
   margin: 0 auto;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin-bottom: 2rem;
   }
 `
@@ -16,9 +17,9 @@ const Label = styled.div`
 `
 const Selector = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: var(--primary-50);
   border-radius: 1.5rem;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   display: flex;
   flex-direction: column-reverse;
   gap: 0.5rem;
@@ -39,7 +40,7 @@ const Button = styled.button`
     width: 0.625rem;
 
     path {
-      fill: ${(props) => props.theme.colors.background};
+      fill: var(--neutral-00);
     }
   }
 `

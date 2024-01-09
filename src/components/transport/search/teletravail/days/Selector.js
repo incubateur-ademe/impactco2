@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight};
+  background-color: var(--neutral-50);
   border-radius: 1rem;
   margin: 0 1rem 1rem;
   padding: 1rem 1.5rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin: 0 0.75rem 1rem;
   }
 `
@@ -31,7 +32,7 @@ const Button = styled.button`
     width: 1.5rem;
 
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 `

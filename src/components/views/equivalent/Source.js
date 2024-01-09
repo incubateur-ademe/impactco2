@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Section, SectionWideContent } from 'components/base/Section'
 
 const Title = styled.h2`
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   text-align: center;
 `
 const Text = styled.div``

@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
@@ -23,7 +24,7 @@ const Tiles = styled.div`
   gap: 1.5rem;
   margin-bottom: 2.5rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     gap: 0.75rem;
   }
 `
@@ -36,9 +37,9 @@ const ButtonResults = styled(Button)`
 `
 const Input = styled.input`
   background-color: transparent;
-  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border: 0.125rem solid var(--primary-50);
   border-radius: 0.75rem;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   font-size: 1.125rem;
   margin: 0 0.5rem 1rem;
   padding: 0.5rem;
@@ -46,7 +47,7 @@ const Input = styled.input`
   width: ${(props) => (props.mode === 'emails' ? 6 : 4.5)}rem;
 
   &:focus {
-    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
+    box-shadow: 0 -0 0px 1px var(--primary-50);
     outline: none;
   }
 `

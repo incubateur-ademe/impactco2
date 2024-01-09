@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled(Link)`
@@ -7,7 +8,7 @@ const Wrapper = styled(Link)`
   display: flex;
   text-decoration: none;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.75rem;
   }
 
@@ -19,7 +20,7 @@ const Wrapper = styled(Link)`
 
   &:hover {
     .circle1 {
-      fill: ${(props) => props.$color || props.theme.colors.main};
+      fill: ${(props) => props.$color || 'var(--primary-50)'};
       transition: fill 300ms ease-in 200ms;
     }
 
@@ -31,11 +32,11 @@ const Wrapper = styled(Link)`
   }
 `
 const Path = styled.path`
-  fill: ${(props) => props.$color || props.theme.colors.main};
+  fill: ${(props) => props.$color || 'var(--primary-50)'};
 `
 const Circle = styled.circle`
-  fill: ${(props) => props.$color || props.theme.colors.main};
-  stroke: ${(props) => props.$color || props.theme.colors.main};
+  fill: ${(props) => props.$color || 'var(--primary-50)'};
+  stroke: ${(props) => props.$color || 'var(--primary-50)'};
   transition: fill 300ms ease-out;
 
   ${Wrapper}:hover & {
@@ -45,12 +46,12 @@ const Circle = styled.circle`
 `
 const HollowCircle1 = styled.circle`
   fill: transparent;
-  stroke: ${(props) => props.$color || props.theme.colors.main};
+  stroke: ${(props) => props.$color || 'var(--primary-50)'};
   transform-origin: center;
   transition: fill 300ms ease-out;
 
   ${Wrapper}:hover & {
-    fill: ${(props) => props.$color || props.theme.colors.main};
+    fill: ${(props) => props.$color || 'var(--primary-50)'};
     transform: rotate(-180deg);
     transition:
       transform 600ms ease-out,
@@ -65,7 +66,7 @@ const HollowCircle2 = styled(HollowCircle1)`
   }
 `
 const Title = styled.div`
-  color: ${(props) => props.$color || props.theme.colors.main};
+  color: ${(props) => props.$color || 'var(--primary-50)'};
   font-size: 1.15em;
   font-weight: bold;
   line-height: 1;

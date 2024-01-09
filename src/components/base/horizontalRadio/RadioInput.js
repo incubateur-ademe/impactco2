@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => (props.checked ? props.color || props.theme.colors.main : 'transparent')};
-  border: 0.125rem solid ${(props) => props.color || props.theme.colors.main};
+  background-color: ${(props) => (props.checked ? props.color || 'var(--primary-50)' : 'transparent')};
+  border: 0.125rem solid ${(props) => props.color || 'var(--primary-50)'};
   flex: 1;
 
   &:first-child {
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 `
 const Label = styled.label`
   align-items: center;
-  color: ${(props) => (props.checked ? props.theme.colors.background : props.color || props.theme.colors.main)};
+  color: ${(props) => (props.checked ? 'var(--neutral-00)' : props.color || 'var(--primary-50)')};
   cursor: pointer;
   display: flex;
   line-height: 1.15;

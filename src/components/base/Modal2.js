@@ -63,7 +63,7 @@ const Background = styled.div`
 `
 
 const Content = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -82,7 +82,7 @@ const ButtonClose = styled.button`
   align-items: center;
   background: inherit;
   border: none;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   cursor: pointer;
   display: flex;
   > svg {

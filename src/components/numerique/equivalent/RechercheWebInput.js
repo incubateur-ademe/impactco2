@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import TypingInput from './emailInput/TypingInput'
 import NetworkInput from './videoInput/NetworkInput'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
-  border: 0.0625rem solid ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
+  border: 0.0625rem solid var(--secondary-10);
   border-radius: 1rem;
   padding: 1.5rem;
   width: calc(50% - 1rem);
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     width: 100%;
   }
 `

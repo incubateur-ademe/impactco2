@@ -3,6 +3,7 @@ import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortab
 import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import ShareableContent from './ShareableContent'
 import { overScreenCategoryValues } from './category/overScreens/Values'
@@ -25,7 +26,7 @@ const TilesWrapper = styled.div`
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     gap: 0.75rem;
   }
 `

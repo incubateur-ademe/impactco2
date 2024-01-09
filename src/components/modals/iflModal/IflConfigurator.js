@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Select from 'components/base/Select'
 import ReuseBulb from 'components/livraison/ReuseBulb'
 import IflCode from './IflCode'
@@ -32,7 +33,7 @@ const Wrapper = styled.div`
   margin-right: 2rem;
   padding: 1.5rem;
   padding-bottom: 0;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-bottom: 1.5rem;
     width: 100%;
   }

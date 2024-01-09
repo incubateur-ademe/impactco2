@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
 import formatPercent from 'utils/formatPercent'
+import { MEDIA } from 'utils/styles'
 import Button from 'components/base/buttons/Button'
 
 const Toggle = styled(Button)`
@@ -9,17 +10,17 @@ const Toggle = styled(Button)`
   font-size: 0.875rem;
   font-weight: 300;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin-bottom: 2rem;
   }
 `
 const Wrapper = styled.table`
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
   border-radius: 1rem;
   margin-top: 0.5rem;
   padding: 0.5rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.75rem;
     padding: 0.25rem;
   }
@@ -28,9 +29,9 @@ const Item = styled.tr`
   td {
     padding: 0.5rem;
     white-space: nowrap;
-    border-bottom: 0.0675rem solid ${(props) => props.theme.colors.secondDark};
+    border-bottom: 0.0675rem solid var(--secondary-80);
 
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       padding: 0.5rem 0.25rem;
     }
   }

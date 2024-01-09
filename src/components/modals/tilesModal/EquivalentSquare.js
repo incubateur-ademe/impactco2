@@ -5,10 +5,10 @@ import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.button`
   align-items: center;
-  background-color: ${(props) => props.theme.colors[props.checked ? 'mainLight' : 'background']};
+  background-color: ${(props) => (props.checked ? 'var(--primary-10)' : 'var(--neutral-00)')};
   border: none;
   border-radius: 0.5rem;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   cursor: ${(props) => (props.disabled ? 'normal' : 'pointer')};
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@ const Wrapper = styled.button`
   position: relative;
   width: 100%;
   &:hover {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: var(--primary-10);
   }
 `
 const Label = styled.span`

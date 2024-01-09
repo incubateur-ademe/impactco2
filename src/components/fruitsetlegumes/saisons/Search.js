@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
+import { MEDIA } from 'utils/styles'
 import TextInput from 'components/base/TextInput'
 import Button from 'components/base/buttons/Button'
 
@@ -11,7 +12,7 @@ const Wrapper = styled.div`
   margin-top: 1rem;
   position: relative;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     align-self: center;
     margin: 0;
   }
@@ -23,7 +24,7 @@ const SearchInput = styled(TextInput)`
   width: 12rem;
 `
 const SortPanel = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
   border-radius: 0.5rem;
   box-shadow: -0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -31,13 +32,13 @@ const SortPanel = styled.div`
   right: 2.5rem;
   z-index: 120;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     right: auto;
     top: 2.5rem;
   }
 `
 const Option = styled.button`
-  background-color: ${(props) => (props.selected ? props.theme.colors.secondDark : 'transparent')};
+  background-color: ${(props) => (props.selected ? 'var(--secondary-10)' : 'transparent')};
   border: none;
   cursor: pointer;
   display: block;
@@ -47,7 +48,7 @@ const Option = styled.button`
   width: 100%;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors[props.selected ? 'secondDark' : 'mainLight']};
+    background-color: ${(props) => (props.selected ? 'var(--secondary-10)' : 'var(--primary-10)')};
   }
 `
 export default function Search(props) {

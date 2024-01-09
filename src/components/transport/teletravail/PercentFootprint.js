@@ -16,13 +16,13 @@ const Start = styled.span`
   text-align: right;
 `
 const Number = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   font-size: 5.5rem;
   font-weight: bold;
   margin: 0 0.75rem;
 `
 const Percent = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   flex: 1;
   font-size: 2rem;
   font-weight: bold;
@@ -31,7 +31,7 @@ const Percent = styled.span`
 const Details = styled.button`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   cursor: pointer;
   display: block;
   margin: 0 auto;

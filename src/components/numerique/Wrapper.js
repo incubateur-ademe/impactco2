@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
 import Background from 'components/screenshot/Background'
 import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
 
 const SizerWrapper = styled.div`
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     overflow: hidden;
   }
 `
@@ -14,12 +15,12 @@ const Sizer = styled.div`
   margin: -1.5rem;
   position: relative;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin: -0.75rem;
   }
 `
 const Content = styled.div`
-  background-color: ${(props) => (props.hover ? props.theme.colors.background : 'transparent')};
+  background-color: ${(props) => (props.hover ? 'var(--neutral-00)' : 'transparent')};
 `
 const Header = styled.div`
   align-items: flex-start;

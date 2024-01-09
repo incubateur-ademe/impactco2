@@ -25,7 +25,7 @@ export default function MenuSweet() {
 
   return (
     <Wrapper>
-      <DropdownSweet label={'Par thématique'} hideon={'never'}>
+      <DropdownSweet label={'Par thématique'}>
         {categories
           ?.filter((category) => category.display)
           .map((category) => (

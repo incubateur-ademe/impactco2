@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useIframe from 'hooks/useIframe'
 import Button from 'components/base/buttons/Button'
 import Item from './list/Item'
@@ -10,7 +11,7 @@ const Wrapper = styled.div`
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     gap: 0.75rem;
   }
 `

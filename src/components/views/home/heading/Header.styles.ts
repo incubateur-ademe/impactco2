@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export const UpperSide = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     align-items: flex-start;
     flex-direction: column;
     gap: 24px;
@@ -16,25 +17,25 @@ export const Separator = styled.div`
 `
 
 export const CtaContainer = styled.div`
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     font-size: 0.875rem;
   }
 `
 
 export const H2Title = styled.h2`
   font-size: 1.75rem;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 1.25rem;
   }
   margin-bottom: 0;
   > span {
     display: block;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       display: inline;
     }
   }
 
   b {
-    color: ${(props) => props.theme.colors.main};
+    color: var(--primary-50);
   }
 `

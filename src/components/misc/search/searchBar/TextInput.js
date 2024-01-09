@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 const Input = styled.input`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   font-size: 1em;
   font-weight: normal;
   line-height: 1.25;
@@ -19,7 +19,7 @@ const Input = styled.input`
   width: 100%;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.text};
+    color: var(--neutral-70);
     opacity: 0.5;
   }
   &:focus {
@@ -48,7 +48,7 @@ const Visible = styled.div`
   position: relative;
 
   &:before {
-    background-color: ${(props) => props.theme.colors.text};
+    background-color: var(--neutral-70);
     content: '';
     height: 0.05em;
     left: 0;

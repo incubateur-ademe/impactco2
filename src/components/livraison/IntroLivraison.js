@@ -6,7 +6,7 @@ const H1Title = styled.h1`
   margin-top: 0;
 `
 const MainColorSpan = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
 `
 
 const SmallText = styled.div`
@@ -31,7 +31,7 @@ const Separator = styled.hr`
 `
 
 const UpdatedAt = styled.span`
-  color: #564d53;
+  color: var(--neutral-50);
 `
 
 export default function IntroLivraison(props) {

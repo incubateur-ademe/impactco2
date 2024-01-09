@@ -2,13 +2,14 @@ import IframeResizer from 'iframe-resizer-react'
 import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { StringParam, useQueryParam, withDefault } from 'use-query-params'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 import Configurator from 'components/views/integration/Configurator'
 
 const StyledIframeResizer = styled(IframeResizer)`
-  border: 0.125rem solid ${(props) => props.theme.colors.second};
+  border: 0.125rem solid var(--secondary-10);
   border-radius: 1rem;
   flex: 1;
   width: 100%;
@@ -18,7 +19,7 @@ const StyledSectionContent = styled(SectionWideContent)`
   max-width: 100vw;
   width: 75rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: block;
   }
 `

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.span`
-  color: ${(props) => props.color || props.theme.colors.main};
+  color: ${(props) => props.color || 'var(--primary-50)'};
   display: inline-block;
   line-height: 1.3;
   position: relative;
@@ -11,7 +11,7 @@ const Input = styled.select`
   appearance: none;
   background-color: transparent;
   border: none;
-  box-shadow: 0px 0.1em 0px 0px ${(props) => props.color || props.theme.colors.main};
+  box-shadow: 0px 0.1em 0px 0px ${(props) => props.color || 'var(--primary-50)'};
   color: transparent;
   cursor: pointer;
   font-size: inherit;

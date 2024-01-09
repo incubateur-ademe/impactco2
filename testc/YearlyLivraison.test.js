@@ -1,13 +1,13 @@
 import '@testing-library/jest-dom'
 import { screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithStyle } from '../test-utils/render-with-style'
 import YearlyLivraison from 'components/livraison/YearlyLivraison'
 
 describe("YearlyLivraison - afficher le bilan carbone selon la fréquence d'achat", () => {
   test("Par défaut, s'affiche pour 1 colis par an, avec un bilan carbone total", async () => {
     // Given
-    renderWithStyle(<YearlyLivraison co2eq={2133} />)
+    render(<YearlyLivraison co2eq={2133} />)
     // When
     expect(await screen.findByTestId('induction')).toBeInTheDocument()
     // Then
@@ -17,7 +17,7 @@ describe("YearlyLivraison - afficher le bilan carbone selon la fréquence d'acha
   })
   test('Double le bilan carbone si on double le nombre de colis', async () => {
     // Given
-    renderWithStyle(<YearlyLivraison co2eq={2133} />)
+    render(<YearlyLivraison co2eq={2133} />)
     // When
     expect(await screen.findByTestId('induction')).toBeInTheDocument()
     await userEvent.selectOptions(screen.getByTestId('numbers'), ['2'])
@@ -28,7 +28,7 @@ describe("YearlyLivraison - afficher le bilan carbone selon la fréquence d'acha
   })
   test('Multiplie par 12 le bilan carbone si on passe à une fréquence par mois', async () => {
     // Given
-    renderWithStyle(<YearlyLivraison co2eq={2133} />)
+    render(<YearlyLivraison co2eq={2133} />)
     // When
     expect(await screen.findByTestId('induction')).toBeInTheDocument()
     await userEvent.selectOptions(screen.getByTestId('frequences'), ['par_mois'])
@@ -39,7 +39,7 @@ describe("YearlyLivraison - afficher le bilan carbone selon la fréquence d'acha
   })
   test('Multiplie par 52 le bilan carbone si on passe à une fréquence par semaine', async () => {
     // Given
-    renderWithStyle(<YearlyLivraison co2eq={2133} />)
+    render(<YearlyLivraison co2eq={2133} />)
     // When
     expect(await screen.findByTestId('induction')).toBeInTheDocument()
     await userEvent.selectOptions(screen.getByTestId('frequences'), ['par_semaine'])

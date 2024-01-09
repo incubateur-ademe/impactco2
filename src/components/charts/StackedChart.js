@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   width: 100%;
 `
 const Item = styled.div`
-  background-color: ${(props) => props.color || props.theme.colors.main};
+  background-color: ${(props) => props.color || 'var(--primary-50)'};
   height: 100%;
   width: ${(props) => props.percent * 100}%;
 `

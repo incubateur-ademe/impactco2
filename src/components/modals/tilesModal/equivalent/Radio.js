@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.background};
-  border: 0.125rem solid ${(props) => props.theme.colors.text};
+  background-color: var(--neutral-00);
+  border: 0.125rem solid var(--neutral-70);
   border-radius: 2rem;
   display: flex;
   height: 1.75rem;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 1.75rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     height: 1.5rem;
     width: 1.5rem;
   }
@@ -21,12 +22,12 @@ const RadioButton = styled.svg`
   height: 1rem;
   width: auto;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     height: 0.75rem;
   }
 
   circle {
-    fill: ${(props) => (props.checked ? props.theme.colors.main : 'none')};
+    fill: ${(props) => (props.checked ? 'var(--primary-50)' : 'none')};
   }
 `
 export default function Radio(props) {

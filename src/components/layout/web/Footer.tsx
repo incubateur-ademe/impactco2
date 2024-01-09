@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Signature from 'components/screenshot/Signature'
 
@@ -69,20 +70,20 @@ const FooterExplain = styled.div`
   p {
     margin-bottom: 0;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin: 1.5rem 0 1.5rem 0;
   }
 `
 
 const FooterLink = styled.div`
   a {
-    color: ${(props) => props.theme.colors.deepDarkReversible};
+    color: var(--neutral-80);
     cursor: pointer;
     font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0em;
     margin-right: 1.5rem;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       margin-left: inherit;
     }
     text-decoration: none;
@@ -90,20 +91,20 @@ const FooterLink = styled.div`
 `
 
 const Wrapper = styled.footer`
-  background-color: ${(props) => props.theme.colors.sky};
+  background-color: #b5d0fa;
   margin-top: 0;
 `
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     grid-template-columns: repeat(1, 1fr);
   }
   > .gridlinks {
     display: flex;
     grid-column: span 2;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       flex-direction: column;
       grid-column: inherit;
     }
@@ -112,6 +113,6 @@ const Grid = styled.div`
 `
 
 const LinearGradient = styled.div`
-  background: ${(props) => `linear-gradient(white, ${props.theme.colors.sky})`};
+  background: linear-gradient(var(--neutral-00), #b5d0fa);
   height: 8rem;
 `

@@ -31,7 +31,7 @@ export default function ConclusionLivraison() {
 }
 
 const SimpleText = styled.div`
-  color: ${(props) => props.theme.colors.deepDark};
+  color: var(--neutral-80);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

@@ -7,7 +7,7 @@ const Wrapper = styled.svg`
   width: auto;
 `
 const Black = styled.path`
-  fill: ${(props) => props.theme.colors.text};
+  fill: var(--neutral-70);
 `
 export default function Marianne() {
   return (

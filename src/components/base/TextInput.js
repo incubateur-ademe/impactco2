@@ -5,21 +5,21 @@ const Wrapper = styled.div`
   margin-bottom: 1.5rem;
 `
 const Label = styled.label`
-  color: ${(props) => props.theme.colors[props.error ? 'error' : 'text']};
+  color: ${(props) => (props.error ? 'var(--critical-50)' : 'var(--neutral-70)')};
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
 `
 const Input = styled.input`
   background-color: transparent;
-  border: 0.125rem solid ${(props) => props.theme.colors[props.error ? 'error' : 'main']};
+  border: 0.125rem solid ${(props) => (props.error ? 'var(--critical-50)' : 'var(--primary-50)')};
   border-radius: 0.625em;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   padding: 0.5em 1em;
   width: 100%;
 
   &:focus {
-    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
+    box-shadow: 0 -0 0px 1px var(--primary-50);
     outline: none;
   }
 `

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
@@ -8,9 +9,9 @@ const Wrapper = styled.div`
 `
 const Tab = styled(Link)<{ $current: boolean; $large?: boolean }>`
   align-items: center;
-  background-color: ${(props) => (props.$current ? props.theme.colors.second : 'transparent')};
+  background-color: ${(props) => (props.$current ? 'var(--secondary-10)' : 'transparent')};
   border-radius: 1rem 1rem 0 0;
-  color: ${(props) => props.theme.colors[props.$current ? 'text' : 'main']};
+  color: ${(props) => (props.$current ? 'var(--neutral-70)' : 'var(--primary-50)')};
   display: flex;
   flex: 1;
   height: 3rem;
@@ -21,10 +22,10 @@ const Tab = styled(Link)<{ $current: boolean; $large?: boolean }>`
   text-decoration: none;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.second};
+    background-color: var(--secondary-10);
   }
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     display: ${(props) => (props.$large ? 'none' : 'flex')};
     font-size: 0.875rem;
     margin-bottom: -1.25rem;

@@ -1,6 +1,7 @@
 import Fuse from 'fuse.js'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import TextInput from 'components/base/TextInput'
 import AllSearchCategory from './AllSearchCategory.js'
@@ -83,10 +84,10 @@ const SearchInput = styled(TextInput)`
   input::placeholder {
     font-weight: 300;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     background-size: 3%;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     background-size: 5%;
   }
   margin: 0.5rem 0.5rem 0.5rem 0;
@@ -94,7 +95,7 @@ const SearchInput = styled(TextInput)`
 
 const Wrapper = styled.div`
   margin: 1rem 2rem 1rem 1rem;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-left: 2.25rem;
   }
 `

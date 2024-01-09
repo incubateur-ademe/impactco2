@@ -48,7 +48,7 @@ const button = (priority?: Priority, size?: 'sm' | 'lg') => {
           color: var(--neutral-30);
         }`
       : `
-        color: white;
+        color: var(--neutral-00);
         background-color: var(--primary-${baseColor.base + 10});
         &:hover {
           background: var(--primary-${baseColor.base + 30});

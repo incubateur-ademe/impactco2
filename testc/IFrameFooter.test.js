@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import { StyleProvider } from 'components/providers/StyleProvider'
 import IframeFooter from 'components/layout/iframe/IframeFooter'
 
 describe('IframeFooter', () => {
@@ -17,11 +16,7 @@ describe('IframeFooter', () => {
   })
 
   it('renders a Footer specific to the iframe', () => {
-    render(
-      <StyleProvider>
-        <IframeFooter />
-      </StyleProvider>
-    )
+    render(<IframeFooter />)
     // check if all components are rendered
     expect(screen.getByTestId('iframe-footer-link')).toHaveAttribute('href', 'https://example.com/')
     expect(screen.getByTestId('logo-impact-co2-link')).toHaveAttribute('href', '/')

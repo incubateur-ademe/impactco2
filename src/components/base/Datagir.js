@@ -6,14 +6,14 @@ const Wrapper = styled.svg`
   margin: 0.5em;
 `
 const Color = styled.path`
-  fill: ${(props) => (props.hover ? 'white' : '#1FC58E')};
+  fill: ${(props) => (props.hover ? 'var(--neutral-00)' : '#1FC58E')};
 `
 const Square = styled.path`
   fill: #1fc58e;
   transform: translateX(${(props) => (props.hover ? '-50%' : 0)});
 `
 const White = styled.path`
-  fill: ${(props) => (props.hover ? '#1FC58E' : 'white')};
+  fill: ${(props) => (props.hover ? '#1FC58E' : 'var(--neutral-00)')};
 `
 export default function Logo(props) {
   const [hover, setHover] = useState(false)

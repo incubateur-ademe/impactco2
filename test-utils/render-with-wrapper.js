@@ -3,7 +3,6 @@ import { render } from '@testing-library/react'
 import { useState } from 'react'
 import { DataProvider } from 'components/providers/DataProvider'
 import { ModalProvider } from 'components/providers/ModalProvider'
-import { StyleProvider } from 'components/providers/StyleProvider'
 import { RulesProviderLivraison } from 'components/livraison/RulesProviderLivraison'
 
 export function renderWithWrapper(component, options) {
@@ -14,9 +13,7 @@ export function renderWithWrapper(component, options) {
       <QueryClientProvider client={queryClient}>
         <RulesProviderLivraison>
           <DataProvider>
-            <StyleProvider>
-              <ModalProvider>{children}</ModalProvider>
-            </StyleProvider>
+            <ModalProvider>{children}</ModalProvider>
           </DataProvider>
         </RulesProviderLivraison>
       </QueryClientProvider>

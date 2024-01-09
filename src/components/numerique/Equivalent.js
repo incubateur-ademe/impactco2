@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import formatName from 'utils/formatName'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -28,7 +29,7 @@ const Questions = styled.div`
   justify-content: center;
   margin: 1rem 0;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     flex-direction: column;
   }
 `

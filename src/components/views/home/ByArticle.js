@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import reusecards from './data/reusecards.json'
 import { track } from 'utils/matomo'
+import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import Meeting from 'components/meeting/Meeting'
@@ -154,7 +155,7 @@ const MiddleGrid = styled.div`
   display: grid;
   gap: 0 2rem;
   grid-template-columns: 1fr 1fr;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     grid-template-columns: 1fr;
   }
 `
@@ -164,16 +165,16 @@ const H3Title = styled.h3`
   font-weight: 700;
   letter-spacing: 0em;
 
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 1.125rem;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-bottom: 1rem;
   }
 `
 
 const H3Title2 = styled(H3Title)`
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-top: 2.5rem;
   }
 `
@@ -183,7 +184,7 @@ const MiddleUl = styled.ul`
   padding-left: 0;
   > li + li {
     margin-top: 1.25rem;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       margin-top: 0.75rem;
     }
   }
@@ -210,7 +211,7 @@ const ReuseGrid = styled.div`
 `
 
 const ReuseCard = styled.div`
-  background-color: white;
+  background-color: var(--neutral-00);
   border-color: #ccdcfd;
   border-radius: 16px;
   border-style: solid;
@@ -240,7 +241,7 @@ const ReuseCardTitle = styled.div`
   margin-bottom: 0.5rem;
 `
 const ReuseCardParagraph = styled.div`
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.9rem;
   }
   color: #3a3a3a;
@@ -248,7 +249,7 @@ const ReuseCardParagraph = styled.div`
   margin-bottom: 0.5rem;
 `
 const ReuseCardTag = styled.div`
-  background-color: white;
+  background-color: var(--neutral-00);
   border-radius: 4px;
   color: #a35b01;
   font-size: 0.8rem;
@@ -263,7 +264,7 @@ const ReuseCardTag = styled.div`
 `
 
 const ReuseCardWrapper = styled.div`
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     margin: 1rem;
   }
   a {
@@ -277,10 +278,10 @@ const ReuseCardWrapper = styled.div`
       }
     }
   }
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     grid-column: span 3/4;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     grid-column: none;
   }
 `
@@ -293,7 +294,7 @@ const ReuseCardImgContainer = styled.div`
 
 const WinkWink = styled.div`
   position: absolute;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     display: none;
   }
 `
@@ -312,7 +313,7 @@ const Box = styled.div`
   flex-direction: column;
   gap: 2.75rem;
   justify-content: space-between;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     gap: 1.25rem;
   }
 `

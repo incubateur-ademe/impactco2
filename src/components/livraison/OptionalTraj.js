@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export default function OptionalTraj(props) {
   return (
@@ -32,23 +33,23 @@ export default function OptionalTraj(props) {
 }
 
 const Wrapper = styled.label`
-  background-color: ${(props) => props.theme.colors.textLight2};
+  background-color: var(--neutral-10);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   display: grid;
   grid-template-columns: 6rem auto;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     grid-template-columns: 0 auto;
   }
   padding: 0 0 1.5rem 2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 0 0 1.5rem 1rem;
   }
 `
 
 const Text = styled.div`
   font-size: 16px;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 14px;
   }
   font-weight: 400;
@@ -71,7 +72,7 @@ const FlexCenter = styled.div`
   align-items: center;
   display: flex;
   justify-content: flex-start;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     align-items: flex-start;
     flex-direction: column;
   }

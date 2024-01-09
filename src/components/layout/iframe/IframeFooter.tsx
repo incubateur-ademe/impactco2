@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useWindow from 'hooks/useWindow'
 import Ademe from 'components/base/Ademe'
@@ -27,8 +28,9 @@ const Logos = styled.div`
   display: flex;
   gap: 32px;
   justify-content: center;
+  overflow: hidden;
   text-decoration: none;
-  overflow: hidden ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.75rem;
     padding: 0 0.25rem;
   }

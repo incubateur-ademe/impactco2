@@ -1,17 +1,18 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Select from 'components/base/Select'
 import { relays } from './data.js'
 
 const StyledSelect = styled(Select)`
-  margin: 0;
+  margin-bottom: 0 !important;
   > select {
     border: none;
-    color: ${(props) => props.theme.colors.main};
+    color: var(--primary-50);
     font-size: 16px;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       font-size: 12px;
     }
-    ${(props) => props.theme.mq.xsmall} {
+    ${MEDIA.LT.XSMALL} {
       margin-left: 0;
       padding-left: 0.2rem;
     }
@@ -19,7 +20,7 @@ const StyledSelect = styled(Select)`
     letter-spacing: 0em;
     line-height: 24px;
     margin-left: 0.5rem;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       margin-left: 0;
       padding-left: 0;
     }

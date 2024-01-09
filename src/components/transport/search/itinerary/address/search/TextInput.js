@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
   &:before {
     animation: ${(props) => (props.$isFetching ? loading : 'none')} 1s infinite;
-    background-color: ${(props) => props.theme.colors.second};
+    background-color: var(--secondary-10);
     content: '';
     height: 100%;
     left: 0;
@@ -33,7 +33,7 @@ const Wrapper = styled.div`
 const Input = styled.input`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.25;
@@ -42,7 +42,7 @@ const Input = styled.input`
   width: 100%;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.text};
+    color: var(--neutral-70);
     opacity: 0.6;
   }
   &:focus {
