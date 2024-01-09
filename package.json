@@ -30,7 +30,8 @@
     "lint": "next lint",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "engines": {
     "node": "20",
@@ -94,7 +95,6 @@
     "@storybook/addon-essentials": "^7.6.5",
     "@storybook/addon-interactions": "^7.6.5",
     "@storybook/addon-links": "^7.6.5",
-    "@storybook/addon-themes": "^7.6.5",
     "@storybook/blocks": "^7.6.5",
     "@storybook/nextjs": "^7.6.5",
     "@storybook/react": "^7.6.5",
@@ -111,6 +111,7 @@
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "babel-plugin-tailwind-components": "^0.5.10",
+    "chromatic": "^10.2.0",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "^9.1.0",
@@ -145,5 +146,7 @@
     "*.{html,css,less,ejs}": [
       "prettier --write"
     ]
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "impactco2@0.2.0"
 }
