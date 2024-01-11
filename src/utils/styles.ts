@@ -151,6 +151,7 @@ export const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 2rem;
     line-height: 2.75rem;
+    margin-bottom: 1.25rem;
   }
 
   .title-h3,
