@@ -84,10 +84,12 @@ const Share = ({
       {category && (
         <Meta>
           <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />
-          <p>
-            <b>{category.meta.title}</b>
-          </p>
-          <p className='text-sm'>{category.meta.description}</p>
+          <div>
+            <p>
+              <b>{category.meta.title}</b>
+            </p>
+            <p className='text-sm'>{category.meta.description}</p>
+          </div>
         </Meta>
       )}
     </>
