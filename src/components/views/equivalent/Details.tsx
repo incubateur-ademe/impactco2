@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Category } from 'types/category'
 import { Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
+import { MEDIA } from 'utils/styles'
 import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
@@ -15,14 +16,14 @@ const Subtitle = styled.span`
   line-height: 0;
   white-space: nowrap;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1.125rem;
     line-height: inherit;
   }
 `
 const Br = styled.br`
   display: none;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     display: inline;
   }
 `

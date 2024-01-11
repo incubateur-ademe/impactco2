@@ -1,13 +1,14 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
   border-radius: 1rem;
   margin-bottom: 1.5rem;
   padding: 1.5rem 2rem;
   position: relative;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 1rem;
   }
 `
@@ -17,7 +18,7 @@ export const Text = styled.p`
   max-width: 26rem;
   text-align: center;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.875rem;
   }
 `

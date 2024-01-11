@@ -4,7 +4,7 @@ import Background from 'components/screenshot/Background'
 import Signature from 'components/screenshot/Signature'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   height: 100%;
   position: relative;
   > div + div {

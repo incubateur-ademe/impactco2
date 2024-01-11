@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import ShareButton from 'components/base/ShareButton'
@@ -21,7 +22,7 @@ const List = styled.div`
   gap: 1.5rem;
   justify-content: center;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     gap: 0.75rem;
   }
 `

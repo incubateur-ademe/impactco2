@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import useLocalStorage from 'use-local-storage'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
@@ -54,7 +55,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: auto repeat(1, 1fr);
   margin-top: 1rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
@@ -64,7 +65,7 @@ const UpperEq = styled.div`
   display: grid;
   grid-template-columns: ${(props) => (props.$nbCol === 3 ? 'repeat(3, auto)' : 'repeat(2, auto)')};
   grid-template-rows: 1.25fr 1fr;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     grid-template-columns: ${(props) => (props.$nbCol === 3 ? '1fr' : 'repeat(2, 1fr)')};
     margin-top: 1.5rem;
   }
@@ -74,7 +75,7 @@ const ButtonContainer = styled.div`
   align-items: center;
   border-top: 1px solid #eae5e8;
   display: flex;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     grid-column: ${(props) => (props.$nbCol === 3 ? 'inherit' : 'span 2')};
   }
   grid-column: ${(props) => (props.$nbCol === 3 ? 'span 3' : 'span 2')};

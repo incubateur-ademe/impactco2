@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Category as CategoryType } from 'types/category'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -14,7 +15,7 @@ const Wrapper = styled.div`
   position: relative;
   width: calc(33.3333% - 1rem);
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     width: calc(50% - 0.5rem);
   }
 `
@@ -22,13 +23,13 @@ const StyledEmoji = styled(Emoji)`
   font-size: 2rem;
   margin-bottom: 0.5rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1.5rem;
   }
 `
 
 const Title = styled.span`
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   margin-bottom: 0.5rem;
   text-align: center;
 `

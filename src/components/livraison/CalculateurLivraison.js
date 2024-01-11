@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
-import { themes } from 'utils/styles'
+import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
 import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -153,8 +153,8 @@ export default function CalculateurLivraison(props) {
                     className='toggle'
                     checked={isHabit}
                     onChange={habitClicked}
-                    offColor={'#fff'}
-                    onColor={themes.default.colors.main}
+                    offColor='var(--neutral-00)'
+                    onColor='var(--primary-50)'
                     aria-label='Changer de thème'
                     uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                     checkedHandleIcon={
@@ -191,8 +191,8 @@ export default function CalculateurLivraison(props) {
                     className='toggle'
                     checked={isPlane}
                     onChange={farawayClicked}
-                    offColor={'#fff'}
-                    onColor={themes.default.colors.main}
+                    offColor='var(--neutral-00)'
+                    onColor='var(--primary-50)'
                     aria-label='Changer de thème'
                     uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                     checkedHandleIcon={
@@ -232,7 +232,7 @@ const Optionals = styled.div`
     display: flex;
     font-size: 14px;
     justify-content: center;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       justify-content: flex-start;
       margin-bottom: 1rem;
       margin-left: 1rem;
@@ -249,13 +249,13 @@ const H2Title = styled.h2`
 `
 
 const DropList = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   border: 1px solid #e2dce0;
   border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: start;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     grid-template-columns: repeat(1, 1fr);
     justify-items: start;
   }
@@ -272,7 +272,7 @@ const DropList = styled.div`
     white-space: normal;
     width: 100%;
     word-wrap: break-word;
-    ${(props) => props.theme.mq.xsmall} {
+    ${MEDIA.LT.XSMALL} {
       font-size: 0.75rem;
     }
   }
@@ -280,10 +280,10 @@ const DropList = styled.div`
 
 const Addendum = styled.div`
   align-items: center;
-  background-color: #ebf2ff;
-  border: 1px solid #ccdcfd;
+  background-color: var(--secondary-10);
+  border: 1px solid var(--secondary-20);
   border-radius: 8px;
-  color: #235dd2;
+  color: var(--secondary-60);
   display: flex;
   font-size: 14px;
   font-weight: 400;
@@ -291,24 +291,24 @@ const Addendum = styled.div`
   letter-spacing: 0em;
   line-height: 32px;
   min-width: 100px;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     margin-right: 1rem;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-right: 0;
   }
   padding: 0 0.65rem;
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     padding: 0 0.25rem;
   }
   > .txt {
-    ${(props) => props.theme.mq.large} {
+    ${MEDIA.LT.LARGE} {
       line-height: 20px;
     }
   }
   > .plus {
     font-size: 28px;
-    ${(props) => props.theme.mq.xsmall} {
+    ${MEDIA.LT.XSMALL} {
       font-size: 14px;
     }
     line-height: 32px;
@@ -331,7 +331,7 @@ const Flex = styled.div`
 `
 
 const ToggleContainer = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight2};
+  background-color: var(--neutral-10);
   display: ${(props) => (props.$show ? 'block' : 'none')};
 `
 
@@ -339,7 +339,7 @@ const ToggleHabitContainer = styled.div`
   .toggle {
     border: 1px solid #39a69e;
     .react-switch-handle {
-      background: white !important;
+      background: var(--neutral-00) !important;
       border: 1px solid #39a69e !important;
       height: 19px !important;
       width: 19px !important;
@@ -363,7 +363,7 @@ const FlexHabit = styled.div`
   display: flex;
   margin-top: -1rem;
   padding: 2rem 0 1rem 2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 2rem 0 1rem 1rem;
   }
   > .item1 {
@@ -375,7 +375,7 @@ const FlexHabit = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       padding-left: 0.25rem;
       font-size: 14px;
     }
@@ -383,14 +383,14 @@ const FlexHabit = styled.div`
   > .item3 {
     margin-left: auto;
     margin-right: 2rem;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       margin-right: 1rem;
     }
   }
 `
 
 const ToggleContainerBottom = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight2};
+  background-color: var(--neutral-10);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 `
@@ -399,7 +399,7 @@ const FlexHabitBottom = styled.div`
   border-top: 1px solid #d8dbe1;
   display: flex;
   padding: 1rem 0 1rem 2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 2rem 0 1rem 1rem;
   }
   > .item1 {
@@ -411,7 +411,7 @@ const FlexHabitBottom = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       padding-left: 0.25rem;
       font-size: 14px;
     }
@@ -419,14 +419,14 @@ const FlexHabitBottom = styled.div`
   > .item3 {
     margin-left: auto;
     margin-right: 2rem;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       margin-right: 1rem;
     }
   }
 `
 
 const HideableSpan = styled.span`
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     display: none;
   }
 `

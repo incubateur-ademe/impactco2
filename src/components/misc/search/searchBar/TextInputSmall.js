@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
   overflow: hidden;
@@ -10,14 +11,14 @@ const Input = styled.input`
   background-position: 96% 53%;
   background-repeat: no-repeat;
   background-size: 6%;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     background-size: 4%;
   }
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     background-size: 5%;
   }
   border: none;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   font-size: 1em;
   font-weight: normal;
   line-height: 1.25;
@@ -25,7 +26,7 @@ const Input = styled.input`
   width: 100%;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.text};
+    color: var(--neutral-70);
     opacity: 0.5;
   }
   &:focus {

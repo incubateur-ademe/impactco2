@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import minicards from './data/minicards.json'
 import categories from 'data/categories.json'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
@@ -83,7 +84,7 @@ const Grid = styled.div`
 
 const GridItemSub = styled.div`
   grid-column: span 2;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     grid-column: span 5;
   }
   margin-left: 0.5rem;
@@ -96,7 +97,7 @@ const GridItemSub2 = styled(GridItemSub)``
 const GridItemSub3 = styled(GridItemSub)``
 const GridItemSub4 = styled(GridItemSub)``
 const GridItemSub5 = styled(GridItemSub)`
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     grid-column: span 6/9;
   }
 `
@@ -104,7 +105,7 @@ const GridItemSub5 = styled(GridItemSub)`
 const GridItemTopEmpty = styled.div`
   display: inherit;
   grid-column: span 2;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: none;
   }
 `
@@ -112,13 +113,13 @@ const GridItemTopArrow = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: none;
   }
 `
 const GridItemTopCard = styled.div`
   grid-column: span 2;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     grid-column: span 6/9;
   }
 `
@@ -127,13 +128,13 @@ const GridItemTopText = styled.div`
   display: flex;
   font-size: 1rem;
   grid-column: span 2;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 0.9rem;
     grid-column: span 6/9;
     margin-top: 0.5rem;
     text-align: center;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     grid-column: span 10;
   }
   > p {
@@ -159,15 +160,15 @@ const MiniCardEmoji = styled.div`
 const MiniCardWhat = styled.div`
   color: #746770;
   font-size: 0.75rem;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     height: 2rem;
     max-width: 5rem;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     height: auto;
     max-width: none;
   }
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     height: 2rem;
     max-width: 5rem;
   }

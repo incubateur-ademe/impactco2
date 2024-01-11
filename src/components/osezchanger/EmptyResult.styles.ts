@@ -5,7 +5,7 @@ export const Container = styled.div<{ $hidden: boolean }>`
   border: 1px solid var(--secondary-20);
   border-radius: 4px;
   box-shadow: 4px 4px 0px 0px transparent;
-  color: var(--secondary-40);
+  color: var(--secondary-50);
   font-size: 0.875rem;
   font-weight: 500;
   height: 100%;

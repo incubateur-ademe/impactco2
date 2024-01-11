@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     width: 3.5rem;
 
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 `

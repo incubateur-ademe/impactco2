@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -10,13 +11,13 @@ const Wrapper = styled.div`
   position: relative;
 `
 const Title = styled.div`
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 0.25rem;
   position: relative;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.75rem;
   }
 `

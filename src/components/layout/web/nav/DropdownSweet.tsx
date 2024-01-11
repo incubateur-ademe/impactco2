@@ -1,16 +1,14 @@
 import React, { MouseEvent, ReactNode, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Link from 'components/base/buttons/Link'
 
-const Wrapper = styled.div<{ $hideon: string }>`
-  ${(props) => props.theme.mq[props.$hideon]} {
-    display: none;
-  }
+const Wrapper = styled.div`
   position: relative;
 `
 const List = styled.div`
-  background-color: white;
-  border: solid 1px #ccdcfd;
+  background-color: var(--neutral-00);
+  border: solid 1px var(--neutral-20);
   border-radius: 0 0 1rem 1rem;
   border-top: 0;
   box-shadow: -0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05);
@@ -26,17 +24,17 @@ const List = styled.div`
 `
 const ButtonDropdown = styled.button<{ $open: boolean }>`
   align-items: center;
-  background-color: ${(props) => (props.$open ? props.theme.colors.mainLight : 'transparent')};
+  background-color: ${(props) => (props.$open ? 'var(--primary-10)' : 'transparent')};
   border: none;
   color: #161616;
   cursor: pointer;
   display: flex;
   font-size: 0.875rem;
   height: 100%;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 0.75rem;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.875rem;
   }
   line-height: 1.4;
@@ -46,7 +44,7 @@ const ButtonDropdown = styled.button<{ $open: boolean }>`
   width: 100%;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: var(--primary-10);
   }
 
   svg {
@@ -58,7 +56,7 @@ const ButtonDropdown = styled.button<{ $open: boolean }>`
     }
   }
 `
-export default function Dropdown({ label, children, hideon }: { label: string; children: ReactNode; hideon: string }) {
+export default function Dropdown({ label, children }: { label: string; children: ReactNode }) {
   const [open, setOpen] = useState(false)
 
   const handleClick = () => setOpen(false)
@@ -71,7 +69,7 @@ export default function Dropdown({ label, children, hideon }: { label: string; c
   }, [])
 
   return (
-    <Wrapper $hideon={hideon}>
+    <Wrapper>
       <ButtonDropdown
         onClick={(e: MouseEvent<HTMLButtonElement>) => {
           e.stopPropagation()
@@ -91,7 +89,7 @@ export default function Dropdown({ label, children, hideon }: { label: string; c
 }
 
 Dropdown.Item = styled(Link)<{ $current: boolean }>`
-  color: ${(props) => props.theme.colors[props.$current ? 'main' : 'text']};
+  color: ${(props) => (props.$current ? 'var(--primary-50)' : 'var(--neutral-70)')};
   display: flex;
   font-size: 0.875rem;
   justify-content: space-between;
@@ -101,7 +99,7 @@ Dropdown.Item = styled(Link)<{ $current: boolean }>`
   white-space: nowrap;
 
   &:not(:last-child)::before {
-    background-color: ${(props) => props.theme.colors.secondDark};
+    background-color: var(--neutral-20);
     bottom: 0;
     content: '';
     height: 0.0625rem;
@@ -111,6 +109,6 @@ Dropdown.Item = styled(Link)<{ $current: boolean }>`
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondDark};
+    background-color: var(--secondary-80);
   }
 `

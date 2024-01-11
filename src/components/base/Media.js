@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export const Media = styled.div`
   align-items: flex-start;
@@ -6,7 +7,7 @@ export const Media = styled.div`
 `
 export const MediaFigure = styled.div`
   margin-right: 1em;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-right: 0.2em;
   }
 `

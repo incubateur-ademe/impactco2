@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { HiddenLabel } from 'components/form/HiddenLabel'
 import SelectFrequences from './SelectFrequences'
 import SelectNumber from './SelectNumber'
@@ -64,7 +65,7 @@ const Wrapper = styled.div``
 const FlexText = styled.div`
   display: flex;
   flex-direction: row;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     flex-direction: column;
   }
   font-size: 1rem;
@@ -81,7 +82,7 @@ const Deduction = styled.div``
 
 const Induction = styled.div`
   display: flex;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     flex-direction: column;
   }
 `
@@ -96,7 +97,7 @@ const InductionOutro = styled.div`
 
 const Colis = styled.strong`
   margin-left: -5px;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin-left: -11px;
   }
 `

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Button from 'components/base/buttons/Button'
 import useRulesContextNumerique from '../RulesProviderNumerique'
 import Question from './expertMode/Question'
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   justify-content: center;
   margin-top: 1rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     flex-direction: column;
   }
 `

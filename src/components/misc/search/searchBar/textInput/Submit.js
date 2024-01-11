@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.button`
-  background: ${(props) => props.theme.colors.background};
+  background: var(--neutral-00);
   border: none;
   bottom: 0;
   opacity: ${(props) => (props.$visible ? 1 : 0)};
@@ -22,7 +22,7 @@ const Wrapper = styled.button`
     width: 1.5em;
 
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 `

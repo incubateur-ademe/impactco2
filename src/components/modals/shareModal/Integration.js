@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled(Link)`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: var(--primary-50);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -16,11 +17,11 @@ const Wrapper = styled(Link)`
 const Svg = styled.svg`
   width: 2.2rem !important;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     width: 1.7rem;
   }
   path {
-    fill: ${(props) => props.theme.colors.background}!important;
+    fill: var(--neutral-00) !important;
   }
 `
 export default function Integration() {

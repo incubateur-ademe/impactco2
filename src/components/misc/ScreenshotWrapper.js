@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
 import Background from 'components/screenshot/Background'
 import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   height: 100%;
   position: relative;
 `
@@ -15,7 +16,7 @@ const StyledButtons = styled(Buttons)`
   position: absolute;
   right: 1rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     bottom: 0.5rem;
     right: 50%;
     transform: translateX(50%);

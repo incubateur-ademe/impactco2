@@ -15,14 +15,14 @@ export const Container = styled.div`
 `
 
 export const Shadow = styled.div`
-  background-color: #001133;
+  background-color: var(--neutral-10);
   border-radius: 8px 8px 0 0;
   flex: 1;
-  opacity: 0.15;
+  opacity: 0.8;
 `
 
 export const Content = styled.div<{ $color?: 'secondary' }>`
-  background-color: ${({ $color }) => ($color === 'secondary' ? 'var(--secondary-10)' : 'white')};
+  background-color: ${({ $color }) => ($color === 'secondary' ? 'var(--secondary-10)' : 'var(--neutral-00)')};
   border-radius: 0 0 ${({ $color }) => ($color === 'secondary' ? '8px 8px' : '16px 16px')};
   max-height: 64%;
   text-align: left;

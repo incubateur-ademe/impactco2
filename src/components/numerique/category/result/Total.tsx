@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
+import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import Tile from 'components/misc/tiles/Tile'
 import useRulesContextNumerique, { evaluateNumber } from 'components/numerique/RulesProviderNumerique'
@@ -12,7 +13,7 @@ const Text = styled.div`
   font-size: 1.125rem;
   text-align: center;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.875rem;
   }
 `
@@ -20,13 +21,13 @@ const Big = styled.span`
   font-size: 1.375rem;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     display: block;
     font-size: 1.25rem;
   }
 `
 const Color = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
 `
 const Disclaimer = styled.span`
   display: block;
@@ -37,7 +38,7 @@ const Tiles = styled.div`
   display: flex;
   gap: 1.5rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     gap: 0.75rem;
   }
 `

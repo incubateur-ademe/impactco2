@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Card = styled.div<{ $withShadow: boolean }>`
   align-items: center;
-  background: white;
+  background: var(--neutral-00);
   border: 1px solid var(--secondary-20);
   border-radius: 4px;
   ${({ $withShadow }) => $withShadow && 'box-shadow: 4px 4px 0px 0px var(--secondary-20);'}

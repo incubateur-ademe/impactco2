@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react'
 import { DataProvider } from 'components/providers/DataProvider'
 import useModalContext, { ModalProvider } from 'components/providers/ModalProvider'
-import { StyleProvider } from 'components/providers/StyleProvider'
 
 export function EqModal4Opener() {
   const { eqv, setEqv } = useModalContext()
@@ -30,9 +29,7 @@ export const initializeWith = (array) => {
 export function renderWithWrapperForEqs(component, options) {
   const Wrapper = ({ children }) => (
     <DataProvider>
-      <StyleProvider>
-        <ModalProvider>{children}</ModalProvider>
-      </StyleProvider>
+      <ModalProvider>{children}</ModalProvider>
     </DataProvider>
   )
 

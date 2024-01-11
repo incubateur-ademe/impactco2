@@ -16,7 +16,7 @@ export const Box = styled.button<{ $colored?: boolean }>`
     $colored
       ? `
           border: 1px solid var(--secondary-20);
-          background-color: white;
+          background-color: var(--neutral-00);
           color: var(--neutral-60);
 
           .clipboard-right-item {
@@ -46,7 +46,7 @@ export const Box = styled.button<{ $colored?: boolean }>`
           }
 
           &:hover {
-            background-color: white;
+            background-color: var(--neutral-00);
             outline: 1px solid var(--neutral-10);
 
             .clipboard-right-item {

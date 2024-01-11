@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import SelectRelays from './SelectRelays'
 
 export default function OptionalRelay(props) {
@@ -20,19 +21,19 @@ export default function OptionalRelay(props) {
 
 const FlexContainer = styled.div`
   display: flex;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     flex-direction: column;
   }
   > .emptySpace {
     min-width: 6rem;
-    ${(props) => props.theme.mq.large} {
+    ${MEDIA.LT.LARGE} {
       min-width: 0;
     }
   }
   > .item2 {
     align-items: center;
     display: flex;
-    ${(props) => props.theme.mq.xlarge} {
+    ${MEDIA.LT.XLARGE} {
       flex-basis: 40%;
     }
   }
@@ -44,16 +45,16 @@ const FlexContainer = styled.div`
 `
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight2};
+  background-color: var(--neutral-10);
   padding: 0 0 0.5rem 2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 0 0 0.5rem 1rem;
   }
 `
 
 const Text = styled.label`
   font-size: 16px;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 14px;
   }
   font-weight: 400;

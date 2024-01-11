@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
@@ -19,12 +20,12 @@ const Statistic = styled.h2`
     text-decoration: none;
   }
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 2rem;
   }
 `
 const Number = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   font-size: 2.25em;
 `
 const Strong = styled.p`
@@ -32,7 +33,7 @@ const Strong = styled.p`
   font-style: italic;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.medium}  {
+  ${MEDIA.LT.MEDIUM}  {
     font-size: 1.125rem;
   }
 `

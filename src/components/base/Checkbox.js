@@ -8,7 +8,7 @@ const Wrapper = styled.label`
   position: relative;
 
   &:before {
-    border: 2px solid ${(props) => props.color || props.theme.colors.main};
+    border: 2px solid ${(props) => props.color || 'var(--primary-50)'};
     border-radius: 0.25rem;
     content: '';
     height: 1.1em;
@@ -21,7 +21,7 @@ const Wrapper = styled.label`
 
   &:after {
     align-items: center;
-    color: ${(props) => props.color || props.theme.colors.main};
+    color: ${(props) => props.color || 'var(--primary-50)'};
     content: '✓';
     display: flex;
     font-size: 1.75em;

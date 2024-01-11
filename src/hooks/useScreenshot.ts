@@ -13,7 +13,7 @@ export default function useScreenshot(slug: string, tracking: string, format: st
     if (isScreenshotting && ref.current !== null) {
       transformFn(ref.current, {
         cacheBust: true,
-        backgroundColor: 'white',
+        backgroundColor: 'var(--neutral-00)',
         filter: (node) => {
           return !node.className || !node.className.includes ? true : !node.className?.includes('noscreenshot')
         },

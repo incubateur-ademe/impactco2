@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
@@ -9,7 +10,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 2rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin-right: 0.75rem;
   }
 `

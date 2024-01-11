@@ -6,11 +6,11 @@ const Wrapper = styled.button`
   align-items: center;
   background-color: transparent;
   &:hover {
-    background-color: ${(props) => props.theme.colors[props.checked ? 'mainLight' : 'background']};
+    background-color: ${(props) => (props.checked ? 'var(--primary-10)' : 'var(--neutral-00)')};
   }
   border: none;
   border-radius: 0.5rem;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   cursor: ${(props) => (props.disabled ? 'normal' : 'pointer')};
   display: flex;
   justify-content: space-between;
@@ -20,9 +20,9 @@ const Wrapper = styled.button`
   width: 100%;
 `
 const Label = styled.span`
-  color: ${(props) => props.theme.colors.persistentText};
+  color: var(--neutral-70);
   &:hover {
-    color: ${(props) => props.theme.colors.main};
+    color: var(--primary-50);
   }
   display: block;
   font-size: ${(props) => (props.small ? 0.875 : 1)}rem;
@@ -45,8 +45,8 @@ const GreenSquare = styled.div`
   width: 24px;
 `
 const Tick = styled.div`
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
+  border-bottom: 2px solid var(--neutral-00);
+  border-right: 2px solid var(--neutral-00);
   display: inline-block;
   height: 10px;
   margin-bottom: 0px;

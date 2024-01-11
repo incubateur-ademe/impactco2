@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.second};
-  border: 0.0625rem solid ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
+  border: 0.0625rem solid var(--secondary-10);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -16,10 +17,10 @@ const Wrapper = styled.div`
   position: relative;
   width: calc(${(props) => (props.column === 2 ? 50 : 33.3333)}% - 1rem);
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     width: calc(${(props) => (props.column === 2 ? 50 : 33.3333)}% - 0.5rem);
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     width: calc(${(props) => (props.column === 2 ? 50 : 100)}% - 0.5rem);
   }
 `
@@ -34,13 +35,13 @@ const StyledEmoji = styled(Emoji)`
   margin: 1.25rem 0 0;
   text-align: center;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1.5rem;
   }
 `
 const Title = styled.p`
   align-items: center;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   display: flex;
   font-size: ${(props) => (props.$small ? 1 : 1.125)}rem;
   font-weight: bold;
@@ -48,7 +49,7 @@ const Title = styled.p`
   margin: 0.875rem 0.5rem 0.625rem;
   text-align: center;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
   }
 `
@@ -102,7 +103,7 @@ SimpleTile.Wrapper = styled.div`
   gap: 1.5rem;
   justify-content: center;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     gap: 0.75rem;
   }
 `

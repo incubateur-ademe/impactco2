@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
+import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 
@@ -45,14 +46,14 @@ const Card = styled.div`
 `
 
 const CardTitle = styled.div`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   font-size: 18px;
   line-height: 32px;
   margin-bottom: 8px;
 `
 const CardText = styled.div`
   line-height: 24px;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin-top: 0.5rem;
   }
   a {

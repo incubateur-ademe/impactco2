@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useModalContext from 'components/providers/ModalProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
@@ -67,14 +68,14 @@ const GreenText = styled.span`
 const WrapperSocial = styled.div`
   align-items: center;
   display: flex;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     flex-direction: column;
   }
   flex-wrap: wrap;
   justify-content: center;
   button + button {
     margin-left: 1rem;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       margin-left: 0rem;
     }
   }

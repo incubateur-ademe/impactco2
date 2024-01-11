@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import useIframe from 'hooks/useIframe'
 import Link from 'components/base/buttons/Link'
 import Bar from './item/Bar'
@@ -8,7 +9,7 @@ import Title from './item/Title'
 
 const Wrapper = styled(Link)`
   align-items: center;
-  background-color: ${(props) => (props.current ? props.theme.colors.second : 'transparent')};
+  background-color: ${(props) => (props.current ? 'var(--secondary-10)' : 'transparent')};
   border-radius: 1rem !important;
   display: flex;
   padding: 0.875rem 0.875rem 1rem;
@@ -16,10 +17,10 @@ const Wrapper = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    background-color: ${(props) => (props.current ? 'var(--secondary-20)' : props.theme.colors.mainLight)};
+    background-color: ${(props) => (props.current ? 'var(--secondary-20)' : 'var(--primary-10)')};
   }
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 0.25rem 0.125rem 1rem;
   }
 `

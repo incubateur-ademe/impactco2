@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { Section } from 'components/base/Section'
 
 export const StyledSection = styled(Section)`
@@ -10,7 +11,7 @@ export const Strong = styled.p`
   font-style: italic;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.medium}  {
+  ${MEDIA.LT.MEDIUM}  {
     font-size: 1.125rem;
   }
 `

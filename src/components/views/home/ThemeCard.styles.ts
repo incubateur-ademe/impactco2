@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Card = styled(Link)`
   align-items: center;
-  background-color: white;
+  background-color: var(--neutral-00);
   border-radius: 8px;
   color: #235dd2;
   display: flex;
