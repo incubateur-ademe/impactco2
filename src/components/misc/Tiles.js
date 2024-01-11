@@ -64,7 +64,8 @@ export default function Tiles(props) {
       tracking={'Comparateur'}
       setOverScreen={setOverScreen}
       overScreen={overScreen ? overScreenValues[overScreen] : undefined}
-      title={props.title}>
+      title={props.title}
+      path='comparateur'>
       <DndContext
         collisionDetection={closestCenter}
         measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}

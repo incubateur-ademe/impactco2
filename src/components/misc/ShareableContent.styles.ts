@@ -30,10 +30,15 @@ export const IFrameLogos = styled.div`
   text-align: center;
 `
 
-export const Screenshotable = styled.div<{ $darkMode?: boolean }>`
-  background-color: ${({ $darkMode }) => ($darkMode ? 'black' : 'white')};
+export const Screenshotable = styled.div<{ $darkMode?: boolean; $theme?: 'color' }>`
+  background-color: ${({ $theme, $darkMode }) => ($theme ? ' var(--secondary-10)' : $darkMode ? 'black' : 'white')};
 `
 
-export const Content = styled.div`
+export const Content = styled.div<{ $theme?: 'color' }>`
   flex: 1;
+  ${({ $theme }) => $theme === 'color' && 'background-color: var(--secondary-10);'}
+`
+
+export const Separator = styled.div`
+  height: 2.5rem;
 `

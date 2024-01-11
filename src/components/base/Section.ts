@@ -32,6 +32,7 @@ export const SectionWideContent = styled.div<{
   $size?: 'xs' | 'sm' | 'lg'
   $noGutter?: boolean
   $flex?: boolean
+  $reverse?: boolean
 }>`
   margin: auto;
   max-width: ${({ $size }) => sizes[$size || 'lg']};
@@ -42,6 +43,12 @@ export const SectionWideContent = styled.div<{
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: space-between;
+    `}
+  ${({ $reverse }) =>
+    $reverse &&
+    css`
+      display: flex;
+      flex-direction: column-reverse;
     `}
   ${({ $noGutter }) =>
     !$noGutter &&

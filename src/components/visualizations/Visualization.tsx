@@ -16,7 +16,7 @@ import {
   Title,
 } from './Visualization.styles'
 
-export const categoryLinks: Record<string, { to: string; label: string }> = {
+const categoryLinks: Record<string, { to: string; label: string }> = {
   boisson: {
     to: '/boissons',
     label: "Comparez avec d'autres boissons",

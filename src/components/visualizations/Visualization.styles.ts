@@ -14,7 +14,7 @@ export const Equivalents = styled.div`
   display: flex;
   gap: 32px;
   justify-content: space-around;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   ${MEDIA.LT.SMALL} {
     margin-bottom: 1rem;

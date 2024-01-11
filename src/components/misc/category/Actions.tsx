@@ -6,9 +6,11 @@ import { Buttons } from './Actions.styles'
 const Actions = ({
   onClick,
   tracking,
+  withoutIntegration,
 }: {
   onClick: (value: 'partager' | 'integrer' | 'telecharger') => void
   tracking: string
+  withoutIntegration?: boolean
 }) => {
   return (
     <Buttons>
@@ -21,15 +23,16 @@ const Actions = ({
         }}>
         Partager
       </GhostButton>
-      <GhostButton
-        data-testid='header-integrate-button'
-        icon='code-s-slash'
-        onClick={() => {
-          onClick('integrer')
-          track(tracking, 'Integrer', `${tracking.replace(/ /g, '_').toLowerCase()}_integrer`)
-        }}>
-        Intégrer
-      </GhostButton>
+      {!withoutIntegration && (
+        <GhostButton
+          data-testid='header-integrate-button'
+          icon='code-s-slash'
+          onClick={() => {
+            onClick('integrer')
+          }}>
+          Intégrer
+        </GhostButton>
+      )}
       <GhostButton
         icon='download'
         onClick={() => {

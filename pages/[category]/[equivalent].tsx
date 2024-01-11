@@ -43,7 +43,7 @@ export default function Equivalent({ category, equivalent }: { category: Categor
         equivalent: equivalent,
       }}>
       <Details equivalent={equivalent} category={category} />
-      <VisualizationSlider equivalent={equivalent} />
+      <VisualizationSlider equivalent={equivalent} category={category} />
       <Ecv equivalent={equivalent} />
       <Text equivalent={equivalent} />
     </Web>
