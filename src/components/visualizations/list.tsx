@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import LiseuseBookComparator from 'components/numerique/equivalent/LiseuseBookComparator'
-import StockageEmails from 'components/numerique/equivalent/StockageEmails'
 import Smartphone from './Smartphone'
 import Visualization from './Visualization'
 
@@ -82,9 +81,6 @@ const visualizations: Record<string, ReactNode[]> = {
   poeleagranule: [<Visualization types={['chauffagegaz', 'poeleagranule', 'chauffageelectrique']} key='Chauffage' />],
   poeleabois: [<Visualization types={['poeleabois', 'poeleagranule', 'chauffageelectrique']} key='Chauffage' />],
   reseaudechaleur: [<Visualization types={['reseaudechaleur', 'poeleagranule', 'pompeachaleur']} key='Chauffage' />],
-  email: [<StockageEmails key='StockageEmails' />],
-  emailpiecejointe: [<StockageEmails key='StockageEmails' />],
-  stockageemail: [<StockageEmails key='StockageEmails' />],
   liseuse: [
     <LiseuseBookComparator key='simulator' />,
     <Visualization types={['liseuse', 'livredepoche']} key='liseuse' />,

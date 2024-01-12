@@ -43,7 +43,9 @@ export default function Slider(props) {
         onChange={(values) => {
           if (!tracked.current) {
             tracked.current = true
-            track(...props.tracking)
+            if (props.tracking) {
+              track(...props.tracking)
+            }
           }
 
           props.onChange(values[0])
