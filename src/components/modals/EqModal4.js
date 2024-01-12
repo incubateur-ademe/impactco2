@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import useLocalStorage from 'use-local-storage'
-import ModalContext from 'components/providers/ModalProvider'
+import { MEDIA } from 'utils/styles'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal4 from 'components/base/Modal4'
 import Button from 'components/base/buttons/Button'
 import { default_eqs } from 'components/livraison/data.js'
@@ -17,7 +18,7 @@ const getTitle = () => {
 }
 
 export default function EqModal4() {
-  const { eqv: open, setEqv: setOpen } = useContext(ModalContext)
+  const { eqv: open, setEqv: setOpen } = useModalContext()
   const [eqvArray, setEqvArray] = useLocalStorage('ico2_eqv_array', default_eqs)
   const [eqvChosen, setEqvChosen] = useLocalStorage('ico2_eqv_chosen', default_eqs)
 
@@ -101,13 +102,13 @@ const Scroll = styled.div`
     content: '';
     display: block;
     height: 0px;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       height: 120px;
     }
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       height: 150px;
     }
-    ${(props) => props.theme.mq.xsmall} {
+    ${MEDIA.LT.XSMALL} {
       height: 190px;
     }
     width: 100%;
@@ -120,7 +121,7 @@ const Title = styled.h2`
 `
 
 const GreenText = styled.span`
-  color: #1c9b93;
+  color: var(--primary-50);
 `
 
 const Intro = styled.div`
@@ -133,7 +134,7 @@ const Intro = styled.div`
 `
 
 const ButtonCancel = styled.button`
-  background-color: white;
+  background-color: var(--neutral-00);
   border-color: #b5abb2;
   border-radius: 8px;
   border-style: solid;
@@ -150,7 +151,7 @@ const ButtonCancel = styled.button`
 `
 
 const ValidationZone = styled.div`
-  background-color: white;
+  background-color: var(--neutral-00);
   bottom: 0;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -169,7 +170,7 @@ const ValidationButtons = styled.div`
 const GridSplit = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     grid-template-columns: repeat(1, 1fr);
   }
   grid-template-rows: 1fr;
@@ -184,24 +185,24 @@ const ValidationMsg = styled.div`
   border-radius: 0.25rem;
   display: flex;
   padding: 1rem 1rem 1rem 2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.75rem;
     padding-right: 0.25rem;
   }
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     padding-left: 0.2rem;
   }
 `
 
 const ShowMobile = styled.span`
   display: none;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: inline;
   }
 `
 const ShowDesktop = styled.span`
   display: inline;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: none;
   }
 `

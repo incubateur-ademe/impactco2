@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal2 from 'components/base/Modal2'
 import Link from 'components/base/buttons/Link'
 
 export default function WarningNegaoctet() {
-  const { warningNegaoctet: open, setWarningNegaoctet: setOpen } = useContext(ModalContext)
+  const { warningNegaoctet: open, setWarningNegaoctet: setOpen } = useModalContext()
 
   const getTitle = () => {
     return <Title>Source des données</Title>
@@ -16,7 +16,7 @@ export default function WarningNegaoctet() {
       <p>
         Les données et les calculs sont issues du projet&nbsp;
         <Link
-          color='secondary'
+          priority='secondary'
           href='https://base-empreinte.ademe.fr/documentation/base-impact'
           title='Base impact, étude réalisée par Negaoctet'>
           NégaOctet (lauréat de l'appel à projet PERFECTO 2018)
@@ -29,7 +29,7 @@ export default function WarningNegaoctet() {
       </p>
       <p>
         Ces calculs expliquent la différence de résultat entre l'impact carbone que l'on a sur le site&nbsp;
-        <Link color='secondary' href={process.env.NEXT_PUBLIC_URL} title='site Internet impact CO₂'>
+        <Link priority='secondary' href={process.env.NEXT_PUBLIC_URL} title='site Internet impact CO₂'>
           impactco2.fr
         </Link>{' '}
         et les données NO partagées sur la base Empreinte de l'ADEME.

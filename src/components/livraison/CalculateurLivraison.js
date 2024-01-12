@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
-import { themes } from 'utils/styles'
+import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
-import RulesContextLivraison from 'components/livraison/RulesProviderLivraison'
+import useRulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
 import OptionalRelay from './OptionalRelay'
 import OptionalTraj from './OptionalTraj'
@@ -33,9 +33,9 @@ const Svg = styled.svg`
 `
 
 export default function CalculateurLivraison(props) {
-  const { engine } = useContext(RulesContextLivraison)
-  const { setIfl } = useContext(ModalContext)
-  const { setSocial } = useContext(ModalContext)
+  const { engine } = useRulesContextLivraison()
+  const { setIfl } = useModalContext()
+  const { setSocial } = useModalContext()
 
   const [cO2eq, setCO2eq] = useState(0)
 
@@ -94,7 +94,13 @@ export default function CalculateurLivraison(props) {
           <Flex>
             <H2Title data-testid='calculateurTitleH2'>Estimez l'impact de votre livraison</H2Title>
             <div className='buttons'>
-              <Button color='secondary' size='sm' onClick={() => setSocial(true)} className='noscreenshot' id='shareUp'>
+              <Button
+                priority='secondary'
+                size='sm'
+                onClick={() => setSocial(true)}
+                className='noscreenshot'
+                id='shareUp'
+                aria-label='Partarger'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 -2 24 24'>
                   <path
                     fill='currentcolor'
@@ -103,7 +109,12 @@ export default function CalculateurLivraison(props) {
                 </svg>
                 <HideableSpan>Partager</HideableSpan>
               </Button>
-              <Button color='secondary' size='sm' onClick={integrerClicked} className='noscreenshot'>
+              <Button
+                priority='secondary'
+                size='sm'
+                onClick={integrerClicked}
+                className='noscreenshot'
+                aria-label='Intégrer'>
                 <svg width='16px' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 16'>
                   <path
                     stroke='currentColor'
@@ -115,7 +126,12 @@ export default function CalculateurLivraison(props) {
                 </svg>
                 <HideableSpan>Intégrer le simulateur</HideableSpan>
               </Button>
-              <Button color='secondary' size='sm' onClick={takeScreenshot} className='noscreenshot'>
+              <Button
+                priority='secondary'
+                size='sm'
+                onClick={takeScreenshot}
+                className='noscreenshot'
+                aria-label='Télécharger'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
                   <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
                   <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z' />
@@ -137,8 +153,8 @@ export default function CalculateurLivraison(props) {
                     className='toggle'
                     checked={isHabit}
                     onChange={habitClicked}
-                    offColor={'#fff'}
-                    onColor={themes.default.colors.main2}
+                    offColor='var(--neutral-00)'
+                    onColor='var(--primary-50)'
                     aria-label='Changer de thème'
                     uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                     checkedHandleIcon={
@@ -175,8 +191,8 @@ export default function CalculateurLivraison(props) {
                     className='toggle'
                     checked={isPlane}
                     onChange={farawayClicked}
-                    offColor={'#fff'}
-                    onColor={themes.default.colors.main2}
+                    offColor='var(--neutral-00)'
+                    onColor='var(--primary-50)'
                     aria-label='Changer de thème'
                     uncheckedHandleIcon={<Svg x='0px' y='0px' width='16' height='16' viewBox='0 0 16 16' />}
                     checkedHandleIcon={
@@ -216,7 +232,7 @@ const Optionals = styled.div`
     display: flex;
     font-size: 14px;
     justify-content: center;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       justify-content: flex-start;
       margin-bottom: 1rem;
       margin-left: 1rem;
@@ -233,13 +249,13 @@ const H2Title = styled.h2`
 `
 
 const DropList = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   border: 1px solid #e2dce0;
   border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: start;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     grid-template-columns: repeat(1, 1fr);
     justify-items: start;
   }
@@ -251,12 +267,12 @@ const DropList = styled.div`
     margin-bottom: 0;
   }
   > div > select {
-    color: #1c9b93;
+    color: var(--primary-50);
     padding-left: 0;
     white-space: normal;
     width: 100%;
     word-wrap: break-word;
-    ${(props) => props.theme.mq.xsmall} {
+    ${MEDIA.LT.XSMALL} {
       font-size: 0.75rem;
     }
   }
@@ -264,10 +280,10 @@ const DropList = styled.div`
 
 const Addendum = styled.div`
   align-items: center;
-  background-color: #ebf2ff;
-  border: 1px solid #ccdcfd;
+  background-color: var(--secondary-10);
+  border: 1px solid var(--secondary-20);
   border-radius: 8px;
-  color: #235dd2;
+  color: var(--secondary-60);
   display: flex;
   font-size: 14px;
   font-weight: 400;
@@ -275,24 +291,24 @@ const Addendum = styled.div`
   letter-spacing: 0em;
   line-height: 32px;
   min-width: 100px;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     margin-right: 1rem;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-right: 0;
   }
   padding: 0 0.65rem;
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     padding: 0 0.25rem;
   }
   > .txt {
-    ${(props) => props.theme.mq.large} {
+    ${MEDIA.LT.LARGE} {
       line-height: 20px;
     }
   }
   > .plus {
     font-size: 28px;
-    ${(props) => props.theme.mq.xsmall} {
+    ${MEDIA.LT.XSMALL} {
       font-size: 14px;
     }
     line-height: 32px;
@@ -315,7 +331,7 @@ const Flex = styled.div`
 `
 
 const ToggleContainer = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight2};
+  background-color: var(--neutral-10);
   display: ${(props) => (props.$show ? 'block' : 'none')};
 `
 
@@ -323,7 +339,7 @@ const ToggleHabitContainer = styled.div`
   .toggle {
     border: 1px solid #39a69e;
     .react-switch-handle {
-      background: white !important;
+      background: var(--neutral-00) !important;
       border: 1px solid #39a69e !important;
       height: 19px !important;
       width: 19px !important;
@@ -347,7 +363,7 @@ const FlexHabit = styled.div`
   display: flex;
   margin-top: -1rem;
   padding: 2rem 0 1rem 2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 2rem 0 1rem 1rem;
   }
   > .item1 {
@@ -359,7 +375,7 @@ const FlexHabit = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       padding-left: 0.25rem;
       font-size: 14px;
     }
@@ -367,14 +383,14 @@ const FlexHabit = styled.div`
   > .item3 {
     margin-left: auto;
     margin-right: 2rem;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       margin-right: 1rem;
     }
   }
 `
 
 const ToggleContainerBottom = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight2};
+  background-color: var(--neutral-10);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 `
@@ -383,7 +399,7 @@ const FlexHabitBottom = styled.div`
   border-top: 1px solid #d8dbe1;
   display: flex;
   padding: 1rem 0 1rem 2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 2rem 0 1rem 1rem;
   }
   > .item1 {
@@ -395,7 +411,7 @@ const FlexHabitBottom = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       padding-left: 0.25rem;
       font-size: 14px;
     }
@@ -403,14 +419,14 @@ const FlexHabitBottom = styled.div`
   > .item3 {
     margin-left: auto;
     margin-right: 2rem;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       margin-right: 1rem;
     }
   }
 `
 
 const HideableSpan = styled.span`
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     display: none;
   }
 `

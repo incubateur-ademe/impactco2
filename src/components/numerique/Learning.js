@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import { MEDIA } from 'utils/styles'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
@@ -19,12 +20,12 @@ const Statistic = styled.h2`
     text-decoration: none;
   }
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 2rem;
   }
 `
 const Number = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   font-size: 2.25em;
 `
 const Strong = styled.p`
@@ -32,14 +33,14 @@ const Strong = styled.p`
   font-style: italic;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.medium}  {
+  ${MEDIA.LT.MEDIUM}  {
     font-size: 1.125rem;
   }
 `
 const Title = styled.h2``
 const Text = styled.p``
 export default function Learning() {
-  const { setCo2e } = useContext(ModalContext)
+  const { setCo2e } = useModalContext()
 
   return (
     <StyledSection>

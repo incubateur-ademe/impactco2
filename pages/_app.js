@@ -2,18 +2,18 @@ import { init } from '@socialgouv/matomo-next'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { NextAdapter } from 'next-query-params'
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { QueryParamProvider } from 'use-query-params'
 import 'utils/fonts.css'
 import { GlobalStyle } from 'utils/styles'
 import 'utils/variables.css'
 import { DataProvider } from 'components/providers/DataProvider'
 import { ModalProvider } from 'components/providers/ModalProvider'
-import { StyleProvider } from 'components/providers/StyleProvider'
+import useTheme from 'components/layout/Theme'
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
 
+  useTheme()
   useEffect(() => {
     if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_MATOMO === 'true') {
       init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
@@ -30,79 +30,15 @@ function MyApp({ Component, pageProps }) {
   return (
     <QueryParamProvider adapter={NextAdapter}>
       <QueryClientProvider client={queryClient}>
-        <StyleProvider>
-          <SkipLinks>
-            <div className='fr-skiplinks'>
-              <nav className='fr-container' role='navigation' aria-label='Accès rapide'>
-                <ul className='fr-skiplinks__list'>
-                  <li>
-                    <a className='fr-link visible-hidden' href='#contenu'>
-                      Contenu
-                    </a>
-                  </li>
-                  <li>
-                    <a className='fr-link visible-hidden' href='#header-navigation'>
-                      Menu
-                    </a>
-                  </li>
-                  <li>
-                    <a className='fr-link visible-hidden' href='#header-search'>
-                      Recherche
-                    </a>
-                  </li>
-                  <li>
-                    <a className='fr-link visible-hidden' href='#footer'>
-                      Pied de page
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </SkipLinks>
-
-          <DataProvider>
-            <ModalProvider>
-              <GlobalStyle />
-              <Component {...pageProps} />
-            </ModalProvider>
-          </DataProvider>
-        </StyleProvider>
+        <DataProvider>
+          <ModalProvider>
+            <GlobalStyle />
+            <Component {...pageProps} />
+          </ModalProvider>
+        </DataProvider>
       </QueryClientProvider>
     </QueryParamProvider>
   )
 }
 
 export default MyApp
-
-const SkipLinks = styled.div`
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .visible-hidden {
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-
-  .visible-hidden:focus {
-    background-color: white;
-    clip: auto;
-    height: auto;
-    overflow: auto;
-    position: absolute;
-    width: auto;
-    z-index: 9;
-  }
-`

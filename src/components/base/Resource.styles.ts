@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const LinkContainer = styled(Link)<{ $color?: 'secondary' }>`
   align-items: stretch;
-  background-color: white;
+  background-color: var(--neutral-00);
   border: 1px solid var(--${({ $color }) => ($color === 'secondary' ? 'secondary' : 'neutral')}-20);
   border-radius: ${({ $color }) => ($color === 'secondary' ? '4px' : '16px')};
   color: var(--neutral-80);

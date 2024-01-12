@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 
@@ -11,7 +12,7 @@ const Strong = styled.p`
   font-style: italic;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.medium}  {
+  ${MEDIA.LT.MEDIUM}  {
     font-size: 1.125rem;
   }
 `

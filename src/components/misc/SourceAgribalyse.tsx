@@ -14,7 +14,7 @@ export default function SourceAgribalyse({ tracking }: { tracking: string }) {
       <Link
         href='https://agribalyse.ademe.fr/app'
         data-testid='lien-agribalyse'
-        color='secondary'
+        priority='secondary'
         onClick={() => track(tracking, 'Source', 'https://agribalyse.ademe.fr/app')}>
         Agribalyse 3.1.1
       </Link>

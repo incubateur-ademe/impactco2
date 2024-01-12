@@ -16,7 +16,7 @@ const Track = styled.div`
   width: 100%;
 
   &:before {
-    background-color: ${(props) => props.theme.colors.text};
+    background-color: var(--neutral-70);
     bottom: 0;
     content: '';
     left: -0.625rem;
@@ -26,7 +26,7 @@ const Track = styled.div`
   }
 `
 const Thumb = styled.div`
-  background-color: ${(props) => props.color || props.theme.colors.main};
+  background-color: ${(props) => props.color || 'var(--primary-50)'};
   border-radius: 1rem;
   height: 1.25rem;
   width: 1.25rem;
@@ -43,7 +43,9 @@ export default function Slider(props) {
         onChange={(values) => {
           if (!tracked.current) {
             tracked.current = true
-            track(...props.tracking)
+            if (props.tracking) {
+              track(...props.tracking)
+            }
           }
 
           props.onChange(values[0])

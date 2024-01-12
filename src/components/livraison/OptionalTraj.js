@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export default function OptionalTraj(props) {
   return (
@@ -6,9 +7,10 @@ export default function OptionalTraj(props) {
       <div className='item1' />
       <div className='item2'>
         <FlexCenter>
-          <Text>Pour cela, vous parcourez une distance de&nbsp;</Text>
+          <Text htmlFor='km-input'>Pour cela, vous parcourez une distance de&nbsp;</Text>
           <Flex>
             <Input
+              id='km-input'
               type='number'
               data-testid='kms'
               value={props.km}
@@ -30,24 +32,24 @@ export default function OptionalTraj(props) {
   )
 }
 
-const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.textLight2};
+const Wrapper = styled.label`
+  background-color: var(--neutral-10);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   display: grid;
   grid-template-columns: 6rem auto;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     grid-template-columns: 0 auto;
   }
   padding: 0 0 1.5rem 2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 0 0 1.5rem 1rem;
   }
 `
 
 const Text = styled.div`
   font-size: 16px;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 14px;
   }
   font-weight: 400;
@@ -61,7 +63,7 @@ const Input = styled.input`
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
-  color: ${(props) => props.theme.colors.main2};
+  color: var(--primary-60);
   text-align: right;
   width: 2rem;
 `
@@ -70,7 +72,7 @@ const FlexCenter = styled.div`
   align-items: center;
   display: flex;
   justify-content: flex-start;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -81,7 +83,7 @@ const Flex = styled.div`
 `
 
 const SmallExplanation = styled.div`
-  color: ${(props) => props.theme.colors.textGray};
+  color: var(--neutral-50);
   font-size: 14px;
   padding-right: 0.5rem;
 `

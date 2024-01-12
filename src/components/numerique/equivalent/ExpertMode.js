@@ -1,7 +1,8 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Button from 'components/base/buttons/Button'
-import RulesContextNumerique from '../RulesProviderNumerique'
+import useRulesContextNumerique from '../RulesProviderNumerique'
 import Question from './expertMode/Question'
 
 const Wrapper = styled.div`
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   justify-content: center;
   margin-top: 1rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     flex-direction: column;
   }
 `
@@ -21,7 +22,7 @@ const StyledButtonLink = styled(Button)`
   margin-bottom: 2rem;
 `
 export default function ExpertMode(props) {
-  const { engine, setSituation } = useContext(RulesContextNumerique)
+  const { engine, setSituation } = useRulesContextNumerique()
 
   const [open, setOpen] = useState(false)
   return (

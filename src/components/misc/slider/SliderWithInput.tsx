@@ -21,7 +21,7 @@ const Track = styled.div`
   position: relative;
 
   &:before {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: var(--primary-20);
     bottom: 0;
     content: '';
     left: -2.75rem;
@@ -32,9 +32,9 @@ const Track = styled.div`
 `
 const Thumb = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: var(--primary-50);
   border-radius: 1.5rem;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   display: flex;
   font-weight: 700;
   height: 2.5rem;
@@ -58,12 +58,14 @@ const SliderWithInput = ({
   unit,
   digit,
   tracking,
+  'aria-label': ariaLabel,
 }: {
   value: number
   setValue: Dispatch<SetStateAction<number>>
   unit: string
   digit: number
   tracking: string
+  ['aria-label']: string
 }) => {
   const tracked = useRef(false)
 
@@ -114,7 +116,7 @@ const SliderWithInput = ({
             renderTrack={({ props, children }) => <Track {...props}>{children}</Track>}
             renderThumb={({ props }) => (
               // Thumb can't be in his own component (don't know why)
-              <Thumb {...props}>
+              <Thumb {...props} aria-label={ariaLabel}>
                 <ThumbContent value={value} setOpenTextInput={setOpenTextInput} unit={unit} />
               </Thumb>
             )}

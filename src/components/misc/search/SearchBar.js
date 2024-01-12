@@ -1,14 +1,15 @@
 import Fuse from 'fuse.js'
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import DataContext from 'components/providers/DataProvider'
+import { MEDIA } from 'utils/styles'
+import useDataContext from 'components/providers/DataProvider'
 import Suggestions from './searchBar/Suggestions'
 import TextInput from './searchBar/TextInput'
 
 const Wrapper = styled.form`
-  background-color: ${(props) => (props.focus ? props.theme.colors.background : 'transparent')};
-  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  background-color: ${(props) => (props.focus ? 'var(--neutral-00)' : 'transparent')};
+  border: 0.125rem solid var(--primary-50);
   border-radius: 0.625em;
   box-shadow: ${(props) => (props.focus ? '-0.25rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.05)' : 'none')};
   left: 0;
@@ -18,7 +19,7 @@ const Wrapper = styled.form`
   top: 0;
   z-index: 100;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     border-radius: ${(props) => (props.home || props.focus ? ' 0.625em' : '4rem')};
     left: ${(props) => (props.home ? 0 : 'auto')};
     width: ${(props) => (props.home ? 'auto' : props.focus ? 'calc(100vw - 1.5rem)' : '2.375rem')};
@@ -26,7 +27,7 @@ const Wrapper = styled.form`
 `
 
 export default function SearchBar(props) {
-  const { equivalents, categories } = useContext(DataContext)
+  const { equivalents, categories } = useDataContext()
   const [search, setSearch] = useState('')
 
   const [results, setResults] = useState([])

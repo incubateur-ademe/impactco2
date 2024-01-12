@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.background};
-  border: 0.125rem solid ${(props) => props.theme.colors.text};
+  background-color: var(--neutral-00);
+  border: 0.125rem solid var(--neutral-70);
   border-radius: 0.5rem;
   display: flex;
   height: 1.75rem;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 1.75rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     height: 1.5rem;
     width: 1.5rem;
   }
@@ -21,13 +22,13 @@ const Check = styled.svg`
   height: 1.2rem;
   width: auto;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     height: 1rem;
   }
 
   path {
     fill: none;
-    stroke: ${(props) => props.theme.colors.main};
+    stroke: var(--primary-50);
     stroke-dasharray: 4322.794921875;
     stroke-dashoffset: ${(props) => (props.checked ? 0 : 4322.794921875)};
     stroke-width: 600;

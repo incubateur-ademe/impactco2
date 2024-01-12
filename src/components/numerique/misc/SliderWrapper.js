@@ -8,7 +8,7 @@ const SliderWrapper = styled.div`
 `
 SliderWrapper.Slider = styled.div`
   align-items: center;
-  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border: 0.125rem solid var(--primary-50);
   border-radius: 0.5rem;
   display: flex;
   gap: 0.75rem;

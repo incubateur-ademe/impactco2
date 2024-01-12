@@ -1,10 +1,10 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { Category } from 'types/category'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Bottom from './category/Bottom'
@@ -15,7 +15,7 @@ import List from './category/List'
 import { Checkboxes, Top } from './category/Top'
 
 export default function CategoryList({ category, iframe }: { category: Category; iframe?: boolean }) {
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
   const [displayAll, setDisplayAll] = useState(false)
 

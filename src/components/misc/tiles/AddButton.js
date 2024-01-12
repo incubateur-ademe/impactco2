@@ -1,14 +1,15 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import ModalContext from 'components/providers/ModalProvider'
+import { MEDIA } from 'utils/styles'
+import useModalContext from 'components/providers/ModalProvider'
 
 const Wrapper = styled.button`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: var(--primary-50);
   border: none;
   border-radius: 1rem;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -21,10 +22,10 @@ const Wrapper = styled.button`
     transform: scale(1.2);
   }
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     width: calc(33.3333% - 0.5rem);
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     width: calc(50% - 0.375rem);
   }
 `
@@ -40,7 +41,7 @@ const Text = styled.p`
   text-align: center;
 `
 export default function AddButton() {
-  const { setTiles } = useContext(ModalContext)
+  const { setTiles } = useModalContext()
 
   return (
     <Wrapper

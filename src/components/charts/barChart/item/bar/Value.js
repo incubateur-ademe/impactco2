@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
   align-items: baseline;
-  color: ${(props) => props.theme.colors[props.$inside ? 'background' : 'main']};
+  color: ${(props) => (props.$inside ? 'var(--neutral-00)' : 'var(--primary-60)')};
   display: flex;
   left: ${(props) => (props.$inside ? 'auto' : '100%')};
   line-height: 0.7;
@@ -19,7 +20,7 @@ const Number = styled.span`
   font-weight: 700;
   margin-right: 0.6rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
   }
 `

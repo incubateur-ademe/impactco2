@@ -3,16 +3,17 @@ import styled from 'styled-components'
 import { Category } from 'types/category'
 import { Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
+import { MEDIA } from 'utils/styles'
 import Select from 'components/base/Select'
 import Code from './configurator/Code'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
   border-radius: 1rem;
   max-width: 73.5rem;
   padding: 2rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-bottom: 1.5rem;
     width: 100%;
   }
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-size: 2rem;
   text-align: center;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     text-align: left;
   }
 `
@@ -28,7 +29,7 @@ const Grid = styled.div`
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     grid-template-columns: repeat(1, 1fr);
   }
 `
@@ -75,7 +76,7 @@ export default function Configurator({
                 ))}
               </Select>
               {slug.startsWith('transport') && (
-                <Select onChange={(e) => setSlug(e.value)} value={slug} name='transport'>
+                <Select onChange={(e) => setSlug(e.value)} value={slug} name='type'>
                   <option key='transport' value='transport'>
                     Distance
                   </option>
@@ -88,7 +89,7 @@ export default function Configurator({
                 </Select>
               )}
               {slug.startsWith('habillement') && (
-                <Select onChange={(e) => setSlug(e.value)} value={slug} name='habillement'>
+                <Select onChange={(e) => setSlug(e.value)} value={slug} name='type'>
                   <option key='habillement' value='habillement'>
                     Impact de la mode
                   </option>

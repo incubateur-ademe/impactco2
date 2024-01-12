@@ -1,12 +1,13 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import useLocalStorage from 'use-local-storage'
-import DataContext from 'components/providers/DataProvider'
+import { MEDIA } from 'utils/styles'
+import useDataContext from 'components/providers/DataProvider'
 import EquivalentSquareChecked from './tilesModal/EquivalentSquareChecked'
 
 export default function ActualChoices() {
   const [eqvArray, setEqvArray] = useLocalStorage('ico2_eqv_array')
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
   const [, setEqvError] = useLocalStorage('eqvError')
 
   useEffect(() => {
@@ -78,7 +79,7 @@ const Wrapper = styled.div`
 `
 
 const SelectionBox = styled.div`
-  background-color: #ebfffe;
+  background-color: var(--primary-10);
   border-radius: 1rem;
   padding: 1rem;
 `
@@ -88,13 +89,13 @@ const Choices = styled.div`
 `
 
 const UpperSide = styled.div`
-  border-bottom: 1px solid #a0f5ee;
-  color: ${(props) => props.theme.colors.persistentText};
+  border-bottom: 1px solid var(--primary-20);
+  color: var(--neutral-70);
   padding-bottom: 1rem;
 `
 
 const UpperSideCounting = styled.div`
-  background-color: #a0f5ee;
+  background-color: var(--primary-20);
   border-radius: 0.25rem;
   display: inline-block;
   padding: 0.125rem 0.5rem;
@@ -111,20 +112,20 @@ const MaxCount = styled.span`
 const EmptyChoice = styled.div`
   font-style: italic;
   margin-top: 1rem;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 0.9rem;
   }
 `
 
 const ShowMobile = styled.span`
   display: none;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: inline;
   }
 `
 const ShowDesktop = styled.span`
   display: inline;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: none;
   }
 `

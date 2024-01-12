@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
-  border-right: 0.125rem solid ${(props) => props.theme.colors.main};
+  border-right: 0.125rem solid var(--primary-50);
 
   &:last-child {
     border-right: none;
@@ -18,8 +19,8 @@ const Wrapper = styled.div`
 `
 const Label = styled.label`
   align-items: center;
-  background-color: ${(props) => (props.checked ? props.theme.colors.main : 'transparent')};
-  color: ${(props) => props.theme.colors[props.checked ? 'background' : 'main']};
+  background-color: ${(props) => (props.checked ? 'var(--primary-50)' : 'transparent')};
+  color: ${(props) => (props.checked ? 'var(--neutral-00)' : 'var(--primary-50')};
   cursor: pointer;
   display: flex;
   font-size: 1rem;
@@ -28,7 +29,7 @@ const Label = styled.label`
   padding: 0.5rem 0.75rem;
   position: relative;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
   }
 `

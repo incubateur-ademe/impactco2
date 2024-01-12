@@ -1,8 +1,8 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 import NumberInput from './distance/NumberInput'
 import PlusOrMinusButton from './distance/PlusOrMinusButton'
 import ThumbContent from './distance/ThumbContent'
@@ -22,7 +22,7 @@ const Track = styled.div`
   position: relative;
 
   &:before {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: var(--primary-10);
     bottom: 0;
     content: '';
     left: -2.75rem;
@@ -33,9 +33,9 @@ const Track = styled.div`
 `
 const Thumb = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: var(--primary-50);
   border-radius: 1.5rem;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   display: flex;
   font-weight: 700;
   height: 2.5rem;
@@ -45,12 +45,12 @@ const Thumb = styled.div`
   width: 7rem;
 
   &:focus {
-    box-shadow: 0 0 0 0.125rem ${(props) => props.theme.colors.mainLight};
+    box-shadow: 0 0 0 0.125rem var(--primary-10);
     outline: none;
   }
 `
 export default function Distance() {
-  const { km, setKm } = useContext(TransportContext)
+  const { km, setKm } = useTransportContext()
   const tracked = useRef(false)
 
   const cleanRound = (x) => {

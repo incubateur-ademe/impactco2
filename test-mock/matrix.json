@@ -1,10 +1,6 @@
 {
-  "destination_addresses": [
-    "5 Rue Casimir Périer, 75007 Paris, France"
-  ],
-  "origin_addresses": [
-    "56 Rue Auvry, 93300 Aubervilliers, France"
-  ],
+  "destination_addresses": ["5 Rue Casimir Périer, 75007 Paris, France"],
+  "origin_addresses": ["56 Rue Auvry, 93300 Aubervilliers, France"],
   "rows": [
     {
       "elements": [

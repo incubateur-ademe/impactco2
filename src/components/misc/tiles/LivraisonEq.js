@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import fullSentenceFormat from 'utils/fullSentenceFormat'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
 import { Media, MediaBody, MediaFigure } from 'components/base/Media'
 
@@ -35,21 +36,21 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 2.5rem;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     padding-left: 1rem;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     padding-left: 1rem;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     align-items: ${(props) => (props.$nbCol === 3 ? 'center' : 'flex-start')};
   }
-  ${(props) => props.theme.mq.xsmall} {
+  ${MEDIA.LT.XSMALL} {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
   > div {
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       margin-bottom: 1rem;
       width: ${(props) => (props.$nbCol === 3 ? '10rem' : 'inherit')};
     }
@@ -65,10 +66,10 @@ const EmojiWrapper = styled.div`
 
 const Number = styled.div`
   font-size: 1.125rem;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 1rem;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 0.9rem;
   }
   font-weight: 500;
@@ -76,7 +77,7 @@ const Number = styled.div`
 `
 
 const OfWhat = styled.div`
-  color: ${(props) => props.theme.colors.textGray};
+  color: var(--neutral-50);
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0em;

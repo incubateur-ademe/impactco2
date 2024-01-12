@@ -1,13 +1,14 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
-import DataContext from 'components/providers/DataProvider'
+import { MEDIA } from 'utils/styles'
+import useDataContext from 'components/providers/DataProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 import Tile from 'components/misc/tiles/Tile'
 
-const emailWeight = 0.0001 //ko
+const emailWeight = 0.0001 // 100ko
 
 export const Title = styled.h3`
   font-weight: normal;
@@ -17,13 +18,13 @@ export const Title = styled.h3`
 const TilesWrapper = styled.div`
   position: relative;
 `
-const Tiles = styled.div`
+const Tiles = styled.div<{ $blur?: boolean }>`
   display: flex;
-  filter: blur(${(props) => (props.blur ? '1rem' : 0)});
+  filter: blur(${(props) => (props.$blur ? '1rem' : 0)});
   gap: 1.5rem;
   margin-bottom: 2.5rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     gap: 0.75rem;
   }
 `
@@ -34,24 +35,24 @@ const ButtonResults = styled(Button)`
   top: 50%;
   transform: translate(-50%, -100%);
 `
-const Input = styled.input`
+const Input = styled.input<{ $mode?: string }>`
   background-color: transparent;
-  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border: 0.125rem solid var(--primary-50);
   border-radius: 0.75rem;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   font-size: 1.125rem;
   margin: 0 0.5rem 1rem;
   padding: 0.5rem;
   text-align: right;
-  width: ${(props) => (props.mode === 'emails' ? 6 : 4.5)}rem;
+  width: ${(props) => (props.$mode === 'emails' ? 6 : 4.5)}rem;
 
   &:focus {
-    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
+    box-shadow: 0 -0 0px 1px var(--primary-50);
     outline: none;
   }
 `
-const Text = styled.p`
-  filter: blur(${(props) => (props.blur ? '1rem' : 0)});
+const Text = styled.p<{ $blur?: boolean }>`
+  filter: blur(${(props) => (props.$blur ? '1rem' : 0)});
   text-align: center;
 `
 const StyledButtonLink = styled(Button)`
@@ -65,7 +66,7 @@ export default function StockageEmails() {
 
   const [displayResults, setDisplayResults] = useState(false)
 
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
   const equivalentsToShow = useMemo(
     () =>
       equivalents.filter((equivalent) =>
@@ -81,7 +82,7 @@ export default function StockageEmails() {
   const [mode, setMode] = useState('emails')
   const [weight, setWeight] = useState(2)
 
-  const totalWeight = useMemo(() => computeECV(gigabyte) * weight, [weight, gigabyte])
+  const totalWeight = useMemo(() => (gigabyte ? computeECV(gigabyte) : 0) * weight, [weight, gigabyte])
   return (
     <>
       <Title>Découvrez l'impact de votre boite mail sur le climat</Title>
@@ -89,24 +90,22 @@ export default function StockageEmails() {
         J'ai
         {mode === 'emails' ? (
           <Input
-            key='1'
-            mode={mode}
+            $mode={mode}
             type='number'
             value={weight / emailWeight}
             onChange={(e) => {
-              setWeight(e.currentTarget.value * emailWeight)
+              setWeight(Number.parseFloat(e.currentTarget.value) * emailWeight)
               setDisplayResults(true)
             }}
             placeholder='XXXX'
           />
         ) : (
           <Input
-            key='2'
-            mode={mode}
+            $mode={mode}
             type='number'
             value={weight}
             onChange={(e) => {
-              setWeight(e.currentTarget.value)
+              setWeight(Number.parseFloat(e.currentTarget.value))
               setDisplayResults(true)
             }}
             placeholder='XX'
@@ -117,7 +116,7 @@ export default function StockageEmails() {
           (Entrer le {mode === 'emails' ? <>poids en Go</> : <>nombre d'emails</>} plutôt)
         </StyledButtonLink>
       </Text>
-      <Text blur={!displayResults}>
+      <Text $blur={!displayResults}>
         Ma boite mail émet{' '}
         <strong>
           {formatNumber(totalWeight)} kg CO<sub>2</sub>e par an
@@ -125,7 +124,7 @@ export default function StockageEmails() {
         , soit l'équivalent de...
       </Text>
       <TilesWrapper>
-        <Tiles blur={!displayResults}>
+        <Tiles $blur={!displayResults}>
           {equivalentsToShow.map((equivalent) => (
             <Tile
               key={equivalent.slug}

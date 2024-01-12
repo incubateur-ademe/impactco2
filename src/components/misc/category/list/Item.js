@@ -1,29 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
 import Link from 'components/base/buttons/Link'
 import Chart from './item/Chart'
 
 const Wrapper = styled(Link)`
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
   border-radius: 1rem;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   padding: 1rem;
   position: relative;
   text-decoration: none;
   width: calc(33.3333% - 1rem);
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     width: calc(50% - 0.375rem);
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: var(--primary-10);
   }
 `
 const Header = styled.div`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.75rem;

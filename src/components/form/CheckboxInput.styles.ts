@@ -46,7 +46,7 @@ export const Container = styled.label<{ $checked: boolean }>`
 `
 
 export const Check = styled.div`
-  color: white;
+  color: var(--neutral-00);
   left: 0.5rem;
   position: absolute;
 `

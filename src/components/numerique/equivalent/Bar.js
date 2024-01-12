@@ -1,8 +1,8 @@
-import { useContext } from 'react'
 import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
-import RulesContextNumerique from '../RulesProviderNumerique'
+import useRulesContextNumerique from '../RulesProviderNumerique'
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   position: relative;
 
   &:before {
-    background-color: ${(props) => props.theme.colors.main};
+    background-color: var(--primary-50);
     bottom: 0;
     content: '';
     left: -2000rem;
@@ -23,34 +23,34 @@ const Wrapper = styled.div`
 `
 const Top = styled.div`
   border-radius: 1rem 1rem 0 0;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   position: relative;
 `
 const Number = styled.span`
   font-size: 3.75rem;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 3rem;
   }
 `
 const Unit = styled.span`
   font-size: 1rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.75rem;
   }
 `
 const Big = styled.span`
   font-size: 1.25rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
   }
 `
 const StyledEmoji = styled(Emoji)`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: var(--neutral-00);
   border-radius: 5.25rem;
   display: flex;
   font-size: 3rem;
@@ -60,7 +60,7 @@ const StyledEmoji = styled(Emoji)`
   position: relative;
   width: 4.5rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 2rem;
     height: 3.25rem;
     width: 3.25rem;
@@ -68,7 +68,7 @@ const StyledEmoji = styled(Emoji)`
 `
 
 export default function Bar(props) {
-  const { engine } = useContext(RulesContextNumerique)
+  const { engine } = useRulesContextNumerique()
 
   return (
     <Wrapper>

@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import { MEDIA } from 'utils/styles'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import { convertGramsToKilograms } from './utils'
 
 export default function ResultatLivraison(props) {
-  const { setHypothesisLivraison } = useContext(ModalContext)
+  const { setHypothesisLivraison } = useModalContext()
 
   return (
     <Wrapper>
@@ -55,16 +56,16 @@ export default function ResultatLivraison(props) {
 }
 
 const BlueGrid = styled.div`
-  background-color: #457be7;
+  background-color: var(--secondary-50);
   border-bottom-left-radius: 14px;
   border-top-left-radius: 14px;
-  color: white;
+  color: var(--neutral-00);
   display: grid;
   grid-template-columns: 30px 1fr;
   margin: auto;
   padding: 0.5rem 1rem 1rem 1rem;
   width: fit-content;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     padding: 0.5rem 1rem 1.5rem 1rem;
     border-bottom-left-radius: 0;
     border-top-right-radius: 14px;
@@ -85,7 +86,7 @@ const BlueGrid = styled.div`
     position: relative;
     > div {
       clip-path: polygon(100% 49%, 83% 0, 84% 99%);
-      ${(props) => props.theme.mq.small} {
+      ${MEDIA.LT.SMALL} {
         display: none;
       }
     }
@@ -102,7 +103,7 @@ const BlueGrid = styled.div`
 
 const ActualResult = styled.span`
   font-size: 2.25rem;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 1.5rem;
   }
   font-weight: 700;
@@ -140,7 +141,7 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     flex-direction: column;
     width: inherit;
   }
@@ -152,7 +153,7 @@ const CenteredBlock = styled.div`
 
 const EqualSign = styled.div`
   align-items: center;
-  background-color: white;
+  background-color: var(--neutral-00);
   border: 2px solid #eae5e8;
   border-radius: 3rem;
   color: #457be7;
@@ -160,13 +161,13 @@ const EqualSign = styled.div`
   font-size: 2rem;
   height: 2.2rem;
   justify-content: center;
-  outline: 2px solid white;
+  outline: 2px solid var(--neutral-00);
   padding-bottom: 0.4rem;
   position: absolute;
   right: -1.05rem;
   top: 1.25rem;
   width: 2.2rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     bottom: -1rem;
     right: 50%;
     top: inherit;

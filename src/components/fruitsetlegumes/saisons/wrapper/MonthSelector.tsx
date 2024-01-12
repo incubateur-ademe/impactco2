@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
 import FancySelect from 'components/base/FancySelect'
+import { HiddenLabel } from 'components/form/HiddenLabel'
 
 export default function MonthSelector({
   month,
@@ -11,13 +12,17 @@ export default function MonthSelector({
   setMonth: Dispatch<SetStateAction<number | undefined>>
 }) {
   return (
-    <FancySelect
-      value={month}
-      onChange={(value: string) => {
-        track('Fruits et légumes', 'Mois', value)
-        setMonth(Number.parseInt(value))
-      }}
-      options={monthsOptions}
-    />
+    <>
+      <HiddenLabel htmlFor='month'>Découvres les fruits et légumes du mois de</HiddenLabel>
+      <FancySelect
+        name='month'
+        value={month}
+        onChange={(value: string) => {
+          track('Fruits et légumes', 'Mois', value)
+          setMonth(Number.parseInt(value))
+        }}
+        options={monthsOptions}
+      />
+    </>
   )
 }

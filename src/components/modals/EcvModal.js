@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 import Agribalyse from './ecvModal/Agribalyse'
 import Numerique from './ecvModal/Numerique'
@@ -9,7 +9,7 @@ import Transport from './ecvModal/Transport'
 
 const Title = styled.h2``
 export default function EcvModal() {
-  const { ecv: open, setEcv: setOpen } = useContext(ModalContext)
+  const { ecv: open, setEcv: setOpen } = useModalContext()
 
   return (
     <>

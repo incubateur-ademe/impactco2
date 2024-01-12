@@ -1,21 +1,22 @@
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import React, { useContext } from 'react'
+import React from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
+import { MEDIA } from 'utils/styles'
 import useIframe from 'hooks/useIframe'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors[props.background ? 'textLight' : 'second']};
+  background-color: ${(props) => (props.background ? 'var(--neutral-10)' : 'var(--secondary-10)')};
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -23,10 +24,10 @@ const Wrapper = styled.div`
   position: relative;
   width: calc(33.3333% - 1rem);
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     width: calc(33.3333% - 0.5rem);
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     width: calc(50% - 0.375rem);
   }
 `
@@ -47,11 +48,11 @@ const ButtonDrag = styled.button`
     width: auto;
 
     circle {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     display: none;
   }
 `
@@ -72,7 +73,7 @@ const ButtonRemove = styled.button`
     width: 100%;
 
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 
@@ -92,7 +93,7 @@ const EmojiWrapper = styled.div`
   }
 `
 const Title = styled.p`
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.2;
@@ -104,7 +105,7 @@ const Number = styled.span`
   font-size: 2rem;
   font-weight: bold;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1.75rem;
   }
 `
@@ -141,7 +142,7 @@ const Svg = styled.svg`
   width: 1em;
 `
 export default function Tile(props) {
-  const { categories } = useContext(DataContext)
+  const { categories } = useDataContext()
 
   const iframe = useIframe()
 
@@ -242,7 +243,7 @@ export default function Tile(props) {
             props.setCurEquivalent(props.equivalent)
           }}
           size='sm'
-          color='secondary'>
+          priority='secondary'>
           <svg width='292' height='388' viewBox='0 0 292 388' fill='currentcolor' xmlns='http://www.w3.org/2000/svg'>
             <path d='M168.627 9.37298C162.378 3.12397 154.19 -4.25109e-05 146 -4.32269e-05C137.812 -4.39427e-05 129.62 3.12497 123.373 9.37297L9.99496 122.75C-2.50204 135.247 -2.50205 155.508 9.99495 168.005C22.492 180.502 42.753 180.502 55.25 168.005L114 109.255L114 356.001C114 373.674 128.327 388.001 146 388.001C163.673 388.001 178 373.674 178 356.001L178 109.255L236.75 168.005C249.247 180.502 269.508 180.502 282.005 168.005C294.502 155.508 294.502 135.247 282.005 122.75L168.627 9.37298Z' />
           </svg>

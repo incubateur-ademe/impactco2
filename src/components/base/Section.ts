@@ -1,17 +1,18 @@
 import styled, { css } from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export const Section = styled.section<{ $theme?: 'color' | 'main'; $withoutPadding?: boolean }>`
-  ${({ $theme, theme }) =>
+  ${({ $theme }) =>
     $theme === 'color'
-      ? `background-color: #ebf2ff;`
+      ? 'background-color: var(--secondary-10);'
       : $theme === 'main'
-        ? `background-color: ${theme.colors.main};`
+        ? 'background-color: var(--primary-50);'
         : ''}
-  ${({ $withoutPadding, theme }) =>
+  ${({ $withoutPadding }) =>
     !$withoutPadding &&
     css`
       padding: 4rem 0;
-      ${theme.mq.large} {
+      ${MEDIA.LT.LARGE} {
         padding: 2rem 0;
       }
     `}
@@ -36,10 +37,10 @@ export const SectionWideContent = styled.div<{ $size?: 'xs' | 'sm'; $noGutter?: 
     !$noGutter &&
     css`
       padding: 0 2rem;
-      ${(props) => props.theme.mq.large} {
+      ${MEDIA.LT.LARGE} {
         padding: 0 1rem;
       }
-      ${(props) => props.theme.mq.medium} {
+      ${MEDIA.LT.MEDIUM} {
         padding: 0 0.5rem;
       }
     `}

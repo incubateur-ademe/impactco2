@@ -4,11 +4,13 @@ import { Icon } from '../icons'
 import { Container, Input, LeftButton, RightButton } from './NumberInput.styles'
 
 const NumberInput = ({
+  id,
   tracking,
   value,
   setValue,
   'data-testid': dataTestId,
 }: {
+  id: string
   tracking: string
   value: number | undefined
   setValue: Dispatch<SetStateAction<number | undefined>>
@@ -30,6 +32,7 @@ const NumberInput = ({
         <Icon iconId='minus' />
       </LeftButton>
       <Input
+        id={id}
         data-testid={`${dataTestId}-input`}
         type='number'
         value={value === undefined ? '' : value}

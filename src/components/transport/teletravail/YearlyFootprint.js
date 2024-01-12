@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
   margin-bottom: 2.5rem;
 `
 const Bar = styled.div`
-  background-color: ${(props) => props.theme.colors.mainLight};
+  background-color: var(--primary-10);
   border-radius: 3.5rem;
   height: 7rem;
   margin-bottom: 0.5rem;
@@ -13,9 +14,9 @@ const Bar = styled.div`
 `
 const Emitted = styled.div`
   align-items: flex-start;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: var(--primary-50);
   border-radius: 3.5rem;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   display: flex;
   height: 100%;
   justify-content: center;
@@ -24,14 +25,14 @@ const Emitted = styled.div`
   top: 0;
   width: ${(props) => props.percent}%;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     max-width: ${(props) => (props.percent !== 100 ? 'calc(100% - 5rem)' : 'auto')};
     min-width: ${(props) => (props.percent ? '5rem' : 'auto')};
   }
 `
 const Saved = styled(Emitted)`
   background-color: transparent;
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   left: auto;
   right: 0;
   transform-origin: right;
@@ -43,7 +44,7 @@ const Content = styled.p`
   padding-top: 2rem;
   text-align: center;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.875rem;
   }
 `

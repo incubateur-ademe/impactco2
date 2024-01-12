@@ -11,20 +11,20 @@ const StyledTextInput = styled(TextInput)`
   margin: 0;
   width: 12rem;
   input {
-    border-color: ${(props) => props.theme.colors.main};
+    border-color: var(--primary-50);
 
     &:focus {
-      box-shadow: 0 0 0 0.125rem ${(props) => props.theme.colors.mainLight};
+      box-shadow: 0 0 0 0.125rem var(--primary-10);
       outline: none;
     }
   }
 `
 const Button = styled.button`
-  background: ${(props) => props.theme.colors.main};
+  background: var(--primary-50);
   border: none;
   border-radius: 0 1rem 1rem 0;
   bottom: 0;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   cursor: pointer;
   padding: 0 0.75rem;
   position: absolute;
@@ -41,7 +41,7 @@ const Button = styled.button`
     width: 1.25rem;
 
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 `

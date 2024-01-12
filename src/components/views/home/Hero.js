@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Meeting from 'components/meeting/Meeting'
 
@@ -46,28 +47,28 @@ const HeroWideContent = styled(SectionWideContent)`
   background-position: right;
   background-repeat: no-repeat;
   background-size: 40%;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     background-position-x: 52vw;
     background-position-y: center;
     background-size: 56%;
   }
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     background-position-x: 82vw;
     background-position-y: center;
     background-size: 56%;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     background-image: none;
   }
 `
 
 const H1Title = styled.h1`
-  color: ${(props) => props.theme.colors.linkGrey};
+  color: var(-neutral-50);
   font-size: 2.25rem;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     font-size: 1.75rem;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1.5rem;
     line-height: 2.25rem;
   }
@@ -77,54 +78,54 @@ const H1Title = styled.h1`
   text-align: left;
   > span {
     display: block;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       display: inline;
     }
   }
 `
 
 const H1Line1 = styled.span`
-  color: ${(props) => props.theme.colors.main2};
+  color: var(--primary-50);
 `
 
 const Layout = styled.div`
   display: grid;
   grid-template-columns: 39rem auto;
   overflow: hidden;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     grid-template-columns: 30rem auto;
   }
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     grid-template-columns: 39rem auto;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     grid-template-columns: 30rem auto;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     grid-template-columns: 1fr;
   }
   padding: 6rem 0;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     padding: 3rem 0;
   }
 `
 
 const Subtitle = styled.p`
   font-size: 1.125rem;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     font-size: 0.95rem;
   }
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 1.125rem;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
   }
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
   > span {
     display: block;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       display: inline;
     }
   }
@@ -132,7 +133,7 @@ const Subtitle = styled.p`
 
 const HideAboveMedium = styled.span`
   display: none;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: inline-block;
   }
 `

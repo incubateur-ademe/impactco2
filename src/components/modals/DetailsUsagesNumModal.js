@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import ModalContext from 'components/providers/ModalProvider'
+import React from 'react'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal from 'components/base/Modal'
 import Link from 'components/base/buttons/Link'
 
 export default function DetailsUsagesNumModal() {
-  const { hypothesis: open, setHypothesis: setOpen } = useContext(ModalContext)
+  const { hypothesis: open, setHypothesis: setOpen } = useModalContext()
   return (
     <>
       {!open ? (
@@ -16,7 +16,7 @@ export default function DetailsUsagesNumModal() {
             <p>
               L'ensemble des calculs sont issus d'une{' '}
               <Link
-                color='secondary'
+                priority='secondary'
                 href='https://base-empreinte.ademe.fr/documentation/base-impact'
                 title='Base impact, étude réalisée par Negaoctet'>
                 étude réalisée par Négaoctet

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export const Header = styled.h2`
   margin-bottom: 0rem;
@@ -19,7 +20,7 @@ export const Cards = styled.div`
   > div {
     flex: 1;
     min-width: 350px;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       min-width: 100%;
     }
   }

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export const Top = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
@@ -23,7 +24,7 @@ export const Checkboxes = styled.div<{ $visible?: boolean }>`
     font-size: 0.875rem;
   }
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     align-items: center;
   }
 `

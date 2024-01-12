@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import Emoji from 'components/base/Emoji'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.button`
-  background-color: ${(props) => (props.active ? props.theme.colors.main : 'transparent')};
-  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  background-color: ${(props) => (props.active ? 'var(--primary-50)' : 'transparent')};
+  border: 0.125rem solid var(--primary-50);
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: 1.5rem;
@@ -24,10 +24,11 @@ const Second = styled.span`
   transform: translate(30%, 50%);
 `
 export default function Transportation(props) {
-  const { teletravailTransportation, setTeletravailTransportation } = useContext(TransportContext)
+  const { teletravailTransportation, setTeletravailTransportation } = useTransportContext()
 
   return (
     <Wrapper
+      aria-label={`Transport par ${props.transportation.name}`}
       onClick={() => {
         track('Transport télétravail', 'Mode de transport', props.transportation.slug)
         setTeletravailTransportation(props.transportation.slug)

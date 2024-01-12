@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 
 const Wrapper = styled.div`
@@ -13,7 +13,7 @@ const StyledButtonLink = styled(Button)`
   margin: 0.3rem 0.5rem 0 0;
 `
 export default function Hypothèses() {
-  const { setHypothesis } = useContext(ModalContext)
+  const { setHypothesis } = useModalContext()
   return (
     <Wrapper>
       <StyledButtonLink

@@ -1,4 +1,4 @@
-import React, { Dispatch, ReactNode, SetStateAction, useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react'
 import { Category } from 'types/category'
 import { ECV } from 'types/ecv'
 import { Equivalent } from 'types/equivalent'
@@ -32,16 +32,10 @@ const DataContext = React.createContext<{
   categories: Category[]
   ecv: ECV[]
   eqvTarget: string
-  setEqvTarget?: Dispatch<SetStateAction<string>>
+  setEqvTarget: Dispatch<SetStateAction<string>>
   tiles: Equivalent[]
-  setTiles?: Dispatch<SetStateAction<Equivalent[]>>
-}>({
-  equivalents: [],
-  categories: [],
-  ecv: [],
-  eqvTarget: '',
-  tiles: [],
-})
+  setTiles: Dispatch<SetStateAction<Equivalent[]>>
+} | null>(null)
 
 const equivalents = [
   ...boisson,
@@ -78,4 +72,14 @@ export function DataProvider({ children }: { children: ReactNode }) {
   )
 }
 
-export default DataContext
+const useDataContext = () => {
+  const context = useContext(DataContext)
+
+  if (!context) {
+    throw new Error('useDataContext has to be used within <DataProvider>')
+  }
+
+  return context
+}
+
+export default useDataContext

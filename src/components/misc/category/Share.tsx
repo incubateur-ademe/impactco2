@@ -50,29 +50,33 @@ const Share = ({
           setCustomValues={setCustomValues}
         />
       )}
-      <ClipboardBox>{url}</ClipboardBox>
+      <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
       <Buttons>
         <FacebookShareButton
           url={url}
           title='Partager sur facebook'
+          aria-label='Partager sur facebook'
           onClick={() => track(trackingValue, 'Share Facebook', `${trackingSlug}_facebook`)}>
           <Icon iconId='facebook' />
         </FacebookShareButton>
         <TwitterShareButton
           url={url}
           title='Partager sur twitter'
+          aria-label='Partager sur twitter'
           onClick={() => track(trackingValue, 'Share Twitter', `${trackingSlug}_twitter`)}>
           <Icon iconId='twitter' />
         </TwitterShareButton>
         <WhatsappShareButton
           url={url}
           title='Partager sur whatsapp'
+          aria-label='Partager sur whatsapp'
           onClick={() => track(trackingValue, 'Share Whatsapp', `${trackingSlug}_whatsapp`)}>
           <Icon iconId='whatsapp' />
         </WhatsappShareButton>
         <LinkedinShareButton
           url={url}
           title='Partager sur linkedin'
+          aria-label='Partager sur linkedin'
           onClick={() => track(trackingValue, 'Share Linkedin', `${trackingSlug}_linkedin`)}>
           <Icon iconId='linkedin' />
         </LinkedinShareButton>

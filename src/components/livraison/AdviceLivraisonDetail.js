@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { Emojis } from 'components/visualizations/Visualization.styles'
 
 export default function AdviceLivraisonDetail(props) {
@@ -80,16 +81,16 @@ export default function AdviceLivraisonDetail(props) {
 }
 
 const Wrapper = styled.section`
-  background-color: ${(props) => props.theme.colors.darkBackground};
+  background-color: var(--neutral-10);
   border-radius: 8px;
   padding: 1.5rem 1rem;
   padding: ${(props) => (!props.$collapsed ? '1.5rem 1rem 1.5rem 1rem' : '1.5rem 1rem 0 1rem')};
 `
 
 const H3Title = styled.h3`
-  color: ${(props) => props.theme.colors.main3};
+  color: var(--primary-60);
   font-size: 1rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.875rem;
   }
   font-weight: 700;
@@ -117,16 +118,16 @@ const Icon = styled.div`
 `
 
 const Text = styled.div`
-  color: ${(props) => props.theme.colors.deepDark};
+  color: var(--neutral-80);
   font-size: 1rem;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.875rem;
   }
   line-height: 24px;
 `
 
 const Subtext = styled.div`
-  color: ${(props) => props.theme.colors.textGray2};
+  color: var(--neutral-50);
   font-size: 0.75rem;
   line-height: 16px;
 `

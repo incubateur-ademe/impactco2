@@ -5,23 +5,23 @@ const Wrapper = styled.div`
   margin-bottom: 1.5rem;
 `
 const Label = styled.label`
-  color: ${(props) => props.theme.colors[props.error ? 'error' : 'text']};
+  color: ${(props) => (props.error ? 'var(--critical-50)' : 'var(--neutral-70)')};
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
 `
 const Input = styled.textarea`
   background-color: transparent;
-  border: 2px solid ${(props) => props.theme.colors.main};
+  border: 2px solid var(--primary-50);
 
   border-radius: 1rem;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   padding: 0.5rem 1rem;
   resize: vertical;
   width: 100%;
 
   &:focus {
-    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.main};
+    box-shadow: 0 -0 0px 1px var(--primary-50);
     outline: none;
   }
 `

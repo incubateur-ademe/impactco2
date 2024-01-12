@@ -38,9 +38,7 @@
   {
     "name": "Cafetière[s]",
     "subtitle": "À dosettes",
-    "synonyms": [
-      "nespresso"
-    ],
+    "synonyms": ["nespresso"],
     "slug": "cafetieredosette",
     "emoji": "☕️",
     "category": 6,
@@ -115,9 +113,7 @@
   {
     "name": "Cafetière[s]",
     "subtitle": "Expresso",
-    "synonyms": [
-      "espresso"
-    ],
+    "synonyms": ["espresso"],
     "slug": "cafetiereexpresso",
     "emoji": "☕️",
     "category": 6,
@@ -314,9 +310,7 @@
   },
   {
     "name": "Climatiseur[s]",
-    "synonyms": [
-      "climatisation"
-    ],
+    "synonyms": ["climatisation"],
     "slug": "climatiseur",
     "emoji": "❄️",
     "category": 6,

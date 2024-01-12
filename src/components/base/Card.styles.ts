@@ -14,7 +14,7 @@ export const LeftSide = styled.div<{ $small?: boolean; $color?: 'secondary' }>`
 
 export const ImageContainer = styled.div<{ $small?: boolean }>`
   align-items: center;
-  background-color: white;
+  background-color: var(--neutral-00);
   border-radius: 50%;
   display: flex;
   justify-content: center;

@@ -13,7 +13,7 @@ const Wrapper = styled.button`
     width: 1.5rem;
 
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
     }
   }
 

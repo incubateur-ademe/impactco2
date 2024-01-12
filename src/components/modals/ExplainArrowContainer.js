@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import ExplainArrow from 'components/modals/ExplainArrow.js'
 
 const Wrapper = styled.div`
@@ -7,7 +8,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 1rem;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
   }
@@ -62,7 +63,7 @@ const GreyText = styled.div`
 
 const ExplainEq = styled.div`
   padding: 0.5rem;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     padding: 1rem;
   }
   width: 15rem;

@@ -35,7 +35,7 @@ export default function ReuseBulb() {
         <p>
           Consultez le{' '}
           <Link
-            color='secondary'
+            priority='secondary'
             href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
             title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
             kit de diffusion Impact CO<sub>2</sub>
@@ -45,7 +45,7 @@ export default function ReuseBulb() {
         <p>Besoin d'inspiration?</p>
         <p style={{ 'margin-bottom': 0 }}>
           <Link
-            color='secondary'
+            priority='secondary'
             href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997? '
             title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
             Découvrez des exemples de réutilisation
@@ -78,9 +78,9 @@ export default function ReuseBulb() {
 }
 
 const UseBulb = styled.div`
-  background-color: #ebf2ff;
+  background-color: var(--secondary-10);
   border-radius: 8px;
-  color: ${(props) => props.theme.colors.persistentText};
+  color: var(--neutral-70);
   margin-top: 2rem;
   padding: 24px;
   position: relative;
@@ -88,7 +88,7 @@ const UseBulb = styled.div`
 
 const UseBulbTitle = styled.div`
   align-items: center;
-  background-color: white;
+  background-color: var(--neutral-00);
   border: 2px solid #ebf2ff;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 2px;
@@ -103,7 +103,7 @@ const UseBulbTitle = styled.div`
 `
 
 const BlackLink = styled(Link)`
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   > svg {
     display: none;
   }

@@ -6,7 +6,7 @@ const H1Title = styled.h1`
   margin-top: 0;
 `
 const MainColorSpan = styled.span`
-  color: ${(props) => props.theme.colors.main2};
+  color: var(--primary-50);
 `
 
 const SmallText = styled.div`
@@ -31,7 +31,7 @@ const Separator = styled.hr`
 `
 
 const UpdatedAt = styled.span`
-  color: #564d53;
+  color: var(--neutral-50);
 `
 
 export default function IntroLivraison(props) {
@@ -44,7 +44,7 @@ export default function IntroLivraison(props) {
         <SmallText>
           <span> Source : </span>
           <Link
-            color='secondary'
+            priority='secondary'
             title='Commerce en ligne - Étude ADEME 2023 - Nouvelle fenêtre'
             href='https://librairie.ademe.fr/mobilite-et-transport/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'
             data-testid='lien-etude-ademe'>

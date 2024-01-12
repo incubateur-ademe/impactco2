@@ -41,18 +41,17 @@ Vous pouvez calculer la couverture de test sur votre machine locale.
 
 Si vous n'avez jamais lancé de tests e2e avant, vous devrez installez Playwright en local avec `yarn install playwright`.
 
-Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez les dépendances avec la commande `yarn`, puis lancez le serveur local avec `yarn dev`. 
+Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez les dépendances avec la commande `yarn`, puis lancez le serveur local avec `yarn dev`.
 
 Ouvrez un autre terminal et lancez les commandes suivantes dans l'ordre :
 
-1 - `yarn cov:clean` : Supprime le répertoire "coverage" pour partir d'un état propre. 
+1 - `yarn cov:clean` : Supprime le répertoire "coverage" pour partir d'un état propre.
 2 - `yarn cov:pw` : Lance les tests Playwright avec la couverture. Le répertoire "coverage" est alors créé, et contient des fichiers de couverture au format JSON.
 3 - `yarn cov:jest` : Lance les tests Jest, couverture incluse. Le répertoire "coverage" s'enrichit du fichier de couverture des tests Jest, au format JSON.
 4 - `yarn cov:report` : Merge tous les rapports JSON précédents, calcule la couverture finale, et créé un rapport facilement lisible. Le répertoire `coverage/summary` est alors créé, le fichier `index.html` contenant le rapport final.
 5 - `yarn cov:show` : Affiche dans votre navigateur le rapport de couverture final (sous `coverage/summary/index.html`)
 
 La commande `yarn cov:full` permet de réaliser toutes les étapes de 1 à 5 en une seule fois.
-
 
 ## Workflow Git ⚙️
 
@@ -150,7 +149,11 @@ Ce script est minifié, renommé et placé dans le répertoire /public à chaque
 Les utilisateurs qui veulent cette iframe dans leur projet n'ont plus qu'à copier/coller le code suivant dans la page web de leur choix (exemple pour la livraison) :
 
 ```html
-<script name="impact-co2" src="https://impactco2.fr/iframe.js" data-type="livraison" data-search="?theme=default"></script>
+<script
+  name="impact-co2"
+  src="https://impactco2.fr/iframe.js"
+  data-type="livraison"
+  data-search="?theme=default"></script>
 ```
 
 Les attributs "data" permettant de paramétrer cette iframe.

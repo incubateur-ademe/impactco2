@@ -1,13 +1,14 @@
 import Fuse from 'fuse.js'
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import DataContext from 'components/providers/DataProvider'
+import { MEDIA } from 'utils/styles'
+import useDataContext from 'components/providers/DataProvider'
 import Suggestions from './searchBar/Suggestions'
 import TextInputSmall from './searchBar/TextInputSmall'
 
 export default function NavSearchBar(props) {
-  const { equivalents, categories } = useContext(DataContext)
+  const { equivalents, categories } = useDataContext()
   const [search, setSearch] = useState('')
 
   const [results, setResults] = useState([])
@@ -118,7 +119,7 @@ export default function NavSearchBar(props) {
 const NavSearch = styled.div`
   position: relative;
   width: 300px;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     display: none;
     width: 100%;
   }
@@ -129,7 +130,7 @@ const NavActions = styled.div`
 `
 
 const SearchContainer = styled.div`
-  background-color: ${(props) => (props.$focus ? props.theme.colors.background : 'transparent')};
+  background-color: ${(props) => (props.$focus ? 'var(--neutral-00)' : 'transparent')};
   border: 1px solid #eae5e8;
   border-radius: 0.625em;
   box-shadow: ${(props) =>
@@ -141,7 +142,7 @@ const SearchContainer = styled.div`
   top: 0;
   z-index: 100;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     border-radius: ${(props) => (props.home || props.$focus ? ' 0.625em' : '4rem')};
     left: ${(props) => (props.home ? 0 : 'auto')};
     width: ${(props) => (props.home ? 'auto' : props.$focus ? 'calc(100vw - 1.5rem)' : '2.375rem')};

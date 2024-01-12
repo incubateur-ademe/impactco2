@@ -1,8 +1,9 @@
-import React, { useContext, useRef } from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
+import { MEDIA } from 'utils/styles'
 import useOnScreen from 'hooks/useOnScreen'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import BarChart from './learning/BarChart'
@@ -11,7 +12,7 @@ const StyledSection = styled(Section)`
   margin-top: 5rem;
 `
 const Statistic = styled.div`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1em;
@@ -22,7 +23,7 @@ const Number = styled.div`
   line-height: 0.71;
   opacity: ${(props) => (props.$isOnScreen ? 1 : 0)};
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 49vw;
   }
 `
@@ -32,7 +33,7 @@ const BigText = styled.div`
   line-height: 0.8;
   text-transform: uppercase;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 22vw;
   }
 `
@@ -51,7 +52,7 @@ const Strong = styled.p`
   max-width: 23.75em;
   text-align: right;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin-right: 0;
     text-align: left;
   }
@@ -63,11 +64,11 @@ const ButtonWrapper = styled.div`
   margin: 2rem 0;
 `
 const StyledLink = styled.span`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   cursor: pointer;
 `
 export default function LearningFruit() {
-  const { setCo2e } = useContext(ModalContext)
+  const { setCo2e } = useModalContext()
 
   const ref = useRef()
   const isOnScreen = useOnScreen(ref, '-100px')

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import reusecards from './data/reusecards.json'
 import { track } from 'utils/matomo'
+import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import Meeting from 'components/meeting/Meeting'
@@ -20,8 +21,8 @@ export default function ByArticle() {
             target='_blank'
             rel='noreferrer noopener'
             onClick={() => track('Click', `Vignette ${reuseCard.tagtext}`, `click_vignette_${reuseCard.tagtext}`)}>
-            <ReuseCardImgContainer color={reuseCard.color}>
-              <ReuseCardImg img={reuseCard.img}>
+            <ReuseCardImgContainer $color={reuseCard.color}>
+              <ReuseCardImg $img={reuseCard.img}>
                 <ReuseCardTag>{reuseCard.tagtext}</ReuseCardTag>
               </ReuseCardImg>
             </ReuseCardImgContainer>
@@ -60,7 +61,7 @@ export default function ByArticle() {
                     Utilisez le{' '}
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                      color='secondary'
+                      priority='secondary'
                       onClick={() => track('Click', 'Kit de diffusion', 'click_kit_diffusion')}>
                       Kit de diffusion
                     </Link>{' '}
@@ -69,7 +70,7 @@ export default function ByArticle() {
                   <MiddleLi>
                     Personnalisez le simulateur de votre choix grâce à notre{' '}
                     <Link
-                      color='secondary'
+                      priority='secondary'
                       href='/integration'
                       onClick={() => track('Click', 'Configurateur', 'click_configurateur')}>
                       configurateur
@@ -80,7 +81,7 @@ export default function ByArticle() {
                     Inspirez-vous d'
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
-                      color='secondary'
+                      priority='secondary'
                       onClick={() => track('Click', 'Exemples concrets', 'click_exemples_concrets')}>
                       exemples concrets
                     </Link>{' '}
@@ -105,7 +106,7 @@ export default function ByArticle() {
                     Consultez notre{' '}
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
-                      color='secondary'
+                      priority='secondary'
                       data-testid='byArticleFaq'
                       onClick={() => track('Click', 'FAQ', 'click_faq')}>
                       Foire aux Questions
@@ -154,7 +155,7 @@ const MiddleGrid = styled.div`
   display: grid;
   gap: 0 2rem;
   grid-template-columns: 1fr 1fr;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     grid-template-columns: 1fr;
   }
 `
@@ -164,16 +165,16 @@ const H3Title = styled.h3`
   font-weight: 700;
   letter-spacing: 0em;
 
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     font-size: 1.125rem;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-bottom: 1rem;
   }
 `
 
 const H3Title2 = styled(H3Title)`
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     margin-top: 2.5rem;
   }
 `
@@ -183,7 +184,7 @@ const MiddleUl = styled.ul`
   padding-left: 0;
   > li + li {
     margin-top: 1.25rem;
-    ${(props) => props.theme.mq.medium} {
+    ${MEDIA.LT.MEDIUM} {
       margin-top: 0.75rem;
     }
   }
@@ -210,7 +211,7 @@ const ReuseGrid = styled.div`
 `
 
 const ReuseCard = styled.div`
-  background-color: white;
+  background-color: var(--neutral-00);
   border-color: #ccdcfd;
   border-radius: 16px;
   border-style: solid;
@@ -220,7 +221,7 @@ const ReuseCard = styled.div`
   margin-right: 1rem;
 `
 const ReuseCardImg = styled.div`
-  background: url(${(props) => props.img});
+  background: url(${(props) => props.$img});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -240,7 +241,7 @@ const ReuseCardTitle = styled.div`
   margin-bottom: 0.5rem;
 `
 const ReuseCardParagraph = styled.div`
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.9rem;
   }
   color: #3a3a3a;
@@ -248,9 +249,9 @@ const ReuseCardParagraph = styled.div`
   margin-bottom: 0.5rem;
 `
 const ReuseCardTag = styled.div`
-  background-color: white;
+  background-color: var(--neutral-00);
   border-radius: 4px;
-  color: #d47909;
+  color: #a35b01;
   font-size: 0.8rem;
   font-weight: 700;
   left: 0.5rem;
@@ -263,7 +264,7 @@ const ReuseCardTag = styled.div`
 `
 
 const ReuseCardWrapper = styled.div`
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     margin: 1rem;
   }
   a {
@@ -277,23 +278,23 @@ const ReuseCardWrapper = styled.div`
       }
     }
   }
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     grid-column: span 3/4;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     grid-column: none;
   }
 `
 
 const ReuseCardImgContainer = styled.div`
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.$color};
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
 `
 
 const WinkWink = styled.div`
   position: absolute;
-  ${(props) => props.theme.mq.large} {
+  ${MEDIA.LT.LARGE} {
     display: none;
   }
 `
@@ -312,7 +313,7 @@ const Box = styled.div`
   flex-direction: column;
   gap: 2.75rem;
   justify-content: space-between;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     gap: 1.25rem;
   }
 `

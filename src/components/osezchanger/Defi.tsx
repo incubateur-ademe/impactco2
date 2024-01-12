@@ -17,6 +17,7 @@ const Defi = ({ setOverScreen }: { setOverScreen: Dispatch<SetStateAction<OverSc
   return (
     <div>
       <Question
+        id='avis'
         tracking='avis'
         data-testid='question-avis'
         title='🧠 À votre avis...'
@@ -29,6 +30,7 @@ const Defi = ({ setOverScreen }: { setOverScreen: Dispatch<SetStateAction<OverSc
         setValue={setThinkingValue}
       />
       <Question
+        id='penderie'
         tracking='penderie'
         data-testid='question-vraie'
         title='👉 Dans vos placards'
@@ -48,6 +50,7 @@ const Defi = ({ setOverScreen }: { setOverScreen: Dispatch<SetStateAction<OverSc
         }
       />
       <Question
+        id='neuf'
         tracking='neuf'
         data-testid='question-neuf'
         title='✨ Vos achats récents'

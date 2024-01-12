@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled(Link)`
@@ -8,7 +9,7 @@ const Wrapper = styled(Link)`
   margin: 0 0.75em;
   text-decoration: none;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 0.75rem;
   }
 
@@ -20,7 +21,7 @@ const Wrapper = styled(Link)`
 
   &:hover {
     .circle1 {
-      fill: ${(props) => props.theme.colors.main};
+      fill: var(--primary-50);
       transition: fill 300ms ease-in 200ms;
     }
 
@@ -32,11 +33,11 @@ const Wrapper = styled(Link)`
   }
 `
 const Path = styled.path`
-  fill: ${(props) => props.theme.colors.main};
+  fill: var(--primary-50);
 `
 const Circle = styled.circle`
-  fill: ${(props) => props.theme.colors.main};
-  stroke: ${(props) => props.theme.colors.main};
+  fill: var(--primary-50);
+  stroke: var(--primary-50);
   transition: fill 300ms ease-out;
 
   ${Wrapper}:hover & {
@@ -46,12 +47,12 @@ const Circle = styled.circle`
 `
 const HollowCircle1 = styled.circle`
   fill: #b5d0fa;
-  stroke: ${(props) => props.theme.colors.main};
+  stroke: var(--primary-50);
   transform-origin: center;
   transition: fill 300ms ease-out;
 
   ${Wrapper}:hover & {
-    fill: ${(props) => props.theme.colors.main};
+    fill: var(--primary-50);
     transform: rotate(-180deg);
     transition:
       transform 600ms ease-out,
@@ -66,7 +67,7 @@ const HollowCircle2 = styled(HollowCircle1)`
   }
 `
 const Title = styled.div`
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   font-size: 1.15em;
   font-weight: bold;
   line-height: 1;
@@ -84,10 +85,10 @@ export default function FooterLogo(props) {
           clipRule='evenodd'
           d='M319.125 13.875H13.875V319.125H319.125V13.875ZM0 0V333H333V0H0Z'
         />
-        <mask id='mask0_1984_4271' maskUnits='userSpaceOnUse' x='13' y='13' width='307' height='307'>
+        <mask maskUnits='userSpaceOnUse' x='13' y='13' width='307' height='307'>
           <path d='M13.875 13.8738H319.125V319.124H13.875V13.8738Z' fill='#b5d0fa' />
         </mask>
-        <g mask='url(#mask0_1984_4271)'>
+        <g>
           <HollowCircle1 cx='52.4974' cy='51.4973' r='81.1898' strokeWidth='25' />
           <Circle cx='167.317' cy='166.317' r='81.1898' strokeWidth='25' />
           <HollowCircle2 cx='282.137' cy='281.137' r='81.1898' strokeWidth='25' />

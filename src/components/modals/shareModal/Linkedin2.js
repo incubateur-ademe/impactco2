@@ -5,7 +5,12 @@ import styled from 'styled-components'
 const Svg = styled.svg``
 export default function Linkedin2(props) {
   return (
-    <LinkedinShareButton url={props.url} title={props.title} summary={props.summary} source={props.source}>
+    <LinkedinShareButton
+      url={props.url}
+      title={props.title}
+      summary={props.summary}
+      source={props.source}
+      aria-label='Partager sur linkedin'>
       <Svg width='60px' height='60px' viewBox='0 0 60 60' version='1.1' xmlns='http://www.w3.org/2000/svg'>
         <g id='Page-1' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
           <g id='linkedinz'>

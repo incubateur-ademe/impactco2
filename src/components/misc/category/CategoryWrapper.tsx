@@ -71,7 +71,7 @@ const CategoryWrapper = ({
                     <Link
                       key={source.label}
                       href={source.href}
-                      color='secondary'
+                      priority='secondary'
                       onClick={() => track(category.name, 'Source', source.href)}>
                       {source.label}
                     </Link>,

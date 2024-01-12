@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 
@@ -17,7 +17,7 @@ const Disclaimer = styled.p`
   text-align: center;
 `
 export default function Bottom({ category, iframe }: { category: Category; iframe?: boolean }) {
-  const { setCo2e } = useContext(ModalContext)
+  const { setCo2e } = useModalContext()
 
   return (
     <Wrapper>

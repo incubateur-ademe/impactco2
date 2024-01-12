@@ -1,20 +1,21 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import HorizontalRadio from 'components/base/HorizontalRadio'
 import Select from 'components/base/Select'
 import Slider from 'components/base/Slider'
 
 export const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
-  border: 0.0625rem solid ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
+  border: 0.0625rem solid var(--secondary-10);
   border-radius: 1rem;
   display: flex;
   gap: 0.5rem;
   justify-content: space-between;
   padding: 1.5rem;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     padding: 1rem;
   }
-  ${(props) => props.theme.mq.iframemedium} {
+  ${MEDIA.LT.IFRAME_MEDIUM} {
     flex-direction: column;
   }
 `
@@ -34,7 +35,7 @@ export const Small = styled.span`
   display: block;
   font-size: 0.75rem;
 
-  ${(props) => props.theme.mq.iframemedium} {
+  ${MEDIA.LT.IFRAME_MEDIUM} {
     display: inline;
   }
 `
@@ -53,15 +54,15 @@ export const ShowMore = styled.button`
     width: 1.5rem;
 
     path {
-      fill: ${(props) => props.color || props.theme.colors.main};
+      fill: ${(props) => props.color || 'var(--primary-50)'};
     }
   }
-  ${(props) => props.theme.mq.iframemedium} {
+  ${MEDIA.LT.IFRAME_MEDIUM} {
     display: block;
   }
 `
 export const Desktop = styled.div<{ $visible: boolean }>`
-  ${(props) => props.theme.mq.iframemedium} {
+  ${MEDIA.LT.IFRAME_MEDIUM} {
     display: ${(props) => (props.$visible ? 'flex' : 'none')};
     gap: 0.5rem;
     margin: 0.5rem 0 0.75rem;
@@ -75,21 +76,21 @@ export const Parameters = styled.div`
   justify-content: flex-start;
   margin: 0.5rem 0 0.75rem;
 
-  ${(props) => props.theme.mq.iframemedium} {
+  ${MEDIA.LT.IFRAME_MEDIUM} {
     margin: 0;
   }
 `
 export const StyledSelect = styled(Select)`
   flex: 1;
   font-size: 0.875rem;
-  margin: 0;
+  margin-bottom: 0 !important;
 
   select {
     min-width: 5rem;
     width: 100%;
   }
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 0.75rem;
   }
 `
@@ -100,7 +101,7 @@ export const StyledHorizontalRadio = styled(HorizontalRadio)`
     padding: 0.5em;
   }
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 0.75rem;
   }
 `

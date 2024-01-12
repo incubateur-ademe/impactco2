@@ -1,12 +1,13 @@
-import React, { Dispatch, SetStateAction, useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import TransportContext from 'components/transport/TransportProvider'
+import { MEDIA } from 'utils/styles'
+import useTransportContext from 'components/transport/TransportProvider'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
   border-radius: 1.5rem;
-  color: ${(props) => props.theme.colors.text};
+  color: var(--neutral-70);
   display: flex;
 `
 const Carpoolers = styled.div`
@@ -16,7 +17,7 @@ const Carpoolers = styled.div`
   white-space: nowrap;
 `
 const Start = styled.span`
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     display: none;
   }
 `
@@ -31,7 +32,7 @@ const Plural = styled.span<{ $visible: boolean }>`
 const ButtonMore = styled.button`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-50);
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
@@ -42,11 +43,7 @@ const ButtonLess = styled(ButtonMore)`
 `
 
 export default function Carpool() {
-  const { carpool, setCarpool } = useContext<{ carpool: number; setCarpool: Dispatch<SetStateAction<number>> }>(
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: TODO
-    TransportContext
-  )
+  const { carpool, setCarpool } = useTransportContext()
 
   return (
     <>

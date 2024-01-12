@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
 import Link from 'components/base/buttons/Link'
 
@@ -15,7 +16,7 @@ export const Equivalents = styled.div`
   justify-content: space-around;
   margin-bottom: 2rem;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin-bottom: 1rem;
   }
 `
@@ -39,11 +40,11 @@ export const Emojis = styled(Emoji)<{ small?: boolean; xsmall?: boolean; margin?
   text-align: center;
   width: ${(props) => (props.margin ? props.margin : 100)}%;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: ${(props) => (props.small ? 0.75 : props.xsmall ? 0.375 : 1.5)}rem;
     gap: ${(props) => (props.xsmall ? 0 : 0.25)}rem;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: ${(props) => (props.small ? 3.5 : props.xsmall ? 1.5 : 7)}vw;
     gap: ${(props) => (props.small ? 0.5 : props.xsmall ? 0 : 1)}vw;
   }
@@ -61,7 +62,7 @@ export const Label = styled.div`
     font-weight: normal;
   }
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     display: none;
   }
 `
@@ -73,17 +74,17 @@ export const Equals = styled.div`
   line-height: 1;
   margin-bottom: 2rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     font-size: 2.5rem;
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 8vw;
   }
 `
 export const Small = styled.div`
   display: none;
   text-align: center;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     display: block;
   }
 `
@@ -91,7 +92,7 @@ export const LinkWrapper = styled.div`
   text-align: center;
   width: 100%;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     margin-bottom: 2rem;
   }
 `

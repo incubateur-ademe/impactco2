@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Modal from 'components/base/Modal'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
-import TransportContext from '../TransportProvider'
+import useTransportContext from '../TransportProvider'
 
 const Title = styled.h2``
 const Text = styled.p``
@@ -12,7 +12,7 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `
 export default function SetFootprintModal() {
-  const { footprintModal: open, setFootprintModal: setOpen } = useContext(TransportContext)
+  const { footprintModal: open, setFootprintModal: setOpen } = useTransportContext()
 
   const [pristine, setPristine] = useState(true)
   useEffect(() => {

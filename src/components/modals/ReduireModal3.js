@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import { buildCurrentUrlFor } from 'utils/urls'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
+import ClipboardBox from 'components/base/ClipboardBox'
 import Modal3 from 'components/base/Modal3'
 import ReuseBulb from 'components/livraison/ReuseBulb'
-import CopyUrl from './shareModal/CopyUrl'
 import Facebook2 from './shareModal/Facebook2'
 import Linkedin2 from './shareModal/Linkedin2'
 import Twitter2 from './shareModal/Twitter2'
@@ -21,18 +22,17 @@ const getTitle = () => {
 }
 
 export default function ReduireModal3() {
-  const { reduire: open, setReduire: setOpen } = useContext(ModalContext)
-  const [copied, setCopied] = useState(false)
+  const { reduire: open, setReduire: setOpen } = useModalContext()
 
   const dismiss = () => {
-    setCopied(false)
     setOpen(false)
   }
 
   return (
     <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width='45rem'>
       <br />
-      <CopyUrl url={href} copied={copied} setCopied={setCopied} />
+      <ClipboardBox tracking='Livraison'>{href}</ClipboardBox>
+      <br />
       <Alternative>- ou -</Alternative>
       <WrapperSocial>
         <Facebook2
@@ -62,20 +62,20 @@ const Title = styled.h2`
 `
 
 const GreenText = styled.span`
-  color: #1c9b93;
+  color: var(--primary-50);
 `
 
 const WrapperSocial = styled.div`
   align-items: center;
   display: flex;
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     flex-direction: column;
   }
   flex-wrap: wrap;
   justify-content: center;
   button + button {
     margin-left: 1rem;
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       margin-left: 0rem;
     }
   }

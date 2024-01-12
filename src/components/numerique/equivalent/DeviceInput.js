@@ -1,10 +1,10 @@
-import { useContext } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import { MEDIA } from 'utils/styles'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
-import RulesContextNumerique from '../RulesProviderNumerique'
+import useRulesContextNumerique from '../RulesProviderNumerique'
 import DailyUsageInput from './deviceInput/DailyUsageInput'
 import LifeSpanInput from './deviceInput/LifespanInput'
 
@@ -54,8 +54,8 @@ const Wrapper = styled.div`
 `
 
 const Slide = styled.div`
-  background-color: ${(props) => props.theme.colors.second};
-  border: 0.0625rem solid ${(props) => props.theme.colors.second};
+  background-color: var(--secondary-10);
+  border: 0.0625rem solid var(--secondary-10);
   border-radius: 1rem;
   height: 100%;
   padding: 1.5rem;
@@ -72,7 +72,7 @@ const Sliders = styled.div`
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     flex-direction: column;
   }
 `
@@ -82,9 +82,9 @@ const Text = styled.p`
 `
 
 export default function DeviceInput(props) {
-  const { setSituation } = useContext(RulesContextNumerique)
+  const { setSituation } = useRulesContextNumerique()
 
-  const { setDevices } = useContext(ModalContext)
+  const { setDevices } = useModalContext()
 
   return (
     <Wrapper>

@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import categories from 'data/categories.json'
 import formatName from 'utils/formatName'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 export default function PlanDuSite() {
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
 
   const buildLevel3For = (catSlug, subcategories) => {
     return subcategories.map((subcategory) => (
@@ -144,12 +144,12 @@ const FormatText = styled.div`
 const Level1 = styled.div`
   margin-top: 1.75rem;
   > a {
-    color: ${(props) => props.theme.colors.text};
+    color: var(--neutral-70);
     font-size: 1.125rem;
     font-weight: 700;
     letter-spacing: 0em;
     line-height: 2rem;
-    text-decoration-color: ${(props) => props.theme.colors.main4};
+    text-decoration-color: var(--primary-50);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.75rem;
   }
@@ -159,7 +159,7 @@ const Level2 = styled.div`
   margin-left: 1.5rem;
   margin-top: 1.25rem;
   > a {
-    color: ${(props) => props.theme.colors.main4};
+    color: var(--primary-50);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0em;
@@ -173,12 +173,12 @@ const Level3 = styled.div`
   margin-left: 1.5rem;
   margin-top: 0.75rem;
   > a {
-    color: ${(props) => props.theme.colors.linkGray};
+    color: var(--neutral-50);
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0em;
     line-height: 2rem;
-    text-decoration-color: ${(props) => props.theme.colors.firstBlue};
+    text-decoration-color: var(--secondary-50);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.5rem;
   }

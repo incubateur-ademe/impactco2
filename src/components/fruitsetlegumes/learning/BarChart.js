@@ -12,7 +12,7 @@ const Product = styled.div`
 `
 const Label = styled.div`
   align-items: center;
-  border-right: 1px solid ${(props) => props.theme.colors.main};
+  border-right: 1px solid var(--primary-50);
   display: flex;
   font-size: 2em;
   line-height: 1;
@@ -25,8 +25,8 @@ const Bars = styled.div`
 `
 const Bar = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors[props.$secondary ? 'main' : 'error']};
-  color: ${(props) => props.theme.colors.second};
+  background-color: ${(props) => (props.$secondary ? 'var(--primary-50)' : 'var(--critical-50)')};
+  color: var(--neutral-00);
   display: flex;
   font-style: italic;
   font-weight: 700;
@@ -40,7 +40,7 @@ const Bar = styled.div`
   width: ${(props) => props.$length}%;
 `
 const Axis = styled.div`
-  border-top: 1px solid ${(props) => props.theme.colors.main};
+  border-top: 1px solid var(--primary-50);
   margin-left: 3em;
   padding-top: 1.5em;
   position: relative;
@@ -55,7 +55,7 @@ const Mark = styled.div`
   transform: translateX(-50%);
 
   &:before {
-    background-color: ${(props) => props.theme.colors.main};
+    background-color: var(--primary-50);
     content: '';
     height: calc(0.5em + 1px);
     left: 50%;
@@ -81,7 +81,7 @@ const Item = styled.div`
   text-align: right;
 
   &:before {
-    background-color: ${(props) => props.theme.colors[props.$secondary ? 'main' : 'error']};
+    background-color: ${(props) => (props.$secondary ? 'var(--primary-50)' : 'var(--critical-50)')};
     content: '';
     height: 1em;
     position: absolute;

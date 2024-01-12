@@ -1,11 +1,12 @@
 import { useDroppable } from '@dnd-kit/core'
 import React from 'react'
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors[props.background ? 'textLight' : 'second']};
+  background-color: ${(props) => (props.background ? 'var(--neutral-10)' : 'var(--secondary-10)')};
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -14,11 +15,11 @@ const Wrapper = styled.div`
   padding: 1.125rem 1.5rem 1.375rem;
   width: calc(33.3333% - 1rem);
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     padding: 1.125rem 1rem 1.375rem;
     width: calc(33.3333% - 0.5rem);
   }
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     width: calc(50% - 0.375rem);
   }
 `

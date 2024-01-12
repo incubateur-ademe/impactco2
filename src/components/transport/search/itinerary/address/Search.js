@@ -6,8 +6,8 @@ import Suggestions from './search/Suggestions'
 import TextInput from './search/TextInput'
 
 const Wrapper = styled.form`
-  background-color: ${(props) => props.theme.colors.background};
-  border: 0.125rem solid ${(props) => props.theme.colors.second};
+  background-color: var(--neutral-00);
+  border: 0.125rem solid var(--secondary-10);
   border-radius: 1.5rem;
   left: 50%;
   max-width: 22rem;
@@ -74,7 +74,6 @@ export default function Search(props) {
           results={data}
           focus={focus}
           current={current}
-          isFetching={isFetching}
           setCurrent={setCurrent}
           handleSuggestionClick={navigateToPlace}
         />

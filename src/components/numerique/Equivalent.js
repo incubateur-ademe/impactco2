@@ -1,13 +1,14 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import formatName from 'utils/formatName'
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
+import { MEDIA } from 'utils/styles'
+import useDataContext from 'components/providers/DataProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Legend from 'components/charts/Legend'
 import StackedChart from 'components/charts/StackedChart'
 import Detail from 'components/views/equivalent/ecv/Detail'
-import RulesContextNumerique from './RulesProviderNumerique'
+import useRulesContextNumerique from './RulesProviderNumerique'
 import Wrapper from './Wrapper'
 import Bar from './equivalent/Bar'
 import DeviceInput from './equivalent/DeviceInput'
@@ -28,16 +29,16 @@ const Questions = styled.div`
   justify-content: center;
   margin: 1rem 0;
 
-  ${(props) => props.theme.mq.medium} {
+  ${MEDIA.LT.MEDIUM} {
     flex-direction: column;
   }
 `
 export default function Simulateur(props) {
-  const { ecv } = useContext(DataContext)
+  const { ecv } = useDataContext()
 
-  const { setEcv } = useContext(ModalContext)
+  const { setEcv } = useModalContext()
 
-  const { engine, situation } = useContext(RulesContextNumerique)
+  const { engine, situation } = useRulesContextNumerique()
 
   const [construction, setConstruction] = useState(true)
 

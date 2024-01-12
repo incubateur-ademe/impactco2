@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Category } from 'types/category'
 import { Equivalent as EquivalentType } from 'types/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
-import DataContext from 'components/providers/DataProvider'
+import useDataContext from 'components/providers/DataProvider'
 import {
   Emojis,
   Equals,
@@ -75,7 +75,7 @@ const getSize = (value: number) => {
 }
 
 const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
-  const { equivalents, categories } = useContext(DataContext)
+  const { equivalents, categories } = useDataContext()
 
   const values = types.map(
     (slug) => equivalents.find((equivalent: EquivalentType) => equivalent.slug === slug) as EquivalentType

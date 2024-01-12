@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MEDIA } from 'utils/styles'
 
 export default function ExplainArrow() {
   return (
@@ -29,8 +30,8 @@ const BlueGrid = styled.div`
   background-color: #457be7;
   border-bottom-left-radius: 14px;
   border-top-left-radius: 14px;
-  color: white;
-  ${(props) => props.theme.mq.xlarge} {
+  color: var(--neutral-00);
+  ${MEDIA.LT.XLARGE} {
     border-bottom-left-radius: 0;
     border-top-right-radius: 16px;
     max-width: 100%;
@@ -62,7 +63,7 @@ const Arrow = styled.div`
   height: 100%;
   margin-left: -1px;
   width: 30px;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     clip-path: polygon(100% 0%, 52.5% 49.75%, 48.75% 49.75%, 0% 0%);
     height: 30px;
     margin-top: -1px;
@@ -72,7 +73,7 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  ${(props) => props.theme.mq.xlarge} {
+  ${MEDIA.LT.XLARGE} {
     flex-direction: column;
   }
 `

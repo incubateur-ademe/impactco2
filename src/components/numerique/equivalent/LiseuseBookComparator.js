@@ -1,10 +1,11 @@
-import React, { useContext, useMemo, useRef, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import { track } from 'utils/matomo'
-import DataContext from 'components/providers/DataProvider'
-import ModalContext from 'components/providers/ModalProvider'
+import { MEDIA } from 'utils/styles'
+import useDataContext from 'components/providers/DataProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 import { Title } from 'components/visualizations/Visualization.styles'
@@ -18,7 +19,7 @@ const Text = styled.p`
   margin-bottom: 0.5rem;
   text-align: center;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
   }
 `
@@ -27,7 +28,7 @@ const Result = styled.p`
   font-size: 1.125rem;
   text-align: center;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
   }
 
@@ -35,7 +36,7 @@ const Result = styled.p`
     display: block;
     font-size: 1.5rem;
 
-    ${(props) => props.theme.mq.small} {
+    ${MEDIA.LT.SMALL} {
       font-size: 1.125rem;
     }
   }
@@ -57,7 +58,7 @@ const Track = styled.div`
   position: relative;
 
   &:before {
-    background-color: ${(props) => props.theme.colors.mainLight};
+    background-color: var(--primary-10);
     bottom: 0;
     content: '';
     left: -2.75rem;
@@ -69,9 +70,9 @@ const Track = styled.div`
 
 const Thumb = styled.div`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: var(--primary-50);
   border-radius: 1.5rem;
-  color: ${(props) => props.theme.colors.background};
+  color: var(--neutral-00);
   display: flex;
   font-size: 1.25rem;
   font-weight: 700;
@@ -82,19 +83,19 @@ const Thumb = styled.div`
   width: 7.5rem;
 
   &:focus {
-    box-shadow: 0 0 0 0.125rem ${(props) => props.theme.colors.mainLight};
+    box-shadow: 0 0 0 0.125rem var(--primary-10);
     outline: none;
   }
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     font-size: 1rem;
     width: 6.5rem;
   }
 `
 export default function LiseuseBookComparator() {
-  const { setCo2e } = useContext(ModalContext)
+  const { setCo2e } = useModalContext()
 
-  const { equivalents } = useContext(DataContext)
+  const { equivalents } = useDataContext()
   const liseuse = useMemo(() => equivalents.find((equivalent) => ['liseuse'].includes(equivalent.slug)), [equivalents])
   const livre = useMemo(
     () => equivalents.find((equivalent) => ['livredepoche'].includes(equivalent.slug)),

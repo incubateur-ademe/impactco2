@@ -1,9 +1,9 @@
-import React from 'react'
 import { Preview } from '@storybook/react'
-import { GlobalStyle, themes } from '../src/utils/styles'
-import { StyleProvider } from '../src/components/providers/StyleProvider'
+import React, { useEffect } from 'react'
+import { useDarkMode } from 'storybook-dark-mode'
+import { GlobalStyle } from '../src/utils/styles'
 import '../src/utils/variables.css'
-import '../src/utils/fonts.css'
+import useTheme from '../src/components/layout/Theme'
 
 const preview: Preview = {
   parameters: {
@@ -14,11 +14,33 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    darkMode: {
+      darkClass: 'night',
+      classTarget: 'body',
+    },
   },
 }
 
 export const decorators = [
-  (story) => <StyleProvider><GlobalStyle/>{story()}</StyleProvider>
+  (story) => {
+    useTheme()
+    const defaultTheme = useDarkMode()
+
+    useEffect(() => {
+      if (defaultTheme) {
+        document.body.classList.add('night')
+      } else {
+        document.body.classList.remove('night')
+      }
+    }, [defaultTheme])
+
+    return (
+      <>
+        <GlobalStyle />
+        {story()}
+      </>
+    )
+  },
 ]
 
 export default preview

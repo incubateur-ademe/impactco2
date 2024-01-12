@@ -1,7 +1,6 @@
-import { useContext } from 'react'
 import styled from 'styled-components'
 import HorizontalRadio from 'components/base/HorizontalRadio'
-import RulesContextNumerique from 'components/numerique/RulesProviderNumerique'
+import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 import SliderWrapper from 'components/numerique/misc/SliderWrapper'
 
 const Wrapper = styled.div`
@@ -10,7 +9,7 @@ const Wrapper = styled.div`
   width: 100%;
 `
 export default function DeviceInput(props) {
-  const { engine, setSituation } = useContext(RulesContextNumerique)
+  const { engine, setSituation } = useRulesContextNumerique()
 
   return (
     <Wrapper>

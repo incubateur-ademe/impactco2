@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Modal2 from 'components/base/Modal2'
 import ExplainArrowContainer from 'components/modals/ExplainArrowContainer.js'
 
@@ -16,7 +16,7 @@ const getTitle = () => {
 }
 
 export default function Co2eModal2() {
-  const { Co2e: open, setCo2e: setOpen } = useContext(ModalContext)
+  const { Co2e: open, setCo2e: setOpen } = useModalContext()
   return (
     <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width='50rem'>
       <Text>
@@ -36,7 +36,7 @@ export default function Co2eModal2() {
 }
 
 const GreenText = styled.span`
-  color: #1c9b93;
+  color: var(--primary-50);
 `
 
 const Title = styled.h2`

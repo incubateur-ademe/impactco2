@@ -17,7 +17,7 @@ const Edit = styled.div`
     width: 100%;
 
     path {
-      fill: ${(props) => props.theme.colors.background};
+      fill: var(--neutral-00);
     }
   }
 `

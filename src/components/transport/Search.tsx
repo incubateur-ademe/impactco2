@@ -1,7 +1,7 @@
-import React, { Dispatch, SetStateAction, useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import TransportContext from 'components/transport/TransportProvider'
+import useTransportContext from 'components/transport/TransportProvider'
 import Simulator from '../misc/Simulator'
 import SliderWithInput from '../misc/slider/SliderWithInput'
 import Itinerary from './search/Itinerary'
@@ -11,7 +11,7 @@ import Teletravail from './search/Teletravail'
 const Color = styled.button`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.main};
+  color: var(--primary-60);
   cursor: pointer;
   padding: 0;
 
@@ -26,13 +26,7 @@ export default function Search({
   type: 'distance' | 'itineraire' | 'teletravail'
   iframe?: boolean
 }) {
-  const { setOccupancyModal, km, setKm } = useContext<{
-    setOccupancyModal: Dispatch<SetStateAction<boolean>>
-    km: number
-    setKm: Dispatch<SetStateAction<number>>
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: TODO
-  }>(TransportContext)
+  const { setOccupancyModal, km, setKm } = useTransportContext()
 
   return (
     <>
@@ -80,7 +74,14 @@ export default function Search({
               pour cette distance
             </>
           }>
-          <SliderWithInput value={km} setValue={setKm} unit='km' digit={4} tracking='Transport distance' />
+          <SliderWithInput
+            value={km}
+            setValue={setKm}
+            unit='km'
+            digit={4}
+            tracking='Transport distance'
+            aria-label='Distance en km'
+          />
         </Simulator>
       )}
     </>

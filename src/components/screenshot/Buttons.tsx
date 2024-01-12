@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
+import { MEDIA } from 'utils/styles'
 import useIframe from 'hooks/useIframe'
-import ModalContext from 'components/providers/ModalProvider'
+import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 
@@ -11,14 +12,14 @@ const Wrapper = styled.div`
   gap: 1rem;
   justify-content: center;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     gap: 0.75rem;
   }
 `
 const StyledButton = styled(Button)<{ $large: boolean }>`
   align-items: center;
   background: transparent !important;
-  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border: 0.125rem solid var(--primary-50);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -31,7 +32,7 @@ const StyledButton = styled(Button)<{ $large: boolean }>`
   width: 2rem;
   z-index: 12;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     height: 1.75rem;
     width: 1.75rem;
   }
@@ -40,7 +41,7 @@ const StyledButton = styled(Button)<{ $large: boolean }>`
 const StyledLink = styled(Link)<{ $large: boolean }>`
   align-items: center;
   background: transparent !important;
-  border: 0.125rem solid ${(props) => props.theme.colors.main};
+  border: 0.125rem solid var(--primary-50);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -53,7 +54,7 @@ const StyledLink = styled(Link)<{ $large: boolean }>`
   width: 2rem;
   z-index: 12;
 
-  ${(props) => props.theme.mq.small} {
+  ${MEDIA.LT.SMALL} {
     height: 1.75rem;
     width: 1.75rem;
   }
@@ -64,7 +65,7 @@ const Svg = styled.svg`
   width: 100%;
 
   path {
-    fill: ${(props) => props.theme.colors.main};
+    fill: var(--primary-50);
 
     &.outline1 {
       animation-delay: 200ms;
@@ -89,13 +90,14 @@ export default function Buttons({
   urlParams?: string
   tracking: string
 }) {
-  const { setShare } = useContext(ModalContext)
+  const { setShare } = useModalContext()
 
   const iframe = useIframe()
 
   return (
     <Wrapper onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <StyledButton
+        aria-label='Partager'
         onClick={() => {
           track(tracking, 'Partager', `${tracking.toLowerCase().replaceAll(' ', '_')}_partager`)
           setShare(urlParams || true)
@@ -123,6 +125,7 @@ export default function Buttons({
       </StyledButton>
       {slug && (
         <StyledLink
+          aria-label='Intégrer'
           asButton
           className='noscreenshot'
           href={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/integration${slug ? `?type=${slug}` : ''}`}
@@ -142,6 +145,7 @@ export default function Buttons({
         </StyledLink>
       )}
       <StyledButton
+        aria-label='Télécharger'
         onClick={() => {
           track(tracking, 'Télécharger', `${tracking.toLowerCase().replaceAll(' ', '_')}_telecharger`)
           takeScreenshot()

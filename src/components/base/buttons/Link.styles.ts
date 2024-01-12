@@ -1,18 +1,20 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { getBaseColor } from './colors'
+import { Priority } from './priority'
 
-const LinkStyle = (style?: 'secondary') => {
-  const color = style || 'primary'
+const LinkStyle = (priority?: Priority) => {
+  const baseColor = getBaseColor(priority)
   return `
     border-radius: 2px;
-    color: var(--${color}-50);
+    color: var(--${baseColor.color}-${baseColor.base});
 
     &:hover {
-      color: var(--${color}-70);
+      color: var(--${baseColor.color}-${baseColor.base + 20});
     }
 
     &:focus {
-      outline: 3px solid var(--${color}-40);
+      outline: 3px solid var(--${baseColor.color}-${baseColor.base - 20});
       outline-offset: 2px;
     }
 
@@ -22,16 +24,16 @@ const LinkStyle = (style?: 'secondary') => {
   `
 }
 
-export const Button = styled.button<{ $color?: 'secondary' }>`
+export const Button = styled.button<{ $priority?: Priority }>`
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
   text-decoration: underline;
 
-  ${({ $color }) => LinkStyle($color)}
+  ${({ $priority }) => LinkStyle($priority)}
 `
 
-export const StyledLink = styled(Link)<{ $color?: 'secondary' }>`
-  ${({ $color }) => LinkStyle($color)}
+export const StyledLink = styled(Link)<{ $priority?: Priority }>`
+  ${({ $priority }) => LinkStyle($priority)}
 `
