@@ -17,7 +17,7 @@ export default function TeletravailPage({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
-      <TransportProvider type='teletravail'>
+      <TransportProvider>
         <Teletravail category={category} />
         <Learning category={category} from='/transport/itineraire' fromLabel='Transport itinéraire' />
         <SuggestionBanner

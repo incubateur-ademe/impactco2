@@ -1,11 +1,9 @@
-import { useRouter } from 'next/router'
-import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from 'react'
-import { searchAddress } from 'hooks/useAddress'
+import React, { Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react'
 import { Point } from 'hooks/useItineraries'
+import useParamContext from 'components/providers/ParamProvider'
 import FootprintModal from './modals/FootprintModal'
 import OccupancyModal from './modals/OccupancyModal'
 import TeletravailModal from './modals/TeletravailModal'
-import { displayAddress } from './search/itinerary/Address'
 
 const TransportContext = React.createContext<{
   displayAll: boolean
@@ -40,24 +38,13 @@ const TransportContext = React.createContext<{
   setTeletravailModal: Dispatch<SetStateAction<boolean>>
 } | null>(null)
 
-export function TransportProvider({
-  type,
-  children,
-}: {
-  type: 'distance' | 'teletravail' | 'itineraire'
-  children: ReactNode
-}) {
-  const router = useRouter()
-
+export function TransportProvider({ children }: { children: ReactNode }) {
+  const {
+    transport: { km, setKm, start, setStart, end, setEnd },
+  } = useParamContext()
   const [displayAll, setDisplayAll] = useState(false)
 
   const [carpool, setCarpool] = useState(0)
-
-  const [km, setKm] = useState(10)
-
-  const [start, setStart] = useState<Point>()
-  const [end, setEnd] = useState<Point>()
-
   const [teletravailTransportation, setTeletravailTransportation] = useState('')
   const [presentiel, setPresentiel] = useState(5)
   const [teletravail, setTeletravail] = useState(0)
@@ -69,52 +56,6 @@ export function TransportProvider({
   const [occupancyModal, setOccupancyModal] = useState(false)
   const [teletravailModal, setTeletravailModal] = useState(false)
   const [footprintModal, setFootprintModal] = useState(false)
-
-  useEffect(() => {
-    if (router.isReady) {
-      const start = (router.query.start ||
-        (type === 'itineraire' && router.query.itineraireStart) ||
-        (type === 'teletravail' && router.query.itineraireStart)) as string
-      if (start) {
-        searchAddress(start, 1).then((result) => {
-          if (result.length > 0) {
-            const address = result[0]
-            setStart({
-              latitude: address.geometry.coordinates[1],
-              longitude: address.geometry.coordinates[0],
-              city: address.properties.city,
-              address: displayAddress(address),
-            })
-          }
-        })
-      }
-
-      const end = (router.query.end ||
-        (type === 'itineraire' && router.query.itineraireEnd) ||
-        (type === 'teletravail' && router.query.itineraireEnd)) as string
-
-      if (end) {
-        searchAddress(end, 1).then((result) => {
-          if (result.length > 0) {
-            const address = result[0]
-            setEnd({
-              latitude: address.geometry.coordinates[1],
-              longitude: address.geometry.coordinates[0],
-              city: address.properties.city,
-              address: displayAddress(address),
-            })
-          }
-        })
-      }
-
-      if (router.query.km) {
-        const km = Number.parseInt(router.query.km as string)
-        if (!Number.isNaN(km)) {
-          setKm(km)
-        }
-      }
-    }
-  }, [router, type])
 
   return (
     <TransportContext.Provider

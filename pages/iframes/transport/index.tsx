@@ -8,7 +8,7 @@ import { TransportProvider } from 'components/transport/TransportProvider'
 export default function DistancePage({ category }: { category: Category }) {
   return (
     <Iframe noLogo>
-      <TransportProvider type='distance'>
+      <TransportProvider>
         <Distance category={category} iframe />
       </TransportProvider>
     </Iframe>
