@@ -28,3 +28,7 @@ export const IFrameLogos = styled.div`
   padding: 1.5rem;
   text-align: center;
 `
+
+export const Screenshotable = styled.div<{ $darkMode?: boolean }>`
+  background-color: ${({ $darkMode }) => ($darkMode ? 'black' : 'white')};
+`
