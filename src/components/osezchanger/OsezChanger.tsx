@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
+import useTheme from 'components/layout/Theme'
 import Signature from 'components/screenshot/Signature'
 import OverScreen from '../base/OverScreen'
 import Actions from './Actions'
@@ -15,6 +16,7 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
   const [defiMode, setDefiMode] = useState(iframe || false)
   const [overScreen, setOverScreen] = useState<OverScreenOsezChanger | undefined>()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_osez_changer', 'OsezChanger')
+  const { theme } = useTheme()
 
   return (
     <Container $defiMode={defiMode} id='osez-changer'>
@@ -27,14 +29,16 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
       </Description>
       {defiMode ? (
         <>
-          <Screenshot ref={ref} data-testid='defi' $isScreenshotting={isScreenshotting}>
-            <Defi setOverScreen={setOverScreen} />
-            {isScreenshotting && (
-              <Logos>
-                <Signature noMargin />
-              </Logos>
-            )}
-          </Screenshot>
+          <div ref={ref}>
+            <Screenshot $darkMode={theme === 'night'} data-testid='defi' $isScreenshotting={isScreenshotting}>
+              <Defi setOverScreen={setOverScreen} />
+              {isScreenshotting && (
+                <Logos>
+                  <Signature noMargin />
+                </Logos>
+              )}
+            </Screenshot>
+          </div>
           <Resources />
           {iframe && (
             <BottomLogos>

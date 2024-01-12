@@ -8,7 +8,7 @@ export default function useTheme() {
   }, [])
 
   useEffect(() => {
-    if (theme) {
+    if (theme === 'night') {
       document.body.classList.add('night')
     } else {
       document.body.classList.remove('night')
