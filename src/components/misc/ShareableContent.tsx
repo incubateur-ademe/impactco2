@@ -5,8 +5,9 @@ import useScreenshot from 'hooks/useScreenshot'
 import OverScreen, { OverScreenInfo } from 'components/base/OverScreen'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
+import useTheme from 'components/layout/Theme'
 import Signature from 'components/screenshot/Signature'
-import { Container, ContentHeader, IFrameLogos, Logos } from './ShareableContent.styles'
+import { Container, ContentHeader, IFrameLogos, Logos, Screenshotable } from './ShareableContent.styles'
 import Actions from './category/Actions'
 import { CustomParamValue } from './category/CustomParam'
 import Header from './category/Header'
@@ -41,7 +42,7 @@ const ShareableContent = <T extends string>({
   title?: string
 }) => {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replaceAll(' ', '-').toLowerCase(), tracking)
-
+  const { theme } = useTheme()
   return (
     <Section $withoutPadding data-testid={dataTestId}>
       <SectionWideContent $size='sm'>
@@ -59,12 +60,14 @@ const ShareableContent = <T extends string>({
           <Container $iframe={iframe}>
             {header && <ContentHeader>{header}</ContentHeader>}
             <div ref={ref}>
-              {children}
-              {isScreenshotting && (
-                <Logos>
-                  <Signature />
-                </Logos>
-              )}
+              <Screenshotable $darkMode={theme === 'night'}>
+                {children}
+                {isScreenshotting && (
+                  <Logos>
+                    <Signature />
+                  </Logos>
+                )}
+              </Screenshotable>
             </div>
             {footer}
             {iframe && (
