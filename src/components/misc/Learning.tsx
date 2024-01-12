@@ -256,7 +256,7 @@ export default function Learning({
             <Card
               href='/api-doc'
               title="Accéder à l'API"
-              description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
+              description='Vous souhaitez aller plus loin dans l’intégration de nos données au sein de vos propres contenus ou applications ?'
               link='Voir la documentation'
               image='/images/lightning.png'
               tracking={fromLabel || category?.name}
@@ -264,7 +264,7 @@ export default function Learning({
             <Card
               href={`/rendez-vous?from=${from || category?.slug}&fromLabel=${fromLabel || category?.name}`}
               title='Obtenir un accompagnement'
-              description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
+              description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
               link='Prendre rendez-vous'
               image='/images/envelop.png'
             />
