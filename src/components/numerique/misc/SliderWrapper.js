@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
-const SliderWrapper = styled.div`
+export const SliderWrapper = styled.div`
   align-items: center;
   display: flex;
   flex: 1;
   flex-direction: column;
 `
-SliderWrapper.Slider = styled.div`
+
+export const SliderWrapperSlider = styled.div`
   align-items: center;
   border: 0.125rem solid var(--primary-50);
   border-radius: 0.5rem;
@@ -15,15 +16,21 @@ SliderWrapper.Slider = styled.div`
   padding: 0.375rem 0.75rem;
   width: 100%;
 `
-SliderWrapper.Value = styled.div`
+
+export const SliderWrapperValue = styled.div`
   text-align: right;
   white-space: nowrap;
   width: ${(props) => props.width || 3.5}rem;
 `
-SliderWrapper.Label = styled.label`
+
+export const SliderWrapperLabel = styled.label`
   font-size: 1rem;
   margin-bottom: 0.5rem;
   text-align: center;
   white-space: nowrap;
 `
-export default SliderWrapper
+
+export const SliderWrapperHint = styled.span`
+  color: var(--neutral-60);
+  font-weight: 400;
+`

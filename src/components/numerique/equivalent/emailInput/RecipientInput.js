@@ -1,14 +1,19 @@
 import Slider from 'components/base/Slider'
 import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
-import SliderWrapper from 'components/numerique/misc/SliderWrapper'
+import {
+  SliderWrapper,
+  SliderWrapperLabel,
+  SliderWrapperSlider,
+  SliderWrapperValue,
+} from 'components/numerique/misc/SliderWrapper'
 
 export default function RecipientInput(props) {
   const { engine, setSituation } = useRulesContextNumerique()
 
   return (
     <SliderWrapper>
-      <SliderWrapper.Label>Nombre de destinataires</SliderWrapper.Label>
-      <SliderWrapper.Slider>
+      <SliderWrapperLabel>Nombre de destinataires</SliderWrapperLabel>
+      <SliderWrapperSlider>
         <Slider
           value={engine.evaluate(`${props.name} . destinataires`).nodeValue}
           min={1}
@@ -19,8 +24,8 @@ export default function RecipientInput(props) {
             })
           }
         />
-        <SliderWrapper.Value>{engine.evaluate(`${props.name} . destinataires`).nodeValue}</SliderWrapper.Value>
-      </SliderWrapper.Slider>
+        <SliderWrapperValue>{engine.evaluate(`${props.name} . destinataires`).nodeValue}</SliderWrapperValue>
+      </SliderWrapperSlider>
     </SliderWrapper>
   )
 }

@@ -14,13 +14,13 @@ const Wrapper = styled.div`
   gap: 1.5rem;
   padding: 1.5rem;
 `
-export default function EmailInput(props) {
+export default function EmailInput() {
   return (
     <Wrapper>
-      <SizeInput name={props.name} />
-      <TypingInput name={props.name} />
-      <RecipientInput name={props.name} />
-      <NetworkInput name={props.name} />
+      <SizeInput />
+      <TypingInput name='email' />
+      <RecipientInput name='email' />
+      <NetworkInput name='email' />
     </Wrapper>
   )
 }

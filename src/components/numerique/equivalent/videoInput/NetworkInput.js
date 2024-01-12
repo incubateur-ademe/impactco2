@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import HorizontalRadio from 'components/base/HorizontalRadio'
 import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
-import SliderWrapper from 'components/numerique/misc/SliderWrapper'
+import { SliderWrapper, SliderWrapperLabel } from 'components/numerique/misc/SliderWrapper'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export default function DeviceInput(props) {
   return (
     <Wrapper>
       <SliderWrapper>
-        <SliderWrapper.Label>Type de réseau</SliderWrapper.Label>
+        <SliderWrapperLabel>Type de réseau</SliderWrapperLabel>
         <HorizontalRadio
           name='network'
           value={`'${engine.evaluate(props.name + ' . transmission . réseau').nodeValue}'`}
