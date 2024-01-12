@@ -119,7 +119,7 @@ export default function Configurator({
             label='2) Choisissez la palette de couleurs de votre iframe.'
             name='theme'>
             <option value='default'>Clair</option>
-            {slug !== 'habillement/osez-changer' && <option value='night'>Sombre</option>}
+            <option value='night'>Sombre</option>
           </Select>
         </div>
         <div>

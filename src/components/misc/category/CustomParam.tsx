@@ -19,9 +19,35 @@ const configs: Record<
     options?: { label: string; value: string | number }[]
   }
 > = {
-  m2: { label: 'Afficher une surface personnalisée', type: 'number', unit: 'm²', min: 1, inputLabel: 'Surface' },
-  km: { label: 'Afficher une distance personnalisée', type: 'number', unit: 'km', min: 1, inputLabel: 'Distance' },
-  month: { label: 'Personnaliser le mois à afficher', type: 'select', options: monthsOptions, inputLabel: 'Mois' },
+  m2: {
+    label: 'Afficher une surface personnalisée',
+    type: 'number',
+    unit: 'm²',
+    min: 1,
+    inputLabel: 'Surface',
+  },
+  km: {
+    label: 'Afficher une distance personnalisée',
+    type: 'number',
+    unit: 'km',
+    min: 1,
+    inputLabel: 'Distance',
+  },
+  month: {
+    label: 'Personnaliser le mois à afficher',
+    type: 'select',
+    options: monthsOptions,
+    inputLabel: 'Mois',
+  },
+  theme: {
+    label: "Mode d'affichage",
+    type: 'select',
+    options: [
+      { value: 'default', label: 'Clair' },
+      { value: 'night', label: 'Sombre' },
+    ],
+    inputLabel: 'Mois',
+  },
 }
 
 const arrayConfigs: Record<string, string> = {
@@ -51,23 +77,28 @@ const CustomParam = ({
   value: CustomParamValue
   visible: boolean
   setValue: (value: CustomParamValue) => void
-  setVisible: (visbile: boolean) => void
+  setVisible?: (visbile: boolean) => void
   integration?: boolean
 }) => {
   if (typeof value === 'string') {
     const config = configs[slug]
     return (
       <Container>
-        <CheckboxInput
-          checked={visible}
-          setChecked={setVisible}
-          label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
-          data-testid={`custom-param-${slug}-checkbox`}
-        />
-        <InputContainer>
+        {setVisible && (
+          <CheckboxInput
+            checked={visible}
+            setChecked={setVisible}
+            label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
+            data-testid={`custom-param-${slug}-checkbox`}
+          />
+        )}
+        <InputContainer $fullWidth={!setVisible}>
           <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>{config.inputLabel}</HiddenLabel>
           {config.options ? (
             <Select
+              label={setVisible ? '' : config.label}
+              required
+              inline={!setVisible}
               id={slug}
               disabled={!visible}
               value={value}
@@ -104,11 +135,13 @@ const CustomParam = ({
     const config = addressConfigs[slug]
     return (
       <Container>
-        <CheckboxInput
-          checked={visible}
-          setChecked={setVisible}
-          label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
-        />
+        {setVisible && (
+          <CheckboxInput
+            checked={visible}
+            setChecked={setVisible}
+            label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
+          />
+        )}
         <Inputs>
           <Input
             id={`${slug}-start`}
@@ -136,12 +169,14 @@ const CustomParam = ({
   const config = arrayConfigs[slug]
   return (
     <Container>
-      <CheckboxInput
-        checked={visible}
-        setChecked={setVisible}
-        label={config.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
-        data-testid={`custom-param-${slug}-checkbox`}
-      />
+      {setVisible && (
+        <CheckboxInput
+          checked={visible}
+          setChecked={setVisible}
+          label={config.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
+          data-testid={`custom-param-${slug}-checkbox`}
+        />
+      )}
       <Params>
         {value.value.map(({ emoji, label }) => (
           <Param key={emoji}>

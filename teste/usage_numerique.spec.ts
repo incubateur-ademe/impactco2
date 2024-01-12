@@ -58,11 +58,11 @@ test('Update share and integrate values when modifying parameters', async ({ pag
 
   await page.getByTestId('header-integrate-button').click()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    "<script name=\"impact-co2\" src=\"http://localhost:3000/iframe.js\" data-type=\"usagenumerique\" data-search=\"?theme=default&emails=50&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille=10&streaming . durée=420&streaming . appareil='ordinateur portable'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=180&visio . appareil='TV'&visio . emplacements=1&visio . transmission . réseau='mobile FR'&visio . qualité='HD'\"></script>"
+    "<script name=\"impact-co2\" src=\"http://localhost:3000/iframe.js\" data-type=\"usagenumerique\" data-search=\"?emails=50&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille=10&streaming . durée=420&streaming . appareil='ordinateur portable'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=180&visio . appareil='TV'&visio . emplacements=1&visio . transmission . réseau='mobile FR'&visio . qualité='HD'\"></script>"
   )
   await page.getByTestId('custom-param-situation-checkbox').click({ force: true })
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="usagenumerique" data-search="?theme=default&"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="usagenumerique" data-search="?"></script>'
   )
 })
 

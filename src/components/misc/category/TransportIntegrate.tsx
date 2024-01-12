@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { track } from 'utils/matomo'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
 import useTransportContext from 'components/transport/TransportProvider'
-import { CustomParamType } from './CustomParam'
+import CustomParam, { CustomParamType } from './CustomParam'
 import CustomParams from './CustomParams'
 import { Separator } from './TransportIntegrate.styles'
 
@@ -73,7 +74,7 @@ const TransportIntegrate = ({
       result += ` data-type="transport/teletravail"`
     }
 
-    result += ' data-search="?theme=default'
+    result += ` data-search="?theme=${customValues.theme ? customValues.theme.value : 'default'}`
 
     result += `&tabs=${tabs.join(',')}`
 
@@ -193,6 +194,22 @@ const TransportIntegrate = ({
           <Separator />
         </>
       )}
+      <CustomParam
+        slug='theme'
+        integration
+        value={customValues.theme ? customValues.theme.value : 'default'}
+        visible
+        setValue={(newValue) => {
+          track(tracking, `Custom value theme`, JSON.stringify(newValue))
+          setCustomValues({
+            ...customValues,
+            theme: {
+              value: newValue,
+              visible: true,
+            },
+          })
+        }}
+      />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>
   )
