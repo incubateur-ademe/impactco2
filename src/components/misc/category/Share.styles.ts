@@ -1,15 +1,17 @@
 import styled from 'styled-components'
 
 export const Meta = styled.div`
+  align-items: center;
   border: 1px solid var(--neutral-20);
   border-radius: 4px;
+  display: flex;
+  gap: 0.75rem;
   padding: 0.75rem;
   text-align: left;
 
   img  {
-    margin-bottom: 0.5rem;
-    width: 100%;
-    height: auto;
+    max-height: 128px;
+    width: auto;
   }
 
   p {
