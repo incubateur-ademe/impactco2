@@ -29,7 +29,7 @@ export default function TextInput(props) {
     <Wrapper className={props.className}>
       <Input
         type={'text'}
-        inputmode='numeric'
+        inputMode='numeric'
         id={props.rule.dottedName}
         name={props.rule.dottedName}
         value={props.value || 0}
