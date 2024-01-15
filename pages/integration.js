@@ -1,5 +1,5 @@
 import IframeResizer from 'iframe-resizer-react'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { StringParam, useQueryParam, withDefault } from 'use-query-params'
 import { MEDIA } from 'utils/styles'
@@ -36,12 +36,6 @@ export default function Integration() {
 
   // We keep "type" in url (and not 'slug") because of possible legacy links
   const [slug, setSlug] = useQueryParam('type', withDefault(StringParam, 'convertisseur'))
-
-  useEffect(() => {
-    if (slug === 'habillement/osez-changer') {
-      setTheme('default')
-    }
-  }, [slug])
 
   const type = useMemo(() => {
     const equivalent = equivalents.find((equivalentItem) => equivalentItem.slug === slug)

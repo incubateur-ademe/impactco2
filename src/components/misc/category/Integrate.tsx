@@ -30,7 +30,7 @@ const Integrate = ({
 
   const url = `<script name="impact-co2" src="${
     process.env.NEXT_PUBLIC_URL
-  }/iframe.js" data-type="${slug}" data-search="?theme=default&${buildCustomParamsUrl(customValues)}"></script>`
+  }/iframe.js" data-type="${slug}" data-search="?${buildCustomParamsUrl(customValues)}"></script>`
 
   return (
     <>
@@ -40,6 +40,7 @@ const Integrate = ({
         trackingType='Intégrer'
         customValues={customValues}
         setCustomValues={setCustomValues}
+        withTheme
       />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>

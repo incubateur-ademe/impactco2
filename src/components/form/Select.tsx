@@ -1,5 +1,5 @@
 import React, { SelectHTMLAttributes } from 'react'
-import { Hint, Label, NotRequired, StyledSelect } from './Input.styles'
+import { Container, Hint, Label, NotRequired, StyledSelect } from './Input.styles'
 
 const Select = ({
   id,
@@ -7,25 +7,27 @@ const Select = ({
   hint,
   maxWidth,
   color,
+  inline,
   ...selectProps
 }: SelectHTMLAttributes<HTMLSelectElement> & {
   id: string
   label?: string
   hint?: string
   maxWidth?: string
+  inline?: boolean
   color?: 'secondary'
 }) => {
   return (
-    <div>
+    <Container $inline={inline}>
       {label && (
-        <Label htmlFor={`text-select-${id}`}>
+        <Label htmlFor={`text-select-${id}`} $inline={inline}>
           {label}
           {!selectProps.required && <NotRequired> - Facultatif</NotRequired>}
           {hint && <Hint className='text-sm'>{hint}</Hint>}
         </Label>
       )}
       <StyledSelect {...selectProps} id={`text-select-${id}`} $maxWidth={maxWidth} $color={color} />
-    </div>
+    </Container>
   )
 }
 
