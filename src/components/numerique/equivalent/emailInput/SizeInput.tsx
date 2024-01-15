@@ -2,34 +2,35 @@ import Slider from 'components/base/Slider'
 import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 import {
   SliderWrapper,
+  SliderWrapperHint,
   SliderWrapperLabel,
   SliderWrapperSlider,
   SliderWrapperValue,
 } from 'components/numerique/misc/SliderWrapper'
 
-export default function DailyUsageInput(props) {
+export default function DurationInput() {
   const { engine, setSituation } = useRulesContextNumerique()
 
   return (
     <SliderWrapper>
-      <SliderWrapperLabel>Durée d'utilisation quotidienne</SliderWrapperLabel>
+      <SliderWrapperLabel>Poids de la pièce jointe</SliderWrapperLabel>
       <SliderWrapperSlider>
         <Slider
-          value={engine.evaluate(`${props.device.name} . profil utilisation`).nodeValue}
-          min={1}
-          max={20}
-          step={0.5}
-          onChange={(value) =>
+          value={(engine.evaluate('email . taille').nodeValue as number) - 0.075}
+          min={0}
+          max={10}
+          step={0.1}
+          onChange={(value: number) =>
             setSituation({
-              [`${props.device.name} . profil utilisation`]: value,
+              ['email . taille']: value + 0.075,
             })
           }
         />
         <SliderWrapperValue>
-          {Math.floor(engine.evaluate(`${props.device.name} . profil utilisation`).nodeValue)}h
-          {Math.round((engine.evaluate(`${props.device.name} . profil utilisation`).nodeValue * 60) % 60)}
+          {((engine.evaluate('email . taille').nodeValue as number) - 0.075).toFixed(1)} Mo
         </SliderWrapperValue>
       </SliderWrapperSlider>
+      <SliderWrapperHint>Par défaut un email sans pièce jointe pèse 75ko</SliderWrapperHint>
     </SliderWrapper>
   )
 }

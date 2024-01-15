@@ -1,15 +1,20 @@
 import React from 'react'
 import Slider from 'components/base/Slider'
 import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
-import SliderWrapper from 'components/numerique/misc/SliderWrapper'
+import {
+  SliderWrapper,
+  SliderWrapperLabel,
+  SliderWrapperSlider,
+  SliderWrapperValue,
+} from 'components/numerique/misc/SliderWrapper'
 
 export default function ParticipantInput(props) {
   const { engine, setSituation } = useRulesContextNumerique()
 
   return props.name === 'visio' ? (
     <SliderWrapper>
-      <SliderWrapper.Label>Nombre de participants</SliderWrapper.Label>
-      <SliderWrapper.Slider>
+      <SliderWrapperLabel>Nombre de participants</SliderWrapperLabel>
+      <SliderWrapperSlider>
         <Slider
           value={engine.evaluate(`${props.name} . emplacements`).nodeValue}
           min={2}
@@ -20,8 +25,8 @@ export default function ParticipantInput(props) {
             })
           }
         />
-        <SliderWrapper.Value>{engine.evaluate(`${props.name} . emplacements`).nodeValue}</SliderWrapper.Value>
-      </SliderWrapper.Slider>
+        <SliderWrapperValue>{engine.evaluate(`${props.name} . emplacements`).nodeValue}</SliderWrapperValue>
+      </SliderWrapperSlider>
     </SliderWrapper>
   ) : null
 }
