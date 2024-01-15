@@ -34,7 +34,7 @@ const Actions = ({
         icon='download'
         onClick={() => {
           onClick('telecharger')
-          track(tracking, 'Telecharger', `${tracking.replaceAll(' ', '_').toLowerCase()}_telecharger`)
+          track(tracking, 'Télécharger', `${tracking.replaceAll(' ', '_').toLowerCase()}_telecharger`)
         }}>
         Télécharger
       </GhostButton>
