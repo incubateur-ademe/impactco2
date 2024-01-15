@@ -17,7 +17,7 @@ const Actions = ({
         icon='send-plane'
         onClick={() => {
           onClick('partager')
-          track(tracking, 'Partager', `${tracking.replaceAll(' ', '_').toLowerCase()}_partager`)
+          track(tracking, 'Partager', `${tracking.replace(/ /g, '_').toLowerCase()}_partager`)
         }}>
         Partager
       </GhostButton>
@@ -26,7 +26,7 @@ const Actions = ({
         icon='code-s-slash'
         onClick={() => {
           onClick('integrer')
-          track(tracking, 'Integrer', `${tracking.replaceAll(' ', '_').toLowerCase()}_integrer`)
+          track(tracking, 'Integrer', `${tracking.replace(/ /g, '_').toLowerCase()}_integrer`)
         }}>
         Intégrer
       </GhostButton>

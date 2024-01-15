@@ -42,7 +42,7 @@ export default function ChoicesInput(props) {
           value={choice.value}
           label={choice.label}
           checked={
-            props.evaluation.nodeValue === choice.value.replaceAll(`'`, '') ||
+            props.evaluation.nodeValue === choice.value.replace(/'/g, '') ||
             (!props.evaluation.nodeValue && choice.value === 'non') ||
             (props.evaluation.nodeValue && choice.value === 'oui')
           }
