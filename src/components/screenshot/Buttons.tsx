@@ -147,7 +147,6 @@ export default function Buttons({
       <StyledButton
         aria-label='Télécharger'
         onClick={() => {
-          track(tracking, 'Télécharger', `${tracking.toLowerCase().replaceAll(' ', '_')}_telecharger`)
           takeScreenshot()
         }}
         className='noscreenshot'>

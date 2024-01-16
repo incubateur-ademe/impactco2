@@ -38,7 +38,6 @@ const Actions = ({
         size='sm'
         icon='download'
         onClick={() => {
-          track('OsezChanger', 'Télécharger', 'osez_changer_telecharger')
           takeScreenshot()
         }}>
         Télécharger
