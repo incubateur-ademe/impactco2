@@ -45,6 +45,11 @@ export default function Footer() {
                 </Link>
               </FooterLink>
               <FooterLink>
+                <Link href='/budget' title='Budget'>
+                  Budget
+                </Link>
+              </FooterLink>
+              <FooterLink>
                 <Link
                   href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                   target='_blank'
