@@ -11,18 +11,22 @@ import TransportIntegrate from './TransportIntegrate'
 
 const Header = ({
   category,
+  path,
   params,
   takeScreenshot,
   tracking,
   type,
   title,
+  withoutIntegration,
 }: {
   category?: Category
   params?: Record<string, CustomParamValue>
   takeScreenshot: () => void
   tracking: string
   type?: 'distance' | 'itineraire' | 'teletravail'
+  path?: string
   title?: string
+  withoutIntegration?: boolean
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const [opened, setOpened] = useState('')
@@ -59,17 +63,12 @@ const Header = ({
           <Actions
             tracking={tracking}
             onClick={(value) => (value === 'telecharger' ? takeScreenshot() : open(value))}
+            withoutIntegration={withoutIntegration}
           />
           {opened && (
             <Content>
               <Separator />
-              {opened === 'partager' && (
-                <Share
-                  category={category}
-                  params={params}
-                  path={type && type !== 'distance' ? `transport/${type}` : category ? undefined : 'comparateur'}
-                />
-              )}
+              {opened === 'partager' && <Share category={category} params={params} path={path} />}
               {opened === 'integrer' &&
                 (type ? (
                   <TransportIntegrate tracking={tracking} type={type} />

@@ -6,12 +6,9 @@ import { Section, SectionWideContent } from 'components/base/Section'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
-import Learning from 'components/misc/Learning'
 import MobileAction from 'components/osezchanger/MobileAction'
-import OsezChanger from 'components/osezchanger/OsezChanger'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
-  const isHabillement = category.slug === 'habillement'
   return (
     <Web
       title={category.meta.title}
@@ -23,14 +20,12 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
       }}>
       <Section $withoutPadding>
         <Container>
-          {isHabillement && <MobileAction />}
-          <div>
+          {category.slug === 'habillement' && <MobileAction />}
+          <Content>
             <Category category={category} />
-          </div>
-          {isHabillement && <OsezChanger />}
+          </Content>
         </Container>
       </Section>
-      <Learning category={category} />
       <SuggestionBanner
         from={category.slug}
         fromLabel={category.name}
@@ -70,4 +65,8 @@ const Container = styled(SectionWideContent)`
   gap: 2.5rem 4rem;
   justify-content: center;
   margin-bottom: 2rem;
+`
+
+const Content = styled.div`
+  flex: 1;
 `

@@ -24,9 +24,9 @@ export default function BarChart({
   return (
     <Flipper flipKey={equivalents.map((equivalent) => equivalent.id).join()}>
       {sortedEquivalent.map((equivalent) => (
-        <Flipped flipId={equivalent.id} key={equivalent.id}>
+        <Flipped flipId={equivalent.slug} key={equivalent.slug}>
           <Item
-            key={equivalent.id}
+            key={equivalent.slug}
             onClick={equivalent.onClick}
             to={`/${category.slug}/${equivalent.slug}`}
             title={equivalent.title}

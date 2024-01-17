@@ -74,7 +74,8 @@ const Transport = ({
       type={type}
       data-testid={`${type}-wrapper`}
       setOverScreen={setOverScreen}
-      overScreen={overScreen ? overScreenValues[overScreen] : undefined}>
+      overScreen={overScreen ? overScreenValues[overScreen] : undefined}
+      path={`transport/${type === 'distance' ? '' : type}`}>
       {children}
     </ShareableContent>
   ) : null

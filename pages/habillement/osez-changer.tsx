@@ -6,9 +6,7 @@ import { Section, SectionWideContent } from 'components/base/Section'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
-import Learning from 'components/misc/Learning'
 import MobileAction from 'components/osezchanger/MobileAction'
-import OsezChanger from 'components/osezchanger/OsezChanger'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
   useEffect(() => {
@@ -35,10 +33,8 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
           <div>
             <Category category={category} />
           </div>
-          <OsezChanger />
         </Container>
       </Section>
-      <Learning category={category} />
       <SuggestionBanner
         from={category.slug}
         fromLabel={category.name}
