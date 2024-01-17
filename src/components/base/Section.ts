@@ -33,16 +33,18 @@ export const SectionWideContent = styled.div<{
   $noGutter?: boolean
   $flex?: boolean
   $reverse?: boolean
+  $center?: boolean
 }>`
   margin: auto;
   max-width: ${({ $size }) => sizes[$size || 'lg']};
-  ${({ $flex }) =>
+  ${({ $flex, $center }) =>
     $flex &&
     css`
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: space-between;
+      ${$center && 'align-items: center;'}
     `}
   ${({ $reverse }) =>
     $reverse &&
