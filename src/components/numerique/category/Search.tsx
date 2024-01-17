@@ -95,8 +95,8 @@ export default function Search() {
                 }}
                 color='#436CB0'>
                 <option value={0.075}>Sans pièce jointe</option>
-                <option value={1}>Pièce jointe 1Mo</option>
-                <option value={10}>Pièce jointe 5Mo</option>
+                <option value={1.075}>Pièce jointe 1Mo</option>
+                <option value={5.075}>Pièce jointe 5Mo</option>
               </StyledSelect>
             </Parameters>
           </Desktop>

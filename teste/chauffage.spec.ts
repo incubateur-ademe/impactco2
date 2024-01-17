@@ -31,4 +31,16 @@ test('Chauffage page', async ({ page }) => {
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
     await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('824')
   })
+
+  await test.step('Iframe can be share with theme', async () => {
+    await page.getByTestId('header-integrate-button').click()
+    await expect(page.getByTestId('clipboard-box')).toContainText(
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=200"></script>'
+    )
+
+    await page.getByTestId('custom-param-theme-select').selectOption('night')
+    await expect(page.getByTestId('clipboard-box')).toContainText(
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=200&theme=night"></script>'
+    )
+  })
 })

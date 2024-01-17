@@ -41,7 +41,7 @@ const ShareableContent = <T extends string>({
   size?: 'sm'
   title?: string
 }) => {
-  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replaceAll(' ', '-').toLowerCase(), tracking)
+  const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
   const { theme } = useTheme()
   return (
     <Section $withoutPadding data-testid={dataTestId}>

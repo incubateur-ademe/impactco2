@@ -16,8 +16,9 @@ export const Container = styled.div`
   margin-bottom: 2rem;
 `
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div<{ $fullWidth?: boolean }>`
   position: relative;
+  ${({ $fullWidth }) => $fullWidth && 'width: 100%;'}
 `
 
 export const StyledInput = styled(Input)`

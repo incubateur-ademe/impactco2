@@ -39,7 +39,7 @@ const Share = ({
 
   const url = buildCurrentUrlFor(`${path || category?.slug}?${buildCustomParamsUrl(customValues)}`)
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
-  const trackingSlug = trackingValue.replaceAll(' ', '_').toLowerCase
+  const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
   return (
     <>
       {customValues && (

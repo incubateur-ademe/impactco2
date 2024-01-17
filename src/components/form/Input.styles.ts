@@ -1,10 +1,17 @@
 import styled from 'styled-components'
 
-export const Label = styled.label<{ $error?: boolean }>`
+export const Container = styled.div<{ $inline?: boolean }>`
+  align-items: center;
+  display: flex;
+  flex-direction: ${({ $inline }) => ($inline ? 'row' : 'column')};
+  justify-content: space-between;
+`
+
+export const Label = styled.label<{ $error?: boolean; $inline?: boolean }>`
   color: var(--neutral-80);
   display: inline-block;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: ${({ $inline }) => ($inline ? '0' : '0.5rem')};
 
   ${({ $error }) => $error && 'color: var(--critical-50);'}
 `
@@ -65,7 +72,7 @@ export const StyledInput = styled.input<{ $maxWidth?: string; $color?: 'secondar
 
 export const StyledSelect = styled.select<{ $maxWidth?: string; $color?: 'secondary' }>`
   ${({ $color }) => input($color)}
-  ${({ $maxWidth }) => `max-width:${$maxWidth || '560px'};`}
+  ${({ $maxWidth }) => `max-width:${$maxWidth || 'fit-content'};`}
 
   appearance: none;
   background-image: var(--dropdown-arrow-black);

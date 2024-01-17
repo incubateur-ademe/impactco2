@@ -54,6 +54,7 @@
     "express-slow-down": "^2.0.1",
     "focus-trap-react": "^10.2.3",
     "fuse.js": "^7.0.0",
+    "helmet": "^7.1.0",
     "html-to-image": "^1.11.11",
     "iframe-resizer-react": "^1.1.0",
     "markdown-to-jsx": "^7.3.2",

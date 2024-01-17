@@ -1,10 +1,56 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const helmet = require('helmet')
 const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 const { withSentryConfig } = require('@sentry/nextjs')
 const { execSync } = require('child_process')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+
+const csp = {
+  ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+  'img-src': ["'self'", 'https:', 'data:'],
+  'frame-ancestors': ["'self'", 'https:', 'file:'],
+  'connect-src': ["'self'", 'https://stats.data.gouv.fr', 'https://photon.komoot.io', 'https://sentry.incubateur.net'],
+  'script-src': [
+    "'self'",
+    'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js',
+  ],
+}
+
+if (process.env.UNSAFE_EVAL === 'true') {
+  csp['script-src'].push("'unsafe-eval'")
+}
+
+const securityHeaders = [
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff',
+  },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block',
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN',
+  },
+  {
+    key: 'Content-Security-Policy',
+    value: Object.keys(csp)
+      .map((key) => `${key} ${csp[key].join(' ')}`)
+      .join(';'),
+  },
+]
+
+const securityHeadersIFramable = [
+  {
+    key: 'Content-Security-Policy',
+    value: Object.keys(csp)
+      .map((key) => `${key} ${csp[key].join(' ')}`)
+      .join(';'),
+  },
+]
 
 const getLocalGitCommitHash = function () {
   let res = ''
@@ -42,6 +88,18 @@ const nextConfig = {
     autoInstrumentMiddleware: true,
     widenClientFileUpload: true,
     hideSourceMaps: false,
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: securityHeaders,
+      },
+      {
+        source: '/iframes/:path*',
+        headers: securityHeadersIFramable,
+      },
+    ]
   },
   async redirects() {
     return [

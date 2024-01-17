@@ -16,10 +16,9 @@ import EmailInput from './equivalent/EmailInput'
 import ExpertMode from './equivalent/ExpertMode'
 import VideoInput from './equivalent/VideoInput'
 
-export const StyledSection = styled(Section)`
+const StyledSection = styled(Section)`
   margin-bottom: 4rem;
 `
-export const Title = styled.h1``
 const Questions = styled.div`
   align-items: stretch;
   display: flex;
@@ -40,7 +39,7 @@ export default function Simulateur(props) {
 
   const { engine, situation } = useRulesContextNumerique()
 
-  const [construction, setConstruction] = useState(true)
+  const [construction, setConstruction] = useState(false)
 
   const ecvToDisplay = useMemo(
     () =>
@@ -82,7 +81,7 @@ export default function Simulateur(props) {
   )
 
   return engine ? (
-    <StyledSection>
+    <StyledSection $withoutPadding>
       <SectionWideContent>
         <Wrapper name={formatName(props.equivalent.name, 1, true)} slug={props.equivalent.slug}>
           <Bar total={total} equivalent={props.equivalent} category={props.category} name={props.name} />
@@ -111,7 +110,7 @@ export default function Simulateur(props) {
             {props.name === 'email' && (
               <>
                 <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
-                <EmailInput name={props.name} />
+                <EmailInput />
               </>
             )}
             {props.name === 'recherche web' && (

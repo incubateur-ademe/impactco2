@@ -20,7 +20,7 @@ const Sizer = styled.div`
   }
 `
 const Content = styled.div`
-  background-color: ${(props) => (props.hover ? 'var(--neutral-00)' : 'transparent')};
+  background-color: ${(props) => (props.$hover ? 'var(--neutral-00)' : 'transparent')};
 `
 const Header = styled.div`
   align-items: flex-start;
@@ -39,7 +39,7 @@ export default function Wrapper(props) {
   return (
     <SizerWrapper>
       <Sizer className={props.className}>
-        <Content ref={ref} hover={hover}>
+        <Content ref={ref} $hover={hover}>
           <Background hover={hover}>
             <Header>
               <Title>{props.name}</Title>

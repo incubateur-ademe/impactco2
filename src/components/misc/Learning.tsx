@@ -267,6 +267,7 @@ export default function Learning({
               description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
               link='Prendre rendez-vous'
               image='/images/envelop.png'
+              tracking={fromLabel || category?.name}
             />
             {category && <Informations>{learnings[category.slug]}</Informations>}
           </Cards>

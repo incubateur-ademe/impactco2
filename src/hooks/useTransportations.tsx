@@ -45,7 +45,7 @@ export default function useTransportations(tracking: string, itineraries?: Recor
                   return {
                     ...equivalent,
                     ...currentECV,
-                    slug: `${equivalent.name} ${currentECV.subtitle}`.replaceAll(' ', '').toLowerCase(),
+                    slug: `${equivalent.name} ${currentECV.subtitle}`.replace(/ /g, '').toLowerCase(),
                   }
                 }
               }
