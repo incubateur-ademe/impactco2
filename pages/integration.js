@@ -80,7 +80,7 @@ export default function Integration() {
         </ConfiguratorWrapper>
       </Section>
       <Section $withoutPadding>
-        <StyledSectionContent $flex>
+        <StyledSectionContent>
           <StyledIframeResizer
             src={`/iframes/${path}?theme=${theme}`}
             allowFullScreen={true}

@@ -7,7 +7,7 @@ import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import useTheme from 'components/layout/Theme'
 import Signature from 'components/screenshot/Signature'
-import { Container, ContentHeader, IFrameLogos, Logos, Screenshotable } from './ShareableContent.styles'
+import { Container, Content, ContentHeader, IFrameLogos, Logos, Screenshotable } from './ShareableContent.styles'
 import Actions from './category/Actions'
 import { CustomParamValue } from './category/CustomParam'
 import Header from './category/Header'
@@ -26,6 +26,8 @@ const ShareableContent = <T extends string>({
   type,
   size,
   title,
+  sideContent,
+  bottom,
 }: {
   category?: Category
   iframe?: boolean
@@ -37,26 +39,28 @@ const ShareableContent = <T extends string>({
   children: ReactNode
   header?: ReactNode
   footer?: ReactNode
+  sideContent?: ReactNode
+  bottom?: ReactNode
   type?: 'distance' | 'itineraire' | 'teletravail'
-  size?: 'sm'
+  size?: 'sm' | 'lg'
   title?: string
 }) => {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
   const { theme } = useTheme()
   return (
     <Section $withoutPadding data-testid={dataTestId}>
-      <SectionWideContent $size='sm'>
-        {!iframe && (
-          <Header
-            category={category}
-            params={params}
-            takeScreenshot={takeScreenshot}
-            tracking={tracking}
-            type={type}
-            title={title}
-          />
-        )}
-        <SectionWideContent $size={size || 'xs'} $noGutter>
+      {!iframe && (
+        <Header
+          category={category}
+          params={params}
+          takeScreenshot={takeScreenshot}
+          tracking={tracking}
+          type={type}
+          title={title}
+        />
+      )}
+      <SectionWideContent $size={size || 'xs'} $noGutter $flex>
+        <Content>
           <Container $iframe={iframe}>
             {header && <ContentHeader>{header}</ContentHeader>}
             <div ref={ref}>
@@ -86,7 +90,9 @@ const ShareableContent = <T extends string>({
             )}
             {overScreen && <OverScreen values={overScreen} onClose={() => setOverScreen(undefined)} />}
           </Container>
-        </SectionWideContent>
+          {bottom}
+        </Content>
+        {sideContent}
       </SectionWideContent>
     </Section>
   )

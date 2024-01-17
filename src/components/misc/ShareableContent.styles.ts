@@ -7,6 +7,7 @@ export const ContentHeader = styled.div`
 export const Container = styled.div<{ $iframe?: boolean }>`
   border: 1px solid var(--neutral-20);
   border-radius: 16px;
+  flex: 1;
   margin: auto;
   padding: ${({ $iframe }) => ($iframe ? '1.5rem 1.5rem 1rem 1.5rem' : '1.5rem')};
   position: relative;
@@ -31,4 +32,8 @@ export const IFrameLogos = styled.div`
 
 export const Screenshotable = styled.div<{ $darkMode?: boolean }>`
   background-color: ${({ $darkMode }) => ($darkMode ? 'black' : 'white')};
+`
+
+export const Content = styled.div`
+  flex: 1;
 `
