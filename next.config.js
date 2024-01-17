@@ -15,6 +15,7 @@ const csp = {
   'script-src': [
     "'self'",
     'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js',
+    'https://stats.data.gouv.fr/matomo.js',
   ],
 }
 
