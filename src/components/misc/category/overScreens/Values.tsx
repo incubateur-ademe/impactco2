@@ -1,4 +1,5 @@
 import { Category } from 'types/category'
+import { Equivalent } from 'types/equivalent'
 import Card from 'components/base/Card'
 import { OverScreenInfo } from 'components/base/OverScreen'
 import Resource from 'components/base/Resource'
@@ -6,8 +7,17 @@ import { CustomParamValue } from '../CustomParam'
 import Integrate from '../Integrate'
 import Share from '../Share'
 import Data from './Data'
-import { OverScreenCategory } from './Type'
+import { OverScreenCategory, OverScreenEquivalent } from './Type'
 import { ResourcesContainer, Space, StyledEmoji } from './Values.styles'
+
+export const overScreenEquivalentValues: (equivalent: Equivalent) => Record<OverScreenEquivalent, OverScreenInfo> = (
+  equivalent
+) => ({
+  partager: {
+    title: 'Partager',
+    children: <Share params={{}} path={`${equivalent.category}/${equivalent.slug}`} />,
+  },
+})
 
 export const overScreenCategoryValues: (
   category?: Category,

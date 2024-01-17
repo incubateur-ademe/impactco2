@@ -11,7 +11,13 @@ const csp = {
   ...helmet.contentSecurityPolicy.getDefaultDirectives(),
   'img-src': ["'self'", 'https:', 'data:'],
   'frame-ancestors': ["'self'", 'https:', 'file:'],
-  'connect-src': ["'self'", 'https://stats.data.gouv.fr', 'https://photon.komoot.io', 'https://sentry.incubateur.net'],
+  'connect-src': [
+    "'self'",
+    'https://stats.data.gouv.fr',
+    'https://photon.komoot.io',
+    'https://sentry.incubateur.net',
+    'https://cdn.jsdelivr.net',
+  ],
   'script-src': [
     "'self'",
     'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js',

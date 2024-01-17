@@ -24,7 +24,7 @@ export default function EmailPage(props) {
       }}>
       <RulesProviderNumerique>
         <Equivalent equivalent={props.equivalent} category={props.category} name='email' />
-        <VisualizationSlider equivalent={props.equivalent} />
+        <VisualizationSlider category={props.category} equivalent={props.equivalent} />
       </RulesProviderNumerique>
       <Text equivalent={props.equivalent} />
     </Web>

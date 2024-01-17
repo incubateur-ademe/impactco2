@@ -22,7 +22,7 @@ export default function Equivalent() {
   return equivalent && category ? (
     <Iframe>
       <Details equivalent={equivalent} category={category} />
-      <VisualizationSlider equivalent={equivalent} />
+      <VisualizationSlider equivalent={equivalent} category={category} iframe />
       <Ecv equivalent={equivalent} />
     </Iframe>
   ) : null
