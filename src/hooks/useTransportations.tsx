@@ -29,7 +29,6 @@ export default function useTransportations(tracking: string, itineraries?: Recor
                     equivalent,
                     {
                       ...equivalent,
-                      slug: `${equivalent.slug}-${equivalent.carpool}`,
                       carpool: false,
                       id: -equivalent.id,
                     },
