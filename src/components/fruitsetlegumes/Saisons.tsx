@@ -1,5 +1,4 @@
 import Fuse, { FuseResult } from 'fuse.js'
-import { useRouter } from 'next/router'
 import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
@@ -8,6 +7,7 @@ import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
 import useDataContext from 'components/providers/DataProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import ShareableContent from 'components/misc/ShareableContent'
 import Bottom from 'components/misc/category/Bottom'
 import { Header } from 'components/misc/category/CategoryWrapper.styles'
@@ -28,25 +28,12 @@ const StyledTop = styled(Top)`
   }
 `
 
-export default function Saisons({ category, iframe, month }: { category: Category; iframe?: boolean; month?: number }) {
-  const router = useRouter()
-  const [currentMonth, setCurrentMonth] = useState(month)
-
-  useEffect(() => {
-    if (router.isReady && month === undefined) {
-      if (router.query.month) {
-        setCurrentMonth(Number.parseInt(router.query.month as string))
-      } else {
-        setCurrentMonth(new Date().getMonth())
-      }
-    }
-  }, [setCurrentMonth, router, month])
-
+export default function Saisons({ category, iframe }: { category: Category; iframe?: boolean }) {
   const { equivalents } = useDataContext()
 
-  const [sorting, setSorting] = useState('alph_desc')
-
-  const [search, setSearch] = useState('')
+  const {
+    fruitsetlegumes: { month, setMonth, sorting, setSorting, search, setSearch },
+  } = useParamContext()
 
   const [results, setResults] = useState<FuseResult<Equivalent>[] | undefined>()
   const [fuse, setFuse] = useState<Fuse<Equivalent>>()
@@ -86,18 +73,18 @@ export default function Saisons({ category, iframe, month }: { category: Categor
 
   const equivalentsOfTheMonth = useMemo(
     () =>
-      currentMonth !== undefined &&
+      month !== undefined &&
       category &&
       equivalents
         .filter((equivalent) => equivalent.category === category.id)
-        .filter((equivalent) => results || (equivalent as FruitsEtLegumesEquivalent).months.includes(currentMonth))
+        .filter((equivalent) => results || (equivalent as FruitsEtLegumesEquivalent).months.includes(month))
         .filter((equivalent) => !results || results.find((result) => result.item.slug === equivalent.slug))
         .map((equivalent) => ({
           id: `${equivalent.slug}`,
           title: formatName(equivalent.name, 1, true),
           emoji: equivalent.emoji,
           value: computeECV(equivalent),
-          season: (equivalent as FruitsEtLegumesEquivalent).months.includes(currentMonth),
+          season: (equivalent as FruitsEtLegumesEquivalent).months.includes(month),
           months: (equivalent as FruitsEtLegumesEquivalent).months,
           to: `/${category.slug}/${equivalent.slug}`,
           onClick: () => track('Fruits et légumes', 'Navigation equivalent', equivalent.slug),
@@ -119,32 +106,30 @@ export default function Saisons({ category, iframe, month }: { category: Categor
                 ? 1
                 : -1
         ),
-    [equivalents, category, currentMonth, results, sorting]
+    [equivalents, category, month, results, sorting]
   )
   const [overScreen, setOverScreen] = useState<OverScreenCategory | undefined>()
   const overScreenValues = useMemo(
-    () => overScreenCategoryValues(category, { month: (currentMonth || '0').toString() }),
-    [category, currentMonth]
+    () => overScreenCategoryValues(category, { month: (month || '0').toString() }),
+    [category, month]
   )
 
-  return currentMonth !== undefined && equivalentsOfTheMonth ? (
+  return month !== undefined && equivalentsOfTheMonth ? (
     <ShareableContent<OverScreenCategory>
       category={category}
-      params={{ month: currentMonth.toString() }}
+      params={{ month: month.toString() }}
       iframe={iframe}
       tracking={category.name}
       setOverScreen={setOverScreen}
       overScreen={overScreen ? overScreenValues[overScreen] : undefined}
       header={
         <>
-          <Header>
-            <h2 className='title-h3'>
-              Découvrez les fruits et légumes de <MonthSelector month={currentMonth} setMonth={setCurrentMonth} />
-            </h2>
+          <Header className='title-h3'>
+            Découvrez les fruits et légumes de <MonthSelector month={month} setMonth={setMonth} />
           </Header>
           <StyledTop>
             <Instruction title={category.equivalent} gender={category.gender} />
-            <Search month={month} search={search} setSearch={setSearch} sorting={sorting} setSorting={setSorting} />
+            <Search search={search} setSearch={setSearch} sorting={sorting} setSorting={setSorting} />
           </StyledTop>
         </>
       }>

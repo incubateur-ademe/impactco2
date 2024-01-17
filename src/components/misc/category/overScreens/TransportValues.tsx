@@ -1,4 +1,5 @@
 import { Category } from 'types/category'
+import { TransportSimulateur } from 'types/transport'
 import Card from 'components/base/Card'
 import { OverScreenInfo } from 'components/base/OverScreen'
 import { CustomParamValue } from '../CustomParam'
@@ -11,7 +12,7 @@ export const overScreenTransportValues: (
   category: Category,
   params: Record<string, CustomParamValue>,
   tracking: string,
-  type: 'distance' | 'itineraire' | 'teletravail'
+  type: TransportSimulateur
 ) => Record<OverScreenTransport, OverScreenInfo> = (category, params, tracking, type) => ({
   partager: {
     title: 'Partager',

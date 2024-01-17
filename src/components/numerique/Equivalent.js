@@ -4,11 +4,11 @@ import formatName from 'utils/formatName'
 import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import useModalContext from 'components/providers/ModalProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Legend from 'components/charts/Legend'
 import StackedChart from 'components/charts/StackedChart'
 import Detail from 'components/views/equivalent/ecv/Detail'
-import useRulesContextNumerique from './RulesProviderNumerique'
 import Wrapper from './Wrapper'
 import Bar from './equivalent/Bar'
 import DeviceInput from './equivalent/DeviceInput'
@@ -37,7 +37,9 @@ export default function Simulateur(props) {
 
   const { setEcv } = useModalContext()
 
-  const { engine, situation } = useRulesContextNumerique()
+  const {
+    [props.name]: { engine, situation, setSituation },
+  } = useParamContext()
 
   const [construction, setConstruction] = useState(false)
 
@@ -84,7 +86,13 @@ export default function Simulateur(props) {
     <StyledSection $withoutPadding>
       <SectionWideContent>
         <Wrapper name={formatName(props.equivalent.name, 1, true)} slug={props.equivalent.slug}>
-          <Bar total={total} equivalent={props.equivalent} category={props.category} name={props.name} />
+          <Bar
+            total={total}
+            equivalent={props.equivalent}
+            category={props.category}
+            name={props.name}
+            engine={engine}
+          />
           <StackedChart items={ecvToDisplay} total={total} />
           <Legend items={ecvToDisplay} />
           <Detail
@@ -97,25 +105,49 @@ export default function Simulateur(props) {
           <Questions>
             {props.name === 'streaming' && (
               <>
-                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
-                <VideoInput name={props.name} />
+                <DeviceInput
+                  engine={engine}
+                  setSituation={setSituation}
+                  construction={construction}
+                  setConstruction={setConstruction}
+                  name={props.name}
+                />
+                <VideoInput name={props.name} engine={engine} setSituation={setSituation} />
               </>
             )}
             {props.name === 'visio' && (
               <>
-                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
-                <VideoInput name={props.name} />
+                <DeviceInput
+                  engine={engine}
+                  setSituation={setSituation}
+                  construction={construction}
+                  setConstruction={setConstruction}
+                  name={props.name}
+                />
+                <VideoInput name={props.name} engine={engine} setSituation={setSituation} />
               </>
             )}
             {props.name === 'email' && (
               <>
-                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
-                <EmailInput />
+                <DeviceInput
+                  engine={engine}
+                  setSituation={setSituation}
+                  construction={construction}
+                  setConstruction={setConstruction}
+                  name={props.name}
+                />
+                <EmailInput engine={engine} setSituation={setSituation} />
               </>
             )}
             {props.name === 'recherche web' && (
               <>
-                <DeviceInput construction={construction} setConstruction={setConstruction} name={props.name} />
+                <DeviceInput
+                  engine={engine}
+                  setSituation={setSituation}
+                  construction={construction}
+                  setConstruction={setConstruction}
+                  name={props.name}
+                />
               </>
             )}
           </Questions>

@@ -1,18 +1,15 @@
 import React from 'react'
 import HorizontalRadio from 'components/base/HorizontalRadio'
-import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 import { SliderWrapper, SliderWrapperLabel } from 'components/numerique/misc/SliderWrapper'
 
-export default function DeviceInput(props) {
-  const { engine, setSituation } = useRulesContextNumerique()
-
+export default function QualityInput(props) {
   return (
     <SliderWrapper>
       <SliderWrapperLabel>Qualité de la {props.name === 'streaming' ? 'vidéo' : 'communication'}</SliderWrapperLabel>
       <HorizontalRadio
         name='quality'
-        value={`'${engine.evaluate(props.name + ' . qualité').nodeValue}'`}
-        onChange={(value) => setSituation({ [props.name + ' . qualité']: value })}
+        value={`'${props.engine.evaluate(props.name + ' . qualité').nodeValue}'`}
+        onChange={(value) => props.setSituation({ [props.name + ' . qualité']: value })}
         options={
           props.name === 'streaming'
             ? [

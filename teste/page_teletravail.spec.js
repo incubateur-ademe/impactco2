@@ -77,7 +77,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByRole('button', { name: 'Voir et ajuster les détails' }).click()
     // Then
     await expect(page.getByRole('heading', { name: 'Mode télétravail' })).toBeAttached()
-    await page.getByText('+').nth(2).click() // Fermer la modale d'explication
+    await page.getByRole('button', { name: '+' }).click()
     await expect(page.getByRole('heading', { name: 'Mode télétravail' })).not.toBeAttached()
   })
   await test.step("Le bilan s'affiche, et peut se modifier. Les économies réalisées s'affichent.", async () => {

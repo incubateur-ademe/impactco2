@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
@@ -37,8 +37,8 @@ const SortPanel = styled.div`
     top: 2.5rem;
   }
 `
-const Option = styled.button`
-  background-color: ${(props) => (props.selected ? 'var(--secondary-10)' : 'transparent')};
+const Option = styled.button<{ $selected: boolean }>`
+  background-color: ${(props) => (props.$selected ? 'var(--secondary-10)' : 'transparent')};
   border: none;
   cursor: pointer;
   display: block;
@@ -48,19 +48,29 @@ const Option = styled.button`
   width: 100%;
 
   &:hover {
-    background-color: ${(props) => (props.selected ? 'var(--secondary-10)' : 'var(--primary-10)')};
+    background-color: ${(props) => (props.$selected ? 'var(--secondary-10)' : 'var(--primary-10)')};
   }
 `
-export default function Search(props) {
+export default function Search({
+  search,
+  setSearch,
+  sorting,
+  setSorting,
+}: {
+  search: string
+  setSearch: Dispatch<SetStateAction<string>>
+  sorting: string
+  setSorting: Dispatch<SetStateAction<string>>
+}) {
   const [displaySort, setDisplaySort] = useState(false)
 
   return (
     <Wrapper>
       <SearchInput
-        value={props.search}
-        onChange={({ value }) => {
+        value={search}
+        onChange={({ value }: { value: string }) => {
           track('Fruits et légumes', 'Recherche', value)
-          props.setSearch(value)
+          setSearch(value)
         }}
         placeholder={'Recherchez'}
       />
@@ -83,37 +93,37 @@ export default function Search(props) {
           <Option
             onClick={() => {
               track('Fruits et légumes', 'Tri', 'alph_desc')
-              props.setSorting('alph_desc')
+              setSorting('alph_desc')
               setDisplaySort(false)
             }}
-            selected={props.sorting === 'alph_desc'}>
+            $selected={sorting === 'alph_desc'}>
             A =&gt; Z
           </Option>
           <Option
             onClick={() => {
               track('Fruits et légumes', 'Tri', 'alph_asc')
-              props.setSorting('alph_asc')
+              setSorting('alph_asc')
               setDisplaySort(false)
             }}
-            selected={props.sorting === 'alph_asc'}>
+            $selected={sorting === 'alph_asc'}>
             Z =&gt; A
           </Option>
           <Option
             onClick={() => {
               track('Fruits et légumes', 'Tri', 'co2_desc')
-              props.setSorting('co2_desc')
+              setSorting('co2_desc')
               setDisplaySort(false)
             }}
-            selected={props.sorting === 'co2_desc'}>
+            $selected={sorting === 'co2_desc'}>
             Du + émetteur au - émetteur
           </Option>
           <Option
             onClick={() => {
               track('Fruits et légumes', 'Tri', 'co2_asc')
-              props.setSorting('co2_asc')
+              setSorting('co2_asc')
               setDisplaySort(false)
             }}
-            selected={props.sorting === 'co2_asc'}>
+            $selected={sorting === 'co2_asc'}>
             Du - émetteur au + émetteur
           </Option>
         </SortPanel>

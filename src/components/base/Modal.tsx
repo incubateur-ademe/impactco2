@@ -37,7 +37,9 @@ const Content = styled.div<{ $open: boolean; $width?: string }>`
   visibility: ${({ $open }) => ($open ? 'visible' : 'hidden')};
   width: ${({ $width }) => $width || '40em'};
 `
-const ButtonClose = styled.div`
+const ButtonClose = styled.button`
+  background: transparent;
+  border: none;
   cursor: pointer;
   font-size: 2rem;
   font-weight: bold;

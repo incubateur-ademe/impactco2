@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 
 const Wrapper = styled.div`
-  background-color: var(--neutral-50);
+  background-color: var(--secondary-20);
   border-radius: 1rem;
   margin: 0 1rem 1rem;
   padding: 1rem 1.5rem;

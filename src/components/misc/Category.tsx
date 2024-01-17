@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from 'react'
+import React, { Dispatch, SetStateAction, useMemo } from 'react'
 import { Category } from 'types/category'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
 import useDataContext from 'components/providers/DataProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Bottom from './category/Bottom'
@@ -17,8 +18,13 @@ import { Checkboxes, Top } from './category/Top'
 export default function CategoryList({ category, iframe }: { category: Category; iframe?: boolean }) {
   const { equivalents } = useDataContext()
 
-  const [displayAll, setDisplayAll] = useState(false)
+  const params = useParamContext()
 
+  // @ts-expect-error: Category is managed in params
+  const { displayAll, setDisplayAll } = (params[category.slug] || { displayAll: false, setDisplayAll: () => {} }) as {
+    displayAll: boolean
+    setDisplayAll: Dispatch<SetStateAction<boolean>>
+  }
   const equivalentsOfCategory = useMemo(
     () =>
       category &&

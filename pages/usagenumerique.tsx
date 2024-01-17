@@ -4,7 +4,6 @@ import categories from 'data/categories.json'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Category from 'components/numerique/Category'
-import { RulesProviderNumerique } from 'components/numerique/RulesProviderNumerique'
 
 export default function Numerique({ category }: { category: CategoryType }) {
   return (
@@ -16,14 +15,8 @@ export default function Numerique({ category }: { category: CategoryType }) {
         type: 'equivalent',
         category: category,
       }}>
-      <RulesProviderNumerique>
-        <Category category={category} />
-        <SuggestionBanner
-          from='/usagenumerique'
-          fromLabel='Usage numérique'
-          simulatorName='simulateur usage numérique'
-        />
-      </RulesProviderNumerique>
+      <Category category={category} />
+      <SuggestionBanner from='/usagenumerique' fromLabel='Usage numérique' simulatorName='simulateur usage numérique' />
     </Web>
   )
 }

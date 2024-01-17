@@ -23,42 +23,42 @@ test("Par défaut, des valeurs s'affichent pour les usages", async ({ page }) =>
 
 test('Update share and integrate values when modifying parameters', async ({ page }) => {
   await page.locator('[id="email\\ \\.\\ appareil"]').selectOption("'ordinateur et écran'")
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('62')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('68')
 
   await page.locator('[id="email\\ \\.\\ taille"]').selectOption('5.075')
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('126')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('131')
 
   await page.getByText('4G').first().click()
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('127')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('132')
 
   await page.locator('[id="streaming\\ \\.\\ appareil"]').selectOption("'ordinateur portable'")
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('123')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('129')
 
   await page.locator('[id="streaming\\ \\.\\ qualité"]').selectOption("'ultra HD'")
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('186')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('192')
 
   await page.getByText('4G').nth(1).click()
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('366')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('372')
 
   await page.locator('[id="visio\\ \\.\\ appareil"]').selectOption("'TV'")
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('368')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('375')
 
   await page.locator('[id="visio\\ \\.\\ qualité"]').selectOption("'HD'")
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('383')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('406')
 
   await page.getByText('4G').nth(2).click()
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('416')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('472')
 
   await page.getByTestId('header-share-button').click()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    "http://localhost:3000/usagenumerique?emails=50&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille=5.075&streaming . durée=420&streaming . appareil='ordinateur portable'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=180&visio . appareil='TV'&visio . emplacements=1&visio . transmission . réseau='mobile FR'&visio . qualité='HD'"
+    "http://localhost:3000/usagenumerique?emails=50&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille=5.075&streaming . durée=420&streaming . appareil='ordinateur portable'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=180&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='HD'"
   )
   await page.getByTestId('custom-param-situation-checkbox').click({ force: true })
   await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/usagenumerique?')
 
   await page.getByTestId('header-integrate-button').click()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    "<script name=\"impact-co2\" src=\"http://localhost:3000/iframe.js\" data-type=\"usagenumerique\" data-search=\"?emails=50&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille=5.075&streaming . durée=420&streaming . appareil='ordinateur portable'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=180&visio . appareil='TV'&visio . emplacements=1&visio . transmission . réseau='mobile FR'&visio . qualité='HD'\"></script>"
+    "<script name=\"impact-co2\" src=\"http://localhost:3000/iframe.js\" data-type=\"usagenumerique\" data-search=\"?emails=50&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille=5.075&streaming . durée=420&streaming . appareil='ordinateur portable'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=180&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='HD'\"></script>"
   )
   await page.getByTestId('custom-param-situation-checkbox').click({ force: true })
   await expect(page.getByTestId('clipboard-box')).toContainText(

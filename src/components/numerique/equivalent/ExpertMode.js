@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
+import useParamContext from 'components/providers/ParamProvider'
 import Button from 'components/base/buttons/Button'
-import useRulesContextNumerique from '../RulesProviderNumerique'
 import Question from './expertMode/Question'
 
 const Wrapper = styled.div`
@@ -22,7 +22,9 @@ const StyledButtonLink = styled(Button)`
   margin-bottom: 2rem;
 `
 export default function ExpertMode(props) {
-  const { engine, setSituation } = useRulesContextNumerique()
+  const {
+    usageNumerique: { engine, setSituation },
+  } = useParamContext()
 
   const [open, setOpen] = useState(false)
   return (

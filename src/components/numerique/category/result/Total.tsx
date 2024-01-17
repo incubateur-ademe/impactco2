@@ -2,9 +2,10 @@ import { useMemo } from 'react'
 import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
+import { evaluateNumber } from 'hooks/useSituation'
 import useDataContext from 'components/providers/DataProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Tile from 'components/misc/tiles/Tile'
-import useRulesContextNumerique, { evaluateNumber } from 'components/numerique/RulesProviderNumerique'
 
 const Wrapper = styled.div`
   margin-bottom: 2.5rem;
@@ -44,7 +45,9 @@ const Tiles = styled.div`
 `
 
 export default function Total() {
-  const { engine, situation, numberEmails } = useRulesContextNumerique()
+  const {
+    usageNumerique: { engine, situation, numberEmails },
+  } = useParamContext()
 
   const { equivalents } = useDataContext()
 
