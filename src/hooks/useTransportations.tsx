@@ -24,7 +24,17 @@ export default function useTransportations(tracking: string, itineraries?: Recor
             )
             .filter((equivalent) => equivalent.default || displayAll)
             .flatMap((equivalent) =>
-              equivalent.carpool ? [equivalent, { ...equivalent, carpool: false, id: -equivalent.id }] : [equivalent]
+              equivalent.carpool
+                ? [
+                    equivalent,
+                    {
+                      ...equivalent,
+                      slug: `${equivalent.slug}-${equivalent.carpool}`,
+                      carpool: false,
+                      id: -equivalent.id,
+                    },
+                  ]
+                : [equivalent]
             )
             .filter((equivalent) => carpool || !equivalent.carpool)
             .filter(
