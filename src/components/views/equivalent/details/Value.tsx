@@ -63,7 +63,7 @@ export default function Value({ equivalent, category }: { equivalent: Equivalent
   return (
     <Wrapper>
       <Section $withoutPadding $theme='main'>
-        <SectionWideContent $flex $size='sm'>
+        <SectionWideContent $flex $size='sm' $center>
           <Top>
             <div>
               <Number>
