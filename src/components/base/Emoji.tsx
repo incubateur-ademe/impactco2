@@ -35,7 +35,7 @@ export default function Emoji({
       base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
     })
 
-    stringDOMforEmoji = parsed.replaceAll(/alt=".*?"/g, 'alt=""')
+    stringDOMforEmoji = parsed.replace(/alt=".*?"/g, 'alt=""')
   }
   return stringDOMforEmoji ? (
     <Wrapper

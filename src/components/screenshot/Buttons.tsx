@@ -99,7 +99,7 @@ export default function Buttons({
       <StyledButton
         aria-label='Partager'
         onClick={() => {
-          track(tracking, 'Partager', `${tracking.toLowerCase().replaceAll(' ', '_')}_partager`)
+          track(tracking, 'Partager', `${tracking.toLowerCase().replace(/ /g, '_')}_partager`)
           setShare(urlParams || true)
         }}
         className='noscreenshot'>
@@ -132,7 +132,7 @@ export default function Buttons({
           $large
           noIcon
           onClick={() => {
-            track(tracking, 'Intégrer', `${tracking.toLowerCase().replaceAll(' ', '_')}_integrer`)
+            track(tracking, 'Intégrer', `${tracking.toLowerCase().replace(/ /g, '_')}_integrer`)
           }}>
           <Svg x='0px' y='0px' width='94.504px' height='94.504px' viewBox='0 0 94.504 94.504'>
             <path d='M93.918,45.833L69.799,21.714c-0.75-0.75-2.077-0.75-2.827,0l-5.229,5.229c-0.781,0.781-0.781,2.047,0,2.828    l17.477,17.475L61.744,64.724c-0.781,0.781-0.781,2.047,0,2.828l5.229,5.229c0.375,0.375,0.884,0.587,1.414,0.587    c0.529,0,1.039-0.212,1.414-0.587l24.117-24.118C94.699,47.881,94.699,46.614,93.918,45.833z' />

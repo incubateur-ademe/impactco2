@@ -34,7 +34,7 @@ const Question = ({
         <Header>
           <Title>
             {/* https://github.com/bubkoo/html-to-image/issues/132 */}
-            {title.replaceAll(' ', ' ')}
+            {title.replace(/ /g, ' ')}
             {source && <ClickableIcon onClick={source} />}
           </Title>
           {tag && <Tag data-testid={`${dataTestId}-tag`}>{tag}</Tag>}

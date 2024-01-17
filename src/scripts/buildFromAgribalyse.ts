@@ -36,7 +36,7 @@ finalities.forEach((finality) => {
   if (typeof value.id === 'string') {
     throw new Error('BUG! ' + finality + ' is not a valid value...')
   }
-  finalitiesId[finality.replaceAll(' ', '_')] = value.id
+  finalitiesId[finality.replace(/ /g, '_')] = value.id
 })
 
 const agrybaliseValues = [

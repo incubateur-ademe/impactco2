@@ -15,7 +15,7 @@ const Header = ({ title, cta }: { title: ReactNode; cta?: { to: string; label: s
           <Link
             asButton
             href={cta.to}
-            onClick={() => track('Click', cta.label, `click_${cta.label.toLowerCase().replaceAll(' ', '_')}`)}>
+            onClick={() => track('Click', cta.label, `click_${cta.label.toLowerCase().replace(/ /g, '_')}`)}>
             {cta.label}
           </Link>
         </CtaContainer>
