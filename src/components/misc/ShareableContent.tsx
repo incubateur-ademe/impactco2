@@ -67,18 +67,20 @@ const ShareableContent = <T extends string>({
     <Section $withoutPadding data-testid={dataTestId}>
       <SectionWideContent $reverse={reverse}>
         {!iframe && (
-          <Header
-            withoutIntegration={withoutIntegration}
-            category={category}
-            params={params}
-            takeScreenshot={takeScreenshot}
-            tracking={tracking}
-            type={type}
-            title={title}
-            path={path}
-          />
+          <>
+            <Header
+              withoutIntegration={withoutIntegration}
+              category={category}
+              params={params}
+              takeScreenshot={takeScreenshot}
+              tracking={tracking}
+              type={type}
+              title={title}
+              path={path}
+            />
+            <Separator />
+          </>
         )}
-        <Separator />
         <SectionWideContent $size={size || 'xs'} $noGutter $flex>
           <Content $theme={theme}>
             <Container $iframe={iframe}>
