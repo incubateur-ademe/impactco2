@@ -1,10 +1,20 @@
 import axios from 'axios'
 import fs from 'fs'
+import divers from '../data/categories/divers.json'
 import electromenager from '../data/categories/electromenager.json'
+import habillement from '../data/categories/habillement.json'
+import mobilier from '../data/categories/mobilier.json'
+import numerique from '../data/categories/numerique.json'
+import repas from '../data/categories/repas.json'
 import { UsableEquivalent } from '../../types/equivalent'
 
 const existingEquivalentsByCategory: Record<string, { file: string; values: UsableEquivalent[] }> = {
   electromenager: { file: 'electromenager.json', values: electromenager },
+  habillement: { file: 'habillement.json', values: habillement },
+  mobilier: { file: 'mobilier.json', values: mobilier },
+  repas: { file: 'repas.json', values: repas },
+  divers: { file: 'divers.json', values: divers },
+  numerique: { file: 'numerique.json', values: numerique },
 }
 
 const empreinteValues = ["Identifiant_de_l'élément", 'Total_poste_non_décomposé', 'Nom_poste_français']
@@ -18,25 +28,34 @@ const ecvs = [
 
 const updateEquivalents = (
   equivalents: UsableEquivalent[],
-  values: { "Identifiant_de_l'élément": number; Total_poste_non_décomposé: number; Nom_poste_français: string }[]
+  values: { "Identifiant_de_l'élément": string; Total_poste_non_décomposé: number; Nom_poste_français: string }[]
 ) => {
   return equivalents.map((equivalent) => {
-    if (!('id' in equivalent)) {
+    if (!('id' in equivalent) && !('ids' in equivalent)) {
       return equivalent
     }
 
-    const elementValues = values.filter((value) => value["Identifiant_de_l'élément"] == equivalent.id)
-    const ecv = ecvs.map((ecv) => ({
-      id: ecv.id,
-      value: ecv.values.reduce((acc, current) => {
-        const poste = elementValues.find((value) => value.Nom_poste_français === current)
-        return acc + (poste ? poste.Total_poste_non_décomposé : 0)
-      }, 0),
-    }))
+    const ids = 'id' in equivalent ? [equivalent.id] : equivalent.ids
+    if (!ids) {
+      return equivalent
+    }
 
+    const elementValues = values.filter((value) => ids.includes(Number.parseInt(value["Identifiant_de_l'élément"])))
+    const ecv = ecvs
+      .map((ecv) => ({
+        id: ecv.id,
+        value: ecv.values.reduce((acc, current) => {
+          const postes = elementValues.filter((value) => value.Nom_poste_français === current)
+          return acc + postes.reduce((sum, poste) => sum + poste.Total_poste_non_décomposé, 0)
+        }, 0),
+      }))
+      .filter((ecv) => ecv.value)
+
+    const total = elementValues.find((value) => value.Nom_poste_français === undefined)
     return {
       ...equivalent,
-      ecv,
+      ecv: ecv.length > 0 ? ecv : undefined,
+      total: total ? total.Total_poste_non_décomposé : undefined,
     }
   })
 }
@@ -44,12 +63,19 @@ const updateEquivalents = (
 const buildFromEmpreinte = async (key: string) => {
   const existingEquivalents = existingEquivalentsByCategory[key]
   if (!existingEquivalents) {
-    console.info('Type should be "electomenager"')
+    console.info('Type should be "electomenager", "habillement", "mobilier", "repas", "divers" or "numerique"')
     process.exit(1)
   }
 
   const ids = existingEquivalents.values
-    .map((equivalent) => ('id' in equivalent ? equivalent.id : ''))
+    .flatMap((equivalent) => {
+      if ('id' in equivalent) {
+        return [equivalent.id]
+      } else if ('ids' in equivalent) {
+        return equivalent.ids
+      }
+      return null
+    })
     .filter((code) => !!code)
     .join(' | ')
   const remote_url = encodeURI(
@@ -58,13 +84,8 @@ const buildFromEmpreinte = async (key: string) => {
     }&select=${empreinteValues.join(',')}&q=${ids}`
   )
 
-  console.log('remote_url ------------------------------- ', remote_url)
-
   const newEquivalents = await axios.get(remote_url).then((response) => response.data.results)
-
-  console.log(newEquivalents)
   const finalResult = updateEquivalents(existingEquivalents.values, newEquivalents)
-  //console.dir(finalResult, { depth: null })
   fs.writeFileSync(`src/data/categories/${existingEquivalents.file}`, JSON.stringify(finalResult, null, 2))
 }
 
@@ -72,4 +93,9 @@ if (process.argv[2]) {
   buildFromEmpreinte(process.argv[2])
 } else {
   buildFromEmpreinte('electromenager')
+  buildFromEmpreinte('habillement')
+  buildFromEmpreinte('mobilier')
+  buildFromEmpreinte('repas')
+  buildFromEmpreinte('divers')
+  buildFromEmpreinte('numerique')
 }

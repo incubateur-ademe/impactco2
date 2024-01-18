@@ -93,8 +93,7 @@ export type FruitsEtLegumesEquivalent = BoissonEquivalent & {
   months: number[]
 }
 
-export type UsableEquivalent = BaseEquivalent &
-  (
+export type UsableEquivalent = BaseEquivalent & { ids?: number[] } & (
     | {
         ecv: EquivalentValue[]
         usage?: {

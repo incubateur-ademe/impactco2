@@ -44,20 +44,20 @@
     "category": 1,
     "ecv": [
       {
-        "value": 24.1654132332142,
-        "id": 1
+        "id": 1,
+        "value": 26.5
       },
       {
-        "value": 0.0763021265937079,
-        "id": 2
+        "id": 2,
+        "value": 0.757
       },
       {
-        "value": 0.0518394047879707,
-        "id": 3
+        "id": 3,
+        "value": 0.0633
       },
       {
-        "value": 6.23125043673638,
-        "id": 4
+        "id": 4,
+        "value": 5.505999999999999
       }
     ],
     "usage": {
@@ -71,31 +71,32 @@
       "title": "Smartphone",
       "description": "Découvrez le détail de l'empreinte carbone d'un smartphone : impact de ses matières premières, de son assemblage, son approvisionnement..."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 32.8
   },
   {
-    "id": 475,
-    "name": "Ordinateur[s] fixe[s]",
+    "id": 27003,
+    "name": "Ordinateur[s] fixe[s] sans écran",
     "subtitle": "Bureautique",
     "slug": "ordinateurfixebureautique",
     "emoji": "🖥️",
     "category": 1,
     "ecv": [
       {
-        "value": 82.9392275803426,
-        "id": 1
+        "id": 1,
+        "value": 82.9
       },
       {
-        "value": 4.75354107309693,
-        "id": 2
+        "id": 2,
+        "value": 4.75
       },
       {
-        "value": 4.18845393322541,
-        "id": 3
+        "id": 3,
+        "value": 4.19
       },
       {
-        "value": 77.1912571588444,
-        "id": 4
+        "id": 4,
+        "value": 77.16000000000001
       }
     ],
     "usage": {
@@ -103,39 +104,22 @@
       "defaultyears": 6
     },
     "end": -10.2418849552206,
-    "default": false,
+    "default": true,
     "tile": false,
     "meta": {
       "title": "Poids CO₂e ordinateur fixe (bureautique)",
       "description": "Mesurez l'impact sur le climat d'un ordinateur fixe de bureautique et découvrez le détail de son empreinte carbone"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 169
   },
   {
-    "id": 476,
-    "name": "Ordinateur[s] fixe[s]",
+    "id": 27004,
+    "name": "Ordinateur[s] fixe[s] sans écran",
     "subtitle": "Performance",
     "slug": "ordinateurfixeperformance",
     "emoji": "🖥️",
     "category": 1,
-    "ecv": [
-      {
-        "value": 153.325602332735,
-        "id": 1
-      },
-      {
-        "value": 7.95029990148238,
-        "id": 2
-      },
-      {
-        "value": 7.36242869835709,
-        "id": 3
-      },
-      {
-        "value": 126.879055536959,
-        "id": 4
-      }
-    ],
     "usage": {
       "peryear": 19.91634,
       "defaultyears": 6
@@ -147,33 +131,34 @@
       "title": "Poids CO₂e ordinateur fixe (performance) ",
       "description": "Découvrez le poids CO₂e d'un ordinateur fixe (performance), comprenant sa fabrication et sa distribution. Régulez ainsi votre empreinte carbone !"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
-  },
-  {
-    "id": 478,
-    "name": "Écran[s]",
-    "subtitle": "24 pouces",
-    "slug": "ecran24pouces",
-    "emoji": "🖥",
-    "category": 1,
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
     "ecv": [
       {
-        "value": 228.667196307416,
-        "id": 1
+        "id": 1,
+        "value": 153
       },
       {
-        "value": 4.9435753543456,
-        "id": 2
+        "id": 2,
+        "value": 7.95
       },
       {
-        "value": 2.54973920986062,
-        "id": 3
+        "id": 3,
+        "value": 7.36
       },
       {
-        "value": 11.6862822188106,
-        "id": 4
+        "id": 4,
+        "value": 126.9
       }
     ],
+    "total": 296
+  },
+  {
+    "id": 27005,
+    "name": "Écran[s]",
+    "subtitle": "21,5 pouces",
+    "slug": "ecran215pouces",
+    "emoji": "🖥",
+    "category": 1,
     "usage": {
       "peryear": 3.40966173,
       "defaultyears": 6
@@ -182,35 +167,75 @@
     "default": false,
     "tile": false,
     "meta": {
+      "title": "Poids CO₂e d'un écran de 21.5 pouces",
+      "description": "Découvrez la valeurs exprimée en kg CO₂e émis par un écran de 21.5 pouces comprenant la fabrication et la distribution"
+    },
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "ecv": [
+      {
+        "id": 1,
+        "value": 205
+      },
+      {
+        "id": 2,
+        "value": 4.26
+      },
+      {
+        "id": 3,
+        "value": 1.9
+      },
+      {
+        "id": 4,
+        "value": 10.15
+      }
+    ],
+    "total": 222
+  },
+  {
+    "id": 27006,
+    "name": "Écran[s]",
+    "subtitle": "24 pouces",
+    "slug": "ecran24pouces",
+    "emoji": "🖥",
+    "category": 1,
+    "usage": {
+      "peryear": 3.40966173,
+      "defaultyears": 6
+    },
+    "end": -5.36739103823929,
+    "default": true,
+    "tile": false,
+    "meta": {
       "title": "Poids CO₂e d'un écran de 24 pouces",
       "description": "Découvrez la valeurs exprimée en kg CO₂e émis par un écran de 24 pouces comprenant la fabrication et la distribution"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "ecv": [
+      {
+        "id": 1,
+        "value": 229
+      },
+      {
+        "id": 2,
+        "value": 4.94
+      },
+      {
+        "id": 3,
+        "value": 2.55
+      },
+      {
+        "id": 4,
+        "value": 11.690000000000001
+      }
+    ],
+    "total": 248
   },
   {
-    "id": 4711,
+    "id": 27009,
     "name": "Tablette[s] détachable[s]",
     "slug": "tablettedetachable",
     "emoji": "💻",
     "category": 1,
-    "ecv": [
-      {
-        "value": 61.928526726663,
-        "id": 1
-      },
-      {
-        "value": 1.07232018349783,
-        "id": 2
-      },
-      {
-        "value": 0.425533545011766,
-        "id": 3
-      },
-      {
-        "value": 18.8206804414877,
-        "id": 4
-      }
-    ],
     "usage": {
       "peryear": 2.48328552,
       "defaultyears": 3
@@ -222,33 +247,34 @@
       "title": "Empreinte carbone tablette détachable",
       "description": "Le numérique a un impact important sur le climat ! Découvrez le poids CO₂e d'une tablette détachable ainsi que le détail de son empreinte sur le climat"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "ecv": [
+      {
+        "id": 1,
+        "value": 61.9
+      },
+      {
+        "id": 2,
+        "value": 1.07
+      },
+      {
+        "id": 3,
+        "value": 0.426
+      },
+      {
+        "id": 4,
+        "value": 18.816
+      }
+    ],
+    "total": 82.2
   },
   {
-    "id": 4711,
+    "id": 27007,
     "name": "Tablette[s]",
     "subtitle": "Classique",
     "slug": "tabletteclassique",
     "emoji": "📱",
     "category": 1,
-    "ecv": [
-      {
-        "value": 30.8887314435277,
-        "id": 1
-      },
-      {
-        "value": 0.161304460803735,
-        "id": 2
-      },
-      {
-        "value": 0.1276290185462,
-        "id": 3
-      },
-      {
-        "value": 13.337880280413,
-        "id": 4
-      }
-    ],
     "usage": {
       "peryear": 2.48328552,
       "defaultyears": 3
@@ -260,33 +286,34 @@
       "title": "Impact climat d'une tablette classique",
       "description": "Quel est l'impact sur le climat d'une tablette classique ? Découvrez son poids en CO₂e ainsi que son équivalence en litres d'eau, en km de voiture..."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "ecv": [
+      {
+        "id": 1,
+        "value": 49
+      },
+      {
+        "id": 2,
+        "value": 0.758
+      },
+      {
+        "id": 3,
+        "value": 0.122
+      },
+      {
+        "id": 4,
+        "value": 13.307
+      }
+    ],
+    "total": 63.2
   },
   {
-    "id": 4712,
+    "id": 27008,
     "name": "Tablette[s]",
     "subtitle": "Mini",
     "slug": "tablettemini",
     "emoji": "📱",
     "category": 1,
-    "ecv": [
-      {
-        "value": 20.5501795723876,
-        "id": 1
-      },
-      {
-        "value": 0.12603085769205,
-        "id": 2
-      },
-      {
-        "value": 0.0952386223667705,
-        "id": 3
-      },
-      {
-        "value": 10.353221013172,
-        "id": 4
-      }
-    ],
     "usage": {
       "peryear": 2.48328552,
       "defaultyears": 3
@@ -298,70 +325,72 @@
       "title": "Poids CO₂e d'une tablette mini",
       "description": "Découvrez la valeur d'une tablette mini exprimée en kg CO₂e émis comprenant la fabrication et la distribution et régulez ainsi votre empreinte carbone"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "ecv": [
+      {
+        "id": 1,
+        "value": 30
+      },
+      {
+        "id": 2,
+        "value": 0.592
+      },
+      {
+        "id": 3,
+        "value": 0.0928
+      },
+      {
+        "id": 4,
+        "value": 10.291
+      }
+    ],
+    "total": 40.9
   },
   {
-    "id": 4718,
+    "id": 27016,
     "name": "Chaine[s] hifi",
     "slug": "chainehifi",
     "emoji": "🎵",
     "category": 1,
-    "ecv": [
-      {
-        "value": 82.7155503392287,
-        "id": 1
-      },
-      {
-        "value": 10.1597167481221,
-        "id": 2
-      },
-      {
-        "value": 5.50478368663506,
-        "id": 3
-      },
-      {
-        "value": 24.914023314087,
-        "id": 4
-      }
-    ],
     "usage": {
       "peryear": 4.66693558,
       "defaultyears": 5
     },
     "end": -10.3424901759157,
+    "ecv": [
+      {
+        "id": 1,
+        "value": 82.7
+      },
+      {
+        "id": 2,
+        "value": 10.2
+      },
+      {
+        "id": 3,
+        "value": 5.5
+      },
+      {
+        "id": 4,
+        "value": 24.89
+      }
+    ],
     "default": false,
     "tile": false,
     "meta": {
       "title": "Poids CO₂e d'une chaine hifi",
       "description": "Découvrez le poids CO₂e d'une chaine hifi et comparez-le à plein d'autres produits pour mesurer son impact sur le climat"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 123
   },
   {
-    "id": 4723,
+    "id": 27021,
     "name": "Liseuse[s]",
     "subtitle": "Non rétro-éclairé",
     "slug": "liseuse",
     "emoji": "📱",
     "category": 1,
-    "ecv": [
-      {
-        "value": 28.6386708591066,
-        "id": 1
-      },
-      {
-        "value": 0.516701700068382,
-        "id": 2
-      },
-      {
-        "value": 0.0353779120185071,
-        "id": 3
-      },
-      {
-        "value": 9.06816632791489,
-        "id": 4
-      }
-    ],
     "usage": {
       "peryear": 0.0373807249,
       "defaultyears": 5
@@ -373,7 +402,26 @@
       "title": "Impact sur le climat d'une liseuse",
       "description": "Saviez-vous qu'une liseuse avait un impact sur le climat ? Découvrez le poids CO₂e d'une liseuse non rétro-éclairé grâce à Impact CO₂"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "ecv": [
+      {
+        "id": 1,
+        "value": 28.6
+      },
+      {
+        "id": 2,
+        "value": 0.517
+      },
+      {
+        "id": 3,
+        "value": 0.0354
+      },
+      {
+        "id": 4,
+        "value": 9.071000000000002
+      }
+    ],
+    "total": 38.3
   },
   {
     "id": 27000,
@@ -384,20 +432,20 @@
     "category": 1,
     "ecv": [
       {
-        "value": 318.219200641678,
-        "id": 1
+        "id": 1,
+        "value": 334
       },
       {
-        "value": 2.2636267766829,
-        "id": 2
+        "id": 2,
+        "value": 9.21
       },
       {
-        "value": 2.25946191055556,
-        "id": 3
+        "id": 3,
+        "value": 2.41
       },
       {
-        "value": 27.1301536559235,
-        "id": 4
+        "id": 4,
+        "value": 26.07
       }
     ],
     "usage": {
@@ -411,7 +459,8 @@
       "title": "Télévision",
       "description": "Quel est l'empreinte carbone d'une télévision 40-49 pouces ? Découvrez son poids carbone et son équivalence avec des ordinateurs et smartphones"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 371
   },
   {
     "id": 27002,
@@ -421,20 +470,20 @@
     "category": 1,
     "ecv": [
       {
-        "value": 100.126651822594,
-        "id": 1
+        "id": 1,
+        "value": 120
       },
       {
-        "value": 0.405069298638844,
-        "id": 2
+        "id": 2,
+        "value": 1.89
       },
       {
-        "value": 0.763849328522349,
-        "id": 3
+        "id": 3,
+        "value": 0.75
       },
       {
-        "value": 33.4073020837998,
-        "id": 4
+        "id": 4,
+        "value": 33.6
       }
     ],
     "usage": {
@@ -448,68 +497,31 @@
       "title": "Ordinateur portable",
       "description": "Quel est l'empreinte carbone d'un ordinateur portable ? Découvrez son poids en CO₂e et mesurez ainsi votre impact sur le climat"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 156
   },
   {
-    "id": 27006,
-    "name": "Ordinateur[s] fixe[s]",
-    "subtitle": "Avec écran",
-    "slug": "ordinateurfixe",
-    "emoji": "🖥️",
-    "category": 1,
-    "ecv": [
-      {
-        "value": 311.606424,
-        "id": 1
-      },
-      {
-        "value": 9.69711643,
-        "id": 2
-      },
-      {
-        "value": 6.73819314,
-        "id": 3
-      },
-      {
-        "value": 88.8775394,
-        "id": 4
-      }
-    ],
-    "usage": {
-      "peryear": 8.4453342,
-      "defaultyears": 6
-    },
-    "end": -15.609276,
-    "default": true,
-    "tile": false,
-    "meta": {
-      "title": "Ordinateur fixe",
-      "description": "Quel est l'empreinte carbone d'un ordinateur fixe avec écran ? Impact CO₂ vous permet de mesurer votre impact sur le climat !"
-    },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
-  },
-  {
-    "id": 27013,
+    "id": 27031,
     "name": "Montre[s] connectée[s]",
     "slug": "montreconnectee",
     "emoji": "⌚️",
     "category": 1,
     "ecv": [
       {
-        "value": 3.70575615394535,
-        "id": 1
+        "id": 1,
+        "value": 3.71
       },
       {
-        "value": 0.314247507482078,
-        "id": 2
+        "id": 2,
+        "value": 0.314
       },
       {
-        "value": 0.0208842709332118,
-        "id": 3
+        "id": 3,
+        "value": 0.0209
       },
       {
-        "value": 5.67898043921665,
-        "id": 4
+        "id": 4,
+        "value": 5.683
       }
     ],
     "usage": {
@@ -523,30 +535,31 @@
       "title": "Montre connectée",
       "description": "Découvrez l'impact sur le climat d'une montre connectée et comparez son poids CO₂e à d'autres produits comme un ordinateur, un smartphone..."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 9.72
   },
   {
-    "id": 27013,
+    "id": 27032,
     "name": "Cadre[s] photo digital",
     "slug": "cadrephotodigital",
     "emoji": "🖼",
     "category": 1,
     "ecv": [
       {
-        "value": 37.4028508246865,
-        "id": 1
+        "id": 1,
+        "value": 37.4
       },
       {
-        "value": 0.714412956714528,
-        "id": 2
+        "id": 2,
+        "value": 0.714
       },
       {
-        "value": 0.157370131666723,
-        "id": 3
+        "id": 3,
+        "value": 0.157
       },
       {
-        "value": 1.91804191387795,
-        "id": 4
+        "id": 4,
+        "value": 1.9170000000000003
       }
     ],
     "usage": {
@@ -560,30 +573,31 @@
       "title": "",
       "description": ""
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 40.2
   },
   {
-    "id": 27013,
+    "id": 27033,
     "name": "Home cinéma",
     "slug": "homecinema",
     "emoji": "📽",
     "category": 1,
     "ecv": [
       {
-        "value": 88.6807024111332,
-        "id": 1
+        "id": 1,
+        "value": 88.7
       },
       {
-        "value": 11.0093030397196,
-        "id": 2
+        "id": 2,
+        "value": 11
       },
       {
-        "value": 5.9650616501029,
-        "id": 3
+        "id": 3,
+        "value": 5.97
       },
       {
-        "value": 26.9357611871324,
-        "id": 4
+        "id": 4,
+        "value": 26.98
       }
     ],
     "usage": {
@@ -597,29 +611,31 @@
       "title": "Empreinte carbone d'un home cinema",
       "description": "Avec Impact CO₂, découvrez l'impact sur le climat d'un home cinéma avec son poids en CO₂e comprenant sa fabrication et sa distribution"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 133
   },
   {
+    "id": 27034,
     "name": "Barre[s] de son",
     "slug": "barredeson",
     "emoji": "🔈",
     "category": 1,
     "ecv": [
       {
-        "value": 32.9189542577309,
-        "id": 1
+        "id": 1,
+        "value": 32.9
       },
       {
-        "value": 1.96329824955051,
-        "id": 2
+        "id": 2,
+        "value": 1.96
       },
       {
-        "value": 0.950585972869152,
-        "id": 3
+        "id": 3,
+        "value": 0.951
       },
       {
-        "value": 4.38693847451035,
-        "id": 4
+        "id": 4,
+        "value": 4.385
       }
     ],
     "usage": {
@@ -633,9 +649,11 @@
       "title": "Empreinte carbone d'une barre de son ",
       "description": "Votre bar de son a un impact sur le climat : découvrez son poids en CO₂e et comparez-le à d'autres produits numériques"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 40.2
   },
   {
+    "id": 27019,
     "name": "Modem[s]",
     "subtitle": "Fibre",
     "slug": "modemfibre",
@@ -643,20 +661,20 @@
     "category": 1,
     "ecv": [
       {
-        "value": 75.8381711741523,
-        "id": 1
+        "id": 1,
+        "value": 74.7
       },
       {
-        "value": 0.448050243653193,
-        "id": 2
+        "id": 2,
+        "value": 2.1
       },
       {
-        "value": 0.979526278303151,
-        "id": 3
+        "id": 3,
+        "value": 1.49
       },
       {
-        "value": 4.22942877233108,
-        "id": 4
+        "id": 4,
+        "value": 4.626
       }
     ],
     "usage": {
@@ -670,29 +688,31 @@
       "title": "Poids CO₂e d'un modem (fibre)",
       "description": "Découvrez le poids CO₂e d'un modem (fibre) et comparez-le aux émissions de litres d'eau, de km en voiture, de repas avec du boeuf..."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 82.9
   },
   {
+    "id": 27017,
     "name": "Enceinte[s] bluetooth",
     "slug": "enceintebluetooth",
     "emoji": "🔊",
     "category": 1,
     "ecv": [
       {
-        "value": 7.34539614246443,
-        "id": 1
+        "id": 1,
+        "value": 7.43
       },
       {
-        "value": 0.0717747393956498,
-        "id": 2
+        "id": 2,
+        "value": 0.337
       },
       {
-        "value": 0.109566800305517,
-        "id": 3
+        "id": 3,
+        "value": 0.161
       },
       {
-        "value": 0.747995273150451,
-        "id": 4
+        "id": 4,
+        "value": 1.052
       }
     ],
     "usage": {
@@ -706,30 +726,31 @@
       "title": "Impact climat d'une enceinte bluetooth",
       "description": "Découvrez l'impact d'une enceinte bluetooth avec Impact CO₂ ainsi que le détail de son empreinte carbone"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 8.98
   },
   {
-    "id": 27014,
+    "id": 27023,
     "name": "Console[s] de salon",
     "slug": "consoledesalon",
     "emoji": "🎮",
     "category": 1,
     "ecv": [
       {
-        "value": 60.7675889773099,
-        "id": 1
+        "id": 1,
+        "value": 60.8
       },
       {
-        "value": 2.53956296042669,
-        "id": 2
+        "id": 2,
+        "value": 2.54
       },
       {
-        "value": 2.46078452778988,
-        "id": 3
+        "id": 3,
+        "value": 2.46
       },
       {
-        "value": 7.94752148564131,
-        "id": 4
+        "id": 4,
+        "value": 7.95
       }
     ],
     "usage": {
@@ -743,30 +764,31 @@
       "title": "Console de salon",
       "description": "Saviez-vous que l'achat et l'utilisation d'une console de salon avait un impact sur le climat ? Découvrez son poids en CO₂e et les détails de son empreinte"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 73.7
   },
   {
-    "id": 27014,
+    "id": 27024,
     "name": "Console[s] portable",
     "slug": "consoleportable",
     "emoji": "👾",
     "category": 1,
     "ecv": [
       {
-        "value": 21.0324749693322,
-        "id": 1
+        "id": 1,
+        "value": 21
       },
       {
-        "value": 0.522878038546287,
-        "id": 2
+        "id": 2,
+        "value": 0.523
       },
       {
-        "value": 0.104736362081524,
-        "id": 3
+        "id": 3,
+        "value": 0.105
       },
       {
-        "value": 9.16532665795207,
-        "id": 4
+        "id": 4,
+        "value": 9.169
       }
     ],
     "usage": {
@@ -780,10 +802,11 @@
       "title": "Impact climat d'une console portable",
       "description": "Saviez-vous que l'achat et l'utilisation d'une console portable avait un impact sur le climat ? Découvrez son poids en CO₂e et les détails de son empreinte"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 30.8
   },
   {
-    "id": 27014,
+    "id": 27028,
     "name": "Appareil photo",
     "subtitle": "Reflex",
     "slug": "appareilphotoreflex",
@@ -791,20 +814,20 @@
     "category": 1,
     "ecv": [
       {
-        "value": 26.5167876175978,
-        "id": 1
+        "id": 1,
+        "value": 26.5
       },
       {
-        "value": 0.955170493102893,
-        "id": 2
+        "id": 2,
+        "value": 0.955
       },
       {
-        "value": 0.536681304854483,
-        "id": 3
+        "id": 3,
+        "value": 0.537
       },
       {
-        "value": 2.60301617431843,
-        "id": 4
+        "id": 4,
+        "value": 2.6
       }
     ],
     "usage": {
@@ -818,10 +841,11 @@
       "title": "Empreinte carbone appareil photo (reflex)",
       "description": "Quel est l'impact sur le climat d'un appareil photo de type reflex ? Découvrez son poids en CO₂e ainsi que le détail de son empreinte carbone"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 30.6
   },
   {
-    "id": 27014,
+    "id": 27030,
     "name": "Appareil photo",
     "subtitle": "Compact",
     "slug": "appareilphotocompact",
@@ -829,20 +853,20 @@
     "category": 1,
     "ecv": [
       {
-        "value": 22.9032913497794,
-        "id": 1
+        "id": 1,
+        "value": 22.9
       },
       {
-        "value": 0.404112125854186,
-        "id": 2
+        "id": 2,
+        "value": 0.404
       },
       {
-        "value": 0.194906232027756,
-        "id": 3
+        "id": 3,
+        "value": 0.195
       },
       {
-        "value": 0.925613518396406,
-        "id": 4
+        "id": 4,
+        "value": 0.9259999999999999
       }
     ],
     "usage": {
@@ -856,10 +880,11 @@
       "title": "Poids CO₂e d'un appareil photo (compact)",
       "description": "Quel est l'impact sur le climat d'un appareil photo compact ? Découvrez son poids en CO₂e ainsi que son impact sur l'environnement"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 24.4
   },
   {
-    "id": 27015,
+    "id": 27025,
     "name": "Imprimante[s]",
     "subtitle": "Jet d'encre",
     "slug": "imprimantejetdencre",
@@ -867,20 +892,20 @@
     "category": 1,
     "ecv": [
       {
-        "value": 51.0432214447613,
-        "id": 1
+        "id": 1,
+        "value": 61.2
       },
       {
-        "value": 1.39926567174294,
-        "id": 2
+        "id": 2,
+        "value": 6.44
       },
       {
-        "value": 4.97382444958263,
-        "id": 3
+        "id": 3,
+        "value": 5.24
       },
       {
-        "value": 14.6892420655758,
-        "id": 4
+        "id": 4,
+        "value": 15.309999999999999
       }
     ],
     "usage": {
@@ -894,6 +919,7 @@
       "title": "Imprimante",
       "description": "Quelles sont les émissions CO₂e d'une imprimante et à quoi correspondent-elles ? Découvrez ces informations avec Impact CO₂"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 88.2
   }
 ]
