@@ -3,7 +3,9 @@
     "id": 24283,
     "name": "Eau du robinet",
     "prefix": "Litre[s] d'",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "eaudurobinet",
     "emoji": "🚰",
     "category": 3,
@@ -21,7 +23,9 @@
     "Code_CIQUAL": 18430,
     "name": "Eau en bouteille",
     "prefix": "Litre[s] d'",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "eauenbouteille",
     "emoji": "💧",
     "category": 3,
@@ -60,7 +64,9 @@
     "Code_CIQUAL": 18026,
     "name": "Soda",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "soda",
     "emoji": "🥤",
     "category": 3,
@@ -103,7 +109,9 @@
     "Code_CIQUAL": 5001,
     "name": "Bière",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "biere",
     "emoji": "🍺",
     "category": 3,
@@ -146,7 +154,9 @@
     "Code_CIQUAL": 5214,
     "name": "Vin",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "vin",
     "emoji": "🍷",
     "category": 3,
@@ -190,7 +200,9 @@
     "name": "Lait",
     "subtitle": "De vache",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "laitdevache",
     "emoji": "🥛",
     "category": 3,
@@ -229,7 +241,9 @@
     "Code_CIQUAL": 18900,
     "subtitle": "De soja",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "laitdesoja",
     "emoji": "🍈",
     "category": 3,

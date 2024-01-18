@@ -97,11 +97,11 @@ export type UsableEquivalent = BaseEquivalent &
   (
     | {
         ecv: EquivalentValue[]
-        usage: {
+        usage?: {
           peryear: number
           defaultyears: number
         }
-        end: number
+        end?: number
       }
     | { total: number }
   )

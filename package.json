@@ -3,7 +3,9 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "build:fruit": "ts-node src/scripts/buildFromAgribalyse.ts fruitsetlegumes",
+    "build:ecvs": "yarn build:empreinte & yarn build:agryballise",
+    "build:empreinte": "ts-node src/scripts/buildFromEmpreinte.ts",
+    "build:agryballise": "ts-node src/scripts/buildFromAgribalyse.ts",
     "build:boisson": "ts-node src/scripts/buildFromAgribalyse.ts boissons",
     "test": "yarn testu && yarn testc && yarn testa && yarn teste",
     "testa": "NODE_ENV=test jest ./testa",
