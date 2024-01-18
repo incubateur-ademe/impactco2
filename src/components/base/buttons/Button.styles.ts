@@ -19,6 +19,7 @@ const button = (priority?: Priority, size?: 'sm' | 'lg') => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: fit-content;
   
   ${
     baseColor.color === 'secondary'

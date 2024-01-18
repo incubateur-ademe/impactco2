@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               },
               Besoins: {
                 type: 'rich_text',
-                rich_text: [{ text: { content: inputs.data.needs } }],
+                rich_text: [{ text: { content: inputs.data.needs || 'Non renseigné' } }],
               },
               Structure: {
                 type: 'rich_text',

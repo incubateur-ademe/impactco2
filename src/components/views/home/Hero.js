@@ -32,7 +32,7 @@ export default function Hero() {
                 <strong>Vous souhaitez intégrer gratuitement nos ressources ?</strong>
               </MiniCardText>
               <p>Nous vous proposons un accompagnement adapté à vos besoins.</p>
-              <Meeting fromLabel='Accueil' />
+              <Meeting from='Accueil' />
             </MiniCard>
           </div>
           <div />
