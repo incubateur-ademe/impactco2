@@ -14,7 +14,9 @@ const existingEquivalentsByCategory: Record<
   string,
   { file: string; values: (BoissonEquivalent | FruitsEtLegumesEquivalent)[] }
 > = {
+  // @ts-expect-error: missing Code_AGB (is optional)
   boissons: { file: 'boisson.json', values: boissons },
+  // @ts-expect-error: missing Code_AGB (is optional)
   fruitsetlegumes: { file: 'fruitsetlegumes.json', values: fruitsetlegumes },
 }
 
@@ -51,8 +53,8 @@ const agrybaliseValues = [
 function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) {
   let res = 0
   Object.keys(finalitiesId).forEach((finality) => {
-    console.log(value, prefix, finality)
-    console.log(value[`${prefix}${finality}`])
+    // console.log(value, prefix, finality)
+    // console.log(value[`${prefix}${finality}`])
     res += value[`${prefix}${finality}`]
   })
   return res
@@ -60,16 +62,25 @@ function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) 
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
-  values: (Record<string, number> & { Code_CIQUAL: number })[]
+  values: (Record<string, number> & { Code_CIQUAL: number } & { Code_AGB: number })[]
 ) => {
   return equivalents.map((equivalent) => {
     if (!('Code_CIQUAL' in equivalent)) {
       return equivalent
     }
 
-    const value = values.find((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)
-    if (!value) {
+    let value = values[0]
+    const filteredValues = values.filter((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)
+    if (filteredValues.length === 0) {
       throw new Error('BUG! ' + equivalent.slug + ' is not defined...')
+    } else if (filteredValues.length === 1) {
+      value = filteredValues[0]
+    } else if (filteredValues.length > 1) {
+      // @ts-expect-error: undefined value (will not happen - or error will be raised)
+      value = filteredValues.find((v) => v.Code_AGB === equivalent.Code_AGB)
+      if (!value) {
+        throw new Error('BUG! ' + equivalent.slug + ' has no Code_AGB...')
+      }
     }
 
     const finalC02 = sumValues(AgrybalisePrefixEnum.ChangementClimatique, value)
@@ -110,7 +121,7 @@ const buildFromAgribalyse = async (key: string) => {
     }&select=${agrybaliseValues.join(',')}&Code_CIQUAL_in=${ciquals}`
   )
 
-  console.log('remote_url ------------------------------- ', remote_url)
+  // console.log('remote_url ------------------------------- ', remote_url)
 
   const newEquivalents = await axios.get(remote_url).then((response) => response.data.results)
 

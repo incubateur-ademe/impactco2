@@ -2,6 +2,7 @@
   {
     "name": "Fraise",
     "Code_CIQUAL": 13014,
+    "Code_AGB": "13014_1",
     "prefix": "kg de ",
     "slug": "fraise",
     "synonyms": [
@@ -12,19 +13,19 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.40146402806811304
+        "value": 0.41697072625389414
       },
       {
         "id": 33,
-        "value": 0.07100668042349577
+        "value": 0.07485238612462022
       },
       {
         "id": 34,
-        "value": 0.003109841816120535
+        "value": 0.0031586687171813862
       },
       {
         "id": 35,
-        "value": 0.0014852275922706364
+        "value": 0.0015085468043040992
       }
     ],
     "default": true,
@@ -973,6 +974,7 @@
     "name": "Mangue",
     "subtitle": "Importée par avion",
     "Code_CIQUAL": 13025,
+    "Code_AGB": "13025_2",
     "prefix": "kg de ",
     "slug": "mangue",
     "synonyms": [
@@ -1080,19 +1082,19 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.9890750151607365
+        "value": 0.31085338573632987
       },
       {
         "id": 33,
-        "value": 5.377127646444478
+        "value": 0.07009748452830465
       },
       {
         "id": 34,
-        "value": 0.05802468583450164
+        "value": 0.01823640246843202
       },
       {
         "id": 35,
-        "value": 0.04414659456028242
+        "value": 0.01387469926693342
       }
     ],
     "default": true,
@@ -2759,6 +2761,7 @@
   {
     "name": "Tomate",
     "Code_CIQUAL": 20047,
+    "Code_AGB": "20047_2",
     "prefix": "kg de ",
     "slug": "tomate",
     "synonyms": [
