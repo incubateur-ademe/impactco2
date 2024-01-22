@@ -53,8 +53,6 @@ const agrybaliseValues = [
 function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) {
   let res = 0
   Object.keys(finalitiesId).forEach((finality) => {
-    // console.log(value, prefix, finality)
-    // console.log(value[`${prefix}${finality}`])
     res += value[`${prefix}${finality}`]
   })
   return res
@@ -62,7 +60,7 @@ function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) 
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
-  values: (Record<string, number> & { Code_CIQUAL: number } & { Code_AGB: number })[]
+  values: (Record<string, number> & { Code_CIQUAL: number } & { Code_AGB: string })[]
 ) => {
   return equivalents.map((equivalent) => {
     if (!('Code_CIQUAL' in equivalent)) {
@@ -121,12 +119,9 @@ const buildFromAgribalyse = async (key: string) => {
     }&select=${agrybaliseValues.join(',')}&Code_CIQUAL_in=${ciquals}`
   )
 
-  // console.log('remote_url ------------------------------- ', remote_url)
-
   const newEquivalents = await axios.get(remote_url).then((response) => response.data.results)
 
   const finalResult = updateEquivalents(existingEquivalents.values, newEquivalents)
-  // console.dir(finalResult, { depth: null })
   fs.writeFileSync(`src/data/categories/${existingEquivalents.file}`, JSON.stringify(finalResult, null, 2))
 }
 
