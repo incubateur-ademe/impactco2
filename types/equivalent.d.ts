@@ -81,7 +81,7 @@ export type BoissonEquivalent = BaseEquivalent &
   (
     | {
         Code_CIQUAL: number
-        Code_AGB: string
+        Code_AGB?: string
         ecv: EquivalentValue[]
       }
     | {

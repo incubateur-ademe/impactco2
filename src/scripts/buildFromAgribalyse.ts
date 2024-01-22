@@ -14,9 +14,7 @@ const existingEquivalentsByCategory: Record<
   string,
   { file: string; values: (BoissonEquivalent | FruitsEtLegumesEquivalent)[] }
 > = {
-  // @ts-expect-error: missing Code_AGB (is optional)
   boissons: { file: 'boisson.json', values: boissons },
-  // @ts-expect-error: missing Code_AGB (is optional)
   fruitsetlegumes: { file: 'fruitsetlegumes.json', values: fruitsetlegumes },
 }
 
@@ -60,7 +58,7 @@ function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) 
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
-  values: (Record<string, number> & { Code_CIQUAL: number } & { Code_AGB: string })[]
+  values: (Record<string, number> & { Code_CIQUAL: number } & { Code_AGB: string | undefined })[]
 ) => {
   return equivalents.map((equivalent) => {
     if (!('Code_CIQUAL' in equivalent)) {
