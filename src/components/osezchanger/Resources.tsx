@@ -24,7 +24,7 @@ const Resources = () => {
           tracking='OsezChanger'
         />
         <Resource
-          image='/images/osez-changer-deuxieme-vie.jpg'
+          image='/images/osez-changer-deuxieme-vie2.jpg'
           text='Donner une seconde vie aux vêtements et chaussures non utilisées'
           href='https://longuevieauxobjets.ademe.fr/'
           color='secondary'
