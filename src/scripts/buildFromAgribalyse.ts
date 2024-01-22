@@ -58,7 +58,7 @@ function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) 
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
-  values: (Record<string, number> & { Code_CIQUAL: number } & { Code_AGB?: string })[]
+  values: (Record<string, number> & { Code_CIQUAL: number; Code_AGB?: string })[]
 ) => {
   return equivalents.map((equivalent) => {
     if (!('Code_CIQUAL' in equivalent)) {
@@ -66,16 +66,19 @@ const updateEquivalents = (
     }
 
     let value = values[0]
-    const filteredValues = values.filter((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)
-    if (filteredValues.length === 0) {
-      throw new Error('BUG! ' + equivalent.slug + ' is not defined...')
-    } else if (filteredValues.length === 1) {
-      value = filteredValues[0]
-    } else if (filteredValues.length > 1) {
-      // @ts-expect-error: undefined value (will not happen - or error will be raised)
-      value = filteredValues.find((v) => v.Code_AGB === equivalent.Code_AGB)
-      if (!value) {
-        throw new Error('BUG! ' + equivalent.slug + ' has no Code_AGB...')
+    const agbValue = values.find((v) => v.Code_AGB === equivalent.Code_AGB)
+    if (agbValue) {
+      value = agbValue
+    } else {
+      const ciqualValues = values.filter((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)
+      if (ciqualValues.length === 1) {
+        value = ciqualValues[0]
+      } else if (ciqualValues.length === 0) {
+        throw new Error('BUG! ' + equivalent.slug + ' is not defined...')
+      } else {
+        throw new Error(
+          'BUG! ' + equivalent.slug + ' has too much possible values, should use a Code_AGB to discriminate'
+        )
       }
     }
 
