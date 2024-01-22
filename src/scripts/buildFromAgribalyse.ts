@@ -58,7 +58,7 @@ function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) 
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
-  values: (Record<string, number> & { Code_CIQUAL: number } & { Code_AGB: string | undefined })[]
+  values: (Record<string, number> & { Code_CIQUAL: number } & { Code_AGB?: string })[]
 ) => {
   return equivalents.map((equivalent) => {
     if (!('Code_CIQUAL' in equivalent)) {
