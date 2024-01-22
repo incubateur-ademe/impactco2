@@ -2,7 +2,7 @@
   {
     "name": "Fraise",
     "Code_CIQUAL": 13014,
-    "Code_AGB": "13014_1",
+    "Code_AGB": "13014_2",
     "prefix": "kg de ",
     "slug": "fraise",
     "synonyms": [
@@ -13,19 +13,19 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.41697072625389414
+        "value": 0.40146402806811304
       },
       {
         "id": 33,
-        "value": 0.07485238612462022
+        "value": 0.07100668042349577
       },
       {
         "id": 34,
-        "value": 0.0031586687171813862
+        "value": 0.003109841816120535
       },
       {
         "id": 35,
-        "value": 0.0015085468043040992
+        "value": 0.0014852275922706364
       }
     ],
     "default": true,
@@ -35,7 +35,7 @@
       5,
       6
     ],
-    "source": "https://agribalyse.ademe.fr/app/aliments/13014_1#Fraise_de_saison,_crue",
+    "source": "https://agribalyse.ademe.fr/app/aliments/13014_2#Fraise_de_saison,_crue",
     "meta": {
       "title": "Fraise",
       "description": "Découvrez le détail de l'empreinte carbone d'un kg de fraises : de l'agriculture à la distribution et la consommation"
