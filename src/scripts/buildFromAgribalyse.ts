@@ -41,6 +41,7 @@ finalities.forEach((finality) => {
 
 const agrybaliseValues = [
   'Code_CIQUAL',
+  'Code_AGB',
   ...Object.keys(finalitiesId).flatMap((finality) => [
     AgrybalisePrefixEnum.ChangementClimatique + finality,
     AgrybalisePrefixEnum.ScoreUniqueEF + finality,
@@ -114,7 +115,7 @@ const buildFromAgribalyse = async (key: string) => {
   const newEquivalents = await axios.get(remote_url).then((response) => response.data.results)
 
   const finalResult = updateEquivalents(existingEquivalents.values, newEquivalents)
-  console.dir(finalResult, { depth: null })
+  // console.dir(finalResult, { depth: null })
   fs.writeFileSync(`src/data/categories/${existingEquivalents.file}`, JSON.stringify(finalResult, null, 2))
 }
 
