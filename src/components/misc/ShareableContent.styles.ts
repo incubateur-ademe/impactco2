@@ -31,10 +31,11 @@ export const IFrameLogos = styled.div`
 `
 
 export const Screenshotable = styled.div<{ $theme?: 'color' }>`
-  background-color: ${({ $theme }) => ($theme ? ' var(--secondary-10)' : 'var(--neutral-00)')};
+  background-color: ${({ $theme }) => ($theme ? 'var(--secondary-10)' : 'var(--neutral-00)')};
 `
 
 export const Content = styled.div<{ $theme?: 'color' }>`
+  border-radius: 16px;
   flex: 1;
   ${({ $theme }) => $theme === 'color' && 'background-color: var(--secondary-10);'}
 `
