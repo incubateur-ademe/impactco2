@@ -5,7 +5,6 @@ import useScreenshot from 'hooks/useScreenshot'
 import OverScreen, { OverScreenInfo } from 'components/base/OverScreen'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
-import useTheme from 'components/layout/Theme'
 import Signature from 'components/screenshot/Signature'
 import {
   Container,
@@ -62,7 +61,6 @@ const ShareableContent = <T extends string>({
   withoutIntegration?: boolean
 }) => {
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
-  const { theme: darkMode } = useTheme()
   return (
     <Section $withoutPadding data-testid={dataTestId}>
       <SectionWideContent $reverse={reverse}>
@@ -86,7 +84,7 @@ const ShareableContent = <T extends string>({
             <Container $iframe={iframe}>
               {header && <ContentHeader>{header}</ContentHeader>}
               <div ref={ref}>
-                <Screenshotable $darkMode={darkMode === 'night'} $theme={theme}>
+                <Screenshotable $theme={theme}>
                   {children}
                   {isScreenshotting && (
                     <Logos>

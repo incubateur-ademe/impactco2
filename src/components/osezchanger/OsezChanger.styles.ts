@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import Button from 'components/base/buttons/Button'
 
-export const Screenshot = styled.div<{ $isScreenshotting: boolean; $darkMode?: boolean }>`
-  background-color: ${({ $darkMode }) => ($darkMode ? '#0a101c' : '#eff4fd')};
+export const Screenshot = styled.div<{ $isScreenshotting: boolean; }>`
+  background-color: var(--secondary-10);
   ${({ $isScreenshotting }) => $isScreenshotting && 'padding: 0 1rem 1rem 1rem;'}
 `
 

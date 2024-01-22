@@ -7,10 +7,14 @@ import Buttons from 'components/screenshot/Buttons'
 import Signature from 'components/screenshot/Signature'
 
 const Wrapper = styled.div`
-  background-color: var(--neutral-00);
   height: 100%;
   position: relative;
 `
+
+const Screenshot = styled.div`
+  background-color: var(--neutral-00);
+`
+
 const StyledButtons = styled(Buttons)`
   bottom: 1rem;
   position: absolute;
@@ -29,20 +33,22 @@ export default function ScreenshotWrapper(props) {
 
   return (
     <Wrapper className={props.className} ref={ref}>
-      <Background className='noscreenshot' background={props.background} hover={hover}>
-        {props.children}
-      </Background>
-      {isScreenshotting ? (
-        <Signature />
-      ) : (
-        <StyledButtons
-          takeScreenshot={takeScreenshot}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-          slug={props.equivalent?.slug}
-          tracking={`${props.equivalent?.slug}-${props.tracking}`}
-        />
-      )}
+      <Screenshot>
+        <Background className='noscreenshot' background={props.background} hover={hover}>
+          {props.children}
+        </Background>
+        {isScreenshotting ? (
+          <Signature />
+        ) : (
+          <StyledButtons
+            takeScreenshot={takeScreenshot}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            slug={props.equivalent?.slug}
+            tracking={`${props.equivalent?.slug}-${props.tracking}`}
+          />
+        )}
+      </Screenshot>
     </Wrapper>
   )
 }

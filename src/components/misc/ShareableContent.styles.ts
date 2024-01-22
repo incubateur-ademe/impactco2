@@ -30,8 +30,8 @@ export const IFrameLogos = styled.div`
   text-align: center;
 `
 
-export const Screenshotable = styled.div<{ $darkMode?: boolean; $theme?: 'color' }>`
-  background-color: ${({ $theme, $darkMode }) => ($theme ? ' var(--secondary-10)' : $darkMode ? 'black' : 'white')};
+export const Screenshotable = styled.div<{ $theme?: 'color' }>`
+  background-color: ${({ $theme }) => ($theme ? ' var(--secondary-10)' : 'var(--neutral-00)')};
 `
 
 export const Content = styled.div<{ $theme?: 'color' }>`
