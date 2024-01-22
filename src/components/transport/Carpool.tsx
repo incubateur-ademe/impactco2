@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { TransportSimulateur } from 'types/transport'
 import { MEDIA } from 'utils/styles'
-import useTransportContext from 'components/transport/TransportProvider'
+import useParamContext from 'components/providers/ParamProvider'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -42,9 +43,10 @@ const ButtonLess = styled(ButtonMore)`
   padding: 0.2rem 0.4rem 0.2rem 0.8rem;
 `
 
-export default function Carpool() {
-  const { carpool, setCarpool } = useTransportContext()
+export default function Carpool({ type }: { type: TransportSimulateur }) {
+  const params = useParamContext()
 
+  const { carpool, setCarpool } = params[type]
   return (
     <>
       <Wrapper

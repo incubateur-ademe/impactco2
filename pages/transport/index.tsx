@@ -17,7 +17,7 @@ export default function DistancePage({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
-      <TransportProvider type='distance'>
+      <TransportProvider>
         <Distance category={category} />
         <Learning category={category} fromLabel='Transport distance' />
         <SuggestionBanner from={category.slug} fromLabel='Transport distance' simulatorName='simulateur transport' />

@@ -1,5 +1,6 @@
+import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
+import { Dispatch, SetStateAction } from 'react'
 import Slider from 'components/base/Slider'
-import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 import {
   SliderWrapper,
   SliderWrapperHint,
@@ -8,9 +9,13 @@ import {
   SliderWrapperValue,
 } from 'components/numerique/misc/SliderWrapper'
 
-export default function DurationInput() {
-  const { engine, setSituation } = useRulesContextNumerique()
-
+export default function SizeInput({
+  engine,
+  setSituation,
+}: {
+  engine: Engine
+  setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
+}) {
   return (
     <SliderWrapper>
       <SliderWrapperLabel>Poids de la pièce jointe</SliderWrapperLabel>

@@ -8,7 +8,7 @@ import { TransportProvider } from 'components/transport/TransportProvider'
 export default function TeletravailPage({ category }: { category: Category }) {
   return (
     <Iframe noLogo>
-      <TransportProvider type='teletravail'>
+      <TransportProvider>
         <Teletravail category={category} iframe />
       </TransportProvider>
     </Iframe>

@@ -1,5 +1,4 @@
 import Slider from 'components/base/Slider'
-import useRulesContextNumerique from 'components/numerique/RulesProviderNumerique'
 import {
   SliderWrapper,
   SliderWrapperLabel,
@@ -7,25 +6,23 @@ import {
   SliderWrapperValue,
 } from 'components/numerique/misc/SliderWrapper'
 
-export default function DurationInput(props) {
-  const { engine, setSituation } = useRulesContextNumerique()
-
+export default function TypingInput(props) {
   return (
     <SliderWrapper>
       <SliderWrapperLabel>Durée de rédaction</SliderWrapperLabel>
       <SliderWrapperSlider>
         <Slider
-          value={engine.evaluate(`${props.name} . terminaux . temps écriture`).nodeValue}
+          value={props.engine.evaluate(`${props.name} . terminaux . temps écriture`).nodeValue}
           min={1}
           max={20}
           onChange={(value) =>
-            setSituation({
+            props.setSituation({
               [`${props.name} . terminaux . temps écriture`]: value,
             })
           }
         />
         <SliderWrapperValue>
-          {engine.evaluate(`${props.name} . terminaux . temps écriture`).nodeValue} min
+          {props.engine.evaluate(`${props.name} . terminaux . temps écriture`).nodeValue} min
         </SliderWrapperValue>
       </SliderWrapperSlider>
     </SliderWrapper>

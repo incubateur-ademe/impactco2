@@ -102,6 +102,16 @@ export default function PlanDuSite() {
               </Link>
             </Level1>
             <Level1>
+              Contenu
+              <Level2>
+                <Link
+                  href='/contenu/impact-carbone-hiver-station-ski'
+                  title='4 conseils pour réduire l’impact carbone des séjours au ski'>
+                  4 conseils pour réduire l’impact carbone des séjours au ski
+                </Link>
+              </Level2>
+            </Level1>
+            <Level1>
               <Link href='/stats' title='Statistiques'>
                 Statistiques
               </Link>
@@ -142,14 +152,14 @@ const FormatText = styled.div`
 `
 
 const Level1 = styled.div`
+  color: var(--primary-50);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+  line-height: 2rem;
   margin-top: 1.75rem;
+  text-decoration-color: var(--primary-50);
   > a {
-    color: var(--neutral-70);
-    font-size: 1.125rem;
-    font-weight: 700;
-    letter-spacing: 0em;
-    line-height: 2rem;
-    text-decoration-color: var(--primary-50);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.75rem;
   }

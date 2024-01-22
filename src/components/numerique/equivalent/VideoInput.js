@@ -22,10 +22,10 @@ const Wrapper = styled.div`
 export default function VideoInput(props) {
   return (
     <Wrapper>
-      <QualityInput name={props.name} />
-      <DurationInput name={props.name} />
-      <ParticipantInput name={props.name} />
-      <NetworkInput name={props.name} />
+      <QualityInput name={props.name} engine={props.engine} setSituation={props.setSituation} />
+      <DurationInput name={props.name} engine={props.engine} setSituation={props.setSituation} />
+      <ParticipantInput name={props.name} engine={props.engine} setSituation={props.setSituation} />
+      <NetworkInput name={props.name} engine={props.engine} setSituation={props.setSituation} />
     </Wrapper>
   )
 }

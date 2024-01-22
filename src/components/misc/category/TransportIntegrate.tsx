@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { TransportSimulateur } from 'types/transport'
 import { track } from 'utils/matomo'
+import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
-import useTransportContext from 'components/transport/TransportProvider'
 import CustomParam, { CustomParamType } from './CustomParam'
 import CustomParams from './CustomParams'
 import { Separator } from './TransportIntegrate.styles'
@@ -12,28 +13,22 @@ const DISTANCE = 'distance'
 const ITINERAIRE = 'itineraire'
 const TELETRAVAIL = 'teletravail'
 
-const TransportIntegrate = ({
-  tracking,
-  type,
-}: {
-  tracking: string
-  type: 'distance' | 'itineraire' | 'teletravail'
-}) => {
-  const { km, start, end } = useTransportContext()
+const TransportIntegrate = ({ tracking, type }: { tracking: string; type: TransportSimulateur }) => {
+  const { distance, itineraire, teletravail } = useParamContext()
 
   const [customValues, setCustomValues] = useState<Record<string, CustomParamType>>({
-    km: { value: km.toString(), visible: true },
+    km: { value: distance.km.toString(), visible: true },
     itineraire: {
       value: {
-        start: (type === 'itineraire' && start && start.address) || '',
-        end: (type === 'itineraire' && end && end.address) || '',
+        start: (type === 'itineraire' && itineraire.start && itineraire.start.address) || '',
+        end: (type === 'itineraire' && itineraire.end && itineraire.end.address) || '',
       },
       visible: true,
     },
     teletravail: {
       value: {
-        start: (type === 'teletravail' && start && start.address) || '',
-        end: (type === 'teletravail' && end && end.address) || '',
+        start: (type === 'teletravail' && teletravail.start && teletravail.start.address) || '',
+        end: (type === 'teletravail' && teletravail.end && teletravail.end.address) || '',
       },
       visible: true,
     },
@@ -41,28 +36,28 @@ const TransportIntegrate = ({
 
   const [tabs, setTabs] = useState([DISTANCE, ITINERAIRE, TELETRAVAIL])
   useEffect(() => {
-    setCustomValues({ ...customValues, km: { value: km.toString(), visible: customValues.km.visible } })
-  }, [km, setCustomValues])
+    setCustomValues({ ...customValues, km: { value: distance.km.toString(), visible: customValues.km.visible } })
+  }, [distance.km, setCustomValues])
 
   useEffect(() => {
-    if (type === 'itineraire') {
-      setCustomValues({
-        ...customValues,
-        itineraire: {
-          value: { start: start?.address || '', end: end?.address || '' },
-          visible: customValues.itineraire.visible,
-        },
-      })
-    } else if (type === 'teletravail') {
-      setCustomValues({
-        ...customValues,
-        teletravail: {
-          value: { start: start?.address || '', end: end?.address || '' },
-          visible: customValues.itineraire.visible,
-        },
-      })
-    }
-  }, [start, end, type, setCustomValues])
+    setCustomValues({
+      ...customValues,
+      teletravail: {
+        value: { start: teletravail.start?.address || '', end: teletravail.end?.address || '' },
+        visible: customValues.itineraire.visible,
+      },
+    })
+  }, [teletravail, type, setCustomValues])
+
+  useEffect(() => {
+    setCustomValues({
+      ...customValues,
+      itineraire: {
+        value: { start: itineraire.start?.address || '', end: itineraire.end?.address || '' },
+        visible: customValues.itineraire.visible,
+      },
+    })
+  }, [itineraire, type, setCustomValues])
 
   const url = useMemo(() => {
     let result = `<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js"`

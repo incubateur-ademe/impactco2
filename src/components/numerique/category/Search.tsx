@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { track } from 'utils/matomo'
+import { evaluateNumber } from 'hooks/useSituation'
+import useParamContext from 'components/providers/ParamProvider'
 import { HiddenLabel } from 'components/form/HiddenLabel'
-import useRulesContextNumerique, { evaluateNumber } from '../RulesProviderNumerique'
 import {
   Color,
   Desktop,
@@ -16,9 +17,11 @@ import {
 } from './Search.styles'
 
 export default function Search() {
-  const { engine, setSituation, numberEmails, setNumberEmails } = useRulesContextNumerique()
-  const [display, setDisplay] = useState('')
+  const {
+    usageNumerique: { engine, setSituation, numberEmails, setNumberEmails },
+  } = useParamContext()
 
+  const [display, setDisplay] = useState('')
   return engine ? (
     <>
       <Wrapper>

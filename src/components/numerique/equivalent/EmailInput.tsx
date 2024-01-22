@@ -1,3 +1,5 @@
+import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
+import { Dispatch, SetStateAction } from 'react'
 import React from 'react'
 import styled from 'styled-components'
 import NetworkInput from './emailInput/NetworkInput'
@@ -14,13 +16,19 @@ const Wrapper = styled.div`
   gap: 1.5rem;
   padding: 1.5rem;
 `
-export default function EmailInput() {
+export default function EmailInput({
+  engine,
+  setSituation,
+}: {
+  engine: Engine
+  setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
+}) {
   return (
     <Wrapper>
-      <SizeInput />
-      <TypingInput name='email' />
-      <RecipientInput name='email' />
-      <NetworkInput name='email' />
+      <SizeInput engine={engine} setSituation={setSituation} />
+      <TypingInput name='email' engine={engine} setSituation={setSituation} />
+      <RecipientInput name='email' engine={engine} setSituation={setSituation} />
+      <NetworkInput name='email' engine={engine} setSituation={setSituation} />
     </Wrapper>
   )
 }

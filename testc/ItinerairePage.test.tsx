@@ -7,6 +7,7 @@ import categories from 'data/categories.json'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
+jest.mock('@incubateur-ademe/publicodes-negaoctet', () => ({}))
 
 const category = categories.find((e) => e.id === 4) as Category
 describe('ItinerairePage - affiche la page itinéraire', () => {

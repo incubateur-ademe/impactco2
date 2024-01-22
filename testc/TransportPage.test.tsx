@@ -9,6 +9,7 @@ import '../test-utils/match-media.js'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper.js'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
+jest.mock('@incubateur-ademe/publicodes-negaoctet', () => ({}))
 
 const category = categories.find((e) => e.id === 4) as Category
 describe('TransportPage - affiche la page itinéraire', () => {

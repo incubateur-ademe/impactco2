@@ -1,29 +1,36 @@
 import React, { useEffect, useState } from 'react'
+import { Category } from 'types/category'
+import { DeplacementEquivalent, DeplacementType } from 'types/equivalent'
 import { computeECV } from 'utils/computeECV'
 import useItineraries from 'hooks/useItineraries'
 import useDataContext from 'components/providers/DataProvider'
-import useTransportContext from 'components/transport/TransportProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Search from './Search'
 import Transport from './Transport'
 import PercentFootprint from './teletravail/PercentFootprint'
 import YearlyFootprint from './teletravail/YearlyFootprint'
 
 const tracking = 'Transport télétravail'
-
-export default function Teletravail(props) {
+export default function Teletravail({ category, iframe }: { category: Category; iframe?: boolean }) {
   const { equivalents } = useDataContext()
 
-  const { start, end, teletravailTransportation, presentiel, teletravail, holidays, extraKm } = useTransportContext()
+  const {
+    teletravail: { start, end, transport, presentiel, teletravail, holidays, extraKm },
+  } = useParamContext()
 
-  const [currentTransportation, setCurrentTransportation] = useState(null)
+  const [currentTransportation, setCurrentTransportation] = useState<DeplacementEquivalent | undefined>()
   useEffect(() => {
-    setCurrentTransportation(equivalents.find((transportation) => transportation.slug === teletravailTransportation))
-  }, [equivalents, teletravailTransportation])
+    setCurrentTransportation(
+      equivalents.find((transportation) => transportation.slug === transport) as DeplacementEquivalent
+    )
+  }, [equivalents, transport])
 
   const [distance, setDistance] = useState(0)
   const itinerary = useItineraries(start, end, 'télétravail')
   useEffect(() => {
-    setDistance(itinerary && itinerary[currentTransportation?.type] * 1000)
+    if (itinerary && currentTransportation && itinerary[currentTransportation.type as DeplacementType]) {
+      setDistance(itinerary[currentTransportation.type as DeplacementType] * 1000)
+    }
   }, [itinerary, currentTransportation])
 
   const [emitted, setEmitted] = useState(0)
@@ -47,8 +54,8 @@ export default function Teletravail(props) {
   }, [presentiel, teletravail, holidays, extraKm, distance, currentTransportation])
 
   return (
-    <Transport category={props.category} tracking={tracking} iframe={props.iframe} type='teletravail'>
-      <Search type='teletravail' iframe={props.iframe} />
+    <Transport category={category} tracking={tracking} iframe={iframe} type='teletravail'>
+      <Search type='teletravail' iframe={iframe} />
       {distance && currentTransportation ? (
         <YearlyFootprint emitted={emitted} saved={saved} presentiel={presentiel} teletravail={teletravail} />
       ) : null}

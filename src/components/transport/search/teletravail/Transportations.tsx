@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
+import { DeplacementEquivalent } from 'types/equivalent'
 import useDataContext from 'components/providers/DataProvider'
-import useTransportContext from 'components/transport/TransportProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Transportation from './transportations/Transportation'
 
 const Wrapper = styled.div`
@@ -24,23 +25,27 @@ export default function Transportations() {
       equivalents
         .filter((equivalent) => equivalent.category === 4)
         .filter((equivalent) => equivalent.default)
-        .filter((equivalent) => equivalent.slug !== 'velo' && !equivalent.slug.startsWith('avion')),
+        .filter(
+          (equivalent) => equivalent.slug !== 'velo' && !equivalent.slug.startsWith('avion')
+        ) as DeplacementEquivalent[],
     [equivalents]
   )
-  const { start, end, teletravailTransportation } = useTransportContext()
+  const {
+    teletravail: { start, end, transport },
+  } = useParamContext()
 
   return start && start.address && end && end.address ? (
     <Wrapper>
       <List>
         {transportations
           .filter((transportation) => transportation.default)
-          .sort((a, b) => (a.id > b.id ? 1 : -1))
+          .sort((a, b) => ((a.id as number) > (b.id as number) ? 1 : -1))
           .map((transportation) => (
             <Transportation key={transportation.id} transportation={transportation} />
           ))}
       </List>
       <Result>
-        {transportations.find((transportation) => transportation.id === teletravailTransportation)?.name ||
+        {transportations.find((transportation) => transportation.slug === transport)?.name ||
           'Choisissez votre mode de transport'}
       </Result>
     </Wrapper>
