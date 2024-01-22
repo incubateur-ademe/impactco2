@@ -122,7 +122,7 @@ export default function ByArticle() {
                 </MiddleUl>
               </div>
               <MiddleCta>
-                <Meeting fromLabel='Accueil bis' />
+                <Meeting from='Accueil bis' />
               </MiddleCta>
             </Box>
           </MiddleGrid>
@@ -201,7 +201,7 @@ const MiddleLi = styled.li`
 `
 
 const MiddleCta = styled.div`
-  width: fit-content;
+  width: 100%;
 `
 
 const ReuseGrid = styled.div`
