@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Category } from 'types/category'
+import { TransportSimulateur } from 'types/transport'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useScreenshot from 'hooks/useScreenshot'
 import OverScreen, { OverScreenInfo } from 'components/base/OverScreen'
@@ -53,7 +54,7 @@ const ShareableContent = <T extends string>({
   footer?: ReactNode
   sideContent?: ReactNode
   bottom?: ReactNode
-  type?: 'distance' | 'itineraire' | 'teletravail'
+  type?: TransportSimulateur
   path?: string
   size?: 'sm' | 'lg'
   title?: string

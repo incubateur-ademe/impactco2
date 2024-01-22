@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import useTransportContext from 'components/transport/TransportProvider'
+import useParamContext from 'components/providers/ParamProvider'
+import TeletravailModal from '../modals/TeletravailModal'
 import Address from './itinerary/Address'
 import Days from './teletravail/Days'
 import Transportations from './teletravail/Transportations'
 
-const Wrapper = styled.div``
 const Details = styled.button`
   background: transparent;
   border: none;
@@ -18,17 +18,21 @@ const Details = styled.button`
   text-decoration: underline;
 `
 export default function Teletravail() {
-  const { start, setStart, end, setEnd, teletravailTransportation, setTeletravailModal } = useTransportContext()
+  const {
+    teletravail: { start, setStart, end, setEnd, transport },
+  } = useParamContext()
+  const [open, setOpen] = useState(false)
 
   return (
-    <Wrapper>
+    <>
       <Address placeholder='Domicile' address={start?.address} setPlace={setStart} />
       <Address placeholder='Travail' address={end?.address} setPlace={setEnd} />
       <Transportations />
       <Days />
-      {start && end && teletravailTransportation && (
-        <Details onClick={() => setTeletravailModal(true)}>Voir et ajuster les détails du calcul</Details>
+      {start && end && transport && (
+        <Details onClick={() => setOpen(true)}>Voir et ajuster les détails du calcul</Details>
       )}
-    </Wrapper>
+      <TeletravailModal open={open} setOpen={setOpen} />
+    </>
   )
 }

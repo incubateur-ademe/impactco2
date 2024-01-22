@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { TransportSimulateur } from 'types/transport'
 import { track } from 'utils/matomo'
-import useTransportContext from 'components/transport/TransportProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Simulator from '../misc/Simulator'
 import SliderWithInput from '../misc/slider/SliderWithInput'
+import Occupancy from './modals/OccupancyModal'
 import Itinerary from './search/Itinerary'
 import ModeSelector from './search/ModeSelector'
 import Teletravail from './search/Teletravail'
@@ -19,18 +21,16 @@ const Color = styled.button`
     text-decoration: underline;
   }
 `
-export default function Search({
-  type,
-  iframe,
-}: {
-  type: 'distance' | 'itineraire' | 'teletravail'
-  iframe?: boolean
-}) {
-  const { setOccupancyModal, km, setKm } = useTransportContext()
+export default function Search({ type, iframe }: { type: TransportSimulateur; iframe?: boolean }) {
+  const [open, setOpen] = useState(false)
+  const {
+    distance: { km, setKm },
+  } = useParamContext()
 
   return (
     <>
       <ModeSelector type={type} iframe={iframe} />
+      <Occupancy open={open} setOpen={setOpen} />
       {type === 'itineraire' && (
         <Simulator
           text={
@@ -39,7 +39,7 @@ export default function Search({
               <Color
                 onClick={() => {
                   track('Transport itinéraire', 'Hypothèses', 'transport_itineraire_hypotheses')
-                  setOccupancyModal(true)
+                  setOpen(true)
                 }}>
                 (par personne)
               </Color>{' '}
@@ -67,7 +67,7 @@ export default function Search({
               <Color
                 onClick={() => {
                   track('Transport distance', 'Hypothèses', 'transport_distance_hypotheses')
-                  setOccupancyModal(true)
+                  setOpen(true)
                 }}>
                 (par personne)
               </Color>{' '}

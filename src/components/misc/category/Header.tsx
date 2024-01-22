@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Category } from 'types/category'
+import { TransportSimulateur } from 'types/transport'
 import PageTitle from 'components/base/PageTitle'
 import { SectionWideContent } from 'components/base/Section'
 import Actions from './Actions'
@@ -23,7 +24,7 @@ const Header = ({
   params?: Record<string, CustomParamValue>
   takeScreenshot: () => void
   tracking: string
-  type?: 'distance' | 'itineraire' | 'teletravail'
+  type?: TransportSimulateur
   path?: string
   title?: string
   withoutIntegration?: boolean

@@ -17,7 +17,7 @@ export default function ItinerairePage({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
-      <TransportProvider type='itineraire'>
+      <TransportProvider>
         <Itinerary category={category} />
         <Learning category={category} from='/transport/itineraire' fromLabel='Transport itinéraire' />
         <SuggestionBanner

@@ -3,7 +3,6 @@ import categories from 'data/categories.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import Web from 'components/layout/Web'
 import Equivalent from 'components/numerique/Equivalent'
-import { RulesProviderNumerique } from 'components/numerique/RulesProviderNumerique'
 import Text from 'components/views/equivalent/Text'
 
 const equivalents = [...usagenumerique].map((equivalent) => ({
@@ -21,9 +20,7 @@ export default function StreamingVideoPage(props) {
         category: props.category,
         equivalent: props.equivalent,
       }}>
-      <RulesProviderNumerique>
-        <Equivalent equivalent={props.equivalent} category={props.category} name='streaming' />
-      </RulesProviderNumerique>
+      <Equivalent equivalent={props.equivalent} category={props.category} name='streaming' />
       <Text equivalent={props.equivalent} />
     </Web>
   )

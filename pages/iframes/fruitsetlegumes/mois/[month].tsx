@@ -5,13 +5,14 @@ import { slugs } from 'utils/months'
 import Saisons from 'components/fruitsetlegumes/Saisons'
 import Iframe from 'components/layout/Iframe'
 
-export default function Month({ category, month }: { category: Category; month: number }) {
+export default function Month({ category }: { category: Category }) {
   return (
     <Iframe>
-      <Saisons category={category} month={month} />
+      <Saisons category={category} />
     </Iframe>
   )
 }
+
 export async function getStaticPaths() {
   return {
     paths: slugs.map((slug) => ({
@@ -20,11 +21,11 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
-export async function getStaticProps({ params }: { params: { month: string } }) {
+
+export async function getStaticProps() {
   return {
     props: {
       category: categories.find((item) => item.id === 9),
-      month: slugs.indexOf(params.month),
     },
   }
 }

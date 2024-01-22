@@ -1,14 +1,17 @@
 import React, { useMemo } from 'react'
 import { Category as CategoryType } from 'types/category'
 import formatName from 'utils/formatName'
+import { evaluateNumber } from 'hooks/useSituation'
+import useParamContext from 'components/providers/ParamProvider'
 import CategoryWrapper from 'components/misc/category/CategoryWrapper'
-import useRulesContextNumerique, { evaluateNumber } from './RulesProviderNumerique'
 import Hypothèses from './category/Hypothèses'
 import Result from './category/Result'
 import Search from './category/Search'
 
 export default function Category({ category, iframe }: { category: CategoryType; iframe?: boolean }) {
-  const { engine, situation, numberEmails } = useRulesContextNumerique()
+  const {
+    usageNumerique: { engine, situation, numberEmails },
+  } = useParamContext()
 
   const params = useMemo(
     () => ({

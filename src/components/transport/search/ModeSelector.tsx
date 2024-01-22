@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
+import { TransportSimulateur } from 'types/transport'
 import { MEDIA } from 'utils/styles'
 import Link from 'components/base/buttons/Link'
 
@@ -35,13 +36,7 @@ const Tab = styled(Link)<{ $current: boolean; $large?: boolean }>`
   ${({ $current }) => $current && 'cursor: default;'}
 `
 
-export default function ModeSelector({
-  type,
-  iframe,
-}: {
-  type: 'distance' | 'itineraire' | 'teletravail'
-  iframe?: boolean
-}) {
+export default function ModeSelector({ type, iframe }: { type: TransportSimulateur; iframe?: boolean }) {
   const router = useRouter()
 
   const queries = Object.entries(router.query)

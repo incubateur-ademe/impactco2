@@ -10,12 +10,12 @@ import Transport from './Transport'
 
 const tracking = 'Transport distance'
 export default function Distance({ category, iframe }: { category: Category; iframe?: boolean }) {
-  const transportations = useTransportations(tracking)
+  const transportations = useTransportations(tracking, 'distance')
 
   return (
     <Transport category={category} tracking={tracking} iframe={iframe} type='distance'>
       <Search type='distance' iframe={iframe} />
-      <ResultHeader category={category} tracking={tracking} />
+      <ResultHeader category={category} tracking={tracking} type='distance' />
       <BarChart equivalents={transportations} category={category} />
       <CategoryLegend />
       <Bottom category={category} iframe={iframe} />

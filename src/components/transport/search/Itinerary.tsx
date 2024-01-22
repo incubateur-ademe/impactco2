@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import useTransportContext from 'components/transport/TransportProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Address from './itinerary/Address'
 
 const Wrapper = styled.div`
@@ -12,7 +12,9 @@ const Wrapper = styled.div`
 `
 
 export default function Itinerary() {
-  const { start, setStart, end, setEnd } = useTransportContext()
+  const {
+    itineraire: { start, setStart, end, setEnd },
+  } = useParamContext()
 
   return (
     <Wrapper>

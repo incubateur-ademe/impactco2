@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
-import useRulesContextNumerique from '../RulesProviderNumerique'
 
 const Wrapper = styled.div`
   display: flex;
@@ -68,8 +67,6 @@ const StyledEmoji = styled(Emoji)`
 `
 
 export default function Bar(props) {
-  const { engine } = useRulesContextNumerique()
-
   return (
     <Wrapper>
       <Top>
@@ -82,10 +79,10 @@ export default function Bar(props) {
           e{' '}
           {props.equivalent.unit || props.category.unit ? (
             <>/ {props.equivalent.unit || props.category.unit}</>
-          ) : engine.evaluate(`${props.name} . durée`).nodeValue === 60 ? (
+          ) : props.engine.evaluate(`${props.name} . durée`).nodeValue === 60 ? (
             '/ heure'
           ) : (
-            <>/ {engine.evaluate(`${props.name} . durée`).nodeValue} minutes</>
+            <>/ {props.engine.evaluate(`${props.name} . durée`).nodeValue} minutes</>
           )}
         </Unit>
       </Top>

@@ -77,6 +77,11 @@ export default async function handler(
   const queryString = `destinations=${inputs.data.origins.latitude}%2C${inputs.data.origins.longitude}&origins=${inputs.data.destinations.latitude}%2C${inputs.data.destinations.longitude}`
   await trackAPIRequest(req, 'callGMap', JSON.stringify(inputs.data))
 
+  if (process.env.FAKE_GMAP_DATA === 'true') {
+    // Fake Paris Lyon
+    return res.status(200).json({ car: 465.021, foot: 440.747, rail: 456.409, plane: 391.8120136890189 })
+  }
+
   const R = 6371e3 // metres
   const φ1 = (inputs.data.origins.latitude * Math.PI) / 180 // φ, λ in radians
   const φ2 = (inputs.data.destinations.latitude * Math.PI) / 180

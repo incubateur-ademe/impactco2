@@ -1,14 +1,24 @@
 import React from 'react'
 import { Category } from 'types/category'
+import { TransportSimulateur } from 'types/transport'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
+import useParamContext from 'components/providers/ParamProvider'
 import Checkbox from 'components/base/Checkbox'
 import Instruction from 'components/misc/category/Instruction'
 import { Checkboxes, Top } from 'components/misc/category/Top'
-import useTransportContext from './TransportProvider'
 
-const ResultHeader = ({ category, tracking }: { category: Category; tracking: string }) => {
-  const { displayAll, setDisplayAll, carpool, setCarpool } = useTransportContext()
+const ResultHeader = ({
+  category,
+  tracking,
+  type,
+}: {
+  category: Category
+  tracking: string
+  type: TransportSimulateur
+}) => {
+  const params = useParamContext()
+  const { displayAll, setDisplayAll, carpool, setCarpool } = params[type]
 
   return (
     <Top className='noscreenshot'>

@@ -23,11 +23,11 @@ const Emitted = styled.div`
   left: 0;
   position: absolute;
   top: 0;
-  width: ${(props) => props.percent}%;
+  width: ${(props) => props.$percent}%;
 
   ${MEDIA.LT.SMALL} {
-    max-width: ${(props) => (props.percent !== 100 ? 'calc(100% - 5rem)' : 'auto')};
-    min-width: ${(props) => (props.percent ? '5rem' : 'auto')};
+    max-width: ${(props) => (props.$percent !== 100 ? 'calc(100% - 5rem)' : 'auto')};
+    min-width: ${(props) => (props.$percent ? '5rem' : 'auto')};
   }
 `
 const Saved = styled(Emitted)`
@@ -63,28 +63,29 @@ const Disclaimer = styled.p`
   text-align: center;
 `
 export default function YearlyFootprint(props) {
+  const numerator = props.emitted + props.saved
   return (
     <Wrapper>
       <Bar>
-        <Emitted percent={(props.emitted / (props.emitted + props.saved)) * 100}>
-          <Content $visible={props.emitted} small={(props.emitted / (props.emitted + props.saved)) * 100 < 25}>
+        <Emitted $percent={numerator ? (props.emitted / numerator) * 100 : 0}>
+          <Content $visible={props.emitted}>
             <Number>{props.emitted}</Number> kgCO<sub>2</sub>e
             <br />
             émis
             <br />
-            <Small $visible={(props.emitted / (props.emitted + props.saved)) * 100 >= 25}>
+            <Small $visible={numerator ? (props.emitted / numerator) * 100 : 0 >= 25}>
               sur {props.presentiel} jour{props.presentiel > 1 && 's'}
             </Small>
           </Content>
         </Emitted>
         <br />
-        <Saved percent={(props.saved / (props.emitted + props.saved)) * 100} data-testid='saved'>
-          <Content $visible={props.saved} small={(props.saved / (props.emitted + props.saved)) * 100 < 25}>
+        <Saved $percent={numerator ? (props.saved / numerator) * 100 : 0} data-testid='saved'>
+          <Content $visible={props.saved}>
             <Number>{props.saved}</Number> kgCO<sub>2</sub>e
             <br />
             évité{props.saved > 1 && 's'}
             <br />
-            <Small $visible={(props.saved / (props.emitted + props.saved)) * 100 >= 25}>
+            <Small $visible={(numerator ? (props.saved / numerator) * 100 : 0) >= 25}>
               {' '}
               sur {props.teletravail} jour{props.teletravail > 1 && 's'}
             </Small>

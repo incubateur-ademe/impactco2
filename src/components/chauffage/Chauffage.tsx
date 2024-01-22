@@ -1,28 +1,20 @@
-import { useRouter } from 'next/router'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import { Category } from 'types/category'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
 import useDataContext from 'components/providers/DataProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import BarChart from 'components/charts/BarChart'
 import Simulator from 'components/misc/Simulator'
 import CategoryWrapper from 'components/misc/category/CategoryWrapper'
 import SliderWithInput from 'components/misc/slider/SliderWithInput'
 
-const DEFAULT_M2 = 63
-
 const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean }) => {
-  const router = useRouter()
-  const [value, setValue] = useState(DEFAULT_M2)
+  const {
+    chauffage: { m2, setM2 },
+  } = useParamContext()
   const { equivalents } = useDataContext()
-
-  useEffect(() => {
-    if (router.query.m2) {
-      const m2 = Number.parseInt(router.query.m2 as string)
-      if (!Number.isNaN(m2)) setValue(m2)
-    }
-  }, [router])
 
   const equivalentsOfCategory = useMemo(
     () =>
@@ -31,15 +23,15 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
         .map((equivalent) => ({
           ...equivalent,
           title: formatName(equivalent.name, 1, true),
-          value: computeECV(equivalent) * value,
+          value: computeECV(equivalent) * m2,
           usage: 0,
           onClick: () => track('Chauffage', 'Navigation equivalent', equivalent.slug),
         })),
-    [equivalents, category, value]
+    [equivalents, category, m2]
   )
 
   return (
-    <CategoryWrapper category={category} iframe={iframe} params={{ m2: value.toString() }} withFooter>
+    <CategoryWrapper category={category} iframe={iframe} params={{ m2: m2.toString() }} withFooter>
       <Simulator
         text={
           <>
@@ -47,8 +39,8 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
           </>
         }>
         <SliderWithInput
-          value={value}
-          setValue={setValue}
+          value={m2}
+          setValue={setM2}
           unit='m²'
           digit={3}
           tracking='Chauffage'

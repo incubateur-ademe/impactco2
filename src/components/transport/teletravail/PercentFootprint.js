@@ -39,12 +39,12 @@ const Details = styled.button`
   text-decoration: underline;
 `
 export default function PercentFootprint(props) {
-  const { setFootprintModal, yearlyFootprint } = useTransportContext()
+  const { setFootprintModal } = useTransportContext()
 
   const [percent, setPercent] = useState(0)
   useEffect(() => {
-    setPercent(Math.round((props.saved / (yearlyFootprint * 1000)) * 10000) / 100)
-  }, [yearlyFootprint, props.saved])
+    setPercent(Math.round((props.saved / (9.9 * 1000)) * 10000) / 100)
+  }, [props.saved])
   return (
     <Wrapper>
       <Result>

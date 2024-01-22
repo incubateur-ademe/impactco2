@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
-import useRulesContextNumerique from '../RulesProviderNumerique'
 import DailyUsageInput from './deviceInput/DailyUsageInput'
 import LifeSpanInput from './deviceInput/LifespanInput'
 
@@ -82,15 +81,13 @@ const Text = styled.p`
 `
 
 export default function DeviceInput(props) {
-  const { setSituation } = useRulesContextNumerique()
-
   const { setDevices } = useModalContext()
 
   return (
     <Wrapper>
       <Carousel
         onChange={(index) => {
-          setSituation({
+          props.setSituation({
             [props.name + ' . appareil']: `'${devices[index - 1]?.name || 'moyenne'}'`,
           })
         }}
@@ -128,8 +125,18 @@ export default function DeviceInput(props) {
           <Slide key={device.name}>
             <Label>{device.label}</Label>
             <Sliders>
-              <LifeSpanInput name={props.name} device={device} />
-              <DailyUsageInput name={props.name} device={device} />
+              <LifeSpanInput
+                name={props.name}
+                device={device}
+                engine={props.engine}
+                setSituation={props.setSituation}
+              />
+              <DailyUsageInput
+                name={props.name}
+                device={device}
+                engine={props.engine}
+                setSituation={props.setSituation}
+              />
             </Sliders>
             <Text>L’impact de la construction de l’appareil est attribué au prorata de sa durée de vie totale.</Text>
             <Button asLink onClick={() => props.setConstruction((prevConstruction) => !prevConstruction)}>

@@ -8,6 +8,7 @@ import { GlobalStyle } from 'utils/styles'
 import 'utils/variables.css'
 import { DataProvider } from 'components/providers/DataProvider'
 import { ModalProvider } from 'components/providers/ModalProvider'
+import { ParamProvider } from 'components/providers/ParamProvider'
 import useTheme from 'components/layout/Theme'
 
 function MyApp({ Component, pageProps }) {
@@ -32,8 +33,10 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClient}>
         <DataProvider>
           <ModalProvider>
-            <GlobalStyle />
-            <Component {...pageProps} />
+            <ParamProvider>
+              <GlobalStyle />
+              <Component {...pageProps} />
+            </ParamProvider>
           </ModalProvider>
         </DataProvider>
       </QueryClientProvider>

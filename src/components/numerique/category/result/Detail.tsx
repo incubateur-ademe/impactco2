@@ -1,16 +1,17 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import formatConstruction from 'utils/formatConstruction'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
+import { evaluateNumber } from 'hooks/useSituation'
 import useDataContext from 'components/providers/DataProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Instruction from 'components/misc/category/Instruction'
 import { Checkboxes, Top } from 'components/misc/category/Top'
-import useRulesContextNumerique, { evaluateNumber } from 'components/numerique/RulesProviderNumerique'
 
 const Wrapper = styled.div`
   background-color: var(--secondary-10);
@@ -53,10 +54,11 @@ const devices = [
 ]
 
 export default function Detail({ category }: { category: Category }) {
-  const { engine, situation, numberEmails } = useRulesContextNumerique()
   const { equivalents } = useDataContext()
 
-  const [displayAll, setDisplayAll] = useState(false)
+  const {
+    usageNumerique: { displayAll, setDisplayAll, engine, situation, numberEmails },
+  } = useParamContext()
 
   const equivalentsOfCategory = useMemo(() => {
     const devicesToDisplay = (

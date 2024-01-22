@@ -1,11 +1,12 @@
 import { useRouter } from 'next/router'
 import React, { ReactNode, useEffect, useMemo, useState } from 'react'
 import { Category } from 'types/category'
+import { TransportSimulateur } from 'types/transport'
+import useParamContext from 'components/providers/ParamProvider'
 import ShareableContent from 'components/misc/ShareableContent'
 import { CustomParamValue } from 'components/misc/category/CustomParam'
 import { OverScreenTransport } from 'components/misc/category/overScreens/TransportType'
 import { overScreenTransportValues } from 'components/misc/category/overScreens/TransportValues'
-import useTransportContext from './TransportProvider'
 
 const Transport = ({
   children,
@@ -18,30 +19,30 @@ const Transport = ({
   category: Category
   tracking: string
   iframe?: boolean
-  type: 'distance' | 'itineraire' | 'teletravail'
+  type: TransportSimulateur
 }) => {
-  const { km, start, end } = useTransportContext()
+  const { distance, itineraire, teletravail } = useParamContext()
 
   const params = useMemo(() => {
     switch (type) {
       case 'distance':
-        return { km: km.toString() } as Record<string, CustomParamValue>
+        return { km: distance.km.toString() } as Record<string, CustomParamValue>
       case 'itineraire':
         return {
           itineraire: {
-            start: start?.address || '',
-            end: end?.address || '',
+            start: itineraire.start?.address || '',
+            end: itineraire.end?.address || '',
           },
         } as Record<string, CustomParamValue>
       case 'teletravail':
         return {
           teletravail: {
-            start: start?.address || '',
-            end: end?.address || '',
+            start: teletravail.start?.address || '',
+            end: teletravail.end?.address || '',
           },
         } as Record<string, CustomParamValue>
     }
-  }, [km, type, start, end])
+  }, [distance, type, itineraire, teletravail])
 
   const [overScreen, setOverScreen] = useState<OverScreenTransport | undefined>()
   const overScreenValues = useMemo(
