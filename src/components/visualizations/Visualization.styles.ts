@@ -9,6 +9,7 @@ export const Title = styled.h2`
   margin-bottom: 2rem;
   text-align: center;
 `
+
 export const Equivalents = styled.div`
   align-items: center;
   display: flex;
@@ -20,6 +21,7 @@ export const Equivalents = styled.div`
     margin-bottom: 1rem;
   }
 `
+
 export const Equivalent = styled.div`
   align-items: center;
   display: flex;
@@ -28,6 +30,7 @@ export const Equivalent = styled.div`
   justify-content: space-between;
   position: relative;
 `
+
 export const Emojis = styled(Emoji)<{ small?: boolean; xsmall?: boolean; margin?: number }>`
   align-items: center;
   display: flex;
@@ -49,6 +52,7 @@ export const Emojis = styled(Emoji)<{ small?: boolean; xsmall?: boolean; margin?
     gap: ${(props) => (props.small ? 0.5 : props.xsmall ? 0 : 1)}vw;
   }
 `
+
 export const Label = styled.div`
   font-size: 0.875rem;
   font-weight: 300;
@@ -66,6 +70,7 @@ export const Label = styled.div`
     display: none;
   }
 `
+
 export const Equals = styled.div`
   align-items: center;
   display: flex;
@@ -81,21 +86,18 @@ export const Equals = styled.div`
     font-size: 8vw;
   }
 `
+
 export const Small = styled.div`
   display: none;
   text-align: center;
-  ${MEDIA.LT.SMALL} {
-    display: block;
-  }
 `
+
 export const LinkWrapper = styled.div`
+  margin-bottom: 1rem;
   text-align: center;
   width: 100%;
-
-  ${MEDIA.LT.SMALL} {
-    margin-bottom: 2rem;
-  }
 `
+
 export const StyledLink = styled(Link)`
   font-size: 0.875rem;
   position: relative;
