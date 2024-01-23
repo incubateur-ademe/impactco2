@@ -121,7 +121,6 @@ const buildFromAgribalyse = async (key: string) => {
   )
 
   const newEquivalents = await axios.get(remote_url).then((response) => response.data.results)
-
   const finalResult = updateEquivalents(existingEquivalents.values, newEquivalents)
   fs.writeFileSync(`src/data/categories/${existingEquivalents.file}`, JSON.stringify(finalResult, null, 2))
 }

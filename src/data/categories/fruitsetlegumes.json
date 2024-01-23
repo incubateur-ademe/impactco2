@@ -5,7 +5,9 @@
     "Code_AGB": "13014_2",
     "prefix": "kg de ",
     "slug": "fraise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍓",
     "category": 9,
     "ecv": [
@@ -28,7 +30,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6],
+    "months": [
+      4,
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13014_2#Fraise_de_saison,_crue",
     "meta": {
       "title": "Fraise",
@@ -40,7 +46,9 @@
     "Code_CIQUAL": 13039,
     "prefix": "kg de ",
     "slug": "pomme",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍏",
     "category": 9,
     "ecv": [
@@ -63,7 +71,17 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Pomme",
@@ -75,7 +93,9 @@
     "Code_CIQUAL": 13034,
     "prefix": "kg de ",
     "slug": "orange",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
@@ -98,7 +118,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2],
+    "months": [
+      0,
+      1,
+      2
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13034#Orange,_pulpe,_crue",
     "meta": {
       "title": "Orange",
@@ -110,7 +134,9 @@
     "Code_CIQUAL": 13009,
     "prefix": "kg de ",
     "slug": "citron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍋",
     "category": 9,
     "ecv": [
@@ -133,7 +159,10 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1],
+    "months": [
+      0,
+      1
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13009",
     "meta": {
       "title": "Citron",
@@ -145,7 +174,9 @@
     "Code_CIQUAL": 11000,
     "prefix": "kg de ",
     "slug": "ail",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -168,7 +199,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8, 9, 10, 11],
+    "months": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/11000",
     "meta": {
       "title": "Ail",
@@ -180,7 +218,9 @@
     "Code_CIQUAL": 20052,
     "prefix": "kg de ",
     "slug": "artichaut",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -203,7 +243,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20052",
     "meta": {
       "title": "Artichaut",
@@ -215,7 +261,9 @@
     "Code_CIQUAL": 20279,
     "prefix": "kg de ",
     "slug": "asperge",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -238,7 +286,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [3, 4, 5],
+    "months": [
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20279",
     "meta": {
       "title": "Asperge",
@@ -250,7 +302,9 @@
     "Code_CIQUAL": 20091,
     "prefix": "kg de ",
     "slug": "betterave",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍠",
     "category": 9,
     "ecv": [
@@ -273,7 +327,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20091",
     "meta": {
       "title": "Betterave",
@@ -285,7 +346,9 @@
     "Code_CIQUAL": 20004,
     "prefix": "kg de ",
     "slug": "blette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -308,7 +371,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8, 9, 10],
+    "months": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20004",
     "meta": {
       "title": "Blette",
@@ -320,7 +390,9 @@
     "Code_CIQUAL": 20009,
     "prefix": "kg de ",
     "slug": "carotte",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥕",
     "category": 9,
     "ecv": [
@@ -343,7 +415,15 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20009",
     "meta": {
       "title": "Carotte",
@@ -355,7 +435,9 @@
     "Code_CIQUAL": 20023,
     "prefix": "kg de ",
     "slug": "celeri",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -378,7 +460,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru",
     "meta": {
       "title": "Celeri",
@@ -390,7 +479,9 @@
     "Code_CIQUAL": 20105,
     "prefix": "kg de ",
     "slug": "champignonmorille",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍄",
     "category": 9,
     "ecv": [
@@ -413,7 +504,20 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue",
     "meta": {
       "title": "Kg de champignons de paris",
@@ -425,7 +529,9 @@
     "Code_CIQUAL": 20069,
     "prefix": "kg de ",
     "slug": "chou",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥬",
     "category": 9,
     "ecv": [
@@ -448,7 +554,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru",
     "meta": {
       "title": "Chou",
@@ -460,7 +573,9 @@
     "Code_CIQUAL": 20058,
     "prefix": "kg de ",
     "slug": "choudebruxelles",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥬",
     "category": 9,
     "ecv": [
@@ -483,7 +598,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru",
     "meta": {
       "title": "Chou",
@@ -495,7 +617,9 @@
     "Code_CIQUAL": 20016,
     "prefix": "kg de ",
     "slug": "choufleur",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥦",
     "category": 9,
     "ecv": [
@@ -518,7 +642,15 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru",
     "meta": {
       "title": "Chou",
@@ -530,7 +662,9 @@
     "Code_CIQUAL": 20019,
     "prefix": "kg de ",
     "slug": "concombre",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥒",
     "category": 9,
     "ecv": [
@@ -553,7 +687,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8, 9],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru",
     "meta": {
       "title": "Concombre",
@@ -565,7 +706,9 @@
     "Code_CIQUAL": 20139,
     "prefix": "kg de ",
     "slug": "courge",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -588,7 +731,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 8, 9, 10, 11],
+    "months": [
+      0,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue",
     "meta": {
       "title": "Courge",
@@ -600,7 +749,9 @@
     "Code_CIQUAL": 20020,
     "prefix": "kg de ",
     "slug": "courgette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -623,7 +774,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8, 9],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Courgette",
@@ -635,7 +793,9 @@
     "Code_CIQUAL": 20199,
     "prefix": "kg de ",
     "slug": "cresson",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -658,7 +818,20 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20199",
     "meta": {
       "title": "Cresson",
@@ -670,7 +843,9 @@
     "Code_CIQUAL": 20097,
     "prefix": "kg de ",
     "slug": "echalote",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -693,7 +868,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [9, 10, 11],
+    "months": [
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue",
     "meta": {
       "title": "Echalote",
@@ -705,7 +884,9 @@
     "Code_CIQUAL": 20026,
     "prefix": "kg de ",
     "slug": "endive",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -728,7 +909,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 9],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue",
     "meta": {
       "title": "Endive",
@@ -740,7 +928,9 @@
     "Code_CIQUAL": 20059,
     "prefix": "kg de ",
     "slug": "epinard",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -763,7 +953,17 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20059",
     "meta": {
       "title": "Epinard",
@@ -777,7 +977,9 @@
     "Code_AGB": "13025_2",
     "prefix": "kg de ",
     "slug": "mangue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥭",
     "category": 9,
     "ecv": [
@@ -800,7 +1002,20 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
     "meta": {
       "title": "Mangue",
@@ -812,7 +1027,9 @@
     "Code_CIQUAL": 20028,
     "prefix": "kg de ",
     "slug": "fenouil",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -835,7 +1052,15 @@
     ],
     "default": true,
     "tile": false,
-    "months": [3, 5, 6, 7, 8, 9, 10],
+    "months": [
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru",
     "meta": {
       "title": "Fenouil",
@@ -849,7 +1074,9 @@
     "Code_AGB": "20061_1",
     "prefix": "kg de ",
     "slug": "haricotvert",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -872,7 +1099,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8, 9],
+    "months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20061_1#Haricot_vert,_cru",
     "meta": {
       "title": "Kg d'haricot vert importé par avion, cru",
@@ -884,7 +1117,9 @@
     "Code_CIQUAL": 20031,
     "prefix": "kg de ",
     "slug": "laitue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -907,7 +1142,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue",
     "meta": {
       "title": "Laitue",
@@ -919,7 +1160,9 @@
     "Code_CIQUAL": 20099,
     "prefix": "kg de ",
     "slug": "mache",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥗",
     "category": 9,
     "ecv": [
@@ -942,7 +1185,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue",
     "meta": {
       "title": "Kg de mache",
@@ -954,7 +1203,9 @@
     "Code_CIQUAL": 20064,
     "prefix": "kg de ",
     "slug": "navet",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -977,7 +1228,16 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru",
     "meta": {
       "title": "Navet",
@@ -989,7 +1249,9 @@
     "Code_CIQUAL": 9200,
     "prefix": "kg de ",
     "slug": "mais",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌽",
     "category": 9,
     "ecv": [
@@ -1012,7 +1274,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru",
     "meta": {
       "title": "Kg de mais",
@@ -1024,7 +1290,9 @@
     "Code_CIQUAL": 20034,
     "prefix": "kg de ",
     "slug": "oignon",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1047,7 +1315,16 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru",
     "meta": {
       "title": "Oignon",
@@ -1059,7 +1336,9 @@
     "Code_CIQUAL": 20181,
     "prefix": "kg de ",
     "slug": "panais",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1082,7 +1361,14 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru",
     "meta": {
       "title": "Panais",
@@ -1094,7 +1380,9 @@
     "Code_CIQUAL": 20072,
     "prefix": "kg de ",
     "slug": "petitpois",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1113,7 +1401,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6],
+    "months": [
+      4,
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus",
     "meta": {
       "title": "Kg de petit pois",
@@ -1125,7 +1417,9 @@
     "Code_CIQUAL": 20039,
     "prefix": "kg de ",
     "slug": "poireau",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1148,7 +1442,16 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru",
     "meta": {
       "title": "Poireau",
@@ -1160,7 +1463,9 @@
     "Code_CIQUAL": 20168,
     "prefix": "kg de ",
     "slug": "poivron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌶️",
     "category": 9,
     "ecv": [
@@ -1183,7 +1488,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru",
     "meta": {
       "title": "Poivron",
@@ -1195,7 +1505,9 @@
     "Code_CIQUAL": 20044,
     "prefix": "kg de ",
     "slug": "potiron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🎃",
     "category": 9,
     "ecv": [
@@ -1218,7 +1530,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 8, 9, 10, 11],
+    "months": [
+      0,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru",
     "meta": {
       "title": "Potiron",
@@ -1230,7 +1548,9 @@
     "Code_CIQUAL": 20045,
     "prefix": "kg de ",
     "slug": "radis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1253,7 +1573,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [2, 3, 4, 5],
+    "months": [
+      2,
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru",
     "meta": {
       "title": "Radis",
@@ -1265,7 +1590,9 @@
     "Code_CIQUAL": 20197,
     "prefix": "kg de ",
     "slug": "salsifis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1288,7 +1615,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru",
     "meta": {
       "title": "Salsifis",
@@ -1300,7 +1633,9 @@
     "Code_CIQUAL": 20196,
     "prefix": "kg de ",
     "slug": "topinambour",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1323,7 +1658,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru",
     "meta": {
       "title": "Topinambour",
@@ -1335,7 +1675,9 @@
     "Code_CIQUAL": 13007,
     "prefix": "kg de ",
     "slug": "cassis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍇",
     "category": 9,
     "ecv": [
@@ -1358,7 +1700,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru",
     "meta": {
       "title": "Kg de cassis",
@@ -1370,7 +1716,9 @@
     "Code_CIQUAL": 15024,
     "prefix": "kg de ",
     "slug": "chataigne",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌰",
     "category": 9,
     "ecv": [
@@ -1393,7 +1741,10 @@
     ],
     "default": true,
     "tile": false,
-    "months": [9, 10],
+    "months": [
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue",
     "meta": {
       "title": "Chataigne",
@@ -1405,7 +1756,9 @@
     "Code_CIQUAL": 13082,
     "prefix": "kg de ",
     "slug": "clementine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
@@ -1428,7 +1781,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue",
     "meta": {
       "title": "Clementine",
@@ -1440,7 +1798,10 @@
     "Code_CIQUAL": 13040,
     "prefix": "kg de ",
     "slug": "pamplemousse",
-    "synonyms": ["manger, fruit", "pomelo"],
+    "synonyms": [
+      "manger, fruit",
+      "pomelo"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
@@ -1463,7 +1824,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [1, 2, 3, 4, 5],
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru",
     "meta": {
       "title": "Pamplemousse",
@@ -1475,7 +1842,9 @@
     "Code_CIQUAL": 13010,
     "prefix": "kg de ",
     "slug": "coing",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1498,7 +1867,9 @@
     ],
     "default": true,
     "tile": false,
-    "months": [9],
+    "months": [
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru",
     "meta": {
       "title": "Coing",
@@ -1510,7 +1881,9 @@
     "Code_CIQUAL": 13012,
     "prefix": "kg de ",
     "slug": "figue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥭",
     "category": 9,
     "ecv": [
@@ -1533,7 +1906,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8, 9],
+    "months": [
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue",
     "meta": {
       "title": "Figue",
@@ -1545,7 +1923,9 @@
     "Code_CIQUAL": 13019,
     "prefix": "kg de ",
     "slug": "groseille",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1568,7 +1948,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue",
     "meta": {
       "title": "Kg de groseille",
@@ -1580,7 +1964,9 @@
     "Code_CIQUAL": 13021,
     "prefix": "kg de ",
     "slug": "kiwi",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥝",
     "category": 9,
     "ecv": [
@@ -1607,7 +1993,13 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru",
     "meta": {
       "title": "Kiwi",
@@ -1619,7 +2011,9 @@
     "Code_CIQUAL": 13024,
     "prefix": "kg de ",
     "slug": "mandarine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
@@ -1642,7 +2036,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue",
     "meta": {
       "title": "Mandarine",
@@ -1654,7 +2053,9 @@
     "Code_CIQUAL": 13026,
     "prefix": "kg de ",
     "slug": "melon",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍈",
     "category": 9,
     "ecv": [
@@ -1677,7 +2078,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru",
     "meta": {
       "title": "Melon",
@@ -1689,7 +2095,9 @@
     "Code_CIQUAL": 13071,
     "prefix": "kg de ",
     "slug": "mure",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍓",
     "category": 9,
     "ecv": [
@@ -1712,7 +2120,10 @@
     ],
     "default": true,
     "tile": false,
-    "months": [7, 8],
+    "months": [
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue",
     "meta": {
       "title": "Kg de mure",
@@ -1724,7 +2135,9 @@
     "Code_CIQUAL": 13030,
     "prefix": "kg de ",
     "slug": "nectarine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍊",
     "category": 9,
     "ecv": [
@@ -1747,7 +2160,10 @@
     ],
     "default": true,
     "tile": false,
-    "months": [7, 8],
+    "months": [
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Nectarine",
@@ -1759,7 +2175,9 @@
     "Code_CIQUAL": 13028,
     "prefix": "kg de ",
     "slug": "myrtille",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🫐",
     "category": 9,
     "ecv": [
@@ -1782,7 +2200,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue",
     "meta": {
       "title": "Kg de myrtille",
@@ -1794,7 +2216,9 @@
     "Code_CIQUAL": 15004,
     "prefix": "kg de ",
     "slug": "noisette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌰",
     "category": 9,
     "ecv": [
@@ -1817,7 +2241,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9, 10],
+    "months": [
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15004#Noisette",
     "meta": {
       "title": "Kg de noisette",
@@ -1829,7 +2257,9 @@
     "Code_CIQUAL": 15023,
     "prefix": "kg de ",
     "slug": "noix",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌰",
     "category": 9,
     "ecv": [
@@ -1856,7 +2286,10 @@
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9],
+    "months": [
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche",
     "meta": {
       "title": "Kg de noix",
@@ -1868,7 +2301,9 @@
     "Code_CIQUAL": 13100,
     "prefix": "kg de ",
     "slug": "prune",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🫐",
     "category": 9,
     "ecv": [
@@ -1891,7 +2326,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue",
     "meta": {
       "title": "Prune",
@@ -1903,7 +2342,9 @@
     "Code_CIQUAL": 13041,
     "prefix": "kg de ",
     "slug": "reineclaude",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍈",
     "category": 9,
     "ecv": [
@@ -1926,7 +2367,9 @@
     ],
     "default": true,
     "tile": false,
-    "months": [8],
+    "months": [
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue",
     "meta": {
       "title": "Reine-claude",
@@ -1938,7 +2381,9 @@
     "Code_CIQUAL": 13047,
     "prefix": "kg de ",
     "slug": "rhubarbe",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -1961,7 +2406,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [3, 4, 5],
+    "months": [
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue",
     "meta": {
       "title": "Rhubarbe",
@@ -1973,7 +2422,9 @@
     "Code_CIQUAL": 13043,
     "prefix": "kg de ",
     "slug": "peche",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍑",
     "category": 9,
     "ecv": [
@@ -1996,7 +2447,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Peche",
@@ -2008,7 +2464,9 @@
     "Code_CIQUAL": 13008,
     "prefix": "kg de ",
     "slug": "cerise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍒",
     "category": 9,
     "ecv": [
@@ -2035,7 +2493,10 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6],
+    "months": [
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue",
     "meta": {
       "title": "Cerise",
@@ -2047,7 +2508,9 @@
     "Code_CIQUAL": 13000,
     "prefix": "kg de ",
     "slug": "abricot",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍑",
     "category": 9,
     "ecv": [
@@ -2074,7 +2537,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru",
     "meta": {
       "title": "Abricot",
@@ -2086,7 +2553,9 @@
     "Code_CIQUAL": 13015,
     "prefix": "kg de ",
     "slug": "framboise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍓",
     "category": 9,
     "ecv": [
@@ -2109,7 +2578,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue",
     "meta": {
       "title": "Framboise",
@@ -2121,7 +2594,9 @@
     "Code_CIQUAL": 13107,
     "prefix": "kg de ",
     "slug": "poire",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍐",
     "category": 9,
     "ecv": [
@@ -2144,7 +2619,16 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue",
     "meta": {
       "title": "Poire",
@@ -2156,7 +2640,9 @@
     "Code_CIQUAL": 13112,
     "prefix": "kg de ",
     "slug": "raisin",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍇",
     "category": 9,
     "ecv": [
@@ -2179,7 +2665,10 @@
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9],
+    "months": [
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru",
     "meta": {
       "title": "Kg de raisin",
@@ -2191,7 +2680,9 @@
     "Code_CIQUAL": 20053,
     "prefix": "kg de ",
     "slug": "aubergine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍆",
     "category": 9,
     "ecv": [
@@ -2214,7 +2705,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue",
     "meta": {
       "title": "Aubergine",
@@ -2226,7 +2722,9 @@
     "Code_CIQUAL": 20057,
     "prefix": "kg de ",
     "slug": "brocoli",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥦",
     "category": 9,
     "ecv": [
@@ -2249,7 +2747,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9, 10],
+    "months": [
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru",
     "meta": {
       "title": "Brocoli",
@@ -2262,7 +2764,9 @@
     "Code_AGB": "20047_2",
     "prefix": "kg de ",
     "slug": "tomate",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍅",
     "category": 9,
     "ecv": [
@@ -2285,7 +2789,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20047_2#Tomate_de_saison,_crue",
     "meta": {
       "title": "Tomate",
@@ -2297,7 +2806,9 @@
     "Code_CIQUAL": 13002,
     "prefix": "kg de ",
     "slug": "ananas",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍍",
     "category": 9,
     "ecv": [
@@ -2320,7 +2831,20 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine ",
     "meta": {
       "title": "Ananas",
@@ -2332,7 +2856,9 @@
     "Code_CIQUAL": 13005,
     "prefix": "kg de ",
     "slug": "banane",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -2355,7 +2881,20 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue",
     "meta": {
       "title": "Banane",
@@ -2367,7 +2906,9 @@
     "Code_CIQUAL": 13004,
     "prefix": "kg de ",
     "slug": "avocat",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥑",
     "category": 9,
     "ecv": [
@@ -2390,7 +2931,20 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru",
     "meta": {
       "title": "Avocat",
@@ -2402,7 +2956,9 @@
     "Code_CIQUAL": 13054,
     "prefix": "kg de ",
     "slug": "carambole",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -2425,7 +2981,11 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 10, 11],
+    "months": [
+      0,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue",
     "meta": {
       "title": "Carambole",
@@ -2437,7 +2997,9 @@
     "Code_CIQUAL": 13011,
     "prefix": "kg de ",
     "slug": "datte",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -2460,7 +3022,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 9, 10, 11],
+    "months": [
+      0,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che",
     "meta": {
       "title": "Datte",
@@ -2472,7 +3039,9 @@
     "Code_CIQUAL": 13016,
     "prefix": "kg de ",
     "slug": "fruitdelapassion",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🌱",
     "category": 9,
     "ecv": [
@@ -2495,7 +3064,20 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru",
     "meta": {
       "title": "Fruit de la passion",
@@ -2507,7 +3089,9 @@
     "Code_CIQUAL": 13018,
     "prefix": "kg de ",
     "slug": "grenade",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥭",
     "category": 9,
     "ecv": [
@@ -2530,7 +3114,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue",
     "meta": {
       "title": "Grenade",
@@ -2542,7 +3131,9 @@
     "Code_CIQUAL": 13066,
     "prefix": "kg de ",
     "slug": "kaki",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍈",
     "category": 9,
     "ecv": [
@@ -2565,7 +3156,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 9, 10, 11],
+    "months": [
+      0,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru",
     "meta": {
       "title": "Kaki",
@@ -2577,7 +3173,9 @@
     "Code_CIQUAL": 15006,
     "prefix": "kg de ",
     "slug": "noixdecoco",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🥥",
     "category": 9,
     "ecv": [
@@ -2604,7 +3202,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche",
     "meta": {
       "title": "Noix de coco",
@@ -2616,7 +3219,9 @@
     "Code_CIQUAL": 13036,
     "prefix": "kg de ",
     "slug": "pasteque",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "emoji": "🍉",
     "category": 9,
     "ecv": [
@@ -2639,7 +3244,12 @@
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue",
     "meta": {
       "title": "Pasteque",

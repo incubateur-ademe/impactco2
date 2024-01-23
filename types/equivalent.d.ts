@@ -93,15 +93,14 @@ export type FruitsEtLegumesEquivalent = BoissonEquivalent & {
   months: number[]
 }
 
-export type UsableEquivalent = BaseEquivalent &
-  (
+export type UsableEquivalent = BaseEquivalent & { ids?: number[] } & (
     | {
         ecv: EquivalentValue[]
-        usage: {
+        usage?: {
           peryear: number
           defaultyears: number
         }
-        end: number
+        end?: number
       }
     | { total: number }
   )

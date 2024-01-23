@@ -2,7 +2,11 @@
   {
     "id": 20689,
     "name": "Repas avec du boeuf",
-    "synonyms": ["manger", "alimenter", "viande"],
+    "synonyms": [
+      "manger",
+      "alimenter",
+      "viande"
+    ],
     "slug": "repasavecduboeuf",
     "emoji": "🥩",
     "category": 2,
@@ -18,7 +22,10 @@
   {
     "id": 20683,
     "name": "Repas végétarien[s]",
-    "synonyms": ["manger", "alimenter"],
+    "synonyms": [
+      "manger",
+      "alimenter"
+    ],
     "slug": "repasvegetarien",
     "emoji": "🥗",
     "category": 2,
@@ -32,9 +39,11 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas"
   },
   {
-    "id": 20684,
     "name": "Repas végétalien[s]",
-    "synonyms": ["manger", "alimenter"],
+    "synonyms": [
+      "manger",
+      "alimenter"
+    ],
     "slug": "repasvegetalien",
     "emoji": "🍎",
     "category": 2,
@@ -48,9 +57,11 @@
     "source": "https://nosgestesclimat.fr/documentation/alimentation/plats/v%C3%A9g%C3%A9talien/empreinte"
   },
   {
-    "id": 20685,
     "name": "Repas avec du poisson blanc",
-    "synonyms": ["manger", "alimenter"],
+    "synonyms": [
+      "manger",
+      "alimenter"
+    ],
     "slug": "repasavecdupoissonblanc",
     "emoji": "🐟",
     "category": 2,
@@ -64,9 +75,11 @@
     "source": "https://nosgestesclimat.fr/documentation/alimentation/plats/poisson-2/empreinte"
   },
   {
-    "id": 20686,
     "name": "Repas avec du poisson gras",
-    "synonyms": ["manger", "alimenter"],
+    "synonyms": [
+      "manger",
+      "alimenter"
+    ],
     "slug": "repasavecdupoissongras",
     "emoji": "🐟",
     "category": 2,
@@ -82,7 +95,11 @@
   {
     "id": 20688,
     "name": "Repas avec du poulet",
-    "synonyms": ["manger", "alimenter", "viande"],
+    "synonyms": [
+      "manger",
+      "alimenter",
+      "viande"
+    ],
     "slug": "repasavecdupoulet",
     "emoji": "🍗",
     "category": 2,
