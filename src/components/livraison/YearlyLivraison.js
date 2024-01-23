@@ -1,27 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
+import useParamContext from 'components/providers/ParamProvider'
 import { HiddenLabel } from 'components/form/HiddenLabel'
 import SelectFrequences from './SelectFrequences'
 import SelectNumber from './SelectNumber'
-import { frequences } from './data.js'
 import { convertGramsToKilograms } from './utils'
 
 export default function YearlyLivraison(props) {
-  const defaultFrequence = frequences.find((f) => f.isDefault)
-  const [multiplicator, setMultiplicator] = useState(defaultFrequence.mult)
-  const [uid, setUid] = useState(defaultFrequence.uid)
-  const [number, setNumber] = useState(1)
-
-  const changeFrequence = (e) => {
-    setMultiplicator(e.mult)
-    setUid(e.uid)
-  }
-
-  const changeNumber = (number) => {
-    setNumber(number)
-  }
-
+  const {
+    livraison: { number, setNumber, frequence, setFrequence },
+  } = useParamContext()
   return (
     <Wrapper>
       <FlexText>
@@ -29,20 +18,20 @@ export default function YearlyLivraison(props) {
           <InductionIntro>
             <span>Si je commande&nbsp;</span>
             <HiddenLabel htmlFor='numbers'>Nombre de colis</HiddenLabel>
-            <SelectNumber changeNumber={changeNumber} value={number} />
+            <SelectNumber changeNumber={setNumber} value={number} />
             <Colis>&nbsp;colis&nbsp;</Colis>
           </InductionIntro>
           <InductionOutro>
             <strong>par</strong>
             <HiddenLabel htmlFor='frequences'>Féquence des colis</HiddenLabel>
-            <SelectFrequences changeFrequence={changeFrequence} value={uid} />
+            <SelectFrequences changeFrequence={setFrequence} value={frequence.uid} />
             <span>,&nbsp;</span>
           </InductionOutro>
         </Induction>
         <Deduction data-testid='deduction'>
           <span>alors l’impact carbone de mes livraisons est de&nbsp;</span>
           <Color id='kgCo2e' data-testid='kgCo2e'>
-            {convertGramsToKilograms(props.co2eq * multiplicator * number)} kg CO<sub>2</sub>e
+            {convertGramsToKilograms(props.co2eq * frequence.mult * number)} kg CO<sub>2</sub>e
           </Color>
           <strong>&nbsp;par an*</strong>.
         </Deduction>

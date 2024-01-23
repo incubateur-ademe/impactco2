@@ -32,12 +32,12 @@ function MyApp({ Component, pageProps }) {
     <QueryParamProvider adapter={NextAdapter}>
       <QueryClientProvider client={queryClient}>
         <DataProvider>
-          <ModalProvider>
-            <ParamProvider>
+          <ParamProvider>
+            <ModalProvider>
               <GlobalStyle />
               <Component {...pageProps} />
-            </ParamProvider>
-          </ModalProvider>
+            </ModalProvider>
+          </ParamProvider>
         </DataProvider>
       </QueryClientProvider>
     </QueryParamProvider>

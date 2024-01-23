@@ -1,30 +1,27 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import useLocalStorage from 'use-local-storage'
 import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import EquivalentSquareChecked from './tilesModal/EquivalentSquareChecked'
 
-export default function ActualChoices() {
-  const [eqvArray, setEqvArray] = useLocalStorage('ico2_eqv_array')
+export default function ActualChoices(props) {
   const { equivalents } = useDataContext()
-  const [, setEqvError] = useLocalStorage('eqvError')
 
   useEffect(() => {
-    if (eqvArray && eqvArray.length >= 2) {
-      setEqvError('')
+    if (props.eqvArray && props.eqvArray.length >= 2) {
+      props.setEqvError('')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [eqvArray])
+  }, [props.eqvArray])
 
   const removeChoice = (slug) => {
-    const newArray = eqvArray.filter((ticked) => ticked !== slug)
-    setEqvArray(newArray)
+    const newArray = props.eqvArray.filter((ticked) => ticked !== slug)
+    props.setEqvArray(newArray)
   }
 
   const getPluralOf = (word) => {
     let res = word
-    if (eqvArray.length > 1) {
+    if (props.eqvArray.length > 1) {
       res += 's'
     }
     return res
@@ -39,14 +36,14 @@ export default function ActualChoices() {
       <SelectionBox>
         <UpperSide data-testid='eqs-title'>
           <UpperSideCounting>
-            <Count>{eqvArray.length}</Count>/<MaxCount>3</MaxCount>
+            <Count>{props.eqvArray.length}</Count>/<MaxCount>3</MaxCount>
           </UpperSideCounting>{' '}
           <strong>{getPluralOf('équivalence')}</strong> {getPluralOf('sélectionnée')}
         </UpperSide>
         <Choices>
-          {eqvArray.length > 0 ? (
+          {props.eqvArray.length > 0 ? (
             <>
-              {eqvArray.map((ticked) => {
+              {props.eqvArray.map((ticked) => {
                 return (
                   <EquivalentSquareChecked
                     key={ticked}

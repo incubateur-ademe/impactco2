@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import useLocalStorage from 'use-local-storage'
 import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
 import useModalContext from 'components/providers/ModalProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Button from 'components/base/buttons/Button'
-import { default_eqs } from 'components/livraison/data'
 import LivraisonEq from 'components/misc/tiles/LivraisonEq'
 import ResultatLivraison from './ResultatLivraison'
 
 export default function ResultatsLivraison(props) {
-  const [eqvChosen] = useLocalStorage('ico2_eqv_chosen', default_eqs)
+  const {
+    livraison: { equivalents: eqvChosen },
+  } = useParamContext()
   const { equivalents } = useDataContext()
 
   const { setEqv } = useModalContext()

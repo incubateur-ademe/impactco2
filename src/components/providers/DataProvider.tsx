@@ -1,4 +1,4 @@
-import React, { Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react'
+import React, { ReactNode, useContext } from 'react'
 import { Category } from 'types/category'
 import { ECV } from 'types/ecv'
 import { Equivalent } from 'types/equivalent'
@@ -28,13 +28,9 @@ export const flattenEquivalents = (equivalents: Equivalent[]) =>
   )
 
 const DataContext = React.createContext<{
+  ecv: ECV[]
   equivalents: Equivalent[]
   categories: Category[]
-  ecv: ECV[]
-  eqvTarget: string
-  setEqvTarget: Dispatch<SetStateAction<string>>
-  tiles: Equivalent[]
-  setTiles: Dispatch<SetStateAction<Equivalent[]>>
 } | null>(null)
 
 const equivalents = [
@@ -52,20 +48,12 @@ const equivalents = [
 ]
 
 export function DataProvider({ children }: { children: ReactNode }) {
-  const [tiles, setTiles] = useState<Equivalent[]>([])
-
-  const [eqvTarget, setEqvTarget] = useState('')
-
   return (
     <DataContext.Provider
       value={{
         equivalents,
         categories,
         ecv,
-        eqvTarget,
-        setEqvTarget,
-        tiles,
-        setTiles,
       }}>
       {children}
     </DataContext.Provider>

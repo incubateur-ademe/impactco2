@@ -93,7 +93,6 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-react": "^5.11.0",
     "twemoji": "^14.0.2",
-    "use-local-storage": "^3.0.0",
     "use-query-params": "^2.2.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",

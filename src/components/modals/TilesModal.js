@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import useDataContext from 'components/providers/DataProvider'
 import useModalContext from 'components/providers/ModalProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Modal from 'components/base/Modal'
 import TextInput from 'components/base/TextInput'
 import Button from 'components/base/buttons/Button'
@@ -24,7 +25,10 @@ const Equivalents = styled.div`
 export default function TilesModal() {
   const { tiles: open, setTiles: setOpen } = useModalContext()
 
-  const { equivalents, tiles, setTiles } = useDataContext()
+  const { equivalents } = useDataContext()
+  const {
+    comparateur: { tiles, setTiles },
+  } = useParamContext()
 
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
