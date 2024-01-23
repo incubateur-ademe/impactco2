@@ -85,11 +85,6 @@ export default function HeaderSweet() {
                   Intégrer les ressources
                 </Link>
               </NavLink>
-              <NavLink>
-                <Link href='/stats' title='Statistiques'>
-                  Statistiques
-                </Link>
-              </NavLink>
             </NavLinksMobile>
             <NavLinksDesktop>
               <NavLink>
@@ -112,11 +107,6 @@ export default function HeaderSweet() {
               <NavLink>
                 <Link href='/integration' title='Intégrer les ressources'>
                   Intégrer les ressources
-                </Link>
-              </NavLink>
-              <NavLink>
-                <Link href='/stats' title='Statistiques'>
-                  Statistiques
                 </Link>
               </NavLink>
             </NavLinksDesktop>
