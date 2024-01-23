@@ -41,6 +41,7 @@ finalities.forEach((finality) => {
 
 const agrybaliseValues = [
   'Code_CIQUAL',
+  'Code_AGB',
   ...Object.keys(finalitiesId).flatMap((finality) => [
     AgrybalisePrefixEnum.ChangementClimatique + finality,
     AgrybalisePrefixEnum.ScoreUniqueEF + finality,
@@ -50,8 +51,6 @@ const agrybaliseValues = [
 function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) {
   let res = 0
   Object.keys(finalitiesId).forEach((finality) => {
-    console.log(value, prefix, finality)
-    console.log(value[`${prefix}${finality}`])
     res += value[`${prefix}${finality}`]
   })
   return res
@@ -59,16 +58,28 @@ function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) 
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
-  values: (Record<string, number> & { Code_CIQUAL: number })[]
+  values: (Record<string, number> & { Code_CIQUAL: number; Code_AGB?: string })[]
 ) => {
   return equivalents.map((equivalent) => {
     if (!('Code_CIQUAL' in equivalent)) {
       return equivalent
     }
 
-    const value = values.find((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)
-    if (!value) {
-      throw new Error('BUG! ' + equivalent.slug + ' is not defined...')
+    let value = values[0]
+    const agbValue = values.find((v) => v.Code_AGB === equivalent.Code_AGB)
+    if (agbValue) {
+      value = agbValue
+    } else {
+      const ciqualValues = values.filter((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)
+      if (ciqualValues.length === 1) {
+        value = ciqualValues[0]
+      } else if (ciqualValues.length === 0) {
+        throw new Error('BUG! ' + equivalent.slug + ' is not defined...')
+      } else {
+        throw new Error(
+          'BUG! ' + equivalent.slug + ' has too much possible values, should use a Code_AGB to discriminate'
+        )
+      }
     }
 
     const finalC02 = sumValues(AgrybalisePrefixEnum.ChangementClimatique, value)
@@ -109,12 +120,8 @@ const buildFromAgribalyse = async (key: string) => {
     }&select=${agrybaliseValues.join(',')}&Code_CIQUAL_in=${ciquals}`
   )
 
-  console.log('remote_url ------------------------------- ', remote_url)
-
   const newEquivalents = await axios.get(remote_url).then((response) => response.data.results)
-
   const finalResult = updateEquivalents(existingEquivalents.values, newEquivalents)
-  console.dir(finalResult, { depth: null })
   fs.writeFileSync(`src/data/categories/${existingEquivalents.file}`, JSON.stringify(finalResult, null, 2))
 }
 

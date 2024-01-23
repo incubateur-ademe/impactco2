@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Stats, getMatomoStats } from 'utils/stats'
 import { Section, SectionWideContent } from 'components/base/Section'
-import Link from 'components/base/buttons/Link'
 import Web from 'components/layout/Web'
+import Statistics from 'components/statistics/Statistics'
 
 const FormatText = styled.div`
   margin-bottom: 5rem;
@@ -14,25 +15,28 @@ const FormatText = styled.div`
   }
 `
 
-export default function Statistiques() {
+export default function StatistiquesPage({ stats }: { stats: Stats }) {
   return (
     <Web title='Statistiques'>
       <Section>
         <SectionWideContent>
           <FormatText>
             <h1>Statistiques</h1>
-            <h2>Information</h2>
-            <p>
-              <Link
-                priority='secondary'
-                href='https://stats.data.gouv.fr/index.php?module=CoreHome&action=index&date=yesterday&period=week&idSite=156#?idSite=156&period=week&date=yesterday&category=Dashboard_Dashboard&subcategory=6'>
-                Découvrez les statistiques du site Impact CO<sub>2</sub> sur le tableau de bord de notre outil de suivi
-                Matomo
-              </Link>
-            </p>
+            <Statistics stats={stats} />
           </FormatText>
         </SectionWideContent>
       </Section>
     </Web>
   )
+}
+
+export async function getStaticProps() {
+  const revalidate = process.env.STATS_REVALIDATE && Number.parseInt(process.env.STATS_REVALIDATE)
+  const stats = await getMatomoStats()
+  return {
+    props: {
+      stats,
+    },
+    revalidate: revalidate && !Number.isNaN(revalidate) ? revalidate : 1,
+  }
 }

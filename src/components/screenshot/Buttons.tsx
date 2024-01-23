@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     gap: 0.75rem;
   }
 `
-const StyledButton = styled(Button)<{ $large: boolean }>`
+const StyledButton = styled(Button)`
   align-items: center;
   background: transparent !important;
   border: 0.125rem solid var(--primary-50);
@@ -27,7 +27,7 @@ const StyledButton = styled(Button)<{ $large: boolean }>`
   justify-content: center;
   margin: 0;
   overflow: hidden;
-  padding: ${(props) => (props.$large ? 0.1875 : 0.3125)}rem;
+  padding: 0.3125rem;
   position: relative;
   width: 2rem;
   z-index: 12;

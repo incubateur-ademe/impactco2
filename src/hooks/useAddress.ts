@@ -6,7 +6,9 @@ const layers = ['city', 'street', 'house']
 
 export const searchAddress = (search: string, limit?: number) =>
   axios
-    .get<{ features: Address[] }>(
+    .get<{
+      features: Address[]
+    }>(
       `https://photon.komoot.io/api/?q=${search}${limit ? `&limit=${limit}` : ''}&${layers
         .map((layer) => `layer=${layer}`)
         .join('&')}&lang=fr&lat=46.227638&lon=2.213749&zoom=7&location_bias_scale=0.9`

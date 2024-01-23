@@ -1,26 +1,29 @@
 [
   {
     "name": "Jeans",
+    "id": 27043,
     "slug": "jeans",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👖",
     "category": 5,
     "ecv": [
       {
-        "value": 6.71577918745776,
-        "id": 1
+        "id": 1,
+        "value": 6.7
       },
       {
-        "value": 0.572619621727373,
-        "id": 2
+        "id": 2,
+        "value": 0.9
       },
       {
-        "value": 9.94711273545712,
-        "id": 3
+        "id": 3,
+        "value": 9.9
       },
       {
-        "value": 5.4389186837573,
-        "id": 4
+        "id": 4,
+        "value": 5.699999999999999
       }
     ],
     "usage": {
@@ -34,30 +37,34 @@
       "title": "Jeans",
       "description": "Découvrez la quantité de CO₂e émis pour fabriquer et distribuer votre jean grâce à Impact CO₂."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 23.2
   },
   {
     "name": "Polo[s]",
+    "id": 27046,
     "slug": "polo",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👚",
     "category": 5,
     "ecv": [
       {
-        "value": 2.77326105064947,
-        "id": 1
+        "id": 1,
+        "value": 2.8
       },
       {
-        "value": 0.350076439686799,
-        "id": 2
+        "id": 2,
+        "value": 0.4
       },
       {
-        "value": 3.13579084997928,
-        "id": 3
+        "id": 3,
+        "value": 3.1
       },
       {
-        "value": 1.99170429798737,
-        "id": 4
+        "id": 4,
+        "value": 1.9
       }
     ],
     "usage": {
@@ -71,31 +78,35 @@
       "title": "Polo",
       "description": "En achetant un polo, vous avez un impact sur le climat ! Découvrez son poids CO₂e comprenant sa fabrication et distribution"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 8.2
   },
   {
     "name": "T-shirt[s]",
+    "id": 27044,
     "subtitle": "En coton",
     "slug": "tshirtencoton",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👕",
     "category": 5,
     "ecv": [
       {
-        "value": 1.68250044929409,
-        "id": 1
+        "id": 1,
+        "value": 1.7
       },
       {
-        "value": 0.153295818446919,
-        "id": 2
+        "id": 2,
+        "value": 0.2
       },
       {
-        "value": 1.90971774714268,
-        "id": 3
+        "id": 3,
+        "value": 1.9
       },
       {
-        "value": 1.40410288585542,
-        "id": 4
+        "id": 4,
+        "value": 1.4
       }
     ],
     "usage": {
@@ -109,31 +120,35 @@
       "title": "T-shirt",
       "description": "Quelle est l'empreinte carbone pour la fabrication d'un T-shirt en coton ? Maintenant grâce à Impact CO₂, vous allez pouvoir le savoir !"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 5.2
   },
   {
     "name": "T-shirt[s]",
+    "id": 27045,
     "subtitle": "En polyester",
     "slug": "tshirtenpolyester",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👕",
     "category": 5,
     "ecv": [
       {
-        "value": 2.00469200953299,
-        "id": 1
+        "id": 1,
+        "value": 2.3
       },
       {
-        "value": 0.139939265557948,
-        "id": 2
+        "id": 2,
+        "value": 0.2
       },
       {
-        "value": 1.73360600900888,
-        "id": 3
+        "id": 3,
+        "value": 1.7
       },
       {
-        "value": 1.33453942239411,
-        "id": 4
+        "id": 4,
+        "value": 1.3
       }
     ],
     "usage": {
@@ -147,31 +162,35 @@
       "title": "T-shirts",
       "description": "Découvrez votre impact sur le climat lorsque vous achetez un t-shirt, et comparez le à l'achat d'autres vêtements et produits"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 5.5
   },
   {
     "name": "Sweat[s]",
+    "id": 27049,
     "subtitle": "En coton",
     "slug": "sweatencoton",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🦺",
     "category": 5,
     "ecv": [
       {
-        "value": 9.78020416893434,
-        "id": 1
+        "id": 1,
+        "value": 9.8
       },
       {
-        "value": 1.19649435730047,
-        "id": 2
+        "id": 2,
+        "value": 1.2
       },
       {
-        "value": 11.7523029930899,
-        "id": 3
+        "id": 3,
+        "value": 11.8
       },
       {
-        "value": 4.67357597801238,
-        "id": 4
+        "id": 4,
+        "value": 4.6
       }
     ],
     "usage": {
@@ -185,31 +204,35 @@
       "title": "Sweat",
       "description": "En achetant un sweat en coton, vous avez un impact sur le climat ! Découvrez son poids CO₂e comprenant sa fabrication et distribution"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 27.4
   },
   {
     "name": "Chemise[s]",
+    "id": 27041,
     "subtitle": "En coton",
     "slug": "chemiseencoton",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👚",
     "category": 5,
     "ecv": [
       {
-        "value": 2.41520394057459,
-        "id": 1
+        "id": 1,
+        "value": 2.4
       },
       {
-        "value": 0.314681973234939,
-        "id": 2
+        "id": 2,
+        "value": 0.3
       },
       {
-        "value": 6.4584709668835,
-        "id": 3
+        "id": 3,
+        "value": 6.5
       },
       {
-        "value": 2.08563286261565,
-        "id": 4
+        "id": 4,
+        "value": 2
       }
     ],
     "usage": {
@@ -223,31 +246,35 @@
       "title": "Chemises en coton",
       "description": "Impact CO₂ mesure l'empreinte carbone de votre chemise en coton et de tous types de vêtements !"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 11.2
   },
   {
     "name": "Chemise[s]",
+    "id": 27042,
     "subtitle": "En viscose",
     "slug": "chemiseenviscose",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👚",
     "category": 5,
     "ecv": [
       {
-        "value": 1.74904410395076,
-        "id": 1
+        "id": 1,
+        "value": 1.7
       },
       {
-        "value": 0.211223988104837,
-        "id": 2
+        "id": 2,
+        "value": 0.3
       },
       {
-        "value": 6.23328855897312,
-        "id": 3
+        "id": 3,
+        "value": 6.2
       },
       {
-        "value": 2.00101277048857,
-        "id": 4
+        "id": 4,
+        "value": 2
       }
     ],
     "usage": {
@@ -261,31 +288,35 @@
       "title": "Chemises en viscose",
       "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre chemise ? Impact CO₂ vous dit tout !"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 10.2
   },
   {
     "name": "Paire[s] de chaussures",
+    "id": 27058,
     "subtitle": "En cuir",
     "slug": "chaussuresencuir",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👞",
     "category": 5,
     "ecv": [
       {
-        "value": 3.06320840494112,
-        "id": 1
+        "id": 1,
+        "value": 3.1
       },
       {
-        "value": 0.379916399647876,
-        "id": 2
+        "id": 2,
+        "value": 0.4
       },
       {
-        "value": 0.496785335748426,
-        "id": 3
+        "id": 3,
+        "value": 0.5
       },
       {
-        "value": 9.41689560854668,
-        "id": 4
+        "id": 4,
+        "value": 9.399999999999999
       }
     ],
     "usage": {
@@ -299,31 +330,35 @@
       "title": "Paire de chaussures",
       "description": "Saviez-vous que vos chaussures en cuir ont un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de celles-ci"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 13.4
   },
   {
     "name": "Paire[s] de chaussures",
+    "id": 27059,
     "subtitle": "En tissu",
     "slug": "chaussuresentissu",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🥾",
     "category": 5,
     "ecv": [
       {
-        "value": 4.81163172892169,
-        "id": 1
+        "id": 1,
+        "value": 4.8
       },
       {
-        "value": 0.29505073821529,
-        "id": 2
+        "id": 2,
+        "value": 0.3
       },
       {
-        "value": 3.97200492320128,
-        "id": 3
+        "id": 3,
+        "value": 4
       },
       {
-        "value": 8.21148202601768,
-        "id": 4
+        "id": 4,
+        "value": 8.2
       }
     ],
     "usage": {
@@ -337,31 +372,35 @@
       "title": "Chaussures",
       "description": "La fabrication et la distribution d'une paire de chaussures en tissu a un impact sur le climat. Découvrez son poids en kgCO₂e !"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 17.3
   },
   {
     "name": "Paire[s] de chaussures",
+    "id": 27060,
     "subtitle": "De sport",
     "slug": "chaussuresdesport",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👟",
     "category": 5,
     "ecv": [
       {
-        "value": 6.08341321950025,
-        "id": 1
+        "id": 1,
+        "value": 6.1
       },
       {
-        "value": 0.372169915296596,
-        "id": 2
+        "id": 2,
+        "value": 0.4
       },
       {
-        "value": 2.93822392919762,
-        "id": 3
+        "id": 3,
+        "value": 2.9
       },
       {
-        "value": 9.27283492692368,
-        "id": 4
+        "id": 4,
+        "value": 9.3
       }
     ],
     "usage": {
@@ -375,31 +414,35 @@
       "title": "Chaussures de sport",
       "description": "Comparer la valeur d'émission en CO₂e de votre paire de chaussures de sport par rapport à d'autres actions du quotidien"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 18.7
   },
   {
     "name": "Robe[s]",
+    "id": 27056,
     "subtitle": "En coton",
     "slug": "robeencoton",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👗",
     "category": 5,
     "ecv": [
       {
-        "value": 14.0701311296077,
-        "id": 1
+        "id": 1,
+        "value": 14.1
       },
       {
-        "value": 1.22243132050941,
-        "id": 2
+        "id": 2,
+        "value": 1.8
       },
       {
-        "value": 25.6526557148748,
-        "id": 3
+        "id": 3,
+        "value": 25.7
       },
       {
-        "value": 7.70594287490145,
-        "id": 4
+        "id": 4,
+        "value": 8.2
       }
     ],
     "usage": {
@@ -413,31 +456,35 @@
       "title": "Robe en coton",
       "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en coton grâce à Impact CO₂."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 49.8
   },
   {
     "name": "Robe[s]",
+    "id": 27055,
     "subtitle": "En polyester",
     "slug": "robeenpolyester",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👗",
     "category": 5,
     "ecv": [
       {
-        "value": 19.6406599223765,
-        "id": 1
+        "id": 1,
+        "value": 19.7
       },
       {
-        "value": 1.10490328337953,
-        "id": 2
+        "id": 2,
+        "value": 1.6
       },
       {
-        "value": 23.1213877826841,
-        "id": 3
+        "id": 3,
+        "value": 23.1
       },
       {
-        "value": 7.11180533110049,
-        "id": 4
+        "id": 4,
+        "value": 7.5
       }
     ],
     "usage": {
@@ -451,31 +498,35 @@
       "title": "Robe en polyester",
       "description": "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en polyester grâce à Impact CO₂."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 51.9
   },
   {
     "name": "Robe[s]",
+    "id": 27057,
     "subtitle": "En viscose",
     "slug": "robeenviscose",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "👗",
     "category": 5,
     "ecv": [
       {
-        "value": 10.0211162216161,
-        "id": 1
+        "id": 1,
+        "value": 10
       },
       {
-        "value": 1.74331570248864,
-        "id": 2
+        "id": 2,
+        "value": 1.7
       },
       {
-        "value": 25.1547013675586,
-        "id": 3
+        "id": 3,
+        "value": 25.2
       },
       {
-        "value": 8.04998516007235,
-        "id": 4
+        "id": 4,
+        "value": 8
       }
     ],
     "usage": {
@@ -489,31 +540,35 @@
       "title": "Robe en viscose",
       "description": "En achetant une robe en viscose, vous avez un impact sur le climat ! Découvrez son poids CO₂e comprenant sa fabrication et distribution"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 44.9
   },
   {
     "name": "Pull[s]",
+    "id": 27050,
     "subtitle": "En laine",
     "slug": "pullenlaine",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
       {
-        "value": 39.3401848590052,
-        "id": 1
+        "id": 1,
+        "value": 39.3
       },
       {
-        "value": 0.859564016810473,
-        "id": 2
+        "id": 2,
+        "value": 0.9
       },
       {
-        "value": 8.57680679704375,
-        "id": 3
+        "id": 3,
+        "value": 8.6
       },
       {
-        "value": 4.16552969009911,
-        "id": 4
+        "id": 4,
+        "value": 4.1
       }
     ],
     "usage": {
@@ -527,31 +582,35 @@
       "title": "Pull en laine",
       "description": ""
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 52.9
   },
   {
     "name": "Pull[s]",
+    "id": 27047,
     "subtitle": "En acrylique",
     "slug": "pullenacrylique",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
       {
-        "value": 13.9357303827883,
-        "id": 1
+        "id": 1,
+        "value": 13.9
       },
       {
-        "value": 0.73268320279258,
-        "id": 2
+        "id": 2,
+        "value": 0.7
       },
       {
-        "value": 7.27384057271409,
-        "id": 3
+        "id": 3,
+        "value": 7.3
       },
       {
-        "value": 3.67647578678073,
-        "id": 4
+        "id": 4,
+        "value": 3.6
       }
     ],
     "usage": {
@@ -565,31 +624,35 @@
       "title": "Pull en acrylique",
       "description": "Découvrez votre impact sur le climat lorsque vous achetez un pull en acrylique, et comparez le à l'achat d'autres vêtements et produits"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 25.5
   },
   {
     "name": "Pull[s]",
+    "id": 27051,
     "subtitle": "En coton recyclé",
     "slug": "pullencotonrecycle",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
       {
-        "value": 0.936315756776739,
-        "id": 1
+        "id": 1,
+        "value": 0.9
       },
       {
-        "value": 0.454241563129171,
-        "id": 2
+        "id": 2,
+        "value": 0.5
       },
       {
-        "value": 5.54828693889922,
-        "id": 3
+        "id": 3,
+        "value": 5.5
       },
       {
-        "value": 1.22850008276279,
-        "id": 4
+        "id": 4,
+        "value": 1.2000000000000002
       }
     ],
     "usage": {
@@ -603,30 +666,34 @@
       "title": "Pull en coton",
       "description": "La fabrication et la distribution d'un pull en coton recyclé a un impact sur le climat. Découvrez son poids en kgCO₂e !"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 8.1
   },
   {
     "name": "Manteau[s]",
+    "id": 27052,
     "slug": "manteau",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧥",
     "category": 5,
     "ecv": [
       {
-        "value": 44.4588660742929,
-        "id": 1
+        "id": 1,
+        "value": 44.5
       },
       {
-        "value": 2.10645566990794,
-        "id": 2
+        "id": 2,
+        "value": 2.1
       },
       {
-        "value": 29.9134208299953,
-        "id": 3
+        "id": 3,
+        "value": 29.9
       },
       {
-        "value": 9.23809853307973,
-        "id": 4
+        "id": 4,
+        "value": 9.3
       }
     ],
     "usage": {
@@ -640,30 +707,35 @@
       "title": "Manteau",
       "description": "Découvrez la valeur d'émissions de CO₂e de la fabrication et de la distribution d'un manteau et comparez le à l'achat d'autres vêtements"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 85.8
   },
   {
     "name": "Veste[s] imperméable[s]",
+    "id": 27053,
     "slug": "vesteimpermeable",
-    "synonyms": ["k-way", "anorak"],
+    "synonyms": [
+      "k-way",
+      "anorak"
+    ],
     "emoji": "🧥",
     "category": 5,
     "ecv": [
       {
-        "value": 28.1768661161809,
-        "id": 1
+        "id": 1,
+        "value": 28.2
       },
       {
-        "value": 0.315025517833807,
-        "id": 2
+        "id": 2,
+        "value": 0.3
       },
       {
-        "value": 6.28798837784357,
-        "id": 3
+        "id": 3,
+        "value": 6.3
       },
       {
-        "value": 3.8840906072732,
-        "id": 4
+        "id": 4,
+        "value": 3.9
       }
     ],
     "usage": {
@@ -677,30 +749,34 @@
       "title": "Veste imperméable",
       "description": "Découvrez votre impact sur le climat lorsque vous achetez une veste imperméable, et comparez le à l'achat d'autres vêtements et produits"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 38.7
   },
   {
     "name": "Veste[s] simili-cuir",
+    "id": 27054,
     "slug": "vestesimilicuir",
-    "synonyms": ["habiller"],
+    "synonyms": [
+      "habiller"
+    ],
     "emoji": "🧥",
     "category": 5,
     "ecv": [
       {
-        "value": 12.2879431377867,
-        "id": 1
+        "id": 1,
+        "value": 12.3
       },
       {
-        "value": 0.417669298864363,
-        "id": 2
+        "id": 2,
+        "value": 0.4
       },
       {
-        "value": 6.46612032297222,
-        "id": 3
+        "id": 3,
+        "value": 6.5
       },
       {
-        "value": 4.72228214174061,
-        "id": 4
+        "id": 4,
+        "value": 4.8
       }
     ],
     "usage": {
@@ -714,6 +790,7 @@
       "title": "Veste simili-cuir",
       "description": "En achetant une veste simili-cuir, vous avez un impact sur le climat ! Découvrez son poids CO₂e comprenant sa fabrication et distribution"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 24
   }
 ]

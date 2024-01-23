@@ -1,0 +1,50 @@
+.boxes {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.box {
+  background-color: var(--secondary-10);
+  border-radius: 16px;
+  padding: 2rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.value {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+.description {
+  color: var(--neutral-50);
+}
+
+.tableContainer {
+  margin-bottom: 2rem;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  th,
+  td {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    text-align: left;
+  }
+
+  tbody {
+    background-color: var(--secondary-10);
+  }
+
+  .total {
+    background-color: var(--secondary-20);
+  }
+}

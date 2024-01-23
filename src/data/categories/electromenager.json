@@ -1,25 +1,26 @@
 [
   {
     "name": "Bouilloire[s]",
+    "id": 28306,
     "slug": "bouilloire",
     "emoji": "⚗️",
     "category": 6,
     "ecv": [
       {
-        "value": 3.92551745975495,
-        "id": 1
+        "id": 1,
+        "value": 3.93
       },
       {
-        "value": 0.236818204229257,
-        "id": 2
+        "id": 2,
+        "value": 0.237
       },
       {
-        "value": 0.590293393621879,
-        "id": 3
+        "id": 3,
+        "value": 0.59
       },
       {
-        "value": 4.98051969151672,
-        "id": 4
+        "id": 4,
+        "value": 5.1499999999999995
       }
     ],
     "usage": {
@@ -33,31 +34,35 @@
       "title": "Bouilloire",
       "description": "Avec Impact CO₂, découvrez l'impact sur le climat d'une bouilloire, avec son poids en CO₂e comprenant sa fabrication et sa distribution."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 9.91
   },
   {
     "name": "Cafetière[s]",
+    "id": 28304,
     "subtitle": "À dosettes",
-    "synonyms": ["nespresso"],
+    "synonyms": [
+      "nespresso"
+    ],
     "slug": "cafetieredosette",
     "emoji": "☕️",
     "category": 6,
     "ecv": [
       {
-        "value": 8.46271935618363,
-        "id": 1
+        "id": 1,
+        "value": 8.46
       },
       {
-        "value": 0.394135722315441,
-        "id": 2
+        "id": 2,
+        "value": 0.394
       },
       {
-        "value": 1.27761344591338,
-        "id": 3
+        "id": 3,
+        "value": 1.28
       },
       {
-        "value": 11.8777997167964,
-        "id": 4
+        "id": 4,
+        "value": 12.32
       }
     ],
     "usage": {
@@ -71,30 +76,32 @@
       "title": "Cafetière à dosettes",
       "description": "Saviez-vous que votre cafetière à dosettes a un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de votre appareil"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 22.5
   },
   {
     "name": "Cafetière[s]",
+    "id": 28303,
     "subtitle": "Filtre",
     "slug": "cafetierefiltre",
     "emoji": "☕️",
     "category": 6,
     "ecv": [
       {
-        "value": 16.7491847366496,
-        "id": 1
+        "id": 1,
+        "value": 16.7
       },
       {
-        "value": 0.507829328766485,
-        "id": 2
+        "id": 2,
+        "value": 0.5
       },
       {
-        "value": 1.47082451900049,
-        "id": 3
+        "id": 3,
+        "value": 1.5
       },
       {
-        "value": 12.7918996391102,
-        "id": 4
+        "id": 4,
+        "value": 13.200000000000001
       }
     ],
     "usage": {
@@ -108,31 +115,35 @@
       "title": "Cafetière à filtres",
       "description": "Saviez-vous que votre cafetière à filtres a un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de votre appareil"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 31.9
   },
   {
     "name": "Cafetière[s]",
+    "id": 28305,
     "subtitle": "Expresso",
-    "synonyms": ["espresso"],
+    "synonyms": [
+      "espresso"
+    ],
     "slug": "cafetiereexpresso",
     "emoji": "☕️",
     "category": 6,
     "ecv": [
       {
-        "value": 27.0666552917124,
-        "id": 1
+        "id": 1,
+        "value": 27.1
       },
       {
-        "value": 0.936722195669203,
-        "id": 2
+        "id": 2,
+        "value": 0.937
       },
       {
-        "value": 3.20799867992834,
-        "id": 3
+        "id": 3,
+        "value": 3.21
       },
       {
-        "value": 15.926176128887,
-        "id": 4
+        "id": 4,
+        "value": 16.37
       }
     ],
     "usage": {
@@ -146,30 +157,32 @@
       "title": "Cafetière expresso",
       "description": "Comparer la valeur d'émission en CO₂e de votre cafetière par rapport à d'autres actions du quotidien."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 47.6
   },
   {
     "name": "Four",
+    "id": 26986,
     "subtitle": "Électrique",
     "slug": "fourelectrique",
     "emoji": "🎛",
     "category": 6,
     "ecv": [
       {
-        "value": 110.7134,
-        "id": 1
+        "id": 1,
+        "value": 133
       },
       {
-        "value": 4.7439,
-        "id": 2
+        "id": 2,
+        "value": 8.19
       },
       {
-        "value": 3.4356,
-        "id": 3
+        "id": 3,
+        "value": 33.6
       },
       {
-        "value": 18.5069,
-        "id": 4
+        "id": 4,
+        "value": 42.8
       }
     ],
     "usage": {
@@ -183,29 +196,31 @@
       "title": "Four électrique",
       "description": "Découvrez l'impact écologique, exprimé en kgCO₂e, de votre four électrique, de la fabrication à l'utlisation"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 217
   },
   {
     "name": "Lave-vaisselle",
+    "id": 26984,
     "slug": "lavevaisselle",
     "emoji": "🍽",
     "category": 6,
     "ecv": [
       {
-        "value": 157.75927939944,
-        "id": 1
+        "id": 1,
+        "value": 155
       },
       {
-        "value": 7.54182695224947,
-        "id": 2
+        "id": 2,
+        "value": 9.09
       },
       {
-        "value": 15.5684363413951,
-        "id": 3
+        "id": 3,
+        "value": 40.1
       },
       {
-        "value": 63.022463630834,
-        "id": 4
+        "id": 4,
+        "value": 67
       }
     ],
     "usage": {
@@ -219,30 +234,32 @@
       "title": "Lave-vaisselle",
       "description": "Quelle est l'empreinte carbone pour la fabrication d'un lave-vaisselle ? Maintenant grâce à Impact CO₂, vous allez pouvoir le savoir !"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 271
   },
   {
     "name": "Lave-linge",
+    "id": 26983,
     "subtitle": "7kg",
     "slug": "lavelinge",
     "emoji": "🧦",
     "category": 6,
     "ecv": [
       {
-        "value": 197.297037097456,
-        "id": 1
+        "id": 1,
+        "value": 191
       },
       {
-        "value": 10.8662882118782,
-        "id": 2
+        "id": 2,
+        "value": 12.2
       },
       {
-        "value": 13.8051214857605,
-        "id": 3
+        "id": 3,
+        "value": 47.6
       },
       {
-        "value": 73.7153068142095,
-        "id": 4
+        "id": 4,
+        "value": 90.3
       }
     ],
     "usage": {
@@ -256,29 +273,31 @@
       "title": "L'impact sur le climat d'un lave linge",
       "description": "Grâce à Impact CO₂, découvrez l'impact écologique d'un lave linge comprenant sa fabrication et son usage"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 342
   },
   {
     "name": "Réfrigérateur",
+    "id": 26976,
     "slug": "refrigirateur",
     "emoji": "❄️",
     "category": 6,
     "ecv": [
       {
-        "value": 162.081563649907,
-        "id": 1
+        "id": 1,
+        "value": 133
       },
       {
-        "value": 7.72234396019848,
-        "id": 2
+        "id": 2,
+        "value": 13.5
       },
       {
-        "value": 11.4157709422884,
-        "id": 3
+        "id": 3,
+        "value": 28
       },
       {
-        "value": 73.5061566428504,
-        "id": 4
+        "id": 4,
+        "value": 82.8
       }
     ],
     "usage": {
@@ -292,44 +311,67 @@
       "title": "Réfrigérateur",
       "description": "La fabrication et la distribution d'une réfrigérateur a un impact sur le climat. Découvrez son poids en CO₂e et son équivalence avec d'autres produits."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 257
   },
   {
     "name": "Aspirateur",
+    "id": 26990,
     "slug": "aspirateur",
     "emoji": "🧹",
     "category": 6,
-    "total": 47.3,
     "default": true,
     "tile": false,
     "meta": {
       "title": "Aspirateur",
       "description": "Découvrez la valeurs exprimée en kg CO₂e émis par un aspirateur comprenant la fabrication et la distribution."
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "ecv": [
+      {
+        "id": 1,
+        "value": 20.2
+      },
+      {
+        "id": 2,
+        "value": 2.43
+      },
+      {
+        "id": 3,
+        "value": 7.23
+      },
+      {
+        "id": 4,
+        "value": 17.45
+      }
+    ],
+    "total": 47.3
   },
   {
     "name": "Climatiseur[s]",
-    "synonyms": ["climatisation"],
+    "id": 28325,
+    "synonyms": [
+      "climatisation"
+    ],
     "slug": "climatiseur",
     "emoji": "❄️",
     "category": 6,
     "ecv": [
       {
-        "value": 169.796890366223,
-        "id": 1
+        "id": 1,
+        "value": 170
       },
       {
-        "value": 5.1963400483211,
-        "id": 2
+        "id": 2,
+        "value": 5.2
       },
       {
-        "value": 18.6768486582807,
-        "id": 3
+        "id": 3,
+        "value": 18.7
       },
       {
-        "value": 44.5200276834971,
-        "id": 4
+        "id": 4,
+        "value": 45
       }
     ],
     "usage": {
@@ -343,6 +385,7 @@
       "title": "Climatiseur",
       "description": "Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre climatiseur ? Impact CO₂ vous dit tout !"
     },
-    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html"
+    "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
+    "total": 239
   }
 ]

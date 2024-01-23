@@ -23,24 +23,27 @@ export default function BarChart({
 
   return (
     <Flipper flipKey={equivalents.map((equivalent) => equivalent.id).join()}>
-      {sortedEquivalent.map((equivalent) => (
-        <Flipped flipId={equivalent.slug} key={equivalent.id}>
-          <Item
-            onClick={equivalent.onClick}
-            to={`/${category.slug}/${equivalent.slug}`}
-            title={equivalent.title}
-            subtitle={equivalent.subtitle}
-            emoji={equivalent.emoji}
-            secondEmoji={equivalent.secondEmoji}
-            color={equivalent.color}
-            value={equivalent.value}
-            slug={equivalent.slug}
-            usage={equivalent.usage}
-            max={sortedEquivalent[sortedEquivalent.length - 1].value}>
-            {equivalent.component}
-          </Item>
-        </Flipped>
-      ))}
+      {sortedEquivalent.map((equivalent) => {
+        const id = equivalent.id || equivalent.slug
+        return (
+          <Flipped flipId={id} key={id}>
+            <Item
+              onClick={equivalent.onClick}
+              to={`/${category.slug}/${equivalent.slug}`}
+              title={equivalent.title}
+              subtitle={equivalent.subtitle}
+              emoji={equivalent.emoji}
+              secondEmoji={equivalent.secondEmoji}
+              color={equivalent.color}
+              value={equivalent.value}
+              slug={equivalent.slug}
+              usage={equivalent.usage}
+              max={sortedEquivalent[sortedEquivalent.length - 1].value}>
+              {equivalent.component}
+            </Item>
+          </Flipped>
+        )
+      })}
     </Flipper>
   )
 }
