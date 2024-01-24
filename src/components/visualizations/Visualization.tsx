@@ -4,6 +4,7 @@ import { Equivalent as EquivalentType } from 'types/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import useDataContext from 'components/providers/DataProvider'
+import Signature from 'components/screenshot/Signature'
 import {
   Emojis,
   Equals,
@@ -124,6 +125,7 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
         <br />
       </Small>
       <CenterLink category={categories.find((category) => category.id === values[0].category)} />
+      <Signature small noLink noMargin />
     </>
   )
 }

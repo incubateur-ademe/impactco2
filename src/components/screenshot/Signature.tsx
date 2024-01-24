@@ -11,14 +11,16 @@ export default function Signature({
   noLink,
   center,
   color,
+  small,
 }: {
   noMargin?: boolean
   noLink?: boolean
   center?: boolean
   color?: string
+  small?: boolean
 }) {
   return (
-    <OutsideGrid $noMargin={noMargin} $center={center}>
+    <OutsideGrid $noMargin={noMargin} $center={center} $small={small}>
       <div>
         <Marianne />
       </div>
@@ -39,11 +41,25 @@ export default function Signature({
   )
 }
 
-const OutsideGrid = styled.div<{ $noMargin?: boolean; $center?: boolean }>`
+const OutsideGrid = styled.div<{ $noMargin?: boolean; $center?: boolean; $small?: boolean }>`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: ${({ $center }) => ($center ? 'center' : 'space-around')};
   ${({ $noMargin }) => !$noMargin && 'margin-left: 1.25rem;'}
+
+  ${({ $small }) =>
+    $small &&
+    `
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      gap: 0.25rem;
+      font-size: 0.5rem !important;
+      svg {
+        width: auto;
+        height: 30px;
+      }
+    `}
 `
