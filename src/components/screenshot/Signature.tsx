@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { buildCurrentUrlFor } from 'utils/urls'
 import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
 import Marianne from 'components/base/Marianne'
@@ -29,7 +30,7 @@ export default function Signature({
       </div>
       <div>
         {!noLink && (
-          <Link href={process.env.NEXT_PUBLIC_URL as string} noIcon>
+          <Link href={buildCurrentUrlFor('/')} noIcon>
             impactco2.fr
           </Link>
         )}
@@ -53,8 +54,8 @@ const OutsideGrid = styled.div<{ $noMargin?: boolean; $center?: boolean; $small?
     $small &&
     `
       position: absolute;
-      bottom: 4px;
-      right: 4px;
+      bottom: 8px;
+      right: 8px;
       gap: 0.25rem;
       font-size: 0.5rem !important;
       svg {

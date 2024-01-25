@@ -6,7 +6,8 @@ const Wrapper = styled.div`
   align-items: center;
   display: flex;
   font-size: 0.875rem;
-  margin: 0 auto;
+  justify-content: center;
+  margin-top: 1rem;
 
   ${MEDIA.LT.SMALL} {
     margin-bottom: 2rem;

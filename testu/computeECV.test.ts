@@ -14,15 +14,15 @@ const equivalent = {
 }
 
 describe('computeECV', () => {
-  test('compute ecv with total (ignore ecv), usage and end of life', () => {
+  test('compute ecv with ecv (ignore total), usage and end of life', () => {
     expect(
       computeECV({
         ...equivalent,
-        total: 25,
+        total: 5000,
         ecv: [
           {
             id: 1,
-            value: 5000,
+            value: 25,
           },
         ],
         usage: {
