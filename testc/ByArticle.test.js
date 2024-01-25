@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom'
 import { screen } from '@testing-library/react'
-import { renderWithModal } from 'test-utils/render-with-modal'
+import { renderWithWrapper } from '../test-utils/render-with-wrapper.js'
 import ByArticle from 'components/views/home/ByArticle'
 
 describe('ByArticle - Composant de la Home qui affiche du texte et des cards', () => {
   test('Affiche un lien correct vers la FAQ', async () => {
     // When
-    renderWithModal(<ByArticle />)
+    renderWithWrapper(<ByArticle />)
     // Then
     expect(await screen.findByTestId('byArticleFaq')).toHaveTextContent('Foire aux Questions')
     expect(await screen.findByTestId('byArticleFaq')).toHaveAttribute(

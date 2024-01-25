@@ -240,7 +240,7 @@ export default function Tile(props) {
         <StyledButton
           onClick={() => {
             track('Comparateur carbone', 'Comparer', props.equivalent.slug)
-            props.setCurEquivalent(props.equivalent)
+            props.setComparedEquivalent(props.equivalent)
           }}
           size='sm'
           priority='secondary'>

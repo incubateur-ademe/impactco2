@@ -8,9 +8,14 @@ import { ModalProvider } from 'components/providers/ModalProvider'
 import { ParamProvider } from 'components/providers/ParamProvider'
 import { RulesProviderLivraison } from 'components/livraison/RulesProviderLivraison'
 
+jest.mock('next/router', () => jest.requireActual('next-router-mock'))
+jest.mock('@incubateur-ademe/publicodes-negaoctet', () => ({}))
+
 export function renderWithWrapper(component, options) {
   nextRouter.useRouter = jest.fn()
   nextRouter.useRouter.mockImplementation(() => ({ route: '/', asPath: '/', query: {} }))
+
+  console.error = () => {}
   const Wrapper = ({ children }) => {
     const [queryClient] = useState(() => new QueryClient())
 
@@ -18,9 +23,9 @@ export function renderWithWrapper(component, options) {
       <QueryClientProvider client={queryClient}>
         <RulesProviderLivraison>
           <DataProvider>
-            <ModalProvider>
-              <ParamProvider>{children}</ParamProvider>
-            </ModalProvider>
+            <ParamProvider>
+              <ModalProvider>{children}</ModalProvider>
+            </ParamProvider>
           </DataProvider>
         </RulesProviderLivraison>
       </QueryClientProvider>

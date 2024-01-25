@@ -2,9 +2,12 @@ import negaocterRules from '@incubateur-ademe/publicodes-negaoctet'
 import { useRouter } from 'next/router'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
+import { Equivalent } from 'types/equivalent'
+import { Frequence } from 'types/livraison'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
+import { default_eqs, frequences } from 'components/livraison/data'
 import { displayAddress } from 'components/transport/search/itinerary/Address'
 
 const usageNumeriqueDefaultValues = {
@@ -69,7 +72,35 @@ const getFloat = (query: Record<string, string | string[] | undefined>, key: str
   return number
 }
 
+type LivraisonValues = {
+  produit: string
+  retrait: string
+  relay: string
+  km: string
+  traj: string
+}
+
 const ParamContext = React.createContext<{
+  livraison: {
+    values: LivraisonValues
+    setValues: Dispatch<SetStateAction<LivraisonValues>>
+    isHabit: boolean
+    setIsHabit: Dispatch<SetStateAction<boolean>>
+    isPlane: boolean
+    setIsPlane: Dispatch<SetStateAction<boolean>>
+    number: number
+    setNumber: Dispatch<SetStateAction<number>>
+    frequence: Frequence | undefined
+    setFrequence: Dispatch<SetStateAction<Frequence | undefined>>
+    equivalents: string[]
+    setEquivalents: Dispatch<SetStateAction<string[]>>
+  }
+  comparateur: {
+    tiles: Equivalent[]
+    setTiles: Dispatch<SetStateAction<Equivalent[]>>
+    comparedEquivalent: Equivalent | undefined
+    setComparedEquivalent: Dispatch<SetStateAction<Equivalent | undefined>>
+  }
   distance: {
     km: number
     setKm: Dispatch<SetStateAction<number>>
@@ -160,6 +191,24 @@ const ParamContext = React.createContext<{
 
 export function ParamProvider({ children }: { children: ReactNode }) {
   const router = useRouter()
+
+  // Livraison
+  const [livraisonValues, setLivraisonValues] = useState({
+    produit: 'habillement',
+    retrait: 'relais',
+    relay: 'voiture_thermique',
+    km: '7',
+    traj: 'dom_tra',
+  })
+  const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>(default_eqs)
+  const [isHabit, setIsHabit] = useState(false)
+  const [isPlane, setIsPlane] = useState(false)
+  const [number, setNumber] = useState(1)
+  const [frequence, setFrequence] = useState<Frequence | undefined>(frequences.find((freq) => freq.isDefault))
+
+  // Comparateur
+  const [tiles, setTiles] = useState<Equivalent[]>([])
+  const [comparedEquivalent, setComparedEquivalent] = useState<Equivalent>()
 
   // Chauffage
   const [m2, setM2] = useState(63)
@@ -380,6 +429,26 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   return (
     <ParamContext.Provider
       value={{
+        livraison: {
+          values: livraisonValues,
+          setValues: setLivraisonValues,
+          equivalents: livraisonEquivalents,
+          setEquivalents: setLivraisonEquivalents,
+          isHabit,
+          setIsHabit,
+          isPlane,
+          setIsPlane,
+          number,
+          setNumber,
+          frequence,
+          setFrequence,
+        },
+        comparateur: {
+          tiles,
+          setTiles,
+          comparedEquivalent,
+          setComparedEquivalent,
+        },
         distance: {
           km,
           setKm,

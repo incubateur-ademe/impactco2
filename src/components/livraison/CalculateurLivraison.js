@@ -1,10 +1,11 @@
 import dynamic from 'next/dynamic'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
 import useModalContext from 'components/providers/ModalProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import useRulesContextLivraison from 'components/livraison/RulesProviderLivraison'
@@ -34,22 +35,14 @@ const Svg = styled.svg`
 
 export default function CalculateurLivraison(props) {
   const { engine } = useRulesContextLivraison()
-  const { setIfl } = useModalContext()
-  const { setSocial } = useModalContext()
+  const {
+    livraison: { values, setValues, isHabit, setIsHabit, isPlane, setIsPlane },
+  } = useParamContext()
+  const { setIfl, setSocial } = useModalContext()
 
   const [cO2eq, setCO2eq] = useState(0)
 
-  const [isHabit, setIsHabit] = useState(false)
-  const [isPlane, setIsPlane] = useState(false)
   const [showToggleContainer, setShowToggleContainer] = useState(true)
-  const [point, setPoint] = useState('point relais')
-  const [values, setValues] = useState({
-    produit: 'habillement',
-    retrait: 'relais',
-    relay: 'voiture_thermique',
-    km: '7',
-    traj: 'dom_tra',
-  })
 
   const [diffs, setDiffs] = useState({
     diffKm0: 0,
@@ -58,12 +51,19 @@ export default function CalculateurLivraison(props) {
 
   useEffect(() => {
     calculateResultFunction(values, produits, retraits, relays, engine, diffs, setDiffs, setCO2eq, isHabit, isPlane)
-    setShowToggleContainer(['relais', 'click'].includes(values.retrait))
   }, [values, isHabit, isPlane])
+
+  useEffect(() => {
+    setShowToggleContainer(['relais', 'click'].includes(values.retrait))
+  }, [values])
+
+  const point = useMemo(
+    () => (values.retrait === 'click' ? 'magasin' : values.retrait === 'relais' ? 'point relais' : ''),
+    [values]
+  )
 
   const changeProduit = (produit) => setValues({ ...values, produit: produit.uid })
   const changeRetrait = (retrait) => {
-    setPoint(retrait.uid === 'click' ? 'magasin' : retrait.uid === 'relais' ? 'point relais' : '')
     setValues({ ...values, retrait: retrait.uid })
   }
   const changeRelay = (relay) => {
@@ -77,14 +77,6 @@ export default function CalculateurLivraison(props) {
 
   const integrerClicked = () => {
     setIfl(true)
-  }
-
-  const habitClicked = () => {
-    setIsHabit(!isHabit)
-  }
-
-  const farawayClicked = () => {
-    setIsPlane(!isPlane)
   }
 
   return (
@@ -152,7 +144,7 @@ export default function CalculateurLivraison(props) {
                   <Switch
                     className='toggle'
                     checked={isHabit}
-                    onChange={habitClicked}
+                    onChange={() => setIsHabit(!isHabit)}
                     offColor='var(--neutral-00)'
                     onColor='var(--primary-50)'
                     aria-label='Changer de thème'
@@ -190,7 +182,7 @@ export default function CalculateurLivraison(props) {
                   <Switch
                     className='toggle'
                     checked={isPlane}
-                    onChange={farawayClicked}
+                    onChange={() => setIsPlane(!isPlane)}
                     offColor='var(--neutral-00)'
                     onColor='var(--primary-50)'
                     aria-label='Changer de thème'

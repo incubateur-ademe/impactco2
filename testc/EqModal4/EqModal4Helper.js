@@ -1,6 +1,5 @@
-import { render } from '@testing-library/react'
-import { DataProvider } from 'components/providers/DataProvider'
-import useModalContext, { ModalProvider } from 'components/providers/ModalProvider'
+import { act, screen } from '@testing-library/react'
+import useModalContext from 'components/providers/ModalProvider'
 
 export function EqModal4Opener() {
   const { eqv, setEqv } = useModalContext()
@@ -18,20 +17,26 @@ export function EqModal4Opener() {
   )
 }
 
-export const openModal = (screen) => {
+export const openModal = () => {
   screen.getByTestId('modalOpener').click()
 }
 export const initializeWith = (array) => {
-  window.localStorage.setItem('ico2_eqv_chosen', JSON.stringify(array))
-  window.localStorage.setItem('ico2_eqv_array', JSON.stringify(array))
-}
+  act(() => {
+    openModal()
+  })
 
-export function renderWithWrapperForEqs(component, options) {
-  const Wrapper = ({ children }) => (
-    <DataProvider>
-      <ModalProvider>{children}</ModalProvider>
-    </DataProvider>
+  act(() => {
+    screen.getByTestId('checked-eq-streamingvideo').click()
+  })
+  act(() => {
+    screen.getByTestId('checked-eq-repasavecduboeuf').click()
+  })
+  act(() => {
+    screen.getByTestId('checked-eq-voiturethermique').click()
+  })
+  array.forEach((item) =>
+    act(() => {
+      screen.getByTestId(`unchecked-eq-${item}`).click()
+    })
   )
-
-  return render(component, { wrapper: Wrapper, ...options })
 }

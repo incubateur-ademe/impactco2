@@ -4,8 +4,6 @@ import userEvent from '@testing-library/user-event'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper'
 import CalculateurLivraison from 'components/livraison/CalculateurLivraison'
 
-jest.mock('@incubateur-ademe/publicodes-negaoctet', () => ({}))
-
 describe('CalculateurLivraison - composant principal de la partie livraison', () => {
   test("S'affiche sans erreur, avec un titre de niveau h2", async () => {
     // Given
