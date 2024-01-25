@@ -91,7 +91,7 @@
   {
     "name": "Orange",
     "Code_CIQUAL": 13034,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "orange",
     "synonyms": [
       "manger, fruit"
@@ -172,7 +172,7 @@
   {
     "name": "Ail",
     "Code_CIQUAL": 11000,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "ail",
     "synonyms": [
       "manger, fruit"
@@ -216,7 +216,7 @@
   {
     "name": "Artichaut",
     "Code_CIQUAL": 20052,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "artichaut",
     "synonyms": [
       "manger, fruit"
@@ -259,7 +259,7 @@
   {
     "name": "Asperge",
     "Code_CIQUAL": 20279,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "asperge",
     "synonyms": [
       "manger, fruit"
@@ -841,7 +841,7 @@
   {
     "name": "Échalote",
     "Code_CIQUAL": 20097,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "echalote",
     "synonyms": [
       "manger, fruit"
@@ -882,7 +882,7 @@
   {
     "name": "Endive",
     "Code_CIQUAL": 20026,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "endive",
     "synonyms": [
       "manger, fruit"
@@ -926,7 +926,7 @@
   {
     "name": "Épinard",
     "Code_CIQUAL": 20059,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "epinard",
     "synonyms": [
       "manger, fruit"
@@ -1069,10 +1069,10 @@
   },
   {
     "name": "Haricot vert",
-    "subtitle": "haricot vert, cru",
+    "subtitle": "cru",
     "Code_CIQUAL": 20061,
     "Code_AGB": "20061_1",
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "haricotvert",
     "synonyms": [
       "manger, fruit"
@@ -1288,7 +1288,7 @@
   {
     "name": "Oignon",
     "Code_CIQUAL": 20034,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "oignon",
     "synonyms": [
       "manger, fruit"
@@ -2506,7 +2506,7 @@
   {
     "name": "Abricot",
     "Code_CIQUAL": 13000,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "abricot",
     "synonyms": [
       "manger, fruit"
@@ -2678,7 +2678,7 @@
   {
     "name": "Aubergine",
     "Code_CIQUAL": 20053,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "aubergine",
     "synonyms": [
       "manger, fruit"
@@ -2804,7 +2804,7 @@
   {
     "name": "Ananas",
     "Code_CIQUAL": 13002,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "ananas",
     "synonyms": [
       "manger, fruit"
@@ -2904,7 +2904,7 @@
   {
     "name": "Avocat",
     "Code_CIQUAL": 13004,
-    "prefix": "kg de ",
+    "prefix": "kg d'",
     "slug": "avocat",
     "synonyms": [
       "manger, fruit"
