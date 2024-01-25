@@ -7,8 +7,6 @@ import TextInput from 'components/base/TextInput'
 import AllSearchCategory from './AllSearchCategory.js'
 
 export default function AllSearch(props) {
-  /** */
-  // eslint-disable-next-line no-unused-vars
   const { equivalents } = useDataContext()
 
   const [search, setSearch] = useState('')
@@ -60,16 +58,77 @@ export default function AllSearch(props) {
       />
       {props.open && (
         <>
-          <AllSearchCategory items={results} cat={'numerique'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'usagenumerique'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'fruitsetlegumes'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'repas'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'chauffage'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'transport'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'habillement'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'electromenager'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'boisson'} singleton={results?.length === 1} />
-          <AllSearchCategory items={results} cat={'mobilier'} singleton={results?.length === 1} mb={'17rem'} />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'numerique'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'usagenumerique'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'fruitsetlegumes'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'repas'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'chauffage'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'transport'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'habillement'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'electromenager'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'boisson'}
+            singleton={results?.length === 1}
+          />
+          <AllSearchCategory
+            eqvArray={props.eqvArray}
+            setEqvArray={props.setEqvArray}
+            items={results}
+            cat={'mobilier'}
+            singleton={results?.length === 1}
+            mb={'17rem'}
+          />
         </>
       )}
     </Wrapper>

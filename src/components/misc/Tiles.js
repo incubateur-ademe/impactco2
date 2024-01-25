@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { computeECV } from 'utils/computeECV'
 import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import ShareableContent from './ShareableContent'
 import { overScreenCategoryValues } from './category/overScreens/Values'
 import AddButton from './tiles/AddButton'
@@ -31,12 +32,14 @@ const TilesWrapper = styled.div`
   }
 `
 export default function Tiles(props) {
-  const { equivalents, tiles, setTiles } = useDataContext()
+  const { equivalents } = useDataContext()
+  const {
+    comparateur: { tiles, setTiles, comparedEquivalent, setComparedEquivalent },
+  } = useParamContext()
 
   const [overScreen, setOverScreen] = useState()
   const overScreenValues = useMemo(() => overScreenCategoryValues(), [])
 
-  const [curEquivalent, setCurEquivalent] = useState(props.equivalent)
   useEffect(() => {
     if (!tiles.length) {
       setTiles(equivalents.filter((equivalent) => equivalent.tile))
@@ -45,8 +48,8 @@ export default function Tiles(props) {
 
   const [weight, setWeight] = useState(2000)
   useEffect(() => {
-    curEquivalent && setWeight(computeECV(curEquivalent))
-  }, [curEquivalent])
+    comparedEquivalent && setWeight(computeECV(comparedEquivalent))
+  }, [comparedEquivalent])
 
   const [showSubtitle, setShowSubtitle] = useState(false)
   useEffect(() => {
@@ -71,8 +74,8 @@ export default function Tiles(props) {
         measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
         onDragEnd={({ active, over }) => {
           if (active.id !== over.id) {
-            if (over.id === curEquivalent?.id || over.id === 'weight') {
-              setCurEquivalent(equivalents.find((equivalent) => equivalent.id === active.id))
+            if (over.id === comparedEquivalent?.id || over.id === 'weight') {
+              setComparedEquivalent(equivalents.find((equivalent) => equivalent.id === active.id))
             } else {
               setTiles((items) => {
                 const oldIndex = items.indexOf(items.find((item) => item.id === active.id))
@@ -84,13 +87,13 @@ export default function Tiles(props) {
         }}>
         <SortableContext items={[]}>
           <Reference>
-            {curEquivalent ? (
+            {comparedEquivalent ? (
               <Tile
-                equivalent={curEquivalent}
-                weight={computeECV(curEquivalent)}
+                equivalent={comparedEquivalent}
+                weight={computeECV(comparedEquivalent)}
                 showSubtitle={showSubtitle}
-                equivalentPage={props.equivalent?.slug === curEquivalent.slug}
-                removeEquivalent={() => setCurEquivalent(null)}
+                equivalentPage={props.equivalent?.slug === comparedEquivalent.slug}
+                removeEquivalent={() => setComparedEquivalent(undefined)}
                 reference
               />
             ) : (
@@ -107,7 +110,7 @@ export default function Tiles(props) {
         <SortableContext items={[...tiles, { id: 'weight' }]} strategy={rectSortingStrategy}>
           <TilesWrapper>
             {tiles
-              .filter((equivalent) => !curEquivalent || equivalent.slug !== curEquivalent.slug)
+              .filter((equivalent) => !comparedEquivalent || equivalent.slug !== comparedEquivalent.slug)
               .map((equivalent) => (
                 <Tile
                   key={equivalent.slug}
@@ -117,7 +120,7 @@ export default function Tiles(props) {
                   removeEquivalent={(id) =>
                     setTiles((equivalents) => equivalents.filter((equivalent) => equivalent.id !== id))
                   }
-                  setCurEquivalent={setCurEquivalent}
+                  setComparedEquivalent={setComparedEquivalent}
                 />
               ))}
             <AddButton />

@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import useLocalStorage from 'use-local-storage'
 import { MEDIA } from 'utils/styles'
 import useModalContext from 'components/providers/ModalProvider'
+import useParamContext from 'components/providers/ParamProvider'
 import Modal4 from 'components/base/Modal4'
 import Button from 'components/base/buttons/Button'
-import { default_eqs } from 'components/livraison/data.js'
 import ActualChoices from './ActualChoices'
 import AllSearch from './AllSearch'
 
@@ -19,15 +18,16 @@ const getTitle = () => {
 
 export default function EqModal4() {
   const { eqv: open, setEqv: setOpen } = useModalContext()
-  const [eqvArray, setEqvArray] = useLocalStorage('ico2_eqv_array', default_eqs)
-  const [eqvChosen, setEqvChosen] = useLocalStorage('ico2_eqv_chosen', default_eqs)
+  const {
+    livraison: { equivalents, setEquivalents },
+  } = useParamContext()
 
-  // eslint-disable-next-line no-unused-vars
-  const [eqvError, setEqvError] = useLocalStorage('eqvError', '')
+  const [eqvArray, setEqvArray] = useState(equivalents)
+  const [eqvError, setEqvError] = useState('')
 
   const validateEqv = () => {
     if (eqvArray.length >= 2) {
-      setEqvChosen(JSON.parse(JSON.stringify(eqvArray)))
+      setEquivalents(eqvArray)
       setEqvError('')
       setOpen(false)
     } else {
@@ -36,7 +36,7 @@ export default function EqModal4() {
   }
 
   const dismiss = () => {
-    setEqvArray(JSON.parse(JSON.stringify(eqvChosen)))
+    setEqvArray(equivalents)
     setOpen(false)
   }
 
@@ -61,11 +61,11 @@ export default function EqModal4() {
         </Intro>
         <GridSplit>
           <GridSplitLeft>
-            <ActualChoices />
+            <ActualChoices setEqvError={setEqvError} eqvArray={eqvArray} setEqvArray={setEqvArray} />
           </GridSplitLeft>
           <GridSplitRight>
             <Scroll>
-              <AllSearch open={open} />
+              <AllSearch open={open} eqvArray={eqvArray} setEqvArray={setEqvArray} />
             </Scroll>
             <ValidationZone>
               <ValidationMsg>
