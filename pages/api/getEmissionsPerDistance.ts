@@ -1,7 +1,8 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import { trackAPIRequest } from 'utils/middleware'
 import { computeTransportEmission } from './v1/transport'
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   await trackAPIRequest(req, 'getEmissionsPerDistance', JSON.stringify(req.query))
 
   const queryObj = req.query
@@ -9,12 +10,13 @@ export default async function handler(req, res) {
   const km = queryObj.km || 1
   const filter = queryObj.filter || (queryObj.transportations ? 'all' : 'smart')
 
-  const activeTransportations = queryObj.transportations
-    ? queryObj.transportations.split(',').map((id) => Number(id))
-    : undefined
+  const activeTransportations =
+    queryObj.transportations && typeof queryObj.transportations === 'string'
+      ? queryObj.transportations.split(',').map((id: string) => Number(id))
+      : undefined
 
   const ignoreRadiativeForcing = !!queryObj.ignoreRadiativeForcing || false
-  const fields = (queryObj.fields || '').split(',')
+  const fields = typeof queryObj.fields === 'string' ? queryObj.fields.split(',') : ''
 
   const respObj = computeTransportEmission(
     km,
