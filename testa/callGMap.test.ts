@@ -2,6 +2,7 @@ import { rateLimit } from 'express-rate-limit'
 import slowDown from 'express-slow-down'
 import { HttpResponse, http } from 'msw'
 import { setupServer } from 'msw/node'
+import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks } from 'node-mocks-http'
 import callGMap from 'pages/api/callGMap'
 import matrixJson from 'test-mock/matrix.json'
@@ -16,14 +17,14 @@ const validBody = {
 
 jest.mock('express-slow-down', () =>
   jest.fn().mockImplementation(() => {
-    return (req, res, next) => {
+    return (req: NextApiRequest, res: NextApiResponse, next: () => void) => {
       return next()
     }
   })
 )
 jest.mock('express-rate-limit', () => ({
   rateLimit: jest.fn().mockImplementation(() => {
-    return (req, res, next) => {
+    return (req: NextApiRequest, res: NextApiResponse, next: () => void) => {
       return next()
     }
   }),
@@ -39,6 +40,7 @@ describe('CallGMap', () => {
       body: validBody,
     })
     // When
+    // @ts-expect-error: wrapped objects
     await callGMap(req, res)
     // Then
     expect(callsHistory[0]).toStrictEqual({
@@ -56,6 +58,7 @@ describe('CallGMap', () => {
     })
     process.env = { ...process.env, LIMIT_API: 'activated' }
     // When
+    // @ts-expect-error: wrapped objects
     await callGMap(req, res)
     // Then
     expect(res._getStatusCode()).toBe(403)
@@ -73,6 +76,7 @@ describe('CallGMap', () => {
     })
     process.env = { ...process.env, LIMIT_API: 'activated', NEXT_PUBLIC_URL: 'https://example.com' }
     // When
+    // @ts-expect-error: wrapped objects
     await callGMap(req, res)
     // Then
     expect(res._getStatusCode()).toBe(200)
@@ -89,6 +93,7 @@ describe('CallGMap', () => {
     })
     process.env = { ...process.env, LIMIT_API: 'activated', NEXT_PUBLIC_URL: 'https://example.com' }
     // When
+    // @ts-expect-error: wrapped objects
     await callGMap(req, res)
     // Then
     expect(res._getStatusCode()).toBe(200)
@@ -98,7 +103,12 @@ describe('CallGMap', () => {
   //---------
   // STUBBING PART BELOW
   //----------
-  let callsHistory = []
+
+  let callsHistory: {
+    method: string
+    pathname: string
+    searchParams: string
+  }[]
   const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json(matrixJson)))
   const env = process.env
   server.events.on('request:start', async ({ request }) => {
