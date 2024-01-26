@@ -1,5 +1,5 @@
 import { createMocks } from 'node-mocks-http'
-import getEmissionsPerDistance from 'pages/api/getEmissionsPerDistance.js'
+import getEmissionsPerDistance from 'pages/api/getEmissionsPerDistance'
 
 describe('getEmissionPerDistance', () => {
   test('peut être filtré par champ', async () => {

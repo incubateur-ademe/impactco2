@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const queryObj = req.query
 
-  const km = queryObj.km || 1
+  const km: number = queryObj.km ? Number(queryObj.km) : 1
   const filter = queryObj.filter || (queryObj.transportations ? 'all' : 'smart')
 
   const activeTransportations =
@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       : undefined
 
   const ignoreRadiativeForcing = !!queryObj.ignoreRadiativeForcing || false
-  const fields = typeof queryObj.fields === 'string' ? queryObj.fields.split(',') : ''
+  const fields = typeof queryObj.fields === 'string' ? queryObj.fields.split(',') : []
 
   const respObj = computeTransportEmission(
     km,
