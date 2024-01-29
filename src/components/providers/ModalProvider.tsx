@@ -23,8 +23,8 @@ const ModalContext = React.createContext<{
   setSocial: Dispatch<SetStateAction<boolean>>
   reduire: boolean
   setReduire: Dispatch<SetStateAction<boolean>>
-  ecv: boolean
-  setEcv: Dispatch<SetStateAction<boolean>>
+  ecv: number | string | undefined
+  setEcv: Dispatch<SetStateAction<number | string | undefined>>
   eqv: boolean
   setEqv: Dispatch<SetStateAction<boolean>>
   ifl: boolean
@@ -45,7 +45,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
   const [share, setShare] = useState<string | boolean>(false)
   const [social, setSocial] = useState(false)
   const [reduire, setReduire] = useState(false)
-  const [ecv, setEcv] = useState(false)
+  const [ecv, setEcv] = useState<number | string>()
   const [eqv, setEqv] = useState(false)
   const [ifl, setIfl] = useState(false) //Ifl == IFrameLivraison
   const [devices, setDevices] = useState(false)

@@ -18,7 +18,7 @@ export default function EcvModal() {
       ) : (
         <Modal open={open} setOpen={setOpen}>
           <Title>Étapes du cycle de vie</Title>
-          {[1, 2, 3, 4].includes(open) && <Standard />}
+          {[1, 2, 3, 4, 8].includes(open) && <Standard />}
           {[5, 6, 7].includes(open) && <Transport />}
           {[30, 31, 32, 33, 34, 35].includes(open) && <Agribalyse />}
           {[

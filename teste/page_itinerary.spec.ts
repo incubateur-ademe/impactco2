@@ -26,7 +26,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   await test.step('Shares with no params', async () => {
     await page.getByTestId('header-share-button').click()
 
-    await expect(page.getByTestId('clipboard-box')).toHaveText('http://localhost:3000/transport/itineraire?')
+    await expect(page.getByTestId('clipboard-box')).toHaveText('http://localhost:3000/transport/itineraire')
   })
 
   await test.step('integrates with no params', async () => {

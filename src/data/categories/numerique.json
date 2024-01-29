@@ -1,6 +1,6 @@
 [
   {
-    "id": 27012,
+    "id": 27013,
     "name": "Smartphone[s]",
     "subtitle": "> 5,5 pouces",
     "synonyms": [
@@ -45,19 +45,19 @@
     "ecv": [
       {
         "id": 1,
-        "value": 26.5
+        "value": 31.9
       },
       {
         "id": 2,
-        "value": 0.757
+        "value": 0.841
       },
       {
         "id": 3,
-        "value": 0.0633
+        "value": 0.0714
       },
       {
         "id": 4,
-        "value": 5.505999999999999
+        "value": 6.256
       }
     ],
     "usage": {
@@ -72,7 +72,7 @@
       "description": "Découvrez le détail de l'empreinte carbone d'un smartphone : impact de ses matières premières, de son assemblage, son approvisionnement..."
     },
     "source": "https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html",
-    "total": 32.8
+    "total": 39.1
   },
   {
     "id": 27003,

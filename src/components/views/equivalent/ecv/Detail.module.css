@@ -1,0 +1,26 @@
+.title {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.5rem;
+  }
+}
+
+.link {
+  margin: auto;
+  width: 100%;
+}
+
+.unit {
+  color: var(--neutral-50);
+  font-size: 0.75rem;
+
+  @media screen and (max-width: 36em) {
+    font-size: 0.5rem;
+  }
+}
