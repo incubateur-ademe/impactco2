@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import Equivalent from './Equivalent'
 
 export default {
-  title: 'Components/Shopify',
+  title: 'Shopify/Etiquette',
   component: Equivalent,
 } as Meta<typeof Equivalent>
 

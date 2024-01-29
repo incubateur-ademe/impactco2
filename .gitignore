@@ -55,3 +55,5 @@ cypress/results/
 storybook-static/
 
 public/shopify.js
+
+shopify/.env.impact-co2

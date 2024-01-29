@@ -1,0 +1,657 @@
+{% if block.settings.empreinte != "" %}
+  <div style="font-size: var(--font-body-scale);">
+    <span id='impact-co2-empreinte' style="display: none;">{{ block.settings.empreinte }}</span>
+    <span id='impact-co2-produit' style="display: none;">{{ block.settings.produit }}</span>
+    <span id='impact-co2-theme' style="display: none;">{{ block.settings.theme }}</span>
+    {% render 'empreinte' %}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+  "name": "Empreinte carbone",
+  "target": "section",
+  "javascript": "shopify.js",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "product",
+      "autofill": true
+    },
+    {
+      "type": "select",
+      "id": "theme",
+      "default": "default",
+      "label": "Thème",
+      "options": [
+        {
+          "value": "default",
+          "label": "Clair"
+        },
+        {
+          "value": "night",
+          "label": "Sombre"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "empreinte",
+      "label": "Empreinte CO₂e (en gramme)"
+    },
+    {
+      "type": "select",
+      "id": "produit",
+      "label": "Élément de comparaison",
+      "default": "random",
+      "options": [
+        {
+          "value": "random",
+          "label": "Aléatoire"
+        },
+        {
+          "value": "abricot",
+          "label": "Abricot"
+        },
+        {
+          "value": "ail",
+          "label": "Ail"
+        },
+        {
+          "value": "ananas",
+          "label": "Ananas"
+        },
+        {
+          "value": "appareilphotocompact",
+          "label": "Appareil photo (Compact)"
+        },
+        {
+          "value": "appareilphotoreflex",
+          "label": "Appareil photo (Reflex)"
+        },
+        {
+          "value": "armoire",
+          "label": "Armoire"
+        },
+        {
+          "value": "artichaut",
+          "label": "Artichaut"
+        },
+        {
+          "value": "asperge",
+          "label": "Asperge"
+        },
+        {
+          "value": "aspirateur",
+          "label": "Aspirateur"
+        },
+        {
+          "value": "aubergine",
+          "label": "Aubergine"
+        },
+        {
+          "value": "avocat",
+          "label": "Avocat"
+        },
+        {
+          "value": "banane",
+          "label": "Banane"
+        },
+        {
+          "value": "barredeson",
+          "label": "Barre de son"
+        },
+        {
+          "value": "betterave",
+          "label": "Betterave"
+        },
+        {
+          "value": "biere",
+          "label": "Bière"
+        },
+        {
+          "value": "blette",
+          "label": "Blette"
+        },
+        {
+          "value": "bouilloire",
+          "label": "Bouilloire"
+        },
+        {
+          "value": "brocoli",
+          "label": "Brocoli"
+        },
+        {
+          "value": "cadrephotodigital",
+          "label": "Cadre photo digital"
+        },
+        {
+          "value": "cafe",
+          "label": "Café"
+        },
+        {
+          "value": "cafetieredosette",
+          "label": "Cafetière (À dosettes)"
+        },
+        {
+          "value": "cafetiereexpresso",
+          "label": "Cafetière (Expresso)"
+        },
+        {
+          "value": "cafetierefiltre",
+          "label": "Cafetière (Filtre)"
+        },
+        {
+          "value": "canapeconvertible",
+          "label": "Canapé (Convertible[s])"
+        },
+        {
+          "value": "canapetextile",
+          "label": "Canapé (Textile)"
+        },
+        {
+          "value": "carambole",
+          "label": "Carambole"
+        },
+        {
+          "value": "carotte",
+          "label": "Carotte"
+        },
+        {
+          "value": "cassis",
+          "label": "Cassis"
+        },
+        {
+          "value": "celeri",
+          "label": "Céleri"
+        },
+        {
+          "value": "cerise",
+          "label": "Cerise"
+        },
+        {
+          "value": "chainehifi",
+          "label": "Chaine hifi"
+        },
+        {
+          "value": "chaiseenbois",
+          "label": "Chaise (En bois)"
+        },
+        {
+          "value": "champignonmorille",
+          "label": "Champignon (morille crue)"
+        },
+        {
+          "value": "chataigne",
+          "label": "Châtaigne"
+        },
+        {
+          "value": "chemiseencoton",
+          "label": "Chemise (En coton)"
+        },
+        {
+          "value": "chemiseenviscose",
+          "label": "Chemise (En viscose)"
+        },
+        {
+          "value": "chou",
+          "label": "Chou"
+        },
+        {
+          "value": "choudebruxelles",
+          "label": "Chou de Bruxelles"
+        },
+        {
+          "value": "choufleur",
+          "label": "Chou-fleur"
+        },
+        {
+          "value": "cigarette",
+          "label": "Cigarette"
+        },
+        {
+          "value": "citron",
+          "label": "Citron"
+        },
+        {
+          "value": "clementine",
+          "label": "Clémentine"
+        },
+        {
+          "value": "climatiseur",
+          "label": "Climatiseur"
+        },
+        {
+          "value": "coing",
+          "label": "Coing"
+        },
+        {
+          "value": "concombre",
+          "label": "Concombre"
+        },
+        {
+          "value": "consoledesalon",
+          "label": "Console de salon"
+        },
+        {
+          "value": "consoleportable",
+          "label": "Console portable"
+        },
+        {
+          "value": "courge",
+          "label": "Courge"
+        },
+        {
+          "value": "courgette",
+          "label": "Courgette"
+        },
+        {
+          "value": "cresson",
+          "label": "Cresson"
+        },
+        {
+          "value": "datte",
+          "label": "Datte"
+        },
+        {
+          "value": "eaudurobinet",
+          "label": "Eau du robinet"
+        },
+        {
+          "value": "eauenbouteille",
+          "label": "Eau en bouteille"
+        },
+        {
+          "value": "echalote",
+          "label": "Échalote"
+        },
+        {
+          "value": "ecran215pouces",
+          "label": "Écran (21,5 pouces)"
+        },
+        {
+          "value": "ecran24pouces",
+          "label": "Écran (24 pouces)"
+        },
+        {
+          "value": "enceintebluetooth",
+          "label": "Enceinte bluetooth"
+        },
+        {
+          "value": "endive",
+          "label": "Endive"
+        },
+        {
+          "value": "epinard",
+          "label": "Épinard"
+        },
+        {
+          "value": "fenouil",
+          "label": "Fenouil"
+        },
+        {
+          "value": "figue",
+          "label": "Figue"
+        },
+        {
+          "value": "fourelectrique",
+          "label": "Four (Électrique)"
+        },
+        {
+          "value": "fraise",
+          "label": "Fraise"
+        },
+        {
+          "value": "framboise",
+          "label": "Framboise"
+        },
+        {
+          "value": "fruitdelapassion",
+          "label": "Fruit de la passion"
+        },
+        {
+          "value": "grenade",
+          "label": "Grenade"
+        },
+        {
+          "value": "groseille",
+          "label": "Groseille"
+        },
+        {
+          "value": "haricotvert",
+          "label": "Haricot vert (haricot vert, cru)"
+        },
+        {
+          "value": "homecinema",
+          "label": "Home cinéma"
+        },
+        {
+          "value": "imprimantejetdencre",
+          "label": "Imprimante (Jet d'encre)"
+        },
+        {
+          "value": "jeans",
+          "label": "Jeans"
+        },
+        {
+          "value": "kaki",
+          "label": "Kaki"
+        },
+        {
+          "value": "kiwi",
+          "label": "Kiwi"
+        },
+        {
+          "value": "laitdesoja",
+          "label": "Lait (De soja)"
+        },
+        {
+          "value": "laitdevache",
+          "label": "Lait (De vache)"
+        },
+        {
+          "value": "laitue",
+          "label": "Laitue"
+        },
+        {
+          "value": "lavelinge",
+          "label": "Lave-linge (7kg)"
+        },
+        {
+          "value": "lavevaisselle",
+          "label": "Lave-vaisselle"
+        },
+        {
+          "value": "liseuse",
+          "label": "Liseuse (Non rétro-éclairé)"
+        },
+        {
+          "value": "lit",
+          "label": "Lit (Cadre + sommier + matelas)"
+        },
+        {
+          "value": "livredepoche",
+          "label": "Livre de poche"
+        },
+        {
+          "value": "mache",
+          "label": "Mâche"
+        },
+        {
+          "value": "mais",
+          "label": "Maïs"
+        },
+        {
+          "value": "mandarine",
+          "label": "Mandarine"
+        },
+        {
+          "value": "mangue",
+          "label": "Mangue (Importée par avion)"
+        },
+        {
+          "value": "manteau",
+          "label": "Manteau"
+        },
+        {
+          "value": "melon",
+          "label": "Melon"
+        },
+        {
+          "value": "modemfibre",
+          "label": "Modem (Fibre)"
+        },
+        {
+          "value": "montreconnectee",
+          "label": "Montre connectée"
+        },
+        {
+          "value": "mure",
+          "label": "Mûre"
+        },
+        {
+          "value": "myrtille",
+          "label": "Myrtille"
+        },
+        {
+          "value": "navet",
+          "label": "Navet"
+        },
+        {
+          "value": "nectarine",
+          "label": "Nectarine"
+        },
+        {
+          "value": "noisette",
+          "label": "Noisette"
+        },
+        {
+          "value": "noix",
+          "label": "Noix"
+        },
+        {
+          "value": "noixdecoco",
+          "label": "Noix de coco"
+        },
+        {
+          "value": "oignon",
+          "label": "Oignon"
+        },
+        {
+          "value": "orange",
+          "label": "Orange"
+        },
+        {
+          "value": "ordinateurfixebureautique",
+          "label": "Ordinateur fixe sans écran (Bureautique)"
+        },
+        {
+          "value": "ordinateurfixeperformance",
+          "label": "Ordinateur fixe sans écran (Performance)"
+        },
+        {
+          "value": "ordinateurportable",
+          "label": "Ordinateur portable"
+        },
+        {
+          "value": "chaussuresdesport",
+          "label": "Paire de chaussures (De sport)"
+        },
+        {
+          "value": "chaussuresencuir",
+          "label": "Paire de chaussures (En cuir)"
+        },
+        {
+          "value": "chaussuresentissu",
+          "label": "Paire de chaussures (En tissu)"
+        },
+        {
+          "value": "pamplemousse",
+          "label": "Pamplemousse"
+        },
+        {
+          "value": "panais",
+          "label": "Panais"
+        },
+        {
+          "value": "pasteque",
+          "label": "Pastèque"
+        },
+        {
+          "value": "peche",
+          "label": "Pêche"
+        },
+        {
+          "value": "petitpois",
+          "label": "Petit pois"
+        },
+        {
+          "value": "poire",
+          "label": "Poire"
+        },
+        {
+          "value": "poireau",
+          "label": "Poireau"
+        },
+        {
+          "value": "poivron",
+          "label": "Poivron"
+        },
+        {
+          "value": "polo",
+          "label": "Polo"
+        },
+        {
+          "value": "pomme",
+          "label": "Pomme"
+        },
+        {
+          "value": "potiron",
+          "label": "Potiron"
+        },
+        {
+          "value": "prune",
+          "label": "Prune"
+        },
+        {
+          "value": "pullenacrylique",
+          "label": "Pull (En acrylique)"
+        },
+        {
+          "value": "pullencotonrecycle",
+          "label": "Pull (En coton recyclé)"
+        },
+        {
+          "value": "pullenlaine",
+          "label": "Pull (En laine)"
+        },
+        {
+          "value": "radis",
+          "label": "Radis"
+        },
+        {
+          "value": "raisin",
+          "label": "Raisin"
+        },
+        {
+          "value": "refrigirateur",
+          "label": "Réfrigérateur"
+        },
+        {
+          "value": "reineclaude",
+          "label": "Reine Claude"
+        },
+        {
+          "value": "repasavecduboeuf",
+          "label": "Repas avec du boeuf"
+        },
+        {
+          "value": "repasavecdupoissonblanc",
+          "label": "Repas avec du poisson blanc"
+        },
+        {
+          "value": "repasavecdupoissongras",
+          "label": "Repas avec du poisson gras"
+        },
+        {
+          "value": "repasavecdupoulet",
+          "label": "Repas avec du poulet"
+        },
+        {
+          "value": "repasvegetalien",
+          "label": "Repas végétalien"
+        },
+        {
+          "value": "repasvegetarien",
+          "label": "Repas végétarien"
+        },
+        {
+          "value": "rhubarbe",
+          "label": "Rhubarbe"
+        },
+        {
+          "value": "robeencoton",
+          "label": "Robe (En coton)"
+        },
+        {
+          "value": "robeenpolyester",
+          "label": "Robe (En polyester)"
+        },
+        {
+          "value": "robeenviscose",
+          "label": "Robe (En viscose)"
+        },
+        {
+          "value": "salsifis",
+          "label": "Salsifis"
+        },
+        {
+          "value": "smartphone",
+          "label": "Smartphone (> 5,5 pouces)"
+        },
+        {
+          "value": "soda",
+          "label": "Soda"
+        },
+        {
+          "value": "sweatencoton",
+          "label": "Sweat (En coton)"
+        },
+        {
+          "value": "tshirtencoton",
+          "label": "T-shirt (En coton)"
+        },
+        {
+          "value": "tshirtenpolyester",
+          "label": "T-shirt (En polyester)"
+        },
+        {
+          "value": "tableenbois",
+          "label": "Table (En bois)"
+        },
+        {
+          "value": "tabletteclassique",
+          "label": "Tablette (Classique)"
+        },
+        {
+          "value": "tablettemini",
+          "label": "Tablette (Mini)"
+        },
+        {
+          "value": "tablettedetachable",
+          "label": "Tablette détachable"
+        },
+        {
+          "value": "television",
+          "label": "Télévision  (40 - 49 pouces)"
+        },
+        {
+          "value": "thé",
+          "label": "Thé"
+        },
+        {
+          "value": "tomate",
+          "label": "Tomate"
+        },
+        {
+          "value": "topinambour",
+          "label": "Topinambour"
+        },
+        {
+          "value": "vesteimpermeable",
+          "label": "Veste imperméable"
+        },
+        {
+          "value": "vestesimilicuir",
+          "label": "Veste simili-cuir"
+        },
+        {
+          "value": "vin",
+          "label": "Vin"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

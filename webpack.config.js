@@ -24,7 +24,7 @@ module.exports = [
     entry: './shopify/index.tsx',
     output: {
       filename: 'shopify.js',
-      path: path.resolve(__dirname, 'public'),
+      path: path.resolve(__dirname, 'shopify', 'extensions', 'equivalent-carbone', 'assets'),
     },
     resolve: {
       extensions: ['.tsx', '.jsx', '.ts', '.js'],

@@ -22,12 +22,13 @@ const existingEquivalentsByCategory: Record<string, Equivalent[]> = {
   numerique: numerique,
 }
 
-const ecvs: Record<string, { value: number; label: string; emoji: string }> = {}
+const ecvs: Record<string, { value: number; label: string; emoji: string; category: number }> = {}
 const list: { value: string; label: string }[] = []
 Object.values(existingEquivalentsByCategory).forEach((equivalents) =>
   equivalents.forEach((equivalent) => {
     const name = `${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`
     ecvs[equivalent.slug] = {
+      category: equivalent.category,
       value: computeECV(equivalent) * 1000,
       label: `${equivalent.prefix || ''}${name.toLowerCase()}`,
       emoji: equivalent.emoji,

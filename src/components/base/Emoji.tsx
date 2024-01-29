@@ -1,19 +1,7 @@
+import classNames from 'classnames'
 import React from 'react'
-import styled from 'styled-components'
 import twemoji from 'twemoji'
-
-const Wrapper = styled.span<{ $height?: string }>`
-  display: inline-flex;
-  ${({ $height }) => $height && `height: ${$height};`}
-  font-style: normal;
-  vertical-align: middle;
-
-  img {
-    display: inline-block;
-    height: ${({ $height }) => ($height ? $height : '1em')};
-    width: auto;
-  }
-`
+import styles from './Emoji.module.css'
 
 export default function Emoji({
   children,
@@ -38,12 +26,12 @@ export default function Emoji({
     stringDOMforEmoji = parsed.replace(/alt=".*?"/g, 'alt=""')
   }
   return stringDOMforEmoji ? (
-    <Wrapper
-      $height={height}
+    <div
+      className={classNames(styles.wrapper, className)}
+      style={{ height: height || undefined }}
       dangerouslySetInnerHTML={{
         __html: stringDOMforEmoji,
       }}
-      className={className}
       onClick={onClick || (() => null)}
     />
   ) : (

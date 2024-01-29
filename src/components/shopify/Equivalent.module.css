@@ -1,15 +1,15 @@
 .title {
   font-size: 0.875em;
-  margin-bottom: 0;
+  margin-bottom: 0.75em;
 }
 
 .container {
   border-radius: 8px;
-  border: 1px solid var(--neutral-20, #eae5e8);
+  border: 1px solid var(--neutral-30);
   display: flex !important;
   width: fit-content;
-  line-height: 1.25em;
-  margin-top: 0.75em;
+  line-height: 1.25rem;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
 }
 
 .left {
@@ -17,10 +17,10 @@
   align-items: center;
   gap: 0.75em;
   border-radius: 8px 0 0 8px;
-  padding: 0 0.75em 0 0;
-  border-right: 1px solid var(--primary-30, #afe0dd);
-  background-color: var(--primary-10, #e0f4f3);
-  color: var(--primary-70, #0c5956);
+  padding: 0 1.25em 0 0;
+  border-right: 1px solid var(--primary-30);
+  background-color: var(--primary-10);
+  color: var(--primary-70);
 }
 
 .right {
@@ -29,18 +29,18 @@
   align-items: center;
   gap: 8px;
   border-radius: 0 8px 8px 0;
-  padding: 0.75em 1.25em 0.75em 0.75em;
-  background-color: var(--neutral-00, #ffffff);
-  color: var(--neutral-50, #6a5f66);
+  padding: 0.75em 1.25em;
+  background-color: var(--neutral-00);
+  color: var(--neutral-50);
 }
 
 .equal {
   left: -0.625em;
-  top: 0.75em;
-  border: 1px solid var(--primary-30, #afe0dd);
+  top: 0.875em;
+  border: 1px solid var(--primary-30);
   border-radius: 50%;
-  background-color: var(--neutral-00, #ffffff);
-  color: var(--primary-40, #35a099);
+  background-color: var(--neutral-00);
+  color: var(--primary-40);
   position: absolute;
   display: flex;
   justify-content: center;
@@ -54,7 +54,9 @@
   align-items: center;
   padding: 0 0.75em;
   height: 100%;
-  border-right: 1px solid var(--primary-20, #c4eae7);
+  border-right: 1px solid var(--primary-20);
+
+  color: var(--primary-50);
 
   > svg {
     height: 3em;
@@ -72,10 +74,10 @@
 .equivalentValue,
 .value {
   font-size: 1.25em;
-  line-height: 1.5em;
+  line-height: 1.5rem;
   font-weight: 700;
 }
 
 .equivalentValue {
-  color: var(--neutral-80, #110d10);
+  color: var(--neutral-80);
 }
