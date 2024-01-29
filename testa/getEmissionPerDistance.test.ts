@@ -5,7 +5,7 @@ import getEmissionsPerDistance from 'pages/api/getEmissionsPerDistance'
 describe('getEmissionPerDistance', () => {
   test('peut être filtré par champ', async () => {
     // Given
-    const { req, res }: { req: NextApiRequest; res: NextApiResponse } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/getEmissionsPerDistance?km=3&fields=emoji,display&transportations=14',
     })
@@ -14,9 +14,7 @@ describe('getEmissionPerDistance', () => {
     await getEmissionsPerDistance(req, res)
 
     // Then
-    // @ts-expect-error: Wrapped by test framework
     expect(res._getStatusCode()).toBe(200)
-    // @ts-expect-error: Wrapped by test framework
     expect(JSON.parse(res._getData())).toEqual([
       {
         display: { max: 100, min: 11 },
