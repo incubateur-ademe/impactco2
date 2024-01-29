@@ -31,13 +31,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     respObj
       ? // Set response according to field parameter
         respObj.map((transportation) => {
-          const response = {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const response: any = {
             id: transportation.id,
             name: `${transportation.name}${transportation.subtitle ? ` (${transportation.subtitle})` : ''}`,
             emissions: transportation.emissions,
           }
           for (const field of fields) {
-            response[field] = transportation[field]
+            response[field] = transportation[field as keyof typeof transportation]
           }
           return response
         })
