@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom'
-import { screen } from '@testing-library/react'
+import { Screen, screen } from '@testing-library/react'
+import { Category } from 'types/category'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper.js'
 import Bottom from 'components/misc/category/Bottom'
 
@@ -18,7 +19,7 @@ describe('Bottom - Texte et bouton affichés en bas de chaque thématique', () =
 
   test('Affiche un texte et un bouton par défaut', async () => {
     // When
-    renderWithWrapper(<Bottom category={{}} />)
+    renderWithWrapper(<Bottom category={{} as Category} />)
     // Then
     expect(await screen.findByTestId('bottomText')).toBeInTheDocument()
     expect(await screen.findByTestId('bottomText')).toHaveTextContent('Valeurs exprimées en kg CO2e émis')
@@ -26,24 +27,24 @@ describe('Bottom - Texte et bouton affichés en bas de chaque thématique', () =
   })
   test("Le bouton a bien le texte 'Voir toutes les thématiques'", async () => {
     // When
-    renderWithWrapper(<Bottom category={{}} />)
+    renderWithWrapper(<Bottom category={{} as Category} />)
     // Then
     expect(await actionButton(screen)).toHaveTextContent('Voir toutes les thématiques')
   })
   test('Le bouton redirige bien vers /thematiques par défaut', async () => {
     // When
-    renderWithWrapper(<Bottom category={{}} />)
+    renderWithWrapper(<Bottom category={{} as Category} />)
     // Then
     expect(await actionButton(screen)).toHaveAttribute('href', '/thematiques')
   })
   test('Le bouton redirige bien vers https://example.com/thematiques si la propriété iframe est présente', async () => {
     // When
-    renderWithWrapper(<Bottom category={{}} iframe />)
+    renderWithWrapper(<Bottom category={{} as Category} iframe />)
     // Then
     expect(await actionButton(screen)).toHaveAttribute('href', 'https://example.com/thematiques')
   })
 })
 
-async function actionButton(screen) {
+async function actionButton(screen: Screen) {
   return (await screen.findByTestId('bottomButton')).querySelector('a')
 }
