@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks } from 'node-mocks-http'
 import notion from 'pages/api/notion'
 import { trackAPIRequest } from 'utils/middleware'
@@ -13,7 +14,7 @@ describe('/api/notion', () => {
   })
   test('retourne une 405 si pas de POST', async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/notion',
     })
@@ -27,7 +28,7 @@ describe('/api/notion', () => {
 
   test('retourne une 400 si les entrées sont non valides', async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'POST',
       url: '/api/notion',
       body: {
@@ -44,8 +45,8 @@ describe('/api/notion', () => {
   })
 
   test('retourne une 201 si les entrées sont valides', async () => {
-    // Given
-    const { req, res } = createMocks({
+    // Givenc
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'POST',
       url: '/api/notion',
       body: {
@@ -65,7 +66,7 @@ describe('/api/notion', () => {
 
   test("Demande à l'API d'être tracée si les entrées sont valides", async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'POST',
       url: '/api/notion',
       body: {
@@ -85,7 +86,7 @@ describe('/api/notion', () => {
 
   test("Ne Demande pas à l'API d'être tracée si les entrées sont invalides", async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'POST',
       url: '/api/notion',
       body: {
@@ -103,7 +104,7 @@ describe('/api/notion', () => {
 
   test("N'appelle pas l'API notion si les entrées sont invalides", async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'POST',
       url: '/api/notion',
       body: {
@@ -121,7 +122,7 @@ describe('/api/notion', () => {
 
   test("Appelle l'API notion si les entrées sont valides", async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'POST',
       url: '/api/notion',
       body: {
