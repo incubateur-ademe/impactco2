@@ -20,13 +20,13 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     renderWithWrapper(<CalculateurLivraison />)
     // Then
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await screen.queryByTestId('produits').value).toBe('habillement')
-    expect(await screen.queryByTestId('retraits').value).toBe('relais')
-    expect(await screen.queryByTestId('relays').value).toBe('voiture_thermique')
-    expect(await screen.queryByTestId('kms').value).toBe('7')
-    expect(await screen.queryByTestId('bcTrajet').textContent).toBe('1,51 kg de CO2e')
-    expect(await screen.queryByTestId('bcAvion').textContent).toBe('0,00 kg de CO2e')
-    expect(await screen.queryByTestId('bcTotal').textContent).toBe('3,31 kg de CO2e ')
+    expect(await (screen.queryByTestId('produits') as HTMLInputElement).value).toBe('habillement')
+    expect(await (screen.queryByTestId('retraits') as HTMLInputElement).value).toBe('relais')
+    expect(await (screen.queryByTestId('relays') as HTMLInputElement).value).toBe('voiture_thermique')
+    expect(await (screen.queryByTestId('kms') as HTMLInputElement).value).toBe('7')
+    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('1,51 kg de CO2e')
+    expect(await (screen.queryByTestId('bcAvion') as HTMLInputElement).textContent).toBe('0,00 kg de CO2e')
+    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('3,31 kg de CO2e ')
   })
   test('Un produit de grande consommation augmente le bilan carbone (BC)', async () => {
     // Given
@@ -35,8 +35,8 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('produits'), ['consommation'])
     // Then
-    expect(await screen.queryByTestId('produits').value).toBe('consommation')
-    expect(await screen.queryByTestId('bcTotal').textContent).toBe('21,54 kg de CO2e ')
+    expect(await (screen.queryByTestId('produits') as HTMLInputElement).value).toBe('consommation')
+    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('21,54 kg de CO2e ')
   })
   test('Un produit culturel diminue le bilan carbone (BC)', async () => {
     // Given
@@ -45,8 +45,8 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('produits'), ['culturel'])
     // Then
-    expect(await screen.queryByTestId('produits').value).toBe('culturel')
-    expect(await screen.queryByTestId('bcTotal').textContent).toBe('1,78 kg de CO2e ')
+    expect(await (screen.queryByTestId('produits') as HTMLInputElement).value).toBe('culturel')
+    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('1,78 kg de CO2e ')
   })
   test('Un produit volumineux augmente le bilan carbone (BC)', async () => {
     // Given
@@ -55,8 +55,8 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('produits'), ['volumineux'])
     // Then
-    expect(await screen.queryByTestId('produits').value).toBe('volumineux')
-    expect(await screen.queryByTestId('bcTotal').textContent).toBe('72,15 kg de CO2e ')
+    expect(await (screen.queryByTestId('produits') as HTMLInputElement).value).toBe('volumineux')
+    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('72,15 kg de CO2e ')
   })
   test("La partie magasin et la partie avion s'affichent par défaut", async () => {
     // Given
@@ -64,7 +64,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     renderWithWrapper(<CalculateurLivraison />)
     // Then
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await screen.queryByTestId('retraits').value).toBe('relais')
+    expect(await (screen.queryByTestId('retraits') as HTMLInputElement).value).toBe('relais')
     expect(await screen.findByTestId('partieMagasin')).toBeVisible()
     expect(await screen.findByTestId('partieAvion')).toBeVisible()
   })
@@ -75,7 +75,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('retraits'), ['click'])
     // Then
-    expect(await screen.queryByTestId('retraits').value).toBe('click')
+    expect(await (screen.queryByTestId('retraits') as HTMLInputElement).value).toBe('click')
     expect(await screen.findByTestId('partieMagasin')).toBeVisible()
     expect(await screen.findByTestId('partieAvion')).toBeVisible()
   })
@@ -86,7 +86,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('retraits'), ['domicile'])
     // Then
-    expect(await screen.queryByTestId('retraits').value).toBe('domicile')
+    expect(await (screen.queryByTestId('retraits') as HTMLInputElement).value).toBe('domicile')
     expect(await screen.findByTestId('partieMagasin')).not.toBeVisible()
     expect(await screen.findByTestId('partieAvion')).toBeVisible()
   })
@@ -94,35 +94,35 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // Given
     const { container } = renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await screen.queryByTestId('bcTotal').textContent).toBe('3,31 kg de CO2e ')
+    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('3,31 kg de CO2e ')
     // When
     await userEvent.click(container.querySelectorAll('.react-switch-handle')[1])
     // Then
-    expect(await screen.queryByTestId('bcTotal').textContent).toBe('19,56 kg de CO2e ')
+    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('19,56 kg de CO2e ')
   })
   test("Si on coche la partie trajet habituel, il n'y a pas de surplus de bilan carbone", async () => {
     // Given
     const { container } = renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await screen.queryByTestId('bcTrajet').textContent).toBe('1,51 kg de CO2e')
+    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('1,51 kg de CO2e')
     // When
     await userEvent.click(container.querySelectorAll('.react-switch-handle')[0])
     // Then
-    expect(await screen.queryByTestId('bcTrajet').textContent).toBe('0,00 kg de CO2e')
+    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('0,00 kg de CO2e')
   })
   test("Si on augmente le nombre de km, le bilan carbone du trajet s'alourdit - ainsi que le total", async () => {
     // Given
     renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await screen.queryByTestId('kms').value).toBe('7')
-    expect(await screen.queryByTestId('bcTrajet').textContent).toBe('1,51 kg de CO2e')
-    expect(await screen.queryByTestId('bcTotal').textContent).toBe('3,31 kg de CO2e ')
+    expect(await (screen.queryByTestId('kms') as HTMLInputElement).value).toBe('7')
+    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('1,51 kg de CO2e')
+    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('3,31 kg de CO2e ')
     // When
-    await userEvent.clear(screen.queryByTestId('kms'))
-    await userEvent.type(screen.queryByTestId('kms'), '21')
+    await userEvent.clear(screen.queryByTestId('kms') as Element)
+    await userEvent.type(screen.queryByTestId('kms') as Element, '21')
     // Then
-    expect(await screen.queryByTestId('kms').value).toBe('21')
-    expect(await screen.queryByTestId('bcTrajet').textContent).toBe('4,54 kg de CO2e')
-    expect(await screen.queryByTestId('bcTotal').textContent).toBe('6,34 kg de CO2e ')
+    expect(await (screen.queryByTestId('kms') as HTMLInputElement).value).toBe('21')
+    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('4,54 kg de CO2e')
+    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('6,34 kg de CO2e ')
   })
 })
