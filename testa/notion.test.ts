@@ -45,7 +45,7 @@ describe('/api/notion', () => {
   })
 
   test('retourne une 201 si les entrées sont valides', async () => {
-    // Givenc
+    // Given
     const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'POST',
       url: '/api/notion',

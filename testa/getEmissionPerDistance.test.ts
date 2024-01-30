@@ -27,7 +27,7 @@ describe('getEmissionPerDistance', () => {
   })
   test('peut renvoyer toutes les données de manière brute', async () => {
     // Given
-    const { req, res }: { req: NextApiRequest; res: NextApiResponse } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/getEmissionsPerDistance',
     })
@@ -36,9 +36,7 @@ describe('getEmissionPerDistance', () => {
     await getEmissionsPerDistance(req, res)
 
     // Then
-    // @ts-expect-error: Wrapped by test framework
     expect(res._getStatusCode()).toBe(200)
-    // @ts-expect-error: Wrapped by test framework
     expect(JSON.parse(res._getData())).toEqual([
       {
         emissions: {
