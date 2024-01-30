@@ -11,9 +11,9 @@ describe("YearlyLivraison - afficher le bilan carbone selon la fréquence d'acha
     // When
     expect(await screen.findByTestId('induction')).toBeInTheDocument()
     // Then
-    expect(await (screen.queryByTestId('numbers') as HTMLInputElement).value).toBe('1')
-    expect(await (screen.queryByTestId('frequences') as HTMLInputElement).value).toBe('par_an')
-    expect(await (screen.queryByTestId('kgCo2e') as HTMLInputElement)).toHaveTextContent('2,13 kg CO2e')
+    expect(await screen.findByTestId('numbers')).toHaveValue('1')
+    expect(await screen.findByTestId('frequences')).toHaveValue('par_an')
+    expect(await screen.findByTestId('kgCo2e')).toHaveTextContent(/^2,13 kg CO2e$/)
   })
   test('Double le bilan carbone si on double le nombre de colis', async () => {
     // Given
