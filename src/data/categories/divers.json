@@ -3,9 +3,7 @@
     "name": "Cigarette[s]",
     "id": 41074,
     "slug": "cigarette",
-    "synonyms": [
-      "fumer"
-    ],
+    "synonyms": ["fumer"],
     "emoji": "🚬",
     "category": 11,
     "total": 5.52,
@@ -21,9 +19,7 @@
     "name": "Livre[s] de poche",
     "id": 20587,
     "slug": "livredepoche",
-    "synonyms": [
-      "lire"
-    ],
+    "synonyms": ["lire"],
     "emoji": "📘",
     "category": 11,
     "default": true,
