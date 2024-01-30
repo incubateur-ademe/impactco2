@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction, useCallback, useEffect } from 'react'
 import Highlighter from 'react-highlight-words'
 import styled from 'styled-components'
 import { Address } from 'types/address'
+import { Point } from 'hooks/useItineraries'
 
 const displayAddress = (address: Address) => {
   // an address can have multiple postcode, display the first
@@ -46,7 +47,7 @@ const Suggestions = ({
   setCurrent: Dispatch<SetStateAction<number>>
   isFetching: boolean
   results: Address[]
-  handleSuggestionClick: (address: Address) => void
+  handleSuggestionClick: (point: Point) => void
 }) => {
   const maxSuggestions = 7
 
@@ -83,7 +84,14 @@ const Suggestions = ({
               <Suggestion
                 $current={index === current}
                 key={result.properties.osm_id}
-                onClick={() => handleSuggestionClick(result)}
+                onClick={() =>
+                  handleSuggestionClick({
+                    latitude: result.geometry.coordinates[1],
+                    longitude: result.geometry.coordinates[0],
+                    city: result.properties.city || result.properties.name || '',
+                    address: displayAddress(result),
+                  })
+                }
                 onMouseDown={(e) => e.preventDefault()}>
                 <Highlighter
                   searchWords={search.split(' ')}

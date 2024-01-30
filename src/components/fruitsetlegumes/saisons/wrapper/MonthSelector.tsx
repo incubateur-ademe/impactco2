@@ -9,7 +9,7 @@ export default function MonthSelector({
   setMonth,
 }: {
   month: number
-  setMonth: Dispatch<SetStateAction<number | undefined>>
+  setMonth: Dispatch<SetStateAction<number>>
 }) {
   return (
     <>

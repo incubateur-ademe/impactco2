@@ -8,6 +8,7 @@ import useParamContext from 'components/providers/ParamProvider'
 import BarChart from 'components/charts/BarChart'
 import Simulator from 'components/misc/Simulator'
 import CategoryWrapper from 'components/misc/category/CategoryWrapper'
+import { CustomParamValue } from 'components/misc/category/CustomParam'
 import SliderWithInput from 'components/misc/slider/SliderWithInput'
 
 const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean }) => {
@@ -31,7 +32,11 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
   )
 
   return (
-    <CategoryWrapper category={category} iframe={iframe} params={{ m2: m2.toString() }} withFooter>
+    <CategoryWrapper
+      category={category}
+      iframe={iframe}
+      params={{ m2: { value: m2, setter: setM2 } as CustomParamValue }}
+      withFooter>
       <Simulator
         text={
           <>

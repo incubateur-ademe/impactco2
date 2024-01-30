@@ -53,3 +53,5 @@ cypress/results/
 .sentryclirc
 
 storybook-static/
+
+shopify/

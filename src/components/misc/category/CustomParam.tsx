@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
+import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
+import { Point } from 'hooks/useItineraries'
 import Emoji from 'components/base/Emoji'
+import AddressInput from 'components/form/AddressInput'
 import CheckboxInput from 'components/form/CheckboxInput'
 import { HiddenLabel } from 'components/form/HiddenLabel'
-import Input from 'components/form/Input'
 import Select from 'components/form/Select'
 import { Container, InputContainer, InputSuffix, Inputs, Param, Params, StyledInput } from './CustomParam.styles'
 
@@ -24,6 +26,7 @@ const configs: Record<
     type: 'number',
     unit: 'm²',
     min: 1,
+    max: 1000,
     inputLabel: 'Surface',
   },
   km: {
@@ -31,6 +34,7 @@ const configs: Record<
     type: 'number',
     unit: 'km',
     min: 1,
+    max: 10000,
     inputLabel: 'Distance',
   },
   month: {
@@ -60,27 +64,32 @@ const addressConfigs: Record<string, { label: string; start: string; end: string
 }
 
 export type CustomParamValue =
-  | string
-  | { start: string; end: string }
+  | {
+      value: string | number
+      setter: (value: string | number) => void
+    }
+  | {
+      start: { value: string; setter: Dispatch<SetStateAction<Point | undefined>> }
+      end: { value: string; setter: Dispatch<SetStateAction<Point | undefined>> }
+    }
   | { value: { emoji: string; label: string }[]; params: string }
-export type CustomParamType = { value: CustomParamValue; visible: boolean }
 
 const CustomParam = ({
+  tracking,
   slug,
-  value,
+  param,
   visible,
-  setValue,
   setVisible,
   integration,
 }: {
+  tracking: string
   slug: string
-  value: CustomParamValue
+  param: CustomParamValue
   visible: boolean
-  setValue: (value: CustomParamValue) => void
   setVisible?: (visbile: boolean) => void
   integration?: boolean
 }) => {
-  if (typeof value === 'string') {
+  if ('setter' in param) {
     const config = configs[slug]
     return (
       <Container>
@@ -101,8 +110,11 @@ const CustomParam = ({
               inline={!setVisible}
               id={slug}
               disabled={!visible}
-              value={value}
-              onChange={(event) => setValue(event.target.value)}
+              value={param.value}
+              onChange={(event) => {
+                track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
+                param.setter(event.target.value)
+              }}
               color='secondary'
               data-testid={`custom-param-${slug}-select`}>
               {config.options.map((option) => (
@@ -116,8 +128,24 @@ const CustomParam = ({
               id={slug}
               disabled={!visible}
               type={config.type}
-              value={value}
-              onChange={(event) => setValue(event.target.value)}
+              value={param.value}
+              onChange={(event) => {
+                track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
+                if (config.type === 'number') {
+                  const value = Number(event.target.value)
+                  if (config.min && value < config.min) {
+                    param.setter(config.min)
+                    return
+                  }
+                  if (config.max && value > config.max) {
+                    param.setter(config.max)
+                    return
+                  }
+                  param.setter(value)
+                  return
+                }
+                param.setter(event.target.value)
+              }}
               min={config.min}
               max={config.max}
               color='secondary'
@@ -131,7 +159,7 @@ const CustomParam = ({
     )
   }
 
-  if ('start' in value) {
+  if ('start' in param) {
     const config = addressConfigs[slug]
     return (
       <Container>
@@ -143,23 +171,29 @@ const CustomParam = ({
           />
         )}
         <Inputs>
-          <Input
+          <AddressInput
             id={`${slug}-start`}
-            value={value.start}
             label={config.start}
             required
             disabled={!visible}
             color='secondary'
-            onChange={(e) => setValue({ ...value, start: e.target.value })}
+            place={param.start.value}
+            setPlace={(place) => {
+              track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')
+              param.start.setter(place)
+            }}
           />
-          <Input
+          <AddressInput
             id={`${slug}-end`}
-            value={value.end}
             label={config.end}
             required
             disabled={!visible}
             color='secondary'
-            onChange={(e) => setValue({ ...value, end: e.target.value })}
+            place={param.end.value}
+            setPlace={(place) => {
+              track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')
+              param.end.setter(place)
+            }}
           />
         </Inputs>
       </Container>
@@ -178,7 +212,7 @@ const CustomParam = ({
         />
       )}
       <Params>
-        {value.value.map(({ emoji, label }) => (
+        {param.value.map(({ emoji, label }) => (
           <Param key={emoji}>
             <Emoji height='0.75rem'>{emoji}</Emoji> <span className='text-sm'>{label}</span>
           </Param>

@@ -6,7 +6,7 @@ import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
 import ClipboardBox from 'components/base/ClipboardBox'
 import { Icon } from 'components/osezchanger/icons'
-import { CustomParamType, CustomParamValue } from './CustomParam'
+import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { Buttons, Meta } from './Share.styles'
 import { buildCustomParamsUrl } from './customParamsUrl'
@@ -22,32 +22,33 @@ const Share = ({
   path?: string
   tracking?: string
 }) => {
-  const [customValues, setCustomValues] = useState<Record<string, CustomParamType> | null>(null)
+  const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
   useEffect(() => {
     if (params) {
-      const values: Record<string, CustomParamType> = {}
-      Object.entries(params).forEach(([key, value]) => {
-        values[key] = {
-          value,
-          visible: customValues && customValues[key] ? customValues[key].visible : true,
-        }
+      const values: Record<string, boolean> = {}
+      Object.keys(params).forEach((key) => {
+        values[key] = visibility ? visibility[key] : true
       })
-      setCustomValues(values)
+      setVisibility(values)
     }
-  }, [params, setCustomValues])
+  }, [params, setVisibility])
 
-  const url = buildCurrentUrlFor(`${path || category?.slug}?${buildCustomParamsUrl(customValues)}`).replace(/\?$/, '')
+  const url = buildCurrentUrlFor(`${path || category?.slug}?${buildCustomParamsUrl(params, visibility)}`).replace(
+    /\?$/,
+    ''
+  )
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
   return (
     <>
-      {customValues && (
+      {params && visibility && (
         <CustomParams
           tracking={trackingValue}
           trackingType='Partager'
-          customValues={customValues}
-          setCustomValues={setCustomValues}
+          params={params}
+          visibility={visibility}
+          setVisibility={setVisibility}
         />
       )}
       <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>

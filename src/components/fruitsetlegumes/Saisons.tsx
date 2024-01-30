@@ -11,6 +11,7 @@ import useParamContext from 'components/providers/ParamProvider'
 import ShareableContent from 'components/misc/ShareableContent'
 import Bottom from 'components/misc/category/Bottom'
 import { Header } from 'components/misc/category/CategoryWrapper.styles'
+import { CustomParamValue } from 'components/misc/category/CustomParam'
 import Instruction from 'components/misc/category/Instruction'
 import { Top } from 'components/misc/category/Top'
 import { OverScreenCategory } from 'components/misc/category/overScreens/Type'
@@ -108,16 +109,15 @@ export default function Saisons({ category, iframe }: { category: Category; ifra
         ),
     [equivalents, category, month, results, sorting]
   )
+
+  const params = useMemo(() => ({ month: { value: month, setter: setMonth } as CustomParamValue }), [month, setMonth])
   const [overScreen, setOverScreen] = useState<OverScreenCategory | undefined>()
-  const overScreenValues = useMemo(
-    () => overScreenCategoryValues(category, { month: (month || '0').toString() }),
-    [category, month]
-  )
+  const overScreenValues = useMemo(() => overScreenCategoryValues(category, params), [category, params])
 
   return month !== undefined && equivalentsOfTheMonth ? (
     <ShareableContent<OverScreenCategory>
       category={category}
-      params={{ month: month.toString() }}
+      params={params}
       iframe={iframe}
       tracking={category.name}
       setOverScreen={setOverScreen}

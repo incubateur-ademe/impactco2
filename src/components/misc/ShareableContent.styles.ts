@@ -34,10 +34,14 @@ export const Screenshotable = styled.div<{ $theme?: 'color' }>`
   background-color: ${({ $theme }) => ($theme ? 'var(--secondary-10)' : 'var(--neutral-00)')};
 `
 
-export const Content = styled.div<{ $theme?: 'color' }>`
-  border-radius: 16px;
+export const Content = styled.div`
   flex: 1;
-  ${({ $theme }) => $theme === 'color' && 'background-color: var(--secondary-10);'}
+`
+
+export const Theme = styled.div<{ $theme?: 'color' }>`
+  background-color: ${({ $theme }) => ($theme === 'color' ? 'var(--secondary-10)' : 'var(--neutral-00)')};
+  border-radius: 16px;
+  color: var(--neutral-70);
 `
 
 export const Separator = styled.div`
