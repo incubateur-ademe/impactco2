@@ -53,29 +53,23 @@ describe('Seo', () => {
   it("La meta og:url représente bien l'URL courante (version compliquée)", () => {
     mockRouter.push('/another/a?b=c')
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[property="og:url"]')[0] as HTMLMetaElement).content).toBe(
-      'https://example.com/another/a?b=c'
-    )
+    expect(getMetaProperty(container, 'og:url')).toEqual('https://example.com/another/a?b=c')
   })
   it('La meta og:title vaut la même chose que le title', () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[property="og:title"]')[0] as HTMLMetaElement).content).toBe(default_title)
+    expect(getMetaProperty(container, 'og:title')).toEqual(default_title)
   })
   it('La meta og:description vaut la même chose que la description', () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[property="og:description"]')[0] as HTMLMetaElement).content).toBe(
-      default_description
-    )
+    expect(getMetaProperty(container, 'og:description')).toEqual(default_description)
   })
   it('La meta twitter:card vaut la constante summary_large_image', () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[name="twitter:card"]')[0] as HTMLMetaElement).content).toBe(
-      'summary_large_image'
-    )
+    expect(getMetaName(container, 'twitter:card')).toEqual('summary_large_image')
   })
   it('La meta twitter:creator est pour le compte ademe', () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[name="twitter:creator"]')[0] as HTMLMetaElement).content).toBe('ademe')
+    expect(getMetaName(container, 'twitter:creator')).toEqual('ademe')
   })
   it('La meta twitter:title vaut la même chose que le titre', () => {
     const { container } = render(<Seo />)
