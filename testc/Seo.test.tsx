@@ -81,9 +81,7 @@ describe('Seo', () => {
   })
   it("La meta twitter:image vaut la même chose que l'image", () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[name="twitter:image"]')[0] as HTMLMetaElement).content).toBe(
-      'https://example.com/metaimage.png'
-    )
+    expect(getMetaName(container, 'twitter:image')).toEqual('https://example.com/metaimage.png')
   })
   it('La balise title peut être personnalisée', () => {
     render(<Seo title='aaa' />)
@@ -91,12 +89,10 @@ describe('Seo', () => {
   })
   it('La meta image peut être personnalisée', () => {
     const { container } = render(<Seo image={'myimage.png'} />)
-    expect((container.querySelectorAll('meta[name=image]')[0] as HTMLMetaElement).content).toBe(
-      'https://example.com/myimage.png'
-    )
+    expect(getMetaName(container, 'image')).toEqual('https://example.com/myimage.png')
   })
   it('La description peut être personnalisée', () => {
     const { container } = render(<Seo description={'my description'} />)
-    expect((container.querySelectorAll('meta[name=description]')[0] as HTMLMetaElement).content).toBe('my description')
+    expect(getMetaName(container, 'description')).toEqual('my description')
   })
 })
