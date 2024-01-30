@@ -99,18 +99,16 @@ describe('EqModal4 - Modale pour modifier les équivalences de la partie livrais
     expect(screen.queryByTestId('emptyChoice')).not.toBeInTheDocument()
     // When
     act(() => {
-      // @ts-expect-error : null object
-      screen.getByTestId('EqModal4').querySelector('button.checked-eq').click()
+      ;(screen.getByTestId('EqModal4').querySelector('button.checked-eq') as HTMLInputElement).click()
     })
+
     expect(screen.getByTestId('eqs-title')).toHaveTextContent('2/3 équivalences sélectionnées')
     act(() => {
-      // @ts-expect-error : null object
-      screen.getByTestId('EqModal4').querySelector('button.checked-eq').click()
+      ;(screen.getByTestId('EqModal4').querySelector('button.checked-eq') as HTMLInputElement).click()
     })
     expect(screen.getByTestId('eqs-title')).toHaveTextContent('1/3 équivalence sélectionnée')
     act(() => {
-      // @ts-expect-error : null object
-      screen.getByTestId('EqModal4').querySelector('button.checked-eq').click()
+      ;(screen.getByTestId('EqModal4').querySelector('button.checked-eq') as HTMLInputElement).click()
     })
     expect(screen.getByTestId('eqs-title')).toHaveTextContent('0/3 équivalence sélectionnée')
 
