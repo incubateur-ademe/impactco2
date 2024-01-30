@@ -34,13 +34,12 @@ const DISTANCE_MATRIX_ENDPOINT = 'https://maps.googleapis.com/maps/api/distancem
 describe('CallGMap', () => {
   test("Doit appeler l'API distanceMatrix", async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/callGMap',
       body: validBody,
     })
     // When
-    // @ts-expect-error: wrapped objects
     await callGMap(req, res)
     // Then
     expect(callsHistory[0]).toStrictEqual({
@@ -51,14 +50,13 @@ describe('CallGMap', () => {
   })
   test('Si la limite est activée, refuse un appel ne provenant pas du site appelant', async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/callGMap',
       body: validBody,
     })
     process.env = { ...process.env, LIMIT_API: 'activated' }
     // When
-    // @ts-expect-error: wrapped objects
     await callGMap(req, res)
     // Then
     expect(res._getStatusCode()).toBe(403)
@@ -66,7 +64,7 @@ describe('CallGMap', () => {
   })
   test('Si la limite est activée, accepte un simple appel provenant du site appelant', async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/callGMap',
       body: validBody,
@@ -76,14 +74,13 @@ describe('CallGMap', () => {
     })
     process.env = { ...process.env, LIMIT_API: 'activated', NEXT_PUBLIC_URL: 'https://example.com' }
     // When
-    // @ts-expect-error: wrapped objects
     await callGMap(req, res)
     // Then
     expect(res._getStatusCode()).toBe(200)
   })
   test("Si la limite est activée, peut ralentir ou stopper l'exécution", async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/callGMap',
       body: validBody,
@@ -93,7 +90,6 @@ describe('CallGMap', () => {
     })
     process.env = { ...process.env, LIMIT_API: 'activated', NEXT_PUBLIC_URL: 'https://example.com' }
     // When
-    // @ts-expect-error: wrapped objects
     await callGMap(req, res)
     // Then
     expect(res._getStatusCode()).toBe(200)
