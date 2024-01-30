@@ -55,8 +55,8 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('produits'), ['volumineux'])
     // Then
-    expect(await (screen.queryByTestId('produits') as HTMLInputElement).value).toBe('volumineux')
-    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('72,15 kg de CO2e ')
+    expect(await screen.findByTestId('produits')).toHaveValue('volumineux')
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^72,15 kg de CO2e$/)
   })
   test("La partie magasin et la partie avion s'affichent par défaut", async () => {
     // Given
