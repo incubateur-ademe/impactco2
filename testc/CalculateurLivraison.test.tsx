@@ -24,9 +24,9 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     expect(await screen.findByTestId('retraits')).toHaveValue('relais')
     expect(await screen.findByTestId('relays')).toHaveValue('voiture_thermique')
     expect(await screen.findByTestId('kms')).toHaveValue(7)
-    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('1,51 kg de CO2e')
-    expect(await (screen.queryByTestId('bcAvion') as HTMLInputElement).textContent).toBe('0,00 kg de CO2e')
-    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('3,31 kg de CO2e ')
+    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent('1,51 kg de CO2e')
+    expect(await screen.findByTestId('bcAvion')).toHaveTextContent('0,00 kg de CO2e')
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO2e$/)
   })
   test('Un produit de grande consommation augmente le bilan carbone (BC)', async () => {
     // Given
