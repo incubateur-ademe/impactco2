@@ -35,8 +35,8 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('produits'), ['consommation'])
     // Then
-    expect(await (screen.queryByTestId('produits') as HTMLInputElement).value).toBe('consommation')
-    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('21,54 kg de CO2e ')
+    expect(await screen.findByTestId('produits')).toHaveValue('consommation')
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^21,54 kg de CO2e$/)
   })
   test('Un produit culturel diminue le bilan carbone (BC)', async () => {
     // Given
@@ -45,8 +45,8 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('produits'), ['culturel'])
     // Then
-    expect(await (screen.queryByTestId('produits') as HTMLInputElement).value).toBe('culturel')
-    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('1,78 kg de CO2e ')
+    expect(await screen.findByTestId('produits')).toHaveValue('culturel')
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^1,78 kg de CO2e$/)
   })
   test('Un produit volumineux augmente le bilan carbone (BC)', async () => {
     // Given
