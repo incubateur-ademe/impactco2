@@ -2,6 +2,7 @@ import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import mockRouter from 'next-router-mock'
 import { ReactNode } from 'react'
+import { getMetaName, getMetaProperty } from 'test-utils/get-meta'
 import Seo from 'components/layout/web/Seo'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
@@ -36,24 +37,18 @@ describe('Seo', () => {
     render(<Seo />)
     expect(document.title).toBe(default_title)
   })
-  it('La meta image est /metaimage.png par défaut', () => {
+  it('La meta image est /metaimage.png par défaut', async () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[name=image]')[0] as HTMLMetaElement).content).toBe(
-      'https://example.com/metaimage.png'
-    )
+    expect(getMetaName(container, 'image')).toEqual('https://example.com/metaimage.png')
   })
   it('La meta description est "sensibilisez..." par défaut', () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[name=description]')[0] as HTMLMetaElement).content).toBe(
-      default_description
-    )
+    expect(getMetaName(container, 'description')).toEqual(default_description)
   })
   it("La meta og:url représente bien l'URL courante (version simple)", () => {
     mockRouter.push('/current-path')
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[property="og:url"]')[0] as HTMLMetaElement).content).toBe(
-      'https://example.com/current-path'
-    )
+    expect(getMetaProperty(container, 'og:url')).toEqual('https://example.com/current-path')
   })
   it("La meta og:url représente bien l'URL courante (version compliquée)", () => {
     mockRouter.push('/another/a?b=c')
