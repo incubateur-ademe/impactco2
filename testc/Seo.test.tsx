@@ -37,7 +37,7 @@ describe('Seo', () => {
     render(<Seo />)
     expect(document.title).toBe(default_title)
   })
-  it('La meta image est /metaimage.png par défaut', async () => {
+  it('La meta image est /metaimage.png par défaut', () => {
     const { container } = render(<Seo />)
     expect(getMetaName(container, 'image')).toEqual('https://example.com/metaimage.png')
   })
