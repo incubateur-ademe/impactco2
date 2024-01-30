@@ -73,13 +73,11 @@ describe('Seo', () => {
   })
   it('La meta twitter:title vaut la même chose que le titre', () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[name="twitter:title"]')[0] as HTMLMetaElement).content).toBe(default_title)
+    expect(getMetaName(container, 'twitter:title')).toEqual(default_title)
   })
   it('La meta twitter:description vaut la même chose que la description', () => {
     const { container } = render(<Seo />)
-    expect((container.querySelectorAll('meta[name="twitter:description"]')[0] as HTMLMetaElement).content).toBe(
-      default_description
-    )
+    expect(getMetaName(container, 'twitter:description')).toEqual(default_description)
   })
   it("La meta twitter:image vaut la même chose que l'image", () => {
     const { container } = render(<Seo />)
