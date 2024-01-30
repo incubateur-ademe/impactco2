@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { act, screen } from '@testing-library/react'
 import { renderWithWrapper } from '../test-utils/render-with-wrapper.js'
-import { EqModal4Opener, initializeWith, openModal } from './EqModal4/EqModal4Helper.js'
+import { EqModal4Opener, initializeWith, openModal } from './EqModal4/EqModal4Helper'
 
 describe('EqModal4 - Modale pour modifier les équivalences de la partie livraison', () => {
   beforeEach(async () => {
