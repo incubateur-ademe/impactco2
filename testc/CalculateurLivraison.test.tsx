@@ -20,7 +20,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     renderWithWrapper(<CalculateurLivraison />)
     // Then
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await (screen.queryByTestId('produits') as HTMLInputElement).value).toBe('habillement')
+    expect(await screen.findByTestId('produits')).toHaveValue('habillement')
     expect(await (screen.queryByTestId('retraits') as HTMLInputElement).value).toBe('relais')
     expect(await (screen.queryByTestId('relays') as HTMLInputElement).value).toBe('voiture_thermique')
     expect(await (screen.queryByTestId('kms') as HTMLInputElement).value).toBe('7')
