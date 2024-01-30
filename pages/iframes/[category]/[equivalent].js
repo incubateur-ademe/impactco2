@@ -23,7 +23,7 @@ export default function Equivalent() {
     <Iframe>
       <Details equivalent={equivalent} category={category} />
       <VisualizationSlider equivalent={equivalent} category={category} iframe />
-      <Ecv equivalent={equivalent} />
+      <Ecv equivalent={equivalent} category={category} />
     </Iframe>
   ) : null
 }

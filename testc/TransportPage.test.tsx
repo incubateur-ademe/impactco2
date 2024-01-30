@@ -138,7 +138,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     act(() => {
       screen.getByTestId('custom-param-km-checkbox').click()
     })
-    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport/?')
+    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport/')
   })
 
   test('integrates with manual parameters', async () => {

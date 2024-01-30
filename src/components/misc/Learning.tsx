@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo } from 'react'
+import { ReactNode, useMemo } from 'react'
 import { Category } from 'types/category'
 import useModalContext from 'components/providers/ModalProvider'
 import Card from 'components/base/Card'
@@ -208,10 +208,10 @@ export default function Learning({
           </Strong>
           <p>
             La grande majorité de l'impact du numérique provient de la fabrication des smartphones, ordinateurs, et tous
-            les dispositifs que nous achetons. L'impact carbone des mails va grandement varié selon la taille des pièces
-            jointes et le nombre de destinataires, quand l'impact du streaming ou d'une visioconférence va varier selon
-            la qualité de l'image. Enfin, la vidéo via 4G peut être jusqu'à 2 fois plus émétrice qu'avec une connexion
-            Wifi.
+            les dispositifs que nous achetons. L'impact carbone des mails va grandement varier selon la taille des
+            pièces jointes et le nombre de destinataires, quand l'impact du streaming ou d'une visioconférence va varier
+            selon la qualité de l'image. Enfin, la vidéo via 4G peut être jusqu'à 2 fois plus émettrice qu'avec une
+            connexion Wifi.
           </p>
         </>
       ),

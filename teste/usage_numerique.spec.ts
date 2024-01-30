@@ -54,7 +54,7 @@ test('Update share and integrate values when modifying parameters', async ({ pag
     "http://localhost:3000/usagenumerique?emails=50&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille=5.075&streaming . durée=420&streaming . appareil='ordinateur portable'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=180&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='HD'"
   )
   await page.getByTestId('custom-param-situation-checkbox').click({ force: true })
-  await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/usagenumerique?')
+  await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/usagenumerique')
 
   await page.getByTestId('header-integrate-button').click()
   await expect(page.getByTestId('clipboard-box')).toContainText(

@@ -1,0 +1,60 @@
+.table {
+  text-align: left;
+  border-collapse: collapse;
+  margin: 1rem;
+  width: calc(100% - 2rem);
+
+  thead {
+    background-color: var(--secondary-10);
+    width: 100%;
+  }
+
+  th {
+    padding: 0.5rem 1rem;
+  }
+
+  td {
+    padding: 0.25rem 1rem;
+  }
+
+  tbody {
+    td:first-child {
+      padding-left: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 36em) {
+    margin: 1rem 0;
+    width: calc(100%);
+    font-size: 0.75rem;
+
+    th {
+      padding: 0.25rem 0.5rem;
+    }
+
+    td {
+      padding: 0.125rem 0.5rem;
+    }
+
+    tbody {
+      td:first-child {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.small {
+  margin: 1rem auto;
+  width: 500px;
+  max-width: 100%;
+}
+
+.value {
+  text-align: right;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
