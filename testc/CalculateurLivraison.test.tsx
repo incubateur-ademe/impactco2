@@ -114,9 +114,9 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // Given
     renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await (screen.queryByTestId('kms') as HTMLInputElement).value).toBe('7')
-    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('1,51 kg de CO2e')
-    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('3,31 kg de CO2e ')
+    expect(await screen.findByTestId('kms')).toHaveValue(7)
+    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^1,51 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO2e$/)
     // When
     await userEvent.clear(screen.queryByTestId('kms') as Element)
     await userEvent.type(screen.queryByTestId('kms') as Element, '21')
