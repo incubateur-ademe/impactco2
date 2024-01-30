@@ -64,7 +64,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     renderWithWrapper(<CalculateurLivraison />)
     // Then
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await (screen.queryByTestId('retraits') as HTMLInputElement).value).toBe('relais')
+    expect(await screen.findByTestId('retraits')).toHaveValue('relais')
     expect(await screen.findByTestId('partieMagasin')).toBeVisible()
     expect(await screen.findByTestId('partieAvion')).toBeVisible()
   })
@@ -75,7 +75,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('retraits'), ['click'])
     // Then
-    expect(await (screen.queryByTestId('retraits') as HTMLInputElement).value).toBe('click')
+    expect(await screen.findByTestId('retraits')).toHaveValue('click')
     expect(await screen.findByTestId('partieMagasin')).toBeVisible()
     expect(await screen.findByTestId('partieAvion')).toBeVisible()
   })
@@ -86,7 +86,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // When
     await userEvent.selectOptions(screen.getByTestId('retraits'), ['domicile'])
     // Then
-    expect(await (screen.queryByTestId('retraits') as HTMLInputElement).value).toBe('domicile')
+    expect(await screen.findByTestId('retraits')).toHaveValue('domicile')
     expect(await screen.findByTestId('partieMagasin')).not.toBeVisible()
     expect(await screen.findByTestId('partieAvion')).toBeVisible()
   })
