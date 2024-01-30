@@ -94,21 +94,21 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // Given
     const { container } = renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('3,31 kg de CO2e ')
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO2e$/)
     // When
     await userEvent.click(container.querySelectorAll('.react-switch-handle')[1])
     // Then
-    expect(await (screen.queryByTestId('bcTotal') as HTMLInputElement).textContent).toBe('19,56 kg de CO2e ')
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^19,56 kg de CO2e$/)
   })
   test("Si on coche la partie trajet habituel, il n'y a pas de surplus de bilan carbone", async () => {
     // Given
     const { container } = renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('1,51 kg de CO2e')
+    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^1,51 kg de CO2e$/)
     // When
     await userEvent.click(container.querySelectorAll('.react-switch-handle')[0])
     // Then
-    expect(await (screen.queryByTestId('bcTrajet') as HTMLInputElement).textContent).toBe('0,00 kg de CO2e')
+    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^0,00 kg de CO2e$/)
   })
   test("Si on augmente le nombre de km, le bilan carbone du trajet s'alourdit - ainsi que le total", async () => {
     // Given
