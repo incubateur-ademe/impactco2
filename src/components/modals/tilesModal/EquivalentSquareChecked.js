@@ -61,6 +61,7 @@ export default function EquivalentSquareChecked(props) {
       checked={props.checked}
       onClick={() => props.setChecked(!props.checked)}
       className='checked-eq'
+      role='menuitemcheckbox'
       data-testid={props['data-testid']}>
       <Left>
         <GreenSquare>
