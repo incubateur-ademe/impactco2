@@ -75,7 +75,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
       screen.getByTestId('header-share-button').click()
     })
 
-    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport/?km=10')
+    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport?km=10')
   })
 
   test('integrates with default parameters', async () => {
@@ -104,7 +104,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
       screen.getByTestId('header-share-button').click()
     })
 
-    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport/?km=30')
+    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport?km=30')
   })
 
   test('integrates with modified parameters', async () => {
@@ -133,12 +133,12 @@ describe('TransportPage - affiche la page itinéraire', () => {
     })
 
     await userEvent.type(screen.getByTestId('custom-param-km-input'), '30')
-    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport/?km=1030')
+    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport?km=1030')
 
     act(() => {
       screen.getByTestId('custom-param-km-checkbox').click()
     })
-    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport/')
+    await expect(screen.getByTestId('clipboard-box')).toHaveTextContent('http://localhost:3000/transport')
   })
 
   test('integrates with manual parameters', async () => {

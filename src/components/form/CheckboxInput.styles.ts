@@ -43,6 +43,10 @@ export const Container = styled.label<{ $checked: boolean }>`
     outline: 3px solid var(--secondary-50);
     outline-offset: 2px;
   }
+
+  input:focus:not(:focus-visible) {
+    outline: none;
+  }
 `
 
 export const Check = styled.div`

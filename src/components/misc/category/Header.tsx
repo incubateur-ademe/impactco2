@@ -9,6 +9,7 @@ import { ActionsContainer, Container, Content, Separator } from './Header.styles
 import Integrate from './Integrate'
 import Share from './Share'
 import TransportIntegrate from './TransportIntegrate'
+import TransportShare from './TransportShare'
 
 const Header = ({
   category,
@@ -69,7 +70,12 @@ const Header = ({
           {opened && (
             <Content>
               <Separator />
-              {opened === 'partager' && <Share category={category} params={params} path={path} />}
+              {opened === 'partager' &&
+                (type ? (
+                  <TransportShare tracking={tracking} type={type} />
+                ) : (
+                  <Share category={category} params={params} path={path} />
+                ))}
               {opened === 'integrer' &&
                 (type ? (
                   <TransportIntegrate tracking={tracking} type={type} />

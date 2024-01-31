@@ -110,7 +110,12 @@ export default function Saisons({ category, iframe }: { category: Category; ifra
     [equivalents, category, month, results, sorting]
   )
 
-  const params = useMemo(() => ({ month: { value: month, setter: setMonth } as CustomParamValue }), [month, setMonth])
+  const params = useMemo(
+    () => ({
+      month: { value: month, setter: (value) => setMonth(Number.parseInt(value.toString())) } as CustomParamValue,
+    }),
+    [month, setMonth]
+  )
   const [overScreen, setOverScreen] = useState<OverScreenCategory | undefined>()
   const overScreenValues = useMemo(() => overScreenCategoryValues(category, params), [category, params])
 

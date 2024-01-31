@@ -29,7 +29,7 @@ const Integrate = ({
       })
       setVisibility(values)
     }
-  }, [paramWithTheme, setVisibility, visibility])
+  }, [paramWithTheme])
 
   const url = `<script name="impact-co2" src="${
     process.env.NEXT_PUBLIC_URL
