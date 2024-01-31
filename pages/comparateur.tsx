@@ -1,12 +1,10 @@
 import React from 'react'
-import { track } from 'utils/matomo'
 import { Section, SectionWideContent } from 'components/base/Section'
-import Link from 'components/base/buttons/Link'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Tiles from 'components/misc/Tiles'
-import { Sources } from 'components/misc/category/CategoryWrapper.styles'
+import Sources from 'components/misc/category/Sources'
 
 const Convertisseur = () => {
   return (
@@ -24,19 +22,13 @@ const Convertisseur = () => {
           </>
         }
       />
-      <Section $withoutPadding>
+      <Section $withoutPadding $margin='1.5rem 0'>
         <SectionWideContent $size='xs'>
-          <Sources>
-            Source :{' '}
-            <Link
-              href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'
-              priority='secondary'
-              onClick={() =>
-                track('Comparateur carbone', 'Source', 'https://base-empreinte.ademe.fr/donnees/jeu-donnees')
-              }>
-              Base Empreinte ADEME
-            </Link>
-          </Sources>
+          <Sources
+            tracking='Comparateur carbone'
+            priority='secondary'
+            sources={[{ label: 'Base Empreinte ADEME', href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees' }]}
+          />
         </SectionWideContent>
       </Section>
       <Learning from='/comparateur' fromLabel='Comparateur carbone' />

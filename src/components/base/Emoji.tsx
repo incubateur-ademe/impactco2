@@ -28,7 +28,7 @@ export default function Emoji({
   return stringDOMforEmoji ? (
     <div
       className={classNames(styles.wrapper, className)}
-      style={{ height: height || undefined }}
+      style={{ height: height || '1em' }}
       dangerouslySetInnerHTML={{
         __html: stringDOMforEmoji,
       }}
