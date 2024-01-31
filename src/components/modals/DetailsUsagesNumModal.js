@@ -39,11 +39,11 @@ export default function DetailsUsagesNumModal() {
             </p>
             <h3>Pour la visioconférence :</h3>
             <p>
-              On considère que l'impact de la visioconférence est seulement celui associé à son emplacement dans la
-              visioconférence. Les qualités "audio", "basse définition", "haute définition" correspondent respectivement
-              à des tailles de vidéos de 164&thinsp;Mo, 700&thinsp;Mo et 3&thinsp;Go par heure. Concernant la
-              transmission des données et les data-centers, les hypothèses utilisées pour le streaming ont été
-              appliquées à la visioconférence.
+              On considère 2 personnes par défault dans la visioconférence et que son impact est seulement celui associé
+              à son emplacement dans la visioconférence. Les qualités "audio", "basse définition", "haute définition"
+              correspondent respectivement à des tailles de vidéos de 164&thinsp;Mo, 700&thinsp;Mo et 3&thinsp;Go par
+              heure. Concernant la transmission des données et les data-centers, les hypothèses utilisées pour le
+              streaming ont été appliquées à la visioconférence.
             </p>
           </Modal>
         </>
