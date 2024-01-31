@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Emoji from 'components/base/Emoji'
 
 export const Container = styled.div`
   display: flex;
@@ -7,12 +6,11 @@ export const Container = styled.div`
   gap: 2.5rem;
 `
 
-export const StyledEmoji = styled(Emoji)`
+export const StyledEmoji = styled.div`
   background-color: var(--primary-10);
   border-radius: 50%;
   display: inline-block;
   font-size: 1.5rem;
-  height: 2.5rem;
   line-height: 1;
   margin-right: 0.5rem;
   padding: 0.5rem;

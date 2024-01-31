@@ -1,0 +1,31 @@
+.subtitle {
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 0;
+  white-space: nowrap;
+
+  @media screen and (max-width: 36em) {
+    font-size: 1.125rem;
+    line-height: inherit;
+  }
+}
+
+.br {
+  display: none;
+
+  @media screen and (max-width: 36em) {
+    display: inline;
+  }
+}
+
+.disclaimer {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  max-width: 27.25rem;
+
+}
+
+.link {
+  display: inline-block;
+  font-size: 0.875rem;
+}

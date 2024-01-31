@@ -5,7 +5,7 @@
 
   img {
     display: inline-block;
-    height: 100%;
+    height: inherit;
     width: auto;
   }
 }
