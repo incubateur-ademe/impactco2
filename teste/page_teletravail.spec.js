@@ -33,7 +33,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await nantes.click()
     expect(page.getByTestId('Address-Domicile').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Nantes  France'
+      'Nantes 44000 France'
     )
   })
 
@@ -58,7 +58,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     // Then
     await expect(page.getByTestId('Address-Travail').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Angers  France'
+      'Angers 49000 France'
     )
     await expect(page.getByText('Choisissez votre mode de')).toBeAttached()
   })

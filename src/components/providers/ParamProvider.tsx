@@ -7,6 +7,7 @@ import { Frequence } from 'types/livraison'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
+import useTheme from 'components/layout/Theme'
 import { default_eqs, frequences } from 'components/livraison/data'
 import { displayAddress } from 'components/transport/search/itinerary/Address'
 
@@ -81,6 +82,8 @@ type LivraisonValues = {
 }
 
 const ParamContext = React.createContext<{
+  theme: string
+  setTheme: Dispatch<SetStateAction<string>>
   livraison: {
     values: LivraisonValues
     setValues: Dispatch<SetStateAction<LivraisonValues>>
@@ -147,7 +150,7 @@ const ParamContext = React.createContext<{
   }
   fruitsetlegumes: {
     month: number
-    setMonth: Dispatch<SetStateAction<number | undefined>>
+    setMonth: Dispatch<SetStateAction<number>>
     search: string
     setSearch: Dispatch<SetStateAction<string>>
     sorting: string
@@ -191,6 +194,13 @@ const ParamContext = React.createContext<{
 
 export function ParamProvider({ children }: { children: ReactNode }) {
   const router = useRouter()
+
+  const initialTheme = useTheme()
+  const [theme, setTheme] = useState(initialTheme.theme)
+
+  useEffect(() => {
+    setTheme(initialTheme.theme)
+  }, [router.asPath])
 
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState({
@@ -240,7 +250,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [days, setDays] = useState(5)
 
   // Fruits et legumes
-  const [month, setMonth] = useState<number>()
+  const [month, setMonth] = useState<number>(new Date().getMonth())
   const [sorting, setSorting] = useState('alph_desc')
   const [search, setSearch] = useState('')
 
@@ -429,6 +439,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   return (
     <ParamContext.Provider
       value={{
+        theme,
+        setTheme,
         livraison: {
           values: livraisonValues,
           setValues: setLivraisonValues,
@@ -494,7 +506,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setM2,
         },
         fruitsetlegumes: {
-          month: month === undefined ? new Date().getMonth() : month,
+          month,
           setMonth,
           sorting,
           setSorting,

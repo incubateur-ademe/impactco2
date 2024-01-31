@@ -26,19 +26,19 @@ const Transport = ({
   const params = useMemo(() => {
     switch (type) {
       case 'distance':
-        return { km: distance.km.toString() } as Record<string, CustomParamValue>
+        return { km: { value: distance.km, setter: distance.setKm } } as Record<string, CustomParamValue>
       case 'itineraire':
         return {
           itineraire: {
-            start: itineraire.start?.address || '',
-            end: itineraire.end?.address || '',
+            start: { value: itineraire.start?.address || '', setter: itineraire.setStart },
+            end: { value: itineraire.end?.address || '', setter: itineraire.setEnd },
           },
         } as Record<string, CustomParamValue>
       case 'teletravail':
         return {
           teletravail: {
-            start: teletravail.start?.address || '',
-            end: teletravail.end?.address || '',
+            start: { value: teletravail.start?.address || '', setter: teletravail.setStart },
+            end: { value: teletravail.end?.address || '', setter: teletravail.setEnd },
           },
         } as Record<string, CustomParamValue>
     }

@@ -35,7 +35,7 @@ test('Chauffage page', async ({ page }) => {
   await test.step('Iframe can be share with theme', async () => {
     await page.getByTestId('header-integrate-button').click()
     await expect(page.getByTestId('clipboard-box')).toContainText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=200"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=200&theme=default"></script>'
     )
 
     await page.getByTestId('custom-param-theme-select').selectOption('night')

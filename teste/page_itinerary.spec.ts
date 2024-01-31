@@ -55,7 +55,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await nantes.click()
     expect(page.getByTestId('Address-Départ').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Nantes  France'
+      'Nantes 44000 France'
     )
   })
 
@@ -63,7 +63,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/transport/itineraire?itineraireStart=Nantes  France'
+      'http://localhost:3000/transport/itineraire?itineraireStart=Nantes 44000 France'
     )
   })
 
@@ -71,7 +71,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=10&itineraireStart=Nantes  France"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=10&itineraireStart=Nantes 44000 France"></script>'
     )
   })
 
@@ -96,7 +96,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     // Then
     await expect(page.getByTestId('Address-Arrivée').locator('form').locator('input')).toHaveAttribute(
       'value',
-      'Angers  France'
+      'Angers 49000 France'
     )
     await expect(page.getByTestId('bar-chart-item-intercites')).toBeAttached()
     await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91 km0,8 kg CO2e')
@@ -106,7 +106,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/transport/itineraire?itineraireStart=Nantes  France&itineraireEnd=Angers  France'
+      'http://localhost:3000/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France'
     )
   })
 
@@ -114,7 +114,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=10&itineraireStart=Nantes  France&itineraireEnd=Angers  France"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France"></script>'
     )
   })
 })

@@ -72,7 +72,6 @@ export default function Search(props) {
         <Suggestions
           search={debouncedSearch}
           results={data}
-          focus={focus}
           current={current}
           setCurrent={setCurrent}
           handleSuggestionClick={navigateToPlace}

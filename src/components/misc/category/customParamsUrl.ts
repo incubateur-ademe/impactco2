@@ -1,32 +1,37 @@
-import { CustomParamType } from './CustomParam'
+import { CustomParamValue } from './CustomParam'
 
-export const buildCustomParamsUrl = (customValues: Record<string, CustomParamType> | null) => {
-  if (!customValues) {
+export const buildCustomParamsUrl = (
+  params: Record<string, CustomParamValue> | undefined,
+  visibility: Record<string, boolean> | null
+) => {
+  if (!visibility || !params) {
     return ''
   }
-  return Object.entries(customValues)
-    .filter(([, { visible }]) => visible)
-    .map(([key, { value }]) => {
-      if (typeof value === 'string') {
-        return `${key}=${value}`
+  return Object.entries(visibility)
+    .filter(([, visible]) => visible)
+    .map(([key]) => {
+      const param = params[key]
+      if ('setter' in param) {
+        return param.value ? `${key}=${param.value}` : ''
       }
-      if ('start' in value) {
-        if (value.start && value.end) {
-          return `${key}Start=${value.start}&${key}End=${value.end}`
+
+      if ('start' in param) {
+        if (param.start && param.start.value && param.end && param.end.value) {
+          return `${key}Start=${param.start.value}&${key}End=${param.end.value}`
         }
 
-        if (value.start) {
-          return `${key}Start=${value.start}`
+        if (param.start && param.start.value) {
+          return `${key}Start=${param.start.value}`
         }
 
-        if (value.end) {
-          return `${key}End=${value.end}`
+        if (param.end && param.end.value) {
+          return `${key}End=${param.end.value}`
         }
 
         return ''
       }
 
-      return value.params
+      return param.params
     })
     .join('&')
 }

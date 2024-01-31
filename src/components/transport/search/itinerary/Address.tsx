@@ -19,28 +19,19 @@ export const displayAddress = (address: AddressType) =>
   } ${address.properties.country}`
 
 export default function Address({
+  id,
   placeholder,
   address,
   setPlace,
 }: {
+  id?: string
   placeholder: string
   address?: string
   setPlace: Dispatch<SetStateAction<Point | undefined>>
 }) {
   return (
-    <Wrapper data-testid={`Address-${placeholder}`}>
-      <Search
-        placeholder={placeholder}
-        address={address}
-        setAddress={(address: AddressType) => {
-          setPlace({
-            latitude: address.geometry.coordinates[1],
-            longitude: address.geometry.coordinates[0],
-            city: address.properties.city || address.properties.name || '',
-            address: displayAddress(address),
-          })
-        }}
-      />
+    <Wrapper data-testid={`Address-${placeholder}`} id={id}>
+      <Search placeholder={placeholder} address={address} setAddress={setPlace} />
     </Wrapper>
   )
 }
