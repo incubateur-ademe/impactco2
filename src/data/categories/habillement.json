@@ -3,9 +3,7 @@
     "name": "Jeans",
     "id": 27043,
     "slug": "jeans",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👖",
     "category": 5,
     "ecv": [
@@ -44,9 +42,7 @@
     "name": "Polo[s]",
     "id": 27046,
     "slug": "polo",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👚",
     "category": 5,
     "ecv": [
@@ -86,9 +82,7 @@
     "id": 27044,
     "subtitle": "En coton",
     "slug": "tshirtencoton",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👕",
     "category": 5,
     "ecv": [
@@ -128,9 +122,7 @@
     "id": 27045,
     "subtitle": "En polyester",
     "slug": "tshirtenpolyester",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👕",
     "category": 5,
     "ecv": [
@@ -170,9 +162,7 @@
     "id": 27049,
     "subtitle": "En coton",
     "slug": "sweatencoton",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "🦺",
     "category": 5,
     "ecv": [
@@ -212,9 +202,7 @@
     "id": 27041,
     "subtitle": "En coton",
     "slug": "chemiseencoton",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👚",
     "category": 5,
     "ecv": [
@@ -254,9 +242,7 @@
     "id": 27042,
     "subtitle": "En viscose",
     "slug": "chemiseenviscose",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👚",
     "category": 5,
     "ecv": [
@@ -296,9 +282,7 @@
     "id": 27058,
     "subtitle": "En cuir",
     "slug": "chaussuresencuir",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👞",
     "category": 5,
     "ecv": [
@@ -338,9 +322,7 @@
     "id": 27059,
     "subtitle": "En tissu",
     "slug": "chaussuresentissu",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "🥾",
     "category": 5,
     "ecv": [
@@ -380,9 +362,7 @@
     "id": 27060,
     "subtitle": "De sport",
     "slug": "chaussuresdesport",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👟",
     "category": 5,
     "ecv": [
@@ -422,9 +402,7 @@
     "id": 27056,
     "subtitle": "En coton",
     "slug": "robeencoton",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👗",
     "category": 5,
     "ecv": [
@@ -464,9 +442,7 @@
     "id": 27055,
     "subtitle": "En polyester",
     "slug": "robeenpolyester",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👗",
     "category": 5,
     "ecv": [
@@ -506,9 +482,7 @@
     "id": 27057,
     "subtitle": "En viscose",
     "slug": "robeenviscose",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "👗",
     "category": 5,
     "ecv": [
@@ -548,9 +522,7 @@
     "id": 27050,
     "subtitle": "En laine",
     "slug": "pullenlaine",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
@@ -590,9 +562,7 @@
     "id": 27047,
     "subtitle": "En acrylique",
     "slug": "pullenacrylique",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
@@ -632,9 +602,7 @@
     "id": 27051,
     "subtitle": "En coton recyclé",
     "slug": "pullencotonrecycle",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "🧶",
     "category": 5,
     "ecv": [
@@ -673,9 +641,7 @@
     "name": "Manteau[s]",
     "id": 27052,
     "slug": "manteau",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "🧥",
     "category": 5,
     "ecv": [
@@ -714,10 +680,7 @@
     "name": "Veste[s] imperméable[s]",
     "id": 27053,
     "slug": "vesteimpermeable",
-    "synonyms": [
-      "k-way",
-      "anorak"
-    ],
+    "synonyms": ["k-way", "anorak"],
     "emoji": "🧥",
     "category": 5,
     "ecv": [
@@ -756,9 +719,7 @@
     "name": "Veste[s] simili-cuir",
     "id": 27054,
     "slug": "vestesimilicuir",
-    "synonyms": [
-      "habiller"
-    ],
+    "synonyms": ["habiller"],
     "emoji": "🧥",
     "category": 5,
     "ecv": [

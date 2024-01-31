@@ -10,6 +10,7 @@ export const Section = styled.section<{
   $theme?: 'color' | 'main'
   $withoutPadding?: boolean
   $size?: 'xs' | 'sm' | 'lg'
+  $margin?: string
 }>`
   max-width: ${({ $size }) => $size && sizes[$size]};
   ${({ $theme }) =>
@@ -26,6 +27,7 @@ export const Section = styled.section<{
         padding: 2rem 0;
       }
     `}
+  ${({ $margin }) => $margin && `margin: ${$margin}`}
 `
 
 export const SectionWideContent = styled.div<{
@@ -42,7 +44,7 @@ export const SectionWideContent = styled.div<{
     css`
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1rem 2rem;
       justify-content: space-between;
       ${$center && 'align-items: center;'}
     `}

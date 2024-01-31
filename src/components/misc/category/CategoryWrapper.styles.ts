@@ -6,9 +6,8 @@ export const Header = styled.h2`
   text-align: center;
 `
 
-export const Sources = styled.div`
+export const SourcesWrapper = styled.div`
   margin-top: 1.5rem;
-  text-align: center;
 `
 
 export const Cards = styled.div`

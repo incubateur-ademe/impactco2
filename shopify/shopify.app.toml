@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "impact-co2"
+client_id = "45ac76b3e996cfa5655da62112ef48d9"
+application_url = "https://unlike-denied-municipality-who.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://unlike-denied-municipality-who.trycloudflare.com/auth/callback",
+  "https://unlike-denied-municipality-who.trycloudflare.com/auth/shopify/callback",
+  "https://unlike-denied-municipality-who.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-9d917803.myshopify.com"
