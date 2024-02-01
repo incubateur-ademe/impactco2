@@ -1,21 +1,22 @@
 import React from 'react'
 import { track } from 'utils/matomo'
-import CustomParam, { CustomParamType } from './CustomParam'
+import CustomParam, { CustomParamValue } from './CustomParam'
 import { Title } from './CustomParam.styles'
 import { Separator } from './TransportIntegrate.styles'
 
 const CustomParams = ({
   title,
-  customValues,
-  setCustomValues,
+  params,
+  visibility,
+  setVisibility,
   tracking,
   trackingType,
   integration,
-  withTheme,
 }: {
   title?: string
-  customValues: Record<string, CustomParamType>
-  setCustomValues: (values: Record<string, CustomParamType>) => void
+  params: Record<string, CustomParamValue>
+  visibility: Record<string, boolean>
+  setVisibility: (values: Record<string, boolean>) => void
   tracking: string
   trackingType: string
   integration?: boolean
@@ -24,56 +25,29 @@ const CustomParams = ({
   return (
     <>
       {title && <Title>{title}</Title>}
-      {Object.entries(customValues)
+      {Object.entries(params)
         .filter(([key]) => key !== 'theme')
-        .map(([key, { value, visible }]) => (
+        .map(([key, param]) => (
           <CustomParam
             key={key}
+            tracking={tracking}
             slug={key}
             integration={integration}
-            value={value}
-            visible={visible}
-            setValue={(newValue) => {
-              track(tracking, `Custom value ${key}`, JSON.stringify(newValue))
-              setCustomValues({
-                ...customValues,
-                [key]: {
-                  value: newValue,
-                  visible: customValues[key].visible,
-                },
-              })
-            }}
+            param={param}
+            visible={visibility[key]}
             setVisible={(newVisibility) => {
               track(tracking, `${trackingType} Custom visibility ${key}`, newVisibility ? 'vrai' : 'faux')
-              setCustomValues({
-                ...customValues,
-                [key]: {
-                  visible: newVisibility,
-                  value: customValues[key].value,
-                },
+              setVisibility({
+                ...visibility,
+                [key]: newVisibility,
               })
             }}
           />
         ))}
-      {withTheme && (
+      {params.theme && (
         <>
-          <Separator />
-          <CustomParam
-            slug='theme'
-            integration={integration}
-            value={customValues.theme ? customValues.theme.value : 'default'}
-            visible
-            setValue={(newValue) => {
-              track(tracking, `Custom value theme`, JSON.stringify(newValue))
-              setCustomValues({
-                ...customValues,
-                theme: {
-                  value: newValue,
-                  visible: true,
-                },
-              })
-            }}
-          />
+          {Object.keys(params).some((param) => param !== 'theme') && <Separator />}
+          <CustomParam tracking={tracking} slug='theme' integration={integration} param={params.theme} visible />
         </>
       )}
     </>

@@ -7,6 +7,7 @@ const RadioInput = ({
   value,
   label,
   children,
+  priority,
   ...inputProps
 }: {
   selected: string
@@ -14,9 +15,10 @@ const RadioInput = ({
   setSelected: Dispatch<SetStateAction<string>>
   label: string
   children?: ReactNode
+  priority?: 'secondary'
 } & InputHTMLAttributes<HTMLInputElement>) => {
   return (
-    <Container $checked={selected === value}>
+    <Container $checked={selected === value} $priority={priority}>
       <input
         {...inputProps}
         type='radio'

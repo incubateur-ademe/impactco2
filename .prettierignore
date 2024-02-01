@@ -34,3 +34,5 @@ yarn-error.log*
 /public/iframe.js
 
 /public/sitemap*
+
+/shopify/

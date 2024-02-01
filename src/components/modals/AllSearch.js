@@ -16,28 +16,31 @@ export default function AllSearch(props) {
   useEffect(() => {
     if (equivalents) {
       setFuse(
-        new Fuse(equivalents, {
-          keys: [
-            {
-              name: 'name',
-              weight: 1,
-            },
-            {
-              name: 'slug',
-              weight: 0.7,
-            },
-            {
-              name: 'subtitle',
-              weight: 0.4,
-            },
-            {
-              name: 'synonyms',
-              weight: 0.2,
-            },
-          ],
-          threshold: 0.3,
-          ignoreLocation: true,
-        })
+        new Fuse(
+          equivalents.filter((equivalent) => !equivalent.hideTile),
+          {
+            keys: [
+              {
+                name: 'name',
+                weight: 1,
+              },
+              {
+                name: 'slug',
+                weight: 0.7,
+              },
+              {
+                name: 'subtitle',
+                weight: 0.4,
+              },
+              {
+                name: 'synonyms',
+                weight: 0.2,
+              },
+            ],
+            threshold: 0.3,
+            ignoreLocation: true,
+          }
+        )
       )
     }
   }, [equivalents])
@@ -45,7 +48,10 @@ export default function AllSearch(props) {
     setResults(
       fuse && search.length > 0
         ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-        : equivalents.map((equivalent) => ({ item: equivalent })).sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
+        : equivalents
+            .filter((equivalent) => !equivalent.hideTile)
+            .map((equivalent) => ({ item: equivalent }))
+            .sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
     )
   }, [search, fuse, equivalents])
 

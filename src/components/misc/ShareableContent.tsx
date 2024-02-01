@@ -3,6 +3,7 @@ import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useScreenshot from 'hooks/useScreenshot'
+import useParamContext from 'components/providers/ParamProvider'
 import OverScreen, { OverScreenInfo } from 'components/base/OverScreen'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
@@ -15,6 +16,7 @@ import {
   Logos,
   Screenshotable,
   Separator,
+  Theme,
 } from './ShareableContent.styles'
 import Actions from './category/Actions'
 import { CustomParamValue } from './category/CustomParam'
@@ -61,6 +63,7 @@ const ShareableContent = <T extends string>({
   theme?: 'color'
   withoutIntegration?: boolean
 }) => {
+  const { theme: darkMode } = useParamContext()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
   return (
     <Section $withoutPadding data-testid={dataTestId}>
@@ -81,36 +84,38 @@ const ShareableContent = <T extends string>({
           </>
         )}
         <SectionWideContent $size={size || 'xs'} $noGutter $flex>
-          <Content $theme={theme}>
-            <Container $iframe={iframe}>
-              {header && <ContentHeader>{header}</ContentHeader>}
-              <div ref={ref}>
-                <Screenshotable $theme={theme}>
-                  {children}
-                  {isScreenshotting && (
-                    <Logos>
-                      <Signature />
-                    </Logos>
-                  )}
-                </Screenshotable>
-              </div>
-              {footer}
-              {iframe && (
-                <>
-                  <IFrameLogos>
-                    <Signature noMargin noLink center />
-                    <Link href={buildCurrentUrlFor(category ? category.slug : '/comparateur')}>version complète</Link>
-                  </IFrameLogos>
-                  <Actions
-                    onClick={(value) => {
-                      value === 'telecharger' ? takeScreenshot() : setOverScreen(value as T)
-                    }}
-                    tracking={tracking}
-                  />
-                </>
-              )}
-              {overScreen && <OverScreen values={overScreen} onClose={() => setOverScreen(undefined)} />}
-            </Container>
+          <Content>
+            <Theme $theme={theme} className={darkMode === 'night' ? 'night' : ''}>
+              <Container $iframe={iframe}>
+                {header && <ContentHeader>{header}</ContentHeader>}
+                <div ref={ref}>
+                  <Screenshotable $theme={theme}>
+                    {children}
+                    {isScreenshotting && (
+                      <Logos>
+                        <Signature />
+                      </Logos>
+                    )}
+                  </Screenshotable>
+                </div>
+                {footer}
+                {iframe && (
+                  <>
+                    <IFrameLogos>
+                      <Signature noMargin noLink center />
+                      <Link href={buildCurrentUrlFor(category ? category.slug : '/comparateur')}>version complète</Link>
+                    </IFrameLogos>
+                    <Actions
+                      onClick={(value) => {
+                        value === 'telecharger' ? takeScreenshot() : setOverScreen(value as T)
+                      }}
+                      tracking={tracking}
+                    />
+                  </>
+                )}
+                {overScreen && <OverScreen values={overScreen} onClose={() => setOverScreen(undefined)} />}
+              </Container>
+            </Theme>
             {bottom}
           </Content>
           {sideContent}

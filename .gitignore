@@ -53,3 +53,9 @@ cypress/results/
 .sentryclirc
 
 storybook-static/
+
+public/shopify.js
+
+shopify/.env.impact-co2
+
+shopify/extensions/equivalent-carbone/assets/shopify.js

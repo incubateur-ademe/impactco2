@@ -11,7 +11,7 @@ test('Chauffage page', async ({ page }) => {
   await test.step('Page is loaded with values for 63m²', async () => {
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('63 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('260')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('158')
   })
 
   await test.step('Values are updated with button', async () => {
@@ -19,7 +19,7 @@ test('Chauffage page', async ({ page }) => {
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('100 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('412')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('250')
   })
 
   await test.step('Values are updated with manual entry', async () => {
@@ -29,13 +29,13 @@ test('Chauffage page', async ({ page }) => {
 
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('200 m²')
     await expect(page.locator('.bar-chart-item')).toHaveCount(7)
-    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('824')
+    await expect(page.getByTestId('bar-chart-item-value').first()).toHaveText('500')
   })
 
   await test.step('Iframe can be share with theme', async () => {
     await page.getByTestId('header-integrate-button').click()
     await expect(page.getByTestId('clipboard-box')).toContainText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=200"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=200&theme=default"></script>'
     )
 
     await page.getByTestId('custom-param-theme-select').selectOption('night')

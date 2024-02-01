@@ -1,0 +1,902 @@
+{
+  "eaudurobinet": {
+    "category": 3,
+    "value": 0.132,
+    "label": "Litre[s] d'eau du robinet",
+    "emoji": "🚰"
+  },
+  "eauenbouteille": {
+    "category": 3,
+    "value": 267.07461992000003,
+    "label": "Litre[s] d'eau en bouteille",
+    "emoji": "💧"
+  },
+  "soda": {
+    "category": 3,
+    "value": 511.22505490000003,
+    "label": "Litre[s] de soda",
+    "emoji": "🥤"
+  },
+  "biere": {
+    "category": 3,
+    "value": 1119.3685269,
+    "label": "Litre[s] de bière",
+    "emoji": "🍺"
+  },
+  "vin": {
+    "category": 3,
+    "value": 1190.3542188999998,
+    "label": "Litre[s] de vin",
+    "emoji": "🍷"
+  },
+  "laitdevache": {
+    "category": 3,
+    "value": 1182.1407829999996,
+    "label": "Litre[s] de lait (de vache)",
+    "emoji": "🥛"
+  },
+  "laitdesoja": {
+    "category": 3,
+    "value": 420,
+    "label": "Litre[s] de lait (de soja)",
+    "emoji": "🍈"
+  },
+  "thé": {
+    "category": 3,
+    "value": 39.161353500000004,
+    "label": "Litre[s] de thé",
+    "emoji": "🫖"
+  },
+  "cafe": {
+    "category": 3,
+    "value": 594.22464326,
+    "label": "Litre[s] de café",
+    "emoji": "☕️"
+  },
+  "fraise": {
+    "category": 9,
+    "value": 477.06577790000006,
+    "label": "kg de fraise",
+    "emoji": "🍓"
+  },
+  "pomme": {
+    "category": 9,
+    "value": 396.515083,
+    "label": "kg de pomme",
+    "emoji": "🍏"
+  },
+  "orange": {
+    "category": 9,
+    "value": 633.964319,
+    "label": "kg d'orange",
+    "emoji": "🍊"
+  },
+  "citron": {
+    "category": 9,
+    "value": 711.263074,
+    "label": "kg de citron",
+    "emoji": "🍋"
+  },
+  "ail": {
+    "category": 9,
+    "value": 358.042894,
+    "label": "kg d'ail",
+    "emoji": "🌱"
+  },
+  "artichaut": {
+    "category": 9,
+    "value": 3876.929068,
+    "label": "kg d'artichaut",
+    "emoji": "🌱"
+  },
+  "asperge": {
+    "category": 9,
+    "value": 1559.309081,
+    "label": "kg d'asperge",
+    "emoji": "🌱"
+  },
+  "betterave": {
+    "category": 9,
+    "value": 364.32109899999995,
+    "label": "kg de betterave",
+    "emoji": "🍠"
+  },
+  "blette": {
+    "category": 9,
+    "value": 542.753575,
+    "label": "kg de blette",
+    "emoji": "🌱"
+  },
+  "carotte": {
+    "category": 9,
+    "value": 364.32109899999995,
+    "label": "kg de carotte",
+    "emoji": "🥕"
+  },
+  "celeri": {
+    "category": 9,
+    "value": 677.0180851000001,
+    "label": "kg de céleri",
+    "emoji": "🌱"
+  },
+  "champignonmorille": {
+    "category": 9,
+    "value": 493.7143989999999,
+    "label": "kg de champignon (morille crue)",
+    "emoji": "🍄"
+  },
+  "chou": {
+    "category": 9,
+    "value": 862.097522,
+    "label": "kg de chou",
+    "emoji": "🥬"
+  },
+  "choudebruxelles": {
+    "category": 9,
+    "value": 575.8186729,
+    "label": "kg de chou de bruxelles",
+    "emoji": "🥬"
+  },
+  "choufleur": {
+    "category": 9,
+    "value": 735.5122120000001,
+    "label": "kg de chou-fleur",
+    "emoji": "🥦"
+  },
+  "concombre": {
+    "category": 9,
+    "value": 473.201203,
+    "label": "kg de concombre",
+    "emoji": "🥒"
+  },
+  "courge": {
+    "category": 9,
+    "value": 618.848881,
+    "label": "kg de courge",
+    "emoji": "🌱"
+  },
+  "courgette": {
+    "category": 9,
+    "value": 483.51979,
+    "label": "kg de courgette",
+    "emoji": "🌱"
+  },
+  "cresson": {
+    "category": 9,
+    "value": 941.0662189999998,
+    "label": "kg de cresson",
+    "emoji": "🌱"
+  },
+  "echalote": {
+    "category": 9,
+    "value": 364.86326020000007,
+    "label": "kg d'échalote",
+    "emoji": "🌱"
+  },
+  "endive": {
+    "category": 9,
+    "value": 938.0277949999997,
+    "label": "kg d'endive",
+    "emoji": "🌱"
+  },
+  "epinard": {
+    "category": 9,
+    "value": 391.2991521,
+    "label": "kg d'épinard",
+    "emoji": "🌱"
+  },
+  "mangue": {
+    "category": 9,
+    "value": 10641.545366999999,
+    "label": "kg de mangue (importée par avion)",
+    "emoji": "🥭"
+  },
+  "fenouil": {
+    "category": 9,
+    "value": 962.528871,
+    "label": "kg de fenouil",
+    "emoji": "🌱"
+  },
+  "haricotvert": {
+    "category": 9,
+    "value": 413.06197199999997,
+    "label": "kg d'haricot vert (cru)",
+    "emoji": "🌱"
+  },
+  "laitue": {
+    "category": 9,
+    "value": 941.0662189999998,
+    "label": "kg de laitue",
+    "emoji": "🌱"
+  },
+  "mache": {
+    "category": 9,
+    "value": 941.0662189999998,
+    "label": "kg de mâche",
+    "emoji": "🥗"
+  },
+  "navet": {
+    "category": 9,
+    "value": 364.321099,
+    "label": "kg de navet",
+    "emoji": "🌱"
+  },
+  "mais": {
+    "category": 9,
+    "value": 810.485801,
+    "label": "kg de maïs",
+    "emoji": "🌽"
+  },
+  "oignon": {
+    "category": 9,
+    "value": 389.53612800000013,
+    "label": "kg d'oignon",
+    "emoji": "🌱"
+  },
+  "panais": {
+    "category": 9,
+    "value": 457.82909000000006,
+    "label": "kg de panais",
+    "emoji": "🌱"
+  },
+  "petitpois": {
+    "category": 9,
+    "value": 665.129177,
+    "label": "kg de petit pois",
+    "emoji": "🌱"
+  },
+  "poireau": {
+    "category": 9,
+    "value": 768.865685,
+    "label": "kg de poireau",
+    "emoji": "🌱"
+  },
+  "poivron": {
+    "category": 9,
+    "value": 1183.6197739999998,
+    "label": "kg de poivron",
+    "emoji": "🌶️"
+  },
+  "potiron": {
+    "category": 9,
+    "value": 618.848881,
+    "label": "kg de potiron",
+    "emoji": "🎃"
+  },
+  "radis": {
+    "category": 9,
+    "value": 601.8473451000001,
+    "label": "kg de radis",
+    "emoji": "🌱"
+  },
+  "salsifis": {
+    "category": 9,
+    "value": 457.82908999999995,
+    "label": "kg de salsifis",
+    "emoji": "🌱"
+  },
+  "topinambour": {
+    "category": 9,
+    "value": 504.87197000000003,
+    "label": "kg de topinambour",
+    "emoji": "🌱"
+  },
+  "cassis": {
+    "category": 9,
+    "value": 1796.3874969999997,
+    "label": "kg de cassis",
+    "emoji": "🍇"
+  },
+  "chataigne": {
+    "category": 9,
+    "value": 1880.205125,
+    "label": "kg de châtaigne",
+    "emoji": "🌰"
+  },
+  "clementine": {
+    "category": 9,
+    "value": 1221.4244939999999,
+    "label": "kg de clémentine",
+    "emoji": "🍊"
+  },
+  "pamplemousse": {
+    "category": 9,
+    "value": 872.8596140000001,
+    "label": "kg de pamplemousse",
+    "emoji": "🍊"
+  },
+  "coing": {
+    "category": 9,
+    "value": 541.0901117000001,
+    "label": "kg de coing",
+    "emoji": "🌱"
+  },
+  "figue": {
+    "category": 9,
+    "value": 613.5498970000001,
+    "label": "kg de figue",
+    "emoji": "🥭"
+  },
+  "groseille": {
+    "category": 9,
+    "value": 1787.5465516999998,
+    "label": "kg de groseille",
+    "emoji": "🌱"
+  },
+  "kiwi": {
+    "category": 9,
+    "value": 976.8151836999999,
+    "label": "kg de kiwi",
+    "emoji": "🥝"
+  },
+  "mandarine": {
+    "category": 9,
+    "value": 422.73830129999993,
+    "label": "kg de mandarine",
+    "emoji": "🍊"
+  },
+  "melon": {
+    "category": 9,
+    "value": 931.394984,
+    "label": "kg de melon",
+    "emoji": "🍈"
+  },
+  "mure": {
+    "category": 9,
+    "value": 1206.0856469999999,
+    "label": "kg de mûre",
+    "emoji": "🍓"
+  },
+  "nectarine": {
+    "category": 9,
+    "value": 637.3697500000002,
+    "label": "kg de nectarine",
+    "emoji": "🍊"
+  },
+  "myrtille": {
+    "category": 9,
+    "value": 881.5012491,
+    "label": "kg de myrtille",
+    "emoji": "🫐"
+  },
+  "noisette": {
+    "category": 9,
+    "value": 4652.965420999999,
+    "label": "kg de noisette",
+    "emoji": "🌰"
+  },
+  "noix": {
+    "category": 9,
+    "value": 4164.838911999999,
+    "label": "kg de noix",
+    "emoji": "🌰"
+  },
+  "prune": {
+    "category": 9,
+    "value": 963.0279916999999,
+    "label": "kg de prune",
+    "emoji": "🫐"
+  },
+  "reineclaude": {
+    "category": 9,
+    "value": 971.868937,
+    "label": "kg de reine claude",
+    "emoji": "🍈"
+  },
+  "rhubarbe": {
+    "category": 9,
+    "value": 716.7486917,
+    "label": "kg de rhubarbe",
+    "emoji": "🌱"
+  },
+  "peche": {
+    "category": 9,
+    "value": 595.7366916999999,
+    "label": "kg de pêche",
+    "emoji": "🍑"
+  },
+  "cerise": {
+    "category": 9,
+    "value": 1335.3255069999996,
+    "label": "kg de cerise",
+    "emoji": "🍒"
+  },
+  "abricot": {
+    "category": 9,
+    "value": 880.638317,
+    "label": "kg d'abricot",
+    "emoji": "🍑"
+  },
+  "framboise": {
+    "category": 9,
+    "value": 1475.0375679,
+    "label": "kg de framboise",
+    "emoji": "🍓"
+  },
+  "poire": {
+    "category": 9,
+    "value": 364.28259399999996,
+    "label": "kg de poire",
+    "emoji": "🍐"
+  },
+  "raisin": {
+    "category": 9,
+    "value": 456.72809300000006,
+    "label": "kg de raisin",
+    "emoji": "🍇"
+  },
+  "aubergine": {
+    "category": 9,
+    "value": 457.1093429,
+    "label": "kg d'aubergine",
+    "emoji": "🍆"
+  },
+  "brocoli": {
+    "category": 9,
+    "value": 902.5554719999999,
+    "label": "kg de brocoli",
+    "emoji": "🥦"
+  },
+  "tomate": {
+    "category": 9,
+    "value": 581.556477,
+    "label": "kg de tomate",
+    "emoji": "🍅"
+  },
+  "ananas": {
+    "category": 9,
+    "value": 1292.282106,
+    "label": "kg d'ananas",
+    "emoji": "🍍"
+  },
+  "banane": {
+    "category": 9,
+    "value": 880.6108929999997,
+    "label": "kg de banane",
+    "emoji": "🌱"
+  },
+  "avocat": {
+    "category": 9,
+    "value": 1480.4702330000002,
+    "label": "kg d'avocat",
+    "emoji": "🥑"
+  },
+  "carambole": {
+    "category": 9,
+    "value": 533.048897,
+    "label": "kg de carambole",
+    "emoji": "🌱"
+  },
+  "datte": {
+    "category": 9,
+    "value": 2760.1109879999995,
+    "label": "kg de datte",
+    "emoji": "🌱"
+  },
+  "fruitdelapassion": {
+    "category": 9,
+    "value": 892.8173700000001,
+    "label": "kg de fruit de la passion",
+    "emoji": "🌱"
+  },
+  "grenade": {
+    "category": 9,
+    "value": 485.5722217,
+    "label": "kg de grenade",
+    "emoji": "🥭"
+  },
+  "kaki": {
+    "category": 9,
+    "value": 900.4313517,
+    "label": "kg de kaki",
+    "emoji": "🍈"
+  },
+  "noixdecoco": {
+    "category": 9,
+    "value": 2493.7624220000002,
+    "label": "kg de noix de coco",
+    "emoji": "🥥"
+  },
+  "pasteque": {
+    "category": 9,
+    "value": 641.4638217000002,
+    "label": "kg de pastèque",
+    "emoji": "🍉"
+  },
+  "bouilloire": {
+    "category": 6,
+    "value": 40887.03605825422,
+    "label": "bouilloire[s]",
+    "emoji": "⚗️"
+  },
+  "cafetieredosette": {
+    "category": 6,
+    "value": 251049.5526905852,
+    "label": "cafetière[s] (à dosettes)",
+    "emoji": "☕️"
+  },
+  "cafetierefiltre": {
+    "category": 6,
+    "value": 197698.1743339172,
+    "label": "cafetière[s] (filtre)",
+    "emoji": "☕️"
+  },
+  "cafetiereexpresso": {
+    "category": 6,
+    "value": 211754.0842705374,
+    "label": "cafetière[s] (expresso)",
+    "emoji": "☕️"
+  },
+  "fourelectrique": {
+    "category": 6,
+    "value": 262474.69996,
+    "label": "four (électrique)",
+    "emoji": "🎛"
+  },
+  "lavevaisselle": {
+    "category": 6,
+    "value": 467808.21772921155,
+    "label": "lave-vaisselle",
+    "emoji": "🍽"
+  },
+  "lavelinge": {
+    "category": 6,
+    "value": 511157.2583409828,
+    "label": "lave-linge (7kg)",
+    "emoji": "🧦"
+  },
+  "refrigirateur": {
+    "category": 6,
+    "value": 325160.71642401704,
+    "label": "réfrigérateur",
+    "emoji": "❄️"
+  },
+  "aspirateur": {
+    "category": 6,
+    "value": 47300,
+    "label": "aspirateur",
+    "emoji": "🧹"
+  },
+  "climatiseur": {
+    "category": 6,
+    "value": 413981.28844431264,
+    "label": "climatiseur[s]",
+    "emoji": "❄️"
+  },
+  "jeans": {
+    "category": 5,
+    "value": 25088.72880618721,
+    "label": "jeans",
+    "emoji": "👖"
+  },
+  "polo": {
+    "category": 5,
+    "value": 10163.529075648208,
+    "label": "polo[s]",
+    "emoji": "👚"
+  },
+  "tshirtencoton": {
+    "category": 5,
+    "value": 6433.7905548637345,
+    "label": "t-shirt[s] (en coton)",
+    "emoji": "👕"
+  },
+  "tshirtenpolyester": {
+    "category": 5,
+    "value": 6211.492878123854,
+    "label": "t-shirt[s] (en polyester)",
+    "emoji": "👕"
+  },
+  "sweatencoton": {
+    "category": 5,
+    "value": 32492.781078475018,
+    "label": "sweat[s] (en coton)",
+    "emoji": "🦺"
+  },
+  "chemiseencoton": {
+    "category": 5,
+    "value": 13234.66182713826,
+    "label": "chemise[s] (en coton)",
+    "emoji": "👚"
+  },
+  "chemiseenviscose": {
+    "category": 5,
+    "value": 12139.796272777625,
+    "label": "chemise[s] (en viscose)",
+    "emoji": "👚"
+  },
+  "chaussuresencuir": {
+    "category": 5,
+    "value": 14954.49454602226,
+    "label": "paire[s] de chaussures (en cuir)",
+    "emoji": "👞"
+  },
+  "chaussuresentissu": {
+    "category": 5,
+    "value": 18519.8842675649,
+    "label": "paire[s] de chaussures (en tissu)",
+    "emoji": "🥾"
+  },
+  "chaussuresdesport": {
+    "category": 5,
+    "value": 20125.5512835071,
+    "label": "paire[s] de chaussures (de sport)",
+    "emoji": "👟"
+  },
+  "robeencoton": {
+    "category": 5,
+    "value": 56907.365827855545,
+    "label": "robe[s] (en coton)",
+    "emoji": "👗"
+  },
+  "robeenpolyester": {
+    "category": 5,
+    "value": 58257.20551873937,
+    "label": "robe[s] (en polyester)",
+    "emoji": "👗"
+  },
+  "robeenviscose": {
+    "category": 5,
+    "value": 52481.52206560145,
+    "label": "robe[s] (en viscose)",
+    "emoji": "👗"
+  },
+  "pullenlaine": {
+    "category": 5,
+    "value": 56695.456137691894,
+    "label": "pull[s] (en laine)",
+    "emoji": "🧶"
+  },
+  "pullenacrylique": {
+    "category": 5,
+    "value": 28968.38102563544,
+    "label": "pull[s] (en acrylique)",
+    "emoji": "🧶"
+  },
+  "pullencotonrecycle": {
+    "category": 5,
+    "value": 13192.78107847502,
+    "label": "pull[s] (en coton recyclé)",
+    "emoji": "🧶"
+  },
+  "manteau": {
+    "category": 5,
+    "value": 101420.51607966855,
+    "label": "manteau[s]",
+    "emoji": "🧥"
+  },
+  "vesteimpermeable": {
+    "category": 5,
+    "value": 41147.15954637289,
+    "label": "veste[s] imperméable[s]",
+    "emoji": "🧥"
+  },
+  "vestesimilicuir": {
+    "category": 5,
+    "value": 26825.82036317022,
+    "label": "veste[s] simili-cuir",
+    "emoji": "🧥"
+  },
+  "canapeconvertible": {
+    "category": 7,
+    "value": 198000,
+    "label": "canapé[s] (convertible[s])",
+    "emoji": "🛋"
+  },
+  "chaiseenbois": {
+    "category": 7,
+    "value": 18600,
+    "label": "chaise[s] (en bois)",
+    "emoji": "🪑"
+  },
+  "tableenbois": {
+    "category": 7,
+    "value": 80200,
+    "label": "table[s] (en bois)",
+    "emoji": "🪵"
+  },
+  "canapetextile": {
+    "category": 7,
+    "value": 179000,
+    "label": "canapé[s] (textile)",
+    "emoji": "🛋"
+  },
+  "armoire": {
+    "category": 7,
+    "value": 907000,
+    "label": "armoire",
+    "emoji": "🚪"
+  },
+  "lit": {
+    "category": 7,
+    "value": 115000,
+    "label": "lit (cadre + sommier + matelas)",
+    "emoji": "🛏"
+  },
+  "repasavecduboeuf": {
+    "category": 2,
+    "value": 7260,
+    "label": "repas avec du boeuf",
+    "emoji": "🥩"
+  },
+  "repasvegetarien": {
+    "category": 2,
+    "value": 510,
+    "label": "repas végétarien[s]",
+    "emoji": "🥗"
+  },
+  "repasvegetalien": {
+    "category": 2,
+    "value": 390,
+    "label": "repas végétalien[s]",
+    "emoji": "🍎"
+  },
+  "repasavecdupoissonblanc": {
+    "category": 2,
+    "value": 1980,
+    "label": "repas avec du poisson blanc",
+    "emoji": "🐟"
+  },
+  "repasavecdupoissongras": {
+    "category": 2,
+    "value": 1110,
+    "label": "repas avec du poisson gras",
+    "emoji": "🐟"
+  },
+  "repasavecdupoulet": {
+    "category": 2,
+    "value": 1580,
+    "label": "repas avec du poulet",
+    "emoji": "🍗"
+  },
+  "cigarette": {
+    "category": 11,
+    "value": 5520,
+    "label": "cigarette[s]",
+    "emoji": "🚬"
+  },
+  "livredepoche": {
+    "category": 11,
+    "value": 1100,
+    "label": "livre[s] de poche",
+    "emoji": "📘"
+  },
+  "smartphone": {
+    "category": 1,
+    "value": 31517.317123421897,
+    "label": "smartphone[s] (> 5,5 pouces)",
+    "emoji": "📱"
+  },
+  "ordinateurfixebureautique": {
+    "category": 1,
+    "value": 188972.1498647794,
+    "label": "ordinateur[s] fixe[s] sans écran (bureautique)",
+    "emoji": "🖥️"
+  },
+  "ordinateurfixeperformance": {
+    "category": 1,
+    "value": 395018.39770107804,
+    "label": "ordinateur[s] fixe[s] sans écran (performance)",
+    "emoji": "🖥️"
+  },
+  "ecran215pouces": {
+    "category": 1,
+    "value": 237090.5793417607,
+    "label": "écran[s] (21,5 pouces)",
+    "emoji": "🖥"
+  },
+  "ecran24pouces": {
+    "category": 1,
+    "value": 263090.5793417607,
+    "label": "écran[s] (24 pouces)",
+    "emoji": "🖥"
+  },
+  "tablettedetachable": {
+    "category": 1,
+    "value": 86277.99022039562,
+    "label": "tablette[s] détachable[s]",
+    "emoji": "💻"
+  },
+  "tabletteclassique": {
+    "category": 1,
+    "value": 69596.7761232212,
+    "label": "tablette[s] (classique)",
+    "emoji": "📱"
+  },
+  "tablettemini": {
+    "category": 1,
+    "value": 47625.76560714468,
+    "label": "tablette[s] (mini)",
+    "emoji": "📱"
+  },
+  "chainehifi": {
+    "category": 1,
+    "value": 135992.18772408433,
+    "label": "chaine[s] hifi",
+    "emoji": "🎵"
+  },
+  "liseuse": {
+    "category": 1,
+    "value": 36771.75687599134,
+    "label": "liseuse[s] (non rétro-éclairé)",
+    "emoji": "📱"
+  },
+  "television": {
+    "category": 1,
+    "value": 424463.49609789375,
+    "label": "télévision[s]  (40 - 49 pouces)",
+    "emoji": "📺"
+  },
+  "ordinateurportable": {
+    "category": 1,
+    "value": 177747.64585279912,
+    "label": "ordinateur[s] portable[s]",
+    "emoji": "💻"
+  },
+  "montreconnectee": {
+    "category": 1,
+    "value": 9850.31264959085,
+    "label": "montre[s] connectée[s]",
+    "emoji": "⌚️"
+  },
+  "cadrephotodigital": {
+    "category": 1,
+    "value": 39163.17683893989,
+    "label": "cadre[s] photo digital",
+    "emoji": "🖼"
+  },
+  "homecinema": {
+    "category": 1,
+    "value": 153913.82398264098,
+    "label": "home cinéma",
+    "emoji": "📽"
+  },
+  "barredeson": {
+    "category": 1,
+    "value": 45456.229300433166,
+    "label": "barre[s] de son",
+    "emoji": "🔈"
+  },
+  "modemfibre": {
+    "category": 1,
+    "value": 142575.72740390868,
+    "label": "modem[s] (fibre)",
+    "emoji": "📡"
+  },
+  "enceintebluetooth": {
+    "category": 1,
+    "value": 9515.179528037963,
+    "label": "enceinte[s] bluetooth",
+    "emoji": "🔊"
+  },
+  "consoledesalon": {
+    "category": 1,
+    "value": 101576.88532134777,
+    "label": "console[s] de salon",
+    "emoji": "🎮"
+  },
+  "consoleportable": {
+    "category": 1,
+    "value": 30887.070899056205,
+    "label": "console[s] portable",
+    "emoji": "👾"
+  },
+  "appareilphotoreflex": {
+    "category": 1,
+    "value": 28117.78358867955,
+    "label": "appareil photo (reflex)",
+    "emoji": "📷"
+  },
+  "appareilphotocompact": {
+    "category": 1,
+    "value": 22316.835057281678,
+    "label": "appareil photo (compact)",
+    "emoji": "📸"
+  },
+  "imprimantejetdencre": {
+    "category": 1,
+    "value": 108151.1327150618,
+    "label": "imprimante[s] (jet d'encre)",
+    "emoji": "🖨"
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import chauffage from 'data/categories/chauffage.json'
+import Emoji from 'components/base/Emoji'
 import Link from 'components/base/buttons/Link'
 import { Container, Hypothesis, StyledEmoji, Text, Value, Values } from './Data.styles'
 
@@ -12,15 +13,24 @@ const Data = () => {
         <Link href='https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel'>
           l’étude Consommation d'énergie par usage du résidentiel 2023
         </Link>{' '}
-        et <Link href='https://nosgestesclimat.fr/documentation/logement/chauffage'>des modèles de calcul</Link> du
-        simulateur citoyen de l’ADEME Nos Gestes Climat. Nous utilisons également les facteurs d’émission de la{' '}
+        et{' '}
+        <Link href='https://www.legifrance.gouv.fr/download/pdf?id=doxMrRr0wbfJVvtWjfDP4rj1eH6w-xJoB6-2bmLS9gg='>
+          de la méthode 3CL du DPE
+        </Link>
+        . Nous utilisons également les facteurs d’émission de la{' '}
         <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</Link> dans nos calculs, qui
-        sont exprimés kgCO2e/kWh.
+        sont exprimés kgCO₂e/kWh.
+        <br />
+        <br />
+        Afin de comparer les différents modes de chauffage entre eux, nous partons d’un foyer moyen avec un besoin en
+        énergie de 150 kWh/m².
       </Text>
       {sortedValues.map((equivalent) => (
         <div key={equivalent.slug}>
           <div>
-            <StyledEmoji>{equivalent.emoji}</StyledEmoji>
+            <StyledEmoji>
+              <Emoji>{equivalent.emoji}</Emoji>
+            </StyledEmoji>
             <b>{equivalent.name}</b>
           </div>
           {equivalent.data.values.map((value, index) => (
@@ -30,12 +40,7 @@ const Data = () => {
                 {'withSource' in value && value.withSource && (
                   <span>
                     {' '}
-                    •{' '}
-                    {typeof value.withSource === 'boolean' ? (
-                      equivalent.source && <Link href={equivalent.source}>Détails</Link>
-                    ) : (
-                      <Link href={value.withSource.href}>{value.withSource.label}</Link>
-                    )}
+                    • <Link href={value.withSource.href}>{value.withSource.label}</Link>
                   </span>
                 )}
               </div>

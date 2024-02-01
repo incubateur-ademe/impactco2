@@ -15,7 +15,7 @@ export const overScreenEquivalentValues: (equivalent: Equivalent) => Record<Over
 ) => ({
   partager: {
     title: 'Partager',
-    children: <Share params={{}} path={`${equivalent.category}/${equivalent.slug}`} />,
+    children: <Share path={`${equivalent.category}/${equivalent.slug}`} />,
   },
 })
 

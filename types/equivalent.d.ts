@@ -34,6 +34,7 @@ type BaseEquivalent = {
       value: string
     }[]
   }
+  hideTile?: boolean
 }
 
 type BaseEquivalentValue =

@@ -1,15 +1,14 @@
 import React, { ReactNode, useMemo, useState } from 'react'
 import { Category } from 'types/category'
-import { track } from 'utils/matomo'
 import Card from 'components/base/Card'
 import { Section, SectionWideContent } from 'components/base/Section'
-import Link from 'components/base/buttons/Link'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 import Learning from '../Learning'
 import ShareableContent from '../ShareableContent'
 import SourceAgribalyse from '../SourceAgribalyse'
-import { Cards, Header, Sources } from './CategoryWrapper.styles'
+import { Cards, Header, SourcesWrapper } from './CategoryWrapper.styles'
 import { CustomParamValue } from './CustomParam'
+import Sources from './Sources'
 import { OverScreenCategory } from './overScreens/Type'
 import { overScreenCategoryValues } from './overScreens/Values'
 
@@ -68,21 +67,9 @@ const CategoryWrapper = ({
               <Section $withoutPadding $size='sm'>
                 <SectionWideContent $size='xs' $noGutter>
                   {category.sources && (
-                    <Sources>
-                      Source{category.sources.length > 1 ? 's' : ''} :{' '}
-                      {category.sources
-                        .flatMap((source) => [
-                          <Link
-                            key={source.label}
-                            href={source.href}
-                            priority='secondary'
-                            onClick={() => track(category.name, 'Source', source.href)}>
-                            {source.label}
-                          </Link>,
-                          <span key={`${source.label}-separator`}> • </span>,
-                        ])
-                        .slice(0, category.sources.length * 2 - 1)}
-                    </Sources>
+                    <SourcesWrapper>
+                      <Sources priority='secondary' sources={category.sources} tracking={category.name} />
+                    </SourcesWrapper>
                   )}
                   {category.slug === 'boisson' && <SourceAgribalyse tracking={category.name} />}
                   <Learning category={category} />

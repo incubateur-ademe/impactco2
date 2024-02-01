@@ -3,8 +3,8 @@ import { TransportSimulateur } from 'types/transport'
 import Card from 'components/base/Card'
 import { OverScreenInfo } from 'components/base/OverScreen'
 import { CustomParamValue } from '../CustomParam'
-import Share from '../Share'
 import TransportIntegrate from '../TransportIntegrate'
+import TransportShare from '../TransportShare'
 import { OverScreenTransport } from './TransportType'
 import { Space } from './Values.styles'
 
@@ -16,9 +16,7 @@ export const overScreenTransportValues: (
 ) => Record<OverScreenTransport, OverScreenInfo> = (category, params, tracking, type) => ({
   partager: {
     title: 'Partager',
-    children: (
-      <Share category={category} params={params} path={type === 'distance' ? undefined : `transport/${type}`} />
-    ),
+    children: <TransportShare type={type} tracking={tracking} />,
   },
   integrer: {
     title: 'Intégrer',

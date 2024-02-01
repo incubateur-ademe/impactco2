@@ -62,7 +62,6 @@ export default function Tiles(props) {
   return (
     <ShareableContent
       iframe={props.iframe}
-      params={{}}
       size='sm'
       tracking={'Comparateur'}
       setOverScreen={setOverScreen}

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
+import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
-import { CustomParamType, CustomParamValue } from './CustomParam'
+import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
@@ -13,38 +14,40 @@ const Integrate = ({
   params?: Record<string, CustomParamValue>
   tracking: string
 }) => {
-  const [customValues, setCustomValues] = useState<Record<string, CustomParamType>>({})
+  const { theme, setTheme } = useParamContext()
+  const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
+  const paramWithTheme = useMemo(
+    () => ({ ...params, theme: { value: theme, setter: setTheme } as CustomParamValue }),
+    [params, theme, setTheme]
+  )
   useEffect(() => {
-    if (params) {
-      const values: Record<string, CustomParamType> = {}
-      Object.entries(params).forEach(([key, value]) => {
-        values[key] = {
-          value,
-          visible: customValues && customValues[key] ? customValues[key].visible : true,
-        }
+    if (paramWithTheme) {
+      const values: Record<string, boolean> = {}
+      Object.keys(paramWithTheme).forEach((key) => {
+        values[key] = visibility ? visibility[key] : true
       })
-      setCustomValues(values)
+      setVisibility(values)
     }
-  }, [params, setCustomValues])
+  }, [paramWithTheme])
 
   const url = `<script name="impact-co2" src="${
     process.env.NEXT_PUBLIC_URL
-  }/iframe.js" data-type="${slug}" data-search="?${buildCustomParamsUrl(customValues)}"></script>`
+  }/iframe.js" data-type="${slug}" data-search="?${buildCustomParamsUrl(paramWithTheme, visibility)}"></script>`
 
-  return (
+  return paramWithTheme && visibility ? (
     <>
       <CustomParams
         integration
         tracking={tracking}
         trackingType='Intégrer'
-        customValues={customValues}
-        setCustomValues={setCustomValues}
-        withTheme
+        params={paramWithTheme}
+        visibility={visibility}
+        setVisibility={setVisibility}
       />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>
-  )
+  ) : null
 }
 
 export default Integrate

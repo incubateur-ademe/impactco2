@@ -42,7 +42,7 @@ const Big = styled.span`
     font-size: 1rem;
   }
 `
-const StyledEmoji = styled(Emoji)`
+const StyledEmoji = styled.div`
   align-items: center;
   background-color: var(--neutral-00);
   border-radius: 5.25rem;
@@ -80,7 +80,9 @@ export default function Value({ equivalent, category }: { equivalent: Equivalent
               </Unit>
             </div>
           </Top>
-          <StyledEmoji>{equivalent.emoji}</StyledEmoji>
+          <StyledEmoji>
+            <Emoji>{equivalent.emoji}</Emoji>
+          </StyledEmoji>
         </SectionWideContent>
       </Section>
     </Wrapper>

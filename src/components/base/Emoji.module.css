@@ -1,0 +1,11 @@
+.wrapper {
+  display: inline-flex;
+  font-style: normal;
+  vertical-align: middle;
+
+  img {
+    display: inline-block;
+    height: inherit;
+    width: auto;
+  }
+}
