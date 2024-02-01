@@ -4,7 +4,13 @@
     "name": "Avion",
     "slug": "avion",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voler", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voler",
+      "voyager"
+    ],
     "type": "plane",
     "emoji": "✈️",
     "category": 4,
@@ -91,7 +97,13 @@
     "id": 2,
     "name": "TGV",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "train"
+    ],
     "slug": "tgv",
     "type": "rail",
     "emoji": "🚅",
@@ -121,7 +133,13 @@
     "id": 3,
     "name": "Intercités",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "train"
+    ],
     "slug": "intercites",
     "type": "rail",
     "emoji": "🚈",
@@ -152,7 +170,13 @@
     "name": "Voiture",
     "subtitle": "Moteur thermique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "conduire",
+      "voyager"
+    ],
     "slug": "voiturethermique",
     "carpool": true,
     "type": "car",
@@ -181,7 +205,13 @@
     "name": "Voiture",
     "subtitle": "Moteur électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "conduire",
+      "voyager"
+    ],
     "slug": "voitureelectrique",
     "carpool": true,
     "type": "car",
@@ -210,7 +240,12 @@
     "id": 6,
     "name": "Autocar",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "autocar",
     "type": "car",
     "emoji": "🚐",
@@ -240,12 +275,20 @@
   {
     "id": 7,
     "name": "Vélo ou marche",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "marcher", "pedaler"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "marcher",
+      "pedaler"
+    ],
     "slug": "velo",
     "type": "foot",
     "emoji": "🚶‍♀️",
     "category": 4,
     "total": 0,
+    "hideTile": true,
     "default": true,
     "tile": false,
     "display": {
@@ -260,7 +303,13 @@
     "id": 8,
     "name": "Vélo (ou trottinette) à assistance électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "pedaler"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "pedaler"
+    ],
     "slug": "veloelectrique",
     "type": "foot",
     "emoji": "🚴",
@@ -292,7 +341,12 @@
     "name": "Bus",
     "subtitle": "Moteur thermique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "busthermique",
     "type": "car",
     "emoji": "🚌",
@@ -322,7 +376,12 @@
     "id": 10,
     "name": "Tramway",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "tramway",
     "type": "rail",
     "emoji": "🚌",
@@ -352,7 +411,12 @@
     "id": 11,
     "name": "Métro",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "rail"
+    ],
     "slug": "metro",
     "type": "rail",
     "emoji": "🚇",
@@ -382,7 +446,11 @@
     "id": 12,
     "name": "Scooter ou moto légère",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer"
+    ],
     "slug": "scooter",
     "type": "car",
     "emoji": "🛵",
@@ -412,7 +480,11 @@
     "id": 13,
     "name": "Moto",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer"
+    ],
     "slug": "moto",
     "type": "car",
     "emoji": "🏍️",
@@ -442,7 +514,13 @@
     "id": 14,
     "name": "RER ou Transilien",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "train",
+      "rail"
+    ],
     "slug": "rer",
     "type": "rail",
     "emoji": "🚃",
@@ -473,7 +551,13 @@
     "id": 15,
     "name": "TER",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "train",
+      "rail"
+    ],
     "slug": "ter",
     "type": "rail",
     "emoji": "🚈",
@@ -504,7 +588,12 @@
     "name": "Bus",
     "subtitle": "Moteur électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "buselectrique",
     "type": "car",
     "emoji": "🚌",
@@ -536,7 +625,12 @@
     "name": "Bus",
     "subtitle": "GNV",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "busgnv",
     "type": "car",
     "emoji": "🚌",
