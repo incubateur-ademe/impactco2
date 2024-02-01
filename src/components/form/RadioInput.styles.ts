@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.label<{ $checked: boolean }>`
+export const Container = styled.label<{ $checked: boolean; $priority?: 'secondary' }>`
   align-items: center;
   color: var(--neutral-${({ $checked }) => ($checked ? '80' : '50')});
   cursor: pointer;
@@ -14,7 +14,7 @@ export const Container = styled.label<{ $checked: boolean }>`
     -webkit-appearance: none;
     appearance: none;
 
-    border: 1px solid var(--primary-50);
+    border: 1px solid var(--${({ $priority }) => $priority || 'primary'}-50);
     border-radius: 50%;
     cursor: pointer;
     height: 1.75rem;
@@ -22,25 +22,28 @@ export const Container = styled.label<{ $checked: boolean }>`
   }
 
   input[type='radio']:checked {
-    background-color: var(--primary-40);
+    background-color: var(--${({ $priority }) => $priority || 'primary'}-40);
   }
 
   &:hover {
     color: var(--neutral-70);
 
     input[type='radio'] {
-      outline: 1px solid var(--primary-50);
-      ${({ $checked }) => $checked && 'border: 1px solid var(--primary-60);'}
-      ${({ $checked }) => $checked && 'outline: 1px solid var(--primary-60);'}
+      outline: 1px solid var(--${({ $priority }) => $priority || 'primary'}-50);
+      ${({ $checked, $priority }) => $checked && `border: 1px solid var(--${$priority || 'primary'}-60);`}
+      ${({ $checked, $priority }) => $checked && `outline: 1px solid var(--${$priority || 'primary'}-60);`}
     }
 
     input[type='radio']:checked {
-      background-color: var(--primary-50);
+      background-color: var(--${({ $priority }) => $priority || 'primary'}-50);
     }
   }
 
   input[type='radio']:focus {
-    outline: 3px solid var(--primary-50);
+    outline: 3px solid var(--${({ $priority }) => $priority || 'primary'}-50);
     outline-offset: 2px;
+  }
+  input[type='radio']:focus:not(:focus-visible) {
+    outline: none;
   }
 `
