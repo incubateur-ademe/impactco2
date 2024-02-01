@@ -16,8 +16,8 @@ const Data = () => {
         et{' '}
         <Link href='https://www.legifrance.gouv.fr/download/pdf?id=doxMrRr0wbfJVvtWjfDP4rj1eH6w-xJoB6-2bmLS9gg='>
           de la méthode 3CL du DPE
-        </Link>{' '}
-        du simulateur citoyen de l’ADEME Nos Gestes Climat. Nous utilisons également les facteurs d’émission de la{' '}
+        </Link>
+        . Nous utilisons également les facteurs d’émission de la{' '}
         <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</Link> dans nos calculs, qui
         sont exprimés kgCO₂e/kWh.
         <br />
