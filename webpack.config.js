@@ -19,12 +19,21 @@ module.exports = [
     ],
   },
   {
-    name: 'shopify',
+    name: 'scripts',
     mode: 'production',
-    entry: './shopify/index.tsx',
-    output: {
-      filename: 'shopify.js',
-      path: path.resolve(__dirname, 'shopify', 'extensions', 'equivalent-carbone', 'assets'),
+    entry: {
+      detection: {
+        import: './detection/index.ts',
+        filename: '../public/scripts/detection.js',
+      },
+      detectionDarkMode: {
+        import: './detection/index-darkmode.ts',
+        filename: '../public/scripts/detection-darkmode.js',
+      },
+      shopify: {
+        import: './shopify/index.tsx',
+        filename: '../shopify/extensions/equivalent-carbone/assets/shopify.js',
+      },
     },
     resolve: {
       extensions: ['.tsx', '.jsx', '.ts', '.js'],
@@ -33,6 +42,8 @@ module.exports = [
         data: path.resolve(__dirname, 'src/data/'),
         utils: path.resolve(__dirname, 'src/utils/'),
         hooks: path.resolve(__dirname, 'src/hooks/'),
+        react: 'preact/compat',
+        'react-dom': 'preact/compat',
       },
     },
     module: {

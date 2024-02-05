@@ -11,6 +11,6 @@ type Story = StoryObj<typeof Equivalent>
 export const Default: Story = {
   args: {
     baseValue: '1000',
-    comparaison: 'random',
+    comparison: 'random',
   },
 }

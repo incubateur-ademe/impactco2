@@ -5,6 +5,7 @@
 
   img {
     display: inline-block;
+    box-shadow: none;
     height: inherit;
     width: auto;
   }

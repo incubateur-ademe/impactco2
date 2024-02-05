@@ -25,9 +25,6 @@
 
 .right {
   position: relative;
-  display: flex !important;
-  align-items: center;
-  gap: 8px;
   border-radius: 0 8px 8px 0;
   padding: 0.75em 1.25em;
   background-color: var(--neutral-00);
@@ -58,26 +55,13 @@
 
   color: var(--primary-50);
 
-  > svg {
+  >svg {
     height: 3em;
   }
 }
 
-.emoji {
-  font-size: 2em;
-}
-
-.label {
-  font-size: 0.75em;
-}
-
-.equivalentValue,
 .value {
   font-size: 1.25em;
-  line-height: 1.5rem;
+  line-height: 1.2;
   font-weight: 700;
-}
-
-.equivalentValue {
-  color: var(--neutral-80);
 }
