@@ -1,4 +1,6 @@
 import React from 'react'
+import { Category as CategoryType } from 'types/category'
+import { Equivalent as EquivalentType } from 'types/equivalent'
 import categories from 'data/categories.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import Web from 'components/layout/Web'
@@ -10,7 +12,7 @@ const equivalents = [...usagenumerique].map((equivalent) => ({
   id: equivalent.slug,
 }))
 
-export default function StreamingVideoPage(props) {
+export default function StreamingVideoPage(props: { equivalent: EquivalentType; category: CategoryType }) {
   return (
     <Web
       title={props.equivalent.meta.title}
