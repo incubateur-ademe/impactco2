@@ -2,7 +2,7 @@ import formatConstruction from 'utils/formatConstruction'
 
 describe('formatConstruction', () => {
   test("Calcule l'équivalent carbone de la construction", () => {
-    let res = formatConstruction(exampleOfEquivalent)
+    const res = formatConstruction(exampleOfEquivalent)
     expect(res).toEqual(134.702872533555)
   })
   const exampleOfEquivalent = {

@@ -2,7 +2,7 @@ import formatUsage from 'utils/formatUsage'
 
 describe('formatUsage', () => {
   test("Calcule l'équivalent carbone d'un usage", () => {
-    let res = formatUsage(exampleOfEquivalent)
+    const res = formatUsage(exampleOfEquivalent)
     expect(res).toEqual(0.0604)
   })
   const exampleOfEquivalent = {

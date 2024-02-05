@@ -25,7 +25,7 @@ test('Barre de recherche (sans résultat)', async ({ page }) => {
   })
 
   await test.step('Pas de suggestion affichée', async () => {
-    let nb_of_suggestions = await page.getByTitle('simple suggestion').count()
+    const nb_of_suggestions = await page.getByTitle('simple suggestion').count()
     expect(nb_of_suggestions).toEqual(0)
   })
 
@@ -34,12 +34,12 @@ test('Barre de recherche (sans résultat)', async ({ page }) => {
   })
 
   await test.step('Toujours pas de suggestion affichée', async () => {
-    let nb_of_suggestions = await page.getByTitle('simple suggestion').count()
+    const nb_of_suggestions = await page.getByTitle('simple suggestion').count()
     expect(nb_of_suggestions).toEqual(0)
   })
 
   await test.step("Cette fois, en plus, un message explicite l'absence de résultat", async () => {
-    let nb_of_notfound = await page.getByTitle('pas de résultat').count()
+    const nb_of_notfound = await page.getByTitle('pas de résultat').count()
     expect(nb_of_notfound).toEqual(1)
   })
 })
@@ -60,7 +60,7 @@ test('Barre de recherche (avec résultats)', async ({ page }) => {
   })
 
   await test.step('Il y a bien des suggestions qui apparaissent', async () => {
-    let nb_of_suggestions = await page.getByTitle('simple suggestion').count()
+    const nb_of_suggestions = await page.getByTitle('simple suggestion').count()
     expect(nb_of_suggestions).toBeGreaterThan(0)
   })
 

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test'
+import { Page, expect, test } from '@playwright/test'
 import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 import { mockRoutesItinerary } from './mock-routes/mock-routes-itinerary'
 
@@ -103,7 +103,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   })
 })
 
-const getNbOfSuggestions = async (page) => {
+const getNbOfSuggestions = async (page: Page) => {
   await page.waitForTimeout(800)
   const count = await page.getByTestId('transportSuggest').locator('div').count()
   return count

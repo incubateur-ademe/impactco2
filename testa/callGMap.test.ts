@@ -2,6 +2,7 @@ import { rateLimit } from 'express-rate-limit'
 import slowDown from 'express-slow-down'
 import { HttpResponse, http } from 'msw'
 import { setupServer } from 'msw/node'
+import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks } from 'node-mocks-http'
 import callGMap from 'pages/api/callGMap'
 import matrixJson from 'test-mock/matrix.json'
@@ -16,14 +17,14 @@ const validBody = {
 
 jest.mock('express-slow-down', () =>
   jest.fn().mockImplementation(() => {
-    return (req, res, next) => {
+    return (req: NextApiRequest, res: NextApiResponse, next: () => void) => {
       return next()
     }
   })
 )
 jest.mock('express-rate-limit', () => ({
   rateLimit: jest.fn().mockImplementation(() => {
-    return (req, res, next) => {
+    return (req: NextApiRequest, res: NextApiResponse, next: () => void) => {
       return next()
     }
   }),
@@ -33,7 +34,7 @@ const DISTANCE_MATRIX_ENDPOINT = 'https://maps.googleapis.com/maps/api/distancem
 describe('CallGMap', () => {
   test("Doit appeler l'API distanceMatrix", async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/callGMap',
       body: validBody,
@@ -49,7 +50,7 @@ describe('CallGMap', () => {
   })
   test('Si la limite est activée, refuse un appel ne provenant pas du site appelant', async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/callGMap',
       body: validBody,
@@ -63,7 +64,7 @@ describe('CallGMap', () => {
   })
   test('Si la limite est activée, accepte un simple appel provenant du site appelant', async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/callGMap',
       body: validBody,
@@ -79,7 +80,7 @@ describe('CallGMap', () => {
   })
   test("Si la limite est activée, peut ralentir ou stopper l'exécution", async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/callGMap',
       body: validBody,
@@ -98,7 +99,12 @@ describe('CallGMap', () => {
   //---------
   // STUBBING PART BELOW
   //----------
-  let callsHistory = []
+
+  let callsHistory: {
+    method: string
+    pathname: string
+    searchParams: string
+  }[]
   const server = setupServer(http.get(DISTANCE_MATRIX_ENDPOINT, () => HttpResponse.json(matrixJson)))
   const env = process.env
   server.events.on('request:start', async ({ request }) => {

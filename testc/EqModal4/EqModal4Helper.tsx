@@ -20,7 +20,7 @@ export function EqModal4Opener() {
 export const openModal = () => {
   screen.getByTestId('modalOpener').click()
 }
-export const initializeWith = (array) => {
+export const initializeWith = (array: string[]) => {
   act(() => {
     openModal()
   })

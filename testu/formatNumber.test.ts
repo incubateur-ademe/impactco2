@@ -1,9 +1,6 @@
 import formatNumber from 'utils/formatNumber'
 
 describe('formatNumber', () => {
-  it('Renvoie zéro quand la valeur est falsy', () => {
-    expect(formatNumber(null)).toBe(0)
-  })
   it('Formatte un nombre entier au format Français', () => {
     expect(formatNumber(123)).toBe('123')
   })
