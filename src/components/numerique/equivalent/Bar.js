@@ -1,7 +1,4 @@
-import Engine from 'publicodes'
 import styled from 'styled-components'
-import { Category as CategoryType } from 'types/category'
-import { Equivalent as EquivalentType } from 'types/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
@@ -69,37 +66,27 @@ const StyledEmoji = styled(Emoji)`
   }
 `
 
-export default function Bar({
-  total,
-  engine,
-  equivalent,
-  category,
-}: {
-  total: number
-  engine: Engine
-  equivalent: EquivalentType
-  category: CategoryType
-}) {
+export default function Bar(props) {
   return (
     <Wrapper>
       <Top>
-        <Number>{formatNumber(total)}</Number>{' '}
+        <Number>{formatNumber(props.total)}</Number>{' '}
         <Unit>
           g{' '}
           <Big>
             CO<sub>2</sub>
           </Big>
           e{' '}
-          {equivalent.unit || category.unit ? (
-            <>/ {equivalent.unit || category.unit}</>
-          ) : engine.evaluate(`${name} . durée`).nodeValue === 60 ? (
+          {props.equivalent.unit || props.category.unit ? (
+            <>/ {props.equivalent.unit || props.category.unit}</>
+          ) : props.engine.evaluate(`${props.name} . durée`).nodeValue === 60 ? (
             '/ heure'
           ) : (
-            <>/ {engine.evaluate(`${name} . durée`).nodeValue} minutes</>
+            <>/ {props.engine.evaluate(`${props.name} . durée`).nodeValue} minutes</>
           )}
         </Unit>
       </Top>
-      <StyledEmoji>{equivalent.emoji}</StyledEmoji>
+      <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
     </Wrapper>
   )
 }
