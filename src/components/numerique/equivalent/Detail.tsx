@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
+import { EquivalentValue } from 'types/equivalent'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
 import formatPercent from 'utils/formatPercent'
 import { MEDIA } from 'utils/styles'
@@ -54,7 +55,12 @@ const Value = styled.td`
 const Percent = styled.td`
   text-align: right;
 `
-export default function Detail(props) {
+
+type LabeledEquivalentValue = EquivalentValue & {
+  label: string
+}
+
+export default function Detail({ ecv, total }: { ecv: LabeledEquivalentValue[]; total: number }) {
   const [details, setDetails] = useState(false)
 
   const order = [
@@ -66,6 +72,11 @@ export default function Detail(props) {
     'Consommation',
   ]
 
+  interface Item {
+    value: number
+    label: string
+  }
+
   return (
     <>
       <Toggle asLink onClick={() => setDetails((prevDetails) => !prevDetails)} className='noscreenshot'>
@@ -74,18 +85,18 @@ export default function Detail(props) {
       {details && (
         <Wrapper>
           <tbody>
-            {props.ecv
-              .sort((a, b) => {
+            {ecv
+              .sort((a: LabeledEquivalentValue, b: LabeledEquivalentValue) => {
                 let res = a.value < b.value ? 1 : -1
                 if (a.label && b.label) {
                   res = order.indexOf(a.label) > order.indexOf(b.label) ? 1 : -1
                 }
                 return res
               })
-              .map((item) => (
+              .map((item: LabeledEquivalentValue) => (
                 <Item key={item.label}>
                   <Label>{item.label}</Label>
-                  <Percent>{formatPercent(item.value, props.total)} %</Percent>
+                  <Percent>{formatPercent(item.value, total)} %</Percent>
                   <Value>
                     <strong>{formatNumberPrecision(item.value)}</strong> CO
                     <sub>2</sub>e
@@ -98,7 +109,7 @@ export default function Detail(props) {
               </Label>
               <Percent />
               <Value>
-                <strong>{formatNumberPrecision(props.total)}</strong> CO
+                <strong>{formatNumberPrecision(total)}</strong> CO
                 <sub>2</sub>e
               </Value>
             </Item>
