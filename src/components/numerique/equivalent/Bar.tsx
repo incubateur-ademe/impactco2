@@ -1,4 +1,7 @@
+import Engine from 'publicodes'
 import styled from 'styled-components'
+import { Category as CategoryType } from 'types/category'
+import { Equivalent as EquivalentType } from 'types/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
 import Emoji from 'components/base/Emoji'
@@ -66,7 +69,12 @@ const StyledEmoji = styled(Emoji)`
   }
 `
 
-export default function Bar(props) {
+type BarType = { category: CategoryType; equivalent: EquivalentType; engine: Engine } & {
+  name: string
+  total: number
+}
+
+export default function Bar(props: BarType) {
   return (
     <Wrapper>
       <Top>
