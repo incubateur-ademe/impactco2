@@ -4,10 +4,10 @@ import categories from 'data/categories.json'
 import Iframe from 'components/layout/Iframe'
 import Category from 'components/numerique/Category'
 
-export default function Numerique(props: { category: CategoryType }) {
+export default function Numerique({ category }: { category: CategoryType }) {
   return (
     <Iframe noLogo>
-      <Category category={props.category} iframe />
+      <Category category={category} iframe />
     </Iframe>
   )
 }

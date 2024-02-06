@@ -13,19 +13,19 @@ const equivalents = [...usagenumerique].map((equivalent) => ({
   id: equivalent.slug,
 }))
 
-export default function EmailPage(props: { equivalent: EquivalentType; category: CategoryType }) {
+export default function EmailPage({ equivalent, category }: { equivalent: EquivalentType; category: CategoryType }) {
   return (
     <Web
-      title={props.equivalent.meta.title}
-      description={props.equivalent.meta.description}
+      title={equivalent.meta.title}
+      description={equivalent.meta.description}
       breadcrumb={{
         type: 'equivalent',
-        category: props.category,
-        equivalent: props.equivalent,
+        category: category,
+        equivalent: equivalent,
       }}>
-      <Equivalent equivalent={props.equivalent} category={props.category} name='email' />
-      <VisualizationSlider category={props.category} equivalent={props.equivalent} />
-      <Text equivalent={props.equivalent} />
+      <Equivalent equivalent={equivalent} category={category} name='email' />
+      <VisualizationSlider category={category} equivalent={equivalent} />
+      <Text equivalent={equivalent} />
     </Web>
   )
 }
