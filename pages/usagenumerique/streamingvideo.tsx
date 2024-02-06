@@ -1,4 +1,6 @@
 import React from 'react'
+import { Category as CategoryType } from 'types/category'
+import { Equivalent as EquivalentType } from 'types/equivalent'
 import categories from 'data/categories.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import Web from 'components/layout/Web'
@@ -10,18 +12,24 @@ const equivalents = [...usagenumerique].map((equivalent) => ({
   id: equivalent.slug,
 }))
 
-export default function VisioconferencePage(props) {
+export default function StreamingVideoPage({
+  equivalent,
+  category,
+}: {
+  equivalent: EquivalentType
+  category: CategoryType
+}) {
   return (
     <Web
-      title={props.equivalent.meta.title}
-      description={props.equivalent.meta.description}
+      title={equivalent.meta.title}
+      description={equivalent.meta.description}
       breadcrumb={{
         type: 'equivalent',
-        category: props.category,
-        equivalent: props.equivalent,
+        category: category,
+        equivalent: equivalent,
       }}>
-      <Equivalent equivalent={props.equivalent} category={props.category} name='visio' />
-      <Text equivalent={props.equivalent} />
+      <Equivalent equivalent={equivalent} category={category} name='streaming' />
+      <Text equivalent={equivalent} />
     </Web>
   )
 }
@@ -29,7 +37,7 @@ export default function VisioconferencePage(props) {
 export async function getStaticProps() {
   return {
     props: {
-      equivalent: equivalents.find((equivalent) => equivalent.slug === 'visioconference'),
+      equivalent: equivalents.find((equivalent) => equivalent.slug === 'streamingvideo'),
       category: categories.find((category) => category.slug === 'usagenumerique'),
     },
   }
