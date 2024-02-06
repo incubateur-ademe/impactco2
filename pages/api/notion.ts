@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/nextjs'
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { trackAPIRequest } from 'utils/middleware'
@@ -85,6 +86,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(201).send('Success')
   } catch (e) {
     console.error(e)
+    await Sentry.captureException(e)
     return res.status(500).send('Something went wrong...')
   }
 }
