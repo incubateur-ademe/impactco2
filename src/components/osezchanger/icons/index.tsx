@@ -15,6 +15,7 @@ import information from './information'
 import linkedin from './linkedin'
 import minus from './minus'
 import plus from './plus'
+import refresh from './refresh'
 import sendPlane from './send-plane'
 import sprinkles from './sprinkles'
 import star from './star'
@@ -44,9 +45,12 @@ export type IconId =
   | 'full-star'
   | 'check'
   | 'error'
+  | 'refresh'
 
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
+    case 'refresh':
+      return refresh
     case 'code-s-slash':
       return codeSSlash
     case 'send-plane':
