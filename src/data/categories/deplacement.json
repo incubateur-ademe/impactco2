@@ -296,7 +296,7 @@
     },
     "meta": {
       "title": "Vélo ou marche",
-      "description": "Découvrez l'émission de CO₂e lors d'un voyage en vélo et comparez le à d'autres moyens de transport"
+      "description": "Découvrez l'émission de CO₂e lors d'un voyage à vélo et comparez le à d'autres moyens de transport"
     }
   },
   {
@@ -333,7 +333,7 @@
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
     "meta": {
       "title": "Vélo assistance électrique",
-      "description": "Découvrez l'impact CO₂e d'un trajet en velo ou trotinette électrique et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements."
+      "description": "Découvrez l'impact CO₂e d'un trajet en velo ou trottinette électrique et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements."
     }
   },
   {
