@@ -52,7 +52,7 @@ const SkiPage = ({ recordMap }: InferGetStaticPropsType<typeof getStaticProps>) 
                 )
               }
               return (
-                <Link href={href} {...props} target='_blank' rel='noopener noreferer'>
+                <Link href={href} {...props} target='_blank' rel='noopener noreferrer'>
                   {children}
                 </Link>
               )

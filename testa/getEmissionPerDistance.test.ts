@@ -1,10 +1,11 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks } from 'node-mocks-http'
-import getEmissionsPerDistance from 'pages/api/getEmissionsPerDistance.js'
+import getEmissionsPerDistance from 'pages/api/getEmissionsPerDistance'
 
 describe('getEmissionPerDistance', () => {
   test('peut être filtré par champ', async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/getEmissionsPerDistance?km=3&fields=emoji,display&transportations=14',
     })
@@ -26,7 +27,7 @@ describe('getEmissionPerDistance', () => {
   })
   test('peut renvoyer toutes les données de manière brute', async () => {
     // Given
-    const { req, res } = createMocks({
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: 'GET',
       url: '/api/getEmissionsPerDistance',
     })

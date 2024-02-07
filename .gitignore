@@ -55,7 +55,11 @@ cypress/results/
 storybook-static/
 
 public/shopify.js
-
 shopify/.env.impact-co2
-
 shopify/extensions/equivalent-carbone/assets/shopify.js
+
+public/scripts/detection.js
+public/scripts/detection-darkmode.js
+detection/chrome-extension.zip
+detection/chrome-extension/scripts/detection.js
+

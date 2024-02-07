@@ -1,5 +1,6 @@
 {% if block.settings.empreinte != "" %}
   <div style="font-size: var(--font-body-scale);">
+    <span id='impact-co2-introduction' style="display: none;">{{ block.settings.introduction }}</span>
     <span id='impact-co2-empreinte' style="display: none;">{{ block.settings.empreinte }}</span>
     <span id='impact-co2-produit' style="display: none;">{{ block.settings.produit }}</span>
     <span id='impact-co2-theme' style="display: none;">{{ block.settings.theme }}</span>
@@ -39,6 +40,11 @@
       "type": "text",
       "id": "empreinte",
       "label": "Empreinte CO₂e (en gramme)"
+    },
+    {
+      "type": "text",
+      "id": "introduction",
+      "label": "Phrase d'introduction"
     },
     {
       "type": "select",

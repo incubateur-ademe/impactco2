@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/nextjs'
 import { NextApiRequest } from 'next'
 import { prismaClient } from 'utils/prismaClient'
 
@@ -25,6 +26,7 @@ export async function trackAPIRequest(request: NextApiRequest, api: string, para
     })
     return !!name
   } catch (error) {
+    await Sentry.captureException(error)
     console.error(`tracking failed - ${request.headers.authorization}`, error)
   }
 }

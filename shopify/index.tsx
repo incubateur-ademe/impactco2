@@ -1,7 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Shopify from '../src/components/shopify/ShopifyEquivalent'
+import React, { render } from 'preact/compat'
+import Shopify from '../src/components/externalModules/shopify/ShopifyEquivalent'
 
-const root = ReactDOM.createRoot(document.getElementById('container') as HTMLElement)
-
-root.render(<Shopify />)
+const shopify = React.createElement(Shopify, null)
+render(shopify, document.getElementById('container') as HTMLElement)

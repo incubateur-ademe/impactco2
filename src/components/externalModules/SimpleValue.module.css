@@ -1,0 +1,22 @@
+.container {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.emoji {
+  font-size: 2em;
+  line-height: 1;
+}
+
+.label {
+  font-size: 0.75em;
+  line-height: 1.33;
+}
+
+.equivalentValue {
+  font-size: 1.25em;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--neutral-80);
+}
