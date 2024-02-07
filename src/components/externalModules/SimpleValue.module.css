@@ -12,6 +12,7 @@
 .label {
   font-size: 0.75em;
   line-height: 1.33;
+  color: var(--neutral-70);
 }
 
 .equivalentValue {
