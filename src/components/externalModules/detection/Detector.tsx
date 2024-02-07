@@ -6,7 +6,7 @@ import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regex =
-  /(\d+)(\s|&nbsp;)?(kg|kilo(s)?|g|tonne(s)?)(\s|&nbsp;)?(de\s|&nbsp;)?(co(2|₂|<sub>2<\/sub>)|dioxyde de carbone)(e|équivalent)?/i
+  /([0-9]+(,|\.)?[0-9]*)(\s|&nbsp;)?(kg|kilo(s)?|g|tonne(s)?)(\s|&nbsp;)?(de\s|&nbsp;)?(co(2|₂|<sub>2<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
 
 const getComputedStyle = (el: Element, property: string) => {
   if (document.defaultView) {
@@ -65,7 +65,7 @@ const Detector = ({ impact }: { impact: string }) => {
   const value = useMemo(() => {
     const values = regex.exec(impact)
     if (values) {
-      return Number(values[1]) * getFactor(values[3])
+      return Number(values[1].replace(',', '.')) * getFactor(values[4])
     }
     return 0
   }, [impact])
