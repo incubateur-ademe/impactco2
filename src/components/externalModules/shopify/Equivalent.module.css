@@ -55,7 +55,7 @@
 
   color: var(--primary-50);
 
-  >svg {
+  > svg {
     height: 3em;
   }
 }

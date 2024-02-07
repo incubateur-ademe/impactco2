@@ -171,7 +171,7 @@ const sentryWebpackPluginOptions = {
   silent: true,
   org: 'betagouv',
   project: 'impact-co2',
-  url: 'https://sentry.incubateur.net',
+  url: process.env.SENTRY_URL,
 }
 
 module.exports = (phase) => {

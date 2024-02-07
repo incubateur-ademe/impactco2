@@ -39,6 +39,7 @@ export const SectionWideContent = styled.div<{
 }>`
   margin: auto;
   max-width: ${({ $size }) => sizes[$size || 'lg']};
+  width: 100%;
   ${({ $flex, $center }) =>
     $flex &&
     css`

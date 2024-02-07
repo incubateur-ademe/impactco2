@@ -9,12 +9,8 @@
   },
   "content_scripts": [
     {
-      "js": [
-        "scripts/detection.js"
-      ],
-      "matches": [
-        "https://*/*"
-      ]
+      "js": ["scripts/detection.js"],
+      "matches": ["https://*/*"]
     }
   ],
   "icons": {

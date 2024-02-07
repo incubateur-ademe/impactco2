@@ -1,0 +1,10 @@
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button {
+  margin: 1.5rem auto 0 auto;
+}

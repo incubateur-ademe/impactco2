@@ -36,7 +36,7 @@ const Actions = ({
       <GhostButton
         colored
         size='sm'
-        icon='download'
+        icon='image'
         onClick={() => {
           takeScreenshot()
         }}>

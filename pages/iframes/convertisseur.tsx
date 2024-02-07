@@ -1,11 +1,11 @@
 import React from 'react'
+import Comparateur from 'components/comparateur/Comparateur'
 import Iframe from 'components/layout/Iframe'
-import Tiles from 'components/misc/Tiles'
 
 export default function convertisseur() {
   return (
     <Iframe noLogo>
-      <Tiles iframe />
+      <Comparateur iframe />
     </Iframe>
   )
 }

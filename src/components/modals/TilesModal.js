@@ -2,7 +2,7 @@ import Fuse from 'fuse.js'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
-import useDataContext from 'components/providers/DataProvider'
+import { computedEquivalents } from 'components/providers/DataProvider'
 import useModalContext from 'components/providers/ModalProvider'
 import useParamContext from 'components/providers/ParamProvider'
 import Modal from 'components/base/Modal'
@@ -25,19 +25,18 @@ const Equivalents = styled.div`
 export default function TilesModal() {
   const { tiles: open, setTiles: setOpen } = useModalContext()
 
-  const { equivalents } = useDataContext()
   const {
-    comparateur: { tiles, setTiles },
+    comparateur: { equivalents, setEquivalents },
   } = useParamContext()
 
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
   const [fuse, setFuse] = useState(null)
   useEffect(() => {
-    if (equivalents) {
+    if (computedEquivalents) {
       setFuse(
         new Fuse(
-          equivalents.filter((equivalent) => !equivalent.hideTile),
+          computedEquivalents.filter((equivalent) => !equivalent.hideTile),
           {
             keys: [
               {
@@ -64,55 +63,48 @@ export default function TilesModal() {
       )
     }
   }, [equivalents])
+
   useEffect(() => {
     setResults(
       fuse && search.length > 0
         ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-        : equivalents
+        : computedEquivalents
             .filter((equivalent) => !equivalent.hideTile)
             .map((equivalent) => ({ item: equivalent }))
             .sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
     )
-  }, [search, fuse, equivalents])
+  }, [search, fuse])
 
-  return (
-    <>
-      {!open ? (
-        <></>
-      ) : (
-        <StyledModal open={open} setOpen={setOpen}>
-          <Title>Ajouter ou enlever des équivalents</Title>
-          <Text>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Text>
-          <SearchInput
-            value={search}
-            onChange={({ value }) => setSearch(value)}
-            placeholder={'Entrez un objet, un geste...'}
+  return open ? (
+    <StyledModal open={open} setOpen={setOpen}>
+      <Title>Ajouter ou enlever des équivalents</Title>
+      <Text>Sélectionnez (ou désélectionnez) des équivalents pour créer votre infographie personnalisée.</Text>
+      <SearchInput
+        value={search}
+        onChange={({ value }) => setSearch(value)}
+        placeholder={'Entrez un objet, un geste...'}
+      />
+      <Equivalents>
+        {results.map(({ item }) => (
+          <Equivalent
+            key={item.slug}
+            equivalent={item}
+            checked={equivalents.find((tile) => tile === item.slug)}
+            setChecked={(checked) => {
+              setEquivalents((prevTiles) =>
+                checked ? [...prevTiles, item.slug] : prevTiles.filter((equivalent) => equivalent !== item.slug)
+              )
+            }}
           />
-          {open && (
-            <Equivalents>
-              {results.map(({ item }) => (
-                <Equivalent
-                  key={item.slug}
-                  equivalent={item}
-                  checked={tiles.find((tile) => tile === item)}
-                  setChecked={(checked) => {
-                    setTiles((prevTiles) =>
-                      checked ? [...prevTiles, item] : prevTiles.filter((tile) => tile.id !== item.slug)
-                    )
-                  }}
-                />
-              ))}
-            </Equivalents>
-          )}
-          <Button
-            onClick={() => {
-              tiles.forEach((tile) => track('Comparateur carbone', 'Nouvel équivalent', tile.slug))
-              setOpen(false)
-            }}>
-            Valider et fermer
-          </Button>
-        </StyledModal>
-      )}
-    </>
-  )
+        ))}
+      </Equivalents>
+      <Button
+        onClick={() => {
+          equivalents.forEach((tile) => track('Comparateur carbone', 'Nouvel équivalent', tile.slug))
+          setOpen(false)
+        }}>
+        Valider et fermer
+      </Button>
+    </StyledModal>
+  ) : null
 }

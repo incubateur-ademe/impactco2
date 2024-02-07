@@ -13,6 +13,7 @@ import {
   Content,
   ContentHeader,
   IFrameLogos,
+  Iframe,
   Logos,
   Screenshotable,
   Separator,
@@ -42,6 +43,8 @@ const ShareableContent = <T extends string>({
   path,
   sideContent,
   bottom,
+  name,
+  noBorder,
 }: {
   category?: Category
   iframe?: boolean
@@ -62,6 +65,8 @@ const ShareableContent = <T extends string>({
   reverse?: boolean
   theme?: 'color'
   withoutIntegration?: boolean
+  name?: string
+  noBorder?: boolean
 }) => {
   const { theme: darkMode } = useParamContext()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
@@ -79,6 +84,7 @@ const ShareableContent = <T extends string>({
               type={type}
               title={title}
               path={path}
+              name={name}
             />
             <Separator />
           </>
@@ -86,7 +92,7 @@ const ShareableContent = <T extends string>({
         <SectionWideContent $size={size || 'xs'} $noGutter $flex>
           <Content>
             <Theme $theme={theme} className={darkMode === 'night' ? 'night' : ''}>
-              <Container $iframe={iframe}>
+              <Container $iframe={iframe} $noBorder={noBorder}>
                 {header && <ContentHeader>{header}</ContentHeader>}
                 <div ref={ref}>
                   <Screenshotable $theme={theme}>
@@ -100,7 +106,7 @@ const ShareableContent = <T extends string>({
                 </div>
                 {footer}
                 {iframe && (
-                  <>
+                  <Iframe $noBorder={noBorder}>
                     <IFrameLogos>
                       <Signature noMargin noLink center />
                       <Link href={buildCurrentUrlFor(category ? category.slug : '/comparateur')}>version complète</Link>
@@ -111,7 +117,7 @@ const ShareableContent = <T extends string>({
                       }}
                       tracking={tracking}
                     />
-                  </>
+                  </Iframe>
                 )}
                 {overScreen && <OverScreen values={overScreen} onClose={() => setOverScreen(undefined)} />}
               </Container>

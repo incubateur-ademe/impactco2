@@ -28,7 +28,6 @@ export const start = (darkMode?: boolean) => {
   const elems = document.querySelectorAll('*')
   Array.from(elems)
     .filter((elem) => {
-      console.log(elem.className)
       if (
         elem.tagName !== 'HEAD' &&
         elem.tagName !== 'STYLE' &&

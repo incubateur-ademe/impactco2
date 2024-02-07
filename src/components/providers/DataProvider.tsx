@@ -1,7 +1,7 @@
 import React, { ReactNode, useContext } from 'react'
 import { Category } from 'types/category'
 import { ECV } from 'types/ecv'
-import { Equivalent } from 'types/equivalent'
+import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import categories from 'data/categories.json'
 import boisson from 'data/categories/boisson.json'
 import chauffage from 'data/categories/chauffage.json'
@@ -15,6 +15,7 @@ import numerique from 'data/categories/numerique.json'
 import repas from 'data/categories/repas.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import ecv from 'data/ecv.json'
+import { computeECV } from 'utils/computeECV'
 
 export const flattenEquivalents = (equivalents: Equivalent[]) =>
   equivalents.flatMap((equivalent) =>
@@ -46,6 +47,12 @@ const equivalents = [
   ...fruitsetlegumes,
   ...divers,
 ]
+
+export const computedEquivalents = equivalents.map((equivalent) => ({
+  ...equivalent,
+  link: `${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
+  value: computeECV(equivalent),
+})) as ComputedEquivalent[]
 
 export function DataProvider({ children }: { children: ReactNode }) {
   return (

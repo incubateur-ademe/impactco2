@@ -37,6 +37,8 @@ type BaseEquivalent = {
   hideTile?: boolean
 }
 
+export type ComputedEquivalent = BaseEquivalent & { value: number; link: string }
+
 type BaseEquivalentValue =
   | {
       total: number

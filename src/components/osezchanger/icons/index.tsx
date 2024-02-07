@@ -3,6 +3,7 @@ import arrowLeft from './arrow-left'
 import arrowRight from './arrow-right'
 import check from './check'
 import close from './close'
+import closeThick from './close-thick'
 import codeSSlash from './code-s-slash'
 import copy from './copy'
 import download from './download'
@@ -11,8 +12,11 @@ import error from './error'
 import facebook from './facebook'
 import fullArrowRight from './full-arrow-right'
 import fullStar from './full-star'
+import image from './image'
 import information from './information'
+import link from './link'
 import linkedin from './linkedin'
+import magicWand from './magic-wand'
 import minus from './minus'
 import plus from './plus'
 import refresh from './refresh'
@@ -23,11 +27,13 @@ import twitter from './twitter'
 import whatsapp from './whatsapp'
 
 export type IconId =
+  | 'magic-wand'
   | 'code-s-slash'
   | 'send-plane'
   | 'download'
   | 'information'
   | 'sprinkles'
+  | 'close-thick'
   | 'close'
   | 'arrow-left'
   | 'arrow-right'
@@ -46,11 +52,19 @@ export type IconId =
   | 'check'
   | 'error'
   | 'refresh'
+  | 'image'
+  | 'link'
 
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
+    case 'link':
+      return link
+    case 'image':
+      return image
     case 'refresh':
       return refresh
+    case 'magic-wand':
+      return magicWand
     case 'code-s-slash':
       return codeSSlash
     case 'send-plane':
@@ -63,6 +77,8 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return sprinkles
     case 'close':
       return close
+    case 'close-thick':
+      return closeThick
     case 'arrow-left':
       return arrowLeft
     case 'arrow-right':

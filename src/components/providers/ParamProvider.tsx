@@ -2,11 +2,12 @@ import negaocterRules from '@incubateur-ademe/publicodes-negaoctet'
 import { useRouter } from 'next/router'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
-import { Equivalent } from 'types/equivalent'
+import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { Frequence } from 'types/livraison'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
+import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/Theme'
 import { default_eqs, frequences } from 'components/livraison/data'
 import { displayAddress } from 'components/transport/search/itinerary/Address'
@@ -99,10 +100,14 @@ const ParamContext = React.createContext<{
     setEquivalents: Dispatch<SetStateAction<string[]>>
   }
   comparateur: {
+    baseValue: number
+    setBaseValue: Dispatch<SetStateAction<number>>
+    equivalents: string[]
+    setEquivalents: Dispatch<SetStateAction<string[]>>
     tiles: Equivalent[]
     setTiles: Dispatch<SetStateAction<Equivalent[]>>
-    comparedEquivalent: Equivalent | undefined
-    setComparedEquivalent: Dispatch<SetStateAction<Equivalent | undefined>>
+    comparedEquivalent: ComputedEquivalent | undefined
+    setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
   }
   distance: {
     km: number
@@ -217,8 +222,27 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [frequence, setFrequence] = useState<Frequence | undefined>(frequences.find((freq) => freq.isDefault))
 
   // Comparateur
+  const [baseValue, setBaseValue] = useState(10000)
+  const [equivalents, setEquivalents] = useState<string[]>([])
   const [tiles, setTiles] = useState<Equivalent[]>([])
-  const [comparedEquivalent, setComparedEquivalent] = useState<Equivalent>()
+  const [comparedEquivalent, setComparedEquivalent] = useState<ComputedEquivalent>()
+
+  const internalComparedEquivalentSetter = (equivalent: ComputedEquivalent | undefined) => {
+    const filteredEquivalent = equivalent ? equivalents.filter((slug) => slug !== equivalent.slug) : equivalents
+    if (comparedEquivalent) {
+      setEquivalents([...filteredEquivalent, comparedEquivalent.slug])
+    } else {
+      setEquivalents([...filteredEquivalent])
+    }
+    setBaseValue(10 * (equivalent ? equivalent.value : 1000))
+    setComparedEquivalent(equivalent)
+  }
+
+  useEffect(() => {
+    if (equivalents.length === 0) {
+      setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, 10000, 3))
+    }
+  }, [])
 
   // Chauffage
   const [m2, setM2] = useState(63)
@@ -456,10 +480,14 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setFrequence,
         },
         comparateur: {
+          baseValue,
+          setBaseValue,
+          equivalents,
+          setEquivalents,
           tiles,
           setTiles,
           comparedEquivalent,
-          setComparedEquivalent,
+          setComparedEquivalent: internalComparedEquivalentSetter,
         },
         distance: {
           km,

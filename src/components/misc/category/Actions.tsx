@@ -34,7 +34,7 @@ const Actions = ({
         </GhostButton>
       )}
       <GhostButton
-        icon='download'
+        icon='image'
         onClick={() => {
           onClick('telecharger')
         }}>
