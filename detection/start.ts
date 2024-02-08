@@ -28,9 +28,11 @@ export const start = (darkMode?: boolean) => {
   const elems = document.querySelectorAll('*')
   Array.from(elems)
     .filter((elem) => {
+      console.log(elem.className)
       if (
         elem.tagName !== 'HEAD' &&
         elem.tagName !== 'STYLE' &&
+        elem.tagName !== 'BUTTON' &&
         [...elem.childNodes.values()].every(
           (child) =>
             child.nodeName === '#text' || child.nodeName === 'SUB' || child.nodeName == 'SPAN' || child.nodeName === 'A'
