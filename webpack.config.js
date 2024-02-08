@@ -30,6 +30,14 @@ module.exports = [
         import: './detection/index-darkmode.ts',
         filename: '../public/scripts/detection-darkmode.js',
       },
+      detectionAsync: {
+        import: './detection/index-async.ts',
+        filename: '../public/scripts/detection-async.js',
+      },
+      detectionDarkModeAsync: {
+        import: './detection/index-darkmode-async.ts',
+        filename: '../public/scripts/detection-darkmode-async.js',
+      },
       shopify: {
         import: './shopify/index.tsx',
         filename: '../shopify/extensions/equivalent-carbone/assets/shopify.js',

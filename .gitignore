@@ -60,6 +60,7 @@ shopify/extensions/equivalent-carbone/assets/shopify.js
 
 public/scripts/detection.js
 public/scripts/detection-darkmode.js
+public/scripts/detection-async.js
+public/scripts/detection-darkmode-async.js
 detection/chrome-extension.zip
 detection/chrome-extension/scripts/detection.js
-
