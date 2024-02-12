@@ -81,19 +81,19 @@
     "category": 9,
     "value": 358.042894,
     "label": "kg d'ail",
-    "emoji": "🌱"
+    "emoji": "🧄"
   },
   "artichaut": {
     "category": 9,
     "value": 3876.929068,
     "label": "kg d'artichaut",
-    "emoji": "🌱"
+    "emoji": "🌳"
   },
   "asperge": {
     "category": 9,
     "value": 1559.309081,
     "label": "kg d'asperge",
-    "emoji": "🌱"
+    "emoji": "🥬"
   },
   "betterave": {
     "category": 9,
@@ -105,7 +105,7 @@
     "category": 9,
     "value": 542.753575,
     "label": "kg de blette",
-    "emoji": "🌱"
+    "emoji": "🥬"
   },
   "carotte": {
     "category": 9,
@@ -117,7 +117,7 @@
     "category": 9,
     "value": 677.0180851000001,
     "label": "kg de céleri",
-    "emoji": "🌱"
+    "emoji": "🥬"
   },
   "champignonmorille": {
     "category": 9,
@@ -153,37 +153,37 @@
     "category": 9,
     "value": 618.848881,
     "label": "kg de courge",
-    "emoji": "🌱"
+    "emoji": "🎃"
   },
   "courgette": {
     "category": 9,
     "value": 483.51979,
     "label": "kg de courgette",
-    "emoji": "🌱"
+    "emoji": "🥒"
   },
   "cresson": {
     "category": 9,
     "value": 941.0662189999998,
     "label": "kg de cresson",
-    "emoji": "🌱"
+    "emoji": "🥬"
   },
   "echalote": {
     "category": 9,
     "value": 364.86326020000007,
     "label": "kg d'échalote",
-    "emoji": "🌱"
+    "emoji": "🧅"
   },
   "endive": {
     "category": 9,
     "value": 938.0277949999997,
     "label": "kg d'endive",
-    "emoji": "🌱"
+    "emoji": "🥬"
   },
   "epinard": {
     "category": 9,
     "value": 391.2991521,
     "label": "kg d'épinard",
-    "emoji": "🌱"
+    "emoji": "🥬"
   },
   "mangue": {
     "category": 9,
@@ -195,19 +195,19 @@
     "category": 9,
     "value": 962.528871,
     "label": "kg de fenouil",
-    "emoji": "🌱"
+    "emoji": "🌿"
   },
   "haricotvert": {
     "category": 9,
     "value": 413.06197199999997,
     "label": "kg d'haricot vert (cru)",
-    "emoji": "🌱"
+    "emoji": "🥒"
   },
   "laitue": {
     "category": 9,
     "value": 941.0662189999998,
     "label": "kg de laitue",
-    "emoji": "🌱"
+    "emoji": "🥬"
   },
   "mache": {
     "category": 9,
@@ -219,7 +219,7 @@
     "category": 9,
     "value": 364.321099,
     "label": "kg de navet",
-    "emoji": "🌱"
+    "emoji": "🍠"
   },
   "mais": {
     "category": 9,
@@ -231,25 +231,25 @@
     "category": 9,
     "value": 389.53612800000013,
     "label": "kg d'oignon",
-    "emoji": "🌱"
+    "emoji": "🧅"
   },
   "panais": {
     "category": 9,
     "value": 457.82909000000006,
     "label": "kg de panais",
-    "emoji": "🌱"
+    "emoji": "🥕"
   },
   "petitpois": {
     "category": 9,
     "value": 665.129177,
     "label": "kg de petit pois",
-    "emoji": "🌱"
+    "emoji": "🫛"
   },
   "poireau": {
     "category": 9,
     "value": 768.865685,
     "label": "kg de poireau",
-    "emoji": "🌱"
+    "emoji": "🌿"
   },
   "poivron": {
     "category": 9,
@@ -267,19 +267,19 @@
     "category": 9,
     "value": 601.8473451000001,
     "label": "kg de radis",
-    "emoji": "🌱"
+    "emoji": "🍒"
   },
   "salsifis": {
     "category": 9,
     "value": 457.82908999999995,
     "label": "kg de salsifis",
-    "emoji": "🌱"
+    "emoji": "🍠"
   },
   "topinambour": {
     "category": 9,
     "value": 504.87197000000003,
     "label": "kg de topinambour",
-    "emoji": "🌱"
+    "emoji": "🍠"
   },
   "cassis": {
     "category": 9,
@@ -309,7 +309,7 @@
     "category": 9,
     "value": 541.0901117000001,
     "label": "kg de coing",
-    "emoji": "🌱"
+    "emoji": "🍎"
   },
   "figue": {
     "category": 9,
@@ -321,7 +321,7 @@
     "category": 9,
     "value": 1787.5465516999998,
     "label": "kg de groseille",
-    "emoji": "🌱"
+    "emoji": "🍒"
   },
   "kiwi": {
     "category": 9,
@@ -387,7 +387,7 @@
     "category": 9,
     "value": 716.7486917,
     "label": "kg de rhubarbe",
-    "emoji": "🌱"
+    "emoji": "🥢"
   },
   "peche": {
     "category": 9,
@@ -465,19 +465,19 @@
     "category": 9,
     "value": 533.048897,
     "label": "kg de carambole",
-    "emoji": "🌱"
+    "emoji": "⭐"
   },
   "datte": {
     "category": 9,
     "value": 2760.1109879999995,
     "label": "kg de datte",
-    "emoji": "🌱"
+    "emoji": "🫘"
   },
   "fruitdelapassion": {
     "category": 9,
     "value": 892.8173700000001,
     "label": "kg de fruit de la passion",
-    "emoji": "🌱"
+    "emoji": "🧆"
   },
   "grenade": {
     "category": 9,
