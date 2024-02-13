@@ -36,6 +36,16 @@ export default function Footer() {
                     Impact CO<sub>2</sub>
                   </strong>
                   <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
+                  <FollowNews>
+                    <Link
+                      href='https://www.linkedin.com/company/ademe/'
+                      title='LinkedIn'
+                      rel='noreferrer noopener'
+                      target='_blank'>
+                      Suivre nos actualités sur LinkedIn
+                    </Link>
+                    {getOpenIcon()}
+                  </FollowNews>
                 </FooterExplain>
               </GridOneB>
             </GridOne>
@@ -234,6 +244,26 @@ const Logos = styled.div`
   display: flex;
 `
 
+const FollowNews = styled.p`
+  color: var(--neutral-70);
+  font-weight: 500;
+  margin-top: 1rem;
+  .openLink {
+    height: 18px;
+    width: 18px;
+    margin-left: 0.25rem;
+  }
+  a {
+    color: var(--neutral-70);
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 0.25rem;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+`
+
 const FooterExplain = styled.div`
   margin: 3rem 0 3rem 0;
   max-width: 25rem;
@@ -247,6 +277,8 @@ const FooterExplain = styled.div`
 
 const FooterLink = styled.div`
   a {
+    display: flex;
+    align-items: center;
     color: var(--neutral-80);
     cursor: pointer;
     font-size: 0.75rem;
