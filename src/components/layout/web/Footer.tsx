@@ -104,6 +104,7 @@ const Wrapper = styled.footer`
 `
 
 const Grid = styled.div`
+  border-top: 1px solid var(--neutral-20);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   ${MEDIA.LT.MEDIUM} {
