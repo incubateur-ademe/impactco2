@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -22,6 +21,7 @@ export default function Footer() {
                 <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
               </FooterExplain>
             </div>
+
             <div className='gridlinks'>
               <FooterLink>
                 <Link href='/plan-du-site' title='Plan du site'>
@@ -110,12 +110,14 @@ const Grid = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
   > .gridlinks {
+    border-top: 1px solid var(--neutral-20);
     display: flex;
     grid-column: span 2;
+    margin-bottom: 1rem;
     ${MEDIA.LT.MEDIUM} {
       flex-direction: column;
       grid-column: inherit;
     }
-    margin-bottom: 1rem;
+    padding-top: 1rem;
   }
 `
