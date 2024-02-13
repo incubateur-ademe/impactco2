@@ -45,8 +45,18 @@ export default function Footer() {
                   <div>
                     <strong>Liens Utiles</strong>
                   </div>
-                  <div>Statistiques</div>
-                  <div>Nous contacter</div>
+                  <LinkContainer>
+                    <Link href='/stats' title='Statistiques'>
+                      Statistiques
+                    </Link>
+                    <Link
+                      href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                      target='_blank'
+                      rel='noreferrer noopener'
+                      title='Nous contacter'>
+                      Nous contacter
+                    </Link>
+                  </LinkContainer>
                 </div>
               </GridTwoA>
               <GridTwoB>
@@ -58,10 +68,11 @@ export default function Footer() {
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
                       title='Kit de diffusion'
+                      rel='noreferrer noopener'
                       target='_blank'>
                       Kit de diffusion
                     </Link>
-                    <Link href='/api-doc' title='API Impact CO2' target='_blank'>
+                    <Link href='/api-doc' title='API Impact CO2'>
                       API Impact CO2
                     </Link>
                   </LinkContainer>
