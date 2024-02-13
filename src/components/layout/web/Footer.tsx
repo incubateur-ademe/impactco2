@@ -102,6 +102,9 @@ const Grid = styled.div`
 const GridOne = styled.div`
   display: grid;
   grid-column: span 4;
+  ${MEDIA.LT.XLARGE} {
+    grid-column: span 3;
+  }
   grid-template-columns: repeat(3, 1fr);
 `
 const GridOneA = styled.div`
@@ -126,6 +129,9 @@ const GridTwoB = styled.div`
 const GridTwo = styled.div`
   display: grid;
   grid-column: span 2;
+  ${MEDIA.LT.XLARGE} {
+    grid-column: span 3;
+  }
   grid-template-columns: repeat(2, 1fr);
 `
 
