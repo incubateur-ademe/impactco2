@@ -10,17 +10,25 @@ export default function Footer() {
       <Section>
         <SectionWideContent>
           <Grid>
-            <Logos>
-              <Signature noMargin noLink color='var(--primary-70)' />
-            </Logos>
-            <div>
-              <FooterExplain>
-                <strong>
-                  Impact CO<sub>2</sub>
-                </strong>
-                <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
-              </FooterExplain>
-            </div>
+            <GridOne>
+              <div>
+                <Logos>
+                  <Signature noMargin noLink color='var(--primary-70)' />
+                </Logos>
+              </div>
+              <div>
+                <FooterExplain>
+                  <strong>
+                    Impact CO<sub>2</sub>
+                  </strong>
+                  <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
+                </FooterExplain>
+              </div>
+            </GridOne>
+            <GridTwo>
+              <div>three</div>
+              <div>four</div>
+            </GridTwo>
           </Grid>
 
           <div className='gridlinks'>
@@ -70,6 +78,22 @@ export default function Footer() {
     </Wrapper>
   )
 }
+
+const Grid = styled.div`
+  border-top: 1px solid var(--neutral-20);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+`
+const GridOne = styled.div`
+  display: grid;
+  grid-column: span 4;
+  grid-template-columns: repeat(2, 1fr);
+`
+const GridTwo = styled.div`
+  display: grid;
+  grid-column: span 2;
+  grid-template-columns: repeat(2, 1fr);
+`
 
 const Logos = styled.div`
   display: flex;
@@ -121,14 +145,5 @@ const Wrapper = styled.footer`
       flex-direction: column;
     }
     padding-top: 1rem;
-  }
-`
-
-const Grid = styled.div`
-  border-top: 1px solid var(--neutral-20);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  ${MEDIA.LT.MEDIUM} {
-    grid-template-columns: repeat(1, 1fr);
   }
 `
