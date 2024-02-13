@@ -121,6 +121,7 @@ const LinkContainer = styled.div`
     color: var(--neutral-70);
     cursor: pointer;
     text-decoration: none;
+    margin-top: 0.25rem;
   }
   a:hover {
     text-decoration: underline;
