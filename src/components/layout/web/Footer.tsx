@@ -98,6 +98,9 @@ const Grid = styled.div`
   border-top: 1px solid var(--neutral-20);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  ${MEDIA.LT.XLARGE} {
+    padding-top: 4rem;
+  }
 `
 const GridOne = styled.div`
   display: grid;
@@ -129,6 +132,12 @@ const GridOneB = styled.div`
 const GridTwoA = styled.div`
   align-items: center;
   display: flex;
+  ${MEDIA.LT.LARGE} {
+    grid-column: span 2;
+  }
+  ${MEDIA.LT.MEDIUM} {
+    grid-column: span 1;
+  }
   ${MEDIA.LT.XLARGE} {
     align-items: stretch;
   }
@@ -136,6 +145,12 @@ const GridTwoA = styled.div`
 const GridTwoB = styled.div`
   align-items: center;
   display: flex;
+  ${MEDIA.LT.LARGE} {
+    grid-column: span 2;
+  }
+  ${MEDIA.LT.MEDIUM} {
+    grid-column: span 1;
+  }
   ${MEDIA.LT.XLARGE} {
     align-items: stretch;
   }
