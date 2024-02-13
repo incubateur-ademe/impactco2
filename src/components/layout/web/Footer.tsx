@@ -207,12 +207,9 @@ const FooterLink = styled.div`
     font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0em;
-    margin-right: 1.5rem;
-    ${MEDIA.LT.MEDIUM} {
-      margin-left: inherit;
-    }
     text-decoration: none;
   }
+  margin-bottom: 0.5rem;
 `
 
 const Wrapper = styled.footer`
@@ -221,6 +218,9 @@ const Wrapper = styled.footer`
     border-top: 1px solid var(--neutral-20);
     a {
       border-right: 1px solid var(--neutral-20);
+      ${MEDIA.LT.MEDIUM} {
+        border-right: none;
+      }
       color: var(--neutral-50);
       padding-right: 1.5rem;
     }
