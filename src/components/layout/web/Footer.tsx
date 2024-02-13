@@ -48,44 +48,62 @@ export default function Footer() {
           </Grid>
 
           <div className='gridlinks'>
-            <FooterLink>
+            <FooterLink mw={6}>
               <Link href='/plan-du-site' title='Plan du site'>
                 Plan du site
               </Link>
             </FooterLink>
-            <FooterLink>
-              <Link href='/accessibilite' title='Accessibilité (non conforme)'>
-                Accessibilité (non conforme)
-              </Link>
-            </FooterLink>
-            <FooterLink>
+            <FooterLink mw={8}>
               <Link href='/mentions-legales' title='Mentions légales'>
                 Mentions légales
               </Link>
             </FooterLink>
-            <FooterLink>
+            <FooterLink mw={13}>
               <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
                 Politique de confidentialité
               </Link>
             </FooterLink>
-            <FooterLink>
-              <Link href='/budget' title='Budget'>
-                Budget
+            <FooterLink mw={13}>
+              <Link href='/accessibilite' title='Accessibilité (non conforme)'>
+                Accessibilité : non conforme
               </Link>
             </FooterLink>
-            <FooterLink>
-              <Link href='/stats' title='Statistiques'>
-                Statistiques
+            <FooterLink mw={7}>
+              <Link href='https://beta.gouv.fr/' title='beta.gouv.fr'>
+                beta.gouv.fr
+                <svg
+                  className='openLink'
+                  aria-hidden='true'
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'>
+                  <path
+                    stroke='currentColor'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2'
+                  />
+                </svg>
               </Link>
             </FooterLink>
-            <FooterLink>
-              <Link
-                href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                target='_blank'
-                rel='noreferrer noopener'
-                title='Nous contacter'
-                className='last'>
-                Contact
+            <FooterLink mw={5}>
+              <Link href='https://github.com/incubateur-ademe/impactco2' title='Code source'>
+                Code source
+                <svg
+                  className='openLink'
+                  aria-hidden='true'
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'>
+                  <path
+                    stroke='currentColor'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2'
+                  />
+                </svg>
               </Link>
             </FooterLink>
           </div>
@@ -200,7 +218,7 @@ const FooterExplain = styled.div`
   }
 `
 
-const FooterLink = styled.div`
+const FooterLink = styled.div<{ mw: number }>`
   a {
     color: var(--neutral-80);
     cursor: pointer;
@@ -209,7 +227,13 @@ const FooterLink = styled.div`
     letter-spacing: 0em;
     text-decoration: none;
   }
+  .openLink {
+    height: 12px;
+    margin-left: 0.25rem;
+    width: 12px;
+  }
   margin-bottom: 0.5rem;
+  min-width: ${(props) => props.mw || 0}rem;
 `
 
 const Wrapper = styled.footer`
@@ -231,6 +255,7 @@ const Wrapper = styled.footer`
       color: var(--neutral-80);
     }
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
     ${MEDIA.LT.MEDIUM} {
       flex-direction: column;
