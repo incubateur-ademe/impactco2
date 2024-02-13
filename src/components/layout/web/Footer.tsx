@@ -58,7 +58,8 @@ export default function Footer() {
                   href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                   target='_blank'
                   rel='noreferrer noopener'
-                  title='Nous contacter'>
+                  title='Nous contacter'
+                  className='last'>
                   Contact
                 </Link>
               </FooterLink>
@@ -111,6 +112,17 @@ const Grid = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
   > .gridlinks {
+    a {
+      color: var(--neutral-50);
+      border-right: 1px solid var(--neutral-20);
+      padding-right: 1.5rem;
+    }
+    a.last {
+      border: none;
+    }
+    a:hover {
+      color: var(--neutral-80);
+    }
     border-top: 1px solid var(--neutral-20);
     display: flex;
     grid-column: span 2;
