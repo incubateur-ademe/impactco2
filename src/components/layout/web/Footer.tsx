@@ -124,7 +124,7 @@ const Grid = styled.div`
     padding-top: 4rem;
   }
 `
-const GridOne = styled.div`last
+const GridOne = styled.div`
   display: grid;
   grid-column: span 4;
   ${MEDIA.LT.XLARGE} {
