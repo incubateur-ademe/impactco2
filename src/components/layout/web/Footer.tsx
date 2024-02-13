@@ -26,8 +26,20 @@ export default function Footer() {
               </div>
             </GridOne>
             <GridTwo>
-              <div>three</div>
-              <div>four</div>
+              <div>
+                <div>
+                  <strong>Liens Utiles</strong>
+                </div>
+                <div>Statistiques</div>
+                <div>Nous contacter</div>
+              </div>
+              <div>
+                <div>
+                  <strong>Ressources</strong>
+                </div>
+                <div>Kit de diffusion</div>
+                <div>API Impact CO2</div>
+              </div>
             </GridTwo>
           </Grid>
 
