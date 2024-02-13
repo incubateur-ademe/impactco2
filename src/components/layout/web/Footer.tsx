@@ -153,8 +153,18 @@ const Grid = styled.div`
   border-top: 1px solid var(--neutral-20);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  padding: 3rem 0 3rem 0;
   ${MEDIA.LT.XLARGE} {
-    padding-top: 4rem;
+    padding: 3rem 0 1rem 0;
+  }
+  ${MEDIA.LT.LARGE} {
+    padding: 3rem 0 1rem 0;
+  }
+  ${MEDIA.LT.MEDIUM} {
+    padding: 3rem 0 0rem 0;
+  }
+  ${MEDIA.LT.SMALL} {
+    padding: 3rem 0 0rem 0;
   }
 `
 const GridOne = styled.div`
@@ -182,6 +192,19 @@ const GridOneB = styled.div`
   grid-column: span 3;
   ${MEDIA.LT.XLARGE} {
     grid-column: span 5;
+    padding-bottom: 1.5rem;
+    padding-top: 4rem;
+  }
+  ${MEDIA.LT.LARGE} {
+    padding-bottom: 2rem;
+  }
+  ${MEDIA.LT.MEDIUM} {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  ${MEDIA.LT.SMALL} {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
   }
 `
 const GridTwoA = styled.div`
@@ -237,6 +260,10 @@ const GridTwo = styled.div`
     padding-bottom: 2rem;
     padding-top: 2rem;
   }
+  ${MEDIA.LT.SMALL} {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
   grid-template-columns: repeat(2, 1fr);
 `
 
@@ -265,7 +292,6 @@ const FollowNews = styled.p`
 `
 
 const FooterExplain = styled.div`
-  margin: 3rem 0 3rem 0;
   max-width: 25rem;
   p {
     margin-bottom: 0;
@@ -325,6 +351,6 @@ const Wrapper = styled.footer`
     ${MEDIA.LT.SMALL} {
       flex-direction: column;
     }
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
 `
