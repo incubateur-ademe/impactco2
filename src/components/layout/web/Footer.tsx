@@ -105,25 +105,40 @@ const GridOne = styled.div`
   ${MEDIA.LT.XLARGE} {
     grid-column: span 3;
   }
-  grid-template-columns: repeat(3, 1fr);
+  ${MEDIA.LT.MEDIUM} {
+    grid-column: span 6;
+  }
+  grid-template-columns: repeat(5, 1fr);
 `
 const GridOneA = styled.div`
   align-items: center;
   display: flex;
-  grid-column: span 1;
+  grid-column: span 2;
+  ${MEDIA.LT.XLARGE} {
+    grid-column: span 5;
+  }
 `
 const GridOneB = styled.div`
   align-items: center;
   display: flex;
-  grid-column: span 2;
+  grid-column: span 3;
+  ${MEDIA.LT.XLARGE} {
+    grid-column: span 5;
+  }
 `
 const GridTwoA = styled.div`
   align-items: center;
   display: flex;
+  ${MEDIA.LT.XLARGE} {
+    align-items: stretch;
+  }
 `
 const GridTwoB = styled.div`
   align-items: center;
   display: flex;
+  ${MEDIA.LT.XLARGE} {
+    align-items: stretch;
+  }
 `
 
 const GridTwo = styled.div`
@@ -131,6 +146,9 @@ const GridTwo = styled.div`
   grid-column: span 2;
   ${MEDIA.LT.XLARGE} {
     grid-column: span 3;
+  }
+  ${MEDIA.LT.SMALL} {
+    grid-column: span 6;
   }
   grid-template-columns: repeat(2, 1fr);
 `
@@ -142,11 +160,10 @@ const Logos = styled.div`
 const FooterExplain = styled.div`
   margin: 3rem 0 3rem 0;
   max-width: 25rem;
-  padding-left: 3rem;
   p {
     margin-bottom: 0;
   }
-  ${MEDIA.LT.MEDIUM} {
+  ${MEDIA.LT.SMALL} {
     margin: 1.5rem 0 1.5rem 0;
   }
 `
