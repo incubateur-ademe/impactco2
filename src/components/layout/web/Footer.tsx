@@ -49,7 +49,7 @@ export default function Footer() {
 
           <div className='gridlinks'>
             <FooterLink>
-              <Link href='/plan-du-site' title='Plan du site'>
+              <Link className='first' href='/plan-du-site' title='Plan du site'>
                 Plan du site
               </Link>
             </FooterLink>
@@ -217,7 +217,9 @@ const FooterExplain = styled.div`
   p {
     margin-bottom: 0;
   }
-  ${MEDIA.LT.SMALL} {rc/components/layout/web/OpenIcon.tsx
+  ${MEDIA.LT.SMALL} {
+    margin: 1.5rem 0 1.5rem 0;
+  }
 `
 
 const FooterLink = styled.div`
@@ -228,6 +230,13 @@ const FooterLink = styled.div`
     font-weight: 400;
     letter-spacing: 0em;
     text-decoration: none;
+    padding-left: 1.5rem;
+    ${MEDIA.LT.SMALL} {
+      padding-left: 0;
+    }
+  }
+  a.first {
+    padding-left: 0;
   }
   .openLink {
     height: 12px;
