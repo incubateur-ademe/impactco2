@@ -21,7 +21,7 @@ const getOpenIcon = () => {
 export default function Footer() {
   return (
     <Wrapper id='footer'>
-      <Section>
+      <Section $withoutPadding>
         <SectionWideContent>
           <Grid>
             <GridOne>
@@ -54,8 +54,17 @@ export default function Footer() {
                   <div>
                     <strong>Ressources</strong>
                   </div>
-                  <div>Kit de diffusion</div>
-                  <div>API Impact CO2</div>
+                  <LinkContainer>
+                    <Link
+                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                      title='Kit de diffusion'
+                      target='_blank'>
+                      Kit de diffusion
+                    </Link>
+                    <Link href='/api-doc' title='API Impact CO2' target='_blank'>
+                      API Impact CO2
+                    </Link>
+                  </LinkContainer>
                 </div>
               </GridTwoB>
             </GridTwo>
@@ -104,6 +113,20 @@ export default function Footer() {
     </Wrapper>
   )
 }
+
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  a {
+    color: var(--neutral-70);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+`
+
 const Grid = styled.div`
   border-top: 1px solid var(--neutral-20);
   display: grid;
