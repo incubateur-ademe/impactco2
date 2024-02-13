@@ -48,27 +48,27 @@ export default function Footer() {
           </Grid>
 
           <div className='gridlinks'>
-            <FooterLink mw={6}>
+            <FooterLink>
               <Link href='/plan-du-site' title='Plan du site'>
                 Plan du site
               </Link>
             </FooterLink>
-            <FooterLink mw={8}>
+            <FooterLink>
               <Link href='/mentions-legales' title='Mentions légales'>
                 Mentions légales
               </Link>
             </FooterLink>
-            <FooterLink mw={13}>
+            <FooterLink>
               <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
                 Politique de confidentialité
               </Link>
             </FooterLink>
-            <FooterLink mw={13}>
+            <FooterLink>
               <Link href='/accessibilite' title='Accessibilité (non conforme)'>
                 Accessibilité : non conforme
               </Link>
             </FooterLink>
-            <FooterLink mw={7}>
+            <FooterLink>
               <Link href='https://beta.gouv.fr/' title='beta.gouv.fr' target='_blank'>
                 beta.gouv.fr
                 <svg
@@ -87,8 +87,12 @@ export default function Footer() {
                 </svg>
               </Link>
             </FooterLink>
-            <FooterLink mw={5}>
-              <Link href='https://github.com/incubateur-ademe/impactco2' title='Code source' target='_blank'>
+            <FooterLink>
+              <Link
+                className='last'
+                href='https://github.com/incubateur-ademe/impactco2'
+                title='Code source'
+                target='_blank'>
                 Code source
                 <svg
                   className='openLink'
@@ -120,7 +124,7 @@ const Grid = styled.div`
     padding-top: 4rem;
   }
 `
-const GridOne = styled.div`
+const GridOne = styled.div`last
   display: grid;
   grid-column: span 4;
   ${MEDIA.LT.XLARGE} {
@@ -216,7 +220,7 @@ const FooterExplain = styled.div`
   ${MEDIA.LT.SMALL} {rc/components/layout/web/OpenIcon.tsx
 `
 
-const FooterLink = styled.div<{ mw: number }>`
+const FooterLink = styled.div`
   a {
     color: var(--neutral-80);
     cursor: pointer;
@@ -231,7 +235,6 @@ const FooterLink = styled.div<{ mw: number }>`
     width: 12px;
   }
   margin-bottom: 0.5rem;
-  // min-width: ${(props) => props.mw || 0}rem;
 `
 
 const Wrapper = styled.footer`
@@ -240,7 +243,7 @@ const Wrapper = styled.footer`
     border-top: 1px solid var(--neutral-20);
     a {
       border-right: 1px solid var(--neutral-20);
-      ${MEDIA.LT.MEDIUM} {
+      ${MEDIA.LT.SMALL} {
         border-right: none;
       }
       color: var(--neutral-50);
@@ -255,7 +258,7 @@ const Wrapper = styled.footer`
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-    ${MEDIA.LT.MEDIUM} {
+    ${MEDIA.LT.SMALL} {
       flex-direction: column;
     }
     padding-top: 1rem;
