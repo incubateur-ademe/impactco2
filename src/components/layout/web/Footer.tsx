@@ -4,6 +4,20 @@ import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Signature from 'components/screenshot/Signature'
 
+const getOpenIcon = () => {
+  return (
+    <svg className='openLink' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
+      <path
+        stroke='currentColor'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
+        d='M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2'
+      />
+    </svg>
+  )
+}
+
 export default function Footer() {
   return (
     <Wrapper id='footer'>
@@ -71,20 +85,7 @@ export default function Footer() {
             <FooterLink>
               <Link href='https://beta.gouv.fr/' title='beta.gouv.fr' target='_blank'>
                 beta.gouv.fr
-                <svg
-                  className='openLink'
-                  aria-hidden='true'
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'>
-                  <path
-                    stroke='currentColor'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2'
-                  />
-                </svg>
+                {getOpenIcon()}
               </Link>
             </FooterLink>
             <FooterLink>
@@ -94,20 +95,7 @@ export default function Footer() {
                 title='Code source'
                 target='_blank'>
                 Code source
-                <svg
-                  className='openLink'
-                  aria-hidden='true'
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'>
-                  <path
-                    stroke='currentColor'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2'
-                  />
-                </svg>
+                {getOpenIcon()}
               </Link>
             </FooterLink>
           </div>
