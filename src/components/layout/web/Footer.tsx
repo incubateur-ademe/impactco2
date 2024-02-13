@@ -176,7 +176,11 @@ const GridTwo = styled.div`
     grid-column: span 2;
   }
   ${MEDIA.LT.MEDIUM} {
-    grid-column: span 4;
+    border-top: 1px solid var(--neutral-20);
+    grid-column: span 6;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
   }
   grid-template-columns: repeat(2, 1fr);
 `
