@@ -8,7 +8,6 @@ import Signature from 'components/screenshot/Signature'
 export default function Footer() {
   return (
     <Wrapper id='footer'>
-      <LinearGradient>&nbsp;</LinearGradient>
       <Section>
         <SectionWideContent>
           <Grid>
@@ -101,7 +100,6 @@ const FooterLink = styled.div`
 `
 
 const Wrapper = styled.footer`
-  background-color: #b5d0fa;
   margin-top: 0;
 `
 
@@ -120,9 +118,4 @@ const Grid = styled.div`
     }
     margin-bottom: 1rem;
   }
-`
-
-const LinearGradient = styled.div`
-  background: linear-gradient(var(--neutral-00), #b5d0fa);
-  height: 8rem;
 `
