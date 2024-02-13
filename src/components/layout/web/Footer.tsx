@@ -132,27 +132,40 @@ const GridOneB = styled.div`
 const GridTwoA = styled.div`
   align-items: center;
   display: flex;
+  padding-left: 1rem;
+  ${MEDIA.LT.XLARGE} {
+    align-items: stretch;
+  }
   ${MEDIA.LT.LARGE} {
     grid-column: span 2;
   }
   ${MEDIA.LT.MEDIUM} {
     grid-column: span 1;
+    padding-left: 0;
   }
-  ${MEDIA.LT.XLARGE} {
-    align-items: stretch;
+  ${MEDIA.LT.SMALL} {
+    grid-column: span 2;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
   }
 `
 const GridTwoB = styled.div`
   align-items: center;
   display: flex;
+  padding-left: 1rem;
+  ${MEDIA.LT.XLARGE} {
+    align-items: stretch;
+  }
   ${MEDIA.LT.LARGE} {
     grid-column: span 2;
   }
   ${MEDIA.LT.MEDIUM} {
     grid-column: span 1;
+    padding-left: 0;
   }
-  ${MEDIA.LT.XLARGE} {
-    align-items: stretch;
+  ${MEDIA.LT.SMALL} {
+    grid-column: span 2;
+    margin-bottom: 2rem;
   }
 `
 
@@ -160,10 +173,10 @@ const GridTwo = styled.div`
   display: grid;
   grid-column: span 2;
   ${MEDIA.LT.XLARGE} {
-    grid-column: span 3;
+    grid-column: span 2;
   }
-  ${MEDIA.LT.SMALL} {
-    grid-column: span 6;
+  ${MEDIA.LT.MEDIUM} {
+    grid-column: span 4;
   }
   grid-template-columns: repeat(2, 1fr);
 `
