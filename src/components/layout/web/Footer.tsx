@@ -69,7 +69,7 @@ export default function Footer() {
               </Link>
             </FooterLink>
             <FooterLink mw={7}>
-              <Link href='https://beta.gouv.fr/' title='beta.gouv.fr'>
+              <Link href='https://beta.gouv.fr/' title='beta.gouv.fr' target='_blank'>
                 beta.gouv.fr
                 <svg
                   className='openLink'
@@ -88,7 +88,7 @@ export default function Footer() {
               </Link>
             </FooterLink>
             <FooterLink mw={5}>
-              <Link href='https://github.com/incubateur-ademe/impactco2' title='Code source'>
+              <Link href='https://github.com/incubateur-ademe/impactco2' title='Code source' target='_blank'>
                 Code source
                 <svg
                   className='openLink'
@@ -213,9 +213,7 @@ const FooterExplain = styled.div`
   p {
     margin-bottom: 0;
   }
-  ${MEDIA.LT.SMALL} {
-    margin: 1.5rem 0 1.5rem 0;
-  }
+  ${MEDIA.LT.SMALL} {rc/components/layout/web/OpenIcon.tsx
 `
 
 const FooterLink = styled.div<{ mw: number }>`
@@ -233,7 +231,7 @@ const FooterLink = styled.div<{ mw: number }>`
     width: 12px;
   }
   margin-bottom: 0.5rem;
-  min-width: ${(props) => props.mw || 0}rem;
+  // min-width: ${(props) => props.mw || 0}rem;
 `
 
 const Wrapper = styled.footer`
