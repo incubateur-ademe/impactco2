@@ -21,50 +21,50 @@ export default function Footer() {
                 <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
               </FooterExplain>
             </div>
-
-            <div className='gridlinks'>
-              <FooterLink>
-                <Link href='/plan-du-site' title='Plan du site'>
-                  Plan du site
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/accessibilite' title='Accessibilité (non conforme)'>
-                  Accessibilité (non conforme)
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/mentions-legales' title='Mentions légales'>
-                  Mentions légales
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
-                  Politique de confidentialité
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/budget' title='Budget'>
-                  Budget
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/stats' title='Statistiques'>
-                  Statistiques
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link
-                  href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                  target='_blank'
-                  rel='noreferrer noopener'
-                  title='Nous contacter'
-                  className='last'>
-                  Contact
-                </Link>
-              </FooterLink>
-            </div>
           </Grid>
+
+          <div className='gridlinks'>
+            <FooterLink>
+              <Link href='/plan-du-site' title='Plan du site'>
+                Plan du site
+              </Link>
+            </FooterLink>
+            <FooterLink>
+              <Link href='/accessibilite' title='Accessibilité (non conforme)'>
+                Accessibilité (non conforme)
+              </Link>
+            </FooterLink>
+            <FooterLink>
+              <Link href='/mentions-legales' title='Mentions légales'>
+                Mentions légales
+              </Link>
+            </FooterLink>
+            <FooterLink>
+              <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
+                Politique de confidentialité
+              </Link>
+            </FooterLink>
+            <FooterLink>
+              <Link href='/budget' title='Budget'>
+                Budget
+              </Link>
+            </FooterLink>
+            <FooterLink>
+              <Link href='/stats' title='Statistiques'>
+                Statistiques
+              </Link>
+            </FooterLink>
+            <FooterLink>
+              <Link
+                href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                target='_blank'
+                rel='noreferrer noopener'
+                title='Nous contacter'
+                className='last'>
+                Contact
+              </Link>
+            </FooterLink>
+          </div>
         </SectionWideContent>
       </Section>
     </Wrapper>
@@ -102,19 +102,11 @@ const FooterLink = styled.div`
 
 const Wrapper = styled.footer`
   margin-top: 0;
-`
-
-const Grid = styled.div`
-  border-top: 1px solid var(--neutral-20);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  ${MEDIA.LT.MEDIUM} {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  > .gridlinks {
+  .gridlinks {
+    border-top: 1px solid var(--neutral-20);
     a {
-      color: var(--neutral-50);
       border-right: 1px solid var(--neutral-20);
+      color: var(--neutral-50);
       padding-right: 1.5rem;
     }
     a.last {
@@ -123,14 +115,20 @@ const Grid = styled.div`
     a:hover {
       color: var(--neutral-80);
     }
-    border-top: 1px solid var(--neutral-20);
     display: flex;
-    grid-column: span 2;
     margin-bottom: 1rem;
     ${MEDIA.LT.MEDIUM} {
       flex-direction: column;
-      grid-column: inherit;
     }
     padding-top: 1rem;
+  }
+`
+
+const Grid = styled.div`
+  border-top: 1px solid var(--neutral-20);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  ${MEDIA.LT.MEDIUM} {
+    grid-template-columns: repeat(1, 1fr);
   }
 `
