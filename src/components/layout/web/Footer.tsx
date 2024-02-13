@@ -11,35 +11,39 @@ export default function Footer() {
         <SectionWideContent>
           <Grid>
             <GridOne>
-              <div>
+              <GridOneA>
                 <Logos>
                   <Signature noMargin noLink color='var(--primary-70)' />
                 </Logos>
-              </div>
-              <div>
+              </GridOneA>
+              <GridOneB>
                 <FooterExplain>
                   <strong>
                     Impact CO<sub>2</sub>
                   </strong>
                   <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
                 </FooterExplain>
-              </div>
+              </GridOneB>
             </GridOne>
             <GridTwo>
-              <div>
+              <GridTwoA>
                 <div>
-                  <strong>Liens Utiles</strong>
+                  <div>
+                    <strong>Liens Utiles</strong>
+                  </div>
+                  <div>Statistiques</div>
+                  <div>Nous contacter</div>
                 </div>
-                <div>Statistiques</div>
-                <div>Nous contacter</div>
-              </div>
-              <div>
+              </GridTwoA>
+              <GridTwoB>
                 <div>
-                  <strong>Ressources</strong>
+                  <div>
+                    <strong>Ressources</strong>
+                  </div>
+                  <div>Kit de diffusion</div>
+                  <div>API Impact CO2</div>
                 </div>
-                <div>Kit de diffusion</div>
-                <div>API Impact CO2</div>
-              </div>
+              </GridTwoB>
             </GridTwo>
           </Grid>
 
@@ -90,7 +94,6 @@ export default function Footer() {
     </Wrapper>
   )
 }
-
 const Grid = styled.div`
   border-top: 1px solid var(--neutral-20);
   display: grid;
@@ -99,8 +102,27 @@ const Grid = styled.div`
 const GridOne = styled.div`
   display: grid;
   grid-column: span 4;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 `
+const GridOneA = styled.div`
+  align-items: center;
+  display: flex;
+  grid-column: span 1;
+`
+const GridOneB = styled.div`
+  align-items: center;
+  display: flex;
+  grid-column: span 2;
+`
+const GridTwoA = styled.div`
+  align-items: center;
+  display: flex;
+`
+const GridTwoB = styled.div`
+  align-items: center;
+  display: flex;
+`
+
 const GridTwo = styled.div`
   display: grid;
   grid-column: span 2;
@@ -113,6 +135,8 @@ const Logos = styled.div`
 
 const FooterExplain = styled.div`
   margin: 3rem 0 3rem 0;
+  max-width: 25rem;
+  padding-left: 3rem;
   p {
     margin-bottom: 0;
   }
