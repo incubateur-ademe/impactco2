@@ -169,7 +169,7 @@ const sentryWebpackPluginOptions = {
 
   // Suppresses source map uploading logs during build
   silent: true,
-  org: 'betagouv',
+  org: process.env.SENTRY_ORG,
   project: 'impact-co2',
   url: process.env.SENTRY_URL,
 }
