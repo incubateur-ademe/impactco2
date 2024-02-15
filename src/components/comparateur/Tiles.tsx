@@ -6,7 +6,7 @@ import Tile from './Tile'
 import styles from './Tiles.module.css'
 import { getRandomEquivalents } from './random'
 
-const Tiles = () => {
+const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
   const {
     comparateur: { baseValue, comparedEquivalent, equivalents, setEquivalents },
   } = useParamContext()
@@ -17,16 +17,22 @@ const Tiles = () => {
         {equivalents.map((equivalent) => (
           <Tile key={equivalent} slug={equivalent} />
         ))}
-        <Tile />
+        {equivalents.length < 8 && <Tile onClick={changeEquivalents} />}
       </div>
-      <Button
-        className={styles.button}
-        onClick={() => {
-          setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, baseValue, equivalents.length))
-        }}>
-        <Icon iconId='magic-wand' />
-        Générer d’autres équivalents
-      </Button>
+      <div className={styles.buttons}>
+        <Button
+          onClick={() => {
+            setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, baseValue, equivalents.length))
+          }}>
+          <Icon iconId='magic-wand' />
+          Générer d’autres équivalents
+        </Button>
+        {equivalents.length >= 8 && (
+          <Button priority='secondary' onClick={changeEquivalents}>
+            Modifier mes équivalents
+          </Button>
+        )}
+      </div>
     </>
   )
 }

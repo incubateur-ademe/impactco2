@@ -41,6 +41,8 @@
 
 .input {
   input {
+    font-size: 1.75rem;
+    font-weight: 700;
     padding: 0.5rem 7rem 0.5rem 1rem;
     text-align: left;
   }
@@ -48,6 +50,7 @@
 
 .greenSuffix,
 .suffix {
+  max-width: 66%;
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -121,5 +124,9 @@
 
   &:focus:not(:focus-visible) {
     outline: none;
+  }
+
+  @media screen and (max-width: 700px) {
+    display: none;
   }
 }

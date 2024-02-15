@@ -95,6 +95,7 @@ const CustomParam = ({
       <Container>
         {setVisible && (
           <CheckboxInput
+            color='secondary'
             checked={visible}
             setChecked={setVisible}
             label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
@@ -165,6 +166,7 @@ const CustomParam = ({
       <Container>
         {setVisible && (
           <CheckboxInput
+            color='secondary'
             checked={visible}
             setChecked={setVisible}
             label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
@@ -205,6 +207,7 @@ const CustomParam = ({
     <Container>
       {setVisible && (
         <CheckboxInput
+          color='secondary'
           checked={visible}
           setChecked={setVisible}
           label={config.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}

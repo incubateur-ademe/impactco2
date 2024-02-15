@@ -84,6 +84,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
         label='Onglet à intégrer'
         hint="Sélectionnez les onglets que vous souhaitez intégrer à l'iframe">
         <CheckboxInput
+          color='secondary'
           checked={tabs.includes(DISTANCE)}
           setChecked={(checked) => {
             if (checked) {
@@ -96,6 +97,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
           data-testid='transport-integration-distance-checkbox'
         />
         <CheckboxInput
+          color='secondary'
           checked={tabs.includes(ITINERAIRE)}
           setChecked={(checked) => {
             if (checked) {
@@ -107,6 +109,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
           label='Itinéraire'
         />
         <CheckboxInput
+          color='secondary'
           checked={tabs.includes(TELETRAVAIL)}
           setChecked={(checked) => {
             if (checked) {

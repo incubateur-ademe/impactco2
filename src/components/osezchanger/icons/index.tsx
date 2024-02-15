@@ -7,7 +7,9 @@ import closeThick from './close-thick'
 import codeSSlash from './code-s-slash'
 import copy from './copy'
 import download from './download'
+import dropdownArrowDown from './dropdown-arrow-down'
 import dropdownArrowRight from './dropdown-arrow-right'
+import dropdownArrowUp from './dropdown-arrow-up'
 import error from './error'
 import facebook from './facebook'
 import fullArrowRight from './full-arrow-right'
@@ -39,6 +41,8 @@ export type IconId =
   | 'arrow-right'
   | 'full-arrow-right'
   | 'arrow-down'
+  | 'dropdown-arrow-up'
+  | 'dropdown-arrow-down'
   | 'dropdown-arrow-right'
   | 'copy'
   | 'facebook'
@@ -87,6 +91,10 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return fullArrowRight
     case 'arrow-down':
       return arrowDown
+    case 'dropdown-arrow-up':
+      return dropdownArrowUp
+    case 'dropdown-arrow-down':
+      return dropdownArrowDown
     case 'dropdown-arrow-right':
       return dropdownArrowRight
     case 'copy':

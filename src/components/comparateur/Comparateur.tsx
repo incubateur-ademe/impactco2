@@ -7,30 +7,28 @@ import Emoji from 'components/base/Emoji'
 import { HiddenLabel } from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import ShareableContent from 'components/misc/ShareableContent'
-import { OverScreenCategory } from 'components/misc/category/overScreens/Type'
-import { overScreenCategoryValues } from 'components/misc/category/overScreens/Values'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './Comparateur.module.css'
 import Tiles from './Tiles'
+import { OverScreenComparateur } from './overscreens/Type'
+import { overScreenComparateurValues } from './overscreens/Values'
 
 const Comparateur = ({ iframe }: { iframe?: boolean }) => {
   const {
     comparateur: { baseValue, setBaseValue, setEquivalents, equivalents, comparedEquivalent, setComparedEquivalent },
   } = useParamContext()
-  const [overScreen, setOverScreen] = useState<OverScreenCategory>()
-  const overScreenValues = useMemo(() => overScreenCategoryValues(), [])
+  const [overScreen, setOverScreen] = useState<OverScreenComparateur>()
+  const overScreenValues = useMemo(() => overScreenComparateurValues(() => setOverScreen(undefined)), [])
 
   const weight = comparedEquivalent ? comparedEquivalent.value : 1000
   return (
-    <ShareableContent<OverScreenCategory>
+    <ShareableContent<OverScreenComparateur>
       iframe={iframe}
-      size='lg'
       tracking={'Comparateur'}
       setOverScreen={setOverScreen}
       overScreen={overScreen ? overScreenValues[overScreen] : undefined}
       path='comparateur'
       name={!iframe ? 'Comparateur' : undefined}
-      reverse
       noBorder>
       <div className={styles.topContainer}>
         <div className={styles.inputContainer}>
@@ -49,10 +47,10 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
             background='white'
             className={styles.input}
             id='base-value'
-            value={Math.round((1000 * baseValue) / weight) / 1000}
+            value={baseValue / weight}
             onChange={(e) => {
               const value = Number(e.target.value)
-              setBaseValue(Number.isNaN(value) || value < 0 ? 0 : Math.round(value * weight))
+              setBaseValue(Number.isNaN(value) || value < 0 ? 0 : value * weight)
             }}
             type='number'
           />
@@ -91,7 +89,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
         )}
       </div>
       <div className={iframe ? styles.bottomContainerIframe : styles.bottomContainer}>
-        <Tiles />
+        <Tiles changeEquivalents={() => setOverScreen('equivalents')} />
       </div>
     </ShareableContent>
   )

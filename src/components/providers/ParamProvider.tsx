@@ -103,7 +103,7 @@ const ParamContext = React.createContext<{
     baseValue: number
     setBaseValue: Dispatch<SetStateAction<number>>
     equivalents: string[]
-    setEquivalents: Dispatch<SetStateAction<string[]>>
+    setEquivalents: (equivalents: string[]) => void
     tiles: Equivalent[]
     setTiles: Dispatch<SetStateAction<Equivalent[]>>
     comparedEquivalent: ComputedEquivalent | undefined
@@ -227,12 +227,17 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [tiles, setTiles] = useState<Equivalent[]>([])
   const [comparedEquivalent, setComparedEquivalent] = useState<ComputedEquivalent>()
 
+  const internalSetEquivalentsSetter = (equivalents: string[]) => {
+    if (equivalents.length < 9) {
+      setEquivalents(equivalents)
+    }
+  }
   const internalComparedEquivalentSetter = (equivalent: ComputedEquivalent | undefined) => {
     const filteredEquivalent = equivalent ? equivalents.filter((slug) => slug !== equivalent.slug) : equivalents
     if (comparedEquivalent) {
-      setEquivalents([...filteredEquivalent, comparedEquivalent.slug])
+      internalSetEquivalentsSetter([...filteredEquivalent, comparedEquivalent.slug])
     } else {
-      setEquivalents([...filteredEquivalent])
+      internalSetEquivalentsSetter([...filteredEquivalent])
     }
     setBaseValue(10 * (equivalent ? equivalent.value : 1000))
     setComparedEquivalent(equivalent)
@@ -240,7 +245,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (equivalents.length === 0) {
-      setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, 10000, 3))
+      internalSetEquivalentsSetter(getRandomEquivalents(comparedEquivalent?.slug, 10000, 3))
     }
   }, [])
 
@@ -483,7 +488,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           baseValue,
           setBaseValue,
           equivalents,
-          setEquivalents,
+          setEquivalents: internalSetEquivalentsSetter,
           tiles,
           setTiles,
           comparedEquivalent,

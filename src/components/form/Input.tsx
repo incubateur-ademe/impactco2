@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes, useEffect, useRef } from 'react'
 import { ZodError } from 'zod'
 import { Icon } from 'components/osezchanger/icons'
 import { Error, Hint, Label, NotRequired, StyledInput } from './Input.styles'
@@ -24,6 +24,16 @@ const Input = ({
   errors?: ZodError | null
 }) => {
   const error = useError(id, errors)
+  const ref = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (ref.current) {
+      const blur = () => ref.current?.blur()
+      const currentRef = ref.current
+      currentRef.addEventListener('wheel', blur)
+      return () => currentRef.removeEventListener('wheel', blur)
+    }
+  }, [ref])
 
   return (
     <div className={className}>
@@ -36,6 +46,7 @@ const Input = ({
       )}
       <StyledInput
         {...inputProps}
+        ref={ref}
         id={`input-${id}`}
         $maxWidth={maxWidth}
         $color={color}

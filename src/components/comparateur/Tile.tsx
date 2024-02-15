@@ -2,18 +2,16 @@ import React, { useMemo } from 'react'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { computedEquivalents } from 'components/providers/DataProvider'
-import useModalContext from 'components/providers/ModalProvider'
 import useParamContext from 'components/providers/ParamProvider'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/buttons/Button'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './Tile.module.css'
 
-const Tile = ({ slug }: { slug?: string }) => {
+const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
   const {
     comparateur: { baseValue, setEquivalents, equivalents, setComparedEquivalent },
   } = useParamContext()
-  const { setTiles } = useModalContext()
 
   const equivalent = useMemo(() => (slug ? computedEquivalents.find((e) => e.slug === slug) : null), [slug])
   const value = equivalent ? baseValue / equivalent.value : 0
@@ -43,6 +41,7 @@ const Tile = ({ slug }: { slug?: string }) => {
         </div>
       </div>
       <Button
+        size='sm'
         priority='secondary'
         onClick={() => {
           setComparedEquivalent(equivalent)
@@ -51,7 +50,7 @@ const Tile = ({ slug }: { slug?: string }) => {
       </Button>
     </div>
   ) : (
-    <button className={styles.secondaryTile} onClick={() => setTiles(true)}>
+    <button className={styles.secondaryTile} onClick={onClick}>
       <Icon iconId='plus' />
       Ajouter un équivalent
     </button>
