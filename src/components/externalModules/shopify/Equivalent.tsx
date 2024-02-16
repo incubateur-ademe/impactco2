@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
-import { HtmlSanitizer } from '../sanitizer'
 import Equal from './Equal'
 import styles from './Equivalent.module.css'
 
 const Equivalent = ({
   className,
   baseValue,
-  comparison,
-  introduction,
+  comparisons,
+  title,
 }: {
   className?: string
   baseValue: string
-  comparison: string
-  introduction?: string
+  comparisons: string[]
+  title?: (unit: string, roundedValue: string, intValue: number) => ReactNode
 }) => {
   const intValue = Number.parseInt(baseValue)
   const value = Number.isNaN(intValue) ? 100000 : intValue
@@ -25,25 +24,7 @@ const Equivalent = ({
 
   return (
     <div className={className}>
-      <p className={styles.title}>
-        {introduction ? (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: HtmlSanitizer.SanitizeHtml(introduction).replace(
-                intValue,
-                `<b>${roundedValue} ${unit} CO<sub>2</sub>e</b>`
-              ),
-            }}
-          />
-        ) : (
-          <>
-            La production de cet article émet{' '}
-            <b>
-              {roundedValue} {unit} CO<sub>2</sub>e
-            </b>
-          </>
-        )}
-      </p>
+      {title && title(unit, roundedValue, intValue)}
       <div className={styles.container}>
         <div className={styles.left}>
           <Logo />
@@ -58,7 +39,13 @@ const Equivalent = ({
           <div className={styles.equal}>
             <Equal />
           </div>
-          <SimpleValue value={value} comparison={comparison} />
+          <div className={styles.comparisons}>
+            {comparisons.map((comparison) => (
+              <div key={comparison} className={styles.comparison}>
+                <SimpleValue value={value} comparison={comparison} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

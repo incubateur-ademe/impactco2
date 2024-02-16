@@ -59,10 +59,10 @@ export default function Configurator({
         <div>
           <Select
             onChange={(e) => setSlug(e.value)}
-            value={type === 'category' ? 'numerique' : type === 'equivalent' ? 'abricot' : 'convertisseur'}
+            value={type === 'category' ? 'numerique' : type === 'equivalent' ? 'abricot' : 'comparateur'}
             label="1) Choisissez le type d'iframe que vous souhaitez intégrer."
             name='type'>
-            <option value='convertisseur'>Comparateur</option>
+            <option value='comparateur'>Comparateur</option>
             <option value='numerique'>Thématique</option>
             <option value='abricot'>Equivalent</option>
           </Select>

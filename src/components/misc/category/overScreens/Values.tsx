@@ -32,7 +32,7 @@ export const overScreenCategoryValues: (
     children: (
       <>
         <Integrate
-          slug={category ? category.slug : 'convertisseur'}
+          path={category ? category.slug : 'comparateur'}
           params={params}
           tracking={category ? category.name : 'Comparateur'}
         />

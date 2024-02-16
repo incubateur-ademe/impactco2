@@ -2,12 +2,13 @@ import React from 'react'
 import PageTitle from 'components/base/PageTitle'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Comparateur from 'components/comparateur/Comparateur'
+import Etiquettes from 'components/comparateur/Etiquettes'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Sources from 'components/misc/category/Sources'
 
-const Convertisseur = () => {
+const Page = () => {
   return (
     <Web
       title='Comparateur carbone'
@@ -42,10 +43,15 @@ const Convertisseur = () => {
           />
         </SectionWideContent>
       </Section>
+      <Section $withoutPadding $margin='1.5rem 0'>
+        <SectionWideContent $size='lg'>
+          <Etiquettes />
+        </SectionWideContent>
+      </Section>
       <Learning from='/comparateur' fromLabel='Comparateur carbone' />
       <SuggestionBanner from='/comparateur' fromLabel='Comparateur carbone' simulatorName='comparateur carbone' />
     </Web>
   )
 }
 
-export default Convertisseur
+export default Page

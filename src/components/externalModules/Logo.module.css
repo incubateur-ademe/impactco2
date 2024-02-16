@@ -1,7 +1,7 @@
 .logo {
   display: flex !important;
   align-items: center;
-  padding: 0.75rem;
+  padding: 0 0.75rem;
   height: 100%;
   border-right: 1px solid var(--primary-20);
   color: var(--primary-50);

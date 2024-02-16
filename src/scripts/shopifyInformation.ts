@@ -1,5 +1,6 @@
 import fs from 'fs'
 import boissons from '../data/categories/boisson.json'
+import deplacements from '../data/categories/deplacement.json'
 import divers from '../data/categories/divers.json'
 import electromenager from '../data/categories/electromenager.json'
 import fruitsetlegumes from '../data/categories/fruitsetlegumes.json'
@@ -20,6 +21,7 @@ const existingEquivalentsByCategory: Record<string, Equivalent[]> = {
   repas: repas,
   divers: divers,
   numerique: numerique,
+  deplacements: deplacements,
 }
 
 const ecvs: Record<string, { value: number; label: string; emoji: string; category: number }> = {}

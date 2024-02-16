@@ -149,7 +149,12 @@ const nextConfig = {
       },
       {
         source: '/iframes/tuiles',
-        destination: '/iframes/convertisseur',
+        destination: '/iframes/comparateur',
+        permanent: true,
+      },
+      {
+        source: '/iframes/convertisseur',
+        destination: '/iframes/comparateur',
         permanent: true,
       },
       {

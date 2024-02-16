@@ -40,6 +40,7 @@ const ShareableContent = <T extends string>({
   reverse,
   theme,
   withoutIntegration,
+  withoutShare,
   path,
   sideContent,
   bottom,
@@ -65,6 +66,7 @@ const ShareableContent = <T extends string>({
   reverse?: boolean
   theme?: 'color'
   withoutIntegration?: boolean
+  withoutShare?: boolean
   name?: string
   noBorder?: boolean
 }) => {
@@ -85,6 +87,7 @@ const ShareableContent = <T extends string>({
               title={title}
               path={path}
               name={name}
+              withoutShare={withoutShare}
             />
             <Separator />
           </>

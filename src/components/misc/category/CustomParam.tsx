@@ -56,6 +56,7 @@ const configs: Record<
 
 const arrayConfigs: Record<string, string> = {
   situation: '[ACTION] ma propre simulation',
+  comparateur: '[ACTION] ma propre comparaison',
 }
 
 const addressConfigs: Record<string, { label: string; start: string; end: string }> = {

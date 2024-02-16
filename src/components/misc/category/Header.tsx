@@ -5,7 +5,7 @@ import PageTitle from 'components/base/PageTitle'
 import { SectionWideContent } from 'components/base/Section'
 import Actions from './Actions'
 import { CustomParamValue } from './CustomParam'
-import { ActionsContainer, ActionsName, Container, Content, Separator } from './Header.styles'
+import { ActionsContainer, ActionsHeader, ActionsName, Container, Content, Separator } from './Header.styles'
 import Integrate from './Integrate'
 import Share from './Share'
 import TransportIntegrate from './TransportIntegrate'
@@ -21,6 +21,7 @@ const Header = ({
   title,
   withoutIntegration,
   name,
+  withoutShare,
 }: {
   category?: Category
   params?: Record<string, CustomParamValue>
@@ -30,6 +31,7 @@ const Header = ({
   path?: string
   title?: string
   withoutIntegration?: boolean
+  withoutShare?: boolean
   name?: string
 }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -63,13 +65,16 @@ const Header = ({
         title && <PageTitle title={title} />
       )}
       <SectionWideContent $size='xs' $noGutter>
-        <ActionsContainer ref={ref} $center={!name}>
-          {name && <ActionsName>{name}</ActionsName>}
-          <Actions
-            tracking={tracking}
-            onClick={(value) => (value === 'telecharger' ? takeScreenshot() : open(value))}
-            withoutIntegration={withoutIntegration}
-          />
+        <ActionsContainer ref={ref}>
+          <ActionsHeader $center={!name}>
+            {name && <ActionsName>{name}</ActionsName>}
+            <Actions
+              tracking={tracking}
+              onClick={(value) => (value === 'telecharger' ? takeScreenshot() : open(value))}
+              withoutIntegration={withoutIntegration}
+              withoutShare={withoutShare}
+            />
+          </ActionsHeader>
           {opened && (
             <Content>
               <Separator />
@@ -83,7 +88,7 @@ const Header = ({
                 (type ? (
                   <TransportIntegrate tracking={tracking} type={type} />
                 ) : (
-                  <Integrate slug={category ? category.slug : 'convertisseur'} params={params} tracking={tracking} />
+                  <Integrate path={path || category?.slug || ''} params={params} tracking={tracking} />
                 ))}
             </Content>
           )}

@@ -11,6 +11,7 @@ import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/Theme'
 import { default_eqs, frequences } from 'components/livraison/data'
 import { displayAddress } from 'components/transport/search/itinerary/Address'
+import { computedEquivalents } from './DataProvider'
 
 const usageNumeriqueDefaultValues = {
   ['email . appareil']: "'smartphone'",
@@ -243,12 +244,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     setComparedEquivalent(equivalent)
   }
 
-  useEffect(() => {
-    if (equivalents.length === 0) {
-      internalSetEquivalentsSetter(getRandomEquivalents(comparedEquivalent?.slug, 10000, 3))
-    }
-  }, [])
-
   // Chauffage
   const [m2, setM2] = useState(63)
 
@@ -380,6 +375,22 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       return
     }
 
+    if (router.query.value) {
+      const value = Number(router.query.value as string)
+      if (!Number.isNaN(value)) {
+        setBaseValue(value)
+      }
+    }
+    if (router.query.equivalent) {
+      setComparedEquivalent(computedEquivalents.find((equivalent) => equivalent.slug === router.query.equivalent))
+    }
+
+    if (router.query.comparisons) {
+      internalSetEquivalentsSetter((router.query.comparisons as string).split(','))
+    } else {
+      internalSetEquivalentsSetter(getRandomEquivalents(comparedEquivalent?.slug, 10000, 3))
+    }
+
     if (router.query.m2) {
       const m2 = Number.parseInt(router.query.m2 as string)
       if (!Number.isNaN(m2)) {
@@ -424,33 +435,43 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     if (router.query['email . taille']) {
       situation['email . taille'] = getFloat(router.query, 'email . taille')
     }
+
     if (router.query['streaming . durée']) {
       situation['streaming . durée'] = getInt(router.query, 'streaming . durée')
     }
+
     if (router.query['streaming . appareil']) {
       situation['streaming . appareil'] = router.query['streaming . appareil'] as string
     }
+
     if (router.query['streaming . transmission . réseau']) {
       situation['streaming . transmission . réseau'] = router.query['streaming . transmission . réseau'] as string
     }
+
     if (router.query['streaming . qualité']) {
       situation['streaming . qualité'] = router.query['streaming . qualité'] as string
     }
+
     if (router.query['visio . durée']) {
       situation['visio . durée'] = getInt(router.query, 'visio . durée')
     }
+
     if (router.query['visio . appareil']) {
       situation['visio . appareil'] = router.query['visio . appareil'] as string
     }
+
     if (router.query['visio . emplacements']) {
       situation['visio . emplacements'] = getInt(router.query, 'visio . emplacements')
     }
+
     if (router.query['visio . transmission . réseau']) {
       situation['visio . transmission . réseau'] = router.query['visio . transmission . réseau'] as string
     }
+
     if (router.query['visio . qualité']) {
       situation['visio . qualité'] = router.query['visio . qualité'] as string
     }
+
     setUsageNumeriqueSituation(situation)
   }, [
     router,

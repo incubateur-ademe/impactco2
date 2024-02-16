@@ -35,7 +35,7 @@ export default function Integration() {
   const [theme, setTheme] = useState('default')
 
   // We keep "type" in url (and not 'slug") because of possible legacy links
-  const [slug, setSlug] = useQueryParam('type', withDefault(StringParam, 'convertisseur'))
+  const [slug, setSlug] = useQueryParam('type', withDefault(StringParam, 'comparateur'))
 
   const type = useMemo(() => {
     const equivalent = equivalents.find((equivalentItem) => equivalentItem.slug === slug)
@@ -46,12 +46,12 @@ export default function Integration() {
     if (category) {
       return 'category'
     }
-    return 'convertisseur'
+    return 'comparateur'
   }, [slug])
 
   const path = useMemo(() => {
-    if (type === 'convertisseur') {
-      return 'convertisseur'
+    if (type === 'comparateur') {
+      return 'comparateur'
     }
     if (type === 'category') {
       return slug

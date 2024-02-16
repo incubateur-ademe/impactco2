@@ -1,6 +1,7 @@
 import React from 'react'
 import 'utils/variables.css'
 import Equivalent from './Equivalent'
+import Title from './Title'
 
 const ShopifyEquivalent = () => {
   const baseValue = (document.getElementById('impact-co2-empreinte') as HTMLSpanElement).innerText
@@ -12,8 +13,10 @@ const ShopifyEquivalent = () => {
     <Equivalent
       className={theme === 'night' ? 'night' : ''}
       baseValue={baseValue}
-      comparison={comparaison}
-      introduction={introduction}
+      comparisons={[comparaison]}
+      title={(unit, roundedValue, intValue) => (
+        <Title introduction={introduction} unit={unit} roundedValue={roundedValue} intValue={intValue} />
+      )}
     />
   )
 }

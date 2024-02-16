@@ -3,6 +3,7 @@ import { Category as CategoryType } from 'types/category'
 import { computedEquivalents } from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
 import Emoji from 'components/base/Emoji'
+import Button from 'components/base/buttons/Button'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './Category.module.css'
 import Equivalents from './Equivalents'
@@ -47,7 +48,15 @@ const Category = ({ category }: { category: CategoryType }) => {
           <Icon iconId={open ? 'dropdown-arrow-up' : 'dropdown-arrow-down'} />
         </div>
       </button>
-      {open && <Equivalents equivalentsToDisplay={categoryEquivalents} />}
+      {open && (
+        <>
+          <div className={styles.comparison}>
+            <div>Comparer avec cette catégorie seulement :</div>
+            <Button priority='secondary'>Voir la comparaison</Button>
+          </div>
+          <Equivalents equivalentsToDisplay={categoryEquivalents} />
+        </>
+      )}
     </div>
   )
 }

@@ -44,6 +44,14 @@
     "label": "Aubergine"
   },
   {
+    "value": "autocar",
+    "label": "Autocar"
+  },
+  {
+    "value": "avion",
+    "label": "Avion"
+  },
+  {
     "value": "avocat",
     "label": "Avocat"
   },
@@ -74,6 +82,18 @@
   {
     "value": "brocoli",
     "label": "Brocoli"
+  },
+  {
+    "value": "busgnv",
+    "label": "Bus (GNV)"
+  },
+  {
+    "value": "buselectrique",
+    "label": "Bus (Moteur électrique)"
+  },
+  {
+    "value": "busthermique",
+    "label": "Bus (Moteur thermique)"
   },
   {
     "value": "cadrephotodigital",
@@ -284,6 +304,10 @@
     "label": "Imprimante (Jet d'encre)"
   },
   {
+    "value": "intercites",
+    "label": "Intercités"
+  },
+  {
     "value": "jeans",
     "label": "Jeans"
   },
@@ -352,12 +376,20 @@
     "label": "Melon"
   },
   {
+    "value": "metro",
+    "label": "Métro"
+  },
+  {
     "value": "modemfibre",
     "label": "Modem (Fibre)"
   },
   {
     "value": "montreconnectee",
     "label": "Montre connectée"
+  },
+  {
+    "value": "moto",
+    "label": "Moto"
   },
   {
     "value": "mure",
@@ -520,6 +552,10 @@
     "label": "Repas végétarien"
   },
   {
+    "value": "rer",
+    "label": "RER ou Transilien"
+  },
+  {
     "value": "rhubarbe",
     "label": "Rhubarbe"
   },
@@ -538,6 +574,10 @@
   {
     "value": "salsifis",
     "label": "Salsifis"
+  },
+  {
+    "value": "scooter",
+    "label": "Scooter ou moto légère"
   },
   {
     "value": "smartphone",
@@ -580,6 +620,14 @@
     "label": "Télévision  (40 - 49 pouces)"
   },
   {
+    "value": "ter",
+    "label": "TER"
+  },
+  {
+    "value": "tgv",
+    "label": "TGV"
+  },
+  {
     "value": "thé",
     "label": "Thé"
   },
@@ -592,6 +640,18 @@
     "label": "Topinambour"
   },
   {
+    "value": "tramway",
+    "label": "Tramway"
+  },
+  {
+    "value": "veloelectrique",
+    "label": "Vélo (ou trottinette) à assistance électrique"
+  },
+  {
+    "value": "velo",
+    "label": "Vélo ou marche"
+  },
+  {
     "value": "vesteimpermeable",
     "label": "Veste imperméable"
   },
@@ -602,5 +662,13 @@
   {
     "value": "vin",
     "label": "Vin"
+  },
+  {
+    "value": "voitureelectrique",
+    "label": "Voiture (Moteur électrique)"
+  },
+  {
+    "value": "voiturethermique",
+    "label": "Voiture (Moteur thermique)"
   }
 ]

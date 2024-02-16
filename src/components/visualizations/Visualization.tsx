@@ -27,7 +27,7 @@ const categoryLinks: Record<string, { to: string; label: string }> = {
     label: "Comparez avec d'autres modes de transport",
   },
   quotidien: {
-    to: '/convertisseur',
+    to: '/comparateur',
     label: "Comparez à d'autres objets du quotidien",
   },
   habillement: {

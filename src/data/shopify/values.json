@@ -37,7 +37,7 @@
   },
   "laitdesoja": {
     "category": 3,
-    "value": 420,
+    "value": 445.649559,
     "label": "Litre[s] de lait (de soja)",
     "emoji": "🍈"
   },
@@ -505,13 +505,13 @@
   },
   "bouilloire": {
     "category": 6,
-    "value": 40887.03605825422,
+    "value": 40884.03605825422,
     "label": "bouilloire[s]",
     "emoji": "⚗️"
   },
   "cafetieredosette": {
     "category": 6,
-    "value": 251049.5526905852,
+    "value": 251003.5526905852,
     "label": "cafetière[s] (à dosettes)",
     "emoji": "☕️"
   },
@@ -523,43 +523,43 @@
   },
   "cafetiereexpresso": {
     "category": 6,
-    "value": 211754.0842705374,
+    "value": 211771.0842705374,
     "label": "cafetière[s] (expresso)",
     "emoji": "☕️"
   },
   "fourelectrique": {
     "category": 6,
-    "value": 262474.69996,
+    "value": 263064.69996,
     "label": "four (électrique)",
     "emoji": "🎛"
   },
   "lavevaisselle": {
     "category": 6,
-    "value": 467808.21772921155,
+    "value": 467998.2177292116,
     "label": "lave-vaisselle",
     "emoji": "🍽"
   },
   "lavelinge": {
     "category": 6,
-    "value": 511157.2583409828,
+    "value": 510257.25834098266,
     "label": "lave-linge (7kg)",
     "emoji": "🧦"
   },
   "refrigirateur": {
     "category": 6,
-    "value": 325160.71642401704,
+    "value": 325460.71642401704,
     "label": "réfrigérateur",
     "emoji": "❄️"
   },
   "aspirateur": {
     "category": 6,
-    "value": 47300,
+    "value": 47310,
     "label": "aspirateur",
     "emoji": "🧹"
   },
   "climatiseur": {
     "category": 6,
-    "value": 413981.28844431264,
+    "value": 413881.2884443126,
     "label": "climatiseur[s]",
     "emoji": "❄️"
   },
@@ -577,7 +577,7 @@
   },
   "tshirtencoton": {
     "category": 5,
-    "value": 6433.7905548637345,
+    "value": 6433.790554863734,
     "label": "t-shirt[s] (en coton)",
     "emoji": "👕"
   },
@@ -607,7 +607,7 @@
   },
   "chaussuresencuir": {
     "category": 5,
-    "value": 14954.49454602226,
+    "value": 14954.494546022259,
     "label": "paire[s] de chaussures (en cuir)",
     "emoji": "👞"
   },
@@ -619,7 +619,7 @@
   },
   "chaussuresdesport": {
     "category": 5,
-    "value": 20125.5512835071,
+    "value": 20125.551283507102,
     "label": "paire[s] de chaussures (de sport)",
     "emoji": "👟"
   },
@@ -631,7 +631,7 @@
   },
   "robeenpolyester": {
     "category": 5,
-    "value": 58257.20551873937,
+    "value": 58257.20551873938,
     "label": "robe[s] (en polyester)",
     "emoji": "👗"
   },
@@ -667,49 +667,49 @@
   },
   "vesteimpermeable": {
     "category": 5,
-    "value": 41147.15954637289,
+    "value": 41147.15954637288,
     "label": "veste[s] imperméable[s]",
     "emoji": "🧥"
   },
   "vestesimilicuir": {
     "category": 5,
-    "value": 26825.82036317022,
+    "value": 26825.820363170224,
     "label": "veste[s] simili-cuir",
     "emoji": "🧥"
   },
   "canapeconvertible": {
     "category": 7,
-    "value": 198000,
+    "value": 197500,
     "label": "canapé[s] (convertible[s])",
     "emoji": "🛋"
   },
   "chaiseenbois": {
     "category": 7,
-    "value": 18600,
+    "value": 18630,
     "label": "chaise[s] (en bois)",
     "emoji": "🪑"
   },
   "tableenbois": {
     "category": 7,
-    "value": 80200,
+    "value": 80220,
     "label": "table[s] (en bois)",
     "emoji": "🪵"
   },
   "canapetextile": {
     "category": 7,
-    "value": 179000,
+    "value": 179100,
     "label": "canapé[s] (textile)",
     "emoji": "🛋"
   },
   "armoire": {
     "category": 7,
-    "value": 907000,
+    "value": 906880,
     "label": "armoire",
     "emoji": "🚪"
   },
   "lit": {
     "category": 7,
-    "value": 115000,
+    "value": 443810.00000000006,
     "label": "lit (cadre + sommier + matelas)",
     "emoji": "🛏"
   },
@@ -763,7 +763,7 @@
   },
   "smartphone": {
     "category": 1,
-    "value": 31517.317123421897,
+    "value": 37785.7171234219,
     "label": "smartphone[s] (> 5,5 pouces)",
     "emoji": "📱"
   },
@@ -775,128 +775,230 @@
   },
   "ordinateurfixeperformance": {
     "category": 1,
-    "value": 395018.39770107804,
+    "value": 394228.39770107804,
     "label": "ordinateur[s] fixe[s] sans écran (performance)",
     "emoji": "🖥️"
   },
   "ecran215pouces": {
     "category": 1,
-    "value": 237090.5793417607,
+    "value": 236400.5793417607,
     "label": "écran[s] (21,5 pouces)",
     "emoji": "🖥"
   },
   "ecran24pouces": {
     "category": 1,
-    "value": 263090.5793417607,
+    "value": 263270.5793417607,
     "label": "écran[s] (24 pouces)",
     "emoji": "🖥"
   },
   "tablettedetachable": {
     "category": 1,
-    "value": 86277.99022039562,
+    "value": 86289.99022039562,
     "label": "tablette[s] détachable[s]",
     "emoji": "💻"
   },
   "tabletteclassique": {
     "category": 1,
-    "value": 69596.7761232212,
+    "value": 69583.77612322119,
     "label": "tablette[s] (classique)",
     "emoji": "📱"
   },
   "tablettemini": {
     "category": 1,
-    "value": 47625.76560714468,
+    "value": 47701.56560714469,
     "label": "tablette[s] (mini)",
     "emoji": "📱"
   },
   "chainehifi": {
     "category": 1,
-    "value": 135992.18772408433,
+    "value": 136282.18772408427,
     "label": "chaine[s] hifi",
     "emoji": "🎵"
   },
   "liseuse": {
     "category": 1,
-    "value": 36771.75687599134,
+    "value": 36695.15687599134,
     "label": "liseuse[s] (non rétro-éclairé)",
     "emoji": "📱"
   },
   "television": {
     "category": 1,
-    "value": 424463.49609789375,
+    "value": 425153.49609789375,
     "label": "télévision[s]  (40 - 49 pouces)",
     "emoji": "📺"
   },
   "ordinateurportable": {
     "category": 1,
-    "value": 177747.64585279912,
+    "value": 177987.64585279912,
     "label": "ordinateur[s] portable[s]",
     "emoji": "💻"
   },
   "montreconnectee": {
     "category": 1,
-    "value": 9850.31264959085,
+    "value": 9858.212649590849,
     "label": "montre[s] connectée[s]",
     "emoji": "⌚️"
   },
   "cadrephotodigital": {
     "category": 1,
-    "value": 39163.17683893989,
+    "value": 39151.176838939886,
     "label": "cadre[s] photo digital",
     "emoji": "🖼"
   },
   "homecinema": {
     "category": 1,
-    "value": 153913.82398264098,
+    "value": 153563.82398264098,
     "label": "home cinéma",
     "emoji": "📽"
   },
   "barredeson": {
     "category": 1,
-    "value": 45456.229300433166,
+    "value": 45452.22930043316,
     "label": "barre[s] de son",
     "emoji": "🔈"
   },
   "modemfibre": {
     "category": 1,
-    "value": 142575.72740390868,
+    "value": 142591.72740390868,
     "label": "modem[s] (fibre)",
     "emoji": "📡"
   },
   "enceintebluetooth": {
     "category": 1,
-    "value": 9515.179528037963,
+    "value": 9515.179528037961,
     "label": "enceinte[s] bluetooth",
     "emoji": "🔊"
   },
   "consoledesalon": {
     "category": 1,
-    "value": 101576.88532134777,
+    "value": 101626.88532134777,
     "label": "console[s] de salon",
     "emoji": "🎮"
   },
   "consoleportable": {
     "category": 1,
-    "value": 30887.070899056205,
+    "value": 30884.070899056205,
     "label": "console[s] portable",
     "emoji": "👾"
   },
   "appareilphotoreflex": {
     "category": 1,
-    "value": 28117.78358867955,
+    "value": 28109.783588679547,
     "label": "appareil photo (reflex)",
     "emoji": "📷"
   },
   "appareilphotocompact": {
     "category": 1,
-    "value": 22316.835057281678,
+    "value": 22341.835057281678,
     "label": "appareil photo (compact)",
     "emoji": "📸"
   },
   "imprimantejetdencre": {
     "category": 1,
-    "value": 108151.1327150618,
+    "value": 108141.1327150618,
     "label": "imprimante[s] (jet d'encre)",
     "emoji": "🖨"
+  },
+  "avion": {
+    "category": 4,
+    "value": 0,
+    "label": "km en avion",
+    "emoji": "✈️"
+  },
+  "tgv": {
+    "category": 4,
+    "value": 2.9299999999999997,
+    "label": "km en tgv",
+    "emoji": "🚅"
+  },
+  "intercites": {
+    "category": 4,
+    "value": 8.98,
+    "label": "km en intercités",
+    "emoji": "🚈"
+  },
+  "voiturethermique": {
+    "category": 4,
+    "value": 217.60000000000002,
+    "label": "km en voiture (moteur thermique)",
+    "emoji": "🚗"
+  },
+  "voitureelectrique": {
+    "category": 4,
+    "value": 103.39999999999999,
+    "label": "km en voiture (moteur électrique)",
+    "emoji": "🚗"
+  },
+  "autocar": {
+    "category": 4,
+    "value": 29.421306270000002,
+    "label": "km en autocar",
+    "emoji": "🚐"
+  },
+  "velo": {
+    "category": 4,
+    "value": 0,
+    "label": "vélo ou marche",
+    "emoji": "🚶‍♀️"
+  },
+  "veloelectrique": {
+    "category": 4,
+    "value": 10.7,
+    "label": "km en vélo (ou trottinette) à assistance électrique",
+    "emoji": "🚴"
+  },
+  "busthermique": {
+    "category": 4,
+    "value": 112.69999999999999,
+    "label": "km en bus (moteur thermique)",
+    "emoji": "🚌"
+  },
+  "tramway": {
+    "category": 4,
+    "value": 4.28,
+    "label": "km en tramway",
+    "emoji": "🚌"
+  },
+  "metro": {
+    "category": 4,
+    "value": 4.4399999999999995,
+    "label": "km en métro",
+    "emoji": "🚇"
+  },
+  "scooter": {
+    "category": 4,
+    "value": 76.30000000000001,
+    "label": "km en scooter ou moto légère",
+    "emoji": "🛵"
+  },
+  "moto": {
+    "category": 4,
+    "value": 192,
+    "label": "km en moto",
+    "emoji": "🏍️"
+  },
+  "rer": {
+    "category": 4,
+    "value": 9.780000000000001,
+    "label": "km en rer ou transilien",
+    "emoji": "🚃"
+  },
+  "ter": {
+    "category": 4,
+    "value": 27.689999999999998,
+    "label": "km en ter",
+    "emoji": "🚈"
+  },
+  "buselectrique": {
+    "category": 4,
+    "value": 21.7,
+    "label": "km en bus (moteur électrique)",
+    "emoji": "🚌"
+  },
+  "busgnv": {
+    "category": 4,
+    "value": 121.9,
+    "label": "km en bus (gnv)",
+    "emoji": "🚌"
   }
 }

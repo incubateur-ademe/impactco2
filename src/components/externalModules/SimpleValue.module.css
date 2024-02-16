@@ -1,6 +1,7 @@
 .container {
   display: flex !important;
   align-items: center;
+  height: 100%;
   gap: 8px;
 }
 
@@ -10,9 +11,10 @@
 }
 
 .label {
-  font-size: 0.75em;
-  line-height: 1.33;
-  color: var(--neutral-70);
+  color: var(--neutral-50);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
 }
 
 .equivalentValue {

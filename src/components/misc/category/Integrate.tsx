@@ -6,11 +6,11 @@ import CustomParams from './CustomParams'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
 const Integrate = ({
-  slug,
+  path,
   params,
   tracking,
 }: {
-  slug: string
+  path: string
   params?: Record<string, CustomParamValue>
   tracking: string
 }) => {
@@ -33,7 +33,7 @@ const Integrate = ({
 
   const url = `<script name="impact-co2" src="${
     process.env.NEXT_PUBLIC_URL
-  }/iframe.js" data-type="${slug}" data-search="?${buildCustomParamsUrl(paramWithTheme, visibility)}"></script>`
+  }/iframe.js" data-type="${path}" data-search="?${buildCustomParamsUrl(paramWithTheme, visibility)}"></script>`
 
   return paramWithTheme && visibility ? (
     <>

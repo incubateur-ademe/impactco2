@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+.greenTitle {
+  color: var(--primary-50);
+}
+
+.simulator {
+  margin-top: 3rem;
+}
+
+.simulatorContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  margin: -1.5rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background-color: var(--neutral-10);
+}

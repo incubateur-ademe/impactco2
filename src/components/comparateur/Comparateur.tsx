@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import Link from 'next/link'
 import React, { useMemo, useState } from 'react'
 import formatName from 'utils/formatName'
+import formatNumberPrecision from 'utils/formatNumberPrecision'
 import useParamContext from 'components/providers/ParamProvider'
 import Emoji from 'components/base/Emoji'
 import { HiddenLabel } from 'components/form/HiddenLabel'
@@ -18,7 +19,18 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
     comparateur: { baseValue, setBaseValue, setEquivalents, equivalents, comparedEquivalent, setComparedEquivalent },
   } = useParamContext()
   const [overScreen, setOverScreen] = useState<OverScreenComparateur>()
-  const overScreenValues = useMemo(() => overScreenComparateurValues(() => setOverScreen(undefined)), [])
+  const params = useMemo(
+    () =>
+      `value=${baseValue}&comparisons=${equivalents.join(',')}${comparedEquivalent ? `&equivalent=${comparedEquivalent.slug}` : ''}`,
+    [baseValue, equivalents, comparedEquivalent]
+  )
+  const overScreenValues = useMemo(
+    () =>
+      overScreenComparateurValues(() => setOverScreen(undefined), {
+        comparateur: { value: [], params },
+      }),
+    [params]
+  )
 
   const weight = comparedEquivalent ? comparedEquivalent.value : 1000
   return (
@@ -29,6 +41,9 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
       overScreen={overScreen ? overScreenValues[overScreen] : undefined}
       path='comparateur'
       name={!iframe ? 'Comparateur' : undefined}
+      params={{
+        comparateur: { value: [], params },
+      }}
       noBorder>
       <div className={styles.topContainer}>
         <div className={styles.inputContainer}>
@@ -80,7 +95,16 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
             </div>
           )}
         </div>
-        <div className={styles.description}>C’est autant d’émissions que pour fabriquer, consommer ou parcourir...</div>
+        <div className={styles.description}>
+          {comparedEquivalent ? (
+            <>
+              C’est <span className={styles.descriptionValue}>{formatNumberPrecision(baseValue)} CO2e</span>, soit
+              autant d’émissions que pour fabriquer, consommer ou parcourir...
+            </>
+          ) : (
+            'C’est autant d’émissions que pour fabriquer, consommer ou parcourir...'
+          )}
+        </div>
         {comparedEquivalent && (
           <Link href={comparedEquivalent.link} className={styles.equivalent} target='_blank' rel='noopener noreferrer'>
             <Emoji height='2.5rem'>{comparedEquivalent.emoji}</Emoji>

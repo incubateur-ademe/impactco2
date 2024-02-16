@@ -32,6 +32,11 @@
   margin: auto;
 }
 
+.descriptionValue {
+  color: var(--primary-60);
+  font-weight: 700;
+}
+
 .inputContainer {
   position: relative;
   margin: auto;
