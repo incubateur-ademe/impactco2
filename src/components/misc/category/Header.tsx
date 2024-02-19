@@ -15,6 +15,7 @@ const Header = ({
   category,
   path,
   params,
+  extraParams,
   takeScreenshot,
   tracking,
   type,
@@ -25,6 +26,7 @@ const Header = ({
 }: {
   category?: Category
   params?: Record<string, CustomParamValue>
+  extraParams?: string
   takeScreenshot: () => void
   tracking: string
   type?: TransportSimulateur
@@ -88,7 +90,12 @@ const Header = ({
                 (type ? (
                   <TransportIntegrate tracking={tracking} type={type} />
                 ) : (
-                  <Integrate path={path || category?.slug || ''} params={params} tracking={tracking} />
+                  <Integrate
+                    path={path || category?.slug || ''}
+                    params={params}
+                    tracking={tracking}
+                    extraParams={extraParams}
+                  />
                 ))}
             </Content>
           )}

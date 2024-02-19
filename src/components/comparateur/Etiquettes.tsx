@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import useParamContext from 'components/providers/ParamProvider'
 import Equivalent from 'components/externalModules/shopify/Equivalent'
 import ShareableContent from 'components/misc/ShareableContent'
 import Tag from 'components/misc/tag/Tag'
@@ -7,9 +8,18 @@ import { OverScreenEtiquette } from './overscreens/Type'
 import { overScreenEtiquetteValues } from './overscreens/Values'
 
 const Etiquettes = () => {
+  const {
+    comparateur: { baseValue, equivalents, comparedEquivalent },
+  } = useParamContext()
+  const params = useMemo(
+    () =>
+      `value=${baseValue}&comparisons=${comparedEquivalent ? `${comparedEquivalent},` : ''}${equivalents.join(',')}`,
+    [baseValue, equivalents, comparedEquivalent]
+  )
+
   const [overScreen1, setOverScreen1] = useState<OverScreenEtiquette>()
   const [overScreen2, setOverScreen2] = useState<OverScreenEtiquette>()
-  const overScreenValues = useMemo(() => overScreenEtiquetteValues(), [])
+  const overScreenValues = useMemo(() => overScreenEtiquetteValues(params), [params])
 
   return (
     <>
@@ -24,11 +34,12 @@ const Etiquettes = () => {
           tracking='Étiquette animée'
           setOverScreen={setOverScreen1}
           overScreen={overScreen1 ? overScreenValues[overScreen1] : undefined}
-          path='comparateur/etiquette'
+          path='comparateur/etiquette-animee'
           name='Étiquette animée'
-          withoutShare>
+          withoutShare
+          extraParams={params}>
           <div className={styles.simulatorContent}>
-            <Equivalent baseValue={'100000'} comparisons={['ananas']} />
+            <Equivalent baseValue={baseValue.toString()} comparisons={equivalents} animated />
           </div>
         </ShareableContent>
       </div>
@@ -39,9 +50,10 @@ const Etiquettes = () => {
           overScreen={overScreen2 ? overScreenValues[overScreen2] : undefined}
           path='comparateur/etiquette'
           name='Étiquette statique'
-          withoutShare>
+          withoutShare
+          extraParams={params}>
           <div className={styles.simulatorContent}>
-            <Equivalent baseValue={'100000'} comparisons={['ananas', 'voiturethermique', 'tgv']} />
+            <Equivalent baseValue={baseValue.toString()} comparisons={equivalents} />
           </div>
         </ShareableContent>
       </div>

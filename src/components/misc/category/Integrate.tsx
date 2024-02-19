@@ -8,10 +8,12 @@ import { buildCustomParamsUrl } from './customParamsUrl'
 const Integrate = ({
   path,
   params,
+  extraParams,
   tracking,
 }: {
   path: string
   params?: Record<string, CustomParamValue>
+  extraParams?: string
   tracking: string
 }) => {
   const { theme, setTheme } = useParamContext()
@@ -33,7 +35,7 @@ const Integrate = ({
 
   const url = `<script name="impact-co2" src="${
     process.env.NEXT_PUBLIC_URL
-  }/iframe.js" data-type="${path}" data-search="?${buildCustomParamsUrl(paramWithTheme, visibility)}"></script>`
+  }/iframe.js" data-type="${path}" data-search="?${buildCustomParamsUrl(paramWithTheme, visibility)}&${extraParams}"></script>`
 
   return paramWithTheme && visibility ? (
     <>

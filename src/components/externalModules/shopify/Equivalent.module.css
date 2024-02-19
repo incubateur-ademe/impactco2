@@ -1,3 +1,4 @@
+.animatedContainer,
 .container {
   border-radius: 8px;
   border: 1px solid var(--neutral-30);
@@ -5,6 +6,10 @@
   width: fit-content;
   line-height: 1.25rem;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+}
+
+.animatedContainer {
+  border-radius: 8px 0 0 8px;
 }
 
 .left {
@@ -16,6 +21,10 @@
   border-right: 1px solid var(--primary-30);
   background-color: var(--primary-10);
   color: var(--primary-70);
+}
+
+.leftContent {
+  padding: 0.75em 0;
 }
 
 .right {
@@ -59,17 +68,35 @@
   font-weight: 700;
 }
 
+.animatedComparisons {
+  display: grid;
+}
+
 .comparisons {
   display: flex;
   align-items: stretch;
 }
 
-.comparison {
+.comparison,
+.visibleAnimatedComparison,
+.animatedComparison {
   padding: 0.75em 1.25em;
+}
 
-  &:not(:last-child) {
-    border-right: 1px solid var(--neutral-30);
-  }
+.comparison:not(:last-child) {
+  border-right: 1px solid var(--neutral-30);
+}
+
+.visibleAnimatedComparison,
+.animatedComparison {
+  grid-column: 1;
+  grid-row: 1;
+  width: max-content;
+  opacity: 0;
+}
+
+.visibleAnimatedComparison {
+  opacity: 1;
 }
 
 .label {

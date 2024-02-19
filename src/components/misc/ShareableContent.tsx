@@ -29,6 +29,7 @@ const ShareableContent = <T extends string>({
   tracking,
   'data-testid': dataTestId,
   params,
+  extraParams,
   overScreen,
   setOverScreen,
   children,
@@ -52,6 +53,7 @@ const ShareableContent = <T extends string>({
   tracking: string
   ['data-testid']?: string
   params?: Record<string, CustomParamValue>
+  extraParams?: string
   overScreen?: OverScreenInfo
   setOverScreen: (overScreen: T | undefined) => void
   children: ReactNode
@@ -81,6 +83,7 @@ const ShareableContent = <T extends string>({
               withoutIntegration={withoutIntegration}
               category={category}
               params={params}
+              extraParams={extraParams}
               takeScreenshot={takeScreenshot}
               tracking={tracking}
               type={type}

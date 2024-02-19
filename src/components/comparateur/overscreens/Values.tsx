@@ -7,14 +7,14 @@ import { Space } from 'components/misc/category/overScreens/Values.styles'
 import EquivalentsOverscreen from './EquivalentsOverscreen'
 import { OverScreenComparateur, OverScreenEtiquette } from './Type'
 
-export const overScreenEtiquetteValues: (
-  params?: Record<string, CustomParamValue>
-) => Record<OverScreenEtiquette, OverScreenInfo> = (params) => ({
+export const overScreenEtiquetteValues: (params?: string) => Record<OverScreenEtiquette, OverScreenInfo> = (
+  params
+) => ({
   integrer: {
     title: 'Intégrer',
     children: (
       <>
-        <Integrate path='comparateur/etiquette' params={params} tracking='Comparateur' />
+        <Integrate path='comparateur/etiquette' extraParams={params} tracking='Comparateur' />
         <Space />
         <Card
           href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'

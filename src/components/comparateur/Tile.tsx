@@ -14,7 +14,7 @@ const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
   } = useParamContext()
 
   const equivalent = useMemo(() => (slug ? computedEquivalents.find((e) => e.slug === slug) : null), [slug])
-  const value = equivalent ? baseValue / equivalent.value : 0
+  const value = equivalent ? baseValue / (equivalent.value * 1000) : 0
 
   return equivalent ? (
     <div className={styles.tile}>

@@ -11,6 +11,12 @@
   text-align: center;
   gap: 1rem;
   background-color: var(--white);
+
+  @media screen and (max-width: 425px) {
+    gap: 0.5rem;
+    min-height: unset;
+    width: 100%;
+  }
 }
 
 .tile {

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import Equal from './Equal'
@@ -9,13 +9,35 @@ const Equivalent = ({
   baseValue,
   comparisons,
   title,
+  animated,
 }: {
   className?: string
   baseValue: string
   comparisons: string[]
   title?: (unit: string, roundedValue: string, intValue: number) => ReactNode
+  animated?: boolean
 }) => {
-  const intValue = Number.parseInt(baseValue)
+  console.log(baseValue)
+  const [toDisplay, setToDisplay] = useState(0)
+  const timeoutRef = useRef<NodeJS.Timeout>()
+
+  useEffect(() => {
+    if (animated && comparisons.length > 0) {
+      const update = () => setToDisplay((value) => (value + 1) % comparisons.length)
+      const updateWithTimeout = () => {
+        update()
+        timeoutRef.current = setTimeout(updateWithTimeout, 5000)
+      }
+      timeoutRef.current = setTimeout(updateWithTimeout, 5000)
+    }
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [animated, comparisons])
+
+  const intValue = Number(baseValue)
   const value = Number.isNaN(intValue) ? 100000 : intValue
 
   const unit = value >= 1000 ? 'kg' : 'g'
@@ -28,7 +50,7 @@ const Equivalent = ({
       <div className={styles.container}>
         <div className={styles.left}>
           <Logo />
-          <div>
+          <div className={styles.leftContent}>
             <div className={styles.value}>{roundedValue}</div>
             <div className={styles.label}>
               {unit} CO<sub>2</sub>e
@@ -39,9 +61,17 @@ const Equivalent = ({
           <div className={styles.equal}>
             <Equal />
           </div>
-          <div className={styles.comparisons}>
-            {comparisons.map((comparison) => (
-              <div key={comparison} className={styles.comparison}>
+          <div className={animated ? styles.animatedComparisons : styles.comparisons}>
+            {comparisons.map((comparison, index) => (
+              <div
+                key={comparison}
+                className={
+                  animated
+                    ? index === toDisplay
+                      ? styles.visibleAnimatedComparison
+                      : styles.animatedComparison
+                    : styles.comparison
+                }>
                 <SimpleValue value={value} comparison={comparison} />
               </div>
             ))}
