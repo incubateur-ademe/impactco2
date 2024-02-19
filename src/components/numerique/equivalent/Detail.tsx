@@ -81,7 +81,7 @@ export default function Detail({ ecv, total }: { ecv: LabeledEquivalentValue[]; 
         <Wrapper>
           <tbody>
             {ecv
-              .sort((a: LabeledEquivalentValue, b: LabeledEquivalentValue) => {
+              .sort((a, b) => {
                 let res = a.value < b.value ? 1 : -1
                 if (a.label && b.label) {
                   res = order.indexOf(a.label) > order.indexOf(b.label) ? 1 : -1

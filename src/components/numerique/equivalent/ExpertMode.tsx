@@ -22,11 +22,7 @@ const StyledButtonLink = styled(Button)`
   margin-bottom: 2rem;
 `
 
-type Question = {
-  dottedName: string
-}
-
-export default function ExpertMode({ questions }: { questions: Question[] }) {
+export default function ExpertMode({ questions }: { questions: { dottedName: string }[] }) {
   const {
     usageNumerique: { engine, setSituation },
   } = useParamContext()
