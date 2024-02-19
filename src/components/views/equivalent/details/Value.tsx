@@ -60,6 +60,10 @@ const StyledEmoji = styled.div`
 `
 export default function Value({ equivalent, category }: { equivalent: Equivalent; category: Category }) {
   const numberToDisplay = computeECV(equivalent)
+  let emojiHeight = '1em'
+  if (equivalent.emoji === '🫛') {
+    emojiHeight = '1.5em'
+  }
   return (
     <Wrapper>
       <Section $withoutPadding $theme='main'>
@@ -81,7 +85,7 @@ export default function Value({ equivalent, category }: { equivalent: Equivalent
             </div>
           </Top>
           <StyledEmoji>
-            <Emoji>{equivalent.emoji}</Emoji>
+            <Emoji height={emojiHeight}>{equivalent.emoji}</Emoji>
           </StyledEmoji>
         </SectionWideContent>
       </Section>

@@ -25,14 +25,10 @@ export default function Emoji({
 
     stringDOMforEmoji = parsed.replace(/alt=".*?"/g, 'alt=""')
   }
-  let defaultHeight = '1em'
-  if (children === '🫛') {
-    defaultHeight = '1.5em'
-  }
   return stringDOMforEmoji ? (
     <div
       className={classNames(styles.wrapper, className)}
-      style={{ height: height || defaultHeight }}
+      style={{ height: height || '1em' }}
       dangerouslySetInnerHTML={{
         __html: stringDOMforEmoji,
       }}
