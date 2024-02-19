@@ -1,0 +1,222 @@
+.wrapper {
+  margin-top: 0;
+  margin-bottom: 0;
+  .gridlinks {
+    border-top: 1px solid var(--neutral-20);
+    a {
+      border-right: 1px solid var(--neutral-20);
+      @media screen and (max-width: 36em) {
+        border-right: none;
+      }
+      color: var(--neutral-50);
+      padding-right: 1.5rem;
+    }
+    a.last {
+      border: none;
+    }
+    a:hover {
+      color: var(--neutral-80);
+    }
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    @media screen and (max-width: 36em) {
+      flex-direction: column;
+    }
+    padding-top: 1.5rem;
+  }
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  a {
+    color: var(--neutral-70);
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 0.25rem;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.grid {
+  border-top: 1px solid var(--neutral-20);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 3rem 0 3rem 0;
+  @media screen and (max-width: 72em) {
+    padding: 3rem 0 1rem 0;
+  }
+  @media screen and (max-width: 60em) {
+    padding: 3rem 0 1rem 0;
+  }
+  @media screen and (max-width: 48em) {
+    padding: 3rem 0 0rem 0;
+  }
+  @media screen and (max-width: 36em) {
+    padding: 3rem 0 0rem 0;
+  }
+}
+
+.gridOne {
+  display: grid;
+  grid-column: span 4;
+  @media screen and (max-width: 72em) {
+    grid-column: span 3;
+  }
+  @media screen and (max-width: 48em) {
+    grid-column: span 6;
+  }
+  grid-template-columns: repeat(5, 1fr);
+}
+.gridOneA {
+  align-items: center;
+  display: flex;
+  grid-column: span 2;
+  @media screen and (max-width: 72em) {
+    grid-column: span 5;
+  }
+}
+.gridOneB {
+  align-items: center;
+  display: flex;
+  grid-column: span 3;
+  @media screen and (max-width: 72em) {
+    grid-column: span 5;
+    padding-bottom: 1.5rem;
+    padding-top: 4rem;
+  }
+  @media screen and (max-width: 60em) {
+    padding-bottom: 2rem;
+  }
+  @media screen and (max-width: 48em) {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  @media screen and (max-width: 36em) {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
+.gridTwoA {
+  align-items: center;
+  display: flex;
+  padding-left: 1rem;
+  @media screen and (max-width: 72em) {
+    align-items: stretch;
+  }
+  @media screen and (max-width: 60em) {
+    grid-column: span 2;
+  }
+  @media screen and (max-width: 48em) {
+    grid-column: span 1;
+    padding-left: 0;
+  }
+  @media screen and (max-width: 36em) {
+    grid-column: span 2;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+.gridTwoB {
+  align-items: center;
+  display: flex;
+  padding-left: 1rem;
+  @media screen and (max-width: 72em) {
+    align-items: stretch;
+  }
+  @media screen and (max-width: 60em) {
+    grid-column: span 2;
+  }
+  @media screen and (max-width: 48em) {
+    grid-column: span 1;
+    padding-left: 0;
+  }
+  @media screen and (max-width: 36em) {
+    grid-column: span 2;
+    margin-bottom: 2rem;
+  }
+}
+
+.gridTwo {
+  display: grid;
+  grid-column: span 2;
+  @media screen and (max-width: 72em) {
+    grid-column: span 2;
+  }
+  @media screen and (max-width: 48em) {
+    border-top: 1px solid var(--neutral-20);
+    grid-column: span 6;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  @media screen and (max-width: 36em) {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.logo {
+  display: flex;
+}
+
+.followNews {
+  color: var(--neutral-70);
+  font-weight: 500;
+  margin-top: 1rem;
+  .openLink {
+    height: 18px;
+    width: 18px;
+    margin-left: 0.25rem;
+  }
+  a {
+    color: var(--neutral-70);
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 0.25rem;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.footerExplain {
+  max-width: 25rem;
+  p {
+    margin-bottom: 0;
+  }
+  @media screen and (max-width: 36em) {
+    margin: 1.5rem 0 1.5rem 0;
+  }
+}
+
+.footerLink {
+  a {
+    display: flex;
+    align-items: center;
+    color: var(--neutral-80);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-decoration: none;
+    padding-left: 1.5rem;
+    @media screen and (max-width: 36em) {
+      padding-left: 0;
+    }
+  }
+  a.first {
+    padding-left: 0;
+  }
+  .openLink {
+    height: 12px;
+    margin-left: 0.25rem;
+    width: 12px;
+  }
+  margin-bottom: 0.5rem;
+}
