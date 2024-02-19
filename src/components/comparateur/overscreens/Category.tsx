@@ -5,12 +5,13 @@ import useParamContext from 'components/providers/ParamProvider'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/buttons/Button'
 import { Icon } from 'components/osezchanger/icons'
+import { getRandomEquivalentsInCategory } from '../random'
 import styles from './Category.module.css'
 import Equivalents from './Equivalents'
 
-const Category = ({ category }: { category: CategoryType }) => {
+const Category = ({ category, onClose }: { category: CategoryType; onClose: () => void }) => {
   const {
-    comparateur: { equivalents },
+    comparateur: { equivalents, comparedEquivalent, setEquivalents },
   } = useParamContext()
 
   const [open, setOpen] = useState(false)
@@ -52,7 +53,18 @@ const Category = ({ category }: { category: CategoryType }) => {
         <>
           <div className={styles.comparison}>
             <div>Comparer avec cette catégorie seulement :</div>
-            <Button priority='secondary'>Voir la comparaison</Button>
+            <Button
+              priority='secondary'
+              onClick={() => {
+                setEquivalents(
+                  getRandomEquivalentsInCategory(comparedEquivalent?.slug, equivalents.length, category.id).map(
+                    (equivalent) => equivalent.slug
+                  )
+                )
+                onClose()
+              }}>
+              Voir la comparaison
+            </Button>
           </div>
           <Equivalents equivalentsToDisplay={categoryEquivalents} />
         </>

@@ -8,7 +8,7 @@ import { getRandomEquivalents } from './random'
 
 const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
   const {
-    comparateur: { baseValue, comparedEquivalent, equivalents, setEquivalents },
+    comparateur: { comparedEquivalent, equivalents, setEquivalents },
   } = useParamContext()
 
   return (
@@ -22,7 +22,7 @@ const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
       <div className={styles.buttons}>
         <Button
           onClick={() => {
-            setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, baseValue, equivalents.length))
+            setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, equivalents.length))
           }}>
           <Icon iconId='magic-wand' />
           Générer d’autres équivalents

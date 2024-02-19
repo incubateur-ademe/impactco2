@@ -1,6 +1,6 @@
 import { computedEquivalents } from 'components/providers/DataProvider'
 
-export const getRandomEquivalent = (value: number, toIgnore: string[], category?: number) => {
+const getRandomEquivalent = (toIgnore: string[], category?: number) => {
   const meaningfullEquivalents = computedEquivalents.filter((equivalent) => !toIgnore.includes(equivalent.slug))
 
   let categoryEquivalents: typeof computedEquivalents = []
@@ -16,24 +16,32 @@ export const getRandomEquivalent = (value: number, toIgnore: string[], category?
   return categoryEquivalents[Math.floor(Math.random() * categoryEquivalents.length)].slug
 }
 
-export const getRandomEquivalents = (current: string | undefined, value: number, length: number) => {
-  const transport = getRandomEquivalent(value, current ? [current] : [], 4)
+export const getRandomEquivalents = (current: string | undefined, length: number) => {
+  const transport = getRandomEquivalent(current ? [current] : [], 4)
   if (length === 1) {
     return [transport]
   }
-  const numerique = getRandomEquivalent(value, current ? [current] : [], 1)
+  const numerique = getRandomEquivalent(current ? [current] : [], 1)
   if (length === 2) {
     return [transport, numerique]
   }
 
-  const repas = getRandomEquivalent(value, current ? [current] : [], 2)
+  const repas = getRandomEquivalent(current ? [current] : [], 2)
   if (length === 3) {
     return [transport, numerique, repas]
   }
 
   const objects = [transport, numerique, repas]
   for (let i = 3; i < length; i++) {
-    objects.push(getRandomEquivalent(value, current ? [...objects, current] : objects))
+    objects.push(getRandomEquivalent(current ? [...objects, current] : objects))
   }
   return objects
+}
+
+export const getRandomEquivalentsInCategory = (current: string | undefined, length: number, category: number) => {
+  const meaningfullEquivalents = computedEquivalents.filter(
+    (equivalent) => equivalent.category === category && current !== equivalent.slug
+  )
+  const shuffled = [...meaningfullEquivalents].sort(() => 0.5 - Math.random())
+  return shuffled.slice(0, Math.min(meaningfullEquivalents.length, 8))
 }

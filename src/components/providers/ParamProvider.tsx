@@ -388,7 +388,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     if (router.query.comparisons) {
       internalSetEquivalentsSetter((router.query.comparisons as string).split(','))
     } else {
-      internalSetEquivalentsSetter(getRandomEquivalents(comparedEquivalent?.slug, 10000, 3))
+      internalSetEquivalentsSetter(getRandomEquivalents(comparedEquivalent?.slug, 3))
     }
 
     if (router.query.m2) {

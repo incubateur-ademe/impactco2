@@ -77,7 +77,7 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
         ) : (
           categories
             .filter((category) => category.id !== 12)
-            .map((category) => <Category category={category} key={category.slug} />)
+            .map((category) => <Category category={category} key={category.slug} onClose={onClose} />)
         )}
       </div>
       <div className={styles.footer}>

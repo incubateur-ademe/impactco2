@@ -35,7 +35,7 @@ const Integrate = ({
 
   const url = `<script name="impact-co2" src="${
     process.env.NEXT_PUBLIC_URL
-  }/iframe.js" data-type="${path}" data-search="?${buildCustomParamsUrl(paramWithTheme, visibility)}&${extraParams}"></script>`
+  }/iframe.js" data-type="${path}" data-search="?${buildCustomParamsUrl(paramWithTheme, visibility)}${extraParams ? `&${extraParams}` : ''}"></script>`
 
   return paramWithTheme && visibility ? (
     <>

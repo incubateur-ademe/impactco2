@@ -24,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20rem;
+  min-height: 20rem;
   margin: -1.5rem;
   padding: 1.5rem;
   border-radius: 16px;
