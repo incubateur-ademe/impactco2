@@ -160,6 +160,34 @@
     "label": "Châtaigne"
   },
   {
+    "value": "chauffagefioul",
+    "label": "Chauffage au fioul"
+  },
+  {
+    "value": "chauffagegaz",
+    "label": "Chauffage au gaz"
+  },
+  {
+    "value": "poeleabois",
+    "label": "Chauffage avec un poêle à bois"
+  },
+  {
+    "value": "poeleagranule",
+    "label": "Chauffage avec un poêle à granulé"
+  },
+  {
+    "value": "pompeachaleur",
+    "label": "Chauffage avec une pompe à chaleur"
+  },
+  {
+    "value": "chauffageelectrique",
+    "label": "Chauffage électrique"
+  },
+  {
+    "value": "reseaudechaleur",
+    "label": "Chauffage via un réseau de chaleur"
+  },
+  {
     "value": "chemiseencoton",
     "label": "Chemise (En coton)"
   },
@@ -248,6 +276,10 @@
     "label": "Écran (24 pouces)"
   },
   {
+    "value": "email",
+    "label": "Email"
+  },
+  {
     "value": "enceintebluetooth",
     "label": "Enceinte bluetooth"
   },
@@ -282,6 +314,10 @@
   {
     "value": "fruitdelapassion",
     "label": "Fruit de la passion"
+  },
+  {
+    "value": "telechargement",
+    "label": "Go de donnée"
   },
   {
     "value": "grenade",
@@ -520,6 +556,10 @@
     "label": "Raisin"
   },
   {
+    "value": "rechercheweb",
+    "label": "Recherche sur le web"
+  },
+  {
     "value": "refrigirateur",
     "label": "Réfrigérateur"
   },
@@ -586,6 +626,18 @@
   {
     "value": "soda",
     "label": "Soda"
+  },
+  {
+    "value": "spam",
+    "label": "Spam (Non lu)"
+  },
+  {
+    "value": "stockagedonnee",
+    "label": "Stocker un Go de donnée (Pendant 1 an)"
+  },
+  {
+    "value": "streamingvideo",
+    "label": "Streaming vidéo"
   },
   {
     "value": "sweatencoton",
@@ -662,6 +714,10 @@
   {
     "value": "vin",
     "label": "Vin"
+  },
+  {
+    "value": "visioconference",
+    "label": "Visioconférence"
   },
   {
     "value": "voitureelectrique",

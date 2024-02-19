@@ -1,5 +1,6 @@
 import fs from 'fs'
 import boissons from '../data/categories/boisson.json'
+import chauffages from '../data/categories/chauffage.json'
 import deplacements from '../data/categories/deplacement.json'
 import divers from '../data/categories/divers.json'
 import electromenager from '../data/categories/electromenager.json'
@@ -8,6 +9,7 @@ import habillement from '../data/categories/habillement.json'
 import mobilier from '../data/categories/mobilier.json'
 import numerique from '../data/categories/numerique.json'
 import repas from '../data/categories/repas.json'
+import usageNumerique from '../data/categories/usagenumerique.json'
 import { computeECV } from '../utils/computeECV'
 import formatName from '../utils/formatName'
 import { Equivalent } from '../../types/equivalent'
@@ -22,6 +24,8 @@ const existingEquivalentsByCategory: Record<string, Equivalent[]> = {
   divers: divers,
   numerique: numerique,
   deplacements: deplacements,
+  chauffages: chauffages,
+  usageNumerique: usageNumerique,
 }
 
 const ecvs: Record<string, { value: number; label: string; emoji: string; category: number }> = {}

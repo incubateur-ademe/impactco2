@@ -1000,5 +1000,89 @@
     "value": 121.9,
     "label": "km en bus (gnv)",
     "emoji": "🚌"
+  },
+  "chauffagegaz": {
+    "category": 8,
+    "value": 39000,
+    "label": "chauffage au gaz",
+    "emoji": "💨"
+  },
+  "chauffagefioul": {
+    "category": 8,
+    "value": 57170,
+    "label": "chauffage au fioul",
+    "emoji": "🛢"
+  },
+  "chauffageelectrique": {
+    "category": 8,
+    "value": 7500,
+    "label": "chauffage électrique",
+    "emoji": "⚡️"
+  },
+  "pompeachaleur": {
+    "category": 8,
+    "value": 2500,
+    "label": "chauffage avec une pompe à chaleur",
+    "emoji": "🌡️"
+  },
+  "poeleagranule": {
+    "category": 8,
+    "value": 5640,
+    "label": "chauffage avec un poêle à granulé",
+    "emoji": "🔥"
+  },
+  "poeleabois": {
+    "category": 8,
+    "value": 9200,
+    "label": "chauffage avec un poêle à bois",
+    "emoji": "🪵"
+  },
+  "reseaudechaleur": {
+    "category": 8,
+    "value": 18670,
+    "label": "chauffage via un réseau de chaleur",
+    "emoji": "🏢"
+  },
+  "email": {
+    "category": 10,
+    "value": 2.46181262,
+    "label": "email",
+    "emoji": "✉️"
+  },
+  "spam": {
+    "category": 10,
+    "value": 3.73863698,
+    "label": "spam (non lu)",
+    "emoji": "✋"
+  },
+  "stockagedonnee": {
+    "category": 10,
+    "value": 0.23533416999999998,
+    "label": "stocker un go de donnée (pendant 1 an)",
+    "emoji": "💾"
+  },
+  "rechercheweb": {
+    "category": 10,
+    "value": 51.042269652307,
+    "label": "recherche[s] sur le web",
+    "emoji": "🧐"
+  },
+  "streamingvideo": {
+    "category": 10,
+    "value": 64.01675291000002,
+    "label": "Heure[s] de streaming vidéo",
+    "emoji": "🎬"
+  },
+  "visioconference": {
+    "category": 10,
+    "value": 57.06336546216,
+    "label": "Heure[s] de visioconférence",
+    "emoji": "🎥"
+  },
+  "telechargement": {
+    "category": 10,
+    "value": 9.504680870000001,
+    "label": "go de donnée",
+    "emoji": "⬇️"
   }
 }

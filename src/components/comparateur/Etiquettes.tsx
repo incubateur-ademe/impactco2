@@ -11,11 +11,11 @@ const Etiquettes = () => {
   const {
     comparateur: { baseValue, equivalents, comparedEquivalent },
   } = useParamContext()
-  const params = useMemo(
-    () =>
-      `value=${baseValue}&comparisons=${comparedEquivalent ? `${comparedEquivalent},` : ''}${equivalents.join(',')}`,
-    [baseValue, equivalents, comparedEquivalent]
+  const etiquettes = useMemo(
+    () => (comparedEquivalent ? [comparedEquivalent.slug, ...equivalents] : equivalents),
+    [comparedEquivalent, equivalents]
   )
+  const params = useMemo(() => `value=${baseValue}&comparisons=${etiquettes.join(',')}`, [baseValue, etiquettes])
 
   const [overScreen1, setOverScreen1] = useState<OverScreenEtiquette>()
   const [overScreen2, setOverScreen2] = useState<OverScreenEtiquette>()
@@ -39,7 +39,7 @@ const Etiquettes = () => {
           withoutShare
           extraParams={params}>
           <div className={styles.simulatorContent}>
-            <Etiquette baseValue={(baseValue * 1000).toString()} comparisons={equivalents} animated />
+            <Etiquette baseValue={(baseValue * 1000).toString()} comparisons={etiquettes} animated />
           </div>
         </ShareableContent>
       </div>
@@ -53,7 +53,7 @@ const Etiquettes = () => {
           withoutShare
           extraParams={params}>
           <div className={styles.simulatorContent}>
-            <Etiquette baseValue={(baseValue * 1000).toString()} comparisons={equivalents} />
+            <Etiquette baseValue={(baseValue * 1000).toString()} comparisons={etiquettes} />
           </div>
         </ShareableContent>
       </div>
