@@ -69,10 +69,7 @@ const StyledEmoji = styled(Emoji)`
   }
 `
 
-type BarType = { category: CategoryType; equivalent: EquivalentType; engine: Engine } & {
-  name: string
-  total: number
-}
+type BarType = { category: CategoryType; equivalent: EquivalentType; engine: Engine; name: string; total: number }
 
 export default function Bar(props: BarType) {
   return (

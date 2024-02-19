@@ -72,11 +72,6 @@ export default function Detail({ ecv, total }: { ecv: LabeledEquivalentValue[]; 
     'Consommation',
   ]
 
-  interface Item {
-    value: number
-    label: string
-  }
-
   return (
     <>
       <Toggle asLink onClick={() => setDetails((prevDetails) => !prevDetails)} className='noscreenshot'>
