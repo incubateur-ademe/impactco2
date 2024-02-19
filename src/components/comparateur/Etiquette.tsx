@@ -18,7 +18,6 @@ const Etiquette = ({
     const onResize = () => {
       if (ref.current && ref.current.parentElement) {
         const { width } = ref.current.parentElement.getBoundingClientRect()
-        console.log(width, (comparisons.length + 1) * 175)
         setInline(width > (comparisons.length + 1) * 175)
       }
     }

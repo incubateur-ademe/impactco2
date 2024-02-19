@@ -33,7 +33,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
     [params]
   )
 
-  const weight = comparedEquivalent ? comparedEquivalent.value : 1000
+  const weight = comparedEquivalent ? comparedEquivalent.value : 1
   return (
     <ShareableContent<OverScreenComparateur>
       iframe={iframe}

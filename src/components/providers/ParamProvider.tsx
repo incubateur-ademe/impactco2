@@ -223,7 +223,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [frequence, setFrequence] = useState<Frequence | undefined>(frequences.find((freq) => freq.isDefault))
 
   // Comparateur
-  const [baseValue, setBaseValue] = useState(10000)
+  const [baseValue, setBaseValue] = useState(10)
   const [equivalents, setEquivalents] = useState<string[]>([])
   const [tiles, setTiles] = useState<Equivalent[]>([])
   const [comparedEquivalent, setComparedEquivalent] = useState<ComputedEquivalent>()

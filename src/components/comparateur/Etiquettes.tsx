@@ -39,7 +39,7 @@ const Etiquettes = () => {
           withoutShare
           extraParams={params}>
           <div className={styles.simulatorContent}>
-            <Etiquette baseValue={baseValue.toString()} comparisons={equivalents} animated />
+            <Etiquette baseValue={(baseValue * 1000).toString()} comparisons={equivalents} animated />
           </div>
         </ShareableContent>
       </div>
@@ -53,7 +53,7 @@ const Etiquettes = () => {
           withoutShare
           extraParams={params}>
           <div className={styles.simulatorContent}>
-            <Etiquette baseValue={baseValue.toString()} comparisons={equivalents} />
+            <Etiquette baseValue={(baseValue * 1000).toString()} comparisons={equivalents} />
           </div>
         </ShareableContent>
       </div>
