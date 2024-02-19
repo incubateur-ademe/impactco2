@@ -93,7 +93,7 @@
     "category": 9,
     "value": 1559.309081,
     "label": "kg d'asperge",
-    "emoji": "🥬"
+    "emoji": "🌱"
   },
   "betterave": {
     "category": 9,
@@ -213,7 +213,7 @@
     "category": 9,
     "value": 941.0662189999998,
     "label": "kg de mâche",
-    "emoji": "🥗"
+    "emoji": "🥬"
   },
   "navet": {
     "category": 9,
@@ -267,7 +267,7 @@
     "category": 9,
     "value": 601.8473451000001,
     "label": "kg de radis",
-    "emoji": "🍒"
+    "emoji": "🍠"
   },
   "salsifis": {
     "category": 9,
@@ -477,7 +477,7 @@
     "category": 9,
     "value": 892.8173700000001,
     "label": "kg de fruit de la passion",
-    "emoji": "🧆"
+    "emoji": "🌸"
   },
   "grenade": {
     "category": 9,

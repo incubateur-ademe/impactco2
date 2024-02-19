@@ -216,7 +216,7 @@
     "prefix": "kg d'",
     "slug": "asperge",
     "synonyms": ["manger, fruit"],
-    "emoji": "🥬",
+    "emoji": "🌱",
     "category": 9,
     "ecv": [
       {
@@ -741,7 +741,7 @@
     "prefix": "kg d'",
     "slug": "epinard",
     "synonyms": ["manger, fruit"],
-    "emoji": "🍀",
+    "emoji": "🥬",
     "category": 9,
     "ecv": [
       {
@@ -920,7 +920,7 @@
     "prefix": "kg de ",
     "slug": "mache",
     "synonyms": ["manger, fruit"],
-    "emoji": "🥗",
+    "emoji": "🥬",
     "category": 9,
     "ecv": [
       {
@@ -1231,7 +1231,7 @@
     "prefix": "kg de ",
     "slug": "radis",
     "synonyms": ["manger, fruit"],
-    "emoji": "🍒",
+    "emoji": "🍠",
     "category": 9,
     "ecv": [
       {
@@ -2473,7 +2473,7 @@
     "prefix": "kg de ",
     "slug": "fruitdelapassion",
     "synonyms": ["manger, fruit"],
-    "emoji": "🍉",
+    "emoji": "🌸",
     "category": 9,
     "ecv": [
       {
