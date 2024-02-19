@@ -49,6 +49,7 @@
 
 .names {
   flex: 1;
+  color: var(--neutral-70);
 }
 
 .title {
