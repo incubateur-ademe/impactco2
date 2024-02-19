@@ -12,21 +12,31 @@
   border-radius: 8px 0 0 8px;
 }
 
-.left {
+.left,
+.top {
   display: flex !important;
-  align-items: center;
-  gap: 0.75em;
+  align-items: stretch;
   border-radius: 8px 0 0 8px;
-  padding: 0 1.25em 0 0;
-  border-right: 1px solid var(--primary-30);
+  gap: 0.75em;
   background-color: var(--primary-10);
   color: var(--primary-70);
 }
 
-.leftContent {
-  padding: 0.75em 0;
+.left {
+  border-right: 1px solid var(--primary-30);
 }
 
+.top {
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid var(--primary-30);
+}
+
+.leftContent {
+  padding: 0.75em 1.25rem 0.75rem 0;
+  margin: auto;
+}
+
+.rightColumn,
 .right {
   position: relative;
   border-radius: 0 8px 8px 0;
@@ -34,6 +44,11 @@
   color: var(--neutral-50);
 }
 
+.rightColumn {
+  border-radius: 0 0 8px 8px;
+}
+
+.equalColumn,
 .equal {
   left: -0.625em;
   top: 0.875em;
@@ -47,6 +62,12 @@
   align-items: center;
   height: 1.25em;
   width: 1.25em;
+}
+
+.equalColumn {
+  top: 0;
+  left: 0.875em;
+  transform: translateY(-50%);
 }
 
 .logo {
@@ -72,9 +93,14 @@
   display: grid;
 }
 
+.comparisonsColumn,
 .comparisons {
   display: flex;
   align-items: stretch;
+}
+
+.comparisonsColumn {
+  flex-direction: column;
 }
 
 .comparison,

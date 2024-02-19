@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import Equal from './Equal'
@@ -17,7 +17,6 @@ const Equivalent = ({
   title?: (unit: string, roundedValue: string, intValue: number) => ReactNode
   animated?: boolean
 }) => {
-  console.log(baseValue)
   const [toDisplay, setToDisplay] = useState(0)
   const timeoutRef = useRef<NodeJS.Timeout>()
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './Logo.module.css'
 
-const Logo = () => {
+const Logo = ({ right }: { right?: boolean }) => {
   return (
     <a
       href='https://impactco2.fr'
-      className={styles.logo}
+      className={right ? styles.reverseLogo : styles.logo}
       target='_blank'
       rel='noreferrer noopener'
       aria-label='Impact CO2'>

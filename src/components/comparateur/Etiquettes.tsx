@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react'
 import useParamContext from 'components/providers/ParamProvider'
-import Equivalent from 'components/externalModules/shopify/Equivalent'
 import ShareableContent from 'components/misc/ShareableContent'
 import Tag from 'components/misc/tag/Tag'
+import Etiquette from './Etiquette'
 import styles from './Etiquettes.module.css'
 import { OverScreenEtiquette } from './overscreens/Type'
 import { overScreenEtiquetteValues } from './overscreens/Values'
@@ -39,7 +39,7 @@ const Etiquettes = () => {
           withoutShare
           extraParams={params}>
           <div className={styles.simulatorContent}>
-            <Equivalent baseValue={baseValue.toString()} comparisons={equivalents} animated />
+            <Etiquette baseValue={baseValue.toString()} comparisons={equivalents} animated />
           </div>
         </ShareableContent>
       </div>
@@ -53,7 +53,7 @@ const Etiquettes = () => {
           withoutShare
           extraParams={params}>
           <div className={styles.simulatorContent}>
-            <Equivalent baseValue={baseValue.toString()} comparisons={equivalents} />
+            <Etiquette baseValue={baseValue.toString()} comparisons={equivalents} />
           </div>
         </ShareableContent>
       </div>

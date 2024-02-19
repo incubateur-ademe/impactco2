@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import Equivalent from 'components/externalModules/shopify/Equivalent'
+import Etiquette from './Etiquette'
 
 const PageEquivalent = ({ animated }: { animated?: boolean }) => {
   const router = useRouter()
@@ -24,7 +24,7 @@ const PageEquivalent = ({ animated }: { animated?: boolean }) => {
   }, [router])
 
   return router.isReady && comparisons.length > 0 ? (
-    <Equivalent baseValue={value} comparisons={comparisons} animated={animated} />
+    <Etiquette baseValue={value} comparisons={comparisons} animated={animated} />
   ) : null
 }
 

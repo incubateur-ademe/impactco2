@@ -1,12 +1,11 @@
+.reverseLogo,
 .logo {
   display: flex !important;
   align-items: center;
   padding: 0 0.75rem;
-  height: 100%;
-  border-right: 1px solid var(--primary-20);
+  height: auto;
   color: var(--primary-50);
   background-color: var(--primary-10);
-  border-radius: 8px 0 0 8px;
 
   &:hover {
     color: var(--primary-60);
@@ -15,4 +14,14 @@
   > svg {
     height: 100%;
   }
+}
+
+.logo {
+  border-right: 1px solid var(--primary-20);
+  border-radius: 8px 0 0 8px;
+}
+
+.reverseLogo {
+  border-left: 1px solid var(--primary-20);
+  border-radius: 0 8px 8px 0;
 }
