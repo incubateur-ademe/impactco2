@@ -8,15 +8,15 @@ const equivalents = values as Record<string, { label: string; value: number; emo
 
 const SimpleValue = ({ value, comparison }: { value: number; comparison: string }) => {
   let equivalent: { label: string; value: number; emoji: string }
-  if (comparison === 'random') {
+  if (comparison !== 'random' && equivalents[comparison]) {
+    equivalent = equivalents[comparison]
+  } else {
     const meaningfullEquivalents = Object.entries(equivalents).filter(([, ecv]) => value / ecv.value > 1)
     const categories = [...new Set(meaningfullEquivalents.map((equivalent) => equivalent[1].category))]
     const randomCategory = categories[Math.floor(Math.random() * categories.length)]
     const categoryEquivalents = meaningfullEquivalents.filter((equivalent) => equivalent[1].category === randomCategory)
     const randomEquivalent = categoryEquivalents[Math.floor(Math.random() * categoryEquivalents.length)]
     equivalent = randomEquivalent[1]
-  } else {
-    equivalent = equivalents[comparison]
   }
 
   const comparisonValue = value / equivalent.value

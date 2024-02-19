@@ -1,10 +1,11 @@
 import classNames from 'classnames'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import React, { useMemo, useState } from 'react'
 import formatName from 'utils/formatName'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
 import useParamContext from 'components/providers/ParamProvider'
 import Emoji from 'components/base/Emoji'
+import Link from 'components/base/buttons/Link'
 import { HiddenLabel } from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import ShareableContent from 'components/misc/ShareableContent'
@@ -106,10 +107,24 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
           )}
         </div>
         {comparedEquivalent && (
-          <Link href={comparedEquivalent.link} className={styles.equivalent} target='_blank' rel='noopener noreferrer'>
-            <Emoji height='2.5rem'>{comparedEquivalent.emoji}</Emoji>
-            <Icon iconId='link' />
-          </Link>
+          <>
+            <NextLink
+              href={comparedEquivalent.link}
+              className={styles.equivalent}
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Emoji height='2.5rem'>{comparedEquivalent.emoji}</Emoji>
+              <Icon iconId='link' />
+            </NextLink>
+            <Link
+              target='_blank'
+              rel='noopener noreferrer'
+              href={comparedEquivalent.link}
+              className={styles.equivalentLink}>
+              Voir le détail
+              <Icon iconId='link' />
+            </Link>
+          </>
         )}
       </div>
       <div className={iframe ? styles.bottomContainerIframe : styles.bottomContainer}>

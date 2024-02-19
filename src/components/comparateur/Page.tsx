@@ -6,6 +6,7 @@ import Etiquettes from 'components/comparateur/Etiquettes'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
+import { Separator } from 'components/misc/category/Header.styles'
 import Sources from 'components/misc/category/Sources'
 
 const Page = () => {
@@ -46,6 +47,11 @@ const Page = () => {
       <Section $withoutPadding $margin='1.5rem 0'>
         <SectionWideContent $size='lg'>
           <Etiquettes />
+        </SectionWideContent>
+      </Section>
+      <Section>
+        <SectionWideContent $size='xs'>
+          <Separator />
         </SectionWideContent>
       </Section>
       <Learning from='/comparateur' fromLabel='Comparateur carbone' />
