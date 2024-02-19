@@ -38,7 +38,7 @@ export default function Footer() {
                   <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
                   <FollowNews>
                     <Link
-                      href='https://www.linkedin.com/company/ademe/'
+                      href='https://fr.linkedin.com/showcase/accelerateurdelatransitionecologique-ademe/'
                       title='LinkedIn'
                       rel='noreferrer noopener'
                       target='_blank'>
