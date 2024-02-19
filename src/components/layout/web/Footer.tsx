@@ -53,7 +53,7 @@ export default function Footer() {
               <GridTwoA>
                 <div>
                   <div>
-                    <strong>Liens Utiles</strong>
+                    <strong>Liens utiles</strong>
                   </div>
                   <LinkContainer>
                     <Link href='/stats' title='Statistiques'>
