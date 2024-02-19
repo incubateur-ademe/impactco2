@@ -61,8 +61,8 @@ const StyledEmoji = styled.div`
 export default function Value({ equivalent, category }: { equivalent: Equivalent; category: Category }) {
   const numberToDisplay = computeECV(equivalent)
   let emojiHeight = '1em'
-  if (equivalent.emoji === '🫛') {
-    emojiHeight = '1.5em'
+  if (equivalent.emoji === '🟢') {
+    emojiHeight = '.75em'
   }
   return (
     <Wrapper>
