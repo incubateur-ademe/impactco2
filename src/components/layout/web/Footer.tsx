@@ -5,25 +5,6 @@ import { Icon } from 'components/osezchanger/icons'
 import Signature from 'components/screenshot/Signature'
 import styles from './Footer.module.css'
 
-const getOpenIcon = () => {
-  return (
-    <svg
-      className={styles.openLink}
-      aria-hidden='true'
-      xmlns='http://www.w3.org/2000/svg'
-      fill='none'
-      viewBox='0 0 24 24'>
-      <path
-        stroke='currentColor'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        strokeWidth='2'
-        d='M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2'
-      />
-    </svg>
-  )
-}
-
 export default function Footer() {
   return (
     <div className={styles.wrapper} id='footer'>
@@ -50,7 +31,7 @@ export default function Footer() {
                       target='_blank'>
                       Suivre nos actualités sur LinkedIn
                     </Link>
-                    {getOpenIcon()}
+                    <Icon iconId={'open'} />
                   </div>
                 </div>
               </div>
