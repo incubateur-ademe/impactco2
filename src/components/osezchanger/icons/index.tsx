@@ -16,6 +16,7 @@ import fullArrowRight from './full-arrow-right'
 import fullStar from './full-star'
 import image from './image'
 import information from './information'
+import informationFill from './information-fill'
 import link from './link'
 import linkedin from './linkedin'
 import magicWand from './magic-wand'
@@ -34,6 +35,7 @@ export type IconId =
   | 'send-plane'
   | 'download'
   | 'information'
+  | 'information-fill'
   | 'sprinkles'
   | 'close-thick'
   | 'close'
@@ -77,6 +79,8 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return download
     case 'information':
       return information
+    case 'information-fill':
+      return informationFill
     case 'sprinkles':
       return sprinkles
     case 'close':

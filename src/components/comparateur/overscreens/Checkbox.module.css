@@ -1,0 +1,45 @@
+.warningEquivalent,
+.equivalent {
+  padding: 0.75rem;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: var(--primary-10);
+  }
+}
+
+.warningEquivalent {
+  color: var(--warning-60) !important;
+  background: var(--warning-10);
+
+  input {
+    border: 1px solid var(--warning-60) !important;
+    outline: none !important;
+  }
+
+  &:hover {
+    background-color: var(--warning-20);
+  }
+}
+
+.equivalentLabel {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.equivalentName {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+}
+
+.warning {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
