@@ -63,7 +63,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
             background='white'
             className={styles.input}
             id='base-value'
-            value={baseValue / weight}
+            value={Math.round((baseValue * 1000) / weight) / 1000}
             onChange={(e) => {
               const value = Number(e.target.value)
               setBaseValue(Number.isNaN(value) || value < 0 ? 0 : value * weight)

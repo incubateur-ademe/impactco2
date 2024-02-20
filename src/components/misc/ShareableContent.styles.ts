@@ -44,6 +44,7 @@ export const Content = styled.div`
 
 export const Theme = styled.div<{ $theme?: 'color' }>`
   background-color: ${({ $theme }) => ($theme === 'color' ? 'var(--secondary-10)' : 'var(--neutral-00)')};
+  border-radius: 16px;
   color: var(--neutral-70);
 `
 

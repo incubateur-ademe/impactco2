@@ -240,7 +240,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     } else {
       internalSetEquivalentsSetter([...filteredEquivalent])
     }
-    setBaseValue(10 * (equivalent ? equivalent.value : 1000))
+    setBaseValue(10 * (equivalent ? equivalent.value : 1))
     setComparedEquivalent(equivalent)
   }
 

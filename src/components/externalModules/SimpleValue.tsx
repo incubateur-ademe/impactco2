@@ -1,6 +1,7 @@
 import React from 'react'
 import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
+import formatNumber from 'utils/formatNumber'
 import Emoji from 'components/base/Emoji'
 import styles from './SimpleValue.module.css'
 
@@ -20,12 +21,7 @@ const SimpleValue = ({ value, comparison }: { value: number; comparison: string 
   }
 
   const comparisonValue = value / equivalent.value
-  const equivalentValue =
-    comparisonValue > 100
-      ? Math.round(comparisonValue)
-      : comparisonValue > 10
-        ? Math.round(comparisonValue * 10) / 10
-        : Math.round(comparisonValue * 100) / 100
+  const equivalentValue = formatNumber(comparisonValue)
 
   return (
     <div className={styles.container}>
@@ -33,8 +29,8 @@ const SimpleValue = ({ value, comparison }: { value: number; comparison: string 
         <Emoji>{equivalent.emoji}</Emoji>
       </div>
       <div>
-        <div className={styles.equivalentValue}>{equivalentValue.toLocaleString()}</div>
-        <div className={styles.label}>{formatName(equivalent.label, equivalentValue, false)}</div>
+        <div className={styles.equivalentValue}>{equivalentValue}</div>
+        <div className={styles.label}>{formatName(equivalent.label, comparisonValue, false)}</div>
       </div>
     </div>
   )

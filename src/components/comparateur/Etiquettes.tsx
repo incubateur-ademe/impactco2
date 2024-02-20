@@ -29,20 +29,18 @@ const Etiquettes = () => {
           Valoriser votre comparaison avec les <span className={styles.greenTitle}>étiquettes impact CO2 </span>!
         </span>
       </div>
-      <div className={styles.simulator}>
-        <ShareableContent<OverScreenEtiquette>
-          tracking='Étiquette animée'
-          setOverScreen={setOverScreen1}
-          overScreen={overScreen1 ? overScreenValues[overScreen1] : undefined}
-          path='comparateur/etiquette-animee'
-          name='Étiquette animée'
-          withoutShare
-          extraParams={params}>
-          <div className={styles.simulatorContent}>
-            <Etiquette baseValue={(baseValue * 1000).toString()} comparisons={etiquettes} animated />
-          </div>
-        </ShareableContent>
-      </div>
+      <ShareableContent<OverScreenEtiquette>
+        tracking='Étiquette animée'
+        setOverScreen={setOverScreen1}
+        overScreen={overScreen1 ? overScreenValues[overScreen1] : undefined}
+        path='comparateur/etiquette-animee'
+        name='Étiquette animée'
+        withoutShare
+        extraParams={params}>
+        <div className={styles.simulatorContent}>
+          <Etiquette baseValue={(baseValue * 1000).toString()} comparisons={etiquettes} animated />
+        </div>
+      </ShareableContent>
       <div className={styles.simulator}>
         <ShareableContent<OverScreenEtiquette>
           tracking='Étiquette statique'

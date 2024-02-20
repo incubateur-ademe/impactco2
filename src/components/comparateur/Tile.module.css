@@ -11,6 +11,7 @@
   text-align: center;
   gap: 1rem;
   background-color: var(--white);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
 
   @media screen and (max-width: 425px) {
     gap: 0.5rem;
@@ -67,8 +68,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.375rem;
-  border-radius: 8px;
+  padding: 0.25rem;
+  border-radius: 4px;
   color: var(--primary-50);
   background-color: transparent;
   border: none;
@@ -94,10 +95,5 @@
 
   &:focus:not(:focus-visible) {
     outline: none;
-  }
-
-  svg {
-    width: 0.75rem;
-    height: 0.75rem;
   }
 }
