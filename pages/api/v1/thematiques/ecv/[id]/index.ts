@@ -6,6 +6,7 @@ import boisson from 'data/categories/boisson.json'
 import chauffage from 'data/categories/chauffage.json'
 import deplacement from 'data/categories/deplacement.json'
 import electromenager from 'data/categories/electromenager.json'
+import { flattenEquivalents } from 'data/categories/flattenEquivalents'
 import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
 import habillement from 'data/categories/habillement.json'
 import mobilier from 'data/categories/mobilier.json'
@@ -14,11 +15,10 @@ import repas from 'data/categories/repas.json'
 import usagenumerique from 'data/categories/usagenumerique.json'
 import { computeECV, computeFootprint } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
-import { flattenEquivalents } from 'components/providers/DataProvider'
 
 const equivalents = [
   ...boisson,
-  ...deplacement,
+  ...flattenEquivalents(deplacement),
   ...electromenager,
   ...habillement,
   ...mobilier,
@@ -208,7 +208,7 @@ export default async function handler(
   }
 
   return res.status(200).json({
-    data: flattenEquivalents(equivalents)
+    data: equivalents
       .filter((equivalent) => equivalent.category === category.id)
       .map((equivalent) => {
         const detailedECV = detail
