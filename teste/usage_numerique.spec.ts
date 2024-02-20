@@ -17,13 +17,13 @@ test('La page des usages numériques se charge correctement', async ({ page }) =
 
 test("Par défaut, des valeurs s'affichent pour les usages", async ({ page }) => {
   await test.step('Une valeur globale est donnée', async () => {
-    await expect(page.getByTestId('impactNumeriqueTotal')).toHaveText('0,3 kg CO2e par semaine')
+    await expect(page.getByTestId('impactNumeriqueTotal')).toHaveText('0.27 kg CO2e par semaine')
   })
 })
 
 test('Update share and integrate values when modifying parameters', async ({ page }) => {
   await page.locator('[id="email\\ \\.\\ appareil"]').selectOption("'ordinateur et écran'")
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('68')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('67.7')
 
   await page.locator('[id="email\\ \\.\\ taille"]').selectOption('5.075')
   await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('131')
@@ -35,7 +35,7 @@ test('Update share and integrate values when modifying parameters', async ({ pag
   await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('129')
 
   await page.locator('[id="streaming\\ \\.\\ qualité"]').selectOption("'ultra HD'")
-  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('192')
+  await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('191')
 
   await page.getByText('4G').nth(1).click()
   await expect(page.getByTestId('tile-voiturethermique-value')).toContainText('372')

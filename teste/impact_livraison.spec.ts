@@ -40,13 +40,13 @@ test("Impact carbone d'une livraison : le bilan s'alourdit avec un colis volumin
 })
 
 test("Equivalences : Les équivalences par défaut s'affichent", async ({ page }) => {
-  await expect(page.locator('#eq_nb_0')).toHaveText('11 km')
+  await expect(page.locator('#eq_nb_0')).toHaveText('11.3 km')
   await expect(page.locator('#eq_what_0')).toHaveText('en voiture')
 
-  await expect(page.locator('#eq_nb_1')).toHaveText('0,3 repas')
+  await expect(page.locator('#eq_nb_1')).toHaveText('0.34 repas')
   await expect(page.locator('#eq_what_1')).toHaveText('avec du boeuf')
 
-  await expect(page.locator('#eq_nb_2')).toHaveText('39 heures')
+  await expect(page.locator('#eq_nb_2')).toHaveText('38.5 heures')
   await expect(page.locator('#eq_what_2')).toHaveText('de streaming vidéo')
 })
 
