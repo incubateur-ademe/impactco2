@@ -1,19 +1,22 @@
 import { toJpeg, toPng } from 'html-to-image'
+import { useSearchParams } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
 
 export default function useScreenshot(slug: string, tracking: string, format: string = 'png') {
   const ref = useRef<HTMLDivElement>(null)
+  const searchParams = useSearchParams()
 
+  const theme = searchParams.get('theme')
   const transformFn = format === 'png' ? toPng : toJpeg
 
   const [isScreenshotting, setIsScreenshotting] = useState(false)
-
+  const isDarkMode = theme === 'night'
   useEffect(() => {
     if (isScreenshotting && ref.current !== null) {
       transformFn(ref.current, {
         cacheBust: true,
-        backgroundColor: 'white', // variables CSS non disponibles au moment du screenshot, valeur forcée à "white"
+        backgroundColor: isDarkMode ? 'black' : 'white', // variables CSS non disponibles au moment du screenshot
         filter: (node) => {
           return !node.className || !node.className.includes ? true : !node.className?.includes('noscreenshot')
         },
