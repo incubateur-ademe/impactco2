@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import React from 'react'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Signature from 'components/screenshot/Signature'
 import styles from './Footer.module.css'
