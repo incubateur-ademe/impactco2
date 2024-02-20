@@ -212,7 +212,7 @@ export default async function handler(
     inputs.data.km,
     inputs.data.transports,
     inputs.data.ignoreRadiativeForcing,
-    inputs.data.displayAll,
+    inputs.data.displayAll || !!inputs.data.transports,
     inputs.data.includeConstruction
   )
   return res.status(200).json({
