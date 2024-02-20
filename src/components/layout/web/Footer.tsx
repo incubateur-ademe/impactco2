@@ -118,18 +118,18 @@ export default function Footer() {
               </Link>
             </div>
             <div className={styles.footerLink}>
-              <Link className={styles.last} href='https://beta.gouv.fr/' title='beta.gouv.fr' target='_blank'>
-                beta.gouv.fr
-                {getOpenIcon()}
-              </Link>
-            </div>
-            <div className={styles.footerLink}>
               <Link
                 className={`${styles.last} ${styles.githubLink}`}
                 href='https://github.com/incubateur-ademe/impactco2'
                 title='Code source'
                 target='_blank'>
                 Code source
+                {getOpenIcon()}
+              </Link>
+            </div>
+            <div className={styles.footerLink}>
+              <Link className={styles.last} href='https://beta.gouv.fr/' title='beta.gouv.fr' target='_blank'>
+                beta.gouv.fr
                 {getOpenIcon()}
               </Link>
             </div>
