@@ -10,11 +10,11 @@ import styles from './Tile.module.css'
 
 const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
   const {
-    comparateur: { baseValue, setEquivalents, equivalents, setComparedEquivalent },
+    comparateur: { baseValue, weight, setEquivalents, equivalents, setComparedEquivalent },
   } = useParamContext()
 
   const equivalent = useMemo(() => (slug ? computedEquivalents.find((e) => e.slug === slug) : null), [slug])
-  const value = equivalent ? baseValue / equivalent.value : 0
+  const value = equivalent ? (baseValue * weight) / equivalent.value : 0
 
   return equivalent ? (
     <div className={styles.tile}>

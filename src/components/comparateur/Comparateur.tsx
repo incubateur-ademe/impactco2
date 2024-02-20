@@ -17,7 +17,15 @@ import { overScreenComparateurValues } from './overscreens/Values'
 
 const Comparateur = ({ iframe }: { iframe?: boolean }) => {
   const {
-    comparateur: { baseValue, setBaseValue, setEquivalents, equivalents, comparedEquivalent, setComparedEquivalent },
+    comparateur: {
+      baseValue,
+      weight,
+      setBaseValue,
+      setEquivalents,
+      equivalents,
+      comparedEquivalent,
+      setComparedEquivalent,
+    },
   } = useParamContext()
   const [overScreen, setOverScreen] = useState<OverScreenComparateur>()
   const params = useMemo(
@@ -33,7 +41,6 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
     [params]
   )
 
-  const weight = comparedEquivalent ? comparedEquivalent.value : 1
   return (
     <ShareableContent<OverScreenComparateur>
       iframe={iframe}
@@ -63,10 +70,10 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
             background='white'
             className={styles.input}
             id='base-value'
-            value={Math.round((baseValue * 1000) / weight) / 1000}
+            value={baseValue || ''}
             onChange={(e) => {
               const value = Number(e.target.value)
-              setBaseValue(Number.isNaN(value) || value < 0 ? 0 : value * weight)
+              setBaseValue(value)
             }}
             type='number'
           />
@@ -82,7 +89,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
                   (('prefix' in comparedEquivalent && comparedEquivalent.prefix) || '') +
                     comparedEquivalent.name +
                     (('suffix' in comparedEquivalent && comparedEquivalent.suffix) || ''),
-                  baseValue
+                  baseValue * weight
                 )}
               </span>
               <Emoji>{comparedEquivalent.emoji}</Emoji>
@@ -99,8 +106,8 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
         <div className={styles.description}>
           {comparedEquivalent ? (
             <>
-              C’est <span className={styles.descriptionValue}>{formatNumberPrecision(baseValue)} CO2e</span>, soit
-              autant d’émissions que pour fabriquer, consommer ou parcourir...
+              C’est <span className={styles.descriptionValue}>{formatNumberPrecision(baseValue * weight)} CO2e</span>,
+              soit autant d’émissions que pour fabriquer, consommer ou parcourir...
             </>
           ) : (
             'C’est autant d’émissions que pour fabriquer, consommer ou parcourir...'

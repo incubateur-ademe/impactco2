@@ -47,6 +47,7 @@ const ShareableContent = <T extends string>({
   bottom,
   name,
   noBorder,
+  customScreenshot,
 }: {
   category?: Category
   iframe?: boolean
@@ -71,6 +72,7 @@ const ShareableContent = <T extends string>({
   withoutShare?: boolean
   name?: string
   noBorder?: boolean
+  customScreenshot?: () => void
 }) => {
   const { theme: darkMode } = useParamContext()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
@@ -84,7 +86,7 @@ const ShareableContent = <T extends string>({
               category={category}
               params={params}
               extraParams={extraParams}
-              takeScreenshot={takeScreenshot}
+              takeScreenshot={customScreenshot || takeScreenshot}
               tracking={tracking}
               type={type}
               title={title}
@@ -101,7 +103,7 @@ const ShareableContent = <T extends string>({
               <Container $iframe={iframe} $noBorder={noBorder}>
                 {header && <ContentHeader>{header}</ContentHeader>}
                 <div ref={ref}>
-                  <Screenshotable $theme={theme}>
+                  <Screenshotable $theme={theme} $noBorder={noBorder}>
                     {children}
                     {isScreenshotting && (
                       <Logos>

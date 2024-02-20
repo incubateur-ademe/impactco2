@@ -101,6 +101,7 @@ const ParamContext = React.createContext<{
     setEquivalents: Dispatch<SetStateAction<string[]>>
   }
   comparateur: {
+    weight: number
     baseValue: number
     setBaseValue: Dispatch<SetStateAction<number>>
     equivalents: string[]
@@ -240,7 +241,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     } else {
       internalSetEquivalentsSetter([...filteredEquivalent])
     }
-    setBaseValue(10 * (equivalent ? equivalent.value : 1))
+    setBaseValue(10)
     setComparedEquivalent(equivalent)
   }
 
@@ -506,6 +507,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setFrequence,
         },
         comparateur: {
+          weight: comparedEquivalent ? comparedEquivalent.value : 1,
           baseValue,
           setBaseValue,
           equivalents,
