@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { Section, SectionWideContent } from 'components/base/Section'
+import { Icon } from 'components/osezchanger/icons'
 import Signature from 'components/screenshot/Signature'
 import styles from './Footer.module.css'
 
@@ -124,13 +125,13 @@ export default function Footer() {
                 title='Code source'
                 target='_blank'>
                 Code source
-                {getOpenIcon()}
+                <Icon iconId={'open'} />
               </Link>
             </div>
             <div className={styles.footerLink}>
               <Link className={styles.last} href='https://beta.gouv.fr/' title='beta.gouv.fr' target='_blank'>
                 beta.gouv.fr
-                {getOpenIcon()}
+                <Icon iconId={'open'} />
               </Link>
             </div>
           </div>

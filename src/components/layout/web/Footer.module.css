@@ -169,7 +169,9 @@
   color: var(--neutral-70);
   font-weight: 500;
   margin-top: 1rem;
-  .openLink {
+  display: flex;
+  align-items: center;
+  svg {
     height: 18px;
     width: 18px;
     margin-left: 0.25rem;
@@ -214,7 +216,7 @@
   a.first {
     padding-left: 0;
   }
-  .openLink {
+  svg {
     height: 12px;
     margin-left: 0.25rem;
     width: 12px;
