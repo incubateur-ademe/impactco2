@@ -48,8 +48,16 @@
     "label": "Autocar"
   },
   {
-    "value": "avion",
-    "label": "Avion"
+    "value": "avioncourtcourrier",
+    "label": "Avion (Court courrier)"
+  },
+  {
+    "value": "avionlongcourrier",
+    "label": "Avion (Long courrier)"
+  },
+  {
+    "value": "avionmoyencourrier",
+    "label": "Avion (Moyen courrier)"
   },
   {
     "value": "avocat",

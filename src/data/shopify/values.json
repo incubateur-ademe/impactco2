@@ -899,10 +899,22 @@
     "label": "imprimante[s] (jet d'encre)",
     "emoji": "🖨"
   },
-  "avion": {
+  "avioncourtcourrier": {
     "category": 4,
-    "value": 0,
-    "label": "km en avion",
+    "value": 258.58,
+    "label": "km en avion (court courrier)",
+    "emoji": "✈️"
+  },
+  "avionmoyencourrier": {
+    "category": 4,
+    "value": 187.56,
+    "label": "km en avion (moyen courrier)",
+    "emoji": "✈️"
+  },
+  "avionlongcourrier": {
+    "category": 4,
+    "value": 151.95999999999998,
+    "label": "km en avion (long courrier)",
     "emoji": "✈️"
   },
   "tgv": {
