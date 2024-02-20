@@ -26,7 +26,7 @@ const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
       </button>
       <div>
         <Emoji height='2rem'>{equivalent.emoji}</Emoji>
-        <div className={styles.value}>{formatNumber(value)}</div>
+        <div className={styles.value}>{Number.isFinite(value) ? formatNumber(value) : <Icon iconId='infinity' />}</div>
         <div className='text-sm'>
           {'prefixEquivalent' in equivalent &&
             equivalent.prefixEquivalent &&

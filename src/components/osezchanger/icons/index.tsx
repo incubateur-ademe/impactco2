@@ -15,6 +15,7 @@ import facebook from './facebook'
 import fullArrowRight from './full-arrow-right'
 import fullStar from './full-star'
 import image from './image'
+import infinity from './infinity'
 import information from './information'
 import informationFill from './information-fill'
 import link from './link'
@@ -60,9 +61,12 @@ export type IconId =
   | 'refresh'
   | 'image'
   | 'link'
+  | 'infinity'
 
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
+    case 'infinity':
+      return infinity
     case 'link':
       return link
     case 'image':
