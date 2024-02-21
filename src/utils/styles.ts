@@ -151,4 +151,13 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 0.75rem;
     line-height: 1.25rem;
   }
+
+  .notion-toggle {
+    margin-bottom: 2rem;
+    summary {
+      .notion-h {
+        display: inline;
+      }
+    }
+  }  
 `
