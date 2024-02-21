@@ -31,7 +31,7 @@ const SimpleValue = ({ value, comparison }: { value: number; comparison: string 
       </div>
       <div>
         <div className={styles.equivalentValue} data-testid={`etiquette-${comparison}-value`}>
-          {equivalentValue}
+          {equivalentValue.toLocaleString()}
         </div>
         <div className={styles.label} data-testid={`etiquette-${comparison}-name`}>
           {formatName(equivalent.label, comparisonValue, false)}

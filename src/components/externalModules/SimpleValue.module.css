@@ -3,6 +3,7 @@
   align-items: center !important;
   height: 100% !important;
   gap: 8px !important;
+  text-align: left !important;
 }
 
 .emoji {

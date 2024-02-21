@@ -6,7 +6,7 @@ import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regex =
-  /([0-9]+(,|\.)?[0-9]*)(\s|&nbsp;)?(kg|kilo(s)?|g|tonne(s)?)(\s|&nbsp;)?(de\s|&nbsp;)?(co(2|₂|<sub>2<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
+  /([0-9]+(,|\.)?[0-9]*)(\s|&nbsp;)?(kg|kilo(s)?|g|t|tonne(s)?)(\s|&nbsp;)?(de\s|&nbsp;)?(d’équivalent\s|&nbsp;)?(co(2|₂|<sub>2<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
 
 const getComputedStyle = (el: Element, property: string) => {
   if (document.defaultView) {
@@ -43,6 +43,7 @@ const getOverflow = (element: HTMLDivElement) => {
 
 const getFactor = (unit: string) => {
   switch (unit) {
+    case 't':
     case 'tonne':
     case 'tonnes':
       return 1000000
@@ -113,8 +114,10 @@ const Detector = ({ impact }: { impact: string }) => {
           [styles.left]: display.includes('left'),
         })}
         ref={etiquetteRef}>
-        <Logo />
-        <SimpleValue value={value} comparison='random' />
+        <Logo withPadding />
+        <div className={styles.simpleValue}>
+          <SimpleValue value={value} comparison='random' />
+        </div>
         <button className={styles.random} onClick={forceUpdate}>
           <Icon iconId='refresh' />
         </button>
