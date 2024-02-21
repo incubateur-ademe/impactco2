@@ -12,10 +12,9 @@ type BaseEquivalent = {
 
   id?: string | number
   secondEmoji?: string
-  include?: { pre: string; post: string }
+  include?: { pre: string; post?: string; postNewLine?: string }
   source?: string
   prefix?: string
-  prefixEquivalent?: string
   suffix?: string
   subtitle?: string
   synonyms?: string[]
@@ -36,8 +35,6 @@ type BaseEquivalent = {
   }
   hideTile?: boolean
 }
-
-export type ComputedEquivalent = BaseEquivalent & { value: number; link: string }
 
 type BaseEquivalentValue =
   | {
@@ -118,3 +115,5 @@ export type Equivalent =
   | RepasEquivalent
   | UsageNumeriqueEquivalent
   | FruitsEtLegumesEquivalent
+
+export type ComputedEquivalent = Equivalent & { value: number; link: string }

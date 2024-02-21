@@ -1013,46 +1013,52 @@
     "label": "km en bus (gnv)",
     "emoji": "🚌"
   },
+  "avion-pny": {
+    "category": 4,
+    "value": 1770000,
+    "label": "A/R paris - new-york (en avion)",
+    "emoji": "🗽"
+  },
   "chauffagegaz": {
     "category": 8,
     "value": 39000,
-    "label": "chauffage au gaz",
+    "label": "année[s] de chauffage au gaz par m²",
     "emoji": "💨"
   },
   "chauffagefioul": {
     "category": 8,
     "value": 57170,
-    "label": "chauffage au fioul",
+    "label": "année[s] de chauffage au fioul par m²",
     "emoji": "🛢"
   },
   "chauffageelectrique": {
     "category": 8,
     "value": 7500,
-    "label": "chauffage électrique",
+    "label": "année[s] de chauffage électrique par m²",
     "emoji": "⚡️"
   },
   "pompeachaleur": {
     "category": 8,
     "value": 2500,
-    "label": "chauffage avec une pompe à chaleur",
+    "label": "année[s] de chauffage avec une pompe à chaleur par m²",
     "emoji": "🌡️"
   },
   "poeleagranule": {
     "category": 8,
     "value": 5640,
-    "label": "chauffage avec un poêle à granulé",
+    "label": "année[s] de chauffage avec un poêle à granulé par m²",
     "emoji": "🔥"
   },
   "poeleabois": {
     "category": 8,
     "value": 9200,
-    "label": "chauffage avec un poêle à bois",
+    "label": "année[s] de chauffage avec un poêle à bois par m²",
     "emoji": "🪵"
   },
   "reseaudechaleur": {
     "category": 8,
     "value": 18670,
-    "label": "chauffage via un réseau de chaleur",
+    "label": "année[s] de chauffage via un réseau de chaleur par m²",
     "emoji": "🏢"
   },
   "email": {

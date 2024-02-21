@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { Category as CategoryType } from 'types/category'
-import { computedEquivalents } from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/buttons/Button'
 import { Icon } from 'components/osezchanger/icons'
@@ -58,7 +58,7 @@ const Category = ({ category, onClose }: { category: CategoryType; onClose: () =
               priority='secondary'
               onClick={() => {
                 setEquivalents(
-                  getRandomEquivalentsInCategory(comparedEquivalent?.slug, equivalents.length, category.id).map(
+                  getRandomEquivalentsInCategory(comparedEquivalent?.slug, category.id).map(
                     (equivalent) => equivalent.slug
                   )
                 )

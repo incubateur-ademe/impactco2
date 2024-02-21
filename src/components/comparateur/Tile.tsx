@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
-import { computedEquivalents } from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/buttons/Button'
 import { Icon } from 'components/osezchanger/icons'
@@ -28,12 +28,9 @@ const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
       <div>
         <Emoji height='2rem'>{equivalent.emoji}</Emoji>
         <div className={styles.value} data-testid={`comparateur-${slug}-value`}>
-          {Number.isFinite(value) ? formatNumber(value) : <Icon iconId='infinity' />}
+          {Number.isFinite(value) ? formatNumber(value).toLocaleString() : <Icon iconId='infinity' />}
         </div>
         <div className='text-sm' data-testid={`comparateur-${slug}-name`}>
-          {'prefixEquivalent' in equivalent &&
-            equivalent.prefixEquivalent &&
-            formatName(equivalent.prefixEquivalent, value)}
           {formatName(
             (('prefix' in equivalent && equivalent.prefix) || '') +
               equivalent.name +

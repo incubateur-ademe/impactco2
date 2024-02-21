@@ -21,7 +21,7 @@ export default function Details({ equivalent, category }: { equivalent: Equivale
             {formatName(equivalent.name, 1, !equivalent.prefix)}
             {equivalent.suffix}
             <br className={styles.br} />
-            {equivalent.subtitle && <span className={styles.subtitle}>({formatName(equivalent.subtitle, 1)})</span>}
+            {equivalent.subtitle && <span className={styles.subtitle}> ({formatName(equivalent.subtitle, 1)})</span>}
           </h1>
         </SectionWideContent>
       </Section>
@@ -37,7 +37,13 @@ export default function Details({ equivalent, category }: { equivalent: Equivale
                 <Button asLink onClick={() => setCo2e(true)}>
                   CO<sub>2</sub>e
                 </Button>{' '}
-                émis {equivalent.include.post}
+                émis{equivalent.include.post ? ` ${equivalent.include.post}` : '.'}
+                {equivalent.include.postNewLine && (
+                  <>
+                    <br />
+                    {equivalent.include.postNewLine}
+                  </>
+                )}
               </>
             ) : (
               <>

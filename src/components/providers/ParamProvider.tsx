@@ -11,7 +11,7 @@ import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/Theme'
 import { default_eqs, frequences } from 'components/livraison/data'
 import { displayAddress } from 'components/transport/search/itinerary/Address'
-import { computedEquivalents } from './DataProvider'
+import { computedEquivalents } from './equivalents'
 
 const usageNumeriqueDefaultValues = {
   ['email . appareil']: "'smartphone'",

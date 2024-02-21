@@ -20,7 +20,7 @@ const Title = ({
           dangerouslySetInnerHTML={{
             __html: HtmlSanitizer.SanitizeHtml(introduction).replace(
               intValue,
-              `<b>${roundedValue} ${unit} CO<sub>2</sub>e</b>`
+              `<b>${roundedValue} ${unit} CO<sub>2</sub>e</b>`
             ),
           }}
         />

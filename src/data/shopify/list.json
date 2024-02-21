@@ -504,6 +504,10 @@
     "label": "Panais"
   },
   {
+    "value": "avion-pny",
+    "label": "Paris - New-York (en avion)"
+  },
+  {
     "value": "pasteque",
     "label": "Pastèque"
   },

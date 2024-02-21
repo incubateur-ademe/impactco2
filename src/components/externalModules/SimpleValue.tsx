@@ -22,7 +22,11 @@ const SimpleValue = ({ value, comparison }: { value: number; comparison: string 
   }
 
   const comparisonValue = value / equivalent.value
-  const equivalentValue = Number.isFinite(comparisonValue) ? formatNumber(comparisonValue) : <Icon iconId='infinity' />
+  const equivalentValue = Number.isFinite(comparisonValue) ? (
+    formatNumber(comparisonValue).toLocaleString()
+  ) : (
+    <Icon iconId='infinity' />
+  )
 
   return (
     <div className={styles.container}>

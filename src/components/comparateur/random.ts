@@ -1,4 +1,4 @@
-import { computedEquivalents } from 'components/providers/DataProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 
 const getRandomEquivalent = (toIgnore: string[], category?: number) => {
   const meaningfullEquivalents = computedEquivalents.filter((equivalent) => !toIgnore.includes(equivalent.slug))
@@ -38,7 +38,7 @@ export const getRandomEquivalents = (current: string | undefined, length: number
   return objects
 }
 
-export const getRandomEquivalentsInCategory = (current: string | undefined, length: number, category: number) => {
+export const getRandomEquivalentsInCategory = (current: string | undefined, category: number) => {
   const meaningfullEquivalents = computedEquivalents.filter(
     (equivalent) => equivalent.category === category && current !== equivalent.slug
   )

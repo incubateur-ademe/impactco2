@@ -16,6 +16,7 @@
   font-size: 0.75rem !important;
   font-weight: 400 !important;
   line-height: 1rem !important;
+  max-width: 11rem !important;
 }
 
 .equivalentValue {

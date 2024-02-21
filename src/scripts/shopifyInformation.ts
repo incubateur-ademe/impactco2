@@ -37,7 +37,7 @@ Object.values(existingEquivalentsByCategory).forEach((equivalents) =>
     ecvs[equivalent.slug] = {
       category: equivalent.category,
       value: computeECV(equivalent) * 1000,
-      label: `${equivalent.prefix || ''}${name.toLowerCase()}`,
+      label: `${equivalent.prefix || ''}${name.toLowerCase()}${equivalent.suffix || ''}`,
       emoji: equivalent.emoji,
     }
     list.push({
