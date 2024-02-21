@@ -17,7 +17,9 @@ const ColumnEquivalent = ({ baseValue, comparisons }: { baseValue: string; compa
     <div className={styles.container}>
       <div className={baseStyles.top}>
         <div className={styles.leftContent}>
-          <div className={baseStyles.value}>{roundedValue}</div>
+          <div className={baseStyles.value} data-testid='etiquette-value'>
+            {roundedValue}
+          </div>
           <div className={baseStyles.label}>
             {unit} CO<sub>2</sub>e
           </div>

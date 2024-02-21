@@ -20,8 +20,9 @@ const Category = ({ category, onClose }: { category: CategoryType; onClose: () =
     () =>
       computedEquivalents
         .filter((equivalent) => equivalent.category === category.id)
+        .filter((equivalent) => equivalent.slug !== comparedEquivalent?.slug)
         .sort((a, b) => a.name.localeCompare(b.name)),
-    [category]
+    [category, comparedEquivalent]
   )
 
   return (
@@ -33,7 +34,7 @@ const Category = ({ category, onClose }: { category: CategoryType; onClose: () =
         <div className={styles.names}>
           <div className={styles.title}>{category.name}</div>
           <div>
-            <span className={styles.selectedNumber}>
+            <span className={styles.selectedNumber} data-testid={`selected-equivalents-${category.slug}-number`}>
               {categoryEquivalents.filter((equivalent) => equivalents.includes(equivalent.slug)).length}
             </span>
             <span className={styles.numbers}> / {categoryEquivalents.length}</span>

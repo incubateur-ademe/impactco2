@@ -106,8 +106,11 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
         <div className={styles.description}>
           {comparedEquivalent ? (
             <>
-              C’est <span className={styles.descriptionValue}>{formatNumberPrecision(baseValue * weight)} CO2e</span>,
-              soit autant d’émissions que pour fabriquer, consommer ou parcourir...
+              C’est{' '}
+              <span className={styles.descriptionValue} data-testid='compared-equivalent-value'>
+                {formatNumberPrecision(baseValue * weight)} CO2e
+              </span>
+              , soit autant d’émissions que pour fabriquer, consommer ou parcourir...
             </>
           ) : (
             'C’est autant d’émissions que pour fabriquer, consommer ou parcourir...'

@@ -50,7 +50,9 @@ const Equivalent = ({
         <div className={styles.left}>
           <Logo />
           <div className={styles.leftContent}>
-            <div className={styles.value}>{roundedValue}</div>
+            <div className={styles.value} data-testid='etiquette-value'>
+              {roundedValue}
+            </div>
             <div className={styles.label}>
               {unit} CO<sub>2</sub>e
             </div>

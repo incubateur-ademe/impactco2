@@ -16,7 +16,10 @@ const Etiquettes = () => {
     () => (comparedEquivalent ? [comparedEquivalent.slug, ...equivalents] : equivalents),
     [comparedEquivalent, equivalents]
   )
-  const params = useMemo(() => `value=${baseValue}&comparisons=${etiquettes.join(',')}`, [baseValue, etiquettes])
+  const params = useMemo(
+    () => `value=${baseValue * weight * 1000}&comparisons=${etiquettes.join(',')}`,
+    [baseValue, etiquettes, weight]
+  )
 
   const [overScreen1, setOverScreen1] = useState<OverScreenEtiquette>()
   const [overScreen2, setOverScreen2] = useState<OverScreenEtiquette>()

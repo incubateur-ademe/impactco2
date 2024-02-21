@@ -82,7 +82,9 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
       </div>
       <div className={styles.footer}>
         <div>
-          <span className={styles.equivalentsNumber}>{equivalents.length}</span>
+          <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>
+            {equivalents.length}
+          </span>
           <span className={styles.equivalentsInfo}> / 8 équivalents</span>
         </div>
         <div>

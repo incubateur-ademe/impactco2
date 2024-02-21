@@ -30,8 +30,12 @@ const SimpleValue = ({ value, comparison }: { value: number; comparison: string 
         <Emoji>{equivalent.emoji}</Emoji>
       </div>
       <div>
-        <div className={styles.equivalentValue}>{equivalentValue}</div>
-        <div className={styles.label}>{formatName(equivalent.label, comparisonValue, false)}</div>
+        <div className={styles.equivalentValue} data-testid={`etiquette-${comparison}-value`}>
+          {equivalentValue}
+        </div>
+        <div className={styles.label} data-testid={`etiquette-${comparison}-name`}>
+          {formatName(equivalent.label, comparisonValue, false)}
+        </div>
       </div>
     </div>
   )

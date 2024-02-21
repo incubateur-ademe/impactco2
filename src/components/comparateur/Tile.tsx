@@ -19,6 +19,7 @@ const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
   return equivalent ? (
     <div className={styles.tile}>
       <button
+        data-testid='comparateur-tile-close'
         className={styles.close}
         title={`Supprimer la comparaison avec ${equivalent.name}`}
         onClick={() => setEquivalents(equivalents.filter((e) => e !== equivalent.slug))}>
@@ -26,8 +27,10 @@ const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
       </button>
       <div>
         <Emoji height='2rem'>{equivalent.emoji}</Emoji>
-        <div className={styles.value}>{Number.isFinite(value) ? formatNumber(value) : <Icon iconId='infinity' />}</div>
-        <div className='text-sm'>
+        <div className={styles.value} data-testid={`comparateur-${slug}-value`}>
+          {Number.isFinite(value) ? formatNumber(value) : <Icon iconId='infinity' />}
+        </div>
+        <div className='text-sm' data-testid={`comparateur-${slug}-name`}>
           {'prefixEquivalent' in equivalent &&
             equivalent.prefixEquivalent &&
             formatName(equivalent.prefixEquivalent, value)}
