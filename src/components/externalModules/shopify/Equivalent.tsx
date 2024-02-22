@@ -27,6 +27,7 @@ const Equivalent = ({
 
   useEffect(() => {
     if (animated && comparisons.length > 0) {
+      setToDisplay(0)
       const update = () => setToDisplay((value) => (value + 1) % comparisons.length)
       const updateWithTimeout = () => {
         update()

@@ -21,6 +21,7 @@
 }
 
 .simulatorContent {
+  max-width: calc(100vw - 2rem);
   display: flex;
   justify-content: center;
   align-items: center;

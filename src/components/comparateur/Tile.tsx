@@ -50,7 +50,7 @@ const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
       </Button>
     </div>
   ) : (
-    <button className={styles.secondaryTile} onClick={onClick}>
+    <button className={styles.emptyTile} onClick={onClick}>
       <Icon iconId='plus' />
       Ajouter un équivalent
     </button>

@@ -46,9 +46,7 @@ const Etiquettes = () => {
         extraParams={params}
         customScreenshot={takeScreenshot1}>
         <div className={styles.simulatorContent}>
-          <div ref={ref1}>
-            <Etiquette baseValue={(baseValue * weight * 1000).toString()} comparisons={etiquettes} animated />
-          </div>
+          <Etiquette baseValue={(baseValue * weight * 1000).toString()} comparisons={etiquettes} animated ref={ref1} />
         </div>
       </ShareableContent>
       <div className={styles.simulator}>
@@ -62,9 +60,7 @@ const Etiquettes = () => {
           extraParams={params}
           customScreenshot={takeScreenshot2}>
           <div className={styles.simulatorContent}>
-            <div ref={ref2}>
-              <Etiquette baseValue={(baseValue * weight * 1000).toString()} comparisons={etiquettes} />
-            </div>
+            <Etiquette baseValue={(baseValue * weight * 1000).toString()} comparisons={etiquettes} ref={ref2} />
           </div>
         </ShareableContent>
       </div>

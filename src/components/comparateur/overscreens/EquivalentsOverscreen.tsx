@@ -22,31 +22,28 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
   useEffect(() => {
     if (computedEquivalents) {
       setFuse(
-        new Fuse(
-          computedEquivalents.filter((equivalent) => !equivalent.hideTile),
-          {
-            keys: [
-              {
-                name: 'name',
-                weight: 1,
-              },
-              {
-                name: 'slug',
-                weight: 0.7,
-              },
-              {
-                name: 'subtitle',
-                weight: 0.4,
-              },
-              {
-                name: 'synonyms',
-                weight: 0.2,
-              },
-            ],
-            threshold: 0.3,
-            ignoreLocation: true,
-          }
-        )
+        new Fuse(computedEquivalents, {
+          keys: [
+            {
+              name: 'name',
+              weight: 1,
+            },
+            {
+              name: 'slug',
+              weight: 0.7,
+            },
+            {
+              name: 'subtitle',
+              weight: 0.4,
+            },
+            {
+              name: 'synonyms',
+              weight: 0.2,
+            },
+          ],
+          threshold: 0.3,
+          ignoreLocation: true,
+        })
       )
     }
   }, [equivalents])
@@ -55,7 +52,7 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
     setResults(
       fuse && search.length > 0
         ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
-        : computedEquivalents.filter((equivalent) => !equivalent.hideTile).sort((a, b) => (a.slug > b.slug ? 1 : -1))
+        : computedEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
     )
   }, [search, fuse])
   return (

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import NextLink from 'next/link'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import formatName from 'utils/formatName'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
 import useParamContext from 'components/providers/ParamProvider'
@@ -27,6 +27,9 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
       setComparedEquivalent,
     },
   } = useParamContext()
+  const suffixDivRef = useRef<HTMLDivElement>(null)
+  const suffixButtonRef = useRef<HTMLButtonElement>(null)
+  const [suffixWidth, setSuffixWidth] = useState(0)
   const [overScreen, setOverScreen] = useState<OverScreenComparateur>()
   const params = useMemo(
     () =>
@@ -40,6 +43,26 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
       }),
     [params]
   )
+
+  useEffect(() => {
+    const onResize = () => {
+      if (suffixButtonRef.current) {
+        const { width } = suffixButtonRef.current.getBoundingClientRect()
+        setSuffixWidth(width)
+      }
+
+      if (suffixDivRef.current) {
+        const { width } = suffixDivRef.current.getBoundingClientRect()
+        setSuffixWidth(width)
+      }
+    }
+    onResize()
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
+  }, [suffixButtonRef, suffixDivRef, comparedEquivalent])
 
   return (
     <ShareableContent<OverScreenComparateur>
@@ -76,9 +99,11 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
               setBaseValue(value)
             }}
             type='number'
+            style={{ width: `${suffixWidth + 150}px` }}
           />
           {comparedEquivalent ? (
             <button
+              ref={suffixButtonRef}
               className={classNames(styles.greenSuffix, 'text-sm')}
               onClick={() => {
                 setComparedEquivalent(undefined)
@@ -96,7 +121,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
               <Icon iconId='close-thick' />
             </button>
           ) : (
-            <div className={classNames(styles.suffix, 'text-sm')}>
+            <div className={classNames(styles.suffix, 'text-sm')} ref={suffixDivRef}>
               <span>
                 kg CO<sub>2</sub>e
               </span>

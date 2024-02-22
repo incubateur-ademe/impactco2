@@ -1,4 +1,4 @@
-.secondaryTile,
+.emptyTile,
 .tile {
   width: calc(11rem - 4px);
   min-height: 224px;
@@ -11,7 +11,6 @@
   text-align: center;
   gap: 1rem;
   background-color: var(--white);
-  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
 
   @media screen and (max-width: 425px) {
     gap: 0.5rem;
@@ -23,9 +22,10 @@
 .tile {
   border: 2px solid var(--neutral-20);
   justify-content: space-between;
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
 }
 
-.secondaryTile {
+.emptyTile {
   color: var(--primary-50);
   border: 2px solid var(--primary-10);
   justify-content: center;

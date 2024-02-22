@@ -36,7 +36,7 @@ const SimpleValue = ({ value, comparison, language }: { value: number; compariso
       </div>
       <div>
         <div className={styles.equivalentValue} data-testid={`etiquette-${comparison}-value`}>
-          {equivalentValue.toLocaleString()}
+          {equivalentValue}
         </div>
         <div className={styles.label} data-testid={`etiquette-${comparison}-name`}>
           {formatName(language ? equivalent[language] : equivalent.fr, comparisonValue, false)}

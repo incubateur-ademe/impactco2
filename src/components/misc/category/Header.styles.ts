@@ -28,6 +28,11 @@ export const ActionsHeader = styled.div<{ $center?: boolean }>`
   display: flex;
   justify-content: ${({ $center }) => ($center ? 'center' : 'space-between')};
   width: 100%;
+
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `
 
 export const ActionsName = styled.div`

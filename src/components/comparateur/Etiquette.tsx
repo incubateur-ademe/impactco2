@@ -1,22 +1,24 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import ColumnEquivalent from 'components/externalModules/shopify/ColumnEquivalent'
 import Equivalent from 'components/externalModules/shopify/Equivalent'
 
-const Etiquette = ({
-  comparisons,
-  baseValue,
-  animated,
-}: {
-  comparisons: string[]
-  baseValue: string
-  animated?: boolean
-}) => {
+export default forwardRef(function Etiquette(
+  {
+    comparisons,
+    baseValue,
+    animated,
+  }: {
+    comparisons: string[]
+    baseValue: string
+    animated?: boolean
+  },
+  ref: ForwardedRef<HTMLDivElement>
+) {
   const [inline, setInline] = useState(true)
-  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onResize = () => {
-      if (ref.current && ref.current.parentElement) {
+      if (typeof ref !== 'function' && ref && ref.current && ref.current.parentElement) {
         const { width } = ref.current.parentElement.getBoundingClientRect()
         setInline(width > (comparisons.length + 1) * 175)
       }
@@ -27,7 +29,7 @@ const Etiquette = ({
     return () => {
       window.removeEventListener('resize', onResize)
     }
-  }, [comparisons])
+  }, [comparisons, ref])
 
   if (animated) {
     return <Equivalent baseValue={baseValue} comparisons={comparisons} animated />
@@ -41,6 +43,4 @@ const Etiquette = ({
       )}
     </div>
   )
-}
-
-export default Etiquette
+})
