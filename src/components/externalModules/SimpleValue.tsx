@@ -1,4 +1,5 @@
 import React from 'react'
+import { Language, SimpleEquivalent } from 'types/equivalent'
 import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
@@ -6,10 +7,10 @@ import Emoji from 'components/base/Emoji'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './SimpleValue.module.css'
 
-const equivalents = values as Record<string, { label: string; value: number; emoji: string; category: number }>
+const equivalents = values as Record<string, SimpleEquivalent>
 
-const SimpleValue = ({ value, comparison }: { value: number; comparison: string }) => {
-  let equivalent: { label: string; value: number; emoji: string }
+const SimpleValue = ({ value, comparison, language }: { value: number; comparison: string; language?: Language }) => {
+  let equivalent: SimpleEquivalent
   if (comparison !== 'random' && equivalents[comparison]) {
     equivalent = equivalents[comparison]
   } else {
@@ -38,7 +39,7 @@ const SimpleValue = ({ value, comparison }: { value: number; comparison: string 
           {equivalentValue.toLocaleString()}
         </div>
         <div className={styles.label} data-testid={`etiquette-${comparison}-name`}>
-          {formatName(equivalent.label, comparisonValue, false)}
+          {formatName(language ? equivalent[language] : equivalent.fr, comparisonValue, false)}
         </div>
       </div>
     </div>

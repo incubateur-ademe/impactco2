@@ -1,4 +1,5 @@
 import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { Language } from 'types/equivalent'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import Equal from './Equal'
@@ -10,12 +11,14 @@ const Equivalent = ({
   comparisons,
   title,
   animated,
+  language,
 }: {
   className?: string
   baseValue: string
   comparisons: string[]
   title?: (unit: string, roundedValue: string, intValue: number) => ReactNode
   animated?: boolean
+  language?: Language
 }) => {
   const [toDisplay, setToDisplay] = useState(0)
   const timeoutRef = useRef<NodeJS.Timeout>()
@@ -73,7 +76,7 @@ const Equivalent = ({
                       : styles.animatedComparison
                     : styles.comparison
                 }>
-                <SimpleValue value={value} comparison={comparison} />
+                <SimpleValue value={value} comparison={comparison} language={language} />
               </div>
             ))}
           </div>

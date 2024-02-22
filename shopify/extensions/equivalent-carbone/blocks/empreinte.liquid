@@ -4,6 +4,7 @@
     <span id='impact-co2-empreinte' style="display: none;">{{ block.settings.empreinte }}</span>
     <span id='impact-co2-produit' style="display: none;">{{ block.settings.produit }}</span>
     <span id='impact-co2-theme' style="display: none;">{{ block.settings.theme }}</span>
+    <span id='impact-co2-language' style="display: none;">{{ request.locale.iso_code }}</span>
     {% render 'empreinte' %}
   </div>
 {% endif %}

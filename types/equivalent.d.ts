@@ -117,3 +117,10 @@ export type Equivalent =
   | FruitsEtLegumesEquivalent
 
 export type ComputedEquivalent = Equivalent & { value: number; link: string }
+
+export type Language = 'en' | 'fr' | 'de' | 'es'
+export type SimpleEquivalent = {
+  value: number
+  emoji: string
+  category: number
+} & Record<Language, string>

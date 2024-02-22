@@ -2,1105 +2,1657 @@
   "eaudurobinet": {
     "category": 3,
     "value": 0.132,
-    "label": "Litre[s] d'eau du robinet",
+    "fr": "Litre[s] d'eau du robinet",
+    "en": "Liter[s] of tap water",
+    "de": "Liter Leitungswasser",
+    "es": "Litro[s] de agua del grifo",
     "emoji": "🚰"
   },
   "eauenbouteille": {
     "category": 3,
     "value": 267.07461992000003,
-    "label": "Litre[s] d'eau en bouteille",
+    "fr": "Litre[s] d'eau en bouteille",
+    "en": "Liter[s] of bottled water",
+    "de": "Liter Flaschenwasser",
+    "es": "Litro[s] de agua embotellada",
     "emoji": "💧"
   },
   "soda": {
     "category": 3,
     "value": 511.22505490000003,
-    "label": "Litre[s] de soda",
+    "fr": "Litre[s] de soda",
+    "en": "Liter[s] of soda",
+    "de": "Liter Limonade",
+    "es": "Litro[s] de refresco",
     "emoji": "🥤"
   },
   "biere": {
     "category": 3,
     "value": 1119.3685269,
-    "label": "Litre[s] de bière",
+    "fr": "Litre[s] de bière",
+    "en": "Liter[s] of beer",
+    "de": "Liter Bier",
+    "es": "Litro[s] de cerveza",
     "emoji": "🍺"
   },
   "vin": {
     "category": 3,
     "value": 1190.3542188999998,
-    "label": "Litre[s] de vin",
+    "fr": "Litre[s] de vin",
+    "en": "Liter[s] of wine",
+    "de": "Liter Wein",
+    "es": "Litro[s] de vino",
     "emoji": "🍷"
   },
   "laitdevache": {
     "category": 3,
     "value": 1182.1407829999996,
-    "label": "Litre[s] de lait (de vache)",
+    "fr": "Litre[s] de lait (de vache)",
+    "en": "Liter[s] of cow milk",
+    "de": "Liter Kuhmilch",
+    "es": "Litro[s] de leche (de vaca)",
     "emoji": "🥛"
   },
   "laitdesoja": {
     "category": 3,
     "value": 445.649559,
-    "label": "Litre[s] de lait (de soja)",
+    "fr": "Litre[s] de lait (de soja)",
+    "en": "Liter[s] of soy milk",
+    "de": "Liter Sojamilch",
+    "es": "Litro[s] de leche (de soja)",
     "emoji": "🍈"
   },
   "thé": {
     "category": 3,
     "value": 39.161353500000004,
-    "label": "Litre[s] de thé",
+    "fr": "Litre[s] de thé",
+    "en": "Liter[s] of tea",
+    "de": "Liter Tee",
+    "es": "Litro[s] de té",
     "emoji": "🫖"
   },
   "cafe": {
     "category": 3,
     "value": 594.22464326,
-    "label": "Litre[s] de café",
+    "fr": "Litre[s] de café",
+    "en": "Liter[s] of coffee",
+    "de": "Liter Kaffee",
+    "es": "Litro[s] de café",
     "emoji": "☕️"
   },
   "fraise": {
     "category": 9,
     "value": 477.06577790000006,
-    "label": "kg de fraise",
+    "fr": "kg de fraise",
+    "en": "kg of strawberry",
+    "de": "kg Erdbeeren",
+    "es": "kg de fresas",
     "emoji": "🍓"
   },
   "pomme": {
     "category": 9,
     "value": 396.515083,
-    "label": "kg de pomme",
+    "fr": "kg de pomme",
+    "en": "kg of apple",
+    "de": "kg Äpfel",
+    "es": "kg de manzanas",
     "emoji": "🍏"
   },
   "orange": {
     "category": 9,
     "value": 633.964319,
-    "label": "kg d'orange",
+    "fr": "kg d'orange",
+    "en": "kg of orange",
+    "de": "kg Orangen",
+    "es": "kg de naranjas",
     "emoji": "🍊"
   },
   "citron": {
     "category": 9,
     "value": 711.263074,
-    "label": "kg de citron",
+    "fr": "kg de citron",
+    "en": "kg of lemon",
+    "de": "kg Zitronen",
+    "es": "kg de limones",
     "emoji": "🍋"
   },
   "ail": {
     "category": 9,
     "value": 358.042894,
-    "label": "kg d'ail",
+    "fr": "kg d'ail",
+    "en": "kg of garlic",
+    "de": "kg Knoblauch",
+    "es": "kg de ajos",
     "emoji": "🧄"
   },
   "artichaut": {
     "category": 9,
     "value": 3876.929068,
-    "label": "kg d'artichaut",
+    "fr": "kg d'artichaut",
+    "en": "kg of artichoke",
+    "de": "kg Artischocken",
+    "es": "kg de alcachofas",
     "emoji": "🌳"
   },
   "asperge": {
     "category": 9,
     "value": 1559.309081,
-    "label": "kg d'asperge",
+    "fr": "kg d'asperge",
+    "en": "kg of asparagus",
+    "de": "kg Spargel",
+    "es": "kg de espárragos",
     "emoji": "🌱"
   },
   "betterave": {
     "category": 9,
     "value": 364.32109899999995,
-    "label": "kg de betterave",
+    "fr": "kg de betterave",
+    "en": "kg of beetroot",
+    "de": "kg Rüben",
+    "es": "kg de remolachas",
     "emoji": "🍠"
   },
   "blette": {
     "category": 9,
     "value": 542.753575,
-    "label": "kg de blette",
+    "fr": "kg de blette",
+    "en": "kg of chard",
+    "de": "kg Mangold",
+    "es": "kg de acelgas",
     "emoji": "🥬"
   },
   "carotte": {
     "category": 9,
     "value": 364.32109899999995,
-    "label": "kg de carotte",
+    "fr": "kg de carotte",
+    "en": "kg of carrot",
+    "de": "kg Karotten",
+    "es": "kg de zanahorias",
     "emoji": "🥕"
   },
   "celeri": {
     "category": 9,
     "value": 677.0180851000001,
-    "label": "kg de céleri",
+    "fr": "kg de céleri",
+    "en": "kg of celery",
+    "de": "kg Sellerie",
+    "es": "kg de apio",
     "emoji": "🌱"
   },
   "champignonmorille": {
     "category": 9,
     "value": 493.7143989999999,
-    "label": "kg de champignon (morille crue)",
+    "fr": "kg de champignon (morille crue)",
+    "en": "kg of mushroom (raw morel)",
+    "de": "kg Pilze (rohe Morcheln)",
+    "es": "kg de champiñones (morillas crudas)",
     "emoji": "🍄"
   },
   "chou": {
     "category": 9,
     "value": 862.097522,
-    "label": "kg de chou",
+    "fr": "kg de chou",
+    "en": "kg of cabbage",
+    "de": "kg Kohl",
+    "es": "kg de col",
     "emoji": "🥬"
   },
   "choudebruxelles": {
     "category": 9,
     "value": 575.8186729,
-    "label": "kg de chou de bruxelles",
+    "fr": "kg de chou de bruxelles",
+    "en": "kg of brussels sprout",
+    "de": "kg Rosenkohl",
+    "es": "kg de coles de Bruselas",
     "emoji": "🥬"
   },
   "choufleur": {
     "category": 9,
     "value": 735.5122120000001,
-    "label": "kg de chou-fleur",
+    "fr": "kg de chou-fleur",
+    "en": "kg of cauliflower",
+    "de": "kg Blumenkohl",
+    "es": "kg de coliflor",
     "emoji": "🥦"
   },
   "concombre": {
     "category": 9,
     "value": 473.201203,
-    "label": "kg de concombre",
+    "fr": "kg de concombre",
+    "en": "kg of cucumber",
+    "de": "kg Gurken",
+    "es": "kg de pepinos",
     "emoji": "🥒"
   },
   "courge": {
     "category": 9,
     "value": 618.848881,
-    "label": "kg de courge",
+    "fr": "kg de courge",
+    "en": "kg of squash",
+    "de": "kg Kürbis",
+    "es": "kg de calabazas",
     "emoji": "🎃"
   },
   "courgette": {
     "category": 9,
     "value": 483.51979,
-    "label": "kg de courgette",
+    "fr": "kg de courgette",
+    "en": "kg of zucchini",
+    "de": "kg Zucchini",
+    "es": "kg de calabacines",
     "emoji": "🥒"
   },
   "cresson": {
     "category": 9,
     "value": 941.0662189999998,
-    "label": "kg de cresson",
+    "fr": "kg de cresson",
+    "en": "kg of watercress",
+    "de": "kg Brunnenkresse",
+    "es": "kg de berros",
     "emoji": "🥬"
   },
   "echalote": {
     "category": 9,
     "value": 364.86326020000007,
-    "label": "kg d'échalote",
+    "fr": "kg d'échalote",
+    "en": "kg of shallot",
+    "de": "kg Schalotten",
+    "es": "kg de chalotes",
     "emoji": "🧅"
   },
   "endive": {
     "category": 9,
     "value": 938.0277949999997,
-    "label": "kg d'endive",
+    "fr": "kg d'endive",
+    "en": "kg of endive",
+    "de": "kg Endivien",
+    "es": "kg de endivias",
     "emoji": "🥬"
   },
   "epinard": {
     "category": 9,
     "value": 391.2991521,
-    "label": "kg d'épinard",
+    "fr": "kg d'épinard",
+    "en": "kg of spinach",
+    "de": "kg Spinat",
+    "es": "kg de espinacas",
     "emoji": "🥬"
   },
   "mangue": {
     "category": 9,
     "value": 10641.545366999999,
-    "label": "kg de mangue (importée par avion)",
+    "fr": "kg de mangue (importée par avion)",
+    "en": "kg of mango (imported by air)",
+    "de": "kg Mangos (luftfrachtimportiert)",
+    "es": "kg de mangos (importados por avión)",
     "emoji": "🥭"
   },
   "fenouil": {
     "category": 9,
     "value": 962.528871,
-    "label": "kg de fenouil",
+    "fr": "kg de fenouil",
+    "en": "kg of fennel",
+    "de": "kg Fenchel",
+    "es": "kg de hinojos",
     "emoji": "🌿"
   },
   "haricotvert": {
     "category": 9,
     "value": 413.06197199999997,
-    "label": "kg d'haricot vert (cru)",
+    "fr": "kg d'haricot vert (cru)",
+    "en": "kg of green bean (raw)",
+    "de": "kg grüne Bohnen (roh)",
+    "es": "kg de judías verdes (crudas)",
     "emoji": "🥒"
   },
   "laitue": {
     "category": 9,
     "value": 941.0662189999998,
-    "label": "kg de laitue",
+    "fr": "kg de laitue",
+    "en": "kg of lettuce",
+    "de": "kg Kopfsalat",
+    "es": "kg de lechuga",
     "emoji": "🥬"
   },
   "mache": {
     "category": 9,
     "value": 941.0662189999998,
-    "label": "kg de mâche",
+    "fr": "kg de mâche",
+    "en": "kg of lamb's lettuce",
+    "de": "kg Feldsalat",
+    "es": "kg de mache",
     "emoji": "🥬"
   },
   "navet": {
     "category": 9,
     "value": 364.321099,
-    "label": "kg de navet",
+    "fr": "kg de navet",
+    "en": "kg of turnip",
+    "de": "kg Rüben",
+    "es": "kg de nabos",
     "emoji": "🍠"
   },
   "mais": {
     "category": 9,
     "value": 810.485801,
-    "label": "kg de maïs",
+    "fr": "kg de maïs",
+    "en": "kg of corn",
+    "de": "kg Mais",
+    "es": "kg de maíz",
     "emoji": "🌽"
   },
   "oignon": {
     "category": 9,
     "value": 389.53612800000013,
-    "label": "kg d'oignon",
+    "fr": "kg d'oignon",
+    "en": "kg of onion",
+    "de": "kg Zwiebeln",
+    "es": "kg de cebollas",
     "emoji": "🧅"
   },
   "panais": {
     "category": 9,
     "value": 457.82909000000006,
-    "label": "kg de panais",
+    "fr": "kg de panais",
+    "en": "kg of parsnip",
+    "de": "kg Pastinaken",
+    "es": "kg de chirivías",
     "emoji": "🥕"
   },
   "petitpois": {
     "category": 9,
     "value": 665.129177,
-    "label": "kg de petit pois",
+    "fr": "kg de petit pois",
+    "en": "kg of green pea",
+    "de": "kg Erbsen",
+    "es": "kg de guisantes",
     "emoji": "🟢"
   },
   "poireau": {
     "category": 9,
     "value": 768.865685,
-    "label": "kg de poireau",
+    "fr": "kg de poireau",
+    "en": "kg of leek",
+    "de": "kg Lauch",
+    "es": "kg de puerros",
     "emoji": "🌱"
   },
   "poivron": {
     "category": 9,
     "value": 1183.6197739999998,
-    "label": "kg de poivron",
+    "fr": "kg de poivron",
+    "en": "kg of bell pepper",
+    "de": "kg Paprika",
+    "es": "kg de pimientos",
     "emoji": "🌶️"
   },
   "potiron": {
     "category": 9,
     "value": 618.848881,
-    "label": "kg de potiron",
+    "fr": "kg de potiron",
+    "en": "kg of pumpkin",
+    "de": "kg Kürbis",
+    "es": "kg de calabazas",
     "emoji": "🎃"
   },
   "radis": {
     "category": 9,
     "value": 601.8473451000001,
-    "label": "kg de radis",
+    "fr": "kg de radis",
+    "en": "kg of radish",
+    "de": "kg Radieschen",
+    "es": "kg de rábanos",
     "emoji": "🍠"
   },
   "salsifis": {
     "category": 9,
     "value": 457.82908999999995,
-    "label": "kg de salsifis",
+    "fr": "kg de salsifis",
+    "en": "kg of salsify",
+    "de": "kg Schwarzwurzeln",
+    "es": "kg de chirivías negras",
     "emoji": "🍠"
   },
   "topinambour": {
     "category": 9,
     "value": 504.87197000000003,
-    "label": "kg de topinambour",
+    "fr": "kg de topinambour",
+    "en": "kg of Jerusalem artichoke",
+    "de": "kg Topinambur",
+    "es": "kg de tupinambos",
     "emoji": "🍠"
   },
   "cassis": {
     "category": 9,
     "value": 1796.3874969999997,
-    "label": "kg de cassis",
+    "fr": "kg de cassis",
+    "en": "kg of blackcurrant",
+    "de": "kg Johannisbeeren",
+    "es": "kg de grosellas negras",
     "emoji": "🍇"
   },
   "chataigne": {
     "category": 9,
     "value": 1880.205125,
-    "label": "kg de châtaigne",
+    "fr": "kg de châtaigne",
+    "en": "kg of chestnut",
+    "de": "kg Kastanien",
+    "es": "kg de castañas",
     "emoji": "🌰"
   },
   "clementine": {
     "category": 9,
     "value": 1221.4244939999999,
-    "label": "kg de clémentine",
+    "fr": "kg de clémentine",
+    "en": "kg of clementine",
+    "de": "kg Clementinen",
+    "es": "kg de clementinas",
     "emoji": "🍊"
   },
   "pamplemousse": {
     "category": 9,
     "value": 872.8596140000001,
-    "label": "kg de pamplemousse",
+    "fr": "kg de pamplemousse",
+    "en": "kg of grapefruit",
+    "de": "kg Grapefruits",
+    "es": "kg de pomelos",
     "emoji": "🍊"
   },
   "coing": {
     "category": 9,
     "value": 541.0901117000001,
-    "label": "kg de coing",
+    "fr": "kg de coing",
+    "en": "kg of quince",
+    "de": "kg Quitten",
+    "es": "kg de membrillos",
     "emoji": "🍎"
   },
   "figue": {
     "category": 9,
     "value": 613.5498970000001,
-    "label": "kg de figue",
+    "fr": "kg de figue",
+    "en": "kg of fig",
+    "de": "kg Feigen",
+    "es": "kg de higos",
     "emoji": "🌰"
   },
   "groseille": {
     "category": 9,
     "value": 1787.5465516999998,
-    "label": "kg de groseille",
+    "fr": "kg de groseille",
+    "en": "kg of red currant",
+    "de": "kg Johannisbeeren",
+    "es": "kg de grosellas",
     "emoji": "🍒"
   },
   "kiwi": {
     "category": 9,
     "value": 976.8151836999999,
-    "label": "kg de kiwi",
+    "fr": "kg de kiwi",
+    "en": "kg of kiwi",
+    "de": "kg Kiwis",
+    "es": "kg de kiwis",
     "emoji": "🥝"
   },
   "mandarine": {
     "category": 9,
     "value": 422.73830129999993,
-    "label": "kg de mandarine",
+    "fr": "kg de mandarine",
+    "en": "kg of mandarin",
+    "de": "kg Mandarinen",
+    "es": "kg de mandarinas",
     "emoji": "🍊"
   },
   "melon": {
     "category": 9,
     "value": 931.394984,
-    "label": "kg de melon",
+    "fr": "kg de melon",
+    "en": "kg of melon",
+    "de": "kg Melonen",
+    "es": "kg de melones",
     "emoji": "🍈"
   },
   "mure": {
     "category": 9,
     "value": 1206.0856469999999,
-    "label": "kg de mûre",
+    "fr": "kg de mûre",
+    "en": "kg of blackberry",
+    "de": "kg Brombeeren",
+    "es": "kg de moras",
     "emoji": "🍓"
   },
   "nectarine": {
     "category": 9,
     "value": 637.3697500000002,
-    "label": "kg de nectarine",
+    "fr": "kg de nectarine",
+    "en": "kg of nectarine",
+    "de": "kg Nektarinen",
+    "es": "kg de nectarinas",
     "emoji": "🍊"
   },
   "myrtille": {
     "category": 9,
     "value": 881.5012491,
-    "label": "kg de myrtille",
+    "fr": "kg de myrtille",
+    "en": "kg of blueberry",
+    "de": "kg Heidelbeeren",
+    "es": "kg de arándanos",
     "emoji": "🫐"
   },
   "noisette": {
     "category": 9,
     "value": 4652.965420999999,
-    "label": "kg de noisette",
+    "fr": "kg de noisette",
+    "en": "kg of hazelnut",
+    "de": "kg Haselnüsse",
+    "es": "kg de avellanas",
     "emoji": "🌰"
   },
   "noix": {
     "category": 9,
     "value": 4164.838911999999,
-    "label": "kg de noix",
+    "fr": "kg de noix",
+    "en": "kg of walnut",
+    "de": "kg Walnüsse",
+    "es": "kg de nueces",
     "emoji": "🌰"
   },
   "prune": {
     "category": 9,
     "value": 963.0279916999999,
-    "label": "kg de prune",
+    "fr": "kg de prune",
+    "en": "kg of plum",
+    "de": "kg Pflaumen",
+    "es": "kg de ciruelas",
     "emoji": "🫐"
   },
   "reineclaude": {
     "category": 9,
     "value": 971.868937,
-    "label": "kg de reine claude",
+    "fr": "kg de reine claude",
+    "en": "kg of greengage",
+    "de": "kg Renekloden",
+    "es": "kg de ciruelas Claudia",
     "emoji": "🍈"
   },
   "rhubarbe": {
     "category": 9,
     "value": 716.7486917,
-    "label": "kg de rhubarbe",
+    "fr": "kg de rhubarbe",
+    "en": "kg of rhubarb",
+    "de": "kg Rhabarber",
+    "es": "kg de ruibarbo",
     "emoji": "🥢"
   },
   "peche": {
     "category": 9,
     "value": 595.7366916999999,
-    "label": "kg de pêche",
+    "fr": "kg de pêche",
+    "en": "kg of peach",
+    "de": "kg Pfirsiche",
+    "es": "kg de melocotones",
     "emoji": "🍑"
   },
   "cerise": {
     "category": 9,
     "value": 1335.3255069999996,
-    "label": "kg de cerise",
+    "fr": "kg de cerise",
+    "en": "kg of cherry",
+    "de": "kg Kirschen",
+    "es": "kg de cerezas",
     "emoji": "🍒"
   },
   "abricot": {
     "category": 9,
     "value": 880.638317,
-    "label": "kg d'abricot",
+    "fr": "kg d'abricot",
+    "en": "kg of apricot",
+    "de": "kg Aprikosen",
+    "es": "kg de albaricoques",
     "emoji": "🍑"
   },
   "framboise": {
     "category": 9,
     "value": 1475.0375679,
-    "label": "kg de framboise",
+    "fr": "kg de framboise",
+    "en": "kg of raspberry",
+    "de": "kg Himbeeren",
+    "es": "kg de frambuesas",
     "emoji": "🍓"
   },
   "poire": {
     "category": 9,
     "value": 364.28259399999996,
-    "label": "kg de poire",
+    "fr": "kg de poire",
+    "en": "kg of pear",
+    "de": "kg Birnen",
+    "es": "kg de peras",
     "emoji": "🍐"
   },
   "raisin": {
     "category": 9,
     "value": 456.72809300000006,
-    "label": "kg de raisin",
+    "fr": "kg de raisin",
+    "en": "kg of grape",
+    "de": "kg Trauben",
+    "es": "kg de uvas",
     "emoji": "🍇"
   },
   "aubergine": {
     "category": 9,
     "value": 457.1093429,
-    "label": "kg d'aubergine",
+    "fr": "kg d'aubergine",
+    "en": "kg of eggplant",
+    "de": "kg Auberginen",
+    "es": "kg de berenjenas",
     "emoji": "🍆"
   },
   "brocoli": {
     "category": 9,
     "value": 902.5554719999999,
-    "label": "kg de brocoli",
+    "fr": "kg de brocoli",
+    "en": "kg of broccoli",
+    "de": "kg Brokkoli",
+    "es": "kg de brócolis",
     "emoji": "🥦"
   },
   "tomate": {
     "category": 9,
     "value": 581.556477,
-    "label": "kg de tomate",
+    "fr": "kg de tomate",
+    "en": "kg of tomato",
+    "de": "kg Tomaten",
+    "es": "kg de tomates",
     "emoji": "🍅"
   },
   "ananas": {
     "category": 9,
     "value": 1292.282106,
-    "label": "kg d'ananas",
+    "fr": "kg d'ananas",
+    "en": "kg of pineapple",
+    "de": "kg Ananas",
+    "es": "kg de piñas",
     "emoji": "🍍"
   },
   "banane": {
     "category": 9,
     "value": 880.6108929999997,
-    "label": "kg de banane",
+    "fr": "kg de banane",
+    "en": "kg of banana",
+    "de": "kg Bananen",
+    "es": "kg de plátanos",
     "emoji": "🍌"
   },
   "avocat": {
     "category": 9,
     "value": 1480.4702330000002,
-    "label": "kg d'avocat",
+    "fr": "kg d'avocat",
+    "en": "kg of avocado",
+    "de": "kg Avocados",
+    "es": "kg de aguacates",
     "emoji": "🥑"
   },
   "carambole": {
     "category": 9,
     "value": 533.048897,
-    "label": "kg de carambole",
+    "fr": "kg de carambole",
+    "en": "kg of starfruit",
+    "de": "kg Sternfrucht",
+    "es": "kg de carambolas",
     "emoji": "⭐"
   },
   "datte": {
     "category": 9,
     "value": 2760.1109879999995,
-    "label": "kg de datte",
+    "fr": "kg de datte",
+    "en": "kg of date",
+    "de": "kg Datteln",
+    "es": "kg de dátiles",
     "emoji": "🫘"
   },
   "fruitdelapassion": {
     "category": 9,
     "value": 892.8173700000001,
-    "label": "kg de fruit de la passion",
+    "fr": "kg de fruit de la passion",
+    "en": "kg of passion fruit",
+    "de": "kg Passionsfrucht",
+    "es": "kg de maracuyá",
     "emoji": "🌸"
   },
   "grenade": {
     "category": 9,
     "value": 485.5722217,
-    "label": "kg de grenade",
+    "fr": "kg de grenade",
+    "en": "kg of pomegranate",
+    "de": "kg Granatäpfel",
+    "es": "kg de granadas",
     "emoji": "🥭"
   },
   "kaki": {
     "category": 9,
     "value": 900.4313517,
-    "label": "kg de kaki",
+    "fr": "kg de kaki",
+    "en": "kg of persimmon",
+    "de": "kg Kakis",
+    "es": "kg de caquis",
     "emoji": "🍈"
   },
   "noixdecoco": {
     "category": 9,
     "value": 2493.7624220000002,
-    "label": "kg de noix de coco",
+    "fr": "kg de noix de coco",
+    "en": "kg of coconut",
+    "de": "kg Kokosnüsse",
+    "es": "kg de cocos",
     "emoji": "🥥"
   },
   "pasteque": {
     "category": 9,
     "value": 641.4638217000002,
-    "label": "kg de pastèque",
+    "fr": "kg de pastèque",
+    "en": "kg of watermelon",
+    "de": "kg Wassermelonen",
+    "es": "kg de sandías",
     "emoji": "🍉"
   },
   "bouilloire": {
     "category": 6,
     "value": 40884.03605825422,
-    "label": "bouilloire[s]",
+    "fr": "bouilloire[s]",
+    "en": "kettle[s]",
+    "de": "Wasserkocher",
+    "es": "Hervidor de agua",
     "emoji": "⚗️"
   },
   "cafetieredosette": {
     "category": 6,
     "value": 251003.5526905852,
-    "label": "cafetière[s] (à dosettes)",
+    "fr": "cafetière[s] (à dosettes)",
+    "en": "coffee maker[s] (pods)",
+    "de": "Kaffeemaschinen (Kapsel)",
+    "es": "Cafetera[s] (de cápsulas)",
     "emoji": "☕️"
   },
   "cafetierefiltre": {
     "category": 6,
     "value": 197698.1743339172,
-    "label": "cafetière[s] (filtre)",
+    "fr": "cafetière[s] (filtre)",
+    "en": "coffee maker[s] (filter)",
+    "de": "Kaffeemaschinen (Filter)",
+    "es": "Cafetera[s] (de filtro)",
     "emoji": "☕️"
   },
   "cafetiereexpresso": {
     "category": 6,
     "value": 211771.0842705374,
-    "label": "cafetière[s] (expresso)",
+    "fr": "cafetière[s] (expresso)",
+    "en": "coffee maker[s] (espresso)",
+    "de": "Kaffeemaschinen (Espresso)",
+    "es": "Cafetera[s] (express)",
     "emoji": "☕️"
   },
   "fourelectrique": {
     "category": 6,
     "value": 263064.69996,
-    "label": "four (électrique)",
+    "fr": "four (électrique)",
+    "en": "electric oven",
+    "de": "Ofen (elektrisch)",
+    "es": "Horno (eléctrico)",
     "emoji": "🎛"
   },
   "lavevaisselle": {
     "category": 6,
     "value": 467998.2177292116,
-    "label": "lave-vaisselle",
+    "fr": "lave-vaisselle",
+    "en": "dishwasher",
+    "de": "Geschirrspüler",
+    "es": "Lavavajillas",
     "emoji": "🍽"
   },
   "lavelinge": {
     "category": 6,
     "value": 510257.25834098266,
-    "label": "lave-linge (7kg)",
+    "fr": "lave-linge (7kg)",
+    "en": "washing machine (7kg)",
+    "de": "Waschmaschine (7kg)",
+    "es": "Lavadora (7kg)",
     "emoji": "🧦"
   },
   "refrigirateur": {
     "category": 6,
     "value": 325460.71642401704,
-    "label": "réfrigérateur",
+    "fr": "réfrigérateur",
+    "en": "refrigerator",
+    "de": "Kühlschrank",
+    "es": "Refrigerador",
     "emoji": "❄️"
   },
   "aspirateur": {
     "category": 6,
     "value": 47310,
-    "label": "aspirateur",
+    "fr": "aspirateur",
+    "en": "vacuum cleaner",
+    "de": "Staubsauger",
+    "es": "Aspiradora",
     "emoji": "🧹"
   },
   "climatiseur": {
     "category": 6,
     "value": 413881.2884443126,
-    "label": "climatiseur[s]",
+    "fr": "climatiseur[s]",
+    "en": "air conditioner[s]",
+    "de": "Klimaanlagen",
+    "es": "Aires acondicionados",
     "emoji": "❄️"
   },
   "jeans": {
     "category": 5,
     "value": 25088.72880618721,
-    "label": "jeans",
+    "fr": "jeans",
+    "en": "jeans",
+    "de": "Jeans",
+    "es": "Jeans",
     "emoji": "👖"
   },
   "polo": {
     "category": 5,
     "value": 10163.529075648208,
-    "label": "polo[s]",
+    "fr": "polo[s]",
+    "en": "polo[s]",
+    "de": "Polohemden",
+    "es": "Polos",
     "emoji": "👚"
   },
   "tshirtencoton": {
     "category": 5,
     "value": 6433.790554863734,
-    "label": "t-shirt[s] (en coton)",
+    "fr": "t-shirt[s] (en coton)",
+    "en": "t-shirt[s] (cotton)",
+    "de": "T-Shirts (Baumwolle)",
+    "es": "Camisetas (de algodón)",
     "emoji": "👕"
   },
   "tshirtenpolyester": {
     "category": 5,
     "value": 6211.492878123854,
-    "label": "t-shirt[s] (en polyester)",
+    "fr": "t-shirt[s] (en polyester)",
+    "en": "t-shirt[s] (polyester)",
+    "de": "T-Shirts (Polyester)",
+    "es": "Camisetas (de poliéster)",
     "emoji": "👕"
   },
   "sweatencoton": {
     "category": 5,
     "value": 32492.781078475018,
-    "label": "sweat[s] (en coton)",
+    "fr": "sweat[s] (en coton)",
+    "en": "sweatshirt[s] (cotton)",
+    "de": "Sweatshirts (Baumwolle)",
+    "es": "Sudaderas (de algodón)",
     "emoji": "🦺"
   },
   "chemiseencoton": {
     "category": 5,
     "value": 13234.66182713826,
-    "label": "chemise[s] (en coton)",
+    "fr": "chemise[s] (en coton)",
+    "en": "shirt[s] (cotton)",
+    "de": "Hemden (Baumwolle)",
+    "es": "Camisas (de algodón)",
     "emoji": "👚"
   },
   "chemiseenviscose": {
     "category": 5,
     "value": 12139.796272777625,
-    "label": "chemise[s] (en viscose)",
+    "fr": "chemise[s] (en viscose)",
+    "en": "shirt[s] (viscose)",
+    "de": "Hemden (Viskose)",
+    "es": "Camisas (de viscosa)",
     "emoji": "👚"
   },
   "chaussuresencuir": {
     "category": 5,
     "value": 14954.494546022259,
-    "label": "paire[s] de chaussures (en cuir)",
+    "fr": "paire[s] de chaussures (en cuir)",
+    "en": "pair[s] of leather shoes",
+    "de": "Paar Lederschuhe",
+    "es": "Par de zapatos (de cuero)",
     "emoji": "👞"
   },
   "chaussuresentissu": {
     "category": 5,
     "value": 18519.8842675649,
-    "label": "paire[s] de chaussures (en tissu)",
+    "fr": "paire[s] de chaussures (en tissu)",
+    "en": "pair[s] of fabric shoes",
+    "de": "Paar Stoffschuhe",
+    "es": "Par de zapatos (de tela)",
     "emoji": "🥾"
   },
   "chaussuresdesport": {
     "category": 5,
     "value": 20125.551283507102,
-    "label": "paire[s] de chaussures (de sport)",
+    "fr": "paire[s] de chaussures (de sport)",
+    "en": "pair[s] of sports shoes",
+    "de": "Paar Sportschuhe",
+    "es": "Par de zapatos deportivos",
     "emoji": "👟"
   },
   "robeencoton": {
     "category": 5,
     "value": 56907.365827855545,
-    "label": "robe[s] (en coton)",
+    "fr": "robe[s] (en coton)",
+    "en": "dress[es] (cotton)",
+    "de": "Kleider (Baumwolle)",
+    "es": "Vestidos (de algodón)",
     "emoji": "👗"
   },
   "robeenpolyester": {
     "category": 5,
     "value": 58257.20551873938,
-    "label": "robe[s] (en polyester)",
+    "fr": "robe[s] (en polyester)",
+    "en": "dress[es] (polyester)",
+    "de": "Kleider (Polyester)",
+    "es": "Vestidos (de poliéster)",
     "emoji": "👗"
   },
   "robeenviscose": {
     "category": 5,
     "value": 52481.52206560145,
-    "label": "robe[s] (en viscose)",
+    "fr": "robe[s] (en viscose)",
+    "en": "dress[es] (viscose)",
+    "de": "Kleider (Viskose)",
+    "es": "Vestidos (de viscosa)",
     "emoji": "👗"
   },
   "pullenlaine": {
     "category": 5,
     "value": 56695.456137691894,
-    "label": "pull[s] (en laine)",
+    "fr": "pull[s] (en laine)",
+    "en": "sweater[s] (wool)",
+    "de": "Pullover (Wolle)",
+    "es": "Jerséis (de lana)",
     "emoji": "🧶"
   },
   "pullenacrylique": {
     "category": 5,
     "value": 28968.38102563544,
-    "label": "pull[s] (en acrylique)",
+    "fr": "pull[s] (en acrylique)",
+    "en": "sweater[s] (acrylic)",
+    "de": "Pullover (Acryl)",
+    "es": "Jerséis (de acrílico)",
     "emoji": "🧶"
   },
   "pullencotonrecycle": {
     "category": 5,
     "value": 13192.78107847502,
-    "label": "pull[s] (en coton recyclé)",
+    "fr": "pull[s] (en coton recyclé)",
+    "en": "sweater[s] (recycled cotton)",
+    "de": "Pullover (recycelte Baumwolle)",
+    "es": "Jerséis (de algodón reciclado)",
     "emoji": "🧶"
   },
   "manteau": {
     "category": 5,
     "value": 101420.51607966855,
-    "label": "manteau[s]",
+    "fr": "manteau[s]",
+    "en": "coat[s]",
+    "de": "Mäntel",
+    "es": "Abrigos",
     "emoji": "🧥"
   },
   "vesteimpermeable": {
     "category": 5,
     "value": 41147.15954637288,
-    "label": "veste[s] imperméable[s]",
+    "fr": "veste[s] imperméable[s]",
+    "en": "waterproof jacket[s]",
+    "de": "wasserdichte Jacken",
+    "es": "Chaquetas impermeables",
     "emoji": "🧥"
   },
   "vestesimilicuir": {
     "category": 5,
     "value": 26825.820363170224,
-    "label": "veste[s] simili-cuir",
+    "fr": "veste[s] simili-cuir",
+    "en": "faux leather jacket[s]",
+    "de": "Kunstlederjacken",
+    "es": "Chaquetas de cuero sintético",
     "emoji": "🧥"
   },
   "canapeconvertible": {
     "category": 7,
     "value": 197500,
-    "label": "canapé[s] (convertible[s])",
+    "fr": "canapé[s] (convertible[s])",
+    "en": "sofa[s] (convertible)",
+    "de": "Sofas (ausziehbar)",
+    "es": "Sofás (convertibles)",
     "emoji": "🛋"
   },
   "chaiseenbois": {
     "category": 7,
     "value": 18630,
-    "label": "chaise[s] (en bois)",
+    "fr": "chaise[s] (en bois)",
+    "en": "wooden chair[s]",
+    "de": "Holzstühle",
+    "es": "Sillas de madera",
     "emoji": "🪑"
   },
   "tableenbois": {
     "category": 7,
     "value": 80220,
-    "label": "table[s] (en bois)",
+    "fr": "table[s] (en bois)",
+    "en": "wooden table[s]",
+    "de": "Holztische",
+    "es": "Mesas de madera",
     "emoji": "🪵"
   },
   "canapetextile": {
     "category": 7,
     "value": 179100,
-    "label": "canapé[s] (textile)",
+    "fr": "canapé[s] (textile)",
+    "en": "fabric sofa[s]",
+    "de": "Textilsofas",
+    "es": "Sofás de tela",
     "emoji": "🛋"
   },
   "armoire": {
     "category": 7,
     "value": 906880,
-    "label": "armoire",
+    "fr": "armoire",
+    "en": "wardrobe",
+    "de": "Kleiderschrank",
+    "es": "Armario",
     "emoji": "🚪"
   },
   "lit": {
     "category": 7,
     "value": 443810.00000000006,
-    "label": "lit (cadre + sommier + matelas)",
+    "fr": "lit (cadre + sommier + matelas)",
+    "en": "bed (frame + mattress + mattress)",
+    "de": "Bett (Rahmen + Lattenrost + Matratze)",
+    "es": "Cama (estructura + somier + colchón)",
     "emoji": "🛏"
   },
   "repasavecduboeuf": {
     "category": 2,
     "value": 7260,
-    "label": "repas avec du boeuf",
+    "fr": "repas avec du boeuf",
+    "en": "meal with beef",
+    "de": "Mahlzeit mit Rindfleisch",
+    "es": "Comida con carne de vacuno",
     "emoji": "🥩"
   },
   "repasvegetarien": {
     "category": 2,
     "value": 510,
-    "label": "repas végétarien[s]",
+    "fr": "repas végétarien[s]",
+    "en": "vegetarian meal[s]",
+    "de": "vegetarische Mahlzeiten",
+    "es": "Comida vegetariana",
     "emoji": "🥗"
   },
   "repasvegetalien": {
     "category": 2,
     "value": 390,
-    "label": "repas végétalien[s]",
+    "fr": "repas végétalien[s]",
+    "en": "vegan meal[s]",
+    "de": "vegane Mahlzeiten",
+    "es": "Comida vegana",
     "emoji": "🍎"
   },
   "repasavecdupoissonblanc": {
     "category": 2,
     "value": 1980,
-    "label": "repas avec du poisson blanc",
+    "fr": "repas avec du poisson blanc",
+    "en": "meal with white fish",
+    "de": "Mahlzeit mit weißem Fisch",
+    "es": "Comida con pescado blanco",
     "emoji": "🐟"
   },
   "repasavecdupoissongras": {
     "category": 2,
     "value": 1110,
-    "label": "repas avec du poisson gras",
+    "fr": "repas avec du poisson gras",
+    "en": "meal with fatty fish",
+    "de": "Mahlzeit mit fettem Fisch",
+    "es": "Comida con pescado graso",
     "emoji": "🐟"
   },
   "repasavecdupoulet": {
     "category": 2,
     "value": 1580,
-    "label": "repas avec du poulet",
+    "fr": "repas avec du poulet",
+    "en": "meal with chicken",
+    "de": "Mahlzeit mit Hähnchen",
+    "es": "Comida con pollo",
     "emoji": "🍗"
   },
   "cigarette": {
     "category": 11,
     "value": 5520,
-    "label": "cigarette[s]",
+    "fr": "cigarette[s]",
+    "en": "cigarette[s]",
+    "de": "Zigaretten",
+    "es": "Cigarrillos",
     "emoji": "🚬"
   },
   "livredepoche": {
     "category": 11,
     "value": 1100,
-    "label": "livre[s] de poche",
+    "fr": "livre[s] de poche",
+    "en": "paperback book[s]",
+    "de": "Taschenbücher",
+    "es": "Libros de bolsillo",
     "emoji": "📘"
   },
   "smartphone": {
     "category": 1,
     "value": 37785.7171234219,
-    "label": "smartphone[s] (> 5,5 pouces)",
+    "fr": "smartphone[s] (> 5,5 pouces)",
+    "en": "smartphone[s] (> 5.5 inches)",
+    "de": "Smartphones (über 5,5 Zoll)",
+    "es": "Smartphones (más de 5,5 pulgadas)",
     "emoji": "📱"
   },
   "ordinateurfixebureautique": {
     "category": 1,
     "value": 188972.1498647794,
-    "label": "ordinateur[s] fixe[s] sans écran (bureautique)",
+    "fr": "ordinateur[s] fixe[s] sans écran (bureautique)",
+    "en": "desktop computer[s] without screen (office)",
+    "de": "Desktop-Computer (Büro)",
+    "es": "Ordenadores de sobremesa (ofimáticos)",
     "emoji": "🖥️"
   },
   "ordinateurfixeperformance": {
     "category": 1,
     "value": 394228.39770107804,
-    "label": "ordinateur[s] fixe[s] sans écran (performance)",
+    "fr": "ordinateur[s] fixe[s] sans écran (performance)",
+    "en": "desktop computer[s] without screen (performance)",
+    "de": "Desktop-Computer (Leistung)",
+    "es": "Ordenadores de sobremesa (de alto rendimiento)",
     "emoji": "🖥️"
   },
   "ecran215pouces": {
     "category": 1,
     "value": 236400.5793417607,
-    "label": "écran[s] (21,5 pouces)",
+    "fr": "écran[s] (21,5 pouces)",
+    "en": "screen[s] (21.5 inches)",
+    "de": "Monitore (21,5 Zoll)",
+    "es": "Monitores (21,5 pulgadas)",
     "emoji": "🖥"
   },
   "ecran24pouces": {
     "category": 1,
     "value": 263270.5793417607,
-    "label": "écran[s] (24 pouces)",
+    "fr": "écran[s] (24 pouces)",
+    "en": "screen[s] (24 inches)",
+    "de": "Monitore (24 Zoll)",
+    "es": "Monitores (24 pulgadas)",
     "emoji": "🖥"
   },
   "tablettedetachable": {
     "category": 1,
     "value": 86289.99022039562,
-    "label": "tablette[s] détachable[s]",
+    "fr": "tablette[s] détachable[s]",
+    "en": "detachable tablet[s]",
+    "de": "Abnehmbare Tablets",
+    "es": "Tabletas desmontables",
     "emoji": "💻"
   },
   "tabletteclassique": {
     "category": 1,
     "value": 69583.77612322119,
-    "label": "tablette[s] (classique)",
+    "fr": "tablette[s] (classique)",
+    "en": "standard tablet[s]",
+    "de": "Standard-Tablets",
+    "es": "Tabletas estándar",
     "emoji": "📱"
   },
   "tablettemini": {
     "category": 1,
     "value": 47701.56560714469,
-    "label": "tablette[s] (mini)",
+    "fr": "tablette[s] (mini)",
+    "en": "mini tablet[s]",
+    "de": "Mini-Tablets",
+    "es": "Tabletas mini",
     "emoji": "📱"
   },
   "chainehifi": {
     "category": 1,
     "value": 136282.18772408427,
-    "label": "chaine[s] hifi",
+    "fr": "chaine[s] hifi",
+    "en": "hi-fi system[s]",
+    "de": "Hi-Fi-Anlagen",
+    "es": "Cadenas hi-fi",
     "emoji": "🎵"
   },
   "liseuse": {
     "category": 1,
     "value": 36695.15687599134,
-    "label": "liseuse[s] (non rétro-éclairé)",
+    "fr": "liseuse[s] (non rétro-éclairé)",
+    "en": "non-backlit e-reader[s]",
+    "de": "E-Book-Reader (nicht beleuchtet)",
+    "es": "E-readers (no retroiluminados)",
     "emoji": "📱"
   },
   "television": {
     "category": 1,
     "value": 425153.49609789375,
-    "label": "télévision[s]  (40 - 49 pouces)",
+    "fr": "télévision[s]  (40 - 49 pouces)",
+    "en": "television[s] (40 - 49 inches)",
+    "de": "Fernseher (40 - 49 Zoll)",
+    "es": "Televisores (40 - 49 pulgadas)",
     "emoji": "📺"
   },
   "ordinateurportable": {
     "category": 1,
     "value": 177987.64585279912,
-    "label": "ordinateur[s] portable[s]",
+    "fr": "ordinateur[s] portable[s]",
+    "en": "laptop[s]",
+    "de": "Laptops",
+    "es": "Ordenadores portátiles",
     "emoji": "💻"
   },
   "montreconnectee": {
     "category": 1,
     "value": 9858.212649590849,
-    "label": "montre[s] connectée[s]",
+    "fr": "montre[s] connectée[s]",
+    "en": "smartwatch[es]",
+    "de": "Smartwatches",
+    "es": "Smartwatches",
     "emoji": "⌚️"
   },
   "cadrephotodigital": {
     "category": 1,
     "value": 39151.176838939886,
-    "label": "cadre[s] photo digital",
+    "fr": "cadre[s] photo digital",
+    "en": "digital photo frame[s]",
+    "de": "Digitale Bilderrahmen",
+    "es": "Marcos de fotos digitales",
     "emoji": "🖼"
   },
   "homecinema": {
     "category": 1,
     "value": 153563.82398264098,
-    "label": "home cinéma",
+    "fr": "home cinéma",
+    "en": "home cinema",
+    "de": "Heimkino",
+    "es": "Home cinema",
     "emoji": "📽"
   },
   "barredeson": {
     "category": 1,
     "value": 45452.22930043316,
-    "label": "barre[s] de son",
+    "fr": "barre[s] de son",
+    "en": "sound bar[s]",
+    "de": "Soundbars",
+    "es": "Barras de sonido",
     "emoji": "🔈"
   },
   "modemfibre": {
     "category": 1,
     "value": 142591.72740390868,
-    "label": "modem[s] (fibre)",
+    "fr": "modem[s] (fibre)",
+    "en": "modem[s] (fiber)",
+    "de": "Modems (Faser)",
+    "es": "Módems (fibra)",
     "emoji": "📡"
   },
   "enceintebluetooth": {
     "category": 1,
     "value": 9515.179528037961,
-    "label": "enceinte[s] bluetooth",
+    "fr": "enceinte[s] bluetooth",
+    "en": "Bluetooth speaker[s]",
+    "de": "Bluetooth-Lautsprecher",
+    "es": "Altavoces Bluetooth",
     "emoji": "🔊"
   },
   "consoledesalon": {
     "category": 1,
     "value": 101626.88532134777,
-    "label": "console[s] de salon",
+    "fr": "console[s] de salon",
+    "en": "home gaming console[s]",
+    "de": "Heimspielkonsolen",
+    "es": "Consolas de videojuegos de sobremesa",
     "emoji": "🎮"
   },
   "consoleportable": {
     "category": 1,
     "value": 30884.070899056205,
-    "label": "console[s] portable",
+    "fr": "console[s] portable",
+    "en": "portable gaming console[s]",
+    "de": "Tragbare Spielkonsolen",
+    "es": "Consolas de videojuegos portátiles",
     "emoji": "👾"
   },
   "appareilphotoreflex": {
     "category": 1,
     "value": 28109.783588679547,
-    "label": "appareil photo (reflex)",
+    "fr": "appareil photo (reflex)",
+    "en": "reflex camera[s]",
+    "de": "Spiegelreflexkameras",
+    "es": "Cámaras fotográficas réflex",
     "emoji": "📷"
   },
   "appareilphotocompact": {
     "category": 1,
     "value": 22341.835057281678,
-    "label": "appareil photo (compact)",
+    "fr": "appareil photo (compact)",
+    "en": "compact camera[s]",
+    "de": "Kompaktkameras",
+    "es": "Cámaras fotográficas compactas",
     "emoji": "📸"
   },
   "imprimantejetdencre": {
     "category": 1,
     "value": 108141.1327150618,
-    "label": "imprimante[s] (jet d'encre)",
+    "fr": "imprimante[s] (jet d'encre)",
+    "en": "inkjet printer[s]",
+    "de": "Tintenstrahldrucker",
+    "es": "Impresoras de inyección de tinta",
     "emoji": "🖨"
   },
   "avioncourtcourrier": {
     "category": 4,
     "value": 258.58,
-    "label": "km en avion (court courrier)",
+    "fr": "km en avion (court courrier)",
+    "en": "km by plane (short-haul)",
+    "de": "km mit dem Flugzeug (Kurzstrecke)",
+    "es": "km en avión (corto recorrido)",
     "emoji": "✈️"
   },
   "avionmoyencourrier": {
     "category": 4,
     "value": 187.56,
-    "label": "km en avion (moyen courrier)",
+    "fr": "km en avion (moyen courrier)",
+    "en": "km by plane (medium-haul)",
+    "de": "km mit dem Flugzeug (Mittelstrecke)",
+    "es": "km en avión (medio recorrido)",
     "emoji": "✈️"
   },
   "avionlongcourrier": {
     "category": 4,
     "value": 151.95999999999998,
-    "label": "km en avion (long courrier)",
+    "fr": "km en avion (long courrier)",
+    "en": "km by plane (long-haul)",
+    "de": "km mit dem Flugzeug (Langstrecke)",
+    "es": "km en avión (largo recorrido)",
     "emoji": "✈️"
   },
   "tgv": {
     "category": 4,
     "value": 2.9299999999999997,
-    "label": "km en tgv",
+    "fr": "km en tgv",
+    "en": "km by high-speed train",
+    "de": "km mit dem TGV",
+    "es": "km en TGV",
     "emoji": "🚅"
   },
   "intercites": {
     "category": 4,
     "value": 8.98,
-    "label": "km en intercités",
+    "fr": "km en intercités",
+    "en": "km by intercity train",
+    "de": "km mit dem Intercity",
+    "es": "km en trenes interurbanos",
     "emoji": "🚈"
   },
   "voiturethermique": {
     "category": 4,
     "value": 217.60000000000002,
-    "label": "km en voiture (moteur thermique)",
+    "fr": "km en voiture (moteur thermique)",
+    "en": "km by car (internal combustion engine)",
+    "de": "km mit dem Auto (Verbrennungsmotor)",
+    "es": "km en coche (motor de combustión)",
     "emoji": "🚗"
   },
   "voitureelectrique": {
     "category": 4,
     "value": 103.39999999999999,
-    "label": "km en voiture (moteur électrique)",
+    "fr": "km en voiture (moteur électrique)",
+    "en": "km by car (electric motor)",
+    "de": "km mit dem Auto (Elektromotor)",
+    "es": "km en coche (motor eléctrico)",
     "emoji": "🚗"
   },
   "autocar": {
     "category": 4,
     "value": 29.421306270000002,
-    "label": "km en autocar",
+    "fr": "km en autocar",
+    "en": "km by coach",
+    "de": "km mit dem Reisebus",
+    "es": "km en autocar",
     "emoji": "🚐"
   },
   "velo": {
     "category": 4,
     "value": 0,
-    "label": "vélo ou marche",
+    "fr": "vélo ou marche",
+    "en": "bicycle or walking",
+    "de": "Fahrrad oder zu Fuß",
+    "es": "Bicicleta o a pie",
     "emoji": "🚶‍♀️"
   },
   "veloelectrique": {
     "category": 4,
     "value": 10.7,
-    "label": "km en vélo (ou trottinette) à assistance électrique",
+    "fr": "km en vélo (ou trottinette) à assistance électrique",
+    "en": "km by electrically assisted bicycle (or scooter)",
+    "de": "km mit dem E-Bike (oder E-Scooter)",
+    "es": "km en bicicleta (o patinete) eléctrica asistida",
     "emoji": "🚴"
   },
   "busthermique": {
     "category": 4,
     "value": 112.69999999999999,
-    "label": "km en bus (moteur thermique)",
+    "fr": "km en bus (moteur thermique)",
+    "en": "km by bus (internal combustion engine)",
+    "de": "km mit dem Bus (Verbrennungsmotor)",
+    "es": "km en autobús (motor de combustión)",
     "emoji": "🚌"
   },
   "tramway": {
     "category": 4,
     "value": 4.28,
-    "label": "km en tramway",
+    "fr": "km en tramway",
+    "en": "km by tram",
+    "de": "km mit der Straßenbahn",
+    "es": "km en tranvía",
     "emoji": "🚌"
   },
   "metro": {
     "category": 4,
     "value": 4.4399999999999995,
-    "label": "km en métro",
+    "fr": "km en métro",
+    "en": "km by metro",
+    "de": "km mit der U-Bahn",
+    "es": "km en metro",
     "emoji": "🚇"
   },
   "scooter": {
     "category": 4,
     "value": 76.30000000000001,
-    "label": "km en scooter ou moto légère",
+    "fr": "km en scooter ou moto légère",
+    "en": "km by scooter or lightweight motorcycle",
+    "de": "km mit dem Roller oder Leichtmotorrad",
+    "es": "km en scooter o motocicleta ligera",
     "emoji": "🛵"
   },
   "moto": {
     "category": 4,
     "value": 192,
-    "label": "km en moto",
+    "fr": "km en moto",
+    "en": "km by motorcycle",
+    "de": "km mit dem Motorrad",
+    "es": "km en moto",
     "emoji": "🏍️"
   },
   "rer": {
     "category": 4,
     "value": 9.780000000000001,
-    "label": "km en rer ou transilien",
+    "fr": "km en rer ou transilien",
+    "en": "km by RER or suburban train",
+    "de": "km mit dem S-Bahn oder Nahverkehrszug",
+    "es": "km en RER o tren de cercanías",
     "emoji": "🚃"
   },
   "ter": {
     "category": 4,
     "value": 27.689999999999998,
-    "label": "km en ter",
+    "fr": "km en ter",
+    "en": "km by regional train",
+    "de": "km mit dem Regionalzug",
+    "es": "km en tren regional",
     "emoji": "🚈"
   },
   "buselectrique": {
     "category": 4,
     "value": 21.7,
-    "label": "km en bus (moteur électrique)",
+    "fr": "km en bus (moteur électrique)",
+    "en": "km by bus (electric motor)",
+    "de": "km mit dem Bus (Elektromotor)",
+    "es": "km en autobús (motor eléctrico)",
     "emoji": "🚌"
   },
   "busgnv": {
     "category": 4,
     "value": 121.9,
-    "label": "km en bus (gnv)",
+    "fr": "km en bus (gnv)",
+    "en": "km by bus (natural gas vehicle)",
+    "de": "km mit dem Bus (Gas)",
+    "es": "km en autobús (GNV)",
     "emoji": "🚌"
   },
   "avion-pny": {
     "category": 4,
     "value": 1770000,
-    "label": "A/R paris - new-york (en avion)",
+    "fr": "A/R paris - new-york (en avion)",
+    "en": "Round trip Paris - New York (by plane)",
+    "de": "Rundreise Paris - New York (mit dem Flugzeug)",
+    "es": "Viaje de ida y vuelta París - Nueva York (en avión)",
     "emoji": "🗽"
   },
   "chauffagegaz": {
     "category": 8,
     "value": 39000,
-    "label": "année[s] de chauffage au gaz par m²",
+    "fr": "année[s] de chauffage au gaz par m²",
+    "en": "year[s] of gas heating per m²",
+    "de": "Jahre Gasheizung pro m²",
+    "es": "Años de calefacción de gas por m²",
     "emoji": "💨"
   },
   "chauffagefioul": {
     "category": 8,
     "value": 57170,
-    "label": "année[s] de chauffage au fioul par m²",
+    "fr": "année[s] de chauffage au fioul par m²",
+    "en": "year[s] of oil heating per m²",
+    "de": "Jahre Ölheizung pro m²",
+    "es": "Años de calefacción de fuel por m²",
     "emoji": "🛢"
   },
   "chauffageelectrique": {
     "category": 8,
     "value": 7500,
-    "label": "année[s] de chauffage électrique par m²",
+    "fr": "année[s] de chauffage électrique par m²",
+    "en": "year[s] of electric heating per m²",
+    "de": "Jahre Elektroheizung pro m²",
+    "es": "Años de calefacción eléctrica por m²",
     "emoji": "⚡️"
   },
   "pompeachaleur": {
     "category": 8,
     "value": 2500,
-    "label": "année[s] de chauffage avec une pompe à chaleur par m²",
+    "fr": "année[s] de chauffage avec une pompe à chaleur par m²",
+    "en": "year[s] of heating with a heat pump per m²",
+    "de": "Jahre Heizung mit Wärmepumpe pro m²",
+    "es": "Años de calefacción con bomba de calor por m²",
     "emoji": "🌡️"
   },
   "poeleagranule": {
     "category": 8,
     "value": 5640,
-    "label": "année[s] de chauffage avec un poêle à granulé par m²",
+    "fr": "année[s] de chauffage avec un poêle à granulé par m²",
+    "en": "year[s] of heating with a pellet stove per m²",
+    "de": "Jahre Heizung mit Pelletöfen pro m²",
+    "es": "Años de calefacción con estufa de pellets por m²",
     "emoji": "🔥"
   },
   "poeleabois": {
     "category": 8,
     "value": 9200,
-    "label": "année[s] de chauffage avec un poêle à bois par m²",
+    "fr": "année[s] de chauffage avec un poêle à bois par m²",
+    "en": "year[s] of heating with a wood stove per m²",
+    "de": "Jahre Heizung mit Holzöfen pro m²",
+    "es": "Años de calefacción con estufa de leña por m²",
     "emoji": "🪵"
   },
   "reseaudechaleur": {
     "category": 8,
     "value": 18670,
-    "label": "année[s] de chauffage via un réseau de chaleur par m²",
+    "fr": "année[s] de chauffage via un réseau de chaleur par m²",
+    "en": "year[s] of heating via a district heating network per m²",
+    "de": "Jahre Fernheizung pro m²",
+    "es": "Años de calefacción a través de una red de calefacción por m²",
     "emoji": "🏢"
   },
   "email": {
     "category": 10,
     "value": 2.46181262,
-    "label": "email",
+    "fr": "email",
+    "en": "email",
+    "de": "E-Mail",
+    "es": "Correo electrónico",
     "emoji": "✉️"
   },
   "spam": {
     "category": 10,
     "value": 3.73863698,
-    "label": "spam (non lu)",
+    "fr": "spam (non lu)",
+    "en": "unread spam",
+    "de": "Ungelesene Spam-E-Mails",
+    "es": "Spam no leído",
     "emoji": "✋"
   },
   "stockagedonnee": {
     "category": 10,
     "value": 0.23533416999999998,
-    "label": "stocker un go de donnée (pendant 1 an)",
+    "fr": "stocker un go de donnée (pendant 1 an)",
+    "en": "store 1 GB of data (for 1 year)",
+    "de": "Speichern von 1 GB Daten (für 1 Jahr)",
+    "es": "Almacenamiento de 1 GB de datos (durante 1 año)",
     "emoji": "💾"
   },
   "rechercheweb": {
     "category": 10,
     "value": 51.042269652307,
-    "label": "recherche[s] sur le web",
+    "fr": "recherche[s] sur le web",
+    "en": "web search[es]",
+    "de": "Webrecherche",
+    "es": "Búsqueda en la web",
     "emoji": "🧐"
   },
   "streamingvideo": {
     "category": 10,
     "value": 64.01675291000002,
-    "label": "Heure[s] de streaming vidéo",
+    "fr": "Heure[s] de streaming vidéo",
+    "en": "Hour[s] of video streaming",
+    "de": "Stunden Videostreaming",
+    "es": "Horas de transmisión de vídeo",
     "emoji": "🎬"
   },
   "visioconference": {
     "category": 10,
     "value": 57.06336546216,
-    "label": "Heure[s] de visioconférence",
+    "fr": "Heure[s] de visioconférence",
+    "en": "Hour[s] of video conferencing",
+    "de": "Stunden Videokonferenzen",
+    "es": "Horas de videoconferencia",
     "emoji": "🎥"
   },
   "telechargement": {
     "category": 10,
     "value": 9.504680870000001,
-    "label": "go de donnée",
+    "fr": "go de donnée",
+    "en": "GB of data",
+    "de": "GB Daten",
+    "es": "GB de datos",
     "emoji": "⬇️"
   }
 }

@@ -11,10 +11,12 @@ import mobilier from '../data/categories/mobilier.json'
 import numerique from '../data/categories/numerique.json'
 import repas from '../data/categories/repas.json'
 import usageNumerique from '../data/categories/usagenumerique.json'
+import values from '../data/shopify/values.json'
 import { computeECV } from '../utils/computeECV'
 import formatName from '../utils/formatName'
-import { Equivalent } from '../../types/equivalent'
+import { Equivalent, SimpleEquivalent } from '../../types/equivalent'
 
+const existingValues: Record<string, SimpleEquivalent> = values
 const existingEquivalentsByCategory: Record<string, Equivalent[]> = {
   boissons: boissons,
   fruitsetlegumes: fruitsetlegumes,
@@ -29,17 +31,24 @@ const existingEquivalentsByCategory: Record<string, Equivalent[]> = {
   usageNumerique: usageNumerique,
 }
 
-const ecvs: Record<string, { value: number; label: string; emoji: string; category: number }> = {}
+const ecvs: Record<string, SimpleEquivalent> = {}
 const list: { value: string; label: string }[] = []
 Object.values(existingEquivalentsByCategory).forEach((equivalents) =>
   equivalents.forEach((equivalent) => {
     const name = `${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`
+    const label = `${equivalent.prefix || ''}${name.toLowerCase()}${equivalent.suffix || ''}`
+    const value = existingValues[equivalent.slug]
+
     ecvs[equivalent.slug] = {
       category: equivalent.category,
       value: computeECV(equivalent) * 1000,
-      label: `${equivalent.prefix || ''}${name.toLowerCase()}${equivalent.suffix || ''}`,
+      fr: label,
+      en: value && value.fr === label ? value.en : 'TODO',
+      de: value && value.fr === label ? value.de : 'TODO',
+      es: value && value.fr === label ? value.es : 'TODO',
       emoji: equivalent.emoji,
     }
+
     list.push({
       value: equivalent.slug,
       label: formatName(name, 1, true),

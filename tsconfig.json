@@ -20,16 +20,16 @@
       "components/*": ["src/components/*"],
       "data/*": ["src/data/*"],
       "utils/*": ["src/utils/*"],
-      "hooks/*": ["src/hooks/*"],
+      "hooks/*": ["src/hooks/*"]
     },
-    "module": "esnext",
+    "module": "esnext"
   },
   "ts-node": {
     "experimentalResolver": true,
     "compilerOptions": {
-      "module": "commonjs",
-    },
+      "module": "commonjs"
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.json"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }
