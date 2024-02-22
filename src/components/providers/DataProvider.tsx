@@ -33,7 +33,7 @@ const DataContext = React.createContext<{
   categories: Category[]
 } | null>(null)
 
-const equivalents = [
+export const equivalents = [
   ...boisson,
   ...flattenEquivalents(deplacement),
   ...electromenager,
