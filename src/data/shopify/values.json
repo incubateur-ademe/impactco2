@@ -749,12 +749,6 @@
     "label": "repas avec du poulet",
     "emoji": "🍗"
   },
-  "cigarette": {
-    "category": 11,
-    "value": 5520,
-    "label": "cigarette[s]",
-    "emoji": "🚬"
-  },
   "livredepoche": {
     "category": 11,
     "value": 1100,
