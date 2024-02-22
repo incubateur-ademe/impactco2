@@ -46,14 +46,15 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
 
   useEffect(() => {
     const onResize = () => {
+      const extraWidth = window.screen.width < 700 ? (window.screen.width < 400 ? 100 : 150) : 200
       if (suffixButtonRef.current) {
         const { width } = suffixButtonRef.current.getBoundingClientRect()
-        setSuffixWidth(width)
+        setSuffixWidth(width + extraWidth)
       }
 
       if (suffixDivRef.current) {
         const { width } = suffixDivRef.current.getBoundingClientRect()
-        setSuffixWidth(width)
+        setSuffixWidth(width + extraWidth)
       }
     }
     onResize()
@@ -99,7 +100,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
               setBaseValue(value)
             }}
             type='number'
-            style={{ width: `${suffixWidth + 150}px` }}
+            style={{ width: `${suffixWidth}px` }}
           />
           {comparedEquivalent ? (
             <button
