@@ -11,6 +11,7 @@
   line-height: 1 !important;
 }
 
+.bigLabel,
 .label {
   color: var(--neutral-50) !important;
   font-size: 0.75rem !important;
@@ -19,9 +20,18 @@
   max-width: 11rem !important;
 }
 
+.bigLabel {
+  font-size: 1.25rem !important;
+}
+
+.bigEquivalentValue,
 .equivalentValue {
   font-size: 1.25em !important;
   line-height: 1.2 !important;
   font-weight: 700 !important;
   color: var(--neutral-80) !important;
+}
+
+.bigEquivalentValue {
+  font-size: 1.75rem !important;
 }

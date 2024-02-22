@@ -70,10 +70,15 @@
   transform: translateY(-50%) !important;
 }
 
+.bigValue,
 .value {
   font-size: 1.25em !important;
   line-height: 1.2 !important;
   font-weight: 700 !important;
+}
+
+.bigValue {
+  font-size: 1.75rem !important;
 }
 
 .animatedComparisons {
@@ -112,8 +117,13 @@
   opacity: 1 !important;
 }
 
+.bigLabel,
 .label {
   font-size: 0.75rem !important;
   font-weight: 400 !important;
   line-height: 1rem !important;
+}
+
+.bigLabel {
+  font-size: 1.25rem !important;
 }

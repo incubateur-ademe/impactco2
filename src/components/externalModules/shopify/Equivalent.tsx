@@ -13,6 +13,7 @@ const Equivalent = ({
   animated,
   url,
   language,
+  big,
 }: {
   className?: string
   baseValue: string
@@ -21,6 +22,7 @@ const Equivalent = ({
   animated?: boolean
   url?: string
   language?: Language
+  big?: boolean
 }) => {
   const [toDisplay, setToDisplay] = useState(0)
   const timeoutRef = useRef<NodeJS.Timeout>()
@@ -56,10 +58,10 @@ const Equivalent = ({
         <div className={styles.left}>
           <Logo value={value} url={url} />
           <div className={styles.leftContent}>
-            <div className={styles.value} data-testid='etiquette-value'>
+            <div className={big ? styles.bigValue : styles.value} data-testid='etiquette-value'>
               {roundedValue}
             </div>
-            <div className={styles.label}>
+            <div className={big ? styles.bigLabel : styles.label}>
               {unit} CO<sub>2</sub>e
             </div>
           </div>
@@ -79,7 +81,7 @@ const Equivalent = ({
                       : styles.animatedComparison
                     : styles.comparison
                 }>
-                <SimpleValue value={value} comparison={comparison} language={language} />
+                <SimpleValue big={big} value={value} comparison={comparison} language={language} />
               </div>
             ))}
           </div>

@@ -28,6 +28,7 @@ const ShopifyEquivalent = () => {
 
   return (
     <Equivalent
+      big
       className={theme === 'night' ? 'night' : ''}
       baseValue={baseValue}
       comparisons={[comparaison]}
