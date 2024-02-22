@@ -1124,15 +1124,6 @@
     "es": "Comida con pollo",
     "emoji": "🍗"
   },
-  "cigarette": {
-    "category": 11,
-    "value": 5520,
-    "fr": "cigarette[s]",
-    "en": "cigarette[s]",
-    "de": "Zigaretten",
-    "es": "Cigarrillos",
-    "emoji": "🚬"
-  },
   "livredepoche": {
     "category": 11,
     "value": 1100,

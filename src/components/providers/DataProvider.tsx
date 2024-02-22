@@ -11,7 +11,6 @@ const DataContext = React.createContext<{
   equivalents: Equivalent[]
   categories: Category[]
 } | null>(null)
-
 export function DataProvider({ children }: { children: ReactNode }) {
   return (
     <DataContext.Provider
