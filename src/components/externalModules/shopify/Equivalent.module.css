@@ -1,10 +1,11 @@
 .animatedContainer,
 .container {
+  font-size: initial !important;
   border-radius: 8px !important;
   border: 1px solid var(--neutral-30) !important;
   display: flex !important;
   width: fit-content !important;
-  line-height: 1.25rem !important;
+  line-height: 1.25em !important;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06) !important;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .leftContent {
-  padding: 0.75em 1.25rem 0.75rem 0 !important;
+  padding: 0.75em 1.25em 0.75em 0 !important;
   margin: auto !important;
 }
 
@@ -70,15 +71,10 @@
   transform: translateY(-50%) !important;
 }
 
-.bigValue,
 .value {
   font-size: 1.25em !important;
   line-height: 1.2 !important;
   font-weight: 700 !important;
-}
-
-.bigValue {
-  font-size: 1.75rem !important;
 }
 
 .animatedComparisons {
@@ -117,13 +113,8 @@
   opacity: 1 !important;
 }
 
-.bigLabel,
 .label {
-  font-size: 0.75rem !important;
+  font-size: 0.75em !important;
   font-weight: 400 !important;
-  line-height: 1rem !important;
-}
-
-.bigLabel {
-  font-size: 1.25rem !important;
+  line-height: 1em !important;
 }

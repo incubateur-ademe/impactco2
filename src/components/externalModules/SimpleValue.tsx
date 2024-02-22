@@ -9,17 +9,7 @@ import styles from './SimpleValue.module.css'
 
 const equivalents = values as Record<string, SimpleEquivalent>
 
-const SimpleValue = ({
-  value,
-  comparison,
-  language,
-  big,
-}: {
-  value: number
-  comparison: string
-  language?: Language
-  big?: boolean
-}) => {
+const SimpleValue = ({ value, comparison, language }: { value: number; comparison: string; language?: Language }) => {
   let equivalent: SimpleEquivalent
   if (comparison !== 'random' && equivalents[comparison]) {
     equivalent = equivalents[comparison]
@@ -45,12 +35,10 @@ const SimpleValue = ({
         <Emoji>{equivalent.emoji}</Emoji>
       </div>
       <div>
-        <div
-          className={big ? styles.bigEquivalentValue : styles.equivalentValue}
-          data-testid={`etiquette-${comparison}-value`}>
+        <div className={styles.equivalentValue} data-testid={`etiquette-${comparison}-value`}>
           {equivalentValue}
         </div>
-        <div className={big ? styles.bigLabel : styles.label} data-testid={`etiquette-${comparison}-name`}>
+        <div className={styles.label} data-testid={`etiquette-${comparison}-name`}>
           {formatName(language ? equivalent[language] : equivalent.fr, comparisonValue, false)}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Category } from 'types/category'
-import { Equivalent } from 'types/equivalent'
+import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -10,7 +10,7 @@ import Sources from 'components/misc/category/Sources'
 import styles from './Details.module.css'
 import Value from './details/Value'
 
-export default function Details({ equivalent, category }: { equivalent: Equivalent; category: Category }) {
+export default function Details({ equivalent, category }: { equivalent: ComputedEquivalent; category: Category }) {
   const { setCo2e, setWarningNegaoctet } = useModalContext()
   return (
     <>

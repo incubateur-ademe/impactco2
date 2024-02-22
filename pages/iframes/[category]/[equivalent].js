@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
-import useDataContext from 'components/providers/DataProvider'
+import categories from 'data/categories.json'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Iframe from 'components/layout/Iframe'
 import Details from 'components/views/equivalent/Details'
 import Ecv from 'components/views/equivalent/Ecv'
@@ -8,16 +9,12 @@ import VisualizationSlider from 'components/views/equivalent/VisualizationSlider
 
 export default function Equivalent() {
   const { query } = useRouter()
-  const { equivalents, categories } = useDataContext()
 
   const equivalent = useMemo(
-    () => equivalents?.find((equivalent) => equivalent.slug === query.equivalent),
-    [query, equivalents]
+    () => computedEquivalents.find((equivalent) => equivalent.slug === query.equivalent),
+    [query]
   )
-  const category = useMemo(
-    () => categories?.find((category) => category.id === equivalent?.category),
-    [equivalent, categories]
-  )
+  const category = useMemo(() => categories?.find((category) => category.id === equivalent?.category), [equivalent])
 
   return equivalent && category ? (
     <Iframe>

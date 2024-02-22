@@ -1,6 +1,6 @@
 import React from 'react'
 import { Category } from 'types/category'
-import { Equivalent as EquivalentType } from 'types/equivalent'
+import { ComputedEquivalent } from 'types/equivalent'
 import categories from 'data/categories.json'
 import { computedEquivalents } from 'components/providers/equivalents'
 import Web from 'components/layout/Web'
@@ -9,7 +9,7 @@ import Ecv from 'components/views/equivalent/Ecv'
 import Text from 'components/views/equivalent/Text'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
-export default function Equivalent({ category, equivalent }: { category: Category; equivalent: EquivalentType }) {
+export default function Equivalent({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) {
   return (
     <Web
       title={equivalent.meta.title}
