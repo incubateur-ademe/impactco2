@@ -2,11 +2,11 @@ import classNames from 'classnames'
 import React from 'react'
 import styles from './Logo.module.css'
 
-const Logo = ({ right, withPadding }: { right?: boolean; withPadding?: boolean }) => {
+const Logo = ({ right, url, value }: { right?: boolean; url?: string; value: number }) => {
   return (
     <a
-      href='https://impactco2.fr'
-      className={classNames(right ? styles.reverseLogo : styles.logo, { [styles.padding]: withPadding })}
+      href={url || `https://impactco2.fr/comparateur?value=${value}`}
+      className={classNames(right ? styles.reverseLogo : styles.logo)}
       target='_blank'
       rel='noreferrer noopener'
       aria-label='Impact CO2'>

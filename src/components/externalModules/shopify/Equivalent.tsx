@@ -11,6 +11,7 @@ const Equivalent = ({
   comparisons,
   title,
   animated,
+  url,
   language,
 }: {
   className?: string
@@ -18,6 +19,7 @@ const Equivalent = ({
   comparisons: string[]
   title?: (unit: string, roundedValue: string, intValue: number) => ReactNode
   animated?: boolean
+  url?: string
   language?: Language
 }) => {
   const [toDisplay, setToDisplay] = useState(0)
@@ -51,7 +53,7 @@ const Equivalent = ({
       {title && title(unit, roundedValue, intValue)}
       <div className={styles.container}>
         <div className={styles.left}>
-          <Logo />
+          <Logo value={value} url={url} />
           <div className={styles.leftContent}>
             <div className={styles.value} data-testid='etiquette-value'>
               {roundedValue}

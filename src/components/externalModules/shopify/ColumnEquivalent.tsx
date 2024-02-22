@@ -24,7 +24,7 @@ const ColumnEquivalent = ({ baseValue, comparisons }: { baseValue: string; compa
             {unit} CO<sub>2</sub>e
           </div>
         </div>
-        <Logo right />
+        <Logo value={value} right />
       </div>
       <div className={baseStyles.rightColumn}>
         <div className={baseStyles.equalColumn}>

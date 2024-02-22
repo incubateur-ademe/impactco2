@@ -2,7 +2,7 @@
 
 name = "impact-co2"
 client_id = "a945e3134179506cbdd815c083b07f43"
-application_url = "https://collapse-hour-interaction-front.trycloudflare.com"
+application_url = "https://slides-pretty-arkansas-ceramic.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://collapse-hour-interaction-front.trycloudflare.com/auth/callback",
-  "https://collapse-hour-interaction-front.trycloudflare.com/auth/shopify/callback",
-  "https://collapse-hour-interaction-front.trycloudflare.com/api/auth/callback"
+  "https://slides-pretty-arkansas-ceramic.trycloudflare.com/auth/callback",
+  "https://slides-pretty-arkansas-ceramic.trycloudflare.com/auth/shopify/callback",
+  "https://slides-pretty-arkansas-ceramic.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

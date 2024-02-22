@@ -8,6 +8,7 @@
   color: var(--primary-50) !important;
   background-color: var(--primary-10) !important;
   box-shadow: none !important;
+  min-height: 4rem !important;
 
   &:hover {
     color: var(--primary-60) !important;
@@ -26,8 +27,4 @@
 .reverseLogo {
   border-left: 1px solid var(--primary-20) !important;
   border-radius: 0 8px 8px 0 !important;
-}
-
-.padding {
-  padding: 0.75rem !important;
 }

@@ -114,7 +114,7 @@ const Detector = ({ impact }: { impact: string }) => {
           [styles.left]: display.includes('left'),
         })}
         ref={etiquetteRef}>
-        <Logo withPadding />
+        <Logo value={value} />
         <div className={styles.simpleValue}>
           <SimpleValue value={value} comparison='random' />
         </div>
