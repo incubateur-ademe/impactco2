@@ -29,7 +29,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
   } = useParamContext()
   const suffixDivRef = useRef<HTMLDivElement>(null)
   const suffixButtonRef = useRef<HTMLButtonElement>(null)
-  const [suffixWidth, setSuffixWidth] = useState(0)
+  const [suffixStyle, setSuffixStyle] = useState({ width: '150px', paddingRight: 'calc(150px + 2rem' })
   const [overScreen, setOverScreen] = useState<OverScreenComparateur>()
   const params = useMemo(
     () =>
@@ -49,12 +49,12 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
       const extraWidth = window.screen.width < 700 ? (window.screen.width < 400 ? 100 : 150) : 200
       if (suffixButtonRef.current) {
         const { width } = suffixButtonRef.current.getBoundingClientRect()
-        setSuffixWidth(width + extraWidth)
+        setSuffixStyle({ width: `${width + extraWidth}px`, paddingRight: `calc(${width}px + 2rem)` })
       }
 
       if (suffixDivRef.current) {
         const { width } = suffixDivRef.current.getBoundingClientRect()
-        setSuffixWidth(width + extraWidth)
+        setSuffixStyle({ width: `${width + extraWidth}px`, paddingRight: `calc(${width}px + 2rem)` })
       }
     }
     onResize()
@@ -100,7 +100,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
               setBaseValue(value)
             }}
             type='number'
-            style={{ width: `${suffixWidth}px` }}
+            style={suffixStyle}
           />
           {comparedEquivalent ? (
             <button
