@@ -14,7 +14,7 @@ export default function Footer() {
             <div className={styles.gridOne}>
               <div className={styles.gridOneA}>
                 <div className={styles.logos}>
-                  <Signature noMargin noLink color='var(--primary-70)' />
+                  <Signature noMargin noLink color='var(--primary-50)' />
                 </div>
               </div>
               <div className={styles.gridOneB}>
