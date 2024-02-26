@@ -23,6 +23,7 @@ export default function ScreenshotWrapper2(props) {
         <>
           <br />
           <Signature />
+          <br />
         </>
       )}
     </Wrapper>
