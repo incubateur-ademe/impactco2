@@ -676,7 +676,7 @@
     "total": 1770,
     "default": false,
     "tile": false,
-    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2",
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
     "meta": {
       "title": "Émission de CO₂e lors d'un trajet en bus GNV",
       "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "

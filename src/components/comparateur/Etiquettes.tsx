@@ -25,7 +25,11 @@ const Etiquettes = () => {
   const [overScreen2, setOverScreen2] = useState<OverScreenEtiquette>()
   const overScreenValues = useMemo(() => overScreenEtiquetteValues(params), [params])
 
-  const { ref: ref1, takeScreenshot: takeScreenshot1 } = useScreenshot('etiquette-animée', 'Étiquette animée')
+  const {
+    ref: ref1,
+    takeScreenshot: takeScreenshot1,
+    isScreenshotting,
+  } = useScreenshot('etiquette-animée', 'Étiquette animée')
   const { ref: ref2, takeScreenshot: takeScreenshot2 } = useScreenshot('etiquette-statitique', 'Étiquette statitique')
 
   return (
@@ -46,7 +50,12 @@ const Etiquettes = () => {
         extraParams={params}
         customScreenshot={takeScreenshot1}>
         <div className={styles.simulatorContent}>
-          <Etiquette baseValue={(baseValue * weight * 1000).toString()} comparisons={etiquettes} animated ref={ref1} />
+          <Etiquette
+            baseValue={(baseValue * weight * 1000).toString()}
+            comparisons={etiquettes}
+            animated={!isScreenshotting}
+            ref={ref1}
+          />
         </div>
       </ShareableContent>
       <div className={styles.simulator}>
