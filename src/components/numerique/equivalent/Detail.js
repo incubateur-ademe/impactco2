@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { EquivalentValue } from 'types/equivalent'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
 import formatPercent from 'utils/formatPercent'
 import { MEDIA } from 'utils/styles'
@@ -55,12 +54,7 @@ const Value = styled.td`
 const Percent = styled.td`
   text-align: right;
 `
-
-type LabeledEquivalentValue = EquivalentValue & {
-  label: string
-}
-
-export default function Detail({ ecv, total }: { ecv: LabeledEquivalentValue[]; total: number }) {
+export default function Detail(props) {
   const [details, setDetails] = useState(false)
 
   const order = [
@@ -80,7 +74,7 @@ export default function Detail({ ecv, total }: { ecv: LabeledEquivalentValue[]; 
       {details && (
         <Wrapper>
           <tbody>
-            {ecv
+            {props.ecv
               .sort((a, b) => {
                 let res = a.value < b.value ? 1 : -1
                 if (a.label && b.label) {
@@ -88,10 +82,10 @@ export default function Detail({ ecv, total }: { ecv: LabeledEquivalentValue[]; 
                 }
                 return res
               })
-              .map((item: LabeledEquivalentValue) => (
+              .map((item) => (
                 <Item key={item.label}>
                   <Label>{item.label}</Label>
-                  <Percent>{formatPercent(item.value, total)} %</Percent>
+                  <Percent>{formatPercent(item.value, props.total)} %</Percent>
                   <Value>
                     <strong>{formatNumberPrecision(item.value)}</strong> CO
                     <sub>2</sub>e
@@ -104,7 +98,7 @@ export default function Detail({ ecv, total }: { ecv: LabeledEquivalentValue[]; 
               </Label>
               <Percent />
               <Value>
-                <strong>{formatNumberPrecision(total)}</strong> CO
+                <strong>{formatNumberPrecision(props.total)}</strong> CO
                 <sub>2</sub>e
               </Value>
             </Item>
