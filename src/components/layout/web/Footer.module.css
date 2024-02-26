@@ -12,7 +12,8 @@
       padding-right: 1.5rem;
     }
     a.last {
-      border: none;
+      border-right: none;
+      border-left: 1px solid var(--neutral-20);
     }
     a:hover {
       color: var(--neutral-80);
