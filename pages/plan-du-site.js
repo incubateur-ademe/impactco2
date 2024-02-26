@@ -88,17 +88,13 @@ export default function PlanDuSite() {
               </Link>
             </Level1>
             <Level1>
-              <Link
-                href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                title='Diffuser les ressources'
-                target='_blank'
-                rel='noreferrer noopener'>
-                Diffuser les ressources
+              <Link href='/guide-utilisation' title='Comment ca marche ?'>
+                Comment ca marche ?
               </Link>
             </Level1>
             <Level1>
-              <Link href='/integration' title='Intégrer les ressources'>
-                Intégrer les ressources
+              <Link href='/questions-frequentes' title='Questions fréquentes'>
+                Questions fréquentes
               </Link>
             </Level1>
             <Level1>

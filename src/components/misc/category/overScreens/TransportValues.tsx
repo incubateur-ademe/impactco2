@@ -25,10 +25,10 @@ export const overScreenTransportValues: (
         <TransportIntegrate type={type} tracking={tracking} />
         <Space />
         <Card
-          href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+          href='/guide-utilisation'
           title='Utiliser cette ressource'
-          description='Consultez le kit de diffusion impact CO₂ pour vous emparer facilement du simulateur et l’intégrer à votre publication.'
-          link='Kit de diffusion'
+          description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
+          link="Guide d'utilisation"
           image='/images/laptop.png'
           tracking={category.name}
         />

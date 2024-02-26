@@ -8,10 +8,7 @@ describe('ByArticle - Composant de la Home qui affiche du texte et des cards', (
     // When
     renderWithWrapper(<ByArticle />)
     // Then
-    expect(await screen.findByTestId('byArticleFaq')).toHaveTextContent('Foire aux Questions')
-    expect(await screen.findByTestId('byArticleFaq')).toHaveAttribute(
-      'href',
-      'https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
-    )
+    expect(await screen.findByTestId('byArticleFaq')).toHaveTextContent('Questions fréquentes')
+    expect(await screen.findByTestId('byArticleFaq')).toHaveAttribute('href', '/questions-frequentes')
   })
 })

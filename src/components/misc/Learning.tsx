@@ -246,10 +246,10 @@ export default function Learning({
         <SectionWideContent $size='xs' $noGutter>
           <Cards>
             <Card
-              href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+              href='/guide-utilisation'
               title='Utiliser cette ressource'
               description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
-              link='Kit de diffusion'
+              link="Guide d'utilisation"
               image='/images/laptop.png'
               tracking={fromLabel || category?.name}
             />

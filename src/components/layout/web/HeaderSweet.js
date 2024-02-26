@@ -72,17 +72,13 @@ export default function HeaderSweet() {
                 </Link>
               </NavLink>
               <NavLink>
-                <Link
-                  href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                  title='Diffuser les ressources'
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  Diffuser les ressources
+                <Link href='/guide-utilisation' title='Comment ca marche ?'>
+                  Comment ca marche ?
                 </Link>
               </NavLink>
               <NavLink>
-                <Link href='/integration' title='Intégrer les ressources'>
-                  Intégrer les ressources
+                <Link href='/questions-frequentes' title='Questions fréquentes'>
+                  Questions fréquentes
                 </Link>
               </NavLink>
             </NavLinksMobile>
@@ -96,17 +92,13 @@ export default function HeaderSweet() {
                 </Link>
               </NavLink>
               <NavLink>
-                <Link
-                  href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                  title='Diffuser les ressources'
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  Diffuser les ressources
+                <Link href='/guide-utilisation' title='Comment ca marche ?'>
+                  Comment ca marche ?
                 </Link>
               </NavLink>
               <NavLink>
-                <Link href='/integration' title='Intégrer les ressources'>
-                  Intégrer les ressources
+                <Link href='/questions-frequentes' title='Questions fréquentes'>
+                  Questions fréquentes
                 </Link>
               </NavLink>
             </NavLinksDesktop>
