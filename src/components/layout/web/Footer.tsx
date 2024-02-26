@@ -53,9 +53,7 @@ export default function Footer() {
                       title='Nous contacter'>
                       Nous contacter
                     </Link>
-                    <Link href={'#'} title=''>
-                      &nbsp;
-                    </Link>
+                    <div>&nbsp;</div>
                   </div>
                 </div>
               </div>
