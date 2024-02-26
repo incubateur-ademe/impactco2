@@ -111,11 +111,21 @@ export default function Footer() {
             </div>
             <div className={styles.footerLink}>
               <Link
-                className={`${styles.last} ${styles.githubLink}`}
+                className={styles.githubLink}
                 href='https://github.com/incubateur-ademe/impactco2'
                 title='Code source'
                 target='_blank'>
                 Code source
+                <Icon iconId={'open'} />
+              </Link>
+            </div>
+            <div className={styles.footerLink}>
+              <Link
+                className={styles.githubLink}
+                href='https://agirpourlatransition.ademe.fr'
+                title='Agir pour la transition'
+                target='_blank'>
+                Agir pour la transition
                 <Icon iconId={'open'} />
               </Link>
             </div>
