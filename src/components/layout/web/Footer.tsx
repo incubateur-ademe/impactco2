@@ -53,6 +53,9 @@ export default function Footer() {
                       title='Nous contacter'>
                       Nous contacter
                     </Link>
+                    <Link href={'#'} title=''>
+                      &nbsp;
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -64,10 +67,17 @@ export default function Footer() {
                   <div className={styles.linkContainer}>
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                      title='Kit de diffusion'
+                      title='Guide d’utilisation'
                       rel='noreferrer noopener'
                       target='_blank'>
-                      Kit de diffusion
+                      Guide d’utilisation
+                    </Link>
+                    <Link
+                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Questions-fr-quentes-090ceb3f28ef473d9c8e9d13b61e1332'
+                      title='Questions fréquentes'
+                      rel='noreferrer noopener'
+                      target='_blank'>
+                      Questions fréquentes
                     </Link>
                     <Link href='/api-doc' title='API Impact CO2'>
                       API Impact CO2
