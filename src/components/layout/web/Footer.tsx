@@ -22,7 +22,9 @@ export default function Footer() {
                   <strong>
                     Impact CO<sub>2</sub>
                   </strong>
-                  <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.</p>
+                  <p className={styles.neutral50}>
+                    Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.
+                  </p>
                   <div className={styles.followNews}>
                     <Link
                       href='https://fr.linkedin.com/showcase/accelerateurdelatransitionecologique-ademe/'

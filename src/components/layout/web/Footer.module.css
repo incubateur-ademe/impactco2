@@ -28,6 +28,10 @@
   }
 }
 
+.neutral50 {
+  color: var(--neutral-50);
+}
+
 .linkContainer {
   display: flex;
   flex-direction: column;
