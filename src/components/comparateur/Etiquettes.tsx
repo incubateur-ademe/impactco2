@@ -29,8 +29,8 @@ const Etiquettes = () => {
     ref: ref1,
     takeScreenshot: takeScreenshot1,
     isScreenshotting,
-  } = useScreenshot('etiquette-animée', 'Étiquette animée')
-  const { ref: ref2, takeScreenshot: takeScreenshot2 } = useScreenshot('etiquette-statitique', 'Étiquette statitique')
+  } = useScreenshot('etiquette-animée', 'Étiquette')
+  const { ref: ref2, takeScreenshot: takeScreenshot2 } = useScreenshot('etiquette-statique', 'Étiquette')
 
   return (
     <>
