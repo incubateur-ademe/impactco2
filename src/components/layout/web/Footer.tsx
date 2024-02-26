@@ -65,22 +65,20 @@ export default function Footer() {
                     <strong>Ressources</strong>
                   </div>
                   <div className={styles.linkContainer}>
-                    <div className={styles.linkOptim}>
-                      <Link
-                        href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                        title='Guide d’utilisation'
-                        rel='noreferrer noopener'
-                        target='_blank'>
-                        Guide d’utilisation
-                      </Link>
-                      <Link
-                        href='https://accelerateur-transition-ecologique-ademe.notion.site/Questions-fr-quentes-090ceb3f28ef473d9c8e9d13b61e1332'
-                        title='Questions fréquentes'
-                        rel='noreferrer noopener'
-                        target='_blank'>
-                        Questions fréquentes
-                      </Link>
-                    </div>
+                    <Link
+                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                      title='Guide d’utilisation'
+                      rel='noreferrer noopener'
+                      target='_blank'>
+                      Guide d’utilisation
+                    </Link>
+                    <Link
+                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Questions-fr-quentes-090ceb3f28ef473d9c8e9d13b61e1332'
+                      title='Questions fréquentes'
+                      rel='noreferrer noopener'
+                      target='_blank'>
+                      Questions fréquentes
+                    </Link>
                     <Link href='/api-doc' title='API Impact CO2'>
                       API Impact CO2
                     </Link>

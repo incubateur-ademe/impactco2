@@ -13,7 +13,6 @@
     }
     a.last {
       border-right: none;
-      border-left: 1px solid var(--neutral-20);
     }
     a:hover {
       color: var(--neutral-80);
@@ -43,20 +42,6 @@
   }
   a:hover {
     text-decoration: underline;
-  }
-}
-
-.linkOptim {
-  display: flex;
-  flex-direction: column;
-  > a {
-    margin-right: 1rem;
-  }
-  @media screen and (max-width: 72em) {
-    flex-direction: row;
-  }
-  @media screen and (max-width: 48em) {
-    flex-direction: column;
   }
 }
 
@@ -164,7 +149,7 @@
   display: grid;
   grid-column: span 2;
   @media screen and (max-width: 72em) {
-    grid-column: span 2;
+    grid-column: span 3;
   }
   @media screen and (max-width: 48em) {
     border-top: 1px solid var(--neutral-20);
