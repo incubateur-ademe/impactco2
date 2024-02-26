@@ -46,6 +46,20 @@
   }
 }
 
+.linkOptim {
+  display: flex;
+  flex-direction: column;
+  > a {
+    margin-right: 1rem;
+  }
+  @media screen and (max-width: 72em) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: 48em) {
+    flex-direction: column;
+  }
+}
+
 .grid {
   border-top: 1px solid var(--neutral-20);
   display: grid;
