@@ -12,12 +12,12 @@ export default function Footer() {
         <SectionWideContent>
           <div className={styles.internalContainer}>
             <div className={styles.intro}>
-              <div className={styles.gridOneA}>
+              <div>
                 <div className={styles.logos}>
                   <Signature noMargin noLink color='var(--primary-50)' />
                 </div>
               </div>
-              <div className={styles.gridOneB}>
+              <div>
                 <div className={styles.footerExplain}>
                   <strong>
                     Impact CO<sub>2</sub>
