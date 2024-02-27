@@ -67,7 +67,10 @@
 
 .outro {
   display: flex;
-  margin-left: 3rem;
+  margin-left: 5rem;
+  @media screen and (max-width: 80em) {
+    margin-left: 3rem;
+  }
   @media screen and (max-width: 72em) {
     flex-direction: column;
   }
@@ -81,7 +84,10 @@
 }
 
 .ressources {
-  margin-left: 2rem;
+  margin-left: 5rem;
+  @media screen and (max-width: 80em) {
+    margin-left: 2rem;
+  }
   @media screen and (max-width: 72em) {
     margin-left: 0;
   }
@@ -121,10 +127,13 @@
 
 .footerExplain {
   max-width: 25rem;
-  margin-left: 2rem;
+  margin-left: 5rem;
   p {
     margin-bottom: 0;
     margin-top: 0.5rem;
+  }
+  @media screen and (max-width: 80em) {
+    margin-left: 2rem;
   }
   @media screen and (max-width: 72em) {
     margin: 1.5rem 0 1.5rem 0;
