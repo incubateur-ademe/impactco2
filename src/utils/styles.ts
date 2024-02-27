@@ -197,11 +197,53 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .notion-toggle {
-    margin-bottom: 2rem;
+    padding: 0;
+    margin: 0;
+    border-bottom: solid 1px var(--neutral-20);
+
     summary {
-      .notion-h {
-        display: inline;
+      position: relative;
+
+      &::marker {
+        content: '';
+      }
+
+      &::after {
+        content: url(/open-icon.png);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 6.25rem;
+        border: 1px solid var(--primary-30);
+        color: var(--primary-50);
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      &:hover {
+        &::after {
+          background-color: var(--primary-10);
+        }
       }
     }
-  }  
+
+    h3 {
+      margin: 0;
+      padding: 1.25rem 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 2rem; 
+      padding-right: 2rem;
+    }
+  }
+
+  .notion-toggle[open] {
+    summary::after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
 `
