@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import { Section, SectionWideContent } from 'components/base/Section'
 import { Icon } from 'components/osezchanger/icons'
 import Signature from 'components/screenshot/Signature'
@@ -88,54 +87,46 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className={styles.gridlinks}>
-            <div className={styles.footerLink}>
+          <ul className={styles.footerLinks}>
+            <li className={styles.footerLink}>
               <Link className={styles.first} href='/plan-du-site' title='Plan du site'>
                 Plan du site
               </Link>
-            </div>
-            <div className={styles.footerLink}>
+            </li>
+            <li className={styles.footerLink}>
               <Link href='/mentions-legales' title='Mentions légales'>
                 Mentions légales
               </Link>
-            </div>
-            <div className={styles.footerLink}>
+            </li>
+            <li className={styles.footerLink}>
               <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
                 Politique de confidentialité
               </Link>
-            </div>
-            <div className={styles.footerLink}>
+            </li>
+            <li className={styles.footerLink}>
               <Link href='/accessibilite' title='Accessibilité (non conforme)'>
                 Accessibilité : non conforme
               </Link>
-            </div>
-            <div className={styles.footerLink}>
-              <Link
-                className={styles.githubLink}
-                href='https://github.com/incubateur-ademe/impactco2'
-                title='Code source'
-                target='_blank'>
+            </li>
+            <li className={styles.footerLink}>
+              <Link href='https://github.com/incubateur-ademe/impactco2' title='Code source' target='_blank'>
                 Code source
                 <Icon iconId={'open'} />
               </Link>
-            </div>
-            <div className={styles.footerLink}>
-              <Link
-                className={styles.githubLink}
-                href='https://agirpourlatransition.ademe.fr'
-                title='Agir pour la transition'
-                target='_blank'>
+            </li>
+            <li className={styles.footerLink}>
+              <Link href='https://agirpourlatransition.ademe.fr' title='Agir pour la transition' target='_blank'>
                 Agir pour la transition
                 <Icon iconId={'open'} />
               </Link>
-            </div>
-            <div className={styles.footerLink}>
+            </li>
+            <li className={styles.footerLink}>
               <Link className={styles.last} href='https://beta.gouv.fr/' title='beta.gouv.fr' target='_blank'>
                 beta.gouv.fr
                 <Icon iconId={'open'} />
               </Link>
-            </div>
-          </div>
+            </li>
+          </ul>
         </SectionWideContent>
       </Section>
     </div>
