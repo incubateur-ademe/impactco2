@@ -121,7 +121,6 @@ const Suggestion = ({ from, simulatorName }: { from: string; simulatorName: stri
                   setSelected={setSuggestionType}
                 />
                 <RadioInput
-                  rendez-vous
                   name='suggestionType'
                   required
                   label='Une idée'
