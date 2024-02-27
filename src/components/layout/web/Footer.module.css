@@ -67,11 +67,13 @@
 
 .outro {
   display: flex;
+  margin-left: 3rem;
   @media screen and (max-width: 72em) {
     flex-direction: column;
   }
   @media screen and (max-width: 48em) {
     flex-direction: row;
+    margin-left: 0;
   }
   @media screen and (max-width: 36em) {
     flex-direction: column;
@@ -119,7 +121,7 @@
 
 .footerExplain {
   max-width: 25rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
   p {
     margin-bottom: 0;
     margin-top: 0.5rem;
