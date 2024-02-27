@@ -69,29 +69,39 @@ const StyledEmoji = styled(Emoji)`
   }
 `
 
-type BarType = { category: CategoryType; equivalent: EquivalentType; engine: Engine; name: string; total: number }
-
-export default function Bar(props: BarType) {
+export default function Bar({
+  category,
+  equivalent,
+  engine,
+  name,
+  total,
+}: {
+  category: CategoryType
+  equivalent: EquivalentType
+  engine: Engine
+  name: string
+  total: number
+}) {
   return (
     <Wrapper>
       <Top>
-        <Number>{formatNumber(props.total)}</Number>{' '}
+        <Number>{formatNumber(total)}</Number>{' '}
         <Unit>
           g{' '}
           <Big>
             CO<sub>2</sub>
           </Big>
           e{' '}
-          {props.equivalent.unit || props.category.unit ? (
-            <>/ {props.equivalent.unit || props.category.unit}</>
-          ) : props.engine.evaluate(`${props.name} . durée`).nodeValue === 60 ? (
+          {equivalent.unit || category.unit ? (
+            <>/ {equivalent.unit || category.unit}</>
+          ) : engine.evaluate(`${name} . durée`).nodeValue === 60 ? (
             '/ heure'
           ) : (
-            <>/ {props.engine.evaluate(`${props.name} . durée`).nodeValue} minutes</>
+            <>/ {engine.evaluate(`${name} . durée`).nodeValue} minutes</>
           )}
         </Unit>
       </Top>
-      <StyledEmoji>{props.equivalent.emoji}</StyledEmoji>
+      <StyledEmoji>{equivalent.emoji}</StyledEmoji>
     </Wrapper>
   )
 }
