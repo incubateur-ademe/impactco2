@@ -3,9 +3,7 @@
     "name": "Livre[s] de poche",
     "id": 20587,
     "slug": "livredepoche",
-    "synonyms": [
-      "lire"
-    ],
+    "synonyms": ["lire"],
     "emoji": "📘",
     "category": 11,
     "default": true,

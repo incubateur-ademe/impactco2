@@ -6,7 +6,6 @@ import { Section, SectionWideContent } from 'components/base/Section'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Category from 'components/misc/Category'
-import MobileAction from 'components/osezchanger/MobileAction'
 
 export default function CategoryPage({ category }: { category: CategoryType }) {
   return (
@@ -20,7 +19,6 @@ export default function CategoryPage({ category }: { category: CategoryType }) {
       }}>
       <Section $withoutPadding>
         <Container>
-          {category.slug === 'habillement' && <MobileAction />}
           <Content>
             <Category category={category} />
           </Content>
