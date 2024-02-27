@@ -8,7 +8,8 @@ export const Container = styled.div<{ $iframe?: boolean; $noBorder?: boolean }>`
   border-radius: 16px;
   flex: 1;
   margin: auto;
-  padding: ${({ $iframe }) => ($iframe ? '1.5rem 1.5rem 1rem 1.5rem' : '1.5rem')};
+  padding: ${({ $noBorder, $iframe }) => ($noBorder ? '0' : $iframe ? '1.5rem 1.5rem 1rem 1.5rem' : '1.5rem')};
+  ${({ $noBorder }) => $noBorder && 'max-width: 800px;'}
   position: relative;
   ${({ $noBorder, $iframe }) =>
     $noBorder
@@ -20,7 +21,7 @@ export const Container = styled.div<{ $iframe?: boolean; $noBorder?: boolean }>`
 // Padding is mandatory for screenshot
 export const Logos = styled.div`
   margin-top: 1.5rem;
-  padmding-bottom: 2rem;
+  padding-bottom: 2rem;
 `
 
 export const IFrameLogos = styled.div`
@@ -35,7 +36,6 @@ export const IFrameLogos = styled.div`
 `
 
 export const Screenshotable = styled.div<{ $theme?: 'color'; $noBorder?: boolean }>`
-  ${({ $noBorder }) => $noBorder && 'margin: 0 -1.5rem; padding: 0 1.5rem;'}
   background-color: ${({ $theme }) => ($theme ? 'var(--secondary-10)' : 'var(--neutral-00)')};
   border-radius: 16px;
 `

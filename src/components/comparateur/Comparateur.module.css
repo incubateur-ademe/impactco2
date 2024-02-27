@@ -6,7 +6,6 @@
 
 .topContainer {
   position: relative;
-  margin: -1.5rem -1.5rem 0 -1.5rem;
   border-radius: 16px 16px 0px 0px;
   border: 1px solid var(--secondary-20);
   background: var(--secondary-10);
@@ -14,7 +13,6 @@
 
 .bottomContainerIframe,
 .bottomContainer {
-  margin: 0 -1.5rem;
   border-radius: 0px 0px 16px 16px;
   border: 1px solid var(--neutral-20);
   border-bottom: none;
