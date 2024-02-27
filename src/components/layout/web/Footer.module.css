@@ -49,7 +49,7 @@
   }
 }
 
-.grid {
+.internalContainer {
   border-top: 1px solid var(--neutral-20);
   display: flex;
   padding: 3rem 0 3rem 0;
@@ -58,14 +58,14 @@
   }
 }
 
-.gridOne {
+.intro {
   display: flex;
   @media screen and (max-width: 72em) {
     flex-direction: column;
   }
 }
 
-.gridTwo {
+.outro {
   display: flex;
   @media screen and (max-width: 72em) {
     flex-direction: column;
@@ -126,6 +126,10 @@
   }
   @media screen and (max-width: 72em) {
     margin: 1.5rem 0 1.5rem 0;
+  }
+  @media screen and (max-width: 48em) {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--neutral-20);
   }
 }
 

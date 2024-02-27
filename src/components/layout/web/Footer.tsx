@@ -10,8 +10,8 @@ export default function Footer() {
     <div className={styles.wrapper} id='footer'>
       <Section $withoutPadding>
         <SectionWideContent>
-          <div className={styles.grid}>
-            <div className={styles.gridOne}>
+          <div className={styles.internalContainer}>
+            <div className={styles.intro}>
               <div className={styles.gridOneA}>
                 <div className={styles.logos}>
                   <Signature noMargin noLink color='var(--primary-50)' />
@@ -38,8 +38,8 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className={styles.gridTwo}>
-              <div className={styles.gridTwoA}>
+            <div className={styles.outro}>
+              <div>
                 <div>
                   <div>
                     <strong>Liens utiles</strong>
