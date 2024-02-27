@@ -4,7 +4,7 @@ import Notion from 'components/Notion/Notion'
 import { getNotionContentProps } from 'components/Notion/utils'
 import Web from 'components/layout/Web'
 
-const title = 'FAQ'
+const title = 'Questions fréquentes'
 export async function getStaticProps() {
   return getNotionContentProps('090ceb3f28ef473d9c8e9d13b61e1332')
 }

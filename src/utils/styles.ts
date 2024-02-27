@@ -152,6 +152,50 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.25rem;
   }
 
+  .notion {
+    font-family: "Marianne", Arial, sans-serif;
+  }
+
+  .notion-page {
+    padding: 0;
+    max-width: 40rem;
+    width: 100%;
+  }
+
+  .notion-title {
+    color: var(--neutral-80);
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .notion-h {
+    margin-bottom: 1.5rem;
+    padding: 0;
+  }
+
+  .notion-h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.75rem; 
+  }
+
+  .notion-text {
+    color: var(--neutral-70);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .notion-link {
+    opacity: 1;
+    border: none;
+    text-decoration: underline;
+  }
+
   .notion-toggle {
     margin-bottom: 2rem;
     summary {

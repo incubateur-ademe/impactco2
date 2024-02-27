@@ -1,9 +1,12 @@
-import Link, { LinkProps } from 'next/link'
+import { LinkProps } from 'next/link'
 import { ExtendedRecordMap } from 'notion-types'
 import React, { ReactNode } from 'react'
 import { NotionRenderer } from 'react-notion-x'
+import { Collection } from 'react-notion-x/build/third-party/collection'
 import 'react-notion-x/src/styles.css'
+import Link from 'components/base/buttons/Link'
 import Contenu from 'components/contenu/Contenu'
+import styles from './Notion.module.css'
 
 const Notion = ({ title, recordMap }: { title: string; recordMap: ExtendedRecordMap }) => {
   return (
@@ -18,7 +21,7 @@ const Notion = ({ title, recordMap }: { title: string; recordMap: ExtendedRecord
             if (href.toString().startsWith('https://sources/')) {
               return (
                 <button
-                  className='notion-link'
+                  className={styles.buttonRef}
                   onClick={() => {
                     const block = document.getElementsByClassName(
                       `notion-block-${href.toString().replace('https://sources/', '')}`
@@ -27,16 +30,18 @@ const Notion = ({ title, recordMap }: { title: string; recordMap: ExtendedRecord
                       block[0].scrollIntoView({ behavior: 'smooth' })
                     }
                   }}>
-                  {children}
+                  ({children})
                 </button>
               )
             }
             return (
+              // @ts-expect-error: notion type error
               <Link href={href} {...props} target='_blank' rel='noopener noreferrer'>
                 {children}
               </Link>
             )
           },
+          Collection,
         }}
       />
     </Contenu>
