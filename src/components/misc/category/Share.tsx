@@ -82,14 +82,18 @@ const Share = ({
           <Icon iconId='linkedin' />
         </LinkedinShareButton>
       </Buttons>
-      {category && (
+      {(category || path === 'comparateur') && (
         <Meta>
-          <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />
+          <Image src={`/meta/${category ? category.slug : path}.png`} width={728} height={382.2} alt='' />
           <div>
             <p>
-              <b>{category.meta.title}</b>
+              <b>{category ? category.meta.title : 'Comparateur carbone'}</b>
             </p>
-            <p className='text-sm'>{category.meta.description}</p>
+            <p className='text-sm'>
+              {category
+                ? category.meta.description
+                : 'Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.'}
+            </p>
           </div>
         </Meta>
       )}
