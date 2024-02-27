@@ -47,20 +47,10 @@
 
 .grid {
   border-top: 1px solid var(--neutral-20);
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
   padding: 3rem 0 3rem 0;
-  @media screen and (max-width: 72em) {
-    padding: 3rem 0 1rem 0;
-  }
-  @media screen and (max-width: 60em) {
-    padding: 3rem 0 1rem 0;
-  }
   @media screen and (max-width: 48em) {
-    padding: 3rem 0 0rem 0;
-  }
-  @media screen and (max-width: 36em) {
-    padding: 3rem 0 0rem 0;
+    flex-direction: column;
   }
 }
 
@@ -193,12 +183,16 @@
 
 .footerExplain {
   max-width: 25rem;
+  margin-left: 1rem;
   p {
     margin-bottom: 0;
     margin-top: 0.5rem;
   }
   @media screen and (max-width: 36em) {
     margin: 1.5rem 0 1.5rem 0;
+  }
+  @media screen and (max-width: 72em) {
+    margin-left: 0;
   }
 }
 
