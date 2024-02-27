@@ -59,7 +59,7 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              <div className={styles.gridTwoB}>
+              <div className={styles.ressources}>
                 <div>
                   <div>
                     <strong>Ressources</strong>
