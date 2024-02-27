@@ -231,13 +231,30 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
 
+    .notion-toggle {
+      summary {
+        &::marker {
+          content: unset;
+        }
+        &::after {
+          content: '';
+          border: none;
+          background-color: transparent !important; 
+        }
+      }
+    }
+
+    h1,
+    h2,
     h3 {
       margin: 0;
-      padding: 1.25rem 0;
+      padding: 1.25rem 2rem 1.25rem 0;
+    }
+
+    h3 {
       font-size: 1.5rem;
       font-weight: 700;
       line-height: 2rem; 
-      padding-right: 2rem;
     }
   }
 
@@ -245,5 +262,21 @@ export const GlobalStyle = createGlobalStyle`
     summary::after {
       transform: translateY(-50%) rotate(45deg);
     }
+  }
+
+  .notion-callout {
+    width: fit-content;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 0.25rem;
+    border: 1px solid var(--neutral-20);
+    background: var(--neutral-10);
+    padding: 0.25rem 0.5rem;
+
+    color: var(--neutral-60);
+    font-family: Marianne;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
   }
 `

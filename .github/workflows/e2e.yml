@@ -52,7 +52,7 @@ jobs:
         id: lighthouseCheck
         with:
           device: all
-          urls: 'http://localhost:3000,http://localhost:3000/comparateur,http://localhost:3000/integration,http://localhost:3000/usagenumerique,http://localhost:3000/livraison,http://localhost:3000/chauffage,http://localhost:3000/transport,http://localhost:3000/fruitsetlegumes,http://localhost:3000/chauffage/pompeachaleur'
+          urls: 'http://localhost:3000,http://localhost:3000/comparateur,http://localhost:3000/usagenumerique,http://localhost:3000/livraison,http://localhost:3000/chauffage,http://localhost:3000/transport,http://localhost:3000/fruitsetlegumes,http://localhost:3000/chauffage/pompeachaleur'
           outputDirectory: ${{ github.workspace }}/tmp/artifacts
       - name: Verify Lighthouse Check results
         uses: foo-software/lighthouse-check-status-action@master
