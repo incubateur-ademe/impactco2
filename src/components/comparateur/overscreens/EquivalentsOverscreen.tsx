@@ -19,42 +19,42 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState<ComputedEquivalent[]>([])
   const [fuse, setFuse] = useState<Fuse<ComputedEquivalent> | null>(null)
+
   useEffect(() => {
-    if (computedEquivalents) {
-      setFuse(
-        new Fuse(computedEquivalents, {
-          keys: [
-            {
-              name: 'name',
-              weight: 1,
-            },
-            {
-              name: 'slug',
-              weight: 0.7,
-            },
-            {
-              name: 'subtitle',
-              weight: 0.4,
-            },
-            {
-              name: 'synonyms',
-              weight: 0.2,
-            },
-          ],
-          threshold: 0.3,
-          ignoreLocation: true,
-        })
-      )
-    }
-  }, [equivalents])
+    setFuse(
+      new Fuse(computedEquivalents, {
+        keys: [
+          {
+            name: 'name',
+            weight: 1,
+          },
+          {
+            name: 'slug',
+            weight: 0.7,
+          },
+          {
+            name: 'subtitle',
+            weight: 0.4,
+          },
+          {
+            name: 'synonyms',
+            weight: 0.2,
+          },
+        ],
+        threshold: 0.3,
+        ignoreLocation: true,
+      })
+    )
+  }, [])
 
   useEffect(() => {
     setResults(
       fuse && search.length > 0
-        ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
+        ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map((props) => props.item)
         : computedEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
     )
   }, [search, fuse])
+
   return (
     <>
       <div className={styles.header}>
