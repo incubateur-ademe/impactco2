@@ -1,134 +1,93 @@
 import Link from 'next/link'
-import { Section, SectionWideContent } from 'components/base/Section'
+import { Section } from 'components/base/Section'
 import { Icon } from 'components/osezchanger/icons'
 import Signature from 'components/screenshot/Signature'
 import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
-    <div className={styles.wrapper} id='footer'>
-      <Section $withoutPadding>
-        <SectionWideContent>
-          <div className={styles.internalContainer}>
-            <div className={styles.intro}>
-              <div>
-                <div className={styles.logos}>
-                  <Signature noMargin noLink color='var(--primary-50)' />
-                </div>
-              </div>
-              <div>
-                <div className={styles.footerExplain}>
-                  <strong>
-                    Impact CO<sub>2</sub>
-                  </strong>
-                  <p className={styles.neutral50}>
-                    Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.
-                  </p>
-                  <div className={styles.followNews}>
-                    <Link
-                      href='https://fr.linkedin.com/showcase/accelerateurdelatransitionecologique-ademe/'
-                      title='LinkedIn'
-                      rel='noreferrer noopener'
-                      target='_blank'>
-                      Suivre nos actualités sur LinkedIn
-                    </Link>
-                    <Icon iconId={'open'} />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.outro}>
-              <div>
-                <div>
-                  <div>
-                    <strong>Liens utiles</strong>
-                  </div>
-                  <div className={styles.linkContainer}>
-                    <Link href='/stats' title='Statistiques'>
-                      Statistiques
-                    </Link>
-                    <Link
-                      href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                      target='_blank'
-                      rel='noreferrer noopener'
-                      title='Nous contacter'>
-                      Nous contacter
-                    </Link>
-                    <div>&nbsp;</div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.ressources}>
-                <div>
-                  <div>
-                    <strong>Ressources</strong>
-                  </div>
-                  <div className={styles.linkContainer}>
-                    <Link
-                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                      title='Guide d’utilisation'
-                      rel='noreferrer noopener'
-                      target='_blank'>
-                      Guide d’utilisation
-                    </Link>
-                    <Link
-                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Questions-fr-quentes-090ceb3f28ef473d9c8e9d13b61e1332'
-                      title='Questions fréquentes'
-                      rel='noreferrer noopener'
-                      target='_blank'>
-                      Questions fréquentes
-                    </Link>
-                    <Link href='/api-doc' title='API Impact CO2'>
-                      API Impact CO2
-                    </Link>
-                  </div>
-                </div>
-              </div>
+    <Section $withoutPadding id='footer'>
+      <div className={styles.internalContainer}>
+        <Signature noMargin noLink />
+        <div className={styles.footerExplain}>
+          <strong>
+            Impact CO<sub>2</sub>
+          </strong>
+          <p className={styles.neutral50}>
+            Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.
+          </p>
+          <Link
+            className={styles.followNews}
+            href='https://fr.linkedin.com/showcase/accelerateurdelatransitionecologique-ademe/'
+            title='LinkedIn'
+            rel='noreferrer noopener'
+            target='_blank'>
+            Suivre nos actualités sur LinkedIn
+            <Icon iconId={'open'} />
+          </Link>
+        </div>
+        <div className={styles.topLinks}>
+          <div>
+            <strong>Liens utiles</strong>
+            <div className={styles.linkContainer}>
+              <Link href='/stats'>Statistiques</Link>
+              <Link href='/rendez-vous?fromLabel=frooter'>Nous contacter</Link>
             </div>
           </div>
-
-          <ul className={styles.footerLinks}>
-            <li className={styles.footerLink}>
-              <Link className={styles.first} href='/plan-du-site' title='Plan du site'>
-                Plan du site
+          <div>
+            <strong>Ressources</strong>
+            <div className={styles.linkContainer}>
+              <Link
+                href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                rel='noreferrer noopener'
+                target='_blank'>
+                Guide d’utilisation
               </Link>
-            </li>
-            <li className={styles.footerLink}>
-              <Link href='/mentions-legales' title='Mentions légales'>
-                Mentions légales
+              <Link
+                href='https://accelerateur-transition-ecologique-ademe.notion.site/Questions-fr-quentes-090ceb3f28ef473d9c8e9d13b61e1332'
+                rel='noreferrer noopener'
+                target='_blank'>
+                Questions fréquentes
               </Link>
-            </li>
-            <li className={styles.footerLink}>
-              <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
-                Politique de confidentialité
-              </Link>
-            </li>
-            <li className={styles.footerLink}>
-              <Link href='/accessibilite' title='Accessibilité (non conforme)'>
-                Accessibilité : non conforme
-              </Link>
-            </li>
-            <li className={styles.footerLink}>
-              <Link href='https://github.com/incubateur-ademe/impactco2' title='Code source' target='_blank'>
-                Code source
-                <Icon iconId={'open'} />
-              </Link>
-            </li>
-            <li className={styles.footerLink}>
-              <Link href='https://agirpourlatransition.ademe.fr' title='Agir pour la transition' target='_blank'>
-                Agir pour la transition
-                <Icon iconId={'open'} />
-              </Link>
-            </li>
-            <li className={styles.footerLink}>
-              <Link className={styles.last} href='https://beta.gouv.fr/' title='beta.gouv.fr' target='_blank'>
-                beta.gouv.fr
-                <Icon iconId={'open'} />
-              </Link>
-            </li>
-          </ul>
-        </SectionWideContent>
-      </Section>
-    </div>
+              <Link href='/api-doc'>API Impact CO2</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.bottomLinks}>
+        <Link className={styles.bottomLink} href='/plan-du-site'>
+          Plan du site
+        </Link>
+        <Link className={styles.bottomLink} href='/mentions-legales'>
+          Mentions légales
+        </Link>
+        <Link className={styles.bottomLink} href='/politique-de-confidentialite'>
+          Politique de confidentialité
+        </Link>
+        <Link className={styles.bottomLink} href='/accessibilite'>
+          Accessibilité : non conforme
+        </Link>
+        <Link
+          className={styles.bottomLink}
+          href='https://github.com/incubateur-ademe/impactco2'
+          target='_blank'
+          rel='noreferrer noopener'>
+          Code source
+          <Icon iconId={'open'} />
+        </Link>
+        <Link
+          className={styles.bottomLink}
+          href='https://agirpourlatransition.ademe.fr'
+          target='_blank'
+          rel='noreferrer noopener'>
+          Agir pour la transition
+          <Icon iconId={'open'} />
+        </Link>
+        <Link className={styles.bottomLink} href='https://beta.gouv.fr/' target='_blank' rel='noreferrer noopener'>
+          beta.gouv.fr
+          <Icon iconId={'open'} />
+        </Link>
+      </div>
+    </Section>
   )
 }
