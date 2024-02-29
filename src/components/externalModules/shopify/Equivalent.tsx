@@ -27,7 +27,6 @@ const Equivalent = ({
   const [toDisplay, setToDisplay] = useState(0)
   const [progress, setProgress] = useState(0)
   const [fadeIn, setFadeIn] = useState(false)
-  const [fadeOut, setFadeOut] = useState(false)
 
   const displayedTimeoutRef = useRef<NodeJS.Timeout>()
   const fadeInTimeoutRef = useRef<NodeJS.Timeout>()
@@ -47,13 +46,9 @@ const Equivalent = ({
       setFadeIn(true)
       fadeInTimeoutRef.current = setTimeout(() => {
         setFadeIn(false)
-        setFadeOut(true)
         setToDisplay((value) => (value + 1) % comparisons.length)
         setProgress(0)
-        setTimeout(() => {
-          updateWithTimeout()
-          setFadeOut(false)
-        }, 1000)
+        setTimeout(updateWithTimeout, 1000)
       }, 1000)
 
       return () => {
@@ -69,7 +64,6 @@ const Equivalent = ({
       setToDisplay(0)
       setProgress(0)
       setFadeIn(false)
-      setFadeOut(false)
       updateWithTimeout()
     }
     return () => {
@@ -114,16 +108,7 @@ const Equivalent = ({
             </div>
           )}
           <div className={styles.equal}>
-            {animated && (
-              <div
-                className={classNames(styles.refresh, {
-                  [styles.fadeIn]: fadeIn,
-                  [styles.fadeOut]: fadeOut,
-                })}>
-                <Icon iconId='refresh' />
-              </div>
-            )}
-            {!fadeIn && !fadeOut && <Equal />}
+            <Equal />
           </div>
           <div className={animated ? styles.animatedComparisons : styles.comparisons}>
             {comparisons.map((comparison, index) => (

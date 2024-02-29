@@ -69,24 +69,6 @@
   }
 }
 
-.refresh {
-  position: absolute;
-  transition: all 1000ms ease-in-out;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  display: flex;
-}
-
-.fadeIn {
-  visibility: visible !important;
-  opacity: 1 !important;
-  transform: rotate(180deg);
-}
-
-.fadeOut {
-  transform: rotate(360deg);
-}
-
 .equalColumn {
   top: 0 !important;
   left: 0.875em !important;
