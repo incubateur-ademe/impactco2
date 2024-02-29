@@ -197,6 +197,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ data: TransportEmissionV1[]; warning?: string } | string | ZodError>
 ) {
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Allow', 'GET')
+    res.setHeader('Access-Control-Allow-Headers', 'Authorization')
+    return res.status(204).send('Succes')
+  }
+
   if (req.method !== 'GET') {
     return res.status(405).send('Only GET queries are allowed.')
   }
