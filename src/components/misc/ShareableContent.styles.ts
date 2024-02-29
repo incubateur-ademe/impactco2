@@ -64,3 +64,8 @@ export const Iframe = styled.div<{ $noBorder?: boolean }>`
     border-radius: 0 0 16px 16px;
   `}
 `
+
+export const ContentActions = styled.div`
+  margin-bottom: 1.5rem;
+  min-width: min(calc(100vw - 2rem), 440px);
+`

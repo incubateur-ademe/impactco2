@@ -11,6 +11,7 @@ import Signature from 'components/screenshot/Signature'
 import {
   Container,
   Content,
+  ContentActions,
   ContentHeader,
   IFrameLogos,
   Iframe,
@@ -22,6 +23,7 @@ import {
 import Actions from './category/Actions'
 import { CustomParamValue } from './category/CustomParam'
 import Header from './category/Header'
+import HeadersActions from './category/HeadersActions'
 
 const ShareableContent = <T extends string>({
   category,
@@ -93,12 +95,29 @@ const ShareableContent = <T extends string>({
               path={path}
               name={name}
               withoutShare={withoutShare}
+              noActions={!!sideContent}
             />
             <Separator />
           </>
         )}
         <SectionWideContent $size={size || 'xs'} $noGutter $flex>
           <Content>
+            {sideContent && (
+              <ContentActions>
+                <HeadersActions
+                  category={category}
+                  path={path}
+                  params={params}
+                  extraParams={extraParams}
+                  takeScreenshot={takeScreenshot}
+                  tracking={tracking}
+                  type={type}
+                  withoutIntegration={withoutIntegration}
+                  name={name}
+                  withoutShare={withoutShare}
+                />
+              </ContentActions>
+            )}
             <Theme $theme={theme} className={darkMode === 'night' ? 'night' : ''}>
               <Container $iframe={iframe} $noBorder={noBorder}>
                 {header && <ContentHeader>{header}</ContentHeader>}
