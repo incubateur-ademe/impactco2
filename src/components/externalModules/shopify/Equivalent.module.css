@@ -51,18 +51,17 @@
 
 .equalColumn,
 .equal {
-  left: -0.625em !important;
-  top: 0.875em !important;
-  border: 1px solid var(--primary-30) !important;
-  border-radius: 50% !important;
+  top: 1em !important;
+  transform: translateX(-50%) !important;
+  border-radius: 50%;
   background-color: var(--neutral-00) !important;
   color: var(--primary-40) !important;
   position: absolute !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  height: 1.25em !important;
-  width: 1.25em !important;
+  height: 1em !important;
+  width: 1em !important;
 }
 
 .equalColumn {
@@ -117,4 +116,19 @@
   font-size: 0.75em !important;
   font-weight: 400 !important;
   line-height: 1em !important;
+}
+
+.progressBar {
+  position: absolute !important;
+  left: -0.625em !important;
+  top: 0.875em !important;
+  height: 1.25em !important;
+  width: 1.25em !important;
+  border-radius: 50% !important;
+}
+
+.progress {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
 }

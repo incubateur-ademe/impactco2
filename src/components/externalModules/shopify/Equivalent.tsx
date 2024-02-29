@@ -23,17 +23,28 @@ const Equivalent = ({
   language?: Language
 }) => {
   const [toDisplay, setToDisplay] = useState(0)
+  const [progress, setProgress] = useState(0)
+
   const timeoutRef = useRef<NodeJS.Timeout>()
+  useEffect(() => {
+    if (progress === 99) {
+      setToDisplay((value) => (value + 1) % comparisons.length)
+    }
+  }, [progress])
 
   useEffect(() => {
     if (animated && comparisons.length > 0) {
       setToDisplay(0)
-      const update = () => setToDisplay((value) => (value + 1) % comparisons.length)
+      setProgress(0)
+
+      const update = () => {
+        setProgress((value) => (value + 1) % 100)
+      }
       const updateWithTimeout = () => {
         update()
-        timeoutRef.current = setTimeout(updateWithTimeout, 5000)
+        timeoutRef.current = setTimeout(updateWithTimeout, 50)
       }
-      timeoutRef.current = setTimeout(updateWithTimeout, 5000)
+      timeoutRef.current = setTimeout(updateWithTimeout, 50)
     }
     return () => {
       if (timeoutRef.current) {
@@ -65,6 +76,17 @@ const Equivalent = ({
           </div>
         </div>
         <div className={styles.right}>
+          {animated && (
+            <div
+              className={styles.progressBar}
+              style={{
+                background: `radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(var(--primary-20) ${progress}%, transparent 0)`,
+              }}>
+              <progress value={progress} className={styles.progress}>
+                {progress}%
+              </progress>
+            </div>
+          )}
           <div className={styles.equal}>
             <Equal />
           </div>
