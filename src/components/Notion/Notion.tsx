@@ -7,10 +7,12 @@ import 'react-notion-x/src/styles.css'
 import Link from 'components/base/buttons/Link'
 import Contenu from 'components/contenu/Contenu'
 import styles from './Notion.module.css'
+import { NotionStyles } from './Notion.styles'
 
 const Notion = ({ title, recordMap }: { title: string; recordMap: ExtendedRecordMap }) => {
   return (
     <Contenu title={title}>
+      <NotionStyles />
       <NotionRenderer
         recordMap={recordMap}
         fullPage={true}
