@@ -22,9 +22,9 @@ export default function Signature({
 }) {
   return (
     <OutsideGrid $noMargin={noMargin} $center={center} $small={small}>
-      <div>
+      <MarianneContainer>
         <Marianne />
-      </div>
+      </MarianneContainer>
       <div>
         <Ademe />
       </div>
@@ -41,6 +41,10 @@ export default function Signature({
     </OutsideGrid>
   )
 }
+
+const MarianneContainer = styled.div`
+  margin-right: 1.5rem;
+`
 
 const OutsideGrid = styled.div<{ $noMargin?: boolean; $center?: boolean; $small?: boolean }>`
   align-items: center;
