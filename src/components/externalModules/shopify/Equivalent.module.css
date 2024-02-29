@@ -62,6 +62,29 @@
   align-items: center !important;
   height: 1em !important;
   width: 1em !important;
+
+  svg {
+    width: 0.5em !important;
+    height: 0.5em !important;
+  }
+}
+
+.refresh {
+  position: absolute;
+  transition: all 1000ms ease-in-out;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  display: flex;
+}
+
+.fadeIn {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: rotate(180deg);
+}
+
+.fadeOut {
+  transform: rotate(360deg);
 }
 
 .equalColumn {
@@ -106,10 +129,17 @@
   grid-row: 1 !important;
   width: max-content !important;
   opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 1000ms ease-in-out;
+  margin-left: -10px !important;
+  margin-right: 10px !important;
 }
 
 .visibleAnimatedComparison {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .label {

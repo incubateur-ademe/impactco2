@@ -1,5 +1,7 @@
+import classNames from 'classnames'
 import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
+import { Icon } from 'components/osezchanger/icons'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import Equal from './Equal'
@@ -24,11 +26,41 @@ const Equivalent = ({
 }) => {
   const [toDisplay, setToDisplay] = useState(0)
   const [progress, setProgress] = useState(0)
+  const [fadeIn, setFadeIn] = useState(false)
+  const [fadeOut, setFadeOut] = useState(false)
 
-  const timeoutRef = useRef<NodeJS.Timeout>()
+  const displayedTimeoutRef = useRef<NodeJS.Timeout>()
+  const fadeInTimeoutRef = useRef<NodeJS.Timeout>()
+
+  const update = useCallback(() => {
+    setProgress((value) => (value + 1) % 100)
+  }, [])
+
+  const updateWithTimeout = useCallback(() => {
+    update()
+    displayedTimeoutRef.current = setTimeout(updateWithTimeout, 50)
+  }, [])
+
   useEffect(() => {
     if (progress === 99) {
-      setToDisplay((value) => (value + 1) % comparisons.length)
+      clearTimeout(displayedTimeoutRef.current)
+      setFadeIn(true)
+      fadeInTimeoutRef.current = setTimeout(() => {
+        setFadeIn(false)
+        setFadeOut(true)
+        setToDisplay((value) => (value + 1) % comparisons.length)
+        setProgress(0)
+        setTimeout(() => {
+          updateWithTimeout()
+          setFadeOut(false)
+        }, 1000)
+      }, 1000)
+
+      return () => {
+        if (fadeInTimeoutRef.current) {
+          clearTimeout(fadeInTimeoutRef.current)
+        }
+      }
     }
   }, [progress])
 
@@ -36,19 +68,13 @@ const Equivalent = ({
     if (animated && comparisons.length > 0) {
       setToDisplay(0)
       setProgress(0)
-
-      const update = () => {
-        setProgress((value) => (value + 1) % 100)
-      }
-      const updateWithTimeout = () => {
-        update()
-        timeoutRef.current = setTimeout(updateWithTimeout, 50)
-      }
-      timeoutRef.current = setTimeout(updateWithTimeout, 50)
+      setFadeIn(false)
+      setFadeOut(false)
+      updateWithTimeout()
     }
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
+      if (displayedTimeoutRef.current) {
+        clearTimeout(displayedTimeoutRef.current)
       }
     }
   }, [animated, comparisons])
@@ -88,7 +114,16 @@ const Equivalent = ({
             </div>
           )}
           <div className={styles.equal}>
-            <Equal />
+            {animated && (
+              <div
+                className={classNames(styles.refresh, {
+                  [styles.fadeIn]: fadeIn,
+                  [styles.fadeOut]: fadeOut,
+                })}>
+                <Icon iconId='refresh' />
+              </div>
+            )}
+            {!fadeIn && !fadeOut && <Equal />}
           </div>
           <div className={animated ? styles.animatedComparisons : styles.comparisons}>
             {comparisons.map((comparison, index) => (
@@ -96,7 +131,7 @@ const Equivalent = ({
                 key={comparison}
                 className={
                   animated
-                    ? index === toDisplay
+                    ? index === toDisplay && !fadeIn
                       ? styles.visibleAnimatedComparison
                       : styles.animatedComparison
                     : styles.comparison
