@@ -1,9 +1,9 @@
-import Fuse from 'fuse.js'
 import { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import useDataContext from 'components/providers/DataProvider'
+import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import Suggestions from './searchBar/Suggestions'
 import TextInput from './searchBar/TextInput'
 
@@ -27,47 +27,10 @@ const Wrapper = styled.form`
 `
 
 export default function SearchBar(props) {
-  const { equivalents, categories } = useDataContext()
+  const { categories } = useDataContext()
   const [search, setSearch] = useState('')
 
-  const [results, setResults] = useState([])
-  const [fuse, setFuse] = useState(null)
-  useEffect(() => {
-    if (equivalents) {
-      setFuse(
-        new Fuse(equivalents, {
-          keys: [
-            {
-              name: 'name',
-              weight: 1,
-            },
-            {
-              name: 'slug',
-              weight: 0.7,
-            },
-            {
-              name: 'subtitle',
-              weight: 0.4,
-            },
-            {
-              name: 'synonyms',
-              weight: 0.2,
-            },
-          ],
-          threshold: 0.3,
-          ignoreLocation: true,
-        })
-      )
-    }
-  }, [equivalents])
-
-  useEffect(() => {
-    if (fuse && search.length > 1) {
-      setResults(fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')))
-    } else {
-      setResults([])
-    }
-  }, [search, fuse])
+  const results = useSearchEquivalent(search)
 
   const [focus, setFocus] = useState(false)
   const input = useRef(null)
@@ -78,16 +41,12 @@ export default function SearchBar(props) {
     if (!focus) {
       input.current && input.current.blur()
     }
-  }, [focus, results])
+  }, [focus])
 
   const router = useRouter()
 
-  const navigateToItem = ({ item }) => {
-    router.push(
-      item.category
-        ? `/${categories.find((category) => category.id === item.category).slug}/${item.slug}`
-        : `/${item.slug}`
-    )
+  const navigateToItem = (item) => {
+    router.push(item.link)
   }
 
   return (
@@ -100,7 +59,7 @@ export default function SearchBar(props) {
           if (results[current]) {
             navigateToItem(results[current])
           } else {
-            navigateToItem({ item: categories[current] })
+            navigateToItem(categories[current])
           }
         }
       }}

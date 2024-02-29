@@ -1,13 +1,13 @@
-import Fuse, { FuseResult } from 'fuse.js'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
-import { Equivalent, FruitsEtLegumesEquivalent } from 'types/equivalent'
+import { FruitsEtLegumesEquivalent } from 'types/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
 import useDataContext from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import ShareableContent from 'components/misc/ShareableContent'
 import Bottom from 'components/misc/category/Bottom'
 import { Header } from 'components/misc/category/CategoryWrapper.styles'
@@ -36,41 +36,7 @@ export default function Saisons({ category, iframe }: { category: Category; ifra
     fruitsetlegumes: { month, setMonth, sorting, setSorting, search, setSearch },
   } = useParamContext()
 
-  const [results, setResults] = useState<FuseResult<Equivalent>[] | undefined>()
-  const [fuse, setFuse] = useState<Fuse<Equivalent>>()
-
-  useEffect(() => {
-    if (equivalents) {
-      setFuse(
-        new Fuse(equivalents, {
-          keys: [
-            {
-              name: 'name',
-              weight: 1,
-            },
-            {
-              name: 'slug',
-              weight: 0.7,
-            },
-            {
-              name: 'subtitle',
-              weight: 0.4,
-            },
-          ],
-          threshold: 0.3,
-          ignoreLocation: false,
-        })
-      )
-    }
-  }, [equivalents])
-
-  useEffect(() => {
-    if (fuse && search.length > 0) {
-      setResults(fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')))
-    } else {
-      setResults(undefined)
-    }
-  }, [search, fuse])
+  const results = useSearchEquivalent(search)
 
   const equivalentsOfTheMonth = useMemo(
     () =>
@@ -79,7 +45,7 @@ export default function Saisons({ category, iframe }: { category: Category; ifra
       equivalents
         .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => results || (equivalent as FruitsEtLegumesEquivalent).months.includes(month))
-        .filter((equivalent) => !results || results.find((result) => result.item.slug === equivalent.slug))
+        .filter((equivalent) => !results || results.find((result) => result.slug === equivalent.slug))
         .map((equivalent) => ({
           id: `${equivalent.slug}`,
           title: formatName(equivalent.name, 1, true),

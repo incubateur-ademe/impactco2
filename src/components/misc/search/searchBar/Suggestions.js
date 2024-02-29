@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 `
 const Suggestion = styled.div`
-  background-color: ${(props) => (props.current ? 'var(--secondary-10)' : 'var(--neutral-00)')};
+  background-color: ${(props) => (props.$current ? 'var(--secondary-10)' : 'var(--neutral-00)')};
   cursor: pointer;
   padding: 0.75em 0.75em 0.75em 2em;
 
@@ -63,16 +63,16 @@ export default function Suggestions(props) {
             (product, index) =>
               index < 10 && (
                 <Suggestion
-                  current={index === props.current}
-                  key={product.item.slug}
+                  $current={index === props.current}
+                  key={product.slug}
                   onClick={() => props.handleSuggestionClick(product)}
                   onMouseDown={(e) => e.preventDefault()}
                   title='simple suggestion'>
                   <Name>
-                    <Emoji>{product.item.emoji}</Emoji>
+                    <Emoji>{product.emoji}</Emoji>
                     <span>
-                      {formatName(product.item.name, 1)}{' '}
-                      {product.item.subtitle && <Subtitle> ({formatName(product.item.subtitle, 1)})</Subtitle>}
+                      {formatName(product.name, 1)}{' '}
+                      {product.subtitle && <Subtitle> ({formatName(product.subtitle, 1)})</Subtitle>}
                     </span>
                   </Name>
                 </Suggestion>

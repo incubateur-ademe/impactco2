@@ -1,9 +1,7 @@
-import Fuse from 'fuse.js'
-import React, { useEffect, useState } from 'react'
-import { ComputedEquivalent } from 'types/equivalent'
+import React, { useState } from 'react'
 import categories from 'data/categories.json'
 import useParamContext from 'components/providers/ParamProvider'
-import { computedEquivalents } from 'components/providers/equivalents'
+import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import Button from 'components/base/buttons/Button'
 import { HiddenLabel } from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
@@ -17,43 +15,7 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
   } = useParamContext()
 
   const [search, setSearch] = useState('')
-  const [results, setResults] = useState<ComputedEquivalent[]>([])
-  const [fuse, setFuse] = useState<Fuse<ComputedEquivalent> | null>(null)
-
-  useEffect(() => {
-    setFuse(
-      new Fuse(computedEquivalents, {
-        keys: [
-          {
-            name: 'name',
-            weight: 1,
-          },
-          {
-            name: 'slug',
-            weight: 0.7,
-          },
-          {
-            name: 'subtitle',
-            weight: 0.4,
-          },
-          {
-            name: 'synonyms',
-            weight: 0.2,
-          },
-        ],
-        threshold: 0.3,
-        ignoreLocation: true,
-      })
-    )
-  }, [])
-
-  useEffect(() => {
-    setResults(
-      fuse && search.length > 0
-        ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map((props) => props.item)
-        : computedEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
-    )
-  }, [search, fuse])
+  const results = useSearchEquivalent(search)
 
   return (
     <>
