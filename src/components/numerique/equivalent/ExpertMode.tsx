@@ -21,7 +21,8 @@ const StyledButtonLink = styled(Button)`
   font-size: 0.75rem;
   margin-bottom: 2rem;
 `
-export default function ExpertMode(props) {
+
+export default function ExpertMode({ questions }: { questions: { dottedName: string }[] }) {
   const {
     usageNumerique: { engine, setSituation },
   } = useParamContext()
@@ -34,7 +35,7 @@ export default function ExpertMode(props) {
       </StyledButtonLink>
       {open && (
         <Wrapper>
-          {props.questions.map((question) => (
+          {questions.map((question) => (
             <Question
               key={question.dottedName}
               rule={question}
