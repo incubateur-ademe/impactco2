@@ -7,7 +7,7 @@ export const Background = styled.div`
 
 export const Content = styled.div`
   margin: -200px auto 0 auto;
-  max-width: 1000px;
+  max-width: 62.5rem;
 
   .notion-frame {
     padding: 0;
