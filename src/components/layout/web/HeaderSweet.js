@@ -67,19 +67,13 @@ export default function HeaderSweet() {
                 <MenuSweet />
               </NavLink>
               <NavLink>
-                <Link href='/comparateur' title='Comparateur carbone'>
-                  Comparateur carbone
-                </Link>
+                <Link href='/comparateur'>Comparateur carbone</Link>
               </NavLink>
               <NavLink>
-                <Link href='/guide-utilisation' title='Comment ca marche ?'>
-                  Comment ca marche ?
-                </Link>
+                <Link href='/guide-utilisation'>Comment ça marche ?</Link>
               </NavLink>
               <NavLink>
-                <Link href='/questions-frequentes' title='Questions fréquentes'>
-                  Questions fréquentes
-                </Link>
+                <Link href='/questions-frequentes'>Questions fréquentes</Link>
               </NavLink>
             </NavLinksMobile>
             <NavLinksDesktop>
@@ -87,19 +81,13 @@ export default function HeaderSweet() {
                 <MenuSweet />
               </NavLink>
               <NavLink>
-                <Link href='/comparateur' title='Comparateur carbone'>
-                  Comparateur carbone
-                </Link>
+                <Link href='/comparateur'>Comparateur carbone</Link>
               </NavLink>
               <NavLink>
-                <Link href='/guide-utilisation' title='Comment ca marche ?'>
-                  Comment ca marche ?
-                </Link>
+                <Link href='/guide-utilisation'>Comment ça marche ?</Link>
               </NavLink>
               <NavLink>
-                <Link href='/questions-frequentes' title='Questions fréquentes'>
-                  Questions fréquentes
-                </Link>
+                <Link href='/questions-frequentes'>Questions fréquentes</Link>
               </NavLink>
             </NavLinksDesktop>
           </SectionWideContent>

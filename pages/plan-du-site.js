@@ -47,14 +47,10 @@ export default function PlanDuSite() {
           <FormatText>
             <h1>Plan du site</h1>
             <Level1>
-              <Link href='/' title="Page d'accueil">
-                Page d'accueil
-              </Link>
+              <Link href='/'>Page d'accueil</Link>
             </Level1>
             <Level1>
-              <Link href='/' title='Par thématique'>
-                Par thématique
-              </Link>
+              <Link href='/'>Par thématique</Link>
               {buildLevel2For('usagenumerique')}
               {buildLevel2For('livraison')}
               {buildLevel2For('chauffage')}
@@ -67,65 +63,43 @@ export default function PlanDuSite() {
               {buildLevel2For('electromenager')}
               {buildLevel2For('boisson')}
               <Level2>
-                <Link href='/documentation' title='Documentation'>
-                  Documentation
-                </Link>
+                <Link href='/documentation'>Documentation</Link>
                 <Level3>
-                  <Link href='/documentation/livraison-colis' title='Livraison de colis'>
-                    Livraison de colis
-                  </Link>
+                  <Link href='/documentation/livraison-colis'>Livraison de colis</Link>
                 </Level3>
                 <Level3>
-                  <Link href='/documentation/livraison-colis-par-avion' title='Livraison de colis par avion'>
-                    Livraison de colis par avion
-                  </Link>
+                  <Link href='/documentation/livraison-colis-par-avion'>Livraison de colis par avion</Link>
                 </Level3>
               </Level2>
             </Level1>
             <Level1>
-              <Link href='/comparateur' title='Comparateur carbone'>
-                Comparateur carbone
-              </Link>
+              <Link href='/comparateur'>Comparateur carbone</Link>
             </Level1>
             <Level1>
-              <Link href='/guide-utilisation' title='Comment ca marche ?'>
-                Comment ca marche ?
-              </Link>
+              <Link href='/guide-utilisation'>Comment ça marche ?</Link>
             </Level1>
             <Level1>
-              <Link href='/questions-frequentes' title='Questions fréquentes'>
-                Questions fréquentes
-              </Link>
+              <Link href='/questions-frequentes'>Questions fréquentes</Link>
             </Level1>
             <Level1>
               Contenu
               <Level2>
-                <Link
-                  href='/contenu/impact-carbone-hiver-station-ski'
-                  title='4 conseils pour réduire l’impact carbone des séjours au ski'>
+                <Link href='/contenu/impact-carbone-hiver-station-ski'>
                   4 conseils pour réduire l’impact carbone des séjours au ski
                 </Link>
               </Level2>
             </Level1>
             <Level1>
-              <Link href='/stats' title='Statistiques'>
-                Statistiques
-              </Link>
+              <Link href='/stats'>Statistiques</Link>
             </Level1>
             <Level1>
-              <Link href='/accessibilite' title='Accessibilité (non conforme)'>
-                Accessibilité (non conforme)
-              </Link>
+              <Link href='/accessibilite'>Accessibilité (non conforme)</Link>
             </Level1>
             <Level1>
-              <Link href='/mentions-legales' title='Mentions légales'>
-                Mentions légales
-              </Link>
+              <Link href='/mentions-legales'>Mentions légales</Link>
             </Level1>
             <Level1>
-              <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
-                Politique de confidentialité
-              </Link>
+              <Link href='/politique-de-confidentialite'>Politique de confidentialité</Link>
             </Level1>
           </FormatText>
         </SectionWideContent>
