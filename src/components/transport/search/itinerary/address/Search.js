@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { useSuggestions } from 'hooks/useAddress'
 import useDebounce from 'hooks/useDebounce'
+import { displayAddress } from '../Address'
 import Suggestions from './search/Suggestions'
 import TextInput from './search/TextInput'
 
@@ -52,8 +53,14 @@ export default function Search(props) {
       $focus={focus}
       onSubmit={(e) => {
         e.preventDefault()
-        if (current > -1) {
-          navigateToPlace(data[current])
+        if (data && data[current]) {
+          const place = data[current]
+          navigateToPlace({
+            latitude: place.geometry.coordinates[1],
+            longitude: place.geometry.coordinates[0],
+            city: place.properties.city || place.properties.name || '',
+            address: displayAddress(place),
+          })
         }
       }}>
       <TextInput

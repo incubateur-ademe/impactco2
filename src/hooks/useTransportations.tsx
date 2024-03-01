@@ -15,7 +15,7 @@ import Carpool from 'components/transport/Carpool'
 export default function useTransportations(
   tracking: string,
   type: TransportSimulateur,
-  itineraries?: Record<DeplacementType, number>
+  itineraries?: Record<DeplacementType, number> | null
 ) {
   const params = useParamContext()
 
