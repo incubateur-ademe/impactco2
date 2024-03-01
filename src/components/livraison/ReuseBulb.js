@@ -34,11 +34,8 @@ export default function ReuseBulb() {
         </UseBulbTitle>
         <p>
           Consultez le{' '}
-          <Link
-            priority='secondary'
-            href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-            title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
-            kit de diffusion Impact CO<sub>2</sub>
+          <Link priority='secondary' href='/guide-utilisation' title='Découvrir des exemples de réutilisation'>
+            guide d'utilisation Impact CO<sub>2</sub>
           </Link>{' '}
           pour vous emparer facilement du simulateur et l’intégrer à votre publication.
         </p>

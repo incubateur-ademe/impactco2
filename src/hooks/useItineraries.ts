@@ -12,10 +12,10 @@ export type Point = {
 
 export default function useItineraries(start: Point | undefined, end: Point | undefined, tracking: string) {
   const { data } = useQuery({
-    queryKey: [start, end],
+    queryKey: [start || '', end || ''],
     queryFn: () => {
       if (!start || !end) {
-        return
+        return null
       }
 
       track(`Transport ${tracking}`, 'Recherche', `${start.city}-${end.city}`)

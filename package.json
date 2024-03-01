@@ -60,7 +60,7 @@
     "fuse.js": "^7.0.0",
     "helmet": "^7.1.0",
     "html-to-image": "^1.11.11",
-    "iframe-resizer-react": "^1.1.0",
+    "iframe-resizer": "^4.3.9",
     "markdown-to-jsx": "^7.4.0",
     "next": "^14.1.0",
     "next-query-params": "^5.0.0",
