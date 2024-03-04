@@ -82,10 +82,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  i18n: {
-    locales: ['fr'],
-    defaultLocale: 'fr',
-  },
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
   sentry: {
     autoInstrumentServerFunctions: true,
