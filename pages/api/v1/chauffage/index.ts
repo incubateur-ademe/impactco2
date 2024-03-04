@@ -36,7 +36,7 @@ const transportValidation = z.object({
  *         - 2 : Chauffage au fioul
  *         - 3 : Chauffage électrique
  *         - 4 : Chauffage avec une pompe à chaleur
- *         - 5 : Chauffage avec un poêle à granulé
+ *         - 5 : Chauffage avec un poêle à granulés
  *         - 6 : Chauffage avec un poêle à bois
  *         - 7 : Chauffage via un réseau de chaleur
  *     responses:
