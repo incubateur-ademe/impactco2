@@ -2,6 +2,11 @@
   "name": "impactco2",
   "version": "0.2.0",
   "private": true,
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
   "scripts": {
     "build:ecvs": "yarn build:empreinte & yarn build:agribalyse",
     "build:empreinte": "ts-node src/scripts/buildFromEmpreinte.ts",

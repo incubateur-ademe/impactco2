@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -14,15 +18,34 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
-    "types": ["node", "jest"],
-    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": [
+      "node",
+      "jest"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
     "paths": {
-      "components/*": ["src/components/*"],
-      "data/*": ["src/data/*"],
-      "utils/*": ["src/utils/*"],
-      "hooks/*": ["src/hooks/*"]
+      "components/*": [
+        "src/components/*"
+      ],
+      "data/*": [
+        "src/data/*"
+      ],
+      "utils/*": [
+        "src/utils/*"
+      ],
+      "hooks/*": [
+        "src/hooks/*"
+      ]
     },
-    "module": "esnext"
+    "module": "esnext",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "ts-node": {
     "experimentalResolver": true,
@@ -30,6 +53,16 @@
       "module": "commonjs"
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.json"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.json",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -13,7 +13,7 @@ const Page = () => {
   return (
     <Web
       title='Comparateur carbone'
-      image='/meta/comparateur.png'
+      image='/api/dynamics/comparateur'
       description='Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.'
       breadcrumb={{
         type: 'accueil',
