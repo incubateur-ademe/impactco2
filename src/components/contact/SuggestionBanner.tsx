@@ -17,7 +17,7 @@ const SuggestionBanner = ({
         <FlexContainer>
           <div>
             <span className='text-xl'>
-              <b>Un avis, un bug, une suggestion ?</b>
+              <b>Un avis, une suggestion ?</b>
             </span>
             <Subtitle>
               Vos retours sont précieux pour améliorer le site Impact CO<sub>2</sub>.

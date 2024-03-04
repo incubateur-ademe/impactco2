@@ -103,6 +103,10 @@ const nextConfig = {
         source: '/iframes/:path*',
         headers: securityHeadersIFramable,
       },
+      {
+        source: '/api/v1/:path*',
+        headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }],
+      },
     ]
   },
   async redirects() {

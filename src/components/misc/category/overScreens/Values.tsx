@@ -38,10 +38,10 @@ export const overScreenCategoryValues: (
         />
         <Space />
         <Card
-          href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+          href='/guide-utilisation'
           title='Utiliser cette ressource'
           description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
-          link='Kit de diffusion'
+          link="Guide d'utilisation"
           image='/images/laptop.png'
           tracking={category ? category.name : 'Comparateur'}
         />
@@ -57,24 +57,24 @@ export const overScreenCategoryValues: (
     children: (
       <ResourcesContainer>
         <Resource
+          image='/images/category-pompe-chaleur.jpg'
+          text='S’équiper d’une pompe à chaleur'
+          href='https://librairie.ademe.fr/changement-climatique-et-energie/6714-s-equiper-d-une-pompe-a-chaleur.html'
+          withLink='ADEME'
+          tracking={category ? category.name : 'Comparateur'}
+        />
+        <Resource
+          image='/images/category-chauffage-bois.jpg'
+          text='Adopter le chauffage au bois'
+          href='https://librairie.ademe.fr/urbanisme-et-batiment/5667-adopter-le-chauffage-au-bois-9791029719769.html'
+          withLink='ADEME'
+          tracking={category ? category.name : 'Comparateur'}
+        />
+        <Resource
           image='/images/category-wattris.png'
-          text='Chauffer à l’électrique : simuler la consommation électrique de son logement avec Wattris'
+          text='Simuler la consommation électrique de son logement'
           href='https://wattris.ademe.fr/'
           withLink='Wattris'
-          tracking={category ? category.name : 'Comparateur'}
-        />
-        <Resource
-          image='/images/category-mieux-chauffer.png'
-          text='Découvrir comment mieux chauffer son logement'
-          href='https://multimedia.ademe.fr/infographies/infographie_mieux_se_chauffer/'
-          withLink='ADEME'
-          tracking={category ? category.name : 'Comparateur'}
-        />
-        <Resource
-          image='/images/category-systeme-chauffage.png'
-          text='Rénover et changer son système de chauffage'
-          href='https://librairie.ademe.fr/cadic/6566/guide-changer-son-chauffage-0423.pdf'
-          withLink='ADEME'
           tracking={category ? category.name : 'Comparateur'}
         />
       </ResourcesContainer>

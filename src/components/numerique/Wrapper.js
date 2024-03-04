@@ -27,7 +27,6 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
 `
-const Title = styled.h1``
 const StyledButtons = styled(Buttons)`
   margin-top: 0.5rem;
 `
@@ -42,7 +41,7 @@ export default function Wrapper(props) {
         <Content ref={ref} $hover={hover}>
           <Background hover={hover}>
             <Header>
-              <Title>{props.name}</Title>
+              <h1>{props.name}</h1>
               <StyledButtons
                 takeScreenshot={takeScreenshot}
                 onMouseEnter={() => setHover(true)}

@@ -22,6 +22,7 @@ import link from './link'
 import linkedin from './linkedin'
 import magicWand from './magic-wand'
 import minus from './minus'
+import open from './open'
 import plus from './plus'
 import refresh from './refresh'
 import sendPlane from './send-plane'
@@ -54,6 +55,7 @@ export type IconId =
   | 'whatsapp'
   | 'plus'
   | 'minus'
+  | 'open'
   | 'star'
   | 'full-star'
   | 'check'
@@ -117,6 +119,8 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return whatsapp
     case 'plus':
       return plus
+    case 'open':
+      return open
     case 'minus':
       return minus
     case 'check':

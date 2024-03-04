@@ -1,128 +1,83 @@
 import Link from 'next/link'
-import React from 'react'
-import styled from 'styled-components'
-import { MEDIA } from 'utils/styles'
-import { Section, SectionWideContent } from 'components/base/Section'
+import { Section } from 'components/base/Section'
+import { Icon } from 'components/osezchanger/icons'
 import Signature from 'components/screenshot/Signature'
+import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
-    <Wrapper id='footer'>
-      <LinearGradient>&nbsp;</LinearGradient>
-      <Section>
-        <SectionWideContent>
-          <Grid>
-            <Logos>
-              <Signature noMargin noLink color='var(--primary-70)' />
-            </Logos>
-            <div>
-              <FooterExplain>
-                <strong>
-                  Impact CO<sub>2</sub>
-                </strong>
-                <p>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME</p>
-              </FooterExplain>
+    <Section $withoutPadding id='footer'>
+      <div className={styles.internalContainer}>
+        <Signature noMargin noLink />
+        <div className={styles.footerExplain}>
+          <strong>
+            Impact CO<sub>2</sub>
+          </strong>
+          <p className={styles.neutral50}>
+            Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.
+          </p>
+          <Link
+            className={styles.followNews}
+            href='https://fr.linkedin.com/showcase/accelerateurdelatransitionecologique-ademe/'
+            title='LinkedIn'
+            rel='noreferrer noopener'
+            target='_blank'>
+            Suivre nos actualités sur LinkedIn
+            <Icon iconId={'open'} />
+          </Link>
+        </div>
+        <div className={styles.topLinks}>
+          <div>
+            <strong>Liens utiles</strong>
+            <div className={styles.linkContainer}>
+              <Link href='/stats'>Statistiques</Link>
+              <Link href='/rendez-vous?fromLabel=frooter'>Nous contacter</Link>
             </div>
-            <div className='gridlinks'>
-              <FooterLink>
-                <Link href='/plan-du-site' title='Plan du site'>
-                  Plan du site
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/accessibilite' title='Accessibilité (non conforme)'>
-                  Accessibilité (non conforme)
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/mentions-legales' title='Mentions légales'>
-                  Mentions légales
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/politique-de-confidentialite' title='Politique de confidentialité'>
-                  Politique de confidentialité
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/budget' title='Budget'>
-                  Budget
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link href='/stats' title='Statistiques'>
-                  Statistiques
-                </Link>
-              </FooterLink>
-              <FooterLink>
-                <Link
-                  href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                  target='_blank'
-                  rel='noreferrer noopener'
-                  title='Nous contacter'>
-                  Contact
-                </Link>
-              </FooterLink>
+          </div>
+          <div>
+            <strong>Ressources</strong>
+            <div className={styles.linkContainer}>
+              <Link href='/guide-utilisation'>Guide d’utilisation</Link>
+              <Link href='/questions-frequentes'>Questions fréquentes</Link>
+              <Link href='/api-doc'>API Impact CO2</Link>
             </div>
-          </Grid>
-        </SectionWideContent>
-      </Section>
-    </Wrapper>
+          </div>
+        </div>
+      </div>
+      <div className={styles.bottomLinks}>
+        <Link className={styles.bottomLink} href='/plan-du-site'>
+          Plan du site
+        </Link>
+        <Link className={styles.bottomLink} href='/mentions-legales'>
+          Mentions légales
+        </Link>
+        <Link className={styles.bottomLink} href='/politique-de-confidentialite'>
+          Politique de confidentialité
+        </Link>
+        <Link className={styles.bottomLink} href='/accessibilite'>
+          Accessibilité : non conforme
+        </Link>
+        <Link
+          className={styles.bottomLink}
+          href='https://github.com/incubateur-ademe/impactco2'
+          target='_blank'
+          rel='noreferrer noopener'>
+          Code source
+          <Icon iconId={'open'} />
+        </Link>
+        <Link
+          className={styles.bottomLink}
+          href='https://agirpourlatransition.ademe.fr'
+          target='_blank'
+          rel='noreferrer noopener'>
+          Agir pour la transition
+          <Icon iconId={'open'} />
+        </Link>
+        <Link className={styles.bottomLink} href='https://beta.gouv.fr/' target='_blank' rel='noreferrer noopener'>
+          beta.gouv.fr
+          <Icon iconId={'open'} />
+        </Link>
+      </div>
+    </Section>
   )
 }
-
-const Logos = styled.div`
-  display: flex;
-`
-
-const FooterExplain = styled.div`
-  margin: 3rem 0 3rem 0;
-  p {
-    margin-bottom: 0;
-  }
-  ${MEDIA.LT.MEDIUM} {
-    margin: 1.5rem 0 1.5rem 0;
-  }
-`
-
-const FooterLink = styled.div`
-  a {
-    color: var(--neutral-80);
-    cursor: pointer;
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0em;
-    margin-right: 1.5rem;
-    ${MEDIA.LT.MEDIUM} {
-      margin-left: inherit;
-    }
-    text-decoration: none;
-  }
-`
-
-const Wrapper = styled.footer`
-  background-color: #b5d0fa;
-  margin-top: 0;
-`
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  ${MEDIA.LT.MEDIUM} {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  > .gridlinks {
-    display: flex;
-    grid-column: span 2;
-    ${MEDIA.LT.MEDIUM} {
-      flex-direction: column;
-      grid-column: inherit;
-    }
-    margin-bottom: 1rem;
-  }
-`
-
-const LinearGradient = styled.div`
-  background: linear-gradient(var(--neutral-00), #b5d0fa);
-  height: 8rem;
-`

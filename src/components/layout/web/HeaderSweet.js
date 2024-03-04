@@ -67,23 +67,13 @@ export default function HeaderSweet() {
                 <MenuSweet />
               </NavLink>
               <NavLink>
-                <Link href='/comparateur' title='Comparateur carbone'>
-                  Comparateur carbone
-                </Link>
+                <Link href='/comparateur'>Comparateur carbone</Link>
               </NavLink>
               <NavLink>
-                <Link
-                  href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                  title='Diffuser les ressources'
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  Diffuser les ressources
-                </Link>
+                <Link href='/guide-utilisation'>Comment ça marche ?</Link>
               </NavLink>
               <NavLink>
-                <Link href='/integration' title='Intégrer les ressources'>
-                  Intégrer les ressources
-                </Link>
+                <Link href='/questions-frequentes'>Questions fréquentes</Link>
               </NavLink>
             </NavLinksMobile>
             <NavLinksDesktop>
@@ -91,23 +81,13 @@ export default function HeaderSweet() {
                 <MenuSweet />
               </NavLink>
               <NavLink>
-                <Link href='/comparateur' title='Comparateur carbone'>
-                  Comparateur carbone
-                </Link>
+                <Link href='/comparateur'>Comparateur carbone</Link>
               </NavLink>
               <NavLink>
-                <Link
-                  href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                  title='Diffuser les ressources'
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  Diffuser les ressources
-                </Link>
+                <Link href='/guide-utilisation'>Comment ça marche ?</Link>
               </NavLink>
               <NavLink>
-                <Link href='/integration' title='Intégrer les ressources'>
-                  Intégrer les ressources
-                </Link>
+                <Link href='/questions-frequentes'>Questions fréquentes</Link>
               </NavLink>
             </NavLinksDesktop>
           </SectionWideContent>

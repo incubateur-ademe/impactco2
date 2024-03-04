@@ -58,24 +58,14 @@ export default function ByArticle() {
                 <H3Title>En toute autonomie</H3Title>
                 <MiddleUl>
                   <MiddleLi>
-                    Utilisez le{' '}
+                    Parcourir le{' '}
                     <Link
-                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
+                      href='/guide-utilisation'
                       priority='secondary'
-                      onClick={() => track('Click', 'Kit de diffusion', 'click_kit_diffusion')}>
-                      Kit de diffusion
+                      onClick={() => track('Click', 'Guide utilisation', 'click_guide_utilisation')}>
+                      Guide d'uilisation
                     </Link>{' '}
                     pour vous épauler dans la rédaction de vos contenus.
-                  </MiddleLi>
-                  <MiddleLi>
-                    Personnalisez le simulateur de votre choix grâce à notre{' '}
-                    <Link
-                      priority='secondary'
-                      href='/integration'
-                      onClick={() => track('Click', 'Configurateur', 'click_configurateur')}>
-                      configurateur
-                    </Link>
-                    .
                   </MiddleLi>
                   <MiddleLi>
                     Inspirez-vous d'
@@ -92,9 +82,11 @@ export default function ByArticle() {
               <MiddleCta>
                 <Link
                   asButton
-                  href='https://accelerateur-transition-ecologique-ademe.notion.site/Kit-de-diffusion-Impact-CO2-b9d08930a49a4346830b7a12fd7cb733?pvs=4'
-                  onClick={() => track('Click', 'Consulter le kit de diffusion', 'click_consulter_kit_diffusion')}>
-                  Consulter le kit de diffusion
+                  href='/guide-utilisation'
+                  onClick={() =>
+                    track('Click', 'Parcourir le Guide d’utilisation', 'click_parcourir_guide_utilisation')
+                  }>
+                  Parcourir le Guide d’utilisation
                 </Link>
               </MiddleCta>
             </Box>
@@ -103,18 +95,15 @@ export default function ByArticle() {
                 <H3Title2>Avec de l'aide</H3Title2>
                 <MiddleUl>
                   <MiddleLi>
-                    Consultez notre{' '}
+                    Consultez nos{' '}
                     <Link
-                      href='https://accelerateur-transition-ecologique-ademe.notion.site/Foire-aux-questions-090ceb3f28ef473d9c8e9d13b61e1332?pvs=4'
+                      href='/questions-frequentes'
                       priority='secondary'
                       data-testid='byArticleFaq'
                       onClick={() => track('Click', 'FAQ', 'click_faq')}>
-                      Foire aux Questions
+                      Questions fréquentes
                     </Link>{' '}
                     pour trouver des éléments de réponse.
-                  </MiddleLi>
-                  <MiddleLi>
-                    Gagnez du temps et laissez-vous guider pour <strong>l’intégration de nos ressources</strong>.
                   </MiddleLi>
                   <MiddleLi>
                     Échangez avec l’équipe sur vos <strong>besoins spécifiques d’intégration</strong>.

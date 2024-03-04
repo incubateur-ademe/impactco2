@@ -146,7 +146,7 @@
   },
   {
     "id": 5,
-    "name": "Chauffage avec un poêle à granulé",
+    "name": "Chauffage avec un poêle à granulés",
     "suffix": " par m²",
     "prefix": "année[s] de ",
     "slug": "poeleagranule",
@@ -156,8 +156,8 @@
     "default": true,
     "tile": false,
     "meta": {
-      "title": "Poêle à granulé",
-      "description": "Découvrez à quoi correspond une année de chauffage avec un poêle à granulé par m² en kgCO₂e émis (CO₂e)"
+      "title": "Poêle à granulés",
+      "description": "Découvrez à quoi correspond une année de chauffage avec un poêle à granulés par m² en kgCO₂e émis (CO₂e)"
     },
     "data": {
       "values": [

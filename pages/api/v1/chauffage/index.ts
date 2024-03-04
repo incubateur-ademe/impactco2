@@ -36,7 +36,7 @@ const transportValidation = z.object({
  *         - 2 : Chauffage au fioul
  *         - 3 : Chauffage électrique
  *         - 4 : Chauffage avec une pompe à chaleur
- *         - 5 : Chauffage avec un poêle à granulé
+ *         - 5 : Chauffage avec un poêle à granulés
  *         - 6 : Chauffage avec un poêle à bois
  *         - 7 : Chauffage via un réseau de chaleur
  *     responses:
@@ -90,6 +90,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ data: APIECVV1[]; warning?: string } | string | ZodError>
 ) {
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Allow', 'GET')
+    res.setHeader('Access-Control-Allow-Headers', 'Authorization')
+    return res.status(204).send('Succes')
+  }
+
   if (req.method !== 'GET') {
     return res.status(405).send('Only GET queries are allowed.')
   }
