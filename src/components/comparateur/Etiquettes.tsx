@@ -32,7 +32,7 @@ const Etiquettes = () => {
       <div className={styles.header}>
         <Tag text='Nouveau' />
         <span className={styles.title}>
-          Valoriser votre comparaison avec les <span className={styles.greenTitle}>étiquettes impact CO2 </span>!
+          Valorisez votre comparaison avec les <span className={styles.greenTitle}>étiquettes impact CO2 </span>!
         </span>
       </div>
       <ShareableContent<OverScreenEtiquette>

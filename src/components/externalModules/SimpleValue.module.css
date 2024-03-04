@@ -18,6 +18,7 @@
   font-weight: 400 !important;
   line-height: 1em !important;
   max-width: 11em !important;
+  margin: 0 !important;
 }
 
 .equivalentValue {
@@ -25,4 +26,8 @@
   line-height: 1.2 !important;
   font-weight: 700 !important;
   color: var(--neutral-80) !important;
+}
+
+.text {
+  margin: 0 !important;
 }

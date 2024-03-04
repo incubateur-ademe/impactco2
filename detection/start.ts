@@ -34,7 +34,12 @@ export const start = (darkMode?: boolean) => {
         elem.tagName !== 'BUTTON' &&
         [...elem.childNodes.values()].every(
           (child) =>
-            child.nodeName === '#text' || child.nodeName === 'SUB' || child.nodeName == 'SPAN' || child.nodeName === 'A'
+            child.nodeName === '#text' ||
+            child.nodeName === 'SUB' ||
+            child.nodeName == 'SPAN' ||
+            child.nodeName === 'A' ||
+            child.nodeName === 'EM' ||
+            child.nodeName === 'B'
         )
       ) {
         return true

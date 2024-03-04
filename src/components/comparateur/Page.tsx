@@ -30,7 +30,7 @@ const Page = () => {
         }
         description={
           <>
-            Le comparateur permet à vos utilisateurs de se représenter les bons <b>ordres de grandeur</b> d’une
+            Le comparateur permet à votre communauté de se représenter les bons <b>ordres de grandeur</b> d’une
             empreinte carbone.
           </>
         }

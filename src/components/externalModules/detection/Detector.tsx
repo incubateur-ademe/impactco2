@@ -1,12 +1,12 @@
 import classNames from 'classnames'
-import React, { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { Icon } from 'components/osezchanger/icons'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regex =
-  /([0-9]+(,|\.)?[0-9]*)(\s|&nbsp;)?(kg|kilo(s)?|g|t|tonne(s)?)(\s|&nbsp;)?(de\s|&nbsp;)?(d’équivalent\s|&nbsp;)?(co(2|₂|<sub>2<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
+  /([0-9]+(,|\.|\s|&nbsp;)?[0-9]*)(\s|&nbsp;)?(kg|kilo(s)?|g|t|tonne(s)?)(\s|&nbsp;)?(d'émissions\s|&nbsp;)?(de\s|&nbsp;)?(d’équivalent\s|&nbsp;)?(co(2|₂|<sub>2(\s|&nbsp;)?<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
 
 const getComputedStyle = (el: Element, property: string) => {
   if (document.defaultView) {
@@ -66,24 +66,29 @@ const Detector = ({ impact }: { impact: string }) => {
   const value = useMemo(() => {
     const values = regex.exec(impact)
     if (values) {
-      return Number(values[1].replace(',', '.')) * getFactor(values[4])
+      return Number(values[1].replaceAll(',', '.').replaceAll(' ', '')) * getFactor(values[4])
     }
     return 0
   }, [impact])
 
-  const onClick = useCallback(() => {
-    {
-      if (etiquetteRef.current && !display) {
-        const distances = etiquetteRef.current.getBoundingClientRect()
-        const xOverflow = getOverflow(etiquetteRef.current)
-        setDisplay(`${distances.top < 0 ? 'bottom' : ''}-${xOverflow}`)
-      }
+  const onClick = useCallback(
+    (event: MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault()
+      event.stopPropagation()
+      {
+        if (etiquetteRef.current && !display) {
+          const distances = etiquetteRef.current.getBoundingClientRect()
+          const xOverflow = getOverflow(etiquetteRef.current)
+          setDisplay(`${distances.top < 0 ? 'bottom' : ''}-${xOverflow}`)
+        }
 
-      if (display) {
-        setDisplay('')
+        if (display) {
+          setDisplay('')
+        }
       }
-    }
-  }, [display])
+    },
+    [display]
+  )
 
   useEffect(() => {
     const handleClickOutside = (event: Event) => {

@@ -34,7 +34,7 @@ const SimpleValue = ({ value, comparison, language }: { value: number; compariso
       <div className={styles.emoji}>
         <Emoji>{equivalent.emoji}</Emoji>
       </div>
-      <div>
+      <div className={styles.text}>
         <div className={styles.equivalentValue} data-testid={`etiquette-${comparison}-value`}>
           {equivalentValue}
         </div>

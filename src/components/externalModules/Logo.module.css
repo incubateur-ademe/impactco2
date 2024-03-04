@@ -10,6 +10,12 @@
   box-shadow: none !important;
   min-height: 3.5rem !important;
 
+  &:after {
+    content: '' !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   &:hover {
     color: var(--primary-60) !important;
   }
