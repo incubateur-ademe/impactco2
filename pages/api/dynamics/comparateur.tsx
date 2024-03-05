@@ -15,8 +15,8 @@ export default async function handler(req: NextRequest) {
   return new ImageResponse(
     (
       <Comparateur
-        value={Number(req.nextUrl.searchParams.get('value')) * 1000}
-        comparisons={(req.nextUrl.searchParams.get('comparisons') || '').split(',')}
+        value={Number(req.nextUrl.searchParams.get('value') || '100') * 1000}
+        comparisons={(req.nextUrl.searchParams.get('comparisons') || 'ananas').split(',')}
       />
     ),
     {

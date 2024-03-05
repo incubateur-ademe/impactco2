@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import React from 'react'
 import PageTitle from 'components/base/PageTitle'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -10,13 +9,11 @@ import Learning from 'components/misc/Learning'
 import { Separator } from 'components/misc/category/Header.styles'
 import Sources from 'components/misc/category/Sources'
 
-const Page = () => {
-  const router = useRouter()
-
+const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
   return (
     <Web
       title='Comparateur carbone'
-      image={`/api/dynamics${router.asPath}`}
+      image={`/api/dynamics${resolvedUrl}`}
       description='Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.'
       breadcrumb={{
         type: 'accueil',
