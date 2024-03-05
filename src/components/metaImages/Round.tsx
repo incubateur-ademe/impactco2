@@ -42,8 +42,8 @@ const Empty = ({
         borderRadius: '50%',
         top: `${top - 558}px`,
         right: `${right - 100}px`,
-        border: main ? '8px solid #35A099' : value ? '2px solid #EAE5E8' : '0',
-        boxShadow: value ? '0px 3px 1px 0px rgba(0, 32, 95, 0.04)' : '0',
+        border: main ? '8px solid #35A099' : value && comparison ? '2px solid #EAE5E8' : '0',
+        boxShadow: main || (value && comparison) ? '0px 3px 1px 0px rgba(0, 32, 95, 0.04)' : '0',
         fontSize: comparison ? '3.125rem' : '4rem',
         fontWeight: 800,
         lineHeight: comparison ? '1.5rem' : '3rem',
@@ -53,7 +53,7 @@ const Empty = ({
         <div
           style={{
             display: 'flex',
-            fontSize: '4rem',
+            fontSize: '7rem',
             marginBottom: '1rem',
           }}>
           {equivalent.emoji}
@@ -75,6 +75,7 @@ const Empty = ({
             lineHeight: comparison ? '1.4375rem' : '1.25rem',
             fontWeight: 700,
             marginTop: '0.75rem',
+            textAlign: 'center',
           }}>
           {equivalent ? formatName(equivalent.fr, comparisonValue, false) : 'Kg CO₂e'}
         </div>

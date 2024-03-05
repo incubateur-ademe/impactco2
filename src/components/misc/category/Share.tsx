@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
 import { Category } from 'types/category'
@@ -40,6 +39,8 @@ const Share = ({
   )
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
+
+  console.log(url)
   return (
     <>
       {params && visibility && (
@@ -84,7 +85,14 @@ const Share = ({
       </Buttons>
       {(category || path === 'comparateur') && (
         <Meta>
-          <Image src={`/meta/${category ? category.slug : path}.png`} width={728} height={382.2} alt='' />
+          <img
+            src={
+              category ? `/meta/${category.slug}` : `/api/dynamics/${path}?${buildCustomParamsUrl(params, visibility)}`
+            }
+            width={728}
+            height={382.2}
+            alt=''
+          />
           <div>
             <p>
               <b>{category ? category.meta.title : 'Comparateur carbone'}</b>

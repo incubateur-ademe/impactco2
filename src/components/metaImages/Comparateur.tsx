@@ -1,15 +1,31 @@
 import React from 'react'
+import EquivalentItems from './EquivalentItems'
 import { Logos } from './Logos'
 import OneItem from './OneItem'
+import ThreeItems from './ThreeItems'
+import TwoItems from './TwoItems'
 
-const Comparateur = ({ value, comparisons }: { value: number; comparisons: string[] }) => {
+const Comparateur = ({
+  value,
+  comparisons,
+  equivalent,
+}: {
+  value: number
+  comparisons: string[]
+  equivalent: string | null
+}) => {
   const content = () => {
-    switch (comparisons.length) {
-      case 1:
-        return <OneItem value={value} comparisons={comparisons} />
-      default:
-        return null
+    if (equivalent) {
+      return <EquivalentItems value={value} comparisons={comparisons} equivalent={equivalent} />
     }
+
+    if (comparisons.length === 1) {
+      return <OneItem value={value} comparisons={comparisons} />
+    }
+    if (comparisons.length === 2) {
+      return <TwoItems value={value} comparisons={comparisons} />
+    }
+    return <ThreeItems value={value} comparisons={comparisons} />
   }
   return (
     <div

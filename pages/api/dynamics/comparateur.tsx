@@ -16,7 +16,10 @@ export default async function handler(req: NextRequest) {
     (
       <Comparateur
         value={Number(req.nextUrl.searchParams.get('value') || '100') * 1000}
-        comparisons={(req.nextUrl.searchParams.get('comparisons') || 'ananas').split(',')}
+        equivalent={req.nextUrl.searchParams.get('equivalent')}
+        comparisons={(
+          req.nextUrl.searchParams.get('comparisons') || 'ananas,voiturethermique,tgv,smartphone,pomme'
+        ).split(',')}
       />
     ),
     {
