@@ -74,6 +74,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 type: 'number',
                 number: inputs.data.suggestionType === 'avis' ? inputs.data.avis : null,
               },
+              'Origine du retour': {
+                type: 'select',
+                select: { name: 'Retour formulaire' },
+              },
             },
           },
       {
