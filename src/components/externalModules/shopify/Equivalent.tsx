@@ -1,7 +1,5 @@
-import classNames from 'classnames'
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
-import { Icon } from 'components/osezchanger/icons'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import Equal from './Equal'
@@ -24,6 +22,8 @@ const Equivalent = ({
   url?: string
   language?: Language
 }) => {
+  const isAnimated = useMemo(() => animated && comparisons.length > 1, [animated, comparisons])
+
   const [toDisplay, setToDisplay] = useState(0)
   const [progress, setProgress] = useState(0)
   const [fadeIn, setFadeIn] = useState(false)
@@ -60,7 +60,7 @@ const Equivalent = ({
   }, [progress])
 
   useEffect(() => {
-    if (animated && comparisons.length > 0) {
+    if (isAnimated) {
       setToDisplay(0)
       setProgress(0)
       setFadeIn(false)
@@ -71,7 +71,7 @@ const Equivalent = ({
         clearTimeout(displayedTimeoutRef.current)
       }
     }
-  }, [animated, comparisons])
+  }, [isAnimated, comparisons])
 
   const intValue = Number(baseValue)
   const value = Number.isNaN(intValue) ? 100000 : intValue
@@ -96,7 +96,7 @@ const Equivalent = ({
           </div>
         </div>
         <div className={styles.right}>
-          {animated && (
+          {isAnimated && (
             <div
               className={styles.progressBar}
               style={{
@@ -107,15 +107,15 @@ const Equivalent = ({
               </progress>
             </div>
           )}
-          <div className={styles.equal}>
+          <div className={isAnimated ? styles.animatedEqual : styles.equal}>
             <Equal />
           </div>
-          <div className={animated ? styles.animatedComparisons : styles.comparisons}>
+          <div className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
             {comparisons.map((comparison, index) => (
               <div
                 key={comparison}
                 className={
-                  animated
+                  isAnimated
                     ? index === toDisplay && !fadeIn
                       ? styles.visibleAnimatedComparison
                       : styles.animatedComparison

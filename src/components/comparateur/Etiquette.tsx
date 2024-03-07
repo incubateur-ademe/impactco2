@@ -1,4 +1,5 @@
 import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
+import { Language } from 'types/equivalent'
 import ColumnEquivalent from 'components/externalModules/shopify/ColumnEquivalent'
 import Equivalent from 'components/externalModules/shopify/Equivalent'
 
@@ -7,10 +8,12 @@ export default forwardRef(function Etiquette(
     comparisons,
     baseValue,
     animated,
+    language,
   }: {
     comparisons: string[]
     baseValue: string
     animated?: boolean
+    language?: Language
   },
   ref: ForwardedRef<HTMLDivElement>
 ) {
@@ -32,14 +35,14 @@ export default forwardRef(function Etiquette(
   }, [comparisons, ref])
 
   if (animated) {
-    return <Equivalent baseValue={baseValue} comparisons={comparisons} animated />
+    return <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} animated />
   }
   return (
     <div ref={ref}>
       {inline ? (
-        <Equivalent baseValue={baseValue} comparisons={comparisons} />
+        <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} />
       ) : (
-        <ColumnEquivalent baseValue={baseValue} comparisons={comparisons} />
+        <ColumnEquivalent language={language} baseValue={baseValue} comparisons={comparisons} />
       )}
     </div>
   )

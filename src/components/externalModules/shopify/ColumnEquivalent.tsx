@@ -1,11 +1,20 @@
 import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { Language } from 'types/equivalent'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './ColumnEquivalent.module.css'
 import Equal from './Equal'
 import baseStyles from './Equivalent.module.css'
 
-const ColumnEquivalent = ({ baseValue, comparisons }: { baseValue: string; comparisons: string[] }) => {
+const ColumnEquivalent = ({
+  baseValue,
+  comparisons,
+  language,
+}: {
+  baseValue: string
+  comparisons: string[]
+  language?: Language
+}) => {
   const intValue = Number(baseValue)
   const value = Number.isNaN(intValue) ? 100000 : intValue
 
@@ -33,7 +42,7 @@ const ColumnEquivalent = ({ baseValue, comparisons }: { baseValue: string; compa
         <div className={baseStyles.comparisonsColumn}>
           {comparisons.map((comparison) => (
             <div key={comparison} className={styles.comparison}>
-              <SimpleValue value={value} comparison={comparison} />
+              <SimpleValue value={value} comparison={comparison} language={language} />
             </div>
           ))}
         </div>
