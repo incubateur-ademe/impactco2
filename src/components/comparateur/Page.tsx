@@ -30,8 +30,8 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
         }
         description={
           <>
-            Le comparateur permet à votre communauté de se représenter les bons <b>ordres de grandeur</b> d’une
-            empreinte carbone.
+            Le comparateur permet à votre communauté de mesurer l’impact carbone des gestes et objets du quotidien et de
+            se représenter les bons <b>ordres de grandeur</b>.
           </>
         }
       />

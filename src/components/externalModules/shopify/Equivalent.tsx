@@ -37,6 +37,7 @@ const Equivalent = ({
 
   const updateWithTimeout = useCallback(() => {
     update()
+    // regarder https://codepen.io/dustinjacobson/pen/yLwoGgq
     displayedTimeoutRef.current = setTimeout(updateWithTimeout, 50)
   }, [])
 

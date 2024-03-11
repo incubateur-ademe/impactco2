@@ -32,10 +32,17 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
       </div>
       <div className={styles.content}>
         {search ? (
-          <Equivalents equivalentsToDisplay={results} />
+          results.length > 0 ? (
+            <Equivalents equivalentsToDisplay={results} />
+          ) : (
+            <>
+              Oups ! Nous n'avons trouvé aucun résultat correspondant à votre recherche. Veuillez réessayer avec des
+              termes différents.
+            </>
+          )
         ) : (
           categories
-            .filter((category) => category.id !== 12)
+            .filter((category) => category.id !== 12 && category.id !== 11)
             .map((category) => <Category category={category} key={category.slug} onClose={onClose} />)
         )}
       </div>
