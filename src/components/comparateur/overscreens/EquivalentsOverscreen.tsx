@@ -45,10 +45,19 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
               setEquivalents={setTempEquivalents}
             />
           ) : (
-            <>
-              Oups ! Nous n'avons trouvé aucun résultat correspondant à votre recherche. Veuillez réessayer avec des
-              termes différents.
-            </>
+            <div className={styles.noResult}>
+              Aucun résultat ne correspond à votre recherche.
+              <br />
+              Vous pouvez essayer d'autres termes ou{' '}
+              <Button
+                asLink
+                onClick={() => {
+                  setSearch('')
+                }}>
+                retourner à la liste des équivalents
+              </Button>
+              .
+            </div>
           )
         ) : (
           categories

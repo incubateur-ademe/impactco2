@@ -39,3 +39,7 @@
 .equivalentsInfo {
   color: var(--neutral-60);
 }
+
+.noResult {
+  text-align: center;
+}
