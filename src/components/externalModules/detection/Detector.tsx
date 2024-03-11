@@ -6,7 +6,7 @@ import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regex =
-  /([0-9]+(,|\.|\s|&nbsp;)?[0-9]*)(\s|&nbsp;)?(kg|kilo(s)?|g|t|tonne(s)?)(\s|&nbsp;)?(d'émissions\s|&nbsp;)?(de\s|&nbsp;)?(d’équivalent\s|&nbsp;)?(co(2|₂|<sub>2(\s|&nbsp;)?<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
+  /([0-9]+(,|\.|\s|&nbsp;)?[0-9]*)(\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?grammes|g|t|tonne(s)?)(\s|&nbsp;)?(d'émissions\s|&nbsp;)?(de\s|&nbsp;)?(d’équivalent\s|&nbsp;)?(co(2|₂|<sub>2(\s|&nbsp;)?<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
 
 const getComputedStyle = (el: Element, property: string) => {
   if (document.defaultView) {
@@ -50,6 +50,7 @@ const getFactor = (unit: string) => {
     case 'kilo':
     case 'kilos':
     case 'kg':
+    case 'kgs':
       return 1000
     default:
       return 1
