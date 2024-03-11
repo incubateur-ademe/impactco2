@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
-import useParamContext from 'components/providers/ParamProvider'
 import Emoji from 'components/base/Emoji'
 import CheckboxInput from 'components/form/CheckboxInput'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './Checkbox.module.css'
 
-const Checkbox = ({ equivalent }: { equivalent: ComputedEquivalent }) => {
-  const {
-    comparateur: { equivalents, setEquivalents },
-  } = useParamContext()
-
+const Checkbox = ({
+  equivalent,
+  equivalents,
+  setEquivalents,
+}: {
+  equivalent: ComputedEquivalent
+  equivalents: string[]
+  setEquivalents: (value: string[]) => void
+}) => {
   const [interacted, setInteracted] = useState(false)
   const selectEquivalent = (checked: boolean, equivalent: ComputedEquivalent) => {
     if (checked) {
-      setEquivalents([...equivalents, equivalent.slug])
+      if (equivalents.length < 8) {
+        setEquivalents([...equivalents, equivalent.slug])
+      }
     } else {
       setEquivalents(equivalents.filter((e) => e !== equivalent.slug))
     }

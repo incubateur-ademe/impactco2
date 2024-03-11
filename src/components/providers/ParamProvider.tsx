@@ -229,17 +229,12 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [tiles, setTiles] = useState<Equivalent[]>([])
   const [comparedEquivalent, setComparedEquivalent] = useState<ComputedEquivalent>()
 
-  const internalSetEquivalentsSetter = (equivalents: string[]) => {
-    if (equivalents.length < 9) {
-      setEquivalents(equivalents)
-    }
-  }
   const internalComparedEquivalentSetter = (equivalent: ComputedEquivalent | undefined) => {
     const filteredEquivalent = equivalent ? equivalents.filter((slug) => slug !== equivalent.slug) : equivalents
     if (comparedEquivalent) {
-      internalSetEquivalentsSetter([...filteredEquivalent, comparedEquivalent.slug])
+      setEquivalents([...filteredEquivalent, comparedEquivalent.slug])
     } else {
-      internalSetEquivalentsSetter([...filteredEquivalent])
+      setEquivalents([...filteredEquivalent])
     }
     setBaseValue(10)
     setComparedEquivalent(equivalent)
@@ -387,9 +382,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (router.query.comparisons) {
-      internalSetEquivalentsSetter((router.query.comparisons as string).split(','))
+      setEquivalents((router.query.comparisons as string).split(','))
     } else {
-      internalSetEquivalentsSetter(getRandomEquivalents(comparedEquivalent?.slug, 3))
+      setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, 3))
     }
 
     if (router.query.m2) {
@@ -511,7 +506,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           baseValue,
           setBaseValue,
           equivalents,
-          setEquivalents: internalSetEquivalentsSetter,
+          setEquivalents,
           tiles,
           setTiles,
           comparedEquivalent,

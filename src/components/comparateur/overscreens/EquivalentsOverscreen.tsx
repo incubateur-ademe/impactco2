@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import categories from 'data/categories.json'
 import useParamContext from 'components/providers/ParamProvider'
 import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
@@ -11,8 +11,14 @@ import styles from './EquivalentsOverscreen.module.css'
 
 const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
   const {
-    comparateur: { equivalents },
+    comparateur: { equivalents, setEquivalents },
   } = useParamContext()
+
+  const [tempEquivalents, setTempEquivalents] = useState(equivalents)
+
+  useEffect(() => {
+    setTempEquivalents(equivalents)
+  }, [equivalents])
 
   const [search, setSearch] = useState('')
   const results = useSearchEquivalent(search)
@@ -33,7 +39,11 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
       <div className={styles.content}>
         {search ? (
           results.length > 0 ? (
-            <Equivalents equivalentsToDisplay={results} />
+            <Equivalents
+              equivalents={tempEquivalents}
+              equivalentsToDisplay={results}
+              setEquivalents={setTempEquivalents}
+            />
           ) : (
             <>
               Oups ! Nous n'avons trouvé aucun résultat correspondant à votre recherche. Veuillez réessayer avec des
@@ -43,18 +53,32 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
         ) : (
           categories
             .filter((category) => category.id !== 12 && category.id !== 11)
-            .map((category) => <Category category={category} key={category.slug} onClose={onClose} />)
+            .map((category) => (
+              <Category
+                category={category}
+                key={category.slug}
+                equivalents={tempEquivalents}
+                setEquivalents={setTempEquivalents}
+                onClose={onClose}
+              />
+            ))
         )}
       </div>
       <div className={styles.footer}>
         <div>
           <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>
-            {equivalents.length}
+            {tempEquivalents.length}
           </span>
           <span className={styles.equivalentsInfo}> / 8 équivalents</span>
         </div>
         <div>
-          <Button onClick={onClose}>Valider la séléction</Button>
+          <Button
+            onClick={() => {
+              setEquivalents(tempEquivalents)
+              onClose()
+            }}>
+            Valider la séléction
+          </Button>
         </div>
         <div />
       </div>

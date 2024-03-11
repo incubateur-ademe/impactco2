@@ -9,9 +9,19 @@ import { getRandomEquivalentsInCategory } from '../random'
 import styles from './Category.module.css'
 import Equivalents from './Equivalents'
 
-const Category = ({ category, onClose }: { category: CategoryType; onClose: () => void }) => {
+const Category = ({
+  category,
+  onClose,
+  setEquivalents,
+  equivalents,
+}: {
+  category: CategoryType
+  onClose: () => void
+  setEquivalents: (value: string[]) => void
+  equivalents: string[]
+}) => {
   const {
-    comparateur: { equivalents, comparedEquivalent, setEquivalents },
+    comparateur: { comparedEquivalent, setEquivalents: setFinalEquivalents },
   } = useParamContext()
 
   const [open, setOpen] = useState(false)
@@ -57,7 +67,7 @@ const Category = ({ category, onClose }: { category: CategoryType; onClose: () =
             <Button
               priority='secondary'
               onClick={() => {
-                setEquivalents(
+                setFinalEquivalents(
                   getRandomEquivalentsInCategory(comparedEquivalent?.slug, category.id).map(
                     (equivalent) => equivalent.slug
                   )
@@ -67,7 +77,11 @@ const Category = ({ category, onClose }: { category: CategoryType; onClose: () =
               Voir la comparaison
             </Button>
           </div>
-          <Equivalents equivalentsToDisplay={categoryEquivalents} />
+          <Equivalents
+            equivalents={equivalents}
+            equivalentsToDisplay={categoryEquivalents}
+            setEquivalents={setEquivalents}
+          />
         </>
       )}
     </div>
