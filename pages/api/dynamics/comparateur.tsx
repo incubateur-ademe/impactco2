@@ -1,3 +1,4 @@
+import { NextApiResponse } from 'next'
 import { ImageResponse } from 'next/og'
 import { NextRequest } from 'next/server'
 import Comparateur from 'components/metaImages/Comparateur'
@@ -11,7 +12,11 @@ const getFont = async (url: URL) => {
   return await res.arrayBuffer()
 }
 
-export default async function handler(req: NextRequest) {
+export default async function handler(req: NextRequest, res: NextApiResponse) {
+  if (process.env.NO_IMAGE === 'true') {
+    return res.status(401).send(`Please use ${process.env.NEXT_PUBLIC_IMAGE_URL}`)
+  }
+
   return new ImageResponse(
     (
       <Comparateur

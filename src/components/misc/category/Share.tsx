@@ -89,7 +89,7 @@ const Share = ({
             src={
               category
                 ? `/meta/${category.slug}.png`
-                : `/api/dynamics/${path}?${buildCustomParamsUrl(params, visibility)}`
+                : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/${path}?${buildCustomParamsUrl(params, visibility)}`
             }
             width={728}
             height={382.2}
