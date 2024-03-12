@@ -99,7 +99,6 @@ declare module "impactco2-react" {
                 "lavevaisselle" |
                 "liseuse" |
                 "lit" |
-                "livredepoche" |
                 "mache" |
                 "mais" |
                 "mandarine" |

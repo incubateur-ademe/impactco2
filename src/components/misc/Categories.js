@@ -50,11 +50,9 @@ export default function Categories(props) {
             <Text>Vous pouvez aussi naviguer par thématique :</Text>
           )}
           <List>
-            {categories
-              .filter((category) => category.display)
-              .map((category) => (
-                <Category key={category.slug} category={category} />
-              ))}
+            {categories.map((category) => (
+              <Category key={category.slug} category={category} />
+            ))}
           </List>
         </SectionWideContent>
       </Section>

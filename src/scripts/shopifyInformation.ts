@@ -2,7 +2,6 @@ import fs from 'fs'
 import boissons from '../data/categories/boisson.json'
 import chauffages from '../data/categories/chauffage.json'
 import deplacements from '../data/categories/deplacement.json'
-import divers from '../data/categories/divers.json'
 import electromenager from '../data/categories/electromenager.json'
 import { flattenEquivalents } from '../data/categories/flattenEquivalents'
 import fruitsetlegumes from '../data/categories/fruitsetlegumes.json'
@@ -24,7 +23,6 @@ const existingEquivalentsByCategory: Record<string, Equivalent[]> = {
   habillement: habillement,
   mobilier: mobilier,
   repas: repas,
-  divers: divers,
   numerique: numerique,
   deplacements: flattenEquivalents(deplacements),
   chauffages: chauffages,

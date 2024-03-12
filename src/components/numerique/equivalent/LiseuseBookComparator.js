@@ -92,15 +92,13 @@ const Thumb = styled.div`
     width: 6.5rem;
   }
 `
+
+const LIVRE_ECV = 1.1
 export default function LiseuseBookComparator() {
   const { setCo2e } = useModalContext()
 
   const { equivalents } = useDataContext()
   const liseuse = useMemo(() => equivalents.find((equivalent) => ['liseuse'].includes(equivalent.slug)), [equivalents])
-  const livre = useMemo(
-    () => equivalents.find((equivalent) => ['livredepoche'].includes(equivalent.slug)),
-    [equivalents]
-  )
   const [numBookPerYear, setNumBookPerYear] = useState(10)
   const tracked = useRef(false)
 
@@ -140,8 +138,8 @@ export default function LiseuseBookComparator() {
           <Result>
             Il faudrait que j'utilise ma liseuse pendant au moins{' '}
             <strong>
-              {Math.ceil(computeECV(liseuse) / (computeECV(livre) * numBookPerYear))} an
-              {Math.ceil(computeECV(liseuse) / (computeECV(livre) * numBookPerYear)) > 1 ? 's' : ''}
+              {Math.ceil(computeECV(liseuse) / (LIVRE_ECV * numBookPerYear))} an
+              {Math.ceil(computeECV(liseuse) / (LIVRE_ECV * numBookPerYear)) > 1 ? 's' : ''}
               <br />
             </strong>{' '}
             avant qu'elle émette moins de{' '}

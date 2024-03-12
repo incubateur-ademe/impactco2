@@ -83,7 +83,10 @@ const visualizations: Record<string, ReactNode[]> = {
   reseaudechaleur: [<Visualization types={['reseaudechaleur', 'poeleagranule', 'pompeachaleur']} key='Chauffage' />],
   liseuse: [
     <LiseuseBookComparator key='simulator' />,
-    <Visualization types={['liseuse', 'livredepoche']} key='liseuse' />,
+    <Visualization
+      types={['liseuse', { value: 1.1, name: 'livre[s] de poche', emoji: '📘', category: 1 }]}
+      key='liseuse'
+    />,
   ],
 }
 

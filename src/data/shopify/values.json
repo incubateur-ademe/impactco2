@@ -1124,15 +1124,6 @@
     "es": "Comida con pollo",
     "emoji": "🍗"
   },
-  "livredepoche": {
-    "category": 11,
-    "value": 1100,
-    "fr": "livre[s] de poche",
-    "en": "paperback book[s]",
-    "de": "Taschenbücher",
-    "es": "Libros de bolsillo",
-    "emoji": "📘"
-  },
   "smartphone": {
     "category": 1,
     "value": 37785.7171234219,
@@ -1559,10 +1550,10 @@
   "poeleagranule": {
     "category": 8,
     "value": 5640,
-    "fr": "année[s] de chauffage avec un poêle à granulé par m²",
-    "en": "year[s] of heating with a pellet stove per m²",
-    "de": "Jahre Heizung mit Pelletöfen pro m²",
-    "es": "Años de calefacción con estufa de pellets por m²",
+    "fr": "année[s] de chauffage avec un poêle à granulés par m²",
+    "en": "TODO",
+    "de": "TODO",
+    "es": "TODO",
     "emoji": "🔥"
   },
   "poeleabois": {

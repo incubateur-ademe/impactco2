@@ -26,16 +26,14 @@ export default function MenuSweet() {
   return (
     <Wrapper>
       <DropdownSweet label={'Par thématique'}>
-        {categories
-          ?.filter((category) => category.display)
-          .map((category) => (
-            <DropdownSweet.Item key={category.id} href={`/${category.slug}`} $current={slugs.includes(category.slug)}>
-              <div>
-                <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
-              </div>
-              {news.includes(category.slug) && <Tag text='Nouveau' />}
-            </DropdownSweet.Item>
-          ))}
+        {categories.map((category) => (
+          <DropdownSweet.Item key={category.id} href={`/${category.slug}`} $current={slugs.includes(category.slug)}>
+            <div>
+              <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
+            </div>
+            {news.includes(category.slug) && <Tag text='Nouveau' />}
+          </DropdownSweet.Item>
+        ))}
       </DropdownSweet>
     </Wrapper>
   )

@@ -181,7 +181,7 @@
   },
   {
     "value": "poeleagranule",
-    "label": "Chauffage avec un poêle à granulé"
+    "label": "Chauffage avec un poêle à granulés"
   },
   {
     "value": "pompeachaleur",
@@ -386,10 +386,6 @@
   {
     "value": "lit",
     "label": "Lit (Cadre + sommier + matelas)"
-  },
-  {
-    "value": "livredepoche",
-    "label": "Livre de poche"
   },
   {
     "value": "mache",
