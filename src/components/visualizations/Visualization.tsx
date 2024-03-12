@@ -92,7 +92,7 @@ const Visualization = ({ types, base }: { types: (string | VisualizationType)[];
       ) as ComputedEquivalent
       return {
         ...equivalent,
-        name: `${equivalent.prefix ? `${equivalent.prefix} ` : ''}${equivalent.name}${equivalent.suffix || ''}`,
+        name: `${equivalent.prefix ? `${equivalent.prefix} ` : ''}${equivalent.name}`,
       }
     }
     return slug
