@@ -7,7 +7,7 @@ export default function SuggestionPage() {
   const router = useRouter()
   return (
     <Web
-      title='Rendez-vous'
+      title='Faire une suggestion'
       breadcrumb={
         router.query.from && router.query.fromLabel
           ? {
