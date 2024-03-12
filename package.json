@@ -104,6 +104,7 @@
     "@babel/preset-typescript": "^7.23.3",
     "@babel/runtime": "^7.23.9",
     "@playwright/test": "^1.41.2",
+    "@statoscope/webpack-plugin": "^5.28.2",
     "@storybook/addon-a11y": "^7.6.16",
     "@storybook/addon-essentials": "^7.6.16",
     "@storybook/addon-interactions": "^7.6.16",

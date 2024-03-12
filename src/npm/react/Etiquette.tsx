@@ -11,7 +11,7 @@ const Etiquette = ({
   comparisons: string[]
   value: number
   animated?: boolean
-  language: Language
+  language?: Language
 }) => {
   return (
     <InternalEtiquette comparisons={comparisons} baseValue={value.toString()} animated={animated} language={language} />
