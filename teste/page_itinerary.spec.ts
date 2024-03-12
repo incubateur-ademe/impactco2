@@ -226,7 +226,7 @@ test('Load correct number of tabs and redirect with params', async ({ page }) =>
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('12 km')
 
     await expect(page.getByTestId('bar-chart-item-busthermique')).toBeAttached()
-    await expect(page.getByTestId('bar-chart-item-busthermique')).toHaveText('Bus (moteur thermique)1.35 kg CO2e')
+    await expect(page.getByTestId('bar-chart-item-busthermique')).toHaveText('Bus (moteur thermique)1.36 kg CO2e')
   })
 })
 
