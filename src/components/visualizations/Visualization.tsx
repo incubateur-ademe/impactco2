@@ -138,7 +138,7 @@ const Visualization = ({ types, base }: { types: (string | VisualizationType)[];
         <br />
       </Small>
       <CenterLink category={categories.find((category) => category.id === values[0].category)} />
-      <Signature small noLink noMargin />
+      <Signature color='var(--primary-60)' small noLink noMargin />
     </>
   )
 }
