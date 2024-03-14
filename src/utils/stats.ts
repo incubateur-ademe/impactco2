@@ -14,17 +14,17 @@ export const getMatomoStats = async (): Promise<Stats> => {
     await axios
       .post<
         { label: string; nb_visits: number }[]
-      >('https://stats.data.gouv.fr?idSite=156&method=Actions.getPageUrls&format=JSON&module=API&period=year&date=2024-01-01&showColumns=nb_visits')
+      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Actions.getPageUrls&format=JSON&module=API&period=year&date=2024-01-01&showColumns=nb_visits`)
       .then((response) => response.data),
     await axios
       .post<
         { label: string; nb_visits: number; nb_events: number }[]
-      >('https://stats.data.gouv.fr?idSite=156&method=Events.getCategory&format=JSON&module=API&period=year&date=2024-01-01&showColumns=nb_visits,nb_events')
+      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&format=JSON&module=API&period=year&date=2024-01-01&showColumns=nb_visits,nb_events`)
       .then((response) => response.data),
     await axios
       .post<
         { label: string; nb_visits: number }[]
-      >('https://stats.data.gouv.fr?idSite=156&method=Events.getAction&format=JSON&module=API&period=year&date=2024-01-01&showColumns=nb_visits')
+      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getAction&format=JSON&module=API&period=year&date=2024-01-01&showColumns=nb_visits`)
       .then((response) => response.data),
   ])
 

@@ -13,7 +13,7 @@ const csp = {
   'frame-ancestors': ["'self'", 'https:', 'file:'],
   'connect-src': [
     "'self'",
-    'https://stats.data.gouv.fr',
+    process.env.NEXT_PUBLIC_MATOMO_SITE_URL,
     'https://photon.komoot.io',
     'https://sentry.incubateur.net',
     'https://cdn.jsdelivr.net',
@@ -21,7 +21,7 @@ const csp = {
   'script-src': [
     "'self'",
     'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js',
-    'https://stats.data.gouv.fr/matomo.js',
+    `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.js`,
   ],
 }
 

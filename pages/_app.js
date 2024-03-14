@@ -17,7 +17,11 @@ function MyApp({ Component, pageProps }) {
   useTheme()
   useEffect(() => {
     if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_MATOMO === 'true') {
-      init({ url: 'https://stats.data.gouv.fr', siteId: 156 })
+      init({
+        url: process.env.NEXT_PUBLIC_MATOMO_SITE_URL,
+        siteId: process.env.NEXT_PUBLIC_MATOMO_SITE_ID,
+        excludeUrlsPatterns: [/\/iframes\//],
+      })
 
       if (typeof window !== 'undefined' && typeof window.please === 'undefined') {
         window.please = {}
