@@ -20,7 +20,6 @@
     "equivalent": "usage[s] numérique[s]",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "",
     "include": "",
     "list": true,
@@ -40,7 +39,6 @@
     "equivalent": "impact[s] livraison[s]",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "",
     "include": "",
     "list": true,
@@ -70,7 +68,6 @@
     "equivalent": "mode[s] de chauffage",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "m²",
     "include": "par m² par année.",
     "meta": {
@@ -94,7 +91,6 @@
     "equivalent": "mode[s] de transport",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "km",
     "include": "par personne en France. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
     "meta": {
@@ -112,7 +108,6 @@
     "equivalent": "fruit[s] et légume[s]",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "kg",
     "include": "par kg de produit pour des fruits et légumes de saison",
     "meta": {
@@ -141,7 +136,6 @@
     "equivalent": "appareil[s]",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage",
     "meta": {
@@ -166,7 +160,6 @@
     "equivalent": "repas",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "repas",
     "include": "par repas comprenant la fabrication, la distribution et la consommation.",
     "meta": {
@@ -195,7 +188,6 @@
     "equivalent": "vêtement[s]",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
@@ -224,7 +216,6 @@
     "equivalent": "meuble[s]",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
@@ -253,7 +244,6 @@
     "equivalent": "appareil[s]",
     "gender": "m",
     "divider": 1,
-    "display": true,
     "unit": "unité",
     "include": "par produit comprenant la fabrication, la distribution et l'usage.",
     "meta": {
@@ -272,27 +262,11 @@
     "equivalent": "boisson[s]",
     "gender": "f",
     "divider": 1,
-    "display": true,
     "unit": "litre",
     "include": "par litre de produit comprenant la fabrication, la distribution et la consommation.",
     "meta": {
       "title": "Boisson",
       "description": "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation"
-    }
-  },
-  {
-    "id": 11,
-    "name": "Divers",
-    "emoji": "⚙️",
-    "slug": "divers",
-    "header": "",
-    "display": false,
-    "gender": "m",
-    "unit": "unité",
-    "include": "par unité.",
-    "meta": {
-      "title": "",
-      "description": ""
     }
   }
 ]

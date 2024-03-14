@@ -1,9 +1,15 @@
+import classNames from 'classnames'
 import React from 'react'
 import styles from './Logo.module.css'
 
-const Logo = () => {
+const Logo = ({ right, url, value }: { right?: boolean; url?: string; value: number }) => {
   return (
-    <a href='https://impactco2.fr' className={styles.logo} target='_blank' rel='noreferrer noopener'>
+    <a
+      href={url || `https://impactco2.fr/comparateur?value=${value}`}
+      className={classNames(right ? styles.reverseLogo : styles.logo)}
+      target='_blank'
+      rel='noreferrer noopener'
+      aria-label='Impact CO2'>
       <svg xmlns='http://www.w3.org/2000/svg' width='30' height='50' viewBox='0 0 30 50' fill='none'>
         <path
           fillRule='evenodd'

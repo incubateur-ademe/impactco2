@@ -1,0 +1,18 @@
+.container {
+  border-radius: 8px;
+  border: 1px solid var(--neutral-30);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06) !important;
+}
+
+.leftContent {
+  flex: 1;
+  padding: 0.75rem;
+}
+
+.comparison {
+  padding: 0.75rem;
+
+  &:not(:last-child) {
+    border-bottom: solid 1px var(--neutral-30);
+  }
+}

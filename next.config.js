@@ -82,10 +82,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  i18n: {
-    locales: ['fr'],
-    defaultLocale: 'fr',
-  },
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
   sentry: {
     autoInstrumentServerFunctions: true,
@@ -153,7 +149,12 @@ const nextConfig = {
       },
       {
         source: '/iframes/tuiles',
-        destination: '/iframes/convertisseur',
+        destination: '/iframes/comparateur',
+        permanent: true,
+      },
+      {
+        source: '/iframes/convertisseur',
+        destination: '/iframes/comparateur',
         permanent: true,
       },
       {
@@ -173,9 +174,9 @@ const sentryWebpackPluginOptions = {
 
   // Suppresses source map uploading logs during build
   silent: true,
-  org: 'betagouv',
+  org: process.env.SENTRY_ORG,
   project: 'impact-co2',
-  url: 'https://sentry.incubateur.net',
+  url: process.env.SENTRY_URL,
 }
 
 module.exports = (phase) => {

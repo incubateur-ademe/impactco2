@@ -1,15 +1,15 @@
 import React from 'react'
 import { Category } from 'types/category'
-import { Equivalent as EquivalentType } from 'types/equivalent'
+import { ComputedEquivalent } from 'types/equivalent'
 import categories from 'data/categories.json'
-import { equivalents } from 'components/providers/DataProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Web from 'components/layout/Web'
 import Details from 'components/views/equivalent/Details'
 import Ecv from 'components/views/equivalent/Ecv'
 import Text from 'components/views/equivalent/Text'
 import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
-export default function Equivalent({ category, equivalent }: { category: Category; equivalent: EquivalentType }) {
+export default function Equivalent({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) {
   return (
     <Web
       title={equivalent.meta.title}
@@ -29,7 +29,7 @@ export default function Equivalent({ category, equivalent }: { category: Categor
 
 export async function getStaticPaths() {
   return {
-    paths: equivalents
+    paths: computedEquivalents
       .filter(
         (equivalent) =>
           !['email', 'visioconference', 'audioconference', 'rechercheweb', 'streamingvideo'].includes(equivalent.slug)
@@ -54,7 +54,7 @@ export async function getStaticProps({ params }: { params: { category: string; e
   if (!category) {
     return { notFound: true }
   }
-  const equivalent = equivalents.find((equivalent) => equivalent.slug === params.equivalent)
+  const equivalent = computedEquivalents.find((equivalent) => equivalent.slug === params.equivalent)
   if (!equivalent) {
     return { notFound: true }
   }

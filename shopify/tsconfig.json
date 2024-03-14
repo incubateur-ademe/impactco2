@@ -1,7 +1,14 @@
 {
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2019"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "strict": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -11,13 +18,18 @@
     "noEmit": true,
     "allowJs": true,
     "jsx": "react-jsx",
-    "module": "Node16",
-    "moduleResolution": "Node16",
-    "target": "ES2019",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"],
+      "~/*": [
+        "./app/*"
+      ],
     },
-    "types": ["node", "@shopify/app-bridge-types"],
+    "types": [
+      "node",
+      "@shopify/app-bridge-types"
+    ],
   },
 }

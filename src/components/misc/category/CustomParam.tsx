@@ -56,6 +56,7 @@ const configs: Record<
 
 const arrayConfigs: Record<string, string> = {
   situation: '[ACTION] ma propre simulation',
+  comparateur: '[ACTION] ma propre comparaison',
 }
 
 const addressConfigs: Record<string, { label: string; start: string; end: string }> = {
@@ -95,6 +96,7 @@ const CustomParam = ({
       <Container>
         {setVisible && (
           <CheckboxInput
+            color='secondary'
             checked={visible}
             setChecked={setVisible}
             label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
@@ -165,6 +167,7 @@ const CustomParam = ({
       <Container>
         {setVisible && (
           <CheckboxInput
+            color='secondary'
             checked={visible}
             setChecked={setVisible}
             label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
@@ -205,6 +208,7 @@ const CustomParam = ({
     <Container>
       {setVisible && (
         <CheckboxInput
+          color='secondary'
           checked={visible}
           setChecked={setVisible}
           label={config.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}

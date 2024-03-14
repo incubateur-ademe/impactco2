@@ -1,67 +1,152 @@
-.title {
-  font-size: 0.875em;
-  margin-bottom: 0.75em;
+.animatedContainer,
+.container {
+  font-size: initial !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--neutral-30) !important;
+  display: flex !important;
+  width: fit-content !important;
+  line-height: 1.25em !important;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06) !important;
 }
 
-.container {
-  border-radius: 8px;
-  border: 1px solid var(--neutral-30);
+.animatedContainer {
+  border-radius: 8px 0 0 8px !important;
+}
+
+.left,
+.top {
   display: flex !important;
-  width: fit-content;
-  line-height: 1.25rem;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+  align-items: stretch !important;
+  border-radius: 8px 0 0 8px !important;
+  gap: 0.75em !important;
+  background-color: var(--primary-10) !important;
+  color: var(--primary-70) !important;
 }
 
 .left {
-  display: flex !important;
-  align-items: center;
-  gap: 0.75em;
-  border-radius: 8px 0 0 8px;
-  padding: 0 1.25em 0 0;
-  border-right: 1px solid var(--primary-30);
-  background-color: var(--primary-10);
-  color: var(--primary-70);
+  border-right: 1px solid var(--primary-30) !important;
 }
 
+.top {
+  border-radius: 8px 8px 0 0 !important;
+  border-bottom: 1px solid var(--primary-30) !important;
+}
+
+.leftContent {
+  padding: 0.75em 1.25em 0.75em 0 !important;
+  margin: auto !important;
+}
+
+.rightColumn,
 .right {
-  position: relative;
-  border-radius: 0 8px 8px 0;
-  padding: 0.75em 1.25em;
-  background-color: var(--neutral-00);
-  color: var(--neutral-50);
+  position: relative !important;
+  border-radius: 0 8px 8px 0 !important;
+  background-color: var(--neutral-00) !important;
+  color: var(--neutral-50) !important;
 }
 
+.rightColumn {
+  border-radius: 0 0 8px 8px !important;
+}
+
+.animatedEqual,
+.equalColumn,
 .equal {
-  left: -0.625em;
-  top: 0.875em;
-  border: 1px solid var(--primary-30);
+  top: 1em !important;
+  transform: translateX(-50%) !important;
   border-radius: 50%;
-  background-color: var(--neutral-00);
-  color: var(--primary-40);
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1.25em;
-  width: 1.25em;
-}
-
-.logo {
+  background-color: var(--neutral-00) !important;
+  color: var(--primary-40) !important;
+  position: absolute !important;
   display: flex !important;
-  align-items: center;
-  padding: 0 0.75em;
-  height: 100%;
-  border-right: 1px solid var(--primary-20);
+  justify-content: center !important;
+  align-items: center !important;
+  height: 1em !important;
+  width: 1em !important;
 
-  color: var(--primary-50);
-
-  > svg {
-    height: 3em;
+  svg {
+    width: 0.5em !important;
+    height: 0.5em !important;
   }
 }
 
+.equalColumn {
+  top: 0 !important;
+  left: 0.875em !important;
+  transform: translateY(-50%) !important;
+}
+
+.equal,
+.equalColumn {
+  border: 1px solid var(--primary-30) !important;
+}
+
 .value {
-  font-size: 1.25em;
-  line-height: 1.2;
-  font-weight: 700;
+  font-size: 1.25em !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+}
+
+.animatedComparisons {
+  display: grid !important;
+}
+
+.comparisonsColumn,
+.comparisons {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.comparisonsColumn {
+  flex-direction: column !important;
+}
+
+.comparison,
+.visibleAnimatedComparison,
+.animatedComparison {
+  padding: 0.75em 1.25em !important;
+}
+
+.comparison:not(:last-child) {
+  border-right: 1px solid var(--neutral-30) !important;
+}
+
+.visibleAnimatedComparison,
+.animatedComparison {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: max-content !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 1000ms ease-in-out;
+  margin-left: -10px !important;
+  margin-right: 10px !important;
+}
+
+.visibleAnimatedComparison {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.label {
+  font-size: 0.75em !important;
+  font-weight: 400 !important;
+  line-height: 1em !important;
+}
+
+.progressBar {
+  position: absolute !important;
+  left: -0.625em !important;
+  top: 0.875em !important;
+  height: 1.25em !important;
+  width: 1.25em !important;
+  border-radius: 50% !important;
+}
+
+.progress {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
 }

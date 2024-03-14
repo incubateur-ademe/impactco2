@@ -1,76 +1,91 @@
 .container {
-  position: relative;
-  display: inline;
+  position: relative !important;
+  display: inline !important;
 }
 
 .etiquette {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  height: fit-content;
-  padding: 0 2rem 0 0;
-  border: 1px solid var(--neutral-30);
-  background-color: var(--neutral-00);
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
-  border-radius: 8px;
-  bottom: 32px;
-  display: flex;
-  gap: 0.5em;
+  font-size: initial !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: max-content !important;
+  height: fit-content !important;
+  padding: 0 2em 0 0 !important;
+  border: 1px solid var(--neutral-30) !important;
+  background-color: var(--neutral-00) !important;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 8px !important;
+  bottom: 32px !important;
+  display: flex !important;
+  gap: 0.5em !important;
 }
 
 .hide {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .bottom {
-  top: 28px;
+  top: 28px !important;
 }
 
 .left {
-  transform: initial;
-  left: 16px;
+  transform: initial !important;
+  left: 16px !important;
 }
 
 .right {
-  transform: translateX(-75%);
+  transform: translateX(-75%) !important;
 }
 
 .value {
-  font-size: inherit;
-  background-color: var(--primary-10);
-  color: var(--primary-60);
-  font-weight: 500;
-  padding: 0 0.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  font-size: inherit !important;
+  background-color: var(--primary-10) !important;
+  color: var(--primary-60) !important;
+  font-weight: 500 !important;
+  padding: 0 0.5em !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  min-height: unset !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
 
   &:hover {
-    background-color: var(--primary-20);
-    color: var(--primary-70);
+    background-color: var(--primary-20) !important;
+    color: var(--primary-70) !important;
   }
 }
 
+.simpleValue {
+  padding: 1em 0 !important;
+}
+
 .random {
-  cursor: pointer;
-  border: none;
-  border-radius: 50%;
-  width: 1.5em;
-  height: 1.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid var(--primary-60);
-  background-color: var(--primary-50);
-  color: var(--neutral-00);
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(50%, -50%);
+  padding: 0 !important;
+  cursor: pointer !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 1.5em !important;
+  height: 1.5em !important;
+  min-height: unset !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border: 1px solid var(--primary-60) !important;
+  background-color: var(--primary-50) !important;
+  color: var(--neutral-00) !important;
+  position: absolute !important;
+  top: 50% !important;
+  right: 0 !important;
+  transform: translate(50%, -50%) !important;
 
   &:hover {
-    border: 1px solid var(--primary-70);
-    background-color: var(--primary-60);
+    border: 1px solid var(--primary-70) !important;
+    background-color: var(--primary-60) !important;
+  }
+
+  svg {
+    height: 13px !important;
+    width: 13px !important;
   }
 }

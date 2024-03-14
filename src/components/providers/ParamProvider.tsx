@@ -2,14 +2,16 @@ import negaocterRules from '@incubateur-ademe/publicodes-negaoctet'
 import { useRouter } from 'next/router'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
-import { Equivalent } from 'types/equivalent'
+import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { Frequence } from 'types/livraison'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
+import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/Theme'
 import { default_eqs, frequences } from 'components/livraison/data'
 import { displayAddress } from 'components/transport/search/itinerary/Address'
+import { computedEquivalents } from './equivalents'
 
 const usageNumeriqueDefaultValues = {
   ['email . appareil']: "'smartphone'",
@@ -99,10 +101,15 @@ const ParamContext = React.createContext<{
     setEquivalents: Dispatch<SetStateAction<string[]>>
   }
   comparateur: {
+    weight: number
+    baseValue: number
+    setBaseValue: Dispatch<SetStateAction<number>>
+    equivalents: string[]
+    setEquivalents: (equivalents: string[]) => void
     tiles: Equivalent[]
     setTiles: Dispatch<SetStateAction<Equivalent[]>>
-    comparedEquivalent: Equivalent | undefined
-    setComparedEquivalent: Dispatch<SetStateAction<Equivalent | undefined>>
+    comparedEquivalent: ComputedEquivalent | undefined
+    setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
   }
   distance: {
     km: number
@@ -217,8 +224,21 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [frequence, setFrequence] = useState<Frequence | undefined>(frequences.find((freq) => freq.isDefault))
 
   // Comparateur
+  const [baseValue, setBaseValue] = useState(10)
+  const [equivalents, setEquivalents] = useState<string[]>([])
   const [tiles, setTiles] = useState<Equivalent[]>([])
-  const [comparedEquivalent, setComparedEquivalent] = useState<Equivalent>()
+  const [comparedEquivalent, setComparedEquivalent] = useState<ComputedEquivalent>()
+
+  const internalComparedEquivalentSetter = (equivalent: ComputedEquivalent | undefined) => {
+    const filteredEquivalent = equivalent ? equivalents.filter((slug) => slug !== equivalent.slug) : equivalents
+    if (comparedEquivalent) {
+      setEquivalents([...filteredEquivalent, comparedEquivalent.slug])
+    } else {
+      setEquivalents([...filteredEquivalent])
+    }
+    setBaseValue(10)
+    setComparedEquivalent(equivalent)
+  }
 
   // Chauffage
   const [m2, setM2] = useState(63)
@@ -351,6 +371,22 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       return
     }
 
+    if (router.query.value) {
+      const value = Number(router.query.value as string)
+      if (!Number.isNaN(value)) {
+        setBaseValue(value)
+      }
+    }
+    if (router.query.equivalent) {
+      setComparedEquivalent(computedEquivalents.find((equivalent) => equivalent.slug === router.query.equivalent))
+    }
+
+    if (router.query.comparisons) {
+      setEquivalents((router.query.comparisons as string).split(','))
+    } else {
+      setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, 3))
+    }
+
     if (router.query.m2) {
       const m2 = Number.parseInt(router.query.m2 as string)
       if (!Number.isNaN(m2)) {
@@ -395,33 +431,43 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     if (router.query['email . taille']) {
       situation['email . taille'] = getFloat(router.query, 'email . taille')
     }
+
     if (router.query['streaming . durée']) {
       situation['streaming . durée'] = getInt(router.query, 'streaming . durée')
     }
+
     if (router.query['streaming . appareil']) {
       situation['streaming . appareil'] = router.query['streaming . appareil'] as string
     }
+
     if (router.query['streaming . transmission . réseau']) {
       situation['streaming . transmission . réseau'] = router.query['streaming . transmission . réseau'] as string
     }
+
     if (router.query['streaming . qualité']) {
       situation['streaming . qualité'] = router.query['streaming . qualité'] as string
     }
+
     if (router.query['visio . durée']) {
       situation['visio . durée'] = getInt(router.query, 'visio . durée')
     }
+
     if (router.query['visio . appareil']) {
       situation['visio . appareil'] = router.query['visio . appareil'] as string
     }
+
     if (router.query['visio . emplacements']) {
       situation['visio . emplacements'] = getInt(router.query, 'visio . emplacements')
     }
+
     if (router.query['visio . transmission . réseau']) {
       situation['visio . transmission . réseau'] = router.query['visio . transmission . réseau'] as string
     }
+
     if (router.query['visio . qualité']) {
       situation['visio . qualité'] = router.query['visio . qualité'] as string
     }
+
     setUsageNumeriqueSituation(situation)
   }, [
     router,
@@ -456,10 +502,15 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setFrequence,
         },
         comparateur: {
+          weight: comparedEquivalent ? comparedEquivalent.value : 1,
+          baseValue,
+          setBaseValue,
+          equivalents,
+          setEquivalents,
           tiles,
           setTiles,
           comparedEquivalent,
-          setComparedEquivalent,
+          setComparedEquivalent: internalComparedEquivalentSetter,
         },
         distance: {
           km,

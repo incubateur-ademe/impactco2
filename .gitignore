@@ -64,3 +64,7 @@ public/scripts/detection-async.js
 public/scripts/detection-darkmode-async.js
 detection/chrome-extension.zip
 detection/chrome-extension/scripts/detection.js
+
+npm/react/dist/index.js
+
+npm/react/dist/index.js.LICENSE.txt

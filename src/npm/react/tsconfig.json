@@ -1,0 +1,14 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "index.ts"
+  ],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "declaration": true,
+    "noEmit": false,
+    "isolatedModules": false,
+    "emitDeclarationOnly": true,
+    "outFile": "index.d.ts"
+  }
+}

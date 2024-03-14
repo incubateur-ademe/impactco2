@@ -78,4 +78,55 @@ module.exports = [
       ],
     },
   },
+  {
+    name: 'npm',
+    mode: 'production',
+    entry: './src/npm/react/index.ts',
+    output: {
+      filename: 'index.js',
+      path: path.resolve(__dirname, 'npm', 'react', 'dist'),
+      libraryTarget: 'commonjs',
+    },
+    resolve: {
+      extensions: ['.tsx', '.jsx', '.ts', '.js'],
+      alias: {
+        components: path.resolve(__dirname, 'src/components/'),
+        data: path.resolve(__dirname, 'src/data/'),
+        utils: path.resolve(__dirname, 'src/utils/'),
+        hooks: path.resolve(__dirname, 'src/hooks/'),
+        react: path.resolve(__dirname, './node_modules/react'),
+        'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+      },
+    },
+    externals: {
+      react: {
+        commonjs: 'react',
+        commonjs2: 'react',
+        amd: 'React',
+        root: 'React',
+      },
+      'react-dom': {
+        commonjs: 'react-dom',
+        commonjs2: 'react-dom',
+        amd: 'ReactDOM',
+        root: 'ReactDOM',
+      },
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx|tsx|ts)$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+          },
+        },
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader', 'postcss-loader'],
+        },
+      ],
+    },
+  },
 ]

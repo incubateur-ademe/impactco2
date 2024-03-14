@@ -1,51 +1,38 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import PageTitle from 'components/base/PageTitle'
-import { SectionWideContent } from 'components/base/Section'
-import Actions from './Actions'
 import { CustomParamValue } from './CustomParam'
-import { ActionsContainer, Container, Content, Separator } from './Header.styles'
-import Integrate from './Integrate'
-import Share from './Share'
-import TransportIntegrate from './TransportIntegrate'
-import TransportShare from './TransportShare'
+import { Container } from './Header.styles'
+import HeadersActions from './HeadersActions'
 
 const Header = ({
   category,
   path,
   params,
+  extraParams,
   takeScreenshot,
   tracking,
   type,
   title,
   withoutIntegration,
+  name,
+  withoutShare,
+  noActions,
 }: {
   category?: Category
   params?: Record<string, CustomParamValue>
+  extraParams?: string
   takeScreenshot: () => void
   tracking: string
   type?: TransportSimulateur
   path?: string
   title?: string
   withoutIntegration?: boolean
+  withoutShare?: boolean
+  name?: string
+  noActions?: boolean
 }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const [opened, setOpened] = useState('')
-
-  const open = (section: string) => {
-    if (opened === section) {
-      setOpened('')
-    } else {
-      setOpened(section)
-      if (ref.current && ref.current.scrollIntoView) {
-        ref.current.scrollIntoView({
-          block: 'start',
-          behavior: 'smooth',
-        })
-      }
-    }
-  }
   return (
     <Container>
       {category ? (
@@ -60,32 +47,20 @@ const Header = ({
       ) : (
         title && <PageTitle title={title} />
       )}
-      <SectionWideContent $size='xs' $noGutter>
-        <ActionsContainer ref={ref}>
-          <Actions
-            tracking={tracking}
-            onClick={(value) => (value === 'telecharger' ? takeScreenshot() : open(value))}
-            withoutIntegration={withoutIntegration}
-          />
-          {opened && (
-            <Content>
-              <Separator />
-              {opened === 'partager' &&
-                (type ? (
-                  <TransportShare tracking={tracking} type={type} />
-                ) : (
-                  <Share category={category} params={params} path={path} />
-                ))}
-              {opened === 'integrer' &&
-                (type ? (
-                  <TransportIntegrate tracking={tracking} type={type} />
-                ) : (
-                  <Integrate slug={category ? category.slug : 'convertisseur'} params={params} tracking={tracking} />
-                ))}
-            </Content>
-          )}
-        </ActionsContainer>
-      </SectionWideContent>
+      {!noActions && (
+        <HeadersActions
+          category={category}
+          path={path}
+          params={params}
+          extraParams={extraParams}
+          takeScreenshot={takeScreenshot}
+          tracking={tracking}
+          type={type}
+          withoutIntegration={withoutIntegration}
+          name={name}
+          withoutShare={withoutShare}
+        />
+      )}
     </Container>
   )
 }
