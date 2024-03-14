@@ -17,7 +17,7 @@ export default function Details({ equivalent, category }: { equivalent: Computed
       <Section $withoutPadding>
         <SectionWideContent $size='sm'>
           <h1>
-            {formatName(equivalent.name, 1, !equivalent.prefix)}
+            {formatName(equivalent.name, 1, true)}
             {equivalent.suffix}
             <br className={styles.br} />
             {equivalent.subtitle && <span className={styles.subtitle}> ({formatName(equivalent.subtitle, 1)})</span>}
