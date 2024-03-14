@@ -88,7 +88,7 @@ const Statistics = ({ stats }: { stats: Stats }) => {
 
       <Link
         priority='secondary'
-        href='https://stats.data.gouv.fr/index.php?module=CoreHome&action=index&date=yesterday&period=week&idSite=156#?idSite=156&period=week&date=yesterday&category=Dashboard_Dashboard&subcategory=6'>
+        href={`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/index.php?module=CoreHome&action=index&date=yesterday&period=week&idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}#?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&period=week&date=yesterday&category=Dashboard_Dashboard&subcategory=6`}>
         Découvrez toutes les statistiques du site Impact CO<sub>2</sub> sur le tableau de bord de notre outil de suivi
         Matomo
       </Link>
