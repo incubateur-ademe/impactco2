@@ -1,0 +1,28 @@
+{
+  "name": "@incubateur-ademe/impactco2-react",
+  "version": "0.1.1",
+  "description": "Integrer les ressources d'Impact CO₂",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/incubateur-ademe/impactco2.git"
+  },
+  "keywords": [
+    "Impact CO2",
+    "Carbone",
+    "Impact carbone",
+    "CO2 équivalent",
+    "ADEME"
+  ],
+  "author": "desoindx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/incubateur-ademe/impactco2/issues"
+  },
+  "homepage": "https://impactco2.fr",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

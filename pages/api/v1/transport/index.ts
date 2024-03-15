@@ -24,11 +24,9 @@ export const computeTransportEmission = (
   includeConstruction?: boolean
 ) =>
   deplacements
-    // Filter transportations via filter parameter
     .filter((transportation) => filter || filterByDistance(transportation.display, km))
-    // Filter transportations via transportations parameter
+    .filter((transportation) => !transportation.contexted)
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
-    // Calculate emissions
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
       let name = transportation.name

@@ -32,7 +32,11 @@ test('On est redirigé de /iframes/empreinte-carbone/:slug* vers /iframes/:slug*
   await page.goto('/iframes/empreinte-carbone/chauffage')
   await expect(page).toHaveURL(/.*iframes\/chauffage/)
 })
-test('On est redirigé de /iframes/tuiles/ vers /iframes/convertisseur/', async ({ page }) => {
+test('On est redirigé de /iframes/tuiles/ vers /iframes/comparateur/', async ({ page }) => {
   await page.goto('/iframes/tuiles/')
-  await expect(page).toHaveURL(/.*iframes\/convertisseur/)
+  await expect(page).toHaveURL(/.*iframes\/comparateur/)
+})
+test('On est redirigé de /iframes/convertisseur/ vers /iframes/comparateur/', async ({ page }) => {
+  await page.goto('/iframes/convertisseur/')
+  await expect(page).toHaveURL(/.*iframes\/comparateur/)
 })

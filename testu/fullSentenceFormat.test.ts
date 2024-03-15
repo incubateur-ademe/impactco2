@@ -3,7 +3,7 @@ import fullSentenceFormat from 'utils/fullSentenceFormat'
 describe('fullSentenceFormat', () => {
   test("transforme un objet 'Equivalent' en une phrase", () => {
     const res = fullSentenceFormat(getRealisticObject())
-    expect(res).toEqual('39 heures de streaming vidéo')
+    expect(res).toEqual('38.5 heures de streaming vidéo')
   })
 })
 

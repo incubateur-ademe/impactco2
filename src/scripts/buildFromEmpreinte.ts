@@ -1,6 +1,5 @@
 import axios from 'axios'
 import fs from 'fs'
-import divers from '../data/categories/divers.json'
 import electromenager from '../data/categories/electromenager.json'
 import habillement from '../data/categories/habillement.json'
 import mobilier from '../data/categories/mobilier.json'
@@ -13,7 +12,6 @@ const existingEquivalentsByCategory: Record<string, { file: string; values: Usab
   habillement: { file: 'habillement.json', values: habillement },
   mobilier: { file: 'mobilier.json', values: mobilier },
   repas: { file: 'repas.json', values: repas },
-  divers: { file: 'divers.json', values: divers },
   numerique: { file: 'numerique.json', values: numerique },
 }
 
@@ -63,7 +61,7 @@ const updateEquivalents = (
 const buildFromEmpreinte = async (key: string) => {
   const existingEquivalents = existingEquivalentsByCategory[key]
   if (!existingEquivalents) {
-    console.info('Type should be "electomenager", "habillement", "mobilier", "repas", "divers" or "numerique"')
+    console.info('Type should be "electomenager", "habillement", "mobilier", "repas" or "numerique"')
     process.exit(1)
   }
 

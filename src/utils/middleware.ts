@@ -21,9 +21,12 @@ export async function trackAPIRequest(request: NextApiRequest, api: string, para
 
     const param = `e_c=API_${name}&e_a=${api}&e_n=${params || ''}`
 
-    await fetch(`https://stats.data.gouv.fr/matomo.php?idsite=${process.env.MATOMO_SIDE_ID}&rec=1&${param}`, {
-      method: 'POST',
-    })
+    await fetch(
+      `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.php?idsite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&rec=1&${param}`,
+      {
+        method: 'POST',
+      }
+    )
     return !!name
   } catch (error) {
     await Sentry.captureException(error)

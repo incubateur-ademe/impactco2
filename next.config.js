@@ -13,7 +13,7 @@ const csp = {
   'frame-ancestors': ["'self'", 'https:', 'file:'],
   'connect-src': [
     "'self'",
-    'https://stats.data.gouv.fr',
+    process.env.NEXT_PUBLIC_MATOMO_SITE_URL,
     'https://photon.komoot.io',
     'https://sentry.incubateur.net',
     'https://cdn.jsdelivr.net',
@@ -21,7 +21,7 @@ const csp = {
   'script-src': [
     "'self'",
     'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js',
-    'https://stats.data.gouv.fr/matomo.js',
+    `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.js`,
   ],
 }
 
@@ -81,10 +81,6 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  i18n: {
-    locales: ['fr'],
-    defaultLocale: 'fr',
   },
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
   sentry: {
@@ -153,7 +149,12 @@ const nextConfig = {
       },
       {
         source: '/iframes/tuiles',
-        destination: '/iframes/convertisseur',
+        destination: '/iframes/comparateur',
+        permanent: true,
+      },
+      {
+        source: '/iframes/convertisseur',
+        destination: '/iframes/comparateur',
         permanent: true,
       },
       {
@@ -173,9 +174,9 @@ const sentryWebpackPluginOptions = {
 
   // Suppresses source map uploading logs during build
   silent: true,
-  org: 'betagouv',
+  org: process.env.SENTRY_ORG,
   project: 'impact-co2',
-  url: 'https://sentry.incubateur.net',
+  url: process.env.SENTRY_URL,
 }
 
 module.exports = (phase) => {

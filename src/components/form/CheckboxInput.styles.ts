@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.label<{ $checked: boolean }>`
+export const Container = styled.label<{ $checked: boolean; $color?: 'secondary' }>`
   align-items: center;
   color: var(--neutral-${({ $checked }) => ($checked ? '80' : '50')});
   cursor: pointer;
@@ -14,7 +14,7 @@ export const Container = styled.label<{ $checked: boolean }>`
     -webkit-appearance: none;
     appearance: none;
 
-    border: 1px solid var(--secondary-50);
+    border: 1px solid var(--${({ $color }) => $color || 'primary'}-50);
     border-radius: 4px;
     cursor: pointer;
     height: 1.75rem;
@@ -22,25 +22,25 @@ export const Container = styled.label<{ $checked: boolean }>`
   }
 
   input:checked {
-    background-color: var(--secondary-40);
+    background-color: var(--${({ $color }) => $color || 'primary'}-40);
   }
 
   &:hover {
     color: var(--neutral-70);
 
     input {
-      outline: 1px solid var(--secondary-50);
-      ${({ $checked }) => $checked && 'border: 1px solid var(--secondary-60);'}
-      ${({ $checked }) => $checked && 'outline: 1px solid var(--secondary-60);'}
+      outline: 1px solid var(--${({ $color }) => $color || 'primary'}-50);
+      ${({ $checked, $color }) => $checked && `border: 1px solid var(--${$color || 'primary'}-60);`}
+      ${({ $checked, $color }) => $checked && `outline: 1px solid var(--${$color || 'primary'}-60);`}
     }
 
     input:checked {
-      background-color: var(--secondary-50);
+      background-color: var(--${({ $color }) => $color || 'primary'}-50);
     }
   }
 
   input:focus {
-    outline: 3px solid var(--secondary-50);
+    outline: 3px solid var(--${({ $color }) => $color || 'primary'}-50);
     outline-offset: 2px;
   }
 
@@ -52,5 +52,10 @@ export const Container = styled.label<{ $checked: boolean }>`
 export const Check = styled.div`
   color: var(--neutral-00);
   left: 0.5rem;
+  padding: inherit;
   position: absolute;
+`
+
+export const Label = styled.div`
+  flex: 1;
 `

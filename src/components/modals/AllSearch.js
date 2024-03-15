@@ -1,59 +1,13 @@
-import Fuse from 'fuse.js'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
+import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import TextInput from 'components/base/TextInput'
 import AllSearchCategory from './AllSearchCategory.js'
 
 export default function AllSearch(props) {
-  const { equivalents } = useDataContext()
-
   const [search, setSearch] = useState('')
-  const [results, setResults] = useState([])
-  const [fuse, setFuse] = useState(null)
-
-  useEffect(() => {
-    if (equivalents) {
-      setFuse(
-        new Fuse(
-          equivalents.filter((equivalent) => !equivalent.hideTile),
-          {
-            keys: [
-              {
-                name: 'name',
-                weight: 1,
-              },
-              {
-                name: 'slug',
-                weight: 0.7,
-              },
-              {
-                name: 'subtitle',
-                weight: 0.4,
-              },
-              {
-                name: 'synonyms',
-                weight: 0.2,
-              },
-            ],
-            threshold: 0.3,
-            ignoreLocation: true,
-          }
-        )
-      )
-    }
-  }, [equivalents])
-  useEffect(() => {
-    setResults(
-      fuse && search.length > 0
-        ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-        : equivalents
-            .filter((equivalent) => !equivalent.hideTile)
-            .map((equivalent) => ({ item: equivalent }))
-            .sort((a, b) => (a.item.slug > b.item.slug ? 1 : -1))
-    )
-  }, [search, fuse, equivalents])
+  const results = useSearchEquivalent(search)
 
   return (
     <Wrapper>

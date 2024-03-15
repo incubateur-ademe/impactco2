@@ -44,6 +44,22 @@
     "label": "Aubergine"
   },
   {
+    "value": "autocar",
+    "label": "Autocar"
+  },
+  {
+    "value": "avioncourtcourrier",
+    "label": "Avion (Court courrier)"
+  },
+  {
+    "value": "avionlongcourrier",
+    "label": "Avion (Long courrier)"
+  },
+  {
+    "value": "avionmoyencourrier",
+    "label": "Avion (Moyen courrier)"
+  },
+  {
     "value": "avocat",
     "label": "Avocat"
   },
@@ -74,6 +90,18 @@
   {
     "value": "brocoli",
     "label": "Brocoli"
+  },
+  {
+    "value": "busgnv",
+    "label": "Bus (GNV)"
+  },
+  {
+    "value": "buselectrique",
+    "label": "Bus (Moteur électrique)"
+  },
+  {
+    "value": "busthermique",
+    "label": "Bus (Moteur thermique)"
   },
   {
     "value": "cadrephotodigital",
@@ -138,6 +166,34 @@
   {
     "value": "chataigne",
     "label": "Châtaigne"
+  },
+  {
+    "value": "chauffagefioul",
+    "label": "Chauffage au fioul"
+  },
+  {
+    "value": "chauffagegaz",
+    "label": "Chauffage au gaz"
+  },
+  {
+    "value": "poeleabois",
+    "label": "Chauffage avec un poêle à bois"
+  },
+  {
+    "value": "poeleagranule",
+    "label": "Chauffage avec un poêle à granulés"
+  },
+  {
+    "value": "pompeachaleur",
+    "label": "Chauffage avec une pompe à chaleur"
+  },
+  {
+    "value": "chauffageelectrique",
+    "label": "Chauffage électrique"
+  },
+  {
+    "value": "reseaudechaleur",
+    "label": "Chauffage via un réseau de chaleur"
   },
   {
     "value": "chemiseencoton",
@@ -224,6 +280,10 @@
     "label": "Écran (24 pouces)"
   },
   {
+    "value": "email",
+    "label": "Email"
+  },
+  {
     "value": "enceintebluetooth",
     "label": "Enceinte bluetooth"
   },
@@ -260,6 +320,10 @@
     "label": "Fruit de la passion"
   },
   {
+    "value": "telechargement",
+    "label": "Go de donnée"
+  },
+  {
     "value": "grenade",
     "label": "Grenade"
   },
@@ -278,6 +342,10 @@
   {
     "value": "imprimantejetdencre",
     "label": "Imprimante (Jet d'encre)"
+  },
+  {
+    "value": "intercites",
+    "label": "Intercités"
   },
   {
     "value": "jeans",
@@ -320,10 +388,6 @@
     "label": "Lit (Cadre + sommier + matelas)"
   },
   {
-    "value": "livredepoche",
-    "label": "Livre de poche"
-  },
-  {
     "value": "mache",
     "label": "Mâche"
   },
@@ -348,12 +412,20 @@
     "label": "Melon"
   },
   {
+    "value": "metro",
+    "label": "Métro"
+  },
+  {
     "value": "modemfibre",
     "label": "Modem (Fibre)"
   },
   {
     "value": "montreconnectee",
     "label": "Montre connectée"
+  },
+  {
+    "value": "moto",
+    "label": "Moto"
   },
   {
     "value": "mure",
@@ -424,6 +496,10 @@
     "label": "Panais"
   },
   {
+    "value": "avion-pny",
+    "label": "Paris - New-York (en avion)"
+  },
+  {
     "value": "pasteque",
     "label": "Pastèque"
   },
@@ -484,6 +560,10 @@
     "label": "Raisin"
   },
   {
+    "value": "rechercheweb",
+    "label": "Recherche sur le web"
+  },
+  {
     "value": "refrigirateur",
     "label": "Réfrigérateur"
   },
@@ -516,6 +596,10 @@
     "label": "Repas végétarien"
   },
   {
+    "value": "rer",
+    "label": "RER ou Transilien"
+  },
+  {
     "value": "rhubarbe",
     "label": "Rhubarbe"
   },
@@ -536,12 +620,28 @@
     "label": "Salsifis"
   },
   {
+    "value": "scooter",
+    "label": "Scooter ou moto légère"
+  },
+  {
     "value": "smartphone",
     "label": "Smartphone (> 5,5 pouces)"
   },
   {
     "value": "soda",
     "label": "Soda"
+  },
+  {
+    "value": "spam",
+    "label": "Spam (Non lu)"
+  },
+  {
+    "value": "stockagedonnee",
+    "label": "Stocker un Go de donnée (Pendant 1 an)"
+  },
+  {
+    "value": "streamingvideo",
+    "label": "Streaming vidéo"
   },
   {
     "value": "sweatencoton",
@@ -576,6 +676,14 @@
     "label": "Télévision  (40 - 49 pouces)"
   },
   {
+    "value": "ter",
+    "label": "TER"
+  },
+  {
+    "value": "tgv",
+    "label": "TGV"
+  },
+  {
     "value": "thé",
     "label": "Thé"
   },
@@ -588,6 +696,18 @@
     "label": "Topinambour"
   },
   {
+    "value": "tramway",
+    "label": "Tramway"
+  },
+  {
+    "value": "veloelectrique",
+    "label": "Vélo (ou trottinette) à assistance électrique"
+  },
+  {
+    "value": "velo",
+    "label": "Vélo ou marche"
+  },
+  {
     "value": "vesteimpermeable",
     "label": "Veste imperméable"
   },
@@ -598,5 +718,17 @@
   {
     "value": "vin",
     "label": "Vin"
+  },
+  {
+    "value": "visioconference",
+    "label": "Visioconférence"
+  },
+  {
+    "value": "voitureelectrique",
+    "label": "Voiture (Moteur électrique)"
+  },
+  {
+    "value": "voiturethermique",
+    "label": "Voiture (Moteur thermique)"
   }
 ]

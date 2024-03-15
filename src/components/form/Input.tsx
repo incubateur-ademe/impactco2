@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes, useEffect, useRef } from 'react'
 import { ZodError } from 'zod'
 import { Icon } from 'components/osezchanger/icons'
 import { Error, Hint, Label, NotRequired, StyledInput } from './Input.styles'
@@ -10,7 +10,9 @@ const Input = ({
   hint,
   maxWidth,
   color,
+  background,
   errors,
+  className,
   ...inputProps
 }: InputHTMLAttributes<HTMLInputElement> & {
   id: string
@@ -18,12 +20,23 @@ const Input = ({
   hint?: string
   maxWidth?: string
   color?: 'secondary'
+  background?: 'white'
   errors?: ZodError | null
 }) => {
   const error = useError(id, errors)
+  const ref = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (ref.current) {
+      const blur = () => ref.current?.blur()
+      const currentRef = ref.current
+      currentRef.addEventListener('wheel', blur)
+      return () => currentRef.removeEventListener('wheel', blur)
+    }
+  }, [ref])
 
   return (
-    <div>
+    <div className={className}>
       {label && (
         <Label htmlFor={`input-${id}`} $error={!!error}>
           {label}
@@ -31,7 +44,15 @@ const Input = ({
           {hint && <Hint className='text-sm'>{hint}</Hint>}
         </Label>
       )}
-      <StyledInput {...inputProps} id={`input-${id}`} $maxWidth={maxWidth} $color={color} $error={!!error} />
+      <StyledInput
+        {...inputProps}
+        ref={ref}
+        id={`input-${id}`}
+        $maxWidth={maxWidth}
+        $color={color}
+        $background={background}
+        $error={!!error}
+      />
       {error && (
         <Error className='text-xs'>
           <Icon iconId='error' />

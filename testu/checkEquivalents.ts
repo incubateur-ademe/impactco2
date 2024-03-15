@@ -5,7 +5,6 @@ import {
   BoissonEquivalent,
   ChauffageEquivalent,
   DeplacementEquivalent,
-  DiversEquivalent,
   FruitsEtLegumesEquivalent,
   RepasEquivalent,
   UsableEquivalent,
@@ -14,7 +13,6 @@ import {
 import boisson from 'data/categories/boisson.json'
 import chauffage from 'data/categories/chauffage.json'
 import deplacement from 'data/categories/deplacement.json'
-import divers from 'data/categories/divers.json'
 import electromenager from 'data/categories/electromenager.json'
 import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
 import habillement from 'data/categories/habillement.json'
@@ -27,7 +25,6 @@ const boissonEquivalent: BoissonEquivalent[] = boisson
 const fruitsEtLegumesEquivalent: FruitsEtLegumesEquivalent[] = fruitsetlegumes
 const chauffageEquivalents: ChauffageEquivalent[] = chauffage
 const repasEquivalents: RepasEquivalent[] = repas
-const diversEquivalents: DiversEquivalent[] = divers
 const deplacementEquivalents: DeplacementEquivalent[] = deplacement
 const usableEquivalents: UsableEquivalent[] = [...electromenager, ...habillement, ...mobilier, ...numerique]
 const usageNumeriqueEquivalents: UsageNumeriqueEquivalent[] = usagenumerique

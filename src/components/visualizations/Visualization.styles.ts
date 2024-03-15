@@ -99,6 +99,7 @@ export const LinkWrapper = styled.div`
 `
 
 export const StyledLink = styled(Link)`
+  color: var(--primary-60);
   font-size: 0.875rem;
   position: relative;
   z-index: 12;

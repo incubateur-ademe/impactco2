@@ -196,8 +196,6 @@ export default function Tile(props) {
           )}
         </Number>
         <Name>
-          {props.equivalent.prefixEquivalent &&
-            formatName(props.equivalent.prefixEquivalent, props.weight / computeECV(props.equivalent))}
           {formatName(
             (props.equivalent.prefix || '') + props.equivalent.name + (props.equivalent.suffix || ''),
             props.weight / computeECV(props.equivalent)

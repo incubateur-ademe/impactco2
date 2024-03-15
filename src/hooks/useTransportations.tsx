@@ -41,6 +41,7 @@ export default function useTransportations(
                 itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
               )
           )
+          .filter((transportation) => !transportation.contexted)
           .map((equivalent) => {
             if ('ecvs' in equivalent && equivalent.ecvs) {
               const distance = itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km

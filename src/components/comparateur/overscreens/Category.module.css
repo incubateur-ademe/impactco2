@@ -1,0 +1,91 @@
+.container {
+  padding: 0.75rem 0;
+
+  &:not(:last-child) {
+    border-bottom: solid 1px var(--neutral-20);
+  }
+}
+
+.header {
+  padding: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-align: left;
+
+  &:hover {
+    .button {
+      border: 1px solid var(--primary-20);
+      background: var(--primary-10);
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    .button {
+      outline: 3px solid var(--primary-40);
+      outline-offset: 2px;
+    }
+  }
+
+  &:active {
+    .button {
+      border: 1px solid var(--primary-30);
+      background: var(--primary-20);
+    }
+  }
+}
+
+.emoji {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 2px solid var(--neutral-20);
+}
+
+.names {
+  flex: 1;
+  color: var(--neutral-70);
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.selectedNumber {
+  font-weight: 500;
+}
+
+.numbers {
+  color: var(--neutral-50);
+}
+
+.button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: solid 1px var(--neutral-20);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-50);
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.comparison {
+  padding: 1.25rem 0.75rem 0.75rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}

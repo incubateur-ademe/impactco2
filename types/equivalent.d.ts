@@ -12,10 +12,9 @@ type BaseEquivalent = {
 
   id?: string | number
   secondEmoji?: string
-  include?: { pre: string; post: string }
+  include?: { pre: string; post?: string; postNewLine?: string }
   source?: string
   prefix?: string
-  prefixEquivalent?: string
   suffix?: string
   subtitle?: string
   synonyms?: string[]
@@ -34,7 +33,6 @@ type BaseEquivalent = {
       value: string
     }[]
   }
-  hideTile?: boolean
 }
 
 type BaseEquivalentValue =
@@ -76,8 +74,6 @@ export type DeplacementEquivalent = BaseEquivalent & {
   }
 }
 
-export type DiversEquivalent = BaseEquivalent & BaseEquivalentValue
-
 export type BoissonEquivalent = BaseEquivalent &
   (
     | {
@@ -111,8 +107,16 @@ export type Equivalent =
   | BoissonEquivalent
   | ChauffageEquivalent
   | DeplacementEquivalent
-  | DiversEquivalent
   | UsableEquivalent
   | RepasEquivalent
   | UsageNumeriqueEquivalent
   | FruitsEtLegumesEquivalent
+
+export type ComputedEquivalent = Equivalent & { value: number; link: string }
+
+export type Language = 'en' | 'fr' | 'de' | 'es'
+export type SimpleEquivalent = {
+  value: number
+  emoji: string
+  category: number
+} & Record<Language, string>

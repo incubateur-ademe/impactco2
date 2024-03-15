@@ -246,7 +246,6 @@
     "emoji": "🚶‍♀️",
     "category": 4,
     "total": 0,
-    "hideTile": true,
     "default": true,
     "tile": false,
     "display": {
@@ -562,6 +561,36 @@
     "meta": {
       "title": "Émission de CO₂e lors d'un trajet en bus GNV",
       "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    }
+  },
+  {
+    "id": 1000,
+    "prefix": "A/R ",
+    "name": "Paris - New-York",
+    "subtitle": "en avion",
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
+    "unit": "A/R",
+    "slug": "avion-pny",
+    "type": "plane",
+    "emoji": "🗽",
+    "contexted": true,
+    "category": 4,
+    "total": 1770,
+    "default": false,
+    "tile": false,
+    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
+    "meta": {
+      "title": "Émission de CO₂e lors d'un trajet en bus GNV",
+      "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
+    },
+    "include": {
+      "pre": "Distance totale parcourue : 11600 km.",
+      "postNewLine": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse."
     }
   }
 ]

@@ -21,10 +21,11 @@ export const Shadow = styled.div`
   opacity: 0.8;
 `
 
-export const Content = styled.div<{ $color?: 'secondary' }>`
+export const Content = styled.div<{ $color?: 'secondary'; $fullHeight?: boolean }>`
   background-color: ${({ $color }) => ($color === 'secondary' ? 'var(--secondary-10)' : 'var(--neutral-00)')};
   border-radius: 0 0 ${({ $color }) => ($color === 'secondary' ? '8px 8px' : '16px 16px')};
-  max-height: 64%;
+  ${({ $fullHeight }) => ($fullHeight ? 'height: 100%' : 'max-height: 64%')};
+  position: relative;
   text-align: left;
 `
 
@@ -34,6 +35,7 @@ export const Scroll = styled.div<{ $color?: 'secondary' }>`
 `
 
 export const Children = styled.div`
+  height: 100%;
   padding: 2rem 1.5rem;
 `
 

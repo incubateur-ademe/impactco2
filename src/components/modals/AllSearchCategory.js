@@ -9,7 +9,7 @@ export default function AllSearchCategory(props) {
   })
 
   const items = props.items.filter((oneItem) => {
-    return oneItem.item.category === theCategory.id && !props.eqvArray.find((e) => e === oneItem.item.slug)
+    return oneItem.category === theCategory.id && !props.eqvArray.find((e) => e === oneItem.slug)
   })
 
   const itemChosen = (newArray, ticked) => {
@@ -41,7 +41,7 @@ export default function AllSearchCategory(props) {
         <></>
       )}
       <Equivalents>
-        {items.map(({ item }) => (
+        {items.map((item) => (
           <EquivalentSquare
             key={item.slug}
             equivalent={item}

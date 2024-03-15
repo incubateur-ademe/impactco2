@@ -7,7 +7,7 @@ export default function RendezVousPage() {
   const router = useRouter()
   return (
     <Web
-      title='Rendez-vous'
+      title='Prendre rendez-vous'
       breadcrumb={
         router.query.from && router.query.fromLabel
           ? {

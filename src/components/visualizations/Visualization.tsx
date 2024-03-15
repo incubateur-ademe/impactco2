@@ -1,9 +1,9 @@
 import React from 'react'
 import { Category } from 'types/category'
-import { Equivalent as EquivalentType } from 'types/equivalent'
-import { computeECV } from 'utils/computeECV'
+import { ComputedEquivalent, Equivalent as EquivalentType } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import useDataContext from 'components/providers/DataProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Signature from 'components/screenshot/Signature'
 import {
   Emojis,
@@ -27,7 +27,7 @@ const categoryLinks: Record<string, { to: string; label: string }> = {
     label: "Comparez avec d'autres modes de transport",
   },
   quotidien: {
-    to: '/convertisseur',
+    to: '/comparateur',
     label: "Comparez à d'autres objets du quotidien",
   },
   habillement: {
@@ -75,14 +75,30 @@ const getSize = (value: number) => {
   return {}
 }
 
-const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
-  const { equivalents, categories } = useDataContext()
+type VisualizationType = {
+  category: number
+  value: number
+  name: string
+  emoji: string
+}
 
-  const values = types.map(
-    (slug) => equivalents.find((equivalent: EquivalentType) => equivalent.slug === slug) as EquivalentType
-  )
+const Visualization = ({ types, base }: { types: (string | VisualizationType)[]; base?: number }) => {
+  const { categories } = useDataContext()
 
-  const factor = computeECV(values[0]) * (base || 1)
+  const values = types.map((slug) => {
+    if (typeof slug === 'string') {
+      const equivalent = computedEquivalents.find(
+        (equivalent: EquivalentType) => equivalent.slug === slug
+      ) as ComputedEquivalent
+      return {
+        ...equivalent,
+        name: `${equivalent.prefix ? `${equivalent.prefix} ` : ''}${equivalent.name}`,
+      }
+    }
+    return slug
+  })
+
+  const factor = values[0].value * (base || 1)
   return (
     <>
       <Title>
@@ -91,17 +107,15 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
       <Equivalents>
         {values
           .flatMap((equivalent) => {
-            const value = Math.round(factor / computeECV(equivalent))
+            const value = Math.round(factor / equivalent.value)
             return [
-              <Equivalent key={equivalent.slug}>
+              <Equivalent key={equivalent.name}>
                 <Emojis {...getSize(value)}>{[...Array(value)].map(() => equivalent.emoji).join('')}</Emojis>
                 <Label>
-                  {value} {equivalent.prefix && formatName(equivalent.prefix, value)}{' '}
-                  {equivalent.prefixEquivalent && formatName(equivalent.prefixEquivalent, value)}
-                  {formatName(equivalent.name, value)} {equivalent.subtitle && formatName(equivalent.subtitle, 1)}
+                  {value} {formatName(equivalent.name, value)}
                 </Label>
               </Equivalent>,
-              <div key={`${equivalent.slug}-eq`}>
+              <div key={`${equivalent.name}-eq`}>
                 <Equals>=</Equals>
                 <span />
               </div>,
@@ -112,20 +126,19 @@ const Visualization = ({ types, base }: { types: string[]; base?: number }) => {
       <Small>
         {values
           .flatMap((equivalent) => {
-            const value = Math.round(factor / computeECV(equivalent))
+            const value = Math.round(factor / equivalent.value)
             return [
-              <div key={equivalent.slug}>
-                {value} {equivalent.prefix && formatName(equivalent.prefix, value)}
-                {formatName(equivalent.name, value)} {equivalent.subtitle && formatName(equivalent.subtitle, 1)}
+              <div key={equivalent.name}>
+                {value} {formatName(equivalent.name, value)}
               </div>,
-              <div key={`${equivalent.slug}-eq`}>=</div>,
+              <div key={`${equivalent.name}-eq`}>=</div>,
             ]
           })
           .slice(0, values.length * 2 - 1)}
         <br />
       </Small>
       <CenterLink category={categories.find((category) => category.id === values[0].category)} />
-      <Signature small noLink noMargin />
+      <Signature color='var(--primary-60)' small noLink noMargin />
     </>
   )
 }

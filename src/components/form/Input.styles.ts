@@ -26,9 +26,9 @@ export const NotRequired = styled.span`
   font-weight: 400;
 `
 
-const input = (color?: 'secondary') => `
+const input = (color?: 'secondary', background?: 'white') => `
   align-items: center;
-  background: var(--neutral-10);
+  background: ${background === 'white' ? 'var(--neutral-00)' : 'var(--neutral-10)'};
   border: unset;
   border-bottom: 2px solid var(--neutral-60);
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -63,8 +63,13 @@ export const StyledTextArea = styled.textarea<{ $maxWidth?: string; $color?: 'se
   ${({ $error }) => $error && 'border-bottom: 2px solid var(--critical-50) !important;'}
 `
 
-export const StyledInput = styled.input<{ $maxWidth?: string; $color?: 'secondary'; $error?: boolean }>`
-  ${({ $color }) => input($color)}
+export const StyledInput = styled.input<{
+  $maxWidth?: string
+  $color?: 'secondary'
+  $background?: 'white'
+  $error?: boolean
+}>`
+  ${({ $color, $background }) => input($color, $background)}
   ${({ $maxWidth }) => `max-width:${$maxWidth || '560px'};`}
   
   ${({ $error }) => $error && 'border-bottom: 2px solid var(--critical-50) !important;'}

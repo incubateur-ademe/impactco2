@@ -57,47 +57,52 @@ export default function Visualization({
   const [overScreen, setOverScreen] = useState<OverScreenEquivalent | undefined>()
   const overScreenValues = useMemo(() => overScreenEquivalentValues(equivalent), [equivalent])
 
-  const content = visualizations[equivalent.slug]
+  const list = visualizations[equivalent.slug]
+  const content = list?.map((visualization, index) =>
+    iframe ? (
+      <Background key={index}>{visualization}</Background>
+    ) : (
+      <ShareableContent<OverScreenEquivalent>
+        key={index}
+        tracking={equivalent.name}
+        overScreen={overScreen ? overScreenValues[overScreen] : undefined}
+        setOverScreen={setOverScreen}
+        size='sm'
+        reverse
+        theme='color'
+        withoutIntegration
+        path={`${category.slug}/${equivalent.slug}#infographie`}>
+        {visualization}
+      </ShareableContent>
+    )
+  )
   return (
     <div id='infographie'>
       {content ? (
         <StyledSection>
           <SectionWideContent $size='sm'>
-            <Slider
-              dots={false}
-              infinite
-              speed={200}
-              fade
-              slidesToShow={1}
-              slidesToScroll={1}
-              responsive={[
-                {
-                  breakpoint: 930,
-                  settings: {
-                    dots: true,
-                    arrows: false,
+            {list.length > 1 ? (
+              <Slider
+                dots={false}
+                infinite
+                speed={200}
+                fade
+                slidesToShow={1}
+                slidesToScroll={1}
+                responsive={[
+                  {
+                    breakpoint: 930,
+                    settings: {
+                      dots: true,
+                      arrows: false,
+                    },
                   },
-                },
-              ]}>
-              {content.map((visualization, index) =>
-                iframe ? (
-                  <Background key={index}>{visualization}</Background>
-                ) : (
-                  <ShareableContent<OverScreenEquivalent>
-                    key={index}
-                    tracking={equivalent.name}
-                    overScreen={overScreen ? overScreenValues[overScreen] : undefined}
-                    setOverScreen={setOverScreen}
-                    size='sm'
-                    reverse
-                    theme='color'
-                    withoutIntegration
-                    path={`${category.slug}/${equivalent.slug}#infographie`}>
-                    {visualization}
-                  </ShareableContent>
-                )
-              )}
-            </Slider>
+                ]}>
+                {content}
+              </Slider>
+            ) : (
+              content
+            )}
           </SectionWideContent>
         </StyledSection>
       ) : null}

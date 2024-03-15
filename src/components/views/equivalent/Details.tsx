@@ -1,6 +1,6 @@
 import React from 'react'
 import { Category } from 'types/category'
-import { Equivalent } from 'types/equivalent'
+import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
@@ -10,18 +10,17 @@ import Sources from 'components/misc/category/Sources'
 import styles from './Details.module.css'
 import Value from './details/Value'
 
-export default function Details({ equivalent, category }: { equivalent: Equivalent; category: Category }) {
+export default function Details({ equivalent, category }: { equivalent: ComputedEquivalent; category: Category }) {
   const { setCo2e, setWarningNegaoctet } = useModalContext()
   return (
     <>
       <Section $withoutPadding>
         <SectionWideContent $size='sm'>
           <h1>
-            {equivalent.prefix && <>{formatName(equivalent.prefix, 1, true)}</>}
-            {formatName(equivalent.name, 1, !equivalent.prefix)}
+            {formatName(equivalent.name, 1, true)}
             {equivalent.suffix}
             <br className={styles.br} />
-            {equivalent.subtitle && <span className={styles.subtitle}>({formatName(equivalent.subtitle, 1)})</span>}
+            {equivalent.subtitle && <span className={styles.subtitle}> ({formatName(equivalent.subtitle, 1)})</span>}
           </h1>
         </SectionWideContent>
       </Section>
@@ -37,7 +36,13 @@ export default function Details({ equivalent, category }: { equivalent: Equivale
                 <Button asLink onClick={() => setCo2e(true)}>
                   CO<sub>2</sub>e
                 </Button>{' '}
-                émis {equivalent.include.post}
+                émis{equivalent.include.post ? ` ${equivalent.include.post}` : '.'}
+                {equivalent.include.postNewLine && (
+                  <>
+                    <br />
+                    {equivalent.include.postNewLine}
+                  </>
+                )}
               </>
             ) : (
               <>

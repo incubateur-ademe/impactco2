@@ -1,0 +1,45 @@
+.header {
+  margin: -2rem -1.5rem 0 -1.5rem;
+  padding: 1.5rem;
+  background-color: var(--secondary-10);
+  border-radius: 16px 16px 0px 0px;
+  border: 1px solid var(--neutral-20);
+  border-bottom: 1px solid var(--secondary-20);
+}
+
+.content {
+  margin: 0 -1.5rem;
+  height: calc(100% - 6rem - 5px);
+  overflow: auto;
+  border-left: 1px solid var(--neutral-20);
+  border-right: 1px solid var(--neutral-20);
+  padding: 2rem;
+}
+
+.footer {
+  margin: 0 -1.5rem -2rem -1.5rem;
+  padding: 1rem 2rem;
+  border: 1px solid var(--neutral-20);
+  border-radius: 0px 0px 16px 16px;
+  border-top: 1px solid var(--secondary-20);
+  background: var(--secondary-10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    width: calc(100% / 3);
+  }
+}
+
+.equivalentsNumber {
+  font-weight: 500;
+}
+
+.equivalentsInfo {
+  color: var(--neutral-60);
+}
+
+.noResult {
+  text-align: center;
+}

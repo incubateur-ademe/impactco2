@@ -9,7 +9,6 @@ export type Category = {
   description?: string
   equivalent?: string
   gender: string
-  display: boolean
   unit: string
   include: string
   list?: boolean

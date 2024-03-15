@@ -9,14 +9,11 @@ import IFrameLivraisonModal3 from 'components/modals/IFrameLivraisonModal3'
 import ReduireModal3 from 'components/modals/ReduireModal3'
 import ShareModal from 'components/modals/ShareModal'
 import SocialModal3 from 'components/modals/SocialModal3'
-import TilesModal from 'components/modals/TilesModal'
 import WarningNegaoctet from 'components/modals/WarningNegaoctet'
 
 const ModalContext = React.createContext<{
   Co2e: boolean
   setCo2e: Dispatch<SetStateAction<boolean>>
-  tiles: boolean
-  setTiles: Dispatch<SetStateAction<boolean>>
   share: string | boolean
   setShare: Dispatch<SetStateAction<string | boolean>>
   social: boolean
@@ -41,7 +38,6 @@ const ModalContext = React.createContext<{
 
 export function ModalProvider({ children }: { children: ReactNode }) {
   const [Co2e, setCo2e] = useState(false)
-  const [tiles, setTiles] = useState(false)
   const [share, setShare] = useState<string | boolean>(false)
   const [social, setSocial] = useState(false)
   const [reduire, setReduire] = useState(false)
@@ -58,8 +54,6 @@ export function ModalProvider({ children }: { children: ReactNode }) {
       value={{
         Co2e,
         setCo2e,
-        tiles,
-        setTiles,
         share,
         setShare,
         social,
@@ -87,7 +81,6 @@ export function ModalProvider({ children }: { children: ReactNode }) {
       <IFrameLivraisonModal3 />
       <SocialModal3 />
       <ReduireModal3 />
-      <TilesModal />
       <ShareModal />
       <EcvModal />
       <DevicesModal />
