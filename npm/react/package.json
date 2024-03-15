@@ -1,9 +1,9 @@
 {
   "name": "@incubateur-ademe/impactco2-react",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "Integrer les ressources d'Impact CO₂",
   "main": "dist/index.js",
-  "types": "dist/index.d.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/incubateur-ademe/impactco2.git"

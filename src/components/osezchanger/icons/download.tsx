@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (
+const Icon = () => (
   <svg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       fillRule='evenodd'
@@ -10,3 +10,4 @@ export default (
     />
   </svg>
 )
+export default Icon

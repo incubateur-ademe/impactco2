@@ -68,3 +68,5 @@ detection/chrome-extension/scripts/detection.js
 npm/react/dist/index.js
 
 npm/react/dist/index.js.LICENSE.txt
+
+dist/

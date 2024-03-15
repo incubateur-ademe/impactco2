@@ -9,6 +9,7 @@ const CheckboxInput = ({
   children,
   color,
   className,
+  'data-testid': dataTestId,
   ...inputProps
 }: {
   checked: boolean
@@ -17,9 +18,10 @@ const CheckboxInput = ({
   label: ReactNode
   children?: ReactNode
   color?: 'secondary'
+  ['data-testid']?: string
 } & InputHTMLAttributes<HTMLInputElement>) => {
   return (
-    <Container $checked={checked} $color={color} className={className}>
+    <Container $checked={checked} $color={color} className={className} data-testid={dataTestId}>
       <input
         {...inputProps}
         type='checkbox'

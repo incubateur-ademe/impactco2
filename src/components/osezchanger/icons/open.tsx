@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (
+const Icon = () => (
   <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
     <path
       stroke='currentColor'
@@ -11,3 +11,4 @@ export default (
     />
   </svg>
 )
+export default Icon

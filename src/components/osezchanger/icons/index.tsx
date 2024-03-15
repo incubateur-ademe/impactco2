@@ -1,35 +1,4 @@
-import arrowDown from './arrow-down'
-import arrowLeft from './arrow-left'
-import arrowRight from './arrow-right'
-import check from './check'
-import close from './close'
-import closeThick from './close-thick'
-import codeSSlash from './code-s-slash'
-import copy from './copy'
-import download from './download'
-import dropdownArrowDown from './dropdown-arrow-down'
-import dropdownArrowRight from './dropdown-arrow-right'
-import dropdownArrowUp from './dropdown-arrow-up'
-import error from './error'
-import facebook from './facebook'
-import fullArrowRight from './full-arrow-right'
-import fullStar from './full-star'
-import image from './image'
-import infinity from './infinity'
-import information from './information'
-import informationFill from './information-fill'
-import link from './link'
-import linkedin from './linkedin'
-import magicWand from './magic-wand'
-import minus from './minus'
-import open from './open'
-import plus from './plus'
-import refresh from './refresh'
-import sendPlane from './send-plane'
-import sprinkles from './sprinkles'
-import star from './star'
-import twitter from './twitter'
-import whatsapp from './whatsapp'
+import dynamic from 'next/dynamic'
 
 export type IconId =
   | 'magic-wand'
@@ -65,72 +34,105 @@ export type IconId =
   | 'link'
   | 'infinity'
 
+const InfinityIcon = dynamic(() => import('./infinity'))
+const Link = dynamic(() => import('./link'))
+const Image = dynamic(() => import('./image'))
+const Refresh = dynamic(() => import('./refresh'))
+const MagicWand = dynamic(() => import('./magic-wand'))
+const CodeSSlash = dynamic(() => import('./code-s-slash'))
+const SendPlane = dynamic(() => import('./send-plane'))
+const Download = dynamic(() => import('./download'))
+const Information = dynamic(() => import('./information'))
+const InformationFill = dynamic(() => import('./information-fill'))
+const Sprinkles = dynamic(() => import('./sprinkles'))
+const Close = dynamic(() => import('./close'))
+const CloseThick = dynamic(() => import('./close-thick'))
+const ArrowLeft = dynamic(() => import('./arrow-left'))
+const ArrowRight = dynamic(() => import('./arrow-right'))
+const FullArrowRight = dynamic(() => import('./full-arrow-right'))
+const ArrowDown = dynamic(() => import('./arrow-down'))
+const DropdownArrowUp = dynamic(() => import('./dropdown-arrow-up'))
+const DropdownArrowDown = dynamic(() => import('./dropdown-arrow-down'))
+const DropdownArrowRight = dynamic(() => import('./dropdown-arrow-right'))
+const Copy = dynamic(() => import('./copy'))
+const Facebook = dynamic(() => import('./facebook'))
+const Twitter = dynamic(() => import('./twitter'))
+const Linkedin = dynamic(() => import('./linkedin'))
+const Whatsapp = dynamic(() => import('./whatsapp'))
+const Plus = dynamic(() => import('./plus'))
+const Open = dynamic(() => import('./open'))
+const Minus = dynamic(() => import('./minus'))
+const Check = dynamic(() => import('./check'))
+const Error = dynamic(() => import('./error'))
+const Star = dynamic(() => import('./star'))
+const FullStar = dynamic(() => import('./full-star'))
+
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
     case 'infinity':
-      return infinity
+      return <InfinityIcon />
     case 'link':
-      return link
+      return <Link />
     case 'image':
-      return image
+      return <Image />
     case 'refresh':
-      return refresh
+      return <Refresh />
     case 'magic-wand':
-      return magicWand
+      return <MagicWand />
     case 'code-s-slash':
-      return codeSSlash
+      return <CodeSSlash />
     case 'send-plane':
-      return sendPlane
+      return <SendPlane />
     case 'download':
-      return download
+      return <Download />
     case 'information':
-      return information
+      return <Information />
     case 'information-fill':
-      return informationFill
+      return <InformationFill />
     case 'sprinkles':
-      return sprinkles
+      return <Sprinkles />
     case 'close':
-      return close
+      return <Close />
     case 'close-thick':
-      return closeThick
+      return <CloseThick />
     case 'arrow-left':
-      return arrowLeft
+      return <ArrowLeft />
     case 'arrow-right':
-      return arrowRight
+      return <ArrowRight />
     case 'full-arrow-right':
-      return fullArrowRight
+      return <FullArrowRight />
     case 'arrow-down':
-      return arrowDown
+      return <ArrowDown />
     case 'dropdown-arrow-up':
-      return dropdownArrowUp
+      return <DropdownArrowUp />
     case 'dropdown-arrow-down':
-      return dropdownArrowDown
+      return <DropdownArrowDown />
     case 'dropdown-arrow-right':
-      return dropdownArrowRight
+      return <DropdownArrowRight />
     case 'copy':
-      return copy
+      return <Copy />
     case 'facebook':
-      return facebook
+      return <Facebook />
     case 'twitter':
-      return twitter
+      return <Twitter />
     case 'linkedin':
-      return linkedin
+      return <Linkedin />
     case 'whatsapp':
-      return whatsapp
+      return <Whatsapp />
     case 'plus':
-      return plus
+      return <Plus />
     case 'open':
-      return open
+      return <Open />
     case 'minus':
-      return minus
+      return <Minus />
     case 'check':
-      return check
+      return <Check />
     case 'error':
-      return error
+      return <Error />
     case 'star':
-      return star
+      return <Star />
     case 'full-star':
-      return fullStar
+      return <FullStar />
     default:
       return null
   }
