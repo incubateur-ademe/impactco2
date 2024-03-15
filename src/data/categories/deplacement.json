@@ -568,12 +568,7 @@
     "prefix": "A/R ",
     "name": "Paris - New-York",
     "subtitle": "en avion",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "unit": "A/R",
     "slug": "avion-pny",
     "type": "plane",

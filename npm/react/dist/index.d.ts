@@ -1,4 +1,4 @@
-declare module "impactco2-react" {
+declare module "@incubateur-ademe/impactco2-react" {
     import React from 'react';
     const Etiquette: ({ comparisons, value, animated }: {
         comparisons: (
