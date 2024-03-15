@@ -17,3 +17,14 @@ model ApiKey {
 
   @@map("api_keys")
 }
+
+model GMapsCache {
+  id    String   @id
+  car   Float
+  foot  Float
+  rail  Float
+  plane Float
+  date  DateTime
+
+  @@map("gmaps_cache")
+}

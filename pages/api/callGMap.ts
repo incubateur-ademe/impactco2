@@ -4,6 +4,7 @@ import slowDown from 'express-slow-down'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { DeplacementType } from 'types/equivalent'
 import { ZodError, z } from 'zod'
+import { getCachedValue, insertCachedValue } from 'utils/gmaps'
 import { trackAPIRequest } from 'utils/middleware'
 
 type GMapDistance = { elements: { status: string; distance: { value: number } }[] }
@@ -28,6 +29,8 @@ export const GMapValidation = z.object({
     longitude: z.number(),
   }),
 })
+
+export type GMapCommand = z.infer<typeof GMapValidation>
 
 export type CallGMapDistances = Record<DeplacementType, number>
 
@@ -74,13 +77,18 @@ export default async function handler(
     }
   }
 
-  const queryString = `destinations=${inputs.data.origins.latitude}%2C${inputs.data.origins.longitude}&origins=${inputs.data.destinations.latitude}%2C${inputs.data.destinations.longitude}`
-  await trackAPIRequest(req, 'callGMap', JSON.stringify(inputs.data))
-
   if (process.env.FAKE_GMAP_DATA === 'true') {
     // Fake Paris Lyon
     return res.status(200).json({ car: 465.021, foot: 440.747, rail: 456.409, plane: 391.8120136890189 })
   }
+
+  const cached = await getCachedValue(inputs.data)
+  if (cached) {
+    await trackAPIRequest(req, 'callGMap-cache', JSON.stringify(inputs.data))
+    return res.status(200).json(cached)
+  }
+
+  await trackAPIRequest(req, 'callGMap', JSON.stringify(inputs.data))
 
   const R = 6371e3 // metres
   const φ1 = (inputs.data.origins.latitude * Math.PI) / 180 // φ, λ in radians
@@ -92,6 +100,8 @@ export default async function handler(
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 
   const planeDistance = (R * c) / 1000
+
+  const queryString = `destinations=${inputs.data.origins.latitude}%2C${inputs.data.origins.longitude}&origins=${inputs.data.destinations.latitude}%2C${inputs.data.destinations.longitude}`
   const [driving, walking, transit] = await Promise.all([
     axios
       .get<GMapDistances>(
@@ -109,11 +119,12 @@ export default async function handler(
       )
       .then((response) => response.data),
   ])
-
-  return res.status(200).json({
+  const result = {
     car: getValue(driving),
     foot: getValue(walking),
     rail: getValue(transit) || getValue(driving),
     plane: planeDistance,
-  })
+  }
+  await insertCachedValue(inputs.data, result)
+  return res.status(200).json(result)
 }
