@@ -88,7 +88,10 @@ export default async function handler(
     return res.status(200).json(cached)
   }
 
-  await trackAPIRequest(req, 'callGMap', JSON.stringify(inputs.data))
+  const name = await trackAPIRequest(req, 'callGMap', JSON.stringify(inputs.data))
+  if (name !== 'Impact CO2') {
+    return res.status(401).send('Not authorized')
+  }
 
   const R = 6371e3 // metres
   const φ1 = (inputs.data.origins.latitude * Math.PI) / 180 // φ, λ in radians

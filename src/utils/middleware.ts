@@ -4,7 +4,7 @@ import { prismaClient } from 'utils/prismaClient'
 
 export async function trackAPIRequest(request: NextApiRequest, api: string, params?: string) {
   if (!process.env.TRACK_API) {
-    return false
+    return null
   }
 
   try {
@@ -27,7 +27,8 @@ export async function trackAPIRequest(request: NextApiRequest, api: string, para
         method: 'POST',
       }
     )
-    return !!name
+
+    return name
   } catch (error) {
     await Sentry.captureException(error)
     console.error(`tracking failed - ${request.headers.authorization}`, error)
