@@ -2,9 +2,15 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import React, { ReactNode, useEffect, useRef, useState } from 'react'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { track } from 'utils/matomo'
 import IframeFooter from './iframe/IframeFooter'
+
+const IframeStyle = createGlobalStyle`
+body {
+  background-color: transparent;
+}
+`
 
 const Wrapper = styled.div`
   padding: 1rem 0;
@@ -45,6 +51,7 @@ export default function Iframe({ children, noLogo }: { children: ReactNode; noLo
         <div ref={ref}>{children}</div>
         {!noLogo && <IframeFooter />}
       </Wrapper>
+      <IframeStyle />
       <Script
         src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js'
         integrity='sha512-14SY6teTzhrLWeL55Q4uCyxr6GQOxF3pEoMxo2mBxXwPRikdMtzKMYWy2B5Lqjr6PHHoGOxZgPaxUYKQrSmu0A=='

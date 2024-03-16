@@ -2,6 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
+const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default
 
 module.exports = [
   {
@@ -128,5 +129,6 @@ module.exports = [
         },
       ],
     },
+    plugins: [new StatoscopeWebpackPlugin()],
   },
 ]

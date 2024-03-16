@@ -20,7 +20,7 @@ test('Page is loaded and month can be selected', async ({ page }) => {
     await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/fruitsetlegumes?month=5')
     await page.getByTestId('custom-param-month-select').selectOption('9')
     await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/fruitsetlegumes?month=9')
-    await page.getByTestId('custom-param-month-checkbox').click({ force: true })
+    await page.getByTestId('custom-param-month-checkbox').click()
     await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/fruitsetlegumes')
     await page.getByTestId('header-integrate-button').click()
     await expect(page.getByTestId('clipboard-box')).toContainText(
@@ -30,7 +30,7 @@ test('Page is loaded and month can be selected', async ({ page }) => {
     await expect(page.getByTestId('clipboard-box')).toContainText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="fruitsetlegumes" data-search="?month=11&theme=default"></script>'
     )
-    await page.getByTestId('custom-param-month-checkbox').click({ force: true })
+    await page.getByTestId('custom-param-month-checkbox').click()
     await expect(page.getByTestId('clipboard-box')).toContainText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="fruitsetlegumes" data-search="?theme=default"></script>'
     )
