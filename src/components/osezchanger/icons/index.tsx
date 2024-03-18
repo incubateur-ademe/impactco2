@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import React from 'react'
 
 export type IconId =
   | 'magic-wand'
@@ -29,7 +30,6 @@ export type IconId =
   | 'full-star'
   | 'check'
   | 'error'
-  | 'refresh'
   | 'image'
   | 'link'
   | 'infinity'
@@ -37,7 +37,6 @@ export type IconId =
 const InfinityIcon = dynamic(() => import('./infinity'))
 const Link = dynamic(() => import('./link'))
 const Image = dynamic(() => import('./image'))
-const Refresh = dynamic(() => import('./refresh'))
 const MagicWand = dynamic(() => import('./magic-wand'))
 const CodeSSlash = dynamic(() => import('./code-s-slash'))
 const SendPlane = dynamic(() => import('./send-plane'))
@@ -75,8 +74,6 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return <Link />
     case 'image':
       return <Image />
-    case 'refresh':
-      return <Refresh />
     case 'magic-wand':
       return <MagicWand />
     case 'code-s-slash':
