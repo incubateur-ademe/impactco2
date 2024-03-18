@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
-import { Icon } from 'components/osezchanger/icons'
+import RefreshIcon from 'components/osezchanger/icons/refresh'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
@@ -125,7 +125,7 @@ const Detector = ({ impact }: { impact: string }) => {
           <SimpleValue value={value} comparison='random' />
         </div>
         <button className={styles.random} onClick={forceUpdate}>
-          <Icon iconId='refresh' />
+          <RefreshIcon />
         </button>
       </div>
     </div>
