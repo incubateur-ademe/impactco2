@@ -21,6 +21,7 @@ export const ActionsContainer = styled.div`
   margin: auto;
   max-width: 800px;
   padding: 0.75rem 1.5rem;
+  width: 100%;
 `
 
 export const ActionsHeader = styled.div<{ $center?: boolean }>`
