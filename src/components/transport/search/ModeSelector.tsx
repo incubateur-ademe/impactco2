@@ -71,7 +71,7 @@ export default function ModeSelector({ type, iframe }: { type: TransportSimulate
     <Wrapper>
       {(type === 'distance' || !router.query.tabs || router.query.tabs.includes('distance')) &&
         (type === 'distance' ? (
-          <CurrentTab>Distance</CurrentTab>
+          <CurrentTab data-testid='transport-tab-distance'>Distance</CurrentTab>
         ) : (
           <Tab
             internal
@@ -83,7 +83,7 @@ export default function ModeSelector({ type, iframe }: { type: TransportSimulate
         ))}
       {(type === 'itineraire' || !router.query.tabs || router.query.tabs.includes('itineraire')) &&
         (type === 'itineraire' ? (
-          <CurrentTab>Itinéraire</CurrentTab>
+          <CurrentTab data-testid='transport-tab-itineraire'>Itinéraire</CurrentTab>
         ) : (
           <Tab
             internal
@@ -95,7 +95,9 @@ export default function ModeSelector({ type, iframe }: { type: TransportSimulate
         ))}
       {(type === 'teletravail' || !router.query.tabs || router.query.tabs.includes('teletravail')) &&
         (type === 'teletravail' ? (
-          <CurrentTab $large>Télétravail</CurrentTab>
+          <CurrentTab $large data-testid='transport-tab-teletravail'>
+            Télétravail
+          </CurrentTab>
         ) : (
           <Tab
             internal
