@@ -90,6 +90,9 @@ export default async function handler(
 
   const name = await trackAPIRequest(req, 'callGMap', JSON.stringify(inputs.data))
   if (name !== 'Impact CO2') {
+    if (name === 'HACK') {
+      console.error('--- Wrong usage of CallGMAP API ---', req)
+    }
     return res.status(401).send('Not authorized')
   }
 
