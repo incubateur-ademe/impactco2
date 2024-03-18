@@ -2,13 +2,11 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
 import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import Suggestions from './searchBar/Suggestions'
 import TextInputSmall from './searchBar/TextInputSmall'
 
 export default function NavSearchBar(props) {
-  const { categories } = useDataContext()
   const [search, setSearch] = useState('')
   const results = useSearchEquivalent(search)
 
@@ -36,8 +34,6 @@ export default function NavSearchBar(props) {
         if (search.length > 1) {
           if (results[current]) {
             navigateToItem(results[current])
-          } else {
-            navigateToItem(categories[current])
           }
         }
       }}
@@ -60,7 +56,6 @@ export default function NavSearchBar(props) {
               <Suggestions
                 enabled={search.length > 1}
                 results={results}
-                categories={categories}
                 focus={focus}
                 current={current}
                 setCurrent={setCurrent}

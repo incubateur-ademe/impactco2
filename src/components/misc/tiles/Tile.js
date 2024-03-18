@@ -3,13 +3,11 @@ import { CSS } from '@dnd-kit/utilities'
 import React from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
-import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
 import useIframe from 'hooks/useIframe'
-import useDataContext from 'components/providers/DataProvider'
 import Emoji from 'components/base/Emoji'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
@@ -142,8 +140,6 @@ const Svg = styled.svg`
   width: 1em;
 `
 export default function Tile(props) {
-  const { categories } = useDataContext()
-
   const iframe = useIframe()
 
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
@@ -190,18 +186,18 @@ export default function Tile(props) {
       <Title>
         <Number data-testid={`tile-${props.equivalent.slug}-value`}>
           {props.noAnimation ? (
-            formatNumber(props.weight / computeECV(props.equivalent))
+            formatNumber(props.weight / props.equivalent.value)
           ) : (
-            <CountUp end={props.weight / computeECV(props.equivalent)} duration={0.5} separator=' ' />
+            <CountUp end={props.weight / props.equivalent.value} duration={0.5} separator=' ' />
           )}
         </Number>
         <Name>
           {formatName(
             (props.equivalent.prefix || '') + props.equivalent.name + (props.equivalent.suffix || ''),
-            props.weight / computeECV(props.equivalent)
+            props.weight / props.equivalent.value
           )}
           {props.showSubtitle && props.equivalent.subtitle ? (
-            <Subtitle>{formatName(props.equivalent.subtitle, props.weight / computeECV(props.equivalent))}</Subtitle>
+            <Subtitle>{formatName(props.equivalent.subtitle, props.weight / props.equivalent.value)}</Subtitle>
           ) : (
             ''
           )}
@@ -209,12 +205,7 @@ export default function Tile(props) {
       </Title>
       {props.reference ? (
         !props.equivalentPage && (
-          <StyledLink
-            size='sm'
-            asButton
-            href={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/${
-              categories.find((category) => category.id === props.equivalent.category)?.slug
-            }/${props.equivalent.slug}`}>
+          <StyledLink size='sm' asButton href={`${iframe ? process.env.NEXT_PUBLIC_URL : ''}/${props.equivalent.link}`}>
             Voir le détail
             {iframe && (
               <Svg x='0px' y='0px' fill='currentcolor' viewBox='0 0 283.178 283.178'>

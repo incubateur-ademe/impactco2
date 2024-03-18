@@ -6,8 +6,8 @@ import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import { evaluateNumber } from 'hooks/useSituation'
-import useDataContext from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Instruction from 'components/misc/category/Instruction'
@@ -54,8 +54,6 @@ const devices = [
 ]
 
 export default function Detail({ category }: { category: Category }) {
-  const { equivalents } = useDataContext()
-
   const {
     usageNumerique: { displayAll, setDisplayAll, engine, situation, numberEmails },
   } = useParamContext()
@@ -113,7 +111,7 @@ export default function Detail({ category }: { category: Category }) {
           1000,
         onClick: () => track('Usage numérique', 'Navigation equivalent', 'streaming'),
       },
-      ...equivalents
+      ...computedEquivalents
         .filter((equivalent) => devicesToDisplay.includes(equivalent.slug))
         .map((equivalent) => ({
           ...equivalent,
@@ -128,7 +126,7 @@ export default function Detail({ category }: { category: Category }) {
         })),
     ].filter((item) => item.value)
     // Situation is needed here because engine is not properly updated
-  }, [engine, numberEmails, equivalents, displayAll, situation])
+  }, [engine, numberEmails, displayAll, situation])
 
   return (
     <Wrapper>

@@ -1,16 +1,14 @@
 import { act, screen } from '@testing-library/react'
-import useModalContext from 'components/providers/ModalProvider'
+import { useState } from 'react'
+import EqModal from 'components/modals/EqModal'
 
-export function EqModal4Opener() {
-  const { eqv, setEqv } = useModalContext()
-
-  const clicked = () => {
-    setEqv(!eqv)
-  }
+export function EqModalOpener() {
+  const [open, setOpen] = useState(false)
 
   return (
     <>
-      <button data-testid='modalOpener' onClick={clicked}>
+      {open && <EqModal setOpen={setOpen} />}
+      <button data-testid='modalOpener' onClick={() => setOpen(true)}>
         Open modal
       </button>
     </>

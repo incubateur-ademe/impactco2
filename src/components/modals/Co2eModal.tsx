@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
-import useModalContext from 'components/providers/ModalProvider'
 import Modal2 from 'components/base/Modal2'
 import ExplainArrowContainer from 'components/modals/ExplainArrowContainer.js'
 
@@ -15,10 +14,9 @@ const getTitle = () => {
   )
 }
 
-export default function Co2eModal2() {
-  const { Co2e: open, setCo2e: setOpen } = useModalContext()
+export default function Co2eModal({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
   return (
-    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width='50rem'>
+    <Modal2 open setOpen={setOpen} getTitle={getTitle} width='50rem'>
       <Text>
         Le dérèglement climatique actuel est une conséquence de nos émissions importantes de différents gaz à effet de
         serre. Nous pouvons mesurer ces émissions avec un indice simple : les kilogrammes d&apos;équivalent CO

@@ -1,23 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
-import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
+import ReduireModal from 'components/modals/ReduireModal'
 import AdviceLivraisonDetail from './AdviceLivraisonDetail'
 
 export default function AdviceLivraison() {
-  const { setReduire } = useModalContext()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_livraison_advice', 'Livraison', 'jpg')
-
-  const openModal = () => {
-    setReduire(true)
-  }
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <Section $withoutPadding>
+      {openModal && <ReduireModal setOpen={setOpenModal} />}
       <SectionWideContent>
         <Separator />
         <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
@@ -29,7 +26,7 @@ export default function AdviceLivraison() {
               <Button
                 priority='secondary'
                 size='sm'
-                onClick={openModal}
+                onClick={() => setOpenModal(true)}
                 className='noscreenshot'
                 id='shareDown'
                 aria-label='Partager'>

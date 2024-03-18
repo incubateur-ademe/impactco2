@@ -5,7 +5,6 @@ import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Itinerary from 'components/transport/Itinerary'
-import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function ItinerairePage({ category }: { category: Category }) {
   return (
@@ -17,15 +16,13 @@ export default function ItinerairePage({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
-      <TransportProvider>
-        <Itinerary category={category} />
-        <Learning category={category} from='/transport/itineraire' fromLabel='Transport itinéraire' />
-        <SuggestionBanner
-          from='/transport/itineraire'
-          fromLabel='Transport itinéraire'
-          simulatorName='simulateur transport'
-        />
-      </TransportProvider>
+      <Itinerary category={category} />
+      <Learning category={category} from='/transport/itineraire' fromLabel='Transport itinéraire' />
+      <SuggestionBanner
+        from='/transport/itineraire'
+        fromLabel='Transport itinéraire'
+        simulatorName='simulateur transport'
+      />
     </Web>
   )
 }

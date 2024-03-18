@@ -1,17 +1,12 @@
 import '@testing-library/jest-dom'
 import { act, fireEvent, screen } from '@testing-library/react'
 import { render } from '@testing-library/react'
-import { DataProvider } from 'components/providers/DataProvider'
 import Defi from 'components/osezchanger/Defi'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 
 describe('Osez Changer', () => {
   it('Should display correct tag when items are filled', () => {
-    render(
-      <DataProvider>
-        <OsezChanger />
-      </DataProvider>
-    )
+    render(<OsezChanger />)
 
     expect(screen.queryByTestId('defi')).toBeNull()
     act(() => {
@@ -56,11 +51,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should render hypothesis modal', () => {
-    render(
-      <DataProvider>
-        <OsezChanger />
-      </DataProvider>
-    )
+    render(<OsezChanger />)
     act(() => {
       screen.getByTestId('osez-changer-start-button').click()
     })
@@ -96,11 +87,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should render integration modal', () => {
-    render(
-      <DataProvider>
-        <OsezChanger />
-      </DataProvider>
-    )
+    render(<OsezChanger />)
     act(() => {
       screen.getByTestId('osez-changer-start-button').click()
     })

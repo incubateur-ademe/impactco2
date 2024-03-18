@@ -5,7 +5,6 @@ import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import Distance from 'components/transport/Distance'
-import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function DistancePage({ category }: { category: Category }) {
   return (
@@ -17,11 +16,9 @@ export default function DistancePage({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
-      <TransportProvider>
-        <Distance category={category} />
-        <Learning category={category} fromLabel='Transport distance' />
-        <SuggestionBanner from={category.slug} fromLabel='Transport distance' simulatorName='simulateur transport' />
-      </TransportProvider>
+      <Distance category={category} />
+      <Learning category={category} fromLabel='Transport distance' />
+      <SuggestionBanner from={category.slug} fromLabel='Transport distance' simulatorName='simulateur transport' />
     </Web>
   )
 }

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
-import useDataContext from 'components/providers/DataProvider'
+import { categories } from 'components/providers/categories'
 import Emoji from 'components/base/Emoji'
 import Tag from 'components/misc/tag/Tag'
 import DropdownSweet from './DropdownSweet'
@@ -17,9 +17,8 @@ const StyledEmoji = styled(Emoji)`
   font-size: 1.25rem;
   margin: 0.25rem 0.25rem 0 0;
 `
-export default function MenuSweet() {
-  const { categories } = useDataContext()
 
+export default function MenuSweet() {
   const router = useRouter()
   const slugs = router.asPath.split('/').filter((slug) => slug)
 
@@ -27,7 +26,7 @@ export default function MenuSweet() {
     <Wrapper>
       <DropdownSweet label={'Par thématique'}>
         {categories.map((category) => (
-          <DropdownSweet.Item key={category.id} href={`/${category.slug}`} $current={slugs.includes(category.slug)}>
+          <DropdownSweet.Item key={category.slug} href={`/${category.slug}`} $current={slugs.includes(category.slug)}>
             <div>
               <StyledEmoji>{category.emoji}</StyledEmoji> {category.name}
             </div>

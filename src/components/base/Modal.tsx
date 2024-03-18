@@ -1,28 +1,28 @@
 import React, { Dispatch, ReactNode, SetStateAction } from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div<{ $open: boolean }>`
+const Wrapper = styled.div`
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
   left: 0;
-  pointer-events: ${({ $open }) => ($open ? 'inherit' : 'none')};
+  pointer-events: inherit;
   position: fixed;
   top: 0;
   transform: translate3d(0, 0, 1em);
   width: 100%;
   z-index: 900;
 `
-const Background = styled.div<{ $open: boolean }>`
-  background-color: rgba(0, 0, 0, ${({ $open }) => ($open ? 0.6 : 0)});
+const Background = styled.div`
+  background-color: rgba(0, 0, 0, 0.6);
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
 `
-const Content = styled.div<{ $open: boolean; $width?: string }>`
+const Content = styled.div<{ $width?: string }>`
   background-color: var(--neutral-00);
   border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
@@ -31,10 +31,10 @@ const Content = styled.div<{ $open: boolean; $width?: string }>`
   margin: 1rem;
   max-height: 90vh;
   max-width: 90vw;
-  opacity: ${({ $open }) => ($open ? 1 : 0)};
+  opacity: 1;
   position: relative;
-  transform: scale(${({ $open }) => ($open ? 1 : 0.7)}) translateY(${({ $open }) => ($open ? 0 : '10em')});
-  visibility: ${({ $open }) => ($open ? 'visible' : 'hidden')};
+  transform: scale(1) translateY(0);
+  visibility: visible;
   width: ${({ $width }) => $width || '40em'};
 `
 const ButtonClose = styled.button`
@@ -55,22 +55,20 @@ const Scroll = styled.div`
   padding: 2rem 1.5rem;
 `
 export default function Modal({
-  open,
   setOpen,
   width,
   children,
   className,
 }: {
-  open: boolean
   setOpen: Dispatch<SetStateAction<boolean>>
   width?: string
   children: ReactNode
   className?: string
 }) {
   return (
-    <Wrapper $open={open}>
-      <Background $open={open} onClick={() => setOpen(false)} />
-      <Content $open={open} $width={width}>
+    <Wrapper>
+      <Background onClick={() => setOpen(false)} />
+      <Content $width={width}>
         <ButtonClose onClick={() => setOpen(false)}> +</ButtonClose>
         <Scroll className={className}> {children} </Scroll>
       </Content>

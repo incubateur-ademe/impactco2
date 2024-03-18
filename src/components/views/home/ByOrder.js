@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import minicards from './data/minicards.json'
 import categories from 'data/categories.json'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import Header from './heading/Header'
@@ -11,10 +11,8 @@ import ArrowLeft from './img/ArrowLeft'
 import ArrowRight from './img/ArrowRight'
 
 export default function ByOrder() {
-  const { equivalents } = useDataContext()
-
   const buildMinicardFor = (slug) => {
-    let eq = equivalents.find((eq) => eq.slug === slug)
+    let eq = computedEquivalents.find((eq) => eq.slug === slug)
     const cat = categories.find((cat) => cat.id === eq.category)
     const minicard = minicards.find((m) => m.slug === slug)
     return (
