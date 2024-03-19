@@ -4,9 +4,7 @@ import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import useParamContext from 'components/providers/ParamProvider'
 import ShareableContent from 'components/misc/ShareableContent'
-import { SourcesWrapper } from 'components/misc/category/CategoryWrapper.styles'
 import { CustomParamValue } from 'components/misc/category/CustomParam'
-import Sources from 'components/misc/category/Sources'
 import { OverScreenTransport } from 'components/misc/category/overScreens/TransportType'
 import { overScreenTransportValues } from 'components/misc/category/overScreens/TransportValues'
 
@@ -68,29 +66,20 @@ const Transport = ({
     }
   }, [router, iframe, type, queryParams])
 
-  return (
-    <>
-      {isReady ? (
-        <ShareableContent<OverScreenTransport>
-          category={category}
-          iframe={iframe}
-          params={params}
-          tracking={tracking}
-          type={type}
-          data-testid={`${type}-wrapper`}
-          setOverScreen={setOverScreen}
-          overScreen={overScreen ? overScreenValues[overScreen] : undefined}
-          path={`transport/${type === 'distance' ? '' : type}`}>
-          {children}
-        </ShareableContent>
-      ) : null}
-      {category.sources && (
-        <SourcesWrapper>
-          <Sources priority='secondary' sources={category.sources} tracking={category.name} />
-        </SourcesWrapper>
-      )}
-    </>
-  )
+  return isReady ? (
+    <ShareableContent<OverScreenTransport>
+      category={category}
+      iframe={iframe}
+      params={params}
+      tracking={tracking}
+      type={type}
+      data-testid={`${type}-wrapper`}
+      setOverScreen={setOverScreen}
+      overScreen={overScreen ? overScreenValues[overScreen] : undefined}
+      path={`transport/${type === 'distance' ? '' : type}`}>
+      {children}
+    </ShareableContent>
+  ) : null
 }
 
 export default Transport
