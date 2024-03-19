@@ -33,6 +33,7 @@ const Actions = ({
           icon='code-s-slash'
           onClick={() => {
             onClick('integrer')
+            track(tracking, 'Integrer', `${tracking.replace(/ /g, '_').toLowerCase()}_integrer`)
           }}>
           Intégrer
         </GhostButton>

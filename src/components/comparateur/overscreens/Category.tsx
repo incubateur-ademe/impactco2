@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { Category as CategoryType } from 'types/category'
+import { track } from 'utils/matomo'
 import useParamContext from 'components/providers/ParamProvider'
 import { computedEquivalents } from 'components/providers/equivalents'
 import Emoji from 'components/base/Emoji'
@@ -72,6 +73,7 @@ const Category = ({
                     (equivalent) => equivalent.slug
                   )
                 )
+                track('Comparateur', 'Voir la comparaison', category.slug)
                 onClose()
               }}>
               Voir la comparaison
