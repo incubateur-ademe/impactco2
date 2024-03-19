@@ -36,6 +36,7 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <Button onClick={onClose}>Fermer</Button>
       </div>
       <div className={styles.content}>
         {search ? (
