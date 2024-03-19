@@ -4,7 +4,15 @@ import Link from 'components/base/buttons/Link'
 import Divider from '../img/Divider'
 import { CtaContainer, H2Title, Separator, UpperSide } from './Header.styles'
 
-const Header = ({ title, cta }: { title: ReactNode; cta?: { to: string; label: string } }) => (
+const Header = ({
+  title,
+  cta,
+  noSeparator,
+}: {
+  title: ReactNode
+  cta?: { to: string; label: string }
+  noSeparator?: boolean
+}) => (
   <>
     <UpperSide>
       <div>
@@ -14,6 +22,7 @@ const Header = ({ title, cta }: { title: ReactNode; cta?: { to: string; label: s
         <CtaContainer>
           <Link
             asButton
+            internal
             href={cta.to}
             onClick={() => track('Click', cta.label, `click_${cta.label.toLowerCase().replace(/ /g, '_')}`)}>
             {cta.label}
@@ -21,9 +30,11 @@ const Header = ({ title, cta }: { title: ReactNode; cta?: { to: string; label: s
         </CtaContainer>
       )}
     </UpperSide>
-    <Separator>
-      <Divider />
-    </Separator>
+    {!noSeparator && (
+      <Separator>
+        <Divider />
+      </Separator>
+    )}
   </>
 )
 

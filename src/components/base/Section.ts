@@ -7,7 +7,7 @@ const sizes = {
   xs: '800px',
 }
 export const Section = styled.section<{
-  $theme?: 'color' | 'main'
+  $theme?: 'color' | 'main' | 'color-light'
   $withoutPadding?: boolean
   $size?: 'xs' | 'sm' | 'lg'
   $margin?: string
@@ -16,9 +16,11 @@ export const Section = styled.section<{
   ${({ $theme }) =>
     $theme === 'color'
       ? 'background-color: var(--secondary-10);'
-      : $theme === 'main'
-        ? 'background-color: var(--primary-50);'
-        : ''}
+      : $theme === 'color-light'
+        ? 'background-color: rgba(239, 244, 253, 0.50);'
+        : $theme === 'main'
+          ? 'background-color: var(--primary-50);'
+          : ''}
   ${({ $withoutPadding }) =>
     !$withoutPadding &&
     css`
