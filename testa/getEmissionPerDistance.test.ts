@@ -80,9 +80,9 @@ describe('getEmissionPerDistance', () => {
       {
         id: 8,
         name: 'Vélo (ou trottinette) à assistance électrique',
-        emissions: { gco2e: 2, kgco2e: 0.002, tco2e: 0.000002 },
+        emissions: { gco2e: 2.2300000000000004, kgco2e: 0.00223, tco2e: 0.0000022300000000000002 },
       },
-      { id: 9, name: 'Bus (Moteur thermique)', emissions: { gco2e: 104, kgco2e: 0.104, tco2e: 0.000104 } },
+      { id: 9, name: 'Bus (Moteur thermique)', emissions: { gco2e: 104.3, kgco2e: 0.1043, tco2e: 0.0001043 } },
       { id: 10, name: 'Tramway', emissions: { gco2e: 3.8, kgco2e: 0.0038, tco2e: 0.0000038 } },
       { id: 11, name: 'Métro', emissions: { gco2e: 4.2, kgco2e: 0.0042, tco2e: 0.0000042 } },
       {
@@ -93,9 +93,9 @@ describe('getEmissionPerDistance', () => {
 
       {
         emissions: {
-          gco2e: 165,
-          kgco2e: 0.165,
-          tco2e: 0.000165,
+          gco2e: 164.8,
+          kgco2e: 0.1648,
+          tco2e: 0.0001648,
         },
         id: 13,
         name: 'Moto',
@@ -111,7 +111,7 @@ describe('getEmissionPerDistance', () => {
       },
       { id: 15, name: 'TER', emissions: { gco2e: 22.9, kgco2e: 0.0229, tco2e: 0.0000229 } },
       { id: 16, name: 'Bus (Moteur électrique)', emissions: { gco2e: 9.5, kgco2e: 0.0095, tco2e: 0.0000095 } },
-      { id: 21, name: 'Bus (GNV)', emissions: { gco2e: 113, kgco2e: 0.113, tco2e: 0.00011300000000000001 } },
+      { id: 21, name: 'Bus (GNV)', emissions: { gco2e: 112.8, kgco2e: 0.1128, tco2e: 0.0001128 } },
     ])
   })
 })
