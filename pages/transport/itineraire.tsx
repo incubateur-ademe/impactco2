@@ -4,6 +4,8 @@ import categories from 'data/categories.json'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
+import { SourcesWrapper } from 'components/misc/category/CategoryWrapper.styles'
+import Sources from 'components/misc/category/Sources'
 import Itinerary from 'components/transport/Itinerary'
 import { TransportProvider } from 'components/transport/TransportProvider'
 
@@ -19,6 +21,11 @@ export default function ItinerairePage({ category }: { category: Category }) {
       }}>
       <TransportProvider>
         <Itinerary category={category} />
+        {category.sources && (
+          <SourcesWrapper>
+            <Sources priority='secondary' sources={category.sources} tracking={category.name} />
+          </SourcesWrapper>
+        )}
         <Learning category={category} from='/transport/itineraire' fromLabel='Transport itinéraire' />
         <SuggestionBanner
           from='/transport/itineraire'

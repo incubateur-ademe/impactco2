@@ -1,0 +1,8 @@
+{
+  "jobs": [
+    {
+      "command": "0 8 * * * ts-node -r dotenv/config src/scripts/importAPIKeys.ts",
+      "size": "S"
+    }
+  ]
+}
