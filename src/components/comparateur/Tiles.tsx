@@ -1,4 +1,5 @@
 import React from 'react'
+import { track } from 'utils/matomo'
 import useParamContext from 'components/providers/ParamProvider'
 import Button from 'components/base/buttons/Button'
 import { Icon } from 'components/osezchanger/icons'
@@ -17,11 +18,12 @@ const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
         {equivalents.map((equivalent) => (
           <Tile key={equivalent} slug={equivalent} />
         ))}
-        {equivalents.length < 8 && <Tile onClick={changeEquivalents} />}
+        {equivalents.length < 8 && <Tile onAdd={changeEquivalents} />}
       </div>
       <div className={styles.buttons}>
         <Button
           onClick={() => {
+            track('Comparateur', 'Générer d’autres équivalents', 'generate_equivalent')
             setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, equivalents.length))
           }}>
           <Icon iconId='magic-wand' />

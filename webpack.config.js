@@ -77,6 +77,12 @@ module.exports = [
         }),
       ],
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        MATOMO_SITE_URL: `'${process.env.NEXT_PUBLIC_MATOMO_SITE_URL || ''}'`,
+        MATOMO_SITE_ID: `'${process.env.NEXT_PUBLIC_MATOMO_SITE_ID || ''}'`,
+      }),
+    ],
   },
   {
     name: 'npm',

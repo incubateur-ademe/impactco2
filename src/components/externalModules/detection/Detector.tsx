@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import { track } from 'utils/matomo'
 import RefreshIcon from 'components/osezchanger/icons/refresh'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
@@ -42,27 +43,47 @@ const getOverflow = (element: HTMLDivElement) => {
 }
 
 const getFactor = (unit: string) => {
-  switch (unit) {
-    case 't':
-    case 'tonne':
-    case 'tonnes':
-      return 1000000
-    case 'kilo':
-    case 'kilos':
-    case 'kg':
-    case 'kgs':
-      return 1000
-    default:
-      return 1
+  if (unit === 't' || unit.includes('tonne')) {
+    return 1000000
   }
+
+  if (unit === 'kg' || unit === 'kgs' || unit.includes('kilo')) {
+    return 1000
+  }
+
+  return 1
 }
 
 const Detector = ({ impact }: { impact: string }) => {
-  const [display, setDisplay] = useState('')
-  const [, forceUpdate] = useReducer((x) => x + 1, 0)
-
   const ref = useRef<HTMLDivElement>(null)
   const etiquetteRef = useRef<HTMLDivElement>(null)
+
+  // inspired from https://usehooks-ts.com/react-hook/use-intersection-observer
+  const [entry, setEntry] = useState<IntersectionObserverEntry>()
+  const [observed, setObserved] = useState(false)
+
+  useEffect(() => {
+    const node = ref.current // DOM Ref
+    const hasIOSupport = !!window.IntersectionObserver
+    const frozen = entry?.isIntersecting || observed
+    if (!hasIOSupport || frozen || !node) {
+      return
+    }
+
+    const observer = new IntersectionObserver(([entry]) => setEntry(entry))
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [ref, setEntry, entry, observed])
+
+  useEffect(() => {
+    if (!observed && entry && entry.isIntersecting) {
+      setObserved(true)
+      track('Detecteur carbone', 'View', window.location.href)
+    }
+  }, [entry, observed])
+
+  const [display, setDisplay] = useState('')
+  const [, forceUpdate] = useReducer((x) => x + 1, 0)
 
   const value = useMemo(() => {
     const values = regex.exec(impact)
@@ -76,19 +97,18 @@ const Detector = ({ impact }: { impact: string }) => {
     (event: MouseEvent<HTMLButtonElement>) => {
       event.preventDefault()
       event.stopPropagation()
-      {
-        if (etiquetteRef.current && !display) {
-          const distances = etiquetteRef.current.getBoundingClientRect()
-          const xOverflow = getOverflow(etiquetteRef.current)
-          setDisplay(`${distances.top < 0 ? 'bottom' : ''}-${xOverflow}`)
-        }
+      track('Detecteur carbone', 'Click', impact)
+      if (etiquetteRef.current && !display) {
+        const distances = etiquetteRef.current.getBoundingClientRect()
+        const xOverflow = getOverflow(etiquetteRef.current)
+        setDisplay(`${distances.top < 0 ? 'bottom' : ''}-${xOverflow}`)
+      }
 
-        if (display) {
-          setDisplay('')
-        }
+      if (display) {
+        setDisplay('')
       }
     },
-    [display]
+    [display, impact]
   )
 
   useEffect(() => {
@@ -120,11 +140,16 @@ const Detector = ({ impact }: { impact: string }) => {
           [styles.left]: display.includes('left'),
         })}
         ref={etiquetteRef}>
-        <Logo value={value} />
+        <Logo value={value} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
         <div className={styles.simpleValue}>
           <SimpleValue value={value} comparison='random' />
         </div>
-        <button className={styles.random} onClick={forceUpdate}>
+        <button
+          className={styles.random}
+          onClick={() => {
+            forceUpdate()
+            track('Detecteur carbone', 'Reload', 'reload')
+          }}>
           <RefreshIcon />
         </button>
       </div>

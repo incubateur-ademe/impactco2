@@ -40,7 +40,6 @@ const Share = ({
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
 
-  console.log(url)
   return (
     <>
       {params && visibility && (
