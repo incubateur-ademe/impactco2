@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useModalContext from 'components/providers/ModalProvider'
 import useParamContext from 'components/providers/ParamProvider'
 import Modal4 from 'components/base/Modal4'
 import Button from 'components/base/buttons/Button'
@@ -16,8 +15,7 @@ const getTitle = () => {
   )
 }
 
-export default function EqModal4() {
-  const { eqv: open, setEqv: setOpen } = useModalContext()
+export default function EqModal({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
   const {
     livraison: { equivalents, setEquivalents },
   } = useParamContext()
@@ -41,8 +39,8 @@ export default function EqModal4() {
   }
 
   return (
-    <Modal4 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width='55rem'>
-      <div data-testid='EqModal4'>
+    <Modal4 setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width='55rem'>
+      <div data-testid='EqModal'>
         <Intro data-testid='eqs_modal_intro'>
           {!eqvError ? (
             <>
@@ -65,7 +63,7 @@ export default function EqModal4() {
           </GridSplitLeft>
           <GridSplitRight>
             <Scroll>
-              <AllSearch open={open} eqvArray={eqvArray} setEqvArray={setEqvArray} />
+              <AllSearch open eqvArray={eqvArray} setEqvArray={setEqvArray} />
             </Scroll>
             <ValidationZone>
               <ValidationMsg>

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
-import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
+import Co2eModal from 'components/modals/Co2eModal'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -17,13 +17,14 @@ const Disclaimer = styled.p`
   text-align: center;
 `
 export default function Bottom({ category, iframe }: { category: Category; iframe?: boolean }) {
-  const { setCo2e } = useModalContext()
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <Wrapper>
+      {openModal && <Co2eModal setOpen={setOpenModal} />}
       <Disclaimer data-testid='bottomText'>
         Valeurs exprimées en kg{' '}
-        <Button asLink onClick={() => setCo2e(true)}>
+        <Button asLink onClick={() => setOpenModal(true)}>
           CO<sub>2</sub>e
         </Button>{' '}
         émis {category.include}

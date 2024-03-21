@@ -2,32 +2,9 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { EquivalentValue } from 'types/equivalent'
 import { ZodError, z } from 'zod'
 import categories from 'data/categories.json'
-import boisson from 'data/categories/boisson.json'
-import chauffage from 'data/categories/chauffage.json'
-import deplacement from 'data/categories/deplacement.json'
-import electromenager from 'data/categories/electromenager.json'
-import { flattenEquivalents } from 'data/categories/flattenEquivalents'
-import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
-import habillement from 'data/categories/habillement.json'
-import mobilier from 'data/categories/mobilier.json'
-import numerique from 'data/categories/numerique.json'
-import repas from 'data/categories/repas.json'
-import usagenumerique from 'data/categories/usagenumerique.json'
-import { computeECV, computeFootprint } from 'utils/computeECV'
+import { computeFootprint } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
-
-const equivalents = [
-  ...boisson,
-  ...flattenEquivalents(deplacement),
-  ...electromenager,
-  ...habillement,
-  ...mobilier,
-  ...numerique,
-  ...usagenumerique,
-  ...repas,
-  ...chauffage,
-  ...fruitsetlegumes,
-]
+import { computedEquivalents } from 'components/providers/equivalents'
 
 const categoryValidation = z.object({
   id: z.string(),
@@ -214,7 +191,7 @@ export default async function handler(
   }
 
   return res.status(200).json({
-    data: equivalents
+    data: computedEquivalents
       .filter((equivalent) => equivalent.category === category.id)
       .map((equivalent) => {
         const detailedECV = detail
@@ -228,7 +205,7 @@ export default async function handler(
         return {
           name: equivalent.name,
           slug: equivalent.slug,
-          ecv: computeECV(equivalent),
+          ecv: equivalent.value,
           ...detailedECV,
         }
       }),

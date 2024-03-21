@@ -1,13 +1,13 @@
 import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
+import ecv from 'data/ecv.json'
 import formatName from 'utils/formatName'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
-import useModalContext from 'components/providers/ModalProvider'
 import useParamContext from 'components/providers/ParamProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Legend from 'components/charts/Legend'
 import StackedChart from 'components/charts/StackedChart'
+import EcvModal from 'components/modals/EcvModal'
 import Wrapper from './Wrapper'
 import Bar from './equivalent/Bar'
 import Detail from './equivalent/Detail'
@@ -33,9 +33,7 @@ const Questions = styled.div`
   }
 `
 export default function Simulateur(props) {
-  const { ecv } = useDataContext()
-
-  const { setEcv } = useModalContext()
+  const [ecvModal, setEcvModal] = useState('')
 
   const {
     [props.name]: { engine, situation, setSituation },
@@ -57,17 +55,19 @@ export default function Simulateur(props) {
                 color: step.color,
                 label: step.name,
                 value: engine.evaluate(variable).nodeValue,
-                onClick: () => setEcv(step.id),
+                onClick: () => setEcvModal(step.id),
               }
             })
         : [],
-    [ecv, engine, situation, construction]
+    [engine, situation, construction]
   )
 
-  const total = useMemo(() =>
-    construction
-      ? engine.evaluate(props.name).nodeValue
-      : engine.evaluate(props.name).nodeValue - engine.evaluate(`${props.name} . terminaux . construction`).nodeValue
+  const total = useMemo(
+    () =>
+      construction
+        ? engine.evaluate(props.name).nodeValue
+        : engine.evaluate(props.name).nodeValue - engine.evaluate(`${props.name} . terminaux . construction`).nodeValue,
+    [engine, situation, construction, props.name]
   )
 
   const questions = useMemo(
@@ -84,6 +84,7 @@ export default function Simulateur(props) {
 
   return engine ? (
     <StyledSection $withoutPadding>
+      {ecvModal && <EcvModal value={ecvModal} setOpen={() => setEcvModal('')} />}
       <SectionWideContent>
         <Wrapper name={formatName(props.equivalent.name, 1, true)} slug={props.equivalent.slug}>
           <Bar

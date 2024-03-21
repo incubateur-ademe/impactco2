@@ -3,17 +3,15 @@ import React from 'react'
 import styled from 'styled-components'
 import categories from 'data/categories.json'
 import formatName from 'utils/formatName'
-import useDataContext from 'components/providers/DataProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Web from 'components/layout/Web'
 
 export default function PlanDuSite() {
-  const { equivalents } = useDataContext()
-
-  const buildLevel3For = (catSlug, subcategories) => {
+  const buildLevel3For = (subcategories) => {
     return subcategories.map((subcategory) => (
       <Level3 key={subcategory.id}>
-        <Link href={`/${catSlug}/${subcategory.slug}`} title={subcategory.name}>
+        <Link href={subcategory.link} title={subcategory.name}>
           {formatName(subcategory.name, 1, true)}{' '}
           {subcategory.subtitle && <Subtitle>({formatName(subcategory.subtitle, 1)})</Subtitle>}
         </Link>
@@ -23,7 +21,7 @@ export default function PlanDuSite() {
 
   const buildLevel2For = (catSlug) => {
     const category = categories.find((cat) => cat.slug === catSlug)
-    const subcategories = equivalents.filter((eq) => eq.category === category.id)
+    const subcategories = computedEquivalents.filter((eq) => eq.category === category.id)
     return (
       <Level2>
         <Link href={`/${category.slug}`} title={category.name}>
@@ -31,7 +29,7 @@ export default function PlanDuSite() {
         </Link>
         {subcategories?.length > 0 ? (
           <>
-            <div>{buildLevel3For(category.slug, subcategories)}</div>
+            <div>{buildLevel3For(subcategories)}</div>
           </>
         ) : (
           <></>

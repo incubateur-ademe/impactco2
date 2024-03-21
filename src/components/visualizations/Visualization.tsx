@@ -1,8 +1,7 @@
 import React from 'react'
-import { Category } from 'types/category'
 import { ComputedEquivalent, Equivalent as EquivalentType } from 'types/equivalent'
 import formatName from 'utils/formatName'
-import useDataContext from 'components/providers/DataProvider'
+import { getCategory } from 'components/providers/categories'
 import { computedEquivalents } from 'components/providers/equivalents'
 import Signature from 'components/screenshot/Signature'
 import {
@@ -48,7 +47,8 @@ const categoryLinks: Record<string, { to: string; label: string }> = {
   },
 }
 
-const CenterLink = ({ category }: { category?: Category }) => {
+const CenterLink = ({ categoryId }: { categoryId: number }) => {
+  const category = getCategory(categoryId)
   if (!category) {
     return null
   }
@@ -83,8 +83,6 @@ type VisualizationType = {
 }
 
 const Visualization = ({ types, base }: { types: (string | VisualizationType)[]; base?: number }) => {
-  const { categories } = useDataContext()
-
   const values = types.map((slug) => {
     if (typeof slug === 'string') {
       const equivalent = computedEquivalents.find(
@@ -137,7 +135,7 @@ const Visualization = ({ types, base }: { types: (string | VisualizationType)[];
           .slice(0, values.length * 2 - 1)}
         <br />
       </Small>
-      <CenterLink category={categories.find((category) => category.id === values[0].category)} />
+      <CenterLink categoryId={values[0].category} />
       <Signature color='var(--primary-60)' small noLink noMargin />
     </>
   )

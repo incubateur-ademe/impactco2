@@ -3,14 +3,11 @@ import { Category } from 'types/category'
 import categories from 'data/categories.json'
 import Iframe from 'components/layout/Iframe'
 import Teletravail from 'components/transport/Teletravail'
-import { TransportProvider } from 'components/transport/TransportProvider'
 
 export default function TeletravailPage({ category }: { category: Category }) {
   return (
     <Iframe noLogo>
-      <TransportProvider>
-        <Teletravail category={category} iframe />
-      </TransportProvider>
+      <Teletravail category={category} iframe />
     </Iframe>
   )
 }

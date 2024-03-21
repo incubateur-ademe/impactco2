@@ -1,27 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
-import useModalContext from 'components/providers/ModalProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Button from 'components/base/buttons/Button'
 import LivraisonEq from 'components/misc/tiles/LivraisonEq'
+import EqModal from 'components/modals/EqModal'
 import ResultatLivraison from './ResultatLivraison'
 
 export default function ResultatsLivraison(props) {
   const {
     livraison: { equivalents: eqvChosen },
   } = useParamContext()
-  const { equivalents } = useDataContext()
 
-  const { setEqv } = useModalContext()
-
-  const changeClicked = () => {
-    setEqv('nonecheck')
-  }
+  const [openModal, setOpenModal] = useState(false)
 
   const getEq = (indx) => {
-    return equivalents.find((e) => e.slug === eqvChosen[indx])
+    return computedEquivalents.find((e) => e.slug === eqvChosen[indx])
   }
 
   const buildLivraisonEq = (indx) => {
@@ -32,16 +27,20 @@ export default function ResultatsLivraison(props) {
       return <></>
     }
   }
-
   return (
     <Wrapper>
+      {openModal && <EqModal setOpen={setOpenModal} />}
       <ResultatLivraison co2eq={props.co2eq} />
       <UpperEq $nbCol={eqvChosen.length}>
         {buildLivraisonEq(0)}
         {buildLivraisonEq(1)}
         {buildLivraisonEq(2)}
         <ButtonContainer $nbCol={eqvChosen.length}>
-          <Button priority='secondary' size='sm' onClick={changeClicked} id={`button_change_eq_${props.slug}`}>
+          <Button
+            priority='secondary'
+            size='sm'
+            onClick={() => setOpenModal(true)}
+            id={`button_change_eq_${props.slug}`}>
             Modifier les équivalences
           </Button>
         </ButtonContainer>
