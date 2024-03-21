@@ -92,6 +92,7 @@
     "styled-normalize": "^8.1.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-react": "^5.12.0",
+    "ts-node": "^10.9.2",
     "twemoji": "^14.0.2",
     "use-query-params": "^2.2.1",
     "zod": "^3.22.4"
@@ -154,7 +155,6 @@
     "storybook-dark-mode": "^4.0.0",
     "style-loader": "^3.3.4",
     "terser-webpack-plugin": "^5.3.10",
-    "ts-node": "^10.9.2",
     "typescript": "^5.4.2",
     "undici": "^6.9.0",
     "webpack": "^5.90.3",
