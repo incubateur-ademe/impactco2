@@ -2,10 +2,21 @@ import classNames from 'classnames'
 import React from 'react'
 import styles from './Logo.module.css'
 
-const Logo = ({ right, url, value }: { right?: boolean; url?: string; value: number }) => {
+const Logo = ({
+  right,
+  url,
+  value,
+  onClick,
+}: {
+  right?: boolean
+  url?: string
+  value: number
+  onClick?: () => void
+}) => {
   return (
     <a
       href={url || `https://impactco2.fr/comparateur?value=${value}`}
+      onClick={onClick}
       className={classNames(right ? styles.reverseLogo : styles.logo)}
       target='_blank'
       rel='noreferrer noopener'

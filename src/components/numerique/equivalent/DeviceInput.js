@@ -104,9 +104,6 @@ export default function DeviceInput(props) {
         transitionTime={1}
         infiniteLoop={true}
         labels={{ leftArrow: 'item précédent', rightArrow: 'item suivant', item: 'item' }}
-        onClickThumb={() => {
-          console.info('hello')
-        }}
         showThumbs={false}>
         <Slide>
           <Label>Terminal utilisé</Label>

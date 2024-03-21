@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import useParamContext from 'components/providers/ParamProvider'
 import { computedEquivalents } from 'components/providers/equivalents'
 import Emoji from 'components/base/Emoji'
@@ -8,7 +9,7 @@ import Button from 'components/base/buttons/Button'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './Tile.module.css'
 
-const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
+const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
   const {
     comparateur: { baseValue, weight, setEquivalents, equivalents, setComparedEquivalent },
   } = useParamContext()
@@ -44,13 +45,21 @@ const Tile = ({ slug, onClick }: { slug?: string; onClick?: () => void }) => {
         size='sm'
         priority='secondary'
         onClick={() => {
+          track('Comparateur', 'Comparer', equivalent.slug)
           setComparedEquivalent(equivalent)
         }}>
         Comparer
       </Button>
     </div>
   ) : (
-    <button className={styles.emptyTile} onClick={onClick}>
+    <button
+      className={styles.emptyTile}
+      onClick={() => {
+        track('Comparateur', 'Ajouter un équivalent', 'add_equivalent')
+        if (onAdd) {
+          onAdd()
+        }
+      }}>
       <Icon iconId='plus' />
       Ajouter un équivalent
     </button>

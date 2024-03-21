@@ -4,6 +4,8 @@ import categories from 'data/categories.json'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
+import { SourcesWrapper } from 'components/misc/category/CategoryWrapper.styles'
+import Sources from 'components/misc/category/Sources'
 import Distance from 'components/transport/Distance'
 
 export default function DistancePage({ category }: { category: Category }) {
@@ -17,6 +19,11 @@ export default function DistancePage({ category }: { category: Category }) {
         category: category,
       }}>
       <Distance category={category} />
+      {category.sources && (
+        <SourcesWrapper>
+          <Sources priority='secondary' sources={category.sources} tracking={category.name} />
+        </SourcesWrapper>
+      )}
       <Learning category={category} fromLabel='Transport distance' />
       <SuggestionBanner from={category.slug} fromLabel='Transport distance' simulatorName='simulateur transport' />
     </Web>

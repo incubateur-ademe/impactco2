@@ -26,6 +26,32 @@ const transform = (element: Element, darkMode?: boolean) => {
 
 export const start = (darkMode?: boolean) => {
   const elems = document.querySelectorAll('*')
+
+  //@ts-expect-error: Matomo redefinition
+  const _paq = (window._paq = window._paq || [])
+  ;(function () {
+    //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
+    const u = MATOMO_SITE_URL
+    _paq.push(['setTrackerUrl', u + '/matomo.php'])
+    //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
+    _paq.push(['setSiteId', MATOMO_SITE_ID])
+    const d = document,
+      g = d.createElement('script'),
+      s = d.getElementsByTagName('script')[0]
+    g.type = 'text/javascript'
+    g.async = true
+    g.src = u + 'matomo.js'
+    //@ts-expect-error: Matomo redefinition
+    s.parentNode.insertBefore(g, s)
+  })()
+
+  //@ts-expect-error: Matomo redefinition
+  window.please = {}
+  window.please.track = function (ary) {
+    //@ts-expect-error: Matomo redefinition
+    window?._paq?.push(ary)
+  }
+
   Array.from(elems)
     .filter((elem) => {
       if (
