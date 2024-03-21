@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { DataProvider } from 'components/providers/DataProvider'
 import Visualization from './Visualization'
 
 export default {
@@ -13,9 +12,5 @@ export const Eau: Story = {
   args: {
     types: ['eauenbouteille', 'eaudurobinet'],
   },
-  render: (args) => (
-    <DataProvider>
-      <Visualization {...args} />
-    </DataProvider>
-  ),
+  render: (args) => <Visualization {...args} />,
 }

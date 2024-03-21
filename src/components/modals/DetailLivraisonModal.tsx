@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
-import useModalContext from 'components/providers/ModalProvider'
 import Modal2 from 'components/base/Modal2'
 import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
@@ -17,13 +16,12 @@ const FormattedText = styled.div`
   }
 `
 
-export default function DetailLivraisonModal2() {
+export default function DetailLivraisonModal({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
   const getTitle = () => {
     return <Title>Les hypothèses retenues</Title>
   }
-  const { hypothesisLivraison: open, setHypothesisLivraison: setOpen } = useModalContext()
   return (
-    <Modal2 open={open} setOpen={setOpen} getTitle={getTitle} width={'80em'}>
+    <Modal2 open setOpen={setOpen} getTitle={getTitle} width={'80em'}>
       <FormattedText>
         <p>
           L'ensemble des calculs sont issus de{' '}

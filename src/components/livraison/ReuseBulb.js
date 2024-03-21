@@ -40,7 +40,7 @@ export default function ReuseBulb() {
           pour vous emparer facilement du simulateur et l’intégrer à votre publication.
         </p>
         <p>Besoin d'inspiration?</p>
-        <p style={{ 'margin-bottom': 0 }}>
+        <p style={{ marginBottom: 0 }}>
           <Link
             priority='secondary'
             href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997? '

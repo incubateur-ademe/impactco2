@@ -32,7 +32,7 @@ export default function Teletravail() {
       {start && end && transport && (
         <Details onClick={() => setOpen(true)}>Voir et ajuster les détails du calcul</Details>
       )}
-      <TeletravailModal open={open} setOpen={setOpen} />
+      {open && <TeletravailModal setOpen={setOpen} />}
     </>
   )
 }

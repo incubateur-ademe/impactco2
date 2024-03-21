@@ -2,9 +2,9 @@ import React, { Dispatch, SetStateAction } from 'react'
 import Modal from 'components/base/Modal'
 import Link from 'components/base/buttons/Link'
 
-export default function Occupancy({ open, setOpen }: { open: boolean; setOpen: Dispatch<SetStateAction<boolean>> }) {
+export default function Occupancy({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
   return (
-    <Modal open={open} setOpen={setOpen}>
+    <Modal setOpen={setOpen}>
       <h2>Taux de remplissage des véhicules</h2>
       <p>
         L&apos;impact de chaque véhicule est donné &quot;par personne&quot;, et non pas pour l&apos;ensemble du

@@ -1,11 +1,11 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
 import useOnScreen from 'hooks/useOnScreen'
-import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
+import Co2eModal from 'components/modals/Co2eModal'
 import BarChart from './learning/BarChart'
 
 const StyledSection = styled(Section)`
@@ -68,8 +68,7 @@ const StyledLink = styled.span`
   cursor: pointer;
 `
 export default function LearningFruit() {
-  const { setCo2e } = useModalContext()
-
+  const [openModal, setOpenModal] = useState(false)
   const ref = useRef()
   const isOnScreen = useOnScreen(ref, '-100px')
 
@@ -83,10 +82,11 @@ export default function LearningFruit() {
             <Line $isOnScreen={isOnScreen}>plus</Line>
           </BigText>
         </Statistic>
+        {openModal && <Co2eModal setOpen={setOpenModal} />}
         <StrongWrapper>
           <Strong>
             de{' '}
-            <StyledLink onClick={() => setCo2e(true)}>
+            <StyledLink onClick={() => setOpenModal(true)}>
               kgCO<sub>2</sub>e
             </StyledLink>{' '}
             générés par une tomate produite hors saison par rapport à la même tomate produite à la bonne saison.

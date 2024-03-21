@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
@@ -66,12 +65,12 @@ export default function Tile(props) {
       </EmojiWrapper>
       <Title>
         <Number data-testid={`tile-${props.equivalent.slug}-value`}>
-          {formatNumber(props.weight / computeECV(props.equivalent))}
+          {formatNumber(props.weight / props.equivalent.value)}
         </Number>
         <Name>
           {formatName(
             (props.equivalent.prefix || '') + props.equivalent.name + (props.equivalent.suffix || ''),
-            props.weight / computeECV(props.equivalent)
+            props.weight / props.equivalent.value
           )}
         </Name>
       </Title>

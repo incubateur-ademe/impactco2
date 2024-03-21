@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import styled from 'styled-components'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useParamContext from 'components/providers/ParamProvider'
@@ -7,32 +7,21 @@ import Modal from 'components/base/Modal'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 
-const Title = styled.h2``
-const Text = styled.p``
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 `
-export default function TeletravailModal({
-  open,
-  setOpen,
-}: {
-  open: boolean
-  setOpen: Dispatch<SetStateAction<boolean>>
-}) {
+export default function TeletravailModal({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
   const {
     teletravail: { days, setDays, holidays, setHolidays, extraKm, setExtraKm },
   } = useParamContext()
 
   const [pristine, setPristine] = useState(true)
-  useEffect(() => {
-    setPristine(true)
-  }, [open])
 
   return (
-    <Modal open={open} setOpen={setOpen}>
-      <Title>Mode télétravail</Title>
-      <Text>
+    <Modal setOpen={setOpen}>
+      <h2>Mode télétravail</h2>
+      <p>
         Nous comptons{' '}
         <FancySelect
           value={days}
@@ -74,8 +63,8 @@ export default function TeletravailModal({
           ]}
         />{' '}
         de congé par an (+ 7 jours fériés).
-      </Text>
-      <Text>
+      </p>
+      <p>
         Nous considérons que{' '}
         <FancySelect
           value={extraKm * 100}
@@ -108,15 +97,15 @@ export default function TeletravailModal({
           étude de l&apos;ADEME
         </Link>
         .
-      </Text>
-      <Text>
+      </p>
+      <p>
         Les autres effets rebonds non liés aux déplacements (consommation d&apos;électricité du foyer, achat de matériel
         pour le télétravail, etc.) ne sont pas modélisés ici. Pour donner un ordre de grandeur,{' '}
         <Link href={buildCurrentUrlFor('/?co2=248&equivalents=27006_27002_27976_27010_206589')}>
           la fabrication d&apos;un écran d&apos;ordinateur émet autant que 1 285 km de voiture (248 kg CO<sub>2</sub>e)
         </Link>
         .
-      </Text>
+      </p>
       {!pristine && (
         <ButtonWrapper>
           <Button onClick={() => setOpen(false)}>Valider</Button>

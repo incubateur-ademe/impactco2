@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import useTransportContext from 'components/transport/TransportProvider'
+import FootprintModal from 'components/transport/modals/FootprintModal'
 
 const Wrapper = styled.div`
   margin-bottom: 2.5rem;
@@ -39,20 +39,20 @@ const Details = styled.button`
   text-decoration: underline;
 `
 export default function PercentFootprint(props) {
-  const { setFootprintModal } = useTransportContext()
-
+  const [openModal, setOpenModal] = useState(false)
   const [percent, setPercent] = useState(0)
   useEffect(() => {
     setPercent(Math.round((props.saved / (9.9 * 1000)) * 10000) / 100)
   }, [props.saved])
   return (
     <Wrapper>
+      {openModal && <FootprintModal setOpen={setOpenModal} />}
       <Result>
         <Start>soit</Start> <Number>{percent}</Number> <Percent>%</Percent>
         <br />
         d&apos;économisé sur mon empreinte carbone annuelle
       </Result>
-      <Details onClick={() => setFootprintModal(true)}>Préciser ou calculer mon empreinte carbone</Details>
+      <Details onClick={() => setOpenModal(true)}>Préciser ou calculer mon empreinte carbone</Details>
     </Wrapper>
   )
 }

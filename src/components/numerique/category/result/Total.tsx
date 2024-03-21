@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
 import { evaluateNumber } from 'hooks/useSituation'
-import useDataContext from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Tile from 'components/misc/tiles/Tile'
 
 const Wrapper = styled.div`
@@ -43,21 +43,15 @@ const Tiles = styled.div`
     gap: 0.75rem;
   }
 `
+const equivalentsToShow = computedEquivalents.filter((equivalent) =>
+  ['voiturethermique', 'repasavecduboeuf', 'tshirtencoton'].includes(equivalent.slug)
+)
 
 export default function Total() {
   const {
     usageNumerique: { engine, situation, numberEmails },
   } = useParamContext()
 
-  const { equivalents } = useDataContext()
-
-  const equivalentsToShow = useMemo(
-    () =>
-      equivalents.filter((equivalent) =>
-        ['voiturethermique', 'repasavecduboeuf', 'tshirtencoton'].includes(equivalent.slug)
-      ),
-    [equivalents]
-  )
   const total = useMemo(
     () =>
       evaluateNumber(engine, 'email') * numberEmails +

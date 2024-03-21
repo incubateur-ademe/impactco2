@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import { buildCurrentUrlFor } from 'utils/urls'
-import useModalContext from 'components/providers/ModalProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Modal3 from 'components/base/Modal3'
 import ReuseBulb from 'components/livraison/ReuseBulb'
@@ -11,25 +10,19 @@ import Linkedin2 from './shareModal/Linkedin2'
 import Twitter2 from './shareModal/Twitter2'
 import Whatsapp2 from './shareModal/Whatsapp2'
 
-const href = buildCurrentUrlFor('/livraison#ressource')
+const href = buildCurrentUrlFor('/livraison')
 
 const getTitle = () => {
   return (
     <Title>
-      Partager <GreenText>la ressource</GreenText>
+      Partager <GreenText>le simulateur</GreenText>
     </Title>
   )
 }
 
-export default function ReduireModal3() {
-  const { reduire: open, setReduire: setOpen } = useModalContext()
-
-  const dismiss = () => {
-    setOpen(false)
-  }
-
+export default function SocialModal({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
   return (
-    <Modal3 open={open} setOpen={setOpen} getTitle={getTitle} dismiss={dismiss} width='45rem'>
+    <Modal3 setOpen={setOpen} getTitle={getTitle} dismiss={() => setOpen(false)} width='45rem'>
       <br />
       <ClipboardBox tracking='Livraison'>{href}</ClipboardBox>
       <br />

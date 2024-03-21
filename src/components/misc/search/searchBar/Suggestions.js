@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import formatName from 'utils/formatName'
+import { categories } from 'components/providers/categories'
 import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
@@ -85,20 +86,18 @@ export default function Suggestions(props) {
               <br />
               Essayez de naviguer par thématique
             </NotFound>
-            {props.categories
-              .filter((category) => category.display)
-              .map((category, index) => (
-                <Suggestion
-                  current={index === props.current}
-                  key={category.slug}
-                  onClick={() => props.handleSuggestionClick({ item: category })}
-                  onMouseDown={(e) => e.preventDefault()}>
-                  <Name>
-                    <Emoji>{category.emoji}</Emoji>
-                    <span>{category.name}</span>
-                  </Name>
-                </Suggestion>
-              ))}
+            {categories.map((category, index) => (
+              <Suggestion
+                current={index === props.current}
+                key={category.slug}
+                onClick={() => props.handleSuggestionClick({ link: `/${category.slug}` })}
+                onMouseDown={(e) => e.preventDefault()}>
+                <Name>
+                  <Emoji>{category.emoji}</Emoji>
+                  <span>{category.name}</span>
+                </Name>
+              </Suggestion>
+            ))}
           </>
         ))}
     </Wrapper>

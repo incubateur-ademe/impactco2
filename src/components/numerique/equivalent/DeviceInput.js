@@ -1,9 +1,10 @@
+import { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
+import DevicesModal from 'components/modals/DevicesModal'
 import DailyUsageInput from './deviceInput/DailyUsageInput'
 import LifeSpanInput from './deviceInput/LifespanInput'
 
@@ -81,10 +82,10 @@ const Text = styled.p`
 `
 
 export default function DeviceInput(props) {
-  const { setDevices } = useModalContext()
-
+  const [openModal, setOpenModal] = useState(false)
   return (
     <Wrapper>
+      {openModal && <DevicesModal setOpen={setOpenModal} />}
       <Carousel
         onChange={(index) => {
           props.setSituation({
@@ -109,7 +110,7 @@ export default function DeviceInput(props) {
           <Text $large>
             Pour calculer l'impact de la construction et de l'usage du terminal, nous utilisons pour la valeur par
             défaut{' '}
-            <Button asLink onClick={() => setDevices(true)}>
+            <Button asLink onClick={() => setOpenModal(true)}>
               un agrégat de terminaux
             </Button>
             . Vous pouvez modifier le terminal utilisé à l'aide des flèches.
