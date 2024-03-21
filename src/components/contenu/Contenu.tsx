@@ -21,7 +21,8 @@ const Contenu = ({ children, title }: { children: ReactNode; title: string }) =>
           description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
           link='Prendre rendez-vous'
           image='/images/envelop.png'
-          tracking={title}
+          trackingCategory={title}
+          trackingAction='Blocs accompagnement'
         />
       </Content>
       <SuggestionBanner from={title} fromLabel={title} simulatorName={title} />

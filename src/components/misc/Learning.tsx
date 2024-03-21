@@ -252,7 +252,8 @@ export default function Learning({
               description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
               link="Guide d'utilisation"
               image='/images/laptop.png'
-              tracking={fromLabel || category?.name}
+              trackingCategory={fromLabel || category?.name}
+              trackingAction='Blocs accompagnement'
             />
             <Card
               href='/api-doc'
@@ -260,7 +261,8 @@ export default function Learning({
               description='Vous souhaitez aller plus loin dans l’intégration de nos données au sein de vos propres contenus ou applications ?'
               link='Voir la documentation'
               image='/images/lightning.png'
-              tracking={fromLabel || category?.name}
+              trackingCategory={fromLabel || category?.name}
+              trackingAction='Blocs accompagnement'
             />
             <Card
               href={`/rendez-vous?from=${from || category?.slug}&fromLabel=${fromLabel || category?.name}`}
@@ -268,7 +270,8 @@ export default function Learning({
               description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
               link='Prendre rendez-vous'
               image='/images/envelop.png'
-              tracking={fromLabel || category?.name}
+              trackingCategory={fromLabel || category?.name}
+              trackingAction='Blocs accompagnement'
             />
             {category && <Informations>{learnings[category.slug]}</Informations>}
           </Cards>

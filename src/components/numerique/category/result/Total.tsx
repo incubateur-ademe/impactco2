@@ -88,14 +88,7 @@ export default function Total() {
       </Text>
       <Tiles>
         {equivalentsToShow.map((equivalent) => (
-          <Tile
-            key={equivalent.slug}
-            equivalent={equivalent}
-            weight={(total / 1000) * 52}
-            equivalentPage
-            reference
-            noAnimation
-          />
+          <Tile key={equivalent.slug} equivalent={equivalent} weight={(total / 1000) * 52} />
         ))}
       </Tiles>
     </Wrapper>

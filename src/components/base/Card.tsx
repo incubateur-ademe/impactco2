@@ -14,7 +14,8 @@ const Card = ({
   small,
   onClick,
   color,
-  tracking,
+  trackingCategory,
+  trackingAction,
 }: {
   href?: string
   title: string
@@ -24,7 +25,8 @@ const Card = ({
   small?: boolean
   onClick?: () => void
   color?: 'secondary'
-  tracking?: string
+  trackingCategory?: string
+  trackingAction?: string
 }) => {
   const inside = (
     <>
@@ -63,8 +65,8 @@ const Card = ({
           target='_blank'
           rel='noreferrer noopener'
           onClick={() => {
-            if (tracking) {
-              track(tracking, 'Ressource', href)
+            if (trackingCategory && trackingAction) {
+              track(trackingCategory, trackingAction, href)
             }
           }}>
           {inside}
@@ -72,8 +74,8 @@ const Card = ({
       ) : (
         <button
           onClick={() => {
-            if (tracking) {
-              track(tracking, 'Ressource', title)
+            if (trackingCategory && trackingAction) {
+              track(trackingCategory, trackingAction, title)
             }
             if (onClick) {
               onClick()
