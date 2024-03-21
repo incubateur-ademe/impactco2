@@ -43,7 +43,8 @@ export const overScreenCategoryValues: (
           description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
           link="Guide d'utilisation"
           image='/images/laptop.png'
-          tracking={category ? category.name : 'Comparateur'}
+          trackingCategory={category ? category.name : 'Comparateur'}
+          trackingAction='Blocs accompagnement'
         />
       </>
     ),

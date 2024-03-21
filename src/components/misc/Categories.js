@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
+import { categories } from 'components/providers/categories'
 import { Section, SectionWideContent } from 'components/base/Section'
 import ShareButton from 'components/base/ShareButton'
 import Category from './categories/Category'
@@ -27,8 +27,6 @@ const List = styled.div`
   }
 `
 export default function Categories(props) {
-  const { categories } = useDataContext()
-
   return (
     <>
       {props.main && (

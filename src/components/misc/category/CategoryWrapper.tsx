@@ -43,7 +43,8 @@ const CategoryWrapper = ({
           withFooter ? (
             <Cards>
               <Card
-                tracking={category.name}
+                trackingCategory={category.name}
+                trackingAction='Ressources simulateur'
                 title='Comprendre les données'
                 image='/images/magnifying-glass.png'
                 small
@@ -51,7 +52,8 @@ const CategoryWrapper = ({
                 onClick={() => setOverScreen('data')}
               />
               <Card
-                tracking={category.name}
+                trackingCategory={category.name}
+                trackingAction='Ressources simulateur'
                 title='Aller plus loin'
                 image='/images/bulb.png'
                 small

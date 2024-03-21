@@ -4,12 +4,13 @@ import Switch from 'react-switch'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
-import useModalContext from 'components/providers/ModalProvider'
 import useParamContext from 'components/providers/ParamProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import useRulesContextLivraison from 'components/livraison/RulesProviderLivraison'
 import ScreenshotWrapper2 from 'components/misc/ScreenshotWrapper2'
+import IFrameLivraisonModal from 'components/modals/IFrameLivraisonModal'
+import SocialModal from 'components/modals/SocialModal'
 import OptionalRelay from './OptionalRelay'
 import OptionalTraj from './OptionalTraj'
 import SelectProduits from './SelectProduits'
@@ -38,7 +39,8 @@ export default function CalculateurLivraison(props) {
   const {
     livraison: { values, setValues, isHabit, setIsHabit, isPlane, setIsPlane },
   } = useParamContext()
-  const { setIfl, setSocial } = useModalContext()
+  const [livraisonModal, setLivraisonModal] = useState(false)
+  const [socialModal, setSocialModal] = useState(false)
 
   const [cO2eq, setCO2eq] = useState(0)
 
@@ -75,12 +77,10 @@ export default function CalculateurLivraison(props) {
 
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot('impactco2_livraison_calculateur', 'Livraison', 'jpg')
 
-  const integrerClicked = () => {
-    setIfl(true)
-  }
-
   return (
     <Section data-testid='calculateurLivraison' $withoutPadding>
+      {socialModal && <SocialModal setOpen={setSocialModal} />}
+      {livraisonModal && <IFrameLivraisonModal setOpen={setLivraisonModal} />}
       <SectionWideContent $embedded={props.embedded}>
         <ScreenshotWrapper2 innerRef={ref} isScreenshotting={isScreenshotting}>
           <Flex>
@@ -89,7 +89,7 @@ export default function CalculateurLivraison(props) {
               <Button
                 priority='secondary'
                 size='sm'
-                onClick={() => setSocial(true)}
+                onClick={() => setSocialModal(true)}
                 className='noscreenshot'
                 id='shareUp'
                 aria-label='Partarger'>
@@ -104,7 +104,7 @@ export default function CalculateurLivraison(props) {
               <Button
                 priority='secondary'
                 size='sm'
-                onClick={integrerClicked}
+                onClick={() => setLivraisonModal(true)}
                 className='noscreenshot'
                 aria-label='Intégrer'>
                 <svg width='16px' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 16'>

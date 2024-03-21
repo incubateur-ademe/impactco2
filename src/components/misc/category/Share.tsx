@@ -96,7 +96,7 @@ const Share = ({
           />
           <div>
             <p>
-              <b>{category ? category.meta.title : 'Comparateur carbone'}</b>
+              <b>{category ? category.meta.title : 'Comparateur'}</b>
             </p>
             <p className='text-sm'>
               {category

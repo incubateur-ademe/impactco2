@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import { DeplacementEquivalent } from 'types/equivalent'
-import useDataContext from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Transportation from './transportations/Transportation'
 
 const Wrapper = styled.div`
@@ -19,16 +19,15 @@ const Result = styled.div`
   text-align: center;
 `
 export default function Transportations() {
-  const { equivalents } = useDataContext()
   const transportations = useMemo(
     () =>
-      equivalents
+      computedEquivalents
         .filter((equivalent) => equivalent.category === 4)
         .filter((equivalent) => equivalent.default)
         .filter(
           (equivalent) => equivalent.slug !== 'velo' && !equivalent.slug.startsWith('avion')
         ) as DeplacementEquivalent[],
-    [equivalents]
+    []
   )
   const {
     teletravail: { start, end, transport },

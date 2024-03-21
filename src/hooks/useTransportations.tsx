@@ -80,7 +80,7 @@ export default function useTransportations(
             onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
           }))
       : []
-  }, [equivalents, params, itineraries, type, tracking])
+  }, [params, itineraries, type, tracking])
 
   return transportations
 }

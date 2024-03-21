@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
 import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import Suggestions from './searchBar/Suggestions'
 import TextInput from './searchBar/TextInput'
@@ -27,7 +26,6 @@ const Wrapper = styled.form`
 `
 
 export default function SearchBar(props) {
-  const { categories } = useDataContext()
   const [search, setSearch] = useState('')
 
   const results = useSearchEquivalent(search)
@@ -58,8 +56,6 @@ export default function SearchBar(props) {
         if (search.length > 1) {
           if (results[current]) {
             navigateToItem(results[current])
-          } else {
-            navigateToItem(categories[current])
           }
         }
       }}
@@ -78,7 +74,6 @@ export default function SearchBar(props) {
         <Suggestions
           enabled={search.length > 1}
           results={results}
-          categories={categories}
           focus={focus}
           current={current}
           setCurrent={setCurrent}

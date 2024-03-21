@@ -17,7 +17,7 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
       description='Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.'
       breadcrumb={{
         type: 'accueil',
-        page: 'Comparateur carbone',
+        page: 'Comparateur',
       }}>
       <PageTitle
         title={
@@ -39,7 +39,7 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
       <Section $withoutPadding $margin='1.5rem 0'>
         <SectionWideContent $size='xs'>
           <Sources
-            tracking='Comparateur carbone'
+            tracking='Comparateur'
             priority='secondary'
             sources={[{ label: 'Base Empreinte ADEME', href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees' }]}
           />
@@ -55,8 +55,8 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
           <Separator />
         </SectionWideContent>
       </Section>
-      <Learning from='/comparateur' fromLabel='Comparateur carbone' />
-      <SuggestionBanner from='/comparateur' fromLabel='Comparateur carbone' simulatorName='comparateur carbone' />
+      <Learning from='/comparateur' fromLabel='Comparateur' />
+      <SuggestionBanner from='/comparateur' fromLabel='Comparateur' simulatorName='comparateur' />
     </Web>
   )
 }

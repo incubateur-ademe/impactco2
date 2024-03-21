@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
-import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
 import Sources from 'components/misc/category/Sources'
+import Co2eModal from 'components/modals/Co2eModal'
+import WarningNegaoctet from 'components/modals/WarningNegaoctet'
 import styles from './Details.module.css'
 import Value from './details/Value'
 
 export default function Details({ equivalent, category }: { equivalent: ComputedEquivalent; category: Category }) {
-  const { setCo2e, setWarningNegaoctet } = useModalContext()
+  const [openModal, setOpenModal] = useState(false)
+  const [openWarningModal, setOpenWarningModal] = useState(false)
+
   return (
     <>
+      {openModal && <Co2eModal setOpen={setOpenModal} />}
+      {openWarningModal && <WarningNegaoctet setOpen={setOpenWarningModal} />}
       <Section $withoutPadding>
         <SectionWideContent $size='sm'>
           <h1>
@@ -33,7 +38,7 @@ export default function Details({ equivalent, category }: { equivalent: Computed
                 {equivalent.include.pre}
                 <br />
                 Valeurs exprimées en kg{' '}
-                <Button asLink onClick={() => setCo2e(true)}>
+                <Button asLink onClick={() => setOpenModal(true)}>
                   CO<sub>2</sub>e
                 </Button>{' '}
                 émis{equivalent.include.post ? ` ${equivalent.include.post}` : '.'}
@@ -47,7 +52,7 @@ export default function Details({ equivalent, category }: { equivalent: Computed
             ) : (
               <>
                 Valeurs exprimées en kg{' '}
-                <Button asLink onClick={() => setCo2e(true)}>
+                <Button asLink onClick={() => setOpenModal(true)}>
                   CO<sub>2</sub>e
                 </Button>{' '}
                 émis {category.include}
@@ -57,7 +62,7 @@ export default function Details({ equivalent, category }: { equivalent: Computed
           {equivalent?.slug === 'stockagedonnee' ? (
             <>
               <p className={styles.disclaimer}>
-                <Button asLink onClick={() => setWarningNegaoctet(true)}>
+                <Button asLink onClick={() => setOpenWarningModal(true)}>
                   Source
                 </Button>
               </p>

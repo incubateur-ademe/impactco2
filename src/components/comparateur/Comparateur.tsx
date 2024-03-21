@@ -27,6 +27,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
       setComparedEquivalent,
     },
   } = useParamContext()
+
   const suffixDivRef = useRef<HTMLDivElement>(null)
   const suffixButtonRef = useRef<HTMLButtonElement>(null)
   const [suffixStyle, setSuffixStyle] = useState({ width: '150px', paddingRight: 'calc(150px + 2rem' })

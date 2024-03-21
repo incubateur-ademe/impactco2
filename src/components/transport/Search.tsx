@@ -30,7 +30,7 @@ export default function Search({ type, iframe }: { type: TransportSimulateur; if
   return (
     <>
       <ModeSelector type={type} iframe={iframe} />
-      <Occupancy open={open} setOpen={setOpen} />
+      {open && <Occupancy setOpen={setOpen} />}
       {type === 'itineraire' && (
         <Simulator
           text={

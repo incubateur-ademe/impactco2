@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import EquivalentSquareChecked from './tilesModal/EquivalentSquareChecked'
 
 export default function ActualChoices(props) {
-  const { equivalents } = useDataContext()
-
   useEffect(() => {
     if (props.eqvArray && props.eqvArray.length >= 2) {
       props.setEqvError('')
@@ -28,7 +26,7 @@ export default function ActualChoices(props) {
   }
 
   const eqOf = (ticked) => {
-    return equivalents.find((e) => e.slug === ticked)
+    return computedEquivalents.find((e) => e.slug === ticked)
   }
 
   return (

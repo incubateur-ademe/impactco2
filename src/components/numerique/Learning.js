@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useModalContext from 'components/providers/ModalProvider'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
+import Co2eModal from 'components/modals/Co2eModal'
 
 const StyledSection = styled(Section)`
   margin-top: 5rem;
@@ -40,24 +40,25 @@ const Strong = styled.p`
 const Title = styled.h2``
 const Text = styled.p``
 export default function Learning() {
-  const { setCo2e } = useModalContext()
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <StyledSection>
+      {openModal && <Co2eModal setOpen={setOpenModal} />}
       <SectionWideContent>
         <Statistic>
           <Number>2,5%</Number> des émissions de{' '}
-          <Button asLink onClick={() => setCo2e(true)}>
+          <Button asLink onClick={() => setOpenModal(true)}>
             CO<sub>2</sub>e
           </Button>
         </Statistic>
         <Strong>
           La <Link href='/numerique/television'>production d’une télé</Link> émet autant de{' '}
-          <Button asLink onClick={() => setCo2e(true)}>
+          <Button asLink onClick={() => setOpenModal(true)}>
             CO<sub>2</sub>e
           </Button>{' '}
           que si vous alliez à Marrakech en avion, soit 350 kg de{' '}
-          <Button asLink onClick={() => setCo2e(true)}>
+          <Button asLink onClick={() => setOpenModal(true)}>
             CO<sub>2</sub>e
           </Button>
           .
@@ -68,7 +69,7 @@ export default function Learning() {
           représente jusqu’à{' '}
           <strong>
             2,5% des émissions de{' '}
-            <Button asLink onClick={() => setCo2e(true)}>
+            <Button asLink onClick={() => setOpenModal(true)}>
               CO<sub>2</sub>e
             </Button>{' '}
             totale en France ?
@@ -108,7 +109,7 @@ export default function Learning() {
           important de limiter son{' '}
           <strong>
             empreinte{' '}
-            <Button asLink onClick={() => setCo2e(true)}>
+            <Button asLink onClick={() => setOpenModal(true)}>
               CO<sub>2</sub>e
             </Button>
           </strong>{' '}

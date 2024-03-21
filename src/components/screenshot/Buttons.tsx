@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
-import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
+import ShareModal from 'components/modals/ShareModal'
 
 const Wrapper = styled.div`
   display: flex;
@@ -65,15 +65,16 @@ export default function Buttons({
   takeScreenshot: () => void
   tracking: string
 }) {
-  const { setShare } = useModalContext()
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <Wrapper onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      {openModal && <ShareModal setOpen={setOpenModal} />}
       <StyledButton
         aria-label='Partager'
         onClick={() => {
           track(tracking, 'Partager', `${tracking.toLowerCase().replace(/ /g, '_')}_partager`)
-          setShare(true)
+          setOpenModal(true)
         }}
         className='noscreenshot'>
         <Svg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'>

@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
-import useModalContext from 'components/providers/ModalProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Modal from 'components/base/Modal'
 import Facebook from './shareModal/Facebook'
@@ -25,12 +24,10 @@ const Wrapper = styled.div`
     }
   }
 `
-export default function CO2EModal() {
-  const { share: open, setShare: setOpen } = useModalContext()
-
+export default function ShareModal({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
   const href = `${typeof window !== 'undefined' ? window?.location?.href : ''}${typeof open === 'string' ? open : ''}`
-  return open ? (
-    <Modal open={!!open} setOpen={(value) => setOpen(!!value)}>
+  return (
+    <Modal setOpen={(value) => setOpen(!!value)}>
       <h2>Partager</h2>
       <Wrapper>
         <Integration />
@@ -49,5 +46,5 @@ export default function CO2EModal() {
       </Wrapper>
       <ClipboardBox tracking='Comparateur'>{href}</ClipboardBox>
     </Modal>
-  ) : null
+  )
 }

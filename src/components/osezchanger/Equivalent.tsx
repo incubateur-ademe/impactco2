@@ -1,18 +1,15 @@
 import React from 'react'
-import { Equivalent as EquivalentType } from 'types/equivalent'
-import habillement from '../../data/categories/habillement.json'
-import numerique from '../../data/categories/numerique.json'
-import repas from '../../data/categories/repas.json'
-import { computeECV } from 'utils/computeECV'
+import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Emoji from 'components/base/Emoji'
 import { Card, Name, Value } from './Equivalent.styles'
 
 type Types = 'tshirt' | 'smartphone' | 'vegetarian'
-const equivalents: Record<Types, EquivalentType | undefined> = {
-  tshirt: habillement.find((equivalent) => equivalent.slug === 'tshirtencoton'),
-  smartphone: numerique.find((equivalent) => equivalent.slug === 'smartphone'),
-  vegetarian: repas.find((equivalent) => equivalent.slug === 'repasvegetarien'),
+const equivalents: Record<Types, ComputedEquivalent | undefined> = {
+  tshirt: computedEquivalents.find((equivalent) => equivalent.slug === 'tshirtencoton'),
+  smartphone: computedEquivalents.find((equivalent) => equivalent.slug === 'smartphone'),
+  vegetarian: computedEquivalents.find((equivalent) => equivalent.slug === 'repasvegetarien'),
 }
 
 const Equivalent = ({ value, type }: { value: number; type: Types }) => {
@@ -21,18 +18,16 @@ const Equivalent = ({ value, type }: { value: number; type: Types }) => {
     return null
   }
 
-  const co2 = computeECV(equivalent)
-
   return (
     <Card data-testid={`defi-equivalent-${type}`} $withShadow={!!value}>
       <Emoji height='24px'>{equivalent.emoji}</Emoji>
       <Value data-testid={`defi-equivalent-${type}-value`}>
-        {(value / co2).toLocaleString('fr-fr', {
+        {(value / equivalent.value).toLocaleString('fr-fr', {
           maximumFractionDigits: 1,
           minimumFractionDigits: 0,
         })}
       </Value>
-      <Name>{formatName(equivalent.name, Math.round(value / co2), true)}</Name>
+      <Name>{formatName(equivalent.name, Math.round(value / equivalent.value), true)}</Name>
     </Card>
   )
 }

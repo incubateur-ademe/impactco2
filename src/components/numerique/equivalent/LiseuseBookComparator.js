@@ -1,13 +1,12 @@
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Range } from 'react-range'
 import styled from 'styled-components'
-import { computeECV } from 'utils/computeECV'
 import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
-import useDataContext from 'components/providers/DataProvider'
-import useModalContext from 'components/providers/ModalProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Button from 'components/base/buttons/Button'
 import Link from 'components/base/buttons/Link'
+import Co2eModal from 'components/modals/Co2eModal'
 import { Title } from 'components/visualizations/Visualization.styles'
 
 const Question = styled.div`
@@ -93,17 +92,18 @@ const Thumb = styled.div`
   }
 `
 
+const liseuse = computedEquivalents.find((equivalent) => equivalent.slug === 'liseuse')
+
 const LIVRE_ECV = 1.1
 export default function LiseuseBookComparator() {
-  const { setCo2e } = useModalContext()
+  const [openModal, setOpenModal] = useState(false)
 
-  const { equivalents } = useDataContext()
-  const liseuse = useMemo(() => equivalents.find((equivalent) => ['liseuse'].includes(equivalent.slug)), [equivalents])
   const [numBookPerYear, setNumBookPerYear] = useState(10)
   const tracked = useRef(false)
 
   return (
     <>
+      {openModal && <Co2eModal setOpen={setOpenModal} />}
       <Title>
         Livres papier ou liseuse ?<br />
         Comparez leur impact sur le climat !
@@ -138,12 +138,12 @@ export default function LiseuseBookComparator() {
           <Result>
             Il faudrait que j'utilise ma liseuse pendant au moins{' '}
             <strong>
-              {Math.ceil(computeECV(liseuse) / (LIVRE_ECV * numBookPerYear))} an
-              {Math.ceil(computeECV(liseuse) / (LIVRE_ECV * numBookPerYear)) > 1 ? 's' : ''}
+              {Math.ceil(liseuse.value / (LIVRE_ECV * numBookPerYear))} an
+              {Math.ceil(liseuse.value / (LIVRE_ECV * numBookPerYear)) > 1 ? 's' : ''}
               <br />
             </strong>{' '}
             avant qu'elle émette moins de{' '}
-            <Button asLink onClick={() => setCo2e(true)}>
+            <Button asLink onClick={() => setOpenModal(true)}>
               CO<sub>2</sub>e
             </Button>{' '}
             que l'équivalent en livres papier.

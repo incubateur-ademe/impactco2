@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Category } from 'types/category'
-import { DeplacementEquivalent, DeplacementType } from 'types/equivalent'
-import { computeECV } from 'utils/computeECV'
+import { ComputedEquivalent, DeplacementEquivalent, DeplacementType } from 'types/equivalent'
 import useItineraries from 'hooks/useItineraries'
-import useDataContext from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Search from './Search'
 import Transport from './Transport'
 import PercentFootprint from './teletravail/PercentFootprint'
@@ -12,18 +11,19 @@ import YearlyFootprint from './teletravail/YearlyFootprint'
 
 const tracking = 'Transport télétravail'
 export default function Teletravail({ category, iframe }: { category: Category; iframe?: boolean }) {
-  const { equivalents } = useDataContext()
-
   const {
     teletravail: { start, end, transport, presentiel, teletravail, holidays, extraKm },
   } = useParamContext()
 
-  const [currentTransportation, setCurrentTransportation] = useState<DeplacementEquivalent | undefined>()
+  const [currentTransportation, setCurrentTransportation] = useState<
+    (ComputedEquivalent & DeplacementEquivalent) | undefined
+  >()
   useEffect(() => {
     setCurrentTransportation(
-      equivalents.find((transportation) => transportation.slug === transport) as DeplacementEquivalent
+      computedEquivalents.find((transportation) => transportation.slug === transport) as ComputedEquivalent &
+        DeplacementEquivalent
     )
-  }, [equivalents, transport])
+  }, [transport])
 
   const [distance, setDistance] = useState(0)
   const itinerary = useItineraries(start, end, 'télétravail')
@@ -39,17 +39,10 @@ export default function Teletravail({ category, iframe }: { category: Category; 
     if (distance && currentTransportation) {
       setSaved(
         Math.round(
-          (computeECV(currentTransportation) *
-            (distance - distance * extraKm) *
-            2 *
-            teletravail *
-            (52 - holidays - 1)) /
-            1000
+          (currentTransportation.value * (distance - distance * extraKm) * 2 * teletravail * (52 - holidays - 1)) / 1000
         )
       )
-      setEmitted(
-        Math.round((computeECV(currentTransportation) * distance * presentiel * 2 * (52 - holidays - 1)) / 1000)
-      )
+      setEmitted(Math.round((currentTransportation.value * distance * presentiel * 2 * (52 - holidays - 1)) / 1000))
     }
   }, [presentiel, teletravail, holidays, extraKm, distance, currentTransportation])
 

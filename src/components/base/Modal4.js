@@ -4,45 +4,40 @@ import styled from 'styled-components'
 import { useDisableBodyScroll } from 'hooks/useDisableBodyScroll'
 
 export default function Modal4(props) {
-  useDisableBodyScroll(props.open)
+  useDisableBodyScroll()
 
   return (
-    props.open && (
-      <FocusTrap focusTrapOptions={{ initialFocus: '#button-close' }} data-testid={props['data-testid']}>
-        <Wrapper open={props.open}>
-          <Background
-            open={props.open}
-            onClick={() => {
-              props.dismiss()
-              props.setOpen(false)
-            }}
-          />
-          <Content
-            open={props.open}
-            width={props.width}
-            textColor={props.textColor}
-            backgroundColor={props.backgroundColor}
-            noAnimation={props.noAnimation}>
-            <Header>
-              {props.getTitle ? props.getTitle() : 'Titre'}
-              <ButtonClose
-                id='button-close'
-                onClick={() => {
-                  props.dismiss()
-                  props.setOpen(false)
-                }}>
-                Fermer
-                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
-                  <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' />
-                </svg>
-              </ButtonClose>
-            </Header>
-
-            <div className={props.className}>{props.children}</div>
-          </Content>
-        </Wrapper>
-      </FocusTrap>
-    )
+    <FocusTrap focusTrapOptions={{ initialFocus: '#button-close' }} data-testid={props['data-testid']}>
+      <Wrapper>
+        <Background
+          onClick={() => {
+            props.dismiss()
+            props.setOpen(false)
+          }}
+        />
+        <Content
+          width={props.width}
+          textColor={props.textColor}
+          backgroundColor={props.backgroundColor}
+          noAnimation={props.noAnimation}>
+          <Header>
+            {props.getTitle ? props.getTitle() : 'Titre'}
+            <ButtonClose
+              id='button-close'
+              onClick={() => {
+                props.dismiss()
+                props.setOpen(false)
+              }}>
+              Fermer
+              <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
+                <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' />
+              </svg>
+            </ButtonClose>
+          </Header>
+          <div className={props.className}>{props.children}</div>
+        </Content>
+      </Wrapper>
+    </FocusTrap>
   )
 }
 
@@ -59,7 +54,7 @@ const Wrapper = styled.div`
   height: 100%;
   justify-content: flex-end;
   left: 0;
-  pointer-events: ${(props) => (props.open ? 'inherit' : 'none')};
+  pointer-events: inherit;
   position: fixed;
   top: 0;
   transform: translate3d(0, 0, 1em);
@@ -68,7 +63,7 @@ const Wrapper = styled.div`
 `
 
 const Background = styled.div`
-  background-color: rgba(0, 0, 0, ${(props) => (props.open ? 0.6 : 0)});
+  background-color: rgba(0, 0, 0, 0.6);
   height: 100%;
   left: 0;
   position: absolute;
@@ -82,10 +77,10 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  opacity: ${(props) => (props.open ? 1 : 0)};
+  opacity: 1;
   position: relative;
-  transform: translateX(${(props) => (props.open ? 0 : '10em')});
-  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
+  transform: translateX(0);
+  visibility: visible;
   width: ${(props) => props.width || '40em'};
 `
 
