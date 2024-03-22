@@ -10,6 +10,11 @@
 .emoji {
   font-size: 2em !important;
   line-height: 1 !important;
+
+  img {
+    margin: 0 !important;
+    max-width: unset !important;
+  }
 }
 
 .label {
