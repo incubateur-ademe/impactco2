@@ -40,7 +40,7 @@ export const start = (darkMode?: boolean) => {
       s = d.getElementsByTagName('script')[0]
     g.type = 'text/javascript'
     g.async = true
-    g.src = u + 'matomo.js'
+    g.src = u + '/matomo.js'
     //@ts-expect-error: Matomo redefinition
     s.parentNode.insertBefore(g, s)
   })()
