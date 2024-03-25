@@ -208,7 +208,7 @@ Liste des équivalents à comparer parmis la liste suivante :
   - pullenlaine : pull[s] (en laine)
   - pullenacrylique : pull[s] (en acrylique)
   - pullencotonrecycle : pull[s] (en coton recyclé)
-  - manteau : manteau[s]
+  - manteau : manteau[x]
   - vesteimpermeable : veste[s] imperméable[s]
   - vestesimilicuir : veste[s] simili-cuir
 - Mobilier
