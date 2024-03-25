@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
-import { TransportSimulateur } from 'types/transport'
 import { MEDIA } from 'utils/styles'
-import Link from 'components/base/buttons/Link'
+import useParamContext from 'components/providers/ParamProvider'
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,11 +34,13 @@ const CurrentTab = styled.div<{ $large?: boolean }>`
   }
 `
 
-const Tab = styled(Link)<{ $large?: boolean }>`
+const Tab = styled.button<{ $large?: boolean }>`
   align-items: center;
   background-color: transparent;
+  border: none;
   border-radius: 1rem 1rem 0 0;
   color: var(--primary-50);
+  cursor: pointer;
   display: flex;
   flex: 1;
   height: 3rem;
@@ -61,48 +62,39 @@ const Tab = styled(Link)<{ $large?: boolean }>`
   }
 `
 
-export default function ModeSelector({ type, iframe }: { type: TransportSimulateur; iframe?: boolean }) {
+export default function ModeSelector() {
   const router = useRouter()
-
-  const queries = Object.entries(router.query)
-  const params = queries.length > 0 ? `?${queries.map(([key, value]) => `${key}=${value}`).join('&')}` : ''
+  const {
+    transport: { selected, setSelected },
+  } = useParamContext()
 
   return (
     <Wrapper>
-      {(type === 'distance' || !router.query.tabs || router.query.tabs.includes('distance')) &&
-        (type === 'distance' ? (
+      {(selected === 'distance' || !router.query.tabs || router.query.tabs.includes('distance')) &&
+        (selected === 'distance' ? (
           <CurrentTab data-testid='transport-tab-distance'>Distance</CurrentTab>
         ) : (
-          <Tab
-            internal
-            data-testid='transport-tab-distance'
-            href={`${iframe ? '/iframes' : ''}/transport${params}`}
-            title='Distance'>
+          <Tab onClick={() => setSelected('distance')} data-testid='transport-tab-distance' title='Distance'>
             Distance
           </Tab>
         ))}
-      {(type === 'itineraire' || !router.query.tabs || router.query.tabs.includes('itineraire')) &&
-        (type === 'itineraire' ? (
+      {(selected === 'itineraire' || !router.query.tabs || router.query.tabs.includes('itineraire')) &&
+        (selected === 'itineraire' ? (
           <CurrentTab data-testid='transport-tab-itineraire'>Itinéraire</CurrentTab>
         ) : (
-          <Tab
-            internal
-            data-testid='transport-tab-itineraire'
-            href={`${iframe ? '/iframes' : ''}/transport/itineraire${params}`}
-            title='Itinéraire'>
+          <Tab onClick={() => setSelected('itineraire')} data-testid='transport-tab-itineraire' title='Itinéraire'>
             Itinéraire
           </Tab>
         ))}
-      {(type === 'teletravail' || !router.query.tabs || router.query.tabs.includes('teletravail')) &&
-        (type === 'teletravail' ? (
+      {(selected === 'teletravail' || !router.query.tabs || router.query.tabs.includes('teletravail')) &&
+        (selected === 'teletravail' ? (
           <CurrentTab $large data-testid='transport-tab-teletravail'>
             Télétravail
           </CurrentTab>
         ) : (
           <Tab
-            internal
+            onClick={() => setSelected('teletravail')}
             data-testid='transport-tab-teletravail'
-            href={`${iframe ? '/iframes' : ''}/transport/teletravail${params}`}
             title='Télétravail'
             $large>
             Télétravail

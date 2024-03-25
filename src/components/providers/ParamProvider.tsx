@@ -4,6 +4,7 @@ import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { Frequence } from 'types/livraison'
+import { TransportSimulateur } from 'types/transport'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
@@ -110,6 +111,10 @@ const ParamContext = React.createContext<{
     setTiles: Dispatch<SetStateAction<Equivalent[]>>
     comparedEquivalent: ComputedEquivalent | undefined
     setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
+  }
+  transport: {
+    selected: TransportSimulateur | undefined
+    setSelected: Dispatch<SetStateAction<TransportSimulateur | undefined>>
   }
   distance: {
     km: number
@@ -247,6 +252,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [km, setKm] = useState(10)
 
   // Transport
+  const [selected, setSelected] = useState<TransportSimulateur>()
+
   const [teletravailStart, setTeletravailStart] = useState<Point>()
   const [teletravailEnd, setTeletravailEnd] = useState<Point>()
 
@@ -511,6 +518,10 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setTiles,
           comparedEquivalent,
           setComparedEquivalent: internalComparedEquivalentSetter,
+        },
+        transport: {
+          selected,
+          setSelected,
         },
         distance: {
           km,
