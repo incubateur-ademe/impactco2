@@ -47,7 +47,14 @@ const Data = () => {
               <Value>{value.value}</Value>
             </Values>
           ))}
-          {equivalent.data.hypothesis && <Hypothesis className='text-sm'>{equivalent.data.hypothesis}</Hypothesis>}
+          {equivalent.data.hypothesis && (
+            <Hypothesis
+              className='text-sm'
+              dangerouslySetInnerHTML={{
+                __html: equivalent.data.hypothesis,
+              }}
+            />
+          )}
         </div>
       ))}
     </Container>
