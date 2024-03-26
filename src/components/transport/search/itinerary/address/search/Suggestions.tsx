@@ -16,7 +16,6 @@ const Wrapper = styled.div`
   border-radius: 0 0 1.375rem 1.375rem;
   max-height: 20rem;
   overflow-y: auto;
-
   position: relative;
 `
 const Suggestion = styled.div<{ $current: boolean }>`
@@ -61,8 +60,19 @@ const Suggestions = ({
         e.preventDefault()
         current > 0 && setCurrent((prevCurrent) => prevCurrent - 1)
       }
+      if (e.code === 'Enter') {
+        const result = results[current]
+        if (result) {
+          handleSuggestionClick({
+            latitude: result.geometry.coordinates[1],
+            longitude: result.geometry.coordinates[0],
+            city: result.properties.city || result.properties.name || '',
+            address: displayAddress(result),
+          })
+        }
+      }
     },
-    [current, setCurrent]
+    [current, setCurrent, handleSuggestionClick, results]
   )
 
   useEffect(() => {
