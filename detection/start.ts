@@ -63,6 +63,7 @@ export const start = (darkMode?: boolean) => {
             child.nodeName === '#text' ||
             child.nodeName === 'SUB' ||
             child.nodeName == 'SPAN' ||
+            child.nodeName == 'STRONG' ||
             child.nodeName === 'A' ||
             child.nodeName === 'EM' ||
             child.nodeName === 'B'
