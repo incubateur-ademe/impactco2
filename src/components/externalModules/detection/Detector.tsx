@@ -7,7 +7,7 @@ import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regex =
-  /([0-9]+(,|\.|\s|&nbsp;)?[0-9]*)(\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?grammes|g|t|tonne(s)?)(\s|&nbsp;)?(d'émissions\s|&nbsp;)?(de\s|&nbsp;)?(d’équivalent\s|&nbsp;)?(co(2|₂|<sub>2(\s|&nbsp;)?<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
+  /([0-9]+(,|\.|\s|&nbsp;)?[0-9]*)(\s|&nbsp;)?(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)?(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)?(d'émissions\s|&nbsp;)?(de\s|&nbsp;)?(d(’|')équivalent\s|&nbsp;)?(eq)?(co(2|₂|<sub>2(\s|&nbsp;)?<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
 
 const getComputedStyle = (el: Element, property: string) => {
   if (document.defaultView) {
@@ -42,7 +42,7 @@ const getOverflow = (element: HTMLDivElement) => {
   return ''
 }
 
-const getFactor = (unit: string) => {
+const getUnitFactor = (unit: string) => {
   if (unit === 't' || unit.includes('tonne')) {
     return 1000000
   }
@@ -53,6 +53,29 @@ const getFactor = (unit: string) => {
 
   return 1
 }
+
+const getFactor = (unit: string) => {
+  if (!unit) {
+    return 1
+  }
+
+  if (unit.includes('milliard') || unit.includes('giga')) {
+    return 1000000000
+  }
+  if (unit.includes('million')) {
+    return 1000000
+  }
+  if (unit.includes('millier') || unit.includes('mille')) {
+    return 1000
+  }
+
+  return 1
+}
+
+export const getValue = (regexResult: string[]) =>
+  Number(regexResult[1].replaceAll(',', '.').replaceAll(' ', '')) *
+  getFactor(regexResult[4]) *
+  getUnitFactor(regexResult[12])
 
 const Detector = ({ impact }: { impact: string }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -88,7 +111,7 @@ const Detector = ({ impact }: { impact: string }) => {
   const value = useMemo(() => {
     const values = regex.exec(impact)
     if (values) {
-      return Number(values[1].replaceAll(',', '.').replaceAll(' ', '')) * getFactor(values[4])
+      return getValue(values)
     }
     return 0
   }, [impact])
