@@ -5,6 +5,7 @@ import useTransportations from 'hooks/useTransportations'
 import useParamContext from 'components/providers/ParamProvider'
 import BarChart from 'components/charts/BarChart'
 import Bottom from 'components/misc/category/Bottom'
+import ResultHeader from './ResultHeader'
 
 const tracking = 'Transport itinéraire'
 
@@ -18,6 +19,7 @@ export default function Itinerary({ category, iframe }: { category: Category; if
 
   return itineraries ? (
     <>
+      <ResultHeader category={category} tracking={tracking} type='itineraire' />
       <BarChart equivalents={transportations} category={category} />
       {transportations.length ? <Bottom category={category} iframe={iframe} /> : null}
     </>
