@@ -49,7 +49,7 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
           />
         </SectionWideContent>
       </Section>
-      <Section $withoutPadding $margin='1.5rem 0'>
+      <Section $withoutPadding $margin='1.5rem 0' id='etiquette'>
         <SectionWideContent $size='lg'>
           <Etiquettes />
         </SectionWideContent>
