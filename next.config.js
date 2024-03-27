@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const helmet = require('helmet')
-const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 const { withSentryConfig } = require('@sentry/nextjs')
-const { execSync } = require('child_process')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -55,24 +53,6 @@ const securityHeadersIFramable = [
       .join(';'),
   },
 ]
-
-const getLocalGitCommitHash = function () {
-  let res = ''
-  try {
-    res = execSync('git rev-parse HEAD').toString().trim()
-  } catch (e) {
-    console.log('Git is not executable here...')
-  }
-  return res
-}
-
-const getShortSha = function (str) {
-  let res = ''
-  if (typeof str === 'string' && str.length > 0) {
-    res = str.substring(0, 7)
-  }
-  return res
-}
 
 const nextConfig = {
   reactStrictMode: true,
@@ -179,12 +159,8 @@ const sentryWebpackPluginOptions = {
   url: process.env.SENTRY_URL,
 }
 
-module.exports = (phase) => {
-  if (phase === PHASE_PRODUCTION_BUILD) {
-    console.log('Current shortSha is: ', getShortSha(getLocalGitCommitHash()))
-  }
-
-  return withBundleAnalyzer(
+module.exports = () =>
+  withBundleAnalyzer(
     withSentryConfig(nextConfig, sentryWebpackPluginOptions, {
       // For all available options, see:
       // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
@@ -211,4 +187,3 @@ module.exports = (phase) => {
       automaticVercelMonitors: true,
     })
   )
-}
