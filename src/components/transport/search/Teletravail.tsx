@@ -17,7 +17,7 @@ const Details = styled.button`
   padding: 0;
   text-decoration: underline;
 `
-export default function Teletravail() {
+export default function TeletravailSearch() {
   const {
     teletravail: { start, setStart, end, setEnd, transport },
   } = useParamContext()

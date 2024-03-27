@@ -9,7 +9,7 @@ test('Comparateur', async ({ page }) => {
   await page.getByLabel('Abricot').check()
   await expect(page.getByTestId('selected-equivalents-fruitsetlegumes-number')).toContainText('1')
   await expect(page.getByTestId('selected-equivalents-number')).toContainText('4')
-  await page.getByRole('button', { name: 'Valider la séléction' }).click()
+  await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
   await expect(page.getByTestId('comparateur-abricot-value')).toContainText('11.4')
   await expect(page.getByTestId('comparateur-abricot-name')).toContainText("kg d'abricot")
@@ -21,7 +21,7 @@ test('Comparateur', async ({ page }) => {
   await page.getByRole('button', { name: 'Fruits et légumes 0 / 74 Voir' }).click()
   await page.getByLabel('Ail').check()
   await expect(page.getByTestId('selected-equivalents-number')).toContainText('4')
-  await page.getByRole('button', { name: 'Valider la séléction' }).click()
+  await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
   await expect(page.getByTestId('comparateur-ail-value')).toContainText('24.6')
   await expect(page.getByTestId('comparateur-ail-name')).toContainText("kg d'ail")
@@ -56,7 +56,7 @@ test('Comparateur', async ({ page }) => {
   await page.getByRole('button', { name: 'Fruits et légumes 1 / 74 Voir' }).click()
   await page.getByLabel('Tomate').check()
   await expect(page.getByTestId('selected-equivalents-number')).toContainText('2')
-  await page.getByRole('button', { name: 'Valider la séléction' }).click()
+  await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
   await page
     .locator('section')

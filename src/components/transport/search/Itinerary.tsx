@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 100%;
 `
 
-export default function Itinerary() {
+export default function ItinerarySearch() {
   const {
     itineraire: { start, setStart, end, setEnd },
   } = useParamContext()

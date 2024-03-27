@@ -36,6 +36,14 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <Button
+          onClick={() => {
+            setEquivalents(tempEquivalents)
+            onClose()
+            tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
+          }}>
+          Fermer
+        </Button>
       </div>
       <div className={styles.content}>
         {search ? (
@@ -88,7 +96,7 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
               onClose()
               tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
             }}>
-            Valider la séléction
+            Revenir au comparateur
           </Button>
         </div>
         <div />

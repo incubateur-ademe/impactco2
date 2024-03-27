@@ -1,23 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import ClipboardBox from 'components/base/ClipboardBox'
 
 export default function IflCode(props) {
-  const [script, setScript] = useState(null)
-
-  useEffect(() => {
-    setScript(
-      `<script name="impact-co2" src="${window?.location.origin}/iframe.js" data-type="livraison" data-search="?theme=${props.theme}"></script>`
-    )
-  }, [props.theme, props.type])
-
-  const [copied, setCopied] = useState(false)
-
-  const unsetCopied = () => setCopied(false)
-  useEffect(() => {
-    setTimeout(unsetCopied, 400)
-    return () => clearTimeout(unsetCopied)
-  }, [copied])
+  const script = useMemo(
+    () =>
+      `<script name="impact-co2" src="${window?.location.origin}/iframe.js" data-type="livraison" data-search="?theme=${props.theme}"></script>`,
+    [props.theme]
+  )
 
   return (
     <>

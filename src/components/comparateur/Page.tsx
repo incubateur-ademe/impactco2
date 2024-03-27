@@ -13,7 +13,11 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
   return (
     <Web
       title='Comparateur carbone'
-      image={`${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics${resolvedUrl}`}
+      image={
+        resolvedUrl === '/comparateur'
+          ? '/meta/comparateur.png'
+          : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics${resolvedUrl}`
+      }
       description='Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.'
       breadcrumb={{
         type: 'accueil',
@@ -45,7 +49,7 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
           />
         </SectionWideContent>
       </Section>
-      <Section $withoutPadding $margin='1.5rem 0'>
+      <Section $withoutPadding $margin='1.5rem 0' id='etiquette'>
         <SectionWideContent $size='lg'>
           <Etiquettes />
         </SectionWideContent>

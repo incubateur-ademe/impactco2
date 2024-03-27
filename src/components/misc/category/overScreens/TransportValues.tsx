@@ -16,7 +16,7 @@ export const overScreenTransportValues: (
 ) => Record<OverScreenTransport, OverScreenInfo> = (category, params, tracking, type) => ({
   partager: {
     title: 'Partager',
-    children: <TransportShare type={type} tracking={tracking} />,
+    children: <TransportShare tracking={tracking} />,
   },
   integrer: {
     title: 'Intégrer',

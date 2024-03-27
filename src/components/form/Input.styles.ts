@@ -68,9 +68,11 @@ export const StyledInput = styled.input<{
   $color?: 'secondary'
   $background?: 'white'
   $error?: boolean
+  $withIcon?: boolean
 }>`
   ${({ $color, $background }) => input($color, $background)}
   ${({ $maxWidth }) => `max-width:${$maxWidth || '560px'};`}
+  ${({ $withIcon }) => $withIcon && 'padding-right: 32px;'}
   
   ${({ $error }) => $error && 'border-bottom: 2px solid var(--critical-50) !important;'}
 `

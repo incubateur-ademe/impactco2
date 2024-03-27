@@ -5,6 +5,7 @@ import useDebounce from 'hooks/useDebounce'
 import { Point } from 'hooks/useItineraries'
 import { Icon } from 'components/osezchanger/icons'
 import Suggestions from 'components/transport/search/itinerary/address/search/Suggestions'
+import { Container, Loading, SuggestionsContainer } from './AddressInput.styles'
 import { Error, Hint, Label, NotRequired, StyledInput } from './Input.styles'
 import useError from './errors'
 
@@ -57,7 +58,7 @@ const AddressInput = ({
 
   const error = useError(id, errors)
   return (
-    <div>
+    <Container>
       {label && (
         <Label htmlFor={`input-${id}`} $error={!!error}>
           {label}
@@ -75,16 +76,24 @@ const AddressInput = ({
         $maxWidth={maxWidth}
         $color={color}
         $error={!!error}
+        $withIcon
       />
+      {isFetching && (
+        <Loading>
+          <Icon iconId='loading' />
+        </Loading>
+      )}
       {data && focus && (
-        <Suggestions
-          isFetching={isFetching}
-          search={debouncedSearch}
-          results={data}
-          current={current}
-          setCurrent={setCurrent}
-          handleSuggestionClick={navigateToPlace}
-        />
+        <SuggestionsContainer>
+          <Suggestions
+            isFetching={isFetching}
+            search={debouncedSearch}
+            results={data}
+            current={current}
+            setCurrent={setCurrent}
+            handleSuggestionClick={navigateToPlace}
+          />
+        </SuggestionsContainer>
       )}
       {error && (
         <Error className='text-xs'>
@@ -92,7 +101,7 @@ const AddressInput = ({
           {error}
         </Error>
       )}
-    </div>
+    </Container>
   )
 }
 

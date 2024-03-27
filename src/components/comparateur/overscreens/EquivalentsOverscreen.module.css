@@ -5,6 +5,12 @@
   border-radius: 16px 16px 0px 0px;
   border: 1px solid var(--neutral-20);
   border-bottom: 1px solid var(--secondary-20);
+  display: flex;
+  gap: 1rem;
+
+  > div {
+    flex: 1;
+  }
 }
 
 .content {
