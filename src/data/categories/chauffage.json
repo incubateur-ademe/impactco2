@@ -80,7 +80,7 @@
     "slug": "chauffageelectrique",
     "emoji": "⚡️",
     "category": 8,
-    "total": 7.5,
+    "total": 11.85,
     "default": true,
     "tile": false,
     "meta": {
@@ -91,7 +91,7 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,05 kgCO₂e/kWh (2022)"
+          "value": "0,079 kgCO₂e/kWh (2022) *"
         },
         {
           "title": "Besoin d’énergie par m²",
@@ -103,9 +103,10 @@
         },
         {
           "title": "Empreinte carbone par m²",
-          "value": "150 kWh/m² / 1 × 0,05 kgCO₂e/kWh = 7,5 kgCO₂e/m²"
+          "value": "150 kWh/m² / 1 × 0,079 kgCO₂e/kWh = 11,85 kgCO₂e/m²"
         }
-      ]
+      ],
+      "hypothesis": "* Donnée issue de l’accord de la réglementation <a href=\"https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043938727/2022-01-01\" target=\"_blank\" rel=\"noopener norefferer\">RE 2020</a>"
     }
   },
   {
@@ -116,7 +117,7 @@
     "slug": "pompeachaleur",
     "emoji": "🌡️",
     "category": 8,
-    "total": 2.5,
+    "total": 3.95,
     "default": true,
     "tile": false,
     "meta": {
@@ -127,7 +128,7 @@
       "values": [
         {
           "title": "Intensité carbone",
-          "value": "0,05 kgCO₂e/kWh (2022)"
+          "value": "0,079 kgCO₂e/kWh (2022) *"
         },
         {
           "title": "Besoin d’énergie par m²",
@@ -139,9 +140,10 @@
         },
         {
           "title": "Empreinte carbone par m²",
-          "value": "150 kWh/m² / 3 × 0,05 kgCO₂e/kWh = 2,5 kgCO₂e/m²"
+          "value": "150 kWh/m² / 3 × 0,079 kgCO₂e/kWh = 3,95 kgCO₂e/m²"
         }
-      ]
+      ],
+      "hypothesis": "* Donnée issue de l’accord de la réglementation <a href=\"https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043938727/2022-01-01\" target=\"_blank\" rel=\"noopener norefferer\">RE 2020</a>"
     }
   },
   {
