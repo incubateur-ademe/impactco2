@@ -14,7 +14,9 @@ const SimpleValue = ({ value, comparison, language }: { value: number; compariso
   if (comparison !== 'random' && equivalents[comparison]) {
     equivalent = equivalents[comparison]
   } else {
-    const meaningfullEquivalents = Object.entries(equivalents).filter(([, ecv]) => value / ecv.value > 1)
+    const meaningfullEquivalents = Object.entries(equivalents).filter(
+      ([, ecv]) => value / ecv.value > 1 && ecv.value > 0
+    )
     const categories = [...new Set(meaningfullEquivalents.map((equivalent) => equivalent[1].category))]
     const randomCategory = categories[Math.floor(Math.random() * categories.length)]
     const categoryEquivalents = meaningfullEquivalents.filter((equivalent) => equivalent[1].category === randomCategory)
