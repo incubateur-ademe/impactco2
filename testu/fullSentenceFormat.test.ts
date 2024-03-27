@@ -1,4 +1,5 @@
 import fullSentenceFormat from 'utils/fullSentenceFormat'
+import { computedEquivalents } from 'components/providers/equivalents'
 
 describe('fullSentenceFormat', () => {
   test("transforme un objet 'Equivalent' en une phrase", () => {
@@ -10,45 +11,7 @@ describe('fullSentenceFormat', () => {
 function getRealisticObject() {
   return {
     position: 2,
-    equivalent: {
-      name: 'Streaming vidéo',
-      prefix: 'Heure[s] de ',
-      subtitle: '',
-      slug: 'streamingvideo',
-      emoji: '🎬',
-      unit: '',
-      category: 10,
-      ecv: [
-        {
-          value: 0.0327361035,
-          id: 13,
-        },
-        {
-          value: 0.002903607,
-          id: 14,
-        },
-        {
-          value: 0.02780804,
-          id: 15,
-        },
-        {
-          value: 0.000236636,
-          id: 16,
-        },
-        {
-          value: 0.00033236641,
-          id: 17,
-        },
-      ],
-      default: true,
-      tile: false,
-      meta: {
-        title: '',
-        description: '',
-      },
-      source: 'https://negaoctet.org/',
-      id: 'streamingvideo',
-    },
+    equivalent: computedEquivalents.find((x) => x.slug === 'streamingvideo'),
     weight: 2.4633303715484383,
     nbCol: 3,
   }

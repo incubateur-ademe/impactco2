@@ -2,11 +2,10 @@ import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
 import { FruitsEtLegumesEquivalent } from 'types/equivalent'
-import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
-import useDataContext from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import ShareableContent from 'components/misc/ShareableContent'
 import Bottom from 'components/misc/category/Bottom'
@@ -30,8 +29,6 @@ const StyledTop = styled(Top)`
 `
 
 export default function Saisons({ category, iframe }: { category: Category; iframe?: boolean }) {
-  const { equivalents } = useDataContext()
-
   const {
     fruitsetlegumes: { month, setMonth, sorting, setSorting, search, setSearch },
   } = useParamContext()
@@ -42,7 +39,7 @@ export default function Saisons({ category, iframe }: { category: Category; ifra
     () =>
       month !== undefined &&
       category &&
-      equivalents
+      computedEquivalents
         .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => results || (equivalent as FruitsEtLegumesEquivalent).months.includes(month))
         .filter((equivalent) => !results || results.find((result) => result.slug === equivalent.slug))
@@ -50,7 +47,7 @@ export default function Saisons({ category, iframe }: { category: Category; ifra
           id: `${equivalent.slug}`,
           title: formatName(equivalent.name, 1, true),
           emoji: equivalent.emoji,
-          value: computeECV(equivalent),
+          value: equivalent.value,
           season: (equivalent as FruitsEtLegumesEquivalent).months.includes(month),
           months: (equivalent as FruitsEtLegumesEquivalent).months,
           to: `/${category.slug}/${equivalent.slug}`,
@@ -73,7 +70,7 @@ export default function Saisons({ category, iframe }: { category: Category; ifra
                 ? 1
                 : -1
         ),
-    [equivalents, category, month, results, sorting]
+    [category, month, results, sorting]
   )
 
   const params = useMemo(

@@ -6,8 +6,7 @@ import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import { SourcesWrapper } from 'components/misc/category/CategoryWrapper.styles'
 import Sources from 'components/misc/category/Sources'
-import Teletravail from 'components/transport/Teletravail'
-import { TransportProvider } from 'components/transport/TransportProvider'
+import Search from 'components/transport/Search'
 
 export default function TeletravailPage({ category }: { category: Category }) {
   return (
@@ -19,20 +18,18 @@ export default function TeletravailPage({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
-      <TransportProvider>
-        <Teletravail category={category} />
-        {category.sources && (
-          <SourcesWrapper>
-            <Sources priority='secondary' sources={category.sources} tracking={category.name} />
-          </SourcesWrapper>
-        )}
-        <Learning category={category} from='/transport/itineraire' fromLabel='Transport itinéraire' />
-        <SuggestionBanner
-          from='/transport/teletravail'
-          fromLabel='Transport télétravail'
-          simulatorName='simulateur transport'
-        />
-      </TransportProvider>
+      <Search initialType='teletravail' category={category} />
+      {category.sources && (
+        <SourcesWrapper>
+          <Sources priority='secondary' sources={category.sources} tracking={category.name} />
+        </SourcesWrapper>
+      )}
+      <Learning category={category} from='/transport/itineraire' fromLabel='Transport itinéraire' />
+      <SuggestionBanner
+        from='/transport/teletravail'
+        fromLabel='Transport télétravail'
+        simulatorName='simulateur transport'
+      />
     </Web>
   )
 }

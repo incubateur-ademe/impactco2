@@ -1,7 +1,7 @@
 .emptyTile,
 .tile {
-  width: calc(11rem - 4px);
-  min-height: 224px;
+  width: 100%;
+  height: 100%;
   padding: 1.5rem 1rem;
   position: relative;
   border-radius: 8px;
@@ -10,7 +10,7 @@
   align-items: center;
   text-align: center;
   gap: 1rem;
-  background-color: var(--white);
+  background-color: var(--neutral-00);
 
   @media screen and (max-width: 425px) {
     gap: 0.5rem;

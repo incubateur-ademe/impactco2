@@ -88,3 +88,18 @@ export const Copy = styled.div<{ $copied: boolean }>`
 
   ${({ $copied }) => $copied && 'color: var(--success-60) !important'}
 `
+
+export const Information = styled.div`
+  align-items: center;
+  color: var(--neutral-50);
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 400;
+  gap: 0.5rem;
+  line-height: 1rem;
+  margin-top: 0.5rem;
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+`

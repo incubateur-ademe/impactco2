@@ -2,15 +2,12 @@ import React from 'react'
 import { Category } from 'types/category'
 import categories from 'data/categories.json'
 import Iframe from 'components/layout/Iframe'
-import Teletravail from 'components/transport/Teletravail'
-import { TransportProvider } from 'components/transport/TransportProvider'
+import Search from 'components/transport/Search'
 
 export default function TeletravailPage({ category }: { category: Category }) {
   return (
     <Iframe noLogo>
-      <TransportProvider>
-        <Teletravail category={category} iframe />
-      </TransportProvider>
+      <Search initialType='teletravail' category={category} iframe />
     </Iframe>
   )
 }

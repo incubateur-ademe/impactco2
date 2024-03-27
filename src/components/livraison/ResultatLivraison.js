@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import useModalContext from 'components/providers/ModalProvider'
 import Button from 'components/base/buttons/Button'
+import DetailLivraisonModal from 'components/modals/DetailLivraisonModal'
 import { convertGramsToKilograms } from './utils'
 
 export default function ResultatLivraison(props) {
-  const { setHypothesisLivraison } = useModalContext()
-
+  const [openModal, setOpenModal] = useState(false)
   return (
     <Wrapper>
+      {openModal && <DetailLivraisonModal setOpen={setOpenModal} />}
       <CenteredBlock>
         <BlueGrid>
           <div className='item1'>
@@ -42,7 +42,7 @@ export default function ResultatLivraison(props) {
           <div className='item5' />
           <div className='item6'>
             <UnderstandLink>
-              <Button asLink onClick={() => setHypothesisLivraison(true)}>
+              <Button asLink onClick={() => setOpenModal(true)}>
                 Comprendre le calcul
               </Button>
             </UnderstandLink>

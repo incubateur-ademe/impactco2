@@ -18,7 +18,11 @@ export default function useItineraries(start: Point | undefined, end: Point | un
         return null
       }
 
-      track(`Transport ${tracking}`, 'Recherche', `${start.city}-${end.city}`)
+      if (start.city && end.city) {
+        // Not track when coming from iframe
+        track(`Transport ${tracking}`, 'Recherche', `${start.city}-${end.city}`)
+      }
+
       return axiosClient
         .post<CallGMapDistances>('/api/callGMap', {
           destinations: {

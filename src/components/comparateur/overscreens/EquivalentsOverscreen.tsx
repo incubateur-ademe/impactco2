@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import categories from 'data/categories.json'
+import { track } from 'utils/matomo'
 import useParamContext from 'components/providers/ParamProvider'
 import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import Button from 'components/base/buttons/Button'
@@ -35,6 +36,14 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <Button
+          onClick={() => {
+            setEquivalents(tempEquivalents)
+            onClose()
+            tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
+          }}>
+          Fermer
+        </Button>
       </div>
       <div className={styles.content}>
         {search ? (
@@ -85,8 +94,9 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
             onClick={() => {
               setEquivalents(tempEquivalents)
               onClose()
+              tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
             }}>
-            Valider la séléction
+            Revenir au comparateur
           </Button>
         </div>
         <div />

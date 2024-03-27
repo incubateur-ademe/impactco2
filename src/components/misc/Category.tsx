@@ -1,11 +1,10 @@
 import React, { Dispatch, SetStateAction, useMemo } from 'react'
 import { Category } from 'types/category'
-import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
-import useDataContext from 'components/providers/DataProvider'
 import useParamContext from 'components/providers/ParamProvider'
+import { computedEquivalents } from 'components/providers/equivalents'
 import Checkbox from 'components/base/Checkbox'
 import BarChart from 'components/charts/BarChart'
 import Bottom from './category/Bottom'
@@ -16,8 +15,6 @@ import List from './category/List'
 import { Checkboxes, Top } from './category/Top'
 
 export default function CategoryList({ category, iframe }: { category: Category; iframe?: boolean }) {
-  const { equivalents } = useDataContext()
-
   const params = useParamContext()
 
   // @ts-expect-error: Category is managed in params
@@ -28,18 +25,18 @@ export default function CategoryList({ category, iframe }: { category: Category;
   const equivalentsOfCategory = useMemo(
     () =>
       category &&
-      equivalents
+      computedEquivalents
         .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => equivalent.default || displayAll)
         .map((equivalent) => ({
           ...equivalent,
           title: formatName(equivalent.name, 1, true),
           subtitle: displayAll ? formatName(equivalent.subtitle) : undefined,
-          value: computeECV(equivalent),
+          value: equivalent.value,
           usage: formatUsage(equivalent),
           onClick: () => track(category.name, 'Navigation equivalent', equivalent.slug),
         })),
-    [equivalents, category, displayAll]
+    [category, displayAll]
   )
 
   return (
@@ -49,7 +46,7 @@ export default function CategoryList({ category, iframe }: { category: Category;
           <Instruction title={category.equivalent} gender={category.gender} />
           <Checkboxes
             $visible={
-              equivalents
+              computedEquivalents
                 .filter((equivalent) => equivalent.category === category.id)
                 .find((equivalent) => !equivalent.default) && !category.list
             }>

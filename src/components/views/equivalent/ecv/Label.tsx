@@ -1,8 +1,7 @@
 import React from 'react'
-import useDataContext from 'components/providers/DataProvider'
+import ecv from 'data/ecv.json'
 
 const Label = ({ id }: { id: string | number }) => {
-  const { ecv } = useDataContext()
   const currentECV = ecv.find((e) => e.id === id)
 
   return currentECV ? (

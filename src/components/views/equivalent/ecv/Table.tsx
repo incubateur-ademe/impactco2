@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import React, { Fragment } from 'react'
-import useModalContext from 'components/providers/ModalProvider'
+import React, { Fragment, useState } from 'react'
+import EcvModal from 'components/modals/EcvModal'
 import Information from 'components/osezchanger/components/Information'
 import DetailValue from './DetailValue'
 import Label from './Label'
@@ -23,57 +23,59 @@ const Table = ({
   small?: boolean
   type: number
 }) => {
-  const { setEcv } = useModalContext()
-
+  const [ecvModal, setEcvModal] = useState<number>(0)
   const valuesToDisplay = values.filter((value) => value) as Values[]
   const withPercent = valuesToDisplay.length === 1
   return (
-    <table className={classNames(styles.table, { [styles.small]: small })}>
-      {valuesToDisplay.map((value) => (
-        <Fragment key={value.label}>
+    <>
+      {!!ecvModal && <EcvModal value={ecvModal} setOpen={() => setEcvModal(0)} />}
+      <table className={classNames(styles.table, { [styles.small]: small })}>
+        {valuesToDisplay.map((value) => (
+          <Fragment key={value.label}>
+            <thead>
+              <tr>
+                <th colSpan={withPercent ? 2 : 1}>
+                  <div className={styles.title}>
+                    {value.label} {withPercent && <Information onClick={() => setEcvModal(type)} />}
+                  </div>
+                </th>
+                <th className={styles.value}>
+                  <DetailValue unit={unit} value={value.value} />
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {value.values.map((item) => (
+                <tr key={item.id}>
+                  <td>
+                    <Label id={item.id} />
+                  </td>
+                  {withPercent && <td className={styles.value}>{((item.value / value.value) * 100).toFixed(2)}%</td>}
+                  <td className={styles.value}>
+                    <DetailValue unit={unit} value={item.value} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Fragment>
+        ))}
+        {!withPercent && (
           <thead>
             <tr>
-              <th colSpan={withPercent ? 2 : 1}>
+              <th>
                 <div className={styles.title}>
-                  {value.label} {withPercent && <Information onClick={() => setEcv(type)} />}
+                  Total
+                  <Information onClick={() => setEcvModal(type)} />
                 </div>
               </th>
               <th className={styles.value}>
-                <DetailValue unit={unit} value={value.value} />
+                <DetailValue unit={unit} value={valuesToDisplay.reduce((acc, current) => acc + current.value, 0)} />
               </th>
             </tr>
           </thead>
-          <tbody>
-            {value.values.map((item) => (
-              <tr key={item.id}>
-                <td>
-                  <Label id={item.id} />
-                </td>
-                {withPercent && <td className={styles.value}>{((item.value / value.value) * 100).toFixed(2)}%</td>}
-                <td className={styles.value}>
-                  <DetailValue unit={unit} value={item.value} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Fragment>
-      ))}
-      {!withPercent && (
-        <thead>
-          <tr>
-            <th>
-              <div className={styles.title}>
-                Total
-                <Information onClick={() => setEcv(type)} />
-              </div>
-            </th>
-            <th className={styles.value}>
-              <DetailValue unit={unit} value={valuesToDisplay.reduce((acc, current) => acc + current.value, 0)} />
-            </th>
-          </tr>
-        </thead>
-      )}
-    </table>
+        )}
+      </table>
+    </>
   )
 }
 

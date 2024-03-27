@@ -17,7 +17,7 @@ const Details = styled.button`
   padding: 0;
   text-decoration: underline;
 `
-export default function Teletravail() {
+export default function TeletravailSearch() {
   const {
     teletravail: { start, setStart, end, setEnd, transport },
   } = useParamContext()
@@ -32,7 +32,7 @@ export default function Teletravail() {
       {start && end && transport && (
         <Details onClick={() => setOpen(true)}>Voir et ajuster les détails du calcul</Details>
       )}
-      <TeletravailModal open={open} setOpen={setOpen} />
+      {open && <TeletravailModal setOpen={setOpen} />}
     </>
   )
 }

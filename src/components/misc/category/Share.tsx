@@ -40,7 +40,6 @@ const Share = ({
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
 
-  console.log(url)
   return (
     <>
       {params && visibility && (
@@ -97,7 +96,7 @@ const Share = ({
           />
           <div>
             <p>
-              <b>{category ? category.meta.title : 'Comparateur carbone'}</b>
+              <b>{category ? category.meta.title : 'Comparateur'}</b>
             </p>
             <p className='text-sm'>
               {category

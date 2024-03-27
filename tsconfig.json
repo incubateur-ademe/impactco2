@@ -22,12 +22,12 @@
       "hooks/*": ["src/hooks/*"]
     },
     "module": "esnext",
+    "noEmit": true,
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "noEmit": true
+    ]
   },
   "ts-node": {
     "experimentalResolver": true,

@@ -16,7 +16,7 @@ export const overScreenTransportValues: (
 ) => Record<OverScreenTransport, OverScreenInfo> = (category, params, tracking, type) => ({
   partager: {
     title: 'Partager',
-    children: <TransportShare type={type} tracking={tracking} />,
+    children: <TransportShare tracking={tracking} />,
   },
   integrer: {
     title: 'Intégrer',
@@ -30,7 +30,8 @@ export const overScreenTransportValues: (
           description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
           link="Guide d'utilisation"
           image='/images/laptop.png'
-          tracking={category.name}
+          trackingCategory={category.name}
+          trackingAction='Blocs accompagnement'
         />
       </>
     ),
