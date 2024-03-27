@@ -6,7 +6,7 @@ import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import { SourcesWrapper } from 'components/misc/category/CategoryWrapper.styles'
 import Sources from 'components/misc/category/Sources'
-import Teletravail from 'components/transport/Teletravail'
+import Search from 'components/transport/Search'
 
 export default function TeletravailPage({ category }: { category: Category }) {
   return (
@@ -18,7 +18,7 @@ export default function TeletravailPage({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
-      <Teletravail category={category} />
+      <Search initialType='teletravail' category={category} />
       {category.sources && (
         <SourcesWrapper>
           <Sources priority='secondary' sources={category.sources} tracking={category.name} />

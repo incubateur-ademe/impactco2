@@ -66,7 +66,7 @@ const HeadersActions = ({
             <Separator />
             {opened === 'partager' &&
               (type ? (
-                <TransportShare tracking={tracking} type={type} />
+                <TransportShare tracking={tracking} />
               ) : (
                 <Share category={category} params={params} path={path} />
               ))}

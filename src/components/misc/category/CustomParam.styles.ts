@@ -22,8 +22,10 @@ export const InputContainer = styled.div<{ $fullWidth?: boolean }>`
 `
 
 export const StyledInput = styled(Input)`
-  padding: 0.5rem 3rem 0.5rem 1rem;
-  text-align: right;
+  input {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    text-align: right;
+  }
 `
 
 export const InputSuffix = styled.span<{ $disabled: boolean }>`

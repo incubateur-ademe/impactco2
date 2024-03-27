@@ -9,8 +9,13 @@ import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { Separator } from './TransportIntegrate.styles'
 
-const TransportShare = ({ tracking, type }: { tracking: string; type: TransportSimulateur }) => {
-  const { distance, itineraire, teletravail } = useParamContext()
+const TransportShare = ({ tracking }: { tracking: string }) => {
+  const {
+    distance,
+    itineraire,
+    teletravail,
+    transport: { selected, setSelected },
+  } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
     km: true,
@@ -18,38 +23,36 @@ const TransportShare = ({ tracking, type }: { tracking: string; type: TransportS
     teletravail: true,
   })
 
-  const [tab, setTab] = useState<string>(type)
-
   const url = useMemo(() => {
     let result = buildCurrentUrlFor('transport')
-    if (tab === 'distance') {
+    if (selected === 'distance') {
       result += `?`
-    } else if (tab === 'itineraire') {
+    } else if (selected === 'itineraire') {
       result += `/itineraire?`
     } else {
       result += `/teletravail?`
     }
 
-    if (tab === 'distance' && visibility.km) {
+    if (selected === 'distance' && visibility.km) {
       result += `km=${distance.km}`
-    } else if (tab === 'itineraire' && visibility.itineraire) {
+    } else if (selected === 'itineraire' && visibility.itineraire) {
       if (itineraire.start) {
         result += `itineraireStart=${itineraire.start.address}&`
       }
       if (itineraire.end) {
         result += `itineraireEnd=${itineraire.end.address}`
       }
-    } else if (tab === 'teletravail' && visibility.teletravail) {
+    } else if (selected === 'teletravail' && visibility.teletravail) {
       if (teletravail.start) {
-        result += `teletravailStart=${teletravail.start}&`
+        result += `teletravailStart=${teletravail.start.address}&`
       }
       if (teletravail.end) {
-        result += `teletravailEnd=${teletravail.end}`
+        result += `teletravailEnd=${teletravail.end.address}`
       }
     }
 
     return result
-  }, [visibility, tab, distance.km, itineraire.start, itineraire.end, teletravail.start, teletravail.end])
+  }, [visibility, selected, distance.km, itineraire.start, itineraire.end, teletravail.start, teletravail.end])
 
   const params = useMemo(() => {
     return {
@@ -65,19 +68,37 @@ const TransportShare = ({ tracking, type }: { tracking: string; type: TransportS
     }
   }, [distance.km, itineraire.start, itineraire.end, teletravail.start, teletravail.end])
 
-  return (
+  return selected ? (
     <>
       <Radio
         required
         id='tabs'
         label='Onglet à intégrer'
         hint="Sélectionnez les onglets que vous souhaitez intégrer à l'iframe">
-        <RadioInput priority='secondary' value='distance' selected={tab} setSelected={setTab} label='Distance' />
-        <RadioInput priority='secondary' value='itineraire' selected={tab} setSelected={setTab} label='Itinéraire' />
-        <RadioInput priority='secondary' value='teletravail' selected={tab} setSelected={setTab} label='Télétravail' />
+        <RadioInput
+          priority='secondary'
+          value='distance'
+          selected={selected}
+          setSelected={(value) => setSelected(value as TransportSimulateur)}
+          label='Distance'
+        />
+        <RadioInput
+          priority='secondary'
+          value='itineraire'
+          selected={selected}
+          setSelected={(value) => setSelected(value as TransportSimulateur)}
+          label='Itinéraire'
+        />
+        <RadioInput
+          priority='secondary'
+          value='teletravail'
+          selected={selected}
+          setSelected={(value) => setSelected(value as TransportSimulateur)}
+          label='Télétravail'
+        />
       </Radio>
       <Separator />
-      {tab === 'distance' && (
+      {selected === 'distance' && (
         <CustomParams
           integration
           title='Distance'
@@ -89,7 +110,7 @@ const TransportShare = ({ tracking, type }: { tracking: string; type: TransportS
           withTheme
         />
       )}
-      {tab === 'itineraire' && (
+      {selected === 'itineraire' && (
         <CustomParams
           integration
           title='Itinéraire'
@@ -100,7 +121,7 @@ const TransportShare = ({ tracking, type }: { tracking: string; type: TransportS
           setVisibility={setVisibility}
         />
       )}
-      {tab === 'teletravail' && (
+      {selected === 'teletravail' && (
         <CustomParams
           integration
           title='Télétravail'
@@ -114,7 +135,7 @@ const TransportShare = ({ tracking, type }: { tracking: string; type: TransportS
       <Separator />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>
-  )
+  ) : null
 }
 
 export default TransportShare

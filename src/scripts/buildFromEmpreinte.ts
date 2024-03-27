@@ -93,7 +93,6 @@ const buildTransportFromEmpreinte = async () => {
   })
 
   const newEquivalents = await getEquivalents(ids)
-  console.log(newEquivalents)
   const finalResult = deplacement.map((equivalent) => {
     if ('empreinteId' in equivalent && equivalent.empreinteId) {
       const elementValues = newEquivalents.filter(
