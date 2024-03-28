@@ -110,7 +110,6 @@ const Detector = ({ impact }: { impact: string }) => {
 
   const value = useMemo(() => {
     const values = regex.exec(impact)
-    console.log(values, impact)
     if (values) {
       return getValue(values)
     }
