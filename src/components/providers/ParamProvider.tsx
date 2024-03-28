@@ -509,7 +509,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setFrequence,
         },
         comparateur: {
-          weight: comparedEquivalent ? comparedEquivalent.value : 1,
+          weight: comparedEquivalent ? comparedEquivalent.value / (comparedEquivalent.percentage ? 100 : 1) : 1,
           baseValue,
           setBaseValue,
           equivalents,

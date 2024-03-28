@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import formatName from 'utils/formatName'
 import { categories } from 'components/providers/categories'
 import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 
 const Wrapper = styled.div`
   font-size: clamp(0.75rem, 1em, 1.125rem);
@@ -70,7 +71,7 @@ export default function Suggestions(props) {
                   onMouseDown={(e) => e.preventDefault()}
                   title='simple suggestion'>
                   <Name>
-                    <Emoji>{product.emoji}</Emoji>
+                    <EquivalentIcon equivalent={product} />
                     <span>
                       {formatName(product.name, 1)}{' '}
                       {product.subtitle && <Subtitle> ({formatName(product.subtitle, 1)})</Subtitle>}

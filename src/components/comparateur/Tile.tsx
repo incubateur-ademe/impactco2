@@ -4,7 +4,7 @@ import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import useParamContext from 'components/providers/ParamProvider'
 import { computedEquivalents } from 'components/providers/equivalents'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import Button from 'components/base/buttons/Button'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './Tile.module.css'
@@ -15,7 +15,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
   } = useParamContext()
 
   const equivalent = useMemo(() => (slug ? computedEquivalents.find((e) => e.slug === slug) : null), [slug])
-  const value = equivalent ? (baseValue * weight) / equivalent.value : 0
+  const value = equivalent ? (baseValue * weight * (equivalent.percentage ? 100 : 1)) / equivalent.value : 0
 
   return equivalent ? (
     <div className={styles.tile}>
@@ -27,7 +27,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
         <Icon iconId='close' />
       </button>
       <div>
-        <Emoji height='2rem'>{equivalent.emoji}</Emoji>
+        <EquivalentIcon height={2} equivalent={equivalent} />
         <div className={styles.value} data-testid={`comparateur-${slug}-value`}>
           {Number.isFinite(value) ? formatNumber(value).toLocaleString() : <Icon iconId='infinity' />}
         </div>

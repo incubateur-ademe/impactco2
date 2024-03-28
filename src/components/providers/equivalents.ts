@@ -1,6 +1,7 @@
 import { ComputedEquivalent } from 'types/equivalent'
 import categories from 'data/categories.json'
 import boisson from 'data/categories/boisson.json'
+import caspratiques from 'data/categories/caspratiques.json'
 import chauffage from 'data/categories/chauffage.json'
 import deplacement from 'data/categories/deplacement.json'
 import electromenager from 'data/categories/electromenager.json'
@@ -24,6 +25,7 @@ const equivalents = [
   ...repas,
   ...chauffage,
   ...fruitsetlegumes,
+  ...caspratiques,
 ]
 
 export const computedEquivalents = equivalents.map((equivalent) => ({

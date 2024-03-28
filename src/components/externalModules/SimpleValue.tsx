@@ -3,7 +3,7 @@ import { Language, SimpleEquivalent } from 'types/equivalent'
 import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './SimpleValue.module.css'
 
@@ -11,8 +11,10 @@ const equivalents = values as Record<string, SimpleEquivalent>
 
 const SimpleValue = ({ value, comparison, language }: { value: number; comparison: string; language?: Language }) => {
   let equivalent: SimpleEquivalent
+  let slug: string
   if (comparison !== 'random' && equivalents[comparison]) {
     equivalent = equivalents[comparison]
+    slug = comparison
   } else {
     const meaningfullEquivalents = Object.entries(equivalents).filter(
       ([, ecv]) => value / ecv.value > 1 && ecv.value > 0
@@ -21,6 +23,7 @@ const SimpleValue = ({ value, comparison, language }: { value: number; compariso
     const randomCategory = categories[Math.floor(Math.random() * categories.length)]
     const categoryEquivalents = meaningfullEquivalents.filter((equivalent) => equivalent[1].category === randomCategory)
     const randomEquivalent = categoryEquivalents[Math.floor(Math.random() * categoryEquivalents.length)]
+    slug = randomEquivalent[0]
     equivalent = randomEquivalent[1]
   }
 
@@ -34,7 +37,7 @@ const SimpleValue = ({ value, comparison, language }: { value: number; compariso
   return (
     <div className={styles.container}>
       <div className={styles.emoji}>
-        <Emoji>{equivalent.emoji}</Emoji>
+        <EquivalentIcon height={2} equivalent={{ ...equivalent, slug }} />
       </div>
       <div className={styles.text}>
         <div className={styles.equivalentValue} data-testid={`etiquette-${comparison}-value`}>

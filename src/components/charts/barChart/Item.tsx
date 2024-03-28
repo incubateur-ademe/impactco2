@@ -44,7 +44,7 @@ export default function Item({
   to: string
   onClick?: MouseEventHandler<HTMLAnchorElement>
   slug: string
-  emoji: string
+  emoji?: string
   secondEmoji?: string
   title?: string
   subtitle?: string

@@ -2,6 +2,7 @@ import React from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import categories from 'data/categories.json'
+import formatName from 'utils/formatName'
 import { computedEquivalents } from 'components/providers/equivalents'
 import Web from 'components/layout/Web'
 import Details from 'components/views/equivalent/Details'
@@ -14,11 +15,22 @@ export default function Equivalent({ category, equivalent }: { category: Categor
     <Web
       title={equivalent.meta.title}
       description={equivalent.meta.description}
-      breadcrumb={{
-        type: 'equivalent',
-        category: category,
-        equivalent: equivalent,
-      }}>
+      breadcrumb={
+        category.id === 13
+          ? {
+              type: 'other',
+              current: formatName(equivalent.name, 1, true),
+              previous: {
+                to: '/comparateur',
+                label: 'Comparateur',
+              },
+            }
+          : {
+              type: 'equivalent',
+              category: category,
+              equivalent: equivalent,
+            }
+      }>
       <Details equivalent={equivalent} category={category} />
       <VisualizationSlider equivalent={equivalent} category={category} />
       <Ecv equivalent={equivalent} category={category} />

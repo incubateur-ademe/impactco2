@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import formatName from 'utils/formatName'
 import formatNumberPrecision from 'utils/formatNumberPrecision'
 import useParamContext from 'components/providers/ParamProvider'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import Link from 'components/base/buttons/Link'
 import { HiddenLabel } from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
@@ -119,7 +119,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
                   baseValue * weight
                 )}
               </span>
-              <Emoji>{comparedEquivalent.emoji}</Emoji>
+              <EquivalentIcon equivalent={comparedEquivalent} />
               <Icon iconId='close-thick' />
             </button>
           ) : (
@@ -150,7 +150,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
               className={styles.equivalent}
               target='_blank'
               rel='noopener noreferrer'>
-              <Emoji height='2.5rem'>{comparedEquivalent.emoji}</Emoji>
+              <EquivalentIcon height={2.5} equivalent={comparedEquivalent} />
               <Icon iconId='link' />
             </NextLink>
             <Link
