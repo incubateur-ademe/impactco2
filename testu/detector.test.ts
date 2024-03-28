@@ -17,6 +17,7 @@ const detections = [
   { text: '7 milliers de kg CO<sub>2</sub>', value: 7000000 },
   { text: '7 mille de kg CO<sub>2</sub>', value: 7000000 },
   { text: '21 gigatonnes de CO2 eq', value: 21000000000000000 },
+  { text: '15&nbsp;kg CO2e', value: 15000 },
 ]
 
 describe('detector regex', () => {
