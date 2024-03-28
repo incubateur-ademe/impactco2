@@ -73,7 +73,7 @@ const getFactor = (unit: string) => {
 }
 
 export const getValue = (regexResult: string[]) =>
-  Number(regexResult[1].replaceAll(',', '.').replaceAll(' ', '')) *
+  Number(regexResult[1].replaceAll(',', '.').replaceAll(' ', '').replaceAll('&nbsp;', '')) *
   getFactor(regexResult[4]) *
   getUnitFactor(regexResult[12])
 
@@ -110,6 +110,7 @@ const Detector = ({ impact }: { impact: string }) => {
 
   const value = useMemo(() => {
     const values = regex.exec(impact)
+    console.log(values, impact)
     if (values) {
       return getValue(values)
     }
