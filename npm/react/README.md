@@ -1,6 +1,7 @@
 # Impact CO₂
 
-Integrer les ressources d'Impact CO₂
+Découvrir Impact CO2 la boîte à outil de l’ADEME, et ses ressources ludiques, fiables et faciles à utiliser sur l’impact carbone des gestes et objets du quotidien.
+Intégrer gratuitement les outils dans vos contenus site ou application, afin de communiquer les bons ordres de grandeur et sensibiliser vos communautés aux enjeux environnementaux.
 
 ## Installation
 

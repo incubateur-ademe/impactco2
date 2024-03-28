@@ -1,7 +1,7 @@
 type BaseEquivalent = {
   name: string
   slug: string
-  emoji: string
+  emoji?: string
   category: number
   default: boolean
   tile: boolean
@@ -19,6 +19,7 @@ type BaseEquivalent = {
   subtitle?: string
   synonyms?: string[]
   hypothesis?: string
+  percentage?: boolean
   unit?: string
   data?: {
     hypothesis?: string
@@ -117,6 +118,6 @@ export type ComputedEquivalent = Equivalent & { value: number; link: string }
 export type Language = 'en' | 'fr' | 'de' | 'es'
 export type SimpleEquivalent = {
   value: number
-  emoji: string
+  emoji?: string
   category: number
 } & Record<Language, string>

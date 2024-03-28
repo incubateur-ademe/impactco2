@@ -1,5 +1,6 @@
 import fs from 'fs'
 import boissons from '../data/categories/boisson.json'
+import caspratiques from '../data/categories/caspratiques.json'
 import chauffages from '../data/categories/chauffage.json'
 import deplacements from '../data/categories/deplacement.json'
 import electromenager from '../data/categories/electromenager.json'
@@ -17,6 +18,7 @@ import { Equivalent, SimpleEquivalent } from '../../types/equivalent'
 
 const existingValues: Record<string, SimpleEquivalent> = values
 const existingEquivalentsByCategory: Record<string, Equivalent[]> = {
+  caspratiques: caspratiques,
   boissons: boissons,
   fruitsetlegumes: fruitsetlegumes,
   electromenager: electromenager,

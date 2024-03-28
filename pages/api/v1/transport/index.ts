@@ -25,7 +25,6 @@ export const computeTransportEmission = (
 ) =>
   deplacements
     .filter((transportation) => filter || filterByDistance(transportation.display, km))
-    .filter((transportation) => !transportation.contexted)
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]

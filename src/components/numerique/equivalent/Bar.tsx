@@ -4,7 +4,7 @@ import { Category as CategoryType } from 'types/category'
 import { Equivalent as EquivalentType } from 'types/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 
 const Wrapper = styled.div`
   display: flex;
@@ -50,7 +50,7 @@ const Big = styled.span`
     font-size: 1rem;
   }
 `
-const StyledEmoji = styled(Emoji)`
+const StyledEmoji = styled.div`
   align-items: center;
   background-color: var(--neutral-00);
   border-radius: 5.25rem;
@@ -101,7 +101,9 @@ export default function Bar({
           )}
         </Unit>
       </Top>
-      <StyledEmoji>{equivalent.emoji}</StyledEmoji>
+      <StyledEmoji>
+        <EquivalentIcon equivalent={equivalent} />
+      </StyledEmoji>
     </Wrapper>
   )
 }

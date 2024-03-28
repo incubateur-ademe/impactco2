@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
 import { getMonthLabel } from 'utils/months'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import Link from 'components/base/buttons/Link'
 import Chart from './item/Chart'
 
@@ -69,7 +69,7 @@ export default function Item(props) {
       data-testid={`tile-${props.item.title}`}>
       <Header>
         <Title>{props.item.title}</Title>
-        <Emoji>{props.item.emoji}</Emoji>
+        <EquivalentIcon equivalent={props.item} />
       </Header>
       <Season>
         De {getMonthLabel(interval[0])} à {getMonthLabel(interval[1] || 11)}

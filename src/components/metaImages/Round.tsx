@@ -3,6 +3,7 @@ import { SimpleEquivalent } from 'types/equivalent'
 import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { buildCurrentUrlFor } from 'utils/urls'
 import { Icon } from 'components/osezchanger/icons'
 
 const equivalents = values as Record<string, SimpleEquivalent>
@@ -55,7 +56,13 @@ const Empty = ({
             fontSize: '7rem',
             marginBottom: '1rem',
           }}>
-          {equivalent.emoji}
+          {equivalent.emoji || (
+            <img
+              style={{ width: '4rem', height: '4rem' }}
+              src={buildCurrentUrlFor(`/icons/${comparison}.png`)}
+              alt=''
+            />
+          )}
         </div>
       )}
       {value && (

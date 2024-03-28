@@ -118,7 +118,7 @@ export type APIECVV1 = {
  *         ID ou Slug de la thématique demandée
  *         - 1 : numerique
  *         - 2 : repas
- *         - 3 :  boisson
+ *         - 3 : boisson
  *         - 4 : transport
  *         - 5 : habillement
  *         - 6 : electromenager
@@ -126,6 +126,7 @@ export type APIECVV1 = {
  *         - 8 : chauffage
  *         - 9 : fruitsetlegumes
  *         - 10 : usagenumerique
+ *         - 13 : caspratiques
  *     - in: query
  *       name: detail
  *       default: 0

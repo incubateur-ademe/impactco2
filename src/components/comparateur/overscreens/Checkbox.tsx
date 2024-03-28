@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import CheckboxInput from 'components/form/CheckboxInput'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './Checkbox.module.css'
@@ -57,7 +57,7 @@ const Checkbox = ({
               </div>
             )}
           </div>
-          <Emoji height='2rem'>{equivalent.emoji}</Emoji>
+          <EquivalentIcon height={2} equivalent={equivalent} />
         </div>
       }
     />

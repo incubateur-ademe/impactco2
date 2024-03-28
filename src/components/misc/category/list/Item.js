@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import Link from 'components/base/buttons/Link'
 import Chart from './item/Chart'
 
@@ -46,7 +46,7 @@ export default function Item(props) {
     <Wrapper key={props.item.id} href={props.item.to}>
       <Header>
         <Title>{props.item.title}</Title>
-        <Emoji>{props.item.emoji}</Emoji>
+        <EquivalentIcon equivalent={props.item} />
       </Header>
       <Value>
         {formatNumber(props.item.value * 1000)}

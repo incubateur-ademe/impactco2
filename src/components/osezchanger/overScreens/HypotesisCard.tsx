@@ -1,7 +1,7 @@
 import React from 'react'
 import formatName from 'utils/formatName'
 import { computedEquivalents } from 'components/providers/equivalents'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import { Bar, Card, Value, Values } from './HypotesisCard.styles'
 
 const HypotesisCard = ({ slug }: { slug: string }) => {
@@ -12,7 +12,7 @@ const HypotesisCard = ({ slug }: { slug: string }) => {
 
   return (
     <Card href={`/habillement/${slug}`} target='_blank' rel='noreferrer noopener'>
-      <Emoji height='40px'>{values.emoji}</Emoji>
+      <EquivalentIcon height={2.5} equivalent={values} />
       <div>
         <div>
           {formatName(values.name, 1, true)} {values.subtitle?.toLowerCase()}

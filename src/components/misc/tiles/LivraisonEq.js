@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import fullSentenceFormat from 'utils/fullSentenceFormat'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import { Media, MediaBody, MediaFigure } from 'components/base/Media'
 
 const first2WordsOnly = (sentence) => sentence.split(' ').slice(0, 2).join(' ')
@@ -13,7 +13,7 @@ export default function LivraisonEq(props) {
       <Media>
         <MediaFigure>
           <EmojiWrapper>
-            <Emoji>{props?.equivalent?.emoji}</Emoji>
+            <EquivalentIcon equivalent={props.equivalent} />
           </EmojiWrapper>
         </MediaFigure>
         <MediaBody>
