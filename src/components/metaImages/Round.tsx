@@ -22,7 +22,7 @@ const Empty = ({
   main?: boolean
 }) => {
   const equivalent = comparison ? equivalents[comparison] : undefined
-  const comparisonValue = value ? value / (equivalent ? equivalent.value : 1000) : 0
+  const comparisonValue = value ? value / (equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1000) : 0
   const equivalentValue = Number.isFinite(comparisonValue) ? (
     formatNumber(comparisonValue).toLocaleString('fr-FR')
   ) : (

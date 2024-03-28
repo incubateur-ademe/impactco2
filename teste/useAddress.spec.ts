@@ -8,7 +8,7 @@ configurePlaywrightCoverage(test)
 test('search for an adress', async () => {
   const result = await searchAddress('6 rue du chemin vert')
 
-  expect(result.length).toEqual(14)
+  expect(result.length).toEqual(15)
   expect(result[0].geometry.coordinates).toEqual([2.9573404, 49.1788636])
   expect(result[0].properties).toEqual({
     extent: [2.957282, 49.18005, 2.9573441, 49.17808],

@@ -27,7 +27,7 @@ const SimpleValue = ({ value, comparison, language }: { value: number; compariso
     equivalent = randomEquivalent[1]
   }
 
-  const comparisonValue = value / equivalent.value
+  const comparisonValue = ((equivalent.percentage ? 100 : 1) * value) / equivalent.value
   const equivalentValue = Number.isFinite(comparisonValue) ? (
     formatNumber(comparisonValue).toLocaleString()
   ) : (

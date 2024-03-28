@@ -105,7 +105,7 @@
     }
   },
   {
-    "prefix": "Pourcent[s] de l'",
+    "prefix": "% de l'",
     "name": "Empreinte carbone d'un citoyen Français",
     "synonyms": [
       "",
@@ -141,10 +141,10 @@
     "unit": "épisode",
     "slug": "game-of-thrones",
     "category": 13,
-    "total": 1.65,
+    "total": 0.0317,
     "default": false,
     "tile": false,
-    "source": "https://negaoctet.org/",
+    "source": "https://base-empreinte.ademe.fr/donnees/jeu-donnees",
     "meta": {
       "title": "Épisode de Game of thrones",
       "description": "Impact carbone de regarder un épisode de Game of thrones en streaming"
@@ -165,17 +165,17 @@
     "unit": "intégrale",
     "slug": "friends",
     "category": 13,
-    "total": 409.2,
+    "total": 7.86,
     "default": false,
     "tile": false,
-    "source": "https://negaoctet.org/",
+    "source": "https://base-empreinte.ademe.fr/donnees/jeu-donnees",
     "meta": {
       "title": "Épisode de Friends",
       "description": "Impact carbone de regarder un épisode de Friends en streaming"
     },
     "include": {
       "pre": "",
-      "postNewLine": "Un épisode de Friends dure en moyenne 20min. La donnée est calculé sur une heure de streaming en haute définition, sur une télévision, en connexion wifi."
+      "postNewLine": "L’intégrale de Friends est composée de 236 épisodes d'environ 20min. La donnée est calculé sur une heure de streaming en haute définition, sur une télévision, en connexion wifi."
     }
   }
 ]

@@ -15,7 +15,7 @@ const EquivalentItems = ({
   equivalent: string
 }) => {
   const equivalentValue = equivalents[equivalent]
-  const baseValue = (value * equivalentValue.value) / 1000
+  const baseValue = (value * equivalentValue.value) / (1000 * (equivalentValue.percentage ? 100 : 1))
 
   return (
     <>

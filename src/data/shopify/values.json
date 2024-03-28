@@ -2,7 +2,7 @@
   "avion-pny": {
     "category": 13,
     "value": 1770000,
-    "fr": "A/R Paris - New-york (en avion)",
+    "fr": "A/R paris - new-york (en avion)",
     "en": "Round trip Paris - New-york (by plane)",
     "de": "Rundreise Paris - New York (mit dem Flugzeug)",
     "es": "Viaje de ida y vuelta París - Nueva York (en avión)",
@@ -11,7 +11,7 @@
   "tgv-paris-berlin": {
     "category": 13,
     "value": 7260,
-    "fr": "A/R Paris - Berlin (en tgv)",
+    "fr": "A/R paris - berlin (en tgv)",
     "en": "Round trip Paris - Berlin (by train)",
     "de": "Rundreise Paris - Berlin (mit dem Zug)",
     "es": "Viaje de ida y vuelta París - Berlin (en tren)"
@@ -19,7 +19,7 @@
   "tgv-paris-marseille": {
     "category": 13,
     "value": 4400,
-    "fr": "A/R Paris - Marseille (en tgv)",
+    "fr": "A/R paris - marseille (en tgv)",
     "en": "Round trip Paris - Marseille (by train)",
     "de": "Rundreise Paris - Marseill (mit dem Zug)",
     "es": "Viaje de ida y vuelta París - Marseill (en tren)"
@@ -27,7 +27,7 @@
   "voiture-lille-nimes": {
     "category": 13,
     "value": 410000,
-    "fr": "A/R Lille - Nîmes (en voiture thermique)",
+    "fr": "A/R lille - nîmes (en voiture thermique)",
     "en": "Round trip Lille - Nîmes (by car)",
     "de": "Rundreise Lille - Nîmes (mit dem Auto)",
     "es": "Viaje de ida y vuelta Lille - Nîmes (en coche)"
@@ -38,20 +38,21 @@
     "fr": "Pourcent[s] de l'empreinte carbone d'un citoyen français",
     "en": "Percent[s] of a French citizen's carbon footprint",
     "de": "Prozentualer Anteil des CO₂-Fußabdrucks eines Franzosen",
-    "es": "Porcentaje de la huella de carbono de un ciudadano francés"
+    "es": "Porcentaje de la huella de carbono de un ciudadano francés",
+    "percentage": true
   },
   "game-of-thrones": {
     "category": 13,
-    "value": 1650,
-    "fr": "épisode[s] de Game of thrones (en streaming)",
+    "value": 31.7,
+    "fr": "épisode[s] de game of thrones (en streaming)",
     "en": "Game of Thrones episode[s] (streaming)",
     "de": "Game of Thrones Folge[n] (Streaming)",
     "es": "Episodio[s] de Game of Thrones (streaming)"
   },
   "friends": {
     "category": 13,
-    "value": 409200,
-    "fr": "intégrale[s] de Friends (en streaming)",
+    "value": 7870,
+    "fr": "intégrale[s] de friends (en streaming)",
     "en": "Complete Friends TV show (streaming)",
     "de": "Komplette Friends-TV-Show (Streaming)",
     "es": "Programa de TV completo de Friends (streaming)"
