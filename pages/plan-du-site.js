@@ -80,6 +80,9 @@ export default function PlanDuSite() {
               <Link href='/questions-frequentes'>Questions fréquentes</Link>
             </Level1>
             <Level1>
+              <Link href='/detecteur-co2'>Le détecteur CO₂</Link>
+            </Level1>
+            <Level1>
               Contenu
               <Level2>
                 <Link href='/contenu/impact-carbone-hiver-station-ski'>
