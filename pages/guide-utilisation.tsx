@@ -11,7 +11,7 @@ export async function getStaticProps() {
 
 const GuideUtilisationPage = ({ recordMap }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Web title={title} description='Comment utiliser les ressources Impact CO₂.'>
+    <Web title={title} description='Comment utiliser les ressources Impact CO₂.' image='/meta/guide-utilisation.png'>
       <Notion title={title} recordMap={recordMap} />
     </Web>
   )

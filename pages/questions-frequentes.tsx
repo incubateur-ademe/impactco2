@@ -11,7 +11,7 @@ export async function getStaticProps() {
 
 const FAQPage = ({ recordMap }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Web title={title} description='Les questions fréquentes à propos de Impact CO₂.'>
+    <Web title={title} description='Les questions fréquentes à propos de Impact CO₂.' image='/meta/faq.png'>
       <Notion title={title} recordMap={recordMap} />
     </Web>
   )

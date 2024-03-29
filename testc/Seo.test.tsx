@@ -37,9 +37,9 @@ describe('Seo', () => {
     render(<Seo />)
     expect(document.title).toBe(default_title)
   })
-  it('La meta image est /metaimage.png par défaut', () => {
+  it('La meta image est /meta/image.png par défaut', () => {
     const { container } = render(<Seo />)
-    expect(getMetaName(container, 'image')).toEqual('https://example.com/metaimage.png')
+    expect(getMetaName(container, 'image')).toEqual('https://example.com/meta/image.png')
   })
   it('La meta description est "sensibilisez..." par défaut', () => {
     const { container } = render(<Seo />)
@@ -81,7 +81,7 @@ describe('Seo', () => {
   })
   it("La meta twitter:image vaut la même chose que l'image", () => {
     const { container } = render(<Seo />)
-    expect(getMetaName(container, 'twitter:image')).toEqual('https://example.com/metaimage.png')
+    expect(getMetaName(container, 'twitter:image')).toEqual('https://example.com/meta/image.png')
   })
   it('La balise title peut être personnalisée', () => {
     render(<Seo title='aaa' />)

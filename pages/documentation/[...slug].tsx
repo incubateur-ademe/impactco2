@@ -20,7 +20,7 @@ export default function Documentation() {
         <Seo
           title={"Documentation de l'impact de la livraison"}
           description={"Documentation de l'impact de la livraison d’un colis sur le climat"}
-          image={'metalivraison.png'}
+          image={'meta/livraison.png'}
         />
         <HeaderSweet />
         <BreadCrumb3 />
