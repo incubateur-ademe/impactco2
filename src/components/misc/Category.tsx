@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction, useMemo } from 'react'
 import { Category } from 'types/category'
 import formatName from 'utils/formatName'
@@ -16,6 +17,7 @@ import { Checkboxes, Top } from './category/Top'
 
 export default function CategoryList({ category, iframe }: { category: Category; iframe?: boolean }) {
   const params = useParamContext()
+  const t = useTranslations('category')
 
   // @ts-expect-error: Category is managed in params
   const { displayAll, setDisplayAll } = (params[category.slug] || { displayAll: false, setDisplayAll: () => {} }) as {
@@ -43,7 +45,7 @@ export default function CategoryList({ category, iframe }: { category: Category;
     <>
       <CategoryWrapper category={category} iframe={iframe}>
         <Top className='noscreenshot'>
-          <Instruction title={category.equivalent} gender={category.gender} />
+          <Instruction category={category} />
           <Checkboxes
             $visible={
               computedEquivalents
@@ -58,7 +60,7 @@ export default function CategoryList({ category, iframe }: { category: Category;
                 track(category.name, 'Voir tous', displayAll ? 'faux' : 'vrai')
               }}>
               Voir {category.gender === 'f' ? 'toutes' : 'tous'} les{' '}
-              {formatName(category.equivalent, 2) || 'équivalents'}
+              {formatName(t(`equivalent-${category.slug}`), 2) || 'équivalents'}
             </Checkbox>
           </Checkboxes>
         </Top>

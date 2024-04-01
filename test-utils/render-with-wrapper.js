@@ -4,6 +4,7 @@ import { render } from '@testing-library/react'
 import * as nextRouter from 'next/router'
 import { useState } from 'react'
 import { ParamProvider } from 'components/providers/ParamProvider'
+import TranslationProvider from 'components/providers/TranslationProvider'
 import { RulesProviderLivraison } from 'components/livraison/RulesProviderLivraison'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
@@ -20,7 +21,9 @@ export function renderWithWrapper(component, options) {
     return (
       <QueryClientProvider client={queryClient}>
         <RulesProviderLivraison>
-          <ParamProvider>{children} </ParamProvider>
+          <ParamProvider>
+            <TranslationProvider>{children}</TranslationProvider>
+          </ParamProvider>
         </RulesProviderLivraison>
       </QueryClientProvider>
     )

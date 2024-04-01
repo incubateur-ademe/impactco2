@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import styled from 'styled-components'
 import TextInput from 'components/base/TextInput'
@@ -55,6 +56,7 @@ export default function NumberInput({
   setValue: Dispatch<SetStateAction<number>>
   max: number
 }) {
+  const t = useTranslations('form')
   const [tempValue, setTempValue] = useState(value.toString())
   return (
     <Wrapper
@@ -75,7 +77,7 @@ export default function NumberInput({
           setTempValue(event.value)
         }}
       />
-      <Button data-testid='slider-number-input-validate'>Valider</Button>
+      <Button data-testid='slider-number-input-validate'>{t('valider')}</Button>
     </Wrapper>
   )
 }

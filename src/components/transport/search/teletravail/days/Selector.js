@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
@@ -47,6 +48,8 @@ const Text = styled.p`
   text-align: center;
 `
 export default function Selector(props) {
+  const t = useTranslations('transport.teletravail')
+
   return (
     <Wrapper>
       <Title>{props.label}</Title>
@@ -77,7 +80,7 @@ export default function Selector(props) {
           </svg>
         </Button>
       </Content>
-      <Text>jours par semaine</Text>
+      <Text>{t('days')}</Text>
     </Wrapper>
   )
 }

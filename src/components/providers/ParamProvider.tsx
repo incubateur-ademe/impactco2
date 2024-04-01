@@ -87,6 +87,8 @@ type LivraisonValues = {
 const ParamContext = React.createContext<{
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
+  language: 'fr' | 'en'
+  setLanguage: Dispatch<SetStateAction<'fr' | 'en'>>
   livraison: {
     values: LivraisonValues
     setValues: Dispatch<SetStateAction<LivraisonValues>>
@@ -209,6 +211,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
+  const [language, setLanguage] = useState<'fr' | 'en'>('fr')
 
   useEffect(() => {
     setTheme(initialTheme.theme)
@@ -378,6 +381,12 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       return
     }
 
+    if (router.query.language) {
+      setLanguage(router.query.language === 'en' ? 'en' : 'fr')
+    } else {
+      setLanguage('fr')
+    }
+
     if (router.query.value) {
       const value = Number(router.query.value as string)
       if (!Number.isNaN(value)) {
@@ -494,6 +503,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       value={{
         theme,
         setTheme,
+        language,
+        setLanguage,
         livraison: {
           values: livraisonValues,
           setValues: setLivraisonValues,

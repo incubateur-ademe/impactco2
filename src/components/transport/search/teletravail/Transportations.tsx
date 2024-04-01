@@ -1,6 +1,8 @@
+import { useTranslations } from 'next-intl'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import { DeplacementEquivalent } from 'types/equivalent'
+import formatName from 'utils/formatName'
 import useParamContext from 'components/providers/ParamProvider'
 import { computedEquivalents } from 'components/providers/equivalents'
 import Transportation from './transportations/Transportation'
@@ -32,7 +34,9 @@ export default function Transportations() {
   const {
     teletravail: { start, end, transport },
   } = useParamContext()
-
+  const t = useTranslations('transport.teletravail')
+  const tEquivalent = useTranslations('equivalent')
+  const transportation = transportations.find((transportation) => transportation.slug === transport)
   return start && start.address && end && end.address ? (
     <Wrapper>
       <List>
@@ -43,10 +47,7 @@ export default function Transportations() {
             <Transportation key={transportation.id} transportation={transportation} />
           ))}
       </List>
-      <Result>
-        {transportations.find((transportation) => transportation.slug === transport)?.name ||
-          'Choisissez votre mode de transport'}
-      </Result>
+      <Result>{transportation ? formatName(tEquivalent(`name-${transportation.slug}`), 1, true) : t('choose')}</Result>
     </Wrapper>
   ) : null
 }

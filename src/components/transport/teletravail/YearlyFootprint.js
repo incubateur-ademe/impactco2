@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
@@ -64,6 +65,8 @@ const Disclaimer = styled.p`
 `
 export default function YearlyFootprint(props) {
   const numerator = props.emitted + props.saved
+  const t = useTranslations('transport.teletravail')
+
   return (
     <Wrapper>
       <Bar>
@@ -71,10 +74,11 @@ export default function YearlyFootprint(props) {
           <Content $visible={props.emitted}>
             <Number>{props.emitted}</Number> kgCO<sub>2</sub>e
             <br />
-            émis
+            {t('emitted')}
             <br />
             <Small $visible={numerator ? (props.emitted / numerator) * 100 : 0 >= 25}>
-              sur {props.presentiel} jour{props.presentiel > 1 && 's'}
+              {t('on', { day: props.presentiel })}
+              {props.presentiel > 1 && 's'}
             </Small>
           </Content>
         </Emitted>
@@ -83,19 +87,19 @@ export default function YearlyFootprint(props) {
           <Content $visible={props.saved}>
             <Number>{props.saved}</Number> kgCO<sub>2</sub>e
             <br />
-            évité{props.saved > 1 && 's'}
+            {t('avoided', { plural: props.saved > 1 ? 's' : '' })}
             <br />
             <Small $visible={(numerator ? (props.saved / numerator) * 100 : 0) >= 25}>
               {' '}
-              sur {props.teletravail} jour{props.teletravail > 1 && 's'}
+              {t('on', { day: props.teletravail })}
+              {props.teletravail > 1 && 's'}
             </Small>
           </Content>
         </Saved>
       </Bar>
       <Disclaimer>
-        <strong>à l&apos;année</strong> sur mes déplacements.
-        <br />
-        (d&apos;autres émissions ont peut-être augmenté)
+        <strong>{t('yearly')}</strong> {t('commute')}.
+        <br />({t('disclaimer')})
       </Disclaimer>
     </Wrapper>
   )

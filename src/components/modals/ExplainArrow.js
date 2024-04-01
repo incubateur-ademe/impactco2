@@ -1,22 +1,23 @@
+import { useTranslations } from 'next-intl'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 
 export default function ExplainArrow() {
+  const t = useTranslations('modal.co2')
+
   return (
     <Wrapper>
       <BlueGrid>
         <BlueGridInsider>
           <div>
             <ActualResult>1</ActualResult>
-            <Units> kg de méthane </Units>
+            <Units> {t('methane')} </Units>
           </div>
           <Subexplain>
-            <div>ex. : si la fabrication d'un</div>
-            <div>produit émet</div>
+            <div>{t('methane-example')}</div>
+            <div>{t('methane-product')}</div>
             <div>
-              <strong>
-                1kg de méthane + 1kg de CO<sub>2</sub>
-              </strong>
+              <strong>{t('methane-comparison')}</strong>
             </div>
           </Subexplain>
         </BlueGridInsider>

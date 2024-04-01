@@ -64,7 +64,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     })
     // Then
     const voitureElectrique = await screen.queryAllByTestId('bar-chart-item-voitureelectrique')[0]
-    expect(voitureElectrique.textContent).toBe('Voiture (moteur électrique)-avec 1 covoitureurs+0.52 kg CO2e')
+    expect(voitureElectrique.textContent).toBe('Voiture (moteur électrique)-Avec 1 covoitureurs+0.52 kg CO2e')
   })
 
   test('shares with default parameters', async () => {
