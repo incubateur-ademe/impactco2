@@ -1,7 +1,4 @@
 import { expect, test } from '@playwright/test'
-import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
-
-configurePlaywrightCoverage(test)
 
 test('Chauffage page', async ({ page }) => {
   await test.step('Load page', async () => {

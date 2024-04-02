@@ -1,7 +1,5 @@
 import { expect, test } from '@playwright/test'
-import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 
-configurePlaywrightCoverage(test)
 test('Le titre', async ({ page }) => {
   await test.step("On charge la page d'accueil dans le navigateur", async () => {
     await page.goto('/')

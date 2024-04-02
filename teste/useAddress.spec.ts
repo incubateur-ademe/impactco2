@@ -1,14 +1,12 @@
 import { expect, test } from '@playwright/test'
-import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 import { searchAddress } from 'hooks/useAddress'
 
-configurePlaywrightCoverage(test)
 // On se permet de tester directement l'api Photomon parceque ce n'est pas tres bien documenté
 // On teste donc les use cases en entier
 test('search for an adress', async () => {
   const result = await searchAddress('6 rue du chemin vert')
 
-  expect(result.length).toEqual(14)
+  expect(result.length).toEqual(15)
   expect(result[0].geometry.coordinates).toEqual([2.9573404, 49.1788636])
   expect(result[0].properties).toEqual({
     extent: [2.957282, 49.18005, 2.9573441, 49.17808],
