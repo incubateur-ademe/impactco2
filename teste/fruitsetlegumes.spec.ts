@@ -1,8 +1,5 @@
 import { expect, test } from '@playwright/test'
-import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 import { getMonthLabel } from 'utils/months'
-
-configurePlaywrightCoverage(test)
 
 test('Page is loaded and month can be selected', async ({ page }) => {
   await page.goto('/fruitsetlegumes')

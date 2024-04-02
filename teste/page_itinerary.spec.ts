@@ -1,8 +1,5 @@
 import { Page, expect, test } from '@playwright/test'
-import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 import { mockRoutesItinerary } from './mock-routes/mock-routes-itinerary'
-
-configurePlaywrightCoverage(test)
 
 test.beforeEach(async ({ page }) => {
   await mockRoutesItinerary(page)

@@ -1,7 +1,5 @@
 import { expect, test } from '@playwright/test'
-import configurePlaywrightCoverage from 'test-utils/configure-playwright-coverage'
 
-configurePlaywrightCoverage(test)
 test.beforeEach(async ({ page }) => {
   await page.goto('/usagenumerique')
 })
