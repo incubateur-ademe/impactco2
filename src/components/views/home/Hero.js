@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import { Section, SectionWideContent } from 'components/base/Section'
-import Meeting from 'components/meeting/Meeting'
+import Meeting from 'components/home/Meeting'
 
 export default function Hero() {
   return (

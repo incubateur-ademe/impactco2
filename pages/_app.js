@@ -5,9 +5,10 @@ import React, { useEffect, useState } from 'react'
 import { QueryParamProvider } from 'use-query-params'
 import 'utils/fonts.css'
 import { GlobalStyle } from 'utils/styles'
+import 'utils/styles.css'
 import 'utils/variables.css'
 import { ParamProvider } from 'components/providers/ParamProvider'
-import useTheme from 'components/layout/Theme'
+import useTheme from 'components/layout/UseTheme'
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())

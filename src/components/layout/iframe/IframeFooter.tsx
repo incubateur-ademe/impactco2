@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useWindow from 'hooks/useWindow'
-import Ademe from 'components/base/Ademe'
-import Logo from 'components/base/Logo'
-import Marianne from 'components/base/Marianne'
+import Ademe from 'components/base/Logo/Ademe'
+import Logo from 'components/base/Logo/ImpactCO2'
+import Marianne from 'components/base/Logo/Marianne'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.footer`

@@ -1,0 +1,17 @@
+.container {
+  align-items: center;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  div {
+    flex: 1;
+    min-width: 250px;
+  }
+}
+
+.sentMessage {
+  line-height: 1.15;
+  padding: 10px 0;
+}

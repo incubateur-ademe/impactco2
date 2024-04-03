@@ -1,0 +1,18 @@
+.title {
+  margin-bottom: 4rem;
+}
+
+.link {
+  width: 100%;
+  text-align: right;
+  margin-top: 1.25rem;
+}
+
+.miniCards {
+  display: flex;
+  gap: 0.75rem;
+
+  @media screen and (max-width: 29.875rem) {
+    flex-wrap: wrap;
+  }
+}

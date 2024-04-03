@@ -1,22 +1,22 @@
-import Link from 'next/link'
-import { Section } from 'components/base/Section'
-import { Icon } from 'components/osezchanger/icons'
-import Signature from 'components/screenshot/Signature'
+import Ademe from 'components/base/Logo/Ademe'
+import Logo from 'components/base/Logo/ImpactCO2'
+import Marianne from 'components/base/Logo/Marianne'
+import Link from 'components/base/buttons/Link'
 import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
-    <footer>
-      <Section $withoutPadding id='footer'>
+    <footer className={styles.footer} id='footer'>
+      <div className={styles.header} />
+      <div className={styles.logos}>
+        <Marianne />
+        <Ademe />
+      </div>
+      <div className='main-container'>
         <div className={styles.internalContainer}>
-          <Signature noMargin noLink />
           <div className={styles.footerExplain}>
-            <strong>
-              Impact CO<sub>2</sub>
-            </strong>
-            <p className={styles.neutral50}>
-              Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.
-            </p>
+            <Logo />
+            <div>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.</div>
             <Link
               className={styles.followNews}
               href='https://fr.linkedin.com/showcase/accelerateurdelatransitionecologique-ademe/'
@@ -24,47 +24,42 @@ export default function Footer() {
               rel='noreferrer noopener'
               target='_blank'>
               Suivre nos actualités sur LinkedIn
-              <Icon iconId={'open'} />
             </Link>
           </div>
           <div className={styles.topLinks}>
             <div>
-              <strong>Liens utiles</strong>
+              <div className={styles.linkTitle}>LIENS UTILES</div>
               <div className={styles.linkContainer}>
+                <Link href='/qui-sommes-nous'>Qui sommes-nous ?</Link>
                 <Link href='/stats'>Statistiques</Link>
-                <Link href='/rendez-vous?fromLabel=frooter'>Nous contacter</Link>
+                <Link href='/budget'>Budget</Link>
+                <Link href='/plan-du-site'>Plan du site</Link>
+                <Link href='/rendez-vous?fromLabel=footer'>Nous contacter</Link>
               </div>
             </div>
             <div>
-              <strong>Ressources</strong>
+              <div className={styles.linkTitle}>RESSOURCES</div>
               <div className={styles.linkContainer}>
                 <Link href='/guide-utilisation'>Guide d’utilisation</Link>
                 <Link href='/questions-frequentes'>Questions fréquentes</Link>
-                <Link href='/api-doc'>API Impact CO2</Link>
+                <Link href='/exemples'>Galerie des exemples</Link>
+                <Link href='/https://github.com/incubateur-ademe/impactco2' target='_blank' rel='noreferrer noopener'>
+                  Code source
+                </Link>
+                <Link href='/api-doc'>API</Link>
               </div>
             </div>
           </div>
         </div>
         <div className={styles.bottomLinks}>
-          <Link className={styles.bottomLink} href='/plan-du-site'>
-            Plan du site
-          </Link>
           <Link className={styles.bottomLink} href='/mentions-legales'>
             Mentions légales
           </Link>
           <Link className={styles.bottomLink} href='/politique-de-confidentialite'>
-            Politique de confidentialité
+            Confidentialité
           </Link>
           <Link className={styles.bottomLink} href='/accessibilite'>
             Accessibilité : non conforme
-          </Link>
-          <Link
-            className={styles.bottomLink}
-            href='https://github.com/incubateur-ademe/impactco2'
-            target='_blank'
-            rel='noreferrer noopener'>
-            Code source
-            <Icon iconId={'open'} />
           </Link>
           <Link
             className={styles.bottomLink}
@@ -72,14 +67,12 @@ export default function Footer() {
             target='_blank'
             rel='noreferrer noopener'>
             Agir pour la transition
-            <Icon iconId={'open'} />
           </Link>
           <Link className={styles.bottomLink} href='https://beta.gouv.fr/' target='_blank' rel='noreferrer noopener'>
             beta.gouv.fr
-            <Icon iconId={'open'} />
           </Link>
         </div>
-      </Section>
+      </div>
     </footer>
   )
 }

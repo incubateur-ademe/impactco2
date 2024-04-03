@@ -1,0 +1,37 @@
+.button {
+  -webkit-appearance: none;
+  text-decoration: none;
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 1.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: fit-content;
+  background: var(--primary-50);
+  color: var(--neutral-00);
+
+  &:hover {
+    background: var(--primary-70);
+  }
+
+  &:focus {
+    background: var(--primary-60);
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:disabled {
+    background: var(--neutral-30);
+  }
+}

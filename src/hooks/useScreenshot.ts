@@ -1,7 +1,7 @@
 import { toJpeg, toPng } from 'html-to-image'
 import { useEffect, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
-import useTheme from 'components/layout/Theme'
+import useTheme from 'components/layout/UseTheme'
 
 export default function useScreenshot(slug: string, tracking: string, format: string = 'png') {
   const ref = useRef<HTMLDivElement>(null)

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { buildCurrentUrlFor } from 'utils/urls'
-import Ademe from 'components/base/Ademe'
-import Logo from 'components/base/Logo'
-import Marianne from 'components/base/Marianne'
+import Ademe from 'components/base/Logo/Ademe'
+import Logo from 'components/base/Logo/ImpactCO2'
+import Marianne from 'components/base/Logo/Marianne'
 import Link from 'components/base/buttons/Link'
 
 // divs are necessary for better screenshot
@@ -11,13 +11,11 @@ export default function Signature({
   noMargin,
   noLink,
   center,
-  color,
   small,
 }: {
   noMargin?: boolean
   noLink?: boolean
   center?: boolean
-  color?: string
   small?: boolean
 }) {
   return (
@@ -36,7 +34,7 @@ export default function Signature({
         )}
       </div>
       <div>
-        <Logo viewBox={'10 10 313 313'} color={color} />
+        <Logo />
       </div>
     </OutsideGrid>
   )

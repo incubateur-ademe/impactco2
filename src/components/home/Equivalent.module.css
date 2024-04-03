@@ -1,0 +1,49 @@
+.equivalent {
+  min-height: 8.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
+  border: 2px solid var(--neutral-20);
+  background: var(--neutral-00);
+  padding: 1.25rem 2rem;
+}
+
+.empty {
+  background: var(--neutral-10);
+}
+
+.content {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
+.value {
+  color: var(--neutral-80);
+  font-size: 1.25rem;
+  font-weight: 700;
+  height: 2.75rem;
+  line-height: 2.75rem;
+}
+
+.valueNumber {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 2.75rem;
+}
+
+.unit {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}

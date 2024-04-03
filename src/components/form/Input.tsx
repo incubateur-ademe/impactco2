@@ -1,27 +1,30 @@
+import classNames from 'classnames'
 import React, { InputHTMLAttributes, useEffect, useRef } from 'react'
 import { ZodError } from 'zod'
-import { Icon } from 'components/osezchanger/icons'
-import { Error, Hint, Label, NotRequired, StyledInput } from './Input.styles'
+import { Icon, IconId } from 'components/osezchanger/icons'
+import styles from './Input.module.css'
+import { Error, Hint, Label, NotRequired } from './Input.styles'
 import useError from './errors'
 
 const Input = ({
   id,
   label,
   hint,
-  maxWidth,
-  color,
-  background,
   errors,
   className,
+  icon,
+  large,
   ...inputProps
 }: InputHTMLAttributes<HTMLInputElement> & {
   id: string
+  icon?: IconId
   label?: string
   hint?: string
   maxWidth?: string
   color?: 'secondary'
   background?: 'white'
   errors?: ZodError | null
+  large?: boolean
 }) => {
   const error = useError(id, errors)
   const ref = useRef<HTMLInputElement>(null)
@@ -44,15 +47,19 @@ const Input = ({
           {hint && <Hint className='text-sm'>{hint}</Hint>}
         </Label>
       )}
-      <StyledInput
-        {...inputProps}
-        ref={ref}
-        id={`input-${id}`}
-        $maxWidth={maxWidth}
-        $color={color}
-        $background={background}
-        $error={!!error}
-      />
+      <div className={styles.inputContainer}>
+        <input
+          className={classNames(styles.input, { [styles.withIcon]: icon, [styles.large]: large })}
+          {...inputProps}
+          ref={ref}
+          id={`input-${id}`}
+        />
+        {icon && (
+          <div className={styles.icon}>
+            <Icon iconId={icon} />
+          </div>
+        )}
+      </div>
       {error && (
         <Error className='text-xs'>
           <Icon iconId='error' />

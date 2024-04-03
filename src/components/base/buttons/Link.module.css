@@ -1,0 +1,27 @@
+.link {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  border-radius: 2px;
+  color: var(--primary-50);
+
+  &:hover {
+    color: var(--primary-70);
+  }
+
+  &:focus {
+    color: var(--primary-80);
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:disabled {
+    color: var(--neutral-30);
+  }
+}

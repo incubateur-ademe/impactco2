@@ -1,0 +1,25 @@
+.miniCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--neutral-50);
+  text-align: center;
+
+  @media screen and (max-width: 29.875rem) {
+    min-width: 125px;
+  }
+}
+
+.card {
+  padding: 0;
+  height: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.miniCardTitle {
+  color: var(--neutral-70);
+  font-weight: 700;
+}

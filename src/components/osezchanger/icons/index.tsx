@@ -34,6 +34,10 @@ export type IconId =
   | 'link'
   | 'infinity'
   | 'loading'
+  | 'tools'
+  | 'doc'
+  | 'menu'
+  | 'search'
 
 const InfinityIcon = dynamic(() => import('./infinity'))
 const Link = dynamic(() => import('./link'))
@@ -67,6 +71,10 @@ const Error = dynamic(() => import('./error'))
 const Star = dynamic(() => import('./star'))
 const FullStar = dynamic(() => import('./full-star'))
 const Loading = dynamic(() => import('./loading'))
+const Tools = dynamic(() => import('./tools'))
+const Doc = dynamic(() => import('./doc'))
+const Menu = dynamic(() => import('./menu'))
+const Search = dynamic(() => import('./search'))
 
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
@@ -134,6 +142,14 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return <FullStar />
     case 'loading':
       return <Loading />
+    case 'tools':
+      return <Tools />
+    case 'doc':
+      return <Doc />
+    case 'menu':
+      return <Menu />
+    case 'search':
+      return <Search />
     default:
       return null
   }

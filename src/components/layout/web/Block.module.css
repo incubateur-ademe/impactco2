@@ -1,0 +1,18 @@
+.block {
+  margin: 4rem auto 2rem auto;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.description {
+  color: var(--neutral-60);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}

@@ -1,20 +1,24 @@
+import classNames from 'classnames'
 import React, { ButtonHTMLAttributes } from 'react'
-import { Button as StyledButton } from './Button.styles'
-import { Button as LinkButton } from './Link.styles'
+import { Icon, IconId } from 'components/osezchanger/icons'
+import buttonStyles from './Button.module.css'
+import linkStyles from './Link.module.css'
 import { Priority } from './priority'
 
 const Button = ({
   asLink,
-  priority,
-  size,
+  className,
+  icon,
+  children,
   ...rest
-}: { size?: 'sm' | 'lg'; priority?: Priority } & ButtonHTMLAttributes<HTMLButtonElement> & {
+}: { size?: 'sm' | 'lg'; priority?: Priority; icon?: IconId } & ButtonHTMLAttributes<HTMLButtonElement> & {
     asLink?: boolean
   }) => {
-  return asLink ? (
-    <LinkButton $priority={priority} {...rest} />
-  ) : (
-    <StyledButton $size={size} $priority={priority} {...rest} />
+  return (
+    <button className={classNames(asLink ? linkStyles.link : buttonStyles.button, className)} {...rest}>
+      {icon && <Icon iconId={icon} />}
+      {children}
+    </button>
   )
 }
 

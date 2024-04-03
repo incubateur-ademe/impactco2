@@ -18,6 +18,7 @@ const csp = {
   ],
   'script-src': [
     "'self'",
+    "'unsafe-inline'",
     'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js',
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.js`,
   ],

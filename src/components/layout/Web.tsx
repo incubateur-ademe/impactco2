@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import BreadCrumb2, { BreadcrumbProps } from './web/BreadCrumb2'
 import Footer from './web/Footer'
-import HeaderSweet from './web/HeaderSweet'
+import Header from './web/Header'
 import Seo from './web/Seo'
 
 const Children = styled.main`
@@ -25,7 +25,7 @@ export default function Web({
   return (
     <>
       <Seo title={title} description={description} image={image} />
-      <HeaderSweet />
+      <Header />
       {breadcrumb && <BreadCrumb2 breadcrumb={breadcrumb} />}
       <Children id='contenu'>{children}</Children>
       <Footer />

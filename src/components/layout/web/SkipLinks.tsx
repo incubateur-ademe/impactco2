@@ -1,31 +1,27 @@
 import React from 'react'
-import { Container } from './SkipLinks.styles'
+import styles from './SkipLinks.module.css'
 
 const SkipLinks = () => {
   return (
-    <Container>
-      <div>
-        <div>
-          <ul>
-            <li>
-              <a className='visible-hidden' href='#contenu'>
-                Contenu
-              </a>
-            </li>
-            <li>
-              <a className='visible-hidden' href='#header-navigation'>
-                Menu
-              </a>
-            </li>
-            <li>
-              <a className='visible-hidden' href='#footer'>
-                Pied de page
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </Container>
+    <div className={styles.wrapper}>
+      <ul>
+        <li>
+          <a className={styles.hidden} href='#contenu'>
+            Contenu
+          </a>
+        </li>
+        <li>
+          <a className={styles.hidden} href='#header-navigation'>
+            Menu
+          </a>
+        </li>
+        <li>
+          <a className={styles.hidden} href='#footer'>
+            Pied de page
+          </a>
+        </li>
+      </ul>
+    </div>
   )
 }
 
