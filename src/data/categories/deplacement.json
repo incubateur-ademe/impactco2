@@ -4,7 +4,13 @@
     "name": "Avion",
     "slug": "avion",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voler", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voler",
+      "voyager"
+    ],
     "type": "plane",
     "emoji": "✈️",
     "category": 4,
@@ -95,7 +101,13 @@
     "empreinteId": 42760,
     "name": "TGV",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "train"
+    ],
     "slug": "tgv",
     "type": "rail",
     "emoji": "🚅",
@@ -126,7 +138,13 @@
     "empreinteId": 42756,
     "name": "Intercités",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "train"
+    ],
     "slug": "intercites",
     "type": "rail",
     "emoji": "🚈",
@@ -157,7 +175,13 @@
     "name": "Voiture",
     "subtitle": "Moteur thermique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "conduire",
+      "voyager"
+    ],
     "slug": "voiturethermique",
     "carpool": true,
     "type": "car",
@@ -186,7 +210,13 @@
     "name": "Voiture",
     "subtitle": "Moteur électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "conduire",
+      "voyager"
+    ],
     "slug": "voitureelectrique",
     "carpool": true,
     "type": "car",
@@ -215,7 +245,12 @@
     "id": 6,
     "name": "Autocar",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "autocar",
     "type": "car",
     "emoji": "🚐",
@@ -245,7 +280,14 @@
   {
     "id": 7,
     "name": "Vélo ou marche",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "marcher", "pedaler"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "marcher",
+      "pedaler"
+    ],
     "slug": "velo",
     "type": "foot",
     "emoji": "🚶‍♀️",
@@ -266,7 +308,13 @@
     "empreinteId": 28331,
     "name": "Vélo (ou trottinette) à assistance électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "pedaler"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager",
+      "pedaler"
+    ],
     "slug": "veloelectrique",
     "type": "foot",
     "emoji": "🚴",
@@ -299,7 +347,12 @@
     "name": "Bus",
     "subtitle": "Moteur thermique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "busthermique",
     "type": "car",
     "emoji": "🚌",
@@ -330,7 +383,12 @@
     "empreinteId": 42761,
     "name": "Tramway",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "tramway",
     "type": "rail",
     "emoji": "🚌",
@@ -361,7 +419,12 @@
     "empreinteId": 42757,
     "name": "Métro",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "rail"
+    ],
     "slug": "metro",
     "type": "rail",
     "emoji": "🚇",
@@ -392,7 +455,11 @@
     "empreinteId": 27992,
     "name": "Scooter ou moto légère",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer"
+    ],
     "slug": "scooter",
     "type": "car",
     "emoji": "🛵",
@@ -423,7 +490,11 @@
     "empreinteId": 27995,
     "name": "Moto",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer"
+    ],
     "slug": "moto",
     "type": "car",
     "emoji": "🏍️",
@@ -454,7 +525,13 @@
     "empreinteId": 42758,
     "name": "RER ou Transilien",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "train",
+      "rail"
+    ],
     "slug": "rer",
     "type": "rail",
     "emoji": "🚃",
@@ -486,7 +563,13 @@
     "empreinteId": 42759,
     "name": "TER",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "train",
+      "rail"
+    ],
     "slug": "ter",
     "type": "rail",
     "emoji": "🚈",
@@ -518,7 +601,12 @@
     "name": "Bus",
     "subtitle": "Moteur électrique",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "buselectrique",
     "type": "car",
     "emoji": "🚌",
@@ -551,7 +639,12 @@
     "name": "Bus",
     "subtitle": "GNV",
     "prefix": "km en ",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
+    "synonyms": [
+      "transport",
+      "déplacement",
+      "déplacer",
+      "voyager"
+    ],
     "slug": "busgnv",
     "type": "car",
     "emoji": "🚌",
@@ -576,31 +669,6 @@
     "meta": {
       "title": "Émission de CO₂e lors d'un trajet en bus GNV",
       "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
-    }
-  },
-  {
-    "id": 1000,
-    "prefix": "A/R ",
-    "name": "Paris - New-York",
-    "subtitle": "en avion",
-    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
-    "unit": "A/R",
-    "slug": "avion-pny",
-    "type": "plane",
-    "emoji": "🗽",
-    "contexted": true,
-    "category": 4,
-    "total": 1770,
-    "default": false,
-    "tile": false,
-    "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
-    "meta": {
-      "title": "Émission de CO₂e lors d'un trajet en bus GNV",
-      "description": "Découvrez l'impact CO₂e d'un trajet en bus GNV et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. "
-    },
-    "include": {
-      "pre": "Distance totale parcourue : 11600 km.",
-      "postNewLine": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse."
     }
   }
 ]

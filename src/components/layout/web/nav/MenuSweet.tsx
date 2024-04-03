@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 `
 const StyledEmoji = styled(Emoji)`
   font-size: 1.25rem;
-  margin: 0.25rem 0.25rem 0 0;
+  margin: 0 0.25rem 0 0;
 `
 
 export default function MenuSweet() {

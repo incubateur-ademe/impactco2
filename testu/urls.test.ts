@@ -22,9 +22,9 @@ describe('buildCurrentUrlFor', () => {
     expect(res).toEqual('https://example.com/livraison')
   })
 
-  test('may say that base URL is not defined', () => {
+  test('managed undefined', () => {
     process.env = { ...env, NEXT_PUBLIC_URL: undefined }
     const res = buildCurrentUrlFor('/livraison')
-    expect(res).toEqual('undefined/livraison')
+    expect(res).toEqual('https://impactco2.fr/livraison')
   })
 })

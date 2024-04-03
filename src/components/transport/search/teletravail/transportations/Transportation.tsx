@@ -4,6 +4,7 @@ import { DeplacementEquivalent } from 'types/equivalent'
 import { track } from 'utils/matomo'
 import useParamContext from 'components/providers/ParamProvider'
 import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 
 const Wrapper = styled.button<{ $active: boolean }>`
   background-color: ${(props) => (props.$active ? 'var(--primary-50)' : 'transparent')};
@@ -38,7 +39,7 @@ export default function Transportation({ transportation }: { transportation: Dep
       }}
       data-testid={`transport-${transportation.slug}`}
       $active={transport === transportation.slug}>
-      <Emoji>{transportation.emoji}</Emoji>
+      <EquivalentIcon equivalent={transportation} />
       {transportation.secondEmoji && (
         <Second>
           <Emoji>{transportation.secondEmoji}</Emoji>

@@ -1,4 +1,62 @@
 {
+  "avion-pny": {
+    "category": 13,
+    "value": 1770000,
+    "fr": "A/R paris - new-york (en avion)",
+    "en": "Round trip Paris - New-york (by plane)",
+    "de": "Rundreise Paris - New York (mit dem Flugzeug)",
+    "es": "Viaje de ida y vuelta París - Nueva York (en avión)",
+    "emoji": "🗽"
+  },
+  "tgv-paris-berlin": {
+    "category": 13,
+    "value": 7260,
+    "fr": "A/R paris - berlin (en tgv)",
+    "en": "Round trip Paris - Berlin (by train)",
+    "de": "Rundreise Paris - Berlin (mit dem Zug)",
+    "es": "Viaje de ida y vuelta París - Berlin (en tren)"
+  },
+  "tgv-paris-marseille": {
+    "category": 13,
+    "value": 4400,
+    "fr": "A/R paris - marseille (en tgv)",
+    "en": "Round trip Paris - Marseille (by train)",
+    "de": "Rundreise Paris - Marseill (mit dem Zug)",
+    "es": "Viaje de ida y vuelta París - Marseill (en tren)"
+  },
+  "voiture-lille-nimes": {
+    "category": 13,
+    "value": 410000,
+    "fr": "A/R lille - nîmes (en voiture thermique)",
+    "en": "Round trip Lille - Nîmes (by car)",
+    "de": "Rundreise Lille - Nîmes (mit dem Auto)",
+    "es": "Viaje de ida y vuelta Lille - Nîmes (en coche)"
+  },
+  "francais": {
+    "category": 13,
+    "value": 9300000,
+    "fr": "Pourcent[s] de l'empreinte carbone d'un citoyen français",
+    "en": "Percent[s] of a French citizen's carbon footprint",
+    "de": "Prozentualer Anteil des CO₂-Fußabdrucks eines Franzosen",
+    "es": "Porcentaje de la huella de carbono de un ciudadano francés",
+    "percentage": true
+  },
+  "game-of-thrones": {
+    "category": 13,
+    "value": 31.7,
+    "fr": "épisode[s] de game of thrones (en streaming)",
+    "en": "Game of Thrones episode[s] (streaming)",
+    "de": "Game of Thrones Folge[n] (Streaming)",
+    "es": "Episodio[s] de Game of Thrones (streaming)"
+  },
+  "friends": {
+    "category": 13,
+    "value": 7870,
+    "fr": "intégrale[s] de friends (en streaming)",
+    "en": "Complete Friends TV show (streaming)",
+    "de": "Komplette Friends-TV-Show (Streaming)",
+    "es": "Programa de TV completo de Friends (streaming)"
+  },
   "eaudurobinet": {
     "category": 3,
     "value": 0.132,
@@ -1414,7 +1472,7 @@
   },
   "veloelectrique": {
     "category": 4,
-    "value": 10.7,
+    "value": 10.950000000000001,
     "fr": "km en vélo (ou trottinette) à assistance électrique",
     "en": "km by electrically assisted bicycle (or scooter)",
     "de": "km mit dem E-Bike (oder E-Scooter)",
@@ -1423,7 +1481,7 @@
   },
   "busthermique": {
     "category": 4,
-    "value": 112.69999999999999,
+    "value": 113.2,
     "fr": "km en bus (moteur thermique)",
     "en": "km by bus (internal combustion engine)",
     "de": "km mit dem Bus (Verbrennungsmotor)",
@@ -1459,7 +1517,7 @@
   },
   "moto": {
     "category": 4,
-    "value": 192,
+    "value": 191.3,
     "fr": "km en moto",
     "en": "km by motorcycle",
     "de": "km mit dem Motorrad",
@@ -1495,21 +1553,12 @@
   },
   "busgnv": {
     "category": 4,
-    "value": 121.9,
+    "value": 121.7,
     "fr": "km en bus (gnv)",
     "en": "km by bus (natural gas vehicle)",
     "de": "km mit dem Bus (Gas)",
     "es": "km en autobús (GNV)",
     "emoji": "🚌"
-  },
-  "avion-pny": {
-    "category": 4,
-    "value": 1770000,
-    "fr": "A/R paris - new-york (en avion)",
-    "en": "Round trip Paris - New York (by plane)",
-    "de": "Rundreise Paris - New York (mit dem Flugzeug)",
-    "es": "Viaje de ida y vuelta París - Nueva York (en avión)",
-    "emoji": "🗽"
   },
   "chauffagegaz": {
     "category": 8,
@@ -1531,7 +1580,7 @@
   },
   "chauffageelectrique": {
     "category": 8,
-    "value": 7500,
+    "value": 11850,
     "fr": "année[s] de chauffage électrique par m²",
     "en": "year[s] of electric heating per m²",
     "de": "Jahre Elektroheizung pro m²",
@@ -1540,7 +1589,7 @@
   },
   "pompeachaleur": {
     "category": 8,
-    "value": 2500,
+    "value": 3950,
     "fr": "année[s] de chauffage avec une pompe à chaleur par m²",
     "en": "year[s] of heating with a heat pump per m²",
     "de": "Jahre Heizung mit Wärmepumpe pro m²",
