@@ -81,8 +81,11 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "fourelectrique" |
                 "fraise" |
                 "framboise" |
+                "francais" |
+                "friends" |
                 "fruitdelapassion" |
                 "telechargement" |
+                "game-of-thrones" |
                 "grenade" |
                 "groseille" |
                 "haricotvert" |
@@ -173,6 +176,8 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "television" |
                 "ter" |
                 "tgv" |
+                "tgv-paris-berlin" |
+                "tgv-paris-marseille" |
                 "thé" |
                 "tomate" |
                 "topinambour" |
@@ -184,7 +189,8 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "vin" |
                 "visioconference" |
                 "voitureelectrique" |
-                "voiturethermique"
+                "voiturethermique" |
+                "voiture-lille-nimes"
         )[];
         value: number;
         animated?: boolean | undefined;

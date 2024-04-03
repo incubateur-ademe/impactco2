@@ -1,6 +1,6 @@
 import React from 'react'
 import chauffage from 'data/categories/chauffage.json'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import Link from 'components/base/buttons/Link'
 import { Container, Hypothesis, StyledEmoji, Text, Value, Values } from './Data.styles'
 
@@ -29,7 +29,7 @@ const Data = () => {
         <div key={equivalent.slug}>
           <div>
             <StyledEmoji>
-              <Emoji>{equivalent.emoji}</Emoji>
+              <EquivalentIcon equivalent={equivalent} />
             </StyledEmoji>
             <b>{equivalent.name}</b>
           </div>

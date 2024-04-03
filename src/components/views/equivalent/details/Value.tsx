@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import { Section, SectionWideContent } from 'components/base/Section'
 
 const Wrapper = styled.div`
@@ -43,7 +43,6 @@ const StyledEmoji = styled.div`
   background-color: var(--neutral-00);
   border-radius: 5.25rem;
   display: flex;
-  font-size: 3rem;
   height: 4.5rem;
   justify-content: center;
   width: 4.5rem;
@@ -72,7 +71,7 @@ export default function Value({ equivalent, category }: { equivalent: ComputedEq
             </div>
           </Top>
           <StyledEmoji>
-            <Emoji>{equivalent.emoji}</Emoji>
+            <EquivalentIcon height={3} equivalent={equivalent} />
           </StyledEmoji>
         </SectionWideContent>
       </Section>

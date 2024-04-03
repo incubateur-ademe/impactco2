@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -61,7 +61,7 @@ export default function Tile(props) {
   return (
     <Wrapper>
       <EmojiWrapper>
-        <Emoji>{props.equivalent.emoji}</Emoji>
+        <EquivalentIcon equivalent={props.equivalent} />
       </EmojiWrapper>
       <Title>
         <Number data-testid={`tile-${props.equivalent.slug}-value`}>

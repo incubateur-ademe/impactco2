@@ -1,5 +1,24 @@
 [
   {
+    "id": 13,
+    "hide": true,
+    "name": "Cas pratiques",
+    "emoji": "🗽",
+    "slug": "caspratiques",
+    "header": "de cas pratiques",
+    "title": "Découvrez l'impact de cas pratique sur le climat",
+    "description": "Comparez l'empreinte carbone d'un aller retour Paris New york, ou de votre soirée netflix",
+    "equivalent": "cas pratique[s]",
+    "gender": "m",
+    "divider": 1,
+    "unit": "unité",
+    "include": "",
+    "meta": {
+      "title": "Cas Pratique",
+      "description": "Découvrez l'impact sur le climat d'un aller retour Paris New york, ou de votre soirée netflix"
+    }
+  },
+  {
     "id": 10,
     "name": "Usage numérique",
     "emoji": "✉️",

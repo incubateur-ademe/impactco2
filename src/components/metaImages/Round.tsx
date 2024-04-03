@@ -3,6 +3,7 @@ import { SimpleEquivalent } from 'types/equivalent'
 import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { buildCurrentUrlFor } from 'utils/urls'
 import { Icon } from 'components/osezchanger/icons'
 
 const equivalents = values as Record<string, SimpleEquivalent>
@@ -21,7 +22,7 @@ const Empty = ({
   main?: boolean
 }) => {
   const equivalent = comparison ? equivalents[comparison] : undefined
-  const comparisonValue = value ? value / (equivalent ? equivalent.value : 1000) : 0
+  const comparisonValue = value ? value / (equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1000) : 0
   const equivalentValue = Number.isFinite(comparisonValue) ? (
     formatNumber(comparisonValue).toLocaleString('fr-FR')
   ) : (
@@ -55,7 +56,13 @@ const Empty = ({
             fontSize: '7rem',
             marginBottom: '1rem',
           }}>
-          {equivalent.emoji}
+          {equivalent.emoji || (
+            <img
+              style={{ width: '4rem', height: '4rem' }}
+              src={buildCurrentUrlFor(`/icons/${comparison}.png`)}
+              alt=''
+            />
+          )}
         </div>
       )}
       {value && (

@@ -284,6 +284,10 @@
     "label": "Email"
   },
   {
+    "value": "francais",
+    "label": "Empreinte carbone d'un citoyen Français"
+  },
+  {
     "value": "enceintebluetooth",
     "label": "Enceinte bluetooth"
   },
@@ -294,6 +298,10 @@
   {
     "value": "epinard",
     "label": "Épinard"
+  },
+  {
+    "value": "game-of-thrones",
+    "label": "Épisode de Game of thrones (en streaming)"
   },
   {
     "value": "fenouil",
@@ -344,6 +352,10 @@
     "label": "Imprimante (Jet d'encre)"
   },
   {
+    "value": "friends",
+    "label": "Intégrale de Friends (en streaming)"
+  },
+  {
     "value": "intercites",
     "label": "Intercités"
   },
@@ -378,6 +390,10 @@
   {
     "value": "lavevaisselle",
     "label": "Lave-vaisselle"
+  },
+  {
+    "value": "voiture-lille-nimes",
+    "label": "Lille - Nîmes (en voiture thermique)"
   },
   {
     "value": "liseuse",
@@ -494,6 +510,14 @@
   {
     "value": "panais",
     "label": "Panais"
+  },
+  {
+    "value": "tgv-paris-berlin",
+    "label": "Paris - Berlin (en TGV)"
+  },
+  {
+    "value": "tgv-paris-marseille",
+    "label": "Paris - Marseille (en TGV)"
   },
   {
     "value": "avion-pny",
