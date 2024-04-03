@@ -46,7 +46,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('defi-empty-result')).not.toBeVisible()
     expect(screen.queryByTestId('defi-result-title')).toHaveTextContent('1 paire de chaussure neuve (+16,5kg de CO2e)')
     expect(screen.queryByTestId('defi-equivalent-tshirt-value')).toHaveTextContent('2,6')
-    expect(screen.queryByTestId('defi-equivalent-smartphone-value')).toHaveTextContent('0,4')
+    expect(screen.queryByTestId('defi-equivalent-smartphone-value')).toHaveTextContent('0,2')
     expect(screen.queryByTestId('defi-equivalent-vegetarian-value')).toHaveTextContent('32,4')
   })
 
@@ -114,7 +114,7 @@ describe('Osez Changer', () => {
       '3 paires de chaussures neuves (+49,5kg de CO2e)'
     )
     expect(screen.queryByTestId('defi-equivalent-tshirt-value')).toHaveTextContent('7,7')
-    expect(screen.queryByTestId('defi-equivalent-smartphone-value')).toHaveTextContent('1,3')
+    expect(screen.queryByTestId('defi-equivalent-smartphone-value')).toHaveTextContent('0,6')
     expect(screen.queryByTestId('defi-equivalent-vegetarian-value')).toHaveTextContent('97,1')
   })
 

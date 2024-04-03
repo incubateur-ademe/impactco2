@@ -12,16 +12,16 @@
     "label": "Ail"
   },
   {
+    "value": "alimentationordinateur",
+    "label": "Alimentation externe (pour ordinateur portable)"
+  },
+  {
+    "value": "alimentationsmartphone",
+    "label": "Alimentation externe (pour smartphone ou tablette)"
+  },
+  {
     "value": "ananas",
     "label": "Ananas"
-  },
-  {
-    "value": "appareilphotocompact",
-    "label": "Appareil photo (Compact)"
-  },
-  {
-    "value": "appareilphotoreflex",
-    "label": "Appareil photo (Reflex)"
   },
   {
     "value": "armoire",
@@ -68,10 +68,6 @@
     "label": "Banane"
   },
   {
-    "value": "barredeson",
-    "label": "Barre de son"
-  },
-  {
     "value": "betterave",
     "label": "Betterave"
   },
@@ -88,6 +84,10 @@
     "label": "Bouilloire"
   },
   {
+    "value": "box",
+    "label": "Box"
+  },
+  {
     "value": "brocoli",
     "label": "Brocoli"
   },
@@ -102,10 +102,6 @@
   {
     "value": "busthermique",
     "label": "Bus (Moteur thermique)"
-  },
-  {
-    "value": "cadrephotodigital",
-    "label": "Cadre photo digital"
   },
   {
     "value": "cafe",
@@ -140,6 +136,10 @@
     "label": "Carotte"
   },
   {
+    "value": "casquevr",
+    "label": "Casque de réalité virtuelle"
+  },
+  {
     "value": "cassis",
     "label": "Cassis"
   },
@@ -150,10 +150,6 @@
   {
     "value": "cerise",
     "label": "Cerise"
-  },
-  {
-    "value": "chainehifi",
-    "label": "Chaine hifi"
   },
   {
     "value": "chaiseenbois",
@@ -220,6 +216,10 @@
     "label": "Citron"
   },
   {
+    "value": "clefusb",
+    "label": "Clef usb"
+  },
+  {
     "value": "clementine",
     "label": "Clémentine"
   },
@@ -234,14 +234,6 @@
   {
     "value": "concombre",
     "label": "Concombre"
-  },
-  {
-    "value": "consoledesalon",
-    "label": "Console de salon"
-  },
-  {
-    "value": "consoleportable",
-    "label": "Console portable"
   },
   {
     "value": "courge",
@@ -260,6 +252,10 @@
     "label": "Datte"
   },
   {
+    "value": "disquedur",
+    "label": "Disque dur externe"
+  },
+  {
     "value": "eaudurobinet",
     "label": "Eau du robinet"
   },
@@ -272,12 +268,8 @@
     "label": "Échalote"
   },
   {
-    "value": "ecran215pouces",
-    "label": "Écran (21,5 pouces)"
-  },
-  {
-    "value": "ecran24pouces",
-    "label": "Écran (24 pouces)"
+    "value": "ecran",
+    "label": "Écran"
   },
   {
     "value": "email",
@@ -289,7 +281,7 @@
   },
   {
     "value": "enceintebluetooth",
-    "label": "Enceinte bluetooth"
+    "label": "Enceinte connectée"
   },
   {
     "value": "endive",
@@ -344,14 +336,6 @@
     "label": "Haricot vert (cru)"
   },
   {
-    "value": "homecinema",
-    "label": "Home cinéma"
-  },
-  {
-    "value": "imprimantejetdencre",
-    "label": "Imprimante (Jet d'encre)"
-  },
-  {
     "value": "friends",
     "label": "Intégrale de Friends (en streaming)"
   },
@@ -396,10 +380,6 @@
     "label": "Lille - Nîmes (en voiture thermique)"
   },
   {
-    "value": "liseuse",
-    "label": "Liseuse (Non rétro-éclairé)"
-  },
-  {
     "value": "lit",
     "label": "Lit (Cadre + sommier + matelas)"
   },
@@ -430,14 +410,6 @@
   {
     "value": "metro",
     "label": "Métro"
-  },
-  {
-    "value": "modemfibre",
-    "label": "Modem (Fibre)"
-  },
-  {
-    "value": "montreconnectee",
-    "label": "Montre connectée"
   },
   {
     "value": "moto",
@@ -480,12 +452,12 @@
     "label": "Orange"
   },
   {
-    "value": "ordinateurfixebureautique",
-    "label": "Ordinateur fixe sans écran (Bureautique)"
+    "value": "ordinateurfixeparticulier",
+    "label": "Ordinateur fixe sans écran (Particulier)"
   },
   {
-    "value": "ordinateurfixeperformance",
-    "label": "Ordinateur fixe sans écran (Performance)"
+    "value": "ordinateurfixeprofessionnel",
+    "label": "Ordinateur fixe sans écran (Professionnel)"
   },
   {
     "value": "ordinateurportable",
@@ -649,7 +621,7 @@
   },
   {
     "value": "smartphone",
-    "label": "Smartphone (> 5,5 pouces)"
+    "label": "Smartphone"
   },
   {
     "value": "soda",
@@ -685,19 +657,15 @@
   },
   {
     "value": "tabletteclassique",
-    "label": "Tablette (Classique)"
+    "label": "Tablette"
   },
   {
-    "value": "tablettemini",
-    "label": "Tablette (Mini)"
-  },
-  {
-    "value": "tablettedetachable",
-    "label": "Tablette détachable"
+    "value": "telephonebasique",
+    "label": "Téléphone basique"
   },
   {
     "value": "television",
-    "label": "Télévision  (40 - 49 pouces)"
+    "label": "Télévision "
   },
   {
     "value": "ter",

@@ -158,7 +158,7 @@ const buildFromEmpreinte = async (key: string) => {
   }
   const existingEquivalents = existingEquivalentsByCategory[key]
   if (!existingEquivalents) {
-    console.info('Type should be "electomenager", "habillement", "mobilier", "repas" or "numerique"')
+    console.info('Type should be "electomenager", "habillement", "mobilier" or "repas"')
     process.exit(1)
   }
 
@@ -183,6 +183,4 @@ if (process.argv[2]) {
   buildFromEmpreinte('habillement')
   buildFromEmpreinte('mobilier')
   buildFromEmpreinte('repas')
-  buildFromEmpreinte('divers')
-  buildFromEmpreinte('numerique')
 }

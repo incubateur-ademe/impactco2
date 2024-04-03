@@ -1,35 +1,20 @@
 import React, { ReactNode } from 'react'
 import LiseuseBookComparator from 'components/numerique/equivalent/LiseuseBookComparator'
-import Smartphone from './Smartphone'
 import Visualization from './Visualization'
 
 const visualizations: Record<string, ReactNode[]> = {
   smartphone: [
     <Visualization types={['smartphone', 'repasavecduboeuf', 'tshirtencoton']} key='SmartphoneGeneral' />,
     <Visualization types={['television', 'ordinateurportable', 'smartphone']} key='SmartphoneCategory' />,
-    <Smartphone key='Smartphone' />,
   ],
   ordinateurportable: [
     <Visualization types={['television', 'ordinateurportable', 'smartphone']} key='SmartphoneCategory' />,
   ],
   television: [<Visualization types={['television', 'ordinateurportable', 'smartphone']} key='SmartphoneCategory' />],
-  montreconnectee: [
-    <Visualization types={['montreconnectee', 'repasavecduboeuf', 'tshirtencoton']} key='Montre' />,
-    <Visualization types={['ordinateurportable', 'smartphone', 'montreconnectee']} key='MontreCategory' />,
-  ],
-  imprimantejetdencre: [
-    <Visualization types={['ordinateurportable', 'imprimantejetdencre', 'smartphone']} key='ImprimanteCategory' />,
-  ],
-  consoledesalon: [
+  ordinateurfixeparticulier: [
     <Visualization
-      types={['ordinateurfixeperformance', 'consoledesalon', 'consoleportable']}
-      key='ConsoleSalonCategory'
-    />,
-  ],
-  ordinateurfixe: [
-    <Visualization
-      types={['ordinateurfixe', 'ordinateurportable', 'tabletteclassique']}
-      key='OrdinateurFixeCategory'
+      types={['ordinateurfixeparticulier', 'ordinateurportable', 'tabletteclassique']}
+      key='ordinateurfixeparticulierCategory'
     />,
   ],
   repasvegetalien: [
