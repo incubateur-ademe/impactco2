@@ -11,7 +11,10 @@ export async function getStaticProps() {
 
 const FAQPage = ({ recordMap }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Web title={title} description='Le “Détecteur CO₂” : un nouvel outil de l’ADEME pour les médias et entreprises'>
+    <Web
+      title={title}
+      description='Le “Détecteur CO₂” : un nouvel outil de l’ADEME pour les médias et entreprises'
+      image='/meta/detecteur-co2.png'>
       <Notion title={title} recordMap={recordMap} />
     </Web>
   )
