@@ -381,11 +381,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       return
     }
 
-    if (router.query.language) {
-      setLanguage(router.query.language === 'en' ? 'en' : 'fr')
-    } else {
-      setLanguage('fr')
-    }
+    setLanguage(router.query.language === 'en' ? 'en' : 'fr')
 
     if (router.query.value) {
       const value = Number(router.query.value as string)

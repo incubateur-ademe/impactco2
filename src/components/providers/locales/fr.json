@@ -1,6 +1,51 @@
 {
+  "clipboard": {
+    "copier": "Copier",
+    "copie": "Copié",
+    "information-1": "Cette balise de code vous permet d'afficher le simulateur à l'intérieur d'une page de votre site internet.",
+    "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
+  },
+  "overscreen": {
+    "link": "Version complète",
+    "share": "Partager",
+    "integrate": "Intégrer",
+    "share-challenge": "Partager le challenge",
+    "integrate-challenge": "Intégrer le challenge",
+    "hypothesis": "Nos hypothèses de calcul",
+    "download": "Télécharger",
+    "m2": "Afficher une surface personnalisée",
+    "km": "Afficher une distance personnalisée",
+    "month": "Personnaliser le mois à afficher",
+    "language": {
+      "label": "Langue",
+      "fr": "Français",
+      "en": "English"
+    },
+    "theme": {
+      "label": "Mode d'affichage",
+      "clair": "Clair",
+      "sombre": "Sombre"
+    },
+    "itineraire": {
+      "label": "Personnaliser l'itinéraire",
+      "start": "Départ",
+      "end": "Arrivée"
+    },
+    "teletravail": {
+      "label": "Personnaliser les adresses",
+      "start": "Domicile",
+      "end": "Bureau"
+    },
+    "transport": {
+      "onglet": "Onglet à partager",
+      "onglet-hint": "Sélectionnez l'onglet que vous souhaitez partager",
+      "onglets": "Onglet à intégrer",
+      "onglets-hint": "Sélectionnez les onglets que vous souhaitez intégrer à l'iframe"
+    }
+  },
   "modal": {
     "close": "Fermer",
+    "cancel": "Annuler",
     "co2": {
       "understand": "Comprendre",
       "equivalent": "l'équivalent CO₂ (CO₂e)",

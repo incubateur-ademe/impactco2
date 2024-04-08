@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom'
 import { act, fireEvent, screen } from '@testing-library/react'
-import { render } from '@testing-library/react'
+import { renderWithWrapper } from 'test-utils/render-with-wrapper'
 import Defi from 'components/osezchanger/Defi'
 import OsezChanger from 'components/osezchanger/OsezChanger'
 
 describe('Osez Changer', () => {
   it('Should display correct tag when items are filled', () => {
-    render(<OsezChanger />)
+    renderWithWrapper(<OsezChanger />)
 
     expect(screen.queryByTestId('defi')).toBeNull()
     act(() => {
@@ -51,7 +51,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should render hypothesis modal', () => {
-    render(<OsezChanger />)
+    renderWithWrapper(<OsezChanger />)
     act(() => {
       screen.getByTestId('osez-changer-start-button').click()
     })
@@ -69,7 +69,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should render share modal', () => {
-    render(<OsezChanger />)
+    renderWithWrapper(<OsezChanger />)
     act(() => {
       screen.getByTestId('osez-changer-start-button').click()
     })
@@ -87,7 +87,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should render integration modal', () => {
-    render(<OsezChanger />)
+    renderWithWrapper(<OsezChanger />)
     act(() => {
       screen.getByTestId('osez-changer-start-button').click()
     })
@@ -105,7 +105,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should calculate co2e value based on input', () => {
-    render(<Defi setOverScreen={() => console.log} />)
+    renderWithWrapper(<Defi setOverScreen={() => console.log} />)
     act(() => {
       fireEvent.change(screen.getByTestId('question-neuf-input'), { target: { value: '3' } })
     })
@@ -119,7 +119,7 @@ describe('Osez Changer', () => {
   })
 
   it('Should calculate shoes value based on input', () => {
-    render(<Defi setOverScreen={() => console.log} />)
+    renderWithWrapper(<Defi setOverScreen={() => console.log} />)
 
     act(() => {
       fireEvent.change(screen.getByTestId('question-avis-input'), { target: { value: '5' } })

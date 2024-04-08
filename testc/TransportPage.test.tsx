@@ -87,7 +87,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     })
 
     await expect(screen.getByTestId('clipboard-box')).toHaveTextContent(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=10"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&language=fr&km=10"></script>'
     )
   })
 
@@ -121,7 +121,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     })
 
     await expect(screen.getByTestId('clipboard-box')).toHaveTextContent(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=30"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&language=fr&km=30"></script>'
     )
   })
 
@@ -150,21 +150,21 @@ describe('TransportPage - affiche la page itinéraire', () => {
 
     await userEvent.type(screen.getByTestId('custom-param-km-input'), '30')
     await expect(screen.getByTestId('clipboard-box')).toHaveTextContent(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=1030"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&language=fr&km=1030"></script>'
     )
 
     act(() => {
       screen.getByTestId('custom-param-km-checkbox').click()
     })
     await expect(screen.getByTestId('clipboard-box')).toHaveTextContent(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&language=fr"></script>'
     )
 
     act(() => {
       screen.getByTestId('custom-param-km-checkbox').click()
     })
     await expect(screen.getByTestId('clipboard-box')).toHaveTextContent(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=1030"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=distance,itineraire,teletravail&language=fr&km=1030"></script>'
     )
 
     act(() => {
@@ -172,7 +172,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     })
     await expect(screen.queryByTestId('custom-param-km-input')).toBeNull()
     await expect(screen.getByTestId('clipboard-box')).toHaveTextContent(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=itineraire,teletravail"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&tabs=itineraire,teletravail&language=fr"></script>'
     )
   })
 })

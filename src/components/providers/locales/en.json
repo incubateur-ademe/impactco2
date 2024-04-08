@@ -1,6 +1,51 @@
 {
+  "clipboard": {
+    "copier": "Copy",
+    "copie": "Copied",
+    "information-1": "This code anchor allows you to display the simulator inside any page of your website.",
+    "information-2": "The simulator will be automatically updated with any new features."
+  },
+  "overscreen": {
+    "link": "Full version",
+    "share": "Share",
+    "integrate": "Integrate",
+    "share-challenge": "Share challenge",
+    "integrate-challenge": "Integrate challenge",
+    "hypothesis": "Our hypothesis",
+    "download": "Download",
+    "m2": "Display a custom surface",
+    "km": "Display a custom distance",
+    "month": "Display a custom month",
+    "theme": {
+      "label": "Display mode",
+      "clair": "Light",
+      "sombre": "Dark"
+    },
+    "language": {
+      "label": "Language",
+      "fr": "Français",
+      "en": "English"
+    },
+    "itineraire": {
+      "label": "Customize route",
+      "start": "From",
+      "end": "To"
+    },
+    "teletravail": {
+      "label": "Customize addresses",
+      "start": "Home",
+      "end": "Office"
+    },
+    "transport": {
+      "onglet": "Tab to share",
+      "onglet-hint": "Select tab you want to share",
+      "onglets": "Tabs to integrate",
+      "onglets-hint": "Select tabs you want to see in your iframe"
+    }
+  },
   "modal": {
     "close": "Close",
+    "cancel": "Cancel",
     "co2": {
       "understand": "Understand",
       "equivalent": "CO₂ Equivalent (CO₂e)",
@@ -30,12 +75,12 @@
       "carpooler": "carpooler"
     },
     "itineraire": {
-      "start": "Start",
-      "end": "End"
+      "start": "From",
+      "end": "To"
     },
     "teletravail": {
       "start": "Home",
-      "end": "Work",
+      "end": "Office",
       "details": "See and adjust details calculation",
       "choose": "Choose your transportation mode",
       "premise": "On premise",
@@ -52,7 +97,7 @@
       "precise": "Precise or calculate my carbon footprint"
     },
     "search": {
-      "header": "Discover the amount of CO₂ emissions you produce",
+      "header": "Discover the amount of CO₂ emissions you emit",
       "header-par-personne": "per person",
       "header-itineraire": "for this route",
       "header-teletravail": "Discover the amount of CO₂ emissions you save (annually) by working from home",
@@ -84,7 +129,7 @@
     "equivalent-boisson": "beverage[s]",
     "legend": {
       "construction": "construction",
-      "usage": "usage"
+      "usage": "use"
     },
     "bottom": {
       "before": "Values expressed in kg",
@@ -93,7 +138,7 @@
       "include-usagenumerique": "",
       "include-livraison": "",
       "include-chauffage": "per m² per year.",
-      "include-transport": "per person in France. Includes direct emissions, vehicle construction (manufacturing, maintenance, and end of life), and production and distribution of fuel and electricity. Infrastructure construction (roads, rails, airports, etc.) is not included.",
+      "include-transport": "per person in France. Including direct emissions, vehicle construction (manufacturing, maintenance, and end of life), and production and distribution of fuel and electricity. Infrastructure construction (roads, rails, airports, etc.) is not included.",
       "include-fruitsetlegumes": "per kg of seasonal fruits and vegetables",
       "include-numerique": "per product including manufacturing, distribution, and usage",
       "include-repas": "per meal including manufacturing, distribution, and consumption.",

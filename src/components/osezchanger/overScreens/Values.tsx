@@ -7,7 +7,7 @@ import { OverScreenOsezChanger } from './Type'
 
 export const overScreenOsezChangerValues: Record<OverScreenOsezChanger, OverScreenInfo> = {
   hypothesis: {
-    title: 'Nos hypothèses de calcul',
+    title: 'hypothesis',
     children: <Hypotesis />,
     cancel: (onClose) => (
       <GhostButton colored icon='arrow-left' onClick={onClose} size='sm'>
@@ -16,11 +16,11 @@ export const overScreenOsezChangerValues: Record<OverScreenOsezChanger, OverScre
     ),
   },
   share: {
-    title: 'Partager le challenge',
+    title: 'share-challenge',
     children: <Share />,
   },
   integration: {
-    title: 'Intégrer le challenge',
+    title: 'integrate-challenge',
     children: <Integration />,
   },
 }

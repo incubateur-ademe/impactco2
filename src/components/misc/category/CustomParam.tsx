@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
@@ -12,8 +13,7 @@ import { Container, InputContainer, InputSuffix, Inputs, Param, Params, StyledIn
 const configs: Record<
   string,
   {
-    label: string
-    inputLabel: string
+    inputLabel?: string
     type: 'number' | 'text' | 'select'
     unit?: string
     min?: number
@@ -22,7 +22,6 @@ const configs: Record<
   }
 > = {
   m2: {
-    label: 'Afficher une surface personnalisée',
     type: 'number',
     unit: 'm²',
     min: 1,
@@ -30,7 +29,6 @@ const configs: Record<
     inputLabel: 'Surface',
   },
   km: {
-    label: 'Afficher une distance personnalisée',
     type: 'number',
     unit: 'km',
     min: 1,
@@ -38,30 +36,29 @@ const configs: Record<
     inputLabel: 'Distance',
   },
   month: {
-    label: 'Personnaliser le mois à afficher',
     type: 'select',
     options: monthsOptions,
     inputLabel: 'Mois',
   },
   theme: {
-    label: "Mode d'affichage",
     type: 'select',
     options: [
-      { value: 'default', label: 'Clair' },
-      { value: 'night', label: 'Sombre' },
+      { value: 'default', label: 'clair' },
+      { value: 'night', label: 'sombre' },
     ],
-    inputLabel: 'Mois',
+  },
+  language: {
+    type: 'select',
+    options: [
+      { value: 'fr', label: 'fr' },
+      { value: 'en', label: 'en' },
+    ],
   },
 }
 
 const arrayConfigs: Record<string, string> = {
   situation: '[ACTION] ma propre simulation',
   comparateur: '[ACTION] ma propre comparaison',
-}
-
-const addressConfigs: Record<string, { label: string; start: string; end: string }> = {
-  itineraire: { label: "Personnaliser l'itinéraire", start: 'Départ', end: 'Arrivée' },
-  teletravail: { label: 'Personnaliser les adresses', start: 'Domicile', end: 'Bureau' },
 }
 
 export type CustomParamValue =
@@ -90,6 +87,7 @@ const CustomParam = ({
   setVisible?: (visbile: boolean) => void
   integration?: boolean
 }) => {
+  const t = useTranslations('overscreen')
   if ('setter' in param) {
     const config = configs[slug]
     return (
@@ -99,7 +97,7 @@ const CustomParam = ({
             color='secondary'
             checked={visible}
             setChecked={setVisible}
-            label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
+            label={t(slug)}
             data-testid={`custom-param-${slug}-checkbox`}
           />
         )}
@@ -107,7 +105,7 @@ const CustomParam = ({
           <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>{config.inputLabel}</HiddenLabel>
           {config.options ? (
             <Select
-              label={setVisible ? '' : config.label}
+              label={setVisible ? '' : t(`${slug}.label`)}
               required
               inline={!setVisible}
               id={slug}
@@ -121,7 +119,7 @@ const CustomParam = ({
               data-testid={`custom-param-${slug}-select`}>
               {config.options.map((option) => (
                 <option value={option.value} key={option.value}>
-                  {option.label}
+                  {t(`${slug}.${option.label}`)}
                 </option>
               ))}
             </Select>
@@ -162,21 +160,15 @@ const CustomParam = ({
   }
 
   if ('start' in param) {
-    const config = addressConfigs[slug]
     return (
       <Container>
         {setVisible && (
-          <CheckboxInput
-            color='secondary'
-            checked={visible}
-            setChecked={setVisible}
-            label={config.label.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
-          />
+          <CheckboxInput color='secondary' checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} />
         )}
         <Inputs>
           <AddressInput
             id={`${slug}-start`}
-            label={config.start}
+            label={t(`${slug}.start`)}
             required
             disabled={!visible}
             color='secondary'
@@ -188,7 +180,7 @@ const CustomParam = ({
           />
           <AddressInput
             id={`${slug}-end`}
-            label={config.end}
+            label={t(`${slug}.end`)}
             required
             disabled={!visible}
             color='secondary'
