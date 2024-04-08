@@ -15,21 +15,21 @@ const Home = () => {
         <h1 className={styles.title}>Les bons outils pour communiquer sur l’impact carbone</h1>
         <ToolCards>
           <ToolCard
-            image='/images/tools-comparateur.png'
+            image='/images/tools-comparateur.svg'
             title='Comparateur'
             description='Le bon outil pour obtenir les bons ordres de grandeur'
             link='/comparateur'
             linkLabel='Visualiser'
           />
           <ToolCard
-            image='/images/tools-transports.png'
+            image='/images/tools-transports.svg'
             title='Transports'
             description='Calculer l’impact carbone des moyens de transport'
             link='/transport'
             linkLabel='Essayer'
           />
           <ToolCard
-            image='/images/tools-chauffage.png'
+            image='/images/tools-chauffage.svg'
             title='Chauffage'
             description='Situer l’empreinte carbone des modes de chauffage'
             link='/chauffage'
@@ -37,15 +37,15 @@ const Home = () => {
           />
         </ToolCards>
         <div className={styles.link}>
-          <Link href='/outils'>Voir tout les outils</Link>
+          <Link href='/outils'>Voir tous les outils</Link>
         </div>
       </Block>
       <Block title='Le bon format' description='Pour votre prochain article ou post, votre site ou appli.'>
         <div className={styles.miniCards}>
-          <MiniCard image='/images/home-iframe.png' title='Un iframe' description='dans votre article' />
-          <MiniCard image='/images/home-image.png' title='Une image' description='dans votre post' />
-          <MiniCard image='/images/home-link.png' title='Un lien' description='sur votre site web' />
-          <MiniCard image='/images/home-api.png' title='Une API' description='pour votre appli' />
+          <MiniCard image='/images/home-iframe.svg' title='Un iframe' description='dans votre article' />
+          <MiniCard image='/images/home-image.svg' title='Une image' description='dans votre post' />
+          <MiniCard image='/images/home-link.svg' title='Un lien' description='sur votre site web' />
+          <MiniCard image='/images/home-api.svg' title='Une API' description='pour votre appli' />
         </div>
       </Block>
       <Block

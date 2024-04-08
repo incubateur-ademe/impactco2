@@ -16,7 +16,9 @@ export default function Footer() {
         <div className={styles.internalContainer}>
           <div className={styles.footerExplain}>
             <Logo />
-            <div>Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.</div>
+            <div className='text-sm'>
+              Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.
+            </div>
             <Link
               className={styles.followNews}
               href='https://fr.linkedin.com/showcase/accelerateurdelatransitionecologique-ademe/'

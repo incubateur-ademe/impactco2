@@ -5,18 +5,27 @@
   gap: 0.5rem;
   color: var(--neutral-50);
   text-align: center;
-
-  @media screen and (max-width: 29.875rem) {
-    min-width: 125px;
-  }
 }
 
 .card {
-  padding: 0;
-  height: 112px;
+  padding: 0.75rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    width: 5.5rem;
+    height: auto;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    padding: 0.325rem;
+    min-width: 150px;
+
+    img {
+      width: 4.5rem;
+    }
+  }
 }
 
 .miniCardTitle {

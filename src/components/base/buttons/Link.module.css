@@ -1,4 +1,6 @@
 .link {
+  display: flex;
+  align-items: center;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -6,6 +8,7 @@
   text-decoration: underline;
   border-radius: 2px;
   color: var(--primary-50);
+  font-weight: 500;
 
   &:hover {
     color: var(--primary-70);

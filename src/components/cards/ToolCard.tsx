@@ -26,9 +26,11 @@ const ToolCard = ({
         [styles.horizontalCard]: horizontal,
       })}>
       <Image src={image} width={220} height={180} alt='' />
-      <div>
-        <div className='title-h4'>{title}</div>
-        <div>{description}</div>
+      <div className={styles.content}>
+        <div>
+          <div className={styles.title}>{title}</div>
+          <div>{description}</div>
+        </div>
         <div className={styles.link}>
           {linkLabel}
           <div className={styles.arrow}>

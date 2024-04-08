@@ -1,6 +1,6 @@
 .container {
   margin-top: 7.5rem;
-  padding: 5rem 1.5rem 7.625rem 1.5rem;
+  padding: 5rem 0 7.625rem 0;
   display: flex;
   justify-content: center;
   border-top: 2px solid var(--primary-30);
@@ -9,6 +9,7 @@
 }
 
 .card {
+  width: 100%;
   border-radius: 16px;
   border: 2px solid var(--primary-30);
   background: var(--neutral-00);
@@ -21,7 +22,7 @@
   padding: 2.5rem;
 
   a {
-    min-width: 197px;
+    min-width: 213px;
   }
 
   @media screen and (max-width: 48rem) {

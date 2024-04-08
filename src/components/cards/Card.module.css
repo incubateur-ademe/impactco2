@@ -2,6 +2,10 @@
   border-radius: 12px;
   border: 2px solid var(--neutral-20);
   padding: 1.5rem;
+
+  @media screen and (max-width: 29.875rem) {
+    padding: 1rem;
+  }
 }
 
 .colored {

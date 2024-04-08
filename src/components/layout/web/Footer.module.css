@@ -14,7 +14,7 @@
 
 .header {
   position: absolute;
-  border-radius: 200px;
+  border-radius: 12.5rem 12.5rem 0 0;
   background-color: var(--neutral-00);
   border: 2px solid var(--primary-30);
   width: 308px;
@@ -101,7 +101,9 @@
 }
 
 .linkTitle {
-  margin: 1.25rem 0;
+  margin: 1.25rem 0 1.75rem 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 700;
   color: var(--neutral-80);
 }
@@ -124,4 +126,9 @@
     padding-right: 0.75rem;
     border-right: 1px solid var(--neutral-20);
   }
+}
+
+.followNews {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }

@@ -13,20 +13,20 @@ const Suggestion = ({
 }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
-        <div>
-          <span className='title-h6'>
-            <b>Un avis, une suggestion ?</b>
-          </span>
+      <div className='main-container'>
+        <div className={styles.card}>
           <div>
-            Vos retours sont précieux pour améliorer le site Impact CO<sub>2</sub>.
+            <b className='title-h6'>Un avis, une suggestion ?</b>
+            <div>
+              Vos retours sont précieux pour améliorer le site Impact CO<sub>2</sub>.
+            </div>
           </div>
+          <Link
+            asButton
+            href={`/suggestion?${from ? `from=${from}&` : ''}fromLabel=${fromLabel}&simulatorName=${simulatorName}`}>
+            Faire une suggestion
+          </Link>
         </div>
-        <Link
-          asButton
-          href={`/suggestion?${from ? `from=${from}&` : ''}fromLabel=${fromLabel}&simulatorName=${simulatorName}`}>
-          Faire une suggestion
-        </Link>
       </div>
     </div>
   )

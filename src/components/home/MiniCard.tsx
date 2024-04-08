@@ -9,7 +9,9 @@ const MiniCard = ({ image, title, description }: { image: string; title: string;
       <Card colored className={styles.card}>
         <Image src={image} width={88} height={88} alt='' />
       </Card>
-      <div className={styles.miniCardTitle}>{title}</div> {description}
+      <div>
+        <div className={styles.miniCardTitle}>{title}</div> {description}
+      </div>
     </div>
   )
 }
