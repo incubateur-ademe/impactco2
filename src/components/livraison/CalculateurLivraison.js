@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import React, { useEffect, useMemo, useState } from 'react'
 import Switch from 'react-switch'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
 import useScreenshot from 'hooks/useScreenshot'
 import useParamContext from 'components/providers/ParamProvider'
@@ -89,7 +90,10 @@ export default function CalculateurLivraison(props) {
               <Button
                 priority='secondary'
                 size='sm'
-                onClick={() => setSocialModal(true)}
+                onClick={() => {
+                  track('Livraison', 'Partager', 'livraison_partager')
+                  setSocialModal(true)
+                }}
                 className='noscreenshot'
                 id='shareUp'
                 aria-label='Partarger'>
@@ -104,7 +108,10 @@ export default function CalculateurLivraison(props) {
               <Button
                 priority='secondary'
                 size='sm'
-                onClick={() => setLivraisonModal(true)}
+                onClick={() => {
+                  track('Livraison', 'Integrer', 'livraison_integrer')
+                  setLivraisonModal(true)
+                }}
                 className='noscreenshot'
                 aria-label='Intégrer'>
                 <svg width='16px' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 16'>
@@ -144,7 +151,10 @@ export default function CalculateurLivraison(props) {
                   <Switch
                     className='toggle'
                     checked={isHabit}
-                    onChange={() => setIsHabit(!isHabit)}
+                    onChange={() => {
+                      track('Livraison', 'Trajet', !isHabit)
+                      setIsHabit(!isHabit)
+                    }}
                     offColor='var(--neutral-00)'
                     onColor='var(--primary-50)'
                     aria-label='Changer de thème'
@@ -182,7 +192,10 @@ export default function CalculateurLivraison(props) {
                   <Switch
                     className='toggle'
                     checked={isPlane}
-                    onChange={() => setIsPlane(!isPlane)}
+                    onChange={() => {
+                      track('Livraison', 'Avion', !isPlane)
+                      setIsPlane(!isPlane)
+                    }}
                     offColor='var(--neutral-00)'
                     onColor='var(--primary-50)'
                     aria-label='Changer de thème'
