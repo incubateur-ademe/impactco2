@@ -98,7 +98,6 @@ const Detector = ({ impact }: { impact: string }) => {
   }, [ref, observed])
 
   useEffect(() => {
-    console.log(observed, entry?.isIntersecting)
     if (!observed && entry && entry.isIntersecting) {
       setObserved(true)
       track('Detecteur carbone', 'View', window.location.href)
