@@ -32,7 +32,7 @@ export default function Iframe({ children, noLogo }: { children: ReactNode; noLo
     const observer = new IntersectionObserver(([entry]) => setEntry(entry))
     observer.observe(node)
     return () => observer.disconnect()
-  }, [ref, observed])
+  }, [ref])
 
   useEffect(() => {
     if (!observed && entry && entry.isIntersecting) {
