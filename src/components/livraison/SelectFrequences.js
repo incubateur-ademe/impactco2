@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import Select from 'components/base/Select'
 import { frequences } from './data.js'
 
@@ -18,6 +19,7 @@ export default function SelectFrequences(props) {
     <>
       <StyledSelect
         onChange={(e) => {
+          track('Livraison', 'Frequence', e.value)
           props.changeFrequence && props.changeFrequence(frequences.find((frequence) => frequence.uid === e.value))
         }}
         value={props.value}

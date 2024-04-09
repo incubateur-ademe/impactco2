@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
 
 export default function OptionalTraj(props) {
@@ -14,7 +15,10 @@ export default function OptionalTraj(props) {
               type='number'
               data-testid='kms'
               value={props.km}
-              onChange={(e) => props.changeKm(e.target.value)}
+              onChange={(e) => {
+                track('Livraison', 'Distance', e.target.value)
+                props.changeKm(e.target.value)
+              }}
               min='0'
               step='1'
             />

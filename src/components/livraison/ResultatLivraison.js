@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
 import Button from 'components/base/buttons/Button'
 import DetailLivraisonModal from 'components/modals/DetailLivraisonModal'
@@ -42,7 +43,12 @@ export default function ResultatLivraison(props) {
           <div className='item5' />
           <div className='item6'>
             <UnderstandLink>
-              <Button asLink onClick={() => setOpenModal(true)}>
+              <Button
+                asLink
+                onClick={() => {
+                  track('Livraison', 'Hypotheses', 'livraison_hypotheses')
+                  setOpenModal(true)
+                }}>
                 Comprendre le calcul
               </Button>
             </UnderstandLink>

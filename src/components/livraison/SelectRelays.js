@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
 import Select from 'components/base/Select'
 import { relays } from './data.js'
@@ -32,6 +33,7 @@ export default function SelectRelays(props) {
     <>
       <StyledSelect
         onChange={(e) => {
+          track('Livraison', 'Transport', e.value)
           props.changeRelay && props.changeRelay(relays.find((relay) => relay.uid === e.value))
         }}
         value={props.value}
