@@ -88,17 +88,17 @@ const Detector = ({ impact }: { impact: string }) => {
   useEffect(() => {
     const node = ref.current // DOM Ref
     const hasIOSupport = !!window.IntersectionObserver
-    const frozen = entry?.isIntersecting || observed
-    if (!hasIOSupport || frozen || !node) {
+    if (!hasIOSupport || !node) {
       return
     }
 
     const observer = new IntersectionObserver(([entry]) => setEntry(entry))
     observer.observe(node)
     return () => observer.disconnect()
-  }, [ref, setEntry, entry, observed])
+  }, [ref, observed])
 
   useEffect(() => {
+    console.log(observed, entry?.isIntersecting)
     if (!observed && entry && entry.isIntersecting) {
       setObserved(true)
       track('Detecteur carbone', 'View', window.location.href)
