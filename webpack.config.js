@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+//const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const path = require('path')
 const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -82,6 +84,8 @@ module.exports = [
         MATOMO_SITE_URL: `'${process.env.NEXT_PUBLIC_MATOMO_SITE_URL || ''}'`,
         MATOMO_SITE_ID: `'${process.env.NEXT_PUBLIC_MATOMO_SITE_ID || ''}'`,
       }),
+      //new BundleAnalyzerPlugin(),
+      //new StatoscopeWebpackPlugin(),
     ],
   },
   {
