@@ -33,7 +33,7 @@ const ColumnEquivalent = ({
             {unit} CO<sub>2</sub>e
           </div>
         </div>
-        <Logo value={value} right />
+        <Logo value={value * 1000} right />
       </div>
       <div className={baseStyles.rightColumn}>
         <div className={baseStyles.equalColumn}>

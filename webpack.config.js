@@ -93,6 +93,7 @@ module.exports = [
     mode: 'production',
     entry: './src/npm/react/index.ts',
     output: {
+      publicPath: '',
       filename: 'index.js',
       path: path.resolve(__dirname, 'npm', 'react', 'dist'),
       libraryTarget: 'commonjs',

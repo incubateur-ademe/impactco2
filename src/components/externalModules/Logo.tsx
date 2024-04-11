@@ -15,7 +15,7 @@ const Logo = ({
 }) => {
   return (
     <a
-      href={url || `https://impactco2.fr/comparateur?value=${value}`}
+      href={url || `https://impactco2.fr/comparateur?value=${value / 1000}`}
       onClick={onClick}
       className={classNames(right ? styles.reverseLogo : styles.logo)}
       target='_blank'

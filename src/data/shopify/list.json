@@ -269,7 +269,7 @@
   },
   {
     "value": "ecran",
-    "label": "Écran"
+    "label": "Écran d'ordinateur"
   },
   {
     "value": "email",
@@ -453,11 +453,11 @@
   },
   {
     "value": "ordinateurfixeparticulier",
-    "label": "Ordinateur fixe sans écran (Particulier)"
+    "label": "Ordinateur fixe sans écran (particulier)"
   },
   {
     "value": "ordinateurfixeprofessionnel",
-    "label": "Ordinateur fixe sans écran (Professionnel)"
+    "label": "Ordinateur fixe sans écran (professionnel)"
   },
   {
     "value": "ordinateurportable",

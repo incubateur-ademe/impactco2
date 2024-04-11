@@ -162,7 +162,7 @@ const Detector = ({ impact }: { impact: string }) => {
           [styles.left]: display.includes('left'),
         })}
         ref={etiquetteRef}>
-        <Logo value={value / 1000} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
+        <Logo value={value} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
         <div className={styles.simpleValue}>
           <SimpleValue value={value} comparison='random' />
         </div>

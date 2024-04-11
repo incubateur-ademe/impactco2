@@ -1184,7 +1184,7 @@
   },
   "smartphone": {
     "category": 1,
-    "value": 85399.99999999999,
+    "value": 85800,
     "fr": "smartphone[s]",
     "en": "smartphone[s]",
     "de": "smartphone[s]",
@@ -1193,7 +1193,7 @@
   },
   "ordinateurfixeparticulier": {
     "category": 1,
-    "value": 289099.99999999994,
+    "value": 302300,
     "fr": "ordinateur[s] fixe[s] sans écran (particulier)",
     "en": "desktop computer[s] without screen (personal)",
     "de": "Desktop-Computer (Personal)",
@@ -1202,7 +1202,7 @@
   },
   "ordinateurfixeprofessionnel": {
     "category": 1,
-    "value": 249400,
+    "value": 262600,
     "fr": "ordinateur[s] fixe[s] sans écran (professionnel)",
     "en": "desktop computer[s] without screen (office)",
     "de": "Desktop-Computer (Büro)",
@@ -1211,16 +1211,16 @@
   },
   "ecran": {
     "category": 1,
-    "value": 85999.99999999999,
-    "fr": "écran[s]",
-    "en": "screen[s]",
-    "de": "Monitore",
-    "es": "Monitore[s]",
+    "value": 93800,
+    "fr": "écran[s] d'ordinateur",
+    "en": "computer screen[s]",
+    "de": "Computer-Bildschirm",
+    "es": "pantalla[s] de computadora",
     "emoji": "🖥"
   },
   "tabletteclassique": {
     "category": 1,
-    "value": 62599.99999999999,
+    "value": 63399.99999999999,
     "fr": "tablette[s]",
     "en": "tablet[s]",
     "de": "Tablet[s]",
@@ -1229,7 +1229,7 @@
   },
   "television": {
     "category": 1,
-    "value": 456800,
+    "value": 480400.00000000006,
     "fr": "télévision[s] ",
     "en": "television[s]",
     "de": "Fernseher",
@@ -1238,7 +1238,7 @@
   },
   "ordinateurportable": {
     "category": 1,
-    "value": 188300,
+    "value": 193900.00000000003,
     "fr": "ordinateur[s] portable[s]",
     "en": "laptop[s]",
     "de": "Laptops",
@@ -1247,7 +1247,7 @@
   },
   "enceintebluetooth": {
     "category": 1,
-    "value": 25600,
+    "value": 27000,
     "fr": "enceinte[s] connectée[s]",
     "en": "Bluetooth speaker[s]",
     "de": "Bluetooth-Lautsprecher",
@@ -1256,7 +1256,7 @@
   },
   "telephonebasique": {
     "category": 1,
-    "value": 23200,
+    "value": 23400.000000000004,
     "fr": "téléphone[s] basique[s]",
     "en": "basic[s] phone[s]",
     "de": "einfaches Telefon",
@@ -1265,7 +1265,7 @@
   },
   "casquevr": {
     "category": 1,
-    "value": 69500.00000000001,
+    "value": 72300.00000000001,
     "fr": "casque[s] de réalité virtuelle",
     "en": "virtual reality headset[s]",
     "de": "Virtual-Reality-Headset",
@@ -1274,7 +1274,7 @@
   },
   "alimentationordinateur": {
     "category": 1,
-    "value": 3100,
+    "value": 4100,
     "fr": "alimentation[s] externe[s] (pour ordinateur portable)",
     "en": "external power supply[s] (for laptop)",
     "de": "externes Netzteil[e] (für Laptop)",
@@ -1283,7 +1283,7 @@
   },
   "alimentationsmartphone": {
     "category": 1,
-    "value": 199.99999999999997,
+    "value": 400,
     "fr": "alimentation[s] externe[s] (pour smartphone ou tablette)",
     "en": "external power supply[s] (for smartphone or tablet)",
     "de": "externes Netzteil[e] (für Smartphone oder Tablet)",
@@ -1292,7 +1292,7 @@
   },
   "disquedur": {
     "category": 1,
-    "value": 11299.999999999998,
+    "value": 11900,
     "fr": "disque[s] dur[s] externe[s]",
     "en": "external hard drive[s]",
     "de": "externe Festplatte[n]",
@@ -1310,7 +1310,7 @@
   },
   "box": {
     "category": 1,
-    "value": 67200,
+    "value": 84000,
     "fr": "box[s]",
     "en": "box[s]",
     "de": "Box",
