@@ -35,10 +35,10 @@
   "francais": {
     "category": 13,
     "value": 9300000,
-    "fr": "Pourcent[s] de l'empreinte carbone d'un citoyen français",
-    "en": "Percent[s] of a French citizen's carbon footprint",
-    "de": "Prozentualer Anteil des CO₂-Fußabdrucks eines Franzosen",
-    "es": "Porcentaje de la huella de carbono de un ciudadano francés",
+    "fr": "% de l'empreinte carbone d'un citoyen français",
+    "en": "% of a French citizen's carbon footprint",
+    "de": "% Anteil des CO₂-Fußabdrucks eines Franzosen",
+    "es": "% de la huella de carbono de un ciudadano francés",
     "percentage": true
   },
   "game-of-thrones": {
@@ -51,7 +51,7 @@
   },
   "friends": {
     "category": 13,
-    "value": 7870,
+    "value": 7860,
     "fr": "intégrale[s] de friends (en streaming)",
     "en": "Complete Friends TV show (streaming)",
     "de": "Komplette Friends-TV-Show (Streaming)",
@@ -1184,210 +1184,138 @@
   },
   "smartphone": {
     "category": 1,
-    "value": 37785.7171234219,
-    "fr": "smartphone[s] (> 5,5 pouces)",
-    "en": "smartphone[s] (> 5.5 inches)",
-    "de": "Smartphones (über 5,5 Zoll)",
-    "es": "Smartphones (más de 5,5 pulgadas)",
+    "value": 85399.99999999999,
+    "fr": "smartphone[s]",
+    "en": "smartphone[s]",
+    "de": "smartphone[s]",
+    "es": "smartphone[s]",
     "emoji": "📱"
   },
-  "ordinateurfixebureautique": {
+  "ordinateurfixeparticulier": {
     "category": 1,
-    "value": 188972.1498647794,
-    "fr": "ordinateur[s] fixe[s] sans écran (bureautique)",
+    "value": 289099.99999999994,
+    "fr": "ordinateur[s] fixe[s] sans écran (particulier)",
+    "en": "desktop computer[s] without screen (personal)",
+    "de": "Desktop-Computer (Personal)",
+    "es": "Ordenadores de sobremesa",
+    "emoji": "🖥️"
+  },
+  "ordinateurfixeprofessionnel": {
+    "category": 1,
+    "value": 249400,
+    "fr": "ordinateur[s] fixe[s] sans écran (professionnel)",
     "en": "desktop computer[s] without screen (office)",
     "de": "Desktop-Computer (Büro)",
     "es": "Ordenadores de sobremesa (ofimáticos)",
     "emoji": "🖥️"
   },
-  "ordinateurfixeperformance": {
+  "ecran": {
     "category": 1,
-    "value": 394228.39770107804,
-    "fr": "ordinateur[s] fixe[s] sans écran (performance)",
-    "en": "desktop computer[s] without screen (performance)",
-    "de": "Desktop-Computer (Leistung)",
-    "es": "Ordenadores de sobremesa (de alto rendimiento)",
-    "emoji": "🖥️"
-  },
-  "ecran215pouces": {
-    "category": 1,
-    "value": 236400.5793417607,
-    "fr": "écran[s] (21,5 pouces)",
-    "en": "screen[s] (21.5 inches)",
-    "de": "Monitore (21,5 Zoll)",
-    "es": "Monitores (21,5 pulgadas)",
+    "value": 85999.99999999999,
+    "fr": "écran[s]",
+    "en": "screen[s]",
+    "de": "Monitore",
+    "es": "Monitore[s]",
     "emoji": "🖥"
-  },
-  "ecran24pouces": {
-    "category": 1,
-    "value": 263270.5793417607,
-    "fr": "écran[s] (24 pouces)",
-    "en": "screen[s] (24 inches)",
-    "de": "Monitore (24 Zoll)",
-    "es": "Monitores (24 pulgadas)",
-    "emoji": "🖥"
-  },
-  "tablettedetachable": {
-    "category": 1,
-    "value": 86289.99022039562,
-    "fr": "tablette[s] détachable[s]",
-    "en": "detachable tablet[s]",
-    "de": "Abnehmbare Tablets",
-    "es": "Tabletas desmontables",
-    "emoji": "💻"
   },
   "tabletteclassique": {
     "category": 1,
-    "value": 69583.77612322119,
-    "fr": "tablette[s] (classique)",
-    "en": "standard tablet[s]",
-    "de": "Standard-Tablets",
-    "es": "Tabletas estándar",
-    "emoji": "📱"
-  },
-  "tablettemini": {
-    "category": 1,
-    "value": 47701.56560714469,
-    "fr": "tablette[s] (mini)",
-    "en": "mini tablet[s]",
-    "de": "Mini-Tablets",
-    "es": "Tabletas mini",
-    "emoji": "📱"
-  },
-  "chainehifi": {
-    "category": 1,
-    "value": 136282.18772408427,
-    "fr": "chaine[s] hifi",
-    "en": "hi-fi system[s]",
-    "de": "Hi-Fi-Anlagen",
-    "es": "Cadenas hi-fi",
-    "emoji": "🎵"
-  },
-  "liseuse": {
-    "category": 1,
-    "value": 36695.15687599134,
-    "fr": "liseuse[s] (non rétro-éclairé)",
-    "en": "non-backlit e-reader[s]",
-    "de": "E-Book-Reader (nicht beleuchtet)",
-    "es": "E-readers (no retroiluminados)",
-    "emoji": "📱"
+    "value": 62599.99999999999,
+    "fr": "tablette[s]",
+    "en": "tablet[s]",
+    "de": "Tablet[s]",
+    "es": "Tableta[s]",
+    "emoji": "💻"
   },
   "television": {
     "category": 1,
-    "value": 425153.49609789375,
-    "fr": "télévision[s]  (40 - 49 pouces)",
-    "en": "television[s] (40 - 49 inches)",
-    "de": "Fernseher (40 - 49 Zoll)",
-    "es": "Televisores (40 - 49 pulgadas)",
+    "value": 456800,
+    "fr": "télévision[s] ",
+    "en": "television[s]",
+    "de": "Fernseher",
+    "es": "Televisore[s]",
     "emoji": "📺"
   },
   "ordinateurportable": {
     "category": 1,
-    "value": 177987.64585279912,
+    "value": 188300,
     "fr": "ordinateur[s] portable[s]",
     "en": "laptop[s]",
     "de": "Laptops",
     "es": "Ordenadores portátiles",
     "emoji": "💻"
   },
-  "montreconnectee": {
-    "category": 1,
-    "value": 9858.212649590849,
-    "fr": "montre[s] connectée[s]",
-    "en": "smartwatch[es]",
-    "de": "Smartwatches",
-    "es": "Smartwatches",
-    "emoji": "⌚️"
-  },
-  "cadrephotodigital": {
-    "category": 1,
-    "value": 39151.176838939886,
-    "fr": "cadre[s] photo digital",
-    "en": "digital photo frame[s]",
-    "de": "Digitale Bilderrahmen",
-    "es": "Marcos de fotos digitales",
-    "emoji": "🖼"
-  },
-  "homecinema": {
-    "category": 1,
-    "value": 153563.82398264098,
-    "fr": "home cinéma",
-    "en": "home cinema",
-    "de": "Heimkino",
-    "es": "Home cinema",
-    "emoji": "📽"
-  },
-  "barredeson": {
-    "category": 1,
-    "value": 45452.22930043316,
-    "fr": "barre[s] de son",
-    "en": "sound bar[s]",
-    "de": "Soundbars",
-    "es": "Barras de sonido",
-    "emoji": "🔈"
-  },
-  "modemfibre": {
-    "category": 1,
-    "value": 142591.72740390868,
-    "fr": "modem[s] (fibre)",
-    "en": "modem[s] (fiber)",
-    "de": "Modems (Faser)",
-    "es": "Módems (fibra)",
-    "emoji": "📡"
-  },
   "enceintebluetooth": {
     "category": 1,
-    "value": 9515.179528037961,
-    "fr": "enceinte[s] bluetooth",
+    "value": 25600,
+    "fr": "enceinte[s] connectée[s]",
     "en": "Bluetooth speaker[s]",
     "de": "Bluetooth-Lautsprecher",
-    "es": "Altavoces Bluetooth",
+    "es": "Altavoce[s] Bluetooth",
     "emoji": "🔊"
   },
-  "consoledesalon": {
+  "telephonebasique": {
     "category": 1,
-    "value": 101626.88532134777,
-    "fr": "console[s] de salon",
-    "en": "home gaming console[s]",
-    "de": "Heimspielkonsolen",
-    "es": "Consolas de videojuegos de sobremesa",
+    "value": 23200,
+    "fr": "téléphone[s] basique[s]",
+    "en": "basic[s] phone[s]",
+    "de": "einfaches Telefon",
+    "es": "telefono[s] basico[s]",
+    "emoji": "📞"
+  },
+  "casquevr": {
+    "category": 1,
+    "value": 69500.00000000001,
+    "fr": "casque[s] de réalité virtuelle",
+    "en": "virtual reality headset[s]",
+    "de": "Virtual-Reality-Headset",
+    "es": "casco(s) de realidad virtual",
     "emoji": "🎮"
   },
-  "consoleportable": {
+  "alimentationordinateur": {
     "category": 1,
-    "value": 30884.070899056205,
-    "fr": "console[s] portable",
-    "en": "portable gaming console[s]",
-    "de": "Tragbare Spielkonsolen",
-    "es": "Consolas de videojuegos portátiles",
-    "emoji": "👾"
+    "value": 3100,
+    "fr": "alimentation[s] externe[s] (pour ordinateur portable)",
+    "en": "external power supply[s] (for laptop)",
+    "de": "externes Netzteil[e] (für Laptop)",
+    "es": "fuente(s) de alimentación externa (para computadora portátil)",
+    "emoji": "🔌"
   },
-  "appareilphotoreflex": {
+  "alimentationsmartphone": {
     "category": 1,
-    "value": 28109.783588679547,
-    "fr": "appareil photo (reflex)",
-    "en": "reflex camera[s]",
-    "de": "Spiegelreflexkameras",
-    "es": "Cámaras fotográficas réflex",
-    "emoji": "📷"
+    "value": 199.99999999999997,
+    "fr": "alimentation[s] externe[s] (pour smartphone ou tablette)",
+    "en": "external power supply[s] (for smartphone or tablet)",
+    "de": "externes Netzteil[e] (für Smartphone oder Tablet)",
+    "es": "fuente(s) de alimentación externa (para teléfono inteligente o tableta)",
+    "emoji": "🔌"
   },
-  "appareilphotocompact": {
+  "disquedur": {
     "category": 1,
-    "value": 22341.835057281678,
-    "fr": "appareil photo (compact)",
-    "en": "compact camera[s]",
-    "de": "Kompaktkameras",
-    "es": "Cámaras fotográficas compactas",
-    "emoji": "📸"
+    "value": 11299.999999999998,
+    "fr": "disque[s] dur[s] externe[s]",
+    "en": "external hard drive[s]",
+    "de": "externe Festplatte[n]",
+    "es": "disco[s] duro[s] externo[s]",
+    "emoji": "💽"
   },
-  "imprimantejetdencre": {
+  "clefusb": {
     "category": 1,
-    "value": 108141.1327150618,
-    "fr": "imprimante[s] (jet d'encre)",
-    "en": "inkjet printer[s]",
-    "de": "Tintenstrahldrucker",
-    "es": "Impresoras de inyección de tinta",
-    "emoji": "🖨"
+    "value": 2900,
+    "fr": "clef[s] usb",
+    "en": "usb key[s]",
+    "de": "USB-Schlüssel",
+    "es": "llave[s] USB",
+    "emoji": "💾"
+  },
+  "box": {
+    "category": 1,
+    "value": 67200,
+    "fr": "box[s]",
+    "en": "box[s]",
+    "de": "Box",
+    "es": "caha de internet",
+    "emoji": "☎️"
   },
   "avioncourtcourrier": {
     "category": 4,
@@ -1600,9 +1528,9 @@
     "category": 8,
     "value": 5640,
     "fr": "année[s] de chauffage avec un poêle à granulés par m²",
-    "en": "TODO",
-    "de": "TODO",
-    "es": "TODO",
+    "en": "year[s] of heating with a pellet stove per m²",
+    "de": "Jahre Heizung mit Pelletofen pro m²",
+    "es": "Años de calefacción con estufa de pellets por m²",
     "emoji": "🔥"
   },
   "poeleabois": {
