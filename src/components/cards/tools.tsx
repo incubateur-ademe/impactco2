@@ -101,7 +101,7 @@ export const smallTools = [
       </>
     ),
     toolLink: '/comparateur#etiquette',
-    toolLinkLable: 'Créer mon étiquette avec le comparateur carbone',
+    toolLinkLabel: 'Créer mon étiquette avec le comparateur carbone',
   },
   {
     slug: 'detecteur',

@@ -141,7 +141,7 @@ const Suggestion = ({ from, simulatorName }: { from: string; simulatorName: stri
               {suggestionType === 'avis' && (
                 <Stars
                   id='avis'
-                  label={`Que pensez-vous du ${simulatorName} ?`}
+                  label={`Que pensez-vous ${simulatorName} ?`}
                   hint='Évaluez ce contenu en lui donnant une note de 1 à 5'
                   value={avis}
                   setValue={setAvis}

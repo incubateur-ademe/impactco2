@@ -24,7 +24,7 @@ export default function Header() {
                 <Icon iconId='tools' />
                 Les outils
               </Link>
-              <Link href='/'>
+              <Link href='/doc'>
                 <Icon iconId='doc' />
                 La doc
               </Link>

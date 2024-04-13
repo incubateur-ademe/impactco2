@@ -36,7 +36,7 @@ const Menu = () => {
           </Link>
         </div>
         <div>
-          <Link href='/'>
+          <Link href='/doc'>
             <Icon iconId='doc' />
             La doc
           </Link>

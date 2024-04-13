@@ -6,7 +6,7 @@ const OutilsPage = async () => {
   return (
     <>
       <Outils />
-      <Suggestion from='/outils' fromLabel='Outils' simulatorName='site' />
+      <Suggestion from='/outils' fromLabel='Outils' simulatorName='du site' />
     </>
   )
 }

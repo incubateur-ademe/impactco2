@@ -7,11 +7,7 @@ import { ToolCardProps } from 'components/cards/ToolCard'
 import Block from 'components/layout/web/Block'
 import styles from './Outil.module.css'
 
-const Outil = ({
-  tool,
-}: {
-  tool: ToolCardProps & { content: ReactNode; toolLink: string; toolLinkLabel?: string }
-}) => {
+const Outil = ({ tool }: { tool: ToolCardProps & { content: ReactNode; toolLink: string; toolLinkLabel: string } }) => {
   return (
     <>
       <Breadcrumbs

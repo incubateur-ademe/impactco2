@@ -19,7 +19,7 @@ const OutilPage = async ({ params }: { params: { tool: string } }) => {
   return (
     <>
       <Outil tool={tool} />
-      <Suggestion from={`/outils/${tool.slug}`} fromLabel={tool.title} simulatorName={tool.title} />
+      <Suggestion from={`/outils/${tool.slug}`} fromLabel={tool.title} simulatorName={`de l'outil ${tool.title}`} />
     </>
   )
 }

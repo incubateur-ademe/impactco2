@@ -6,7 +6,7 @@ const HomePage = async () => {
   return (
     <>
       <Home />
-      <Suggestion fromLabel='Accueil' simulatorName='site' />
+      <Suggestion fromLabel='Accueil' simulatorName='du site' />
     </>
   )
 }
