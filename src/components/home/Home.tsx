@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'components/base/buttons/Link'
 import ToolCard from 'components/cards/ToolCard'
 import ToolCards from 'components/cards/ToolCards'
+import { tools } from 'components/cards/tools'
 import Block from 'components/layout/web/Block'
 import Email from './Email'
 import Equivalents from './Equivalents'
@@ -14,27 +15,9 @@ const Home = () => {
       <Block>
         <h1 className={styles.title}>Les bons outils pour communiquer sur l’impact carbone</h1>
         <ToolCards>
-          <ToolCard
-            image='/images/tools-comparateur.svg'
-            title='Comparateur'
-            description='Le bon outil pour obtenir les bons ordres de grandeur'
-            link='/comparateur'
-            linkLabel='Visualiser'
-          />
-          <ToolCard
-            image='/images/tools-transports.svg'
-            title='Transports'
-            description='Calculer l’impact carbone des moyens de transport'
-            link='/transport'
-            linkLabel='Essayer'
-          />
-          <ToolCard
-            image='/images/tools-chauffage.svg'
-            title='Chauffage'
-            description='Situer l’empreinte carbone des modes de chauffage'
-            link='/chauffage'
-            linkLabel='Calculer'
-          />
+          {tools.slice(0, 3).map((tool) => (
+            <ToolCard key={tool.slug} {...tool} />
+          ))}
         </ToolCards>
         <div className={styles.link}>
           <Link href='/outils'>Voir tous les outils</Link>
@@ -71,10 +54,9 @@ const Home = () => {
         description="Vous souhaitez mobiliser votre communauté autour de l'empreinte carbone ?">
         <ToolCard
           horizontal
-          image='/images/ngc.png'
+          slug='ngc'
           title='Nos gestes climats'
           description='Calculez votre empreinte carbone citoyenne et faites le bilan en équipe'
-          link='https://nosgestesclimat.fr'
           linkLabel='Visitez le site'
         />
       </Block>

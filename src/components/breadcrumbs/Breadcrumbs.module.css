@@ -1,0 +1,18 @@
+.container {
+  border-radius: 0px 0px 16px 16px;
+  background: var(--neutral-10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.75rem;
+
+  svg {
+    color: var(--neutral-40);
+  }
+}
+
+.current {
+  color: var(--neutral-60);
+  font-weight: 500;
+}

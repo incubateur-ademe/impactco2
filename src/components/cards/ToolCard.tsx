@@ -5,27 +5,25 @@ import { Icon } from 'components/osezchanger/icons'
 import styles from './ToolCard.module.css'
 
 const ToolCard = ({
-  image,
+  slug,
   title,
   description,
-  link,
   linkLabel,
   horizontal,
 }: {
-  image: string
+  slug: string
   title: string
   description: string
-  link: string
   linkLabel: string
   horizontal?: boolean
 }) => {
   return (
     <a
-      href={link}
+      href={`/${slug}`}
       className={classNames(styles.card, {
         [styles.horizontalCard]: horizontal,
       })}>
-      <Image src={image} width={220} height={180} alt='' />
+      <Image src={`/images/tools-${slug}.svg`} width={220} height={180} alt='' />
       <div className={styles.content}>
         <div>
           <div className={styles.title}>{title}</div>

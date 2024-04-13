@@ -10,10 +10,9 @@ type Story = StoryObj<typeof ToolCard>
 
 export const Basique: Story = {
   args: {
-    image: '/images/tools-comparateur.svg',
     title: 'Comparateur',
+    slug: 'comparateur',
     description: 'Le bon outil pour obtenir les bons ordres de grandeur',
-    link: '/comparateur',
     linkLabel: 'Visualiser',
   },
 }
@@ -21,10 +20,9 @@ export const Basique: Story = {
 export const Horizontal: Story = {
   args: {
     horizontal: true,
-    image: '/images/tools-comparateur.svg',
     title: 'Comparateur',
+    slug: 'comparateur',
     description: 'Le bon outil pour obtenir les bons ordres de grandeur',
-    link: '/comparateur',
     linkLabel: 'Visualiser',
   },
 }

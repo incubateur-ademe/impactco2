@@ -3,31 +3,43 @@ import React, { ReactNode } from 'react'
 import Link from 'components/base/buttons/Link'
 import styles from './Block.module.css'
 
+const getTitle = (title?: string, as?: 'h1') => {
+  if (!title) {
+    return null
+  }
+  if (as === 'h1') {
+    return <h1>{title}</h1>
+  }
+  return <h2>{title}</h2>
+}
+
 const Block = ({
   children,
   title,
   description,
   link,
   linkLabel,
+  as,
 }: {
-  children: ReactNode
+  children?: ReactNode
   title?: string
   description?: string
   link?: string
   linkLabel?: string
+  as?: 'h1'
 }) => {
   return (
     <div className={classNames('main-container', styles.block)}>
       {title && (
         <div className={styles.header}>
           <div>
-            {title && <h2>{title}</h2>}
+            {getTitle(title, as)}
             {description && <div className={styles.description}>{description}</div>}
           </div>
           {link && <Link href={link}>{linkLabel}</Link>}
         </div>
       )}
-      {children}
+      {children && <div className={styles.children}>{children}</div>}
     </div>
   )
 }
