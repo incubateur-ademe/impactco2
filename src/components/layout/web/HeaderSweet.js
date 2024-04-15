@@ -70,6 +70,9 @@ export default function HeaderSweet() {
                 <Link href='/comparateur'>Comparateur carbone</Link>
               </NavLink>
               <NavLink>
+                <Link href='/detecteur-co2'>Détecteur CO₂</Link>
+              </NavLink>
+              <NavLink>
                 <Link href='/guide-utilisation'>Comment ça marche ?</Link>
               </NavLink>
               <NavLink>
@@ -82,6 +85,9 @@ export default function HeaderSweet() {
               </NavLink>
               <NavLink>
                 <Link href='/comparateur'>Comparateur carbone</Link>
+              </NavLink>
+              <NavLink>
+                <Link href='/detecteur-co2'>Détecteur CO₂</Link>
               </NavLink>
               <NavLink>
                 <Link href='/guide-utilisation'>Comment ça marche ?</Link>

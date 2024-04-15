@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React from 'react'
 import { Language, SimpleEquivalent } from 'types/equivalent'
 import values from 'data/shopify/values.json'
@@ -39,11 +40,15 @@ const SimpleValue = ({ value, comparison, language }: { value: number; compariso
       <div className={styles.emoji}>
         <EquivalentIcon height={2} equivalent={{ ...equivalent, slug }} />
       </div>
-      <div className={styles.text}>
-        <div className={styles.equivalentValue} data-testid={`etiquette-${comparison}-value`}>
+      <div className={classNames(styles.text, 'impactCO2-etiquette-content')}>
+        <div
+          className={classNames(styles.equivalentValue, 'impactCO2-etiquette-value')}
+          data-testid={`etiquette-${comparison}-value`}>
           {equivalentValue}
         </div>
-        <div className={styles.label} data-testid={`etiquette-${comparison}-name`}>
+        <div
+          className={classNames(styles.label, 'impactCO2-etiquette-text')}
+          data-testid={`etiquette-${comparison}-name`}>
           {formatName(language ? equivalent[language] : equivalent.fr, comparisonValue, false)}
         </div>
       </div>

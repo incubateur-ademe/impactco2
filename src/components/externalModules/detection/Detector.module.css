@@ -54,6 +54,15 @@
     background-color: var(--primary-20) !important;
     color: var(--primary-70) !important;
   }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 .simpleValue {
@@ -82,6 +91,15 @@
   &:hover {
     border: 1px solid var(--primary-70) !important;
     background-color: var(--primary-60) !important;
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
 
   svg {

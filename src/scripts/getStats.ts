@@ -28,7 +28,6 @@ export const getMatomoStats = async (date: string) => {
       .then((response) => response.data),
   ])
 
-  console.log(allEventsByCategory)
   const iframes = allEventsByCategory.filter((event) => event.label.startsWith('IFrame_'))
 
   const results = {
