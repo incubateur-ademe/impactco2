@@ -4,26 +4,24 @@ import React from 'react'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './ToolCard.module.css'
 
-const ToolCard = ({
-  slug,
-  title,
-  description,
-  linkLabel,
-  horizontal,
-}: {
+export type ToolCardProps = {
   slug: string
   title: string
   description: string
   linkLabel: string
   horizontal?: boolean
-}) => {
+  link?: string
+  image?: string
+}
+
+const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image }: ToolCardProps) => {
   return (
     <a
-      href={`/${slug}`}
+      href={link || `/outils/${slug}`}
       className={classNames(styles.card, {
         [styles.horizontalCard]: horizontal,
       })}>
-      <Image src={`/images/tools-${slug}.svg`} width={220} height={180} alt='' />
+      <Image src={image || `/images/tools-${slug}.svg`} width={220} height={180} alt='' />
       <div className={styles.content}>
         <div>
           <div className={styles.title}>{title}</div>

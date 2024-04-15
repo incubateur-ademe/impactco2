@@ -14,11 +14,7 @@ const Home = () => {
     <>
       <Block>
         <h1 className={styles.title}>Les bons outils pour communiquer sur l’impact carbone</h1>
-        <ToolCards>
-          {tools.slice(0, 3).map((tool) => (
-            <ToolCard key={tool.slug} {...tool} />
-          ))}
-        </ToolCards>
+        <ToolCards tools={tools.slice(0, 3)} />
         <div className={styles.link}>
           <Link href='/outils'>Voir tous les outils</Link>
         </div>
@@ -55,6 +51,7 @@ const Home = () => {
         <ToolCard
           horizontal
           slug='ngc'
+          image='/images/ngc.png'
           title='Nos gestes climats'
           description='Calculez votre empreinte carbone citoyenne et faites le bilan en équipe'
           linkLabel='Visitez le site'
