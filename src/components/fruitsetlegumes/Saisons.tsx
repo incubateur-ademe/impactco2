@@ -96,7 +96,7 @@ export default function Saisons({ category, iframe }: { category: Category; ifra
             Découvrez les fruits et légumes de <MonthSelector month={month} setMonth={setMonth} />
           </Header>
           <StyledTop>
-            <Instruction title={category.equivalent} gender={category.gender} />
+            <Instruction category={category} />
             <Search search={search} setSearch={setSearch} sorting={sorting} setSorting={setSorting} />
           </StyledTop>
         </>

@@ -24,6 +24,7 @@ const Wrapper = styled(Link)`
     padding: 0.25rem 0.125rem 1rem;
   }
 `
+
 const ChartWrapper = styled.div`
   flex: 1;
 `

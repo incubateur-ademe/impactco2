@@ -7,6 +7,7 @@ import 'utils/fonts.css'
 import { GlobalStyle } from 'utils/styles'
 import 'utils/variables.css'
 import { ParamProvider } from 'components/providers/ParamProvider'
+import TranslationProvider from 'components/providers/TranslationProvider'
 import useTheme from 'components/layout/Theme'
 
 function MyApp({ Component, pageProps }) {
@@ -35,7 +36,9 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClient}>
         <ParamProvider>
           <GlobalStyle />
-          <Component {...pageProps} />
+          <TranslationProvider>
+            <Component {...pageProps} />
+          </TranslationProvider>
         </ParamProvider>
       </QueryClientProvider>
     </QueryParamProvider>

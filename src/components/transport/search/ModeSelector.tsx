@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled from 'styled-components'
@@ -67,29 +68,30 @@ export default function ModeSelector() {
   const {
     transport: { selected, setSelected },
   } = useParamContext()
+  const t = useTranslations('transport.mode-selector')
 
   return (
     <Wrapper>
       {(selected === 'distance' || !router.query.tabs || router.query.tabs.includes('distance')) &&
         (selected === 'distance' ? (
-          <CurrentTab data-testid='transport-tab-distance'>Distance</CurrentTab>
+          <CurrentTab data-testid='transport-tab-distance'> {t('distance')}</CurrentTab>
         ) : (
           <Tab onClick={() => setSelected('distance')} data-testid='transport-tab-distance' title='Distance'>
-            Distance
+            {t('distance')}
           </Tab>
         ))}
       {(selected === 'itineraire' || !router.query.tabs || router.query.tabs.includes('itineraire')) &&
         (selected === 'itineraire' ? (
-          <CurrentTab data-testid='transport-tab-itineraire'>Itinéraire</CurrentTab>
+          <CurrentTab data-testid='transport-tab-itineraire'> {t('itineraire')}</CurrentTab>
         ) : (
           <Tab onClick={() => setSelected('itineraire')} data-testid='transport-tab-itineraire' title='Itinéraire'>
-            Itinéraire
+            {t('itineraire')}
           </Tab>
         ))}
       {(selected === 'teletravail' || !router.query.tabs || router.query.tabs.includes('teletravail')) &&
         (selected === 'teletravail' ? (
           <CurrentTab $large data-testid='transport-tab-teletravail'>
-            Télétravail
+            {t('teletravail')}
           </CurrentTab>
         ) : (
           <Tab
@@ -97,7 +99,7 @@ export default function ModeSelector() {
             data-testid='transport-tab-teletravail'
             title='Télétravail'
             $large>
-            Télétravail
+            {t('teletravail')}
           </Tab>
         ))}
     </Wrapper>

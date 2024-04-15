@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
@@ -32,15 +33,11 @@ const tracking: Record<TransportSimulateur, string> = {
   itineraire: 'Transport itinéraire',
 }
 
-export default function Search({
-  initialType,
-  category,
-  iframe,
-}: {
-  initialType: TransportSimulateur
-  category: Category
-  iframe?: boolean
-}) {
+export type SearchProps = { initialType: TransportSimulateur; category: Category; iframe?: boolean }
+
+export default function Search({ initialType, category, iframe }: SearchProps) {
+  const t = useTranslations('transport.search')
+
   const {
     transport: { selected, setSelected },
   } = useParamContext()
@@ -62,15 +59,15 @@ export default function Search({
           <Simulator
             text={
               <>
-                Découvrez la quantité de CO<sub>2</sub>e que vous émettez{' '}
+                {t('header')}{' '}
                 <Color
                   onClick={() => {
                     track('Transport itinéraire', 'Hypothèses', 'transport_itineraire_hypotheses')
                     setOpen(true)
                   }}>
-                  (par personne)
+                  ({t('header-par-personne')})
                 </Color>{' '}
-                pour ce trajet
+                {t('header-itineraire')}
               </>
             }>
             <ItinerarySearch />
@@ -80,12 +77,7 @@ export default function Search({
       )}
       {selected === 'teletravail' && (
         <>
-          <Simulator
-            text={
-              <>
-                Découvrez la quantité de CO<sub>2</sub>e que vous économisez (à l'année) en travaillant de chez vous
-              </>
-            }>
+          <Simulator text={t('header-teletravail')}>
             <TeletravailSearch />
           </Simulator>
           <Teletravail />
@@ -96,15 +88,15 @@ export default function Search({
           <Simulator
             text={
               <>
-                Découvrez la quantité de CO<sub>2</sub>e que vous émettez{' '}
+                {t('header')}{' '}
                 <Color
                   onClick={() => {
                     track('Transport distance', 'Hypothèses', 'transport_distance_hypotheses')
                     setOpen(true)
                   }}>
-                  (par personne)
+                  ({t('header-par-personne')})
                 </Color>{' '}
-                pour cette distance
+                {t('header-distance')}
               </>
             }>
             <SliderWithInput

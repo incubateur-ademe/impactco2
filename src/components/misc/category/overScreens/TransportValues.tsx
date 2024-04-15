@@ -15,11 +15,11 @@ export const overScreenTransportValues: (
   type: TransportSimulateur
 ) => Record<OverScreenTransport, OverScreenInfo> = (category, params, tracking, type) => ({
   partager: {
-    title: 'Partager',
+    title: 'share',
     children: <TransportShare tracking={tracking} />,
   },
   integrer: {
-    title: 'Intégrer',
+    title: 'integrate',
     children: (
       <>
         <TransportIntegrate type={type} tracking={tracking} />

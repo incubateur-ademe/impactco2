@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import useParamContext from 'components/providers/ParamProvider'
@@ -22,16 +23,14 @@ export default function TeletravailSearch() {
     teletravail: { start, setStart, end, setEnd, transport },
   } = useParamContext()
   const [open, setOpen] = useState(false)
-
+  const t = useTranslations('transport.teletravail')
   return (
     <>
-      <Address placeholder='Domicile' address={start?.address} setPlace={setStart} />
-      <Address placeholder='Travail' address={end?.address} setPlace={setEnd} />
+      <Address placeholder={t('start')} address={start?.address} setPlace={setStart} />
+      <Address placeholder={t('end')} address={end?.address} setPlace={setEnd} />
       <Transportations />
       <Days />
-      {start && end && transport && (
-        <Details onClick={() => setOpen(true)}>Voir et ajuster les détails du calcul</Details>
-      )}
+      {start && end && transport && <Details onClick={() => setOpen(true)}>{t('details')}</Details>}
       {open && <TeletravailModal setOpen={setOpen} />}
     </>
   )

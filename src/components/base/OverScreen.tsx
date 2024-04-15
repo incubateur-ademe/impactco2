@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { ReactNode } from 'react'
 import GhostButton from './GhostButton'
 import { Children, Container, Content, Footer, Header, Scroll, Shadow } from './OversScreen.styles'
@@ -16,6 +17,8 @@ const OverScreen = ({
   onClose: () => void
   color?: 'secondary'
 }) => {
+  const t = useTranslations('overscreen')
+  const tModal = useTranslations('modal')
   return (
     <Container>
       {values.title && <Shadow onClick={onClose} />}
@@ -23,7 +26,7 @@ const OverScreen = ({
         {values.title && (
           <Header $color={color}>
             <span className='text-lg'>
-              <b>{values.title}</b>
+              <b>{t(values.title)}</b>
             </span>
             <GhostButton
               colored={color === 'secondary'}
@@ -31,7 +34,7 @@ const OverScreen = ({
               iconPosition='right'
               onClick={onClose}
               size={color === 'secondary' ? 'sm' : undefined}>
-              Fermer
+              {tModal('close')}
             </GhostButton>
           </Header>
         )}
@@ -53,7 +56,7 @@ const OverScreen = ({
                 iconPosition='right'
                 onClick={onClose}
                 size={color === 'secondary' ? 'sm' : undefined}>
-                Annuler
+                {tModal('cancel')}
               </GhostButton>
             )}
           </Footer>

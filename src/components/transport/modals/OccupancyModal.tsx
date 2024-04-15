@@ -1,23 +1,20 @@
+import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction } from 'react'
 import Modal from 'components/base/Modal'
 import Link from 'components/base/buttons/Link'
 
 export default function Occupancy({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
+  const t = useTranslations('modal.occupancy')
   return (
     <Modal setOpen={setOpen}>
-      <h2>Taux de remplissage des véhicules</h2>
+      <h2>{t('title')}</h2>
+      <p>{t('intro')}</p>
       <p>
-        L&apos;impact de chaque véhicule est donné &quot;par personne&quot;, et non pas pour l&apos;ensemble du
-        véhicule.
-      </p>
-      <p>
-        Les taux de remplissage utilisés dans Mon Impact Transport sont ceux retenus dans la{' '}
+        {t('pre-source')}{' '}
         <Link href='https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?transport_de_personnes.htm'>
-          Base Carbone de l&apos;ADEME
+          {t('source')}
         </Link>
-        , sauf pour les voitures (thermiques et électriques) pour lesquelles nous ne comptons qu&apos;une seule personne
-        dans le véhicule. Il est possible de moduler le nombre de personnes par voiture avec l&apos;option
-        &quot;Afficher le covoiturage&quot;.
+        , {t('post-source')}
       </p>
     </Modal>
   )

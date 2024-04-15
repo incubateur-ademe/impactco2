@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import styled from 'styled-components'
 import { TransportSimulateur } from 'types/transport'
@@ -45,6 +46,7 @@ const ButtonLess = styled(ButtonMore)`
 
 export default function Carpool({ type }: { type: TransportSimulateur }) {
   const params = useParamContext()
+  const t = useTranslations('transport.carpool')
 
   const { carpool, setCarpool } = params[type]
   return (
@@ -57,8 +59,8 @@ export default function Carpool({ type }: { type: TransportSimulateur }) {
         }}>
         <ButtonLess onClick={() => setCarpool((prevCarpool) => (prevCarpool > 2 ? prevCarpool - 1 : 0))}>-</ButtonLess>
         <Carpoolers>
-          <Start>avec </Start>
-          <Number>{carpool - 1}</Number> covoitureur
+          <Start>{t('with')} </Start>
+          <Number>{carpool - 1}</Number> {t('carpooler')}
           <Plural $visible={carpool > 2}>s</Plural>
         </Carpoolers>
         <ButtonMore onClick={() => setCarpool((prevCarpool) => (prevCarpool < 5 ? prevCarpool + 1 : prevCarpool))}>
