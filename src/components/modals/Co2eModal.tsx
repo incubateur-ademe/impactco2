@@ -1,32 +1,26 @@
+import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
 import Modal2 from 'components/base/Modal2'
 import ExplainArrowContainer from 'components/modals/ExplainArrowContainer.js'
 
-const getTitle = () => {
+const GetTitle = () => {
+  const t = useTranslations('modal.co2')
   return (
     <Title data-testid='modalTitleEqCO2e'>
-      Comprendre{' '}
-      <GreenText>
-        l&apos;équivalent CO<sub>2</sub> (CO<sub>2</sub>e)
-      </GreenText>
+      {t('understand')} <GreenText>{t('equivalent')}</GreenText>
     </Title>
   )
 }
 
 export default function Co2eModal({ setOpen }: { setOpen: Dispatch<SetStateAction<boolean>> }) {
+  const t = useTranslations('modal.co2')
+
   return (
-    <Modal2 open setOpen={setOpen} getTitle={getTitle} width='50rem'>
+    <Modal2 open setOpen={setOpen} getTitle={GetTitle} width='50rem'>
+      <Text>{t('intro')}</Text>
       <Text>
-        Le dérèglement climatique actuel est une conséquence de nos émissions importantes de différents gaz à effet de
-        serre. Nous pouvons mesurer ces émissions avec un indice simple : les kilogrammes d&apos;équivalent CO
-        <sub>2</sub> (kgCO<sub>2</sub>e).
-      </Text>
-      <Text>
-        <strong>
-          Chaque gaz à effet de serre est ramené à un équivalent en CO
-          <sub>2</sub> selon son pouvoir de réchauffement.
-        </strong>
+        <strong>{t('text')} </strong>
       </Text>
       <ExplainArrowContainer />
     </Modal2>

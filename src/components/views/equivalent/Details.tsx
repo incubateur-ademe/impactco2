@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useState } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -15,6 +16,7 @@ export default function Details({ equivalent, category }: { equivalent: Computed
   const [openModal, setOpenModal] = useState(false)
   const [openWarningModal, setOpenWarningModal] = useState(false)
 
+  const tCategory = useTranslations('category.bottom')
   return (
     <>
       {openModal && <Co2eModal setOpen={setOpenModal} />}
@@ -51,11 +53,11 @@ export default function Details({ equivalent, category }: { equivalent: Computed
               </>
             ) : (
               <>
-                Valeurs exprimées en kg{' '}
+                {tCategory('before')}{' '}
                 <Button asLink onClick={() => setOpenModal(true)}>
                   CO<sub>2</sub>e
                 </Button>{' '}
-                émis {category.include}
+                {tCategory('after')} {tCategory(`include-${category.slug}`)}
               </>
             )}
           </p>

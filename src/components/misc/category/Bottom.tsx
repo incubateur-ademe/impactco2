@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Category } from 'types/category'
@@ -17,21 +18,22 @@ const Disclaimer = styled.p`
   text-align: center;
 `
 export default function Bottom({ category, iframe }: { category: Category; iframe?: boolean }) {
+  const t = useTranslations('category.bottom')
   const [openModal, setOpenModal] = useState(false)
 
   return (
     <Wrapper>
       {openModal && <Co2eModal setOpen={setOpenModal} />}
       <Disclaimer data-testid='bottomText'>
-        Valeurs exprimées en kg{' '}
+        {t('before')}{' '}
         <Button asLink onClick={() => setOpenModal(true)}>
           CO<sub>2</sub>e
         </Button>{' '}
-        émis {category.include}
+        {t('after')} {t(`include-${category.slug}`)}
       </Disclaimer>
       <div data-testid='bottomButton'>
         <Link className={'noscreenshot'} href={iframe ? buildCurrentUrlFor('/thematiques') : '/thematiques'}>
-          Voir toutes les thématiques
+          {t('thematiques')}
         </Link>
       </div>
     </Wrapper>

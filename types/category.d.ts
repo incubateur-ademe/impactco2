@@ -7,10 +7,8 @@ export type Category = {
   header: string
   sources?: { label: string; href: string }[]
   description?: string
-  equivalent?: string
   gender: string
   unit: string
-  include: string
   list?: boolean
   meta: {
     title: string

@@ -73,6 +73,29 @@ export default function Detail({ equivalent, years }: { equivalent: Equivalent; 
   const unit = total > 1 ? 'kg' : 'g'
 
   const type = equivalent.ecv[0].id
+  let usageAndEnd = null
+  if (usage > 0 && end > 0) {
+    usageAndEnd = {
+      label: 'Usage et fin de vie',
+      value: usage + end,
+      values: [
+        { id: 8, value: usage },
+        { id: 9, value: end },
+      ],
+    }
+  } else if (usage > 0) {
+    usageAndEnd = {
+      label: 'Usage',
+      value: usage,
+      values: [{ id: 8, value: usage }],
+    }
+  } else if (end > 0) {
+    usageAndEnd = {
+      label: 'Fin de vie',
+      value: end,
+      values: [{ id: 9, value: end }],
+    }
+  }
   return (
     <>
       <div className={styles.title}>
@@ -84,25 +107,7 @@ export default function Detail({ equivalent, years }: { equivalent: Equivalent; 
           </span>
         </h3>
       </div>
-      <Table
-        unit={unit}
-        type={type}
-        values={[
-          ...ecvs(type, equivalent.ecv),
-          usage > 0
-            ? end
-              ? {
-                  label: 'Usage et fin de vie',
-                  value: usage + end,
-                  values: [
-                    { id: 8, value: usage },
-                    { id: 9, value: end },
-                  ],
-                }
-              : { label: 'Usage', value: usage, values: [{ id: 8, value: usage }] }
-            : null,
-        ]}
-      />
+      <Table unit={unit} type={type} values={[...ecvs(type, equivalent.ecv), usageAndEnd]} />
     </>
   )
 }

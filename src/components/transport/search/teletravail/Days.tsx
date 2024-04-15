@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import useParamContext from 'components/providers/ParamProvider'
@@ -24,10 +25,11 @@ export default function Days() {
     }
   }, [days, presentiel, teletravail, setPresentiel, setTeletravail])
 
+  const t = useTranslations('transport.teletravail')
   return start && start.address && end && end.address && transport ? (
     <Wrapper>
       <Selector
-        label='Présentiel'
+        label={t('premise')}
         value={presentiel}
         onChange={(value: number) => {
           setPresentiel(value)
@@ -35,7 +37,7 @@ export default function Days() {
         }}
       />
       <Selector
-        label='Télétravail'
+        label={t('homeoffice')}
         value={teletravail}
         onChange={(value: number) => {
           setTeletravail(value)

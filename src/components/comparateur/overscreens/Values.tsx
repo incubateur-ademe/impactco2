@@ -11,7 +11,7 @@ export const overScreenEtiquetteValues: (params?: string) => Record<OverScreenEt
   params
 ) => ({
   integrer: {
-    title: 'Intégrer',
+    title: 'integrate',
     children: (
       <>
         <Integrate path='comparateur/etiquette' extraParams={params} tracking='Comparateur' />
@@ -34,11 +34,11 @@ export const overScreenComparateurValues: (
   params?: Record<string, CustomParamValue>
 ) => Record<OverScreenComparateur, OverScreenInfo> = (onClose, params) => ({
   partager: {
-    title: 'Partager',
+    title: 'share',
     children: <Share params={params} path='comparateur' />,
   },
   integrer: {
-    title: 'Intégrer',
+    title: 'integrate',
     children: (
       <>
         <Integrate path='comparateur' params={params} tracking='Comparateur' />

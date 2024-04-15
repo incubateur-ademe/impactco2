@@ -14,7 +14,7 @@ export const overScreenEquivalentValues: (equivalent: Equivalent) => Record<Over
   equivalent
 ) => ({
   partager: {
-    title: 'Partager',
+    title: 'share',
     children: <Share path={`${equivalent.category}/${equivalent.slug}`} />,
   },
 })
@@ -24,11 +24,11 @@ export const overScreenCategoryValues: (
   params?: Record<string, CustomParamValue>
 ) => Record<OverScreenCategory, OverScreenInfo> = (category, params) => ({
   partager: {
-    title: 'Partager',
+    title: 'share',
     children: <Share category={category} params={params} />,
   },
   integrer: {
-    title: 'Intégrer',
+    title: 'integrate',
     children: (
       <>
         <Integrate
