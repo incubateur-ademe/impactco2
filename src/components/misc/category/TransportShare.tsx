@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
 import { TransportSimulateur } from 'types/transport'
 import { buildCurrentUrlFor } from 'utils/urls'
@@ -10,6 +11,8 @@ import CustomParams from './CustomParams'
 import { Separator } from './TransportIntegrate.styles'
 
 const TransportShare = ({ tracking }: { tracking: string }) => {
+  const t = useTranslations('overscreen.transport')
+  const tTransport = useTranslations('transport.mode-selector')
   const {
     distance,
     itineraire,
@@ -73,28 +76,28 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
       <Radio
         required
         id='tabs'
-        label='Onglet à intégrer'
+        label={t('onglet')}
         hint="Sélectionnez les onglets que vous souhaitez intégrer à l'iframe">
         <RadioInput
           priority='secondary'
           value='distance'
           selected={selected}
           setSelected={(value) => setSelected(value as TransportSimulateur)}
-          label='Distance'
+          label={tTransport('distance')}
         />
         <RadioInput
           priority='secondary'
           value='itineraire'
           selected={selected}
           setSelected={(value) => setSelected(value as TransportSimulateur)}
-          label='Itinéraire'
+          label={tTransport('itineraire')}
         />
         <RadioInput
           priority='secondary'
           value='teletravail'
           selected={selected}
           setSelected={(value) => setSelected(value as TransportSimulateur)}
-          label='Télétravail'
+          label={tTransport('teletravail')}
         />
       </Radio>
       <Separator />

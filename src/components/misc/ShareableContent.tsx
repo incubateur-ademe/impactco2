@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { ReactNode } from 'react'
 import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
@@ -76,6 +77,7 @@ const ShareableContent = <T extends string>({
   noBorder?: boolean
   customScreenshot?: () => void
 }) => {
+  const t = useTranslations('overscreen')
   const { theme: darkMode } = useParamContext()
   const { ref, takeScreenshot, isScreenshotting } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
   return (
@@ -136,7 +138,7 @@ const ShareableContent = <T extends string>({
                   <Iframe $noBorder={noBorder}>
                     <IFrameLogos>
                       <Signature noMargin noLink center />
-                      <Link href={buildCurrentUrlFor(category ? category.slug : '/comparateur')}>version complète</Link>
+                      <Link href={buildCurrentUrlFor(category ? category.slug : '/comparateur')}>{t('link')}</Link>
                     </IFrameLogos>
                     <Actions
                       onClick={(value) => {

@@ -30,7 +30,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=10"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&language=fr&km=10"></script>'
     )
   })
 
@@ -68,7 +68,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=10&itineraireStart=Nantes 44000 France"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&language=fr&km=10&itineraireStart=Nantes 44000 France"></script>'
     )
   })
 
@@ -111,7 +111,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire,teletravail&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France"></script>'
     )
   })
 })

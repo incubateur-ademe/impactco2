@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
@@ -18,6 +19,7 @@ export default function useTransportations(
   itineraries?: Record<DeplacementType, number> | null
 ) {
   const params = useParamContext()
+  const t = useTranslations('equivalent')
 
   const transportations = useMemo(() => {
     const { km } = params.distance
@@ -59,14 +61,15 @@ export default function useTransportations(
           })
           .map((equivalent) => ({
             ...equivalent,
-            title: formatName(equivalent.name, 1, true),
-            subtitle:
-              formatName(equivalent.subtitle ? `(${equivalent.subtitle})` : '') +
-              (itineraries
-                ? ` - ${formatNumber(
-                    itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
-                  )} km`
-                : ''),
+            title: formatName(t(`name-${equivalent.slug}`), 1, true),
+            subtitle: t(`subtitle-${equivalent.slug}`)
+              ? formatName(`(${t(`subtitle-${equivalent.slug}`)})`)
+              : '' +
+                (itineraries
+                  ? ` - ${formatNumber(
+                      itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                    )} km`
+                  : ''),
             component: equivalent.carpool && <Carpool type={type} />,
             value:
               (computeECV(equivalent) *

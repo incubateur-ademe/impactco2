@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import Select from 'components/base/Select'
 
 const StyledSelect = styled(Select)`
@@ -20,6 +21,7 @@ export default function SelectNumber(props) {
     <>
       <StyledSelect
         onChange={(e) => {
+          track('Livraison', 'Commande', e.value)
           props.changeNumber && props.changeNumber(e.value)
         }}
         value={props.value}

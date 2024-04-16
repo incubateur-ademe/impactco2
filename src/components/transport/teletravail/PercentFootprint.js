@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import FootprintModal from 'components/transport/modals/FootprintModal'
@@ -44,15 +45,17 @@ export default function PercentFootprint(props) {
   useEffect(() => {
     setPercent(Math.round((props.saved / (9.9 * 1000)) * 10000) / 100)
   }, [props.saved])
+  const t = useTranslations('transport.teletravail')
+
   return (
     <Wrapper>
       {openModal && <FootprintModal setOpen={setOpenModal} />}
       <Result>
-        <Start>soit</Start> <Number>{percent}</Number> <Percent>%</Percent>
+        <Start>{t('thats')}</Start> <Number>{percent}</Number> <Percent>%</Percent>
         <br />
-        d&apos;économisé sur mon empreinte carbone annuelle
+        {t('saved')}
       </Result>
-      <Details onClick={() => setOpenModal(true)}>Préciser ou calculer mon empreinte carbone</Details>
+      <Details onClick={() => setOpenModal(true)}>{t('precise')}</Details>
     </Wrapper>
   )
 }

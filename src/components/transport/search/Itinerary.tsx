@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import styled from 'styled-components'
 import useParamContext from 'components/providers/ParamProvider'
@@ -15,11 +16,11 @@ export default function ItinerarySearch() {
   const {
     itineraire: { start, setStart, end, setEnd },
   } = useParamContext()
-
+  const t = useTranslations('transport.itineraire')
   return (
     <Wrapper>
-      <Address placeholder='Départ' address={start?.address} setPlace={setStart} />
-      <Address placeholder='Arrivée' address={end?.address} setPlace={setEnd} />
+      <Address placeholder={t('start')} address={start?.address} setPlace={setStart} />
+      <Address placeholder={t('end')} address={end?.address} setPlace={setEnd} />
     </Wrapper>
   )
 }

@@ -25,15 +25,14 @@ export default function Iframe({ children, noLogo }: { children: ReactNode; noLo
   useEffect(() => {
     const node = ref.current // DOM Ref
     const hasIOSupport = !!window.IntersectionObserver
-    const frozen = entry?.isIntersecting || observed
-    if (!hasIOSupport || frozen || !node) {
+    if (!hasIOSupport || !node) {
       return
     }
 
     const observer = new IntersectionObserver(([entry]) => setEntry(entry))
     observer.observe(node)
     return () => observer.disconnect()
-  }, [ref, setEntry, entry, observed])
+  }, [ref])
 
   useEffect(() => {
     if (!observed && entry && entry.isIntersecting) {

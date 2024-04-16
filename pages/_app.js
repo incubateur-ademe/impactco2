@@ -8,7 +8,8 @@ import { GlobalStyle } from 'utils/styles'
 import 'utils/styles.css'
 import 'utils/variables.css'
 import { ParamProvider } from 'components/providers/ParamProvider'
-import useTheme from 'components/layout/UseTheme'
+import TranslationProvider from 'components/providers/TranslationProvider'
+import useTheme from 'components/layout/Theme'
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
@@ -36,7 +37,9 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClient}>
         <ParamProvider>
           <GlobalStyle />
-          <Component {...pageProps} />
+          <TranslationProvider>
+            <Component {...pageProps} />
+          </TranslationProvider>
         </ParamProvider>
       </QueryClientProvider>
     </QueryParamProvider>

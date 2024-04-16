@@ -35,6 +35,9 @@ const ecvs: Record<string, SimpleEquivalent> = {}
 const list: { value: string; label: string }[] = []
 Object.values(existingEquivalentsByCategory).forEach((equivalents) =>
   equivalents.forEach((equivalent) => {
+    if (equivalent.subtitle) {
+      console.log(`"subtitle-${equivalent.slug}": "${equivalent.subtitle || ''}",`)
+    }
     const name = `${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`
     const label = `${equivalent.prefix || ''}${name.toLowerCase()}${equivalent.suffix || ''}`
     const value = existingValues[equivalent.slug]

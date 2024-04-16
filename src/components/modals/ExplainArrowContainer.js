@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import ExplainArrow from 'components/modals/ExplainArrow.js'
@@ -15,6 +16,8 @@ const Wrapper = styled.div`
 `
 
 export default function ExplainArrowContainer() {
+  const t = useTranslations('modal.co2')
+
   return (
     <Wrapper>
       <ExplainArrow />
@@ -22,19 +25,12 @@ export default function ExplainArrowContainer() {
         <ExplainEq>
           <div>
             <ActualResult>28</ActualResult>
-            <Units>
-              {' '}
-              kg de CO<sub>2</sub>{' '}
-            </Units>
+            <Units> {t('co2')} </Units>
           </div>
           <div>
-            <GreyText>...alors l'impact total de ce</GreyText>
-            <GreyText>
-              produit est de 29 kg de CO<sub>2</sub>e
-            </GreyText>
-            <GreyText>
-              (équivalent CO<sub>2</sub>).
-            </GreyText>
+            <GreyText>...{t('co2-impact')}</GreyText>
+            <GreyText>{t('co2-value')}</GreyText>
+            <GreyText>({t('co2-equivalent')})</GreyText>
           </div>
         </ExplainEq>
       </ExplainEqContainer>

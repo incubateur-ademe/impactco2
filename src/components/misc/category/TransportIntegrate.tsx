@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
 import { TransportSimulateur } from 'types/transport'
 import useParamContext from 'components/providers/ParamProvider'
@@ -13,7 +14,9 @@ const ITINERAIRE = 'itineraire'
 const TELETRAVAIL = 'teletravail'
 
 const TransportIntegrate = ({ tracking, type }: { tracking: string; type: TransportSimulateur }) => {
-  const { distance, itineraire, teletravail, theme, setTheme } = useParamContext()
+  const t = useTranslations('overscreen.transport')
+  const tTransport = useTranslations('transport.mode-selector')
+  const { distance, itineraire, teletravail, theme, setTheme, language, setLanguage } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
     km: true,
@@ -36,6 +39,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
     result += ` data-search="?theme=${theme}`
 
     result += `&tabs=${tabs.join(',')}`
+    result += `&language=${language}`
 
     if (tabs.includes(DISTANCE) && visibility.km) {
       result += `&km=${distance.km}`
@@ -60,7 +64,18 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
     }
 
     return result + '"></script>'
-  }, [type, visibility, tabs, distance.km, theme, itineraire.start, itineraire.end, teletravail.start, teletravail.end])
+  }, [
+    type,
+    visibility,
+    tabs,
+    distance.km,
+    theme,
+    itineraire.start,
+    itineraire.end,
+    teletravail.start,
+    teletravail.end,
+    language,
+  ])
 
   const params = useMemo(() => {
     return {
@@ -78,11 +93,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
 
   return (
     <>
-      <Checkbox
-        required
-        id='tabs'
-        label='Onglet à intégrer'
-        hint="Sélectionnez les onglets que vous souhaitez intégrer à l'iframe">
+      <Checkbox required id='tabs' label={t('onglets')} hint={t('onglets-hint')}>
         <CheckboxInput
           color='secondary'
           checked={tabs.includes(DISTANCE)}
@@ -93,7 +104,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
               setTabs(tabs.filter((tab) => tab !== DISTANCE))
             }
           }}
-          label='Distance'
+          label={tTransport('distance')}
           data-testid='transport-integration-distance-checkbox'
         />
         <CheckboxInput
@@ -106,7 +117,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
               setTabs(tabs.filter((tab) => tab !== ITINERAIRE))
             }
           }}
-          label='Itinéraire'
+          label={tTransport('itineraire')}
         />
         <CheckboxInput
           color='secondary'
@@ -118,7 +129,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
               setTabs(tabs.filter((tab) => tab !== TELETRAVAIL))
             }
           }}
-          label='Télétravail'
+          label={tTransport('teletravail')}
         />
       </Checkbox>
       <Separator />
@@ -126,7 +137,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
         <>
           <CustomParams
             integration
-            title='Distance'
+            title={tTransport('distance')}
             tracking={tracking}
             trackingType='Intégrer'
             params={{ km: params.km }}
@@ -141,7 +152,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
         <>
           <CustomParams
             integration
-            title='Itinéraire'
+            title={tTransport('itineraire')}
             tracking={tracking}
             trackingType='Intégrer'
             params={{ itineraire: params.itineraire }}
@@ -155,7 +166,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
         <>
           <CustomParams
             integration
-            title='Télétravail'
+            title={tTransport('teletravail')}
             tracking={tracking}
             trackingType='Intégrer'
             params={{ teletravail: params.teletravail }}
@@ -170,6 +181,13 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
         slug='theme'
         integration
         param={{ value: theme, setter: setTheme } as CustomParamValue}
+        visible
+      />
+      <CustomParam
+        tracking={tracking}
+        slug='language'
+        integration
+        param={{ value: language, setter: setLanguage } as CustomParamValue}
         visible
       />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>

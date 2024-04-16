@@ -27,6 +27,7 @@
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "webpack": "dotenv -e .env.local webpack",
+    "stats": "dotenv -e .env ts-node src/scripts/getStats.ts",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
@@ -35,8 +36,7 @@
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "engines": {
-    "node": "20",
-    "yarn": "1.22"
+    "node": ">=20"
   },
   "dependencies": {
     "@incubateur-ademe/publicodes-impact-livraison": "^0.2.1",
@@ -59,6 +59,7 @@
     "iframe-resizer": "^4.3.9",
     "markdown-to-jsx": "^7.4.5",
     "next": "^14.1.4",
+    "next-intl": "^3.10.0",
     "next-query-params": "^5.0.0",
     "next-sitemap": "^4.2.3",
     "notion-client": "^6.16.0",

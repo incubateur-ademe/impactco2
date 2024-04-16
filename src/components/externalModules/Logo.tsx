@@ -15,12 +15,12 @@ const Logo = ({
 }) => {
   return (
     <a
-      href={url || `https://impactco2.fr/comparateur?value=${value}`}
+      href={url || `https://impactco2.fr/comparateur?value=${value / 1000}`}
       onClick={onClick}
       className={classNames(right ? styles.reverseLogo : styles.logo)}
       target='_blank'
       rel='noreferrer noopener'
-      aria-label='Impact CO2'>
+      aria-label='Logo Impact CO2'>
       <svg xmlns='http://www.w3.org/2000/svg' width='30' height='50' viewBox='0 0 30 50' fill='none'>
         <path
           fillRule='evenodd'

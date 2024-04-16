@@ -33,7 +33,7 @@ export default function ByOrder() {
             title={
               <>
                 <span>
-                  Partager votre comparaison <b>au format</b>
+                  Partager votre comparaison <b>au format</b>{' '}
                 </span>
                 <span>
                   <b>étiquette</b>

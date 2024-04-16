@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import Select from 'components/base/Select'
 import { produits } from './data.js'
 
@@ -14,6 +15,7 @@ export default function SelectProduits(props) {
     <>
       <StyledSelect
         onChange={(e) => {
+          track('Livraison', 'Produit', e.value)
           props.changeProduit(produits.find((produit) => produit.uid === e.value))
         }}
         value={props.value}

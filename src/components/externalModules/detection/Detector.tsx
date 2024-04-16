@@ -7,7 +7,7 @@ import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regex =
-  /([0-9]+(,|\.|\s|&nbsp;)?[0-9]*)(\s|&nbsp;)?(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)?(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)?(d'émissions\s|&nbsp;)?(de\s|&nbsp;)?(d(’|')équivalent\s|&nbsp;)?(eq)?(co(2|₂|<sub>2(\s|&nbsp;)?<\/sub>)|dioxyde de carbone)(eq|équivalent|e)?/i
+  /([0-9]+(,|\.|\s|&nbsp;)*[0-9]*)(\s|&nbsp;)*(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)*(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)*(d'émissions\s|&nbsp;)?(de\s|&nbsp;)*(d(’|')équivalent\s|&nbsp;)?(eq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(eq|((\s|&nbsp;)*équivalent)|e)?/i
 
 const getComputedStyle = (el: Element, property: string) => {
   if (document.defaultView) {
@@ -88,15 +88,14 @@ const Detector = ({ impact }: { impact: string }) => {
   useEffect(() => {
     const node = ref.current // DOM Ref
     const hasIOSupport = !!window.IntersectionObserver
-    const frozen = entry?.isIntersecting || observed
-    if (!hasIOSupport || frozen || !node) {
+    if (!hasIOSupport || !node) {
       return
     }
 
     const observer = new IntersectionObserver(([entry]) => setEntry(entry))
     observer.observe(node)
     return () => observer.disconnect()
-  }, [ref, setEntry, entry, observed])
+  }, [ref])
 
   useEffect(() => {
     if (!observed && entry && entry.isIntersecting) {
@@ -149,7 +148,7 @@ const Detector = ({ impact }: { impact: string }) => {
   return (
     <div className={styles.container} ref={ref}>
       <button
-        className={styles.value}
+        className={classNames(styles.value, 'impactCO2-etiquette-detected-value')}
         onClick={onClick}
         dangerouslySetInnerHTML={{
           __html: impact,
@@ -163,12 +162,13 @@ const Detector = ({ impact }: { impact: string }) => {
           [styles.left]: display.includes('left'),
         })}
         ref={etiquetteRef}>
-        <Logo value={value / 1000} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
+        <Logo value={value} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
         <div className={styles.simpleValue}>
           <SimpleValue value={value} comparison='random' />
         </div>
         <button
           className={styles.random}
+          title='Obtenir une nouvelle comparaison'
           onClick={() => {
             forceUpdate()
             track('Detecteur carbone', 'Reload', 'reload')

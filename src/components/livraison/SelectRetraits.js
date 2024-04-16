@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { track } from 'utils/matomo'
 import { MEDIA } from 'utils/styles'
 import Select from 'components/base/Select'
 import { retraits } from './data.js'
@@ -21,6 +22,7 @@ export default function SelectRetraits(props) {
     <>
       <StyledSelect
         onChange={(e) => {
+          track('Livraison', 'Mode', e.value)
           props.changeRetrait(retraits.find((retrait) => retrait.uid === e.value))
         }}
         value={props.value}

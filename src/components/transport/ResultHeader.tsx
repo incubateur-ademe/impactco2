@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
@@ -18,11 +19,14 @@ const ResultHeader = ({
   type: TransportSimulateur
 }) => {
   const params = useParamContext()
+  const t = useTranslations('category')
+  const tTransport = useTranslations('transport')
+
   const { displayAll, setDisplayAll, carpool, setCarpool } = params[type]
 
   return (
     <Top className='noscreenshot'>
-      <Instruction title={category.equivalent} gender={category.gender} />
+      <Instruction category={category} />
       <Checkboxes $visible>
         <Checkbox
           name='displayAll'
@@ -31,7 +35,10 @@ const ResultHeader = ({
             track(tracking, 'Voir tous', displayAll ? 'faux' : 'vrai')
             setDisplayAll((prevDisplayAll) => !prevDisplayAll)
           }}>
-          Voir {category.gender === 'f' ? 'toutes' : 'tous'} les {formatName(category.equivalent, 2) || 'équivalents'}
+          {t('see-all', {
+            gender: category && category.gender === 'f' ? 'toutes' : 'tous',
+            name: formatName(category ? t(`equivalent-${category.slug}`) : t('equivalent'), 2),
+          })}
         </Checkbox>
         <Checkbox
           name='carpool'
@@ -40,7 +47,7 @@ const ResultHeader = ({
             track(tracking, 'Covoiturage', carpool ? 'faux' : 'vrai')
             setCarpool((prevCarpool) => (prevCarpool ? 0 : 2))
           }}>
-          Afficher le covoiturage
+          {tTransport('carpool.see')}
         </Checkbox>
       </Checkboxes>
     </Top>
