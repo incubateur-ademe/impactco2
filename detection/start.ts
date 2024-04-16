@@ -12,7 +12,6 @@ const transform = (element: Element, darkMode?: boolean) => {
   }
 
   const hasImpact = regex.exec(element.innerHTML)
-  console.log(hasImpact, element.innerHTML)
   if (hasImpact && hasImpact[1] !== '0') {
     const etiquette = document.createElement('DIV')
     etiquette.className = className
@@ -46,10 +45,10 @@ const transformText = (element: Element, darkMode?: boolean) => {
             etiquette.classList.add('night')
           }
           const existingValues = child.textContent.split(hasImpact[0])
-          const before = document.createElement(element.tagName)
+          const before = document.createElement('DIV')
           before.className = className
           before.innerHTML = existingValues[0]
-          const after = document.createElement(element.tagName)
+          const after = document.createElement('DIV')
           after.className = className
           after.innerHTML = existingValues[1]
           transform(after, darkMode)
