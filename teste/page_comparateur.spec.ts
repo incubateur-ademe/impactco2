@@ -11,11 +11,11 @@ test('Comparateur', async ({ page }) => {
   await expect(page.getByTestId('selected-equivalents-number')).toContainText('4')
   await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
-  await expect(page.getByTestId('comparateur-abricot-value')).toContainText('11.4')
+  await expect(page.getByTestId('comparateur-abricot-value')).toContainText('114')
   await expect(page.getByTestId('comparateur-abricot-name')).toContainText("kg d'abricot")
 
   await page.getByRole('button', { name: 'Comparer' }).nth(3).click()
-  await expect(page.getByTestId('compared-equivalent-value')).toContainText('8,81 kg CO2e')
+  await expect(page.getByTestId('compared-equivalent-value')).toContainText('88,06 kg CO2e')
 
   await page.getByRole('button', { name: 'Ajouter un équivalent' }).click()
   await page.getByRole('button', { name: 'Fruits et légumes 0 / 74 Voir' }).click()
@@ -23,19 +23,19 @@ test('Comparateur', async ({ page }) => {
   await expect(page.getByTestId('selected-equivalents-number')).toContainText('4')
   await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
-  await expect(page.getByTestId('comparateur-ail-value')).toContainText('24.6')
+  await expect(page.getByTestId('comparateur-ail-value')).toContainText('246')
   await expect(page.getByTestId('comparateur-ail-name')).toContainText("kg d'ail")
 
   await page.getByText('10').nth(1).click()
-  await expect(page.getByTestId('etiquette-value').nth(0)).toContainText('8.81')
+  await expect(page.getByTestId('etiquette-value').nth(0)).toContainText('88.06')
   await expect(page.getByTestId('etiquette-abricot-value').nth(0)).toContainText('10')
   await expect(page.getByTestId('etiquette-abricot-name').nth(0)).toContainText("kg d'abricot")
-  await expect(page.getByTestId('etiquette-ail-value').nth(0)).toContainText('24.6')
+  await expect(page.getByTestId('etiquette-ail-value').nth(0)).toContainText('246')
   await expect(page.getByTestId('etiquette-ail-name').nth(0)).toContainText("kg d'ail")
-  await expect(page.getByTestId('etiquette-value').nth(1)).toContainText('8.81')
+  await expect(page.getByTestId('etiquette-value').nth(1)).toContainText('88.06')
   await expect(page.getByTestId('etiquette-abricot-value').nth(1)).toContainText('10')
   await expect(page.getByTestId('etiquette-abricot-name').nth(1)).toContainText("kg d'abricot")
-  await expect(page.getByTestId('etiquette-ail-value').nth(1)).toContainText('24.6')
+  await expect(page.getByTestId('etiquette-ail-value').nth(1)).toContainText('246')
   await expect(page.getByTestId('etiquette-ail-name').nth(1)).toContainText("kg d'ail")
 
   await page.getByLabel("kg d'abricot").fill('5')
@@ -83,8 +83,8 @@ test('Comparateur', async ({ page }) => {
   )
 
   await page.getByRole('button', { name: "kg d'abricot" }).click()
-  await expect(page.getByTestId('comparateur-abricot-value')).toContainText('11.4')
-  await expect(page.getByTestId('comparateur-ail-value')).toContainText('27.9')
+  await expect(page.getByTestId('comparateur-abricot-value')).toContainText('114')
+  await expect(page.getByTestId('comparateur-ail-value')).toContainText('279')
 })
 
 test('Iframes', async ({ page }) => {
