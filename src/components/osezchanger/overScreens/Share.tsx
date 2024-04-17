@@ -11,9 +11,7 @@ const url = buildCurrentUrlFor('/habillement/osez-changer')
 const Share = () => {
   return (
     <div data-testid='share-modal'>
-      <ClipboardBox tracking='OsezChanger' colored>
-        {url}
-      </ClipboardBox>
+      <ClipboardBox tracking='OsezChanger'>{url}</ClipboardBox>
       <Text>ou</Text>
       <Buttons>
         <FacebookShareButton

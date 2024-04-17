@@ -1,0 +1,272 @@
+export const chauffage = [
+  {
+    id: 1,
+    name: 'Chauffage au gaz',
+    suffix: ' par m²',
+    prefix: 'année[s] de ',
+    slug: 'chauffagegaz',
+    emoji: '💨',
+    category: 8,
+    total: 39,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Chauffage au gaz',
+      description: 'Découvrez à quoi correspond une année de chauffage au gaz par m² en kgCO₂e émis (CO₂e)',
+    },
+    data: {
+      values: [
+        {
+          title: 'Intensité carbone',
+          value: '0,221 kg CO₂e /kWh PCS *',
+        },
+        {
+          title: 'Besoin d’énergie par m²',
+          value: '150 kWh/m²',
+        },
+        {
+          title: 'Rendement',
+          value: '0,85',
+        },
+        {
+          title: 'Empreinte carbone par m²',
+          value: '150 kWh/m² / 0,85 × 0,221 kgCO₂e/kWh = 39 kgCO₂e/m²',
+        },
+      ],
+      hypothesis:
+        "* On raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : on fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation.",
+    },
+  },
+  {
+    id: 2,
+    name: 'Chauffage au fioul',
+    suffix: ' par m²',
+    prefix: 'année[s] de ',
+    slug: 'chauffagefioul',
+    emoji: '🛢',
+    category: 8,
+    total: 57.17,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Chauffage au fioul',
+      description: "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul par m²",
+    },
+    data: {
+      values: [
+        {
+          title: 'Intensité carbone',
+          value: '0,324 kgCO₂e/kWh',
+        },
+        {
+          title: 'Besoin d’énergie par m²',
+          value: '150 kWh/m²',
+        },
+        {
+          title: 'Rendement',
+          value: '0,85',
+        },
+        {
+          title: 'Empreinte carbone par m²',
+          value: '150 kWh/m² / 0,85 × 0,324 kgCO₂e/kWh = 57,17 kgCO₂e/m²',
+        },
+      ],
+    },
+  },
+  {
+    id: 3,
+    name: 'Chauffage électrique',
+    suffix: ' par m²',
+    prefix: 'année[s] de ',
+    slug: 'chauffageelectrique',
+    emoji: '⚡️',
+    category: 8,
+    total: 11.85,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Chauffage électrique',
+      description: 'Découvrez à quoi correspond une année de chauffage électrique par m² en kgCO₂e émis (CO₂e)',
+    },
+    data: {
+      values: [
+        {
+          title: 'Intensité carbone',
+          value: '0,079 kgCO₂e/kWh (2022) *',
+        },
+        {
+          title: 'Besoin d’énergie par m²',
+          value: '150 kWh/m²',
+        },
+        {
+          title: 'Rendement',
+          value: '1',
+        },
+        {
+          title: 'Empreinte carbone par m²',
+          value: '150 kWh/m² / 1 × 0,079 kgCO₂e/kWh = 11,85 kgCO₂e/m²',
+        },
+      ],
+      hypothesis:
+        '* Donnée issue de l’accord de la réglementation <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043938727/2022-01-01" target="_blank" rel="noopener norefferer">RE 2020</a>',
+    },
+  },
+  {
+    id: 4,
+    name: 'Chauffage avec une pompe à chaleur',
+    suffix: ' par m²',
+    prefix: 'année[s] de ',
+    slug: 'pompeachaleur',
+    emoji: '🌡️',
+    category: 8,
+    total: 3.95,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Pompe à chaleur',
+      description:
+        'Découvrez à quoi correspond une année de chauffage avec une pompe à chaleur par m² en kgCO₂e émis (CO₂e)',
+    },
+    data: {
+      values: [
+        {
+          title: 'Intensité carbone',
+          value: '0,079 kgCO₂e/kWh (2022) *',
+        },
+        {
+          title: 'Besoin d’énergie par m²',
+          value: '150 kWh/m²',
+        },
+        {
+          title: 'Rendement',
+          value: '3',
+        },
+        {
+          title: 'Empreinte carbone par m²',
+          value: '150 kWh/m² / 3 × 0,079 kgCO₂e/kWh = 3,95 kgCO₂e/m²',
+        },
+      ],
+      hypothesis:
+        '* Donnée issue de l’accord de la réglementation <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043938727/2022-01-01" target="_blank" rel="noopener norefferer">RE 2020</a>',
+    },
+  },
+  {
+    id: 5,
+    name: 'Chauffage avec un poêle à granulés',
+    suffix: ' par m²',
+    prefix: 'année[s] de ',
+    slug: 'poeleagranule',
+    emoji: '🔥',
+    category: 8,
+    total: 5.64,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Poêle à granulés',
+      description:
+        'Découvrez à quoi correspond une année de chauffage avec un poêle à granulés par m² en kgCO₂e émis (CO₂e)',
+    },
+    data: {
+      values: [
+        {
+          title: 'Intensité carbone',
+          value: '0,0320 kg CO₂e/kWh',
+        },
+        {
+          title: 'Besoin d’énergie par m²',
+          value: '150 kWh/m²',
+        },
+        {
+          title: 'Rendement',
+          value: '0,85',
+        },
+        {
+          title: 'Empreinte carbone par m²',
+          value: '150 kWh/m² / 0,85 × 0,0320 kgCO₂e/kWh = 5,64 kgCO₂e/m²',
+        },
+      ],
+      hypothesis:
+        "Attention : les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des règles de calcul de la Base Carbone. Il est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en compte les émissions de méthane imbrulé.",
+    },
+  },
+  {
+    id: 6,
+    name: 'Chauffage avec un poêle à bois',
+    suffix: ' par m²',
+    prefix: 'année[s] de ',
+    slug: 'poeleabois',
+    emoji: '🪵',
+    category: 8,
+    total: 9.2,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Poêle à bois',
+      description:
+        'Découvrez à quoi correspond une année de chauffage avec un poêle à bois par m² en kgCO₂e émis (CO₂e)',
+    },
+    data: {
+      values: [
+        {
+          title: 'Intensité carbone',
+          value: '0,046 kg CO₂e/kWh',
+        },
+        {
+          title: 'Besoin d’énergie par m²',
+          value: '150 kWh/m²',
+        },
+        {
+          title: 'Rendement',
+          value: '0.75',
+        },
+        {
+          title: 'Empreinte carbone par m²',
+          value: '150 kWh/m²  / 0,75 × 0,046 kgCO₂e/kWh = 9,2 kgCO₂e/m²',
+        },
+      ],
+      hypothesis:
+        "Attention : les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des règles de calcul de la Base Carbone. Il est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en compte les émissions de méthane imbrulé.",
+    },
+  },
+  {
+    id: 7,
+    name: 'Chauffage via un réseau de chaleur',
+    suffix: ' par m²',
+    prefix: 'année[s] de ',
+    slug: 'reseaudechaleur',
+    emoji: '🏢',
+    category: 8,
+    total: 18.67,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Réseau de chaleur',
+      description:
+        'Découvrez à quoi correspond une année de chauffage via un réseau de chaleur par m² en kgCO₂e émis (CO₂e)',
+    },
+    data: {
+      values: [
+        {
+          title: 'Intensité carbone',
+          value: '0,112 kg CO₂e/kWh',
+          withSource: {
+            label: 'Étude Fedene 2023',
+            href: 'https://www.fedene.fr/wp-content/uploads/sites/2/2023/11/Fedene_enquete_version-numerique.pdf',
+          },
+        },
+        {
+          title: 'Besoin d’énergie par m²',
+          value: '150 kWh/m²',
+        },
+        {
+          title: 'Rendement',
+          value: '0,9',
+        },
+        {
+          title: 'Empreinte carbone par m²',
+          value: '150 kWh/m² / 0,9 × 0,112 kgCO₂e/kWh = 18,67 kgCO₂e/m²',
+        },
+      ],
+    },
+  },
+]

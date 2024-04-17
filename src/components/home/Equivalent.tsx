@@ -1,9 +1,9 @@
 import classNames from 'classnames'
-import { formatValue } from 'publicodes'
 import React from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import categories from 'data/categories.json'
 import formatName from 'utils/formatName'
+import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import styles from './Equivalent.module.css'
 
@@ -19,7 +19,7 @@ const Equivalent = ({ equivalent }: { equivalent?: ComputedEquivalent }) => {
               {formatName(`${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`, 1, true)}
             </div>
             <div className={styles.value}>
-              <div className={styles.valueNumber}>{formatValue(equivalent.value)}</div> kg CO<sub>2</sub>e
+              <div className={styles.valueNumber}>{formatNumber(equivalent.value)}</div> kg CO<sub>2</sub>e
             </div>
             <div className={styles.unit}>par {equivalent.unit || category?.unit || 'unité'}</div>
           </div>

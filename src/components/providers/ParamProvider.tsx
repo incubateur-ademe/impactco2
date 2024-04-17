@@ -1,7 +1,7 @@
 'use client'
 
 import negaocterRules from '@incubateur-ademe/publicodes-negaoctet'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'

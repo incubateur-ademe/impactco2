@@ -1,0 +1,101 @@
+export const repas = [
+  {
+    id: 20689,
+    name: 'Repas avec du boeuf',
+    synonyms: ['manger', 'alimenter', 'viande'],
+    slug: 'repasavecduboeuf',
+    emoji: '🥩',
+    category: 2,
+    total: 7.26,
+    default: true,
+    tile: true,
+    meta: {
+      title: 'Repas boeuf',
+      description:
+        'Un repas avec du boeuf a un impact important sur le climat. Mesurez votre impact en découvrant la valeur en CO₂e de votre repas',
+    },
+    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas',
+  },
+  {
+    id: 20683,
+    name: 'Repas végétarien[s]',
+    synonyms: ['manger', 'alimenter'],
+    slug: 'repasvegetarien',
+    emoji: '🥗',
+    category: 2,
+    total: 0.51,
+    default: true,
+    tile: true,
+    meta: {
+      title: 'Repas végétarien',
+      description:
+        "Un repas avec du boeuf, un repas avec du poulet, ou un repas végétarien aura un impact différent sur le climat. Quel est l'impact d'un repas végétarien ?",
+    },
+    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas',
+  },
+  {
+    name: 'Repas végétalien[s]',
+    synonyms: ['manger', 'alimenter'],
+    slug: 'repasvegetalien',
+    emoji: '🍎',
+    category: 2,
+    total: 0.39,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Repas végétalien',
+      description:
+        "Découvrez l'impact climat d'un repas végétalien et comparez-le à l'impact climat d'un repas avec du boeuf ou avec du poulet",
+    },
+    source: 'https://nosgestesclimat.fr/documentation/alimentation/plats/v%C3%A9g%C3%A9talien/empreinte',
+  },
+  {
+    name: 'Repas avec du poisson blanc',
+    synonyms: ['manger', 'alimenter'],
+    slug: 'repasavecdupoissonblanc',
+    emoji: '🐟',
+    category: 2,
+    total: 1.98,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Repas poisson blanc',
+      description:
+        "Découvrez la différence de l'impact climat entre un repas avec du poisson blanc et un repas avec de la viande. Mesurez votre empreinte carbone",
+    },
+    source: 'https://nosgestesclimat.fr/documentation/alimentation/plats/poisson-2/empreinte',
+  },
+  {
+    name: 'Repas avec du poisson gras',
+    synonyms: ['manger', 'alimenter'],
+    slug: 'repasavecdupoissongras',
+    emoji: '🐟',
+    category: 2,
+    total: 1.11,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Repas poisson gras',
+      description:
+        "Voici l'impact émis par repas avec du poisson gras comprenant la fabrication, la distribution et la consommation",
+    },
+    source: 'https://nosgestesclimat.fr/documentation/alimentation/plats/poisson-1/empreinte',
+  },
+  {
+    id: 20688,
+    name: 'Repas avec du poulet',
+    synonyms: ['manger', 'alimenter', 'viande'],
+    slug: 'repasavecdupoulet',
+    emoji: '🍗',
+    category: 2,
+    total: 1.58,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Repas poulet',
+      description:
+        'Quelle est la différence sur le climat entre un repas avec du poulet, un repas avec du boeuf, ou un repas végétarien ? Mesurez votre impact sur le climat',
+    },
+    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas',
+  },
+]

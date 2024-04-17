@@ -1,0 +1,217 @@
+export const mobiliers = [
+  {
+    id: 26966,
+    name: 'Canapé[s]',
+    subtitle: 'Convertible[s]',
+    slug: 'canapeconvertible',
+    emoji: '🛋',
+    category: 7,
+    default: false,
+    tile: false,
+    meta: {
+      title: 'Canapé convertible',
+      description:
+        "La fabrication et la distribution d'un canapé convertible a un impact carbone à ne pas négliger. Découvrez son poids CO₂e grâce à Impact CO₂",
+    },
+    source:
+      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+    ecv: [
+      {
+        id: 1,
+        value: 119,
+      },
+      {
+        id: 2,
+        value: 16.3,
+      },
+      {
+        id: 3,
+        value: 11.2,
+      },
+      {
+        id: 4,
+        value: 51,
+      },
+    ],
+    total: 198,
+  },
+  {
+    id: 26958,
+    name: 'Chaise[s]',
+    subtitle: 'En bois',
+    slug: 'chaiseenbois',
+    emoji: '🪑',
+    category: 7,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Chaise en bois',
+      description:
+        "Grâce à Impact CO₂, découvrez le poids en CO₂e d'une chaise en bois comprenant sa fabrication et sa distribution",
+    },
+    source:
+      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+    ecv: [
+      {
+        id: 1,
+        value: 4.92,
+      },
+      {
+        id: 2,
+        value: 1.78,
+      },
+      {
+        id: 3,
+        value: 0.05,
+      },
+      {
+        id: 4,
+        value: 11.879999999999999,
+      },
+    ],
+    total: 18.6,
+  },
+  {
+    id: 26961,
+    name: 'Table[s]',
+    subtitle: 'En bois',
+    slug: 'tableenbois',
+    emoji: '🪵',
+    category: 7,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Table en bois',
+      description:
+        "La fabrication et la distribution d'une table en bois a un impact sur le climat. Découvrez son poids en CO₂e et son équivalence avec d'autres produits",
+    },
+    source:
+      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+    ecv: [
+      {
+        id: 1,
+        value: 23.6,
+      },
+      {
+        id: 2,
+        value: 9.39,
+      },
+      {
+        id: 3,
+        value: 0.13,
+      },
+      {
+        id: 4,
+        value: 47.1,
+      },
+    ],
+    total: 80.2,
+  },
+  {
+    id: 26964,
+    name: 'Canapé[s]',
+    subtitle: 'Textile',
+    slug: 'canapetextile',
+    emoji: '🛋',
+    category: 7,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Canapé',
+      description:
+        "Découvre l'impact sur le climat de la fabrication et la distribution d'un canapé en textile et comparez-le à d'autres produits",
+    },
+    source:
+      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+    ecv: [
+      {
+        id: 1,
+        value: 99.5,
+      },
+      {
+        id: 2,
+        value: 16.7,
+      },
+      {
+        id: 3,
+        value: 13.5,
+      },
+      {
+        id: 4,
+        value: 49.4,
+      },
+    ],
+    total: 179,
+  },
+  {
+    id: 26963,
+    name: 'Armoire',
+    slug: 'armoire',
+    emoji: '🚪',
+    category: 7,
+    default: true,
+    tile: false,
+    meta: {
+      title: 'Armoire',
+      description:
+        "Découvrez l'empreinte carbone d'une armoire, comprenant sa fabrication et sa distribution, grâce à Impact CO₂",
+    },
+    source:
+      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+    ecv: [
+      {
+        id: 1,
+        value: 118,
+      },
+      {
+        id: 2,
+        value: 70.7,
+      },
+      {
+        id: 3,
+        value: 2.18,
+      },
+      {
+        id: 4,
+        value: 716,
+      },
+    ],
+    total: 907,
+  },
+  {
+    ids: [26970, 26968, 26969],
+    name: 'Lit',
+    subtitle: 'Cadre + sommier + matelas',
+    slug: 'lit',
+    emoji: '🛏',
+    category: 7,
+    default: true,
+    total: 115,
+    tile: false,
+    meta: {
+      title: 'Lit en bois',
+      description:
+        "Savez-vous que la fabrication et la distribution d'un lit a un impact sur le climat ? Découvrez son poids en CO₂e et son équivalence avec d'autres meubles",
+    },
+    source:
+      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+    ecv: [
+      {
+        id: 1,
+        value: 303.20000000000005,
+      },
+      {
+        id: 2,
+        value: 38.28,
+      },
+      {
+        id: 3,
+        value: 38.43,
+      },
+      {
+        id: 4,
+        value: 63.900000000000006,
+      },
+    ],
+  },
+]

@@ -1,8 +1,9 @@
-import { useTranslations } from 'next-intl'
+'use client'
+
 import React from 'react'
 import { track } from 'utils/matomo'
 import GhostButton from 'components/base/GhostButton'
-import { Buttons } from './Actions.styles'
+import styles from './Actions.module.css'
 
 const Actions = ({
   onClick,
@@ -15,9 +16,8 @@ const Actions = ({
   withoutIntegration?: boolean
   withoutShare?: boolean
 }) => {
-  const t = useTranslations('overscreen')
   return (
-    <Buttons>
+    <div className={styles.buttons}>
       {!withoutShare && (
         <GhostButton
           data-testid='header-share-button'
@@ -26,7 +26,7 @@ const Actions = ({
             onClick('partager')
             track(tracking, 'Partager', `${tracking.replace(/ /g, '_').toLowerCase()}_partager`)
           }}>
-          {t('share')}
+          Partager
         </GhostButton>
       )}
       {!withoutIntegration && (
@@ -37,7 +37,7 @@ const Actions = ({
             onClick('integrer')
             track(tracking, 'Integrer', `${tracking.replace(/ /g, '_').toLowerCase()}_integrer`)
           }}>
-          {t('integrate')}
+          Intégrer
         </GhostButton>
       )}
       <GhostButton
@@ -45,9 +45,9 @@ const Actions = ({
         onClick={() => {
           onClick('telecharger')
         }}>
-        {t('download')}
+        Télécharger
       </GhostButton>
-    </Buttons>
+    </div>
   )
 }
 

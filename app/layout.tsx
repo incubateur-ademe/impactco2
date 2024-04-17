@@ -3,6 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 import 'utils/styles.css'
 import 'utils/variables.css'
+import { ParamProvider } from 'components/providers/ParamProvider'
 import Theme from 'components/layout/Theme'
 import Footer from 'components/layout/web/Footer'
 import Header from 'components/layout/web/Header'
@@ -45,7 +46,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Theme />
         <Transtack>
           <Header />
-          <main id='contenu'>{children}</main>
+          <ParamProvider>
+            <main id='contenu'>{children}</main>
+          </ParamProvider>
           <Footer />
         </Transtack>
       </body>

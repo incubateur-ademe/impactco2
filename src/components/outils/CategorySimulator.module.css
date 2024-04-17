@@ -1,0 +1,98 @@
+.equivalent {
+  padding: 1rem 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+
+  &:not(:last-child) {
+    border-bottom: 2px solid var(--primary-30);
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.data {
+  color: var(--primary-50);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  width: 100%;
+}
+
+.usage,
+.construction,
+.fullBar {
+  display: inline-block;
+  height: 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--primary-60);
+  background: var(--primary-40);
+  margin-right: 0.5rem;
+  overflow: hidden;
+}
+
+.construction,
+.halfBar {
+  height: calc(1rem - 4px);
+  border-radius: 1rem 0 0 1rem;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--primary-10),
+    var(--primary-10) 2px,
+    var(--primary-20) 2px,
+    var(--primary-20) 4px
+  );
+}
+
+.construction,
+.usage {
+  height: 1rem;
+  border-radius: 1rem;
+  width: 1.5rem;
+}
+
+.value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.75rem;
+}
+
+.legend {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 1.25rem;
+  color: var(--neutral-60);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--neutral-20);
+  background: var(--neutral-00);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 50rem) {
+    padding: 1.25rem 1rem;
+    position: relative;
+    top: 0;
+    right: 0;
+    border-radius: 0;
+    border: none;
+    border-top: 2px solid var(--primary-30);
+  }
+}

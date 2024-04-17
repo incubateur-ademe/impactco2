@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import Ademe from 'components/base/Logo/Ademe'
-import Logo from 'components/base/Logo/ImpactCO2'
-import Marianne from 'components/base/Logo/Marianne'
+import Logos from 'components/base/Logo/Logos'
 import { Icon } from 'components/osezchanger/icons'
 import styles from './Header.module.css'
 import Menu from './Menu'
@@ -13,11 +11,7 @@ export default function Header() {
       <SkipLinks />
       <div className='main-container'>
         <div className={styles.container}>
-          <Link href='/' className={styles.logos}>
-            <Marianne />
-            <Ademe />
-            <Logo />
-          </Link>
+          <Logos />
           <div>
             <div className={styles.mainLinks}>
               <Link href='/outils'>

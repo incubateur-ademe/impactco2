@@ -1,10 +1,11 @@
+import classNames from 'classnames'
 import React from 'react'
 import styles from './Logo.module.css'
 
-export default function Logo() {
+export default function Logo({ small }: { small?: boolean }) {
   return (
     <svg
-      className={styles.smallLogo}
+      className={classNames(styles.smallLogo, { [styles.small]: small })}
       xmlns='http://www.w3.org/2000/svg'
       width='124'
       height='48'

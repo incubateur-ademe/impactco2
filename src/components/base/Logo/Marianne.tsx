@@ -1,10 +1,11 @@
+import classNames from 'classnames'
 import React from 'react'
 import styles from './Logo.module.css'
 
-export default function Marianne() {
+export default function Marianne({ small }: { small?: boolean }) {
   return (
     <svg
-      className={styles.logo}
+      className={classNames(styles.logo, { [styles.small]: small })}
       width='57'
       height='50'
       viewBox='0 0 57 50'

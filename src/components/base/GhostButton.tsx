@@ -1,13 +1,13 @@
+import classNames from 'classnames'
 import React, { ButtonHTMLAttributes } from 'react'
 import { Icon, IconId } from '../osezchanger/icons'
-import { Button } from './GhostButton.styles'
+import styles from './GhostButton.module.css'
 
 const GhostButton = ({
   icon,
   children,
   iconPosition,
   size,
-  colored,
   ...buttonProps
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
   icon: IconId
@@ -17,9 +17,15 @@ const GhostButton = ({
   colored?: boolean
 }) => {
   return (
-    <Button {...buttonProps} $colored={colored} $reverse={iconPosition === 'right'} name={children} $size={size}>
+    <button
+      className={classNames(styles.button, {
+        [styles.reverse]: iconPosition === 'right',
+        [styles.small]: size === 'sm',
+      })}
+      {...buttonProps}
+      name={children}>
       <Icon iconId={icon} /> {children}
-    </Button>
+    </button>
   )
 }
 

@@ -1,3 +1,5 @@
+import { ComputedEquivalent } from './equivalent'
+
 export type Category = {
   id: number
   name: string
@@ -14,4 +16,5 @@ export type Category = {
     title: string
     description: string
   }
+  equivalents?: ComputedEquivalent[]
 }

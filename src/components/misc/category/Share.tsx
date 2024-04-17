@@ -7,7 +7,7 @@ import ClipboardBox from 'components/base/ClipboardBox'
 import { Icon } from 'components/osezchanger/icons'
 import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
-import { Buttons, Meta } from './Share.styles'
+import styles from './Share.module.css'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
 const Share = ({
@@ -52,7 +52,7 @@ const Share = ({
         />
       )}
       <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
-      <Buttons>
+      <div className={styles.buttons}>
         <FacebookShareButton
           url={url}
           title='Partager sur facebook'
@@ -81,9 +81,9 @@ const Share = ({
           onClick={() => track(trackingValue, 'Share Linkedin', `${trackingSlug}_linkedin`)}>
           <Icon iconId='linkedin' />
         </LinkedinShareButton>
-      </Buttons>
+      </div>
       {(category || path === 'comparateur') && (
-        <Meta>
+        <div className={styles.meta}>
           <img
             src={
               category
@@ -104,7 +104,7 @@ const Share = ({
                 : 'Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.'}
             </p>
           </div>
-        </Meta>
+        </div>
       )}
     </>
   )

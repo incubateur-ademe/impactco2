@@ -1,9 +1,10 @@
+import classNames from 'classnames'
 import React from 'react'
 import styles from './Logo.module.css'
 
-export default function Ademe() {
+export default function Ademe({ small }: { small?: boolean }) {
   return (
-    <svg className={styles.logo} width='181' height='213' viewBox='0 0 181 213'>
+    <svg className={classNames(styles.logo, { [styles.small]: small })} width='181' height='213' viewBox='0 0 181 213'>
       <title>ADEME</title>
 
       <path d='M180.35 212.6H0V0H180.35V212.6Z' fill='#004899' />

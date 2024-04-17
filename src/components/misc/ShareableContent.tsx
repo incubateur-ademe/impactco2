@@ -21,10 +21,10 @@ import {
   Separator,
   Theme,
 } from './ShareableContent.styles'
-import Actions from './category/Actions'
 import { CustomParamValue } from './category/CustomParam'
 import Header from './category/Header'
 import HeadersActions from './category/HeadersActions'
+import Actions from './shareable/Actions'
 
 const ShareableContent = <T extends string>({
   category,

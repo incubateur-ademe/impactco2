@@ -23,3 +23,11 @@
 .black {
   fill: var(--neutral-70);
 }
+
+.small {
+  height: 3rem;
+}
+
+.small.smallLogo {
+  height: 2.25rem;
+}

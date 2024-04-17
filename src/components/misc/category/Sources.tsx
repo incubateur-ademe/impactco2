@@ -1,3 +1,5 @@
+'use client'
+
 import classNames from 'classnames'
 import React from 'react'
 import { track } from 'utils/matomo'
