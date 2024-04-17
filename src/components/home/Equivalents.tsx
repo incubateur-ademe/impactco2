@@ -9,7 +9,7 @@ import Card from 'components/cards/Card'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import { HiddenLabel } from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
-import Equivalent from './Equivalent'
+import EquivalentCard from './EquivalentCard'
 import styles from './Equivalents.module.css'
 
 const generate = () => getRandomEquivalents('', 3).map((slug) => computedEquivalents.find((x) => x.slug === slug))
@@ -38,9 +38,9 @@ const Equivalents = () => {
         />
       </Card>
       <div className={styles.equivalents}>
-        <Equivalent equivalent={search ? results[0] : equivalents[0]} />
-        <Equivalent equivalent={search ? results[1] : equivalents[1]} />
-        <Equivalent equivalent={search ? results[2] : equivalents[2]} />
+        <EquivalentCard equivalent={search ? results[0] : equivalents[0]} />
+        <EquivalentCard equivalent={search ? results[1] : equivalents[1]} />
+        <EquivalentCard equivalent={search ? results[2] : equivalents[2]} />
       </div>
       <Button
         className={styles.button}

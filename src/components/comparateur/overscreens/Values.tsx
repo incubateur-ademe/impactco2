@@ -3,7 +3,7 @@ import { OverScreenInfo } from 'components/base/OverScreen'
 import { CustomParamValue } from 'components/misc/category/CustomParam'
 import Integrate from 'components/misc/category/Integrate'
 import Share from 'components/misc/category/Share'
-import { Space } from 'components/misc/category/overScreens/Values.styles'
+import styles from 'components/misc/category/overScreens/Values.module.css'
 import EquivalentsOverscreen from './EquivalentsOverscreen'
 import { OverScreenComparateur, OverScreenEtiquette } from './Type'
 
@@ -15,7 +15,7 @@ export const overScreenEtiquetteValues: (params?: string) => Record<OverScreenEt
     children: (
       <>
         <Integrate path='comparateur/etiquette' extraParams={params} tracking='Comparateur' />
-        <Space />
+        <div className={styles.space} />
         <Card
           href='/guide-utilisation'
           title='Utiliser cette ressource'
@@ -42,7 +42,7 @@ export const overScreenComparateurValues: (
     children: (
       <>
         <Integrate path='comparateur' params={params} tracking='Comparateur' />
-        <Space />
+        <div className={styles.space} />
         <Card
           href='/guide-utilisation'
           title='Utiliser cette ressource'

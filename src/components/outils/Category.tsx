@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useMemo } from 'react'
 import { Category as CategoryType } from 'types/category'
 import { overScreenCategoryValues } from 'components/misc/category/overScreens/Values'

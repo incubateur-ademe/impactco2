@@ -1,6 +1,7 @@
 import { Category } from 'types/category'
-import { Equivalent } from 'types/equivalent'
+import { ComputedEquivalent } from 'types/equivalent'
 import Card from 'components/base/Card'
+import Emoji from 'components/base/Emoji'
 import { OverScreenInfo } from 'components/base/OverScreen'
 import Resource from 'components/base/Resource'
 import { CustomParamValue } from '../CustomParam'
@@ -8,14 +9,48 @@ import Integrate from '../Integrate'
 import Share from '../Share'
 import Data from './Data'
 import { OverScreenCategory, OverScreenEquivalent } from './Type'
-import { ResourcesContainer, Space, StyledEmoji } from './Values.styles'
+import styles from './Values.module.css'
 
-export const overScreenEquivalentValues: (equivalent: Equivalent) => Record<OverScreenEquivalent, OverScreenInfo> = (
-  equivalent
-) => ({
+export const overScreenEquivalentEtiquetteValues: (
+  equivalent: ComputedEquivalent
+) => Record<OverScreenEquivalent, OverScreenInfo> = (equivalent) => {
+  const params = `?value=${equivalent.value}&comparisons=${equivalent.slug}`
+
+  return {
+    partager: {
+      title: 'share',
+      children: <Share path={`/comparateur${params}#etiquette`} tracking={equivalent.name} />,
+    },
+    integrer: {
+      title: 'integrate',
+      children: <Integrate path='/comparateur/etiquette' extraParams={params} tracking={equivalent.name} />,
+    },
+  }
+}
+
+export const overScreenEquivalentValues: (
+  equivalent: ComputedEquivalent
+) => Record<OverScreenEquivalent, OverScreenInfo> = (equivalent) => ({
   partager: {
     title: 'share',
-    children: <Share path={`${equivalent.category}/${equivalent.slug}`} />,
+    children: <Share path={equivalent.link} tracking={equivalent.name} />,
+  },
+  integrer: {
+    title: 'integrate',
+    children: <Integrate path={equivalent.link} tracking={equivalent.name} />,
+  },
+})
+
+export const overScreenEquivalentInfographyValues: (
+  equivalent: ComputedEquivalent
+) => Record<OverScreenEquivalent, OverScreenInfo> = (equivalent) => ({
+  partager: {
+    title: 'share',
+    children: <Share path={`${equivalent.link}#infographie`} tracking={equivalent.name} />,
+  },
+  integrer: {
+    title: 'integrate',
+    children: <Integrate path={`${equivalent.link}/infographie`} tracking={equivalent.name} />,
   },
 })
 
@@ -25,7 +60,7 @@ export const overScreenCategoryValues: (
 ) => Record<OverScreenCategory, OverScreenInfo> = (category, params) => ({
   partager: {
     title: 'share',
-    children: <Share category={category} params={params} />,
+    children: <Share category={category} params={params} tracking={category.name} />,
   },
   integrer: {
     title: 'integrate',
@@ -36,7 +71,7 @@ export const overScreenCategoryValues: (
           params={params}
           tracking={category ? category.name : 'Comparateur'}
         />
-        <Space />
+        <div className={styles.space} />
         <Card
           href='/guide-utilisation'
           title='Utiliser cette ressource'
@@ -52,11 +87,11 @@ export const overScreenCategoryValues: (
   hypothesis: {
     title: (
       <div>
-        <StyledEmoji>💡</StyledEmoji>Aller plus loin
+        <Emoji>💡</Emoji>Aller plus loin
       </div>
     ),
     children: (
-      <ResourcesContainer>
+      <div className={styles.ressourceContainer}>
         <Resource
           image='/images/category-pompe-chaleur.jpg'
           text='S’équiper d’une pompe à chaleur'
@@ -78,13 +113,13 @@ export const overScreenCategoryValues: (
           withLink='Wattris'
           tracking={category ? category.name : 'Comparateur'}
         />
-      </ResourcesContainer>
+      </div>
     ),
   },
   data: {
     title: (
       <div>
-        <StyledEmoji>🔎</StyledEmoji>Comprendre les données
+        <Emoji>🔎</Emoji>Comprendre les données
       </div>
     ),
     children: <Data />,

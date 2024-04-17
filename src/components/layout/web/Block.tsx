@@ -39,7 +39,7 @@ const Block = ({
           {link && <Link href={link}>{linkLabel}</Link>}
         </div>
       )}
-      {children && <div className={styles.children}>{children}</div>}
+      {children && <div className={classNames(styles.children, { [styles.withMargin]: title })}>{children}</div>}
     </div>
   )
 }

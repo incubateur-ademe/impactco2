@@ -1,0 +1,33 @@
+.container {
+  color: var(--primary-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.bar {
+  width: 7.5rem;
+  height: 1rem;
+  display: inline-flex;
+  margin-right: -1.5rem;
+
+  @media only screen and (max-width: 50rem) {
+    width: 5rem;
+  }
+}
+
+.bar1 {
+  border-radius: 1rem 0rem 0rem 1rem;
+  border: 2px solid var(--primary-60);
+  background: var(--primary-40);
+}
+
+.bar2 {
+  border-radius: 0 1rem 1rem 0;
+  border: 2px solid var(--primary-30);
+  border-left: none;
+  background: var(--primary-10);
+}

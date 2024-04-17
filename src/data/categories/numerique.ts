@@ -1,8 +1,6 @@
 export const numeriques = [
   {
-    id: 27013,
     name: 'Smartphone[s]',
-    subtitle: '> 5,5 pouces',
     synonyms: [
       'telephone',
       'gsm',
@@ -44,27 +42,19 @@ export const numeriques = [
     category: 1,
     ecv: [
       {
-        id: 1,
-        value: 31.9,
-      },
-      {
-        id: 2,
-        value: 0.841,
-      },
-      {
-        id: 3,
-        value: 0.0714,
-      },
-      {
         id: 4,
-        value: 6.256,
+        value: 2.1,
+      },
+      {
+        id: 5,
+        value: 83,
       },
     ],
     usage: {
-      peryear: 0.133428421,
-      defaultyears: 4,
+      peryear: 0.2,
+      defaultyears: 2.5,
     },
-    end: -1.8163965605781,
+    end: 0.2,
     default: true,
     tile: true,
     meta: {
@@ -72,407 +62,164 @@ export const numeriques = [
       description:
         "Découvrez le détail de l'empreinte carbone d'un smartphone : impact de ses matières premières, de son assemblage, son approvisionnement...",
     },
+    include: {
+      pre: 'Écran  moyen de 6,63 pouces, mix des technologies LCD et OLED, 8 Go de RAM, 210 Go de mémoire (mix pondéré entre 3 configurations, 24%, 24%, 52%).',
+    },
     source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 39.1,
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    id: 27003,
-    name: 'Ordinateur[s] fixe[s] sans écran',
-    subtitle: 'Bureautique',
-    slug: 'ordinateurfixebureautique',
+    name: 'Ordinateur[s] fixe[s] sans écran (particulier)',
+    slug: 'ordinateurfixeparticulier',
     emoji: '🖥️',
     category: 1,
     ecv: [
       {
-        id: 1,
-        value: 82.9,
-      },
-      {
-        id: 2,
-        value: 4.75,
-      },
-      {
-        id: 3,
-        value: 4.19,
-      },
-      {
         id: 4,
-        value: 77.16000000000001,
+        value: 2.9,
+      },
+      {
+        id: 5,
+        value: 258.6,
       },
     ],
     usage: {
-      peryear: 5.03567247,
+      peryear: 5.7,
       defaultyears: 6,
     },
-    end: -10.2418849552206,
+    end: 6.6,
     default: true,
     tile: false,
     meta: {
-      title: 'Poids CO₂e ordinateur fixe (bureautique)',
+      title: 'Poids CO₂e ordinateur fixe (particulier)',
       description:
-        "Mesurez l'impact sur le climat d'un ordinateur fixe de bureautique et découvrez le détail de son empreinte carbone",
+        "Mesurez l'impact sur le climat d'un ordinateur fixe particulier et découvrez le détail de son empreinte carbone",
+    },
+    include: {
+      pre: '1 CPU, 10 Go de RAM, 1173 Go de HDD, 442 Go de SSD, mix de carte graphique intégrée ou séparée (mix pondéré entre 5 configurations d’ordinateurs fixes sans écran, à usage particulier.).',
     },
     source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 169,
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    id: 27004,
-    name: 'Ordinateur[s] fixe[s] sans écran',
-    subtitle: 'Performance',
-    slug: 'ordinateurfixeperformance',
+    name: 'Ordinateur[s] fixe[s] sans écran (professionnel)',
+    slug: 'ordinateurfixeprofessionnel',
     emoji: '🖥️',
     category: 1,
-    usage: {
-      peryear: 19.91634,
-      defaultyears: 6,
-    },
-    end: -20.479642298922,
-    default: false,
-    tile: false,
-    meta: {
-      title: 'Poids CO₂e ordinateur fixe (performance) ',
-      description:
-        "Découvrez le poids CO₂e d'un ordinateur fixe (performance), comprenant sa fabrication et sa distribution. Régulez ainsi votre empreinte carbone !",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
-        id: 1,
-        value: 153,
-      },
-      {
-        id: 2,
-        value: 7.95,
-      },
-      {
-        id: 3,
-        value: 7.36,
-      },
-      {
         id: 4,
-        value: 126.9,
+        value: 1.8,
+      },
+      {
+        id: 5,
+        value: 202.6,
       },
     ],
-    total: 296,
-  },
-  {
-    id: 27005,
-    name: 'Écran[s]',
-    subtitle: '21,5 pouces',
-    slug: 'ecran215pouces',
-    emoji: '🖥',
-    category: 1,
     usage: {
-      peryear: 3.40966173,
+      peryear: 8.6,
       defaultyears: 6,
     },
-    end: -5.36739103823929,
-    default: false,
-    tile: false,
-    meta: {
-      title: "Poids CO₂e d'un écran de 21.5 pouces",
-      description:
-        'Découvrez la valeurs exprimée en kg CO₂e émis par un écran de 21.5 pouces comprenant la fabrication et la distribution',
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    ecv: [
-      {
-        id: 1,
-        value: 205,
-      },
-      {
-        id: 2,
-        value: 4.26,
-      },
-      {
-        id: 3,
-        value: 1.9,
-      },
-      {
-        id: 4,
-        value: 10.15,
-      },
-    ],
-    total: 222,
-  },
-  {
-    id: 27006,
-    name: 'Écran[s]',
-    subtitle: '24 pouces',
-    slug: 'ecran24pouces',
-    emoji: '🖥',
-    category: 1,
-    usage: {
-      peryear: 3.40966173,
-      defaultyears: 6,
-    },
-    end: -5.36739103823929,
+    end: 6.6,
     default: true,
     tile: false,
     meta: {
-      title: "Poids CO₂e d'un écran de 24 pouces",
+      title: 'Poids CO₂e ordinateur fixe (professionnel)',
       description:
-        'Découvrez la valeurs exprimée en kg CO₂e émis par un écran de 24 pouces comprenant la fabrication et la distribution',
+        "Mesurez l'impact sur le climat d'un ordinateur fixe professionnel et découvrez le détail de son empreinte carbone",
+    },
+    include: {
+      pre: '1 CPU, 8 Go de RAM, 1000 Go de HDD, 250 Go de SSD, carte graphique séparée (une configuration simple).',
     },
     source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    ecv: [
-      {
-        id: 1,
-        value: 229,
-      },
-      {
-        id: 2,
-        value: 4.94,
-      },
-      {
-        id: 3,
-        value: 2.55,
-      },
-      {
-        id: 4,
-        value: 11.690000000000001,
-      },
-    ],
-    total: 248,
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    id: 27009,
-    name: 'Tablette[s] détachable[s]',
-    slug: 'tablettedetachable',
+    name: "Écran[s] d'ordinateur",
+    slug: 'ecran',
+    emoji: '🖥',
+    category: 1,
+    usage: {
+      peryear: 4,
+      defaultyears: 6,
+    },
+    end: 3.9,
+    default: false,
+    tile: false,
+    meta: {
+      title: "Poids CO₂e d'un écran",
+      description:
+        'Découvrez la valeurs exprimée en kg CO₂e émis par un écran comprenant la fabrication et la distribution',
+    },
+    include: {
+      pre: 'Dimension moyenne (24 pouces) et mix de technologies (98,6% LCD, 1,4% OLED) (mix pondéré entre 2 configurations d’écrans d’ordinateur.).',
+    },
+    source:
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+    ecv: [
+      {
+        id: 4,
+        value: 1.3,
+      },
+      {
+        id: 5,
+        value: 64.6,
+      },
+    ],
+  },
+  {
+    name: 'Tablette[s]',
+    slug: 'tabletteclassique',
     emoji: '💻',
     category: 1,
     usage: {
-      peryear: 2.48328552,
+      peryear: 1.1,
       defaultyears: 3,
     },
-    end: -3.3718663396044,
-    default: false,
+    end: 0.4,
+    default: true,
     tile: false,
     meta: {
-      title: 'Empreinte carbone tablette détachable',
+      title: 'Empreinte carbone tablette',
       description:
-        "Le numérique a un impact important sur le climat ! Découvrez le poids CO₂e d'une tablette détachable ainsi que le détail de son empreinte sur le climat",
+        "Le numérique a un impact important sur le climat ! Découvrez le poids CO₂e d'une tablette ainsi que le détail de son empreinte sur le climat",
+    },
+    include: {
+      pre: "Écran de 10,53 pouces, mix de technologies d'écran LCD, 4,7 Go de RAM, 144 Go de mémoire (mix pondéré entre 3 configurations de tablettes.).",
     },
     source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
     ecv: [
       {
-        id: 1,
-        value: 61.9,
-      },
-      {
-        id: 2,
-        value: 1.07,
-      },
-      {
-        id: 3,
-        value: 0.426,
-      },
-      {
         id: 4,
-        value: 18.816,
+        value: 3.4,
+      },
+      {
+        id: 5,
+        value: 56.3,
       },
     ],
-    total: 82.2,
   },
   {
-    id: 27007,
-    name: 'Tablette[s]',
-    subtitle: 'Classique',
-    slug: 'tabletteclassique',
-    emoji: '📱',
-    category: 1,
-    usage: {
-      peryear: 2.48328552,
-      defaultyears: 3,
-    },
-    end: -1.0530804367788,
-    default: false,
-    tile: false,
-    meta: {
-      title: "Impact climat d'une tablette classique",
-      description:
-        "Quel est l'impact sur le climat d'une tablette classique ? Découvrez son poids en CO₂e ainsi que son équivalence en litres d'eau, en km de voiture...",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    ecv: [
-      {
-        id: 1,
-        value: 49,
-      },
-      {
-        id: 2,
-        value: 0.758,
-      },
-      {
-        id: 3,
-        value: 0.122,
-      },
-      {
-        id: 4,
-        value: 13.307,
-      },
-    ],
-    total: 63.2,
-  },
-  {
-    id: 27008,
-    name: 'Tablette[s]',
-    subtitle: 'Mini',
-    slug: 'tablettemini',
-    emoji: '📱',
-    category: 1,
-    usage: {
-      peryear: 2.48328552,
-      defaultyears: 3,
-    },
-    end: -0.724090952855313,
-    default: false,
-    tile: false,
-    meta: {
-      title: "Poids CO₂e d'une tablette mini",
-      description:
-        "Découvrez la valeur d'une tablette mini exprimée en kg CO₂e émis comprenant la fabrication et la distribution et régulez ainsi votre empreinte carbone",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    ecv: [
-      {
-        id: 1,
-        value: 30,
-      },
-      {
-        id: 2,
-        value: 0.592,
-      },
-      {
-        id: 3,
-        value: 0.0928,
-      },
-      {
-        id: 4,
-        value: 10.291,
-      },
-    ],
-    total: 40.9,
-  },
-  {
-    id: 27016,
-    name: 'Chaine[s] hifi',
-    slug: 'chainehifi',
-    emoji: '🎵',
-    category: 1,
-    usage: {
-      peryear: 4.66693558,
-      defaultyears: 5,
-    },
-    end: -10.3424901759157,
-    ecv: [
-      {
-        id: 1,
-        value: 82.7,
-      },
-      {
-        id: 2,
-        value: 10.2,
-      },
-      {
-        id: 3,
-        value: 5.5,
-      },
-      {
-        id: 4,
-        value: 24.89,
-      },
-    ],
-    default: false,
-    tile: false,
-    meta: {
-      title: "Poids CO₂e d'une chaine hifi",
-      description:
-        "Découvrez le poids CO₂e d'une chaine hifi et comparez-le à plein d'autres produits pour mesurer son impact sur le climat",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 123,
-  },
-  {
-    id: 27021,
-    name: 'Liseuse[s]',
-    subtitle: 'Non rétro-éclairé',
-    slug: 'liseuse',
-    emoji: '📱',
-    category: 1,
-    usage: {
-      peryear: 0.0373807249,
-      defaultyears: 5,
-    },
-    end: -1.71514674850865,
-    default: false,
-    tile: false,
-    meta: {
-      title: "Impact sur le climat d'une liseuse",
-      description:
-        "Saviez-vous qu'une liseuse avait un impact sur le climat ? Découvrez le poids CO₂e d'une liseuse non rétro-éclairé grâce à Impact CO₂",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    ecv: [
-      {
-        id: 1,
-        value: 28.6,
-      },
-      {
-        id: 2,
-        value: 0.517,
-      },
-      {
-        id: 3,
-        value: 0.0354,
-      },
-      {
-        id: 4,
-        value: 9.071000000000002,
-      },
-    ],
-    total: 38.3,
-  },
-  {
-    id: 27000,
     name: 'Télévision[s] ',
-    subtitle: '40 - 49 pouces',
     slug: 'television',
     emoji: '📺',
     category: 1,
     ecv: [
       {
-        id: 1,
-        value: 334,
-      },
-      {
-        id: 2,
-        value: 9.21,
-      },
-      {
-        id: 3,
-        value: 2.41,
-      },
-      {
         id: 4,
-        value: 26.07,
+        value: 3.2,
+      },
+      {
+        id: 5,
+        value: 372.6,
       },
     ],
     usage: {
-      peryear: 7.76971306,
+      peryear: 11.6,
       defaultyears: 8,
     },
-    end: -8.69420838210626,
+    end: 11.8,
     default: true,
     tile: false,
     meta: {
@@ -480,39 +227,32 @@ export const numeriques = [
       description:
         "Quel est l'empreinte carbone d'une télévision 40-49 pouces ? Découvrez son poids carbone et son équivalence avec des ordinateurs et smartphones",
     },
+    include: {
+      pre: 'Dimension et technologie moyennes (82% LCD (45 pouces), 1% OLED (53 pouces), 17% OLED (68 pouces)) (mix pondéré entre 3 configurations de téléviseurs.).',
+    },
     source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 371,
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    id: 27002,
     name: 'Ordinateur[s] portable[s]',
     slug: 'ordinateurportable',
     emoji: '💻',
     category: 1,
     ecv: [
       {
-        id: 1,
-        value: 120,
-      },
-      {
-        id: 2,
-        value: 1.89,
-      },
-      {
-        id: 3,
-        value: 0.75,
-      },
-      {
         id: 4,
-        value: 33.6,
+        value: 12.3,
+      },
+      {
+        id: 5,
+        value: 170.3,
       },
     ],
     usage: {
-      peryear: 4.58940987,
-      defaultyears: 6,
+      peryear: 1.7,
+      defaultyears: 5,
     },
-    end: -5.78881336720088,
+    end: 2.8,
     default: true,
     tile: false,
     meta: {
@@ -520,451 +260,238 @@ export const numeriques = [
       description:
         "Quel est l'empreinte carbone d'un ordinateur portable ? Découvrez son poids en CO₂e et mesurez ainsi votre impact sur le climat",
     },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 156,
-  },
-  {
-    id: 27031,
-    name: 'Montre[s] connectée[s]',
-    slug: 'montreconnectee',
-    emoji: '⌚️',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 3.71,
-      },
-      {
-        id: 2,
-        value: 0.314,
-      },
-      {
-        id: 3,
-        value: 0.0209,
-      },
-      {
-        id: 4,
-        value: 5.683,
-      },
-    ],
-    usage: {
-      peryear: 0.0239236639,
-      defaultyears: 5,
-    },
-    end: 0.0106943300908481,
-    default: true,
-    tile: false,
-    meta: {
-      title: 'Montre connectée',
-      description:
-        "Découvrez l'impact sur le climat d'une montre connectée et comparez son poids CO₂e à d'autres produits comme un ordinateur, un smartphone...",
+    include: {
+      pre: 'Écran moyen de 14,6 pouces, 1 CPU, 11 Go de RAM, 497 Go de SSD (mix pondéré entre 3 configurations d’ordinateurs portables à usage particulier).',
     },
     source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 9.72,
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    id: 27032,
-    name: 'Cadre[s] photo digital',
-    slug: 'cadrephotodigital',
-    emoji: '🖼',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 37.4,
-      },
-      {
-        id: 2,
-        value: 0.714,
-      },
-      {
-        id: 3,
-        value: 0.157,
-      },
-      {
-        id: 4,
-        value: 1.9170000000000003,
-      },
-    ],
-    usage: {
-      peryear: 0.0373807249,
-      defaultyears: 5,
-    },
-    end: -1.22372678556011,
-    default: false,
-    tile: false,
-    meta: {
-      title: '',
-      description: '',
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 40.2,
-  },
-  {
-    id: 27033,
-    name: 'Home cinéma',
-    slug: 'homecinema',
-    emoji: '📽',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 88.7,
-      },
-      {
-        id: 2,
-        value: 11,
-      },
-      {
-        id: 3,
-        value: 5.97,
-      },
-      {
-        id: 4,
-        value: 26.98,
-      },
-    ],
-    usage: {
-      peryear: 6.41616181,
-      defaultyears: 5,
-    },
-    end: -11.166985067359,
-    default: false,
-    tile: false,
-    meta: {
-      title: "Empreinte carbone d'un home cinema",
-      description:
-        "Avec Impact CO₂, découvrez l'impact sur le climat d'un home cinéma avec son poids en CO₂e comprenant sa fabrication et sa distribution",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 133,
-  },
-  {
-    id: 27034,
-    name: 'Barre[s] de son',
-    slug: 'barredeson',
-    emoji: '🔈',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 32.9,
-      },
-      {
-        id: 2,
-        value: 1.96,
-      },
-      {
-        id: 3,
-        value: 0.951,
-      },
-      {
-        id: 4,
-        value: 4.385,
-      },
-    ],
-    usage: {
-      peryear: 1.9941179,
-      defaultyears: 5,
-    },
-    end: -4.71436019956684,
-    default: false,
-    tile: false,
-    meta: {
-      title: "Empreinte carbone d'une barre de son ",
-      description:
-        "Votre bar de son a un impact sur le climat : découvrez son poids en CO₂e et comparez-le à d'autres produits numériques",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 40.2,
-  },
-  {
-    id: 27019,
-    name: 'Modem[s]',
-    subtitle: 'Fibre',
-    slug: 'modemfibre',
-    emoji: '📡',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 74.7,
-      },
-      {
-        id: 2,
-        value: 2.1,
-      },
-      {
-        id: 3,
-        value: 1.49,
-      },
-      {
-        id: 4,
-        value: 4.626,
-      },
-    ],
-    usage: {
-      peryear: 11.167862,
-      defaultyears: 6,
-    },
-    end: -7.33144459609132,
-    default: false,
-    tile: false,
-    meta: {
-      title: "Poids CO₂e d'un modem (fibre)",
-      description:
-        "Découvrez le poids CO₂e d'un modem (fibre) et comparez-le aux émissions de litres d'eau, de km en voiture, de repas avec du boeuf...",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 82.9,
-  },
-  {
-    id: 27017,
-    name: 'Enceinte[s] bluetooth',
+    name: 'Enceinte[s] connectée[s]',
     slug: 'enceintebluetooth',
     emoji: '🔊',
     category: 1,
     ecv: [
       {
-        id: 1,
-        value: 7.43,
-      },
-      {
-        id: 2,
-        value: 0.337,
-      },
-      {
-        id: 3,
-        value: 0.161,
-      },
-      {
         id: 4,
-        value: 1.052,
+        value: 0.3,
+      },
+      {
+        id: 5,
+        value: 19.5,
       },
     ],
     usage: {
-      peryear: 0.224484033,
+      peryear: 1.3,
       defaultyears: 5,
     },
-    end: -0.587240636962036,
+    end: 0.7,
     default: false,
     tile: false,
     meta: {
-      title: "Impact climat d'une enceinte bluetooth",
+      title: "Impact climat d'une enceinte connectée",
       description:
-        "Découvrez l'impact d'une enceinte bluetooth avec Impact CO₂ ainsi que le détail de son empreinte carbone",
+        "Découvrez l'impact d'une enceinte connectée avec Impact CO₂ ainsi que le détail de son empreinte carbone",
     },
     source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 8.98,
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    id: 27023,
-    name: 'Console[s] de salon',
-    slug: 'consoledesalon',
+    name: 'Téléphone[s] basique[s]',
+    slug: 'telephonebasique',
+    emoji: '📞',
+    category: 1,
+    ecv: [
+      {
+        id: 5,
+        value: 23.3,
+      },
+    ],
+    usage: {
+      peryear: 0,
+      defaultyears: 2.5,
+    },
+    end: 0.1,
+    default: false,
+    tile: false,
+    meta: {
+      title: "Impact climat d'un téléphone basique",
+      description:
+        "Découvrez l'impact d'un téléphone basique avec Impact CO₂ ainsi que le détail de son empreinte carbone",
+    },
+    source:
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+  },
+  {
+    name: 'Casque[s] de réalité virtuelle',
+    slug: 'casquevr',
     emoji: '🎮',
     category: 1,
     ecv: [
       {
-        id: 1,
+        id: 4,
+        value: 0.4,
+      },
+      {
+        id: 5,
+        value: 70.4,
+      },
+    ],
+    usage: {
+      peryear: 0.04,
+      defaultyears: 5,
+    },
+    end: 1.3,
+    default: false,
+    tile: false,
+    meta: {
+      title: "Impact climat d'un casque de réalité virtuelle",
+      description:
+        "Découvrez l'impact d'un casque de réalité virtuelle avec Impact CO₂ ainsi que le détail de son empreinte carbone",
+    },
+    include: {
+      pre: 'Moyenne de deux technologies (50% LCD, 50% OLED) + prise en compte de deux manettes.',
+    },
+    source:
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+  },
+  {
+    name: 'Alimentation[s] externe[s]',
+    subtitle: 'pour ordinateur portable',
+    slug: 'alimentationordinateur',
+    emoji: '🔌',
+    category: 1,
+    ecv: [
+      {
+        id: 4,
+        value: 0.1,
+      },
+      {
+        id: 5,
+        value: 3.5,
+      },
+    ],
+    end: 0.5,
+    default: false,
+    tile: false,
+    meta: {
+      title: "Impact climat d'une alimentation externe (pour ordinateur portable)",
+      description:
+        "Découvrez l'impact d'une alimentation externe (pour ordinateur portable) avec Impact CO₂ ainsi que le détail de son empreinte carbone",
+    },
+    source:
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+  },
+  {
+    name: 'Alimentation[s] externe[s]',
+    subtitle: 'pour smartphone ou tablette',
+    slug: 'alimentationsmartphone',
+    emoji: '🔌',
+    category: 1,
+    ecv: [
+      {
+        id: 4,
+        value: 0,
+      },
+      {
+        id: 5,
+        value: 0.3,
+      },
+    ],
+    end: 0.1,
+    default: false,
+    tile: false,
+    meta: {
+      title: "Impact climat d'une alimentation externe (pour smartphone ou tablette)",
+      description:
+        "Découvrez l'impact d'une alimentation externe (pour smartphone ou tablette) avec Impact CO₂ ainsi que le détail de son empreinte carbone",
+    },
+    source:
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+  },
+  {
+    name: 'Disque[s] dur[s] externe[s]',
+    slug: 'disquedur',
+    emoji: '💽',
+    category: 1,
+    ecv: [
+      {
+        id: 4,
+        value: 0.1,
+      },
+      {
+        id: 5,
+        value: 11.5,
+      },
+    ],
+    end: 0.3,
+    default: false,
+    tile: false,
+    meta: {
+      title: "Impact climat d'un disque dur externe",
+      description:
+        "Découvrez l'impact d'un disque dur externe avec Impact CO₂ ainsi que le détail de son empreinte carbone",
+    },
+    source:
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+  },
+  {
+    name: 'Clef[s] usb',
+    slug: 'clefusb',
+    emoji: '💾',
+    category: 1,
+    ecv: [
+      {
+        id: 4,
+        value: 0,
+      },
+      {
+        id: 5,
+        value: 2.9,
+      },
+    ],
+    default: false,
+    tile: false,
+    meta: {
+      title: "Impact climat d'une clef USB",
+      description: "Découvrez l'impact d'une clef USB avec Impact CO₂ ainsi que le détail de son empreinte carbone",
+    },
+    include: {
+      pre: 'Capacité moyenne (16 Go)',
+    },
+    source:
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+  },
+  {
+    name: 'Box[s]',
+    slug: 'box',
+    emoji: '☎️',
+    category: 1,
+    ecv: [
+      {
+        id: 4,
+        value: 0.6,
+      },
+      {
+        id: 5,
         value: 60.8,
       },
-      {
-        id: 2,
-        value: 2.54,
-      },
-      {
-        id: 3,
-        value: 2.46,
-      },
-      {
-        id: 4,
-        value: 7.95,
-      },
     ],
     usage: {
-      peryear: 6.25663238,
+      peryear: 4.2,
       defaultyears: 5,
     },
-    end: -3.40627657865222,
-    default: true,
-    tile: false,
-    meta: {
-      title: 'Console de salon',
-      description:
-        "Saviez-vous que l'achat et l'utilisation d'une console de salon avait un impact sur le climat ? Découvrez son poids en CO₂e et les détails de son empreinte",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 73.7,
-  },
-  {
-    id: 27024,
-    name: 'Console[s] portable',
-    slug: 'consoleportable',
-    emoji: '👾',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 21,
-      },
-      {
-        id: 2,
-        value: 0.523,
-      },
-      {
-        id: 3,
-        value: 0.105,
-      },
-      {
-        id: 4,
-        value: 9.169,
-      },
-    ],
-    usage: {
-      peryear: 0.193542786,
-      defaultyears: 5,
-    },
-    end: -0.880643030943794,
+    end: 1.6,
     default: false,
     tile: false,
     meta: {
-      title: "Impact climat d'une console portable",
-      description:
-        "Saviez-vous que l'achat et l'utilisation d'une console portable avait un impact sur le climat ? Découvrez son poids en CO₂e et les détails de son empreinte",
+      title: "Impact climat d'une box",
+      description: "Découvrez l'impact d'une box avec Impact CO₂ ainsi que le détail de son empreinte carbone",
+    },
+    include: {
+      pre: 'Utilisation personnelle et professionnelle ; xDSL, FTTx',
     },
     source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 30.8,
-  },
-  {
-    id: 27028,
-    name: 'Appareil photo',
-    subtitle: 'Reflex',
-    slug: 'appareilphotoreflex',
-    emoji: '📷',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 26.5,
-      },
-      {
-        id: 2,
-        value: 0.955,
-      },
-      {
-        id: 3,
-        value: 0.537,
-      },
-      {
-        id: 4,
-        value: 2.6,
-      },
-    ],
-    usage: {
-      peryear: 0.0608794626,
-      defaultyears: 5,
-    },
-    end: -2.78661372432045,
-    default: false,
-    tile: false,
-    meta: {
-      title: 'Empreinte carbone appareil photo (reflex)',
-      description:
-        "Quel est l'impact sur le climat d'un appareil photo de type reflex ? Découvrez son poids en CO₂e ainsi que le détail de son empreinte carbone",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 30.6,
-  },
-  {
-    id: 27030,
-    name: 'Appareil photo',
-    subtitle: 'Compact',
-    slug: 'appareilphotocompact',
-    emoji: '📸',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 22.9,
-      },
-      {
-        id: 2,
-        value: 0.404,
-      },
-      {
-        id: 3,
-        value: 0.195,
-      },
-      {
-        id: 4,
-        value: 0.9259999999999999,
-      },
-    ],
-    usage: {
-      peryear: 0.0239620031,
-      defaultyears: 5,
-    },
-    end: -2.20297495821832,
-    default: false,
-    tile: false,
-    meta: {
-      title: "Poids CO₂e d'un appareil photo (compact)",
-      description:
-        "Quel est l'impact sur le climat d'un appareil photo compact ? Découvrez son poids en CO₂e ainsi que son impact sur l'environnement",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 24.4,
-  },
-  {
-    id: 27025,
-    name: 'Imprimante[s]',
-    subtitle: "Jet d'encre",
-    slug: 'imprimantejetdencre',
-    emoji: '🖨',
-    category: 1,
-    ecv: [
-      {
-        id: 1,
-        value: 61.2,
-      },
-      {
-        id: 2,
-        value: 6.44,
-      },
-      {
-        id: 3,
-        value: 5.24,
-      },
-      {
-        id: 4,
-        value: 15.309999999999999,
-      },
-    ],
-    usage: {
-      peryear: 3.57703491,
-      defaultyears: 6,
-    },
-    end: -1.5110767449382,
-    default: true,
-    tile: false,
-    meta: {
-      title: 'Imprimante',
-      description:
-        "Quelles sont les émissions CO₂e d'une imprimante et à quoi correspondent-elles ? Découvrez ces informations avec Impact CO₂",
-    },
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
-    total: 88.2,
+      'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
 ]

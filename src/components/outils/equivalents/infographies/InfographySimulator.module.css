@@ -1,0 +1,36 @@
+.infography {
+  background-color: var(--neutral-00);
+  padding: 3.75rem 2.5rem;
+}
+
+.equivalent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--neutral-60);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.equivalentValue {
+  font-weight: 700;
+}
+
+.equal {
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--primary-50);
+
+  &:last-child {
+    display: none;
+  }
+}

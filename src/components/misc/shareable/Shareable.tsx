@@ -1,7 +1,9 @@
 'use client'
 
+import classNames from 'classnames'
 import React, { ReactNode, useState } from 'react'
 import useScreenshot from 'hooks/useScreenshot'
+import useParamContext from 'components/providers/ParamProvider'
 import TranslationProvider from 'components/providers/TranslationProvider'
 import GhostButton from 'components/base/GhostButton'
 import Logos from 'components/base/Logo/Logos'
@@ -15,20 +17,25 @@ const Shareable = ({
   withoutIntegration,
   withoutShare,
   overScreens,
+  secondary,
 }: {
   children: ReactNode
   tracking: string
   withoutIntegration?: boolean
   withoutShare?: boolean
   overScreens: Record<'partager' | 'integrer', OverScreenInfo>
+  secondary?: boolean
 }) => {
+  const { theme } = useParamContext()
   const [overScreen, setOverScreen] = useState<OverScreenInfo | undefined>()
   const onClose = () => setOverScreen(undefined)
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
 
   return (
     <TranslationProvider>
-      <div className={styles.card} ref={ref}>
+      <div
+        className={classNames(styles.card, { [styles.secondaryCard]: secondary, night: theme === 'night' })}
+        ref={secondary ? undefined : ref}>
         {overScreen && (
           <>
             <div className={styles.filler} />
@@ -50,12 +57,20 @@ const Shareable = ({
             </div>
           </>
         )}
-        <div>{children}</div>
-        <div className={styles.separator} />
-        <div className={styles.logos}>
-          <Logos small />
+        <div className={secondary ? styles.secondaryContainer : ''}>
+          <div ref={secondary ? ref : undefined} className={secondary ? styles.secondaryContent : ''}>
+            {children}
+          </div>
         </div>
-        <div className={styles.actions}>
+        {!secondary && (
+          <>
+            <div className={styles.separator} />
+            <div className={styles.logos}>
+              <Logos small />
+            </div>
+          </>
+        )}
+        <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary })}>
           <Actions
             onClick={(action) => {
               if (action === 'telecharger') {

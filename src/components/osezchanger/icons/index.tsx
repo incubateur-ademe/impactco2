@@ -38,6 +38,7 @@ export type IconId =
   | 'doc'
   | 'menu'
   | 'search'
+  | 'equal'
 
 const InfinityIcon = dynamic(() => import('./infinity'))
 const Link = dynamic(() => import('./link'))
@@ -75,6 +76,7 @@ const Tools = dynamic(() => import('./tools'))
 const Doc = dynamic(() => import('./doc'))
 const Menu = dynamic(() => import('./menu'))
 const Search = dynamic(() => import('./search'))
+const Equal = dynamic(() => import('./equal'))
 
 export const Icon = ({ iconId }: { iconId: IconId }) => {
   switch (iconId) {
@@ -150,6 +152,8 @@ export const Icon = ({ iconId }: { iconId: IconId }) => {
       return <Menu />
     case 'search':
       return <Search />
+    case 'equal':
+      return <Equal />
     default:
       return null
   }

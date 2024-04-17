@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import chauffage from 'data/categories/chauffage.json'
 import EquivalentIcon from 'components/base/EquivalentIcon'

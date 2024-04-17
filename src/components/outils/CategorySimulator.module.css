@@ -2,6 +2,8 @@
   padding: 1rem 1.5rem;
   display: flex;
   gap: 1.5rem;
+  text-decoration: none;
+  color: var(--neutral-70);
 
   &:not(:last-child) {
     border-bottom: 2px solid var(--primary-30);

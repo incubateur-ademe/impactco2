@@ -6,6 +6,7 @@
   gap: 0.75rem;
   padding: 0.75rem;
   text-align: left;
+  margin-top: 2rem;
 
   img {
     max-height: 128px;
@@ -21,7 +22,7 @@
   display: flex;
   gap: 0.75rem;
   justify-content: center;
-  margin: 2rem auto;
+  margin: 2rem auto 0 auto;
 
   button {
     background-color: transparent !important;

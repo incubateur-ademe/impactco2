@@ -6,12 +6,6 @@ import DetailValue from './DetailValue'
 import Label from './Label'
 import styles from './Table.module.css'
 
-type Values = {
-  label: string
-  value: number
-  values: { id: number | string; value: number }[]
-}
-
 const Table = ({
   values,
   small,

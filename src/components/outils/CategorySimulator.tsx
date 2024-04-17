@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { Category as CategoryType } from 'types/category'
 import formatName from 'utils/formatName'
@@ -17,7 +18,7 @@ const CategorySimulator = ({ category }: { category: CategoryType }) => {
           category.equivalents
             .sort((a, b) => a.value - b.value)
             .map((equivalent) => (
-              <div key={equivalent.slug} className={styles.equivalent}>
+              <Link href={equivalent.link} key={equivalent.slug} className={styles.equivalent}>
                 <EquivalentIcon equivalent={equivalent} height={3} />
                 <div className={styles.content}>
                   <div className={styles.name}>
@@ -33,7 +34,7 @@ const CategorySimulator = ({ category }: { category: CategoryType }) => {
                     <span className={styles.value}>{formatNumber(equivalent.value)}</span> kg CO₂e
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
       </div>
       {hasUsage && (

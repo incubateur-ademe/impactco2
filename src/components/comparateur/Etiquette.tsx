@@ -1,3 +1,5 @@
+'use client'
+
 import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import { Language } from 'types/equivalent'
 import ColumnEquivalent from 'components/externalModules/shopify/ColumnEquivalent'

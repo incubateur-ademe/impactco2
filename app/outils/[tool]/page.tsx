@@ -11,23 +11,23 @@ const tools = [...devTools, ...smallTools]
 export async function generateStaticParams() {
   return [
     ...tools.map((tool) => ({
-      slug: tool.slug,
+      tool: tool.slug,
     })),
     ...categories.map((category) => ({ slug: category.slug })),
   ]
 }
 
-type Props = { params: { slug: string } }
+type Props = { params: { tool: string } }
 
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-  const tool = tools.find((tool) => tool.slug === params.slug)
+  const tool = tools.find((tool) => tool.slug === params.tool)
   if (tool) {
     return {
       title: `${tool.title} | Impact CO₂`,
       description: tool.description,
     }
   }
-  const category = categories.find((category) => category.slug === params.slug)
+  const category = categories.find((category) => category.slug === params.tool)
   if (category) {
     return {
       title: `${category.name} | Impact CO₂`,
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 }
 
 const OutilPage = async ({ params }: Props) => {
-  const tool = tools.find((tool) => tool.slug === params.slug)
+  const tool = tools.find((tool) => tool.slug === params.tool)
   if (tool) {
     return (
       <>
@@ -53,7 +53,7 @@ const OutilPage = async ({ params }: Props) => {
     )
   }
 
-  const category = categories.find((category) => category.slug === params.slug)
+  const category = categories.find((category) => category.slug === params.tool)
   if (category) {
     return (
       <>

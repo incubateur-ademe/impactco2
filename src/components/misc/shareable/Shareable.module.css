@@ -3,6 +3,29 @@
   border-radius: 1rem;
   border: 2px solid var(--primary-30);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+  background-color: var(--neutral-00);
+}
+
+.secondaryCard {
+  border-color: var(--neutral-10);
+}
+
+.secondaryContainer {
+  border-radius: calc(1rem - 2px) calc(1rem - 2px) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 7.5rem 2rem;
+  background-color: var(--neutral-10);
+}
+
+.secondaryContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .separator {
@@ -23,8 +46,12 @@
   border-top: 2px solid var(--primary-30);
 }
 
+.secondaryActions {
+  border-color: var(--neutral-10);
+}
+
 .filler {
-  border-radius: 1rem;
+  border-radius: calc(1rem - 2px);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -40,7 +67,9 @@
   z-index: 2;
   background-color: var(--neutral-00);
   max-height: 64%;
-  border-radius: 0 0 1rem 1rem;
+  border-radius: 0 0 calc(1rem - 2px) calc(1rem - 2px);
+  width: 100%;
+  overflow: auto;
 }
 
 .header {
