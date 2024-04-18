@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const tools = [
   {
     slug: 'comparateur',
@@ -115,18 +117,23 @@ export const smallTools = [
           mentions de données carbones dans vos contenus.
         </div>
         <div>
-          Cet outil gratuit, simple d’utilisation et basé sur les données de l’ADEME a vocation à s’intégrer sur les
-          sites internet de médias, d’entreprises ou d’associations pour vulgariser les bons ordres de grandeur et
-          remettre en perspective les données carbones.
+          Cet <b>outil gratuit</b>, simple d’utilisation et basé sur les données de l’ADEME a vocation à s’intégrer sur
+          les sites internet de médias, d’entreprises ou d’associations pour{' '}
+          <b>vulgariser les bons ordres de grandeur et remettre en perspective les données carbones.</b>
+        </div>
+        <div>Un exemple vaut mieux que mille mots ! Découvrez par vous-même 👇</div>
+        <div>
+          <b>
+            L’Info Durable est le premier média spécialisé en développement durable à avoir intégré l’outil sur son site
+            internet (plus de 45 000 articles en ligne !).
+          </b>
         </div>
         <div>
-          L’Info Durable est le premier média spécialisé en développement durable à avoir intégré l’outil sur son site
-          internet (plus de 45 000 articles en ligne !).
+          <Image src='/images/detecteur-co2.jpg' alt='' width={680} height={208} />
         </div>
       </>
     ),
-    toolLink: 'TODO',
-    toolLinkLabel: 'TODO',
+    clipboardURL: '<script src="https://impactco2.fr/scripts/detection.js"></script>',
   },
   {
     slug: 'osez-changer',

@@ -1,3 +1,5 @@
+'use client'
+
 import { IntlError, IntlErrorCode, NextIntlClientProvider } from 'next-intl'
 import React, { ReactNode } from 'react'
 import useParamContext from './ParamProvider'

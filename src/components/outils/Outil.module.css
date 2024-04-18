@@ -18,6 +18,15 @@
   b {
     font-size: 1.125rem;
     line-height: 1.75rem;
+    color: var(--neutral-80);
+  }
+
+  img {
+    border-radius: 0.25rem;
+    border: 2px solid var(--neutral-20);
+    padding: 1.25rem 0;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -28,4 +37,13 @@
   a {
     width: 100%;
   }
+}
+
+.clipboardTitle {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
