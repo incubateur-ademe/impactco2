@@ -28,6 +28,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
     },
   } = useParamContext()
 
+  const [baseValueText, setBaseValueText] = useState(baseValue.toString())
   const suffixDivRef = useRef<HTMLDivElement>(null)
   const suffixButtonRef = useRef<HTMLButtonElement>(null)
   const [suffixStyle, setSuffixStyle] = useState({ width: '150px', paddingRight: 'calc(150px + 2rem' })
@@ -95,8 +96,9 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
             background='white'
             className={styles.input}
             id='base-value'
-            value={baseValue || ''}
+            value={baseValueText ? baseValue : ''}
             onChange={(e) => {
+              setBaseValueText(e.target.value)
               const value = Number(e.target.value)
               setBaseValue(value)
             }}
