@@ -232,7 +232,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [frequence, setFrequence] = useState<Frequence | undefined>(frequences.find((freq) => freq.isDefault))
 
   // Comparateur
-  const [baseValue, setBaseValue] = useState(10)
+  const [baseValue, setBaseValue] = useState(100)
   const [equivalents, setEquivalents] = useState<string[]>([])
   const [tiles, setTiles] = useState<Equivalent[]>([])
   const [comparedEquivalent, setComparedEquivalent] = useState<ComputedEquivalent>()
@@ -244,7 +244,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     } else {
       setEquivalents([...filteredEquivalent])
     }
-    setBaseValue(10)
+    setBaseValue(100)
     setComparedEquivalent(equivalent)
   }
 

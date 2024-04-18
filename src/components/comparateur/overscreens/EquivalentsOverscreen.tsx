@@ -22,7 +22,7 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
   }, [equivalents])
 
   const [search, setSearch] = useState('')
-  const results = useSearchEquivalent(search)
+  const results = useSearchEquivalent(search, true)
 
   return (
     <>
