@@ -1,20 +1,14 @@
 'use client'
 
 import negaocterRules from '@incubateur-ademe/publicodes-negaoctet'
-import { useRouter } from 'next/navigation'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { Frequence } from 'types/livraison'
 import { TransportSimulateur } from 'types/transport'
-import { slugs } from 'utils/months'
-import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
-import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/UseTheme'
 import { default_eqs, frequences } from 'components/livraison/data'
-import { displayAddress } from 'components/transport/search/itinerary/Address'
-import { computedEquivalents } from './equivalents'
 
 const usageNumeriqueDefaultValues = {
   ['email . appareil']: "'smartphone'",
@@ -44,38 +38,6 @@ const updateSituation = (
   } catch (e) {
     console.error(e)
   }
-}
-
-const completeAddress = (setter: Dispatch<SetStateAction<Point | undefined>>, value?: string) => {
-  if (value) {
-    searchAddress(value, 1).then((result) => {
-      if (result.length > 0) {
-        const address = result[0]
-        setter({
-          latitude: address.geometry.coordinates[1],
-          longitude: address.geometry.coordinates[0],
-          city: address.properties.city,
-          address: displayAddress(address),
-        })
-      }
-    })
-  }
-}
-
-const getInt = (query: Record<string, string | string[] | undefined>, key: string) => {
-  const number = Number.parseInt(query[key] as string)
-  if (Number.isNaN(number)) {
-    return 0
-  }
-  return number
-}
-
-const getFloat = (query: Record<string, string | string[] | undefined>, key: string) => {
-  const number = Number.parseFloat(query[key] as string)
-  if (Number.isNaN(number)) {
-    return 0
-  }
-  return number
 }
 
 type LivraisonValues = {
@@ -209,15 +171,9 @@ const ParamContext = React.createContext<{
 } | null>(null)
 
 export function ParamProvider({ children }: { children: ReactNode }) {
-  const router = useRouter()
-
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<'fr' | 'en'>('fr')
-
-  useEffect(() => {
-    setTheme(initialTheme.theme)
-  }, [router.asPath])
 
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState({
@@ -377,124 +333,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   // Boisson
   const [boissonDisplayAll, setBoissonDisplayAll] = useState(false)
-
-  useEffect(() => {
-    if (!router.isReady) {
-      return
-    }
-
-    setLanguage(router.query.language === 'en' ? 'en' : 'fr')
-
-    if (router.query.value) {
-      const value = Number(router.query.value as string)
-      if (!Number.isNaN(value)) {
-        setBaseValue(value)
-      }
-    }
-    if (router.query.equivalent) {
-      setComparedEquivalent(computedEquivalents.find((equivalent) => equivalent.slug === router.query.equivalent))
-    }
-
-    if (router.query.comparisons) {
-      setEquivalents((router.query.comparisons as string).split(','))
-    } else {
-      setEquivalents(getRandomEquivalents(router.query.equivalent as string, 3))
-    }
-
-    if (router.query.m2) {
-      const m2 = Number.parseInt(router.query.m2 as string)
-      if (!Number.isNaN(m2)) {
-        setM2(m2)
-      }
-    }
-
-    if (router.query.km) {
-      const km = Number.parseInt(router.query.km as string)
-      if (!Number.isNaN(km)) {
-        setKm(km)
-      }
-    }
-    completeAddress(setItineraireStart, (router.query.start || router.query.itineraireStart) as string)
-    completeAddress(setItineraireEnd, (router.query.end || router.query.itineraireEnd) as string)
-    completeAddress(setTeletravailStart, (router.query.start || router.query.teletravailStart) as string)
-    completeAddress(setTeletravailEnd, (router.query.end || router.query.teletravailEnd) as string)
-
-    if (router.query.month) {
-      const monthIndex = Number.parseInt(router.query.month as string)
-      if (!Number.isNaN(monthIndex)) {
-        setMonth(monthIndex)
-      } else {
-        setMonth(slugs.indexOf(router.query.month as string))
-      }
-    }
-
-    if (router.query.emails) {
-      setNumberEmails(getInt(router.query, 'emails'))
-    }
-
-    const situation: Partial<Record<string, PublicodesExpression | ASTNode>> = {}
-    if (router.query['email . appareil']) {
-      situation['email . appareil'] = router.query['email . appareil'] as string
-    }
-    if (router.query['email . transmission . émetteur . réseau']) {
-      situation['email . transmission . émetteur . réseau'] = router.query[
-        'email . transmission . émetteur . réseau'
-      ] as string
-    }
-
-    if (router.query['email . taille']) {
-      situation['email . taille'] = getFloat(router.query, 'email . taille')
-    }
-
-    if (router.query['streaming . durée']) {
-      situation['streaming . durée'] = getInt(router.query, 'streaming . durée')
-    }
-
-    if (router.query['streaming . appareil']) {
-      situation['streaming . appareil'] = router.query['streaming . appareil'] as string
-    }
-
-    if (router.query['streaming . transmission . réseau']) {
-      situation['streaming . transmission . réseau'] = router.query['streaming . transmission . réseau'] as string
-    }
-
-    if (router.query['streaming . qualité']) {
-      situation['streaming . qualité'] = router.query['streaming . qualité'] as string
-    }
-
-    if (router.query['visio . durée']) {
-      situation['visio . durée'] = getInt(router.query, 'visio . durée')
-    }
-
-    if (router.query['visio . appareil']) {
-      situation['visio . appareil'] = router.query['visio . appareil'] as string
-    }
-
-    if (router.query['visio . emplacements']) {
-      situation['visio . emplacements'] = getInt(router.query, 'visio . emplacements')
-    }
-
-    if (router.query['visio . transmission . réseau']) {
-      situation['visio . transmission . réseau'] = router.query['visio . transmission . réseau'] as string
-    }
-
-    if (router.query['visio . qualité']) {
-      situation['visio . qualité'] = router.query['visio . qualité'] as string
-    }
-
-    setUsageNumeriqueSituation(situation)
-  }, [
-    router,
-    setM2,
-    setKm,
-    setItineraireStart,
-    setItineraireEnd,
-    setTeletravailStart,
-    setTeletravailEnd,
-    setMonth,
-    setNumberEmails,
-    setUsageNumeriqueSituation,
-  ])
 
   return (
     <ParamContext.Provider
