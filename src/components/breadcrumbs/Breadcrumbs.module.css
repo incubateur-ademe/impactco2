@@ -2,6 +2,7 @@
   border-radius: 0px 0px 16px 16px;
   background: var(--neutral-10);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
@@ -14,5 +15,10 @@
 
 .current {
   color: var(--neutral-60);
+  width: max-content;
   font-weight: 500;
+}
+
+.link {
+  width: max-content;
 }

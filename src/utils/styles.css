@@ -284,6 +284,11 @@ h2 {
   color: var(--neutral-80);
   font-size: 2rem;
   line-height: 2.75rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
 }
 
 .title-h3,

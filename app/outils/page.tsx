@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Trouver l’outil adapté à votre prochaine publication.',
 }
 
-const OutilsPage = async () => {
+const OutilsPage = () => {
   return (
     <>
       <Outils />

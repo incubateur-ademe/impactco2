@@ -5,8 +5,34 @@
   text-decoration: none;
   color: var(--neutral-70);
 
+  &:first-child {
+    border-radius: calc(1rem - 2px) calc(1rem - 2px) 0 0;
+  }
+
   &:not(:last-child) {
     border-bottom: 2px solid var(--primary-30);
+  }
+
+  &:focus,
+  &:hover {
+    background: var(--primary-10);
+
+    .name {
+      color: var(--neutral-80);
+    }
+
+    .data {
+      color: var(--primary-70);
+    }
+  }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 3px solid var(--primary-40);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
 }
 

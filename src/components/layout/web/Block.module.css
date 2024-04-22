@@ -7,6 +7,21 @@
   color: var(--neutral-60);
   font-size: 1.125rem;
   line-height: 1.75rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.mainDescription {
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 .header {

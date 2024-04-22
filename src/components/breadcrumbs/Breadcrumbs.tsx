@@ -9,7 +9,9 @@ const Breadcrumbs = ({ links, current }: { links: { label: string; link: string 
       <div className={styles.container}>
         {links.map(({ label, link }) => (
           <Fragment key={label}>
-            <Link href={link}>{label}</Link>
+            <Link className={styles.link} href={link}>
+              {label}
+            </Link>
             <Icon iconId='arrow-right' />
           </Fragment>
         ))}

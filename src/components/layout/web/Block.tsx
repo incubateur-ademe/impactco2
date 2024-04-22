@@ -34,7 +34,11 @@ const Block = ({
         <div className={styles.header}>
           <div>
             {getTitle(title, as)}
-            {description && <div className={styles.description}>{description}</div>}
+            {description && (
+              <div className={classNames(styles.description, { [styles.mainDescription]: as === 'h1' })}>
+                {description}
+              </div>
+            )}
           </div>
           {link && <Link href={link}>{linkLabel}</Link>}
         </div>

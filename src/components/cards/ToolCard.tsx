@@ -29,9 +29,7 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
         </div>
         <div className={styles.link}>
           {linkLabel}
-          <div className={styles.arrow}>
-            <Icon iconId='full-arrow-right' />
-          </div>
+          <Icon iconId='full-arrow-right' />
         </div>
       </div>
     </a>

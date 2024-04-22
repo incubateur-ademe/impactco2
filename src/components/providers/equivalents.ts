@@ -30,6 +30,6 @@ const equivalents = [
 
 export const computedEquivalents = equivalents.map((equivalent) => ({
   ...equivalent,
-  link: `/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
+  link: `/outils/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
   value: computeECV(equivalent),
 })) as ComputedEquivalent[]
