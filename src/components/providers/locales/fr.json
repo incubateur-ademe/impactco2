@@ -38,7 +38,7 @@
     },
     "transport": {
       "onglet": "Onglet à partager",
-      "onglet-hint": "Sélectionnez l'onglet que vous souhaitez partager",
+      "onglet-hint": "Sélectionnez l’onglet que vous souhaitez voir affiché lors du partage",
       "onglets": "Onglet à intégrer",
       "onglets-hint": "Sélectionnez les onglets que vous souhaitez intégrer à l'iframe"
     }

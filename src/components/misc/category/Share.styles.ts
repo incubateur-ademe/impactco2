@@ -6,6 +6,7 @@ export const Meta = styled.div`
   border-radius: 4px;
   display: flex;
   gap: 0.75rem;
+  margin-top: 2rem;
   padding: 0.75rem;
   text-align: left;
 
@@ -23,7 +24,7 @@ export const Buttons = styled.div`
   display: flex;
   gap: 0.75rem;
   justify-content: center;
-  margin: 2rem auto;
+  margin: 2rem auto 0 auto;
 
   button {
     background-color: transparent !important;
