@@ -130,10 +130,11 @@ export default function Detail({ category }: { category: Category }) {
 
   return (
     <Wrapper>
-      <Title className='title-h3'>Détail de mon impact</Title>
+      <Title className='title-h3'>Comparaison entre usage à l'année et construction d'un appareil</Title>
       <Text>
         En général, la majorité de votre empreinte numérique provient de la construction de vos appareils et pas de
-        l’usage de ces derniers.
+        l’usage de ces derniers. L'impact de la construction des appareils est basé sur l'ensemble des étapes avant son
+        usage.
       </Text>
       <Top className='noscreenshot'>
         <Checkboxes $visible>
