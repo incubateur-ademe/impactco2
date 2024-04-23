@@ -1,8 +1,11 @@
+'use client'
+
+import classNames from 'classnames'
 import React, { ReactNode } from 'react'
 import { ZodError } from 'zod'
 import { Icon } from 'components/osezchanger/icons'
-import { Error } from './Input.styles'
-import { Hint, Inputs, Legend, NotRequired } from './Radio.styles'
+import inputStyles from './Input.module.css'
+import styles from './Radio.module.css'
 import useError from './errors'
 
 export type RadioProps = {
@@ -18,17 +21,17 @@ const Radio = ({ id, label, hint, children, required, errors }: RadioProps & { c
 
   return (
     <div aria-labelledby={`input-${id}`}>
-      <Legend id={`input-${id}`} $error={!!error}>
+      <legend className={classNames(styles.legend, { [styles.legendError]: !!error })} id={`input-${id}`}>
         {label}
-        {!required && <NotRequired> - Facultatif</NotRequired>}
-        {hint && <Hint className='text-sm'>{hint}</Hint>}
-      </Legend>
-      <Inputs>{children}</Inputs>
+        {!required && <div className={styles.notRequired}> - Facultatif</div>}
+        {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+      </legend>
+      <div className={styles.inputs}>{children}</div>
       {error && (
-        <Error className='text-xs'>
+        <div className={classNames(inputStyles.error, 'text-xs')}>
           <Icon iconId='error' />
           {error}
-        </Error>
+        </div>
       )}
     </div>
   )

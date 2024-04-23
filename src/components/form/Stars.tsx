@@ -1,7 +1,10 @@
+'use client'
+
+import classNames from 'classnames'
 import React, { useState } from 'react'
 import { ZodError } from 'zod'
 import { Icon } from 'components/osezchanger/icons'
-import { Error, Hint, Label, NotRequired, StarsButtons } from './Input.styles'
+import styles from './Input.module.css'
 import useError from './errors'
 
 export type StarsProps = {
@@ -30,13 +33,13 @@ const Stars = ({ value, setValue, id, label, required, hint, errors }: StarsProp
   return (
     <div>
       {label && (
-        <Label $error={!!error}>
+        <label className={classNames(styles.label, { [styles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
-          {!required && <NotRequired> - Facultatif</NotRequired>}
-          {hint && <Hint className='text-sm'>{hint}</Hint>}
-        </Label>
+          {!required && <div className={styles.notRequired}> - Facultatif</div>}
+          {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+        </label>
       )}
-      <StarsButtons onMouseLeave={() => setHovered(0)}>
+      <div className={styles.starsButtons} onMouseLeave={() => setHovered(0)}>
         {Array.from({ length: 5 }, (_, i) => i + 1).map((index) => (
           <button
             aria-label={`Avis ${index} étoile${index === 1 ? '' : 's'}`}
@@ -48,12 +51,12 @@ const Stars = ({ value, setValue, id, label, required, hint, errors }: StarsProp
             <Icon iconId={isFull(index, hovered, value) ? 'full-star' : 'star'} />
           </button>
         ))}
-      </StarsButtons>
+      </div>
       {error && (
-        <Error className='text-xs'>
+        <div className={classNames(styles.error, 'text-xs')}>
           <Icon iconId='error' />
           {error}
-        </Error>
+        </div>
       )}
     </div>
   )

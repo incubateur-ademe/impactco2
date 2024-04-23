@@ -1,33 +1,30 @@
+'use client'
+
+import classNames from 'classnames'
 import React, { SelectHTMLAttributes } from 'react'
-import { Container, Hint, Label, NotRequired, StyledSelect } from './Input.styles'
+import styles from './Input.module.css'
 
 const Select = ({
   id,
   label,
   hint,
-  maxWidth,
-  color,
-  inline,
   ...selectProps
 }: SelectHTMLAttributes<HTMLSelectElement> & {
   id: string
   label?: string
   hint?: string
-  maxWidth?: string
-  inline?: boolean
-  color?: 'secondary'
 }) => {
   return (
-    <Container $inline={inline}>
+    <div>
       {label && (
-        <Label htmlFor={`text-select-${id}`} $inline={inline}>
+        <label className={classNames(styles.label)} htmlFor={`input-${id}`}>
           {label}
-          {!selectProps.required && <NotRequired> - Facultatif</NotRequired>}
-          {hint && <Hint className='text-sm'>{hint}</Hint>}
-        </Label>
+          {!selectProps.required && <div className={styles.notRequired}> - Facultatif</div>}
+          {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+        </label>
       )}
-      <StyledSelect {...selectProps} id={`text-select-${id}`} $maxWidth={maxWidth} $color={color} />
-    </Container>
+      <select className={styles.input} {...selectProps} id={`text-select-${id}`} />
+    </div>
   )
 }
 

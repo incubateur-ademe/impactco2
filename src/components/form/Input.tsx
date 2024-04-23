@@ -1,9 +1,10 @@
+'use client'
+
 import classNames from 'classnames'
 import React, { InputHTMLAttributes, useEffect, useRef } from 'react'
 import { ZodError } from 'zod'
 import { Icon, IconId } from 'components/osezchanger/icons'
 import styles from './Input.module.css'
-import { Error, Hint, Label, NotRequired } from './Input.styles'
 import useError from './errors'
 
 const Input = ({
@@ -41,15 +42,19 @@ const Input = ({
   return (
     <div className={className}>
       {label && (
-        <Label htmlFor={`input-${id}`} $error={!!error}>
+        <label className={classNames(styles.label, { [styles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
-          {!inputProps.required && <NotRequired> - Facultatif</NotRequired>}
-          {hint && <Hint className='text-sm'>{hint}</Hint>}
-        </Label>
+          {!inputProps.required && <div className={styles.notRequired}> - Facultatif</div>}
+          {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+        </label>
       )}
       <div className={styles.inputContainer}>
         <input
-          className={classNames(styles.input, { [styles.withIcon]: icon, [styles.large]: large })}
+          className={classNames(styles.input, {
+            [styles.withIcon]: icon,
+            [styles.large]: large,
+            [styles.inputError]: !!error,
+          })}
           {...inputProps}
           ref={ref}
           id={`input-${id}`}
@@ -61,10 +66,10 @@ const Input = ({
         )}
       </div>
       {error && (
-        <Error className='text-xs'>
+        <div className={classNames(styles.error, 'text-xs')}>
           <Icon iconId='error' />
           {error}
-        </Error>
+        </div>
       )}
     </div>
   )

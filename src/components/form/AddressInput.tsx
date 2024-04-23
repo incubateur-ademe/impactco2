@@ -1,3 +1,6 @@
+'use client'
+
+import classNames from 'classnames'
 import React, { Dispatch, InputHTMLAttributes, SetStateAction, useEffect, useRef, useState } from 'react'
 import { ZodError } from 'zod'
 import { useSuggestions } from 'hooks/useAddress'
@@ -5,16 +8,14 @@ import useDebounce from 'hooks/useDebounce'
 import { Point } from 'hooks/useItineraries'
 import { Icon } from 'components/osezchanger/icons'
 import Suggestions from 'components/transport/search/itinerary/address/search/Suggestions'
-import { Container, Loading, SuggestionsContainer } from './AddressInput.styles'
-import { Error, Hint, Label, NotRequired, StyledInput } from './Input.styles'
+import styles from './AddressInput.module.css'
+import inputStyles from './Input.module.css'
 import useError from './errors'
 
 const AddressInput = ({
   id,
   label,
   hint,
-  maxWidth,
-  color,
   errors,
   place,
   setPlace,
@@ -23,8 +24,6 @@ const AddressInput = ({
   id: string
   label?: string
   hint?: string
-  maxWidth?: string
-  color?: 'secondary'
   errors?: ZodError | null
   place?: string
   setPlace: Dispatch<SetStateAction<Point | undefined>>
@@ -58,33 +57,33 @@ const AddressInput = ({
 
   const error = useError(id, errors)
   return (
-    <Container>
+    <div className={styles.container}>
       {label && (
-        <Label htmlFor={`input-${id}`} $error={!!error}>
+        <label className={classNames(inputStyles.label, { [inputStyles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
-          {!inputProps.required && <NotRequired> - Facultatif</NotRequired>}
-          {hint && <Hint className='text-sm'>{hint}</Hint>}
-        </Label>
+          {!inputProps.required && <div className={inputStyles.notRequired}> - Facultatif</div>}
+          {hint && <div className={classNames(inputStyles.hint, 'text-sm')}>{hint}</div>}
+        </label>
       )}
-      <StyledInput
+      <input
+        className={classNames(inputStyles.input, {
+          [inputStyles.withIcon]: isFetching,
+          [inputStyles.inputError]: !!error,
+        })}
         {...inputProps}
         ref={input}
         value={value}
         onChange={(event) => setValue(event.target.value)}
         onFocus={() => setFocus(true)}
         id={`input-${id}`}
-        $maxWidth={maxWidth}
-        $color={color}
-        $error={!!error}
-        $withIcon
       />
       {isFetching && (
-        <Loading>
+        <div className={styles.loading}>
           <Icon iconId='loading' />
-        </Loading>
+        </div>
       )}
       {data && focus && (
-        <SuggestionsContainer>
+        <div className={styles.suggestionsContainer}>
           <Suggestions
             isFetching={isFetching}
             search={debouncedSearch}
@@ -93,15 +92,15 @@ const AddressInput = ({
             setCurrent={setCurrent}
             handleSuggestionClick={navigateToPlace}
           />
-        </SuggestionsContainer>
+        </div>
       )}
       {error && (
-        <Error className='text-xs'>
+        <div className={classNames(inputStyles.error, 'text-xs')}>
           <Icon iconId='error' />
           {error}
-        </Error>
+        </div>
       )}
-    </Container>
+    </div>
   )
 }
 

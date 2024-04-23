@@ -1,5 +1,8 @@
+'use client'
+
+import classNames from 'classnames'
 import React, { ReactNode } from 'react'
-import { Hint, Inputs, Legend, NotRequired } from './Radio.styles'
+import styles from './Radio.module.css'
 
 const Checkbox = ({
   id,
@@ -16,12 +19,12 @@ const Checkbox = ({
 }) => {
   return (
     <div aria-labelledby={`checkbox-legend-${id}`}>
-      <Legend id={`checkbox-legend-${id}`}>
+      <legend className={styles.legend} id={`input-${id}`}>
         {label}
-        {!required && <NotRequired> - Facultatif</NotRequired>}
-        {hint && <Hint className='text-sm'>{hint}</Hint>}
-      </Legend>
-      <Inputs>{children}</Inputs>
+        {!required && <div className={styles.notRequired}> - Facultatif</div>}
+        {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+      </legend>
+      <div className={styles.inputs}>{children}</div>
     </div>
   )
 }
