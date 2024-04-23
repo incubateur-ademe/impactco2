@@ -41,7 +41,6 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value: Object.keys(csp)
-      .filter((key) => key !== 'frame-ancestors')
       .map((key) => `${key} ${csp[key].join(' ')}`)
       .join(';'),
   },
@@ -51,6 +50,7 @@ const securityHeadersIFramable = [
   {
     key: 'Content-Security-Policy',
     value: Object.keys(csp)
+      .filter((key) => key !== 'frame-ancestors')
       .map((key) => `${key} ${csp[key].join(' ')}`)
       .join(';'),
   },

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { computedEquivalents } from './equivalents'
 
-const fuse = new Fuse([...computedEquivalents], {
+const config = {
   keys: [
     {
       name: 'name',
@@ -24,17 +24,27 @@ const fuse = new Fuse([...computedEquivalents], {
   ],
   threshold: 0.3,
   ignoreLocation: true,
-})
+}
 
-export const useSearchEquivalent = (search: string) => {
+const fuse = new Fuse([...computedEquivalents], config)
+
+const nonEmptyFuse = new Fuse([...computedEquivalents.filter((equivalent) => equivalent.value)], config)
+
+export const useSearchEquivalent = (search: string, excludeEmpty?: boolean) => {
   const [results, setResults] = useState<ComputedEquivalent[]>([])
 
   useEffect(() => {
-    setResults(
-      search.length > 0
-        ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
-        : computedEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
-    )
+    excludeEmpty
+      ? setResults(
+          search.length > 0
+            ? nonEmptyFuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
+            : computedEquivalents.filter((equivalent) => equivalent.value).sort((a, b) => (a.slug > b.slug ? 1 : -1))
+        )
+      : setResults(
+          search.length > 0
+            ? fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
+            : computedEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
+        )
   }, [search])
 
   return results

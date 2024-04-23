@@ -38,7 +38,7 @@
     },
     "transport": {
       "onglet": "Tab to share",
-      "onglet-hint": "Select tab you want to share",
+      "onglet-hint": "Select tab you want to see when on sharing",
       "onglets": "Tabs to integrate",
       "onglets-hint": "Select tabs you want to see in your iframe"
     }

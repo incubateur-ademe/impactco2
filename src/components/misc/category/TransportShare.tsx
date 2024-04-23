@@ -8,6 +8,7 @@ import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
 import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
+import { Meta } from './Share.styles'
 import { Separator } from './TransportIntegrate.styles'
 
 const TransportShare = ({ tracking }: { tracking: string }) => {
@@ -73,11 +74,7 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
 
   return selected ? (
     <>
-      <Radio
-        required
-        id='tabs'
-        label={t('onglet')}
-        hint="Sélectionnez les onglets que vous souhaitez intégrer à l'iframe">
+      <Radio required id='tabs' label={t('onglet')} hint={t('onglet-hint')}>
         <RadioInput
           priority='secondary'
           value='distance'
@@ -137,6 +134,18 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
       )}
       <Separator />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
+      <Meta>
+        <img src='/meta/transport.png' width={728} height={382.2} alt='' />
+        <div>
+          <p>
+            <b>Transport</b>
+          </p>
+          <p className='text-sm'>
+            Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO₂ vous connaitrez votre impact sur le
+            climat
+          </p>
+        </div>
+      </Meta>
     </>
   ) : null
 }

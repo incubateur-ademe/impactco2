@@ -32,6 +32,7 @@ const Category = ({
       computedEquivalents
         .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => equivalent.slug !== comparedEquivalent?.slug)
+        .filter((equivalent) => equivalent.value)
         .sort((a, b) => a.name.localeCompare(b.name)),
     [category, comparedEquivalent]
   )
