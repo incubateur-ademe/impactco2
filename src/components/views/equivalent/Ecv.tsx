@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { Category } from 'types/category'
-import { Equivalent } from 'types/equivalent'
+import { ComputedEquivalent } from 'types/equivalent'
 import { Section, SectionWideContent } from 'components/base/Section'
 import ShareableContent from 'components/misc/ShareableContent'
 import { OverScreenEquivalent } from 'components/misc/category/overScreens/Type'
@@ -9,7 +9,7 @@ import Signature from 'components/screenshot/Signature'
 import Detail from './ecv/Detail'
 import DurationSelector from './ecv/DurationSelector'
 
-export default function Ecv({ category, equivalent }: { category: Category; equivalent: Equivalent }) {
+export default function Ecv({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) {
   const [overScreen, setOverScreen] = useState<OverScreenEquivalent | undefined>()
   const overScreenValues = useMemo(() => overScreenEquivalentValues(equivalent), [equivalent])
 
@@ -28,7 +28,7 @@ export default function Ecv({ category, equivalent }: { category: Category; equi
               size='lg'
               withoutIntegration
               path={`${category.slug}/${equivalent.slug}#empreinte`}>
-              <Detail equivalent={equivalent} years={usage} />
+              <Detail equivalent={equivalent} />
               {usage ? <DurationSelector duration={usage} setDuration={setUsage} /> : null}
               <br />
               <Signature small noLink noMargin />

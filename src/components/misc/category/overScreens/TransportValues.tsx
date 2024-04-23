@@ -2,11 +2,11 @@ import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import Card from 'components/base/Card'
 import { OverScreenInfo } from 'components/base/OverScreen'
+import styles from 'components/misc/category/overScreens/Values.module.css'
 import { CustomParamValue } from '../CustomParam'
 import TransportIntegrate from '../TransportIntegrate'
 import TransportShare from '../TransportShare'
 import { OverScreenTransport } from './TransportType'
-import { Space } from './Values.styles'
 
 export const overScreenTransportValues: (
   category: Category,
@@ -23,7 +23,7 @@ export const overScreenTransportValues: (
     children: (
       <>
         <TransportIntegrate type={type} tracking={tracking} />
-        <Space />
+        <div className={styles.space} />
         <Card
           href='/guide-utilisation'
           title='Utiliser cette ressource'

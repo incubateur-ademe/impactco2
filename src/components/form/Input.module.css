@@ -75,6 +75,11 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+}
+
+.containerInline {
+  flex-direction: row;
 }
 
 .label {
@@ -86,6 +91,10 @@
 
 .labelError {
   color: var(--critical-50);
+}
+
+.labelInline {
+  margin-bottom: 0;
 }
 
 .hint {

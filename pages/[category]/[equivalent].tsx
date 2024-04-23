@@ -8,7 +8,6 @@ import Web from 'components/layout/Web'
 import Details from 'components/views/equivalent/Details'
 import Ecv from 'components/views/equivalent/Ecv'
 import Text from 'components/views/equivalent/Text'
-import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
 export default function Equivalent({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) {
   return (
@@ -32,7 +31,6 @@ export default function Equivalent({ category, equivalent }: { category: Categor
             }
       }>
       <Details equivalent={equivalent} category={category} />
-      <VisualizationSlider equivalent={equivalent} category={category} />
       <Ecv equivalent={equivalent} category={category} />
       <Text equivalent={equivalent} />
     </Web>

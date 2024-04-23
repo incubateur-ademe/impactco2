@@ -6,7 +6,6 @@ import usagenumerique from 'data/categories/usagenumerique.json'
 import Web from 'components/layout/Web'
 import Equivalent from 'components/numerique/Equivalent'
 import Text from 'components/views/equivalent/Text'
-import VisualizationSlider from 'components/views/equivalent/VisualizationSlider'
 
 const equivalents = [...usagenumerique].map((equivalent) => ({
   ...equivalent,
@@ -24,7 +23,6 @@ export default function EmailPage({ equivalent, category }: { equivalent: Equiva
         equivalent: equivalent,
       }}>
       <Equivalent equivalent={equivalent} category={category} name='email' />
-      <VisualizationSlider category={category} equivalent={equivalent} />
       <Text equivalent={equivalent} />
     </Web>
   )

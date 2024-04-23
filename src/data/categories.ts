@@ -4,6 +4,7 @@ import { chauffage } from './categories/chauffage'
 import { computedEquivalents } from './categories/computedEquivalents'
 import { deplacements } from './categories/deplacement'
 import { electromenager } from './categories/electromenager'
+import { flattenEquivalents } from './categories/flattenEquivalents'
 import { fruitsEtLegumes } from './categories/fruitsetlegumes'
 import { habillements } from './categories/habillement'
 import { mobiliers } from './categories/mobilier'
@@ -137,7 +138,7 @@ export const categories = [
       description:
         "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO₂ vous connaitrez votre impact sur le climat",
     },
-    equivalents: computedEquivalents('transport', deplacements),
+    equivalents: computedEquivalents('transport', flattenEquivalents(deplacements)),
   },
   {
     id: 9,

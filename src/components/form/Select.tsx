@@ -8,16 +8,18 @@ const Select = ({
   id,
   label,
   hint,
+  inline,
   ...selectProps
 }: SelectHTMLAttributes<HTMLSelectElement> & {
   id: string
   label?: string
+  inline?: boolean
   hint?: string
 }) => {
   return (
-    <div>
+    <div className={inline ? styles.containerInline : ''}>
       {label && (
-        <label className={classNames(styles.label)} htmlFor={`input-${id}`}>
+        <label className={classNames(styles.label, { [styles.labelInline]: inline })} htmlFor={`input-${id}`}>
           {label}
           {!selectProps.required && <div className={styles.notRequired}> - Facultatif</div>}
           {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}

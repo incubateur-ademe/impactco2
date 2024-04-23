@@ -6,9 +6,9 @@ import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
+import styles from 'components/misc/category/overScreens/Values.module.css'
 import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
-import { Meta } from './Share.styles'
 import { Separator } from './TransportIntegrate.styles'
 
 const TransportShare = ({ tracking }: { tracking: string }) => {
@@ -134,7 +134,7 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
       )}
       <Separator />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
-      <Meta>
+      <div className={styles.meta}>
         <img src='/meta/transport.png' width={728} height={382.2} alt='' />
         <div>
           <p>
@@ -145,7 +145,7 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
             climat
           </p>
         </div>
-      </Meta>
+      </div>
     </>
   ) : null
 }
