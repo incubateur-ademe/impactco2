@@ -150,11 +150,14 @@ const Detector = ({ impact }: { impact: string }) => {
       <button
         className={classNames(styles.value, 'impactCO2-etiquette-detected-value')}
         onClick={onClick}
+        title='Comprendre cette valeur'
         dangerouslySetInnerHTML={{
           __html: impact,
         }}
       />
       <div
+        role='alertdialog'
+        aria-labelledby='etiquette-value'
         className={classNames(styles.etiquette, {
           [styles.hide]: !display,
           [styles.bottom]: display.includes('bottom'),
@@ -164,7 +167,7 @@ const Detector = ({ impact }: { impact: string }) => {
         ref={etiquetteRef}>
         <Logo value={value} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
         <div className={styles.simpleValue}>
-          <SimpleValue value={value} comparison='random' />
+          <SimpleValue value={value} comparison='random' id='etiquette-value' />
         </div>
         <button
           className={styles.random}
