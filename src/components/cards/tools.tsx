@@ -73,6 +73,12 @@ export const tools = [
     description: 'Aliquam eu libero malesuada, consequat odio',
     linkLabel: 'Découvrir',
   },
+  {
+    slug: 'teletravail',
+    title: 'Télétravail',
+    description: 'Mesurer les économies de carbone réalisées grâce au télétravail',
+    linkLabel: 'Visualiser',
+  },
 ]
 
 export const smallTools = [
@@ -107,13 +113,13 @@ export const smallTools = [
   },
   {
     slug: 'detecteur',
-    title: 'Détecteur CO2',
+    title: 'Détecteur CO₂',
     description: 'L’outil pratique pour mettre en lumière vos données carbone.',
     linkLabel: 'Découvrir',
     content: (
       <>
         <div>
-          Impact CO2 lance le détecteur CO2, un nouveau format innovant pour détecter et surligner automatiquement les
+          Impact CO2 lance le détecteur CO₂, un nouveau format innovant pour détecter et surligner automatiquement les
           mentions de données carbones dans vos contenus.
         </div>
         <div>
@@ -149,7 +155,6 @@ export const smallTools = [
 export const devTools = [
   {
     slug: 'api',
-    image: '/images/home-api.svg',
     title: 'API',
     description: 'Accéder facilement et gratuitement à des données carbone fiables.',
     linkLabel: 'Découvrir',
@@ -193,15 +198,5 @@ export const devTools = [
     ),
     toolLink: 'https://www.npmjs.com/package/@incubateur-ademe/impactco2-react',
     toolLinkLabel: 'Accéder au package NPM',
-  },
-
-  {
-    slug: 'shopify',
-    title: 'Extension Shopify',
-    description: 'Accéder facilement et gratuitement à des données carbone fiables.',
-    linkLabel: 'Découvrir',
-    content: <>TODO</>,
-    toolLink: 'TODO',
-    toolLinkLabel: 'TODO',
   },
 ]

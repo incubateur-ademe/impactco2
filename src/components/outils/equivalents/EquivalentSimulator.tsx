@@ -10,6 +10,12 @@ const EquivalentSimulator = ({ category, equivalent }: { category: Category; equ
     <>
       <div className={styles.header}>
         <EquivalentCardContent equivalent={equivalent} category={category} />
+        {equivalent.include?.pre && (
+          <div className={styles.hypothesis}>
+            <div className={styles.hypothesisTitle}>Hypothèses</div>
+            <div>{equivalent.include.pre}</div>
+          </div>
+        )}
       </div>
       <Detail equivalent={equivalent} />
     </>
