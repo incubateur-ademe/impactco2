@@ -22,13 +22,13 @@ export const tools = [
   {
     slug: 'mobilier',
     title: 'Mobilier',
-    description: 'Découvrir l’impact carbone des meubles',
+    description: 'Comparer l’impact carbone du mobilier',
     linkLabel: 'Visualiser',
   },
   {
     slug: 'repas',
-    title: 'Repas',
-    description: 'Pour aborder l’impact carbone de l’alimentation',
+    title: 'Alimentation',
+    description: 'Comparer l’empreinte carbone des repas',
     linkLabel: 'Découvrir',
   },
   {
@@ -40,37 +40,37 @@ export const tools = [
   {
     slug: 'fruitsetlegumes',
     title: 'Fruits et légumes',
-    description: 'Aliquam eu libero malesuada, consequat odio',
+    description: 'Découvrir les fruits et légumes de la saison et leur impact carbone',
     linkLabel: 'Visualiser',
   },
   {
     slug: 'habillement',
     title: 'Habillement',
-    description: 'Aliquam eu libero malesuada, consequat odio',
+    description: 'Comparer l’impact carbone des vêtements entre eux',
     linkLabel: 'Découvrir',
   },
   {
     slug: 'numerique',
     title: 'Numérique',
-    description: 'Aliquam eu libero malesuada, consequat odio',
+    description: 'Mesurer l’impact carbone des appareils numériques',
     linkLabel: 'Comparer',
   },
   {
     slug: 'boisson',
-    title: 'Boissons',
-    description: 'Aliquam eu libero malesuada, consequat odio',
+    title: 'Boisson',
+    description: 'Comparer l’impact carbone des boissons',
     linkLabel: 'Comparer',
   },
   {
     slug: 'usagenumerique',
     title: 'Usage numérique',
-    description: 'Aliquam eu libero malesuada, consequat odio',
+    description: 'Évaluer l’impact carbone de vos usages numériques (streaming, visioconférence, email)',
     linkLabel: 'Visualiser',
   },
   {
     slug: 'livraison',
     title: 'Livraison',
-    description: 'Aliquam eu libero malesuada, consequat odio',
+    description: 'Simuler l’impact carbone de vos livraisons de colis',
     linkLabel: 'Découvrir',
   },
   {
@@ -144,7 +144,7 @@ export const smallTools = [
   {
     slug: 'osez-changer',
     title: 'Défi chaussures',
-    description: 'Aliquam eu libero malesuada, consequat odio',
+    description: 'Compter vos chaussure et évaluer l’impact carbone de vos derniers achats',
     linkLabel: 'Découvrir',
     content: <>TODO</>,
     toolLink: 'TODO',
