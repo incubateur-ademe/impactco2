@@ -21,7 +21,7 @@ const Logo = ({
       target='_blank'
       rel='noreferrer noopener'
       aria-label='Logo Impact CO2'
-      title='Comparateur impact CO2 - nouvelle fenêtre'>
+      title='Lien externe : accéder au comparateur sur le site Impact CO2'>
       <svg xmlns='http://www.w3.org/2000/svg' width='30' height='50' viewBox='0 0 30 50' fill='none'>
         <path
           fillRule='evenodd'
