@@ -64,7 +64,7 @@ export const tools = [
   {
     slug: 'usagenumerique',
     title: 'Usage numérique',
-    description: 'Évaluer l’impact carbone de vos usages numériques (streaming, visioconférence, email)',
+    description: 'Évaluer l’impact carbone des usages numériques',
     linkLabel: 'Visualiser',
   },
   {
