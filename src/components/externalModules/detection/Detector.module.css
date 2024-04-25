@@ -44,7 +44,8 @@
   font-weight: 500 !important;
   padding: 0 0.5em !important;
   border: none !important;
-  border-radius: 4px !important;
+  border-radius: 4px 4px 0 0 !important;
+  border-bottom: dotted 2px var(--primary-50) !important;
   cursor: pointer !important;
   min-height: unset !important;
   text-transform: none !important;

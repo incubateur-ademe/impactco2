@@ -10,7 +10,17 @@ import styles from './SimpleValue.module.css'
 
 const equivalents = values as Record<string, SimpleEquivalent>
 
-const SimpleValue = ({ value, comparison, language }: { value: number; comparison: string; language?: Language }) => {
+const SimpleValue = ({
+  value,
+  comparison,
+  language,
+  id,
+}: {
+  value: number
+  comparison: string
+  language?: Language
+  id?: string
+}) => {
   let equivalent: SimpleEquivalent
   let slug: string
   if (comparison !== 'random' && equivalents[comparison]) {
@@ -40,7 +50,7 @@ const SimpleValue = ({ value, comparison, language }: { value: number; compariso
       <div className={styles.emoji}>
         <EquivalentIcon height={2} equivalent={{ ...equivalent, slug }} />
       </div>
-      <div className={classNames(styles.text, 'impactCO2-etiquette-content')}>
+      <div className={classNames(styles.text, 'impactCO2-etiquette-content')} id={id}>
         <div
           className={classNames(styles.equivalentValue, 'impactCO2-etiquette-value')}
           data-testid={`etiquette-${comparison}-value`}>
