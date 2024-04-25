@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import React from 'react'
-import { Icon } from 'components/osezchanger/icons'
+import FullArrowRightIcon from 'components/osezchanger/icons/full-arrow-right'
 import styles from './ToolCard.module.css'
 
 export type ToolCardProps = {
@@ -29,7 +29,7 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
         </div>
         <div className={styles.link}>
           {linkLabel}
-          <Icon iconId='full-arrow-right' />
+          <FullArrowRightIcon />
         </div>
       </div>
     </a>

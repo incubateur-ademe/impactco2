@@ -16,5 +16,6 @@ export type Category = {
     title: string
     description: string
   }
-  equivalents?: ComputedEquivalent[]
+  equivalents: ComputedEquivalent[]
+  simulator?: ReactNode
 }

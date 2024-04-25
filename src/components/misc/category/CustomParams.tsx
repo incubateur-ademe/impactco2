@@ -1,7 +1,7 @@
 import React from 'react'
 import { track } from 'utils/matomo'
 import CustomParam, { CustomParamValue } from './CustomParam'
-import { Title } from './CustomParam.styles'
+import styles from './CustomParam.module.css'
 import { Separator } from './TransportIntegrate.styles'
 
 const CustomParams = ({
@@ -24,7 +24,7 @@ const CustomParams = ({
 }) => {
   return (
     <>
-      {title && <Title>{title}</Title>}
+      {title && <div className={styles.title}>{title}</div>}
       {Object.entries(params)
         .filter(([key]) => key !== 'theme')
         .map(([key, param]) => (

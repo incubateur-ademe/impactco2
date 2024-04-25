@@ -1,3 +1,5 @@
+.textarea,
+.select,
 .input {
   align-items: center;
   background: var(--neutral-00);
@@ -13,6 +15,7 @@
   line-height: 1.5rem;
   position: relative;
   width: 100%;
+  max-width: 560px;
 
   &:hover {
     border: 2px solid var(--primary-40);
@@ -28,6 +31,36 @@
     border: 2px solid var(--neutral-20);
     color: var(--neutral-30);
   }
+}
+
+.select {
+  max-width: fit-content;
+  cursor: pointer;
+  appearance: none;
+}
+
+.selectWrapper {
+  position: relative;
+
+  &::after {
+    content: '\25be';
+    font-size: 1rem;
+    top: 0.75rem;
+    right: 1rem;
+    position: absolute;
+    color: var(--neutral-50);
+  }
+}
+
+.smallSelectWrapper {
+  &::after {
+    top: 0.5rem;
+    right: 0.75rem;
+  }
+}
+
+.textarea {
+  max-width: 100%;
 }
 
 .inputError {
@@ -47,9 +80,8 @@
   padding-right: 3.25rem;
 }
 
-.large {
-  padding-top: calc(1rem - 2px);
-  padding-bottom: calc(1rem - 2px);
+.small {
+  padding: 0.5rem 1rem;
 }
 
 .inputContainer {
@@ -79,7 +111,9 @@
 }
 
 .containerInline {
-  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .label {
@@ -139,4 +173,28 @@
   display: flex;
   gap: 0.25rem;
   margin-top: 0.5rem;
+}
+
+.secondaryUnit,
+.unit {
+  position: absolute;
+  font-weight: 500;
+}
+
+.secondaryUnit {
+  right: 1rem;
+  top: 0.625rem;
+  color: var(--neutral-50);
+}
+
+.unit {
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.375rem 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--primary-30);
+  background: var(--primary-10);
+  color: var(--primary-60);
 }

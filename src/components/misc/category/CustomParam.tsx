@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
@@ -6,9 +7,10 @@ import { Point } from 'hooks/useItineraries'
 import Emoji from 'components/base/Emoji'
 import AddressInput from 'components/form/AddressInput'
 import CheckboxInput from 'components/form/CheckboxInput'
-import { HiddenLabel } from 'components/form/HiddenLabel'
+import HiddenLabel from 'components/form/HiddenLabel'
+import Input from 'components/form/Input'
 import Select from 'components/form/Select'
-import { Container, InputContainer, InputSuffix, Inputs, Param, Params, StyledInput } from './CustomParam.styles'
+import styles from './CustomParam.module.css'
 
 const configs: Record<
   string,
@@ -91,7 +93,7 @@ const CustomParam = ({
   if ('setter' in param) {
     const config = configs[slug]
     return (
-      <Container>
+      <div className={styles.container}>
         {setVisible && (
           <CheckboxInput
             color='secondary'
@@ -101,10 +103,11 @@ const CustomParam = ({
             data-testid={`custom-param-${slug}-checkbox`}
           />
         )}
-        <InputContainer $fullWidth={!setVisible}>
+        <div className={classNames(styles.inputContainer, { [styles.fullWidth]: !setVisible })}>
           <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>{config.inputLabel}</HiddenLabel>
           {config.options ? (
             <Select
+              small
               label={setVisible ? '' : t(`${slug}.label`)}
               required
               inline={!setVisible}
@@ -124,8 +127,11 @@ const CustomParam = ({
               ))}
             </Select>
           ) : (
-            <StyledInput
+            <Input
               id={slug}
+              unit={config.unit}
+              secondaryUnitStyle
+              small
               disabled={!visible}
               type={config.type}
               value={param.value}
@@ -153,19 +159,18 @@ const CustomParam = ({
               data-testid={`custom-param-${slug}-input`}
             />
           )}
-          <InputSuffix $disabled={!visible}>{config.unit}</InputSuffix>
-        </InputContainer>
-      </Container>
+        </div>
+      </div>
     )
   }
 
   if ('start' in param) {
     return (
-      <Container>
+      <div className={styles.container}>
         {setVisible && (
           <CheckboxInput color='secondary' checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} />
         )}
-        <Inputs>
+        <div className={styles.inputs}>
           <AddressInput
             id={`${slug}-start`}
             label={t(`${slug}.start`)}
@@ -190,14 +195,14 @@ const CustomParam = ({
               param.end.setter(place)
             }}
           />
-        </Inputs>
-      </Container>
+        </div>
+      </div>
     )
   }
 
   const config = arrayConfigs[slug]
   return (
-    <Container>
+    <div className={styles.container}>
       {setVisible && (
         <CheckboxInput
           color='secondary'
@@ -207,14 +212,14 @@ const CustomParam = ({
           data-testid={`custom-param-${slug}-checkbox`}
         />
       )}
-      <Params>
+      <div className={styles.params}>
         {param.value.map(({ emoji, label }) => (
-          <Param key={emoji}>
+          <div className={styles.param} key={emoji}>
             <Emoji height='0.75rem'>{emoji}</Emoji> <span className='text-sm'>{label}</span>
-          </Param>
+          </div>
         ))}
-      </Params>
-    </Container>
+      </div>
+    </div>
   )
 }
 

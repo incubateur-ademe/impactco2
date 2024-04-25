@@ -1,5 +1,6 @@
 import GhostButton from 'components/base/GhostButton'
 import { OverScreenInfo } from '../../base/OverScreen'
+import ArrowLeftIcon from '../icons/arrow-left'
 import Hypotesis from './Hypotesis'
 import Integration from './Integration'
 import Share from './Share'
@@ -10,7 +11,7 @@ export const overScreenOsezChangerValues: Record<OverScreenOsezChanger, OverScre
     title: 'hypothesis',
     children: <Hypotesis />,
     cancel: (onClose) => (
-      <GhostButton colored icon='arrow-left' onClick={onClose} size='sm'>
+      <GhostButton colored icon={<ArrowLeftIcon />} onClick={onClose} size='sm'>
         Revenir au challenge
       </GhostButton>
     ),

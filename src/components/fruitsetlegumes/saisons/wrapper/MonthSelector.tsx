@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
 import FancySelect from 'components/base/FancySelect'
-import { HiddenLabel } from 'components/form/HiddenLabel'
+import HiddenLabel from 'components/form/HiddenLabel'
 
 export default function MonthSelector({
   month,

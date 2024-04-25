@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { track } from 'utils/matomo'
 import { evaluateNumber } from 'hooks/useSituation'
 import useParamContext from 'components/providers/ParamProvider'
-import { HiddenLabel } from 'components/form/HiddenLabel'
+import HiddenLabel from 'components/form/HiddenLabel'
 import {
   Color,
   Desktop,

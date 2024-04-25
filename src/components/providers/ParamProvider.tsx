@@ -48,7 +48,7 @@ type LivraisonValues = {
   traj: string
 }
 
-const ParamContext = React.createContext<{
+export type Params = {
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
   language: 'fr' | 'en'
@@ -168,7 +168,9 @@ const ParamContext = React.createContext<{
   mobilier: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
   electromenager: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
   boisson: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
-} | null>(null)
+}
+
+const ParamContext = React.createContext<Params | null>(null)
 
 export function ParamProvider({ children }: { children: ReactNode }) {
   const initialTheme = useTheme()

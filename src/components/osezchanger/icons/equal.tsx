@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Icon = () => (
+const EqualIcon = () => (
   <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'>
     <path
       d='M16.6668 6.66667C16.6668 5.74619 15.9206 5 15.0002 5H5.00016C4.07969 5 3.3335 5.74619 3.3335 6.66667C3.3335 7.58714 4.07969 8.33333 5.00016 8.33333H15.0002C15.9206 8.33333 16.6668 7.58714 16.6668 6.66667Z'
@@ -12,4 +12,4 @@ const Icon = () => (
     />
   </svg>
 )
-export default Icon
+export default EqualIcon

@@ -1,29 +1,26 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
 import { Category } from 'types/category'
 import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
+import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
-import { Icon } from 'components/osezchanger/icons'
-import { CustomParamValue } from './CustomParam'
+import FacebookIcon from 'components/osezchanger/icons/facebook'
+import LinkedinIcon from 'components/osezchanger/icons/linkedin'
+import TwitterIcon from 'components/osezchanger/icons/twitter'
+import WhatsappIcon from 'components/osezchanger/icons/whatsapp'
 import CustomParams from './CustomParams'
+import { getCustomParams } from './CustomParamsValues'
 import styles from './Share.module.css'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
-const Share = ({
-  category,
-  params,
-  path,
-  tracking,
-}: {
-  category?: Category
-  params?: Record<string, CustomParamValue>
-  path?: string
-  tracking?: string
-}) => {
+const Share = ({ category, path, tracking }: { category?: Category; path?: string; tracking?: string }) => {
+  const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
+
+  const params = useMemo(() => (category ? getCustomParams(category.slug, allParams) : {}), [allParams, category])
 
   useEffect(() => {
     if (params) {
@@ -60,28 +57,28 @@ const Share = ({
           title='Partager sur facebook'
           aria-label='Partager sur facebook'
           onClick={() => track(trackingValue, 'Share Facebook', `${trackingSlug}_facebook`)}>
-          <Icon iconId='facebook' />
+          <FacebookIcon />
         </FacebookShareButton>
         <TwitterShareButton
           url={url}
           title='Partager sur twitter'
           aria-label='Partager sur twitter'
           onClick={() => track(trackingValue, 'Share Twitter', `${trackingSlug}_twitter`)}>
-          <Icon iconId='twitter' />
+          <TwitterIcon />
         </TwitterShareButton>
         <WhatsappShareButton
           url={url}
           title='Partager sur whatsapp'
           aria-label='Partager sur whatsapp'
           onClick={() => track(trackingValue, 'Share Whatsapp', `${trackingSlug}_whatsapp`)}>
-          <Icon iconId='whatsapp' />
+          <WhatsappIcon />
         </WhatsappShareButton>
         <LinkedinShareButton
           url={url}
           title='Partager sur linkedin'
           aria-label='Partager sur linkedin'
           onClick={() => track(trackingValue, 'Share Linkedin', `${trackingSlug}_linkedin`)}>
-          <Icon iconId='linkedin' />
+          <LinkedinIcon />
         </LinkedinShareButton>
       </div>
       {(category || path === 'comparateur') && (
@@ -97,6 +94,7 @@ const Share = ({
             alt=''
           />
           <div>
+            <div className={styles.metaHeader}>APERÇU DU PARTAGE</div>
             <p>
               <b>{category ? category.meta.title : 'Comparateur'}</b>
             </p>

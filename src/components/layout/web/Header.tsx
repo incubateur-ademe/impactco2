@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Logos from 'components/base/Logo/Logos'
-import { Icon } from 'components/osezchanger/icons'
+import DocIcon from 'components/osezchanger/icons/doc'
+import ToolsIcon from 'components/osezchanger/icons/tools'
 import styles from './Header.module.css'
 import Menu from './Menu'
 import SkipLinks from './SkipLinks'
@@ -15,11 +16,11 @@ export default function Header() {
           <div>
             <div className={styles.mainLinks}>
               <Link href='/outils'>
-                <Icon iconId='tools' />
+                <ToolsIcon />
                 Les outils
               </Link>
               <Link href='/doc'>
-                <Icon iconId='doc' />
+                <DocIcon />
                 La doc
               </Link>
             </div>

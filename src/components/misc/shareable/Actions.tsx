@@ -3,6 +3,9 @@
 import React from 'react'
 import { track } from 'utils/matomo'
 import GhostButton from 'components/base/GhostButton'
+import CodeSSlashIcon from 'components/osezchanger/icons/code-s-slash'
+import ImageIcon from 'components/osezchanger/icons/image'
+import SendPlaneIcon from 'components/osezchanger/icons/send-plane'
 import styles from './Actions.module.css'
 
 const Actions = ({
@@ -21,7 +24,7 @@ const Actions = ({
       {!withoutShare && (
         <GhostButton
           data-testid='header-share-button'
-          icon='send-plane'
+          icon={<SendPlaneIcon />}
           onClick={() => {
             onClick('partager')
             track(tracking, 'Partager', `${tracking.replace(/ /g, '_').toLowerCase()}_partager`)
@@ -32,7 +35,7 @@ const Actions = ({
       {!withoutIntegration && (
         <GhostButton
           data-testid='header-integrate-button'
-          icon='code-s-slash'
+          icon={<CodeSSlashIcon />}
           onClick={() => {
             onClick('integrer')
             track(tracking, 'Integrer', `${tracking.replace(/ /g, '_').toLowerCase()}_integrer`)
@@ -41,7 +44,7 @@ const Actions = ({
         </GhostButton>
       )}
       <GhostButton
-        icon='image'
+        icon={<ImageIcon />}
         onClick={() => {
           onClick('telecharger')
         }}>

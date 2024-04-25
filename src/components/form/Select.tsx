@@ -9,12 +9,14 @@ const Select = ({
   label,
   hint,
   inline,
+  small,
   ...selectProps
 }: SelectHTMLAttributes<HTMLSelectElement> & {
   id: string
   label?: string
   inline?: boolean
   hint?: string
+  small?: boolean
 }) => {
   return (
     <div className={inline ? styles.containerInline : ''}>
@@ -25,7 +27,13 @@ const Select = ({
           {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
         </label>
       )}
-      <select className={styles.input} {...selectProps} id={`text-select-${id}`} />
+      <div className={classNames(styles.selectWrapper, { [styles.smallSelectWrapper]: small })}>
+        <select
+          className={classNames(styles.select, { [styles.small]: small })}
+          {...selectProps}
+          id={`text-select-${id}`}
+        />
+      </div>
     </div>
   )
 }

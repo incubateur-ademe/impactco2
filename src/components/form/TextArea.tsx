@@ -31,7 +31,7 @@ const TextArea = ({
         </label>
       )}
       <textarea
-        className={classNames(styles.input, { [styles.inputError]: !!error })}
+        className={classNames(styles.textarea, { [styles.inputError]: !!error })}
         rows={3}
         {...inputProps}
         id={`input-${id}`}

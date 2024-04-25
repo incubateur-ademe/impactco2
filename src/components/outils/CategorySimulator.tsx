@@ -1,21 +1,21 @@
 import Link from 'next/link'
 import React from 'react'
-import { Category as CategoryType } from 'types/category'
+import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import styles from './CategorySimulator.module.css'
 
-const CategorySimulator = ({ category }: { category: CategoryType }) => {
-  const max = Math.max.apply(null, category.equivalents?.map((equivalent) => equivalent.value) || [])
-  const hasUsage = category.equivalents && category.equivalents.some((equivalent) => formatUsage(equivalent))
+const CategorySimulator = ({ equivalents }: { equivalents: ComputedEquivalent[] }) => {
+  const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
+  const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
 
   return (
     <>
       <div>
-        {category.equivalents &&
-          category.equivalents
+        {equivalents &&
+          equivalents
             .sort((a, b) => a.value - b.value)
             .map((equivalent) => (
               <Link href={equivalent.link} key={equivalent.slug} className={styles.equivalent}>
@@ -25,7 +25,9 @@ const CategorySimulator = ({ category }: { category: CategoryType }) => {
                     {formatName(`${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`, 1, true)}
                   </div>
                   <div className={styles.data}>
-                    <div className={styles.fullBar} style={{ width: `${(75 * equivalent.value) / max}%` }}>
+                    <div
+                      className={styles.fullBar}
+                      style={{ width: max ? `${(75 * equivalent.value) / max}%` : '0px' }}>
                       <div
                         className={styles.halfBar}
                         style={{ width: `${(100 * formatUsage(equivalent)) / equivalent.value}%` }}

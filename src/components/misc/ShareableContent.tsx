@@ -5,7 +5,6 @@ import { TransportSimulateur } from 'types/transport'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useScreenshot from 'hooks/useScreenshot'
 import useParamContext from 'components/providers/ParamProvider'
-import OverScreen, { OverScreenInfo } from 'components/base/OverScreen'
 import { Section, SectionWideContent } from 'components/base/Section'
 import Link from 'components/base/buttons/Link'
 import Signature from 'components/screenshot/Signature'
@@ -24,6 +23,7 @@ import {
 import { CustomParamValue } from './category/CustomParam'
 import Header from './category/Header'
 import HeadersActions from './category/HeadersActions'
+import { OverScreenInfo } from './category/overScreens/Values'
 import Actions from './shareable/Actions'
 
 const ShareableContent = <T extends string>({
@@ -33,7 +33,6 @@ const ShareableContent = <T extends string>({
   'data-testid': dataTestId,
   params,
   extraParams,
-  overScreen,
   setOverScreen,
   children,
   header,
@@ -148,7 +147,6 @@ const ShareableContent = <T extends string>({
                     />
                   </Iframe>
                 )}
-                {overScreen && <OverScreen values={overScreen} onClose={() => setOverScreen(undefined)} />}
               </Container>
             </Theme>
             {bottom}

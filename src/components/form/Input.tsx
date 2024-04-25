@@ -1,9 +1,9 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { InputHTMLAttributes, useEffect, useRef } from 'react'
+import React, { InputHTMLAttributes, ReactNode, useEffect, useRef, useState } from 'react'
 import { ZodError } from 'zod'
-import { Icon, IconId } from 'components/osezchanger/icons'
+import ErrorIcon from 'components/osezchanger/icons/error'
 import styles from './Input.module.css'
 import useError from './errors'
 
@@ -14,21 +14,28 @@ const Input = ({
   errors,
   className,
   icon,
-  large,
+  unit,
+  maxWidth,
+  secondaryUnitStyle,
+  small,
   ...inputProps
 }: InputHTMLAttributes<HTMLInputElement> & {
   id: string
-  icon?: IconId
   label?: string
   hint?: string
+  icon?: ReactNode
   maxWidth?: string
   color?: 'secondary'
   background?: 'white'
   errors?: ZodError | null
-  large?: boolean
+  unit?: string
+  secondaryUnitStyle?: boolean
+  small?: boolean
 }) => {
   const error = useError(id, errors)
   const ref = useRef<HTMLInputElement>(null)
+  const unitRef = useRef<HTMLDivElement>(null)
+  const [paddingRight, setPaddingRight] = useState('1rem')
 
   useEffect(() => {
     if (ref.current) {
@@ -38,6 +45,23 @@ const Input = ({
       return () => currentRef.removeEventListener('wheel', blur)
     }
   }, [ref])
+
+  useEffect(() => {
+    if (unit) {
+      const onResize = () => {
+        if (unitRef.current) {
+          const { width } = unitRef.current.getBoundingClientRect()
+          setPaddingRight(`calc(${width}px + 1.5rem)`)
+        }
+      }
+      onResize()
+      window.addEventListener('resize', onResize)
+
+      return () => {
+        window.removeEventListener('resize', onResize)
+      }
+    }
+  }, [unit, unitRef])
 
   return (
     <div className={className}>
@@ -52,22 +76,24 @@ const Input = ({
         <input
           className={classNames(styles.input, {
             [styles.withIcon]: icon,
-            [styles.large]: large,
+            [styles.small]: small,
             [styles.inputError]: !!error,
           })}
           {...inputProps}
           ref={ref}
           id={`input-${id}`}
+          style={{ paddingRight, maxWidth: maxWidth }}
         />
-        {icon && (
-          <div className={styles.icon}>
-            <Icon iconId={icon} />
+        {icon && <div className={styles.icon}>{icon}</div>}
+        {unit && (
+          <div className={secondaryUnitStyle ? styles.secondaryUnit : styles.unit} ref={unitRef}>
+            {unit}
           </div>
         )}
       </div>
       {error && (
         <div className={classNames(styles.error, 'text-xs')}>
-          <Icon iconId='error' />
+          <ErrorIcon />
           {error}
         </div>
       )}

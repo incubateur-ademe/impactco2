@@ -1,0 +1,111 @@
+.button {
+  border-radius: 0.5rem;
+  border: 2px solid var(--primary-30);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
+  background-color: var(--neutral-00);
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    .left {
+      background-color: var(--primary-20);
+      padding: 0.125rem;
+    }
+
+    .image {
+      padding: 0.75rem;
+    }
+
+    .right {
+      background-color: var(--primary-10);
+
+      svg {
+        transform: translateX(0.5rem);
+      }
+    }
+
+    .text {
+      color: var(--primary-70);
+    }
+  }
+
+  &:active {
+    border-color: var(--primary-80);
+
+    .left {
+      background-color: var(--primary-30);
+      border-color: var(--primary-80);
+      padding: 0.125rem;
+    }
+
+    .right {
+      background-color: var(--primary-20);
+      color: var(--primary-80);
+
+      svg {
+        transform: translateX(0.5rem);
+      }
+    }
+
+    .text {
+      color: var(--primary-80);
+    }
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+.left {
+  border-right: 2px solid var(--primary-30);
+  background: var(--primary-10);
+  border-radius: calc(0.5rem - 2px) 0 0 calc(0.5rem - 2px);
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  min-height: 100%;
+  max-width: calc(3.5rem + 2px);
+  width: 100%;
+}
+
+.image {
+  border-radius: 50%;
+  background-color: var(--neutral-00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: padding 0.3s ease-in-out;
+  margin: auto;
+}
+
+.right {
+  border-radius: 0 calc(0.5rem - 2px) calc(0.5rem - 2px) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 0.5rem;
+  color: var(--primary-50);
+  width: 100%;
+  height: 100%;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.text {
+  color: var(--neutral-70);
+  font-weight: 500;
+  text-align: left;
+}

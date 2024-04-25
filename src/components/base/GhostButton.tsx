@@ -1,6 +1,7 @@
+'use client'
+
 import classNames from 'classnames'
-import React, { ButtonHTMLAttributes } from 'react'
-import { Icon, IconId } from '../osezchanger/icons'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import styles from './GhostButton.module.css'
 
 const GhostButton = ({
@@ -10,7 +11,7 @@ const GhostButton = ({
   size,
   ...buttonProps
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
-  icon: IconId
+  icon: ReactNode
   iconPosition?: 'right'
   children: string
   size?: 'sm'
@@ -24,7 +25,7 @@ const GhostButton = ({
       })}
       {...buttonProps}
       name={children}>
-      <Icon iconId={icon} /> {children}
+      {icon} {children}
     </button>
   )
 }

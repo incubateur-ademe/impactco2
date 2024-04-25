@@ -4,7 +4,9 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import React, { useState } from 'react'
 import { track } from 'utils/matomo'
-import { Icon } from '../osezchanger/icons'
+import CheckIcon from 'components/osezchanger/icons/check'
+import CopyIcon from 'components/osezchanger/icons/copy'
+import InformationIcon from 'components/osezchanger/icons/information'
 import styles from './ClipboardBox.module.css'
 
 const ClipboardBox = ({ children, tracking }: { children: string; tracking: string }) => {
@@ -25,12 +27,12 @@ const ClipboardBox = ({ children, tracking }: { children: string; tracking: stri
         </div>
         <div className={classNames(styles.copy, { [styles.copied]: copied })}>
           {copied ? t('copie') : t('copier')}
-          <Icon iconId={copied ? 'check' : 'copy'} />
+          {copied ? <CheckIcon /> : <CopyIcon />}
         </div>
       </button>
       {children.startsWith('<script') && (
         <div className={styles.information}>
-          <Icon iconId='information' />
+          <InformationIcon />
           {t('information-1')}
           <br />
           {t('information-2')}

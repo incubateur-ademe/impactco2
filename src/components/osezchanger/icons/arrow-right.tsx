@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Icon = () => (
+const ArrowRightIcon = () => (
   <svg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'>
     <path
       fillRule='evenodd'
@@ -10,4 +10,4 @@ const Icon = () => (
     />
   </svg>
 )
-export default Icon
+export default ArrowRightIcon

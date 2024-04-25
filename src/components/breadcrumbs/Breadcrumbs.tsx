@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Link from 'components/base/buttons/Link'
-import { Icon } from 'components/osezchanger/icons'
+import ArrowRightIcon from 'components/osezchanger/icons/arrow-right'
 import styles from './Breadcrumbs.module.css'
 
 const Breadcrumbs = ({ links, current }: { links: { label: string; link: string }[]; current: string }) => {
@@ -12,7 +12,7 @@ const Breadcrumbs = ({ links, current }: { links: { label: string; link: string 
             <Link className={styles.link} href={link}>
               {label}
             </Link>
-            <Icon iconId='arrow-right' />
+            <ArrowRightIcon />
           </Fragment>
         ))}
         <div className={styles.current}>{current}</div>

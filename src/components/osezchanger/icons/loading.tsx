@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Icon = () => (
+const LoadingIcon = () => (
   <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'>
     <g transform='translate(12 12)'>
       <g transform='translate(-12 -12)'>
@@ -48,4 +48,4 @@ const Icon = () => (
     </g>
   </svg>
 )
-export default Icon
+export default LoadingIcon

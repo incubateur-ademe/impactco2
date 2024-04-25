@@ -5,11 +5,11 @@ import Shareable from 'components/misc/shareable/Shareable'
 import CategorySimulator from './CategorySimulator'
 
 const Category = ({ category }: { category: CategoryType }) => {
-  const overScreens = useMemo(() => overScreenCategoryValues(category, {}), [category])
+  const overScreens = useMemo(() => overScreenCategoryValues(category), [category])
 
   return (
     <Shareable tracking={category.name} overScreens={overScreens}>
-      <CategorySimulator category={category} />
+      {category.simulator || <CategorySimulator equivalents={category.equivalents} />}
     </Shareable>
   )
 }
