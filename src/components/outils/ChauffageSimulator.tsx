@@ -44,9 +44,11 @@ const ChauffageSimulator = () => {
         Découvrez la quantité de CO2e que vous émettez pour chauffer cette surface par an
       </div>
       <div className={shareableStyles.separatorBothBorders} />
-      <CategorySimulator
-        equivalents={chauffage.equivalents.map((equivalent) => ({ ...equivalent, value: equivalent.value * m2 }))}
-      />
+      {chauffage.equivalents && (
+        <CategorySimulator
+          equivalents={chauffage.equivalents.map((equivalent) => ({ ...equivalent, value: equivalent.value * m2 }))}
+        />
+      )}
     </>
   )
 }

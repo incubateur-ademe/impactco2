@@ -13,7 +13,6 @@ import TransportShare from './TransportShare'
 const HeadersActions = ({
   category,
   path,
-  params,
   extraParams,
   takeScreenshot,
   tracking,
@@ -65,21 +64,12 @@ const HeadersActions = ({
           <Content>
             <Separator />
             {opened === 'partager' &&
-              (type ? (
-                <TransportShare tracking={tracking} />
-              ) : (
-                <Share category={category} params={params} path={path} />
-              ))}
+              (type ? <TransportShare tracking={tracking} /> : <Share category={category} path={path} />)}
             {opened === 'integrer' &&
               (type ? (
                 <TransportIntegrate tracking={tracking} type={type} />
               ) : (
-                <Integrate
-                  path={path || category?.slug || ''}
-                  params={params}
-                  tracking={tracking}
-                  extraParams={extraParams}
-                />
+                <Integrate path={path || category?.slug || ''} tracking={tracking} extraParams={extraParams} />
               ))}
           </Content>
         )}

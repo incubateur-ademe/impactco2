@@ -1,5 +1,5 @@
 import GhostButton from 'components/base/GhostButton'
-import { OverScreenInfo } from '../../base/OverScreen'
+import { OverScreenInfo } from 'components/misc/category/overScreens/Values'
 import ArrowLeftIcon from '../icons/arrow-left'
 import Hypotesis from './Hypotesis'
 import Integration from './Integration'

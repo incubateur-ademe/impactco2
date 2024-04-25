@@ -1,8 +1,8 @@
 import Card from 'components/base/Card'
-import { OverScreenInfo } from 'components/base/OverScreen'
 import { CustomParamValue } from 'components/misc/category/CustomParam'
 import Integrate from 'components/misc/category/Integrate'
 import Share from 'components/misc/category/Share'
+import { OverScreenInfo } from 'components/misc/category/overScreens/Values'
 import styles from 'components/misc/category/overScreens/Values.module.css'
 import EquivalentsOverscreen from './EquivalentsOverscreen'
 import { OverScreenComparateur, OverScreenEtiquette } from './Type'
@@ -32,16 +32,16 @@ export const overScreenEtiquetteValues: (params?: string) => Record<OverScreenEt
 export const overScreenComparateurValues: (
   onClose: () => void,
   params?: Record<string, CustomParamValue>
-) => Record<OverScreenComparateur, OverScreenInfo> = (onClose, params) => ({
+) => Record<OverScreenComparateur, OverScreenInfo> = (onClose) => ({
   partager: {
     title: 'share',
-    children: <Share params={params} path='comparateur' />,
+    children: <Share path='comparateur' />,
   },
   integrer: {
     title: 'integrate',
     children: (
       <>
-        <Integrate path='comparateur' params={params} tracking='Comparateur' />
+        <Integrate path='comparateur' tracking='Comparateur' />
         <div className={styles.space} />
         <Card
           href='/guide-utilisation'
@@ -56,6 +56,7 @@ export const overScreenComparateurValues: (
     ),
   },
   equivalents: {
+    title: 'todo',
     children: <EquivalentsOverscreen onClose={onClose} />,
   },
 })

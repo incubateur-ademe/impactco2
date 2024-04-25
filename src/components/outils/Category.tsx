@@ -9,7 +9,7 @@ const Category = ({ category }: { category: CategoryType }) => {
 
   return (
     <Shareable tracking={category.name} overScreens={overScreens}>
-      {category.simulator || <CategorySimulator equivalents={category.equivalents} />}
+      {category.simulator || (category.equivalents && <CategorySimulator equivalents={category.equivalents} />)}
     </Shareable>
   )
 }

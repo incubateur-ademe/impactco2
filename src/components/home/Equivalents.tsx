@@ -27,14 +27,14 @@ const Equivalents = () => {
   return (
     <>
       <Card colored>
-        <HiddenLabel htmlFor='input-search' />
+        <HiddenLabel htmlFor='input-search'>Rechercher</HiddenLabel>
         <Input
           id='search'
           placeholder='Rechercher'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           icon='search'
-          large
+          padding='lg'
         />
       </Card>
       <div className={styles.equivalents}>

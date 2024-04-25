@@ -17,7 +17,7 @@ const Input = ({
   unit,
   maxWidth,
   secondaryUnitStyle,
-  small,
+  padding,
   ...inputProps
 }: InputHTMLAttributes<HTMLInputElement> & {
   id: string
@@ -30,7 +30,7 @@ const Input = ({
   errors?: ZodError | null
   unit?: string
   secondaryUnitStyle?: boolean
-  small?: boolean
+  padding?: 'sm' | 'lg'
 }) => {
   const error = useError(id, errors)
   const ref = useRef<HTMLInputElement>(null)
@@ -76,7 +76,8 @@ const Input = ({
         <input
           className={classNames(styles.input, {
             [styles.withIcon]: icon,
-            [styles.small]: small,
+            [styles.small]: padding === 'sm',
+            [styles.large]: padding === 'lg',
             [styles.inputError]: !!error,
           })}
           {...inputProps}

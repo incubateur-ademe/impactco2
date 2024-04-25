@@ -9,7 +9,6 @@ import SourceAgribalyse from '../SourceAgribalyse'
 import { Cards, Header, SourcesWrapper } from './CategoryWrapper.styles'
 import { CustomParamValue } from './CustomParam'
 import Sources from './Sources'
-import { OverScreenCategory } from './overScreens/Type'
 import { overScreenCategoryValues } from './overScreens/Values'
 
 const CategoryWrapper = ({
@@ -25,12 +24,12 @@ const CategoryWrapper = ({
   params?: Record<string, CustomParamValue>
   withFooter?: boolean
 }) => {
-  const [overScreen, setOverScreen] = useState<OverScreenCategory | undefined>()
-  const overScreenValues = useMemo(() => overScreenCategoryValues(category, params), [category, params])
+  const [overScreen, setOverScreen] = useState<string | undefined>()
+  const overScreenValues = useMemo(() => overScreenCategoryValues(category), [category, params])
 
   return (
     <>
-      <ShareableContent<OverScreenCategory>
+      <ShareableContent<string>
         category={category}
         iframe={iframe}
         params={params}

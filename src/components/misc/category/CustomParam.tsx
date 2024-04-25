@@ -107,7 +107,7 @@ const CustomParam = ({
           <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>{config.inputLabel}</HiddenLabel>
           {config.options ? (
             <Select
-              small
+              padding='sm'
               label={setVisible ? '' : t(`${slug}.label`)}
               required
               inline={!setVisible}
@@ -131,7 +131,7 @@ const CustomParam = ({
               id={slug}
               unit={config.unit}
               secondaryUnitStyle
-              small
+              padding='sm'
               disabled={!visible}
               type={config.type}
               value={param.value}

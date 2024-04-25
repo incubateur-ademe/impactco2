@@ -63,7 +63,7 @@ const Meeting = ({ from }: { from: string }) => {
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         errors={errors}
-        large
+        padding='lg'
       />
       <Button disabled={sending} type='submit'>
         Prendre rendez-vous
