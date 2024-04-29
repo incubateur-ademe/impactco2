@@ -1,23 +1,28 @@
 'use client'
 
-import React from 'react'
-import useParamContext from 'components/providers/ParamProvider'
-import NumberInput from 'components/form/NumberInput'
-import shareableStyles from '../misc/shareable/Shareable.module.css'
-import styles from './Simulator.module.css'
+import classNames from 'classnames'
+import React, { useState } from 'react'
+import DistanceSimulator from './DistanceSimulator'
+import styles from './TransportSimulator.module.css'
 
 const TransportSimulator = () => {
-  const {
-    distance: { km, setKm },
-  } = useParamContext()
+  const [tab, setTab] = useState('distance')
 
   return (
     <>
-      <div className={styles.simulator}>
-        <NumberInput id='km-value' value={km} setValue={setKm} label='Surface (en m²)' unit='m²' />
-        Découvrez la quantité de CO2e que vous émettez pour chauffer cette surface par an
+      <div className={styles.tabs}>
+        <button
+          className={classNames(styles.tab, { [styles.selectedTab]: tab === 'distance' })}
+          onClick={() => setTab('distance')}>
+          Distance
+        </button>
+        <button
+          className={classNames(styles.tab, { [styles.selectedTab]: tab === 'itineraire' })}
+          onClick={() => setTab('itineraire')}>
+          Itinéraire
+        </button>
       </div>
-      <div className={shareableStyles.separatorBothBorders} />
+      {tab === 'distance' && <DistanceSimulator />}
     </>
   )
 }

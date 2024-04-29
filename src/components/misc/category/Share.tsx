@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React, { useEffect, useMemo, useState } from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
 import { Category } from 'types/category'
@@ -83,7 +84,7 @@ const Share = ({ category, path, tracking }: { category?: Category; path?: strin
       </div>
       {(category || path === 'comparateur') && (
         <div className={styles.meta}>
-          <img
+          <Image
             src={
               category
                 ? `/meta/${category.slug}.png`

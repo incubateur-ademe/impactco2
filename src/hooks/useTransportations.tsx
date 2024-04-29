@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
-import equivalents from 'data/categories/deplacement.json'
+import { deplacements } from 'data/categories/deplacement'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
@@ -25,7 +25,7 @@ export default function useTransportations(
     const { km } = params.distance
     const { displayAll, carpool } = params[type]
     return itineraries || km
-      ? equivalents
+      ? deplacements
           .filter((equivalent) => equivalent.category === 4)
           .filter((equivalent) =>
             itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
@@ -61,9 +61,10 @@ export default function useTransportations(
           })
           .map((equivalent) => ({
             ...equivalent,
+            link: `/outils/transport/${equivalent.slug}`,
             title: formatName(t(`name-${equivalent.slug}`), 1, true),
             subtitle: t(`subtitle-${equivalent.slug}`)
-              ? formatName(`(${t(`subtitle-${equivalent.slug}`)})`)
+              ? formatName(t(`subtitle-${equivalent.slug}`))
               : '' +
                 (itineraries
                   ? ` - ${formatNumber(
