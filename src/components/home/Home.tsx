@@ -55,6 +55,7 @@ const Home = () => {
           title='Nos gestes climat'
           description='Calculez votre empreinte carbone citoyenne et faites le bilan en équipe'
           linkLabel='Visitez le site'
+          link='https://nosgestesclimat.fr/'
         />
       </Block>
     </>

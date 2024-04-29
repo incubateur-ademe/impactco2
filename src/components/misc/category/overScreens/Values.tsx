@@ -5,7 +5,8 @@ import Card from 'components/base/Card'
 import Resource from 'components/base/Resource'
 import Integrate from '../Integrate'
 import Share from '../Share'
-import Data from './Data'
+import ChauffageData from './ChauffageData'
+import TransportData from './TransportData'
 import styles from './Values.module.css'
 
 export type OverScreenInfo = {
@@ -116,13 +117,47 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               withLink='Wattris'
               tracking={category ? category.name : 'Comparateur'}
             />
+            <Resource
+              image='/images/ngc.png'
+              text='Estimer son empreinte carbone de consommation'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking={category ? category.name : 'Comparateur'}
+              imgSize='4.5rem'
+            />
           </div>
         ),
       },
       data: {
         image: '/images/icn-understand.svg',
         title: 'understand',
-        children: <Data />,
+        children: <ChauffageData />,
+      },
+    }
+  }
+  if (category.slug === 'transport') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/ngc.png'
+              text='Estimer son empreinte carbone de consommation'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Transport'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+      data: {
+        image: '/images/icn-understand.svg',
+        title: 'understand',
+        children: <TransportData />,
       },
     }
   }

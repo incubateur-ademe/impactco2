@@ -3,6 +3,7 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
 import DistanceSimulator from './DistanceSimulator'
+import ItineraireSimulator from './ItineraireSimulator'
 import styles from './TransportSimulator.module.css'
 
 const TransportSimulator = () => {
@@ -23,6 +24,7 @@ const TransportSimulator = () => {
         </button>
       </div>
       {tab === 'distance' && <DistanceSimulator />}
+      {tab === 'itineraire' && <ItineraireSimulator />}
     </>
   )
 }

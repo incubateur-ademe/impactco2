@@ -7,6 +7,7 @@ import { useSuggestions } from 'hooks/useAddress'
 import useDebounce from 'hooks/useDebounce'
 import { Point } from 'hooks/useItineraries'
 import { Icon } from 'components/osezchanger/icons'
+import LoadingIcon from 'components/osezchanger/icons/loading'
 import Suggestions from 'components/transport/search/itinerary/address/search/Suggestions'
 import styles from './AddressInput.module.css'
 import inputStyles from './Input.module.css'
@@ -19,6 +20,7 @@ const AddressInput = ({
   errors,
   place,
   setPlace,
+  large,
   ...inputProps
 }: InputHTMLAttributes<HTMLInputElement> & {
   id: string
@@ -27,6 +29,7 @@ const AddressInput = ({
   errors?: ZodError | null
   place?: string
   setPlace: Dispatch<SetStateAction<Point | undefined>>
+  large?: boolean
 }) => {
   const [value, setValue] = useState('')
   const input = useRef<HTMLInputElement>(null)
@@ -59,7 +62,9 @@ const AddressInput = ({
   return (
     <div className={styles.container}>
       {label && (
-        <label className={classNames(inputStyles.label, { [inputStyles.labelError]: !!error })} htmlFor={`input-${id}`}>
+        <label
+          className={classNames(inputStyles.label, { [inputStyles.labelError]: !!error, [styles.largeLabel]: large })}
+          htmlFor={`input-${id}`}>
           {label}
           {!inputProps.required && <div className={inputStyles.notRequired}> - Facultatif</div>}
           {hint && <div className={classNames(inputStyles.hint, 'text-sm')}>{hint}</div>}
@@ -78,8 +83,8 @@ const AddressInput = ({
         id={`input-${id}`}
       />
       {isFetching && (
-        <div className={styles.loading}>
-          <Icon iconId='loading' />
+        <div className={classNames(styles.loading, { [styles.largeLoading]: large })}>
+          <LoadingIcon />
         </div>
       )}
       {data && focus && (

@@ -1,5 +1,5 @@
 .link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   background: transparent;
   border: none;

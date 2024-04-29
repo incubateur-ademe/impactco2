@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { track } from 'utils/matomo'
 import NewTabIcon from './NewTabIcon'
-import { Content, FakeLink, LinkContainer, Text } from './Resource.styles'
+import styles from './Resource.module.css'
 
 const Resource = ({
   image,
@@ -12,35 +13,43 @@ const Resource = ({
   href,
   tracking,
   withLink,
-  color,
+  imgSize,
 }: {
   image: string
   text: string
   href: string
   tracking: string
   withLink?: string
-  color?: 'secondary'
+  imgSize?: string
 }) => {
   return (
-    <LinkContainer
-      $color={color}
+    <Link
+      className={styles.linkContainer}
       href={href}
       target='_blank'
       rel='noreferrer noopener'
       onClick={() => {
         track(tracking, `Ressource-${href}`, `${tracking.toLowerCase()}_ressource_${href}`)
       }}>
-      <Image src={image} alt='' width={100} height={86} />
-      <Content>
-        <Text>{text}</Text>
+      <div className={styles.image}>
+        <Image
+          src={image}
+          alt=''
+          width={100}
+          height={86}
+          style={{ width: imgSize || '100%', height: imgSize || '100%' }}
+        />
+      </div>
+      <div className={styles.content}>
+        <div className={styles.text}>{text}</div>
         {withLink && (
-          <FakeLink>
+          <div className={styles.fakeLink}>
             <span className='text-sm'>{withLink}</span>
             <NewTabIcon />
-          </FakeLink>
+          </div>
         )}
-      </Content>
-    </LinkContainer>
+      </div>
+    </Link>
   )
 }
 

@@ -63,14 +63,13 @@ export default function useTransportations(
             ...equivalent,
             link: `/outils/transport/${equivalent.slug}`,
             title: formatName(t(`name-${equivalent.slug}`), 1, true),
-            subtitle: t(`subtitle-${equivalent.slug}`)
-              ? formatName(t(`subtitle-${equivalent.slug}`))
-              : '' +
-                (itineraries
-                  ? ` - ${formatNumber(
-                      itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
-                    )} km`
-                  : ''),
+            subtitle:
+              (t(`subtitle-${equivalent.slug}`) ? `(${formatName(t(`subtitle-${equivalent.slug}`))})` : '') +
+              (itineraries
+                ? ` - ${formatNumber(
+                    itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                  )} km`
+                : ''),
             component: equivalent.carpool && <Carpool type={type} />,
             value:
               (computeECV(equivalent) *

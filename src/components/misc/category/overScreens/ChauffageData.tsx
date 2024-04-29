@@ -1,16 +1,17 @@
 'use client'
 
+import classNames from 'classnames'
 import React from 'react'
 import chauffage from 'data/categories/chauffage.json'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Link from 'components/base/buttons/Link'
-import { Container, Hypothesis, StyledEmoji, Text, Value, Values } from './Data.styles'
+import styles from './Data.module.css'
 
-const Data = () => {
+const ChauffageData = () => {
   const sortedValues = chauffage.sort((a, b) => a.total - b.total)
   return (
-    <Container>
-      <Text>
+    <div className={styles.container}>
+      <div className={styles.text}>
         L'ensemble des calculs et des hypothèses sont issus de{' '}
         <Link href='https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel'>
           l’étude Consommation d'énergie par usage du résidentiel 2023
@@ -26,17 +27,19 @@ const Data = () => {
         <br />
         Afin de comparer les différents modes de chauffage entre eux, nous partons d’un foyer moyen avec un besoin en
         énergie de 150 kWh/m².
-      </Text>
+      </div>
       {sortedValues.map((equivalent) => (
         <div key={equivalent.slug}>
           <div>
-            <StyledEmoji>
+            <div className={styles.emoji}>
               <EquivalentIcon equivalent={equivalent} />
-            </StyledEmoji>
+            </div>
             <b>{equivalent.name}</b>
           </div>
           {equivalent.data.values.map((value, index) => (
-            <Values $withBorder={index !== equivalent.data.values.length - 1} key={equivalent.slug + value.title}>
+            <div
+              className={classNames(styles.values, { [styles.border]: index !== equivalent.data.values.length - 1 })}
+              key={equivalent.slug + value.title}>
               <div>
                 {value.title}
                 {'withSource' in value && value.withSource && (
@@ -46,12 +49,12 @@ const Data = () => {
                   </span>
                 )}
               </div>
-              <Value>{value.value}</Value>
-            </Values>
+              <div className={styles.value}>{value.value}</div>
+            </div>
           ))}
           {equivalent.data.hypothesis && (
-            <Hypothesis
-              className='text-sm'
+            <div
+              className={classNames(styles.hypothesis, 'text-sm')}
               dangerouslySetInnerHTML={{
                 __html: equivalent.data.hypothesis,
               }}
@@ -59,8 +62,8 @@ const Data = () => {
           )}
         </div>
       ))}
-    </Container>
+    </div>
   )
 }
 
-export default Data
+export default ChauffageData

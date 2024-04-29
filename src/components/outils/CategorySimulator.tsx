@@ -22,7 +22,11 @@ const CategorySimulator = ({ equivalents }: { equivalents: ComputedEquivalent[] 
                 <EquivalentIcon equivalent={equivalent} height={3} />
                 <div className={styles.content}>
                   <div className={styles.name}>
-                    {formatName(`${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`, 1, true)}
+                    {formatName(
+                      `${equivalent.name}${equivalent.subtitle ? ` ${equivalent.subtitle.startsWith('(') || equivalent.subtitle.startsWith(' -') ? equivalent.subtitle : `(${equivalent.subtitle})`}` : ''}`,
+                      1,
+                      true
+                    )}
                   </div>
                   <div className={styles.data}>
                     <div
