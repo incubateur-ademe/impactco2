@@ -4,11 +4,10 @@ import React, { useEffect, useState } from 'react'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
 import useParamContext from 'components/providers/ParamProvider'
-import HiddenLabel from 'components/form/HiddenLabel'
-import Input from 'components/form/Input'
+import NumberInput from 'components/form/NumberInput'
 import shareableStyles from '../misc/shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
-import styles from './ChauffageSimulator.module.css'
+import styles from './Simulator.module.css'
 
 const chauffage = categories.find((category) => category.slug === 'chauffage') as Category
 
@@ -31,16 +30,7 @@ const ChauffageSimulator = () => {
   return (
     <>
       <div className={styles.simulator}>
-        <HiddenLabel htmlFor='input-m2-value'>Surface (en m²)</HiddenLabel>
-        <Input
-          id='m2-value'
-          value={internalValue}
-          onChange={(event) => setInternalValue(event.target.value)}
-          type='number'
-          unit='m²'
-          maxWidth='11.25rem'
-          min={1}
-        />
+        <NumberInput id='m2-value' value={m2} setValue={setM2} label='Surface (en m²)' unit='m²' />
         Découvrez la quantité de CO2e que vous émettez pour chauffer cette surface par an
       </div>
       <div className={shareableStyles.separatorBothBorders} />

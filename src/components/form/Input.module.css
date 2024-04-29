@@ -37,6 +37,7 @@
   max-width: fit-content;
   cursor: pointer;
   appearance: none;
+  padding-right: 2rem;
 }
 
 .selectWrapper {

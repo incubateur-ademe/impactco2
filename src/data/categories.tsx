@@ -1,4 +1,3 @@
-import ChauffageSimulator from 'components/outils/ChauffageSimulator'
 import { boissons } from './categories/boisson'
 import { casPratiques } from './categories/caspratiques'
 import { chauffage } from './categories/chauffage'
@@ -114,7 +113,6 @@ export const categories = [
       description: "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée ",
     },
     equivalents: computedEquivalents('chauffage', chauffage),
-    simulator: <ChauffageSimulator />,
   },
   {
     id: 4,
