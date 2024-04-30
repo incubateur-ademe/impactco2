@@ -1,39 +1,47 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
-import { TransportSimulateur } from 'types/transport'
 import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
-import { Separator } from './TransportIntegrate.styles'
+import styles from './Share.module.css'
+import { getTracking } from './TransportShare'
 
 const DISTANCE = 'distance'
 const ITINERAIRE = 'itineraire'
-const TELETRAVAIL = 'teletravail'
 
-const TransportIntegrate = ({ tracking, type }: { tracking: string; type: TransportSimulateur }) => {
+const TransportIntegrate = () => {
   const t = useTranslations('overscreen.transport')
   const tTransport = useTranslations('transport.mode-selector')
-  const { distance, itineraire, teletravail, theme, setTheme, language, setLanguage } = useParamContext()
+  const {
+    distance,
+    itineraire,
+    theme,
+    setTheme,
+    language,
+    setLanguage,
+    transport: { selected },
+  } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
     km: true,
     itineraire: true,
-    teletravail: true,
   })
 
-  const [tabs, setTabs] = useState([DISTANCE, ITINERAIRE, TELETRAVAIL])
+  const [tabs, setTabs] = useState([DISTANCE, ITINERAIRE])
+
+  const tracking = useMemo(() => getTracking(selected), [selected])
 
   const url = useMemo(() => {
     let result = `<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js"`
-    if (type === 'distance') {
+    if (selected === 'distance') {
       result += ` data-type="transport"`
-    } else if (type === 'itineraire') {
+    } else if (selected === 'itineraire') {
       result += ` data-type="transport/itineraire"`
-    } else {
-      result += ` data-type="transport/teletravail"`
     }
 
     result += ` data-search="?theme=${theme}`
@@ -54,28 +62,8 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
       }
     }
 
-    if (tabs.includes(TELETRAVAIL) && visibility.teletravail) {
-      if (teletravail.start) {
-        result += `&teletravailStart=${teletravail.start}`
-      }
-      if (teletravail.end) {
-        result += `&teletravailEnd=${teletravail.end}`
-      }
-    }
-
     return result + '"></script>'
-  }, [
-    type,
-    visibility,
-    tabs,
-    distance.km,
-    theme,
-    itineraire.start,
-    itineraire.end,
-    teletravail.start,
-    teletravail.end,
-    language,
-  ])
+  }, [selected, visibility, tabs, distance.km, theme, itineraire.start, itineraire.end, language])
 
   const params = useMemo(() => {
     return {
@@ -84,12 +72,8 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
         start: { value: itineraire.start?.address || '', setter: itineraire.setStart },
         end: { value: itineraire.end?.address || '', setter: itineraire.setEnd },
       },
-      teletravail: {
-        start: { value: teletravail.start?.address || '', setter: teletravail.setStart },
-        end: { value: teletravail.end?.address || '', setter: teletravail.setEnd },
-      },
     }
-  }, [distance.km, itineraire.start, itineraire.end, teletravail.start, teletravail.end])
+  }, [distance.km, itineraire.start, itineraire.end])
 
   return (
     <>
@@ -119,20 +103,8 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
           }}
           label={tTransport('itineraire')}
         />
-        <CheckboxInput
-          color='secondary'
-          checked={tabs.includes(TELETRAVAIL)}
-          setChecked={(checked) => {
-            if (checked) {
-              setTabs([...tabs, TELETRAVAIL])
-            } else {
-              setTabs(tabs.filter((tab) => tab !== TELETRAVAIL))
-            }
-          }}
-          label={tTransport('teletravail')}
-        />
       </Checkbox>
-      <Separator />
+      <div className={styles.separator} />
       {tabs.includes(DISTANCE) && (
         <>
           <CustomParams
@@ -145,7 +117,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
             setVisibility={setVisibility}
             withTheme
           />
-          <Separator />
+          <div className={styles.separator} />
         </>
       )}
       {tabs.includes(ITINERAIRE) && (
@@ -159,21 +131,7 @@ const TransportIntegrate = ({ tracking, type }: { tracking: string; type: Transp
             visibility={visibility}
             setVisibility={setVisibility}
           />
-          <Separator />
-        </>
-      )}
-      {tabs.includes(TELETRAVAIL) && (
-        <>
-          <CustomParams
-            integration
-            title={tTransport('teletravail')}
-            tracking={tracking}
-            trackingType='Intégrer'
-            params={{ teletravail: params.teletravail }}
-            visibility={visibility}
-            setVisibility={setVisibility}
-          />
-          <Separator />
+          <div className={styles.separator} />
         </>
       )}
       <CustomParam

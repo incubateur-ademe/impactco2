@@ -5,18 +5,10 @@ import { SectionWideContent } from 'components/base/Section'
 import Actions from '../shareable/Actions'
 import { CustomParamValue } from './CustomParam'
 import { ActionsContainer, ActionsHeader, ActionsName, Content, Separator } from './Header.styles'
-import Integrate from './Integrate'
-import Share from './Share'
-import TransportIntegrate from './TransportIntegrate'
-import TransportShare from './TransportShare'
 
 const HeadersActions = ({
-  category,
-  path,
-  extraParams,
   takeScreenshot,
   tracking,
-  type,
   withoutIntegration,
   name,
   withoutShare,
@@ -63,14 +55,6 @@ const HeadersActions = ({
         {opened && (
           <Content>
             <Separator />
-            {opened === 'partager' &&
-              (type ? <TransportShare tracking={tracking} /> : <Share category={category} path={path} />)}
-            {opened === 'integrer' &&
-              (type ? (
-                <TransportIntegrate tracking={tracking} type={type} />
-              ) : (
-                <Integrate path={path || category?.slug || ''} tracking={tracking} extraParams={extraParams} />
-              ))}
           </Content>
         )}
       </ActionsContainer>

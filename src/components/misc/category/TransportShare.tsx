@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
 import { TransportSimulateur } from 'types/transport'
@@ -6,26 +8,28 @@ import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
-import styles from 'components/misc/category/overScreens/Values.module.css'
 import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
-import { Separator } from './TransportIntegrate.styles'
+import styles from './Share.module.css'
 
-const TransportShare = ({ tracking }: { tracking: string }) => {
+export const getTracking = (selected: TransportSimulateur) =>
+  selected === 'distance' ? 'Transport distance' : 'Transport itinéraire'
+
+const TransportShare = () => {
   const t = useTranslations('overscreen.transport')
   const tTransport = useTranslations('transport.mode-selector')
   const {
     distance,
     itineraire,
-    teletravail,
     transport: { selected, setSelected },
   } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
     km: true,
     itineraire: true,
-    teletravail: true,
   })
+
+  const tracking = useMemo(() => getTracking(selected), [selected])
 
   const url = useMemo(() => {
     let result = buildCurrentUrlFor('transport')
@@ -33,8 +37,6 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
       result += `?`
     } else if (selected === 'itineraire') {
       result += `/itineraire?`
-    } else {
-      result += `/teletravail?`
     }
 
     if (selected === 'distance' && visibility.km) {
@@ -46,17 +48,10 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
       if (itineraire.end) {
         result += `itineraireEnd=${itineraire.end.address}`
       }
-    } else if (selected === 'teletravail' && visibility.teletravail) {
-      if (teletravail.start) {
-        result += `teletravailStart=${teletravail.start.address}&`
-      }
-      if (teletravail.end) {
-        result += `teletravailEnd=${teletravail.end.address}`
-      }
     }
 
     return result
-  }, [visibility, selected, distance.km, itineraire.start, itineraire.end, teletravail.start, teletravail.end])
+  }, [visibility, selected, distance.km, itineraire.start, itineraire.end])
 
   const params = useMemo(() => {
     return {
@@ -65,12 +60,8 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
         start: { value: itineraire.start?.address || '', setter: itineraire.setStart },
         end: { value: itineraire.end?.address || '', setter: itineraire.setEnd },
       },
-      teletravail: {
-        start: { value: teletravail.start?.address || '', setter: teletravail.setStart },
-        end: { value: teletravail.end?.address || '', setter: teletravail.setEnd },
-      },
     }
-  }, [distance.km, itineraire.start, itineraire.end, teletravail.start, teletravail.end])
+  }, [distance.km, itineraire.start, itineraire.end])
 
   return selected ? (
     <>
@@ -89,15 +80,8 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
           setSelected={(value) => setSelected(value as TransportSimulateur)}
           label={tTransport('itineraire')}
         />
-        <RadioInput
-          priority='secondary'
-          value='teletravail'
-          selected={selected}
-          setSelected={(value) => setSelected(value as TransportSimulateur)}
-          label={tTransport('teletravail')}
-        />
       </Radio>
-      <Separator />
+      <div className={styles.separator} />
       {selected === 'distance' && (
         <CustomParams
           integration
@@ -121,18 +105,7 @@ const TransportShare = ({ tracking }: { tracking: string }) => {
           setVisibility={setVisibility}
         />
       )}
-      {selected === 'teletravail' && (
-        <CustomParams
-          integration
-          title='Télétravail'
-          tracking={tracking}
-          trackingType='Intégrer'
-          params={{ teletravail: params.teletravail }}
-          visibility={visibility}
-          setVisibility={setVisibility}
-        />
-      )}
-      <Separator />
+      <div className={styles.separator} />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
       <div className={styles.meta}>
         <img src='/meta/transport.png' width={728} height={382.2} alt='' />

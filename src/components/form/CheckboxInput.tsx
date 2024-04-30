@@ -1,14 +1,13 @@
+import classNames from 'classnames'
 import React, { InputHTMLAttributes, ReactNode } from 'react'
-import { Icon } from 'components/osezchanger/icons'
-import { Check, Container, Label } from './CheckboxInput.styles'
+import CheckIcon from 'components/osezchanger/icons/check'
+import styles from './CheckboxInput.module.css'
 
 const CheckboxInput = ({
   checked,
   setChecked,
   label,
   children,
-  color,
-  className,
   'data-testid': dataTestId,
   ...inputProps
 }: {
@@ -21,22 +20,24 @@ const CheckboxInput = ({
   ['data-testid']?: string
 } & InputHTMLAttributes<HTMLInputElement>) => {
   return (
-    <Container $checked={checked} $color={color} className={className} data-testid={dataTestId}>
-      <input
-        {...inputProps}
-        type='checkbox'
-        checked={checked}
-        className={checked ? 'checked' : ''}
-        onChange={(e) => setChecked(e.target.checked)}
-      />
-      <Label>{label}</Label>
-      {checked && (
-        <Check>
-          <Icon iconId='check' />
-        </Check>
-      )}
+    <div className={styles.container} data-testid={dataTestId}>
+      <label className={classNames(styles.legend, { [styles.checked]: checked })}>
+        <input
+          {...inputProps}
+          type='checkbox'
+          checked={checked}
+          className={checked ? 'checked' : ''}
+          onChange={(e) => setChecked(e.target.checked)}
+        />
+        <span>{label}</span>
+        {checked && (
+          <div className={styles.check}>
+            <CheckIcon />
+          </div>
+        )}
+      </label>
       {children}
-    </Container>
+    </div>
   )
 }
 

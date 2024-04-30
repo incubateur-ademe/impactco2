@@ -13,36 +13,32 @@ const CategorySimulator = ({ equivalents }: { equivalents: ComputedEquivalent[] 
 
   return (
     <>
-      <div>
-        {equivalents &&
-          equivalents
-            .sort((a, b) => a.value - b.value)
-            .map((equivalent) => (
-              <Link href={equivalent.link} key={equivalent.slug} className={styles.equivalent}>
-                <EquivalentIcon equivalent={equivalent} height={3} />
-                <div className={styles.content}>
-                  <div className={styles.name}>
-                    {formatName(
-                      `${equivalent.name}${equivalent.subtitle ? ` ${equivalent.subtitle.startsWith('(') || equivalent.subtitle.startsWith(' -') ? equivalent.subtitle : `(${equivalent.subtitle})`}` : ''}`,
-                      1,
-                      true
-                    )}
-                  </div>
-                  <div className={styles.data}>
-                    <div
-                      className={styles.fullBar}
-                      style={{ width: max ? `${(75 * equivalent.value) / max}%` : '0px' }}>
-                      <div
-                        className={styles.halfBar}
-                        style={{ width: `${(100 * formatUsage(equivalent)) / equivalent.value}%` }}
-                      />
-                    </div>
-                    <span className={styles.value}>{formatNumber(equivalent.value)}</span> kg CO₂e
-                  </div>
+      {equivalents &&
+        equivalents
+          .sort((a, b) => a.value - b.value)
+          .map((equivalent) => (
+            <Link href={equivalent.link} key={equivalent.slug} className={styles.equivalent}>
+              <EquivalentIcon equivalent={equivalent} height={3} />
+              <div className={styles.content}>
+                <div className={styles.name}>
+                  {formatName(
+                    `${equivalent.name}${equivalent.subtitle ? ` ${equivalent.subtitle.startsWith('(') || equivalent.subtitle.startsWith(' -') ? equivalent.subtitle : `(${equivalent.subtitle})`}` : ''}`,
+                    1,
+                    true
+                  )}
                 </div>
-              </Link>
-            ))}
-      </div>
+                <div className={styles.data}>
+                  <div className={styles.fullBar} style={{ width: max ? `${(75 * equivalent.value) / max}%` : '0px' }}>
+                    <div
+                      className={styles.halfBar}
+                      style={{ width: `${(100 * formatUsage(equivalent)) / equivalent.value}%` }}
+                    />
+                  </div>
+                  <span className={styles.value}>{formatNumber(equivalent.value)}</span> kg CO₂e
+                </div>
+              </div>
+            </Link>
+          ))}
       {hasUsage && (
         <div className={styles.legend}>
           <div>

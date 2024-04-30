@@ -5,6 +5,8 @@ import Card from 'components/base/Card'
 import Resource from 'components/base/Resource'
 import Integrate from '../Integrate'
 import Share from '../Share'
+import TransportIntegrate from '../TransportIntegrate'
+import TransportShare from '../TransportShare'
 import ChauffageData from './ChauffageData'
 import TransportData from './TransportData'
 import styles from './Values.module.css'
@@ -63,17 +65,22 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   const values = {
     partager: {
       title: 'share',
-      children: <Share category={category} tracking={category.name} />,
+      children:
+        category.slug === 'transport' ? <TransportShare /> : <Share category={category} tracking={category.name} />,
     },
     integrer: {
       title: 'integrate',
       children: (
         <>
-          <Integrate
-            category={category}
-            path={category ? category.slug : 'comparateur'}
-            tracking={category ? category.name : 'Comparateur'}
-          />
+          {category.slug === 'transport' ? (
+            <TransportIntegrate />
+          ) : (
+            <Integrate
+              category={category}
+              path={category ? category.slug : 'comparateur'}
+              tracking={category ? category.name : 'Comparateur'}
+            />
+          )}
           <div className={styles.space} />
           <Card
             href='/guide-utilisation'

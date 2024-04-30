@@ -1,30 +1,33 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React from 'react'
+import useParamContext from 'components/providers/ParamProvider'
 import DistanceSimulator from './DistanceSimulator'
 import ItineraireSimulator from './ItineraireSimulator'
 import styles from './TransportSimulator.module.css'
 
 const TransportSimulator = () => {
-  const [tab, setTab] = useState('distance')
+  const {
+    transport: { selected, setSelected },
+  } = useParamContext()
 
   return (
     <>
       <div className={styles.tabs}>
         <button
-          className={classNames(styles.tab, { [styles.selectedTab]: tab === 'distance' })}
-          onClick={() => setTab('distance')}>
+          className={classNames(styles.tab, { [styles.selectedTab]: selected === 'distance' })}
+          onClick={() => setSelected('distance')}>
           Distance
         </button>
         <button
-          className={classNames(styles.tab, { [styles.selectedTab]: tab === 'itineraire' })}
-          onClick={() => setTab('itineraire')}>
+          className={classNames(styles.tab, { [styles.selectedTab]: selected === 'itineraire' })}
+          onClick={() => setSelected('itineraire')}>
           Itinéraire
         </button>
       </div>
-      {tab === 'distance' && <DistanceSimulator />}
-      {tab === 'itineraire' && <ItineraireSimulator />}
+      {selected === 'distance' && <DistanceSimulator />}
+      {selected === 'itineraire' && <ItineraireSimulator />}
     </>
   )
 }

@@ -79,8 +79,8 @@ export type Params = {
     setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
   }
   transport: {
-    selected: TransportSimulateur | undefined
-    setSelected: Dispatch<SetStateAction<TransportSimulateur | undefined>>
+    selected: TransportSimulateur
+    setSelected: Dispatch<SetStateAction<TransportSimulateur>>
   }
   distance: {
     km: number
@@ -215,7 +215,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [km, setKm] = useState(10)
 
   // Transport
-  const [selected, setSelected] = useState<TransportSimulateur>()
+  const [selected, setSelected] = useState<TransportSimulateur>('distance')
 
   const [teletravailStart, setTeletravailStart] = useState<Point>()
   const [teletravailEnd, setTeletravailEnd] = useState<Point>()

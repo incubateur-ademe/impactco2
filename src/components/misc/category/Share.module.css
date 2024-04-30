@@ -92,3 +92,8 @@
     }
   }
 }
+
+.separator {
+  border-top: 1px solid var(--neutral-20);
+  margin: 2rem 0;
+}
