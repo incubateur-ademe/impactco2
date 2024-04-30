@@ -6,6 +6,7 @@ import Web from 'components/layout/Web'
 import Learning from 'components/misc/Learning'
 import { SourcesWrapper } from 'components/misc/category/CategoryWrapper.styles'
 import Sources from 'components/misc/category/Sources'
+import New from 'components/transport/New'
 import Search from 'components/transport/Search'
 
 export default function ItinerairePage({ category }: { category: Category }) {
@@ -18,6 +19,7 @@ export default function ItinerairePage({ category }: { category: Category }) {
         type: 'equivalent',
         category: category,
       }}>
+      <New />
       <Search initialType='itineraire' category={category} />
       {category.sources && (
         <SourcesWrapper>
