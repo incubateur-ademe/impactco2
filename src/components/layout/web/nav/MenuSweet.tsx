@@ -6,7 +6,7 @@ import Emoji from 'components/base/Emoji'
 import Tag from 'components/misc/tag/Tag'
 import DropdownSweet from './DropdownSweet'
 
-const news: string[] = []
+const news: string[] = ['transport']
 
 const Wrapper = styled.div`
   display: flex;
