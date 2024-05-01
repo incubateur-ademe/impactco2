@@ -1,6 +1,19 @@
 .addresses {
   display: flex;
   gap: 0.75rem;
+  width: 100%;
+
+  > div {
+    flex-grow: 1;
+
+    input {
+      max-width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 50rem) {
+    flex-direction: column;
+  }
 }
 
 .empty {

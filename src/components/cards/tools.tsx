@@ -108,7 +108,7 @@ export const smallTools = [
         </div>
       </>
     ),
-    toolLink: '/comparateur#etiquette',
+    toolLink: '/outils/comparateur#etiquette',
     toolLinkLabel: 'Créer mon étiquette avec le comparateur carbone',
   },
   {

@@ -17,7 +17,6 @@ export default function Emoji({
   height?: string
 }) {
   let stringDOMforEmoji = null
-
   if (children) {
     const parsed = twemoji.parse(children, {
       folder: 'svg',

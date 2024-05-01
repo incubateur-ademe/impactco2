@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { ReactNode, useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction, useMemo, useState } from 'react'
 import useScreenshot from 'hooks/useScreenshot'
 import useParamContext from 'components/providers/ParamProvider'
 import TranslationProvider from 'components/providers/TranslationProvider'
@@ -19,8 +19,10 @@ type ShareableProps = {
   tracking: string
   withoutIntegration?: boolean
   withoutShare?: boolean
-  overScreens: Record<string, OverScreenInfo>
-  secondary?: boolean
+  overScreens?: Record<string, OverScreenInfo>
+  secondary?: string
+  overScreen?: OverScreenInfo | undefined
+  setOverScreen?: Dispatch<SetStateAction<string | undefined>>
 }
 const Shareable = ({
   children,
@@ -29,25 +31,34 @@ const Shareable = ({
   withoutShare,
   overScreens,
   secondary,
+  overScreen,
+  setOverScreen,
 }: ShareableProps) => {
   const t = useTranslations('overscreen')
   const { theme } = useParamContext()
-  const [overScreen, setOverScreen] = useState<OverScreenInfo | undefined>()
-  const onClose = () => setOverScreen(undefined)
+  const [overScreenInternal, setOverScreenInternal] = useState<OverScreenInfo | undefined>()
+  const onClose = () => (setOverScreen ? setOverScreen(undefined) : setOverScreenInternal(undefined))
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
+
+  const overScreenToDisplay = useMemo(() => {
+    if (overScreens) {
+      return overScreenInternal
+    }
+    return overScreen
+  }, [overScreens, overScreenInternal, overScreen])
 
   return (
     <div
-      className={classNames(styles.card, { [styles.secondaryCard]: secondary, night: theme === 'night' })}
-      ref={secondary ? undefined : ref}>
-      {overScreen && (
+      className={classNames(styles.card, { [styles.secondaryCard]: secondary !== undefined, night: theme === 'night' })}
+      ref={secondary !== undefined ? undefined : ref}>
+      {overScreenToDisplay && (
         <>
-          <div className={styles.filler} />
-          <div className={styles.overScreen}>
-            {overScreen.title && (
+          <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
+          <div className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullWidth })}>
+            {overScreenToDisplay.title && (
               <div>
                 <div className={styles.header}>
-                  <b className='text-lg'>{t(overScreen.title)}</b>
+                  <b className='text-lg'>{t(overScreenToDisplay.title)}</b>
                   <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
                     Fermer
                   </GhostButton>
@@ -55,29 +66,38 @@ const Shareable = ({
                 <div className={styles.separatorBothBorders} />
               </div>
             )}
-            <div className={styles.overScreenChildren}>{overScreen.children}</div>
-            <div>
-              <div className={styles.separatorBothBorders} />
-              <div className={styles.footer}>
-                <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
-                  Annuler
-                </GhostButton>
-              </div>
+            <div className={classNames(styles.overScreenChildren, { [styles.noScroll]: !overScreenToDisplay.title })}>
+              {overScreenToDisplay.children}
             </div>
+            {overScreenToDisplay.title && (
+              <div>
+                <div className={styles.separatorBothBorders} />
+                <div className={styles.footer}>
+                  <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
+                    Annuler
+                  </GhostButton>
+                </div>
+              </div>
+            )}
           </div>
         </>
       )}
-      <div className={secondary ? styles.secondaryContainer : ''}>
-        <div ref={secondary ? ref : undefined} className={secondary ? styles.secondaryContent : ''}>
+      <div className={secondary !== undefined ? styles.secondaryContainer : ''}>
+        <div
+          ref={secondary !== undefined ? ref : undefined}
+          className={secondary !== undefined ? styles.secondaryContent : ''}>
           {children}
         </div>
+        {secondary && <div className={styles.secondaryText}>{secondary}</div>}
       </div>
-      {!secondary && (
+      {secondary === undefined && (
         <>
-          {'hypothesis' in overScreens || 'data' in overScreens ? (
+          {overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
             <div className={styles.ressources}>
-              {'data' in overScreens && <Feature info={overScreens.data} setOverScreen={setOverScreen} />}
-              {'hypothesis' in overScreens && <Feature info={overScreens.hypothesis} setOverScreen={setOverScreen} />}
+              {'data' in overScreens && <Feature info={overScreens.data} setOverScreen={setOverScreenInternal} />}
+              {'hypothesis' in overScreens && (
+                <Feature info={overScreens.hypothesis} setOverScreen={setOverScreenInternal} />
+              )}
             </div>
           ) : (
             <div className={styles.separator} />
@@ -87,13 +107,17 @@ const Shareable = ({
           </div>
         </>
       )}
-      <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary })}>
+      <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary !== undefined })}>
         <Actions
           onClick={(action) => {
             if (action === 'telecharger') {
               takeScreenshot()
             } else {
-              setOverScreen(overScreens[action])
+              if (overScreens) {
+                setOverScreenInternal(overScreens[action])
+              } else if (setOverScreen) {
+                setOverScreen(action)
+              }
             }
           }}
           tracking={tracking}

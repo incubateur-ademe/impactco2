@@ -10,7 +10,6 @@
   align-items: center;
   text-align: center;
   gap: 1rem;
-  background-color: var(--neutral-00);
 
   @media screen and (max-width: 425px) {
     gap: 0.5rem;
@@ -20,24 +19,32 @@
 }
 
 .tile {
-  border: 2px solid var(--neutral-20);
+  background-color: var(--neutral-00);
+  border: 2px solid var(--primary-30);
   justify-content: space-between;
   box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
 }
 
 .emptyTile {
+  cursor: pointer;
   color: var(--primary-50);
-  border: 2px solid var(--primary-10);
+  border: 2px solid var(--primary-30);
+  background-color: transparent;
   justify-content: center;
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
 
   &:hover {
-    cursor: pointer;
+    background-color: var(--primary-20);
+    color: var(--primary-60);
+    border: 2px solid var(--primary-40);
+  }
+
+  &:active {
     background-color: var(--primary-10);
     color: var(--primary-60);
-    border: 2px solid var(--primary-20);
+    border: 2px solid var(--primary-40);
   }
 
   &:focus {
@@ -66,8 +73,8 @@
 
 .close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.25rem;
+  right: 0.25rem;
   padding: 0.25rem;
   border-radius: 4px;
   color: var(--primary-50);

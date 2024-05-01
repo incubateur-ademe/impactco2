@@ -6,7 +6,7 @@ import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
-import { getCustomParams } from './CustomParamsValues'
+import { getComparateurParams, getCustomParams } from './CustomParamsValues'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
 const Integrate = ({
@@ -30,6 +30,9 @@ const Integrate = ({
         ...getCustomParams(category.slug, params),
         ...theme,
       }
+    }
+    if (path === 'comparateur') {
+      return { ...getComparateurParams(params), ...theme }
     }
     return theme
   }, [params, category])

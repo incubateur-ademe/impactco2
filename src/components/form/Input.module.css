@@ -15,7 +15,6 @@
   line-height: 1.5rem;
   position: relative;
   width: 100%;
-  max-width: 560px;
 
   &:hover {
     border: 2px solid var(--primary-40);
@@ -183,17 +182,21 @@
 
 .secondaryUnit,
 .unit {
+  background-color: transparent;
   position: absolute;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
 .secondaryUnit {
   right: 1rem;
-  top: 0.625rem;
+  top: 0.875rem;
   color: var(--neutral-50);
 }
 
 .unit {
+  width: max-content;
   right: 0.5rem;
   top: 0.5rem;
   font-size: 0.875rem;
@@ -203,4 +206,37 @@
   border: 2px solid var(--primary-30);
   background: var(--primary-10);
   color: var(--primary-60);
+
+  @media screen and (max-width: 700px) {
+    max-width: 200px;
+  }
+
+  @media screen and (max-width: 400px) {
+    max-width: 150px;
+  }
+
+  &:hover {
+    border: 2px solid var(--primary-30);
+    background: var(--primary-20);
+    color: var(--primary-70);
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:active {
+    border: 2px solid var(--primary-40);
+    background: var(--primary-30);
+    color: var(--primary-70);
+  }
+}
+
+.clickeable {
+  cursor: pointer;
 }

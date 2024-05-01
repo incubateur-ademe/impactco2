@@ -67,14 +67,12 @@ const TransportShare = () => {
     <>
       <Radio required id='tabs' label={t('onglet')} hint={t('onglet-hint')}>
         <RadioInput
-          priority='secondary'
           value='distance'
           selected={selected}
           setSelected={(value) => setSelected(value as TransportSimulateur)}
           label={tTransport('distance')}
         />
         <RadioInput
-          priority='secondary'
           value='itineraire'
           selected={selected}
           setSelected={(value) => setSelected(value as TransportSimulateur)}

@@ -13,3 +13,12 @@ export const getCustomParams = (slug: string, params: Params) => {
   }
   return {}
 }
+
+export const getComparateurParams = (params: Params) => {
+  return {
+    comparateur: {
+      value: [],
+      params: `value=${params.comparateur.baseValue}&comparisons=${params.comparateur.equivalents.join(',')}${params.comparateur.comparedEquivalent ? `&equivalent=${params.comparateur.comparedEquivalent.slug}` : ''}`,
+    },
+  }
+}

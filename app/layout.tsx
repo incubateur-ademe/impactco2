@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Head from 'next/head'
-import React from 'react'
+import React, { Suspense } from 'react'
 import 'utils/styles.css'
 import 'utils/variables.css'
 import { ParamProvider } from 'components/providers/ParamProvider'
@@ -46,9 +46,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Theme />
         <Transtack>
           <Header />
-          <ParamProvider>
-            <main id='contenu'>{children}</main>
-          </ParamProvider>
+          <Suspense>
+            <ParamProvider>
+              <main id='contenu'>{children}</main>
+            </ParamProvider>
+          </Suspense>
           <Footer />
         </Transtack>
       </body>

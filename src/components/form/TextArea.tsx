@@ -15,7 +15,6 @@ const TextArea = ({
   id: string
   label?: string
   hint?: string
-  maxWidth?: string
   color?: 'secondary'
   errors?: ZodError | null
 } & TextareaHTMLAttributes<HTMLTextAreaElement>) => {

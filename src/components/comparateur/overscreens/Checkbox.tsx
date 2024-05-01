@@ -3,7 +3,7 @@ import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import CheckboxInput from 'components/form/CheckboxInput'
-import { Icon } from 'components/osezchanger/icons'
+import InformationFillIcon from 'components/osezchanger/icons/information-fill'
 import styles from './Checkbox.module.css'
 
 const Checkbox = ({
@@ -50,7 +50,7 @@ const Checkbox = ({
             </div>
             {interacted && equivalents.length > 7 && (
               <div className={styles.warning}>
-                <Icon iconId='information-fill' />
+                <InformationFillIcon />
                 <span>
                   <b>8 / 8</b> équivalents déjà sélectionnés
                 </span>

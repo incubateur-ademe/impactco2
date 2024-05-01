@@ -1,14 +1,20 @@
 'use client'
 
 import negaocterRules from '@incubateur-ademe/publicodes-negaoctet'
+import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { Frequence } from 'types/livraison'
 import { TransportSimulateur } from 'types/transport'
+import { slugs } from 'utils/months'
+import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
+import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/UseTheme'
 import { default_eqs, frequences } from 'components/livraison/data'
+import { displayAddress } from 'components/transport/search/itinerary/Address'
+import { computedEquivalents } from './equivalents'
 
 const usageNumeriqueDefaultValues = {
   ['email . appareil']: "'smartphone'",
@@ -23,6 +29,38 @@ const usageNumeriqueDefaultValues = {
   ['visio . emplacements']: 2,
   ['visio . transmission . réseau']: "'fixe FR'",
   ['visio . qualité']: "'SD'",
+}
+
+const completeAddress = (setter: Dispatch<SetStateAction<Point | undefined>>, value?: string) => {
+  if (value) {
+    searchAddress(value, 1).then((result) => {
+      if (result.length > 0) {
+        const address = result[0]
+        setter({
+          latitude: address.geometry.coordinates[1],
+          longitude: address.geometry.coordinates[0],
+          city: address.properties.city,
+          address: displayAddress(address),
+        })
+      }
+    })
+  }
+}
+
+const getInt = (query: ReadonlyURLSearchParams, key: string) => {
+  const number = Number.parseInt(query.get(key) as string)
+  if (Number.isNaN(number)) {
+    return 0
+  }
+  return number
+}
+
+const getFloat = (query: ReadonlyURLSearchParams, key: string) => {
+  const number = Number.parseFloat(query.get(key) as string)
+  if (Number.isNaN(number)) {
+    return 0
+  }
+  return number
 }
 
 const updateSituation = (
@@ -335,6 +373,127 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   // Boisson
   const [boissonDisplayAll, setBoissonDisplayAll] = useState(false)
+
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    if (!searchParams) {
+      return
+    }
+
+    setLanguage(searchParams.get('language') === 'en' ? 'en' : 'fr')
+
+    if (searchParams.get('value')) {
+      const value = Number(searchParams.get('value') as string)
+      if (!Number.isNaN(value)) {
+        setBaseValue(value)
+      }
+    }
+    if (searchParams.get('equivalent')) {
+      setComparedEquivalent(
+        computedEquivalents.find((equivalent) => equivalent.slug === searchParams.get('equivalent'))
+      )
+    }
+
+    if (searchParams.get('comparisons')) {
+      setEquivalents((searchParams.get('comparisons') as string).split(','))
+    } else {
+      setEquivalents(getRandomEquivalents(searchParams.get('equivalent') as string, 3))
+    }
+
+    if (searchParams.get('m2')) {
+      const m2 = Number.parseInt(searchParams.get('m2') as string)
+      if (!Number.isNaN(m2)) {
+        setM2(m2)
+      }
+    }
+
+    if (searchParams.get('km')) {
+      const km = Number.parseInt(searchParams.get('km') as string)
+      if (!Number.isNaN(km)) {
+        setKm(km)
+      }
+    }
+    completeAddress(setItineraireStart, (searchParams.get('start') || searchParams.get('itineraireStart')) as string)
+    completeAddress(setItineraireEnd, (searchParams.get('end') || searchParams.get('itineraireEnd')) as string)
+    completeAddress(setTeletravailStart, (searchParams.get('start') || searchParams.get('teletravailStart')) as string)
+    completeAddress(setTeletravailEnd, (searchParams.get('end') || searchParams.get('teletravailEnd')) as string)
+
+    if (searchParams.get('month')) {
+      const monthIndex = Number.parseInt(searchParams.get('month') as string)
+      if (!Number.isNaN(monthIndex)) {
+        setMonth(monthIndex)
+      } else {
+        setMonth(slugs.indexOf(searchParams.get('month') as string))
+      }
+    }
+
+    if (searchParams.get('emails')) {
+      setNumberEmails(getInt(searchParams, 'emails'))
+    }
+
+    const situation: Partial<Record<string, PublicodesExpression | ASTNode>> = {}
+    if (searchParams.get('email . appareil')) {
+      situation['email . appareil'] = searchParams.get('email . appareil') as string
+    }
+    if (searchParams.get('email . transmission . émetteur . réseau')) {
+      situation['email . transmission . émetteur . réseau'] = searchParams.get(
+        'email . transmission . émetteur . réseau'
+      ) as string
+    }
+
+    if (searchParams.get('email . taille')) {
+      situation['email . taille'] = getFloat(searchParams, 'email . taille')
+    }
+
+    if (searchParams.get('streaming . durée')) {
+      situation['streaming . durée'] = getInt(searchParams, 'streaming . durée')
+    }
+
+    if (searchParams.get('streaming . appareil')) {
+      situation['streaming . appareil'] = searchParams.get('streaming . appareil') as string
+    }
+
+    if (searchParams.get('streaming . transmission . réseau')) {
+      situation['streaming . transmission . réseau'] = searchParams.get('streaming . transmission . réseau') as string
+    }
+
+    if (searchParams.get('streaming . qualité')) {
+      situation['streaming . qualité'] = searchParams.get('streaming . qualité') as string
+    }
+
+    if (searchParams.get('visio . durée')) {
+      situation['visio . durée'] = getInt(searchParams, 'visio . durée')
+    }
+
+    if (searchParams.get('visio . appareil')) {
+      situation['visio . appareil'] = searchParams.get('visio . appareil') as string
+    }
+
+    if (searchParams.get('visio . emplacements')) {
+      situation['visio . emplacements'] = getInt(searchParams, 'visio . emplacements')
+    }
+
+    if (searchParams.get('visio . transmission . réseau')) {
+      situation['visio . transmission . réseau'] = searchParams.get('visio . transmission . réseau') as string
+    }
+
+    if (searchParams.get('visio . qualité')) {
+      situation['visio . qualité'] = searchParams.get('visio . qualité') as string
+    }
+
+    setUsageNumeriqueSituation(situation)
+  }, [
+    searchParams,
+    setM2,
+    setKm,
+    setItineraireStart,
+    setItineraireEnd,
+    setTeletravailStart,
+    setTeletravailEnd,
+    setMonth,
+    setNumberEmails,
+    setUsageNumeriqueSituation,
+  ])
 
   return (
     <ParamContext.Provider

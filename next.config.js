@@ -56,6 +56,20 @@ const securityHeadersIFramable = [
   },
 ]
 
+const images = process.env.NEXT_PUBLIC_IMAGE_URL.startsWith('https')
+  ? {
+      protocol: 'https',
+      hostname: process.env.NEXT_PUBLIC_IMAGE_URL.split('https://')[1],
+      port: '',
+      pathname: '/api/dynamics/**',
+    }
+  : {
+      protocol: 'http',
+      hostname: 'localhost',
+      port: '3000',
+      pathname: '/api/dynamics/**',
+    }
+
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
@@ -63,6 +77,9 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  images: {
+    remotePatterns: [images],
   },
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
   sentry: {

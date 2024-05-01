@@ -15,33 +15,35 @@ const Input = ({
   className,
   icon,
   unit,
-  maxWidth,
   secondaryUnitStyle,
   padding,
+  onUnitClick,
+  extraWidth,
   ...inputProps
 }: InputHTMLAttributes<HTMLInputElement> & {
   id: string
   label?: string
   hint?: string
   icon?: ReactNode
-  maxWidth?: string
   color?: 'secondary'
   background?: 'white'
   errors?: ZodError | null
-  unit?: string
+  unit?: ReactNode
   secondaryUnitStyle?: boolean
   padding?: 'sm' | 'lg'
+  onUnitClick?: () => void
+  extraWidth?: string
 }) => {
   const error = useError(id, errors)
   const ref = useRef<HTMLInputElement>(null)
-  const unitRef = useRef<HTMLDivElement>(null)
-  const [paddingRight, setPaddingRight] = useState('1rem')
+  const unitRef = useRef<HTMLButtonElement>(null)
+  const [unitDim, setUnitDim] = useState<{ width: number; height: number } | undefined>(undefined)
 
   useEffect(() => {
     if (ref.current) {
       const blur = () => ref.current?.blur()
       const currentRef = ref.current
-      currentRef.addEventListener('wheel', blur)
+      currentRef.addEventListener('wheel', blur, { passive: true })
       return () => currentRef.removeEventListener('wheel', blur)
     }
   }, [ref])
@@ -50,12 +52,12 @@ const Input = ({
     if (unit) {
       const onResize = () => {
         if (unitRef.current) {
-          const { width } = unitRef.current.getBoundingClientRect()
-          setPaddingRight(`calc(${width}px + 1.5rem)`)
+          const dim = unitRef.current.getBoundingClientRect()
+          setUnitDim({ width: dim.width, height: dim.height })
         }
       }
-      onResize()
       window.addEventListener('resize', onResize)
+      onResize()
 
       return () => {
         window.removeEventListener('resize', onResize)
@@ -72,7 +74,9 @@ const Input = ({
           {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
         </label>
       )}
-      <div className={styles.inputContainer}>
+      <div
+        className={styles.inputContainer}
+        style={{ width: unitDim && extraWidth ? `calc(${extraWidth} + ${unitDim.width}px)` : undefined }}>
         <input
           className={classNames(styles.input, {
             [styles.withIcon]: icon,
@@ -83,13 +87,22 @@ const Input = ({
           {...inputProps}
           ref={ref}
           id={`input-${id}`}
-          style={{ paddingRight, maxWidth: maxWidth }}
+          style={{
+            height: unitDim ? `calc(${unitDim.height}px + 1rem)` : undefined,
+            paddingRight: unitDim ? `calc(${unitDim.width}px + 1.5rem)` : '1rem',
+          }}
         />
         {icon && <div className={styles.icon}>{icon}</div>}
         {unit && (
-          <div className={secondaryUnitStyle ? styles.secondaryUnit : styles.unit} ref={unitRef}>
+          <button
+            disabled={!onUnitClick}
+            className={classNames(secondaryUnitStyle ? styles.secondaryUnit : styles.unit, {
+              [styles.clickeable]: onUnitClick,
+            })}
+            ref={unitRef}
+            onClick={onUnitClick}>
             {unit}
-          </div>
+          </button>
         )}
       </div>
       {error && (

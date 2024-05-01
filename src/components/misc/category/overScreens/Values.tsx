@@ -3,6 +3,7 @@ import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import Card from 'components/base/Card'
 import Resource from 'components/base/Resource'
+import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
 import Integrate from '../Integrate'
 import Share from '../Share'
 import TransportIntegrate from '../TransportIntegrate'
@@ -12,9 +13,10 @@ import TransportData from './TransportData'
 import styles from './Values.module.css'
 
 export type OverScreenInfo = {
-  title: ReactNode
+  title?: ReactNode
   image?: string
   children: ReactNode
+  fullWidth?: boolean
   cancel?: (onClose: () => void) => ReactNode
 }
 
@@ -35,6 +37,19 @@ export const overScreenEquivalentEtiquetteValues: (equivalent: ComputedEquivalen
   }
 }
 
+export const overScreenEquivalentInfographyValues: (
+  equivalent: ComputedEquivalent
+) => Record<string, OverScreenInfo> = (equivalent) => ({
+  partager: {
+    title: 'share',
+    children: <Share path={`${equivalent.link}#infographie`} tracking={equivalent.name} />,
+  },
+  integrer: {
+    title: 'integrate',
+    children: <Integrate path={`${equivalent.link}/infographie`} tracking={equivalent.name} />,
+  },
+})
+
 export const overScreenEquivalentValues: (equivalent: ComputedEquivalent) => Record<string, OverScreenInfo> = (
   equivalent
 ) => ({
@@ -48,16 +63,31 @@ export const overScreenEquivalentValues: (equivalent: ComputedEquivalent) => Rec
   },
 })
 
-export const overScreenEquivalentInfographyValues: (
-  equivalent: ComputedEquivalent
-) => Record<string, OverScreenInfo> = (equivalent) => ({
+export const overScreenComparateurValues: (onClose?: () => void) => Record<string, OverScreenInfo> = (onClose) => ({
   partager: {
     title: 'share',
-    children: <Share path={`${equivalent.link}#infographie`} tracking={equivalent.name} />,
+    children: <Share path='comparateur' tracking='Comparateur' />,
+    fullWidth: !onClose,
   },
   integrer: {
     title: 'integrate',
-    children: <Integrate path={`${equivalent.link}/infographie`} tracking={equivalent.name} />,
+    children: <Integrate path='comparateur' tracking='Comparateur' />,
+    fullWidth: !onClose,
+  },
+  equivalents: {
+    children: <EquivalentsOverscreen onClose={onClose} />,
+    fullWidth: true,
+  },
+})
+
+export const overScreenEtiquetteValues: () => Record<string, OverScreenInfo> = () => ({
+  partager: {
+    title: 'share',
+    children: <Share path='etiquette' tracking='Comparateur' />,
+  },
+  integrer: {
+    title: 'integrate',
+    children: <Integrate path='etiquette' tracking='Comparateur' />,
   },
 })
 

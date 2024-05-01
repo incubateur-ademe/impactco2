@@ -8,6 +8,7 @@ const CheckboxInput = ({
   setChecked,
   label,
   children,
+  className,
   'data-testid': dataTestId,
   ...inputProps
 }: {
@@ -20,7 +21,7 @@ const CheckboxInput = ({
   ['data-testid']?: string
 } & InputHTMLAttributes<HTMLInputElement>) => {
   return (
-    <div className={styles.container} data-testid={dataTestId}>
+    <div className={classNames(styles.container, className)} data-testid={dataTestId}>
       <label className={classNames(styles.legend, { [styles.checked]: checked })}>
         <input
           {...inputProps}
@@ -29,7 +30,7 @@ const CheckboxInput = ({
           className={checked ? 'checked' : ''}
           onChange={(e) => setChecked(e.target.checked)}
         />
-        <span>{label}</span>
+        {label}
         {checked && (
           <div className={styles.check}>
             <CheckIcon />

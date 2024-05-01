@@ -1,10 +1,9 @@
 .header {
   margin: -2rem -1.5rem 0 -1.5rem;
   padding: 1.5rem;
-  background-color: var(--secondary-10);
-  border-radius: 16px 16px 0px 0px;
-  border: 1px solid var(--neutral-20);
-  border-bottom: 1px solid var(--secondary-20);
+  background-color: var(--primary-10);
+  border-radius: calc(1rem - 2px) calc(1rem - 2px) 0px 0px;
+  border-bottom: 2px solid var(--primary-20);
   display: flex;
   gap: 1rem;
 
@@ -17,18 +16,16 @@
   margin: 0 -1.5rem;
   height: calc(100% - 6rem - 5px);
   overflow: auto;
-  border-left: 1px solid var(--neutral-20);
-  border-right: 1px solid var(--neutral-20);
   padding: 2rem;
+  overflow: auto;
 }
 
 .footer {
   margin: 0 -1.5rem -2rem -1.5rem;
   padding: 1rem 2rem;
-  border: 1px solid var(--neutral-20);
-  border-radius: 0px 0px 16px 16px;
-  border-top: 1px solid var(--secondary-20);
-  background: var(--secondary-10);
+  border-radius: 0px 0px calc(1rem - 2px) calc(1rem - 2px);
+  border-top: 2px solid var(--primary-20);
+  background: var(--primary-10);
   display: flex;
   justify-content: space-between;
   align-items: center;

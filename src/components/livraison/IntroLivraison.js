@@ -44,7 +44,6 @@ export default function IntroLivraison(props) {
         <SmallText>
           <span> Source : </span>
           <Link
-            priority='secondary'
             title='Commerce en ligne - Étude ADEME 2023 - Nouvelle fenêtre'
             href='https://librairie.ademe.fr/mobilite-et-transport/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'
             data-testid='lien-etude-ademe'>

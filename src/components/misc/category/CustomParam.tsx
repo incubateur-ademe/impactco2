@@ -155,7 +155,6 @@ const CustomParam = ({
               min={config.min}
               max={config.max}
               color='secondary'
-              maxWidth='100px'
               data-testid={`custom-param-${slug}-input`}
             />
           )}

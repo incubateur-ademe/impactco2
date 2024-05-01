@@ -1,7 +1,6 @@
 import React from 'react'
 import PageTitle from 'components/base/PageTitle'
 import { Section, SectionWideContent } from 'components/base/Section'
-import Comparateur from 'components/comparateur/Comparateur'
 import Etiquettes from 'components/comparateur/Etiquettes'
 import SuggestionBanner from 'components/contact/SuggestionBanner'
 import Web from 'components/layout/Web'
@@ -39,7 +38,6 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
           </>
         }
       />
-      <Comparateur />
       <Section $withoutPadding $margin='1.5rem 0'>
         <SectionWideContent $size='xs'>
           <Sources

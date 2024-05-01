@@ -61,7 +61,6 @@ export default function ByArticle() {
                     Parcourir le{' '}
                     <Link
                       href='/guide-utilisation'
-                      priority='secondary'
                       onClick={() => track('Click', 'Guide utilisation', 'click_guide_utilisation')}>
                       Guide d'uilisation
                     </Link>{' '}
@@ -71,7 +70,6 @@ export default function ByArticle() {
                     Inspirez-vous d'
                     <Link
                       href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997?v=4638552e710e44339afbc9de1b83f785'
-                      priority='secondary'
                       onClick={() => track('Click', 'Exemples concrets', 'click_exemples_concrets')}>
                       exemples concrets
                     </Link>{' '}
@@ -98,7 +96,6 @@ export default function ByArticle() {
                     Consultez nos{' '}
                     <Link
                       href='/questions-frequentes'
-                      priority='secondary'
                       data-testid='byArticleFaq'
                       onClick={() => track('Click', 'FAQ', 'click_faq')}>
                       Questions fréquentes

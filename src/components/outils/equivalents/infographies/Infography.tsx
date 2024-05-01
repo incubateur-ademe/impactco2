@@ -8,7 +8,7 @@ const Infography = ({ equivalent, equivalents }: { equivalent: ComputedEquivalen
   const overScreens = useMemo(() => overScreenEquivalentInfographyValues(equivalent), [equivalent])
 
   return (
-    <Shareable tracking={`${equivalent.name} infographie`} overScreens={overScreens} secondary>
+    <Shareable tracking={`${equivalent.name} infographie`} overScreens={overScreens} secondary=''>
       <InfographySimulator equivalents={equivalents} />
     </Shareable>
   )

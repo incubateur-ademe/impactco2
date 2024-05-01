@@ -13,7 +13,6 @@ export default function WarningNegaoctet({ setOpen }: { setOpen: Dispatch<SetSta
       <p>
         Les données et les calculs sont issues du projet&nbsp;
         <Link
-          priority='secondary'
           href='https://base-empreinte.ademe.fr/documentation/base-impact'
           title='Base impact, étude réalisée par Negaoctet'>
           NégaOctet (lauréat de l'appel à projet PERFECTO 2018)
@@ -26,7 +25,7 @@ export default function WarningNegaoctet({ setOpen }: { setOpen: Dispatch<SetSta
       </p>
       <p>
         Ces calculs expliquent la différence de résultat entre l'impact carbone que l'on a sur le site&nbsp;
-        <Link priority='secondary' href={process.env.NEXT_PUBLIC_URL || ''} title='site Internet impact CO₂'>
+        <Link href={process.env.NEXT_PUBLIC_URL || ''} title='site Internet impact CO₂'>
           impactco2.fr
         </Link>{' '}
         et les données NO partagées sur la base Empreinte de l'ADEME.

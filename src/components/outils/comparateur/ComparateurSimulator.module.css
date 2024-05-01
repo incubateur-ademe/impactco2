@@ -1,0 +1,79 @@
+.tiles {
+  padding: 1.5rem;
+  border-top: 2px solid var(--primary-30);
+  background: var(--primary-10);
+  position: relative;
+  z-index: 1;
+  margin-bottom: -0.75rem;
+}
+
+.description {
+  padding: 0 4rem;
+  text-align: center;
+}
+
+.descriptionValue {
+  color: var(--primary-50);
+  font-weight: 700;
+}
+
+.equivalent {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  color: var(--primary-60);
+  border-radius: 0rem calc(1rem - 2px) 0rem 1.5rem;
+  border-left: 2px solid var(--primary-20);
+  border-bottom: 2px solid var(--primary-20);
+
+  &:hover {
+    border-bottom: 2px solid var(--primary-30);
+    border-left: 2px solid var(--primary-30);
+    background-color: var(--primary-20);
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+}
+
+.equivalentLink {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media screen and (max-width: 700px) {
+    display: flex;
+  }
+}
+
+.unitIcon {
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.numberInput,
+.numberInputWithEquivalent {
+  padding: 0 4rem;
+
+  input {
+    max-width: unset;
+  }
+}

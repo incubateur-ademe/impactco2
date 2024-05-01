@@ -34,7 +34,7 @@ export default function ReuseBulb() {
         </UseBulbTitle>
         <p>
           Consultez le{' '}
-          <Link priority='secondary' href='/guide-utilisation' title='Découvrir des exemples de réutilisation'>
+          <Link href='/guide-utilisation' title='Découvrir des exemples de réutilisation'>
             guide d'utilisation Impact CO<sub>2</sub>
           </Link>{' '}
           pour vous emparer facilement du simulateur et l’intégrer à votre publication.
@@ -42,7 +42,6 @@ export default function ReuseBulb() {
         <p>Besoin d'inspiration?</p>
         <p style={{ marginBottom: 0 }}>
           <Link
-            priority='secondary'
             href='https://accelerateur-transition-ecologique-ademe.notion.site/2274283430e94d1db71eced54c338997? '
             title='Découvrir des exemples de réutilisation – Nouvelle fenêtre'>
             Découvrez des exemples de réutilisation

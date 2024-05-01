@@ -9,7 +9,6 @@ import styles from './Sources.module.css'
 const Sources = ({
   tracking,
   sources,
-  priority,
   className,
 }: {
   tracking: string
@@ -22,11 +21,7 @@ const Sources = ({
       Source{sources.length > 1 ? 's' : ''} :{' '}
       {sources
         .flatMap((source) => [
-          <Link
-            key={source.label}
-            href={source.href}
-            priority={priority}
-            onClick={() => track(tracking, 'Source', source.href)}>
+          <Link key={source.label} href={source.href} onClick={() => track(tracking, 'Source', source.href)}>
             {source.label}
           </Link>,
           <span key={`${source.label}-separator`}> • </span>,

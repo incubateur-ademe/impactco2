@@ -8,12 +8,13 @@ import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
 import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
+import buttonStyles from 'components/base/buttons/Button.module.css'
 import FacebookIcon from 'components/osezchanger/icons/facebook'
 import LinkedinIcon from 'components/osezchanger/icons/linkedin'
 import TwitterIcon from 'components/osezchanger/icons/twitter'
 import WhatsappIcon from 'components/osezchanger/icons/whatsapp'
 import CustomParams from './CustomParams'
-import { getCustomParams } from './CustomParamsValues'
+import { getComparateurParams, getCustomParams } from './CustomParamsValues'
 import styles from './Share.module.css'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
@@ -21,7 +22,15 @@ const Share = ({ category, path, tracking }: { category?: Category; path?: strin
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
-  const params = useMemo(() => (category ? getCustomParams(category.slug, allParams) : {}), [allParams, category])
+  const params = useMemo(
+    () =>
+      category
+        ? getCustomParams(category.slug, allParams)
+        : path === 'comparateur'
+          ? getComparateurParams(allParams)
+          : {},
+    [allParams, category]
+  )
 
   useEffect(() => {
     if (params) {
@@ -54,6 +63,7 @@ const Share = ({ category, path, tracking }: { category?: Category; path?: strin
       <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
       <div className={styles.buttons}>
         <FacebookShareButton
+          className={buttonStyles.roundButton}
           url={url}
           title='Partager sur facebook'
           aria-label='Partager sur facebook'
@@ -61,6 +71,7 @@ const Share = ({ category, path, tracking }: { category?: Category; path?: strin
           <FacebookIcon />
         </FacebookShareButton>
         <TwitterShareButton
+          className={buttonStyles.roundButton}
           url={url}
           title='Partager sur twitter'
           aria-label='Partager sur twitter'
@@ -68,6 +79,7 @@ const Share = ({ category, path, tracking }: { category?: Category; path?: strin
           <TwitterIcon />
         </TwitterShareButton>
         <WhatsappShareButton
+          className={buttonStyles.roundButton}
           url={url}
           title='Partager sur whatsapp'
           aria-label='Partager sur whatsapp'
@@ -75,6 +87,7 @@ const Share = ({ category, path, tracking }: { category?: Category; path?: strin
           <WhatsappIcon />
         </WhatsappShareButton>
         <LinkedinShareButton
+          className={buttonStyles.roundButton}
           url={url}
           title='Partager sur linkedin'
           aria-label='Partager sur linkedin'

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
 import HiddenLabel from './HiddenLabel'
 import Input from './Input'
 
@@ -8,12 +8,16 @@ const NumberInput = ({
   value,
   setValue,
   unit,
+  onUnitClick,
+  extraWidth,
 }: {
   id: string
   label: string
   value: number
   setValue: Dispatch<SetStateAction<number>>
-  unit: string
+  unit: ReactNode
+  onUnitClick?: () => void
+  extraWidth?: string
 }) => {
   const [internalValue, setInternalValue] = useState(value.toString())
 
@@ -36,8 +40,9 @@ const NumberInput = ({
         onChange={(event) => setInternalValue(event.target.value)}
         type='number'
         unit={unit}
-        maxWidth='11.25rem'
         min={1}
+        onUnitClick={onUnitClick}
+        extraWidth={extraWidth}
       />
     </>
   )

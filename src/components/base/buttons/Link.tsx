@@ -4,7 +4,6 @@ import React, { AnchorHTMLAttributes } from 'react'
 import NewTabIcon from '../NewTabIcon'
 import buttonStyles from './Button.module.css'
 import linkStyles from './Link.module.css'
-import { Priority } from './priority'
 
 const Link = ({
   asButton,
@@ -17,7 +16,6 @@ const Link = ({
   asButton?: boolean
   size?: 'sm' | 'lg'
   internal?: boolean
-  priority?: Priority
   noIcon?: boolean
 } & LinkProps &
   AnchorHTMLAttributes<HTMLAnchorElement>) => {

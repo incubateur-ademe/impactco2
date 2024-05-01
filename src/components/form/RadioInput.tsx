@@ -17,7 +17,6 @@ const RadioInput = ({
   setSelected: Dispatch<SetStateAction<string>>
   label: string
   children?: ReactNode
-  priority?: 'secondary'
 } & InputHTMLAttributes<HTMLInputElement>) => {
   return (
     <div className={styles.container}>

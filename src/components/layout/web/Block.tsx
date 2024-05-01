@@ -20,6 +20,7 @@ const Block = ({
   link,
   linkLabel,
   as,
+  id,
 }: {
   children?: ReactNode
   title?: string
@@ -27,9 +28,10 @@ const Block = ({
   link?: string
   linkLabel?: string
   as?: 'h1'
+  id?: string
 }) => {
   return (
-    <div className={classNames('main-container', styles.block)}>
+    <div className={classNames('main-container', styles.block)} id={id}>
       {title && (
         <div className={styles.header}>
           <div>

@@ -23,8 +23,10 @@ export default forwardRef(function Etiquette(
 
   useEffect(() => {
     const onResize = () => {
+      console.log('resize')
       if (typeof ref !== 'function' && ref && ref.current && ref.current.parentElement) {
         const { width } = ref.current.parentElement.getBoundingClientRect()
+        console.log(width)
         setInline(width > (comparisons.length + 1) * 175)
       }
     }

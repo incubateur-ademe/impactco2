@@ -3,8 +3,6 @@ import { TransportSimulateur } from 'types/transport'
 import Card from 'components/base/Card'
 import styles from 'components/misc/category/overScreens/Values.module.css'
 import { CustomParamValue } from '../CustomParam'
-import TransportIntegrate from '../TransportIntegrate'
-import TransportShare from '../TransportShare'
 import { OverScreenTransport } from './TransportType'
 import { OverScreenInfo } from './Values'
 
@@ -13,16 +11,15 @@ export const overScreenTransportValues: (
   params: Record<string, CustomParamValue>,
   tracking: string,
   type: TransportSimulateur
-) => Record<OverScreenTransport, OverScreenInfo> = (category, params, tracking, type) => ({
+) => Record<OverScreenTransport, OverScreenInfo> = (category) => ({
   partager: {
     title: 'share',
-    children: <TransportShare tracking={tracking} />,
+    children: <></>,
   },
   integrer: {
     title: 'integrate',
     children: (
       <>
-        <TransportIntegrate type={type} tracking={tracking} />
         <div className={styles.space} />
         <Card
           href='/guide-utilisation'

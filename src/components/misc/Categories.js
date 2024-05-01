@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
 import { categories } from 'components/providers/categories'
 import { Section, SectionWideContent } from 'components/base/Section'
-import ShareButton from 'components/base/ShareButton'
 import Category from './categories/Category'
 
 const Title = styled.h1`
@@ -33,7 +32,6 @@ export default function Categories(props) {
         <Section $withoutPadding>
           <SectionWideContent $flex>
             <Title>Thématiques</Title>
-            <ShareButton title />
           </SectionWideContent>
         </Section>
       )}

@@ -15,7 +15,7 @@
 
 .tileContainer {
   width: calc(11rem - 4px);
-  height: 248px;
+  min-height: 15.5rem;
   display: flex;
   justify-content: center;
   align-items: center;

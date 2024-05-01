@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import { track } from 'utils/matomo'
 import useParamContext from 'components/providers/ParamProvider'
@@ -60,11 +62,7 @@ const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
           <Icon iconId='magic-wand' />
           Générer d’autres équivalents
         </Button>
-        {equivalents.length >= 8 && (
-          <Button priority='secondary' onClick={changeEquivalents}>
-            Modifier mes équivalents
-          </Button>
-        )}
+        {equivalents.length >= 8 && <Button onClick={changeEquivalents}>Modifier mes équivalents</Button>}
       </div>
     </>
   )
