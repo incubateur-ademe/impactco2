@@ -10,6 +10,7 @@ const Select = ({
   hint,
   inline,
   padding,
+  className,
   ...selectProps
 }: SelectHTMLAttributes<HTMLSelectElement> & {
   id: string
@@ -27,7 +28,7 @@ const Select = ({
           {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
         </label>
       )}
-      <div className={classNames(styles.selectWrapper, { [styles.smallSelectWrapper]: padding === 'sm' })}>
+      <div className={classNames(styles.selectWrapper, { [styles.smallSelectWrapper]: padding === 'sm' }, className)}>
         <select
           className={classNames(styles.select, { [styles.small]: padding === 'sm' })}
           {...selectProps}

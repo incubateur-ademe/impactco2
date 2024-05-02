@@ -5,14 +5,13 @@ import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
-import { Frequence } from 'types/livraison'
 import { TransportSimulateur } from 'types/transport'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/UseTheme'
-import { default_eqs, frequences } from 'components/livraison/data'
+import { default_eqs } from 'components/livraison/data'
 import { displayAddress } from 'components/transport/search/itinerary/Address'
 import { computedEquivalents } from './equivalents'
 
@@ -100,8 +99,8 @@ export type Params = {
     setIsPlane: Dispatch<SetStateAction<boolean>>
     number: number
     setNumber: Dispatch<SetStateAction<number>>
-    frequence: Frequence | undefined
-    setFrequence: Dispatch<SetStateAction<Frequence | undefined>>
+    frequence: number
+    setFrequence: Dispatch<SetStateAction<number>>
     equivalents: string[]
     setEquivalents: Dispatch<SetStateAction<string[]>>
   }
@@ -218,8 +217,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState({
     produit: 'habillement',
-    retrait: 'relais',
-    relay: 'voiture_thermique',
+    retrait: 'point de retrait',
+    relay: 'voiture thermique',
     km: '7',
     traj: 'dom_tra',
   })
@@ -227,7 +226,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [isHabit, setIsHabit] = useState(false)
   const [isPlane, setIsPlane] = useState(false)
   const [number, setNumber] = useState(1)
-  const [frequence, setFrequence] = useState<Frequence | undefined>(frequences.find((freq) => freq.isDefault))
+  const [frequence, setFrequence] = useState<number>(12)
 
   // Comparateur
   const [baseValue, setBaseValue] = useState(100)

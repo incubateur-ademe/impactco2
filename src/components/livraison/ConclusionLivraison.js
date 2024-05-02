@@ -17,9 +17,7 @@ export default function ConclusionLivraison() {
         <SectionWideContent>
           <SimpleText>
             Pour plus de conseils,{' '}
-            <Link
-              title='télécharger le guide de l’ADEME - Nouvelle fenêtre'
-              href='https://librairie.ademe.fr/cadic/4466/guide-pratique-econsommateur-responsable.pdf'>
+            <Link title='télécharger le guide de l’ADEME - Nouvelle fenêtre' href=''>
               télécharger le guide de l’ADEME « E-consommateur & responsable »
             </Link>
           </SimpleText>

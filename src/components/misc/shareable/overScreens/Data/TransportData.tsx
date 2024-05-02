@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'

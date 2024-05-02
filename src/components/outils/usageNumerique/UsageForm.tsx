@@ -45,7 +45,7 @@ const UsageForm = ({
               }
             }}
           />
-          <HiddenLabel htmlFor={`appareil-${slug}`}>Appareil utilisé pour {values.title}</HiddenLabel>
+          <HiddenLabel htmlFor={`text-select-appareil-${slug}`}>Appareil utilisé pour {values.title}</HiddenLabel>
           <Select
             id={`appareil-${slug}`}
             value={situation[values.device] as string}
@@ -60,6 +60,7 @@ const UsageForm = ({
           </Select>
         </div>
         <div className={styles.secondRow}>
+          <HiddenLabel htmlFor={`text-select-type-${slug}`}>Type de {values.title}</HiddenLabel>
           <Select
             id={`type-${slug}`}
             value={situation[values.type] as string}
@@ -72,6 +73,7 @@ const UsageForm = ({
               </option>
             ))}
           </Select>
+          <HiddenLabel htmlFor={`text-select-network-${slug}`}>Réseaux utilisé pour {values.title}</HiddenLabel>
           <Select
             id={`network-${slug}`}
             value={situation[values.network] as string}

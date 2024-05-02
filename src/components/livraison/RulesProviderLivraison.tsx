@@ -1,3 +1,5 @@
+'use client'
+
 import rules from '@incubateur-ademe/publicodes-impact-livraison'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useMemo } from 'react'

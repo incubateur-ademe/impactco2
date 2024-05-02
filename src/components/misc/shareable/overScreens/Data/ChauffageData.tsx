@@ -1,11 +1,9 @@
-'use client'
-
 import classNames from 'classnames'
 import React from 'react'
 import chauffage from 'data/categories/chauffage.json'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Link from 'components/base/buttons/Link'
-import styles from './Data.module.css'
+import styles from '../Data/Data.module.css'
 
 const ChauffageData = () => {
   const sortedValues = chauffage.sort((a, b) => a.total - b.total)
