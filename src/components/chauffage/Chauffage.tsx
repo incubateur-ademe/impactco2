@@ -7,7 +7,7 @@ import { computedEquivalents } from 'components/providers/equivalents'
 import BarChart from 'components/charts/BarChart'
 import Simulator from 'components/misc/Simulator'
 import CategoryWrapper from 'components/misc/category/CategoryWrapper'
-import { CustomParamValue } from 'components/misc/category/CustomParam'
+import { CustomParamValue } from 'components/misc/shareable/overScreens/CustomParam'
 import SliderWithInput from 'components/misc/slider/SliderWithInput'
 
 const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean }) => {

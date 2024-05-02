@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--neutral-80);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.firstRow,
+.secondRow,
+.inputs {
+  display: flex;
+  gap: 0.5rem;
+
+  > div {
+    max-width: 50%;
+    width: 100%;
+  }
+
+  input {
+    color: var(--neutral-80);
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  input,
+  select {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    flex-direction: column;
+
+    > div {
+      max-width: 100%;
+    }
+  }
+}
+
+.inputs {
+  @media screen and (max-width: 48rem) {
+    flex-direction: column;
+
+    > div {
+      max-width: 100%;
+    }
+  }
+}

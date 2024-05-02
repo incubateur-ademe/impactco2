@@ -15,7 +15,7 @@ const Equivalent = ({
   language,
 }: {
   className?: string
-  baseValue: string
+  baseValue: string | number
   comparisons: string[]
   title?: (unit: string, roundedValue: string, intValue: number) => ReactNode
   animated?: boolean
@@ -90,9 +90,7 @@ const Equivalent = ({
             <div className={styles.value} data-testid='etiquette-value'>
               {roundedValue}
             </div>
-            <div className={styles.label}>
-              {unit} CO<sub>2</sub>e
-            </div>
+            <div className={styles.label}>{unit} CO₂e</div>
           </div>
         </div>
         <div className={styles.right}>

@@ -24,3 +24,7 @@
     padding: 1.5rem 1rem;
   }
 }
+
+.leftSimulator {
+  align-items: flex-start;
+}

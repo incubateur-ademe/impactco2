@@ -15,7 +15,7 @@ test('La page des usages numériques se charge correctement', async ({ page }) =
 
 test("Par défaut, des valeurs s'affichent pour les usages", async ({ page }) => {
   await test.step('Une valeur globale est donnée', async () => {
-    await expect(page.getByTestId('impactNumeriqueTotal')).toHaveText('0.27 kg CO2e par semaine')
+    await expect(page.getByTestId('impactNumeriqueTotal')).toHaveText('0.27 kg co₂e par semaine')
   })
 })
 

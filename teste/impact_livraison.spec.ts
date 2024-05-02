@@ -59,9 +59,9 @@ test("Equivalences : Une modale d'explication s'affiche", async ({ page }) => {
 
 test("Fréquences : Le bilan carbone s'alourdit avec le nb de colis par mois", async ({ page }) => {
   // Given
-  await expect(page.locator('#kgCo2e')).toHaveText('2,46 kg CO2e')
+  await expect(page.locator('#kgCo2e')).toHaveText('2,46 kg co₂e')
   // When
   await page.locator('select#numbers').selectOption({ value: '2' })
   // Then
-  await expect(page.locator('#kgCo2e')).toHaveText('4,93 kg CO2e')
+  await expect(page.locator('#kgCo2e')).toHaveText('4,93 kg co₂e')
 })

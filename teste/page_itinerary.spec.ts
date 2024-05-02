@@ -96,7 +96,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
       'Angers 49000 France'
     )
     await expect(page.getByTestId('bar-chart-item-intercites')).toBeAttached()
-    await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91.2 km0.82 kg CO2e')
+    await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91.2 km0.82 kg co₂e')
   })
 
   await test.step('Shares with start and end params', async () => {
@@ -155,7 +155,7 @@ test('Default parameters (old way)', async ({ page }) => {
       { timeout: 10000 }
     )
     await expect(page.getByTestId('bar-chart-item-intercites')).toBeAttached()
-    await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91.2 km0.82 kg CO2e')
+    await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91.2 km0.82 kg co₂e')
   })
 })
 
@@ -200,7 +200,7 @@ test('Default parameters', async ({ page }) => {
       { timeout: 10000 }
     )
     await expect(page.getByTestId('bar-chart-item-intercites')).toBeAttached()
-    await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91.2 km0.82 kg CO2e')
+    await expect(page.getByTestId('bar-chart-item-intercites')).toHaveText('Intercités  - 91.2 km0.82 kg co₂e')
   })
 })
 
@@ -223,7 +223,7 @@ test('Load correct number of tabs and redirect with params', async ({ page }) =>
     await expect(page.getByTestId('slider-thumb-content')).toHaveText('12 km')
 
     await expect(page.getByTestId('bar-chart-item-busthermique')).toBeAttached()
-    await expect(page.getByTestId('bar-chart-item-busthermique')).toHaveText('Bus (moteur thermique)1.36 kg CO2e')
+    await expect(page.getByTestId('bar-chart-item-busthermique')).toHaveText('Bus (moteur thermique)1.36 kg co₂e')
   })
 })
 

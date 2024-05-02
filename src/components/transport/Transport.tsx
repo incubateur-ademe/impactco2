@@ -4,9 +4,9 @@ import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import useParamContext from 'components/providers/ParamProvider'
 import ShareableContent from 'components/misc/ShareableContent'
-import { CustomParamValue } from 'components/misc/category/CustomParam'
-import { OverScreenTransport } from 'components/misc/category/overScreens/TransportType'
-import { overScreenTransportValues } from 'components/misc/category/overScreens/TransportValues'
+import { CustomParamValue } from 'components/misc/shareable/overScreens/CustomParam'
+import { OverScreenTransport } from 'components/misc/shareable/overScreens/TransportType'
+import { overScreenTransportValues } from 'components/misc/shareable/overScreens/TransportValues'
 
 const Transport = ({
   children,

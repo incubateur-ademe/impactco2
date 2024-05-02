@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { SetStateAction } from 'preact/compat'
 import React, { Dispatch } from 'react'
 import FullArrowRightIcon from 'components/osezchanger/icons/full-arrow-right'
-import { OverScreenInfo } from '../category/overScreens/Values'
 import styles from './Feature.module.css'
+import { OverScreenInfo } from './overScreens/Values'
 
 const Feature = ({
   info,

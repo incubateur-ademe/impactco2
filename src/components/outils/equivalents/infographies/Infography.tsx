@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
-import { overScreenEquivalentInfographyValues } from 'components/misc/category/overScreens/Values'
 import Shareable from 'components/misc/shareable/Shareable'
+import { overScreenEquivalentInfographyValues } from 'components/misc/shareable/overScreens/Values'
 import InfographySimulator from './InfographySimulator'
 
 const Infography = ({ equivalent, equivalents }: { equivalent: ComputedEquivalent; equivalents: string[] }) => {

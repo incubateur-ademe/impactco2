@@ -9,10 +9,10 @@ import TranslationProvider from 'components/providers/TranslationProvider'
 import GhostButton from 'components/base/GhostButton'
 import Logos from 'components/base/Logo/Logos'
 import CloseIcon from 'components/osezchanger/icons/close'
-import { OverScreenInfo } from '../category/overScreens/Values'
 import Actions from './Actions'
 import Feature from './Feature'
 import styles from './Shareable.module.css'
+import { OverScreenInfo } from './overScreens/Values'
 
 type ShareableProps = {
   children: ReactNode

@@ -26,7 +26,7 @@ describe('Bottom - Texte et bouton affichés en bas de chaque thématique', () =
     renderWithWrapper(<Bottom category={category} />)
     // Then
     expect(await screen.findByTestId('bottomText')).toBeInTheDocument()
-    expect(await screen.findByTestId('bottomText')).toHaveTextContent('Valeurs exprimées en kg CO2e émis')
+    expect(await screen.findByTestId('bottomText')).toHaveTextContent('Valeurs exprimées en kg co₂e émis')
     expect(await screen.findByTestId('bottomButton')).toBeInTheDocument()
   })
   test("Le bouton a bien le texte 'Voir toutes les thématiques'", async () => {

@@ -1,4 +1,4 @@
-import React, { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import HiddenLabel from './HiddenLabel'
 import Input from './Input'
 
@@ -12,9 +12,9 @@ const NumberInput = ({
   extraWidth,
 }: {
   id: string
-  label: string
+  label?: string
   value: number
-  setValue: Dispatch<SetStateAction<number>>
+  setValue: (value: number) => void
   unit: ReactNode
   onUnitClick?: () => void
   extraWidth?: string
@@ -33,7 +33,7 @@ const NumberInput = ({
 
   return (
     <>
-      <HiddenLabel htmlFor={`input-${id}`}>{label}</HiddenLabel>
+      {label && <HiddenLabel htmlFor={`input-${id}`}>{label}</HiddenLabel>}
       <Input
         id={id}
         value={internalValue}

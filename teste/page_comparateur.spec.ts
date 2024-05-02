@@ -15,7 +15,7 @@ test('Comparateur', async ({ page }) => {
   await expect(page.getByTestId('comparateur-abricot-name')).toContainText("kg d'abricot")
 
   await page.getByRole('button', { name: 'Comparer' }).nth(3).click()
-  await expect(page.getByTestId('compared-equivalent-value')).toContainText('88,06 kg CO2e')
+  await expect(page.getByTestId('compared-equivalent-value')).toContainText('88,06 kg co₂e')
 
   await page.getByRole('button', { name: 'Ajouter un équivalent' }).click()
   await page.getByRole('button', { name: 'Fruits et légumes 0 / 74 Voir' }).click()
@@ -39,7 +39,7 @@ test('Comparateur', async ({ page }) => {
   await expect(page.getByTestId('etiquette-ail-name').nth(1)).toContainText("kg d'ail")
 
   await page.getByLabel("kg d'abricot").fill('5')
-  await expect(page.getByTestId('compared-equivalent-value')).toContainText('4,4 kg CO2e')
+  await expect(page.getByTestId('compared-equivalent-value')).toContainText('4,4 kg co₂e')
   await expect(page.getByTestId('comparateur-ail-value')).toContainText('12.3')
   await expect(page.getByTestId('etiquette-value').nth(0)).toContainText('4.4')
   await expect(page.getByTestId('etiquette-abricot-value').nth(0)).toContainText('5')
@@ -89,7 +89,7 @@ test('Comparateur', async ({ page }) => {
 
 test('Iframes', async ({ page }) => {
   await page.goto('http://localhost:3000/iframes/comparateur?value=5&comparisons=ail,tomate&equivalent=abricot')
-  await expect(page.getByTestId('compared-equivalent-value')).toContainText('4,4 kg CO2e')
+  await expect(page.getByTestId('compared-equivalent-value')).toContainText('4,4 kg co₂e')
   await expect(page.getByTestId('comparateur-ail-value')).toContainText('12.3')
   await expect(page.getByTestId('comparateur-tomate-value')).toContainText('7.57')
 

@@ -3,8 +3,8 @@
 import React, { useMemo, useRef } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import EtiquetteContent from 'components/comparateur/Etiquette'
-import { overScreenEquivalentEtiquetteValues } from 'components/misc/category/overScreens/Values'
 import Shareable from 'components/misc/shareable/Shareable'
+import { overScreenEquivalentEtiquetteValues } from 'components/misc/shareable/overScreens/Values'
 
 const Etiquette = ({ equivalent }: { equivalent: ComputedEquivalent }) => {
   const overScreens = useMemo(() => overScreenEquivalentEtiquetteValues(equivalent), [equivalent])

@@ -4,12 +4,13 @@ import { ComputedEquivalent } from 'types/equivalent'
 import Card from 'components/base/Card'
 import Resource from 'components/base/Resource'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
-import Integrate from '../Integrate'
-import Share from '../Share'
-import TransportIntegrate from '../TransportIntegrate'
-import TransportShare from '../TransportShare'
 import ChauffageData from './ChauffageData'
+import Integrate from './Integrate'
+import Share from './Share'
 import TransportData from './TransportData'
+import TransportIntegrate from './TransportIntegrate'
+import TransportShare from './TransportShare'
+import UsageNumeriqueData from './UsageNumeriqueData'
 import styles from './Values.module.css'
 
 export type OverScreenInfo = {
@@ -195,6 +196,32 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         image: '/images/icn-understand.svg',
         title: 'understand',
         children: <TransportData />,
+      },
+    }
+  }
+  if (category.slug === 'usagenumerique') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/ngc.png'
+              text='Estimer son empreinte carbone de consommation'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Transport'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+      data: {
+        image: '/images/icn-understand.svg',
+        title: 'understand',
+        children: <UsageNumeriqueData />,
       },
     }
   }

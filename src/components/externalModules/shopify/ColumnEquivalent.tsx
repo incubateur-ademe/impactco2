@@ -11,7 +11,7 @@ const ColumnEquivalent = ({
   comparisons,
   language,
 }: {
-  baseValue: string
+  baseValue: string | number
   comparisons: string[]
   language?: Language
 }) => {

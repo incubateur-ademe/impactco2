@@ -6,10 +6,10 @@ import OsezChanger from 'components/osezchanger/OsezChanger'
 import Learning from '../Learning'
 import ShareableContent from '../ShareableContent'
 import SourceAgribalyse from '../SourceAgribalyse'
+import { CustomParamValue } from '../shareable/overScreens/CustomParam'
+import { overScreenCategoryValues } from '../shareable/overScreens/Values'
 import { Cards, Header, SourcesWrapper } from './CategoryWrapper.styles'
-import { CustomParamValue } from './CustomParam'
 import Sources from './Sources'
-import { overScreenCategoryValues } from './overScreens/Values'
 
 const CategoryWrapper = ({
   category,

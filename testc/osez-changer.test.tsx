@@ -42,7 +42,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-avis-tag')).toBeNull()
     expect(screen.queryByTestId('question-vraie-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).not.toBeNull()
-    expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+16,5kg CO2e')
+    expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+16,5kg co₂e')
     expect(screen.queryByTestId('defi-empty-result')).not.toBeVisible()
     expect(screen.queryByTestId('defi-result-title')).toHaveTextContent('1 paire de chaussure neuve (+16,5kg de CO2e)')
     expect(screen.queryByTestId('defi-equivalent-tshirt-value')).toHaveTextContent('2,6')
@@ -109,7 +109,7 @@ describe('Osez Changer', () => {
     act(() => {
       fireEvent.change(screen.getByTestId('question-neuf-input'), { target: { value: '3' } })
     })
-    expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+49,5kg CO2e')
+    expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+49,5kg co₂e')
     expect(screen.queryByTestId('defi-result-title')).toHaveTextContent(
       '3 paires de chaussures neuves (+49,5kg de CO2e)'
     )

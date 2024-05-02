@@ -28,7 +28,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     // When
     renderWithWrapper(<TransportPage category={category} />)
     // Then
-    expect(await screen.findByTestId('bar-chart-item-velo')).toHaveTextContent('Vélo ou marche0 kg CO2e')
+    expect(await screen.findByTestId('bar-chart-item-velo')).toHaveTextContent('Vélo ou marche0 kg co₂e')
   })
 
   test("Par défaut, limite le nombre d'éléments affichés", async () => {
@@ -64,7 +64,7 @@ describe('TransportPage - affiche la page itinéraire', () => {
     })
     // Then
     const voitureElectrique = await screen.queryAllByTestId('bar-chart-item-voitureelectrique')[0]
-    expect(voitureElectrique.textContent).toBe('Voiture (moteur électrique)-Avec 1 covoitureurs+0.52 kg CO2e')
+    expect(voitureElectrique.textContent).toBe('Voiture (moteur électrique)-Avec 1 covoitureurs+0.52 kg co₂e')
   })
 
   test('shares with default parameters', async () => {

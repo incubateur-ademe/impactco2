@@ -2,7 +2,7 @@ import React from 'react'
 import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import PageTitle from 'components/base/PageTitle'
-import { CustomParamValue } from './CustomParam'
+import { CustomParamValue } from '../shareable/overScreens/CustomParam'
 import { Container } from './Header.styles'
 import HeadersActions from './HeadersActions'
 

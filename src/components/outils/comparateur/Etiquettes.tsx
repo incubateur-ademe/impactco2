@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
-import { overScreenComparateurValues } from 'components/misc/category/overScreens/Values'
 import Shareable from 'components/misc/shareable/Shareable'
+import { overScreenComparateurValues } from 'components/misc/shareable/overScreens/Values'
 import EtiquetteSimulator from './EtiquetteSimulator'
 import styles from './Etiquettes.module.css'
 

@@ -83,7 +83,7 @@ const Empty = ({
             marginTop: '0.75rem',
             textAlign: 'center',
           }}>
-          {equivalent ? formatName(equivalent.fr, comparisonValue, false) : 'Kg CO₂e'}
+          {equivalent ? formatName(equivalent.fr, comparisonValue, false) : 'kg CO₂e'}
         </div>
       )}
       {main && (

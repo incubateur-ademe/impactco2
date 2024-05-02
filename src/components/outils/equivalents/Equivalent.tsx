@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
-import { overScreenEquivalentValues } from 'components/misc/category/overScreens/Values'
 import Shareable from 'components/misc/shareable/Shareable'
+import { overScreenEquivalentValues } from 'components/misc/shareable/overScreens/Values'
 import EquivalentSimulator from './EquivalentSimulator'
 
 const Equivalent = ({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) => {

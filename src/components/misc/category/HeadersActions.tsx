@@ -3,7 +3,7 @@ import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import { SectionWideContent } from 'components/base/Section'
 import Actions from '../shareable/Actions'
-import { CustomParamValue } from './CustomParam'
+import { CustomParamValue } from '../shareable/overScreens/CustomParam'
 import { ActionsContainer, ActionsHeader, ActionsName, Content, Separator } from './Header.styles'
 
 const HeadersActions = ({

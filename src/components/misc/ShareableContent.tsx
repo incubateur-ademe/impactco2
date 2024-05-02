@@ -20,11 +20,11 @@ import {
   Separator,
   Theme,
 } from './ShareableContent.styles'
-import { CustomParamValue } from './category/CustomParam'
 import Header from './category/Header'
 import HeadersActions from './category/HeadersActions'
-import { OverScreenInfo } from './category/overScreens/Values'
 import Actions from './shareable/Actions'
+import { CustomParamValue } from './shareable/overScreens/CustomParam'
+import { OverScreenInfo } from './shareable/overScreens/Values'
 
 const ShareableContent = <T extends string>({
   category,
