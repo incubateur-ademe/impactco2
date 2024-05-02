@@ -20,7 +20,7 @@ const HypotesisCard = ({ slug }: { slug: string }) => {
         <Values>
           <Bar $width={(125 * values.value) / 19} />
           <div>
-            <Value>{Math.round(values.value)}</Value> kg CO<sub>2</sub>e
+            <Value>{Math.round(values.value)}</Value> kg CO₂e
           </div>
         </Values>
       </div>

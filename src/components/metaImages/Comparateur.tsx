@@ -58,7 +58,7 @@ const Comparateur = ({
           style={{
             color: '#26827C',
           }}>
-          Une quantité de CO<sub>2</sub>e
+          Une quantité de CO₂e
         </span>
       </div>
       <div

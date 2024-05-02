@@ -68,7 +68,7 @@ export default function Total() {
       <Text>
         Vos usages émettent{' '}
         <Big data-testid='impactNumeriqueTotal'>
-          {formatNumber(total / 1000)} kg CO<sub>2</sub>e <Color>par semaine</Color>
+          {formatNumber(total / 1000)} kg CO₂e <Color>par semaine</Color>
         </Big>{' '}
         <Disclaimer>
           Cette valeur comprend l’utilisation de vos appareils, la transmission de la donnée et la construction et
@@ -82,7 +82,7 @@ export default function Total() {
       <Text>
         Soit{' '}
         <Big>
-          {formatNumber((total / 1000) * 52)} kg CO<sub>2</sub>e <Color>par an</Color>{' '}
+          {formatNumber((total / 1000) * 52)} kg CO₂e <Color>par an</Color>{' '}
         </Big>
         <div>ce qui représente autant d’émissions que pour fabriquer, consommer ou parcourir :</div>
       </Text>

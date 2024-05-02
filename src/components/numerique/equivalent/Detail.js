@@ -87,8 +87,7 @@ export default function Detail(props) {
                   <Label>{item.label}</Label>
                   <Percent>{formatPercent(item.value, props.total)} %</Percent>
                   <Value>
-                    <strong>{formatNumberPrecision(item.value)}</strong> CO
-                    <sub>2</sub>e
+                    <strong>{formatNumberPrecision(item.value)}</strong> CO ₂e
                   </Value>
                 </Item>
               ))}
@@ -98,8 +97,7 @@ export default function Detail(props) {
               </Label>
               <Percent />
               <Value>
-                <strong>{formatNumberPrecision(props.total)}</strong> CO
-                <sub>2</sub>e
+                <strong>{formatNumberPrecision(props.total)}</strong> CO ₂e
               </Value>
             </Item>
           </tbody>

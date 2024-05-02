@@ -18,17 +18,14 @@ const Title = ({
       {introduction ? (
         <div
           dangerouslySetInnerHTML={{
-            __html: HtmlSanitizer.SanitizeHtml(introduction).replace(
-              intValue,
-              `<b>${roundedValue} ${unit} CO<sub>2</sub>e</b>`
-            ),
+            __html: HtmlSanitizer.SanitizeHtml(introduction).replace(intValue, `<b>${roundedValue} ${unit} CO₂e</b>`),
           }}
         />
       ) : (
         <>
           La production de cet article émet{' '}
           <b>
-            {roundedValue} {unit} CO<sub>2</sub>e
+            {roundedValue} {unit} CO₂e
           </b>
         </>
       )}

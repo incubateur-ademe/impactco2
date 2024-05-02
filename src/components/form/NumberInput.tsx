@@ -10,6 +10,8 @@ const NumberInput = ({
   unit,
   onUnitClick,
   extraWidth,
+  min,
+  max,
 }: {
   id: string
   label?: string
@@ -18,6 +20,8 @@ const NumberInput = ({
   unit: ReactNode
   onUnitClick?: () => void
   extraWidth?: string
+  min?: number
+  max?: number
 }) => {
   const [internalValue, setInternalValue] = useState(value.toString())
 
@@ -40,7 +44,8 @@ const NumberInput = ({
         onChange={(event) => setInternalValue(event.target.value)}
         type='number'
         unit={unit}
-        min={1}
+        min={min === undefined ? 1 : min}
+        max={max}
         onUnitClick={onUnitClick}
         extraWidth={extraWidth}
       />

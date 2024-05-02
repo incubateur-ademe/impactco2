@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import styles from './SkipLinks.module.css'
 
@@ -6,19 +7,19 @@ const SkipLinks = () => {
     <div className={styles.wrapper}>
       <ul>
         <li>
-          <a className={styles.hidden} href='#contenu'>
+          <Link className={styles.hidden} href='#contenu'>
             Contenu
-          </a>
+          </Link>
         </li>
         <li>
-          <a className={styles.hidden} href='#header-navigation'>
+          <Link className={styles.hidden} href='#header-navigation'>
             Menu
-          </a>
+          </Link>
         </li>
         <li>
-          <a className={styles.hidden} href='#footer'>
+          <Link className={styles.hidden} href='#footer'>
             Pied de page
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

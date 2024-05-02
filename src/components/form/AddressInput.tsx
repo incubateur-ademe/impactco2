@@ -62,9 +62,7 @@ const AddressInput = ({
   return (
     <div className={styles.container}>
       {label && (
-        <label
-          className={classNames(inputStyles.label, { [inputStyles.labelError]: !!error, [styles.largeLabel]: large })}
-          htmlFor={`input-${id}`}>
+        <label className={classNames(inputStyles.label, { [inputStyles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
           {!inputProps.required && <div className={inputStyles.notRequired}> - Facultatif</div>}
           {hint && <div className={classNames(inputStyles.hint, 'text-sm')}>{hint}</div>}

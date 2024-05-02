@@ -80,7 +80,7 @@ const chauffageValidation = z.object({
  *                         example: Chauffage au gaz
  *                       ecv:
  *                         type: number
- *                         description: l'emission totale en g de CO<sub>2</sub>e
+ *                         description: l'emission totale en g de CO₂e
  *                         example: 50.3
  *                       slug:
  *                         type: string

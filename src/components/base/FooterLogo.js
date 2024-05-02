@@ -77,9 +77,7 @@ export default function FooterLogo(props) {
   return (
     <Wrapper href='/' className={props.className}>
       <svg width='333' height='333' viewBox='0 0 333 333' fill='none' xmlns='http://www.w3.org/2000/svg'>
-        <title>
-          Impact CO<sub>2</sub>
-        </title>
+        <title>Impact CO₂</title>
         <Path
           fillRule='evenodd'
           clipRule='evenodd'
@@ -97,7 +95,7 @@ export default function FooterLogo(props) {
       <Title>
         Impact
         <br />
-        CO<sub>2</sub>
+        CO₂
       </Title>
     </Wrapper>
   )

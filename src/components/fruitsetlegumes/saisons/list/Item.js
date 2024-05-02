@@ -78,10 +78,7 @@ export default function Item(props) {
       {props.item.season ? (
         <Value>
           {formatNumber(props.item.value)}
-          <Unit>
-            {' '}
-            kg CO<sub>2</sub>e / kg
-          </Unit>
+          <Unit> kg CO₂e / kg</Unit>
         </Value>
       ) : (
         <Value>Pas la saison</Value>

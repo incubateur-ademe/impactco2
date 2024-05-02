@@ -72,7 +72,7 @@ export default function YearlyFootprint(props) {
       <Bar>
         <Emitted $percent={numerator ? (props.emitted / numerator) * 100 : 0}>
           <Content $visible={props.emitted}>
-            <Number>{props.emitted}</Number> kgCO<sub>2</sub>e
+            <Number>{props.emitted}</Number> kgCO₂e
             <br />
             {t('emitted')}
             <br />
@@ -85,7 +85,7 @@ export default function YearlyFootprint(props) {
         <br />
         <Saved $percent={numerator ? (props.saved / numerator) * 100 : 0} data-testid='saved'>
           <Content $visible={props.saved}>
-            <Number>{props.saved}</Number> kgCO<sub>2</sub>e
+            <Number>{props.saved}</Number> kgCO₂e
             <br />
             {t('avoided', { plural: props.saved > 1 ? 's' : '' })}
             <br />

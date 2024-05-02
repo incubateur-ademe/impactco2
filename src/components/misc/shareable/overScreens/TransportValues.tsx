@@ -1,7 +1,6 @@
 import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import Card from 'components/base/Card'
-import styles from 'components/misc/category/overScreens/Values.module.css'
 import { CustomParamValue } from './CustomParam'
 import { OverScreenTransport } from './TransportType'
 import { OverScreenInfo } from './Values'
@@ -20,7 +19,6 @@ export const overScreenTransportValues: (
     title: 'integrate',
     children: (
       <>
-        <div className={styles.space} />
         <Card
           href='/guide-utilisation'
           title='Utiliser cette ressource'

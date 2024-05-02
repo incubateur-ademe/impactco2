@@ -29,9 +29,7 @@ const ColumnEquivalent = ({
           <div className={baseStyles.value} data-testid='etiquette-value'>
             {roundedValue}
           </div>
-          <div className={baseStyles.label}>
-            {unit} CO<sub>2</sub>e
-          </div>
+          <div className={baseStyles.label}>{unit} CO₂e</div>
         </div>
         <Logo value={value * 1000} right />
       </div>

@@ -87,11 +87,7 @@ export default function Bar({
       <Top>
         <Number>{formatNumber(total)}</Number>{' '}
         <Unit>
-          g{' '}
-          <Big>
-            CO<sub>2</sub>
-          </Big>
-          e{' '}
+          g <Big>CO₂</Big>e{' '}
           {equivalent.unit || category.unit ? (
             <>/ {equivalent.unit || category.unit}</>
           ) : engine.evaluate(`${name} . durée`).nodeValue === 60 ? (

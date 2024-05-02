@@ -35,7 +35,7 @@ export default function ReuseBulb() {
         <p>
           Consultez le{' '}
           <Link href='/guide-utilisation' title='Découvrir des exemples de réutilisation'>
-            guide d'utilisation Impact CO<sub>2</sub>
+            guide d'utilisation Impact CO₂
           </Link>{' '}
           pour vous emparer facilement du simulateur et l’intégrer à votre publication.
         </p>
@@ -63,8 +63,7 @@ export default function ReuseBulb() {
           </GoFurtherFirstParagraph>
           <GoFurtherSecondParagraph>
             Pour réutiliser <BlackLink href='https://github.com/incubateur-ademe/impactco2/'>le code</BlackLink> du
-            simulateur, consultez le code du site Impact CO<sub>2</sub>, développé de manière ouverte (
-            <i>open source</i>).
+            simulateur, consultez le code du site Impact CO₂, développé de manière ouverte (<i>open source</i>).
           </GoFurtherSecondParagraph>
         </details>
       </GoFurther>

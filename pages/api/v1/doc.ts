@@ -8,9 +8,9 @@ const config = {
       title: 'Impact CO₂',
       description: `⚠️ Cette section est en construction ⚠️
 
-Bienvenue sur la documentation technique de **API Impact CO<sub>2</sub>**. Cette page présente les caractéristiques techniques de l’API. 
+Bienvenue sur la documentation technique de **API Impact CO₂**. Cette page présente les caractéristiques techniques de l’API. 
 
-Cette documentation interactive à destination des développeurs permet de consommer les données de nos ressources Impact CO<sub>2</sub>.
+Cette documentation interactive à destination des développeurs permet de consommer les données de nos ressources Impact CO₂.
 
 Nous utilisons des clés API pour suivre son utilisation. Bien que celles ci ne soient pas obligatoire, nous nous réservons le droit de restreindre l'accès aux utilisateurs qui ne l'utilisant pas. N'hésitez pas à nous contacter via [${process.env.NEXT_PUBLIC_CONTACT_EMAIL}](mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}) pour en obtenir une gratuitement.
 

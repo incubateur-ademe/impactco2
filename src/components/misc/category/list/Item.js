@@ -50,10 +50,7 @@ export default function Item(props) {
       </Header>
       <Value>
         {formatNumber(props.item.value * 1000)}
-        <Unit>
-          {' '}
-          g CO<sub>2</sub>e / {props.item.unit}
-        </Unit>
+        <Unit> g CO₂e / {props.item.unit}</Unit>
       </Value>
       <Chart item={props.item} max={props.max} />
     </Wrapper>

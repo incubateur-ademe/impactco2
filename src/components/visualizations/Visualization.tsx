@@ -99,9 +99,7 @@ const Visualization = ({ types, base }: { types: (string | VisualizationType)[];
   const factor = values[0].value * (base || 1)
   return (
     <>
-      <Title>
-        En termes d&apos;émissions de CO<sub>2</sub>e
-      </Title>
+      <Title>En termes d&apos;émissions de CO₂e</Title>
       <Equivalents>
         {values
           .flatMap((equivalent) => {

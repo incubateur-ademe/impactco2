@@ -27,7 +27,7 @@ export default function Bottom({ category, iframe }: { category: Category; ifram
       <Disclaimer data-testid='bottomText'>
         {t('before')}{' '}
         <Button asLink onClick={() => setOpenModal(true)}>
-          CO<sub>2</sub>e
+          CO₂e
         </Button>{' '}
         {t('after')} {t(`include-${category.slug}`)}
       </Disclaimer>

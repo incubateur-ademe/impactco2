@@ -14,7 +14,7 @@ const EquivalentCardContent = ({ equivalent, category }: { equivalent: ComputedE
           {formatName(`${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`, 1, true)}
         </div>
         <div className={styles.value}>
-          <div className={styles.valueNumber}>{formatNumber(equivalent.value)}</div> kg CO<sub>2</sub>e
+          <div className={styles.valueNumber}>{formatNumber(equivalent.value)}</div> kg CO₂e
         </div>
         <div className={styles.unit}>par {equivalent.unit || category?.unit || 'unité'}</div>
       </div>

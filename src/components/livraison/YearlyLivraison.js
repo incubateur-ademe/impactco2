@@ -31,7 +31,7 @@ export default function YearlyLivraison(props) {
         <Deduction data-testid='deduction'>
           <span>alors l’impact carbone de mes livraisons est de&nbsp;</span>
           <Color id='kgCo2e' data-testid='kgCo2e'>
-            {convertGramsToKilograms(props.co2eq * frequence.mult * number)} kg CO<sub>2</sub>e
+            {convertGramsToKilograms(props.co2eq * frequence.mult * number)} kg CO₂e
           </Color>
           <strong>&nbsp;par an*</strong>.
         </Deduction>

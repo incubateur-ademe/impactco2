@@ -4,20 +4,6 @@
   flex-direction: column;
   gap: 2rem;
   border-bottom: 2px solid var(--neutral-20);
-}
-
-.fullSelect {
-  width: 100%;
-
-  select {
-    max-width: 100%;
-  }
-}
-
-.formRow {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 
   label {
     color: var(--neutral-80);
@@ -27,50 +13,52 @@
   }
 }
 
-.inputs {
-  display: flex;
-  gap: 0.5rem;
+.transportMode {
+  position: relative;
+}
 
-  > div {
-    max-width: 50%;
-    width: 100%;
-  }
+.select {
+  width: 100%;
 
-  input {
-    color: var(--neutral-80);
-    font-size: 1.75rem;
-    font-weight: 800;
-    line-height: 2rem;
-    padding: 0.5rem 1rem;
-  }
-
-  input,
   select {
-    width: 100%;
     max-width: 100%;
+    height: 3.5rem;
+    padding-left: 3.5rem;
   }
+}
 
-  @media screen and (max-width: 29.875rem) {
-    flex-direction: column;
-
-    > div {
-      max-width: 100%;
-    }
-  }
+.equivalentIcon {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
 }
 
 .results {
   padding: 2rem 2rem 0 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   margin-bottom: 1.5rem;
+  gap: 1.5rem 0;
+
+  @media screen and (max-width: 29.875rem) {
+    flex-direction: column;
+  }
+}
+
+.values {
+  color: var(--neutral-50);
+  text-align: center;
+  padding: 0 1.5rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
 
-  @media screen and (max-width: 29.875rem) {
-    flex-direction: column;
+  &:not(:last-child) {
+    border-right: 2px solid var(--neutral-20);
+
+    @media screen and (max-width: 29.875rem) {
+      border-right: none;
+    }
   }
 }
 
@@ -80,11 +68,16 @@
   line-height: 1.5rem;
 }
 
+.greenValue,
 .value {
   color: var(--neutral-80);
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 2.75rem;
+}
+
+.greenValue {
+  color: var(--primary-50);
 }
 
 .number {
@@ -99,5 +92,5 @@
   gap: 0.75rem;
   align-items: center;
   color: var(--neutral-50);
-  margin-bottom: 2rem;
+  margin: 1.5rem 0 2rem 0;
 }

@@ -120,6 +120,7 @@ export const categories = [
     emoji: '🚴‍♂️',
     slug: 'transport',
     header: 'du transport',
+    description: 'Calculer l’impact carbone des moyens de transport',
     sources: [
       {
         label: 'Base Empreinte ADEME',

@@ -35,8 +35,8 @@
     },
     "teletravail": {
       "label": "Personnaliser les adresses",
-      "start": "Domicile",
-      "end": "Bureau"
+      "start": "Lieu de domicile",
+      "end": "Lieu de travail"
     },
     "transport": {
       "onglet": "Onglet à partager",
@@ -81,8 +81,8 @@
       "end": "Arrivée"
     },
     "teletravail": {
-      "start": "Domicile",
-      "end": "Travail",
+      "start": "Lieu de domicile",
+      "end": "Lieu de travail",
       "details": "Voir et ajuster les détails du calcul",
       "choose": "Choisissez votre mode de transport",
       "premise": "Présentiel",

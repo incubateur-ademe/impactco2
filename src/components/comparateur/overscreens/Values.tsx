@@ -1,5 +1,4 @@
 import Card from 'components/base/Card'
-import styles from 'components/misc/category/overScreens/Values.module.css'
 import { CustomParamValue } from 'components/misc/shareable/overScreens/CustomParam'
 import Integrate from 'components/misc/shareable/overScreens/Integrate'
 import Share from 'components/misc/shareable/overScreens/Share'
@@ -15,7 +14,6 @@ export const overScreenEtiquetteValues: (params?: string) => Record<OverScreenEt
     children: (
       <>
         <Integrate path='comparateur/etiquette' extraParams={params} tracking='Comparateur' />
-        <div className={styles.space} />
         <Card
           href='/guide-utilisation'
           title='Utiliser cette ressource'
@@ -42,7 +40,6 @@ export const overScreenComparateurValues: (
     children: (
       <>
         <Integrate path='comparateur' tracking='Comparateur' />
-        <div className={styles.space} />
         <Card
           href='/guide-utilisation'
           title='Utiliser cette ressource'

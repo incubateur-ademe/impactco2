@@ -62,11 +62,7 @@ export default function Value({ equivalent, category }: { equivalent: ComputedEq
             <div>
               <Number>{equivalent.value.toLocaleString()}</Number>{' '}
               <Unit>
-                kg{' '}
-                <Big>
-                  CO<sub>2</sub>
-                </Big>
-                e {(equivalent.unit || category.unit) && <>/ {equivalent.unit || category.unit}</>}
+                kg <Big>CO₂</Big>e {(equivalent.unit || category.unit) && <>/ {equivalent.unit || category.unit}</>}
               </Unit>
             </div>
           </Top>

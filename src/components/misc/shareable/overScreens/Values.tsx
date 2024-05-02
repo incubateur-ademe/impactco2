@@ -174,6 +174,27 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
       },
     }
   }
+  if (category.slug === 'teletravail') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/ngc.png'
+              text='Estimer son empreinte carbone de consommation'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Télétravail'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+    }
+  }
   if (category.slug === 'transport') {
     return {
       ...values,

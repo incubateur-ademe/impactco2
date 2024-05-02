@@ -1,6 +1,7 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import React from 'react'
+import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
 import Outil from 'components/outils/Outil'
@@ -52,8 +53,15 @@ const OutilPage = async ({ params }: Props) => {
       </>
     )
   }
-
-  const category = categories.find((category) => category.slug === params.tool)
+  const category =
+    params.tool === 'teletravail'
+      ? {
+          ...(categories.find((category) => category.slug === 'transport') as CategoryType),
+          name: 'Télétravail',
+          slug: 'teletravail',
+          description: 'Mesurer les économies de carbone réalisées grâce au télétravail ',
+        }
+      : categories.find((category) => category.slug === params.tool)
   if (category) {
     return (
       <>

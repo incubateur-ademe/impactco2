@@ -35,8 +35,8 @@ const Budget = () => {
     <Section>
       <SectionWideContent $size='sm'>
         <h1>Budget</h1>
-        Impact CO<sub>2</sub> est un service public numérique, c’est pourquoi nous sommes transparents sur les
-        ressources allouées et la manière dont elles sont employées.
+        Impact CO₂ est un service public numérique, c’est pourquoi nous sommes transparents sur les ressources allouées
+        et la manière dont elles sont employées.
         <br />
         <br />
         <br />
@@ -53,8 +53,8 @@ const Budget = () => {
         <br />
         <br />
         <h2>Fonctionnement</h2>
-        Impact CO<sub>2</sub> est une start-up d’état : l’équipe est donc portée par un intrapreneur qui est responsable
-        du service numérique développé au sein de son administration (l’ADEME en l’occurence).
+        Impact CO₂ est une start-up d’état : l’équipe est donc portée par un intrapreneur qui est responsable du service
+        numérique développé au sein de son administration (l’ADEME en l’occurence).
         <br />
         Son rôle est multiple : déploiement, gestion des produits, référent auprès de son administration (budget, compte
         rendus d’avancement).

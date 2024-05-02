@@ -41,7 +41,7 @@ export default function Details({ equivalent, category }: { equivalent: Computed
                 <br />
                 Valeurs exprimées en kg{' '}
                 <Button asLink onClick={() => setOpenModal(true)}>
-                  CO<sub>2</sub>e
+                  CO₂e
                 </Button>{' '}
                 émis{equivalent.include.post ? ` ${equivalent.include.post}` : '.'}
                 {equivalent.include.postNewLine && (
@@ -55,7 +55,7 @@ export default function Details({ equivalent, category }: { equivalent: Computed
               <>
                 {tCategory('before')}{' '}
                 <Button asLink onClick={() => setOpenModal(true)}>
-                  CO<sub>2</sub>e
+                  CO₂e
                 </Button>{' '}
                 {tCategory('after')} {tCategory(`include-${category.slug}`)}
               </>

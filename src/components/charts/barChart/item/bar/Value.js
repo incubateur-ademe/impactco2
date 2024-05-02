@@ -33,11 +33,7 @@ export default function Value(props) {
   return (
     <Wrapper $noBar={props.value / props.max === 0} $inside={props.value / props.max > 0.7}>
       <Number data-testid='bar-chart-item-value'>{formatNumber(props.value)}</Number>
-      <Unit>
-        {' '}
-        kg CO
-        <sub>2</sub>e
-      </Unit>
+      <Unit> kg CO ₂e</Unit>
     </Wrapper>
   )
 }

@@ -74,6 +74,6 @@
   padding: 0 4rem;
 
   input {
-    max-width: unset;
+    max-width: 100%;
   }
 }

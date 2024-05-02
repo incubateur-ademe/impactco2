@@ -262,7 +262,7 @@
       },
       {
         "value": 0.00442130627,
-        "_comment": "// = (Valeur en kgCO<sub>2</sub>e/kg de véhicule * Masse type) / Nombre de passagers / Durée de vie en km = (4 * 12000) / 30 / 361884",
+        "_comment": "// = (Valeur en kgCO₂e/kg de véhicule * Masse type) / Nombre de passagers / Durée de vie en km = (4 * 12000) / 30 / 361884",
         "id": 5
       }
     ],

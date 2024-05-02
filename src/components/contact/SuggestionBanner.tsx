@@ -19,9 +19,7 @@ const SuggestionBanner = ({
             <span className='text-xl'>
               <b>Un avis, une suggestion ?</b>
             </span>
-            <Subtitle>
-              Vos retours sont précieux pour améliorer le site Impact CO<sub>2</sub>.
-            </Subtitle>
+            <Subtitle>Vos retours sont précieux pour améliorer le site Impact CO₂.</Subtitle>
           </div>
           <Link
             asButton

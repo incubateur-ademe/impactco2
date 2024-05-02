@@ -34,7 +34,6 @@ const LivraisonSimulator = () => {
   } = useParamContext()
 
   const total = useMemo(() => {
-    console.log(values)
     engine.setSituation({
       'livraison colis . informations . catégorie': `'${values.produit}'`,
       'livraison colis . scénario': `'${values.retrait}'`,
@@ -56,7 +55,6 @@ const LivraisonSimulator = () => {
 
     const diffPlane = isPlane ? kmCO2Plane - zeroKmCO2 : 0
 
-    console.log(zeroKmCO2, diffPlane, diffKm0)
     return zeroKmCO2 + diffPlane + diffKm0
   }, [values, isHabit, isPlane])
 

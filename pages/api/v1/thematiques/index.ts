@@ -41,7 +41,7 @@ type APICategoryV1 = {
  *     tags:
  *     - ECV
  *     summary: Récupérer les thématiques du site
- *     description: Retourne les thématiques gérées par Impact CO<sub>2</sub> ainsi que leurs metadata
+ *     description: Retourne les thématiques gérées par Impact CO₂ ainsi que leurs metadata
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP

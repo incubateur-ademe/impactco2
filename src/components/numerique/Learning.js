@@ -49,17 +49,17 @@ export default function Learning() {
         <Statistic>
           <Number>2,5%</Number> des émissions de{' '}
           <Button asLink onClick={() => setOpenModal(true)}>
-            CO<sub>2</sub>e
+            CO₂e
           </Button>
         </Statistic>
         <Strong>
           La <Link href='/numerique/television'>production d’une télé</Link> émet autant de{' '}
           <Button asLink onClick={() => setOpenModal(true)}>
-            CO<sub>2</sub>e
+            CO₂e
           </Button>{' '}
           que si vous alliez à Marrakech en avion, soit 350 kg de{' '}
           <Button asLink onClick={() => setOpenModal(true)}>
-            CO<sub>2</sub>e
+            CO₂e
           </Button>
           .
         </Strong>
@@ -70,7 +70,7 @@ export default function Learning() {
           <strong>
             2,5% des émissions de{' '}
             <Button asLink onClick={() => setOpenModal(true)}>
-              CO<sub>2</sub>e
+              CO₂e
             </Button>{' '}
             totale en France ?
           </strong>
@@ -110,7 +110,7 @@ export default function Learning() {
           <strong>
             empreinte{' '}
             <Button asLink onClick={() => setOpenModal(true)}>
-              CO<sub>2</sub>e
+              CO₂e
             </Button>
           </strong>{' '}
           .

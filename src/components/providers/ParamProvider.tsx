@@ -180,26 +180,6 @@ export type Params = {
     setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
     engine: Engine
   }
-  email: {
-    situation: Partial<Record<string, PublicodesExpression | ASTNode>>
-    setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
-    engine: Engine
-  }
-  visio: {
-    situation: Partial<Record<string, PublicodesExpression | ASTNode>>
-    setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
-    engine: Engine
-  }
-  streaming: {
-    situation: Partial<Record<string, PublicodesExpression | ASTNode>>
-    setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
-    engine: Engine
-  }
-  'recherche web': {
-    situation: Partial<Record<string, PublicodesExpression | ASTNode>>
-    setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
-    engine: Engine
-  }
   numerique: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
   habillement: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
   mobilier: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
@@ -269,8 +249,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [teletravailDisplayAll, settTletravailDisplayAll] = useState(false)
 
   // Teletravail
-  const [teletravailTransport, setTeletravailTransport] = useState('')
-  const [presentiel, setPresentiel] = useState(5)
+  const [teletravailTransport, setTeletravailTransport] = useState('voiturethermique')
+  const [presentiel, setPresentiel] = useState(4)
   const [teletravail, setTeletravail] = useState(0)
   const [holidays, setHolidays] = useState(5)
   const [extraKm, setExtraKm] = useState(0.25)
@@ -282,10 +262,10 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [search, setSearch] = useState('')
 
   // Usage Numérique
-  const usageNumeriqueEngine = useMemo(
-    () => new Engine(negaocterRules, { logger: { log: () => {}, warn: () => {}, error: () => {} } }),
-    []
-  )
+  const usageNumeriqueEngine = useMemo(() => {
+    return new Engine(negaocterRules, { logger: { log: () => {}, warn: () => {}, error: () => {} } })
+  }, [])
+
   const [usageNumeriqueDisplayAll, setUsageNumeriqueDisplayAll] = useState(false)
   const [numberEmails, setNumberEmails] = useState<number>(50)
   const [localUsageNumeriqueSituation, setUsageNumeriqueSituation] =
@@ -301,62 +281,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       setInternUsageNumeriqueSituation
     )
   }, [localUsageNumeriqueSituation])
-
-  // Visio
-  const visioEngine = useMemo(
-    () => new Engine(negaocterRules, { logger: { log: () => {}, warn: () => {}, error: () => {} } }),
-    []
-  )
-  const [localVisioSituation, setVisioSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-  const [visioSituation, setInternVisioSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-
-  useEffect(() => {
-    updateSituation(visioEngine, visioSituation, localVisioSituation, setInternVisioSituation)
-  }, [localVisioSituation])
-
-  // Streaming
-  const streamingEngine = useMemo(
-    () => new Engine(negaocterRules, { logger: { log: () => {}, warn: () => {}, error: () => {} } }),
-    []
-  )
-  const [localStreamingSituation, setStreamingSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-  const [streamingSituation, setInternStreamingSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-
-  useEffect(() => {
-    updateSituation(streamingEngine, streamingSituation, localStreamingSituation, setInternStreamingSituation)
-  }, [localStreamingSituation])
-
-  // Email
-  const emailEngine = useMemo(
-    () => new Engine(negaocterRules, { logger: { log: () => {}, warn: () => {}, error: () => {} } }),
-    []
-  )
-  const [localEmailSituation, setEmailSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-  const [emailSituation, setInternEmailSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-
-  useEffect(() => {
-    updateSituation(emailEngine, emailSituation, localEmailSituation, setInternEmailSituation)
-  }, [localEmailSituation])
-
-  // Web
-  const webEngine = useMemo(
-    () => new Engine(negaocterRules, { logger: { log: () => {}, warn: () => {}, error: () => {} } }),
-    []
-  )
-  const [localWebSituation, setWebSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-  const [webSituation, setInternWebSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-
-  useEffect(() => {
-    updateSituation(webEngine, webSituation, localWebSituation, setInternWebSituation)
-  }, [localWebSituation])
 
   // Numérique
   const [numeriqueDisplayAll, setNumeriqueDisplayAll] = useState(false)
@@ -590,26 +514,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           situation: usageNumeriqueSituation,
           setSituation: setUsageNumeriqueSituation,
           engine: usageNumeriqueEngine,
-        },
-        email: {
-          situation: emailSituation,
-          setSituation: setEmailSituation,
-          engine: emailEngine,
-        },
-        visio: {
-          situation: visioSituation,
-          setSituation: setVisioSituation,
-          engine: visioEngine,
-        },
-        streaming: {
-          situation: streamingSituation,
-          setSituation: setStreamingSituation,
-          engine: streamingEngine,
-        },
-        'recherche web': {
-          situation: webSituation,
-          setSituation: setWebSituation,
-          engine: webEngine,
         },
         numerique: {
           displayAll: numeriqueDisplayAll,

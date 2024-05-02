@@ -25,10 +25,7 @@ const Page = ({ resolvedUrl }: { resolvedUrl: string }) => {
       <PageTitle
         title={
           <>
-            Visualisez facilement{' '}
-            <span className='text-secondary'>
-              une quantité de CO<sub>2</sub>e
-            </span>
+            Visualisez facilement <span className='text-secondary'>une quantité de CO₂e</span>
           </>
         }
         description={

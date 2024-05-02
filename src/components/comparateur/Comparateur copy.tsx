@@ -126,9 +126,7 @@ const Comparateur = ({ iframe }: { iframe?: boolean }) => {
             </button>
           ) : (
             <div className={classNames(styles.suffix, 'text-sm')} ref={suffixDivRef}>
-              <span>
-                kg CO<sub>2</sub>e
-              </span>
+              <span>kg CO₂e</span>
             </div>
           )}
         </div>

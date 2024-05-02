@@ -35,12 +35,7 @@ const Chauffage = ({ category, iframe }: { category: Category; iframe?: boolean 
       iframe={iframe}
       params={{ m2: { value: m2, setter: setM2 } as CustomParamValue }}
       withFooter>
-      <Simulator
-        text={
-          <>
-            Découvrez la quantité de CO<sub>2</sub>e que vous émettez pour chauffer cette surface par année
-          </>
-        }>
+      <Simulator text={<>Découvrez la quantité de CO₂e que vous émettez pour chauffer cette surface par année</>}>
         <SliderWithInput
           value={m2}
           setValue={setM2}

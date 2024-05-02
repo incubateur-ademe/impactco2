@@ -11,10 +11,7 @@ const DetailValue = ({ value, unit }: { value: number; unit: string }) => {
         })}{' '}
         {unit}
       </span>{' '}
-      <span className={styles.unit}>
-        CO
-        <sub>2</sub>e
-      </span>
+      <span className={styles.unit}>CO ₂e</span>
     </>
   )
 }

@@ -144,7 +144,7 @@ export default function LiseuseBookComparator() {
             </strong>{' '}
             avant qu'elle émette moins de{' '}
             <Button asLink onClick={() => setOpenModal(true)}>
-              CO<sub>2</sub>e
+              CO₂e
             </Button>{' '}
             que l'équivalent en livres papier.
           </Result>

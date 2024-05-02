@@ -85,11 +85,8 @@ export default function LearningFruit() {
         {openModal && <Co2eModal setOpen={setOpenModal} />}
         <StrongWrapper>
           <Strong>
-            de{' '}
-            <StyledLink onClick={() => setOpenModal(true)}>
-              kgCO<sub>2</sub>e
-            </StyledLink>{' '}
-            générés par une tomate produite hors saison par rapport à la même tomate produite à la bonne saison.
+            de <StyledLink onClick={() => setOpenModal(true)}>kgCO₂e</StyledLink> générés par une tomate produite hors
+            saison par rapport à la même tomate produite à la bonne saison.
           </Strong>
         </StrongWrapper>
         <Text>

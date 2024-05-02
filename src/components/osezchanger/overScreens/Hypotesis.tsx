@@ -7,10 +7,7 @@ const Hypotesis = () => {
   return (
     <Container data-testid='hypothesis-modal'>
       <Text>
-        L’impact carbone moyen d’une paire de chaussures neuve est de{' '}
-        <b>
-          16,5 kg CO<sub>2</sub>e.
-        </b>
+        L’impact carbone moyen d’une paire de chaussures neuve est de <b>16,5 kg CO₂e.</b>
         <br />
         <br />
         Nous faisons une moyenne des trois facteurs d’émissions issus de la{' '}
@@ -28,7 +25,7 @@ const Hypotesis = () => {
         <HypotesisCard slug='chaussuresdesport' />
       </Cards>
       <Text>
-        Soit : (13 + 17 + 19)/3 = 16,5 kg CO<sub>2</sub>e.
+        Soit : (13 + 17 + 19)/3 = 16,5 kg CO₂e.
         <br />
         <br />
         Pour connaître l’impact carbone du nombre de paires de chaussures neuves achetées nous faisons donc le calcul
