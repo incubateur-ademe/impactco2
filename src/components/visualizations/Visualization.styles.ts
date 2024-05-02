@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
 import Link from 'components/base/buttons/Link'
 
 export const Title = styled.h2`
@@ -31,7 +30,7 @@ export const Equivalent = styled.div`
   position: relative;
 `
 
-export const Emojis = styled(Emoji)<{ small?: boolean; xsmall?: boolean; margin?: number }>`
+export const Emojis = styled.div<{ small?: boolean; xsmall?: boolean; margin?: number }>`
   align-items: center;
   display: flex;
   flex: 1;

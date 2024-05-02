@@ -2,7 +2,6 @@ import React, { useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import formatName from 'utils/formatName'
 import { categories } from 'components/providers/categories'
-import Emoji from 'components/base/Emoji'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 
 const Wrapper = styled.div`
@@ -94,7 +93,6 @@ export default function Suggestions(props) {
                 onClick={() => props.handleSuggestionClick({ link: `/${category.slug}` })}
                 onMouseDown={(e) => e.preventDefault()}>
                 <Name>
-                  <Emoji>{category.emoji}</Emoji>
                   <span>{category.name}</span>
                 </Name>
               </Suggestion>

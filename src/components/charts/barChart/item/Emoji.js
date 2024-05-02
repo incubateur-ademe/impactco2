@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.div`
   font-size: 2rem;
@@ -22,14 +21,5 @@ const Second = styled.span`
   transform: translate(30%, 50%);
 `
 export default function EmojiComponent(props) {
-  return props.emoji ? (
-    <Wrapper>
-      <Emoji>{props.emoji}</Emoji>
-      {props.secondEmoji && (
-        <Second>
-          <Emoji>{props.secondEmoji}</Emoji>
-        </Second>
-      )}
-    </Wrapper>
-  ) : null
+  return props.emoji ? <Wrapper>{props.secondEmoji && <Second />}</Wrapper> : null
 }

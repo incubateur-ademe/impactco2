@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import formatName from 'utils/formatName'
-import Emoji from 'components/base/Emoji'
 
 const Wrapper = styled.button`
   align-items: center;
@@ -35,7 +34,7 @@ const Left = styled.div`
   display: flex;
   gap: 0.75rem;
 `
-const StyledEmoji = styled(Emoji)`
+const StyledEmoji = styled.div`
   font-size: 1.25rem;
 `
 export default function EquivalentSquare(props) {

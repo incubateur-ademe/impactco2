@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
@@ -30,7 +29,7 @@ const Top = styled.div`
   flex-direction: column;
   position: relative;
 `
-const StyledEmoji = styled(Emoji)`
+const StyledEmoji = styled.div`
   font-size: 2rem;
   margin: 1.25rem 0 0;
   text-align: center;

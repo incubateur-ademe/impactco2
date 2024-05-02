@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Category as CategoryType } from 'types/category'
 import { MEDIA } from 'utils/styles'
-import Emoji from 'components/base/Emoji'
 import Link from 'components/base/buttons/Link'
 
 const Wrapper = styled.div`
@@ -19,7 +18,7 @@ const Wrapper = styled.div`
     width: calc(50% - 0.5rem);
   }
 `
-const StyledEmoji = styled(Emoji)`
+const StyledEmoji = styled.div`
   font-size: 2rem;
   margin-bottom: 0.5rem;
 

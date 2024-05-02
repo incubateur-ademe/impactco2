@@ -23,6 +23,7 @@ type ShareableProps = {
   secondary?: string
   overScreen?: OverScreenInfo | undefined
   setOverScreen?: Dispatch<SetStateAction<string | undefined>>
+  noBottomBorders?: boolean
 }
 const Shareable = ({
   children,
@@ -33,6 +34,7 @@ const Shareable = ({
   secondary,
   overScreen,
   setOverScreen,
+  noBottomBorders,
 }: ShareableProps) => {
   const t = useTranslations('overscreen')
   const { theme } = useParamContext()
@@ -100,7 +102,7 @@ const Shareable = ({
               )}
             </div>
           ) : (
-            <div className={styles.separator} />
+            !noBottomBorders && <div className={styles.separator} />
           )}
           <div className={styles.logos}>
             <Logos small />
