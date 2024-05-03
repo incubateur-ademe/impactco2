@@ -6,11 +6,8 @@ export const casPratiques = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'avion-pny',
-    emoji: '🗽',
     category: 13,
     total: 1770,
-    default: false,
-    tile: false,
     source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien',
     meta: {
       title: 'A/R Paris - New-York en avion',
@@ -31,8 +28,6 @@ export const casPratiques = [
     slug: 'tgv-paris-berlin',
     category: 13,
     total: 7.26,
-    default: false,
-    tile: false,
     source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
     meta: {
       title: 'A/R Paris - Berlin en TGV',
@@ -53,8 +48,6 @@ export const casPratiques = [
     slug: 'tgv-paris-marseille',
     category: 13,
     total: 4.4,
-    default: false,
-    tile: false,
     source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
     meta: {
       title: 'A/R Paris - Marseille en TGV',
@@ -75,8 +68,6 @@ export const casPratiques = [
     slug: 'voiture-lille-nimes',
     category: 13,
     total: 410,
-    default: false,
-    tile: false,
     source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
     meta: {
       title: 'A/R Lille - Nîmes en voiture',
@@ -97,8 +88,6 @@ export const casPratiques = [
     category: 13,
     percentage: true,
     total: 9300,
-    default: false,
-    tile: false,
     source: 'https://nosgestesclimat.fr/',
     meta: {
       title: 'Citoyen Français',
@@ -118,8 +107,6 @@ export const casPratiques = [
     slug: 'game-of-thrones',
     category: 13,
     total: 0.0317,
-    default: false,
-    tile: false,
     source: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
     meta: {
       title: 'Épisode de Game of thrones',
@@ -139,8 +126,6 @@ export const casPratiques = [
     slug: 'friends',
     category: 13,
     total: 7.86,
-    default: false,
-    tile: false,
     source: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
     meta: {
       title: 'Épisode de Friends',

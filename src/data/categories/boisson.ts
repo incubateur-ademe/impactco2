@@ -5,11 +5,8 @@ export const boissons = [
     prefix: "Litre[s] d'",
     synonyms: ['boire'],
     slug: 'eaudurobinet',
-    emoji: '🚰',
     category: 3,
     total: 0.000132,
-    default: true,
-    tile: false,
     source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
     meta: {
       title: 'Eau du robinet',
@@ -19,12 +16,10 @@ export const boissons = [
   },
   {
     id: 31000,
-    Code_CIQUAL: 18430,
     name: 'Eau en bouteille',
     prefix: "Litre[s] d'",
     synonyms: ['boire'],
     slug: 'eauenbouteille',
-    emoji: '💧',
     category: 3,
     ecv: [
       {
@@ -48,8 +43,6 @@ export const boissons = [
         value: 0.002598542165965416,
       },
     ],
-    default: true,
-    tile: true,
     source: 'https://agribalyse.ademe.fr/app/aliments/18430#Eau_embouteill%C3%A9e_de_source',
     meta: {
       title: 'Eau en bouteille',
@@ -59,12 +52,10 @@ export const boissons = [
   },
   {
     id: 31001,
-    Code_CIQUAL: 18026,
     name: 'Soda',
     prefix: 'Litre[s] de ',
     synonyms: ['boire'],
     slug: 'soda',
-    emoji: '🥤',
     category: 3,
     ecv: [
       {
@@ -92,8 +83,6 @@ export const boissons = [
         value: 0.014473543677499463,
       },
     ],
-    default: true,
-    tile: false,
     source: 'https://agribalyse.ademe.fr/app/aliments/18026#Boisson_gazeuse,_sans_jus_de_fruit,_sucr%C3%A9e',
     meta: {
       title: 'Soda',
@@ -103,12 +92,10 @@ export const boissons = [
   },
   {
     id: 31002,
-    Code_CIQUAL: 5001,
     name: 'Bière',
     prefix: 'Litre[s] de ',
     synonyms: ['boire'],
     slug: 'biere',
-    emoji: '🍺',
     category: 3,
     ecv: [
       {
@@ -136,8 +123,6 @@ export const boissons = [
         value: 0.022278755905036994,
       },
     ],
-    default: true,
-    tile: false,
     source: 'https://agribalyse.ademe.fr/app/aliments/5001#Bi%C3%A8re_%22coeur_de_march%C3%A9%22_(4-5%C2%B0_alcool)',
     meta: {
       title: 'Bière',
@@ -147,12 +132,10 @@ export const boissons = [
   },
   {
     id: 31003,
-    Code_CIQUAL: 5214,
     name: 'Vin',
     prefix: 'Litre[s] de ',
     synonyms: ['boire'],
     slug: 'vin',
-    emoji: '🍷',
     category: 3,
     ecv: [
       {
@@ -180,8 +163,6 @@ export const boissons = [
         value: 0.015393454940414145,
       },
     ],
-    default: true,
-    tile: false,
     source: 'https://agribalyse.ademe.fr/app/aliments/5214#Vin_rouge',
     meta: {
       title: 'Vin',
@@ -191,13 +172,11 @@ export const boissons = [
   },
   {
     id: 31004,
-    Code_CIQUAL: 19051,
     name: 'Lait',
     subtitle: 'De vache',
     prefix: 'Litre[s] de ',
     synonyms: ['boire'],
     slug: 'laitdevache',
-    emoji: '🥛',
     category: 3,
     ecv: [
       {
@@ -221,8 +200,6 @@ export const boissons = [
         value: 0.049326298165567405,
       },
     ],
-    default: true,
-    tile: false,
     source: 'https://agribalyse.ademe.fr/app/aliments/19051#Lait_%C3%A9cr%C3%A9m%C3%A9,_pasteuris%C3%A9',
     meta: {
       title: 'Lait',
@@ -232,12 +209,10 @@ export const boissons = [
   },
   {
     name: 'Lait',
-    Code_CIQUAL: 18900,
     subtitle: 'De soja',
     prefix: 'Litre[s] de ',
     synonyms: ['boire'],
     slug: 'laitdesoja',
-    emoji: '🍈',
     category: 3,
     ecv: [
       {
@@ -262,8 +237,6 @@ export const boissons = [
       },
     ],
     total: 0.42,
-    default: false,
-    tile: false,
     source: 'https://agribalyse.ademe.fr/app/aliments/18900#Boisson_au_soja,_nature',
     meta: {
       title: 'Lait',
@@ -273,10 +246,8 @@ export const boissons = [
   },
   {
     name: 'Thé',
-    Code_CIQUAL: 18020,
     prefix: 'Litre[s] de ',
     slug: 'thé',
-    emoji: '🫖',
     category: 3,
     ecv: [
       {
@@ -300,8 +271,6 @@ export const boissons = [
         value: 0.0131566263810536,
       },
     ],
-    default: true,
-    tile: false,
     meta: {
       title: '',
       description: '',
@@ -311,10 +280,8 @@ export const boissons = [
   },
   {
     name: 'Café',
-    Code_CIQUAL: 18004,
     prefix: 'Litre[s] de ',
     slug: 'cafe',
-    emoji: '☕️',
     category: 3,
     ecv: [
       {
@@ -342,8 +309,6 @@ export const boissons = [
         value: 0.023365480858616866,
       },
     ],
-    default: true,
-    tile: false,
     meta: {
       title: 'Café',
       description: '',

@@ -18,7 +18,6 @@ describe('getEmissionPerDistance', () => {
       {
         display: { max: 100, min: 11 },
         emissions: { gco2e: 19.799999999999997, kgco2e: 0.019799999999999998, tco2e: 0.000019799999999999997 },
-        emoji: '🚃',
         id: 14,
         name: 'RER ou Transilien',
       },

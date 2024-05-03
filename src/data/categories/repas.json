@@ -8,7 +8,6 @@
       "viande"
     ],
     "slug": "repasavecduboeuf",
-    "emoji": "🥩",
     "category": 2,
     "total": 7.26,
     "default": true,
@@ -27,7 +26,6 @@
       "alimenter"
     ],
     "slug": "repasvegetarien",
-    "emoji": "🥗",
     "category": 2,
     "total": 0.51,
     "default": true,
@@ -45,7 +43,6 @@
       "alimenter"
     ],
     "slug": "repasvegetalien",
-    "emoji": "🍎",
     "category": 2,
     "total": 0.39,
     "default": true,
@@ -63,7 +60,6 @@
       "alimenter"
     ],
     "slug": "repasavecdupoissonblanc",
-    "emoji": "🐟",
     "category": 2,
     "total": 1.98,
     "default": true,
@@ -81,7 +77,6 @@
       "alimenter"
     ],
     "slug": "repasavecdupoissongras",
-    "emoji": "🐟",
     "category": 2,
     "total": 1.11,
     "default": true,
@@ -101,7 +96,6 @@
       "viande"
     ],
     "slug": "repasavecdupoulet",
-    "emoji": "🍗",
     "category": 2,
     "total": 1.58,
     "default": true,

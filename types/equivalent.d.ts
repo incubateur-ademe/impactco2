@@ -1,17 +1,13 @@
 type BaseEquivalent = {
+  id?: string | number
   name: string
   slug: string
-  emoji?: string
   category: number
-  default: boolean
-  tile: boolean
-  meta: {
+  meta?: {
     title: string
     description: string
   }
 
-  id?: string | number
-  secondEmoji?: string
   include?: { pre: string; post?: string; postNewLine?: string }
   source?: string
   prefix?: string

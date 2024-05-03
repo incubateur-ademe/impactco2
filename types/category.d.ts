@@ -3,7 +3,6 @@ import { ComputedEquivalent } from './equivalent'
 export type Category = {
   id: number
   name: string
-  emoji: string
   slug: string
   title?: string
   header: string

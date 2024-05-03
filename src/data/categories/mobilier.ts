@@ -4,10 +4,7 @@ export const mobiliers = [
     name: 'Canapé[s]',
     subtitle: 'Convertible[s]',
     slug: 'canapeconvertible',
-    emoji: '🛋',
     category: 7,
-    default: false,
-    tile: false,
     meta: {
       title: 'Canapé convertible',
       description:
@@ -40,10 +37,7 @@ export const mobiliers = [
     name: 'Chaise[s]',
     subtitle: 'En bois',
     slug: 'chaiseenbois',
-    emoji: '🪑',
     category: 7,
-    default: true,
-    tile: false,
     meta: {
       title: 'Chaise en bois',
       description:
@@ -76,10 +70,7 @@ export const mobiliers = [
     name: 'Table[s]',
     subtitle: 'En bois',
     slug: 'tableenbois',
-    emoji: '🪵',
     category: 7,
-    default: true,
-    tile: false,
     meta: {
       title: 'Table en bois',
       description:
@@ -112,10 +103,7 @@ export const mobiliers = [
     name: 'Canapé[s]',
     subtitle: 'Textile',
     slug: 'canapetextile',
-    emoji: '🛋',
     category: 7,
-    default: true,
-    tile: false,
     meta: {
       title: 'Canapé',
       description:
@@ -147,10 +135,7 @@ export const mobiliers = [
     id: 26963,
     name: 'Armoire',
     slug: 'armoire',
-    emoji: '🚪',
     category: 7,
-    default: true,
-    tile: false,
     meta: {
       title: 'Armoire',
       description:
@@ -183,11 +168,8 @@ export const mobiliers = [
     name: 'Lit',
     subtitle: 'Cadre + sommier + matelas',
     slug: 'lit',
-    emoji: '🛏',
     category: 7,
-    default: true,
     total: 115,
-    tile: false,
     meta: {
       title: 'Lit en bois',
       description:

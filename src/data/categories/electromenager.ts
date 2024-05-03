@@ -3,7 +3,6 @@ export const electromenager = [
     name: 'Bouilloire[s]',
     id: 28306,
     slug: 'bouilloire',
-    emoji: '⚗️',
     category: 6,
     ecv: [
       {
@@ -28,8 +27,6 @@ export const electromenager = [
       defaultyears: 6,
     },
     end: -0.659363081745786,
-    default: false,
-    tile: false,
     meta: {
       title: 'Bouilloire',
       description:
@@ -45,7 +42,6 @@ export const electromenager = [
     subtitle: 'À dosettes',
     synonyms: ['nespresso'],
     slug: 'cafetieredosette',
-    emoji: '☕️',
     category: 6,
     ecv: [
       {
@@ -70,8 +66,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 52.7491626905852,
-    default: false,
-    tile: false,
     meta: {
       title: 'Cafetière à dosettes',
       description:
@@ -86,7 +80,6 @@ export const electromenager = [
     id: 28303,
     subtitle: 'Filtre',
     slug: 'cafetierefiltre',
-    emoji: '☕️',
     category: 6,
     ecv: [
       {
@@ -111,8 +104,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 29.8824988339172,
-    default: true,
-    tile: false,
     meta: {
       title: 'Cafetière à filtres',
       description:
@@ -128,7 +119,6 @@ export const electromenager = [
     subtitle: 'Expresso',
     synonyms: ['espresso'],
     slug: 'cafetiereexpresso',
-    emoji: '☕️',
     category: 6,
     ecv: [
       {
@@ -153,8 +143,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 23.9101982705374,
-    default: false,
-    tile: false,
     meta: {
       title: 'Cafetière expresso',
       description:
@@ -169,7 +157,6 @@ export const electromenager = [
     id: 26986,
     subtitle: 'Électrique',
     slug: 'fourelectrique',
-    emoji: '🎛',
     category: 6,
     ecv: [
       {
@@ -194,8 +181,6 @@ export const electromenager = [
       defaultyears: 12,
     },
     end: -30.0927,
-    default: true,
-    tile: false,
     meta: {
       title: 'Four électrique',
       description:
@@ -209,7 +194,6 @@ export const electromenager = [
     name: 'Lave-vaisselle',
     id: 26984,
     slug: 'lavevaisselle',
-    emoji: '🍽',
     category: 6,
     ecv: [
       {
@@ -234,8 +218,6 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -22.6301522707884,
-    default: true,
-    tile: false,
     meta: {
       title: 'Lave-vaisselle',
       description:
@@ -250,7 +232,6 @@ export const electromenager = [
     id: 26983,
     subtitle: '7kg',
     slug: 'lavelinge',
-    emoji: '🧦',
     category: 6,
     ecv: [
       {
@@ -275,8 +256,6 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -47.7754436590173,
-    default: true,
-    tile: false,
     meta: {
       title: "L'impact sur le climat d'un lave linge",
       description:
@@ -290,7 +269,6 @@ export const electromenager = [
     name: 'Réfrigérateur',
     id: 26976,
     slug: 'refrigirateur',
-    emoji: '❄️',
     category: 6,
     ecv: [
       {
@@ -315,8 +293,6 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -20.163316975983,
-    default: true,
-    tile: false,
     meta: {
       title: 'Réfrigérateur',
       description:
@@ -330,10 +306,7 @@ export const electromenager = [
     name: 'Aspirateur',
     id: 26990,
     slug: 'aspirateur',
-    emoji: '🧹',
     category: 6,
-    default: true,
-    tile: false,
     meta: {
       title: 'Aspirateur',
       description:
@@ -366,7 +339,6 @@ export const electromenager = [
     id: 28325,
     synonyms: ['climatisation'],
     slug: 'climatiseur',
-    emoji: '❄️',
     category: 6,
     ecv: [
       {
@@ -391,8 +363,6 @@ export const electromenager = [
       defaultyears: 6,
     },
     end: 65.4233854443126,
-    default: false,
-    tile: false,
     meta: {
       title: 'Climatiseur',
       description:

@@ -17,7 +17,6 @@ export const categories = [
     id: 13,
     hide: true,
     name: 'Cas pratiques',
-    emoji: '🗽',
     slug: 'caspratiques',
     header: 'de cas pratiques',
     title: "Découvrez l'impact de cas pratique sur le climat",
@@ -36,7 +35,6 @@ export const categories = [
   {
     id: 10,
     name: 'Usage numérique',
-    emoji: '✉️',
     slug: 'usagenumerique',
     header: 'des usages numériques',
     sources: [
@@ -67,7 +65,6 @@ export const categories = [
   {
     id: 12,
     name: 'Livraison',
-    emoji: '📦',
     slug: 'livraison',
     header: 'des livraison de colis',
     title: "Découvrez l'impact des livraison de colis<br/>sur le climat",
@@ -87,7 +84,6 @@ export const categories = [
   {
     id: 8,
     name: 'Chauffage',
-    emoji: '🏠',
     slug: 'chauffage',
     header: 'du chauffage',
     sources: [
@@ -117,7 +113,6 @@ export const categories = [
   {
     id: 4,
     name: 'Transport',
-    emoji: '🚴‍♂️',
     slug: 'transport',
     header: 'du transport',
     description: 'Calculer l’impact carbone des moyens de transport',
@@ -144,7 +139,6 @@ export const categories = [
   {
     id: 9,
     name: 'Fruits et légumes',
-    emoji: '🍅',
     slug: 'fruitsetlegumes',
     header: 'des fruits et légumes de saisons',
     description: 'Retrouvez les fruits et légumes de la saison et comparez leur empreinte carbone',
@@ -162,7 +156,6 @@ export const categories = [
   {
     id: 1,
     name: 'Numérique',
-    emoji: '💻',
     slug: 'numerique',
     header: 'du numérique',
     sources: [
@@ -192,7 +185,6 @@ export const categories = [
   {
     id: 2,
     name: 'Repas',
-    emoji: '🍽',
     slug: 'repas',
     header: "de l'alimentation",
     sources: [
@@ -218,7 +210,6 @@ export const categories = [
   {
     id: 5,
     name: 'Habillement',
-    emoji: '👔',
     slug: 'habillement',
     header: 'de la mode',
     sources: [
@@ -248,7 +239,6 @@ export const categories = [
   {
     id: 7,
     name: 'Mobilier',
-    emoji: '🪑',
     slug: 'mobilier',
     header: 'du mobilier',
     sources: [
@@ -278,7 +268,6 @@ export const categories = [
   {
     id: 6,
     name: 'Électroménager',
-    emoji: '🛁',
     slug: 'electromenager',
     header: "de l'électroménager",
     sources: [
@@ -308,7 +297,6 @@ export const categories = [
   {
     id: 3,
     name: 'Boisson',
-    emoji: '🍹',
     slug: 'boisson',
     header: 'des boissons',
     title: "Découvrez l'impact des boissons sur le climat",

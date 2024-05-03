@@ -38,7 +38,6 @@ export const numeriques = [
       'BlackBerry',
     ],
     slug: 'smartphone',
-    emoji: '📱',
     category: 1,
     ecv: [
       {
@@ -55,8 +54,6 @@ export const numeriques = [
       defaultyears: 2.5,
     },
     end: 0.2,
-    default: true,
-    tile: true,
     meta: {
       title: 'Smartphone',
       description:
@@ -71,7 +68,6 @@ export const numeriques = [
   {
     name: 'Ordinateur[s] fixe[s] sans écran (particulier)',
     slug: 'ordinateurfixeparticulier',
-    emoji: '🖥️',
     category: 1,
     ecv: [
       {
@@ -88,8 +84,6 @@ export const numeriques = [
       defaultyears: 6,
     },
     end: 6.6,
-    default: true,
-    tile: false,
     meta: {
       title: 'Poids CO₂e ordinateur fixe (particulier)',
       description:
@@ -104,7 +98,6 @@ export const numeriques = [
   {
     name: 'Ordinateur[s] fixe[s] sans écran (professionnel)',
     slug: 'ordinateurfixeprofessionnel',
-    emoji: '🖥️',
     category: 1,
     ecv: [
       {
@@ -121,8 +114,6 @@ export const numeriques = [
       defaultyears: 6,
     },
     end: 6.6,
-    default: true,
-    tile: false,
     meta: {
       title: 'Poids CO₂e ordinateur fixe (professionnel)',
       description:
@@ -137,15 +128,12 @@ export const numeriques = [
   {
     name: "Écran[s] d'ordinateur",
     slug: 'ecran',
-    emoji: '🖥',
     category: 1,
     usage: {
       peryear: 4,
       defaultyears: 6,
     },
     end: 3.9,
-    default: false,
-    tile: false,
     meta: {
       title: "Poids CO₂e d'un écran",
       description:
@@ -170,15 +158,12 @@ export const numeriques = [
   {
     name: 'Tablette[s]',
     slug: 'tabletteclassique',
-    emoji: '💻',
     category: 1,
     usage: {
       peryear: 1.1,
       defaultyears: 3,
     },
     end: 0.4,
-    default: true,
-    tile: false,
     meta: {
       title: 'Empreinte carbone tablette',
       description:
@@ -203,7 +188,6 @@ export const numeriques = [
   {
     name: 'Télévision[s] ',
     slug: 'television',
-    emoji: '📺',
     category: 1,
     ecv: [
       {
@@ -220,8 +204,6 @@ export const numeriques = [
       defaultyears: 8,
     },
     end: 11.8,
-    default: true,
-    tile: false,
     meta: {
       title: 'Télévision',
       description:
@@ -236,7 +218,6 @@ export const numeriques = [
   {
     name: 'Ordinateur[s] portable[s]',
     slug: 'ordinateurportable',
-    emoji: '💻',
     category: 1,
     ecv: [
       {
@@ -253,8 +234,6 @@ export const numeriques = [
       defaultyears: 5,
     },
     end: 2.8,
-    default: true,
-    tile: false,
     meta: {
       title: 'Ordinateur portable',
       description:
@@ -269,7 +248,6 @@ export const numeriques = [
   {
     name: 'Enceinte[s] connectée[s]',
     slug: 'enceintebluetooth',
-    emoji: '🔊',
     category: 1,
     ecv: [
       {
@@ -286,8 +264,6 @@ export const numeriques = [
       defaultyears: 5,
     },
     end: 0.7,
-    default: false,
-    tile: false,
     meta: {
       title: "Impact climat d'une enceinte connectée",
       description:
@@ -299,7 +275,6 @@ export const numeriques = [
   {
     name: 'Téléphone[s] basique[s]',
     slug: 'telephonebasique',
-    emoji: '📞',
     category: 1,
     ecv: [
       {
@@ -312,8 +287,6 @@ export const numeriques = [
       defaultyears: 2.5,
     },
     end: 0.1,
-    default: false,
-    tile: false,
     meta: {
       title: "Impact climat d'un téléphone basique",
       description:
@@ -325,7 +298,6 @@ export const numeriques = [
   {
     name: 'Casque[s] de réalité virtuelle',
     slug: 'casquevr',
-    emoji: '🎮',
     category: 1,
     ecv: [
       {
@@ -342,8 +314,6 @@ export const numeriques = [
       defaultyears: 5,
     },
     end: 1.3,
-    default: false,
-    tile: false,
     meta: {
       title: "Impact climat d'un casque de réalité virtuelle",
       description:
@@ -359,7 +329,6 @@ export const numeriques = [
     name: 'Alimentation[s] externe[s]',
     subtitle: 'pour ordinateur portable',
     slug: 'alimentationordinateur',
-    emoji: '🔌',
     category: 1,
     ecv: [
       {
@@ -372,8 +341,6 @@ export const numeriques = [
       },
     ],
     end: 0.5,
-    default: false,
-    tile: false,
     meta: {
       title: "Impact climat d'une alimentation externe (pour ordinateur portable)",
       description:
@@ -386,7 +353,6 @@ export const numeriques = [
     name: 'Alimentation[s] externe[s]',
     subtitle: 'pour smartphone ou tablette',
     slug: 'alimentationsmartphone',
-    emoji: '🔌',
     category: 1,
     ecv: [
       {
@@ -399,8 +365,6 @@ export const numeriques = [
       },
     ],
     end: 0.1,
-    default: false,
-    tile: false,
     meta: {
       title: "Impact climat d'une alimentation externe (pour smartphone ou tablette)",
       description:
@@ -412,7 +376,6 @@ export const numeriques = [
   {
     name: 'Disque[s] dur[s] externe[s]',
     slug: 'disquedur',
-    emoji: '💽',
     category: 1,
     ecv: [
       {
@@ -425,8 +388,6 @@ export const numeriques = [
       },
     ],
     end: 0.3,
-    default: false,
-    tile: false,
     meta: {
       title: "Impact climat d'un disque dur externe",
       description:
@@ -438,7 +399,6 @@ export const numeriques = [
   {
     name: 'Clef[s] usb',
     slug: 'clefusb',
-    emoji: '💾',
     category: 1,
     ecv: [
       {
@@ -450,8 +410,6 @@ export const numeriques = [
         value: 2.9,
       },
     ],
-    default: false,
-    tile: false,
     meta: {
       title: "Impact climat d'une clef USB",
       description: "Découvrez l'impact d'une clef USB avec Impact CO₂ ainsi que le détail de son empreinte carbone",
@@ -465,7 +423,6 @@ export const numeriques = [
   {
     name: 'Box[s]',
     slug: 'box',
-    emoji: '☎️',
     category: 1,
     ecv: [
       {
@@ -482,8 +439,6 @@ export const numeriques = [
       defaultyears: 5,
     },
     end: 1.6,
-    default: false,
-    tile: false,
     meta: {
       title: "Impact climat d'une box",
       description: "Découvrez l'impact d'une box avec Impact CO₂ ainsi que le détail de son empreinte carbone",

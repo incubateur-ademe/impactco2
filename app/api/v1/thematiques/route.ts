@@ -11,7 +11,6 @@ import { trackAPIRequest } from 'utils/middleware'
  *       required:
  *       - id
  *       - name
- *       - emoji
  *       - slug
  *       properties:
  *         id:
@@ -20,9 +19,6 @@ import { trackAPIRequest } from 'utils/middleware'
  *         name:
  *           type: string
  *           example: Usage numérique
- *         emoji:
- *           type: string
- *           example: ✉️
  *         slug:
  *           type: string
  *           example: usagenumerique
@@ -67,10 +63,9 @@ export async function GET(req: NextRequest) {
     {
       data: categories
         .filter((category) => category.slug !== 'livraison')
-        .map(({ id, name, emoji, slug }) => ({
+        .map(({ id, name, slug }) => ({
           id,
           name,
-          emoji,
           slug,
         }))
         .sort((a, b) => a.id - b.id),

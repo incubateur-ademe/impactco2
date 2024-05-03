@@ -1,12 +1,9 @@
 export const fruitsEtLegumes = [
   {
     name: 'Fraise',
-    Code_CIQUAL: 13014,
-    Code_AGB: '13014_2',
     prefix: 'kg de ',
     slug: 'fraise',
     synonyms: ['manger, fruit'],
-    emoji: '🍓',
     category: 9,
     ecv: [
       {
@@ -26,23 +23,14 @@ export const fruitsEtLegumes = [
         value: 0.0014852275922706364,
       },
     ],
-    default: true,
-    tile: false,
     months: [4, 5, 6],
     source: 'https://agribalyse.ademe.fr/app/aliments/13014_2#Fraise_de_saison,_crue',
-    meta: {
-      title: 'Fraise',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de fraises : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Pomme',
-    Code_CIQUAL: 13039,
     prefix: 'kg de ',
     slug: 'pomme',
     synonyms: ['manger, fruit'],
-    emoji: '🍏',
     category: 9,
     ecv: [
       {
@@ -62,23 +50,14 @@ export const fruitsEtLegumes = [
         value: 0.007807531744479746,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue',
-    meta: {
-      title: 'Pomme',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de pommes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Orange',
-    Code_CIQUAL: 13034,
     prefix: "kg d'",
     slug: 'orange',
     synonyms: ['manger, fruit'],
-    emoji: '🍊',
     category: 9,
     ecv: [
       {
@@ -98,23 +77,14 @@ export const fruitsEtLegumes = [
         value: 0.013668524840308626,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2],
     source: 'https://agribalyse.ademe.fr/app/aliments/13034#Orange,_pulpe,_crue',
-    meta: {
-      title: 'Orange',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg d'oranges : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Citron',
-    Code_CIQUAL: 13009,
     prefix: 'kg de ',
     slug: 'citron',
     synonyms: ['manger, fruit'],
-    emoji: '🍋',
     category: 9,
     ecv: [
       {
@@ -134,23 +104,14 @@ export const fruitsEtLegumes = [
         value: 0.022722851698858557,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1],
     source: 'https://agribalyse.ademe.fr/app/aliments/13009',
-    meta: {
-      title: 'Citron',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de citrons : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Ail',
-    Code_CIQUAL: 11000,
     prefix: "kg d'",
     slug: 'ail',
     synonyms: ['manger, fruit'],
-    emoji: '🧄',
     category: 9,
     ecv: [
       {
@@ -170,23 +131,14 @@ export const fruitsEtLegumes = [
         value: 0.017651621396450073,
       },
     ],
-    default: true,
-    tile: false,
     months: [6, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/11000',
-    meta: {
-      title: 'Ail',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg d'ail : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Artichaut',
-    Code_CIQUAL: 20052,
     prefix: "kg d'",
     slug: 'artichaut',
     synonyms: ['manger, fruit'],
-    emoji: '🌳',
     category: 9,
     ecv: [
       {
@@ -206,23 +158,14 @@ export const fruitsEtLegumes = [
         value: 0.5587081954293829,
       },
     ],
-    default: true,
-    tile: false,
     months: [4, 5, 6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/20052',
-    meta: {
-      title: 'Artichaut',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg d'artichaut : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Asperge',
-    Code_CIQUAL: 20279,
     prefix: "kg d'",
     slug: 'asperge',
     synonyms: ['manger, fruit'],
-    emoji: '🌱',
     category: 9,
     ecv: [
       {
@@ -242,23 +185,14 @@ export const fruitsEtLegumes = [
         value: 0.04448858765251692,
       },
     ],
-    default: true,
-    tile: false,
     months: [3, 4, 5],
     source: 'https://agribalyse.ademe.fr/app/aliments/20279',
-    meta: {
-      title: 'Asperge',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg d'asperge : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Betterave',
-    Code_CIQUAL: 20091,
     prefix: 'kg de ',
     slug: 'betterave',
     synonyms: ['manger, fruit'],
-    emoji: '🍠',
     category: 9,
     ecv: [
       {
@@ -278,23 +212,14 @@ export const fruitsEtLegumes = [
         value: 0.008342424334406453,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20091',
-    meta: {
-      title: 'Betterave',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de betterave : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Blette',
-    Code_CIQUAL: 20004,
     prefix: 'kg de ',
     slug: 'blette',
     synonyms: ['manger, fruit'],
-    emoji: '🥬',
     category: 9,
     ecv: [
       {
@@ -314,23 +239,14 @@ export const fruitsEtLegumes = [
         value: 0.029818271477974494,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7, 8, 9, 10],
     source: 'https://agribalyse.ademe.fr/app/aliments/20004',
-    meta: {
-      title: 'Blette',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de blette : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Carotte',
-    Code_CIQUAL: 20009,
     prefix: 'kg de ',
     slug: 'carotte',
     synonyms: ['manger, fruit'],
-    emoji: '🥕',
     category: 9,
     ecv: [
       {
@@ -350,23 +266,14 @@ export const fruitsEtLegumes = [
         value: 0.008342424334406453,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20009',
-    meta: {
-      title: 'Carotte',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de carottes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Céleri',
-    Code_CIQUAL: 20023,
     prefix: 'kg de ',
     slug: 'celeri',
     synonyms: ['manger, fruit'],
-    emoji: '🌱',
     category: 9,
     ecv: [
       {
@@ -386,23 +293,14 @@ export const fruitsEtLegumes = [
         value: 0.003854568004244177,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru',
-    meta: {
-      title: 'Celeri',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de celeris : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Champignon (morille crue)',
-    Code_CIQUAL: 20105,
     prefix: 'kg de ',
     slug: 'champignonmorille',
     synonyms: ['manger, fruit'],
-    emoji: '🍄',
     category: 9,
     ecv: [
       {
@@ -422,23 +320,14 @@ export const fruitsEtLegumes = [
         value: 0.018993522644978326,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue',
-    meta: {
-      title: 'Kg de champignons de paris',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de champignons de paris : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Chou',
-    Code_CIQUAL: 20069,
     prefix: 'kg de ',
     slug: 'chou',
     synonyms: ['manger, fruit'],
-    emoji: '🥬',
     category: 9,
     ecv: [
       {
@@ -458,23 +347,14 @@ export const fruitsEtLegumes = [
         value: 0.08700460775767485,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru',
-    meta: {
-      title: 'Chou',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Chou de Bruxelles',
-    Code_CIQUAL: 20058,
     prefix: 'kg de ',
     slug: 'choudebruxelles',
     synonyms: ['manger, fruit'],
-    emoji: '🥬',
     category: 9,
     ecv: [
       {
@@ -494,23 +374,14 @@ export const fruitsEtLegumes = [
         value: 0.0035590722428065053,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru',
-    meta: {
-      title: 'Chou',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Chou-fleur',
-    Code_CIQUAL: 20016,
     prefix: 'kg de ',
     slug: 'choufleur',
     synonyms: ['manger, fruit'],
-    emoji: '🥦',
     category: 9,
     ecv: [
       {
@@ -530,23 +401,14 @@ export const fruitsEtLegumes = [
         value: 0.028946096566070008,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru',
-    meta: {
-      title: 'Chou',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de choux : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Concombre',
-    Code_CIQUAL: 20019,
     prefix: 'kg de ',
     slug: 'concombre',
     synonyms: ['manger, fruit'],
-    emoji: '🥒',
     category: 9,
     ecv: [
       {
@@ -566,23 +428,14 @@ export const fruitsEtLegumes = [
         value: 0.010477530911158064,
       },
     ],
-    default: true,
-    tile: false,
     months: [4, 5, 6, 7, 8, 9],
     source: 'https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru',
-    meta: {
-      title: 'Concombre',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de concombres : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Courge',
-    Code_CIQUAL: 20139,
     prefix: 'kg de ',
     slug: 'courge',
     synonyms: ['manger, fruit'],
-    emoji: '🎃',
     category: 9,
     ecv: [
       {
@@ -602,23 +455,14 @@ export const fruitsEtLegumes = [
         value: 0.023011113215437206,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue',
-    meta: {
-      title: 'Courge',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de courges : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Courgette',
-    Code_CIQUAL: 20020,
     prefix: 'kg de ',
     slug: 'courgette',
     synonyms: ['manger, fruit'],
-    emoji: '🥒',
     category: 9,
     ecv: [
       {
@@ -638,23 +482,14 @@ export const fruitsEtLegumes = [
         value: 0.008607430229915764,
       },
     ],
-    default: true,
-    tile: false,
     months: [4, 5, 6, 7, 8, 9],
     source: 'https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue',
-    meta: {
-      title: 'Courgette',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de courgettes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Cresson',
-    Code_CIQUAL: 20199,
     prefix: 'kg de ',
     slug: 'cresson',
     synonyms: ['manger, fruit'],
-    emoji: '🥬',
     category: 9,
     ecv: [
       {
@@ -674,23 +509,14 @@ export const fruitsEtLegumes = [
         value: 0.06633710645842904,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20199',
-    meta: {
-      title: 'Cresson',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de cressons : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Échalote',
-    Code_CIQUAL: 20097,
     prefix: "kg d'",
     slug: 'echalote',
     synonyms: ['manger, fruit'],
-    emoji: '🧅',
     category: 9,
     ecv: [
       {
@@ -710,23 +536,14 @@ export const fruitsEtLegumes = [
         value: 0.007401709214288365,
       },
     ],
-    default: true,
-    tile: false,
     months: [9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue',
-    meta: {
-      title: 'Echalote',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg d'echalotes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Endive',
-    Code_CIQUAL: 20026,
     prefix: "kg d'",
     slug: 'endive',
     synonyms: ['manger, fruit'],
-    emoji: '🥬',
     category: 9,
     ecv: [
       {
@@ -746,23 +563,14 @@ export const fruitsEtLegumes = [
         value: 0.024790642849835256,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 9],
     source: 'https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue',
-    meta: {
-      title: 'Endive',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg d'endives : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Épinard',
-    Code_CIQUAL: 20059,
     prefix: "kg d'",
     slug: 'epinard',
     synonyms: ['manger, fruit'],
-    emoji: '🥬',
     category: 9,
     ecv: [
       {
@@ -782,25 +590,15 @@ export const fruitsEtLegumes = [
         value: 0.003382433705011497,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20059',
-    meta: {
-      title: 'Epinard',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg d'epinards : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Mangue',
     subtitle: 'Importée par avion',
-    Code_CIQUAL: 13025,
-    Code_AGB: '13025_2',
     prefix: 'kg de ',
     slug: 'mangue',
     synonyms: ['manger, fruit'],
-    emoji: '🥭',
     category: 9,
     ecv: [
       {
@@ -820,23 +618,14 @@ export const fruitsEtLegumes = [
         value: 0.03733555847027189,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue',
-    meta: {
-      title: 'Mangue',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de mangues : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Fenouil',
-    Code_CIQUAL: 20028,
     prefix: 'kg de ',
     slug: 'fenouil',
     synonyms: ['manger, fruit'],
-    emoji: '🌿',
     category: 9,
     ecv: [
       {
@@ -856,25 +645,15 @@ export const fruitsEtLegumes = [
         value: 0.027220038330385988,
       },
     ],
-    default: true,
-    tile: false,
     months: [3, 5, 6, 7, 8, 9, 10],
     source: 'https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru',
-    meta: {
-      title: 'Fenouil',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de fenouils : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Haricot vert',
     subtitle: 'cru',
-    Code_CIQUAL: 20061,
-    Code_AGB: '20061_1',
     prefix: "kg d'",
     slug: 'haricotvert',
     synonyms: ['manger, fruit'],
-    emoji: '🥒',
     category: 9,
     ecv: [
       {
@@ -894,23 +673,14 @@ export const fruitsEtLegumes = [
         value: 0.01387469926693342,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7, 8, 9],
     source: 'https://agribalyse.ademe.fr/app/aliments/20061_1#Haricot_vert,_cru',
-    meta: {
-      title: "Kg d'haricot vert importé par avion, cru",
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg d'haricot vert importé par avion : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Laitue',
-    Code_CIQUAL: 20031,
     prefix: 'kg de ',
     slug: 'laitue',
     synonyms: ['manger, fruit'],
-    emoji: '🥬',
     category: 9,
     ecv: [
       {
@@ -930,23 +700,14 @@ export const fruitsEtLegumes = [
         value: 0.06633710645842904,
       },
     ],
-    default: true,
-    tile: false,
     months: [4, 5, 6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue',
-    meta: {
-      title: 'Laitue',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de laitues : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Mâche',
-    Code_CIQUAL: 20099,
     prefix: 'kg de ',
     slug: 'mache',
     synonyms: ['manger, fruit'],
-    emoji: '🥬',
     category: 9,
     ecv: [
       {
@@ -966,23 +727,14 @@ export const fruitsEtLegumes = [
         value: 0.06633710645842904,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue',
-    meta: {
-      title: 'Kg de mache',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de maches : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Navet',
-    Code_CIQUAL: 20064,
     prefix: 'kg de ',
     slug: 'navet',
     synonyms: ['manger, fruit'],
-    emoji: '🍠',
     category: 9,
     ecv: [
       {
@@ -1002,23 +754,14 @@ export const fruitsEtLegumes = [
         value: 0.008342424334406453,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru',
-    meta: {
-      title: 'Navet',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de navets : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Maïs',
-    Code_CIQUAL: 9200,
     prefix: 'kg de ',
     slug: 'mais',
     synonyms: ['manger, fruit'],
-    emoji: '🌽',
     category: 9,
     ecv: [
       {
@@ -1038,23 +781,14 @@ export const fruitsEtLegumes = [
         value: 0.03729287339828466,
       },
     ],
-    default: true,
-    tile: false,
     months: [6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru',
-    meta: {
-      title: 'Kg de mais',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de maiss : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Oignon',
-    Code_CIQUAL: 20034,
     prefix: "kg d'",
     slug: 'oignon',
     synonyms: ['manger, fruit'],
-    emoji: '🧅',
     category: 9,
     ecv: [
       {
@@ -1074,23 +808,14 @@ export const fruitsEtLegumes = [
         value: 0.007823657732069384,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru',
-    meta: {
-      title: 'Oignon',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de oignons : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Panais',
-    Code_CIQUAL: 20181,
     prefix: 'kg de ',
     slug: 'panais',
     synonyms: ['manger, fruit'],
-    emoji: '🥕',
     category: 9,
     ecv: [
       {
@@ -1110,23 +835,14 @@ export const fruitsEtLegumes = [
         value: 0.022447157823244808,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru',
-    meta: {
-      title: 'Panais',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de panais : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Petit pois',
-    Code_CIQUAL: 20072,
     prefix: 'kg de ',
     slug: 'petitpois',
     synonyms: ['manger, fruit'],
-    emoji: '🟢',
     category: 9,
     ecv: [
       {
@@ -1142,23 +858,14 @@ export const fruitsEtLegumes = [
         value: 0.03318591931595206,
       },
     ],
-    default: true,
-    tile: false,
     months: [4, 5, 6],
     source: 'https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus',
-    meta: {
-      title: 'Kg de petit pois',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de petit pois : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Poireau',
-    Code_CIQUAL: 20039,
     prefix: 'kg de ',
     slug: 'poireau',
     synonyms: ['manger, fruit'],
-    emoji: '🌱',
     category: 9,
     ecv: [
       {
@@ -1178,23 +885,14 @@ export const fruitsEtLegumes = [
         value: 0.025456567018476744,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru',
-    meta: {
-      title: 'Poireau',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de poireau : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Poivron',
-    Code_CIQUAL: 20168,
     prefix: 'kg de ',
     slug: 'poivron',
     synonyms: ['manger, fruit'],
-    emoji: '🌶️',
     category: 9,
     ecv: [
       {
@@ -1214,23 +912,14 @@ export const fruitsEtLegumes = [
         value: 0.03501270688109747,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru',
-    meta: {
-      title: 'Poivron',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de poivrons : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Potiron',
-    Code_CIQUAL: 20044,
     prefix: 'kg de ',
     slug: 'potiron',
     synonyms: ['manger, fruit'],
-    emoji: '🎃',
     category: 9,
     ecv: [
       {
@@ -1250,23 +939,14 @@ export const fruitsEtLegumes = [
         value: 0.023011113215437206,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru',
-    meta: {
-      title: 'Potiron',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de potirons : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Radis',
-    Code_CIQUAL: 20045,
     prefix: 'kg de ',
     slug: 'radis',
     synonyms: ['manger, fruit'],
-    emoji: '🍠',
     category: 9,
     ecv: [
       {
@@ -1286,23 +966,14 @@ export const fruitsEtLegumes = [
         value: 0.004201203871427947,
       },
     ],
-    default: true,
-    tile: false,
     months: [2, 3, 4, 5],
     source: 'https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru',
-    meta: {
-      title: 'Radis',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de radis : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Salsifis',
-    Code_CIQUAL: 20197,
     prefix: 'kg de ',
     slug: 'salsifis',
     synonyms: ['manger, fruit'],
-    emoji: '🍠',
     category: 9,
     ecv: [
       {
@@ -1322,23 +993,14 @@ export const fruitsEtLegumes = [
         value: 0.02244715782324481,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru',
-    meta: {
-      title: 'Salsifis',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de salsifis : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Topinambour',
-    Code_CIQUAL: 20196,
     prefix: 'kg de ',
     slug: 'topinambour',
     synonyms: ['manger, fruit'],
-    emoji: '🍠',
     category: 9,
     ecv: [
       {
@@ -1358,23 +1020,14 @@ export const fruitsEtLegumes = [
         value: 0.010833431091884844,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru',
-    meta: {
-      title: 'Topinambour',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de topinambours : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Cassis',
-    Code_CIQUAL: 13007,
     prefix: 'kg de ',
     slug: 'cassis',
     synonyms: ['manger, fruit'],
-    emoji: '🍇',
     category: 9,
     ecv: [
       {
@@ -1394,23 +1047,14 @@ export const fruitsEtLegumes = [
         value: 0.024495397018240356,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7],
     source: 'https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru',
-    meta: {
-      title: 'Kg de cassis',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de cassis : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Châtaigne',
-    Code_CIQUAL: 15024,
     prefix: 'kg de ',
     slug: 'chataigne',
     synonyms: ['manger, fruit'],
-    emoji: '🌰',
     category: 9,
     ecv: [
       {
@@ -1430,23 +1074,14 @@ export const fruitsEtLegumes = [
         value: 0.005363840782523507,
       },
     ],
-    default: true,
-    tile: false,
     months: [9, 10],
     source: 'https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue',
-    meta: {
-      title: 'Chataigne',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de chataignes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Clémentine',
-    Code_CIQUAL: 13082,
     prefix: 'kg de ',
     slug: 'clementine',
     synonyms: ['manger, fruit'],
-    emoji: '🍊',
     category: 9,
     ecv: [
       {
@@ -1466,23 +1101,14 @@ export const fruitsEtLegumes = [
         value: 0.024985651438883212,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue',
-    meta: {
-      title: 'Clementine',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de clementines : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Pamplemousse',
-    Code_CIQUAL: 13040,
     prefix: 'kg de ',
     slug: 'pamplemousse',
     synonyms: ['manger, fruit', 'pomelo'],
-    emoji: '🍊',
     category: 9,
     ecv: [
       {
@@ -1502,23 +1128,14 @@ export const fruitsEtLegumes = [
         value: 0.015508242710035574,
       },
     ],
-    default: true,
-    tile: false,
     months: [1, 2, 3, 4, 5],
     source: 'https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru',
-    meta: {
-      title: 'Pamplemousse',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de pamplemousses : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Coing',
-    Code_CIQUAL: 13010,
     prefix: 'kg de ',
     slug: 'coing',
     synonyms: ['manger, fruit'],
-    emoji: '🍎',
     category: 9,
     ecv: [
       {
@@ -1538,23 +1155,14 @@ export const fruitsEtLegumes = [
         value: 0.022044246826478944,
       },
     ],
-    default: true,
-    tile: false,
     months: [9],
     source: 'https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru',
-    meta: {
-      title: 'Coing',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de coings : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Figue',
-    Code_CIQUAL: 13012,
     prefix: 'kg de ',
     slug: 'figue',
     synonyms: ['manger, fruit'],
-    emoji: '🌰',
     category: 9,
     ecv: [
       {
@@ -1574,23 +1182,14 @@ export const fruitsEtLegumes = [
         value: 0.009039247986193464,
       },
     ],
-    default: true,
-    tile: false,
     months: [6, 7, 8, 9],
     source: 'https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue',
-    meta: {
-      title: 'Figue',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de figues : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Groseille',
-    Code_CIQUAL: 13019,
     prefix: 'kg de ',
     slug: 'groseille',
     synonyms: ['manger, fruit'],
-    emoji: '🍒',
     category: 9,
     ecv: [
       {
@@ -1610,23 +1209,14 @@ export const fruitsEtLegumes = [
         value: 0.024639642157423022,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7],
     source: 'https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue',
-    meta: {
-      title: 'Kg de groseille',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de groseilles : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Kiwi',
-    Code_CIQUAL: 13021,
     prefix: 'kg de ',
     slug: 'kiwi',
     synonyms: ['manger, fruit'],
-    emoji: '🥝',
     category: 9,
     ecv: [
       {
@@ -1650,23 +1240,14 @@ export const fruitsEtLegumes = [
         value: 0.018445638741330768,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru',
-    meta: {
-      title: 'Kiwi',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de kiwis : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Mandarine',
-    Code_CIQUAL: 13024,
     prefix: 'kg de ',
     slug: 'mandarine',
     synonyms: ['manger, fruit'],
-    emoji: '🍊',
     category: 9,
     ecv: [
       {
@@ -1686,23 +1267,14 @@ export const fruitsEtLegumes = [
         value: 0.0091431905078776,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue',
-    meta: {
-      title: 'Mandarine',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de mandarines : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Melon',
-    Code_CIQUAL: 13026,
     prefix: 'kg de ',
     slug: 'melon',
     synonyms: ['manger, fruit'],
-    emoji: '🍈',
     category: 9,
     ecv: [
       {
@@ -1722,24 +1294,15 @@ export const fruitsEtLegumes = [
         value: 0.05243365092938753,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7, 8],
     source:
       'https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru',
-    meta: {
-      title: 'Melon',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de melons : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Mûre',
-    Code_CIQUAL: 13071,
     prefix: 'kg de ',
     slug: 'mure',
     synonyms: ['manger, fruit'],
-    emoji: '🍓',
     category: 9,
     ecv: [
       {
@@ -1759,23 +1322,14 @@ export const fruitsEtLegumes = [
         value: 0.011396680778329766,
       },
     ],
-    default: true,
-    tile: false,
     months: [7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue',
-    meta: {
-      title: 'Kg de mure',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de mures : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Nectarine',
-    Code_CIQUAL: 13030,
     prefix: 'kg de ',
     slug: 'nectarine',
     synonyms: ['manger, fruit'],
-    emoji: '🍊',
     category: 9,
     ecv: [
       {
@@ -1795,23 +1349,14 @@ export const fruitsEtLegumes = [
         value: 0.009823408973046163,
       },
     ],
-    default: true,
-    tile: false,
     months: [7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue',
-    meta: {
-      title: 'Nectarine',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de nectarines : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Myrtille',
-    Code_CIQUAL: 13028,
     prefix: 'kg de ',
     slug: 'myrtille',
     synonyms: ['manger, fruit'],
-    emoji: '🫐',
     category: 9,
     ecv: [
       {
@@ -1831,23 +1376,14 @@ export const fruitsEtLegumes = [
         value: 0.0012297301236171496,
       },
     ],
-    default: true,
-    tile: false,
     months: [6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue',
-    meta: {
-      title: 'Kg de myrtille',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de myrtilles : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Noisette',
-    Code_CIQUAL: 15004,
     prefix: 'kg de ',
     slug: 'noisette',
     synonyms: ['manger, fruit'],
-    emoji: '🌰',
     category: 9,
     ecv: [
       {
@@ -1867,23 +1403,14 @@ export const fruitsEtLegumes = [
         value: 0.034957130259502846,
       },
     ],
-    default: true,
-    tile: false,
     months: [8, 9, 10],
     source: 'https://agribalyse.ademe.fr/app/aliments/15004#Noisette',
-    meta: {
-      title: 'Kg de noisette',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de noisette : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Noix',
-    Code_CIQUAL: 15023,
     prefix: 'kg de ',
     slug: 'noix',
     synonyms: ['manger, fruit'],
-    emoji: '🌰',
     category: 9,
     ecv: [
       {
@@ -1907,23 +1434,14 @@ export const fruitsEtLegumes = [
         value: 0.05607213303481815,
       },
     ],
-    default: true,
-    tile: false,
     months: [8, 9],
     source: 'https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche',
-    meta: {
-      title: 'Kg de noix',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de noix : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Prune',
-    Code_CIQUAL: 13100,
     prefix: 'kg de ',
     slug: 'prune',
     synonyms: ['manger, fruit'],
-    emoji: '🫐',
     category: 9,
     ecv: [
       {
@@ -1943,23 +1461,14 @@ export const fruitsEtLegumes = [
         value: 0.0059485812800832245,
       },
     ],
-    default: true,
-    tile: false,
     months: [6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue',
-    meta: {
-      title: 'Prune',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de prunes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Reine Claude',
-    Code_CIQUAL: 13041,
     prefix: 'kg de ',
     slug: 'reineclaude',
     synonyms: ['manger, fruit'],
-    emoji: '🍈',
     category: 9,
     ecv: [
       {
@@ -1979,23 +1488,14 @@ export const fruitsEtLegumes = [
         value: 0.00597410795479691,
       },
     ],
-    default: true,
-    tile: false,
     months: [8],
     source: 'https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue',
-    meta: {
-      title: 'Reine-claude',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de reine-claudes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Rhubarbe',
-    Code_CIQUAL: 13047,
     prefix: 'kg de ',
     slug: 'rhubarbe',
     synonyms: ['manger, fruit'],
-    emoji: '🥢',
     category: 9,
     ecv: [
       {
@@ -2015,23 +1515,14 @@ export const fruitsEtLegumes = [
         value: 0.030195373965942154,
       },
     ],
-    default: true,
-    tile: false,
     months: [3, 4, 5],
     source: 'https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue',
-    meta: {
-      title: 'Rhubarbe',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de rhubarbes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Pêche',
-    Code_CIQUAL: 13043,
     prefix: 'kg de ',
     slug: 'peche',
     synonyms: ['manger, fruit'],
-    emoji: '🍑',
     category: 9,
     ecv: [
       {
@@ -2051,23 +1542,14 @@ export const fruitsEtLegumes = [
         value: 0.008949402777251819,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue',
-    meta: {
-      title: 'Peche',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de peches : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Cerise',
-    Code_CIQUAL: 13008,
     prefix: 'kg de ',
     slug: 'cerise',
     synonyms: ['manger, fruit'],
-    emoji: '🍒',
     category: 9,
     ecv: [
       {
@@ -2091,23 +1573,14 @@ export const fruitsEtLegumes = [
         value: 0.007753520092929479,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6],
     source: 'https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue',
-    meta: {
-      title: 'Cerise',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de cerises : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Abricot',
-    Code_CIQUAL: 13000,
     prefix: "kg d'",
     slug: 'abricot',
     synonyms: ['manger, fruit'],
-    emoji: '🍑',
     category: 9,
     ecv: [
       {
@@ -2131,23 +1604,14 @@ export const fruitsEtLegumes = [
         value: 0.024982363624229915,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7],
     source: 'https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru',
-    meta: {
-      title: 'Abricot',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de abricots : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Framboise',
-    Code_CIQUAL: 13015,
     prefix: 'kg de ',
     slug: 'framboise',
     synonyms: ['manger, fruit'],
-    emoji: '🍓',
     category: 9,
     ecv: [
       {
@@ -2167,23 +1631,14 @@ export const fruitsEtLegumes = [
         value: 0.0018400462388097818,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7],
     source: 'https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue',
-    meta: {
-      title: 'Framboise',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de framboises : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Poire',
-    Code_CIQUAL: 13107,
     prefix: 'kg de ',
     slug: 'poire',
     synonyms: ['manger, fruit'],
-    emoji: '🍐',
     category: 9,
     ecv: [
       {
@@ -2203,23 +1658,14 @@ export const fruitsEtLegumes = [
         value: 0.005296394613225656,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue',
-    meta: {
-      title: 'Poire',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de poires : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Raisin',
-    Code_CIQUAL: 13112,
     prefix: 'kg de ',
     slug: 'raisin',
     synonyms: ['manger, fruit'],
-    emoji: '🍇',
     category: 9,
     ecv: [
       {
@@ -2239,23 +1685,14 @@ export const fruitsEtLegumes = [
         value: 0.007127455411147958,
       },
     ],
-    default: true,
-    tile: false,
     months: [8, 9],
     source: 'https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru',
-    meta: {
-      title: 'Kg de raisin',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de raisin : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Aubergine',
-    Code_CIQUAL: 20053,
     prefix: "kg d'",
     slug: 'aubergine',
     synonyms: ['manger, fruit'],
-    emoji: '🍆',
     category: 9,
     ecv: [
       {
@@ -2275,23 +1712,14 @@ export const fruitsEtLegumes = [
         value: 0.002677168687364001,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue',
-    meta: {
-      title: 'Aubergine',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de aubergines : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Brocoli',
-    Code_CIQUAL: 20057,
     prefix: 'kg de ',
     slug: 'brocoli',
     synonyms: ['manger, fruit'],
-    emoji: '🥦',
     category: 9,
     ecv: [
       {
@@ -2311,24 +1739,14 @@ export const fruitsEtLegumes = [
         value: 0.030704448907918618,
       },
     ],
-    default: true,
-    tile: false,
     months: [8, 9, 10],
     source: 'https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru',
-    meta: {
-      title: 'Brocoli',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de brocolis : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Tomate',
-    Code_CIQUAL: 20047,
-    Code_AGB: '20047_2',
     prefix: 'kg de ',
     slug: 'tomate',
     synonyms: ['manger, fruit'],
-    emoji: '🍅',
     category: 9,
     ecv: [
       {
@@ -2348,23 +1766,14 @@ export const fruitsEtLegumes = [
         value: 0.027595548670926253,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/20047_2#Tomate_de_saison,_crue',
-    meta: {
-      title: 'Tomate',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de tomates : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Ananas',
-    Code_CIQUAL: 13002,
     prefix: "kg d'",
     slug: 'ananas',
     synonyms: ['manger, fruit'],
-    emoji: '🍍',
     category: 9,
     ecv: [
       {
@@ -2384,23 +1793,14 @@ export const fruitsEtLegumes = [
         value: 0.09212677426919891,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine ',
-    meta: {
-      title: 'Ananas',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de ananas : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Banane',
-    Code_CIQUAL: 13005,
     prefix: 'kg de ',
     slug: 'banane',
     synonyms: ['manger, fruit'],
-    emoji: '🍌',
     category: 9,
     ecv: [
       {
@@ -2420,23 +1820,14 @@ export const fruitsEtLegumes = [
         value: 0.0404212088792907,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue',
-    meta: {
-      title: 'Banane',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de bananes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Avocat',
-    Code_CIQUAL: 13004,
     prefix: "kg d'",
     slug: 'avocat',
     synonyms: ['manger, fruit'],
-    emoji: '🥑',
     category: 9,
     ecv: [
       {
@@ -2456,23 +1847,14 @@ export const fruitsEtLegumes = [
         value: 0.024363935431526183,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru',
-    meta: {
-      title: 'Avocat',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de avocats : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Carambole',
-    Code_CIQUAL: 13054,
     prefix: 'kg de ',
     slug: 'carambole',
     synonyms: ['manger, fruit'],
-    emoji: '⭐',
     category: 9,
     ecv: [
       {
@@ -2492,23 +1874,14 @@ export const fruitsEtLegumes = [
         value: 0.009318288139556933,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue',
-    meta: {
-      title: 'Carambole',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de caramboles : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Datte',
-    Code_CIQUAL: 13011,
     prefix: 'kg de ',
     slug: 'datte',
     synonyms: ['manger, fruit'],
-    emoji: '🫘',
     category: 9,
     ecv: [
       {
@@ -2528,23 +1901,14 @@ export const fruitsEtLegumes = [
         value: 0.038999873021091015,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che',
-    meta: {
-      title: 'Datte',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de dattes : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Fruit de la passion',
-    Code_CIQUAL: 13016,
     prefix: 'kg de ',
     slug: 'fruitdelapassion',
     synonyms: ['manger, fruit'],
-    emoji: '🌸',
     category: 9,
     ecv: [
       {
@@ -2564,24 +1928,15 @@ export const fruitsEtLegumes = [
         value: 0.025495801247331758,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     source:
       'https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru',
-    meta: {
-      title: 'Fruit de la passion',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de fruit de la passion : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Grenade',
-    Code_CIQUAL: 13018,
     prefix: 'kg de ',
     slug: 'grenade',
     synonyms: ['manger, fruit'],
-    emoji: '🥭',
     category: 9,
     ecv: [
       {
@@ -2601,23 +1956,14 @@ export const fruitsEtLegumes = [
         value: 0.021257893108403186,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue',
-    meta: {
-      title: 'Grenade',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de grenades : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Kaki',
-    Code_CIQUAL: 13066,
     prefix: 'kg de ',
     slug: 'kaki',
     synonyms: ['manger, fruit'],
-    emoji: '🍈',
     category: 9,
     ecv: [
       {
@@ -2637,23 +1983,14 @@ export const fruitsEtLegumes = [
         value: 0.027726169888747185,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 9, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru',
-    meta: {
-      title: 'Kaki',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de kakis : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Noix de coco',
-    Code_CIQUAL: 15006,
     prefix: 'kg de ',
     slug: 'noixdecoco',
     synonyms: ['manger, fruit'],
-    emoji: '🥥',
     category: 9,
     ecv: [
       {
@@ -2677,23 +2014,14 @@ export const fruitsEtLegumes = [
         value: 0.07413870077386148,
       },
     ],
-    default: true,
-    tile: false,
     months: [0, 1, 10, 11],
     source: 'https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche',
-    meta: {
-      title: 'Noix de coco',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de noix de coco : de l'agriculture à la distribution et la consommation",
-    },
   },
   {
     name: 'Pastèque',
-    Code_CIQUAL: 13036,
     prefix: 'kg de ',
     slug: 'pasteque',
     synonyms: ['manger, fruit'],
-    emoji: '🍉',
     category: 9,
     ecv: [
       {
@@ -2713,14 +2041,7 @@ export const fruitsEtLegumes = [
         value: 0.018507420046340317,
       },
     ],
-    default: true,
-    tile: false,
     months: [5, 6, 7, 8],
     source: 'https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue',
-    meta: {
-      title: 'Pasteque',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un kg de pasteques : de l'agriculture à la distribution et la consommation",
-    },
   },
 ]

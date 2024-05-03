@@ -9,7 +9,6 @@ describe('formatConstruction', () => {
     id: 'ordinateurportable',
     name: 'Ordinateur[s] portable[s]',
     slug: 'ordinateurportable',
-    emoji: '💻',
     category: 1,
     ecv: [
       {

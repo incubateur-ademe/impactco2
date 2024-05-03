@@ -3,7 +3,6 @@ import { computeECV } from 'utils/computeECV'
 const equivalent = {
   name: 'test',
   slug: 'test',
-  emoji: 'test',
   category: 1,
   default: false,
   tile: false,

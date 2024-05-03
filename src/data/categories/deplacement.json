@@ -12,7 +12,6 @@
       "voyager"
     ],
     "type": "plane",
-    "emoji": "✈️",
     "category": 4,
     "display": {
       "min": 500
@@ -110,7 +109,6 @@
     ],
     "slug": "tgv",
     "type": "rail",
-    "emoji": "🚅",
     "category": 4,
     "ecv": [
       {
@@ -147,7 +145,6 @@
     ],
     "slug": "intercites",
     "type": "rail",
-    "emoji": "🚈",
     "category": 4,
     "ecv": [
       {
@@ -185,7 +182,6 @@
     "slug": "voiturethermique",
     "carpool": true,
     "type": "car",
-    "emoji": "🚗",
     "category": 4,
     "ecv": [
       {
@@ -220,8 +216,6 @@
     "slug": "voitureelectrique",
     "carpool": true,
     "type": "car",
-    "emoji": "🚗",
-    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -253,7 +247,6 @@
     ],
     "slug": "autocar",
     "type": "car",
-    "emoji": "🚐",
     "category": 4,
     "ecv": [
       {
@@ -290,7 +283,6 @@
     ],
     "slug": "velo",
     "type": "foot",
-    "emoji": "🚶‍♀️",
     "category": 4,
     "total": 0,
     "default": true,
@@ -317,8 +309,6 @@
     ],
     "slug": "veloelectrique",
     "type": "foot",
-    "emoji": "🚴",
-    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -355,7 +345,6 @@
     ],
     "slug": "busthermique",
     "type": "car",
-    "emoji": "🚌",
     "category": 4,
     "ecv": [
       {
@@ -391,7 +380,6 @@
     ],
     "slug": "tramway",
     "type": "rail",
-    "emoji": "🚌",
     "category": 4,
     "ecv": [
       {
@@ -427,7 +415,6 @@
     ],
     "slug": "metro",
     "type": "rail",
-    "emoji": "🚇",
     "category": 4,
     "ecv": [
       {
@@ -462,7 +449,6 @@
     ],
     "slug": "scooter",
     "type": "car",
-    "emoji": "🛵",
     "category": 4,
     "ecv": [
       {
@@ -497,7 +483,6 @@
     ],
     "slug": "moto",
     "type": "car",
-    "emoji": "🏍️",
     "category": 4,
     "ecv": [
       {
@@ -534,7 +519,6 @@
     ],
     "slug": "rer",
     "type": "rail",
-    "emoji": "🚃",
     "category": 4,
     "ecv": [
       {
@@ -572,7 +556,6 @@
     ],
     "slug": "ter",
     "type": "rail",
-    "emoji": "🚈",
     "category": 4,
     "ecv": [
       {
@@ -609,8 +592,6 @@
     ],
     "slug": "buselectrique",
     "type": "car",
-    "emoji": "🚌",
-    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -647,8 +628,6 @@
     ],
     "slug": "busgnv",
     "type": "car",
-    "emoji": "🚌",
-    "secondEmoji": "💨",
     "category": 4,
     "ecv": [
       {

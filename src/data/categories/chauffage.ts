@@ -5,11 +5,8 @@ export const chauffage = [
     suffix: ' par m²',
     prefix: 'année[s] de ',
     slug: 'chauffagegaz',
-    emoji: '💨',
     category: 8,
     total: 39,
-    default: true,
-    tile: false,
     meta: {
       title: 'Chauffage au gaz',
       description: 'Découvrez à quoi correspond une année de chauffage au gaz par m² en kgCO₂e émis (CO₂e)',
@@ -43,11 +40,8 @@ export const chauffage = [
     suffix: ' par m²',
     prefix: 'année[s] de ',
     slug: 'chauffagefioul',
-    emoji: '🛢',
     category: 8,
     total: 57.17,
-    default: true,
-    tile: false,
     meta: {
       title: 'Chauffage au fioul',
       description: "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul par m²",
@@ -79,11 +73,8 @@ export const chauffage = [
     suffix: ' par m²',
     prefix: 'année[s] de ',
     slug: 'chauffageelectrique',
-    emoji: '⚡️',
     category: 8,
     total: 11.85,
-    default: true,
-    tile: false,
     meta: {
       title: 'Chauffage électrique',
       description: 'Découvrez à quoi correspond une année de chauffage électrique par m² en kgCO₂e émis (CO₂e)',
@@ -117,11 +108,8 @@ export const chauffage = [
     suffix: ' par m²',
     prefix: 'année[s] de ',
     slug: 'pompeachaleur',
-    emoji: '🌡️',
     category: 8,
     total: 3.95,
-    default: true,
-    tile: false,
     meta: {
       title: 'Pompe à chaleur',
       description:
@@ -156,11 +144,8 @@ export const chauffage = [
     suffix: ' par m²',
     prefix: 'année[s] de ',
     slug: 'poeleagranule',
-    emoji: '🔥',
     category: 8,
     total: 5.64,
-    default: true,
-    tile: false,
     meta: {
       title: 'Poêle à granulés',
       description:
@@ -195,11 +180,8 @@ export const chauffage = [
     suffix: ' par m²',
     prefix: 'année[s] de ',
     slug: 'poeleabois',
-    emoji: '🪵',
     category: 8,
     total: 9.2,
-    default: true,
-    tile: false,
     meta: {
       title: 'Poêle à bois',
       description:
@@ -234,11 +216,8 @@ export const chauffage = [
     suffix: ' par m²',
     prefix: 'année[s] de ',
     slug: 'reseaudechaleur',
-    emoji: '🏢',
     category: 8,
     total: 18.67,
-    default: true,
-    tile: false,
     meta: {
       title: 'Réseau de chaleur',
       description:

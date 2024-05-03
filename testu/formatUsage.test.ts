@@ -11,7 +11,6 @@ describe('formatUsage', () => {
     synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'scooter',
     type: 'car',
-    emoji: '🛵',
     category: 4,
     ecv: [
       {

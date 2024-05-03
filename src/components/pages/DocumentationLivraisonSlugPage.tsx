@@ -11,7 +11,7 @@ const DocumentationLivraison = dynamic(() => import('components/base/Documentati
 const DocumentationLivraisonSlugPage = ({ slug }: { slug: string }) => {
   return (
     <RulesProviderLivraison>
-      <DocumentationLivraison slug={`livraison-${slug}`} />
+      <DocumentationLivraison slug={slug} />
       <br />
       <br />
       <br />

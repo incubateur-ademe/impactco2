@@ -4,11 +4,8 @@ export const repas = [
     name: 'Repas avec du boeuf',
     synonyms: ['manger', 'alimenter', 'viande'],
     slug: 'repasavecduboeuf',
-    emoji: '🥩',
     category: 2,
     total: 7.26,
-    default: true,
-    tile: true,
     meta: {
       title: 'Repas boeuf',
       description:
@@ -21,11 +18,8 @@ export const repas = [
     name: 'Repas végétarien[s]',
     synonyms: ['manger', 'alimenter'],
     slug: 'repasvegetarien',
-    emoji: '🥗',
     category: 2,
     total: 0.51,
-    default: true,
-    tile: true,
     meta: {
       title: 'Repas végétarien',
       description:
@@ -37,11 +31,8 @@ export const repas = [
     name: 'Repas végétalien[s]',
     synonyms: ['manger', 'alimenter'],
     slug: 'repasvegetalien',
-    emoji: '🍎',
     category: 2,
     total: 0.39,
-    default: true,
-    tile: false,
     meta: {
       title: 'Repas végétalien',
       description:
@@ -53,11 +44,8 @@ export const repas = [
     name: 'Repas avec du poisson blanc',
     synonyms: ['manger', 'alimenter'],
     slug: 'repasavecdupoissonblanc',
-    emoji: '🐟',
     category: 2,
     total: 1.98,
-    default: true,
-    tile: false,
     meta: {
       title: 'Repas poisson blanc',
       description:
@@ -69,11 +57,8 @@ export const repas = [
     name: 'Repas avec du poisson gras',
     synonyms: ['manger', 'alimenter'],
     slug: 'repasavecdupoissongras',
-    emoji: '🐟',
     category: 2,
     total: 1.11,
-    default: true,
-    tile: false,
     meta: {
       title: 'Repas poisson gras',
       description:
@@ -86,11 +71,8 @@ export const repas = [
     name: 'Repas avec du poulet',
     synonyms: ['manger', 'alimenter', 'viande'],
     slug: 'repasavecdupoulet',
-    emoji: '🍗',
     category: 2,
     total: 1.58,
-    default: true,
-    tile: false,
     meta: {
       title: 'Repas poulet',
       description:

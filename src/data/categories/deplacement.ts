@@ -6,7 +6,6 @@ export const deplacements = [
     prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voler', 'voyager'],
     type: 'plane',
-    emoji: '✈️',
     category: 4,
     display: {
       min: 500,
@@ -99,7 +98,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'train'],
     slug: 'tgv',
     type: 'rail',
-    emoji: '🚅',
     category: 4,
     ecv: [
       {
@@ -130,7 +128,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'train'],
     slug: 'intercites',
     type: 'rail',
-    emoji: '🚈',
     category: 4,
     ecv: [
       {
@@ -163,7 +160,6 @@ export const deplacements = [
     slug: 'voiturethermique',
     carpool: true,
     type: 'car',
-    emoji: '🚗',
     category: 4,
     ecv: [
       {
@@ -193,8 +189,6 @@ export const deplacements = [
     slug: 'voitureelectrique',
     carpool: true,
     type: 'car',
-    emoji: '🚗',
-    secondEmoji: '⚡',
     category: 4,
     ecv: [
       {
@@ -222,7 +216,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'autocar',
     type: 'car',
-    emoji: '🚐',
     category: 4,
     ecv: [
       {
@@ -253,7 +246,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'marcher', 'pedaler'],
     slug: 'velo',
     type: 'foot',
-    emoji: '🚶‍♀️',
     category: 4,
     total: 0,
     default: true,
@@ -274,8 +266,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'pedaler'],
     slug: 'veloelectrique',
     type: 'foot',
-    emoji: '🚴',
-    secondEmoji: '⚡',
     category: 4,
     ecv: [
       {
@@ -308,7 +298,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'busthermique',
     type: 'car',
-    emoji: '🚌',
     category: 4,
     ecv: [
       {
@@ -340,7 +329,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'tramway',
     type: 'rail',
-    emoji: '🚌',
     category: 4,
     ecv: [
       {
@@ -372,7 +360,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'rail'],
     slug: 'metro',
     type: 'rail',
-    emoji: '🚇',
     category: 4,
     ecv: [
       {
@@ -404,7 +391,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'scooter',
     type: 'car',
-    emoji: '🛵',
     category: 4,
     ecv: [
       {
@@ -436,7 +422,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'moto',
     type: 'car',
-    emoji: '🏍️',
     category: 4,
     ecv: [
       {
@@ -468,7 +453,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'train', 'rail'],
     slug: 'rer',
     type: 'rail',
-    emoji: '🚃',
     category: 4,
     ecv: [
       {
@@ -501,7 +485,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'train', 'rail'],
     slug: 'ter',
     type: 'rail',
-    emoji: '🚈',
     category: 4,
     ecv: [
       {
@@ -534,8 +517,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'buselectrique',
     type: 'car',
-    emoji: '🚌',
-    secondEmoji: '⚡',
     category: 4,
     ecv: [
       {
@@ -568,8 +549,6 @@ export const deplacements = [
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'busgnv',
     type: 'car',
-    emoji: '🚌',
-    secondEmoji: '💨',
     category: 4,
     ecv: [
       {

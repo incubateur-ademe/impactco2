@@ -34,8 +34,8 @@ const PlanDuSitePage = () => {
           <Link href='/doc/guide-utilisation'>Guide d'utilisation</Link>
           <Link href='/doc/livraison'>Livraison</Link>
           <div className={styles.row}>
-            <Link href='/doc/livraison/colis'>De colis</Link>
-            <Link href='/doc/livraison/colis-par-avion'>De colis par avion</Link>
+            <Link href='/doc/livraison/livraison-colis'>De colis</Link>
+            <Link href='/doc/livraison/livraison-colis-par-avion'>De colis par avion</Link>
           </div>
           <Link href='/doc/questions-frequentes'>Questions fréquentes</Link>
         </div>

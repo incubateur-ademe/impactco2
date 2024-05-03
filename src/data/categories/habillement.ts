@@ -4,7 +4,6 @@ export const habillements = [
     id: 27043,
     slug: 'jeans',
     synonyms: ['habiller'],
-    emoji: '👖',
     category: 5,
     ecv: [
       {
@@ -29,8 +28,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.63563578618721,
-    default: true,
-    tile: true,
     meta: {
       title: 'Jeans',
       description: 'Découvrez la quantité de CO₂e émis pour fabriquer et distribuer votre jean grâce à Impact CO₂.',
@@ -44,7 +41,6 @@ export const habillements = [
     id: 27046,
     slug: 'polo',
     synonyms: ['habiller'],
-    emoji: '👚',
     category: 5,
     ecv: [
       {
@@ -69,8 +65,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.544462785648209,
-    default: false,
-    tile: false,
     meta: {
       title: 'Polo',
       description:
@@ -86,7 +80,6 @@ export const habillements = [
     subtitle: 'En coton',
     slug: 'tshirtencoton',
     synonyms: ['habiller'],
-    emoji: '👕',
     category: 5,
     ecv: [
       {
@@ -111,8 +104,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.250404099863735,
-    default: true,
-    tile: true,
     meta: {
       title: 'T-shirt',
       description:
@@ -128,7 +119,6 @@ export const habillements = [
     subtitle: 'En polyester',
     slug: 'tshirtenpolyester',
     synonyms: ['habiller'],
-    emoji: '👕',
     category: 5,
     ecv: [
       {
@@ -153,8 +143,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.172305318123854,
-    default: false,
-    tile: false,
     meta: {
       title: 'T-shirts',
       description:
@@ -170,7 +158,6 @@ export const habillements = [
     subtitle: 'En coton',
     slug: 'sweatencoton',
     synonyms: ['habiller'],
-    emoji: '🦺',
     category: 5,
     ecv: [
       {
@@ -195,8 +182,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.51606227347502,
-    default: false,
-    tile: false,
     meta: {
       title: 'Sweat',
       description:
@@ -212,7 +197,6 @@ export const habillements = [
     subtitle: 'En coton',
     slug: 'chemiseencoton',
     synonyms: ['habiller'],
-    emoji: '👚',
     category: 5,
     ecv: [
       {
@@ -237,8 +221,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.462075432138259,
-    default: true,
-    tile: false,
     meta: {
       title: 'Chemises en coton',
       description: "Impact CO₂ mesure l'empreinte carbone de votre chemise en coton et de tous types de vêtements !",
@@ -253,7 +235,6 @@ export const habillements = [
     subtitle: 'En viscose',
     slug: 'chemiseenviscose',
     synonyms: ['habiller'],
-    emoji: '👚',
     category: 5,
     ecv: [
       {
@@ -278,8 +259,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.464139172777627,
-    default: false,
-    tile: false,
     meta: {
       title: 'Chemises en viscose',
       description:
@@ -295,7 +274,6 @@ export const habillements = [
     subtitle: 'En cuir',
     slug: 'chaussuresencuir',
     synonyms: ['habiller'],
-    emoji: '👞',
     category: 5,
     ecv: [
       {
@@ -320,8 +298,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.55449454602226,
-    default: true,
-    tile: false,
     meta: {
       title: 'Paire de chaussures',
       description:
@@ -337,7 +313,6 @@ export const habillements = [
     subtitle: 'En tissu',
     slug: 'chaussuresentissu',
     synonyms: ['habiller'],
-    emoji: '🥾',
     category: 5,
     ecv: [
       {
@@ -362,8 +337,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.2198842675649,
-    default: false,
-    tile: false,
     meta: {
       title: 'Chaussures',
       description:
@@ -379,7 +352,6 @@ export const habillements = [
     subtitle: 'De sport',
     slug: 'chaussuresdesport',
     synonyms: ['habiller'],
-    emoji: '👟',
     category: 5,
     ecv: [
       {
@@ -404,8 +376,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.4255512835071,
-    default: false,
-    tile: false,
     meta: {
       title: 'Chaussures de sport',
       description:
@@ -421,7 +391,6 @@ export const habillements = [
     subtitle: 'En coton',
     slug: 'robeencoton',
     synonyms: ['habiller'],
-    emoji: '👗',
     category: 5,
     ecv: [
       {
@@ -446,8 +415,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.29416237785554,
-    default: false,
-    tile: false,
     meta: {
       title: 'Robe en coton',
       description:
@@ -463,7 +430,6 @@ export const habillements = [
     subtitle: 'En polyester',
     slug: 'robeenpolyester',
     synonyms: ['habiller'],
-    emoji: '👗',
     category: 5,
     ecv: [
       {
@@ -488,8 +454,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.53486702873937,
-    default: false,
-    tile: false,
     meta: {
       title: 'Robe en polyester',
       description:
@@ -505,7 +469,6 @@ export const habillements = [
     subtitle: 'En viscose',
     slug: 'robeenviscose',
     synonyms: ['habiller'],
-    emoji: '👗',
     category: 5,
     ecv: [
       {
@@ -530,8 +493,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 2.39476716560145,
-    default: false,
-    tile: false,
     meta: {
       title: 'Robe en viscose',
       description:
@@ -547,7 +508,6 @@ export const habillements = [
     subtitle: 'En laine',
     slug: 'pullenlaine',
     synonyms: ['habiller'],
-    emoji: '🧶',
     category: 5,
     ecv: [
       {
@@ -572,8 +532,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.27881830769189,
-    default: true,
-    tile: false,
     meta: {
       title: 'Pull en laine',
       description: '',
@@ -588,7 +546,6 @@ export const habillements = [
     subtitle: 'En acrylique',
     slug: 'pullenacrylique',
     synonyms: ['habiller'],
-    emoji: '🧶',
     category: 5,
     ecv: [
       {
@@ -613,8 +570,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.01073009563544,
-    default: false,
-    tile: false,
     meta: {
       title: 'Pull en acrylique',
       description:
@@ -630,7 +585,6 @@ export const habillements = [
     subtitle: 'En coton recyclé',
     slug: 'pullencotonrecycle',
     synonyms: ['habiller'],
-    emoji: '🧶',
     category: 5,
     ecv: [
       {
@@ -655,8 +609,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.51606227347502,
-    default: false,
-    tile: false,
     meta: {
       title: 'Pull en coton',
       description:
@@ -671,7 +623,6 @@ export const habillements = [
     id: 27052,
     slug: 'manteau',
     synonyms: ['habiller'],
-    emoji: '🧥',
     category: 5,
     ecv: [
       {
@@ -696,8 +647,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 2.39840212966855,
-    default: true,
-    tile: false,
     meta: {
       title: 'Manteau',
       description:
@@ -712,7 +661,6 @@ export const habillements = [
     id: 27053,
     slug: 'vesteimpermeable',
     synonyms: ['k-way', 'anorak'],
-    emoji: '🧥',
     category: 5,
     ecv: [
       {
@@ -737,8 +685,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.646349561372889,
-    default: false,
-    tile: false,
     meta: {
       title: 'Veste imperméable',
       description:
@@ -753,7 +699,6 @@ export const habillements = [
     id: 27054,
     slug: 'vestesimilicuir',
     synonyms: ['habiller'],
-    emoji: '🧥',
     category: 5,
     ecv: [
       {
@@ -778,8 +723,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.881444738170221,
-    default: false,
-    tile: false,
     meta: {
       title: 'Veste simili-cuir',
       description:

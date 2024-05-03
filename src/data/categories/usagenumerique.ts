@@ -3,7 +3,6 @@ export const usageNumeriques = [
     name: 'Email',
     subtitle: '',
     slug: 'email',
-    emoji: '✉️',
     unit: 'email',
     category: 10,
     ecv: [
@@ -28,19 +27,12 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    default: true,
-    tile: false,
-    meta: {
-      title: '',
-      description: '',
-    },
     source: 'https://negaoctet.org/',
   },
   {
     name: 'Spam',
     subtitle: 'Non lu',
     slug: 'spam',
-    emoji: '✋',
     unit: 'email',
     category: 10,
     ecv: [
@@ -57,19 +49,12 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    default: false,
-    tile: false,
-    meta: {
-      title: '',
-      description: '',
-    },
     source: 'https://negaoctet.org/',
   },
   {
     name: 'Stocker un Go de donnée',
     subtitle: 'Pendant 1 an',
     slug: 'stockagedonnee',
-    emoji: '💾',
     unit: 'année',
     category: 10,
     ecv: [
@@ -82,18 +67,11 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    default: false,
-    tile: false,
-    meta: {
-      title: '',
-      description: '',
-    },
     source: 'https://negaoctet.org/',
   },
   {
     name: 'Recherche[s] sur le web',
     slug: 'rechercheweb',
-    emoji: '🧐',
     unit: 'recherche',
     category: 10,
     ecv: [
@@ -118,12 +96,6 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    default: true,
-    tile: false,
-    meta: {
-      title: '',
-      description: '',
-    },
     source: 'https://negaoctet.org/',
   },
   {
@@ -131,7 +103,6 @@ export const usageNumeriques = [
     prefix: 'Heure[s] de ',
     subtitle: '',
     slug: 'streamingvideo',
-    emoji: '🎬',
     unit: '',
     category: 10,
     ecv: [
@@ -156,19 +127,12 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    default: true,
-    tile: false,
-    meta: {
-      title: '',
-      description: '',
-    },
     source: 'https://negaoctet.org/',
   },
   {
     name: 'Visioconférence',
     prefix: 'Heure[s] de ',
     slug: 'visioconference',
-    emoji: '🎥',
     unit: '',
     category: 10,
     ecv: [
@@ -193,18 +157,11 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    default: true,
-    tile: false,
-    meta: {
-      title: '',
-      description: '',
-    },
     source: 'https://negaoctet.org/',
   },
   {
     name: 'Go de donnée',
     slug: 'telechargement',
-    emoji: '⬇️',
     category: 10,
     ecv: [
       {
@@ -220,12 +177,6 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    default: false,
-    tile: false,
-    meta: {
-      title: '',
-      description: '',
-    },
     source: 'https://negaoctet.org/',
   },
 ]

@@ -56,13 +56,7 @@ const Empty = ({
             fontSize: '7rem',
             marginBottom: '1rem',
           }}>
-          {equivalent.emoji || (
-            <img
-              style={{ width: '4rem', height: '4rem' }}
-              src={buildCurrentUrlFor(`/icons/${comparison}.svg`)}
-              alt=''
-            />
-          )}
+          <img style={{ width: '4rem', height: '4rem' }} src={buildCurrentUrlFor(`/icons/${comparison}.svg`)} alt='' />
         </div>
       )}
       {value && (
