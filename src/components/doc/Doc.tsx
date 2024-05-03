@@ -17,7 +17,7 @@ const Doc = () => {
             title="Guide d'utilisation"
             description='Suivre le guide pour prendre en main les outils d’impact CO2'
             linkLabel='Accéder'
-            link='/guide-utilisation'
+            link='/doc/guide-utilisation'
           />
           <ToolCard
             slug='faq'
@@ -26,7 +26,7 @@ const Doc = () => {
             title='Questions fréquentes'
             description='Explorer la FAQ pour trouver les réponses à vos questions'
             linkLabel='Consulter'
-            link='/questions-frequentes'
+            link='/doc/questions-frequentes'
           />
           <ToolCard
             slug='gallery'

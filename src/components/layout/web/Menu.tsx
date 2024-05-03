@@ -3,7 +3,9 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
-import { Icon } from 'components/osezchanger/icons'
+import DocIcon from 'components/base/icons/doc'
+import MenuIcon from 'components/base/icons/menu'
+import ToolsIcon from 'components/base/icons/tools'
 import styles from './Menu.module.css'
 
 const Menu = () => {
@@ -25,19 +27,19 @@ const Menu = () => {
   return (
     <>
       <button ref={ref} onClick={() => setOpen(!open)}>
-        <Icon iconId='menu' />
+        <MenuIcon />
         <span>Menu</span>
       </button>
       <div className={classNames(styles.menu, { [styles.open]: open })}>
         <div>
           <Link href='/outils'>
-            <Icon iconId='tools' />
+            <ToolsIcon />
             Les outils
           </Link>
         </div>
         <div>
           <Link href='/doc'>
-            <Icon iconId='doc' />
+            <DocIcon />
             La doc
           </Link>
         </div>

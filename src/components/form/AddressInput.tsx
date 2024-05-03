@@ -6,8 +6,8 @@ import { ZodError } from 'zod'
 import { useSuggestions } from 'hooks/useAddress'
 import useDebounce from 'hooks/useDebounce'
 import { Point } from 'hooks/useItineraries'
-import { Icon } from 'components/osezchanger/icons'
-import LoadingIcon from 'components/osezchanger/icons/loading'
+import ErrorIcon from 'components/base/icons/error'
+import LoadingIcon from 'components/base/icons/loading'
 import Suggestions from 'components/transport/search/itinerary/address/search/Suggestions'
 import styles from './AddressInput.module.css'
 import inputStyles from './Input.module.css'
@@ -99,7 +99,7 @@ const AddressInput = ({
       )}
       {error && (
         <div className={classNames(inputStyles.error, 'text-xs')}>
-          <Icon iconId='error' />
+          <ErrorIcon />
           {error}
         </div>
       )}

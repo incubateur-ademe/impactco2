@@ -1,31 +1,31 @@
 import { ComputedEquivalent } from 'types/equivalent'
-import categories from 'data/categories.json'
-import boisson from 'data/categories/boisson.json'
-import caspratiques from 'data/categories/caspratiques.json'
-import chauffage from 'data/categories/chauffage.json'
-import deplacement from 'data/categories/deplacement.json'
-import electromenager from 'data/categories/electromenager.json'
+import { categories } from 'data/categories'
+import { boissons } from 'data/categories/boisson'
+import { casPratiques } from 'data/categories/caspratiques'
+import { chauffage } from 'data/categories/chauffage'
+import { deplacements } from 'data/categories/deplacement'
+import { electromenager } from 'data/categories/electromenager'
 import { flattenEquivalents } from 'data/categories/flattenEquivalents'
-import fruitsetlegumes from 'data/categories/fruitsetlegumes.json'
-import habillement from 'data/categories/habillement.json'
-import mobilier from 'data/categories/mobilier.json'
-import numerique from 'data/categories/numerique.json'
-import repas from 'data/categories/repas.json'
-import usagenumerique from 'data/categories/usagenumerique.json'
+import { fruitsEtLegumes } from 'data/categories/fruitsetlegumes'
+import { habillements } from 'data/categories/habillement'
+import { mobiliers } from 'data/categories/mobilier'
+import { numeriques } from 'data/categories/numerique'
+import { repas } from 'data/categories/repas'
+import { usageNumeriques } from 'data/categories/usagenumerique'
 import { computeECV } from 'utils/computeECV'
 
 const equivalents = [
-  ...boisson,
-  ...flattenEquivalents(deplacement),
+  ...boissons,
+  ...flattenEquivalents(deplacements),
   ...electromenager,
-  ...habillement,
-  ...mobilier,
-  ...numerique,
-  ...usagenumerique,
+  ...habillements,
+  ...mobiliers,
+  ...numeriques,
+  ...usageNumeriques,
   ...repas,
   ...chauffage,
-  ...fruitsetlegumes,
-  ...caspratiques,
+  ...fruitsEtLegumes,
+  ...casPratiques,
 ]
 
 export const computedEquivalents = equivalents.map((equivalent) => ({

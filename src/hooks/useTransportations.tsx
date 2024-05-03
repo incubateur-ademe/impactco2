@@ -10,7 +10,6 @@ import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
 import { filterByDistance } from 'utils/transport'
 import useParamContext from 'components/providers/ParamProvider'
-import Carpool from 'components/transport/Carpool'
 
 // C'est un peu austère, déso
 export default function useTransportations(
@@ -70,7 +69,6 @@ export default function useTransportations(
                     itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
                   )} km`
                 : ''),
-            component: equivalent.carpool && <Carpool type={type} />,
             value:
               (computeECV(equivalent) *
                 (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /

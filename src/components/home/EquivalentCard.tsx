@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import Link from 'next/link'
 import React from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
-import categories from 'data/categories.json'
+import { categories } from 'data/categories'
 import EquivalentCardContent from '../outils/equivalents/EquivalentCardContent'
 import styles from './EquivalentCard.module.css'
 

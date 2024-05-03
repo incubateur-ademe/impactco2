@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React, { InputHTMLAttributes, ReactNode } from 'react'
-import CheckIcon from 'components/osezchanger/icons/check'
+import CheckIcon from 'components/base/icons/check'
 import styles from './CheckboxInput.module.css'
 
 const CheckboxInput = ({

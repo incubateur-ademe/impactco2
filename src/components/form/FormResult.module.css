@@ -1,0 +1,20 @@
+.icon {
+  align-items: center;
+  background-color: var(--success-10);
+  border-radius: 50%;
+  color: var(--success-50);
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  margin-right: 0.5rem;
+  width: 28px;
+}
+
+.error {
+  background-color: var(--error-10);
+  color: var(--critical-60);
+}
+
+.description {
+  margin: 0.75rem 0 1.5rem 0;
+}

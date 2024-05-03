@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { Fragment } from 'react'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
-import shareableStyles from 'components/misc/shareable/Shareable.module.css'
+import shareableStyles from 'components/shareable/Shareable.module.css'
 import styles from './Detail.module.css'
 import DetailValue from './DetailValue'
 import Label from './Label'

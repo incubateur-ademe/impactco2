@@ -3,7 +3,7 @@ import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import formatName from 'utils/formatName'
 import EquivalentIcon from 'components/base/EquivalentIcon'
-import { Icon } from 'components/osezchanger/icons'
+import EqualIcon from 'components/base/icons/equal'
 import styles from './InfographySimulator.module.css'
 
 const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
@@ -39,7 +39,7 @@ const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
               </div>
             </div>
             <div className={styles.equal}>
-              <Icon iconId='equal' />
+              <EqualIcon />
             </div>
           </Fragment>
         )

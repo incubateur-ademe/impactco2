@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
-import RefreshIcon from 'components/osezchanger/icons/refresh'
+import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'

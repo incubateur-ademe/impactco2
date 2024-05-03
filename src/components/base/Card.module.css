@@ -1,0 +1,123 @@
+.leftSide {
+  align-items: center;
+  background-color: var(--primary-10);
+  border: 1px solid var(--primary-20);
+  border-radius: 16px 0 0 16px;
+  display: flex;
+  justify-content: center;
+  min-height: 10.125rem;
+  transition: all 0.3s ease-in-out;
+  width: 7.25rem;
+}
+
+.imageContainer {
+  align-items: center;
+  background-color: var(--neutral-00);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem;
+  transition: padding 0.3s ease-in-out;
+}
+
+.content {
+  border: 1px solid var(--neutral-20);
+  border-left: 0;
+  border-radius: 0 16px 16px 0;
+  color: var(--neutral-60);
+  flex: 1;
+  padding: 1.5rem;
+
+  b {
+    color: var(--neutral-70);
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.linkText {
+  color: var(--primary-50);
+  font-weight: 500;
+  margin-top: 0.5rem;
+
+  svg {
+    margin-left: 0.5rem;
+  }
+}
+
+.arrow {
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.container {
+  width: 100%;
+
+  a,
+  button {
+    background-color: transparent;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover {
+      .leftSide {
+        padding: 1rem;
+        background-color: var(--primary-20);
+        border: 1px solid var(--primary-30);
+      }
+
+      .content {
+        border: 1px solid var(--neutral-30);
+        border-left: 0;
+        color: var(--neutral-70);
+
+        b {
+          color: var(--neutral-80);
+        }
+      }
+
+      .imageContainer {
+        padding: 1.25rem;
+      }
+
+      .arrow {
+        transform: translateX(0.5rem);
+      }
+
+      .linkText {
+        color: var(--primary-60);
+      }
+    }
+
+    &:focus {
+      outline: 3px solid var(--primary-40);
+      outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:active {
+      .leftSide {
+        background-color: var(--primary-20);
+        border: 1px solid var(--primary-30);
+      }
+
+      .content {
+        background-color: var(--neutral-10);
+        border: 1px solid var(--neutral-30);
+        border-left: 0;
+      }
+    }
+  }
+}

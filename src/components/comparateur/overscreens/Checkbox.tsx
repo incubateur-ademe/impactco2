@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import EquivalentIcon from 'components/base/EquivalentIcon'
+import InformationFillIcon from 'components/base/icons/information-fill'
 import CheckboxInput from 'components/form/CheckboxInput'
-import InformationFillIcon from 'components/osezchanger/icons/information-fill'
 import styles from './Checkbox.module.css'
 
 const Checkbox = ({

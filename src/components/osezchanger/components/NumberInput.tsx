@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
-import { Icon } from '../icons'
+import MinusIcon from '../../base/icons/minus'
+import PlusIcon from '../../base/icons/plus'
 import { Container, Input, LeftButton, RightButton } from './NumberInput.styles'
 
 const NumberInput = ({
@@ -29,7 +30,7 @@ const NumberInput = ({
             setValue(value - 1)
           }
         }}>
-        <Icon iconId='minus' />
+        <MinusIcon />
       </LeftButton>
       <Input
         id={id}
@@ -60,7 +61,7 @@ const NumberInput = ({
             setValue(value + 1)
           }
         }}>
-        <Icon iconId='plus' />
+        <PlusIcon />
       </RightButton>
     </Container>
   )

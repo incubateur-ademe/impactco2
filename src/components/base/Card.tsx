@@ -4,8 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { track } from 'utils/matomo'
-import { Icon } from 'components/osezchanger/icons'
-import { Arrow, Container, Content, ImageContainer, LeftSide, LinkText } from './Card.styles'
+import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
+import styles from './Card.module.css'
 
 const Card = ({
   href,
@@ -15,7 +15,6 @@ const Card = ({
   image,
   small,
   onClick,
-  color,
   trackingCategory,
   trackingAction,
 }: {
@@ -26,18 +25,17 @@ const Card = ({
   image: string
   small?: boolean
   onClick?: () => void
-  color?: 'secondary'
   trackingCategory?: string
   trackingAction?: string
 }) => {
   const inside = (
     <>
-      <LeftSide $small={small} $color={color}>
-        <ImageContainer $small={small}>
+      <div className={styles.leftSide}>
+        <div className={styles.imageContainer}>
           <Image src={image} width={small ? 24 : 42} height={small ? 24 : 42} alt='' />
-        </ImageContainer>
-      </LeftSide>
-      <Content $small={small}>
+        </div>
+      </div>
+      <div className={styles.content}>
         <div>
           <p className={small ? '' : 'text-xl'}>
             <b>{title}</b>
@@ -45,22 +43,22 @@ const Card = ({
           <p>{description}</p>
         </div>
         {small ? (
-          <Arrow>
-            <Icon iconId='full-arrow-right' />
-          </Arrow>
+          <div className={styles.arrow}>
+            <FullArrowRightIcon />
+          </div>
         ) : (
-          <LinkText>
+          <div className={styles.linkText}>
             {link}
-            <Arrow>
-              <Icon iconId='full-arrow-right' />
-            </Arrow>
-          </LinkText>
+            <div className={styles.arrow}>
+              <FullArrowRightIcon />
+            </div>
+          </div>
         )}
-      </Content>
+      </div>
     </>
   )
   return (
-    <Container $small={small} $color={color}>
+    <div className={styles.container}>
       {href ? (
         <Link
           href={href}
@@ -86,7 +84,7 @@ const Card = ({
           {inside}
         </button>
       )}
-    </Container>
+    </div>
   )
 }
 

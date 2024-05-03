@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Head from 'next/head'
 import React, { Suspense } from 'react'
 import 'utils/styles.css'
 import 'utils/variables.css'
@@ -36,11 +35,11 @@ const fonts = [
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='fr'>
-      <Head>
+      <head>
         {fonts.map((font) => (
           <link key={font} rel='preload' href={font} as='font' type='font/woff2' crossOrigin='anonymous' />
         ))}
-      </Head>
+      </head>
       <body>
         <Matomo />
         <Theme />

@@ -4,7 +4,7 @@ import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { buildCurrentUrlFor } from 'utils/urls'
-import { Icon } from 'components/osezchanger/icons'
+import InfinityIcon from 'components/base/icons/infinity'
 
 const equivalents = values as Record<string, SimpleEquivalent>
 
@@ -26,7 +26,7 @@ const Empty = ({
   const equivalentValue = Number.isFinite(comparisonValue) ? (
     formatNumber(comparisonValue).toLocaleString('fr-FR')
   ) : (
-    <Icon iconId='infinity' />
+    <InfinityIcon />
   )
 
   return (
@@ -59,7 +59,7 @@ const Empty = ({
           {equivalent.emoji || (
             <img
               style={{ width: '4rem', height: '4rem' }}
-              src={buildCurrentUrlFor(`/icons/${comparison}.png`)}
+              src={buildCurrentUrlFor(`/icons/${comparison}.svg`)}
               alt=''
             />
           )}

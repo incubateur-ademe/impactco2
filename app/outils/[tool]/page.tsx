@@ -14,7 +14,7 @@ export async function generateStaticParams() {
     ...tools.map((tool) => ({
       tool: tool.slug,
     })),
-    ...categories.map((category) => ({ slug: category.slug })),
+    ...categories.map((category) => ({ tool: category.slug })),
   ]
 }
 

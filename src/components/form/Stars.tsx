@@ -3,7 +3,9 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
 import { ZodError } from 'zod'
-import { Icon } from 'components/osezchanger/icons'
+import ErrorIcon from 'components/base/icons/error'
+import FullStarIcon from 'components/base/icons/full-star'
+import StarIcon from 'components/base/icons/star'
 import styles from './Input.module.css'
 import useError from './errors'
 
@@ -48,13 +50,13 @@ const Stars = ({ value, setValue, id, label, required, hint, errors }: StarsProp
             onClick={() => setValue(index)}
             data-testid={`stars-${id}-${index}`}
             onMouseEnter={() => setHovered(index)}>
-            <Icon iconId={isFull(index, hovered, value) ? 'full-star' : 'star'} />
+            {isFull(index, hovered, value) ? <FullStarIcon /> : <StarIcon />}
           </button>
         ))}
       </div>
       {error && (
         <div className={classNames(styles.error, 'text-xs')}>
-          <Icon iconId='error' />
+          <ErrorIcon />
           {error}
         </div>
       )}

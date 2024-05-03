@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import { CallGMapDistances } from 'pages/api/callGMap'
 import axiosClient from 'utils/axios'
+import { CallGMapDistances } from 'utils/gmaps'
 import { track } from 'utils/matomo'
 
 export type Point = {

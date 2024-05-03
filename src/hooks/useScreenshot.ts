@@ -1,3 +1,5 @@
+'use client'
+
 import { toJpeg, toPng } from 'html-to-image'
 import { useEffect, useRef, useState } from 'react'
 import { track } from 'utils/matomo'

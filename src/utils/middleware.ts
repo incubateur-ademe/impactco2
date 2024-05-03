@@ -1,14 +1,16 @@
 import * as Sentry from '@sentry/nextjs'
-import { NextApiRequest } from 'next'
+import { NextRequest } from 'next/server'
 import { prismaClient } from 'utils/prismaClient'
 
-export async function trackAPIRequest(request: NextApiRequest, api: string, params?: string) {
+export async function trackAPIRequest(request: NextRequest, api: string, params?: string) {
+  console.log('tracked')
   if (!process.env.TRACK_API) {
     return null
   }
 
   try {
-    const { authorization, referer } = request.headers
+    const authorization = request.headers.get('authorization')
+    const referer = request.headers.get('referer')
 
     let name = referer || ''
     if (authorization) {
@@ -31,7 +33,8 @@ export async function trackAPIRequest(request: NextApiRequest, api: string, para
     return name
   } catch (error) {
     await Sentry.captureException(error)
-    console.error(`tracking failed - ${request.headers.authorization}`, error)
+    const authorization = request.headers.get('authorization')
+    console.error(`tracking failed - ${authorization}`, error)
   }
 }
 

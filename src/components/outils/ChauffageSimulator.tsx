@@ -5,7 +5,7 @@ import { Category } from 'types/category'
 import { categories } from 'data/categories'
 import useParamContext from 'components/providers/ParamProvider'
 import NumberInput from 'components/form/NumberInput'
-import shareableStyles from '../misc/shareable/Shareable.module.css'
+import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
 import styles from './Simulator.module.css'
 

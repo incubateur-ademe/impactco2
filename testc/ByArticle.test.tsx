@@ -9,6 +9,6 @@ describe('ByArticle - Composant de la Home qui affiche du texte et des cards', (
     renderWithWrapper(<ByArticle />)
     // Then
     expect(await screen.findByTestId('byArticleFaq')).toHaveTextContent('Questions fréquentes')
-    expect(await screen.findByTestId('byArticleFaq')).toHaveAttribute('href', '/questions-frequentes')
+    expect(await screen.findByTestId('byArticleFaq')).toHaveAttribute('href', '/doc/questions-frequentes')
   })
 })

@@ -8,7 +8,7 @@ import { monthsOptions } from 'utils/months'
 import useParamContext from 'components/providers/ParamProvider'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
-import shareableStyles from '../misc/shareable/Shareable.module.css'
+import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
 import styles from './Simulator.module.css'
 

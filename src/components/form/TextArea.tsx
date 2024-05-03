@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { TextareaHTMLAttributes } from 'react'
 import { ZodError } from 'zod'
-import { Icon } from 'components/osezchanger/icons'
+import ErrorIcon from 'components/base/icons/error'
 import styles from './Input.module.css'
 import useError from './errors'
 
@@ -37,7 +37,7 @@ const TextArea = ({
       />
       {error && (
         <div className={classNames(styles.error, 'text-xs')}>
-          <Icon iconId='error' />
+          <ErrorIcon />
           {error}
         </div>
       )}

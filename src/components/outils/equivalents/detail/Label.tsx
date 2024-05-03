@@ -1,5 +1,5 @@
 import React from 'react'
-import ecv from 'data/ecv.json'
+import { ecv } from 'data/ecv'
 
 const Label = ({ id }: { id: string | number }) => {
   const currentECV = ecv.find((e) => e.id === id)

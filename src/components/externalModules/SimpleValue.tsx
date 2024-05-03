@@ -5,7 +5,7 @@ import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
-import InfinityIcon from 'components/osezchanger/icons/infinity'
+import InfinityIcon from 'components/base/icons/infinity'
 import styles from './SimpleValue.module.css'
 
 const equivalents = values as Record<string, SimpleEquivalent>

@@ -3,14 +3,14 @@
 import React, { useMemo, useRef } from 'react'
 import formatNumber from 'utils/formatNumber'
 import useParamContext from 'components/providers/ParamProvider'
+import useRulesContextLivraison from 'components/providers/RulesProviderLivraison'
 import Etiquette from 'components/comparateur/Etiquette'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
 import Select from 'components/form/Select'
-import useRulesContextLivraison from 'components/livraison/RulesProviderLivraison'
-import shareableStyles from 'components/misc/shareable/Shareable.module.css'
+import shareableStyles from 'components/shareable/Shareable.module.css'
 import styles from './LivraisonSimulator.module.css'
 
 const LivraisonSimulator = () => {

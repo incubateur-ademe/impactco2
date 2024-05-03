@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useMemo, useState } from 'react'
-import Shareable from 'components/misc/shareable/Shareable'
-import { overScreenComparateurValues } from 'components/misc/shareable/overScreens/Values'
+import Shareable from 'components/shareable/Shareable'
+import { overScreenComparateurValues } from 'components/shareable/overScreens/Values'
 import ComparateurSimulator from './ComparateurSimulator'
 
 const Comparateur = () => {

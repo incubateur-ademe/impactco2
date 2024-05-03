@@ -1,6 +1,6 @@
 import GhostButton from 'components/base/GhostButton'
-import { OverScreenInfo } from 'components/misc/shareable/overScreens/Values'
-import ArrowLeftIcon from '../icons/arrow-left'
+import { OverScreenInfo } from 'components/shareable/overScreens/Values'
+import ArrowLeftIcon from '../../base/icons/arrow-left'
 import Hypotesis from './Hypotesis'
 import Integration from './Integration'
 import Share from './Share'

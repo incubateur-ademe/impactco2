@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
-import Signature from 'components/screenshot/Signature'
 import { BottomLogos, Container, DefiButton, Description, Logos, Screenshot, Title } from './OsezChanger.styles'
 import Resources from './Resources'
 
@@ -23,19 +22,11 @@ const OsezChanger = ({ iframe }: { iframe?: boolean }) => {
         <>
           <div ref={ref}>
             <Screenshot data-testid='defi' $isScreenshotting={isScreenshotting}>
-              {isScreenshotting && (
-                <Logos>
-                  <Signature noMargin />
-                </Logos>
-              )}
+              {isScreenshotting && <Logos />}
             </Screenshot>
           </div>
           <Resources />
-          {iframe && (
-            <BottomLogos>
-              <Signature noMargin noLink />
-            </BottomLogos>
-          )}
+          {iframe && <BottomLogos />}
         </>
       ) : (
         <DefiButton

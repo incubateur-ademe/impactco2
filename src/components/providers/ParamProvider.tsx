@@ -11,7 +11,6 @@ import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/UseTheme'
-import { default_eqs } from 'components/livraison/data'
 import { displayAddress } from 'components/transport/search/itinerary/Address'
 import { computedEquivalents } from './equivalents'
 
@@ -202,7 +201,11 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     km: '7',
     traj: 'dom_tra',
   })
-  const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>(default_eqs)
+  const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>([
+    'voiturethermique',
+    'repasavecduboeuf',
+    'streamingvideo',
+  ])
   const [isHabit, setIsHabit] = useState(false)
   const [isPlane, setIsPlane] = useState(false)
   const [number, setNumber] = useState(1)

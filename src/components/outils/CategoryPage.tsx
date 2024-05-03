@@ -1,8 +1,8 @@
 import React from 'react'
 import { Category as CategoryType } from 'types/category'
+import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Block from 'components/layout/web/Block'
-import Sources from 'components/misc/category/Sources'
 import Category from './Category'
 import styles from './CategoryPage.module.css'
 

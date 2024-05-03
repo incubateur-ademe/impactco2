@@ -1,7 +1,7 @@
+import notion from 'app/api/notion/route'
 import axios from 'axios'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks } from 'node-mocks-http'
-import notion from 'pages/api/notion'
 import { trackAPIRequest } from 'utils/middleware'
 
 jest.mock('utils/middleware', () => ({

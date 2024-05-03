@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import React, { ReactNode } from 'react'
 import { ZodError } from 'zod'
-import { Icon } from 'components/osezchanger/icons'
+import ErrorIcon from 'components/base/icons/error'
 import inputStyles from './Input.module.css'
 import styles from './Radio.module.css'
 import useError from './errors'
@@ -29,7 +29,7 @@ const Radio = ({ id, label, hint, children, required, errors }: RadioProps & { c
       <div className={styles.inputs}>{children}</div>
       {error && (
         <div className={classNames(inputStyles.error, 'text-xs')}>
-          <Icon iconId='error' />
+          <ErrorIcon />
           {error}
         </div>
       )}

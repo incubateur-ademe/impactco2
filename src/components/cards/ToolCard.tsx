@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import FullArrowRightIcon from 'components/osezchanger/icons/full-arrow-right'
+import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import styles from './ToolCard.module.css'
 
 export type ToolCardProps = {

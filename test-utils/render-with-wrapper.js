@@ -4,8 +4,8 @@ import { render } from '@testing-library/react'
 import * as nextRouter from 'next/router'
 import { useState } from 'react'
 import { ParamProvider } from 'components/providers/ParamProvider'
+import { RulesProviderLivraison } from 'components/providers/RulesProviderLivraison'
 import TranslationProvider from 'components/providers/TranslationProvider'
-import { RulesProviderLivraison } from 'components/livraison/RulesProviderLivraison'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
 jest.mock('@incubateur-ademe/publicodes-negaoctet', () => ({}))

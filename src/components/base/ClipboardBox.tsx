@@ -4,9 +4,9 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import React, { useState } from 'react'
 import { track } from 'utils/matomo'
-import CheckIcon from 'components/osezchanger/icons/check'
-import CopyIcon from 'components/osezchanger/icons/copy'
-import InformationIcon from 'components/osezchanger/icons/information'
+import CheckIcon from 'components/base/icons/check'
+import CopyIcon from 'components/base/icons/copy'
+import InformationIcon from 'components/base/icons/information'
 import styles from './ClipboardBox.module.css'
 
 const ClipboardBox = ({ children, tracking }: { children: string; tracking: string }) => {

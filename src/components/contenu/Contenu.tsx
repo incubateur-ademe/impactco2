@@ -1,17 +1,24 @@
 import React, { ReactNode } from 'react'
 import Card from 'components/base/Card'
-import SuggestionBanner from 'components/contact/SuggestionBanner'
-import BreadCrumb2 from 'components/layout/web/BreadCrumb2'
-import { Background, Breadcrumb, Content } from './Contenu.styles'
+import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
+import styles from './Contenu.module.css'
 
-const Contenu = ({ children, title }: { children: ReactNode; title: string }) => {
+const Contenu = ({
+  children,
+  title,
+  previous,
+}: {
+  children: ReactNode
+  title: string
+  previous?: { link: string; label: string }
+}) => {
   return (
     <>
-      <Background />
-      <Content>
-        <Breadcrumb>
-          <BreadCrumb2 breadcrumb={{ type: 'accueil', page: title }} noMargin />
-        </Breadcrumb>
+      <div className={styles.background} />
+      <div className={styles.content}>
+        <div className={styles.breadcrumbs}>
+          <Breadcrumbs links={[{ link: '/', label: 'Accueil' }].concat(previous || [])} current={title} />
+        </div>
         {children}
         <br />
         <br />
@@ -24,8 +31,7 @@ const Contenu = ({ children, title }: { children: ReactNode; title: string }) =>
           trackingCategory={title}
           trackingAction='Blocs accompagnement'
         />
-      </Content>
-      <SuggestionBanner from={title} fromLabel={title} simulatorName={title} />
+      </div>
     </>
   )
 }

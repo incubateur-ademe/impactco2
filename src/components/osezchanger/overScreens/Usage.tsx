@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { Icon } from '../icons'
+import ArrowDownIcon from '../../base/icons/arrow-down'
+import ArrowRightIcon from '../../base/icons/arrow-right'
 import { Box, BoxContent, Button, Container } from './Usage.styles'
 
 const Usage = () => {
@@ -30,9 +31,7 @@ const Usage = () => {
         Découvrez des exemples de réutilisation
       </Link>
       <Box>
-        <Button onClick={() => setOpen(!open)}>
-          <Icon iconId={open ? 'arrow-down' : 'arrow-right'} /> Aller plus loin
-        </Button>
+        <Button onClick={() => setOpen(!open)}>{open ? <ArrowDownIcon /> : <ArrowRightIcon />} Aller plus loin</Button>
         {open && (
           <BoxContent>
             Pour réutiliser les données brutes ou obtenir de l'aide pour intégrer ce simulateur, contactez l’équipe à{' '}

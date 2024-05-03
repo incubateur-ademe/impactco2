@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { Category as CategoryType } from 'types/category'
-import Shareable from 'components/misc/shareable/Shareable'
-import { overScreenCategoryValues } from 'components/misc/shareable/overScreens/Values'
+import Shareable from 'components/shareable/Shareable'
+import { overScreenCategoryValues } from 'components/shareable/overScreens/Values'
 import CategorySimulator from './CategorySimulator'
 import { simulators } from './simulators'
 

@@ -1,8 +1,8 @@
 import Card from 'components/base/Card'
-import { CustomParamValue } from 'components/misc/shareable/overScreens/CustomParam'
-import Integrate from 'components/misc/shareable/overScreens/Integrate'
-import Share from 'components/misc/shareable/overScreens/Share'
-import { OverScreenInfo } from 'components/misc/shareable/overScreens/Values'
+import { CustomParamValue } from 'components/shareable/overScreens/CustomParam'
+import Integrate from 'components/shareable/overScreens/Integrate'
+import Share from 'components/shareable/overScreens/Share'
+import { OverScreenInfo } from 'components/shareable/overScreens/Values'
 import EquivalentsOverscreen from './EquivalentsOverscreen'
 import { OverScreenComparateur, OverScreenEtiquette } from './Type'
 
