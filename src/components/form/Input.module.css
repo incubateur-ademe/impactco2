@@ -13,6 +13,7 @@
   padding: 0.75rem 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
+  min-height: 3rem;
   position: relative;
   width: 100%;
 
@@ -82,6 +83,7 @@
 
 .small {
   padding: 0.5rem 1rem;
+  min-height: 2.5rem;
 }
 
 .large {
@@ -191,7 +193,7 @@
 
 .secondaryUnit {
   right: 1rem;
-  top: 0.875rem;
+  top: 0.5rem;
   color: var(--neutral-50);
 }
 
@@ -214,6 +216,10 @@
   @media screen and (max-width: 400px) {
     max-width: 150px;
   }
+}
+
+.clickeable {
+  cursor: pointer;
 
   &:hover {
     border: 2px solid var(--primary-30);
@@ -235,8 +241,4 @@
     background: var(--primary-30);
     color: var(--primary-70);
   }
-}
-
-.clickeable {
-  cursor: pointer;
 }

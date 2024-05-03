@@ -1,6 +1,5 @@
 import classNames from 'classnames'
-import React, { ButtonHTMLAttributes } from 'react'
-import { Icon, IconId } from 'components/osezchanger/icons'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import buttonStyles from './Button.module.css'
 import linkStyles from './Link.module.css'
 
@@ -11,7 +10,7 @@ const Button = ({
   children,
   priority,
   ...rest
-}: { size?: 'sm' | 'lg'; priority?: 'outline'; icon?: IconId } & ButtonHTMLAttributes<HTMLButtonElement> & {
+}: { size?: 'sm' | 'lg'; priority?: 'outline'; icon?: ReactNode } & ButtonHTMLAttributes<HTMLButtonElement> & {
     asLink?: boolean
   }) => {
   return (
@@ -22,7 +21,7 @@ const Button = ({
         className
       )}
       {...rest}>
-      {icon && <Icon iconId={icon} />}
+      {icon}
       {children}
     </button>
   )

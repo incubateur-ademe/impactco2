@@ -332,14 +332,6 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  line-height: 1;
-}
-
 .text-secondary {
   color: var(--primary-50);
 }

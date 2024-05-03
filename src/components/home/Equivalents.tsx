@@ -9,6 +9,8 @@ import Card from 'components/cards/Card'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
+import MagicWandIcon from 'components/osezchanger/icons/magic-wand'
+import SearchIcon from 'components/osezchanger/icons/search'
 import EquivalentCard from './EquivalentCard'
 import styles from './Equivalents.module.css'
 
@@ -33,7 +35,7 @@ const Equivalents = () => {
           placeholder='Rechercher'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          icon='search'
+          icon={<SearchIcon />}
           padding='lg'
         />
       </Card>
@@ -44,7 +46,7 @@ const Equivalents = () => {
       </div>
       <Button
         className={styles.button}
-        icon='magic-wand'
+        icon={<MagicWandIcon />}
         onClick={() => {
           setSearch('')
           setEquivalents(generate())
