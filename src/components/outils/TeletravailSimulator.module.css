@@ -3,13 +3,18 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border-bottom: 2px solid var(--neutral-20);
 
   label {
     color: var(--neutral-80);
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.5rem;
+  }
+}
+
+.days {
+  label {
+    font-weight: 400;
   }
 }
 
@@ -40,6 +45,7 @@
   justify-content: center;
   margin-bottom: 1.5rem;
   gap: 1.5rem 0;
+  border-top: 2px solid var(--neutral-20);
 
   @media screen and (max-width: 29.875rem) {
     flex-direction: column;
@@ -94,4 +100,5 @@
   align-items: center;
   color: var(--neutral-50);
   margin: 1.5rem 0 2rem 0;
+  padding: 0 2rem;
 }

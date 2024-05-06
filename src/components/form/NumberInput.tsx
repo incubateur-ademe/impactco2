@@ -32,8 +32,15 @@ const NumberInput = ({
   }, [value])
 
   useEffect(() => {
-    if (value !== Number(internalValue)) {
-      setValue(Number(internalValue))
+    const newValue = Number(internalValue)
+    if (value !== newValue) {
+      if (max !== undefined && newValue > max) {
+        setInternalValue(max.toString())
+      } else if (min !== undefined && newValue < min) {
+        setInternalValue(min.toString())
+      } else {
+        setValue(newValue)
+      }
     }
   }, [internalValue])
 

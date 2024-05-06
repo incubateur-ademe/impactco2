@@ -1,3 +1,12 @@
+.simulator {
+  padding: 1.5rem;
+  color: var(--neutral-50);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
 .days,
 .addresses {
   display: flex;
@@ -26,19 +35,19 @@
   }
 }
 
-.addresses {
-  label {
-    font-weight: 700;
-  }
-}
-
 .days {
   input {
     color: var(--neutral-80);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 800;
     line-height: 2rem;
     padding: 0.5rem 1rem;
+  }
+}
+
+.addresses {
+  label {
+    font-weight: 700;
   }
 }
 

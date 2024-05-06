@@ -19,7 +19,7 @@ export type OverScreenInfo = {
   title?: ReactNode
   image?: string
   children: ReactNode
-  fullWidth?: boolean
+  fullHeight?: boolean
   cancel?: (onClose: () => void) => ReactNode
 }
 
@@ -70,16 +70,16 @@ export const overScreenComparateurValues: (onClose?: () => void) => Record<strin
   partager: {
     title: 'share',
     children: <Share path='comparateur' tracking='Comparateur' />,
-    fullWidth: !onClose,
+    fullHeight: !onClose,
   },
   integrer: {
     title: 'integrate',
     children: <Integrate path='comparateur' tracking='Comparateur' />,
-    fullWidth: !onClose,
+    fullHeight: !onClose,
   },
   equivalents: {
     children: <EquivalentsOverscreen onClose={onClose} />,
-    fullWidth: true,
+    fullHeight: true,
   },
 })
 

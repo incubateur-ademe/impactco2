@@ -38,7 +38,7 @@
 
   input {
     color: var(--neutral-80);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 800;
     line-height: 2rem;
     padding: 0.5rem 1rem;
@@ -100,4 +100,5 @@
   align-items: center;
   color: var(--neutral-50);
   margin-bottom: 2rem;
+  padding: 0 2rem;
 }

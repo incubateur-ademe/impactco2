@@ -33,18 +33,28 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
     case 7: {
       const fabrication = values.filter((value) => value.id === 5)
       const usage = values.filter((value) => value.id !== 5)
-      return [
-        {
-          label: 'Fabrication',
-          value: fabrication.reduce((acc, current) => acc + current.value, 0),
-          values: fabrication,
-        },
-        {
-          label: 'Usage',
-          value: usage.filter((value) => value.id !== 5).reduce((acc, current) => acc + current.value, 0),
-          values: usage,
-        },
-      ]
+      if (usage.length) {
+        return [
+          {
+            label: 'Fabrication',
+            value: fabrication.reduce((acc, current) => acc + current.value, 0),
+            values: fabrication,
+          },
+          {
+            label: 'Usage',
+            value: usage.filter((value) => value.id !== 5).reduce((acc, current) => acc + current.value, 0),
+            values: usage,
+          },
+        ]
+      } else {
+        return [
+          {
+            label: 'Fabrication',
+            value: fabrication.reduce((acc, current) => acc + current.value, 0),
+            values: fabrication,
+          },
+        ]
+      }
     }
     case 13:
     case 14:

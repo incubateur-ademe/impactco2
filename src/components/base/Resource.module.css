@@ -1,29 +1,24 @@
 .linkContainer {
   align-items: stretch;
   background-color: var(--neutral-00);
-  border: 1px solid var(--neutral-20);
+  border: 2px solid var(--neutral-20);
   border-radius: 1rem;
   color: var(--neutral-80);
   display: flex;
   text-decoration: none;
   z-index: 2;
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
 
   &:hover {
-    border: 1px solid var(--neutral-30);
+    border: 2px solid var(--primary-30);
 
     .image {
-      border-right: 1px solid var(--neutral-30);
+      border-right: 2px solid var(--primary-30);
     }
   }
 
   &:focus {
-    border: 1px solid var(--neutral-40);
-
-    .image {
-      border-right: 1px solid var(--neutral-40);
-    }
-
-    outline: 3px solid var(--neutral-40);
+    outline: 3px solid var(--primary-40);
     outline-offset: 2px;
   }
 
@@ -49,8 +44,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid var(--neutral-20);
-  border-radius: 1rem 0 0 1rem;
+  border-right: 2px solid var(--neutral-20);
+  border-radius: calc(1rem - 2px) 0 0 calc(1rem - 2px);
 
   img {
     border-radius: 1rem 0 0 1rem;

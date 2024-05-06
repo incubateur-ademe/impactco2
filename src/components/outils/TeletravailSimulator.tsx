@@ -89,7 +89,7 @@ const TeletravailSimulator = () => {
           </div>
         </div>
         <div className={itineraireStyles.days}>
-          <div>
+          <div className={styles.days}>
             <label htmlFor='input-presentiel-value'>
               <b>Présentiel</b> par semaine
             </label>
@@ -105,7 +105,7 @@ const TeletravailSimulator = () => {
               max={5}
             />
           </div>
-          <div>
+          <div className={styles.days}>
             <label htmlFor='input-teletravail-value'>
               <b>Télétravail</b> par semaine
             </label>

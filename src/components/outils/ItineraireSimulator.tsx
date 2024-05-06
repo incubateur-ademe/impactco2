@@ -10,7 +10,6 @@ import AddressInput from 'components/form/addresses/AddressInput'
 import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
 import styles from './ItineraireSimulator.module.css'
-import simulatorStyles from './Simulator.module.css'
 
 const ItineraireSimulator = () => {
   const {
@@ -23,7 +22,7 @@ const ItineraireSimulator = () => {
   const equivalents = useTransportations('Transport itinéraire', 'itineraire', itineraries)
   return (
     <>
-      <div className={simulatorStyles.simulator}>
+      <div className={styles.simulator}>
         <div className={styles.addresses}>
           <AddressInput
             large

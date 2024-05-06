@@ -6,9 +6,18 @@
   border-bottom: 2px solid var(--primary-20);
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap-reverse;
 
   > div {
     flex: 1;
+  }
+
+  input {
+    min-width: 250px;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    margin: -2rem -1rem 0 -1rem;
   }
 }
 
@@ -27,11 +36,30 @@
   border-top: 2px solid var(--primary-20);
   background: var(--primary-10);
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
+  gap: 0.5rem 0;
 
   div {
     width: calc(100% / 3);
+  }
+
+  @media screen and (max-width: 53rem) {
+    justify-content: space-between;
+
+    div {
+      width: fit-content;
+    }
+  }
+
+  @media screen and (max-width: 31rem) {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    margin: 0rem -1rem -2rem -1rem;
   }
 }
 

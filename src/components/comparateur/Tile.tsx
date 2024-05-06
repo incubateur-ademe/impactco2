@@ -32,7 +32,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
         <CloseIcon />
       </button>
       <div>
-        <EquivalentIcon height={2} equivalent={equivalent} />
+        <EquivalentIcon height={3} equivalent={equivalent} />
         <div className={styles.value} data-testid={`comparateur-${slug}-value`}>
           {Number.isFinite(value) ? formatNumber(value).toLocaleString() : <InfinityIcon />}
         </div>

@@ -62,7 +62,7 @@ const Shareable = ({
       {overScreenToDisplay && (
         <>
           <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
-          <div className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullWidth })}>
+          <div className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
             {overScreenToDisplay.title && (
               <div>
                 <div className={styles.header}>

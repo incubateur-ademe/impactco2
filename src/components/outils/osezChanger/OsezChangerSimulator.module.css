@@ -58,6 +58,7 @@
   align-items: center;
   color: var(--neutral-50);
   margin-bottom: 2rem;
+  padding: 0 2rem;
 }
 
 .hidden {

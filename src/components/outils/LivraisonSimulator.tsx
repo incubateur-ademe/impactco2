@@ -98,7 +98,7 @@ const LivraisonSimulator = () => {
               id='radio-trajet'
               label={`${
                 values.retrait === 'point de retrait' ? 'Le point relais' : 'Le click & collect'
-              } est t'il sur votre trajet habituel ?`}>
+              } est t'il sur votre trajet habituel ?`}>
               <RadioInput
                 name='radio-trajet'
                 required

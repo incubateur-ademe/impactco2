@@ -101,7 +101,6 @@ const EquivalentsOverscreen = ({ onClose = () => {} }: { onClose?: () => void })
             Revenir au comparateur
           </Button>
         </div>
-        <div />
       </div>
     </>
   )
