@@ -1,6 +1,6 @@
 import React from 'react'
 import ComparateurPage from 'components/outils/comparateur/ComparateurPage'
-import Suggestion from 'components/layout/web/Suggestion'
+import Suggestion from 'components/layout/Suggestion'
 
 const page = () => {
   return (

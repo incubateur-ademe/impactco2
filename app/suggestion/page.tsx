@@ -1,7 +1,7 @@
 import React from 'react'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import SuggestionForm from 'components/contact/Suggestion'
-import SuggestionBanner from 'components/layout/web/Suggestion'
+import SuggestionBanner from 'components/layout/Suggestion'
 
 const SuggestionPage = () => {
   return (

@@ -1,11 +1,11 @@
 'use client'
 
 import React from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { FruitsEtLegumesEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { monthsOptions } from 'utils/months'
-import useParamContext from 'components/providers/ParamProvider'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
 import shareableStyles from '../shareable/Shareable.module.css'

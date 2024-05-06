@@ -3,7 +3,7 @@ import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ToolCards from 'components/cards/ToolCards'
 import { devTools, smallTools, tools } from 'components/cards/tools'
 import Equivalents from 'components/home/Equivalents'
-import Block from 'components/layout/web/Block'
+import Block from 'components/layout/Block'
 
 const Outils = () => {
   return (

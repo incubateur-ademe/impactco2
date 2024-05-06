@@ -3,9 +3,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render } from '@testing-library/react'
 import * as nextRouter from 'next/router'
 import { useState } from 'react'
-import { ParamProvider } from 'components/providers/ParamProvider'
-import { RulesProviderLivraison } from 'components/providers/RulesProviderLivraison'
-import TranslationProvider from 'components/providers/TranslationProvider'
+import { ParamProvider } from 'src/providers/ParamProvider'
+import { RulesProviderLivraison } from 'src/providers/RulesProviderLivraison'
+import TranslationProvider from 'src/providers/TranslationProvider'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
 jest.mock('@incubateur-ademe/publicodes-negaoctet', () => ({}))

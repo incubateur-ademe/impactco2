@@ -1,4 +1,4 @@
-import { computedEquivalents } from 'components/providers/equivalents'
+import { computedEquivalents } from 'src/providers/equivalents'
 
 const getRandomEquivalent = (toIgnore: string[], category?: number) => {
   const meaningfullEquivalents = computedEquivalents

@@ -1,6 +1,6 @@
 import React from 'react'
-import Suggestion from 'components/layout/web/Suggestion'
-import PolitiquePage from 'components/pages/PolitiquePage'
+import PolitiquePage from 'src/views/PolitiquePage'
+import Suggestion from 'components/layout/Suggestion'
 
 export default function Politique() {
   return (

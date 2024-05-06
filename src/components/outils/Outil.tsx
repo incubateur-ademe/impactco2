@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React, { ReactNode } from 'react'
-import TranslationProvider from 'components/providers/TranslationProvider'
+import TranslationProvider from 'src/providers/TranslationProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Card from 'components/cards/Card'
 import { ToolCardProps } from 'components/cards/ToolCard'
-import Block from 'components/layout/web/Block'
+import Block from 'components/layout/Block'
 import styles from './Outil.module.css'
 
 const Outil = ({

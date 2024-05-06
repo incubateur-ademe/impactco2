@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useMemo, useRef } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
+import useRulesContextLivraison from 'src/providers/RulesProviderLivraison'
 import formatNumber from 'utils/formatNumber'
-import useParamContext from 'components/providers/ParamProvider'
-import useRulesContextLivraison from 'components/providers/RulesProviderLivraison'
 import Etiquette from 'components/comparateur/Etiquette'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'

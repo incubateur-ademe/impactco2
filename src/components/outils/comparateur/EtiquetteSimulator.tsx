@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useMemo, useRef } from 'react'
-import useParamContext from 'components/providers/ParamProvider'
+import useParamContext from 'src/providers/ParamProvider'
 import Etiquette from 'components/comparateur/Etiquette'
 
 const EtiquetteSimulator = ({ animated }: { animated?: boolean }) => {

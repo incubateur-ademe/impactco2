@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import React from 'react'
-import useParamContext from 'components/providers/ParamProvider'
+import useParamContext from 'src/providers/ParamProvider'
 import DistanceSimulator from './DistanceSimulator'
 import ItineraireSimulator from './ItineraireSimulator'
 import styles from './TransportSimulator.module.css'

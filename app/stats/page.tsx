@@ -1,7 +1,7 @@
 import React from 'react'
+import StatisticsPage from 'src/views/StatisticsPage'
 import { getMatomoStats } from 'utils/stats'
-import Suggestion from 'components/layout/web/Suggestion'
-import StatisticsPage from 'components/pages/StatisticsPage'
+import Suggestion from 'components/layout/Suggestion'
 
 const getRevalidate = () => {
   const revalidate = process.env.STATS_REVALIDATE && Number.parseInt(process.env.STATS_REVALIDATE)

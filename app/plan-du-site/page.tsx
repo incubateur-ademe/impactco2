@@ -1,6 +1,6 @@
 import React from 'react'
-import Suggestion from 'components/layout/web/Suggestion'
-import PlanDuSitePage from 'components/pages/PlanDuSitePage'
+import PlanDuSitePage from 'src/views/PlanDuSitePage'
+import Suggestion from 'components/layout/Suggestion'
 
 export default function PlanDuSite() {
   return (

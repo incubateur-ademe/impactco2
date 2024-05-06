@@ -28,7 +28,7 @@
   height: 100%;
   position: absolute;
   opacity: 0.3;
-  background-color: var(--secondary-10);
+  background-color: var(--primary-10);
 }
 
 .tile,

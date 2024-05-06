@@ -1,6 +1,6 @@
 import React from 'react'
-import Suggestion from 'components/layout/web/Suggestion'
-import AccessibilitePage from 'components/pages/AccessibilitePage'
+import AccessibilitePage from 'src/views/AccessibilitePage'
+import Suggestion from 'components/layout/Suggestion'
 
 export default function Accessibilite() {
   return (

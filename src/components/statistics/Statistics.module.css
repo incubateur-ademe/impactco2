@@ -6,7 +6,7 @@
 }
 
 .box {
-  background-color: var(--secondary-10);
+  background-color: var(--primary-10);
   border-radius: 16px;
   padding: 2rem;
   width: fit-content;
@@ -41,10 +41,10 @@
   }
 
   tbody {
-    background-color: var(--secondary-10);
+    background-color: var(--primary-10);
   }
 
   .total {
-    background-color: var(--secondary-20);
+    background-color: var(--primary-20);
   }
 }

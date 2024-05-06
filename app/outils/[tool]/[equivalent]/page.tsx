@@ -3,7 +3,7 @@ import React from 'react'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/EquivalentPage'
 import formatName from 'utils/formatName'
-import Suggestion from 'components/layout/web/Suggestion'
+import Suggestion from 'components/layout/Suggestion'
 
 export async function generateStaticParams() {
   return categories.flatMap((category) =>

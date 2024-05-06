@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
-import useParamContext from 'components/providers/ParamProvider'
 import NumberInput from 'components/form/NumberInput'
 import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'

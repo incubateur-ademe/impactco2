@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useEffect, useMemo, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
-import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'

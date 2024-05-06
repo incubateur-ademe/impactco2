@@ -1,7 +1,7 @@
 import React from 'react'
 import Notion from 'components/Notion/Notion'
 import { getNotionContentProps, getNotionRevalidate } from 'components/Notion/utils'
-import Suggestion from 'components/layout/web/Suggestion'
+import Suggestion from 'components/layout/Suggestion'
 
 const title = "Guide d'utilisation"
 export const revalidate = getNotionRevalidate()

@@ -6,7 +6,7 @@ import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
 import Outil from 'components/outils/Outil'
 import { devTools, smallTools } from 'components/cards/tools'
-import Suggestion from 'components/layout/web/Suggestion'
+import Suggestion from 'components/layout/Suggestion'
 
 const tools = [...devTools, ...smallTools]
 export async function generateStaticParams() {

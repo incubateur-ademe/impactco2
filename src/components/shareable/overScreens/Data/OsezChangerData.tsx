@@ -6,7 +6,7 @@ import Link from 'components/base/buttons/Link'
 import EquivalentCard from 'components/home/EquivalentCard'
 import styles from './OsezChangerData.module.css'
 
-const category = categories.find((category) => category.slug === 'habillement') as Category
+const category = categories.find((c) => c.slug === 'habillement') as Category
 const cuir = category.equivalents?.find((equivalent) => equivalent.slug === 'chaussuresencuir') as ComputedEquivalent
 const tissu = category.equivalents?.find((equivalent) => equivalent.slug === 'chaussuresentissu') as ComputedEquivalent
 const sport = category.equivalents?.find((equivalent) => equivalent.slug === 'chaussuresdesport') as ComputedEquivalent

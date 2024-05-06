@@ -130,7 +130,7 @@
 }
 
 .buttonRef {
-  color: var(--secondary-50);
+  color: var(--primary-50);
   font-family: Marianne;
   font-weight: 500;
   background-color: transparent;
@@ -140,7 +140,7 @@
   margin-left: 0.25rem;
 
   :global(.notion-blue) {
-    color: var(--secondary-50);
+    color: var(--primary-50);
     text-decoration-line: underline;
 
     b {
@@ -149,10 +149,10 @@
   }
 
   &:hover {
-    color: var(--secondary-60);
+    color: var(--primary-60);
 
     :global(.notion-blue) {
-      color: var(--secondary-60);
+      color: var(--primary-60);
     }
   }
 }

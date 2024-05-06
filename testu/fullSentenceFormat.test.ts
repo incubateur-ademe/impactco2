@@ -1,5 +1,5 @@
+import { computedEquivalents } from 'src/providers/equivalents'
 import fullSentenceFormat from 'utils/fullSentenceFormat'
-import { computedEquivalents } from 'components/providers/equivalents'
 
 describe('fullSentenceFormat', () => {
   test("transforme un objet 'Equivalent' en une phrase", () => {

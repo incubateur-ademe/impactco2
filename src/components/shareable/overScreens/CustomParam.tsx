@@ -4,11 +4,11 @@ import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
 import { Point } from 'hooks/useItineraries'
-import AddressInput from 'components/form/AddressInput'
 import CheckboxInput from 'components/form/CheckboxInput'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import Select from 'components/form/Select'
+import AddressInput from 'components/form/addresses/AddressInput'
 import styles from './CustomParam.module.css'
 
 const configs: Record<

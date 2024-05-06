@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { RulePage } from 'publicodes-react'
-import useRulesContextLivraison from 'components/providers/RulesProviderLivraison'
+import useRulesContextLivraison from 'src/providers/RulesProviderLivraison'
 import Markdown from './Markdown'
 
 export default function DocumentationLivraison({ slug }: { slug: string }) {

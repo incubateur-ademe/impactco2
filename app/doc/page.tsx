@@ -1,6 +1,6 @@
 import React from 'react'
 import Doc from 'components/doc/Doc'
-import Suggestion from 'components/layout/web/Suggestion'
+import Suggestion from 'components/layout/Suggestion'
 
 const DocPage = () => {
   return (

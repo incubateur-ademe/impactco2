@@ -1,47 +1,18 @@
+'use client'
+
+import classNames from 'classnames'
 import React, { Dispatch, SetStateAction, useCallback, useEffect } from 'react'
-import Highlighter from 'react-highlight-words'
-import styled from 'styled-components'
 import { Address } from 'types/address'
+import { displayAddress } from 'utils/address'
 import { Point } from 'hooks/useItineraries'
+import styles from './Suggestions.module.css'
 
-const displayAddress = (address: Address) => {
-  // an address can have multiple postcode, display the first
-  const postcode = (address.properties.postcode || '').split(';')
-  const { name, housenumber, street, city, country } = address.properties
-  return [name, housenumber, street, city, postcode[0], country].filter((value) => value).join(' ')
-}
-
-const Wrapper = styled.div`
-  background-color: var(--neutral-00);
-  border-radius: 0 0 1.375rem 1.375rem;
-  max-height: 20rem;
-  overflow-y: auto;
-  position: relative;
-`
-const Suggestion = styled.div<{ $current: boolean }>`
-  background-color: ${(props) => (props.$current ? 'var(--secondary-10)' : 'var(--neutral-00)')};
-  cursor: pointer;
-  font-size: 0.875rem;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-
-  &:hover {
-    background-color: var(--primary-10);
-  }
-
-  mark {
-    background-color: transparent;
-    color: var(--neutral-70);
-    opacity: 0.8;
-  }
-`
 const Suggestions = ({
-  search,
   current,
   setCurrent,
   results,
   handleSuggestionClick,
 }: {
-  search: string
   current: number
   setCurrent: Dispatch<SetStateAction<number>>
   isFetching: boolean
@@ -84,15 +55,15 @@ const Suggestions = ({
   }, [onKeyDown])
 
   return (
-    <Wrapper data-testid='transportSuggest'>
+    <div className={styles.container} data-testid='transportSuggest'>
       {results
         .map((result) => ({ ...result, display: displayAddress(result) }))
         .filter((result, index, array) => array.findIndex((adress) => adress.display === result.display) === index)
         .map((result, index) => {
           return (
             index < maxSuggestions && (
-              <Suggestion
-                $current={index === current}
+              <div
+                className={classNames(styles.suggestion, { [styles.current]: index === current })}
                 key={result.properties.osm_id}
                 onClick={() =>
                   handleSuggestionClick({
@@ -103,16 +74,12 @@ const Suggestions = ({
                   })
                 }
                 onMouseDown={(e) => e.preventDefault()}>
-                <Highlighter
-                  searchWords={search.split(' ')}
-                  autoEscape={true}
-                  textToHighlight={displayAddress(result)}
-                />
-              </Suggestion>
+                {displayAddress(result)}
+              </div>
             )
           )
         })}
-    </Wrapper>
+    </div>
   )
 }
 

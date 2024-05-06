@@ -72,9 +72,6 @@ const images = process.env.NEXT_PUBLIC_IMAGE_URL.startsWith('https')
 
 const nextConfig = {
   reactStrictMode: true,
-  compiler: {
-    styledComponents: true,
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },

@@ -13,7 +13,7 @@ import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
 import Stars from 'components/form/Stars'
 import TextArea from 'components/form/TextArea'
-import Block from 'components/layout/web/Block'
+import Block from 'components/layout/Block'
 import styles from './Form.module.css'
 
 const descriptions: Record<string, { label: string; hint: string }> = {

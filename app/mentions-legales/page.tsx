@@ -1,6 +1,6 @@
 import React from 'react'
-import Suggestion from 'components/layout/web/Suggestion'
-import MentionsLegalesPage from 'components/pages/MentionsLegalesPage'
+import MentionsLegalesPage from 'src/views/MentionsLegalesPage'
+import Suggestion from 'components/layout/Suggestion'
 
 export default function MetionsLegales() {
   return (

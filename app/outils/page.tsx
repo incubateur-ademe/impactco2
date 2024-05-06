@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import React from 'react'
 import Outils from 'components/outils/Outils'
-import Suggestion from 'components/layout/web/Suggestion'
+import Suggestion from 'components/layout/Suggestion'
 
 export const metadata: Metadata = {
   title: 'Outils | Impact CO₂',

@@ -1,6 +1,6 @@
 import React from 'react'
-import Suggestion from 'components/layout/web/Suggestion'
-import DocumentationLivraisonPage from 'components/pages/DocumentationLivraisonPage'
+import DocumentationLivraisonPage from 'src/views/DocumentationLivraisonPage'
+import Suggestion from 'components/layout/Suggestion'
 
 export default function Documentation() {
   return (

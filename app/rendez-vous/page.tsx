@@ -1,7 +1,7 @@
 import React from 'react'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import RendezVous from 'components/contact/RendezVous'
-import Suggestion from 'components/layout/web/Suggestion'
+import Suggestion from 'components/layout/Suggestion'
 
 const RDVPage = () => {
   return (

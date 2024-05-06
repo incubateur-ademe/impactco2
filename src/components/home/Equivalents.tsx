@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { computedEquivalents } from 'src/providers/equivalents'
+import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { ComputedEquivalent } from 'types/equivalent'
-import { computedEquivalents } from 'components/providers/equivalents'
-import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
 import SearchIcon from 'components/base/icons/search'

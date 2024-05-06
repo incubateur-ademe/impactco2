@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
-import useParamContext from 'components/providers/ParamProvider'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
 import Tile from './Tile'

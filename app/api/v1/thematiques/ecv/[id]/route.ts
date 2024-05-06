@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { computedEquivalents } from 'src/providers/equivalents'
 import { z } from 'zod'
 import { categories } from 'data/categories'
 import { computeFootprint } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
-import { computedEquivalents } from 'components/providers/equivalents'
 
 const categoryValidation = z.object({
   id: z.string(),

@@ -1,6 +1,6 @@
 import React from 'react'
 import Home from 'components/home/Home'
-import Suggestion from 'components/layout/web/Suggestion'
+import Suggestion from 'components/layout/Suggestion'
 
 const HomePage = async () => {
   return (

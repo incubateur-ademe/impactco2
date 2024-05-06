@@ -8,10 +8,10 @@ import useDebounce from 'hooks/useDebounce'
 import { Point } from 'hooks/useItineraries'
 import ErrorIcon from 'components/base/icons/error'
 import LoadingIcon from 'components/base/icons/loading'
-import Suggestions from 'components/transport/search/itinerary/address/search/Suggestions'
+import Suggestions from 'components/form/addresses/Suggestions'
+import inputStyles from '../Input.module.css'
+import useError from '../errors'
 import styles from './AddressInput.module.css'
-import inputStyles from './Input.module.css'
-import useError from './errors'
 
 const AddressInput = ({
   id,
@@ -74,6 +74,7 @@ const AddressInput = ({
           [inputStyles.inputError]: !!error,
         })}
         {...inputProps}
+        autoComplete='off'
         ref={input}
         value={value}
         onChange={(event) => setValue(event.target.value)}
@@ -89,7 +90,6 @@ const AddressInput = ({
         <div className={styles.suggestionsContainer}>
           <Suggestions
             isFetching={isFetching}
-            search={debouncedSearch}
             results={data}
             current={current}
             setCurrent={setCurrent}

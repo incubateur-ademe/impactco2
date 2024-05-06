@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
@@ -9,7 +10,6 @@ import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
 import { filterByDistance } from 'utils/transport'
-import useParamContext from 'components/providers/ParamProvider'
 
 // C'est un peu austère, déso
 export default function useTransportations(

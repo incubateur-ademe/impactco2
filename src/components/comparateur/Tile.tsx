@@ -1,11 +1,11 @@
 'use client'
 
 import React, { useMemo } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
+import { computedEquivalents } from 'src/providers/equivalents'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
-import useParamContext from 'components/providers/ParamProvider'
-import { computedEquivalents } from 'components/providers/equivalents'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import buttonStyles from 'components/base/buttons/Button.module.css'
 import ArrowUpIcon from 'components/base/icons/arrow-up'

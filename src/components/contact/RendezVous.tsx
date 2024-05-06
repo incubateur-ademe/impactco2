@@ -12,7 +12,7 @@ import Input from 'components/form/Input'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
 import TextArea from 'components/form/TextArea'
-import Block from 'components/layout/web/Block'
+import Block from 'components/layout/Block'
 import styles from './Form.module.css'
 
 const RendezVous = () => {

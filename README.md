@@ -90,7 +90,7 @@ Pour mettre à jour ce fichier,
 
 ## Architecture 🏛️
 
-Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/), [React Query](https://tanstack.com/query/v4) et [Styled Components](https://styled-components.com/). Le state est simplement géré par [Context](https://react.dev/learn/passing-data-deeply-with-context).
+Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/) et [React Query](https://tanstack.com/query/v4). Le state est simplement géré par [Context](https://react.dev/learn/passing-data-deeply-with-context).
 
 Le repo est architecturé avec les dossiers suivants :
 
@@ -121,7 +121,6 @@ L'intérieur de ce fichier est structuré comme suit :
 
 - Import de librairie externes (React, Styled Components, etc.)
 - Import de librairie interne (d'autres composants que l'on a créé)
-- Déclaration des Styled-Components, par ordre d'apparition dans le composant
 - Déclaration et export du composant
 
 Les fonctions appelées dans le jsx ne sont pas nommées, afin de simplifier la lecture. On essaie de maintenir les fichiers de composants bien en dessous de 100 lignes

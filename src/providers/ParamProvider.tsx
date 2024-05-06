@@ -6,12 +6,12 @@ import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
+import { displayAddress } from 'utils/address'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/UseTheme'
-import { displayAddress } from 'components/transport/search/itinerary/Address'
 import { computedEquivalents } from './equivalents'
 
 const usageNumeriqueDefaultValues = {

@@ -2,9 +2,9 @@
 
 import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { TransportSimulateur } from 'types/transport'
 import { buildCurrentUrlFor } from 'utils/urls'
-import useParamContext from 'components/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'

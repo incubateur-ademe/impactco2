@@ -1,4 +1,4 @@
-import { Params } from 'components/providers/ParamProvider'
+import { Params } from 'src/providers/ParamProvider'
 import { CustomParamValue } from './CustomParam'
 
 const values: Record<string, (params: Params) => Record<string, CustomParamValue>> = {

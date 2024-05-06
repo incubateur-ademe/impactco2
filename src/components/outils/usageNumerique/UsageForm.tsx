@@ -2,7 +2,7 @@
 
 import { SetStateAction } from 'preact/compat'
 import React, { Dispatch } from 'react'
-import useParamContext from 'components/providers/ParamProvider'
+import useParamContext from 'src/providers/ParamProvider'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
 import Select from 'components/form/Select'

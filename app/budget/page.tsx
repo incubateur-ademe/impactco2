@@ -1,6 +1,6 @@
 import React from 'react'
-import Suggestion from 'components/layout/web/Suggestion'
-import BudgetPage from 'components/pages/BudgetPage'
+import BudgetPage from 'src/views/BudgetPage'
+import Suggestion from 'components/layout/Suggestion'
 
 export default function Budget() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
+import APIDocPage from 'src/views/APIDocPage'
 import 'swagger-ui-react/swagger-ui.css'
-import Suggestion from 'components/layout/web/Suggestion'
-import APIDocPage from 'components/pages/APIDocPage'
+import Suggestion from 'components/layout/Suggestion'
 import { doc } from 'components/swagger/utils'
 
 const pathPriority = ['/thematiques']

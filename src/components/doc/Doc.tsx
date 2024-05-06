@@ -1,7 +1,7 @@
 import React from 'react'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ToolCard from 'components/cards/ToolCard'
-import Block from 'components/layout/web/Block'
+import Block from 'components/layout/Block'
 import styles from './Doc.module.css'
 
 const Doc = () => {

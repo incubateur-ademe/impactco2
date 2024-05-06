@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
-import useParamContext from 'components/providers/ParamProvider'
+import useParamContext from 'src/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
