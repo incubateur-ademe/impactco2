@@ -11,7 +11,7 @@ export type Point = {
 }
 
 export default function useItineraries(start: Point | undefined, end: Point | undefined, tracking: string) {
-  const { data } = useQuery({
+  return useQuery({
     queryKey: [start || '', end || ''],
     queryFn: () => {
       if (!start || !end) {
@@ -42,6 +42,4 @@ export default function useItineraries(start: Point | undefined, end: Point | un
     refetchOnWindowFocus: false,
     staleTime: Infinity,
   })
-
-  return data
 }

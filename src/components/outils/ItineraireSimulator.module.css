@@ -14,11 +14,7 @@
   width: 100%;
 
   > div {
-    flex-grow: 1;
-
-    input {
-      max-width: 100%;
-    }
+    width: calc(100% - 0.325rem);
   }
 
   label {
@@ -32,6 +28,10 @@
 
   @media only screen and (max-width: 48rem) {
     flex-direction: column;
+
+    > div {
+      width: 100%;
+    }
   }
 }
 

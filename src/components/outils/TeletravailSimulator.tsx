@@ -34,7 +34,7 @@ const TeletravailSimulator = () => {
     () => transports.find((x) => x.slug === transport) as ComputedEquivalent & { type: DeplacementType },
     [transport]
   )
-  const itineraries = useItineraries(start, end, 'télétravail')
+  const { data: itineraries } = useItineraries(start, end, 'télétravail')
   const total = useMemo(() => {
     if (itineraries && deplacement) {
       const distance = itineraries[deplacement.type]
@@ -123,7 +123,7 @@ const TeletravailSimulator = () => {
           </div>
         </div>
       </div>
-      {start && end && total ? (
+      {start && end && itineraries && total ? (
         <>
           <div className={styles.results}>
             <div className={styles.values}>

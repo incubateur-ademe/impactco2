@@ -18,7 +18,7 @@ const ItineraireSimulator = () => {
 
   const t = useTranslations('transport.itineraire')
 
-  const itineraries = useItineraries(start, end, 'itinéraire')
+  const { data: itineraries } = useItineraries(start, end, 'itinéraire')
   const equivalents = useTransportations('Transport itinéraire', 'itineraire', itineraries)
   return (
     <>
@@ -45,7 +45,7 @@ const ItineraireSimulator = () => {
         </div>
         Découvrez la quantité de CO2e que vous émettez pour ce trajet
       </div>
-      {start && end ? (
+      {start && end && itineraries ? (
         <>
           <div className={shareableStyles.separatorBothBorders} />
           <CategorySimulator equivalents={equivalents} />
