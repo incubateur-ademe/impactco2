@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
+import { track } from 'utils/matomo'
 import NumberInput from 'components/form/NumberInput'
 import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
@@ -30,7 +31,16 @@ const ChauffageSimulator = () => {
   return (
     <>
       <div className={styles.simulator}>
-        <NumberInput id='m2-value' value={m2} setValue={setM2} label='Surface (en m²)' unit='m²' />
+        <NumberInput
+          id='m2-value'
+          value={m2}
+          setValue={(value) => {
+            track('Chauffage', 'Surface', value.toString())
+            setM2(value)
+          }}
+          label='Surface (en m²)'
+          unit='m²'
+        />
         Découvrez la quantité de CO2e que vous émettez pour chauffer cette surface par an
       </div>
       <div className={shareableStyles.separatorBothBorders} />

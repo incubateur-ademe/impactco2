@@ -5,6 +5,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { FruitsEtLegumesEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
+import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
@@ -23,7 +24,13 @@ const FruitsEtLegumesSimulator = () => {
     <>
       <div className={styles.simulator}>
         <HiddenLabel htmlFor='month'>Découvres les fruits et légumes du mois de</HiddenLabel>
-        <Select id='month' value={month} onChange={(e) => setMonth(Number(e.target.value))}>
+        <Select
+          id='month'
+          value={month}
+          onChange={(e) => {
+            track('Fruits et légumes', 'Mois', e.target.value)
+            setMonth(Number(e.target.value))
+          }}>
           {monthsOptions.map((month) => (
             <option key={month.value} value={month.value}>
               {month.label}

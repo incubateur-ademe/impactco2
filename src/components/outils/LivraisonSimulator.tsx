@@ -4,6 +4,7 @@ import React, { useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useRulesContextLivraison from 'src/providers/RulesProviderLivraison'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import Etiquette from 'components/comparateur/Etiquette'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
@@ -67,7 +68,10 @@ const LivraisonSimulator = () => {
           label='Vous commandez...'
           required
           value={values.produit}
-          onChange={(event) => setValues({ ...values, produit: event.target.value })}>
+          onChange={(event) => {
+            track('Livraison', 'Produit', event.target.value)
+            setValues({ ...values, produit: event.target.value })
+          }}>
           <option value='grande consommation'>Produits de grande consommation (aliments, épicerie, boissons…)</option>
           <option value='habillement'>Habillement (vêtements, chaussures, accessoires…)</option>
           <option value='culturel'>Produits culturels (CD, livres, DVD…)</option>
@@ -79,7 +83,10 @@ const LivraisonSimulator = () => {
           label='Que vous faites livrer en...'
           required
           value={values.retrait}
-          onChange={(event) => setValues({ ...values, retrait: event.target.value })}>
+          onChange={(event) => {
+            track('Livraison', 'Mode', event.target.value)
+            setValues({ ...values, retrait: event.target.value })
+          }}>
           <option value='domicile'>Livraison à domicile</option>
           <option value='point de retrait'>Point relais</option>
           <option value='click and collect'>Click & collect</option>
@@ -98,7 +105,10 @@ const LivraisonSimulator = () => {
                 label='Non'
                 value='no'
                 selected={isHabit ? 'yes' : 'no'}
-                setSelected={() => setIsHabit(false)}
+                setSelected={() => {
+                  track('Livraison', 'Trajet', 'false')
+                  setIsHabit(false)
+                }}
               />
               <RadioInput
                 name='radio-trajet'
@@ -106,7 +116,10 @@ const LivraisonSimulator = () => {
                 label='Oui'
                 value='yes'
                 selected={isHabit ? 'yes' : 'no'}
-                setSelected={() => setIsHabit(true)}
+                setSelected={() => {
+                  track('Livraison', 'Trajet', 'true')
+                  setIsHabit(true)
+                }}
               />
             </Radio>
             {!isHabit && (
@@ -117,13 +130,17 @@ const LivraisonSimulator = () => {
                     id='km-value'
                     unit='km'
                     value={Number(values.km)}
-                    setValue={(newValue) => setValues({ ...values, km: newValue.toString() })}
+                    setValue={(newValue) => {
+                      track('Livraison', 'Distance', newValue.toString())
+                      setValues({ ...values, km: newValue.toString() })
+                    }}
                   />
                   <HiddenLabel htmlFor={'text-select-km-type'}>Type de véhicule pour faire le trajet</HiddenLabel>
                   <Select
                     id='km-type'
                     value={values.relay}
                     onChange={(event) => {
+                      track('Livraison', 'Transport', event.target.value)
                       setValues({ ...values, relay: event.target.value })
                     }}>
                     <option value='voiture thermique'>En voiture</option>
@@ -145,7 +162,10 @@ const LivraisonSimulator = () => {
             label='Non'
             value='no'
             selected={isPlane ? 'yes' : 'no'}
-            setSelected={() => setIsPlane(false)}
+            setSelected={() => {
+              track('Livraison', 'Avion', 'false')
+              setIsPlane(false)
+            }}
           />
           <RadioInput
             name='radio-plane'
@@ -153,7 +173,10 @@ const LivraisonSimulator = () => {
             label='Oui (transport par avion)'
             value='yes'
             selected={isPlane ? 'yes' : 'no'}
-            setSelected={() => setIsPlane(true)}
+            setSelected={() => {
+              track('Livraison', 'Avion', 'true')
+              setIsPlane(true)
+            }}
           />
         </Radio>
       </div>
@@ -176,12 +199,21 @@ const LivraisonSimulator = () => {
         <div className={styles.formRow}>
           <label htmlFor='input-number-value'>En moyenne, vous passez ce type de commande...</label>
           <div className={styles.inputs}>
-            <NumberInput id='number-value' unit='fois' value={number} setValue={setNumber} />
+            <NumberInput
+              id='number-value'
+              unit='fois'
+              value={number}
+              setValue={(value) => {
+                track('Livraison', 'Commande', value.toString())
+                setNumber(value)
+              }}
+            />
             <HiddenLabel htmlFor={'text-select-frequence-type'}>Fréquence</HiddenLabel>
             <Select
               id='frequence-type'
               value={frequence}
               onChange={(event) => {
+                track('Livraison', 'Frequence', event.target.value)
                 setFrequence(Number(event.target.value))
               }}>
               <option value={1}>Par an</option>

@@ -27,7 +27,7 @@ export const usageNumeriqueConfig = {
       },
     ],
   },
-  visioconference: {
+  visio: {
     title: 'Heures de visioconférence',
     unit: 'heures',
     device: 'visio . appareil',

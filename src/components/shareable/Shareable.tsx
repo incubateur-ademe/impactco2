@@ -102,9 +102,21 @@ const Shareable = ({
         <>
           {overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
             <div className={styles.ressources}>
-              {'data' in overScreens && <Feature info={overScreens.data} setOverScreen={setOverScreenInternal} />}
+              {'data' in overScreens && (
+                <Feature
+                  tracking={tracking}
+                  name='Comprendre les données'
+                  info={overScreens.data}
+                  setOverScreen={setOverScreenInternal}
+                />
+              )}
               {'hypothesis' in overScreens && (
-                <Feature info={overScreens.hypothesis} setOverScreen={setOverScreenInternal} />
+                <Feature
+                  info={overScreens.hypothesis}
+                  name='Aller plus loin'
+                  tracking={tracking}
+                  setOverScreen={setOverScreenInternal}
+                />
               )}
             </div>
           ) : (

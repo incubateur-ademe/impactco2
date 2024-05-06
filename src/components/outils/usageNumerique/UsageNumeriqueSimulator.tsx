@@ -106,7 +106,7 @@ const UsageNumeriqueSimulator = () => {
     <>
       <div className={styles.simulator}>
         <UsageForm slug='streaming' engineValue='streaming . durée' />
-        <UsageForm slug='visioconference' engineValue='visio . durée' />
+        <UsageForm slug='visio' engineValue='visio . durée' />
         <UsageForm slug='email' value={numberEmails} setValue={setNumberEmails} />
       </div>
       <div className={styles.results}>

@@ -32,7 +32,9 @@ const NumberInput = ({
   }, [value])
 
   useEffect(() => {
-    setValue(Number(internalValue))
+    if (value !== Number(internalValue)) {
+      setValue(Number(internalValue))
+    }
   }, [internalValue])
 
   return (

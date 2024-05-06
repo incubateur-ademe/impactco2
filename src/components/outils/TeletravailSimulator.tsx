@@ -10,6 +10,7 @@ import { categories } from 'data/categories'
 import { deplacements } from 'data/categories/deplacement'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import useItineraries from 'hooks/useItineraries'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Etiquette from 'components/comparateur/Etiquette'
@@ -74,6 +75,7 @@ const TeletravailSimulator = () => {
             id='frequence-type'
             value={transport}
             onChange={(event) => {
+              track('Télétravail', 'Mode de transport', event.target.value)
               setTransport(event.target.value)
             }}>
             {deplacements.map((deplacement) => (
@@ -95,7 +97,10 @@ const TeletravailSimulator = () => {
               id='presentiel-value'
               unit={presentiel === 1 ? 'jour' : 'jours'}
               value={presentiel}
-              setValue={setPresentiel}
+              setValue={(value) => {
+                track('Télétravail', 'Présentiel', value.toString())
+                setPresentiel(value)
+              }}
               min={0}
               max={5}
             />
@@ -108,7 +113,10 @@ const TeletravailSimulator = () => {
               id='teletravail-value'
               unit={presentiel === 1 ? 'jour' : 'jours'}
               value={5 - presentiel}
-              setValue={(value) => setPresentiel(5 - value)}
+              setValue={(value) => {
+                track('Télétravail', 'Télétravail', value.toString())
+                setPresentiel(5 - value)
+              }}
               min={0}
               max={5}
             />
