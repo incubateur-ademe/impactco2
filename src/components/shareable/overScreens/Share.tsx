@@ -18,7 +18,15 @@ import { getComparateurParams, getCustomParams } from './CustomParamsValues'
 import styles from './Share.module.css'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
-const Share = ({ category, path, tracking }: { category?: Category; path?: string; tracking?: string }) => {
+const Share = ({
+  category,
+  path,
+  tracking,
+}: {
+  category?: Pick<Category, 'slug' | 'name' | 'meta'>
+  path?: string
+  tracking?: string
+}) => {
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
@@ -107,7 +115,7 @@ const Share = ({ category, path, tracking }: { category?: Category; path?: strin
             height={382.2}
             alt=''
           />
-          <div>
+          <div className={styles.text}>
             <div className={styles.metaHeader}>APERÇU DU PARTAGE</div>
             <p>
               <b>{category ? category.meta.title : 'Comparateur'}</b>

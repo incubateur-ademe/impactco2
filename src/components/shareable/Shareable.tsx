@@ -24,6 +24,7 @@ type ShareableProps = {
   overScreen?: OverScreenInfo | undefined
   setOverScreen?: Dispatch<SetStateAction<string | undefined>>
   noBottomBorders?: boolean
+  small?: boolean
 }
 const Shareable = ({
   children,
@@ -35,6 +36,7 @@ const Shareable = ({
   overScreen,
   setOverScreen,
   noBottomBorders,
+  small,
 }: ShareableProps) => {
   const t = useTranslations('overscreen')
   const { theme } = useParamContext()
@@ -51,7 +53,11 @@ const Shareable = ({
 
   return (
     <div
-      className={classNames(styles.card, { [styles.secondaryCard]: secondary !== undefined, night: theme === 'night' })}
+      className={classNames(styles.card, {
+        [styles.secondaryCard]: secondary !== undefined,
+        night: theme === 'night',
+        [styles.smallCard]: small,
+      })}
       ref={secondary !== undefined ? undefined : ref}>
       {overScreenToDisplay && (
         <>

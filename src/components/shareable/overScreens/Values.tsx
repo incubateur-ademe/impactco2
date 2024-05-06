@@ -6,6 +6,7 @@ import Resource from 'components/base/Resource'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
 import ChauffageData from './Data/ChauffageData'
 import LivraisonData from './Data/LivraisonData'
+import OsezChangerData from './Data/OsezChangerData'
 import TransportData from './Data/TransportData'
 import UsageNumeriqueData from './Data/UsageNumeriqueData'
 import Integrate from './Integrate'
@@ -92,6 +93,64 @@ export const overScreenEtiquetteValues: () => Record<string, OverScreenInfo> = (
     children: <Integrate path='etiquette' tracking='Comparateur' />,
   },
 })
+
+export const overScreenExtraSimulatorValues: (slug: string) => Record<string, OverScreenInfo> = () => {
+  return {
+    partager: {
+      title: 'share',
+      children: (
+        <Share
+          category={{
+            slug: 'osez-changer',
+            name: 'Défi chaussures',
+            meta: {
+              title: 'Osez changer',
+              description:
+                'En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on les aidait à désencombrer les placards ? Découvrez le nouveau challenge d’Impact CO2 !',
+            },
+          }}
+          path='habillement/osez-changer'
+          tracking='OsezChanger'
+        />
+      ),
+    },
+    integrer: {
+      title: 'integrate',
+      children: <Integrate path='habillement/osez-changer' tracking='OsezChanger' />,
+    },
+    hypothesis: {
+      image: '/images/icn-next-actions.svg',
+      title: 'next-actions',
+      children: (
+        <div className={styles.ressourceContainer}>
+          <Resource
+            image='/images/osez-changer-tri.jpeg'
+            text='Faire le tri dans ses placards pour gagner de la place chez soi'
+            href='https://librairie.ademe.fr/consommer-autrement/5271-comment-faire-de-la-place-chez-soi-.html'
+            tracking='OsezChanger'
+          />
+          <Resource
+            image='/images/osez-changer-questions.jpg'
+            text='Se poser les bonnes questions avant d’acheter : en ai-je vraiment besoin ?'
+            href='https://librairie.ademe.fr/cadic/1529/le-revers-de-mon-look.pdf'
+            tracking='OsezChanger'
+          />
+          <Resource
+            image='/images/osez-changer-deuxieme-vie.jpg'
+            text='Donner une seconde vie aux vêtements et chaussures non utilisées'
+            href='https://longuevieauxobjets.ademe.fr/'
+            tracking='OsezChanger'
+          />
+        </div>
+      ),
+    },
+    data: {
+      image: '/images/icn-understand.svg',
+      title: 'understand',
+      children: <OsezChangerData />,
+    },
+  }
+}
 
 export const overScreenCategoryValues: (category: Category) => Record<string, OverScreenInfo> = (category) => {
   const values = {

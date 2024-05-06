@@ -3,6 +3,8 @@
   border: 1px solid var(--neutral-20);
   border-radius: 4px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem 0.75rem;
   margin-top: 2rem;
   padding: 0.75rem;
@@ -33,6 +35,11 @@
       max-height: unset;
     }
   }
+}
+
+.text {
+  min-width: 200px;
+  flex: 1;
 }
 
 .metaHeader {

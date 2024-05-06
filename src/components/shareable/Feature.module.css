@@ -6,6 +6,12 @@
   display: flex;
   width: 100%;
   cursor: pointer;
+  flex: 1;
+  min-width: 300px;
+
+  @media screen and (max-width: 29.875rem) {
+    min-width: 200px;
+  }
 
   &:hover {
     .left {

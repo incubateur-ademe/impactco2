@@ -13,6 +13,18 @@ const CategorySimulator = ({ equivalents }: { equivalents: ComputedEquivalent[] 
 
   return (
     <>
+      {hasUsage && (
+        <div className={styles.legend}>
+          <div>
+            <div className={styles.construction} />
+            Construction
+          </div>
+          <div>
+            <div className={styles.usage} />
+            Usage
+          </div>
+        </div>
+      )}
       {equivalents &&
         equivalents
           .sort((a, b) => a.value - b.value)
@@ -39,18 +51,6 @@ const CategorySimulator = ({ equivalents }: { equivalents: ComputedEquivalent[] 
               </div>
             </Link>
           ))}
-      {hasUsage && (
-        <div className={styles.legend}>
-          <div>
-            <div className={styles.construction} />
-            Construction
-          </div>
-          <div>
-            <div className={styles.usage} />
-            Usage
-          </div>
-        </div>
-      )}
     </>
   )
 }

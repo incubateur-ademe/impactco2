@@ -1,0 +1,6 @@
+.cards {
+  margin: 2rem 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+}

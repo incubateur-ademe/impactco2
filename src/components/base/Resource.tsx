@@ -37,7 +37,7 @@ const Resource = ({
           alt=''
           width={100}
           height={86}
-          style={{ width: imgSize || '100%', height: imgSize || '100%' }}
+          style={{ width: imgSize || 'auto', height: imgSize || '100%' }}
         />
       </div>
       <div className={styles.content}>
