@@ -29,12 +29,14 @@ const OsezChangerSimulator = () => {
           placards ?
         </div>
         <Question
+          slug='avis'
           title='🧠 À votre avis...'
           description='De combien de paires de chaussures pensez-vous avoir besoin ?'
           value={thinkingValue}
           setValue={setThinkingValue}
         />
         <Question
+          slug='penderie'
           title='👉 Dans vos placards'
           description='Combien de paires de chaussures possédez-vous réellement ?'
           value={realValue}
@@ -48,6 +50,7 @@ const OsezChangerSimulator = () => {
           }
         />
         <Question
+          slug='neuf'
           title='✨ Vos achats récents'
           description='Combien de paires de chaussures neuves avez-vous acheté cette année ?'
           value={newValue}

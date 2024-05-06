@@ -21,4 +21,9 @@
 
 .link {
   width: max-content;
+  color: var(--primary-60);
+
+  &:hover {
+    color: var(--priamry-80);
+  }
 }

@@ -2,16 +2,19 @@
 
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import formatName from 'utils/formatName'
+import { track } from 'utils/matomo'
 import Input from 'components/form/Input'
 import styles from './Question.module.css'
 
 const Question = ({
+  slug,
   title,
   description,
   value,
   setValue,
   extra,
 }: {
+  slug: string
   title: string
   description: string
   value: number | undefined
@@ -27,7 +30,7 @@ const Question = ({
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <label htmlFor={`input-${title}`}>
+        <label htmlFor={`input-${slug}`}>
           {title}
           <br />
           <span className={styles.description}>{description}</span>
@@ -35,10 +38,13 @@ const Question = ({
         {extra && <div className={styles.tag}>{extra}</div>}
       </div>
       <Input
-        id={title}
+        id={slug}
         unit={formatName('paire[s]', value || 2)}
         value={internalValue}
-        onChange={(event) => setInternalValue(event.target.value)}
+        onChange={(event) => {
+          track('OsezChanger', slug, event.target.value)
+          setInternalValue(event.target.value)
+        }}
         type='number'
       />
     </div>
