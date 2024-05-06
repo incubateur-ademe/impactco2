@@ -44,7 +44,7 @@ Nous utilisons des clés API pour suivre son utilisation. Bien que celles ci ne 
       },
     ],
   },
-  apis: ['./pages/api/v1/**/*.ts'],
+  apis: ['./app/api/v1/**/*.ts'],
 } as swaggerJSDoc.Options
 
 export const doc = swaggerJSDoc(config)

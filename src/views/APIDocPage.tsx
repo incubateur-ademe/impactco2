@@ -1,5 +1,3 @@
-'use client'
-
 import classNames from 'classnames'
 import React from 'react'
 import SwaggerUI, { SwaggerUIProps } from 'swagger-ui-react'

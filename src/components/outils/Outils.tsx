@@ -18,7 +18,18 @@ const Outils = () => {
       <Block
         title='Petits formats'
         description='Nos widgets, modules et autres formats miniatures à intégrer à vos contenus.'>
-        <ToolCards tools={smallTools} />
+        <ToolCards
+          tools={[
+            ...smallTools,
+            {
+              slug: 'osez-changer',
+              title: 'Défi chaussures',
+              description: 'Compter vos chaussure et évaluer l’impact carbone de vos derniers achats',
+              linkLabel: 'Découvrir',
+              link: '/outils/habillement#osez-changer',
+            },
+          ]}
+        />
       </Block>
       <Block title='Pour les développeurs' description='Des outils spécifiques pour des usages avancés.'>
         <ToolCards tools={devTools} />

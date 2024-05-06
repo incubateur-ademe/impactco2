@@ -19,6 +19,8 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
   return (
     <Link
       href={link || `/outils/${slug}`}
+      target={link ? '_blank' : undefined}
+      rel={link ? 'noreferrer noopener' : undefined}
       className={classNames(styles.card, {
         [styles.horizontalCard]: horizontal,
       })}>

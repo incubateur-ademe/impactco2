@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { ComputedEquivalent } from 'types/equivalent'
+import { track } from 'utils/matomo'
+import useDebounce from 'hooks/useDebounce'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
 import SearchIcon from 'components/base/icons/search'
@@ -18,6 +20,7 @@ const generate = () => getRandomEquivalents('', 3).map((slug) => computedEquival
 
 const Equivalents = () => {
   const [search, setSearch] = useState('')
+  const searchValue = useDebounce(search, 500)
   const [equivalents, setEquivalents] = useState<(ComputedEquivalent | undefined)[]>([])
 
   const results = useSearchEquivalent(search)
@@ -25,6 +28,10 @@ const Equivalents = () => {
   useEffect(() => {
     setEquivalents(generate())
   }, [])
+
+  useEffect(() => {
+    track('Fiches', 'Search', searchValue)
+  }, [searchValue])
 
   return (
     <>
@@ -34,7 +41,9 @@ const Equivalents = () => {
           id='search'
           placeholder='Rechercher'
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value)
+          }}
           icon={<SearchIcon />}
           padding='lg'
         />
@@ -48,6 +57,7 @@ const Equivalents = () => {
         className={styles.button}
         icon={<MagicWandIcon />}
         onClick={() => {
+          track('Fiches', "Afficher d'autres fiches", 'click_afficher_dautres_fichers')
           setSearch('')
           setEquivalents(generate())
         }}>

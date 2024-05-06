@@ -141,15 +141,6 @@ export const smallTools = [
     ),
     clipboardURL: '<script src="https://impactco2.fr/scripts/detection.js"></script>',
   },
-  {
-    slug: 'osez-changer',
-    title: 'Défi chaussures',
-    description: 'Compter vos chaussure et évaluer l’impact carbone de vos derniers achats',
-    linkLabel: 'Découvrir',
-    content: <>TODO</>,
-    toolLink: 'TODO',
-    toolLinkLabel: 'TODO',
-  },
 ]
 
 export const devTools = [
@@ -176,7 +167,7 @@ export const devTools = [
         </div>
       </>
     ),
-    toolLink: '/api-doc',
+    toolLink: '/doc/api',
     toolLinkLabel: 'Accéder à la documentation de l’API',
   },
   {

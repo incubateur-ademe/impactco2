@@ -1,9 +1,23 @@
+.card {
+  padding: 2rem 2rem 2.5rem 2rem;
+
+  @media screen and (max-width: 29.875rem) {
+    padding: 1rem 1rem 2.5rem 1rem;
+  }
+}
+
 .image {
+  background-color: var(--primary-10);
   border-radius: 0.5rem;
-  background: var(--primary-10);
-  padding: 2.25rem 0;
-  width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: auto;
+    height: 180px;
+    max-width: 100%;
+    object-fit: none;
+  }
 }
 
 .content {

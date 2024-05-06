@@ -13,10 +13,11 @@ function ApiDoc() {
   pathPriority.forEach((path) => (paths[path] = doc.paths[path]))
   // @ts-expect-error: No ts for doc
   const spec = { ...doc, paths: { ...paths, ...doc.paths } }
+  console.log(doc, spec)
   return (
     <>
       <APIDocPage spec={spec} />
-      <Suggestion fromLabel='Documentation API' from='/api-doc' simulatorName="de l'API du site" />
+      <Suggestion fromLabel='Documentation API' from='/doc/api' simulatorName="de l'API du site" />
     </>
   )
 }

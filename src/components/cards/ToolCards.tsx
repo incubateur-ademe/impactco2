@@ -13,6 +13,7 @@ const ToolCards = ({ tools }: { tools: ToolCardProps[] }) => {
           description={tool.description}
           linkLabel={tool.linkLabel}
           image={tool.image}
+          link={tool.link}
         />
       ))}
     </div>

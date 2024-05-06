@@ -20,7 +20,6 @@ const PlanDuSitePage = () => {
       <div className={styles.links}>
         <Link href='/'>Page d'accueil</Link>
         <Link href='/accessibilite'>Accessibilité</Link>
-        <Link href='/api-doc'>API Doc</Link>
         <Link href='/budget'>Budget</Link>
         <div>Contenus</div>
         <div className={styles.row}>
@@ -31,6 +30,7 @@ const PlanDuSitePage = () => {
         <Link href='/detecteur-co2'>Le Détecteur CO₂</Link>
         <Link href='/doc'>La doc</Link>
         <div className={styles.row}>
+          <Link href='/doc/api'>API Doc</Link>
           <Link href='/doc/guide-utilisation'>Guide d'utilisation</Link>
           <Link href='/doc/livraison'>Livraison</Link>
           <div className={styles.row}>

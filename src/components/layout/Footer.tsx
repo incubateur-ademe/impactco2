@@ -46,7 +46,7 @@ export default function Footer() {
                 <Link href='/questions-frequentes'>Questions fréquentes</Link>
                 <Link href='/exemples'>Galerie des exemples</Link>
                 <Link href='https://github.com/incubateur-ademe/impactco2'>Code source</Link>
-                <Link href='/api-doc'>API</Link>
+                <Link href='/doc/api'>API</Link>
               </div>
             </div>
           </div>

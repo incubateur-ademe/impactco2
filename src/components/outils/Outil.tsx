@@ -25,9 +25,9 @@ const Outil = ({
       />
       <TranslationProvider>
         <Block title={tool.title} as='h1' description={tool.description}>
-          <Card>
+          <Card className={styles.card}>
             <div className={styles.image}>
-              <Image src={tool.image || `/images/tool-${tool.slug}.svg`} width={88} height={88} alt='' />
+              <Image src={tool.image || `/images/banner-${tool.slug}.png`} width={736} height={180} alt='' />
             </div>
             <div className={styles.content}>{tool.content}</div>
             <div className={styles.link}>
