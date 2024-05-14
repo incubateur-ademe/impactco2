@@ -2,12 +2,13 @@
 
 import React, { useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { computeFootprint } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
-import { evaluateNumber } from 'hooks/useSituation'
+import { evaluateNumber } from 'utils/publicode'
 import Etiquette from 'components/comparateur/Etiquette'
 import shareableStyles from 'components/shareable/Shareable.module.css'
 import CategorySimulator from '../CategorySimulator'
@@ -54,20 +55,22 @@ const streaming = usagenumerique.equivalents?.find(
 const UsageNumeriqueSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
   const {
-    usageNumerique: { numberEmails, setNumberEmails, engine, situation },
+    usageNumerique: { numberEmails, setNumberEmails, situation },
   } = useParamContext()
 
-  const total = useMemo(
-    () =>
+  const { engine } = useUsageNumeriqueContext()
+
+  const total = useMemo(() => {
+    engine.setSituation(situation)
+    return (
       evaluateNumber(engine, 'email') * numberEmails +
       (evaluateNumber(engine, 'streaming . durée') ? evaluateNumber(engine, 'streaming') : 0) +
       (evaluateNumber(engine, 'visio . durée') ? evaluateNumber(engine, 'visio') : 0) -
       (evaluateNumber(engine, 'email . terminaux . construction') * numberEmails +
         evaluateNumber(engine, 'streaming . terminaux . construction') +
-        evaluateNumber(engine, 'visio . terminaux . construction')),
-
-    [engine, situation, numberEmails]
-  )
+        evaluateNumber(engine, 'visio . terminaux . construction'))
+    )
+  }, [engine, situation, numberEmails])
 
   const equivalents = useMemo(
     () => [

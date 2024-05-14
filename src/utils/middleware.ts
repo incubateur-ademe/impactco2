@@ -3,7 +3,6 @@ import { NextRequest } from 'next/server'
 import { prismaClient } from 'utils/prismaClient'
 
 export async function trackAPIRequest(request: NextRequest, api: string, params?: string) {
-  console.log('tracked')
   if (!process.env.TRACK_API) {
     return null
   }

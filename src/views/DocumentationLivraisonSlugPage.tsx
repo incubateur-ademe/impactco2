@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import React from 'react'
-import { RulesProviderLivraison } from 'src/providers/RulesProviderLivraison'
+import { RulesProviderLivraison } from 'src/providers/LivraisonProvider'
 
 const DocumentationLivraison = dynamic(() => import('components/base/DocumentationLivraison'), {
   ssr: false,

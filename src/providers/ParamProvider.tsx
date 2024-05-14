@@ -1,18 +1,8 @@
 'use client'
 
-import negaocterRules from '@incubateur-ademe/publicodes-negaoctet'
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation'
-import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
-import React, {
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { ASTNode, PublicodesExpression } from 'publicodes'
+import React, { Dispatch, ReactNode, SetStateAction, useCallback, useContext, useEffect, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { displayAddress } from 'utils/address'
@@ -76,21 +66,6 @@ const getFloat = (query: ReadonlyURLSearchParams, key: string) => {
     return 0
   }
   return number
-}
-
-const updateSituation = (
-  engine: Engine,
-  situation: Partial<Record<string, PublicodesExpression | ASTNode>>,
-  localSituation: Partial<Record<string, PublicodesExpression | ASTNode>>,
-  setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
-) => {
-  const newSituation = { ...situation, ...localSituation }
-  setSituation(newSituation)
-  try {
-    engine && engine.setSituation(newSituation)
-  } catch (e) {
-    console.error(e)
-  }
 }
 
 type LivraisonValues = {
@@ -187,7 +162,6 @@ export type Params = {
     setNumberEmails: Dispatch<SetStateAction<number>>
     situation: Partial<Record<string, PublicodesExpression | ASTNode>>
     setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
-    engine: Engine
   }
   numerique: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
   habillement: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
@@ -265,25 +239,11 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [search, setSearch] = useState('')
 
   // Usage Numérique
-  const usageNumeriqueEngine = useMemo(() => {
-    return new Engine(negaocterRules, { logger: { log: () => {}, warn: () => {}, error: () => {} } })
-  }, [])
 
   const [usageNumeriqueDisplayAll, setUsageNumeriqueDisplayAll] = useState(false)
   const [numberEmails, setNumberEmails] = useState<number>(50)
-  const [localUsageNumeriqueSituation, setUsageNumeriqueSituation] =
+  const [usageNumeriqueSituation, setUsageNumeriqueSituation] =
     useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-  const [usageNumeriqueSituation, setInternUsageNumeriqueSituation] =
-    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-
-  useEffect(() => {
-    updateSituation(
-      usageNumeriqueEngine,
-      usageNumeriqueSituation,
-      localUsageNumeriqueSituation,
-      setInternUsageNumeriqueSituation
-    )
-  }, [localUsageNumeriqueSituation])
 
   // Numérique
   const [numeriqueDisplayAll, setNumeriqueDisplayAll] = useState(false)
@@ -357,7 +317,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       setNumberEmails(getInt(searchParams, 'emails'))
     }
 
-    const situation: Partial<Record<string, PublicodesExpression | ASTNode>> = {}
+    const situation: Partial<Record<string, PublicodesExpression | ASTNode>> = { ...usageNumeriqueDefaultValues }
     if (searchParams.get('email . appareil')) {
       situation['email . appareil'] = searchParams.get('email . appareil') as string
     }
@@ -536,7 +496,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setNumberEmails,
           situation: usageNumeriqueSituation,
           setSituation: setUsageNumeriqueSituation,
-          engine: usageNumeriqueEngine,
         },
         numerique: {
           displayAll: numeriqueDisplayAll,

@@ -1,10 +1,11 @@
 'use client'
 
 import React, { useMemo, useRef } from 'react'
+import useLivraisonContext from 'src/providers/LivraisonProvider'
 import useParamContext from 'src/providers/ParamProvider'
-import useRulesContextLivraison from 'src/providers/RulesProviderLivraison'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
+import { evaluateNumber } from 'utils/publicode'
 import Etiquette from 'components/comparateur/Etiquette'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
@@ -17,7 +18,7 @@ import styles from './LivraisonSimulator.module.css'
 const LivraisonSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
 
-  const { engine } = useRulesContextLivraison()
+  const { engine } = useLivraisonContext()
 
   const {
     livraison: {
@@ -41,9 +42,9 @@ const LivraisonSimulator = () => {
       'livraison colis . déplacement consommateur . mode de déplacement': `'${values.relay}'`,
       'livraison colis . déplacement consommateur . distance': '0',
     })
-    const zeroKmCO2 = engine.evaluate('livraison colis').nodeValue as number
+    const zeroKmCO2 = evaluateNumber(engine, 'livraison colis')
 
-    const kmCO2Plane = engine.evaluate('livraison colis par avion').nodeValue as number
+    const kmCO2Plane = evaluateNumber(engine, 'livraison colis par avion')
 
     engine.setSituation({
       'livraison colis . informations . catégorie': `'${values.produit}'`,
@@ -51,7 +52,7 @@ const LivraisonSimulator = () => {
       'livraison colis . déplacement consommateur . mode de déplacement': `'${values.relay}'`,
       'livraison colis . déplacement consommateur . distance': `'${values.km}'`,
     })
-    const actualKmCO2 = engine.evaluate('livraison colis').nodeValue as number
+    const actualKmCO2 = evaluateNumber(engine, 'livraison colis')
     const diffKm0 = isHabit ? 0 : actualKmCO2 - zeroKmCO2
 
     const diffPlane = isPlane ? kmCO2Plane - zeroKmCO2 : 0

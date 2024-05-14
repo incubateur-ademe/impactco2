@@ -3,8 +3,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render } from '@testing-library/react'
 import * as nextRouter from 'next/router'
 import { useState } from 'react'
+import { RulesProviderLivraison } from 'src/providers/LivraisonProvider'
 import { ParamProvider } from 'src/providers/ParamProvider'
-import { RulesProviderLivraison } from 'src/providers/RulesProviderLivraison'
 import TranslationProvider from 'src/providers/TranslationProvider'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
