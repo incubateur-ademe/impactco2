@@ -2,7 +2,7 @@
 .container {
   font-size: initial !important;
   border-radius: 8px !important;
-  border: 1px solid var(--neutral-30) !important;
+  border: 2px solid var(--primary-30) !important;
   display: flex !important;
   width: fit-content !important;
   line-height: 1.25em !important;
@@ -24,16 +24,16 @@
 }
 
 .left {
-  border-right: 1px solid var(--primary-30) !important;
+  border-right: 2px solid var(--primary-30) !important;
 }
 
 .top {
   border-radius: 8px 8px 0 0 !important;
-  border-bottom: 1px solid var(--primary-30) !important;
+  border-bottom: 2px solid var(--primary-30) !important;
 }
 
 .leftContent {
-  padding: 0.75em 1.25em 0.75em 0 !important;
+  padding: 0.75em 1.25em 0.75em 0.25em !important;
   margin: auto !important;
 }
 
@@ -52,8 +52,8 @@
 .animatedEqual,
 .equalColumn,
 .equal {
-  top: 1em !important;
-  transform: translateX(-50%) !important;
+  top: 50% !important;
+  transform: translateX(-50%) translateY(-50%) !important;
   border-radius: 50%;
   background-color: var(--neutral-00) !important;
   color: var(--primary-40) !important;
@@ -61,12 +61,13 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  height: 1em !important;
-  width: 1em !important;
+  height: 1.25em !important;
+  width: 1.25em !important;
+  border: 2px solid var(--primary-40) !important;
 
   svg {
-    width: 0.5em !important;
-    height: 0.5em !important;
+    width: 0.75em !important;
+    height: 0.75em !important;
   }
 }
 
@@ -76,15 +77,10 @@
   transform: translateY(-50%) !important;
 }
 
-.equal,
-.equalColumn {
-  border: 1px solid var(--primary-30) !important;
-}
-
 .value {
-  font-size: 1.25em !important;
+  font-size: 1.5em !important;
   line-height: 1.2 !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
 }
 
 .animatedComparisons {
@@ -108,7 +104,7 @@
 }
 
 .comparison:not(:last-child) {
-  border-right: 1px solid var(--neutral-30) !important;
+  border-right: 2px solid var(--primary-30) !important;
 }
 
 .visibleAnimatedComparison,
@@ -132,16 +128,16 @@
 
 .label {
   font-size: 0.75em !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   line-height: 1em !important;
 }
 
 .progressBar {
   position: absolute !important;
-  left: -0.625em !important;
-  top: 0.875em !important;
-  height: 1.25em !important;
-  width: 1.25em !important;
+  top: 50% !important;
+  transform: translateX(-50%) translateY(-50%);
+  height: 1.75em !important;
+  width: 1.75em !important;
   border-radius: 50% !important;
 }
 

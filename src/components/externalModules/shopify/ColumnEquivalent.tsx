@@ -1,9 +1,9 @@
 import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
+import EqualIcon from 'components/base/icons/equal'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './ColumnEquivalent.module.css'
-import Equal from './Equal'
 import baseStyles from './Equivalent.module.css'
 
 const ColumnEquivalent = ({
@@ -35,7 +35,7 @@ const ColumnEquivalent = ({
       </div>
       <div className={baseStyles.rightColumn}>
         <div className={baseStyles.equalColumn}>
-          <Equal />
+          <EqualIcon />
         </div>
         <div className={baseStyles.comparisonsColumn}>
           {comparisons.map((comparison) => (

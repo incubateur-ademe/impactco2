@@ -1,8 +1,8 @@
 import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
+import EqualIcon from 'components/base/icons/equal'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
-import Equal from './Equal'
 import styles from './Equivalent.module.css'
 
 const Equivalent = ({
@@ -98,7 +98,7 @@ const Equivalent = ({
             <div
               className={styles.progressBar}
               style={{
-                background: `radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(var(--primary-20) ${progress}%, transparent 0)`,
+                background: `radial-gradient(closest-side, white 59%, transparent 60% 100%), conic-gradient(var(--primary-20) ${progress}%, transparent 0)`,
               }}>
               <progress value={progress} className={styles.progress}>
                 {progress}%
@@ -106,7 +106,7 @@ const Equivalent = ({
             </div>
           )}
           <div className={isAnimated ? styles.animatedEqual : styles.equal}>
-            <Equal />
+            <EqualIcon />
           </div>
           <div className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
             {comparisons.map((comparison, index) => (

@@ -3,13 +3,12 @@
   display: flex !important;
   align-items: center !important;
   height: 100% !important;
-  gap: 8px !important;
+  gap: 0.5em !important;
   text-align: left !important;
 }
 
 .emoji {
-  font-size: 2em !important;
-  line-height: 1 !important;
+  height: 3em !important;
 
   img {
     margin: 0 !important;
@@ -18,18 +17,18 @@
 }
 
 .label {
-  color: var(--neutral-50) !important;
-  font-size: 0.875em !important;
-  font-weight: 400 !important;
+  color: var(--neutral-60) !important;
+  font-size: 0.75em !important;
+  font-weight: 500 !important;
   line-height: 1em !important;
   max-width: 11em !important;
   margin: 0 !important;
 }
 
 .equivalentValue {
-  font-size: 1.25em !important;
+  font-size: 1.5em !important;
   line-height: 1.2 !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   color: var(--neutral-80) !important;
 }
 

@@ -48,7 +48,7 @@ const SimpleValue = ({
   return (
     <div className={styles.container}>
       <div className={styles.emoji}>
-        <EquivalentIcon height={2} equivalent={{ ...equivalent, slug }} />
+        <EquivalentIcon height={3} equivalent={{ ...equivalent, slug }} />
       </div>
       <div className={classNames(styles.text, 'impactCO2-etiquette-content')} id={id}>
         <div
