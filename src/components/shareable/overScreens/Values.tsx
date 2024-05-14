@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
-import Card from 'components/base/Card'
 import Resource from 'components/base/Resource'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
 import ChauffageData from './Data/ChauffageData'
+import FruitsEtLegumesData from './Data/FruitsEtLegumesData'
 import LivraisonData from './Data/LivraisonData'
 import OsezChangerData from './Data/OsezChangerData'
 import TransportData from './Data/TransportData'
@@ -161,29 +161,16 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
     },
     integrer: {
       title: 'integrate',
-      children: (
-        <>
-          {category.slug === 'transport' ? (
-            <TransportIntegrate />
-          ) : (
-            <Integrate
-              category={category}
-              path={category ? category.slug : 'comparateur'}
-              tracking={category ? category.name : 'Comparateur'}
-            />
-          )}
-          <div className={styles.space} />
-          <Card
-            href='/doc/guide-utilisation'
-            title='Utiliser cette ressource'
-            description='Vous souhaitez intégrer le simulateur à votre publication et découvrir des exemples concrets déjà créés par d’autres utilisateurs ?'
-            link="Guide d'utilisation"
-            image='/images/laptop.png'
-            trackingCategory={category ? category.name : 'Comparateur'}
-            trackingAction='Blocs accompagnement'
+      children:
+        category.slug === 'transport' ? (
+          <TransportIntegrate />
+        ) : (
+          <Integrate
+            category={category}
+            path={category ? category.slug : 'comparateur'}
+            tracking={category ? category.name : 'Comparateur'}
           />
-        </>
-      ),
+        ),
     },
   }
   if (category.slug === 'chauffage') {
@@ -251,6 +238,39 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
             />
           </div>
         ),
+      },
+    }
+  }
+  if (category.slug === 'fruitsetlegumes') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/category-fruitsetlegumes.png'
+              text='Calendrier des fruits et légumes de saison'
+              href='https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html/'
+              withLink='ADEME'
+              tracking='fruitsetlegumes'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='Estimer son empreinte carbone de consommation'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='fruitsetlegumes'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+      data: {
+        image: '/images/icn-understand.svg',
+        title: 'understand',
+        children: <FruitsEtLegumesData />,
       },
     }
   }

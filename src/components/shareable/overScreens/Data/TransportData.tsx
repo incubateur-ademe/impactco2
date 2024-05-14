@@ -52,13 +52,13 @@ const TransportData = () => {
         <div>
           <ul>
             <li>
-              <b>Autocar</b> : 30 personnes - 35,2 gCO2e/km/personne ;
+              <b>Autocar</b> : 30 personnes - 35,2 gCO₂e/km/personne ;
             </li>
             <li>
-              <b>Bus thermique</b> : 10 personnes - 103 gCO2e/km/personne ;
+              <b>Bus thermique</b> : 10 personnes - 103 gCO₂e/km/personne ;
             </li>
             <li>
-              <b>Bus GNV</b> : 10 personnes - 113 gCO2e/km/personne ;
+              <b>Bus GNV</b> : 10 personnes - 113 gCO₂e/km/personne ;
             </li>
             <li>
               <b>Avion</b> : taux de remplissage moyen par type de courrier (court, moyen, long).

@@ -3,7 +3,16 @@
 import negaocterRules from '@incubateur-ademe/publicodes-negaoctet'
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation'
 import Engine, { ASTNode, PublicodesExpression } from 'publicodes'
-import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
+import React, {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { displayAddress } from 'utils/address'
@@ -27,6 +36,14 @@ const usageNumeriqueDefaultValues = {
   ['visio . emplacements']: 2,
   ['visio . transmission . réseau']: "'fixe FR'",
   ['visio . qualité']: "'SD'",
+}
+
+const livraisonDefaultValues = {
+  produit: 'habillement',
+  retrait: 'point de retrait',
+  relay: 'voiture thermique',
+  km: '7',
+  traj: 'dom_tra',
 }
 
 const completeAddress = (setter: Dispatch<SetStateAction<Point | undefined>>, value?: string) => {
@@ -85,6 +102,7 @@ type LivraisonValues = {
 }
 
 export type Params = {
+  reset: (slug: string) => void
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
   language: 'fr' | 'en'
@@ -149,14 +167,6 @@ export type Params = {
     setTransport: Dispatch<SetStateAction<string>>
     presentiel: number
     setPresentiel: Dispatch<SetStateAction<number>>
-    teletravail: number
-    setTeletravail: Dispatch<SetStateAction<number>>
-    holidays: number
-    setHolidays: Dispatch<SetStateAction<number>>
-    extraKm: number
-    setExtraKm: Dispatch<SetStateAction<number>>
-    days: number
-    setDays: Dispatch<SetStateAction<number>>
   }
   chauffage: {
     m2: number
@@ -194,13 +204,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<'fr' | 'en'>('fr')
 
   // Livraison
-  const [livraisonValues, setLivraisonValues] = useState({
-    produit: 'habillement',
-    retrait: 'point de retrait',
-    relay: 'voiture thermique',
-    km: '7',
-    traj: 'dom_tra',
-  })
+  const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
   const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>([
     'voiturethermique',
     'repasavecduboeuf',
@@ -254,10 +258,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   // Teletravail
   const [teletravailTransport, setTeletravailTransport] = useState('voiturethermique')
   const [presentiel, setPresentiel] = useState(4)
-  const [teletravail, setTeletravail] = useState(0)
-  const [holidays, setHolidays] = useState(5)
-  const [extraKm, setExtraKm] = useState(0.25)
-  const [days, setDays] = useState(5)
 
   // Fruits et legumes
   const [month, setMonth] = useState<number>(new Date().getMonth())
@@ -421,9 +421,37 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     setUsageNumeriqueSituation,
   ])
 
+  const reset = useCallback((slug: string) => {
+    switch (slug) {
+      case 'transport':
+        setKm(10)
+        setItineraireStart(undefined)
+        setItineraireEnd(undefined)
+        break
+      case 'teletravail':
+        setTeletravailStart(undefined)
+        setTeletravailEnd(undefined)
+        setTeletravailTransport('voiturethermique')
+        setPresentiel(4)
+        break
+      case 'usagenumerique':
+        setNumberEmails(50)
+        setUsageNumeriqueSituation(usageNumeriqueDefaultValues)
+        break
+      case 'livraison':
+        setLivraisonValues(livraisonDefaultValues)
+        setNumber(1)
+        setFrequence(12)
+        break
+      default:
+        break
+    }
+  }, [])
+
   return (
     <ParamContext.Provider
       value={{
+        reset,
         theme,
         setTheme,
         language,
@@ -488,14 +516,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setTransport: setTeletravailTransport,
           presentiel,
           setPresentiel,
-          teletravail,
-          setTeletravail,
-          holidays,
-          setHolidays,
-          extraKm,
-          setExtraKm,
-          days,
-          setDays,
         },
         chauffage: {
           m2,

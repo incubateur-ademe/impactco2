@@ -29,12 +29,12 @@ test("Affichage simulateur livraison: J'ai bien le titre de l'onglet, le titre d
 
 test("Impact carbone d'une livraison : le bilan s'alourdit avec un colis volumineux", async ({ page }) => {
   // Given
-  await expect(page.getByTestId('bcTotal')).toHaveText('2,46 kg de CO2e ')
+  await expect(page.getByTestId('bcTotal')).toHaveText('2,46 kg de CO₂e ')
   // When
   await page.locator('select#retraits').selectOption({ label: 'Livraison à domicile' })
   await page.locator('select#produits').selectOption({ label: 'Mobilier et gros électroménager' })
   // Then
-  await expect(page.getByTestId('bcTotal')).toHaveText('30,96 kg de CO2e ')
+  await expect(page.getByTestId('bcTotal')).toHaveText('30,96 kg de CO₂e ')
 })
 
 test("Equivalences : Les équivalences par défaut s'affichent", async ({ page }) => {
@@ -59,9 +59,9 @@ test("Equivalences : Une modale d'explication s'affiche", async ({ page }) => {
 
 test("Fréquences : Le bilan carbone s'alourdit avec le nb de colis par mois", async ({ page }) => {
   // Given
-  await expect(page.locator('#kgCo2e')).toHaveText('2,46 kg co₂e')
+  await expect(page.locator('#kgCo₂e')).toHaveText('2,46 kg co₂e')
   // When
   await page.locator('select#numbers').selectOption({ value: '2' })
   // Then
-  await expect(page.locator('#kgCo2e')).toHaveText('4,93 kg co₂e')
+  await expect(page.locator('#kgCo₂e')).toHaveText('4,93 kg co₂e')
 })

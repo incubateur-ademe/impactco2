@@ -13,7 +13,6 @@ const Sources = ({
 }: {
   tracking: string
   sources: { label: string; href: string }[]
-  priority?: 'secondary'
   className?: string
 }) => {
   return (

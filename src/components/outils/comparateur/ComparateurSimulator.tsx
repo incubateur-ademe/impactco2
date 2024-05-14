@@ -63,7 +63,7 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
           <div className={styles.description}>
             C’est{' '}
             <span className={styles.descriptionValue} data-testid='compared-equivalent-value'>
-              {formatNumberPrecision(baseValue * weight)} CO2e
+              {formatNumberPrecision(baseValue * weight)} CO₂e
             </span>
             , soit autant d’émissions que pour fabriquer, consommer ou parcourir...
           </div>

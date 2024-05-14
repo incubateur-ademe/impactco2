@@ -1,5 +1,6 @@
 import React from 'react'
 import { Category as CategoryType } from 'types/category'
+import Reset from 'components/base/Reset'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Block from 'components/layout/Block'
@@ -21,6 +22,7 @@ const CategoryPage = ({ category }: { category: CategoryType }) => {
       />
       <Block title={category.name} as='h1' description={category.description}>
         <Category category={category} />
+        {category.resetable && <Reset slug={category.slug} />}
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>
       {extraSimulator && (

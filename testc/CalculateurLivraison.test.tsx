@@ -24,9 +24,9 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     expect(await screen.findByTestId('retraits')).toHaveValue('relais')
     expect(await screen.findByTestId('relays')).toHaveValue('voiture_thermique')
     expect(await screen.findByTestId('kms')).toHaveValue(7)
-    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^1,51 kg de CO2e$/)
-    expect(await screen.findByTestId('bcAvion')).toHaveTextContent(/^0,00 kg de CO2e$/)
-    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^1,51 kg de CO₂e$/)
+    expect(await screen.findByTestId('bcAvion')).toHaveTextContent(/^0,00 kg de CO₂e$/)
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO₂e$/)
   })
   test('Un produit de grande consommation augmente le bilan carbone (BC)', async () => {
     // Given
@@ -36,7 +36,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     await userEvent.selectOptions(screen.getByTestId('produits'), ['consommation'])
     // Then
     expect(await screen.findByTestId('produits')).toHaveValue('consommation')
-    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^21,54 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^21,54 kg de CO₂e$/)
   })
   test('Un produit culturel diminue le bilan carbone (BC)', async () => {
     // Given
@@ -46,7 +46,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     await userEvent.selectOptions(screen.getByTestId('produits'), ['culturel'])
     // Then
     expect(await screen.findByTestId('produits')).toHaveValue('culturel')
-    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^1,78 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^1,78 kg de CO₂e$/)
   })
   test('Un produit volumineux augmente le bilan carbone (BC)', async () => {
     // Given
@@ -56,7 +56,7 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     await userEvent.selectOptions(screen.getByTestId('produits'), ['volumineux'])
     // Then
     expect(await screen.findByTestId('produits')).toHaveValue('volumineux')
-    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^72,15 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^72,15 kg de CO₂e$/)
   })
   test("La partie magasin et la partie avion s'affichent par défaut", async () => {
     // Given
@@ -94,35 +94,35 @@ describe('CalculateurLivraison - composant principal de la partie livraison', ()
     // Given
     const { container } = renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO₂e$/)
     // When
     await userEvent.click(container.querySelectorAll('.react-switch-handle')[1])
     // Then
-    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^19,56 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^19,56 kg de CO₂e$/)
   })
   test("Si on coche la partie trajet habituel, il n'y a pas de surplus de bilan carbone", async () => {
     // Given
     const { container } = renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
-    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^1,51 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^1,51 kg de CO₂e$/)
     // When
     await userEvent.click(container.querySelectorAll('.react-switch-handle')[0])
     // Then
-    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^0,00 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^0,00 kg de CO₂e$/)
   })
   test("Si on augmente le nombre de km, le bilan carbone du trajet s'alourdit - ainsi que le total", async () => {
     // Given
     renderWithWrapper(<CalculateurLivraison />)
     expect(await screen.findByTestId('calculateurTitleH2')).toBeInTheDocument()
     expect(await screen.findByTestId('kms')).toHaveValue(7)
-    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^1,51 kg de CO2e$/)
-    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO2e$/)
+    expect(await screen.findByTestId('bcTrajet')).toHaveTextContent(/^1,51 kg de CO₂e$/)
+    expect(await screen.findByTestId('bcTotal')).toHaveTextContent(/^3,31 kg de CO₂e$/)
     // When
     await userEvent.clear(screen.queryByTestId('kms') as Element)
     await userEvent.type(screen.queryByTestId('kms') as Element, '21')
     // Then
     expect(await screen.queryByTestId('kms')).toHaveValue(21)
-    expect(await screen.queryByTestId('bcTrajet')).toHaveTextContent(/^4,54 kg de CO2e$/)
-    expect(await screen.queryByTestId('bcTotal')).toHaveTextContent(/^6,34 kg de CO2e$/)
+    expect(await screen.queryByTestId('bcTrajet')).toHaveTextContent(/^4,54 kg de CO₂e$/)
+    expect(await screen.queryByTestId('bcTotal')).toHaveTextContent(/^6,34 kg de CO₂e$/)
   })
 })

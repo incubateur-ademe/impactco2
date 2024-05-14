@@ -25,7 +25,7 @@ const UsageNumeriqueData = () => {
         des données au sein du réseau ont été fournis par NégaOctet. Les calculs relatifs aux data-centers ont été
         réalisés à partir de données qui concernent la plateforme Netflix.
       </div>
-      <div className={styles.title}>Hypothèses pour le streaming</div>
+      <div className={styles.title}>Hypothèses pour le visioconférence</div>
       <div className={styles.content}>
         On considère 2 personnes par défaut dans la visioconférence et que son impact est seulement celui associé à son
         emplacement dans la visioconférence. Les qualités "audio", "basse définition", "haute définition" correspondent

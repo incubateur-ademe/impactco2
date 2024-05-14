@@ -41,7 +41,7 @@ const ChauffageSimulator = () => {
           label='Surface (en m²)'
           unit='m²'
         />
-        Découvrez la quantité de CO2e que vous émettez pour chauffer cette surface par an
+        Découvrez la quantité de CO₂e que vous émettez pour chauffer cette surface par an
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       {chauffage.equivalents && (

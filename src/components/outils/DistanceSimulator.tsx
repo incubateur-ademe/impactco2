@@ -29,7 +29,7 @@ const DistanceSimulator = () => {
           label='Distance parcourue (en km)'
           unit='km'
         />
-        Découvrez la quantité de CO2e que vous émettez pour cette distance
+        Découvrez la quantité de CO₂e que vous émettez pour cette distance
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       <CategorySimulator equivalents={equivalents} />

@@ -1,3 +1,4 @@
+import { Category } from 'types/category'
 import { boissons } from './categories/boisson'
 import { casPratiques } from './categories/caspratiques'
 import { chauffage } from './categories/chauffage'
@@ -12,20 +13,13 @@ import { numeriques } from './categories/numerique'
 import { repas } from './categories/repas'
 import { usageNumeriques } from './categories/usagenumerique'
 
-export const categories = [
+export const categories: Category[] = [
   {
     id: 13,
-    hide: true,
     name: 'Cas pratiques',
     slug: 'caspratiques',
-    header: 'de cas pratiques',
-    title: "Découvrez l'impact de cas pratique sur le climat",
     description: "Comparez l'empreinte carbone d'un aller retour Paris New york, ou de votre soirée netflix",
-    equivalent: 'cas pratique[s]',
-    gender: 'm',
-    divider: 1,
     unit: 'unité',
-    include: '',
     meta: {
       title: 'Cas Pratique',
       description: "Découvrez l'impact sur le climat d'un aller retour Paris New york, ou de votre soirée netflix",
@@ -36,7 +30,6 @@ export const categories = [
     id: 10,
     name: 'Usage numérique',
     slug: 'usagenumerique',
-    header: 'des usages numériques',
     sources: [
       {
         label: 'Étude NégaOctet - 2022',
@@ -47,45 +40,38 @@ export const categories = [
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },
     ],
-    title: "Découvrez l'impact des usages numériques<br/>sur le climat",
-    description:
-      "Mesurez facilement l'empreinte carbone des mails, du streaming ou de la visioconférence & comparez l'impact de ces usages à celui de la construction de vos appareils",
-    equivalent: 'usage[s] numérique[s]',
-    gender: 'm',
-    divider: 1,
+    description: 'Évaluer l’impact carbone de vos usages numériques',
     unit: '',
-    include: '',
-    list: true,
     meta: {
       title: 'Usage numérique',
       description: "Comparez l'impact écologique en CO₂e des emails, de la visioconférence, du streaming, etc.",
     },
     equivalents: computedEquivalents('usagenumerique', usageNumeriques),
+    resetable: true,
   },
   {
     id: 12,
     name: 'Livraison',
     slug: 'livraison',
-    header: 'des livraison de colis',
-    title: "Découvrez l'impact des livraison de colis<br/>sur le climat",
-    description: "Mesurez facilement l'empreinte carbone d'une livraison",
-    equivalent: 'impact[s] livraison[s]',
-    gender: 'm',
-    divider: 1,
+    description: "Mesurer l'impact carbone de la livraison de colis",
     unit: '',
-    include: '',
-    list: true,
     meta: {
       title: 'Impact Carbone de la livraison de colis',
       description:
         'Découvrez l’impact carbone de la livraison d’un colis sur le climat et les conseils pour la réduire',
     },
+    sources: [
+      {
+        label: 'Commerce en ligne - Étude ADEME 2023',
+        href: 'https://librairie.ademe.fr/mobilite-et-transport/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html',
+      },
+    ],
+    resetable: true,
   },
   {
     id: 8,
     name: 'Chauffage',
     slug: 'chauffage',
-    header: 'du chauffage',
     sources: [
       {
         label: 'Étude : Consommation d’énergie par…',
@@ -96,17 +82,11 @@ export const categories = [
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },
     ],
-    title: "Découvrez l'impact du chauffage sur le climat",
-    description:
-      'Faites découvrir l’impact climatique des modes de chauffage à votre communauté grâce à ce simulateur.',
-    equivalent: 'mode[s] de chauffage',
-    gender: 'm',
-    divider: 1,
+    description: 'Situer l’empreinte carbone des différents modes de chauffage',
     unit: 'm²',
-    include: 'par m² par année.',
     meta: {
       title: 'Chauffage',
-      description: "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée ",
+      description: "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée",
     },
     equivalents: computedEquivalents('chauffage', chauffage),
   },
@@ -114,7 +94,6 @@ export const categories = [
     id: 4,
     name: 'Transport',
     slug: 'transport',
-    header: 'du transport',
     description: 'Calculer l’impact carbone des moyens de transport',
     sources: [
       {
@@ -122,31 +101,21 @@ export const categories = [
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },
     ],
-    title: "Découvrez l'impact du transport sur le climat",
-    equivalent: 'mode[s] de transport',
-    gender: 'm',
-    divider: 1,
     unit: 'km',
-    include:
-      "par personne en France. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
     meta: {
       title: 'Transport',
       description:
         "Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO₂ vous connaitrez votre impact sur le climat",
     },
     equivalents: computedEquivalents('transport', flattenEquivalents(deplacements)),
+    resetable: true,
   },
   {
     id: 9,
     name: 'Fruits et légumes',
     slug: 'fruitsetlegumes',
-    header: 'des fruits et légumes de saisons',
-    description: 'Retrouvez les fruits et légumes de la saison et comparez leur empreinte carbone',
-    equivalent: 'fruit[s] et légume[s]',
-    gender: 'm',
-    divider: 1,
+    description: 'Découvrir les fruits et légumes de la saison et leur impact carbone',
     unit: 'kg',
-    include: 'par kg de produit pour des fruits et légumes de saison',
     meta: {
       title: 'Poids en CO₂e des fruits et légumes',
       description: "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison",
@@ -157,7 +126,6 @@ export const categories = [
     id: 1,
     name: 'Numérique',
     slug: 'numerique',
-    header: 'du numérique',
     sources: [
       {
         label: 'Rapport : Modélisation et évaluation...',
@@ -168,13 +136,8 @@ export const categories = [
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },
     ],
-    title: "Découvrez l'impact du numérique sur le climat",
-    description: "Comparez l'empreinte carbone des appareils qui le composent, avec leurs usages et leur construction",
-    equivalent: 'appareil[s]',
-    gender: 'm',
-    divider: 1,
+    description: 'Mesurer l’impact carbone des appareils numériques',
     unit: 'unité',
-    include: "par produit comprenant la fabrication, la distribution et l'usage",
     meta: {
       title: 'Numérique',
       description:
@@ -186,20 +149,14 @@ export const categories = [
     id: 2,
     name: 'Repas',
     slug: 'repas',
-    header: "de l'alimentation",
     sources: [
       {
         label: 'Base Empreinte ADEME',
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },
     ],
-    title: "Découvrez l'impact de l'alimentation sur le climat",
-    description: "Comparez l'empreinte carbone des différents types de repas",
-    equivalent: 'repas',
-    gender: 'm',
-    divider: 1,
+    description: 'Pour aborder l’impact carbone de l’alimentation',
     unit: 'repas',
-    include: 'par repas comprenant la fabrication, la distribution et la consommation.',
     meta: {
       title: 'Repas',
       description:
@@ -211,7 +168,6 @@ export const categories = [
     id: 5,
     name: 'Habillement',
     slug: 'habillement',
-    header: 'de la mode',
     sources: [
       {
         label: 'Rapport : Modélisation et évaluation...',
@@ -222,13 +178,8 @@ export const categories = [
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },
     ],
-    title: "Découvrez l'impact de la mode sur le climat",
-    description: "Comparez l'empreinte carbone de tous vos vêtements",
-    equivalent: 'vêtement[s]',
-    gender: 'm',
-    divider: 1,
+    description: 'Comparer l’impact carbone des vêtements entre eux',
     unit: 'unité',
-    include: "par produit comprenant la fabrication, la distribution et l'usage.",
     meta: {
       title: 'Habillement',
       description:
@@ -240,7 +191,6 @@ export const categories = [
     id: 7,
     name: 'Mobilier',
     slug: 'mobilier',
-    header: 'du mobilier',
     sources: [
       {
         label: 'Rapport : Modélisation et évaluation...',
@@ -251,13 +201,8 @@ export const categories = [
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },
     ],
-    title: "Découvrez l'impact du mobilier sur le climat",
-    description: "Comparez l'empreinte carbone de vos meubles",
-    equivalent: 'meuble[s]',
-    gender: 'm',
-    divider: 1,
+    description: 'Découvrir l’impact carbone des meubles',
     unit: 'unité',
-    include: "par produit comprenant la fabrication, la distribution et l'usage.",
     meta: {
       title: 'Mobilier',
       description:
@@ -269,7 +214,6 @@ export const categories = [
     id: 6,
     name: 'Électroménager',
     slug: 'electromenager',
-    header: "de l'électroménager",
     sources: [
       {
         label: 'Rapport : Modélisation et évaluation...',
@@ -280,13 +224,8 @@ export const categories = [
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },
     ],
-    title: "Découvrez l'impact de l'électroménager sur le climat",
-    description: "Comparez l'empreinte carbone de tous vos équipements",
-    equivalent: 'appareil[s]',
-    gender: 'm',
-    divider: 1,
+    description: 'Comparer l’impact carbone des appareils ménagers',
     unit: 'unité',
-    include: "par produit comprenant la fabrication, la distribution et l'usage.",
     meta: {
       title: 'Électroménager',
       description:
@@ -298,15 +237,8 @@ export const categories = [
     id: 3,
     name: 'Boisson',
     slug: 'boisson',
-    header: 'des boissons',
-    title: "Découvrez l'impact des boissons sur le climat",
-    description:
-      "Comparez l'empreinte carbone de l'eau, des sodas, des boissons alcoolisées, du lait et des boissons chaudes",
-    equivalent: 'boisson[s]',
-    gender: 'f',
-    divider: 1,
+    description: 'Comparer l’impact carbone des boissons',
     unit: 'litre',
-    include: 'par litre de produit comprenant la fabrication, la distribution et la consommation.',
     meta: {
       title: 'Boisson',
       description:

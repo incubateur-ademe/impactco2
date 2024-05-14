@@ -1,6 +1,7 @@
 .block {
   margin: auto;
   padding-top: 4rem;
+  position: relative;
 }
 
 .description {

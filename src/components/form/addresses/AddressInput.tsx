@@ -41,6 +41,8 @@ const AddressInput = ({
   useEffect(() => {
     if (place) {
       setValue(place)
+    } else {
+      setValue('')
     }
   }, [place])
 

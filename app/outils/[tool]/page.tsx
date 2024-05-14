@@ -59,7 +59,7 @@ const OutilPage = async ({ params }: Props) => {
           ...(categories.find((category) => category.slug === 'transport') as CategoryType),
           name: 'Télétravail',
           slug: 'teletravail',
-          description: 'Mesurer les économies de carbone réalisées grâce au télétravail ',
+          description: 'Mesurer les économies de carbone réalisées grâce au télétravail',
         }
       : categories.find((category) => category.slug === params.tool)
   if (category) {

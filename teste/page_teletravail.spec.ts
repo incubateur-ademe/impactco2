@@ -83,7 +83,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
 
     await expect(page.getByText('Présentiel5jours par semaine')).toBeAttached()
     await expect(page.getByText('Télétravail0jours par semaine')).toBeAttached()
-    await expect(page.locator('div').filter({ hasText: /^4329 kgCO2eémissur 5 jours$/ })).toBeAttached()
+    await expect(page.locator('div').filter({ hasText: /^4329 kgCO₂eémissur 5 jours$/ })).toBeAttached()
     // When
     await page
       .locator('div')
@@ -94,9 +94,9 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     // Then
     await expect(page.getByText('Présentiel4jours par semaine')).toBeAttached()
     await expect(page.getByText('Télétravail1jours par semaine')).toBeAttached()
-    await expect(page.locator('div').filter({ hasText: /^3463 kgCO2eémissur 4 jours$/ })).toBeAttached()
+    await expect(page.locator('div').filter({ hasText: /^3463 kgCO₂eémissur 4 jours$/ })).toBeAttached()
     await expect(page.getByText("soit 6.56 %d'économisé sur")).toBeAttached()
-    await expect(page.getByTestId('saved')).toHaveText('649 kgCO2eévités sur 1 jour')
+    await expect(page.getByTestId('saved')).toHaveText('649 kgCO₂eévités sur 1 jour')
   })
 })
 

@@ -43,7 +43,7 @@ const ItineraireSimulator = () => {
             setPlace={setEnd}
           />
         </div>
-        Découvrez la quantité de CO2e que vous émettez pour ce trajet
+        Découvrez la quantité de CO₂e que vous émettez pour ce trajet
       </div>
       {start && end && itineraries ? (
         <>

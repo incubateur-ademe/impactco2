@@ -44,7 +44,7 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('question-neuf-tag')).not.toBeNull()
     expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+16,5kg co₂e')
     expect(screen.queryByTestId('defi-empty-result')).not.toBeVisible()
-    expect(screen.queryByTestId('defi-result-title')).toHaveTextContent('1 paire de chaussure neuve (+16,5kg de CO2e)')
+    expect(screen.queryByTestId('defi-result-title')).toHaveTextContent('1 paire de chaussure neuve (+16,5kg de CO₂e)')
     expect(screen.queryByTestId('defi-equivalent-tshirt-value')).toHaveTextContent('2,6')
     expect(screen.queryByTestId('defi-equivalent-smartphone-value')).toHaveTextContent('0,2')
     expect(screen.queryByTestId('defi-equivalent-vegetarian-value')).toHaveTextContent('32,4')
@@ -104,14 +104,14 @@ describe('Osez Changer', () => {
     expect(screen.queryByTestId('integration-modal')).toBeNull()
   })
 
-  it('Should calculate co2e value based on input', () => {
+  it('Should calculate co₂e value based on input', () => {
     renderWithWrapper(<Defi setOverScreen={() => console.log} />)
     act(() => {
       fireEvent.change(screen.getByTestId('question-neuf-input'), { target: { value: '3' } })
     })
     expect(screen.queryByTestId('question-neuf-tag')).toHaveTextContent('+49,5kg co₂e')
     expect(screen.queryByTestId('defi-result-title')).toHaveTextContent(
-      '3 paires de chaussures neuves (+49,5kg de CO2e)'
+      '3 paires de chaussures neuves (+49,5kg de CO₂e)'
     )
     expect(screen.queryByTestId('defi-equivalent-tshirt-value')).toHaveTextContent('7,7')
     expect(screen.queryByTestId('defi-equivalent-smartphone-value')).toHaveTextContent('0,6')

@@ -9,10 +9,10 @@ const Etiquettes = () => {
 
   return (
     <div className={styles.etiquettes}>
-      <Shareable tracking='Étiquette animée' overScreens={overScreens} secondary='Étiquette animée'>
+      <Shareable tracking='Étiquette animée' overScreens={overScreens} secondary='Étiquette animée' withoutShare>
         <EtiquetteSimulator animated />
       </Shareable>
-      <Shareable tracking='Étiquette statique' overScreens={overScreens} secondary='Étiquette statique'>
+      <Shareable tracking='Étiquette statique' overScreens={overScreens} secondary='Étiquette statique' withoutShare>
         <EtiquetteSimulator />
       </Shareable>
     </div>

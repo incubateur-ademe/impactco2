@@ -126,7 +126,7 @@
     },
     "include": {
       "pre": "",
-      "postNewLine": "Les français émettent en moyenne 9,3 tonnes de CO2e par an (chiffre du Service des Données et Études Statistiques pour 2022, Ministère de la Transition Écologique). Cette moyenne varie beaucoup selon les modes de vie, l’utilisation ou non de la voiture, de l’avion, la vie en maison ou en appartement, le mode de chauffage, l’alimentation etc."
+      "postNewLine": "Les français émettent en moyenne 9,3 tonnes de CO₂e par an (chiffre du Service des Données et Études Statistiques pour 2022, Ministère de la Transition Écologique). Cette moyenne varie beaucoup selon les modes de vie, l’utilisation ou non de la voiture, de l’avion, la vie en maison ou en appartement, le mode de chauffage, l’alimentation etc."
     }
   },
   {
