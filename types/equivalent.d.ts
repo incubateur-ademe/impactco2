@@ -8,6 +8,7 @@ type BaseEquivalent = {
     description: string
   }
 
+  default?: boolean
   include?: { pre: string; post?: string; postNewLine?: string }
   source?: string
   prefix?: string

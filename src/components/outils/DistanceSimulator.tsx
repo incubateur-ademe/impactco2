@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
@@ -11,8 +12,9 @@ import styles from './Simulator.module.css'
 
 const DistanceSimulator = () => {
   const {
-    distance: { km, setKm },
+    distance: { km, setKm, displayAll, setDisplayAll },
   } = useParamContext()
+  const t = useTranslations('transport')
 
   const equivalents = useTransportations('Transport distance', 'distance')
 
@@ -32,7 +34,13 @@ const DistanceSimulator = () => {
         Découvrez la quantité de CO₂e que vous émettez pour cette distance
       </div>
       <div className={shareableStyles.separatorBothBorders} />
-      <CategorySimulator equivalents={equivalents} />
+      <CategorySimulator
+        equivalents={equivalents}
+        displayAll={displayAll}
+        setDisplayAll={setDisplayAll}
+        displayAllText={t('displayAll')}
+        hideAllText={t('hideAll')}
+      />
     </>
   )
 }

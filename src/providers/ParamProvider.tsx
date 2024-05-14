@@ -165,9 +165,6 @@ export type Params = {
   }
   numerique: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
   habillement: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
-  mobilier: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
-  electromenager: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
-  boisson: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
 }
 
 const ParamContext = React.createContext<Params | null>(null)
@@ -250,15 +247,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   // Habillement
   const [habillementDisplayAll, setHabillementDisplayAll] = useState(false)
-
-  // Mobilier
-  const [mobilierDisplayAll, setMobilierDisplayAll] = useState(false)
-
-  // Electromenager
-  const [electromenagerDisplayAll, setElectromenagerDisplayAll] = useState(false)
-
-  // Boisson
-  const [boissonDisplayAll, setBoissonDisplayAll] = useState(false)
 
   const searchParams = useSearchParams()
   useEffect(() => {
@@ -504,18 +492,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         habillement: {
           displayAll: habillementDisplayAll,
           setDisplayAll: setHabillementDisplayAll,
-        },
-        electromenager: {
-          displayAll: electromenagerDisplayAll,
-          setDisplayAll: setElectromenagerDisplayAll,
-        },
-        mobilier: {
-          displayAll: mobilierDisplayAll,
-          setDisplayAll: setMobilierDisplayAll,
-        },
-        boisson: {
-          displayAll: boissonDisplayAll,
-          setDisplayAll: setBoissonDisplayAll,
         },
       }}>
       {children}

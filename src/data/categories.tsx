@@ -144,6 +144,8 @@ export const categories: Category[] = [
         'Le secteur du numérique représente 2,5% des émissions carbone en France. Comment réduire son impact numérique et agir pour le climat à son échelle ?',
     },
     equivalents: computedEquivalents('numerique', numeriques),
+    displayAll: 'Voir tous les appareils',
+    hideAll: 'Voir seulement les appareils principaux',
   },
   {
     id: 2,
@@ -185,6 +187,8 @@ export const categories: Category[] = [
       description:
         "Connaissez-vous l'impact carbone des habits que vous portez ? Impact CO₂ détaille pour vous le poids en CO₂e de chaque vêtement",
     },
+    displayAll: 'Voir tous les vêtements',
+    hideAll: 'Voir seulement les vêtements principaux',
     equivalents: computedEquivalents('habillement', habillements),
   },
   {

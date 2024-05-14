@@ -13,10 +13,11 @@ import styles from './ItineraireSimulator.module.css'
 
 const ItineraireSimulator = () => {
   const {
-    itineraire: { start, setStart, end, setEnd },
+    itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll },
   } = useParamContext()
 
   const t = useTranslations('transport.itineraire')
+  const tTransport = useTranslations('transport')
 
   const { data: itineraries } = useItineraries(start, end, 'itinéraire')
   const equivalents = useTransportations('Transport itinéraire', 'itineraire', itineraries)
@@ -48,7 +49,13 @@ const ItineraireSimulator = () => {
       {start && end && itineraries ? (
         <>
           <div className={shareableStyles.separatorBothBorders} />
-          <CategorySimulator equivalents={equivalents} />
+          <CategorySimulator
+            equivalents={equivalents}
+            displayAll={displayAll}
+            setDisplayAll={setDisplayAll}
+            displayAllText={tTransport('displayAll')}
+            hideAllText={tTransport('hideAll')}
+          />
         </>
       ) : (
         <div className={styles.empty}>

@@ -35,6 +35,7 @@ export const habillements = [
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 23.2,
+    default: true,
   },
   {
     name: 'Polo[s]',
@@ -112,6 +113,7 @@ export const habillements = [
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 5.2,
+    default: true,
   },
   {
     name: 'T-shirt[s]',
@@ -228,6 +230,7 @@ export const habillements = [
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 11.2,
+    default: true,
   },
   {
     name: 'Chemise[s]',
@@ -306,6 +309,7 @@ export const habillements = [
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 13.4,
+    default: true,
   },
   {
     name: 'Paire[s] de chaussures',
@@ -539,6 +543,7 @@ export const habillements = [
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 52.9,
+    default: true,
   },
   {
     name: 'Pull[s]',
@@ -655,6 +660,7 @@ export const habillements = [
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 85.8,
+    default: true,
   },
   {
     name: 'Veste[s] imperméable[s]',

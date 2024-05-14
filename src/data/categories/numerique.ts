@@ -64,6 +64,7 @@ export const numeriques = [
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+    default: true,
   },
   {
     name: 'Ordinateur[s] fixe[s] sans écran (particulier)',
@@ -94,6 +95,7 @@ export const numeriques = [
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+    default: true,
   },
   {
     name: 'Ordinateur[s] fixe[s] sans écran (professionnel)',
@@ -124,6 +126,7 @@ export const numeriques = [
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+    default: true,
   },
   {
     name: "Écran[s] d'ordinateur",
@@ -184,6 +187,7 @@ export const numeriques = [
         value: 56.3,
       },
     ],
+    default: true,
   },
   {
     name: 'Télévision[s] ',
@@ -214,6 +218,7 @@ export const numeriques = [
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+    default: true,
   },
   {
     name: 'Ordinateur[s] portable[s]',
@@ -244,6 +249,7 @@ export const numeriques = [
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+    default: true,
   },
   {
     name: 'Enceinte[s] connectée[s]',
