@@ -38,7 +38,6 @@ const UsageForm = ({
             unit={values.unit}
             value={engineValue ? (situation[engineValue] as number) / 60 : (value as number)}
             setValue={(newValue) => {
-              console.log(newValue, engineValue)
               track('Usage numérique', `Input ${slug} value`, newValue.toString())
               if (engineValue) {
                 setSituation({ ...situation, [engineValue]: (newValue * 60).toString() })
@@ -52,8 +51,6 @@ const UsageForm = ({
             id={`appareil-${slug}`}
             value={situation[values.device] as string}
             onChange={(event) => {
-              console.log(values.device, engineValue)
-
               track('Usage numérique', `Select ${slug} appareil`, event.target.value)
               setSituation({ ...situation, [values.device]: event.target.value })
             }}>
@@ -70,8 +67,6 @@ const UsageForm = ({
             id={`type-${slug}`}
             value={situation[values.type] as string}
             onChange={(event) => {
-              console.log(values.type, engineValue)
-
               track('Usage numérique', `Select ${slug} type`, event.target.value)
               setSituation({ ...situation, [values.type]: event.target.value })
             }}>
@@ -86,8 +81,6 @@ const UsageForm = ({
             id={`network-${slug}`}
             value={situation[values.network] as string}
             onChange={(event) => {
-              console.log(values.network, engineValue)
-
               track('Usage numérique', `Select ${slug} réseau`, event.target.value)
               setSituation({ ...situation, [values.network]: event.target.value })
             }}>

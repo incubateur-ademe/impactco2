@@ -25,7 +25,7 @@ const OsezChangerData = () => {
           rel='noreferrer noopener'>
           Base Carbone
         </Link>
-        :
+        {' '}:
       </div>
       <div className={styles.cards}>
         <EquivalentCard equivalent={cuir} />

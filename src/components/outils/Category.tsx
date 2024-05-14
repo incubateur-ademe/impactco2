@@ -14,7 +14,6 @@ const Category = ({ category }: { category: CategoryType }) => {
   const overScreens = useMemo(() => overScreenCategoryValues(category), [category])
 
   const params = useMemo<{ displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }>(() => {
-    console.log(allParams)
     // @ts-expect-error: managed in hook
     return allParams[category.slug]
   }, [allParams, category])
