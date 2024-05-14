@@ -14,6 +14,7 @@ import { track } from 'utils/matomo'
 import useItineraries from 'hooks/useItineraries'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Etiquette from 'components/comparateur/Etiquette'
+import { getRandomEquivalents } from 'components/comparateur/random'
 import NumberInput from 'components/form/NumberInput'
 import Select from 'components/form/Select'
 import AddressInput from 'components/form/addresses/AddressInput'
@@ -26,7 +27,18 @@ const transports = (categories.find((category) => category.slug === 'transport')
 const TeletravailSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
   const {
-    teletravail: { start, setStart, end, setEnd, transport, setTransport, presentiel, setPresentiel },
+    teletravail: {
+      start,
+      setStart,
+      end,
+      setEnd,
+      transport,
+      setTransport,
+      presentiel,
+      setPresentiel,
+      equivalents,
+      setEquivalents,
+    },
   } = useParamContext()
 
   const t = useTranslations('transport.teletravail')
@@ -156,8 +168,11 @@ const TeletravailSimulator = () => {
             <div className={styles.header}>CE QUI CORRESPOND À..</div>
             <Etiquette
               baseValue={0.75 * (5 - presentiel) * total * 1000}
-              comparisons={['voiturethermique', 'tshirtencoton', 'repasavecduboeuf']}
+              comparisons={equivalents}
               ref={ref}
+              randomize={() => {
+                setEquivalents(getRandomEquivalents(undefined, 3))
+              }}
             />
           </div>{' '}
         </>

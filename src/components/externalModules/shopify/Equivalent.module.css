@@ -1,5 +1,6 @@
 .animatedContainer,
 .container {
+  position: relative;
   font-size: initial !important;
   border-radius: 8px !important;
   border: 2px solid var(--primary-30) !important;
@@ -145,4 +146,51 @@
   visibility: hidden !important;
   height: 0 !important;
   width: 0 !important;
+}
+
+.columnRandomize,
+.randomize {
+  padding: 0 !important;
+  cursor: pointer !important;
+  border-radius: 50% !important;
+  width: 1.75em !important;
+  height: 1.75em !important;
+  min-height: unset !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border: 2px solid var(--primary-50) !important;
+  background-color: var(--primary-40) !important;
+  color: var(--neutral-00) !important;
+  position: absolute !important;
+
+  &:hover {
+    background-color: var(--primary-60) !important;
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  svg {
+    height: 0.75em !important;
+    width: 0.75em !important;
+  }
+}
+
+.randomize {
+  top: 50% !important;
+  right: 0 !important;
+  transform: translate(50%, -50%) !important;
+}
+
+.columnRandomize {
+  bottom: 0 !important;
+  left: 25% !important;
+  transform: translate(-50%, 50%) !important;
 }

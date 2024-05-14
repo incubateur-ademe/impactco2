@@ -7,6 +7,7 @@ import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
 import Etiquette from 'components/comparateur/Etiquette'
+import { getRandomEquivalents } from 'components/comparateur/random'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
 import Radio from 'components/form/Radio'
@@ -32,6 +33,8 @@ const LivraisonSimulator = () => {
       setNumber,
       frequence,
       setFrequence,
+      equivalents,
+      setEquivalents,
     },
   } = useParamContext()
 
@@ -191,8 +194,11 @@ const LivraisonSimulator = () => {
         <div className={styles.header}>CE QUI CORRESPOND À..</div>
         <Etiquette
           baseValue={total}
-          comparisons={['voiturethermique', 'tshirtencoton', 'repasavecduboeuf']}
+          comparisons={equivalents}
           ref={ref}
+          randomize={() => {
+            setEquivalents(getRandomEquivalents(undefined, 3))
+          }}
         />
       </div>
       <div className={shareableStyles.separatorBothBorders} />

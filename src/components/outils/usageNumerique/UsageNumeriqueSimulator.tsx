@@ -10,6 +10,7 @@ import { computeFootprint } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import { evaluateNumber } from 'utils/useSituation'
 import Etiquette from 'components/comparateur/Etiquette'
+import { getRandomEquivalents } from 'components/comparateur/random'
 import shareableStyles from 'components/shareable/Shareable.module.css'
 import CategorySimulator from '../CategorySimulator'
 import UsageForm from './UsageForm'
@@ -55,7 +56,7 @@ const streaming = usagenumerique.equivalents?.find(
 const UsageNumeriqueSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
   const {
-    usageNumerique: { numberEmails, setNumberEmails, situation },
+    usageNumerique: { numberEmails, setNumberEmails, situation, equivalents, setEquivalents },
   } = useParamContext()
 
   const { engine } = useUsageNumeriqueContext()
@@ -72,7 +73,7 @@ const UsageNumeriqueSimulator = () => {
     )
   }, [engine, situation, numberEmails])
 
-  const equivalents = useMemo(
+  const displayedEquivalents = useMemo(
     () => [
       {
         ...email,
@@ -132,8 +133,11 @@ const UsageNumeriqueSimulator = () => {
         <div className={styles.header}>CE QUI CORRESPOND À..</div>
         <Etiquette
           baseValue={total * 52}
-          comparisons={['voiturethermique', 'tshirtencoton', 'repasavecduboeuf']}
+          comparisons={equivalents}
           ref={ref}
+          randomize={() => {
+            setEquivalents(getRandomEquivalents(undefined, 3))
+          }}
         />
       </div>
       <div className={shareableStyles.separatorBothBorders} />
@@ -143,7 +147,7 @@ const UsageNumeriqueSimulator = () => {
         l’usage de ces derniers.
       </div>
       <div className={shareableStyles.separatorBothBorders} />
-      <CategorySimulator equivalents={equivalents} />
+      <CategorySimulator equivalents={displayedEquivalents} />
     </>
   )
 }

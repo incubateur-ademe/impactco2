@@ -1,7 +1,12 @@
 .container {
-  border-radius: 8px;
+  position: relative;
+  border-radius: 0.5rem;
   border: 2px solid var(--primary-30);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06) !important;
+}
+
+.withRandomize {
+  padding-bottom: 0.5rem;
 }
 
 .leftContent {

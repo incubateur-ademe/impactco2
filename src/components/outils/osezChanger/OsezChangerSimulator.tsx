@@ -6,6 +6,7 @@ import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import SprinklesIcon from 'components/base/icons/sprinkles'
 import Etiquette from 'components/comparateur/Etiquette'
+import { getRandomEquivalents } from 'components/comparateur/random'
 import simulatorStyles from '../Simulator.module.css'
 import styles from './OsezChangerSimulator.module.css'
 import Question from './Question'
@@ -15,6 +16,7 @@ const shoesImpact = 17.9
 const OsezChangerSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
 
+  const [equivalents, setEquivalents] = useState(['voiturethermique', 'tshirtencoton', 'repasavecduboeuf'])
   const [thinkingValue, setThinkingValue] = useState<number | undefined>()
   const [realValue, setRealValue] = useState<number | undefined>()
   const [newValue, setNewValue] = useState<number | undefined>()
@@ -72,8 +74,11 @@ const OsezChangerSimulator = () => {
             <div className={styles.values}>SOIT AUTANT D’ÉMISSIONS QUE...</div>
             <Etiquette
               baseValue={total * 1000}
-              comparisons={['voiturethermique', 'tshirtencoton', 'repasavecduboeuf']}
+              comparisons={equivalents}
               ref={ref}
+              randomize={() => {
+                setEquivalents(getRandomEquivalents(undefined, 3))
+              }}
             />
           </div>
         </div>

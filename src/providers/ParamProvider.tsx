@@ -13,6 +13,8 @@ import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/UseTheme'
 import { computedEquivalents } from './equivalents'
 
+const defaultEquivalents = ['voiturethermique', 'repasavecduboeuf', 'streamingvideo']
+
 const usageNumeriqueDefaultValues = {
   ['email . appareil']: "'smartphone'",
   ['email . transmission . émetteur . réseau']: "'fixe FR'",
@@ -142,6 +144,8 @@ export type Params = {
     setTransport: Dispatch<SetStateAction<string>>
     presentiel: number
     setPresentiel: Dispatch<SetStateAction<number>>
+    equivalents: string[]
+    setEquivalents: Dispatch<SetStateAction<string[]>>
   }
   chauffage: {
     m2: number
@@ -162,6 +166,8 @@ export type Params = {
     setNumberEmails: Dispatch<SetStateAction<number>>
     situation: Partial<Record<string, PublicodesExpression | ASTNode>>
     setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
+    equivalents: string[]
+    setEquivalents: Dispatch<SetStateAction<string[]>>
   }
   numerique: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
   habillement: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
@@ -176,11 +182,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
-  const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>([
-    'voiturethermique',
-    'repasavecduboeuf',
-    'streamingvideo',
-  ])
+  const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>(defaultEquivalents)
   const [isHabit, setIsHabit] = useState(false)
   const [isPlane, setIsPlane] = useState(false)
   const [number, setNumber] = useState(1)
@@ -227,6 +229,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [teletravailDisplayAll, settTletravailDisplayAll] = useState(false)
 
   // Teletravail
+  const [teletravailEquivalents, setTeletravailEquivalents] = useState(defaultEquivalents)
   const [teletravailTransport, setTeletravailTransport] = useState('voiturethermique')
   const [presentiel, setPresentiel] = useState(4)
 
@@ -236,7 +239,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [search, setSearch] = useState('')
 
   // Usage Numérique
-
+  const [usageNumeriqueEquivalents, setUsageNumeriqueEquivalents] = useState(defaultEquivalents)
   const [usageNumeriqueDisplayAll, setUsageNumeriqueDisplayAll] = useState(false)
   const [numberEmails, setNumberEmails] = useState<number>(50)
   const [usageNumeriqueSituation, setUsageNumeriqueSituation] =
@@ -381,15 +384,18 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setTeletravailEnd(undefined)
         setTeletravailTransport('voiturethermique')
         setPresentiel(4)
+        setTeletravailEquivalents(defaultEquivalents)
         break
       case 'usagenumerique':
         setNumberEmails(50)
         setUsageNumeriqueSituation(usageNumeriqueDefaultValues)
+        setUsageNumeriqueEquivalents(defaultEquivalents)
         break
       case 'livraison':
         setLivraisonValues(livraisonDefaultValues)
         setNumber(1)
         setFrequence(12)
+        setLivraisonEquivalents(defaultEquivalents)
         break
       default:
         break
@@ -464,6 +470,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setTransport: setTeletravailTransport,
           presentiel,
           setPresentiel,
+          equivalents: teletravailEquivalents,
+          setEquivalents: setTeletravailEquivalents,
         },
         chauffage: {
           m2,
@@ -484,6 +492,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setNumberEmails,
           situation: usageNumeriqueSituation,
           setSituation: setUsageNumeriqueSituation,
+          equivalents: usageNumeriqueEquivalents,
+          setEquivalents: setUsageNumeriqueEquivalents,
         },
         numerique: {
           displayAll: numeriqueDisplayAll,

@@ -73,16 +73,15 @@
 .random {
   padding: 0 !important;
   cursor: pointer !important;
-  border: none !important;
   border-radius: 50% !important;
-  width: 1.5em !important;
-  height: 1.5em !important;
+  width: 1.75em !important;
+  height: 1.75em !important;
   min-height: unset !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  border: 1px solid var(--primary-60) !important;
-  background-color: var(--primary-50) !important;
+  border: 2px solid var(--primary-50) !important;
+  background-color: var(--primary-60) !important;
   color: var(--neutral-00) !important;
   position: absolute !important;
   top: 50% !important;
@@ -90,7 +89,6 @@
   transform: translate(50%, -50%) !important;
 
   &:hover {
-    border: 1px solid var(--primary-70) !important;
     background-color: var(--primary-60) !important;
   }
 
@@ -104,7 +102,7 @@
   }
 
   svg {
-    height: 13px !important;
-    width: 13px !important;
+    height: 0.75em !important;
+    width: 0.75em !important;
   }
 }

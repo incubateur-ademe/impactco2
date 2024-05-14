@@ -11,11 +11,13 @@ export default forwardRef(function Etiquette(
     baseValue,
     animated,
     language,
+    randomize,
   }: {
     comparisons: string[]
     baseValue: string | number
     animated?: boolean
     language?: Language
+    randomize?: () => void
   },
   ref: ForwardedRef<HTMLDivElement>
 ) {
@@ -37,14 +39,16 @@ export default forwardRef(function Etiquette(
   }, [comparisons, ref])
 
   if (animated) {
-    return <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} animated />
+    return (
+      <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} animated randomize={randomize} />
+    )
   }
   return (
     <div ref={ref}>
       {inline ? (
-        <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} />
+        <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} randomize={randomize} />
       ) : (
-        <ColumnEquivalent language={language} baseValue={baseValue} comparisons={comparisons} />
+        <ColumnEquivalent language={language} baseValue={baseValue} comparisons={comparisons} randomize={randomize} />
       )}
     </div>
   )

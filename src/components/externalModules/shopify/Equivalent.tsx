@@ -1,6 +1,7 @@
 import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
 import EqualIcon from 'components/base/icons/equal'
+import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './Equivalent.module.css'
@@ -13,6 +14,7 @@ const Equivalent = ({
   animated,
   url,
   language,
+  randomize,
 }: {
   className?: string
   baseValue: string | number
@@ -21,6 +23,7 @@ const Equivalent = ({
   animated?: boolean
   url?: string
   language?: Language
+  randomize?: () => void
 }) => {
   const isAnimated = useMemo(() => animated && comparisons.length > 1, [animated, comparisons])
 
@@ -124,6 +127,11 @@ const Equivalent = ({
             ))}
           </div>
         </div>
+        {randomize && (
+          <button className={styles.randomize} title='Obtenir une nouvelle comparaison' onClick={randomize}>
+            <RefreshIcon />
+          </button>
+        )}
       </div>
     </div>
   )
