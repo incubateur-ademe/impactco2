@@ -89,6 +89,7 @@ export const categories: Category[] = [
       description: "Comparez l'impact écologique en CO₂e d'une année de chauffage selon le type d'énergie utilisée",
     },
     equivalents: computedEquivalents('chauffage', chauffage),
+    resetable: true,
   },
   {
     id: 4,

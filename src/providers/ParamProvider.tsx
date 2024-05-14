@@ -397,6 +397,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setFrequence(12)
         setLivraisonEquivalents(defaultEquivalents)
         break
+      case 'chauffage':
+        setM2(63)
+        break
       default:
         break
     }
