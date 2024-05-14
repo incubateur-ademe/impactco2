@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render } from '@testing-library/react'
 import * as nextRouter from 'next/router'
 import { useState } from 'react'
-import { RulesProviderLivraison } from 'src/providers/LivraisonProvider'
+import { LivraisonProvider } from 'src/providers/LivraisonProvider'
 import { ParamProvider } from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 
@@ -20,11 +20,11 @@ export function renderWithWrapper(component, options) {
 
     return (
       <QueryClientProvider client={queryClient}>
-        <RulesProviderLivraison>
+        <LivraisonProvider>
           <ParamProvider>
             <TranslationProvider>{children}</TranslationProvider>
           </ParamProvider>
-        </RulesProviderLivraison>
+        </LivraisonProvider>
       </QueryClientProvider>
     )
   }

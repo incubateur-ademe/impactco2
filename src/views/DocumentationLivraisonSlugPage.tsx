@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import React from 'react'
-import { RulesProviderLivraison } from 'src/providers/LivraisonProvider'
+import { LivraisonProvider } from 'src/providers/LivraisonProvider'
 
 const DocumentationLivraison = dynamic(() => import('components/base/DocumentationLivraison'), {
   ssr: false,
@@ -10,14 +10,14 @@ const DocumentationLivraison = dynamic(() => import('components/base/Documentati
 
 const DocumentationLivraisonSlugPage = ({ slug }: { slug: string }) => {
   return (
-    <RulesProviderLivraison>
+    <LivraisonProvider>
       <DocumentationLivraison slug={slug} />
       <br />
       <br />
       <br />
       <br />
       <br />
-    </RulesProviderLivraison>
+    </LivraisonProvider>
   )
 }
 
