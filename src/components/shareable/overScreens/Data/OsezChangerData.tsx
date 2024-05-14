@@ -15,7 +15,7 @@ const OsezChangerData = () => {
   return (
     <>
       <div>
-        L’impact carbone moyen d’une paire de chaussures neuve est de <b>16,5 kg CO₂e.</b>
+        L’impact carbone moyen d’une paire de chaussures neuve est de <b>17,9 kg CO₂e.</b>
         <br />
         <br />
         Nous faisons une moyenne des trois facteurs d’émissions issus de la{' '}
@@ -33,7 +33,7 @@ const OsezChangerData = () => {
         <EquivalentCard equivalent={sport} />
       </div>
       <div>
-        Soit : (13 + 17 + 19)/3 = 16,5 kg CO₂e.
+        Soit : (15 + 18,5 + 20,1)/3 = 17,9 kg CO₂e.
         <br />
         <br />
         Pour connaître l’impact carbone du nombre de paires de chaussures neuves achetées nous faisons donc le calcul

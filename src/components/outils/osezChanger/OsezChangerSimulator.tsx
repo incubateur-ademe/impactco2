@@ -10,7 +10,7 @@ import simulatorStyles from '../Simulator.module.css'
 import styles from './OsezChangerSimulator.module.css'
 import Question from './Question'
 
-const shoesImpact = 16.5
+const shoesImpact = 17.9
 
 const OsezChangerSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -52,7 +52,7 @@ const OsezChangerSimulator = () => {
         <Question
           slug='neuf'
           title='✨ Vos achats récents'
-          description='Combien de paires de chaussures neuves avez-vous acheté cette année ?'
+          description='Combien de paires de chaussures neuves avez-vous acheté cette année ?'
           value={newValue}
           setValue={setNewValue}
           extra={newValue ? `+${(newValue * shoesImpact).toLocaleString('fr-FR')}kg CO₂e` : false}
