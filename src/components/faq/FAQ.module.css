@@ -71,8 +71,8 @@
 
   &:hover {
     .button {
-      color: var(--primary-60);
       border: 2px solid var(--primary-40);
+      background-color: var(--primary-10);
     }
   }
 
