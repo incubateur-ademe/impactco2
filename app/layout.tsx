@@ -45,7 +45,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Theme />
         <Transtack>
           <Header />
-          <Suspense>
+          <Suspense fallback={<div className='blank' />}>
             <ParamProvider>
               <main id='contenu'>{children}</main>
             </ParamProvider>

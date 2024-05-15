@@ -1,20 +1,19 @@
 import React from 'react'
+import ExamplesPage from 'src/views/ExamplesPage'
 import { getExamples } from 'utils/examples'
 import { getNotionRevalidate } from 'components/Notion/utils'
-import Home from 'components/home/Home'
 import Suggestion from 'components/layout/Suggestion'
 
 export const revalidate = getNotionRevalidate()
 
-const HomePage = async () => {
+const page = async () => {
   const examples = await getExamples()
-
   return (
     <>
-      <Home examples={examples} />
-      <Suggestion fromLabel='Accueil' simulatorName='du site' />
+      <ExamplesPage examples={examples} />
+      <Suggestion fromLabel="Exemples d'utilisation" from='/exemples' simulatorName="de nos exemples d'utilisations" />
     </>
   )
 }
 
-export default HomePage
+export default page

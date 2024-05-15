@@ -13,15 +13,7 @@ const getTitle = (title?: string, as?: 'h1') => {
   return <h2>{title}</h2>
 }
 
-const Block = ({
-  children,
-  title,
-  description,
-  link,
-  linkLabel,
-  as,
-  id,
-}: {
+export type BlockProps = {
   children?: ReactNode
   title?: string
   description?: string
@@ -29,7 +21,9 @@ const Block = ({
   linkLabel?: string
   as?: 'h1'
   id?: string
-}) => {
+}
+
+const Block = ({ children, title, description, link, linkLabel, as, id }: BlockProps) => {
   return (
     <div className={classNames('main-container', styles.block)} id={id}>
       {title && (

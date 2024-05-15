@@ -15,4 +15,5 @@ export type Category = {
   resetable?: boolean
   displayAll?: string
   hideAll?: string
+  examples?: string
 }

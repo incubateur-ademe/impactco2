@@ -1,15 +1,17 @@
 import React from 'react'
+import { Example } from 'types/example'
 import Link from 'components/base/buttons/Link'
 import ToolCard from 'components/cards/ToolCard'
 import ToolCards from 'components/cards/ToolCards'
 import { tools } from 'components/cards/tools'
+import Examples from 'components/examples/Examples'
 import Block from 'components/layout/Block'
 import Email from './Email'
 import Equivalents from './Equivalents'
 import styles from './Home.module.css'
 import MiniCard from './MiniCard'
 
-const Home = () => {
+const Home = ({ examples }: { examples: Example[] }) => {
   return (
     <>
       <Block>
@@ -37,13 +39,13 @@ const Home = () => {
         description='Parcourir les fiches dédiées à l’impact carbone de plus de 150 objets et gestes courants.'>
         <Equivalents />
       </Block>
-      <Block
+      <Examples
         title='Exemples'
         description='Ils utilisent nos outils à la perfection.'
         link='/exemples'
-        linkLabel='Tous les exemples'>
-        TODO
-      </Block>
+        linkLabel='Tous les exemples'
+        examples={examples.filter((example) => example.tags.includes("Page d'accueil"))}
+      />
       <Block>TODO FAQ</Block>
       <Block
         title='À découvrir'

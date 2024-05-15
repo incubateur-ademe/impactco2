@@ -90,6 +90,7 @@ export const categories: Category[] = [
     },
     equivalents: computedEquivalents('chauffage', chauffage),
     resetable: true,
+    examples: 'Leur utilisation du simulateur chauffage est exemplaire.',
   },
   {
     id: 4,
@@ -110,6 +111,7 @@ export const categories: Category[] = [
     },
     equivalents: computedEquivalents('transport', flattenEquivalents(deplacements)),
     resetable: true,
+    examples: 'Leur utilisation du simulateur transports est exemplaire.',
   },
   {
     id: 9,

@@ -1,11 +1,16 @@
 import React from 'react'
 import ComparateurPage from 'components/outils/comparateur/ComparateurPage'
+import { getExamples } from 'utils/examples'
+import { getNotionRevalidate } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'
 
-const page = () => {
+export const revalidate = getNotionRevalidate()
+
+const page = async () => {
+  const examples = await getExamples()
   return (
     <>
-      <ComparateurPage />
+      <ComparateurPage examples={examples} />
       <Suggestion from='/outils/comparateur' fromLabel='Comparateur' simulatorName='du comparateur carbone' />
     </>
   )

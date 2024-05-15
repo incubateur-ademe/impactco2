@@ -1,12 +1,14 @@
 import React from 'react'
+import { Example } from 'types/example'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
+import Examples from 'components/examples/Examples'
 import Block from 'components/layout/Block'
 import styles from '../CategoryPage.module.css'
 import Comparateur from './Comparateur'
 import Etiquettes from './Etiquettes'
 
-const ComparateurPage = () => {
+const ComparateurPage = ({ examples }: { examples: Example[] }) => {
   return (
     <>
       <Breadcrumbs
@@ -35,6 +37,13 @@ const ComparateurPage = () => {
         id='etiquette'>
         <Etiquettes />
       </Block>
+      <Examples
+        title='Exemples'
+        description='Ils utilisent le comparateur ou les étiquettes avec brio.'
+        link='/exemples'
+        linkLabel='Tous les exemples'
+        examples={examples.filter((example) => example.tags.includes('Comparateur carbone'))}
+      />
     </>
   )
 }

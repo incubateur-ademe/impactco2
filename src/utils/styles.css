@@ -371,3 +371,7 @@ input[type='number'] {
     max-width: calc(100% - 2rem);
   }
 }
+
+.blank {
+  min-height: 100vh;
+}
