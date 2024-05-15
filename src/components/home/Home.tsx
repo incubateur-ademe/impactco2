@@ -1,17 +1,19 @@
 import React from 'react'
 import { Example } from 'types/example'
+import { FAQ } from 'types/faq'
 import Link from 'components/base/buttons/Link'
 import ToolCard from 'components/cards/ToolCard'
 import ToolCards from 'components/cards/ToolCards'
 import { tools } from 'components/cards/tools'
 import Examples from 'components/examples/Examples'
+import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
 import Email from './Email'
 import Equivalents from './Equivalents'
 import styles from './Home.module.css'
 import MiniCard from './MiniCard'
 
-const Home = ({ examples }: { examples: Example[] }) => {
+const Home = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] }) => {
   return (
     <>
       <Block>
@@ -42,11 +44,11 @@ const Home = ({ examples }: { examples: Example[] }) => {
       <Examples
         title='Exemples'
         description='Ils utilisent nos outils à la perfection.'
-        link='/exemples'
+        link='/doc/exemples'
         linkLabel='Tous les exemples'
         examples={examples.filter((example) => example.tags.includes("Page d'accueil"))}
       />
-      <Block>TODO FAQ</Block>
+      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Accueil'))} footer='Accueil' />
       <Block
         title='À découvrir'
         description="Vous souhaitez mobiliser votre communauté autour de l'empreinte carbone ?">

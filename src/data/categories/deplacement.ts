@@ -87,7 +87,7 @@ export const deplacements = [
     meta: {
       title: 'Calcul empreinte carbone voyage avion',
       description:
-        "Combien de CO₂e émet un kilomètre en avion ? Impact CO2 permet de mesurer l'impact de vos trajets  en avion sur le climat",
+        "Combien de CO₂e émet un kilomètre en avion ? Impact CO₂ permet de mesurer l'impact de vos trajets  en avion sur le climat",
     },
   },
   {

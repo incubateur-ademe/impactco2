@@ -1,21 +1,19 @@
 import React from 'react'
-import Notion from 'components/Notion/Notion'
-import { getNotionContentProps, getNotionRevalidate } from 'components/Notion/utils'
+import FAQPage from 'src/views/FAQPage'
+import { getFAQs } from 'utils/faq'
+import { getNotionRevalidate } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'
-
-const title = 'Questions fréquentes'
 
 export const revalidate = getNotionRevalidate()
 
-const FAQPage = async () => {
-  const recordMap = await getNotionContentProps('090ceb3f28ef473d9c8e9d13b61e1332')
-
+const page = async () => {
+  const faqs = await getFAQs()
   return (
     <>
-      <Notion title={title} recordMap={recordMap} previous={{ link: '/doc', label: 'La doc' }} />
-      <Suggestion from={title} fromLabel={title} simulatorName='de la FAQ' />
+      <FAQPage faqs={faqs} />
+      <Suggestion from='/doc/questions-frequentes' fromLabel='Question fréquentes' simulatorName='de la FAQ' />
     </>
   )
 }
 
-export default FAQPage
+export default page

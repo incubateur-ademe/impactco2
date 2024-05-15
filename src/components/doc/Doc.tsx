@@ -15,7 +15,7 @@ const Doc = () => {
             horizontal
             image='/images/doc-guide.svg'
             title="Guide d'utilisation"
-            description='Suivre le guide pour prendre en main les outils d’impact CO2'
+            description='Suivre le guide pour prendre en main les outils d’impact CO₂'
             linkLabel='Accéder'
             link='/doc/guide-utilisation'
           />
@@ -35,7 +35,7 @@ const Doc = () => {
             title='Exemples d’utilisation'
             description='Pour s’inspirer et découvrir comment nos outils sont utilisés'
             linkLabel='Découvrir'
-            link='/examples'
+            link='/doc/examples'
           />
         </div>
       </Block>

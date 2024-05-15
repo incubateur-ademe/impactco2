@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import Card from 'components/base/Card'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import styles from './Contenu.module.css'
 
@@ -20,17 +19,6 @@ const Contenu = ({
           <Breadcrumbs links={[{ link: '/', label: 'Accueil' }].concat(previous || [])} current={title} />
         </div>
         {children}
-        <br />
-        <br />
-        <Card
-          href={`/rendez-vous?from=${title}&fromLabel=${title}`}
-          title='Obtenir un accompagnement'
-          description='Vous avez besoin d’aide pour intégrer les ressources de notre site ou souhaitez obtenir des informations ?'
-          link='Prendre rendez-vous'
-          image='/images/envelop.png'
-          trackingCategory={title}
-          trackingAction='Blocs accompagnement'
-        />
       </div>
     </>
   )

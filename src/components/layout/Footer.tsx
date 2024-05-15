@@ -43,8 +43,8 @@ export default function Footer() {
               <div className={styles.linkTitle}>RESSOURCES</div>
               <div className={styles.linkContainer}>
                 <Link href='/doc/guide-utilisation'>Guide d’utilisation</Link>
-                <Link href='/questions-frequentes'>Questions fréquentes</Link>
-                <Link href='/exemples'>Galerie des exemples</Link>
+                <Link href='/doc/questions-frequentes'>Questions fréquentes</Link>
+                <Link href='/doc/exemples'>Galerie des exemples</Link>
                 <Link href='https://github.com/incubateur-ademe/impactco2'>Code source</Link>
                 <Link href='/doc/api'>API</Link>
               </div>

@@ -1,11 +1,13 @@
 import React from 'react'
+import { FAQ } from 'types/faq'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ToolCards from 'components/cards/ToolCards'
 import { devTools, smallTools, tools } from 'components/cards/tools'
+import FAQs from 'components/faq/FAQs'
 import Equivalents from 'components/home/Equivalents'
 import Block from 'components/layout/Block'
 
-const Outils = () => {
+const Outils = ({ faqs }: { faqs: FAQ[] }) => {
   return (
     <>
       <Breadcrumbs current='Les outils' links={[{ label: 'Accueil', link: '/' }]} />
@@ -39,6 +41,7 @@ const Outils = () => {
         description='Parcourir les fiches dédiées à l’impact carbone de plus de 150 objets et gestes courants.'>
         <Equivalents />
       </Block>
+      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Catalogue outils'))} footer='Outils' />
     </>
   )
 }

@@ -90,7 +90,7 @@ export const smallTools = [
     content: (
       <>
         <div>
-          Dans le prolongement du comparateur carbone, Impact CO2 propose désormais une version compacte et facilement
+          Dans le prolongement du comparateur carbone, Impact CO₂ propose désormais une version compacte et facilement
           configurable : l'étiquette carbone.
         </div>
         <div>
@@ -119,7 +119,7 @@ export const smallTools = [
     content: (
       <>
         <div>
-          Impact CO2 lance le détecteur CO₂, un nouveau format innovant pour détecter et surligner automatiquement les
+          Impact CO₂ lance le détecteur CO₂, un nouveau format innovant pour détecter et surligner automatiquement les
           mentions de données carbones dans vos contenus.
         </div>
         <div>
@@ -152,7 +152,7 @@ export const devTools = [
     content: (
       <>
         <div>
-          Grâce à L’API Impact CO2, vous pouvez accéder aux données carbone utilisées sur Impact CO2 et dans toutes les
+          Grâce à L’API Impact CO₂, vous pouvez accéder aux données carbone utilisées sur Impact CO₂ et dans toutes les
           ressources du site.
         </div>
         <div>
@@ -178,7 +178,7 @@ export const devTools = [
     content: (
       <>
         <div>
-          Impact CO2 a développé à destination des développeurs des packages npm pour l’étiquette carbone, permettant
+          Impact CO₂ a développé à destination des développeurs des packages npm pour l’étiquette carbone, permettant
           d'intégrer facilement cette ressource dans le code source de leurs applications ou sites web.
         </div>
         <div>

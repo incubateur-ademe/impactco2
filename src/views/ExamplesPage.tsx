@@ -6,7 +6,13 @@ import AllExamples from 'components/examples/AllExamples'
 const ExamplesPage = ({ examples }: { examples: Example[] }) => {
   return (
     <>
-      <Breadcrumbs links={[{ label: 'Accueil', link: '/' }]} current="Exemples d'utilisation" />
+      <Breadcrumbs
+        links={[
+          { label: 'Accueil', link: '/' },
+          { link: '/doc', label: 'La doc' },
+        ]}
+        current="Exemples d'utilisation"
+      />
       <AllExamples examples={examples} />
     </>
   )

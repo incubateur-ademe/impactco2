@@ -2,21 +2,25 @@ import Image from 'next/image'
 import React, { ReactNode } from 'react'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import { Example } from 'types/example'
+import { FAQ } from 'types/faq'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Card from 'components/cards/Card'
 import { ToolCardProps } from 'components/cards/ToolCard'
 import Examples from 'components/examples/Examples'
+import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
 import styles from './Outil.module.css'
 
 const Outil = ({
   tool,
   examples,
+  faqs,
 }: {
   tool: ToolCardProps & { content: ReactNode; toolLink?: string; toolLinkLabel?: string; clipboardURL?: string }
   examples: Example[]
+  faqs: FAQ[]
 }) => {
   return (
     <>
@@ -52,10 +56,11 @@ const Outil = ({
         <Examples
           title='Exemples'
           description='Ils utilisent nos outils à la perfection.'
-          link='/exemples'
+          link='/doc/exemples'
           linkLabel='Tous les exemples'
           examples={examples.filter((example) => example.tags.includes(tool.title))}
         />
+        <FAQs faqs={faqs.filter((faq) => faq.pages.includes(tool.title))} footer={tool.title} />
       </TranslationProvider>
     </>
   )
