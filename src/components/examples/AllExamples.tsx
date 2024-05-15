@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from 'react'
 import { Example } from 'types/example'
+import Card from 'components/cards/Card'
 import Select from 'components/form/Select'
 import Block from 'components/layout/Block'
 import styles from './AllExamples.module.css'
@@ -22,7 +23,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
         as='h1'
         title='Exemples d’utilisation'
         description='Pour s’inspirer et découvrir comment nos outils sont utilisés'>
-        <div className={styles.filter}>
+        <Card colored className={styles.filter}>
           <div>
             <label htmlFor='input-activity-select'>
               <b>Filtrer</b> par secteur d’activité
@@ -57,7 +58,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
                 ))}
             </Select>
           </div>
-        </div>
+        </Card>
       </Block>
       {(activity === 'all' || activity === 'Média') && (
         <Examples

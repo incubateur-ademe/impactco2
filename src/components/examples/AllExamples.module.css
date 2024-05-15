@@ -1,12 +1,7 @@
 .filter {
-  border-radius: 0.75rem;
-  border: 2px solid var(--primary-30);
-  background: var(--primary-10);
   display: flex;
-  padding: 1.5rem;
   justify-content: center;
   gap: 0.75rem;
-  width: 100%;
 
   > div {
     width: calc(100% - 0.325rem);

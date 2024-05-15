@@ -12,6 +12,41 @@
 }
 
 .sentMessage {
-  line-height: 1.15;
-  padding: 10px 0;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--primary-20);
+  display: flex;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-60);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+}
+
+.check {
+  border-radius: 50%;
+  border: 2px solid var(--primary-30);
+  background: var(--neutral-00);
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  margin: 1.25rem 0;
+
+  label {
+    color: var(--neutral-60);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+
+  input {
+    flex-grow: 1;
+  }
 }

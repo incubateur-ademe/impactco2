@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { FAQ } from 'types/faq'
+import Card from 'components/cards/Card'
 import ToolCard from 'components/cards/ToolCard'
 import Select from 'components/form/Select'
 import Block from 'components/layout/Block'
@@ -16,14 +17,14 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
         as='h1'
         title='Questions fréquentes'
         description='Explorer la FAQ pour trouver les réponses à vos questions'>
-        <div className={styles.filter}>
+        <Card colored className={styles.filter}>
           <label htmlFor='input-search-select'>
             <b>Filtrer</b> par sujet ou outil
           </label>
           <Select id='search-select' value={search} onChange={(event) => setSearch(event.target.value)}>
             <option value='all'>Tous les sujets et outils</option>
           </Select>
-        </div>
+        </Card>
       </Block>
       <FAQs faqs={faqs} title='Questions générales' description='Questions fréquentes à propos du site Impact CO₂' />
       <Block>

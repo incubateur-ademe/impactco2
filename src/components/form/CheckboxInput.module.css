@@ -26,6 +26,8 @@
     cursor: pointer;
     height: 1.75rem;
     width: 1.75rem;
+    min-width: 1.75rem;
+    background-color: var(--neutral-00);
   }
 
   input[type='checkbox']:checked {
@@ -63,4 +65,5 @@
   left: 0.5rem;
   padding: inherit;
   position: absolute;
+  height: 0.75rem;
 }

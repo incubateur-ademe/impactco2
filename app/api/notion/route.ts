@@ -42,6 +42,10 @@ export async function POST(req: NextRequest) {
                 type: 'rich_text',
                 rich_text: [{ text: { content: inputs.data.from } }],
               },
+              Accepté: {
+                type: 'checkbox',
+                checkbox: inputs.data.accepted,
+              },
             },
           }
         : {

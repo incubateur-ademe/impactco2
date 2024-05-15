@@ -1,8 +1,4 @@
 .filter {
-  border-radius: 0.75rem;
-  border: 2px solid var(--primary-30);
-  background: var(--primary-10);
-  padding: 1.5rem;
   width: 100%;
 
   label {

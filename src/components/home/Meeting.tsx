@@ -6,11 +6,14 @@ import { ZodError } from 'zod'
 import axiosClient from 'utils/axios'
 import { NotionCommand, NotionCommandValidation } from 'utils/notion'
 import Button from 'components/base/buttons/Button'
+import CheckIcon from 'components/base/icons/check'
+import CheckboxInput from 'components/form/CheckboxInput'
 import Input from 'components/form/Input'
 import styles from './Meeting.module.css'
 
 const Meeting = ({ from }: { from: string }) => {
   const [email, setEmail] = useState('')
+  const [accepted, setAccepted] = useState(false)
 
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
@@ -25,6 +28,7 @@ const Meeting = ({ from }: { from: string }) => {
     const data = {
       type: 'contact',
       email,
+      accepted,
       from,
       structure: 'Non renseigné',
     }
@@ -51,23 +55,33 @@ const Meeting = ({ from }: { from: string }) => {
 
   return sent ? (
     <div className={styles.sentMessage} data-testid='sentMessage'>
-      Votre adresse a été prise en compte. L’équipe vous recontactera très prochainement !
+      <div className={styles.check}>
+        <CheckIcon />
+      </div>
+      <b>Merci beaucoup !</b> Nous allons prendre contact très bientôt.
     </div>
   ) : (
-    <form className={styles.container} onSubmit={onSubmit}>
-      <Input
-        id={`email-${from}`}
-        name='email'
-        placeholder='Votre adresse email'
-        data-testid='emailInput'
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-        errors={errors}
-        padding='lg'
+    <form onSubmit={onSubmit}>
+      <div className={styles.container}>
+        <Input
+          id={`email-${from}`}
+          name='email'
+          data-testid='emailInput'
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          errors={errors}
+          padding='lg'
+        />
+        <Button disabled={sending} type='submit'>
+          Prendre rendez-vous
+        </Button>
+      </div>
+      <CheckboxInput
+        className={styles.checkbox}
+        checked={accepted}
+        setChecked={(checked) => setAccepted(checked)}
+        label='J’accepte d’être recontacté afin d’échanger sur les possibilités d’accompagnement et de recevoir des communications sur les outils et actualités d’impact CO2'
       />
-      <Button disabled={sending} type='submit'>
-        Prendre rendez-vous
-      </Button>
     </form>
   )
 }

@@ -17,7 +17,6 @@ const CheckboxInput = ({
   setChecked: (checked: boolean) => void
   label: ReactNode
   children?: ReactNode
-  color?: 'secondary'
   ['data-testid']?: string
 } & InputHTMLAttributes<HTMLInputElement>) => {
   return (
