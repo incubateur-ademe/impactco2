@@ -32,6 +32,7 @@ export default function Footer() {
             <div>
               <div className={styles.linkTitle}>LIENS UTILES</div>
               <div className={styles.linkContainer}>
+                <Link href='https://beta.gouv.fr/startups/impact.co2.html'>Qui sommes-nous ?</Link>
                 <Link href='/stats'>Statistiques</Link>
                 <Link href='/budget'>Budget</Link>
                 <Link href='/plan-du-site'>Plan du site</Link>
