@@ -35,7 +35,7 @@ const UsageForm = ({
         <div className={styles.firstRow}>
           <NumberInput
             id={`main-value-${slug}`}
-            unit={values.unit}
+            unit={`${values.unit}${(engineValue ? (situation[engineValue] as number) / 60 : (value as number) > 1) ? 's' : ''}`}
             value={engineValue ? (situation[engineValue] as number) / 60 : (value as number)}
             setValue={(newValue) => {
               track('Usage numérique', `Input ${slug} value`, newValue.toString())
