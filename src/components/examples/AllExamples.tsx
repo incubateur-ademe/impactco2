@@ -31,7 +31,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
             <Select id='activity-select' value={activity} onChange={(event) => setActivity(event.target.value)}>
               <option value='all'>Tous les secteurs d'activité</option>
               {examples
-                .flatMap((example) => example.activities)
+                .map((example) => example.activity)
                 .filter((value, index, array) => array.findIndex((key) => key === value) === index)
                 .sort((a, b) => a.localeCompare(b))
                 .map((value) => (
@@ -64,7 +64,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
         <Examples
           title='Médias'
           description='Ces médias utilisent nos outils avec brio'
-          examples={filteredExamples.filter((example) => example.activities.includes('Média'))}
+          examples={filteredExamples.filter((example) => example.activity === 'Média')}
           forceDisplay={activity === 'Média'}
         />
       )}
@@ -72,7 +72,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
         <Examples
           title='Entreprises'
           description='Ces entreprises ont intégré nos outils à la perfection'
-          examples={filteredExamples.filter((example) => example.activities.includes('Entreprise'))}
+          examples={filteredExamples.filter((example) => example.activity === 'Entreprise')}
           forceDisplay={activity === 'Entreprise'}
         />
       )}
@@ -80,7 +80,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
         <Examples
           title='Culture et Loisirs'
           description='Ils utilisent nos outils de manière remarquable'
-          examples={filteredExamples.filter((example) => example.activities.includes('Loisirs/Culture'))}
+          examples={filteredExamples.filter((example) => example.activity === 'Loisirs/Culture')}
           forceDisplay={activity === 'Loisirs/Culture'}
         />
       )}
@@ -88,7 +88,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
         <Examples
           title='Associations'
           description='Les associations qui utilisent nos outils de façon exemplaire'
-          examples={filteredExamples.filter((example) => example.activities.includes('Association'))}
+          examples={filteredExamples.filter((example) => example.activity === 'Association')}
           forceDisplay={activity === 'Association'}
         />
       )}
@@ -96,7 +96,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
         <Examples
           title='Collectivités'
           description='Ces collectivités ont fait le choix d’Impact CO₂'
-          examples={filteredExamples.filter((example) => example.activities.includes('Collectivité'))}
+          examples={filteredExamples.filter((example) => example.activity === 'Collectivité')}
           forceDisplay={activity === 'Collectivité'}
         />
       )}
@@ -104,8 +104,16 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
         <Examples
           title='Éducation'
           description='Les exemples d’utilisation de nos outils dans le secteur de l’éducation'
-          examples={filteredExamples.filter((example) => example.activities.includes('Éducation'))}
+          examples={filteredExamples.filter((example) => example.activity === 'Éducation')}
           forceDisplay={activity === 'Éducation'}
+        />
+      )}
+      {(activity === 'all' || activity === 'Institution') && (
+        <Examples
+          title='Institutions'
+          description='Les mises en avant de nos outils par les institutions'
+          examples={filteredExamples.filter((example) => example.activity === 'Institution')}
+          forceDisplay={activity === 'Institution'}
         />
       )}
     </>

@@ -9,6 +9,7 @@ export const getFAQs = async (): Promise<FAQ[]> => {
       properties: {
         Name: { title: { plain_text: string }[] }
         'Page(s)': { multi_select: { name: string }[] }
+        Section: { select: { name: string } }
       }
     }[]
   }>(
@@ -48,5 +49,6 @@ export const getFAQs = async (): Promise<FAQ[]> => {
       title: result.properties.Name.title[0].plain_text,
       pages: result.properties['Page(s)'].multi_select.map((select) => select.name),
       content: contents.find((content) => content.id === result.id)?.content,
+      section: result.properties.Section.select.name,
     }))
 }

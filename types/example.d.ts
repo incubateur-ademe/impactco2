@@ -1,6 +1,6 @@
 export type Example = {
   name: string
-  activities: string[]
+  activity: string
   logo: string
   tags: string[]
   links: {

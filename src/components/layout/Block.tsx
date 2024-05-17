@@ -16,7 +16,7 @@ const getTitle = (title?: string, as?: 'h1') => {
 export type BlockProps = {
   children?: ReactNode
   title?: string
-  description?: string
+  description?: ReactNode
   link?: string
   linkLabel?: string
   as?: 'h1'

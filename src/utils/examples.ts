@@ -9,7 +9,7 @@ export const getExamples = async (): Promise<Example[]> => {
         Lien: { rich_text: { plain_text: string }[] }
         'Tags site': { multi_select: { name: string }[] }
         Outil: { multi_select: { name: string }[] }
-        Secteur: { multi_select: { name: string }[] }
+        Secteur: { select: { name: string } }
         Logo: { files: { file: { url: string } }[] }
       }
     }[]
@@ -27,7 +27,12 @@ export const getExamples = async (): Promise<Example[]> => {
   const examples: Record<string, Example> = {}
 
   results.data.results.forEach((result) => {
-    if (!result.properties.Nom.title[0] || !result.properties.Lien.rich_text[0] || !result.properties.Logo.files[0]) {
+    if (
+      !result.properties.Nom.title[0] ||
+      !result.properties.Lien.rich_text[0] ||
+      !result.properties.Logo.files[0] ||
+      !result.properties.Secteur.select
+    ) {
       return
     }
 
@@ -45,7 +50,7 @@ export const getExamples = async (): Promise<Example[]> => {
     } else {
       examples[name] = {
         name,
-        activities: result.properties.Secteur.multi_select.map((select) => select.name),
+        activity: result.properties.Secteur.select.name,
         logo: result.properties.Logo.files[0].file.url,
         tags,
         links,
