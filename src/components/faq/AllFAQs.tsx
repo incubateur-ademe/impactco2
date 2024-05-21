@@ -51,7 +51,7 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
         title='Transports'
         description={
           <>
-            Questions fréquentes à propos de l’outil <Link href='/outils/transport'>transports</Link>
+            Questions fréquentes à propos de l’outil <Link href='/outils/transport'>Transport</Link>
           </>
         }
       />
@@ -70,6 +70,15 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
         description={
           <>
             Questions fréquentes à propos des <Link href='/outils/etiquettes'>Étiquettes</Link>
+          </>
+        }
+      />
+      <FAQs
+        faqs={filteredFaqs.filter((faq) => faq.section === 'Détecteur CO₂')}
+        title='Détecteur CO₂'
+        description={
+          <>
+            Questions fréquentes à propos du <Link href='/outils/detecteur'>Détecteur CO₂</Link>
           </>
         }
       />

@@ -10,6 +10,7 @@ export const getFAQs = async (): Promise<FAQ[]> => {
         Name: { title: { plain_text: string }[] }
         'Page(s)': { multi_select: { name: string }[] }
         Section: { select: { name: string } }
+        Order: { number: number }
       }
     }[]
   }>(
@@ -45,8 +46,9 @@ export const getFAQs = async (): Promise<FAQ[]> => {
         result.properties['Page(s)'].multi_select &&
         result.properties['Page(s)'].multi_select.length > 0
     )
+    .sort((a, b) => a.properties.Order.number - b.properties.Order.number)
     .map((result) => ({
-      title: result.properties.Name.title[0].plain_text,
+      title: result.properties.Name.title.map((title) => title.plain_text).join(''),
       pages: result.properties['Page(s)'].multi_select.map((select) => select.name),
       content: contents.find((content) => content.id === result.id)?.content,
       section: result.properties.Section.select.name,

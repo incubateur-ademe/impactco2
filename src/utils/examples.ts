@@ -36,9 +36,9 @@ export const getExamples = async (): Promise<Example[]> => {
       return
     }
 
-    const name = result.properties.Nom.title[0]?.plain_text
+    const name = result.properties.Nom.title.map((text) => text.plain_text).join('')
     const links = result.properties.Outil.multi_select.map((tool) => ({
-      href: result.properties.Lien.rich_text[0]?.plain_text,
+      href: result.properties.Lien.rich_text.map((text) => text.plain_text).join(''),
       label: tool.name,
     }))
     const tags = result.properties['Tags site'].multi_select.map((select) => select.name)
