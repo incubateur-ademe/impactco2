@@ -20,6 +20,7 @@
 }
 
 .inputs {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem 2.5rem;

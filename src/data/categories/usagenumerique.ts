@@ -103,7 +103,6 @@ export const usageNumeriques = [
     prefix: 'Heure[s] de ',
     subtitle: '',
     slug: 'streamingvideo',
-    unit: '',
     category: 10,
     ecv: [
       {
@@ -133,7 +132,6 @@ export const usageNumeriques = [
     name: 'Visioconférence',
     prefix: 'Heure[s] de ',
     slug: 'visioconference',
-    unit: '',
     category: 10,
     ecv: [
       {
@@ -158,6 +156,7 @@ export const usageNumeriques = [
       },
     ],
     source: 'https://negaoctet.org/',
+    unit: 'pour une heure avec les paramètres renseignés ci-dessous.',
   },
   {
     name: 'Go de donnée',

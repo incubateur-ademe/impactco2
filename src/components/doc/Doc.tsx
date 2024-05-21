@@ -35,7 +35,7 @@ const Doc = () => {
             title='Exemples d’utilisation'
             description='Pour s’inspirer et découvrir comment nos outils sont utilisés'
             linkLabel='Découvrir'
-            link='/doc/examples'
+            link='/doc/exemples'
           />
         </div>
       </Block>

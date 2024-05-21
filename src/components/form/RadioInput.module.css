@@ -29,13 +29,15 @@
   }
 
   input[type='radio']:checked {
+    position: relative;
     background-color: var(--primary-30);
 
     &:before {
-      display: inline-block;
+      position: absolute;
+      top: calc(0.125rem + 2px);
+      left: calc(0.125rem + 2px);
       border-radius: 50%;
       content: '';
-      margin: calc(0.125rem + 2px) 0 0 calc(0.125rem + 2px);
       width: 1rem;
       height: 1rem;
       background-color: var(--primary-50);

@@ -159,6 +159,12 @@ export type Params = {
     sorting: string
     setSorting: Dispatch<SetStateAction<string>>
   }
+  visioConference: {
+    withConstruction: boolean
+    setWithConstruction: Dispatch<SetStateAction<boolean>>
+    situation: Partial<Record<string, PublicodesExpression | ASTNode>>
+    setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
+  }
   usageNumerique: {
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
@@ -237,6 +243,11 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [month, setMonth] = useState<number>(new Date().getMonth())
   const [sorting, setSorting] = useState('alph_desc')
   const [search, setSearch] = useState('')
+
+  // VisioConference
+  const [visioConferenceSituation, setVisioConferenceSituation] =
+    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
+  const [visiConferenceWithConstruction, setVisiConferenceWithConstruction] = useState(false)
 
   // Usage Numérique
   const [usageNumeriqueEquivalents, setUsageNumeriqueEquivalents] = useState(defaultEquivalents)
@@ -497,6 +508,12 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setSituation: setUsageNumeriqueSituation,
           equivalents: usageNumeriqueEquivalents,
           setEquivalents: setUsageNumeriqueEquivalents,
+        },
+        visioConference: {
+          situation: visioConferenceSituation,
+          setSituation: setVisioConferenceSituation,
+          withConstruction: visiConferenceWithConstruction,
+          setWithConstruction: setVisiConferenceWithConstruction,
         },
         numerique: {
           displayAll: numeriqueDisplayAll,

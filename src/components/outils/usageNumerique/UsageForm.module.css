@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1rem;
   color: var(--neutral-80);
   font-size: 1.125rem;
   line-height: 1.5rem;
@@ -24,7 +23,6 @@
     font-size: 1.5rem;
     font-weight: 800;
     line-height: 2rem;
-    padding: 0.5rem 1rem;
   }
 
   input,
@@ -43,6 +41,8 @@
 }
 
 .inputs {
+  margin-bottom: 1rem;
+
   @media screen and (max-width: 48rem) {
     flex-direction: column;
 
