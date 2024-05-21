@@ -1,4 +1,4 @@
-import notion from 'app/api/notion/route'
+import notion from 'app/(public)/api/notion/route'
 import axios from 'axios'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createMocks } from 'node-mocks-http'

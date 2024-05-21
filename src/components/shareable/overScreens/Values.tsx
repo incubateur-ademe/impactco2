@@ -26,13 +26,9 @@ export type OverScreenInfo = {
 export const overScreenEquivalentEtiquetteValues: (equivalent: ComputedEquivalent) => Record<string, OverScreenInfo> = (
   equivalent
 ) => {
-  const params = `?value=${equivalent.value}&comparisons=${equivalent.slug}`
+  const params = `value=${equivalent.value}&comparisons=${equivalent.slug}`
 
   return {
-    partager: {
-      title: 'share',
-      children: <Share path={`/comparateur${params}#etiquette`} tracking={equivalent.name} />,
-    },
     integrer: {
       title: 'integrate',
       children: <Integrate path='/comparateur/etiquette' extraParams={params} tracking={equivalent.name} />,
@@ -80,6 +76,32 @@ export const overScreenComparateurValues: (onClose?: () => void) => Record<strin
   equivalents: {
     children: <EquivalentsOverscreen onClose={onClose} />,
     fullHeight: true,
+  },
+})
+
+export const overScreenComparateurEtiquettesValues: () => Record<
+  'animated' | 'static',
+  Record<string, OverScreenInfo>
+> = () => ({
+  animated: {
+    partager: {
+      title: 'share',
+      children: <Share path='comparateur/etiquette-anime' tracking='Comparateur' />,
+    },
+    integrer: {
+      title: 'integrate',
+      children: <Integrate path='comparateur/etiquette-anime' tracking='Comparateur' />,
+    },
+  },
+  static: {
+    partager: {
+      title: 'share',
+      children: <Share path='comparateur/etiquette' tracking='Comparateur' />,
+    },
+    integrer: {
+      title: 'integrate',
+      children: <Integrate path='comparateur/etiquette' tracking='Comparateur' />,
+    },
   },
 })
 

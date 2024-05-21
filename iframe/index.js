@@ -7,14 +7,16 @@ const setupIframe = (element) => {
   element['loaded'] = 'true'
 
   const type = element.dataset.type
-    ? element.dataset.type
-    : document.getElementById('mon-impact-transport') ||
-        document.getElementById('datagir-teletravail') ||
-        document.getElementById('ecolab-transport')
-      ? 'empreinte-carbone/transport'
-      : document.getElementById('impact-livraison')
-        ? 'livraison'
-        : 'tuiles'
+    ? element.dataset.type === 'transport/teletravail'
+      ? 'teletravail'
+      : element.dataset.type
+    : document.getElementById('mon-impact-transport') || document.getElementById('ecolab-transport')
+      ? 'transport'
+      : document.getElementById('datagir-teletravail')
+        ? 'teletravail'
+        : document.getElementById('impact-livraison')
+          ? 'livraison'
+          : 'comparateur'
 
   const search = element.dataset.search || ''
   const src = `${WEBPACK_SITE_URL}/iframes/${type}${search}${search ? '&' : '?'}source=${window.location.href}`

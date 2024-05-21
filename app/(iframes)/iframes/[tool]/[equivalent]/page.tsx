@@ -2,9 +2,7 @@ import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import React from 'react'
 import { categories } from 'data/categories'
-import Equivalent from 'components/outils/equivalents/EquivalentPage'
-import formatName from 'utils/formatName'
-import Suggestion from 'components/layout/Suggestion'
+import Equivalent from 'components/outils/equivalents/Equivalent'
 
 export async function generateStaticParams() {
   return categories.flatMap((category) =>
@@ -40,10 +38,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   }
 }
 
-const EquivalentPage = ({ params }: Props) => {
+const page = ({ params }: Props) => {
   const category = categories.find((category) => category.slug === params.tool)
-
-  console.log(category)
   if (!category || !category.equivalents) {
     return notFound()
   }
@@ -51,16 +47,7 @@ const EquivalentPage = ({ params }: Props) => {
   if (!equivalent) {
     return notFound()
   }
-  return (
-    <>
-      <Equivalent category={category} equivalent={equivalent} />
-      <Suggestion
-        from={equivalent.link}
-        fromLabel={formatName(equivalent.name, 1, true)}
-        simulatorName={`de l'objet ${category.name}`}
-      />
-    </>
-  )
+  return <Equivalent category={category} equivalent={equivalent} />
 }
 
-export default EquivalentPage
+export default page

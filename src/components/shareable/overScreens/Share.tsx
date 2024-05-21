@@ -34,7 +34,7 @@ const Share = ({
     () =>
       category
         ? getCustomParams(category.slug, allParams)
-        : path === 'comparateur'
+        : path?.startsWith('comparateur')
           ? getComparateurParams(allParams)
           : {},
     [allParams, category]
@@ -103,7 +103,7 @@ const Share = ({
           <LinkedinIcon />
         </LinkedinShareButton>
       </div>
-      {(category || path === 'comparateur') && (
+      {(category || path?.startsWith('comparateur')) && (
         <div className={styles.meta}>
           <Image
             src={

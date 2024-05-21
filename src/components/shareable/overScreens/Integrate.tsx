@@ -31,7 +31,7 @@ const Integrate = ({
         ...theme,
       }
     }
-    if (path === 'comparateur') {
+    if (path.startsWith('comparateur')) {
       return { ...getComparateurParams(params), ...theme }
     }
     return theme
