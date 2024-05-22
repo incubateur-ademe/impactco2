@@ -36,7 +36,8 @@
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "engines": {
-    "node": ">=20"
+    "node": "20",
+    "yarn": "1.22"
   },
   "dependencies": {
     "@incubateur-ademe/publicodes-impact-livraison": "0.2.1",
