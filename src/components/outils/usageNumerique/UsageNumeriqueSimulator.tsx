@@ -147,7 +147,7 @@ const UsageNumeriqueSimulator = () => {
         l’usage de ces derniers.
       </div>
       <div className={shareableStyles.separatorBothBorders} />
-      <CategorySimulator equivalents={displayedEquivalents} />
+      <CategorySimulator equivalents={displayedEquivalents} withSimulator />
     </>
   )
 }

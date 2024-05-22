@@ -47,6 +47,7 @@ const ChauffageSimulator = () => {
       {chauffage.equivalents && (
         <CategorySimulator
           equivalents={chauffage.equivalents.map((equivalent) => ({ ...equivalent, value: equivalent.value * m2 }))}
+          withSimulator
         />
       )}
     </>

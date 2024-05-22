@@ -1,6 +1,7 @@
 'use client'
 
 import { AxiosResponse } from 'axios'
+import Link from 'next/link'
 import React, { FormEvent, useState } from 'react'
 import { ZodError } from 'zod'
 import axiosClient from 'utils/axios'
@@ -61,10 +62,10 @@ const Meeting = ({ from }: { from: string }) => {
       <b>Merci beaucoup !</b> Nous allons prendre contact très bientôt.
     </div>
   ) : (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} noValidate>
       <div className={styles.container}>
         <Input
-          id={`email-${from}`}
+          id='email'
           name='email'
           data-testid='emailInput'
           value={email}
@@ -77,10 +78,21 @@ const Meeting = ({ from }: { from: string }) => {
         </Button>
       </div>
       <CheckboxInput
+        id='accepted'
+        errors={errors}
         className={styles.checkbox}
         checked={accepted}
+        required
         setChecked={(checked) => setAccepted(checked)}
-        label='J’accepte d’être recontacté afin d’échanger sur les possibilités d’accompagnement et de recevoir des communications sur les outils et actualités d’impact CO2'
+        label={
+          <>
+            J'ai lu et j'accepte que l'ADEME collecte mes données afin de garantir la bonne utilisation des services
+            offerts et reconnais avoir pris connaissance de{' '}
+            <Link href='/politique-de-confidentialite' target='_blank' rel='noopener noreferrer'>
+              sa politique de protection des données personnelles
+            </Link>
+          </>
+        }
       />
     </form>
   )

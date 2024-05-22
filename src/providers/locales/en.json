@@ -72,7 +72,7 @@
   },
   "transport": {
     "displayAll": "See every transport modes",
-    "hideAll": "See only relevants transport modes",
+    "hideAll": "Display less transport modes",
     "carpool": {
       "see": "Show carpooling",
       "with": "With",

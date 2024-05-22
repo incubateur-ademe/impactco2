@@ -55,6 +55,7 @@ const ItineraireSimulator = () => {
             setDisplayAll={setDisplayAll}
             displayAllText={tTransport('displayAll')}
             hideAllText={tTransport('hideAll')}
+            withSimulator
           />
         </>
       ) : (

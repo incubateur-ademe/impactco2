@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import Link from 'next/link'
 import React, { Dispatch, SetStateAction } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -14,12 +15,14 @@ const CategorySimulator = ({
   setDisplayAll,
   displayAllText,
   hideAllText,
+  withSimulator,
 }: {
   equivalents: ComputedEquivalent[]
   displayAll?: boolean
   setDisplayAll?: Dispatch<SetStateAction<boolean>>
   displayAllText?: string
   hideAllText?: string
+  withSimulator?: boolean
 }) => {
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
@@ -31,7 +34,10 @@ const CategorySimulator = ({
           equivalents
             .sort((a, b) => a.value - b.value)
             .map((equivalent) => (
-              <Link href={equivalent.link} key={equivalent.slug} className={styles.equivalent}>
+              <Link
+                href={equivalent.link}
+                key={equivalent.slug}
+                className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
                 <EquivalentIcon equivalent={equivalent} height={3} />
                 <div className={styles.content}>
                   <div className={styles.name}>

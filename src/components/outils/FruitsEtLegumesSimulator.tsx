@@ -45,6 +45,7 @@ const FruitsEtLegumesSimulator = () => {
           equivalents={flds.equivalents.filter((equivalent) =>
             (equivalent as FruitsEtLegumesEquivalent).months.includes(month)
           )}
+          withSimulator
         />
       )}
     </>

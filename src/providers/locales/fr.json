@@ -72,7 +72,7 @@
   },
   "transport": {
     "displayAll": "Voir tous les modes de transport",
-    "hideAll": "Voir uniquement les modes de transport pertinant",
+    "hideAll": "Afficher moins de modes de transport",
     "carpool": {
       "see": "Afficher le covoiturage",
       "with": "Avec",

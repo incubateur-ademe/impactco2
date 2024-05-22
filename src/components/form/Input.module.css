@@ -65,15 +65,15 @@
 }
 
 .inputError {
-  border: 2px solid var(--critical-30);
+  border: 2px solid var(--critical-30) !important;
 
   &:hover {
-    border: 2px solid var(--critical-40);
+    border: 2px solid var(--critical-40) !important;
   }
 
   &:focus {
-    border: 2px solid var(--critical-50);
-    outline: 4px solid var(--critical-30);
+    border: 2px solid var(--critical-50) !important;
+    outline: 4px solid var(--critical-30) !important;
   }
 }
 

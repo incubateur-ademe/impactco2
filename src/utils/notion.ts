@@ -13,7 +13,7 @@ export const NotionCommandValidation = z
       email: z
         .string({ required_error: 'Veuillez renseigner un email valide.' })
         .email({ message: 'Veuillez renseigner un email valide.' }),
-      accepted: z.boolean(),
+      accepted: z.literal(true, { errorMap: () => ({ message: 'Veuillez lire et accepter' }) }),
     }),
     z.object({
       type: z.literal('suggestion'),

@@ -74,7 +74,7 @@
 
 .equalColumn {
   top: 0 !important;
-  left: 0.875em !important;
+  left: 1.5em !important;
   transform: translateY(-50%) !important;
 }
 
@@ -191,6 +191,6 @@
 
 .columnRandomize {
   bottom: 0 !important;
-  left: 25% !important;
-  transform: translate(-50%, 50%) !important;
+  left: 1.5em !important;
+  transform: translateY(50%) !important;
 }
