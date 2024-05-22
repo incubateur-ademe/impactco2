@@ -104,16 +104,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/beta/:slug*',
-        destination: '/api/:slug*',
-        permanent: true,
-      },
-      {
-        source: '/categories/deplacement/:slug*',
-        destination: '/transport/:slug*',
-        permanent: true,
-      },
-      {
         source: '/categories',
         destination: '/thematiques',
         permanent: true,
@@ -129,23 +119,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/empreinte-carbone/:slug*',
-        destination: '/:slug*',
-        permanent: true,
-      },
-      {
         source: '/iframes/categories/:slug*',
         destination: '/iframes/:slug*',
-        permanent: true,
-      },
-      {
-        source: '/iframes/empreinte-carbone/:slug*',
-        destination: '/iframes/:slug*',
-        permanent: true,
-      },
-      {
-        source: '/iframes/tuiles',
-        destination: '/iframes/comparateur',
         permanent: true,
       },
       {
