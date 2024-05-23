@@ -3,6 +3,8 @@
 
   thead {
     border-top: 2px solid var(--primary-30);
+    color: var(--neutral-80);
+    font-weight: 700;
   }
 
   tr {
@@ -20,11 +22,6 @@
     &:not(:first-child) {
       text-align: right;
     }
-  }
-
-  th {
-    color: var(--neutral-80);
-    font-weight: 700;
   }
 
   td {

@@ -27,7 +27,7 @@
 
 .emptyTile {
   cursor: pointer;
-  color: var(--primary-50);
+  color: var(--primary-60);
   border: 2px solid var(--primary-30);
   background-color: transparent;
   justify-content: center;
@@ -37,13 +37,13 @@
 
   &:hover {
     background-color: var(--primary-20);
-    color: var(--primary-60);
+    color: var(--primary-70);
     border: 2px solid var(--primary-40);
   }
 
   &:active {
     background-color: var(--primary-10);
-    color: var(--primary-60);
+    color: var(--primary-70);
     border: 2px solid var(--primary-40);
   }
 

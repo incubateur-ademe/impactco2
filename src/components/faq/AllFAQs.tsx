@@ -23,10 +23,10 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
         title='Questions fréquentes'
         description='Explorer la FAQ pour trouver les réponses à vos questions'>
         <Card colored className={styles.filter}>
-          <label htmlFor='input-search-select'>
+          <label htmlFor='text-select-search'>
             <b>Filtrer</b> par sujet ou outil
           </label>
-          <Select id='search-select' value={search} onChange={(event) => setSearch(event.target.value)}>
+          <Select id='search' value={search} onChange={(event) => setSearch(event.target.value)}>
             <option value='all'>Tous les sujets et outils</option>
             {faqs
               .flatMap((faq) => faq.pages)

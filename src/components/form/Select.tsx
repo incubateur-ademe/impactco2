@@ -22,7 +22,7 @@ const Select = ({
   return (
     <div className={inline ? styles.containerInline : ''}>
       {label && (
-        <label className={classNames(styles.label, { [styles.labelInline]: inline })} htmlFor={`input-${id}`}>
+        <label className={classNames(styles.label, { [styles.labelInline]: inline })} htmlFor={`text-select-${id}`}>
           {label}
           {!selectProps.required && <div className={styles.notRequired}> - Facultatif</div>}
           {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}

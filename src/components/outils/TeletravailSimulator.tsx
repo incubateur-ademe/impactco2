@@ -84,7 +84,7 @@ const TeletravailSimulator = () => {
             className={styles.select}
             label='Pour vous rendre au travail'
             required
-            id='frequence-type'
+            id='mode'
             value={transport}
             onChange={(event) => {
               track('Télétravail', 'Mode de transport', event.target.value)

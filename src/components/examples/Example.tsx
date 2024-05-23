@@ -17,7 +17,12 @@ const Example = ({ example, withTags }: { example: ExampleType; withTags?: boole
       </div>
     </div>
   ) : (
-    <Link href={example.links[0].href} target='_blank' rel='noopener noreferrer' className={styles.link}>
+    <Link
+      href={example.links[0].href}
+      target='_blank'
+      rel='noopener noreferrer'
+      className={styles.link}
+      title={example.name}>
       {image}
     </Link>
   )

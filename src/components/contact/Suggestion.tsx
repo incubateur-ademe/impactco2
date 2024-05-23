@@ -85,6 +85,7 @@ const Suggestion = () => {
 
   return (
     <Block
+      as='h1'
       title='Faire une suggestion'
       description='Vous avez identifié des bugs, des améliorations ou vous souhaitez partager votre avis ?'>
       <div className={styles.container}>

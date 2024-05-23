@@ -25,10 +25,10 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         description='Pour s’inspirer et découvrir comment nos outils sont utilisés'>
         <Card colored className={styles.filter}>
           <div>
-            <label htmlFor='input-activity-select'>
+            <label htmlFor='text-select-activity'>
               <b>Filtrer</b> par secteur d’activité
             </label>
-            <Select id='activity-select' value={activity} onChange={(event) => setActivity(event.target.value)}>
+            <Select id='activity' value={activity} onChange={(event) => setActivity(event.target.value)}>
               <option value='all'>Tous les secteurs d'activité</option>
               {examples
                 .map((example) => example.activity)
@@ -42,10 +42,10 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
             </Select>
           </div>
           <div>
-            <label htmlFor='input-tool-select'>
+            <label htmlFor='text-select-tool'>
               <b>Filtrer</b> par outils
             </label>
-            <Select id='tool-select' value={tool} onChange={(event) => setTool(event.target.value)}>
+            <Select id='tool' value={tool} onChange={(event) => setTool(event.target.value)}>
               <option value='all'>Tous les outils</option>
               {examples
                 .flatMap((example) => example.links.map((link) => link.label))

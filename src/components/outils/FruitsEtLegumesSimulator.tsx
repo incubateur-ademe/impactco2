@@ -23,7 +23,7 @@ const FruitsEtLegumesSimulator = () => {
   return (
     <>
       <div className={styles.simulator}>
-        <HiddenLabel htmlFor='month'>Découvres les fruits et légumes du mois de</HiddenLabel>
+        <HiddenLabel htmlFor='text-select-month'>Découvres les fruits et légumes du mois de</HiddenLabel>
         <Select
           id='month'
           value={month}

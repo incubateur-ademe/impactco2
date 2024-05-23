@@ -9,6 +9,7 @@ import { NotionCommand, NotionCommandValidation } from 'utils/notion'
 import Button from 'components/base/buttons/Button'
 import CheckIcon from 'components/base/icons/check'
 import CheckboxInput from 'components/form/CheckboxInput'
+import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import styles from './Meeting.module.css'
 
@@ -64,6 +65,7 @@ const Meeting = ({ from }: { from: string }) => {
   ) : (
     <form onSubmit={onSubmit} noValidate>
       <div className={styles.container}>
+        <HiddenLabel htmlFor='input-email'>Email</HiddenLabel>
         <Input
           id='email'
           name='email'

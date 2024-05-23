@@ -143,10 +143,10 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                   />
                   {value.label}
                 </th>
-                <th className={styles.percent}>{!withPercent && <Percentage value={(100 * value.value) / sum} />}</th>
-                <th>
+                <td className={styles.percent}>{!withPercent && <Percentage value={(100 * value.value) / sum} />}</td>
+                <td>
                   <DetailValue unit={unit} value={value.value} />
-                </th>
+                </td>
               </tr>
             </thead>
             <tbody>

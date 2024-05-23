@@ -81,7 +81,7 @@ const RendezVous = () => {
   }
 
   return (
-    <Block title='Prendre rendez-vous' description='Besoin d’aide ou d’un accompagnement ?'>
+    <Block as='h1' title='Prendre rendez-vous' description='Besoin d’aide ou d’un accompagnement ?'>
       <div className={styles.container}>
         {sent ? (
           <FormResult
