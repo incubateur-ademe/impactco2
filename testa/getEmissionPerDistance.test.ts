@@ -1,20 +1,16 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { createMocks } from 'node-mocks-http'
+/**
+ * @jest-environment node
+ */
 
 describe('getEmissionPerDistance', () => {
   test('peut être filtré par champ', async () => {
-    // Given
-    const { req, res } = createMocks<NextRequest, NextResponse>({
-      method: 'GET',
-      url: '/api/getEmissionsPerDistance?km=3&fields=emoji,display&transportations=14',
-    })
+    const result = await fetch(
+      'http://localhost:3000/api/getEmissionsPerDistance?km=3&fields=emoji,display&transportations=14'
+    )
 
-    // When
-    await getEmissionsPerDistance(req, res)
-
-    // Then
-    expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toEqual([
+    expect(result.status).toBe(200)
+    const data = await result.json()
+    expect(data).toEqual([
       {
         display: { max: 100, min: 11 },
         emissions: { gco2e: 19.799999999999997, kgco2e: 0.019799999999999998, tco2e: 0.000019799999999999997 },
@@ -23,19 +19,13 @@ describe('getEmissionPerDistance', () => {
       },
     ])
   })
+
   test('peut renvoyer toutes les données de manière brute', async () => {
-    // Given
-    const { req, res } = createMocks<NextRequest, NextResponse>({
-      method: 'GET',
-      url: '/api/getEmissionsPerDistance',
-    })
+    const result = await fetch('http://localhost:3000/api/getEmissionsPerDistance')
 
-    // When
-    await getEmissionsPerDistance(req, res)
-
-    // Then
-    expect(res._getStatusCode()).toBe(200)
-    expect(JSON.parse(res._getData())).toEqual([
+    expect(result.status).toBe(200)
+    const data = await result.json()
+    expect(data).toEqual([
       {
         emissions: {
           gco2e: 258.2,
