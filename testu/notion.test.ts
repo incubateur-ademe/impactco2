@@ -8,6 +8,7 @@ describe('Notion api command', () => {
       email: 'test@cool.fr',
       structure: 'association',
       from: 'test',
+      accepted: true,
     }
 
     it('allows valid command', () => {
@@ -18,6 +19,39 @@ describe('Notion api command', () => {
     it('allows valid command with other structure and specification', () => {
       const result = NotionCommandValidation.safeParse({ ...validCommand, structure: 'autre', other: 'autres' })
       expect(result.success).toEqual(true)
+    })
+
+    it('does not allow valid command with not accepted', () => {
+      expectZodValidationToFail(
+        // @ts-expect-error: Zod too complex
+        NotionCommandValidation,
+        validCommand,
+        {
+          accepted: 'false',
+        },
+        [
+          {
+            path: ['accepted'],
+            message: 'Veuillez lire et accepter',
+          },
+        ]
+      )
+    })
+    it('does not allow valid command with empty acceptation', () => {
+      expectZodValidationToFail(
+        // @ts-expect-error: Zod too complex
+        NotionCommandValidation,
+        validCommand,
+        {
+          accepted: undefined,
+        },
+        [
+          {
+            path: ['accepted'],
+            message: 'Veuillez lire et accepter',
+          },
+        ]
+      )
     })
 
     it('does not allow valid command with other structure and no specification', () => {
