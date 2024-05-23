@@ -19,6 +19,8 @@ const usageNumeriqueDefaultValues = {
   ['email . appareil']: "'smartphone'",
   ['email . transmission . émetteur . réseau']: "'fixe FR'",
   ['email . taille']: 0.075,
+  ['email . terminaux . temps écriture']: 3,
+  ['email . destinataires']: 1,
   ['streaming . durée']: 420,
   ['streaming . appareil']: "'TV'",
   ['streaming . transmission . réseau']: "'fixe FR'",
@@ -159,7 +161,19 @@ export type Params = {
     sorting: string
     setSorting: Dispatch<SetStateAction<string>>
   }
-  visioConference: {
+  visio: {
+    withConstruction: boolean
+    setWithConstruction: Dispatch<SetStateAction<boolean>>
+    situation: Partial<Record<string, PublicodesExpression | ASTNode>>
+    setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
+  }
+  email: {
+    withConstruction: boolean
+    setWithConstruction: Dispatch<SetStateAction<boolean>>
+    situation: Partial<Record<string, PublicodesExpression | ASTNode>>
+    setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
+  }
+  streaming: {
     withConstruction: boolean
     setWithConstruction: Dispatch<SetStateAction<boolean>>
     situation: Partial<Record<string, PublicodesExpression | ASTNode>>
@@ -247,7 +261,17 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   // VisioConference
   const [visioConferenceSituation, setVisioConferenceSituation] =
     useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
-  const [visiConferenceWithConstruction, setVisiConferenceWithConstruction] = useState(false)
+  const [visioConferenceWithConstruction, setVisioConferenceWithConstruction] = useState(false)
+
+  // Email
+  const [emailSituation, setEmailSituation] =
+    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
+  const [emailWithConstruction, setEmailWithConstruction] = useState(false)
+
+  // Streaming
+  const [streamingSituation, setStreamingSituation] =
+    useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
+  const [streamingWithConstruction, setStreamingWithConstruction] = useState(false)
 
   // Usage Numérique
   const [usageNumeriqueEquivalents, setUsageNumeriqueEquivalents] = useState(defaultEquivalents)
@@ -509,11 +533,23 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           equivalents: usageNumeriqueEquivalents,
           setEquivalents: setUsageNumeriqueEquivalents,
         },
-        visioConference: {
+        visio: {
           situation: visioConferenceSituation,
           setSituation: setVisioConferenceSituation,
-          withConstruction: visiConferenceWithConstruction,
-          setWithConstruction: setVisiConferenceWithConstruction,
+          withConstruction: visioConferenceWithConstruction,
+          setWithConstruction: setVisioConferenceWithConstruction,
+        },
+        email: {
+          situation: emailSituation,
+          setSituation: setEmailSituation,
+          withConstruction: emailWithConstruction,
+          setWithConstruction: setEmailWithConstruction,
+        },
+        streaming: {
+          situation: streamingSituation,
+          setSituation: setStreamingSituation,
+          withConstruction: streamingWithConstruction,
+          setWithConstruction: setStreamingWithConstruction,
         },
         numerique: {
           displayAll: numeriqueDisplayAll,

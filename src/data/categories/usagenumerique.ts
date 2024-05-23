@@ -1,9 +1,8 @@
 export const usageNumeriques = [
   {
     name: 'Email',
-    subtitle: '',
     slug: 'email',
-    unit: 'email',
+    unit: 'avec les paramètres renseignés ci-dessous.',
     category: 10,
     ecv: [
       {
@@ -127,6 +126,7 @@ export const usageNumeriques = [
       },
     ],
     source: 'https://negaoctet.org/',
+    unit: 'avec les paramètres renseignés ci-dessous.',
   },
   {
     name: 'Visioconférence',
@@ -156,7 +156,7 @@ export const usageNumeriques = [
       },
     ],
     source: 'https://negaoctet.org/',
-    unit: 'pour une heure avec les paramètres renseignés ci-dessous.',
+    unit: 'avec les paramètres renseignés ci-dessous.',
   },
   {
     name: 'Go de donnée',

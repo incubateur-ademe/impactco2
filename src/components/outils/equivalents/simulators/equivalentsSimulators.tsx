@@ -1,11 +1,21 @@
 import { ReactNode } from 'react'
 import { UsageNumeriqueProvider } from 'src/providers/UsageNumeriqueProvider'
-import VisioConferenceSimulator from './VisioConferenceSimulator'
+import UsageNumeriqueEquivalentSimulator from './UsageNumeriqueEquivalentSimulator'
 
 export const equivalentsSimulators: Record<string, ReactNode> = {
   visioconference: (
     <UsageNumeriqueProvider>
-      <VisioConferenceSimulator />
+      <UsageNumeriqueEquivalentSimulator slug='visio' />
+    </UsageNumeriqueProvider>
+  ),
+  email: (
+    <UsageNumeriqueProvider>
+      <UsageNumeriqueEquivalentSimulator slug='email' />
+    </UsageNumeriqueProvider>
+  ),
+  streamingvideo: (
+    <UsageNumeriqueProvider>
+      <UsageNumeriqueEquivalentSimulator slug='streaming' />
     </UsageNumeriqueProvider>
   ),
 }

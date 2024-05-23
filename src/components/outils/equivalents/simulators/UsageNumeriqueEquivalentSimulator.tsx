@@ -1,5 +1,6 @@
 'use client'
 
+import classNames from 'classnames'
 import React, { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
@@ -21,26 +22,28 @@ import Detail from '../detail/Detail'
 import baseStyles from './EquivalentSimulator.module.css'
 
 const category = categories.find((category) => category.slug === 'usagenumerique') as Category
-const equivalent = category.equivalents?.find(
-  (equivalent) => equivalent.slug === 'visioconference'
-) as ComputedEquivalent
+const equivalents = {
+  visio: category.equivalents?.find((equivalent) => equivalent.slug === 'visioconference') as ComputedEquivalent,
+  email: category.equivalents?.find((equivalent) => equivalent.slug === 'email') as ComputedEquivalent,
+  streaming: category.equivalents?.find((equivalent) => equivalent.slug === 'streamingvideo') as ComputedEquivalent,
+}
 
-const VisioConferenceSimulator = () => {
+const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' | 'streaming' }) => {
   const { engine } = useUsageNumeriqueContext()
   const {
-    visioConference: { situation, setSituation, withConstruction, setWithConstruction },
+    [slug]: { situation, setSituation, withConstruction, setWithConstruction },
   } = useParamContext()
 
   const computedEquivalent = useMemo(() => {
     engine.setSituation(situation)
 
-    const total = engine.evaluate('visio')
-    const construction = evaluateNumber(engine, 'visio . terminaux . construction') / 1000
+    const total = engine.evaluate(slug)
+    const construction = evaluateNumber(engine, `${slug} . terminaux . construction`) / 1000
     return {
-      ...equivalent,
+      ...equivalents[slug],
       ecv: (total.traversedVariables || [])
         .filter((variable) => withConstruction || !variable.endsWith(' . terminaux . construction'))
-        .map((variable) => ({ variable, ecv: ecv.find((value) => `visio${value.publicode}` === variable) }))
+        .map((variable) => ({ variable, ecv: ecv.find((value) => `${slug}${value.publicode}` === variable) }))
         .filter((value) => value.ecv)
         .map(
           (value) =>
@@ -51,9 +54,9 @@ const VisioConferenceSimulator = () => {
         ),
       value: (total.nodeValue as number) / 1000 - (withConstruction ? 0 : construction),
     }
-  }, [situation, engine, withConstruction])
+  }, [situation, slug, engine, withConstruction])
 
-  const values = usageNumeriqueConfig.visio
+  const values = usageNumeriqueConfig[slug]
   const device = (situation[values.device] as string).replace(/'/g, '')
   return (
     <>
@@ -63,29 +66,33 @@ const VisioConferenceSimulator = () => {
       <div className={baseStyles.simulator}>
         <div>
           <label className={baseStyles.label} htmlFor='input-main-value'>
-            <b>Heures de visioconférence</b>
+            <b>{values.mainTitle}</b>
           </label>
           <div className={usageFormStyles.inputs}>
-            <div className={usageFormStyles.firstRow}>
+            <div className={classNames(usageFormStyles.firstRow, { [usageFormStyles.onlyChild]: !values.secondTitle })}>
               <NumberInput
                 id='main-value'
-                unit={values.unit}
-                value={(situation['visio . durée'] as number) / 60}
+                unit={`${values.mainUnit}${(situation[values.mainValue] as number) > 1 ? 's' : ''}`}
+                value={(situation[values.mainValue] as number) / values.mainDivider}
                 setValue={(newValue) => {
-                  track('Visioconférence', 'Input visio value', newValue.toString())
-                  setSituation({ ...situation, ['visio . durée']: (newValue * 60).toString() })
+                  track(equivalents[slug].name, `Input ${slug} value`, newValue.toString())
+                  setSituation({ ...situation, [values.mainValue]: (newValue * values.mainDivider).toString() })
                 }}
               />
-              <HiddenLabel htmlFor='input-participants'>Nombre de participants</HiddenLabel>
-              <NumberInput
-                id='participants'
-                unit={(situation['visio . emplacements'] as number) > 1 ? 'participants' : 'participant'}
-                value={situation['visio . emplacements'] as number}
-                setValue={(newValue) => {
-                  track('Visioconférence', 'Input visio participants', newValue.toString())
-                  setSituation({ ...situation, ['visio . emplacements']: newValue.toString() })
-                }}
-              />
+              {values.secondTitle && values.secondValue && values.secondUnit && (
+                <>
+                  <HiddenLabel htmlFor='input-second'>{values.secondTitle}</HiddenLabel>
+                  <NumberInput
+                    id='second'
+                    unit={`${values.secondUnit}${(situation[values.secondValue] as number) > 1 ? 's' : ''}`}
+                    value={situation[values.secondValue] as number}
+                    setValue={(newValue) => {
+                      track(equivalents[slug].name, `Input ${slug} second value`, newValue.toString())
+                      setSituation({ ...situation, [values.secondValue]: newValue.toString() })
+                    }}
+                  />
+                </>
+              )}
             </div>
             <div className={usageFormStyles.secondRow}>
               <HiddenLabel htmlFor='text-select-type'>Type de {values.title}</HiddenLabel>
@@ -93,7 +100,7 @@ const VisioConferenceSimulator = () => {
                 id='type'
                 value={situation[values.type] as string}
                 onChange={(event) => {
-                  track('Visioconférence', 'Select visio type', event.target.value)
+                  track(equivalents[slug].name, `Select ${slug} type`, event.target.value)
                   setSituation({ ...situation, [values.type]: event.target.value })
                 }}>
                 {values.types.map((option) => (
@@ -107,7 +114,7 @@ const VisioConferenceSimulator = () => {
                 id='network'
                 value={situation[values.network] as string}
                 onChange={(event) => {
-                  track('Visioconférence', 'Select visio réseau', event.target.value)
+                  track(equivalents[slug].name, `Select ${slug} réseau`, event.target.value)
                   setSituation({ ...situation, [values.network]: event.target.value })
                 }}>
                 {values.networks.map((option) => (
@@ -128,7 +135,7 @@ const VisioConferenceSimulator = () => {
               id='appareil'
               value={situation[values.device] as string}
               onChange={(event) => {
-                track('Visioconférence', 'Select visio appareil', event.target.value)
+                track(equivalents[slug].name, `Select ${slug} appareil`, event.target.value)
                 setSituation({ ...situation, [values.device]: event.target.value })
               }}>
               {values.appareils.map((option) => (
@@ -155,7 +162,7 @@ const VisioConferenceSimulator = () => {
                 value='yes'
                 selected={withConstruction ? 'yes' : 'no'}
                 setSelected={() => {
-                  track('Visioconférence', 'visio construction', 'true')
+                  track(equivalents[slug].name, `${slug} construction`, 'true')
                   setWithConstruction(true)
                 }}
               />
@@ -166,7 +173,7 @@ const VisioConferenceSimulator = () => {
                 value='no'
                 selected={withConstruction ? 'yes' : 'no'}
                 setSelected={() => {
-                  track('Visioconférence', 'visio construction', 'false')
+                  track(equivalents[slug].name, `${slug} construction`, 'false')
                   setWithConstruction(false)
                 }}
               />
@@ -184,7 +191,7 @@ const VisioConferenceSimulator = () => {
                 unit={evaluateNumber(engine, `${device} . durée de vie`) > 1 ? 'ans' : 'an'}
                 value={evaluateNumber(engine, `${device} . durée de vie`)}
                 setValue={(newValue) => {
-                  track('Visioconférence', 'Input visio durée de vie', newValue.toString())
+                  track(equivalents[slug].name, `Input ${slug} durée de vie`, newValue.toString())
                   setSituation({ ...situation, [`${device} . durée de vie`]: newValue.toString() })
                 }}
               />
@@ -200,7 +207,7 @@ const VisioConferenceSimulator = () => {
                 }
                 value={evaluateNumber(engine, `${device} . profil utilisation`)}
                 setValue={(newValue) => {
-                  track('Visioconférence', 'Input visio profil utilisation', newValue.toString())
+                  track(equivalents[slug].name, `Input ${slug} profil utilisation`, newValue.toString())
                   setSituation({ ...situation, [`${device} . profil utilisation`]: newValue.toString() })
                 }}
               />
@@ -213,4 +220,4 @@ const VisioConferenceSimulator = () => {
   )
 }
 
-export default VisioConferenceSimulator
+export default UsageNumeriqueEquivalentSimulator

@@ -40,6 +40,12 @@
   }
 }
 
+.onlyChild {
+  > div {
+    max-width: 100%;
+  }
+}
+
 .inputs {
   margin-bottom: 1rem;
 
