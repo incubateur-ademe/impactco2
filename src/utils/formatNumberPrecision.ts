@@ -1,9 +1,10 @@
-export default function formatNumberPrecision(value: number) {
-  const tempValue = value < 1 ? value * 1000 : value
-  return (
-    tempValue.toLocaleString('fr-fr', {
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 0,
-    }) + (value < 1 ? ' g' : ' kg')
-  )
+import formatNumber from './formatNumber'
+
+export const getNumberPrecision = (number: number) => {
+  return number > 1 ? { value: formatNumber(number), unit: 'kg' } : { value: formatNumber(number * 1000), unit: 'g' }
+}
+
+export const formatNumberPrecision = (number: number) => {
+  const { value, unit } = getNumberPrecision(number)
+  return `${value} ${unit}`
 }

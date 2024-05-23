@@ -41,6 +41,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
     const construction = evaluateNumber(engine, `${slug} . terminaux . construction`) / 1000
     return {
       ...equivalents[slug],
+      unit: 'pour les paramètres renseignés ci-dessous.',
       ecv: (total.traversedVariables || [])
         .filter((variable) => withConstruction || !variable.endsWith(' . terminaux . construction'))
         .map((variable) => ({ variable, ecv: ecv.find((value) => `${slug}${value.publicode}` === variable) }))
