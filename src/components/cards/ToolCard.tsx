@@ -1,7 +1,10 @@
+'use client'
+
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { track } from 'utils/matomo'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import styles from './ToolCard.module.css'
 
@@ -23,7 +26,10 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
       rel={link && link.startsWith('http://') ? 'noreferrer noopener' : undefined}
       className={classNames(styles.card, {
         [styles.horizontalCard]: horizontal,
-      })}>
+      })}
+      onClick={() => {
+        track('Outils', link || `/outils/${slug}`, 'click')
+      }}>
       <Image src={image || `/images/tools-${slug}.svg`} width={220} height={180} alt='' />
       <div className={styles.content}>
         <div>

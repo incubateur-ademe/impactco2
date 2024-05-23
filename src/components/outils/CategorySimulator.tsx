@@ -10,6 +10,7 @@ import CategoryDisplayAll from './CategoryDisplayAll'
 import styles from './CategorySimulator.module.css'
 
 const CategorySimulator = ({
+  tracking,
   equivalents,
   displayAll,
   setDisplayAll,
@@ -17,6 +18,7 @@ const CategorySimulator = ({
   hideAllText,
   withSimulator,
 }: {
+  tracking: string
   equivalents: ComputedEquivalent[]
   displayAll?: boolean
   setDisplayAll?: Dispatch<SetStateAction<boolean>>
@@ -64,6 +66,7 @@ const CategorySimulator = ({
       </div>
       {setDisplayAll && displayAll !== undefined && displayAllText && hideAllText && (
         <CategoryDisplayAll
+          tracking={tracking}
           displayAll={displayAll}
           setDisplayAll={setDisplayAll}
           displayAllText={displayAllText}

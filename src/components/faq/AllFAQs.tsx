@@ -48,7 +48,7 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
       />
       <FAQs
         faqs={filteredFaqs.filter((faq) => faq.section === 'Transports')}
-        title='Transports'
+        title='Transport'
         description={
           <>
             Questions fréquentes à propos de l’outil <Link href='/outils/transport'>Transport</Link>

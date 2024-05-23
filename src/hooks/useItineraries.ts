@@ -19,7 +19,6 @@ export default function useItineraries(start: Point | undefined, end: Point | un
       }
 
       if (start.city && end.city) {
-        // Not track when coming from iframe
         track(`Transport ${tracking}`, 'Recherche', `${start.city}-${end.city}`)
       }
 

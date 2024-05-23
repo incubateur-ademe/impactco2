@@ -27,7 +27,7 @@ const CategoryPage = ({ category, examples, faqs }: { category: CategoryType; ex
       />
       <Block title={category.name} as='h1' description={category.description}>
         <Category category={category} />
-        {category.resetable && <Reset slug={category.slug} />}
+        {category.resetable && <Reset tracking={category.name} slug={category.slug} />}
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>
       {extraSimulator && (

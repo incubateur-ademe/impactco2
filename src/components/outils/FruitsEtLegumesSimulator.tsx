@@ -42,6 +42,7 @@ const FruitsEtLegumesSimulator = () => {
       <div className={shareableStyles.separatorBothBorders} />
       {flds.equivalents && (
         <CategorySimulator
+          tracking='Fruits et légumes'
           equivalents={flds.equivalents.filter((equivalent) =>
             (equivalent as FruitsEtLegumesEquivalent).months.includes(month)
           )}

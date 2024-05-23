@@ -22,6 +22,7 @@ const Category = ({ category }: { category: CategoryType }) => {
       {simulators[category.slug] ||
         (category.equivalents && (
           <CategorySimulator
+            tracking={category.name}
             equivalents={
               !params || params.displayAll
                 ? category.equivalents

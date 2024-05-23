@@ -46,6 +46,7 @@ const ChauffageSimulator = () => {
       <div className={shareableStyles.separatorBothBorders} />
       {chauffage.equivalents && (
         <CategorySimulator
+          tracking='Chauffage'
           equivalents={chauffage.equivalents.map((equivalent) => ({ ...equivalent, value: equivalent.value * m2 }))}
           withSimulator
         />

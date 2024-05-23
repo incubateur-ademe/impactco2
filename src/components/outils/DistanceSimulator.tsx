@@ -35,6 +35,7 @@ const DistanceSimulator = () => {
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       <CategorySimulator
+        tracking='Transport distance'
         equivalents={equivalents}
         displayAll={displayAll}
         setDisplayAll={setDisplayAll}

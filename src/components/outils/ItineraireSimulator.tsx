@@ -50,6 +50,7 @@ const ItineraireSimulator = () => {
         <>
           <div className={shareableStyles.separatorBothBorders} />
           <CategorySimulator
+            tracking='Transport itinéraire'
             equivalents={equivalents}
             displayAll={displayAll}
             setDisplayAll={setDisplayAll}

@@ -171,6 +171,7 @@ const TeletravailSimulator = () => {
               comparisons={equivalents}
               ref={ref}
               randomize={() => {
+                track('Télétravail', 'Randomize', 'randomize')
                 setEquivalents(getRandomEquivalents(undefined, 3))
               }}
             />

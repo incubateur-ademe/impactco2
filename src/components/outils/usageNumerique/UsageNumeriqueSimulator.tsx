@@ -8,6 +8,7 @@ import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { computeFootprint } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
 import Etiquette from 'components/comparateur/Etiquette'
 import { getRandomEquivalents } from 'components/comparateur/random'
@@ -136,6 +137,7 @@ const UsageNumeriqueSimulator = () => {
           comparisons={equivalents}
           ref={ref}
           randomize={() => {
+            track('Usage numérique', 'Randomize', 'randomize')
             setEquivalents(getRandomEquivalents(undefined, 3))
           }}
         />
@@ -147,7 +149,7 @@ const UsageNumeriqueSimulator = () => {
         l’usage de ces derniers.
       </div>
       <div className={shareableStyles.separatorBothBorders} />
-      <CategorySimulator equivalents={displayedEquivalents} withSimulator />
+      <CategorySimulator tracking='Usage numérique' equivalents={displayedEquivalents} withSimulator />
     </>
   )
 }

@@ -9,7 +9,7 @@ export const tools = [
   },
   {
     slug: 'transport',
-    title: 'Transports',
+    title: 'Transport',
     description: 'Calculer l’impact carbone des moyens de transport',
     linkLabel: 'Essayer',
   },

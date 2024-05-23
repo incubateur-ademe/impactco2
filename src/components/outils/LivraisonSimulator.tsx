@@ -197,6 +197,7 @@ const LivraisonSimulator = () => {
           comparisons={equivalents}
           ref={ref}
           randomize={() => {
+            track('Livraison', 'Randomize', 'randomize')
             setEquivalents(getRandomEquivalents(undefined, 3))
           }}
         />

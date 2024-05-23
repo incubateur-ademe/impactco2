@@ -30,7 +30,9 @@ const Equivalents = () => {
   }, [])
 
   useEffect(() => {
-    track('Fiches', 'Search', searchValue)
+    if (searchValue) {
+      track('Fiches', 'Search', searchValue)
+    }
   }, [searchValue])
 
   return (

@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import React, { useRef, useState } from 'react'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import SprinklesIcon from 'components/base/icons/sprinkles'
 import Etiquette from 'components/comparateur/Etiquette'
 import { getRandomEquivalents } from 'components/comparateur/random'
@@ -77,6 +78,7 @@ const OsezChangerSimulator = () => {
               comparisons={equivalents}
               ref={ref}
               randomize={() => {
+                track('OsezChanger', 'Randomize', 'randomize')
                 setEquivalents(getRandomEquivalents(undefined, 3))
               }}
             />

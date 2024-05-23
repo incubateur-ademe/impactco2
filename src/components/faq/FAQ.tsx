@@ -7,6 +7,7 @@ import { NotionRenderer } from 'react-notion-x'
 import { Collection } from 'react-notion-x/build/third-party/collection'
 import 'react-notion-x/src/styles.css'
 import { FAQ as FAQType } from 'types/faq'
+import { track } from 'utils/matomo'
 import Link from 'components/base/buttons/Link'
 import PlusIcon from 'components/base/icons/plus'
 import styles from './FAQ.module.css'
@@ -15,7 +16,14 @@ const FAQ = ({ faq }: { faq: FAQType }) => {
   const [display, setDisplay] = useState(false)
   return faq.content ? (
     <div className={styles.faq}>
-      <button className={styles.title} onClick={() => setDisplay(!display)}>
+      <button
+        className={styles.title}
+        onClick={() => {
+          if (!display) {
+            track('FAQ', faq.title, 'display_faq')
+          }
+          setDisplay(!display)
+        }}>
         {faq.title}
         <div
           className={classNames(styles.button, { [styles.openButton]: display })}
