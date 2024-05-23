@@ -5,7 +5,10 @@ import { overScreenEquivalentInfographyValues } from 'components/shareable/overS
 import InfographySimulator from './InfographySimulator'
 
 const Infography = ({ equivalent, equivalents }: { equivalent: ComputedEquivalent; equivalents: string[] }) => {
-  const overScreens = useMemo(() => overScreenEquivalentInfographyValues(equivalent), [equivalent])
+  const overScreens = useMemo(
+    () => overScreenEquivalentInfographyValues(equivalent, equivalents),
+    [equivalent, equivalents]
+  )
 
   return (
     <Shareable tracking={`${equivalent.name} infographie`} overScreens={overScreens} secondary=''>

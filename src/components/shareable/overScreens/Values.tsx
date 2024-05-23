@@ -37,15 +37,18 @@ export const overScreenEquivalentEtiquetteValues: (equivalent: ComputedEquivalen
 }
 
 export const overScreenEquivalentInfographyValues: (
-  equivalent: ComputedEquivalent
-) => Record<string, OverScreenInfo> = (equivalent) => ({
+  equivalent: ComputedEquivalent,
+  equivalents: string[]
+) => Record<string, OverScreenInfo> = (equivalent, equivalents) => ({
   partager: {
     title: 'share',
     children: <Share path={`${equivalent.link}#infographie`} tracking={equivalent.name} />,
   },
   integrer: {
     title: 'integrate',
-    children: <Integrate path={`${equivalent.link}/infographie`} tracking={equivalent.name} />,
+    children: (
+      <Integrate path='/infographie' extraParams={`equivalents=${equivalents.join(',')}`} tracking={equivalent.name} />
+    ),
   },
 })
 
