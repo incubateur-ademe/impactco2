@@ -110,7 +110,7 @@ const nextConfig = {
       },
       {
         source: '/convertisseur',
-        destination: '/comparateur',
+        destination: '/outils/comparateur',
         permanent: true,
       },
       {
@@ -124,6 +124,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/iframes/transport/teletravail',
+        destination: '/iframes/teletravail',
+        permanent: true,
+      },
+      {
         source: '/iframes/convertisseur',
         destination: '/iframes/comparateur',
         permanent: true,
@@ -133,6 +138,20 @@ const nextConfig = {
         destination: '/iframe.js',
         permanent: true,
       },
+      { source: '/comparateur', destination: '/outils/comparateur', permanent: true },
+      { source: '/caspratiques/:slug*', destination: '/outils/caspratiques/:slug*', permanent: true },
+      { source: '/usagenumerique/:slug*', destination: '/outils/usagenumerique/:slug*', permanent: true },
+      { source: '/livraison/:slug*', destination: '/outils/livraison/:slug*', permanent: true },
+      { source: '/chauffage/:slug*', destination: '/outils/chauffage/:slug*', permanent: true },
+      { source: '/transport/teletravail', destination: '/outils/teletravail', permanent: true },
+      { source: '/transport/:slug*', destination: '/outils/transport/:slug*', permanent: true },
+      { source: '/fruitsetlegumes/:slug*', destination: '/outils/fruitsetlegumes/:slug*', permanent: true },
+      { source: '/numerique/:slug*', destination: '/outils/numerique/:slug*', permanent: true },
+      { source: '/repas/:slug*', destination: '/outils/repas/:slug*', permanent: true },
+      { source: '/habillement/:slug*', destination: '/outils/habillement/:slug*', permanent: true },
+      { source: '/mobilier/:slug*', destination: '/outils/mobilier/:slug*', permanent: true },
+      { source: '/electromenager/:slug*', destination: '/outils/electromenager/:slug*', permanent: true },
+      { source: '/boisson/:slug*', destination: '/outils/boisson/:slug*', permanent: true },
     ]
   },
 }
