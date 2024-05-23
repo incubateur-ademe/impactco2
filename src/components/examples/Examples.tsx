@@ -12,22 +12,25 @@ const Examples = ({
   examples,
   extraText,
   forceDisplay,
+  withTags,
   ...blockProps
 }: {
   examples: ExamplteType[]
   extraText?: string
   forceDisplay?: boolean
+  withTags?: boolean
 } & BlockProps) => {
   const length = examples.length
   const [displayAll, setDisplayAll] = useState(false)
+
   return !forceDisplay && length === 0 ? null : (
     <Block {...blockProps}>
       <div className={styles.examples}>
-        {(displayAll ? examples : examples.slice(0, 6)).map((example) => (
-          <Example key={example.name} example={example} />
+        {(displayAll ? examples : examples.slice(0, 9)).map((example) => (
+          <Example key={example.name} example={example} withTags={withTags} />
         ))}
       </div>
-      {length > 6 && (
+      {length > 9 && (
         <div className={styles.displayAll}>
           <button className={styles.button} onClick={() => setDisplayAll(!displayAll)}>
             Voir {displayAll ? 'moins' : 'plus'} {extraText || "d'exemples"}{' '}

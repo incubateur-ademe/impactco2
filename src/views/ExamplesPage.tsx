@@ -3,7 +3,7 @@ import { Example } from 'types/example'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import AllExamples from 'components/examples/AllExamples'
 
-const ExamplesPage = ({ examples }: { examples: Example[] }) => {
+const ExamplesPage = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
   return (
     <>
       <Breadcrumbs
@@ -13,7 +13,7 @@ const ExamplesPage = ({ examples }: { examples: Example[] }) => {
         ]}
         current="Exemples d'utilisation"
       />
-      <AllExamples examples={examples} />
+      <AllExamples examples={examples} communications={communications} />
     </>
   )
 }

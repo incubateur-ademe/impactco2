@@ -8,7 +8,7 @@ import Block from 'components/layout/Block'
 import styles from './AllExamples.module.css'
 import Examples from './Examples'
 
-const AllExamples = ({ examples }: { examples: Example[] }) => {
+const AllExamples = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
   const [activity, setActivity] = useState('all')
   const [tool, setTool] = useState('all')
 
@@ -62,6 +62,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
       </Block>
       {(activity === 'all' || activity === 'Média') && (
         <Examples
+          withTags
           title='Médias'
           description='Ces médias utilisent nos outils avec brio'
           examples={filteredExamples.filter((example) => example.activity === 'Média')}
@@ -70,6 +71,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
       )}
       {(activity === 'all' || activity === 'Entreprise') && (
         <Examples
+          withTags
           title='Entreprises'
           description='Ces entreprises ont intégré nos outils à la perfection'
           examples={filteredExamples.filter((example) => example.activity === 'Entreprise')}
@@ -78,6 +80,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
       )}
       {(activity === 'all' || activity === 'Loisirs/Culture') && (
         <Examples
+          withTags
           title='Culture et Loisirs'
           description='Ils utilisent nos outils de manière remarquable'
           examples={filteredExamples.filter((example) => example.activity === 'Loisirs/Culture')}
@@ -86,6 +89,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
       )}
       {(activity === 'all' || activity === 'Association') && (
         <Examples
+          withTags
           title='Associations'
           description='Les associations qui utilisent nos outils de façon exemplaire'
           examples={filteredExamples.filter((example) => example.activity === 'Association')}
@@ -94,6 +98,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
       )}
       {(activity === 'all' || activity === 'Collectivité') && (
         <Examples
+          withTags
           title='Collectivités'
           description='Ces collectivités ont fait le choix d’Impact CO₂'
           examples={filteredExamples.filter((example) => example.activity === 'Collectivité')}
@@ -102,6 +107,7 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
       )}
       {(activity === 'all' || activity === 'Éducation') && (
         <Examples
+          withTags
           title='Éducation'
           description='Les exemples d’utilisation de nos outils dans le secteur de l’éducation'
           examples={filteredExamples.filter((example) => example.activity === 'Éducation')}
@@ -110,10 +116,18 @@ const AllExamples = ({ examples }: { examples: Example[] }) => {
       )}
       {(activity === 'all' || activity === 'Institution') && (
         <Examples
+          withTags
           title='Institutions'
           description='Les mises en avant de nos outils par les institutions'
           examples={filteredExamples.filter((example) => example.activity === 'Institution')}
           forceDisplay={activity === 'Institution'}
+        />
+      )}
+      {activity === 'all' && tool === 'all' && (
+        <Examples
+          title='Ils parlent de nous'
+          description="Les apparitions d'Impact CO₂ dans la presse"
+          examples={communications}
         />
       )}
     </>
