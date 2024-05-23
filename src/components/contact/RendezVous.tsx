@@ -1,12 +1,14 @@
 'use client'
 
 import { AxiosResponse } from 'axios'
+import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import React, { FormEvent, useMemo, useState } from 'react'
 import { ZodError } from 'zod'
 import axiosClient from 'utils/axios'
 import { NotionCommand, NotionCommandValidation } from 'utils/notion'
 import Button from 'components/base/buttons/Button'
+import CheckboxInput from 'components/form/CheckboxInput'
 import FormResult from 'components/form/FormResult'
 import Input from 'components/form/Input'
 import Radio from 'components/form/Radio'
@@ -20,6 +22,7 @@ const RendezVous = () => {
   const [errors, setErrors] = useState<ZodError | null>()
 
   const [email, setEmail] = useState('')
+  const [accepted, setAccepted] = useState(false)
   const [needs, setNeeds] = useState('')
   const [structure, setStructure] = useState('')
   const [other, setOther] = useState('')
@@ -36,6 +39,7 @@ const RendezVous = () => {
       needs,
       other,
       from: params?.get('fromLabel') || '',
+      accepted,
     }
     if (errors) {
       const body = NotionCommandValidation.safeParse(data)
@@ -181,6 +185,24 @@ const RendezVous = () => {
               onChange={(e) => setEmail(e.target.value)}
               errors={errors}
             />
+            <CheckboxInput
+              id='accepted'
+              errors={errors}
+              className={styles.checkbox}
+              checked={accepted}
+              required
+              setChecked={(checked) => setAccepted(checked)}
+              label={
+                <>
+                  J'ai lu et j'accepte que l'ADEME collecte mes données afin de garantir la bonne utilisation des
+                  services offerts et reconnais avoir pris connaissance de{' '}
+                  <Link href='/politique-de-confidentialite' target='_blank' rel='noopener noreferrer'>
+                    sa politique de protection des données personnelles
+                  </Link>
+                </>
+              }
+            />
+
             <Button size='lg' disabled={sending} type='submit' data-testid='rendez-vous-button'>
               Envoyer ma demande
             </Button>

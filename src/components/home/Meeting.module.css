@@ -46,6 +46,18 @@
     line-height: 1.25rem;
   }
 
+  a {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    line-height: 1.25rem !important;
+
+    color: var(--primary-60) !important;
+
+    &:hover {
+      color: var(--primary-70) !important;
+    }
+  }
+
   input {
     flex-grow: 1;
   }

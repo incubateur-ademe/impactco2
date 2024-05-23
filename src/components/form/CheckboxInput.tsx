@@ -30,8 +30,8 @@ const CheckboxInput = ({
   const error = useError(id, errors)
 
   return (
-    <>
-      <div className={classNames(styles.container, className)} data-testid={dataTestId}>
+    <div className={className}>
+      <div className={styles.container} data-testid={dataTestId}>
         <label className={classNames(styles.legend, { [styles.checked]: checked })}>
           <input
             id={id}
@@ -56,7 +56,7 @@ const CheckboxInput = ({
           {error}
         </div>
       )}
-    </>
+    </div>
   )
 }
 
