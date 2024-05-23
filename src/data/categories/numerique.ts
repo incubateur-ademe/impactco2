@@ -54,11 +54,6 @@ export const numeriques = [
       defaultyears: 2.5,
     },
     end: 0.2,
-    meta: {
-      title: 'Smartphone',
-      description:
-        "Découvrez le détail de l'empreinte carbone d'un smartphone : impact de ses matières premières, de son assemblage, son approvisionnement...",
-    },
     include: {
       pre: 'Écran  moyen de 6,63 pouces, mix des technologies LCD et OLED, 8 Go de RAM, 210 Go de mémoire (mix pondéré entre 3 configurations, 24%, 24%, 52%).',
     },
@@ -85,11 +80,6 @@ export const numeriques = [
       defaultyears: 6,
     },
     end: 6.6,
-    meta: {
-      title: 'Poids CO₂e ordinateur fixe (particulier)',
-      description:
-        "Mesurez l'impact sur le climat d'un ordinateur fixe particulier et découvrez le détail de son empreinte carbone",
-    },
     include: {
       pre: '1 CPU, 10 Go de RAM, 1173 Go de HDD, 442 Go de SSD, mix de carte graphique intégrée ou séparée (mix pondéré entre 5 configurations d’ordinateurs fixes sans écran, à usage particulier.).',
     },
@@ -116,11 +106,6 @@ export const numeriques = [
       defaultyears: 6,
     },
     end: 6.6,
-    meta: {
-      title: 'Poids CO₂e ordinateur fixe (professionnel)',
-      description:
-        "Mesurez l'impact sur le climat d'un ordinateur fixe professionnel et découvrez le détail de son empreinte carbone",
-    },
     include: {
       pre: '1 CPU, 8 Go de RAM, 1000 Go de HDD, 250 Go de SSD, carte graphique séparée (une configuration simple).',
     },
@@ -137,11 +122,6 @@ export const numeriques = [
       defaultyears: 6,
     },
     end: 3.9,
-    meta: {
-      title: "Poids CO₂e d'un écran",
-      description:
-        'Découvrez la valeurs exprimée en kg CO₂e émis par un écran comprenant la fabrication et la distribution',
-    },
     include: {
       pre: 'Dimension moyenne (24 pouces) et mix de technologies (98,6% LCD, 1,4% OLED) (mix pondéré entre 2 configurations d’écrans d’ordinateur.).',
     },
@@ -167,11 +147,6 @@ export const numeriques = [
       defaultyears: 3,
     },
     end: 0.4,
-    meta: {
-      title: 'Empreinte carbone tablette',
-      description:
-        "Le numérique a un impact important sur le climat ! Découvrez le poids CO₂e d'une tablette ainsi que le détail de son empreinte sur le climat",
-    },
     include: {
       pre: "Écran de 10,53 pouces, mix de technologies d'écran LCD, 4,7 Go de RAM, 144 Go de mémoire (mix pondéré entre 3 configurations de tablettes.).",
     },
@@ -208,11 +183,6 @@ export const numeriques = [
       defaultyears: 8,
     },
     end: 11.8,
-    meta: {
-      title: 'Télévision',
-      description:
-        "Quel est l'empreinte carbone d'une télévision 40-49 pouces ? Découvrez son poids carbone et son équivalence avec des ordinateurs et smartphones",
-    },
     include: {
       pre: 'Dimension et technologie moyennes (82% LCD (45 pouces), 1% OLED (53 pouces), 17% OLED (68 pouces)) (mix pondéré entre 3 configurations de téléviseurs.).',
     },
@@ -239,11 +209,6 @@ export const numeriques = [
       defaultyears: 5,
     },
     end: 2.8,
-    meta: {
-      title: 'Ordinateur portable',
-      description:
-        "Quel est l'empreinte carbone d'un ordinateur portable ? Découvrez son poids en CO₂e et mesurez ainsi votre impact sur le climat",
-    },
     include: {
       pre: 'Écran moyen de 14,6 pouces, 1 CPU, 11 Go de RAM, 497 Go de SSD (mix pondéré entre 3 configurations d’ordinateurs portables à usage particulier).',
     },
@@ -270,11 +235,6 @@ export const numeriques = [
       defaultyears: 5,
     },
     end: 0.7,
-    meta: {
-      title: "Impact climat d'une enceinte connectée",
-      description:
-        "Découvrez l'impact d'une enceinte connectée avec Impact CO₂ ainsi que le détail de son empreinte carbone",
-    },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
@@ -293,11 +253,6 @@ export const numeriques = [
       defaultyears: 2.5,
     },
     end: 0.1,
-    meta: {
-      title: "Impact climat d'un téléphone basique",
-      description:
-        "Découvrez l'impact d'un téléphone basique avec Impact CO₂ ainsi que le détail de son empreinte carbone",
-    },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
@@ -320,11 +275,6 @@ export const numeriques = [
       defaultyears: 5,
     },
     end: 1.3,
-    meta: {
-      title: "Impact climat d'un casque de réalité virtuelle",
-      description:
-        "Découvrez l'impact d'un casque de réalité virtuelle avec Impact CO₂ ainsi que le détail de son empreinte carbone",
-    },
     include: {
       pre: 'Moyenne de deux technologies (50% LCD, 50% OLED) + prise en compte de deux manettes.',
     },
@@ -347,11 +297,6 @@ export const numeriques = [
       },
     ],
     end: 0.5,
-    meta: {
-      title: "Impact climat d'une alimentation externe (pour ordinateur portable)",
-      description:
-        "Découvrez l'impact d'une alimentation externe (pour ordinateur portable) avec Impact CO₂ ainsi que le détail de son empreinte carbone",
-    },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
@@ -371,11 +316,6 @@ export const numeriques = [
       },
     ],
     end: 0.1,
-    meta: {
-      title: "Impact climat d'une alimentation externe (pour smartphone ou tablette)",
-      description:
-        "Découvrez l'impact d'une alimentation externe (pour smartphone ou tablette) avec Impact CO₂ ainsi que le détail de son empreinte carbone",
-    },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
@@ -394,11 +334,6 @@ export const numeriques = [
       },
     ],
     end: 0.3,
-    meta: {
-      title: "Impact climat d'un disque dur externe",
-      description:
-        "Découvrez l'impact d'un disque dur externe avec Impact CO₂ ainsi que le détail de son empreinte carbone",
-    },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
@@ -416,10 +351,6 @@ export const numeriques = [
         value: 2.9,
       },
     ],
-    meta: {
-      title: "Impact climat d'une clef USB",
-      description: "Découvrez l'impact d'une clef USB avec Impact CO₂ ainsi que le détail de son empreinte carbone",
-    },
     include: {
       pre: 'Capacité moyenne (16 Go)',
     },
@@ -445,10 +376,6 @@ export const numeriques = [
       defaultyears: 5,
     },
     end: 1.6,
-    meta: {
-      title: "Impact climat d'une box",
-      description: "Découvrez l'impact d'une box avec Impact CO₂ ainsi que le détail de son empreinte carbone",
-    },
     include: {
       pre: 'Utilisation personnelle et professionnelle ; xDSL, FTTx',
     },

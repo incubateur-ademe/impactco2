@@ -6,11 +6,6 @@ export const repas = [
     slug: 'repasavecduboeuf',
     category: 2,
     total: 7.26,
-    meta: {
-      title: 'Repas boeuf',
-      description:
-        'Un repas avec du boeuf a un impact important sur le climat. Mesurez votre impact en découvrant la valeur en CO₂e de votre repas',
-    },
     source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas',
   },
   {
@@ -20,11 +15,6 @@ export const repas = [
     slug: 'repasvegetarien',
     category: 2,
     total: 0.51,
-    meta: {
-      title: 'Repas végétarien',
-      description:
-        "Un repas avec du boeuf, un repas avec du poulet, ou un repas végétarien aura un impact différent sur le climat. Quel est l'impact d'un repas végétarien ?",
-    },
     source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas',
   },
   {
@@ -33,11 +23,6 @@ export const repas = [
     slug: 'repasvegetalien',
     category: 2,
     total: 0.39,
-    meta: {
-      title: 'Repas végétalien',
-      description:
-        "Découvrez l'impact climat d'un repas végétalien et comparez-le à l'impact climat d'un repas avec du boeuf ou avec du poulet",
-    },
     source: 'https://nosgestesclimat.fr/documentation/alimentation/plats/v%C3%A9g%C3%A9talien/empreinte',
   },
   {
@@ -46,11 +31,6 @@ export const repas = [
     slug: 'repasavecdupoissonblanc',
     category: 2,
     total: 1.98,
-    meta: {
-      title: 'Repas poisson blanc',
-      description:
-        "Découvrez la différence de l'impact climat entre un repas avec du poisson blanc et un repas avec de la viande. Mesurez votre empreinte carbone",
-    },
     source: 'https://nosgestesclimat.fr/documentation/alimentation/plats/poisson-2/empreinte',
   },
   {
@@ -59,11 +39,6 @@ export const repas = [
     slug: 'repasavecdupoissongras',
     category: 2,
     total: 1.11,
-    meta: {
-      title: 'Repas poisson gras',
-      description:
-        "Voici l'impact émis par repas avec du poisson gras comprenant la fabrication, la distribution et la consommation",
-    },
     source: 'https://nosgestesclimat.fr/documentation/alimentation/plats/poisson-1/empreinte',
   },
   {
@@ -73,11 +48,6 @@ export const repas = [
     slug: 'repasavecdupoulet',
     category: 2,
     total: 1.58,
-    meta: {
-      title: 'Repas poulet',
-      description:
-        'Quelle est la différence sur le climat entre un repas avec du poulet, un repas avec du boeuf, ou un repas végétarien ? Mesurez votre impact sur le climat',
-    },
     source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas',
   },
 ]

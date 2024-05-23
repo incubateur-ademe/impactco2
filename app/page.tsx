@@ -1,9 +1,14 @@
+import { Metadata } from 'next'
 import React from 'react'
 import { getExamples } from 'utils/examples'
 import { getFAQs } from 'utils/faq'
 import { getNotionRevalidate } from 'components/Notion/utils'
 import Home from 'components/home/Home'
 import Suggestion from 'components/layout/Suggestion'
+
+export const metadata: Metadata = {
+  title: 'Accueil | Impact CO₂',
+}
 
 export const revalidate = getNotionRevalidate()
 

@@ -12,6 +12,17 @@ import { devTools, smallTools } from 'components/cards/tools'
 import Suggestion from 'components/layout/Suggestion'
 
 const tools = [...devTools, ...smallTools]
+
+const getCategory = (slug: string) =>
+  slug === 'teletravail'
+    ? {
+        ...(categories.find((category) => category.slug === 'transport') as CategoryType),
+        name: 'Télétravail',
+        slug: 'teletravail',
+        description: 'Mesurer les économies de carbone réalisées grâce au télétravail',
+      }
+    : categories.find((category) => category.slug === slug)
+
 export async function generateStaticParams() {
   return [
     ...tools.map((tool) => ({
@@ -31,7 +42,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
       description: tool.description,
     }
   }
-  const category = categories.find((category) => category.slug === params.tool)
+
+  const category = getCategory(params.tool)
   if (category) {
     return {
       title: `${category.name} | Impact CO₂`,
@@ -60,15 +72,7 @@ const OutilPage = async ({ params }: Props) => {
       </>
     )
   }
-  const category =
-    params.tool === 'teletravail'
-      ? {
-          ...(categories.find((category) => category.slug === 'transport') as CategoryType),
-          name: 'Télétravail',
-          slug: 'teletravail',
-          description: 'Mesurer les économies de carbone réalisées grâce au télétravail',
-        }
-      : categories.find((category) => category.slug === params.tool)
+  const category = getCategory(params.tool)
   if (category) {
     return (
       <>

@@ -10,9 +10,9 @@ import Matomo from 'components/matomo/Matomo'
 import Transtack from 'components/transtack/Transtack'
 
 export const metadata: Metadata = {
-  title: 'Accueil | Impact CO₂',
+  title: 'Impact CO₂',
   description:
-    "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien,  issue des données environnementales de l'ADEME.",
+    "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien, issue des données environnementales de l'ADEME.",
   openGraph: {
     creators: 'ADEME',
     images: `${process.env.NEXT_PUBLIC_URL}/meta/image.png`,

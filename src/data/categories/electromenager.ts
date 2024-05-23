@@ -27,11 +27,6 @@ export const electromenager = [
       defaultyears: 6,
     },
     end: -0.659363081745786,
-    meta: {
-      title: 'Bouilloire',
-      description:
-        "Avec Impact CO₂, découvrez l'impact sur le climat d'une bouilloire, avec son poids en CO₂e comprenant sa fabrication et sa distribution.",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 9.91,
@@ -66,11 +61,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 52.7491626905852,
-    meta: {
-      title: 'Cafetière à dosettes',
-      description:
-        "Saviez-vous que votre cafetière à dosettes a un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de votre appareil",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 22.5,
@@ -104,11 +94,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 29.8824988339172,
-    meta: {
-      title: 'Cafetière à filtres',
-      description:
-        "Saviez-vous que votre cafetière à filtres a un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de votre appareil",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 31.9,
@@ -143,11 +128,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 23.9101982705374,
-    meta: {
-      title: 'Cafetière expresso',
-      description:
-        "Comparer la valeur d'émission en CO₂e de votre cafetière par rapport à d'autres actions du quotidien.",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 47.6,
@@ -181,11 +161,6 @@ export const electromenager = [
       defaultyears: 12,
     },
     end: -30.0927,
-    meta: {
-      title: 'Four électrique',
-      description:
-        "Découvrez l'impact écologique, exprimé en kgCO₂e, de votre four électrique, de la fabrication à l'utlisation",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 217,
@@ -218,11 +193,6 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -22.6301522707884,
-    meta: {
-      title: 'Lave-vaisselle',
-      description:
-        "Quelle est l'empreinte carbone pour la fabrication d'un lave-vaisselle ? Maintenant grâce à Impact CO₂, vous allez pouvoir le savoir !",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 271,
@@ -256,11 +226,6 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -47.7754436590173,
-    meta: {
-      title: "L'impact sur le climat d'un lave linge",
-      description:
-        "Grâce à Impact CO₂, découvrez l'impact écologique d'un lave linge comprenant sa fabrication et son usage",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 342,
@@ -293,11 +258,6 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -20.163316975983,
-    meta: {
-      title: 'Réfrigérateur',
-      description:
-        "La fabrication et la distribution d'une réfrigérateur a un impact sur le climat. Découvrez son poids en CO₂e et son équivalence avec d'autres produits.",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 257,
@@ -307,11 +267,6 @@ export const electromenager = [
     id: 26990,
     slug: 'aspirateur',
     category: 6,
-    meta: {
-      title: 'Aspirateur',
-      description:
-        'Découvrez la valeurs exprimée en kg CO₂e émis par un aspirateur comprenant la fabrication et la distribution.',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
@@ -363,11 +318,6 @@ export const electromenager = [
       defaultyears: 6,
     },
     end: 65.4233854443126,
-    meta: {
-      title: 'Climatiseur',
-      description:
-        'Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre climatiseur ? Impact CO₂ vous dit tout !',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 239,

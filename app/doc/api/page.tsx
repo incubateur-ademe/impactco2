@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import React from 'react'
 import APIDocPage from 'src/views/APIDocPage'
 import 'swagger-ui-react/swagger-ui.css'
@@ -5,6 +6,10 @@ import Suggestion from 'components/layout/Suggestion'
 import { doc } from 'components/swagger/utils'
 
 const pathPriority = ['/thematiques']
+
+export const metadata: Metadata = {
+  title: 'API | Impact CO₂',
+}
 
 function ApiDoc() {
   const paths: Record<string, object> = {}

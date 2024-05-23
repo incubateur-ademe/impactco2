@@ -3,11 +3,6 @@ type BaseEquivalent = {
   name: string
   slug: string
   category: number
-  meta?: {
-    title: string
-    description: string
-  }
-
   default?: boolean
   include?: { pre: string; post?: string; postNewLine?: string }
   source?: string
@@ -15,7 +10,6 @@ type BaseEquivalent = {
   suffix?: string
   subtitle?: string
   synonyms?: string[]
-  hypothesis?: string
   percentage?: boolean
   unit?: string
   data?: {

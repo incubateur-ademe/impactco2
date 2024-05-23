@@ -8,11 +8,6 @@ export const boissons = [
     category: 3,
     total: 0.000132,
     source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
-    meta: {
-      title: 'Eau du robinet',
-      description:
-        "Connaître l'impact environnemental d'un litre d'eau du robinet, comprenant la fabrication, la distribution et la consommation",
-    },
   },
   {
     id: 31000,
@@ -44,11 +39,6 @@ export const boissons = [
       },
     ],
     source: 'https://agribalyse.ademe.fr/app/aliments/18430#Eau_embouteill%C3%A9e_de_source',
-    meta: {
-      title: 'Eau en bouteille',
-      description:
-        "Connaître l'impact environnemental d'un litre d'eau en bouteille, comprenant la fabrication, la distribution et la consommation",
-    },
   },
   {
     id: 31001,
@@ -84,11 +74,6 @@ export const boissons = [
       },
     ],
     source: 'https://agribalyse.ademe.fr/app/aliments/18026#Boisson_gazeuse,_sans_jus_de_fruit,_sucr%C3%A9e',
-    meta: {
-      title: 'Soda',
-      description:
-        "Connaître l'impact écologique, calculé en kgCO₂e, d'un litre de soda, de la fabrication à la consommation",
-    },
   },
   {
     id: 31002,
@@ -124,11 +109,6 @@ export const boissons = [
       },
     ],
     source: 'https://agribalyse.ademe.fr/app/aliments/5001#Bi%C3%A8re_%22coeur_de_march%C3%A9%22_(4-5%C2%B0_alcool)',
-    meta: {
-      title: 'Bière',
-      description:
-        "Voici le poids en kgCO₂e d'un litre de bière et comparez le à l'impact sur le climat  d'un litre d'eau en bouteille ou d'un déplacement en voiture",
-    },
   },
   {
     id: 31003,
@@ -164,11 +144,6 @@ export const boissons = [
       },
     ],
     source: 'https://agribalyse.ademe.fr/app/aliments/5214#Vin_rouge',
-    meta: {
-      title: 'Vin',
-      description:
-        "Découvrez l'impact sur le climat d'un litre de vin, comprenant la fabrication, la distribution et la consommation",
-    },
   },
   {
     id: 31004,
@@ -201,11 +176,6 @@ export const boissons = [
       },
     ],
     source: 'https://agribalyse.ademe.fr/app/aliments/19051#Lait_%C3%A9cr%C3%A9m%C3%A9,_pasteuris%C3%A9',
-    meta: {
-      title: 'Lait',
-      description:
-        "Découvrez le poids en kgCO₂e ou CO₂e d'un litre de lait de vache par rapport au lait de soja et ainsi son impact écologique",
-    },
   },
   {
     name: 'Lait',
@@ -238,16 +208,11 @@ export const boissons = [
     ],
     total: 0.42,
     source: 'https://agribalyse.ademe.fr/app/aliments/18900#Boisson_au_soja,_nature',
-    meta: {
-      title: 'Lait',
-      description:
-        "Découvrez le poids en kgCO₂e ou CO₂e d'un litre de lait de vache par rapport au lait de soja et ainsi son impact écologique",
-    },
   },
   {
     name: 'Thé',
     prefix: 'Litre[s] de ',
-    slug: 'thé',
+    slug: 'the',
     category: 3,
     ecv: [
       {
@@ -271,12 +236,10 @@ export const boissons = [
         value: 0.0131566263810536,
       },
     ],
-    meta: {
-      title: '',
-      description: '',
-    },
     source: 'https://agribalyse.ademe.fr/app/aliments/18020#Th%C3%A9_infus%C3%A9,_non_sucr%C3%A9',
-    hypothesis: 'Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg).',
+    include: {
+      pre: 'Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg).',
+    },
   },
   {
     name: 'Café',
@@ -309,12 +272,10 @@ export const boissons = [
         value: 0.023365480858616866,
       },
     ],
-    meta: {
-      title: 'Café',
-      description: '',
-    },
     source:
       'https://agribalyse.ademe.fr/app/aliments/18004#Caf%C3%A9,_non_instantan%C3%A9,_non_sucr%C3%A9,_pr%C3%AAt_%C3%A0_boire',
-    hypothesis: 'Nous prenons pour hypothèse une tasse de 250ml (simplifié ici en 250mg).',
+    include: {
+      pre: 'Nous prenons pour hypothèse une tasse de 250ml (simplifié ici en 250mg).',
+    },
   },
 ]

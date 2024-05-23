@@ -28,10 +28,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.63563578618721,
-    meta: {
-      title: 'Jeans',
-      description: 'Découvrez la quantité de CO₂e émis pour fabriquer et distribuer votre jean grâce à Impact CO₂.',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 23.2,
@@ -66,11 +62,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.544462785648209,
-    meta: {
-      title: 'Polo',
-      description:
-        'En achetant un polo, vous avez un impact sur le climat ! Découvrez son poids CO₂e comprenant sa fabrication et distribution',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 8.2,
@@ -105,11 +96,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.250404099863735,
-    meta: {
-      title: 'T-shirt',
-      description:
-        "Quelle est l'empreinte carbone pour la fabrication d'un T-shirt en coton ? Maintenant grâce à Impact CO₂, vous allez pouvoir le savoir !",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 5.2,
@@ -145,11 +131,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.172305318123854,
-    meta: {
-      title: 'T-shirts',
-      description:
-        "Découvrez votre impact sur le climat lorsque vous achetez un t-shirt, et comparez le à l'achat d'autres vêtements et produits",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 5.5,
@@ -184,11 +165,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.51606227347502,
-    meta: {
-      title: 'Sweat',
-      description:
-        'En achetant un sweat en coton, vous avez un impact sur le climat ! Découvrez son poids CO₂e comprenant sa fabrication et distribution',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 27.4,
@@ -223,10 +199,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.462075432138259,
-    meta: {
-      title: 'Chemises en coton',
-      description: "Impact CO₂ mesure l'empreinte carbone de votre chemise en coton et de tous types de vêtements !",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 11.2,
@@ -262,11 +234,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.464139172777627,
-    meta: {
-      title: 'Chemises en viscose',
-      description:
-        'Connaissez-vous la consommation en CO₂e de la fabrication et de la distribution de votre chemise ? Impact CO₂ vous dit tout !',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 10.2,
@@ -301,11 +268,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.55449454602226,
-    meta: {
-      title: 'Paire de chaussures',
-      description:
-        "Saviez-vous que vos chaussures en cuir ont un impact écologique ? Impact CO₂ vous indique l'empreinte carbone de celles-ci",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 13.4,
@@ -341,11 +303,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.2198842675649,
-    meta: {
-      title: 'Chaussures',
-      description:
-        "La fabrication et la distribution d'une paire de chaussures en tissu a un impact sur le climat. Découvrez son poids en kgCO₂e !",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 17.3,
@@ -380,11 +337,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.4255512835071,
-    meta: {
-      title: 'Chaussures de sport',
-      description:
-        "Comparer la valeur d'émission en CO₂e de votre paire de chaussures de sport par rapport à d'autres actions du quotidien",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 18.7,
@@ -419,11 +371,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.29416237785554,
-    meta: {
-      title: 'Robe en coton',
-      description:
-        "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en coton grâce à Impact CO₂.",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 49.8,
@@ -458,11 +405,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.53486702873937,
-    meta: {
-      title: 'Robe en polyester',
-      description:
-        "Découvrez le détail de l'empreinte carbone de la fabrication et de la distribution d'une robe en polyester grâce à Impact CO₂.",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 51.9,
@@ -497,11 +439,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 2.39476716560145,
-    meta: {
-      title: 'Robe en viscose',
-      description:
-        'En achetant une robe en viscose, vous avez un impact sur le climat ! Découvrez son poids CO₂e comprenant sa fabrication et distribution',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 44.9,
@@ -536,10 +473,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.27881830769189,
-    meta: {
-      title: 'Pull en laine',
-      description: '',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 52.9,
@@ -575,11 +508,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.01073009563544,
-    meta: {
-      title: 'Pull en acrylique',
-      description:
-        "Découvrez votre impact sur le climat lorsque vous achetez un pull en acrylique, et comparez le à l'achat d'autres vêtements et produits",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 25.5,
@@ -614,11 +542,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.51606227347502,
-    meta: {
-      title: 'Pull en coton',
-      description:
-        "La fabrication et la distribution d'un pull en coton recyclé a un impact sur le climat. Découvrez son poids en kgCO₂e !",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 8.1,
@@ -652,11 +575,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 2.39840212966855,
-    meta: {
-      title: 'Manteau',
-      description:
-        "Découvrez la valeur d'émissions de CO₂e de la fabrication et de la distribution d'un manteau et comparez le à l'achat d'autres vêtements",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 85.8,
@@ -691,11 +609,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.646349561372889,
-    meta: {
-      title: 'Veste imperméable',
-      description:
-        "Découvrez votre impact sur le climat lorsque vous achetez une veste imperméable, et comparez le à l'achat d'autres vêtements et produits",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 38.7,
@@ -729,11 +642,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.881444738170221,
-    meta: {
-      title: 'Veste simili-cuir',
-      description:
-        'En achetant une veste simili-cuir, vous avez un impact sur le climat ! Découvrez son poids CO₂e comprenant sa fabrication et distribution',
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 24,

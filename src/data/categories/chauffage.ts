@@ -7,10 +7,6 @@ export const chauffage = [
     slug: 'chauffagegaz',
     category: 8,
     total: 39,
-    meta: {
-      title: 'Chauffage au gaz',
-      description: 'Découvrez à quoi correspond une année de chauffage au gaz par m² en kgCO₂e émis (CO₂e)',
-    },
     data: {
       values: [
         {
@@ -42,10 +38,6 @@ export const chauffage = [
     slug: 'chauffagefioul',
     category: 8,
     total: 57.17,
-    meta: {
-      title: 'Chauffage au fioul',
-      description: "Connaître l'empreinte carbone de la consommation d'une année de chauffage au fioul par m²",
-    },
     data: {
       values: [
         {
@@ -75,10 +67,6 @@ export const chauffage = [
     slug: 'chauffageelectrique',
     category: 8,
     total: 11.85,
-    meta: {
-      title: 'Chauffage électrique',
-      description: 'Découvrez à quoi correspond une année de chauffage électrique par m² en kgCO₂e émis (CO₂e)',
-    },
     data: {
       values: [
         {
@@ -110,11 +98,6 @@ export const chauffage = [
     slug: 'pompeachaleur',
     category: 8,
     total: 3.95,
-    meta: {
-      title: 'Pompe à chaleur',
-      description:
-        'Découvrez à quoi correspond une année de chauffage avec une pompe à chaleur par m² en kgCO₂e émis (CO₂e)',
-    },
     data: {
       values: [
         {
@@ -146,11 +129,6 @@ export const chauffage = [
     slug: 'poeleagranule',
     category: 8,
     total: 5.64,
-    meta: {
-      title: 'Poêle à granulés',
-      description:
-        'Découvrez à quoi correspond une année de chauffage avec un poêle à granulés par m² en kgCO₂e émis (CO₂e)',
-    },
     data: {
       values: [
         {
@@ -182,11 +160,6 @@ export const chauffage = [
     slug: 'poeleabois',
     category: 8,
     total: 9.2,
-    meta: {
-      title: 'Poêle à bois',
-      description:
-        'Découvrez à quoi correspond une année de chauffage avec un poêle à bois par m² en kgCO₂e émis (CO₂e)',
-    },
     data: {
       values: [
         {
@@ -218,11 +191,6 @@ export const chauffage = [
     slug: 'reseaudechaleur',
     category: 8,
     total: 18.67,
-    meta: {
-      title: 'Réseau de chaleur',
-      description:
-        'Découvrez à quoi correspond une année de chauffage via un réseau de chaleur par m² en kgCO₂e émis (CO₂e)',
-    },
     data: {
       values: [
         {

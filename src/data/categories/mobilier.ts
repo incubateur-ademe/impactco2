@@ -5,11 +5,6 @@ export const mobiliers = [
     subtitle: 'Convertible[s]',
     slug: 'canapeconvertible',
     category: 7,
-    meta: {
-      title: 'Canapé convertible',
-      description:
-        "La fabrication et la distribution d'un canapé convertible a un impact carbone à ne pas négliger. Découvrez son poids CO₂e grâce à Impact CO₂",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
@@ -38,11 +33,6 @@ export const mobiliers = [
     subtitle: 'En bois',
     slug: 'chaiseenbois',
     category: 7,
-    meta: {
-      title: 'Chaise en bois',
-      description:
-        "Grâce à Impact CO₂, découvrez le poids en CO₂e d'une chaise en bois comprenant sa fabrication et sa distribution",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
@@ -71,11 +61,6 @@ export const mobiliers = [
     subtitle: 'En bois',
     slug: 'tableenbois',
     category: 7,
-    meta: {
-      title: 'Table en bois',
-      description:
-        "La fabrication et la distribution d'une table en bois a un impact sur le climat. Découvrez son poids en CO₂e et son équivalence avec d'autres produits",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
@@ -104,11 +89,6 @@ export const mobiliers = [
     subtitle: 'Textile',
     slug: 'canapetextile',
     category: 7,
-    meta: {
-      title: 'Canapé',
-      description:
-        "Découvre l'impact sur le climat de la fabrication et la distribution d'un canapé en textile et comparez-le à d'autres produits",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
@@ -136,11 +116,6 @@ export const mobiliers = [
     name: 'Armoire',
     slug: 'armoire',
     category: 7,
-    meta: {
-      title: 'Armoire',
-      description:
-        "Découvrez l'empreinte carbone d'une armoire, comprenant sa fabrication et sa distribution, grâce à Impact CO₂",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
@@ -170,11 +145,6 @@ export const mobiliers = [
     slug: 'lit',
     category: 7,
     total: 115,
-    meta: {
-      title: 'Lit en bois',
-      description:
-        "Savez-vous que la fabrication et la distribution d'un lit a un impact sur le climat ? Découvrez son poids en CO₂e et son équivalence avec d'autres meubles",
-    },
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [

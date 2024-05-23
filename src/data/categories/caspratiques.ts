@@ -9,10 +9,6 @@ export const casPratiques = [
     category: 13,
     total: 1770,
     source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien',
-    meta: {
-      title: 'A/R Paris - New-York en avion',
-      description: "Impact carbone d'un aller retour Paris New-York en avion",
-    },
     include: {
       pre: 'Distance totale parcourue : 11600 km.',
       postNewLine:
@@ -29,10 +25,6 @@ export const casPratiques = [
     category: 13,
     total: 7.26,
     source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
-    meta: {
-      title: 'A/R Paris - Berlin en TGV',
-      description: "Impact carbone d'un aller retour Paris Berlin en TGV",
-    },
     include: {
       pre: 'Distance totale parcourue : 2478 km.',
       postNewLine:
@@ -49,10 +41,6 @@ export const casPratiques = [
     category: 13,
     total: 4.4,
     source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
-    meta: {
-      title: 'A/R Paris - Marseille en TGV',
-      description: "Impact carbone d'un aller retour Paris Marseille en TGV",
-    },
     include: {
       pre: 'Distance totale parcourue : 1504 km.',
       postNewLine:
@@ -69,10 +57,6 @@ export const casPratiques = [
     category: 13,
     total: 410,
     source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
-    meta: {
-      title: 'A/R Lille - Nîmes en voiture',
-      description: "Impact carbone d'un aller retour Lille Nîmes en voiture",
-    },
     include: {
       pre: 'Distance totale parcourue : 1882 km.',
       postNewLine:
@@ -89,10 +73,6 @@ export const casPratiques = [
     percentage: true,
     total: 9300,
     source: 'https://nosgestesclimat.fr/',
-    meta: {
-      title: 'Citoyen Français',
-      description: "Empreinte carbone d'un citoyen français",
-    },
     include: {
       pre: '',
       postNewLine:
@@ -108,10 +88,6 @@ export const casPratiques = [
     category: 13,
     total: 0.0317,
     source: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
-    meta: {
-      title: 'Épisode de Game of thrones',
-      description: 'Impact carbone de regarder un épisode de Game of thrones en streaming',
-    },
     include: {
       pre: '',
       postNewLine:
@@ -127,10 +103,6 @@ export const casPratiques = [
     category: 13,
     total: 7.86,
     source: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
-    meta: {
-      title: 'Épisode de Friends',
-      description: 'Impact carbone de regarder un épisode de Friends en streaming',
-    },
     include: {
       pre: '',
       postNewLine:
