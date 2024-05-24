@@ -91,6 +91,7 @@ const Meeting = ({ from }: { from: string }) => {
             <Link href='/politique-de-confidentialite' target='_blank' rel='noopener noreferrer'>
               sa politique de protection des données personnelles
             </Link>
+            . *
           </>
         }
       />
