@@ -8,6 +8,7 @@ import Matomo from 'components/matomo/Matomo'
 import Transtack from 'components/transtack/Transtack'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || ''),
   title: 'Impact CO₂',
   description:
     "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien, issue des données environnementales de l'ADEME.",
