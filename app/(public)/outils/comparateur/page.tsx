@@ -8,14 +8,26 @@ import Suggestion from 'components/layout/Suggestion'
 
 export const revalidate = getNotionRevalidate()
 
-export const metadata: Metadata = {
-  title: 'Comparateur carbone | Impact CO₂',
-  description:
-    'Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.',
-  openGraph: {
-    creators: 'ADEME',
-    images: `${process.env.NEXT_PUBLIC_URL}/meta/comparateur.png`,
-  },
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}): Promise<Metadata> {
+  console.log(searchParams)
+  return {
+    title: 'Comparateur carbone | Impact CO₂',
+    description:
+      'Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.',
+    openGraph: {
+      creators: 'ADEME',
+      images:
+        Object.entries(searchParams).length === 0
+          ? 'meta/comparateur.png'
+          : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${Object.entries(searchParams)
+              .map(([key, value]) => `${key}=${value}`)
+              .join('&')}`,
+    },
+  }
 }
 
 const page = async () => {
