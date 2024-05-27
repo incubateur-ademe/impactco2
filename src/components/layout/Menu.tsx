@@ -26,7 +26,7 @@ const Menu = () => {
 
   return (
     <>
-      <button ref={ref} onClick={() => setOpen(!open)}>
+      <button ref={ref} onClick={() => setOpen(!open)} title='Menu'>
         <MenuIcon />
         <span>Menu</span>
       </button>
