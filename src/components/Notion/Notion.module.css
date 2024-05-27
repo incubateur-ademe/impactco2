@@ -1,15 +1,15 @@
 .container {
-  .notion {
+  :global(.notion) {
     font-family: 'Marianne', Arial, sans-serif;
   }
 
-  .notion-page {
+  :global(.notion-page) {
     padding: 0;
     max-width: 40rem;
     width: 100%;
   }
 
-  .notion-title {
+  :global(.notion-title) {
     color: var(--neutral-80);
     font-weight: 700;
     text-align: center;
@@ -18,18 +18,18 @@
     margin-bottom: 2.5rem;
   }
 
-  .notion-h {
+  :global(.notion-h) {
     margin-bottom: 1.5rem;
     padding: 0;
   }
 
-  .notion-h2 {
+  :global(.notion-h2) {
     font-size: 2rem;
     font-weight: 700;
     line-height: 2.75rem;
   }
 
-  .notion-text {
+  :global(.notion-text) {
     color: var(--neutral-70);
     font-size: 1rem;
     line-height: 1.5rem;
@@ -37,13 +37,13 @@
     margin: 0 0 1.5rem 0;
   }
 
-  .notion-link {
+  :global(.notion-link) {
     opacity: 1;
     border: none;
     text-decoration: underline;
   }
 
-  .notion-toggle {
+  :global(.notion-toggle) {
     padding: 0;
     margin: 0;
     border-bottom: solid 1px var(--neutral-20);
@@ -78,7 +78,7 @@
       }
     }
 
-    .notion-toggle {
+    :global(.notion-toggle) {
       summary {
         &::marker {
           content: unset;
@@ -106,13 +106,13 @@
     }
   }
 
-  .notion-toggle[open] {
+  :global(.notion-toggle[open]) {
     summary::after {
       transform: translateY(-50%) rotate(45deg);
     }
   }
 
-  .notion-callout {
+  :global(.notion-callout) {
     width: fit-content;
     margin: 0 auto 1.5rem auto;
     border-radius: 0.25rem;

@@ -2,6 +2,10 @@
   padding: 1.25rem 0;
   border-bottom: 2px solid var(--neutral-20);
 
+  :global(.notion) {
+    font-family: 'Marianne', Arial, sans-serif;
+  }
+
   :global(.notion-collection-page-properties) {
     display: none;
   }
