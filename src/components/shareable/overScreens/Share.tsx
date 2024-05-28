@@ -34,7 +34,7 @@ const Share = ({
     () =>
       category
         ? getCustomParams(category.slug, allParams)
-        : path?.startsWith('comparateur')
+        : path?.startsWith('outils/comparateur')
           ? getComparateurParams(allParams)
           : {},
     [allParams, category]
@@ -50,10 +50,9 @@ const Share = ({
     }
   }, [params, setVisibility])
 
-  const url = buildCurrentUrlFor(`${path || category?.slug}?${buildCustomParamsUrl(params, visibility)}`).replace(
-    /\?$/,
-    ''
-  )
+  const url = buildCurrentUrlFor(
+    `${path || `outils/${category?.slug}`}?${buildCustomParamsUrl(params, visibility)}`
+  ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
 
@@ -103,7 +102,7 @@ const Share = ({
           <LinkedinIcon />
         </LinkedinShareButton>
       </div>
-      {(category || path?.startsWith('comparateur')) && (
+      {(category || path?.startsWith('outils/comparateur')) && (
         <div className={styles.meta}>
           <Image
             src={

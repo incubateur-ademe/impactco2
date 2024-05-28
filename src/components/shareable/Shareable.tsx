@@ -81,7 +81,7 @@ const Shareable = ({
               <div>
                 <div className={styles.separatorBothBorders} />
                 <div className={styles.footer}>
-                  <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
+                  <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose} data-testid='cancel-button'>
                     Annuler
                   </GhostButton>
                 </div>

@@ -32,7 +32,7 @@ const TransportShare = () => {
   const tracking = useMemo(() => getTracking(selected), [selected])
 
   const url = useMemo(() => {
-    let result = buildCurrentUrlFor('transport')
+    let result = buildCurrentUrlFor('outils/transport')
     if (selected === 'distance') {
       result += `?`
     } else if (selected === 'itineraire') {

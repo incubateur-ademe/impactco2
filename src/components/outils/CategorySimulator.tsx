@@ -37,6 +37,7 @@ const CategorySimulator = ({
             .sort((a, b) => a.value - b.value)
             .map((equivalent) => (
               <Link
+                data-testid='category-link'
                 href={equivalent.link}
                 key={equivalent.slug}
                 className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
@@ -58,7 +59,10 @@ const CategorySimulator = ({
                         style={{ width: `${(100 * formatUsage(equivalent)) / equivalent.value}%` }}
                       />
                     </div>
-                    <span className={styles.value}>{formatNumber(equivalent.value)}</span> kg CO₂e
+                    <span className={styles.value} data-testid={`category-${equivalent.slug}-value`}>
+                      {formatNumber(equivalent.value)}
+                    </span>{' '}
+                    kg CO₂e
                   </div>
                 </div>
               </Link>

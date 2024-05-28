@@ -31,6 +31,7 @@ const Select = ({
       <div className={classNames(styles.selectWrapper, { [styles.smallSelectWrapper]: padding === 'sm' }, className)}>
         <select
           className={classNames(styles.select, { [styles.small]: padding === 'sm' })}
+          data-testid={`text-select-${id}`}
           {...selectProps}
           id={`text-select-${id}`}
         />

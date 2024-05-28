@@ -1,67 +1,44 @@
 import { expect, test } from '@playwright/test'
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('/livraison')
-  await expect(page.getByText('par livraison')).toHaveCount(1)
-})
+test('Simulator livraison', async ({ page }) => {
+  await page.goto('http://localhost:3000/outils/livraison')
 
-test('Affichage simulateur livraison: le chargement de tous les composants fonctionne', async ({ page }) => {
-  // L'intro s'affiche correctement
-  await expect(page.getByTestId('paragraph1')).toHaveText(
-    '80 % des Français de 11 ans et plus font des achats en ligne.'
-  )
-  // Le calculateur livraison s'affiche correctement
-  await expect(page.getByTestId('calculateurTitleH2')).toHaveText("Estimez l'impact de votre livraison")
-  // Les conseils s'affichent correctement
-  await expect(page.getByTestId('titleAdviceLivraison')).toHaveText(
-    'Conseil pour réduire l’impact carbone de vos livraisons'
-  )
-})
+  await expect(page.getByTestId('livraison-colis-value')).toHaveText('2.46')
+  await expect(page.getByTestId('livraison-habits-value')).toHaveText('29.6')
 
-test("Affichage simulateur livraison: J'ai bien le titre de l'onglet, le titre de niveau 1, le fil d'ariane, et le lien vers la source qui s'affichent", async ({
-  page,
-}) => {
-  await expect(page).toHaveTitle(/Impact Carbone de la livraison de colis | Impact CO₂/)
-  await expect(page.getByRole('heading').first()).toHaveText("Mesurer l'impact carbone de la livraison de colis")
-  await expect(page.locator('nav[aria-label="fil d\'ariane"]')).toHaveText('AccueilThématiquesLivraison')
-  await expect(page.getByTestId('lien-etude-ademe')).toHaveText('Commerce en ligne - Étude ADEME 2023 ')
-})
+  await expect(page.getByTestId('etiquette-voiturethermique-value')).toContainText('11.3')
+  await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toContainText('0.34')
+  await expect(page.getByTestId('etiquette-streamingvideo-value')).toContainText('38.5')
 
-test("Impact carbone d'une livraison : le bilan s'alourdit avec un colis volumineux", async ({ page }) => {
-  // Given
-  await expect(page.getByTestId('bcTotal')).toHaveText('2,46 kg de CO₂e ')
-  // When
-  await page.locator('select#retraits').selectOption({ label: 'Livraison à domicile' })
-  await page.locator('select#produits').selectOption({ label: 'Mobilier et gros électroménager' })
-  // Then
-  await expect(page.getByTestId('bcTotal')).toHaveText('30,96 kg de CO₂e ')
-})
+  await page.getByTestId('text-select-livraison-produit').selectOption('grande consommation')
+  await expect(page.getByLabel("Le point relais est t'il sur")).toBeVisible()
+  await expect(page.getByTestId('input-km-value')).toBeVisible()
+  await expect(page.getByTestId('text-select-km-type')).toBeVisible()
+  await expect(page.getByTestId('livraison-colis-value')).toHaveText('10.2')
 
-test("Equivalences : Les équivalences par défaut s'affichent", async ({ page }) => {
-  await expect(page.locator('#eq_nb_0')).toHaveText('11.3 km')
-  await expect(page.locator('#eq_what_0')).toHaveText('en voiture')
+  await page.getByLabel('Oui', { exact: true }).check()
+  await expect(page.getByTestId('livraison-colis-value')).toHaveText('8.73')
 
-  await expect(page.locator('#eq_nb_1')).toHaveText('0.34 repas')
-  await expect(page.locator('#eq_what_1')).toHaveText('avec du boeuf')
+  await page.getByLabel("Le point relais est t'il sur").getByLabel('Non').check()
+  await page.getByTestId('input-km-value').click()
+  await page.getByTestId('input-km-value').fill('10')
+  await expect(page.getByTestId('livraison-colis-value')).toHaveText('10.9')
 
-  await expect(page.locator('#eq_nb_2')).toHaveText('38.5 heures')
-  await expect(page.locator('#eq_what_2')).toHaveText('de streaming vidéo')
-})
+  await page.getByTestId('text-select-km-type').selectOption('vélo')
+  await expect(page.getByTestId('livraison-colis-value')).toHaveText('8.73')
 
-test("Equivalences : Une modale d'explication s'affiche", async ({ page }) => {
-  // Given
-  await expect(page.getByRole('button', { name: 'Fermer' })).not.toBeVisible()
-  // When
-  await page.getByRole('button', { name: 'Comprendre le calcul' }).click()
-  // Then
-  await page.getByRole('button', { name: 'Fermer' }).click()
-})
+  await page.getByTestId('text-select-livraison-retrait').selectOption('domicile')
+  await expect(page.getByLabel("Le point relais est t'il sur")).not.toBeVisible()
+  await expect(page.getByTestId('input-km-value')).not.toBeVisible()
+  await expect(page.getByTestId('text-select-km-type')).not.toBeVisible()
+  await expect(page.getByTestId('livraison-colis-value')).toHaveText('8.73')
 
-test("Fréquences : Le bilan carbone s'alourdit avec le nb de colis par mois", async ({ page }) => {
-  // Given
-  await expect(page.locator('#kgCo₂e')).toHaveText('2,46 kg co₂e')
-  // When
-  await page.locator('select#numbers').selectOption({ value: '2' })
-  // Then
-  await expect(page.locator('#kgCo₂e')).toHaveText('4,93 kg co₂e')
+  await page.getByLabel('Oui (transport par avion)').check()
+  await expect(page.getByTestId('livraison-colis-value')).toHaveText('225')
+
+  await expect(page.getByTestId('livraison-habits-value')).toHaveText('2698')
+  await page.getByTestId('input-number-value').fill('3')
+  await expect(page.getByTestId('livraison-habits-value')).toHaveText('8095')
+  await page.getByTestId('text-select-frequence-type').selectOption('52')
+  await expect(page.getByTestId('livraison-habits-value')).toHaveText('35080')
 })

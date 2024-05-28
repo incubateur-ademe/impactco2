@@ -22,8 +22,7 @@ Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en 
 
 - `yarn dev` lance le serveur web local
 
-- `yarn testa:local` lance les tests de l'API en continu (avec Jest et msw)
-- `yarn testc:local` lance les tests des composants front en continu (avec Jest)
+- `yarn testa:local` lance les tests de l'API en continu (avec Jest)
 - `yarn testu:local` lance les tests unitaires en continu (avec Jest)
 - `yarn teste:local` lance les tests de bout en bout ("end-to-end") en continu (avec Playwright)
 

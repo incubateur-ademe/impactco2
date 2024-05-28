@@ -15,7 +15,7 @@ const configs: Record<
   string,
   {
     inputLabel?: string
-    type: 'number' | 'text' | 'select'
+    type: 'number' | 'text' | 'select' | 'select-number'
     unit?: string
     min?: number
     max?: number
@@ -37,7 +37,7 @@ const configs: Record<
     inputLabel: 'Distance',
   },
   month: {
-    type: 'select',
+    type: 'select-number',
     options: monthsOptions,
     inputLabel: 'Mois',
   },
@@ -98,7 +98,7 @@ const CustomParam = ({
             color='secondary'
             checked={visible}
             setChecked={setVisible}
-            label={t(slug)}
+            label={t(`${slug}.title`)}
             data-testid={`custom-param-${slug}-checkbox`}
           />
         )}
@@ -115,7 +115,7 @@ const CustomParam = ({
               value={param.value}
               onChange={(event) => {
                 track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
-                param.setter(event.target.value)
+                param.setter(config.type === 'select' ? event.target.value : Number(event.target.value))
               }}
               color='secondary'
               data-testid={`custom-param-${slug}-select`}>

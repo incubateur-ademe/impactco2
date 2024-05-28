@@ -15,9 +15,27 @@
     "integrate-challenge": "Integrate challenge",
     "hypothesis": "Our hypothesis",
     "download": "Download",
-    "m2": "Display a custom surface",
-    "km": "Display a custom distance",
-    "month": "Display a custom month",
+    "m2": {
+      "title": "Display a custom surface"
+    },
+    "km": {
+      "title": "Display a custom distance"
+    },
+    "month": {
+      "title": "Display a custom month",
+      "janvier": "January",
+      "février": "February",
+      "mars": "March",
+      "avril": "April",
+      "mai": "Mai",
+      "juin": "June",
+      "juillet": "July",
+      "août": "August",
+      "septembre": "September",
+      "octobre": "October",
+      "novembre": "November",
+      "décembre": "December"
+    },
     "theme": {
       "label": "Display mode",
       "clair": "Light",

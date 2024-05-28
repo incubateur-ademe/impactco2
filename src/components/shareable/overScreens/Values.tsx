@@ -68,7 +68,7 @@ export const overScreenEquivalentValues: (equivalent: ComputedEquivalent) => Rec
 export const overScreenComparateurValues: (onClose?: () => void) => Record<string, OverScreenInfo> = (onClose) => ({
   partager: {
     title: 'share',
-    children: <Share path='comparateur' tracking='Comparateur' />,
+    children: <Share path='outils/comparateur' tracking='Comparateur' />,
     fullHeight: !onClose,
   },
   integrer: {
@@ -89,7 +89,7 @@ export const overScreenComparateurEtiquettesValues: () => Record<
   animated: {
     partager: {
       title: 'share',
-      children: <Share path='comparateur/etiquette-anime' tracking='Comparateur' />,
+      children: <Share path='outils/comparateur/etiquette-anime' tracking='Comparateur' />,
     },
     integrer: {
       title: 'integrate',
@@ -99,23 +99,12 @@ export const overScreenComparateurEtiquettesValues: () => Record<
   static: {
     partager: {
       title: 'share',
-      children: <Share path='comparateur/etiquette' tracking='Comparateur' />,
+      children: <Share path='outils/comparateur/etiquette' tracking='Comparateur' />,
     },
     integrer: {
       title: 'integrate',
       children: <Integrate path='comparateur/etiquette' tracking='Comparateur' />,
     },
-  },
-})
-
-export const overScreenEtiquetteValues: () => Record<string, OverScreenInfo> = () => ({
-  partager: {
-    title: 'share',
-    children: <Share path='etiquette' tracking='Comparateur' />,
-  },
-  integrer: {
-    title: 'integrate',
-    children: <Integrate path='etiquette' tracking='Comparateur' />,
   },
 })
 
@@ -134,7 +123,7 @@ export const overScreenExtraSimulatorValues: (slug: string) => Record<string, Ov
                 'En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on les aidait à désencombrer les placards ? Découvrez le nouveau challenge d’Impact CO2 !',
             },
           }}
-          path='habillement/osez-changer'
+          path='outils/habillement/osez-changer'
           tracking='OsezChanger'
         />
       ),

@@ -15,9 +15,12 @@
     "integrate-challenge": "Intégrer le challenge",
     "hypothesis": "Nos hypothèses de calcul",
     "download": "Télécharger",
-    "m2": "Afficher une surface personnalisée",
-    "km": "Afficher une distance personnalisée",
-    "month": "Personnaliser le mois à afficher",
+    "m2": {
+      "title": "Afficher une surface personnalisée"
+    },
+    "km": {
+      "title": "Afficher une distance personnalisée"
+    },
     "language": {
       "label": "Langue",
       "fr": "Français",
@@ -43,6 +46,21 @@
       "onglet-hint": "Sélectionnez l’onglet que vous souhaitez voir affiché lors du partage",
       "onglets": "Onglet à intégrer",
       "onglets-hint": "Sélectionnez les onglets que vous souhaitez intégrer à l'iframe"
+    },
+    "month": {
+      "title": "Personnaliser le mois à afficher",
+      "janvier": "Janvier",
+      "février": "Février",
+      "mars": "Mars",
+      "avril": "Avril",
+      "mai": "Mai",
+      "juin": "Juin",
+      "juillet": "Juillet",
+      "août": "Août",
+      "septembre": "Septembre",
+      "octobre": "Octobre",
+      "novembre": "Novembre",
+      "décembre": "Décembre"
     }
   },
   "modal": {

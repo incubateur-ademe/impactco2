@@ -5,6 +5,9 @@ const values: Record<string, (params: Params) => Record<string, CustomParamValue
   chauffage: (params: Params) => ({
     m2: { value: params.chauffage.m2, setter: params.chauffage.setM2 } as CustomParamValue,
   }),
+  fruitsetlegumes: (params: Params) => ({
+    month: { value: params.fruitsetlegumes.month, setter: params.fruitsetlegumes.setMonth } as CustomParamValue,
+  }),
 }
 
 export const getCustomParams = (slug: string, params: Params) => {
