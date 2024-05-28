@@ -9,6 +9,10 @@ export const revalidate = getNotionRevalidate()
 
 export const metadata: Metadata = {
   title: "Exemples d'utilisation | Impact CO₂",
+  openGraph: {
+    creators: 'ADEME',
+    images: `meta/exemples.png`,
+  },
 }
 
 const page = async () => {

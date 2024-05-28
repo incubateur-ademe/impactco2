@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: 'Le “Détecteur CO₂” : un nouvel outil de l’ADEME pour les médias et entreprises',
   openGraph: {
     creators: 'ADEME',
-    images: `${process.env.NEXT_PUBLIC_URL}/meta/detecteur-co2.png`,
+    images: `${process.env.NEXT_PUBLIC_URL}/meta/detecteur.png`,
   },
 }
 const Detecteur = async () => {

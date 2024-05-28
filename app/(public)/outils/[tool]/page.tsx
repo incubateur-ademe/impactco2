@@ -30,6 +30,10 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     return {
       title: `${tool.title} | Impact CO₂`,
       description: tool.description,
+      openGraph: {
+        creators: 'ADEME',
+        images: `meta/${tool.slug}.png`,
+      },
     }
   }
 

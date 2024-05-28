@@ -40,7 +40,9 @@ jobs:
         run: yarn start &
       - name: Unit tests => with Jest
         run: yarn testu
-      - name: API tests => with Jest & MSW
+      - name: API tests => with Jest
+        run: yarn testa
+      - name: E2E tests => with Playwright
         run: yarn testa
       - run: mkdir -p ${{ github.workspace }}/tmp/artifacts
       - name: Lighthouse Check

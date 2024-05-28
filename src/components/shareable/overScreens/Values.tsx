@@ -123,14 +123,14 @@ export const overScreenExtraSimulatorValues: (slug: string) => Record<string, Ov
                 'En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on les aidait à désencombrer les placards ? Découvrez le nouveau challenge d’Impact CO2 !',
             },
           }}
-          path='outils/habillement/osez-changer'
+          path='outils/habillement#osez-changer'
           tracking='OsezChanger'
         />
       ),
     },
     integrer: {
       title: 'integrate',
-      children: <Integrate path='habillement/osez-changer' tracking='OsezChanger' />,
+      children: <Integrate path='habillement#osez-changer' tracking='OsezChanger' />,
     },
     hypothesis: {
       image: '/images/icn-next-actions.svg',

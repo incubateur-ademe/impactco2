@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien, issue des données environnementales de l'ADEME.",
   openGraph: {
     creators: 'ADEME',
-    images: `${process.env.NEXT_PUBLIC_URL}/meta/image.png`,
+    images: `${process.env.NEXT_PUBLIC_URL}/meta/main.png`,
   },
 }
 
