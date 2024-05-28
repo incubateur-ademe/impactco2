@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from 'react'
 import { FAQ } from 'types/faq'
+import { track } from 'utils/matomo'
 import Link from 'components/base/buttons/Link'
 import Card from 'components/cards/Card'
 import ToolCard from 'components/cards/ToolCard'
@@ -26,7 +27,13 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
           <label htmlFor='text-select-search'>
             <b>Filtrer</b> par sujet ou outil
           </label>
-          <Select id='search' value={search} onChange={(event) => setSearch(event.target.value)}>
+          <Select
+            id='search'
+            value={search}
+            onChange={(event) => {
+              track('FAQ', 'Filter', event.target.value)
+              setSearch(event.target.value)
+            }}>
             <option value='all'>Tous les sujets et outils</option>
             {faqs
               .flatMap((faq) => faq.pages)

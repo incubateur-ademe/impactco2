@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from 'react'
 import { Example } from 'types/example'
+import { track } from 'utils/matomo'
 import Card from 'components/cards/Card'
 import Select from 'components/form/Select'
 import Block from 'components/layout/Block'
@@ -28,7 +29,13 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
             <label htmlFor='text-select-activity'>
               <b>Filtrer</b> par secteur d’activité
             </label>
-            <Select id='activity' value={activity} onChange={(event) => setActivity(event.target.value)}>
+            <Select
+              id='activity'
+              value={activity}
+              onChange={(event) => {
+                track('Exemple', 'Activity', event.target.value)
+                setActivity(event.target.value)
+              }}>
               <option value='all'>Tous les secteurs d'activité</option>
               {examples
                 .map((example) => example.activity)
@@ -45,7 +52,13 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
             <label htmlFor='text-select-tool'>
               <b>Filtrer</b> par outils
             </label>
-            <Select id='tool' value={tool} onChange={(event) => setTool(event.target.value)}>
+            <Select
+              id='tool'
+              value={tool}
+              onChange={(event) => {
+                track('Exemple', 'Tool', event.target.value)
+                setTool(event.target.value)
+              }}>
               <option value='all'>Tous les outils</option>
               {examples
                 .flatMap((example) => example.links.map((link) => link.label))
