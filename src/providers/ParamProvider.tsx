@@ -240,9 +240,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [itineraireStart, setItineraireStart] = useState<Point>()
   const [itineraireEnd, setItineraireEnd] = useState<Point>()
 
-  const [distanceCarpool, setDistanceCarpool] = useState(0)
-  const [itineraireCarpool, setItineraireCarpool] = useState(0)
-  const [teletravailCarpool, setTeletravailCarpool] = useState(0)
+  const [distanceCarpool, setDistanceCarpool] = useState(1)
+  const [itineraireCarpool, setItineraireCarpool] = useState(1)
+  const [teletravailCarpool, setTeletravailCarpool] = useState(1)
 
   const [distanceDisplayAll, setDistanceDisplayAll] = useState(false)
   const [itineraireDisplayAll, setItineraireDisplayAll] = useState(false)

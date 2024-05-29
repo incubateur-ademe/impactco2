@@ -10,6 +10,7 @@ type BaseEquivalent = {
   suffix?: string
   subtitle?: string
   synonyms?: string[]
+  carpool?: number
   percentage?: boolean
   unit?: string
   data?: {
@@ -49,7 +50,6 @@ export type DeplacementType = 'car' | 'foot' | 'rail' | 'plane'
 export type DeplacementEquivalent = BaseEquivalent & {
   id: number
   type: string
-  carpool?: boolean
   total?: number
   ecv?: EquivalentValue[]
   ecvs?: {

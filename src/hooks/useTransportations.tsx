@@ -30,10 +30,6 @@ export default function useTransportations(
             itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
           )
           .filter((equivalent) => equivalent.default || displayAll)
-          .flatMap((equivalent) =>
-            equivalent.carpool ? [equivalent, { ...equivalent, carpool: false, id: -equivalent.id }] : [equivalent]
-          )
-          .filter((equivalent) => carpool || !equivalent.carpool)
           .filter(
             (equivalent) =>
               displayAll ||
@@ -70,15 +66,21 @@ export default function useTransportations(
                   )} km`
                 : ''),
             value:
-              (computeECV(equivalent) *
-                (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
-              (equivalent.carpool && carpool ? carpool : 1),
+              computeECV(equivalent) *
+              (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km),
             usage:
-              (formatUsage(equivalent) *
-                (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
-              (equivalent.carpool && carpool ? carpool : 1),
+              formatUsage(equivalent) *
+              (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km),
             onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
           }))
+          .flatMap((equivalent) =>
+            equivalent.carpool
+              ? [
+                  { ...equivalent, value: equivalent.value / (carpool + 1) },
+                  { ...equivalent, carpool: 0 },
+                ]
+              : [equivalent]
+          )
       : []
   }, [params, itineraries, type, tracking])
 

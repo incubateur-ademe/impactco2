@@ -42,6 +42,7 @@ const DistanceSimulator = () => {
         displayAllText={t('displayAll')}
         hideAllText={t('hideAll')}
         withSimulator
+        type='distance'
       />
     </>
   )

@@ -144,7 +144,7 @@ export const deplacements = [
     prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'conduire', 'voyager'],
     slug: 'voiturethermique',
-    carpool: true,
+    carpool: 1,
     type: 'car',
     category: 4,
     ecv: [
@@ -168,7 +168,7 @@ export const deplacements = [
     prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'conduire', 'voyager'],
     slug: 'voitureelectrique',
-    carpool: true,
+    carpool: 1,
     type: 'car',
     category: 4,
     ecv: [
