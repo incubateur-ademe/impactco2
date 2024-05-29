@@ -52,7 +52,7 @@ const RendezVous = () => {
     return data
     // errors is not needed and cause an infinite refresh !
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [email, needs, other, params, structure])
+  }, [email, needs, other, params, structure, accepted])
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
