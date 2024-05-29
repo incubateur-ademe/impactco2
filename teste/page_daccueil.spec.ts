@@ -15,40 +15,26 @@ test('Barre de recherche (sans résultat)', async ({ page }) => {
   })
 
   await test.step('On clique sur la barre de recherche', async () => {
-    await page.getByRole('textbox', { name: 'Rechercher...' }).click({ force: true })
+    await page.getByTestId('input-search').click({ force: true })
   })
 
   await test.step('On rentre une première lettre', async () => {
-    await page.keyboard.type('t')
+    await page.keyboard.type('tx')
   })
 
-  await test.step('Pas de suggestion affichée', async () => {
-    const nb_of_suggestions = await page.getByTitle('simple suggestion').count()
-    expect(nb_of_suggestions).toEqual(0)
-  })
-
-  await test.step('On rentre une 2ème lettre ayant peu de chance de retourner un résultat', async () => {
-    await page.keyboard.type('x')
-  })
-
-  await test.step('Toujours pas de suggestion affichée', async () => {
-    const nb_of_suggestions = await page.getByTitle('simple suggestion').count()
-    expect(nb_of_suggestions).toEqual(0)
-  })
-
-  await test.step("Cette fois, en plus, un message explicite l'absence de résultat", async () => {
-    const nb_of_notfound = await page.getByTitle('pas de résultat').count()
-    expect(nb_of_notfound).toEqual(1)
+  await test.step('Pas de résultat affiché', async () => {
+    const nb_of_notfound = await page.getByTestId('equivalent-search-empty').count()
+    expect(nb_of_notfound).toEqual(3)
   })
 })
 
 test('Barre de recherche (avec résultats)', async ({ page }) => {
-  await test.step('On clique sur la barre de recherche', async () => {
+  await test.step("On charge la page d'accueil dans le navigateur", async () => {
     await page.goto('/')
   })
 
   await test.step('On clique sur la barre de recherche', async () => {
-    await page.getByRole('textbox', { name: 'Rechercher...' }).click({ force: true })
+    await page.getByTestId('input-search').click({ force: true })
   })
 
   await test.step('On entre plusieurs caractères qui forment une syllabe facile', async () => {
@@ -58,15 +44,10 @@ test('Barre de recherche (avec résultats)', async ({ page }) => {
   })
 
   await test.step('Il y a bien des suggestions qui apparaissent', async () => {
-    const nb_of_suggestions = await page.getByTitle('simple suggestion').count()
-    expect(nb_of_suggestions).toBeGreaterThan(0)
-  })
-
-  await test.step('Au clavier, on peut valider la première suggestion', async () => {
-    await page.keyboard.press('Enter')
-  })
-
-  await test.step("On est redirigé vers l'écran correspondant", async () => {
-    await expect(page).toHaveURL(/.*transport/)
+    const nb_of_notfound = await page.getByTestId('equivalent-search-empty').count()
+    expect(nb_of_notfound).toEqual(0)
+    await expect(page.getByTestId('equivalent-search-tramway')).toBeVisible()
+    await expect(page.getByTestId('equivalent-search-rer')).toBeVisible()
+    await expect(page.getByTestId('equivalent-search-tgv')).toBeVisible()
   })
 })

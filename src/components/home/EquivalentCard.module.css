@@ -1,3 +1,4 @@
+.empty,
 .equivalent {
   min-height: 8.25rem;
   border-radius: 0.75rem;
@@ -6,7 +7,9 @@
   background: var(--neutral-00);
   padding: 1.25rem 2rem;
   text-decoration: none;
+}
 
+.equivalent {
   &:hover {
     border-color: var(--primary-30);
   }

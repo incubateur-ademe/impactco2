@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import Link from 'next/link'
 import React from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -10,11 +9,11 @@ const EquivalentCard = ({ equivalent }: { equivalent?: ComputedEquivalent }) => 
   const category = equivalent ? categories.find((x) => x.id === equivalent.category) : undefined
 
   return equivalent && category ? (
-    <Link href={equivalent.link} className={styles.equivalent}>
+    <Link href={equivalent.link} className={styles.equivalent} data-testid={`equivalent-search-${equivalent.slug}`}>
       <EquivalentCardContent equivalent={equivalent} category={category} />
     </Link>
   ) : (
-    <div className={classNames(styles.equivalent, styles.empty)} />
+    <div className={styles.empty} data-testid='equivalent-search-empty' />
   )
 }
 
