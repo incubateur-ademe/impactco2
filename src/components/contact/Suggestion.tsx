@@ -1,12 +1,14 @@
 'use client'
 
 import { AxiosResponse } from 'axios'
+import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import React, { FormEvent, useMemo, useState } from 'react'
 import { ZodError } from 'zod'
 import axiosClient from 'utils/axios'
 import { NotionCommand, NotionCommandValidation } from 'utils/notion'
 import Button from 'components/base/buttons/Button'
+import CheckboxInput from 'components/form/CheckboxInput'
 import FormResult from 'components/form/FormResult'
 import Input from 'components/form/Input'
 import Radio from 'components/form/Radio'
@@ -30,6 +32,7 @@ const Suggestion = () => {
   const [text, setText] = useState('')
   const [avis, setAvis] = useState<number>()
   const [suggestionType, setSuggestionType] = useState('bug')
+  const [accepted, setAccepted] = useState(false)
 
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
@@ -43,6 +46,7 @@ const Suggestion = () => {
       avis: suggestionType === 'avis' ? avis : undefined,
       text,
       from: params?.get('from') || '',
+      accepted,
     }
     if (errors) {
       const body = NotionCommandValidation.safeParse(data)
@@ -55,7 +59,7 @@ const Suggestion = () => {
     return data
     // errors is not needed and cause an infinite refresh !
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [email, text, suggestionType, params, avis])
+  }, [email, text, suggestionType, params, avis, accepted])
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -77,6 +81,7 @@ const Suggestion = () => {
         input.scrollIntoView({ behavior: 'smooth' })
         input.focus({ preventScroll: true })
       }
+      console.log(body.error.errors)
       setErrors(body.error)
     }
 
@@ -168,6 +173,25 @@ const Suggestion = () => {
               onChange={(e) => setEmail(e.target.value)}
               errors={errors}
             />
+            <CheckboxInput
+              id='accepted'
+              errors={errors}
+              className={styles.checkbox}
+              checked={accepted}
+              required
+              setChecked={(checked) => setAccepted(checked)}
+              label={
+                <>
+                  J'ai lu et j'accepte que l'ADEME collecte mes données afin de garantir la bonne utilisation des
+                  services offerts et reconnais avoir pris connaissance de{' '}
+                  <Link href='/politique-de-confidentialite' target='_blank' rel='noopener noreferrer'>
+                    sa politique de protection des données personnelles
+                  </Link>
+                  . *
+                </>
+              }
+            />
+
             <Button size='lg' disabled={sending} type='submit' data-testid='suggestion-button'>
               Envoyer ma réponse
             </Button>

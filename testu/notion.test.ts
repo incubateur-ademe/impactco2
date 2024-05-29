@@ -151,6 +151,7 @@ describe('Notion api command', () => {
       from: 'test',
       suggestionType: 'bug',
       text: 'Ca marche pas !',
+      accepted: true,
     }
 
     it('allows valid command', () => {
@@ -166,6 +167,40 @@ describe('Notion api command', () => {
         test: undefined,
       })
       expect(result.success).toEqual(true)
+    })
+
+    it('does not allow valid command with not accepted', () => {
+      expectZodValidationToFail(
+        // @ts-expect-error: Zod too complex
+        NotionCommandValidation,
+        validCommand,
+        {
+          accepted: 'false',
+        },
+        [
+          {
+            path: ['accepted'],
+            message: 'Veuillez lire et accepter',
+          },
+        ]
+      )
+    })
+
+    it('does not allow valid command with empty acceptation', () => {
+      expectZodValidationToFail(
+        // @ts-expect-error: Zod too complex
+        NotionCommandValidation,
+        validCommand,
+        {
+          accepted: undefined,
+        },
+        [
+          {
+            path: ['accepted'],
+            message: 'Veuillez lire et accepter',
+          },
+        ]
+      )
     })
 
     it('does not allow valid command with avis and no note', () => {

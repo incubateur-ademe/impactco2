@@ -78,6 +78,10 @@ export async function POST(req: NextRequest) {
                 type: 'select',
                 select: { name: 'Retour formulaire' },
               },
+              Accepté: {
+                type: 'checkbox',
+                checkbox: inputs.data.accepted,
+              },
             },
           },
       {
