@@ -11,7 +11,7 @@ const IFrameEtiquette = ({ animated }: { animated?: boolean }) => {
       return null
     }
     return {
-      baseValue: Number(params.get('value')),
+      baseValue: Number(params.get('value')) * 1000,
       comparisons: ((params.get('comparisons') || 'random') as string).split(','),
     }
   }, [params])

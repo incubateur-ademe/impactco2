@@ -32,10 +32,10 @@ const Integrate = ({
       }
     }
     if (path.startsWith('comparateur')) {
-      return { ...getComparateurParams(params), ...theme }
+      return { ...getComparateurParams(params, path.includes('etiquette')), ...theme }
     }
     return theme
-  }, [params, category])
+  }, [params, category, path])
 
   useEffect(() => {
     if (paramWithTheme) {

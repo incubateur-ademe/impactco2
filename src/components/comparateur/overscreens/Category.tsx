@@ -40,7 +40,14 @@ const Category = ({
 
   return (
     <div className={styles.container}>
-      <button className={styles.header} onClick={() => setOpen(!open)}>
+      <button
+        className={styles.header}
+        onClick={() => setOpen(!open)}
+        title={
+          open
+            ? `Cacher les éléments de la catégorie ${category.name}`
+            : `Voir les éléments de la catégorie ${category.name}`
+        }>
         <div className={styles.emoji}>
           <EquivalentIcon height={2.5} equivalent={category} />
         </div>
@@ -53,15 +60,7 @@ const Category = ({
             <span className={styles.numbers}> / {categoryEquivalents.length}</span>
           </div>
         </div>
-        <div
-          className={styles.button}
-          title={
-            open
-              ? `Cacher les éléments de la catégorie ${category.name}`
-              : `Voir les éléments de la catégorie ${category.name}`
-          }>
-          {open ? <DropdownArrowUpIcon /> : <DropdownArrowDownIcon />}
-        </div>
+        <div className={styles.button}>{open ? <DropdownArrowUpIcon /> : <DropdownArrowDownIcon />}</div>
       </button>
       {open && (
         <>

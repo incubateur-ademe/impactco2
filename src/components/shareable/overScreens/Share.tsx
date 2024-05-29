@@ -35,9 +35,9 @@ const Share = ({
       category
         ? getCustomParams(category.slug, allParams)
         : path?.startsWith('outils/comparateur')
-          ? getComparateurParams(allParams)
+          ? getComparateurParams(allParams, path?.includes('etiquette'))
           : {},
-    [allParams, category]
+    [allParams, category, path]
   )
 
   useEffect(() => {

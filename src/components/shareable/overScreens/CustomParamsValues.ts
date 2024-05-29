@@ -17,11 +17,16 @@ export const getCustomParams = (slug: string, params: Params) => {
   return {}
 }
 
-export const getComparateurParams = (params: Params) => {
+export const getComparateurParams = (params: Params, etiquette?: boolean) => {
+  const factor = etiquette && params.comparateur.comparedEquivalent ? params.comparateur.comparedEquivalent.value : 1
+  const comparisons =
+    etiquette && params.comparateur.comparedEquivalent
+      ? [params.comparateur.comparedEquivalent.slug, ...params.comparateur.equivalents]
+      : params.comparateur.equivalents
   return {
     comparateur: {
       value: [],
-      params: `value=${params.comparateur.baseValue}&comparisons=${params.comparateur.equivalents.join(',')}${params.comparateur.comparedEquivalent ? `&equivalent=${params.comparateur.comparedEquivalent.slug}` : ''}`,
+      params: `value=${params.comparateur.baseValue * factor}&comparisons=${comparisons.join(',')}${!etiquette && params.comparateur.comparedEquivalent ? `&equivalent=${params.comparateur.comparedEquivalent.slug}` : ''}`,
     },
   }
 }

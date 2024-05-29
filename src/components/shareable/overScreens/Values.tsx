@@ -89,11 +89,11 @@ export const overScreenComparateurEtiquettesValues: () => Record<
   animated: {
     partager: {
       title: 'share',
-      children: <Share path='outils/comparateur/etiquette-anime' tracking='Comparateur' />,
+      children: <Share path='outils/comparateur/etiquette-animee' tracking='Comparateur' />,
     },
     integrer: {
       title: 'integrate',
-      children: <Integrate path='comparateur/etiquette-anime' tracking='Comparateur' />,
+      children: <Integrate path='comparateur/etiquette-animee' tracking='Comparateur' />,
     },
   },
   static: {
