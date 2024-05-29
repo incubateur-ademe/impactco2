@@ -131,8 +131,8 @@ export const categories: Category[] = [
     slug: 'numerique',
     sources: [
       {
-        label: 'Rapport : Modélisation et évaluation...',
-        href: 'https://librairie.ademe.fr/consommer-autrement/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+        label: 'Etude ADEME / ARCEP - 2022',
+        href: 'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
       },
       {
         label: 'Base Empreinte ADEME',
