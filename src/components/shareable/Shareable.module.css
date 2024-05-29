@@ -12,6 +12,7 @@
 
 .secondaryCard {
   border-color: var(--neutral-10);
+  box-shadow: none;
 }
 
 .secondaryContainer {

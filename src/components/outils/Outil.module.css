@@ -8,9 +8,10 @@
 
 .image {
   background-color: var(--primary-10);
-  border-radius: 0.5rem;
   display: flex;
   justify-content: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
 
   img {
     width: auto;
