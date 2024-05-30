@@ -17,7 +17,7 @@
     width: auto;
     height: 180px;
     max-width: 100%;
-    object-fit: none;
+    object-fit: cover;
   }
 }
 
