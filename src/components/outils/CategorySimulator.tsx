@@ -46,7 +46,7 @@ const CategorySimulator = ({
                 className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
                 <Link data-testid='category-link' href={equivalent.link} className={styles.link}>
                   <EquivalentIcon equivalent={equivalent} height={3} />
-                  <div className={styles.content}>
+                  <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
                     <div className={styles.name}>
                       {formatName(
                         `${equivalent.name}${equivalent.subtitle ? ` ${equivalent.subtitle.startsWith('(') || equivalent.subtitle.startsWith(' -') ? equivalent.subtitle : `(${equivalent.subtitle})`}` : ''}`,

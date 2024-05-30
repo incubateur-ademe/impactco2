@@ -4,6 +4,7 @@ import React, { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
 import { Point } from 'hooks/useItineraries'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import CheckboxInput from 'components/form/CheckboxInput'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
@@ -211,8 +212,11 @@ const CustomParam = ({
         />
       )}
       <div className={styles.params}>
-        {param.value.map(({ emoji }) => (
-          <div className={styles.param} key={emoji} />
+        {param.value.map(({ emoji, label }) => (
+          <div className={styles.param} key={emoji}>
+            <EquivalentIcon equivalent={{ slug: emoji }} height={0.75} />
+            <span className='text-sm'>{label}</span>
+          </div>
         ))}
       </div>
     </div>

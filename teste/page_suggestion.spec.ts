@@ -9,19 +9,19 @@ test.beforeEach(async ({ page }) => {
     suggestionType: 'avis',
     avis: 4,
     text: 'ce test envoit du lourd',
+    accepted: true,
   })
 })
 
 test('Send suggestion demands to api', async ({ page }) => {
   await test.step('Load page', async () => {
     await page.goto('/suggestion?fromLabel=test')
-  })
-
-  await test.step('Submit without filled data does not work', async () => {
     await expect(page.getByTestId('suggestion-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)
     await expect(page.getByTestId('form-result-error')).toHaveCount(0)
+  })
 
+  await test.step('Submit without filled data does not work', async () => {
     await page.getByTestId('suggestion-button').click()
 
     await expect(page.getByTestId('suggestion-form')).toBeVisible()
@@ -30,10 +30,6 @@ test('Send suggestion demands to api', async ({ page }) => {
   })
 
   await test.step('Submit with incomplete data does not work', async () => {
-    await expect(page.getByTestId('suggestion-form')).toBeVisible()
-    await expect(page.getByTestId('form-result-success')).toHaveCount(0)
-    await expect(page.getByTestId('form-result-error')).toHaveCount(0)
-
     await page.getByTestId('suggestion-type-avis').click()
     await page.getByTestId('suggestion-text').fill('ce test envoit du lourd')
 
@@ -43,12 +39,15 @@ test('Send suggestion demands to api', async ({ page }) => {
   })
 
   await test.step('Submit with incorrect data does not work', async () => {
+    await page.getByTestId('input-email').fill('incorrect')
+    await page.getByTestId('stars-avis-4').click()
+
     await expect(page.getByTestId('suggestion-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)
     await expect(page.getByTestId('form-result-error')).toHaveCount(0)
-
-    await page.getByTestId('suggestion-email').fill('incorrect')
-    await page.getByTestId('stars-avis-4').click()
+  })
+  await test.step('Submit without acceptation does not work', async () => {
+    await page.getByTestId('input-email').fill('test@valid.fr')
 
     await expect(page.getByTestId('suggestion-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)
@@ -56,8 +55,7 @@ test('Send suggestion demands to api', async ({ page }) => {
   })
 
   await test.step('Fill data and submit form', async () => {
-    await page.getByTestId('suggestion-email').fill('test@valid.fr')
-
+    await page.getByTestId('checkbox-accepted').click()
     await page.getByTestId('suggestion-button').click()
 
     await expect(page.getByTestId('suggestion-form')).toHaveCount(0)
@@ -73,6 +71,7 @@ test('Show error if failing', async ({ page }) => {
 
   await test.step('Fill data and submit form', async () => {
     await page.getByTestId('suggestion-text').fill('my invalid review')
+    await page.getByTestId('checkbox-accepted').click()
 
     await page.getByTestId('suggestion-button').click()
 

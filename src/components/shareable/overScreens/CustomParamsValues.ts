@@ -8,6 +8,27 @@ const values: Record<string, (params: Params) => Record<string, CustomParamValue
   fruitsetlegumes: (params: Params) => ({
     month: { value: params.fruitsetlegumes.month, setter: params.fruitsetlegumes.setMonth } as CustomParamValue,
   }),
+  usagenumerique: (params: Params) => {
+    const emails = Number(params.usageNumerique.numberEmails)
+    const streaming = Number(params.usageNumerique.situation['streaming . durée'])
+    const visio = Number(params.usageNumerique.situation['visio . durée'])
+
+    return {
+      situation: {
+        value: [
+          {
+            label: `${emails} email${emails > 1 ? 's' : ''}`,
+            emoji: 'email',
+          },
+          { label: `${streaming / 60}h de streaming`, emoji: 'streamingvideo' },
+          { label: `${visio / 60}h de streaming`, emoji: 'visioconference' },
+        ],
+        params: `emails=${emails}&${Object.entries(params.usageNumerique.situation)
+          .map(([key, value]) => `${key}=${value}`)
+          .join('&')}`,
+      },
+    }
+  },
 }
 
 export const getCustomParams = (slug: string, params: Params) => {

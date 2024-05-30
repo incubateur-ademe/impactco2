@@ -8,19 +8,19 @@ test.beforeEach(async ({ page }) => {
     structure: 'entreprise',
     type: 'contact',
     needs: 'my needs',
+    accepted: true,
   })
 })
 
 test('Send rendez-vous demands to api', async ({ page }) => {
   await test.step('Load page', async () => {
     await page.goto('/rendez-vous?fromLabel=test')
-  })
-
-  await test.step('Submit without filled data does not work', async () => {
     await expect(page.getByTestId('rendez-vous-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)
     await expect(page.getByTestId('form-result-error')).toHaveCount(0)
+  })
 
+  await test.step('Submit without filled data does not work', async () => {
     await page.getByTestId('rendez-vous-button').click()
 
     await expect(page.getByTestId('rendez-vous-form')).toBeVisible()
@@ -29,10 +29,6 @@ test('Send rendez-vous demands to api', async ({ page }) => {
   })
 
   await test.step('Submit with incomplete data does not work', async () => {
-    await expect(page.getByTestId('rendez-vous-form')).toBeVisible()
-    await expect(page.getByTestId('form-result-success')).toHaveCount(0)
-    await expect(page.getByTestId('form-result-error')).toHaveCount(0)
-
     await page.getByTestId('rendez-vous-structure-entreprise').click()
     await page.getByTestId('rendez-vous-needs').fill('my needs')
 
@@ -42,11 +38,15 @@ test('Send rendez-vous demands to api', async ({ page }) => {
   })
 
   await test.step('Submit with incorrect data does not work', async () => {
+    await page.getByTestId('input-email').fill('incorrect')
+
     await expect(page.getByTestId('rendez-vous-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)
     await expect(page.getByTestId('form-result-error')).toHaveCount(0)
+  })
 
-    await page.getByTestId('rendez-vous-email').fill('incorrect')
+  await test.step('Submit without acceptation does not work', async () => {
+    await page.getByTestId('input-email').fill('test@valid.fr')
 
     await expect(page.getByTestId('rendez-vous-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)
@@ -54,8 +54,7 @@ test('Send rendez-vous demands to api', async ({ page }) => {
   })
 
   await test.step('Fill data and submit form', async () => {
-    await page.getByTestId('rendez-vous-email').fill('test@valid.fr')
-
+    await page.getByTestId('checkbox-accepted').click()
     await page.getByTestId('rendez-vous-button').click()
 
     await expect(page.getByTestId('rendez-vous-form')).toHaveCount(0)
@@ -72,7 +71,8 @@ test('Show error if failing', async ({ page }) => {
   await test.step('Fill data and submit form', async () => {
     await page.getByTestId('rendez-vous-structure-entreprise').click()
     await page.getByTestId('rendez-vous-needs').fill('my invalid needs')
-    await page.getByTestId('rendez-vous-email').fill('test@invalid.fr')
+    await page.getByTestId('input-email').fill('test@invalid.fr')
+    await page.getByTestId('checkbox-accepted').click()
 
     await page.getByTestId('rendez-vous-button').click()
 

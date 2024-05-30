@@ -45,7 +45,7 @@ const Suggestion = () => {
       suggestionType,
       avis: suggestionType === 'avis' ? avis : undefined,
       text,
-      from: params?.get('from') || '',
+      from: params?.get('fromLabel') || '',
       accepted,
     }
     if (errors) {

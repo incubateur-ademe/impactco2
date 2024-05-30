@@ -35,6 +35,7 @@ const CheckboxInput = ({
         <label className={classNames(styles.legend, { [styles.checked]: checked })}>
           <input
             id={id}
+            data-testid={`checkbox-${id}`}
             {...inputProps}
             type='checkbox'
             checked={checked}

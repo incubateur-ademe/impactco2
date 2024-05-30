@@ -180,7 +180,7 @@
       "voyager"
     ],
     "slug": "voiturethermique",
-    "carpool": true,
+    "carpool": 1,
     "type": "car",
     "category": 4,
     "ecv": [
@@ -214,7 +214,7 @@
       "voyager"
     ],
     "slug": "voitureelectrique",
-    "carpool": true,
+    "carpool": 1,
     "type": "car",
     "category": 4,
     "ecv": [

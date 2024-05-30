@@ -118,7 +118,10 @@ const UsageNumeriqueSimulator = () => {
         <div className={styles.values}>
           <div className={styles.header}>VOS USAGES ÉMETTENT</div>
           <div className={styles.value}>
-            <span className={styles.number}>{formatNumber(total / 1000)}</span> kg co₂e
+            <span className={styles.number} data-testid='usagenumerique-generated-value'>
+              {formatNumber(total / 1000)}
+            </span>{' '}
+            kg co₂e
           </div>
           <div>par semaine</div>
         </div>

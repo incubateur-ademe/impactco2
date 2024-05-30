@@ -141,7 +141,10 @@ const TeletravailSimulator = () => {
             <div className={styles.values}>
               <div className={styles.header}>VOUS GÉNÉREZ</div>
               <div className={styles.value}>
-                <span className={styles.number}>{formatNumber(total * presentiel)}</span> kg co₂e
+                <span className={styles.number} data-testid='teletravail-generated-value'>
+                  {formatNumber(total * presentiel)}
+                </span>{' '}
+                kg co₂e
               </div>
               <div>par an</div>
               <div>en vous déplacant {presentiel} jours / semaine</div>
