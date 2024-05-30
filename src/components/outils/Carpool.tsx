@@ -13,14 +13,22 @@ const Carpool = ({ type }: { type: TransportSimulateur }) => {
 
   return (
     <div className={styles.container}>
-      <button className={styles.minus} onClick={() => setCarpool(carpool - 1)} disabled={carpool === 1}>
+      <button
+        className={styles.minus}
+        onClick={() => setCarpool(carpool - 1)}
+        disabled={carpool === 1}
+        title='Diminuer le nombre de passager'>
         <MinusIcon />
       </button>
       <div className={styles.passager}>
         <Image src='/icons/passager.svg' alt='' width={18} height={24} />
         {carpool} {carpool === 1 ? 'passager' : 'passagers'}
       </div>
-      <button className={styles.plus} onClick={() => setCarpool(carpool + 1)} disabled={carpool === 4}>
+      <button
+        className={styles.plus}
+        onClick={() => setCarpool(carpool + 1)}
+        disabled={carpool === 4}
+        title='Augmenter le nombre de passager'>
         <PlusIcon />
       </button>
     </div>
