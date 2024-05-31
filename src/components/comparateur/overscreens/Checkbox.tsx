@@ -41,8 +41,9 @@ const Checkbox = ({
         }
         selectEquivalent(checked, equivalent)
       }}
+      labelClassName={styles.equivalentLabel}
       label={
-        <div className={styles.equivalentLabel}>
+        <>
           <div className={styles.equivalentName}>
             <div>
               {formatName(equivalent.name, 1, true)}{' '}
@@ -58,7 +59,7 @@ const Checkbox = ({
             )}
           </div>
           <EquivalentIcon height={2} equivalent={equivalent} />
-        </div>
+        </>
       }
     />
   )

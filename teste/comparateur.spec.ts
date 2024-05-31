@@ -26,7 +26,6 @@ test('Comparateur', async ({ page }) => {
   await expect(page.getByTestId('comparateur-ail-value')).toContainText('246')
   await expect(page.getByTestId('comparateur-ail-name')).toContainText("kg d'ail")
 
-  await page.getByText('10').nth(1).click()
   await expect(page.getByTestId('etiquette-value').nth(0)).toContainText('88.06')
   await expect(page.getByTestId('etiquette-abricot-value').nth(0)).toContainText('10')
   await expect(page.getByTestId('etiquette-abricot-name').nth(0)).toContainText("kg d'abricot")

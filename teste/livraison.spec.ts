@@ -17,6 +17,8 @@ test('Simulator livraison', async ({ page }) => {
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('10.2')
 
   await page.getByLabel('Oui', { exact: true }).check()
+  await expect(page.getByTestId('input-km-value')).not.toBeVisible()
+  await expect(page.getByTestId('text-select-km-type')).not.toBeVisible()
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('8.73')
 
   await page.getByLabel("Le point relais est t'il sur").getByLabel('Non').check()

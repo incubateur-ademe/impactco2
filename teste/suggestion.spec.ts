@@ -32,6 +32,7 @@ test('Send suggestion demands to api', async ({ page }) => {
   await test.step('Submit with incomplete data does not work', async () => {
     await page.getByTestId('suggestion-type-avis').click()
     await page.getByTestId('suggestion-text').fill('ce test envoit du lourd')
+    await page.getByTestId('suggestion-button').click()
 
     await expect(page.getByTestId('suggestion-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)
@@ -41,6 +42,7 @@ test('Send suggestion demands to api', async ({ page }) => {
   await test.step('Submit with incorrect data does not work', async () => {
     await page.getByTestId('input-email').fill('incorrect')
     await page.getByTestId('stars-avis-4').click()
+    await page.getByTestId('suggestion-button').click()
 
     await expect(page.getByTestId('suggestion-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)
@@ -48,6 +50,7 @@ test('Send suggestion demands to api', async ({ page }) => {
   })
   await test.step('Submit without acceptation does not work', async () => {
     await page.getByTestId('input-email').fill('test@valid.fr')
+    await page.getByTestId('suggestion-button').click()
 
     await expect(page.getByTestId('suggestion-form')).toBeVisible()
     await expect(page.getByTestId('form-result-success')).toHaveCount(0)

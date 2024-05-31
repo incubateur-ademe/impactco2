@@ -10,15 +10,6 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.goto('/transport/itineraire')
   })
 
-  await test.step('On clique sur le champ de départ, on rentre une première lettre, pas de suggestion affichée', async () => {
-    await page.getByLabel('Départ').click({ force: true })
-    await page.keyboard.type('n')
-
-    const suggestions = await getNbOfSuggestions(page)
-
-    expect(suggestions).toEqual(0)
-  })
-
   await test.step('Shares with no params', async () => {
     await page.getByTestId('header-share-button').click()
 
@@ -33,6 +24,15 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire&language=fr&km=10"></script>'
     )
     await page.getByTestId('cancel-button').click()
+  })
+
+  await test.step('On clique sur le champ de départ, on rentre une première lettre, pas de suggestion affichée', async () => {
+    await page.getByLabel('Départ').click({ force: true })
+    await page.keyboard.type('n')
+
+    const suggestions = await getNbOfSuggestions(page)
+
+    expect(suggestions).toEqual(0)
   })
 
   await test.step('On rentre une 2ème lettre, et une 3ème, il y a bien des suggestions qui apparaissent', async () => {

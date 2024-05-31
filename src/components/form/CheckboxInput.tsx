@@ -14,6 +14,7 @@ const CheckboxInput = ({
   label,
   children,
   className,
+  labelClassName,
   'data-testid': dataTestId,
   errors,
   ...inputProps
@@ -21,6 +22,7 @@ const CheckboxInput = ({
   id?: string
   checked: boolean
   className?: string
+  labelClassName?: string
   setChecked: (checked: boolean) => void
   label: ReactNode
   children?: ReactNode
@@ -42,7 +44,7 @@ const CheckboxInput = ({
             className={classNames(checked ? 'checked' : '', { [inputStyles.inputError]: error })}
             onChange={(e) => setChecked(e.target.checked)}
           />
-          <div>{label}</div>
+          <div className={labelClassName}>{label}</div>
           {checked && (
             <div className={styles.check}>
               <CheckIcon />
