@@ -4,6 +4,7 @@
 
 .equivalent {
   position: relative;
+  overflow: hidden;
 
   &:first-child {
     border-radius: calc(1rem - 2px) calc(1rem - 2px) 0 0;
