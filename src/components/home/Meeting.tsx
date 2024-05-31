@@ -16,6 +16,7 @@ import styles from './Meeting.module.css'
 const Meeting = ({ from }: { from: string }) => {
   const [email, setEmail] = useState('')
   const [accepted, setAccepted] = useState(false)
+  const [newsletter, setNewsletter] = useState(false)
 
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
@@ -31,6 +32,7 @@ const Meeting = ({ from }: { from: string }) => {
       type: 'contact',
       email,
       accepted,
+      newsletter,
       from,
       structure: 'Non renseigné',
     }
@@ -96,6 +98,14 @@ const Meeting = ({ from }: { from: string }) => {
             . *
           </>
         }
+      />
+      <CheckboxInput
+        id='newsletter'
+        errors={errors}
+        className={styles.checkbox}
+        checked={newsletter}
+        setChecked={(checked) => setNewsletter(checked)}
+        label="Je souhaite recevoir les communications sur les outils et actualités d'Impact CO₂"
       />
     </form>
   )

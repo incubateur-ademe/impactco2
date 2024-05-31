@@ -46,6 +46,10 @@ export async function POST(req: NextRequest) {
                 type: 'checkbox',
                 checkbox: inputs.data.accepted,
               },
+              Newsletter: {
+                type: 'checkbox',
+                checkbox: inputs.data.newsletter,
+              },
             },
           }
         : {
