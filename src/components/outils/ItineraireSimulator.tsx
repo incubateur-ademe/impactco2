@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useItineraries from 'hooks/useItineraries'
@@ -46,7 +45,7 @@ const ItineraireSimulator = () => {
         </div>
         Découvrez la quantité de CO₂e que vous émettez pour ce trajet
       </div>
-      {start && end && itineraries ? (
+      {start && end && itineraries && (
         <>
           <div className={shareableStyles.separatorBothBorders} />
           <CategorySimulator
@@ -60,10 +59,6 @@ const ItineraireSimulator = () => {
             type='distance'
           />
         </>
-      ) : (
-        <div className={styles.empty}>
-          <Image src='/images/tools-transport.svg' width={220} height={180} alt='' />
-        </div>
       )}
     </>
   )
