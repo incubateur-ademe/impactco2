@@ -19,13 +19,33 @@ const EquivalentItems = ({
 
   return (
     <>
-      <Round top={-66} right={-25} value={baseValue} />
-      <Round top={45} right={270} comparison={equivalent} value={baseValue} main />
-      <Round top={213} right={22} comparison={comparisons[0]} value={comparisons[0] ? baseValue : undefined} />
-      <Round top={333} right={269} comparison={comparisons[1]} value={comparisons[1] ? baseValue : undefined} />
-      <Round top={483} right={37} comparison={comparisons[2]} value={comparisons[2] ? baseValue : undefined} />
-      <Round top={613} right={321} comparison={comparisons[3]} value={comparisons[3] ? baseValue : undefined} />
-      <Round top={365} right={-222} comparison={comparisons[4]} value={comparisons[4] ? baseValue : undefined} />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'absolute',
+          top: '60px',
+          right: '280px',
+          gap: '1.25rem',
+        }}>
+        <Round comparison={equivalent} value={baseValue} main />
+        <Round comparison={comparisons[1]} value={comparisons[1] ? baseValue : undefined} />
+        <Round comparison={comparisons[3]} value={comparisons[3] ? baseValue : undefined} />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'absolute',
+          top: '-32px',
+          right: '80px',
+          gap: '1.25rem',
+        }}>
+        <Round value={baseValue} />
+        <Round comparison={comparisons[0]} value={comparisons[0] ? baseValue : undefined} />
+        <Round comparison={comparisons[2]} value={comparisons[2] ? baseValue : undefined} />
+        <Round comparison={comparisons[4]} value={comparisons[4] ? baseValue : undefined} />
+      </div>
     </>
   )
 }
