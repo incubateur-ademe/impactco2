@@ -3,10 +3,23 @@
     font-family: 'Marianne', Arial, sans-serif;
   }
 
+  :global(.notion-title) {
+    display: none;
+  }
+
+  :global(.notion-app) {
+    min-height: unset;
+  }
+
+  :global(.notion-page-scroller) {
+    min-height: unset;
+  }
+
   :global(.notion-page) {
     padding: 0;
     max-width: 40rem;
     width: 100%;
+    margin: 0 !important;
   }
 
   :global(.notion-title) {

@@ -20,7 +20,12 @@ const GuideUtilisationPage = async () => {
 
   return (
     <>
-      <Notion title={title} recordMap={recordMap} previous={{ link: '/doc', label: 'La doc' }} />
+      <Notion
+        title={title}
+        description="Suive le guide pour prendre en main les outils d'Impact CO₂"
+        recordMap={recordMap}
+        previous={{ link: '/doc', label: 'La doc' }}
+      />
       <Suggestion from={title} fromLabel={title} simulatorName="du guide d'utilisation" />
     </>
   )
