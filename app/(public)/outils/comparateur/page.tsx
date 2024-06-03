@@ -13,7 +13,6 @@ export async function generateMetadata({
 }: {
   searchParams: { [key: string]: string | string[] | undefined }
 }): Promise<Metadata> {
-  console.log(searchParams)
   return {
     title: 'Comparateur carbone | Impact CO₂',
     description:

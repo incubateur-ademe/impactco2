@@ -81,7 +81,6 @@ const Suggestion = () => {
         input.scrollIntoView({ behavior: 'smooth' })
         input.focus({ preventScroll: true })
       }
-      console.log(body.error.errors)
       setErrors(body.error)
     }
 
