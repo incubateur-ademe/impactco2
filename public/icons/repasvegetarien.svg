@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="flatten_icons" data-name="flatten icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112">
+<svg id="flatten_icons" data-name="flatten icons"
+  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112">
   <defs>
     <style>
       .cls-1 {
@@ -51,11 +52,11 @@
       }
     </style>
   </defs>
-  <g id="repas-végé">
+  <g id="repas-vege">
     <g id="area">
       <rect class="cls-1" x="0" width="112" height="112"/>
     </g>
-    <g id="repas-végé-2" data-name="repas-végé">
+    <g id="repas-vege-2" data-name="repas-vege">
       <path class="cls-11" d="m62.9,65.77c-27.41,0-48.88-9.05-48.88-20.61s21.47-20.61,48.88-20.61,48.88,9.05,48.88,20.61-21.47,20.61-48.88,20.61Zm0-37.23c-26.84,0-44.88,8.59-44.88,16.61s18.03,16.61,44.88,16.61,44.88-8.59,44.88-16.61-18.03-16.61-44.88-16.61Z"/>
       <g>
         <path class="cls-2" d="m109.77,48.45s1.72,44.73-46.88,44.73S16.02,48.45,16.02,48.45"/>

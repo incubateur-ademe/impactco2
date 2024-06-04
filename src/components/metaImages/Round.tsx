@@ -36,13 +36,17 @@ const Empty = ({ value, comparison, main }: { value?: number; comparison?: strin
         color: comparison ? '#3A3236' : '#0C5956',
         padding: '1.5rem 1rem 1rem 1rem',
       }}>
-      {equivalent && (
+      {equivalent && comparison && (
         <div
           style={{
             display: 'flex',
             marginBottom: '0.25rem',
           }}>
-          <img style={{ width: '3rem', height: '3rem' }} src={buildCurrentUrlFor(`/icons/${comparison}.svg`)} alt='' />
+          <img
+            style={{ width: '3rem', height: '3rem' }}
+            src={buildCurrentUrlFor(`/icons/${comparison.endsWith('courrier') ? 'avion' : comparison}.svg`)}
+            alt=''
+          />
         </div>
       )}
       {value && (
