@@ -8,7 +8,7 @@ import InfinityIcon from 'components/base/icons/infinity'
 
 const equivalents = values as Record<string, SimpleEquivalent>
 
-const Empty = ({ value, comparison, main }: { value?: number; comparison?: string; main?: boolean }) => {
+const Round = ({ value, comparison, main }: { value?: number; comparison?: string; main?: boolean }) => {
   const equivalent = comparison ? equivalents[comparison] : undefined
   const comparisonValue = value ? value / (equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1000) : 0
   const equivalentValue = Number.isFinite(comparisonValue) ? (
@@ -101,4 +101,4 @@ const Empty = ({ value, comparison, main }: { value?: number; comparison?: strin
   )
 }
 
-export default Empty
+export default Round
