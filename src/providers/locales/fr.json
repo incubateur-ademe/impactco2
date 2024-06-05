@@ -2,7 +2,7 @@
   "clipboard": {
     "copier": "Copier",
     "copie": "Copié",
-    "information-1": "Cette balise de code vous permet d'afficher le simulateur à l'intérieur d'une page de votre site internet.",
+    "information-1": "Cette balise HTML vous permet d'afficher le simulateur à l'intérieur d'une page de votre site internet.",
     "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
   },
   "overscreen": {
