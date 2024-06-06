@@ -41,7 +41,7 @@ const Outils = ({ faqs }: { faqs: FAQ[] }) => {
         description='Parcourir les fiches dédiées à l’impact carbone de plus de 150 objets et gestes courants.'>
         <Equivalents />
       </Block>
-      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Catalogue outils'))} footer='Outils' />
+      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Catalogue outils'))} page='Outils' />
     </>
   )
 }

@@ -48,7 +48,7 @@ const Home = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] }) => {
         linkLabel='Tous les exemples'
         examples={examples.filter((example) => example.tags.includes("Page d'accueil"))}
       />
-      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Accueil'))} footer='Accueil' />
+      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Accueil'))} page='Accueil' />
       <Block
         title='À découvrir'
         description="Vous souhaitez mobiliser votre communauté autour de l'empreinte carbone ?">

@@ -46,7 +46,7 @@ const ComparateurPage = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] 
         linkLabel='Tous les exemples'
         examples={examples.filter((example) => example.tags.includes('Comparateur carbone'))}
       />
-      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Comparateur carbone'))} footer='Comparateur carbone' />
+      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Comparateur carbone'))} page='Comparateur carbone' />
     </>
   )
 }

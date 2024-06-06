@@ -44,7 +44,7 @@ const CategoryPage = ({ category, examples, faqs }: { category: CategoryType; ex
         linkLabel='Tous les exemples'
         examples={examples.filter((example) => example.tags.includes(category.name))}
       />
-      <FAQs faqs={faqs.filter((faq) => faq.pages.includes(category.name))} footer={category.name} />
+      <FAQs faqs={faqs.filter((faq) => faq.pages.includes(category.name))} page={category.name} />
     </>
   )
 }

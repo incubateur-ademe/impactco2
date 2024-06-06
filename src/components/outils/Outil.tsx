@@ -60,7 +60,7 @@ const Outil = ({
           linkLabel='Tous les exemples'
           examples={examples.filter((example) => example.tags.includes(tool.title))}
         />
-        <FAQs faqs={faqs.filter((faq) => faq.pages.includes(tool.title))} footer={tool.title} />
+        <FAQs faqs={faqs.filter((faq) => faq.pages.includes(tool.title))} page={tool.title} />
       </TranslationProvider>
     </>
   )
