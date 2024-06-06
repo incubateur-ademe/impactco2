@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     description: category.description,
     openGraph: {
       creators: 'ADEME',
-      images: `meta/${category.slug}.png`,
+      images: `meta/${equivalent.slug}.png`,
     },
   }
 }
