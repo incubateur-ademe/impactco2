@@ -27,6 +27,7 @@ const PlanDuSitePage = () => {
           <Link href='/contenu/impact-carbone-hiver-station-ski'>
             4 conseils pour réduire l’impact carbone des séjours au ski
           </Link>
+          <Link href='/contenu/nouveau-site'>Refonte du site</Link>
         </div>
         <Link href='/doc'>La doc</Link>
         <div className={styles.row}>
