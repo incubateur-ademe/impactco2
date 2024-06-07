@@ -178,7 +178,7 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "tgv" |
                 "tgv-paris-berlin" |
                 "tgv-paris-marseille" |
-                "thé" |
+                "the" |
                 "tomate" |
                 "topinambour" |
                 "tramway" |

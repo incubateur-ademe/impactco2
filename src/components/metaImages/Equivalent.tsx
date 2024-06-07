@@ -37,18 +37,23 @@ const Equivalent = ({ slug, name, quantity, unit }: { slug: string; name: string
           <div
             style={{
               display: 'flex',
-              backgroundColor: '#E0F4F3',
-              alignItems: 'flex-end',
-              color: '#13706D',
-              gap: '1rem',
-              borderRadius: '0.5rem',
-              padding: '0 0.75rem',
-              height: '4rem',
-              lineHeight: '4rem',
-              marginTop: '1rem',
             }}>
-            <span>{value}</span>
-            <span style={{ fontSize: '2rem', lineHeight: '3rem' }}>{quantityUnit} CO₂e</span>
+            <div
+              style={{
+                display: 'flex',
+                backgroundColor: '#E0F4F3',
+                alignItems: 'flex-end',
+                color: '#13706D',
+                gap: '1rem',
+                borderRadius: '0.5rem',
+                padding: '0 0.75rem',
+                height: '4rem',
+                lineHeight: '4rem',
+                marginTop: '1rem',
+              }}>
+              <span>{value}</span>
+              <span style={{ fontSize: '2rem', lineHeight: '3rem' }}>{quantityUnit} CO₂e</span>
+            </div>
           </div>
           <span
             style={{
