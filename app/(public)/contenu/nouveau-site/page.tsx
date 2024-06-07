@@ -10,7 +10,7 @@ const title = 'Refonte du site'
 
 export const metadata: Metadata = {
   title: `${title} | Impact CO₂`,
-  description: 'Le nouveau site “Impact CO2” est en ligne !',
+  description: 'Découvrez le nouveau site “Impact CO2” de l’ADEME !',
   openGraph: {
     creators: 'ADEME',
     images: `${process.env.NEXT_PUBLIC_URL}/meta/main.png`,
