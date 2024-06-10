@@ -6,7 +6,7 @@ import Suggestion from 'components/layout/Suggestion'
 
 export const revalidate = getNotionRevalidate()
 
-const title = 'Refonte du site'
+const title = 'Le nouveau site “Impact CO2” est en ligne !'
 
 export const metadata: Metadata = {
   title: `${title} | Impact CO₂`,

@@ -26,7 +26,7 @@ const Outils = ({ faqs }: { faqs: FAQ[] }) => {
             {
               slug: 'osez-changer',
               title: 'Défi chaussures',
-              description: 'Compter vos chaussure et évaluer l’impact carbone de vos derniers achats',
+              description: 'Compter vos chaussures et évaluer l’impact carbone de vos derniers achats',
               linkLabel: 'Découvrir',
               link: '/outils/habillement#osez-changer',
             },
