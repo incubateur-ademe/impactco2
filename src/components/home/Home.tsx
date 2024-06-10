@@ -25,7 +25,7 @@ const Home = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] }) => {
       </Block>
       <Block title='Le bon format' description='Pour votre prochain article ou post, votre site ou appli.'>
         <div className={styles.miniCards}>
-          <MiniCard image='/images/home-iframe.svg' title='Un iframe' description='dans votre article' />
+          <MiniCard image='/images/home-iframe.svg' title='Un widget' description='dans votre article' />
           <MiniCard image='/images/home-image.svg' title='Une image' description='dans votre post' />
           <MiniCard image='/images/home-link.svg' title='Un lien' description='sur votre site web' />
           <MiniCard image='/images/home-api.svg' title='Une API' description='pour votre appli' />
