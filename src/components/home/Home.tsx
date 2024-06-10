@@ -56,7 +56,7 @@ const Home = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] }) => {
           horizontal
           slug='ngc'
           image='/images/ngc.png'
-          title='Nos gestes climat'
+          title='Nos Gestes Climat'
           description='Calculez votre empreinte carbone citoyenne et faites le bilan en équipe'
           linkLabel='Visitez le site'
           link='https://nosgestesclimat.fr/'
