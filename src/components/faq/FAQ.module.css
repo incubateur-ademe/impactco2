@@ -4,6 +4,14 @@
 
   :global(.notion) {
     font-family: 'Marianne', Arial, sans-serif;
+    font-size: 1rem;
+  }
+
+  :global(.notion-page-icon-inline) {
+    width: 1.5rem;
+    height: 1.5rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
   }
 
   :global(.notion-collection-page-properties) {

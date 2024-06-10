@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { Dispatch, ReactNode, SetStateAction, useMemo, useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import useScreenshot from 'hooks/useScreenshot'
@@ -38,11 +38,16 @@ const Shareable = ({
   noBottomBorders,
   small,
 }: ShareableProps) => {
+  const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
   const { theme } = useParamContext()
   const [overScreenInternal, setOverScreenInternal] = useState<OverScreenInfo | undefined>()
-  const onClose = () => (setOverScreen ? setOverScreen(undefined) : setOverScreenInternal(undefined))
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
+
+  const onClose = useCallback(
+    () => (setOverScreen ? setOverScreen(undefined) : setOverScreenInternal(undefined)),
+    [setOverScreen]
+  )
 
   const overScreenToDisplay = useMemo(() => {
     if (overScreens) {
@@ -50,6 +55,40 @@ const Shareable = ({
     }
     return overScreen
   }, [overScreens, overScreenInternal, overScreen])
+
+  useEffect(() => {
+    if (overScreenToDisplay && overscreenRef.current) {
+      const modalElement = overscreenRef.current
+      modalElement.focus()
+
+      //add any focusable HTML element you want to include to this string
+      const focusableElements = modalElement.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+      const firstElement = focusableElements[0]
+      const lastElement = focusableElements[focusableElements.length - 1]
+
+      const handleTabKeyPress = (event: KeyboardEvent) => {
+        console.log(event.key, document.activeElement)
+        if (event.key === 'Tab') {
+          if (event.shiftKey && document.activeElement === firstElement) {
+            event.preventDefault()
+            // @ts-expect-error: Focusable
+            lastElement.focus()
+          } else if (!event.shiftKey && document.activeElement === lastElement) {
+            event.preventDefault()
+            // @ts-expect-error: Focusable
+            firstElement.focus()
+          }
+        } else if (event.key === 'Escape') {
+          onClose()
+        }
+      }
+
+      modalElement.addEventListener('keydown', handleTabKeyPress)
+      return () => modalElement.removeEventListener('keydown', handleTabKeyPress)
+    }
+  }, [overscreenRef, overScreenToDisplay, onClose])
 
   return (
     <div
@@ -62,7 +101,12 @@ const Shareable = ({
       {overScreenToDisplay && (
         <>
           <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
-          <div className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
+          <dialog
+            ref={overscreenRef}
+            tabIndex={-1}
+            aria-modal
+            aria-label={t(overScreenToDisplay.title)}
+            className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
             {overScreenToDisplay.title && (
               <div>
                 <div className={styles.header}>
@@ -87,7 +131,7 @@ const Shareable = ({
                 </div>
               </div>
             )}
-          </div>
+          </dialog>
         </>
       )}
       <div className={secondary !== undefined ? styles.secondaryContainer : ''}>

@@ -8,7 +8,7 @@ import styles from './Example.module.css'
 import Tag from './Tag'
 
 const Example = ({ example, withTags }: { example: ExampleType; withTags?: boolean }) => {
-  const image = <img src={example.logo} alt='' className={styles.image} />
+  const image = <img src={example.logo} alt={`Logo de ${example.name}`} className={styles.image} />
 
   return withTags ? (
     <div className={styles.example}>
@@ -25,7 +25,7 @@ const Example = ({ example, withTags }: { example: ExampleType; withTags?: boole
       target='_blank'
       rel='noopener noreferrer'
       className={styles.link}
-      title={example.name}
+      title={`Lien externe : Aller voir l'exemple d'utilisation sur ${example.name}`}
       onClick={() => track('Exemple', example.name, example.links[0].href)}>
       {image}
     </Link>

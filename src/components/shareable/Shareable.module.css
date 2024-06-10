@@ -90,6 +90,8 @@
 
 .overScreen {
   position: absolute;
+  padding: unset;
+  border: none;
   bottom: 0;
   z-index: 2;
   background-color: var(--neutral-00);
@@ -102,6 +104,10 @@
 
   @media screen and (max-width: 29.875rem) {
     max-height: 100%;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 

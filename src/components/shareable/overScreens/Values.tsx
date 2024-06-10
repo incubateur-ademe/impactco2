@@ -16,7 +16,7 @@ import TransportShare from './TransportShare'
 import styles from './Values.module.css'
 
 export type OverScreenInfo = {
-  title?: ReactNode
+  title?: string
   image?: string
   children: ReactNode
   fullHeight?: boolean
