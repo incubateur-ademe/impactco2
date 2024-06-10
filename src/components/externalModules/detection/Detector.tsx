@@ -6,6 +6,28 @@ import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
 
+const defaultEquivalents = [
+  { max: 1000, equivalents: [['tgv'], ['eaudurobinet'], ['email']] },
+  {
+    max: 50000,
+    equivalents: [
+      ['friends', 'game-of-thrones'],
+      ['tgv-paris-berlin', 'tgv-paris-marseille'],
+      ['repasvegetarien', 'repasvegetalien'],
+      ['tomate', 'abricot', 'avocat'],
+    ],
+  },
+  {
+    min: 50000,
+    max: 500000,
+    equivalents: [
+      ['voiture-lille-nimes', 'voiturethermique'],
+      ['smartphone', 'tabletteclassique'],
+    ],
+  },
+  { min: 500000, equivalents: [['avion-pny'], ['francais'], ['ordinateurfixeparticulier', 'ordinateurportable']] },
+]
+
 export const regex =
   /([0-9]+(,|\.|\s|&nbsp;)*[0-9]*)(\s|&nbsp;)*(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)*(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)*(d'émissions\s|&nbsp;)?(de\s|&nbsp;)*(d(’|')équivalent\s|&nbsp;)?(eq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(eq|((\s|&nbsp;)*équivalent)|e)?/i
 
@@ -105,7 +127,7 @@ const Detector = ({ impact }: { impact: string }) => {
   }, [entry, observed])
 
   const [display, setDisplay] = useState('')
-  const [, forceUpdate] = useReducer((x) => x + 1, 0)
+  const [reload, forceUpdate] = useReducer((x) => x + 1, 0)
 
   const value = useMemo(() => {
     const values = regex.exec(impact)
@@ -114,6 +136,18 @@ const Detector = ({ impact }: { impact: string }) => {
     }
     return 0
   }, [impact])
+
+  const equivalents = useMemo(() => {
+    const equivalents = defaultEquivalents.find(
+      (equivalent) => (!equivalent.min || equivalent.min < value) && (!equivalent.max || equivalent.max >= value)
+    )
+
+    return !equivalents
+      ? []
+      : equivalents.equivalents
+          .sort(() => Math.random() - Math.random())
+          .map((equivalent) => equivalent[Math.floor(Math.random() * equivalent.length)])
+  }, [value])
 
   const onClick = useCallback(
     (event: MouseEvent<HTMLButtonElement>) => {
@@ -167,7 +201,7 @@ const Detector = ({ impact }: { impact: string }) => {
         ref={etiquetteRef}>
         <Logo value={value} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
         <div className={styles.simpleValue}>
-          <SimpleValue value={value} comparison='random' id='etiquette-value' />
+          <SimpleValue value={value} comparison={equivalents[reload] || 'random'} id='etiquette-value' />
         </div>
         <button
           className={styles.random}
