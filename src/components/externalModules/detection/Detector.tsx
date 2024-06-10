@@ -73,7 +73,7 @@ const getFactor = (unit: string) => {
 }
 
 export const getValue = (regexResult: string[]) =>
-  Number(regexResult[1].replaceAll(',', '.').replaceAll('&nbsp', '').replaceAll(/\s/g, '')) *
+  Number(regexResult[1].replaceAll(',', '.').replaceAll('&nbsp;', '').replaceAll(/\s/g, '')) *
   getFactor(regexResult[4]) *
   getUnitFactor(regexResult[12])
 
