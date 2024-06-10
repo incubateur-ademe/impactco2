@@ -124,6 +124,12 @@ export const categories: Category[] = [
       description: "Comparez l'impact écologique en CO₂e des fruits et légumes selon la saison",
     },
     equivalents: computedEquivalents('fruitsetlegumes', fruitsEtLegumes),
+    sources: [
+      {
+        label: 'Agribalyse 3.1.1 - Mise à jour le 10/08/2023',
+        href: 'https://agribalyse.ademe.fr/app',
+      },
+    ],
   },
   {
     id: 1,
@@ -251,6 +257,12 @@ export const categories: Category[] = [
       description:
         "Découvrez l'impact sur le climat de la consommation de nos boissons quotidiennes, de la fabrication à la consommation",
     },
+    sources: [
+      {
+        label: 'Agribalyse 3.1.1 - Mise à jour le 10/08/2023',
+        href: 'https://agribalyse.ademe.fr/app',
+      },
+    ],
     equivalents: computedEquivalents('boisson', boissons),
   },
 ]
