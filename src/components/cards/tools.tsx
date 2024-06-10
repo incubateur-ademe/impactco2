@@ -14,6 +14,12 @@ export const tools = [
     linkLabel: 'Essayer',
   },
   {
+    slug: 'fruitsetlegumes',
+    title: 'Fruits et légumes',
+    description: 'Découvrir les fruits et légumes de la saison et leur impact carbone',
+    linkLabel: 'Visualiser',
+  },
+  {
     slug: 'chauffage',
     title: 'Chauffage',
     description: 'Situer l’empreinte carbone des modes de chauffage',
@@ -36,12 +42,6 @@ export const tools = [
     title: 'Électroménager',
     description: 'Comparer l’impact carbone des appareils ménagers',
     linkLabel: 'Comparer',
-  },
-  {
-    slug: 'fruitsetlegumes',
-    title: 'Fruits et légumes',
-    description: 'Découvrir les fruits et légumes de la saison et leur impact carbone',
-    linkLabel: 'Visualiser',
   },
   {
     slug: 'habillement',

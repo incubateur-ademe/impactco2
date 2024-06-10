@@ -69,7 +69,6 @@ const Shareable = ({
       const lastElement = focusableElements[focusableElements.length - 1]
 
       const handleTabKeyPress = (event: KeyboardEvent) => {
-        console.log(event.key, document.activeElement)
         if (event.key === 'Tab') {
           if (event.shiftKey && document.activeElement === firstElement) {
             event.preventDefault()
