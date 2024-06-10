@@ -1,7 +1,6 @@
 .container {
   position: relative;
   border-radius: 0.5rem;
-  overflow: hidden;
   border: 2px solid var(--primary-30);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06) !important;
 }

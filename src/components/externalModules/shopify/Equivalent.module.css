@@ -3,7 +3,6 @@
   position: relative;
   font-size: initial !important;
   border-radius: 8px !important;
-  overflow: hidden;
   border: 2px solid var(--primary-30) !important;
   display: flex !important;
   width: fit-content !important;
@@ -19,6 +18,7 @@
 .top {
   display: flex !important;
   align-items: stretch !important;
+  border-radius: 6px 0 0 6px !important;
   gap: 0.75em !important;
   background-color: var(--primary-10) !important;
   color: var(--primary-70) !important;
@@ -29,6 +29,7 @@
 }
 
 .top {
+  border-radius: 6px 6px 0 0 !important;
   border-bottom: 2px solid var(--primary-30) !important;
 }
 
@@ -40,6 +41,7 @@
 .rightColumn,
 .right {
   position: relative !important;
+  border-radius: 0 6px 6px 0 !important;
   background-color: var(--neutral-00) !important;
   color: var(--neutral-50) !important;
 }
