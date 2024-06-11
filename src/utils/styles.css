@@ -361,6 +361,7 @@ input[type='number'] {
   max-width: 53rem;
   padding: 0 1.5rem;
   margin: auto;
+  background-color: transparent;
 
   @media screen and (max-width: 53rem) {
     padding: 0;
@@ -370,6 +371,10 @@ input[type='number'] {
   @media screen and (max-width: 29.875rem) {
     max-width: calc(100% - 2rem);
   }
+}
+
+.main-iframe {
+  margin: 2rem auto;
 }
 
 .blank {
