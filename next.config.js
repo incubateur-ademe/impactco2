@@ -56,7 +56,7 @@ const securityHeadersIFramable = [
   },
 ]
 
-const images = process.env.NEXT_PUBLIC_IMAGE_URL.startsWith('https')
+const images = process.env.NEXT_PUBLIC_IMAGE_URL?.startsWith('https')
   ? {
       protocol: 'https',
       hostname: process.env.NEXT_PUBLIC_IMAGE_URL.split('https://')[1],
