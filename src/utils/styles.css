@@ -373,10 +373,6 @@ input[type='number'] {
   }
 }
 
-.main-iframe {
-  margin: 2rem auto;
-}
-
 .blank {
   min-height: 100vh;
 }
