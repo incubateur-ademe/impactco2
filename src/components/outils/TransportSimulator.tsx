@@ -40,9 +40,15 @@ const TransportSimulator = () => {
     if (values.length === 0) {
       return true
     }
+
     if (values.includes(distance.value) && (values.includes(itineraire.value) || pathName.includes(itineraire.value))) {
       return true
     }
+
+    if (values.includes(itineraire.value) && !pathName.includes(itineraire.value)) {
+      setSelected('itineraire')
+    }
+
     return false
   }, [pathName, searchParams])
 
