@@ -2,24 +2,24 @@
   "livraison colis . commande en ligne": {
     "titre": "Processus de commande en ligne",
     "description": "Comprends l'impact de le construction des devices selon le temps de recherche sur le site du e-commerçant, \nmais également l'impact des données échangées durant le processus de commande (mails essentiellement).\n",
-    "note": "La catégorie du produit impacte le temps de recherche et donc l'empreinte de l'utilisation du device pour effectuer la recherche. \nNéanmoins, les différences se jouent au centième de grammes de CO2... On conserve donc la valeur de 5.4 gCO2e par commande.\n",
+    "note": "La catégorie du produit impacte le temps de recherche et donc l'empreinte de l'utilisation du device pour effectuer la recherche. \nNéanmoins, les différences se jouent au centième de grammes de CO₂... On conserve donc la valeur de 5.4 gCO₂e par commande.\n",
     "formule": 5.4,
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte production mix électrique": {
     "formule": 81,
-    "unité": "gCO2e / kWh",
+    "unité": "gCO₂e / kWh",
     "note": "Non identique à celui de NGC"
   },
   "livraison colis . empreinte production mix gaz": {
     "formule": 74,
-    "unité": "gCO2e / MJ",
+    "unité": "gCO₂e / MJ",
     "note": "Non identique à celui de NGC"
   },
   "livraison colis . empreinte production mix électrique chine": {
     "formule": 871.2,
-    "unité": "gCO2e / kWh",
-    "note": "FE issus de l'IEA, correspond à priori au FE de production de mix électrique (issu de l'étude \"usage numérique\")\nPour l'Europe, on est à 410.4 gCO2e/kWh\n"
+    "unité": "gCO₂e / kWh",
+    "note": "FE issus de l'IEA, correspond à priori au FE de production de mix électrique (issu de l'étude \"usage numérique\")\nPour l'Europe, on est à 410.4 gCO₂e/kWh\n"
   },
   "livraison colis . déplacement consommateur": {
     "formule": {
@@ -127,8 +127,8 @@
         }
       ]
     },
-    "unité": "gCO2e/km",
-    "note": "Base carbone: \n  - Voiture/Motorisation moyenne/2018 : 0.216 gCO2e/km\n  - Voiture particulière/Coeur de gamme - Véhicule compact/Hybride, mild, essence : 232 gCO2e/km\n  - Voiture particulière/Coeur de gamme - Véhicule compact/Electrique : 103 gCO2e/km\n  - Voiture moyenne/Mixte/2018 : 144 gCO2e/km\n"
+    "unité": "gCO₂e/km",
+    "note": "Base carbone: \n  - Voiture/Motorisation moyenne/2018 : 0.216 gCO₂e/km\n  - Voiture particulière/Coeur de gamme - Véhicule compact/Hybride, mild, essence : 232 gCO₂e/km\n  - Voiture particulière/Coeur de gamme - Véhicule compact/Electrique : 103 gCO₂e/km\n  - Voiture moyenne/Mixte/2018 : 144 gCO₂e/km\n"
   },
   "livraison colis . déplacement consommateur . moto": {
     "formule": "usage"
@@ -165,8 +165,8 @@
     "formule": {
       "moyenne": [191, 76.3]
     },
-    "unité": "gCO2e/km",
-    "note": "Base carbone: \nMoyenne entre Moto > 250 cm3/Mixte/2018 : 191 gCO2e/km et Cyclomoteur/Mixte/2018 : 76.3 gCO2e/km.\n"
+    "unité": "gCO₂e/km",
+    "note": "Base carbone: \nMoyenne entre Moto > 250 cm3/Mixte/2018 : 191 gCO₂e/km et Cyclomoteur/Mixte/2018 : 76.3 gCO₂e/km.\n"
   },
   "livraison colis . déplacement consommateur . commun": {
     "formule": "usage"
@@ -201,8 +201,8 @@
   },
   "livraison colis . déplacement consommateur . commun . usage . empreinte": {
     "formule": 113,
-    "unité": "gCO2e/km",
-    "note": "Base carbone: Autobus/Gazole: 113 gCO2e/km\n"
+    "unité": "gCO₂e/km",
+    "note": "Base carbone: Autobus/Gazole: 113 gCO₂e/km\n"
   },
   "livraison colis . déplacement consommateur . marche": {
     "formule": 0
@@ -297,8 +297,8 @@
   },
   "livraison colis . déplacement consommateur . petit véhicule électrique . usage . empreinte": {
     "formule": 10.9,
-    "unité": "gCO2e/km",
-    "note": "Base carbone: Vélo/à assistance électrique: 10.9 gCO2e/km\n"
+    "unité": "gCO₂e/km",
+    "note": "Base carbone: Vélo/à assistance électrique: 10.9 gCO₂e/km\n"
   },
   "livraison colis . emballage": {
     "titre": "Emballage du colis",
@@ -307,8 +307,8 @@
   },
   "livraison colis . empreinte carton": {
     "formule": 1.29,
-    "unité": "gCO2e/g",
-    "note": "Etrange, dans la base carbone, on a \"Caisses en carton ondulé\" 1.17 kgCO2e/kg."
+    "unité": "gCO₂e/g",
+    "note": "Etrange, dans la base carbone, on a \"Caisses en carton ondulé\" 1.17 kgCO₂e/kg."
   },
   "livraison colis . emballage . poids emballage": {
     "formule": "surface * densité",
@@ -438,7 +438,7 @@
   },
   "livraison colis . empreinte entrepot . infrastructures": {
     "formule": "part entrepot par colis * empreinte entrepot",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte entrepot . infrastructures . part entrepot par colis": {
     "formule": "1 / nombre de colis par m2"
@@ -449,11 +449,11 @@
   "livraison colis . empreinte entrepot . infrastructures . empreinte entrepot": {
     "titre": "Empreinte construction et démolition entrepôt",
     "formule": 12515.52451,
-    "unité": "gCO2e/m2/an"
+    "unité": "gCO₂e/m2/an"
   },
   "livraison colis . empreinte entrepot . électricité": {
     "formule": "(consommation entrepot par jour / empreinte entrepot . nombre de colis par m2) * nombre de jours de stockage * empreinte production mix électrique",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte entrepot . électricité . consommation entrepot par jour": {
     "formule": 0.12,
@@ -462,7 +462,7 @@
   },
   "livraison colis . empreinte entrepot . gaz": {
     "formule": "(consommation entrepot par jour / empreinte entrepot . nombre de colis par m2) * nombre de jours de stockage * empreinte production mix gaz",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte entrepot . gaz . consommation entrepot par jour": {
     "formule": "82.8 / 365",
@@ -528,7 +528,7 @@
       }
     },
     "par défaut": "'domicile'",
-    "description": "La livraison à domicile semble être le mode de livraison plébiscité par la grande majorité des e-acheteurs (données issues de [cette étude FEVAD 2022](https://www.fevad.com/wp-content/uploads/2022/06/FEVAD_CHIFFRES-CLES_2022_compressed.pdf)!\n\n![](https://github.com/datagir/impactco2/assets/55186402/ec002892-8912-4690-a6b6-90ca2bd53e2a)\n"
+    "description": "La livraison à domicile semble être le mode de livraison plébiscité par la grande majorité des e-acheteurs (données issues de [cette étude FEVAD 2022](https://www.fevad.com/wp-content/uploads/2022/06/FEVAD_CHIFFRES-CLES_2022_compressed.pdf)!\n\n![](https://github.com/datagir/impactco₂/assets/55186402/ec002892-8912-4690-a6b6-90ca2bd53e2a)\n"
   },
   "livraison colis . scénario . domicile": {
     "titre": "Livraison à domicile",
@@ -602,7 +602,7 @@
       }
     },
     "par défaut": "'habillement'",
-    "description": "Les produits d'habillement semblent être les plus achetés en ligne (données issues de [cette étude FEVAD 2022](https://www.fevad.com/wp-content/uploads/2022/06/FEVAD_CHIFFRES-CLES_2022_compressed.pdf)!\n\n![](https://github.com/datagir/impactco2/assets/55186402/06161a2d-6314-406d-b6f5-971f7e75fbae)\n",
+    "description": "Les produits d'habillement semblent être les plus achetés en ligne (données issues de [cette étude FEVAD 2022](https://www.fevad.com/wp-content/uploads/2022/06/FEVAD_CHIFFRES-CLES_2022_compressed.pdf)!\n\n![](https://github.com/datagir/impactco₂/assets/55186402/06161a2d-6314-406d-b6f5-971f7e75fbae)\n",
     "note": "La catégorie de produit impacte : le volume, le poids, le temps passé sur le site de commande, la durée de stockage dans l'entrepôt et le PDV.\n"
   },
   "livraison colis . informations . volume": {
@@ -712,7 +712,7 @@
   },
   "livraison colis . magasin . infrastructures": {
     "formule": "part magasin par article * empreinte magasin",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . magasin . infrastructures . part magasin par article": {
     "formule": "taille * (facteur multiplication volume * (informations . volume / 1000000) * (nombre de jours de stockage / 7) / (capacité stockage * durée de vie))"
@@ -720,7 +720,7 @@
   "livraison colis . magasin . infrastructures . empreinte magasin": {
     "titre": "Empreinte construction et démolition magasin traditionnel",
     "formule": 2500,
-    "unité": "gCO2e/m2/an"
+    "unité": "gCO₂e/m2/an"
   },
   "livraison colis . magasin . consommation énergie totale par an": {
     "formule": {
@@ -747,7 +747,7 @@
   },
   "livraison colis . magasin . électricité": {
     "formule": "empreinte production mix électrique * ((consommation électrcité par an * taille) / (capacité stockage / (facteur multiplication volume * (informations . volume / 1000000) * (nombre de jours de stockage / 7))))",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . magasin . électricité . part consommation": {
     "formule": 0.82
@@ -757,7 +757,7 @@
   },
   "livraison colis . magasin . gaz": {
     "formule": "empreinte production mix gaz * ((consommation gaz par an * taille) / (capacité stockage / (facteur multiplication volume * (informations . volume / 1000000) * (nombre de jours de stockage / 7))))",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . magasin . gaz . part consommation": {
     "formule": 0.18
@@ -884,7 +884,7 @@
   },
   "livraison colis . empreinte plateforme . infrastructures": {
     "formule": "part de plateforme par colis * empreinte entrepot",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte plateforme . infrastructures . part de plateforme par colis": {
     "formule": "1 / nombre de colis par m2"
@@ -895,11 +895,11 @@
   "livraison colis . empreinte plateforme . infrastructures . empreinte entrepot": {
     "titre": "Empreinte construction et démolition entrepôt",
     "formule": 12515.52451,
-    "unité": "gCO2e/m2/an"
+    "unité": "gCO₂e/m2/an"
   },
   "livraison colis . empreinte plateforme . électricité": {
     "formule": "((consommation plateforme par jour * taille) / nombre de colis par jour) * nombre de jours de stockage * empreinte production mix électrique",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte plateforme . électricité . consommation plateforme par jour": {
     "formule": 0.12,
@@ -908,7 +908,7 @@
   },
   "livraison colis . empreinte plateforme . gaz": {
     "formule": "((consommation plateforme par jour * taille) / nombre de colis par jour) * nombre de jours de stockage * empreinte production mix gaz",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte plateforme . gaz . consommation plateforme par jour": {
     "formule": "82.8 / 365",
@@ -949,7 +949,7 @@
   },
   "livraison colis . empreinte point de retrait . infrastructures": {
     "formule": "part point de retrait par colis * empreinte magasin",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte point de retrait . infrastructures . part point de retrait par colis": {
     "formule": "1 / nombre de colis par m2"
@@ -960,11 +960,11 @@
   "livraison colis . empreinte point de retrait . infrastructures . empreinte magasin": {
     "titre": "Empreinte construction et démolition magasin traditionnel",
     "formule": 2500,
-    "unité": "gCO2e/m2/an"
+    "unité": "gCO₂e/m2/an"
   },
   "livraison colis . empreinte point de retrait . électricité": {
     "formule": "(consommation point de retrait par jour / empreinte point de retrait . nombre de colis par m2) * nombre de jours de stockage * empreinte production mix électrique",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte point de retrait . électricité . consommation point de retrait par jour": {
     "formule": 0.74,
@@ -973,7 +973,7 @@
   },
   "livraison colis . empreinte point de retrait . gaz": {
     "formule": "(consommation point de retrait par jour / empreinte point de retrait . nombre de colis par m2) * nombre de jours de stockage * empreinte production mix gaz",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . empreinte point de retrait . gaz . consommation point de retrait par jour": {
     "formule": "82.8 / 365",
@@ -1164,11 +1164,11 @@
   },
   "livraison colis . transport inter plateformes . routier . route": {
     "formule": "empreinte * tonnes km",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport inter plateformes . routier . route . empreinte": {
     "formule": 5.6,
-    "unité": "gCO2e / tonnes.km",
+    "unité": "gCO₂e / tonnes.km",
     "note": "Source ECEL"
   },
   "livraison colis . transport inter plateformes . routier . route . tonnes km": {
@@ -1177,7 +1177,7 @@
   },
   "livraison colis . transport inter plateformes . routier . fabrication véhicule": {
     "formule": "empreinte * tonnes km",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport inter plateformes . routier . fabrication véhicule . empreinte": {
     "formule": {
@@ -1192,7 +1192,7 @@
         }
       ]
     },
-    "unité": "gCO2e / tonnes.km"
+    "unité": "gCO₂e / tonnes.km"
   },
   "livraison colis . transport inter plateformes . routier . fabrication véhicule . tonnes km": {
     "formule": "distance * véhicule . chargement moyen * livraison colis . informations . poids / 1000",
@@ -1201,7 +1201,7 @@
   },
   "livraison colis . transport inter plateformes . routier . usage véhicule": {
     "formule": "(livraison colis . informations . poids / 1000) * empreinte * distance . distance totale / véhicule . chargement moyen",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport inter plateformes . routier . usage véhicule . empreinte": {
     "formule": {
@@ -1213,11 +1213,11 @@
         }
       }
     },
-    "unité": "gCO2e / tonnes.km"
+    "unité": "gCO₂e / tonnes.km"
   },
   "livraison colis . transport inter plateformes . aérien": {
     "formule": "tonnes km * empreinte",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport inter plateformes . aérien . distance": {
     "question": "Quelle est la distance parcourue entre les plateformes, entrepôts de stockage ?",
@@ -1240,7 +1240,7 @@
         }
       ]
     },
-    "unité": "gCO2e / tonnes.km",
+    "unité": "gCO₂e / tonnes.km",
     "note": "traînées de condensation non prises en compte"
   },
   "livraison colis . transport inter plateformes . aérien . tonnes km": {
@@ -1249,7 +1249,7 @@
   },
   "livraison colis . transport inter plateformes . ferroviaire": {
     "formule": "tonnes km * empreinte",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport inter plateformes . ferroviaire . distance": {
     "question": "Quelle est la distance parcourue entre les plateformes, entrepôts de stockage ?",
@@ -1258,7 +1258,7 @@
   },
   "livraison colis . transport inter plateformes . ferroviaire . empreinte": {
     "formule": 30,
-    "unité": "gCO2e / tonnes.km",
+    "unité": "gCO₂e / tonnes.km",
     "note": "On considère le FE \"Europe\""
   },
   "livraison colis . transport inter plateformes . ferroviaire . tonnes km": {
@@ -1267,7 +1267,7 @@
   },
   "livraison colis . transport inter plateformes . maritime": {
     "formule": "tonnes km * empreinte",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport inter plateformes . maritime . distance": {
     "question": "Quelle est la distance parcourue entre les plateformes, entrepôts de stockage ?",
@@ -1276,7 +1276,7 @@
   },
   "livraison colis . transport inter plateformes . maritime . empreinte": {
     "formule": 48,
-    "unité": "gCO2e / tonnes.km",
+    "unité": "gCO₂e / tonnes.km",
     "note": "On considère le FE \"Europe\""
   },
   "livraison colis . transport inter plateformes . maritime . tonnes km": {
@@ -1346,11 +1346,11 @@
   },
   "livraison colis . transport livraison . route": {
     "formule": "empreinte * tonnes km",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport livraison . route . empreinte": {
     "formule": 5.6,
-    "unité": "gCO2e / tonnes.km",
+    "unité": "gCO₂e / tonnes.km",
     "note": "Source ECEL"
   },
   "livraison colis . transport livraison . route . tonnes km": {
@@ -1359,7 +1359,7 @@
   },
   "livraison colis . transport livraison . fabrication véhicule": {
     "formule": "empreinte * tonnes km",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport livraison . fabrication véhicule . empreinte": {
     "formule": {
@@ -1374,7 +1374,7 @@
         }
       ]
     },
-    "unité": "gCO2e / tonnes.km",
+    "unité": "gCO₂e / tonnes.km",
     "note": "Source ECEL (VUL par défaut)"
   },
   "livraison colis . transport livraison . fabrication véhicule . tonnes km": {
@@ -1384,7 +1384,7 @@
   },
   "livraison colis . transport livraison . usage véhicule": {
     "formule": "(livraison colis . informations . poids / 1000) * empreinte * distance . distance totale / véhicule . chargement moyen",
-    "unité": "gCO2e"
+    "unité": "gCO₂e"
   },
   "livraison colis . transport livraison . usage véhicule . empreinte": {
     "formule": {
@@ -1396,7 +1396,7 @@
         }
       }
     },
-    "unité": "gCO2e / tonnes.km",
+    "unité": "gCO₂e / tonnes.km",
     "note": "Source ECEL"
   }
 }

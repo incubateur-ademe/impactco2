@@ -4,7 +4,7 @@ import { Address } from 'types/address'
 
 const layers = ['city', 'street', 'house']
 
-export const searchAddress = (search: string, limit?: number) =>
+export const searchAddress = async (search: string, limit?: number) =>
   axios
     .get<{
       features: Address[]

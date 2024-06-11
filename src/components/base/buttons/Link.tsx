@@ -1,45 +1,34 @@
-import { LinkProps } from 'next/link'
+import classNames from 'classnames'
+import NextLink, { LinkProps } from 'next/link'
 import React, { AnchorHTMLAttributes } from 'react'
 import NewTabIcon from '../NewTabIcon'
-import { ButtonLink } from './Button.styles'
-import { StyledLink } from './Link.styles'
-import { Priority } from './priority'
+import buttonStyles from './Button.module.css'
+import linkStyles from './Link.module.css'
 
 const Link = ({
   asButton,
   internal,
-  priority,
   noIcon,
   children,
-  size,
+  className,
   ...rest
 }: {
   asButton?: boolean
   size?: 'sm' | 'lg'
   internal?: boolean
-  priority?: Priority
   noIcon?: boolean
 } & LinkProps &
   AnchorHTMLAttributes<HTMLAnchorElement>) => {
   const external = !internal && (rest.href.includes(':') || rest.href.includes('.') || rest.href.includes('#'))
-  return asButton ? (
-    <ButtonLink
-      $size={size}
-      $priority={priority}
+  return (
+    <NextLink
+      className={classNames(asButton ? buttonStyles.button : linkStyles.link, className)}
       target={external ? '_blank' : '_self'}
       rel={external ? 'noreferrer noopener' : undefined}
       {...rest}>
       {children}
-    </ButtonLink>
-  ) : (
-    <StyledLink
-      $priority={priority}
-      target={external ? '_blank' : '_self'}
-      rel={external ? 'noreferrer noopener' : undefined}
-      {...rest}>
-      {children}
-      {!noIcon && external && <NewTabIcon />}
-    </StyledLink>
+      {!noIcon && !asButton && external && <NewTabIcon />}
+    </NextLink>
   )
 }
 

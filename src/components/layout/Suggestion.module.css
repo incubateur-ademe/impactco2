@@ -1,0 +1,32 @@
+.container {
+  margin-top: 7.5rem;
+  padding: 5rem 0 7.625rem 0;
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid var(--primary-30);
+  border-bottom: 2px solid var(--primary-30);
+  background: var(--primary-20);
+}
+
+.card {
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid var(--primary-30);
+  background: var(--neutral-00);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+  color: var(--neutral-50);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem 1rem;
+  padding: 2.5rem;
+
+  a {
+    min-width: 213px;
+  }
+
+  @media screen and (max-width: 48rem) {
+    flex-direction: column;
+    text-align: center;
+  }
+}

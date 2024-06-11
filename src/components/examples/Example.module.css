@@ -1,0 +1,52 @@
+.link,
+.example {
+  flex: 1;
+  min-width: calc((100% - 1.5rem) / 3);
+  max-width: calc((100% - 1.5rem) / 3);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--neutral-20);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+
+  @media only screen and (max-width: 53rem) {
+    min-width: calc((100% - 0.75rem) / 2);
+    max-width: calc((100% - 0.75rem) / 2);
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.link {
+  &:hover {
+    border-color: var(--primary-30);
+  }
+
+  &:active {
+    border-color: var(--neutral-30);
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}

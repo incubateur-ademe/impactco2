@@ -1,7 +1,9 @@
+'use client'
+
 import { toJpeg, toPng } from 'html-to-image'
 import { useEffect, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
-import useTheme from 'components/layout/Theme'
+import useTheme from 'components/layout/UseTheme'
 
 export default function useScreenshot(slug: string, tracking: string, format: string = 'png') {
   const ref = useRef<HTMLDivElement>(null)
@@ -15,9 +17,6 @@ export default function useScreenshot(slug: string, tracking: string, format: st
       transformFn(ref.current, {
         cacheBust: true,
         backgroundColor: theme === 'night' ? 'black' : 'white', // variables CSS non disponibles au moment du screenshot
-        filter: (node) => {
-          return !node.className || !node.className.includes ? true : !node.className?.includes('noscreenshot')
-        },
       })
         .then((dataUrl) => {
           const link = document.createElement('a')

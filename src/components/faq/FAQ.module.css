@@ -1,0 +1,103 @@
+.faq {
+  padding: 1.25rem 0;
+  border-bottom: 2px solid var(--neutral-20);
+
+  :global(.notion) {
+    font-family: 'Marianne', Arial, sans-serif;
+    font-size: 1rem;
+  }
+
+  :global(.notion-page-icon-inline) {
+    width: 1.5rem;
+    height: 1.5rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+  }
+
+  :global(.notion-collection-page-properties) {
+    display: none;
+  }
+
+  :global(.notion-link) {
+    color: var(--primary-50);
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    opacity: 1;
+
+    &:hover {
+      color: var(--primary-70);
+    }
+
+    &:focus {
+      color: var(--primary-80);
+      outline: 3px solid var(--primary-40);
+      outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:disabled {
+      color: var(--neutral-30);
+    }
+  }
+
+  :global(.notion-page) {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.button {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--primary-30);
+  color: var(--primary-50);
+}
+
+.openButton {
+  transform: rotate(45deg);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background-color: var(--neutral-00);
+  cursor: pointer;
+  color: var(--neutral-80);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-align: left;
+
+  &:hover {
+    .button {
+      border: 2px solid var(--primary-40);
+      background-color: var(--primary-10);
+    }
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+.content {
+  margin: 1.25rem 0 1.75rem 0;
+}

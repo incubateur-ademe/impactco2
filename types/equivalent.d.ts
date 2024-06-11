@@ -1,24 +1,16 @@
 type BaseEquivalent = {
+  id?: string | number
   name: string
   slug: string
-  emoji?: string
   category: number
-  default: boolean
-  tile: boolean
-  meta: {
-    title: string
-    description: string
-  }
-
-  id?: string | number
-  secondEmoji?: string
+  default?: boolean
   include?: { pre: string; post?: string; postNewLine?: string }
   source?: string
   prefix?: string
   suffix?: string
   subtitle?: string
   synonyms?: string[]
-  hypothesis?: string
+  carpool?: number
   percentage?: boolean
   unit?: string
   data?: {
@@ -58,7 +50,6 @@ export type DeplacementType = 'car' | 'foot' | 'rail' | 'plane'
 export type DeplacementEquivalent = BaseEquivalent & {
   id: number
   type: string
-  carpool?: boolean
   total?: number
   ecv?: EquivalentValue[]
   ecvs?: {
@@ -119,6 +110,5 @@ export type Language = 'en' | 'fr' | 'de' | 'es'
 export type SimpleEquivalent = {
   percentage?: boolean
   value: number
-  emoji?: string
   category: number
 } & Record<Language, string>

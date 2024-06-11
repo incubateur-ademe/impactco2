@@ -1,0 +1,377 @@
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-Light.woff2') format('woff2'),
+    url('/fonts/Marianne-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-Light_Italic.woff2') format('woff2'),
+    url('/fonts/Marianne-Light_Italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-Regular.woff2') format('woff2'),
+    url('/fonts/Marianne-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-Regular_Italic.woff2') format('woff2'),
+    url('/fonts/Marianne-Regular_Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-Medium.woff2') format('woff2'),
+    url('/fonts/Marianne-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-Medium_Italic.woff2') format('woff2'),
+    url('/fonts/Marianne-Medium_Italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-Bold.woff2') format('woff2'),
+    url('/fonts/Marianne-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-Bold_Italic.woff2') format('woff2'),
+    url('/fonts/Marianne-Bold_Italic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-ExtraBold.woff2') format('woff2'),
+    url('/fonts/Marianne-ExtraBold.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne';
+  src:
+    url('/fonts/Marianne-ExtraBold_Italic.woff2') format('woff2'),
+    url('/fonts/Marianne-ExtraBold_Italic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+u,
+i,
+input,
+select,
+button,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Marianne', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  margin-top: 0;
+  box-sizing: inherit;
+}
+
+#__next {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  background-color: var(--neutral-00);
+  color: var(--neutral-70);
+  -webkit-font-smoothing: antialiased;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.title-h1,
+h1 {
+  color: var(--neutral-100);
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  font-weight: 800;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
+}
+
+.title-h2,
+h2 {
+  font-weight: 700;
+  color: var(--neutral-80);
+  font-size: 2rem;
+  line-height: 2.75rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+}
+
+.title-h3,
+h3 {
+  color: var(--neutral-80);
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+
+.title-h4,
+h4 {
+  color: var(--neutral-80);
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.title-h5,
+h5 {
+  color: var(--neutral-80);
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+}
+
+.title-h6,
+h6 {
+  color: var(--neutral-80);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+a {
+  color: var(--primary-50);
+}
+
+option {
+  color: #383838;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.text-secondary {
+  color: var(--primary-50);
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 53rem;
+  padding: 0 1.5rem;
+  margin: auto;
+
+  @media screen and (max-width: 53rem) {
+    padding: 0;
+    max-width: calc(100% - 3rem);
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    max-width: calc(100% - 2rem);
+  }
+}
+
+.blank {
+  min-height: 100vh;
+}

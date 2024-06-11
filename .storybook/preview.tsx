@@ -1,10 +1,9 @@
 import { Preview } from '@storybook/react'
 import React, { useEffect } from 'react'
 import { useDarkMode } from 'storybook-dark-mode'
-import '../src/utils/fonts.css'
-import { GlobalStyle } from '../src/utils/styles'
+import '../src/utils/styles.css'
 import '../src/utils/variables.css'
-import useTheme from '../src/components/layout/Theme'
+import useTheme from '../src/components/layout/UseTheme'
 
 const preview: Preview = {
   parameters: {
@@ -35,12 +34,7 @@ export const decorators = [
       }
     }, [defaultTheme])
 
-    return (
-      <>
-        <GlobalStyle />
-        {story()}
-      </>
-    )
+    return story()
   },
 ]
 

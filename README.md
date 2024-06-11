@@ -1,6 +1,6 @@
-# Impact CO<sub>2</sub>
+# Impact CO₂
 
-Application web sous Next.js permettant de comparer la consommation en CO<sub>2</sub>e de divers équivalents.
+Application web sous Next.js permettant de comparer la consommation en CO₂e de divers équivalents.
 
 [https://impactco2.fr](https://impactco2.fr/)
 
@@ -22,8 +22,7 @@ Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en 
 
 - `yarn dev` lance le serveur web local
 
-- `yarn testa:local` lance les tests de l'API en continu (avec Jest et msw)
-- `yarn testc:local` lance les tests des composants front en continu (avec Jest)
+- `yarn testa:local` lance les tests de l'API en continu (avec Jest)
 - `yarn testu:local` lance les tests unitaires en continu (avec Jest)
 - `yarn teste:local` lance les tests de bout en bout ("end-to-end") en continu (avec Playwright)
 
@@ -90,7 +89,7 @@ Pour mettre à jour ce fichier,
 
 ## Architecture 🏛️
 
-Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/), [React Query](https://tanstack.com/query/v4) et [Styled Components](https://styled-components.com/). Le state est simplement géré par [Context](https://react.dev/learn/passing-data-deeply-with-context).
+Le projet utilise React avec (entre autre) [Nextjs](https://nextjs.org/) et [React Query](https://tanstack.com/query/v4). Le state est simplement géré par [Context](https://react.dev/learn/passing-data-deeply-with-context).
 
 Le repo est architecturé avec les dossiers suivants :
 
@@ -121,7 +120,6 @@ L'intérieur de ce fichier est structuré comme suit :
 
 - Import de librairie externes (React, Styled Components, etc.)
 - Import de librairie interne (d'autres composants que l'on a créé)
-- Déclaration des Styled-Components, par ordre d'apparition dans le composant
 - Déclaration et export du composant
 
 Les fonctions appelées dans le jsx ne sont pas nommées, afin de simplifier la lecture. On essaie de maintenir les fichiers de composants bien en dessous de 100 lignes

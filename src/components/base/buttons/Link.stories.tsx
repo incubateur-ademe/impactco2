@@ -15,14 +15,6 @@ export const Default: Story = {
   },
 }
 
-export const Secondary: Story = {
-  args: {
-    children: 'em wolloF',
-    href: '/',
-    priority: 'secondary',
-  },
-}
-
 export const External: Story = {
   args: {
     children: 'Follow me somewhere else',
@@ -35,23 +27,5 @@ export const Button: Story = {
     children: 'Click me',
     href: '#',
     asButton: true,
-  },
-}
-
-export const SmallButton: Story = {
-  args: {
-    children: 'Quietly click me',
-    href: '#',
-    asButton: true,
-    size: 'sm',
-  },
-}
-
-export const LargeButton: Story = {
-  args: {
-    children: 'Hard click me',
-    href: '#',
-    asButton: true,
-    size: 'lg',
   },
 }

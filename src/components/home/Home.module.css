@@ -1,0 +1,28 @@
+.title {
+  margin-bottom: 4rem;
+  font-weight: 800;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
+}
+
+.link {
+  width: 100%;
+  font-weight: 500;
+  margin-top: 1.25rem;
+
+  a {
+    justify-content: flex-end;
+  }
+}
+
+.miniCards {
+  display: flex;
+  gap: 1.25rem 0.75rem;
+
+  @media screen and (max-width: 29.875rem) {
+    flex-wrap: wrap;
+  }
+}

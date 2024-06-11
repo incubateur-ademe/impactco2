@@ -1,0 +1,31 @@
+.menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(calc(100% + 2px));
+  width: 100%;
+  background-color: var(--neutral-00);
+  padding: 0.75rem 1.5rem;
+  z-index: 1;
+  border-bottom: 2px solid var(--neutral-20);
+
+  visibility: hidden;
+  display: none;
+
+  div {
+    padding: 0.25rem 0;
+
+    a {
+      margin: 0 -0.75rem;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 2px solid var(--neutral-20);
+    }
+  }
+}
+
+.open {
+  visibility: visible;
+  display: block;
+}

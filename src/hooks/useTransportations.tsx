@@ -1,16 +1,15 @@
 import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
-import equivalents from 'data/categories/deplacement.json'
+import { deplacements } from 'data/categories/deplacement'
 import { computeECV } from 'utils/computeECV'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
 import { filterByDistance } from 'utils/transport'
-import useParamContext from 'components/providers/ParamProvider'
-import Carpool from 'components/transport/Carpool'
 
 // C'est un peu austère, déso
 export default function useTransportations(
@@ -25,16 +24,12 @@ export default function useTransportations(
     const { km } = params.distance
     const { displayAll, carpool } = params[type]
     return itineraries || km
-      ? equivalents
+      ? deplacements
           .filter((equivalent) => equivalent.category === 4)
           .filter((equivalent) =>
             itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
           )
           .filter((equivalent) => equivalent.default || displayAll)
-          .flatMap((equivalent) =>
-            equivalent.carpool ? [equivalent, { ...equivalent, carpool: false, id: -equivalent.id }] : [equivalent]
-          )
-          .filter((equivalent) => carpool || !equivalent.carpool)
           .filter(
             (equivalent) =>
               displayAll ||
@@ -61,26 +56,31 @@ export default function useTransportations(
           })
           .map((equivalent) => ({
             ...equivalent,
+            link: `/outils/transport/${equivalent.slug}`,
             title: formatName(t(`name-${equivalent.slug}`), 1, true),
-            subtitle: t(`subtitle-${equivalent.slug}`)
-              ? formatName(`(${t(`subtitle-${equivalent.slug}`)})`)
-              : '' +
-                (itineraries
-                  ? ` - ${formatNumber(
-                      itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
-                    )} km`
-                  : ''),
-            component: equivalent.carpool && <Carpool type={type} />,
+            subtitle:
+              (t(`subtitle-${equivalent.slug}`) ? `(${formatName(t(`subtitle-${equivalent.slug}`))})` : '') +
+              (itineraries
+                ? ` - ${formatNumber(
+                    itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                  )} km`
+                : ''),
             value:
-              (computeECV(equivalent) *
-                (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
-              (equivalent.carpool && carpool ? carpool : 1),
+              computeECV(equivalent) *
+              (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km),
             usage:
-              (formatUsage(equivalent) *
-                (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km)) /
-              (equivalent.carpool && carpool ? carpool : 1),
+              formatUsage(equivalent) *
+              (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km),
             onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
           }))
+          .flatMap((equivalent) =>
+            equivalent.carpool
+              ? [
+                  { ...equivalent, name: 'Covoiturage', value: equivalent.value / (carpool + 1) },
+                  { ...equivalent, carpool: 0 },
+                ]
+              : [equivalent]
+          )
       : []
   }, [params, itineraries, type, tracking])
 

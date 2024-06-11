@@ -1,0 +1,63 @@
+.title {
+  color: var(--neutral-80);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.inputContainer {
+  position: relative;
+
+  input {
+    max-width: 100%;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.inputSuffix {
+  color: var(--neutral-50);
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin-top: 1rem;
+  min-width: 100%;
+
+  > div {
+    flex: 1;
+    min-width: 300px;
+  }
+}
+
+.params {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.param {
+  align-items: center;
+  background: var(--neutral-10);
+  border: 1px solid var(--neutral-20);
+  border-radius: 4px;
+  color: var(--neutral-50);
+  display: flex;
+  font-weight: 500;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}

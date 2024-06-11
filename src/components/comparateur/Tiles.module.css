@@ -15,7 +15,7 @@
 
 .tileContainer {
   width: calc(11rem - 4px);
-  height: 248px;
+  min-height: 15.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
   height: 100%;
   position: absolute;
   opacity: 0.3;
-  background-color: var(--secondary-10);
+  background-color: var(--primary-10);
 }
 
 .tile,

@@ -1,0 +1,244 @@
+.textarea,
+.select,
+.input {
+  align-items: center;
+  background: var(--neutral-00);
+  border: unset;
+  border: 2px solid var(--primary-30);
+  border-radius: 8px;
+  color: var(--neutral-70);
+  display: flex;
+  gap: 0.5rem;
+  min-width: 7.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  height: 3.25rem;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    border: 2px solid var(--primary-40);
+  }
+
+  &:focus {
+    border: 2px solid var(--primary-50);
+    outline: 4px solid var(--primary-30);
+  }
+
+  &:disabled {
+    background: var(--neutral-10);
+    border: 2px solid var(--neutral-20);
+    color: var(--neutral-30);
+  }
+}
+
+.select {
+  max-width: fit-content;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 2rem;
+}
+
+.selectWrapper {
+  position: relative;
+
+  &::after {
+    content: '\25be';
+    font-size: 1rem;
+    top: 0.75rem;
+    right: 1rem;
+    position: absolute;
+    color: var(--neutral-50);
+  }
+}
+
+.smallSelectWrapper {
+  &::after {
+    top: 0.5rem;
+    right: 0.75rem;
+  }
+}
+
+.textarea {
+  max-width: 100%;
+}
+
+.inputError {
+  border: 2px solid var(--critical-30) !important;
+
+  &:hover {
+    border: 2px solid var(--critical-40) !important;
+  }
+
+  &:focus {
+    border: 2px solid var(--critical-50) !important;
+    outline: 4px solid var(--critical-30) !important;
+  }
+}
+
+.withIcon {
+  padding-right: 3.25rem;
+}
+
+.small {
+  padding: 0.5rem 1rem;
+  min-height: 2.5rem;
+}
+
+.large {
+  padding-top: calc(1rem - 2px);
+  padding-bottom: calc(1rem - 2px);
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.icon {
+  color: var(--primary-50);
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.containerInline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  color: var(--neutral-80);
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.labelError {
+  color: var(--critical-50);
+}
+
+.labelInline {
+  margin-bottom: 0;
+}
+
+.hint {
+  color: var(--neutral-60);
+  font-weight: 400;
+}
+
+.notRequired {
+  color: var(--neutral-50);
+  font-weight: 400;
+  display: inline;
+}
+
+.starsButtons {
+  align-items: center;
+  display: flex;
+  margin: 0 -0.25rem;
+
+  button {
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    color: var(--primary-50);
+    cursor: pointer;
+    padding: 0;
+    padding: 0.25rem;
+
+    &:focus {
+      outline: 3px solid var(--primary-50);
+      outline-offset: -2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+}
+
+.error {
+  align-items: center;
+  color: var(--critical-50);
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.secondaryUnit,
+.unit {
+  background-color: transparent;
+  position: absolute;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.secondaryUnit {
+  right: 1rem;
+  top: 0.5rem;
+  color: var(--neutral-50);
+}
+
+.unit {
+  width: max-content;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.375rem 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--primary-30);
+  background: var(--primary-10);
+  color: var(--primary-60);
+
+  @media screen and (max-width: 700px) {
+    max-width: 200px;
+  }
+
+  @media screen and (max-width: 400px) {
+    max-width: 150px;
+  }
+}
+
+.clickeable {
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid var(--primary-30);
+    background: var(--primary-20);
+    color: var(--primary-70);
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:active {
+    border: 2px solid var(--primary-40);
+    background: var(--primary-30);
+    color: var(--primary-70);
+  }
+}

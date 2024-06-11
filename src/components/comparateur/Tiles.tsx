@@ -1,8 +1,10 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
-import useParamContext from 'components/providers/ParamProvider'
 import Button from 'components/base/buttons/Button'
-import { Icon } from 'components/osezchanger/icons'
+import MagicWandIcon from 'components/base/icons/magic-wand'
 import Tile from './Tile'
 import styles from './Tiles.module.css'
 import { getRandomEquivalents } from './random'
@@ -57,14 +59,10 @@ const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
               setTimeout(() => setGeneration(1), 100)
             }, 200)
           }}>
-          <Icon iconId='magic-wand' />
+          <MagicWandIcon />
           Générer d’autres équivalents
         </Button>
-        {equivalents.length >= 8 && (
-          <Button priority='secondary' onClick={changeEquivalents}>
-            Modifier mes équivalents
-          </Button>
-        )}
+        {equivalents.length >= 8 && <Button onClick={changeEquivalents}>Modifier mes équivalents</Button>}
       </div>
     </>
   )

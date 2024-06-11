@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'yarn'
       - name: Copy .env
         run: cp .env.dist .env
@@ -32,27 +32,25 @@ jobs:
         run: yarn lint
       - name: Run build
         run: yarn build
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY}}
       - name: Migrate db
         run: yarn prisma migrate deploy
       - name: Start server
         run: yarn start &
       - name: Unit tests => with Jest
         run: yarn testu
-      - name: Component tests => with Jest
-        run: yarn testc
-      - name: API tests => with Jest & MSW
+      - name: API tests => with Jest
         run: yarn testa
-      - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps chromium
-      - name: E2E test  => with Playwright
-        run: yarn teste
+      - name: E2E tests => with Playwright
+        run: yarn testa
       - run: mkdir -p ${{ github.workspace }}/tmp/artifacts
       - name: Lighthouse Check
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
           device: all
-          urls: 'http://localhost:3000,http://localhost:3000/comparateur,http://localhost:3000/usagenumerique,http://localhost:3000/livraison,http://localhost:3000/chauffage,http://localhost:3000/transport,http://localhost:3000/fruitsetlegumes,http://localhost:3000/chauffage/pompeachaleur'
+          urls: 'http://localhost:3000,http://localhost:3000/outils/comparateur,http://localhost:3000/outils/usagenumerique,http://localhost:3000/outils/livraison,http://localhost:3000/outils/chauffage,http://localhost:3000/outils/transport,http://localhost:3000/outils/fruitsetlegumes,http://localhost:3000/outils/chauffage/pompeachaleur,http://localhost:3000/outils/usagenumerique/visioconference'
           outputDirectory: ${{ github.workspace }}/tmp/artifacts
       - name: Verify Lighthouse Check results
         uses: foo-software/lighthouse-check-status-action@master

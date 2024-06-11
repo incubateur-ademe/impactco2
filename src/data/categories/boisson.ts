@@ -1,0 +1,281 @@
+export const boissons = [
+  {
+    id: 24283,
+    name: 'Eau du robinet',
+    prefix: "Litre[s] d'",
+    synonyms: ['boire'],
+    slug: 'eaudurobinet',
+    category: 3,
+    total: 0.000132,
+    source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
+  },
+  {
+    id: 31000,
+    name: 'Eau en bouteille',
+    prefix: "Litre[s] d'",
+    synonyms: ['boire'],
+    slug: 'eauenbouteille',
+    category: 3,
+    ecv: [
+      {
+        id: 30,
+        value: 0.006279361839311691,
+      },
+      {
+        id: 32,
+        value: 0.16442163693709994,
+      },
+      {
+        id: 33,
+        value: 0.06062765944766532,
+      },
+      {
+        id: 34,
+        value: 0.033147419529957686,
+      },
+      {
+        id: 35,
+        value: 0.002598542165965416,
+      },
+    ],
+    source: 'https://agribalyse.ademe.fr/app/aliments/18430#Eau_embouteill%C3%A9e_de_source',
+  },
+  {
+    id: 31001,
+    name: 'Soda',
+    prefix: 'Litre[s] de ',
+    synonyms: ['boire'],
+    slug: 'soda',
+    category: 3,
+    ecv: [
+      {
+        id: 30,
+        value: 0.10413263417225607,
+      },
+      {
+        id: 31,
+        value: 0.01732426171634879,
+      },
+      {
+        id: 32,
+        value: 0.22981063504556218,
+      },
+      {
+        id: 33,
+        value: 0.09278663168184571,
+      },
+      {
+        id: 34,
+        value: 0.052697348606487844,
+      },
+      {
+        id: 35,
+        value: 0.014473543677499463,
+      },
+    ],
+    source: 'https://agribalyse.ademe.fr/app/aliments/18026#Boisson_gazeuse,_sans_jus_de_fruit,_sucr%C3%A9e',
+  },
+  {
+    id: 31002,
+    name: 'Bière',
+    prefix: 'Litre[s] de ',
+    synonyms: ['boire'],
+    slug: 'biere',
+    category: 3,
+    ecv: [
+      {
+        id: 30,
+        value: 0.07616837712773988,
+      },
+      {
+        id: 31,
+        value: 0.28598336634616334,
+      },
+      {
+        id: 32,
+        value: 0.4592427423084754,
+      },
+      {
+        id: 33,
+        value: 0.19457960320640558,
+      },
+      {
+        id: 34,
+        value: 0.08111568200617866,
+      },
+      {
+        id: 35,
+        value: 0.022278755905036994,
+      },
+    ],
+    source: 'https://agribalyse.ademe.fr/app/aliments/5001#Bi%C3%A8re_%22coeur_de_march%C3%A9%22_(4-5%C2%B0_alcool)',
+  },
+  {
+    id: 31003,
+    name: 'Vin',
+    prefix: 'Litre[s] de ',
+    synonyms: ['boire'],
+    slug: 'vin',
+    category: 3,
+    ecv: [
+      {
+        id: 30,
+        value: 0.44669260873710237,
+      },
+      {
+        id: 31,
+        value: 0.22386911365243536,
+      },
+      {
+        id: 32,
+        value: 0.38050084514641896,
+      },
+      {
+        id: 33,
+        value: 0.09579033761903151,
+      },
+      {
+        id: 34,
+        value: 0.028107858804597485,
+      },
+      {
+        id: 35,
+        value: 0.015393454940414145,
+      },
+    ],
+    source: 'https://agribalyse.ademe.fr/app/aliments/5214#Vin_rouge',
+  },
+  {
+    id: 31004,
+    name: 'Lait',
+    subtitle: 'De vache',
+    prefix: 'Litre[s] de ',
+    synonyms: ['boire'],
+    slug: 'laitdevache',
+    category: 3,
+    ecv: [
+      {
+        id: 30,
+        value: 0.799152957419679,
+      },
+      {
+        id: 31,
+        value: 0.015443376410528314,
+      },
+      {
+        id: 32,
+        value: 0.15286265337366634,
+      },
+      {
+        id: 33,
+        value: 0.16535549763055887,
+      },
+      {
+        id: 34,
+        value: 0.049326298165567405,
+      },
+    ],
+    source: 'https://agribalyse.ademe.fr/app/aliments/19051#Lait_%C3%A9cr%C3%A9m%C3%A9,_pasteuris%C3%A9',
+  },
+  {
+    name: 'Lait',
+    subtitle: 'De soja',
+    prefix: 'Litre[s] de ',
+    synonyms: ['boire'],
+    slug: 'laitdesoja',
+    category: 3,
+    ecv: [
+      {
+        id: 30,
+        value: 0.13061776408521542,
+      },
+      {
+        id: 31,
+        value: 0.06453821103848224,
+      },
+      {
+        id: 32,
+        value: 0.10069163573007084,
+      },
+      {
+        id: 33,
+        value: 0.10676070898306896,
+      },
+      {
+        id: 34,
+        value: 0.0430412391631626,
+      },
+    ],
+    total: 0.42,
+    source: 'https://agribalyse.ademe.fr/app/aliments/18900#Boisson_au_soja,_nature',
+  },
+  {
+    name: 'Thé',
+    prefix: 'Litre[s] de ',
+    slug: 'the',
+    category: 3,
+    ecv: [
+      {
+        id: 30,
+        value: 0.02452355378915698,
+      },
+      {
+        id: 32,
+        value: 0.0006555673797149556,
+      },
+      {
+        id: 33,
+        value: 0.0006900499206393254,
+      },
+      {
+        id: 34,
+        value: 0.00013555602943513944,
+      },
+      {
+        id: 35,
+        value: 0.0131566263810536,
+      },
+    ],
+    source: 'https://agribalyse.ademe.fr/app/aliments/18020#Th%C3%A9_infus%C3%A9,_non_sucr%C3%A9',
+    include: {
+      pre: 'Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg).',
+    },
+  },
+  {
+    name: 'Café',
+    prefix: 'Litre[s] de ',
+    slug: 'cafe',
+    category: 3,
+    ecv: [
+      {
+        id: 30,
+        value: 0.5360726648026617,
+      },
+      {
+        id: 31,
+        value: 0.020654948604764477,
+      },
+      {
+        id: 32,
+        value: 0.003083304397760912,
+      },
+      {
+        id: 33,
+        value: 0.009655399325691972,
+      },
+      {
+        id: 34,
+        value: 0.0013928452705040861,
+      },
+      {
+        id: 35,
+        value: 0.023365480858616866,
+      },
+    ],
+    source:
+      'https://agribalyse.ademe.fr/app/aliments/18004#Caf%C3%A9,_non_instantan%C3%A9,_non_sucr%C3%A9,_pr%C3%AAt_%C3%A0_boire',
+    include: {
+      pre: 'Nous prenons pour hypothèse une tasse de 250ml (simplifié ici en 250mg).',
+    },
+  },
+]

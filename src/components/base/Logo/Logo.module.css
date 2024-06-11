@@ -1,0 +1,33 @@
+.smallLogo,
+.logo {
+  display: block;
+  width: auto;
+}
+
+.logo {
+  height: 4.125rem;
+
+  @media screen and (max-width: 29.875rem) {
+    height: 3rem;
+  }
+}
+
+.smallLogo {
+  height: 3rem;
+
+  @media screen and (max-width: 29.875rem) {
+    height: 2.25rem;
+  }
+}
+
+.black {
+  fill: var(--neutral-70);
+}
+
+.small {
+  height: 3rem;
+}
+
+.small.smallLogo {
+  height: 2.25rem;
+}

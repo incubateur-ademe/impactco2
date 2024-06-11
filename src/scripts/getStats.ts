@@ -38,7 +38,8 @@ export const getMatomoStats = async (date: string) => {
         (event) =>
           event.label.startsWith('API_') &&
           event.label !== 'API_Impact+CO2' &&
-          event.label !== 'API_https://impactco2.fr/api-doc'
+          event.label !== 'API_https://impactco2.fr/api-doc' &&
+          event.label !== 'API_https://impactco2.fr/doc/api'
       )
       .reduce((acc, visit) => acc + visit.nb_events, 0),
     shared: allEventsByAction

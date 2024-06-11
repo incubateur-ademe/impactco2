@@ -1,0 +1,15 @@
+.container {
+  padding: 5rem;
+  border-radius: 1rem;
+  background: var(--neutral-10);
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 48rem) {
+    padding: 2.5rem;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    padding: 0;
+  }
+}

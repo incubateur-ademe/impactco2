@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import EquivalentIcon from 'components/base/EquivalentIcon'
+import InformationFillIcon from 'components/base/icons/information-fill'
 import CheckboxInput from 'components/form/CheckboxInput'
-import { Icon } from 'components/osezchanger/icons'
 import styles from './Checkbox.module.css'
 
 const Checkbox = ({
@@ -41,8 +41,9 @@ const Checkbox = ({
         }
         selectEquivalent(checked, equivalent)
       }}
+      labelClassName={styles.equivalentLabel}
       label={
-        <div className={styles.equivalentLabel}>
+        <>
           <div className={styles.equivalentName}>
             <div>
               {formatName(equivalent.name, 1, true)}{' '}
@@ -50,7 +51,7 @@ const Checkbox = ({
             </div>
             {interacted && equivalents.length > 7 && (
               <div className={styles.warning}>
-                <Icon iconId='information-fill' />
+                <InformationFillIcon />
                 <span>
                   <b>8 / 8</b> équivalents déjà sélectionnés
                 </span>
@@ -58,7 +59,7 @@ const Checkbox = ({
             )}
           </div>
           <EquivalentIcon height={2} equivalent={equivalent} />
-        </div>
+        </>
       }
     />
   )

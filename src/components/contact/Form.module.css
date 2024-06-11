@@ -1,0 +1,50 @@
+.container {
+  padding: 1.5rem 2rem 2.5rem 2rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--neutral-20);
+  background: var(--neutral-00);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
+
+  @media screen and (max-width: 29.875rem) {
+    padding: 1.5rem 1rem 2.5rem 1rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  button {
+    width: fit-content;
+  }
+}
+
+.separator {
+  border-bottom: 2px solid var(--neutral-20);
+}
+
+.checkbox {
+  label {
+    color: var(--neutral-60);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+
+  a {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    line-height: 1.25rem !important;
+
+    color: var(--primary-60) !important;
+
+    &:hover {
+      color: var(--primary-70) !important;
+    }
+  }
+
+  input {
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,64 @@
+.content {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+
+  @media screen and (max-width: 29.875rem) {
+    img {
+      height: 3.75rem;
+    }
+  }
+}
+
+.title {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+
+.value {
+  color: var(--neutral-80);
+  font-size: 1.25rem;
+  font-weight: 700;
+  height: 2.75rem;
+  line-height: 2.75rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 1.125rem;
+    line-height: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.valueNumber {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 2.75rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+}
+
+.unit {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}

@@ -1,0 +1,102 @@
+export const ecv = [
+  {
+    id: 1,
+    name: 'Matières premières',
+  },
+  {
+    id: 2,
+    name: 'Approvisionnement',
+  },
+  {
+    id: 3,
+    name: 'Mise en forme',
+  },
+  {
+    id: 4,
+    name: 'Assemblage et distribution',
+  },
+  {
+    id: 5,
+    name: 'Construction',
+  },
+  {
+    id: 6,
+    name: 'Carburant',
+  },
+  {
+    id: 7,
+    name: 'Trainées de condensation',
+  },
+  {
+    id: 8,
+    name: 'Usage',
+  },
+  {
+    id: 9,
+    name: 'Fin de vie',
+  },
+  {
+    id: 30,
+    name: 'Agriculture',
+  },
+  {
+    id: 31,
+    name: 'Transformation',
+  },
+  {
+    id: 32,
+    name: 'Emballage',
+  },
+  {
+    id: 33,
+    name: 'Transport',
+  },
+  {
+    id: 34,
+    name: 'Supermarché et distribution',
+  },
+  {
+    id: 35,
+    name: 'Consommation',
+  },
+  {
+    id: 13,
+    name: 'Construction des terminaux',
+  },
+  {
+    id: 14,
+    name: 'Usage des terminaux',
+  },
+  {
+    id: 15,
+    name: 'Transmission',
+  },
+  {
+    id: 16,
+    name: 'Construction des data-centers',
+  },
+  {
+    id: 17,
+    name: 'Usage des data-centers',
+  },
+  {
+    id: 40,
+    publicode: ' . terminaux . construction',
+    name: 'Construction des terminaux',
+  },
+  {
+    id: 41,
+    publicode: ' . terminaux . usage',
+    name: 'Usage des terminaux',
+  },
+  {
+    id: 42,
+    publicode: ' . transmission',
+    name: 'Transmission',
+  },
+  {
+    id: 43,
+    publicode: ' . data center',
+    name: 'Data-centers',
+  },
+]

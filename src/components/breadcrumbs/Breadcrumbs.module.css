@@ -1,0 +1,29 @@
+.container {
+  border-radius: 0px 0px 16px 16px;
+  background: var(--neutral-10);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.75rem;
+
+  svg {
+    color: var(--neutral-40);
+  }
+}
+
+.current {
+  color: var(--neutral-60);
+  width: max-content;
+  font-weight: 500;
+}
+
+.link {
+  width: max-content;
+  color: var(--primary-60) !important;
+
+  &:hover {
+    color: var(--priamry-70) !important;
+  }
+}
