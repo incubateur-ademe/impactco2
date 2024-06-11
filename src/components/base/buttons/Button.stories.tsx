@@ -14,27 +14,6 @@ export const Default: Story = {
   },
 }
 
-export const Small: Story = {
-  args: {
-    children: 'Quietly click me',
-    size: 'sm',
-  },
-}
-
-export const Large: Story = {
-  args: {
-    children: 'Hard click me',
-    size: 'lg',
-  },
-}
-
-export const Secondary: Story = {
-  args: {
-    children: 'em kcilC',
-    priority: 'secondary',
-  },
-}
-
 export const Disabled: Story = {
   args: {
     children: 'Dont click me',

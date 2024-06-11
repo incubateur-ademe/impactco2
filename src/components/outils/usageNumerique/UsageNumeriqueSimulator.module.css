@@ -1,0 +1,79 @@
+.simulator {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 2px solid var(--neutral-20);
+}
+
+.results {
+  padding: 2rem 2rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem 0;
+
+  @media screen and (max-width: 29.875rem) {
+    flex-direction: column;
+  }
+}
+
+.values {
+  color: var(--neutral-50);
+  text-align: center;
+  padding: 0 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+
+  &:first-child {
+    border-right: 2px solid var(--neutral-20);
+
+    @media screen and (max-width: 29.875rem) {
+      border-right: none;
+    }
+  }
+}
+
+.header {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.value {
+  color: var(--neutral-80);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 2.75rem;
+}
+
+.number {
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2.75rem;
+}
+
+.etiquette {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  color: var(--neutral-50);
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+
+.text {
+  color: var(--neutral-50);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.mainText {
+  margin-bottom: 0.5rem;
+  color: var(--neutral-80);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}

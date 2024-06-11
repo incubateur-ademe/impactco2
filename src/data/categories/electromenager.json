@@ -3,7 +3,6 @@
     "name": "Bouilloire[s]",
     "id": 28306,
     "slug": "bouilloire",
-    "emoji": "⚗️",
     "category": 6,
     "ecv": [
       {
@@ -45,7 +44,6 @@
       "nespresso"
     ],
     "slug": "cafetieredosette",
-    "emoji": "☕️",
     "category": 6,
     "ecv": [
       {
@@ -84,7 +82,6 @@
     "id": 28303,
     "subtitle": "Filtre",
     "slug": "cafetierefiltre",
-    "emoji": "☕️",
     "category": 6,
     "ecv": [
       {
@@ -126,7 +123,6 @@
       "espresso"
     ],
     "slug": "cafetiereexpresso",
-    "emoji": "☕️",
     "category": 6,
     "ecv": [
       {
@@ -165,7 +161,6 @@
     "id": 26986,
     "subtitle": "Électrique",
     "slug": "fourelectrique",
-    "emoji": "🎛",
     "category": 6,
     "ecv": [
       {
@@ -203,7 +198,6 @@
     "name": "Lave-vaisselle",
     "id": 26984,
     "slug": "lavevaisselle",
-    "emoji": "🍽",
     "category": 6,
     "ecv": [
       {
@@ -242,7 +236,6 @@
     "id": 26983,
     "subtitle": "7kg",
     "slug": "lavelinge",
-    "emoji": "🧦",
     "category": 6,
     "ecv": [
       {
@@ -280,7 +273,6 @@
     "name": "Réfrigérateur",
     "id": 26976,
     "slug": "refrigirateur",
-    "emoji": "❄️",
     "category": 6,
     "ecv": [
       {
@@ -318,7 +310,6 @@
     "name": "Aspirateur",
     "id": 26990,
     "slug": "aspirateur",
-    "emoji": "🧹",
     "category": 6,
     "default": true,
     "tile": false,
@@ -354,7 +345,6 @@
       "climatisation"
     ],
     "slug": "climatiseur",
-    "emoji": "❄️",
     "category": 6,
     "ecv": [
       {

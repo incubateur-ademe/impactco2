@@ -1,0 +1,23 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  th,
+  td {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    text-align: left;
+  }
+
+  tbody {
+    background-color: var(--primary-10);
+  }
+
+  .total {
+    background-color: var(--primary-20);
+  }
+}
+
+.select {
+  width: fit-content;
+}

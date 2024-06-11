@@ -1,0 +1,10 @@
+.bold {
+  color: var(--neutral-80);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.text {
+  margin: 2rem 0;
+}

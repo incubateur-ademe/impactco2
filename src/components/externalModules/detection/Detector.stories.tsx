@@ -10,6 +10,6 @@ type Story = StoryObj<typeof Detector>
 
 export const Default: Story = {
   args: {
-    impact: '486 kg co2e',
+    impact: '486 kg co₂e',
   },
 }

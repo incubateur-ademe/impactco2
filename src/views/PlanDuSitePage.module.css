@@ -1,0 +1,10 @@
+.row,
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.row {
+  margin-left: 2rem;
+}

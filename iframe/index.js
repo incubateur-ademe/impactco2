@@ -7,14 +7,16 @@ const setupIframe = (element) => {
   element['loaded'] = 'true'
 
   const type = element.dataset.type
-    ? element.dataset.type
-    : document.getElementById('mon-impact-transport') ||
-        document.getElementById('datagir-teletravail') ||
-        document.getElementById('ecolab-transport')
-      ? 'empreinte-carbone/transport'
-      : document.getElementById('impact-livraison')
-        ? 'livraison'
-        : 'tuiles'
+    ? element.dataset.type === 'transport/teletravail'
+      ? 'teletravail'
+      : element.dataset.type
+    : document.getElementById('mon-impact-transport') || document.getElementById('ecolab-transport')
+      ? 'transport'
+      : document.getElementById('datagir-teletravail')
+        ? 'teletravail'
+        : document.getElementById('impact-livraison')
+          ? 'livraison'
+          : 'comparateur'
 
   const search = element.dataset.search || ''
   const src = `${WEBPACK_SITE_URL}/iframes/${type}${search}${search ? '&' : '?'}source=${window.location.href}`
@@ -35,15 +37,6 @@ const setupIframe = (element) => {
   iframeResize({}, iframe)
 
   element.parentNode.insertBefore(iframe, element)
-  if (type !== 'comparateur/etiquette') {
-    const link = document.createElement('div')
-    link.innerHTML =
-      type === 'livraison'
-        ? `<a href="${WEBPACK_SITE_URL}/livraison" target="_blank">Découvrez l'empreinte carbone de la livraison de colis</a>`
-        : `<a href="${WEBPACK_SITE_URL}" target="_blank">Découvrez l'empreinte carbone des objets et gestes de votre quotidien</a>`
-    link.style.cssText = `margin: 0.5rem auto 1rem;text-align: center`
-    element.parentNode.insertBefore(link, element)
-  }
 }
 
 const buttonOnly = !!document.getElementById('mon-impact-transport')

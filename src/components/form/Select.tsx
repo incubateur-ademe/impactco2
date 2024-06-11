@@ -1,33 +1,42 @@
+'use client'
+
+import classNames from 'classnames'
 import React, { SelectHTMLAttributes } from 'react'
-import { Container, Hint, Label, NotRequired, StyledSelect } from './Input.styles'
+import styles from './Input.module.css'
 
 const Select = ({
   id,
   label,
   hint,
-  maxWidth,
-  color,
   inline,
+  padding,
+  className,
   ...selectProps
 }: SelectHTMLAttributes<HTMLSelectElement> & {
   id: string
   label?: string
-  hint?: string
-  maxWidth?: string
   inline?: boolean
-  color?: 'secondary'
+  hint?: string
+  padding?: 'sm' | 'lg'
 }) => {
   return (
-    <Container $inline={inline}>
+    <div className={inline ? styles.containerInline : ''}>
       {label && (
-        <Label htmlFor={`text-select-${id}`} $inline={inline}>
+        <label className={classNames(styles.label, { [styles.labelInline]: inline })} htmlFor={`text-select-${id}`}>
           {label}
-          {!selectProps.required && <NotRequired> - Facultatif</NotRequired>}
-          {hint && <Hint className='text-sm'>{hint}</Hint>}
-        </Label>
+          {!selectProps.required && <div className={styles.notRequired}> - Facultatif</div>}
+          {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+        </label>
       )}
-      <StyledSelect {...selectProps} id={`text-select-${id}`} $maxWidth={maxWidth} $color={color} />
-    </Container>
+      <div className={classNames(styles.selectWrapper, { [styles.smallSelectWrapper]: padding === 'sm' }, className)}>
+        <select
+          className={classNames(styles.select, { [styles.small]: padding === 'sm' })}
+          data-testid={`text-select-${id}`}
+          {...selectProps}
+          id={`text-select-${id}`}
+        />
+      </div>
+    </div>
   )
 }
 

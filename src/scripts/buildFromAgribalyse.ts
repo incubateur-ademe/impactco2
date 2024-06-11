@@ -2,7 +2,7 @@ import axios from 'axios'
 import fs from 'fs'
 import boissons from '../data/categories/boisson.json'
 import fruitsetlegumes from '../data/categories/fruitsetlegumes.json'
-import ecv from '../data/ecv.json'
+import { ecv } from '../data/ecv'
 import { BoissonEquivalent, EquivalentValue, FruitsEtLegumesEquivalent } from '../../types/equivalent'
 
 enum AgrybalisePrefixEnum {

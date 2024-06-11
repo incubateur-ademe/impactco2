@@ -18,6 +18,7 @@ const csp = {
   ],
   'script-src': [
     "'self'",
+    "'unsafe-inline'",
     'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js',
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.js`,
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/plugins/HeatmaSessionRecording/configs.php`,
@@ -55,20 +56,27 @@ const securityHeadersIFramable = [
   },
 ]
 
+const images = process.env.NEXT_PUBLIC_IMAGE_URL.startsWith('https')
+  ? {
+      protocol: 'https',
+      hostname: process.env.NEXT_PUBLIC_IMAGE_URL.split('https://')[1],
+      port: '',
+      pathname: '/api/dynamics/**',
+    }
+  : {
+      protocol: 'http',
+      hostname: 'localhost',
+      port: '3000',
+      pathname: '/api/dynamics/**',
+    }
+
 const nextConfig = {
   reactStrictMode: true,
-  compiler: {
-    styledComponents: true,
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-  sentry: {
-    autoInstrumentServerFunctions: true,
-    autoInstrumentMiddleware: true,
-    widenClientFileUpload: true,
-    hideSourceMaps: false,
+  images: {
+    remotePatterns: [images],
   },
   async headers() {
     return [
@@ -89,32 +97,17 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/beta/:slug*',
-        destination: '/api/:slug*',
-        permanent: true,
-      },
-      {
-        source: '/categories/deplacement/:slug*',
-        destination: '/transport/:slug*',
-        permanent: true,
-      },
-      {
         source: '/categories',
         destination: '/thematiques',
         permanent: true,
       },
       {
         source: '/convertisseur',
-        destination: '/comparateur',
+        destination: '/outils/comparateur',
         permanent: true,
       },
       {
         source: '/categories/:slug*',
-        destination: '/:slug*',
-        permanent: true,
-      },
-      {
-        source: '/empreinte-carbone/:slug*',
         destination: '/:slug*',
         permanent: true,
       },
@@ -124,13 +117,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/iframes/empreinte-carbone/:slug*',
-        destination: '/iframes/:slug*',
-        permanent: true,
-      },
-      {
-        source: '/iframes/tuiles',
-        destination: '/iframes/comparateur',
+        source: '/iframes/transport/teletravail',
+        destination: '/iframes/teletravail',
         permanent: true,
       },
       {
@@ -143,6 +131,20 @@ const nextConfig = {
         destination: '/iframe.js',
         permanent: true,
       },
+      { source: '/comparateur', destination: '/outils/comparateur', permanent: true },
+      { source: '/caspratiques/:slug*', destination: '/outils/caspratiques/:slug*', permanent: true },
+      { source: '/usagenumerique/:slug*', destination: '/outils/usagenumerique/:slug*', permanent: true },
+      { source: '/livraison/:slug*', destination: '/outils/livraison/:slug*', permanent: true },
+      { source: '/chauffage/:slug*', destination: '/outils/chauffage/:slug*', permanent: true },
+      { source: '/transport/teletravail', destination: '/outils/teletravail', permanent: true },
+      { source: '/transport/:slug*', destination: '/outils/transport/:slug*', permanent: true },
+      { source: '/fruitsetlegumes/:slug*', destination: '/outils/fruitsetlegumes/:slug*', permanent: true },
+      { source: '/numerique/:slug*', destination: '/outils/numerique/:slug*', permanent: true },
+      { source: '/repas/:slug*', destination: '/outils/repas/:slug*', permanent: true },
+      { source: '/habillement/:slug*', destination: '/outils/habillement/:slug*', permanent: true },
+      { source: '/mobilier/:slug*', destination: '/outils/mobilier/:slug*', permanent: true },
+      { source: '/electromenager/:slug*', destination: '/outils/electromenager/:slug*', permanent: true },
+      { source: '/boisson/:slug*', destination: '/outils/boisson/:slug*', permanent: true },
     ]
   },
 }
@@ -160,31 +162,4 @@ const sentryWebpackPluginOptions = {
   url: process.env.SENTRY_URL,
 }
 
-module.exports = () =>
-  withBundleAnalyzer(
-    withSentryConfig(nextConfig, sentryWebpackPluginOptions, {
-      // For all available options, see:
-      // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-
-      // Upload a larger set of source maps for prettier stack traces (increases build time)
-      widenClientFileUpload: true,
-
-      // Transpiles SDK to be compatible with IE11 (increases bundle size)
-      transpileClientSDK: true,
-
-      // Routes browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers (increases server load)
-      tunnelRoute: '/monitoring',
-
-      // Hides source maps from generated client bundles
-      hideSourceMaps: true,
-
-      // Automatically tree-shake Sentry logger statements to reduce bundle size
-      disableLogger: true,
-
-      // Enables automatic instrumentation of Vercel Cron Monitors.
-      // See the following for more information:
-      // https://docs.sentry.io/product/crons/
-      // https://vercel.com/docs/cron-jobs
-      automaticVercelMonitors: true,
-    })
-  )
+module.exports = () => withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))

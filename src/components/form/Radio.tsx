@@ -1,34 +1,38 @@
+'use client'
+
+import classNames from 'classnames'
 import React, { ReactNode } from 'react'
 import { ZodError } from 'zod'
-import { Icon } from 'components/osezchanger/icons'
-import { Error } from './Input.styles'
-import { Hint, Inputs, Legend, NotRequired } from './Radio.styles'
+import ErrorIcon from 'components/base/icons/error'
+import inputStyles from './Input.module.css'
+import styles from './Radio.module.css'
 import useError from './errors'
 
 export type RadioProps = {
   id: string
-  label: string
+  label: ReactNode
   hint?: string
   required?: boolean
   errors?: ZodError | null
+  className?: string
 }
 
-const Radio = ({ id, label, hint, children, required, errors }: RadioProps & { children: ReactNode }) => {
+const Radio = ({ id, label, hint, children, required, errors, className }: RadioProps & { children: ReactNode }) => {
   const error = useError(id, errors)
 
   return (
-    <div aria-labelledby={`input-${id}`}>
-      <Legend id={`input-${id}`} $error={!!error}>
+    <div aria-labelledby={`input-${id}`} className={className}>
+      <legend className={classNames(styles.legend, { [styles.legendError]: !!error })} id={`input-${id}`}>
         {label}
-        {!required && <NotRequired> - Facultatif</NotRequired>}
-        {hint && <Hint className='text-sm'>{hint}</Hint>}
-      </Legend>
-      <Inputs>{children}</Inputs>
+        {!required && <div className={styles.notRequired}> - Facultatif</div>}
+        {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+      </legend>
+      <div className={styles.inputs}>{children}</div>
       {error && (
-        <Error className='text-xs'>
-          <Icon iconId='error' />
+        <div className={classNames(inputStyles.error, 'text-xs')}>
+          <ErrorIcon />
           {error}
-        </Error>
+        </div>
       )}
     </div>
   )

@@ -1,8 +1,9 @@
 import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
+import EqualIcon from 'components/base/icons/equal'
+import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
-import Equal from './Equal'
 import styles from './Equivalent.module.css'
 
 const Equivalent = ({
@@ -13,14 +14,16 @@ const Equivalent = ({
   animated,
   url,
   language,
+  randomize,
 }: {
   className?: string
-  baseValue: string
+  baseValue: string | number
   comparisons: string[]
   title?: (unit: string, roundedValue: string, intValue: number) => ReactNode
   animated?: boolean
   url?: string
   language?: Language
+  randomize?: () => void
 }) => {
   const isAnimated = useMemo(() => animated && comparisons.length > 1, [animated, comparisons])
 
@@ -90,9 +93,7 @@ const Equivalent = ({
             <div className={styles.value} data-testid='etiquette-value'>
               {roundedValue}
             </div>
-            <div className={styles.label}>
-              {unit} CO<sub>2</sub>e
-            </div>
+            <div className={styles.label}>{unit} CO₂e</div>
           </div>
         </div>
         <div className={styles.right}>
@@ -100,7 +101,7 @@ const Equivalent = ({
             <div
               className={styles.progressBar}
               style={{
-                background: `radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(var(--primary-20) ${progress}%, transparent 0)`,
+                background: `radial-gradient(closest-side, white 59%, transparent 60% 100%), conic-gradient(var(--primary-20) ${progress}%, transparent 0)`,
               }}>
               <progress value={progress} className={styles.progress}>
                 {progress}%
@@ -108,7 +109,7 @@ const Equivalent = ({
             </div>
           )}
           <div className={isAnimated ? styles.animatedEqual : styles.equal}>
-            <Equal />
+            <EqualIcon />
           </div>
           <div className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
             {comparisons.map((comparison, index) => (
@@ -126,6 +127,11 @@ const Equivalent = ({
             ))}
           </div>
         </div>
+        {randomize && (
+          <button className={styles.randomize} title='Obtenir une nouvelle comparaison' onClick={randomize}>
+            <RefreshIcon />
+          </button>
+        )}
       </div>
     </div>
   )

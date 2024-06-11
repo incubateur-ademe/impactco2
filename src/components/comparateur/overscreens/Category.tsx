@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
+import { computedEquivalents } from 'src/providers/equivalents'
 import { Category as CategoryType } from 'types/category'
 import { track } from 'utils/matomo'
-import useParamContext from 'components/providers/ParamProvider'
-import { computedEquivalents } from 'components/providers/equivalents'
-import Emoji from 'components/base/Emoji'
+import EquivalentIcon from 'components/base/EquivalentIcon'
 import Button from 'components/base/buttons/Button'
-import { Icon } from 'components/osezchanger/icons'
+import DropdownArrowDownIcon from 'components/base/icons/dropdown-arrow-down'
+import DropdownArrowUpIcon from 'components/base/icons/dropdown-arrow-up'
 import { getRandomEquivalentsInCategory } from '../random'
 import styles from './Category.module.css'
 import Equivalents from './Equivalents'
@@ -39,9 +40,16 @@ const Category = ({
 
   return (
     <div className={styles.container}>
-      <button className={styles.header} onClick={() => setOpen(!open)}>
+      <button
+        className={styles.header}
+        onClick={() => setOpen(!open)}
+        title={
+          open
+            ? `Cacher les éléments de la catégorie ${category.name}`
+            : `Voir les éléments de la catégorie ${category.name}`
+        }>
         <div className={styles.emoji}>
-          <Emoji height='2.5rem'>{category.emoji}</Emoji>
+          <EquivalentIcon height={2.5} equivalent={category} />
         </div>
         <div className={styles.names}>
           <div className={styles.title}>{category.name}</div>
@@ -52,22 +60,14 @@ const Category = ({
             <span className={styles.numbers}> / {categoryEquivalents.length}</span>
           </div>
         </div>
-        <div
-          className={styles.button}
-          title={
-            open
-              ? `Cacher les éléments de la catégorie ${category.name}`
-              : `Voir les éléments de la catégorie ${category.name}`
-          }>
-          <Icon iconId={open ? 'dropdown-arrow-up' : 'dropdown-arrow-down'} />
-        </div>
+        <div className={styles.button}>{open ? <DropdownArrowUpIcon /> : <DropdownArrowDownIcon />}</div>
       </button>
       {open && (
         <>
           <div className={styles.comparison}>
             <div>Comparer avec cette catégorie seulement :</div>
             <Button
-              priority='secondary'
+              priority='outline'
               onClick={() => {
                 setFinalEquivalents(
                   getRandomEquivalentsInCategory(comparedEquivalent?.slug, category.id).map(

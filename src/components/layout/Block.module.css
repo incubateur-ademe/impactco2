@@ -1,0 +1,46 @@
+.block {
+  margin: auto;
+  padding-top: 4rem;
+  position: relative;
+}
+
+.description {
+  color: var(--neutral-60);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.mainDescription {
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.75rem;
+
+  @media screen and (max-width: 48rem) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.children {
+  padding-bottom: 2rem;
+}
+
+.withMargin {
+  margin-top: 2rem;
+}

@@ -1,25 +1,32 @@
-import React, { ButtonHTMLAttributes } from 'react'
-import { Icon, IconId } from '../osezchanger/icons'
-import { Button } from './GhostButton.styles'
+'use client'
+
+import classNames from 'classnames'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import styles from './GhostButton.module.css'
 
 const GhostButton = ({
   icon,
   children,
   iconPosition,
   size,
-  colored,
   ...buttonProps
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
-  icon: IconId
+  icon: ReactNode
   iconPosition?: 'right'
   children: string
   size?: 'sm'
   colored?: boolean
 }) => {
   return (
-    <Button {...buttonProps} $colored={colored} $reverse={iconPosition === 'right'} name={children} $size={size}>
-      <Icon iconId={icon} /> {children}
-    </Button>
+    <button
+      className={classNames(styles.button, {
+        [styles.reverse]: iconPosition === 'right',
+        [styles.small]: size === 'sm',
+      })}
+      {...buttonProps}
+      name={children}>
+      {icon} {children}
+    </button>
   )
 }
 

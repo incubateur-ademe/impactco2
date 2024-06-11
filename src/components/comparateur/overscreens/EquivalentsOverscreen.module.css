@@ -1,15 +1,23 @@
 .header {
   margin: -2rem -1.5rem 0 -1.5rem;
   padding: 1.5rem;
-  background-color: var(--secondary-10);
-  border-radius: 16px 16px 0px 0px;
-  border: 1px solid var(--neutral-20);
-  border-bottom: 1px solid var(--secondary-20);
+  background-color: var(--primary-10);
+  border-radius: calc(1rem - 2px) calc(1rem - 2px) 0px 0px;
+  border-bottom: 2px solid var(--primary-20);
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap-reverse;
 
   > div {
     flex: 1;
+  }
+
+  input {
+    min-width: 250px;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    margin: -2rem -1rem 0 -1rem;
   }
 }
 
@@ -17,24 +25,41 @@
   margin: 0 -1.5rem;
   height: calc(100% - 6rem - 5px);
   overflow: auto;
-  border-left: 1px solid var(--neutral-20);
-  border-right: 1px solid var(--neutral-20);
   padding: 2rem;
+  overflow: auto;
 }
 
 .footer {
   margin: 0 -1.5rem -2rem -1.5rem;
   padding: 1rem 2rem;
-  border: 1px solid var(--neutral-20);
-  border-radius: 0px 0px 16px 16px;
-  border-top: 1px solid var(--secondary-20);
-  background: var(--secondary-10);
+  border-radius: 0px 0px calc(1rem - 2px) calc(1rem - 2px);
+  border-top: 2px solid var(--primary-20);
+  background: var(--primary-10);
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
+  gap: 0.5rem 0;
 
   div {
     width: calc(100% / 3);
+  }
+
+  @media screen and (max-width: 53rem) {
+    justify-content: space-between;
+
+    div {
+      width: fit-content;
+    }
+  }
+
+  @media screen and (max-width: 31rem) {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    margin: 0rem -1rem -2rem -1rem;
   }
 }
 

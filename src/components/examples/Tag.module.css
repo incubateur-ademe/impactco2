@@ -1,0 +1,26 @@
+.tag {
+  text-decoration: none;
+  padding: 0.375rem 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--primary-30);
+  background: var(--primary-10);
+  color: var(--primary-60);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+
+  &:hover {
+    border: 2px solid var(--primary-40);
+    background: var(--primary-20);
+    color: var(--primary-70);
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}

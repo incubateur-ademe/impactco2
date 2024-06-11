@@ -14,8 +14,8 @@ const findError = (id: string, errors?: ZodError | null) => {
   return error.join(', ')
 }
 
-export default function useError(id: string, errors: ZodError | null | undefined) {
-  const error = useMemo(() => findError(id, errors), [id, errors])
+export default function useError(id: string | undefined, errors: ZodError | null | undefined) {
+  const error = useMemo(() => (id ? findError(id, errors) : null), [id, errors])
 
   return error
 }

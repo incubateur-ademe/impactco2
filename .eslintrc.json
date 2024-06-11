@@ -14,7 +14,6 @@
   "rules": {
     "react/no-unescaped-entities": "off",
     "no-irregular-whitespace": "off",
-    "better-styled-components/sort-declarations-alphabetically": 2,
     "react/self-closing-comp": "error",
     "prettier/prettier": [
       "error",
@@ -24,7 +23,11 @@
       }
     ]
   },
-  "plugins": ["@typescript-eslint", "prettier", "better-styled-components", "styled-components-a11y", "jest"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "jest"
+  ],
   "env": {
     "browser": true,
     "es2022": true,

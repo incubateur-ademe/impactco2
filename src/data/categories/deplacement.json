@@ -12,7 +12,6 @@
       "voyager"
     ],
     "type": "plane",
-    "emoji": "✈️",
     "category": 4,
     "display": {
       "min": 500
@@ -93,7 +92,7 @@
     },
     "meta": {
       "title": "Calcul empreinte carbone voyage avion",
-      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO2 permet de mesurer l'impact de vos trajets  en avion sur le climat"
+      "description": "Combien de CO₂e émet un kilomètre en avion ? Impact CO₂ permet de mesurer l'impact de vos trajets  en avion sur le climat"
     }
   },
   {
@@ -110,7 +109,6 @@
     ],
     "slug": "tgv",
     "type": "rail",
-    "emoji": "🚅",
     "category": 4,
     "ecv": [
       {
@@ -147,7 +145,6 @@
     ],
     "slug": "intercites",
     "type": "rail",
-    "emoji": "🚈",
     "category": 4,
     "ecv": [
       {
@@ -183,9 +180,8 @@
       "voyager"
     ],
     "slug": "voiturethermique",
-    "carpool": true,
+    "carpool": 1,
     "type": "car",
-    "emoji": "🚗",
     "category": 4,
     "ecv": [
       {
@@ -218,10 +214,8 @@
       "voyager"
     ],
     "slug": "voitureelectrique",
-    "carpool": true,
+    "carpool": 1,
     "type": "car",
-    "emoji": "🚗",
-    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -253,7 +247,6 @@
     ],
     "slug": "autocar",
     "type": "car",
-    "emoji": "🚐",
     "category": 4,
     "ecv": [
       {
@@ -262,7 +255,7 @@
       },
       {
         "value": 0.00442130627,
-        "_comment": "// = (Valeur en kgCO<sub>2</sub>e/kg de véhicule * Masse type) / Nombre de passagers / Durée de vie en km = (4 * 12000) / 30 / 361884",
+        "_comment": "// = (Valeur en kgCO₂e/kg de véhicule * Masse type) / Nombre de passagers / Durée de vie en km = (4 * 12000) / 30 / 361884",
         "id": 5
       }
     ],
@@ -290,7 +283,6 @@
     ],
     "slug": "velo",
     "type": "foot",
-    "emoji": "🚶‍♀️",
     "category": 4,
     "total": 0,
     "default": true,
@@ -317,8 +309,6 @@
     ],
     "slug": "veloelectrique",
     "type": "foot",
-    "emoji": "🚴",
-    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -355,7 +345,6 @@
     ],
     "slug": "busthermique",
     "type": "car",
-    "emoji": "🚌",
     "category": 4,
     "ecv": [
       {
@@ -391,7 +380,6 @@
     ],
     "slug": "tramway",
     "type": "rail",
-    "emoji": "🚌",
     "category": 4,
     "ecv": [
       {
@@ -427,7 +415,6 @@
     ],
     "slug": "metro",
     "type": "rail",
-    "emoji": "🚇",
     "category": 4,
     "ecv": [
       {
@@ -462,7 +449,6 @@
     ],
     "slug": "scooter",
     "type": "car",
-    "emoji": "🛵",
     "category": 4,
     "ecv": [
       {
@@ -497,7 +483,6 @@
     ],
     "slug": "moto",
     "type": "car",
-    "emoji": "🏍️",
     "category": 4,
     "ecv": [
       {
@@ -534,7 +519,6 @@
     ],
     "slug": "rer",
     "type": "rail",
-    "emoji": "🚃",
     "category": 4,
     "ecv": [
       {
@@ -572,7 +556,6 @@
     ],
     "slug": "ter",
     "type": "rail",
-    "emoji": "🚈",
     "category": 4,
     "ecv": [
       {
@@ -609,8 +592,6 @@
     ],
     "slug": "buselectrique",
     "type": "car",
-    "emoji": "🚌",
-    "secondEmoji": "⚡",
     "category": 4,
     "ecv": [
       {
@@ -647,8 +628,6 @@
     ],
     "slug": "busgnv",
     "type": "car",
-    "emoji": "🚌",
-    "secondEmoji": "💨",
     "category": 4,
     "ecv": [
       {

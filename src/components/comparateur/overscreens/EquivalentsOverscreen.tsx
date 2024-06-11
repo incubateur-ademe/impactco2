@@ -1,16 +1,18 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
-import categories from 'data/categories.json'
+import useParamContext from 'src/providers/ParamProvider'
+import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
+import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
-import useParamContext from 'components/providers/ParamProvider'
-import { useSearchEquivalent } from 'components/providers/useSearchEquivalent'
 import Button from 'components/base/buttons/Button'
-import { HiddenLabel } from 'components/form/HiddenLabel'
+import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import Category from './Category'
 import Equivalents from './Equivalents'
 import styles from './EquivalentsOverscreen.module.css'
 
-const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
+const EquivalentsOverscreen = ({ onClose = () => {} }: { onClose?: () => void }) => {
   const {
     comparateur: { equivalents, setEquivalents },
   } = useParamContext()
@@ -31,9 +33,9 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
         <Input
           id='search'
           background='white'
-          maxWidth='100%'
           placeholder='Rechercher un objet, un geste...'
           value={search}
+          padding='lg'
           onChange={(e) => setSearch(e.target.value)}
         />
         <Button
@@ -99,7 +101,6 @@ const EquivalentsOverscreen = ({ onClose }: { onClose: () => void }) => {
             Revenir au comparateur
           </Button>
         </div>
-        <div />
       </div>
     </>
   )

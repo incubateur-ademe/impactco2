@@ -38,7 +38,6 @@
       "BlackBerry"
     ],
     "slug": "smartphone",
-    "emoji": "📱",
     "category": 1,
     "ecv": [
       {
@@ -69,7 +68,6 @@
   {
     "name": "Ordinateur[s] fixe[s] sans écran (particulier)",
     "slug": "ordinateurfixeparticulier",
-    "emoji": "🖥️",
     "category": 1,
     "ecv": [
       {
@@ -100,7 +98,6 @@
   {
     "name": "Ordinateur[s] fixe[s] sans écran (professionnel)",
     "slug": "ordinateurfixeprofessionnel",
-    "emoji": "🖥️",
     "category": 1,
     "ecv": [
       {
@@ -131,7 +128,6 @@
   {
     "name": "Écran[s] d'ordinateur",
     "slug": "ecran",
-    "emoji": "🖥",
     "category": 1,
     "usage": {
       "peryear": 4,
@@ -162,7 +158,6 @@
   {
     "name": "Tablette[s]",
     "slug": "tabletteclassique",
-    "emoji": "💻",
     "category": 1,
     "usage": {
       "peryear": 1.1,
@@ -193,7 +188,6 @@
   {
     "name": "Télévision[s] ",
     "slug": "television",
-    "emoji": "📺",
     "category": 1,
     "ecv": [
       {
@@ -224,7 +218,6 @@
   {
     "name": "Ordinateur[s] portable[s]",
     "slug": "ordinateurportable",
-    "emoji": "💻",
     "category": 1,
     "ecv": [
       {
@@ -255,7 +248,6 @@
   {
     "name": "Enceinte[s] connectée[s]",
     "slug": "enceintebluetooth",
-    "emoji": "🔊",
     "category": 1,
     "ecv": [
       {
@@ -283,7 +275,6 @@
   {
     "name": "Téléphone[s] basique[s]",
     "slug": "telephonebasique",
-    "emoji": "📞",
     "category": 1,
     "ecv": [
       {
@@ -307,7 +298,6 @@
   {
     "name": "Casque[s] de réalité virtuelle",
     "slug": "casquevr",
-    "emoji": "🎮",
     "category": 1,
     "ecv": [
       {
@@ -339,7 +329,6 @@
     "name": "Alimentation[s] externe[s]",
     "subtitle": "pour ordinateur portable",
     "slug": "alimentationordinateur",
-    "emoji": "🔌",
     "category": 1,
     "ecv": [
       {
@@ -364,7 +353,6 @@
     "name": "Alimentation[s] externe[s]",
     "subtitle": "pour smartphone ou tablette",
     "slug": "alimentationsmartphone",
-    "emoji": "🔌",
     "category": 1,
     "ecv": [
       {
@@ -388,7 +376,6 @@
   {
     "name": "Disque[s] dur[s] externe[s]",
     "slug": "disquedur",
-    "emoji": "💽",
     "category": 1,
     "ecv": [
       {
@@ -412,7 +399,6 @@
   {
     "name": "Clef[s] usb",
     "slug": "clefusb",
-    "emoji": "💾",
     "category": 1,
     "ecv": [
       {
@@ -438,7 +424,6 @@
   {
     "name": "Box[s]",
     "slug": "box",
-    "emoji": "☎️",
     "category": 1,
     "ecv": [
       {

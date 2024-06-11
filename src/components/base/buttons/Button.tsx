@@ -1,20 +1,29 @@
-import React, { ButtonHTMLAttributes } from 'react'
-import { Button as StyledButton } from './Button.styles'
-import { Button as LinkButton } from './Link.styles'
-import { Priority } from './priority'
+import classNames from 'classnames'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import buttonStyles from './Button.module.css'
+import linkStyles from './Link.module.css'
 
 const Button = ({
   asLink,
+  className,
+  icon,
+  children,
   priority,
-  size,
   ...rest
-}: { size?: 'sm' | 'lg'; priority?: Priority } & ButtonHTMLAttributes<HTMLButtonElement> & {
+}: { size?: 'sm' | 'lg'; priority?: 'outline'; icon?: ReactNode } & ButtonHTMLAttributes<HTMLButtonElement> & {
     asLink?: boolean
   }) => {
-  return asLink ? (
-    <LinkButton $priority={priority} {...rest} />
-  ) : (
-    <StyledButton $size={size} $priority={priority} {...rest} />
+  return (
+    <button
+      className={classNames(
+        asLink ? linkStyles.link : buttonStyles.button,
+        { [buttonStyles.outline]: priority === 'outline' },
+        className
+      )}
+      {...rest}>
+      {icon}
+      {children}
+    </button>
   )
 }
 

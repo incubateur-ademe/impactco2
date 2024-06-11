@@ -13,6 +13,8 @@ export const NotionCommandValidation = z
       email: z
         .string({ required_error: 'Veuillez renseigner un email valide.' })
         .email({ message: 'Veuillez renseigner un email valide.' }),
+      accepted: z.literal(true, { errorMap: () => ({ message: 'Veuillez lire et accepter' }) }),
+      newsletter: z.boolean(),
     }),
     z.object({
       type: z.literal('suggestion'),
@@ -23,6 +25,7 @@ export const NotionCommandValidation = z
         .string({ required_error: 'Veuillez renseigner le type de suggestion.' })
         .min(1, 'Veuillez renseigner le type de suggestion.'),
       email: z.string().email({ message: 'Veuillez renseigner un email valide.' }).optional().or(z.literal('')),
+      accepted: z.literal(true, { errorMap: () => ({ message: 'Veuillez lire et accepter' }) }),
     }),
   ])
   .superRefine((values, ctx) => {

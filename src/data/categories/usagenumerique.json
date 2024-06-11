@@ -3,7 +3,6 @@
     "name": "Email",
     "subtitle": "",
     "slug": "email",
-    "emoji": "✉️",
     "unit": "email",
     "category": 10,
     "ecv": [
@@ -40,7 +39,6 @@
     "name": "Spam",
     "subtitle": "Non lu",
     "slug": "spam",
-    "emoji": "✋",
     "unit": "email",
     "category": 10,
     "ecv": [
@@ -69,7 +67,6 @@
     "name": "Stocker un Go de donnée",
     "subtitle": "Pendant 1 an",
     "slug": "stockagedonnee",
-    "emoji": "💾",
     "unit": "année",
     "category": 10,
     "ecv": [
@@ -93,7 +90,6 @@
   {
     "name": "Recherche[s] sur le web",
     "slug": "rechercheweb",
-    "emoji": "🧐",
     "unit": "recherche",
     "category": 10,
     "ecv": [
@@ -131,7 +127,6 @@
     "prefix": "Heure[s] de ",
     "subtitle": "",
     "slug": "streamingvideo",
-    "emoji": "🎬",
     "unit": "",
     "category": 10,
     "ecv": [
@@ -168,7 +163,6 @@
     "name": "Visioconférence",
     "prefix": "Heure[s] de ",
     "slug": "visioconference",
-    "emoji": "🎥",
     "unit": "",
     "category": 10,
     "ecv": [
@@ -204,7 +198,6 @@
   {
     "name": "Go de donnée",
     "slug": "telechargement",
-    "emoji": "⬇️",
     "category": 10,
     "ecv": [
       {

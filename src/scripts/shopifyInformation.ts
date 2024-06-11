@@ -49,7 +49,6 @@ Object.values(existingEquivalentsByCategory).forEach((equivalents) =>
       en: value && value.fr === label ? value.en : 'TODO',
       de: value && value.fr === label ? value.de : 'TODO',
       es: value && value.fr === label ? value.es : 'TODO',
-      emoji: equivalent.emoji,
       percentage: equivalent.percentage,
     }
 

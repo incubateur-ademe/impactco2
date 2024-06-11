@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
 
 test('Display detector', async ({ page }) => {
-  await page.goto('/detecteur-co2')
+  await page.goto('/contenu/detecteur-co2')
   await expect(page.getByRole('alertdialog')).not.toBeVisible()
 
   await page.getByRole('button', { name: '100 kg de CO₂e' }).click()

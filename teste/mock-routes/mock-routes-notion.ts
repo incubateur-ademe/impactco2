@@ -10,14 +10,16 @@ export const mockRoutesNotion = async (page: Page, validData: NotionCommand) => 
         validData.from === data.from &&
         validData.structure === data.structure &&
         validData.type === data.type &&
-        validData.needs === data.needs) ||
+        validData.needs === data.needs &&
+        validData.accepted === data.accepted) ||
       (validData.type === 'suggestion' &&
         validData.email === data.email &&
         validData.from === data.from &&
         validData.suggestionType === data.suggestionType &&
         validData.type === data.type &&
         validData.text === data.text &&
-        validData.avis === data.avis)
+        validData.avis === data.avis &&
+        validData.accepted === data.accepted)
     ) {
       await route.fulfill({
         headers: {

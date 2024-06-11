@@ -19,25 +19,31 @@
 
   &:hover {
     .button {
-      border: 1px solid var(--primary-20);
-      background: var(--primary-10);
+      background-color: var(--primary-10);
+      border: 2px solid var(--primary-40);
+      color: var(--primary-60);
     }
   }
 
   &:focus {
-    outline: none;
+    outline: 3px solid var(--primary-50);
+    outline-offset: 2px;
 
     .button {
-      outline: 3px solid var(--primary-40);
-      outline-offset: 2px;
+      outline: none;
     }
   }
 
   &:active {
     .button {
-      border: 1px solid var(--primary-30);
-      background: var(--primary-20);
+      background-color: var(--primary-20);
+      border: 2px solid var(--primary-50);
+      color: var(--primary-70);
     }
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
 }
 
@@ -45,6 +51,7 @@
   padding: 0.75rem;
   border-radius: 8px;
   border: 2px solid var(--neutral-20);
+  height: calc(4rem + 4px);
 }
 
 .names {
@@ -70,7 +77,7 @@
 .button {
   padding: 0.5rem;
   border-radius: 50%;
-  border: solid 1px var(--neutral-20);
+  border: solid 2px var(--primary-30);
   display: flex;
   justify-content: center;
   align-items: center;

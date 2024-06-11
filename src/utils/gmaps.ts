@@ -1,9 +1,24 @@
 import { Prisma } from '@prisma/client'
-import { GMapCommand } from 'pages/api/callGMap'
+import { DeplacementType } from 'types/equivalent'
+import { z } from 'zod'
 import { prismaClient } from 'utils/prismaClient'
 
 const getId = (values: GMapCommand) =>
   `${values.origins.latitude}-${values.origins.longitude}--${values.destinations.latitude}-${values.destinations.longitude}`
+
+export const GMapValidation = z.object({
+  destinations: z.object({
+    latitude: z.number(),
+    longitude: z.number(),
+  }),
+  origins: z.object({
+    latitude: z.number(),
+    longitude: z.number(),
+  }),
+})
+export type GMapCommand = z.infer<typeof GMapValidation>
+
+export type CallGMapDistances = Record<DeplacementType, number>
 
 export const getCachedValue = async (values: GMapCommand) =>
   prismaClient.gMapsCache.findUnique({

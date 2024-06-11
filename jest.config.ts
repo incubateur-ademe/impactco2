@@ -7,9 +7,6 @@ const customJestConfig = {
   moduleDirectories: ['node_modules', '<rootDir>/', '<rootDir>/src/'],
   testEnvironment: 'jest-environment-jsdom',
   setupFiles: ['./jest.polyfills.js', './jest.crash-if-unexpected-remote-call.js'],
-  testEnvironmentOptions: {
-    customExportConditions: [''], // See https://mswjs.io/docs/migrations/1.x-to-2.x/#cannot-find-module-mswnode-jsdom
-  },
   testMatch: [
     '**/testa/**/*.test.js',
     '**/testa/**/*.test.ts',
