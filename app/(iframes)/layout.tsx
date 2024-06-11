@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import React, { Suspense } from 'react'
 import { ParamProvider } from 'src/providers/ParamProvider'
+import 'utils/iframeStyles.css'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
