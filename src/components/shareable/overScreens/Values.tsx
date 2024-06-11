@@ -130,7 +130,7 @@ export const overScreenExtraSimulatorValues: (slug: string) => Record<string, Ov
     },
     integrer: {
       title: 'integrate',
-      children: <Integrate path='habillement#osez-changer' tracking='OsezChanger' />,
+      children: <Integrate path='habillement/osez-changer' tracking='OsezChanger' />,
     },
     hypothesis: {
       image: '/images/icn-next-actions.svg',
