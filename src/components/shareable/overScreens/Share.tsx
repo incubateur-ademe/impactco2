@@ -104,16 +104,15 @@ const Share = ({
       </div>
       {(category || path?.startsWith('outils/comparateur')) && (
         <div className={styles.meta}>
-          <Image
-            src={
-              category
-                ? `/meta/${category.slug}.png`
-                : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}`
-            }
-            width={728}
-            height={382.2}
-            alt=''
-          />
+          {category ? (
+            <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />
+          ) : (
+            <img
+              src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}`}
+              width={728}
+              height={382.2}
+            />
+          )}
           <div className={styles.text}>
             <div className={styles.metaHeader}>APERÇU DU PARTAGE</div>
             <p>
