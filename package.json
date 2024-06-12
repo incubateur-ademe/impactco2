@@ -50,7 +50,6 @@
     "axios": "^1.7.2",
     "classnames": "^2.5.1",
     "dotenv-cli": "^7.4.2",
-    "focus-trap-react": "^10.2.3",
     "fuse.js": "^7.0.0",
     "helmet": "^7.1.0",
     "html-to-image": "^1.11.11",
