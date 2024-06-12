@@ -102,6 +102,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/api-doc',
+        destination: '/doc/api',
+        permanent: true,
+      },
+      {
         source: '/categories',
         destination: '/thematiques',
         permanent: true,
