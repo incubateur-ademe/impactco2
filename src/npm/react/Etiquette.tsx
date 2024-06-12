@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import { Language } from 'types/equivalent'
 import InternalEtiquette from 'components/comparateur/Etiquette'
 
@@ -13,8 +15,15 @@ const Etiquette = ({
   animated?: boolean
   language?: Language
 }) => {
+  const ref = useRef(null)
   return (
-    <InternalEtiquette comparisons={comparisons} baseValue={value.toString()} animated={animated} language={language} />
+    <InternalEtiquette
+      ref={ref}
+      comparisons={comparisons}
+      baseValue={value.toString()}
+      animated={animated}
+      language={language}
+    />
   )
 }
 
