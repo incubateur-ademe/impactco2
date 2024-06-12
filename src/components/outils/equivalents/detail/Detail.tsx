@@ -143,7 +143,9 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                   />
                   {value.label}
                 </th>
-                <td className={styles.percent}>{!withPercent && <Percentage value={(100 * value.value) / sum} />}</td>
+                <td className={styles.percent}>
+                  {withPercent ? ' ' : <Percentage value={(100 * value.value) / sum} />}
+                </td>
                 <td>
                   <DetailValue unit={unit} value={value.value} />
                 </td>
@@ -156,7 +158,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                     <Label id={item.id} />
                   </td>
                   <td className={styles.percent}>
-                    {withPercent && <Percentage value={(100 * item.value) / value.value} />}
+                    {withPercent ? <Percentage value={(100 * item.value) / value.value} /> : ' '}
                   </td>
                   <td>
                     <DetailValue unit={unit} value={item.value} />
