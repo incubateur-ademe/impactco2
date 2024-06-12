@@ -21,6 +21,7 @@ const defaultEquivalents = [
     min: 50000,
     max: 500000,
     equivalents: [
+      ['repasavecduboeuf'],
       ['voiture-lille-nimes', 'voiturethermique'],
       ['smartphone', 'tabletteclassique'],
     ],
