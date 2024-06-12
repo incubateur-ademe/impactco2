@@ -1,8 +1,10 @@
 import axios from 'axios'
+import { cache } from 'react'
 import { Example } from 'types/example'
 
-export const getExamples = async (): Promise<Example[]> => {
+export const getExamples = cache(async (): Promise<Example[]> => {
   try {
+    console.log('get examples')
     const results = await axios.post<{
       results: {
         properties: {
@@ -67,9 +69,9 @@ export const getExamples = async (): Promise<Example[]> => {
     console.error(e)
     return []
   }
-}
+})
 
-export const getCommunications = async (): Promise<Example[]> => {
+export const getCommunications = cache(async (): Promise<Example[]> => {
   try {
     const results = await axios.post<{
       results: {
@@ -101,4 +103,4 @@ export const getCommunications = async (): Promise<Example[]> => {
     console.error(e)
     return []
   }
-}
+})

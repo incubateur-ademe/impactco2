@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { cache } from 'react'
 import { FAQ } from 'types/faq'
 import { getNotionContentProps } from 'components/Notion/utils'
 
-export const getFAQs = async (): Promise<FAQ[]> => {
+export const getFAQs = cache(async (): Promise<FAQ[]> => {
   try {
     const results = await axios.post<{
       results: {
@@ -58,4 +59,4 @@ export const getFAQs = async (): Promise<FAQ[]> => {
     console.error(e)
     return []
   }
-}
+})
