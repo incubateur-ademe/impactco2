@@ -16,14 +16,12 @@ const getFont = async (url: URL) => {
 
 let fonts: { name: string; data: ArrayBuffer; style: FontStyle; weight: FontWeight }[] = []
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest, context: { params: { slug: string } }) {
   if (process.env.NO_IMAGE === 'true') {
     return NextResponse.json(`Please use ${process.env.NEXT_PUBLIC_IMAGE_URL}`, { status: 400 })
   }
 
-  const { searchParams } = new URL(req.url)
-
-  const slug = searchParams.get('slug')
+  const { slug } = context.params
   if (!slug) {
     return NextResponse.json('No slug specified', { status: 400 })
   }
