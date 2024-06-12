@@ -148,9 +148,13 @@ const categoryValidation = z.object({
  *                   items:
  *                     $ref: '#/components/schemas/ECV'
  */
-export async function GET(req: NextRequest) {
+
+export async function GET(req: NextRequest, context: { params: { id: string } }) {
   const { searchParams } = new URL(req.url)
-  const inputs = categoryValidation.safeParse(Object.fromEntries(searchParams))
+  const inputs = categoryValidation.safeParse({
+    ...context.params,
+    detail: searchParams.get('detail'),
+  })
   if (!inputs.success) {
     return NextResponse.json(inputs.error, { status: 400 })
   }
