@@ -30,7 +30,8 @@
   }
 
   >svg {
-    height: 100% !important;
+    width: 1.875rem !important;
+    height: auto !important;
   }
 }
 

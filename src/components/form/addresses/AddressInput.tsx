@@ -82,6 +82,7 @@ const AddressInput = ({
         onChange={(event) => setValue(event.target.value)}
         onFocus={() => setFocus(true)}
         id={`input-${id}`}
+        onBlur={() => setFocus(false)}
       />
       {isFetching && (
         <div className={classNames(styles.loading, { [styles.largeLoading]: large })}>
