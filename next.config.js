@@ -97,6 +97,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/detecteur-co2',
+        destination: '/contenu/detecteur-co2',
+        permanent: true,
+      },
+      {
         source: '/categories',
         destination: '/thematiques',
         permanent: true,
