@@ -82,7 +82,7 @@ export const computeTransportEmission = (
  *           example: Métro
  *         value:
  *           type: number
- *           description: l'emission en Kg de CO₂e pour la distance donnée
+ *           description: l'emission en kg de CO₂e pour la distance donnée
  *           example: 152.3
  */
 
