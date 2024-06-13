@@ -69,7 +69,7 @@ const validation = z.object({
  *                         example: [4, 5, 6]
  *                       ecv:
  *                         type: number
- *                         description: l'emission totale en g de CO₂e
+ *                         description: l'emission totale en kg de CO₂e
  *                         example: 1.559309081
  *                       slug:
  *                         type: string
