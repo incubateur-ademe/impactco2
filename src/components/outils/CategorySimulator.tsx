@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import formatName from 'utils/formatName'
@@ -31,12 +31,30 @@ const CategorySimulator = ({
   withSimulator?: boolean
   type?: TransportSimulateur
 }) => {
+  const ref = useRef<HTMLDivElement>(null)
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
+  const [basePercent, setBasePercent] = useState(80)
+  const [legendRelative, setLegendRelative] = useState(false)
+  useEffect(() => {
+    const onResize = () => {
+      if (typeof ref !== 'function' && ref && ref.current && ref.current.parentElement) {
+        const { width } = ref.current.parentElement.getBoundingClientRect()
+        setBasePercent(width > 750 ? 80 : width > 700 ? 75 : width > 600 ? 70 : width > 450 ? 60 : 50)
+        setLegendRelative((max && equivalents[0]?.value / max > 0.75) || false)
+      }
+    }
+    onResize()
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
+  }, [equivalents, ref, max])
 
   return (
     <div className={styles.container}>
-      <div>
+      <div ref={ref}>
         {equivalents &&
           equivalents
             .sort((a, b) => a.value - b.value)
@@ -57,7 +75,7 @@ const CategorySimulator = ({
                     <div className={styles.data}>
                       <div
                         className={styles.fullBar}
-                        style={{ width: max ? `${(75 * equivalent.value) / max}%` : '0px' }}>
+                        style={{ width: max ? `${(basePercent * equivalent.value) / max}%` : '0px' }}>
                         <div
                           className={styles.halfBar}
                           style={{ width: `${(100 * formatUsage(equivalent)) / equivalent.value}%` }}
@@ -92,7 +110,7 @@ const CategorySimulator = ({
         />
       )}
       {hasUsage && (
-        <div className={styles.legend}>
+        <div className={classNames(styles.legend, { [styles.legendRelative]: legendRelative })}>
           <div>
             <div className={styles.usage} />
             Usage

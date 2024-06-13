@@ -19,7 +19,7 @@ const ItineraireSimulator = () => {
   const tTransport = useTranslations('transport')
 
   const { data: itineraries } = useItineraries(start, end, 'itinéraire')
-  const equivalents = useTransportations('Transport itinéraire', 'itineraire', itineraries)
+  const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
   return (
     <>
       <div className={styles.simulator}>
@@ -52,7 +52,7 @@ const ItineraireSimulator = () => {
             tracking='Transport itinéraire'
             equivalents={equivalents}
             displayAll={displayAll}
-            setDisplayAll={setDisplayAll}
+            setDisplayAll={hasMore ? setDisplayAll : undefined}
             displayAllText={tTransport('displayAll')}
             hideAllText={tTransport('hideAll')}
             withSimulator
