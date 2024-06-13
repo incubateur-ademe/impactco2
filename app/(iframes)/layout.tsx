@@ -2,6 +2,7 @@ import Script from 'next/script'
 import React, { Suspense } from 'react'
 import { ParamProvider } from 'src/providers/ParamProvider'
 import 'utils/iframeStyles.css'
+import IFrameTracking from 'components/layout/IFrameTracking'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -15,7 +16,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Suspense fallback={<div className='blank' />}>
         <ParamProvider>
           <main className='main-container'>
-            <div className='main-iframe'>{children}</div>
+            <div className='main-iframe'>
+              <IFrameTracking>{children}</IFrameTracking>
+            </div>
           </main>
         </ParamProvider>
       </Suspense>
