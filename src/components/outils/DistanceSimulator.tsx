@@ -16,7 +16,7 @@ const DistanceSimulator = () => {
   } = useParamContext()
   const t = useTranslations('transport')
 
-  const equivalents = useTransportations('Transport distance', 'distance')
+  const { hasMore, equivalents } = useTransportations('Transport distance', 'distance')
 
   return (
     <>
@@ -38,7 +38,7 @@ const DistanceSimulator = () => {
         tracking='Transport distance'
         equivalents={equivalents}
         displayAll={displayAll}
-        setDisplayAll={setDisplayAll}
+        setDisplayAll={hasMore ? setDisplayAll : undefined}
         displayAllText={t('displayAll')}
         hideAllText={t('hideAll')}
         withSimulator
