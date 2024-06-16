@@ -68,7 +68,13 @@ export default function useTransportations(
             .flatMap((equivalent) =>
               equivalent.carpool
                 ? [
-                    { ...equivalent, name: 'Covoiturage', value: equivalent.value / (carpool + 1) },
+                    {
+                      ...equivalent,
+                      name: 'Covoiturage',
+                      value: equivalent.value / (carpool + 1),
+                      ecv: equivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpool + 1) })),
+                      usage: equivalent.usage / (carpool + 1),
+                    },
                     { ...equivalent, carpool: 0 },
                   ]
                 : [equivalent]
