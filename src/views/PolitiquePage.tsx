@@ -155,65 +155,78 @@ const PolitiquePage = () => {
           et/ou sur l’exécution du contrat qu’elles ont souscrit, l’ADEME met en œuvre des Traitements poursuivant les
           finalités suivantes :
         </li>
-        <li> la gestion de la relation des utilisateurs des Sites avec l’ADEME, et ce incluant notamment :</li>
-        <li> la création d’un compte utilisateur ;</li>
-        <li> l’utilisation des sites et des services ;</li>
-        <li> la gestion des communications et le suivi des échanges avec les utilisateurs.</li>
+        <ul>
+          <li> la gestion de la relation des utilisateurs des Sites avec l’ADEME, et ce incluant notamment :</li>
+          <ul>
+            <li> la création d’un compte utilisateur ;</li>
+            <li> l’utilisation des sites et des services ;</li>
+            <li> la gestion des communications et le suivi des échanges avec les utilisateurs.</li>
+          </ul>
+        </ul>
         <li>
           En se fondant sur le consentement des Personnes concernées, l’ADEME met en œuvre des Traitements poursuivant
           les finalités suivantes :
         </li>
-        <li> la fourniture de Services personnalisés, tels que des annonces, newsletters, formations, etc. ;</li>
-        <li> la fourniture de Services facultatifs tels que les espaces de discussion interactifs ou tchats ;</li>
-        <li> la gestion de la participation des utilisateurs aux jeux et concours ;</li>
-        <li> la gestion des cookies soumis à consentement.</li>
+        <ul>
+          <li> la fourniture de Services personnalisés, tels que des annonces, newsletters, formations, etc. ;</li>
+          <li> la fourniture de Services facultatifs tels que les espaces de discussion interactifs ou tchats ;</li>
+          <li> la gestion de la participation des utilisateurs aux jeux et concours ;</li>
+          <li> la gestion des cookies soumis à consentement.</li>
+        </ul>
         <li>
           En se fondant sur le respect de ses obligations légales et réglementaires, l’ADEME met en œuvre des
           Traitements poursuivant les finalités suivantes :
         </li>
-        <li>
-          le développement de Produits et Service permettant de faciliter l’accomplissement des formalités
-          administratives nécessaires au traitement des demandes des internautes et utilisateurs ;
-        </li>
-        <li>
-          la gestion des réponses aux demandes officielles d’autorités publiques ou judiciaires habilitées à cet effet ;
-        </li>
-        <li> le respect de la réglementation applicable à notre activité ;</li>
-        <li> la gestion des demandes d’exercice de droits.</li>
+        <ul>
+          <li>
+            le développement de Produits et Service permettant de faciliter l’accomplissement des formalités
+            administratives nécessaires au traitement des demandes des internautes et utilisateurs ;
+          </li>
+          <li>
+            la gestion des réponses aux demandes officielles d’autorités publiques ou judiciaires habilitées à cet effet
+            ;
+          </li>
+          <li> le respect de la réglementation applicable à notre activité ;</li>
+          <li> la gestion des demandes d’exercice de droits.</li>
+        </ul>
         <li>
           En se fondant sur ses intérêts légitimes, l’ADEME met en œuvre des Traitements poursuivant les finalités
           suivantes :
         </li>
-        <li>
-          le développement et l’amélioration de nouveaux Produits ou Services et offres de Produits ou Services aux
-          internautes et/ou profitant au public;
-        </li>
-        <li>
-          la lutte contre la fraude, les abus, en ce incluant également la gestion des conséquences de cette fraude ou
-          de ces abus ;
-        </li>
-        <li>
-          la gestion des atteintes à la sécurité ou tout problème d’ordre technique rencontré par les Produits ou
-          Services ;
-        </li>
-        <li> la réalisation d’opérations de prospection commerciale à destination des professionnels ;</li>
-        <li>
-          la gestion des clients ou des employés au sein d’un groupe d’entreprises à des fins de gestion administrative
-          interne ;
-        </li>
-        <li> la gestion des demandes d’information et réclamations des utilisateurs ;</li>
-        <li> l’établissement de tout moyen de preuve nécessaire à la défense des droits de l’ADEME ;</li>
-        <li> la gestion des cookies non soumis à consentement.</li>
+        <ul>
+          <li>
+            le développement et l’amélioration de nouveaux Produits ou Services et offres de Produits ou Services aux
+            internautes et/ou profitant au public;
+          </li>
+          <li>
+            la lutte contre la fraude, les abus, en ce incluant également la gestion des conséquences de cette fraude ou
+            de ces abus ;
+          </li>
+          <li>
+            la gestion des atteintes à la sécurité ou tout problème d’ordre technique rencontré par les Produits ou
+            Services ;
+          </li>
+          <li> la réalisation d’opérations de prospection commerciale à destination des professionnels ;</li>
+          <li>
+            la gestion des clients ou des employés au sein d’un groupe d’entreprises à des fins de gestion
+            administrative interne ;
+          </li>
+          <li> la gestion des demandes d’information et réclamations des utilisateurs ;</li>
+          <li> l’établissement de tout moyen de preuve nécessaire à la défense des droits de l’ADEME ;</li>
+          <li> la gestion des cookies non soumis à consentement.</li>
+        </ul>
         <li>
           En se fondant sur la mission d’intérêt public, l’ADEME met en œuvre des Traitements poursuivant les finalités
           suivantes :
         </li>
-        <li>
-          La gestion des demandes d’aides permettant de faciliter l’accomplissement des formalités administratives
-          nécessaires au traitement des demandes des utilisateurs ;
-        </li>
-        <li> la gestion des communications et le suivi des échanges avec les utilisateurs ;</li>
-        <li> le respect de la réglementation applicable à notre activité.</li>
+        <ul>
+          <li>
+            La gestion des demandes d’aides permettant de faciliter l’accomplissement des formalités administratives
+            nécessaires au traitement des demandes des utilisateurs ;
+          </li>
+          <li> la gestion des communications et le suivi des échanges avec les utilisateurs ;</li>
+          <li> le respect de la réglementation applicable à notre activité.</li>
+        </ul>
       </ul>
       <h2>6. Combien de temps les Données à caractère personnel sont-elles conservées ?</h2>
       L’ADEME s’engage à conserver les Données à caractère personnel des Personnes concernées pour une durée n’excédant
@@ -506,7 +519,6 @@ const PolitiquePage = () => {
       20, avenue du Grésillé — BP 90406
       <br />
       49004 Angers Cedex 01
-      <br />
       <br />
       ou par Email à l’adresse suivante : <IframeableLink href='mailto:rgpd@ademe.fr'>rgpd@ademe.fr</IframeableLink>
       <br />
