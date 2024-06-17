@@ -1,11 +1,11 @@
 'use client'
 
 import { AxiosResponse } from 'axios'
-import Link from 'next/link'
 import React, { FormEvent, useState } from 'react'
 import { ZodError } from 'zod'
 import axiosClient from 'utils/axios'
 import { NotionCommand, NotionCommandValidation } from 'utils/notion'
+import IframeableLink from 'components/base/IframeableLink'
 import Button from 'components/base/buttons/Button'
 import CheckIcon from 'components/base/icons/check'
 import CheckboxInput from 'components/form/CheckboxInput'
@@ -92,9 +92,9 @@ const Meeting = ({ from }: { from: string }) => {
           <>
             J'ai lu et j'accepte que l'ADEME collecte mes données afin de garantir la bonne utilisation des services
             offerts et reconnais avoir pris connaissance de{' '}
-            <Link href='/politique-de-confidentialite' target='_blank' rel='noopener noreferrer'>
+            <IframeableLink href='/politique-de-confidentialite' target='_blank' rel='noopener noreferrer'>
               sa politique de protection des données personnelles
-            </Link>
+            </IframeableLink>
             . *
           </>
         }

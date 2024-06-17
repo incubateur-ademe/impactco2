@@ -2,9 +2,9 @@
 
 import classNames from 'classnames'
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import { track } from 'utils/matomo'
+import IframeableLink from 'components/base/IframeableLink'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import styles from './ToolCard.module.css'
 
@@ -20,7 +20,7 @@ export type ToolCardProps = {
 
 const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image }: ToolCardProps) => {
   return (
-    <Link
+    <IframeableLink
       href={link || `/outils/${slug}`}
       target={link && link.startsWith('http://') ? '_blank' : undefined}
       rel={link && link.startsWith('http://') ? 'noreferrer noopener' : undefined}
@@ -41,7 +41,7 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
           <FullArrowRightIcon />
         </div>
       </div>
-    </Link>
+    </IframeableLink>
   )
 }
 

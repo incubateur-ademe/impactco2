@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import Image from 'next/image'
-import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
@@ -8,6 +7,7 @@ import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
+import IframeableLink from 'components/base/IframeableLink'
 import Carpool from './Carpool'
 import CategoryDisplayAll from './CategoryDisplayAll'
 import styles from './CategorySimulator.module.css'
@@ -62,7 +62,7 @@ const CategorySimulator = ({
               <div
                 key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
                 className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
-                <Link data-testid='category-link' href={equivalent.link} className={styles.link}>
+                <IframeableLink data-testid='category-link' href={equivalent.link} className={styles.link}>
                   <EquivalentIcon equivalent={equivalent} height={3} />
                   <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
                     <div className={styles.name}>
@@ -87,7 +87,7 @@ const CategorySimulator = ({
                       kg CO₂e
                     </div>
                   </div>
-                </Link>
+                </IframeableLink>
                 {!!equivalent.carpool && type && (
                   <div className={styles.carpool}>
                     <div className={styles.triangle} />

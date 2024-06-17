@@ -1,12 +1,12 @@
 'use client'
 
 import classNames from 'classnames'
-import NextLink from 'next/link'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
 import { formatNumberPrecision } from 'utils/formatNumberPrecision'
 import EquivalentIcon from 'components/base/EquivalentIcon'
+import IframeableLink from 'components/base/IframeableLink'
 import Link from 'components/base/buttons/Link'
 import CloseThickIcon from 'components/base/icons/close-thick'
 import LinkIcon from 'components/base/icons/link'
@@ -72,14 +72,14 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
         )}
         {comparedEquivalent && (
           <>
-            <NextLink
+            <IframeableLink
               href={comparedEquivalent.link}
               className={styles.equivalent}
               target='_blank'
               rel='noopener noreferrer'>
               <EquivalentIcon height={2.5} equivalent={comparedEquivalent} />
               <LinkIcon />
-            </NextLink>
+            </IframeableLink>
             <Link
               target='_blank'
               rel='noopener noreferrer'

@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import { RulePage } from 'publicodes-react'
 import useLivraisonContext from 'src/providers/LivraisonProvider'
+import IframeableLink from './IframeableLink'
 import Markdown from './Markdown'
 
 export default function DocumentationLivraison({ slug }: { slug: string }) {
@@ -13,7 +13,7 @@ export default function DocumentationLivraison({ slug }: { slug: string }) {
       engine={engine}
       language='fr'
       renderers={{
-        Link: ({ to, children }) => <Link href={to || '/'}>{children}</Link>,
+        Link: ({ to, children }) => <IframeableLink href={to || '/'}>{children}</IframeableLink>,
         Text: ({ children }) => <Markdown>{children}</Markdown>,
       }}
     />
