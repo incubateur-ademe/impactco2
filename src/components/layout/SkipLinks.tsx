@@ -1,25 +1,25 @@
-import Link from 'next/link'
 import React from 'react'
 import styles from './SkipLinks.module.css'
 
+// Do not use Next/Link for this => tab order is not correct
 const SkipLinks = () => {
   return (
     <div className={styles.wrapper}>
       <ul>
         <li>
-          <Link className={styles.hidden} href='#contenu'>
+          <a className={styles.hidden} href='#contenu'>
             Contenu
-          </Link>
+          </a>
         </li>
         <li>
-          <Link className={styles.hidden} href='#header-navigation'>
+          <a className={styles.hidden} href='#header-navigation'>
             Menu
-          </Link>
+          </a>
         </li>
         <li>
-          <Link className={styles.hidden} href='#footer'>
+          <a className={styles.hidden} href='#footer'>
             Pied de page
-          </Link>
+          </a>
         </li>
       </ul>
     </div>
