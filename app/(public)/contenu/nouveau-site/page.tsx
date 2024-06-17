@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Découvrez le nouveau site “Impact CO2” de l’ADEME !',
   openGraph: {
     creators: 'ADEME',
-    images: `${process.env.NEXT_PUBLIC_URL}/meta/main.png`,
+    images: `${process.env.NEXT_PUBLIC_URL}/meta/nouveau-site.png`,
   },
 }
 const NewSite = async () => {
