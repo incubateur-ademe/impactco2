@@ -5,9 +5,6 @@ import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
 import Outil from 'components/outils/Outil'
 import { getCategory } from 'utils/category'
-import { getExamples } from 'utils/examples'
-import { getFAQs } from 'utils/faq'
-import { getNotionRevalidate } from 'components/Notion/utils'
 import { devTools, smallTools } from 'components/cards/tools'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -51,17 +48,14 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
   return parent as Metadata
 }
-export const revalidate = getNotionRevalidate()
 
-const OutilPage = async ({ params }: Props) => {
+const OutilPage = ({ params }: Props) => {
   const tool = tools.find((tool) => tool.slug === params.tool)
-  const examples = await getExamples()
-  const faqs = await getFAQs()
 
   if (tool) {
     return (
       <>
-        <Outil tool={tool} examples={examples} faqs={faqs} />
+        <Outil tool={tool} />
         <Suggestion from={`/outils/${tool.slug}`} fromLabel={tool.title} simulatorName={`de l'outil ${tool.title}`} />
       </>
     )
@@ -70,7 +64,7 @@ const OutilPage = async ({ params }: Props) => {
   if (category) {
     return (
       <>
-        <Category category={category} examples={examples} faqs={faqs} />
+        <Category category={category} />
         <Suggestion
           from={`/outils/${category.slug}`}
           fromLabel={category.name}

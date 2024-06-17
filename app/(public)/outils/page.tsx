@@ -1,8 +1,6 @@
 import { Metadata } from 'next'
 import React from 'react'
 import Outils from 'components/outils/Outils'
-import { getFAQs } from 'utils/faq'
-import { getNotionRevalidate } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'
 
 export const metadata: Metadata = {
@@ -10,14 +8,10 @@ export const metadata: Metadata = {
   description: 'Trouver l’outil adapté à votre prochaine publication.',
 }
 
-export const revalidate = getNotionRevalidate()
-
-const OutilsPage = async () => {
-  const faqs = await getFAQs()
-
+const OutilsPage = () => {
   return (
     <>
-      <Outils faqs={faqs} />
+      <Outils />
       <Suggestion from='/outils' fromLabel='Outils' simulatorName='du site' />
     </>
   )

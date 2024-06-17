@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
 }
 
-const page = async () => {
+const page = () => {
   redirect('/habillement#osez-changer')
 }
 

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   return parent as Metadata
 }
 
-const page = async ({ params }: Props) => {
+const page = ({ params }: Props) => {
   const category = getCategory(params.tool)
   if (category) {
     return <Category category={category} />

@@ -7,7 +7,7 @@ import Card from 'components/cards/Card'
 import Select from 'components/form/Select'
 import Block from 'components/layout/Block'
 import styles from './AllExamples.module.css'
-import Examples from './Examples'
+import ExamplesList from './ExamplesList'
 
 const AllExamples = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
   const [activity, setActivity] = useState('all')
@@ -74,7 +74,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         </Card>
       </Block>
       {(activity === 'all' || activity === 'Média') && (
-        <Examples
+        <ExamplesList
           withTags
           title='Médias'
           description='Ces médias utilisent nos outils avec brio'
@@ -83,7 +83,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         />
       )}
       {(activity === 'all' || activity === 'Entreprise') && (
-        <Examples
+        <ExamplesList
           withTags
           title='Entreprises'
           description='Ces entreprises ont intégré nos outils à la perfection'
@@ -92,7 +92,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         />
       )}
       {(activity === 'all' || activity === 'Loisirs/Culture') && (
-        <Examples
+        <ExamplesList
           withTags
           title='Culture et Loisirs'
           description='Ils utilisent nos outils de manière remarquable'
@@ -101,7 +101,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         />
       )}
       {(activity === 'all' || activity === 'Association') && (
-        <Examples
+        <ExamplesList
           withTags
           title='Associations'
           description='Les associations qui utilisent nos outils de façon exemplaire'
@@ -110,7 +110,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         />
       )}
       {(activity === 'all' || activity === 'Collectivité') && (
-        <Examples
+        <ExamplesList
           withTags
           title='Collectivités'
           description='Ces collectivités ont fait le choix d’Impact CO₂'
@@ -119,7 +119,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         />
       )}
       {(activity === 'all' || activity === 'Éducation') && (
-        <Examples
+        <ExamplesList
           withTags
           title='Éducation'
           description='Les exemples d’utilisation de nos outils dans le secteur de l’éducation'
@@ -128,7 +128,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         />
       )}
       {(activity === 'all' || activity === 'Institution') && (
-        <Examples
+        <ExamplesList
           withTags
           title='Institutions'
           description='Les mises en avant de nos outils par les institutions'
@@ -137,7 +137,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
         />
       )}
       {activity === 'all' && tool === 'all' && (
-        <Examples
+        <ExamplesList
           title='Ils parlent de nous'
           description="Les apparitions d'Impact CO₂ dans la presse"
           examples={communications}
