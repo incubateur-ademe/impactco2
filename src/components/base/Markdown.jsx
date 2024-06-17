@@ -1,7 +1,7 @@
 'use client'
 
 import MarkdownToJsx from 'markdown-to-jsx'
-import NextLink from 'next/link'
+import IframeableLink from './IframeableLink'
 
 export default function Markdown({ children, components = {}, ...otherProps }) {
   return (
@@ -11,7 +11,7 @@ export default function Markdown({ children, components = {}, ...otherProps }) {
         ...otherProps.options,
         forceBlock: true,
         overrides: {
-          a: NextLink,
+          a: IframeableLink,
           ...components,
         },
       }}>

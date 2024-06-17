@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import IframeableLink from 'components/base/IframeableLink'
 import Logos from 'components/base/Logo/Logos'
 import DocIcon from 'components/base/icons/doc'
 import ToolsIcon from 'components/base/icons/tools'
@@ -15,14 +15,14 @@ export default function Header() {
           <Logos />
           <div>
             <div className={styles.mainLinks}>
-              <Link href='/outils'>
+              <IframeableLink href='/outils'>
                 <ToolsIcon />
                 Les outils
-              </Link>
-              <Link href='/doc'>
+              </IframeableLink>
+              <IframeableLink href='/doc'>
                 <DocIcon />
                 La doc
-              </Link>
+              </IframeableLink>
             </div>
             <div className={styles.menu}>
               <Menu />

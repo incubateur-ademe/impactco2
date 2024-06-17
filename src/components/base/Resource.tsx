@@ -1,9 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import { track } from 'utils/matomo'
+import IframeableLink from './IframeableLink'
 import NewTabIcon from './NewTabIcon'
 import styles from './Resource.module.css'
 
@@ -23,7 +23,7 @@ const Resource = ({
   imgSize?: string
 }) => {
   return (
-    <Link
+    <IframeableLink
       className={styles.linkContainer}
       href={href}
       target='_blank'
@@ -49,7 +49,7 @@ const Resource = ({
           </div>
         )}
       </div>
-    </Link>
+    </IframeableLink>
   )
 }
 

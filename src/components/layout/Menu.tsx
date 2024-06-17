@@ -1,8 +1,8 @@
 'use client'
 
 import classNames from 'classnames'
-import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
+import IframeableLink from 'components/base/IframeableLink'
 import DocIcon from 'components/base/icons/doc'
 import MenuIcon from 'components/base/icons/menu'
 import ToolsIcon from 'components/base/icons/tools'
@@ -32,16 +32,16 @@ const Menu = () => {
       </button>
       <div className={classNames(styles.menu, { [styles.open]: open })}>
         <div>
-          <Link href='/outils'>
+          <IframeableLink href='/outils'>
             <ToolsIcon />
             Les outils
-          </Link>
+          </IframeableLink>
         </div>
         <div>
-          <Link href='/doc'>
+          <IframeableLink href='/doc'>
             <DocIcon />
             La doc
-          </Link>
+          </IframeableLink>
         </div>
       </div>
     </>
