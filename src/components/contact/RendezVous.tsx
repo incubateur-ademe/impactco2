@@ -23,6 +23,7 @@ const RendezVous = () => {
 
   const [email, setEmail] = useState('')
   const [accepted, setAccepted] = useState(false)
+  const [newsletter, setNewsletter] = useState(false)
   const [needs, setNeeds] = useState('')
   const [structure, setStructure] = useState('')
   const [other, setOther] = useState('')
@@ -40,6 +41,7 @@ const RendezVous = () => {
       other,
       from: params?.get('fromLabel') || '',
       accepted,
+      newsletter,
     }
     if (errors) {
       const body = NotionCommandValidation.safeParse(data)
@@ -52,7 +54,7 @@ const RendezVous = () => {
     return data
     // errors is not needed and cause an infinite refresh !
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [email, needs, other, params, structure, accepted])
+  }, [email, needs, other, params, structure, accepted, newsletter])
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -204,6 +206,14 @@ const RendezVous = () => {
               }
             />
 
+            <CheckboxInput
+              id='newsletter'
+              errors={errors}
+              className={styles.checkbox}
+              checked={newsletter}
+              setChecked={(checked) => setNewsletter(checked)}
+              label="Je souhaite recevoir les communications sur les outils et actualités d'Impact CO₂"
+            />
             <Button size='lg' disabled={sending} type='submit' data-testid='rendez-vous-button'>
               Envoyer ma demande
             </Button>
