@@ -15,10 +15,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       />
       <Suspense fallback={<div className='blank' />}>
         <ParamProvider>
-          <main className='main-container'>
-            <div className='main-iframe'>
-              <IFrameTracking>{children}</IFrameTracking>
-            </div>
+          <main className='main-iframe'>
+            <IFrameTracking>{children}</IFrameTracking>
           </main>
         </ParamProvider>
       </Suspense>
