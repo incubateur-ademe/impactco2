@@ -4,4 +4,8 @@ body {
 
 .main-iframe {
   padding: 2rem 0;
+  width: 100%;
+  max-width: 53rem;
+  margin: auto;
+  background-color: transparent;
 }
