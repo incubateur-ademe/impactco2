@@ -175,7 +175,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                 <Image className={styles.icon} src='/images/icn-total.svg' width={20} height={20} alt='' />
                 Total
               </th>
-              <th className={styles.percent} />
+              <th className={styles.percent}> </th>
               <th>
                 <DetailValue unit={unit} value={sum} />
               </th>
