@@ -1,4 +1,9 @@
-import { formatNumberPrecision } from 'utils/formatNumberPrecision'
+import { getNumberPrecision } from 'utils/formatNumberPrecision'
+
+const formatNumberPrecision = (number: number) => {
+  const { value, unit } = getNumberPrecision(number)
+  return `${value} ${unit}`
+}
 
 describe('formatNumberPrecision', () => {
   test('devrait formater un nombre inférieur à 1 kg (strictement) en grammes', () => {

@@ -9,7 +9,7 @@ const Title = ({
   intValue,
 }: {
   introduction?: string
-  roundedValue: string
+  roundedValue: number
   unit: string
   intValue: number
 }) => {
@@ -25,7 +25,7 @@ const Title = ({
         <>
           La production de cet article émet{' '}
           <b>
-            {roundedValue} {unit} CO₂e
+            {roundedValue.toLocaleString()} {unit} CO₂e
           </b>
         </>
       )}

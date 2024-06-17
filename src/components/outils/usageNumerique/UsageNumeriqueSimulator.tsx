@@ -10,6 +10,7 @@ import { computeFootprint } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
+import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import shareableStyles from 'components/shareable/Shareable.module.css'
@@ -119,7 +120,7 @@ const UsageNumeriqueSimulator = () => {
           <div className={styles.header}>VOS USAGES ÉMETTENT</div>
           <div className={styles.value}>
             <span className={styles.number} data-testid='usagenumerique-generated-value'>
-              {formatNumber(total / 1000)}
+              <LocalNumber number={formatNumber(total / 1000)} />
             </span>{' '}
             kg co₂e
           </div>
@@ -128,7 +129,10 @@ const UsageNumeriqueSimulator = () => {
         <div className={styles.values}>
           <div className={styles.header}>SOIT...</div>
           <div className={styles.value}>
-            <span className={styles.number}>{formatNumber((total * 52) / 1000)}</span> kg co₂e
+            <span className={styles.number}>
+              <LocalNumber number={formatNumber((total * 52) / 1000)} />
+            </span>{' '}
+            kg co₂e
           </div>
           <div>par an</div>
         </div>

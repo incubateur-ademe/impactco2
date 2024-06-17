@@ -13,6 +13,7 @@ import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import useItineraries from 'hooks/useItineraries'
 import EquivalentIcon from 'components/base/EquivalentIcon'
+import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import NumberInput from 'components/form/NumberInput'
@@ -142,7 +143,7 @@ const TeletravailSimulator = () => {
               <div className={styles.header}>VOUS GÉNÉREZ</div>
               <div className={styles.value}>
                 <span className={styles.number} data-testid='teletravail-generated-value'>
-                  {formatNumber(total * presentiel)}
+                  <LocalNumber number={formatNumber(total * presentiel)} />
                 </span>{' '}
                 kg co₂e
               </div>
@@ -152,7 +153,10 @@ const TeletravailSimulator = () => {
             <div className={styles.values}>
               <div className={styles.header}>VOUS ÉCONOMISEZ</div>
               <div className={styles.greenValue}>
-                <span className={styles.number}>{formatNumber(0.75 * (5 - presentiel) * total)}</span> kg co₂e
+                <span className={styles.number}>
+                  <LocalNumber number={formatNumber(0.75 * (5 - presentiel) * total)} />
+                </span>{' '}
+                kg co₂e
               </div>
               <div>par an</div>
               <div>en télétravaillant {5 - presentiel} jours / semaine</div>
@@ -162,7 +166,10 @@ const TeletravailSimulator = () => {
             <div className={styles.values}>
               <div className={styles.header}>SOIT</div>
               <div className={styles.greenValue}>
-                <span className={styles.number}>{formatNumber((0.75 * (5 - presentiel) * total) / 99)}</span> %
+                <span className={styles.number}>
+                  <LocalNumber number={formatNumber((0.75 * (5 - presentiel) * total) / 99)} />
+                </span>{' '}
+                %
               </div>
               <div>d'économisé sur votre empreinte carbone annuelle</div>
             </div>

@@ -8,6 +8,7 @@ import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
+import LocalNumber from 'components/base/LocalNumber'
 import Carpool from './Carpool'
 import CategoryDisplayAll from './CategoryDisplayAll'
 import styles from './CategorySimulator.module.css'
@@ -82,7 +83,7 @@ const CategorySimulator = ({
                         />
                       </div>
                       <span className={styles.value} data-testid={`category-${equivalent.slug}-value`}>
-                        {formatNumber(equivalent.value)}
+                        <LocalNumber number={formatNumber(equivalent.value)} />
                       </span>{' '}
                       kg CO₂e
                     </div>

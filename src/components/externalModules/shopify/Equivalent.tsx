@@ -1,5 +1,7 @@
 import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
+import { getNumberPrecision } from 'utils/formatNumberPrecision'
+import LocalNumber from 'components/base/LocalNumber'
 import EqualIcon from 'components/base/icons/equal'
 import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
@@ -19,7 +21,7 @@ const Equivalent = ({
   className?: string
   baseValue: string | number
   comparisons: string[]
-  title?: (unit: string, roundedValue: string, intValue: number) => ReactNode
+  title?: (unit: string, roundedValue: number, intValue: number) => ReactNode
   animated?: boolean
   url?: string
   language?: Language
@@ -77,21 +79,18 @@ const Equivalent = ({
   }, [isAnimated, comparisons])
 
   const intValue = Number(baseValue)
-  const value = Number.isNaN(intValue) ? 100000 : intValue
-
-  const unit = value >= 1000 ? 'kg' : 'g'
-  const unitValue = value >= 1000 ? value / 1000 : value
-  const roundedValue = (Math.round(unitValue * 100) / 100).toLocaleString()
+  const preciseValue = Number.isNaN(intValue) ? 100000 : intValue
+  const { unit, value } = getNumberPrecision(preciseValue / 1000)
 
   return (
     <div className={className}>
-      {title && title(unit, roundedValue, intValue)}
+      {title && title(unit, value, intValue)}
       <div className={styles.container}>
         <div className={styles.left}>
-          <Logo value={value} url={url} />
+          <Logo value={preciseValue} url={url} />
           <div className={styles.leftContent}>
             <div className={styles.value} data-testid='etiquette-value'>
-              {roundedValue}
+              <LocalNumber number={value} />
             </div>
             <div className={styles.label}>{unit} CO₂e</div>
           </div>
@@ -122,7 +121,7 @@ const Equivalent = ({
                       : styles.animatedComparison
                     : styles.comparison
                 }>
-                <SimpleValue value={value} comparison={comparison} language={language} />
+                <SimpleValue value={preciseValue} comparison={comparison} language={language} />
               </div>
             ))}
           </div>
