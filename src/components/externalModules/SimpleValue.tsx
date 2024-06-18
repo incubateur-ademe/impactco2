@@ -5,6 +5,7 @@ import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
+import LocalNumber from 'components/base/LocalNumber'
 import InfinityIcon from 'components/base/icons/infinity'
 import styles from './SimpleValue.module.css'
 
@@ -40,7 +41,7 @@ const SimpleValue = ({
 
   const comparisonValue = ((equivalent.percentage ? 100 : 1) * value) / equivalent.value
   const equivalentValue = Number.isFinite(comparisonValue) ? (
-    formatNumber(comparisonValue).toLocaleString()
+    <LocalNumber number={formatNumber(comparisonValue)} />
   ) : (
     <InfinityIcon />
   )
