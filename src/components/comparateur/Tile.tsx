@@ -7,6 +7,7 @@ import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
+import LocalNumber from 'components/base/LocalNumber'
 import buttonStyles from 'components/base/buttons/Button.module.css'
 import ArrowUpIcon from 'components/base/icons/arrow-up'
 import CloseIcon from 'components/base/icons/close'
@@ -34,7 +35,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
       <div>
         <EquivalentIcon height={3} equivalent={equivalent} />
         <div className={styles.value} data-testid={`comparateur-${slug}-value`}>
-          {Number.isFinite(value) ? formatNumber(value).toLocaleString() : <InfinityIcon />}
+          {Number.isFinite(value) ? <LocalNumber number={formatNumber(value)} /> : <InfinityIcon />}
         </div>
         <div className='text-sm' data-testid={`comparateur-${slug}-name`}>
           {formatName(

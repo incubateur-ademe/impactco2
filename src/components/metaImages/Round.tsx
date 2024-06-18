@@ -4,6 +4,7 @@ import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { buildCurrentUrlFor } from 'utils/urls'
+import LocalNumber from 'components/base/LocalNumber'
 import InfinityIcon from 'components/base/icons/infinity'
 
 const equivalents = values as Record<string, SimpleEquivalent>
@@ -12,7 +13,7 @@ const Round = ({ value, comparison, main }: { value?: number; comparison?: strin
   const equivalent = comparison ? equivalents[comparison] : undefined
   const comparisonValue = value ? value / (equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1000) : 0
   const equivalentValue = Number.isFinite(comparisonValue) ? (
-    formatNumber(comparisonValue).toLocaleString('fr-FR')
+    <LocalNumber number={formatNumber(comparisonValue)} />
   ) : (
     <InfinityIcon />
   )

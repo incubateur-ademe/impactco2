@@ -6,6 +6,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
+import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import HiddenLabel from 'components/form/HiddenLabel'
@@ -188,7 +189,7 @@ const LivraisonSimulator = () => {
         <div className={styles.header}>LA LIVRAISON DE VOTRE COLIS GÉNÈRE</div>
         <div className={styles.value}>
           <span className={styles.number} data-testid='livraison-colis-value'>
-            {formatNumber(total / 1000)}
+            <LocalNumber number={formatNumber(total / 1000)} />
           </span>{' '}
           kg co₂e
         </div>
@@ -238,7 +239,7 @@ const LivraisonSimulator = () => {
         <div className={styles.header}>VOS HABITUDES DE LIVRAISON GÉNÈRENT</div>
         <div className={styles.value}>
           <span className={styles.number} data-testid='livraison-habits-value'>
-            {formatNumber((total * number * frequence) / 1000)}
+            <LocalNumber number={formatNumber((total * number * frequence) / 1000)} />
           </span>{' '}
           kg co₂e
         </div>

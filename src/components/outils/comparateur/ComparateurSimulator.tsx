@@ -4,9 +4,10 @@ import classNames from 'classnames'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
-import { formatNumberPrecision } from 'utils/formatNumberPrecision'
+import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
+import LocalNumber from 'components/base/LocalNumber'
 import Link from 'components/base/buttons/Link'
 import CloseThickIcon from 'components/base/icons/close-thick'
 import LinkIcon from 'components/base/icons/link'
@@ -19,6 +20,8 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
   const {
     comparateur: { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent },
   } = useParamContext()
+
+  const { value, unit } = getNumberPrecision(baseValue * weight)
 
   return (
     <div>
@@ -63,7 +66,7 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
           <div className={styles.description}>
             C’est{' '}
             <span className={styles.descriptionValue} data-testid='compared-equivalent-value'>
-              {formatNumberPrecision(baseValue * weight)} CO₂e
+              <LocalNumber number={value} /> {unit} CO₂e
             </span>
             , soit autant d’émissions que pour fabriquer, consommer ou parcourir...
           </div>

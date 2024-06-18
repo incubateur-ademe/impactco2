@@ -5,6 +5,7 @@ import React, { useRef, useState } from 'react'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
+import LocalNumber from 'components/base/LocalNumber'
 import SprinklesIcon from 'components/base/icons/sprinkles'
 import Etiquette from 'components/comparateur/Etiquette'
 import { getRandomEquivalents } from 'components/comparateur/random'
@@ -58,7 +59,7 @@ const OsezChangerSimulator = () => {
           description='Combien de paires de chaussures neuves avez-vous acheté cette année ?'
           value={newValue}
           setValue={setNewValue}
-          extra={newValue ? `+${(newValue * shoesImpact).toLocaleString('fr-FR')}kg CO₂e` : false}
+          extra={newValue ? `+${(newValue * shoesImpact).toLocaleString()}kg CO₂e` : false}
         />
       </div>
       <div className={styles.bottom}>
@@ -68,7 +69,10 @@ const OsezChangerSimulator = () => {
               {newValue} {formatName('paire[s] de chaussures neuves', newValue).toUpperCase()}
             </div>
             <div className={styles.value}>
-              <span className={styles.number}>{formatNumber(total)}</span> kg co₂e
+              <span className={styles.number}>
+                <LocalNumber number={formatNumber(total)} />
+              </span>{' '}
+              kg co₂e
             </div>
           </div>
           <div className={styles.etiquette}>

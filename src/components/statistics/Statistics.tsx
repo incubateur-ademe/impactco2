@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 import { Stats } from 'utils/stats'
+import LocalNumber from 'components/base/LocalNumber'
 import Link from 'components/base/buttons/Link'
 import styles from './Statistics.module.css'
 
@@ -12,7 +13,9 @@ const Statistics = ({ stats }: { stats: Stats }) => {
         <div className={styles.box}>
           <div>
             <div className={styles.value}>
-              <b>{(stats.visits + stats.iframes).toLocaleString()}</b>
+              <b>
+                <LocalNumber number={stats.visits + stats.iframes} />
+              </b>
             </div>
             Visites
             <div className={classNames(styles.description, 'text-sm')}>
@@ -21,7 +24,9 @@ const Statistics = ({ stats }: { stats: Stats }) => {
           </div>
           <div>
             <div className={styles.value}>
-              <b>{stats.iframes.toLocaleString()}</b>{' '}
+              <b>
+                <LocalNumber number={stats.iframes} />
+              </b>{' '}
             </div>
             Dont Iframes
             <div className={classNames(styles.description, 'text-sm')}>
@@ -32,7 +37,9 @@ const Statistics = ({ stats }: { stats: Stats }) => {
         <div className={styles.box}>
           <div>
             <div className={styles.value}>
-              <b>{stats.shared.toLocaleString()}</b>
+              <b>
+                <LocalNumber number={stats.shared} />
+              </b>
             </div>
             Partages
             <div className={classNames(styles.description, 'text-sm')}>
@@ -41,7 +48,9 @@ const Statistics = ({ stats }: { stats: Stats }) => {
           </div>
           <div>
             <div className={styles.value}>
-              <b>{stats.screenshots.toLocaleString()}</b>
+              <b>
+                <LocalNumber number={stats.screenshots} />
+              </b>
             </div>
             Screenshots
             <div className={classNames(styles.description, 'text-sm')}>
@@ -52,7 +61,9 @@ const Statistics = ({ stats }: { stats: Stats }) => {
         <div className={styles.box}>
           <div>
             <div className={styles.value}>
-              <b>{stats.api.toLocaleString()}</b>
+              <b>
+                <LocalNumber number={stats.api} />
+              </b>
             </div>
             Appels à l'API
             <div className={classNames(styles.description, 'text-sm')}>(Nombre d'appels externe à l'API)</div>
@@ -78,7 +89,9 @@ const Statistics = ({ stats }: { stats: Stats }) => {
               <tr key={label}>
                 <td>{label}</td>
                 <td>
-                  <b>{visits.toLocaleString()}</b>
+                  <b>
+                    <LocalNumber number={visits} />
+                  </b>
                 </td>
               </tr>
             ))}

@@ -1,6 +1,6 @@
 export default function formatNumber(value: number) {
   if (!value) {
-    return '0'
+    return 0
   }
 
   if (value > 100) {

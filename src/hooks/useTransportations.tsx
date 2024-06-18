@@ -55,7 +55,7 @@ export default function useTransportations(
                 (itineraries
                   ? ` - ${formatNumber(
                       itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
-                    )} km`
+                    ).toLocaleString()} km`
                   : ''),
               value:
                 computeECV(equivalent) *
