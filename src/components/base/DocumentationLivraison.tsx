@@ -1,4 +1,4 @@
-import { RulePage } from 'publicodes-react'
+import { RulePage } from '@publicodes/react-ui'
 import useLivraisonContext from 'src/providers/LivraisonProvider'
 import IframeableLink from './IframeableLink'
 import Markdown from './Markdown'
@@ -6,10 +6,11 @@ import Markdown from './Markdown'
 export default function DocumentationLivraison({ slug }: { slug: string }) {
   const { engine } = useLivraisonContext()
 
+  console.log(slug)
   return (
     <RulePage
       documentationPath='/doc/livraison'
-      rulePath={slug}
+      rulePath={decodeURI(slug)}
       engine={engine}
       language='fr'
       renderers={{
