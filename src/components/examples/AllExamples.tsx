@@ -139,7 +139,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
       {activity === 'all' && tool === 'all' && (
         <Examples
           title='Ils parlent de nous'
-          description="Les apparitions d'Impact CO₂ dans la presse"
+          description="Les apparitions d'Impact CO₂ sur la toile"
           examples={communications}
         />
       )}
