@@ -24,6 +24,7 @@ const PlanDuSitePage = () => {
         <div>Contenus</div>
         <div className={styles.row}>
           <Link href='/contenu/detecteur-co2'>Le Détecteur CO₂</Link>
+          <Link href='/contenu/etiquette-carbone'>L'étiquette crabone</Link>
           <Link href='/contenu/impact-carbone-hiver-station-ski'>
             4 conseils pour réduire l’impact carbone des séjours au ski
           </Link>
