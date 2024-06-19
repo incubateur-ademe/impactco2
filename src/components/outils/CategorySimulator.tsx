@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -32,6 +33,7 @@ const CategorySimulator = ({
   withSimulator?: boolean
   type?: TransportSimulateur
 }) => {
+  const t = useTranslations('category')
   const ref = useRef<HTMLDivElement>(null)
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
@@ -114,11 +116,11 @@ const CategorySimulator = ({
         <div className={classNames(styles.legend, { [styles.legendRelative]: legendRelative })}>
           <div>
             <div className={styles.usage} />
-            Usage
+            {t('legend.usage')}
           </div>
           <div>
             <div className={styles.construction} />
-            Construction
+            {t('legend.construction')}
           </div>
         </div>
       )}
