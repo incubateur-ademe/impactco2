@@ -1,16 +1,8 @@
 import React from 'react'
-import Card from 'components/cards/Card'
 import styles from './Email.module.css'
-import Meeting from './Meeting'
 
 const Email = () => {
-  return (
-    <Card colored className={styles.card}>
-      <label htmlFor='input-email-Accueil'>Votre adresse email</label>
-      <div>Nous vous recontacterons très prochainement pour échanger.</div>
-      <Meeting from='Accueil' />
-    </Card>
-  )
+  return <iframe title='Laisser votre email' className={styles.iframe} src={process.env.CONNECT_IFRAME_HOME} />
 }
 
 export default Email
