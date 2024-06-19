@@ -1,16 +1,8 @@
 import React from 'react'
-import Card from 'components/cards/Card'
-import styles from './Email.module.css'
-import Meeting from './Meeting'
+import IframeConnect from 'components/connect/IframeConnect'
 
 const Email = () => {
-  return (
-    <Card colored className={styles.card}>
-      <span>Votre adresse email</span>
-      <div>Nous vous recontacterons très prochainement pour échanger.</div>
-      <Meeting from='Accueil' />
-    </Card>
-  )
+  return <IframeConnect title='Laisser votre email' src={process.env.CONNECT_IFRAME_HOME} />
 }
 
 export default Email
