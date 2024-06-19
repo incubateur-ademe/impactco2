@@ -40,6 +40,7 @@ const Shareable = ({
 }: ShareableProps) => {
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
+  const tModal = useTranslations('modal')
   const { theme } = useParamContext()
   const [overScreenInternal, setOverScreenInternal] = useState<OverScreenInfo | undefined>()
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
@@ -111,7 +112,7 @@ const Shareable = ({
                 <div className={styles.header}>
                   <b className='text-lg'>{t(overScreenToDisplay.title)}</b>
                   <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
-                    Fermer
+                    {tModal('close')}
                   </GhostButton>
                 </div>
                 <div className={styles.separatorBothBorders} />
@@ -125,7 +126,7 @@ const Shareable = ({
                 <div className={styles.separatorBothBorders} />
                 <div className={styles.footer}>
                   <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose} data-testid='cancel-button'>
-                    Annuler
+                    {tModal('close')}
                   </GhostButton>
                 </div>
               </div>
