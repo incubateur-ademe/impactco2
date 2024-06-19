@@ -55,7 +55,7 @@ export const numeriques = [
     },
     end: 0.2,
     include: {
-      pre: 'Écran  moyen de 6,63 pouces, mix des technologies LCD et OLED, 8 Go de RAM, 210 Go de mémoire (mix pondéré entre 3 configurations, 24%, 24%, 52%).',
+      pre: "Écran  moyen de 6,63 pouces, mix des technologies LCD et OLED, 8 Go de RAM, 210 Go de mémoire (mix pondéré entre 3 configurations, 24%, 24%, 52%). Moyenne des usages d'un smartphone personnel et professionnel",
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
@@ -148,7 +148,7 @@ export const numeriques = [
     },
     end: 0.4,
     include: {
-      pre: "Écran de 10,53 pouces, mix de technologies d'écran LCD, 4,7 Go de RAM, 144 Go de mémoire (mix pondéré entre 3 configurations de tablettes.).",
+      pre: "Écran de 10,53 pouces, mix de technologies d'écran LCD, 4,7 Go de RAM, 144 Go de mémoire (mix pondéré entre 3 configurations de tablettes.). Moyenne des usages d'une tablette personnelle et professionnelle",
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
