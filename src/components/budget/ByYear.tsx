@@ -46,7 +46,7 @@ const ByYear = () => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th />
+            <th>Poste</th>
             <th>
               <b>Total</b>
             </th>
