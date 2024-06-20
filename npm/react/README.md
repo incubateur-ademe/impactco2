@@ -51,7 +51,7 @@ Un dark mode est disponible en entourant le widget de la class `night`
 
 #### value : number
 
-Impact carbonne (en grammes) à comparer
+Impact carbone (en grammes) à comparer
 
 #### animated : boolean
 

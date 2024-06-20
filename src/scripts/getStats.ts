@@ -9,6 +9,21 @@ export type Stats = {
   topUsers: { label: string; visits: number }[]
 }
 
+const internalPages = [
+  'transport',
+  'transport/itineraire',
+  'comparateur',
+  'fruitsetlegumes',
+  'usagenumerique',
+  'repas',
+  'numerique',
+  'habillement',
+  'boisson',
+  'mobilier',
+  'chauffage',
+  'livraison',
+]
+
 export const getMatomoStats = async (date: string) => {
   const [allVisits, allEventsByCategory, allEventsByAction] = await Promise.all([
     await axios
@@ -29,6 +44,31 @@ export const getMatomoStats = async (date: string) => {
   ])
 
   const iframes = allEventsByCategory.filter((event) => event.label.startsWith('IFrame_'))
+  const internalVisits: Record<string, number> = {}
+  allVisits.forEach((page) => {
+    const segments = page.label.split('?')
+    const key = segments[0].startsWith('/') ? segments[0].slice(1) : segments[0]
+    if (internalPages.includes(key)) {
+      if (internalVisits[key]) {
+        internalVisits[key] += page.nb_visits
+      } else {
+        internalVisits[key] = page.nb_visits
+      }
+    }
+  })
+
+  const iframeVisits: Record<string, number> = {}
+  allEventsByAction
+    .filter((event) => event.label.startsWith('https://impactco2.fr/iframes/'))
+    .forEach((event) => {
+      const segments = event.label.split('?')
+      const key = segments[0].replace('https://impactco2.fr/iframes/', '')
+      if (iframeVisits[key]) {
+        iframeVisits[key] += event.nb_visits
+      } else {
+        iframeVisits[key] = event.nb_visits
+      }
+    })
 
   const results = {
     visits: allVisits.filter((visit) => visit.label !== 'iframes').reduce((acc, visit) => acc + visit.nb_visits, 0),
@@ -52,6 +92,14 @@ export const getMatomoStats = async (date: string) => {
       .sort((a, b) => b.nb_visits - a.nb_visits)
       .slice(0, 10)
       .map((event) => ({ label: event.label.replace('IFrame_', ''), visits: event.nb_visits })),
+    topVisitInternal: Object.entries(internalVisits)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([label, visits]) => ({ label, visits })),
+    topVisitIFrame: Object.entries(iframeVisits)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([label, visits]) => ({ label, visits })),
   }
 
   console.log(results)
