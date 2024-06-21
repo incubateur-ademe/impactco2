@@ -1,11 +1,14 @@
 import { Metadata } from 'next'
 import React from 'react'
-import Notion from 'components/Notion/Notion'
-import { getNotionContentProps, getNotionRevalidate } from 'components/Notion/utils'
+import { getGuideUtilisation } from 'utils/guideUtilisation'
+import { getNotionRevalidate } from 'components/Notion/utils'
+import GuideUtilisation from 'components/faq/GuideUtilisation'
 import Suggestion from 'components/layout/Suggestion'
 
 const title = "Guide d'utilisation"
+
 export const revalidate = getNotionRevalidate()
+
 export const metadata: Metadata = {
   title: `${title} | Impact CO₂`,
   description: 'Comment utiliser les ressources Impact CO₂.',
@@ -16,16 +19,11 @@ export const metadata: Metadata = {
 }
 
 const GuideUtilisationPage = async () => {
-  const recordMap = await getNotionContentProps('b9d08930a49a4346830b7a12fd7cb733')
+  const rows = await getGuideUtilisation()
 
   return (
     <>
-      <Notion
-        title={title}
-        description="Suive le guide pour prendre en main les outils d'Impact CO₂"
-        recordMap={recordMap}
-        previous={{ link: '/doc', label: 'La doc' }}
-      />
+      <GuideUtilisation rows={rows} />
       <Suggestion from={title} fromLabel={title} simulatorName="du guide d'utilisation" />
     </>
   )
