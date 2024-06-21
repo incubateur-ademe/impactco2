@@ -12,27 +12,9 @@ export const usageNumeriqueConfig = {
     device: 'email . appareil',
     network: 'email . transmission . émetteur . réseau',
     type: 'email . taille',
-    appareils: [
-      { value: 'smartphone', label: 'Smartphone' },
-      { value: 'tablette', label: 'Tablette' },
-      { value: 'ordinateur portable', label: 'Ordinateur portable' },
-      { value: 'ordinateur et écran', label: 'Ordinateur fixe' },
-    ],
-    types: [
-      { value: 0.075, label: 'Sans pièce jointe' },
-      { value: 1.075, label: 'Pièce jointe 1Mo' },
-      { value: 5.075, label: 'Pièce jointe 5Mo' },
-    ],
-    networks: [
-      {
-        value: 'fixe FR',
-        label: 'Wifi',
-      },
-      {
-        value: 'mobile FR',
-        label: '4G',
-      },
-    ],
+    appareils: ['smartphone', 'tablette', 'ordinateur portable', 'ordinateur et écran'],
+    types: [0.075, 1.075, 5.075],
+    networks: ['fixe FR', 'mobile FR'],
   },
   visio: {
     title: 'Heures de visioconférence',
@@ -47,28 +29,9 @@ export const usageNumeriqueConfig = {
     device: 'visio . appareil',
     network: 'visio . transmission . réseau',
     type: 'visio . qualité',
-    appareils: [
-      { value: 'smartphone', label: 'Smartphone' },
-      { value: 'tablette', label: 'Tablette' },
-      { value: 'ordinateur portable', label: 'Ordinateur portable' },
-      { value: 'ordinateur et écran', label: 'Ordinateur fixe' },
-      { value: 'TV', label: 'Télévision' },
-    ],
-    types: [
-      { value: 'audio', label: 'Audio' },
-      { value: 'SD', label: 'Basse déf' },
-      { value: 'HD', label: 'Haute déf' },
-    ],
-    networks: [
-      {
-        value: 'fixe FR',
-        label: 'Wifi',
-      },
-      {
-        value: 'mobile FR',
-        label: '4G',
-      },
-    ],
+    appareils: ['smartphone', 'tablette', 'ordinateur portable', 'ordinateur et écran', 'TV'],
+    types: ['audio', 'SD', 'HD'],
+    networks: ['fixe FR', 'mobile FR'],
   },
   streaming: {
     title: 'Heures de streaming',
@@ -83,27 +46,8 @@ export const usageNumeriqueConfig = {
     device: 'streaming . appareil',
     network: 'streaming . transmission . réseau',
     type: 'streaming . qualité',
-    appareils: [
-      { value: 'smartphone', label: 'Smartphone' },
-      { value: 'tablette', label: 'Tablette' },
-      { value: 'ordinateur portable', label: 'Ordinateur portable' },
-      { value: 'ordinateur et écran', label: 'Ordinateur fixe' },
-      { value: 'TV', label: 'Télévision' },
-    ],
-    types: [
-      { value: 'SD', label: 'Basse déf' },
-      { value: 'HD', label: 'Haute déf' },
-      { value: 'ultra HD', label: '4K' },
-    ],
-    networks: [
-      {
-        value: 'fixe FR',
-        label: 'Wifi',
-      },
-      {
-        value: 'mobile FR',
-        label: '4G',
-      },
-    ],
+    appareils: ['smartphone', 'tablette', 'ordinateur portable', 'ordinateur et écran', 'TV'],
+    types: ['SD', 'HD', 'ultra HD'],
+    networks: ['fixe FR', 'mobile FR'],
   },
 }

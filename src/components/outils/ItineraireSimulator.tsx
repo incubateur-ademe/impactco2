@@ -16,7 +16,6 @@ const ItineraireSimulator = () => {
   } = useParamContext()
 
   const t = useTranslations('transport.itineraire')
-  const tTransport = useTranslations('transport')
 
   const { data: itineraries } = useItineraries(start, end, 'itinéraire')
   const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
@@ -53,8 +52,7 @@ const ItineraireSimulator = () => {
             equivalents={equivalents}
             displayAll={displayAll}
             setDisplayAll={hasMore ? setDisplayAll : undefined}
-            displayAllText={tTransport('displayAll')}
-            hideAllText={tTransport('hideAll')}
+            moreText='transport'
             withSimulator
             type='itineraire'
           />

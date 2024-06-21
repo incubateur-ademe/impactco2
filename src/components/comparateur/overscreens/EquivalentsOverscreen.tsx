@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
@@ -26,25 +27,28 @@ const EquivalentsOverscreen = ({ onClose = () => {} }: { onClose?: () => void })
   const [search, setSearch] = useState('')
   const results = useSearchEquivalent(search, true)
 
+  const t = useTranslations('comparateur.overscreen')
+  const tModal = useTranslations('modal')
   return (
     <>
       <div className={styles.header}>
-        <HiddenLabel htmlFor='input-search'>Rechercher un objet, un geste..</HiddenLabel>
+        <HiddenLabel htmlFor='input-search'>{t('search')}</HiddenLabel>
         <Input
           id='search'
           background='white'
-          placeholder='Rechercher un objet, un geste...'
+          placeholder={t('search')}
           value={search}
           padding='lg'
           onChange={(e) => setSearch(e.target.value)}
         />
         <Button
+          size='sm'
           onClick={() => {
             setEquivalents(tempEquivalents)
             onClose()
             tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
           }}>
-          Fermer
+          {tModal('close')}
         </Button>
       </div>
       <div className={styles.content}>
@@ -57,15 +61,15 @@ const EquivalentsOverscreen = ({ onClose = () => {} }: { onClose?: () => void })
             />
           ) : (
             <div className={styles.noResult}>
-              Aucun résultat ne correspond à votre recherche.
+              {t('no-result-1')}
               <br />
-              Vous pouvez essayer d'autres termes ou{' '}
+              {t('no-result-2')}{' '}
               <Button
                 asLink
                 onClick={() => {
                   setSearch('')
                 }}>
-                retourner à la liste des équivalents
+                {t('no-result-3')}
               </Button>
               .
             </div>
@@ -89,7 +93,7 @@ const EquivalentsOverscreen = ({ onClose = () => {} }: { onClose?: () => void })
           <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>
             {tempEquivalents.length}
           </span>
-          <span className={styles.equivalentsInfo}> / 8 équivalents</span>
+          <span className={styles.equivalentsInfo}> / 8 {t('equivalents')}</span>
         </div>
         <div>
           <Button
@@ -98,7 +102,7 @@ const EquivalentsOverscreen = ({ onClose = () => {} }: { onClose?: () => void })
               onClose()
               tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
             }}>
-            Revenir au comparateur
+            {t('back')}
           </Button>
         </div>
       </div>

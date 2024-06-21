@@ -595,7 +595,7 @@ export const fruitsEtLegumes = [
   },
   {
     name: 'Mangue',
-    subtitle: 'Importée par avion',
+    subtitle: 'byplane',
     prefix: 'kg de ',
     slug: 'mangue',
     synonyms: ['manger, fruit'],

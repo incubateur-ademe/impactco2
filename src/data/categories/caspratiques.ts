@@ -2,7 +2,7 @@ export const casPratiques = [
   {
     prefix: 'A/R ',
     name: 'Paris - New-York',
-    subtitle: 'en avion',
+    subtitle: 'plane',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'avion-pny',
@@ -18,7 +18,7 @@ export const casPratiques = [
   {
     prefix: 'A/R ',
     name: 'Paris - Berlin',
-    subtitle: 'en TGV',
+    subtitle: 'tgv',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'tgv-paris-berlin',
@@ -34,7 +34,7 @@ export const casPratiques = [
   {
     prefix: 'A/R ',
     name: 'Paris - Marseille',
-    subtitle: 'en TGV',
+    subtitle: 'tgv',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'tgv-paris-marseille',
@@ -50,7 +50,7 @@ export const casPratiques = [
   {
     prefix: 'A/R ',
     name: 'Lille - Nîmes',
-    subtitle: 'en voiture thermique',
+    subtitle: 'car',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'voiture-lille-nimes',
@@ -64,7 +64,7 @@ export const casPratiques = [
     },
   },
   {
-    prefix: "% de l'",
+    prefix: '%l',
     name: "Empreinte carbone d'un citoyen Français",
     synonyms: ['', 'déplacement', 'déplacer', 'voyager'],
     unit: 'an',

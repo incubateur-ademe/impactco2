@@ -2,7 +2,7 @@ export const mobiliers = [
   {
     id: 26966,
     name: 'Canapé[s]',
-    subtitle: 'Convertible[s]',
+    subtitle: 'convertible',
     slug: 'canapeconvertible',
     category: 7,
     source:
@@ -141,7 +141,7 @@ export const mobiliers = [
   {
     ids: [26970, 26968, 26969],
     name: 'Lit',
-    subtitle: 'Cadre + sommier + matelas',
+    subtitle: 'lit',
     slug: 'lit',
     category: 7,
     total: 115,

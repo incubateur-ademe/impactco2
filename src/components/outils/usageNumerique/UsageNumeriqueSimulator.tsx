@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React, { useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
@@ -75,12 +76,14 @@ const UsageNumeriqueSimulator = () => {
     )
   }, [engine, situation, numberEmails])
 
+  const t = useTranslations('usage-numerique')
+
   const displayedEquivalents = useMemo(
     () => [
       {
         ...email,
         name: "1 an d'email",
-        subtitle: `${numberEmails * 52} emails`,
+        subtitle: `(${numberEmails * 52} emails)`,
         value:
           (52 *
             ((evaluateNumber(engine, 'email') - evaluateNumber(engine, 'email . terminaux . construction')) *
@@ -90,14 +93,14 @@ const UsageNumeriqueSimulator = () => {
       {
         ...visio,
         name: '1 an de visioconférences',
-        subtitle: `${(evaluateNumber(engine, 'visio . durée') * 52) / 60} heures`,
+        subtitle: `(${(evaluateNumber(engine, 'visio . durée') * 52) / 60} ${t('heure')}s)`,
         value:
           (52 * (evaluateNumber(engine, 'visio') - evaluateNumber(engine, 'visio . terminaux . construction'))) / 1000,
       },
       {
         ...streaming,
         name: '1 an de streaming',
-        subtitle: `${(evaluateNumber(engine, 'streaming . durée') * 52) / 60} heures`,
+        subtitle: `(${(evaluateNumber(engine, 'streaming . durée') * 52) / 60} ${t('heure')}s)`,
         value:
           (52 *
             (evaluateNumber(engine, 'streaming') - evaluateNumber(engine, 'streaming . terminaux . construction'))) /
@@ -107,7 +110,6 @@ const UsageNumeriqueSimulator = () => {
     ],
     [engine, situation, numberEmails]
   )
-
   return (
     <>
       <div className={styles.simulator}>
@@ -117,28 +119,28 @@ const UsageNumeriqueSimulator = () => {
       </div>
       <div className={styles.results}>
         <div className={styles.values}>
-          <div className={styles.header}>VOS USAGES ÉMETTENT</div>
+          <div className={styles.header}>{t('usages')}</div>
           <div className={styles.value}>
             <span className={styles.number} data-testid='usagenumerique-generated-value'>
               <LocalNumber number={formatNumber(total / 1000)} />
             </span>{' '}
             kg co₂e
           </div>
-          <div>par semaine</div>
+          <div>{t('by-week')}</div>
         </div>
         <div className={styles.values}>
-          <div className={styles.header}>SOIT...</div>
+          <div className={styles.header}>{t('or')}</div>
           <div className={styles.value}>
             <span className={styles.number}>
               <LocalNumber number={formatNumber((total * 52) / 1000)} />
             </span>{' '}
             kg co₂e
           </div>
-          <div>par an</div>
+          <div>{t('by-year')}</div>
         </div>
       </div>
       <div className={styles.etiquette}>
-        <div className={styles.header}>CE QUI CORRESPOND À..</div>
+        <div className={styles.header}>{t('total')}</div>
         <Etiquette
           baseValue={total * 52}
           comparisons={equivalents}
@@ -151,9 +153,8 @@ const UsageNumeriqueSimulator = () => {
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       <div className={styles.text}>
-        <div className={styles.mainText}>Comparer l’impact des usages avec l’impact de la construction</div>
-        En général, la majorité de votre empreinte numérique provient de la construction de vos appareils et pas de
-        l’usage de ces derniers.
+        <div className={styles.mainText}>{t('title')}</div>
+        {t('description')}
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       <CategorySimulator tracking='Usage numérique' equivalents={displayedEquivalents} withSimulator />

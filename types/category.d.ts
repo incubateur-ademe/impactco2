@@ -13,7 +13,6 @@ export type Category = {
   }
   equivalents?: ComputedEquivalent[]
   resetable?: boolean
-  displayAll?: string
-  hideAll?: string
+  more?: string
   examples?: string
 }

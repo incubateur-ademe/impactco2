@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
@@ -15,6 +16,8 @@ const Checkbox = ({
   equivalents: string[]
   setEquivalents: (value: string[]) => void
 }) => {
+  const tEquivalent = useTranslations('equivalent')
+  const t = useTranslations('comparateur.overscreen')
   const [interacted, setInteracted] = useState(false)
   const selectEquivalent = (checked: boolean, equivalent: ComputedEquivalent) => {
     if (checked) {
@@ -46,14 +49,14 @@ const Checkbox = ({
         <>
           <div className={styles.equivalentName}>
             <div>
-              {formatName(equivalent.name, 1, true)}{' '}
-              {equivalent.subtitle && <>({formatName(equivalent.subtitle, 1, true)})</>}
+              {formatName(tEquivalent(`name-${equivalent.slug}`), 1, true)}{' '}
+              {equivalent.subtitle && <>({formatName(tEquivalent(`subtitle-${equivalent.subtitle}`), 1, true)})</>}
             </div>
             {interacted && equivalents.length > 7 && (
               <div className={styles.warning}>
                 <InformationFillIcon />
                 <span>
-                  <b>8 / 8</b> équivalents déjà sélectionnés
+                  <b>8 / 8 {t('max')}</b>
                 </span>
               </div>
             )}

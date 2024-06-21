@@ -2,7 +2,7 @@ export const boissons = [
   {
     id: 24283,
     name: 'Eau du robinet',
-    prefix: "Litre[s] d'",
+    prefix: "l'",
     synonyms: ['boire'],
     slug: 'eaudurobinet',
     category: 3,
@@ -12,7 +12,7 @@ export const boissons = [
   {
     id: 31000,
     name: 'Eau en bouteille',
-    prefix: "Litre[s] d'",
+    prefix: "l'",
     synonyms: ['boire'],
     slug: 'eauenbouteille',
     category: 3,
@@ -43,7 +43,7 @@ export const boissons = [
   {
     id: 31001,
     name: 'Soda',
-    prefix: 'Litre[s] de ',
+    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'soda',
     category: 3,
@@ -78,7 +78,7 @@ export const boissons = [
   {
     id: 31002,
     name: 'Bière',
-    prefix: 'Litre[s] de ',
+    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'biere',
     category: 3,
@@ -113,7 +113,7 @@ export const boissons = [
   {
     id: 31003,
     name: 'Vin',
-    prefix: 'Litre[s] de ',
+    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'vin',
     category: 3,
@@ -148,8 +148,8 @@ export const boissons = [
   {
     id: 31004,
     name: 'Lait',
-    subtitle: 'De vache',
-    prefix: 'Litre[s] de ',
+    subtitle: 'vache',
+    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'laitdevache',
     category: 3,
@@ -179,8 +179,8 @@ export const boissons = [
   },
   {
     name: 'Lait',
-    subtitle: 'De soja',
-    prefix: 'Litre[s] de ',
+    subtitle: 'soja',
+    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'laitdesoja',
     category: 3,
@@ -211,7 +211,7 @@ export const boissons = [
   },
   {
     name: 'Thé',
-    prefix: 'Litre[s] de ',
+    prefix: 'ld',
     slug: 'the',
     category: 3,
     ecv: [
@@ -243,7 +243,7 @@ export const boissons = [
   },
   {
     name: 'Café',
-    prefix: 'Litre[s] de ',
+    prefix: 'ld',
     slug: 'cafe',
     category: 3,
     ecv: [

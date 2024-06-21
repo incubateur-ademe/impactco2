@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
@@ -38,6 +39,8 @@ const Category = ({
     [category, comparedEquivalent]
   )
 
+  const t = useTranslations('comparateur.overscreen')
+  const tCategory = useTranslations('category')
   return (
     <div className={styles.container}>
       <button
@@ -45,14 +48,14 @@ const Category = ({
         onClick={() => setOpen(!open)}
         title={
           open
-            ? `Cacher les éléments de la catégorie ${category.name}`
-            : `Voir les éléments de la catégorie ${category.name}`
+            ? `${t('hide')} ${tCategory(`name-${category.slug}`)}`
+            : `${t('show')} ${tCategory(`name-${category.slug}`)}`
         }>
         <div className={styles.emoji}>
           <EquivalentIcon height={2.5} equivalent={category} />
         </div>
         <div className={styles.names}>
-          <div className={styles.title}>{category.name}</div>
+          <div className={styles.title}>{tCategory(`name-${category.slug}`)}</div>
           <div>
             <span className={styles.selectedNumber} data-testid={`selected-equivalents-${category.slug}-number`}>
               {categoryEquivalents.filter((equivalent) => equivalents.includes(equivalent.slug)).length}
@@ -65,7 +68,7 @@ const Category = ({
       {open && (
         <>
           <div className={styles.comparison}>
-            <div>Comparer avec cette catégorie seulement :</div>
+            <div>{t('compare')} :</div>
             <Button
               priority='outline'
               onClick={() => {
@@ -77,7 +80,7 @@ const Category = ({
                 track('Comparateur', 'Voir la comparaison', category.slug)
                 onClose()
               }}>
-              Voir la comparaison
+              {t('compare-button')}
             </Button>
           </div>
           <Equivalents

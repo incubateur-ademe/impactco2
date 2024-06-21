@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React, { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
@@ -16,6 +17,8 @@ import PlusIcon from 'components/base/icons/plus'
 import styles from './Tile.module.css'
 
 const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
+  const t = useTranslations('comparateur')
+  const tEquivalent = useTranslations('equivalent')
   const {
     comparateur: { baseValue, weight, setEquivalents, equivalents, setComparedEquivalent },
   } = useParamContext()
@@ -39,12 +42,14 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
         </div>
         <div className='text-sm' data-testid={`comparateur-${slug}-name`}>
           {formatName(
-            (('prefix' in equivalent && equivalent.prefix) || '') +
-              equivalent.name +
-              (('suffix' in equivalent && equivalent.suffix) || ''),
+            ('prefix' in equivalent && equivalent.prefix ? tEquivalent(`prefix-${equivalent.prefix}`) : '') +
+              tEquivalent(`name-${equivalent.slug}`) +
+              ('suffix' in equivalent && equivalent.suffix ? tEquivalent(`suffix-${equivalent.suffix}`) : ''),
             value
           )}
-          {'subtitle' in equivalent && equivalent.subtitle && ` (${formatName(equivalent.subtitle, value)})`}
+          {'subtitle' in equivalent &&
+            equivalent.subtitle &&
+            ` (${formatName(tEquivalent(`subtitle-${equivalent.subtitle}`), value)})`}
         </div>
       </div>
       <button
@@ -67,7 +72,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
         }
       }}>
       <PlusIcon />
-      Ajouter un équivalent
+      {t('add')}
     </button>
   )
 }

@@ -34,7 +34,7 @@ export const electromenager = [
   {
     name: 'Cafetière[s]',
     id: 28304,
-    subtitle: 'À dosettes',
+    subtitle: 'pods',
     synonyms: ['nespresso'],
     slug: 'cafetieredosette',
     category: 6,

@@ -283,7 +283,7 @@ export const numeriques = [
   },
   {
     name: 'Alimentation[s] externe[s]',
-    subtitle: 'pour ordinateur portable',
+    subtitle: 'laptop',
     slug: 'alimentationordinateur',
     category: 1,
     ecv: [
@@ -302,7 +302,7 @@ export const numeriques = [
   },
   {
     name: 'Alimentation[s] externe[s]',
-    subtitle: 'pour smartphone ou tablette',
+    subtitle: 'smartphone',
     slug: 'alimentationsmartphone',
     category: 1,
     ecv: [

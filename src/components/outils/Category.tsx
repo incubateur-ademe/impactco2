@@ -30,8 +30,7 @@ const Category = ({ category }: { category: CategoryType }) => {
             }
             displayAll={params ? params.displayAll : undefined}
             setDisplayAll={params ? params.setDisplayAll : undefined}
-            displayAllText={category.displayAll}
-            hideAllText={category.hideAll}
+            moreText={category.more}
           />
         ))}
     </Shareable>

@@ -99,7 +99,7 @@ export const usageNumeriques = [
   },
   {
     name: 'Streaming vidéo',
-    prefix: 'Heure[s] de ',
+    prefix: 'hours',
     subtitle: '',
     slug: 'streamingvideo',
     category: 10,
@@ -130,7 +130,7 @@ export const usageNumeriques = [
   },
   {
     name: 'Visioconférence',
-    prefix: 'Heure[s] de ',
+    prefix: 'hours',
     slug: 'visioconference',
     category: 10,
     ecv: [

@@ -1,6 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
@@ -8,7 +9,6 @@ import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
-import Link from 'components/base/buttons/Link'
 import CloseThickIcon from 'components/base/icons/close-thick'
 import LinkIcon from 'components/base/icons/link'
 import Tiles from 'components/comparateur/Tiles'
@@ -22,6 +22,8 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
   } = useParamContext()
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
+  const t = useTranslations('comparateur')
+  const tEquivalent = useTranslations('equivalent')
 
   return (
     <div>
@@ -39,23 +41,28 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
                       (('suffix' in comparedEquivalent && comparedEquivalent.suffix) || ''),
                     baseValue
                   )
-                : 'kg de CO₂'
+                : t('co2-unit')
             }
             unit={
               comparedEquivalent ? (
                 <>
                   {formatName(
-                    (('prefix' in comparedEquivalent && comparedEquivalent.prefix) || '') +
-                      comparedEquivalent.name +
-                      (('suffix' in comparedEquivalent && comparedEquivalent.suffix) || ''),
+                    ('prefix' in comparedEquivalent && comparedEquivalent.prefix
+                      ? tEquivalent(`prefix-${comparedEquivalent.prefix}`)
+                      : '') +
+                      tEquivalent(`name-${comparedEquivalent.slug}`) +
+                      ('suffix' in comparedEquivalent && comparedEquivalent.suffix
+                        ? tEquivalent(`suffix-${comparedEquivalent.suffix}`)
+                        : ''),
                     baseValue
                   )}
+
                   <div className={styles.unitIcon}>
                     <CloseThickIcon />
                   </div>
                 </>
               ) : (
-                'kg de CO₂'
+                t('co2-unit')
               )
             }
             onUnitClick={comparedEquivalent ? () => setComparedEquivalent(undefined) : undefined}
@@ -64,14 +71,14 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
         </div>
         {comparedEquivalent ? (
           <div className={styles.description}>
-            C’est{' '}
+            {t('title-bis-1')}{' '}
             <span className={styles.descriptionValue} data-testid='compared-equivalent-value'>
               <LocalNumber number={value} /> {unit} CO₂e
             </span>
-            , soit autant d’émissions que pour fabriquer, consommer ou parcourir...
+            , {t('title-bis-2')}
           </div>
         ) : (
-          'C’est autant d’émissions que pour fabriquer, consommer ou parcourir...'
+          t('title')
         )}
         {comparedEquivalent && (
           <>
@@ -83,14 +90,14 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
               <EquivalentIcon height={2.5} equivalent={comparedEquivalent} />
               <LinkIcon />
             </IframeableLink>
-            <Link
+            <IframeableLink
               target='_blank'
               rel='noopener noreferrer'
               href={comparedEquivalent.link}
               className={styles.equivalentLink}>
-              Voir le détail
+              {t('detail')}
               <LinkIcon />
-            </Link>
+            </IframeableLink>
           </>
         )}
       </div>

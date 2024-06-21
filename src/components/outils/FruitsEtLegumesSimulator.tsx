@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
@@ -20,10 +21,12 @@ const FruitsEtLegumesSimulator = () => {
     fruitsetlegumes: { month, setMonth },
   } = useParamContext()
 
+  const t = useTranslations('flds')
+  const tMonth = useTranslations('overscreen.month')
   return (
     <>
       <div className={styles.simulator}>
-        <HiddenLabel htmlFor='text-select-month'>Découvres les fruits et légumes du mois de</HiddenLabel>
+        <HiddenLabel htmlFor='text-select-month'>{t('label')}</HiddenLabel>
         <Select
           id='month'
           value={month}
@@ -33,11 +36,11 @@ const FruitsEtLegumesSimulator = () => {
           }}>
           {monthsOptions.map((month) => (
             <option key={month.value} value={month.value}>
-              {month.label}
+              {tMonth(month.label)}
             </option>
           ))}
         </Select>
-        Découvrez l’impact carbone des fruits et légumes de saison pour ce mois
+        {t('title')}
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       {flds.equivalents && (

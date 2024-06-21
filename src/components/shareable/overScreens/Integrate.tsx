@@ -4,9 +4,10 @@ import React, { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import ClipboardBox from 'components/base/ClipboardBox'
-import { CustomParamValue } from './CustomParam'
+import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getCustomParams } from './CustomParamsValues'
+import styles from './Share.module.css'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
 const Integrate = ({
@@ -20,47 +21,56 @@ const Integrate = ({
   extraParams?: string
   tracking: string
 }) => {
-  const params = useParamContext()
+  const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
-  const paramWithTheme = useMemo<Record<string, CustomParamValue>>(() => {
-    const theme = { theme: { value: params.theme, setter: params.setTheme } } as Record<string, CustomParamValue>
-    if (category) {
-      return {
-        ...getCustomParams(category.slug, params),
-        ...theme,
-      }
-    }
-    if (path.startsWith('comparateur')) {
-      return { ...getComparateurParams(params, path.includes('etiquette')), ...theme }
-    }
-    return theme
-  }, [params, category, path])
-
+  const params = useMemo(
+    () =>
+      category
+        ? getCustomParams(category.slug, allParams)
+        : path?.startsWith('outils/comparateur')
+          ? getComparateurParams(allParams, path?.includes('etiquette'))
+          : {},
+    [allParams, category, path]
+  )
   useEffect(() => {
-    if (paramWithTheme) {
+    if (params) {
       const values: Record<string, boolean> = {}
-      Object.keys(paramWithTheme).forEach((key) => {
+      Object.keys(params).forEach((key) => {
         values[key] = visibility ? visibility[key] : true
       })
       setVisibility(values)
     }
-  }, [paramWithTheme])
+  }, [params])
 
   const url = `<script name="impact-co2" src="${
     process.env.NEXT_PUBLIC_URL
-  }/iframe.js" data-type="${path}" data-search="?${buildCustomParamsUrl(paramWithTheme, visibility)}${extraParams ? `&${extraParams}` : ''}"></script>`
+  }/iframe.js" data-type="${path}" data-search="?${buildCustomParamsUrl(params, visibility)}${extraParams ? `&${extraParams}` : ''}&language=${allParams.language}&theme=${allParams.theme}"></script>`
 
-  return paramWithTheme && visibility ? (
+  return params && visibility ? (
     <>
       <CustomParams
         integration
         tracking={tracking}
         trackingType='Intégrer'
-        params={paramWithTheme}
+        params={params}
         visibility={visibility}
         setVisibility={setVisibility}
       />
+      {Object.entries(params).length > 0 && <div className={styles.separator} />}
+      <CustomParam
+        tracking={tracking}
+        slug='theme'
+        param={{ value: allParams.theme, setter: allParams.setTheme } as CustomParamValue}
+        visible
+      />
+      <CustomParam
+        tracking={tracking}
+        slug='language'
+        param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
+        visible
+      />
+
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>
   ) : null

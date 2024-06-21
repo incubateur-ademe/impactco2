@@ -19,8 +19,7 @@ const CategorySimulator = ({
   equivalents,
   displayAll,
   setDisplayAll,
-  displayAllText,
-  hideAllText,
+  moreText,
   withSimulator,
   type,
 }: {
@@ -28,12 +27,12 @@ const CategorySimulator = ({
   equivalents: ComputedEquivalent[]
   displayAll?: boolean
   setDisplayAll?: Dispatch<SetStateAction<boolean>>
-  displayAllText?: string
-  hideAllText?: string
+  moreText?: string
   withSimulator?: boolean
   type?: TransportSimulateur
 }) => {
-  const t = useTranslations('category')
+  const t = useTranslations('category-simulator')
+  const tEquivalent = useTranslations('equivalent')
   const ref = useRef<HTMLDivElement>(null)
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
@@ -70,7 +69,7 @@ const CategorySimulator = ({
                   <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
                     <div className={styles.name}>
                       {formatName(
-                        `${equivalent.name}${equivalent.subtitle ? ` ${equivalent.subtitle.startsWith('(') || equivalent.subtitle.startsWith(' -') ? equivalent.subtitle : `(${equivalent.subtitle})`}` : ''}`,
+                        `${tEquivalent(`name-${equivalent.slug}`)}${equivalent.subtitle ? (equivalent.subtitle.startsWith(' -') ? equivalent.subtitle : equivalent.subtitle.startsWith('(') ? ` ${equivalent.subtitle}` : ` (${tEquivalent(`subtitle-${equivalent.subtitle}`)})`) : ''}`,
                         1,
                         true
                       )}
@@ -103,13 +102,13 @@ const CategorySimulator = ({
               </div>
             ))}
       </div>
-      {setDisplayAll && displayAll !== undefined && displayAllText && hideAllText && (
+      {setDisplayAll && displayAll !== undefined && moreText && (
         <CategoryDisplayAll
           tracking={tracking}
           displayAll={displayAll}
           setDisplayAll={setDisplayAll}
-          displayAllText={displayAllText}
-          hideAllText={hideAllText}
+          displayAllText={t(`${moreText}.display`)}
+          hideAllText={t(`${moreText}.hide`)}
         />
       )}
       {hasUsage && (

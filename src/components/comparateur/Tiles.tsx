@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
@@ -10,6 +11,7 @@ import styles from './Tiles.module.css'
 import { getRandomEquivalents } from './random'
 
 const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
+  const t = useTranslations('comparateur')
   const {
     comparateur: { comparedEquivalent, equivalents, setEquivalents },
   } = useParamContext()
@@ -60,9 +62,9 @@ const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
             }, 200)
           }}>
           <MagicWandIcon />
-          Générer d’autres équivalents
+          {t('generate')}
         </Button>
-        {equivalents.length >= 8 && <Button onClick={changeEquivalents}>Modifier mes équivalents</Button>}
+        {equivalents.length >= 8 && <Button onClick={changeEquivalents}>{t('modify')}</Button>}
       </div>
     </>
   )

@@ -115,7 +115,6 @@ const TransportIntegrate = () => {
             params={{ km: params.km }}
             visibility={visibility}
             setVisibility={setVisibility}
-            withTheme
           />
           <div className={styles.separator} />
         </>
@@ -137,7 +136,6 @@ const TransportIntegrate = () => {
       <CustomParam
         tracking={tracking}
         slug='theme'
-        integration
         param={{ value: theme, setter: setTheme } as CustomParamValue}
         visible
       />

@@ -92,7 +92,6 @@ const TransportShare = () => {
           params={{ km: params.km }}
           visibility={visibility}
           setVisibility={setVisibility}
-          withTheme
         />
       )}
       {selected === 'itineraire' && (

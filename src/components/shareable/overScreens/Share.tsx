@@ -13,6 +13,7 @@ import FacebookIcon from 'components/base/icons/facebook'
 import LinkedinIcon from 'components/base/icons/linkedin'
 import TwitterIcon from 'components/base/icons/twitter'
 import WhatsappIcon from 'components/base/icons/whatsapp'
+import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getCustomParams } from './CustomParamsValues'
 import styles from './Share.module.css'
@@ -51,7 +52,7 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug}`}?${buildCustomParamsUrl(params, visibility)}`
+    `${path || `outils/${category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
@@ -67,6 +68,13 @@ const Share = ({
           setVisibility={setVisibility}
         />
       )}
+      {Object.entries(params).length > 0 && <div className={styles.separator} />}
+      <CustomParam
+        tracking={trackingValue}
+        slug='language'
+        param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
+        visible
+      />
       <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
       <div className={styles.buttons}>
         <FacebookShareButton
