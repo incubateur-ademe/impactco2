@@ -96,8 +96,12 @@
       "carpooler": "carpooler"
     },
     "itineraire": {
+      "header": "See how much CO₂e you emit for this itinary",
       "start": "From",
       "end": "To"
+    },
+    "distance": {
+      "header": "See how much CO₂e you emit for this distance"
     },
     "teletravail": {
       "start": "Home",
@@ -148,9 +152,10 @@
     "equivalent-mobilier": "furniture item[s]",
     "equivalent-electromenager": "appliance[s]",
     "equivalent-boisson": "beverage[s]",
+    "passenger": "passenger[s]",
     "legend": {
-      "construction": "construction",
-      "usage": "use"
+      "construction": "Construction",
+      "usage": "Use"
     },
     "bottom": {
       "before": "Values expressed in kg",
@@ -323,6 +328,7 @@
     "name-avionlongcourrier": "Long-haul flight[s]",
     "name-tgv": "High-speed train[s]",
     "name-intercites": "Intercity train[s]",
+    "name-covoiturage": "Carpooling",
     "name-voiturethermique": "Gasoline car[s]",
     "name-voitureelectrique": "Electric car[s]",
     "name-autocar": "Coach[es]",
