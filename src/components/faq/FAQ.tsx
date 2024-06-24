@@ -12,7 +12,7 @@ import Link from 'components/base/buttons/Link'
 import PlusIcon from 'components/base/icons/plus'
 import styles from './FAQ.module.css'
 
-const FAQ = ({ faq, page }: { faq: FAQType; page?: string }) => {
+const FAQ = ({ faq, page }: { faq: Pick<FAQType, 'title' | 'content'>; page?: string }) => {
   const [display, setDisplay] = useState(false)
   return faq.content ? (
     <div className={styles.faq}>
@@ -20,7 +20,7 @@ const FAQ = ({ faq, page }: { faq: FAQType; page?: string }) => {
         className={styles.title}
         onClick={() => {
           if (!display) {
-            track('FAQ', faq.title, page || 'FAQ')
+            track(page === 'Guide utilisation' ? page : 'FAQ', faq.title, page || 'FAQ')
           }
           setDisplay(!display)
         }}>
