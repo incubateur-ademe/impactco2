@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 }
 
-const page = async () => {
+const page = () => {
   return <Category category={category} />
 }
 

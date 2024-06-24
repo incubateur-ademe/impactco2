@@ -9,7 +9,7 @@ import ToolCard from 'components/cards/ToolCard'
 import Select from 'components/form/Select'
 import Block from 'components/layout/Block'
 import styles from './AllFAQs.module.css'
-import FAQs from './FAQs'
+import FAQsList from './FAQsList'
 
 const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
   const [search, setSearch] = useState('all')
@@ -48,12 +48,12 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
           </Select>
         </Card>
       </Block>
-      <FAQs
+      <FAQsList
         faqs={filteredFaqs.filter((faq) => faq.section === 'Questions générales')}
         title='Questions générales'
         description='Questions fréquentes à propos du site Impact CO₂'
       />
-      <FAQs
+      <FAQsList
         faqs={filteredFaqs.filter((faq) => faq.section === 'Transports')}
         title='Transport'
         description={
@@ -62,7 +62,7 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
           </>
         }
       />
-      <FAQs
+      <FAQsList
         faqs={filteredFaqs.filter((faq) => faq.section === 'API')}
         title='API'
         description={
@@ -71,7 +71,7 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
           </>
         }
       />
-      <FAQs
+      <FAQsList
         faqs={filteredFaqs.filter((faq) => faq.section === 'Étiquettes')}
         title='Étiquettes'
         description={
@@ -80,7 +80,7 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
           </>
         }
       />
-      <FAQs
+      <FAQsList
         faqs={filteredFaqs.filter((faq) => faq.section === 'Détecteur CO₂')}
         title='Détecteur CO₂'
         description={
@@ -89,7 +89,7 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
           </>
         }
       />
-      <FAQs
+      <FAQsList
         faqs={filteredFaqs.filter((faq) => faq.section === 'Package NPM')}
         title='Package NPM'
         description={

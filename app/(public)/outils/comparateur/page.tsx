@@ -1,12 +1,7 @@
 import { Metadata } from 'next'
 import React from 'react'
 import ComparateurPage from 'components/outils/comparateur/ComparateurPage'
-import { getExamples } from 'utils/examples'
-import { getFAQs } from 'utils/faq'
-import { getNotionRevalidate } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'
-
-export const revalidate = getNotionRevalidate()
 
 export async function generateMetadata({
   searchParams,
@@ -29,12 +24,10 @@ export async function generateMetadata({
   }
 }
 
-const page = async () => {
-  const examples = await getExamples()
-  const faqs = await getFAQs()
+const page = () => {
   return (
     <>
-      <ComparateurPage examples={examples} faqs={faqs} />
+      <ComparateurPage />
       <Suggestion from='/outils/comparateur' fromLabel='Comparateur' simulatorName='du comparateur carbone' />
     </>
   )

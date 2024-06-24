@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Category as CategoryType } from 'types/category'
-import { Example } from 'types/example'
-import { FAQ } from 'types/faq'
 import Reset from 'components/base/Reset'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
@@ -13,7 +11,7 @@ import styles from './CategoryPage.module.css'
 import ExtraSimulator from './ExtraSimulator'
 import { extraSimulators } from './simulators'
 
-const CategoryPage = ({ category, examples, faqs }: { category: CategoryType; examples: Example[]; faqs: FAQ[] }) => {
+const CategoryPage = ({ category }: { category: CategoryType }) => {
   const extraSimulator = extraSimulators[category.slug]
 
   return (
@@ -37,14 +35,17 @@ const CategoryPage = ({ category, examples, faqs }: { category: CategoryType; ex
           </ExtraSimulator>
         </Block>
       )}
-      <Examples
-        title='Exemples'
-        description={category.examples || 'Ils utilisent nos outils à la perfection.'}
-        link='/doc/exemples'
-        linkLabel='Tous les exemples'
-        examples={examples.filter((example) => example.tags.includes(category.name))}
-      />
-      <FAQs faqs={faqs.filter((faq) => faq.pages.includes(category.name))} page={category.name} />
+      <Suspense>
+        <Examples
+          title='Exemples'
+          description={category.examples || 'Ils utilisent nos outils à la perfection.'}
+          link='/doc/exemples'
+          linkLabel='Tous les exemples'
+          filter={category.name}
+        />
+        <Suspense />
+        <FAQs filter={category.name} page={category.name} />
+      </Suspense>
     </>
   )
 }

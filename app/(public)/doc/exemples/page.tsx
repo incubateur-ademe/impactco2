@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 const page = async () => {
   const examples = await getExamples()
   const communications = await getCommunications()
+
   return (
     <>
       <ExamplesPage examples={examples} communications={communications} />
