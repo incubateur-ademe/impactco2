@@ -29,7 +29,7 @@ export const getMatomoStats = async (date: string) => {
     await axios
       .post<
         { label: string; nb_visits: number }[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Actions.getPageUrls&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits&filter_limit=-1`)
+      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Actions.getPageUrls&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits&filter_limit=-1&flat=1`)
       .then((response) => response.data),
     await axios
       .post<
@@ -47,7 +47,7 @@ export const getMatomoStats = async (date: string) => {
   const internalVisits: Record<string, number> = {}
   allVisits.forEach((page) => {
     const segments = page.label.split('?')
-    const key = segments[0].startsWith('/') ? segments[0].slice(1) : segments[0]
+    const key = (segments[0].startsWith('/') ? segments[0].slice(1) : segments[0]).replace('outils/', '')
     if (internalPages.includes(key)) {
       if (internalVisits[key]) {
         internalVisits[key] += page.nb_visits
@@ -71,7 +71,7 @@ export const getMatomoStats = async (date: string) => {
     })
 
   const results = {
-    visits: allVisits.filter((visit) => visit.label !== 'iframes').reduce((acc, visit) => acc + visit.nb_visits, 0),
+    visits: allVisits.reduce((acc, visit) => acc + visit.nb_visits, 0),
     iframes: iframes.reduce((acc, visit) => acc + visit.nb_visits, 0),
     api: allEventsByCategory
       .filter(
