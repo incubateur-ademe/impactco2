@@ -1,5 +1,7 @@
+'use client'
+
 import classNames from 'classnames'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Language, SimpleEquivalent } from 'types/equivalent'
 import values from 'data/shopify/values.json'
 import formatName from 'utils/formatName'
@@ -10,6 +12,18 @@ import InfinityIcon from 'components/base/icons/infinity'
 import styles from './SimpleValue.module.css'
 
 const equivalents = values as Record<string, SimpleEquivalent>
+
+const getValues = (comparison: string, value: number) => {
+  if (comparison !== 'random' && equivalents[comparison]) {
+    return { equivalent: equivalents[comparison], slug: comparison }
+  }
+  const meaningfullEquivalents = Object.entries(equivalents).filter(([, ecv]) => value / ecv.value > 1 && ecv.value > 0)
+  const categories = [...new Set(meaningfullEquivalents.map((equivalent) => equivalent[1].category))]
+  const randomCategory = categories[Math.floor(Math.random() * categories.length)]
+  const categoryEquivalents = meaningfullEquivalents.filter((equivalent) => equivalent[1].category === randomCategory)
+  const randomEquivalent = categoryEquivalents[Math.floor(Math.random() * categoryEquivalents.length)]
+  return { slug: randomEquivalent[0], equivalent: randomEquivalent[1] }
+}
 
 const SimpleValue = ({
   value,
@@ -22,24 +36,19 @@ const SimpleValue = ({
   language?: Language
   id?: string
 }) => {
-  let equivalent: SimpleEquivalent
-  let slug: string
-  if (comparison !== 'random' && equivalents[comparison]) {
-    equivalent = equivalents[comparison]
-    slug = comparison
-  } else {
-    const meaningfullEquivalents = Object.entries(equivalents).filter(
-      ([, ecv]) => value / ecv.value > 1 && ecv.value > 0
-    )
-    const categories = [...new Set(meaningfullEquivalents.map((equivalent) => equivalent[1].category))]
-    const randomCategory = categories[Math.floor(Math.random() * categories.length)]
-    const categoryEquivalents = meaningfullEquivalents.filter((equivalent) => equivalent[1].category === randomCategory)
-    const randomEquivalent = categoryEquivalents[Math.floor(Math.random() * categoryEquivalents.length)]
-    slug = randomEquivalent[0]
-    equivalent = randomEquivalent[1]
+  const [values, setValues] = useState<{ equivalent: SimpleEquivalent; slug: string } | undefined>(
+    comparison === 'random' ? undefined : getValues(comparison, value)
+  )
+
+  useEffect(() => {
+    setValues(getValues(comparison, value))
+  }, [comparison, value])
+
+  if (!values) {
+    return null
   }
 
-  const comparisonValue = ((equivalent.percentage ? 100 : 1) * value) / equivalent.value
+  const comparisonValue = ((values.equivalent.percentage ? 100 : 1) * value) / values.equivalent.value
   const equivalentValue = Number.isFinite(comparisonValue) ? (
     <LocalNumber number={formatNumber(comparisonValue)} />
   ) : (
@@ -49,7 +58,7 @@ const SimpleValue = ({
   return (
     <div className={styles.container}>
       <div className={styles.emoji}>
-        <EquivalentIcon height={3} equivalent={{ ...equivalent, slug }} />
+        <EquivalentIcon height={3} equivalent={{ ...values.equivalent, slug: values.slug }} />
       </div>
       <div className={classNames(styles.text, 'impactCO2-etiquette-content')} id={id}>
         <div
@@ -60,7 +69,7 @@ const SimpleValue = ({
         <div
           className={classNames(styles.label, 'impactCO2-etiquette-text')}
           data-testid={`etiquette-${comparison}-name`}>
-          {formatName(language ? equivalent[language] : equivalent.fr, comparisonValue, false)}
+          {formatName(language ? values.equivalent[language] : values.equivalent.fr, comparisonValue, false)}
         </div>
       </div>
     </div>

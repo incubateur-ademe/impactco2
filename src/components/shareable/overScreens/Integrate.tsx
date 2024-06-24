@@ -57,7 +57,7 @@ const Integrate = ({
         integration
         tracking={tracking}
         trackingType='Intégrer'
-        params={paramWithTheme}
+        params={path.includes('etiquette') ? {} : paramWithTheme}
         visibility={visibility}
         setVisibility={setVisibility}
       />
