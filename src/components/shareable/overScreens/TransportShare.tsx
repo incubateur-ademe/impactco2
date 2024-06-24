@@ -8,7 +8,7 @@ import { buildCurrentUrlFor } from 'utils/urls'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
-import { CustomParamValue } from './CustomParam'
+import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import styles from './Share.module.css'
 
@@ -22,6 +22,8 @@ const TransportShare = () => {
     distance,
     itineraire,
     transport: { selected, setSelected },
+    language,
+    setLanguage,
   } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
@@ -49,9 +51,10 @@ const TransportShare = () => {
         result += `itineraireEnd=${itineraire.end.address}`
       }
     }
+    result += `&language=${language}`
 
     return result
-  }, [visibility, selected, distance.km, itineraire.start, itineraire.end])
+  }, [visibility, selected, distance.km, itineraire.start, itineraire.end, language])
 
   const params = useMemo(() => {
     return {
@@ -104,6 +107,12 @@ const TransportShare = () => {
         />
       )}
       <div className={styles.separator} />
+      <CustomParam
+        tracking={tracking}
+        slug='language'
+        param={{ value: language, setter: setLanguage } as CustomParamValue}
+        visible
+      />
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
       <div className={styles.meta}>
         <img src='/meta/transport.png' width={728} height={382.2} alt='' />

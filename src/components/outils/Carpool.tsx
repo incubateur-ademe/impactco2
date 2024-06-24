@@ -1,12 +1,15 @@
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { TransportSimulateur } from 'types/transport'
+import formatName from 'utils/formatName'
 import MinusIcon from 'components/base/icons/minus'
 import PlusIcon from 'components/base/icons/plus'
 import styles from './Carpool.module.css'
 
 const Carpool = ({ type }: { type: TransportSimulateur }) => {
+  const t = useTranslations('category')
   const {
     [type]: { carpool, setCarpool },
   } = useParamContext()
@@ -22,7 +25,7 @@ const Carpool = ({ type }: { type: TransportSimulateur }) => {
       </button>
       <div className={styles.passager}>
         <Image src='/icons/passager.svg' alt='' width={18} height={24} />
-        {carpool} {carpool === 1 ? 'passager' : 'passagers'}
+        {carpool} {formatName(t('passenger'), carpool)}
       </div>
       <button
         className={styles.plus}

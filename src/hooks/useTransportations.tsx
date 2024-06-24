@@ -50,6 +50,7 @@ export default function useTransportations(
               ...equivalent,
               link: `/outils/transport/${equivalent.slug}`,
               title: formatName(t(`name-${equivalent.slug}`), 1, true),
+              name: t(`name-${equivalent.slug}`),
               subtitle:
                 (t(`subtitle-${equivalent.slug}`) ? `(${formatName(t(`subtitle-${equivalent.slug}`))})` : '') +
                 (itineraries
@@ -70,7 +71,7 @@ export default function useTransportations(
                 ? [
                     {
                       ...equivalent,
-                      name: 'Covoiturage',
+                      name: t('name-covoiturage'),
                       value: equivalent.value / (carpool + 1),
                       ecv: equivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpool + 1) })),
                       usage: equivalent.usage / (carpool + 1),

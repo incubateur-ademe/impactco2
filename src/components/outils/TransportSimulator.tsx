@@ -1,6 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 import { usePathname, useSearchParams } from 'next/navigation'
 import React, { useEffect, useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
@@ -22,6 +23,7 @@ const TransportSimulator = () => {
     transport: { selected, setSelected },
   } = useParamContext()
 
+  const t = useTranslations('transport.mode-selector')
   const pathName = usePathname()
   const searchParams = useSearchParams()
 
@@ -60,13 +62,13 @@ const TransportSimulator = () => {
             className={classNames(styles.tab, { [styles.selectedTab]: selected === 'distance' })}
             onClick={() => setSelected('distance')}
             data-testid='transport-tab-distance'>
-            Distance
+            {t('distance')}
           </button>
           <button
             className={classNames(styles.tab, { [styles.selectedTab]: selected === 'itineraire' })}
             onClick={() => setSelected('itineraire')}
             data-testid='transport-tab-itineraire'>
-            Itinéraire
+            {t('itineraire')}
           </button>
         </div>
       )}

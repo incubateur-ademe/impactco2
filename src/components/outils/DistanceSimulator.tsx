@@ -14,7 +14,8 @@ const DistanceSimulator = () => {
   const {
     distance: { km, setKm, displayAll, setDisplayAll },
   } = useParamContext()
-  const t = useTranslations('transport')
+  const tTransport = useTranslations('transport')
+  const t = useTranslations('transport.distance')
 
   const { hasMore, equivalents } = useTransportations('Transport distance', 'distance')
 
@@ -31,7 +32,7 @@ const DistanceSimulator = () => {
           label='Distance parcourue (en km)'
           unit='km'
         />
-        Découvrez la quantité de CO₂e que vous émettez pour cette distance
+        {t('header')}
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       <CategorySimulator
@@ -39,8 +40,8 @@ const DistanceSimulator = () => {
         equivalents={equivalents}
         displayAll={displayAll}
         setDisplayAll={hasMore ? setDisplayAll : undefined}
-        displayAllText={t('displayAll')}
-        hideAllText={t('hideAll')}
+        displayAllText={tTransport('displayAll')}
+        hideAllText={tTransport('hideAll')}
         withSimulator
         type='distance'
       />

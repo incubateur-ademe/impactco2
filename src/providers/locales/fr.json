@@ -96,8 +96,12 @@
       "carpooler": "covoitureur"
     },
     "itineraire": {
+      "header": "Découvrez la quantité de CO₂e que vous émettez pour ce trajet",
       "start": "Départ",
       "end": "Arrivée"
+    },
+    "distance": {
+      "header": "Découvrez la quantité de CO₂e que vous émettez pour cette distance"
     },
     "teletravail": {
       "start": "Lieu de domicile",
@@ -148,9 +152,10 @@
     "equivalent-mobilier": "meuble[s]",
     "equivalent-electromenager": "appareil[s]",
     "equivalent-boisson": "boisson[s]",
+    "passenger": "passager[s]",
     "legend": {
-      "construction": "construction",
-      "usage": "usage"
+      "construction": "Construction",
+      "usage": "Usage"
     },
     "bottom": {
       "before": "Valeurs exprimées en kg",
@@ -323,6 +328,7 @@
     "name-avionlongcourrier": "Avion",
     "name-tgv": "TGV",
     "name-intercites": "Intercités",
+    "name-covoiturage": "Covoiturage",
     "name-voiturethermique": "Voiture",
     "name-voitureelectrique": "Voiture",
     "name-autocar": "Autocar",
