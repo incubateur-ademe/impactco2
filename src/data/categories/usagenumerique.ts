@@ -1,6 +1,5 @@
 export const usageNumeriques = [
   {
-    name: 'Email',
     slug: 'email',
     unit: 'avec les paramètres renseignés ci-dessous.',
     category: 10,
@@ -29,8 +28,6 @@ export const usageNumeriques = [
     source: 'https://negaoctet.org/',
   },
   {
-    name: 'Spam',
-    subtitle: 'Non lu',
     slug: 'spam',
     unit: 'email',
     category: 10,
@@ -49,10 +46,11 @@ export const usageNumeriques = [
       },
     ],
     source: 'https://negaoctet.org/',
+    include: {
+      pre: 'Non lu',
+    },
   },
   {
-    name: 'Stocker un Go de donnée',
-    subtitle: 'Pendant 1 an',
     slug: 'stockagedonnee',
     unit: 'année',
     category: 10,
@@ -67,9 +65,11 @@ export const usageNumeriques = [
       },
     ],
     source: 'https://negaoctet.org/',
+    include: {
+      pre: 'Pendant 1 an.',
+    },
   },
   {
-    name: 'Recherche[s] sur le web',
     slug: 'rechercheweb',
     unit: 'recherche',
     category: 10,
@@ -98,9 +98,6 @@ export const usageNumeriques = [
     source: 'https://negaoctet.org/',
   },
   {
-    name: 'Streaming vidéo',
-    prefix: 'hours',
-    subtitle: '',
     slug: 'streamingvideo',
     category: 10,
     ecv: [
@@ -129,8 +126,6 @@ export const usageNumeriques = [
     unit: 'avec les paramètres renseignés ci-dessous.',
   },
   {
-    name: 'Visioconférence',
-    prefix: 'hours',
     slug: 'visioconference',
     category: 10,
     ecv: [
@@ -159,7 +154,6 @@ export const usageNumeriques = [
     unit: 'avec les paramètres renseignés ci-dessous.',
   },
   {
-    name: 'Go de donnée',
     slug: 'telechargement',
     category: 10,
     ecv: [

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import React from 'react'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/EquivalentPage'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatName from 'utils/formatName'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   }
 
   return {
-    title: `${formatName(equivalent.name, 1, true)} | Impact CO₂`,
+    title: `${getName('fr', equivalent)} | Impact CO₂`,
     description: category.description,
     openGraph: {
       creators: 'ADEME',
@@ -54,7 +55,7 @@ const EquivalentPage = ({ params }: Props) => {
       <Equivalent category={category} equivalent={equivalent} />
       <Suggestion
         from={equivalent.link}
-        fromLabel={formatName(equivalent.name, 1, true)}
+        fromLabel={getName('fr', equivalent)}
         simulatorName={`de l'objet ${category.name}`}
       />
     </>

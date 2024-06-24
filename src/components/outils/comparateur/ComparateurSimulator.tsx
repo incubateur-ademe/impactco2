@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
-import formatName from 'utils/formatName'
+import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
@@ -18,12 +18,12 @@ import styles from './ComparateurSimulator.module.css'
 
 const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: string) => void }) => {
   const {
+    language,
     comparateur: { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent },
   } = useParamContext()
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
   const t = useTranslations('comparateur')
-  const tEquivalent = useTranslations('equivalent')
 
   return (
     <div>
@@ -33,30 +33,11 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
             id='base-value'
             value={baseValue}
             setValue={setBaseValue}
-            label={
-              comparedEquivalent
-                ? formatName(
-                    (('prefix' in comparedEquivalent && comparedEquivalent.prefix) || '') +
-                      comparedEquivalent.name +
-                      (('suffix' in comparedEquivalent && comparedEquivalent.suffix) || ''),
-                    baseValue
-                  )
-                : t('co2-unit')
-            }
+            label={comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue) : t('co2-unit')}
             unit={
               comparedEquivalent ? (
                 <>
-                  {formatName(
-                    ('prefix' in comparedEquivalent && comparedEquivalent.prefix
-                      ? tEquivalent(`prefix-${comparedEquivalent.prefix}`)
-                      : '') +
-                      tEquivalent(`name-${comparedEquivalent.slug}`) +
-                      ('suffix' in comparedEquivalent && comparedEquivalent.suffix
-                        ? tEquivalent(`suffix-${comparedEquivalent.suffix}`)
-                        : ''),
-                    baseValue
-                  )}
-
+                  {getName(language, comparedEquivalent, true, baseValue)}
                   <div className={styles.unitIcon}>
                     <CloseThickIcon />
                   </div>

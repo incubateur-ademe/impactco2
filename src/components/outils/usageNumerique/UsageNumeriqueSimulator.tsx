@@ -82,8 +82,7 @@ const UsageNumeriqueSimulator = () => {
     () => [
       {
         ...email,
-        name: "1 an d'email",
-        subtitle: `(${numberEmails * 52} emails)`,
+        name: `1 an d'email - ${numberEmails * 52} emails`,
         value:
           (52 *
             ((evaluateNumber(engine, 'email') - evaluateNumber(engine, 'email . terminaux . construction')) *

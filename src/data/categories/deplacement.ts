@@ -1,9 +1,7 @@
 export const deplacements = [
   {
     id: 1,
-    name: 'Avion',
     slug: 'avion',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voler', 'voyager'],
     type: 'plane',
     category: 4,
@@ -88,8 +86,6 @@ export const deplacements = [
   {
     id: 2,
     empreinteId: 42760,
-    name: 'TGV',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'train'],
     slug: 'tgv',
     type: 'rail',
@@ -114,8 +110,6 @@ export const deplacements = [
   {
     id: 3,
     empreinteId: 42756,
-    name: 'Intercités',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'train'],
     slug: 'intercites',
     type: 'rail',
@@ -139,9 +133,7 @@ export const deplacements = [
   },
   {
     id: 4,
-    name: 'Voiture',
-    subtitle: 'Moteur thermique',
-    prefix: 'km en ',
+    subtitle: 'Thermique',
     synonyms: ['transport', 'déplacement', 'déplacer', 'conduire', 'voyager'],
     slug: 'voiturethermique',
     carpool: 1,
@@ -163,9 +155,7 @@ export const deplacements = [
   },
   {
     id: 5,
-    name: 'Voiture',
-    subtitle: 'Moteur électrique',
-    prefix: 'km en ',
+    subtitle: 'Électrique',
     synonyms: ['transport', 'déplacement', 'déplacer', 'conduire', 'voyager'],
     slug: 'voitureelectrique',
     carpool: 1,
@@ -187,8 +177,6 @@ export const deplacements = [
   },
   {
     id: 6,
-    name: 'Autocar',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'autocar',
     type: 'car',
@@ -214,7 +202,6 @@ export const deplacements = [
   },
   {
     id: 7,
-    name: 'Vélo ou marche',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'marcher', 'pedaler'],
     slug: 'velo',
     type: 'foot',
@@ -229,8 +216,6 @@ export const deplacements = [
   {
     id: 8,
     empreinteId: 28331,
-    name: 'Vélo (ou trottinette) à assistance électrique',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'pedaler'],
     slug: 'veloelectrique',
     type: 'foot',
@@ -255,9 +240,7 @@ export const deplacements = [
   {
     id: 9,
     empreinteId: 28004,
-    name: 'Bus',
-    subtitle: 'Moteur thermique',
-    prefix: 'km en ',
+    subtitle: 'Thermique',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'busthermique',
     type: 'car',
@@ -282,8 +265,6 @@ export const deplacements = [
   {
     id: 10,
     empreinteId: 42761,
-    name: 'Tramway',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'tramway',
     type: 'rail',
@@ -308,8 +289,6 @@ export const deplacements = [
   {
     id: 11,
     empreinteId: 42757,
-    name: 'Métro',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'rail'],
     slug: 'metro',
     type: 'rail',
@@ -334,8 +313,6 @@ export const deplacements = [
   {
     id: 12,
     empreinteId: 27992,
-    name: 'Scooter ou moto légère',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'scooter',
     type: 'car',
@@ -360,8 +337,6 @@ export const deplacements = [
   {
     id: 13,
     empreinteId: 27995,
-    name: 'Moto',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'moto',
     type: 'car',
@@ -386,8 +361,6 @@ export const deplacements = [
   {
     id: 14,
     empreinteId: 42758,
-    name: 'RER ou Transilien',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'train', 'rail'],
     slug: 'rer',
     type: 'rail',
@@ -413,8 +386,6 @@ export const deplacements = [
   {
     id: 15,
     empreinteId: 42759,
-    name: 'TER',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'train', 'rail'],
     slug: 'ter',
     type: 'rail',
@@ -439,9 +410,7 @@ export const deplacements = [
   {
     id: 16,
     empreinteId: 28003,
-    name: 'Bus',
-    subtitle: 'Moteur électrique',
-    prefix: 'km en ',
+    subtitle: 'Électrique',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'buselectrique',
     type: 'car',
@@ -466,9 +435,7 @@ export const deplacements = [
   {
     id: 21,
     empreinteId: 28005,
-    name: 'Bus',
     subtitle: 'GNV',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'busgnv',
     type: 'car',

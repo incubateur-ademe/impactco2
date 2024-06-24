@@ -1,14 +1,10 @@
 type BaseEquivalent = {
   id?: string | number
-  name: string
   slug: string
   category: number
   default?: boolean
   include?: { pre: string; post?: string; postNewLine?: string }
   source?: string
-  prefix?: string
-  suffix?: string
-  subtitle?: string
   synonyms?: string[]
   carpool?: number
   percentage?: boolean

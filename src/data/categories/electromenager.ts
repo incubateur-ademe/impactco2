@@ -1,6 +1,5 @@
 export const electromenager = [
   {
-    name: 'Bouilloire[s]',
     id: 28306,
     slug: 'bouilloire',
     category: 6,
@@ -32,7 +31,6 @@ export const electromenager = [
     total: 9.91,
   },
   {
-    name: 'Cafetière[s]',
     id: 28304,
     subtitle: 'pods',
     synonyms: ['nespresso'],
@@ -66,7 +64,6 @@ export const electromenager = [
     total: 22.5,
   },
   {
-    name: 'Cafetière[s]',
     id: 28303,
     subtitle: 'Filtre',
     slug: 'cafetierefiltre',
@@ -99,7 +96,6 @@ export const electromenager = [
     total: 31.9,
   },
   {
-    name: 'Cafetière[s]',
     id: 28305,
     subtitle: 'Expresso',
     synonyms: ['espresso'],
@@ -133,7 +129,6 @@ export const electromenager = [
     total: 47.6,
   },
   {
-    name: 'Four',
     id: 26986,
     subtitle: 'Électrique',
     slug: 'fourelectrique',
@@ -166,7 +161,6 @@ export const electromenager = [
     total: 217,
   },
   {
-    name: 'Lave-vaisselle',
     id: 26984,
     slug: 'lavevaisselle',
     category: 6,
@@ -198,9 +192,7 @@ export const electromenager = [
     total: 271,
   },
   {
-    name: 'Lave-linge',
     id: 26983,
-    subtitle: '7kg',
     slug: 'lavelinge',
     category: 6,
     ecv: [
@@ -229,9 +221,11 @@ export const electromenager = [
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 342,
+    include: {
+      pre: 'Capacité 7kg.',
+    },
   },
   {
-    name: 'Réfrigérateur',
     id: 26976,
     slug: 'refrigirateur',
     category: 6,
@@ -263,7 +257,6 @@ export const electromenager = [
     total: 257,
   },
   {
-    name: 'Aspirateur',
     id: 26990,
     slug: 'aspirateur',
     category: 6,
@@ -290,7 +283,6 @@ export const electromenager = [
     total: 47.3,
   },
   {
-    name: 'Climatiseur[s]',
     id: 28325,
     synonyms: ['climatisation'],
     slug: 'climatiseur',

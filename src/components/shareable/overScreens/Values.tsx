@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import Resource from 'components/base/Resource'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
 import ChauffageData from './Data/ChauffageData'
@@ -31,7 +32,7 @@ export const overScreenEquivalentEtiquetteValues: (equivalent: ComputedEquivalen
   return {
     integrer: {
       title: 'integrate',
-      children: <Integrate path='/comparateur/etiquette' extraParams={params} tracking={equivalent.name} />,
+      children: <Integrate path='/comparateur/etiquette' extraParams={params} tracking={getName('fr', equivalent)} />,
     },
   }
 }
@@ -42,12 +43,16 @@ export const overScreenEquivalentInfographyValues: (
 ) => Record<string, OverScreenInfo> = (equivalent, equivalents) => ({
   partager: {
     title: 'share',
-    children: <Share path={`${equivalent.link}#infographie`} tracking={equivalent.name} />,
+    children: <Share path={`${equivalent.link}#infographie`} tracking={getName('fr', equivalent)} />,
   },
   integrer: {
     title: 'integrate',
     children: (
-      <Integrate path='/infographie' extraParams={`equivalents=${equivalents.join(',')}`} tracking={equivalent.name} />
+      <Integrate
+        path='/infographie'
+        extraParams={`equivalents=${equivalents.join(',')}`}
+        tracking={getName('fr', equivalent)}
+      />
     ),
   },
 })
@@ -57,11 +62,11 @@ export const overScreenEquivalentValues: (equivalent: ComputedEquivalent) => Rec
 ) => ({
   partager: {
     title: 'share',
-    children: <Share path={equivalent.link} tracking={equivalent.name} />,
+    children: <Share path={equivalent.link} tracking={getName('fr', equivalent)} />,
   },
   integrer: {
     title: 'integrate',
-    children: <Integrate path={equivalent.link} tracking={equivalent.name} />,
+    children: <Integrate path={equivalent.link} tracking={getName('fr', equivalent)} />,
   },
 })
 

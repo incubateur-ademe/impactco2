@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { z } from 'zod'
 import { categories } from 'data/categories'
+import { getName } from 'utils/Equivalent/equivalent'
 import { computeFootprint } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
 
@@ -185,7 +186,7 @@ export async function GET(req: NextRequest, context: { params: { id: string } })
               }
             : {}
           return {
-            name: equivalent.name,
+            name: getName('fr', equivalent),
             slug: equivalent.slug,
             ecv: equivalent.value,
             ...detailedECV,

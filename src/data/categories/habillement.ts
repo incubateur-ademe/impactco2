@@ -1,6 +1,5 @@
 export const habillements = [
   {
-    name: 'Jeans',
     id: 27043,
     slug: 'jeans',
     synonyms: ['habiller'],
@@ -34,7 +33,6 @@ export const habillements = [
     default: true,
   },
   {
-    name: 'Polo[s]',
     id: 27046,
     slug: 'polo',
     synonyms: ['habiller'],
@@ -67,7 +65,6 @@ export const habillements = [
     total: 8.2,
   },
   {
-    name: 'T-shirt[s]',
     id: 27044,
     subtitle: 'En coton',
     slug: 'tshirtencoton',
@@ -102,7 +99,6 @@ export const habillements = [
     default: true,
   },
   {
-    name: 'T-shirt[s]',
     id: 27045,
     subtitle: 'En polyester',
     slug: 'tshirtenpolyester',
@@ -136,7 +132,6 @@ export const habillements = [
     total: 5.5,
   },
   {
-    name: 'Sweat[s]',
     id: 27049,
     subtitle: 'En coton',
     slug: 'sweatencoton',
@@ -170,7 +165,6 @@ export const habillements = [
     total: 27.4,
   },
   {
-    name: 'Chemise[s]',
     id: 27041,
     subtitle: 'En coton',
     slug: 'chemiseencoton',
@@ -205,7 +199,6 @@ export const habillements = [
     default: true,
   },
   {
-    name: 'Chemise[s]',
     id: 27042,
     subtitle: 'En viscose',
     slug: 'chemiseenviscose',
@@ -239,7 +232,6 @@ export const habillements = [
     total: 10.2,
   },
   {
-    name: 'Paire[s] de chaussures',
     id: 27058,
     subtitle: 'En cuir',
     slug: 'chaussuresencuir',
@@ -274,7 +266,6 @@ export const habillements = [
     default: true,
   },
   {
-    name: 'Paire[s] de chaussures',
     id: 27059,
     subtitle: 'En tissu',
     slug: 'chaussuresentissu',
@@ -308,7 +299,6 @@ export const habillements = [
     total: 17.3,
   },
   {
-    name: 'Paire[s] de chaussures',
     id: 27060,
     subtitle: 'De sport',
     slug: 'chaussuresdesport',
@@ -342,7 +332,6 @@ export const habillements = [
     total: 18.7,
   },
   {
-    name: 'Robe[s]',
     id: 27056,
     subtitle: 'En coton',
     slug: 'robeencoton',
@@ -376,7 +365,6 @@ export const habillements = [
     total: 49.8,
   },
   {
-    name: 'Robe[s]',
     id: 27055,
     subtitle: 'En polyester',
     slug: 'robeenpolyester',
@@ -410,7 +398,6 @@ export const habillements = [
     total: 51.9,
   },
   {
-    name: 'Robe[s]',
     id: 27057,
     subtitle: 'En viscose',
     slug: 'robeenviscose',
@@ -444,7 +431,6 @@ export const habillements = [
     total: 44.9,
   },
   {
-    name: 'Pull[s]',
     id: 27050,
     subtitle: 'En laine',
     slug: 'pullenlaine',
@@ -479,7 +465,6 @@ export const habillements = [
     default: true,
   },
   {
-    name: 'Pull[s]',
     id: 27047,
     subtitle: 'En acrylique',
     slug: 'pullenacrylique',
@@ -513,7 +498,6 @@ export const habillements = [
     total: 25.5,
   },
   {
-    name: 'Pull[s]',
     id: 27051,
     subtitle: 'En coton recyclé',
     slug: 'pullencotonrecycle',
@@ -547,7 +531,6 @@ export const habillements = [
     total: 8.1,
   },
   {
-    name: 'Manteau[x]',
     id: 27052,
     slug: 'manteau',
     synonyms: ['habiller'],
@@ -581,7 +564,6 @@ export const habillements = [
     default: true,
   },
   {
-    name: 'Veste[s] imperméable[s]',
     id: 27053,
     slug: 'vesteimpermeable',
     synonyms: ['k-way', 'anorak'],
@@ -614,7 +596,6 @@ export const habillements = [
     total: 38.7,
   },
   {
-    name: 'Veste[s] simili-cuir',
     id: 27054,
     slug: 'vestesimilicuir',
     synonyms: ['habiller'],

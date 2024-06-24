@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
-import formatName from 'utils/formatName'
+import { getName } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import InformationFillIcon from 'components/base/icons/information-fill'
 import CheckboxInput from 'components/form/CheckboxInput'
@@ -16,7 +17,7 @@ const Checkbox = ({
   equivalents: string[]
   setEquivalents: (value: string[]) => void
 }) => {
-  const tEquivalent = useTranslations('equivalent')
+  const { language } = useParamContext()
   const t = useTranslations('comparateur.overscreen')
   const [interacted, setInteracted] = useState(false)
   const selectEquivalent = (checked: boolean, equivalent: ComputedEquivalent) => {
@@ -48,10 +49,7 @@ const Checkbox = ({
       label={
         <>
           <div className={styles.equivalentName}>
-            <div>
-              {formatName(tEquivalent(`name-${equivalent.slug}`), 1, true)}{' '}
-              {equivalent.subtitle && <>({formatName(tEquivalent(`subtitle-${equivalent.subtitle}`), 1, true)})</>}
-            </div>
+            <div>{getName(language, equivalent)}</div>
             {interacted && equivalents.length > 7 && (
               <div className={styles.warning}>
                 <InformationFillIcon />

@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatName from 'utils/formatName'
 import Equivalent from 'components/metaImages/Equivalent'
 
@@ -52,7 +53,7 @@ export async function GET(req: NextRequest, context: { params: { slug: string } 
     (
       <Equivalent
         slug={equivalent.slug}
-        name={formatName(`${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`, 1, true)}
+        name={getName('fr', equivalent)}
         quantity={equivalent.value}
         unit={equivalent.unit || category.unit || 'unité'}
       />

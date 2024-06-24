@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenEquivalentValues } from 'components/shareable/overScreens/Values'
 import EquivalentSimulator from './simulators/EquivalentSimulator'
@@ -10,7 +11,7 @@ const Equivalent = ({ category, equivalent }: { category: Category; equivalent: 
   const overScreens = useMemo(() => overScreenEquivalentValues(equivalent), [equivalent])
 
   return (
-    <Shareable tracking={equivalent.name} overScreens={overScreens}>
+    <Shareable tracking={getName('fr', equivalent)} overScreens={overScreens}>
       {equivalentsSimulators[equivalent.slug] || <EquivalentSimulator category={category} equivalent={equivalent} />}
     </Shareable>
   )

@@ -96,7 +96,7 @@ Liste des équivalents à comparer parmis la liste suivante :
   - soda : Litre de soda
   - biere : Litre de bièren
   - laitdevache : Litre de lait (de vache)
-  - laitdesoja : Litre de lait (de soja)
+  - soja : Boisson au lait (de soja)
   - cafe : Litre de café
 - Repas
   - repasavecduboeuf : repas avec du boeuf

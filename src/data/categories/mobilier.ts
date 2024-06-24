@@ -1,7 +1,6 @@
 export const mobiliers = [
   {
     id: 26966,
-    name: 'Canapé[s]',
     subtitle: 'convertible',
     slug: 'canapeconvertible',
     category: 7,
@@ -29,7 +28,6 @@ export const mobiliers = [
   },
   {
     id: 26958,
-    name: 'Chaise[s]',
     subtitle: 'En bois',
     slug: 'chaiseenbois',
     category: 7,
@@ -57,7 +55,6 @@ export const mobiliers = [
   },
   {
     id: 26961,
-    name: 'Table[s]',
     subtitle: 'En bois',
     slug: 'tableenbois',
     category: 7,
@@ -85,7 +82,6 @@ export const mobiliers = [
   },
   {
     id: 26964,
-    name: 'Canapé[s]',
     subtitle: 'Textile',
     slug: 'canapetextile',
     category: 7,
@@ -113,7 +109,6 @@ export const mobiliers = [
   },
   {
     id: 26963,
-    name: 'Armoire',
     slug: 'armoire',
     category: 7,
     source:
@@ -140,8 +135,6 @@ export const mobiliers = [
   },
   {
     ids: [26970, 26968, 26969],
-    name: 'Lit',
-    subtitle: 'lit',
     slug: 'lit',
     category: 7,
     total: 115,
@@ -165,5 +158,8 @@ export const mobiliers = [
         value: 63.900000000000006,
       },
     ],
+    include: {
+      pre: 'Cadre + sommier + matelas',
+    },
   },
 ]

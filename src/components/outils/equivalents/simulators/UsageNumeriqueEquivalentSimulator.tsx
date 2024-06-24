@@ -10,6 +10,7 @@ import { categories } from 'data/categories'
 import { ecv } from 'data/ecv'
 import { usageNumeriqueConfig } from 'components/outils/usageNumerique/config'
 import usageFormStyles from 'src/components/outils/usageNumerique/UsageForm.module.css'
+import { getName } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
 import HiddenLabel from 'components/form/HiddenLabel'
@@ -76,7 +77,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 unit={`${values.mainUnit}${(situation[values.mainValue] as number) > 1 ? 's' : ''}`}
                 value={(situation[values.mainValue] as number) / values.mainDivider}
                 setValue={(newValue) => {
-                  track(equivalents[slug].name, `Input ${slug} value`, newValue.toString())
+                  track(getName('fr', equivalents[slug]), `Input ${slug} value`, newValue.toString())
                   setSituation({ ...situation, [values.mainValue]: (newValue * values.mainDivider).toString() })
                 }}
               />
@@ -88,7 +89,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                     unit={`${values.secondUnit}${(situation[values.secondValue] as number) > 1 ? 's' : ''}`}
                     value={situation[values.secondValue] as number}
                     setValue={(newValue) => {
-                      track(equivalents[slug].name, `Input ${slug} second value`, newValue.toString())
+                      track(getName('fr', equivalents[slug]), `Input ${slug} second value`, newValue.toString())
                       setSituation({ ...situation, [values.secondValue]: newValue.toString() })
                     }}
                   />
@@ -101,7 +102,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 id='type'
                 value={situation[values.type] as string}
                 onChange={(event) => {
-                  track(equivalents[slug].name, `Select ${slug} type`, event.target.value)
+                  track(getName('fr', equivalents[slug]), `Select ${slug} type`, event.target.value)
                   setSituation({ ...situation, [values.type]: event.target.value })
                 }}>
                 {values.types.map((option) => (
@@ -115,7 +116,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 id='network'
                 value={situation[values.network] as string}
                 onChange={(event) => {
-                  track(equivalents[slug].name, `Select ${slug} réseau`, event.target.value)
+                  track(getName('fr', equivalents[slug]), `Select ${slug} réseau`, event.target.value)
                   setSituation({ ...situation, [values.network]: event.target.value })
                 }}>
                 {values.networks.map((option) => (
@@ -136,7 +137,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               id='appareil'
               value={situation[values.device] as string}
               onChange={(event) => {
-                track(equivalents[slug].name, `Select ${slug} appareil`, event.target.value)
+                track(getName('fr', equivalents[slug]), `Select ${slug} appareil`, event.target.value)
                 setSituation({ ...situation, [values.device]: event.target.value })
               }}>
               {values.appareils.map((option) => (
@@ -163,7 +164,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 value='yes'
                 selected={withConstruction ? 'yes' : 'no'}
                 setSelected={() => {
-                  track(equivalents[slug].name, `${slug} construction`, 'true')
+                  track(getName('fr', equivalents[slug]), `${slug} construction`, 'true')
                   setWithConstruction(true)
                 }}
               />
@@ -174,7 +175,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 value='no'
                 selected={withConstruction ? 'yes' : 'no'}
                 setSelected={() => {
-                  track(equivalents[slug].name, `${slug} construction`, 'false')
+                  track(getName('fr', equivalents[slug]), `${slug} construction`, 'false')
                   setWithConstruction(false)
                 }}
               />
@@ -192,7 +193,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 unit={evaluateNumber(engine, `${device} . durée de vie`) > 1 ? 'ans' : 'an'}
                 value={evaluateNumber(engine, `${device} . durée de vie`)}
                 setValue={(newValue) => {
-                  track(equivalents[slug].name, `Input ${slug} durée de vie`, newValue.toString())
+                  track(getName('fr', equivalents[slug]), `Input ${slug} durée de vie`, newValue.toString())
                   setSituation({ ...situation, [`${device} . durée de vie`]: newValue.toString() })
                 }}
               />
@@ -208,7 +209,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 }
                 value={evaluateNumber(engine, `${device} . profil utilisation`)}
                 setValue={(newValue) => {
-                  track(equivalents[slug].name, `Input ${slug} profil utilisation`, newValue.toString())
+                  track(getName('fr', equivalents[slug]), `Input ${slug} profil utilisation`, newValue.toString())
                   setSituation({ ...situation, [`${device} . profil utilisation`]: newValue.toString() })
                 }}
               />

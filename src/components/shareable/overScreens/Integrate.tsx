@@ -53,11 +53,11 @@ const Integrate = ({
         integration
         tracking={tracking}
         trackingType='Intégrer'
-        params={params}
+        params={path.includes('etiquette') ? {} : params}
         visibility={visibility}
         setVisibility={setVisibility}
       />
-      {Object.entries(params).length > 0 && <div className={styles.separator} />}
+      {!path.includes('etiquette') && Object.entries(params).length > 0 && <div className={styles.separator} />}
       <CustomParam
         tracking={tracking}
         slug='theme'
@@ -70,7 +70,6 @@ const Integrate = ({
         param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
         visible
       />
-
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>
   ) : null

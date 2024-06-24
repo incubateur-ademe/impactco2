@@ -1,65 +1,35 @@
 import fs from 'fs'
-import boissons from '../data/categories/boisson.json'
-import caspratiques from '../data/categories/caspratiques.json'
-import chauffages from '../data/categories/chauffage.json'
-import deplacements from '../data/categories/deplacement.json'
-import electromenager from '../data/categories/electromenager.json'
-import { flattenEquivalents } from '../data/categories/flattenEquivalents'
-import fruitsetlegumes from '../data/categories/fruitsetlegumes.json'
-import habillement from '../data/categories/habillement.json'
-import mobilier from '../data/categories/mobilier.json'
-import numerique from '../data/categories/numerique.json'
-import repas from '../data/categories/repas.json'
-import usageNumerique from '../data/categories/usagenumerique.json'
-import values from '../data/shopify/values.json'
-import { computeECV } from '../utils/computeECV'
-import formatName from '../utils/formatName'
-import { Equivalent, SimpleEquivalent } from '../../types/equivalent'
+import { categories } from '../data/categories'
+import values from '../utils/Equivalent/values.json'
+import { SimpleEquivalent } from '../../types/equivalent'
 
 const existingValues: Record<string, SimpleEquivalent> = values
-const existingEquivalentsByCategory: Record<string, Equivalent[]> = {
-  caspratiques: caspratiques,
-  boissons: boissons,
-  fruitsetlegumes: fruitsetlegumes,
-  electromenager: electromenager,
-  habillement: habillement,
-  mobilier: mobilier,
-  repas: repas,
-  numerique: numerique,
-  deplacements: flattenEquivalents(deplacements),
-  chauffages: chauffages,
-  usageNumerique: usageNumerique,
-}
 
 const ecvs: Record<string, SimpleEquivalent> = {}
 const list: { value: string; label: string }[] = []
-Object.values(existingEquivalentsByCategory).forEach((equivalents) =>
-  equivalents.forEach((equivalent) => {
-    if (equivalent.subtitle) {
-      console.log(`"subtitle-${equivalent.slug}": "${equivalent.subtitle || ''}",`)
-    }
-    const name = `${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`
-    const label = `${equivalent.prefix || ''}${name.toLowerCase()}${equivalent.suffix || ''}`
+
+categories.forEach((category) =>
+  category.equivalents?.forEach((equivalent) => {
     const value = existingValues[equivalent.slug]
 
     ecvs[equivalent.slug] = {
-      category: equivalent.category,
-      value: computeECV(equivalent) * 1000,
-      fr: label,
-      en: value && value.fr === label ? value.en : 'TODO',
-      de: value && value.fr === label ? value.de : 'TODO',
-      es: value && value.fr === label ? value.es : 'TODO',
+      category: category.id,
+      value: equivalent.value * 1000,
+      fr: value ? value.fr : 'TODO',
+      en: value ? value.en : 'TODO',
+      de: value ? value.de : 'TODO',
+      es: value ? value.es : 'TODO',
       percentage: equivalent.percentage,
     }
 
     list.push({
       value: equivalent.slug,
-      label: formatName(name, 1, true),
+      label: value ? value.fr : 'TODO',
     })
   })
 )
 
-fs.writeFileSync(`src/data/shopify/values.json`, JSON.stringify(ecvs, null, 2))
+fs.writeFileSync(`src/utils/Equivalent/values.json`, JSON.stringify(ecvs, null, 2))
 fs.writeFileSync(
   `src/data/shopify/list.json`,
   JSON.stringify(

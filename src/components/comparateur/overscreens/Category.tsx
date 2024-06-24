@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category as CategoryType } from 'types/category'
+import { getName } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Button from 'components/base/buttons/Button'
@@ -35,7 +36,7 @@ const Category = ({
         .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => equivalent.slug !== comparedEquivalent?.slug)
         .filter((equivalent) => equivalent.value)
-        .sort((a, b) => a.name.localeCompare(b.name)),
+        .sort((a, b) => getName('fr', a).localeCompare(getName('fr', b))),
     [category, comparedEquivalent]
   )
 

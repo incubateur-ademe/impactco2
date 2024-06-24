@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import React from 'react'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/Equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 
 export async function generateStaticParams() {
   return categories.flatMap((category) =>
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   }
 
   return {
-    title: `${equivalent.name} | Impact CO₂`,
+    title: `${getName('fr', equivalent)} | Impact CO₂`,
     description: category.description,
     openGraph: {
       creators: 'ADEME',

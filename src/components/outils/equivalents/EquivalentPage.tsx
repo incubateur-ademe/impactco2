@@ -1,7 +1,7 @@
 import React from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
-import formatName from 'utils/formatName'
+import { getName } from 'utils/Equivalent/equivalent'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ToolCard from 'components/cards/ToolCard'
@@ -18,14 +18,14 @@ const EquivalentPage = ({ category, equivalent }: { category: Category; equivale
   return (
     <>
       <Breadcrumbs
-        current={formatName(equivalent.name, 1, true)}
+        current={getName('fr', equivalent)}
         links={[
           { label: 'Accueil', link: '/' },
           { label: 'Les outils', link: '/outils' },
           { label: category.name, link: `/outils/${category.slug}` },
         ]}
       />
-      <Block title={formatName(equivalent.name, 1, true)} as='h1' description="Détail de l'impact carbone">
+      <Block title={getName('fr', equivalent)} as='h1' description="Détail de l'impact carbone">
         <Equivalent category={category} equivalent={equivalent} />
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>

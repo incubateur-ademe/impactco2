@@ -1,6 +1,5 @@
 export const numeriques = [
   {
-    name: 'Smartphone[s]',
     synonyms: [
       'telephone',
       'gsm',
@@ -62,7 +61,6 @@ export const numeriques = [
     default: true,
   },
   {
-    name: 'Ordinateur[s] fixe[s] sans écran (particulier)',
     slug: 'ordinateurfixeparticulier',
     category: 1,
     ecv: [
@@ -88,7 +86,6 @@ export const numeriques = [
     default: true,
   },
   {
-    name: 'Ordinateur[s] fixe[s] sans écran (professionnel)',
     slug: 'ordinateurfixeprofessionnel',
     category: 1,
     ecv: [
@@ -114,7 +111,6 @@ export const numeriques = [
     default: true,
   },
   {
-    name: "Écran[s] d'ordinateur",
     slug: 'ecran',
     category: 1,
     usage: {
@@ -139,7 +135,6 @@ export const numeriques = [
     ],
   },
   {
-    name: 'Tablette[s]',
     slug: 'tabletteclassique',
     category: 1,
     usage: {
@@ -165,7 +160,6 @@ export const numeriques = [
     default: true,
   },
   {
-    name: 'Télévision[s] ',
     slug: 'television',
     category: 1,
     ecv: [
@@ -191,7 +185,6 @@ export const numeriques = [
     default: true,
   },
   {
-    name: 'Ordinateur[s] portable[s]',
     slug: 'ordinateurportable',
     category: 1,
     ecv: [
@@ -217,7 +210,6 @@ export const numeriques = [
     default: true,
   },
   {
-    name: 'Enceinte[s] connectée[s]',
     slug: 'enceintebluetooth',
     category: 1,
     ecv: [
@@ -239,7 +231,6 @@ export const numeriques = [
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    name: 'Téléphone[s] basique[s]',
     slug: 'telephonebasique',
     category: 1,
     ecv: [
@@ -257,7 +248,6 @@ export const numeriques = [
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    name: 'Casque[s] de réalité virtuelle',
     slug: 'casquevr',
     category: 1,
     ecv: [
@@ -282,7 +272,6 @@ export const numeriques = [
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    name: 'Alimentation[s] externe[s]',
     subtitle: 'laptop',
     slug: 'alimentationordinateur',
     category: 1,
@@ -301,7 +290,6 @@ export const numeriques = [
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    name: 'Alimentation[s] externe[s]',
     subtitle: 'smartphone',
     slug: 'alimentationsmartphone',
     category: 1,
@@ -320,7 +308,6 @@ export const numeriques = [
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    name: 'Disque[s] dur[s] externe[s]',
     slug: 'disquedur',
     category: 1,
     ecv: [
@@ -338,7 +325,6 @@ export const numeriques = [
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    name: 'Clef[s] usb',
     slug: 'clefusb',
     category: 1,
     ecv: [
@@ -358,7 +344,6 @@ export const numeriques = [
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
   },
   {
-    name: 'Box[s]',
     slug: 'box',
     category: 1,
     ecv: [

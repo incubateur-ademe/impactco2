@@ -1,8 +1,6 @@
 export const boissons = [
   {
     id: 24283,
-    name: 'Eau du robinet',
-    prefix: "l'",
     synonyms: ['boire'],
     slug: 'eaudurobinet',
     category: 3,
@@ -11,8 +9,6 @@ export const boissons = [
   },
   {
     id: 31000,
-    name: 'Eau en bouteille',
-    prefix: "l'",
     synonyms: ['boire'],
     slug: 'eauenbouteille',
     category: 3,
@@ -42,8 +38,6 @@ export const boissons = [
   },
   {
     id: 31001,
-    name: 'Soda',
-    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'soda',
     category: 3,
@@ -77,8 +71,6 @@ export const boissons = [
   },
   {
     id: 31002,
-    name: 'Bière',
-    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'biere',
     category: 3,
@@ -112,8 +104,6 @@ export const boissons = [
   },
   {
     id: 31003,
-    name: 'Vin',
-    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'vin',
     category: 3,
@@ -147,9 +137,6 @@ export const boissons = [
   },
   {
     id: 31004,
-    name: 'Lait',
-    subtitle: 'vache',
-    prefix: 'ld',
     synonyms: ['boire'],
     slug: 'laitdevache',
     category: 3,
@@ -178,11 +165,8 @@ export const boissons = [
     source: 'https://agribalyse.ademe.fr/app/aliments/19051#Lait_%C3%A9cr%C3%A9m%C3%A9,_pasteuris%C3%A9',
   },
   {
-    name: 'Lait',
-    subtitle: 'soja',
-    prefix: 'ld',
-    synonyms: ['boire'],
-    slug: 'laitdesoja',
+    synonyms: ['boire', 'lait'],
+    slug: 'soja',
     category: 3,
     ecv: [
       {
@@ -210,8 +194,6 @@ export const boissons = [
     source: 'https://agribalyse.ademe.fr/app/aliments/18900#Boisson_au_soja,_nature',
   },
   {
-    name: 'Thé',
-    prefix: 'ld',
     slug: 'the',
     category: 3,
     ecv: [
@@ -242,8 +224,6 @@ export const boissons = [
     },
   },
   {
-    name: 'Café',
-    prefix: 'ld',
     slug: 'cafe',
     category: 3,
     ecv: [

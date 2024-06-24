@@ -11,6 +11,7 @@ const Examples = async ({
   filter: string
 } & Omit<ExamplesListProps, 'examples'>) => {
   const examples = await getExamples()
+
   return <ExamplesList examples={examples.filter((example) => example.tags.includes(filter))} {...rest} />
 }
 

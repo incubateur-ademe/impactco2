@@ -1,7 +1,5 @@
 export const casPratiques = [
   {
-    prefix: 'A/R ',
-    name: 'Paris - New-York',
     subtitle: 'plane',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
@@ -16,8 +14,6 @@ export const casPratiques = [
     },
   },
   {
-    prefix: 'A/R ',
-    name: 'Paris - Berlin',
     subtitle: 'tgv',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
@@ -32,8 +28,6 @@ export const casPratiques = [
     },
   },
   {
-    prefix: 'A/R ',
-    name: 'Paris - Marseille',
     subtitle: 'tgv',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
@@ -48,8 +42,6 @@ export const casPratiques = [
     },
   },
   {
-    prefix: 'A/R ',
-    name: 'Lille - Nîmes',
     subtitle: 'car',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
@@ -64,8 +56,6 @@ export const casPratiques = [
     },
   },
   {
-    prefix: '%l',
-    name: "Empreinte carbone d'un citoyen Français",
     synonyms: ['', 'déplacement', 'déplacer', 'voyager'],
     unit: 'an',
     slug: 'francais',
@@ -80,7 +70,6 @@ export const casPratiques = [
     },
   },
   {
-    name: 'Épisode[s] de Game of thrones',
     subtitle: 'en streaming',
     synonyms: ['streaming', 'série', 'netflix'],
     unit: 'épisode',
@@ -95,7 +84,6 @@ export const casPratiques = [
     },
   },
   {
-    name: 'Intégrale[s] de Friends',
     subtitle: 'en streaming',
     synonyms: ['streaming', 'série', 'netflix'],
     unit: 'intégrale',

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import fs from 'fs'
-import values from '../data/shopify/values.json'
+import values from '../utils/Equivalent/values.json'
 
 const getEquivalentsImage = async () => {
   const slugs = Object.keys(values)

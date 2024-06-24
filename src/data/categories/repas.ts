@@ -1,7 +1,6 @@
 export const repas = [
   {
     id: 20689,
-    name: 'Repas avec du boeuf',
     synonyms: ['manger', 'alimenter', 'viande'],
     slug: 'repasavecduboeuf',
     category: 2,
@@ -10,7 +9,6 @@ export const repas = [
   },
   {
     id: 20683,
-    name: 'Repas végétarien[s]',
     synonyms: ['manger', 'alimenter'],
     slug: 'repasvegetarien',
     category: 2,
@@ -18,7 +16,6 @@ export const repas = [
     source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Repas',
   },
   {
-    name: 'Repas végétalien[s]',
     synonyms: ['manger', 'alimenter'],
     slug: 'repasvegetalien',
     category: 2,
@@ -26,7 +23,6 @@ export const repas = [
     source: 'https://nosgestesclimat.fr/documentation/alimentation/plats/v%C3%A9g%C3%A9talien/empreinte',
   },
   {
-    name: 'Repas avec du poisson blanc',
     synonyms: ['manger', 'alimenter'],
     slug: 'repasavecdupoissonblanc',
     category: 2,
@@ -34,7 +30,6 @@ export const repas = [
     source: 'https://nosgestesclimat.fr/documentation/alimentation/plats/poisson-2/empreinte',
   },
   {
-    name: 'Repas avec du poisson gras',
     synonyms: ['manger', 'alimenter'],
     slug: 'repasavecdupoissongras',
     category: 2,
@@ -43,7 +38,6 @@ export const repas = [
   },
   {
     id: 20688,
-    name: 'Repas avec du poulet',
     synonyms: ['manger', 'alimenter', 'viande'],
     slug: 'repasavecdupoulet',
     category: 2,
