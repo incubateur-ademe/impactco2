@@ -1,6 +1,4 @@
-import React from 'react'
-import { Example } from 'types/example'
-import { FAQ } from 'types/faq'
+import React, { Suspense } from 'react'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
@@ -10,7 +8,7 @@ import styles from '../CategoryPage.module.css'
 import Comparateur from './Comparateur'
 import Etiquettes from './Etiquettes'
 
-const ComparateurPage = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] }) => {
+const ComparateurPage = () => {
   return (
     <>
       <Breadcrumbs
@@ -39,14 +37,18 @@ const ComparateurPage = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] 
         id='etiquette'>
         <Etiquettes />
       </Block>
-      <Examples
-        title='Exemples'
-        description='Ils utilisent le comparateur ou les étiquettes avec brio.'
-        link='/doc/exemples'
-        linkLabel='Tous les exemples'
-        examples={examples.filter((example) => example.tags.includes('Comparateur carbone'))}
-      />
-      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Comparateur carbone'))} page='Comparateur carbone' />
+      <Suspense>
+        <Examples
+          title='Exemples'
+          description='Ils utilisent le comparateur ou les étiquettes avec brio.'
+          link='/doc/exemples'
+          linkLabel='Tous les exemples'
+          filter='Comparateur carbone'
+        />
+      </Suspense>
+      <Suspense>
+        <FAQs filter='Comparateur carbone' page='Comparateur carbone' />
+      </Suspense>
     </>
   )
 }

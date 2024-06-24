@@ -1,8 +1,6 @@
 import Image from 'next/image'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, Suspense } from 'react'
 import TranslationProvider from 'src/providers/TranslationProvider'
-import { Example } from 'types/example'
-import { FAQ } from 'types/faq'
 import ClipboardBox from 'components/base/ClipboardBox'
 import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
@@ -15,12 +13,8 @@ import styles from './Outil.module.css'
 
 const Outil = ({
   tool,
-  examples,
-  faqs,
 }: {
   tool: ToolCardProps & { content: ReactNode; toolLink?: string; toolLinkLabel?: string; clipboardURL?: string }
-  examples: Example[]
-  faqs: FAQ[]
 }) => {
   return (
     <>
@@ -53,14 +47,18 @@ const Outil = ({
             </div>
           </Card>
         </Block>
-        <Examples
-          title='Exemples'
-          description='Ils utilisent nos outils à la perfection.'
-          link='/doc/exemples'
-          linkLabel='Tous les exemples'
-          examples={examples.filter((example) => example.tags.includes(tool.title))}
-        />
-        <FAQs faqs={faqs.filter((faq) => faq.pages.includes(tool.title))} page={tool.title} />
+        <Suspense>
+          <Examples
+            title='Exemples'
+            description='Ils utilisent nos outils à la perfection.'
+            link='/doc/exemples'
+            linkLabel='Tous les exemples'
+            filter={tool.title}
+          />
+        </Suspense>
+        <Suspense>
+          <FAQs filter={tool.title} page={tool.title} />
+        </Suspense>
       </TranslationProvider>
     </>
   )

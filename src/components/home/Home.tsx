@@ -1,6 +1,4 @@
-import React from 'react'
-import { Example } from 'types/example'
-import { FAQ } from 'types/faq'
+import React, { Suspense } from 'react'
 import Link from 'components/base/buttons/Link'
 import ToolCard from 'components/cards/ToolCard'
 import ToolCards from 'components/cards/ToolCards'
@@ -13,7 +11,7 @@ import Equivalents from './Equivalents'
 import styles from './Home.module.css'
 import MiniCard from './MiniCard'
 
-const Home = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] }) => {
+const Home = () => {
   return (
     <>
       <Block>
@@ -41,14 +39,18 @@ const Home = ({ examples, faqs }: { examples: Example[]; faqs: FAQ[] }) => {
         description='Parcourir les fiches dédiées à l’impact carbone de plus de 150 objets et gestes courants.'>
         <Equivalents />
       </Block>
-      <Examples
-        title='Exemples'
-        description='Ils utilisent nos outils à la perfection.'
-        link='/doc/exemples'
-        linkLabel='Tous les exemples'
-        examples={examples.filter((example) => example.tags.includes("Page d'accueil"))}
-      />
-      <FAQs faqs={faqs.filter((faq) => faq.pages.includes('Accueil'))} page='Accueil' />
+      <Suspense>
+        <Examples
+          title='Exemples'
+          description='Ils utilisent nos outils à la perfection.'
+          link='/doc/exemples'
+          linkLabel='Tous les exemples'
+          filter="Page d'accueil"
+        />
+      </Suspense>
+      <Suspense>
+        <FAQs filter='Accueil' page='Accueil' />
+      </Suspense>
       <Block
         title='À découvrir'
         description="Vous souhaitez mobiliser votre communauté autour de l'empreinte carbone ?">
