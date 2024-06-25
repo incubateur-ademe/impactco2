@@ -40,7 +40,7 @@ export default function useTransportations(
                   return {
                     ...equivalent,
                     ...currentECV,
-                    slug: `${equivalent.slug}-${currentECV.subtitle}`.replace(/ /g, '').toLowerCase(),
+                    slug: `${equivalent.slug}-${currentECV.subtitle}`,
                   }
                 }
               }

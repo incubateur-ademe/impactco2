@@ -291,7 +291,7 @@
   "rer": {
     "category": 4,
     "value": 9.780000000000001,
-    "fr": "km en ;RER ou transilien",
+    "fr": "km en ;RER ou Transilien",
     "en": "km by ;RER or suburban train",
     "de": "km mit ;dem S-Bahn oder Nahverkehrszug",
     "es": "km en ;RER o tren de cercanías"
@@ -427,8 +427,8 @@
   "choudebruxelles": {
     "category": 9,
     "value": 575.8186729,
-    "fr": "kg de ;chou de bruxelles",
-    "en": "kg of ;brussels sprout",
+    "fr": "kg de ;chou de Bruxelles",
+    "en": "kg of ;Brussels sprout",
     "de": "kg ;Rosenkohl",
     "es": "kg de ;coles de Bruselas"
   },

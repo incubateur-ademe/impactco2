@@ -1,4 +1,8 @@
 export default function formatName(name = '', value = 1, capital?: boolean) {
+  if (!name) {
+    return name
+  }
+
   const newName = name
     .replace(/\[s\]/g, value > 1 ? 's' : '')
     .replace(/\[x\]/g, value > 1 ? 'x' : '')

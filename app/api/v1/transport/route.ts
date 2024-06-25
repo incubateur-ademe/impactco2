@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { deplacements } from 'data/categories/deplacement'
+import { getName } from 'utils/Equivalent/equivalent'
 import { trackAPIRequest } from 'utils/middleware'
 import { filterByDistance } from 'utils/transport'
 
@@ -28,12 +29,15 @@ export const computeTransportEmission = (
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
-      let name = transportation.name
+      let name = getName('fr', transportation)
       if ('ecvs' in transportation && transportation.ecvs) {
         const currentECV = transportation.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
         if (currentECV) {
           values = currentECV.ecv
-          name = `${name} (${currentECV.subtitle.toLowerCase()})`
+          name = getName('fr', {
+            ...transportation,
+            slug: `${transportation.slug}-${currentECV.subtitle}`,
+          })
         }
       } else if (transportation.ecv) {
         values = transportation.ecv
@@ -120,19 +124,19 @@ export const computeTransportEmission = (
  *         - 1 : Avion
  *         - 2 : TGV
  *         - 3 : Intercités
- *         - 4 : Voiture (Moteur thermique)
- *         - 5 : Voiture (Moteur électrique)
+ *         - 4 : Voiture thermique
+ *         - 5 : Voiture électrique
  *         - 6 : Autocar
  *         - 7 : Vélo ou marche
  *         - 8 : Vélo (ou trottinette) à assistance électrique
- *         - 9 : Bus (Moteur thermique)
+ *         - 9 : Bus thermique
  *         - 10 : Tramway
  *         - 11 : Métro
  *         - 12 : Scooter ou moto légère
  *         - 13 : Moto
  *         - 14 : RER ou Transilien
  *         - 15 : TER
- *         - 16 : Bus (Moteur électrique)
+ *         - 16 : Bus électrique
  *         - 21 : Bus (GNV)
  *     - in: query
  *       name: ignoreRadiativeForcing
@@ -204,7 +208,7 @@ export async function GET(req: NextRequest) {
     {
       data: emissions.map((emission) => ({
         id: emission.id,
-        name: `${emission.name}${emission.subtitle ? ` (${emission.subtitle})` : ''}`,
+        name: emission.name,
         value: emission.emissions.kgco2e / (((emission.carpool && inputs.data.numberOfPassenger) || 0) + 1),
       })),
       warning: hasAPIKey

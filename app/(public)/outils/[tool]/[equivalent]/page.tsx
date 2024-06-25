@@ -4,7 +4,6 @@ import React from 'react'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/EquivalentPage'
 import { getName } from 'utils/Equivalent/equivalent'
-import formatName from 'utils/formatName'
 import Suggestion from 'components/layout/Suggestion'
 
 export async function generateStaticParams() {

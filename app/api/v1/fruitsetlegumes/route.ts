@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { fruitsEtLegumes } from 'data/categories/fruitsetlegumes'
+import { getName } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
 
@@ -91,7 +92,7 @@ export async function GET(req: NextRequest) {
         .filter((value) => value.months.includes(month))
         .map((value) => {
           return {
-            name: value.name,
+            name: getName('fr', value),
             slug: value.slug,
             months: value.months.map((month) => month + 1),
             ecv: computeECV(value),

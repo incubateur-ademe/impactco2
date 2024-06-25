@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
@@ -13,6 +14,7 @@ import styles from './EquivalentCardContent.module.css'
 const EquivalentCardContent = ({ equivalent, category }: { equivalent: ComputedEquivalent; category: Category }) => {
   const { value, unit } = getNumberPrecision(equivalent.value)
   const { language } = useParamContext()
+  const t = useTranslations('unit')
   return (
     <div className={styles.content}>
       <div>
@@ -24,8 +26,8 @@ const EquivalentCardContent = ({ equivalent, category }: { equivalent: ComputedE
           {unit} CO₂e
         </div>
         <div className={styles.unit}>
-          {equivalent.unit && equivalent.unit.startsWith('avec') ? '' : 'par '}
-          {equivalent.unit || category?.unit || 'unité'}
+          {equivalent.unit && equivalent.unit.startsWith('avec') ? '' : language === 'en' ? 'per ' : 'par '}
+          {t(equivalent.unit || category?.unit || 'unité')}
         </div>
       </div>
       <EquivalentIcon equivalent={equivalent} height={5} />

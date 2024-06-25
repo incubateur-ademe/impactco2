@@ -8,7 +8,7 @@ import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { deplacements } from 'data/categories/deplacement'
-import formatName from 'utils/formatName'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import useItineraries from 'hooks/useItineraries'
@@ -94,7 +94,7 @@ const TeletravailSimulator = () => {
             }}>
             {deplacements.map((deplacement) => (
               <option key={deplacement.slug} value={deplacement.slug}>
-                {formatName(`${deplacement.name}${deplacement.subtitle ? ` (${deplacement.subtitle})` : ''}`, 1, true)}
+                {getName(language, deplacement)}
               </option>
             ))}
           </Select>

@@ -5,7 +5,6 @@ import { computedEquivalents } from 'src/providers/equivalents'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
 import { getName } from 'utils/Equivalent/equivalent'
-import formatName from 'utils/formatName'
 import Equivalent from 'components/metaImages/Equivalent'
 
 export const runtime = 'edge'

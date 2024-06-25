@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
+import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { track } from 'utils/matomo'
 import ClipboardBox from 'components/base/ClipboardBox'
@@ -9,6 +10,7 @@ import FacebookIcon from 'components/base/icons/facebook'
 import LinkedinIcon from 'components/base/icons/linkedin'
 import TwitterIcon from 'components/base/icons/twitter'
 import WhatsappIcon from 'components/base/icons/whatsapp'
+import CustomParam, { CustomParamValue } from './CustomParam'
 import styles from './Share.module.css'
 
 const ShareUrl = ({
@@ -17,18 +19,29 @@ const ShareUrl = ({
   url,
   tracking,
   customImage,
+  noLanguage,
 }: {
   category?: Pick<Category, 'slug' | 'name' | 'meta'>
   tracking?: string
   path?: string
   customImage?: string
   url: string
+  noLanguage?: boolean
 }) => {
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
-
+  const { language, setLanguage } = useParamContext()
   return (
     <>
+      {!noLanguage && (
+        <CustomParam
+          tracking={trackingValue}
+          slug='language'
+          integration
+          param={{ value: language, setter: setLanguage } as CustomParamValue}
+          visible
+        />
+      )}
       <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
       <div className={styles.buttons}>
         <FacebookShareButton

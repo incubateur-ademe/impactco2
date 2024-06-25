@@ -6,6 +6,7 @@ import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getCustomParams } from './CustomParamsValues'
+import styles from './Share.module.css'
 import ShareUrl from './ShareUrl'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
@@ -51,15 +52,19 @@ const Share = ({
   return (
     <>
       {params && visibility && (
-        <CustomParams
-          tracking={trackingValue}
-          trackingType='Partager'
-          params={params}
-          visibility={visibility}
-          setVisibility={setVisibility}
-        />
+        <>
+          <CustomParams
+            tracking={trackingValue}
+            trackingType='Partager'
+            params={params}
+            visibility={visibility}
+            setVisibility={setVisibility}
+          />
+          <div className={styles.separator} />
+        </>
       )}
       <ShareUrl
+        noLanguage={noLanguage}
         url={url}
         tracking={tracking}
         path={path}

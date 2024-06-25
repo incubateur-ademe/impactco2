@@ -1,6 +1,6 @@
 import React from 'react'
 import { SimpleEquivalent } from 'types/equivalent'
-import values from 'data/shopify/values.json'
+import values from 'utils/Equivalent/values.json'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { buildCurrentUrlFor } from 'utils/urls'

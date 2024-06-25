@@ -17,12 +17,12 @@ describe('transport', () => {
         },
         {
           id: 4,
-          name: 'Voiture (Moteur thermique)',
+          name: 'Voiture thermique',
           value: 19.2,
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 1.9800000000000002,
         },
         {
@@ -60,7 +60,7 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion (court courrier)',
+          name: 'Avion court courrier',
           value: 25.82,
         },
         {
@@ -75,12 +75,12 @@ describe('transport', () => {
         },
         {
           id: 4,
-          name: 'Voiture (Moteur thermique)',
+          name: 'Voiture thermique',
           value: 19.2,
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 1.9800000000000002,
         },
         {
@@ -100,7 +100,7 @@ describe('transport', () => {
         },
         {
           id: 9,
-          name: 'Bus (Moteur thermique)',
+          name: 'Bus thermique',
           value: 10.43,
         },
         {
@@ -135,7 +135,7 @@ describe('transport', () => {
         },
         {
           id: 16,
-          name: 'Bus (Moteur électrique)',
+          name: 'Bus électrique',
           value: 0.95,
         },
         {
@@ -158,7 +158,7 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion (court courrier)',
+          name: 'Avion court courrier',
           value: 25.82,
         },
         {
@@ -168,7 +168,7 @@ describe('transport', () => {
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 1.9800000000000002,
         },
       ],
@@ -186,7 +186,7 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion (court courrier)',
+          name: 'Avion court courrier',
           value: 14.12,
         },
       ],
@@ -209,12 +209,12 @@ describe('transport', () => {
         },
         {
           id: 4,
-          name: 'Voiture (Moteur thermique)',
+          name: 'Voiture thermique',
           value: 4.8,
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 0.49500000000000005,
         },
         {
@@ -257,12 +257,12 @@ describe('transport', () => {
         },
         {
           id: 4,
-          name: 'Voiture (Moteur thermique)',
+          name: 'Voiture thermique',
           value: 21.76,
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 10.34,
         },
         {

@@ -15,7 +15,7 @@ export const deplacements = [
           max: 1000,
         },
         empreinteId: 28130,
-        subtitle: 'Court courrier',
+        subtitle: 'courtcourrier',
         ecv: [
           {
             id: 5,
@@ -37,7 +37,7 @@ export const deplacements = [
           max: 3500,
         },
         empreinteId: 28132,
-        subtitle: 'Moyen courrier',
+        subtitle: 'moyencourrier',
         ecv: [
           {
             id: 5,
@@ -55,7 +55,7 @@ export const deplacements = [
       },
       {
         empreinteId: 28134,
-        subtitle: 'Long courrier',
+        subtitle: 'longcourrier',
         display: {
           min: 3501,
         },

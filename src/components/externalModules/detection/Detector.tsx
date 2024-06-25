@@ -202,7 +202,7 @@ const Detector = ({ impact }: { impact: string }) => {
         ref={etiquetteRef}>
         <Logo value={value} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
         <div className={styles.simpleValue}>
-          <SimpleValue value={value} comparison={equivalents[reload] || 'random'} id='etiquette-value' />
+          <SimpleValue language='fr' value={value} comparison={equivalents[reload] || 'random'} id='etiquette-value' />
         </div>
         <button
           className={styles.random}

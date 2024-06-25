@@ -193,6 +193,19 @@
     "fixe FR": "Wifi",
     "mobile FR": "4G"
   },
+  "osez-changer": {
+    "title": "Comptez vos chaussures !",
+    "description": "En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on désencombrait les placards ?",
+    "paire": "paire[s]",
+    "new-paire": "paire[s] de chaussures neuves",
+    "avis": "🧠 À votre avis...",
+    "avis-description": "De combien de paires de chaussures pensez-vous avoir besoin ?",
+    "penderie": "👉 Dans vos placards",
+    "penderie-description": "Combien de paires de chaussures possédez-vous réellement ?",
+    "neuf": "✨ Vos achats récents",
+    "neuf-description": "Combien de paires de chaussures neuves avez-vous acheté cette année ?",
+    "total": "SOIT AUTANT D’ÉMISSIONS QUE..."
+  },
   "category": {
     "name-caspratiques": "Cas pratiques",
     "name-usagenumerique": "Usage numérique",
@@ -205,5 +218,20 @@
     "name-mobilier": "Mobilier",
     "name-electromenager": "Électroménager",
     "name-boisson": "Boisson"
+  },
+  "unit": {
+    "unité": "unité",
+    "m²": "m²",
+    "km": "km",
+    "kg": "kg",
+    "repas": "repas",
+    "litre": "litre",
+    "A/R": "A/R",
+    "épisode": "épisode",
+    "intégrale": "intégrale",
+    "param": "avec les paramètres renseignés ci-dessous",
+    "email": "email",
+    "année": "année",
+    "recherche": "recherche"
   }
 }

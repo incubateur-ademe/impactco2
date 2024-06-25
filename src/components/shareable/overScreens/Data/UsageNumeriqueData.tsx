@@ -1,9 +1,10 @@
 import React from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
 
-const UsageNumeriqueData = () => {
+const FRUsageNumeriqueData = () => {
   return (
     <>
       <div className={styles.content}>
@@ -44,6 +45,58 @@ const UsageNumeriqueData = () => {
       </div>
     </>
   )
+}
+
+const ENUsageNumeriqueData = () => {
+  return (
+    <>
+      <div className={styles.content}>
+        <div>
+          All calculations come from a{' '}
+          <Link href='https://base-empreinte.ademe.fr/documentation/base-impact'>study carried out by NégaOctet</Link>
+        </div>
+      </div>
+      <div className={styles.title}>Assumptions for email</div>
+      <div className={styles.content}>
+        We consider a writing time of 3 minutes, and a single recipient per email who would read the message in 10
+        seconds on a device and a network equivalent to that of the sender. The email is considered stored for 10 years
+        on the sender and recipient sides. A weight of 75 kb was retained for an email without attachment. The entire
+        impact (sender and recipient) is attributed to the sender.
+      </div>
+      <div className={styles.title}>Assumptions for streaming</div>
+      <div className={styles.content}>
+        We consider that the “low definition”, “high definition” and “4K” qualities correspond respectively to video
+        sizes of 700 MB, 3 GB and 7 GB per hour. The emission factors corresponding to data transmission within the
+        network were provided by NégaOctet. The calculations relating to data centers were carried out using data
+        relating to the Netflix platform.
+      </div>
+      <div className={styles.title}>Assumptions for videoconferencing</div>
+      <div className={styles.content}>
+        We consider 2 people by default in the videoconference and that its impact is only that associated with their
+        location in the videoconference. The “audio”, “low definition”, “high definition” qualities correspond
+        respectively to video sizes of 164 MB, 700 MB and 3 GB per hour. Concerning data transmission and data centers,
+        the assumptions used for streaming were applied to videoconferencing.
+      </div>
+      <div className={styles.content}>
+        <div>
+          For more details, see{' '}
+          <Link href='/doc/usage-numerique/acv' title='Lien externe : documentation détaillée' target='_blank'>
+            the detailed documentation
+            <NewTabIcon />
+          </Link>
+        </div>
+      </div>
+    </>
+  )
+}
+
+const UsageNumeriqueData = () => {
+  const { language } = useParamContext()
+  if (language === 'en') {
+    return <ENUsageNumeriqueData />
+  }
+
+  return <FRUsageNumeriqueData />
 }
 
 export default UsageNumeriqueData

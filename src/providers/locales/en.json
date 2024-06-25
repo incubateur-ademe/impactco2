@@ -193,6 +193,19 @@
     "fixe FR": "Wifi",
     "mobile FR": "4G"
   },
+  "osez-changer": {
+    "title": "Count your shoes!",
+    "description": "On average, the French use only a third of the shoes they own. What if we decluttered the closets?",
+    "paire": "pair[s]",
+    "new-paire": "pair[s] of new shoes",
+    "avis": "🧠 In your opinion...",
+    "avis-description": "How many pairs of shoes do you think you need?",
+    "penderie": "👉 In your closets",
+    "penderie-description": "How many pairs of shoes do you actually own?",
+    "neuf": "✨ Your recent purchases",
+    "neuf-description": "How many pairs of new shoes have you bought this year?",
+    "total": "THIS EQUALS.."
+  },
   "category": {
     "name-caspratiques": "Use cases",
     "name-usagenumerique": "Digital usages",
@@ -205,5 +218,20 @@
     "name-mobilier": "Furniture",
     "name-electromenager": "Home applicance",
     "name-boisson": "Drink"
+  },
+  "unit": {
+    "unité": "unit",
+    "m²": "m²",
+    "km": "km",
+    "kg": "kg",
+    "repas": "meal",
+    "litre": "liter",
+    "A/R": "round trip",
+    "épisode": "episode",
+    "intégrale": "complete show",
+    "param": "with the parameters given below",
+    "email": "email",
+    "année": "year",
+    "recherche": "search"
   }
 }

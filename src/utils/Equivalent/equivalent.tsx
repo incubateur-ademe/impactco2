@@ -14,7 +14,6 @@ const getValues = (
   equivalent: Pick<Equivalent, 'category' | 'slug'>
 ): { prefix: string; name: string } => {
   const value = (values as Record<string, { fr: string; en: string; de: string; es: string }>)[equivalent.slug]
-
   if (!value) {
     return { prefix: '', name: '' }
   }

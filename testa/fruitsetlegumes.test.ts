@@ -61,7 +61,7 @@ describe('fruitsetlegumes', () => {
         {
           ecv: 10.641545366999999,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-          name: 'Mangue',
+          name: 'Mangue (importée par avion)',
           slug: 'mangue',
         },
         {
@@ -73,7 +73,7 @@ describe('fruitsetlegumes', () => {
         {
           ecv: 0.41306197199999994,
           months: [6, 7, 8, 9, 10],
-          name: 'Haricot vert',
+          name: 'Haricot vert (cru)',
           slug: 'haricotvert',
         },
         {
@@ -314,7 +314,7 @@ describe('fruitsetlegumes', () => {
         {
           ecv: 10.641545366999999,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-          name: 'Mangue',
+          name: 'Mangue (importée par avion)',
           slug: 'mangue',
         },
         {
@@ -326,7 +326,7 @@ describe('fruitsetlegumes', () => {
         {
           ecv: 0.41306197199999994,
           months: [6, 7, 8, 9, 10],
-          name: 'Haricot vert',
+          name: 'Haricot vert (cru)',
           slug: 'haricotvert',
         },
         {

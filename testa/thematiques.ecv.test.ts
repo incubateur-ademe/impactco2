@@ -12,22 +12,22 @@ describe('ecv', () => {
       data: [
         {
           ecv: 197.5,
-          name: 'Canapé[s]',
+          name: 'Canapé convertible',
           slug: 'canapeconvertible',
         },
         {
           ecv: 18.63,
-          name: 'Chaise[s]',
+          name: 'Chaise en bois',
           slug: 'chaiseenbois',
         },
         {
           ecv: 80.22,
-          name: 'Table[s]',
+          name: 'Table en bois',
           slug: 'tableenbois',
         },
         {
           ecv: 179.1,
-          name: 'Canapé[s]',
+          name: 'Canapé en textile',
           slug: 'canapetextile',
         },
         {
@@ -73,7 +73,7 @@ describe('ecv', () => {
               value: 51,
             },
           ],
-          name: 'Canapé[s]',
+          name: 'Canapé convertible',
           slug: 'canapeconvertible',
         },
         {
@@ -97,7 +97,7 @@ describe('ecv', () => {
               value: 11.879999999999999,
             },
           ],
-          name: 'Chaise[s]',
+          name: 'Chaise en bois',
           slug: 'chaiseenbois',
         },
         {
@@ -121,7 +121,7 @@ describe('ecv', () => {
               value: 47.1,
             },
           ],
-          name: 'Table[s]',
+          name: 'Table en bois',
           slug: 'tableenbois',
         },
         {
@@ -145,7 +145,7 @@ describe('ecv', () => {
               value: 49.4,
             },
           ],
-          name: 'Canapé[s]',
+          name: 'Canapé en textile',
           slug: 'canapetextile',
         },
         {

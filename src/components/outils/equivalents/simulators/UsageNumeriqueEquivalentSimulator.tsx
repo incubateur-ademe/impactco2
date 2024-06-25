@@ -1,6 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 import React, { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
@@ -34,6 +35,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
   const {
     [slug]: { situation, setSituation, withConstruction, setWithConstruction },
   } = useParamContext()
+  const t = useTranslations('usage-numerique')
 
   const computedEquivalent = useMemo(() => {
     engine.setSituation(situation)
@@ -107,8 +109,8 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                   setSituation({ ...situation, [values.type]: event.target.value })
                 }}>
                 {values.types.map((option) => (
-                  <option key={option.value} value={`'${option.value}'`}>
-                    {option.label}
+                  <option key={option} value={`'${option}'`}>
+                    {t(option)}
                   </option>
                 ))}
               </Select>
@@ -121,8 +123,8 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                   setSituation({ ...situation, [values.network]: event.target.value })
                 }}>
                 {values.networks.map((option) => (
-                  <option key={option.value} value={`'${option.value}'`}>
-                    {option.label}
+                  <option key={option} value={`'${option}'`}>
+                    {t(option)}
                   </option>
                 ))}
               </Select>
@@ -142,8 +144,8 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 setSituation({ ...situation, [values.device]: event.target.value })
               }}>
               {values.appareils.map((option) => (
-                <option key={option.value} value={`'${option.value}'`}>
-                  {option.label}
+                <option key={option} value={`'${option}'`}>
+                  {t(option)}
                 </option>
               ))}
             </Select>

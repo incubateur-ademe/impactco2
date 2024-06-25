@@ -1,7 +1,7 @@
 export const usageNumeriques = [
   {
     slug: 'email',
-    unit: 'avec les paramètres renseignés ci-dessous.',
+    unit: 'param',
     category: 10,
     ecv: [
       {

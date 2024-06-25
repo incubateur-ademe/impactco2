@@ -6,7 +6,7 @@ import Meeting from './Meeting'
 const Email = () => {
   return (
     <Card colored className={styles.card}>
-      <label htmlFor='input-email-Accueil'>Votre adresse email</label>
+      <span>Votre adresse email</span>
       <div>Nous vous recontacterons très prochainement pour échanger.</div>
       <Meeting from='Accueil' />
     </Card>
