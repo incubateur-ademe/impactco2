@@ -1,4 +1,5 @@
 import React from 'react'
+import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
 
@@ -31,6 +32,15 @@ const UsageNumeriqueData = () => {
         emplacement dans la visioconférence. Les qualités "audio", "basse définition", "haute définition" correspondent
         respectivement à des tailles de vidéos de 164 Mo, 700 Mo et 3 Go par heure. Concernant la transmission des
         données et les data-centers, les hypothèses utilisées pour le streaming ont été appliquées à la visioconférence.
+      </div>
+      <div className={styles.content}>
+        <div>
+          Pour plus de détails, consultez{' '}
+          <Link href='/doc/usage-numerique/acv' title='Lien externe : documentation détaillée' target='_blank'>
+            la documentation détaillée
+            <NewTabIcon />
+          </Link>
+        </div>
       </div>
     </>
   )

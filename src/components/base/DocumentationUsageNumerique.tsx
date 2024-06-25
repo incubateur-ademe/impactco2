@@ -1,14 +1,14 @@
 import { RulePage } from '@publicodes/react-ui'
-import useLivraisonContext from 'src/providers/LivraisonProvider'
+import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
 import IframeableLink from './IframeableLink'
 import Markdown from './Markdown'
 
-export default function DocumentationLivraison({ slug }: { slug: string }) {
-  const { engine } = useLivraisonContext()
+export default function DocumentationUsageNumerique({ slug }: { slug: string }) {
+  const { engine } = useUsageNumeriqueContext()
 
   return (
     <RulePage
-      documentationPath='/doc/livraison'
+      documentationPath='/doc/usage-numerique'
       rulePath={decodeURI(slug)}
       engine={engine}
       language='fr'
