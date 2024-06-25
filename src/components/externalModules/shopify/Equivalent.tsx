@@ -24,7 +24,7 @@ const Equivalent = ({
   title?: (unit: string, roundedValue: number, intValue: number) => ReactNode
   animated?: boolean
   url?: string
-  language?: Language
+  language: Language
   randomize?: () => void
 }) => {
   const isAnimated = useMemo(() => animated && comparisons.length > 1, [animated, comparisons])

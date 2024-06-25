@@ -2,6 +2,7 @@
 
 import classNames from 'classnames'
 import React, { useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
@@ -16,6 +17,7 @@ import Question from './Question'
 const shoesImpact = 17.9
 
 const OsezChangerSimulator = () => {
+  const { language } = useParamContext()
   const ref = useRef<HTMLDivElement>(null)
 
   const [equivalents, setEquivalents] = useState(['voiturethermique', 'tshirtencoton', 'repasavecduboeuf'])
@@ -85,6 +87,7 @@ const OsezChangerSimulator = () => {
                 track('OsezChanger', 'Randomize', 'randomize')
                 setEquivalents(getRandomEquivalents(undefined, 3))
               }}
+              language={language}
             />
           </div>
         </div>

@@ -2,9 +2,10 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
-import formatName from 'utils/formatName'
+import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -31,8 +32,8 @@ const CategorySimulator = ({
   withSimulator?: boolean
   type?: TransportSimulateur
 }) => {
+  const { language } = useParamContext()
   const t = useTranslations('category-simulator')
-  const tEquivalent = useTranslations('equivalent')
   const ref = useRef<HTMLDivElement>(null)
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
@@ -67,13 +68,7 @@ const CategorySimulator = ({
                 <IframeableLink data-testid='category-link' href={equivalent.link} className={styles.link}>
                   <EquivalentIcon equivalent={equivalent} height={3} />
                   <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
-                    <div className={styles.name}>
-                      {formatName(
-                        `${tEquivalent(`name-${equivalent.slug}`)}${equivalent.subtitle ? (equivalent.subtitle.startsWith(' -') ? equivalent.subtitle : equivalent.subtitle.startsWith('(') ? ` ${equivalent.subtitle}` : ` (${tEquivalent(`subtitle-${equivalent.subtitle}`)})`) : ''}`,
-                        1,
-                        true
-                      )}
-                    </div>
+                    <div className={styles.name}>{equivalent.name || getNameWithoutSuffix(language, equivalent)}</div>
                     <div className={styles.data}>
                       <div
                         className={styles.fullBar}

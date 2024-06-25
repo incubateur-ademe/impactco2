@@ -15,11 +15,13 @@ const Integrate = ({
   path,
   extraParams,
   tracking,
+  noLanguage,
 }: {
   path: string
   category?: Category
   extraParams?: string
   tracking: string
+  noLanguage?: boolean
 }) => {
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
@@ -28,7 +30,7 @@ const Integrate = ({
     () =>
       category
         ? getCustomParams(category.slug, allParams)
-        : path?.startsWith('outils/comparateur')
+        : path?.startsWith('comparateur')
           ? getComparateurParams(allParams, path?.includes('etiquette'))
           : {},
     [allParams, category, path]
@@ -64,12 +66,14 @@ const Integrate = ({
         param={{ value: allParams.theme, setter: allParams.setTheme } as CustomParamValue}
         visible
       />
-      <CustomParam
-        tracking={tracking}
-        slug='language'
-        param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
-        visible
-      />
+      {!noLanguage && (
+        <CustomParam
+          tracking={tracking}
+          slug='language'
+          param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
+          visible
+        />
+      )}
       <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
     </>
   ) : null

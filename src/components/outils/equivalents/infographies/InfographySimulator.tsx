@@ -1,14 +1,12 @@
 import React, { Fragment } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
-import { getName, getPrefix } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import EqualIcon from 'components/base/icons/equal'
 import styles from './InfographySimulator.module.css'
+import Name from './Name'
 
 const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
-  const { language } = useParamContext()
   const values = equivalents
     .map((slug) =>
       categories
@@ -32,13 +30,7 @@ const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
                   <EquivalentIcon key={`${value.slug}-${number}`} equivalent={value} height={height} />
                 ))}
               </div>
-              <div>
-                <span className={styles.equivalentValue}>
-                  {number}
-                  {getPrefix(language, value, number)}
-                </span>
-                {getName(language, value, false, number)}
-              </div>
+              <Name equivalent={value} value={number} />
             </div>
             <div className={styles.equal}>
               <EqualIcon />

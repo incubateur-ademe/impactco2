@@ -28,6 +28,7 @@ const transports = (categories.find((category) => category.slug === 'transport')
 const TeletravailSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
   const {
+    language,
     teletravail: {
       start,
       setStart,
@@ -184,6 +185,7 @@ const TeletravailSimulator = () => {
                 track('Télétravail', 'Randomize', 'randomize')
                 setEquivalents(getRandomEquivalents(undefined, 3))
               }}
+              language={language}
             />
           </div>{' '}
         </>

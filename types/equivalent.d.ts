@@ -100,7 +100,7 @@ export type Equivalent =
   | UsageNumeriqueEquivalent
   | FruitsEtLegumesEquivalent
 
-export type ComputedEquivalent = Equivalent & { value: number; link: string }
+export type ComputedEquivalent = Equivalent & { value: number; link: string; name?: string }
 
 export type Language = 'en' | 'fr' | 'de' | 'es'
 export type SimpleEquivalent = {

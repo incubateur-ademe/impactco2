@@ -23,10 +23,12 @@ const Share = ({
   category,
   path,
   tracking,
+  noLanguage,
 }: {
   category?: Pick<Category, 'slug' | 'name' | 'meta'>
   path?: string
   tracking?: string
+  noLanguage?: boolean
 }) => {
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
@@ -69,12 +71,14 @@ const Share = ({
         />
       )}
       {Object.entries(params).length > 0 && <div className={styles.separator} />}
-      <CustomParam
-        tracking={trackingValue}
-        slug='language'
-        param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
-        visible
-      />
+      {!noLanguage && (
+        <CustomParam
+          tracking={trackingValue}
+          slug='language'
+          param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
+          visible
+        />
+      )}
       <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
       <div className={styles.buttons}>
         <FacebookShareButton

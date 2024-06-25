@@ -59,6 +59,7 @@ const streaming = usagenumerique.equivalents?.find(
 const UsageNumeriqueSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
   const {
+    language,
     usageNumerique: { numberEmails, setNumberEmails, situation, equivalents, setEquivalents },
   } = useParamContext()
 
@@ -82,7 +83,7 @@ const UsageNumeriqueSimulator = () => {
     () => [
       {
         ...email,
-        name: `1 an d'email - ${numberEmails * 52} emails`,
+        name: `${t('email-year')} - ${numberEmails * 52} emails`,
         value:
           (52 *
             ((evaluateNumber(engine, 'email') - evaluateNumber(engine, 'email . terminaux . construction')) *
@@ -91,15 +92,13 @@ const UsageNumeriqueSimulator = () => {
       },
       {
         ...visio,
-        name: '1 an de visioconférences',
-        subtitle: `(${(evaluateNumber(engine, 'visio . durée') * 52) / 60} ${t('heure')}s)`,
+        name: `${t('visio-year')} - ${(evaluateNumber(engine, 'visio . durée') * 52) / 60} ${t('heure')}s`,
         value:
           (52 * (evaluateNumber(engine, 'visio') - evaluateNumber(engine, 'visio . terminaux . construction'))) / 1000,
       },
       {
         ...streaming,
-        name: '1 an de streaming',
-        subtitle: `(${(evaluateNumber(engine, 'streaming . durée') * 52) / 60} ${t('heure')}s)`,
+        name: `${t('streaming-year')} - ${(evaluateNumber(engine, 'streaming . durée') * 52) / 60} ${t('heure')}s`,
         value:
           (52 *
             (evaluateNumber(engine, 'streaming') - evaluateNumber(engine, 'streaming . terminaux . construction'))) /
@@ -148,6 +147,7 @@ const UsageNumeriqueSimulator = () => {
             track('Usage numérique', 'Randomize', 'randomize')
             setEquivalents(getRandomEquivalents(undefined, 3))
           }}
+          language={language}
         />
       </div>
       <div className={shareableStyles.separatorBothBorders} />

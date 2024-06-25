@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import { Language, SimpleEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import values from 'utils/Equivalent/values.json'
-import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import LocalNumber from 'components/base/LocalNumber'
@@ -34,7 +33,7 @@ const SimpleValue = ({
 }: {
   value: number
   comparison: string
-  language?: Language
+  language: Language
   id?: string
 }) => {
   const [values, setValues] = useState<{ equivalent: SimpleEquivalent; slug: string } | undefined>(
@@ -71,7 +70,7 @@ const SimpleValue = ({
         <div
           className={classNames(styles.label, 'impactCO2-etiquette-text')}
           data-testid={`etiquette-${comparison}-name`}>
-          {getName(language || 'fr', equivalent, true, comparisonValue)}
+          {getName(language, equivalent, true, comparisonValue).toLowerCase()}
         </div>
       </div>
     </div>

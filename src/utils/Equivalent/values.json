@@ -1044,7 +1044,7 @@
     "category": 2,
     "value": 7260,
     "fr": "repas avec du boeuf",
-    "en": "meal with beef",
+    "en": "meal[s] with beef",
     "de": "Mahlzeit mit Rindfleisch",
     "es": "Comida con carne de vacuno"
   },
@@ -1068,7 +1068,7 @@
     "category": 2,
     "value": 1980,
     "fr": "repas avec du poisson blanc",
-    "en": "meal with white fish",
+    "en": "meal[s] with white fish",
     "de": "Mahlzeit mit weißem Fisch",
     "es": "Comida con pescado blanco"
   },
@@ -1076,7 +1076,7 @@
     "category": 2,
     "value": 1110,
     "fr": "repas avec du poisson gras",
-    "en": "meal with fatty fish",
+    "en": "meal[s] with fatty fish",
     "de": "Mahlzeit mit fettem Fisch",
     "es": "Comida con pescado graso"
   },
@@ -1084,7 +1084,7 @@
     "category": 2,
     "value": 1580,
     "fr": "repas avec du poulet",
-    "en": "meal with chicken",
+    "en": "meal[s] with chicken",
     "de": "Mahlzeit mit Hähnchen",
     "es": "Comida con pollo"
   },

@@ -65,6 +65,7 @@
     "close": "Fermer"
   },
   "transport": {
+    "carpool": "Covoiturage",
     "itineraire": {
       "header": "Découvrez la quantité de CO₂e que vous émettez pour ce trajet",
       "start": "Départ",
@@ -128,6 +129,39 @@
       "max": "équivalents déjà sélectionnés"
     }
   },
+  "livraison": {
+    "produit": "Vous commandez...",
+    "grande consommation": "Produits de grande consommation (aliments, épicerie, boissons…)",
+    "habillement": "Habillement (vêtements, chaussures, accessoires…)",
+    "culturel": "Produits culturels (CD, livres, DVD…)",
+    "équipements volumineux": "Mobilier et gros électroménager",
+    "retrait": "Que vous faites livrer en...",
+    "domicile": "Livraison à domicile",
+    "point de retrait": "Point relais",
+    "click and collect": "Click & collect",
+    "point-de-retrait": "Le point relais",
+    "click-and-collect": "Le click & collect",
+    "trajet": "est t'il sur votre trajet habituel ?",
+    "yes": "Oui",
+    "yes-plane": "Oui (transport par avion)",
+    "no": "Non",
+    "km": "Pour aller au point relais, vous parcourez...",
+    "voiture thermique": "En voiture",
+    "voiture électrique": "En voiture électrique",
+    "marche": "Marche",
+    "vélo": "à vélo",
+    "petit véhicule électrique": "à vélo électrique",
+    "commun": "En transport en commun",
+    "generate": "LA LIVRAISON DE VOTRE COLIS GÉNÈRE",
+    "total": "CE QUI CORRESPOND À..",
+    "mean": "En moyenne, vous passez ce type de commande...",
+    "mean-unit": "fois",
+    "1": "Par an",
+    "12": "Par mois",
+    "52": "Par semaine",
+    "habits": "VOS HABITUDES DE LIVRAISON GÉNÈRENT",
+    "year": "Par année"
+  },
   "usage-numerique": {
     "title": "Comparer l’impact des usages avec l’impact de la construction",
     "description": "En général, la majorité de votre empreinte numérique provient de la construction de vos appareils et pas de l’usage de ces derniers.",
@@ -139,6 +173,9 @@
     "streaming-title": "Heures de streaming",
     "by-week": "par semaine",
     "by-year": "par an",
+    "email-year": "1 an d'email",
+    "streaming-year": "1 an de streaming",
+    "visio-year": "1 an de visioconférences",
     "heure": "heure",
     "email": "email",
     "smartphone": "Smartphone",

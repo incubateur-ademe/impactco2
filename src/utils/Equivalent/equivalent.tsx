@@ -45,7 +45,17 @@ const getValues = (
 
 export const getPrefix = (language: string, equivalent: Pick<Equivalent, 'category' | 'slug'>, value?: number) => {
   const { prefix } = getValues(language, equivalent)
-  return formatName(prefix, value || 1, true)
+  return prefix ? formatName(prefix, value || 1, true) : ''
+}
+
+export const getNameWithoutSuffix = (
+  language: string,
+  equivalent: Pick<Equivalent, 'category' | 'slug'>,
+  withPrefix?: boolean,
+  value?: number
+) => {
+  const { prefix, name } = getValues(language, equivalent)
+  return `${withPrefix ? formatName(prefix, value || 1) : ''}${formatName(name, value || 1, true)}`
 }
 
 export const getName = (
@@ -54,6 +64,6 @@ export const getName = (
   withPrefix?: boolean,
   value?: number
 ) => {
-  const { prefix, name } = getValues(language, equivalent)
-  return `${withPrefix ? formatName(prefix, value || 1) : ''}${formatName(name, value || 1, true)}${equivalent.category === 8 ? ` ${m2[language]}` : ''}`
+  const name = getNameWithoutSuffix(language, equivalent, withPrefix, value)
+  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}`
 }
