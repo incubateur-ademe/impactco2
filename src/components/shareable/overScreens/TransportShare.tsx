@@ -3,14 +3,18 @@
 import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
+import { categories } from 'data/categories'
 import { buildCurrentUrlFor } from 'utils/urls'
-import ClipboardBox from 'components/base/ClipboardBox'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
-import CustomParam, { CustomParamValue } from './CustomParam'
+import { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import styles from './Share.module.css'
+import ShareUrl from './ShareUrl'
+
+const category = categories.find((category) => category.slug === 'transport') as Category
 
 export const getTracking = (selected: TransportSimulateur) =>
   selected === 'distance' ? 'Transport distance' : 'Transport itinéraire'
@@ -23,7 +27,6 @@ const TransportShare = () => {
     itineraire,
     transport: { selected, setSelected },
     language,
-    setLanguage,
   } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
@@ -106,25 +109,7 @@ const TransportShare = () => {
         />
       )}
       <div className={styles.separator} />
-      <CustomParam
-        tracking={tracking}
-        slug='language'
-        param={{ value: language, setter: setLanguage } as CustomParamValue}
-        visible
-      />
-      <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
-      <div className={styles.meta}>
-        <img src='/meta/transport.png' width={728} height={382.2} alt='' />
-        <div>
-          <p>
-            <b>Transport</b>
-          </p>
-          <p className='text-sm'>
-            Quelle est l'empreinte carbone de vos déplacements ? Avec Impact CO₂ vous connaitrez votre impact sur le
-            climat
-          </p>
-        </div>
-      </div>
+      <ShareUrl url={url} tracking={tracking} category={category} />
     </>
   ) : null
 }

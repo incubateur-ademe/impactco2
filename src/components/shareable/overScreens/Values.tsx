@@ -255,6 +255,13 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               tracking='Télétravail'
               imgSize='4.5rem'
             />
+            <Resource
+              image='/images/agir.png'
+              text='Le télétravail, ça change quoi pour la planète ?'
+              href='https://agirpourlatransition.ademe.fr/particuliers/maison/teletravail-ca-change-quoi-planete'
+              withLink='ADEME'
+              tracking='Télétravail'
+            />
           </div>
         ),
       },

@@ -149,7 +149,7 @@ const TeletravailSimulator = () => {
                 kg co₂e
               </div>
               <div>par an</div>
-              <div>en vous déplacant {presentiel} jours / semaine</div>
+              <div>en vous déplaçant {presentiel} jours / semaine</div>
             </div>
             <div className={styles.values}>
               <div className={styles.header}>VOUS ÉCONOMISEZ</div>

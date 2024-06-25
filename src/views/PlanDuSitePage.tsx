@@ -40,6 +40,7 @@ const PlanDuSitePage = () => {
             <Link href='/doc/livraison/livraison-colis-par-avion'>De colis par avion</Link>
           </div>
           <Link href='/doc/questions-frequentes'>Questions fréquentes</Link>
+          <Link href='/doc/usage-numerique/acv'>Usage numérique</Link>
         </div>
         <Link href='/mentions-legales'>Mentions légales</Link>
         <Link href='/outils'>Les outils</Link>

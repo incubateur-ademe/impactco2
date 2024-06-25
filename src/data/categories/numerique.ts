@@ -49,12 +49,12 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 0.2,
+      peryear: 0.22,
       defaultyears: 2.5,
     },
     end: 0.2,
     include: {
-      pre: 'Écran  moyen de 6,63 pouces, mix des technologies LCD et OLED, 8 Go de RAM, 210 Go de mémoire (mix pondéré entre 3 configurations, 24%, 24%, 52%).',
+      pre: "Écran  moyen de 6,63 pouces, mix des technologies LCD et OLED, 8 Go de RAM, 210 Go de mémoire (mix pondéré entre 3 configurations, 24%, 24%, 52%). Moyenne des usages d'un smartphone personnel et professionnel",
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
@@ -74,7 +74,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 5.7,
+      peryear: 5.2,
       defaultyears: 6,
     },
     end: 6.6,
@@ -99,7 +99,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 8.6,
+      peryear: 7.85,
       defaultyears: 6,
     },
     end: 6.6,
@@ -114,7 +114,7 @@ export const numeriques = [
     slug: 'ecran',
     category: 1,
     usage: {
-      peryear: 4,
+      peryear: 3.6,
       defaultyears: 6,
     },
     end: 3.9,
@@ -138,12 +138,12 @@ export const numeriques = [
     slug: 'tabletteclassique',
     category: 1,
     usage: {
-      peryear: 1.1,
+      peryear: 0.6,
       defaultyears: 3,
     },
     end: 0.4,
     include: {
-      pre: "Écran de 10,53 pouces, mix de technologies d'écran LCD, 4,7 Go de RAM, 144 Go de mémoire (mix pondéré entre 3 configurations de tablettes.).",
+      pre: "Écran de 10,53 pouces, mix de technologies d'écran LCD, 4,7 Go de RAM, 144 Go de mémoire (mix pondéré entre 3 configurations de tablettes.). Moyenne des usages d'une tablette personnelle et professionnelle",
     },
     source:
       'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
@@ -173,7 +173,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 11.6,
+      peryear: 10.6,
       defaultyears: 8,
     },
     end: 11.8,
@@ -198,7 +198,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 1.7,
+      peryear: 1.52,
       defaultyears: 5,
     },
     end: 2.8,
@@ -223,7 +223,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 1.3,
+      peryear: 1.2,
       defaultyears: 5,
     },
     end: 0.7,
@@ -357,7 +357,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 4.2,
+      peryear: 3.8,
       defaultyears: 5,
     },
     end: 1.6,

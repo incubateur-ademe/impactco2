@@ -40,20 +40,21 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
 
     const total = engine.evaluate(slug)
     const construction = evaluateNumber(engine, `${slug} . terminaux . construction`) / 1000
+
     return {
       ...equivalents[slug],
       unit: 'pour les paramètres renseignés ci-dessous.',
-      ecv: (total.traversedVariables || [])
-        .filter((variable) => withConstruction || !variable.endsWith(' . terminaux . construction'))
-        .map((variable) => ({ variable, ecv: ecv.find((value) => `${slug}${value.publicode}` === variable) }))
-        .filter((value) => value.ecv)
+      ecv: ecv
+        .filter((variable) => variable.publicode)
+        .filter((variable) => withConstruction || variable.publicode !== ' . terminaux . construction')
         .map(
-          (value) =>
+          (variable) =>
             ({
-              id: value.ecv?.id || 0,
-              value: (engine.evaluate(value.variable).nodeValue as number) / 1000,
+              id: variable.id,
+              value: (engine.evaluate(`${slug}${variable.publicode}`).nodeValue as number) / 1000,
             }) as EquivalentValue
-        ),
+        )
+        .filter((value) => value.value),
       value: (total.nodeValue as number) / 1000 - (withConstruction ? 0 : construction),
     }
   }, [situation, slug, engine, withConstruction])
