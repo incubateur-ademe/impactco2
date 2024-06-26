@@ -86,6 +86,7 @@ export const smallTools = [
     slug: 'etiquettes',
     title: 'Étiquettes',
     description: 'Le petit format pour communiquer les bons ordres de grandeur.',
+    meta: "Découvrir l'étiquette CO2, le petit format pour communiquer les bons ordres de grandeur",
     linkLabel: 'Découvrir',
     content: (
       <>
@@ -115,6 +116,7 @@ export const smallTools = [
     slug: 'detecteur',
     title: 'Détecteur CO₂',
     description: 'L’outil pratique pour mettre en lumière vos données carbone.',
+    meta: 'Valoriser et mieux faire comprendre les données carbones grâce au détecteur CO2 qui communique les bons ordres de grandeur',
     linkLabel: 'Découvrir',
     content: (
       <>
@@ -174,6 +176,7 @@ export const devTools = [
     slug: 'npm',
     title: 'Package NPM',
     description: "Pour faciliter l'intégration de l’étiquette carbone.",
+    meta: 'Intégrer facilement l’étiquette carbone d’Impact CO2 dans son contenu grâce au package npm, un format destiné aux développeurs',
     linkLabel: 'Découvrir',
     content: (
       <>

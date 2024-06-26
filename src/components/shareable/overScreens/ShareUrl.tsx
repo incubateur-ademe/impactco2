@@ -1,9 +1,11 @@
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { track } from 'utils/matomo'
+import { metaDescriptions, metaTitles } from 'utils/meta'
 import ClipboardBox from 'components/base/ClipboardBox'
 import buttonStyles from 'components/base/buttons/Button.module.css'
 import FacebookIcon from 'components/base/icons/facebook'
@@ -21,13 +23,14 @@ const ShareUrl = ({
   customImage,
   noLanguage,
 }: {
-  category?: Pick<Category, 'slug' | 'name' | 'meta'>
+  category?: Pick<Category, 'slug' | 'name'>
   tracking?: string
   path?: string
   customImage?: string
   url: string
   noLanguage?: boolean
 }) => {
+  const t = useTranslations('overscreen')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
   const { language, setLanguage } = useParamContext()
@@ -80,19 +83,17 @@ const ShareUrl = ({
       {(category || path?.startsWith('outils/comparateur')) && (
         <div className={styles.meta}>
           {category ? (
-            <Image src={`/meta/${category.slug}.png`} width={728} height={382.2} alt='' />
+            <Image src={`/meta/${category.slug}-${language}.png`} width={728} height={382.2} alt='' />
           ) : (
             <img src={customImage} width={728} height={382.2} />
           )}
           <div className={styles.text}>
-            <div className={styles.metaHeader}>APERÇU DU PARTAGE</div>
+            <div className={styles.metaHeader}>{t('apercu')}</div>
             <p>
-              <b>{category ? category.meta.title : 'Comparateur'}</b>
+              <b> {category ? metaTitles[category.slug][language] : metaTitles.comparateur[language]}</b>
             </p>
             <p className='text-sm'>
-              {category
-                ? category.meta.description
-                : 'Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.'}
+              {category ? metaDescriptions[category.slug][language] : metaDescriptions.comparateur[language]}
             </p>
           </div>
         </div>

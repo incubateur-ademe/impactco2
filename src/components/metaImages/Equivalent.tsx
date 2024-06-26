@@ -1,11 +1,26 @@
 import React from 'react'
+import en from 'src/providers/locales/en.json'
+import fr from 'src/providers/locales/fr.json'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { buildCurrentUrlFor } from 'utils/urls'
 import { Logos } from './Logos'
 
-const Equivalent = ({ slug, name, quantity, unit }: { slug: string; name: string; quantity: number; unit: string }) => {
+const Equivalent = ({
+  language,
+  slug,
+  name,
+  quantity,
+  unit,
+}: {
+  language: string
+  slug: string
+  name: string
+  quantity: number
+  unit: string
+}) => {
   const { value, unit: quantityUnit } = getNumberPrecision(quantity)
 
+  const translatedUnit = ((language === 'en' ? en : fr).unit as Record<string, string>)[unit]
   return (
     <div
       style={{
@@ -61,7 +76,7 @@ const Equivalent = ({ slug, name, quantity, unit }: { slug: string; name: string
               fontSize: '2rem',
               lineHeight: '3rem',
             }}>
-            {unit.startsWith('avec') ? '' : 'Par '} {unit}
+            {unit.startsWith('avec') ? '' : language === 'en' ? 'Per ' : 'Par '} {translatedUnit}
           </span>
         </div>
         <Logos />

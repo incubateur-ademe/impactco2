@@ -1,19 +1,28 @@
 import React from 'react'
 import { SimpleEquivalent } from 'types/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import values from 'utils/Equivalent/values.json'
-import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { buildCurrentUrlFor } from 'utils/urls'
-import LocalNumber from 'components/base/LocalNumber'
 import InfinityIcon from 'components/base/icons/infinity'
 
 const equivalents = values as Record<string, SimpleEquivalent>
 
-const Round = ({ value, comparison, main }: { value?: number; comparison?: string; main?: boolean }) => {
+const Round = ({
+  value,
+  comparison,
+  main,
+  language,
+}: {
+  value?: number
+  comparison?: string
+  main?: boolean
+  language: string
+}) => {
   const equivalent = comparison ? equivalents[comparison] : undefined
   const comparisonValue = value ? value / (equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1000) : 0
   const equivalentValue = Number.isFinite(comparisonValue) ? (
-    <LocalNumber number={formatNumber(comparisonValue)} />
+    formatNumber(comparisonValue).toLocaleString(language === 'en' ? 'en-US' : 'fr-FR')
   ) : (
     <InfinityIcon />
   )
@@ -68,7 +77,9 @@ const Round = ({ value, comparison, main }: { value?: number; comparison?: strin
             marginTop: '0.25rem',
             textAlign: 'center',
           }}>
-          {equivalent ? formatName(equivalent.fr, comparisonValue, false) : 'kg CO₂e'}
+          {equivalent && comparison
+            ? getName(language, { ...equivalent, slug: comparison }, true, comparisonValue)
+            : 'kg CO₂e'}
         </div>
       )}
       {main && (

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_URL || ''),
   title: 'Impact CO₂',
   description:
-    "Sensibilisez votre communauté grâce aux ressources sur l’impact carbone des gestes et objets du quotidien, issue des données environnementales de l'ADEME.",
+    "Sensibiliser sa communauté grâce aux ressources ludiques et pédagogiques de l'ADEME sur l’impact carbone des gestes et objets du quotidien.",
   openGraph: {
     creators: 'ADEME',
     images: `${process.env.NEXT_PUBLIC_URL}/meta/main.png`,

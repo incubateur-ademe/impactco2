@@ -9,6 +9,8 @@ export const revalidate = getNotionRevalidate()
 
 export const metadata: Metadata = {
   title: "Exemples d'utilisation | Impact CO₂",
+  description:
+    "Retrouver tous les utilisateurs et des exemples d'intégration des outils Impact CO2 pour inspirer vos futurs contenus de sensibilisation.",
   openGraph: {
     creators: 'ADEME',
     images: `meta/exemples.png`,

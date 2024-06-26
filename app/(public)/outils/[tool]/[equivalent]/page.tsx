@@ -17,9 +17,12 @@ export async function generateStaticParams() {
   )
 }
 
-type Props = { params: { tool: string; equivalent: string } }
+type Props = {
+  params: { tool: string; equivalent: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
-export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const category = categories.find((category) => category.slug === params.tool)
 
   if (!category || !category.equivalents) {
@@ -30,12 +33,16 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     return parent as Metadata
   }
 
+  const language = (searchParams.language as string) || 'fr'
   return {
-    title: `${getName('fr', equivalent)} | Impact CO₂`,
-    description: category.description,
+    title: `${getName(language, equivalent)} | Impact CO₂`,
+    description:
+      language === 'en'
+        ? `Discover the carbon impact of a ${getName(language, equivalent, true).toLowerCase()} thanks to CO2 Impact and ADEME data`
+        : `Découvrir l'impact carbone d'un ${getName(language, equivalent, true).toLowerCase()} grâce à Impact CO2 et aux données de l'ADEME`,
     openGraph: {
       creators: 'ADEME',
-      images: `meta/${equivalent.slug}.png`,
+      images: `meta/${equivalent.slug}-${language}.png`,
     },
   }
 }

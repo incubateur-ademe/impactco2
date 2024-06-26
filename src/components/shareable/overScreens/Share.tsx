@@ -16,7 +16,7 @@ const Share = ({
   tracking,
   noLanguage,
 }: {
-  category?: Pick<Category, 'slug' | 'name' | 'meta'>
+  category?: Pick<Category, 'slug' | 'name'>
   path?: string
   tracking?: string
   noLanguage?: boolean
@@ -72,7 +72,7 @@ const Share = ({
         customImage={
           category
             ? undefined
-            : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}`
+            : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}`
         }
       />
     </>

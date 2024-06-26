@@ -122,11 +122,6 @@ export const overScreenExtraSimulatorValues: (slug: string) => Record<string, Ov
           category={{
             slug: 'osez-changer',
             name: 'Défi chaussures',
-            meta: {
-              title: 'Osez changer',
-              description:
-                'En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on les aidait à désencombrer les placards ? Découvrez le nouveau challenge d’Impact CO2 !',
-            },
           }}
           path='outils/habillement/osez-changer'
           tracking='OsezChanger'

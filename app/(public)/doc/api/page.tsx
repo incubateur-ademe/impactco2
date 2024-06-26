@@ -9,6 +9,8 @@ const pathPriority = ['/thematiques']
 
 export const metadata: Metadata = {
   title: 'API | Impact CO₂',
+  description:
+    "Grâce à l'API Impact CO2 récupérer toutes les données carbones, issues des bases de données de l'ADEME et utilisées par tous les outils Impact CO2.",
 }
 
 function ApiDoc() {
