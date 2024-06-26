@@ -174,7 +174,7 @@
     "generate": "THE DELIVERY OF YOUR PACKAGE GENERATES",
     "total": "THIS EQUALS..",
     "mean": "On average, you place this type of order...",
-    "mean-unit": "times",
+    "mean-unit": "time[s]",
     "1": "Per year",
     "12": "Per month",
     "52": "Per week",

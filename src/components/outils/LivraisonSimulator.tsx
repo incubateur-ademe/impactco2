@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import React, { useMemo, useRef } from 'react'
 import useLivraisonContext from 'src/providers/LivraisonProvider'
 import useParamContext from 'src/providers/ParamProvider'
+import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
@@ -217,7 +218,7 @@ const LivraisonSimulator = () => {
           <div className={styles.inputs}>
             <NumberInput
               id='number-value'
-              unit={t('mean-unit')}
+              unit={formatName(t('mean-unit'), number)}
               value={number}
               setValue={(value) => {
                 track('Livraison', 'Commande', value.toString())

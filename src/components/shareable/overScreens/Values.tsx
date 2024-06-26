@@ -1,20 +1,22 @@
+import dynamic from 'next/dynamic'
 import { ReactNode } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import Resource from 'components/base/Resource'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
-import ChauffageData from './Data/ChauffageData'
-import FruitsEtLegumesData from './Data/FruitsEtLegumesData'
-import LivraisonData from './Data/LivraisonData'
-import OsezChangerData from './Data/OsezChangerData'
-import TransportData from './Data/TransportData'
-import UsageNumeriqueData from './Data/UsageNumeriqueData'
 import Integrate from './Integrate'
 import Share from './Share'
 import TransportIntegrate from './TransportIntegrate'
 import TransportShare from './TransportShare'
 import styles from './Values.module.css'
+
+const ChauffageData = dynamic(() => import('./Data/ChauffageData'))
+const FruitsEtLegumesData = dynamic(() => import('./Data/FruitsEtLegumesData'))
+const LivraisonData = dynamic(() => import('./Data/LivraisonData'))
+const OsezChangerData = dynamic(() => import('./Data/OsezChangerData'))
+const TransportData = dynamic(() => import('./Data/TransportData'))
+const UsageNumeriqueData = dynamic(() => import('./Data/UsageNumeriqueData'))
 
 export type OverScreenInfo = {
   title?: string
