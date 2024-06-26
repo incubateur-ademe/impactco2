@@ -1,16 +1,18 @@
 'use client'
 
 import classNames from 'classnames'
+import dynamic from 'next/dynamic'
 import { LinkProps } from 'next/link'
 import React, { ReactNode, useState } from 'react'
-import { NotionRenderer } from 'react-notion-x'
-import { Collection } from 'react-notion-x/build/third-party/collection'
 import 'react-notion-x/src/styles.css'
 import { FAQ as FAQType } from 'types/faq'
 import { track } from 'utils/matomo'
 import Link from 'components/base/buttons/Link'
 import PlusIcon from 'components/base/icons/plus'
 import styles from './FAQ.module.css'
+
+const NotionRenderer = dynamic(() => import('react-notion-x').then((mod) => mod.NotionRenderer))
+const Collection = dynamic(() => import('react-notion-x/build/third-party/collection').then((mod) => mod.Collection))
 
 const FAQ = ({ faq, page }: { faq: Pick<FAQType, 'title' | 'content'>; page?: string }) => {
   const [display, setDisplay] = useState(false)
