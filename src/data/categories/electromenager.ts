@@ -221,9 +221,6 @@ export const electromenager = [
     source:
       'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 342,
-    include: {
-      pre: 'Capacité 7kg.',
-    },
   },
   {
     id: 26976,

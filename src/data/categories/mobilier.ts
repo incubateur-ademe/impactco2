@@ -158,8 +158,5 @@ export const mobiliers = [
         value: 63.900000000000006,
       },
     ],
-    include: {
-      pre: 'Cadre + sommier + matelas',
-    },
   },
 ]

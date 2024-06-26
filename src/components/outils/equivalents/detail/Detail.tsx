@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { Fragment } from 'react'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
@@ -23,7 +24,7 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
     case 8:
       return [
         {
-          label: 'Fabrication',
+          label: 'fabrication',
           value: values.reduce((acc, current) => acc + current.value, 0),
           values,
         },
@@ -36,12 +37,12 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
       if (usage.length) {
         return [
           {
-            label: 'Fabrication',
+            label: 'fabrication',
             value: fabrication.reduce((acc, current) => acc + current.value, 0),
             values: fabrication,
           },
           {
-            label: 'Usage',
+            label: 'usage',
             value: usage.filter((value) => value.id !== 5).reduce((acc, current) => acc + current.value, 0),
             values: usage,
           },
@@ -49,7 +50,7 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
       } else {
         return [
           {
-            label: 'Fabrication',
+            label: 'fabrication',
             value: fabrication.reduce((acc, current) => acc + current.value, 0),
             values: fabrication,
           },
@@ -73,7 +74,7 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
     case 43:
       return [
         {
-          label: 'Total',
+          label: 'total',
           value: values.reduce((acc, current) => acc + current.value, 0),
           values,
         },
@@ -83,6 +84,8 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
 }
 
 export default function Detail({ equivalent }: { equivalent: Equivalent }) {
+  const t = useTranslations('equivalent')
+
   if (!('ecv' in equivalent) || !equivalent.ecv || equivalent.ecv.length === 0) {
     return null
   }
@@ -98,7 +101,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
   let usageAndEnd = null
   if (usage > 0 && end > 0) {
     usageAndEnd = {
-      label: 'Usage et fin de vie',
+      label: 'usage-fdv',
       icon: 'usage',
       value: usage + end,
       values: [
@@ -108,14 +111,14 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
     }
   } else if (usage > 0) {
     usageAndEnd = {
-      label: 'Usage',
+      label: 'usage',
       icon: 'usage',
       value: usage,
       values: [{ id: 8, value: usage }],
     }
   } else if (end > 0) {
     usageAndEnd = {
-      label: 'Fin de vie',
+      label: 'fdv',
       icon: 'usage',
       value: end,
       values: [{ id: 9, value: end }],
@@ -141,7 +144,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                     height={20}
                     alt=''
                   />
-                  {value.label}
+                  {t(value.label)}
                 </th>
                 <td className={styles.percent}>
                   {withPercent ? ' ' : <Percentage value={(100 * value.value) / sum} />}
@@ -173,7 +176,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
             <tr>
               <th>
                 <Image className={styles.icon} src='/images/icn-total.svg' width={20} height={20} alt='' />
-                Total
+                {t('total')}
               </th>
               <th className={styles.percent}> </th>
               <th>

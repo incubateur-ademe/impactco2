@@ -128,7 +128,7 @@ Liste des équivalents à comparer parmis la liste suivante :
   - echalote : kg d'échalote
   - endive : kg d'endive
   - epinard : kg d'épinard
-  - mangue : kg de mangue (importée par avion)
+  - mangue : kg de mangue
   - fenouil : kg de fenouil
   - haricotvert : kg d'haricot vert (cru)
   - laitue : kg de laitue

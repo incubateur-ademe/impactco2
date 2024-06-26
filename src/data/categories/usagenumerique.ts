@@ -46,9 +46,6 @@ export const usageNumeriques = [
       },
     ],
     source: 'https://negaoctet.org/',
-    include: {
-      pre: 'Non lu',
-    },
   },
   {
     slug: 'stockagedonnee',
@@ -66,7 +63,7 @@ export const usageNumeriques = [
     ],
     source: 'https://negaoctet.org/',
     include: {
-      pre: 'Pendant 1 an.',
+      pre: '.',
     },
   },
   {

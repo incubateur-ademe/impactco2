@@ -499,10 +499,10 @@
   "mangue": {
     "category": 9,
     "value": 10641.545366999999,
-    "fr": "kg de ;mangue (importée par avion)",
-    "en": "kg of ;mango (imported by air)",
-    "de": "kg ;Mangos (luftfrachtimportiert)",
-    "es": "kg de ;mangos (importados por avión)"
+    "fr": "kg de ;mangue",
+    "en": "kg of ;mango",
+    "de": "kg ;Mangos",
+    "es": "kg de ;mangos"
   },
   "fenouil": {
     "category": 9,

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -13,7 +13,15 @@ import Equivalent from './Equivalent'
 import Infography from './infographies/Infography'
 import { infographies } from './infographies/list'
 
-const EquivalentPage = ({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) => {
+const EquivalentPage = ({
+  category,
+  equivalent,
+  simulator,
+}: {
+  category: Category
+  equivalent: ComputedEquivalent
+  simulator?: ReactNode
+}) => {
   const tool = tools.find((tool) => tool.slug === category.slug)
   return (
     <>
@@ -26,7 +34,7 @@ const EquivalentPage = ({ category, equivalent }: { category: Category; equivale
         ]}
       />
       <Block title={getName('fr', equivalent)} as='h1' description="Détail de l'impact carbone">
-        <Equivalent category={category} equivalent={equivalent} />
+        <Equivalent category={category} equivalent={equivalent} simulator={simulator} />
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>
       {infographies[equivalent.slug] && (

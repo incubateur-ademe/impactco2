@@ -8,7 +8,6 @@ import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent, EquivalentValue } from 'types/equivalent'
 import { categories } from 'data/categories'
-import { ecv } from 'data/ecv'
 import { usageNumeriqueConfig } from 'components/outils/usageNumerique/config'
 import usageFormStyles from 'src/components/outils/usageNumerique/UsageForm.module.css'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -30,12 +29,32 @@ const equivalents = {
   streaming: category.equivalents?.find((equivalent) => equivalent.slug === 'streamingvideo') as ComputedEquivalent,
 }
 
+const ecvs = [
+  {
+    id: 40,
+    publicode: ' . terminaux . construction',
+  },
+  {
+    id: 41,
+    publicode: ' . terminaux . usage',
+  },
+  {
+    id: 42,
+    publicode: ' . transmission',
+  },
+  {
+    id: 43,
+    publicode: ' . data center',
+  },
+]
+
 const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' | 'streaming' }) => {
   const { engine } = useUsageNumeriqueContext()
   const {
     [slug]: { situation, setSituation, withConstruction, setWithConstruction },
   } = useParamContext()
   const t = useTranslations('usage-numerique')
+  const tEquivalent = useTranslations('equivalent.usage-numerique')
 
   const computedEquivalent = useMemo(() => {
     engine.setSituation(situation)
@@ -45,8 +64,8 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
 
     return {
       ...equivalents[slug],
-      unit: 'pour les paramètres renseignés ci-dessous.',
-      ecv: ecv
+      unit: 'param',
+      ecv: ecvs
         .filter((variable) => variable.publicode)
         .filter((variable) => withConstruction || variable.publicode !== ' . terminaux . construction')
         .map(
@@ -71,25 +90,25 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
       <div className={baseStyles.simulator}>
         <div>
           <label className={baseStyles.label} htmlFor='input-main-value'>
-            <b>{values.mainTitle}</b>
+            <b>{tEquivalent(`${slug}-mainTitle`)}</b>
           </label>
           <div className={usageFormStyles.inputs}>
-            <div className={classNames(usageFormStyles.firstRow, { [usageFormStyles.onlyChild]: !values.secondTitle })}>
+            <div className={classNames(usageFormStyles.firstRow, { [usageFormStyles.onlyChild]: !values.secondValue })}>
               <NumberInput
                 id='main-value'
-                unit={`${values.mainUnit}${(situation[values.mainValue] as number) > 1 ? 's' : ''}`}
+                unit={`${tEquivalent(`${slug}-mainUnit`)}${(situation[values.mainValue] as number) > 1 ? 's' : ''}`}
                 value={(situation[values.mainValue] as number) / values.mainDivider}
                 setValue={(newValue) => {
                   track(getName('fr', equivalents[slug]), `Input ${slug} value`, newValue.toString())
                   setSituation({ ...situation, [values.mainValue]: (newValue * values.mainDivider).toString() })
                 }}
               />
-              {values.secondTitle && values.secondValue && values.secondUnit && (
+              {values.secondValue && (
                 <>
-                  <HiddenLabel htmlFor='input-second'>{values.secondTitle}</HiddenLabel>
+                  <HiddenLabel htmlFor='input-second'>{t(`${slug}-secondTitle`)}</HiddenLabel>
                   <NumberInput
                     id='second'
-                    unit={`${values.secondUnit}${(situation[values.secondValue] as number) > 1 ? 's' : ''}`}
+                    unit={`${tEquivalent(`${slug}-secondUnit`)}${(situation[values.secondValue] as number) > 1 ? 's' : ''}`}
                     value={situation[values.secondValue] as number}
                     setValue={(newValue) => {
                       track(getName('fr', equivalents[slug]), `Input ${slug} second value`, newValue.toString())
@@ -100,7 +119,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               )}
             </div>
             <div className={usageFormStyles.secondRow}>
-              <HiddenLabel htmlFor='text-select-type'>Type de {values.title}</HiddenLabel>
+              <HiddenLabel htmlFor='text-select-type'>Type d'{tEquivalent(`${slug}-title`)}</HiddenLabel>
               <Select
                 id='type'
                 value={situation[values.type] as string}
@@ -110,11 +129,13 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 }}>
                 {values.types.map((option) => (
                   <option key={option} value={`'${option}'`}>
-                    {t(option)}
+                    {t(option.toString().replaceAll('.', ''))}
                   </option>
                 ))}
               </Select>
-              <HiddenLabel htmlFor='text-select-network'>Réseaux utilisé pour {values.title}</HiddenLabel>
+              <HiddenLabel htmlFor='text-select-network'>
+                Réseaux utilisé pour {tEquivalent(`${slug}-title`)}
+              </HiddenLabel>
               <Select
                 id='network'
                 value={situation[values.network] as string}
@@ -134,7 +155,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
         <div className={usageFormStyles.inputs}>
           <div>
             <label className={baseStyles.label} htmlFor='text-select-appareil'>
-              <b>Appareil</b> utilisé
+              <b>{tEquivalent('appareil')}</b> {tEquivalent('used')}
             </label>
             <Select
               id='appareil'
@@ -157,13 +178,13 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               id='radio-construction'
               label={
                 <div className={baseStyles.radioLabel}>
-                  Prendre en compte <b>la construction ?</b>
+                  {tEquivalent('take')} <b>{tEquivalent('construction')}</b>
                 </div>
               }>
               <RadioInput
                 name='radio-construction'
                 required
-                label='Oui'
+                label={tEquivalent('yes')}
                 value='yes'
                 selected={withConstruction ? 'yes' : 'no'}
                 setSelected={() => {
@@ -174,7 +195,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               <RadioInput
                 name='radio-construction'
                 required
-                label='Non'
+                label={tEquivalent('no')}
                 value='no'
                 selected={withConstruction ? 'yes' : 'no'}
                 setSelected={() => {

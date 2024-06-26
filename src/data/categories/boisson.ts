@@ -213,9 +213,6 @@ export const boissons = [
       },
     ],
     source: 'https://agribalyse.ademe.fr/app/aliments/18020#Th%C3%A9_infus%C3%A9,_non_sucr%C3%A9',
-    include: {
-      pre: 'Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg).',
-    },
   },
   {
     slug: 'cafe',
@@ -248,8 +245,5 @@ export const boissons = [
     ],
     source:
       'https://agribalyse.ademe.fr/app/aliments/18004#Caf%C3%A9,_non_instantan%C3%A9,_non_sucr%C3%A9,_pr%C3%AAt_%C3%A0_boire',
-    include: {
-      pre: 'Nous prenons pour hypothèse une tasse de 250ml (simplifié ici en 250mg).',
-    },
   },
 ]

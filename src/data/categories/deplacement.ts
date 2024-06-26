@@ -79,7 +79,6 @@ export const deplacements = [
     tile: false,
     source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien',
     include: {
-      pre: 'Taux de remplissage moyen 101-220 passagers',
       post: "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
     },
   },

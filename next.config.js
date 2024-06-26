@@ -4,9 +4,9 @@ const { withSentryConfig } = require('@sentry/nextjs')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-const withStatoscope = require('next-statoscope')({
+/*const withStatoscope = require('next-statoscope')({
   enabled: process.env.ANALYZE === 'true',
-})
+})*/
 
 const csp = {
   ...helmet.contentSecurityPolicy.getDefaultDirectives(),
@@ -180,4 +180,7 @@ const sentryWebpackPluginOptions = {
   url: process.env.SENTRY_URL,
 }
 
-module.exports = () => withStatoscope(withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions)))
+module.exports = () =>
+  //withStatoscope(
+  withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
+//)

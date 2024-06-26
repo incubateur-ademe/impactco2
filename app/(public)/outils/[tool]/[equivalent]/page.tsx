@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import React from 'react'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/EquivalentPage'
+import { equivalentsSimulators } from 'components/outils/equivalents/simulators/equivalentsSimulators'
 import { getName } from 'utils/Equivalent/equivalent'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -58,7 +59,7 @@ const EquivalentPage = ({ params }: Props) => {
   }
   return (
     <>
-      <Equivalent category={category} equivalent={equivalent} />
+      <Equivalent category={category} equivalent={equivalent} simulator={equivalentsSimulators[equivalent.slug]} />
       <Suggestion
         from={equivalent.link}
         fromLabel={getName('fr', equivalent)}
