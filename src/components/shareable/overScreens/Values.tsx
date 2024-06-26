@@ -139,19 +139,19 @@ export const overScreenExtraSimulatorValues: (slug: string) => Record<string, Ov
         <div className={styles.ressourceContainer}>
           <Resource
             image='/images/osez-changer-tri.jpeg'
-            text='Faire le tri dans ses placards pour gagner de la place chez soi'
+            text='tri'
             href='https://librairie.ademe.fr/consommer-autrement/5271-comment-faire-de-la-place-chez-soi-.html'
             tracking='OsezChanger'
           />
           <Resource
             image='/images/osez-changer-questions.jpg'
-            text='Se poser les bonnes questions avant d’acheter : en ai-je vraiment besoin ?'
+            text='questions'
             href='https://librairie.ademe.fr/cadic/1529/le-revers-de-mon-look.pdf'
             tracking='OsezChanger'
           />
           <Resource
             image='/images/osez-changer-deuxieme-vie.jpg'
-            text='Donner une seconde vie aux vêtements et chaussures non utilisées'
+            text='deuxieme-vie'
             href='https://longuevieauxobjets.ademe.fr/'
             tracking='OsezChanger'
           />
@@ -197,28 +197,28 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
           <div className={styles.ressourceContainer}>
             <Resource
               image='/images/category-pompe-chaleur.jpg'
-              text='S’équiper d’une pompe à chaleur'
+              text='pompe-chaleur'
               href='https://librairie.ademe.fr/changement-climatique-et-energie/6714-s-equiper-d-une-pompe-a-chaleur.html'
               withLink='ADEME'
               tracking={category ? category.name : 'Comparateur'}
             />
             <Resource
               image='/images/category-chauffage-bois.jpg'
-              text='Adopter le chauffage au bois'
+              text='chauffage-bois'
               href='https://librairie.ademe.fr/urbanisme-et-batiment/5667-adopter-le-chauffage-au-bois-9791029719769.html'
               withLink='ADEME'
               tracking={category ? category.name : 'Comparateur'}
             />
             <Resource
               image='/images/category-wattris.png'
-              text='Simuler la consommation électrique de son logement'
+              text='wattris'
               href='https://wattris.ademe.fr/'
               withLink='Wattris'
               tracking={category ? category.name : 'Comparateur'}
             />
             <Resource
               image='/images/ngc.png'
-              text='Estimer son empreinte carbone de consommation'
+              text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
               tracking={category ? category.name : 'Comparateur'}
@@ -244,7 +244,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
           <div className={styles.ressourceContainer}>
             <Resource
               image='/images/ngc.png'
-              text='Estimer son empreinte carbone de consommation'
+              text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
               tracking='Télétravail'
@@ -252,7 +252,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
             />
             <Resource
               image='/images/agir.png'
-              text='Le télétravail, ça change quoi pour la planète ?'
+              text='agir'
               href='https://agirpourlatransition.ademe.fr/particuliers/maison/teletravail-ca-change-quoi-planete'
               withLink='ADEME'
               tracking='Télétravail'
@@ -272,14 +272,14 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
           <div className={styles.ressourceContainer}>
             <Resource
               image='/images/category-fruitsetlegumes.png'
-              text='Calendrier des fruits et légumes de saison'
+              text='calendar'
               href='https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html/'
               withLink='ADEME'
               tracking='fruitsetlegumes'
             />
             <Resource
               image='/images/ngc.png'
-              text='Estimer son empreinte carbone de consommation'
+              text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
               tracking='fruitsetlegumes'
@@ -305,7 +305,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
           <div className={styles.ressourceContainer}>
             <Resource
               image='/images/ngc.png'
-              text='Estimer son empreinte carbone de consommation'
+              text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
               tracking='Transport'
@@ -331,7 +331,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
           <div className={styles.ressourceContainer}>
             <Resource
               image='/images/ngc.png'
-              text='Estimer son empreinte carbone de consommation'
+              text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
               tracking='Usage numérique'
@@ -357,14 +357,14 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
           <div className={styles.ressourceContainer}>
             <Resource
               image='/images/category-livraison.png'
-              text='Télécharger le guide “E-consommateur & responsable”'
+              text='livraison'
               href='https://librairie.ademe.fr/cadic/4466/guide-pratique-econsommateur-responsable.pdf'
               withLink='ADEME'
               tracking='livraison'
             />
             <Resource
               image='/images/ngc.png'
-              text='Estimer son empreinte carbone de consommation'
+              text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
               tracking='livraison'

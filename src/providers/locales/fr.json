@@ -72,6 +72,24 @@
       "start": "Départ",
       "end": "Arrivée"
     },
+    "teletravail": {
+      "start": "Lieu de domicile",
+      "end": "Lieu de travail",
+      "mode": "Pour vous rendre au travail",
+      "presentiel": "Présentiel",
+      "teletravail": "Télétravail",
+      "week": "semaine",
+      "per-week": "par semaine",
+      "per-year": "par an",
+      "day": "jour",
+      "generate": "VOUS GÉNÉREZ",
+      "saved": "VOUS ÉCONOMISEZ",
+      "home": "en télétravaillant",
+      "work": "en vous déplaçant",
+      "or": "SOIT",
+      "economised": "d'économisé sur votre empreinte carbone annuelle",
+      "total": "THIS EQUALS.."
+    },
     "distance": {
       "header": "Découvrez la quantité de CO₂e que vous émettez pour cette distance"
     },
@@ -336,5 +354,17 @@
     "email": "email",
     "année": "année",
     "recherche": "recherche"
+  },
+  "ressources": {
+    "tri": "Faire le tri dans ses placards pour gagner de la place chez soi",
+    "questions": "Se poser les bonnes questions avant d’acheter : en ai-je vraiment besoin ?",
+    "deuxieme-vie": "Donner une seconde vie aux vêtements et chaussures non utilisées",
+    "pompe-chaleur": "S’équiper d’une pompe à chaleur",
+    "chauffage-bois": "Adopter le chauffage au bois",
+    "wattris": "Simuler la consommation électrique de son logement",
+    "ngc": "Estimer son empreinte carbone de consommation",
+    "agir": "Le télétravail, ça change quoi pour la planète ?",
+    "calendar": "Calendrier des fruits et légumes de saison",
+    "livraison": "Télécharger le guide “E-consommateur & responsable”"
   }
 }

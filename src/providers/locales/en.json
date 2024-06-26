@@ -51,7 +51,7 @@
       "end": "To"
     },
     "teletravail": {
-      "label": "Customize addresses",
+      "label": "Customize route",
       "start": "Home",
       "end": "Office"
     },
@@ -71,6 +71,24 @@
       "header": "See how much CO₂e you emit for this itinary",
       "start": "From",
       "end": "To"
+    },
+    "teletravail": {
+      "start": "Home",
+      "end": "Office",
+      "mode": "To get to work",
+      "presentiel": "On-site",
+      "teletravail": "Remote work",
+      "week": "week",
+      "per-week": "per week",
+      "per-year": "per year",
+      "day": "day",
+      "generate": "YOU GENERATE",
+      "saved": "YOU SAVE",
+      "home": "by working remotely",
+      "work": "by commuting",
+      "or": "OR",
+      "economised": "saved on your annual carbon footprint",
+      "total": "WHICH CORRESPONDS TO.."
     },
     "distance": {
       "header": "See how much CO₂e you emit for this distance"
@@ -333,5 +351,17 @@
     "email": "email",
     "année": "year",
     "recherche": "search"
+  },
+  "ressources": {
+    "tri": "Sort through your cupboards to make more space at home",
+    "questions": "Ask yourself the right questions before buying: Do I really need it?",
+    "deuxieme-vie": "Give a second life to unused clothes and shoes",
+    "pompe-chaleur": "Equip yourself with a heat pump",
+    "chauffage-bois": "Adopt wood heating",
+    "wattris": "Simulate the electrical consumption of your home",
+    "ngc": "Estimate your consumption carbon footprint",
+    "agir": "What does telecommuting change for the planet?",
+    "calendar": "Seasonal fruits and vegetables calendar",
+    "livraison": "Download the guide 'E-consumer & responsible'"
   }
 }

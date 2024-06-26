@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React from 'react'
 import { track } from 'utils/matomo'
@@ -22,6 +23,7 @@ const Resource = ({
   withLink?: string
   imgSize?: string
 }) => {
+  const t = useTranslations('ressources')
   return (
     <IframeableLink
       className={styles.linkContainer}
@@ -41,7 +43,7 @@ const Resource = ({
         />
       </div>
       <div className={styles.content}>
-        <div className={styles.text}>{text}</div>
+        <div className={styles.text}>{t(text)}</div>
         {withLink && (
           <div className={styles.fakeLink}>
             <span className='text-sm'>{withLink}</span>
