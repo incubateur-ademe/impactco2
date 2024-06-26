@@ -26,8 +26,6 @@ export const electromenager = [
       defaultyears: 6,
     },
     end: -0.659363081745786,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 9.91,
   },
   {
@@ -59,8 +57,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 52.7491626905852,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 22.5,
   },
   {
@@ -91,8 +87,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 29.8824988339172,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 31.9,
   },
   {
@@ -124,8 +118,6 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 23.9101982705374,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 47.6,
   },
   {
@@ -156,8 +148,6 @@ export const electromenager = [
       defaultyears: 12,
     },
     end: -30.0927,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 217,
   },
   {
@@ -187,8 +177,6 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -22.6301522707884,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 271,
   },
   {
@@ -218,8 +206,6 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -47.7754436590173,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 342,
   },
   {
@@ -249,16 +235,12 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -20.163316975983,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 257,
   },
   {
     id: 26990,
     slug: 'aspirateur',
     category: 6,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -307,8 +289,6 @@ export const electromenager = [
       defaultyears: 6,
     },
     end: 65.4233854443126,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 239,
   },
 ]

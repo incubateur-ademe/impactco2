@@ -25,7 +25,6 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    source: 'https://negaoctet.org/',
   },
   {
     slug: 'spam',
@@ -45,7 +44,6 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    source: 'https://negaoctet.org/',
   },
   {
     slug: 'stockagedonnee',
@@ -61,10 +59,6 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    source: 'https://negaoctet.org/',
-    include: {
-      pre: '.',
-    },
   },
   {
     slug: 'rechercheweb',
@@ -92,7 +86,6 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    source: 'https://negaoctet.org/',
   },
   {
     slug: 'streamingvideo',
@@ -119,7 +112,7 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    source: 'https://negaoctet.org/',
+
     unit: 'avec les paramètres renseignés ci-dessous.',
   },
   {
@@ -147,7 +140,7 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    source: 'https://negaoctet.org/',
+
     unit: 'avec les paramètres renseignés ci-dessous.',
   },
   {
@@ -167,6 +160,5 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-    source: 'https://negaoctet.org/',
   },
 ]

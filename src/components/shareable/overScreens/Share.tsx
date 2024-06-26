@@ -47,7 +47,6 @@ const Share = ({
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 
-  console.log(params, visibility)
   return (
     <>
       {params && visibility && (

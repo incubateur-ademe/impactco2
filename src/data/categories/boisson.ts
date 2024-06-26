@@ -4,7 +4,6 @@ export const boissons = [
     slug: 'eaudurobinet',
     category: 3,
     total: 0.000132,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
   },
   {
     id: 31000,
@@ -32,7 +31,6 @@ export const boissons = [
         value: 0.002598542165965416,
       },
     ],
-    source: 'https://agribalyse.ademe.fr/app/aliments/18430#Eau_embouteill%C3%A9e_de_source',
   },
   {
     id: 31001,
@@ -64,7 +62,6 @@ export const boissons = [
         value: 0.014473543677499463,
       },
     ],
-    source: 'https://agribalyse.ademe.fr/app/aliments/18026#Boisson_gazeuse,_sans_jus_de_fruit,_sucr%C3%A9e',
   },
   {
     id: 31002,
@@ -96,7 +93,6 @@ export const boissons = [
         value: 0.022278755905036994,
       },
     ],
-    source: 'https://agribalyse.ademe.fr/app/aliments/5001#Bi%C3%A8re_%22coeur_de_march%C3%A9%22_(4-5%C2%B0_alcool)',
   },
   {
     id: 31003,
@@ -128,7 +124,6 @@ export const boissons = [
         value: 0.015393454940414145,
       },
     ],
-    source: 'https://agribalyse.ademe.fr/app/aliments/5214#Vin_rouge',
   },
   {
     id: 31004,
@@ -156,7 +151,6 @@ export const boissons = [
         value: 0.049326298165567405,
       },
     ],
-    source: 'https://agribalyse.ademe.fr/app/aliments/19051#Lait_%C3%A9cr%C3%A9m%C3%A9,_pasteuris%C3%A9',
   },
   {
     synonyms: ['lait'],
@@ -185,7 +179,6 @@ export const boissons = [
       },
     ],
     total: 0.42,
-    source: 'https://agribalyse.ademe.fr/app/aliments/18900#Boisson_au_soja,_nature',
   },
   {
     slug: 'the',
@@ -212,7 +205,6 @@ export const boissons = [
         value: 0.0131566263810536,
       },
     ],
-    source: 'https://agribalyse.ademe.fr/app/aliments/18020#Th%C3%A9_infus%C3%A9,_non_sucr%C3%A9',
   },
   {
     slug: 'cafe',
@@ -243,7 +235,5 @@ export const boissons = [
         value: 0.023365480858616866,
       },
     ],
-    source:
-      'https://agribalyse.ademe.fr/app/aliments/18004#Caf%C3%A9,_non_instantan%C3%A9,_non_sucr%C3%A9,_pr%C3%AAt_%C3%A0_boire',
   },
 ]

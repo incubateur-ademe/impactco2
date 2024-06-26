@@ -192,7 +192,12 @@
     "HD": "Haute déf",
     "ultra HD": "4K",
     "fixe FR": "Wifi",
-    "mobile FR": "4G"
+    "mobile FR": "4G",
+    "construction": {
+      "smartphone": "Construction d'un smartphone",
+      "television": "Construction d'une télévision",
+      "ordinateur": "Construction d'un ordinateur portable"
+    }
   },
   "osez-changer": {
     "title": "Comptez vos chaussures !",
@@ -244,6 +249,9 @@
         "stockagedonnee": "Pendant 1 an."
       },
       "post": {
+        "avion-courtcourrier": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
+        "avion-moyencourrier": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
+        "avion-longcourrier": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "avion-pny": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "tgv-paris-berlin": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "tgv-paris-marseille": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",

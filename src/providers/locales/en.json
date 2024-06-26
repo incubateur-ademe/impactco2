@@ -192,7 +192,12 @@
     "HD": "High def",
     "ultra HD": "4K",
     "fixe FR": "Wifi",
-    "mobile FR": "4G"
+    "mobile FR": "4G",
+    "construction": {
+      "smartphone": "Smartphone construction",
+      "television": "Television construction",
+      "ordinateur": "Laptop construction"
+    }
   },
   "osez-changer": {
     "title": "Count your shoes!",

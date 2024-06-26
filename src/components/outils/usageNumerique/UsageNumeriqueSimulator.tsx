@@ -30,19 +30,19 @@ const numeriqueEquivalents = [
   {
     ...smartphone,
     usage: undefined,
-    name: "Construction d'un smartphone",
+    name: 'construction.smartphone',
     value: computeFootprint(smartphone),
   },
   {
     ...ordinateur,
     usage: undefined,
-    name: "Construction d'un ordinateur portable",
+    name: 'construction.ordinateur',
     value: computeFootprint(ordinateur),
   },
   {
     ...television,
     usage: undefined,
-    name: "Construction d'une télévision",
+    name: 'construction.television',
     value: computeFootprint(television),
   },
 ]
@@ -104,7 +104,10 @@ const UsageNumeriqueSimulator = () => {
             (evaluateNumber(engine, 'streaming') - evaluateNumber(engine, 'streaming . terminaux . construction'))) /
           1000,
       },
-      ...numeriqueEquivalents,
+      ...numeriqueEquivalents.map((equivalent) => ({
+        ...equivalent,
+        name: t(equivalent.name),
+      })),
     ],
     [engine, situation, numberEmails]
   )

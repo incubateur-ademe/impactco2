@@ -32,7 +32,7 @@ const UsageForm = ({
   return (
     <div className={styles.container}>
       <label htmlFor={`input-main-value-${slug}`}>
-        <b>{t(`${slug}-title`)}</b> par semaine
+        <b>{t(`${slug}-title`)}</b> {t('by-week')}
       </label>
       <div className={styles.inputs}>
         <div className={styles.firstRow}>

@@ -152,9 +152,6 @@ export const numeriques = [
       defaultyears: 8,
     },
     end: 11.8,
-    include: {
-      pre: '',
-    },
     default: true,
   },
   {

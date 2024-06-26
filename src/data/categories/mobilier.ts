@@ -4,8 +4,6 @@ export const mobiliers = [
     subtitle: 'convertible',
     slug: 'canapeconvertible',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -31,8 +29,6 @@ export const mobiliers = [
     subtitle: 'En bois',
     slug: 'chaiseenbois',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -58,8 +54,6 @@ export const mobiliers = [
     subtitle: 'En bois',
     slug: 'tableenbois',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -85,8 +79,6 @@ export const mobiliers = [
     subtitle: 'Textile',
     slug: 'canapetextile',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -111,8 +103,6 @@ export const mobiliers = [
     id: 26963,
     slug: 'armoire',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -138,8 +128,6 @@ export const mobiliers = [
     slug: 'lit',
     category: 7,
     total: 115,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,

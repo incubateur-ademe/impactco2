@@ -5,7 +5,6 @@ export const casPratiques = [
     slug: 'avion-pny',
     category: 13,
     total: 1770,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien',
   },
   {
     subtitle: 'tgv',
@@ -13,7 +12,6 @@ export const casPratiques = [
     slug: 'tgv-paris-berlin',
     category: 13,
     total: 7.26,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
   },
   {
     subtitle: 'tgv',
@@ -21,7 +19,6 @@ export const casPratiques = [
     slug: 'tgv-paris-marseille',
     category: 13,
     total: 4.4,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
   },
   {
     subtitle: 'car',
@@ -29,7 +26,6 @@ export const casPratiques = [
     slug: 'voiture-lille-nimes',
     category: 13,
     total: 410,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-impact',
   },
   {
     unit: 'an',
@@ -37,7 +33,6 @@ export const casPratiques = [
     category: 13,
     percentage: true,
     total: 9300,
-    source: 'https://nosgestesclimat.fr/',
   },
   {
     subtitle: 'en streaming',
@@ -46,7 +41,6 @@ export const casPratiques = [
     slug: 'game-of-thrones',
     category: 13,
     total: 0.0317,
-    source: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
   },
   {
     subtitle: 'en streaming',
@@ -55,6 +49,5 @@ export const casPratiques = [
     slug: 'friends',
     category: 13,
     total: 7.86,
-    source: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
   },
 ]

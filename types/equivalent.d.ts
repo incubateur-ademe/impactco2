@@ -3,7 +3,6 @@ type BaseEquivalent = {
   slug: string
   category: number
   default?: boolean
-  include?: { pre: string; post?: string; postNewLine?: string }
   synonyms?: string[]
   carpool?: number
   percentage?: boolean

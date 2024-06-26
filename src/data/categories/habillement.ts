@@ -27,8 +27,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.63563578618721,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 23.2,
     default: true,
   },
@@ -59,8 +57,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.544462785648209,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 8.2,
   },
   {
@@ -92,8 +88,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.250404099863735,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 5.2,
     default: true,
   },
@@ -126,8 +120,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.172305318123854,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 5.5,
   },
   {
@@ -159,8 +151,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.51606227347502,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 27.4,
   },
   {
@@ -192,8 +182,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.462075432138259,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 11.2,
     default: true,
   },
@@ -226,8 +214,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.464139172777627,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 10.2,
   },
   {
@@ -259,8 +245,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.55449454602226,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 13.4,
     default: true,
   },
@@ -293,8 +277,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.2198842675649,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 17.3,
   },
   {
@@ -326,8 +308,6 @@ export const habillements = [
       defaultyears: 1,
     },
     end: 1.4255512835071,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 18.7,
   },
   {
@@ -359,8 +339,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.29416237785554,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 49.8,
   },
   {
@@ -392,8 +370,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.53486702873937,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 51.9,
   },
   {
@@ -425,8 +401,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 2.39476716560145,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 44.9,
   },
   {
@@ -458,8 +432,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.27881830769189,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 52.9,
     default: true,
   },
@@ -492,8 +464,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.01073009563544,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 25.5,
   },
   {
@@ -525,8 +495,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 1.51606227347502,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 8.1,
   },
   {
@@ -557,8 +525,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 2.39840212966855,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 85.8,
     default: true,
   },
@@ -590,8 +556,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.646349561372889,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 38.7,
   },
   {
@@ -622,8 +586,6 @@ export const habillements = [
       defaultyears: 5,
     },
     end: 0.881444738170221,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 24,
   },
 ]

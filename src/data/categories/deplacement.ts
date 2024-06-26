@@ -77,10 +77,6 @@ export const deplacements = [
     ],
     default: true,
     tile: false,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien',
-    include: {
-      post: "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
-    },
   },
   {
     id: 2,
@@ -104,7 +100,6 @@ export const deplacements = [
     display: {
       min: 150,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 3,
@@ -128,7 +123,6 @@ export const deplacements = [
     display: {
       min: 31,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 4,
@@ -150,7 +144,6 @@ export const deplacements = [
     ],
     default: true,
     tile: true,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 5,
@@ -172,7 +165,6 @@ export const deplacements = [
     ],
     default: true,
     tile: false,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 6,
@@ -196,7 +188,6 @@ export const deplacements = [
     display: {
       min: 16,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 7,
@@ -233,7 +224,6 @@ export const deplacements = [
     display: {
       max: 30,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 9,
@@ -257,7 +247,6 @@ export const deplacements = [
     display: {
       max: 15,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 10,
@@ -280,7 +269,6 @@ export const deplacements = [
     display: {
       max: 12,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 11,
@@ -304,7 +292,6 @@ export const deplacements = [
     display: {
       max: 12,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 12,
@@ -327,7 +314,6 @@ export const deplacements = [
     display: {
       max: 50,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 13,
@@ -350,7 +336,6 @@ export const deplacements = [
     display: {
       min: 51,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 14,
@@ -375,7 +360,6 @@ export const deplacements = [
       min: 11,
       max: 100,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 15,
@@ -399,7 +383,6 @@ export const deplacements = [
     display: {
       max: 150,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 16,
@@ -423,7 +406,6 @@ export const deplacements = [
     display: {
       max: 15,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 21,
@@ -447,6 +429,5 @@ export const deplacements = [
     display: {
       max: 15,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
 ]
