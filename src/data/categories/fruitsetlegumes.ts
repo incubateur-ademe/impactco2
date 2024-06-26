@@ -1,7 +1,6 @@
 export const fruitsEtLegumes = [
   {
     slug: 'fraise',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -22,11 +21,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13014_2#Fraise_de_saison,_crue',
   },
   {
     slug: 'pomme',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -47,11 +44,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue',
   },
   {
     slug: 'orange',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -72,11 +67,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13034#Orange,_pulpe,_crue',
   },
   {
     slug: 'citron',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -97,11 +90,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13009',
   },
   {
     slug: 'ail',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -122,11 +113,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/11000',
   },
   {
     slug: 'artichaut',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -147,11 +136,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20052',
   },
   {
     slug: 'asperge',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -172,11 +159,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [3, 4, 5],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20279',
   },
   {
     slug: 'betterave',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -197,11 +182,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20091',
   },
   {
     slug: 'blette',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -222,11 +205,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8, 9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20004',
   },
   {
     slug: 'carotte',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -247,11 +228,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20009',
   },
   {
     slug: 'celeri',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -272,11 +251,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru',
   },
   {
     slug: 'champignonmorille',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -297,11 +274,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue',
   },
   {
     slug: 'chou',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -322,11 +297,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru',
   },
   {
     slug: 'choudebruxelles',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -347,11 +320,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru',
   },
   {
     slug: 'choufleur',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -372,11 +343,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru',
   },
   {
     slug: 'concombre',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -397,11 +366,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6, 7, 8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru',
   },
   {
     slug: 'courge',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -422,11 +389,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue',
   },
   {
     slug: 'courgette',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -447,11 +412,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6, 7, 8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue',
   },
   {
     slug: 'cresson',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -472,11 +435,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20199',
   },
   {
     slug: 'echalote',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -497,11 +458,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue',
   },
   {
     slug: 'endive',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -522,11 +481,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue',
   },
   {
     slug: 'epinard',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -547,11 +504,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20059',
   },
   {
     slug: 'mangue',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -572,14 +527,12 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue',
     include: {
       pre: 'Importée par avion.',
     },
   },
   {
     slug: 'fenouil',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -600,12 +553,10 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [3, 5, 6, 7, 8, 9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru',
   },
   {
     subtitle: 'cru',
     slug: 'haricotvert',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -626,11 +577,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20061_1#Haricot_vert,_cru',
   },
   {
     slug: 'laitue',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -651,11 +600,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue',
   },
   {
     slug: 'mache',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -676,11 +623,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue',
   },
   {
     slug: 'navet',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -701,11 +646,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru',
   },
   {
     slug: 'mais',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -726,11 +669,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru',
   },
   {
     slug: 'oignon',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -751,11 +692,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru',
   },
   {
     slug: 'panais',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -776,11 +715,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru',
   },
   {
     slug: 'petitpois',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -797,11 +734,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus',
   },
   {
     slug: 'poireau',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -822,11 +757,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru',
   },
   {
     slug: 'poivron',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -847,11 +780,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru',
   },
   {
     slug: 'potiron',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -872,11 +803,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru',
   },
   {
     slug: 'radis',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -897,11 +826,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [2, 3, 4, 5],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru',
   },
   {
     slug: 'salsifis',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -922,11 +849,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru',
   },
   {
     slug: 'topinambour',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -947,11 +872,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru',
   },
   {
     slug: 'cassis',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -972,11 +895,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru',
   },
   {
     slug: 'chataigne',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -997,11 +918,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue',
   },
   {
     slug: 'clementine',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1022,11 +941,10 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue',
   },
   {
     slug: 'pamplemousse',
-    synonyms: ['manger', 'fruit', 'pomelo'],
+    synonyms: ['pomelo'],
     category: 9,
     ecv: [
       {
@@ -1047,11 +965,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [1, 2, 3, 4, 5],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru',
   },
   {
     slug: 'coing',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1072,11 +988,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru',
   },
   {
     slug: 'figue',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1097,11 +1011,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue',
   },
   {
     slug: 'groseille',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1122,11 +1034,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue',
   },
   {
     slug: 'kiwi',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1151,11 +1061,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru',
   },
   {
     slug: 'mandarine',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1176,11 +1084,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue',
   },
   {
     slug: 'melon',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1201,12 +1107,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source:
-      'https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru',
   },
   {
     slug: 'mure',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1227,11 +1130,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue',
   },
   {
     slug: 'nectarine',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1252,11 +1153,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue',
   },
   {
     slug: 'myrtille',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1277,11 +1176,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue',
   },
   {
     slug: 'noisette',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1302,11 +1199,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8, 9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/15004#Noisette',
   },
   {
     slug: 'noix',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1331,11 +1226,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche',
   },
   {
     slug: 'prune',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1356,11 +1249,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue',
   },
   {
     slug: 'reineclaude',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1381,11 +1272,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue',
   },
   {
     slug: 'rhubarbe',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1406,11 +1295,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [3, 4, 5],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue',
   },
   {
     slug: 'peche',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1431,11 +1318,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue',
   },
   {
     slug: 'cerise',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1460,11 +1345,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue',
   },
   {
     slug: 'abricot',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1489,11 +1372,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru',
   },
   {
     slug: 'framboise',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1514,11 +1395,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue',
   },
   {
     slug: 'poire',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1539,11 +1418,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue',
   },
   {
     slug: 'raisin',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1564,11 +1441,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru',
   },
   {
     slug: 'aubergine',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1589,11 +1464,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue',
   },
   {
     slug: 'brocoli',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1614,11 +1487,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8, 9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru',
   },
   {
     slug: 'tomate',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1639,11 +1510,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20047_2#Tomate_de_saison,_crue',
   },
   {
     slug: 'ananas',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1664,11 +1533,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine ',
   },
   {
     slug: 'banane',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1689,11 +1556,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue',
   },
   {
     slug: 'avocat',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1714,11 +1579,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru',
   },
   {
     slug: 'carambole',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1739,11 +1602,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue',
   },
   {
     slug: 'datte',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1764,11 +1625,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che',
   },
   {
     slug: 'fruitdelapassion',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1789,12 +1648,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source:
-      'https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru',
   },
   {
     slug: 'grenade',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1815,11 +1671,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue',
   },
   {
     slug: 'kaki',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1840,11 +1694,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru',
   },
   {
     slug: 'noixdecoco',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1869,11 +1721,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche',
   },
   {
     slug: 'pasteque',
-    synonyms: ['manger', 'fruit'],
     category: 9,
     ecv: [
       {
@@ -1894,6 +1744,5 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue',
   },
 ]

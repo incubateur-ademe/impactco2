@@ -2,7 +2,7 @@ export const habillements = [
   {
     id: 27043,
     slug: 'jeans',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -35,7 +35,6 @@ export const habillements = [
   {
     id: 27046,
     slug: 'polo',
-    synonyms: ['habiller'],
     category: 5,
     ecv: [
       {
@@ -68,7 +67,7 @@ export const habillements = [
     id: 27044,
     subtitle: 'En coton',
     slug: 'tshirtencoton',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -102,7 +101,7 @@ export const habillements = [
     id: 27045,
     subtitle: 'En polyester',
     slug: 'tshirtenpolyester',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -135,7 +134,7 @@ export const habillements = [
     id: 27049,
     subtitle: 'En coton',
     slug: 'sweatencoton',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -168,7 +167,7 @@ export const habillements = [
     id: 27041,
     subtitle: 'En coton',
     slug: 'chemiseencoton',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -202,7 +201,7 @@ export const habillements = [
     id: 27042,
     subtitle: 'En viscose',
     slug: 'chemiseenviscose',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -235,7 +234,7 @@ export const habillements = [
     id: 27058,
     subtitle: 'En cuir',
     slug: 'chaussuresencuir',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -269,7 +268,7 @@ export const habillements = [
     id: 27059,
     subtitle: 'En tissu',
     slug: 'chaussuresentissu',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -302,7 +301,7 @@ export const habillements = [
     id: 27060,
     subtitle: 'De sport',
     slug: 'chaussuresdesport',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -335,7 +334,7 @@ export const habillements = [
     id: 27056,
     subtitle: 'En coton',
     slug: 'robeencoton',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -368,7 +367,7 @@ export const habillements = [
     id: 27055,
     subtitle: 'En polyester',
     slug: 'robeenpolyester',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -401,7 +400,7 @@ export const habillements = [
     id: 27057,
     subtitle: 'En viscose',
     slug: 'robeenviscose',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -434,7 +433,7 @@ export const habillements = [
     id: 27050,
     subtitle: 'En laine',
     slug: 'pullenlaine',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -468,7 +467,7 @@ export const habillements = [
     id: 27047,
     subtitle: 'En acrylique',
     slug: 'pullenacrylique',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -501,7 +500,7 @@ export const habillements = [
     id: 27051,
     subtitle: 'En coton recyclé',
     slug: 'pullencotonrecycle',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -533,7 +532,7 @@ export const habillements = [
   {
     id: 27052,
     slug: 'manteau',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {
@@ -598,7 +597,7 @@ export const habillements = [
   {
     id: 27054,
     slug: 'vestesimilicuir',
-    synonyms: ['habiller'],
+
     category: 5,
     ecv: [
       {

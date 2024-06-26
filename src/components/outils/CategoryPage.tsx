@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { ReactNode, Suspense } from 'react'
 import { Category as CategoryType } from 'types/category'
 import Reset from 'components/base/Reset'
 import Sources from 'components/base/Sources'
@@ -9,11 +9,16 @@ import Block from 'components/layout/Block'
 import Category from './Category'
 import styles from './CategoryPage.module.css'
 import ExtraSimulator from './ExtraSimulator'
-import { extraSimulators } from './simulators'
 
-const CategoryPage = ({ category }: { category: CategoryType }) => {
-  const extraSimulator = extraSimulators[category.slug]
-
+const CategoryPage = ({
+  category,
+  simulator,
+  extraSimulator,
+}: {
+  category: CategoryType
+  simulator?: ReactNode
+  extraSimulator?: { slug: string; tracking: string; title: string; description: string; simulator: ReactNode }
+}) => {
   return (
     <>
       <Breadcrumbs
@@ -24,7 +29,7 @@ const CategoryPage = ({ category }: { category: CategoryType }) => {
         ]}
       />
       <Block title={category.name} as='h1' description={category.description}>
-        <Category category={category} />
+        <Category category={category} simulator={simulator} />
         {category.resetable && <Reset tracking={category.name} slug={category.slug} />}
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>

@@ -1,7 +1,6 @@
 export const boissons = [
   {
     id: 24283,
-    synonyms: ['boire'],
     slug: 'eaudurobinet',
     category: 3,
     total: 0.000132,
@@ -9,7 +8,6 @@ export const boissons = [
   },
   {
     id: 31000,
-    synonyms: ['boire'],
     slug: 'eauenbouteille',
     category: 3,
     ecv: [
@@ -38,7 +36,6 @@ export const boissons = [
   },
   {
     id: 31001,
-    synonyms: ['boire'],
     slug: 'soda',
     category: 3,
     ecv: [
@@ -71,7 +68,6 @@ export const boissons = [
   },
   {
     id: 31002,
-    synonyms: ['boire'],
     slug: 'biere',
     category: 3,
     ecv: [
@@ -104,7 +100,6 @@ export const boissons = [
   },
   {
     id: 31003,
-    synonyms: ['boire'],
     slug: 'vin',
     category: 3,
     ecv: [
@@ -137,7 +132,6 @@ export const boissons = [
   },
   {
     id: 31004,
-    synonyms: ['boire'],
     slug: 'laitdevache',
     category: 3,
     ecv: [
@@ -165,7 +159,7 @@ export const boissons = [
     source: 'https://agribalyse.ademe.fr/app/aliments/19051#Lait_%C3%A9cr%C3%A9m%C3%A9,_pasteuris%C3%A9',
   },
   {
-    synonyms: ['boire', 'lait'],
+    synonyms: ['lait'],
     slug: 'soja',
     category: 3,
     ecv: [

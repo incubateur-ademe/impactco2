@@ -62,11 +62,11 @@ export const overScreenEquivalentValues: (equivalent: ComputedEquivalent) => Rec
 ) => ({
   partager: {
     title: 'share',
-    children: <Share path={equivalent.link} tracking={getName('fr', equivalent)} noLanguage />,
+    children: <Share path={equivalent.link} tracking={getName('fr', equivalent)} />,
   },
   integrer: {
     title: 'integrate',
-    children: <Integrate path={equivalent.link} tracking={getName('fr', equivalent)} noLanguage />,
+    children: <Integrate path={equivalent.link} tracking={getName('fr', equivalent)} />,
   },
 })
 

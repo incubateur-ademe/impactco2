@@ -79,6 +79,7 @@ export const categories: Category[] = [
     id: 4,
     name: 'Transport',
     slug: 'transport',
+    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     description: 'Calculer l’impact carbone des moyens de transport',
     sources: [
       {
@@ -95,6 +96,7 @@ export const categories: Category[] = [
     id: 9,
     name: 'Fruits et légumes',
     slug: 'fruitsetlegumes',
+    synonyms: ['manger', 'fruit', 'legume'],
     description: 'Découvrir les fruits et légumes de la saison et leur impact carbone',
     unit: 'kg',
     equivalents: computedEquivalents('fruitsetlegumes', fruitsEtLegumes),
@@ -128,6 +130,7 @@ export const categories: Category[] = [
     id: 2,
     name: 'Repas',
     slug: 'repas',
+    synonyms: ['manger', 'alimenter'],
     sources: [
       {
         label: 'Base Empreinte ADEME',
@@ -142,6 +145,7 @@ export const categories: Category[] = [
     id: 5,
     name: 'Habillement',
     slug: 'habillement',
+    synonyms: ['habiller'],
     sources: [
       {
         label: 'Rapport : Modélisation et évaluation...',
@@ -198,6 +202,7 @@ export const categories: Category[] = [
     name: 'Boisson',
     slug: 'boisson',
     description: 'Comparer l’impact carbone des boissons',
+    synonyms: ['boire'],
     unit: 'litre',
     sources: [
       {

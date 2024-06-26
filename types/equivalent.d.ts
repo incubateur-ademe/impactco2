@@ -4,24 +4,10 @@ type BaseEquivalent = {
   category: number
   default?: boolean
   include?: { pre: string; post?: string; postNewLine?: string }
-  source?: string
   synonyms?: string[]
   carpool?: number
   percentage?: boolean
   unit?: string
-  data?: {
-    hypothesis?: string
-    values: {
-      title: string
-      withSource?:
-        | boolean
-        | {
-            label: string
-            href: string
-          }
-      value: string
-    }[]
-  }
 }
 
 type BaseEquivalentValue =

@@ -2,7 +2,7 @@ export const deplacements = [
   {
     id: 1,
     slug: 'avion',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voler', 'voyager'],
+    synonyms: ['voler'],
     type: 'plane',
     category: 4,
     display: {
@@ -86,7 +86,7 @@ export const deplacements = [
   {
     id: 2,
     empreinteId: 42760,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'train'],
+    synonyms: ['train'],
     slug: 'tgv',
     type: 'rail',
     category: 4,
@@ -110,7 +110,7 @@ export const deplacements = [
   {
     id: 3,
     empreinteId: 42756,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'train'],
+    synonyms: ['train'],
     slug: 'intercites',
     type: 'rail',
     category: 4,
@@ -134,7 +134,7 @@ export const deplacements = [
   {
     id: 4,
     subtitle: 'Thermique',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'conduire', 'voyager'],
+    synonyms: ['conduire'],
     slug: 'voiturethermique',
     carpool: 1,
     type: 'car',
@@ -156,7 +156,7 @@ export const deplacements = [
   {
     id: 5,
     subtitle: 'Électrique',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'conduire', 'voyager'],
+    synonyms: ['conduire'],
     slug: 'voitureelectrique',
     carpool: 1,
     type: 'car',
@@ -177,7 +177,6 @@ export const deplacements = [
   },
   {
     id: 6,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'autocar',
     type: 'car',
     category: 4,
@@ -202,7 +201,7 @@ export const deplacements = [
   },
   {
     id: 7,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'marcher', 'pedaler'],
+    synonyms: ['marcher', 'pedaler'],
     slug: 'velo',
     type: 'foot',
     category: 4,
@@ -216,7 +215,7 @@ export const deplacements = [
   {
     id: 8,
     empreinteId: 28331,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'pedaler'],
+    synonyms: ['pedaler'],
     slug: 'veloelectrique',
     type: 'foot',
     category: 4,
@@ -241,7 +240,6 @@ export const deplacements = [
     id: 9,
     empreinteId: 28004,
     subtitle: 'Thermique',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'busthermique',
     type: 'car',
     category: 4,
@@ -265,7 +263,6 @@ export const deplacements = [
   {
     id: 10,
     empreinteId: 42761,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'tramway',
     type: 'rail',
     category: 4,
@@ -289,7 +286,7 @@ export const deplacements = [
   {
     id: 11,
     empreinteId: 42757,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'rail'],
+    synonyms: ['rail'],
     slug: 'metro',
     type: 'rail',
     category: 4,
@@ -313,7 +310,6 @@ export const deplacements = [
   {
     id: 12,
     empreinteId: 27992,
-    synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'scooter',
     type: 'car',
     category: 4,
@@ -337,7 +333,6 @@ export const deplacements = [
   {
     id: 13,
     empreinteId: 27995,
-    synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'moto',
     type: 'car',
     category: 4,
@@ -361,7 +356,7 @@ export const deplacements = [
   {
     id: 14,
     empreinteId: 42758,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'train', 'rail'],
+    synonyms: ['train', 'rail'],
     slug: 'rer',
     type: 'rail',
     category: 4,
@@ -386,7 +381,7 @@ export const deplacements = [
   {
     id: 15,
     empreinteId: 42759,
-    synonyms: ['transport', 'déplacement', 'déplacer', 'train', 'rail'],
+    synonyms: ['train', 'rail'],
     slug: 'ter',
     type: 'rail',
     category: 4,
@@ -411,7 +406,6 @@ export const deplacements = [
     id: 16,
     empreinteId: 28003,
     subtitle: 'Électrique',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'buselectrique',
     type: 'car',
     category: 4,
@@ -436,7 +430,6 @@ export const deplacements = [
     id: 21,
     empreinteId: 28005,
     subtitle: 'GNV',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'busgnv',
     type: 'car',
     category: 4,

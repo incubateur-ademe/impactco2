@@ -4146,7 +4146,7 @@
     "@types/webpack" "^5.0.0"
     md5 "^2.3.0"
 
-"@statoscope/webpack-plugin@^5.28.2":
+"@statoscope/webpack-plugin@^5.26.2", "@statoscope/webpack-plugin@^5.28.2":
   version "5.28.2"
   resolved "https://registry.yarnpkg.com/@statoscope/webpack-plugin/-/webpack-plugin-5.28.2.tgz#b2bb329d92cca06ee0b1bf4e57bfedb978de1168"
   integrity sha512-vFzZw/THVtLeat7+LYbhJhbNYBmHODXiPa1fiqsNQtmNexOTxa9SujrvMkqiVYCKX1elUHVm/UE1JGDmQIcuAA==
@@ -12315,6 +12315,13 @@ next-sitemap@^4.2.3:
     "@next/env" "^13.4.3"
     fast-glob "^3.2.12"
     minimist "^1.2.8"
+
+next-statoscope@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/next-statoscope/-/next-statoscope-1.0.1.tgz#0160f6e703a09b1115ac5662df6e6b1f5573c71b"
+  integrity sha512-cILWvID5JPBoNiQvrAgdnuds5nt/GK9cMRHyW18nzfXX8jc64oQ1pKFFfk1GLJ5aXB/RBZlQkamoezVAqDrT/g==
+  dependencies:
+    "@statoscope/webpack-plugin" "^5.26.2"
 
 next-test-api-route-handler@^4.0.8:
   version "4.0.8"

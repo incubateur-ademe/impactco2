@@ -128,6 +128,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.7",
     "next-router-mock": "^0.9.13",
+    "next-statoscope": "^1.0.1",
     "next-test-api-route-handler": "^4.0.8",
     "nock": "^13.5.4",
     "node-mocks-http": "^1.14.1",

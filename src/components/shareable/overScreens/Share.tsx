@@ -14,12 +14,10 @@ const Share = ({
   category,
   path,
   tracking,
-  noLanguage,
 }: {
   category?: Pick<Category, 'slug' | 'name'>
   path?: string
   tracking?: string
-  noLanguage?: boolean
 }) => {
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
@@ -49,6 +47,7 @@ const Share = ({
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 
+  console.log(params, visibility)
   return (
     <>
       {params && visibility && (
@@ -60,11 +59,10 @@ const Share = ({
             visibility={visibility}
             setVisibility={setVisibility}
           />
-          <div className={styles.separator} />
+          {Object.keys(params).length > 0 && <div className={styles.separator} />}
         </>
       )}
       <ShareUrl
-        noLanguage={noLanguage}
         url={url}
         tracking={tracking}
         path={path}

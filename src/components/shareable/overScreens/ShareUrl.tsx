@@ -21,14 +21,12 @@ const ShareUrl = ({
   url,
   tracking,
   customImage,
-  noLanguage,
 }: {
   category?: Pick<Category, 'slug' | 'name'>
   tracking?: string
   path?: string
   customImage?: string
   url: string
-  noLanguage?: boolean
 }) => {
   const t = useTranslations('overscreen')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
@@ -36,15 +34,13 @@ const ShareUrl = ({
   const { language, setLanguage } = useParamContext()
   return (
     <>
-      {!noLanguage && (
-        <CustomParam
-          tracking={trackingValue}
-          slug='language'
-          integration
-          param={{ value: language, setter: setLanguage } as CustomParamValue}
-          visible
-        />
-      )}
+      <CustomParam
+        tracking={trackingValue}
+        slug='language'
+        integration
+        param={{ value: language, setter: setLanguage } as CustomParamValue}
+        visible
+      />
       <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
       <div className={styles.buttons}>
         <FacebookShareButton

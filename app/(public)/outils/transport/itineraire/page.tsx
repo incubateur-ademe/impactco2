@@ -3,6 +3,7 @@ import React from 'react'
 import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
+import TransportSimulator from 'components/outils/TransportSimulator'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -27,7 +28,7 @@ export async function generateMetadata({
 const page = () => {
   return (
     <>
-      <Category category={category} />
+      <Category category={category} simulator={<TransportSimulator />} />
       <Suggestion
         from={`/outils/${category.slug}`}
         fromLabel={category.name}

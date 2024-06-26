@@ -11,4 +11,5 @@ export type Category = {
   resetable?: boolean
   more?: string
   examples?: string
+  synonyms?: string[]
 }

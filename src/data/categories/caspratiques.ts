@@ -1,7 +1,6 @@
 export const casPratiques = [
   {
     subtitle: 'plane',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'avion-pny',
     category: 13,
@@ -15,7 +14,6 @@ export const casPratiques = [
   },
   {
     subtitle: 'tgv',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'tgv-paris-berlin',
     category: 13,
@@ -29,7 +27,6 @@ export const casPratiques = [
   },
   {
     subtitle: 'tgv',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'tgv-paris-marseille',
     category: 13,
@@ -43,7 +40,6 @@ export const casPratiques = [
   },
   {
     subtitle: 'car',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     unit: 'A/R',
     slug: 'voiture-lille-nimes',
     category: 13,
