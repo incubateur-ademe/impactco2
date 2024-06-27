@@ -37,8 +37,7 @@ const ENFruitsEtLegumesData = () => {
     <>
       <div className={styles.content}>
         <div>
-          All calculations come from the
-          <Link href='https://agribalyse.ademe.fr/'>Agrybalise</Link> database
+          All calculations come from the <Link href='https://agribalyse.ademe.fr/'>Agrybalise</Link> database
         </div>
       </div>
       <div className={styles.title}>Eat seasonal fruits</div>
