@@ -10,6 +10,7 @@ const chauffageValidation = z.object({
     .string()
     .transform((value) => value.split(',').map(Number))
     .optional(),
+  language: z.enum(['fr', 'en']).optional(),
 })
 
 /**
@@ -39,6 +40,13 @@ const chauffageValidation = z.object({
  *         - 5 : Chauffage avec un poêle à granulés
  *         - 6 : Chauffage avec un poêle à bois
  *         - 7 : Chauffage via un réseau de chaleur
+ *     - in: query
+ *       name: language
+ *       default: fr
+ *       schema:
+ *        type: string
+ *        enum: [fr, en]
+ *       description: Langue dans laquelle retourner les noms d'équivalent
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -100,7 +108,7 @@ export async function GET(req: NextRequest) {
         .filter((chauffage) => (inputs.data.chauffages ? inputs.data.chauffages.includes(chauffage.id) : true))
         .map((chauffage) => {
           return {
-            name: getNameWithoutSuffix('fr', chauffage),
+            name: getNameWithoutSuffix(inputs.data.language || 'fr', chauffage),
             slug: chauffage.slug,
             ecv: chauffage.total * (inputs.data.m2 || 63),
           }

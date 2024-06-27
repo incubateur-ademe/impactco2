@@ -15,6 +15,7 @@ const transportValidation = z.object({
     .transform((value) => value.split(',').map(Number))
     .optional(),
   numberOfPassenger: z.coerce.number().min(0).max(10).optional(),
+  language: z.enum(['fr', 'en']).optional(),
 })
 
 export const computeTransportEmission = (
@@ -22,19 +23,20 @@ export const computeTransportEmission = (
   activeTransportations?: number[],
   ignoreRadiativeForcing?: boolean,
   filter?: boolean,
-  includeConstruction?: boolean
+  includeConstruction?: boolean,
+  language?: string
 ) =>
   deplacements
     .filter((transportation) => filter || filterByDistance(transportation.display, km))
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
-      let name = getName('fr', transportation)
+      let name = getName(language || 'fr', transportation)
       if ('ecvs' in transportation && transportation.ecvs) {
         const currentECV = transportation.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
         if (currentECV) {
           values = currentECV.ecv
-          name = getName('fr', {
+          name = getName(language || 'fr', {
             ...transportation,
             slug: `${transportation.slug}-${currentECV.subtitle}`,
           })
@@ -157,6 +159,13 @@ export const computeTransportEmission = (
  *       schema:
  *         type: integer
  *       description: Si 1, prend en compte l'emission lié à la construction. Sinon elle est ignorée
+ *     - in: query
+ *       name: language
+ *       default: fr
+ *       schema:
+ *        type: string
+ *        enum: [fr, en]
+ *       description: Langue dans laquelle retourner les noms d'équivalent
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -202,7 +211,8 @@ export async function GET(req: NextRequest) {
     inputs.data.transports,
     inputs.data.ignoreRadiativeForcing,
     inputs.data.displayAll || !!inputs.data.transports,
-    inputs.data.includeConstruction
+    inputs.data.includeConstruction,
+    inputs.data.language
   )
   return NextResponse.json(
     {

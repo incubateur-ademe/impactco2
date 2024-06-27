@@ -23,6 +23,26 @@ describe('chauffage', () => {
     })
   })
 
+  test('get values in english', async () => {
+    const result = await fetch('http://localhost:3000/api/v1/chauffage?language=en')
+
+    expect(result.status).toBe(200)
+    const data = await result.json()
+    expect(data).toEqual({
+      data: [
+        { ecv: 2457, name: 'Gas heating', slug: 'chauffagegaz' },
+        { ecv: 3601.71, name: 'Oil heating', slug: 'chauffagefioul' },
+        { ecv: 746.55, name: 'Electric heating', slug: 'chauffageelectrique' },
+        { ecv: 248.85000000000002, name: 'Heating with a heat pump', slug: 'pompeachaleur' },
+        { ecv: 355.32, name: 'Heating with a pellet stove', slug: 'poeleagranule' },
+        { ecv: 579.5999999999999, name: 'Heating with a wood stove', slug: 'poeleabois' },
+        { ecv: 1176.21, name: 'Heating via a district heating network', slug: 'reseaudechaleur' },
+      ],
+      warning:
+        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    })
+  })
+
   test('get specific values', async () => {
     const result = await fetch('http://localhost:3000/api/v1/chauffage?chauffages=4,6')
 

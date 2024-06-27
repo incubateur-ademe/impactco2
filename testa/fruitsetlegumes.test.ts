@@ -201,6 +201,204 @@ describe('fruitsetlegumes', () => {
         "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
+  test('get values in english', async () => {
+    const result = await fetch('http://localhost:3000/api/v1/fruitsetlegumes?language=en')
+
+    expect(result.status).toBe(200)
+    const data = await result.json()
+    expect(data).toEqual({
+      data: [
+        {
+          ecv: 0.47706577790000004,
+          months: [5, 6, 7],
+          name: 'Strawberry',
+          slug: 'fraise',
+        },
+        {
+          ecv: 3.876929068,
+          months: [5, 6, 7, 8, 9],
+          name: 'Artichoke',
+          slug: 'artichaut',
+        },
+        {
+          ecv: 1.559309081,
+          months: [4, 5, 6],
+          name: 'Asparagus',
+          slug: 'asperge',
+        },
+        {
+          ecv: 0.542753575,
+          months: [6, 7, 8, 9, 10, 11],
+          name: 'Chard',
+          slug: 'blette',
+        },
+        {
+          ecv: 0.4937143989999999,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Mushroom (raw morel)',
+          slug: 'champignonmorille',
+        },
+        {
+          ecv: 0.473201203,
+          months: [5, 6, 7, 8, 9, 10],
+          name: 'Cucumber',
+          slug: 'concombre',
+        },
+        {
+          ecv: 0.48351979,
+          months: [5, 6, 7, 8, 9, 10],
+          name: 'Zucchini',
+          slug: 'courgette',
+        },
+        {
+          ecv: 0.9410662189999999,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Watercress',
+          slug: 'cresson',
+        },
+        {
+          ecv: 10.641545366999999,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Mango',
+          slug: 'mangue',
+        },
+        {
+          ecv: 0.962528871,
+          months: [4, 6, 7, 8, 9, 10, 11],
+          name: 'Fennel',
+          slug: 'fenouil',
+        },
+        {
+          ecv: 0.41306197199999994,
+          months: [6, 7, 8, 9, 10],
+          name: 'Green bean (raw)',
+          slug: 'haricotvert',
+        },
+        {
+          ecv: 0.9410662189999999,
+          months: [5, 6, 7, 8, 9],
+          name: 'Lettuce',
+          slug: 'laitue',
+        },
+        {
+          ecv: 0.6651291770000001,
+          months: [5, 6, 7],
+          name: 'Green pea',
+          slug: 'petitpois',
+        },
+        {
+          ecv: 1.1836197739999998,
+          months: [6, 7, 8, 9],
+          name: 'Bell pepper',
+          slug: 'poivron',
+        },
+        {
+          ecv: 0.6018473451,
+          months: [3, 4, 5, 6],
+          name: 'Radish',
+          slug: 'radis',
+        },
+        {
+          ecv: 1.7963874969999998,
+          months: [6, 7, 8],
+          name: 'Blackcurrant',
+          slug: 'cassis',
+        },
+        {
+          ecv: 0.8728596140000001,
+          months: [2, 3, 4, 5, 6],
+          name: 'Grapefruit',
+          slug: 'pamplemousse',
+        },
+        {
+          ecv: 1.7875465516999998,
+          months: [6, 7, 8],
+          name: 'Red currant',
+          slug: 'groseille',
+        },
+        {
+          ecv: 0.931394984,
+          months: [6, 7, 8, 9],
+          name: 'Melon',
+          slug: 'melon',
+        },
+        {
+          ecv: 0.7167486917,
+          months: [4, 5, 6],
+          name: 'Rhubarb',
+          slug: 'rhubarbe',
+        },
+        {
+          ecv: 0.5957366917,
+          months: [6, 7, 8, 9],
+          name: 'Peach',
+          slug: 'peche',
+        },
+        {
+          ecv: 1.3353255069999996,
+          months: [6, 7],
+          name: 'Cherry',
+          slug: 'cerise',
+        },
+        {
+          ecv: 0.8806383170000001,
+          months: [6, 7, 8],
+          name: 'Apricot',
+          slug: 'abricot',
+        },
+        {
+          ecv: 1.4750375679,
+          months: [6, 7, 8],
+          name: 'Raspberry',
+          slug: 'framboise',
+        },
+        {
+          ecv: 0.4571093429,
+          months: [6, 7, 8, 9],
+          name: 'Eggplant',
+          slug: 'aubergine',
+        },
+        {
+          ecv: 0.581556477,
+          months: [6, 7, 8, 9],
+          name: 'Tomato',
+          slug: 'tomate',
+        },
+        {
+          ecv: 1.292282106,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Pineapple',
+          slug: 'ananas',
+        },
+        {
+          ecv: 0.8806108929999997,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Banana',
+          slug: 'banane',
+        },
+        {
+          ecv: 1.4804702330000001,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Avocado',
+          slug: 'avocat',
+        },
+        {
+          ecv: 0.89281737,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Passion fruit',
+          slug: 'fruitdelapassion',
+        },
+        {
+          ecv: 0.6414638217000002,
+          months: [6, 7, 8, 9],
+          name: 'Watermelon',
+          slug: 'pasteque',
+        },
+      ],
+      warning:
+        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    })
+  })
 
   test('get specific month', async () => {
     const result = await fetch('http://localhost:3000/api/v1/fruitsetlegumes?month=10')
