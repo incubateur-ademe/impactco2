@@ -61,13 +61,15 @@ const TransportSimulator = () => {
           <button
             className={classNames(styles.tab, { [styles.selectedTab]: selected === 'distance' })}
             onClick={() => setSelected('distance')}
-            data-testid='transport-tab-distance'>
+            data-testid='transport-tab-distance'
+            disabled={selected === 'distance'}>
             {t('distance')}
           </button>
           <button
             className={classNames(styles.tab, { [styles.selectedTab]: selected === 'itineraire' })}
             onClick={() => setSelected('itineraire')}
-            data-testid='transport-tab-itineraire'>
+            data-testid='transport-tab-itineraire'
+            disabled={selected === 'itineraire'}>
             {t('itineraire')}
           </button>
         </div>

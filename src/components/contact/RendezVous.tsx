@@ -4,7 +4,6 @@ import { AxiosResponse } from 'axios'
 import { useSearchParams } from 'next/navigation'
 import React, { FormEvent, useMemo, useState } from 'react'
 import { ZodError } from 'zod'
-import axiosClient from 'utils/axios'
 import { NotionCommand, NotionCommandValidation } from 'utils/notion'
 import IframeableLink from 'components/base/IframeableLink'
 import Button from 'components/base/buttons/Button'
@@ -65,6 +64,7 @@ const RendezVous = () => {
     const body = NotionCommandValidation.safeParse(data)
     if (body.success) {
       try {
+        const axiosClient = (await import('utils/axios')).default
         await axiosClient.post<string, AxiosResponse, NotionCommand>('/api/notion', body.data)
       } catch {
         setError(true)
