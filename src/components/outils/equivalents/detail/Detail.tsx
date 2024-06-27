@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
+import PlusMinus from 'components/outils/plusMinus/PlusMinus'
 import shareableStyles from 'components/shareable/Shareable.module.css'
 import styles from './Detail.module.css'
 import DetailValue from './DetailValue'
@@ -83,15 +84,22 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
   return []
 }
 
-export default function Detail({ equivalent }: { equivalent: Equivalent }) {
+export default function Detail({
+  equivalent,
+  setOverscreen,
+}: {
+  equivalent: Equivalent
+  setOverscreen?: (overScreen: string) => void
+}) {
   const t = useTranslations('equivalent')
+  const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
 
   if (!('ecv' in equivalent) || !equivalent.ecv || equivalent.ecv.length === 0) {
     return null
   }
 
   const fabricationTotal = equivalent.ecv.reduce((acc, current) => acc + current.value, 0)
-  const usage = 'usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears * equivalent.usage.peryear : 0
+  const usage = 'usage' in equivalent && equivalent.usage ? years * equivalent.usage.peryear : 0
   const end = 'end' in equivalent && equivalent.end ? equivalent.end : 0
 
   const total = fabricationTotal + usage + end
@@ -161,7 +169,19 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                     <Label id={item.id} />
                   </td>
                   <td className={styles.percent}>
-                    {withPercent ? <Percentage value={(100 * item.value) / value.value} /> : ' '}
+                    {withPercent ? (
+                      <Percentage value={(100 * item.value) / value.value} />
+                    ) : item.id === 8 ? (
+                      <PlusMinus
+                        label={t('year')}
+                        value={years}
+                        setValue={setYears}
+                        step={0.5}
+                        onClick={setOverscreen ? () => setOverscreen('usage') : undefined}
+                      />
+                    ) : (
+                      ' '
+                    )}
                   </td>
                   <td>
                     <DetailValue unit={unit} value={item.value} />

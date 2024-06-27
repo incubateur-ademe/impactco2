@@ -44,7 +44,7 @@
 }
 
 .percent {
-  @media screen and (max-width: 29.875rem) {
+  @media screen and (max-width: 32.5rem) {
     display: none;
   }
 }

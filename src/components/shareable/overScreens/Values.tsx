@@ -14,6 +14,7 @@ import styles from './Values.module.css'
 const ChauffageData = dynamic(() => import('./Data/ChauffageData'))
 const FruitsEtLegumesData = dynamic(() => import('./Data/FruitsEtLegumesData'))
 const LivraisonData = dynamic(() => import('./Data/LivraisonData'))
+const UsageData = dynamic(() => import('./Data/UsageData'))
 const OsezChangerData = dynamic(() => import('./Data/OsezChangerData'))
 const TransportData = dynamic(() => import('./Data/TransportData'))
 const UsageNumeriqueData = dynamic(() => import('./Data/UsageNumeriqueData'))
@@ -69,6 +70,10 @@ export const overScreenEquivalentValues: (equivalent: ComputedEquivalent) => Rec
   integrer: {
     title: 'integrate',
     children: <Integrate path={equivalent.link} tracking={getName('fr', equivalent)} />,
+  },
+  usage: {
+    title: 'usage',
+    children: <UsageData />,
   },
 })
 

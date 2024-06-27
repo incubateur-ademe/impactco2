@@ -6,6 +6,7 @@
     "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
   },
   "overscreen": {
+    "usage": "Usage",
     "apercu": "APERÇU DU PARTAGE",
     "share": "Partager",
     "integrate": "Intégrer",
@@ -231,6 +232,7 @@
     "total": "SOIT AUTANT D’ÉMISSIONS QUE..."
   },
   "equivalent": {
+    "year": "année[s]",
     "hypotheses": "Hypothèses",
     "fabrication": "Fabrication",
     "usage": "Usage",
