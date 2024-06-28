@@ -9,7 +9,10 @@ import Marianne from './Marianne'
 
 const Logos = ({ small }: { small?: boolean }) => {
   return (
-    <IframeableLink href={buildCurrentUrlFor('/')} className={classNames(styles.logos, { [styles.small]: small })}>
+    <IframeableLink
+      href={buildCurrentUrlFor('/')}
+      className={classNames(styles.logos, { [styles.small]: small })}
+      data-testid='impactco2-logos'>
       <Marianne small={small} />
       <Ademe small={small} />
       <Logo small={small} />
