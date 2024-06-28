@@ -13,7 +13,9 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   await test.step('Shares with no params', async () => {
     await page.getByTestId('header-share-button').click()
 
-    await expect(page.getByTestId('clipboard-box')).toHaveText('http://localhost:3000/outils/transport/itineraire?')
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
+      'http://localhost:3000/outils/transport/itineraire?language=fr'
+    )
     await page.getByTestId('cancel-button').click()
   })
 
@@ -55,7 +57,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&'
+      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&language=fr'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -95,7 +97,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France'
+      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&language=fr'
     )
     await page.getByTestId('cancel-button').click()
   })
