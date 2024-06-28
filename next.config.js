@@ -71,6 +71,7 @@ const images = process.env.NEXT_PUBLIC_IMAGE_URL?.startsWith('https')
     }
 
 const nextConfig = {
+  transpilePackages: ['@tanstack/react-query', '@tanstack/query-core'],
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
