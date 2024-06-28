@@ -11,8 +11,17 @@ const Examples = async ({
   filter: string
 } & Omit<ExamplesListProps, 'examples'>) => {
   const examples = await getExamples()
-
-  return <ExamplesList examples={examples.filter((example) => example.tags.includes(filter))} {...rest} />
+  return (
+    <ExamplesList
+      examples={examples
+        .map((example) => ({
+          ...example,
+          links: example.links.filter((link) => link.tags.includes(filter)),
+        }))
+        .filter((example) => example.links.length > 0)}
+      {...rest}
+    />
+  )
 }
 
 export default Examples

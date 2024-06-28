@@ -25,7 +25,10 @@ const internalPages = [
 ]
 
 export const getMatomoStats = async (date: string) => {
-  const [allVisits, allEventsByCategory, allEventsByAction] = await Promise.all([
+  const lastWeek = new Date(date)
+  lastWeek.setDate(lastWeek.getDate() - 7)
+
+  const [allVisits, allEventsByCategory, allEventsByAction, lastWeekEventsByCategory] = await Promise.all([
     await axios
       .post<
         { label: string; nb_visits: number }[]
@@ -41,9 +44,16 @@ export const getMatomoStats = async (date: string) => {
         { label: string; nb_visits: number }[]
       >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getAction&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits&filter_limit=-1`)
       .then((response) => response.data),
+    await axios
+      .post<
+        { label: string; nb_visits: number; nb_events: number }[]
+      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&format=JSON&module=API&period=week&date=${lastWeek.toISOString().split('T')[0]}&showColumns=nb_visits,nb_events&filter_limit=-1`)
+      .then((response) => response.data),
   ])
 
   const iframes = allEventsByCategory.filter((event) => event.label.startsWith('IFrame_'))
+  const lastWeekIframes = lastWeekEventsByCategory.filter((event) => event.label.startsWith('IFrame_'))
+
   const internalVisits: Record<string, number> = {}
   allVisits.forEach((page) => {
     const segments = page.label.split('?')
@@ -100,6 +110,10 @@ export const getMatomoStats = async (date: string) => {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 3)
       .map(([label, visits]) => ({ label, visits })),
+    newIframe: iframes
+      .filter((iframe) => !lastWeekIframes.find((lastWeek) => lastWeek.label === iframe.label))
+      .sort((a, b) => b.nb_visits - a.nb_visits)
+      .map((event) => ({ label: event.label.replace('IFrame_', ''), visits: event.nb_visits })),
   }
 
   console.log(results)

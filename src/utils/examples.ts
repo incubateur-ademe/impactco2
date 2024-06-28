@@ -42,22 +42,22 @@ export const getExamples = unstable_cache(
           }
 
           const name = result.properties.Nom.title.map((text) => text.plain_text).join('')
-          const links = result.properties.Outil.multi_select.map((tool) => ({
-            href: result.properties.Lien.rich_text.map((text) => text.plain_text).join(''),
-            label: tool.name,
-          }))
+          const url = result.properties.Lien.rich_text.map((text) => text.plain_text).join('')
           const tags = result.properties['Tags site'].multi_select.map((select) => select.name)
+          const links = result.properties.Outil.multi_select.map((tool) => ({
+            href: url,
+            label: tool.name,
+            tags,
+          }))
 
           const example = examples[name]
           if (example) {
             example.links = example.links.concat(links)
-            example.tags = example.tags.concat(tags)
           } else {
             examples[name] = {
               name,
               activity: result.properties.Secteur.select.name,
               logo: result.properties.Logo.files[0].file.url,
-              tags,
               links,
             }
           }
@@ -100,8 +100,9 @@ export const getCommunications = unstable_cache(
       return results.data.results.map((result) => ({
         name: result.properties.Nom.title.map((text) => text.plain_text).join(''),
         logo: result.properties.Logo.files[0].file.url,
-        links: [{ href: result.properties.Lien.rich_text.map((text) => text.plain_text).join(''), label: '' }],
-        tags: [],
+        links: [
+          { href: result.properties.Lien.rich_text.map((text) => text.plain_text).join(''), label: '', tags: [] },
+        ],
         activity: '',
       }))
     } catch (e) {

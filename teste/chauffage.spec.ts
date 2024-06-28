@@ -38,7 +38,7 @@ test('Simulator chauffage', async ({ page }) => {
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=300&theme=night"></script>'
     )
     await expect(page.getByTestId('category-link')).toHaveCount(7)
-    await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('1185')
+    await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('1,185')
   })
 })
 
@@ -50,4 +50,34 @@ test('Simulator chauffage default value', async ({ page }) => {
   await expect(page.getByTestId('input-m2-value')).toHaveValue('150')
   await expect(page.getByTestId('category-link')).toHaveCount(7)
   await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('593')
+})
+
+test('Iframes link are opened in new tab', async ({ page }) => {
+  await test.step('Load page', async () => {
+    await page.goto('/outils/chauffage')
+  })
+
+  let links = page.getByTestId('category-link')
+  let elementsCount = await links.count()
+
+  for (let index = 0; index < elementsCount; index++) {
+    await expect(links.nth(index)).not.toHaveAttribute('target')
+    await expect(links.nth(index)).not.toHaveAttribute('rel')
+  }
+  await expect(page.getByTestId('impactco2-logos').last()).not.toHaveAttribute('rel')
+  await expect(page.getByTestId('impactco2-logos').last()).not.toHaveAttribute('target')
+
+  await test.step('Load iframe', async () => {
+    await page.goto('/iframes/chauffage')
+  })
+
+  links = page.getByTestId('category-link')
+  elementsCount = await links.count()
+
+  for (let index = 0; index < elementsCount; index++) {
+    await expect(links.nth(index)).toHaveAttribute('target', '_blank')
+    await expect(links.nth(index)).toHaveAttribute('rel', 'noreferrer noopener')
+  }
+  await expect(page.getByTestId('impactco2-logos')).toHaveAttribute('target', '_blank')
+  await expect(page.getByTestId('impactco2-logos')).toHaveAttribute('rel', 'noreferrer noopener')
 })
