@@ -46,7 +46,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await angers.click()
   })
 
-  await expect(page.getByTestId('teletravail-generated-value')).toContainText('7289')
+  await expect(page.getByTestId('teletravail-generated-value')).toContainText('7,289')
   await expect(page.getByTestId('etiquette-voiturethermique-value')).toContainText('6,280')
   await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toContainText('188')
   await expect(page.getByTestId('etiquette-streamingvideo-value')).toContainText('21,348')

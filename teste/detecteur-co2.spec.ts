@@ -8,9 +8,11 @@ test('Display detector', async ({ page }) => {
 
   await expect(page.getByRole('alertdialog')).toBeVisible()
   await expect(page.getByLabel('Logo Impact CO2')).toHaveAttribute('href', 'https://impactco2.fr/comparateur?value=100')
+  await expect(page.getByLabel('Logo Impact CO2')).toHaveAttribute('target', '_blank')
+  await expect(page.getByLabel('Logo Impact CO2')).toHaveAttribute('rel', 'noreferrer noopener')
 
-  const value = await page.getByTestId('etiquette-random-value').textContent()
+  const value = await page.locator('.impactCO2-etiquette-value').textContent()
 
   await page.getByRole('button', { name: 'Obtenir une nouvelle' }).click()
-  await expect(page.getByTestId('etiquette-random-value').textContent()).not.toBe(value)
+  await expect(page.locator('.impactCO2-etiquette-value').textContent()).not.toBe(value)
 })
