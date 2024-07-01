@@ -113,6 +113,7 @@ export const getMatomoStats = async (date: string) => {
     newIframe: iframes
       .filter((iframe) => !lastWeekIframes.find((lastWeek) => lastWeek.label === iframe.label))
       .sort((a, b) => b.nb_visits - a.nb_visits)
+      .slice(0, 10)
       .map((event) => ({ label: event.label.replace('IFrame_', ''), visits: event.nb_visits })),
   }
 
