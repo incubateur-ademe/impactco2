@@ -44,8 +44,8 @@
     "category": 13,
     "value": 31.7,
     "fr": "épisode[s] de ;game of thrones en streaming",
-    "en": "Game of Thrones=episode[s] streaming ",
-    "de": "Game of Thrones=Folge[n] Streaming ",
+    "en": "Game of Thrones streaming=episode[s]",
+    "de": "Game of Thrones Streaming=Folge[n]",
     "es": "Episodio[s] de ;Game of Thrones streaming"
   },
   "friends": {
@@ -1140,7 +1140,7 @@
     "category": 5,
     "value": 12139.796272777625,
     "fr": "chemise[s] en viscose",
-    "en": "shirt[s] (visose",
+    "en": "shirt[s] viscose",
     "de": "Hemden Viskose",
     "es": "Camisas de viscosa"
   },

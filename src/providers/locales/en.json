@@ -26,7 +26,7 @@
       "février": "February",
       "mars": "March",
       "avril": "April",
-      "mai": "Mai",
+      "mai": "May",
       "juin": "June",
       "juillet": "July",
       "août": "August",
@@ -104,7 +104,7 @@
   },
   "flds": {
     "label": "Discover fruits and vegetables for the month of",
-    "title": "Discover the carbone impact of fruits of vegetables for this month"
+    "title": "Discover the carbon impact of fruits and vegetables for this month"
   },
   "category-simulator": {
     "passenger": "passenger[s]",
