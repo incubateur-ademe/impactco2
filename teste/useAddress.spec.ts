@@ -7,21 +7,22 @@ test('search for an adress', async () => {
   const result = await searchAddress('6 rue du chemin vert')
 
   expect(result.length).toEqual(15)
-  expect(result[0].geometry.coordinates).toEqual([2.9573404, 49.1788636])
+  expect(result[0].geometry.coordinates).toEqual([4.052435, 49.2461621])
   expect(result[0].properties).toEqual({
-    extent: [2.957282, 49.18005, 2.9573441, 49.17808],
-    type: 'street',
-    osm_type: 'W',
-    osm_key: 'highway',
-    name: 'Rue du Chemin Vert',
-    osm_value: 'residential',
-    postcode: '60620',
-    state: 'Hauts-de-France',
-    osm_id: 108860210,
-    city: 'Bargny',
+    city: 'Reims',
+    county: 'Marne',
+    district: 'Chemin-Vert',
+    housenumber: '6',
+    osm_id: 5857342241,
+    osm_key: 'place',
+    osm_type: 'N',
+    osm_value: 'house',
+    postcode: '51100',
+    state: 'Grand Est',
+    street: 'Rue du Chemin Vert',
+    type: 'house',
     country: 'France',
     countrycode: 'FR',
-    county: 'Oise',
   })
 })
 

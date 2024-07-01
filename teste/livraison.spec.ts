@@ -38,9 +38,9 @@ test('Simulator livraison', async ({ page }) => {
   await page.getByLabel('Oui (transport par avion)').check()
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('225')
 
-  await expect(page.getByTestId('livraison-habits-value')).toHaveText('2698')
+  await expect(page.getByTestId('livraison-habits-value')).toHaveText('2,698')
   await page.getByTestId('input-number-value').fill('3')
-  await expect(page.getByTestId('livraison-habits-value')).toHaveText('8095')
+  await expect(page.getByTestId('livraison-habits-value')).toHaveText('8,095')
   await page.getByTestId('text-select-frequence-type').selectOption('52')
-  await expect(page.getByTestId('livraison-habits-value')).toHaveText('35080')
+  await expect(page.getByTestId('livraison-habits-value')).toHaveText('35,080')
 })

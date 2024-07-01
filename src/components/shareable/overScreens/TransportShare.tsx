@@ -51,10 +51,10 @@ const TransportShare = () => {
         result += `itineraireStart=${itineraire.start.address}&`
       }
       if (itineraire.end) {
-        result += `itineraireEnd=${itineraire.end.address}`
+        result += `itineraireEnd=${itineraire.end.address}&`
       }
     }
-    result += `&language=${language}`
+    result += `language=${language}`
 
     return result
   }, [visibility, selected, distance.km, itineraire.start, itineraire.end, language])

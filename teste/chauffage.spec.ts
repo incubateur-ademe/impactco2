@@ -38,7 +38,7 @@ test('Simulator chauffage', async ({ page }) => {
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=300&theme=night"></script>'
     )
     await expect(page.getByTestId('category-link')).toHaveCount(7)
-    await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('1185')
+    await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('1,185')
   })
 })
 
