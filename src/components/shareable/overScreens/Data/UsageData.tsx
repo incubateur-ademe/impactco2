@@ -9,10 +9,10 @@ const FRUsageData = () => {
       <div className={styles.content}>
         <div>
           Lorsque la durée de vie de l'appareil s'allonge, l'impact de son utilisation augmente aussi. Mais cela veut
-          surtout dire que l'impact de la production <b>s'amortie avec le temps</b>.
+          surtout dire que l'impact de la production <b>s'amortit avec le temps</b>.
         </div>
         <div>
-          Il reste tres important de <b>prendre soin de ses objets</b>, de <b>réparer</b> au lieu d'acheter et d'essayer
+          Il reste très important de <b>prendre soin de ses objets</b>, de <b>réparer</b> au lieu d'acheter et d'essayer
           de <b>prolonger au maximum la durée de vie</b> de ses appareils pour en diminuer l'impact carbone.
         </div>
       </div>

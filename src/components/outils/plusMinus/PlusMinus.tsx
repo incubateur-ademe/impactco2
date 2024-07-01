@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import Image from 'next/image'
 import { SetStateAction } from 'preact/compat'
 import React, { Dispatch } from 'react'
@@ -15,6 +16,7 @@ const PlusMinus = ({
   icon,
   step,
   onClick,
+  className,
 }: {
   value: number
   setValue: Dispatch<SetStateAction<number>>
@@ -23,10 +25,11 @@ const PlusMinus = ({
   icon?: string
   step?: number
   onClick?: () => void
+  className?: string
 }) => {
   const stepValue = step || 1
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, className)}>
       <button
         className={styles.minus}
         onClick={() => setValue(value - stepValue)}

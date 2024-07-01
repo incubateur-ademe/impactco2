@@ -1,17 +1,11 @@
 .table {
   width: 100%;
-
-  thead {
-    border-top: 2px solid var(--primary-30);
-    color: var(--neutral-80);
-    font-weight: 700;
-  }
+  color: var(--neutral-60);
 
   tr {
     border-top: 2px solid var(--primary-30);
   }
 
-  th,
   td {
     padding: 1rem 1.5rem;
 
@@ -24,14 +18,17 @@
     }
   }
 
-  td {
-    color: var(--neutral-60);
-  }
-
   @media screen and (max-width: 29.875rem) {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+}
+
+.main {
+  border-top: 2px solid var(--primary-30);
+  color: var(--neutral-80);
+  font-weight: 700;
+
 }
 
 .icon {
@@ -44,7 +41,11 @@
 }
 
 .percent {
-  @media screen and (max-width: 32.5rem) {
+  @media screen and (max-width: 37rem) {
     display: none;
   }
+}
+
+.usageWidget {
+  width: 13rem;
 }

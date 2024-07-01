@@ -140,11 +140,11 @@ export default function Detail({
     <>
       <div className={shareableStyles.separator} />
       <table className={styles.table}>
-        {values.map((value) => (
-          <Fragment key={value.label}>
-            <thead>
-              <tr>
-                <th>
+        <tbody>
+          {values.map((value) => (
+            <Fragment key={value.label}>
+              <tr className={styles.main}>
+                <td>
                   <Image
                     className={styles.icon}
                     src={`/images/icn-${value.icon || value.label.toLowerCase()}.svg`}
@@ -153,7 +153,7 @@ export default function Detail({
                     alt=''
                   />
                   {t(value.label)}
-                </th>
+                </td>
                 <td className={styles.percent}>
                   {withPercent ? ' ' : <Percentage value={(100 * value.value) / sum} />}
                 </td>
@@ -161,8 +161,6 @@ export default function Detail({
                   <DetailValue unit={unit} value={value.value} />
                 </td>
               </tr>
-            </thead>
-            <tbody>
               {value.values.map((item) => (
                 <tr key={item.id}>
                   <td>
@@ -173,6 +171,7 @@ export default function Detail({
                       <Percentage value={(100 * item.value) / value.value} />
                     ) : item.id === 8 ? (
                       <PlusMinus
+                        className={styles.usageWidget}
                         label={t('year')}
                         value={years}
                         setValue={setYears}
@@ -188,23 +187,34 @@ export default function Detail({
                   </td>
                 </tr>
               ))}
-            </tbody>
-          </Fragment>
-        ))}
-        {!withPercent && (
-          <thead>
-            <tr>
-              <th>
+            </Fragment>
+          ))}
+          {!!years && (
+            <tr className={styles.percent}>
+              <td>
+                <b>Total</b> par année d'utilisation
+              </td>
+              <td> </td>
+              <td>
+                <b>
+                  <DetailValue unit={unit} value={sum / years} />
+                </b>
+              </td>
+            </tr>
+          )}
+          {!withPercent && (
+            <tr className={styles.main}>
+              <td>
                 <Image className={styles.icon} src='/images/icn-total.svg' width={20} height={20} alt='' />
                 {t('total')}
-              </th>
-              <th className={styles.percent}> </th>
-              <th>
+              </td>
+              <td className={styles.percent}> </td>
+              <td>
                 <DetailValue unit={unit} value={sum} />
-              </th>
+              </td>
             </tr>
-          </thead>
-        )}
+          )}
+        </tbody>
       </table>
     </>
   )
