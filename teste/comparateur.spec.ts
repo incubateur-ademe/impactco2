@@ -12,7 +12,7 @@ test('Comparateur', async ({ page }) => {
   await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
   await expect(page.getByTestId('comparateur-abricot-value')).toContainText('114')
-  await expect(page.getByTestId('comparateur-abricot-name')).toContainText("kg d'abricot")
+  await expect(page.getByTestId('comparateur-abricot-name')).toContainText("kg d'Abricot")
 
   await page.getByRole('button', { name: 'Comparer' }).nth(3).click()
   await expect(page.getByTestId('compared-equivalent-value')).toContainText('88.1 kg CO₂e')
@@ -24,7 +24,7 @@ test('Comparateur', async ({ page }) => {
   await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
   await expect(page.getByTestId('comparateur-ail-value')).toContainText('246')
-  await expect(page.getByTestId('comparateur-ail-name')).toContainText("kg d'ail")
+  await expect(page.getByTestId('comparateur-ail-name')).toContainText("kg d'Ail")
 
   await expect(page.getByTestId('etiquette-value').nth(0)).toContainText('88.1')
   await expect(page.getByTestId('etiquette-abricot-value').nth(0)).toContainText('10')
@@ -37,7 +37,7 @@ test('Comparateur', async ({ page }) => {
   await expect(page.getByTestId('etiquette-ail-value').nth(1)).toContainText('246')
   await expect(page.getByTestId('etiquette-ail-name').nth(1)).toContainText("kg d'ail")
 
-  await page.getByLabel("kg d'abricot").fill('5')
+  await page.getByLabel("kg d'Abricot").fill('5')
   await expect(page.getByTestId('compared-equivalent-value')).toContainText('4.4 kg CO₂e')
   await expect(page.getByTestId('comparateur-ail-value')).toContainText('12.3')
   await expect(page.getByTestId('etiquette-value').nth(0)).toContainText('4.4')
@@ -59,26 +59,26 @@ test('Comparateur', async ({ page }) => {
 
   await page.getByTestId('header-integrate-button').nth(0).click()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur" data-search="?value=5&comparisons=ail,tomate&equivalent=abricot&theme=default"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur" data-search="?value=5&comparisons=ail,tomate&equivalent=abricot&language=fr&theme=default"></script>'
   )
 
   await page.locator('label').filter({ hasText: 'Intégrer ma propre comparaison' }).locator('div').nth(1).click()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur" data-search="?theme=default"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur" data-search="?&language=fr&theme=default"></script>'
   )
 
   await page.getByTestId('header-integrate-button').nth(1).click()
   await expect(page.getByTestId('clipboard-box').nth(1)).toContainText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur/etiquette-animee" data-search="?value=4.403191585&comparisons=abricot,ail,tomate&theme=default"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur/etiquette-animee" data-search="?value=4.403191585&comparisons=abricot,ail,tomate&language=fr&theme=default"></script>'
   )
 
   await page.getByTestId('header-integrate-button').nth(2).click()
   await expect(page.getByTestId('clipboard-box').nth(2)).toContainText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur/etiquette" data-search="?value=4.403191585&comparisons=abricot,ail,tomate&theme=default"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur/etiquette" data-search="?value=4.403191585&comparisons=abricot,ail,tomate&language=fr&theme=default"></script>'
   )
 
   await page.getByTestId('cancel-button').nth(0).click()
-  await page.getByRole('button', { name: "kg d'abricot" }).click()
+  await page.getByRole('button', { name: "kg d'Abricot" }).click()
   await expect(page.getByTestId('comparateur-abricot-value')).toContainText('114')
   await expect(page.getByTestId('comparateur-ail-value')).toContainText('279')
 })
