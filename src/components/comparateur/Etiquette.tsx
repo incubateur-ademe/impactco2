@@ -38,17 +38,24 @@ export default forwardRef(function Etiquette(
     }
   }, [comparisons, ref])
 
-  if (animated) {
-    return (
-      <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} animated randomize={randomize} />
-    )
-  }
   return (
     <div ref={ref}>
       {inline ? (
-        <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} randomize={randomize} />
+        <Equivalent
+          language={language}
+          baseValue={baseValue}
+          comparisons={comparisons}
+          randomize={randomize}
+          animated={animated}
+        />
       ) : (
-        <ColumnEquivalent language={language} baseValue={baseValue} comparisons={comparisons} randomize={randomize} />
+        <ColumnEquivalent
+          language={language}
+          baseValue={baseValue}
+          comparisons={comparisons}
+          randomize={randomize}
+          animated={animated}
+        />
       )}
     </div>
   )
