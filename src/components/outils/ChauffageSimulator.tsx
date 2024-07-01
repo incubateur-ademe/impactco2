@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
@@ -17,6 +18,7 @@ const ChauffageSimulator = () => {
     chauffage: { m2, setM2 },
   } = useParamContext()
   const [internalValue, setInternalValue] = useState(m2.toString())
+  const t = useTranslations('chauffage')
 
   useEffect(() => {
     if (internalValue !== m2.toString()) {
@@ -41,7 +43,7 @@ const ChauffageSimulator = () => {
           label='Surface (en m²)'
           unit='m²'
         />
-        Découvrez la quantité de CO₂e que vous émettez pour chauffer cette surface par an
+        {t('title')}
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       {chauffage.equivalents && (

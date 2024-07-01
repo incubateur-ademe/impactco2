@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { fruitsEtLegumes } from 'data/categories/fruitsetlegumes'
+import { getName } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
 
 const validation = z.object({
   month: z.coerce.number().min(1).max(12).optional(),
+  language: z.enum(['fr', 'en']).optional(),
 })
 
 /**
@@ -22,6 +24,13 @@ const validation = z.object({
  *       schema:
  *         type: integer
  *       description: Mois pour lequel récupérer les fruits et légumes de saisons (mois courant par défaut).
+ *     - in: query
+ *       name: language
+ *       default: fr
+ *       schema:
+ *        type: string
+ *        enum: [fr, en]
+ *       description: Langue dans laquelle retourner les noms d'équivalent
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -91,7 +100,7 @@ export async function GET(req: NextRequest) {
         .filter((value) => value.months.includes(month))
         .map((value) => {
           return {
-            name: value.name,
+            name: getName(inputs.data.language || 'fr', value),
             slug: value.slug,
             months: value.months.map((month) => month + 1),
             ecv: computeECV(value),

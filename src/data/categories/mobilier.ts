@@ -1,12 +1,9 @@
 export const mobiliers = [
   {
     id: 26966,
-    name: 'Canapé[s]',
-    subtitle: 'Convertible[s]',
+    subtitle: 'convertible',
     slug: 'canapeconvertible',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -29,12 +26,9 @@ export const mobiliers = [
   },
   {
     id: 26958,
-    name: 'Chaise[s]',
     subtitle: 'En bois',
     slug: 'chaiseenbois',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -57,12 +51,9 @@ export const mobiliers = [
   },
   {
     id: 26961,
-    name: 'Table[s]',
     subtitle: 'En bois',
     slug: 'tableenbois',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -85,12 +76,9 @@ export const mobiliers = [
   },
   {
     id: 26964,
-    name: 'Canapé[s]',
     subtitle: 'Textile',
     slug: 'canapetextile',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -113,11 +101,8 @@ export const mobiliers = [
   },
   {
     id: 26963,
-    name: 'Armoire',
     slug: 'armoire',
     category: 7,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -140,13 +125,9 @@ export const mobiliers = [
   },
   {
     ids: [26970, 26968, 26969],
-    name: 'Lit',
-    subtitle: 'Cadre + sommier + matelas',
     slug: 'lit',
     category: 7,
     total: 115,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,

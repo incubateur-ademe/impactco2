@@ -1,14 +1,21 @@
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
+import { metaDescriptions, metaTitles } from 'utils/meta'
 
-export const metadata: Metadata = {
-  title: `Osez changer | Impact CO₂`,
-  description:
-    'En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on les aidait à désencombrer les placards ? Découvrez le nouveau challenge d’Impact CO2 !',
-  openGraph: {
-    creators: 'ADEME',
-    images: `meta/osez-changer.png`,
-  },
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}): Promise<Metadata> {
+  const language = (searchParams.language as string) || 'fr'
+  return {
+    title: `${metaTitles['osez-changer'][language]} | Impact CO₂`,
+    description: metaDescriptions['osez-changer'][language],
+    openGraph: {
+      creators: 'ADEME',
+      images: `meta/osez-changer-${language}.png`,
+    },
+  }
 }
 
 const page = () => {

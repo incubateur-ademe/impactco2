@@ -1,16 +1,14 @@
 'use client'
 
 import classNames from 'classnames'
-import { LinkProps } from 'next/link'
-import React, { ReactNode, useState } from 'react'
-import { NotionRenderer } from 'react-notion-x'
-import { Collection } from 'react-notion-x/build/third-party/collection'
-import 'react-notion-x/src/styles.css'
+import dynamic from 'next/dynamic'
+import React, { useState } from 'react'
 import { FAQ as FAQType } from 'types/faq'
 import { track } from 'utils/matomo'
-import Link from 'components/base/buttons/Link'
 import PlusIcon from 'components/base/icons/plus'
 import styles from './FAQ.module.css'
+
+const DynamicNotion = dynamic(() => import('../Notion/DynamicNotion'))
 
 const FAQ = ({ faq, page }: { faq: Pick<FAQType, 'title' | 'content'>; page?: string }) => {
   const [display, setDisplay] = useState(false)
@@ -33,20 +31,7 @@ const FAQ = ({ faq, page }: { faq: Pick<FAQType, 'title' | 'content'>; page?: st
       </button>
       {display && (
         <div className={styles.content}>
-          <NotionRenderer
-            recordMap={faq.content}
-            components={{
-              Collection,
-              Link: ({ href, children, ...props }: LinkProps & { children: ReactNode }) => {
-                return (
-                  // @ts-expect-error: notion type error
-                  <Link href={href} {...props} target='_blank' rel='noopener noreferrer'>
-                    {children}
-                  </Link>
-                )
-              },
-            }}
-          />
+          <DynamicNotion recordMap={faq.content} />
         </div>
       )}
     </div>

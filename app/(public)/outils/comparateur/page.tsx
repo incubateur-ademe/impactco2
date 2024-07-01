@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import React from 'react'
 import ComparateurPage from 'components/outils/comparateur/ComparateurPage'
+import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
 
 export async function generateMetadata({
@@ -8,10 +9,10 @@ export async function generateMetadata({
 }: {
   searchParams: { [key: string]: string | string[] | undefined }
 }): Promise<Metadata> {
+  const language = (searchParams.language as string) || 'fr'
   return {
-    title: 'Comparateur carbone | Impact CO₂',
-    description:
-      'Comparer et visualiser facilement une quantité de CO₂e grâce au comparateur d’Impact CO₂ et à ses équivalents pour avoir en tête les bons ordres de grandeur.',
+    title: `${metaTitles.comparateur[language]} | Impact CO₂`,
+    description: metaDescriptions.comparateur[language],
     openGraph: {
       creators: 'ADEME',
       images:

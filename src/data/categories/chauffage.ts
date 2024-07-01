@@ -1,9 +1,6 @@
 export const chauffage = [
   {
     id: 1,
-    name: 'Chauffage au gaz',
-    suffix: ' par m²',
-    prefix: 'année[s] de ',
     slug: 'chauffagegaz',
     category: 8,
     total: 39,
@@ -32,9 +29,6 @@ export const chauffage = [
   },
   {
     id: 2,
-    name: 'Chauffage au fioul',
-    suffix: ' par m²',
-    prefix: 'année[s] de ',
     slug: 'chauffagefioul',
     category: 8,
     total: 57.17,
@@ -61,9 +55,6 @@ export const chauffage = [
   },
   {
     id: 3,
-    name: 'Chauffage électrique',
-    suffix: ' par m²',
-    prefix: 'année[s] de ',
     slug: 'chauffageelectrique',
     category: 8,
     total: 11.85,
@@ -92,9 +83,6 @@ export const chauffage = [
   },
   {
     id: 4,
-    name: 'Chauffage avec une pompe à chaleur',
-    suffix: ' par m²',
-    prefix: 'année[s] de ',
     slug: 'pompeachaleur',
     category: 8,
     total: 3.95,
@@ -123,9 +111,6 @@ export const chauffage = [
   },
   {
     id: 5,
-    name: 'Chauffage avec un poêle à granulés',
-    suffix: ' par m²',
-    prefix: 'année[s] de ',
     slug: 'poeleagranule',
     category: 8,
     total: 5.64,
@@ -154,9 +139,6 @@ export const chauffage = [
   },
   {
     id: 6,
-    name: 'Chauffage avec un poêle à bois',
-    suffix: ' par m²',
-    prefix: 'année[s] de ',
     slug: 'poeleabois',
     category: 8,
     total: 9.2,
@@ -185,9 +167,6 @@ export const chauffage = [
   },
   {
     id: 7,
-    name: 'Chauffage via un réseau de chaleur',
-    suffix: ' par m²',
-    prefix: 'année[s] de ',
     slug: 'reseaudechaleur',
     category: 8,
     total: 18.67,

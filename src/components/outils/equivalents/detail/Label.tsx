@@ -1,14 +1,10 @@
+import { useTranslations } from 'next-intl'
 import React from 'react'
-import { ecv } from 'data/ecv'
 
 const Label = ({ id }: { id: string | number }) => {
-  const currentECV = ecv.find((e) => e.id === id)
+  const t = useTranslations('equivalent.ecv')
 
-  return currentECV ? (
-    <>
-      <span>{currentECV.name}</span>
-    </>
-  ) : null
+  return <span>{t(id.toString())}</span>
 }
 
 export default Label

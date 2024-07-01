@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 import { categories } from 'data/categories'
-import formatName from 'utils/formatName'
+import { getName } from 'utils/Equivalent/equivalent'
 import Link from 'components/base/buttons/Link'
 import { devTools, smallTools } from 'components/cards/tools'
 import pageStyles from './Page.module.css'
@@ -54,7 +54,7 @@ const PlanDuSitePage = () => {
                 <div className={styles.row}>
                   {tool.equivalents.map((equivalent) => (
                     <Link key={equivalent.slug} href={equivalent.link}>
-                      {formatName(equivalent.name, 1, true)}
+                      {getName('fr', equivalent)}
                     </Link>
                   ))}
                 </div>

@@ -2,7 +2,6 @@ import React from 'react'
 import { track } from 'utils/matomo'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import styles from './CustomParam.module.css'
-import shareStyles from './Share.module.css'
 
 const CustomParams = ({
   title,
@@ -20,7 +19,6 @@ const CustomParams = ({
   tracking: string
   trackingType: string
   integration?: boolean
-  withTheme?: boolean
 }) => {
   return (
     <>
@@ -44,12 +42,6 @@ const CustomParams = ({
             }}
           />
         ))}
-      {params.theme && (
-        <>
-          {Object.keys(params).some((param) => param !== 'theme') && <div className={shareStyles.separator} />}
-          <CustomParam tracking={tracking} slug='theme' integration={integration} param={params.theme} visible />
-        </>
-      )}
     </>
   )
 }

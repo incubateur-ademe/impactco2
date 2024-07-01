@@ -1,10 +1,8 @@
 export const deplacements = [
   {
     id: 1,
-    name: 'Avion',
     slug: 'avion',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voler', 'voyager'],
+    synonyms: ['voler'],
     type: 'plane',
     category: 4,
     display: {
@@ -17,7 +15,7 @@ export const deplacements = [
           max: 1000,
         },
         empreinteId: 28130,
-        subtitle: 'Court courrier',
+        subtitle: 'courtcourrier',
         ecv: [
           {
             id: 5,
@@ -39,7 +37,7 @@ export const deplacements = [
           max: 3500,
         },
         empreinteId: 28132,
-        subtitle: 'Moyen courrier',
+        subtitle: 'moyencourrier',
         ecv: [
           {
             id: 5,
@@ -57,7 +55,7 @@ export const deplacements = [
       },
       {
         empreinteId: 28134,
-        subtitle: 'Long courrier',
+        subtitle: 'longcourrier',
         display: {
           min: 3501,
         },
@@ -79,18 +77,11 @@ export const deplacements = [
     ],
     default: true,
     tile: false,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien',
-    include: {
-      pre: 'Taux de remplissage moyen 101-220 passagers',
-      post: "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
-    },
   },
   {
     id: 2,
     empreinteId: 42760,
-    name: 'TGV',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'train'],
+    synonyms: ['train'],
     slug: 'tgv',
     type: 'rail',
     category: 4,
@@ -109,14 +100,11 @@ export const deplacements = [
     display: {
       min: 150,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 3,
     empreinteId: 42756,
-    name: 'Intercités',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'train'],
+    synonyms: ['train'],
     slug: 'intercites',
     type: 'rail',
     category: 4,
@@ -135,14 +123,11 @@ export const deplacements = [
     display: {
       min: 31,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 4,
-    name: 'Voiture',
-    subtitle: 'Moteur thermique',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'conduire', 'voyager'],
+    subtitle: 'Thermique',
+    synonyms: ['conduire'],
     slug: 'voiturethermique',
     carpool: 1,
     type: 'car',
@@ -159,14 +144,11 @@ export const deplacements = [
     ],
     default: true,
     tile: true,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 5,
-    name: 'Voiture',
-    subtitle: 'Moteur électrique',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'conduire', 'voyager'],
+    subtitle: 'Électrique',
+    synonyms: ['conduire'],
     slug: 'voitureelectrique',
     carpool: 1,
     type: 'car',
@@ -183,13 +165,9 @@ export const deplacements = [
     ],
     default: true,
     tile: false,
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 6,
-    name: 'Autocar',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'autocar',
     type: 'car',
     category: 4,
@@ -210,12 +188,10 @@ export const deplacements = [
     display: {
       min: 16,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 7,
-    name: 'Vélo ou marche',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'marcher', 'pedaler'],
+    synonyms: ['marcher', 'pedaler'],
     slug: 'velo',
     type: 'foot',
     category: 4,
@@ -229,9 +205,7 @@ export const deplacements = [
   {
     id: 8,
     empreinteId: 28331,
-    name: 'Vélo (ou trottinette) à assistance électrique',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager', 'pedaler'],
+    synonyms: ['pedaler'],
     slug: 'veloelectrique',
     type: 'foot',
     category: 4,
@@ -250,15 +224,11 @@ export const deplacements = [
     display: {
       max: 30,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 9,
     empreinteId: 28004,
-    name: 'Bus',
-    subtitle: 'Moteur thermique',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
+    subtitle: 'Thermique',
     slug: 'busthermique',
     type: 'car',
     category: 4,
@@ -277,14 +247,10 @@ export const deplacements = [
     display: {
       max: 15,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 10,
     empreinteId: 42761,
-    name: 'Tramway',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'tramway',
     type: 'rail',
     category: 4,
@@ -303,14 +269,11 @@ export const deplacements = [
     display: {
       max: 12,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 11,
     empreinteId: 42757,
-    name: 'Métro',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'rail'],
+    synonyms: ['rail'],
     slug: 'metro',
     type: 'rail',
     category: 4,
@@ -329,14 +292,10 @@ export const deplacements = [
     display: {
       max: 12,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 12,
     empreinteId: 27992,
-    name: 'Scooter ou moto légère',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'scooter',
     type: 'car',
     category: 4,
@@ -355,14 +314,10 @@ export const deplacements = [
     display: {
       max: 50,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 13,
     empreinteId: 27995,
-    name: 'Moto',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'moto',
     type: 'car',
     category: 4,
@@ -381,14 +336,11 @@ export const deplacements = [
     display: {
       min: 51,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 14,
     empreinteId: 42758,
-    name: 'RER ou Transilien',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'train', 'rail'],
+    synonyms: ['train', 'rail'],
     slug: 'rer',
     type: 'rail',
     category: 4,
@@ -408,14 +360,11 @@ export const deplacements = [
       min: 11,
       max: 100,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 15,
     empreinteId: 42759,
-    name: 'TER',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'train', 'rail'],
+    synonyms: ['train', 'rail'],
     slug: 'ter',
     type: 'rail',
     category: 4,
@@ -434,15 +383,11 @@ export const deplacements = [
     display: {
       max: 150,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Ferroviaire2',
   },
   {
     id: 16,
     empreinteId: 28003,
-    name: 'Bus',
-    subtitle: 'Moteur électrique',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
+    subtitle: 'Électrique',
     slug: 'buselectrique',
     type: 'car',
     category: 4,
@@ -461,15 +406,11 @@ export const deplacements = [
     display: {
       max: 15,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
   {
     id: 21,
     empreinteId: 28005,
-    name: 'Bus',
     subtitle: 'GNV',
-    prefix: 'km en ',
-    synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     slug: 'busgnv',
     type: 'car',
     category: 4,
@@ -488,6 +429,5 @@ export const deplacements = [
     display: {
       max: 15,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
   },
 ]

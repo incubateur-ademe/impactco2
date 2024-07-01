@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
 import React, { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
@@ -25,17 +26,19 @@ const UsageForm = ({
     usageNumerique: { situation, setSituation },
   } = useParamContext()
 
+  const t = useTranslations('usage-numerique')
+  const tEquivalent = useTranslations('equivalent.usage-numerique')
   const values = usageNumeriqueConfig[slug]
   return (
     <div className={styles.container}>
       <label htmlFor={`input-main-value-${slug}`}>
-        <b>{values.title}</b> par semaine
+        <b>{t(`${slug}-title`)}</b> {t('by-week')}
       </label>
       <div className={styles.inputs}>
         <div className={styles.firstRow}>
           <NumberInput
             id={`main-value-${slug}`}
-            unit={`${values.unit}${(engineValue ? (situation[engineValue] as number) / 60 : (value as number) > 1) ? 's' : ''}`}
+            unit={`${t(values.unit)}${(engineValue ? (situation[engineValue] as number) / 60 : (value as number) > 1) ? 's' : ''}`}
             value={engineValue ? (situation[engineValue] as number) / 60 : (value as number)}
             setValue={(newValue) => {
               track('Usage numérique', `Input ${slug} value`, newValue.toString())
@@ -46,7 +49,9 @@ const UsageForm = ({
               }
             }}
           />
-          <HiddenLabel htmlFor={`text-select-appareil-${slug}`}>Appareil utilisé pour {values.title}</HiddenLabel>
+          <HiddenLabel htmlFor={`text-select-appareil-${slug}`}>
+            Appareil utilisé pour {tEquivalent(`${slug}-title`)}
+          </HiddenLabel>
           <Select
             id={`appareil-${slug}`}
             value={situation[values.device] as string}
@@ -55,14 +60,14 @@ const UsageForm = ({
               setSituation({ ...situation, [values.device]: event.target.value })
             }}>
             {values.appareils.map((option) => (
-              <option key={option.value} value={`'${option.value}'`}>
-                {option.label}
+              <option key={option} value={`'${option}'`}>
+                {t(option)}
               </option>
             ))}
           </Select>
         </div>
         <div className={styles.secondRow}>
-          <HiddenLabel htmlFor={`text-select-type-${slug}`}>Type de {values.title}</HiddenLabel>
+          <HiddenLabel htmlFor={`text-select-type-${slug}`}>Type d'{tEquivalent(`${slug}-title`)}</HiddenLabel>
           <Select
             id={`type-${slug}`}
             value={situation[values.type] as string}
@@ -71,12 +76,14 @@ const UsageForm = ({
               setSituation({ ...situation, [values.type]: event.target.value })
             }}>
             {values.types.map((option) => (
-              <option key={option.value} value={`'${option.value}'`}>
-                {option.label}
+              <option key={option} value={`'${option}'`}>
+                {t(option.toString().replaceAll('.', ''))}
               </option>
             ))}
           </Select>
-          <HiddenLabel htmlFor={`text-select-network-${slug}`}>Réseaux utilisé pour {values.title}</HiddenLabel>
+          <HiddenLabel htmlFor={`text-select-network-${slug}`}>
+            Réseaux utilisé pour {tEquivalent(`${slug}-title`)}
+          </HiddenLabel>
           <Select
             id={`network-${slug}`}
             value={situation[values.network] as string}
@@ -85,8 +92,8 @@ const UsageForm = ({
               setSituation({ ...situation, [values.network]: event.target.value })
             }}>
             {values.networks.map((option) => (
-              <option key={option.value} value={`'${option.value}'`}>
-                {option.label}
+              <option key={option} value={`'${option}'`}>
+                {t(option)}
               </option>
             ))}
           </Select>

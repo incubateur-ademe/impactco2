@@ -6,6 +6,7 @@ import Etiquette from 'components/comparateur/Etiquette'
 
 const EtiquetteSimulator = ({ animated }: { animated?: boolean }) => {
   const {
+    language,
     comparateur: { baseValue, weight, equivalents, comparedEquivalent },
   } = useParamContext()
   const etiquettes = useMemo(
@@ -19,6 +20,7 @@ const EtiquetteSimulator = ({ animated }: { animated?: boolean }) => {
       comparisons={etiquettes}
       animated={animated}
       ref={ref}
+      language={language}
     />
   )
 }

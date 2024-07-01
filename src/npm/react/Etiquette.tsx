@@ -13,7 +13,7 @@ const Etiquette = ({
   comparisons: string[]
   value: number
   animated?: boolean
-  language?: Language
+  language: Language
 }) => {
   const ref = useRef(null)
   return (

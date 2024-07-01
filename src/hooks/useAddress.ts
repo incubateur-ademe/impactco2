@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
 import { Address } from 'types/address'
 
 const layers = ['city', 'street', 'house']
 
-export const searchAddress = async (search: string, limit?: number) =>
-  axios
+export const searchAddress = async (search: string, limit?: number) => {
+  const axios = (await import('axios')).default
+
+  return axios
     .get<{
       features: Address[]
     }>(
@@ -24,6 +25,7 @@ export const searchAddress = async (search: string, limit?: number) =>
         return 0
       })
     })
+}
 
 export function useSuggestions(search: string, focus: boolean) {
   return useQuery({

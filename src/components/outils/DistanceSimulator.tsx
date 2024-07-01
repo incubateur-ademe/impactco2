@@ -14,7 +14,6 @@ const DistanceSimulator = () => {
   const {
     distance: { km, setKm, displayAll, setDisplayAll },
   } = useParamContext()
-  const tTransport = useTranslations('transport')
   const t = useTranslations('transport.distance')
 
   const { hasMore, equivalents } = useTransportations('Transport distance', 'distance')
@@ -40,8 +39,7 @@ const DistanceSimulator = () => {
         equivalents={equivalents}
         displayAll={displayAll}
         setDisplayAll={hasMore ? setDisplayAll : undefined}
-        displayAllText={tTransport('displayAll')}
-        hideAllText={tTransport('hideAll')}
+        moreText='transport'
         withSimulator
         type='distance'
       />

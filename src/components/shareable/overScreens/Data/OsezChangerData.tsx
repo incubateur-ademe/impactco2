@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -11,7 +14,7 @@ const cuir = category.equivalents?.find((equivalent) => equivalent.slug === 'cha
 const tissu = category.equivalents?.find((equivalent) => equivalent.slug === 'chaussuresentissu') as ComputedEquivalent
 const sport = category.equivalents?.find((equivalent) => equivalent.slug === 'chaussuresdesport') as ComputedEquivalent
 
-const OsezChangerData = () => {
+const FROsezChangerData = () => {
   return (
     <>
       <div>
@@ -46,4 +49,47 @@ const OsezChangerData = () => {
   )
 }
 
+const ENOsezChangerData = () => {
+  return (
+    <>
+      <div>
+        The average carbon impact of a new pair of shoes is <b>17,9 kg CO₂e.</b>
+        <br />
+        <br />
+        We take an average of the three emissions factors from the
+        <Link
+          href='https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Cuir'
+          target='_blank'
+          rel='noreferrer noopener'>
+          Carbon Base
+        </Link>
+        :
+      </div>
+      <div className={styles.cards}>
+        <EquivalentCard equivalent={cuir} />
+        <EquivalentCard equivalent={tissu} />
+        <EquivalentCard equivalent={sport} />
+      </div>
+      <div>
+        Or: (15 + 18,5 + 20,1)/3 = 17,9 kg CO₂e.
+        <br />
+        <br />
+        To know the carbon impact of the number of pairs of new shoes purchased, we therefore do the following
+        calculation:
+        <br />
+        <br />
+        <b>average emission factor of a pair of new shoes * number of pairs of shoes purchased</b>
+      </div>
+    </>
+  )
+}
+
+const OsezChangerData = () => {
+  const { language } = useParamContext()
+  if (language === 'en') {
+    return <ENOsezChangerData />
+  }
+
+  return <FROsezChangerData />
+}
 export default OsezChangerData

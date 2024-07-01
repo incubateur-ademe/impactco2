@@ -7,17 +7,19 @@ const Comparateur = ({
   value,
   comparisons,
   equivalent,
+  language,
 }: {
   value: number
   comparisons: string[]
   equivalent: string | null
+  language: string
 }) => {
   const content = () => {
     if (equivalent) {
-      return <EquivalentItems value={value} comparisons={comparisons} equivalent={equivalent} />
+      return <EquivalentItems value={value} comparisons={comparisons} equivalent={equivalent} language={language} />
     }
 
-    return <Items value={value} comparisons={comparisons} />
+    return <Items value={value} comparisons={comparisons} language={language} />
   }
   return (
     <div
@@ -52,41 +54,79 @@ const Comparateur = ({
           flexDirection: 'column',
           padding: '6.25rem',
         }}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            color: '#110D10',
-            fontSize: '3.375rem',
-            marginBottom: '5.75rem',
-            lineHeight: '4rem',
-            fontWeight: 700,
-          }}>
-          <span>Visualiser facilement</span>
-          <span>une quantité</span>
-          <span>
-            de{' '}
-            <div
-              style={{
-                display: 'flex',
-                backgroundColor: '#E0F4F3',
-                borderRadius: '0.5rem',
-                padding: '0 0.25rem',
-                height: '5rem',
-                margin: '1.25rem 0 0 0.5rem',
-                width: '9.5rem',
-              }}
-            />
-            <div
-              style={{
-                display: 'flex',
-                color: '#13706D',
-                marginLeft: '-9rem',
-              }}>
-              CO₂e
-            </div>
-          </span>
-        </div>
+        {language === 'en' ? (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              color: '#110D10',
+              fontSize: '3.375rem',
+              marginBottom: '5.75rem',
+              lineHeight: '4rem',
+              fontWeight: 700,
+            }}>
+            <span>Compare & visualize</span>
+            <span>
+              easily a{' '}
+              <div
+                style={{
+                  display: 'flex',
+                  backgroundColor: '#E0F4F3',
+                  borderRadius: '0.5rem',
+                  padding: '0 0.25rem',
+                  height: '5rem',
+                  margin: '1.25rem 0 0 0.5rem',
+                  width: '9.5rem',
+                }}
+              />
+              <div
+                style={{
+                  display: 'flex',
+                  color: '#13706D',
+                  marginLeft: '-9rem',
+                }}>
+                CO₂e
+              </div>
+            </span>
+            <span>quantity </span>
+          </div>
+        ) : (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              color: '#110D10',
+              fontSize: '3.375rem',
+              marginBottom: '5.75rem',
+              lineHeight: '4rem',
+              fontWeight: 700,
+            }}>
+            <span>Visualiser facilement</span>
+            <span>une quantité</span>
+            <span>
+              de{' '}
+              <div
+                style={{
+                  display: 'flex',
+                  backgroundColor: '#E0F4F3',
+                  borderRadius: '0.5rem',
+                  padding: '0 0.25rem',
+                  height: '5rem',
+                  margin: '1.25rem 0 0 0.5rem',
+                  width: '9.5rem',
+                }}
+              />
+              <div
+                style={{
+                  display: 'flex',
+                  color: '#13706D',
+                  marginLeft: '-9rem',
+                }}>
+                CO₂e
+              </div>
+            </span>
+          </div>
+        )}
         <Logos />
       </div>
     </div>

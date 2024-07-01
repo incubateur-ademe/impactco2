@@ -1,31 +1,12 @@
 type BaseEquivalent = {
   id?: string | number
-  name: string
   slug: string
   category: number
   default?: boolean
-  include?: { pre: string; post?: string; postNewLine?: string }
-  source?: string
-  prefix?: string
-  suffix?: string
-  subtitle?: string
   synonyms?: string[]
   carpool?: number
   percentage?: boolean
   unit?: string
-  data?: {
-    hypothesis?: string
-    values: {
-      title: string
-      withSource?:
-        | boolean
-        | {
-            label: string
-            href: string
-          }
-      value: string
-    }[]
-  }
 }
 
 type BaseEquivalentValue =
@@ -104,7 +85,7 @@ export type Equivalent =
   | UsageNumeriqueEquivalent
   | FruitsEtLegumesEquivalent
 
-export type ComputedEquivalent = Equivalent & { value: number; link: string }
+export type ComputedEquivalent = Equivalent & { value: number; link: string; name?: string }
 
 export type Language = 'en' | 'fr' | 'de' | 'es'
 export type SimpleEquivalent = {

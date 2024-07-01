@@ -96,7 +96,7 @@ Liste des équivalents à comparer parmis la liste suivante :
   - soda : Litre de soda
   - biere : Litre de bièren
   - laitdevache : Litre de lait (de vache)
-  - laitdesoja : Litre de lait (de soja)
+  - soja : Boisson au lait (de soja)
   - cafe : Litre de café
 - Repas
   - repasavecduboeuf : repas avec du boeuf
@@ -128,7 +128,7 @@ Liste des équivalents à comparer parmis la liste suivante :
   - echalote : kg d'échalote
   - endive : kg d'endive
   - epinard : kg d'épinard
-  - mangue : kg de mangue (importée par avion)
+  - mangue : kg de mangue
   - fenouil : kg de fenouil
   - haricotvert : kg d'haricot vert (cru)
   - laitue : kg de laitue

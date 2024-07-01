@@ -1,14 +1,14 @@
 'use client'
 
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
-import formatName from 'utils/formatName'
+import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
-import Link from 'components/base/buttons/Link'
 import CloseThickIcon from 'components/base/icons/close-thick'
 import LinkIcon from 'components/base/icons/link'
 import Tiles from 'components/comparateur/Tiles'
@@ -18,10 +18,12 @@ import styles from './ComparateurSimulator.module.css'
 
 const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: string) => void }) => {
   const {
+    language,
     comparateur: { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent },
   } = useParamContext()
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
+  const t = useTranslations('comparateur')
 
   return (
     <div>
@@ -31,31 +33,17 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
             id='base-value'
             value={baseValue}
             setValue={setBaseValue}
-            label={
-              comparedEquivalent
-                ? formatName(
-                    (('prefix' in comparedEquivalent && comparedEquivalent.prefix) || '') +
-                      comparedEquivalent.name +
-                      (('suffix' in comparedEquivalent && comparedEquivalent.suffix) || ''),
-                    baseValue
-                  )
-                : 'kg de CO₂'
-            }
+            label={comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue) : t('co2-unit')}
             unit={
               comparedEquivalent ? (
                 <>
-                  {formatName(
-                    (('prefix' in comparedEquivalent && comparedEquivalent.prefix) || '') +
-                      comparedEquivalent.name +
-                      (('suffix' in comparedEquivalent && comparedEquivalent.suffix) || ''),
-                    baseValue
-                  )}
+                  {getName(language, comparedEquivalent, true, baseValue)}
                   <div className={styles.unitIcon}>
                     <CloseThickIcon />
                   </div>
                 </>
               ) : (
-                'kg de CO₂'
+                t('co2-unit')
               )
             }
             onUnitClick={comparedEquivalent ? () => setComparedEquivalent(undefined) : undefined}
@@ -64,14 +52,14 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
         </div>
         {comparedEquivalent ? (
           <div className={styles.description}>
-            C’est{' '}
+            {t('title-bis-1')}{' '}
             <span className={styles.descriptionValue} data-testid='compared-equivalent-value'>
               <LocalNumber number={value} /> {unit} CO₂e
             </span>
-            , soit autant d’émissions que pour fabriquer, consommer ou parcourir...
+            , {t('title-bis-2')}
           </div>
         ) : (
-          'C’est autant d’émissions que pour fabriquer, consommer ou parcourir...'
+          t('title')
         )}
         {comparedEquivalent && (
           <>
@@ -83,14 +71,14 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
               <EquivalentIcon height={2.5} equivalent={comparedEquivalent} />
               <LinkIcon />
             </IframeableLink>
-            <Link
+            <IframeableLink
               target='_blank'
               rel='noopener noreferrer'
               href={comparedEquivalent.link}
               className={styles.equivalentLink}>
-              Voir le détail
+              {t('detail')}
               <LinkIcon />
-            </Link>
+            </IframeableLink>
           </>
         )}
       </div>

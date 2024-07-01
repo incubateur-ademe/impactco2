@@ -9,6 +9,7 @@ const Button = ({
   icon,
   children,
   priority,
+  size,
   ...rest
 }: { size?: 'sm' | 'lg'; priority?: 'outline'; icon?: ReactNode } & ButtonHTMLAttributes<HTMLButtonElement> & {
     asLink?: boolean
@@ -17,7 +18,7 @@ const Button = ({
     <button
       className={classNames(
         asLink ? linkStyles.link : buttonStyles.button,
-        { [buttonStyles.outline]: priority === 'outline' },
+        { [buttonStyles.outline]: priority === 'outline', [buttonStyles.small]: size === 'sm' },
         className
       )}
       {...rest}>

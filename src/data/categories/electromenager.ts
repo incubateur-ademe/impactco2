@@ -1,6 +1,5 @@
 export const electromenager = [
   {
-    name: 'Bouilloire[s]',
     id: 28306,
     slug: 'bouilloire',
     category: 6,
@@ -27,14 +26,11 @@ export const electromenager = [
       defaultyears: 6,
     },
     end: -0.659363081745786,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 9.91,
   },
   {
-    name: 'Cafetière[s]',
     id: 28304,
-    subtitle: 'À dosettes',
+    subtitle: 'pods',
     synonyms: ['nespresso'],
     slug: 'cafetieredosette',
     category: 6,
@@ -61,12 +57,9 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 52.7491626905852,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 22.5,
   },
   {
-    name: 'Cafetière[s]',
     id: 28303,
     subtitle: 'Filtre',
     slug: 'cafetierefiltre',
@@ -94,12 +87,9 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 29.8824988339172,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 31.9,
   },
   {
-    name: 'Cafetière[s]',
     id: 28305,
     subtitle: 'Expresso',
     synonyms: ['espresso'],
@@ -128,12 +118,9 @@ export const electromenager = [
       defaultyears: 5,
     },
     end: 23.9101982705374,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 47.6,
   },
   {
-    name: 'Four',
     id: 26986,
     subtitle: 'Électrique',
     slug: 'fourelectrique',
@@ -161,12 +148,9 @@ export const electromenager = [
       defaultyears: 12,
     },
     end: -30.0927,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 217,
   },
   {
-    name: 'Lave-vaisselle',
     id: 26984,
     slug: 'lavevaisselle',
     category: 6,
@@ -193,14 +177,10 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -22.6301522707884,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 271,
   },
   {
-    name: 'Lave-linge',
     id: 26983,
-    subtitle: '7kg',
     slug: 'lavelinge',
     category: 6,
     ecv: [
@@ -226,12 +206,9 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -47.7754436590173,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 342,
   },
   {
-    name: 'Réfrigérateur',
     id: 26976,
     slug: 'refrigirateur',
     category: 6,
@@ -258,17 +235,12 @@ export const electromenager = [
       defaultyears: 10,
     },
     end: -20.163316975983,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 257,
   },
   {
-    name: 'Aspirateur',
     id: 26990,
     slug: 'aspirateur',
     category: 6,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     ecv: [
       {
         id: 1,
@@ -290,7 +262,6 @@ export const electromenager = [
     total: 47.3,
   },
   {
-    name: 'Climatiseur[s]',
     id: 28325,
     synonyms: ['climatisation'],
     slug: 'climatiseur',
@@ -318,8 +289,6 @@ export const electromenager = [
       defaultyears: 6,
     },
     end: 65.4233854443126,
-    source:
-      'https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
     total: 239,
   },
 ]

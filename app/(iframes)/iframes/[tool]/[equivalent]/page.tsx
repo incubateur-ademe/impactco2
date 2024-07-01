@@ -1,8 +1,8 @@
-import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import React from 'react'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/Equivalent'
+import { equivalentsSimulators } from 'components/outils/equivalents/simulators/equivalentsSimulators'
 
 export async function generateStaticParams() {
   return categories.flatMap((category) =>
@@ -15,27 +15,8 @@ export async function generateStaticParams() {
   )
 }
 
-type Props = { params: { tool: string; equivalent: string } }
-
-export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-  const category = categories.find((category) => category.slug === params.tool)
-
-  if (!category || !category.equivalents) {
-    return parent as Metadata
-  }
-  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === params.equivalent)
-  if (!equivalent) {
-    return parent as Metadata
-  }
-
-  return {
-    title: `${equivalent.name} | Impact CO₂`,
-    description: category.description,
-    openGraph: {
-      creators: 'ADEME',
-      images: `meta/${category.slug}.png`,
-    },
-  }
+type Props = {
+  params: { tool: string; equivalent: string }
 }
 
 const page = ({ params }: Props) => {
@@ -47,7 +28,7 @@ const page = ({ params }: Props) => {
   if (!equivalent) {
     return notFound()
   }
-  return <Equivalent category={category} equivalent={equivalent} />
+  return <Equivalent category={category} equivalent={equivalent} simulator={equivalentsSimulators[equivalent.slug]} />
 }
 
 export default page

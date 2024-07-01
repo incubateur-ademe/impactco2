@@ -1,9 +1,6 @@
 export const fruitsEtLegumes = [
   {
-    name: 'Fraise',
-    prefix: 'kg de ',
     slug: 'fraise',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -24,13 +21,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13014_2#Fraise_de_saison,_crue',
   },
   {
-    name: 'Pomme',
-    prefix: 'kg de ',
     slug: 'pomme',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -51,13 +44,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue',
   },
   {
-    name: 'Orange',
-    prefix: "kg d'",
     slug: 'orange',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -78,13 +67,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13034#Orange,_pulpe,_crue',
   },
   {
-    name: 'Citron',
-    prefix: 'kg de ',
     slug: 'citron',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -105,13 +90,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13009',
   },
   {
-    name: 'Ail',
-    prefix: "kg d'",
     slug: 'ail',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -132,13 +113,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/11000',
   },
   {
-    name: 'Artichaut',
-    prefix: "kg d'",
     slug: 'artichaut',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -159,13 +136,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20052',
   },
   {
-    name: 'Asperge',
-    prefix: "kg d'",
     slug: 'asperge',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -186,13 +159,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [3, 4, 5],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20279',
   },
   {
-    name: 'Betterave',
-    prefix: 'kg de ',
     slug: 'betterave',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -213,13 +182,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20091',
   },
   {
-    name: 'Blette',
-    prefix: 'kg de ',
     slug: 'blette',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -240,13 +205,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8, 9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20004',
   },
   {
-    name: 'Carotte',
-    prefix: 'kg de ',
     slug: 'carotte',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -267,13 +228,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20009',
   },
   {
-    name: 'Céleri',
-    prefix: 'kg de ',
     slug: 'celeri',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -294,13 +251,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru',
   },
   {
-    name: 'Champignon (morille crue)',
-    prefix: 'kg de ',
     slug: 'champignonmorille',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -321,13 +274,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue',
   },
   {
-    name: 'Chou',
-    prefix: 'kg de ',
     slug: 'chou',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -348,13 +297,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru',
   },
   {
-    name: 'Chou de Bruxelles',
-    prefix: 'kg de ',
     slug: 'choudebruxelles',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -375,13 +320,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru',
   },
   {
-    name: 'Chou-fleur',
-    prefix: 'kg de ',
     slug: 'choufleur',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -402,13 +343,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru',
   },
   {
-    name: 'Concombre',
-    prefix: 'kg de ',
     slug: 'concombre',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -429,13 +366,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6, 7, 8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru',
   },
   {
-    name: 'Courge',
-    prefix: 'kg de ',
     slug: 'courge',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -456,13 +389,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue',
   },
   {
-    name: 'Courgette',
-    prefix: 'kg de ',
     slug: 'courgette',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -483,13 +412,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6, 7, 8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue',
   },
   {
-    name: 'Cresson',
-    prefix: 'kg de ',
     slug: 'cresson',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -510,13 +435,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20199',
   },
   {
-    name: 'Échalote',
-    prefix: "kg d'",
     slug: 'echalote',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -537,13 +458,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue',
   },
   {
-    name: 'Endive',
-    prefix: "kg d'",
     slug: 'endive',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -564,13 +481,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue',
   },
   {
-    name: 'Épinard',
-    prefix: "kg d'",
     slug: 'epinard',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -591,14 +504,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20059',
   },
   {
-    name: 'Mangue',
-    subtitle: 'Importée par avion',
-    prefix: 'kg de ',
     slug: 'mangue',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -619,13 +527,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue',
   },
   {
-    name: 'Fenouil',
-    prefix: 'kg de ',
     slug: 'fenouil',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -646,14 +550,10 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [3, 5, 6, 7, 8, 9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru',
   },
   {
-    name: 'Haricot vert',
     subtitle: 'cru',
-    prefix: "kg d'",
     slug: 'haricotvert',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -674,13 +574,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20061_1#Haricot_vert,_cru',
   },
   {
-    name: 'Laitue',
-    prefix: 'kg de ',
     slug: 'laitue',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -701,13 +597,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue',
   },
   {
-    name: 'Mâche',
-    prefix: 'kg de ',
     slug: 'mache',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -728,13 +620,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue',
   },
   {
-    name: 'Navet',
-    prefix: 'kg de ',
     slug: 'navet',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -755,13 +643,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru',
   },
   {
-    name: 'Maïs',
-    prefix: 'kg de ',
     slug: 'mais',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -782,13 +666,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru',
   },
   {
-    name: 'Oignon',
-    prefix: "kg d'",
     slug: 'oignon',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -809,13 +689,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru',
   },
   {
-    name: 'Panais',
-    prefix: 'kg de ',
     slug: 'panais',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -836,13 +712,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru',
   },
   {
-    name: 'Petit pois',
-    prefix: 'kg de ',
     slug: 'petitpois',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -859,13 +731,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [4, 5, 6],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus',
   },
   {
-    name: 'Poireau',
-    prefix: 'kg de ',
     slug: 'poireau',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -886,13 +754,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru',
   },
   {
-    name: 'Poivron',
-    prefix: 'kg de ',
     slug: 'poivron',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -913,13 +777,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru',
   },
   {
-    name: 'Potiron',
-    prefix: 'kg de ',
     slug: 'potiron',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -940,13 +800,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru',
   },
   {
-    name: 'Radis',
-    prefix: 'kg de ',
     slug: 'radis',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -967,13 +823,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [2, 3, 4, 5],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru',
   },
   {
-    name: 'Salsifis',
-    prefix: 'kg de ',
     slug: 'salsifis',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -994,13 +846,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru',
   },
   {
-    name: 'Topinambour',
-    prefix: 'kg de ',
     slug: 'topinambour',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1021,13 +869,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru',
   },
   {
-    name: 'Cassis',
-    prefix: 'kg de ',
     slug: 'cassis',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1048,13 +892,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru',
   },
   {
-    name: 'Châtaigne',
-    prefix: 'kg de ',
     slug: 'chataigne',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1075,13 +915,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue',
   },
   {
-    name: 'Clémentine',
-    prefix: 'kg de ',
     slug: 'clementine',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1102,13 +938,10 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue',
   },
   {
-    name: 'Pamplemousse',
-    prefix: 'kg de ',
     slug: 'pamplemousse',
-    synonyms: ['manger, fruit', 'pomelo'],
+    synonyms: ['pomelo'],
     category: 9,
     ecv: [
       {
@@ -1129,13 +962,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [1, 2, 3, 4, 5],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru',
   },
   {
-    name: 'Coing',
-    prefix: 'kg de ',
     slug: 'coing',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1156,13 +985,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru',
   },
   {
-    name: 'Figue',
-    prefix: 'kg de ',
     slug: 'figue',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1183,13 +1008,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue',
   },
   {
-    name: 'Groseille',
-    prefix: 'kg de ',
     slug: 'groseille',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1210,13 +1031,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue',
   },
   {
-    name: 'Kiwi',
-    prefix: 'kg de ',
     slug: 'kiwi',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1241,13 +1058,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru',
   },
   {
-    name: 'Mandarine',
-    prefix: 'kg de ',
     slug: 'mandarine',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1268,13 +1081,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue',
   },
   {
-    name: 'Melon',
-    prefix: 'kg de ',
     slug: 'melon',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1295,14 +1104,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source:
-      'https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru',
   },
   {
-    name: 'Mûre',
-    prefix: 'kg de ',
     slug: 'mure',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1323,13 +1127,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue',
   },
   {
-    name: 'Nectarine',
-    prefix: 'kg de ',
     slug: 'nectarine',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1350,13 +1150,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue',
   },
   {
-    name: 'Myrtille',
-    prefix: 'kg de ',
     slug: 'myrtille',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1377,13 +1173,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue',
   },
   {
-    name: 'Noisette',
-    prefix: 'kg de ',
     slug: 'noisette',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1404,13 +1196,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8, 9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/15004#Noisette',
   },
   {
-    name: 'Noix',
-    prefix: 'kg de ',
     slug: 'noix',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1435,13 +1223,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche',
   },
   {
-    name: 'Prune',
-    prefix: 'kg de ',
     slug: 'prune',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1462,13 +1246,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue',
   },
   {
-    name: 'Reine Claude',
-    prefix: 'kg de ',
     slug: 'reineclaude',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1489,13 +1269,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue',
   },
   {
-    name: 'Rhubarbe',
-    prefix: 'kg de ',
     slug: 'rhubarbe',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1516,13 +1292,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [3, 4, 5],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue',
   },
   {
-    name: 'Pêche',
-    prefix: 'kg de ',
     slug: 'peche',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1543,13 +1315,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue',
   },
   {
-    name: 'Cerise',
-    prefix: 'kg de ',
     slug: 'cerise',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1574,13 +1342,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue',
   },
   {
-    name: 'Abricot',
-    prefix: "kg d'",
     slug: 'abricot',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1605,13 +1369,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru',
   },
   {
-    name: 'Framboise',
-    prefix: 'kg de ',
     slug: 'framboise',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1632,13 +1392,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue',
   },
   {
-    name: 'Poire',
-    prefix: 'kg de ',
     slug: 'poire',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1659,13 +1415,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue',
   },
   {
-    name: 'Raisin',
-    prefix: 'kg de ',
     slug: 'raisin',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1686,13 +1438,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8, 9],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru',
   },
   {
-    name: 'Aubergine',
-    prefix: "kg d'",
     slug: 'aubergine',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1713,13 +1461,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue',
   },
   {
-    name: 'Brocoli',
-    prefix: 'kg de ',
     slug: 'brocoli',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1740,13 +1484,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [8, 9, 10],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru',
   },
   {
-    name: 'Tomate',
-    prefix: 'kg de ',
     slug: 'tomate',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1767,13 +1507,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/20047_2#Tomate_de_saison,_crue',
   },
   {
-    name: 'Ananas',
-    prefix: "kg d'",
     slug: 'ananas',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1794,13 +1530,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine ',
   },
   {
-    name: 'Banane',
-    prefix: 'kg de ',
     slug: 'banane',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1821,13 +1553,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue',
   },
   {
-    name: 'Avocat',
-    prefix: "kg d'",
     slug: 'avocat',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1848,13 +1576,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru',
   },
   {
-    name: 'Carambole',
-    prefix: 'kg de ',
     slug: 'carambole',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1875,13 +1599,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue',
   },
   {
-    name: 'Datte',
-    prefix: 'kg de ',
     slug: 'datte',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1902,13 +1622,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che',
   },
   {
-    name: 'Fruit de la passion',
-    prefix: 'kg de ',
     slug: 'fruitdelapassion',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1929,14 +1645,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    source:
-      'https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru',
   },
   {
-    name: 'Grenade',
-    prefix: 'kg de ',
     slug: 'grenade',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1957,13 +1668,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue',
   },
   {
-    name: 'Kaki',
-    prefix: 'kg de ',
     slug: 'kaki',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -1984,13 +1691,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 9, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru',
   },
   {
-    name: 'Noix de coco',
-    prefix: 'kg de ',
     slug: 'noixdecoco',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -2015,13 +1718,9 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [0, 1, 10, 11],
-    source: 'https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche',
   },
   {
-    name: 'Pastèque',
-    prefix: 'kg de ',
     slug: 'pasteque',
-    synonyms: ['manger, fruit'],
     category: 9,
     ecv: [
       {
@@ -2042,6 +1741,5 @@ export const fruitsEtLegumes = [
       },
     ],
     months: [5, 6, 7, 8],
-    source: 'https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue',
   },
 ]

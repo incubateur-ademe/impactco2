@@ -17,12 +17,12 @@ describe('transport', () => {
         },
         {
           id: 4,
-          name: 'Voiture (Moteur thermique)',
+          name: 'Voiture thermique',
           value: 19.2,
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 1.9800000000000002,
         },
         {
@@ -51,6 +51,54 @@ describe('transport', () => {
     })
   })
 
+  test('get values for 100 km in english', async () => {
+    const result = await fetch('http://localhost:3000/api/v1/transport?km=100&language=en')
+
+    expect(result.status).toBe(200)
+    const data = await result.json()
+    expect(data).toEqual({
+      data: [
+        {
+          id: 3,
+          name: 'Intercity train',
+          value: 0.58,
+        },
+        {
+          id: 4,
+          name: 'Combustion car',
+          value: 19.2,
+        },
+        {
+          id: 5,
+          name: 'Electric car',
+          value: 1.9800000000000002,
+        },
+        {
+          id: 6,
+          name: 'Coach',
+          value: 2.5,
+        },
+        {
+          id: 13,
+          name: 'Motorcycle',
+          value: 16.48,
+        },
+        {
+          id: 14,
+          name: 'RER or suburban train',
+          value: 0.66,
+        },
+        {
+          id: 15,
+          name: 'Regional train',
+          value: 2.29,
+        },
+      ],
+      warning:
+        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    })
+  })
+
   test('get all values for 100 km', async () => {
     const result = await fetch('http://localhost:3000/api/v1/transport?km=100&displayAll=1')
 
@@ -60,7 +108,7 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion (court courrier)',
+          name: 'Avion court courrier',
           value: 25.82,
         },
         {
@@ -75,12 +123,12 @@ describe('transport', () => {
         },
         {
           id: 4,
-          name: 'Voiture (Moteur thermique)',
+          name: 'Voiture thermique',
           value: 19.2,
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 1.9800000000000002,
         },
         {
@@ -100,7 +148,7 @@ describe('transport', () => {
         },
         {
           id: 9,
-          name: 'Bus (Moteur thermique)',
+          name: 'Bus thermique',
           value: 10.43,
         },
         {
@@ -135,7 +183,7 @@ describe('transport', () => {
         },
         {
           id: 16,
-          name: 'Bus (Moteur électrique)',
+          name: 'Bus électrique',
           value: 0.95,
         },
         {
@@ -158,7 +206,7 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion (court courrier)',
+          name: 'Avion court courrier',
           value: 25.82,
         },
         {
@@ -168,7 +216,7 @@ describe('transport', () => {
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 1.9800000000000002,
         },
       ],
@@ -186,7 +234,7 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion (court courrier)',
+          name: 'Avion court courrier',
           value: 14.12,
         },
       ],
@@ -209,12 +257,12 @@ describe('transport', () => {
         },
         {
           id: 4,
-          name: 'Voiture (Moteur thermique)',
+          name: 'Voiture thermique',
           value: 4.8,
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 0.49500000000000005,
         },
         {
@@ -257,12 +305,12 @@ describe('transport', () => {
         },
         {
           id: 4,
-          name: 'Voiture (Moteur thermique)',
+          name: 'Voiture thermique',
           value: 21.76,
         },
         {
           id: 5,
-          name: 'Voiture (Moteur électrique)',
+          name: 'Voiture électrique',
           value: 10.34,
         },
         {

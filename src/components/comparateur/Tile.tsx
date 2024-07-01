@@ -1,9 +1,10 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React, { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
-import formatName from 'utils/formatName'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -16,7 +17,9 @@ import PlusIcon from 'components/base/icons/plus'
 import styles from './Tile.module.css'
 
 const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
+  const t = useTranslations('comparateur')
   const {
+    language,
     comparateur: { baseValue, weight, setEquivalents, equivalents, setComparedEquivalent },
   } = useParamContext()
 
@@ -28,7 +31,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
       <button
         data-testid='comparateur-tile-close'
         className={styles.close}
-        title={`Supprimer la comparaison avec ${equivalent.name}`}
+        title={`Supprimer la comparaison avec ${getName('fr', equivalent)}`}
         onClick={() => setEquivalents(equivalents.filter((e) => e !== equivalent.slug))}>
         <CloseIcon />
       </button>
@@ -38,18 +41,12 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
           {Number.isFinite(value) ? <LocalNumber number={formatNumber(value)} /> : <InfinityIcon />}
         </div>
         <div className='text-sm' data-testid={`comparateur-${slug}-name`}>
-          {formatName(
-            (('prefix' in equivalent && equivalent.prefix) || '') +
-              equivalent.name +
-              (('suffix' in equivalent && equivalent.suffix) || ''),
-            value
-          )}
-          {'subtitle' in equivalent && equivalent.subtitle && ` (${formatName(equivalent.subtitle, value)})`}
+          {getName(language, equivalent, true, value)}
         </div>
       </div>
       <button
         className={buttonStyles.roundButton}
-        title={`Comparer les valeurs avec ${formatName(equivalent.name, 1)}`}
+        title={`Comparer les valeurs avec ${getName('fr', equivalent)}`}
         onClick={() => {
           track('Comparateur', 'Comparer', equivalent.slug)
           setComparedEquivalent(equivalent)
@@ -67,7 +64,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
         }
       }}>
       <PlusIcon />
-      Ajouter un équivalent
+      {t('add')}
     </button>
   )
 }

@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
-import formatName from 'utils/formatName'
+import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import Equivalent from 'components/metaImages/Equivalent'
 
 export const runtime = 'edge'
@@ -48,13 +48,17 @@ export async function GET(req: NextRequest, context: { params: { slug: string } 
     }))
   }
 
+  const { searchParams } = new URL(req.url)
+  const language = searchParams.get('language') || 'fr'
+
   return new ImageResponse(
     (
       <Equivalent
         slug={equivalent.slug}
-        name={formatName(`${equivalent.name}${equivalent.subtitle ? ` (${equivalent.subtitle})` : ''}`, 1, true)}
+        name={getNameWithoutSuffix(language, equivalent)}
         quantity={equivalent.value}
         unit={equivalent.unit || category.unit || 'unité'}
+        language={language}
       />
     ),
     {

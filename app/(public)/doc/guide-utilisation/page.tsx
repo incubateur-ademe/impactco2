@@ -11,7 +11,8 @@ export const revalidate = getNotionRevalidate()
 
 export const metadata: Metadata = {
   title: `${title} | Impact CO₂`,
-  description: 'Comment utiliser les ressources Impact CO₂.',
+  description:
+    "Découvrir comment utiliser les ressources d’Impact CO₂ et s'en emparer facilement, en tout autonomie, pour les diffuser à sa communauté.",
   openGraph: {
     creators: 'ADEME',
     images: `${process.env.NEXT_PUBLIC_URL}/meta/guide-utilisation.png`,

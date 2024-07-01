@@ -1,5 +1,5 @@
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
-import { computeECV } from 'utils/computeECV'
+import { computeECV } from '../../utils/computeECV'
 
 export const computedEquivalents = (category: string, equivalents: Equivalent[]) =>
   equivalents.map((equivalent) => ({

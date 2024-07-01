@@ -16,7 +16,7 @@ export default forwardRef(function Etiquette(
     comparisons: string[]
     baseValue: string | number
     animated?: boolean
-    language?: Language
+    language: Language
     randomize?: () => void
   },
   ref: ForwardedRef<HTMLDivElement>

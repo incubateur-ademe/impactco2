@@ -4,723 +4,723 @@
     "label": "Aléatoire"
   },
   {
-    "value": "abricot",
-    "label": "Abricot"
-  },
-  {
-    "value": "ail",
-    "label": "Ail"
-  },
-  {
-    "value": "alimentationordinateur",
-    "label": "Alimentation externe (pour ordinateur portable)"
-  },
-  {
-    "value": "alimentationsmartphone",
-    "label": "Alimentation externe (pour smartphone ou tablette)"
-  },
-  {
-    "value": "ananas",
-    "label": "Ananas"
-  },
-  {
-    "value": "armoire",
-    "label": "Armoire"
-  },
-  {
-    "value": "artichaut",
-    "label": "Artichaut"
-  },
-  {
-    "value": "asperge",
-    "label": "Asperge"
-  },
-  {
-    "value": "aspirateur",
-    "label": "Aspirateur"
-  },
-  {
-    "value": "aubergine",
-    "label": "Aubergine"
-  },
-  {
-    "value": "autocar",
-    "label": "Autocar"
-  },
-  {
-    "value": "avioncourtcourrier",
-    "label": "Avion (Court courrier)"
-  },
-  {
-    "value": "avionlongcourrier",
-    "label": "Avion (Long courrier)"
-  },
-  {
-    "value": "avionmoyencourrier",
-    "label": "Avion (Moyen courrier)"
-  },
-  {
-    "value": "avocat",
-    "label": "Avocat"
-  },
-  {
-    "value": "banane",
-    "label": "Banane"
-  },
-  {
-    "value": "betterave",
-    "label": "Betterave"
-  },
-  {
-    "value": "biere",
-    "label": "Bière"
-  },
-  {
-    "value": "blette",
-    "label": "Blette"
-  },
-  {
-    "value": "bouilloire",
-    "label": "Bouilloire"
-  },
-  {
-    "value": "box",
-    "label": "Box"
-  },
-  {
-    "value": "brocoli",
-    "label": "Brocoli"
-  },
-  {
-    "value": "busgnv",
-    "label": "Bus (GNV)"
-  },
-  {
-    "value": "buselectrique",
-    "label": "Bus (Moteur électrique)"
-  },
-  {
-    "value": "busthermique",
-    "label": "Bus (Moteur thermique)"
-  },
-  {
-    "value": "cafe",
-    "label": "Café"
-  },
-  {
-    "value": "cafetieredosette",
-    "label": "Cafetière (À dosettes)"
-  },
-  {
-    "value": "cafetiereexpresso",
-    "label": "Cafetière (Expresso)"
-  },
-  {
-    "value": "cafetierefiltre",
-    "label": "Cafetière (Filtre)"
-  },
-  {
-    "value": "canapeconvertible",
-    "label": "Canapé (Convertible)"
-  },
-  {
-    "value": "canapetextile",
-    "label": "Canapé (Textile)"
-  },
-  {
-    "value": "carambole",
-    "label": "Carambole"
-  },
-  {
-    "value": "carotte",
-    "label": "Carotte"
-  },
-  {
-    "value": "casquevr",
-    "label": "Casque de réalité virtuelle"
-  },
-  {
-    "value": "cassis",
-    "label": "Cassis"
-  },
-  {
-    "value": "celeri",
-    "label": "Céleri"
-  },
-  {
-    "value": "cerise",
-    "label": "Cerise"
-  },
-  {
-    "value": "chaiseenbois",
-    "label": "Chaise (En bois)"
-  },
-  {
-    "value": "champignonmorille",
-    "label": "Champignon (morille crue)"
-  },
-  {
-    "value": "chataigne",
-    "label": "Châtaigne"
-  },
-  {
-    "value": "chauffagefioul",
-    "label": "Chauffage au fioul"
-  },
-  {
-    "value": "chauffagegaz",
-    "label": "Chauffage au gaz"
-  },
-  {
-    "value": "poeleabois",
-    "label": "Chauffage avec un poêle à bois"
-  },
-  {
-    "value": "poeleagranule",
-    "label": "Chauffage avec un poêle à granulés"
-  },
-  {
-    "value": "pompeachaleur",
-    "label": "Chauffage avec une pompe à chaleur"
-  },
-  {
-    "value": "chauffageelectrique",
-    "label": "Chauffage électrique"
-  },
-  {
-    "value": "reseaudechaleur",
-    "label": "Chauffage via un réseau de chaleur"
-  },
-  {
-    "value": "chemiseencoton",
-    "label": "Chemise (En coton)"
-  },
-  {
-    "value": "chemiseenviscose",
-    "label": "Chemise (En viscose)"
-  },
-  {
-    "value": "chou",
-    "label": "Chou"
-  },
-  {
-    "value": "choudebruxelles",
-    "label": "Chou de Bruxelles"
-  },
-  {
-    "value": "choufleur",
-    "label": "Chou-fleur"
-  },
-  {
-    "value": "citron",
-    "label": "Citron"
-  },
-  {
-    "value": "clefusb",
-    "label": "Clef usb"
-  },
-  {
-    "value": "clementine",
-    "label": "Clémentine"
-  },
-  {
-    "value": "climatiseur",
-    "label": "Climatiseur"
-  },
-  {
-    "value": "coing",
-    "label": "Coing"
-  },
-  {
-    "value": "concombre",
-    "label": "Concombre"
-  },
-  {
-    "value": "courge",
-    "label": "Courge"
-  },
-  {
-    "value": "courgette",
-    "label": "Courgette"
-  },
-  {
-    "value": "cresson",
-    "label": "Cresson"
-  },
-  {
-    "value": "datte",
-    "label": "Datte"
-  },
-  {
-    "value": "disquedur",
-    "label": "Disque dur externe"
-  },
-  {
-    "value": "eaudurobinet",
-    "label": "Eau du robinet"
-  },
-  {
-    "value": "eauenbouteille",
-    "label": "Eau en bouteille"
-  },
-  {
-    "value": "echalote",
-    "label": "Échalote"
-  },
-  {
-    "value": "ecran",
-    "label": "Écran d'ordinateur"
-  },
-  {
-    "value": "email",
-    "label": "Email"
-  },
-  {
     "value": "francais",
-    "label": "Empreinte carbone d'un citoyen Français"
-  },
-  {
-    "value": "enceintebluetooth",
-    "label": "Enceinte connectée"
-  },
-  {
-    "value": "endive",
-    "label": "Endive"
-  },
-  {
-    "value": "epinard",
-    "label": "Épinard"
-  },
-  {
-    "value": "game-of-thrones",
-    "label": "Épisode de Game of thrones (en streaming)"
-  },
-  {
-    "value": "fenouil",
-    "label": "Fenouil"
-  },
-  {
-    "value": "figue",
-    "label": "Figue"
-  },
-  {
-    "value": "fourelectrique",
-    "label": "Four (Électrique)"
-  },
-  {
-    "value": "fraise",
-    "label": "Fraise"
-  },
-  {
-    "value": "framboise",
-    "label": "Framboise"
-  },
-  {
-    "value": "fruitdelapassion",
-    "label": "Fruit de la passion"
-  },
-  {
-    "value": "telechargement",
-    "label": "Go de donnée"
-  },
-  {
-    "value": "grenade",
-    "label": "Grenade"
-  },
-  {
-    "value": "groseille",
-    "label": "Groseille"
-  },
-  {
-    "value": "haricotvert",
-    "label": "Haricot vert (cru)"
-  },
-  {
-    "value": "friends",
-    "label": "Intégrale de Friends (en streaming)"
-  },
-  {
-    "value": "intercites",
-    "label": "Intercités"
-  },
-  {
-    "value": "jeans",
-    "label": "Jeans"
-  },
-  {
-    "value": "kaki",
-    "label": "Kaki"
-  },
-  {
-    "value": "kiwi",
-    "label": "Kiwi"
-  },
-  {
-    "value": "laitdesoja",
-    "label": "Lait (De soja)"
-  },
-  {
-    "value": "laitdevache",
-    "label": "Lait (De vache)"
-  },
-  {
-    "value": "laitue",
-    "label": "Laitue"
-  },
-  {
-    "value": "lavelinge",
-    "label": "Lave-linge (7kg)"
-  },
-  {
-    "value": "lavevaisselle",
-    "label": "Lave-vaisselle"
+    "label": "% de l';empreinte carbone d'un citoyen français"
   },
   {
     "value": "voiture-lille-nimes",
-    "label": "Lille - Nîmes (en voiture thermique)"
-  },
-  {
-    "value": "lit",
-    "label": "Lit (Cadre + sommier + matelas)"
-  },
-  {
-    "value": "mache",
-    "label": "Mâche"
-  },
-  {
-    "value": "mais",
-    "label": "Maïs"
-  },
-  {
-    "value": "mandarine",
-    "label": "Mandarine"
-  },
-  {
-    "value": "mangue",
-    "label": "Mangue (Importée par avion)"
-  },
-  {
-    "value": "manteau",
-    "label": "Manteau"
-  },
-  {
-    "value": "melon",
-    "label": "Melon"
-  },
-  {
-    "value": "metro",
-    "label": "Métro"
-  },
-  {
-    "value": "moto",
-    "label": "Moto"
-  },
-  {
-    "value": "mure",
-    "label": "Mûre"
-  },
-  {
-    "value": "myrtille",
-    "label": "Myrtille"
-  },
-  {
-    "value": "navet",
-    "label": "Navet"
-  },
-  {
-    "value": "nectarine",
-    "label": "Nectarine"
-  },
-  {
-    "value": "noisette",
-    "label": "Noisette"
-  },
-  {
-    "value": "noix",
-    "label": "Noix"
-  },
-  {
-    "value": "noixdecoco",
-    "label": "Noix de coco"
-  },
-  {
-    "value": "oignon",
-    "label": "Oignon"
-  },
-  {
-    "value": "orange",
-    "label": "Orange"
-  },
-  {
-    "value": "ordinateurfixeparticulier",
-    "label": "Ordinateur fixe sans écran (particulier)"
-  },
-  {
-    "value": "ordinateurfixeprofessionnel",
-    "label": "Ordinateur fixe sans écran (professionnel)"
-  },
-  {
-    "value": "ordinateurportable",
-    "label": "Ordinateur portable"
-  },
-  {
-    "value": "chaussuresdesport",
-    "label": "Paire de chaussures (De sport)"
-  },
-  {
-    "value": "chaussuresencuir",
-    "label": "Paire de chaussures (En cuir)"
-  },
-  {
-    "value": "chaussuresentissu",
-    "label": "Paire de chaussures (En tissu)"
-  },
-  {
-    "value": "pamplemousse",
-    "label": "Pamplemousse"
-  },
-  {
-    "value": "panais",
-    "label": "Panais"
+    "label": "A/R;lille - nîmes en voiture"
   },
   {
     "value": "tgv-paris-berlin",
-    "label": "Paris - Berlin (en TGV)"
+    "label": "A/R;paris - berlin en tgv"
   },
   {
     "value": "tgv-paris-marseille",
-    "label": "Paris - Marseille (en TGV)"
+    "label": "A/R;paris - marseille en tgv"
   },
   {
     "value": "avion-pny",
-    "label": "Paris - New-York (en avion)"
+    "label": "A/R;paris - new-york en avion"
   },
   {
-    "value": "pasteque",
-    "label": "Pastèque"
+    "value": "alimentationordinateur",
+    "label": "alimentation[s] externe[s] pour ordinateur portable"
   },
   {
-    "value": "peche",
-    "label": "Pêche"
+    "value": "alimentationsmartphone",
+    "label": "alimentation[s] externe[s] pour smartphone ou tablette"
   },
   {
-    "value": "petitpois",
-    "label": "Petit pois"
+    "value": "chauffagefioul",
+    "label": "année[s] de;chauffage au fioul"
   },
   {
-    "value": "poire",
-    "label": "Poire"
+    "value": "chauffagegaz",
+    "label": "année[s] de;chauffage au gaz"
   },
   {
-    "value": "poireau",
-    "label": "Poireau"
+    "value": "poeleabois",
+    "label": "année[s] de;chauffage avec un poêle à bois"
   },
   {
-    "value": "poivron",
-    "label": "Poivron"
+    "value": "poeleagranule",
+    "label": "année[s] de;chauffage avec un poêle à granulés"
   },
   {
-    "value": "polo",
-    "label": "Polo"
+    "value": "pompeachaleur",
+    "label": "année[s] de;chauffage avec une pompe à chaleur"
   },
   {
-    "value": "pomme",
-    "label": "Pomme"
+    "value": "chauffageelectrique",
+    "label": "année[s] de;chauffage électrique"
   },
   {
-    "value": "potiron",
-    "label": "Potiron"
+    "value": "reseaudechaleur",
+    "label": "année[s] de;chauffage via un réseau de chaleur"
   },
   {
-    "value": "prune",
-    "label": "Prune"
+    "value": "armoire",
+    "label": "armoire"
   },
   {
-    "value": "pullenacrylique",
-    "label": "Pull (En acrylique)"
+    "value": "aspirateur",
+    "label": "aspirateur"
   },
   {
-    "value": "pullencotonrecycle",
-    "label": "Pull (En coton recyclé)"
+    "value": "bouilloire",
+    "label": "bouilloire[s]"
   },
   {
-    "value": "pullenlaine",
-    "label": "Pull (En laine)"
+    "value": "box",
+    "label": "box[s]"
   },
   {
-    "value": "radis",
-    "label": "Radis"
+    "value": "cafetieredosette",
+    "label": "cafetière[s] à dosettes"
   },
   {
-    "value": "raisin",
-    "label": "Raisin"
+    "value": "cafetiereexpresso",
+    "label": "cafetière[s] expresso"
   },
   {
-    "value": "rechercheweb",
-    "label": "Recherche sur le web"
+    "value": "cafetierefiltre",
+    "label": "cafetière[s] filtre"
   },
   {
-    "value": "refrigirateur",
-    "label": "Réfrigérateur"
+    "value": "canapeconvertible",
+    "label": "canapé[s] convertible[s]"
   },
   {
-    "value": "reineclaude",
-    "label": "Reine Claude"
+    "value": "canapetextile",
+    "label": "canapé[s] en textile"
   },
   {
-    "value": "repasavecduboeuf",
-    "label": "Repas avec du boeuf"
+    "value": "casquevr",
+    "label": "casque[s] de réalité virtuelle"
   },
   {
-    "value": "repasavecdupoissonblanc",
-    "label": "Repas avec du poisson blanc"
+    "value": "chaiseenbois",
+    "label": "chaise[s] en bois"
   },
   {
-    "value": "repasavecdupoissongras",
-    "label": "Repas avec du poisson gras"
+    "value": "chemiseencoton",
+    "label": "chemise[s] en coton"
   },
   {
-    "value": "repasavecdupoulet",
-    "label": "Repas avec du poulet"
+    "value": "chemiseenviscose",
+    "label": "chemise[s] en viscose"
   },
   {
-    "value": "repasvegetalien",
-    "label": "Repas végétalien"
+    "value": "clefusb",
+    "label": "clef[s] usb"
   },
   {
-    "value": "repasvegetarien",
-    "label": "Repas végétarien"
+    "value": "climatiseur",
+    "label": "climatiseur[s]"
   },
   {
-    "value": "rer",
-    "label": "RER ou Transilien"
+    "value": "disquedur",
+    "label": "disque[s] dur[s] externe[s]"
   },
   {
-    "value": "rhubarbe",
-    "label": "Rhubarbe"
+    "value": "ecran",
+    "label": "écran[s] d'ordinateur"
   },
   {
-    "value": "robeencoton",
-    "label": "Robe (En coton)"
+    "value": "email",
+    "label": "email"
   },
   {
-    "value": "robeenpolyester",
-    "label": "Robe (En polyester)"
+    "value": "enceintebluetooth",
+    "label": "enceinte[s] connectée[s]"
   },
   {
-    "value": "robeenviscose",
-    "label": "Robe (En viscose)"
+    "value": "game-of-thrones",
+    "label": "épisode[s] de;game of thrones en streaming"
   },
   {
-    "value": "salsifis",
-    "label": "Salsifis"
+    "value": "fourelectrique",
+    "label": "four électrique"
   },
   {
-    "value": "scooter",
-    "label": "Scooter ou moto légère"
-  },
-  {
-    "value": "smartphone",
-    "label": "Smartphone"
-  },
-  {
-    "value": "soda",
-    "label": "Soda"
-  },
-  {
-    "value": "spam",
-    "label": "Spam (Non lu)"
-  },
-  {
-    "value": "stockagedonnee",
-    "label": "Stocker un Go de donnée (Pendant 1 an)"
+    "value": "telechargement",
+    "label": "go de donnée"
   },
   {
     "value": "streamingvideo",
-    "label": "Streaming vidéo"
-  },
-  {
-    "value": "sweatencoton",
-    "label": "Sweat (En coton)"
-  },
-  {
-    "value": "tshirtencoton",
-    "label": "T-shirt (En coton)"
-  },
-  {
-    "value": "tshirtenpolyester",
-    "label": "T-shirt (En polyester)"
-  },
-  {
-    "value": "tableenbois",
-    "label": "Table (En bois)"
-  },
-  {
-    "value": "tabletteclassique",
-    "label": "Tablette"
-  },
-  {
-    "value": "telephonebasique",
-    "label": "Téléphone basique"
-  },
-  {
-    "value": "television",
-    "label": "Télévision "
-  },
-  {
-    "value": "ter",
-    "label": "TER"
-  },
-  {
-    "value": "tgv",
-    "label": "TGV"
-  },
-  {
-    "value": "the",
-    "label": "Thé"
-  },
-  {
-    "value": "tomate",
-    "label": "Tomate"
-  },
-  {
-    "value": "topinambour",
-    "label": "Topinambour"
-  },
-  {
-    "value": "tramway",
-    "label": "Tramway"
-  },
-  {
-    "value": "veloelectrique",
-    "label": "Vélo (ou trottinette) à assistance électrique"
-  },
-  {
-    "value": "velo",
-    "label": "Vélo ou marche"
-  },
-  {
-    "value": "vesteimpermeable",
-    "label": "Veste imperméable"
-  },
-  {
-    "value": "vestesimilicuir",
-    "label": "Veste simili-cuir"
-  },
-  {
-    "value": "vin",
-    "label": "Vin"
+    "label": "Heure[s] de;streaming vidéo"
   },
   {
     "value": "visioconference",
-    "label": "Visioconférence"
+    "label": "Heure[s] de;visioconférence"
+  },
+  {
+    "value": "friends",
+    "label": "intégrale[s] de friends en streaming"
+  },
+  {
+    "value": "jeans",
+    "label": "jeans"
+  },
+  {
+    "value": "abricot",
+    "label": "kg d'abricot"
+  },
+  {
+    "value": "ail",
+    "label": "kg d'ail"
+  },
+  {
+    "value": "ananas",
+    "label": "kg d'ananas"
+  },
+  {
+    "value": "artichaut",
+    "label": "kg d'artichaut"
+  },
+  {
+    "value": "asperge",
+    "label": "kg d'asperge"
+  },
+  {
+    "value": "aubergine",
+    "label": "kg d'aubergine"
+  },
+  {
+    "value": "avocat",
+    "label": "kg d'avocat"
+  },
+  {
+    "value": "echalote",
+    "label": "kg d'échalote"
+  },
+  {
+    "value": "endive",
+    "label": "kg d'endive"
+  },
+  {
+    "value": "epinard",
+    "label": "kg d'épinard"
+  },
+  {
+    "value": "haricotvert",
+    "label": "kg d'haricot vert (cru)"
+  },
+  {
+    "value": "oignon",
+    "label": "kg d'oignon"
+  },
+  {
+    "value": "orange",
+    "label": "kg d'orange"
+  },
+  {
+    "value": "banane",
+    "label": "kg de;banane"
+  },
+  {
+    "value": "betterave",
+    "label": "kg de;betterave"
+  },
+  {
+    "value": "blette",
+    "label": "kg de;blette"
+  },
+  {
+    "value": "brocoli",
+    "label": "kg de;brocoli"
+  },
+  {
+    "value": "carambole",
+    "label": "kg de;carambole"
+  },
+  {
+    "value": "carotte",
+    "label": "kg de;carotte"
+  },
+  {
+    "value": "cassis",
+    "label": "kg de;cassis"
+  },
+  {
+    "value": "celeri",
+    "label": "kg de;céleri"
+  },
+  {
+    "value": "cerise",
+    "label": "kg de;cerise"
+  },
+  {
+    "value": "champignonmorille",
+    "label": "kg de;champignon (morille crue)"
+  },
+  {
+    "value": "chataigne",
+    "label": "kg de;châtaigne"
+  },
+  {
+    "value": "chou",
+    "label": "kg de;chou"
+  },
+  {
+    "value": "choudebruxelles",
+    "label": "kg de;chou de bruxelles"
+  },
+  {
+    "value": "choufleur",
+    "label": "kg de;chou-fleur"
+  },
+  {
+    "value": "citron",
+    "label": "kg de;citron"
+  },
+  {
+    "value": "clementine",
+    "label": "kg de;clémentine"
+  },
+  {
+    "value": "coing",
+    "label": "kg de;coing"
+  },
+  {
+    "value": "concombre",
+    "label": "kg de;concombre"
+  },
+  {
+    "value": "courge",
+    "label": "kg de;courge"
+  },
+  {
+    "value": "courgette",
+    "label": "kg de;courgette"
+  },
+  {
+    "value": "cresson",
+    "label": "kg de;cresson"
+  },
+  {
+    "value": "datte",
+    "label": "kg de;datte"
+  },
+  {
+    "value": "fenouil",
+    "label": "kg de;fenouil"
+  },
+  {
+    "value": "figue",
+    "label": "kg de;figue"
+  },
+  {
+    "value": "fraise",
+    "label": "kg de;fraise"
+  },
+  {
+    "value": "framboise",
+    "label": "kg de;framboise"
+  },
+  {
+    "value": "fruitdelapassion",
+    "label": "kg de;fruit de la passion"
+  },
+  {
+    "value": "grenade",
+    "label": "kg de;grenade"
+  },
+  {
+    "value": "groseille",
+    "label": "kg de;groseille"
+  },
+  {
+    "value": "kaki",
+    "label": "kg de;kaki"
+  },
+  {
+    "value": "kiwi",
+    "label": "kg de;kiwi"
+  },
+  {
+    "value": "laitue",
+    "label": "kg de;laitue"
+  },
+  {
+    "value": "mache",
+    "label": "kg de;mâche"
+  },
+  {
+    "value": "mais",
+    "label": "kg de;maïs"
+  },
+  {
+    "value": "mandarine",
+    "label": "kg de;mandarine"
+  },
+  {
+    "value": "mangue",
+    "label": "kg de;mangue"
+  },
+  {
+    "value": "melon",
+    "label": "kg de;melon"
+  },
+  {
+    "value": "mure",
+    "label": "kg de;mûre"
+  },
+  {
+    "value": "myrtille",
+    "label": "kg de;myrtille"
+  },
+  {
+    "value": "navet",
+    "label": "kg de;navet"
+  },
+  {
+    "value": "nectarine",
+    "label": "kg de;nectarine"
+  },
+  {
+    "value": "noisette",
+    "label": "kg de;noisette"
+  },
+  {
+    "value": "noix",
+    "label": "kg de;noix"
+  },
+  {
+    "value": "noixdecoco",
+    "label": "kg de;noix de coco"
+  },
+  {
+    "value": "pamplemousse",
+    "label": "kg de;pamplemousse"
+  },
+  {
+    "value": "panais",
+    "label": "kg de;panais"
+  },
+  {
+    "value": "pasteque",
+    "label": "kg de;pastèque"
+  },
+  {
+    "value": "peche",
+    "label": "kg de;pêche"
+  },
+  {
+    "value": "petitpois",
+    "label": "kg de;petit pois"
+  },
+  {
+    "value": "poire",
+    "label": "kg de;poire"
+  },
+  {
+    "value": "poireau",
+    "label": "kg de;poireau"
+  },
+  {
+    "value": "poivron",
+    "label": "kg de;poivron"
+  },
+  {
+    "value": "pomme",
+    "label": "kg de;pomme"
+  },
+  {
+    "value": "potiron",
+    "label": "kg de;potiron"
+  },
+  {
+    "value": "prune",
+    "label": "kg de;prune"
+  },
+  {
+    "value": "radis",
+    "label": "kg de;radis"
+  },
+  {
+    "value": "raisin",
+    "label": "kg de;raisin"
+  },
+  {
+    "value": "reineclaude",
+    "label": "kg de;reine claude"
+  },
+  {
+    "value": "rhubarbe",
+    "label": "kg de;rhubarbe"
+  },
+  {
+    "value": "salsifis",
+    "label": "kg de;salsifis"
+  },
+  {
+    "value": "tomate",
+    "label": "kg de;tomate"
+  },
+  {
+    "value": "topinambour",
+    "label": "kg de;topinambour"
+  },
+  {
+    "value": "autocar",
+    "label": "km en;autocar"
+  },
+  {
+    "value": "busgnv",
+    "label": "km en;bus (gnv)"
+  },
+  {
+    "value": "buselectrique",
+    "label": "km en;bus électrique"
+  },
+  {
+    "value": "busthermique",
+    "label": "km en;bus thermique"
+  },
+  {
+    "value": "intercites",
+    "label": "km en;intercités"
+  },
+  {
+    "value": "metro",
+    "label": "km en;métro"
+  },
+  {
+    "value": "moto",
+    "label": "km en;moto"
+  },
+  {
+    "value": "rer",
+    "label": "km en;rer ou transilien"
+  },
+  {
+    "value": "scooter",
+    "label": "km en;scooter ou moto légère"
+  },
+  {
+    "value": "ter",
+    "label": "km en;ter"
+  },
+  {
+    "value": "tgv",
+    "label": "km en;tgv"
+  },
+  {
+    "value": "tramway",
+    "label": "km en;tramway"
+  },
+  {
+    "value": "veloelectrique",
+    "label": "km en;vélo (ou trottinette) à assistance électrique"
   },
   {
     "value": "voitureelectrique",
-    "label": "Voiture (Moteur électrique)"
+    "label": "km en;voiture électrique"
   },
   {
     "value": "voiturethermique",
-    "label": "Voiture (Moteur thermique)"
+    "label": "km en;voiture thermique"
+  },
+  {
+    "value": "lavelinge",
+    "label": "lave-linge"
+  },
+  {
+    "value": "lavevaisselle",
+    "label": "lave-vaisselle"
+  },
+  {
+    "value": "lit",
+    "label": "lit"
+  },
+  {
+    "value": "eaudurobinet",
+    "label": "Litre[s] d';eau du robinet"
+  },
+  {
+    "value": "eauenbouteille",
+    "label": "Litre[s] d';eau en bouteille"
+  },
+  {
+    "value": "biere",
+    "label": "Litre[s] de;bière"
+  },
+  {
+    "value": "soja",
+    "label": "Litre[s] de;boisson au soja"
+  },
+  {
+    "value": "cafe",
+    "label": "Litre[s] de;café"
+  },
+  {
+    "value": "laitdevache",
+    "label": "Litre[s] de;lait de vache"
+  },
+  {
+    "value": "soda",
+    "label": "Litre[s] de;soda"
+  },
+  {
+    "value": "the",
+    "label": "Litre[s] de;thé"
+  },
+  {
+    "value": "vin",
+    "label": "Litre[s] de;vin"
+  },
+  {
+    "value": "manteau",
+    "label": "manteau[x]"
+  },
+  {
+    "value": "ordinateurfixeparticulier",
+    "label": "ordinateur[s] fixe[s] sans écran (particulier)"
+  },
+  {
+    "value": "ordinateurfixeprofessionnel",
+    "label": "ordinateur[s] fixe[s] sans écran (professionnel)"
+  },
+  {
+    "value": "ordinateurportable",
+    "label": "ordinateur[s] portable[s]"
+  },
+  {
+    "value": "chaussuresdesport",
+    "label": "paire[s] de chaussures de sport"
+  },
+  {
+    "value": "chaussuresencuir",
+    "label": "paire[s] de chaussures en cuir"
+  },
+  {
+    "value": "chaussuresentissu",
+    "label": "paire[s] de chaussures en tissu"
+  },
+  {
+    "value": "polo",
+    "label": "polo[s]"
+  },
+  {
+    "value": "pullenacrylique",
+    "label": "pull[s] en acrylique"
+  },
+  {
+    "value": "pullencotonrecycle",
+    "label": "pull[s] en coton recyclé"
+  },
+  {
+    "value": "pullenlaine",
+    "label": "pull[s] en laine"
+  },
+  {
+    "value": "rechercheweb",
+    "label": "recherche[s] sur le web"
+  },
+  {
+    "value": "refrigirateur",
+    "label": "réfrigérateur"
+  },
+  {
+    "value": "repasavecduboeuf",
+    "label": "repas avec du boeuf"
+  },
+  {
+    "value": "repasavecdupoissonblanc",
+    "label": "repas avec du poisson blanc"
+  },
+  {
+    "value": "repasavecdupoissongras",
+    "label": "repas avec du poisson gras"
+  },
+  {
+    "value": "repasavecdupoulet",
+    "label": "repas avec du poulet"
+  },
+  {
+    "value": "repasvegetalien",
+    "label": "repas végétalien[s]"
+  },
+  {
+    "value": "repasvegetarien",
+    "label": "repas végétarien[s]"
+  },
+  {
+    "value": "robeencoton",
+    "label": "robe[s] en coton"
+  },
+  {
+    "value": "robeenpolyester",
+    "label": "robe[s] en polyester"
+  },
+  {
+    "value": "robeenviscose",
+    "label": "robe[s] en viscose"
+  },
+  {
+    "value": "smartphone",
+    "label": "smartphone[s]"
+  },
+  {
+    "value": "spam",
+    "label": "spam"
+  },
+  {
+    "value": "stockagedonnee",
+    "label": "stocker un go de donnée"
+  },
+  {
+    "value": "sweatencoton",
+    "label": "sweat[s] en coton"
+  },
+  {
+    "value": "tshirtencoton",
+    "label": "t-shirt[s] en coton"
+  },
+  {
+    "value": "tshirtenpolyester",
+    "label": "t-shirt[s] en polyester"
+  },
+  {
+    "value": "tableenbois",
+    "label": "table[s] en bois"
+  },
+  {
+    "value": "tabletteclassique",
+    "label": "tablette[s]"
+  },
+  {
+    "value": "telephonebasique",
+    "label": "téléphone[s] basique[s]"
+  },
+  {
+    "value": "television",
+    "label": "télévision[s] "
+  },
+  {
+    "value": "avion-courtcourrier",
+    "label": "TODO"
+  },
+  {
+    "value": "avion-moyencourrier",
+    "label": "TODO"
+  },
+  {
+    "value": "avion-longcourrier",
+    "label": "TODO"
+  },
+  {
+    "value": "velo",
+    "label": "vélo ou marche"
+  },
+  {
+    "value": "vesteimpermeable",
+    "label": "veste[s] imperméable[s]"
+  },
+  {
+    "value": "vestesimilicuir",
+    "label": "veste[s] simili-cuir"
   }
 ]
