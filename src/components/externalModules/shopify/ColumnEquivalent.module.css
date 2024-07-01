@@ -11,13 +11,40 @@
 
 .leftContent {
   flex: 1;
+  padding: 0.75rem 0.75rem 1rem 0.75rem;
+}
+
+.comparison,
+.visibleAnimatedComparison,
+.animatedComparison {
   padding: 0.75rem;
 }
 
 .comparison {
-  padding: 0.75rem;
-
   &:not(:last-child) {
     border-bottom: 2px solid var(--primary-30);
   }
+}
+
+.animatedComparisonsColumn {
+  display: grid;
+  grid-template: 1/fr / 1fr;
+}
+
+.visibleAnimatedComparison,
+.animatedComparison {
+  grid-column: 1 / 1 !important;
+  grid-row: 1 / 1 !important;
+  width: max-content !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 1000ms ease-in-out;
+  margin: 0.25rem 10px 0 -10px !important;
+}
+
+.visibleAnimatedComparison {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
