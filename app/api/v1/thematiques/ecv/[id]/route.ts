@@ -2,12 +2,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { z } from 'zod'
 import { categories } from 'data/categories'
+import { getName } from 'utils/Equivalent/equivalent'
 import { computeFootprint } from 'utils/computeECV'
 import { trackAPIRequest } from 'utils/middleware'
 
 const categoryValidation = z.object({
   id: z.string(),
   detail: z.coerce.number().int().min(0).max(1).optional().transform(Boolean),
+  language: z.enum(['fr', 'en']).optional(),
 })
 
 /**
@@ -123,6 +125,13 @@ const categoryValidation = z.object({
  *         type: integer
  *         enum: [0, 1]
  *       description: Si 1, retourne le détail du calcul de l'ecv. Sinon retourne uniquement le total
+ *     - in: query
+ *       name: language
+ *       default: fr
+ *       schema:
+ *        type: string
+ *        enum: [fr, en]
+ *       description: Langue dans laquelle retourner les noms d'équivalent
  *     responses:
  *       405:
  *         description: Mauvais type de requete HTTP
@@ -154,8 +163,10 @@ export async function GET(req: NextRequest, context: { params: { id: string } })
   const inputs = categoryValidation.safeParse({
     ...context.params,
     detail: searchParams.get('detail'),
+    language: searchParams.get('language') || 'fr',
   })
   if (!inputs.success) {
+    console.log(inputs.error)
     return NextResponse.json(inputs.error, { status: 400 })
   }
 
@@ -185,7 +196,7 @@ export async function GET(req: NextRequest, context: { params: { id: string } })
               }
             : {}
           return {
-            name: equivalent.name,
+            name: getName(inputs.data.language || 'fr', equivalent),
             slug: equivalent.slug,
             ecv: equivalent.value,
             ...detailedECV,

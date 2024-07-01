@@ -8,7 +8,7 @@ import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { deplacements } from 'data/categories/deplacement'
-import formatName from 'utils/formatName'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import useItineraries from 'hooks/useItineraries'
@@ -28,6 +28,7 @@ const transports = (categories.find((category) => category.slug === 'transport')
 const TeletravailSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
   const {
+    language,
     teletravail: {
       start,
       setStart,
@@ -83,7 +84,7 @@ const TeletravailSimulator = () => {
         <div className={styles.transportMode}>
           <Select
             className={styles.select}
-            label='Pour vous rendre au travail'
+            label={t('mode')}
             required
             id='mode'
             value={transport}
@@ -93,7 +94,7 @@ const TeletravailSimulator = () => {
             }}>
             {deplacements.map((deplacement) => (
               <option key={deplacement.slug} value={deplacement.slug}>
-                {formatName(`${deplacement.name}${deplacement.subtitle ? ` (${deplacement.subtitle})` : ''}`, 1, true)}
+                {getName(language, deplacement)}
               </option>
             ))}
           </Select>
@@ -104,11 +105,11 @@ const TeletravailSimulator = () => {
         <div className={itineraireStyles.days}>
           <div className={styles.days}>
             <label htmlFor='input-presentiel-value'>
-              <b>Présentiel</b> par semaine
+              <b>{t('presentiel')}</b> {t('per-week')}
             </label>
             <NumberInput
               id='presentiel-value'
-              unit={presentiel === 1 ? 'jour' : 'jours'}
+              unit={`${t('day')}${presentiel === 1 ? '' : 's'}`}
               value={presentiel}
               setValue={(value) => {
                 track('Télétravail', 'Présentiel', value.toString())
@@ -120,11 +121,11 @@ const TeletravailSimulator = () => {
           </div>
           <div className={styles.days}>
             <label htmlFor='input-teletravail-value'>
-              <b>Télétravail</b> par semaine
+              <b>{t('teletravail')}</b> {t('per-week')}
             </label>
             <NumberInput
               id='teletravail-value'
-              unit={presentiel === 1 ? 'jour' : 'jours'}
+              unit={`${t('day')}${presentiel === 4 ? '' : 's'}`}
               value={5 - presentiel}
               setValue={(value) => {
                 track('Télétravail', 'Télétravail', value.toString())
@@ -140,42 +141,44 @@ const TeletravailSimulator = () => {
         <>
           <div className={styles.results}>
             <div className={styles.values}>
-              <div className={styles.header}>VOUS GÉNÉREZ</div>
+              <div className={styles.header}>{t('generate')}</div>
               <div className={styles.value}>
                 <span className={styles.number} data-testid='teletravail-generated-value'>
                   <LocalNumber number={formatNumber(total * presentiel)} />
                 </span>{' '}
                 kg co₂e
               </div>
-              <div>par an</div>
-              <div>en vous déplaçant {presentiel} jours / semaine</div>
+              <div>{t('per-year')}</div>
+              <div>
+                {t('work')} {presentiel} {`${t('day')}${presentiel === 1 ? '' : 's'}`} / {t('week')}
+              </div>
             </div>
             <div className={styles.values}>
-              <div className={styles.header}>VOUS ÉCONOMISEZ</div>
+              <div className={styles.header}>{t('saved')}</div>
               <div className={styles.greenValue}>
                 <span className={styles.number}>
                   <LocalNumber number={formatNumber(0.75 * (5 - presentiel) * total)} />
                 </span>{' '}
                 kg co₂e
               </div>
-              <div>par an</div>
-              <div>en télétravaillant {5 - presentiel} jours / semaine</div>
+              <div>{t('per-year')}</div>
+              {t('home')} {5 - presentiel} {`${t('day')}${presentiel === 4 ? '' : 's'}`} / {t('week')}
             </div>
           </div>
           <div>
             <div className={styles.values}>
-              <div className={styles.header}>SOIT</div>
+              <div className={styles.header}>{t('or')}</div>
               <div className={styles.greenValue}>
                 <span className={styles.number}>
                   <LocalNumber number={formatNumber((0.75 * (5 - presentiel) * total) / 99)} />
                 </span>{' '}
                 %
               </div>
-              <div>d'économisé sur votre empreinte carbone annuelle</div>
+              <div>{t('economised')}</div>
             </div>
           </div>
           <div className={styles.etiquette}>
-            <div className={styles.header}>CE QUI CORRESPOND À..</div>
+            <div className={styles.header}>{t('total')}</div>
             <Etiquette
               baseValue={0.75 * (5 - presentiel) * total * 1000}
               comparisons={equivalents}
@@ -184,6 +187,7 @@ const TeletravailSimulator = () => {
                 track('Télétravail', 'Randomize', 'randomize')
                 setEquivalents(getRandomEquivalents(undefined, 3))
               }}
+              language={language}
             />
           </div>{' '}
         </>

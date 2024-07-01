@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query'
-import axiosClient from 'utils/axios'
 import { CallGMapDistances } from 'utils/gmaps'
 import { track } from 'utils/matomo'
 
@@ -13,7 +12,7 @@ export type Point = {
 export default function useItineraries(start: Point | undefined, end: Point | undefined, tracking: string) {
   return useQuery({
     queryKey: [start || '', end || ''],
-    queryFn: () => {
+    queryFn: async () => {
       if (!start || !end) {
         return null
       }
@@ -22,6 +21,7 @@ export default function useItineraries(start: Point | undefined, end: Point | un
         track(`Transport ${tracking}`, 'Recherche', `${start.city}-${end.city}`)
       }
 
+      const axiosClient = (await import('utils/axios')).default
       return axiosClient
         .post<CallGMapDistances>('/api/callGMap', {
           destinations: {

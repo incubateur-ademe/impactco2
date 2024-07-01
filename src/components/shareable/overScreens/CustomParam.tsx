@@ -58,11 +58,6 @@ const configs: Record<
   },
 }
 
-const arrayConfigs: Record<string, string> = {
-  situation: '[ACTION] ma propre simulation',
-  comparateur: '[ACTION] ma propre comparaison',
-}
-
 export type CustomParamValue =
   | {
       value: string | number
@@ -199,7 +194,6 @@ const CustomParam = ({
     )
   }
 
-  const config = arrayConfigs[slug]
   return (
     <div className={styles.container}>
       {setVisible && (
@@ -207,7 +201,7 @@ const CustomParam = ({
           color='secondary'
           checked={visible}
           setChecked={setVisible}
-          label={config.replace('[ACTION]', integration ? 'Intégrer' : 'Partager')}
+          label={`${t(integration ? 'integrate' : 'share')} ${t(slug)}`}
           data-testid={`custom-param-${slug}-checkbox`}
         />
       )}

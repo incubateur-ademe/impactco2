@@ -12,14 +12,6 @@ const onError = (error: IntlError) => {
   }
   console.error(error)
 }
-const getMessageFallback = ({ namespace, key }: { key: string; namespace?: string | undefined }) => {
-  if (namespace === 'equivalent') {
-    if (key.startsWith('subtitle-')) {
-      return ''
-    }
-  }
-  return `${namespace}.${key}`
-}
 
 const TranslationProvider = ({ children }: { children: ReactNode }) => {
   const { language } = useParamContext()
@@ -29,7 +21,6 @@ const TranslationProvider = ({ children }: { children: ReactNode }) => {
       locale={language === 'fr' ? 'fr-FR' : 'en-EN'}
       messages={language === 'fr' ? french : english}
       timeZone='Europe/Paris'
-      getMessageFallback={getMessageFallback}
       onError={onError}>
       {children}
     </NextIntlClientProvider>

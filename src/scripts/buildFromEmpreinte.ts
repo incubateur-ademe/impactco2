@@ -1,11 +1,11 @@
 import axios from 'axios'
 import fs from 'fs'
-import deplacement from '../data/categories/deplacement.json'
-import electromenager from '../data/categories/electromenager.json'
-import habillement from '../data/categories/habillement.json'
-import mobilier from '../data/categories/mobilier.json'
-import numerique from '../data/categories/numerique.json'
-import repas from '../data/categories/repas.json'
+import deplacement from '../data/categories/deplacement.old.json'
+import electromenager from '../data/categories/electromenager.old.json'
+import habillement from '../data/categories/habillement.old.json'
+import mobilier from '../data/categories/mobilier.old.json'
+import numerique from '../data/categories/numerique.old.json'
+import repas from '../data/categories/repas.old.json'
 import { UsableEquivalent } from '../../types/equivalent'
 
 const existingEquivalentsByCategory: Record<string, { file: string; values: UsableEquivalent[] }> = {

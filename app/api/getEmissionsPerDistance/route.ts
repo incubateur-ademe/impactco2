@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
         respObj.map((transportation) => {
           let response = {
             id: transportation.id,
-            name: `${transportation.name}${transportation.subtitle ? ` (${transportation.subtitle})` : ''}`,
+            name: transportation.name,
             emissions: transportation.emissions,
           }
           for (const field of fields) {

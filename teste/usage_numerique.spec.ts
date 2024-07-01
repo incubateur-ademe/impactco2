@@ -46,16 +46,18 @@ test('Update share and integrate values when modifying parameters', async ({ pag
   await page.getByTestId('text-select-network-email').selectOption("'mobile FR'")
   await expect(page.getByTestId('usagenumerique-generated-value')).toContainText('2.74')
 
-  await expect(page.getByTestId('category-visioconference')).toContainText('1 an de visioconférences (468 heures)')
+  await expect(page.getByTestId('category-visioconference')).toContainText(
+    '1 an de visioconférences - 468 heures7.07 kg CO₂e'
+  )
   await expect(page.getByTestId('category-visioconference-value')).toContainText('7.07')
-  await expect(page.getByTestId('category-email')).toContainText("1 an d'email (7800 emails)")
+  await expect(page.getByTestId('category-email')).toContainText("1 an d'email - 7800 emails44.6 kg CO₂e")
   await expect(page.getByTestId('category-email-value')).toContainText('44.6')
-  await expect(page.getByTestId('category-streamingvideo')).toContainText('1 an de streaming (520 heures)')
+  await expect(page.getByTestId('category-streamingvideo')).toContainText('1 an de streaming - 520 heures90.7 kg CO₂e')
   await expect(page.getByTestId('category-streamingvideo-value')).toContainText('90.7')
 
   await page.getByTestId('header-share-button').click()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    "http://localhost:3000/outils/usagenumerique?emails=150&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille='5.075'&email . terminaux . temps écriture=3&email . destinataires=1&streaming . durée=600&streaming . appareil='tablette'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=540&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='audio'"
+    "http://localhost:3000/outils/usagenumerique?emails=150&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille='5.075'&email . terminaux . temps écriture=3&email . destinataires=1&streaming . durée=600&streaming . appareil='tablette'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=540&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='audio'&language=fr"
   )
   await page.getByTestId('custom-param-situation-checkbox').getByRole('img').click()
   await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/outils/usagenumerique')
@@ -63,11 +65,11 @@ test('Update share and integrate values when modifying parameters', async ({ pag
 
   await page.getByTestId('header-integrate-button').click()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    "<script name=\"impact-co2\" src=\"http://localhost:3000/iframe.js\" data-type=\"usagenumerique\" data-search=\"?emails=150&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille='5.075'&email . terminaux . temps écriture=3&email . destinataires=1&streaming . durée=600&streaming . appareil='tablette'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=540&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='audio'&theme=default\"></script>"
+    "<script name=\"impact-co2\" src=\"http://localhost:3000/iframe.js\" data-type=\"usagenumerique\" data-search=\"?emails=150&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille='5.075'&email . terminaux . temps écriture=3&email . destinataires=1&streaming . durée=600&streaming . appareil='tablette'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=540&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='audio'&language=fr&theme=default\"></script>"
   )
   await page.getByTestId('custom-param-situation-checkbox').getByRole('img').click()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="usagenumerique" data-search="?theme=default"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="usagenumerique" data-search="?&language=fr&theme=default"></script>'
   )
 })
 

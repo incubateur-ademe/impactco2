@@ -1,8 +1,10 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React, { useMemo, useRef } from 'react'
 import useLivraisonContext from 'src/providers/LivraisonProvider'
 import useParamContext from 'src/providers/ParamProvider'
+import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
@@ -23,6 +25,7 @@ const LivraisonSimulator = () => {
   const { engine } = useLivraisonContext()
 
   const {
+    language,
     livraison: {
       values,
       setValues,
@@ -64,37 +67,38 @@ const LivraisonSimulator = () => {
     return zeroKmCO2 + diffPlane + diffKm0
   }, [values, isHabit, isPlane])
 
+  const t = useTranslations('livraison')
   return (
     <>
       <div className={styles.simulator}>
         <Select
           className={styles.fullSelect}
           id='livraison-produit'
-          label='Vous commandez...'
+          label={t('produit')}
           required
           value={values.produit}
           onChange={(event) => {
             track('Livraison', 'Produit', event.target.value)
             setValues({ ...values, produit: event.target.value })
           }}>
-          <option value='grande consommation'>Produits de grande consommation (aliments, épicerie, boissons…)</option>
-          <option value='habillement'>Habillement (vêtements, chaussures, accessoires…)</option>
-          <option value='culturel'>Produits culturels (CD, livres, DVD…)</option>
-          <option value='équipements volumineux'>Mobilier et gros électroménager</option>
+          <option value='grande consommation'>{t('grande consommation')}</option>
+          <option value='habillement'>{t('habillement')}</option>
+          <option value='culturel'>{t('culturel')}</option>
+          <option value='équipements volumineux'>{t('équipements volumineux')}</option>
         </Select>
         <Select
           className={styles.fullSelect}
           id='livraison-retrait'
-          label='Que vous faites livrer en...'
+          label={t('retrait')}
           required
           value={values.retrait}
           onChange={(event) => {
             track('Livraison', 'Mode', event.target.value)
             setValues({ ...values, retrait: event.target.value })
           }}>
-          <option value='domicile'>Livraison à domicile</option>
-          <option value='point de retrait'>Point relais</option>
-          <option value='click and collect'>Click & collect</option>
+          <option value='domicile'>{t('domicile')}</option>
+          <option value='point de retrait'>{t('point de retrait')}</option>
+          <option value='click and collect'>{t('click and collect')}</option>
         </Select>
         {values.retrait !== 'domicile' && (
           <>
@@ -102,12 +106,12 @@ const LivraisonSimulator = () => {
               required
               id='radio-trajet'
               label={`${
-                values.retrait === 'point de retrait' ? 'Le point relais' : 'Le click & collect'
-              } est t'il sur votre trajet habituel ?`}>
+                values.retrait === 'point de retrait' ? t('point-de-retrait') : t('click-and-collect')
+              } ${t('trajet')}`}>
               <RadioInput
                 name='radio-trajet'
                 required
-                label='Non'
+                label={t('no')}
                 value='no'
                 selected={isHabit ? 'yes' : 'no'}
                 setSelected={() => {
@@ -118,7 +122,7 @@ const LivraisonSimulator = () => {
               <RadioInput
                 name='radio-trajet'
                 required
-                label='Oui'
+                label={t('yes')}
                 value='yes'
                 selected={isHabit ? 'yes' : 'no'}
                 setSelected={() => {
@@ -129,7 +133,7 @@ const LivraisonSimulator = () => {
             </Radio>
             {!isHabit && (
               <div className={styles.formRow}>
-                <label htmlFor='input-km-value'>Pour aller au point relais, vous parcourez...</label>
+                <label htmlFor='input-km-value'>{t('km')}</label>
                 <div className={styles.inputs}>
                   <NumberInput
                     id='km-value'
@@ -148,12 +152,12 @@ const LivraisonSimulator = () => {
                       track('Livraison', 'Transport', event.target.value)
                       setValues({ ...values, relay: event.target.value })
                     }}>
-                    <option value='voiture thermique'>En voiture</option>
-                    <option value='voiture électrique'>En voiture électrique</option>
-                    <option value='marche'>Marche</option>
-                    <option value='vélo'>à vélo</option>
-                    <option value='petit véhicule électrique'>à vélo électrique</option>
-                    <option value='commun'>En transport en commun</option>
+                    <option value='voiture thermique'>{t('voiture thermique')}</option>
+                    <option value='voiture électrique'>{t('voiture électrique')}</option>
+                    <option value='marche'>{t('marche')}</option>
+                    <option value='vélo'>{t('vélo')}</option>
+                    <option value='petit véhicule électrique'>{t('petit véhicule électrique')}</option>
+                    <option value='commun'>{t('commun')}</option>
                   </Select>
                 </div>
               </div>
@@ -164,7 +168,7 @@ const LivraisonSimulator = () => {
           <RadioInput
             name='radio-plane'
             required
-            label='Non'
+            label={t('no')}
             value='no'
             selected={isPlane ? 'yes' : 'no'}
             setSelected={() => {
@@ -175,7 +179,7 @@ const LivraisonSimulator = () => {
           <RadioInput
             name='radio-plane'
             required
-            label='Oui (transport par avion)'
+            label={t('yes-plane')}
             value='yes'
             selected={isPlane ? 'yes' : 'no'}
             setSelected={() => {
@@ -186,7 +190,7 @@ const LivraisonSimulator = () => {
         </Radio>
       </div>
       <div className={styles.results}>
-        <div className={styles.header}>LA LIVRAISON DE VOTRE COLIS GÉNÈRE</div>
+        <div className={styles.header}>{t('generate')}</div>
         <div className={styles.value}>
           <span className={styles.number} data-testid='livraison-colis-value'>
             <LocalNumber number={formatNumber(total / 1000)} />
@@ -195,7 +199,7 @@ const LivraisonSimulator = () => {
         </div>
       </div>
       <div className={styles.etiquette}>
-        <div className={styles.header}>CE QUI CORRESPOND À..</div>
+        <div className={styles.header}>{t('total')}</div>
         <Etiquette
           baseValue={total}
           comparisons={equivalents}
@@ -204,16 +208,17 @@ const LivraisonSimulator = () => {
             track('Livraison', 'Randomize', 'randomize')
             setEquivalents(getRandomEquivalents(undefined, 3))
           }}
+          language={language}
         />
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       <div className={styles.simulator}>
         <div className={styles.formRow}>
-          <label htmlFor='input-number-value'>En moyenne, vous passez ce type de commande...</label>
+          <label htmlFor='input-number-value'>{t('mean')}</label>
           <div className={styles.inputs}>
             <NumberInput
               id='number-value'
-              unit='fois'
+              unit={formatName(t('mean-unit'), number)}
               value={number}
               setValue={(value) => {
                 track('Livraison', 'Commande', value.toString())
@@ -228,22 +233,22 @@ const LivraisonSimulator = () => {
                 track('Livraison', 'Frequence', event.target.value)
                 setFrequence(Number(event.target.value))
               }}>
-              <option value={1}>Par an</option>
-              <option value={12}>Par mois</option>
-              <option value={52}>Par semaine</option>
+              <option value={1}>{t('1')}</option>
+              <option value={12}>{t('12')}</option>
+              <option value={52}>{t('52')}</option>
             </Select>
           </div>
         </div>
       </div>
       <div className={styles.results}>
-        <div className={styles.header}>VOS HABITUDES DE LIVRAISON GÉNÈRENT</div>
+        <div className={styles.header}>{t('habits')}</div>
         <div className={styles.value}>
           <span className={styles.number} data-testid='livraison-habits-value'>
             <LocalNumber number={formatNumber((total * number * frequence) / 1000)} />
           </span>{' '}
           kg co₂e
         </div>
-        <div>par année</div>
+        <div>{t('year')}</div>
       </div>
     </>
   )

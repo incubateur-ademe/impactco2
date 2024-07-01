@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
@@ -8,21 +9,17 @@ import styles from './Question.module.css'
 
 const Question = ({
   slug,
-  title,
-  description,
   value,
   setValue,
   extra,
 }: {
   slug: string
-  title: string
-  description: string
   value: number | undefined
   setValue: Dispatch<SetStateAction<number | undefined>>
   extra?: string | boolean
 }) => {
   const [internalValue, setInternalValue] = useState('')
-
+  const t = useTranslations('osez-changer')
   useEffect(() => {
     setValue(internalValue === '' ? undefined : Number(internalValue))
   }, [internalValue])
@@ -31,15 +28,15 @@ const Question = ({
     <div className={styles.container}>
       <div className={styles.header}>
         <label htmlFor={`input-${slug}`}>
-          {title}
+          {t(slug)}
           <br />
-          <span className={styles.description}>{description}</span>
+          <span className={styles.description}>{t(`${slug}-description`)}</span>
         </label>
         {extra && <div className={styles.tag}>{extra}</div>}
       </div>
       <Input
         id={slug}
-        unit={formatName('paire[s]', value || 2)}
+        unit={formatName(t('paire'), value || 2)}
         value={internalValue}
         onChange={(event) => {
           track('OsezChanger', slug, event.target.value)

@@ -1,4 +1,5 @@
 import React from 'react'
+import TranslationProvider from 'src/providers/TranslationProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import EquivalentCardContent from '../outils/equivalents/EquivalentCardContent'
@@ -13,7 +14,9 @@ const EquivalentCard = ({ equivalent }: { equivalent?: ComputedEquivalent }) => 
       href={equivalent.link}
       className={styles.equivalent}
       data-testid={`equivalent-search-${equivalent.slug}`}>
-      <EquivalentCardContent equivalent={equivalent} category={category} />
+      <TranslationProvider>
+        <EquivalentCardContent equivalent={equivalent} category={category} />
+      </TranslationProvider>
     </IframeableLink>
   ) : (
     <div className={styles.empty} data-testid='equivalent-search-empty' />

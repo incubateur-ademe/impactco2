@@ -1,8 +1,9 @@
 import React from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
 
-const FruitsEtLegumesData = () => {
+const FRFruitsEtLegumesData = () => {
   return (
     <>
       <div className={styles.content}>
@@ -31,4 +32,40 @@ const FruitsEtLegumesData = () => {
   )
 }
 
+const ENFruitsEtLegumesData = () => {
+  return (
+    <>
+      <div className={styles.content}>
+        <div>
+          All calculations come from the <Link href='https://agribalyse.ademe.fr/'>Agrybalise</Link> database
+        </div>
+      </div>
+      <div className={styles.title}>Eat seasonal fruits</div>
+      <div className={styles.content}>
+        <div>
+          This tool allows you to visualize <b>seasonal fruits and vegetables</b> for each month of the year and their
+          impact when produced in the right season.
+        </div>
+        <div>
+          A tomato produced out of season generates <b>4 times more kg CO₂e</b> than a tomato produced in the right
+          season.
+        </div>
+        <div>
+          However, around <b>75% of French people say they eat tomatoes in winter</b>. Likewise for strawberries, 1 kg
+          consumed in winter generates 40% more greenhouse gas emissions than the same quantity produced in season.
+          Beneficial for the climate and health, seasonal fruits and vegetables also taste better.
+        </div>
+      </div>
+    </>
+  )
+}
+
+const FruitsEtLegumesData = () => {
+  const { language } = useParamContext()
+  if (language === 'en') {
+    return <ENFruitsEtLegumesData />
+  }
+
+  return <FRFruitsEtLegumesData />
+}
 export default FruitsEtLegumesData

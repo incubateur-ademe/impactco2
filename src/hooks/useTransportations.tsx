@@ -4,8 +4,8 @@ import useParamContext from 'src/providers/ParamProvider'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
+import { getName } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
-import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
@@ -18,7 +18,7 @@ export default function useTransportations(
   itineraries?: Record<DeplacementType, number> | null
 ) {
   const params = useParamContext()
-  const t = useTranslations('equivalent')
+  const t = useTranslations('transport')
 
   const transportations = useMemo(() => {
     const { km } = params.distance
@@ -40,7 +40,7 @@ export default function useTransportations(
                   return {
                     ...equivalent,
                     ...currentECV,
-                    slug: `${equivalent.name} ${currentECV.subtitle}`.replace(/ /g, '').toLowerCase(),
+                    slug: `${equivalent.slug}-${currentECV.subtitle}`,
                   }
                 }
               }
@@ -49,10 +49,8 @@ export default function useTransportations(
             .map((equivalent) => ({
               ...equivalent,
               link: `/outils/transport/${equivalent.slug}`,
-              title: formatName(t(`name-${equivalent.slug}`), 1, true),
-              name: t(`name-${equivalent.slug}`),
-              subtitle:
-                (t(`subtitle-${equivalent.slug}`) ? `(${formatName(t(`subtitle-${equivalent.slug}`))})` : '') +
+              name:
+                getName(params.language, equivalent) +
                 (itineraries
                   ? ` - ${formatNumber(
                       itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
@@ -71,7 +69,13 @@ export default function useTransportations(
                 ? [
                     {
                       ...equivalent,
-                      name: t('name-covoiturage'),
+                      name:
+                        t('carpool') +
+                        (itineraries
+                          ? ` - ${formatNumber(
+                              itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                            ).toLocaleString()} km`
+                          : ''),
                       value: equivalent.value / (carpool + 1),
                       ecv: equivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpool + 1) })),
                       usage: equivalent.usage / (carpool + 1),

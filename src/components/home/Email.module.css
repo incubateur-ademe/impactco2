@@ -1,7 +1,7 @@
 .card {
   color: var(--neutral-60);
 
-  label {
+  span {
     color: var(--neutral-80);
     font-size: 1.25rem;
     font-weight: 700;

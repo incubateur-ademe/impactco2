@@ -1,8 +1,7 @@
 import axios from 'axios'
 import fs from 'fs'
-import boissons from '../data/categories/boisson.json'
-import fruitsetlegumes from '../data/categories/fruitsetlegumes.json'
-import { ecv } from '../data/ecv'
+import boissons from '../data/categories/boisson.old.json'
+import fruitsetlegumes from '../data/categories/fruitsetlegumes.old.json'
 import { BoissonEquivalent, EquivalentValue, FruitsEtLegumesEquivalent } from '../../types/equivalent'
 
 enum AgrybalisePrefixEnum {
@@ -18,26 +17,14 @@ const existingEquivalentsByCategory: Record<
   fruitsetlegumes: { file: 'fruitsetlegumes.json', values: fruitsetlegumes },
 }
 
-const finalities = [
-  'Agriculture',
-  'Transformation',
-  'Emballage',
-  'Transport',
-  'Supermarché et distribution',
-  'Consommation',
-]
-
-const finalitiesId: Record<string, number> = {}
-finalities.forEach((finality) => {
-  const value = ecv.find((e) => e.name === finality)
-  if (!value) {
-    throw new Error('BUG! ' + finality + ' is not defined...')
-  }
-  if (typeof value.id === 'string') {
-    throw new Error('BUG! ' + finality + ' is not a valid value...')
-  }
-  finalitiesId[finality.replace(/ /g, '_')] = value.id
-})
+const finalitiesId: Record<string, number> = {
+  Agriculture: 30,
+  Transformation: 31,
+  Emballage: 32,
+  Transport: 33,
+  Supermarché_et_distribution: 34,
+  Consommation: 35,
+}
 
 const agrybaliseValues = [
   'Code_CIQUAL',

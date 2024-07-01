@@ -6,6 +6,7 @@ import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getCustomParams } from './CustomParamsValues'
+import styles from './Share.module.css'
 import ShareUrl from './ShareUrl'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
@@ -14,7 +15,7 @@ const Share = ({
   path,
   tracking,
 }: {
-  category?: Pick<Category, 'slug' | 'name' | 'meta'>
+  category?: Pick<Category, 'slug' | 'name'>
   path?: string
   tracking?: string
 }) => {
@@ -42,20 +43,23 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug}`}?${buildCustomParamsUrl(params, visibility)}`
+    `${path || `outils/${category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 
   return (
     <>
       {params && visibility && (
-        <CustomParams
-          tracking={trackingValue}
-          trackingType='Partager'
-          params={params}
-          visibility={visibility}
-          setVisibility={setVisibility}
-        />
+        <>
+          <CustomParams
+            tracking={trackingValue}
+            trackingType='Partager'
+            params={params}
+            visibility={visibility}
+            setVisibility={setVisibility}
+          />
+          {Object.keys(params).length > 0 && <div className={styles.separator} />}
+        </>
       )}
       <ShareUrl
         url={url}
@@ -65,7 +69,7 @@ const Share = ({
         customImage={
           category
             ? undefined
-            : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}`
+            : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}`
         }
       />
     </>

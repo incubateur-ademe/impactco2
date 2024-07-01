@@ -1,7 +1,9 @@
 'use client'
 
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 import React, { useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
@@ -16,6 +18,8 @@ import Question from './Question'
 const shoesImpact = 17.9
 
 const OsezChangerSimulator = () => {
+  const { language } = useParamContext()
+  const t = useTranslations('osez-changer')
   const ref = useRef<HTMLDivElement>(null)
 
   const [equivalents, setEquivalents] = useState(['voiturethermique', 'tshirtencoton', 'repasavecduboeuf'])
@@ -28,21 +32,12 @@ const OsezChangerSimulator = () => {
     <>
       <div className={classNames(simulatorStyles.simulator, styles.simulator)}>
         <div className={styles.header}>
-          <div className={styles.title}>Comptez vos chaussures !</div>
-          En moyenne, les Français n’utilisent qu’un tiers des chaussures qu’ils possèdent. Et si on désencombrait les
-          placards ?
+          <div className={styles.title}>{t('title')}</div>
+          {t('description')}{' '}
         </div>
-        <Question
-          slug='avis'
-          title='🧠 À votre avis...'
-          description='De combien de paires de chaussures pensez-vous avoir besoin ?'
-          value={thinkingValue}
-          setValue={setThinkingValue}
-        />
+        <Question slug='avis' value={thinkingValue} setValue={setThinkingValue} />
         <Question
           slug='penderie'
-          title='👉 Dans vos placards'
-          description='Combien de paires de chaussures possédez-vous réellement ?'
           value={realValue}
           setValue={setRealValue}
           extra={
@@ -50,13 +45,11 @@ const OsezChangerSimulator = () => {
             realValue !== undefined &&
             `${realValue > thinkingValue ? '+' : ''}${realValue < thinkingValue ? '-' : ''}${Math.abs(
               realValue - thinkingValue
-            )} ${formatName('paire[s]', Math.abs(realValue - thinkingValue))}`
+            )} ${formatName(t('paire'), Math.abs(realValue - thinkingValue))}`
           }
         />
         <Question
           slug='neuf'
-          title='✨ Vos achats récents'
-          description='Combien de paires de chaussures neuves avez-vous acheté cette année ?'
           value={newValue}
           setValue={setNewValue}
           extra={newValue ? `+${(newValue * shoesImpact).toLocaleString()}kg CO₂e` : false}
@@ -66,7 +59,7 @@ const OsezChangerSimulator = () => {
         <div className={newValue === undefined ? styles.hidden : ''}>
           <div className={styles.results}>
             <div className={styles.values}>
-              {newValue} {formatName('paire[s] de chaussures neuves', newValue).toUpperCase()}
+              {newValue} {formatName(t('new-paire'), newValue).toUpperCase()}
             </div>
             <div className={styles.value}>
               <span className={styles.number}>
@@ -76,7 +69,7 @@ const OsezChangerSimulator = () => {
             </div>
           </div>
           <div className={styles.etiquette}>
-            <div className={styles.values}>SOIT AUTANT D’ÉMISSIONS QUE...</div>
+            <div className={styles.values}>{t('total')}</div>
             <Etiquette
               baseValue={total * 1000}
               comparisons={equivalents}
@@ -85,6 +78,7 @@ const OsezChangerSimulator = () => {
                 track('OsezChanger', 'Randomize', 'randomize')
                 setEquivalents(getRandomEquivalents(undefined, 3))
               }}
+              language={language}
             />
           </div>
         </div>

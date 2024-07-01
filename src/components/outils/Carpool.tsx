@@ -9,7 +9,7 @@ import PlusIcon from 'components/base/icons/plus'
 import styles from './Carpool.module.css'
 
 const Carpool = ({ type }: { type: TransportSimulateur }) => {
-  const t = useTranslations('category')
+  const t = useTranslations('category-simulator')
   const {
     [type]: { carpool, setCarpool },
   } = useParamContext()

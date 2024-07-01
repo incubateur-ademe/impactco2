@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
-import formatName from 'utils/formatName'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import EqualIcon from 'components/base/icons/equal'
 import styles from './InfographySimulator.module.css'
+import Name from './Name'
 
 const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
   const values = equivalents
@@ -30,13 +30,7 @@ const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
                   <EquivalentIcon key={`${value.slug}-${number}`} equivalent={value} height={height} />
                 ))}
               </div>
-              <div>
-                <span className={styles.equivalentValue}>
-                  {number}
-                  {value.prefix ? ` ${formatName(value.prefix, number)}` : ' '}
-                </span>
-                {formatName(value.name, number)}
-              </div>
+              <Name equivalent={value} value={number} />
             </div>
             <div className={styles.equal}>
               <EqualIcon />

@@ -2,9 +2,10 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
-import formatName from 'utils/formatName'
+import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -19,8 +20,7 @@ const CategorySimulator = ({
   equivalents,
   displayAll,
   setDisplayAll,
-  displayAllText,
-  hideAllText,
+  moreText,
   withSimulator,
   type,
 }: {
@@ -28,12 +28,12 @@ const CategorySimulator = ({
   equivalents: ComputedEquivalent[]
   displayAll?: boolean
   setDisplayAll?: Dispatch<SetStateAction<boolean>>
-  displayAllText?: string
-  hideAllText?: string
+  moreText?: string
   withSimulator?: boolean
   type?: TransportSimulateur
 }) => {
-  const t = useTranslations('category')
+  const { language } = useParamContext()
+  const t = useTranslations('category-simulator')
   const ref = useRef<HTMLDivElement>(null)
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
@@ -68,13 +68,7 @@ const CategorySimulator = ({
                 <IframeableLink data-testid='category-link' href={equivalent.link} className={styles.link}>
                   <EquivalentIcon equivalent={equivalent} height={3} />
                   <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
-                    <div className={styles.name}>
-                      {formatName(
-                        `${equivalent.name}${equivalent.subtitle ? ` ${equivalent.subtitle.startsWith('(') || equivalent.subtitle.startsWith(' -') ? equivalent.subtitle : `(${equivalent.subtitle})`}` : ''}`,
-                        1,
-                        true
-                      )}
-                    </div>
+                    <div className={styles.name}>{equivalent.name || getNameWithoutSuffix(language, equivalent)}</div>
                     <div className={styles.data}>
                       <div
                         className={styles.fullBar}
@@ -103,13 +97,13 @@ const CategorySimulator = ({
               </div>
             ))}
       </div>
-      {setDisplayAll && displayAll !== undefined && displayAllText && hideAllText && (
+      {setDisplayAll && displayAll !== undefined && moreText && (
         <CategoryDisplayAll
           tracking={tracking}
           displayAll={displayAll}
           setDisplayAll={setDisplayAll}
-          displayAllText={displayAllText}
-          hideAllText={hideAllText}
+          displayAllText={t(`${moreText}.display`)}
+          hideAllText={t(`${moreText}.hide`)}
         />
       )}
       {hasUsage && (

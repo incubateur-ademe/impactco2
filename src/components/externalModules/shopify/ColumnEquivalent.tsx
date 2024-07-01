@@ -18,7 +18,7 @@ const ColumnEquivalent = ({
 }: {
   baseValue: string | number
   comparisons: string[]
-  language?: Language
+  language: Language
   randomize?: () => void
 }) => {
   const intValue = Number(baseValue)

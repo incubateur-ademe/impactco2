@@ -1,15 +1,16 @@
 import React from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
 
-const LivraisonData = () => {
+const FRLivraisonData = () => {
   return (
     <>
       <div className={styles.content}>
         <div>
           <Link href='https://librairie.ademe.fr/mobilite-et-transport/6261-e-commerce-modelisation-des-impacts-et-recommandations-filieres-et-grand-public.html'>
-            l’étude Commerce en ligne - 2023
+            L’étude Commerce en ligne - 2023
           </Link>{' '}
           à destination des professionels du E-commerce. L'outil ECEL à l'origine des calculs de cette étude a été
           adapté au contexte des particuliers sous forme de simulateur.
@@ -204,4 +205,199 @@ const LivraisonData = () => {
   )
 }
 
+const ENLivraisonData = () => {
+  return (
+    <>
+      <div className={styles.content}>
+        <div>
+          <Link href='https://librairie.ademe.fr/mobilite-et-transport/6261-e-commerce-modelisation-des-impacts-et-recommandations-filieres-et-grand-public.html'>
+            The Online Commerce - 2023 study
+          </Link>{' '}
+          for E-commerce professionals. The ECEL tool at the origin of the calculations in this study has been adapted
+          to the context of individuals in the form of a simulator.{' '}
+        </div>
+      </div>
+      <div className={styles.title}>The different types of products</div>
+      <div className={styles.content}>
+        <div>
+          <b>Clothing</b> corresponds to a textile product that ranges from a pair of shoes to a coat to a t-shirt. By
+          default, we consider a <b>shoebox</b>.
+        </div>
+        <div>
+          <b>Cultural products</b> correspond to books, board games, CDs/vinyls, video games, etc. By default, we
+          consider a <b>book</b>.
+        </div>
+        <div>
+          <b>Large equipment</b> corresponds to large household appliances, furniture, etc. By default, we consider a{' '}
+          <b>dishwasher</b>.
+        </div>
+        <div>
+          For <b>consumer products</b>, we considered an <b>order for dry food products</b>.
+        </div>
+      </div>
+      <div className={styles.title}>Delivery scenarios</div>
+      <div className={styles.content}>
+        <div>
+          In this first version, 3 scenarios are offered: <b>home delivery, relay point or click & collect</b>, all
+          adaptable to the <b>"parcel that comes from far away"</b> option.
+        </div>
+        <div>
+          For each scenario, we take into account <b>all the stages of a delivery process</b>: online ordering,
+          packaging, storage warehouse, sorting platforms, inter-platform transport, collection infrastructure, and
+          finally, consumer movement in the case of delivery to a relay point or click & collect (
+          <i>See below for details of the delivery processes</i>). For an item <b>"that comes from far away"</b>, we
+          have made the assumption that the package arrives <b>by plane from China</b> via an additional transport stage
+          (9000km traveled by plane, electrical mix of the departure warehouse adapted). We do not take condensation
+          trails into account for air travel.
+        </div>
+      </div>
+      <div className={styles.title}>Additional information about settings...</div>
+      <div className={styles.content}>
+        <div>
+          For the <b>online ordering process</b>, the type of product impacts the web search time and therefore the
+          footprint of using the terminal to make the purchase. We therefore maintain a single value (<b>5.4 gCO₂e</b>)
+          per order regardless of the product.
+        </div>
+        <div>
+          A <b>cardboard packaging</b> has been assigned to each type of package according to its size.
+        </div>
+        <div>
+          For the warehouse <b>storage</b> stages, we consider a warehouse of{' '}
+          <b>
+            10,000 m<sup>2</sup>
+          </b>
+          . The number of days of storage depends on the type of product.
+        </div>
+        <div>
+          Regarding <b>delivery trucks</b>, for <b>long distance transport</b> we considered a{' '}
+          <b>medium heavy duty vehicle</b> (typically 44 tonnes) while for the <b>last few kilometers</b> of delivery we
+          considered a <b>light commercial vehicle</b>.
+        </div>
+      </div>
+      <div className={styles.title}>Delivery frequencies</div>
+      <div className={styles.content}>
+        <div>
+          To calculate the annual impact of parcel delivery based on your delivery frequency, we make the following
+          calculations:
+        </div>
+        <ul>
+          <li>X package x 1 if per year </li>
+          <li>X package x 12 if per month</li>
+          <li>X package x 52 if per week</li>
+        </ul>
+      </div>
+      <div className={styles.content}>
+        <details>
+          <summary>Home delivery</summary>
+          <ul>
+            <li>Online ordering process</li>
+            <li>Initial warehouse for storage and preparation of the package</li>
+            <li>
+              Warehouse transport - platform 1: <b>400 km</b> (
+              <i>
+                average heavy weight, filling rate of 15% and an empty return rate of 20% traveling at an average speed
+                of 60 km/h
+              </i>
+              )
+            </li>
+            <li>Platform 1</li>
+            <li>
+              Transport platform 1 - platform 2: <b>400 km</b> (
+              <i>
+                average heavy weight, filling rate of 15% and an empty return rate of 20% traveling at an average speed
+                of 60 km/h
+              </i>
+              )
+            </li>
+            <li>Plateform 2</li>
+            <li>
+              Transport platform 2 - home: <b>70 km</b> (
+              <i>LCV, filling rate of 15% and an empty return rate of 20% traveling at an average speed of 30 km/h</i>)
+            </li>
+          </ul>
+        </details>
+        <details>
+          <summary>Click & collect delivery</summary>
+          <ul>
+            <li>Online ordering process</li>
+            <li>Initial warehouse for storage and preparation of the package</li>
+            <li>
+              Warehouse transport - platform 1: <b>400 km</b> (
+              <i>
+                average heavy weight, filling rate of 15% and an empty return rate of 20% traveling at an average speed
+                of 60 km/h
+              </i>
+              )
+            </li>
+            <li>Platform 1</li>
+            <li>
+              Transport platform 1 - platform 2: <b>400 km</b> (
+              <i>
+                average heavy weight, filling rate of 15% and an empty return rate of 20% traveling at an average speed
+                of 60 km/h
+              </i>
+              )
+            </li>
+            <li>Plateform 2</li>
+            <li>
+              Transport platform 2 - collection point: <b>70 km</b> (
+              <i>LCV, filling rate of 15% and an empty return rate of 20% traveling at an average speed of 30 km/h</i>)
+            </li>
+            <li>Withdrawal point</li>
+            <li>Consumer travel</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Livraison en click & collect</summary>
+          <ul>
+            <li>Online ordering process</li>
+            <li>Initial warehouse for storage and preparation of the package</li>
+            <li>
+              Warehouse transport - platform 1: <b>400 km</b> (
+              <i>
+                average heavy weight, filling rate of 15% and an empty return rate of 20% traveling at an average speed
+                of 60 km/h
+              </i>
+              )
+            </li>
+            <li>Platform 1</li>
+            <li>
+              Transport platform 1 - platform 2: <b>400 km</b> (
+              <i>
+                average heavy weight, filling rate of 15% and an empty return rate of 20% traveling at an average speed
+                of 60 km/h
+              </i>
+              )
+            </li>
+            <li>Plateform 2</li>
+            <li>
+              Transport platform 2 - store: <b>70 km</b> (
+              <i>LCV, filling rate of 15% and an empty return rate of 20% traveling at an average speed of 30 km/h</i>)
+            </li>
+            <li>Store</li>
+            <li>Consumer travel</li>
+          </ul>
+        </details>
+      </div>
+      <div className={styles.content}>
+        <div>
+          For more details, see{' '}
+          <Link href='/doc/livraison' title='Lien externe : documentation détaillée' target='_blank'>
+            the detailed documentation
+            <NewTabIcon />
+          </Link>
+        </div>
+      </div>
+    </>
+  )
+}
+
+const LivraisonData = () => {
+  const { language } = useParamContext()
+  if (language === 'en') {
+    return <ENLivraisonData />
+  }
+
+  return <FRLivraisonData />
+}
 export default LivraisonData

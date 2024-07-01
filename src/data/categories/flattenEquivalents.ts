@@ -6,7 +6,7 @@ export const flattenEquivalents = (equivalents: Equivalent[]) =>
       ? equivalent.ecvs.map((ecv) => ({
           ...equivalent,
           ...ecv,
-          slug: `${equivalent.name} ${ecv.subtitle}`.replace(/ /g, '').toLowerCase(),
+          slug: `${equivalent.slug}-${ecv.subtitle}`.replace(/ /g, '').toLowerCase(),
         }))
       : [equivalent]
   )

@@ -12,22 +12,22 @@ describe('ecv', () => {
       data: [
         {
           ecv: 197.5,
-          name: 'Canapé[s]',
+          name: 'Canapé convertible',
           slug: 'canapeconvertible',
         },
         {
           ecv: 18.63,
-          name: 'Chaise[s]',
+          name: 'Chaise en bois',
           slug: 'chaiseenbois',
         },
         {
           ecv: 80.22,
-          name: 'Table[s]',
+          name: 'Table en bois',
           slug: 'tableenbois',
         },
         {
           ecv: 179.1,
-          name: 'Canapé[s]',
+          name: 'Canapé en textile',
           slug: 'canapetextile',
         },
         {
@@ -45,6 +45,50 @@ describe('ecv', () => {
         "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
+
+  test('get ecvs in english', async () => {
+    const result = await fetch('http://localhost:3000/api/v1/thematiques/ecv/mobilier?language=en')
+
+    expect(result.status).toBe(200)
+    const data = await result.json()
+    expect(data).toEqual({
+      data: [
+        {
+          ecv: 197.5,
+          name: 'Sofa convertible',
+          slug: 'canapeconvertible',
+        },
+        {
+          ecv: 18.63,
+          name: 'Wooden chair',
+          slug: 'chaiseenbois',
+        },
+        {
+          ecv: 80.22,
+          name: 'Wooden table',
+          slug: 'tableenbois',
+        },
+        {
+          ecv: 179.1,
+          name: 'Fabric sofa',
+          slug: 'canapetextile',
+        },
+        {
+          ecv: 906.88,
+          name: 'Wardrobe',
+          slug: 'armoire',
+        },
+        {
+          ecv: 443.81000000000006,
+          name: 'Bed',
+          slug: 'lit',
+        },
+      ],
+      warning:
+        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    })
+  })
+
   test('get all ecvs with detail', async () => {
     const result = await fetch('http://localhost:3000/api/v1/thematiques/ecv/mobilier?detail=1')
 
@@ -73,7 +117,7 @@ describe('ecv', () => {
               value: 51,
             },
           ],
-          name: 'Canapé[s]',
+          name: 'Canapé convertible',
           slug: 'canapeconvertible',
         },
         {
@@ -97,7 +141,7 @@ describe('ecv', () => {
               value: 11.879999999999999,
             },
           ],
-          name: 'Chaise[s]',
+          name: 'Chaise en bois',
           slug: 'chaiseenbois',
         },
         {
@@ -121,7 +165,7 @@ describe('ecv', () => {
               value: 47.1,
             },
           ],
-          name: 'Table[s]',
+          name: 'Table en bois',
           slug: 'tableenbois',
         },
         {
@@ -145,7 +189,7 @@ describe('ecv', () => {
               value: 49.4,
             },
           ],
-          name: 'Canapé[s]',
+          name: 'Canapé en textile',
           slug: 'canapetextile',
         },
         {

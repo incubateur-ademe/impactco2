@@ -5,7 +5,8 @@ import Suggestion from 'components/layout/Suggestion'
 
 export const metadata: Metadata = {
   title: 'Outils | Impact CO₂',
-  description: 'Trouver l’outil adapté à votre prochaine publication.',
+  description:
+    "Trouver le bon outil adapté à son contenu dans le catalogue de ressources personnalisables d’Impact CO2 pour sensibiliser à l'empreinte carbone.",
 }
 
 const OutilsPage = () => {

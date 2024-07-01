@@ -6,6 +6,7 @@ import SuggestionBanner from 'components/layout/Suggestion'
 
 export const metadata: Metadata = {
   title: 'Faire une suggestion | Impact CO₂',
+  description: "Partager une idée, un bug ou un avis avec l'équipe Impact CO2",
 }
 
 const SuggestionPage = () => {
