@@ -27,7 +27,7 @@ const IFrameTracking = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (!observed && entry && entry.isIntersecting) {
       setObserved(true)
-      track('IFrame', window.location.href, path)
+      track('IFrame', window.location.href.endsWith('/') ? window.location.href : `${window.location.href}/`, path)
     }
   }, [entry, observed, path])
 
