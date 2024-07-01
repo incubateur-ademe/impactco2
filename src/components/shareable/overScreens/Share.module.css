@@ -40,6 +40,12 @@
 .text {
   min-width: 200px;
   flex: 1;
+  color: var(--neutral-50);
+}
+
+.metaTitle {
+  color: var(--neutral-80);
+  font-weight: 700;
 }
 
 .metaHeader {

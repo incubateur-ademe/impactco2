@@ -85,8 +85,8 @@ const ShareUrl = ({
           )}
           <div className={styles.text}>
             <div className={styles.metaHeader}>{t('apercu')}</div>
-            <p>
-              <b> {category ? metaTitles[category.slug][language] : metaTitles.comparateur[language]}</b>
+            <p className={styles.metaTitle}>
+              {category ? metaTitles[category.slug][language] : metaTitles.comparateur[language]}
             </p>
             <p className='text-sm'>
               {category ? metaDescriptions[category.slug][language] : metaDescriptions.comparateur[language]}
