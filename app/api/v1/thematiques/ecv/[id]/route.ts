@@ -166,7 +166,6 @@ export async function GET(req: NextRequest, context: { params: { id: string } })
     language: searchParams.get('language') || 'fr',
   })
   if (!inputs.success) {
-    console.log(inputs.error)
     return NextResponse.json(inputs.error, { status: 400 })
   }
 

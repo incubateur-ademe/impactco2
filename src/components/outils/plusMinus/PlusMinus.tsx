@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { SetStateAction } from 'preact/compat'
 import React, { Dispatch } from 'react'
 import formatName from 'utils/formatName'
-import InformationIcon from 'components/base/icons/information'
 import MinusIcon from 'components/base/icons/minus'
 import PlusIcon from 'components/base/icons/plus'
 import styles from './PlusMinus.module.css'
@@ -15,7 +14,6 @@ const PlusMinus = ({
   label,
   icon,
   step,
-  onClick,
   className,
 }: {
   value: number
@@ -24,7 +22,6 @@ const PlusMinus = ({
   label: string
   icon?: string
   step?: number
-  onClick?: () => void
   className?: string
 }) => {
   const stepValue = step || 1
@@ -37,11 +34,10 @@ const PlusMinus = ({
         title={`Diminuer le nombre de ${label}`}>
         <MinusIcon />
       </button>
-      <button className={styles.mainButton} onClick={onClick} disabled={!onClick}>
+      <div className={styles.main}>
         {icon && <Image src={icon} alt='' width={18} height={24} />}
         {value} {formatName(label, value)}
-        {onClick && <InformationIcon />}
-      </button>
+      </div>
       <button
         className={styles.plus}
         onClick={() => setValue(value + stepValue)}

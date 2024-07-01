@@ -58,7 +58,7 @@
   border-radius: 0rem 0.25rem 0.25rem 0rem;
 }
 
-.mainButton {
+.main {
   flex: 1;
   height: 2rem;
   display: flex;
@@ -76,23 +76,5 @@
 
   @media screen and (max-width: 48rem) {
     height: 2.5rem;
-  }
-
-  &:not(:disabled) {
-    cursor: pointer;
-
-    &:hover {
-      color: var(--primary-70);
-      background-color: var(--primary-30);
-    }
-
-    &:focus {
-      outline-offset: 2px;
-      outline: 3px solid var(--primary-40);
-    }
-
-    &:focus:not(:focus-visible) {
-      outline: none;
-    }
   }
 }

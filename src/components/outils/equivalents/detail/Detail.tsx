@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, { Fragment, useState } from 'react'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
 import PlusMinus from 'components/outils/plusMinus/PlusMinus'
+import InformationIcon from 'components/base/icons/information'
 import shareableStyles from 'components/shareable/Shareable.module.css'
 import styles from './Detail.module.css'
 import DetailValue from './DetailValue'
@@ -167,20 +168,7 @@ export default function Detail({
                     <Label id={item.id} />
                   </td>
                   <td className={styles.percent}>
-                    {withPercent ? (
-                      <Percentage value={(100 * item.value) / value.value} />
-                    ) : item.id === 8 ? (
-                      <PlusMinus
-                        className={styles.usageWidget}
-                        label={t('year')}
-                        value={years}
-                        setValue={setYears}
-                        step={0.5}
-                        onClick={setOverscreen ? () => setOverscreen('usage') : undefined}
-                      />
-                    ) : (
-                      ' '
-                    )}
+                    {withPercent ? <Percentage value={(100 * item.value) / value.value} /> : ' '}
                   </td>
                   <td>
                     <DetailValue unit={unit} value={item.value} />
@@ -190,17 +178,46 @@ export default function Detail({
             </Fragment>
           ))}
           {!!years && (
-            <tr className={styles.percent}>
-              <td>
-                <b>Total</b> par année d'utilisation
-              </td>
-              <td> </td>
-              <td>
-                <b>
-                  <DetailValue unit={unit} value={sum / years} />
-                </b>
-              </td>
-            </tr>
+            <>
+              <tr>
+                <td>
+                  <b>Total</b> par année d'utilisation{' '}
+                  {setOverscreen && (
+                    <button
+                      title='Voir les informations sur la durée de vie'
+                      onClick={() => setOverscreen('usage')}
+                      className={styles.informationButton}>
+                      <InformationIcon />
+                    </button>
+                  )}
+                </td>
+                <td className={styles.usageWidgetContainer}>
+                  <PlusMinus
+                    className={styles.usageWidget}
+                    label={t('year')}
+                    value={years}
+                    setValue={setYears}
+                    step={0.5}
+                  />
+                </td>
+                <td>
+                  <b>
+                    <DetailValue unit={unit} value={sum / years} />
+                  </b>
+                </td>
+              </tr>
+              <tr className={styles.noBorder}>
+                <td colSpan={3} className={styles.usageWidgetContainerSmall}>
+                  <PlusMinus
+                    className={styles.usageWidget}
+                    label={t('year')}
+                    value={years}
+                    setValue={setYears}
+                    step={0.5}
+                  />
+                </td>
+              </tr>
+            </>
           )}
           {!withPercent && (
             <tr className={styles.main}>
