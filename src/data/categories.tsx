@@ -149,7 +149,7 @@ export const categories: Category[] = [
     sources: [
       {
         label: 'Rapport : Modélisation et évaluation...',
-        href: 'https://librairie.ademe.fr/consommer-autrement/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+        href: 'https://librairie.ademe.fr/consommer-autrement/1189-modelisation-et-evaluation-des-impacts-environnementaux-de-produits-de-consommation-et-biens-d-equipement.html',
       },
       {
         label: 'Base Empreinte ADEME',
@@ -168,7 +168,7 @@ export const categories: Category[] = [
     sources: [
       {
         label: 'Rapport : Modélisation et évaluation...',
-        href: 'https://librairie.ademe.fr/consommer-autrement/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+        href: 'https://librairie.ademe.fr/consommer-autrement/1189-modelisation-et-evaluation-des-impacts-environnementaux-de-produits-de-consommation-et-biens-d-equipement.html',
       },
       {
         label: 'Base Empreinte ADEME',
@@ -186,7 +186,7 @@ export const categories: Category[] = [
     sources: [
       {
         label: 'Rapport : Modélisation et évaluation...',
-        href: 'https://librairie.ademe.fr/consommer-autrement/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html',
+        href: 'https://librairie.ademe.fr/consommer-autrement/1189-modelisation-et-evaluation-des-impacts-environnementaux-de-produits-de-consommation-et-biens-d-equipement.html',
       },
       {
         label: 'Base Empreinte ADEME',
