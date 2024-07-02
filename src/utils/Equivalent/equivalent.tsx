@@ -9,14 +9,23 @@ const m2: Record<string, string> = {
   es: 'por m²',
 }
 
+const carpooling: Record<string, string> = {
+  fr: 'Co-voiturage',
+  en: 'Carpooling',
+  de: 'Mitfahrgelegenheit',
+  es: 'Compartir',
+}
+
 const getValues = (
   language: string,
-  equivalent: Pick<Equivalent, 'category' | 'slug'>
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>
 ): { prefix: string; name: string } => {
   const value = (values as Record<string, { fr: string; en: string; de: string; es: string }>)[equivalent.slug]
   if (!value) {
     return { prefix: '', name: '' }
   }
+
+  const carpool = equivalent.carpool ? `${carpooling[language]} ` : ''
 
   //@ts-expect-error: expect translation
   const translation = value[language]
@@ -24,7 +33,7 @@ const getValues = (
     const [name, prefix] = translation.split('=')
     return {
       prefix,
-      name,
+      name: carpool + name,
     }
   }
 
@@ -32,13 +41,13 @@ const getValues = (
     const [prefix, name] = translation.split(';')
     return {
       prefix,
-      name,
+      name: carpool + name,
     }
   }
 
   return {
     prefix: '',
-    name: translation,
+    name: carpool + translation,
   }
 }
 
@@ -49,7 +58,7 @@ export const getPrefix = (language: string, equivalent: Pick<Equivalent, 'catego
 
 export const getNameWithoutSuffix = (
   language: string,
-  equivalent: Pick<Equivalent, 'category' | 'slug'>,
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
   value?: number
 ) => {
@@ -59,7 +68,7 @@ export const getNameWithoutSuffix = (
 
 export const getName = (
   language: string,
-  equivalent: Pick<Equivalent, 'category' | 'slug'>,
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
   value?: number
 ) => {

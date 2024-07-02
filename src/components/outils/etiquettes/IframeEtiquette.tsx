@@ -11,13 +11,15 @@ const IFrameEtiquette = ({ animated }: { animated?: boolean }) => {
     if (!params) {
       return null
     }
+    console.log(params.get('comparisons'))
     return {
       baseValue: Number(params.get('value') || 100) * 1000,
-      comparisons: ((params.get('comparisons') || 'random') as string).split(','),
+      comparisons: ((params.get('comparisons')?.replace(' ', '+') || 'random') as string).split(','),
       language: (params.get('language') as Language) || 'fr',
     }
   }, [params])
   const ref = useRef(null)
+  console.log(values?.comparisons)
   return values ? <EtiquetteContent {...values} animated={animated} ref={ref} /> : null
 }
 
