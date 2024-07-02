@@ -35,7 +35,6 @@ export const getGuideUtilisation = unstable_cache(
               content,
             }
           } catch (e) {
-            console.error(e)
             return { id: null, content: null }
           }
         })
@@ -48,7 +47,6 @@ export const getGuideUtilisation = unstable_cache(
           content: contents.find((content) => content.id === result.id)?.content,
         }))
     } catch (e) {
-      console.error(e)
       return []
     }
   },
