@@ -10,10 +10,25 @@ import Suggestion from 'components/layout/Suggestion'
 export async function generateStaticParams() {
   return categories.flatMap((category) =>
     category.equivalents
-      ? category.equivalents.map((equivalent) => ({
-          tool: category.slug,
-          equivalent: equivalent.slug,
-        }))
+      ? category.equivalents.flatMap((equivalent) =>
+          equivalent.carpool
+            ? [
+                {
+                  tool: category.slug,
+                  equivalent: equivalent.slug,
+                },
+                ...Array.from({ length: 4 }).map((value, index) => ({
+                  tool: category.slug,
+                  equivalent: `${equivalent.slug}+${index + 1}`,
+                })),
+              ]
+            : [
+                {
+                  tool: category.slug,
+                  equivalent: equivalent.slug,
+                },
+              ]
+        )
       : []
   )
 }
@@ -29,7 +44,8 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
   if (!category || !category.equivalents) {
     return parent as Metadata
   }
-  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === params.equivalent)
+  const [slug] = decodeURIComponent(params.equivalent).split('+')
+  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === slug)
   if (!equivalent) {
     return parent as Metadata
   }
@@ -53,13 +69,20 @@ const EquivalentPage = ({ params }: Props) => {
   if (!category || !category.equivalents) {
     return notFound()
   }
-  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === params.equivalent)
+  const [slug, carpool] = decodeURIComponent(params.equivalent).split('+')
+  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === slug)
   if (!equivalent) {
     return notFound()
   }
   return (
     <>
-      <Equivalent category={category} equivalent={equivalent} simulator={equivalentsSimulators[equivalent.slug]} />
+      <Equivalent
+        category={category}
+        equivalent={
+          carpool ? { ...equivalent, carpool: Number(carpool), link: `${equivalent.link}+${carpool}` } : equivalent
+        }
+        simulator={equivalentsSimulators[equivalent.slug]}
+      />
       <Suggestion
         from={equivalent.link}
         fromLabel={getName('fr', equivalent)}

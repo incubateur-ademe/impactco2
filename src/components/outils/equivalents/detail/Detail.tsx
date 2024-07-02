@@ -124,7 +124,17 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
       values: [{ id: 9, value: end }],
     }
   }
-  const values = [...ecvs(type, equivalent.ecv), usageAndEnd].filter((value) => value) as Values[]
+  const values = [...ecvs(type, equivalent.ecv), usageAndEnd]
+    .filter((value) => value)
+    .map((value) =>
+      equivalent.carpool && value
+        ? {
+            ...value,
+            value: value.value / (equivalent.carpool + 1),
+            values: value.values.map((x) => ({ ...x, value: x.value / ((equivalent.carpool || 0) + 1) })),
+          }
+        : value
+    ) as Values[]
   const withPercent = values.length === 1
 
   const sum = values.reduce((acc, current) => acc + current.value, 0)

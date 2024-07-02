@@ -39,6 +39,7 @@ const CategorySimulator = ({
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
   const [basePercent, setBasePercent] = useState(80)
   const [legendRelative, setLegendRelative] = useState(false)
+
   useEffect(() => {
     const onResize = () => {
       if (typeof ref !== 'function' && ref && ref.current && ref.current.parentElement) {
@@ -60,7 +61,7 @@ const CategorySimulator = ({
       <div ref={ref}>
         {equivalents &&
           equivalents
-            .sort((a, b) => a.value - b.value)
+            .sort((a, b) => (a.initialValue || a.value) - (b.initialValue || b.value))
             .map((equivalent) => (
               <div
                 key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
@@ -91,7 +92,7 @@ const CategorySimulator = ({
                     <div className={styles.conducteur}>
                       <Image src='/icons/conducteur.svg' alt='' width={20} height={24} />
                     </div>
-                    <Carpool type={type} />
+                    <Carpool type={type} equivalent={equivalent} />
                   </div>
                 )}
               </div>

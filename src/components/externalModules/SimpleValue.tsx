@@ -14,8 +14,17 @@ import styles from './SimpleValue.module.css'
 const equivalents = values as Record<string, SimpleEquivalent>
 
 const getValues = (comparison: string, value: number) => {
-  if (comparison !== 'random' && equivalents[comparison]) {
-    return { equivalent: equivalents[comparison], slug: comparison }
+  const [slug, carpool] = comparison.split('+')
+  if (comparison !== 'random' && equivalents[slug]) {
+    const equivalent = equivalents[slug]
+    return {
+      equivalent: {
+        ...equivalents[slug],
+        carpool: carpool ? Number(carpool) : 0,
+        value: carpool ? equivalent.value / (Number(carpool) + 1) : equivalent.value,
+      },
+      slug,
+    }
   }
   const meaningfullEquivalents = Object.entries(equivalents).filter(([, ecv]) => value / ecv.value > 1 && ecv.value > 0)
   const categories = [...new Set(meaningfullEquivalents.map((equivalent) => equivalent[1].category))]

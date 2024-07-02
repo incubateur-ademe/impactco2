@@ -15,8 +15,8 @@ const Etiquette = ({ equivalent }: { equivalent: ComputedEquivalent }) => {
   return (
     <Shareable overScreens={overScreens} tracking={`${getName('fr', equivalent)}-Etiquette`} secondary='' withoutShare>
       <EtiquetteContent
-        baseValue={(equivalent.value * 1000).toString()}
-        comparisons={[equivalent.slug]}
+        baseValue={((equivalent.value / ((equivalent.carpool || 0) + 1)) * 1000).toString()}
+        comparisons={[`${equivalent.slug}${equivalent.carpool ? `+${equivalent.carpool}` : ''}`]}
         ref={ref}
         language={language}
       />

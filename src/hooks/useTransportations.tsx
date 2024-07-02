@@ -64,8 +64,9 @@ export default function useTransportations(
                 (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km),
               onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
             }))
-            .flatMap((equivalent) =>
-              equivalent.carpool
+            .flatMap((equivalent) => {
+              const carpoolValue = equivalent.carpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
+              return equivalent.carpool
                 ? [
                     {
                       ...equivalent,
@@ -76,14 +77,16 @@ export default function useTransportations(
                               itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
                             ).toLocaleString()} km`
                           : ''),
-                      value: equivalent.value / (carpool + 1),
-                      ecv: equivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpool + 1) })),
-                      usage: equivalent.usage / (carpool + 1),
+                      initialValue: equivalent.value,
+                      value: equivalent.value / (carpoolValue + 1),
+                      ecv: equivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
+                      usage: equivalent.usage / (carpoolValue + 1),
+                      link: `${equivalent.link}+${carpoolValue}`,
                     },
                     { ...equivalent, carpool: 0 },
                   ]
                 : [equivalent]
-            )
+            })
         : []
 
     const equivalents = displayAll

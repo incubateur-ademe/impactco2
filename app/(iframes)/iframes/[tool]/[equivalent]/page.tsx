@@ -7,10 +7,25 @@ import { equivalentsSimulators } from 'components/outils/equivalents/simulators/
 export async function generateStaticParams() {
   return categories.flatMap((category) =>
     category.equivalents
-      ? category.equivalents.map((equivalent) => ({
-          tool: category.slug,
-          equivalent: equivalent.slug,
-        }))
+      ? category.equivalents.flatMap((equivalent) =>
+          equivalent.carpool
+            ? [
+                {
+                  tool: category.slug,
+                  equivalent: equivalent.slug,
+                },
+                ...Array.from({ length: 4 }).map((value, index) => ({
+                  tool: category.slug,
+                  equivalent: `${equivalent.slug}+${index + 1}`,
+                })),
+              ]
+            : [
+                {
+                  tool: category.slug,
+                  equivalent: equivalent.slug,
+                },
+              ]
+        )
       : []
   )
 }
@@ -24,11 +39,21 @@ const page = ({ params }: Props) => {
   if (!category || !category.equivalents) {
     return notFound()
   }
-  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === params.equivalent)
+
+  const [slug, carpool] = decodeURIComponent(params.equivalent).split('+')
+  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === slug)
   if (!equivalent) {
     return notFound()
   }
-  return <Equivalent category={category} equivalent={equivalent} simulator={equivalentsSimulators[equivalent.slug]} />
+  return (
+    <Equivalent
+      category={category}
+      equivalent={
+        carpool ? { ...equivalent, carpool: Number(carpool), link: `${equivalent.link}+${carpool}` } : equivalent
+      }
+      simulator={equivalentsSimulators[equivalent.slug]}
+    />
+  )
 }
 
 export default page

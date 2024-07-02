@@ -118,8 +118,8 @@ export type Params = {
   distance: {
     km: number
     setKm: Dispatch<SetStateAction<number>>
-    carpool: number
-    setCarpool: Dispatch<SetStateAction<number>>
+    carpool: Record<string, number>
+    setCarpool: Dispatch<SetStateAction<Record<string, number>>>
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
   }
@@ -128,8 +128,8 @@ export type Params = {
     setStart: Dispatch<SetStateAction<Point | undefined>>
     end?: Point
     setEnd: Dispatch<SetStateAction<Point | undefined>>
-    carpool: number
-    setCarpool: Dispatch<SetStateAction<number>>
+    carpool: Record<string, number>
+    setCarpool: Dispatch<SetStateAction<Record<string, number>>>
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
   }
@@ -138,8 +138,8 @@ export type Params = {
     setStart: Dispatch<SetStateAction<Point | undefined>>
     end?: Point
     setEnd: Dispatch<SetStateAction<Point | undefined>>
-    carpool: number
-    setCarpool: Dispatch<SetStateAction<number>>
+    carpool: Record<string, number>
+    setCarpool: Dispatch<SetStateAction<Record<string, number>>>
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
     transport: string
@@ -240,9 +240,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [itineraireStart, setItineraireStart] = useState<Point>()
   const [itineraireEnd, setItineraireEnd] = useState<Point>()
 
-  const [distanceCarpool, setDistanceCarpool] = useState(1)
-  const [itineraireCarpool, setItineraireCarpool] = useState(1)
-  const [teletravailCarpool, setTeletravailCarpool] = useState(1)
+  const [distanceCarpool, setDistanceCarpool] = useState<Record<string, number>>({})
+  const [itineraireCarpool, setItineraireCarpool] = useState<Record<string, number>>({})
+  const [teletravailCarpool, setTeletravailCarpool] = useState<Record<string, number>>({})
 
   const [distanceDisplayAll, setDistanceDisplayAll] = useState(false)
   const [itineraireDisplayAll, setItineraireDisplayAll] = useState(false)
