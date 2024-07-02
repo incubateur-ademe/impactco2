@@ -243,10 +243,10 @@
   "veloelectrique": {
     "category": 4,
     "value": 10.950000000000001,
-    "fr": "km en ;vélo (ou trottinette) à assistance électrique",
-    "en": "km by ;electrically assisted bicycle (or scooter)",
-    "de": "km mit ;dem E-Bike (oder E-Scooter)",
-    "es": "km en ;bicicleta (o patinete) eléctrica asistida"
+    "fr": "km en ;vélo à assistance électrique",
+    "en": "km by ;electrically assisted bicycle",
+    "de": "km mit ;dem E-Bike",
+    "es": "km en ;bicicleta eléctrica asistida"
   },
   "busthermique": {
     "category": 4,
@@ -311,6 +311,14 @@
     "en": "km by ;electric bus",
     "de": "km mit ;dem Elektrobus",
     "es": "km en ;autobús eléctrico"
+  },
+  "trottinette": {
+    "category": 4,
+    "value": 24.9,
+    "fr": "km en ;trottinette à assistance électrique",
+    "en": "km by ;electrically assisted scooter",
+    "de": "km mit ;E-Scooter",
+    "es": "km en ;patinete eléctrica asistida"
   },
   "busgnv": {
     "category": 4,

@@ -408,6 +408,28 @@ export const deplacements = [
     },
   },
   {
+    id: 17,
+    empreinteId: 28329,
+    slug: 'trottinette',
+    type: 'foot',
+    category: 4,
+    ecv: [
+      {
+        id: 5,
+        value: 0.0229,
+      },
+      {
+        id: 6,
+        value: 0.002,
+      },
+    ],
+    default: true,
+    tile: false,
+    display: {
+      max: 30,
+    },
+  },
+  {
     id: 21,
     empreinteId: 28005,
     subtitle: 'GNV',

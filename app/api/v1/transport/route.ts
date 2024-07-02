@@ -130,7 +130,7 @@ export const computeTransportEmission = (
  *         - 5 : Voiture électrique
  *         - 6 : Autocar
  *         - 7 : Vélo ou marche
- *         - 8 : Vélo (ou trottinette) à assistance électrique
+ *         - 8 : Vélo à assistance électrique
  *         - 9 : Bus thermique
  *         - 10 : Tramway
  *         - 11 : Métro
@@ -139,6 +139,7 @@ export const computeTransportEmission = (
  *         - 14 : RER ou Transilien
  *         - 15 : TER
  *         - 16 : Bus électrique
+ *         - 17 : Trottinette à assistance électrique
  *         - 21 : Bus (GNV)
  *     - in: query
  *       name: ignoreRadiativeForcing
