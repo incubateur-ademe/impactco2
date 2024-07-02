@@ -8,7 +8,7 @@ const existingValues: Record<string, SimpleEquivalent> = values
 const ecvs: Record<string, SimpleEquivalent> = {}
 const list: { value: string; label: string }[] = []
 
-categories.forEach((category) =>
+categories.forEach((category) => {
   category.equivalents?.forEach((equivalent) => {
     const value = existingValues[equivalent.slug]
 
@@ -27,7 +27,7 @@ categories.forEach((category) =>
       label: value ? value.fr : 'TODO',
     })
   })
-)
+})
 
 fs.writeFileSync(`src/utils/Equivalent/values.json`, JSON.stringify(ecvs, null, 2))
 fs.writeFileSync(

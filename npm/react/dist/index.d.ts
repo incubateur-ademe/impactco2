@@ -5,30 +5,30 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "random" |
                 "abricot" |
                 "ail" |
+                "alimentationordinateur" |
+                "alimentationsmartphone" |
                 "ananas" |
-                "appareilphotocompact" |
-                "appareilphotoreflex" |
                 "armoire" |
                 "artichaut" |
                 "asperge" |
                 "aspirateur" |
                 "aubergine" |
                 "autocar" |
-                "avioncourtcourrier" |
-                "avionlongcourrier" |
-                "avionmoyencourrier" |
+                "avion-courtcourrier" |
+                "avion-longcourrier" |
+                "avion-moyencourrier" |
+                "avion-pny" |
                 "avocat" |
                 "banane" |
-                "barredeson" |
                 "betterave" |
                 "biere" |
                 "blette" |
                 "bouilloire" |
+                "box" |
                 "brocoli" |
-                "busgnv" |
                 "buselectrique" |
+                "busgnv" |
                 "busthermique" |
-                "cadrephotodigital" |
                 "cafe" |
                 "cafetieredosette" |
                 "cafetiereexpresso" |
@@ -37,41 +37,39 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "canapetextile" |
                 "carambole" |
                 "carotte" |
+                "casquevr" |
                 "cassis" |
                 "celeri" |
                 "cerise" |
-                "chainehifi" |
                 "chaiseenbois" |
                 "champignonmorille" |
                 "chataigne" |
+                "chauffageelectrique" |
                 "chauffagefioul" |
                 "chauffagegaz" |
-                "poeleabois" |
-                "poeleagranule" |
-                "pompeachaleur" |
-                "chauffageelectrique" |
-                "reseaudechaleur" |
+                "chaussuresdesport" |
+                "chaussuresencuir" |
+                "chaussuresentissu" |
                 "chemiseencoton" |
                 "chemiseenviscose" |
                 "chou" |
                 "choudebruxelles" |
                 "choufleur" |
                 "citron" |
+                "clefusb" |
                 "clementine" |
                 "climatiseur" |
                 "coing" |
                 "concombre" |
-                "consoledesalon" |
-                "consoleportable" |
                 "courge" |
                 "courgette" |
                 "cresson" |
                 "datte" |
+                "disquedur" |
                 "eaudurobinet" |
                 "eauenbouteille" |
                 "echalote" |
-                "ecran215pouces" |
-                "ecran24pouces" |
+                "ecran" |
                 "email" |
                 "enceintebluetooth" |
                 "endive" |
@@ -84,23 +82,18 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "francais" |
                 "friends" |
                 "fruitdelapassion" |
-                "telechargement" |
                 "game-of-thrones" |
                 "grenade" |
                 "groseille" |
                 "haricotvert" |
-                "homecinema" |
-                "imprimantejetdencre" |
                 "intercites" |
                 "jeans" |
                 "kaki" |
                 "kiwi" |
-                "laitdesoja" |
                 "laitdevache" |
                 "laitue" |
                 "lavelinge" |
                 "lavevaisselle" |
-                "liseuse" |
                 "lit" |
                 "mache" |
                 "mais" |
@@ -109,8 +102,6 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "manteau" |
                 "melon" |
                 "metro" |
-                "modemfibre" |
-                "montreconnectee" |
                 "moto" |
                 "mure" |
                 "myrtille" |
@@ -121,23 +112,22 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "noixdecoco" |
                 "oignon" |
                 "orange" |
-                "ordinateurfixebureautique" |
-                "ordinateurfixeperformance" |
+                "ordinateurfixeparticulier" |
+                "ordinateurfixeprofessionnel" |
                 "ordinateurportable" |
-                "chaussuresdesport" |
-                "chaussuresencuir" |
-                "chaussuresentissu" |
                 "pamplemousse" |
                 "panais" |
-                "avion-pny" |
                 "pasteque" |
                 "peche" |
                 "petitpois" |
+                "poeleabois" |
+                "poeleagranule" |
                 "poire" |
                 "poireau" |
                 "poivron" |
                 "polo" |
                 "pomme" |
+                "pompeachaleur" |
                 "potiron" |
                 "prune" |
                 "pullenacrylique" |
@@ -155,6 +145,7 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "repasvegetalien" |
                 "repasvegetarien" |
                 "rer" |
+                "reseaudechaleur" |
                 "rhubarbe" |
                 "robeencoton" |
                 "robeenpolyester" |
@@ -163,16 +154,15 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "scooter" |
                 "smartphone" |
                 "soda" |
+                "soja" |
                 "spam" |
                 "stockagedonnee" |
                 "streamingvideo" |
                 "sweatencoton" |
-                "tshirtencoton" |
-                "tshirtenpolyester" |
                 "tableenbois" |
                 "tabletteclassique" |
-                "tablettemini" |
-                "tablettedetachable" |
+                "telechargement" |
+                "telephonebasique" |
                 "television" |
                 "ter" |
                 "tgv" |
@@ -182,15 +172,18 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "tomate" |
                 "topinambour" |
                 "tramway" |
-                "veloelectrique" |
+                "trottinette" |
+                "tshirtencoton" |
+                "tshirtenpolyester" |
                 "velo" |
+                "veloelectrique" |
                 "vesteimpermeable" |
                 "vestesimilicuir" |
                 "vin" |
                 "visioconference" |
+                "voiture-lille-nimes" |
                 "voitureelectrique" |
-                "voiturethermique" |
-                "voiture-lille-nimes"
+                "voiturethermique"
         )[];
         value: number;
         animated?: boolean | undefined;
