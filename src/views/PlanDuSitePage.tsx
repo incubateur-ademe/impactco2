@@ -23,6 +23,9 @@ const PlanDuSitePage = () => {
         <Link href='/budget'>Budget</Link>
         <div>Contenus</div>
         <div className={styles.row}>
+          <Link href='/contenu/comment-sensibiliser-vos-visiteurs-empreinte-carbone'>
+            Comment sensibiliser vos visiteurs à l’empreinte carbone ?
+          </Link>
           <Link href='/contenu/detecteur-co2'>Le Détecteur CO₂</Link>
           <Link href='/contenu/etiquette-carbone'>L’étiquette carbone : présentation et tutoriel d’intégration</Link>
           <Link href='/contenu/impact-carbone-hiver-station-ski'>
