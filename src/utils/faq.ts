@@ -37,7 +37,6 @@ export const getFAQs = unstable_cache(
               content,
             }
           } catch (e) {
-            console.error(e)
             return { id: null, content: null }
           }
         })
@@ -58,7 +57,6 @@ export const getFAQs = unstable_cache(
           section: result.properties.Section.select.name,
         }))
     } catch (e) {
-      console.error(e)
       return []
     }
   },
