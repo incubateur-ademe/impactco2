@@ -922,7 +922,7 @@
   },
   "smartphone": {
     "category": 1,
-    "value": 85800,
+    "value": 85850,
     "fr": "smartphone[s]",
     "en": "smartphone[s]",
     "de": "smartphone[s]",
@@ -930,7 +930,7 @@
   },
   "ordinateurfixeparticulier": {
     "category": 1,
-    "value": 302300,
+    "value": 299300,
     "fr": "ordinateur[s] fixe[s] sans écran (particulier)",
     "en": "desktop computer[s] without screen (personal)",
     "de": "Desktop-Computer (Personal)",
@@ -938,7 +938,7 @@
   },
   "ordinateurfixeprofessionnel": {
     "category": 1,
-    "value": 262600,
+    "value": 258100.00000000003,
     "fr": "ordinateur[s] fixe[s] sans écran (professionnel)",
     "en": "desktop computer[s] without screen (office)",
     "de": "Desktop-Computer (Büro)",
@@ -946,7 +946,7 @@
   },
   "ecran": {
     "category": 1,
-    "value": 93800,
+    "value": 91400,
     "fr": "écran[s] d'ordinateur",
     "en": "computer screen[s]",
     "de": "Computer-Bildschirm",
@@ -954,7 +954,7 @@
   },
   "tabletteclassique": {
     "category": 1,
-    "value": 63399.99999999999,
+    "value": 61899.99999999999,
     "fr": "tablette[s]",
     "en": "tablet[s]",
     "de": "Tablet[s]",
@@ -962,7 +962,7 @@
   },
   "television": {
     "category": 1,
-    "value": 480400.00000000006,
+    "value": 472400.00000000006,
     "fr": "télévision[s] ",
     "en": "television[s]",
     "de": "Fernseher",
@@ -970,7 +970,7 @@
   },
   "ordinateurportable": {
     "category": 1,
-    "value": 193900.00000000003,
+    "value": 193000.00000000003,
     "fr": "ordinateur[s] portable[s]",
     "en": "laptop[s]",
     "de": "Laptops",
@@ -978,7 +978,7 @@
   },
   "enceintebluetooth": {
     "category": 1,
-    "value": 27000,
+    "value": 26500,
     "fr": "enceinte[s] connectée[s]",
     "en": "Bluetooth speaker[s]",
     "de": "Bluetooth-Lautsprecher",
@@ -1034,7 +1034,7 @@
   },
   "box": {
     "category": 1,
-    "value": 84000,
+    "value": 82000,
     "fr": "box[s]",
     "en": "box[s]",
     "de": "Box",
