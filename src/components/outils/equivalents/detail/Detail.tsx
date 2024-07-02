@@ -1,7 +1,9 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
+import PlusMinus from 'components/outils/plusMinus/PlusMinus'
+import InformationIcon from 'components/base/icons/information'
 import shareableStyles from 'components/shareable/Shareable.module.css'
 import styles from './Detail.module.css'
 import DetailValue from './DetailValue'
@@ -83,15 +85,22 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
   return []
 }
 
-export default function Detail({ equivalent }: { equivalent: Equivalent }) {
+export default function Detail({
+  equivalent,
+  setOverscreen,
+}: {
+  equivalent: Equivalent
+  setOverscreen?: (overScreen: string) => void
+}) {
   const t = useTranslations('equivalent')
+  const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
 
   if (!('ecv' in equivalent) || !equivalent.ecv || equivalent.ecv.length === 0) {
     return null
   }
 
   const fabricationTotal = equivalent.ecv.reduce((acc, current) => acc + current.value, 0)
-  const usage = 'usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears * equivalent.usage.peryear : 0
+  const usage = 'usage' in equivalent && equivalent.usage ? years * equivalent.usage.peryear : 0
   const end = 'end' in equivalent && equivalent.end ? equivalent.end : 0
 
   const total = fabricationTotal + usage + end
@@ -132,11 +141,11 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
     <>
       <div className={shareableStyles.separator} />
       <table className={styles.table}>
-        {values.map((value) => (
-          <Fragment key={value.label}>
-            <thead>
-              <tr>
-                <th>
+        <tbody>
+          {values.map((value) => (
+            <Fragment key={value.label}>
+              <tr className={styles.main}>
+                <td>
                   <Image
                     className={styles.icon}
                     src={`/images/icn-${value.icon || value.label.toLowerCase()}.svg`}
@@ -145,7 +154,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                     alt=''
                   />
                   {t(value.label)}
-                </th>
+                </td>
                 <td className={styles.percent}>
                   {withPercent ? ' ' : <Percentage value={(100 * value.value) / sum} />}
                 </td>
@@ -153,8 +162,6 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                   <DetailValue unit={unit} value={value.value} />
                 </td>
               </tr>
-            </thead>
-            <tbody>
               {value.values.map((item) => (
                 <tr key={item.id}>
                   <td>
@@ -168,23 +175,63 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                   </td>
                 </tr>
               ))}
-            </tbody>
-          </Fragment>
-        ))}
-        {!withPercent && (
-          <thead>
-            <tr>
-              <th>
+            </Fragment>
+          ))}
+          {!!years && (
+            <>
+              <tr>
+                <td>
+                  <b>Total</b> par année d'utilisation{' '}
+                  {setOverscreen && (
+                    <button
+                      title='Voir les informations sur la durée de vie'
+                      onClick={() => setOverscreen('usage')}
+                      className={styles.informationButton}>
+                      <InformationIcon />
+                    </button>
+                  )}
+                </td>
+                <td className={styles.usageWidgetContainer}>
+                  <PlusMinus
+                    className={styles.usageWidget}
+                    label={t('year')}
+                    value={years}
+                    setValue={setYears}
+                    step={0.5}
+                  />
+                </td>
+                <td>
+                  <b>
+                    <DetailValue unit={unit} value={sum / years} />
+                  </b>
+                </td>
+              </tr>
+              <tr className={styles.noBorder}>
+                <td colSpan={3} className={styles.usageWidgetContainerSmall}>
+                  <PlusMinus
+                    className={styles.usageWidget}
+                    label={t('year')}
+                    value={years}
+                    setValue={setYears}
+                    step={0.5}
+                  />
+                </td>
+              </tr>
+            </>
+          )}
+          {!withPercent && (
+            <tr className={styles.main}>
+              <td>
                 <Image className={styles.icon} src='/images/icn-total.svg' width={20} height={20} alt='' />
                 {t('total')}
-              </th>
-              <th className={styles.percent}> </th>
-              <th>
+              </td>
+              <td className={styles.percent}> </td>
+              <td>
                 <DetailValue unit={unit} value={sum} />
-              </th>
+              </td>
             </tr>
-          </thead>
-        )}
+          )}
+        </tbody>
       </table>
     </>
   )

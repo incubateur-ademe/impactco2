@@ -1,4 +1,6 @@
-import React, { ReactNode, useMemo } from 'react'
+'use client'
+
+import React, { ReactNode, useMemo, useState } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -15,11 +17,15 @@ const Equivalent = ({
   equivalent: ComputedEquivalent
   simulator?: ReactNode
 }) => {
+  const [overScreen, setOverScreen] = useState<string | undefined>()
   const overScreens = useMemo(() => overScreenEquivalentValues(equivalent), [equivalent])
 
   return (
-    <Shareable tracking={getName('fr', equivalent)} overScreens={overScreens}>
-      {simulator || <EquivalentSimulator category={category} equivalent={equivalent} />}
+    <Shareable
+      tracking={getName('fr', equivalent)}
+      overScreen={overScreen ? overScreens[overScreen] : undefined}
+      setOverScreen={setOverScreen}>
+      {simulator || <EquivalentSimulator category={category} equivalent={equivalent} setOverscreen={setOverScreen} />}
     </Shareable>
   )
 }

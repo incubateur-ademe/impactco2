@@ -8,7 +8,15 @@ import EquivalentCardContent from '../EquivalentCardContent'
 import Detail from '../detail/Detail'
 import styles from './EquivalentSimulator.module.css'
 
-const EquivalentSimulator = ({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) => {
+const EquivalentSimulator = ({
+  category,
+  equivalent,
+  setOverscreen,
+}: {
+  category: Category
+  equivalent: ComputedEquivalent
+  setOverscreen: (overScreen: string) => void
+}) => {
   const t = useTranslations('equivalent')
   const pre = t(`hypothesis.pre.${equivalent.slug}`)
   const post = t(`hypothesis.post.${equivalent.slug}`)
@@ -27,7 +35,7 @@ const EquivalentSimulator = ({ category, equivalent }: { category: Category; equ
           </div>
         )}
       </div>
-      <Detail equivalent={equivalent} />
+      <Detail equivalent={equivalent} setOverscreen={setOverscreen} />
     </>
   )
 }

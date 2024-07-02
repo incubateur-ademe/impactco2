@@ -94,6 +94,7 @@ const chauffageValidation = z.object({
  *                         type: string
  *                         example: chauffagegaz
  */
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const inputs = chauffageValidation.safeParse(Object.fromEntries(searchParams))

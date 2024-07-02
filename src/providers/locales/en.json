@@ -6,6 +6,7 @@
     "information-2": "The simulator will be automatically updated with any new features."
   },
   "overscreen": {
+    "usage": "Use",
     "apercu": "SHARING OVERVIEW",
     "share": "Share",
     "integrate": "Integrate",
@@ -231,9 +232,10 @@
     "total": "THIS EQUALS.."
   },
   "equivalent": {
+    "year": "year[s]",
     "hypotheses": "Hypotheses",
     "fabrication": "Manufacturing",
-    "usage": "Usage",
+    "usage": "Use",
     "fdv": "End of life",
     "usage-fdv": "Usage and end of life",
     "total": "Total",
