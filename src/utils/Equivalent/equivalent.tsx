@@ -80,5 +80,5 @@ export const getName = (
   value?: number
 ) => {
   const name = getNameWithoutSuffix(language, equivalent, withPrefix, value)
-  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? ` (${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}`
+  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? ` (${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}`
 }

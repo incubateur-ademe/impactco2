@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { deplacements } from 'data/categories/deplacement'
-import { getName } from 'utils/Equivalent/equivalent'
+import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import { trackAPIRequest } from 'utils/middleware'
 import { filterByDistance } from 'utils/transport'
 
@@ -31,12 +31,12 @@ export const computeTransportEmission = (
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
-      let name = getName(language || 'fr', transportation)
+      let name = getNameWithoutSuffix(language || 'fr', { ...transportation, carpool: 0 })
       if ('ecvs' in transportation && transportation.ecvs) {
         const currentECV = transportation.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
         if (currentECV) {
           values = currentECV.ecv
-          name = getName(language || 'fr', {
+          name = getNameWithoutSuffix(language || 'fr', {
             ...transportation,
             slug: `${transportation.slug}-${currentECV.subtitle}`,
           })
