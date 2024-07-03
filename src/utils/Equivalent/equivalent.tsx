@@ -10,10 +10,17 @@ const m2: Record<string, string> = {
 }
 
 const carpooling: Record<string, string> = {
-  fr: 'Co-voiturage',
+  fr: 'Covoiturage',
   en: 'Carpooling',
   de: 'Mitfahrgelegenheit',
   es: 'Compartir',
+}
+
+const passengers: Record<string, string> = {
+  fr: 'passager[s]',
+  en: 'passenger[s]',
+  de: 'Passagier',
+  es: 'pasajero[s]',
 }
 
 const getValues = (
@@ -73,5 +80,5 @@ export const getName = (
   value?: number
 ) => {
   const name = getNameWithoutSuffix(language, equivalent, withPrefix, value)
-  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}`
+  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? ` (${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}`
 }

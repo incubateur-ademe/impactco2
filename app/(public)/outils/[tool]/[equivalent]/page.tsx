@@ -44,7 +44,8 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
   if (!category || !category.equivalents) {
     return parent as Metadata
   }
-  const [slug] = decodeURIComponent(params.equivalent).split('+')
+  const fullSlug = decodeURIComponent(params.equivalent)
+  const [slug] = fullSlug.split('+')
   const equivalent = category.equivalents.find((equivalent) => equivalent.slug === slug)
   if (!equivalent) {
     return parent as Metadata
@@ -59,7 +60,7 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
         : `Découvrir l'impact carbone d'un ${getName(language, equivalent, true).toLowerCase()} grâce à Impact CO2 et aux données de l'ADEME`,
     openGraph: {
       creators: 'ADEME',
-      images: `meta/${equivalent.slug}-${language}.png`,
+      images: `meta/${fullSlug}-${language}.png`,
     },
   }
 }

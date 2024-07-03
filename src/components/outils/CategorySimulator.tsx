@@ -56,6 +56,7 @@ const CategorySimulator = ({
     }
   }, [equivalents, ref, max])
 
+  console.log(equivalents)
   return (
     <div className={styles.container}>
       <div ref={ref}>
