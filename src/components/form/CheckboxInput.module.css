@@ -52,6 +52,10 @@
   }
 }
 
+.reversed {
+  flex-direction: row-reverse;
+}
+
 .checked {
   color: var(--neutral-80);
 
@@ -60,10 +64,18 @@
   }
 }
 
+.checkReversed,
 .check {
   color: var(--neutral-00);
-  left: 0.5rem;
   padding: inherit;
   position: absolute;
   font-size: 1rem;
+}
+
+.check {
+  left: 0.5rem;
+}
+
+.checkReversed {
+  right: 0.5rem;
 }

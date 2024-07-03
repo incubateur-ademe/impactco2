@@ -6,6 +6,8 @@
     "information-2": "The simulator will be automatically updated with any new features."
   },
   "overscreen": {
+    "default-true": "displayed by default",
+    "default-false": "show by default",
     "usage": "Use",
     "apercu": "SHARING OVERVIEW",
     "share": "Share",
@@ -57,6 +59,7 @@
       "end": "Office"
     },
     "transport": {
+      "modes": "Transport modes to integrate",
       "onglet": "Tab to share",
       "onglet-hint": "Select tab you want to see when on sharing",
       "onglets": "Tabs to integrate",

@@ -5,6 +5,7 @@ import { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useCallback, useContext, useEffect, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
+import { deplacements } from 'data/categories/deplacement'
 import { displayAddress } from 'utils/address'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
@@ -112,6 +113,8 @@ export type Params = {
     setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
   }
   transport: {
+    modes: string[]
+    setModes: Dispatch<SetStateAction<string[]>>
     selected: TransportSimulateur
     setSelected: Dispatch<SetStateAction<TransportSimulateur>>
   }
@@ -232,6 +235,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [km, setKm] = useState(10)
 
   // Transport
+  const [modes, setModes] = useState<string[]>(deplacements.map((transport) => transport.slug))
   const [selected, setSelected] = useState<TransportSimulateur>('distance')
 
   const [teletravailStart, setTeletravailStart] = useState<Point>()
@@ -325,6 +329,14 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setKm(km)
       }
     }
+
+    if (searchParams.get('modes')) {
+      const modes = (searchParams.get('modes') as string).split(',')
+      if (modes.length > 0) {
+        setModes(modes)
+      }
+    }
+
     completeAddress(setItineraireStart, (searchParams.get('start') || searchParams.get('itineraireStart')) as string)
     completeAddress(setItineraireEnd, (searchParams.get('end') || searchParams.get('itineraireEnd')) as string)
     completeAddress(setTeletravailStart, (searchParams.get('start') || searchParams.get('teletravailStart')) as string)
@@ -474,6 +486,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setComparedEquivalent: internalComparedEquivalentSetter,
         },
         transport: {
+          modes,
+          setModes,
           selected,
           setSelected,
         },
