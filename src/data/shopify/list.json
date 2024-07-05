@@ -9,19 +9,19 @@
   },
   {
     "value": "voiture-lille-nimes",
-    "label": "A/R;lille - nîmes en voiture"
+    "label": "A/R ;Lille - Nîmes en voiture"
   },
   {
     "value": "tgv-paris-berlin",
-    "label": "A/R;paris - berlin en tgv"
+    "label": "A/R ;Paris - Berlin en tgv"
   },
   {
     "value": "tgv-paris-marseille",
-    "label": "A/R;paris - marseille en tgv"
+    "label": "A/R ;Paris - Marseille en tgv"
   },
   {
     "value": "avion-pny",
-    "label": "A/R;paris - new-york en avion"
+    "label": "A/R ;paris - New-York en avion"
   },
   {
     "value": "alimentationordinateur",
@@ -33,31 +33,31 @@
   },
   {
     "value": "chauffagefioul",
-    "label": "année[s] de;chauffage au fioul"
+    "label": "année[s] de ;chauffage au fioul"
   },
   {
     "value": "chauffagegaz",
-    "label": "année[s] de;chauffage au gaz"
+    "label": "année[s] de ;chauffage au gaz"
   },
   {
     "value": "poeleabois",
-    "label": "année[s] de;chauffage avec un poêle à bois"
+    "label": "année[s] de ;chauffage avec un poêle à bois"
   },
   {
     "value": "poeleagranule",
-    "label": "année[s] de;chauffage avec un poêle à granulés"
+    "label": "année[s] de ;chauffage avec un poêle à granulés"
   },
   {
     "value": "pompeachaleur",
-    "label": "année[s] de;chauffage avec une pompe à chaleur"
+    "label": "année[s] de ;chauffage avec une pompe à chaleur"
   },
   {
     "value": "chauffageelectrique",
-    "label": "année[s] de;chauffage électrique"
+    "label": "année[s] de ;chauffage électrique"
   },
   {
     "value": "reseaudechaleur",
-    "label": "année[s] de;chauffage via un réseau de chaleur"
+    "label": "année[s] de ;chauffage via un réseau de chaleur"
   },
   {
     "value": "armoire",
@@ -137,7 +137,7 @@
   },
   {
     "value": "game-of-thrones",
-    "label": "épisode[s] de;game of thrones en streaming"
+    "label": "épisode[s] de ;game of thrones en streaming"
   },
   {
     "value": "fourelectrique",
@@ -149,11 +149,11 @@
   },
   {
     "value": "streamingvideo",
-    "label": "Heure[s] de;streaming vidéo"
+    "label": "Heure[s] de ;streaming vidéo"
   },
   {
     "value": "visioconference",
-    "label": "Heure[s] de;visioconférence"
+    "label": "Heure[s] de ;visioconférence"
   },
   {
     "value": "friends",
@@ -165,363 +165,375 @@
   },
   {
     "value": "abricot",
-    "label": "kg d'abricot"
+    "label": "kg d';abricot"
   },
   {
     "value": "ail",
-    "label": "kg d'ail"
+    "label": "kg d';ail"
   },
   {
     "value": "ananas",
-    "label": "kg d'ananas"
+    "label": "kg d';ananas"
   },
   {
     "value": "artichaut",
-    "label": "kg d'artichaut"
+    "label": "kg d';artichaut"
   },
   {
     "value": "asperge",
-    "label": "kg d'asperge"
+    "label": "kg d';asperge"
   },
   {
     "value": "aubergine",
-    "label": "kg d'aubergine"
+    "label": "kg d';aubergine"
   },
   {
     "value": "avocat",
-    "label": "kg d'avocat"
+    "label": "kg d';avocat"
   },
   {
     "value": "echalote",
-    "label": "kg d'échalote"
+    "label": "kg d';échalote"
   },
   {
     "value": "endive",
-    "label": "kg d'endive"
+    "label": "kg d';endive"
   },
   {
     "value": "epinard",
-    "label": "kg d'épinard"
+    "label": "kg d';épinard"
   },
   {
     "value": "haricotvert",
-    "label": "kg d'haricot vert (cru)"
+    "label": "kg d';haricot vert (cru)"
   },
   {
     "value": "oignon",
-    "label": "kg d'oignon"
+    "label": "kg d';oignon"
   },
   {
     "value": "orange",
-    "label": "kg d'orange"
+    "label": "kg d';orange"
   },
   {
     "value": "banane",
-    "label": "kg de;banane"
+    "label": "kg de ;banane"
   },
   {
     "value": "betterave",
-    "label": "kg de;betterave"
+    "label": "kg de ;betterave"
   },
   {
     "value": "blette",
-    "label": "kg de;blette"
+    "label": "kg de ;blette"
   },
   {
     "value": "brocoli",
-    "label": "kg de;brocoli"
+    "label": "kg de ;brocoli"
   },
   {
     "value": "carambole",
-    "label": "kg de;carambole"
+    "label": "kg de ;carambole"
   },
   {
     "value": "carotte",
-    "label": "kg de;carotte"
+    "label": "kg de ;carotte"
   },
   {
     "value": "cassis",
-    "label": "kg de;cassis"
+    "label": "kg de ;cassis"
   },
   {
     "value": "celeri",
-    "label": "kg de;céleri"
+    "label": "kg de ;céleri"
   },
   {
     "value": "cerise",
-    "label": "kg de;cerise"
+    "label": "kg de ;cerise"
   },
   {
     "value": "champignonmorille",
-    "label": "kg de;champignon (morille crue)"
+    "label": "kg de ;champignon (morille crue)"
   },
   {
     "value": "chataigne",
-    "label": "kg de;châtaigne"
+    "label": "kg de ;châtaigne"
   },
   {
     "value": "chou",
-    "label": "kg de;chou"
+    "label": "kg de ;chou"
   },
   {
     "value": "choudebruxelles",
-    "label": "kg de;chou de bruxelles"
+    "label": "kg de ;chou de Bruxelles"
   },
   {
     "value": "choufleur",
-    "label": "kg de;chou-fleur"
+    "label": "kg de ;chou-fleur"
   },
   {
     "value": "citron",
-    "label": "kg de;citron"
+    "label": "kg de ;citron"
   },
   {
     "value": "clementine",
-    "label": "kg de;clémentine"
+    "label": "kg de ;clémentine"
   },
   {
     "value": "coing",
-    "label": "kg de;coing"
+    "label": "kg de ;coing"
   },
   {
     "value": "concombre",
-    "label": "kg de;concombre"
+    "label": "kg de ;concombre"
   },
   {
     "value": "courge",
-    "label": "kg de;courge"
+    "label": "kg de ;courge"
   },
   {
     "value": "courgette",
-    "label": "kg de;courgette"
+    "label": "kg de ;courgette"
   },
   {
     "value": "cresson",
-    "label": "kg de;cresson"
+    "label": "kg de ;cresson"
   },
   {
     "value": "datte",
-    "label": "kg de;datte"
+    "label": "kg de ;datte"
   },
   {
     "value": "fenouil",
-    "label": "kg de;fenouil"
+    "label": "kg de ;fenouil"
   },
   {
     "value": "figue",
-    "label": "kg de;figue"
+    "label": "kg de ;figue"
   },
   {
     "value": "fraise",
-    "label": "kg de;fraise"
+    "label": "kg de ;fraise"
   },
   {
     "value": "framboise",
-    "label": "kg de;framboise"
+    "label": "kg de ;framboise"
   },
   {
     "value": "fruitdelapassion",
-    "label": "kg de;fruit de la passion"
+    "label": "kg de ;fruit de la passion"
   },
   {
     "value": "grenade",
-    "label": "kg de;grenade"
+    "label": "kg de ;grenade"
   },
   {
     "value": "groseille",
-    "label": "kg de;groseille"
+    "label": "kg de ;groseille"
   },
   {
     "value": "kaki",
-    "label": "kg de;kaki"
+    "label": "kg de ;kaki"
   },
   {
     "value": "kiwi",
-    "label": "kg de;kiwi"
+    "label": "kg de ;kiwi"
   },
   {
     "value": "laitue",
-    "label": "kg de;laitue"
+    "label": "kg de ;laitue"
   },
   {
     "value": "mache",
-    "label": "kg de;mâche"
+    "label": "kg de ;mâche"
   },
   {
     "value": "mais",
-    "label": "kg de;maïs"
+    "label": "kg de ;maïs"
   },
   {
     "value": "mandarine",
-    "label": "kg de;mandarine"
+    "label": "kg de ;mandarine"
   },
   {
     "value": "mangue",
-    "label": "kg de;mangue"
+    "label": "kg de ;mangue"
   },
   {
     "value": "melon",
-    "label": "kg de;melon"
+    "label": "kg de ;melon"
   },
   {
     "value": "mure",
-    "label": "kg de;mûre"
+    "label": "kg de ;mûre"
   },
   {
     "value": "myrtille",
-    "label": "kg de;myrtille"
+    "label": "kg de ;myrtille"
   },
   {
     "value": "navet",
-    "label": "kg de;navet"
+    "label": "kg de ;navet"
   },
   {
     "value": "nectarine",
-    "label": "kg de;nectarine"
+    "label": "kg de ;nectarine"
   },
   {
     "value": "noisette",
-    "label": "kg de;noisette"
+    "label": "kg de ;noisette"
   },
   {
     "value": "noix",
-    "label": "kg de;noix"
+    "label": "kg de ;noix"
   },
   {
     "value": "noixdecoco",
-    "label": "kg de;noix de coco"
+    "label": "kg de ;noix de coco"
   },
   {
     "value": "pamplemousse",
-    "label": "kg de;pamplemousse"
+    "label": "kg de ;pamplemousse"
   },
   {
     "value": "panais",
-    "label": "kg de;panais"
+    "label": "kg de ;panais"
   },
   {
     "value": "pasteque",
-    "label": "kg de;pastèque"
+    "label": "kg de ;pastèque"
   },
   {
     "value": "peche",
-    "label": "kg de;pêche"
+    "label": "kg de ;pêche"
   },
   {
     "value": "petitpois",
-    "label": "kg de;petit pois"
+    "label": "kg de ;petit pois"
   },
   {
     "value": "poire",
-    "label": "kg de;poire"
+    "label": "kg de ;poire"
   },
   {
     "value": "poireau",
-    "label": "kg de;poireau"
+    "label": "kg de ;poireau"
   },
   {
     "value": "poivron",
-    "label": "kg de;poivron"
+    "label": "kg de ;poivron"
   },
   {
     "value": "pomme",
-    "label": "kg de;pomme"
+    "label": "kg de ;pomme"
   },
   {
     "value": "potiron",
-    "label": "kg de;potiron"
+    "label": "kg de ;potiron"
   },
   {
     "value": "prune",
-    "label": "kg de;prune"
+    "label": "kg de ;prune"
   },
   {
     "value": "radis",
-    "label": "kg de;radis"
+    "label": "kg de ;radis"
   },
   {
     "value": "raisin",
-    "label": "kg de;raisin"
+    "label": "kg de ;raisin"
   },
   {
     "value": "reineclaude",
-    "label": "kg de;reine claude"
+    "label": "kg de ;reine claude"
   },
   {
     "value": "rhubarbe",
-    "label": "kg de;rhubarbe"
+    "label": "kg de ;rhubarbe"
   },
   {
     "value": "salsifis",
-    "label": "kg de;salsifis"
+    "label": "kg de ;salsifis"
   },
   {
     "value": "tomate",
-    "label": "kg de;tomate"
+    "label": "kg de ;tomate"
   },
   {
     "value": "topinambour",
-    "label": "kg de;topinambour"
+    "label": "kg de ;topinambour"
   },
   {
     "value": "autocar",
-    "label": "km en;autocar"
+    "label": "km en ;autocar"
+  },
+  {
+    "value": "avion-courtcourrier",
+    "label": "km en ;avion court courrier"
+  },
+  {
+    "value": "avion-longcourrier",
+    "label": "km en ;avion long courrier"
+  },
+  {
+    "value": "avion-moyencourrier",
+    "label": "km en ;avion moyen courrier"
   },
   {
     "value": "busgnv",
-    "label": "km en;bus (gnv)"
+    "label": "km en ;bus (GNV)"
   },
   {
     "value": "buselectrique",
-    "label": "km en;bus électrique"
+    "label": "km en ;bus électrique"
   },
   {
     "value": "busthermique",
-    "label": "km en;bus thermique"
+    "label": "km en ;bus thermique"
   },
   {
     "value": "intercites",
-    "label": "km en;intercités"
+    "label": "km en ;intercités"
   },
   {
     "value": "metro",
-    "label": "km en;métro"
+    "label": "km en ;métro"
   },
   {
     "value": "moto",
-    "label": "km en;moto"
+    "label": "km en ;moto"
   },
   {
     "value": "rer",
-    "label": "km en;rer ou transilien"
+    "label": "km en ;RER ou Transilien"
   },
   {
     "value": "scooter",
-    "label": "km en;scooter ou moto légère"
+    "label": "km en ;scooter ou moto légère"
   },
   {
     "value": "ter",
-    "label": "km en;ter"
+    "label": "km en ;TER"
   },
   {
     "value": "tgv",
-    "label": "km en;tgv"
+    "label": "km en ;TGV"
   },
   {
     "value": "tramway",
-    "label": "km en;tramway"
+    "label": "km en ;tramway"
   },
   {
     "value": "veloelectrique",
-    "label": "km en;vélo (ou trottinette) à assistance électrique"
+    "label": "km en ;vélo (ou trottinette) à assistance électrique"
   },
   {
     "value": "voitureelectrique",
-    "label": "km en;voiture électrique"
+    "label": "km en ;voiture électrique"
   },
   {
     "value": "voiturethermique",
-    "label": "km en;voiture thermique"
+    "label": "km en ;voiture thermique"
   },
   {
     "value": "lavelinge",
@@ -545,31 +557,31 @@
   },
   {
     "value": "biere",
-    "label": "Litre[s] de;bière"
+    "label": "Litre[s] de ;bière"
   },
   {
     "value": "soja",
-    "label": "Litre[s] de;boisson au soja"
+    "label": "Litre[s] de ;boisson au soja"
   },
   {
     "value": "cafe",
-    "label": "Litre[s] de;café"
+    "label": "Litre[s] de ;café"
   },
   {
     "value": "laitdevache",
-    "label": "Litre[s] de;lait de vache"
+    "label": "Litre[s] de ;lait de vache"
   },
   {
     "value": "soda",
-    "label": "Litre[s] de;soda"
+    "label": "Litre[s] de ;soda"
   },
   {
     "value": "the",
-    "label": "Litre[s] de;thé"
+    "label": "Litre[s] de ;thé"
   },
   {
     "value": "vin",
-    "label": "Litre[s] de;vin"
+    "label": "Litre[s] de ;vin"
   },
   {
     "value": "manteau",
@@ -698,18 +710,6 @@
   {
     "value": "television",
     "label": "télévision[s] "
-  },
-  {
-    "value": "avion-courtcourrier",
-    "label": "TODO"
-  },
-  {
-    "value": "avion-moyencourrier",
-    "label": "TODO"
-  },
-  {
-    "value": "avion-longcourrier",
-    "label": "TODO"
   },
   {
     "value": "velo",

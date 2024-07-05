@@ -13,7 +13,7 @@ const Etiquette = ({
   comparisons: string[]
   value: number
   animated?: boolean
-  language: Language
+  language?: Language
 }) => {
   const ref = useRef(null)
   return (
@@ -22,7 +22,7 @@ const Etiquette = ({
       comparisons={comparisons}
       baseValue={value.toString()}
       animated={animated}
-      language={language}
+      language={language || 'fr'}
     />
   )
 }

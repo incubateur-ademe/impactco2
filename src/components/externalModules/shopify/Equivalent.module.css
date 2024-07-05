@@ -47,9 +47,10 @@
 }
 
 .rightColumn {
-  border-radius: 0 0 8px 8px !important;
+  border-radius: 0 0 6px 6px !important;
 }
 
+.animatedEqualColumn,
 .animatedEqual,
 .equalColumn,
 .equal {
@@ -72,6 +73,7 @@
   }
 }
 
+.animatedEqualColumn,
 .equalColumn {
   top: 0 !important;
   left: 1.5em !important;
@@ -133,13 +135,23 @@
   line-height: 1em !important;
 }
 
+.progressBarColumn,
 .progressBar {
   position: absolute !important;
-  top: 50% !important;
-  transform: translateX(-50%) translateY(-50%);
   height: 1.75em !important;
   width: 1.75em !important;
   border-radius: 50% !important;
+}
+
+.progressBarColumn {
+  top: 0 !important;
+  left: 1.25em !important;
+  transform: translateY(-50%) !important;
+}
+
+.progressBar {
+  top: 50% !important;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .progress {

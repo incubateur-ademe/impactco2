@@ -261,7 +261,7 @@
         "ecran": "Dimension moyenne (24 pouces) et mix de technologies (98,6% LCD, 1,4% OLED) (mix pondéré entre 2 configurations d’écrans d’ordinateur.).",
         "tabletteclassique": "Écran de 10,53 pouces, mix de technologies d'écran LCD, 4,7 Go de RAM, 144 Go de mémoire (mix pondéré entre 3 configurations de tablettes.). Moyenne des usages d'une tablette personnelle et professionnelle",
         "television": "Dimension et technologie moyennes (82% LCD (45 pouces), 1% OLED (53 pouces), 17% OLED (68 pouces)) (mix pondéré entre 3 configurations de téléviseurs.).",
-        "ordinateurportable": "Dimension et technologie moyennes (82% LCD (45 pouces), 1% OLED (53 pouces), 17% OLED (68 pouces)) (mix pondéré entre 3 configurations de téléviseurs.).",
+        "ordinateurportable": "Écran moyen de 14,6 pouces, 1 CPU, 11 Go de RAM, 497 Go de SSD (mix pondéré entre 3 configurations d’ordinateurs portables à usage particulier).",
         "casquevr": "Moyenne de deux technologies (50% LCD, 50% OLED) + prise en compte de deux manettes.",
         "clefusb": "Capacité moyenne (16 Go).",
         "box": "Utilisation personnelle et professionnelle ; xDSL, FTTx.",

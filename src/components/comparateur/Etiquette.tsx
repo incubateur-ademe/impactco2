@@ -27,7 +27,7 @@ export default forwardRef(function Etiquette(
     const onResize = () => {
       if (typeof ref !== 'function' && ref && ref.current && ref.current.parentElement) {
         const { width } = ref.current.parentElement.getBoundingClientRect()
-        setInline(width > (comparisons.length + 1) * 175)
+        setInline(width > (animated ? 2 : comparisons.length + 1) * 175)
       }
     }
     onResize()
@@ -36,19 +36,26 @@ export default forwardRef(function Etiquette(
     return () => {
       window.removeEventListener('resize', onResize)
     }
-  }, [comparisons, ref])
+  }, [comparisons, ref, animated])
 
-  if (animated) {
-    return (
-      <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} animated randomize={randomize} />
-    )
-  }
   return (
     <div ref={ref}>
       {inline ? (
-        <Equivalent language={language} baseValue={baseValue} comparisons={comparisons} randomize={randomize} />
+        <Equivalent
+          language={language}
+          baseValue={baseValue}
+          comparisons={comparisons}
+          randomize={randomize}
+          animated={animated}
+        />
       ) : (
-        <ColumnEquivalent language={language} baseValue={baseValue} comparisons={comparisons} randomize={randomize} />
+        <ColumnEquivalent
+          language={language}
+          baseValue={baseValue}
+          comparisons={comparisons}
+          randomize={randomize}
+          animated={animated}
+        />
       )}
     </div>
   )

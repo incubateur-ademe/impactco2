@@ -261,7 +261,7 @@
         "ecran": "Average size (24 inches) and mix of technologies (98.6% LCD, 1.4% OLED) (weighted mix of 2 computer screen configurations).",
         "tabletteclassique": "10.53-inch screen, mix of LCD screen technologies, 4.7GB RAM, 144GB memory (weighted mix of 3 tablet configurations). Average usage of a personal and professional tablet.",
         "television": "Average size and technology (82% LCD (45 inches), 1% OLED (53 inches), 17% OLED (68 inches)) (weighted mix of 3 television configurations).",
-        "ordinateurportable": "Average size and technology (82% LCD (45 inches), 1% OLED (53 inches), 17% OLED (68 inches)) (weighted mix of 3 television configurations).",
+        "ordinateurportable": "Average 14.6-inch screen, 1 CPU, 11 GB RAM, 497 GB SSD (weighted mix between 3 special-purpose laptop configurations).",
         "casquevr": "Average of two technologies (50% LCD, 50% OLED) + includes two controllers.",
         "clefusb": "Average capacity (16GB).",
         "box": "Personal and professional use; xDSL, FTTx.",
