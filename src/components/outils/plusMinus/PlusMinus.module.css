@@ -58,10 +58,12 @@
   border-radius: 0rem 0.25rem 0.25rem 0rem;
 }
 
-.passager {
+.main {
+  flex: 1;
   height: 2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: var(--primary-60);
   font-size: 0.75rem;
