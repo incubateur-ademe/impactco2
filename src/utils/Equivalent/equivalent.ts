@@ -9,11 +9,19 @@ const m2: Record<string, string> = {
   es: 'por m²',
 }
 
-const carpooling: Record<string, string> = {
-  fr: 'Covoiturage',
-  en: 'Carpooling',
-  de: 'Mitfahrgelegenheit',
-  es: 'Compartir',
+const carpooling: Record<string, Record<string, string>> = {
+  voiturethermique: {
+    fr: 'Covoiturage thermique',
+    en: 'Carpooling combustion',
+    de: 'Mitfahrgelegenheit Thermoauto',
+    es: 'Compartir coche termico',
+  },
+  voitureelectrique: {
+    fr: 'Covoiturage électrique',
+    en: 'Carpooling electric',
+    de: 'Mitfahrgelegenheit Elektroauto',
+    es: 'Compartir coche eléctrico',
+  },
 }
 
 const passengers: Record<string, string> = {
@@ -32,15 +40,13 @@ const getValues = (
     return { prefix: '', name: '' }
   }
 
-  const carpool = equivalent.carpool ? `${carpooling[language]} ` : ''
-
   //@ts-expect-error: expect translation
   const translation = value[language]
   if (translation.includes('=')) {
     const [name, prefix] = translation.split('=')
     return {
       prefix,
-      name: carpool + name,
+      name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : name,
     }
   }
 
@@ -48,13 +54,13 @@ const getValues = (
     const [prefix, name] = translation.split(';')
     return {
       prefix,
-      name: carpool + name,
+      name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : name,
     }
   }
 
   return {
     prefix: '',
-    name: carpool + translation,
+    name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : translation,
   }
 }
 

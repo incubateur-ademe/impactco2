@@ -63,8 +63,8 @@ export default function useTransportations(
               onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
             }))
             .flatMap((equivalent) => {
-              const carpoolValue = equivalent.carpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
-              return equivalent.carpool
+              const carpoolValue = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
+              return equivalent.withCarpool
                 ? [
                     {
                       ...equivalent,

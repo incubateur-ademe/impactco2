@@ -129,7 +129,7 @@ export const deplacements = [
     subtitle: 'Thermique',
     synonyms: ['conduire'],
     slug: 'voiturethermique',
-    carpool: 1,
+    withCarpool: true,
     type: 'car',
     category: 4,
     ecv: [
@@ -150,7 +150,7 @@ export const deplacements = [
     subtitle: 'Électrique',
     synonyms: ['conduire'],
     slug: 'voitureelectrique',
-    carpool: 1,
+    withCarpool: true,
     type: 'car',
     category: 4,
     ecv: [

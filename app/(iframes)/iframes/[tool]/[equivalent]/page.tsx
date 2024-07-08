@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   return categories.flatMap((category) =>
     category.equivalents
       ? category.equivalents.flatMap((equivalent) =>
-          equivalent.carpool
+          equivalent.withCarpool
             ? [
                 {
                   tool: category.slug,
@@ -17,6 +17,7 @@ export async function generateStaticParams() {
                 ...Array.from({ length: 4 }).map((value, index) => ({
                   tool: category.slug,
                   equivalent: `${equivalent.slug}+${index + 1}`,
+                  carpool: index + 1,
                 })),
               ]
             : [

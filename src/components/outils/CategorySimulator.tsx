@@ -64,7 +64,7 @@ const CategorySimulator = ({
             .sort((a, b) => (a.initialValue || a.value) - (b.initialValue || b.value))
             .map((equivalent) => (
               <div
-                key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
+                key={equivalent.carpool ? `${equivalent.slug}-${equivalent.carpool}` : equivalent.slug}
                 className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
                 <IframeableLink data-testid='category-link' href={equivalent.link} className={styles.link}>
                   <EquivalentIcon equivalent={equivalent} height={3} />

@@ -4,6 +4,7 @@ type BaseEquivalent = {
   category: number
   default?: boolean
   synonyms?: string[]
+  withCarpool?: boolean
   carpool?: number
   percentage?: boolean
   unit?: string
