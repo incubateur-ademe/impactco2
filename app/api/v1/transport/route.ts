@@ -220,7 +220,7 @@ export async function GET(req: NextRequest) {
       data: emissions.map((emission) => ({
         id: emission.id,
         name: emission.name,
-        value: emission.emissions.kgco2e / (((emission.carpool && inputs.data.numberOfPassenger) || 0) + 1),
+        value: emission.emissions.kgco2e / (((emission.withCarpool && inputs.data.numberOfPassenger) || 0) + 1),
       })),
       warning: hasAPIKey
         ? undefined

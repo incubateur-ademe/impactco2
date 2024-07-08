@@ -11,9 +11,9 @@ import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
-import Carpool from './Carpool'
 import CategoryDisplayAll from './CategoryDisplayAll'
 import styles from './CategorySimulator.module.css'
+import PlusMinus from './plusMinus/PlusMinus'
 
 const CategorySimulator = ({
   tracking,
@@ -32,8 +32,9 @@ const CategorySimulator = ({
   withSimulator?: boolean
   type?: TransportSimulateur
 }) => {
-  const { language } = useParamContext()
+  const params = useParamContext()
   const t = useTranslations('category-simulator')
+
   const ref = useRef<HTMLDivElement>(null)
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
@@ -69,7 +70,9 @@ const CategorySimulator = ({
                 <IframeableLink data-testid='category-link' href={equivalent.link} className={styles.link}>
                   <EquivalentIcon equivalent={equivalent} height={3} />
                   <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
-                    <div className={styles.name}>{equivalent.name || getNameWithoutSuffix(language, equivalent)}</div>
+                    <div className={styles.name}>
+                      {equivalent.name || getNameWithoutSuffix(params.language, equivalent)}
+                    </div>
                     <div className={styles.data}>
                       <div
                         className={styles.fullBar}
@@ -92,7 +95,15 @@ const CategorySimulator = ({
                     <div className={styles.conducteur}>
                       <Image src='/icons/conducteur.svg' alt='' width={20} height={24} />
                     </div>
-                    <Carpool type={type} equivalent={equivalent} />
+                    <PlusMinus
+                      value={params[type].carpool[equivalent.slug] || 1}
+                      setValue={(value) =>
+                        params[type].setCarpool({ ...params[type].carpool, [equivalent.slug]: value })
+                      }
+                      max={4}
+                      label={t('passenger')}
+                      icon='/icons/passager.svg'
+                    />
                   </div>
                 )}
               </div>

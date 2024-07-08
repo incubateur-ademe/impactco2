@@ -24,7 +24,15 @@ const getCarpool = (language: string, carpool: number) => {
   return `1 conducteur + ${carpool} ${formatName('passager[s]', carpool)}`
 }
 
-const EquivalentSimulator = ({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) => {
+const EquivalentSimulator = ({
+  category,
+  equivalent,
+  setOverscreen,
+}: {
+  category: Category
+  equivalent: ComputedEquivalent
+  setOverscreen: (overScreen: string) => void
+}) => {
   const { language } = useParamContext()
   const t = useTranslations('equivalent')
   const pre = t(`hypothesis.pre.${equivalent.slug}`)
@@ -46,7 +54,7 @@ const EquivalentSimulator = ({ category, equivalent }: { category: Category; equ
           </div>
         )}
       </div>
-      <Detail equivalent={equivalent} />
+      <Detail equivalent={equivalent} setOverscreen={setOverscreen} />
     </>
   )
 }

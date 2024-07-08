@@ -1,19 +1,14 @@
 .table {
   width: 100%;
-
-  thead {
-    border-top: 2px solid var(--primary-30);
-    color: var(--neutral-80);
-    font-weight: 700;
-  }
+  color: var(--neutral-60);
 
   tr {
     border-top: 2px solid var(--primary-30);
   }
 
-  th,
   td {
     padding: 1rem 1.5rem;
+    vertical-align: middle;
 
     &:first-child {
       text-align: left;
@@ -24,14 +19,20 @@
     }
   }
 
-  td {
-    color: var(--neutral-60);
-  }
-
   @media screen and (max-width: 29.875rem) {
     font-size: 0.875rem;
     line-height: 1.25rem;
+
+    td {
+      padding: 0.75rem 1rem;
+    }
   }
+}
+
+.main {
+  border-top: 2px solid var(--primary-30);
+  color: var(--neutral-80);
+  font-weight: 700;
 }
 
 .icon {
@@ -43,8 +44,67 @@
   background: var(--primary-10);
 }
 
+.usageWidgetContainerSmall {
+  display: none;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  justify-content: center;
+  padding-top: 0rem !important;
+
+  @media screen and (max-width: 37rem) {
+    display: table-cell;
+  }
+}
+
+.usageWidgetContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.usageWidgetContainer,
 .percent {
-  @media screen and (max-width: 29.875rem) {
+  @media screen and (max-width: 37rem) {
     display: none;
   }
+}
+
+.usageWidget {
+  width: 11rem;
+
+  >div,
+  button {
+    @media screen and (max-width: 48rem) {
+      height: 2rem;
+      width: 2.25rem;
+    }
+  }
+
+  @media screen and (max-width: 37rem) {
+    margin: auto;
+  }
+}
+
+.informationButton {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  color: var(--primary-50);
+
+  &:hover {
+    color: var(--primary-70);
+  }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 3px solid var(--primary-40);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+.noBorder {
+  border-top: none !important;
 }
