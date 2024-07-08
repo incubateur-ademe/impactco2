@@ -146,14 +146,16 @@ export default function Detail({
             <Fragment key={value.label}>
               <tr className={styles.main}>
                 <td>
-                  <Image
-                    className={styles.icon}
-                    src={`/images/icn-${value.icon || value.label.toLowerCase()}.svg`}
-                    width={20}
-                    height={20}
-                    alt=''
-                  />
-                  {t(value.label)}
+                  <div className={styles.withIcon}>
+                    <Image
+                      className={styles.icon}
+                      src={`/images/icn-${value.icon || value.label.toLowerCase()}.svg`}
+                      width={20}
+                      height={20}
+                      alt=''
+                    />
+                    {t(value.label)}
+                  </div>
                 </td>
                 <td className={styles.percent}>
                   {withPercent ? ' ' : <Percentage value={(100 * value.value) / sum} />}
@@ -222,8 +224,10 @@ export default function Detail({
           {!withPercent && (
             <tr className={styles.main}>
               <td>
-                <Image className={styles.icon} src='/images/icn-total.svg' width={20} height={20} alt='' />
-                {t('total')}
+                <div className={styles.withIcon}>
+                  <Image className={styles.icon} src='/images/icn-total.svg' width={20} height={20} alt='' />
+                  {t('total')}
+                </div>
               </td>
               <td className={styles.percent}> </td>
               <td>
