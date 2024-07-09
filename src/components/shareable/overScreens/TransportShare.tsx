@@ -25,7 +25,7 @@ const TransportShare = () => {
   const {
     distance,
     itineraire,
-    transport: { selected, setSelected, comparisonMode, setComparisonMode },
+    transport: { selected, setSelected, comparisonMode, comparison, setComparisonMode },
     language,
   } = useParamContext()
 
@@ -54,11 +54,16 @@ const TransportShare = () => {
         result += `itineraireEnd=${itineraire.end.address}&`
       }
     }
+
+    if (comparison[0] !== 'voiturethermique' && comparison[1] !== 'tgv') {
+      result += `comparison=${comparison[0]},${comparison[1]}&`
+    }
+
     result += `defaultMode=${comparisonMode}&`
     result += `language=${language}`
 
     return result
-  }, [visibility, selected, distance.km, itineraire.start, itineraire.end, language, comparisonMode])
+  }, [visibility, selected, distance.km, itineraire.start, itineraire.end, language, comparisonMode, comparison])
 
   const params = useMemo(() => {
     return {

@@ -31,7 +31,7 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
   } = useParamContext()
 
   const [generation, setGeneration] = useState<number | boolean>(false)
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState<number | boolean>(false)
 
   const availableComparisons = useMemo(
     () =>
@@ -51,7 +51,9 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
     [equivalents]
   )
   useEffect(() => {
-    setComparison(availableComparisons[index % availableComparisons.length])
+    if (typeof index === 'number') {
+      setComparison(availableComparisons[index % availableComparisons.length])
+    }
   }, [index])
 
   useEffect(() => {
@@ -91,7 +93,7 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
         onClick={() => {
           setGeneration(0)
           setTimeout(() => {
-            setIndex(index + 1)
+            setIndex(typeof index === 'number' ? index + 1 : 1)
             setTimeout(() => setGeneration(1), 100)
           }, 200)
         }}>

@@ -28,7 +28,7 @@ const TransportIntegrate = () => {
     setTheme,
     language,
     setLanguage,
-    transport: { selected, modes, comparisonMode },
+    transport: { selected, modes, comparison, comparisonMode },
   } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
@@ -78,6 +78,10 @@ const TransportIntegrate = () => {
       result += `&defaultMode=${defaultMode}`
     }
 
+    if (comparison[0] !== 'voiturethermique' && comparison[1] !== 'tgv') {
+      result += `&comparison=${comparison[0]},${comparison[1]}`
+    }
+
     if (modes.length !== 0 && modes.length !== deplacements.length) {
       result += `&modes=${modes.join(',')}`
     }
@@ -95,6 +99,7 @@ const TransportIntegrate = () => {
     modes,
     defaultMode,
     comparisonModes,
+    comparison,
   ])
 
   const params = useMemo(() => {

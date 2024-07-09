@@ -347,8 +347,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (searchParams.get('defaultMode')) {
-      const mode = searchParams.get('defaultMode')
-      setComparisonMode(mode === 'list' ? 'list' : 'comparison')
+      setComparisonMode(searchParams.get('defaultMode') === 'list' ? 'list' : 'comparison')
+    } else if (searchParams.get('mode')) {
+      setComparisonMode(searchParams.get('mode') === 'list' ? 'list' : 'comparison')
     }
 
     if (searchParams.get('comparison')) {

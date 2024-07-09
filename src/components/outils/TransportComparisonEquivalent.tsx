@@ -63,7 +63,7 @@ const TransportComparisonEquivalent = ({ index, equivalents }: { index: 0 | 1; e
 
   const t = useTranslations('transport')
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid={`comparison-tile-${index}`}>
       {equivalent && otherEquivalent && (
         <>
           <Link
