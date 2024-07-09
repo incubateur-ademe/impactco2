@@ -30,3 +30,16 @@
     display: none;
   }
 }
+
+.disclaimer {
+  color: var(--neutral-50);
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 3rem 0;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+}
