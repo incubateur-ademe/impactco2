@@ -119,7 +119,10 @@ const CategorySimulator = ({
         />
       )}
       {hasUsage && (
-        <div className={classNames(styles.legend, { [styles.legendRelative]: legendRelative })}>
+        <div
+          className={classNames(styles.legend, {
+            [styles.legendRelative]: equivalents[0]?.carpool || equivalents[1]?.carpool || legendRelative,
+          })}>
           <div>
             <div className={styles.usage} />
             {t('legend.usage')}

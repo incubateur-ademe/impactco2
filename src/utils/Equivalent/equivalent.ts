@@ -31,11 +31,21 @@ const passengers: Record<string, string> = {
   es: 'pasajero[s]',
 }
 
+const allValues: Record<string, { fr: string; en: string; de: string; es: string }> = {
+  ...values,
+  avion: {
+    fr: 'avion',
+    en: 'plane',
+    de: 'flugzeug',
+    es: 'avión',
+  },
+}
+
 const getValues = (
   language: string,
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>
 ): { prefix: string; name: string } => {
-  const value = (values as Record<string, { fr: string; en: string; de: string; es: string }>)[equivalent.slug]
+  const value = allValues[equivalent.slug]
   if (!value) {
     return { prefix: '', name: '' }
   }

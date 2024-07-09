@@ -6,6 +6,8 @@
     "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
   },
   "overscreen": {
+    "default-true": "Affiché par défaut",
+    "default-false": "Afficher par défaut",
     "usage": "Usage",
     "apercu": "APERÇU DU PARTAGE",
     "share": "Partager",
@@ -42,6 +44,7 @@
       "end": "Lieu de travail"
     },
     "transport": {
+      "modes": "Modes de transports à intégrer",
       "onglet": "Onglet à partager",
       "onglet-hint": "Sélectionnez l’onglet que vous souhaitez voir affiché lors du partage",
       "onglets": "Onglet à intégrer",

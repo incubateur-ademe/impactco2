@@ -24,7 +24,7 @@ export default function useTransportations(
     const allEquivalents =
       itineraries || km
         ? deplacements
-            .filter((equivalent) => equivalent.category === 4)
+            .filter((equivalent) => params.transport.modes.includes(equivalent.slug))
             .filter((equivalent) =>
               itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
             )
@@ -98,10 +98,9 @@ export default function useTransportations(
               itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
             )
           )
-
     return {
-      hasMore: displayAll || allEquivalents.length > equivalents.length,
-      equivalents,
+      hasMore: (displayAll || allEquivalents.length > equivalents.length) && equivalents.length !== 0,
+      equivalents: equivalents.length === 0 ? allEquivalents : equivalents,
     }
   }, [params, itineraries, type, tracking])
 
