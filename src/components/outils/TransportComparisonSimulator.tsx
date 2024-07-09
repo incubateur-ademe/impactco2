@@ -52,7 +52,11 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
   )
   useEffect(() => {
     if (typeof index === 'number') {
-      setComparison(availableComparisons[index % availableComparisons.length])
+      if (availableComparisons.length > 0) {
+        setComparison(availableComparisons[index % availableComparisons.length])
+      } else {
+        setComparison(comparisons[index % comparisons.length])
+      }
     }
   }, [index])
 

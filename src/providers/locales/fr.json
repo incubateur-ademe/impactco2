@@ -77,7 +77,7 @@
   "transport": {
     "sorry": "Désolé !",
     "notFound": "L’itinéraire demandé n’est pas compatible avec ce mode de transport",
-    "otherComparison": "Voir une autre comparison",
+    "otherComparison": "Voir une autre comparaison",
     "modify": "Modifier",
     "avoided": "évités",
     "itineraire": {

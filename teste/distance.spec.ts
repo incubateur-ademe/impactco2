@@ -71,7 +71,7 @@ test('Transport distance comparison', async ({ page }) => {
   await page.goto('http://localhost:3000/outils/transport?defaultMode=comparison')
   await expect(page.getByTestId('comparison-tile-0')).toContainText('Voiture thermique2.18 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toContainText('2.15Kg CO₂eévitésTGV0.03 kg CO₂e Modifier')
-  await page.getByRole('button', { name: 'Voir une autre comparison' }).click()
+  await page.getByRole('button', { name: 'Voir une autre comparaison' }).click()
   await expect(page.getByTestId('comparison-tile-0')).toContainText('Voiture électrique1.03 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toContainText('0.99Kg CO₂eévitésMétro0.04 kg CO₂e Modifier')
 

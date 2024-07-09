@@ -91,8 +91,10 @@ const TransportComparisonEquivalent = ({ index, equivalents }: { index: 0 | 1; e
               </div>
             </div>
           )}
-          <EquivalentIcon equivalent={equivalent} height={4} />
-          {equivalent.found ? equivalent.name : getName(language, equivalent)}
+          <div className={styles.top}>
+            <EquivalentIcon equivalent={equivalent} height={4} />
+            {equivalent.found ? equivalent.name : getName(language, equivalent)}
+          </div>
           {equivalent.found ? (
             <div>
               <div className={styles.impact}>
