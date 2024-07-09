@@ -75,6 +75,8 @@
     "close": "Fermer"
   },
   "transport": {
+    "sorry": "Désolé !",
+    "notFound": "L’itinéraire demandé n’est pas compatible avec ce mode de transport",
     "otherComparison": "Voir une autre comparison",
     "modify": "Modifier",
     "avoided": "évités",

@@ -75,6 +75,8 @@
     "close": "Close"
   },
   "transport": {
+    "sorry": "Sorry !",
+    "notFound": "This itinary is not available for this transport",
     "otherComparison": "See another comparison",
     "modify": "Modify",
     "avoided": "avoided",

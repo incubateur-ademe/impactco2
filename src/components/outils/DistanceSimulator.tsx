@@ -1,8 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useSearchParams } from 'next/navigation'
-import React, { useMemo } from 'react'
+import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
 import useTransportations from 'hooks/useTransportations'
@@ -12,7 +11,7 @@ import styles from './Simulator.module.css'
 import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
 
-const DistanceSimulator = () => {
+const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
   const {
     transport: { comparisonMode },
     distance: { km, setKm, displayAll, setDisplayAll },
@@ -20,11 +19,9 @@ const DistanceSimulator = () => {
   const t = useTranslations('transport.distance')
   const { hasMore, equivalents } = useTransportations('Transport distance', 'distance')
 
-  const searchParams = useSearchParams()
-  const mode = useMemo(() => searchParams.get('mode'), [searchParams])
   return (
     <>
-      <div className={styles.simulator}>
+      <div className={styles.distanceSimulator}>
         <NumberInput
           id='km-value'
           value={km}
@@ -37,7 +34,7 @@ const DistanceSimulator = () => {
         />
         {t('header')}
       </div>
-      {!mode && <TransportComparisonMode />}
+      {withComparisonMode && <TransportComparisonMode />}
       {comparisonMode === 'list' ? (
         <CategorySimulator
           tracking='Transport distance'

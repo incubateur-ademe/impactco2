@@ -9,6 +9,10 @@
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
+
+  @media screen and (max-width: 29.875rem) {
+    justify-content: center;
+  }
 }
 
 .withBorder {

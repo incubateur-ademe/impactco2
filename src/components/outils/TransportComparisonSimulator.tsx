@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import Button from 'components/base/buttons/Button'
@@ -43,27 +43,52 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
     transport: { comparison, setComparison },
   } = useParamContext()
 
+  const [generation, setGeneration] = useState<number | boolean>(false)
+
+  useEffect(() => {
+    if (typeof generation === 'number' && generation) {
+      setTimeout(
+        () =>
+          setGeneration((value) => {
+            if (typeof value === 'number') {
+              return value < 2 ? value + 1 : false
+            }
+            return value
+          }),
+        250
+      )
+    }
+  }, [generation])
+
   return (
     <div className={styles.container}>
       {comparisons && (
         <div className={styles.comparisons}>
-          <div className={styles.comparison}>
-            <TransportComparisonEquivalent index={0} equivalents={equivalents} />
+          <div className={generation === 0 ? styles.disapearingTile : styles.tile}>
+            <div className={styles.comparison}>
+              <TransportComparisonEquivalent index={0} equivalents={equivalents} />
+            </div>
           </div>
           <div className={styles.vs}>VS</div>
-          <div className={styles.comparison}>
-            <TransportComparisonEquivalent index={1} equivalents={equivalents} />
+          <div className={generation === 0 || generation === 1 ? styles.disapearingTile : styles.tile}>
+            <div className={styles.comparison}>
+              <TransportComparisonEquivalent index={1} equivalents={equivalents} />
+            </div>
           </div>
         </div>
       )}
       <Button
         className={styles.button}
         onClick={() => {
-          let newComparison = getRandomComparison(equivalents)
-          while (newComparison[0] === comparison[0] && newComparison[1] === comparison[1]) {
-            newComparison = getRandomComparison(equivalents)
-          }
-          setComparison(newComparison)
+          setGeneration(0)
+          setTimeout(() => {
+            let newComparison = getRandomComparison(equivalents)
+            while (newComparison[0] === comparison[0] && newComparison[1] === comparison[1]) {
+              newComparison = getRandomComparison(equivalents)
+            }
+            setComparison(newComparison)
+            setTimeout(() => setGeneration(1), 100)
+          }, 200)
         }}>
         <MagicWandIcon />
         {t('otherComparison')}

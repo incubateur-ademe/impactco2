@@ -24,10 +24,26 @@
 
 }
 
+.tile, .disapearingTile {
+  transition: all 0.2s linear;
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+
+
+.disapearingTile {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(85%);
+}
+
 .comparison {
   flex: 1;
   min-height: 100%;
 }
+
 
 .vs {
   color: var(--primary-40);

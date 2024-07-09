@@ -8,12 +8,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 1.5rem;
   color: var(--neutral-70);
   font-weight: 500;
   height: 100%;
   text-align: center;
+
+  @media screen and (max-width: 29.875rem) {
+    padding: 2.5rem 1rem 1.25rem 1rem;
+  }
 }
 
 .impact {
@@ -24,11 +28,11 @@
 
 .barContainer {
   width: 9rem;
+  margin: auto;
 
   @media screen and (max-width: 29.875rem) {
     width: 5.5rem;
   }
-
 }
 
 .bigBar,
@@ -59,9 +63,18 @@
 
 .open {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.5rem;
+  top: 0.25rem;
+  right: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: var(--primary-60);
+    background-color: var(--primary-10);
+  }
 }
 
 .winner {
@@ -73,7 +86,7 @@
   height: 102px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   color: #13701F;
   font-size: 0.75rem;
   font-weight: 500;
@@ -96,6 +109,7 @@
 .starContent {
   z-index: 2;
   text-align: center;
+  width: 100%;
 }
 
 .starValue {
@@ -103,4 +117,15 @@
   font-weight: 700;
   line-height: 1.25rem;
   margin-bottom: 0.125rem;
+}
+
+.notFound {
+  max-width: 15rem;
+  padding: 0.5rem 1.25rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--neutral-10);
+  color: var(--neutral-50);
+  font-size: 0.75rem;
+  line-height: 1rem;
 }

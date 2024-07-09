@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
 
   if (process.env.FAKE_GMAP_DATA === 'true') {
     // Fake Paris Lyon
-    return NextResponse.json({ car: 465.021, foot: 440.747, rail: 456.409, plane: 391.8120136890189 }, { status: 200 })
+    return NextResponse.json({ car: 465.021, foot: 440.747, rail: 456.409 }, { status: 200 })
   }
 
   const cached = await getCachedValue(inputs.data)

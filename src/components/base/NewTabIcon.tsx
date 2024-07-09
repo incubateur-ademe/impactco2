@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './NewTabIcon.module.css'
 
-export default function NewTabIcon() {
+export default function NewTabIcon({ noMargin }: { noMargin?: boolean }) {
   return (
     <svg
-      className={styles.icon}
+      className={noMargin ? '' : styles.icon}
       xmlns='http://www.w3.org/2000/svg'
       width='12'
       height='13'
