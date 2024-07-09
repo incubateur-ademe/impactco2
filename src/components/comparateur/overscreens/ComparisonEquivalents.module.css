@@ -1,0 +1,27 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--neutral-50);
+  font-weight: 500;
+
+  &:hover {
+    background-color: var(--primary-10);
+  }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 3px solid var(--primary-40);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}

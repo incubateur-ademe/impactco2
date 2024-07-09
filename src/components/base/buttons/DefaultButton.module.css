@@ -37,9 +37,10 @@
     outline-offset: 2px;
     outline: 3px solid var(--primary-40);
   }
-}
 
-.disabled {
-  background-color: var(--neutral-10);
-  color: var(--neutral-30);
+  &:disabled {
+    cursor: default;
+    background-color: var(--neutral-10);
+    color: var(--neutral-30);
+  }
 }

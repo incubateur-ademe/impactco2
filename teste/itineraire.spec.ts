@@ -14,7 +14,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/outils/transport/itineraire?language=fr'
+      'http://localhost:3000/outils/transport/itineraire?defaultMode=list&language=fr'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -23,7 +23,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire&language=fr&km=10"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&defaultMode=list"></script>'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -57,7 +57,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&language=fr'
+      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&defaultMode=list&language=fr'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -66,7 +66,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire&language=fr&km=10&itineraireStart=Nantes 44000 France"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&defaultMode=list"></script>'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -97,7 +97,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&language=fr'
+      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list&language=fr'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -106,7 +106,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list"></script>'
     )
     await page.getByTestId('cancel-button').click()
   })

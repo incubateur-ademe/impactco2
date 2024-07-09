@@ -16,7 +16,8 @@ const DefaultButton = ({ main, setMain, disabled }: { main: boolean; setMain: ()
       tabIndex={main ? -1 : undefined}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={classNames(styles.defaultButton, { [styles.disabled]: disabled, [styles.clickable]: !main })}>
+      className={classNames(styles.defaultButton, { [styles.clickable]: !main })}
+      disabled={disabled}>
       {main || hovered ? <FullStarIcon /> : <StarIcon />}
       {t(`default-${main.toString()}`)}
     </button>

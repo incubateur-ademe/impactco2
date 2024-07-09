@@ -57,3 +57,17 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
+.select {
+  flex: 1;
+
+  select {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 48rem) {
+    width: 100%;
+    flex: unset
+  }
+
+}

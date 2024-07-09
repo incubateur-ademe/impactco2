@@ -44,6 +44,11 @@
       "end": "Lieu de travail"
     },
     "transport": {
+      "search": "Rechercher un mode de transport",
+      "back": "Revenir au simulateur",
+      "mode-share": "Modes d’affichages à partager",
+      "mode-integrate": "Modes d’affichages à intégrer",
+      "comparison": "Comparaison affichée par défaut",
       "modes": "Modes de transports à intégrer",
       "onglet": "Onglet à partager",
       "onglet-hint": "Sélectionnez l’onglet que vous souhaitez voir affiché lors du partage",
@@ -70,6 +75,9 @@
     "close": "Fermer"
   },
   "transport": {
+    "otherComparison": "Voir une autre comparison",
+    "modify": "Modifier",
+    "avoided": "évités",
     "itineraire": {
       "header": "Découvrez la quantité de CO₂e que vous émettez pour ce trajet",
       "start": "Départ",
@@ -99,7 +107,10 @@
     "mode-selector": {
       "distance": "Distance",
       "itineraire": "Itinéraire",
-      "teletravail": "Télétravail"
+      "teletravail": "Télétravail",
+      "list": "Liste",
+      "comparison": "Comparaison",
+      "comparisonMode": "Mode d'affichage :"
     }
   },
   "chauffage": {

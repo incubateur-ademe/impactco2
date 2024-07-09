@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-10);
+  color: var(--primary-70);
+  border-top: 2px solid var(--primary-30);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.withBorder {
+  border-bottom: 2px solid var(--primary-30);
+}
+
+.text {
+  @media screen and (max-width: 29.875rem) {
+    display: none;
+  }
+}
+
+.modes {
+  border-radius: 0.5rem;
+  border: 2px solid var(--primary-30);
+  display: flex;
+}
+
+.leftButton,
+.rightButton {
+  color: var(--primary-70);
+  background-color: var(--primary-20);
+  display: flex;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+
+  &:focus,
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+.leftButton {
+  border-radius: calc(0.5rem - 2px) 0 0 calc(0.5rem - 2px);
+  border-right: 2px solid var(--primary-30);
+}
+
+.rightButton {
+
+  border-radius: 0 calc(0.5rem - 2px) calc(0.5rem - 2px) 0;
+}
+
+.clickeable {
+  cursor: pointer;
+  background-color: var(--primary-10);
+  color: var(--primary-60);
+
+  &:hover {
+    background-color: var(--neutral-00);
+    color: var(--primary-70);
+  }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 3px solid var(--primary-40);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
