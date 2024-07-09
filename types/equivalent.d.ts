@@ -4,6 +4,7 @@ type BaseEquivalent = {
   category: number
   default?: boolean
   synonyms?: string[]
+  withCarpool?: boolean
   carpool?: number
   percentage?: boolean
   unit?: string
@@ -85,7 +86,7 @@ export type Equivalent =
   | UsageNumeriqueEquivalent
   | FruitsEtLegumesEquivalent
 
-export type ComputedEquivalent = Equivalent & { value: number; link: string; name?: string }
+export type ComputedEquivalent = Equivalent & { value: number; initialValue?: number; link: string; name?: string }
 
 export type Language = 'en' | 'fr' | 'de' | 'es'
 export type SimpleEquivalent = {

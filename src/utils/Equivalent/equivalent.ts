@@ -9,9 +9,31 @@ const m2: Record<string, string> = {
   es: 'por m²',
 }
 
+const carpooling: Record<string, Record<string, string>> = {
+  voiturethermique: {
+    fr: 'Covoiturage thermique',
+    en: 'Carpooling combustion',
+    de: 'Mitfahrgelegenheit Thermoauto',
+    es: 'Compartir coche termico',
+  },
+  voitureelectrique: {
+    fr: 'Covoiturage électrique',
+    en: 'Carpooling electric',
+    de: 'Mitfahrgelegenheit Elektroauto',
+    es: 'Compartir coche eléctrico',
+  },
+}
+
+const passengers: Record<string, string> = {
+  fr: 'passager[s]',
+  en: 'passenger[s]',
+  de: 'Passagier',
+  es: 'pasajero[s]',
+}
+
 const getValues = (
   language: string,
-  equivalent: Pick<Equivalent, 'category' | 'slug'>
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>
 ): { prefix: string; name: string } => {
   const value = (values as Record<string, { fr: string; en: string; de: string; es: string }>)[equivalent.slug]
   if (!value) {
@@ -24,7 +46,7 @@ const getValues = (
     const [name, prefix] = translation.split('=')
     return {
       prefix,
-      name,
+      name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : name,
     }
   }
 
@@ -32,13 +54,13 @@ const getValues = (
     const [prefix, name] = translation.split(';')
     return {
       prefix,
-      name,
+      name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : name,
     }
   }
 
   return {
     prefix: '',
-    name: translation,
+    name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : translation,
   }
 }
 
@@ -49,7 +71,7 @@ export const getPrefix = (language: string, equivalent: Pick<Equivalent, 'catego
 
 export const getNameWithoutSuffix = (
   language: string,
-  equivalent: Pick<Equivalent, 'category' | 'slug'>,
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
   value?: number
 ) => {
@@ -59,10 +81,10 @@ export const getNameWithoutSuffix = (
 
 export const getName = (
   language: string,
-  equivalent: Pick<Equivalent, 'category' | 'slug'>,
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
   value?: number
 ) => {
   const name = getNameWithoutSuffix(language, equivalent, withPrefix, value)
-  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}`
+  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? ` (${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}`
 }

@@ -1,19 +1,26 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useMemo } from 'react'
+import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent } from 'types/equivalent'
-import { categories } from 'data/categories'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import EqualIcon from 'components/base/icons/equal'
 import styles from './InfographySimulator.module.css'
 import Name from './Name'
 
 const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
-  const values = equivalents
-    .map((slug) =>
-      categories
-        .flatMap((category) => category.equivalents)
-        .find((equivalent) => equivalent && equivalent.slug === slug)
-    )
-    .filter((value) => value) as ComputedEquivalent[]
+  const values = useMemo(
+    () =>
+      equivalents
+        .map((equivalent) => {
+          const [slug, carpool] = equivalent.split('+')
+          const result = computedEquivalents.find((equivalent) => equivalent && equivalent.slug === slug)
+          if (!result) {
+            return null
+          }
+          return carpool ? { ...result, carpool: carpool, value: result.value / (Number(carpool) + 1) } : result
+        })
+        .filter((value) => value) as ComputedEquivalent[],
+    [equivalents]
+  )
 
   const factor = values[0].value
   return (

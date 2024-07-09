@@ -13,7 +13,7 @@ const IFrameEtiquette = ({ animated }: { animated?: boolean }) => {
     }
     return {
       baseValue: Number(params.get('value') || 100) * 1000,
-      comparisons: ((params.get('comparisons') || 'random') as string).split(','),
+      comparisons: ((params.get('comparisons')?.replace(' ', '+') || 'random') as string).split(','),
       language: (params.get('language') as Language) || 'fr',
     }
   }, [params])

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useMemo } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -23,6 +23,13 @@ const EquivalentPage = ({
   simulator?: ReactNode
 }) => {
   const tool = tools.find((tool) => tool.slug === category.slug)
+  const equivalentsInfography = useMemo(() => {
+    const slugs = infographies[equivalent.slug]
+    if (slugs && equivalent.carpool) {
+      return slugs.map((slug) => (slug === equivalent.slug ? `${equivalent.slug}+${equivalent.carpool}` : slug))
+    }
+    return slugs
+  }, [equivalent])
   return (
     <>
       <Breadcrumbs
@@ -37,9 +44,9 @@ const EquivalentPage = ({
         <Equivalent category={category} equivalent={equivalent} simulator={simulator} />
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>
-      {infographies[equivalent.slug] && (
+      {equivalentsInfography && (
         <Block title='Infographie' description='Une image vaut mieux que mille mots'>
-          <Infography equivalent={equivalent} equivalents={infographies[equivalent.slug]} />
+          <Infography equivalent={equivalent} equivalents={equivalentsInfography} />
         </Block>
       )}
       <Block title='Étiquette' description='Le petit format à intégrer dans vos contenus et applications.'>

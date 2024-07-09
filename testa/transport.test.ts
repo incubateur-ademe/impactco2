@@ -143,7 +143,7 @@ describe('transport', () => {
         },
         {
           id: 8,
-          name: 'Vélo (ou trottinette) à assistance électrique',
+          name: 'Vélo à assistance électrique',
           value: 0.22300000000000003,
         },
         {
@@ -185,6 +185,11 @@ describe('transport', () => {
           id: 16,
           name: 'Bus électrique',
           value: 0.95,
+        },
+        {
+          id: 17,
+          name: 'Trottinette à assistance électrique',
+          value: 0.2,
         },
         {
           id: 21,
