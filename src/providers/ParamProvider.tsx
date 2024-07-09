@@ -141,6 +141,8 @@ export type Params = {
     setCarpool: Dispatch<SetStateAction<Record<string, number>>>
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
+    roundTrip: boolean
+    setRoundTrip: Dispatch<SetStateAction<boolean>>
   }
   teletravail: {
     start?: Point
@@ -241,6 +243,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   // Distance
   const [km, setKm] = useState(10)
 
+  // Itinéraire
+  const [roundTrip, setRoundTrip] = useState(false)
+
   // Transport
   const [modes, setModes] = useState<string[]>(deplacements.map((transport) => transport.slug))
   const [comparisonMode, setComparisonMode] = useState<'list' | 'comparison'>('list')
@@ -337,6 +342,10 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       if (!Number.isNaN(km)) {
         setKm(km)
       }
+    }
+
+    if (searchParams.get('roundTrip')) {
+      setRoundTrip(searchParams.get('roundTrip') === 'true')
     }
 
     if (searchParams.get('modes')) {
@@ -516,6 +525,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setDisplayAll: setDistanceDisplayAll,
         },
         itineraire: {
+          roundTrip,
+          setRoundTrip,
           start: itineraireStart,
           setStart: setItineraireStart,
           end: itineraireEnd,

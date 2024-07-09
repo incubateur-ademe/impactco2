@@ -617,7 +617,15 @@ export const mockRoutesItinerary = async (page: Page) => {
       })
     }
   )
-  await page.route('/api/callGMap', async (route) => {
+  await page.route('http://localhost:3000/api/callGMap', async (route) => {
+    await route.fulfill({
+      headers: {
+        Etag: 'mocked, because it was run in a E2E environment',
+      },
+      body: JSON.stringify({ car: 91.021, foot: 87.914, rail: 91.153, plane: 80.69557099482829 }),
+    })
+  })
+  await page.route('http://127.0.0.1:3000/api/callGMap', async (route) => {
     await route.fulfill({
       headers: {
         Etag: 'mocked, because it was run in a E2E environment',

@@ -81,6 +81,7 @@
     "modify": "Modifier",
     "avoided": "évités",
     "itineraire": {
+      "roundTrip": "Aller / retour",
       "header": "Découvrez la quantité de CO₂e que vous émettez pour ce trajet",
       "start": "Départ",
       "end": "Arrivée"
