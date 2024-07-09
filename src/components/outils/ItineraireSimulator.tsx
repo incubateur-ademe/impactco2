@@ -20,10 +20,8 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
   const t = useTranslations('transport.itineraire')
 
   const { data: itineraries } = useItineraries(start, end, 'itinéraire')
-  console.log(itineraries)
   const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
 
-  console.log(equivalents)
   return (
     <>
       <div className={styles.simulator}>

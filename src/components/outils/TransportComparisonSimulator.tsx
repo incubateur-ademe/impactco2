@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import Button from 'components/base/buttons/Button'
@@ -12,38 +12,47 @@ import styles from './TransportComparisonSimulator.module.css'
 const comparisons = [
   ['voiturethermique', 'tgv'],
   ['voitureelectrique', 'metro'],
-  ['tgv', 'avion-courtcourrier'],
+  ['tgv', 'avion'],
   ['voiturethermique', 'voiturethermique+1'],
   ['moto', 'ter'],
   ['veloelectrique', 'scooter'],
   ['autocar', 'voitureelectrique'],
-  ['avion-courtcourrier', 'autocar'],
+  ['avion', 'autocar'],
   ['veloelectrique', 'voiturethermique'],
   ['voitureelectrique+2', 'moto'],
   ['busthermique', 'voiturethermique'],
   ['voiturethermique', 'ter'],
 ]
 
-const getRandomComparison = (equivalents: ComputedEquivalent[]) => {
-  const availableComparisons = comparisons.filter((comparison) => {
-    const [slug1] = comparison[0].split('+')
-    const [slug2] = comparison[1].split('+')
-
-    return (
-      equivalents.find((equivalent) => equivalent.slug === slug1) &&
-      equivalents.find((equivalent) => equivalent.slug === slug2)
-    )
-  })
-  return availableComparisons[Math.floor(Math.random() * availableComparisons.length)]
-}
-
 const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEquivalent[] }) => {
   const t = useTranslations('transport')
   const {
-    transport: { comparison, setComparison },
+    transport: { setComparison },
   } = useParamContext()
 
   const [generation, setGeneration] = useState<number | boolean>(false)
+  const [index, setIndex] = useState(0)
+
+  const availableComparisons = useMemo(
+    () =>
+      comparisons.filter((comparison) => {
+        const [slug1] = comparison[0].split('+')
+        const [slug2] = comparison[1].split('+')
+
+        return (
+          equivalents.find((equivalent) =>
+            slug1 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug1
+          ) &&
+          equivalents.find((equivalent) =>
+            slug2 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug2
+          )
+        )
+      }),
+    [equivalents]
+  )
+  useEffect(() => {
+    setComparison(availableComparisons[index % availableComparisons.length])
+  }, [index])
 
   useEffect(() => {
     if (typeof generation === 'number' && generation) {
@@ -82,11 +91,7 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
         onClick={() => {
           setGeneration(0)
           setTimeout(() => {
-            let newComparison = getRandomComparison(equivalents)
-            while (newComparison[0] === comparison[0] && newComparison[1] === comparison[1]) {
-              newComparison = getRandomComparison(equivalents)
-            }
-            setComparison(newComparison)
+            setIndex(index + 1)
             setTimeout(() => setGeneration(1), 100)
           }, 200)
         }}>

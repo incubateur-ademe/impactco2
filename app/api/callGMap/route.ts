@@ -23,17 +23,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(inputs.error)
   }
 
+  if (process.env.FAKE_GMAP_DATA === 'true') {
+    // Fake Paris Lyon
+    return NextResponse.json({ car: 465.021, foot: 440.747, rail: 456.409, plane: 391.8120136890189 }, { status: 200 })
+  }
+
   if (process.env.LIMIT_API === 'true') {
     const referer = req.headers.get('referer')
 
     if (!process.env.NEXT_PUBLIC_URL || !referer?.startsWith(process.env.NEXT_PUBLIC_URL)) {
       return NextResponse.json('Not authorized', { status: 403 })
     }
-  }
-
-  if (process.env.FAKE_GMAP_DATA === 'true') {
-    // Fake Paris Lyon
-    return NextResponse.json({ car: 465.021, foot: 440.747, rail: 456.409 }, { status: 200 })
   }
 
   const cached = await getCachedValue(inputs.data)

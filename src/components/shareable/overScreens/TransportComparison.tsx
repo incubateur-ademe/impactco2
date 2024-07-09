@@ -21,7 +21,6 @@ const TransportComparison = () => {
     [comparison]
   )
 
-  console.log(comparison, equivalent1, equivalent2)
   return (
     <>
       <div className={customStyles.title}>{t('comparison')}</div>
