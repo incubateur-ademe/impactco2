@@ -44,8 +44,8 @@
     "category": 13,
     "value": 31.7,
     "fr": "épisode[s] de ;game of thrones en streaming",
-    "en": "Game of Thrones streaming=episode[s]",
-    "de": "Game of Thrones Streaming=Folge[n]",
+    "en": "Game of Thrones streaming=episode[s] of ",
+    "de": "Game of Thrones Streaming=Folge[n] ",
     "es": "Episodio[s] de ;Game of Thrones streaming"
   },
   "friends": {

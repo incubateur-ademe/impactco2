@@ -8,7 +8,7 @@ test('Page is loaded and month can be selected', async ({ page }) => {
     await expect(page.getByTestId('text-select-month')).toHaveValue(new Date().getMonth().toString())
   })
   await test.step('User can change month', async () => {
-    await page.getByRole('combobox').selectOption('5')
+    await page.getByRole('combobox').first().selectOption('5')
     await expect(page.getByTestId('category-abricot-value')).toBeVisible()
     await page.getByTestId('header-share-button').click()
     await expect(page.getByTestId('clipboard-box')).toContainText(
