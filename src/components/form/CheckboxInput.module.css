@@ -50,6 +50,14 @@
     outline: 4px solid var(--primary-30);
     outline-offset: 0;
   }
+
+  input[type='checkbox']:disabled {
+    border-color: var(--neutral-20);
+  }
+
+  input[type='checkbox']:disabled:checked {
+    background-color: var(--neutral-10);
+  }
 }
 
 .reversed {

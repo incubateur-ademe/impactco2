@@ -64,7 +64,8 @@ export default function useTransportations(
             }))
             .flatMap((equivalent) => {
               const carpoolValue = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
-              return equivalent.withCarpool
+              return equivalent.withCarpool &&
+                params.transport.modes.find((mode) => mode.startsWith(`${equivalent.slug}+`))
                 ? [
                     {
                       ...equivalent,

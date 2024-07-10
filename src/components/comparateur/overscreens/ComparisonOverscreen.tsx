@@ -1,21 +1,31 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import { computedEquivalents } from 'src/providers/equivalents'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
-import { deplacements } from 'data/categories/deplacement'
+import { getEquivalentWithCarpool } from 'utils/carpool'
 import Button from 'components/base/buttons/Button'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import ComparisonEquivalents from './ComparisonEquivalents'
 import styles from './EquivalentsOverscreen.module.css'
 
+const allEquivalents = computedEquivalents
+  .filter((equivalent) => equivalent.category === 4)
+  .flatMap(getEquivalentWithCarpool)
+
 const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
-  const { overscreen, setOverscreen } = useParamContext()
+  const {
+    overscreen,
+    setOverscreen,
+    transport: { modes },
+  } = useParamContext()
   const [search, setSearch] = useState('')
   const results = useSearchEquivalent(search, true, 4)
 
+  const equivalents = useMemo(() => allEquivalents.filter((equivalent) => modes.includes(equivalent.slug)), [modes])
   const t = useTranslations('overscreen.transport')
   const tModal = useTranslations('modal')
   const onClose = () => {
@@ -61,7 +71,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
             </div>
           )
         ) : (
-          <ComparisonEquivalents onClose={onClose} equivalents={deplacements} index={index} />
+          <ComparisonEquivalents onClose={onClose} equivalents={equivalents} index={index} />
         )}
       </div>
       <div className={styles.footerCenter}>

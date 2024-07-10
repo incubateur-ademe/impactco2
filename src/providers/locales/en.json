@@ -65,6 +65,7 @@
       "mode-integrate": "Display mode to integrate",
       "comparison": "Comparison displayed by default",
       "modes": "Transport modes to integrate",
+      "modes-hint": "You cannot integrate less than 2 modes in the simulator.",
       "onglet": "Tab to share",
       "onglet-hint": "Select tab you want to see when on sharing",
       "onglets": "Tabs to integrate",

@@ -5,6 +5,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getEquivalentWithCarpool } from 'utils/carpool'
 import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import GhostButton from 'components/base/GhostButton'
@@ -13,17 +14,22 @@ import NewTabIcon from 'components/base/NewTabIcon'
 import StarShapeIcon from 'components/base/icons/star-shap'
 import styles from './TransportComparisonEquivalent.module.css'
 
+const allEquivalents = computedEquivalents.flatMap(getEquivalentWithCarpool)
+
 const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug: string) => {
   const [name, carpool] = slug.split('+')
   const equivalent = equivalents.find(
     (equivalent) =>
-      (slug === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === name) && !equivalent.carpool
+      (slug === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === name) &&
+      (carpool ? equivalent.carpool : !equivalent.carpool)
   ) as (ComputedEquivalent & { found?: boolean }) | undefined
+
   if (!equivalent) {
-    return computedEquivalents.find((equivalent) =>
-      slug === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === name
+    return allEquivalents.find((equivalent) =>
+      slug === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug
     ) as (ComputedEquivalent & { found?: boolean }) | undefined
   }
+
   if (carpool) {
     if (!equivalent) {
       return undefined
@@ -35,7 +41,7 @@ const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug
       ...equivalent,
       name: (equivalent.name || '').replace(oldName, newName),
       carpool: Number(carpool),
-      value: equivalent.value / (Number(carpool) + 1),
+      value: (equivalent.initialValue ? equivalent.initialValue * 2 : equivalent.value) / (Number(carpool) + 1),
       link: `${equivalent.link}+${carpool}`,
       found: true,
     }
@@ -43,7 +49,15 @@ const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug
   return equivalent ? { ...equivalent, found: true } : undefined
 }
 
-const TransportComparisonEquivalent = ({ index, equivalents }: { index: 0 | 1; equivalents: ComputedEquivalent[] }) => {
+const TransportComparisonEquivalent = ({
+  index,
+  equivalents,
+  canChange,
+}: {
+  index: 0 | 1
+  equivalents: ComputedEquivalent[]
+  canChange?: boolean
+}) => {
   const {
     language,
     setOverscreen,
@@ -123,11 +137,13 @@ const TransportComparisonEquivalent = ({ index, equivalents }: { index: 0 | 1; e
               {t('notFound')}
             </div>
           )}
-          <div className={styles.button}>
-            <GhostButton onClick={() => setOverscreen({ ...overscreen, transport: `comparison${index}` })}>
-              {t('modify')}
-            </GhostButton>
-          </div>
+          {canChange && (
+            <div className={styles.button}>
+              <GhostButton onClick={() => setOverscreen({ ...overscreen, transport: `comparison${index}` })}>
+                {t('modify')}
+              </GhostButton>
+            </div>
+          )}
         </>
       )}
     </div>

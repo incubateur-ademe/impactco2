@@ -50,6 +50,7 @@
       "mode-integrate": "Modes d’affichages à intégrer",
       "comparison": "Comparaison affichée par défaut",
       "modes": "Modes de transports à intégrer",
+      "modes-hint": "Il n’est pas possible d’intégrer moins de 2 modes de transport dans le simulateur.",
       "onglet": "Onglet à partager",
       "onglet-hint": "Sélectionnez l’onglet que vous souhaitez voir affiché lors du partage",
       "onglets": "Onglet à intégrer",
