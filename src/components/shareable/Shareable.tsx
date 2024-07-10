@@ -88,51 +88,56 @@ const Shareable = ({
         [styles.secondaryCard]: secondary !== undefined,
         night: theme === 'night',
         [styles.smallCard]: small,
-      })}
-      ref={secondary !== undefined ? undefined : ref}>
-      {overScreenToDisplay && (
-        <>
-          <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
-          <dialog
-            ref={overscreenRef}
-            tabIndex={-1}
-            aria-modal
-            aria-label={t(overScreenToDisplay.title)}
-            className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
-            {overScreenToDisplay.title && (
-              <div>
-                <div className={styles.header}>
-                  <b className='text-lg'>{t(overScreenToDisplay.title)}</b>
-                  <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
-                    {tModal('close')}
-                  </GhostButton>
+      })}>
+      <div ref={secondary !== undefined ? undefined : ref}>
+        {overScreenToDisplay && (
+          <>
+            <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
+            <dialog
+              ref={overscreenRef}
+              tabIndex={-1}
+              aria-modal
+              aria-label={t(overScreenToDisplay.title)}
+              className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
+              {overScreenToDisplay.title && (
+                <div>
+                  <div className={styles.header}>
+                    <b className='text-lg'>{t(overScreenToDisplay.title)}</b>
+                    <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
+                      {tModal('close')}
+                    </GhostButton>
+                  </div>
+                  <div className={styles.separatorBothBorders} />
                 </div>
-                <div className={styles.separatorBothBorders} />
+              )}
+              <div className={classNames(styles.overScreenChildren, { [styles.noScroll]: !overScreenToDisplay.title })}>
+                {overScreenToDisplay.children}
               </div>
-            )}
-            <div className={classNames(styles.overScreenChildren, { [styles.noScroll]: !overScreenToDisplay.title })}>
-              {overScreenToDisplay.children}
-            </div>
-            {overScreenToDisplay.title && (
-              <div>
-                <div className={styles.separatorBothBorders} />
-                <div className={styles.footer}>
-                  <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose} data-testid='cancel-button'>
-                    {tModal('close')}
-                  </GhostButton>
+              {overScreenToDisplay.title && (
+                <div>
+                  <div className={styles.separatorBothBorders} />
+                  <div className={styles.footer}>
+                    <GhostButton
+                      icon={<CloseIcon />}
+                      iconPosition='right'
+                      onClick={onClose}
+                      data-testid='cancel-button'>
+                      {tModal('close')}
+                    </GhostButton>
+                  </div>
                 </div>
-              </div>
-            )}
-          </dialog>
-        </>
-      )}
-      <div className={secondary !== undefined ? styles.secondaryContainer : ''}>
-        <div
-          ref={secondary !== undefined ? ref : undefined}
-          className={secondary !== undefined ? styles.secondaryContent : ''}>
-          {children}
+              )}
+            </dialog>
+          </>
+        )}
+        <div className={secondary !== undefined ? styles.secondaryContainer : ''}>
+          <div
+            ref={secondary !== undefined ? ref : undefined}
+            className={secondary !== undefined ? styles.secondaryContent : ''}>
+            {children}
+          </div>
+          {secondary && <div className={styles.secondaryText}>{secondary}</div>}
         </div>
-        {secondary && <div className={styles.secondaryText}>{secondary}</div>}
       </div>
       {secondary === undefined && (
         <>
