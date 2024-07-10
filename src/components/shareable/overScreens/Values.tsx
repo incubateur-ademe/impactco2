@@ -4,6 +4,7 @@ import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import Resource from 'components/base/Resource'
+import ComparisonOverscreen from 'components/comparateur/overscreens/ComparisonOverscreen'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
 import Integrate from './Integrate'
 import Share from './Share'
@@ -77,22 +78,20 @@ export const overScreenEquivalentValues: (equivalent: ComputedEquivalent) => Rec
   },
 })
 
-export const overScreenComparateurValues: (onClose?: () => void) => Record<string, OverScreenInfo> = (onClose) => ({
+export const overScreenComparateurValues = {
   partager: {
     title: 'share',
     children: <Share path='outils/comparateur' tracking='Comparateur' />,
-    fullHeight: !onClose,
   },
   integrer: {
     title: 'integrate',
     children: <Integrate path='comparateur' tracking='Comparateur' />,
-    fullHeight: !onClose,
   },
   equivalents: {
-    children: <EquivalentsOverscreen onClose={onClose} />,
+    children: <EquivalentsOverscreen />,
     fullHeight: true,
   },
-})
+}
 
 export const overScreenComparateurEtiquettesValues: () => Record<
   'animated' | 'static',
@@ -325,6 +324,14 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         image: '/images/icn-understand.svg',
         title: 'understand',
         children: <TransportData />,
+      },
+      comparison0: {
+        children: <ComparisonOverscreen index={0} />,
+        fullHeight: true,
+      },
+      comparison1: {
+        children: <ComparisonOverscreen index={1} />,
+        fullHeight: true,
       },
     }
   }

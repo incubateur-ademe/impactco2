@@ -16,7 +16,7 @@ const TransportListParam = () => {
     transport: { modes, setModes },
   } = useParamContext()
   return (
-    <div>
+    <>
       <div className={customStyles.title}>{t('modes')}</div>
       <div className={styles.modes}>
         {deplacements
@@ -40,7 +40,7 @@ const TransportListParam = () => {
             />
           ))}
       </div>
-    </div>
+    </>
   )
 }
 

@@ -82,6 +82,8 @@ type LivraisonValues = {
 }
 
 export type Params = {
+  overscreen: Record<string, string>
+  setOverscreen: Dispatch<SetStateAction<Record<string, string>>>
   reset: (slug: string) => void
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
@@ -113,6 +115,10 @@ export type Params = {
     setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
   }
   transport: {
+    comparisonMode: 'list' | 'comparison'
+    setComparisonMode: Dispatch<SetStateAction<'list' | 'comparison'>>
+    comparison: string[]
+    setComparison: Dispatch<SetStateAction<string[]>>
     modes: string[]
     setModes: Dispatch<SetStateAction<string[]>>
     selected: TransportSimulateur
@@ -202,6 +208,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<'fr' | 'en'>('fr')
+  const [overscreen, setOverscreen] = useState<Record<string, string>>({})
 
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
@@ -236,6 +243,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   // Transport
   const [modes, setModes] = useState<string[]>(deplacements.map((transport) => transport.slug))
+  const [comparisonMode, setComparisonMode] = useState<'list' | 'comparison'>('list')
+  const [comparison, setComparison] = useState<string[]>(['voiturethermique', 'tgv'])
   const [selected, setSelected] = useState<TransportSimulateur>('distance')
 
   const [teletravailStart, setTeletravailStart] = useState<Point>()
@@ -337,6 +346,17 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       }
     }
 
+    if (searchParams.get('defaultMode')) {
+      setComparisonMode(searchParams.get('defaultMode') === 'list' ? 'list' : 'comparison')
+    } else if (searchParams.get('mode')) {
+      setComparisonMode(searchParams.get('mode') === 'list' ? 'list' : 'comparison')
+    }
+
+    if (searchParams.get('comparison')) {
+      const comparison = searchParams.get('comparison')?.split(',') as string[]
+      setComparison(comparison)
+    }
+
     completeAddress(setItineraireStart, (searchParams.get('start') || searchParams.get('itineraireStart')) as string)
     completeAddress(setItineraireEnd, (searchParams.get('end') || searchParams.get('itineraireEnd')) as string)
     completeAddress(setTeletravailStart, (searchParams.get('start') || searchParams.get('teletravailStart')) as string)
@@ -406,18 +426,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     setUsageNumeriqueSituation(situation)
-  }, [
-    searchParams,
-    setM2,
-    setKm,
-    setItineraireStart,
-    setItineraireEnd,
-    setTeletravailStart,
-    setTeletravailEnd,
-    setMonth,
-    setNumberEmails,
-    setUsageNumeriqueSituation,
-  ])
+  }, [searchParams])
 
   const reset = useCallback((slug: string) => {
     switch (slug) {
@@ -425,6 +434,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setKm(10)
         setItineraireStart(undefined)
         setItineraireEnd(undefined)
+        setComparison(['voiturethermique', 'tgv'])
         break
       case 'teletravail':
         setTeletravailStart(undefined)
@@ -455,6 +465,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   return (
     <ParamContext.Provider
       value={{
+        overscreen,
+        setOverscreen,
         reset,
         theme,
         setTheme,
@@ -486,6 +498,10 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setComparedEquivalent: internalComparedEquivalentSetter,
         },
         transport: {
+          comparisonMode,
+          setComparisonMode,
+          comparison,
+          setComparison,
           modes,
           setModes,
           selected,

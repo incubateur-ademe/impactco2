@@ -59,6 +59,11 @@
       "end": "Office"
     },
     "transport": {
+      "search": "Search a transport",
+      "back": "Back to the simulator",
+      "mode-share": "Display mode to share",
+      "mode-integrate": "Display mode to integrate",
+      "comparison": "Comparison displayed by default",
       "modes": "Transport modes to integrate",
       "onglet": "Tab to share",
       "onglet-hint": "Select tab you want to see when on sharing",
@@ -70,6 +75,11 @@
     "close": "Close"
   },
   "transport": {
+    "sorry": "Sorry !",
+    "notFound": "This itinary is not available for this transport",
+    "otherComparison": "See another comparison",
+    "modify": "Modify",
+    "avoided": "avoided",
     "itineraire": {
       "header": "See how much CO₂e you emit for this itinary",
       "start": "From",
@@ -99,7 +109,10 @@
     "mode-selector": {
       "distance": "Distance",
       "itineraire": "Route",
-      "teletravail": "Telecommuting"
+      "teletravail": "Telecommuting",
+      "list": "List",
+      "comparison": "Comparison",
+      "comparisonMode": "Display mode:"
     }
   },
   "chauffage": {

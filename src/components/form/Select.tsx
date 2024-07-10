@@ -4,21 +4,15 @@ import classNames from 'classnames'
 import React, { SelectHTMLAttributes } from 'react'
 import styles from './Input.module.css'
 
-const Select = ({
-  id,
-  label,
-  hint,
-  inline,
-  padding,
-  className,
-  ...selectProps
-}: SelectHTMLAttributes<HTMLSelectElement> & {
+export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   id: string
   label?: string
   inline?: boolean
   hint?: string
   padding?: 'sm' | 'lg'
-}) => {
+}
+
+const Select = ({ id, label, hint, inline, padding, className, ...selectProps }: SelectProps) => {
   return (
     <div className={inline ? styles.containerInline : ''}>
       {label && (

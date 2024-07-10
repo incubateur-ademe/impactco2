@@ -1,4 +1,4 @@
-.simulator {
+.distanceSimulator, .simulator {
   padding: 1.5rem;
   color: var(--neutral-50);
   display: flex;
@@ -24,6 +24,8 @@
   }
 }
 
-.leftSimulator {
-  align-items: flex-start;
+.distanceSimulator {
+  input {
+    max-width: 12rem;
+  }
 }

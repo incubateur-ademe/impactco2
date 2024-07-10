@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { Dispatch, ReactNode, SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import useScreenshot from 'hooks/useScreenshot'
@@ -16,46 +16,38 @@ import { OverScreenInfo } from './overScreens/Values'
 
 type ShareableProps = {
   children: ReactNode
+  slug: string
   tracking: string
   withoutIntegration?: boolean
   withoutShare?: boolean
   overScreens?: Record<string, OverScreenInfo>
   secondary?: string
-  overScreen?: OverScreenInfo | undefined
-  setOverScreen?: Dispatch<SetStateAction<string | undefined>>
   noBottomBorders?: boolean
   small?: boolean
 }
 const Shareable = ({
   children,
+  slug,
   tracking,
   withoutIntegration,
   withoutShare,
   overScreens,
   secondary,
-  overScreen,
-  setOverScreen,
   noBottomBorders,
   small,
 }: ShareableProps) => {
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
   const tModal = useTranslations('modal')
-  const { theme } = useParamContext()
-  const [overScreenInternal, setOverScreenInternal] = useState<OverScreenInfo | undefined>()
+  const { theme, overscreen, setOverscreen } = useParamContext()
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
 
-  const onClose = useCallback(
-    () => (setOverScreen ? setOverScreen(undefined) : setOverScreenInternal(undefined)),
-    [setOverScreen]
+  const overScreenToDisplay = useMemo(
+    () => (overScreens && overscreen ? overScreens[overscreen[slug]] : undefined),
+    [overScreens, overscreen, slug]
   )
 
-  const overScreenToDisplay = useMemo(() => {
-    if (overScreens) {
-      return overScreenInternal
-    }
-    return overScreen
-  }, [overScreens, overScreenInternal, overScreen])
+  const onClose = useCallback(() => setOverscreen({ ...overscreen, [slug]: '' }), [overscreen, slug])
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
@@ -146,47 +138,45 @@ const Shareable = ({
           </div>
           {secondary && <div className={styles.secondaryText}>{secondary}</div>}
         </div>
-        {secondary === undefined && (
-          <>
-            {overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
-              <div className={styles.ressources}>
-                {'data' in overScreens && (
-                  <Feature
-                    tracking={tracking}
-                    name='Comprendre les données'
-                    info={overScreens.data}
-                    setOverScreen={setOverScreenInternal}
-                  />
-                )}
-                {'hypothesis' in overScreens && (
-                  <Feature
-                    info={overScreens.hypothesis}
-                    name='Aller plus loin'
-                    tracking={tracking}
-                    setOverScreen={setOverScreenInternal}
-                  />
-                )}
-              </div>
-            ) : (
-              !noBottomBorders && <div className={styles.separator} />
-            )}
-            <div className={styles.logos}>
-              <Logos small />
-            </div>
-          </>
-        )}
       </div>
+      {secondary === undefined && (
+        <>
+          {overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
+            <div className={styles.ressources}>
+              {'data' in overScreens && (
+                <Feature
+                  slug={slug}
+                  type='data'
+                  tracking={tracking}
+                  name='Comprendre les données'
+                  info={overScreens.data}
+                />
+              )}
+              {'hypothesis' in overScreens && (
+                <Feature
+                  slug={slug}
+                  type='hypothesis'
+                  info={overScreens.hypothesis}
+                  name='Aller plus loin'
+                  tracking={tracking}
+                />
+              )}
+            </div>
+          ) : (
+            !noBottomBorders && <div className={styles.separator} />
+          )}
+          <div className={styles.logos}>
+            <Logos small />
+          </div>
+        </>
+      )}
       <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary !== undefined })}>
         <Actions
           onClick={(action) => {
             if (action === 'telecharger') {
               takeScreenshot()
             } else {
-              if (overScreens) {
-                setOverScreenInternal(overScreens[action])
-              } else if (setOverScreen) {
-                setOverScreen(action)
-              }
+              setOverscreen({ ...overscreen, [slug]: action })
             }
           }}
           tracking={tracking}

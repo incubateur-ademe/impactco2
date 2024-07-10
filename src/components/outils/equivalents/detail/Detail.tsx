@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { Fragment, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
 import PlusMinus from 'components/outils/plusMinus/PlusMinus'
 import InformationIcon from 'components/base/icons/information'
@@ -85,13 +86,8 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
   return []
 }
 
-export default function Detail({
-  equivalent,
-  setOverscreen,
-}: {
-  equivalent: Equivalent
-  setOverscreen?: (overScreen: string) => void
-}) {
+export default function Detail({ equivalent }: { equivalent: Equivalent }) {
+  const { setOverscreen, overscreen } = useParamContext()
   const t = useTranslations('equivalent')
   const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
 
@@ -194,14 +190,12 @@ export default function Detail({
               <tr>
                 <td>
                   <b>Total</b> par année d'utilisation{' '}
-                  {setOverscreen && (
-                    <button
-                      title='Voir les informations sur la durée de vie'
-                      onClick={() => setOverscreen('usage')}
-                      className={styles.informationButton}>
-                      <InformationIcon />
-                    </button>
-                  )}
+                  <button
+                    title='Voir les informations sur la durée de vie'
+                    onClick={() => setOverscreen({ ...overscreen, [equivalent.slug]: 'usage' })}
+                    className={styles.informationButton}>
+                    <InformationIcon />
+                  </button>
                 </td>
                 <td className={styles.usageWidgetContainer}>
                   <PlusMinus

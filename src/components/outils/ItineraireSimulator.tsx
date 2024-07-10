@@ -6,12 +6,14 @@ import useParamContext from 'src/providers/ParamProvider'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
 import AddressInput from 'components/form/addresses/AddressInput'
-import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
 import styles from './ItineraireSimulator.module.css'
+import TransportComparisonMode from './TransportComparisonMode'
+import TransportComparisonSimulator from './TransportComparisonSimulator'
 
-const ItineraireSimulator = () => {
+const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
   const {
+    transport: { comparisonMode },
     itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll },
   } = useParamContext()
 
@@ -19,6 +21,7 @@ const ItineraireSimulator = () => {
 
   const { data: itineraries } = useItineraries(start, end, 'itinéraire')
   const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
+
   return (
     <>
       <div className={styles.simulator}>
@@ -46,16 +49,20 @@ const ItineraireSimulator = () => {
       </div>
       {start && end && itineraries && (
         <>
-          <div className={shareableStyles.separatorBothBorders} />
-          <CategorySimulator
-            tracking='Transport itinéraire'
-            equivalents={equivalents}
-            displayAll={displayAll}
-            setDisplayAll={hasMore ? setDisplayAll : undefined}
-            moreText='transport'
-            withSimulator
-            type='itineraire'
-          />
+          {withComparisonMode && <TransportComparisonMode />}
+          {comparisonMode === 'list' ? (
+            <CategorySimulator
+              tracking='Transport itinéraire'
+              equivalents={equivalents}
+              displayAll={displayAll}
+              setDisplayAll={hasMore ? setDisplayAll : undefined}
+              moreText='transport'
+              withSimulator
+              type='itineraire'
+            />
+          ) : (
+            <TransportComparisonSimulator equivalents={equivalents} />
+          )}
         </>
       )}
     </>

@@ -11,6 +11,7 @@ import CheckboxInput from 'components/form/CheckboxInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import styles from './Share.module.css'
+import TransportComparison from './TransportComparison'
 import TransportListParam from './TransportListParam'
 import { getTracking } from './TransportShare'
 
@@ -27,7 +28,7 @@ const TransportIntegrate = () => {
     setTheme,
     language,
     setLanguage,
-    transport: { selected, modes },
+    transport: { selected, modes, comparison, comparisonMode },
   } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
@@ -37,6 +38,9 @@ const TransportIntegrate = () => {
 
   const [defaultTab, setDefaultTab] = useState(selected)
   const [tabs, setTabs] = useState([DISTANCE, ITINERAIRE])
+
+  const [comparisonModes, setComparisonModes] = useState(['list', 'comparison'])
+  const [defaultMode, setDefaultMode] = useState(comparisonMode)
 
   const tracking = useMemo(() => getTracking(selected), [selected])
 
@@ -49,9 +53,11 @@ const TransportIntegrate = () => {
     }
 
     result += ` data-search="?theme=${theme}`
-
-    result += `&tabs=${tabs.join(',')}`
     result += `&language=${language}`
+
+    if (tabs.length !== 2) {
+      result += `&tabs=${tabs.join(',')}`
+    }
 
     if (tabs.includes(DISTANCE) && visibility.km) {
       result += `&km=${distance.km}`
@@ -66,12 +72,35 @@ const TransportIntegrate = () => {
       }
     }
 
+    if (comparisonModes.length !== 2) {
+      result += `&mode=${comparisonModes[0]}`
+    } else {
+      result += `&defaultMode=${defaultMode}`
+    }
+
+    if (comparison[0] !== 'voiturethermique' && comparison[1] !== 'tgv') {
+      result += `&comparison=${comparison[0]},${comparison[1]}`
+    }
+
     if (modes.length !== 0 && modes.length !== deplacements.length) {
       result += `&modes=${modes.join(',')}`
     }
 
     return result + '"></script>'
-  }, [defaultTab, visibility, tabs, distance.km, theme, itineraire.start, itineraire.end, language, modes])
+  }, [
+    defaultTab,
+    visibility,
+    tabs,
+    distance.km,
+    theme,
+    itineraire.start,
+    itineraire.end,
+    language,
+    modes,
+    defaultMode,
+    comparisonModes,
+    comparison,
+  ])
 
   const params = useMemo(() => {
     return {
@@ -99,7 +128,7 @@ const TransportIntegrate = () => {
           label={tTransport('distance')}
           data-testid='transport-integration-distance-checkbox'>
           <DefaultButton
-            main={(tabs.length === 1 && tabs[0] === 'distance') || defaultTab === 'distance'}
+            main={tabs.length === 1 ? tabs[0] === 'distance' : defaultTab === 'distance'}
             setMain={() => setDefaultTab('distance')}
             disabled={tabs.length === 1}
           />
@@ -116,7 +145,7 @@ const TransportIntegrate = () => {
           }}
           label={tTransport('itineraire')}>
           <DefaultButton
-            main={(tabs.length === 1 && tabs[0] === 'itineraire') || defaultTab === 'itineraire'}
+            main={tabs.length === 1 ? tabs[0] === 'itineraire' : defaultTab === 'itineraire'}
             setMain={() => setDefaultTab('itineraire')}
             disabled={tabs.length === 1}
           />
@@ -153,7 +182,47 @@ const TransportIntegrate = () => {
             <div className={styles.separator} />
           </>
         ))}
+      <Checkbox required id='comparisonModes' label={t('mode-integrate')}>
+        <CheckboxInput
+          color='secondary'
+          checked={comparisonModes.includes('list')}
+          setChecked={(checked) => {
+            if (checked) {
+              setComparisonModes([...comparisonModes, 'list'])
+            } else {
+              setComparisonModes(comparisonModes.filter((tab) => tab !== 'list'))
+            }
+          }}
+          label={tTransport('list')}
+          data-testid='transport-integration-list-checkbox'>
+          <DefaultButton
+            main={comparisonModes.length === 1 ? comparisonModes[0] === 'list' : defaultMode === 'list'}
+            setMain={() => setDefaultMode('list')}
+            disabled={comparisonModes.length === 1}
+          />
+        </CheckboxInput>
+        <CheckboxInput
+          color='secondary'
+          checked={comparisonModes.includes('comparison')}
+          setChecked={(checked) => {
+            if (checked) {
+              setComparisonModes([...comparisonModes, 'comparison'])
+            } else {
+              setComparisonModes(comparisonModes.filter((tab) => tab !== 'comparison'))
+            }
+          }}
+          label={tTransport('comparison')}>
+          <DefaultButton
+            main={comparisonModes.length === 1 ? comparisonModes[0] === 'comparison' : defaultMode === 'comparison'}
+            setMain={() => setDefaultMode('comparison')}
+            disabled={comparisonModes.length === 1}
+          />
+        </CheckboxInput>
+      </Checkbox>
+      <div className={styles.separator} />
       <TransportListParam />
+      <div className={styles.separator} />
+      <TransportComparison />
       <div className={styles.separator} />
       <CustomParam
         tracking={tracking}

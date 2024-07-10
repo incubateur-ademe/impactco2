@@ -16,8 +16,9 @@ const Category = ({ category, simulator }: { category: CategoryType; simulator?:
     // @ts-expect-error: managed in hook
     return allParams[category.slug]
   }, [allParams, category])
+
   return (
-    <Shareable tracking={category.name} overScreens={overScreens}>
+    <Shareable slug={category.slug} tracking={category.name} overScreens={overScreens}>
       {simulator ||
         (category.equivalents && (
           <CategorySimulator

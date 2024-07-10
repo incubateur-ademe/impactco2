@@ -82,22 +82,24 @@ export default function useTransportations(
                       usage: equivalent.usage / (carpoolValue + 1),
                       link: `${equivalent.link}+${carpoolValue}`,
                     },
-                    { ...equivalent, carpool: 0 },
+                    equivalent,
                   ]
                 : [equivalent]
             })
         : []
 
-    const equivalents = displayAll
-      ? allEquivalents
-      : allEquivalents
-          .filter((equivalent) => equivalent.default)
-          .filter((equivalent) =>
-            filterByDistance(
-              equivalent.display,
-              itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+    const equivalents =
+      displayAll || params.transport.comparisonMode === 'comparison'
+        ? allEquivalents
+        : allEquivalents
+            .filter((equivalent) => equivalent.default)
+            .filter((equivalent) =>
+              filterByDistance(
+                equivalent.display,
+                itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+              )
             )
-          )
+
     return {
       hasMore: (displayAll || allEquivalents.length > equivalents.length) && equivalents.length !== 0,
       equivalents: equivalents.length === 0 ? allEquivalents : equivalents,

@@ -10,9 +10,11 @@ import Tile from './Tile'
 import styles from './Tiles.module.css'
 import { getRandomEquivalents } from './random'
 
-const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
+const Tiles = () => {
   const t = useTranslations('comparateur')
   const {
+    setOverscreen,
+    overscreen,
     comparateur: { comparedEquivalent, equivalents, setEquivalents },
   } = useParamContext()
 
@@ -46,7 +48,7 @@ const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
         ))}
         {equivalents.length < 8 && (
           <div className={styles.tileContainer}>
-            <Tile onAdd={changeEquivalents} />
+            <Tile onAdd={() => setOverscreen({ ...overscreen, comparateur: 'equivalents' })} />
           </div>
         )}
       </div>
@@ -64,7 +66,9 @@ const Tiles = ({ changeEquivalents }: { changeEquivalents: () => void }) => {
           <MagicWandIcon />
           {t('generate')}
         </Button>
-        {equivalents.length >= 8 && <Button onClick={changeEquivalents}>{t('modify')}</Button>}
+        {equivalents.length >= 8 && (
+          <Button onClick={() => setOverscreen({ ...overscreen, comparateur: 'equivalents' })}>{t('modify')}</Button>
+        )}
       </div>
     </>
   )

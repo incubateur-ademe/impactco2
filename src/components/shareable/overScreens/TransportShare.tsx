@@ -25,7 +25,7 @@ const TransportShare = () => {
   const {
     distance,
     itineraire,
-    transport: { selected, setSelected },
+    transport: { selected, setSelected, comparisonMode, comparison, setComparisonMode },
     language,
   } = useParamContext()
 
@@ -45,7 +45,7 @@ const TransportShare = () => {
     }
 
     if (selected === 'distance' && visibility.km) {
-      result += `km=${distance.km}`
+      result += `km=${distance.km}&`
     } else if (selected === 'itineraire' && visibility.itineraire) {
       if (itineraire.start) {
         result += `itineraireStart=${itineraire.start.address}&`
@@ -54,10 +54,16 @@ const TransportShare = () => {
         result += `itineraireEnd=${itineraire.end.address}&`
       }
     }
+
+    if (comparison[0] !== 'voiturethermique' && comparison[1] !== 'tgv') {
+      result += `comparison=${comparison[0]},${comparison[1]}&`
+    }
+
+    result += `defaultMode=${comparisonMode}&`
     result += `language=${language}`
 
     return result
-  }, [visibility, selected, distance.km, itineraire.start, itineraire.end, language])
+  }, [visibility, selected, distance.km, itineraire.start, itineraire.end, language, comparisonMode, comparison])
 
   const params = useMemo(() => {
     return {
@@ -108,6 +114,21 @@ const TransportShare = () => {
           setVisibility={setVisibility}
         />
       )}
+      <div className={styles.separator} />
+      <Radio required id='comparisonModes' label={t('mode-share')}>
+        <RadioInput
+          value='list'
+          selected={comparisonMode}
+          setSelected={(value) => setComparisonMode(value as 'list' | 'comparison')}
+          label={tTransport('list')}
+        />
+        <RadioInput
+          value='comparison'
+          selected={comparisonMode}
+          setSelected={(value) => setComparisonMode(value as 'list' | 'comparison')}
+          label={tTransport('comparison')}
+        />
+      </Radio>
       <div className={styles.separator} />
       <ShareUrl url={url} tracking={tracking} category={category} />
     </>

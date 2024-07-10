@@ -35,21 +35,23 @@ const equivalents = computedEquivalents.map((equivalent) => {
     : equivalent
 })
 
-export const useSearchEquivalent = (search: string, excludeEmpty?: boolean) => {
+export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, category?: number) => {
   const [results, setResults] = useState<ComputedEquivalent[]>([])
   const [fuses, setFuses] = useState<{ fuse: Fuse<ComputedEquivalent>; nonEmptyFuse: Fuse<ComputedEquivalent> }>()
 
   const { language } = useParamContext()
   useEffect(() => {
-    const translatedEquivalents = equivalents.map((equivalent) => ({
-      ...equivalent,
-      name: getName(language, equivalent),
-    }))
+    const translatedEquivalents = equivalents
+      .filter((equivalent) => !category || equivalent.category === category)
+      .map((equivalent) => ({
+        ...equivalent,
+        name: getName(language, equivalent),
+      }))
     setFuses({
       fuse: new Fuse([...translatedEquivalents], config),
       nonEmptyFuse: new Fuse([...translatedEquivalents.filter((equivalent) => equivalent.value)], config),
     })
-  }, [language])
+  }, [language, category])
 
   useEffect(() => {
     if (fuses) {
