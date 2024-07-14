@@ -27,8 +27,8 @@ const importFromNotion = async () => {
   )
   const values = results
     .map((x) => ({
-      key: x.properties.Clé.title[0]?.plain_text || '',
-      owner: x.properties.Nom.rich_text[0]?.plain_text || '',
+      key: x.properties.Clé.title[0]?.plain_text.trim() || '',
+      owner: x.properties.Nom.rich_text[0]?.plain_text.trim() || '',
     }))
     .filter((x) => x.owner && x.key)
 
