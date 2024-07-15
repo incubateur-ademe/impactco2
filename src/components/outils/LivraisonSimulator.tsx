@@ -164,7 +164,7 @@ const LivraisonSimulator = () => {
             )}
           </>
         )}
-        <Radio required id='radio-plane' label='Le colis vient de loin'>
+        <Radio required id='radio-plane' label={t('plane')}>
           <RadioInput
             name='radio-plane'
             required

@@ -5,6 +5,7 @@ import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
+import CheckboxInput from 'components/form/CheckboxInput'
 import AddressInput from 'components/form/addresses/AddressInput'
 import CategorySimulator from './CategorySimulator'
 import styles from './ItineraireSimulator.module.css'
@@ -14,7 +15,7 @@ import TransportComparisonSimulator from './TransportComparisonSimulator'
 const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
   const {
     transport: { comparisonMode },
-    itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll },
+    itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll, roundTrip, setRoundTrip },
   } = useParamContext()
 
   const t = useTranslations('transport.itineraire')
@@ -44,6 +45,9 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
             place={end?.address}
             setPlace={setEnd}
           />
+        </div>
+        <div className={styles.roundTrip}>
+          <CheckboxInput id='roundTrip' label={t('roundTrip')} checked={roundTrip} setChecked={setRoundTrip} />
         </div>
         {t('header')}
       </div>

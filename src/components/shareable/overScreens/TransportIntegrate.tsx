@@ -89,6 +89,10 @@ const TransportIntegrate = () => {
       result += `&modes=${modes.join(',')}`
     }
 
+    if (itineraire.roundTrip) {
+      result += '&roundTrip=true'
+    }
+
     return result + '"></script>'
   }, [
     defaultTab,
@@ -103,6 +107,7 @@ const TransportIntegrate = () => {
     defaultMode,
     comparisonModes,
     comparison,
+    itineraire.roundTrip,
   ])
 
   const params = useMemo(() => {

@@ -59,11 +59,25 @@ const TransportShare = () => {
       result += `comparison=${comparison[0]},${comparison[1]}&`
     }
 
+    if (itineraire.roundTrip) {
+      result += 'roundTrip=true&'
+    }
+
     result += `defaultMode=${comparisonMode}&`
     result += `language=${language}`
 
     return result
-  }, [visibility, selected, distance.km, itineraire.start, itineraire.end, language, comparisonMode, comparison])
+  }, [
+    visibility,
+    selected,
+    distance.km,
+    itineraire.start,
+    itineraire.end,
+    language,
+    comparisonMode,
+    comparison,
+    itineraire.roundTrip,
+  ])
 
   const params = useMemo(() => {
     return {

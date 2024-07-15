@@ -21,16 +21,20 @@ export default function useTransportations(
   const transportations = useMemo(() => {
     const { km } = params.distance
     const { displayAll, carpool } = params[type]
+    const values = itineraries ? { ...itineraries } : null
+    if (itineraries && values && params.itineraire.roundTrip) {
+      //@ts-expect-error: key is managed via itineraries
+      Object.entries(values).forEach(([key, value]) => (values[key] = value * 2))
+    }
+
     const allEquivalents =
-      itineraries || km
+      values || km
         ? deplacements
             .filter((equivalent) => params.transport.modes.includes(equivalent.slug))
-            .filter((equivalent) =>
-              itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
-            )
+            .filter((equivalent) => (values && equivalent.type ? values[equivalent.type as DeplacementType] : km))
             .map((equivalent) => {
               if ('ecvs' in equivalent && equivalent.ecvs) {
-                const distance = itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                const distance = values && equivalent.type ? values[equivalent.type as DeplacementType] : km
                 const currentECV = equivalent.ecvs.find((value) =>
                   value.display.max ? value.display.max >= distance : true
                 )
@@ -49,17 +53,15 @@ export default function useTransportations(
               link: `/outils/transport/${equivalent.slug}`,
               name:
                 getNameWithoutSuffix(params.language, { ...equivalent, carpool: 0 }) +
-                (itineraries
+                (values
                   ? ` - ${formatNumber(
-                      itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                      values && equivalent.type ? values[equivalent.type as DeplacementType] : km
                     ).toLocaleString()} km`
                   : ''),
               value:
-                computeECV(equivalent) *
-                (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km),
+                computeECV(equivalent) * (values && equivalent.type ? values[equivalent.type as DeplacementType] : km),
               usage:
-                formatUsage(equivalent) *
-                (itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km),
+                formatUsage(equivalent) * (values && equivalent.type ? values[equivalent.type as DeplacementType] : km),
               onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
             }))
             .flatMap((equivalent) => {
@@ -72,9 +74,9 @@ export default function useTransportations(
                       carpool: carpoolValue,
                       name:
                         getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
-                        (itineraries
+                        (values
                           ? ` - ${formatNumber(
-                              itineraries && equivalent.type ? itineraries[equivalent.type as DeplacementType] : km
+                              values && equivalent.type ? values[equivalent.type as DeplacementType] : km
                             ).toLocaleString()} km`
                           : ''),
                       initialValue: equivalent.value / 2,

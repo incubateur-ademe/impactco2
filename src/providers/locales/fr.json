@@ -82,6 +82,7 @@
     "modify": "Modifier",
     "avoided": "évités",
     "itineraire": {
+      "roundTrip": "Aller / retour",
       "header": "Découvrez la quantité de CO₂e que vous émettez pour ce trajet",
       "start": "Départ",
       "end": "Arrivée"
@@ -179,6 +180,7 @@
     "click-and-collect": "Le click & collect",
     "trajet": "est t'il sur votre trajet habituel ?",
     "yes": "Oui",
+    "plane": "Le colis vient de loin",
     "yes-plane": "Oui (transport par avion)",
     "no": "Non",
     "km": "Pour aller au point relais, vous parcourez...",

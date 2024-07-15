@@ -9,6 +9,9 @@ import useScreenshot from 'hooks/useScreenshot'
 import GhostButton from 'components/base/GhostButton'
 import Logos from 'components/base/Logo/Logos'
 import CloseIcon from 'components/base/icons/close'
+import LanguageIcon from 'components/base/icons/language'
+import HiddenLabel from 'components/form/HiddenLabel'
+import Select from 'components/form/Select'
 import Actions from './Actions'
 import Feature from './Feature'
 import styles from './Shareable.module.css'
@@ -39,7 +42,7 @@ const Shareable = ({
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
   const tModal = useTranslations('modal')
-  const { theme, overscreen, setOverscreen } = useParamContext()
+  const { theme, overscreen, setOverscreen, language, setLanguage } = useParamContext()
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
 
   const overScreenToDisplay = useMemo(
@@ -167,6 +170,19 @@ const Shareable = ({
           )}
           <div className={styles.logos}>
             <Logos small />
+            <div className={small ? styles.bottomLanguage : styles.language}>
+              <HiddenLabel htmlFor='text-select-language'>{t('language.label')}</HiddenLabel>
+              <Select
+                id='language'
+                value={language}
+                onChange={(event) => {
+                  setLanguage(event.target.value as 'fr' | 'en')
+                }}>
+                <option value='fr'>FR</option>
+                <option value='en'>EN</option>
+              </Select>
+              <LanguageIcon />
+            </div>
           </div>
         </>
       )}
