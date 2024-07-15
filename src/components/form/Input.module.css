@@ -46,7 +46,7 @@
   &::after {
     content: '\25be';
     font-size: 1rem;
-    top: 1rem;
+    top: 0.875rem;
     right: 1rem;
     position: absolute;
     color: var(--neutral-50);
