@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import React, { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
+import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
 import TransportComparisonEquivalent from './TransportComparisonEquivalent'
@@ -24,7 +25,13 @@ export const comparisons = [
   ['voiturethermique', 'ter'],
 ]
 
-const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEquivalent[] }) => {
+const TransportComparisonSimulator = ({
+  tracking,
+  equivalents,
+}: {
+  tracking: string
+  equivalents: ComputedEquivalent[]
+}) => {
   const t = useTranslations('transport')
   const {
     transport: { setComparison, comparison, modes },
@@ -92,13 +99,23 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
         <div className={styles.comparisons}>
           <div className={generation === 0 ? styles.disapearingTile : styles.tile}>
             <div className={styles.comparison}>
-              <TransportComparisonEquivalent index={0} equivalents={equivalents} canChange={modes.length > 2} />
+              <TransportComparisonEquivalent
+                tracking={tracking}
+                index={0}
+                equivalents={equivalents}
+                canChange={modes.length > 2}
+              />
             </div>
           </div>
           <div className={styles.vs}>VS</div>
           <div className={generation === 0 || generation === 1 ? styles.disapearingTile : styles.tile}>
             <div className={styles.comparison}>
-              <TransportComparisonEquivalent index={1} equivalents={equivalents} canChange={modes.length > 2} />
+              <TransportComparisonEquivalent
+                tracking={tracking}
+                index={1}
+                equivalents={equivalents}
+                canChange={modes.length > 2}
+              />
             </div>
           </div>
         </div>
@@ -107,6 +124,7 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
         <Button
           className={styles.button}
           onClick={() => {
+            track(tracking, 'Autre comparaison', index.toString())
             setGeneration(0)
             setTimeout(() => {
               setIndex(typeof index === 'number' ? index + 1 : 1)

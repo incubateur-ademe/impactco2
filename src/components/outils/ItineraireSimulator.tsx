@@ -53,7 +53,7 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
       </div>
       {start && end && itineraries && (
         <>
-          {withComparisonMode && <TransportComparisonMode />}
+          {withComparisonMode && <TransportComparisonMode tracking='Transport itinéraire' />}
           {comparisonMode === 'list' ? (
             <CategorySimulator
               tracking='Transport itinéraire'
@@ -65,7 +65,7 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
               type='itineraire'
             />
           ) : (
-            <TransportComparisonSimulator equivalents={equivalents} />
+            <TransportComparisonSimulator tracking='Transport itinéraire' equivalents={equivalents} />
           )}
         </>
       )}

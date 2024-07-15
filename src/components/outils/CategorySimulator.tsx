@@ -8,6 +8,7 @@ import { TransportSimulateur } from 'types/transport'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
+import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
@@ -97,9 +98,14 @@ const CategorySimulator = ({
                     </div>
                     <PlusMinus
                       value={params[type].carpool[equivalent.slug] || 1}
-                      setValue={(value) =>
+                      setValue={(value) => {
+                        track(
+                          `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
+                          `Covoiturage ${equivalent.slug}`,
+                          value.toString()
+                        )
                         params[type].setCarpool({ ...params[type].carpool, [equivalent.slug]: value })
-                      }
+                      }}
                       max={4}
                       label={t('passenger')}
                       icon='/icons/passager.svg'

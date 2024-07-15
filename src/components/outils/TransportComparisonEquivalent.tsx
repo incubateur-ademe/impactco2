@@ -7,6 +7,7 @@ import { ComputedEquivalent } from 'types/equivalent'
 import { getName, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import { getEquivalentWithCarpool } from 'utils/carpool'
 import formatNumber from 'utils/formatNumber'
+import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import GhostButton from 'components/base/GhostButton'
 import LocalNumber from 'components/base/LocalNumber'
@@ -53,10 +54,12 @@ const TransportComparisonEquivalent = ({
   index,
   equivalents,
   canChange,
+  tracking,
 }: {
   index: 0 | 1
   equivalents: ComputedEquivalent[]
   canChange?: boolean
+  tracking: string
 }) => {
   const {
     language,
@@ -139,7 +142,11 @@ const TransportComparisonEquivalent = ({
           )}
           {canChange && (
             <div className={styles.button}>
-              <GhostButton onClick={() => setOverscreen({ ...overscreen, transport: `comparison${index}` })}>
+              <GhostButton
+                onClick={() => {
+                  setOverscreen({ ...overscreen, transport: `comparison${index}` })
+                  track(tracking, 'Modifier', equivalent.slug)
+                }}>
                 {t('modify')}
               </GhostButton>
             </div>
