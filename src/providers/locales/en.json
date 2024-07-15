@@ -81,6 +81,7 @@
     "modify": "Modify",
     "avoided": "avoided",
     "itineraire": {
+      "roundTrip": "Round trip",
       "header": "See how much CO₂e you emit for this itinary",
       "start": "From",
       "end": "To"
