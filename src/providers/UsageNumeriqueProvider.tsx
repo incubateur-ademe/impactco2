@@ -1,6 +1,6 @@
 'use client'
 
-import rules from '@incubateur-ademe/publicodes-negaoctet'
+import rules from '@incubateur-ademe/publicodes-acv-numerique'
 import Engine from 'publicodes'
 import React, { ReactNode, useContext, useMemo } from 'react'
 

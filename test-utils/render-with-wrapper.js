@@ -8,7 +8,7 @@ import { ParamProvider } from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'))
-jest.mock('@incubateur-ademe/publicodes-negaoctet', () => ({}))
+jest.mock('@incubateur-ademe/publicodes-acv-numerique', () => ({}))
 
 export function renderWithWrapper(component, options) {
   nextRouter.useRouter = jest.fn()
