@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { fruitsEtLegumes } from 'data/categories/fruitsetlegumes'
 import { getName } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
+import { fldsCategories } from 'utils/fruitsetlegumes'
 import { trackAPIRequest } from 'utils/middleware'
 
 const validation = z.object({
@@ -67,6 +68,7 @@ const validation = z.object({
  *                     - months
  *                     - ecv
  *                     - slug
+ *                     - category
  *                     properties:
  *                       name:
  *                         type: string
@@ -83,6 +85,9 @@ const validation = z.object({
  *                       slug:
  *                         type: string
  *                         example: asperge
+ *                       category:
+ *                         type: string
+ *                         example: légumes
  */
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
@@ -104,6 +109,7 @@ export async function GET(req: NextRequest) {
             slug: value.slug,
             months: value.months.map((month) => month + 1),
             ecv: computeECV(value),
+            category: fldsCategories[value.slug],
           }
         }),
       warning: hasAPIKey
