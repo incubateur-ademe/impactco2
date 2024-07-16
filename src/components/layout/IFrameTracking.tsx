@@ -27,7 +27,10 @@ const IFrameTracking = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (!observed && entry && entry.isIntersecting) {
       setObserved(true)
-      track('IFrame', window.location.href.endsWith('/') ? window.location.href : `${window.location.href}/`, path)
+      const href = window.location.href.endsWith('/') ? window.location.href : `${window.location.href}/`
+      track('IFrame', href, path)
+      const params = [...new URLSearchParams(window.location.search).entries()]
+      params.forEach(([key, value]) => track(`${path.replace('/iframes/', '')}-${key}`, value, href, true))
     }
   }, [entry, observed, path])
 
