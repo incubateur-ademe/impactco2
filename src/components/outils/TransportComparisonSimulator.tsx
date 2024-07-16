@@ -72,8 +72,6 @@ const TransportComparisonSimulator = ({
     if (typeof index === 'number') {
       if (availableComparisons.length > 0) {
         setComparison(availableComparisons[index % availableComparisons.length])
-      } else {
-        setComparison(comparisons[index % comparisons.length])
       }
     }
   }, [index, availableComparisons])
@@ -120,7 +118,7 @@ const TransportComparisonSimulator = ({
           </div>
         </div>
       )}
-      {availableComparisons.length !== 1 && (
+      {availableComparisons.length > 1 && (
         <Button
           className={styles.button}
           onClick={() => {

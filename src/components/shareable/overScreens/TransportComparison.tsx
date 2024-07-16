@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'data/categories/computedEquivalents'
 import { deplacements } from 'data/categories/deplacement'
@@ -13,11 +13,43 @@ const equivalents = computedEquivalents('transport', deplacements).flatMap(getEq
 const TransportComparison = () => {
   const t = useTranslations('overscreen.transport')
   const {
-    transport: { comparison, setComparison },
+    transport: { comparison, setComparison, modes },
   } = useParamContext()
 
-  const equivalent1 = useMemo(() => equivalents.find((deplacement) => deplacement.slug === comparison[0]), [comparison])
-  const equivalent2 = useMemo(() => equivalents.find((deplacement) => deplacement.slug === comparison[1]), [comparison])
+  const filteredEquivalents = useMemo(
+    () =>
+      equivalents
+        .filter((equivalent) => {
+          if (equivalent.carpool) {
+            const [slug] = equivalent.slug.split('+')
+            return modes.includes(`${slug}+1`)
+          }
+          return modes.includes(equivalent.slug)
+        })
+        .sort((a, b) => a.slug.localeCompare(b.slug)),
+    [modes]
+  )
+
+  const equivalent1 = useMemo(
+    () => filteredEquivalents.find((deplacement) => deplacement.slug === comparison[0]),
+    [comparison, filteredEquivalents]
+  )
+  const equivalent2 = useMemo(
+    () => filteredEquivalents.find((deplacement) => deplacement.slug === comparison[1]),
+    [comparison, filteredEquivalents]
+  )
+
+  useEffect(() => {
+    if (!equivalent1) {
+      setComparison([filteredEquivalents[0].slug, comparison[1]])
+    }
+  }, [equivalent1])
+
+  useEffect(() => {
+    if (!equivalent2) {
+      setComparison([comparison[0], filteredEquivalents[1].slug])
+    }
+  }, [equivalent2])
 
   return (
     <>
@@ -27,7 +59,7 @@ const TransportComparison = () => {
           {equivalent1 && (
             <SelectEquivalent
               id='comparison-1'
-              equivalents={equivalents}
+              equivalents={filteredEquivalents}
               equivalent={equivalent1}
               value={comparison[0]}
               onChange={(event) => {
@@ -40,7 +72,7 @@ const TransportComparison = () => {
           {equivalent2 && (
             <SelectEquivalent
               id='comparison-2'
-              equivalents={equivalents}
+              equivalents={filteredEquivalents}
               equivalent={equivalent2}
               value={comparison[1]}
               onChange={(event) => {

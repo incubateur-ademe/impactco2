@@ -48,6 +48,8 @@
 }
 
 .disabled {
+  opacity: 1;
+
   &:hover {
     border: 2px solid var(--neutral-30);
     background: transparent;

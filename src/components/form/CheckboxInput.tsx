@@ -33,6 +33,8 @@ const CheckboxInput = ({
 } & InputHTMLAttributes<HTMLInputElement>) => {
   const error = useError(id, errors)
 
+  // TODO => passer en neutral 30 en disabled
+
   return (
     <div className={className}>
       <div className={styles.container} data-testid={dataTestId}>
@@ -48,7 +50,10 @@ const CheckboxInput = ({
           />
           <div className={labelClassName}>{label}</div>
           {checked && (
-            <div className={reversed ? styles.checkReversed : styles.check}>
+            <div
+              className={classNames(reversed ? styles.checkReversed : styles.check, {
+                [styles.checkDisabled]: inputProps.disabled,
+              })}>
               <CheckIcon />
             </div>
           )}

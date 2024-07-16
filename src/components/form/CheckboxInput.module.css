@@ -56,6 +56,7 @@
   }
 
   input[type='checkbox']:disabled:checked {
+    color: var(--neutral-30);
     background-color: var(--neutral-10);
   }
 }
@@ -86,4 +87,8 @@
 
 .checkReversed {
   right: 0.5rem;
+}
+
+.checkDisabled {
+  color: var(--neutral-30);
 }
