@@ -24,7 +24,6 @@ const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug
       (slug === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === name) &&
       (carpool ? equivalent.carpool : !equivalent.carpool)
   ) as (ComputedEquivalent & { found?: boolean }) | undefined
-
   if (!equivalent) {
     return allEquivalents.find((equivalent) =>
       slug === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug
@@ -67,7 +66,6 @@ const TransportComparisonEquivalent = ({
     overscreen,
     transport: { comparison },
   } = useParamContext()
-
   const equivalent = useMemo(
     () => getEquivalent(language, equivalents, comparison[index]),
     [language, comparison, index, equivalents]

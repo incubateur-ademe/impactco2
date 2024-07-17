@@ -48,25 +48,22 @@ const TransportComparisonSimulator = ({
       return (
         equivalents.find(
           (equivalent) =>
-            (!carpool1 || equivalent.carpool) &&
+            (equivalent.carpool ? carpool1 : !carpool1) &&
             (slug1 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug1)
         ) &&
         equivalents.find(
           (equivalent) =>
-            (!carpool2 || equivalent.carpool) &&
+            (equivalent.carpool ? carpool2 : !carpool2) &&
             (slug2 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug2)
         )
       )
     })
-
     if (!allComparisons.find(([slug1, slug2]) => slug1 === comparison[0] && slug2 === comparison[1])) {
       setIndex(false)
     }
 
     return allComparisons
   }, [equivalents, comparison])
-
-  useEffect(() => {}, [])
 
   useEffect(() => {
     if (typeof index === 'number') {
@@ -91,6 +88,8 @@ const TransportComparisonSimulator = ({
     }
   }, [generation])
 
+  const canChange = modes.length > 2 || modes.some((mode) => mode.includes('+'))
+
   return (
     <div className={styles.container}>
       {comparisons && (
@@ -101,7 +100,7 @@ const TransportComparisonSimulator = ({
                 tracking={tracking}
                 index={0}
                 equivalents={equivalents}
-                canChange={modes.length > 2}
+                canChange={canChange}
               />
             </div>
           </div>
@@ -112,7 +111,7 @@ const TransportComparisonSimulator = ({
                 tracking={tracking}
                 index={1}
                 equivalents={equivalents}
-                canChange={modes.length > 2}
+                canChange={canChange}
               />
             </div>
           </div>

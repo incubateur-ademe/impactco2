@@ -387,7 +387,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (searchParams.get('comparison')) {
-      const comparison = searchParams.get('comparison')?.split(',') as string[]
+      const comparison = searchParams.get('comparison')?.replaceAll(' ', '+').split(',') as string[]
       setComparison(comparison)
     }
 

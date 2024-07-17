@@ -49,7 +49,16 @@ export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, cate
 
   useEffect(() => {
     const translatedEquivalents = equivalents
-      .filter((equivalent) => equivalent.category !== 4 || modes.includes(equivalent.slug))
+      .filter((equivalent) => {
+        if (equivalent.category === 4) {
+          if (equivalent.carpool) {
+            const [slug] = equivalent.slug.split('+')
+            return modes.includes(`${slug}+1`)
+          }
+          return modes.includes(equivalent.slug)
+        }
+        return true
+      })
       .filter((equivalent) => !category || equivalent.category === category)
       .map((equivalent) => ({
         ...equivalent,

@@ -25,7 +25,14 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
   const [search, setSearch] = useState('')
   const results = useSearchEquivalent(search, true, 4)
 
-  const equivalents = useMemo(() => allEquivalents.filter((equivalent) => modes.includes(equivalent.slug)), [modes])
+  const equivalents = useMemo(
+    () =>
+      allEquivalents.filter((equivalent) => {
+        const [slug, carpool] = equivalent.slug.split('+')
+        return carpool ? modes.includes(`${slug}+1`) : modes.includes(slug)
+      }),
+    [modes]
+  )
   const t = useTranslations('overscreen.transport')
   const tModal = useTranslations('modal')
   const onClose = () => {
