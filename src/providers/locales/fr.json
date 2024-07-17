@@ -21,6 +21,9 @@
     "km": {
       "title": "Afficher une distance personnalisée"
     },
+    "roundTrip": {
+      "title": "Aller / Retour"
+    },
     "situation": "ma propre simulation",
     "comparateur": "ma propre comparaison",
     "language": {

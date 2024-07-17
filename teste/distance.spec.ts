@@ -54,17 +54,17 @@ test('Transport distance list', async ({ page }) => {
 
   await page.getByTestId('header-share-button').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    'http://localhost:3000/outils/transport?km=1000&comparison=velo,moto&defaultMode=list&language=fr'
+    'http://localhost:3000/outils/transport?km=1000&defaultMode=list&language=fr'
   )
   await page.getByTestId('custom-param-km-checkbox').locator('div').nth(1).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    'http://localhost:3000/outils/transport?comparison=velo,moto&defaultMode=list&language=fr'
+    'http://localhost:3000/outils/transport?defaultMode=list&language=fr'
   )
 
   await expect(page.locator('label').filter({ hasText: "Personnaliser l'itinéraire" })).not.toBeVisible()
   await page.getByLabel('Itinéraire').check()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    'http://localhost:3000/outils/transport/itineraire?comparison=velo,moto&defaultMode=list&language=fr'
+    'http://localhost:3000/outils/transport/itineraire?defaultMode=list&language=fr'
   )
   await expect(page.locator('label').filter({ hasText: "Personnaliser l'itinéraire" })).toBeVisible()
 })
@@ -84,13 +84,24 @@ test('Transport distance comparison', async ({ page }) => {
 
   await page.getByTestId('cancel-button').click()
 
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    '1.86Kg CO₂eévitésCovoiturage thermique (2 passagers)0.73 kg CO₂e Modifier'
-  )
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion court courrier2.59 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique1.03 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText('0.99Kg CO₂eévitésMétro0.04 kg CO₂e Modifier')
 
   await page.getByTestId('comparison-tile-0').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'TGV' }).click()
+  await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
+  await page.getByRole('button', { name: 'Covoiturage thermique (2 passagers)' }).click()
+
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText(
+    'Covoiturage thermique (2 passagers)0.73 kg CO₂e Modifier'
+  )
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('0.7Kg CO₂eévitésTGV0.03 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText(
+    'Covoiturage thermique (2 passagers)0.73 kg CO₂e Modifier'
+  )
+
+  await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
+  await page.getByRole('button', { name: 'Avion', exact: true }).click()
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('2.56Kg CO₂eévitésTGV0.03 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion court courrier2.59 kg CO₂e Modifier')
 

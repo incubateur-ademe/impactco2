@@ -1,11 +1,12 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
 import ClipboardBox from 'components/base/ClipboardBox'
 import DefaultButton from 'components/base/buttons/DefaultButton'
+import Link from 'components/base/buttons/Link'
 import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
@@ -21,54 +22,71 @@ const ITINERAIRE = 'itineraire'
 const TransportIntegrate = () => {
   const t = useTranslations('overscreen.transport')
   const tTransport = useTranslations('transport.mode-selector')
-  const {
-    distance,
-    itineraire,
-    theme,
-    setTheme,
-    language,
-    setLanguage,
-    transport: { selected, modes, comparison, comparisonMode },
-  } = useParamContext()
+  const allParams = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
     km: true,
     itineraire: true,
   })
 
-  const [defaultTab, setDefaultTab] = useState(selected)
+  const [theme, setTheme] = useState(allParams.theme)
+  const [language, setLanguage] = useState(allParams.language)
+
+  const [defaultTab, setDefaultTab] = useState(allParams.transport.selected)
   const [tabs, setTabs] = useState([DISTANCE, ITINERAIRE])
 
   const [comparisonModes, setComparisonModes] = useState(['list', 'comparison'])
-  const [defaultMode, setDefaultMode] = useState(comparisonMode)
+  const [defaultMode, setDefaultMode] = useState(allParams.transport.comparisonMode)
 
-  const tracking = useMemo(() => getTracking(selected), [selected])
+  const [modes, setModes] = useState(allParams.transport.modes)
+  const [comparison, setComparison] = useState(allParams.transport.comparison)
 
-  const url = useMemo(() => {
-    let result = `<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js"`
+  const [km, setKm] = useState(allParams.distance.km)
+  useEffect(() => {
+    setKm(allParams.distance.km)
+  }, [allParams.distance.km])
+
+  const [roundTrip, setRoundTrip] = useState(allParams.itineraire.roundTrip)
+  useEffect(() => {
+    setRoundTrip(allParams.itineraire.roundTrip)
+  }, [allParams.itineraire.roundTrip])
+
+  const [start, setStart] = useState(allParams.itineraire.start)
+  useEffect(() => {
+    setStart(allParams.itineraire.start)
+  }, [allParams.itineraire.start])
+  const [end, setEnd] = useState(allParams.itineraire.end)
+  useEffect(() => {
+    setEnd(allParams.itineraire.end)
+  }, [allParams.itineraire.end])
+
+  const tracking = useMemo(() => getTracking(allParams.transport.selected), [allParams.transport.selected])
+
+  const type = useMemo(() => {
     if (defaultTab === 'distance') {
-      result += ` data-type="transport"`
+      return 'transport'
     } else if (defaultTab === 'itineraire') {
-      result += ` data-type="transport/itineraire"`
+      return 'transport/itineraire'
     }
+  }, [defaultTab])
 
-    result += ` data-search="?theme=${theme}`
-    result += `&language=${language}`
+  const search = useMemo(() => {
+    let result = `?theme=${theme}&language=${language}`
 
     if (tabs.length !== 2) {
       result += `&tabs=${tabs.join(',')}`
     }
 
     if (tabs.includes(DISTANCE) && visibility.km) {
-      result += `&km=${distance.km}`
+      result += `&km=${km}`
     }
 
     if (tabs.includes(ITINERAIRE) && visibility.itineraire) {
-      if (itineraire.start) {
-        result += `&itineraireStart=${itineraire.start.address}`
+      if (start) {
+        result += `&itineraireStart=${start.address}`
       }
-      if (itineraire.end) {
-        result += `&itineraireEnd=${itineraire.end.address}`
+      if (end) {
+        result += `&itineraireEnd=${end.address}`
       }
     }
 
@@ -89,36 +107,23 @@ const TransportIntegrate = () => {
       result += `&modes=${modes.join(',')}`
     }
 
-    if (itineraire.roundTrip) {
+    if (roundTrip) {
       result += '&roundTrip=true'
     }
 
-    return result + '"></script>'
-  }, [
-    defaultTab,
-    visibility,
-    tabs,
-    distance.km,
-    theme,
-    itineraire.start,
-    itineraire.end,
-    language,
-    modes,
-    defaultMode,
-    comparisonModes,
-    comparison,
-    itineraire.roundTrip,
-  ])
+    return result
+  }, [visibility, tabs, km, theme, start, end, language, modes, defaultMode, comparisonModes, comparison, roundTrip])
 
   const params = useMemo(() => {
     return {
-      km: { value: distance.km, setter: distance.setKm } as CustomParamValue,
+      km: { value: km, setter: setKm } as CustomParamValue,
       itineraire: {
-        start: { value: itineraire.start?.address || '', setter: itineraire.setStart },
-        end: { value: itineraire.end?.address || '', setter: itineraire.setEnd },
+        start: { value: start?.address || '', setter: setStart },
+        end: { value: end?.address || '', setter: setEnd },
       },
+      roundTrip: { value: roundTrip, setter: setRoundTrip } as CustomParamValue,
     }
-  }, [distance.km, itineraire.start, itineraire.end])
+  }, [km, start, end, roundTrip])
 
   return (
     <>
@@ -183,7 +188,7 @@ const TransportIntegrate = () => {
               title={tTransport('itineraire')}
               tracking={tracking}
               trackingType='Intégrer'
-              params={{ itineraire: params.itineraire }}
+              params={{ itineraire: params.itineraire, roundTrip: params.roundTrip }}
               visibility={visibility}
               setVisibility={setVisibility}
             />
@@ -228,9 +233,9 @@ const TransportIntegrate = () => {
         </CheckboxInput>
       </Checkbox>
       <div className={styles.separator} />
-      <TransportListParam />
+      <TransportListParam modes={modes} setModes={setModes} />
       <div className={styles.separator} />
-      <TransportComparison />
+      <TransportComparison comparison={comparison} setComparison={setComparison} />
       <div className={styles.separator} />
       <CustomParam
         tracking={tracking}
@@ -245,7 +250,13 @@ const TransportIntegrate = () => {
         param={{ value: language, setter: setLanguage } as CustomParamValue}
         visible
       />
-      <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
+      <Link target='_blank' rel='noopener noreferrer' href={`/iframes/${type}${search}`} asButton>
+        Voir la preview
+      </Link>
+      <ClipboardBox
+        tracking={
+          tracking
+        }>{`<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${type}" data-search="${search}"></script>`}</ClipboardBox>
     </>
   )
 }
