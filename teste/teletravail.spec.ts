@@ -54,10 +54,19 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   await page.getByTestId('text-select-mode').selectOption('tramway')
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('144')
 
-  await page.getByTestId('input-presentiel-value').click()
   await page.getByTestId('input-presentiel-value').fill('2')
-  await expect(page.getByTestId('input-teletravail-value')).toHaveValue('3')
+  await expect(page.getByTestId('input-teletravail-value')).toHaveValue('1')
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('71.8')
+  await expect(page.getByTestId('teletravail-saved-value')).toHaveText('26.9')
+  await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('0.27')
+  await expect(page.getByTestId('etiquette-value')).toHaveText('26.9')
+
+  await page.getByTestId('input-teletravail-value').fill('3')
+  await expect(page.getByTestId('input-presentiel-value')).toHaveValue('2')
+  await expect(page.getByTestId('teletravail-generated-value')).toHaveText('71.8')
+  await expect(page.getByTestId('teletravail-saved-value')).toHaveText('80.8')
+  await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('0.82')
+  await expect(page.getByTestId('etiquette-value')).toHaveText('80.8')
 })
 
 const getNbOfSuggestions = async (page: Page) => {
