@@ -6,12 +6,12 @@ export const deplacements = [
     type: 'plane',
     category: 4,
     display: {
-      min: 500,
+      min: 300,
     },
     ecvs: [
       {
         display: {
-          min: 500,
+          min: 300,
           max: 1000,
         },
         empreinteId: 28130,
