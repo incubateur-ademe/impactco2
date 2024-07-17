@@ -3,18 +3,28 @@
 import { useTranslations } from 'next-intl'
 import React, { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
-import { computedEquivalents } from 'src/providers/equivalents'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
-import { getEquivalentWithCarpool } from 'utils/carpool'
+import { deplacements } from 'data/categories/deplacement'
 import Button from 'components/base/buttons/Button'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import ComparisonEquivalents from './ComparisonEquivalents'
 import styles from './EquivalentsOverscreen.module.css'
 
-const allEquivalents = computedEquivalents
+const allEquivalents = deplacements
   .filter((equivalent) => equivalent.category === 4)
-  .flatMap(getEquivalentWithCarpool)
+  .flatMap((deplacement) =>
+    deplacement.withCarpool
+      ? [
+          ...Array.from({ length: 4 }).map((_, index) => ({
+            ...deplacement,
+            carpool: index + 1,
+            slug: `${deplacement.slug}+${index + 1}`,
+          })),
+          deplacement,
+        ]
+      : [deplacement]
+  )
 
 const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
   const {
@@ -33,6 +43,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
       }),
     [modes]
   )
+  const tSearch = useTranslations('comparateur.overscreen')
   const t = useTranslations('overscreen.transport')
   const tModal = useTranslations('modal')
   const onClose = () => {
@@ -64,15 +75,15 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
             <ComparisonEquivalents onClose={onClose} equivalents={results} index={index} />
           ) : (
             <div className={styles.noResult}>
-              {t('no-result-1')}
+              {tSearch('no-result-1')}
               <br />
-              {t('no-result-2')}{' '}
+              {tSearch('no-result-2')}{' '}
               <Button
                 asLink
                 onClick={() => {
                   setSearch('')
                 }}>
-                {t('no-result-3')}
+                {tSearch('no-result-3')}
               </Button>
               .
             </div>
