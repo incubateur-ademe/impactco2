@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React, { ReactNode, Suspense } from 'react'
 import TranslationProvider from 'src/providers/TranslationProvider'
-import ClipboardBox from 'components/base/ClipboardBox'
 import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Card from 'components/cards/Card'
@@ -14,7 +13,7 @@ import styles from './Outil.module.css'
 const Outil = ({
   tool,
 }: {
-  tool: ToolCardProps & { content: ReactNode; toolLink?: string; toolLinkLabel?: string; clipboardURL?: string }
+  tool: ToolCardProps & { content: ReactNode; toolLink?: string; toolLinkLabel?: string; script?: ReactNode }
 }) => {
   return (
     <>
@@ -38,12 +37,7 @@ const Outil = ({
                   {tool.toolLinkLabel}
                 </Link>
               )}
-              {tool.clipboardURL && (
-                <>
-                  <div className={styles.clipboardTitle}>Comment l'utiliser ?</div>
-                  <ClipboardBox tracking='Detecteur carbone'>{tool.clipboardURL}</ClipboardBox>
-                </>
-              )}
+              {tool.script}
             </div>
           </Card>
         </Block>

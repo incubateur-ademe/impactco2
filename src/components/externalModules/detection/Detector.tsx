@@ -29,8 +29,10 @@ const defaultEquivalents = [
   { min: 500000, equivalents: [['avion-pny'], ['francais'], ['ordinateurfixeparticulier', 'ordinateurportable']] },
 ]
 
-export const regex =
-  /([0-9]+(,|\.|\s|&nbsp;)*[0-9]*)(\s|&nbsp;)*(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)*(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)*(d'émissions\s|&nbsp;)?(de\s|&nbsp;)*(d(’|')équivalent\s|&nbsp;)?(eq)?(éq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(eq|((\s|&nbsp;)*équivalent)|e)?/i
+export const regexs = {
+  fr: /([0-9]+(,|\.|\s|&nbsp;)*[0-9]*)(\s|&nbsp;)*(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)*(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)*(d'émissions\s|&nbsp;)?(de\s|&nbsp;)*(d(’|')équivalent\s|&nbsp;)?(eq)?(éq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(eq|((\s|&nbsp;)*équivalent)|e)?/i,
+  en: /([0-9]+(,|\.|\s|&nbsp;)*[0-9]*)(\s|&nbsp;)*(thousand(s)?|million(s)?|billion(s)?|giga(s)?)?(\s|&nbsp;)*(kg(s)?|kilo(s)?|kilo(&shy;|­)?gram(s)?|g|t|ton(s)|tonne(s)?)(\s|&nbsp;)*(of\s|&nbsp;)*(equivalent)?(eq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|carbon dyoxide)(eq|((\s|&nbsp;)*equivalent)|e)?/i,
+}
 
 const getComputedStyle = (el: Element, property: string) => {
   if (document.defaultView) {
@@ -66,7 +68,7 @@ const getOverflow = (element: HTMLDivElement) => {
 }
 
 const getUnitFactor = (unit: string) => {
-  if (unit === 't' || unit.includes('tonne')) {
+  if (unit === 't' || unit.includes('ton')) {
     return 1000000
   }
 
@@ -82,25 +84,25 @@ const getFactor = (unit: string) => {
     return 1
   }
 
-  if (unit.includes('milliard') || unit.includes('giga')) {
+  if (unit.includes('milliard') || unit.includes('giga') || unit.includes('billion')) {
     return 1000000000
   }
   if (unit.includes('million')) {
     return 1000000
   }
-  if (unit.includes('millier') || unit.includes('mille')) {
+  if (unit.includes('millier') || unit.includes('mille') || unit.includes('thousand')) {
     return 1000
   }
 
   return 1
 }
 
-export const getValue = (regexResult: string[]) =>
+export const getValue = (regexResult: string[], language: 'fr' | 'en') =>
   Number(regexResult[1].replaceAll(',', '.').replaceAll('&nbsp;', '').replaceAll(/\s/g, '')) *
   getFactor(regexResult[4]) *
-  getUnitFactor(regexResult[12])
+  getUnitFactor(language === 'fr' ? regexResult[12] : regexResult[10])
 
-const Detector = ({ impact }: { impact: string }) => {
+const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' }) => {
   const ref = useRef<HTMLDivElement>(null)
   const etiquetteRef = useRef<HTMLDivElement>(null)
 
@@ -131,12 +133,12 @@ const Detector = ({ impact }: { impact: string }) => {
   const [reload, forceUpdate] = useReducer((x) => x + 1, 0)
 
   const value = useMemo(() => {
-    const values = regex.exec(impact)
+    const values = regexs[language].exec(impact)
     if (values) {
-      return getValue(values)
+      return getValue(values, language)
     }
     return 0
-  }, [impact])
+  }, [impact, language])
 
   const equivalents = useMemo(() => {
     const equivalents = defaultEquivalents.find(
@@ -202,7 +204,13 @@ const Detector = ({ impact }: { impact: string }) => {
         ref={etiquetteRef}>
         <Logo value={value} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
         <div className={styles.simpleValue}>
-          <SimpleValue language='fr' value={value} comparison={equivalents[reload] || 'random'} id='etiquette-value' />
+          <SimpleValue
+            language={language}
+            value={value}
+            // Dirty tricks to refresh random values...
+            comparison={equivalents[reload] || (reload % 2 === 0 ? 'random' : '')}
+            id='etiquette-value'
+          />
         </div>
         <button
           className={styles.random}

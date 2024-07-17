@@ -1,17 +1,17 @@
 import React, { render } from 'preact/compat'
 import 'utils/variables.css'
-import Detector, { regex } from 'components/externalModules/detection/Detector'
+import Detector, { regexs } from 'components/externalModules/detection/Detector'
 import './style.css'
 
 const className = 'impactCO2-container'
 const forbiddenTag = ['TITLE', 'HEAD', 'STYLE', 'SCRIPT', 'path', 'IMG', 'META', 'BUTTON', 'A']
 
-const transform = (element: Element, darkMode?: boolean) => {
+const transform = (element: Element, language: 'fr' | 'en', darkMode?: boolean) => {
   if (forbiddenTag.includes(element.tagName) || element.getAttribute('impactCO2') === 'managed') {
     return
   }
 
-  const hasImpact = regex.exec(element.innerHTML)
+  const hasImpact = regexs[language].exec(element.innerHTML)
   if (hasImpact && hasImpact[1] !== '0') {
     const etiquette = document.createElement('DIV')
     etiquette.className = className
@@ -25,19 +25,19 @@ const transform = (element: Element, darkMode?: boolean) => {
     const after = document.createElement('DIV')
     after.className = className
     after.innerHTML = existingValues[1]
-    transform(after, darkMode)
-    render(React.createElement(Detector, { impact: hasImpact[0] }), etiquette)
+    transform(after, language, darkMode)
+    render(React.createElement(Detector, { impact: hasImpact[0], language }), etiquette)
     element.setAttribute('impactCO2', 'managed')
     element.replaceChildren(before, etiquette, after)
   }
 }
 
-const transformText = (element: Element, darkMode?: boolean) => {
+const transformText = (element: Element, language: 'fr' | 'en', darkMode?: boolean) => {
   ;[...element.childNodes.values()]
     .filter((child) => child.nodeName === '#text')
     .forEach((child) => {
       if (child.textContent) {
-        const hasImpact = regex.exec(child.textContent)
+        const hasImpact = regexs[language].exec(child.textContent)
         if (hasImpact && hasImpact[1] !== '0') {
           const etiquette = document.createElement('DIV')
           etiquette.className = className
@@ -51,8 +51,8 @@ const transformText = (element: Element, darkMode?: boolean) => {
           const after = document.createElement('DIV')
           after.className = className
           after.innerHTML = existingValues[1]
-          transform(after, darkMode)
-          render(React.createElement(Detector, { impact: hasImpact[0] }), etiquette)
+          transform(after, language, darkMode)
+          render(React.createElement(Detector, { impact: hasImpact[0], language }), etiquette)
           child.replaceWith(before, etiquette, after)
         }
       }
@@ -85,7 +85,7 @@ export const initMatomo = () => {
   }
 }
 
-export const start = (darkMode?: boolean) => {
+export const start = (darkMode?: boolean, language?: 'fr' | 'en') => {
   const elems = document.querySelectorAll('*')
 
   Array.from(elems)
@@ -116,12 +116,12 @@ export const start = (darkMode?: boolean) => {
         if (
           childs.every((child) => child.nodeName === '#text' || child.nodeName === 'SUB' || child.nodeName === 'SUP')
         ) {
-          transform(elem, darkMode)
+          transform(elem, language || 'fr', darkMode)
         } else {
           ;[...elem.children].forEach((child) => {
-            transform(child, darkMode)
+            transform(child, language || 'fr', darkMode)
           })
-          transformText(elem, darkMode)
+          transformText(elem, language || 'fr', darkMode)
         }
       } catch (e) {
         console.error('Impossible de générer les équivalents', e)
