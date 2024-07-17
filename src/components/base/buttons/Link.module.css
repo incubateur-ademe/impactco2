@@ -16,12 +16,6 @@
 
   &:focus {
     color: var(--primary-80);
-    outline: 3px solid var(--primary-40);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
   }
 
   &:disabled {

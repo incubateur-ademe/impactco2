@@ -26,9 +26,6 @@
   }
 
   &:focus {
-    outline: 3px solid var(--primary-50);
-    outline-offset: 2px;
-
     .button {
       outline: none;
     }
@@ -42,9 +39,6 @@
     }
   }
 
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
 }
 
 .emoji {
