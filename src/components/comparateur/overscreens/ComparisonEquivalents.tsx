@@ -2,6 +2,7 @@ import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
+import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import styles from './ComparisonEquivalents.module.css'
 
@@ -16,7 +17,7 @@ const ComparisonEquivalents = ({
 }) => {
   const {
     language,
-    transport: { comparison, setComparison },
+    transport: { comparison, setComparison, selected },
   } = useParamContext()
 
   return equivalents.map((equivalent) => (
@@ -29,6 +30,11 @@ const ComparisonEquivalents = ({
         } else {
           setComparison([comparison[0], equivalent.slug])
         }
+        track(
+          `Transport ${selected === 'distance' ? 'distance' : 'itinéraire'}`,
+          'Nouvelle comparaison',
+          equivalent.slug
+        )
         onClose()
       }}>
       <div>{getName(language, equivalent)}</div>

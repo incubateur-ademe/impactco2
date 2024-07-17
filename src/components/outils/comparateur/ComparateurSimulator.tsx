@@ -24,7 +24,6 @@ const ComparateurSimulator = () => {
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
   const t = useTranslations('comparateur')
-
   return (
     <div>
       <div className={simulatorStyles.simulator}>

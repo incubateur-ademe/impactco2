@@ -21,12 +21,12 @@ test('Simulator chauffage', async ({ page }) => {
 
   await test.step('Iframe can be share with theme', async () => {
     await page.getByTestId('header-integrate-button').click()
-    await expect(page.getByTestId('clipboard-box')).toContainText(
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=200&language=fr&theme=default"></script>'
     )
 
     await page.getByTestId('custom-param-theme-select').selectOption('night')
-    await expect(page.getByTestId('clipboard-box')).toContainText(
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=200&language=fr&theme=night"></script>'
     )
   })
@@ -34,7 +34,7 @@ test('Simulator chauffage', async ({ page }) => {
   await test.step('Iframe can be share with m2', async () => {
     await expect(page.getByTestId('input-m2')).toHaveValue('200')
     await page.getByTestId('input-m2-value').fill('300')
-    await expect(page.getByTestId('clipboard-box')).toContainText(
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=300&language=fr&theme=night"></script>'
     )
     await expect(page.getByTestId('category-link')).toHaveCount(7)
@@ -57,6 +57,7 @@ test('Iframes link are opened in new tab', async ({ page }) => {
     await page.goto('/outils/chauffage')
   })
 
+  await expect(page.getByTestId('category-link')).toHaveCount(7)
   let links = page.getByTestId('category-link')
   let elementsCount = await links.count()
 
@@ -71,6 +72,7 @@ test('Iframes link are opened in new tab', async ({ page }) => {
     await page.goto('/iframes/chauffage')
   })
 
+  await expect(page.getByTestId('category-link')).toHaveCount(7)
   links = page.getByTestId('category-link')
   elementsCount = await links.count()
 

@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import React, { ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
+import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
 import GhostButton from 'components/base/GhostButton'
 import Logos from 'components/base/Logo/Logos'
@@ -176,6 +177,7 @@ const Shareable = ({
                 id='language'
                 value={language}
                 onChange={(event) => {
+                  track(tracking, 'Language', event.target.value)
                   setLanguage(event.target.value as 'fr' | 'en')
                 }}>
                 <option value='fr'>FR</option>

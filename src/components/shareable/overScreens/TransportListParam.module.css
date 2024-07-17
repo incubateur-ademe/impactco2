@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 1.25rem;
 }
 
 .mode {
@@ -46,6 +47,15 @@
   opacity: 1;
 }
 
+.disabled {
+  opacity: 1;
+
+  &:hover {
+    border: 2px solid var(--neutral-30);
+    background: transparent;
+  }
+}
+
 .left {
   display: flex;
   align-items: center;
@@ -69,5 +79,14 @@
     width: 100%;
     flex: unset
   }
+}
 
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
 }
