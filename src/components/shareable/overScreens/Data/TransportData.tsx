@@ -67,6 +67,28 @@ const FRTransportData = () => {
           </ul>
         </div>
       </div>
+      <div className={styles.title}>Covoiturage</div>
+      <div className={styles.content}>
+        <div>Par défaut nous comptons 1 seule personne, le conducteur, dans une voiture thermique ou électrique.</div>
+        <div>
+          Or nous sommes conscients que vous êtes de plus en plus nombreux à mutualiser vos trajets au sein de votre
+          foyer ou à pratiquer le covoiturage, c’est pourquoi vous pouvez <b>comparer</b> l’impact d’un trajet
+          individuel avec l’impact d’un trajet partagé avec 1, 2, 3, ou 4 passagers.
+        </div>
+      </div>
+      <div className={styles.title}>Comparaison</div>
+      <div className={styles.content}>
+        En comparant deux moyens de transports, évaluer **les économies de carbones** que réalisée sur une même distance
+        donnée en fonction de toutes les hypothèses affichées ci-dessus.
+      </div>
+      <div className={styles.content}>
+        <div>
+          Vous avez une question ? Vous souhaitez aller plus loin dans la compréhension ?{' '}
+          <Link target='_blank' rel='noopener noreferrer' href='/doc/questions-frequentes'>
+            Découvrez notre F.A.Q
+          </Link>
+        </div>
+      </div>
     </>
   )
 }
@@ -132,6 +154,28 @@ const ENTransportData = () => {
               <b>Airplane</b> : average occupancy rate by type of mail (short, medium, long).
             </li>
           </ul>
+        </div>
+      </div>
+      <div className={styles.title}>Carpooling</div>
+      <div className={styles.content}>
+        <div>By default we have only 1 person, the driver, in a thermal or electric car.</div>
+        <div>
+          However, we are aware that more and more of you are sharing your journeys within your household or carpooling,
+          which is why you can <b>compare</b> the impact of an individual journey with the impact of a journey shared
+          with 1, 2, 3, or 4 passengers.
+        </div>
+      </div>
+      <div className={styles.title}>Comparison</div>
+      <div className={styles.content}>
+        By comparing two means of transport, evaluate **the carbon savings** achieved over the same given distance based
+        on all the hypotheses displayed above.
+      </div>
+      <div className={styles.content}>
+        <div>
+          You have a question ? Do you want to go further in understanding?{' '}
+          <Link target='_blank' rel='noopener noreferrer' href='/doc/questions-frequentes'>
+            Discover our F.A.Q.
+          </Link>
         </div>
       </div>
     </>

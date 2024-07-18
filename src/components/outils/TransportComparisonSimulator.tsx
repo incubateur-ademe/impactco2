@@ -68,7 +68,10 @@ const TransportComparisonSimulator = ({
   useEffect(() => {
     if (typeof index === 'number') {
       if (availableComparisons.length > 0) {
-        setComparison(availableComparisons[index % availableComparisons.length])
+        const newComparison = availableComparisons[index % availableComparisons.length]
+        track(tracking, 'Autre comparaison', newComparison.join())
+
+        setComparison(newComparison)
       }
     }
   }, [index, availableComparisons])
@@ -121,7 +124,6 @@ const TransportComparisonSimulator = ({
         <Button
           className={styles.button}
           onClick={() => {
-            track(tracking, 'Autre comparaison', index.toString())
             setGeneration(0)
             setTimeout(() => {
               setIndex(typeof index === 'number' ? index + 1 : 1)

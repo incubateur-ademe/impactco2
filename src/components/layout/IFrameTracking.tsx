@@ -30,7 +30,7 @@ const IFrameTracking = ({ children }: { children: React.ReactNode }) => {
       const href = window.location.href.endsWith('/') ? window.location.href : `${window.location.href}/`
       track('IFrame', href, path)
       const params = [...new URLSearchParams(window.location.search).entries()]
-      params.forEach(([key, value]) => track(`${path.replace('/iframes/', '')}-${key}`, value, href, true))
+      params.forEach(([key, value]) => track(`integration-${path.replace('/iframes/', '')}-${key}`, value, href, true))
     }
   }, [entry, observed, path])
 
