@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { getName } from 'utils/Equivalent/equivalent'
+import { getEquivalentWithCarpool } from 'utils/carpool'
 import useParamContext from './ParamProvider'
 import { computedEquivalents } from './equivalents'
 
@@ -25,31 +26,49 @@ const config = {
   ignoreLocation: true,
 }
 
-const equivalents = computedEquivalents.map((equivalent) => {
-  const category = categories.find((category) => equivalent.category === category.id)
-  return category && category.synonyms
-    ? {
-        ...equivalent,
-        synonyms: [...category.synonyms, ...(equivalent.synonyms || [])],
-      }
-    : equivalent
-})
+const equivalents = computedEquivalents
+  .map((equivalent) => {
+    const category = categories.find((category) => equivalent.category === category.id)
+    return category && category.synonyms
+      ? {
+          ...equivalent,
+          synonyms: [...category.synonyms, ...(equivalent.synonyms || [])],
+        }
+      : equivalent
+  })
+  .flatMap(getEquivalentWithCarpool)
 
-export const useSearchEquivalent = (search: string, excludeEmpty?: boolean) => {
+export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, category?: number) => {
   const [results, setResults] = useState<ComputedEquivalent[]>([])
   const [fuses, setFuses] = useState<{ fuse: Fuse<ComputedEquivalent>; nonEmptyFuse: Fuse<ComputedEquivalent> }>()
 
-  const { language } = useParamContext()
+  const {
+    language,
+    transport: { modes },
+  } = useParamContext()
+
   useEffect(() => {
-    const translatedEquivalents = equivalents.map((equivalent) => ({
-      ...equivalent,
-      name: getName(language, equivalent),
-    }))
+    const translatedEquivalents = equivalents
+      .filter((equivalent) => {
+        if (equivalent.category === 4) {
+          if (equivalent.carpool) {
+            const [slug] = equivalent.slug.split('+')
+            return modes.includes(`${slug}+1`)
+          }
+          return modes.includes(equivalent.slug)
+        }
+        return true
+      })
+      .filter((equivalent) => !category || equivalent.category === category)
+      .map((equivalent) => ({
+        ...equivalent,
+        name: getName(language, equivalent),
+      }))
     setFuses({
       fuse: new Fuse([...translatedEquivalents], config),
       nonEmptyFuse: new Fuse([...translatedEquivalents.filter((equivalent) => equivalent.value)], config),
     })
-  }, [language])
+  }, [language, category, modes])
 
   useEffect(() => {
     if (fuses) {

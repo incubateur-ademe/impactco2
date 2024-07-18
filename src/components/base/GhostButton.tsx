@@ -11,7 +11,7 @@ const GhostButton = ({
   size,
   ...buttonProps
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
-  icon: ReactNode
+  icon?: ReactNode
   iconPosition?: 'right'
   children: string
   size?: 'sm'

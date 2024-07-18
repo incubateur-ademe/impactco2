@@ -12,7 +12,9 @@ import LocalNumber from 'components/base/LocalNumber'
 import styles from './EquivalentCardContent.module.css'
 
 const EquivalentCardContent = ({ equivalent, category }: { equivalent: ComputedEquivalent; category: Category }) => {
-  const { value, unit } = getNumberPrecision(equivalent.value)
+  const { value, unit } = getNumberPrecision(
+    equivalent.carpool ? equivalent.value / (equivalent.carpool + 1) : equivalent.value
+  )
   const { language } = useParamContext()
   const t = useTranslations('unit')
   return (

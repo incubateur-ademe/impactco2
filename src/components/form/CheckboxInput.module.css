@@ -50,6 +50,19 @@
     outline: 4px solid var(--primary-30);
     outline-offset: 0;
   }
+
+  input[type='checkbox']:disabled {
+    border-color: var(--neutral-20);
+  }
+
+  input[type='checkbox']:disabled:checked {
+    color: var(--neutral-30);
+    background-color: var(--neutral-10);
+  }
+}
+
+.reversed {
+  flex-direction: row-reverse;
 }
 
 .checked {
@@ -60,10 +73,22 @@
   }
 }
 
+.checkReversed,
 .check {
   color: var(--neutral-00);
-  left: 0.5rem;
   padding: inherit;
   position: absolute;
   font-size: 1rem;
+}
+
+.check {
+  left: 0.5rem;
+}
+
+.checkReversed {
+  right: 0.5rem;
+}
+
+.checkDisabled {
+  color: var(--neutral-30);
 }

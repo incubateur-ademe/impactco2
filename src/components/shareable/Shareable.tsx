@@ -2,13 +2,17 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { Dispatch, ReactNode, SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
+import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
 import GhostButton from 'components/base/GhostButton'
 import Logos from 'components/base/Logo/Logos'
 import CloseIcon from 'components/base/icons/close'
+import LanguageIcon from 'components/base/icons/language'
+import HiddenLabel from 'components/form/HiddenLabel'
+import Select from 'components/form/Select'
 import Actions from './Actions'
 import Feature from './Feature'
 import styles from './Shareable.module.css'
@@ -16,46 +20,38 @@ import { OverScreenInfo } from './overScreens/Values'
 
 type ShareableProps = {
   children: ReactNode
+  slug: string
   tracking: string
   withoutIntegration?: boolean
   withoutShare?: boolean
   overScreens?: Record<string, OverScreenInfo>
   secondary?: string
-  overScreen?: OverScreenInfo | undefined
-  setOverScreen?: Dispatch<SetStateAction<string | undefined>>
   noBottomBorders?: boolean
   small?: boolean
 }
 const Shareable = ({
   children,
+  slug,
   tracking,
   withoutIntegration,
   withoutShare,
   overScreens,
   secondary,
-  overScreen,
-  setOverScreen,
   noBottomBorders,
   small,
 }: ShareableProps) => {
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
   const tModal = useTranslations('modal')
-  const { theme } = useParamContext()
-  const [overScreenInternal, setOverScreenInternal] = useState<OverScreenInfo | undefined>()
+  const { theme, overscreen, setOverscreen, language, setLanguage } = useParamContext()
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
 
-  const onClose = useCallback(
-    () => (setOverScreen ? setOverScreen(undefined) : setOverScreenInternal(undefined)),
-    [setOverScreen]
+  const overScreenToDisplay = useMemo(
+    () => (overScreens && overscreen ? overScreens[overscreen[slug]] : undefined),
+    [overScreens, overscreen, slug]
   )
 
-  const overScreenToDisplay = useMemo(() => {
-    if (overScreens) {
-      return overScreenInternal
-    }
-    return overScreen
-  }, [overScreens, overScreenInternal, overScreen])
+  const onClose = useCallback(() => setOverscreen({ ...overscreen, [slug]: '' }), [overscreen, slug])
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
@@ -96,51 +92,56 @@ const Shareable = ({
         [styles.secondaryCard]: secondary !== undefined,
         night: theme === 'night',
         [styles.smallCard]: small,
-      })}
-      ref={secondary !== undefined ? undefined : ref}>
-      {overScreenToDisplay && (
-        <>
-          <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
-          <dialog
-            ref={overscreenRef}
-            tabIndex={-1}
-            aria-modal
-            aria-label={t(overScreenToDisplay.title)}
-            className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
-            {overScreenToDisplay.title && (
-              <div>
-                <div className={styles.header}>
-                  <b className='text-lg'>{t(overScreenToDisplay.title)}</b>
-                  <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
-                    {tModal('close')}
-                  </GhostButton>
+      })}>
+      <div ref={secondary !== undefined ? undefined : ref}>
+        {overScreenToDisplay && (
+          <>
+            <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
+            <dialog
+              ref={overscreenRef}
+              tabIndex={-1}
+              aria-modal
+              aria-label={t(overScreenToDisplay.title)}
+              className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
+              {overScreenToDisplay.title && (
+                <div>
+                  <div className={styles.header}>
+                    <b className='text-lg'>{t(overScreenToDisplay.title)}</b>
+                    <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
+                      {tModal('close')}
+                    </GhostButton>
+                  </div>
+                  <div className={styles.separatorBothBorders} />
                 </div>
-                <div className={styles.separatorBothBorders} />
+              )}
+              <div className={classNames(styles.overScreenChildren, { [styles.noScroll]: !overScreenToDisplay.title })}>
+                {overScreenToDisplay.children}
               </div>
-            )}
-            <div className={classNames(styles.overScreenChildren, { [styles.noScroll]: !overScreenToDisplay.title })}>
-              {overScreenToDisplay.children}
-            </div>
-            {overScreenToDisplay.title && (
-              <div>
-                <div className={styles.separatorBothBorders} />
-                <div className={styles.footer}>
-                  <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose} data-testid='cancel-button'>
-                    {tModal('close')}
-                  </GhostButton>
+              {overScreenToDisplay.title && (
+                <div>
+                  <div className={styles.separatorBothBorders} />
+                  <div className={styles.footer}>
+                    <GhostButton
+                      icon={<CloseIcon />}
+                      iconPosition='right'
+                      onClick={onClose}
+                      data-testid='cancel-button'>
+                      {tModal('close')}
+                    </GhostButton>
+                  </div>
                 </div>
-              </div>
-            )}
-          </dialog>
-        </>
-      )}
-      <div className={secondary !== undefined ? styles.secondaryContainer : ''}>
-        <div
-          ref={secondary !== undefined ? ref : undefined}
-          className={secondary !== undefined ? styles.secondaryContent : ''}>
-          {children}
+              )}
+            </dialog>
+          </>
+        )}
+        <div className={secondary !== undefined ? styles.secondaryContainer : ''}>
+          <div
+            ref={secondary !== undefined ? ref : undefined}
+            className={secondary !== undefined ? styles.secondaryContent : ''}>
+            {children}
+          </div>
+          {secondary && <div className={styles.secondaryText}>{secondary}</div>}
         </div>
-        {secondary && <div className={styles.secondaryText}>{secondary}</div>}
       </div>
       {secondary === undefined && (
         <>
@@ -148,18 +149,20 @@ const Shareable = ({
             <div className={styles.ressources}>
               {'data' in overScreens && (
                 <Feature
+                  slug={slug}
+                  type='data'
                   tracking={tracking}
                   name='Comprendre les données'
                   info={overScreens.data}
-                  setOverScreen={setOverScreenInternal}
                 />
               )}
               {'hypothesis' in overScreens && (
                 <Feature
+                  slug={slug}
+                  type='hypothesis'
                   info={overScreens.hypothesis}
                   name='Aller plus loin'
                   tracking={tracking}
-                  setOverScreen={setOverScreenInternal}
                 />
               )}
             </div>
@@ -168,6 +171,20 @@ const Shareable = ({
           )}
           <div className={styles.logos}>
             <Logos small />
+            <div className={small ? styles.bottomLanguage : styles.language}>
+              <HiddenLabel htmlFor='text-select-language'>{t('language.label')}</HiddenLabel>
+              <Select
+                id='language'
+                value={language}
+                onChange={(event) => {
+                  track(tracking, 'Language', event.target.value)
+                  setLanguage(event.target.value as 'fr' | 'en')
+                }}>
+                <option value='fr'>FR</option>
+                <option value='en'>EN</option>
+              </Select>
+              <LanguageIcon />
+            </div>
           </div>
         </>
       )}
@@ -177,11 +194,7 @@ const Shareable = ({
             if (action === 'telecharger') {
               takeScreenshot()
             } else {
-              if (overScreens) {
-                setOverScreenInternal(overScreens[action])
-              } else if (setOverScreen) {
-                setOverScreen(action)
-              }
+              setOverscreen({ ...overscreen, [slug]: action })
             }
           }}
           tracking={tracking}

@@ -10,10 +10,26 @@ import Suggestion from 'components/layout/Suggestion'
 export async function generateStaticParams() {
   return categories.flatMap((category) =>
     category.equivalents
-      ? category.equivalents.map((equivalent) => ({
-          tool: category.slug,
-          equivalent: equivalent.slug,
-        }))
+      ? category.equivalents.flatMap((equivalent) =>
+          equivalent.withCarpool
+            ? [
+                {
+                  tool: category.slug,
+                  equivalent: equivalent.slug,
+                },
+                ...Array.from({ length: 4 }).map((value, index) => ({
+                  tool: category.slug,
+                  equivalent: `${equivalent.slug}+${index + 1}`,
+                  carpool: index + 1,
+                })),
+              ]
+            : [
+                {
+                  tool: category.slug,
+                  equivalent: equivalent.slug,
+                },
+              ]
+        )
       : []
   )
 }
@@ -29,7 +45,9 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
   if (!category || !category.equivalents) {
     return parent as Metadata
   }
-  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === params.equivalent)
+  const fullSlug = decodeURIComponent(params.equivalent)
+  const [slug] = fullSlug.split('+')
+  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === slug)
   if (!equivalent) {
     return parent as Metadata
   }
@@ -43,7 +61,7 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
         : `Découvrir l'impact carbone d'un ${getName(language, equivalent, true).toLowerCase()} grâce à Impact CO2 et aux données de l'ADEME`,
     openGraph: {
       creators: 'ADEME',
-      images: `meta/${equivalent.slug}-${language}.png`,
+      images: `meta/${fullSlug}-${language}.png`,
     },
   }
 }
@@ -53,13 +71,20 @@ const EquivalentPage = ({ params }: Props) => {
   if (!category || !category.equivalents) {
     return notFound()
   }
-  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === params.equivalent)
+  const [slug, carpool] = decodeURIComponent(params.equivalent).split('+')
+  const equivalent = category.equivalents.find((equivalent) => equivalent.slug === slug)
   if (!equivalent) {
     return notFound()
   }
   return (
     <>
-      <Equivalent category={category} equivalent={equivalent} simulator={equivalentsSimulators[equivalent.slug]} />
+      <Equivalent
+        category={category}
+        equivalent={
+          carpool ? { ...equivalent, carpool: Number(carpool), link: `${equivalent.link}+${carpool}` } : equivalent
+        }
+        simulator={equivalentsSimulators[equivalent.slug]}
+      />
       <Suggestion
         from={equivalent.link}
         fromLabel={getName('fr', equivalent)}

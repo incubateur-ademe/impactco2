@@ -27,6 +27,8 @@ const TransportSimulator = () => {
   const pathName = usePathname()
   const searchParams = useSearchParams()
 
+  const mode = useMemo(() => searchParams.get('mode'), [searchParams])
+
   useEffect(() => {
     if (pathName.includes(itineraire.value)) {
       setSelected('itineraire')
@@ -74,8 +76,8 @@ const TransportSimulator = () => {
           </button>
         </div>
       )}
-      {selected === 'distance' && <DistanceSimulator />}
-      {selected === 'itineraire' && <ItineraireSimulator />}
+      {selected === 'distance' && <DistanceSimulator withComparisonMode={!mode} />}
+      {selected === 'itineraire' && <ItineraireSimulator withComparisonMode={!mode} />}
     </>
   )
 }

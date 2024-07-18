@@ -109,7 +109,7 @@ const UsageNumeriqueSimulator = () => {
         name: t(equivalent.name),
       })),
     ],
-    [engine, situation, numberEmails]
+    [engine, situation, numberEmails, language]
   )
   return (
     <>

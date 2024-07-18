@@ -2,8 +2,8 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { SetStateAction } from 'preact/compat'
-import React, { Dispatch } from 'react'
+import React from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import styles from './Feature.module.css'
@@ -11,22 +11,25 @@ import { OverScreenInfo } from './overScreens/Values'
 
 const Feature = ({
   info,
+  type,
+  slug,
   tracking,
   name,
-  setOverScreen,
 }: {
   info: OverScreenInfo
   tracking: string
   name: string
-  setOverScreen: Dispatch<SetStateAction<OverScreenInfo | undefined>>
+  slug: string
+  type: string
 }) => {
+  const { setOverscreen, overscreen } = useParamContext()
   const t = useTranslations('overscreen')
   return (
     <button
       className={styles.button}
       onClick={() => {
         track(tracking, name, `${tracking}_${name}`.replace(/ /g, '_').toLowerCase())
-        setOverScreen(info)
+        setOverscreen({ ...overscreen, [slug]: type })
       }}>
       {info.image && (
         <div className={styles.left}>

@@ -70,39 +70,49 @@ Default: `'fr'`
 Liste des équivalents à comparer parmis la liste suivante :
 
 - Transport
-  - avioncourtcourrier : km en avion (court courrier)
-  - avionmoyencourrier : km en avion (moyen courrier)
-  - avionlongcourrier : km en avion (long courrier)
-  - tgv : km en tgv
+  - avioncourtcourrier : km en avion court courrier
+  - avionmoyencourrier : km en avion moyen courrier
+  - avionlongcourrier : km en avion long courrier
+  - tgv : km en TGV
   - intercites : km en intercités
-  - voiturethermique : km en voiture (moteur thermique)
-  - voitureelectrique : km en voiture (moteur électrique)
+  - voiturethermique : km en voiture thermique
+  - voiturethermique+1 : km en voiture thermique avec 1 passager
+  - voiturethermique+2 : km en voiture thermique avec 2 passagers
+  - voiturethermique+3 : km en voiture thermique avec 3 passagers
+  - voiturethermique+4 : km en voiture thermique avec 4 passagers
+  - voitureelectrique : km en voiture électrique
+  - voitureelectrique+1 : km en voiture électrique avec 1 passager
+  - voitureelectrique+2 : km en voiture électrique avec 2 passagers
+  - voitureelectrique+3 : km en voiture électrique avec 3 passagers
+  - voitureelectrique+4 : km en voiture électrique avec 4 passagers
   - autocar : km en autocar
   - velo : vélo ou marche
-  - veloelectrique : km en vélo (ou trottinette)
-  - busthermique : km en bus (moteur thermique)
+  - veloelectrique : km en vélo à assistance électrique
+  - trottinette : km en trottinette à assistance électrique
+  - busthermique : km en bus thermique
   - tramway : km en tramway
   - metro : km en métro
   - scooter : km en scooter ou moto légère
   - moto : km en moto
-  - rer : km en rer ou transilien
-  - ter : km en ter
-  - buselectrique : km en bus (moteur électrique)
-  - busgnv : km en bus (gnv)
-  - avion-pny : A/R paris - new-york (en avion)
+  - rer : km en RER ou Transilien
+  - ter : km en TER
+  - buselectrique : km en bus électrique
+  - busgnv : km en bus (GNV)
 - Boisson
   - eaudurobinet : Litre d'eau du robinet
   - eauenbouteille : Litre d'eau en bouteille
   - soda : Litre de soda
-  - biere : Litre de bièren
-  - laitdevache : Litre de lait (de vache)
-  - soja : Boisson au lait (de soja)
+  - biere : Litre de bière
+  - vin : Litre de vin
+  - laitdevache : Litre de lait de vache
+  - soja : Litre de boisson au soja
+  - the : Litre de thé
   - cafe : Litre de café
 - Repas
   - repasavecduboeuf : repas avec du boeuf
-  - repasvegetarien : repas végétarien[s]
-  - repasvegetalien : repas végétalien[s]
-  - repasavecdupoissonblanc : repas avec du poisso
+  - repasvegetarien : repas végétarien
+  - repasvegetalien : repas végétalien
+  - repasavecdupoissonblanc : repas avec du poisson blanc
   - repasavecdupoissongras : repas avec du poisson gras
   - repasavecdupoulet : repas avec du poulet
 - Fruits et légumes
@@ -119,7 +129,7 @@ Liste des équivalents à comparer parmis la liste suivante :
   - celeri : kg de céleri
   - champignonmorille : kg de champignon (morille crue)
   - chou : kg de chou
-  - choudebruxelles : kg de chou de bruxelles
+  - choudebruxelles : kg de chou de Bruxelles
   - choufleur : kg de chou-fleur
   - concombre : kg de concombre
   - courge : kg de courge
@@ -182,80 +192,83 @@ Liste des équivalents à comparer parmis la liste suivante :
   - noixdecoco : kg de noix de coco
   - pasteque : kg de pastèque
 - Électroménager
-  - bouilloire : bouilloire[s]
-  - cafetieredosette : cafetière[s] (à dosettes)
-  - cafetierefiltre : cafetière[s] (filtre)
-  - cafetiereexpresso : cafetière[s] (expresso)
-  - fourelectrique : four (électrique)
+  - bouilloire : bouilloire
+  - cafetieredosette : cafetière à dosettes
+  - cafetierefiltre : cafetière filtre
+  - cafetiereexpresso : cafetière expresso
+  - fourelectrique : four électrique
   - lavevaisselle : lave-vaisselle
-  - lavelinge : lave-linge (7kg)
+  - lavelinge : lave-linge
   - refrigirateur : réfrigérateur
   - aspirateur : aspirateur
-  - climatiseur : climatiseur[s]
+  - climatiseur : climatiseur
 - Habillement
   - jeans : jeans
-  - polo : polo[s]
-  - tshirtencoton : t-shirt[s] (en coton)
-  - tshirtenpolyester : t-shirt[s] (en polyester)
-  - sweatencoton : sweat[s] (en coton)
-  - chemiseencoton : chemise[s] (en coton)
-  - chemiseenviscose : chemise[s] (en viscose)
-  - chaussuresencuir : paire[s] de chaussures (en cuir)
-  - chaussuresentissu : paire[s] de chaussures (en tissu)
-  - chaussuresdesport : paire[s] de chaussures (de sport)
-  - robeencoton : robe[s] (en coton)
-  - robeenpolyester : robe[s] (en polyester)
-  - robeenviscose : robe[s] (en viscose)
-  - pullenlaine : pull[s] (en laine)
-  - pullenacrylique : pull[s] (en acrylique)
-  - pullencotonrecycle : pull[s] (en coton recyclé)
-  - manteau : manteau[x]
-  - vesteimpermeable : veste[s] imperméable[s]
-  - vestesimilicuir : veste[s] simili-cuir
+  - polo : polo
+  - tshirtencoton : t-shirt en coton
+  - tshirtenpolyester : t-shirt en polyester
+  - sweatencoton : sweat en coton
+  - chemiseencoton : chemise en coton
+  - chemiseenviscose : chemise en viscose
+  - chaussuresencuir : paire de chaussures en cuir
+  - chaussuresentissu : paire de chaussures en tissu
+  - chaussuresdesport : paire de chaussures de sport
+  - robeencoton : robe en coton
+  - robeenpolyester : robe en polyester
+  - robeenviscose : robe en viscose
+  - pullenlaine : pull en laine
+  - pullenacrylique : pull en acrylique
+  - pullencotonrecycle : pull en coton recyclé
+  - manteau : manteau
+  - vesteimpermeable : veste imperméable
+  - vestesimilicuir : veste simili-cuir
 - Mobilier
-  - canapeconvertible : canapé[s] (convertible[s])
-  - chaiseenbois : chaise[s] (en bois)
-  - tableenbois : table[s] (en bois)
-  - canapetextile : canapé[s] (textile)
+  - canapeconvertible : canapé convertible
+  - chaiseenbois : chaise en bois
+  - tableenbois : table en bois
+  - canapetextile : canapé en textile
   - armoire : armoire
-  - lit : lit (cadre + sommier + matelas)
+  - lit : lit
 - Chauffage
-  - chauffagegaz : année[s] de chauffage au gaz par m²
-  - chauffagefioul : année[s] de chauffage au fioul par m²
-  - chauffageelectrique : année[s] de chauffagélectrique par m²
-  - pompeachaleur : année[s] de chauffage avec une pompà chaleur par m²
-  - poeleagranule : année[s] de chauffage avec un poêle granulé par m²
-  - poeleabois : année[s] de chauffage avec un poêle bois par m²
-  - reseaudechaleur : année[s] de chauffage via un réseade chaleur par m²
+  - chauffagegaz : année de chauffage au gaz par m²
+  - chauffagefioul : année de chauffage au fioul par m²
+  - chauffageelectrique : année de chauffage électrique par m²
+  - pompeachaleur : année de chauffage avec une pompe à chaleur par m²
+  - poeleagranule : année de chauffage avec un poêle à granulés par m²
+  - poeleabois : année de chauffage avec un poêle à bois par m²
+  - reseaudechaleur : année de chauffage via un réseau de chaleur par m²
 - Numérique
-  - smartphone : smartphone[s] (> 5,5 pouces)
-  - ordinateurfixebureautique : ordinateur[s] fixe[s] sans écran (bureautique)
-  - ordinateurfixeperformance : ordinateur[s] fixe[s] sans écran (performance)
-  - ecran215pouces : écran[s] (21,5 pouces)
-  - ecran24pouces : écran[s] (24 pouces)
-  - tablettedetachable : tablette[s] détachable[s]
-  - tabletteclassique : tablette[s] (classique)
-  - tablettemini : tablette[s] (mini)
-  - chainehifi : chaine[s] hifi
-  - liseuse : liseuse[s] (non rétro-éclairé)
-  - television : télévision[s] (40 - 49 pouces)
-  - ordinateurportable : ordinateur[s] portable[s]
-  - montreconnectee : montre[s] connectée[s]
-  - cadrephotodigital : cadre[s] photo digital
-  - homecinema : home cinéma
-  - barredeson : barre[s] de son
-  - modemfibre : modem[s] (fibre)
-  - enceintebluetooth : enceinte[s] bluetooth
-  - consoledesalon : console[s] de salon
-  - consoleportable : console[s] portable
-  - appareilphotoreflex : appareil photo (reflex)
-  - appareilphotocompact : appareil photo (compact)
-  - imprimantejetdencre : imprimante[s] (jet d'encre)
+  - smartphone : smartphone
+  - ordinateurfixeparticulier : ordinateur fixe sans écran (particulier)
+  - ordinateurfixeprofessionnel : ordinateur fixe sans écran (professionnel)
+  - ecran : écran d'ordinateur
+  - tabletteclassique : tablette
+  - television : télévision 
+  - ordinateurportable : ordinateur portable
+  - enceintebluetooth : enceinte connectée
+  - telephonebasique : téléphone basique
+  - casquevr : casque de réalité virtuelle
+  - alimentationordinateur : alimentation externe pour ordinateur portable
+  - alimentationsmartphone : alimentation externe pour smartphone ou tablette
+  - disquedur : disque dur externe
+  - clefusb : clef usb
+  - box : box
 - Usage du numérique
   - email : email
-  - spam : spam (non lu)
-  - stockagedonnee : stocker un go de donnée (pendant 1 an)
-  - rechercheweb : recherche[s] sur le web
-  - streamingvideo : Heure[s] de streaming vidéo
-  - visioconference : Heure[s] de visioconférence
+  - spam : spam
+  - stockagedonnee : stocker un go de donnée
+  - rechercheweb : recherche sur le web
+  - streamingvideo : Heure de streaming vidéo
+  - visioconference : Heure de visioconférence
   - telechargement : go de donnée
+- Cas pratique
+  - avionpny : A/R paris - New-York en avion
+  - tgvparis-berlin" : A/R Paris - Berlin en tgv
+  - tgvparis-marseille" : A/R Paris - Marseille en tgv
+  - voiturelille-nimes" : A/R Lille - Nîmes en voiture
+  - francais : % de l'empreinte carbone d'un citoyen français
+  - gameof-thrones : épisode de game of thrones en streaming
+  - friends : intégrale de friends en streaming
+
+
+

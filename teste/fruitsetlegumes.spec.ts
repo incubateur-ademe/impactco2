@@ -8,34 +8,36 @@ test('Page is loaded and month can be selected', async ({ page }) => {
     await expect(page.getByTestId('text-select-month')).toHaveValue(new Date().getMonth().toString())
   })
   await test.step('User can change month', async () => {
-    await page.getByRole('combobox').selectOption('5')
+    await page.getByRole('combobox').first().selectOption('5')
     await expect(page.getByTestId('category-abricot-value')).toBeVisible()
     await page.getByTestId('header-share-button').click()
-    await expect(page.getByTestId('clipboard-box')).toContainText(
-      'http://localhost:3000/outils/fruitsetlegumes?month=5'
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
+      'http://localhost:3000/outils/fruitsetlegumes?month=5&language=fr'
     )
     await page.getByTestId('custom-param-month-select').selectOption('9')
-    await expect(page.getByTestId('clipboard-box')).toContainText(
-      'http://localhost:3000/outils/fruitsetlegumes?month=9'
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
+      'http://localhost:3000/outils/fruitsetlegumes?month=9&language=fr'
     )
     await page.getByTestId('custom-param-month-checkbox').click()
-    await expect(page.getByTestId('clipboard-box')).toContainText('http://localhost:3000/outils/fruitsetlegumes')
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
+      'http://localhost:3000/outils/fruitsetlegumes?&language=fr'
+    )
     await page.getByTestId('cancel-button').click()
     await page.getByTestId('header-integrate-button').click()
-    await expect(page.getByTestId('clipboard-box')).toContainText(
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="fruitsetlegumes" data-search="?month=9&language=fr&theme=default"></script>'
     )
     await page.getByTestId('custom-param-month-select').selectOption('11')
-    await expect(page.getByTestId('clipboard-box')).toContainText(
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="fruitsetlegumes" data-search="?month=11&language=fr&theme=default"></script>'
     )
     await page.getByTestId('custom-param-month-checkbox').click()
-    await expect(page.getByTestId('clipboard-box')).toContainText(
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="fruitsetlegumes" data-search="?&language=fr&theme=default"></script>'
     )
 
     await page.getByTestId('custom-param-theme-select').selectOption('night')
-    await expect(page.getByTestId('clipboard-box')).toContainText(
+    await expect(page.getByTestId('clipboard-box')).toHaveText(
       '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="fruitsetlegumes" data-search="?&language=fr&theme=night"></script>'
     )
   })

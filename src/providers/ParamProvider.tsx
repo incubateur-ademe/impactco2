@@ -5,6 +5,8 @@ import { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useCallback, useContext, useEffect, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
+import { deplacements } from 'data/categories/deplacement'
+import { comparisons } from 'components/outils/TransportComparisonSimulator'
 import { displayAddress } from 'utils/address'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
@@ -81,6 +83,8 @@ type LivraisonValues = {
 }
 
 export type Params = {
+  overscreen: Record<string, string>
+  setOverscreen: Dispatch<SetStateAction<Record<string, string>>>
   reset: (slug: string) => void
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
@@ -112,14 +116,20 @@ export type Params = {
     setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
   }
   transport: {
+    comparisonMode: 'list' | 'comparison'
+    setComparisonMode: Dispatch<SetStateAction<'list' | 'comparison'>>
+    comparison: string[]
+    setComparison: Dispatch<SetStateAction<string[]>>
+    modes: string[]
+    setModes: Dispatch<SetStateAction<string[]>>
     selected: TransportSimulateur
     setSelected: Dispatch<SetStateAction<TransportSimulateur>>
   }
   distance: {
     km: number
     setKm: Dispatch<SetStateAction<number>>
-    carpool: number
-    setCarpool: Dispatch<SetStateAction<number>>
+    carpool: Record<string, number>
+    setCarpool: Dispatch<SetStateAction<Record<string, number>>>
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
   }
@@ -128,18 +138,20 @@ export type Params = {
     setStart: Dispatch<SetStateAction<Point | undefined>>
     end?: Point
     setEnd: Dispatch<SetStateAction<Point | undefined>>
-    carpool: number
-    setCarpool: Dispatch<SetStateAction<number>>
+    carpool: Record<string, number>
+    setCarpool: Dispatch<SetStateAction<Record<string, number>>>
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
+    roundTrip: boolean
+    setRoundTrip: Dispatch<SetStateAction<boolean>>
   }
   teletravail: {
     start?: Point
     setStart: Dispatch<SetStateAction<Point | undefined>>
     end?: Point
     setEnd: Dispatch<SetStateAction<Point | undefined>>
-    carpool: number
-    setCarpool: Dispatch<SetStateAction<number>>
+    carpool: Record<string, number>
+    setCarpool: Dispatch<SetStateAction<Record<string, number>>>
     displayAll: boolean
     setDisplayAll: Dispatch<SetStateAction<boolean>>
     transport: string
@@ -199,6 +211,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<'fr' | 'en'>('fr')
+  const [overscreen, setOverscreen] = useState<Record<string, string>>({})
 
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
@@ -231,7 +244,17 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   // Distance
   const [km, setKm] = useState(10)
 
+  // Itinéraire
+  const [roundTrip, setRoundTrip] = useState(false)
+
   // Transport
+  const [modes, setModes] = useState<string[]>(
+    deplacements.flatMap((transport) =>
+      transport.withCarpool ? [`${transport.slug}+1`, transport.slug] : [transport.slug]
+    )
+  )
+  const [comparisonMode, setComparisonMode] = useState<'list' | 'comparison'>('list')
+  const [comparison, setComparison] = useState<string[]>(['voiturethermique', 'tgv'])
   const [selected, setSelected] = useState<TransportSimulateur>('distance')
 
   const [teletravailStart, setTeletravailStart] = useState<Point>()
@@ -240,9 +263,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [itineraireStart, setItineraireStart] = useState<Point>()
   const [itineraireEnd, setItineraireEnd] = useState<Point>()
 
-  const [distanceCarpool, setDistanceCarpool] = useState(1)
-  const [itineraireCarpool, setItineraireCarpool] = useState(1)
-  const [teletravailCarpool, setTeletravailCarpool] = useState(1)
+  const [distanceCarpool, setDistanceCarpool] = useState<Record<string, number>>({})
+  const [itineraireCarpool, setItineraireCarpool] = useState<Record<string, number>>({})
+  const [teletravailCarpool, setTeletravailCarpool] = useState<Record<string, number>>({})
 
   const [distanceDisplayAll, setDistanceDisplayAll] = useState(false)
   const [itineraireDisplayAll, setItineraireDisplayAll] = useState(false)
@@ -301,13 +324,23 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       }
     }
     if (searchParams.get('equivalent')) {
+      const [slug, carpool] = (searchParams.get('equivalent') || '').split(' ')
+      const equivalent = computedEquivalents.find((equivalent) => equivalent.slug === slug)
       setComparedEquivalent(
-        computedEquivalents.find((equivalent) => equivalent.slug === searchParams.get('equivalent'))
+        equivalent && equivalent.withCarpool
+          ? {
+              ...equivalent,
+              carpool: Number(carpool),
+              link: `${equivalent.link}+${carpool}`,
+              slug: `${equivalent.slug}+${carpool}`,
+              value: equivalent.value / (Number(carpool) + 1),
+            }
+          : equivalent
       )
     }
 
     if (searchParams.get('comparisons')) {
-      setEquivalents((searchParams.get('comparisons') as string).split(','))
+      setEquivalents((searchParams.get('comparisons') as string).replace(' ', '+').split(','))
     } else {
       setEquivalents(getRandomEquivalents(searchParams.get('equivalent') as string, 3))
     }
@@ -325,6 +358,39 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setKm(km)
       }
     }
+
+    if (searchParams.get('roundTrip')) {
+      setRoundTrip(searchParams.get('roundTrip') === 'true')
+    }
+
+    if (searchParams.get('modes')) {
+      const modes = (searchParams.get('modes') as string).replaceAll(' ', '+').split(',')
+      if (modes.length > 0) {
+        setModes(modes)
+        if (!searchParams.get('comparison')) {
+          if (modes.length === 2) {
+            setComparison(modes)
+          } else {
+            const firstComparison = comparisons.find(([slug1, slug2]) => modes.includes(slug1) && modes.includes(slug2))
+            if (firstComparison) {
+              setComparison(firstComparison)
+            }
+          }
+        }
+      }
+    }
+
+    if (searchParams.get('defaultMode')) {
+      setComparisonMode(searchParams.get('defaultMode') === 'list' ? 'list' : 'comparison')
+    } else if (searchParams.get('mode')) {
+      setComparisonMode(searchParams.get('mode') === 'list' ? 'list' : 'comparison')
+    }
+
+    if (searchParams.get('comparison')) {
+      const comparison = searchParams.get('comparison')?.replaceAll(' ', '+').split(',') as string[]
+      setComparison(comparison)
+    }
+
     completeAddress(setItineraireStart, (searchParams.get('start') || searchParams.get('itineraireStart')) as string)
     completeAddress(setItineraireEnd, (searchParams.get('end') || searchParams.get('itineraireEnd')) as string)
     completeAddress(setTeletravailStart, (searchParams.get('start') || searchParams.get('teletravailStart')) as string)
@@ -394,18 +460,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     setUsageNumeriqueSituation(situation)
-  }, [
-    searchParams,
-    setM2,
-    setKm,
-    setItineraireStart,
-    setItineraireEnd,
-    setTeletravailStart,
-    setTeletravailEnd,
-    setMonth,
-    setNumberEmails,
-    setUsageNumeriqueSituation,
-  ])
+  }, [searchParams])
 
   const reset = useCallback((slug: string) => {
     switch (slug) {
@@ -413,6 +468,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setKm(10)
         setItineraireStart(undefined)
         setItineraireEnd(undefined)
+        setComparison(['voiturethermique', 'tgv'])
         break
       case 'teletravail':
         setTeletravailStart(undefined)
@@ -443,6 +499,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   return (
     <ParamContext.Provider
       value={{
+        overscreen,
+        setOverscreen,
         reset,
         theme,
         setTheme,
@@ -474,6 +532,12 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setComparedEquivalent: internalComparedEquivalentSetter,
         },
         transport: {
+          comparisonMode,
+          setComparisonMode,
+          comparison,
+          setComparison,
+          modes,
+          setModes,
           selected,
           setSelected,
         },
@@ -486,6 +550,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setDisplayAll: setDistanceDisplayAll,
         },
         itineraire: {
+          roundTrip,
+          setRoundTrip,
           start: itineraireStart,
           setStart: setItineraireStart,
           end: itineraireEnd,

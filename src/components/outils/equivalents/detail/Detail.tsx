@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { Fragment, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
 import PlusMinus from 'components/outils/plusMinus/PlusMinus'
 import InformationIcon from 'components/base/icons/information'
@@ -85,13 +86,8 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
   return []
 }
 
-export default function Detail({
-  equivalent,
-  setOverscreen,
-}: {
-  equivalent: Equivalent
-  setOverscreen?: (overScreen: string) => void
-}) {
+export default function Detail({ equivalent }: { equivalent: Equivalent }) {
+  const { setOverscreen, overscreen } = useParamContext()
   const t = useTranslations('equivalent')
   const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
 
@@ -133,7 +129,17 @@ export default function Detail({
       values: [{ id: 9, value: end }],
     }
   }
-  const values = [...ecvs(type, equivalent.ecv), usageAndEnd].filter((value) => value) as Values[]
+  const values = [...ecvs(type, equivalent.ecv), usageAndEnd]
+    .filter((value) => value)
+    .map((value) =>
+      equivalent.carpool && value
+        ? {
+            ...value,
+            value: value.value / (equivalent.carpool + 1),
+            values: value.values.map((x) => ({ ...x, value: x.value / ((equivalent.carpool || 0) + 1) })),
+          }
+        : value
+    ) as Values[]
   const withPercent = values.length === 1
 
   const sum = values.reduce((acc, current) => acc + current.value, 0)
@@ -184,14 +190,12 @@ export default function Detail({
               <tr>
                 <td>
                   <b>Total</b> par année d'utilisation{' '}
-                  {setOverscreen && (
-                    <button
-                      title='Voir les informations sur la durée de vie'
-                      onClick={() => setOverscreen('usage')}
-                      className={styles.informationButton}>
-                      <InformationIcon />
-                    </button>
-                  )}
+                  <button
+                    title='Voir les informations sur la durée de vie'
+                    onClick={() => setOverscreen({ ...overscreen, [equivalent.slug]: 'usage' })}
+                    className={styles.informationButton}>
+                    <InformationIcon />
+                  </button>
                 </td>
                 <td className={styles.usageWidgetContainer}>
                   <PlusMinus

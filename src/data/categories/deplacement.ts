@@ -6,12 +6,12 @@ export const deplacements = [
     type: 'plane',
     category: 4,
     display: {
-      min: 500,
+      min: 300,
     },
     ecvs: [
       {
         display: {
-          min: 500,
+          min: 300,
           max: 1000,
         },
         empreinteId: 28130,
@@ -129,7 +129,7 @@ export const deplacements = [
     subtitle: 'Thermique',
     synonyms: ['conduire'],
     slug: 'voiturethermique',
-    carpool: 1,
+    withCarpool: true,
     type: 'car',
     category: 4,
     ecv: [
@@ -150,7 +150,7 @@ export const deplacements = [
     subtitle: 'Électrique',
     synonyms: ['conduire'],
     slug: 'voitureelectrique',
-    carpool: 1,
+    withCarpool: true,
     type: 'car',
     category: 4,
     ecv: [
@@ -405,6 +405,28 @@ export const deplacements = [
     tile: false,
     display: {
       max: 15,
+    },
+  },
+  {
+    id: 17,
+    empreinteId: 28329,
+    slug: 'trottinette',
+    type: 'foot',
+    category: 4,
+    ecv: [
+      {
+        id: 5,
+        value: 0.0229,
+      },
+      {
+        id: 6,
+        value: 0.002,
+      },
+    ],
+    default: true,
+    tile: false,
+    display: {
+      max: 30,
     },
   },
   {

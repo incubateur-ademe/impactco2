@@ -58,18 +58,15 @@ const transformText = (element: Element, darkMode?: boolean) => {
       }
     })
 }
-
-export const start = (darkMode?: boolean) => {
-  const elems = document.querySelectorAll('*')
-
+export const initMatomo = () => {
   //@ts-expect-error: Matomo redefinition
-  const _paq = (window._paq = window._paq || [])
+  const _paq_impactco2 = (window._paq_impactco2 = window._paq_impactco2 || [])
   ;(function () {
     //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
     const u = MATOMO_SITE_URL
-    _paq.push(['setTrackerUrl', u + '/matomo.php'])
+    _paq_impactco2.push(['setTrackerUrl', u + '/matomo.php'])
     //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
-    _paq.push(['setSiteId', MATOMO_SITE_ID])
+    _paq_impactco2.push(['setSiteId', MATOMO_SITE_ID])
     const d = document,
       g = d.createElement('script'),
       s = d.getElementsByTagName('script')[0]
@@ -84,8 +81,13 @@ export const start = (darkMode?: boolean) => {
   window.please = {}
   window.please.track = function (ary) {
     //@ts-expect-error: Matomo redefinition
-    window?._paq?.push(ary)
+    window?._paq_impactco2?.push(ary)
   }
+}
+
+export const start = (darkMode?: boolean) => {
+  const elems = document.querySelectorAll('*')
+
   Array.from(elems)
     .filter((elem) => {
       if (

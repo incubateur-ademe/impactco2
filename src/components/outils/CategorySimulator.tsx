@@ -8,6 +8,7 @@ import { TransportSimulateur } from 'types/transport'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
+import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
@@ -40,6 +41,7 @@ const CategorySimulator = ({
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
   const [basePercent, setBasePercent] = useState(80)
   const [legendRelative, setLegendRelative] = useState(false)
+
   useEffect(() => {
     const onResize = () => {
       if (typeof ref !== 'function' && ref && ref.current && ref.current.parentElement) {
@@ -61,10 +63,10 @@ const CategorySimulator = ({
       <div ref={ref}>
         {equivalents &&
           equivalents
-            .sort((a, b) => a.value - b.value)
+            .sort((a, b) => (a.initialValue || a.value) - (b.initialValue || b.value))
             .map((equivalent) => (
               <div
-                key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
+                key={equivalent.carpool ? `${equivalent.slug}-${equivalent.carpool}` : equivalent.slug}
                 className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
                 <IframeableLink data-testid='category-link' href={equivalent.link} className={styles.link}>
                   <EquivalentIcon equivalent={equivalent} height={3} />
@@ -95,8 +97,15 @@ const CategorySimulator = ({
                       <Image src='/icons/conducteur.svg' alt='' width={20} height={24} />
                     </div>
                     <PlusMinus
-                      value={params[type].carpool}
-                      setValue={params[type].setCarpool}
+                      value={params[type].carpool[equivalent.slug] || 1}
+                      setValue={(value) => {
+                        track(
+                          `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
+                          `Covoiturage ${equivalent.slug}`,
+                          value.toString()
+                        )
+                        params[type].setCarpool({ ...params[type].carpool, [equivalent.slug]: value })
+                      }}
                       max={4}
                       label={t('passenger')}
                       icon='/icons/passager.svg'
@@ -116,7 +125,10 @@ const CategorySimulator = ({
         />
       )}
       {hasUsage && (
-        <div className={classNames(styles.legend, { [styles.legendRelative]: legendRelative })}>
+        <div
+          className={classNames(styles.legend, {
+            [styles.legendRelative]: equivalents[0]?.carpool || equivalents[1]?.carpool || legendRelative,
+          })}>
           <div>
             <div className={styles.usage} />
             {t('legend.usage')}

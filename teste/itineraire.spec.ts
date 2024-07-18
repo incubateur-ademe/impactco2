@@ -14,7 +14,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/outils/transport/itineraire?language=fr'
+      'http://localhost:3000/outils/transport/itineraire?defaultMode=list&language=fr'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -23,7 +23,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire&language=fr&km=10"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&defaultMode=list"></script>'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -57,7 +57,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&language=fr'
+      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&defaultMode=list&language=fr'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -66,7 +66,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire&language=fr&km=10&itineraireStart=Nantes 44000 France"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&defaultMode=list"></script>'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -97,7 +97,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-share-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&language=fr'
+      'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list&language=fr'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -106,7 +106,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await page.getByTestId('header-integrate-button').click()
 
     await expect(page.getByTestId('clipboard-box')).toHaveText(
-      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&tabs=distance,itineraire&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France"></script>'
+      '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list"></script>'
     )
     await page.getByTestId('cancel-button').click()
   })
@@ -207,6 +207,42 @@ test('Load correct number of tabs and redirect with params', async ({ page }) =>
     await expect(page.getByTestId('category-busthermique')).toBeAttached()
     await expect(page.getByTestId('category-busthermique')).toHaveText('Bus thermique1.36 kg CO₂e')
   })
+})
+test('Roundtrip', async ({ page }) => {
+  await page.goto('http://localhost:3000/outils/transport/itineraire')
+
+  await page.getByLabel('Départ').fill('nantes')
+  await page.getByText('Nantes 44000 France', { exact: true }).click()
+  await page.getByLabel('Arrivée').fill('angers')
+  await page.getByText('Angers 49000 France', { exact: true }).click()
+
+  await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Nantes 44000 France')
+  await expect(page.getByLabel('Arrivée')).toHaveAttribute('value', 'Angers 49000 France')
+
+  await expect(page.getByTestId('category-intercites')).toBeAttached()
+  await expect(page.getByTestId('category-intercites')).toHaveText('Intercités  - 91.2 km0.82 kg CO₂e')
+  await expect(page.getByTestId('category-tgv')).not.toBeAttached()
+
+  await page.getByTestId('checkbox-roundTrip').check()
+  await expect(page.getByTestId('category-intercites')).toBeAttached()
+  await expect(page.getByTestId('category-intercites')).toHaveText('Intercités  - 182 km1.64 kg CO₂e')
+  await expect(page.getByTestId('category-tgv')).not.toBeAttached()
+
+  await page.getByTestId('header-share-button').click()
+  await expect(page.getByTestId('clipboard-box')).toHaveText(
+    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&roundTrip=true&defaultMode=list&language=fr'
+  )
+  await page.getByTestId('cancel-button').click()
+  await page.getByTestId('header-integrate-button').click()
+  await expect(page.getByTestId('clipboard-box')).toHaveText(
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list&roundTrip=true"></script>'
+  )
+
+  await page.goto(
+    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&roundTrip=true&defaultMode=list&language=fr'
+  )
+  await expect(page.getByTestId('category-intercites')).toHaveText('Intercités  - 182 km1.64 kg CO₂e')
+  await expect(page.getByTestId('category-tgv')).not.toBeAttached()
 })
 
 const getNbOfSuggestions = async (page: Page) => {

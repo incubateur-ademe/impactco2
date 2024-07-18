@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import Image from 'next/image'
-import { SetStateAction } from 'preact/compat'
-import React, { Dispatch } from 'react'
+import React from 'react'
 import formatName from 'utils/formatName'
 import MinusIcon from 'components/base/icons/minus'
 import PlusIcon from 'components/base/icons/plus'
@@ -17,7 +16,7 @@ const PlusMinus = ({
   className,
 }: {
   value: number
-  setValue: Dispatch<SetStateAction<number>>
+  setValue: (value: number) => void
   max?: number
   label: string
   icon?: string

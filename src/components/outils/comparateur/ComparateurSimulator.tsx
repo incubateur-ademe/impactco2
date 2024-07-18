@@ -16,7 +16,7 @@ import NumberInput from 'components/form/NumberInput'
 import simulatorStyles from '../Simulator.module.css'
 import styles from './ComparateurSimulator.module.css'
 
-const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: string) => void }) => {
+const ComparateurSimulator = () => {
   const {
     language,
     comparateur: { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent },
@@ -24,7 +24,6 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
   const t = useTranslations('comparateur')
-
   return (
     <div>
       <div className={simulatorStyles.simulator}>
@@ -83,7 +82,7 @@ const ComparateurSimulator = ({ setOverScreen }: { setOverScreen: (overscreen: s
         )}
       </div>
       <div className={styles.tiles}>
-        <Tiles changeEquivalents={() => setOverScreen('equivalents')} />
+        <Tiles />
       </div>
     </div>
   )

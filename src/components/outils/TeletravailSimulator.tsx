@@ -8,16 +8,14 @@ import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { deplacements } from 'data/categories/deplacement'
-import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
 import useItineraries from 'hooks/useItineraries'
-import EquivalentIcon from 'components/base/EquivalentIcon'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import NumberInput from 'components/form/NumberInput'
-import Select from 'components/form/Select'
+import SelectEquivalent from 'components/form/SelectEquivalent'
 import AddressInput from 'components/form/addresses/AddressInput'
 import itineraireStyles from './ItineraireSimulator.module.css'
 import styles from './TeletravailSimulator.module.css'
@@ -82,8 +80,7 @@ const TeletravailSimulator = () => {
           />
         </div>
         <div className={styles.transportMode}>
-          <Select
-            className={styles.select}
+          <SelectEquivalent
             label={t('mode')}
             required
             id='mode'
@@ -91,16 +88,10 @@ const TeletravailSimulator = () => {
             onChange={(event) => {
               track('Télétravail', 'Mode de transport', event.target.value)
               setTransport(event.target.value)
-            }}>
-            {deplacements.map((deplacement) => (
-              <option key={deplacement.slug} value={deplacement.slug}>
-                {getName(language, deplacement)}
-              </option>
-            ))}
-          </Select>
-          <div className={styles.equivalentIcon}>
-            <EquivalentIcon height={2.5} equivalent={deplacement} />
-          </div>
+            }}
+            equivalents={deplacements}
+            equivalent={deplacement}
+          />
         </div>
         <div className={itineraireStyles.days}>
           <div className={styles.days}>

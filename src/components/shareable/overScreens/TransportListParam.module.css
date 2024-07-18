@@ -1,0 +1,92 @@
+.modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.mode {
+  opacity: 0.6;
+  border-radius: 0.5rem;
+  border: 2px solid var(--neutral-30);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
+  width: calc(50% - 0.25rem);
+  padding-right: 1.25rem;
+
+  label {
+    width: 100%;
+  }
+
+  &:hover {
+    border: 2px solid var(--primary-30);
+    background: var(--primary-10);
+  }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 3px solid var(--primary-40);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  @media screen and (max-width: 48rem) {
+    width: 100%;
+  }
+}
+
+.modeLabel {
+  flex: 1;
+  overflow: hidden;
+  padding: 0.75rem 0 0.75rem 1.25rem;
+}
+
+.active {
+  border: 2px solid var(--primary-30);
+  opacity: 1;
+}
+
+.disabled {
+  opacity: 1;
+
+  &:hover {
+    border: 2px solid var(--neutral-30);
+    background: transparent;
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.select {
+  flex: 1;
+
+  select {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 48rem) {
+    width: 100%;
+    flex: unset
+  }
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}

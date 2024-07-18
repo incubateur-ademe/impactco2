@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+}
+
+.select {
+  select {
+    height: 3.5rem;
+    padding-left: 4rem;
+  }
+}
+
+.equivalentIcon {
+  position: absolute;
+  height: 2.5rem;
+  bottom: 0.5rem;
+  left: 1rem;
+}

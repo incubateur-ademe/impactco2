@@ -1,0 +1,46 @@
+.defaultButton {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  cursor: default;
+  background: var(--primary-10);
+  color: var(--primary-60);
+
+  svg {
+    height: 0.75rem;
+    width: 0.75rem;
+  }
+
+  &:focus,
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+  color: var(--neutral-50);
+  background-color: var(--neutral-10);
+
+  &:hover {
+    background-color: var(--primary-20);
+    color: var(--primary-70);
+  }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 3px solid var(--primary-40);
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: var(--neutral-10);
+    color: var(--neutral-30);
+  }
+}

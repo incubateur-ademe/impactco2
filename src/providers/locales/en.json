@@ -6,6 +6,8 @@
     "information-2": "The simulator will be automatically updated with any new features."
   },
   "overscreen": {
+    "default-true": "displayed by default",
+    "default-false": "show by default",
     "usage": "Use",
     "apercu": "SHARING OVERVIEW",
     "share": "Share",
@@ -57,6 +59,13 @@
       "end": "Office"
     },
     "transport": {
+      "search": "Search a transport",
+      "back": "Back to the simulator",
+      "mode-share": "Display mode to share",
+      "mode-integrate": "Display mode to integrate",
+      "comparison": "Comparison displayed by default",
+      "modes": "Transport modes to integrate",
+      "modes-hint": "You cannot integrate less than 2 modes in the simulator.",
       "onglet": "Tab to share",
       "onglet-hint": "Select tab you want to see when on sharing",
       "onglets": "Tabs to integrate",
@@ -67,8 +76,13 @@
     "close": "Close"
   },
   "transport": {
-    "carpool": "Carpooling",
+    "sorry": "Sorry !",
+    "notFound": "This itinary is not available for this transport",
+    "otherComparison": "See another comparison",
+    "modify": "Modify",
+    "avoided": "avoided",
     "itineraire": {
+      "roundTrip": "Round trip",
       "header": "See how much CO₂e you emit for this itinary",
       "start": "From",
       "end": "To"
@@ -97,7 +111,10 @@
     "mode-selector": {
       "distance": "Distance",
       "itineraire": "Route",
-      "teletravail": "Telecommuting"
+      "teletravail": "Telecommuting",
+      "list": "List",
+      "comparison": "Comparison",
+      "comparisonMode": "Display mode:"
     }
   },
   "chauffage": {
@@ -163,6 +180,7 @@
     "click-and-collect": "Click & collect",
     "trajet": "Is it on your usual route?",
     "yes": "Yes",
+    "plane": "Your order comes from far away",
     "yes-plane": "Yes (air transport)",
     "no": "No",
     "km": "To go to the pick-up point, you travel...",

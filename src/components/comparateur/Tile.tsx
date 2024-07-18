@@ -23,7 +23,22 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
     comparateur: { baseValue, weight, setEquivalents, equivalents, setComparedEquivalent },
   } = useParamContext()
 
-  const equivalent = useMemo(() => (slug ? computedEquivalents.find((e) => e.slug === slug) : null), [slug])
+  const equivalent = useMemo(() => {
+    if (slug) {
+      const [ref, carpool] = slug.split('+')
+      const computedEquivalent = computedEquivalents.find((e) => e.slug === ref)
+      return carpool && computedEquivalent
+        ? {
+            ...computedEquivalent,
+            slug,
+            link: `${computedEquivalent.link}+${carpool}`,
+            carpool: Number(carpool),
+            value: computedEquivalent.value / (Number(carpool) + 1),
+          }
+        : computedEquivalent
+    }
+    return null
+  }, [slug])
   const value = equivalent ? (baseValue * weight * (equivalent.percentage ? 100 : 1)) / equivalent.value : 0
 
   return equivalent ? (

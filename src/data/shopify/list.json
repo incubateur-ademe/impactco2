@@ -524,8 +524,12 @@
     "label": "km en ;tramway"
   },
   {
+    "value": "trottinette",
+    "label": "km en ;trottinette à assistance électrique"
+  },
+  {
     "value": "veloelectrique",
-    "label": "km en ;vélo (ou trottinette) à assistance électrique"
+    "label": "km en ;vélo à assistance électrique"
   },
   {
     "value": "voitureelectrique",

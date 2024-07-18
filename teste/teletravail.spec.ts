@@ -46,18 +46,18 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await angers.click()
   })
 
-  await expect(page.getByTestId('teletravail-generated-value')).toContainText('7,289')
-  await expect(page.getByTestId('etiquette-voiturethermique-value')).toContainText('6,280')
-  await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toContainText('188')
-  await expect(page.getByTestId('etiquette-streamingvideo-value')).toContainText('21,348')
+  await expect(page.getByTestId('teletravail-generated-value')).toHaveText('7,289')
+  await expect(page.getByTestId('etiquette-voiturethermique-value')).toHaveText('6,280')
+  await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toHaveText('188')
+  await expect(page.getByTestId('etiquette-streamingvideo-value')).toHaveText('21,348')
 
   await page.getByTestId('text-select-mode').selectOption('tramway')
-  await expect(page.getByTestId('teletravail-generated-value')).toContainText('144')
+  await expect(page.getByTestId('teletravail-generated-value')).toHaveText('144')
 
   await page.getByTestId('input-presentiel-value').click()
   await page.getByTestId('input-presentiel-value').fill('2')
   await expect(page.getByTestId('input-teletravail-value')).toHaveValue('3')
-  await expect(page.getByTestId('teletravail-generated-value')).toContainText('71.8')
+  await expect(page.getByTestId('teletravail-generated-value')).toHaveText('71.8')
 })
 
 const getNbOfSuggestions = async (page: Page) => {

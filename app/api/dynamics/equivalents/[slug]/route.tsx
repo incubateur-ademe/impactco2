@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import Equivalent from 'components/metaImages/Equivalent'
 
 export const runtime = 'edge'
@@ -21,7 +21,7 @@ export async function GET(req: NextRequest, context: { params: { slug: string } 
     return NextResponse.json(`Please use ${process.env.NEXT_PUBLIC_IMAGE_URL}`, { status: 400 })
   }
 
-  const { slug } = context.params
+  const [slug, carpool] = decodeURIComponent(context.params.slug).split('+')
   if (!slug) {
     return NextResponse.json('No slug specified', { status: 400 })
   }
@@ -55,8 +55,9 @@ export async function GET(req: NextRequest, context: { params: { slug: string } 
     (
       <Equivalent
         slug={equivalent.slug}
-        name={getNameWithoutSuffix(language, equivalent)}
-        quantity={equivalent.value}
+        carpool={!!carpool}
+        name={getName(language, { ...equivalent, category: 0, carpool: Number(carpool) })}
+        quantity={equivalent.value / ((Number(carpool) || 0) + 1)}
         unit={equivalent.unit || category.unit || 'unité'}
         language={language}
       />

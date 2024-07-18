@@ -5,20 +5,24 @@ import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
+import CheckboxInput from 'components/form/CheckboxInput'
 import AddressInput from 'components/form/addresses/AddressInput'
-import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
 import styles from './ItineraireSimulator.module.css'
+import TransportComparisonMode from './TransportComparisonMode'
+import TransportComparisonSimulator from './TransportComparisonSimulator'
 
-const ItineraireSimulator = () => {
+const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
   const {
-    itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll },
+    transport: { comparisonMode },
+    itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll, roundTrip, setRoundTrip },
   } = useParamContext()
 
   const t = useTranslations('transport.itineraire')
 
   const { data: itineraries } = useItineraries(start, end, 'itinéraire')
   const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
+
   return (
     <>
       <div className={styles.simulator}>
@@ -42,20 +46,27 @@ const ItineraireSimulator = () => {
             setPlace={setEnd}
           />
         </div>
+        <div className={styles.roundTrip}>
+          <CheckboxInput id='roundTrip' label={t('roundTrip')} checked={roundTrip} setChecked={setRoundTrip} />
+        </div>
         {t('header')}
       </div>
       {start && end && itineraries && (
         <>
-          <div className={shareableStyles.separatorBothBorders} />
-          <CategorySimulator
-            tracking='Transport itinéraire'
-            equivalents={equivalents}
-            displayAll={displayAll}
-            setDisplayAll={hasMore ? setDisplayAll : undefined}
-            moreText='transport'
-            withSimulator
-            type='itineraire'
-          />
+          {withComparisonMode && <TransportComparisonMode tracking='Transport itinéraire' />}
+          {comparisonMode === 'list' ? (
+            <CategorySimulator
+              tracking='Transport itinéraire'
+              equivalents={equivalents}
+              displayAll={displayAll}
+              setDisplayAll={hasMore ? setDisplayAll : undefined}
+              moreText='transport'
+              withSimulator
+              type='itineraire'
+            />
+          ) : (
+            <TransportComparisonSimulator tracking='Transport itinéraire' equivalents={equivalents} />
+          )}
         </>
       )}
     </>

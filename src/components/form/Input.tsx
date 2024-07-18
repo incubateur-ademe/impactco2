@@ -96,6 +96,7 @@ const Input = ({
         {icon && <div className={styles.icon}>{icon}</div>}
         {unit && (
           <button
+            data-testid={`input-${id}-unit`}
             disabled={!onUnitClick}
             className={classNames(secondaryUnitStyle ? styles.secondaryUnit : styles.unit, {
               [styles.clickeable]: onUnitClick,

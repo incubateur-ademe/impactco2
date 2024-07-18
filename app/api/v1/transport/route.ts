@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { deplacements } from 'data/categories/deplacement'
-import { getName } from 'utils/Equivalent/equivalent'
+import { getName, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import { trackAPIRequest } from 'utils/middleware'
 import { filterByDistance } from 'utils/transport'
 
@@ -15,6 +15,7 @@ const transportValidation = z.object({
     .transform((value) => value.split(',').map(Number))
     .optional(),
   numberOfPassenger: z.coerce.number().min(0).max(10).optional(),
+  occupencyRate: z.coerce.number().min(1).max(11).optional(),
   language: z.enum(['fr', 'en']).optional(),
 })
 
@@ -28,6 +29,19 @@ export const computeTransportEmission = (
 ) =>
   deplacements
     .filter((transportation) => filter || filterByDistance(transportation.display, km))
+    .flatMap((transportation) =>
+      transportation.withCarpool
+        ? [
+            ...Array.from({ length: 4 }).map((_, index) => ({
+              ...transportation,
+              carpool: index + 1,
+              slug: `${transportation.slug}+${index + 1}`,
+              id: transportation.id === 4 ? 22 + index : 26 + index,
+            })),
+            transportation,
+          ]
+        : [transportation]
+    )
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
@@ -36,7 +50,7 @@ export const computeTransportEmission = (
         const currentECV = transportation.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
         if (currentECV) {
           values = currentECV.ecv
-          name = getName(language || 'fr', {
+          name = getNameWithoutSuffix(language || 'fr', {
             ...transportation,
             slug: `${transportation.slug}-${currentECV.subtitle}`,
           })
@@ -58,13 +72,16 @@ export const computeTransportEmission = (
           return true
         })
         .reduce((sum, current) => sum + current.value, 0)
+
+      // @ts-expect-error expected carpool
+      const divider = transportation.carpool ? transportation.carpool + 1 : 1
       return {
         ...transportation,
         name,
         emissions: {
-          gco2e: value * km * 1000,
-          kgco2e: value * km,
-          tco2e: (value * km) / 1000,
+          gco2e: ((value * km) / divider) * 1000,
+          kgco2e: (value * km) / divider,
+          tco2e: (value * km) / divider / 1000,
         },
       }
     })
@@ -130,7 +147,7 @@ export const computeTransportEmission = (
  *         - 5 : Voiture électrique
  *         - 6 : Autocar
  *         - 7 : Vélo ou marche
- *         - 8 : Vélo (ou trottinette) à assistance électrique
+ *         - 8 : Vélo à assistance électrique
  *         - 9 : Bus thermique
  *         - 10 : Tramway
  *         - 11 : Métro
@@ -139,7 +156,16 @@ export const computeTransportEmission = (
  *         - 14 : RER ou Transilien
  *         - 15 : TER
  *         - 16 : Bus électrique
+ *         - 17 : Trottinette à assistance électrique
  *         - 21 : Bus (GNV)
+ *         - 22 : Covoiturage thermique (1 passager)
+ *         - 23 : Covoiturage thermique (2 passagers)
+ *         - 24 : Covoiturage thermique (3 passagers)
+ *         - 25 : Covoiturage thermique (4 passagers)
+ *         - 26 : Covoiturage électrique (1 passager)
+ *         - 27 : Covoiturage électrique (2 passagers)
+ *         - 28 : Covoiturage électrique (3 passagers)
+ *         - 29 : Covoiturage électrique (4 passagers)
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0
@@ -148,11 +174,11 @@ export const computeTransportEmission = (
  *         enum: [0, 1]
  *       description: Si 1, ignore le forçage radiatif dans le calcul des émissions de l'avion. Sinon il est pris en compte
  *     - in: query
- *       name: numberOfPassenger
- *       default: 0
+ *       name: occupencyRate
+ *       default: 1
  *       schema:
- *         type: integer
- *       description: Nombre de passager moyen à prendre en compte pour les modes de transports de type voiture ou moto
+ *         type: number
+ *       description: Taux de remplissage moyen à prendre en compte pour les modes de transports de type voiture
  *     - in: query
  *       name: includeConstruction
  *       default: 0
@@ -214,13 +240,21 @@ export async function GET(req: NextRequest) {
     inputs.data.includeConstruction,
     inputs.data.language
   )
+
+  const numberOfPassenger = inputs.data.occupencyRate
+    ? inputs.data.occupencyRate - 1
+    : inputs.data.numberOfPassenger || 0
+
   return NextResponse.json(
     {
-      data: emissions.map((emission) => ({
-        id: emission.id,
-        name: emission.name,
-        value: emission.emissions.kgco2e / (((emission.carpool && inputs.data.numberOfPassenger) || 0) + 1),
-      })),
+      data: emissions
+        // @ts-expect-error carpool expected
+        .filter((emission) => !numberOfPassenger || !emission.carpool)
+        .map((emission) => ({
+          id: emission.id,
+          name: emission.name,
+          value: emission.emissions.kgco2e / (((emission.withCarpool && numberOfPassenger) || 0) + 1),
+        })),
       warning: hasAPIKey
         ? undefined
         : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,

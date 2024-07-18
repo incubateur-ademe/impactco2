@@ -29,17 +29,20 @@ export async function GET(req: NextRequest) {
   return NextResponse.json(
     respObj
       ? // Set response according to field parameter
-        respObj.map((transportation) => {
-          let response = {
-            id: transportation.id,
-            name: transportation.name,
-            emissions: transportation.emissions,
-          }
-          for (const field of fields) {
-            response = { ...response, [field]: transportation[field as keyof typeof transportation] }
-          }
-          return response
-        })
+        respObj
+          // @ts-expect-error Expected carpool
+          .filter((transportation) => !transportation.carpool)
+          .map((transportation) => {
+            let response = {
+              id: transportation.id,
+              name: transportation.name,
+              emissions: transportation.emissions,
+            }
+            for (const field of fields) {
+              response = { ...response, [field]: transportation[field as keyof typeof transportation] }
+            }
+            return response
+          })
       : {},
     {
       status: 200,

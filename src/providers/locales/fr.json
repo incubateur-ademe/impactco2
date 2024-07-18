@@ -6,6 +6,8 @@
     "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
   },
   "overscreen": {
+    "default-true": "Affiché par défaut",
+    "default-false": "Afficher par défaut",
     "usage": "Usage",
     "apercu": "APERÇU DU PARTAGE",
     "share": "Partager",
@@ -42,6 +44,13 @@
       "end": "Lieu de travail"
     },
     "transport": {
+      "search": "Rechercher un mode de transport",
+      "back": "Revenir au simulateur",
+      "mode-share": "Modes d’affichages à partager",
+      "mode-integrate": "Modes d’affichages à intégrer",
+      "comparison": "Comparaison affichée par défaut",
+      "modes": "Modes de transports à intégrer",
+      "modes-hint": "Il n’est pas possible d’intégrer moins de 2 modes de transport dans le simulateur.",
       "onglet": "Onglet à partager",
       "onglet-hint": "Sélectionnez l’onglet que vous souhaitez voir affiché lors du partage",
       "onglets": "Onglet à intégrer",
@@ -67,8 +76,13 @@
     "close": "Fermer"
   },
   "transport": {
-    "carpool": "Covoiturage",
+    "sorry": "Désolé !",
+    "notFound": "L’itinéraire demandé n’est pas compatible avec ce mode de transport",
+    "otherComparison": "Voir une autre comparaison",
+    "modify": "Modifier",
+    "avoided": "évités",
     "itineraire": {
+      "roundTrip": "Aller / retour",
       "header": "Découvrez la quantité de CO₂e que vous émettez pour ce trajet",
       "start": "Départ",
       "end": "Arrivée"
@@ -97,7 +111,10 @@
     "mode-selector": {
       "distance": "Distance",
       "itineraire": "Itinéraire",
-      "teletravail": "Télétravail"
+      "teletravail": "Télétravail",
+      "list": "Liste",
+      "comparison": "Comparaison",
+      "comparisonMode": "Mode d'affichage :"
     }
   },
   "chauffage": {
@@ -163,6 +180,7 @@
     "click-and-collect": "Le click & collect",
     "trajet": "est t'il sur votre trajet habituel ?",
     "yes": "Oui",
+    "plane": "Le colis vient de loin",
     "yes-plane": "Oui (transport par avion)",
     "no": "Non",
     "km": "Pour aller au point relais, vous parcourez...",

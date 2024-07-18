@@ -17,6 +17,7 @@ const CheckboxInput = ({
   labelClassName,
   'data-testid': dataTestId,
   errors,
+  reversed,
   ...inputProps
 }: {
   id?: string
@@ -28,13 +29,16 @@ const CheckboxInput = ({
   children?: ReactNode
   ['data-testid']?: string
   errors?: ZodError | null
+  reversed?: boolean
 } & InputHTMLAttributes<HTMLInputElement>) => {
   const error = useError(id, errors)
+
+  // TODO => passer en neutral 30 en disabled
 
   return (
     <div className={className}>
       <div className={styles.container} data-testid={dataTestId}>
-        <label className={classNames(styles.legend, { [styles.checked]: checked })}>
+        <label className={classNames(styles.legend, { [styles.checked]: checked, [styles.reversed]: reversed })}>
           <input
             id={id}
             data-testid={`checkbox-${id}`}
@@ -46,7 +50,10 @@ const CheckboxInput = ({
           />
           <div className={labelClassName}>{label}</div>
           {checked && (
-            <div className={styles.check}>
+            <div
+              className={classNames(reversed ? styles.checkReversed : styles.check, {
+                [styles.checkDisabled]: inputProps.disabled,
+              })}>
               <CheckIcon />
             </div>
           )}

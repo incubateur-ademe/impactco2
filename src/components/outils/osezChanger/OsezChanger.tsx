@@ -6,7 +6,7 @@ import OsezChangerSimulator from './OsezChangerSimulator'
 
 const OsezChanger = () => {
   return (
-    <Shareable tracking='OsezChanger' small>
+    <Shareable slug='osez-changer' tracking='OsezChanger' small>
       <OsezChangerSimulator />
     </Shareable>
   )

@@ -11,7 +11,11 @@ const Infography = ({ equivalent, equivalents }: { equivalent: ComputedEquivalen
     [equivalent, equivalents]
   )
   return (
-    <Shareable tracking={`${getName('fr', equivalent)} infographie`} overScreens={overScreens} secondary=''>
+    <Shareable
+      slug='infographie'
+      tracking={`${getName('fr', equivalent)} infographie`}
+      overScreens={overScreens}
+      secondary=''>
       <InfographySimulator equivalents={equivalents} />
     </Shareable>
   )
