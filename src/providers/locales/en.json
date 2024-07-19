@@ -22,6 +22,9 @@
     "km": {
       "title": "Display a custom distance"
     },
+    "roundTrip": {
+      "title": "Round trip"
+    },
     "situation": "my own simulation",
     "comparateur": "my own comparison",
     "month": {

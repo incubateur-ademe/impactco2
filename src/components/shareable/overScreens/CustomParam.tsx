@@ -16,7 +16,7 @@ const configs: Record<
   string,
   {
     inputLabel?: string
-    type: 'number' | 'text' | 'select' | 'select-number'
+    type: 'number' | 'text' | 'select' | 'select-number' | 'boolean'
     unit?: string
     min?: number
     max?: number
@@ -36,6 +36,10 @@ const configs: Record<
     min: 1,
     max: 10000,
     inputLabel: 'Distance',
+  },
+  roundTrip: {
+    type: 'boolean',
+    inputLabel: 'RoundTrip',
   },
   month: {
     type: 'select-number',
@@ -60,8 +64,8 @@ const configs: Record<
 
 export type CustomParamValue =
   | {
-      value: string | number
-      setter: (value: string | number) => void
+      value: string | number | boolean
+      setter: (value: string | number | boolean) => void
     }
   | {
       start: { value: string; setter: Dispatch<SetStateAction<Point | undefined>> }
@@ -84,12 +88,13 @@ const CustomParam = ({
   setVisible?: (visbile: boolean) => void
   integration?: boolean
 }) => {
+  console.log(param, slug)
   const t = useTranslations('overscreen')
   if ('setter' in param) {
     const config = configs[slug]
     return (
       <div className={styles.container}>
-        {setVisible && (
+        {config.type !== 'boolean' && setVisible && (
           <CheckboxInput
             color='secondary'
             checked={visible}
@@ -108,7 +113,7 @@ const CustomParam = ({
               inline={!setVisible}
               id={slug}
               disabled={!visible}
-              value={param.value}
+              value={param.value.toString()}
               onChange={(event) => {
                 track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
                 param.setter(config.type === 'select' ? event.target.value : Number(event.target.value))
@@ -121,6 +126,13 @@ const CustomParam = ({
                 </option>
               ))}
             </Select>
+          ) : config.type === 'boolean' ? (
+            <CheckboxInput
+              data-testid={`custom-param-${slug}-checkbox`}
+              checked={param.value as boolean}
+              setChecked={param.setter}
+              label={t(`${slug}.title`)}
+            />
           ) : (
             <Input
               id={slug}
@@ -129,7 +141,7 @@ const CustomParam = ({
               padding='sm'
               disabled={!visible}
               type={config.type}
-              value={param.value}
+              value={param.value as string | number}
               onChange={(event) => {
                 track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
                 if (config.type === 'number') {

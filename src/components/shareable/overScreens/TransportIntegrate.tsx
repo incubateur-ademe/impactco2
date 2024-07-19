@@ -6,6 +6,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
 import ClipboardBox from 'components/base/ClipboardBox'
 import DefaultButton from 'components/base/buttons/DefaultButton'
+import Link from 'components/base/buttons/Link'
 import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
@@ -61,7 +62,6 @@ const TransportIntegrate = () => {
   }, [allParams.itineraire.end])
 
   const tracking = useMemo(() => getTracking(allParams.transport.selected), [allParams.transport.selected])
-
   const type = useMemo(() => {
     if (defaultTab === 'itineraire') {
       return 'transport/itineraire'
@@ -120,8 +120,9 @@ const TransportIntegrate = () => {
         start: { value: start?.address || '', setter: setStart },
         end: { value: end?.address || '', setter: setEnd },
       },
+      roundTrip: { value: roundTrip, setter: setRoundTrip } as CustomParamValue,
     }
-  }, [km, start, end])
+  }, [km, start, end, roundTrip])
 
   return (
     <>
@@ -186,7 +187,7 @@ const TransportIntegrate = () => {
               title={tTransport('itineraire')}
               tracking={tracking}
               trackingType='Intégrer'
-              params={{ itineraire: params.itineraire }}
+              params={{ itineraire: params.itineraire, roundTrip: params.roundTrip }}
               visibility={visibility}
               setVisibility={setVisibility}
             />
