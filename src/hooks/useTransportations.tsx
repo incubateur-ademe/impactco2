@@ -30,7 +30,8 @@ export default function useTransportations(
     const allEquivalents =
       values || km
         ? deplacements
-            .filter((equivalent) => params.transport.modes.includes(equivalent.slug))
+            // Carpool is managed after expansion, avion needs to be managed here
+            .filter((equivalent) => equivalent.withCarpool || params.transport.modes.includes(equivalent.slug))
             .filter((equivalent) => (values && equivalent.type ? values[equivalent.type as DeplacementType] : km))
             .map((equivalent) => {
               if ('ecvs' in equivalent && equivalent.ecvs) {
@@ -66,7 +67,8 @@ export default function useTransportations(
             }))
             .flatMap((equivalent) => {
               const carpoolValue = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
-              return equivalent.withCarpool
+              return equivalent.withCarpool &&
+                params.transport.modes.find((mode) => mode.startsWith(`${equivalent.slug}+`))
                 ? [
                     {
                       ...equivalent,
@@ -87,6 +89,19 @@ export default function useTransportations(
                     equivalent,
                   ]
                 : [equivalent]
+            })
+            .filter((equivalent) => {
+              if (equivalent.withCarpool) {
+                // Carpool case, check slug+1
+                if ('carpool' in equivalent && equivalent.carpool) {
+                  const [slug] = equivalent.slug.split('+')
+                  return params.transport.modes.includes(`${slug}+1`)
+                }
+                // Without carpool, check slug
+                return params.transport.modes.includes(equivalent.slug)
+              }
+              // Manage on top
+              return true
             })
         : []
 

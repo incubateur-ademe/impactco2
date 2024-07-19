@@ -6,9 +6,9 @@ test('Simulator livraison', async ({ page }) => {
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('2.46')
   await expect(page.getByTestId('livraison-habits-value')).toHaveText('29.6')
 
-  await expect(page.getByTestId('etiquette-voiturethermique-value')).toContainText('11.3')
-  await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toContainText('0.34')
-  await expect(page.getByTestId('etiquette-streamingvideo-value')).toContainText('38.5')
+  await expect(page.getByTestId('etiquette-voiturethermique-value')).toHaveText('11.3')
+  await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toHaveText('0.34')
+  await expect(page.getByTestId('etiquette-streamingvideo-value')).toHaveText('38.5')
 
   await page.getByTestId('text-select-livraison-produit').selectOption('grande consommation')
   await expect(page.getByLabel("Le point relais est t'il sur")).toBeVisible()

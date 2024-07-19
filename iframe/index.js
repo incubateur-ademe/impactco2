@@ -53,9 +53,9 @@ const script =
 if (buttonOnly) {
   let simpleButtonScreen = document.createElement('div')
   simpleButtonScreen.innerHTML = `
-  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-  <a target="_blank" title="Impact carbone de vos déplacements (ouvre le site impactCO2 dans un nouvel onglet)" href="${WEBPACK_SITE_URL}/transport/itineraire" style="background-color: rgb(38, 130, 124); color:white; cursor:pointer; display:block; padding:1rem; border-radius:8px; text-decoration: none; text-align: center;">
-    Découvrez l'impact carbone de vos déplacements
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    <a target="_blank" title="Impact carbone de vos déplacements (ouvre le site impactCO2 dans un nouvel onglet)" href="${WEBPACK_SITE_URL}/transport/itineraire" style="background-color: rgb(38, 130, 124); color:white; cursor:pointer; display:block; padding:1rem; border-radius:8px; text-decoration: none; text-align: center;">
+      Découvrez l'impact carbone de vos déplacements
   </a>
   </div>
   `

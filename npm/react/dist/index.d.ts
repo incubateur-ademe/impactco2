@@ -183,7 +183,15 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "visioconference" |
                 "voiture-lille-nimes" |
                 "voitureelectrique" |
-                "voiturethermique"
+                "voitureelectrique+1" |
+                "voitureelectrique+2" |
+                "voitureelectrique+3" |
+                "voitureelectrique+4" |
+                "voiturethermique"|
+                "voiturethermique+1" |
+                "voiturethermique+2" |
+                "voiturethermique+3" |
+                "voiturethermique+4" 
         )[];
         value: number;
         animated?: boolean | undefined;

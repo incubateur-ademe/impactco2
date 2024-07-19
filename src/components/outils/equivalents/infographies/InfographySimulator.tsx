@@ -27,26 +27,28 @@ const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
   return (
     <div className={styles.infography} id='infographie'>
       <div>
-        {values.map((value) => {
-          const number = Math.round(factor / value.value)
-          const height = number > 2000 ? 0.5 : number > 50 ? 1.5 : 3
-          const gap = number > 2000 ? 0.125 : number > 50 ? 0.5 : 0.75
-          return (
-            <Fragment key={value.slug}>
-              <div className={styles.equivalent}>
-                <div className={styles.icons} style={{ gap: `${gap}rem` }}>
-                  {[...Array(number)].map((number) => (
-                    <EquivalentIcon key={`${value.slug}-${number}`} equivalent={value} height={height} />
-                  ))}
+        {values
+          .filter((value) => Math.round(factor / value.value) > 0)
+          .map((value) => {
+            const number = Math.round(factor / value.value)
+            const height = number > 2000 ? 0.5 : number > 50 ? 1.5 : 3
+            const gap = number > 2000 ? 0.125 : number > 50 ? 0.5 : 0.75
+            return (
+              <Fragment key={value.slug}>
+                <div className={styles.equivalent}>
+                  <div className={styles.icons} style={{ gap: `${gap}rem` }}>
+                    {[...Array(number)].map((number) => (
+                      <EquivalentIcon key={`${value.slug}-${number}`} equivalent={value} height={height} />
+                    ))}
+                  </div>
+                  <Name equivalent={value} value={number} />
                 </div>
-                <Name equivalent={value} value={number} />
-              </div>
-              <div className={styles.equal}>
-                <EqualIcon />
-              </div>
-            </Fragment>
-          )
-        })}
+                <div className={styles.equal}>
+                  <EqualIcon />
+                </div>
+              </Fragment>
+            )
+          })}
       </div>
       <div className={styles.disclaimer}>Comparaison basée sur la quantité de kg CO2e émise.</div>
       <div className={styles.logos}>
