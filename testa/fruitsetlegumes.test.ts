@@ -47,7 +47,7 @@ describe('fruitsetlegumes', () => {
             slug: value.slug,
             months: value.months.map((month) => month + 1),
             ecv: computeECV(value),
-            category: categories[value.slug],
+            category: fldsCategories[value.slug],
           }
         }),
       warning:
