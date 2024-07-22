@@ -4,6 +4,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category as CategoryType } from 'types/category'
 import { getName } from 'utils/Equivalent/equivalent'
+import { getEquivalentWithCarpool } from 'utils/carpool'
 import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Button from 'components/base/buttons/Button'
@@ -36,6 +37,7 @@ const Category = ({
         .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => equivalent.slug !== comparedEquivalent?.slug)
         .filter((equivalent) => equivalent.value)
+        .flatMap(getEquivalentWithCarpool)
         .sort((a, b) => getName('fr', a).localeCompare(getName('fr', b))),
     [category, comparedEquivalent]
   )

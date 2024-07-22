@@ -45,7 +45,9 @@ const getValues = (
   language: string,
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>
 ): { prefix: string; name: string } => {
-  const value = allValues[equivalent.slug]
+  const [ref] = equivalent.slug.split('+')
+  const value = allValues[ref]
+
   if (!value) {
     return { prefix: '', name: '' }
   }
@@ -56,7 +58,7 @@ const getValues = (
     const [name, prefix] = translation.split('=')
     return {
       prefix,
-      name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : name,
+      name: equivalent.carpool ? `${carpooling[ref][language]} ` : name,
     }
   }
 
@@ -64,13 +66,13 @@ const getValues = (
     const [prefix, name] = translation.split(';')
     return {
       prefix,
-      name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : name,
+      name: equivalent.carpool ? `${carpooling[ref][language]} ` : name,
     }
   }
 
   return {
     prefix: '',
-    name: equivalent.carpool ? `${carpooling[equivalent.slug][language]} ` : translation,
+    name: equivalent.carpool ? `${carpooling[ref][language]} ` : translation,
   }
 }
 

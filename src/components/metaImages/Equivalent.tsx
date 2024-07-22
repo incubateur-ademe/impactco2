@@ -21,8 +21,8 @@ const Equivalent = ({
   carpool?: boolean
 }) => {
   const { value, unit: quantityUnit } = getNumberPrecision(quantity)
-
   const translatedUnit = ((language === 'en' ? en : fr).unit as Record<string, string>)[unit]
+  const [ref] = slug.split('+')
   return (
     <div
       style={{
@@ -95,7 +95,7 @@ const Equivalent = ({
         <img
           style={{ width: '27.5rem', height: '27.5rem' }}
           src={buildCurrentUrlFor(
-            `/icons/${carpool ? 'covoiturage' : ''}${slug.endsWith('courrier') ? 'avion' : slug}.svg`
+            `/icons/${carpool ? 'covoiturage' : ''}${ref.endsWith('courrier') ? 'avion' : ref}.svg`
           )}
           alt=''
         />

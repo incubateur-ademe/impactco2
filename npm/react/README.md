@@ -76,7 +76,15 @@ Liste des équivalents à comparer parmis la liste suivante :
   - tgv : km en TGV
   - intercites : km en intercités
   - voiturethermique : km en voiture thermique
+  - voiturethermique+1 : km en voiture thermique avec 1 passager
+  - voiturethermique+2 : km en voiture thermique avec 2 passagers
+  - voiturethermique+3 : km en voiture thermique avec 3 passagers
+  - voiturethermique+4 : km en voiture thermique avec 4 passagers
   - voitureelectrique : km en voiture électrique
+  - voitureelectrique+1 : km en voiture électrique avec 1 passager
+  - voitureelectrique+2 : km en voiture électrique avec 2 passagers
+  - voitureelectrique+3 : km en voiture électrique avec 3 passagers
+  - voitureelectrique+4 : km en voiture électrique avec 4 passagers
   - autocar : km en autocar
   - velo : vélo ou marche
   - veloelectrique : km en vélo à assistance électrique

@@ -4,12 +4,13 @@ import { useTranslations } from 'next-intl'
 import React, { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
+import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
 import TransportComparisonEquivalent from './TransportComparisonEquivalent'
 import styles from './TransportComparisonSimulator.module.css'
 
-const comparisons = [
+export const comparisons = [
   ['voiturethermique', 'tgv'],
   ['voitureelectrique', 'metro'],
   ['tgv', 'avion'],
@@ -24,41 +25,56 @@ const comparisons = [
   ['voiturethermique', 'ter'],
 ]
 
-const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEquivalent[] }) => {
+const TransportComparisonSimulator = ({
+  tracking,
+  equivalents,
+}: {
+  tracking: string
+  equivalents: ComputedEquivalent[]
+}) => {
   const t = useTranslations('transport')
   const {
-    transport: { setComparison },
+    transport: { setComparison, comparison, modes },
   } = useParamContext()
 
   const [generation, setGeneration] = useState<number | boolean>(false)
   const [index, setIndex] = useState<number | boolean>(false)
 
-  const availableComparisons = useMemo(
-    () =>
-      comparisons.filter((comparison) => {
-        const [slug1] = comparison[0].split('+')
-        const [slug2] = comparison[1].split('+')
+  const availableComparisons = useMemo(() => {
+    const allComparisons = comparisons.filter((comparison) => {
+      const [slug1, carpool1] = comparison[0].split('+')
+      const [slug2, carpool2] = comparison[1].split('+')
 
-        return (
-          equivalents.find((equivalent) =>
-            slug1 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug1
-          ) &&
-          equivalents.find((equivalent) =>
-            slug2 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug2
-          )
+      return (
+        equivalents.find(
+          (equivalent) =>
+            (equivalent.carpool ? carpool1 : !carpool1) &&
+            (slug1 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug1)
+        ) &&
+        equivalents.find(
+          (equivalent) =>
+            (equivalent.carpool ? carpool2 : !carpool2) &&
+            (slug2 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug2)
         )
-      }),
-    [equivalents]
-  )
+      )
+    })
+    if (!allComparisons.find(([slug1, slug2]) => slug1 === comparison[0] && slug2 === comparison[1])) {
+      setIndex(false)
+    }
+
+    return allComparisons
+  }, [equivalents, comparison])
+
   useEffect(() => {
     if (typeof index === 'number') {
       if (availableComparisons.length > 0) {
-        setComparison(availableComparisons[index % availableComparisons.length])
-      } else {
-        setComparison(comparisons[index % comparisons.length])
+        const newComparison = availableComparisons[index % availableComparisons.length]
+        track(tracking, 'Autre comparaison', newComparison.join())
+
+        setComparison(newComparison)
       }
     }
-  }, [index])
+  }, [index, availableComparisons])
 
   useEffect(() => {
     if (typeof generation === 'number' && generation) {
@@ -75,35 +91,49 @@ const TransportComparisonSimulator = ({ equivalents }: { equivalents: ComputedEq
     }
   }, [generation])
 
+  const canChange = modes.length > 2 || modes.some((mode) => mode.includes('+'))
+
   return (
     <div className={styles.container}>
       {comparisons && (
         <div className={styles.comparisons}>
           <div className={generation === 0 ? styles.disapearingTile : styles.tile}>
             <div className={styles.comparison}>
-              <TransportComparisonEquivalent index={0} equivalents={equivalents} />
+              <TransportComparisonEquivalent
+                tracking={tracking}
+                index={0}
+                equivalents={equivalents}
+                canChange={canChange}
+              />
             </div>
           </div>
           <div className={styles.vs}>VS</div>
           <div className={generation === 0 || generation === 1 ? styles.disapearingTile : styles.tile}>
             <div className={styles.comparison}>
-              <TransportComparisonEquivalent index={1} equivalents={equivalents} />
+              <TransportComparisonEquivalent
+                tracking={tracking}
+                index={1}
+                equivalents={equivalents}
+                canChange={canChange}
+              />
             </div>
           </div>
         </div>
       )}
-      <Button
-        className={styles.button}
-        onClick={() => {
-          setGeneration(0)
-          setTimeout(() => {
-            setIndex(typeof index === 'number' ? index + 1 : 1)
-            setTimeout(() => setGeneration(1), 100)
-          }, 200)
-        }}>
-        <MagicWandIcon />
-        {t('otherComparison')}
-      </Button>
+      {availableComparisons.length > 1 && (
+        <Button
+          className={styles.button}
+          onClick={() => {
+            setGeneration(0)
+            setTimeout(() => {
+              setIndex(typeof index === 'number' ? index + 1 : 1)
+              setTimeout(() => setGeneration(1), 100)
+            }, 200)
+          }}>
+          <MagicWandIcon />
+          {t('otherComparison')}
+        </Button>
+      )}
       <div className={styles.noBorder} />
     </div>
   )

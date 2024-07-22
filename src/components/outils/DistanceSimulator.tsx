@@ -34,7 +34,7 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
         />
         {t('header')}
       </div>
-      {withComparisonMode && <TransportComparisonMode />}
+      {withComparisonMode && <TransportComparisonMode tracking='Transport distance' />}
       {comparisonMode === 'list' ? (
         <CategorySimulator
           tracking='Transport distance'
@@ -46,7 +46,7 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
           type='distance'
         />
       ) : (
-        <TransportComparisonSimulator equivalents={equivalents} />
+        <TransportComparisonSimulator tracking='Transport distance' equivalents={equivalents} />
       )}
     </>
   )

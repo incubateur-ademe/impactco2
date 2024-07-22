@@ -6,6 +6,7 @@ import React, { Dispatch, ReactNode, SetStateAction, useCallback, useContext, us
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
+import { comparisons } from 'components/outils/TransportComparisonSimulator'
 import { displayAddress } from 'utils/address'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
@@ -247,7 +248,11 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [roundTrip, setRoundTrip] = useState(false)
 
   // Transport
-  const [modes, setModes] = useState<string[]>(deplacements.map((transport) => transport.slug))
+  const [modes, setModes] = useState<string[]>(
+    deplacements.flatMap((transport) =>
+      transport.withCarpool ? [`${transport.slug}+1`, transport.slug] : [transport.slug]
+    )
+  )
   const [comparisonMode, setComparisonMode] = useState<'list' | 'comparison'>('list')
   const [comparison, setComparison] = useState<string[]>(['voiturethermique', 'tgv'])
   const [selected, setSelected] = useState<TransportSimulateur>('distance')
@@ -319,13 +324,23 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       }
     }
     if (searchParams.get('equivalent')) {
+      const [slug, carpool] = (searchParams.get('equivalent') || '').split(' ')
+      const equivalent = computedEquivalents.find((equivalent) => equivalent.slug === slug)
       setComparedEquivalent(
-        computedEquivalents.find((equivalent) => equivalent.slug === searchParams.get('equivalent'))
+        equivalent && equivalent.withCarpool
+          ? {
+              ...equivalent,
+              carpool: Number(carpool),
+              link: `${equivalent.link}+${carpool}`,
+              slug: `${equivalent.slug}+${carpool}`,
+              value: equivalent.value / (Number(carpool) + 1),
+            }
+          : equivalent
       )
     }
 
     if (searchParams.get('comparisons')) {
-      setEquivalents((searchParams.get('comparisons') as string).split(','))
+      setEquivalents((searchParams.get('comparisons') as string).replace(' ', '+').split(','))
     } else {
       setEquivalents(getRandomEquivalents(searchParams.get('equivalent') as string, 3))
     }
@@ -349,9 +364,19 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (searchParams.get('modes')) {
-      const modes = (searchParams.get('modes') as string).split(',')
+      const modes = (searchParams.get('modes') as string).replaceAll(' ', '+').split(',')
       if (modes.length > 0) {
         setModes(modes)
+        if (!searchParams.get('comparison')) {
+          if (modes.length === 2) {
+            setComparison(modes)
+          } else {
+            const firstComparison = comparisons.find(([slug1, slug2]) => modes.includes(slug1) && modes.includes(slug2))
+            if (firstComparison) {
+              setComparison(firstComparison)
+            }
+          }
+        }
       }
     }
 
@@ -362,7 +387,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (searchParams.get('comparison')) {
-      const comparison = searchParams.get('comparison')?.split(',') as string[]
+      const comparison = searchParams.get('comparison')?.replaceAll(' ', '+').split(',') as string[]
       setComparison(comparison)
     }
 

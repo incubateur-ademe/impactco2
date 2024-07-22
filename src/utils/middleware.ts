@@ -7,10 +7,10 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
     return null
   }
 
-  try {
-    const authorization = request.headers.get('authorization')
-    const referer = request.headers.get('referer')
+  const authorization = request.headers.get('authorization')
+  const referer = request.headers.get('referer')
 
+  try {
     let name = referer || ''
     if (authorization) {
       const bearerToken = authorization.split(' ')
@@ -32,8 +32,7 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
     return name
   } catch (error) {
     await Sentry.captureException(error)
-    const authorization = request.headers.get('authorization')
-    console.error(`tracking failed - ${authorization}`, error)
+    console.error(`tracking failed - ${referer}- ${authorization}`)
   }
 }
 

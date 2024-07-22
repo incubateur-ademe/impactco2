@@ -229,12 +229,12 @@ test('Roundtrip', async ({ page }) => {
   await expect(page.getByTestId('category-tgv')).not.toBeAttached()
 
   await page.getByTestId('header-share-button').click()
-  await expect(page.getByTestId('clipboard-box')).toContainText(
+  await expect(page.getByTestId('clipboard-box')).toHaveText(
     'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&roundTrip=true&defaultMode=list&language=fr'
   )
   await page.getByTestId('cancel-button').click()
   await page.getByTestId('header-integrate-button').click()
-  await expect(page.getByTestId('clipboard-box')).toContainText(
+  await expect(page.getByTestId('clipboard-box')).toHaveText(
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list&roundTrip=true"></script>'
   )
 
