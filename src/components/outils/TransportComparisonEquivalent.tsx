@@ -41,7 +41,7 @@ const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug
       ...equivalent,
       name: (equivalent.name || '').replace(oldName, newName),
       carpool: Number(carpool),
-      value: (equivalent.initialValue ? equivalent.initialValue * 2 : equivalent.value) / (Number(carpool) + 1),
+      value: (equivalent.initialValue || equivalent.value) / (Number(carpool) + 1),
       link: `${equivalent.link}+${carpool}`,
       found: true,
     }
