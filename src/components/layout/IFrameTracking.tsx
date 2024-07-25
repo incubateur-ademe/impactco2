@@ -29,8 +29,12 @@ const IFrameTracking = ({ children }: { children: React.ReactNode }) => {
       setObserved(true)
       const href = window.location.href.endsWith('/') ? window.location.href : `${window.location.href}/`
       track('IFrame', href, path)
-      const params = [...new URLSearchParams(window.location.search).entries()]
-      params.forEach(([key, value]) => track(`integration-${path.replace('/iframes/', '')}-${key}`, value, href, true))
+      const urlWithoutSource = window.location.search.split('&source=')[0]
+      const params = [...new URLSearchParams(urlWithoutSource).entries()]
+      const type = path.replace('/iframes/', '')
+      params.forEach(([key, value]) =>
+        track(`integration-${type === 'transport' ? 'transport/distance' : type}-${key}`, value, href, true)
+      )
     }
   }, [entry, observed, path])
 
