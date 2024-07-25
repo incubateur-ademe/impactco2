@@ -53,12 +53,3 @@
     width: 100%;
   }
 }
-
-.clipboardTitle {
-  color: var(--neutral-50);
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.5rem;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
