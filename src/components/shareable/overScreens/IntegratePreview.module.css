@@ -1,0 +1,8 @@
+.container {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  background: var(--primary-10);
+  display: flex;
+  justify-content: center;
+}

@@ -12,6 +12,7 @@
     "apercu": "SHARING OVERVIEW",
     "share": "Share",
     "integrate": "Integrate",
+    "preview": "Preview the integration",
     "next-actions": "Explore further",
     "understand": "Understanding data",
     "download": "Download",
@@ -20,6 +21,9 @@
     },
     "km": {
       "title": "Display a custom distance"
+    },
+    "roundTrip": {
+      "title": "Round trip"
     },
     "situation": "my own simulation",
     "comparateur": "my own comparison",

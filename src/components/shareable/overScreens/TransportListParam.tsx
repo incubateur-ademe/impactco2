@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React from 'react'
+import { SetStateAction } from 'preact/compat'
+import React, { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
@@ -16,12 +17,9 @@ const transports = deplacements
   )
   .sort((a, b) => a.slug.localeCompare(b.slug))
 
-const TransportListParam = () => {
+const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Dispatch<SetStateAction<string[]>> }) => {
   const t = useTranslations('overscreen.transport')
-  const {
-    language,
-    transport: { modes, setModes },
-  } = useParamContext()
+  const { language } = useParamContext()
   return (
     <>
       <div className={customStyles.title}>

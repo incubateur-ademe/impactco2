@@ -1,6 +1,7 @@
 import { Params } from 'src/providers/ParamProvider'
 import { CustomParamValue } from './CustomParam'
 
+// Warning: Add values in Integrate.tsx also
 const values: Record<string, (params: Params) => Record<string, CustomParamValue>> = {
   chauffage: (params: Params) => ({
     m2: { value: params.chauffage.m2, setter: params.chauffage.setM2 } as CustomParamValue,

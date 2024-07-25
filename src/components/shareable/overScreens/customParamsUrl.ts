@@ -12,7 +12,7 @@ export const buildCustomParamsUrl = (
     .map(([key]) => {
       const param = params[key]
       if ('setter' in param) {
-        return param.value ? `${key}=${param.value}` : ''
+        return param.value !== undefined || param.value !== null ? `${key}=${param.value}` : ''
       }
 
       if ('start' in param) {
