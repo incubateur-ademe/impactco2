@@ -78,8 +78,10 @@ const FRTransportData = () => {
       </div>
       <div className={styles.title}>Comparaison</div>
       <div className={styles.content}>
-        En comparant deux moyens de transports, évaluer **les économies de carbones** que réalisée sur une même distance
-        donnée en fonction de toutes les hypothèses affichées ci-dessus.
+        <div>
+          En comparant deux moyens de transports, évaluer <b>les économies de carbones</b> que réalisée sur une même
+          distance donnée en fonction de toutes les hypothèses affichées ci-dessus.
+        </div>
       </div>
       <div className={styles.content}>
         <div>
@@ -167,8 +169,10 @@ const ENTransportData = () => {
       </div>
       <div className={styles.title}>Comparison</div>
       <div className={styles.content}>
-        By comparing two means of transport, evaluate **the carbon savings** achieved over the same given distance based
-        on all the hypotheses displayed above.
+        <div>
+          By comparing two means of transport, evaluate <b>the carbon savings</b> achieved over the same given distance
+          based on all the hypotheses displayed above.
+        </div>
       </div>
       <div className={styles.content}>
         <div>

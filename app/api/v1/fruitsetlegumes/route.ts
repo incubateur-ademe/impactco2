@@ -3,11 +3,16 @@ import { z } from 'zod'
 import { fruitsEtLegumes } from 'data/categories/fruitsetlegumes'
 import { getName } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
+import { fldsCategories, fldsCategoriesId } from 'utils/fruitsetlegumes'
 import { trackAPIRequest } from 'utils/middleware'
 
 const validation = z.object({
   month: z.coerce.number().min(1).max(12).optional(),
   language: z.enum(['fr', 'en']).optional(),
+  categories: z
+    .string()
+    .transform((value) => value.split(',').map((value) => fldsCategoriesId[Number(value)]))
+    .optional(),
 })
 
 /**
@@ -24,6 +29,18 @@ const validation = z.object({
  *       schema:
  *         type: integer
  *       description: Mois pour lequel récupérer les fruits et légumes de saisons (mois courant par défaut).
+ *     - in: query
+ *       name: category
+ *       schema:
+ *         type: string
+ *       description: |-
+ *         Liste des id de categories à retourner, séparés par des ','
+ *         - 1 : fruits
+ *         - 2 : légumes
+ *         - 3 : herbes
+ *         - 4 : pâtes, riz et céréales
+ *         - 5 : pommes de terre et autres tubercules
+ *         - 6 : fruits à coque et graines oléagineuses
  *     - in: query
  *       name: language
  *       default: fr
@@ -67,6 +84,7 @@ const validation = z.object({
  *                     - months
  *                     - ecv
  *                     - slug
+ *                     - category
  *                     properties:
  *                       name:
  *                         type: string
@@ -83,6 +101,9 @@ const validation = z.object({
  *                       slug:
  *                         type: string
  *                         example: asperge
+ *                       category:
+ *                         type: string
+ *                         example: légumes
  */
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
@@ -104,8 +125,10 @@ export async function GET(req: NextRequest) {
             slug: value.slug,
             months: value.months.map((month) => month + 1),
             ecv: computeECV(value),
+            category: fldsCategories[value.slug],
           }
-        }),
+        })
+        .filter((value) => !inputs.data.categories || inputs.data.categories.includes(value.category)),
       warning: hasAPIKey
         ? undefined
         : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
