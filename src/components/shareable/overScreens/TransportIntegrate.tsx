@@ -94,7 +94,7 @@ const TransportIntegrate = () => {
       result += `&defaultMode=${defaultMode}`
     }
 
-    if (comparison[0] !== 'voiturethermique' && comparison[1] !== 'tgv') {
+    if (comparison[0] !== 'voiturethermique' || comparison[1] !== 'tgv') {
       result += `&comparison=${comparison[0]},${comparison[1]}`
     }
 

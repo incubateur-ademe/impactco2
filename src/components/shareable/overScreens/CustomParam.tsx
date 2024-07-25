@@ -88,7 +88,6 @@ const CustomParam = ({
   setVisible?: (visbile: boolean) => void
   integration?: boolean
 }) => {
-  console.log(param, slug)
   const t = useTranslations('overscreen')
   if ('setter' in param) {
     const config = configs[slug]
