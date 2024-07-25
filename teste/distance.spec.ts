@@ -42,7 +42,7 @@ test('Transport distance list', async ({ page }) => {
   await page.locator('div').filter({ hasText: /^TER$/ }).nth(2).click()
   await page.getByLabel('Intégrer').getByText('Covoiturage thermique', { exact: true }).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=voiturethermique,avion&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv"></script>'
   )
   await page.getByTestId('text-select-comparison-1').selectOption('velo')
   await page.getByTestId('text-select-comparison-2').selectOption('moto')

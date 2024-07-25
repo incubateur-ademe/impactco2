@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction, useEffect, useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'data/categories/computedEquivalents'
 import { deplacements } from 'data/categories/deplacement'
 import { getEquivalentWithCarpool } from 'utils/carpool'
@@ -13,14 +12,13 @@ const equivalents = computedEquivalents('transport', deplacements).flatMap(getEq
 const TransportComparison = ({
   comparison,
   setComparison,
+  modes,
 }: {
   comparison: string[]
   setComparison: Dispatch<SetStateAction<string[]>>
+  modes: string[]
 }) => {
   const t = useTranslations('overscreen.transport')
-  const {
-    transport: { modes },
-  } = useParamContext()
 
   const filteredEquivalents = useMemo(
     () =>

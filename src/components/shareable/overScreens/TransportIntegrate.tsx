@@ -94,7 +94,7 @@ const TransportIntegrate = () => {
       result += `&defaultMode=${defaultMode}`
     }
 
-    if (comparison[0] !== 'voiturethermique' && comparison[1] !== 'tgv') {
+    if (comparison[0] !== 'voiturethermique' || comparison[1] !== 'tgv') {
       result += `&comparison=${comparison[0]},${comparison[1]}`
     }
 
@@ -233,7 +233,7 @@ const TransportIntegrate = () => {
       <div className={styles.separator} />
       <TransportListParam modes={modes} setModes={setModes} />
       <div className={styles.separator} />
-      <TransportComparison comparison={comparison} setComparison={setComparison} />
+      <TransportComparison comparison={comparison} setComparison={setComparison} modes={modes} />
       <div className={styles.separator} />
       <CustomParam
         tracking={tracking}
