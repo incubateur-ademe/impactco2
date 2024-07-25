@@ -180,15 +180,6 @@
     background-color: var(--primary-60) !important;
   }
 
-  &:focus {
-    outline: 3px solid var(--primary-40);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   svg {
     height: 0.75em !important;
     width: 0.75em !important;

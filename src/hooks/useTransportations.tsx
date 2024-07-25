@@ -80,7 +80,7 @@ export default function useTransportations(
                               values && equivalent.type ? values[equivalent.type as DeplacementType] : km
                             ).toLocaleString()} km`
                           : ''),
-                      initialValue: equivalent.value / 2,
+                      initialValue: equivalent.value,
                       value: equivalent.value / (carpoolValue + 1),
                       ecv: equivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
                       usage: equivalent.usage / (carpoolValue + 1),

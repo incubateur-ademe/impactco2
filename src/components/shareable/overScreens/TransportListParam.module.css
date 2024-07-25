@@ -22,15 +22,6 @@
     background: var(--primary-10);
   }
 
-  &:focus {
-    outline-offset: 2px;
-    outline: 3px solid var(--primary-40);
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   @media screen and (max-width: 48rem) {
     width: 100%;
   }
