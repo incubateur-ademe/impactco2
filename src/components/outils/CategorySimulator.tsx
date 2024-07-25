@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import React, { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from 'react'
+import useParamContext, { Params } from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
@@ -15,6 +15,14 @@ import LocalNumber from 'components/base/LocalNumber'
 import CategoryDisplayAll from './CategoryDisplayAll'
 import styles from './CategorySimulator.module.css'
 import PlusMinus from './plusMinus/PlusMinus'
+
+const getValue = (equivalent: ComputedEquivalent, params: Params, type?: TransportSimulateur) => {
+  if (type && equivalent.initialValue) {
+    const carpool = params[type].carpool[equivalent.slug] || 1
+    return equivalent.initialValue / (carpool + 1)
+  }
+  return equivalent.value
+}
 
 const CategorySimulator = ({
   tracking,
@@ -41,6 +49,7 @@ const CategorySimulator = ({
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
   const [basePercent, setBasePercent] = useState(80)
   const [legendRelative, setLegendRelative] = useState(false)
+  const initialParams = useMemo(() => params, [])
 
   useEffect(() => {
     const onResize = () => {
@@ -63,7 +72,7 @@ const CategorySimulator = ({
       <div ref={ref}>
         {equivalents &&
           equivalents
-            .sort((a, b) => (a.initialValue || a.value) - (b.initialValue || b.value))
+            .sort((a, b) => getValue(a, initialParams, type) - getValue(b, initialParams, type))
             .map((equivalent) => (
               <div
                 key={equivalent.carpool ? `${equivalent.slug}-${equivalent.carpool}` : equivalent.slug}
