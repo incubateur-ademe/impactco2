@@ -18,15 +18,6 @@
     border-color: var(--neutral-30);
   }
 
-  &:focus {
-    outline: 3px solid var(--primary-40);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   @media screen and (max-width: 29.875rem) {
     padding: 0.75rem 1rem;
     min-height: 6.25rem;

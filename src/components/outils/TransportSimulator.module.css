@@ -20,15 +20,6 @@
   &:last-child {
     border-radius: 0 calc(1rem - 2px) 0 0;
   }
-
-  &:focus {
-    outline-offset: 2px;
-    outline: 3px solid var(--primary-40);
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
 }
 
 .selectedTab {

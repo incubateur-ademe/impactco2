@@ -25,15 +25,6 @@
       color: var(--primary-70);
     }
   }
-
-  &:focus {
-    outline-offset: 2px;
-    outline: 3px solid var(--primary-40);
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
 }
 
 .content {
