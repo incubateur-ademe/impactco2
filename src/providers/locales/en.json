@@ -27,6 +27,11 @@
     },
     "situation": "my own simulation",
     "comparateur": "my own comparison",
+    "display": {
+      "title": "Integrate",
+      "graphic": "The graph",
+      "simulator": "The simulator"
+    },
     "month": {
       "title": "Display a custom month",
       "janvier": "January",

@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
 import React, { useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
@@ -57,6 +58,9 @@ const streaming = usagenumerique.equivalents?.find(
 ) as ComputedEquivalent
 
 const UsageNumeriqueSimulator = () => {
+  const searchParams = useSearchParams()
+  const mode = useMemo(() => searchParams.get('display'), [searchParams])
+
   const ref = useRef<HTMLDivElement>(null)
   const {
     language,
@@ -113,53 +117,61 @@ const UsageNumeriqueSimulator = () => {
   )
   return (
     <>
-      <div className={styles.simulator}>
-        <UsageForm slug='streaming' engineValue='streaming . durée' />
-        <UsageForm slug='visio' engineValue='visio . durée' />
-        <UsageForm slug='email' value={numberEmails} setValue={setNumberEmails} />
-      </div>
-      <div className={styles.results}>
-        <div className={styles.values}>
-          <div className={styles.header}>{t('usages')}</div>
-          <div className={styles.value}>
-            <span className={styles.number} data-testid='usagenumerique-generated-value'>
-              <LocalNumber number={formatNumber(total / 1000)} />
-            </span>{' '}
-            kg co₂e
+      {(!mode || mode === 'simulator') && (
+        <>
+          <div className={styles.simulator}>
+            <UsageForm slug='streaming' engineValue='streaming . durée' />
+            <UsageForm slug='visio' engineValue='visio . durée' />
+            <UsageForm slug='email' value={numberEmails} setValue={setNumberEmails} />
           </div>
-          <div>{t('by-week')}</div>
-        </div>
-        <div className={styles.values}>
-          <div className={styles.header}>{t('or')}</div>
-          <div className={styles.value}>
-            <span className={styles.number}>
-              <LocalNumber number={formatNumber((total * 52) / 1000)} />
-            </span>{' '}
-            kg co₂e
+          <div className={styles.results}>
+            <div className={styles.values}>
+              <div className={styles.header}>{t('usages')}</div>
+              <div className={styles.value}>
+                <span className={styles.number} data-testid='usagenumerique-generated-value'>
+                  <LocalNumber number={formatNumber(total / 1000)} />
+                </span>{' '}
+                kg co₂e
+              </div>
+              <div>{t('by-week')}</div>
+            </div>
+            <div className={styles.values}>
+              <div className={styles.header}>{t('or')}</div>
+              <div className={styles.value}>
+                <span className={styles.number}>
+                  <LocalNumber number={formatNumber((total * 52) / 1000)} />
+                </span>{' '}
+                kg co₂e
+              </div>
+              <div>{t('by-year')}</div>
+            </div>
           </div>
-          <div>{t('by-year')}</div>
-        </div>
-      </div>
-      <div className={styles.etiquette}>
-        <div className={styles.header}>{t('total')}</div>
-        <Etiquette
-          baseValue={total * 52}
-          comparisons={equivalents}
-          ref={ref}
-          randomize={() => {
-            track('Usage numérique', 'Randomize', 'randomize')
-            setEquivalents(getRandomEquivalents(undefined, 3))
-          }}
-          language={language}
-        />
-      </div>
-      <div className={shareableStyles.separatorBothBorders} />
-      <div className={styles.text}>
-        <div className={styles.mainText}>{t('title')}</div>
-        {t('description')}
-      </div>
-      <div className={shareableStyles.separatorBothBorders} />
-      <CategorySimulator tracking='Usage numérique' equivalents={displayedEquivalents} withSimulator />
+          <div className={styles.etiquette}>
+            <div className={styles.header}>{t('total')}</div>
+            <Etiquette
+              baseValue={total * 52}
+              comparisons={equivalents}
+              ref={ref}
+              randomize={() => {
+                track('Usage numérique', 'Randomize', 'randomize')
+                setEquivalents(getRandomEquivalents(undefined, 3))
+              }}
+              language={language}
+            />
+          </div>
+        </>
+      )}
+      {!mode && <div className={shareableStyles.separatorBothBorders} />}
+      {(!mode || mode === 'graphic') && (
+        <>
+          <div className={styles.text}>
+            <div className={styles.mainText}>{t('title')}</div>
+            {t('description')}
+          </div>
+          <div className={shareableStyles.separatorBothBorders} />
+          <CategorySimulator tracking='Usage numérique' equivalents={displayedEquivalents} withSimulator />
+        </>
+      )}
     </>
   )
 }

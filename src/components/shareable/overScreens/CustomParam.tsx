@@ -5,6 +5,7 @@ import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
 import { Point } from 'hooks/useItineraries'
 import EquivalentIcon from 'components/base/EquivalentIcon'
+import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
@@ -16,11 +17,12 @@ const configs: Record<
   string,
   {
     inputLabel?: string
-    type: 'number' | 'text' | 'select' | 'select-number' | 'boolean'
+    type: 'number' | 'text' | 'select' | 'select-number' | 'boolean' | 'checkbox'
     unit?: string
     min?: number
     max?: number
     options?: { label: string; value: string | number }[]
+    values?: string[]
   }
 > = {
   m2: {
@@ -45,6 +47,11 @@ const configs: Record<
     type: 'select-number',
     options: monthsOptions,
     inputLabel: 'Mois',
+  },
+  display: {
+    type: 'checkbox',
+    values: ['graphic', 'simulator'],
+    inputLabel: 'display',
   },
   theme: {
     type: 'select',
@@ -93,7 +100,7 @@ const CustomParam = ({
     const config = configs[slug]
     return (
       <div className={styles.container}>
-        {config.type !== 'boolean' && setVisible && (
+        {config.type !== 'boolean' && config.type !== 'checkbox' && setVisible && (
           <CheckboxInput
             color='secondary'
             checked={visible}
@@ -132,6 +139,24 @@ const CustomParam = ({
               setChecked={param.setter}
               label={t(`${slug}.title`)}
             />
+          ) : config.type === 'checkbox' && config.values ? (
+            <Checkbox label={t(`${slug}.title`)} id={slug} required>
+              {config.values.map((value) => (
+                <CheckboxInput
+                  key={`${slug}.${value}`}
+                  data-testid={`custom-param-${slug}-${value}-checkbox`}
+                  checked={!param.value || param.value === value}
+                  setChecked={(checked) => {
+                    if (checked) {
+                      param.setter(param.value ? '' : value)
+                    } else {
+                      param.setter(param.value ? '' : (config.values?.find((x) => x !== value) as string))
+                    }
+                  }}
+                  label={t(`${slug}.${value}`)}
+                />
+              ))}
+            </Checkbox>
           ) : (
             <Input
               id={slug}
