@@ -25,7 +25,7 @@ Nous utilisons des clés API pour suivre son utilisation. Bien que celles ci ne 
 * *Je renseigne dans le champs ID ou slug : numerique*
 * *Je souhaite avoir le détail de l’ACV, je sélectionne alors 1*
 * *Lorsque je clique sur Execute, je visualise  le détail des données sur la thématique numérique*`,
-      version: '1.0.0',
+      version: '1.1.0',
     },
     servers: [{ url: `${process.env.NEXT_PUBLIC_URL}/api/v1` }],
     components: {
