@@ -347,4 +347,101 @@ describe('fruitsetlegumes', () => {
         "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
+
+  test('get specific categories', async () => {
+    const result = await fetch('http://localhost:3000/api/v1/fruitsetlegumes?month=10&categories=1,3')
+
+    expect(result.status).toBe(200)
+    const data = await result.json()
+    expect(data).toEqual({
+      data: [
+        {
+          ecv: 0.396515083,
+          months: [1, 2, 3, 4, 8, 9, 10, 11, 12],
+          name: 'Pomme',
+          slug: 'pomme',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.358042894,
+          months: [7, 8, 9, 10, 11, 12],
+          name: 'Ail',
+          slug: 'ail',
+          category: 'herbes',
+        },
+        {
+          ecv: 10.641545366999999,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Mangue',
+          slug: 'mangue',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.5410901117000001,
+          months: [10],
+          name: 'Coing',
+          slug: 'coing',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.6135498970000001,
+          months: [7, 8, 9, 10],
+          name: 'Figue',
+          slug: 'figue',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.36428259399999996,
+          months: [1, 2, 3, 8, 9, 10, 11, 12],
+          name: 'Poire',
+          slug: 'poire',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.45672809300000006,
+          months: [9, 10],
+          name: 'Raisin',
+          slug: 'raisin',
+          category: 'fruits',
+        },
+        {
+          ecv: 1.292282106,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Ananas',
+          slug: 'ananas',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.8806108929999997,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Banane',
+          slug: 'banane',
+          category: 'fruits',
+        },
+        {
+          ecv: 2.7601109879999997,
+          months: [1, 10, 11, 12],
+          name: 'Datte',
+          slug: 'datte',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.89281737,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Fruit de la passion',
+          slug: 'fruitdelapassion',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.9004313517,
+          months: [1, 10, 11, 12],
+          name: 'Kaki',
+          slug: 'kaki',
+          category: 'fruits',
+        },
+      ],
+      warning:
+        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    })
+  })
 })

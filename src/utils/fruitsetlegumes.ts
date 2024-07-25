@@ -1,3 +1,12 @@
+export const fldsCategoriesId: Record<number, string> = {
+  1: 'fruits',
+  2: 'légumes',
+  3: 'herbes',
+  4: 'pâtes, riz et céréales',
+  5: 'pommes de terre et autres tubercules',
+  6: 'fruits à coque et graines oléagineuses',
+}
+
 export const fldsCategories: Record<string, string> = {
   fraise: 'fruits',
   pomme: 'fruits',
