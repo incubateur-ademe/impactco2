@@ -7,6 +7,7 @@ import ClipboardBox from 'components/base/ClipboardBox'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getCustomParams } from './CustomParamsValues'
+import IntegratePreview from './IntegratePreview'
 import styles from './Share.module.css'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
@@ -24,15 +25,38 @@ const Integrate = ({
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
-  const params = useMemo(
-    () =>
-      category
-        ? getCustomParams(category.slug, allParams)
-        : path?.startsWith('comparateur')
-          ? getComparateurParams(allParams, path?.includes('etiquette'))
-          : {},
-    [allParams, category, path]
-  )
+  // All
+  const [theme, setTheme] = useState(allParams.theme)
+  const [language, setLanguage] = useState(allParams.language)
+
+  // Chauffage
+  const [m2, setM2] = useState(allParams.chauffage.m2)
+  useEffect(() => {
+    setM2(allParams.chauffage.m2)
+  }, [allParams.chauffage.m2])
+
+  // Fruits et légumes
+  const [month, setMonth] = useState(allParams.fruitsetlegumes.month)
+  useEffect(() => {
+    setMonth(allParams.fruitsetlegumes.month)
+  }, [allParams.fruitsetlegumes.month])
+
+  const params = useMemo(() => {
+    if (category) {
+      // Warning: Add values in CustomParamsValues.ts also
+      if (category.slug === 'chauffage') {
+        return { m2: { value: m2, setter: setM2 } } as Record<string, CustomParamValue>
+      }
+      if (category.slug === 'fruitsetlegumes') {
+        return { month: { value: month, setter: setMonth } } as Record<string, CustomParamValue>
+      }
+      return getCustomParams(category.slug, allParams)
+    } else if (path?.startsWith('comparateur')) {
+      return getComparateurParams(allParams, path?.includes('etiquette'))
+    }
+    return {}
+  }, [allParams, category, path, m2, month])
+
   useEffect(() => {
     if (params) {
       const values: Record<string, boolean> = {}
@@ -43,9 +67,7 @@ const Integrate = ({
     }
   }, [params])
 
-  const url = `<script name="impact-co2" src="${
-    process.env.NEXT_PUBLIC_URL
-  }/iframe.js" data-type="${path}" data-search="?${buildCustomParamsUrl(params, visibility)}${extraParams ? `&${extraParams}` : ''}&language=${allParams.language}&theme=${allParams.theme}"></script>`
+  const urlParams = `${buildCustomParamsUrl(params, visibility)}${extraParams ? `&${extraParams}` : ''}&language=${language}&theme=${theme}`
 
   return params && visibility ? (
     <>
@@ -61,16 +83,19 @@ const Integrate = ({
       <CustomParam
         tracking={tracking}
         slug='theme'
-        param={{ value: allParams.theme, setter: allParams.setTheme } as CustomParamValue}
+        param={{ value: theme, setter: setTheme } as CustomParamValue}
         visible
       />
       <CustomParam
         tracking={tracking}
         slug='language'
-        param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
+        param={{ value: language, setter: setLanguage } as CustomParamValue}
         visible
       />
-      <ClipboardBox tracking={tracking}>{url}</ClipboardBox>
+      <ClipboardBox tracking={tracking}>{`<script name="impact-co2" src="${
+        process.env.NEXT_PUBLIC_URL
+      }/iframe.js" data-type="${path}" data-search="?${urlParams}"></script>`}</ClipboardBox>
+      <IntegratePreview path={path} urlParams={urlParams} />
     </>
   ) : null
 }
