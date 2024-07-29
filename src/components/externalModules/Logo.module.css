@@ -20,15 +20,6 @@
     color: var(--primary-60) !important;
   }
 
-  &:focus {
-    outline: 3px solid var(--primary-40);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   >svg {
     width: 1.875rem !important;
     height: auto !important;

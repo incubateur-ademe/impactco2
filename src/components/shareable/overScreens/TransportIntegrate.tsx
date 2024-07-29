@@ -233,7 +233,7 @@ const TransportIntegrate = () => {
       <div className={styles.separator} />
       <TransportListParam modes={modes} setModes={setModes} />
       <div className={styles.separator} />
-      <TransportComparison comparison={comparison} setComparison={setComparison} />
+      <TransportComparison comparison={comparison} setComparison={setComparison} modes={modes} />
       <div className={styles.separator} />
       <CustomParam
         tracking={tracking}

@@ -376,3 +376,15 @@ input[type='number'] {
 .blank {
   min-height: 100vh;
 }
+
+button,
+a {
+  &:focus {
+    outline-offset: 2px;
+    outline: 3px solid var(--primary-40);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}

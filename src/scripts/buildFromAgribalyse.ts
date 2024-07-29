@@ -29,6 +29,7 @@ const finalitiesId: Record<string, number> = {
 const agrybaliseValues = [
   'Code_CIQUAL',
   'Code_AGB',
+  "Sous-groupe_d'aliment",
   ...Object.keys(finalitiesId).flatMap((finality) => [
     AgrybalisePrefixEnum.ChangementClimatique + finality,
     AgrybalisePrefixEnum.ScoreUniqueEF + finality,
@@ -45,7 +46,7 @@ function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) 
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
-  values: (Record<string, number> & { Code_CIQUAL: number; Code_AGB?: string })[]
+  values: (Record<string, number> & { Code_CIQUAL: number; Code_AGB?: string; "Sous-groupe_d'aliment": string })[]
 ) => {
   return equivalents.map((equivalent) => {
     if (!('Code_CIQUAL' in equivalent)) {
@@ -68,6 +69,7 @@ const updateEquivalents = (
         )
       }
     }
+    console.log(`${equivalent.slug}: "${value["Sous-groupe_d'aliment"]}",`)
 
     const finalC02 = sumValues(AgrybalisePrefixEnum.ChangementClimatique, value)
     const finalEF = sumValues(AgrybalisePrefixEnum.ScoreUniqueEF, value)

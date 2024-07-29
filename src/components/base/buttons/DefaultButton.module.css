@@ -17,8 +17,7 @@
     width: 0.75rem;
   }
 
-  &:focus,
-  &:focus:not(:focus-visible) {
+  &:focus {
     outline: none;
   }
 }
@@ -33,14 +32,13 @@
     color: var(--primary-70);
   }
 
-  &:focus {
-    outline-offset: 2px;
-    outline: 3px solid var(--primary-40);
-  }
-
   &:disabled {
     cursor: default;
     background-color: var(--neutral-10);
     color: var(--neutral-30);
+  }
+
+  &:focus {
+    outline: 3px solid var(--primary-40);
   }
 }

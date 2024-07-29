@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import DetectorScript from 'components/outils/DetectorScript'
 
 export const tools = [
   {
@@ -141,7 +142,7 @@ export const smallTools = [
         </div>
       </>
     ),
-    clipboardURL: '<script src="https://impactco2.fr/scripts/detection.js"></script>',
+    script: <DetectorScript />,
   },
 ]
 

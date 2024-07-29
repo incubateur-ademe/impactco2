@@ -28,15 +28,6 @@
     background: var(--primary-20);
   }
 
-  &:focus {
-    outline-offset: 2px;
-    outline: 3px solid var(--primary-40);
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   &:disabled {
     cursor: not-allowed;
     color: var(--neutral-30);

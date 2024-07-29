@@ -38,15 +38,6 @@
     background-color: var(--primary-20);
   }
 
-  &:focus {
-    outline: 3px solid var(--primary-40);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   @media screen and (max-width: 700px) {
     display: none;
   }
