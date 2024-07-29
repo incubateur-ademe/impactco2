@@ -36,6 +36,8 @@ const TeletravailSimulator = () => {
       setTransport,
       presentiel,
       setPresentiel,
+      homeOffice,
+      setHomeOffice,
       equivalents,
       setEquivalents,
     },
@@ -107,7 +109,7 @@ const TeletravailSimulator = () => {
                 setPresentiel(value)
               }}
               min={0}
-              max={5}
+              max={7}
             />
           </div>
           <div className={styles.days}>
@@ -116,14 +118,14 @@ const TeletravailSimulator = () => {
             </label>
             <NumberInput
               id='teletravail-value'
-              unit={`${t('day')}${presentiel === 4 ? '' : 's'}`}
-              value={5 - presentiel}
+              unit={`${t('day')}${homeOffice === 1 ? '' : 's'}`}
+              value={homeOffice}
               setValue={(value) => {
                 track('Télétravail', 'Télétravail', value.toString())
-                setPresentiel(5 - value)
+                setHomeOffice(value)
               }}
               min={0}
-              max={5}
+              max={7}
             />
           </div>
         </div>
@@ -147,21 +149,21 @@ const TeletravailSimulator = () => {
             <div className={styles.values}>
               <div className={styles.header}>{t('saved')}</div>
               <div className={styles.greenValue}>
-                <span className={styles.number}>
-                  <LocalNumber number={formatNumber(0.75 * (5 - presentiel) * total)} />
+                <span className={styles.number} data-testid='teletravail-saved-value'>
+                  <LocalNumber number={formatNumber(0.75 * homeOffice * total)} />
                 </span>{' '}
                 kg co₂e
               </div>
               <div>{t('per-year')}</div>
-              {t('home')} {5 - presentiel} {`${t('day')}${presentiel === 4 ? '' : 's'}`} / {t('week')}
+              {t('home')} {homeOffice} {`${t('day')}${homeOffice === 1 ? '' : 's'}`} / {t('week')}
             </div>
           </div>
           <div>
             <div className={styles.values}>
               <div className={styles.header}>{t('or')}</div>
               <div className={styles.greenValue}>
-                <span className={styles.number}>
-                  <LocalNumber number={formatNumber((0.75 * (5 - presentiel) * total) / 99)} />
+                <span className={styles.number} data-testid='teletravail-saved-percent'>
+                  <LocalNumber number={formatNumber((0.75 * homeOffice * total) / 99)} />
                 </span>{' '}
                 %
               </div>
@@ -171,7 +173,7 @@ const TeletravailSimulator = () => {
           <div className={styles.etiquette}>
             <div className={styles.header}>{t('total')}</div>
             <Etiquette
-              baseValue={0.75 * (5 - presentiel) * total * 1000}
+              baseValue={0.75 * homeOffice * total * 1000}
               comparisons={equivalents}
               ref={ref}
               randomize={() => {

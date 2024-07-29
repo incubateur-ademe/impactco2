@@ -158,6 +158,8 @@ export type Params = {
     setTransport: Dispatch<SetStateAction<string>>
     presentiel: number
     setPresentiel: Dispatch<SetStateAction<number>>
+    homeOffice: number
+    setHomeOffice: Dispatch<SetStateAction<number>>
     equivalents: string[]
     setEquivalents: Dispatch<SetStateAction<string[]>>
   }
@@ -275,6 +277,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [teletravailEquivalents, setTeletravailEquivalents] = useState(defaultEquivalents)
   const [teletravailTransport, setTeletravailTransport] = useState('voiturethermique')
   const [presentiel, setPresentiel] = useState(4)
+  const [homeOffice, setHomeOffice] = useState(1)
 
   // Fruits et legumes
   const [month, setMonth] = useState<number>(new Date().getMonth())
@@ -475,6 +478,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setTeletravailEnd(undefined)
         setTeletravailTransport('voiturethermique')
         setPresentiel(4)
+        setHomeOffice(1)
         setTeletravailEquivalents(defaultEquivalents)
         break
       case 'usagenumerique':
@@ -574,6 +578,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setTransport: setTeletravailTransport,
           presentiel,
           setPresentiel,
+          homeOffice,
+          setHomeOffice,
           equivalents: teletravailEquivalents,
           setEquivalents: setTeletravailEquivalents,
         },
