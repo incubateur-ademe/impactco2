@@ -50,7 +50,7 @@ const configs: Record<
   },
   display: {
     type: 'checkbox',
-    values: ['graphic', 'simulator'],
+    values: ['simulator', 'graphic'],
     inputLabel: 'display',
   },
   theme: {
