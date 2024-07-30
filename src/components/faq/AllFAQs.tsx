@@ -67,7 +67,7 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
         title='API'
         description={
           <>
-            Questions fréquentes à propos de l'<Link href='/outils/etiquettes'>API</Link>
+            Questions fréquentes à propos de l'<Link href='/doc/api'>API</Link>
           </>
         }
       />
