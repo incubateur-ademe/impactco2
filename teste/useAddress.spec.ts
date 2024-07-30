@@ -35,7 +35,7 @@ test('search for a street', async () => {
   const result = await searchAddress('rue auvry')
 
   expect(result.length).toEqual(1)
-  expect(result[0].geometry.coordinates).toEqual([2.3867991, 48.9040244])
+  expect(result[0].geometry.coordinates).toEqual([2.388846, 48.9036616])
   expect(result[0].properties).toEqual({
     extent: [2.3867991, 48.9040244, 2.3889291, 48.9036469],
     name: 'Rue Auvry',
