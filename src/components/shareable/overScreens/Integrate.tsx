@@ -41,6 +41,9 @@ const Integrate = ({
     setMonth(allParams.fruitsetlegumes.month)
   }, [allParams.fruitsetlegumes.month])
 
+  // Usage numérique
+  const [toDisplay, setToDisplay] = useState('')
+
   const params = useMemo(() => {
     if (category) {
       // Warning: Add values in CustomParamsValues.ts also
@@ -50,12 +53,16 @@ const Integrate = ({
       if (category.slug === 'fruitsetlegumes') {
         return { month: { value: month, setter: setMonth } } as Record<string, CustomParamValue>
       }
-      return getCustomParams(category.slug, allParams)
+      const params = getCustomParams(category.slug, allParams)
+      if (category.slug === 'usagenumerique') {
+        return { ...params, display: { value: toDisplay, setter: setToDisplay } } as Record<string, CustomParamValue>
+      }
+      return params
     } else if (path?.startsWith('comparateur')) {
       return getComparateurParams(allParams, path?.includes('etiquette'))
     }
     return {}
-  }, [allParams, category, path, m2, month])
+  }, [allParams, category, path, m2, month, toDisplay])
 
   useEffect(() => {
     if (params) {

@@ -27,6 +27,11 @@
     },
     "situation": "ma propre simulation",
     "comparateur": "ma propre comparaison",
+    "display": {
+      "title": "Intégrer",
+      "graphic": "Le graphique",
+      "simulator": "Le simulateur"
+    },
     "language": {
       "label": "Langue",
       "fr": "Français",
