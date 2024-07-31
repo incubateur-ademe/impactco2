@@ -1,5 +1,6 @@
 import React from 'react'
 import en from 'src/providers/locales/en.json'
+import es from 'src/providers/locales/es.json'
 import fr from 'src/providers/locales/fr.json'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { buildCurrentUrlFor } from 'utils/urls'
@@ -21,7 +22,7 @@ const Equivalent = ({
   carpool?: boolean
 }) => {
   const { value, unit: quantityUnit } = getNumberPrecision(quantity)
-  const translatedUnit = ((language === 'en' ? en : fr).unit as Record<string, string>)[unit]
+  const translatedUnit = ((language === 'en' ? en : language === 'es' ? es : fr).unit as Record<string, string>)[unit]
   const [ref] = slug.split('+')
   return (
     <div

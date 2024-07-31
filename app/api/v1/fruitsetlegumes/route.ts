@@ -8,7 +8,7 @@ import { trackAPIRequest } from 'utils/middleware'
 
 const validation = z.object({
   month: z.coerce.number().min(1).max(12).optional(),
-  language: z.enum(['fr', 'en']).optional(),
+  language: z.enum(['fr', 'en', 'es']).optional(),
   categories: z
     .string()
     .transform((value) => value.split(',').map((value) => fldsCategoriesId[Number(value)]))
@@ -46,7 +46,7 @@ const validation = z.object({
  *       default: fr
  *       schema:
  *        type: string
- *        enum: [fr, en]
+ *        enum: [fr, en, es]
  *       description: Langue dans laquelle retourner les noms d'équivalent
  *     responses:
  *       405:

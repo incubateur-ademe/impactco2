@@ -16,7 +16,7 @@ const transportValidation = z.object({
     .optional(),
   numberOfPassenger: z.coerce.number().min(0).max(10).optional(),
   occupencyRate: z.coerce.number().min(1).max(11).optional(),
-  language: z.enum(['fr', 'en']).optional(),
+  language: z.enum(['fr', 'en', 'es']).optional(),
 })
 
 export const computeTransportEmission = (
@@ -190,7 +190,7 @@ export const computeTransportEmission = (
  *       default: fr
  *       schema:
  *        type: string
- *        enum: [fr, en]
+ *        enum: [fr, en, es]
  *       description: Langue dans laquelle retourner les noms d'équivalent
  *     responses:
  *       405:
