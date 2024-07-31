@@ -9,7 +9,7 @@ import { trackAPIRequest } from 'utils/middleware'
 const categoryValidation = z.object({
   id: z.string(),
   detail: z.coerce.number().int().min(0).max(1).optional().transform(Boolean),
-  language: z.enum(['fr', 'en']).optional(),
+  language: z.enum(['fr', 'en', 'es']).optional(),
 })
 
 /**
@@ -130,7 +130,7 @@ const categoryValidation = z.object({
  *       default: fr
  *       schema:
  *        type: string
- *        enum: [fr, en]
+ *        enum: [fr, en, es]
  *       description: Langue dans laquelle retourner les noms d'équivalent
  *     responses:
  *       405:

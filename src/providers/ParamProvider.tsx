@@ -4,6 +4,7 @@ import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation'
 import { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useCallback, useContext, useEffect, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
+import { SiteLanguage } from 'types/languages'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
 import { comparisons } from 'components/outils/TransportComparisonSimulator'
@@ -88,8 +89,8 @@ export type Params = {
   reset: (slug: string) => void
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
-  language: 'fr' | 'en'
-  setLanguage: Dispatch<SetStateAction<'fr' | 'en'>>
+  language: SiteLanguage
+  setLanguage: Dispatch<SetStateAction<SiteLanguage>>
   livraison: {
     values: LivraisonValues
     setValues: Dispatch<SetStateAction<LivraisonValues>>
@@ -212,7 +213,7 @@ const ParamContext = React.createContext<Params | null>(null)
 export function ParamProvider({ children }: { children: ReactNode }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
-  const [language, setLanguage] = useState<'fr' | 'en'>('fr')
+  const [language, setLanguage] = useState<SiteLanguage>('fr')
   const [overscreen, setOverscreen] = useState<Record<string, string>>({})
 
   // Livraison
@@ -318,7 +319,12 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       return
     }
 
-    setLanguage(searchParams.get('language') === 'en' ? 'en' : 'fr')
+    const language = searchParams.get('language')
+    if (language === 'en' || language === 'es') {
+      setLanguage(language)
+    } else {
+      setLanguage('fr')
+    }
 
     if (searchParams.get('value')) {
       const value = Number(searchParams.get('value') as string)

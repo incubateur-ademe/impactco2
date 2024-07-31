@@ -1,0 +1,414 @@
+{
+  "clipboard": {
+    "copier": "Copiar",
+    "copie": "Copiado",
+    "information-1": "Esta etiqueta HTML te permite mostrar el simulador dentro de una página de tu sitio web.",
+    "information-2": "El módulo se actualizará automáticamente con las últimas novedades."
+  },
+  "overscreen": {
+    "default-true": "Mostrar por defecto",
+    "default-false": "No mostrar por defecto",
+    "usage": "Uso",
+    "apercu": "VISTA PREVIA DEL COMPARTIR",
+    "share": "Compartir",
+    "integrate": "Integrar",
+    "preview": "Vista previa de la integración",
+    "next-actions": "Siguientes acciones",
+    "understand": "Entender los datos",
+    "download": "Descargar",
+    "m2": {
+      "title": "Mostrar una superficie personalizada",
+      "unit": "m²"
+    },
+    "km": {
+      "title": "Mostrar una distancia personalizada",
+      "unit": "km"
+    },
+    "roundTrip": {
+      "title": "Ida y vuelta"
+    },
+    "situation": "mi propia simulación",
+    "display": {
+      "title": "Integrar",
+      "graphic": "El grafico",
+      "simulator": "El simulador"
+    },
+    "comparateur": "mi propia comparación",
+    "language": {
+      "label": "Idioma",
+      "fr": "Français",
+      "en": "English",
+      "es": "Español"
+    },
+    "theme": {
+      "label": "Modo de visualización",
+      "clair": "Claro",
+      "sombre": "Oscuro"
+    },
+    "itineraire": {
+      "label": "Personalizar el itinerario",
+      "start": "Salida",
+      "end": "Llegada"
+    },
+    "teletravail": {
+      "label": "Personalizar las direcciones",
+      "start": "Lugar de residencia",
+      "end": "Lugar de trabajo"
+    },
+    "presentiel": {
+      "title": "Presencial",
+      "unit": "día[s]"
+    },
+    "homeOffice": {
+      "title": "Teletrabajo",
+      "unit": "día[s]"
+    },
+    "transport": {
+      "title": "Medio de transporte",
+      "search": "Buscar un medio de transporte",
+      "back": "Volver al simulador",
+      "mode-share": "Modos de visualización para compartir",
+      "mode-integrate": "Modos de visualización para integrar",
+      "comparison": "Comparación mostrada por defecto",
+      "modes": "Modos de transporte para integrar",
+      "modes-hint": "No es posible integrar menos de 2 modos de transporte en el simulador.",
+      "onglet": "Pestaña para compartir",
+      "onglet-hint": "Seleccione la pestaña que desea mostrar al compartir",
+      "onglets": "Pestaña para integrar",
+      "onglets-hint": "Seleccione las pestañas que desea integrar en el iframe"
+    },
+    "month": {
+      "title": "Personalizar el mes a mostrar",
+      "janvier": "Enero",
+      "février": "Febrero",
+      "mars": "Marzo",
+      "avril": "Abril",
+      "mai": "Mayo",
+      "juin": "Junio",
+      "juillet": "Julio",
+      "août": "Agosto",
+      "septembre": "Septiembre",
+      "octobre": "Octubre",
+      "novembre": "Noviembre",
+      "décembre": "Diciembre"
+    }
+  },
+  "modal": {
+    "close": "Cerrar"
+  },
+  "transport": {
+    "sorry": "¡Lo siento!",
+    "notFound": "El itinerario solicitado no es compatible con este modo de transporte",
+    "otherComparison": "Ver otra comparación",
+    "modify": "Modificar",
+    "avoided": "evitados",
+    "itineraire": {
+      "roundTrip": "Ida y vuelta",
+      "header": "Descubre la cantidad de CO₂e que emites para este trayecto",
+      "start": "Salida",
+      "end": "Llegada"
+    },
+    "teletravail": {
+      "start": "Lugar de residencia",
+      "end": "Lugar de trabajo",
+      "mode": "Para ir al trabajo",
+      "presentiel": "Presencial",
+      "teletravail": "Teletrabajo",
+      "week": "semana",
+      "per-week": "por semana",
+      "per-year": "por año",
+      "day": "día",
+      "generate": "GENERAS",
+      "saved": "AHORRAS",
+      "home": "teletrabajando",
+      "work": "desplazándote",
+      "or": "ES DECIR",
+      "economised": "de ahorro en tu huella de carbono anual",
+      "total": "ES DECIR TANTAS EMISIONES COMO..."
+    },
+    "distance": {
+      "header": "Descubre la cantidad de CO₂e que emites para esta distancia"
+    },
+    "mode-selector": {
+      "distance": "Distancia",
+      "itineraire": "Itinerario",
+      "teletravail": "Teletrabajo",
+      "list": "Lista",
+      "comparison": "Comparación",
+      "comparisonMode": "Modo de visualización:"
+    }
+  },
+  "chauffage": {
+    "title": "Descubre la cantidad de CO₂e que emites para calentar esta superficie por año"
+  },
+  "flds": {
+    "label": "Descubre las frutas y verduras del mes de",
+    "title": "Descubre el impacto de carbono de las frutas y verduras de temporada para este mes"
+  },
+  "category-simulator": {
+    "passenger": "pasajero[s]",
+    "legend": {
+      "construction": "Construcción",
+      "usage": "Uso"
+    },
+    "vetement": {
+      "display": "Ver todas las prendas",
+      "hide": "Ver solo las prendas principales"
+    },
+    "appareils": {
+      "display": "Ver todos los dispositivos",
+      "hide": "Ver solo los dispositivos principales"
+    },
+    "transport": {
+      "display": "Ver todos los modos de transporte",
+      "hide": "Mostrar menos modos de transporte"
+    }
+  },
+  "comparateur": {
+    "title": "Es tantas emisiones como para fabricar, consumir o recorrer...",
+    "title-bis-1": "Es",
+    "title-bis-2": "es decir tantas emisiones como para fabricar, consumir o recorrer...",
+    "detail": " Ver el detalle",
+    "co2-unit": "kg de CO₂",
+    "generate": "Generar otros equivalentes",
+    "modify": "Modificar mis equivalentes",
+    "add": "Añadir un equivalente",
+    "overscreen": {
+      "search": "Buscar un objeto, un gesto...",
+      "back": "Volver al comparador",
+      "equivalents": "equivalentes",
+      "no-result-1": "Ningún resultado coincide con tu búsqueda.",
+      "no-result-2": "Puedes probar otros términos o",
+      "no-result-3": "volver a la lista de equivalentes",
+      "hide": "Ocultar elementos de la categoría",
+      "show": "Ver elementos de la categoría",
+      "compare": "Comparar solo con esta categoría",
+      "compare-button": "Ver la comparación",
+      "max": "equivalentes ya seleccionados"
+    }
+  },
+  "livraison": {
+    "produit": "Tú ordenas...",
+    "grande consommation": "Productos de gran consumo (alimentos, comestibles, bebidas...)",
+    "habillement": "Vestimenta (ropa, zapatos, accesorios...)",
+    "culturel": "Productos culturales (CD, libros, DVD...)",
+    "équipements volumineux": "Muebles y grandes electrodomésticos",
+    "retrait": "Que te entregan en...",
+    "domicile": "Entrega a domicilio",
+    "point de retrait": "Punto de recogida",
+    "click and collect": "Click & collect",
+    "point-de-retrait": "El punto de recogida",
+    "click-and-collect": "El click & collect",
+    "trajet": "¿Está en tu ruta habitual?",
+    "yes": "Sí",
+    "plane": "El paquete viene de lejos",
+    "yes-plane": "Sí (transporte por avión)",
+    "no": "No",
+    "km": "Para ir al punto de recogida, recorres...",
+    "voiture thermique": "En coche",
+    "voiture électrique": "En coche eléctrico",
+    "marche": "Caminando",
+    "vélo": "en bicicleta",
+    "petit véhicule électrique": "en bicicleta eléctrica",
+    "commun": "En transporte público",
+    "generate": "LA ENTREGA DE TU PAQUETE GENERA",
+    "total": "LO QUE CORRESPONDE A..",
+    "mean": "En promedio, haces este tipo de pedido...",
+    "mean-unit": "veces",
+    "1": "Por año",
+    "12": "Por mes",
+    "52": "Por semana",
+    "habits": "TUS HÁBITOS DE ENTREGA GENERAN",
+    "year": "Por año"
+  },
+  "usage-numerique": {
+    "title": "Comparar el impacto de los usos con el impacto de la construcción",
+    "description": "En general, la mayoría de tu huella digital proviene de la construcción de tus dispositivos y no del uso de estos.",
+    "usages": "TUS USOS EMITEN",
+    "or": "ES DECIR...",
+    "total": "LO QUE CORRESPONDE A...",
+    "email-title": "Correos enviados",
+    "visio-title": "Horas de videoconferencia",
+    "streaming-title": "Horas de streaming",
+    "by-week": "por semana",
+    "by-year": "por año",
+    "email-year": "1 año de correos electrónicos",
+    "streaming-year": "1 año de streaming",
+    "visio-year": "1 año de videoconferencias",
+    "heure": "hora",
+    "email": "correo",
+    "smartphone": "Smartphone",
+    "tablette": "Tableta",
+    "ordinateur portable": "Ordenador portátil",
+    "ordinateur et écran": "Ordenador de escritorio",
+    "0075": "Sin archivo adjunto",
+    "1075": "Archivo adjunto de 1MB",
+    "5075": "Archivo adjunto de 5MB",
+    "audio": "Audio",
+    "TV": "Televisión",
+    "SD": "Baja definición",
+    "HD": "Alta definición",
+    "ultra HD": "4K",
+    "fixe FR": "Wifi",
+    "mobile FR": "4G",
+    "construction": {
+      "smartphone": "Construcción de un smartphone",
+      "television": "Construcción de una televisión",
+      "ordinateur": "Construcción de un ordenador portátil"
+    }
+  },
+  "osez-changer": {
+    "title": "¡Cuenta tus zapatos!",
+    "description": "En promedio, los franceses solo usan un tercio de los zapatos que poseen. ¿Y si despejamos los armarios?",
+    "paire": "par(s)",
+    "new-paire": "par(s) de zapatos nuevos",
+    "avis": "🧠 Según tú...",
+    "avis-description": "¿Cuántos pares de zapatos crees que necesitas?",
+    "penderie": "👉 En tus armarios",
+    "penderie-description": "¿Cuántos pares de zapatos tienes realmente?",
+    "neuf": "✨ Tus compras recientes",
+    "neuf-description": "¿Cuántos pares de zapatos nuevos has comprado este año?",
+    "total": "LO QUE CORRESPONDE A...",
+    "waiting": "La respuesta a la pregunta anterior mostrará el impacto en carbono de la compra de zapatos nuevos"
+  },
+  "equivalent": {
+    "year": "año(s)",
+    "hypotheses": "Hipótesis",
+    "fabrication": "Fabricación",
+    "usage": "Uso",
+    "fdv": "Fin de vida",
+    "usage-fdv": "Uso y fin de vida",
+    "total": "Total",
+    "Matières premières": "Materias primas",
+    "Approvisionnement": "Abastecimiento",
+    "hypothesis": {
+      "pre": {
+        "the": "Suponemos una taza de 250 ml (simplificada aquí a 250 mg).",
+        "cafe": "Suponemos una taza de 250 ml (simplificada aquí a 250 mg).",
+        "avion-pny": "Distancia total recorrida: 11600 km.",
+        "tgv-paris-berlin": "Distancia total recorrida: 2478 km.",
+        "tgv-paris-marseille": "Distancia total recorrida: 1504 km.",
+        "voiture-lille-nimes": "Distancia total recorrida: 1882 km.",
+        "avion-courtcourrier": "Tasa de ocupación media de 101-220 pasajeros",
+        "avion-moyencourrier": "Tasa de ocupación media de 101-220 pasajeros",
+        "avion-longcourrier": "Tasa de ocupación media de 101-220 pasajeros",
+        "laveling": "Capacidad de 7kg.",
+        "mangue": "Importada por avión.",
+        "lit": "Cama + somier + colchón",
+        "smartphone": "Pantalla media de 6,63 pulgadas, mezcla de tecnologías LCD y OLED, 8 GB de RAM, 210 GB de memoria (mezcla ponderada entre 3 configuraciones, 24%, 24%, 52%). Promedio de uso de un smartphone personal y profesional.",
+        "ordinateurfixeparticulier": "1 CPU, 10 GB de RAM, 1173 GB de HDD, 442 GB de SSD, mezcla de tarjeta gráfica integrada o separada (mezcla ponderada entre 5 configuraciones de ordenadores de escritorio sin pantalla, para uso particular).",
+        "ordinateurfixeprofessionnel": "1 CPU, 8 GB de RAM, 1000 GB de HDD, 250 GB de SSD, tarjeta gráfica separada (una configuración simple).",
+        "ecran": "Tamaño medio (24 pulgadas) y mezcla de tecnologías (98,6% LCD, 1,4% OLED) (mezcla ponderada entre 2 configuraciones de pantallas de ordenador).",
+        "tabletteclassique": "Pantalla de 10,53 pulgadas, mezcla de tecnologías de pantalla LCD, 4,7 GB de RAM, 144 GB de memoria (mezcla ponderada entre 3 configuraciones de tabletas). Promedio de uso de una tableta personal y profesional.",
+        "television": "Tamaño y tecnología medios (82% LCD (45 pulgadas), 1% OLED (53 pulgadas), 17% OLED (68 pulgadas)) (mezcla ponderada entre 3 configuraciones de televisores).",
+        "ordinateurportable": "Pantalla media de 14,6 pulgadas, 1 CPU, 11 GB de RAM, 497 GB de SSD (mezcla ponderada entre 3 configuraciones de ordenadores portátiles para uso particular).",
+        "casquevr": "Promedio de dos tecnologías (50% LCD, 50% OLED) + inclusión de dos mandos.",
+        "clefusb": "Capacidad media (16 GB).",
+        "box": "Uso personal y profesional; xDSL, FTTx.",
+        "spam": "No leído.",
+        "stockagedonnee": "Durante 1 año."
+      },
+      "post": {
+        "avion-courtcourrier": "por persona en Francia. Consideramos el impacto de carbono de las estelas de condensación. Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida) y la producción y distribución de combustible y electricidad. No se incluye la construcción de infraestructuras (carreteras, vías férreas, aeropuertos...).",
+        "avion-moyencourrier": "por persona en Francia. Consideramos el impacto de carbono de las estelas de condensación. Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida) y la producción y distribución de combustible y electricidad. No se incluye la construcción de infraestructuras (carreteras, vías férreas, aeropuertos...).",
+        "avion-longcourrier": "por persona en Francia. Consideramos el impacto de carbono de las estelas de condensación. Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida) y la producción y distribución de combustible y electricidad. No se incluye la construcción de infraestructuras (carreteras, vías férreas, aeropuertos...).",
+        "avion-pny": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida) y la producción y distribución de combustible y electricidad. No se incluye la construcción de infraestructuras (carreteras, vías férreas, aeropuertos...).",
+        "tgv-paris-berlin": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida) y la producción y distribución de combustible y electricidad. No se incluye la construcción de infraestructuras (carreteras, vías férreas, aeropuertos...).",
+        "tgv-paris-marseille": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida) y la producción y distribución de combustible y electricidad. No se incluye la construcción de infraestructuras (carreteras, vías férreas, aeropuertos...).",
+        "voiture-lille-nimes": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida) y la producción y distribución de combustible y electricidad. No se incluye la construcción de infraestructuras (carreteras, vías férreas, aeropuertos...).",
+        "francais": "Los franceses emiten en promedio 9,3 toneladas de CO₂e por año (dato del Servicio de Datos y Estudios Estadísticos para 2022, Ministerio de la Transición Ecológica). Esta media varía mucho según el estilo de vida, el uso del coche, del avión, la vida en casa o en apartamento, el tipo de calefacción, la alimentación, etc.",
+        "game-of-thrones": "Un episodio de Game of Thrones dura en promedio 1 hora. El dato se calcula sobre una hora de streaming en alta definición, en una televisión, con conexión wifi.",
+        "friends": "La serie completa de Friends consta de 236 episodios de aproximadamente 20 minutos cada uno. El dato se calcula sobre una hora de streaming en alta definición, en una televisión, con conexión wifi."
+      }
+    },
+    "usage-numerique": {
+      "appareil": "Dispositivo",
+      "used": "usado",
+      "take": "Tener en cuenta",
+      "construction": "¿la construcción?",
+      "yes": "Sí",
+      "no": "No",
+      "email-mainTitle": "Tiempo de redacción",
+      "visio-mainTitle": "Horas de videoconferencia",
+      "streaming-mainTitle": "Horas de streaming",
+      "email-mainUnit": "minuto",
+      "visio-mainUnit": "hora",
+      "streaming-mainUnit": "hora",
+      "email-secondUnit": "persona",
+      "visio-secondUnit": "participante",
+      "email-title": "correos enviados",
+      "visio-title": "horas de videoconferencia",
+      "streaming-title": "horas de streaming",
+      "email-secondTitle": "Número de destinatarios",
+      "visio-secondTitle": "Número de participantes"
+    },
+    "ecv": {
+      "1": "Materias primas",
+      "2": "Abastecimiento",
+      "3": "Formado",
+      "4": "Ensamblaje y distribución",
+      "5": "Construcción",
+      "6": "Combustible",
+      "7": "Estelas de condensación",
+      "8": "Uso",
+      "9": "Fin de vida",
+      "30": "Agricultura",
+      "31": "Transformación",
+      "32": "Embalaje",
+      "33": "Transporte",
+      "34": "Supermercado y distribución",
+      "35": "Consumo",
+      "13": "Construcción de terminales",
+      "14": "Uso de terminales",
+      "15": "Transmisión",
+      "16": "Construcción de centros de datos",
+      "17": "Uso de centros de datos",
+      "40": "Construcción de terminales",
+      "41": "Uso de terminales",
+      "42": "Transmisión",
+      "43": "Centros de datos"
+    }
+  },
+  "category": {
+    "name-caspratiques": "Casos prácticos",
+    "name-usagenumerique": "Uso digital",
+    "name-chauffage": "Calefacción",
+    "name-transport": "Transporte",
+    "name-fruitsetlegumes": "Frutas y verduras",
+    "name-numerique": "Digital",
+    "name-repas": "Comida",
+    "name-habillement": "Ropa",
+    "name-mobilier": "Mobiliario",
+    "name-electromenager": "Electrodomésticos",
+    "name-boisson": "Bebida"
+  },
+  "unit": {
+    "par": "por",
+    "avec": "con",
+    "unité": "unidad",
+    "m²": "m²",
+    "km": "km",
+    "kg": "kg",
+    "repas": "comida",
+    "litre": "litro",
+    "A/R": "ida y vuelta",
+    "épisode": "episodio",
+    "intégrale": "completo",
+    "param": "con los parámetros indicados a continuación",
+    "email": "correo",
+    "année": "año",
+    "recherche": "búsqueda"
+  },
+  "ressources": {
+    "tri": "Ordenar tus armarios para ganar espacio en casa",
+    "questions": "Hacerse las preguntas correctas antes de comprar: ¿realmente lo necesito?",
+    "deuxieme-vie": "Dar una segunda vida a la ropa y zapatos no utilizados",
+    "pompe-chaleur": "Equiparse con una bomba de calor",
+    "chauffage-bois": "Adoptar calefacción de madera",
+    "wattris": "Simular el consumo eléctrico de tu hogar",
+    "ngc": "Estimar tu huella de carbono de consumo",
+    "agir": "¿El teletrabajo, qué cambia para el planeta?",
+    "calendar": "Calendario de frutas y verduras de temporada",
+    "livraison": "Descargar la guía “E-consumidor & responsable”"
+  }
+}

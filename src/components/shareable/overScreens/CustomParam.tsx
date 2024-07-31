@@ -67,6 +67,7 @@ const configs: Record<
     options: [
       { value: 'fr', label: 'fr' },
       { value: 'en', label: 'en' },
+      { value: 'es', label: 'es' },
     ],
   },
 }

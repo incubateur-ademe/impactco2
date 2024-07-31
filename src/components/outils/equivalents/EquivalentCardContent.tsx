@@ -28,7 +28,7 @@ const EquivalentCardContent = ({ equivalent, category }: { equivalent: ComputedE
           {unit} CO₂e
         </div>
         <div className={styles.unit}>
-          {equivalent.unit && equivalent.unit.startsWith('avec') ? '' : language === 'en' ? 'per ' : 'par '}
+          {equivalent.unit && t(equivalent.unit).startsWith(t('avec')) ? '' : `${t('par')} `}
           {t(equivalent.unit || category?.unit || 'unité')}
         </div>
       </div>

@@ -21,7 +21,8 @@
       "unit": "m²"
     },
     "km": {
-      "title": "Afficher une distance personnalisée"
+      "title": "Afficher une distance personnalisée",
+      "unit": "km"
     },
     "roundTrip": {
       "title": "Aller / Retour"
@@ -36,7 +37,8 @@
     "language": {
       "label": "Langue",
       "fr": "Français",
-      "en": "English"
+      "en": "English",
+      "es": "Español"
     },
     "theme": {
       "label": "Mode d'affichage",
@@ -266,7 +268,8 @@
     "penderie-description": "Combien de paires de chaussures possédez-vous réellement ?",
     "neuf": "✨ Vos achats récents",
     "neuf-description": "Combien de paires de chaussures neuves avez-vous acheté cette année ?",
-    "total": "SOIT AUTANT D’ÉMISSIONS QUE..."
+    "total": "SOIT AUTANT D’ÉMISSIONS QUE...",
+    "waiting": "Une réponse à la question ci-dessus permet d’afficher l’impact carbone de l’achat de chaussures neuves"
   },
   "equivalent": {
     "year": "année[s]",
@@ -380,6 +383,8 @@
     "name-boisson": "Boisson"
   },
   "unit": {
+    "par": "par",
+    "avec": "avec",
     "unité": "unité",
     "m²": "m²",
     "km": "km",
