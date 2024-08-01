@@ -26,6 +26,7 @@ const csp = {
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.js`,
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/plugins/HeatmaSessionRecording/configs.php`,
   ],
+  'frame-src': ["'self'", process.env.CONNECT_IFRAME_HOME, process.env.CONNECT_IFRAME_RDV],
 }
 
 if (process.env.UNSAFE_EVAL === 'true') {
