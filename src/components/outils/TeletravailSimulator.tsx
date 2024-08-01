@@ -92,7 +92,6 @@ const TeletravailSimulator = () => {
               setTransport(event.target.value)
             }}
             equivalents={deplacements}
-            equivalent={deplacement}
           />
         </div>
         <div className={itineraireStyles.days}>

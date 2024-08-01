@@ -393,6 +393,15 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       const comparison = searchParams.get('comparison')?.replaceAll(' ', '+').split(',') as string[]
       setComparison(comparison)
     }
+    if (searchParams.get('transport')) {
+      setTeletravailTransport(searchParams.get('transport') as string)
+    }
+    if (searchParams.get('presentiel')) {
+      setPresentiel(Number(searchParams.get('presentiel')))
+    }
+    if (searchParams.get('homeOffice')) {
+      setHomeOffice(Number(searchParams.get('homeOffice')))
+    }
 
     completeAddress(setItineraireStart, (searchParams.get('start') || searchParams.get('itineraireStart')) as string)
     completeAddress(setItineraireEnd, (searchParams.get('end') || searchParams.get('itineraireEnd')) as string)

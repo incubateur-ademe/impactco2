@@ -17,7 +17,8 @@
     "understand": "Understanding data",
     "download": "Download",
     "m2": {
-      "title": "Display a custom surface"
+      "title": "Display a custom surface",
+      "unit": "m²"
     },
     "km": {
       "title": "Display a custom distance"
@@ -67,7 +68,16 @@
       "start": "Home",
       "end": "Office"
     },
+    "presentiel": {
+      "title": "On-site",
+      "unit": "day[s]"
+    },
+    "homeOffice": {
+      "title": "Remote work",
+      "unit": "day[s]"
+    },
     "transport": {
+      "title": "Transport mode",
       "search": "Search a transport",
       "back": "Back to the simulator",
       "mode-share": "Display mode to share",
