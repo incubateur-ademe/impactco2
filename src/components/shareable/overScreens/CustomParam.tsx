@@ -145,6 +145,7 @@ const CustomParam = ({
                 onChange={(event) => {
                   param.setter(event.target.value)
                 }}
+                disabled={!visible}
               />
             </>
           ) : config.type === 'boolean' ? (

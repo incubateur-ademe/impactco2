@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
@@ -27,7 +28,7 @@ const SelectEquivalent = ({ equivalents, ...rest }: Omit<SelectProps, 'children'
         ))}
       </Select>
       {equivalent && (
-        <div className={styles.equivalentIcon}>
+        <div className={classNames(styles.equivalentIcon, { [styles.disabled]: rest.disabled })}>
           <EquivalentIcon height={2.5} equivalent={equivalent} />
         </div>
       )}
