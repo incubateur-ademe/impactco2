@@ -22,10 +22,7 @@ export default function useTransportations(
     const { km } = params.distance
     const { displayAll, carpool } = params[type]
     const values = itineraries ? { ...itineraries } : null
-    if (itineraries && values && params.itineraire.roundTrip) {
-      //@ts-expect-error: key is managed via itineraries
-      Object.entries(values).forEach(([key, value]) => (values[key] = value * 2))
-    }
+    const roundTripFactor = itineraries && values && params.itineraire.roundTrip ? 2 : 1
 
     const allEquivalents =
       values || km
@@ -49,23 +46,24 @@ export default function useTransportations(
               }
               return equivalent
             })
-            .map((equivalent) => ({
-              ...equivalent,
-              link: `/outils/transport/${equivalent.slug}`,
-              name:
-                getNameWithoutSuffix(params.language, { ...equivalent, carpool: 0 }) +
-                (values
-                  ? ` - ${formatNumber(
-                      values && equivalent.type ? values[equivalent.type as DeplacementType] : km
-                    ).toLocaleString()} km`
-                  : ''),
-              value:
-                computeECV(equivalent) * (values && equivalent.type ? values[equivalent.type as DeplacementType] : km),
-              usage:
-                formatUsage(equivalent) * (values && equivalent.type ? values[equivalent.type as DeplacementType] : km),
-              onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
-            }))
+            .map((equivalent) => {
+              const distance =
+                (values && equivalent.type ? values[equivalent.type as DeplacementType] : km) * roundTripFactor
+              return {
+                ...equivalent,
+                link: `/outils/transport/${equivalent.slug}`,
+                name:
+                  getNameWithoutSuffix(params.language, { ...equivalent, carpool: 0 }) +
+                  (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
+                value: computeECV(equivalent) * distance,
+                usage: formatUsage(equivalent) * distance,
+                onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
+              }
+            })
             .flatMap((equivalent) => {
+              const distance =
+                (values && equivalent.type ? values[equivalent.type as DeplacementType] : km) * roundTripFactor
+
               const carpoolValue = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
               return equivalent.withCarpool &&
                 params.transport.modes.find((mode) => mode.startsWith(`${equivalent.slug}+`))
@@ -75,11 +73,7 @@ export default function useTransportations(
                       carpool: carpoolValue,
                       name:
                         getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
-                        (values
-                          ? ` - ${formatNumber(
-                              values && equivalent.type ? values[equivalent.type as DeplacementType] : km
-                            ).toLocaleString()} km`
-                          : ''),
+                        (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                       initialValue: equivalent.value,
                       value: equivalent.value / (carpoolValue + 1),
                       ecv: equivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
