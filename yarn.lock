@@ -3878,10 +3878,10 @@
     "@opentelemetry/instrumentation" "^0.49 || ^0.50 || ^0.51 || ^0.52.0"
     "@opentelemetry/sdk-trace-base" "^1.22"
 
-"@publicodes/react-ui@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@publicodes/react-ui/-/react-ui-1.5.0.tgz#0beac2683a40bb4d22e266c296a63c9cd8cf0ebe"
-  integrity sha512-CGflwv7GNkQbOSGVk7YO9pB4lisPTECR18VDMwgKaWgHuIh1Q4WdHRFOXD2cWWcpZOyiSM0+IEGzHPEA39UlDw==
+"@publicodes/react-ui@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@publicodes/react-ui/-/react-ui-1.4.0.tgz#907f7602f0d7b0b61329e8f496410a6c282843d1"
+  integrity sha512-HbWjOxscqHAJO52GptR120D1bvAiTMWtddoxJfToZd1PlU0SnaufnpMm7IdjbsUGYYdebjCdig0oCQMn9iiTBA==
   dependencies:
     fuse.js "^7.0.0"
     styled-components "^6.1.1"
@@ -13286,10 +13286,10 @@ public-encrypt@^4.0.0:
     randombytes "^2.0.1"
     safe-buffer "^5.1.2"
 
-publicodes@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.5.0.tgz#776ce14af79a1c130bd1e9092a5f23574d2f4711"
-  integrity sha512-A4rQkVN56tBg5uYzL0W639UTKrfjV4jLP+w1uxpNEpfw4NygV8sZQpG2wJVI/AOZoVUUbRbpyi8UXXb07O4YSA==
+publicodes@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.4.0.tgz#6f126326d0895ec9679ea31fa2c12a27b206f633"
+  integrity sha512-42LTuqGB8g8DP3ZUbT4vKu+D6fR7iJ+Ibcsw0SALFw25UKPpRBi8ibYvcoDt4FWf9CAFUKaSdLe6EYN1GS2W3w==
 
 pump@^3.0.0:
   version "3.0.0"
