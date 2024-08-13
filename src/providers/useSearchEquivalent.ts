@@ -55,7 +55,7 @@ export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, cate
             const [slug] = equivalent.slug.split('+')
             return modes.includes(`${slug}+1`)
           }
-          return modes.includes(equivalent.slug)
+          return equivalent.slug.startsWith('avion') ? modes.includes('avion') : modes.includes(equivalent.slug)
         }
         return true
       })
