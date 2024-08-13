@@ -25,11 +25,13 @@ const Suggestions = ({
     (e: KeyboardEvent) => {
       if (e.code === 'ArrowDown') {
         e.preventDefault()
-        current < maxSuggestions - 1 ? setCurrent((prevCurrent) => prevCurrent + 1) : setCurrent(0)
+        setCurrent(current < maxSuggestions - 1 ? (prevCurrent) => prevCurrent + 1 : 0)
       }
       if (e.code === 'ArrowUp') {
         e.preventDefault()
-        current > 0 && setCurrent((prevCurrent) => prevCurrent - 1)
+        if (current > 0) {
+          setCurrent((prevCurrent) => prevCurrent - 1)
+        }
       }
       if (e.code === 'Enter') {
         const result = results[current]

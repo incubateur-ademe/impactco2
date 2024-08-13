@@ -14,7 +14,7 @@ import { repas } from 'data/categories/repas'
 import { usageNumeriques } from 'data/categories/usagenumerique'
 import { computeECV } from 'utils/computeECV'
 
-const equivalents = [
+export const computedEquivalents = [
   ...boissons,
   ...flattenEquivalents(deplacements),
   ...electromenager,
@@ -26,9 +26,7 @@ const equivalents = [
   ...chauffage,
   ...fruitsEtLegumes,
   ...casPratiques,
-]
-
-export const computedEquivalents = equivalents.map((equivalent) => ({
+].map((equivalent) => ({
   ...equivalent,
   link: `/outils/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
   value: computeECV(equivalent),

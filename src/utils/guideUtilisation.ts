@@ -34,7 +34,7 @@ export const getGuideUtilisation = unstable_cache(
               id: result.id,
               content,
             }
-          } catch (e) {
+          } catch {
             return { id: null, content: null }
           }
         })
@@ -46,7 +46,7 @@ export const getGuideUtilisation = unstable_cache(
           title: result.properties.Name.title.map((title) => title.plain_text).join(''),
           content: contents.find((content) => content.id === result.id)?.content,
         }))
-    } catch (e) {
+    } catch {
       return []
     }
   },

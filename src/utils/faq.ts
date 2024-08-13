@@ -36,7 +36,7 @@ export const getFAQs = unstable_cache(
               id: result.id,
               content,
             }
-          } catch (e) {
+          } catch {
             return { id: null, content: null }
           }
         })
@@ -56,7 +56,7 @@ export const getFAQs = unstable_cache(
           content: contents.find((content) => content.id === result.id)?.content,
           section: result.properties.Section.select.name,
         }))
-    } catch (e) {
+    } catch {
       return []
     }
   },

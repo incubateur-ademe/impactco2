@@ -9,6 +9,7 @@ import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './ColumnEquivalent.module.css'
 import baseStyles from './Equivalent.module.css'
+import Progress from './Progress'
 
 const ColumnEquivalent = ({
   baseValue,
@@ -25,53 +26,15 @@ const ColumnEquivalent = ({
 }) => {
   const isAnimated = useMemo(() => animated && comparisons.length > 1, [animated, comparisons])
   const [toDisplay, setToDisplay] = useState(0)
-  const [progress, setProgress] = useState(0)
   const [fadeIn, setFadeIn] = useState(false)
-
-  const displayedTimeoutRef = useRef<NodeJS.Timeout>()
-  const fadeInTimeoutRef = useRef<NodeJS.Timeout>()
-
-  const update = useCallback(() => {
-    setProgress((value) => (value + 1) % 100)
-  }, [])
-
-  const updateWithTimeout = useCallback(() => {
-    update()
-    displayedTimeoutRef.current = setTimeout(updateWithTimeout, 50)
-  }, [])
-
-  useEffect(() => {
-    if (progress === 99) {
-      clearTimeout(displayedTimeoutRef.current)
-      setFadeIn(true)
-      fadeInTimeoutRef.current = setTimeout(() => {
-        setFadeIn(false)
-        setToDisplay((value) => (value + 1) % comparisons.length)
-        setProgress(0)
-        setTimeout(updateWithTimeout, 1000)
-      }, 1000)
-
-      return () => {
-        if (fadeInTimeoutRef.current) {
-          clearTimeout(fadeInTimeoutRef.current)
-        }
-      }
-    }
-  }, [progress])
 
   useEffect(() => {
     if (isAnimated) {
       setToDisplay(0)
-      setProgress(0)
       setFadeIn(false)
-      updateWithTimeout()
-    }
-    return () => {
-      if (displayedTimeoutRef.current) {
-        clearTimeout(displayedTimeoutRef.current)
-      }
     }
   }, [isAnimated, comparisons])
+
   const intValue = Number(baseValue)
   const preciseValue = Number.isNaN(intValue) ? 100000 : intValue
   const { unit, value } = getNumberPrecision(preciseValue / 1000)
@@ -89,15 +52,12 @@ const ColumnEquivalent = ({
       </div>
       <div className={baseStyles.rightColumn}>
         {isAnimated && (
-          <div
+          <Progress
             className={baseStyles.progressBarColumn}
-            style={{
-              background: `radial-gradient(closest-side, white 59%, transparent 60% 100%), conic-gradient(var(--primary-20) ${progress}%, transparent 0)`,
-            }}>
-            <progress value={progress} className={baseStyles.progress}>
-              {progress}%
-            </progress>
-          </div>
+            comparisons={comparisons}
+            setFadeIn={setFadeIn}
+            setToDisplay={setToDisplay}
+          />
         )}
         <div className={isAnimated ? baseStyles.animatedEqualColumn : baseStyles.equalColumn}>
           <EqualIcon />
