@@ -37,7 +37,9 @@ const EquivalentPage = ({
         links={[
           { label: 'Accueil', link: '/' },
           { label: 'Les outils', link: '/outils' },
-          { label: category.name, link: `/outils/${category.slug}` },
+          category.slug === 'caspratiques'
+            ? { label: 'Comparateur carbone', link: '/outils/comparateur' }
+            : { label: category.name, link: `/outils/${category.slug}` },
         ]}
       />
       <Block title={getName('fr', equivalent)} as='h1' description="Détail de l'impact carbone">
