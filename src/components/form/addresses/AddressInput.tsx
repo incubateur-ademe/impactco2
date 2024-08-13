@@ -49,7 +49,9 @@ const AddressInput = ({
   useEffect(() => {
     if (!focus) {
       setCurrent(0)
-      input.current && input.current.blur()
+      if (input.current) {
+        input.current.blur()
+      }
     }
   }, [focus])
 

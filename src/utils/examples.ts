@@ -66,7 +66,7 @@ export const getExamples = unstable_cache(
         }
       })
       return Object.values(examples)
-    } catch (e) {
+    } catch {
       return []
     }
   },
@@ -104,7 +104,7 @@ export const getCommunications = unstable_cache(
         ],
         activity: '',
       }))
-    } catch (e) {
+    } catch {
       return []
     }
   },
