@@ -154,12 +154,6 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
-.progress {
-  visibility: hidden !important;
-  height: 0 !important;
-  width: 0 !important;
-}
-
 .columnRandomize,
 .randomize {
   padding: 0 !important;
