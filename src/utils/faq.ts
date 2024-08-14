@@ -47,15 +47,23 @@ export const getFAQs = unstable_cache(
           (result) =>
             result.properties['Page(s)'] &&
             result.properties['Page(s)'].multi_select &&
-            result.properties['Page(s)'].multi_select.length > 0
+            result.properties['Page(s)'].multi_select.length > 0 &&
+            result.properties.Section.select
         )
         .sort((a, b) => a.properties.Order.number - b.properties.Order.number)
-        .map((result) => ({
-          title: result.properties.Name.title.map((title) => title.plain_text).join(''),
-          pages: result.properties['Page(s)'].multi_select.map((select) => select.name),
-          content: contents.find((content) => content.id === result.id)?.content,
-          section: result.properties.Section.select.name,
-        }))
+        .map((result) => {
+          try {
+            return {
+              title: result.properties.Name.title.map((title) => title.plain_text).join(''),
+              pages: result.properties['Page(s)'].multi_select.map((select) => select.name),
+              content: contents.find((content) => content.id === result.id)?.content,
+              section: result.properties.Section.select.name,
+            }
+          } catch {
+            return null
+          }
+        })
+        .filter((result) => !!result)
     } catch {
       return []
     }
