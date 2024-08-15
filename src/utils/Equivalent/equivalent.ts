@@ -1,4 +1,4 @@
-import { Equivalent } from 'types/equivalent'
+import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import values from './values.json'
 
@@ -100,3 +100,8 @@ export const getName = (
   const name = getNameWithoutSuffix(language, equivalent, withPrefix, value)
   return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? `(${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}`
 }
+
+export const isEquivalentInMode = (equivalent: ComputedEquivalent, mode: string) =>
+  mode === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === mode
+
+export const getComparisonSlug = (slug: string) => (slug.startsWith('avion-') ? 'avion' : slug)

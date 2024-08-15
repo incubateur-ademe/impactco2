@@ -349,7 +349,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (searchParams.get('comparisons')) {
-      setEquivalents((searchParams.get('comparisons') as string).replace(' ', '+').split(','))
+      setEquivalents((searchParams.get('comparisons') as string).replaceAll(' ', '+').split(','))
     } else {
       setEquivalents(getRandomEquivalents(searchParams.get('equivalent') as string, 3))
     }
