@@ -56,7 +56,7 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
       <FAQsList
         faqs={filteredFaqs.filter((faq) => faq.section === 'Données')}
         title='Données'
-        description='Questions fréquentes à propos des données du site Impact CO₂'
+        description='Questions fréquentes à propos de nos données'
       />
       <FAQsList
         faqs={filteredFaqs.filter((faq) => faq.section === 'Transports')}
