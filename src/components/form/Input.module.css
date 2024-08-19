@@ -38,6 +38,10 @@
   cursor: pointer;
   appearance: none;
   padding-right: 2rem;
+
+  &:disabled {
+    cursor: default;
+  }
 }
 
 .selectWrapper {

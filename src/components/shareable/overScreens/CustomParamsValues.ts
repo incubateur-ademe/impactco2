@@ -9,6 +9,16 @@ const values: Record<string, (params: Params) => Record<string, CustomParamValue
   fruitsetlegumes: (params: Params) => ({
     month: { value: params.fruitsetlegumes.month, setter: params.fruitsetlegumes.setMonth } as CustomParamValue,
   }),
+  teletravail: (params: Params) =>
+    ({
+      teletravail: {
+        start: { value: params.teletravail.start?.address || '', setter: params.teletravail.setStart },
+        end: { value: params.teletravail.end?.address || '', setter: params.teletravail.setEnd },
+      },
+      transport: { value: params.teletravail.transport, setter: params.teletravail.setTransport },
+      presentiel: { value: params.teletravail.presentiel, setter: params.teletravail.setPresentiel },
+      homeOffice: { value: params.teletravail.homeOffice, setter: params.teletravail.setHomeOffice },
+    }) as Record<string, CustomParamValue>,
   usagenumerique: (params: Params) => {
     const emails = Number(params.usageNumerique.numberEmails)
     const streaming = Number(params.usageNumerique.situation['streaming . durée'])

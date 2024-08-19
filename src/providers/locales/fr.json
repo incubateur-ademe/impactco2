@@ -17,7 +17,8 @@
     "understand": "Comprendre les données",
     "download": "Télécharger",
     "m2": {
-      "title": "Afficher une surface personnalisée"
+      "title": "Afficher une surface personnalisée",
+      "unit": "m²"
     },
     "km": {
       "title": "Afficher une distance personnalisée"
@@ -52,7 +53,16 @@
       "start": "Lieu de domicile",
       "end": "Lieu de travail"
     },
+    "presentiel": {
+      "title": "Présentiel",
+      "unit": "jour[s]"
+    },
+    "homeOffice": {
+      "title": "Télétravail",
+      "unit": "jour[s]"
+    },
     "transport": {
+      "title": "Moyen de transport",
       "search": "Rechercher un mode de transport",
       "back": "Revenir au simulateur",
       "mode-share": "Modes d’affichages à partager",
