@@ -8,7 +8,7 @@ import styles from './Example.module.css'
 import Tag from './Tag'
 
 const Example = ({ example, withTags }: { example: ExampleType; withTags?: boolean }) => {
-  const image = <img src={example.logo} alt={`Logo de ${example.name}`} className={styles.image} />
+  const image = <img src={example.logo} alt={example.name} className={styles.image} />
 
   return withTags ? (
     <div className={styles.example}>
