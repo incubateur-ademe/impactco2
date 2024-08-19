@@ -52,7 +52,7 @@ const Shareable = ({
     [overScreens, overscreen, slug]
   )
 
-  const onClose = useCallback(() => setOverscreen({ ...overscreen, [slug]: '' }), [overscreen, slug])
+  const onClose = useCallback(() => setOverscreen(slug, ''), [slug])
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
@@ -196,7 +196,7 @@ const Shareable = ({
             if (action === 'telecharger') {
               takeScreenshot()
             } else {
-              setOverscreen({ ...overscreen, [slug]: action })
+              setOverscreen(slug, action)
             }
           }}
           tracking={tracking}

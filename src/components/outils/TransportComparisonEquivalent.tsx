@@ -63,7 +63,6 @@ const TransportComparisonEquivalent = ({
   const {
     language,
     setOverscreen,
-    overscreen,
     transport: { comparison },
   } = useParamContext()
   const equivalent = useMemo(
@@ -142,7 +141,7 @@ const TransportComparisonEquivalent = ({
             <div className={styles.button}>
               <GhostButton
                 onClick={() => {
-                  setOverscreen({ ...overscreen, transport: `comparison${index}` })
+                  setOverscreen('transport', `comparison${index}`)
                   track(tracking, 'Modifier', equivalent.slug)
                 }}>
                 {t('modify')}

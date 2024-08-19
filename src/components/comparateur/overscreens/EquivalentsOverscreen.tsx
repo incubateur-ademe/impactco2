@@ -16,7 +16,6 @@ import styles from './EquivalentsOverscreen.module.css'
 const EquivalentsOverscreen = () => {
   const {
     setOverscreen,
-    overscreen,
     comparateur: { equivalents, setEquivalents },
   } = useParamContext()
 
@@ -47,7 +46,7 @@ const EquivalentsOverscreen = () => {
           size='sm'
           onClick={() => {
             setEquivalents(tempEquivalents)
-            setOverscreen({ ...overscreen, comparateur: '' })
+            setOverscreen('comparateur', '')
             tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
           }}>
           {tModal('close')}
@@ -85,7 +84,7 @@ const EquivalentsOverscreen = () => {
                 key={category.slug}
                 equivalents={tempEquivalents}
                 setEquivalents={setTempEquivalents}
-                onClose={() => setOverscreen({ ...overscreen, comparateur: '' })}
+                onClose={() => setOverscreen('comparateur', '')}
               />
             ))
         )}
@@ -101,7 +100,7 @@ const EquivalentsOverscreen = () => {
           <Button
             onClick={() => {
               setEquivalents(tempEquivalents)
-              setOverscreen({ ...overscreen, comparateur: '' })
+              setOverscreen('comparateur', '')
               tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
             }}>
             {t('back')}

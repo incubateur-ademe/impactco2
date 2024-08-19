@@ -28,7 +28,6 @@ const allEquivalents = deplacements
 
 const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
   const {
-    overscreen,
     setOverscreen,
     transport: { modes },
   } = useParamContext()
@@ -47,7 +46,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
   const t = useTranslations('overscreen.transport')
   const tModal = useTranslations('modal')
   const onClose = () => {
-    setOverscreen({ ...overscreen, transport: '' })
+    setOverscreen('transport', '')
   }
   return (
     <>
