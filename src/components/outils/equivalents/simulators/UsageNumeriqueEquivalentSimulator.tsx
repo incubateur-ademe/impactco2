@@ -105,7 +105,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               />
               {values.secondValue && (
                 <>
-                  <HiddenLabel htmlFor='input-second'>{t(`${slug}-secondTitle`)}</HiddenLabel>
+                  <HiddenLabel htmlFor='input-second'>{tEquivalent(`${slug}-secondTitle`)}</HiddenLabel>
                   <NumberInput
                     id='second'
                     unit={`${tEquivalent(`${slug}-secondUnit`)}${(situation[values.secondValue] as number) > 1 ? 's' : ''}`}
