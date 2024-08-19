@@ -8,22 +8,24 @@ export const searchAddress = async (search: string, limit?: number) => {
 
   return axios
     .get<{
-      features: Address[]
+      features?: Address[]
     }>(
       `https://photon.komoot.io/api/?q=${search}${limit ? `&limit=${limit}` : ''}&${layers
         .map((layer) => `layer=${layer}`)
         .join('&')}&lang=fr&lat=46.227638&lon=2.213749&zoom=7&location_bias_scale=0.9`
     )
     .then((res) => {
-      return res.data.features.sort((a, b) => {
-        if (a.properties.country === 'France' && b.properties.country !== 'France') {
-          return -1
-        }
-        if (a.properties.country !== 'France' && b.properties.country === 'France') {
-          return 1
-        }
-        return 0
-      })
+      return res.data && res.data.features
+        ? res.data.features.sort((a, b) => {
+            if (a.properties.country === 'France' && b.properties.country !== 'France') {
+              return -1
+            }
+            if (a.properties.country !== 'France' && b.properties.country === 'France') {
+              return 1
+            }
+            return 0
+          })
+        : []
     })
 }
 
