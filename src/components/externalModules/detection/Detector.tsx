@@ -187,9 +187,8 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
       <button
         className={classNames(styles.value, 'impactCO2-etiquette-detected-value')}
         onClick={onClick}
-        title='Comprendre cette valeur'
         dangerouslySetInnerHTML={{
-          __html: impact,
+          __html: impact + `<span class="${styles.hidden}">Comprendre cette valeur</span>`,
         }}
       />
       <div

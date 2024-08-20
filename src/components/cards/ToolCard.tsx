@@ -30,7 +30,7 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
       onClick={() => {
         track('Outils', link || `/outils/${slug}`, 'click')
       }}
-      aria-label={title}>
+      aria-label={`Visualiser l'outil ${title}`}>
       <Image src={image || `/images/tools-${slug}.svg`} width={220} height={180} alt='' />
       <div className={styles.content}>
         <div>

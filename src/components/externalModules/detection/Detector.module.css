@@ -1,3 +1,8 @@
+.hidden {
+  position: absolute;
+  left: -99999px;
+}
+
 .container {
   position: relative !important;
   display: inline !important;
