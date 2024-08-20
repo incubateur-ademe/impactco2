@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ResetIcon = () => (
-  <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'>
+  <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'>
     <path
       d='M10.425 6.74672C10.38 6.9941 10.32 7.24898 10.2375 7.49637C9.6 9.29552 7.8975 10.495 5.9925 10.495C4.8 10.495 3.66 10.0152 2.8275 9.16058L5.2425 6.74672H0V11.9942L1.7625 10.2326C4.1025 12.579 7.8975 12.5865 10.2375 10.2476C11.22 9.26553 11.79 8.02861 11.9475 6.74672H10.425Z'
       fill='currentcolor'
