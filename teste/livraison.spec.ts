@@ -11,7 +11,7 @@ test('Simulator livraison', async ({ page }) => {
   await expect(page.getByTestId('etiquette-streamingvideo-value')).toHaveText('38.5')
 
   await page.getByTestId('text-select-livraison-produit').selectOption('grande consommation')
-  await expect(page.getByLabel("Le point relais est t'il sur")).toBeVisible()
+  await expect(page.getByText("Le point relais est t'il sur")).toBeVisible()
   await expect(page.getByTestId('input-km-value')).toBeVisible()
   await expect(page.getByTestId('text-select-km-type')).toBeVisible()
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('10.2')
@@ -21,7 +21,7 @@ test('Simulator livraison', async ({ page }) => {
   await expect(page.getByTestId('text-select-km-type')).not.toBeVisible()
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('8.73')
 
-  await page.getByLabel("Le point relais est t'il sur").getByLabel('Non').check()
+  await await page.getByRole('group', { name: "Le point relais est t'il sur" }).locator('label').first().click()
   await page.getByTestId('input-km-value').click()
   await page.getByTestId('input-km-value').fill('10')
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('10.9')
@@ -30,7 +30,7 @@ test('Simulator livraison', async ({ page }) => {
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('8.73')
 
   await page.getByTestId('text-select-livraison-retrait').selectOption('domicile')
-  await expect(page.getByLabel("Le point relais est t'il sur")).not.toBeVisible()
+  await expect(page.getByText("Le point relais est t'il sur")).not.toBeVisible()
   await expect(page.getByTestId('input-km-value')).not.toBeVisible()
   await expect(page.getByTestId('text-select-km-type')).not.toBeVisible()
   await expect(page.getByTestId('livraison-colis-value')).toHaveText('8.73')
