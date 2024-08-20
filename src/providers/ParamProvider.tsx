@@ -210,7 +210,7 @@ export type Params = {
 
 const ParamContext = React.createContext<Params | null>(null)
 
-export function ParamProvider({ children }: { children: ReactNode }) {
+export function ParamProvider({ children, isIframe }: { children: ReactNode; isIframe?: boolean }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<SiteLanguage>('fr')
@@ -530,10 +530,15 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
   }, [])
 
+  useEffect(() => {
+    if (isIframe) {
+      document.documentElement.lang = language
+    }
+  }, [isIframe, language])
+
   return (
     <ParamContext.Provider
       value={{
-        overscreenTrigger: overscreenTrigger.current,
         overscreen,
         setOverscreen: setOverscreeInternal,
         reset,
