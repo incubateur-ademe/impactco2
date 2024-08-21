@@ -23,11 +23,9 @@ const FAQ = ({ faq, page }: { faq: Pick<FAQType, 'title' | 'content'>; page?: st
           setDisplay(!display)
         }}>
         {faq.title}
-        <div
-          className={classNames(styles.button, { [styles.openButton]: display })}
-          title={display ? 'Cacher la réponse' : 'Voir la réponse'}>
+        <span className={classNames(styles.button, { [styles.openButton]: display })}>
           <PlusIcon />
-        </div>
+        </span>
       </button>
       {display && (
         <div className={styles.content}>

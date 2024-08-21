@@ -36,7 +36,6 @@ const EquivalentsOverscreen = () => {
         <HiddenLabel htmlFor='input-search'>{t('search')}</HiddenLabel>
         <Input
           id='search'
-          background='white'
           placeholder={t('search')}
           value={search}
           padding='lg'

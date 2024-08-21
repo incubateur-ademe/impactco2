@@ -12,6 +12,7 @@
 .hint {
   color: var(--neutral-60);
   font-weight: 400;
+  display: block;
 }
 
 .notRequired {

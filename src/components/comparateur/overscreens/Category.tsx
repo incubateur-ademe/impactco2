@@ -54,19 +54,19 @@ const Category = ({
             ? `${t('hide')} ${tCategory(`name-${category.slug}`)}`
             : `${t('show')} ${tCategory(`name-${category.slug}`)}`
         }>
-        <div className={styles.emoji}>
+        <span className={styles.emoji}>
           <EquivalentIcon height={2.5} equivalent={category} />
-        </div>
-        <div className={styles.names}>
-          <div className={styles.title}>{tCategory(`name-${category.slug}`)}</div>
-          <div>
+        </span>
+        <span className={styles.names}>
+          <span className={styles.title}>{tCategory(`name-${category.slug}`)}</span>
+          <span>
             <span className={styles.selectedNumber} data-testid={`selected-equivalents-${category.slug}-number`}>
               {categoryEquivalents.filter((equivalent) => equivalents.includes(equivalent.slug)).length}
             </span>
             <span className={styles.numbers}> / {categoryEquivalents.length}</span>
-          </div>
-        </div>
-        <div className={styles.button}>{open ? <DropdownArrowUpIcon /> : <DropdownArrowDownIcon />}</div>
+          </span>
+        </span>
+        <span className={styles.button}>{open ? <DropdownArrowUpIcon /> : <DropdownArrowDownIcon />}</span>
       </button>
       {open && (
         <>

@@ -47,10 +47,10 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
                 setModes(checked ? [...modes, transport.slug] : modes.filter((mode) => mode !== transport.slug))
               }
               label={
-                <div className={styles.left}>
+                <span className={styles.left}>
                   <EquivalentIcon equivalent={transport} height={2.5} />
-                  <div className={styles.name}>{getNameWithoutSuffix(language, transport)}</div>
-                </div>
+                  <span className={styles.name}>{getNameWithoutSuffix(language, transport)}</span>
+                </span>
               }
             />
           </li>

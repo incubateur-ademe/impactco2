@@ -174,9 +174,9 @@ const Shareable = ({
           <div className={styles.logos}>
             <Logos small />
             <div className={small ? styles.bottomLanguage : styles.language}>
-              <HiddenLabel htmlFor='text-select-language'>{t('language.label')}</HiddenLabel>
+              <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
               <Select
-                id='language'
+                id={`${slug}-language`}
                 value={language}
                 onChange={(event) => {
                   track(tracking, 'Language', event.target.value)

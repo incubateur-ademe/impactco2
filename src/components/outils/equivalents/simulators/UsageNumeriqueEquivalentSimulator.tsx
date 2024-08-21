@@ -177,9 +177,9 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               className={baseStyles.radio}
               id='radio-construction'
               label={
-                <div className={baseStyles.radioLabel}>
+                <span className={baseStyles.radioLabel}>
                   {tEquivalent('take')} <b>{tEquivalent('construction')}</b>
-                </div>
+                </span>
               }>
               <RadioInput
                 name='radio-construction'

@@ -32,14 +32,14 @@ const Feature = ({
         setOverscreen(slug, type)
       }}>
       {info.image && (
-        <div className={styles.left}>
-          <div className={styles.image}>{<Image src={info.image} alt='' width={20} height={20} />}</div>
-        </div>
+        <span className={styles.left}>
+          <span className={styles.image}>{<Image src={info.image} alt='' width={20} height={20} />}</span>
+        </span>
       )}
-      <div className={styles.right}>
-        <div className={styles.text}>{t(info.title)}</div>
+      <span className={styles.right}>
+        <span className={styles.text}>{t(info.title)}</span>
         <FullArrowRightIcon />
-      </div>
+      </span>
     </button>
   )
 }

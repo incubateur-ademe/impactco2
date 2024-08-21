@@ -37,7 +37,7 @@ const ComparisonEquivalents = ({
           )
           onClose()
         }}>
-        <div>{getName(language, equivalent)}</div>
+        <span>{getName(language, equivalent)}</span>
         <EquivalentIcon height={2} equivalent={equivalent} />
       </button>
     </li>

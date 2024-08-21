@@ -25,8 +25,8 @@ const TextArea = ({
       {label && (
         <label className={classNames(styles.label, { [styles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
-          {!inputProps.required && <div className={styles.notRequired}> - Facultatif</div>}
-          {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+          {!inputProps.required && <span className={styles.notRequired}> - Facultatif</span>}
+          {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
         </label>
       )}
       <textarea

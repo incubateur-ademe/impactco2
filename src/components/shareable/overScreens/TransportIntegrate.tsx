@@ -127,7 +127,6 @@ const TransportIntegrate = () => {
     <>
       <Checkbox required id='tabs' label={t('onglets')} hint={t('onglets-hint')}>
         <CheckboxInput
-          color='secondary'
           checked={tabs.includes(DISTANCE)}
           setChecked={(checked) => {
             if (checked) {
@@ -145,7 +144,6 @@ const TransportIntegrate = () => {
           />
         </CheckboxInput>
         <CheckboxInput
-          color='secondary'
           checked={tabs.includes(ITINERAIRE)}
           setChecked={(checked) => {
             if (checked) {
@@ -195,7 +193,6 @@ const TransportIntegrate = () => {
         ))}
       <Checkbox required id='comparisonModes' label={t('mode-integrate')}>
         <CheckboxInput
-          color='secondary'
           checked={comparisonModes.includes('list')}
           setChecked={(checked) => {
             if (checked) {
@@ -213,7 +210,6 @@ const TransportIntegrate = () => {
           />
         </CheckboxInput>
         <CheckboxInput
-          color='secondary'
           checked={comparisonModes.includes('comparison')}
           setChecked={(checked) => {
             if (checked) {

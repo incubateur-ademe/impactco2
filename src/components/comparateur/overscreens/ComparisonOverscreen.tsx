@@ -54,7 +54,6 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
         <HiddenLabel htmlFor='input-search'>{t('search')}</HiddenLabel>
         <Input
           id='search'
-          background='white'
           placeholder={t('search')}
           value={search}
           padding='lg'

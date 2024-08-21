@@ -84,14 +84,18 @@ const CategorySimulator = ({
                       {equivalent.name || getNameWithoutSuffix(params.language, equivalent)}
                     </div>
                     <div className={styles.data}>
-                      <div
-                        className={styles.fullBar}
-                        style={{ width: max ? `${(basePercent * equivalent.value) / max}%` : '0px' }}>
+                      {equivalent.value !== 0 && (
                         <div
-                          className={styles.halfBar}
-                          style={{ width: `${(100 * formatUsage(equivalent)) / equivalent.value}%` }}
-                        />
-                      </div>
+                          className={styles.fullBar}
+                          style={{ width: max ? `${(basePercent * equivalent.value) / max}%` : '0px' }}>
+                          <div
+                            className={styles.halfBar}
+                            style={{
+                              width: `${(100 * formatUsage(equivalent)) / equivalent.value}%`,
+                            }}
+                          />
+                        </div>
+                      )}
                       <span className={styles.value} data-testid={`category-${equivalent.slug}-value`}>
                         <LocalNumber number={formatNumber(equivalent.value)} />
                       </span>{' '}
