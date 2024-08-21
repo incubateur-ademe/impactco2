@@ -35,22 +35,22 @@ const Tiles = () => {
   }, [equivalents, generation])
   return (
     <>
-      <div className={styles.tiles}>
+      <ul className={styles.tiles}>
         {equivalents.map((equivalent, index) => (
-          <div key={equivalent} className={styles.tileContainer}>
+          <li key={equivalent} className={styles.tileContainer}>
             <div className={styles.background} />
             <div
               className={typeof generation === 'number' && generation <= index ? styles.disapearingTile : styles.tile}>
               <Tile slug={equivalent} />
             </div>
-          </div>
+          </li>
         ))}
         {equivalents.length < 8 && (
-          <div className={styles.tileContainer}>
+          <li className={styles.tileContainer}>
             <Tile onAdd={() => setOverscreen('comparateur', 'equivalents')} />
-          </div>
+          </li>
         )}
-      </div>
+      </ul>
       <div className={styles.buttons}>
         <Button
           disabled={generation === 0 || !!generation}

@@ -45,7 +45,7 @@ const Category = ({
   const t = useTranslations('comparateur.overscreen')
   const tCategory = useTranslations('category')
   return (
-    <div className={styles.container}>
+    <li className={styles.container}>
       <button
         className={styles.header}
         onClick={() => setOpen(!open)}
@@ -86,14 +86,16 @@ const Category = ({
               {t('compare-button')}
             </Button>
           </div>
-          <Equivalents
-            equivalents={equivalents}
-            equivalentsToDisplay={categoryEquivalents}
-            setEquivalents={setEquivalents}
-          />
+          <ul>
+            <Equivalents
+              equivalents={equivalents}
+              equivalentsToDisplay={categoryEquivalents}
+              setEquivalents={setEquivalents}
+            />
+          </ul>
         </>
       )}
-    </div>
+    </li>
   )
 }
 

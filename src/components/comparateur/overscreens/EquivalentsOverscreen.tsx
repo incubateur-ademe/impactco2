@@ -52,7 +52,7 @@ const EquivalentsOverscreen = () => {
           {tModal('close')}
         </Button>
       </div>
-      <div className={styles.content}>
+      <ul className={styles.content}>
         {search ? (
           results.length > 0 ? (
             <Equivalents
@@ -88,7 +88,7 @@ const EquivalentsOverscreen = () => {
               />
             ))
         )}
-      </div>
+      </ul>
       <div className={styles.footer}>
         <div>
           <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>

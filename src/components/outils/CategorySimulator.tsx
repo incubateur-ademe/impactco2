@@ -44,7 +44,7 @@ const CategorySimulator = ({
   const params = useParamContext()
   const t = useTranslations('category-simulator')
 
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLUListElement>(null)
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
   const [basePercent, setBasePercent] = useState(80)
@@ -69,12 +69,12 @@ const CategorySimulator = ({
 
   return (
     <div className={styles.container}>
-      <div ref={ref}>
+      <ul ref={ref}>
         {equivalents &&
           equivalents
             .sort((a, b) => getValue(a, initialParams, type) - getValue(b, initialParams, type))
             .map((equivalent) => (
-              <div
+              <li
                 key={equivalent.carpool ? `${equivalent.slug}-${equivalent.carpool}` : equivalent.slug}
                 className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
                 <IframeableLink data-testid='category-link' href={equivalent.link} className={styles.link}>
@@ -121,9 +121,9 @@ const CategorySimulator = ({
                     />
                   </div>
                 )}
-              </div>
+              </li>
             ))}
-      </div>
+      </ul>
       {setDisplayAll && displayAll !== undefined && moreText && (
         <CategoryDisplayAll
           tracking={tracking}

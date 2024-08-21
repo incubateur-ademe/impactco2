@@ -13,7 +13,7 @@ const DynamicNotion = dynamic(() => import('../Notion/DynamicNotion'))
 const FAQ = ({ faq, page }: { faq: Pick<FAQType, 'title' | 'content'>; page?: string }) => {
   const [display, setDisplay] = useState(false)
   return faq.content ? (
-    <div className={styles.faq}>
+    <li className={styles.faq}>
       <button
         className={styles.title}
         onClick={() => {
@@ -34,7 +34,7 @@ const FAQ = ({ faq, page }: { faq: Pick<FAQType, 'title' | 'content'>; page?: st
           <DynamicNotion recordMap={faq.content} />
         </div>
       )}
-    </div>
+    </li>
   ) : null
 }
 

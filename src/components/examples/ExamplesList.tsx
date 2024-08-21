@@ -21,11 +21,11 @@ const ExamplesList = ({ examples, extraText, forceDisplay, withTags, ...blockPro
 
   return !forceDisplay && length === 0 ? null : (
     <Block {...blockProps}>
-      <div className={styles.examples}>
+      <ul className={styles.examples}>
         {(displayAll ? examples : examples.slice(0, 9)).map((example) => (
           <Example key={example.name} example={example} withTags={withTags} />
         ))}
-      </div>
+      </ul>
       {length > 9 && (
         <div className={styles.displayAll}>
           <button className={styles.button} onClick={() => setDisplayAll(!displayAll)}>

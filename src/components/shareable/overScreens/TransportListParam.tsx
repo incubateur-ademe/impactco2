@@ -31,30 +31,31 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
           </div>
         )}
       </div>
-      <div className={styles.modes}>
+      <ul className={styles.modes}>
         {transports.map((transport) => (
-          <CheckboxInput
-            reversed
-            className={classNames(styles.mode, {
-              [styles.active]: modes.length !== 2 && modes.includes(transport.slug),
-              [styles.disabled]: modes.length === 2 && modes.includes(transport.slug),
-            })}
-            disabled={modes.length === 2 && modes.includes(transport.slug)}
-            labelClassName={styles.modeLabel}
-            key={transport.slug}
-            checked={modes.includes(transport.slug)}
-            setChecked={(checked) =>
-              setModes(checked ? [...modes, transport.slug] : modes.filter((mode) => mode !== transport.slug))
-            }
-            label={
-              <div className={styles.left}>
-                <EquivalentIcon equivalent={transport} height={2.5} />
-                <div className={styles.name}>{getNameWithoutSuffix(language, transport)}</div>
-              </div>
-            }
-          />
+          <li key={transport.slug} className={styles.list}>
+            <CheckboxInput
+              reversed
+              className={classNames(styles.mode, {
+                [styles.active]: modes.length !== 2 && modes.includes(transport.slug),
+                [styles.disabled]: modes.length === 2 && modes.includes(transport.slug),
+              })}
+              disabled={modes.length === 2 && modes.includes(transport.slug)}
+              labelClassName={styles.modeLabel}
+              checked={modes.includes(transport.slug)}
+              setChecked={(checked) =>
+                setModes(checked ? [...modes, transport.slug] : modes.filter((mode) => mode !== transport.slug))
+              }
+              label={
+                <div className={styles.left}>
+                  <EquivalentIcon equivalent={transport} height={2.5} />
+                  <div className={styles.name}>{getNameWithoutSuffix(language, transport)}</div>
+                </div>
+              }
+            />
+          </li>
         ))}
-      </div>
+      </ul>
     </>
   )
 }

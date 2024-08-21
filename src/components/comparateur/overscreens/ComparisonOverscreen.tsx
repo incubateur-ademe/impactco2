@@ -68,7 +68,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
           {tModal('close')}
         </Button>
       </div>
-      <div className={styles.content}>
+      <ul className={styles.content}>
         {search ? (
           results.length > 0 ? (
             <ComparisonEquivalents onClose={onClose} equivalents={results} index={index} />
@@ -90,7 +90,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
         ) : (
           <ComparisonEquivalents onClose={onClose} equivalents={equivalents} index={index} />
         )}
-      </div>
+      </ul>
       <div className={styles.footerCenter}>
         <Button
           onClick={() => {

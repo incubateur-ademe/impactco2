@@ -1,5 +1,19 @@
-.card {
+.list {
   width: calc(100% / 3 - 0.5rem);
+  height: auto;
+
+  @media screen and (max-width: 48rem) {
+    width: 100%;
+  }
+}
+
+.horizontalList {
+  width: 100%;
+}
+
+
+.card {
+  height: 100%;
   display: flex;
   text-decoration: none;
   cursor: pointer;
@@ -57,7 +71,6 @@
 .horizontalCard {
   padding: 1.25rem;
   flex-direction: row;
-  width: 100%;
 
   img {
     width: 7.5rem;

@@ -56,13 +56,15 @@ const EquivalentPage = ({
       </Block>
       {tool && (
         <Block>
-          <ToolCard
-            horizontal
-            title={tool.title}
-            description={tool.description}
-            slug={tool.slug}
-            linkLabel={tool.linkLabel}
-          />
+          <ul>
+            <ToolCard
+              horizontal
+              title={tool.title}
+              description={tool.description}
+              slug={tool.slug}
+              linkLabel={tool.linkLabel}
+            />
+          </ul>
         </Block>
       )}
     </>
