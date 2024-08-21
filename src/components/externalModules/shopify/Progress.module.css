@@ -3,3 +3,29 @@
   height: 0 !important;
   width: 0 !important;
 }
+
+.button {
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neutral-50);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+
+  &:hover {
+    background: var(--primary-10);
+    color: var(--primary-60);
+  }
+
+  &:active {
+    color: var(--primary-70);
+  }
+}
