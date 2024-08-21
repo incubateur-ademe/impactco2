@@ -89,6 +89,7 @@ const Shareable = ({
 
   return (
     <div
+      lang={language}
       className={classNames(styles.card, {
         [styles.secondaryCard]: secondary !== undefined,
         night: theme === 'night',

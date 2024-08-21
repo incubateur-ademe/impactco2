@@ -210,7 +210,7 @@ export type Params = {
 
 const ParamContext = React.createContext<Params | null>(null)
 
-export function ParamProvider({ children, isIframe }: { children: ReactNode; isIframe?: boolean }) {
+export function ParamProvider({ children }: { children: ReactNode }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<SiteLanguage>('fr')
@@ -529,12 +529,6 @@ export function ParamProvider({ children, isIframe }: { children: ReactNode; isI
         break
     }
   }, [])
-
-  useEffect(() => {
-    if (isIframe) {
-      document.documentElement.lang = language
-    }
-  }, [isIframe, language])
 
   return (
     <ParamContext.Provider

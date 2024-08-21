@@ -14,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         referrerPolicy='no-referrer'
       />
       <Suspense fallback={<div className='blank' />}>
-        <ParamProvider isIframe>
+        <ParamProvider>
           <div className='main-iframe'>
             <IFrameTracking>{children}</IFrameTracking>
           </div>
