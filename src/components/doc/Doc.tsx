@@ -37,6 +37,15 @@ const Doc = () => {
             linkLabel='Découvrir'
             link='/doc/exemples'
           />
+          <ToolCard
+            slug='kit'
+            horizontal
+            image='/images/doc-kit.svg'
+            title='Kit de communication'
+            description='Tout ce qu’il faut pour communiquer sur Impact CO₂'
+            linkLabel='Consulter'
+            link='/doc/kit-communication'
+          />
         </div>
       </Block>
     </>
