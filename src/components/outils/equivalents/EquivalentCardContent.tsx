@@ -17,6 +17,7 @@ const EquivalentCardContent = ({ equivalent, category }: { equivalent: ComputedE
   )
   const { language } = useParamContext()
   const t = useTranslations('unit')
+  const unitLabel = equivalent.unit || category.unit
   return (
     <div className={styles.content}>
       <div>
@@ -27,10 +28,12 @@ const EquivalentCardContent = ({ equivalent, category }: { equivalent: ComputedE
           </div>{' '}
           {unit} CO₂e
         </div>
-        <div className={styles.unit}>
-          {equivalent.unit && t(equivalent.unit).startsWith(t('avec')) ? '' : `${t('par')} `}
-          {t(equivalent.unit || category?.unit || 'unité')}
-        </div>
+        {unitLabel && (
+          <div className={styles.unit}>
+            {equivalent.unit && t(equivalent.unit).startsWith(t('avec')) ? '' : `${t('par')} `}
+            {t(unitLabel)}
+          </div>
+        )}
       </div>
       <EquivalentIcon equivalent={equivalent} height={5} />
     </div>

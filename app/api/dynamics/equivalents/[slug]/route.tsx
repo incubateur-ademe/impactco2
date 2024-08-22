@@ -58,7 +58,7 @@ export async function GET(req: NextRequest, context: { params: { slug: string } 
         carpool={!!carpool}
         name={getName(language, { ...equivalent, category: 0, carpool: Number(carpool) })}
         quantity={equivalent.value / ((Number(carpool) || 0) + 1)}
-        unit={equivalent.unit || category.unit || 'unité'}
+        unit={equivalent.unit || category.unit}
         language={language}
       />
     ),

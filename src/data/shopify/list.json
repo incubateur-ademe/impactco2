@@ -9,19 +9,19 @@
   },
   {
     "value": "voiture-lille-nimes",
-    "label": "A/R ;Lille - Nîmes en voiture"
+    "label": "A/R Lille - Nîmes en voiture"
   },
   {
     "value": "tgv-paris-berlin",
-    "label": "A/R ;Paris - Berlin en tgv"
+    "label": "A/R Paris - Berlin en tgv"
   },
   {
     "value": "tgv-paris-marseille",
-    "label": "A/R ;Paris - Marseille en tgv"
+    "label": "A/R Paris - Marseille en tgv"
   },
   {
     "value": "avion-pny",
-    "label": "A/R ;paris - New-York en avion"
+    "label": "A/R Paris - New-York en avion"
   },
   {
     "value": "alimentationordinateur",

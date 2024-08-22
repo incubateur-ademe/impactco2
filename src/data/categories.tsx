@@ -19,8 +19,8 @@ export const categories: Category[] = [
     name: 'Cas pratiques',
     slug: 'caspratiques',
     description: "Comparez l'empreinte carbone d'un aller retour Paris New york, ou de votre soirée netflix",
-    unit: 'unité',
     equivalents: computedEquivalents('caspratiques', casPratiques),
+    unit: '',
   },
   {
     id: 10,
@@ -37,7 +37,7 @@ export const categories: Category[] = [
       },
     ],
     description: 'Évaluer l’impact carbone de vos usages numériques',
-    unit: '',
+    unit: 'unité',
     equivalents: computedEquivalents('usagenumerique', usageNumeriques),
     resetable: true,
   },
