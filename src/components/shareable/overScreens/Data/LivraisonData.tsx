@@ -39,7 +39,7 @@ const FRLivraisonData = () => {
       <div className={styles.content}>
         <div>
           Dans cette première version, 3 scénarios sont proposés: la livraison{' '}
-          <b> à domicile, en point relais ou en click & collect</b>, tous adaptables à l'option{' '}
+          <b>à domicile, en point relais ou en click & collect</b>, tous adaptables à l'option{' '}
           <b>"colis qui vient de loin"</b>.
         </div>
         <div>
@@ -71,7 +71,7 @@ const FRLivraisonData = () => {
         </div>
         <div>
           En ce qui concerne les <b>camions de livraison</b>, pour le <b>transport longue distance</b>, nous avons
-          considéré un <b>poids lourd moyen</b> type 44 tonnes) tandis que pour les <b>derniers kilomètres</b> de
+          considéré un <b>poids lourd moyen</b> (type 44 tonnes) tandis que pour les <b>derniers kilomètres</b> de
           livraison, nous avons considéré un <b>véhicule utilitaire léger</b>.{' '}
         </div>
       </div>
@@ -198,6 +198,168 @@ const FRLivraisonData = () => {
           <Link href='/doc/livraison' title='Lien externe : documentation détaillée' target='_blank'>
             la documentation détaillée
             <NewTabIcon />
+          </Link>
+        </div>
+      </div>
+    </>
+  )
+}
+
+const ESLivraisonData = () => {
+  return (
+    <>
+      <div className={styles.content}>
+        <div>
+          <Link href='https://librairie.ademe.fr/mobilite-et-transport/6261-e-commerce-modelisation-des-impacts-et-recommandations-filieres-et-grand-public.html'>
+            El estudio Comercio en línea - 2023
+          </Link>{' '}
+          para profesionales del comercio electrónico. La herramienta ECEL utilizada para calcular este estudio se ha
+          adaptado al contexto de los particulares en forma de simulador.
+        </div>
+      </div>
+      <div className={styles.title}>Los diferentes tipos de producto</div>
+      <div className={styles.content}>
+        <div>
+          La <b>ropa</b> corresponde a un producto textil que va desde un par de zapatos hasta un abrigo o una camiseta.
+          Por defecto, consideramos una <b>caja de zapatos</b>.
+        </div>
+        <div>
+          Los <b>productos culturales</b> incluyen libros, juegos de mesa, CD/vinilo, videojuegos, etc. Por defecto,
+          consideramos un <b>libro</b>.
+        </div>
+        <div>
+          El <b>equipamiento voluminoso</b> incluye grandes electrodomésticos, muebles, etc. Por defecto, consideramos
+          un <b>lavavajillas</b>.
+        </div>
+        <div>
+          Para <b>los bienes de consumo rápido</b>, consideramos <b>un pedido de productos alimenticios secos</b>.
+        </div>
+      </div>
+      <div className={styles.title}>Escenarios de entrega</div>
+      <div className={styles.content}>
+        <div>
+          <b>a domicilio, entrega en punto de relevo o click & collect</b>, todos ellos adaptables a la opción{' '}
+          <b>"paquete a distancia"</b>.
+        </div>
+        <div>
+          Para cada escenario, tenemos en cuenta <b>todas las etapas del proceso de entrega</b>: pedido en línea,
+          embalaje, almacén de salida, plataformas de clasificación, transporte entre plataformas, infraestructura de
+          recogida y, por último, el recorrido del consumidor en caso de entrega en un punto de relevo o click & collect
+          (<i>véanse más abajo los detalles de los procesos de entrega</i>). Para un artículo{' '}
+          <b>"procedente de lejos"</b>, hemos supuesto que el paquete llega <b>en avión desde China</b> a través de una
+          etapa de transporte adicional (9.000 km recorridos en avión, mezcla de electricidad adaptada del almacén de
+          salida). No hemos tenido en cuenta las estelas de condensación del transporte aéreo.
+        </div>
+      </div>
+      <div className={styles.title}>Información adicional sobre los parámetros...</div>
+      <div className={styles.content}>
+        <div>
+          En el proceso de <b>pedido en línea</b>, el tipo de producto influye en el tiempo de búsqueda en la web y, por
+          tanto, en la huella del terminal utilizado para completar la compra. Por ello, hemos mantenido un valor único
+          (<b>5,4 gCO₂e</b>) por pedido, sea cual sea el producto.
+        </div>
+        <div>
+          Se ha asignado una <b>caja de cartón</b> a cada tipo de paquete en función de su tamaño.
+        </div>
+        <div>
+          Para las etapas de <b>almacenamiento</b>, consideramos un almacén de{' '}
+          <b>
+            10.000 m<sup>2</sup>
+          </b>
+          . El número de días de almacenamiento depende del tipo de producto.
+        </div>
+        <div>
+          En cuanto a los <b>camiones de reparto</b>, para el <b>transporte de larga distancia</b>, hemos considerado un{' '}
+          <b>vehículo pesado medio</b> (tipo 44 toneladas), mientras que para los <b>últimos kilómetros</b> de reparto,
+          hemos considerado un <b>vehículo comercial ligero</b>.
+        </div>
+      </div>
+      <div className={styles.title}>Frecuencias de entrega</div>
+      <div className={styles.content}>
+        <div>
+          Para calcular el impacto anual de la entrega de paquetes en función de su frecuencia de entrega, realizamos
+          los siguientes cálculos:{' '}
+        </div>
+        <ul>
+          <li>X paquetes x 1 si es anual</li>
+          <li>X paquetes x 12 si es mensual</li>
+          <li>X paquetes x 52 si es semanal</li>
+        </ul>
+      </div>
+      <div className={styles.content}>
+        <details>
+          <summary>Entrega a domicilio</summary>
+          <ul>
+            <li>Proceso de pedido en línea</li>
+            <li>Almacén inicial y almacén de preparación de paquetes</li>
+            <li>
+              Almacén de transporte - plataforma 1:<b>400 km</b> (
+              <i>camión medio, 15% de factor de carga y 20% de retorno en vacío a una velocidad media de 60 km/h</i>)
+            </li>
+            <li>Plataforma 1</li>
+            <li>
+              Plataforma 1 - plataforma 2 : <b>400 km</b> (
+              <i>camión medio, 15% de factor de carga y 20% de retorno en vacío a una velocidad media de 60 km/h</i>)
+            </li>
+            <li>Plataforma 2</li>
+            <li>
+              Plataforma 2 - domicilio : <b>70 km</b> (
+              <i>camión ligero, factor de carga del 15% y 20% de retorno en vacío a una velocidad media de 30 km/h</i>)
+            </li>
+          </ul>
+        </details>
+        <details>
+          <summary>Entrega en puntos de relevo</summary>
+          <ul>
+            <li>Proceso de pedido en línea</li>
+            <li>Almacén inicial y almacén de preparación de paquetes</li>
+            <li>
+              Almacén de transporte - plataforma 1: <b>400 km</b> (
+              <i>camión medio, 15% de factor de carga y 20% de retorno en vacío a una velocidad media de 60 km/h</i>)
+            </li>
+            <li>Plataforma 1</li>
+            <li>
+              Plataforma 1 - plataforma 2:: <b>400 km</b> (
+              <i>camión medio, 15% de factor de carga y 20% de retorno en vacío a una velocidad media de 60 km/h</i>)
+            </li>
+            <li>Plateforme 2</li>
+            <li>
+              Transport plateforme 2 - punto de recogida: <b>70 km</b> (
+              <i>camión ligero, factor de carga del 15% y 20% de retorno en vacío a una velocidad media de 30 km/h</i>)
+            </li>
+            <li>Punto de recogida</li>
+            <li>Recorrido del consumidor</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Entrega Click & collect</summary>
+          <ul>
+            <li>Proceso de pedido en línea</li>
+            <li>Almacén inicial y almacén de preparación de paquetes</li>
+            <li>
+              Almacén de transporte - plataforma 1: <b>400 km</b> (
+              <i>camión medio, 15% de factor de carga y 20% de retorno en vacío a una velocidad media de 60 km/h</i>)
+            </li>
+            <li>Plataforma 1</li>
+            <li>
+              Plataforma 1 - plataforma 2:: <b>400 km</b> (
+              <i>camión medio, 15% de factor de carga y 20% de retorno en vacío a una velocidad media de 60 km/h</i>)
+            </li>
+            <li>Plataforma 2</li>
+            <li>
+              Plataforma 2 - tienda: <b>70 km</b> (
+              <i>camión ligero, factor de carga del 15% y 20% de retorno en vacío a una velocidad media de 30 km/h</i>)
+            </li>
+            <li>tienda</li>
+            <li>Recorrido del consumidor</li>
+          </ul>
+        </details>
+      </div>
+      <div className={styles.content}>
+        <div>
+          Para más detalles, consulte{' '}
+          <Link href='/doc/livraison' title='Lien externe : documentation détaillée' target='_blank'>
+            la documentación detallada <NewTabIcon />
           </Link>
         </div>
       </div>
@@ -396,6 +558,9 @@ const LivraisonData = () => {
   const { language } = useParamContext()
   if (language === 'en') {
     return <ENLivraisonData />
+  }
+  if (language === 'es') {
+    return <ESLivraisonData />
   }
 
   return <FRLivraisonData />

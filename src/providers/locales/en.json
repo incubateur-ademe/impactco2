@@ -21,7 +21,8 @@
       "unit": "m²"
     },
     "km": {
-      "title": "Display a custom distance"
+      "title": "Display a custom distance",
+      "unit": "km"
     },
     "roundTrip": {
       "title": "Round trip"
@@ -56,7 +57,8 @@
     "language": {
       "label": "Language",
       "fr": "Français",
-      "en": "English"
+      "en": "English",
+      "es": "Español"
     },
     "itineraire": {
       "label": "Customize route",
@@ -266,7 +268,8 @@
     "penderie-description": "How many pairs of shoes do you actually own?",
     "neuf": "✨ Your recent purchases",
     "neuf-description": "How many pairs of new shoes have you bought this year?",
-    "total": "THIS EQUALS.."
+    "total": "THIS EQUALS..",
+    "waiting": "An answer to the above question displays the carbon impact of buying new shoes."
   },
   "equivalent": {
     "year": "year[s]",
@@ -377,6 +380,8 @@
     "name-boisson": "Drink"
   },
   "unit": {
+    "par": "per",
+    "avec": "with",
     "unité": "unit",
     "m²": "m²",
     "km": "km",

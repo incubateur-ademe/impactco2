@@ -4,6 +4,7 @@ import { IntlError, IntlErrorCode, NextIntlClientProvider } from 'next-intl'
 import React, { ReactNode } from 'react'
 import useParamContext from './ParamProvider'
 import english from './locales/en.json'
+import spanish from './locales/es.json'
 import french from './locales/fr.json'
 
 const onError = (error: IntlError) => {
@@ -18,8 +19,8 @@ const TranslationProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <NextIntlClientProvider
-      locale={language === 'fr' ? 'fr-FR' : 'en-EN'}
-      messages={language === 'fr' ? french : english}
+      locale={language === 'fr' ? 'fr-FR' : language === 'es' ? 'es-ES' : 'en-EN'}
+      messages={language === 'fr' ? french : language === 'es' ? spanish : english}
       timeZone='Europe/Paris'
       onError={onError}>
       {children}

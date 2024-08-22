@@ -47,6 +47,49 @@ const FRUsageNumeriqueData = () => {
   )
 }
 
+const ESUsageNumeriqueData = () => {
+  return (
+    <>
+      <div className={styles.content}>
+        <div>
+          Todos los cálculos se basan en un{' '}
+          <Link href='https://base-empreinte.ademe.fr/documentation/base-impact'>estudio realizado por NegaOctet</Link>
+        </div>
+      </div>
+      <div className={styles.title}>Supuestos para el correo electrónico</div>
+      <div className={styles.content}>
+        Suponemos un tiempo de escritura de 3 minutos y un único destinatario por correo electrónico que lee el mensaje
+        en 10 segundos en un dispositivo y una red equivalentes a los del remitente. Se considera que el correo
+        electrónico se almacena durante 10 años por parte del remitente y del destinatario. Se supone que un correo
+        electrónico sin archivos adjuntos tiene un tamaño de 75kb. El impacto total (remitente y destinatario) se
+        atribuye al remitente.
+      </div>
+      <div className={styles.title}>Supuestos de streaming</div>
+      <div className={styles.content}>
+        Suponemos que las calidades "baja definición", "alta definición" y "4K" corresponden a tamaños de vídeo de 700
+        MB, 3 GB y 7 GB por hora, respectivamente. Los factores de emisión correspondientes a la transmisión de datos
+        dentro de la red fueron facilitados por NegaOctet. Los cálculos para los centros de datos se basaron en los
+        datos de la plataforma Netflix.
+      </div>
+      <div className={styles.title}>Supuestos para la videoconferencia</div>
+      <div className={styles.content}>
+        Asumimos que hay 2 personas en la videoconferencia por defecto y que su impacto es sólo el asociado a su
+        ubicación en la videoconferencia. Las calidades "audio", "baja definición" y "alta definición" corresponden
+        respectivamente a tamaños de vídeo de 164 MB, 700 MB y 3 GB por hora. En cuanto a la transmisión de datos y los
+        centros de datos, se han aplicado a la videoconferencia las hipótesis utilizadas para el streaming.
+      </div>
+      <div className={styles.content}>
+        <div>
+          Para más detalles, consulte{' '}
+          <Link href='/doc/usage-numerique/acv' title='Lien externe : documentation détaillée' target='_blank'>
+            la documentación detallada <NewTabIcon />
+          </Link>
+        </div>
+      </div>
+    </>
+  )
+}
+
 const ENUsageNumeriqueData = () => {
   return (
     <>
@@ -94,6 +137,9 @@ const UsageNumeriqueData = () => {
   const { language } = useParamContext()
   if (language === 'en') {
     return <ENUsageNumeriqueData />
+  }
+  if (language === 'es') {
+    return <ESUsageNumeriqueData />
   }
 
   return <FRUsageNumeriqueData />

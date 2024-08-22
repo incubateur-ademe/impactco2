@@ -32,6 +32,35 @@ const FRFruitsEtLegumesData = () => {
   )
 }
 
+const ESFruitsEtLegumesData = () => {
+  return (
+    <>
+      <div className={styles.content}>
+        <div>
+          Todos los cálculos proceden de la base de datos <Link href='https://agribalyse.ademe.fr/'>Agrybalise</Link>
+        </div>
+      </div>
+      <div className={styles.title}>Comer fruta de temporada</div>
+      <div className={styles.content}>
+        <div>
+          Esta herramienta muestra qué <b>frutas y hortalizas son de temporada</b> en cada mes del año y su impacto
+          cuando se producen en la estación adecuada.
+        </div>
+        <div>
+          Un tomate producido fuera de temporada <b>genera 4 veces más kg de CO₂e</b> que uno producido en la temporada
+          adecuada.
+        </div>
+        <div>
+          Sin embargo, cerca del <b>75% de los franceses afirma comer tomates en invierno</b>. Lo mismo ocurre con las
+          fresas: 1 kg consumido en invierno genera un 40% más de emisiones de gases de efecto invernadero que la misma
+          cantidad producida en temporada. Las frutas y hortalizas de temporada no sólo son buenas para el clima y
+          nuestra salud, sino que además saben mejor.
+        </div>
+      </div>
+    </>
+  )
+}
+
 const ENFruitsEtLegumesData = () => {
   return (
     <>
@@ -64,6 +93,9 @@ const FruitsEtLegumesData = () => {
   const { language } = useParamContext()
   if (language === 'en') {
     return <ENFruitsEtLegumesData />
+  }
+  if (language === 'es') {
+    return <ESFruitsEtLegumesData />
   }
 
   return <FRFruitsEtLegumesData />

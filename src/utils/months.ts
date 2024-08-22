@@ -20,6 +20,35 @@ export const monthsOptions = slugs.map((slug, index) => ({
   label: getMonthLabel(index),
 }))
 
+const getSingleMonth = (month: number, language: string) => {
+  if (language === 'en') {
+    return `in ${new Date(2000, month).toLocaleString('en', { month: 'long' })}`
+  }
+  if (language === 'es') {
+    return `en ${new Date(2000, month).toLocaleString('es', { month: 'long' })}`
+  }
+  return `en ${new Date(2000, month).toLocaleString('fr', { month: 'long' })}`
+}
+const getBothMonths = (start: number, end: number, language: string) => {
+  if (language === 'en') {
+    return `from ${new Date(2000, start).toLocaleString('en', { month: 'long' })} to ${new Date(2000, end).toLocaleString('en', { month: 'long' })}`
+  }
+  if (language === 'es') {
+    return `de ${new Date(2000, start).toLocaleString('es', { month: 'long' })} a ${new Date(2000, end).toLocaleString('fr', { month: 'long' })}`
+  }
+  return `de ${new Date(2000, start).toLocaleString('fr', { month: 'long' })} à ${new Date(2000, end).toLocaleString('fr', { month: 'long' })}`
+}
+
+const getFullYear = (language: string) => {
+  if (language === 'en') {
+    return 'all year long'
+  }
+  if (language === 'es') {
+    return 'todo el año'
+  }
+  return "toute l'année"
+}
+
 export const getMonthsLabel = (months: number[], language: string) => {
   const sortedMonths = months.sort((a, b) => a - b)
   const starts = sortedMonths.filter(
@@ -34,20 +63,12 @@ export const getMonthsLabel = (months: number[], language: string) => {
     const start = starts[i]
     const end = ends[i]
     if (start === end) {
-      values.push(
-        language === 'en'
-          ? `in ${new Date(2000, start).toLocaleString('en', { month: 'long' })}`
-          : `en ${new Date(2000, start).toLocaleString('fr', { month: 'long' })}`
-      )
+      values.push(getSingleMonth(start, language))
     } else {
-      values.push(
-        language === 'en'
-          ? `from ${new Date(2000, start).toLocaleString('en', { month: 'long' })} to ${new Date(2000, end).toLocaleString('en', { month: 'long' })}`
-          : `de ${new Date(2000, start).toLocaleString('fr', { month: 'long' })} à ${new Date(2000, end).toLocaleString('fr', { month: 'long' })}`
-      )
+      values.push(getBothMonths(start, end, language))
     }
   }
 
-  const result = values.length === 0 ? (language === 'en' ? 'all year long' : "toute l'année") : values.join(', ')
+  const result = values.length === 0 ? getFullYear(language) : values.join(', ')
   return `${result[0].toUpperCase()}${result.slice(1)}.`
 }
