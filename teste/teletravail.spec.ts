@@ -61,12 +61,33 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('0.27')
   await expect(page.getByTestId('etiquette-value')).toHaveText('26.9')
 
-  await page.getByTestId('input-teletravail-value').fill('3')
+  await page.getByTestId('input-teletravail-value').fill('4')
   await expect(page.getByTestId('input-presentiel-value')).toHaveValue('2')
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('71.8')
-  await expect(page.getByTestId('teletravail-saved-value')).toHaveText('80.8')
-  await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('0.82')
-  await expect(page.getByTestId('etiquette-value')).toHaveText('80.8')
+  await expect(page.getByTestId('teletravail-saved-value')).toHaveText('108')
+  await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('1.09')
+  await expect(page.getByTestId('etiquette-value')).toHaveText('108')
+
+  await page.getByTestId('header-share-button').click()
+  await expect(page.getByTestId('clipboard-box')).toHaveText(
+    'http://localhost:3000/outils/teletravail?teletravailStart=Nantes 44000 France&teletravailEnd=Angers 49000 France&transport=tramway&presentiel=2&homeOffice=4&language=fr'
+  )
+  await page.getByTestId('cancel-button').click()
+
+  await page.getByTestId('header-integrate-button').click()
+  await expect(page.getByTestId('clipboard-box')).toHaveText(
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="teletravail" data-search="?teletravailStart=Nantes 44000 France&teletravailEnd=Angers 49000 France&transport=tramway&presentiel=2&homeOffice=4&language=fr&theme=default"></script>'
+  )
+})
+
+test('Teletravail default values', async ({ page }) => {
+  await page.goto(
+    'http://localhost:3000/outils/teletravail?teletravailStart=Nantes 44000 France&teletravailEnd=Angers 49000 France&transport=tramway&presentiel=2&homeOffice=4&language=fr'
+  )
+  await expect(page.getByTestId('teletravail-generated-value')).toHaveText('71.8', { timeout: 10000 })
+  await expect(page.getByTestId('teletravail-saved-value')).toHaveText('108')
+  await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('1.09')
+  await expect(page.getByTestId('etiquette-value')).toHaveText('108')
 })
 
 const getNbOfSuggestions = async (page: Page) => {

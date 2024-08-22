@@ -11,6 +11,11 @@ const getEquivalentsImage = async () => {
     })
     response.data.pipe(fs.createWriteStream(`./public/meta/${slug}-fr.png`))
 
+    response = await axios.get(`http://localhost:3000/api/dynamics/equivalents/${slug}?language=es`, {
+      responseType: 'stream',
+    })
+    response.data.pipe(fs.createWriteStream(`./public/meta/${slug}-es.png`))
+
     response = await axios.get(`http://localhost:3000/api/dynamics/equivalents/${slug}?language=en`, {
       responseType: 'stream',
     })
@@ -22,6 +27,11 @@ const getEquivalentsImage = async () => {
           responseType: 'stream',
         })
         response.data.pipe(fs.createWriteStream(`./public/meta/${slug}+${i}-fr.png`))
+
+        response = await axios.get(`http://localhost:3000/api/dynamics/equivalents/${slug}+${i}?language=es`, {
+          responseType: 'stream',
+        })
+        response.data.pipe(fs.createWriteStream(`./public/meta/${slug}+${i}-es.png`))
 
         response = await axios.get(`http://localhost:3000/api/dynamics/equivalents/${slug}+${i}?language=en`, {
           responseType: 'stream',

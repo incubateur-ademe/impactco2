@@ -79,7 +79,12 @@ const ShareUrl = ({
       {(category || path?.startsWith('outils/comparateur')) && (
         <div className={styles.meta}>
           {category ? (
-            <Image src={`/meta/${category.slug}-${language}.png`} width={728} height={382.2} alt='' />
+            <Image
+              src={`/meta/${category.slug}-${language === 'fr' ? 'fr' : 'en'}.png`}
+              width={728}
+              height={382.2}
+              alt=''
+            />
           ) : (
             <img src={customImage} width={728} height={382.2} />
           )}

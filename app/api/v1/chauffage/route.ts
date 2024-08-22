@@ -10,7 +10,7 @@ const chauffageValidation = z.object({
     .string()
     .transform((value) => value.split(',').map(Number))
     .optional(),
-  language: z.enum(['fr', 'en']).optional(),
+  language: z.enum(['fr', 'en', 'es']).optional(),
 })
 
 /**
@@ -45,7 +45,7 @@ const chauffageValidation = z.object({
  *       default: fr
  *       schema:
  *        type: string
- *        enum: [fr, en]
+ *        enum: [fr, en, es]
  *       description: Langue dans laquelle retourner les noms d'équivalent
  *     responses:
  *       405:

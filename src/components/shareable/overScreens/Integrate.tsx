@@ -44,6 +44,28 @@ const Integrate = ({
   // Usage numérique
   const [toDisplay, setToDisplay] = useState('')
 
+  // Télétravail
+  const [start, setStart] = useState(allParams.teletravail.start)
+  useEffect(() => {
+    setStart(allParams.teletravail.start)
+  }, [allParams.teletravail.start])
+  const [end, setEnd] = useState(allParams.teletravail.end)
+  useEffect(() => {
+    setEnd(allParams.teletravail.end)
+  }, [allParams.teletravail.end])
+  const [transport, setTransport] = useState(allParams.teletravail.transport)
+  useEffect(() => {
+    setTransport(allParams.teletravail.transport)
+  }, [allParams.teletravail.transport])
+  const [presentiel, setPresentiel] = useState(allParams.teletravail.presentiel)
+  useEffect(() => {
+    setPresentiel(allParams.teletravail.presentiel)
+  }, [allParams.teletravail.presentiel])
+  const [homeOffice, setHomeOffice] = useState(allParams.teletravail.homeOffice)
+  useEffect(() => {
+    setHomeOffice(allParams.teletravail.homeOffice)
+  }, [allParams.teletravail.homeOffice])
+
   const params = useMemo(() => {
     if (category) {
       // Warning: Add values in CustomParamsValues.ts also
@@ -52,6 +74,17 @@ const Integrate = ({
       }
       if (category.slug === 'fruitsetlegumes') {
         return { month: { value: month, setter: setMonth } } as Record<string, CustomParamValue>
+      }
+      if (category.slug === 'teletravail') {
+        return {
+          teletravail: {
+            start: { value: start?.address || '', setter: setStart },
+            end: { value: end?.address || '', setter: setEnd },
+          },
+          transport: { value: transport, setter: setTransport },
+          presentiel: { value: presentiel, setter: setPresentiel },
+          homeOffice: { value: homeOffice, setter: setHomeOffice },
+        } as Record<string, CustomParamValue>
       }
       const params = getCustomParams(category.slug, allParams)
       if (category.slug === 'usagenumerique') {
@@ -62,7 +95,7 @@ const Integrate = ({
       return getComparateurParams(allParams, path?.includes('etiquette'))
     }
     return {}
-  }, [allParams, category, path, m2, month, toDisplay])
+  }, [allParams, category, path, m2, month, transport, start, end, presentiel, homeOffice, toDisplay])
 
   useEffect(() => {
     if (params) {

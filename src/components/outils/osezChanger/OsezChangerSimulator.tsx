@@ -85,7 +85,7 @@ const OsezChangerSimulator = () => {
         {newValue === undefined && (
           <div className={styles.empty}>
             <SprinklesIcon />
-            Une réponse à la question ci-dessus permet d’afficher l’impact carbone de l’achat de chaussures neuves
+            {t('waiting')}
           </div>
         )}
       </div>

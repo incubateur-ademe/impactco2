@@ -208,6 +208,7 @@ test('Load correct number of tabs and redirect with params', async ({ page }) =>
     await expect(page.getByTestId('category-busthermique')).toHaveText('Bus thermique1.36 kg CO₂e')
   })
 })
+
 test('Roundtrip', async ({ page }) => {
   await page.goto('http://localhost:3000/outils/transport/itineraire')
 

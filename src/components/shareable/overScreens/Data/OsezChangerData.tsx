@@ -49,6 +49,40 @@ const FROsezChangerData = () => {
   )
 }
 
+const ESOsezChangerData = () => {
+  return (
+    <>
+      <div>
+        El impacto medio de carbono de un par de zapatos nuevos es de <b>17,9 kg de CO₂e.</b>
+        <br />
+        <br />
+        Tomamos una media de los tres factores de emisión de la{' '}
+        <Link
+          href='https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Cuir'
+          target='_blank'
+          rel='noreferrer noopener'>
+          Base Carbone
+        </Link>
+        {' '}:
+      </div>
+      <div className={styles.cards}>
+        <EquivalentCard equivalent={cuir} />
+        <EquivalentCard equivalent={tissu} />
+        <EquivalentCard equivalent={sport} />
+      </div>
+      <div>
+        Por tanto: (15 + 18,5 + 20,1)/3 = 17,9 kg CO₂e.
+        <br />
+        <br />
+        Por lo tanto, para conocer el impacto de carbono del número de pares de zapatos nuevos comprados hacemos el
+        siguiente cálculo: <br />
+        <br />
+        <b>factor medio de emisión de un par de zapatos nuevos * número de pares de zapatos comprados</b>
+      </div>
+    </>
+  )
+}
+
 const ENOsezChangerData = () => {
   return (
     <>
@@ -88,6 +122,9 @@ const OsezChangerData = () => {
   const { language } = useParamContext()
   if (language === 'en') {
     return <ENOsezChangerData />
+  }
+  if (language === 'es') {
+    return <ESOsezChangerData />
   }
 
   return <FROsezChangerData />

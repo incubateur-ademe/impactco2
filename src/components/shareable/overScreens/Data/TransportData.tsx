@@ -94,6 +94,97 @@ const FRTransportData = () => {
     </>
   )
 }
+const ESTransportData = () => {
+  return (
+    <>
+      <div className={styles.title}>Metodología</div>
+      <div className={styles.content}>
+        <div>Los valores se expresan por persona en Francia e incluyen :</div>
+        <div>
+          <ul>
+            <li>
+              <b>Emisiones directas</b>
+            </li>
+            <li>
+              <b>Construcción de vehículos</b> (fabricación, mantenimiento y fin de v)
+            </li>
+            <li>
+              <b>Producción y distribución</b> de combustible y electricidad
+            </li>
+          </ul>
+        </div>
+        <div>No se incluye la construcción de infraestructuras (carreteras, ferrocarriles, aeropuertos, etc.).</div>
+        <div>
+          Los factores de emisión utilizados para calcular el impacto del carbono de los 17 modos de transporte
+          enumerados proceden de la{' '}
+          <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>base de datos Empreinte de ADEME</Link>.
+        </div>
+        <div>
+          La metodología de cálculo es de código abierto y está accesible en nuestro{' '}
+          <Link href='https://github.com/incubateur-ademe/impactco2'>repositorio de GitHub</Link>.
+        </div>
+      </div>
+      <div className={styles.title}>Tasa de llenado</div>
+      <div className={styles.content}>
+        <div>Nuestras hipótesis de cálculo consideran :</div>
+        <div>
+          <ul>
+            <li>
+              1 <b>único pasajero por coche</b> (térmico o eléctrico).
+            </li>
+            <li>
+              <b>Una media de las tasas de ocupación</b> de los distintos modos de transporte.
+            </li>
+          </ul>
+        </div>
+        <div>
+          Para el transporte público, las tasas utilizadas son las de la{' '}
+          <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>base de datos Empreinte</Link> :
+        </div>
+        <div>
+          <ul>
+            <li>
+              <b>Autocar</b> : 30 personas - 35,2 gCO₂e/km/persona ;
+            </li>
+            <li>
+              <b>Autobús térmico</b> : 10 personas - 103 gCO₂e/km/persona ;
+            </li>
+            <li>
+              <b>Autobús GNV</b> : 10 personas - 113 gCO₂e/km/persona ;
+            </li>
+            <li>
+              <b>Avión</b> : factor de carga medio por tipo de correo (corto, medio, largo).
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className={styles.title}>Compartir coche</div>
+      <div className={styles.content}>
+        <div>Por defecto sólo contabilizamos 1 persona, el conductor, en un coche de combustión o eléctrico.</div>
+        <div>
+          Sin embargo, somos conscientes de que cada vez son más los que comparten sus viajes dentro de su hogar o
+          comparten coche, por lo que puede comparar el impacto de un viaje individual con el impacto de un viaje
+          compartido con 1, 2, 3 o 4 pasajeros.
+        </div>
+      </div>
+      <div className={styles.title}>Comparación</div>
+      <div className={styles.content}>
+        <div>
+          Comparando dos medios de transporte, calcula <b>el ahorro de carbono</b> para una distancia determinada,
+          basándote en todos los supuestos anteriores.
+        </div>
+      </div>
+      <div className={styles.content}>
+        <div>
+          ¿Tienes alguna pregunta? ¿Quieres saber más?{' '}
+          <Link target='_blank' rel='noopener noreferrer' href='/doc/questions-frequentes'>
+            Echa un vistazo a nuestras F.A.Q.
+          </Link>
+        </div>
+      </div>
+    </>
+  )
+}
 
 const ENTransportData = () => {
   return (
@@ -190,6 +281,9 @@ const TransportData = () => {
   const { language } = useParamContext()
   if (language === 'en') {
     return <ENTransportData />
+  }
+  if (language === 'es') {
+    return <ESTransportData />
   }
 
   return <FRTransportData />

@@ -1,6 +1,9 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction } from 'react'
+import { Equivalent } from 'types/equivalent'
+import { deplacements } from 'data/categories/deplacement'
+import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
 import { Point } from 'hooks/useItineraries'
@@ -10,14 +13,15 @@ import CheckboxInput from 'components/form/CheckboxInput'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import Select from 'components/form/Select'
+import SelectEquivalent from 'components/form/SelectEquivalent'
 import AddressInput from 'components/form/addresses/AddressInput'
 import styles from './CustomParam.module.css'
 
 const configs: Record<
   string,
   {
-    inputLabel?: string
-    type: 'number' | 'text' | 'select' | 'select-number' | 'boolean' | 'checkbox'
+    type: 'number' | 'text' | 'select' | 'select-number' | 'select-equivalent' | 'boolean' | 'checkbox'
+    equivalents?: Equivalent[]
     unit?: string
     min?: number
     max?: number
@@ -25,33 +29,31 @@ const configs: Record<
     values?: string[]
   }
 > = {
+  transport: { type: 'select-equivalent', equivalents: deplacements },
+  presentiel: { type: 'number', unit: 'jour', min: 0, max: 7 },
+  homeOffice: { type: 'number', unit: 'jour', min: 0, max: 7 },
   m2: {
     type: 'number',
-    unit: 'm²',
+    unit: 'm2',
     min: 1,
     max: 1000,
-    inputLabel: 'Surface',
   },
   km: {
     type: 'number',
     unit: 'km',
     min: 1,
     max: 10000,
-    inputLabel: 'Distance',
   },
   roundTrip: {
     type: 'boolean',
-    inputLabel: 'RoundTrip',
   },
   month: {
     type: 'select-number',
     options: monthsOptions,
-    inputLabel: 'Mois',
   },
   display: {
     type: 'checkbox',
     values: ['simulator', 'graphic'],
-    inputLabel: 'display',
   },
   theme: {
     type: 'select',
@@ -65,6 +67,7 @@ const configs: Record<
     options: [
       { value: 'fr', label: 'fr' },
       { value: 'en', label: 'en' },
+      { value: 'es', label: 'es' },
     ],
   },
 }
@@ -110,7 +113,9 @@ const CustomParam = ({
           />
         )}
         <div className={classNames(styles.inputContainer, { [styles.fullWidth]: !setVisible })}>
-          <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>{config.inputLabel}</HiddenLabel>
+          <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>
+            {t(`${slug}.title`)}
+          </HiddenLabel>
           {config.options ? (
             <Select
               padding='sm'
@@ -132,6 +137,18 @@ const CustomParam = ({
                 </option>
               ))}
             </Select>
+          ) : config.equivalents ? (
+            <>
+              <SelectEquivalent
+                id='select-equivalent'
+                equivalents={config.equivalents}
+                value={param.value.toString()}
+                onChange={(event) => {
+                  param.setter(event.target.value)
+                }}
+                disabled={!visible}
+              />
+            </>
           ) : config.type === 'boolean' ? (
             <CheckboxInput
               data-testid={`custom-param-${slug}-checkbox`}
@@ -160,7 +177,7 @@ const CustomParam = ({
           ) : (
             <Input
               id={slug}
-              unit={config.unit}
+              unit={formatName(t(`${slug}.unit`), param.value as number)}
               secondaryUnitStyle
               padding='sm'
               disabled={!visible}

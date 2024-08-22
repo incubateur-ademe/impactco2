@@ -64,7 +64,6 @@ const TransportComparison = ({
             <SelectEquivalent
               id='comparison-1'
               equivalents={filteredEquivalents}
-              equivalent={equivalent1}
               value={comparison[0]}
               onChange={(event) => {
                 setComparison([event.target.value, comparison[1]])
@@ -77,7 +76,6 @@ const TransportComparison = ({
             <SelectEquivalent
               id='comparison-2'
               equivalents={filteredEquivalents}
-              equivalent={equivalent2}
               value={comparison[1]}
               onChange={(event) => {
                 setComparison([comparison[0], event.target.value])

@@ -17,10 +17,12 @@
     "understand": "Comprendre les données",
     "download": "Télécharger",
     "m2": {
-      "title": "Afficher une surface personnalisée"
+      "title": "Afficher une surface personnalisée",
+      "unit": "m²"
     },
     "km": {
-      "title": "Afficher une distance personnalisée"
+      "title": "Afficher une distance personnalisée",
+      "unit": "km"
     },
     "roundTrip": {
       "title": "Aller / Retour"
@@ -35,7 +37,8 @@
     "language": {
       "label": "Langue",
       "fr": "Français",
-      "en": "English"
+      "en": "English",
+      "es": "Español"
     },
     "theme": {
       "label": "Mode d'affichage",
@@ -52,7 +55,16 @@
       "start": "Lieu de domicile",
       "end": "Lieu de travail"
     },
+    "presentiel": {
+      "title": "Présentiel",
+      "unit": "jour[s]"
+    },
+    "homeOffice": {
+      "title": "Télétravail",
+      "unit": "jour[s]"
+    },
     "transport": {
+      "title": "Moyen de transport",
       "search": "Rechercher un mode de transport",
       "back": "Revenir au simulateur",
       "mode-share": "Modes d’affichages à partager",
@@ -256,7 +268,8 @@
     "penderie-description": "Combien de paires de chaussures possédez-vous réellement ?",
     "neuf": "✨ Vos achats récents",
     "neuf-description": "Combien de paires de chaussures neuves avez-vous acheté cette année ?",
-    "total": "SOIT AUTANT D’ÉMISSIONS QUE..."
+    "total": "SOIT AUTANT D’ÉMISSIONS QUE...",
+    "waiting": "Une réponse à la question ci-dessus permet d’afficher l’impact carbone de l’achat de chaussures neuves"
   },
   "equivalent": {
     "year": "année[s]",
@@ -370,6 +383,8 @@
     "name-boisson": "Boisson"
   },
   "unit": {
+    "par": "par",
+    "avec": "avec",
     "unité": "unité",
     "m²": "m²",
     "km": "km",
