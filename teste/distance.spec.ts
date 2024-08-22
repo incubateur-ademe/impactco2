@@ -27,7 +27,7 @@ test('Transport distance list', async ({ page }) => {
   await page
     .locator('label')
     .filter({ hasText: /^Itinéraire$/ })
-    .locator('div')
+    .locator('span')
     .nth(1)
     .click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
@@ -38,8 +38,8 @@ test('Transport distance list', async ({ page }) => {
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison"></script>'
   )
 
-  await page.locator('div').filter({ hasText: /^TGV$/ }).nth(2).click()
-  await page.locator('div').filter({ hasText: /^TER$/ }).nth(2).click()
+  await page.locator('span').filter({ hasText: /^TGV$/ }).nth(2).click()
+  await page.locator('span').filter({ hasText: /^TER$/ }).nth(2).click()
   await page.getByLabel('Intégrer').getByText('Covoiturage thermique', { exact: true }).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=voiturethermique,avion&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv"></script>'
@@ -56,7 +56,7 @@ test('Transport distance list', async ({ page }) => {
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     'http://localhost:3000/outils/transport?km=1000&defaultMode=list&language=fr'
   )
-  await page.getByTestId('custom-param-km-checkbox').locator('div').nth(1).click()
+  await page.getByTestId('custom-param-km-checkbox').locator('span').nth(1).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     'http://localhost:3000/outils/transport?defaultMode=list&language=fr'
   )

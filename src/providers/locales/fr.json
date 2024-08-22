@@ -5,10 +5,6 @@
     "information-1": "Cette balise HTML vous permet d'afficher le simulateur à l'intérieur d'une page de votre site internet.",
     "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
   },
-  "etiquette": {
-    "play": "Lecture",
-    "pause": "Pause"
-  },
   "overscreen": {
     "default-true": "Affiché par défaut",
     "default-false": "Afficher par défaut",

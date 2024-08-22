@@ -5,10 +5,6 @@
     "information-1": "This code anchor allows you to display the simulator inside any page of your website.",
     "information-2": "The simulator will be automatically updated with any new features."
   },
-  "etiquette": {
-    "play": "Play",
-    "pause": "Pause"
-  },
   "overscreen": {
     "default-true": "displayed by default",
     "default-false": "show by default",

@@ -66,7 +66,8 @@ const ComparateurSimulator = () => {
               href={comparedEquivalent.link}
               className={styles.equivalent}
               target='_blank'
-              rel='noopener noreferrer'>
+              rel='noopener noreferrer'
+              data-testid='compared-equivalent-link'>
               <EquivalentIcon height={2.5} equivalent={comparedEquivalent} />
               <LinkIcon />
             </IframeableLink>

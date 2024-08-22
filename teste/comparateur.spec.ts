@@ -64,13 +64,10 @@ test('Comparateur', async ({ page }) => {
 
   await expect(page.getByTestId('comparateur-voitureelectrique+3-value')).toHaveText('170')
   await page.getByRole('button', { name: 'Comparer les valeurs avec Covoiturage électrique (3 passagers)' }).click()
-  await expect(
-    page
-      .locator('div')
-      .filter({ hasText: 'Comparateur carboneLe bon outil pour obtenir les bons ordres de grandeurkm en' })
-      .getByRole('link')
-      .first()
-  ).toHaveAttribute('href', '/outils/transport/voitureelectrique+3')
+  await expect(page.getByTestId('compared-equivalent-link')).toHaveAttribute(
+    'href',
+    '/outils/transport/voitureelectrique+3'
+  )
   await expect(page.getByTestId('input-base-value-unit')).toHaveText('km en Covoiturage électrique (3 passagers)')
   await expect(page.getByTestId('compared-equivalent-value')).toHaveText('2.59 kg CO₂e')
 
@@ -82,7 +79,7 @@ test('Comparateur', async ({ page }) => {
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur" data-search="?value=5&comparisons=ail,tomate,voitureelectrique+3&equivalent=abricot&language=fr&theme=default"></script>'
   )
 
-  await page.locator('label').filter({ hasText: 'Intégrer ma propre comparaison' }).locator('div').nth(1).click()
+  await page.locator('label').filter({ hasText: 'Intégrer ma propre comparaison' }).locator('span').nth(1).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="comparateur" data-search="?&language=fr&theme=default"></script>'
   )

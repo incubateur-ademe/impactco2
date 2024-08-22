@@ -15,7 +15,6 @@ const Progress = ({
   setFadeIn: Dispatch<SetStateAction<boolean>>
   setToDisplay: Dispatch<SetStateAction<number>>
 }) => {
-  const t = useTranslations('etiquette')
   const [paused, setPaused] = useState(false)
   const [progress, setProgress] = useState(0)
 
@@ -84,7 +83,7 @@ const Progress = ({
       </div>
       <button className={styles.button} onClick={() => setPaused(!paused)}>
         {paused ? <PlayIcon /> : <PauseIcon />}
-        {t(paused ? 'play' : 'pause')}
+        {paused ? 'Play' : 'Pause'}
       </button>
     </>
   )
