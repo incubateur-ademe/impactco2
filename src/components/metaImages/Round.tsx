@@ -22,7 +22,7 @@ const Round = ({
   const equivalent = comparison ? equivalents[comparison] : undefined
   const comparisonValue = value ? value / (equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1000) : 0
   const equivalentValue = Number.isFinite(comparisonValue) ? (
-    formatNumber(comparisonValue).toLocaleString(language === 'en' ? 'en-US' : 'fr-FR')
+    formatNumber(comparisonValue).toLocaleString(language === 'en' ? 'en-US' : language === 'es' ? 'es-ES' : 'fr-FR')
   ) : (
     <InfinityIcon />
   )

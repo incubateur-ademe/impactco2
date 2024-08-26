@@ -79,7 +79,8 @@ const Equivalent = ({
               fontSize: '2rem',
               lineHeight: '3rem',
             }}>
-            {unit.startsWith('avec') ? '' : language === 'en' ? 'Per ' : 'Par '} {translatedUnit}
+            {unit.startsWith('avec') ? '' : language === 'en' ? 'Per ' : language === 'es' ? 'Por' : 'Par '}{' '}
+            {translatedUnit}
           </span>
         </div>
         <Logos />
