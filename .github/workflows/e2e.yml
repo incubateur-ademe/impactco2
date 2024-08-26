@@ -34,8 +34,6 @@ jobs:
         run: yarn build
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY}}
-      - name: deploy scripts
-        run: yarn webpack
       - name: Migrate db
         run: yarn prisma migrate deploy
       - name: Start server
