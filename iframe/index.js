@@ -1,7 +1,6 @@
-// below : injected WEBPACK_SITE_URL constant from env var, see webpack.config.js
-
 /* eslint-disable no-undef */
-import { iframeResize } from 'iframe-resizer'
+// below : injected WEBPACK_SITE_URL constant from env var, see webpack.config.js
+import iframeResize from '@iframe-resizer/parent'
 
 const setupIframe = (element) => {
   element['loaded'] = 'true'
@@ -29,14 +28,14 @@ const setupIframe = (element) => {
     allowfullscreen: true,
     webkitallowfullscreen: true,
     mozallowfullscreen: true,
-    allow: 'geolocation',
   }
   for (var key in iframeAttributes) {
     iframe.setAttribute(key, iframeAttributes[key])
   }
-  iframeResize({}, iframe)
 
   element.parentNode.insertBefore(iframe, element)
+
+  iframeResize({ license: 'GPLv3' }, iframe)
 }
 
 const buttonOnly = !!document.getElementById('mon-impact-transport')

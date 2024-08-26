@@ -1,18 +1,13 @@
-import Script from 'next/script'
 import React, { Suspense } from 'react'
 import { ParamProvider } from 'src/providers/ParamProvider'
 import 'utils/iframeStyles.css'
+import IFrameChild from 'components/layout/IFrameChild'
 import IFrameTracking from 'components/layout/IFrameTracking'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Script
-        src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js'
-        integrity='sha512-14SY6teTzhrLWeL55Q4uCyxr6GQOxF3pEoMxo2mBxXwPRikdMtzKMYWy2B5Lqjr6PHHoGOxZgPaxUYKQrSmu0A=='
-        crossOrigin='anonymous'
-        referrerPolicy='no-referrer'
-      />
+      <IFrameChild />
       <Suspense fallback={<div className='blank' />}>
         <ParamProvider>
           <div className='main-iframe'>
