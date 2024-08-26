@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import React from 'react'
 import ExamplesPage from 'src/views/ExamplesPage'
 import { getCommunications, getExamples } from 'utils/examples'
-import { getNotionRevalidate } from 'components/Notion/utils'
+import { getRevalidate } from 'utils/revalidate'
 import Suggestion from 'components/layout/Suggestion'
 
-export const revalidate = getNotionRevalidate()
+export const revalidate = getRevalidate(process.env.NOTION_TABLE_REVALIDATE)
 
 export const metadata: Metadata = {
   title: "Exemples d'utilisation | Impact CO₂",
