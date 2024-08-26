@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.6
           cache: 'yarn'
       - name: Copy .env
         run: cp .env.dist .env
@@ -34,6 +34,8 @@ jobs:
         run: yarn build
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY}}
+      - name: deploy scripts
+        run: yarn webpack
       - name: Migrate db
         run: yarn prisma migrate deploy
       - name: Start server
