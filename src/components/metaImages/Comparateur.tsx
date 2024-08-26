@@ -21,6 +21,7 @@ const Comparateur = ({
 
     return <Items value={value} comparisons={comparisons} language={language} />
   }
+
   return (
     <div
       style={{
@@ -88,7 +89,7 @@ const Comparateur = ({
                 CO₂e
               </div>
             </span>
-            <span>quantity </span>
+            <span>quantity</span>
           </div>
         ) : (
           <div
@@ -101,8 +102,8 @@ const Comparateur = ({
               lineHeight: '4rem',
               fontWeight: 700,
             }}>
-            <span>Visualiser facilement</span>
-            <span>une quantité</span>
+            <span>{language === 'es' ? 'Visualizar fácilmente' : 'Visualiser facilement'}</span>
+            <span>{language === 'es' ? 'una cantidad' : 'une quantité'}</span>
             <span>
               de{' '}
               <div
