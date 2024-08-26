@@ -17,7 +17,7 @@ export async function generateMetadata({
       creators: 'ADEME',
       images:
         Object.entries(searchParams).length === 0
-          ? 'meta/comparateur.png'
+          ? `meta/comparateur-${language}.png`
           : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${Object.entries(searchParams)
               .map(([key, value]) => `${key}=${value}`)
               .join('&')}`,
