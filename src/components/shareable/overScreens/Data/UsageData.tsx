@@ -20,6 +20,24 @@ const FRUsageData = () => {
   )
 }
 
+const ESUsageData = () => {
+  return (
+    <>
+      <div className={styles.title}>Vida útil</div>
+      <div className={styles.content}>
+        <div>
+          A medida que aumenta la vida útil de un aparato, también lo hace el impacto de su uso. Pero, sobre todo, esto
+          significa que el impacto de la producción <b>se amortiza con el tiempo</b>.
+        </div>
+        <div>
+          Sigue siendo muy importante <b>cuidar tus objetos</b>, <b>repararlos</b> en lugar de comprarlos y probarlos.
+          <b>extender la vida útil</b> de sus dispositivos tanto como sea posible para reducir su impacto de carbono.
+        </div>
+      </div>
+    </>
+  )
+}
+
 const ENUsageData = () => {
   return (
     <>
@@ -42,6 +60,9 @@ const UsageData = () => {
   const { language } = useParamContext()
   if (language === 'en') {
     return <ENUsageData />
+  }
+  if (language === 'es') {
+    return <ESUsageData />
   }
 
   return <FRUsageData />
