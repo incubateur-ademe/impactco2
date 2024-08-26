@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.6
           cache: 'yarn'
       - name: Copy .env
         run: cp .env.dist .env

@@ -35,7 +35,7 @@
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "engines": {
-    "node": "22.6",
+    "node": "22",
     "yarn": "1.22"
   },
   "dependencies": {
@@ -54,7 +54,7 @@
     "fuse.js": "^7.0.0",
     "helmet": "^7.1.0",
     "html-to-image": "^1.11.11",
-    "iframe-resizer": "4.4.5",
+    "iframe-resizer": "^5.2.4",
     "markdown-to-jsx": "^7.5.0",
     "next": "^14.2.5",
     "next-intl": "^3.17.3",
