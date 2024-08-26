@@ -58,7 +58,9 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
     description:
       language === 'en'
         ? `Discover the carbon impact of a ${getName(language, equivalent, true).toLowerCase()} thanks to CO2 Impact and ADEME data`
-        : `Découvrir l'impact carbone d'un ${getName(language, equivalent, true).toLowerCase()} grâce à Impact CO2 et aux données de l'ADEME`,
+        : language === 'es'
+          ? `Décubre el impacto de carbono de ${getName(language, equivalent, true).toLowerCase()} gracias a Impact CO2 y a los datos de la ADEME`
+          : `Découvrir l'impact carbone d'un ${getName(language, equivalent, true).toLowerCase()} grâce à Impact CO2 et aux données de l'ADEME`,
     openGraph: {
       creators: 'ADEME',
       images: `meta/${fullSlug}-${language}.png`,
