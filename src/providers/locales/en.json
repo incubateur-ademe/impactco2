@@ -388,7 +388,6 @@
     "kg": "kg",
     "repas": "meal",
     "litre": "liter",
-    "A/R": "round trip",
     "épisode": "episode",
     "intégrale": "complete show",
     "param": "with the parameters given below",
@@ -406,6 +405,8 @@
     "ngc": "Estimate your consumption carbon footprint",
     "agir": "What does telecommuting change for the planet?",
     "calendar": "Seasonal fruits and vegetables calendar",
-    "livraison": "Download the guide 'E-consumer & responsible'"
+    "livraison": "Download the guide 'E-consumer & responsible'",
+    "leger": "How to work with a low impact ?",
+    "ecoresponsable": "Eco-responsible at work"
   }
 }

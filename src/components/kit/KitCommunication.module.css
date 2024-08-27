@@ -1,0 +1,19 @@
+.logo {
+  border-radius: 0.5rem;
+  background: var(--neutral-10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+
+  @media screen and (max-width: 29.875rem) {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.image {
+  img {
+    width: 100%;
+  }
+}

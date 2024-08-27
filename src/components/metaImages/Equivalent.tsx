@@ -74,15 +74,17 @@ const Equivalent = ({
               <span style={{ fontSize: '2rem', lineHeight: '3rem' }}>{quantityUnit} CO₂e</span>
             </div>
           </div>
-          <span
-            style={{
-              color: '#5A5057',
-              fontSize: '2rem',
-              lineHeight: '3rem',
-            }}>
-            {unit.startsWith('avec') ? '' : language === 'en' ? 'Per ' : language === 'es' ? 'Por' : 'Par '}{' '}
-            {translatedUnit}
-          </span>
+          {unit && (
+            <span
+              style={{
+                color: '#5A5057',
+                fontSize: '2rem',
+                lineHeight: '3rem',
+              }}>
+              {unit.startsWith('avec') ? '' : language === 'en' ? 'Per ' : language === 'es' ? 'Por' : 'Par '}{' '}
+              {translatedUnit}
+            </span>
+          )}
         </div>
         <Logos />
       </div>

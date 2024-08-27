@@ -104,4 +104,5 @@ export const getName = (
 export const isEquivalentInMode = (equivalent: ComputedEquivalent, mode: string) =>
   mode === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === mode
 
-export const getComparisonSlug = (slug: string) => (slug.startsWith('avion-') ? 'avion' : slug)
+export const getComparisonSlug = (slug: string) =>
+  slug.startsWith('avion-') && slug.endsWith('courrier') ? 'avion' : slug

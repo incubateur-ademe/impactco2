@@ -186,6 +186,10 @@ const CustomParam = ({
               onChange={(event) => {
                 track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
                 if (config.type === 'number') {
+                  if (!event.target.value) {
+                    return param.setter('')
+                  }
+
                   const value = Number(event.target.value)
                   if (config.min && value < config.min) {
                     param.setter(config.min)
