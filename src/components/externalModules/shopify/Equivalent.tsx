@@ -69,9 +69,9 @@ const Equivalent = ({
           <div className={isAnimated ? styles.animatedEqual : styles.equal}>
             <EqualIcon />
           </div>
-          <div className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
+          <ul className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
             {comparisons.map((comparison, index) => (
-              <div
+              <li
                 key={comparison}
                 className={
                   isAnimated
@@ -81,9 +81,9 @@ const Equivalent = ({
                     : styles.comparison
                 }>
                 <SimpleValue value={preciseValue} comparison={comparison} language={language} />
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
         {randomize && (
           <button className={styles.randomize} title='Obtenir une nouvelle comparaison' onClick={randomize}>

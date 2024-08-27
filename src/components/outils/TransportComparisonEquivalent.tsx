@@ -4,7 +4,7 @@ import React, { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent } from 'types/equivalent'
-import { getName, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName, getNameWithoutSuffix, isEquivalentInMode } from 'utils/Equivalent/equivalent'
 import { getEquivalentWithCarpool } from 'utils/carpool'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
@@ -20,14 +20,12 @@ const allEquivalents = computedEquivalents.flatMap(getEquivalentWithCarpool)
 const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug: string) => {
   const [name, carpool] = slug.split('+')
   const equivalent = equivalents.find(
-    (equivalent) =>
-      (slug === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === name) &&
-      (carpool ? equivalent.carpool : !equivalent.carpool)
+    (equivalent) => isEquivalentInMode(equivalent, name) && (carpool ? equivalent.carpool : !equivalent.carpool)
   ) as (ComputedEquivalent & { found?: boolean }) | undefined
   if (!equivalent) {
-    return allEquivalents.find((equivalent) =>
-      slug === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug
-    ) as (ComputedEquivalent & { found?: boolean }) | undefined
+    return allEquivalents.find((equivalent) => isEquivalentInMode(equivalent, slug)) as
+      | (ComputedEquivalent & { found?: boolean })
+      | undefined
   }
 
   if (carpool) {
@@ -63,7 +61,6 @@ const TransportComparisonEquivalent = ({
   const {
     language,
     setOverscreen,
-    overscreen,
     transport: { comparison },
   } = useParamContext()
   const equivalent = useMemo(
@@ -142,7 +139,7 @@ const TransportComparisonEquivalent = ({
             <div className={styles.button}>
               <GhostButton
                 onClick={() => {
-                  setOverscreen({ ...overscreen, transport: `comparison${index}` })
+                  setOverscreen('transport', `comparison${index}`)
                   track(tracking, 'Modifier', equivalent.slug)
                 }}>
                 {t('modify')}

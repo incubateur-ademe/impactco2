@@ -388,3 +388,7 @@ a {
     outline: none;
   }
 }
+
+ul {
+  list-style: none;
+}

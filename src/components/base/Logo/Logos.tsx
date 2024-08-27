@@ -12,7 +12,8 @@ const Logos = ({ small }: { small?: boolean }) => {
     <IframeableLink
       href={buildCurrentUrlFor('/')}
       className={classNames(styles.logos, { [styles.small]: small })}
-      data-testid='impactco2-logos'>
+      data-testid='impactco2-logos'
+      title="Voir la page d'accueil du site Impact CO2">
       <Marianne small={small} />
       <Ademe small={small} />
       <Logo small={small} />

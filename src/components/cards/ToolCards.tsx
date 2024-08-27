@@ -4,7 +4,7 @@ import styles from './ToolCards.module.css'
 
 const ToolCards = ({ tools }: { tools: ToolCardProps[] }) => {
   return (
-    <div className={styles.container}>
+    <ul className={styles.container}>
       {tools.map((tool) => (
         <ToolCard
           key={tool.slug}
@@ -16,7 +16,7 @@ const ToolCards = ({ tools }: { tools: ToolCardProps[] }) => {
           link={tool.link}
         />
       ))}
-    </div>
+    </ul>
   )
 }
 

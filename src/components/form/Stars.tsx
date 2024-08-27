@@ -35,11 +35,11 @@ const Stars = ({ value, setValue, id, label, required, hint, errors }: StarsProp
   return (
     <div>
       {label && (
-        <label className={classNames(styles.label, { [styles.labelError]: !!error })} htmlFor={`input-${id}`}>
+        <div className={classNames(styles.label, { [styles.labelError]: !!error })}>
           {label}
-          {!required && <div className={styles.notRequired}> - Facultatif</div>}
-          {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
-        </label>
+          {!required && <span className={styles.notRequired}> - Facultatif</span>}
+          {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
+        </div>
       )}
       <div className={styles.starsButtons} onMouseLeave={() => setHovered(0)}>
         {Array.from({ length: 5 }, (_, i) => i + 1).map((index) => (

@@ -59,7 +59,7 @@ test('Update share and integrate values when modifying parameters', async ({ pag
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     "http://localhost:3000/outils/usagenumerique?emails=150&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille='5.075'&email . terminaux . temps écriture=3&email . destinataires=1&streaming . durée=600&streaming . appareil='tablette'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=540&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='audio'&language=fr"
   )
-  await page.getByTestId('custom-param-situation-checkbox').getByRole('img').click()
+  await page.getByTestId('custom-param-situation-checkbox').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText('http://localhost:3000/outils/usagenumerique?&language=fr')
   await page.getByTestId('cancel-button').click()
 
@@ -76,7 +76,7 @@ test('Update share and integrate values when modifying parameters', async ({ pag
     "<script name=\"impact-co2\" src=\"http://localhost:3000/iframe.js\" data-type=\"usagenumerique\" data-search=\"?emails=150&email . appareil='ordinateur et écran'&email . transmission . émetteur . réseau='mobile FR'&email . taille='5.075'&email . terminaux . temps écriture=3&email . destinataires=1&streaming . durée=600&streaming . appareil='tablette'&streaming . transmission . réseau='mobile FR'&streaming . qualité='ultra HD'&visio . durée=540&visio . appareil='TV'&visio . emplacements=2&visio . transmission . réseau='mobile FR'&visio . qualité='audio'&language=fr&theme=default\"></script>"
   )
 
-  await page.getByTestId('custom-param-situation-checkbox').getByRole('img').click()
+  await page.getByTestId('custom-param-situation-checkbox').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="usagenumerique" data-search="?&language=fr&theme=default"></script>'
   )

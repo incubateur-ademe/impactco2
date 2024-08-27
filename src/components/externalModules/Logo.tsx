@@ -20,7 +20,7 @@ const Logo = ({
       className={classNames(right ? styles.reverseLogo : styles.logo)}
       target='_blank'
       rel='noreferrer noopener'
-      aria-label='Logo Impact CO2'
+      aria-label='Impact CO2'
       title='Lien externe : accéder au comparateur sur le site Impact CO2'>
       <svg xmlns='http://www.w3.org/2000/svg' width='30' height='48' viewBox='0 0 30 48' fill='none'>
         <path

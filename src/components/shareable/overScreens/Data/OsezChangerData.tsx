@@ -30,11 +30,11 @@ const FROsezChangerData = () => {
         </Link>
         {' '}:
       </div>
-      <div className={styles.cards}>
+      <ul className={styles.cards}>
         <EquivalentCard equivalent={cuir} />
         <EquivalentCard equivalent={tissu} />
         <EquivalentCard equivalent={sport} />
-      </div>
+      </ul>
       <div>
         Soit : (15 + 18,5 + 20,1)/3 = 17,9 kg CO₂e.
         <br />

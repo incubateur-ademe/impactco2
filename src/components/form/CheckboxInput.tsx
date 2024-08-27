@@ -48,14 +48,14 @@ const CheckboxInput = ({
             className={classNames(checked ? 'checked' : '', { [inputStyles.inputError]: error })}
             onChange={(e) => setChecked(e.target.checked)}
           />
-          <div className={labelClassName}>{label}</div>
+          <span className={labelClassName}>{label}</span>
           {checked && (
-            <div
+            <span
               className={classNames(reversed ? styles.checkReversed : styles.check, {
                 [styles.checkDisabled]: inputProps.disabled,
               })}>
               <CheckIcon />
-            </div>
+            </span>
           )}
         </label>
         {children}
