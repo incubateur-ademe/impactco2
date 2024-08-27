@@ -1,28 +1,24 @@
 export const casPratiques = [
   {
     subtitle: 'plane',
-    unit: 'A/R',
     slug: 'avion-pny',
     category: 13,
     total: 1770,
   },
   {
     subtitle: 'tgv',
-    unit: 'A/R',
     slug: 'tgv-paris-berlin',
     category: 13,
     total: 7.26,
   },
   {
     subtitle: 'tgv',
-    unit: 'A/R',
     slug: 'tgv-paris-marseille',
     category: 13,
     total: 4.4,
   },
   {
     subtitle: 'car',
-    unit: 'A/R',
     slug: 'voiture-lille-nimes',
     category: 13,
     total: 410,

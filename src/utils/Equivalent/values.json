@@ -2,34 +2,34 @@
   "avion-pny": {
     "category": 13,
     "value": 1770000,
-    "fr": "A/R ;paris - New-York en avion",
-    "en": "Round trip ;Paris - New-York by plane",
-    "de": "Rundreise ;Paris - New York mit dem Flugzeug",
-    "es": "Viaje de ida y vuelta ;París - Nueva York en avión"
+    "fr": "A/R Paris - New-York en avion",
+    "en": "Round trip Paris - New-York by plane",
+    "de": "Rundreise Paris - New York mit dem Flugzeug",
+    "es": "Viaje de ida y vuelta París - Nueva York en avión"
   },
   "tgv-paris-berlin": {
     "category": 13,
     "value": 7260,
-    "fr": "A/R ;Paris - Berlin en tgv",
-    "en": "Round trip ;Paris - Berlin by train",
-    "de": "Rundreise ;Paris - Berlin mit dem Zug",
-    "es": "Viaje de ida y vuelta ;París - Berlin en tren"
+    "fr": "A/R Paris - Berlin en tgv",
+    "en": "Round trip Paris - Berlin by train",
+    "de": "Rundreise Paris - Berlin mit dem Zug",
+    "es": "Viaje de ida y vuelta París - Berlin en tren"
   },
   "tgv-paris-marseille": {
     "category": 13,
     "value": 4400,
-    "fr": "A/R ;Paris - Marseille en tgv",
-    "en": "Round trip ;Paris - Marseille by train",
-    "de": "Rundreise ;Paris - Marseille mit dem Zug",
-    "es": "Viaje de ida y vuelta ;París - Marseille en tren"
+    "fr": "A/R Paris - Marseille en tgv",
+    "en": "Round trip Paris - Marseille by train",
+    "de": "Rundreise Paris - Marseille mit dem Zug",
+    "es": "Viaje de ida y vuelta París - Marseille en tren"
   },
   "voiture-lille-nimes": {
     "category": 13,
     "value": 410000,
-    "fr": "A/R ;Lille - Nîmes en voiture",
-    "en": "Round trip ;Lille - Nîmes by car",
-    "de": "Rundreise ;Lille - Nîmes mit dem Auto",
-    "es": "Viaje de ida y vuelta ;Lille - Nîmes en coche"
+    "fr": "A/R Lille - Nîmes en voiture",
+    "en": "Round trip Lille - Nîmes by car",
+    "de": "Rundreise Lille - Nîmes mit dem Auto",
+    "es": "Viaje de ida y vuelta Lille - Nîmes en coche"
   },
   "francais": {
     "category": 13,
