@@ -249,12 +249,18 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         children: (
           <div className={styles.ressourceContainer}>
             <Resource
-              image='/images/ngc.png'
-              text='ngc'
-              href='https://nosgestesclimat.fr/'
-              withLink='Nos Gestes Climat'
+              image='/images/ecoresponsable.png'
+              text='ecoresponsable'
+              href='https://librairie.ademe.fr/consommer-autrement/5225-ecoresponsable-au-bureau-9791029718960.html'
+              withLink='ADEME'
               tracking='Télétravail'
-              imgSize='4.5rem'
+            />
+            <Resource
+              image='/images/leger.png'
+              text='leger'
+              href='https://librairie.ademe.fr/consommer-autrement/249-comment-teletravailler-leger-.html'
+              withLink='ADEME'
+              tracking='Télétravail'
             />
             <Resource
               image='/images/agir.png'
@@ -262,6 +268,14 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               href='https://agirpourlatransition.ademe.fr/particuliers/maison/teletravail-ca-change-quoi-planete'
               withLink='ADEME'
               tracking='Télétravail'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Télétravail'
+              imgSize='4.5rem'
             />
           </div>
         ),

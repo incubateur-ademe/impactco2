@@ -120,7 +120,7 @@ const TeletravailSimulator = () => {
           </div>
         </div>
       </div>
-      {start && end && itineraries && total ? (
+      {start && end && itineraries ? (
         <>
           <div className={styles.results}>
             <div className={styles.values}>
