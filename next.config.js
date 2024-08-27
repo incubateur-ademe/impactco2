@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const helmet = require('helmet')
 const { withSentryConfig } = require('@sentry/nextjs')
+const { swcMinify } = require('terser-webpack-plugin')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -22,7 +23,6 @@ const csp = {
   'script-src': [
     "'self'",
     "'unsafe-inline'",
-    'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js',
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.js`,
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/plugins/HeatmaSessionRecording/configs.php`,
   ],
@@ -75,6 +75,7 @@ const images = process.env.NEXT_PUBLIC_IMAGE_URL?.startsWith('https')
     }
 
 const nextConfig = {
+  swcMinify: false,
   transpilePackages: ['@tanstack/react-query', '@tanstack/query-core'],
   reactStrictMode: true,
   eslint: {

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import React, { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
+import { isEquivalentInMode } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
@@ -47,14 +48,10 @@ const TransportComparisonSimulator = ({
 
       return (
         equivalents.find(
-          (equivalent) =>
-            (equivalent.carpool ? carpool1 : !carpool1) &&
-            (slug1 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug1)
+          (equivalent) => (equivalent.carpool ? carpool1 : !carpool1) && isEquivalentInMode(equivalent, slug1)
         ) &&
         equivalents.find(
-          (equivalent) =>
-            (equivalent.carpool ? carpool2 : !carpool2) &&
-            (slug2 === 'avion' ? equivalent.slug.startsWith('avion') : equivalent.slug === slug2)
+          (equivalent) => (equivalent.carpool ? carpool2 : !carpool2) && isEquivalentInMode(equivalent, slug2)
         )
       )
     })

@@ -9,11 +9,13 @@ import styles from './Question.module.css'
 
 const Question = ({
   slug,
+  emoji,
   value,
   setValue,
   extra,
 }: {
   slug: string
+  emoji: string
   value: number | undefined
   setValue: Dispatch<SetStateAction<number | undefined>>
   extra?: string | boolean
@@ -28,7 +30,7 @@ const Question = ({
     <div className={styles.container}>
       <div className={styles.header}>
         <label htmlFor={`input-${slug}`}>
-          {t(slug)}
+          <span aria-hidden='true'>{emoji}</span> {t(slug)}
           <br />
           <span className={styles.description}>{t(`${slug}-description`)}</span>
         </label>

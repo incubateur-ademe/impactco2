@@ -105,7 +105,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               />
               {values.secondValue && (
                 <>
-                  <HiddenLabel htmlFor='input-second'>{t(`${slug}-secondTitle`)}</HiddenLabel>
+                  <HiddenLabel htmlFor='input-second'>{tEquivalent(`${slug}-secondTitle`)}</HiddenLabel>
                   <NumberInput
                     id='second'
                     unit={`${tEquivalent(`${slug}-secondUnit`)}${(situation[values.secondValue] as number) > 1 ? 's' : ''}`}
@@ -129,7 +129,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                 }}>
                 {values.types.map((option) => (
                   <option key={option} value={`'${option}'`}>
-                    {t(option.toString().replaceAll('.', ''))}
+                    {t(option.toString().replace(/./g, ''))}
                   </option>
                 ))}
               </Select>
@@ -177,9 +177,9 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               className={baseStyles.radio}
               id='radio-construction'
               label={
-                <div className={baseStyles.radioLabel}>
+                <span className={baseStyles.radioLabel}>
                   {tEquivalent('take')} <b>{tEquivalent('construction')}</b>
-                </div>
+                </span>
               }>
               <RadioInput
                 name='radio-construction'

@@ -86,7 +86,7 @@
   @media screen and (max-width: 48rem) {
     width: 100%;
 
-    > div {
+    >div {
       width: calc(50% - 1.25rem);
     }
   }
@@ -94,7 +94,7 @@
   @media screen and (max-width: 29.875rem) {
     flex-wrap: wrap;
 
-    > div {
+    >div {
       width: 100%;
     }
   }
@@ -118,9 +118,11 @@
 }
 
 .bottomLink {
-  color: var(--neutral-50) !important;
-  font-size: 0.875rem;
-  font-weight: 400 !important;
+  a {
+    color: var(--neutral-50) !important;
+    font-size: 0.875rem;
+    font-weight: 400 !important;
+  }
 
   &:not(:last-child) {
     padding-right: 0.75rem;

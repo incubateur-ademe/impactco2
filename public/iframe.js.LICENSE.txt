@@ -1,43 +1,7 @@
 /*!
  *  @preserve
  *  
- *  @module      iframe-resizer/child 5.2.4 (umd) - 2024-08-15
- *
- *  @license     GPL-3.0 for non-commercial use only.
- *               For commercial use, you must purchase a license from
- *               https://iframe-resizer.com/pricing
- * 
- *  @description Keep same and cross domain iFrames sized to their content 
- *
- *  @author      David J. Bradshaw <info@iframe-resizer.com>
- * 
- *  @see         {@link https://iframe-resizer.com}
- * 
- *  @copyright  (c) 2013 - 2024, David J. Bradshaw. All rights reserved.
- */
-
-/*!
- *  @preserve
- *  
- *  @module      iframe-resizer/jquery 5.2.4 (umd) - 2024-08-15
- *
- *  @license     GPL-3.0 for non-commercial use only.
- *               For commercial use, you must purchase a license from
- *               https://iframe-resizer.com/pricing
- * 
- *  @description Keep same and cross domain iFrames sized to their content 
- *
- *  @author      David J. Bradshaw <info@iframe-resizer.com>
- * 
- *  @see         {@link https://iframe-resizer.com}
- * 
- *  @copyright  (c) 2013 - 2024, David J. Bradshaw. All rights reserved.
- */
-
-/*!
- *  @preserve
- *  
- *  @module      iframe-resizer/parent 5.2.4 (umd) - 2024-08-15
+ *  @module      iframe-resizer/parent 5.2.6 (umd) - 2024-08-22
  *
  *  @license     GPL-3.0 for non-commercial use only.
  *               For commercial use, you must purchase a license from

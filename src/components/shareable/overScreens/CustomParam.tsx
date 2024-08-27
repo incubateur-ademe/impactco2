@@ -105,7 +105,6 @@ const CustomParam = ({
       <div className={styles.container}>
         {config.type !== 'boolean' && config.type !== 'checkbox' && setVisible && (
           <CheckboxInput
-            color='secondary'
             checked={visible}
             setChecked={setVisible}
             label={t(`${slug}.title`)}
@@ -113,14 +112,16 @@ const CustomParam = ({
           />
         )}
         <div className={classNames(styles.inputContainer, { [styles.fullWidth]: !setVisible })}>
-          <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>
-            {t(`${slug}.title`)}
-          </HiddenLabel>
+          {config.type !== 'boolean' && (
+            <HiddenLabel htmlFor={`${config.options ? 'text-select' : 'input'}-${slug}`}>
+              {t(`${slug}.title`)}
+            </HiddenLabel>
+          )}
           {config.options ? (
             <Select
+              required
               padding='sm'
               label={setVisible ? '' : t(`${slug}.label`)}
-              required
               inline={!setVisible}
               id={slug}
               disabled={!visible}
@@ -129,7 +130,6 @@ const CustomParam = ({
                 track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
                 param.setter(config.type === 'select' ? event.target.value : Number(event.target.value))
               }}
-              color='secondary'
               data-testid={`custom-param-${slug}-select`}>
               {config.options.map((option) => (
                 <option value={option.value} key={option.value}>
@@ -202,7 +202,6 @@ const CustomParam = ({
               }}
               min={config.min}
               max={config.max}
-              color='secondary'
               data-testid={`custom-param-${slug}-input`}
             />
           )}
@@ -214,16 +213,13 @@ const CustomParam = ({
   if ('start' in param) {
     return (
       <div className={styles.container}>
-        {setVisible && (
-          <CheckboxInput color='secondary' checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} />
-        )}
+        {setVisible && <CheckboxInput checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} />}
         <div className={styles.inputs}>
           <AddressInput
             id={`${slug}-start`}
             label={t(`${slug}.start`)}
             required
             disabled={!visible}
-            color='secondary'
             place={param.start.value}
             setPlace={(place) => {
               track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')
@@ -235,7 +231,6 @@ const CustomParam = ({
             label={t(`${slug}.end`)}
             required
             disabled={!visible}
-            color='secondary'
             place={param.end.value}
             setPlace={(place) => {
               track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')
@@ -251,7 +246,6 @@ const CustomParam = ({
     <div className={styles.container}>
       {setVisible && (
         <CheckboxInput
-          color='secondary'
           checked={visible}
           setChecked={setVisible}
           label={`${t(integration ? 'integrate' : 'share')} ${t(slug)}`}

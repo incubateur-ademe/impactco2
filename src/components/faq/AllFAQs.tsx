@@ -104,15 +104,17 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
         }
       />
       <Block>
-        <ToolCard
-          slug='faq'
-          horizontal
-          image='/images/doc-faq.svg'
-          title='Une question plus précise ?'
-          description='N’hésitez pas à nous contacter pour obtenir plus d’informations.'
-          linkLabel='Nous contacter'
-          link='/rendez-vous?fromLabel=faq'
-        />
+        <ul>
+          <ToolCard
+            slug='faq'
+            horizontal
+            image='/images/doc-faq.svg'
+            title='Une question plus précise ?'
+            description='N’hésitez pas à nous contacter pour obtenir plus d’informations.'
+            linkLabel='Nous contacter'
+            link='/rendez-vous?fromLabel=faq'
+          />
+        </ul>
       </Block>
     </>
   )

@@ -22,13 +22,13 @@ const ClipboardBox = ({ children, tracking }: { children: string; tracking: stri
           navigator.clipboard.writeText(children)
           track(tracking, 'Copy', children)
         }}>
-        <div className={styles.content} data-testid='clipboard-box'>
+        <span className={styles.content} data-testid='clipboard-box'>
           {children}
-        </div>
-        <div className={classNames(styles.copy, { [styles.copied]: copied })}>
+        </span>
+        <span className={classNames(styles.copy, { [styles.copied]: copied })}>
           {copied ? t('copie') : t('copier')}
           {copied ? <CheckIcon /> : <CopyIcon />}
-        </div>
+        </span>
       </button>
       {children.startsWith('<script') && (
         <div className={styles.information}>

@@ -87,7 +87,7 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
 }
 
 export default function Detail({ equivalent }: { equivalent: Equivalent }) {
-  const { setOverscreen, overscreen } = useParamContext()
+  const { setOverscreen } = useParamContext()
   const t = useTranslations('equivalent')
   const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
 
@@ -192,7 +192,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                   <b>Total</b> par année d'utilisation{' '}
                   <button
                     title='Voir les informations sur la durée de vie'
-                    onClick={() => setOverscreen({ ...overscreen, [equivalent.slug]: 'usage' })}
+                    onClick={() => setOverscreen(equivalent.slug, 'usage')}
                     className={styles.informationButton}>
                     <InformationIcon />
                   </button>

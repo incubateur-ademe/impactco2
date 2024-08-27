@@ -22,12 +22,12 @@ const Home = () => {
         </div>
       </Block>
       <Block title='Le bon format' description='Pour votre prochain article ou post, votre site ou appli.'>
-        <div className={styles.miniCards}>
+        <ul className={styles.miniCards}>
           <MiniCard image='/images/home-iframe.svg' title='Un widget' description='dans votre article' />
           <MiniCard image='/images/home-image.svg' title='Une image' description='dans votre post' />
           <MiniCard image='/images/home-link.svg' title='Un lien' description='sur votre site web' />
           <MiniCard image='/images/home-api.svg' title='Une API' description='pour votre appli' />
-        </div>
+        </ul>
       </Block>
       <Block
         title='L’accompagnement sur mesure'
@@ -54,15 +54,17 @@ const Home = () => {
       <Block
         title='À découvrir'
         description="Vous souhaitez mobiliser votre communauté autour de l'empreinte carbone ?">
-        <ToolCard
-          horizontal
-          slug='ngc'
-          image='/images/ngc.png'
-          title='Nos Gestes Climat'
-          description='Calculez votre empreinte carbone citoyenne et faites le bilan en équipe'
-          linkLabel='Visitez le site'
-          link='https://nosgestesclimat.fr/'
-        />
+        <ul>
+          <ToolCard
+            horizontal
+            slug='ngc'
+            image='/images/ngc.png'
+            title='Nos Gestes Climat'
+            description='Calculez votre empreinte carbone citoyenne et faites le bilan en équipe'
+            linkLabel='Visitez le site'
+            link='https://nosgestesclimat.fr/'
+          />
+        </ul>
       </Block>
     </>
   )

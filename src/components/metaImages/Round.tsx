@@ -1,12 +1,21 @@
 import React from 'react'
 import { SimpleEquivalent } from 'types/equivalent'
-import { getName } from 'utils/Equivalent/equivalent'
+import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
 import values from 'utils/Equivalent/values.json'
 import formatNumber from 'utils/formatNumber'
 import { buildCurrentUrlFor } from 'utils/urls'
 import InfinityIcon from 'components/base/icons/infinity'
 
 const equivalents = values as Record<string, SimpleEquivalent>
+
+const getEquivalent = (comparison?: string) => {
+  if (comparison) {
+    const [slug, carpool] = comparison.split('+')
+    return { equivalent: equivalents[slug], slug, carpool }
+  }
+
+  return {}
+}
 
 const Round = ({
   value,
@@ -19,10 +28,12 @@ const Round = ({
   main?: boolean
   language: string
 }) => {
-  const equivalent = comparison ? equivalents[comparison] : undefined
+  const { equivalent, slug, carpool } = getEquivalent(comparison)
   const comparisonValue = value ? value / (equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1000) : 0
   const equivalentValue = Number.isFinite(comparisonValue) ? (
-    formatNumber(comparisonValue).toLocaleString(language === 'en' ? 'en-US' : 'fr-FR')
+    formatNumber(comparisonValue * (carpool ? Number(carpool) + 1 : 1)).toLocaleString(
+      language === 'en' ? 'en-US' : language === 'es' ? 'es-ES' : 'fr-FR'
+    )
   ) : (
     <InfinityIcon />
   )
@@ -54,7 +65,7 @@ const Round = ({
           }}>
           <img
             style={{ width: '3rem', height: '3rem' }}
-            src={buildCurrentUrlFor(`/icons/${comparison.endsWith('courrier') ? 'avion' : comparison}.svg`)}
+            src={buildCurrentUrlFor(`/icons/${carpool ? 'covoiturage' : ''}${getComparisonSlug(slug)}.svg`)}
             alt=''
           />
         </div>

@@ -21,11 +21,11 @@ const Radio = ({ id, label, hint, children, required, errors, className }: Radio
   const error = useError(id, errors)
 
   return (
-    <div aria-labelledby={`input-${id}`} className={className}>
+    <fieldset className={className}>
       <legend className={classNames(styles.legend, { [styles.legendError]: !!error })} id={`input-${id}`}>
         {label}
-        {!required && <div className={styles.notRequired}> - Facultatif</div>}
-        {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+        {!required && <span className={styles.notRequired}> - Facultatif</span>}
+        {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
       </legend>
       <div className={styles.inputs}>{children}</div>
       {error && (
@@ -34,7 +34,7 @@ const Radio = ({ id, label, hint, children, required, errors, className }: Radio
           {error}
         </div>
       )}
-    </div>
+    </fieldset>
   )
 }
 

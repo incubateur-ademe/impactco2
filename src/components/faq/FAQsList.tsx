@@ -10,9 +10,11 @@ export type FAQSListProps = { faqs: FAQType[]; page?: string } & BlockProps
 const FAQsList = ({ faqs, page, ...blockProps }: FAQSListProps) => {
   return faqs.length === 0 ? null : (
     <Block {...blockProps}>
-      {faqs.map((faq) => (
-        <FAQ key={faq.title} faq={faq} page={page} />
-      ))}
+      <ul>
+        {faqs.map((faq) => (
+          <FAQ key={faq.title} faq={faq} page={page} />
+        ))}
+      </ul>
       {page && (
         <div className={styles.footer}>
           <div>Vous ne trouvez pas de réponse à vos questions ?</div>

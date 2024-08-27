@@ -30,20 +30,20 @@ const Menu = () => {
         <MenuIcon />
         <span>Menu</span>
       </button>
-      <div className={classNames(styles.menu, { [styles.open]: open })}>
-        <div>
+      <ul className={classNames(styles.menu, { [styles.open]: open })}>
+        <li>
           <IframeableLink href='/outils'>
             <ToolsIcon />
             Les outils
           </IframeableLink>
-        </div>
-        <div>
+        </li>
+        <li>
           <IframeableLink href='/doc'>
             <DocIcon />
             La doc
           </IframeableLink>
-        </div>
-      </div>
+        </li>
+      </ul>
     </>
   )
 }

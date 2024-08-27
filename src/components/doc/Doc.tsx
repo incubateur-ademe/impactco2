@@ -9,7 +9,7 @@ const Doc = () => {
     <>
       <Breadcrumbs current='La doc' links={[{ link: '/', label: 'Accueil' }]} />
       <Block title='La doc' as='h1' description='Un peu de lecture pour vous emparer plus facilement de nos outils.'>
-        <div className={styles.docs}>
+        <ul className={styles.docs}>
           <ToolCard
             slug='guide'
             horizontal
@@ -37,7 +37,16 @@ const Doc = () => {
             linkLabel='Découvrir'
             link='/doc/exemples'
           />
-        </div>
+          <ToolCard
+            slug='kit'
+            horizontal
+            image='/images/doc-kit.svg'
+            title='Kit de communication'
+            description='Tout ce qu’il faut pour communiquer sur Impact CO₂'
+            linkLabel='Consulter'
+            link='/doc/kit-communication'
+          />
+        </ul>
       </Block>
     </>
   )
