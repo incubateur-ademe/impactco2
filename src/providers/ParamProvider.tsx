@@ -218,7 +218,6 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const overscreenTrigger = useRef<HTMLElement | null>(null)
 
   const setOverscreeInternal = (slug: string, value: string) => {
-    console.log(slug, value)
     if (value) {
       overscreenTrigger.current = document.activeElement as HTMLElement
       setOverscreen({ ...overscreen, [slug]: value })
