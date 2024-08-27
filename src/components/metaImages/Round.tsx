@@ -11,7 +11,6 @@ const equivalents = values as Record<string, SimpleEquivalent>
 const getEquivalent = (comparison?: string) => {
   if (comparison) {
     const [slug, carpool] = comparison.split('+')
-    console.log(slug)
     return { equivalent: equivalents[slug], slug, carpool }
   }
 
