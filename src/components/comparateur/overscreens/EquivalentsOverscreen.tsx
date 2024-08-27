@@ -16,7 +16,6 @@ import styles from './EquivalentsOverscreen.module.css'
 const EquivalentsOverscreen = () => {
   const {
     setOverscreen,
-    overscreen,
     comparateur: { equivalents, setEquivalents },
   } = useParamContext()
 
@@ -37,7 +36,6 @@ const EquivalentsOverscreen = () => {
         <HiddenLabel htmlFor='input-search'>{t('search')}</HiddenLabel>
         <Input
           id='search'
-          background='white'
           placeholder={t('search')}
           value={search}
           padding='lg'
@@ -47,13 +45,13 @@ const EquivalentsOverscreen = () => {
           size='sm'
           onClick={() => {
             setEquivalents(tempEquivalents)
-            setOverscreen({ ...overscreen, comparateur: '' })
+            setOverscreen('comparateur', '')
             tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
           }}>
           {tModal('close')}
         </Button>
       </div>
-      <div className={styles.content}>
+      <ul className={styles.content}>
         {search ? (
           results.length > 0 ? (
             <Equivalents
@@ -85,11 +83,11 @@ const EquivalentsOverscreen = () => {
                 key={category.slug}
                 equivalents={tempEquivalents}
                 setEquivalents={setTempEquivalents}
-                onClose={() => setOverscreen({ ...overscreen, comparateur: '' })}
+                onClose={() => setOverscreen('comparateur', '')}
               />
             ))
         )}
-      </div>
+      </ul>
       <div className={styles.footer}>
         <div>
           <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>
@@ -101,7 +99,7 @@ const EquivalentsOverscreen = () => {
           <Button
             onClick={() => {
               setEquivalents(tempEquivalents)
-              setOverscreen({ ...overscreen, comparateur: '' })
+              setOverscreen('comparateur', '')
               tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
             }}>
             {t('back')}

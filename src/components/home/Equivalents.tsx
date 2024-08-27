@@ -50,11 +50,11 @@ const Equivalents = () => {
           padding='lg'
         />
       </Card>
-      <div className={styles.equivalents}>
+      <ul className={styles.equivalents}>
         <EquivalentCard equivalent={search ? results[0] : equivalents[0]} />
         <EquivalentCard equivalent={search ? results[1] : equivalents[1]} />
         <EquivalentCard equivalent={search ? results[2] : equivalents[2]} />
-      </div>
+      </ul>
       <Button
         className={styles.button}
         icon={<MagicWandIcon />}

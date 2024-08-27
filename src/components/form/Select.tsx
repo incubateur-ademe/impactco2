@@ -12,14 +12,14 @@ export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   padding?: 'sm' | 'lg'
 }
 
-const Select = ({ id, label, hint, inline, padding, className, ...selectProps }: SelectProps) => {
+const Select = ({ id, label, hint, inline, padding, className, children, ...selectProps }: SelectProps) => {
   return (
     <div className={inline ? styles.containerInline : ''}>
       {label && (
         <label className={classNames(styles.label, { [styles.labelInline]: inline })} htmlFor={`text-select-${id}`}>
           {label}
-          {!selectProps.required && <div className={styles.notRequired}> - Facultatif</div>}
-          {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+          {!selectProps.required && <span className={styles.notRequired}> - Facultatif</span>}
+          {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
         </label>
       )}
       <div className={classNames(styles.selectWrapper, { [styles.smallSelectWrapper]: padding === 'sm' }, className)}>
@@ -27,8 +27,16 @@ const Select = ({ id, label, hint, inline, padding, className, ...selectProps }:
           className={classNames(styles.select, { [styles.small]: padding === 'sm' })}
           data-testid={`text-select-${id}`}
           {...selectProps}
-          id={`text-select-${id}`}
-        />
+          id={`text-select-${id}`}>
+          <>
+            {selectProps.required && (
+              <option value='' disabled hidden>
+                Choisir une option
+              </option>
+            )}
+            {children}
+          </>
+        </select>
       </div>
     </div>
   )

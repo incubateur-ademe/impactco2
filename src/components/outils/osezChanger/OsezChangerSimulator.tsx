@@ -35,9 +35,10 @@ const OsezChangerSimulator = () => {
           <div className={styles.title}>{t('title')}</div>
           {t('description')}{' '}
         </div>
-        <Question slug='avis' value={thinkingValue} setValue={setThinkingValue} />
+        <Question slug='avis' emoji='🧠' value={thinkingValue} setValue={setThinkingValue} />
         <Question
           slug='penderie'
+          emoji='👉'
           value={realValue}
           setValue={setRealValue}
           extra={
@@ -49,6 +50,7 @@ const OsezChangerSimulator = () => {
           }
         />
         <Question
+          emoji='✨'
           slug='neuf'
           value={newValue}
           setValue={setNewValue}

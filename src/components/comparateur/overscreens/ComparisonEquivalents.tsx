@@ -21,25 +21,26 @@ const ComparisonEquivalents = ({
   } = useParamContext()
 
   return equivalents.map((equivalent) => (
-    <button
-      className={styles.button}
-      key={equivalent.slug}
-      onClick={() => {
-        if (index === 0) {
-          setComparison([equivalent.slug, comparison[1]])
-        } else {
-          setComparison([comparison[0], equivalent.slug])
-        }
-        track(
-          `Transport ${selected === 'distance' ? 'distance' : 'itinéraire'}`,
-          'Nouvelle comparaison',
-          equivalent.slug
-        )
-        onClose()
-      }}>
-      <div>{getName(language, equivalent)}</div>
-      <EquivalentIcon height={2} equivalent={equivalent} />
-    </button>
+    <li key={equivalent.slug}>
+      <button
+        className={styles.button}
+        onClick={() => {
+          if (index === 0) {
+            setComparison([equivalent.slug, comparison[1]])
+          } else {
+            setComparison([comparison[0], equivalent.slug])
+          }
+          track(
+            `Transport ${selected === 'distance' ? 'distance' : 'itinéraire'}`,
+            'Nouvelle comparaison',
+            equivalent.slug
+          )
+          onClose()
+        }}>
+        <span>{getName(language, equivalent)}</span>
+        <EquivalentIcon height={2} equivalent={equivalent} />
+      </button>
+    </li>
   ))
 }
 

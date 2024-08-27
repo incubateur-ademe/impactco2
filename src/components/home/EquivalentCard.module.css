@@ -1,15 +1,17 @@
 .empty,
 .equivalent {
+  display: block;
   min-height: 8.25rem;
   border-radius: 0.75rem;
   box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
   border: 2px solid var(--neutral-20);
   background: var(--neutral-00);
   padding: 1.25rem 2rem;
-  text-decoration: none;
 }
 
 .equivalent {
+  text-decoration: none;
+
   &:hover {
     border-color: var(--primary-30);
   }

@@ -68,8 +68,8 @@ const AddressInput = ({
       {label && (
         <label className={classNames(inputStyles.label, { [inputStyles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
-          {!inputProps.required && <div className={inputStyles.notRequired}> - Facultatif</div>}
-          {hint && <div className={classNames(inputStyles.hint, 'text-sm')}>{hint}</div>}
+          {!inputProps.required && <span className={inputStyles.notRequired}> - Facultatif</span>}
+          {hint && <span className={classNames(inputStyles.hint, 'text-sm')}>{hint}</span>}
         </label>
       )}
       <input

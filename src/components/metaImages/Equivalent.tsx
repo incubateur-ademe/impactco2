@@ -2,6 +2,7 @@ import React from 'react'
 import en from 'src/providers/locales/en.json'
 import es from 'src/providers/locales/es.json'
 import fr from 'src/providers/locales/fr.json'
+import { getComparisonSlug } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { buildCurrentUrlFor } from 'utils/urls'
 import { Logos } from './Logos'
@@ -96,9 +97,7 @@ const Equivalent = ({
         }}>
         <img
           style={{ width: '27.5rem', height: '27.5rem' }}
-          src={buildCurrentUrlFor(
-            `/icons/${carpool ? 'covoiturage' : ''}${ref.endsWith('courrier') ? 'avion' : ref}.svg`
-          )}
+          src={buildCurrentUrlFor(`/icons/${carpool ? 'covoiturage' : ''}${getComparisonSlug(ref)}.svg`)}
           alt=''
         />
       </div>

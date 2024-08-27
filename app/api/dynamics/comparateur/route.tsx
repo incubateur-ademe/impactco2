@@ -39,7 +39,9 @@ export async function GET(req: NextRequest) {
       <Comparateur
         value={Number(searchParams.get('value') || '100') * 1000}
         equivalent={searchParams.get('equivalent')}
-        comparisons={(searchParams.get('comparisons') || 'ananas,voiturethermique,tgv,smartphone,pomme').split(',')}
+        comparisons={(searchParams.get('comparisons') || 'ananas,voiturethermique,tgv,smartphone,pomme')
+          .replaceAll(' ', '+')
+          .split(',')}
         language={searchParams.get('language') || 'fr'}
       />
     ),

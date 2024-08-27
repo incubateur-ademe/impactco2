@@ -14,7 +14,6 @@ const Tiles = () => {
   const t = useTranslations('comparateur')
   const {
     setOverscreen,
-    overscreen,
     comparateur: { comparedEquivalent, equivalents, setEquivalents },
   } = useParamContext()
 
@@ -36,22 +35,22 @@ const Tiles = () => {
   }, [equivalents, generation])
   return (
     <>
-      <div className={styles.tiles}>
+      <ul className={styles.tiles}>
         {equivalents.map((equivalent, index) => (
-          <div key={equivalent} className={styles.tileContainer}>
+          <li key={equivalent} className={styles.tileContainer}>
             <div className={styles.background} />
             <div
               className={typeof generation === 'number' && generation <= index ? styles.disapearingTile : styles.tile}>
               <Tile slug={equivalent} />
             </div>
-          </div>
+          </li>
         ))}
         {equivalents.length < 8 && (
-          <div className={styles.tileContainer}>
-            <Tile onAdd={() => setOverscreen({ ...overscreen, comparateur: 'equivalents' })} />
-          </div>
+          <li className={styles.tileContainer}>
+            <Tile onAdd={() => setOverscreen('comparateur', 'equivalents')} />
+          </li>
         )}
-      </div>
+      </ul>
       <div className={styles.buttons}>
         <Button
           disabled={generation === 0 || !!generation}
@@ -67,7 +66,7 @@ const Tiles = () => {
           {t('generate')}
         </Button>
         {equivalents.length >= 8 && (
-          <Button onClick={() => setOverscreen({ ...overscreen, comparateur: 'equivalents' })}>{t('modify')}</Button>
+          <Button onClick={() => setOverscreen('comparateur', 'equivalents')}>{t('modify')}</Button>
         )}
       </div>
     </>

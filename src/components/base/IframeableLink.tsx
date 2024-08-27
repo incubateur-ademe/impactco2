@@ -11,7 +11,12 @@ const IframeableLink = (props: LinkProps & AnchorHTMLAttributes<HTMLAnchorElemen
   }, [])
 
   return (
-    <Link {...props} target={isIFramed ? '_blank' : props.target} rel={isIFramed ? 'noreferrer noopener' : props.rel} />
+    <Link
+      {...props}
+      href={encodeURI(props.href)}
+      target={isIFramed ? '_blank' : props.target}
+      rel={isIFramed ? 'noreferrer noopener' : props.rel}
+    />
   )
 }
 

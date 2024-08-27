@@ -18,14 +18,14 @@ const Checkbox = ({
   required?: boolean
 }) => {
   return (
-    <div aria-labelledby={`checkbox-legend-${id}`}>
+    <fieldset>
       <legend className={styles.legend} id={`input-${id}`}>
         {label}
-        {!required && <div className={styles.notRequired}> - Facultatif</div>}
-        {hint && <div className={classNames(styles.hint, 'text-sm')}>{hint}</div>}
+        {!required && <span className={styles.notRequired}> - Facultatif</span>}
+        {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
       </legend>
       <div className={styles.inputs}>{children}</div>
-    </div>
+    </fieldset>
   )
 }
 

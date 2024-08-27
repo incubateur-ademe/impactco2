@@ -67,24 +67,15 @@ const TeletravailSimulator = () => {
             id='teletravail-start'
             label={t('start')}
             required
-            color='secondary'
             place={start?.address}
             setPlace={setStart}
           />
-          <AddressInput
-            large
-            id='teletravail-end'
-            label={t('end')}
-            required
-            color='secondary'
-            place={end?.address}
-            setPlace={setEnd}
-          />
+          <AddressInput large id='teletravail-end' label={t('end')} required place={end?.address} setPlace={setEnd} />
         </div>
         <div className={styles.transportMode}>
           <SelectEquivalent
-            label={t('mode')}
             required
+            label={t('mode')}
             id='mode'
             value={transport}
             onChange={(event) => {

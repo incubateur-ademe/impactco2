@@ -9,9 +9,11 @@ const GuideUtilisation = ({ rows }: { rows: GuideUtilisationRow[] }) => {
       as='h1'
       title="Guide d'utilisation"
       description="Suivez le guide pour prendre en main les outils d'Impact CO₂">
-      {rows.map((row) => (
-        <FAQ key={row.title} faq={row} page='Guide utilisation' />
-      ))}
+      <ul>
+        {rows.map((row) => (
+          <FAQ key={row.title} faq={row} page='Guide utilisation' />
+        ))}
+      </ul>
     </Block>
   )
 }
