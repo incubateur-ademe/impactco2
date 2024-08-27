@@ -22,24 +22,24 @@ const Feature = ({
   slug: string
   type: string
 }) => {
-  const { setOverscreen, overscreen } = useParamContext()
+  const { setOverscreen } = useParamContext()
   const t = useTranslations('overscreen')
   return (
     <button
       className={styles.button}
       onClick={() => {
         track(tracking, name, `${tracking}_${name}`.replace(/ /g, '_').toLowerCase())
-        setOverscreen({ ...overscreen, [slug]: type })
+        setOverscreen(slug, type)
       }}>
       {info.image && (
-        <div className={styles.left}>
-          <div className={styles.image}>{<Image src={info.image} alt='' width={20} height={20} />}</div>
-        </div>
+        <span className={styles.left}>
+          <span className={styles.image}>{<Image src={info.image} alt='' width={20} height={20} />}</span>
+        </span>
       )}
-      <div className={styles.right}>
-        <div className={styles.text}>{t(info.title)}</div>
+      <span className={styles.right}>
+        <span className={styles.text}>{t(info.title)}</span>
         <FullArrowRightIcon />
-      </div>
+      </span>
     </button>
   )
 }

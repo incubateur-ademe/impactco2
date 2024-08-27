@@ -31,47 +31,67 @@ export default function Footer() {
           <div className={styles.topLinks}>
             <div>
               <div className={styles.linkTitle}>LIENS UTILES</div>
-              <div className={styles.linkContainer}>
-                <Link href='https://beta.gouv.fr/startups/impact.co2.html'>Qui sommes-nous ?</Link>
-                <Link href='/stats'>Statistiques</Link>
-                <Link href='/budget'>Budget</Link>
-                <Link href='/plan-du-site'>Plan du site</Link>
-                <Link href='/rendez-vous?fromLabel=footer'>Nous contacter</Link>
-              </div>
+              <ul className={styles.linkContainer}>
+                <li>
+                  <Link href='https://beta.gouv.fr/startups/impact.co2.html'>Qui sommes-nous ?</Link>
+                </li>
+                <li>
+                  <Link href='/stats'>Statistiques</Link>
+                </li>
+                <li>
+                  <Link href='/budget'>Budget</Link>
+                </li>
+                <li>
+                  <Link href='/plan-du-site'>Plan du site</Link>
+                </li>
+                <li>
+                  <Link href='/rendez-vous?fromLabel=footer'>Nous contacter</Link>
+                </li>
+              </ul>
             </div>
             <div>
               <div className={styles.linkTitle}>RESSOURCES</div>
-              <div className={styles.linkContainer}>
-                <Link href='/doc/guide-utilisation'>Guide d’utilisation</Link>
-                <Link href='/doc/questions-frequentes'>Questions fréquentes</Link>
-                <Link href='/doc/exemples'>Galerie des exemples</Link>
-                <Link href='https://github.com/incubateur-ademe/impactco2'>Code source</Link>
-                <Link href='/doc/api'>API</Link>
-              </div>
+              <ul className={styles.linkContainer}>
+                <li>
+                  <Link href='/doc/guide-utilisation'>Guide d’utilisation</Link>
+                </li>
+                <li>
+                  <Link href='/doc/questions-frequentes'>Questions fréquentes</Link>
+                </li>
+                <li>
+                  <Link href='/doc/exemples'>Galerie des exemples</Link>
+                </li>
+                <li>
+                  <Link href='https://github.com/incubateur-ademe/impactco2'>Code source</Link>
+                </li>
+                <li>
+                  <Link href='/doc/api'>API</Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <div className={styles.bottomLinks}>
-          <Link className={styles.bottomLink} href='/mentions-legales'>
-            Mentions légales
-          </Link>
-          <Link className={styles.bottomLink} href='/politique-de-confidentialite'>
-            Confidentialité
-          </Link>
-          <Link className={styles.bottomLink} href='/accessibilite'>
-            Accessibilité : non conforme
-          </Link>
-          <Link
-            className={styles.bottomLink}
-            href='https://agirpourlatransition.ademe.fr'
-            target='_blank'
-            rel='noreferrer noopener'>
-            Agir pour la transition
-          </Link>
-          <Link className={styles.bottomLink} href='https://beta.gouv.fr/' target='_blank' rel='noreferrer noopener'>
-            beta.gouv.fr
-          </Link>
-        </div>
+        <ul className={styles.bottomLinks}>
+          <li className={styles.bottomLink}>
+            <Link href='/mentions-legales'>Mentions légales</Link>
+          </li>
+          <li className={styles.bottomLink}>
+            <Link href='/politique-de-confidentialite'>Confidentialité</Link>
+          </li>
+          <li className={styles.bottomLink}>
+            <Link href='/accessibilite'>Accessibilité : non conforme</Link>
+          </li>
+          <li className={styles.bottomLink}>
+            <Link href='https://agirpourlatransition.ademe.fr' target='_blank' rel='noreferrer noopener'>
+              Agir pour la transition
+            </Link>
+          </li>
+          <li className={styles.bottomLink}>
+            <Link href='https://beta.gouv.fr/' target='_blank' rel='noreferrer noopener'>
+              beta.gouv.fr
+            </Link>
+          </li>
+        </ul>
       </div>
     </footer>
   )

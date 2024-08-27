@@ -14,16 +14,20 @@ export default function Header() {
         <div className={styles.container}>
           <Logos />
           <div>
-            <div className={styles.mainLinks}>
-              <IframeableLink href='/outils'>
-                <ToolsIcon />
-                Les outils
-              </IframeableLink>
-              <IframeableLink href='/doc'>
-                <DocIcon />
-                La doc
-              </IframeableLink>
-            </div>
+            <ul className={styles.mainLinks}>
+              <li>
+                <IframeableLink href='/outils'>
+                  <ToolsIcon />
+                  Les outils
+                </IframeableLink>
+              </li>
+              <li>
+                <IframeableLink href='/doc'>
+                  <DocIcon />
+                  La doc
+                </IframeableLink>
+              </li>
+            </ul>
             <div className={styles.menu}>
               <Menu />
             </div>

@@ -9,17 +9,21 @@ import styles from './EquivalentCard.module.css'
 const EquivalentCard = ({ equivalent }: { equivalent?: ComputedEquivalent }) => {
   const category = equivalent ? categories.find((x) => x.id === equivalent.category) : undefined
 
-  return equivalent && category ? (
-    <IframeableLink
-      href={equivalent.link}
-      className={styles.equivalent}
-      data-testid={`equivalent-search-${equivalent.slug}`}>
-      <TranslationProvider>
-        <EquivalentCardContent equivalent={equivalent} category={category} />
-      </TranslationProvider>
-    </IframeableLink>
-  ) : (
-    <div className={styles.empty} data-testid='equivalent-search-empty' />
+  return (
+    <li className={styles.list}>
+      {equivalent && category ? (
+        <IframeableLink
+          href={equivalent.link}
+          className={styles.equivalent}
+          data-testid={`equivalent-search-${equivalent.slug}`}>
+          <TranslationProvider>
+            <EquivalentCardContent equivalent={equivalent} category={category} />
+          </TranslationProvider>
+        </IframeableLink>
+      ) : (
+        <div className={styles.empty} data-testid='equivalent-search-empty' />
+      )}
+    </li>
   )
 }
 

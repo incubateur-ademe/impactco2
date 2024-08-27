@@ -2,7 +2,7 @@
 
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation'
 import { ASTNode, PublicodesExpression } from 'publicodes'
-import React, { Dispatch, ReactNode, SetStateAction, useCallback, useContext, useEffect, useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { SiteLanguage } from 'types/languages'
 import { TransportSimulateur } from 'types/transport'
@@ -85,7 +85,7 @@ type LivraisonValues = {
 
 export type Params = {
   overscreen: Record<string, string>
-  setOverscreen: Dispatch<SetStateAction<Record<string, string>>>
+  setOverscreen: (slug: string, value: string) => void
   reset: (slug: string) => void
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
@@ -215,7 +215,20 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<SiteLanguage>('fr')
   const [overscreen, setOverscreen] = useState<Record<string, string>>({})
+  const overscreenTrigger = useRef<HTMLElement | null>(null)
 
+  const setOverscreeInternal = (slug: string, value: string) => {
+    console.log(slug, value)
+    if (value) {
+      overscreenTrigger.current = document.activeElement as HTMLElement
+      setOverscreen({ ...overscreen, [slug]: value })
+    } else {
+      setOverscreen({ ...overscreen, [slug]: '' })
+      if (overscreenTrigger.current) {
+        overscreenTrigger.current.focus()
+      }
+    }
+  }
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
   const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>(defaultEquivalents)
@@ -315,6 +328,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   const searchParams = useSearchParams()
   useEffect(() => {
+    overscreenTrigger.current = null
+
     if (!searchParams) {
       return
     }
@@ -519,7 +534,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     <ParamContext.Provider
       value={{
         overscreen,
-        setOverscreen,
+        setOverscreen: setOverscreeInternal,
         reset,
         theme,
         setTheme,

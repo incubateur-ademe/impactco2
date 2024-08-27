@@ -52,7 +52,7 @@ const Shareable = ({
     [overScreens, overscreen, slug]
   )
 
-  const onClose = useCallback(() => setOverscreen({ ...overscreen, [slug]: '' }), [overscreen, slug])
+  const onClose = useCallback(() => setOverscreen(slug, ''), [slug])
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
@@ -89,6 +89,7 @@ const Shareable = ({
 
   return (
     <div
+      lang={language}
       className={classNames(styles.card, {
         [styles.secondaryCard]: secondary !== undefined,
         night: theme === 'night',
@@ -173,9 +174,9 @@ const Shareable = ({
           <div className={styles.logos}>
             <Logos small />
             <div className={small ? styles.bottomLanguage : styles.language}>
-              <HiddenLabel htmlFor='text-select-language'>{t('language.label')}</HiddenLabel>
+              <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
               <Select
-                id='language'
+                id={`${slug}-language`}
                 value={language}
                 onChange={(event) => {
                   track(tracking, 'Language', event.target.value)
@@ -196,7 +197,7 @@ const Shareable = ({
             if (action === 'telecharger') {
               takeScreenshot()
             } else {
-              setOverscreen({ ...overscreen, [slug]: action })
+              setOverscreen(slug, action)
             }
           }}
           tracking={tracking}

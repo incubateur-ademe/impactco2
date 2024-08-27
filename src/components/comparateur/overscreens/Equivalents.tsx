@@ -12,7 +12,9 @@ const Equivalents = ({
   setEquivalents: (value: string[]) => void
 }) => {
   return equivalentsToDisplay.map((equivalent) => (
-    <Checkbox key={equivalent.slug} equivalents={equivalents} equivalent={equivalent} setEquivalents={setEquivalents} />
+    <li key={equivalent.slug}>
+      <Checkbox equivalents={equivalents} equivalent={equivalent} setEquivalents={setEquivalents} />
+    </li>
   ))
 }
 

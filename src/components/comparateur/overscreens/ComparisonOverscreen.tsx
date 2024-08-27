@@ -28,7 +28,6 @@ const allEquivalents = deplacements
 
 const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
   const {
-    overscreen,
     setOverscreen,
     transport: { modes },
   } = useParamContext()
@@ -47,7 +46,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
   const t = useTranslations('overscreen.transport')
   const tModal = useTranslations('modal')
   const onClose = () => {
-    setOverscreen({ ...overscreen, transport: '' })
+    setOverscreen('transport', '')
   }
   return (
     <>
@@ -55,7 +54,6 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
         <HiddenLabel htmlFor='input-search'>{t('search')}</HiddenLabel>
         <Input
           id='search'
-          background='white'
           placeholder={t('search')}
           value={search}
           padding='lg'
@@ -69,7 +67,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
           {tModal('close')}
         </Button>
       </div>
-      <div className={styles.content}>
+      <ul className={styles.content}>
         {search ? (
           results.length > 0 ? (
             <ComparisonEquivalents onClose={onClose} equivalents={results} index={index} />
@@ -91,7 +89,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
         ) : (
           <ComparisonEquivalents onClose={onClose} equivalents={equivalents} index={index} />
         )}
-      </div>
+      </ul>
       <div className={styles.footerCenter}>
         <Button
           onClick={() => {
