@@ -2,7 +2,7 @@ import Fuse from 'fuse.js'
 import { useEffect, useState } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
-import { getName } from 'utils/Equivalent/equivalent'
+import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
 import { getEquivalentWithCarpool } from 'utils/carpool'
 import useParamContext from './ParamProvider'
 import { computedEquivalents } from './equivalents'
@@ -55,7 +55,7 @@ export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, cate
             const [slug] = equivalent.slug.split('+')
             return modes.includes(`${slug}+1`)
           }
-          return equivalent.slug.startsWith('avion') ? modes.includes('avion') : modes.includes(equivalent.slug)
+          return modes.includes(getComparisonSlug(equivalent.slug))
         }
         return true
       })
