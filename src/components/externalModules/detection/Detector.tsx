@@ -98,7 +98,12 @@ const getFactor = (unit: string) => {
 }
 
 export const getValue = (regexResult: string[], language: 'fr' | 'en') =>
-  Number(regexResult[1].replaceAll(',', '.').replaceAll('&nbsp;', '').replaceAll(/\s/g, '')) *
+  Number(
+    regexResult[1]
+      .replace(/,/g, '.')
+      .replace(/&nbsp;/g, '')
+      .replace(/\s/g, '')
+  ) *
   getFactor(regexResult[4]) *
   getUnitFactor(language === 'fr' ? regexResult[12] : regexResult[10])
 

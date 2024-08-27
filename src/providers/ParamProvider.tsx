@@ -373,7 +373,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (searchParams.get('modes')) {
-      const modes = (searchParams.get('modes') as string).replaceAll(' ', '+').split(',')
+      const modes = (searchParams.get('modes') as string).replace(/ /g, '+').split(',')
       if (modes.length > 0) {
         setModes(modes)
         if (!searchParams.get('comparison')) {
@@ -396,7 +396,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (searchParams.get('comparison')) {
-      const comparison = searchParams.get('comparison')?.replaceAll(' ', '+').split(',') as string[]
+      const comparison = searchParams.get('comparison')?.replace(/ /g, '+').split(',') as string[]
       setComparison(comparison)
     }
     if (searchParams.get('transport')) {

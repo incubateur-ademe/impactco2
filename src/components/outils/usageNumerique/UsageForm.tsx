@@ -77,7 +77,7 @@ const UsageForm = ({
             }}>
             {values.types.map((option) => (
               <option key={option} value={`'${option}'`}>
-                {t(option.toString().replaceAll('.', ''))}
+                {t(option.toString().replace(/./g, ''))}
               </option>
             ))}
           </Select>
