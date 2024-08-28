@@ -70,3 +70,5 @@ npm/react/dist/index.js
 npm/react/dist/index.js.LICENSE.txt
 
 dist/
+
+public/test/scripts/

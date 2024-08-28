@@ -128,4 +128,42 @@ module.exports = [
       ],
     },
   },
+
+  {
+    name: 'web-components',
+    mode: 'production',
+    entry: './src/npm/react/EtiquetteWC.ts',
+    output: {
+      publicPath: '',
+      filename: 'etiquette.js',
+      path: path.resolve(__dirname, 'public', 'webcomponents'),
+    },
+    resolve: {
+      extensions: ['.tsx', '.jsx', '.ts', '.js'],
+      alias: {
+        components: path.resolve(__dirname, 'src/components/'),
+        data: path.resolve(__dirname, 'src/data/'),
+        utils: path.resolve(__dirname, 'src/utils/'),
+        hooks: path.resolve(__dirname, 'src/hooks/'),
+        react: path.resolve(__dirname, './node_modules/react'),
+        'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+      },
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx|tsx|ts)$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+          },
+        },
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader', 'postcss-loader'],
+        },
+      ],
+    },
+  },
 ]
