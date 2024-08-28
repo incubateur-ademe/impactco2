@@ -145,8 +145,10 @@ module.exports = [
         data: path.resolve(__dirname, 'src/data/'),
         utils: path.resolve(__dirname, 'src/utils/'),
         hooks: path.resolve(__dirname, 'src/hooks/'),
-        react: path.resolve(__dirname, './node_modules/react'),
-        'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat', // Must be below test-utils
+        'react/jsx-runtime': 'preact/jsx-runtime',
       },
     },
     module: {

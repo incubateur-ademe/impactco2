@@ -22,7 +22,7 @@ const Etiquette = ({
     <InternalEtiquette
       ref={ref}
       comparisons={comparisons}
-      baseValue={value.toString()}
+      baseValue={value}
       animated={animated}
       language={language || 'fr'}
     />
