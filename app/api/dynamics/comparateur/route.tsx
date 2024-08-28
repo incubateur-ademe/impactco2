@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
         value={Number(searchParams.get('value') || '100') * 1000}
         equivalent={searchParams.get('equivalent')}
         comparisons={(searchParams.get('comparisons') || 'ananas,voiturethermique,tgv,smartphone,pomme')
-          .replaceAll(' ', '+')
+          .replace(/ /g, '+')
           .split(',')}
         language={searchParams.get('language') || 'fr'}
       />
