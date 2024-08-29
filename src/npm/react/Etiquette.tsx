@@ -2,6 +2,8 @@
 
 import React, { useRef } from 'react'
 import { Language } from 'types/equivalent'
+import '../../utils/styles.css'
+import '../../utils/variables.css'
 import InternalEtiquette from 'components/comparateur/Etiquette'
 
 const Etiquette = ({
@@ -20,7 +22,7 @@ const Etiquette = ({
     <InternalEtiquette
       ref={ref}
       comparisons={comparisons}
-      baseValue={value.toString()}
+      baseValue={value}
       animated={animated}
       language={language || 'fr'}
     />
