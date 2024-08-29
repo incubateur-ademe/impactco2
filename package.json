@@ -46,6 +46,7 @@
     "@next/bundle-analyzer": "^14.2.6",
     "@prisma/client": "^5.18.0",
     "@publicodes/react-ui": "1.4.0",
+    "@r2wc/react-to-web-component": "^2.0.3",
     "@sentry/nextjs": "^8.26.0",
     "@socialgouv/matomo-next": "^1.9.0",
     "@tanstack/react-query": "^5.52.1",
