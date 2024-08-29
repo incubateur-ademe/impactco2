@@ -91,13 +91,13 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
           forceDisplay={activity === 'Entreprise'}
         />
       )}
-      {(activity === 'all' || activity === 'Loisirs/Culture') && (
+      {(activity === 'all' || activity === 'Culture/Tourisme') && (
         <ExamplesList
           withTags
-          title='Culture et Loisirs'
+          title='Culture et Tourisme'
           description='Ils utilisent nos outils de manière remarquable'
-          examples={filteredExamples.filter((example) => example.activity === 'Loisirs/Culture')}
-          forceDisplay={activity === 'Loisirs/Culture'}
+          examples={filteredExamples.filter((example) => example.activity === 'Culture/Tourisme')}
+          forceDisplay={activity === 'Culture/Tourisme'}
         />
       )}
       {(activity === 'all' || activity === 'Association') && (
