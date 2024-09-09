@@ -81,9 +81,8 @@ const Progress = ({
           {progress}%
         </progress>
       </div>
-      <button className={styles.button} onClick={() => setPaused(!paused)}>
+      <button title={paused ? 'Play' : 'Pause'} className={styles.button} onClick={() => setPaused(!paused)}>
         {paused ? <PlayIcon /> : <PauseIcon />}
-        {paused ? 'Play' : 'Pause'}
       </button>
     </>
   )
