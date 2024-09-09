@@ -1,3 +1,4 @@
+import axios, { AxiosResponse } from 'axios'
 import { z } from 'zod'
 
 export const NotionCommandValidation = z
@@ -57,3 +58,41 @@ export const NotionCommandValidation = z
   })
 
 export type NotionCommand = z.infer<typeof NotionCommandValidation>
+
+export const getAllNotionDB = async <T>(url: string): Promise<{ id: string; properties: T }[]> => {
+  let results: { id: string; properties: T }[] = []
+  let axiosResponse:
+    | AxiosResponse<{
+        results: {
+          id: string
+          properties: T
+        }[]
+        next_cursor: boolean
+        has_more: boolean
+      }>
+    | undefined = undefined
+
+  while (!axiosResponse || axiosResponse.data.has_more) {
+    axiosResponse = await axios.post<{
+      results: {
+        id: string
+        properties: T
+      }[]
+      next_cursor: boolean
+      has_more: boolean
+    }>(
+      url,
+      { start_cursor: axiosResponse ? axiosResponse.data.next_cursor : undefined },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
+          'Notion-Version': '2022-06-28',
+        },
+      }
+    )
+
+    results = results.concat(axiosResponse.data.results)
+  }
+
+  return results
+}
