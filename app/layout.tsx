@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import React from 'react'
+import 'utils/fonts.css'
 import 'utils/styles.css'
 import 'utils/variables.css'
 import Theme from 'components/layout/Theme'
