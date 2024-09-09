@@ -293,7 +293,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
             <Resource
               image='/images/category-fruitsetlegumes.png'
               text='calendar'
-              href='https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html/'
+              href='https://librairie.ademe.fr/consommer-autrement/5784-a-chaque-mois-ses-fruits-et-legumes-.html'
               withLink='ADEME'
               tracking='fruitsetlegumes'
             />
