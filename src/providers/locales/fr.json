@@ -6,6 +6,7 @@
     "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
   },
   "overscreen": {
+    "disclaimer": "Résultats basés sur les données des bases carbonne Françaises de ",
     "default-true": "Affiché par défaut",
     "default-false": "Afficher par défaut",
     "usage": "Usage",
