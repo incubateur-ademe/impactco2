@@ -32,6 +32,9 @@ const PlanDuSitePage = () => {
             4 conseils pour réduire l’impact carbone des séjours au ski
           </Link>
           <Link href='/contenu/nouveau-site'>Le nouveau site “Impact CO2” est en ligne !</Link>
+          <Link href='/contenu/semaine-mobilite-simulateur-transport-ademe'>
+            Semaine européenne de la mobilité : découverte du calculateur Impact Transport de l’ADEME
+          </Link>
         </div>
         <Link href='/doc'>La doc</Link>
         <div className={styles.row}>
@@ -49,10 +52,8 @@ const PlanDuSitePage = () => {
         <Link href='/outils'>Les outils</Link>
         <div className={styles.row}>
           {tools.map((tool) => (
-            <>
-              <Link key={tool.slug} href={`/outils/${tool.slug}`}>
-                {tool.name}
-              </Link>
+            <div key={tool.slug}>
+              <Link href={`/outils/${tool.slug}`}>{tool.name}</Link>
               {tool.equivalents && (
                 <div className={styles.row}>
                   {tool.equivalents.map((equivalent) => (
@@ -62,7 +63,7 @@ const PlanDuSitePage = () => {
                   ))}
                 </div>
               )}
-            </>
+            </div>
           ))}
           <Link href='/outils/comparateur'>Comparateur</Link>
         </div>
