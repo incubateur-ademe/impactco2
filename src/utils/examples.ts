@@ -16,7 +16,6 @@ export const getExamples = unstable_cache(
       }>('https://api.notion.com/v1/databases/ad7a6aa64a0641e08bb64e5f4010843e/query')
 
       const examples: Record<string, Example> = {}
-      console.log(results.map((x) => x.properties.Nom.title))
       results.forEach((result) => {
         try {
           if (

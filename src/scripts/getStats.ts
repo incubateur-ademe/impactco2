@@ -116,8 +116,6 @@ export const getMatomoStats = async (date: string) => {
       .slice(0, 10)
       .map((event) => ({ label: event.label.replace('IFrame_', ''), visits: event.nb_visits })),
   }
-
-  console.log(results)
 }
 
 getMatomoStats(process.argv[2])
