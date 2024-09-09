@@ -35,7 +35,9 @@ const setupIframe = (element) => {
 
   element.parentNode.insertBefore(iframe, element)
 
-  iframeResize({ license: 'GPLv3' }, iframe)
+  iframe.onload = () => {
+    iframeResize({ license: 'GPLv3', checkOrigin: false }, iframe)
+  }
 }
 
 const buttonOnly = !!document.getElementById('mon-impact-transport')
