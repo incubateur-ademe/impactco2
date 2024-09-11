@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import useLivraisonContext from 'src/providers/LivraisonProvider'
 import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
@@ -10,7 +10,8 @@ import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
-import { getRandomEquivalents } from 'components/comparateur/random'
+import { getFullRandomEquivalents } from 'components/comparateur/random'
+import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
 import Radio from 'components/form/Radio'
@@ -68,6 +69,11 @@ const LivraisonSimulator = () => {
   }, [values, isHabit, isPlane])
 
   const t = useTranslations('livraison')
+
+  useEffect(() => {
+    setEquivalents(getRandomEquivalentForValue(total))
+  }, [total])
+
   return (
     <>
       <div className={styles.simulator}>
@@ -206,7 +212,7 @@ const LivraisonSimulator = () => {
           ref={ref}
           randomize={() => {
             track('Livraison', 'Randomize', 'randomize')
-            setEquivalents(getRandomEquivalents(undefined, 3))
+            setEquivalents(getFullRandomEquivalents())
           }}
           language={language}
         />

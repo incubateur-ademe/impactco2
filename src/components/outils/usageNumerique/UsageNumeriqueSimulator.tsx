@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import React, { useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
 import { Category } from 'types/category'
@@ -14,7 +14,8 @@ import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
-import { getRandomEquivalents } from 'components/comparateur/random'
+import { getFullRandomEquivalents } from 'components/comparateur/random'
+import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
 import shareableStyles from 'components/shareable/Shareable.module.css'
 import CategorySimulator from '../CategorySimulator'
 import UsageForm from './UsageForm'
@@ -115,6 +116,11 @@ const UsageNumeriqueSimulator = () => {
     ],
     [engine, situation, numberEmails, language]
   )
+
+  useEffect(() => {
+    setEquivalents(getRandomEquivalentForValue(total * 52))
+  }, [total])
+
   return (
     <>
       {(!mode || mode === 'simulator') && (
@@ -154,7 +160,7 @@ const UsageNumeriqueSimulator = () => {
               ref={ref}
               randomize={() => {
                 track('Usage numérique', 'Randomize', 'randomize')
-                setEquivalents(getRandomEquivalents(undefined, 3))
+                setEquivalents(getFullRandomEquivalents())
               }}
               language={language}
             />

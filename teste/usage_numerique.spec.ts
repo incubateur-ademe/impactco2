@@ -6,9 +6,8 @@ test.beforeEach(async ({ page }) => {
 
 test('Update share and integrate values when modifying parameters', async ({ page }) => {
   await expect(page.getByTestId('usagenumerique-generated-value')).toHaveText('0.28')
-  await expect(page.getByTestId('etiquette-voiturethermique-value')).toHaveText('65.8')
-  await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toHaveText('1.97')
-  await expect(page.getByTestId('etiquette-streamingvideo-value')).toHaveText('224')
+
+  await expect(page.getByTestId('etiquette-value')).toHaveText('14.3')
 
   await page.getByTestId('input-main-value-streaming').fill('10')
   await expect(page.getByTestId('usagenumerique-generated-value')).toHaveText('0.37')
