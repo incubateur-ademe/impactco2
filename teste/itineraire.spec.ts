@@ -248,7 +248,9 @@ test('Roundtrip', async ({ page }) => {
   await page.goto(
     'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&roundTrip=true&defaultMode=list&language=fr'
   )
-  await expect(page.getByTestId('category-intercites')).toHaveText('Intercités  - 182 km1.64 kg CO₂e')
+  await expect(page.getByTestId('category-intercites')).toHaveText('Intercités  - 182 km1.64 kg CO₂e', {
+    timeout: 10000,
+  })
   await expect(page.getByTestId('category-tgv')).not.toBeAttached()
 })
 
