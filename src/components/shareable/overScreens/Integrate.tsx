@@ -111,28 +111,30 @@ const Integrate = ({
 
   return params && visibility ? (
     <>
-      <CustomParams
-        integration
-        tracking={tracking}
-        trackingType='Intégrer'
-        params={path.includes('etiquette') ? {} : params}
-        visibility={visibility}
-        setVisibility={setVisibility}
-      />
-      {!path.includes('etiquette') && Object.entries(params).length > 0 && <div className={styles.separator} />}
-      <CustomParam
-        tracking={tracking}
-        slug='theme'
-        param={{ value: theme, setter: setTheme } as CustomParamValue}
-        visible
-      />
-      <CustomParam
-        tracking={tracking}
-        slug='language'
-        param={{ value: language, setter: setLanguage } as CustomParamValue}
-        visible
-      />
-      <ClipboardBox tracking={tracking}>{`<script name="impact-co2" src="${
+      <form id={`${category}-integrate`}>
+        <CustomParams
+          integration
+          tracking={tracking}
+          trackingType='Intégrer'
+          params={path.includes('etiquette') ? {} : params}
+          visibility={visibility}
+          setVisibility={setVisibility}
+        />
+        {!path.includes('etiquette') && Object.entries(params).length > 0 && <div className={styles.separator} />}
+        <CustomParam
+          tracking={tracking}
+          slug='theme'
+          param={{ value: theme, setter: setTheme } as CustomParamValue}
+          visible
+        />
+        <CustomParam
+          tracking={tracking}
+          slug='language'
+          param={{ value: language, setter: setLanguage } as CustomParamValue}
+          visible
+        />
+      </form>
+      <ClipboardBox form={`${category}-integrate`} tracking={tracking}>{`<script name="impact-co2" src="${
         process.env.NEXT_PUBLIC_URL
       }/iframe.js" data-type="${path}" data-search="?${urlParams}"></script>`}</ClipboardBox>
       <IntegratePreview path={path} urlParams={urlParams} />

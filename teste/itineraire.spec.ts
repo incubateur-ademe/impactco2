@@ -47,7 +47,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   })
 
   await test.step('On peut rentrer un des choix', async () => {
-    const nantes = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Nantes 44000 France' })
+    const nantes = await page.getByTestId('transportSuggest').locator('li').filter({ hasText: 'Nantes 44000 France' })
 
     await nantes.click()
     expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Nantes 44000 France')
@@ -84,7 +84,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
 
   await test.step("Arrivée - On peut rentrer un des choix, les bilans carbones s'affichent automatiquement", async () => {
     await expect(page.getByTestId('category-intercites')).not.toBeAttached()
-    const angers = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Angers 49000 France' })
+    const angers = await page.getByTestId('transportSuggest').locator('li').filter({ hasText: 'Angers 49000 France' })
 
     await angers.click()
 
@@ -256,6 +256,6 @@ test('Roundtrip', async ({ page }) => {
 
 const getNbOfSuggestions = async (page: Page) => {
   await page.waitForTimeout(800)
-  const count = await page.getByTestId('transportSuggest').locator('div').count()
+  const count = await page.getByTestId('transportSuggest').locator('li').count()
   return count
 }

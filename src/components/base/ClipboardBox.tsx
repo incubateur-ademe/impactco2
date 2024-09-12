@@ -9,9 +9,10 @@ import CopyIcon from 'components/base/icons/copy'
 import InformationIcon from 'components/base/icons/information'
 import styles from './ClipboardBox.module.css'
 
-const ClipboardBox = ({ children, tracking }: { children: string; tracking: string }) => {
+const ClipboardBox = ({ children, tracking, form }: { children: string; tracking: string; form?: string }) => {
   const [copied, setCopied] = useState(false)
   const t = useTranslations('clipboard')
+  const Result = form ? 'output' : 'div'
   return (
     <>
       <button
@@ -21,10 +22,11 @@ const ClipboardBox = ({ children, tracking }: { children: string; tracking: stri
           setTimeout(() => setCopied(false), 500)
           navigator.clipboard.writeText(children)
           track(tracking, 'Copy', children)
-        }}>
-        <span className={styles.content} data-testid='clipboard-box'>
-          {children}
-        </span>
+        }}
+        aria-label="Copier le code d'integration">
+        <Result className={styles.content} data-testid='clipboard-box' form={form}>
+          <code>{children}</code>
+        </Result>
         <span className={classNames(styles.copy, { [styles.copied]: copied })}>
           {copied ? t('copie') : t('copier')}
           {copied ? <CheckIcon /> : <CopyIcon />}
