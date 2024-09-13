@@ -19,16 +19,9 @@ export const metadata: Metadata = {
 }
 
 const fonts = [
-  '/fonts/Marianne-Light.woff2',
-  '/fonts/Marianne-Light_Italic.woff2',
-  '/fonts/Marianne-Regular.woff2',
-  '/fonts/Marianne-Regular_Italic.woff2',
-  '/fonts/Marianne-Medium.woff2',
-  '/fonts/Marianne-Medium_Italic.woff2',
-  '/fonts/Marianne-Bold.woff2',
-  '/fonts/Marianne-Bold_Italic.woff2',
-  '/fonts/Marianne-ExtraBold.woff2',
-  '/fonts/Marianne-ExtraBold_Italic.woff2',
+  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Regular.woff2',
+  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Medium.woff2',
+  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Bold.woff2',
 ]
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
