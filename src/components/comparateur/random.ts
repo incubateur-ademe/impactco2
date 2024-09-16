@@ -40,6 +40,14 @@ export const getRandomEquivalents = (current: string | undefined, length: number
   return objects
 }
 
+export const getFullRandomEquivalents = () => {
+  const objects: string[] = []
+  for (let i = 0; i < 3; i++) {
+    objects.push(getRandomEquivalent(objects))
+  }
+  return objects
+}
+
 export const getRandomEquivalentsInCategory = (current: string | undefined, category: number) => {
   const meaningfullEquivalents = computedEquivalents.filter(
     (equivalent) => equivalent.category === category && current !== equivalent.slug

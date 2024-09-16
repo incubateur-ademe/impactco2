@@ -47,9 +47,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   })
 
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('7,289')
-  await expect(page.getByTestId('etiquette-voiturethermique-value')).toHaveText('6,280')
-  await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toHaveText('188')
-  await expect(page.getByTestId('etiquette-streamingvideo-value')).toHaveText('21,348')
+  await expect(page.getByTestId('etiquette-value')).toHaveText('1,367')
 
   await page.getByTestId('text-select-mode').selectOption('tramway')
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('144')

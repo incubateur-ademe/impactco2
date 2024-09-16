@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
@@ -10,7 +10,8 @@ import { track } from 'utils/matomo'
 import LocalNumber from 'components/base/LocalNumber'
 import SprinklesIcon from 'components/base/icons/sprinkles'
 import Etiquette from 'components/comparateur/Etiquette'
-import { getRandomEquivalents } from 'components/comparateur/random'
+import { getFullRandomEquivalents } from 'components/comparateur/random'
+import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
 import simulatorStyles from '../Simulator.module.css'
 import styles from './OsezChangerSimulator.module.css'
 import Question from './Question'
@@ -28,6 +29,13 @@ const OsezChangerSimulator = () => {
   const [newValue, setNewValue] = useState<number | undefined>()
 
   const total = (newValue || 0) * shoesImpact
+
+  useEffect(() => {
+    if (newValue) {
+      setEquivalents(getRandomEquivalentForValue((newValue || 0) * shoesImpact * 1000))
+    }
+  }, [newValue])
+
   return (
     <>
       <div className={classNames(simulatorStyles.simulator, styles.simulator)}>
@@ -78,7 +86,7 @@ const OsezChangerSimulator = () => {
               ref={ref}
               randomize={() => {
                 track('OsezChanger', 'Randomize', 'randomize')
-                setEquivalents(getRandomEquivalents(undefined, 3))
+                setEquivalents(getFullRandomEquivalents())
               }}
               language={language}
             />

@@ -16,8 +16,6 @@ import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/UseTheme'
 import { computedEquivalents } from './equivalents'
 
-const defaultEquivalents = ['voiturethermique', 'repasavecduboeuf', 'streamingvideo']
-
 const usageNumeriqueDefaultValues = {
   ['email . appareil']: "'smartphone'",
   ['email . transmission . émetteur . réseau']: "'fixe FR'",
@@ -230,7 +228,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   }
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
-  const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>(defaultEquivalents)
+  const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>([])
   const [isHabit, setIsHabit] = useState(false)
   const [isPlane, setIsPlane] = useState(false)
   const [number, setNumber] = useState(1)
@@ -287,7 +285,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [teletravailDisplayAll, settTletravailDisplayAll] = useState(false)
 
   // Teletravail
-  const [teletravailEquivalents, setTeletravailEquivalents] = useState(defaultEquivalents)
+  const [teletravailEquivalents, setTeletravailEquivalents] = useState<string[]>([])
   const [teletravailTransport, setTeletravailTransport] = useState('voiturethermique')
   const [presentiel, setPresentiel] = useState(4)
   const [homeOffice, setHomeOffice] = useState(1)
@@ -313,7 +311,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [streamingWithConstruction, setStreamingWithConstruction] = useState(false)
 
   // Usage Numérique
-  const [usageNumeriqueEquivalents, setUsageNumeriqueEquivalents] = useState(defaultEquivalents)
+  const [usageNumeriqueEquivalents, setUsageNumeriqueEquivalents] = useState<string[]>([])
   const [usageNumeriqueDisplayAll, setUsageNumeriqueDisplayAll] = useState(false)
   const [numberEmails, setNumberEmails] = useState<number>(50)
   const [usageNumeriqueSituation, setUsageNumeriqueSituation] =
@@ -508,18 +506,15 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setTeletravailTransport('voiturethermique')
         setPresentiel(4)
         setHomeOffice(1)
-        setTeletravailEquivalents(defaultEquivalents)
         break
       case 'usagenumerique':
         setNumberEmails(50)
         setUsageNumeriqueSituation(usageNumeriqueDefaultValues)
-        setUsageNumeriqueEquivalents(defaultEquivalents)
         break
       case 'livraison':
         setLivraisonValues(livraisonDefaultValues)
         setNumber(1)
         setFrequence(12)
-        setLivraisonEquivalents(defaultEquivalents)
         break
       case 'chauffage':
         setM2(63)
