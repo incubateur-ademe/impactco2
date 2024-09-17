@@ -33,6 +33,7 @@ const Tiles = () => {
       )
     }
   }, [equivalents, generation])
+
   return (
     <>
       <ul className={styles.tiles}>

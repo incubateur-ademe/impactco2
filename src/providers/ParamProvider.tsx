@@ -361,7 +361,12 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     }
 
     if (searchParams.get('comparisons')) {
-      setEquivalents((searchParams.get('comparisons') as string).replace(/ /g, '+').split(','))
+      setEquivalents(
+        (searchParams.get('comparisons') as string)
+          .replace(/ /g, '+')
+          .split(',')
+          .filter((slug) => slug.includes('+') || computedEquivalents.find((equivalent) => equivalent.slug === slug))
+      )
     } else {
       setEquivalents(getRandomEquivalents(searchParams.get('equivalent') as string, 3))
     }
