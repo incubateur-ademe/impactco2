@@ -91,6 +91,24 @@ const KitCommunication = () => {
           </div>
         </Card>
       </Block>
+      <Block>
+        <Card className={outilStyles.card}>
+          <div className={classNames(outilStyles.image, styles.image)}>
+            <Image src='/images/banner-kit-plaquette.png' width={748} height={180} alt='' />
+          </div>
+          <div className={outilStyles.content}>
+            <h2>Plaquette de présentation</h2>
+            <span>
+              Nous mettons à votre disposition une courte plaquette de présentation pour pouvoir partager facilement
+              notre service public à votre entourage professionnel. N’hésitez pas à l’utiliser lors de vos prochains
+              ateliers, ou à le diffuser dans vos canaux de communication !
+            </span>
+          </div>
+          <div className={outilStyles.link}>
+            <Download name='plaquette' customHref='/kit/plaquette.pdf' customLabel='Télécharger la plaquette (.pdf)' />
+          </div>
+        </Card>
+      </Block>
     </>
   )
 }
