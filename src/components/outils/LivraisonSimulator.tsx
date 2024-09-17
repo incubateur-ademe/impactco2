@@ -76,7 +76,7 @@ const LivraisonSimulator = () => {
 
   return (
     <>
-      <div className={styles.simulator}>
+      <form id='livraison-simulator' className={styles.simulator}>
         <Select
           className={styles.fullSelect}
           id='livraison-produit'
@@ -194,8 +194,8 @@ const LivraisonSimulator = () => {
             }}
           />
         </Radio>
-      </div>
-      <div className={styles.results}>
+      </form>
+      <output form='livraison-simulator' className={styles.results}>
         <div className={styles.header}>{t('generate')}</div>
         <div className={styles.value}>
           <span className={styles.number} data-testid='livraison-colis-value'>
@@ -203,7 +203,7 @@ const LivraisonSimulator = () => {
           </span>{' '}
           kg co₂e
         </div>
-      </div>
+      </output>
       <div className={styles.etiquette}>
         <div className={styles.header}>{t('total')}</div>
         <Etiquette

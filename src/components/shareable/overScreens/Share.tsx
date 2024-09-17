@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
+import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getCustomParams } from './CustomParamsValues'
 import styles from './Share.module.css'
@@ -49,19 +50,29 @@ const Share = ({
 
   return (
     <>
-      {params && visibility && (
-        <>
-          <CustomParams
-            tracking={trackingValue}
-            trackingType='Partager'
-            params={params}
-            visibility={visibility}
-            setVisibility={setVisibility}
-          />
-          {Object.keys(params).length > 0 && <div className={styles.separator} />}
-        </>
-      )}
+      <form id={`${category}-share`}>
+        {params && visibility && (
+          <>
+            <CustomParams
+              tracking={trackingValue}
+              trackingType='Partager'
+              params={params}
+              visibility={visibility}
+              setVisibility={setVisibility}
+            />
+            {Object.keys(params).length > 0 && <div className={styles.separator} />}
+          </>
+        )}
+        <CustomParam
+          tracking={trackingValue}
+          slug='language'
+          integration
+          param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
+          visible
+        />
+      </form>
       <ShareUrl
+        form={`${category}-share`}
         url={url}
         tracking={tracking}
         path={path}

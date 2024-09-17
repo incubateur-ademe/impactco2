@@ -30,7 +30,7 @@ const PlusMinus = ({
         className={styles.minus}
         onClick={() => setValue(value - stepValue)}
         disabled={value === stepValue}
-        title={`Diminuer le nombre de ${label}`}>
+        title={`Diminuer le nombre de ${formatName(label, 1)}`}>
         <MinusIcon />
       </button>
       <div className={styles.main}>
@@ -41,7 +41,7 @@ const PlusMinus = ({
         className={styles.plus}
         onClick={() => setValue(value + stepValue)}
         disabled={!!max && value === max}
-        title={`Augmenter le nombre de ${label}`}>
+        title={`Augmenter le nombre de ${formatName(label, 1)}`}>
         <PlusIcon />
       </button>
     </div>

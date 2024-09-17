@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { Dispatch, SetStateAction, useCallback, useEffect } from 'react'
+import React, { Dispatch, SetStateAction, useCallback, useEffect, useRef } from 'react'
 import { Address } from 'types/address'
 import { displayAddress } from 'utils/address'
 import { Point } from 'hooks/useItineraries'
@@ -20,6 +20,13 @@ const Suggestions = ({
   handleSuggestionClick: (point: Point) => void
 }) => {
   const maxSuggestions = 7
+  const ref = useRef<HTMLUListElement>(null)
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.focus()
+    }
+  }, [ref])
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -57,14 +64,15 @@ const Suggestions = ({
   }, [onKeyDown])
 
   return (
-    <div className={styles.container} data-testid='transportSuggest'>
+    <ul className={styles.container} data-testid='transportSuggest' ref={ref}>
       {results
         .map((result) => ({ ...result, display: displayAddress(result) }))
         .filter((result, index, array) => array.findIndex((adress) => adress.display === result.display) === index)
         .map((result, index) => {
           return (
             index < maxSuggestions && (
-              <div
+              <li
+                role='option'
                 className={classNames(styles.suggestion, { [styles.current]: index === current })}
                 key={result.properties.osm_id}
                 onClick={() =>
@@ -77,11 +85,11 @@ const Suggestions = ({
                 }
                 onMouseDown={(e) => e.preventDefault()}>
                 {displayAddress(result)}
-              </div>
+              </li>
             )
           )
         })}
-    </div>
+    </ul>
   )
 }
 

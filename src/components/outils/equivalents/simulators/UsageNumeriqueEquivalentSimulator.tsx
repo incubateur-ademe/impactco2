@@ -85,9 +85,13 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
   return (
     <>
       <div className={baseStyles.header}>
-        <EquivalentCardContent equivalent={computedEquivalent} category={category} />
+        <EquivalentCardContent
+          equivalent={computedEquivalent}
+          category={category}
+          output={`${computedEquivalent.slug}-simulator`}
+        />
       </div>
-      <div className={baseStyles.simulator}>
+      <form id={`${computedEquivalent.slug}-simulator`} className={baseStyles.simulator}>
         <div>
           <label className={baseStyles.label} htmlFor='input-main-value'>
             <b>{tEquivalent(`${slug}-mainTitle`)}</b>
@@ -240,7 +244,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
             </div>
           </div>
         )}
-      </div>
+      </form>
       <Detail equivalent={computedEquivalent} />
     </>
   )
