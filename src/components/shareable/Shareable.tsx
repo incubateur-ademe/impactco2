@@ -145,58 +145,58 @@ const Shareable = ({
           </div>
           {secondary && <div className={styles.secondaryText}>{secondary}</div>}
         </div>
+        {secondary === undefined && (
+          <>
+            {overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
+              <div className={classNames('no-screenshot', styles.ressources)}>
+                {'data' in overScreens && (
+                  <Feature
+                    slug={slug}
+                    type='data'
+                    tracking={tracking}
+                    name='Comprendre les données'
+                    info={overScreens.data}
+                  />
+                )}
+                {'hypothesis' in overScreens && (
+                  <Feature
+                    slug={slug}
+                    type='hypothesis'
+                    info={overScreens.hypothesis}
+                    name='Aller plus loin'
+                    tracking={tracking}
+                  />
+                )}
+              </div>
+            ) : (
+              !noBottomBorders && <div className={classNames('no-screenshot', styles.separator)} />
+            )}
+            {language !== 'fr' && (
+              <div className={styles.disclaimer}>
+                {t('disclaimer')} <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>ADEME</Link>
+              </div>
+            )}
+            <div className={styles.logos}>
+              <Logos small />
+              <div className={classNames('no-screenshot', small ? styles.bottomLanguage : styles.language)}>
+                <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
+                <Select
+                  id={`${slug}-language`}
+                  value={language}
+                  onChange={(event) => {
+                    track(tracking, 'Language', event.target.value)
+                    setLanguage(event.target.value as SiteLanguage)
+                  }}>
+                  <option value='fr'>FR</option>
+                  <option value='en'>EN</option>
+                  <option value='es'>ES</option>
+                </Select>
+                <LanguageIcon />
+              </div>
+            </div>
+          </>
+        )}
       </div>
-      {secondary === undefined && (
-        <>
-          {overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
-            <div className={styles.ressources}>
-              {'data' in overScreens && (
-                <Feature
-                  slug={slug}
-                  type='data'
-                  tracking={tracking}
-                  name='Comprendre les données'
-                  info={overScreens.data}
-                />
-              )}
-              {'hypothesis' in overScreens && (
-                <Feature
-                  slug={slug}
-                  type='hypothesis'
-                  info={overScreens.hypothesis}
-                  name='Aller plus loin'
-                  tracking={tracking}
-                />
-              )}
-            </div>
-          ) : (
-            !noBottomBorders && <div className={styles.separator} />
-          )}
-          {language !== 'fr' && (
-            <div className={styles.disclaimer}>
-              {t('disclaimer')} <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>ADEME</Link>
-            </div>
-          )}
-          <div className={styles.logos}>
-            <Logos small />
-            <div className={small ? styles.bottomLanguage : styles.language}>
-              <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
-              <Select
-                id={`${slug}-language`}
-                value={language}
-                onChange={(event) => {
-                  track(tracking, 'Language', event.target.value)
-                  setLanguage(event.target.value as SiteLanguage)
-                }}>
-                <option value='fr'>FR</option>
-                <option value='en'>EN</option>
-                <option value='es'>ES</option>
-              </Select>
-              <LanguageIcon />
-            </div>
-          </div>
-        </>
-      )}
       <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary !== undefined })}>
         <Actions
           onClick={(action) => {
