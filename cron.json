@@ -5,7 +5,7 @@
       "size": "S"
     },
     {
-      "command": "0 12 * * * npx ts-node -r dotenv/config src/scripts/testIframes.ts",
+      "command": "0 13 * * * npx ts-node -r dotenv/config src/scripts/testIframes.ts",
       "size": "S"
     }
   ]
