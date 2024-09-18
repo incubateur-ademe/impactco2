@@ -234,7 +234,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                 </div>
               </td>
               <td className={styles.percent}> </td>
-              <td>
+              <td data-testid='equivalent-total-value'>
                 <DetailValue unit={unit} value={sum} />
               </td>
             </tr>
