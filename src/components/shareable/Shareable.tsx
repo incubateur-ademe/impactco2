@@ -10,6 +10,7 @@ import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
 import GhostButton from 'components/base/GhostButton'
 import Logos from 'components/base/Logo/Logos'
+import Link from 'components/base/buttons/Link'
 import CloseIcon from 'components/base/icons/close'
 import LanguageIcon from 'components/base/icons/language'
 import HiddenLabel from 'components/form/HiddenLabel'
@@ -170,6 +171,11 @@ const Shareable = ({
             </div>
           ) : (
             !noBottomBorders && <div className={styles.separator} />
+          )}
+          {language !== 'fr' && (
+            <div className={styles.disclaimer}>
+              {t('disclaimer')} <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>ADEME</Link>
+            </div>
           )}
           <div className={styles.logos}>
             <Logos small />
