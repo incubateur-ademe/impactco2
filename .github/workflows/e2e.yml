@@ -43,7 +43,7 @@ jobs:
       - name: API tests => with Jest
         run: yarn testa
       - name: E2E tests => install Playwright
-        run: yarn playwright install
+        run: yarn playwright install chromium
       - name: E2E tests => with Playwright
         run: yarn teste
       - run: mkdir -p ${{ github.workspace }}/tmp/artifacts

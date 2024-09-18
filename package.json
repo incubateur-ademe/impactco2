@@ -32,7 +32,8 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "testIframes": "npx playwright install chromium; npx ts-node -r dotenv/config src/scripts/testIframes.ts"
   },
   "engines": {
     "node": "22",
@@ -44,7 +45,6 @@
     "@incubateur-ademe/publicodes-acv-numerique": "^1.2.0",
     "@incubateur-ademe/publicodes-impact-livraison": "^0.3.1",
     "@next/bundle-analyzer": "^14.2.6",
-    "@playwright/test": "^1.47.1",
     "@prisma/client": "^5.18.0",
     "@publicodes/react-ui": "1.4.0",
     "@r2wc/react-to-web-component": "^2.0.3",
@@ -64,7 +64,6 @@
     "next-query-params": "^5.0.0",
     "next-sitemap": "^4.2.3",
     "notion-client": "^6.16.0",
-    "playwright": "^1.47.1",
     "postcss": "^8.4.41",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^16.1.0",
@@ -96,6 +95,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@babel/runtime": "^7.25.4",
+    "@playwright/test": "^1.47.1",
     "@statoscope/webpack-plugin": "^5.28.2",
     "@storybook/addon-a11y": "^8.2.9",
     "@storybook/addon-essentials": "^8.2.9",
@@ -135,6 +135,7 @@
     "nock": "^13.5.5",
     "node-mocks-http": "^1.15.1",
     "nyc": "^17.0.0",
+    "playwright": "^1.47.1",
     "postcss-loader": "^8.1.1",
     "prettier": "^3.3.3",
     "prisma": "^5.18.0",
