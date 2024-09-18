@@ -22,7 +22,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   })
 
   await test.step('On peut rentrer un des choix', async () => {
-    const nantes = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Nantes 44000 France' })
+    const nantes = await page.getByTestId('transportSuggest').locator('li').filter({ hasText: 'Nantes 44000 France' })
 
     await nantes.click()
     expect(page.getByLabel('Lieu de domicile')).toHaveValue('Nantes 44000 France')
@@ -41,15 +41,13 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
 
   await test.step("Travail - On peut rentrer un des choix, les choix de transport s'affichent automatiquement", async () => {
     await expect(page.getByText('Choisissez votre mode de')).not.toBeAttached()
-    const angers = await page.getByTestId('transportSuggest').locator('div').filter({ hasText: 'Angers 49000 France' })
+    const angers = await page.getByTestId('transportSuggest').locator('li').filter({ hasText: 'Angers 49000 France' })
 
     await angers.click()
   })
 
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('7,289')
-  await expect(page.getByTestId('etiquette-voiturethermique-value')).toHaveText('6,280')
-  await expect(page.getByTestId('etiquette-repasavecduboeuf-value')).toHaveText('188')
-  await expect(page.getByTestId('etiquette-streamingvideo-value')).toHaveText('21,348')
+  await expect(page.getByTestId('etiquette-value')).toHaveText('1,367')
 
   await page.getByTestId('text-select-mode').selectOption('tramway')
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('144')
@@ -92,6 +90,6 @@ test('Teletravail default values', async ({ page }) => {
 
 const getNbOfSuggestions = async (page: Page) => {
   await page.waitForTimeout(800)
-  const count = await page.getByTestId('transportSuggest').locator('div').count()
+  const count = await page.getByTestId('transportSuggest').locator('li').count()
   return count
 }

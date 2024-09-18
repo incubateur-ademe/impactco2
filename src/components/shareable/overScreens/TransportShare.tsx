@@ -9,7 +9,7 @@ import { categories } from 'data/categories'
 import { buildCurrentUrlFor } from 'utils/urls'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
-import { CustomParamValue } from './CustomParam'
+import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import styles from './Share.module.css'
 import ShareUrl from './ShareUrl'
@@ -27,6 +27,7 @@ const TransportShare = () => {
     itineraire,
     transport: { selected, setSelected, comparisonMode, comparison, setComparisonMode },
     language,
+    setLanguage,
   } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
@@ -91,60 +92,69 @@ const TransportShare = () => {
 
   return selected ? (
     <>
-      <Radio required id='tabs' label={t('onglet')} hint={t('onglet-hint')}>
-        <RadioInput
-          value='distance'
-          selected={selected}
-          setSelected={(value) => setSelected(value as TransportSimulateur)}
-          label={tTransport('distance')}
-        />
-        <RadioInput
-          value='itineraire'
-          selected={selected}
-          setSelected={(value) => setSelected(value as TransportSimulateur)}
-          label={tTransport('itineraire')}
-        />
-      </Radio>
-      <div className={styles.separator} />
-      {selected === 'distance' && (
-        <CustomParams
-          integration
-          title='Distance'
+      <form id='transport-share'>
+        <Radio required id='tabs' label={t('onglet')} hint={t('onglet-hint')}>
+          <RadioInput
+            value='distance'
+            selected={selected}
+            setSelected={(value) => setSelected(value as TransportSimulateur)}
+            label={tTransport('distance')}
+          />
+          <RadioInput
+            value='itineraire'
+            selected={selected}
+            setSelected={(value) => setSelected(value as TransportSimulateur)}
+            label={tTransport('itineraire')}
+          />
+        </Radio>
+        <div className={styles.separator} />
+        {selected === 'distance' && (
+          <CustomParams
+            integration
+            title='Distance'
+            tracking={tracking}
+            trackingType='Intégrer'
+            params={{ km: params.km }}
+            visibility={visibility}
+            setVisibility={setVisibility}
+          />
+        )}
+        {selected === 'itineraire' && (
+          <CustomParams
+            integration
+            title='Itinéraire'
+            tracking={tracking}
+            trackingType='Intégrer'
+            params={{ itineraire: params.itineraire }}
+            visibility={visibility}
+            setVisibility={setVisibility}
+          />
+        )}
+        <div className={styles.separator} />
+        <Radio required id='comparisonModes' label={t('mode-share')}>
+          <RadioInput
+            value='list'
+            selected={comparisonMode}
+            setSelected={(value) => setComparisonMode(value as 'list' | 'comparison')}
+            label={tTransport('list')}
+          />
+          <RadioInput
+            value='comparison'
+            selected={comparisonMode}
+            setSelected={(value) => setComparisonMode(value as 'list' | 'comparison')}
+            label={tTransport('comparison')}
+          />
+        </Radio>
+        <div className={styles.separator} />
+        <CustomParam
           tracking={tracking}
-          trackingType='Intégrer'
-          params={{ km: params.km }}
-          visibility={visibility}
-          setVisibility={setVisibility}
-        />
-      )}
-      {selected === 'itineraire' && (
-        <CustomParams
+          slug='language'
           integration
-          title='Itinéraire'
-          tracking={tracking}
-          trackingType='Intégrer'
-          params={{ itineraire: params.itineraire }}
-          visibility={visibility}
-          setVisibility={setVisibility}
+          param={{ value: language, setter: setLanguage } as CustomParamValue}
+          visible
         />
-      )}
-      <div className={styles.separator} />
-      <Radio required id='comparisonModes' label={t('mode-share')}>
-        <RadioInput
-          value='list'
-          selected={comparisonMode}
-          setSelected={(value) => setComparisonMode(value as 'list' | 'comparison')}
-          label={tTransport('list')}
-        />
-        <RadioInput
-          value='comparison'
-          selected={comparisonMode}
-          setSelected={(value) => setComparisonMode(value as 'list' | 'comparison')}
-          label={tTransport('comparison')}
-        />
-      </Radio>
-      <div className={styles.separator} />
-      <ShareUrl url={url} tracking={tracking} category={category} />
+      </form>
+      <ShareUrl url={url} tracking={tracking} category={category} form='transport-share' />
     </>
   ) : null
 }

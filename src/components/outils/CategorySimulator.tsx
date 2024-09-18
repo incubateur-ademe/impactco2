@@ -45,6 +45,7 @@ const CategorySimulator = ({
   const t = useTranslations('category-simulator')
 
   const ref = useRef<HTMLUListElement>(null)
+  const firstElementRef = useRef<HTMLAnchorElement>(null)
   const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
   const hasUsage = equivalents && equivalents.some((equivalent) => formatUsage(equivalent))
   const [basePercent, setBasePercent] = useState(80)
@@ -67,17 +68,29 @@ const CategorySimulator = ({
     }
   }, [equivalents, ref, max])
 
+  useEffect(() => {
+    if (displayAll && firstElementRef.current) {
+      firstElementRef.current.focus()
+    }
+  }, [displayAll, firstElementRef])
+
   return (
     <div className={styles.container}>
       <ul ref={ref}>
         {equivalents &&
           equivalents
             .sort((a, b) => getValue(a, initialParams, type) - getValue(b, initialParams, type))
-            .map((equivalent) => (
+            .map((equivalent, index) => (
               <li
-                key={equivalent.carpool ? `${equivalent.slug}-${equivalent.carpool}` : equivalent.slug}
+                key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
                 className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
-                <IframeableLink data-testid='category-link' href={equivalent.link} className={styles.link}>
+                <IframeableLink
+                  ref={index === 0 ? firstElementRef : undefined}
+                  data-testid='category-link'
+                  href={equivalent.link}
+                  className={styles.link}
+                  aria-live='assertive'
+                  aria-label={`${equivalent.name || getNameWithoutSuffix(params.language, equivalent)}${equivalent.carpool ? ` ${equivalent.carpool} passager` : ''} ${formatNumber(equivalent.value)} kg CO₂e`}>
                   <EquivalentIcon equivalent={equivalent} height={3} />
                   <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
                     <div className={styles.name}>
@@ -107,7 +120,7 @@ const CategorySimulator = ({
                   <div className={styles.carpool}>
                     <div className={styles.triangle} />
                     <div className={styles.conducteur}>
-                      <Image src='/icons/conducteur.svg' alt='' width={20} height={24} />
+                      <Image src='/icons/conducteur.svg' alt='un conducteur' width={20} height={24} />
                     </div>
                     <PlusMinus
                       value={params[type].carpool[equivalent.slug] || 1}

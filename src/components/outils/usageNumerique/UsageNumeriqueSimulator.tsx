@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import React, { useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
 import { Category } from 'types/category'
@@ -14,7 +14,8 @@ import { track } from 'utils/matomo'
 import { evaluateNumber } from 'utils/useSituation'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
-import { getRandomEquivalents } from 'components/comparateur/random'
+import { getFullRandomEquivalents } from 'components/comparateur/random'
+import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
 import shareableStyles from 'components/shareable/Shareable.module.css'
 import CategorySimulator from '../CategorySimulator'
 import UsageForm from './UsageForm'
@@ -115,16 +116,21 @@ const UsageNumeriqueSimulator = () => {
     ],
     [engine, situation, numberEmails, language]
   )
+
+  useEffect(() => {
+    setEquivalents(getRandomEquivalentForValue(total * 52))
+  }, [total])
+
   return (
     <>
       {(!mode || mode === 'simulator') && (
         <>
-          <div className={styles.simulator}>
+          <form className={styles.simulator} id='usage-numerique-simulator'>
             <UsageForm slug='streaming' engineValue='streaming . durée' />
             <UsageForm slug='visio' engineValue='visio . durée' />
             <UsageForm slug='email' value={numberEmails} setValue={setNumberEmails} />
-          </div>
-          <div className={styles.results}>
+          </form>
+          <output form='usage-numerique-simulator' className={styles.results}>
             <div className={styles.values}>
               <div className={styles.header}>{t('usages')}</div>
               <div className={styles.value}>
@@ -145,7 +151,7 @@ const UsageNumeriqueSimulator = () => {
               </div>
               <div>{t('by-year')}</div>
             </div>
-          </div>
+          </output>
           <div className={styles.etiquette}>
             <div className={styles.header}>{t('total')}</div>
             <Etiquette
@@ -154,7 +160,7 @@ const UsageNumeriqueSimulator = () => {
               ref={ref}
               randomize={() => {
                 track('Usage numérique', 'Randomize', 'randomize')
-                setEquivalents(getRandomEquivalents(undefined, 3))
+                setEquivalents(getFullRandomEquivalents())
               }}
               language={language}
             />

@@ -2,32 +2,10 @@ import classNames from 'classnames'
 import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
 import RefreshIcon from 'components/base/icons/refresh'
+import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
-
-const defaultEquivalents = [
-  { max: 1000, equivalents: [['tgv'], ['eaudurobinet'], ['email']] },
-  {
-    max: 50000,
-    equivalents: [
-      ['friends', 'game-of-thrones'],
-      ['tgv-paris-berlin', 'tgv-paris-marseille'],
-      ['repasvegetarien', 'repasvegetalien'],
-      ['tomate', 'abricot', 'avocat'],
-    ],
-  },
-  {
-    min: 50000,
-    max: 500000,
-    equivalents: [
-      ['repasavecduboeuf'],
-      ['voiture-lille-nimes', 'voiturethermique'],
-      ['smartphone', 'tabletteclassique'],
-    ],
-  },
-  { min: 500000, equivalents: [['avion-pny'], ['francais'], ['ordinateurfixeparticulier', 'ordinateurportable']] },
-]
 
 export const regexs = {
   fr: /([0-9]+(,|\.|\s|&nbsp;)*[0-9]*)(\s|&nbsp;)*(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)*(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)*(d'émissions\s|&nbsp;)?(de\s|&nbsp;)*(d(’|')équivalent\s|&nbsp;)?(eq)?(éq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(eq|((\s|&nbsp;)*équivalent)|e)?/i,
@@ -146,15 +124,7 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
   }, [impact, language])
 
   const equivalents = useMemo(() => {
-    const equivalents = defaultEquivalents.find(
-      (equivalent) => (!equivalent.min || equivalent.min < value) && (!equivalent.max || equivalent.max >= value)
-    )
-
-    return !equivalents
-      ? []
-      : equivalents.equivalents
-          .sort(() => Math.random() - Math.random())
-          .map((equivalent) => equivalent[Math.floor(Math.random() * equivalent.length)])
+    return getRandomEquivalentForValue(value)
   }, [value])
 
   const onClick = useCallback(

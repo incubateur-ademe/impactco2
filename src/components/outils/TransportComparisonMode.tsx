@@ -16,26 +16,34 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
     <div className={classNames(styles.container, { [styles.withBorder]: comparisonMode === 'list' })}>
       <div className={styles.text}>{t('comparisonMode')}</div>
       <div className={styles.modes}>
-        <button
-          onClick={() => {
-            setComparisonMode('list')
-            track(tracking, 'Display list', 'display_list')
-          }}
-          tabIndex={comparisonMode === 'list' ? -1 : undefined}
-          className={classNames(styles.leftButton, { [styles.clickeable]: comparisonMode !== 'list' })}>
-          <ListIcon />
-          {t('list')}
-        </button>
-        <button
-          onClick={() => {
-            setComparisonMode('comparison')
-            track(tracking, 'Display comparison', 'display_comparison')
-          }}
-          tabIndex={comparisonMode === 'comparison' ? -1 : undefined}
-          className={classNames(styles.rightButton, { [styles.clickeable]: comparisonMode !== 'comparison' })}>
-          <ComparisonIcon />
-          {t('comparison')}
-        </button>
+        <label className={styles.leftButton}>
+          <input
+            type='radio'
+            name='comparison-mode'
+            onClick={() => {
+              setComparisonMode('list')
+              track(tracking, 'Display list', 'display_list')
+            }}
+          />
+          <span className={classNames(styles.leftLabel, { [styles.clickeable]: comparisonMode !== 'list' })}>
+            <ListIcon />
+            {t('list')}
+          </span>
+        </label>
+        <label className={styles.rightButton}>
+          <input
+            type='radio'
+            name='comparison-mode'
+            onClick={() => {
+              setComparisonMode('comparison')
+              track(tracking, 'Display comparison', 'display_comparison')
+            }}
+          />
+          <span className={classNames(styles.rightLabel, { [styles.clickeable]: comparisonMode !== 'comparison' })}>
+            <ComparisonIcon />
+            {t('comparison')}
+          </span>
+        </label>
       </div>
     </div>
   )

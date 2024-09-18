@@ -40,3 +40,14 @@
     border-left: 2px solid var(--primary-30);
   }
 }
+
+.forceFocus {
+  &:focus {
+    outline: 3px solid var(--primary-40);
+    outline-offset: 2px;
+  }
+}
+
+.hidden {
+  display: none;
+}

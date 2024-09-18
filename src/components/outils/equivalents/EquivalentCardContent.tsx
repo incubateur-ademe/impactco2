@@ -11,23 +11,32 @@ import EquivalentIcon from 'components/base/EquivalentIcon'
 import LocalNumber from 'components/base/LocalNumber'
 import styles from './EquivalentCardContent.module.css'
 
-const EquivalentCardContent = ({ equivalent, category }: { equivalent: ComputedEquivalent; category: Category }) => {
+const EquivalentCardContent = ({
+  equivalent,
+  category,
+  output,
+}: {
+  equivalent: ComputedEquivalent
+  category: Category
+  output?: string
+}) => {
   const { value, unit } = getNumberPrecision(
     equivalent.carpool ? equivalent.value / (equivalent.carpool + 1) : equivalent.value
   )
   const { language } = useParamContext()
   const t = useTranslations('unit')
   const unitLabel = equivalent.unit || category.unit
+  const Result = output ? 'output' : 'div'
   return (
     <div className={styles.content}>
       <div>
         <div className={styles.title}>{getName(language, equivalent)}</div>
-        <div className={styles.value}>
+        <Result form={output} className={styles.value}>
           <div className={styles.valueNumber}>
             <LocalNumber number={value} />
           </div>{' '}
           {unit} CO₂e
-        </div>
+        </Result>
         {unitLabel && (
           <div className={styles.unit}>
             {equivalent.unit && t(equivalent.unit).startsWith(t('avec')) ? '' : `${t('par')} `}

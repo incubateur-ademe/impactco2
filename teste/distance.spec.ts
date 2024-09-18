@@ -20,7 +20,7 @@ test('Transport distance list', async ({ page }) => {
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport" data-search="?theme=default&language=fr&km=1000&defaultMode=list"></script>'
   )
-  await page.getByRole('button', { name: 'Afficher par défaut' }).first().click()
+  await page.getByText('Afficher par défaut').first().click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=1000&defaultMode=list"></script>'
   )
@@ -33,7 +33,7 @@ test('Transport distance list', async ({ page }) => {
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=list"></script>'
   )
-  await page.getByRole('button', { name: 'Afficher par défaut' }).nth(1).click()
+  await page.getByText('Afficher par défaut').nth(1).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison"></script>'
   )
@@ -62,7 +62,7 @@ test('Transport distance list', async ({ page }) => {
   )
 
   await expect(page.locator('label').filter({ hasText: "Personnaliser l'itinéraire" })).not.toBeVisible()
-  await page.getByLabel('Itinéraire').check()
+  await page.getByRole('radio', { name: 'Itinéraire' }).check()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
     'http://localhost:3000/outils/transport/itineraire?defaultMode=list&language=fr'
   )
@@ -113,8 +113,8 @@ test('Transport distance comparison', async ({ page }) => {
 test('Transport distance default values', async ({ page }) => {
   await page.goto('http://localhost:3000/outils/transport?km=15')
 
-  await expect(page.getByRole('link', { name: 'Covoiturage électrique 0.78 kg CO₂e' })).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Covoiturage thermique 1.63 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Covoiturage électrique 1 passager 0.78 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Covoiturage thermique 1 passager 1.63 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
   await page.getByRole('button', { name: 'Voir tous les modes de' }).click()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).toBeVisible()
@@ -131,11 +131,11 @@ test('Transport distance default values', async ({ page }) => {
     'Avion court courrierDésolé !L’itinéraire demandé n’est pas compatible avec ce mode de transport Modifier'
   )
 
-  await page.getByRole('button', { name: 'Liste' }).click()
+  await page.getByText('Liste').click()
   await expect(page.getByRole('link', { name: 'Bus thermique 1.7 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
-  await expect(page.getByRole('link', { name: 'Covoiturage électrique 0.78 kg CO₂e' })).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Covoiturage thermique 1.63 kg CO₂e' })).not.toBeVisible()
+  await expect(page.getByRole('link', { name: 'Covoiturage électrique 1 passager 0.78 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Covoiturage thermique 1 passager 1.63 kg CO₂e' })).not.toBeVisible()
 
   await page.getByRole('button', { name: 'Voir tous les modes de' }).click()
   await expect(page.getByRole('link', { name: 'Bus thermique 1.7 kg CO₂e' })).toBeVisible()

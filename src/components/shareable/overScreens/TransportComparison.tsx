@@ -56,7 +56,7 @@ const TransportComparison = ({
   }, [equivalent2])
 
   return (
-    <>
+    <fieldset>
       <div className={customStyles.title}>{t('comparison')}</div>
       <div className={styles.modes}>
         <div className={styles.select}>
@@ -84,7 +84,7 @@ const TransportComparison = ({
           )}
         </div>
       </div>
-    </>
+    </fieldset>
   )
 }
 

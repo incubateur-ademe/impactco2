@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
@@ -13,7 +13,8 @@ import { track } from 'utils/matomo'
 import useItineraries from 'hooks/useItineraries'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
-import { getRandomEquivalents } from 'components/comparateur/random'
+import { getFullRandomEquivalents } from 'components/comparateur/random'
+import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
 import NumberInput from 'components/form/NumberInput'
 import SelectEquivalent from 'components/form/SelectEquivalent'
 import AddressInput from 'components/form/addresses/AddressInput'
@@ -58,9 +59,13 @@ const TeletravailSimulator = () => {
     return 0
   }, [itineraries, deplacement, presentiel])
 
+  useEffect(() => {
+    setEquivalents(getRandomEquivalentForValue(0.75 * homeOffice * total * 1000))
+  }, [total, homeOffice])
+
   return (
     <>
-      <div className={styles.simulator}>
+      <form id='teletravail-simulator' className={styles.simulator}>
         <div className={itineraireStyles.addresses}>
           <AddressInput
             large
@@ -119,10 +124,10 @@ const TeletravailSimulator = () => {
             />
           </div>
         </div>
-      </div>
+      </form>
       {start && end && itineraries ? (
         <>
-          <div className={styles.results}>
+          <output form='teletravail-simulator' className={styles.results}>
             <div className={styles.values}>
               <div className={styles.header}>{t('generate')}</div>
               <div className={styles.value}>
@@ -147,7 +152,7 @@ const TeletravailSimulator = () => {
               <div>{t('per-year')}</div>
               {t('home')} {homeOffice} {`${t('day')}${homeOffice === 1 ? '' : 's'}`} / {t('week')}
             </div>
-          </div>
+          </output>
           <div>
             <div className={styles.values}>
               <div className={styles.header}>{t('or')}</div>
@@ -168,7 +173,7 @@ const TeletravailSimulator = () => {
               ref={ref}
               randomize={() => {
                 track('Télétravail', 'Randomize', 'randomize')
-                setEquivalents(getRandomEquivalents(undefined, 3))
+                setEquivalents(getFullRandomEquivalents())
               }}
               language={language}
             />
