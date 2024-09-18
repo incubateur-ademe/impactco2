@@ -21,7 +21,7 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
   const t = useTranslations('overscreen.transport')
   const { language } = useParamContext()
   return (
-    <>
+    <fieldset>
       <div className={customStyles.title}>
         {t('modes')}
         {modes.length === 2 && (
@@ -56,7 +56,7 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
           </li>
         ))}
       </ul>
-    </>
+    </fieldset>
   )
 }
 

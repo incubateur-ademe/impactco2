@@ -41,6 +41,10 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
   }, [slug])
   const value = equivalent ? (baseValue * weight * (equivalent.percentage ? 100 : 1)) / equivalent.value : 0
 
+  if (slug && !equivalent) {
+    return null
+  }
+
   return equivalent ? (
     <div className={styles.tile}>
       <button

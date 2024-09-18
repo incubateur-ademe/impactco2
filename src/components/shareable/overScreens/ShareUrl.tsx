@@ -12,7 +12,6 @@ import FacebookIcon from 'components/base/icons/facebook'
 import LinkedinIcon from 'components/base/icons/linkedin'
 import TwitterIcon from 'components/base/icons/twitter'
 import WhatsappIcon from 'components/base/icons/whatsapp'
-import CustomParam, { CustomParamValue } from './CustomParam'
 import styles from './Share.module.css'
 
 const ShareUrl = ({
@@ -21,27 +20,24 @@ const ShareUrl = ({
   url,
   tracking,
   customImage,
+  form,
 }: {
   category?: Pick<Category, 'slug' | 'name'>
   tracking?: string
   path?: string
   customImage?: string
   url: string
+  form: string
 }) => {
   const t = useTranslations('overscreen')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
-  const { language, setLanguage } = useParamContext()
+  const { language } = useParamContext()
   return (
     <>
-      <CustomParam
-        tracking={trackingValue}
-        slug='language'
-        integration
-        param={{ value: language, setter: setLanguage } as CustomParamValue}
-        visible
-      />
-      <ClipboardBox tracking={trackingValue}>{url}</ClipboardBox>
+      <ClipboardBox tracking={trackingValue} form={form}>
+        {url}
+      </ClipboardBox>
       <div className={styles.buttons}>
         <FacebookShareButton
           className={buttonStyles.roundButton}

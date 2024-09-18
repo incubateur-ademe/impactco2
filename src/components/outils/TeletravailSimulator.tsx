@@ -65,7 +65,7 @@ const TeletravailSimulator = () => {
 
   return (
     <>
-      <div className={styles.simulator}>
+      <form id='teletravail-simulator' className={styles.simulator}>
         <div className={itineraireStyles.addresses}>
           <AddressInput
             large
@@ -124,10 +124,10 @@ const TeletravailSimulator = () => {
             />
           </div>
         </div>
-      </div>
+      </form>
       {start && end && itineraries ? (
         <>
-          <div className={styles.results}>
+          <output form='teletravail-simulator' className={styles.results}>
             <div className={styles.values}>
               <div className={styles.header}>{t('generate')}</div>
               <div className={styles.value}>
@@ -152,7 +152,7 @@ const TeletravailSimulator = () => {
               <div>{t('per-year')}</div>
               {t('home')} {homeOffice} {`${t('day')}${homeOffice === 1 ? '' : 's'}`} / {t('week')}
             </div>
-          </div>
+          </output>
           <div>
             <div className={styles.values}>
               <div className={styles.header}>{t('or')}</div>

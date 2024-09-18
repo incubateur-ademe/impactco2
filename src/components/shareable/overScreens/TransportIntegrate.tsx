@@ -125,126 +125,133 @@ const TransportIntegrate = () => {
 
   return (
     <>
-      <Checkbox required id='tabs' label={t('onglets')} hint={t('onglets-hint')}>
-        <CheckboxInput
-          checked={tabs.includes(DISTANCE)}
-          setChecked={(checked) => {
-            if (checked) {
-              setTabs([...tabs, DISTANCE])
-            } else {
-              setTabs(tabs.filter((tab) => tab !== DISTANCE))
-            }
-          }}
-          label={tTransport('distance')}
-          data-testid='transport-integration-distance-checkbox'>
-          <DefaultButton
-            main={tabs.length === 1 ? tabs[0] === 'distance' : defaultTab === 'distance'}
-            setMain={() => setDefaultTab('distance')}
-            disabled={tabs.length === 1}
-          />
-        </CheckboxInput>
-        <CheckboxInput
-          checked={tabs.includes(ITINERAIRE)}
-          setChecked={(checked) => {
-            if (checked) {
-              setTabs([...tabs, ITINERAIRE])
-            } else {
-              setTabs(tabs.filter((tab) => tab !== ITINERAIRE))
-            }
-          }}
-          label={tTransport('itineraire')}>
-          <DefaultButton
-            main={tabs.length === 1 ? tabs[0] === 'itineraire' : defaultTab === 'itineraire'}
-            setMain={() => setDefaultTab('itineraire')}
-            disabled={tabs.length === 1}
-          />
-        </CheckboxInput>
-      </Checkbox>
-      <div className={styles.separator} />
-      {tabs.length === 0 ||
-        (tabs.includes(DISTANCE) && (
-          <>
-            <CustomParams
-              integration
-              title={tTransport('distance')}
-              tracking={tracking}
-              trackingType='Intégrer'
-              params={{ km: params.km }}
-              visibility={visibility}
-              setVisibility={setVisibility}
+      <form id='transport-integrate'>
+        <Checkbox required id='tabs' label={t('onglets')} hint={t('onglets-hint')}>
+          <CheckboxInput
+            checked={tabs.includes(DISTANCE)}
+            setChecked={(checked) => {
+              if (checked) {
+                setTabs([...tabs, DISTANCE])
+              } else {
+                setTabs(tabs.filter((tab) => tab !== DISTANCE))
+              }
+            }}
+            label={tTransport('distance')}
+            data-testid='transport-integration-distance-checkbox'>
+            <DefaultButton
+              name='tab'
+              main={tabs.length === 1 ? tabs[0] === 'distance' : defaultTab === 'distance'}
+              setMain={() => setDefaultTab('distance')}
+              disabled={tabs.length === 1}
             />
-            <div className={styles.separator} />
-          </>
-        ))}
-      {tabs.length === 0 ||
-        (tabs.includes(ITINERAIRE) && (
-          <>
-            <CustomParams
-              integration
-              title={tTransport('itineraire')}
-              tracking={tracking}
-              trackingType='Intégrer'
-              params={{ itineraire: params.itineraire, roundTrip: params.roundTrip }}
-              visibility={visibility}
-              setVisibility={setVisibility}
+          </CheckboxInput>
+          <CheckboxInput
+            checked={tabs.includes(ITINERAIRE)}
+            setChecked={(checked) => {
+              if (checked) {
+                setTabs([...tabs, ITINERAIRE])
+              } else {
+                setTabs(tabs.filter((tab) => tab !== ITINERAIRE))
+              }
+            }}
+            label={tTransport('itineraire')}>
+            <DefaultButton
+              name='tab'
+              main={tabs.length === 1 ? tabs[0] === 'itineraire' : defaultTab === 'itineraire'}
+              setMain={() => setDefaultTab('itineraire')}
+              disabled={tabs.length === 1}
             />
-            <div className={styles.separator} />
-          </>
-        ))}
-      <Checkbox required id='comparisonModes' label={t('mode-integrate')}>
-        <CheckboxInput
-          checked={comparisonModes.includes('list')}
-          setChecked={(checked) => {
-            if (checked) {
-              setComparisonModes([...comparisonModes, 'list'])
-            } else {
-              setComparisonModes(comparisonModes.filter((tab) => tab !== 'list'))
-            }
-          }}
-          label={tTransport('list')}
-          data-testid='transport-integration-list-checkbox'>
-          <DefaultButton
-            main={comparisonModes.length === 1 ? comparisonModes[0] === 'list' : defaultMode === 'list'}
-            setMain={() => setDefaultMode('list')}
-            disabled={comparisonModes.length === 1}
-          />
-        </CheckboxInput>
-        <CheckboxInput
-          checked={comparisonModes.includes('comparison')}
-          setChecked={(checked) => {
-            if (checked) {
-              setComparisonModes([...comparisonModes, 'comparison'])
-            } else {
-              setComparisonModes(comparisonModes.filter((tab) => tab !== 'comparison'))
-            }
-          }}
-          label={tTransport('comparison')}>
-          <DefaultButton
-            main={comparisonModes.length === 1 ? comparisonModes[0] === 'comparison' : defaultMode === 'comparison'}
-            setMain={() => setDefaultMode('comparison')}
-            disabled={comparisonModes.length === 1}
-          />
-        </CheckboxInput>
-      </Checkbox>
-      <div className={styles.separator} />
-      <TransportListParam modes={modes} setModes={setModes} />
-      <div className={styles.separator} />
-      <TransportComparison comparison={comparison} setComparison={setComparison} modes={modes} />
-      <div className={styles.separator} />
-      <CustomParam
-        tracking={tracking}
-        slug='theme'
-        param={{ value: theme, setter: setTheme } as CustomParamValue}
-        visible
-      />
-      <CustomParam
-        tracking={tracking}
-        slug='language'
-        integration
-        param={{ value: language, setter: setLanguage } as CustomParamValue}
-        visible
-      />
+          </CheckboxInput>
+        </Checkbox>
+        <div className={styles.separator} />
+        {tabs.length === 0 ||
+          (tabs.includes(DISTANCE) && (
+            <>
+              <CustomParams
+                integration
+                title={tTransport('distance')}
+                tracking={tracking}
+                trackingType='Intégrer'
+                params={{ km: params.km }}
+                visibility={visibility}
+                setVisibility={setVisibility}
+              />
+              <div className={styles.separator} />
+            </>
+          ))}
+        {tabs.length === 0 ||
+          (tabs.includes(ITINERAIRE) && (
+            <>
+              <CustomParams
+                integration
+                title={tTransport('itineraire')}
+                tracking={tracking}
+                trackingType='Intégrer'
+                params={{ itineraire: params.itineraire, roundTrip: params.roundTrip }}
+                visibility={visibility}
+                setVisibility={setVisibility}
+              />
+              <div className={styles.separator} />
+            </>
+          ))}
+        <Checkbox required id='comparisonModes' label={t('mode-integrate')}>
+          <CheckboxInput
+            checked={comparisonModes.includes('list')}
+            setChecked={(checked) => {
+              if (checked) {
+                setComparisonModes([...comparisonModes, 'list'])
+              } else {
+                setComparisonModes(comparisonModes.filter((tab) => tab !== 'list'))
+              }
+            }}
+            label={tTransport('list')}
+            data-testid='transport-integration-list-checkbox'>
+            <DefaultButton
+              name='mode'
+              main={comparisonModes.length === 1 ? comparisonModes[0] === 'list' : defaultMode === 'list'}
+              setMain={() => setDefaultMode('list')}
+              disabled={comparisonModes.length === 1}
+            />
+          </CheckboxInput>
+          <CheckboxInput
+            checked={comparisonModes.includes('comparison')}
+            setChecked={(checked) => {
+              if (checked) {
+                setComparisonModes([...comparisonModes, 'comparison'])
+              } else {
+                setComparisonModes(comparisonModes.filter((tab) => tab !== 'comparison'))
+              }
+            }}
+            label={tTransport('comparison')}>
+            <DefaultButton
+              name='mode'
+              main={comparisonModes.length === 1 ? comparisonModes[0] === 'comparison' : defaultMode === 'comparison'}
+              setMain={() => setDefaultMode('comparison')}
+              disabled={comparisonModes.length === 1}
+            />
+          </CheckboxInput>
+        </Checkbox>
+        <div className={styles.separator} />
+        <TransportListParam modes={modes} setModes={setModes} />
+        <div className={styles.separator} />
+        <TransportComparison comparison={comparison} setComparison={setComparison} modes={modes} />
+        <div className={styles.separator} />
+        <CustomParam
+          tracking={tracking}
+          slug='theme'
+          param={{ value: theme, setter: setTheme } as CustomParamValue}
+          visible
+        />
+        <CustomParam
+          tracking={tracking}
+          slug='language'
+          integration
+          param={{ value: language, setter: setLanguage } as CustomParamValue}
+          visible
+        />
+      </form>
       <ClipboardBox
+        form='transport-integrate'
         tracking={
           tracking
         }>{`<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${type}" data-search="?${search}"></script>`}</ClipboardBox>

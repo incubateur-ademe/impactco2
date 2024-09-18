@@ -125,12 +125,12 @@ const UsageNumeriqueSimulator = () => {
     <>
       {(!mode || mode === 'simulator') && (
         <>
-          <div className={styles.simulator}>
+          <form className={styles.simulator} id='usage-numerique-simulator'>
             <UsageForm slug='streaming' engineValue='streaming . durée' />
             <UsageForm slug='visio' engineValue='visio . durée' />
             <UsageForm slug='email' value={numberEmails} setValue={setNumberEmails} />
-          </div>
-          <div className={styles.results}>
+          </form>
+          <output form='usage-numerique-simulator' className={styles.results}>
             <div className={styles.values}>
               <div className={styles.header}>{t('usages')}</div>
               <div className={styles.value}>
@@ -151,7 +151,7 @@ const UsageNumeriqueSimulator = () => {
               </div>
               <div>{t('by-year')}</div>
             </div>
-          </div>
+          </output>
           <div className={styles.etiquette}>
             <div className={styles.header}>{t('total')}</div>
             <Etiquette

@@ -1,9 +1,12 @@
 'use client'
 
 import Link, { LinkProps } from 'next/link'
-import React, { AnchorHTMLAttributes, useEffect, useState } from 'react'
+import React, { AnchorHTMLAttributes, ForwardedRef, forwardRef, useEffect, useState } from 'react'
 
-const IframeableLink = (props: LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>) => {
+const IframeableLink = (
+  props: LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>,
+  ref: ForwardedRef<HTMLAnchorElement>
+) => {
   const [isIFramed, setIsIframed] = useState(false)
 
   useEffect(() => {
@@ -13,6 +16,7 @@ const IframeableLink = (props: LinkProps & AnchorHTMLAttributes<HTMLAnchorElemen
   return (
     <Link
       {...props}
+      ref={ref}
       href={encodeURI(props.href)}
       target={isIFramed ? '_blank' : props.target}
       rel={isIFramed ? 'noreferrer noopener' : props.rel}
@@ -20,4 +24,4 @@ const IframeableLink = (props: LinkProps & AnchorHTMLAttributes<HTMLAnchorElemen
   )
 }
 
-export default IframeableLink
+export default forwardRef(IframeableLink)
