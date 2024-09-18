@@ -1,0 +1,33 @@
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  15% {
+    transform: rotate(0deg);
+  }
+
+  85% {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: loading 1.3s infinite;
+  color: var(--primary-50);
+  height: 1.25rem;
+  width: 1.25rem;
+
+  svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}
+
+.largeLoading {
+  bottom: 1rem;
+}
