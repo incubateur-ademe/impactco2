@@ -2,37 +2,16 @@
   position: relative;
 }
 
-@keyframes loading {
-  from {
-    transform: rotate(0deg);
-  }
-
-  15% {
-    transform: rotate(0deg);
-  }
-
-  85% {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.suggestionsContainer {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
 }
 
 .loading {
-  animation: loading 1.3s infinite;
   bottom: 10px;
-  color: var(--primary-50);
-  height: 1.25rem;
   position: absolute;
   right: 8px;
-  width: 1.25rem;
-
-  svg {
-    height: 1.25rem;
-    width: 1.25rem;
-  }
 }
 
 .largeLoading {

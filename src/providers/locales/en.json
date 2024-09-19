@@ -6,6 +6,7 @@
     "information-2": "The simulator will be automatically updated with any new features."
   },
   "overscreen": {
+    "disclaimer": "Results are based on French carbon data sets, by ",
     "default-true": "displayed by default",
     "default-false": "show by default",
     "usage": "Use",

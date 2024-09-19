@@ -6,6 +6,7 @@
     "information-2": "El módulo se actualizará automáticamente con las últimas novedades."
   },
   "overscreen": {
+    "disclaimer": "Los resultados se basan en datos de carbono de Francia, por ",
     "default-true": "Mostrar por defecto",
     "default-false": "No mostrar por defecto",
     "usage": "Uso",

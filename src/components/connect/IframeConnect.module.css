@@ -1,3 +1,13 @@
 .iframe {
   width: 100%;
 }
+
+.hidden {
+  display: none;
+}
+
+.loading {
+  color: var(--primary-50);
+  display: flex;
+  gap: 0.5rem;
+}

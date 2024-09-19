@@ -633,4 +633,12 @@ export const mockRoutesItinerary = async (page: Page) => {
       body: JSON.stringify({ car: 91.021, foot: 87.914, rail: 91.153, plane: 80.69557099482829 }),
     })
   })
+  await page.route('https://impactco2.fr/api/callGMap', async (route) => {
+    await route.fulfill({
+      headers: {
+        Etag: 'mocked, because it was run in a E2E environment',
+      },
+      body: JSON.stringify({ car: 91.021, foot: 87.914, rail: 91.153, plane: 80.69557099482829 }),
+    })
+  })
 }
