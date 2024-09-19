@@ -3,10 +3,6 @@
     {
       "command": "0 5 * * * npx ts-node -r dotenv/config src/scripts/importAPIKeys.ts",
       "size": "S"
-    },
-    {
-      "command": "0 13 * * * npx ts-node -r dotenv/config src/scripts/testIframes.ts",
-      "size": "S"
     }
   ]
 }
