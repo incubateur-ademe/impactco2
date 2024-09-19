@@ -18,46 +18,80 @@ const PlanDuSitePage = () => {
     <div className={classNames(pageStyles.container, 'main-container')}>
       <h1>Plan du site</h1>
       <div className={styles.links}>
-        <Link href='/'>Page d'accueil</Link>
-        <Link href='/accessibilite'>Accessibilité</Link>
-        <Link href='/budget'>Budget</Link>
+        <Link prefetch={false} href='/'>
+          Page d'accueil
+        </Link>
+        <Link prefetch={false} href='/accessibilite'>
+          Accessibilité
+        </Link>
+        <Link prefetch={false} href='/budget'>
+          Budget
+        </Link>
         <div>Contenus</div>
         <div className={styles.row}>
-          <Link href='/contenu/comment-sensibiliser-vos-visiteurs-empreinte-carbone'>
+          <Link prefetch={false} href='/contenu/comment-sensibiliser-vos-visiteurs-empreinte-carbone'>
             Comment sensibiliser vos visiteurs à l’empreinte carbone ?
           </Link>
-          <Link href='/contenu/detecteur-co2'>Le Détecteur CO₂</Link>
-          <Link href='/contenu/etiquette-carbone'>L’étiquette carbone : présentation et tutoriel d’intégration</Link>
-          <Link href='/contenu/impact-carbone-hiver-station-ski'>
+          <Link prefetch={false} href='/contenu/detecteur-co2'>
+            Le Détecteur CO₂
+          </Link>
+          <Link prefetch={false} href='/contenu/etiquette-carbone'>
+            L’étiquette carbone : présentation et tutoriel d’intégration
+          </Link>
+          <Link prefetch={false} href='/contenu/impact-carbone-hiver-station-ski'>
             4 conseils pour réduire l’impact carbone des séjours au ski
           </Link>
-          <Link href='/contenu/nouveau-site'>Le nouveau site “Impact CO2” est en ligne !</Link>
-          <Link href='/contenu/semaine-mobilite-simulateur-transport-ademe'>
+          <Link prefetch={false} href='/contenu/nouveau-site'>
+            Le nouveau site “Impact CO2” est en ligne !
+          </Link>
+          <Link prefetch={false} href='/contenu/semaine-mobilite-simulateur-transport-ademe'>
             Semaine européenne de la mobilité : découverte du calculateur Impact Transport de l’ADEME
           </Link>
         </div>
-        <Link href='/doc'>La doc</Link>
+        <Link prefetch={false} href='/doc'>
+          La doc
+        </Link>
         <div className={styles.row}>
-          <Link href='/doc/api'>API Doc</Link>
-          <Link href='/doc/guide-utilisation'>Guide d'utilisation</Link>
-          <Link href='/doc/livraison'>Livraison</Link>
+          <Link prefetch={false} href='/doc/api'>
+            API Doc
+          </Link>
+          <Link prefetch={false} href='/doc/guide-utilisation'>
+            Guide d'utilisation
+          </Link>
+          <Link prefetch={false} href='/doc/livraison'>
+            Livraison
+          </Link>
           <div className={styles.row}>
-            <Link href='/doc/livraison/livraison-colis'>De colis</Link>
-            <Link href='/doc/livraison/livraison-colis-par-avion'>De colis par avion</Link>
+            <Link prefetch={false} href='/doc/livraison/livraison-colis'>
+              De colis
+            </Link>
+            <Link prefetch={false} href='/doc/livraison/livraison-colis-par-avion'>
+              De colis par avion
+            </Link>
           </div>
-          <Link href='/doc/questions-frequentes'>Questions fréquentes</Link>
-          <Link href='/doc/usage-numerique/acv'>Usage numérique</Link>
+          <Link prefetch={false} href='/doc/questions-frequentes'>
+            Questions fréquentes
+          </Link>
+          <Link prefetch={false} href='/doc/usage-numerique/acv'>
+            Usage numérique
+          </Link>
         </div>
-        <Link href='/mentions-legales'>Mentions légales</Link>
-        <Link href='/outils'>Les outils</Link>
+        <Link prefetch={false} href='/mentions-legales'>
+          Mentions légales
+        </Link>
+        <Link prefetch={false} href='/outils'>
+          Les outils
+        </Link>
         <div className={styles.row}>
           {tools.map((tool) => (
             <div key={tool.slug}>
-              <Link href={`/outils/${tool.slug}`}>{tool.name}</Link>
+              <Link prefetch={false} href={`/outils/${tool.slug}`}>
+                {tool.name}
+              </Link>
               {tool.equivalents && (
                 <div className={styles.row}>
                   {tool.equivalents.map((equivalent) => (
-                    <Link key={equivalent.slug} href={equivalent.link}>
+                    <Link prefetch={false} key={equivalent.slug} href={equivalent.link}>
                       {getName('fr', equivalent)}
                     </Link>
                   ))}
@@ -65,13 +99,25 @@ const PlanDuSitePage = () => {
               )}
             </div>
           ))}
-          <Link href='/outils/comparateur'>Comparateur</Link>
+          <Link prefetch={false} href='/outils/comparateur'>
+            Comparateur
+          </Link>
         </div>
-        <Link href='/plan-du-site'>Plan du site</Link>
-        <Link href='/politique-de-confidentialite'>Politique de confidentialité</Link>
-        <Link href='/rendez-vous'>Prendre rendez-vous</Link>
-        <Link href='/stats'>Statistiques</Link>
-        <Link href='/suggestion'>Faire une suggestion</Link>
+        <Link prefetch={false} href='/plan-du-site'>
+          Plan du site
+        </Link>
+        <Link prefetch={false} href='/politique-de-confidentialite'>
+          Politique de confidentialité
+        </Link>
+        <Link prefetch={false} href='/rendez-vous'>
+          Prendre rendez-vous
+        </Link>
+        <Link prefetch={false} href='/stats'>
+          Statistiques
+        </Link>
+        <Link prefetch={false} href='/suggestion'>
+          Faire une suggestion
+        </Link>
       </div>
     </div>
   )

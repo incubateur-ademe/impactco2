@@ -8,6 +8,7 @@ import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import styles from './ColumnEquivalent.module.css'
+import Disclaimer from './Disclaimer'
 import baseStyles from './Equivalent.module.css'
 import Progress from './Progress'
 
@@ -51,32 +52,35 @@ const ColumnEquivalent = ({
         <Logo value={preciseValue * 1000} right />
       </div>
       <div className={baseStyles.rightColumn}>
-        {isAnimated && (
-          <Progress
-            className={baseStyles.progressBarColumn}
-            comparisons={comparisons}
-            setFadeIn={setFadeIn}
-            setToDisplay={setToDisplay}
-          />
-        )}
         <div className={isAnimated ? baseStyles.animatedEqualColumn : baseStyles.equalColumn}>
           <EqualIcon />
         </div>
-        <ul className={isAnimated ? styles.animatedComparisonsColumn : ''}>
-          {comparisons.map((comparison, index) => (
-            <li
-              key={comparison}
-              className={
-                isAnimated
-                  ? index === toDisplay && !fadeIn
-                    ? styles.visibleAnimatedComparison
-                    : styles.animatedComparison
-                  : styles.comparison
-              }>
-              <SimpleValue value={preciseValue} comparison={comparison} language={language} />
-            </li>
-          ))}
-        </ul>
+        <div className={styles.rightContent}>
+          {isAnimated && (
+            <Progress
+              className={baseStyles.progressBarColumn}
+              comparisons={comparisons}
+              setFadeIn={setFadeIn}
+              setToDisplay={setToDisplay}
+            />
+          )}
+          <Disclaimer language={language} comparisons={comparisons} unit={unit} value={value} column />
+          <ul className={isAnimated ? styles.animatedComparisonsColumn : ''}>
+            {comparisons.map((comparison, index) => (
+              <li
+                key={comparison}
+                className={
+                  isAnimated
+                    ? index === toDisplay && !fadeIn
+                      ? styles.visibleAnimatedComparison
+                      : styles.animatedComparison
+                    : styles.comparison
+                }>
+                <SimpleValue value={preciseValue} comparison={comparison} language={language} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       {randomize && (
         <button className={baseStyles.columnRandomize} title='Obtenir une nouvelle comparaison' onClick={randomize}>

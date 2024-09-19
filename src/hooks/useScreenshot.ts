@@ -18,6 +18,9 @@ export default function useScreenshot(slug: string, tracking: string) {
             .toPng(ref.current, {
               cacheBust: true,
               backgroundColor: theme === 'night' ? 'black' : 'white', // variables CSS non disponibles au moment du screenshot
+              filter: (node: HTMLElement) => {
+                return !node.classList?.contains('no-screenshot')
+              },
             })
             .then((dataUrl) => {
               const link = document.createElement('a')
