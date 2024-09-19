@@ -96,7 +96,7 @@
   padding: unset;
   border: none;
   bottom: 0;
-  z-index: 2;
+  z-index: 3;
   background-color: var(--neutral-00);
   border-radius: calc(1rem - 2px);
   width: 100%;

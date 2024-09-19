@@ -50,10 +50,15 @@
   border-radius: 0 0 6px 6px !important;
 }
 
+.rightContent {
+  overflow: hidden;
+}
+
 .animatedEqualColumn,
 .animatedEqual,
 .equalColumn,
 .equal {
+  z-index: 2;
   top: 50% !important;
   transform: translateX(-50%) translateY(-50%) !important;
   border-radius: 50%;
