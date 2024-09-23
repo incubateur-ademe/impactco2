@@ -47,7 +47,7 @@ export const checks = [
           },*/
   {
     slug: 'lefigaro',
-    skipAutoCheck: false,
+    skipAutoCheck: true,
     url: 'https://immobilier.lefigaro.fr/annonces/immobilier-vente-bien-aubervilliers+93300.html',
     before: async (page: Page) => {
       const id = await page.locator('.list-annonce').locator('article').first().getAttribute('data-id')
@@ -78,7 +78,7 @@ export const checks = [
   },
   {
     slug: 'linfodurable',
-    skipAutoCheck: false,
+    skipAutoCheck: true,
     url: 'https://www.linfodurable.fr/climat/detecteur-carbone-id-linfo-durable-premier-media-se-doter-du-nouvel-outil-de-lademe-44711',
     before: async (page: Page) => {
       await page.getByRole('button', { name: 'Accept all' }).click({ timeout: 60000 })
@@ -89,7 +89,7 @@ export const checks = [
   },
   {
     slug: 'tictactrip',
-    skipAutoCheck: false,
+    skipAutoCheck: true,
     url: 'https://www.tictactrip.eu/search/paris/toulouse',
     before: async (page: Page) => {
       await page.getByRole('button', { name: 'Reduce emissions' }).click({ timeout: 60000 })
