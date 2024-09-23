@@ -1,6 +1,7 @@
 name: Check iframes
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '0 6,14,18 * * 1-5'
 jobs:
   test:
     timeout-minutes: 60
@@ -17,3 +18,5 @@ jobs:
         run: yarn playwright install chromium
       - name: Check iframes
         run: yarn run testIframes
+        env:
+          MATTERMOST_IMPACTCO2: ${{ secrets.MATTERMOST_IMPACTCO2}}

@@ -1,44 +1,38 @@
-import { FrameLocator, Page, chromium } from '@playwright/test'
-import { expect } from '@playwright/test'
-import { itineraireTest } from '../../teste/itineraire'
+import { chromium } from '@playwright/test'
+import axios from 'axios'
 import { mockRoutesItinerary } from '../../teste/mock-routes/mock-routes-itinerary'
+import { checks } from './testIframes.config'
 
-const checks = [
-  {
-    url: 'https://www.operadeparis.fr/infos-pratiques/preparer-votre-venue/palais-garnier',
-    before: async (page: Page) => {
-      await page.getByLabel('Accepter et fermer').click()
-      await page.getByRole('button', { name: "Calculez l'empreinte carbone" }).click()
-    },
-    check: async (iframe: FrameLocator) => {
-      await expect(iframe.getByTestId('header-share-button')).toBeInViewport()
-      await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
-        'value',
-        "L'Opéra Restaurant Place Jacques Rouché Paris 75009 France",
-        { timeout: 10000 }
-      )
-      await iframe.getByLabel('Arrivée').clear()
-
-      await itineraireTest(iframe, true)
-    },
-  },
-]
 const test = async () => {
+  console.log('Check iframes')
   const browser = await chromium.launch()
   const page = await browser.newPage()
   await mockRoutesItinerary(page)
   const errors: string[] = []
   for (let i = 0; i < checks.length; i++) {
-    const { before, url, check } = checks[i]
+    const { before, url, check, checkIframe, scroll, iframeContent, skipAutoCheck } = checks[i]
+    if (skipAutoCheck) {
+      continue
+    }
+
+    console.log('check', url)
     try {
-      page.goto(url)
+      await page.goto(url, { timeout: 60000 })
+      await page.waitForLoadState('networkidle', { timeout: 60000 })
+
       if (before) {
         await before(page)
       }
 
-      const iframe = page.locator('iframe[title="Impact CO₂"]').contentFrame()
-      await iframe.locator('.main-iframe').scrollIntoViewIfNeeded()
-      await check(iframe)
+      if (checkIframe) {
+        const iframe = iframeContent ? iframeContent(page) : page.locator('#iFrameResizer0').contentFrame()
+        if (scroll) {
+          await iframe.locator('.main-iframe').scrollIntoViewIfNeeded()
+        }
+        await checkIframe(iframe)
+      } else if (check) {
+        await check(page)
+      }
     } catch (e) {
       console.log(e)
       errors.push(url)
@@ -46,8 +40,16 @@ const test = async () => {
   }
 
   if (errors.length) {
-    console.log('Iframes are broken on the following sites :')
-    errors.forEach(console.log)
+    if (process.env.MATTERMOST_IMPACTCO2) {
+      axios.post(`https://mattermost.incubateur.net/hooks/${process.env.MATTERMOST_IMPACTCO2}`, {
+        text: `Iframes are broken on the following site${errors.length > 1 ? 's' : ''}: ${errors.join(' ')}`,
+      })
+    } else {
+      console.log('Iframes are broken on the following sites :')
+      errors.forEach((error) => console.log(error))
+    }
+  } else {
+    console.log('All good')
   }
   browser.close()
 }

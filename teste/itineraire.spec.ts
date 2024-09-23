@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { detecteurCO2Test } from './detecteur-co2'
 import { itineraireTest } from './itineraire'
 import { mockRoutesItinerary } from './mock-routes/mock-routes-itinerary'
 
@@ -154,23 +155,4 @@ test('Roundtrip', async ({ page }) => {
     timeout: 10000,
   })
   await expect(page.getByTestId('category-tgv')).not.toBeAttached()
-})
-
-test('extra', async ({ page }) => {
-  await page.goto('https://www.operadeparis.fr/infos-pratiques/preparer-votre-venue/palais-garnier')
-  await page.getByLabel('Accepter et fermer').click()
-  await page.getByRole('button', { name: "Calculez l'empreinte carbone" }).click()
-
-  await page.frameLocator('iframe[title="Impact CO₂"]').locator('.main-iframe').scrollIntoViewIfNeeded()
-
-  const iframe = page.locator('iframe[title="Impact CO₂"]').contentFrame()
-  await iframe.locator('.main-iframe').scrollIntoViewIfNeeded()
-
-  await expect(iframe.getByTestId('header-share-button')).toBeInViewport()
-  await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
-    'value',
-    "L'Opéra Restaurant Place Jacques Rouché Paris 75009 France"
-  )
-  await iframe.getByLabel('Arrivée').clear()
-  await itineraireTest(iframe, true)
 })
