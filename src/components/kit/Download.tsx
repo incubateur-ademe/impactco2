@@ -10,7 +10,7 @@ const Download = ({ name, customLabel, customHref }: { name: string; customLabel
       asButton
       href={customHref || `/kit/${name}.zip`}
       onClick={() => track('Kit de communication', name, 'download-zip')}>
-      {customLabel || 'Télécharger les {name} (.zip)'}
+      {customLabel || `Télécharger les ${name} (.zip)`}
     </Link>
   )
 }
