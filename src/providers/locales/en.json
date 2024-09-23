@@ -26,7 +26,7 @@
       "unit": "km"
     },
     "roundTrip": {
-      "title": "Round trip"
+      "title": "Roundtrip"
     },
     "situation": "my own simulation",
     "comparateur": "my own comparison",
@@ -104,7 +104,7 @@
     "modify": "Modify",
     "avoided": "avoided",
     "itineraire": {
-      "roundTrip": "Round trip",
+      "roundTrip": "Roundtrip",
       "header": "See how much CO₂e you emit for this itinary",
       "start": "From",
       "end": "To"

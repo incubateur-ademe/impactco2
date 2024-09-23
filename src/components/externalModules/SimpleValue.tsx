@@ -13,7 +13,7 @@ import styles from './SimpleValue.module.css'
 
 const equivalents = values as Record<string, SimpleEquivalent>
 
-const getValues = (comparison: string, value: number) => {
+export const getValues = (comparison: string, value: number) => {
   const [slug, carpool] = comparison.split('+')
   if (comparison !== 'random' && equivalents[slug]) {
     const equivalent = equivalents[slug]
