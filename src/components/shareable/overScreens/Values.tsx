@@ -70,7 +70,7 @@ export const overScreenEquivalentValues: (equivalent: ComputedEquivalent) => Rec
   },
   integrer: {
     title: 'integrate',
-    children: <Integrate path={equivalent.link} tracking={getName('fr', equivalent)} />,
+    children: <Integrate path={equivalent.link.replace('/outils/', '')} tracking={getName('fr', equivalent)} />,
   },
   usage: {
     title: 'usage',
