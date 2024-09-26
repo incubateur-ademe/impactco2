@@ -1,4 +1,58 @@
 {
+  "quiz": {
+    "question": "Question",
+    "previous": "Prev.",
+    "title": "In your opinion, what has <important>the least</important> impact on the climate?",
+    "tag": "Choose your answer below:",
+    "ou": "or",
+    "correct": "<important>Well done!</important> That’s exactly right!",
+    "missed": "<important>Missed...</important> The correct answer was",
+    "more": "Read more",
+    "less": "Collapse",
+    "next": "Next question",
+    "result": "View score",
+    "finished": "It's finished!",
+    "score": "You scored <important>{score} / 10</important> {score, plural, =1 {correct answer} other {correct answers}}!",
+    "restart": "Restart",
+    "read-more": "LEARN MORE",
+    "boeuf-tgv": {
+      "line-1": "The TGV is currently one of the modes of transport with the least carbon impact on the planet. Per person and per kilometer, <important>trains pollute 8 times less than cars and 14 times less than airplanes.</important>",
+      "line-2": "In contrast, beef consumption has a strong environmental impact. In fact, a meal with beef is equivalent to 14 vegetarian meals!"
+    },
+    "tablette-chaussures": {
+      "line-1": "A tablet has <important>4x more impact</important> than a pair of leather shoes!",
+      "line-2": "The carbon footprint of digital devices in general is mainly due to their manufacturing, rather than their usage, which is why <important>it’s important to keep your tablet as long as possible.</important>"
+    },
+    "avocat-poisson": {
+      "line-1": "Today, avocados are often criticized for their significant environmental impact. However, despite being an exotic fruit, the impact of 1 kg of avocados is <important>slightly lower</important> than that of a meal with white fish.",
+      "line-2": "The point is not to say ‘it’s better to eat avocado than fish’, but rather to <important>put into perspective</important> the relative scale of climate impact to make informed decisions."
+    },
+    "refrigirateur-ordinateur": {
+      "line-1": "Household appliances also have a strong environmental impact. Like digital devices, <important>their impact mainly lies in their manufacturing.</important>"
+    },
+    "eau-the": {
+      "line-1": "A liter of bottled water has, on average, <important>6x more impact</important> than a liter of tea! Its carbon footprint is primarily due to the impact of the plastic packaging and its distribution to different points of sale."
+    },
+    "friends-voiture": {
+      "line-1": "Watching all 236 episodes of Friends via streaming has <important>50 times less environmental impact</important> than a nearly 1000 km trip in a gasoline car.",
+      "line-2": "Indeed, today the transportation sector accounts for 30% of greenhouse gas emissions in France, while the digital sector only accounts for 2.5%."
+    },
+    "manteau-bouilloire": {
+      "line-1": "Textiles have a significant carbon footprint on the environment, largely linked to the <important>manufacturing phase</important> and the <important>extraction of raw materials.</important> This is why it is important to take care of your clothes and make them last."
+    },
+    "television-pny": {
+      "line-1": "Short, medium, and long-haul flights emit a substantial amount of CO2e.",
+      "line-2": "A round trip from Paris to New York emits nearly 2 tons of CO2, which is almost <important>20% of the annual carbon footprint of a French citizen</important> today."
+    },
+    "email-smartphone": {
+      "line-1": "Multiplied by billions of sends, the impact of emails at a global scale is necessarily significant.",
+      "line-2": "However, this information can divert attention from bigger issues like <important>keeping your smartphone as long as possible.</important> Indeed, the carbon impact of manufacturing a smartphone will always be higher than its usage."
+    },
+    "velo-mangue": {
+      "line-1": "Electric bikes are part of <important>soft mobility</important>, which have a lower impact compared to other modes of transportation on the planet.",
+      "line-2": "On the contrary, the mango is one of the fruits with the highest environmental impact in France today, largely due to its air transport."
+    }
+  },
   "clipboard": {
     "copier": "Copy",
     "copie": "Copied",
@@ -280,6 +334,7 @@
     "fdv": "End of life",
     "usage-fdv": "Usage and end of life",
     "total": "Total",
+    "yearly-usage": "per year of use",
     "Matières premières": "Raw materials",
     "Approvisionnement": "Supply",
     "hypothesis": {
@@ -404,10 +459,13 @@
     "chauffage-bois": "Adopt wood heating",
     "wattris": "Simulate the electrical consumption of your home",
     "ngc": "Estimate your consumption carbon footprint",
-    "agir": "What does telecommuting change for the planet?",
+    "agir-tt": "What does telecommuting change for the planet?",
+    "agir": "Reduce your ecological footprint",
     "calendar": "Seasonal fruits and vegetables calendar",
     "livraison": "Download the guide 'E-consumer & responsible'",
     "leger": "How to work with a low impact ?",
-    "ecoresponsable": "Eco-responsible at work"
+    "ecoresponsable": "Eco-responsible at work",
+    "ico2": "Fun and educational resources on CO2 impact",
+    "fiches": "Download the printable quiz sheets"
   }
 }

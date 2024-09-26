@@ -40,6 +40,18 @@ export const overScreenEquivalentEtiquetteValues: (equivalent: ComputedEquivalen
     },
   }
 }
+export const overScreenQuizValues: () => Record<string, OverScreenInfo> = () => {
+  return {
+    partager: {
+      title: 'share',
+      children: <Share path='/outils/quiz' tracking='Quiz' />,
+    },
+    integrer: {
+      title: 'integrate',
+      children: <Integrate path='quiz' tracking='Quiz' />,
+    },
+  }
+}
 
 export const overScreenEquivalentInfographyValues: (
   equivalent: ComputedEquivalent,
@@ -264,7 +276,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
             />
             <Resource
               image='/images/agir.png'
-              text='agir'
+              text='agir-tt'
               href='https://agirpourlatransition.ademe.fr/particuliers/maison/teletravail-ca-change-quoi-planete'
               withLink='ADEME'
               tracking='Télétravail'

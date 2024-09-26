@@ -1,0 +1,20 @@
+.container {
+  color: var(--primary-70);
+}
+
+.withIcon {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.borders {
+  background-color: var(--neutral-00);
+  border-radius: 1rem;
+  border: 2px solid var(--primary-30);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}

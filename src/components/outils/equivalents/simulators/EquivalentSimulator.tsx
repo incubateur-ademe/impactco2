@@ -24,7 +24,15 @@ const getCarpool = (language: string, carpool: number) => {
   return `1 conducteur + ${carpool} ${formatName('passager[s]', carpool)}`
 }
 
-const EquivalentSimulator = ({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) => {
+const EquivalentSimulator = ({
+  category,
+  equivalent,
+  className,
+}: {
+  category: Category
+  equivalent: ComputedEquivalent
+  className?: string
+}) => {
   const { language } = useParamContext()
   const t = useTranslations('equivalent')
   const pre = t(`hypothesis.pre.${equivalent.slug}`)
@@ -33,7 +41,7 @@ const EquivalentSimulator = ({ category, equivalent }: { category: Category; equ
   const hasPre = pre !== `equivalent.hypothesis.pre.${equivalent.slug}`
   const hasPost = post !== `equivalent.hypothesis.post.${equivalent.slug}`
   return (
-    <>
+    <div className={className}>
       <div className={styles.header}>
         <EquivalentCardContent equivalent={equivalent} category={category} />
         {('months' in equivalent || hasPre || hasPost || equivalent.carpool) && (
@@ -47,7 +55,7 @@ const EquivalentSimulator = ({ category, equivalent }: { category: Category; equ
         )}
       </div>
       <Detail equivalent={equivalent} />
-    </>
+    </div>
   )
 }
 

@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { Fragment, useMemo } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -7,7 +8,7 @@ import EqualIcon from 'components/base/icons/equal'
 import styles from './InfographySimulator.module.css'
 import Name from './Name'
 
-const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
+const InfographySimulator = ({ equivalents, className }: { equivalents: string[]; className?: string }) => {
   const values = useMemo(
     () =>
       equivalents
@@ -25,7 +26,7 @@ const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
 
   const factor = values[0].value
   return (
-    <div className={styles.infography} id='infographie'>
+    <div className={classNames(styles.infography, className)} id='infographie'>
       <div>
         {values
           .filter((value) => Math.round(factor / value.value) > 0)
@@ -37,7 +38,7 @@ const InfographySimulator = ({ equivalents }: { equivalents: string[] }) => {
               <Fragment key={value.slug}>
                 <div className={styles.equivalent}>
                   <div className={styles.icons} style={{ gap: `${gap}rem` }}>
-                    {[...Array(number)].map((number) => (
+                    {[...Array(number)].map((_, number) => (
                       <EquivalentIcon key={`${value.slug}-${number}`} equivalent={value} height={height} />
                     ))}
                   </div>

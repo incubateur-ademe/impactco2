@@ -1,4 +1,58 @@
 {
+  "quiz": {
+    "question": "Pregunta",
+    "previous": "Ant.",
+    "title": "Según tú, ¿qué tiene <important>menos</important> impacto en el clima?",
+    "tag": "Elige tu respuesta a continuación:",
+    "ou": "o",
+    "correct": "<important>¡Bien hecho!</important> ¡Eso es exactamente correcto!",
+    "missed": "<important>Fallaste...</important> La respuesta correcta era",
+    "more": "Leer más",
+    "less": "Reducir",
+    "next": "Siguiente pregunta",
+    "result": "Ver puntuación",
+    "finished": "¡Ha terminado!",
+    "score": "Has obtenido <important>{score} / 10</important> {score, plural, =1 {respuesta correcta} other {respuestas correctas}}!",
+    "restart": "Reiniciar",
+    "read-more": "APRENDE MÁS",
+    "boeuf-tgv": {
+      "line-1": "El TGV es actualmente uno de los modos de transporte con menor impacto de carbono en el planeta. Por persona y por kilómetro, <important>el tren contamina 8 veces menos que el coche y 14 veces menos que el avión.</important>",
+      "line-2": "En cambio, el consumo de carne de res tiene un gran impacto ambiental. De hecho, ¡una comida con carne de res equivale a 14 comidas vegetarianas!"
+    },
+    "tablette-chaussures": {
+      "line-1": "Una tableta tiene <important>4 veces más impacto</important> que un par de zapatos de cuero.",
+      "line-2": "La huella de carbono de los dispositivos digitales en general se debe principalmente a su fabricación, más que a su uso, por lo que <important>es importante conservar tu tableta el mayor tiempo posible.</important>"
+    },
+    "avocat-poisson": {
+      "line-1": "Hoy en día, el aguacate a menudo es criticado por su significativo impacto ambiental. Sin embargo, a pesar de ser una fruta exótica, el impacto de 1 kg de aguacates es <important>ligeramente menor</important> que el de una comida con pescado blanco.",
+      "line-2": "No se trata de decir 'es mejor comer aguacate que pescado', sino simplemente de <important>poner en perspectiva</important> las magnitudes relativas del impacto climático para tomar decisiones informadas."
+    },
+    "refrigirateur-ordinateur": {
+      "line-1": "Los electrodomésticos también tienen un fuerte impacto ambiental. Al igual que los dispositivos digitales, <important>su impacto se encuentra principalmente en su fabricación.</important>"
+    },
+    "eau-the": {
+      "line-1": "Un litro de agua embotellada tiene, en promedio, <important>6 veces más impacto</important> que un litro de té. Su huella de carbono se debe principalmente al impacto del embalaje de plástico y a su distribución en los diferentes puntos de venta."
+    },
+    "friends-voiture": {
+      "line-1": "Ver los 236 episodios de Friends en streaming tiene <important>50 veces menos impacto ambiental</important> que un viaje de casi 1000 km en un coche a gasolina.",
+      "line-2": "De hecho, hoy el sector del transporte representa el 30% de las emisiones de gases de efecto invernadero en Francia, mientras que el sector digital solo representa el 2,5%."
+    },
+    "manteau-bouilloire": {
+      "line-1": "El sector textil tiene una importante huella de carbono en el medio ambiente, en gran parte vinculada a la <important>fase de fabricación</important> y a la <important>explotación de materias primas.</important> Por ello, es importante cuidar la ropa y hacer que dure."
+    },
+    "television-pny": {
+      "line-1": "Los vuelos de corto, medio y largo recorrido emiten una cantidad significativa de CO2e.",
+      "line-2": "Un viaje de ida y vuelta París/Nueva York emite casi 2 toneladas de CO2, lo que equivale a casi <important>el 20% de la huella de carbono anual de un ciudadano francés</important> hoy en día."
+    },
+    "email-smartphone": {
+      "line-1": "Multiplicado por miles de millones de envíos, el impacto de los correos electrónicos a escala global es necesariamente significativo.",
+      "line-2": "Sin embargo, esta información puede desviar la atención de temas más importantes como <important>mantener tu smartphone el mayor tiempo posible.</important> De hecho, el impacto de carbono de la fabricación de un smartphone siempre será mayor que su uso."
+    },
+    "velo-mangue": {
+      "line-1": "Las bicicletas eléctricas forman parte de las <important>movilidades suaves</important>, que tienen un impacto más bajo que otros modos de transporte en el planeta.",
+      "line-2": "Por el contrario, el mango es una de las frutas con mayor impacto ambiental en Francia hoy en día, debido en gran parte a su importación por avión."
+    }
+  },
   "clipboard": {
     "copier": "Copiar",
     "copie": "Copiado",
@@ -280,6 +334,7 @@
     "fdv": "Fin de vida",
     "usage-fdv": "Uso y fin de vida",
     "total": "Total",
+    "yearly-usage": "por año de uso",
     "Matières premières": "Materias primas",
     "Approvisionnement": "Abastecimiento",
     "hypothesis": {
@@ -408,10 +463,13 @@
     "chauffage-bois": "Adoptar calefacción de madera",
     "wattris": "Simular el consumo eléctrico de tu hogar",
     "ngc": "Estimar tu huella de carbono de consumo",
-    "agir": "¿El teletrabajo, qué cambia para el planeta?",
+    "agir-tt": "¿El teletrabajo, qué cambia para el planeta?",
+    "agir": "Reduce tu huella ecológica",
     "calendar": "Calendario de frutas y verduras de temporada",
     "livraison": "Descargar la guía “E-consumidor & responsable”",
     "leger": "¿Cómo trabajar con bajo impacto?",
-    "ecoresponsable": "Eco-responsabilidad en el trabajo"
+    "ecoresponsable": "Eco-responsabilidad en el trabajo",
+    "ico2": "Recursos divertidos y educativos sobre el impacto del CO2",
+    "fiches": "Descargue las hojas del cuestionario para imprimir"
   }
 }

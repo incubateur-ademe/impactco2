@@ -189,7 +189,8 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
             <>
               <tr>
                 <td>
-                  <b>Total</b> par année d'utilisation{' '}
+                  <b>{t('total')}</b> {t('yearly-usage')}
+                  {' '}
                   <button
                     title='Voir les informations sur la durée de vie'
                     onClick={() => setOverscreen(equivalent.slug, 'usage')}

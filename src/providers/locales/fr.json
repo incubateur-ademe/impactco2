@@ -1,4 +1,58 @@
 {
+  "quiz": {
+    "question": "Question",
+    "previous": "Prec.",
+    "title": "D’après vous, qu’est ce qui a <important>le moins</important> d’impact sur le climat ?",
+    "tag": "Choisissez votre réponse ci dessous :",
+    "ou": "ou",
+    "correct": "<important>Bien joué !</important> C’est exactement ça !",
+    "missed": "<important>Raté...</important> C’était la réponse",
+    "more": "Lire la suite",
+    "less": "Réduire",
+    "next": "Question suivante",
+    "result": "Voir le score",
+    "finished": "C'est terminé !",
+    "score": "Vous avez obtenu <important>{score} / 10</important> {score, plural, =1 {bonne réponse} other {bonnes réponses}} !",
+    "restart": "Recommencer",
+    "read-more": "POUR ALLER PLUS LOIN",
+    "boeuf-tgv": {
+      "line-1": "Le TGV est aujourd’hui est un des modes de déplacement qui a le moins d’impact carbone sur la planète. Par personne et par kilomètre, <important>le train pollue 8 fois moins que la voiture et 14 fois moins que l’avion.</important>",
+      "line-2": "A contrario, la consommation de boeuf a un fort impact sur l’environnement. En effet, un repas avec du boeuf correspond à 14 repas végétariens !"
+    },
+    "tablette-chaussures": {
+      "line-1": "Une tablette a <important>4x plus d’impact</important> qu’une paire de chaussures en cuir !",
+      "line-2": "L’impact carbone des appareils numériques en général, réside principalement dans leur fabrication, plus que dans leur usage, c’est pourquoi <important>il est important de conserver sa tablette le plus longtemps possible.</important>"
+    },
+    "avocat-poisson": {
+      "line-1": "Aujourd’hui, l’avocat est souvent montré du doigt pour son impact environnemental important. Pourtant, bien que ce soit un fruit exotique, l’impact lié à 1 kg d’avocat est <important>légèrement inférieur</important> à celui d’un repas avec poisson blanc.",
+      "line-2": "Il ne s’agit pas de dire “il vaut mieux manger de l’avocat que du poisson”, mais simplement de <important>mettre en perspective</important> les ordres de grandeur d’impact sur le climat afin de pouvoir prendre des décisions avisées."
+    },
+    "refrigirateur-ordinateur": {
+      "line-1": "Les appareils électroménagers ont aussi un fort impact sur l’environnement. Tout comme les appareils numériques, <important>leur impact réside principalement dans leur fabrication.</important>"
+    },
+    "eau-the": {
+      "line-1": "Un litre d’eau en bouteille a en moyenne <important>6x plus d’impact</important> qu’un litre de thé ! Son empreinte carbone est en majorité dû à l’impact de l’emballage plastique de la bouteille et de sa distribution dans les différents points de ventes."
+    },
+    "friends-voiture": {
+      "line-1": "Regarder les 236 épisodes de Friends en streaming a <important>50 fois moins d’impact sur l’environnement</important> qu’un déplacement de presque 1000 km en voiture thermique.",
+      "line-2": "En effet, aujourd’hui le secteur du transport représente 30% des émission de gaz à effet de serre en France, alors que le secteur du numérique seulement 2,5%."
+    },
+    "manteau-bouilloire": {
+      "line-1": "Le textile a une forte empreinte carbone sur l’environnement, en grande partie liée à la <important>phase de fabrication</important> et <important>l’exploitation des matières premières.</important> C’est pourquoi il est important de prendre soin de ses vêtements et de les faire durer. "
+    },
+    "television-pny": {
+      "line-1": "Les déplacements en avion, court moyen et long courrier, émettent une quantité très importante de CO2e.",
+      "line-2": "Un aller-retour Paris/New York émet près de 2 tonnes de CO2, soit presque <important>20% de l’empreinte carbone annuelle d’un citoyen français</important> aujourd’hui."
+    },
+    "email-smartphone": {
+      "line-1": "Multiplié par des milliards d’envois, l’impact des e-mails à l’échelle planétaire est nécessairement important.",
+      "line-2": "Pour autant, cette information peut détourner des enjeux de taille comme <important>garder son smartphone le plus longtemps possible.</important> En effet l’impact carbone de la fabrication d’un smartphone restera toujours plus élevé que son usage."
+    },
+    "velo-mangue": {
+      "line-1": "Le vélo électrique fait partie des <important>mobilités douces</important>, qui ont un impact plus faible que les autres modes de déplacement sur la planète.",
+      "line-2": "Au contraire,  la mangue est un des fruits ayant le plus d’impact sur l’environnement aujourd’hui en France, en grande partie liée à son importation en avion."
+    }
+  },
   "clipboard": {
     "copier": "Copier",
     "copie": "Copié",
@@ -280,6 +334,7 @@
     "fdv": "Fin de vie",
     "usage-fdv": "Usage et fin de vie",
     "total": "Total",
+    "yearly-usage": "par année d'utilisation",
     "Matières premières": "Matières premières",
     "Approvisionnement": "Approvisionnement",
     "hypothesis": {
@@ -407,10 +462,13 @@
     "chauffage-bois": "Adopter le chauffage au bois",
     "wattris": "Simuler la consommation électrique de son logement",
     "ngc": "Estimer son empreinte carbone de consommation",
-    "agir": "Le télétravail, ça change quoi pour la planète ?",
+    "agir-tt": "Le télétravail, ça change quoi pour la planète ?",
+    "agir": "Réduire votre empreinte écologique",
     "calendar": "Calendrier des fruits et légumes de saison",
     "livraison": "Télécharger le guide “E-consommateur & responsable”",
     "leger": "Comment télétravailler léger ?",
-    "ecoresponsable": "Écoresponsable au bureau"
+    "ecoresponsable": "Écoresponsable au bureau",
+    "ico2": "Les ressources ludiques et pédagogiques sur l’impact CO2",
+    "fiches": "Télécharger les fiches du quizz à imprimer"
   }
 }

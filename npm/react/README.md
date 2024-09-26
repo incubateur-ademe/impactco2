@@ -262,12 +262,12 @@ Liste des équivalents à comparer parmis la liste suivante :
   - visioconference : Heure de visioconférence
   - telechargement : go de donnée
 - Cas pratique
-  - avionpny : A/R paris - New-York en avion
-  - tgvparis-berlin" : A/R Paris - Berlin en tgv
-  - tgvparis-marseille" : A/R Paris - Marseille en tgv
-  - voiturelille-nimes" : A/R Lille - Nîmes en voiture
+  - avion-pny : A/R paris - New-York en avion
+  - tgv-paris-berlin" : A/R Paris - Berlin en tgv
+  - tgv-paris-marseille" : A/R Paris - Marseille en tgv
+  - voiture-lille-nimes" : A/R Lille - Nîmes en voiture
   - francais : % de l'empreinte carbone d'un citoyen français
-  - gameof-thrones : épisode de game of thrones en streaming
+  - game-of-thrones : épisode de game of thrones en streaming
   - friends : intégrale de friends en streaming
 
 
