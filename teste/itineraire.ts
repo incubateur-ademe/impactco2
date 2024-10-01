@@ -13,7 +13,7 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
   await page.getByTestId('header-integrate-button').click()
 
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&defaultMode=list${extraParams}"></script>`
+    `<script name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&defaultMode=list${extraParams || ''}"></script>`
   )
   await page.getByTestId('cancel-button').click()
 
@@ -37,7 +37,7 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
   await page.getByTestId('header-integrate-button').click()
 
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&defaultMode=list${extraParams}"></script>`
+    `<script name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&defaultMode=list${extraParams || ''}"></script>`
   )
   await page.getByTestId('cancel-button').click()
 
@@ -60,7 +60,7 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
   await page.getByTestId('header-integrate-button').click()
 
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list${extraParams}"></script>`
+    `<script name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list${extraParams || ''}"></script>`
   )
   await page.getByTestId('cancel-button').click()
 }
