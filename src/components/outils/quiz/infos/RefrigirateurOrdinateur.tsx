@@ -26,7 +26,7 @@ const RefrigirateurOrdinateur = () => {
         </div>
       </div>
       <br />
-      <EquivalentSimulator category={electromenager} equivalent={refrigirateur} className={styles.borders} />
+      <EquivalentSimulator category={electromenager} equivalent={refrigirateur} className={styles.borders} noInfo />
     </>
   )
 }

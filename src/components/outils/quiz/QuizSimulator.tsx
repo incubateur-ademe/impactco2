@@ -133,23 +133,22 @@ const QuizSimulator = () => {
             <Resource
               image='/images/fiches.png'
               text='fiches'
-              href='https://impactco2.fr/outils/quiz'
+              href='/kit/fiches.zip'
               withLink='Télécharger les 20 fiches'
               tracking='Quiz'
             />
             <Resource
-              image='/images/ico2.svg'
-              text='ico2'
-              href='https://impactco2.fr/'
-              withLink='Impact CO2'
+              image='/images/tools-transport.svg'
+              text='ico2-transport'
+              href='https://impactco2.fr/outils/transport'
+              withLink='Simulateur Transports'
               tracking='Quiz'
-              imgSize='6rem'
             />
             <Resource
-              image='/images/agir.png'
-              text='agir'
-              href='https://agirpourlatransition.ademe.fr/'
-              withLink='ADEME'
+              image='/images/tools-fruitsetlegumes.svg'
+              text='ico2-fruitsetlegumes'
+              href='https://impactco2.fr/outils/fruitsetlegumes'
+              withLink='Fruits et légumes de saison'
               tracking='Quiz'
             />
             <Resource
@@ -158,7 +157,6 @@ const QuizSimulator = () => {
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
               tracking='Quiz'
-              imgSize='4.5rem'
             />
           </div>
           <div className={shareableStyles.separator} />

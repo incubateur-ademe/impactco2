@@ -19,7 +19,7 @@ const QuizCards = () => {
         <span>Pour obtenir les fiches, cliquez sur le bouton ci-dessous : </span>
       </div>
       <div className={outilStyles.link}>
-        <Download name='cards' customLabel='Télécharger les fiches (.zip)' />
+        <Download name='fiches' />
       </div>
     </Card>
   )

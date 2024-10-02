@@ -72,3 +72,5 @@ npm/react/dist/index.js.LICENSE.txt
 dist/
 
 public/webcomponents/
+
+public/pdf/

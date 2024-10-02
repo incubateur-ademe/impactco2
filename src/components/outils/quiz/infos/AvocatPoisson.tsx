@@ -13,12 +13,7 @@ const AvocatPoisson = () => {
       <div className={styles.container}>
         <div className={styles.withIcon}>
           <Icon />
-          <div>
-            {t.rich('line-1')}
-            <br />
-            <br />
-            {t.rich('line-2')}
-          </div>
+          <div>{t.rich('line-1')}</div>
         </div>
       </div>
       <br />
