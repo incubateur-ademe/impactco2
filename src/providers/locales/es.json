@@ -24,7 +24,8 @@
       "line-2": "Es la etapa de fabricación de los dispositivos digitales en general la que más pesa en su huella de carbono, mucho más que su uso. Por eso, <important>es importante conservar la tableta el mayor tiempo posible.</important>"
     },
     "avocat-poisson": {
-      "line-1": "Hoy en día, el aguacate es a menudo criticado por su importante impacto ambiental. Los aguacates no se producen en Francia; se cultivan en países lejanos y requieren mucha agua para crecer. Sin embargo, la huella de carbono de 1 kg de aguacate es ligeramente inferior a la de una comida con pescado blanco."
+      "line-1": "Hoy en día, el aguacate es a menudo criticado por su importante impacto ambiental. Los aguacates no se producen en Francia; se cultivan en países lejanos y requieren mucha agua para crecer.",
+      "line-2": "Sin embargo, la huella de carbono de 1 kg de aguacate es ligeramente inferior a la de una comida con pescado blanco."
     },
     "refrigirateur-ordinateur": {
       "line-1": "Los electrodomésticos también tienen un fuerte impacto en el clima. Al igual que los dispositivos digitales, la etapa de fabricación es la parte más significativa de su huella de carbono."
@@ -37,19 +38,20 @@
       "line-2": "De hecho, hoy en día el sector del transporte representa el 30% de las emisiones de gases de efecto invernadero en Francia, mientras que el sector digital representa solo el 2,5%."
     },
     "manteau-bouilloire": {
-      "line-1": "La producción de nuestra ropa tiene muchos impactos ambientales: emisiones de gases de efecto invernadero, contaminación del suelo, aire y agua. El problema: compramos mucha ropa y no siempre la conservamos por mucho tiempo. Para reducir nuestro impacto en el clima, debemos comprar solo lo que necesitamos y hacer que nuestra ropa dure el mayor tiempo posible."
+      "line-1": "La producción de nuestra ropa tiene muchos impactos ambientales: emisiones de gases de efecto invernadero, contaminación del suelo, aire y agua. El problema: compramos mucha ropa y no siempre la conservamos por mucho tiempo.",
+      "line-2": "Para reducir nuestro impacto en el clima, debemos comprar solo lo que necesitamos y hacer que nuestra ropa dure el mayor tiempo posible."
     },
     "television-pny": {
       "line-1": "Los vuelos de corto, medio y largo recorrido emiten una cantidad considerable de CO2.",
       "line-2": "La huella de carbono anual de una persona que vive en Francia es de alrededor de 9 toneladas de CO2 al año, y un viaje de ida y vuelta París-Nueva York emite cerca de 2 toneladas de CO2, <important>lo que representa casi el 20% de esa huella.</important>"
     },
     "email-smartphone": {
-      "line-1": "Multiplicado por miles de millones de envíos, el impacto global de los correos electrónicos es inevitablemente significativo.",
-      "line-2": "Sin embargo, esta información puede distraer de problemas más grandes como <important>mantener tu smartphone el mayor tiempo posible.</important> De hecho, el impacto de carbono de la fabricación de un smartphone siempre será mayor que su uso."
+      "line-1": "Aunque enviamos muchos correos electrónicos, su impacto en el clima es mucho menos significativo que las emisiones generadas por la fabricación y, en menor medida, el uso de un teléfono inteligente.",
+      "line-2": "Para reducir la huella digital, mantengamos nuestros teléfonos inteligentes el mayor tiempo posible."
     },
     "velo-mangue": {
-      "line-1": "Las bicicletas eléctricas forman parte de la <important>movilidad suave</important>, que tiene un impacto menor en el planeta en comparación con otros medios de transporte.",
-      "line-2": "Por el contrario, el mango es una de las frutas con mayor impacto ambiental en Francia hoy en día, en gran parte debido a su importación por avión."
+      "line-1": "Utilizar una bicicleta eléctrica para desplazarse tiene mucho menos impacto en el clima en comparación con otros modos de transporte que usan combustibles fósiles, incluso teniendo en cuenta la fabricación de la bicicleta y la batería.",
+      "line-2": "La huella de carbono de los mangos, como todas las frutas exóticas, se agrava por su transporte. El impacto de los mangos, a menudo importados por avión, es aún mayor que el de otras frutas exóticas que viajan en barco."
     }
   },
   "clipboard": {
@@ -444,6 +446,7 @@
     "m²": "m²",
     "km": "km",
     "kg": "kg",
+    "an": "año",
     "repas": "comida",
     "litre": "litro",
     "A/R": "ida y vuelta",
@@ -451,7 +454,6 @@
     "intégrale": "completo",
     "param": "con los parámetros indicados a continuación",
     "email": "correo",
-    "année": "año",
     "recherche": "búsqueda"
   },
   "ressources": {

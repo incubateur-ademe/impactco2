@@ -21,6 +21,9 @@ const ManteauBouilloire = () => {
         <div className={styles.withIcon}>
           <Icon />
           <div>{t.rich('line-1')}</div>
+          <br />
+          <br />
+          <div>{t.rich('line-2')}</div>
         </div>
       </div>
       <br />

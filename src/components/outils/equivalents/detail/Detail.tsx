@@ -7,6 +7,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
 import PlusMinus from 'components/outils/plusMinus/PlusMinus'
 import InformationIcon from 'components/base/icons/information'
+import shareableStyles from 'components/shareable/Shareable.module.css'
 import styles from './Detail.module.css'
 import DetailValue from './DetailValue'
 import Label from './Label'
@@ -91,10 +92,12 @@ export default function Detail({
   equivalent,
   noPercentage,
   noInfo,
+  withSeparator,
 }: {
   equivalent: Equivalent
   noPercentage?: boolean
   noInfo?: boolean
+  withSeparator?: boolean
 }) {
   const { setOverscreen } = useParamContext()
   const t = useTranslations('equivalent')
@@ -154,6 +157,7 @@ export default function Detail({
   const sum = values.reduce((acc, current) => acc + current.value, 0)
   return (
     <>
+      {withSeparator && <div className={shareableStyles.separator} />}
       <table className={styles.table}>
         <tbody>
           {values.map((value) => (

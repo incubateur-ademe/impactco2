@@ -18,7 +18,6 @@ import NumberInput from 'components/form/NumberInput'
 import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
 import Select from 'components/form/Select'
-import shareableStyles from 'components/shareable/Shareable.module.css'
 import EquivalentCardContent from '../EquivalentCardContent'
 import Detail from '../detail/Detail'
 import baseStyles from './EquivalentSimulator.module.css'
@@ -246,8 +245,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
           </div>
         )}
       </form>
-      <div className={shareableStyles.separator} />
-      <Detail equivalent={computedEquivalent} />
+      <Detail equivalent={computedEquivalent} withSeparator />
     </>
   )
 }

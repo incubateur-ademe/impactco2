@@ -14,7 +14,7 @@ import styles from './Verso.module.css'
 const Verso = ({ equivalent, category }: { equivalent: ComputedEquivalent; category: Category }) => {
   useEffect(() => {
     const canvas = document.getElementById('qrcode')
-    QRCode.toCanvas(canvas, `https://impactco2.fr/pdf/${category.slug}/${equivalent.slug}/verso?src="qrcode"`)
+    QRCode.toCanvas(canvas, `https://impactco2.fr/outils/${category.slug}/${equivalent.slug}?src="qrcode"`)
   }, [category, equivalent])
 
   return (

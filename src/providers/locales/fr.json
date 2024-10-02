@@ -2,7 +2,7 @@
   "quiz": {
     "question": "Question",
     "previous": "Prec.",
-    "title": "D’après vous, qu’est ce qui a <important>le moins</important> d’impact sur le climat ?",
+    "title": "D’après vous, qu’est-ce qui a <important>le moins</important> d’impact sur le climat ?",
     "tag": "Choisissez votre réponse ci dessous :",
     "ou": "ou",
     "correct": "<important>Bien joué !</important> C’est exactement ça !",
@@ -24,7 +24,8 @@
       "line-2": "C’est l’étape de fabrication des appareils numériques en général qui pèse le plus lourd dans leur bilan carbone, bien plus que dans leur usage. C’est pourquoi, <important>il est important de conserver sa tablette le plus longtemps possible.</important>"
     },
     "avocat-poisson": {
-      "line-1": " Aujourd’hui l’avocat est souvent montré du doigt pour son impact environnemental important. L’avocat n’est pas produit en France. Il est cultivé dans des pays lointains et demande beaucoup d’eau pour pousser. Pourtant, l’impact carbone d’1 kg d’avocat est légèrement inférieur à celui d’un repas avec poisson blanc."
+      "line-1": " Aujourd’hui l’avocat est souvent montré du doigt pour son impact environnemental important. L’avocat n’est pas produit en France. Il est cultivé dans des pays lointains et demande beaucoup d’eau pour pousser.",
+      "line-2": "Pourtant, l’impact carbone d’1 kg d’avocat est légèrement inférieur à celui d’un repas avec poisson blanc."
     },
     "refrigirateur-ordinateur": {
       "line-1": " Les appareils électroménagers ont aussi un fort impact sur le climat. Tout comme les appareils numériques, l’étape de fabrication est celle qui pèse le plus lourd dans leur bilan carbone."
@@ -37,19 +38,20 @@
       "line-2": "En effet, aujourd’hui le secteur du transport représente 30% des émission de gaz à effet de serre en France, alors que le secteur du numérique seulement 2,5%."
     },
     "manteau-bouilloire": {
-      "line-1": "La fabrication de nos vêtements a de nombreux impacts sur l’environnement : émissions de gaz à effet de serre, pollution des sols, de l’air et de l’eau. Le problème : nous achetons beaucoup de vêtements et nous ne les gardons pas toujours très longtemps. Alors pour réduire notre impact sur le climat, n’achetons que ce dont nous avons besoin et faisons durer le plus longtemps possible nos vêtements."
+      "line-1": "La fabrication de nos vêtements a de nombreux impacts sur l’environnement : émissions de gaz à effet de serre, pollution des sols, de l’air et de l’eau. Le problème : nous achetons beaucoup de vêtements et nous ne les gardons pas toujours très longtemps.",
+      "line-2": "Alors pour réduire notre impact sur le climat, n’achetons que ce dont nous avons besoin et faisons durer le plus longtemps possible nos vêtements."
     },
     "television-pny": {
       "line-1": "Les déplacements en avion, court moyen et long courrier, émettent une quantité très importante de CO2.",
       "line-2": "L’empreinte carbone annuelle d’une personne vivant en France est environ de 9 tonnes de CO2 par an, et un aller-retour Paris/New York émet près de 2 tonnes de CO2, <important>soit presque 20% de cette empreinte.</important>"
     },
     "email-smartphone": {
-      "line-1": "Multiplié par des milliards d’envois, l’impact des e-mails à l’échelle planétaire est nécessairement important.",
-      "line-2": "Pour autant, cette information peut détourner des enjeux de taille comme <important>garder son smartphone le plus longtemps possible.</important> En effet l’impact carbone de la fabrication d’un smartphone restera toujours plus élevé que son usage."
+      "line-1": "Même si nous envoyons beaucoup d’e-mails, leurs impacts sur le climat est bien moins important que ceux générés par la fabrication et, dans une moindre mesure, l’utilisation d’un smartphone.",
+      "line-2": "Pour baisser les impacts du numérique, gardons nos smartphones le plus longtemps possible."
     },
     "velo-mangue": {
-      "line-1": "Le vélo électrique fait partie des <important>mobilités douces</important>, qui ont un impact plus faible que les autres modes de déplacement sur la planète.",
-      "line-2": "Au contraire,  la mangue est un des fruits ayant le plus d’impact sur l’environnement aujourd’hui en France, en grande partie liée à son importation en avion."
+      "line-1": "Utiliser un vélo électrique pour se déplacer a beaucoup moins d’impacts sur le climat que d’autres modes de transports qui utilisent des combustibles fossiles, même si on prend en compte la fabrication du vélo et de la batterie.",
+      "line-2": "Le bilan carbone de la mangue a, comme tous les fruits exotiques, un bilan carbone alourdit par son transport. Les impacts de la mangue, souvent importée par avion, est encore plus important que d’autres fruits exotiques qui voyagent par bateau."
     }
   },
   "clipboard": {
@@ -444,13 +446,13 @@
     "m²": "m²",
     "km": "km",
     "kg": "kg",
+    "an": "an",
     "repas": "repas",
     "litre": "litre",
     "épisode": "épisode",
     "intégrale": "intégrale",
     "param": "avec les paramètres renseignés ci-dessous",
     "email": "email",
-    "année": "année",
     "recherche": "recherche"
   },
   "ressources": {
