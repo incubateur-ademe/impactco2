@@ -30,6 +30,8 @@ const EquivalentPage = ({
     }
     return slugs
   }, [equivalent])
+
+  const sources = equivalent.sources || category.sources
   return (
     <>
       <Breadcrumbs
@@ -44,7 +46,7 @@ const EquivalentPage = ({
       />
       <Block title={getName('fr', equivalent)} as='h1' description="Détail de l'impact carbone">
         <Equivalent category={category} equivalent={equivalent} simulator={simulator} />
-        {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
+        {sources && <Sources className={styles.sources} sources={sources} tracking={category.name} />}
       </Block>
       {equivalentsInfography && (
         <Block title='Infographie' description='Une image vaut mieux que mille mots'>

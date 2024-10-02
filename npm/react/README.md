@@ -269,6 +269,10 @@ Liste des équivalents à comparer parmis la liste suivante :
   - francais : % de l'empreinte carbone d'un citoyen français
   - gameof-thrones : épisode de game of thrones en streaming
   - friends : intégrale de friends en streaming
+  - ski : journée au ski
+  - piscine : remplissage de piscine
+  - terre-voiture : tour de la terre en voiture
+  - harry-potter : marathon des films Harry Potter en streaming
 
 
 

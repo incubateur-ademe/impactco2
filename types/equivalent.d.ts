@@ -8,6 +8,10 @@ type BaseEquivalent = {
   carpool?: number
   percentage?: boolean
   unit?: string
+  sources?: {
+    label: string
+    href: string
+  }[]
 }
 
 type BaseEquivalentValue =
