@@ -62,7 +62,7 @@ describe('getEmissionPerDistance', () => {
           tco2e: 0.000025,
         },
         id: 6,
-        name: 'Autocar',
+        name: 'Autocar thermique',
       },
       { id: 7, name: 'Vélo ou marche', emissions: { gco2e: 0, kgco2e: 0, tco2e: 0 } },
       {
@@ -75,7 +75,7 @@ describe('getEmissionPerDistance', () => {
       { id: 11, name: 'Métro', emissions: { gco2e: 4.2, kgco2e: 0.0042, tco2e: 0.0000042 } },
       {
         id: 12,
-        name: 'Scooter ou moto légère',
+        name: 'Scooter ou moto légère thermique',
         emissions: { gco2e: 60.400000000000006, kgco2e: 0.0604, tco2e: 0.000060400000000000004 },
       },
 
@@ -86,7 +86,7 @@ describe('getEmissionPerDistance', () => {
           tco2e: 0.0001648,
         },
         id: 13,
-        name: 'Moto',
+        name: 'Moto thermique',
       },
       {
         emissions: {
