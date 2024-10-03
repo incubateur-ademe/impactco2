@@ -284,8 +284,6 @@
     "Approvisionnement": "Approvisionnement",
     "hypothesis": {
       "pre": {
-        "the": "Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg).",
-        "cafe": "Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg).",
         "avion-pny": "Distance totale parcourue : 11600 km.",
         "tgv-paris-berlin": "Distance totale parcourue : 2478 km.",
         "tgv-paris-marseille": "Distance totale parcourue : 1504 km.",
