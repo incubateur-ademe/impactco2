@@ -67,12 +67,12 @@ describe('transport', () => {
         },
         {
           id: 6,
-          name: 'Autocar',
+          name: 'Autocar thermique',
           value: 2.5,
         },
         {
           id: 13,
-          name: 'Moto',
+          name: 'Moto thermique',
           value: 16.48,
         },
         {
@@ -155,12 +155,12 @@ describe('transport', () => {
         },
         {
           id: 6,
-          name: 'Coach',
+          name: 'Combustion coach',
           value: 2.5,
         },
         {
           id: 13,
-          name: 'Motorcycle',
+          name: 'Combustion motorcycle',
           value: 16.48,
         },
         {
@@ -253,7 +253,7 @@ describe('transport', () => {
         },
         {
           id: 6,
-          name: 'Autocar',
+          name: 'Autocar thermique',
           value: 2.5,
         },
         {
@@ -283,12 +283,12 @@ describe('transport', () => {
         },
         {
           id: 12,
-          name: 'Scooter ou moto légère',
+          name: 'Scooter ou moto légère thermique',
           value: 6.04,
         },
         {
           id: 13,
-          name: 'Moto',
+          name: 'Moto thermique',
           value: 16.48,
         },
         {
@@ -392,12 +392,12 @@ describe('transport', () => {
         },
         {
           id: 6,
-          name: 'Autocar',
+          name: 'Autocar thermique',
           value: 2.5,
         },
         {
           id: 13,
-          name: 'Moto',
+          name: 'Moto thermique',
           value: 16.48,
         },
         {
@@ -440,12 +440,12 @@ describe('transport', () => {
         },
         {
           id: 6,
-          name: 'Autocar',
+          name: 'Autocar thermique',
           value: 2.5,
         },
         {
           id: 13,
-          name: 'Moto',
+          name: 'Moto thermique',
           value: 16.48,
         },
         {
@@ -524,12 +524,12 @@ describe('transport', () => {
         },
         {
           id: 6,
-          name: 'Autocar',
+          name: 'Autocar thermique',
           value: 2.942130627,
         },
         {
           id: 13,
-          name: 'Moto',
+          name: 'Moto thermique',
           value: 19.13,
         },
         {
