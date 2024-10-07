@@ -145,14 +145,14 @@ export const computeTransportEmission = (
  *         - 3 : Intercités
  *         - 4 : Voiture thermique
  *         - 5 : Voiture électrique
- *         - 6 : Autocar
+ *         - 6 : Autocar thermique
  *         - 7 : Vélo ou marche
  *         - 8 : Vélo à assistance électrique
  *         - 9 : Bus thermique
  *         - 10 : Tramway
  *         - 11 : Métro
- *         - 12 : Scooter ou moto légère
- *         - 13 : Moto
+ *         - 12 : Scooter ou moto légère thermique
+ *         - 13 : Moto thermique
  *         - 14 : RER ou Transilien
  *         - 15 : TER
  *         - 16 : Bus électrique

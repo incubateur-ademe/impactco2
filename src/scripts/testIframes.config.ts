@@ -73,7 +73,11 @@ export const checks = [
       )
       await iframe.getByLabel('Arrivée').clear()
 
-      await itineraireTest(iframe, true)
+      await itineraireTest(
+        iframe,
+        true,
+        '&modes=avion,tgv,intercites,voiturethermique+1,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,velo,veloelectrique,busthermique,tramway,scooter,moto,rer,ter,buselectrique,trottinette,busgnv'
+      )
     },
   },
   {
@@ -150,6 +154,7 @@ export const checks = [
   },
   {
     slug: 'agir',
+    skipAutoCheck: true,
     url: 'https://agirpourlatransition.ademe.fr/particuliers/bureau/calculez-lempreinte-carbone-usages-numeriques',
     before: async (page: Page) => {
       await page.getByRole('button', { name: 'Tout refuser' }).click()
