@@ -27,7 +27,9 @@ test('Transport distance default values', async ({ page }) => {
   await expect(page.getByTestId('transport-tab-itineraire')).toBeVisible()
 
   await expect(page.getByText("Mode d'affichage :ListeComparaison")).toBeVisible()
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Scooter ou moto légère1.14 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText(
+    'Scooter ou moto légère thermique1.14 kg CO₂e Modifier'
+  )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
     'Avion court courrierDésolé !L’itinéraire demandé n’est pas compatible avec ce mode de transport Modifier'
   )

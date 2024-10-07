@@ -6,7 +6,7 @@ describe('formatUsage', () => {
     expect(res).toEqual(0.0604)
   })
   const exampleOfEquivalent = {
-    name: 'Scooter ou moto légère',
+    name: 'Scooter ou moto légère thermique',
     prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'scooter',
@@ -29,7 +29,7 @@ describe('formatUsage', () => {
     },
     source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
     meta: {
-      title: 'Scooter-moto légère',
+      title: 'Scooter-moto légère thermique',
       description:
         "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. ",
     },

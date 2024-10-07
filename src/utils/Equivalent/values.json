@@ -259,10 +259,10 @@
   "autocar": {
     "category": 4,
     "value": 29.421306270000002,
-    "fr": "km en ;autocar",
-    "en": "km by ;coach",
-    "de": "km mit ;dem Reisebus",
-    "es": "km en ;autocar"
+    "fr": "km en ;autocar thermique",
+    "en": "km by ;combustion coach",
+    "de": "km mit ;dem Thermoreisebus",
+    "es": "km en ;autocar termico"
   },
   "velo": {
     "category": 4,
@@ -307,18 +307,18 @@
   "scooter": {
     "category": 4,
     "value": 76.30000000000001,
-    "fr": "km en ;scooter ou moto légère",
-    "en": "km by ;scooter or lightweight motorcycle",
-    "de": "km mit ;dem Roller oder Leichtmotorrad",
-    "es": "km en ;scooter o motocicleta ligera"
+    "fr": "km en ;scooter ou moto légère thermique",
+    "en": "km by ;combustion scooter or lightweight combustion motorcycle",
+    "de": "km mit ;dem Thermoroller oder Thermoleichtmotorrad",
+    "es": "km en ;scooter o motocicleta ligera termico"
   },
   "moto": {
     "category": 4,
     "value": 191.3,
-    "fr": "km en ;moto",
-    "en": "km by ;motorcycle",
-    "de": "km mit ;dem Motorrad",
-    "es": "km en ;moto"
+    "fr": "km en ;moto thermique",
+    "en": "km by ;combustion motorcycle",
+    "de": "km mit ;dem Thermomotorrad",
+    "es": "km en ;moto termico"
   },
   "rer": {
     "category": 4,

@@ -284,8 +284,6 @@
     "Approvisionnement": "Supply",
     "hypothesis": {
       "pre": {
-        "the": "We assume a 250ml cup (simplified here as 250mg).",
-        "cafe": "We assume a 250ml cup (simplified here as 250mg).",
         "avion-pny": "Total distance traveled: 11,600 km.",
         "tgv-paris-berlin": "Total distance traveled: 2,478 km.",
         "tgv-paris-marseille": "Total distance traveled: 1,504 km.",
@@ -297,7 +295,7 @@
         "avion-courtcourrier": "Average occupancy rate: 101-220 passengers.",
         "avion-moyencourrier": "Average occupancy rate: 101-220 passengers.",
         "avion-longcourrier": "Average occupancy rate: 101-220 passengers.",
-        "laveling": "Capacity: 7kg.",
+        "lavelinge": "Capacity: 7kg.",
         "mangue": "Imported by air.",
         "lit": "Frame + box spring + mattress.",
         "smartphone": "Average screen size: 6.63 inches, a mix of LCD and OLED technologies, 8GB of RAM, 210GB of storage (weighted mix across 3 configurations: 24%, 24%, 52%). Average usage for personal and professional purposes.",
