@@ -43,7 +43,7 @@
   "game-of-thrones": {
     "category": 13,
     "value": 31.7,
-    "fr": "épisode[s] de ;game of thrones en streaming",
+    "fr": "Épisode[s] de ;game of thrones en streaming",
     "en": "Game of Thrones streaming=episode[s] of ",
     "de": "Game of Thrones Streaming=Folge[n] ",
     "es": "Episodio[s] de ;Game of Thrones streaming"
@@ -51,10 +51,42 @@
   "friends": {
     "category": 13,
     "value": 7860,
-    "fr": "intégrale[s] de friends en streaming",
+    "fr": "Intégrale[s] de friends en streaming",
     "en": "Complete Friends TV show streaming",
     "de": "Komplette Friends-TV-Show Streaming",
     "es": "Programa de TV completo de Friends streaming"
+  },
+  "ski": {
+    "category": 13,
+    "value": 48900,
+    "fr": "Journée[s] au ski",
+    "en": "Ski day[s]",
+    "de": "Tag(e) Skifahren",
+    "es": "Día(s) de esquí"
+  },
+  "piscine": {
+    "category": 13,
+    "value": 7540,
+    "fr": "remplissage[s] de piscine",
+    "en": "pool filling[s]",
+    "de": "Schwimmbadfüllung[en]",
+    "es": "llenado de piscinas"
+  },
+  "terre-voiture": {
+    "category": 13,
+    "value": 8704000,
+    "fr": "Tour[s] de la terre en voiture",
+    "en": "Tour[s] of the earth by car",
+    "de": "Rundfahrt[en] um die Erde mit dem Auto",
+    "es": "Recorrido[s] por la tierra en coche"
+  },
+  "harry-potter": {
+    "category": 13,
+    "value": 630,
+    "fr": "Marathon[s] des films Harry potter en streaming",
+    "en": "Marathon[s] of Harry Potter films in streaming",
+    "de": "Marathon[s] von Harry-Potter-Filmen im Streaming",
+    "es": "Maratón[es] de películas de Harry Potter en streaming"
   },
   "email": {
     "category": 10,
