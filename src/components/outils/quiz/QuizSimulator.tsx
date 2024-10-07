@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { track } from 'utils/matomo'
 import Resource from 'components/base/Resource'
 import Button from 'components/base/buttons/Button'
 import DropdownArrowDownIcon from 'components/base/icons/dropdown-arrow-down'
@@ -18,6 +19,7 @@ const QuizSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
   const nextRef = useRef<HTMLButtonElement>(null)
 
+  const [finished, setFinished] = useState(false)
   const [navigated, setNavigated] = useState(false)
   const [question, setQuestion] = useState(0)
   const score = useRef<number[]>([])
@@ -45,6 +47,13 @@ const QuizSimulator = () => {
     }
   }, [question, navigated])
 
+  useEffect(() => {
+    if (!finished && !config) {
+      setFinished(true)
+      track('Quiz', 'Finished', score.current.reduce((acc, current) => acc + current, 0).toString())
+    }
+  }, [finished, config])
+
   return (
     <>
       <div className={styles.header} ref={ref} tabIndex={-1}>
@@ -56,6 +65,7 @@ const QuizSimulator = () => {
               setAnswer(undefined)
               setQuestion(question - 1)
               setDisplayMore(false)
+              track('Quiz', 'Previous', question.toString())
             }}>
             <FullArrowLeftIcon />
             {t('previous')}
@@ -123,6 +133,7 @@ const QuizSimulator = () => {
               onClick={() => {
                 setAnswer(undefined)
                 setQuestion(0)
+                track('Quiz', 'Restart', 'quiz_restart_button')
               }}>
               {t('restart')}
             </Button>
@@ -167,6 +178,7 @@ const QuizSimulator = () => {
           className={styles.moreButton}
           onClick={() => {
             setDisplayMore(!displayMore)
+            track('Quiz', displayMore ? 'HideMore' : 'DisplayMore', 'quiz_display_more')
             if (displayMore && ref.current) {
               ref.current.scrollIntoView({ behavior: 'smooth' })
             }
