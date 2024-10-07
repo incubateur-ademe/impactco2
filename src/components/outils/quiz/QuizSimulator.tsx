@@ -19,7 +19,6 @@ const QuizSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
   const nextRef = useRef<HTMLButtonElement>(null)
 
-  const [finished, setFinished] = useState(false)
   const [navigated, setNavigated] = useState(false)
   const [question, setQuestion] = useState(0)
   const score = useRef<number[]>([])
@@ -48,11 +47,10 @@ const QuizSimulator = () => {
   }, [question, navigated])
 
   useEffect(() => {
-    if (!finished && !config) {
-      setFinished(true)
-      track('Quiz', 'Finished', score.current.reduce((acc, current) => acc + current, 0).toString())
+    if (!config) {
+      track('Quiz', 'Finished', `score_${score.current.reduce((acc, current) => acc + current, 0)}`)
     }
-  }, [finished, config])
+  }, [config])
 
   return (
     <>
@@ -178,7 +176,7 @@ const QuizSimulator = () => {
           className={styles.moreButton}
           onClick={() => {
             setDisplayMore(!displayMore)
-            track('Quiz', displayMore ? 'HideMore' : 'DisplayMore', 'quiz_display_more')
+            track('Quiz', displayMore ? 'HideMore' : 'DisplayMore', (question + 1).toString())
             if (displayMore && ref.current) {
               ref.current.scrollIntoView({ behavior: 'smooth' })
             }
