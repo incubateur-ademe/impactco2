@@ -10,7 +10,7 @@ const test = async () => {
   await mockRoutesItinerary(page)
   const errors: string[] = []
   for (let i = 0; i < checks.length; i++) {
-    const { before, url, check, checkIframe, scroll, iframeContent, skipAutoCheck } = checks[i]
+    const { before, url, check, checkIframe, scroll, iframeContent, skipAutoCheck, skipWait } = checks[i]
     if (skipAutoCheck) {
       continue
     }
@@ -18,7 +18,9 @@ const test = async () => {
     console.log('check', url)
     try {
       await page.goto(url, { timeout: 60000 })
-      await page.waitForLoadState('networkidle', { timeout: 60000 })
+      if (!skipWait) {
+        await page.waitForLoadState('networkidle', { timeout: 60000 })
+      }
 
       if (before) {
         await before(page)
@@ -35,14 +37,14 @@ const test = async () => {
       }
     } catch (e) {
       console.log(e)
-      errors.push(url)
+      errors.push(`${url} (${e})`)
     }
   }
 
   if (errors.length) {
     if (process.env.MATTERMOST_IMPACTCO2) {
       axios.post(`https://mattermost.incubateur.net/hooks/${process.env.MATTERMOST_IMPACTCO2}`, {
-        text: `Iframes are broken on the following site${errors.length > 1 ? 's' : ''}: ${errors.join(' ')}`,
+        text: `Iframes are broken on the following site${errors.length > 1 ? 's' : ''}:\n ${errors.join('\n')}`,
       })
     } else {
       console.log('Iframes are broken on the following sites :')
