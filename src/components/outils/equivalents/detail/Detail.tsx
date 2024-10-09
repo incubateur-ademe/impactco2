@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { Fragment, useState } from 'react'
@@ -86,7 +88,17 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
   return []
 }
 
-export default function Detail({ equivalent }: { equivalent: Equivalent }) {
+export default function Detail({
+  equivalent,
+  noPercentage,
+  noInfo,
+  withSeparator,
+}: {
+  equivalent: Equivalent
+  noPercentage?: boolean
+  noInfo?: boolean
+  withSeparator?: boolean
+}) {
   const { setOverscreen } = useParamContext()
   const t = useTranslations('equivalent')
   const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
@@ -145,7 +157,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
   const sum = values.reduce((acc, current) => acc + current.value, 0)
   return (
     <>
-      <div className={shareableStyles.separator} />
+      {withSeparator && <div className={shareableStyles.separator} />}
       <table className={styles.table}>
         <tbody>
           {values.map((value) => (
@@ -164,7 +176,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                   </div>
                 </td>
                 <td className={styles.percent}>
-                  {withPercent ? ' ' : <Percentage value={(100 * value.value) / sum} />}
+                  {withPercent || noPercentage ? ' ' : <Percentage value={(100 * value.value) / sum} />}
                 </td>
                 <td>
                   <DetailValue unit={unit} value={value.value} />
@@ -176,7 +188,7 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
                     <Label id={item.id} />
                   </td>
                   <td className={styles.percent}>
-                    {withPercent ? <Percentage value={(100 * item.value) / value.value} /> : ' '}
+                    {!noPercentage && withPercent ? <Percentage value={(100 * item.value) / value.value} /> : ' '}
                   </td>
                   <td>
                     <DetailValue unit={unit} value={item.value} />
@@ -189,22 +201,29 @@ export default function Detail({ equivalent }: { equivalent: Equivalent }) {
             <>
               <tr>
                 <td>
-                  <b>Total</b> par année d'utilisation{' '}
-                  <button
-                    title='Voir les informations sur la durée de vie'
-                    onClick={() => setOverscreen(equivalent.slug, 'usage')}
-                    className={styles.informationButton}>
-                    <InformationIcon />
-                  </button>
+                  <b>{t('total')}</b> {t('yearly-usage')}
+                  {' '}
+                  {!noPercentage && !noInfo && (
+                    <button
+                      title='Voir les informations sur la durée de vie'
+                      onClick={() => setOverscreen(equivalent.slug, 'usage')}
+                      className={styles.informationButton}>
+                      <InformationIcon />
+                    </button>
+                  )}
                 </td>
                 <td className={styles.usageWidgetContainer}>
-                  <PlusMinus
-                    className={styles.usageWidget}
-                    label={t('year')}
-                    value={years}
-                    setValue={setYears}
-                    step={0.5}
-                  />
+                  {noPercentage ? (
+                    ' '
+                  ) : (
+                    <PlusMinus
+                      className={styles.usageWidget}
+                      label={t('year')}
+                      value={years}
+                      setValue={setYears}
+                      step={0.5}
+                    />
+                  )}
                 </td>
                 <td>
                   <b>

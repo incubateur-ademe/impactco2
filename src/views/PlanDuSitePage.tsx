@@ -44,6 +44,9 @@ const PlanDuSitePage = () => {
           <Link prefetch={false} href='/contenu/nouveau-site'>
             Le nouveau site “Impact CO2” est en ligne !
           </Link>
+          <Link prefetch={false} href='/contenu/quiz-carbone'>
+            Quiz carbone : le nouveau jeu de cartes de l’ADEME est en ligne !
+          </Link>
           <Link prefetch={false} href='/contenu/semaine-mobilite-simulateur-transport-ademe'>
             Semaine européenne de la mobilité : découverte du calculateur Impact Transport de l’ADEME
           </Link>

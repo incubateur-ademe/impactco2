@@ -91,18 +91,18 @@
   "email": {
     "category": 10,
     "value": 2.46181262,
-    "fr": "email",
-    "en": "email",
-    "de": "E-Mail",
-    "es": "Correo electrónico"
+    "fr": "email[s]",
+    "en": "email[s]",
+    "de": "E-Mail[s]",
+    "es": "Correo[s] electrónico[s]"
   },
   "spam": {
     "category": 10,
     "value": 3.73863698,
-    "fr": "spam",
-    "en": "spam",
+    "fr": "spam[s]",
+    "en": "spam[s]",
     "de": "Spam-E-Mails",
-    "es": "Spam"
+    "es": "Spam[s]"
   },
   "stockagedonnee": {
     "category": 10,

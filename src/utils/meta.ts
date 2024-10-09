@@ -4,6 +4,11 @@ export const metaDescriptions: Record<string, Record<string, string>> = {
     en: 'Compare and visualize a carbon quantity using the Impact CO2 simulator and equivalents to get a sense of the correct orders of magnitude.',
     es: 'Compare y visualice las cantidades de carbono utilizando el simulador Impact CO2 y sus equivalentes, para obtener los órdenes de magnitud correctos.',
   },
+  quiz: {
+    fr: 'Sensibiliser et jouer avec les équivalences pour mieux se représenter les ordres de grandeur.',
+    en: 'Raise awareness and play with equivalences to better represent orders of magnitude.',
+    es: 'Sensibilizar y jugar con equivalencias para representar mejor órdenes de magnitud.',
+  },
   transport: {
     fr: "Comparer l'impact carbone des déplacements en fonction de son itinéraire ou d'une distance donnée, grâce au simulateur d’Impact CO2.",
     en: 'Compare the carbon impact of travel based on your itinerary or a given distance using the Impact CO2 simulator.',
@@ -76,6 +81,11 @@ export const metaTitles: Record<string, Record<string, string>> = {
     fr: 'Comparateur carbone',
     en: 'Carbon comparator',
     es: 'Comparador de carbono',
+  },
+  quiz: {
+    fr: 'Quiz carbone',
+    en: 'carbon quiz',
+    es: 'cuestionario de carbono',
   },
   transport: {
     fr: 'Transport',

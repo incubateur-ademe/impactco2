@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 1170px;
+  width: 827px;
+  padding: 64px;
+}
+
+.image {
+  width: 50%;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+
+  img {
+    width: 130px;
+    height: auto;
+  }
+}
+
+.table {
+  margin-top: 16px;
+  width: 100%;
+
+  td {
+    padding: 0.5rem 0;
+  }
+}
+
+.simulator {
+  margin: -1.25rem;
+}
+
+.logos {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: 40px;
+  }
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  canvas {
+    height: 135px !important;
+    width: 135px !important;
+  }
+}

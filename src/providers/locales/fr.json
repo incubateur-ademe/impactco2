@@ -1,4 +1,59 @@
 {
+  "quiz": {
+    "question": "Question",
+    "previous": "Prec.",
+    "title": "D’après vous, qu’est-ce qui a <important>le moins</important> d’impact sur le climat ?",
+    "tag": "Choisissez votre réponse ci dessous :",
+    "ou": "ou",
+    "correct": "<important>Bien joué !</important> C’est exactement ça !",
+    "missed": "<important>Raté...</important> C’était la réponse",
+    "more": "Lire la suite",
+    "less": "Réduire",
+    "next": "Question suivante",
+    "result": "Voir le score",
+    "finished": "C'est terminé !",
+    "score": "Vous avez obtenu <important>{score} / 10</important> {score, plural, =1 {bonne réponse} other {bonnes réponses}} !",
+    "restart": "Recommencer",
+    "read-more": "POUR ALLER PLUS LOIN",
+    "boeuf-tgv": {
+      "line-1": "Pour faire de longues distances, le TGV émet beaucoup moins de gaz à effet de serre que la voiture à moteur thermique ou l’avion. Par personne et par kilomètre, <important>le train pollue 8 fois moins que la voiture et 14 fois moins que l’avion.</important>",
+      "line-2": "La consommation de bœuf a un fort impact sur le climat. En effet, les émissions de gaz à effet de serre liées à un repas avec du bœuf correspondent aux émissions de 14 repas végétariens !"
+    },
+    "tablette-chaussures": {
+      "line-1": "Le cycle de vie d’une tablette (de sa fabrication à sa fin de vie) génère <important>4x plus d’impacts</important> que celui d’une paire de chaussures en cuir.",
+      "line-2": "C’est l’étape de fabrication des appareils numériques en général qui pèse le plus lourd dans leur bilan carbone, bien plus que dans leur usage. C’est pourquoi, <important>il est important de conserver sa tablette le plus longtemps possible.</important>"
+    },
+    "avocat-poisson": {
+      "line-1": " Aujourd’hui l’avocat est souvent montré du doigt pour son impact environnemental important. L’avocat n’est pas produit en France. Il est cultivé dans des pays lointains et demande beaucoup d’eau pour pousser.",
+      "line-2": "Pourtant, l’impact carbone d’1 kg d’avocat est légèrement inférieur à celui d’un repas avec poisson blanc."
+    },
+    "refrigirateur-ordinateur": {
+      "line-1": " Les appareils électroménagers ont aussi un fort impact sur le climat. Tout comme les appareils numériques, l’étape de fabrication est celle qui pèse le plus lourd dans leur bilan carbone."
+    },
+    "eau-the": {
+      "line-1": "Boire un litre d’eau en bouteille a <important>6x plus d’impacts</important> que boire un litre de thé. Pourquoi ? Car la fabrication de l’emballage plastique de la bouteille et de sa distribution dans les différents points de ventes viennent fortement alourdir l’empreinte carbone."
+    },
+    "friends-voiture": {
+      "line-1": "Regarder les 236 épisodes de Friends en streaming a <important>50 fois moins d’impact sur l’environnement</important> qu’un déplacement de presque 1000 km en voiture thermique.",
+      "line-2": "En effet, aujourd’hui le secteur du transport représente 30% des émission de gaz à effet de serre en France, alors que le secteur du numérique seulement 2,5%."
+    },
+    "manteau-bouilloire": {
+      "line-1": "La fabrication de nos vêtements a de nombreux impacts sur l’environnement : émissions de gaz à effet de serre, pollution des sols, de l’air et de l’eau. Le problème : nous achetons beaucoup de vêtements et nous ne les gardons pas toujours très longtemps.",
+      "line-2": "Alors pour réduire notre impact sur le climat, n’achetons que ce dont nous avons besoin et faisons durer le plus longtemps possible nos vêtements."
+    },
+    "television-pny": {
+      "line-1": "Les déplacements en avion, court moyen et long courrier, émettent une quantité très importante de CO2.",
+      "line-2": "L’empreinte carbone annuelle d’une personne vivant en France est environ de 9 tonnes de CO2 par an, et un aller-retour Paris/New York émet près de 2 tonnes de CO2, <important>soit presque 20% de cette empreinte.</important>"
+    },
+    "email-smartphone": {
+      "line-1": "Même si nous envoyons beaucoup d’e-mails, leurs impacts sur le climat est bien moins important que ceux générés par la fabrication et, dans une moindre mesure, l’utilisation d’un smartphone.",
+      "line-2": "Pour baisser les impacts du numérique, gardons nos smartphones le plus longtemps possible."
+    },
+    "velo-mangue": {
+      "line-1": "Utiliser un vélo électrique pour se déplacer a beaucoup moins d’impacts sur le climat que d’autres modes de transports qui utilisent des combustibles fossiles, même si on prend en compte la fabrication du vélo et de la batterie.",
+      "line-2": "Le bilan carbone de la mangue a, comme tous les fruits exotiques, un bilan carbone alourdit par son transport. Les impacts de la mangue, souvent importée par avion, est encore plus important que d’autres fruits exotiques qui voyagent par bateau."
+    }
+  },
   "clipboard": {
     "copier": "Copier",
     "copie": "Copié",
@@ -280,6 +335,7 @@
     "fdv": "Fin de vie",
     "usage-fdv": "Usage et fin de vie",
     "total": "Total",
+    "yearly-usage": "par année d'utilisation",
     "Matières premières": "Matières premières",
     "Approvisionnement": "Approvisionnement",
     "hypothesis": {
@@ -395,13 +451,13 @@
     "m²": "m²",
     "km": "km",
     "kg": "kg",
+    "an": "an",
     "repas": "repas",
     "litre": "litre",
     "épisode": "épisode",
     "intégrale": "intégrale",
     "param": "avec les paramètres renseignés ci-dessous",
     "email": "email",
-    "année": "année",
     "recherche": "recherche"
   },
   "ressources": {
@@ -412,10 +468,13 @@
     "chauffage-bois": "Adopter le chauffage au bois",
     "wattris": "Simuler la consommation électrique de son logement",
     "ngc": "Estimer son empreinte carbone de consommation",
-    "agir": "Le télétravail, ça change quoi pour la planète ?",
+    "agir-tt": "Le télétravail, ça change quoi pour la planète ?",
     "calendar": "Calendrier des fruits et légumes de saison",
     "livraison": "Télécharger le guide “E-consommateur & responsable”",
     "leger": "Comment télétravailler léger ?",
-    "ecoresponsable": "Écoresponsable au bureau"
+    "ecoresponsable": "Écoresponsable au bureau",
+    "ico2-transport": "Calculer l'impact carbone de vos trajets",
+    "ico2-fruitsetlegumes": "Découvrir les fruits et légumes de saison et leur impact",
+    "fiches": "Télécharger les fiches du quizz à imprimer"
   }
 }

@@ -47,7 +47,7 @@ export const usageNumeriques = [
   },
   {
     slug: 'stockagedonnee',
-    unit: 'année',
+    unit: 'an',
     category: 10,
     ecv: [
       {

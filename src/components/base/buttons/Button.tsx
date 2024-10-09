@@ -1,19 +1,22 @@
 import classNames from 'classnames'
-import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import React, { ButtonHTMLAttributes, ForwardedRef, ReactNode, forwardRef } from 'react'
 import buttonStyles from './Button.module.css'
 import linkStyles from './Link.module.css'
 
-const Button = ({
-  asLink,
-  className,
-  icon,
-  children,
-  priority,
-  size,
-  ...rest
-}: { size?: 'sm' | 'lg'; priority?: 'outline'; icon?: ReactNode } & ButtonHTMLAttributes<HTMLButtonElement> & {
-    asLink?: boolean
-  }) => {
+const Button = (
+  {
+    asLink,
+    className,
+    icon,
+    children,
+    priority,
+    size,
+    ...rest
+  }: { size?: 'sm' | 'lg'; priority?: 'outline'; icon?: ReactNode } & ButtonHTMLAttributes<HTMLButtonElement> & {
+      asLink?: boolean
+    },
+  ref: ForwardedRef<HTMLButtonElement>
+) => {
   return (
     <button
       className={classNames(
@@ -21,6 +24,7 @@ const Button = ({
         { [buttonStyles.outline]: priority === 'outline', [buttonStyles.small]: size === 'sm' },
         className
       )}
+      ref={ref}
       {...rest}>
       {icon}
       {children}
@@ -28,4 +32,4 @@ const Button = ({
   )
 }
 
-export default Button
+export default forwardRef(Button)
