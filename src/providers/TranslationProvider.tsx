@@ -19,6 +19,9 @@ const TranslationProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <NextIntlClientProvider
+      defaultTranslationValues={{
+        important: (chunks) => <b>{chunks}</b>,
+      }}
       locale={language === 'fr' ? 'fr-FR' : language === 'es' ? 'es-ES' : 'en-EN'}
       messages={language === 'fr' ? french : language === 'es' ? spanish : english}
       timeZone='Europe/Paris'

@@ -1,7 +1,7 @@
 import React from 'react'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ToolCards from 'components/cards/ToolCards'
-import { devTools, smallTools, tools } from 'components/cards/tools'
+import { devTools, quiz, smallTools, tools } from 'components/cards/tools'
 import FAQs from 'components/faq/FAQs'
 import Equivalents from 'components/home/Equivalents'
 import Block from 'components/layout/Block'
@@ -21,6 +21,7 @@ const Outils = () => {
         description='Nos widgets, modules et autres formats miniatures à intégrer à vos contenus.'>
         <ToolCards
           tools={[
+            quiz,
             ...smallTools,
             {
               slug: 'osez-changer',

@@ -245,7 +245,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
           </div>
         )}
       </form>
-      <Detail equivalent={computedEquivalent} />
+      <Detail equivalent={computedEquivalent} withSeparator />
     </>
   )
 }

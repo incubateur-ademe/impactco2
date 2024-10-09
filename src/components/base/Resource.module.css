@@ -38,6 +38,7 @@
   justify-content: center;
   border-right: 2px solid var(--neutral-20);
   border-radius: calc(1rem - 2px) 0 0 calc(1rem - 2px);
+  min-width: 8rem;
 
   img {
     border-radius: 1rem 0 0 1rem;

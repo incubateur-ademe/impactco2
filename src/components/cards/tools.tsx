@@ -82,6 +82,13 @@ export const tools = [
   },
 ]
 
+export const quiz = {
+  slug: 'quiz',
+  title: 'Quiz carbone',
+  description: 'Un format interactif pour sensibiliser et apprendre de façon ludique.',
+  linkLabel: 'Jouer',
+}
+
 export const smallTools = [
   {
     slug: 'etiquettes',

@@ -1,0 +1,120 @@
+.header {
+  padding: 1.5rem;
+  text-align: center;
+  outline: none;
+}
+
+.question {
+  text-transform: uppercase;
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.previousButton {
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  border-radius: 0.25rem;
+  background: var(--neutral-10);
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neutral-50);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+
+  &:hover {
+    background-color: var(--neutral-20);
+    color: var(--neutral-60);
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  margin: 0.5rem 0 0.75rem 0;
+
+  b {
+    color: var(--neutral-80);
+  }
+}
+
+.tag {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  background-color: var(--neutral-10);
+  color: var(--neutral-60);
+  width: fit-content;
+  margin: auto;
+}
+
+.correct {
+  color: var(--primary-60);
+  background-color: var(--primary-10);
+}
+
+.missed {
+  color: var(--critical-60);
+  background-color: var(--critical-10);
+}
+
+
+.noBottom {
+  padding-bottom: 0;
+}
+
+.reduced {
+  max-height: 36.5rem;
+  overflow: hidden;
+}
+
+.moreButton {
+  cursor: pointer;
+  padding: 1rem;
+  color: var(--primary-60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--neutral-00);
+  width: 100%;
+  border-top: 2px solid var(--primary-30);
+  font-weight: 500;
+
+  &:hover {
+    background-color: var(--primary-10);
+  }
+
+  &:active {
+    color: var(--primary-70);
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.ressources {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  justify-content: center;
+}
