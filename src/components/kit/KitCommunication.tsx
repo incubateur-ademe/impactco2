@@ -56,6 +56,10 @@ const KitCommunication = () => {
               Nous mettons à votre disposition une collection d’images dédiées à chacun des outils disponibles sur notre
               site web et présentant le concept du site en une image synthétique.
             </span>
+            <span>
+              Si vous souhaitez communiquer sur l’utilisation de nos ressources, nous avons prévu un emplacement sur
+              chacune de ces images pour placer votre logo.
+            </span>
             <span>Pour obtenir les images, cliquez sur le bouton ci-dessous :</span>
           </div>
           <div className={outilStyles.link}>

@@ -85,15 +85,15 @@ Liste des équivalents à comparer parmis la liste suivante :
   - voitureelectrique+2 : km en voiture électrique avec 2 passagers
   - voitureelectrique+3 : km en voiture électrique avec 3 passagers
   - voitureelectrique+4 : km en voiture électrique avec 4 passagers
-  - autocar : km en autocar
+  - autocar : km en autocar thermique
   - velo : vélo ou marche
   - veloelectrique : km en vélo à assistance électrique
   - trottinette : km en trottinette à assistance électrique
   - busthermique : km en bus thermique
   - tramway : km en tramway
   - metro : km en métro
-  - scooter : km en scooter ou moto légère
-  - moto : km en moto
+  - scooter : km en scooter ou moto légère thermique
+  - moto : km en moto thermique
   - rer : km en RER ou Transilien
   - ter : km en TER
   - buselectrique : km en bus électrique
@@ -269,6 +269,10 @@ Liste des équivalents à comparer parmis la liste suivante :
   - francais : % de l'empreinte carbone d'un citoyen français
   - gameof-thrones : épisode de game of thrones en streaming
   - friends : intégrale de friends en streaming
+  - ski : journée au ski
+  - piscine : remplissage de piscine
+  - terre-voiture : tour de la terre en voiture
+  - harry-potter : marathon des films Harry Potter en streaming
 
 
 

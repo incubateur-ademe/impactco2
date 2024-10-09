@@ -284,16 +284,18 @@
     "Approvisionnement": "Approvisionnement",
     "hypothesis": {
       "pre": {
-        "the": "Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg).",
-        "cafe": "Nous prenons pour hypothèse une tasse de 250ml  (simplifié ici en 250mg).",
         "avion-pny": "Distance totale parcourue : 11600 km.",
         "tgv-paris-berlin": "Distance totale parcourue : 2478 km.",
         "tgv-paris-marseille": "Distance totale parcourue : 1504 km.",
         "voiture-lille-nimes": "Distance totale parcourue : 1882 km.",
+        "ski": "Valeur moyenne. Étude réalisée pour une journée de ski à La Clusaz, le Grand Bornand et Tignes.",
+        "piscine": "Dimension moyenne d’une piscine d’un particulier 8 x 4m avec une profondeur allant d'1,50 mètre à 2,10 mètres.",
+        "terre-voiture": "Distance totale parcourue : 40 000 km",
+        "harry-potter": "L’ensemble des films d’Harry Potter durent en moyenne 1176 minutes = 19,6 heures. La donnée est calculé sur une heure de streaming en haute définition, sur une télévision, en connexion wifi.",
         "avion-courtcourrier": "Taux de remplissage moyen 101-220 passagers",
         "avion-moyencourrier": "Taux de remplissage moyen 101-220 passagers",
         "avion-longcourrier": "Taux de remplissage moyen 101-220 passagers",
-        "laveling": "Capacité 7kg.",
+        "lavelinge": "Capacité 7kg.",
         "mangue": "Importée par avion.",
         "lit": "Cadre + sommier + matelas",
         "smartphone": "Écran  moyen de 6,63 pouces, mix des technologies LCD et OLED, 8 Go de RAM, 210 Go de mémoire (mix pondéré entre 3 configurations, 24%, 24%, 52%). Moyenne des usages d'un smartphone personnel et professionnel.",
@@ -310,6 +312,9 @@
         "stockagedonnee": "Pendant 1 an."
       },
       "post": {
+        "ski": "Inclus : l’impact carbone du transport (52%), du logement (4%), de l’alimentation (8%), du domaine skiable (3%), des infrastructures, équipements et services du domaine (17%), et de l’équipement (16%).",
+        "piscine": "58 000 litres d’eau du robinet pour la remplir",
+        "terre-voiture": "Inclus : l’impact carbone d’un déplacement en voiture thermique",
         "avion-courtcourrier": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "avion-moyencourrier": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "avion-longcourrier": "par personne en France. Nous prenons ici en compte l’impact carbone des trainées de condensation. Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
