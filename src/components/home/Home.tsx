@@ -40,13 +40,7 @@ const Home = () => {
         <Equivalents />
       </Block>
       <Suspense>
-        <Examples
-          title='Exemples'
-          description='Ils utilisent nos outils à la perfection.'
-          link='/doc/exemples'
-          linkLabel='Tous les exemples'
-          filter="Page d'accueil"
-        />
+        <Examples title='Exemples' description='Ils utilisent nos outils à la perfection.' filter="Page d'accueil" />
       </Suspense>
       <Suspense>
         <FAQs filter='Accueil' page='Accueil' />

@@ -12,4 +12,5 @@ export type Category = {
   more?: string
   examples?: string
   synonyms?: string[]
+  tool?: string
 }

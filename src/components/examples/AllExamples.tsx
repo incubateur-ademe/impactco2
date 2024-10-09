@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Example } from 'types/example'
 import { track } from 'utils/matomo'
 import Card from 'components/cards/Card'
@@ -12,6 +13,17 @@ import ExamplesList from './ExamplesList'
 const AllExamples = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
   const [activity, setActivity] = useState('all')
   const [tool, setTool] = useState('all')
+
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    if (!searchParams) {
+      return
+    }
+    const tool = searchParams.get('tool')
+    if (tool) {
+      setTool(decodeURI(tool))
+    }
+  }, [searchParams])
 
   const filteredExamples = useMemo(
     () => examples.filter((example) => (tool === 'all' ? example : example.links.find((link) => link.label === tool))),

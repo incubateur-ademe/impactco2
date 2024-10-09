@@ -25,6 +25,7 @@ export const categories: Category[] = [
   {
     id: 10,
     name: 'Usage numérique',
+    tool: 'Impact Usage Numérique',
     slug: 'usagenumerique',
     sources: [
       {
@@ -44,6 +45,7 @@ export const categories: Category[] = [
   {
     id: 12,
     name: 'Livraison',
+    tool: 'Impact Livraison',
     slug: 'livraison',
     description: "Mesurer l'impact carbone de la livraison de colis",
     unit: '',
@@ -58,6 +60,7 @@ export const categories: Category[] = [
   {
     id: 8,
     name: 'Chauffage',
+    tool: 'Impact Chauffage',
     slug: 'chauffage',
     sources: [
       {
@@ -78,6 +81,7 @@ export const categories: Category[] = [
   {
     id: 4,
     name: 'Transport',
+    tool: 'Impact Transport',
     slug: 'transport',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
     description: 'Calculer l’impact carbone des moyens de transport',
@@ -95,6 +99,7 @@ export const categories: Category[] = [
   {
     id: 9,
     name: 'Fruits et légumes',
+    tool: 'Fruits et légumes de saison',
     slug: 'fruitsetlegumes',
     synonyms: ['manger', 'fruit', 'legume'],
     description: 'Découvrir les fruits et légumes de la saison et leur impact carbone',
@@ -110,6 +115,7 @@ export const categories: Category[] = [
   {
     id: 1,
     name: 'Numérique',
+    tool: 'Impact Numérique',
     slug: 'numerique',
     sources: [
       {
@@ -129,6 +135,7 @@ export const categories: Category[] = [
   {
     id: 2,
     name: 'Repas',
+    tool: 'Impact Repas',
     slug: 'repas',
     synonyms: ['manger', 'alimenter'],
     sources: [
@@ -144,6 +151,7 @@ export const categories: Category[] = [
   {
     id: 5,
     name: 'Habillement',
+    tool: 'Impact Habillement',
     slug: 'habillement',
     synonyms: ['habiller'],
     sources: [
@@ -164,6 +172,7 @@ export const categories: Category[] = [
   {
     id: 7,
     name: 'Mobilier',
+    tool: 'Impact Mobilier',
     slug: 'mobilier',
     sources: [
       {
@@ -182,6 +191,7 @@ export const categories: Category[] = [
   {
     id: 6,
     name: 'Électroménager',
+    tool: 'Impact Électroménager',
     slug: 'electromenager',
     sources: [
       {
@@ -200,6 +210,7 @@ export const categories: Category[] = [
   {
     id: 3,
     name: 'Boisson',
+    tool: 'Impact Boisson',
     slug: 'boisson',
     description: 'Comparer l’impact carbone des boissons',
     synonyms: ['boire'],
