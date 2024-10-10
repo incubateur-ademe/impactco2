@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import Link from 'components/base/buttons/Link'
 import ToolCard from 'components/cards/ToolCard'
 import ToolCards from 'components/cards/ToolCards'
-import { tools } from 'components/cards/tools'
+import { quiz, tools } from 'components/cards/tools'
 import Examples from 'components/examples/Examples'
 import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <Block>
         <h1 className={styles.title}>Les bons outils pour communiquer sur l’impact carbone</h1>
-        <ToolCards tools={tools.slice(0, 3)} />
+        <ToolCards tools={[quiz, ...tools.slice(0, 2)]} />
         <div className={styles.link}>
           <Link href='/outils'>Voir tous les outils</Link>
         </div>
