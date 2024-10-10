@@ -5,7 +5,6 @@ import values from './values.json'
 const m2: Record<string, string> = {
   fr: 'par m²',
   en: 'per m²',
-  de: 'pro m²',
   es: 'por m²',
 }
 
@@ -13,13 +12,11 @@ const carpooling: Record<string, Record<string, string>> = {
   voiturethermique: {
     fr: 'Covoiturage thermique',
     en: 'Carpooling combustion',
-    de: 'Mitfahrgelegenheit Thermoauto',
     es: 'Compartir coche termico',
   },
   voitureelectrique: {
     fr: 'Covoiturage électrique',
     en: 'Carpooling electric',
-    de: 'Mitfahrgelegenheit Elektroauto',
     es: 'Compartir coche eléctrico',
   },
 }
@@ -27,16 +24,14 @@ const carpooling: Record<string, Record<string, string>> = {
 const passengers: Record<string, string> = {
   fr: 'passager[s]',
   en: 'passenger[s]',
-  de: 'Passagier',
   es: 'pasajero[s]',
 }
 
-const allValues: Record<string, { fr: string; en: string; de: string; es: string }> = {
+const allValues: Record<string, { fr: string; en: string; es: string }> = {
   ...values,
   avion: {
     fr: 'avion',
     en: 'plane',
-    de: 'flugzeug',
     es: 'avión',
   },
 }
@@ -78,26 +73,39 @@ const getValues = (
 
 export const getPrefix = (language: string, equivalent: Pick<Equivalent, 'category' | 'slug'>, value?: number) => {
   const { prefix } = getValues(language, equivalent)
-  return prefix ? formatName(prefix, value || 1, true) : ''
+  return prefix ? formatName(prefix, value || 1) : ''
 }
 
 export const getNameWithoutSuffix = (
   language: string,
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
-  value?: number
+  value?: number,
+  lowerCase?: boolean
 ) => {
   const { prefix, name } = getValues(language, equivalent)
-  return `${withPrefix ? formatName(prefix, value || 1) : ''}${formatName(name, value || 1, true)}`
+  const formattedName = formatName(name, value || 1)
+  const nameWithoutSuffix = `${withPrefix ? formatName(prefix, value || 1) : ''}${formattedName[0].toLowerCase()}${formattedName.slice(1)}`
+  if (lowerCase) {
+    return `${nameWithoutSuffix[0].toLowerCase()}${nameWithoutSuffix.slice(1)}`
+      .replace(/\brer\b/i, 'RER')
+      .replace(/\btgv\b/i, 'TGV')
+      .replace(/\bter\b/i, 'TER')
+      .replace(/\bgame of\b/i, 'Game of')
+      .replace(/a\/r/i, 'A/R')
+  } else {
+    return `${nameWithoutSuffix[0].toUpperCase()}${nameWithoutSuffix.slice(1)}`
+  }
 }
 
 export const getName = (
   language: string,
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
-  value?: number
+  value?: number,
+  lowerCase?: boolean
 ) => {
-  const name = getNameWithoutSuffix(language, equivalent, withPrefix, value)
+  const name = getNameWithoutSuffix(language, equivalent, withPrefix, value, lowerCase)
   return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? `(${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}`
 }
 

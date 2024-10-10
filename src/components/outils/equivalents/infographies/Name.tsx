@@ -11,9 +11,9 @@ const Name = ({ equivalent, value }: { equivalent: ComputedEquivalent; value: nu
   return (
     <div>
       <span className={styles.equivalentValue}>
-        {value} {getPrefix(language, equivalent, value).toLowerCase()}
+        {value} {getPrefix(language, equivalent, value)}
       </span>
-      {getName(language, equivalent, false, value).toLowerCase()}
+      {getName(language, equivalent, false, value)}
     </div>
   )
 }

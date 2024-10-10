@@ -316,8 +316,8 @@
   "osez-changer": {
     "title": "¡Cuenta tus zapatos!",
     "description": "En promedio, los franceses solo usan un tercio de los zapatos que poseen. ¿Y si despejamos los armarios?",
-    "paire": "par(s)",
-    "new-paire": "par(s) de zapatos nuevos",
+    "paire": "par[s]",
+    "new-paire": "par[s] de zapatos nuevos",
     "avis": "Según tú...",
     "avis-description": "¿Cuántos pares de zapatos crees que necesitas?",
     "penderie": "En tus armarios",
@@ -328,7 +328,7 @@
     "waiting": "La respuesta a la pregunta anterior mostrará el impacto en carbono de la compra de zapatos nuevos"
   },
   "equivalent": {
-    "year": "año(s)",
+    "year": "año[s]",
     "hypotheses": "Hipótesis",
     "fabrication": "Fabricación",
     "usage": "Uso",

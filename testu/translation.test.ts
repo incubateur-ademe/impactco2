@@ -16,9 +16,6 @@ describe('Translation', () => {
       if (!value.en || value.en === 'TODO') {
         missings.add(`Missing value for ${equivalent.slug} in english`)
       }
-      if (!value.de || value.de === 'TODO') {
-        missings.add(`Missing value for ${equivalent.slug} in german`)
-      }
       if (!value.es || value.es === 'TODO') {
         missings.add(`Missing value for ${equivalent.slug} in espagnol`)
       }

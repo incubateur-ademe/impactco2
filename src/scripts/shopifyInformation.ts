@@ -17,7 +17,6 @@ categories.forEach((category) => {
       value: equivalent.value * 1000,
       fr: value ? value.fr : 'TODO',
       en: value ? value.en : 'TODO',
-      de: value ? value.de : 'TODO',
       es: value ? value.es : 'TODO',
       percentage: equivalent.percentage,
     }

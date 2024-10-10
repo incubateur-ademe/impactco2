@@ -4,7 +4,6 @@
     "value": 1770000,
     "fr": "A/R Paris - New-York en avion",
     "en": "Roundtrip[s] Paris - New-York by plane",
-    "de": "Rundreise Paris - New York mit dem Flugzeug",
     "es": "Viaje de ida y vuelta París - Nueva York en avión"
   },
   "tgv-paris-berlin": {
@@ -12,7 +11,6 @@
     "value": 7260,
     "fr": "A/R Paris - Berlin en tgv",
     "en": "Roundtrip[s] Paris - Berlin by train",
-    "de": "Rundreise Paris - Berlin mit dem Zug",
     "es": "Viaje de ida y vuelta París - Berlin en tren"
   },
   "tgv-paris-marseille": {
@@ -20,7 +18,6 @@
     "value": 4400,
     "fr": "A/R Paris - Marseille en tgv",
     "en": "Roundtrip[s] Paris - Marseille by train",
-    "de": "Rundreise Paris - Marseille mit dem Zug",
     "es": "Viaje de ida y vuelta París - Marseille en tren"
   },
   "voiture-lille-nimes": {
@@ -28,7 +25,6 @@
     "value": 410000,
     "fr": "A/R Lille - Nîmes en voiture",
     "en": "Roundtrip[s] Lille - Nîmes by car",
-    "de": "Rundreise Lille - Nîmes mit dem Auto",
     "es": "Viaje de ida y vuelta Lille - Nîmes en coche"
   },
   "francais": {
@@ -36,24 +32,21 @@
     "value": 9300000,
     "fr": "% de l';empreinte carbone d'un citoyen français",
     "en": "% of a ;French citizen's carbon footprint",
-    "de": "% Anteil des ;CO₂-Fußabdrucks eines Franzosen",
     "es": "% de la huella de ;carbono de un ciudadano francés",
     "percentage": true
   },
   "game-of-thrones": {
     "category": 13,
     "value": 31.7,
-    "fr": "Épisode[s] de ;game of thrones en streaming",
+    "fr": "Épisode[s] de ;Game of Thrones en streaming",
     "en": "Game of Thrones streaming=episode[s] of ",
-    "de": "Game of Thrones Streaming=Folge[n] ",
     "es": "Episodio[s] de ;Game of Thrones streaming"
   },
   "friends": {
     "category": 13,
     "value": 7860,
-    "fr": "Intégrale[s] de friends en streaming",
+    "fr": "Intégrale[s] de Friends en streaming",
     "en": "Complete Friends TV show streaming",
-    "de": "Komplette Friends-TV-Show Streaming",
     "es": "Programa de TV completo de Friends streaming"
   },
   "ski": {
@@ -61,15 +54,13 @@
     "value": 48900,
     "fr": "Journée[s] au ski",
     "en": "Ski day[s]",
-    "de": "Tag(e) Skifahren",
-    "es": "Día(s) de esquí"
+    "es": "Día[s] de esquí"
   },
   "piscine": {
     "category": 13,
     "value": 7540,
     "fr": "remplissage[s] de piscine",
     "en": "pool filling[s]",
-    "de": "Schwimmbadfüllung[en]",
     "es": "llenado de piscinas"
   },
   "terre-voiture": {
@@ -77,15 +68,13 @@
     "value": 8704000,
     "fr": "Tour[s] de la terre en voiture",
     "en": "Tour[s] of the earth by car",
-    "de": "Rundfahrt[en] um die Erde mit dem Auto",
     "es": "Recorrido[s] por la tierra en coche"
   },
   "harry-potter": {
     "category": 13,
     "value": 630,
-    "fr": "Marathon[s] des films Harry potter en streaming",
+    "fr": "Marathon[s] des films Harry Potter en streaming",
     "en": "Marathon[s] of Harry Potter films in streaming",
-    "de": "Marathon[s] von Harry-Potter-Filmen im Streaming",
     "es": "Maratón[es] de películas de Harry Potter en streaming"
   },
   "email": {
@@ -93,7 +82,6 @@
     "value": 2.46181262,
     "fr": "email[s]",
     "en": "email[s]",
-    "de": "E-Mail[s]",
     "es": "Correo[s] electrónico[s]"
   },
   "spam": {
@@ -101,7 +89,6 @@
     "value": 3.73863698,
     "fr": "spam[s]",
     "en": "spam[s]",
-    "de": "Spam-E-Mails",
     "es": "Spam[s]"
   },
   "stockagedonnee": {
@@ -109,7 +96,6 @@
     "value": 0.23533416999999998,
     "fr": "stocker un go de donnée",
     "en": "store 1 GB of data",
-    "de": "Speichern von 1 GB Daten",
     "es": "Almacenamiento de 1 GB de datos"
   },
   "rechercheweb": {
@@ -117,7 +103,6 @@
     "value": 51.042269652307,
     "fr": "recherche[s] sur le web",
     "en": "web search[es]",
-    "de": "Webrecherche",
     "es": "Búsqueda en la web"
   },
   "streamingvideo": {
@@ -125,7 +110,6 @@
     "value": 64.01675291000002,
     "fr": "Heure[s] de ;streaming vidéo",
     "en": "Hour[s] of ;video streaming",
-    "de": "Stunden ;Videostreaming",
     "es": "Horas de ;transmisión de vídeo"
   },
   "visioconference": {
@@ -133,7 +117,6 @@
     "value": 57.06336546216,
     "fr": "Heure[s] de ;visioconférence",
     "en": "Hour[s] of ;video conferencing",
-    "de": "Stunden ;Videokonferenzen",
     "es": "Horas de ;videoconferencia"
   },
   "telechargement": {
@@ -141,7 +124,6 @@
     "value": 9.504680870000001,
     "fr": "go de donnée",
     "en": "GB of data",
-    "de": "GB Daten",
     "es": "GB de datos"
   },
   "chauffagegaz": {
@@ -149,7 +131,6 @@
     "value": 39000,
     "fr": "année[s] de ;chauffage au gaz",
     "en": "year[s] of ;gas heating",
-    "de": "Jahre ;Gasheizung",
     "es": "Años de ;calefacción de gas"
   },
   "chauffagefioul": {
@@ -157,7 +138,6 @@
     "value": 57170,
     "fr": "année[s] de ;chauffage au fioul",
     "en": "year[s] of ;oil heating",
-    "de": "Jahre ;Ölheizung",
     "es": "Años de ;calefacción de fuel"
   },
   "chauffageelectrique": {
@@ -165,7 +145,6 @@
     "value": 11850,
     "fr": "année[s] de ;chauffage électrique",
     "en": "year[s] of ;electric heating",
-    "de": "Jahre ;Elektroheizung",
     "es": "Años de ;calefacción eléctrica"
   },
   "pompeachaleur": {
@@ -173,7 +152,6 @@
     "value": 3950,
     "fr": "année[s] de ;chauffage avec une pompe à chaleur",
     "en": "year[s] of ;heating with a heat pump",
-    "de": "Jahre ;Heizung mit Wärmepumpe",
     "es": "Años de ;calefacción con bomba de calor"
   },
   "poeleagranule": {
@@ -181,7 +159,6 @@
     "value": 5640,
     "fr": "année[s] de ;chauffage avec un poêle à granulés",
     "en": "year[s] of ;heating with a pellet stove",
-    "de": "Jahre ;Heizung mit Pelletofen",
     "es": "Años de ;calefacción con estufa de pellets"
   },
   "poeleabois": {
@@ -189,7 +166,6 @@
     "value": 9200,
     "fr": "année[s] de ;chauffage avec un poêle à bois",
     "en": "year[s] of ;heating with a wood stove",
-    "de": "Jahre ;Heizung mit Holzöfen",
     "es": "Años de ;calefacción con estufa de leña"
   },
   "reseaudechaleur": {
@@ -197,7 +173,6 @@
     "value": 18670,
     "fr": "année[s] de ;chauffage via un réseau de chaleur",
     "en": "year[s] of ;heating via a district heating network",
-    "de": "Jahre ;Fernheizung",
     "es": "Años de ;calefacción a través de una red de calefacción"
   },
   "avion-courtcourrier": {
@@ -205,7 +180,6 @@
     "value": 258.58,
     "fr": "km en ;avion court courrier",
     "en": "km by ;plane short-haul",
-    "de": "km mit dem ;Flugzeug Kurzstrecke",
     "es": "km en ;avión corto recorrido"
   },
   "avion-moyencourrier": {
@@ -213,7 +187,6 @@
     "value": 187.56,
     "fr": "km en ;avion moyen courrier",
     "en": "km by ;plane medium-haul",
-    "de": "km mit dem ;Flugzeug Mittelstrecke",
     "es": "km en ;avión medio recorrido"
   },
   "avion-longcourrier": {
@@ -221,7 +194,6 @@
     "value": 151.95999999999998,
     "fr": "km en ;avion long courrier",
     "en": "km by ;plane long-haul",
-    "de": "km mit dem ;Flugzeug Langstrecke",
     "es": "km en ;avión largo recorrido"
   },
   "tgv": {
@@ -229,7 +201,6 @@
     "value": 2.9299999999999997,
     "fr": "km en ;TGV",
     "en": "km by ;high-speed train",
-    "de": "km mit ;dem TGV",
     "es": "km en ;TGV"
   },
   "intercites": {
@@ -237,7 +208,6 @@
     "value": 8.98,
     "fr": "km en ;intercités",
     "en": "km by ;intercity train",
-    "de": "km mit ;dem Intercity",
     "es": "km en ;trenes interurbanos"
   },
   "voiturethermique": {
@@ -245,7 +215,6 @@
     "value": 217.60000000000002,
     "fr": "km en ;voiture thermique",
     "en": "km by ;combustion car",
-    "de": "km mit ;dem Thermoauto",
     "es": "km en ;coche termico"
   },
   "voitureelectrique": {
@@ -253,7 +222,6 @@
     "value": 103.39999999999999,
     "fr": "km en ;voiture électrique",
     "en": "km by ;electric car",
-    "de": "km mit ;dem Elektroauto",
     "es": "km en ;coche eléctrico"
   },
   "autocar": {
@@ -261,7 +229,6 @@
     "value": 29.421306270000002,
     "fr": "km en ;autocar thermique",
     "en": "km by ;combustion coach",
-    "de": "km mit ;dem Thermoreisebus",
     "es": "km en ;autocar termico"
   },
   "velo": {
@@ -269,7 +236,6 @@
     "value": 0,
     "fr": "vélo ou marche",
     "en": "bicycle or walking",
-    "de": "Fahrrad oder zu Fuß",
     "es": "Bicicleta o a pie"
   },
   "veloelectrique": {
@@ -277,7 +243,6 @@
     "value": 10.950000000000001,
     "fr": "km en ;vélo à assistance électrique",
     "en": "km by ;electrically assisted bicycle",
-    "de": "km mit ;dem E-Bike",
     "es": "km en ;bicicleta eléctrica asistida"
   },
   "busthermique": {
@@ -285,7 +250,6 @@
     "value": 113.2,
     "fr": "km en ;bus thermique",
     "en": "km by ;combustion bus",
-    "de": "km mit ;dem Thermobus",
     "es": "km en ;autobús termico"
   },
   "tramway": {
@@ -293,7 +257,6 @@
     "value": 4.28,
     "fr": "km en ;tramway",
     "en": "km by ;tram",
-    "de": "km mit ;der Straßenbahn",
     "es": "km en ;tranvía"
   },
   "metro": {
@@ -301,7 +264,6 @@
     "value": 4.4399999999999995,
     "fr": "km en ;métro",
     "en": "km by ;metro",
-    "de": "km mit ;der U-Bahn",
     "es": "km en ;metro"
   },
   "scooter": {
@@ -309,7 +271,6 @@
     "value": 76.30000000000001,
     "fr": "km en ;scooter ou moto légère thermique",
     "en": "km by ;combustion scooter or lightweight combustion motorcycle",
-    "de": "km mit ;dem Thermoroller oder Thermoleichtmotorrad",
     "es": "km en ;scooter o motocicleta ligera termico"
   },
   "moto": {
@@ -317,7 +278,6 @@
     "value": 191.3,
     "fr": "km en ;moto thermique",
     "en": "km by ;combustion motorcycle",
-    "de": "km mit ;dem Thermomotorrad",
     "es": "km en ;moto termico"
   },
   "rer": {
@@ -325,7 +285,6 @@
     "value": 9.780000000000001,
     "fr": "km en ;RER ou Transilien",
     "en": "km by ;RER or suburban train",
-    "de": "km mit ;dem S-Bahn oder Nahverkehrszug",
     "es": "km en ;RER o tren de cercanías"
   },
   "ter": {
@@ -333,7 +292,6 @@
     "value": 27.689999999999998,
     "fr": "km en ;TER",
     "en": "km by ;regional train",
-    "de": "km mit ;dem Regionalzug",
     "es": "km en ;tren regional"
   },
   "buselectrique": {
@@ -341,7 +299,6 @@
     "value": 21.7,
     "fr": "km en ;bus électrique",
     "en": "km by ;electric bus",
-    "de": "km mit ;dem Elektrobus",
     "es": "km en ;autobús eléctrico"
   },
   "trottinette": {
@@ -349,7 +306,6 @@
     "value": 24.9,
     "fr": "km en ;trottinette à assistance électrique",
     "en": "km by ;electrically assisted scooter",
-    "de": "km mit ;E-Scooter",
     "es": "km en ;patinete eléctrica asistida"
   },
   "busgnv": {
@@ -357,7 +313,6 @@
     "value": 121.7,
     "fr": "km en ;bus (GNV)",
     "en": "km by ;bus (natural gas vehicle)",
-    "de": "km mit ;dem Bus (Gas)",
     "es": "km en ;autobús (GNV)"
   },
   "fraise": {
@@ -365,7 +320,6 @@
     "value": 477.06577790000006,
     "fr": "kg de ;fraise",
     "en": "kg of ;strawberry",
-    "de": "kg ;Erdbeeren",
     "es": "kg de ;fresas"
   },
   "pomme": {
@@ -373,7 +327,6 @@
     "value": 396.515083,
     "fr": "kg de ;pomme",
     "en": "kg of ;apple",
-    "de": "kg ;Äpfel",
     "es": "kg de ;manzanas"
   },
   "orange": {
@@ -381,7 +334,6 @@
     "value": 633.964319,
     "fr": "kg d';orange",
     "en": "kg of ;orange",
-    "de": "kg ;Orangen",
     "es": "kg de ;naranjas"
   },
   "citron": {
@@ -389,7 +341,6 @@
     "value": 711.263074,
     "fr": "kg de ;citron",
     "en": "kg of ;lemon",
-    "de": "kg ;Zitronen",
     "es": "kg de ;limones"
   },
   "ail": {
@@ -397,7 +348,6 @@
     "value": 358.042894,
     "fr": "kg d';ail",
     "en": "kg of ;garlic",
-    "de": "kg ;Knoblauch",
     "es": "kg de ;ajos"
   },
   "artichaut": {
@@ -405,7 +355,6 @@
     "value": 3876.929068,
     "fr": "kg d';artichaut",
     "en": "kg of ;artichoke",
-    "de": "kg ;Artischocken",
     "es": "kg de ;alcachofas"
   },
   "asperge": {
@@ -413,7 +362,6 @@
     "value": 1559.309081,
     "fr": "kg d';asperge",
     "en": "kg of ;asparagus",
-    "de": "kg ;Spargel",
     "es": "kg de ;espárragos"
   },
   "betterave": {
@@ -421,7 +369,6 @@
     "value": 364.32109899999995,
     "fr": "kg de ;betterave",
     "en": "kg of ;beetroot",
-    "de": "kg ;Rüben",
     "es": "kg de ;remolachas"
   },
   "blette": {
@@ -429,7 +376,6 @@
     "value": 542.753575,
     "fr": "kg de ;blette",
     "en": "kg of ;chard",
-    "de": "kg ;Mangold",
     "es": "kg de ;acelgas"
   },
   "carotte": {
@@ -437,7 +383,6 @@
     "value": 364.32109899999995,
     "fr": "kg de ;carotte",
     "en": "kg of ;carrot",
-    "de": "kg ;Karotten",
     "es": "kg de ;zanahorias"
   },
   "celeri": {
@@ -445,7 +390,6 @@
     "value": 677.0180851000001,
     "fr": "kg de ;céleri",
     "en": "kg of ;celery",
-    "de": "kg ;Sellerie",
     "es": "kg de ;apio"
   },
   "champignonmorille": {
@@ -453,7 +397,6 @@
     "value": 493.7143989999999,
     "fr": "kg de ;champignon (morille crue)",
     "en": "kg of ;mushroom (raw morel)",
-    "de": "kg ;Pilze (rohe Morcheln)",
     "es": "kg de ;champiñones (morillas crudas)"
   },
   "chou": {
@@ -461,7 +404,6 @@
     "value": 862.097522,
     "fr": "kg de ;chou",
     "en": "kg of ;cabbage",
-    "de": "kg ;Kohl",
     "es": "kg de ;col"
   },
   "choudebruxelles": {
@@ -469,7 +411,6 @@
     "value": 575.8186729,
     "fr": "kg de ;chou de Bruxelles",
     "en": "kg of ;Brussels sprout",
-    "de": "kg ;Rosenkohl",
     "es": "kg de ;coles de Bruselas"
   },
   "choufleur": {
@@ -477,7 +418,6 @@
     "value": 735.5122120000001,
     "fr": "kg de ;chou-fleur",
     "en": "kg of ;cauliflower",
-    "de": "kg ;Blumenkohl",
     "es": "kg de ;coliflor"
   },
   "concombre": {
@@ -485,7 +425,6 @@
     "value": 473.201203,
     "fr": "kg de ;concombre",
     "en": "kg of ;cucumber",
-    "de": "kg ;Gurken",
     "es": "kg de ;pepinos"
   },
   "courge": {
@@ -493,7 +432,6 @@
     "value": 618.848881,
     "fr": "kg de ;courge",
     "en": "kg of ;squash",
-    "de": "kg ;Kürbis",
     "es": "kg de ;calabazas"
   },
   "courgette": {
@@ -501,7 +439,6 @@
     "value": 483.51979,
     "fr": "kg de ;courgette",
     "en": "kg of ;zucchini",
-    "de": "kg ;Zucchini",
     "es": "kg de ;calabacines"
   },
   "cresson": {
@@ -509,7 +446,6 @@
     "value": 941.0662189999998,
     "fr": "kg de ;cresson",
     "en": "kg of ;watercress",
-    "de": "kg ;Brunnenkresse",
     "es": "kg de ;berros"
   },
   "echalote": {
@@ -517,7 +453,6 @@
     "value": 364.86326020000007,
     "fr": "kg d';échalote",
     "en": "kg of ;shallot",
-    "de": "kg ;Schalotten",
     "es": "kg de ;chalotes"
   },
   "endive": {
@@ -525,7 +460,6 @@
     "value": 938.0277949999997,
     "fr": "kg d';endive",
     "en": "kg of ;endive",
-    "de": "kg ;Endivien",
     "es": "kg de ;endivias"
   },
   "epinard": {
@@ -533,7 +467,6 @@
     "value": 391.2991521,
     "fr": "kg d';épinard",
     "en": "kg of ;spinach",
-    "de": "kg ;Spinat",
     "es": "kg de ;espinacas"
   },
   "mangue": {
@@ -541,7 +474,6 @@
     "value": 10641.545366999999,
     "fr": "kg de ;mangue",
     "en": "kg of ;mango",
-    "de": "kg ;Mangos",
     "es": "kg de ;mangos"
   },
   "fenouil": {
@@ -549,7 +481,6 @@
     "value": 962.528871,
     "fr": "kg de ;fenouil",
     "en": "kg of ;fennel",
-    "de": "kg ;Fenchel",
     "es": "kg de ;hinojos"
   },
   "haricotvert": {
@@ -557,7 +488,6 @@
     "value": 413.06197199999997,
     "fr": "kg d';haricot vert (cru)",
     "en": "kg of ;green bean (raw)",
-    "de": "kg ;grüne Bohnen (roh)",
     "es": "kg de ;judías verdes (crudas)"
   },
   "laitue": {
@@ -565,7 +495,6 @@
     "value": 941.0662189999998,
     "fr": "kg de ;laitue",
     "en": "kg of ;lettuce",
-    "de": "kg ;Kopfsalat",
     "es": "kg de ;lechuga"
   },
   "mache": {
@@ -573,7 +502,6 @@
     "value": 941.0662189999998,
     "fr": "kg de ;mâche",
     "en": "kg of ;lamb's lettuce",
-    "de": "kg ;Feldsalat",
     "es": "kg de ;mache"
   },
   "navet": {
@@ -581,7 +509,6 @@
     "value": 364.321099,
     "fr": "kg de ;navet",
     "en": "kg of ;turnip",
-    "de": "kg ;Rüben",
     "es": "kg de ;nabos"
   },
   "mais": {
@@ -589,7 +516,6 @@
     "value": 810.485801,
     "fr": "kg de ;maïs",
     "en": "kg of ;corn",
-    "de": "kg ;Mais",
     "es": "kg de ;maíz"
   },
   "oignon": {
@@ -597,7 +523,6 @@
     "value": 389.53612800000013,
     "fr": "kg d';oignon",
     "en": "kg of ;onion",
-    "de": "kg ;Zwiebeln",
     "es": "kg de ;cebollas"
   },
   "panais": {
@@ -605,7 +530,6 @@
     "value": 457.82909000000006,
     "fr": "kg de ;panais",
     "en": "kg of ;parsnip",
-    "de": "kg ;Pastinaken",
     "es": "kg de ;chirivías"
   },
   "petitpois": {
@@ -613,7 +537,6 @@
     "value": 665.129177,
     "fr": "kg de ;petit pois",
     "en": "kg of ;green pea",
-    "de": "kg ;Erbsen",
     "es": "kg de ;guisantes"
   },
   "poireau": {
@@ -621,7 +544,6 @@
     "value": 768.865685,
     "fr": "kg de ;poireau",
     "en": "kg of ;leek",
-    "de": "kg ;Lauch",
     "es": "kg de ;puerros"
   },
   "poivron": {
@@ -629,7 +551,6 @@
     "value": 1183.6197739999998,
     "fr": "kg de ;poivron",
     "en": "kg of ;bell pepper",
-    "de": "kg ;Paprika",
     "es": "kg de ;pimientos"
   },
   "potiron": {
@@ -637,7 +558,6 @@
     "value": 618.848881,
     "fr": "kg de ;potiron",
     "en": "kg of ;pumpkin",
-    "de": "kg ;Kürbis",
     "es": "kg de ;calabazas"
   },
   "radis": {
@@ -645,7 +565,6 @@
     "value": 601.8473451000001,
     "fr": "kg de ;radis",
     "en": "kg of ;radish",
-    "de": "kg ;Radieschen",
     "es": "kg de ;rábanos"
   },
   "salsifis": {
@@ -653,7 +572,6 @@
     "value": 457.82908999999995,
     "fr": "kg de ;salsifis",
     "en": "kg of ;salsify",
-    "de": "kg ;Schwarzwurzeln",
     "es": "kg de ;chirivías negras"
   },
   "topinambour": {
@@ -661,7 +579,6 @@
     "value": 504.87197000000003,
     "fr": "kg de ;topinambour",
     "en": "kg of ;Jerusalem artichoke",
-    "de": "kg ;Topinambur",
     "es": "kg de ;tupinambos"
   },
   "cassis": {
@@ -669,7 +586,6 @@
     "value": 1796.3874969999997,
     "fr": "kg de ;cassis",
     "en": "kg of ;blackcurrant",
-    "de": "kg ;Johannisbeeren",
     "es": "kg de ;grosellas negras"
   },
   "chataigne": {
@@ -677,7 +593,6 @@
     "value": 1880.205125,
     "fr": "kg de ;châtaigne",
     "en": "kg of ;chestnut",
-    "de": "kg ;Kastanien",
     "es": "kg de ;castañas"
   },
   "clementine": {
@@ -685,7 +600,6 @@
     "value": 1221.4244939999999,
     "fr": "kg de ;clémentine",
     "en": "kg of ;clementine",
-    "de": "kg ;Clementinen",
     "es": "kg de ;clementinas"
   },
   "pamplemousse": {
@@ -693,7 +607,6 @@
     "value": 872.8596140000001,
     "fr": "kg de ;pamplemousse",
     "en": "kg of ;grapefruit",
-    "de": "kg ;Grapefruits",
     "es": "kg de ;pomelos"
   },
   "coing": {
@@ -701,7 +614,6 @@
     "value": 541.0901117000001,
     "fr": "kg de ;coing",
     "en": "kg of ;quince",
-    "de": "kg ;Quitten",
     "es": "kg de ;membrillos"
   },
   "figue": {
@@ -709,7 +621,6 @@
     "value": 613.5498970000001,
     "fr": "kg de ;figue",
     "en": "kg of ;fig",
-    "de": "kg ;Feigen",
     "es": "kg de ;higos"
   },
   "groseille": {
@@ -717,7 +628,6 @@
     "value": 1787.5465516999998,
     "fr": "kg de ;groseille",
     "en": "kg of ;red currant",
-    "de": "kg ;Johannisbeeren",
     "es": "kg de ;grosellas"
   },
   "kiwi": {
@@ -725,7 +635,6 @@
     "value": 976.8151836999999,
     "fr": "kg de ;kiwi",
     "en": "kg of ;kiwi",
-    "de": "kg ;Kiwis",
     "es": "kg de ;kiwis"
   },
   "mandarine": {
@@ -733,7 +642,6 @@
     "value": 422.73830129999993,
     "fr": "kg de ;mandarine",
     "en": "kg of ;mandarin",
-    "de": "kg ;Mandarinen",
     "es": "kg de ;mandarinas"
   },
   "melon": {
@@ -741,7 +649,6 @@
     "value": 931.394984,
     "fr": "kg de ;melon",
     "en": "kg of ;melon",
-    "de": "kg ;Melonen",
     "es": "kg de ;melones"
   },
   "mure": {
@@ -749,7 +656,6 @@
     "value": 1206.0856469999999,
     "fr": "kg de ;mûre",
     "en": "kg of ;blackberry",
-    "de": "kg ;Brombeeren",
     "es": "kg de ;moras"
   },
   "nectarine": {
@@ -757,7 +663,6 @@
     "value": 637.3697500000002,
     "fr": "kg de ;nectarine",
     "en": "kg of ;nectarine",
-    "de": "kg ;Nektarinen",
     "es": "kg de ;nectarinas"
   },
   "myrtille": {
@@ -765,7 +670,6 @@
     "value": 881.5012491,
     "fr": "kg de ;myrtille",
     "en": "kg of ;blueberry",
-    "de": "kg ;Heidelbeeren",
     "es": "kg de ;arándanos"
   },
   "noisette": {
@@ -773,7 +677,6 @@
     "value": 4652.965420999999,
     "fr": "kg de ;noisette",
     "en": "kg of ;hazelnut",
-    "de": "kg ;Haselnüsse",
     "es": "kg de ;avellanas"
   },
   "noix": {
@@ -781,7 +684,6 @@
     "value": 4164.838911999999,
     "fr": "kg de ;noix",
     "en": "kg of ;walnut",
-    "de": "kg ;Walnüsse",
     "es": "kg de ;nueces"
   },
   "prune": {
@@ -789,7 +691,6 @@
     "value": 963.0279916999999,
     "fr": "kg de ;prune",
     "en": "kg of ;plum",
-    "de": "kg ;Pflaumen",
     "es": "kg de ;ciruelas"
   },
   "reineclaude": {
@@ -797,7 +698,6 @@
     "value": 971.868937,
     "fr": "kg de ;reine claude",
     "en": "kg of ;greengage",
-    "de": "kg ;Renekloden",
     "es": "kg de ;ciruelas Claudia"
   },
   "rhubarbe": {
@@ -805,7 +705,6 @@
     "value": 716.7486917,
     "fr": "kg de ;rhubarbe",
     "en": "kg of ;rhubarb",
-    "de": "kg ;Rhabarber",
     "es": "kg de ;ruibarbo"
   },
   "peche": {
@@ -813,7 +712,6 @@
     "value": 595.7366916999999,
     "fr": "kg de ;pêche",
     "en": "kg of ;peach",
-    "de": "kg ;Pfirsiche",
     "es": "kg de ;melocotones"
   },
   "cerise": {
@@ -821,7 +719,6 @@
     "value": 1335.3255069999996,
     "fr": "kg de ;cerise",
     "en": "kg of ;cherry",
-    "de": "kg ;Kirschen",
     "es": "kg de ;cerezas"
   },
   "abricot": {
@@ -829,7 +726,6 @@
     "value": 880.638317,
     "fr": "kg d';abricot",
     "en": "kg of ;apricot",
-    "de": "kg ;Aprikosen",
     "es": "kg de ;albaricoques"
   },
   "framboise": {
@@ -837,7 +733,6 @@
     "value": 1475.0375679,
     "fr": "kg de ;framboise",
     "en": "kg of ;raspberry",
-    "de": "kg ;Himbeeren",
     "es": "kg de ;frambuesas"
   },
   "poire": {
@@ -845,7 +740,6 @@
     "value": 364.28259399999996,
     "fr": "kg de ;poire",
     "en": "kg of ;pear",
-    "de": "kg ;Birnen",
     "es": "kg de ;peras"
   },
   "raisin": {
@@ -853,7 +747,6 @@
     "value": 456.72809300000006,
     "fr": "kg de ;raisin",
     "en": "kg of ;grape",
-    "de": "kg ;Trauben",
     "es": "kg de ;uvas"
   },
   "aubergine": {
@@ -861,7 +754,6 @@
     "value": 457.1093429,
     "fr": "kg d';aubergine",
     "en": "kg of ;eggplant",
-    "de": "kg ;Auberginen",
     "es": "kg de ;berenjenas"
   },
   "brocoli": {
@@ -869,7 +761,6 @@
     "value": 902.5554719999999,
     "fr": "kg de ;brocoli",
     "en": "kg of ;broccoli",
-    "de": "kg ;Brokkoli",
     "es": "kg de ;brócolis"
   },
   "tomate": {
@@ -877,7 +768,6 @@
     "value": 581.556477,
     "fr": "kg de ;tomate",
     "en": "kg of ;tomato",
-    "de": "kg ;Tomaten",
     "es": "kg de ;tomates"
   },
   "ananas": {
@@ -885,7 +775,6 @@
     "value": 1292.282106,
     "fr": "kg d';ananas",
     "en": "kg of ;pineapple",
-    "de": "kg ;Ananas",
     "es": "kg de ;piñas"
   },
   "banane": {
@@ -893,7 +782,6 @@
     "value": 880.6108929999997,
     "fr": "kg de ;banane",
     "en": "kg of ;banana",
-    "de": "kg ;Bananen",
     "es": "kg de ;plátanos"
   },
   "avocat": {
@@ -901,7 +789,6 @@
     "value": 1480.4702330000002,
     "fr": "kg d';avocat",
     "en": "kg of ;avocado",
-    "de": "kg ;Avocados",
     "es": "kg de ;aguacates"
   },
   "carambole": {
@@ -909,7 +796,6 @@
     "value": 533.048897,
     "fr": "kg de ;carambole",
     "en": "kg of ;starfruit",
-    "de": "kg ;Sternfrucht",
     "es": "kg de ;carambolas"
   },
   "datte": {
@@ -917,7 +803,6 @@
     "value": 2760.1109879999995,
     "fr": "kg de ;datte",
     "en": "kg of ;date",
-    "de": "kg ;Datteln",
     "es": "kg de ;dátiles"
   },
   "fruitdelapassion": {
@@ -925,7 +810,6 @@
     "value": 892.8173700000001,
     "fr": "kg de ;fruit de la passion",
     "en": "kg of ;passion fruit",
-    "de": "kg ;Passionsfrucht",
     "es": "kg de ;maracuyá"
   },
   "grenade": {
@@ -933,7 +817,6 @@
     "value": 485.5722217,
     "fr": "kg de ;grenade",
     "en": "kg of ;pomegranate",
-    "de": "kg ;Granatäpfel",
     "es": "kg de ;granadas"
   },
   "kaki": {
@@ -941,7 +824,6 @@
     "value": 900.4313517,
     "fr": "kg de ;kaki",
     "en": "kg of ;persimmon",
-    "de": "kg ;Kakis",
     "es": "kg de ;caquis"
   },
   "noixdecoco": {
@@ -949,7 +831,6 @@
     "value": 2493.7624220000002,
     "fr": "kg de ;noix de coco",
     "en": "kg of ;coconut",
-    "de": "kg ;Kokosnüsse",
     "es": "kg de ;cocos"
   },
   "pasteque": {
@@ -957,7 +838,6 @@
     "value": 641.4638217000002,
     "fr": "kg de ;pastèque",
     "en": "kg of ;watermelon",
-    "de": "kg ;Wassermelonen",
     "es": "kg de ;sandías"
   },
   "smartphone": {
@@ -965,7 +845,6 @@
     "value": 85850,
     "fr": "smartphone[s]",
     "en": "smartphone[s]",
-    "de": "smartphone[s]",
     "es": "smartphone[s]"
   },
   "ordinateurfixeparticulier": {
@@ -973,7 +852,6 @@
     "value": 299300,
     "fr": "ordinateur[s] fixe[s] sans écran (particulier)",
     "en": "desktop computer[s] without screen (personal)",
-    "de": "Desktop-Computer (Personal)",
     "es": "Ordenadores de sobremesa"
   },
   "ordinateurfixeprofessionnel": {
@@ -981,7 +859,6 @@
     "value": 258100.00000000003,
     "fr": "ordinateur[s] fixe[s] sans écran (professionnel)",
     "en": "desktop computer[s] without screen (office)",
-    "de": "Desktop-Computer (Büro)",
     "es": "Ordenadores de sobremesa (ofimáticos)"
   },
   "ecran": {
@@ -989,7 +866,6 @@
     "value": 91400,
     "fr": "écran[s] d'ordinateur",
     "en": "computer screen[s]",
-    "de": "Computer-Bildschirm",
     "es": "pantalla[s] de computadora"
   },
   "tabletteclassique": {
@@ -997,7 +873,6 @@
     "value": 61899.99999999999,
     "fr": "tablette[s]",
     "en": "tablet[s]",
-    "de": "Tablet[s]",
     "es": "Tableta[s]"
   },
   "television": {
@@ -1005,7 +880,6 @@
     "value": 472400.00000000006,
     "fr": "télévision[s] ",
     "en": "television[s]",
-    "de": "Fernseher",
     "es": "Televisore[s]"
   },
   "ordinateurportable": {
@@ -1013,7 +887,6 @@
     "value": 193000.00000000003,
     "fr": "ordinateur[s] portable[s]",
     "en": "laptop[s]",
-    "de": "Laptops",
     "es": "Ordenadores portátiles"
   },
   "enceintebluetooth": {
@@ -1021,7 +894,6 @@
     "value": 26500,
     "fr": "enceinte[s] connectée[s]",
     "en": "Bluetooth speaker[s]",
-    "de": "Bluetooth-Lautsprecher",
     "es": "Altavoce[s] Bluetooth"
   },
   "telephonebasique": {
@@ -1029,7 +901,6 @@
     "value": 23400.000000000004,
     "fr": "téléphone[s] basique[s]",
     "en": "basic[s] phone[s]",
-    "de": "einfaches Telefon",
     "es": "telefono[s] basico[s]"
   },
   "casquevr": {
@@ -1037,31 +908,27 @@
     "value": 72300.00000000001,
     "fr": "casque[s] de réalité virtuelle",
     "en": "virtual reality headset[s]",
-    "de": "Virtual-Reality-Headset",
-    "es": "casco(s) de realidad virtual"
+    "es": "casco[s] de realidad virtual"
   },
   "alimentationordinateur": {
     "category": 1,
     "value": 4100,
     "fr": "alimentation[s] externe[s] pour ordinateur portable",
     "en": "external power supply[s] for laptop",
-    "de": "externes Netzteil[e] für Laptop",
-    "es": "fuente(s) de alimentación externa para computadora portátil"
+    "es": "fuente[s] de alimentación externa para computadora portátil"
   },
   "alimentationsmartphone": {
     "category": 1,
     "value": 400,
     "fr": "alimentation[s] externe[s] pour smartphone ou tablette",
     "en": "external power supply[s] for smartphone or tablet",
-    "de": "externes Netzteil[e] für Smartphone oder Tablet",
-    "es": "fuente(s) de alimentación externa para teléfono inteligente o tableta"
+    "es": "fuente[s] de alimentación externa para teléfono inteligente o tableta"
   },
   "disquedur": {
     "category": 1,
     "value": 11900,
     "fr": "disque[s] dur[s] externe[s]",
     "en": "external hard drive[s]",
-    "de": "externe Festplatte[n]",
     "es": "disco[s] duro[s] externo[s]"
   },
   "clefusb": {
@@ -1069,7 +936,6 @@
     "value": 2900,
     "fr": "clef[s] usb",
     "en": "usb key[s]",
-    "de": "USB-Schlüssel",
     "es": "llave[s] USB"
   },
   "box": {
@@ -1077,7 +943,6 @@
     "value": 82000,
     "fr": "box[s]",
     "en": "box[s]",
-    "de": "Box",
     "es": "caha de internet"
   },
   "repasavecduboeuf": {
@@ -1085,7 +950,6 @@
     "value": 7260,
     "fr": "repas avec du boeuf",
     "en": "meal[s] with beef",
-    "de": "Mahlzeit mit Rindfleisch",
     "es": "Comida con carne de vacuno"
   },
   "repasvegetarien": {
@@ -1093,7 +957,6 @@
     "value": 510,
     "fr": "repas végétarien[s]",
     "en": "vegetarian meal[s]",
-    "de": "vegetarische Mahlzeiten",
     "es": "Comida vegetariana"
   },
   "repasvegetalien": {
@@ -1101,7 +964,6 @@
     "value": 390,
     "fr": "repas végétalien[s]",
     "en": "vegan meal[s]",
-    "de": "vegane Mahlzeiten",
     "es": "Comida vegana"
   },
   "repasavecdupoissonblanc": {
@@ -1109,7 +971,6 @@
     "value": 1980,
     "fr": "repas avec du poisson blanc",
     "en": "meal[s] with white fish",
-    "de": "Mahlzeit mit weißem Fisch",
     "es": "Comida con pescado blanco"
   },
   "repasavecdupoissongras": {
@@ -1117,7 +978,6 @@
     "value": 1110,
     "fr": "repas avec du poisson gras",
     "en": "meal[s] with fatty fish",
-    "de": "Mahlzeit mit fettem Fisch",
     "es": "Comida con pescado graso"
   },
   "repasavecdupoulet": {
@@ -1125,7 +985,6 @@
     "value": 1580,
     "fr": "repas avec du poulet",
     "en": "meal[s] with chicken",
-    "de": "Mahlzeit mit Hähnchen",
     "es": "Comida con pollo"
   },
   "jeans": {
@@ -1133,7 +992,6 @@
     "value": 25088.72880618721,
     "fr": "jeans",
     "en": "jeans",
-    "de": "Jeans",
     "es": "Jeans"
   },
   "polo": {
@@ -1141,7 +999,6 @@
     "value": 10163.529075648208,
     "fr": "polo[s]",
     "en": "polo[s]",
-    "de": "Polohemden",
     "es": "Polos"
   },
   "tshirtencoton": {
@@ -1149,7 +1006,6 @@
     "value": 6433.790554863734,
     "fr": "t-shirt[s] en coton",
     "en": "t-shirt[s] cotton",
-    "de": "T-Shirts Baumwolle",
     "es": "Camisetas de algodón"
   },
   "tshirtenpolyester": {
@@ -1157,7 +1013,6 @@
     "value": 6211.492878123854,
     "fr": "t-shirt[s] en polyester",
     "en": "t-shirt[s] polyester",
-    "de": "T-Shirts Polyester",
     "es": "Camisetas de poliéster"
   },
   "sweatencoton": {
@@ -1165,7 +1020,6 @@
     "value": 32492.781078475018,
     "fr": "sweat[s] en coton",
     "en": "sweatshirt[s] cotton",
-    "de": "Sweatshirts Baumwolle",
     "es": "Sudaderas de algodón"
   },
   "chemiseencoton": {
@@ -1173,7 +1027,6 @@
     "value": 13234.66182713826,
     "fr": "chemise[s] en coton",
     "en": "shirt[s] cotton",
-    "de": "Hemden Baumwolle",
     "es": "Camisas de algodón"
   },
   "chemiseenviscose": {
@@ -1181,7 +1034,6 @@
     "value": 12139.796272777625,
     "fr": "chemise[s] en viscose",
     "en": "shirt[s] viscose",
-    "de": "Hemden Viskose",
     "es": "Camisas de viscosa"
   },
   "chaussuresencuir": {
@@ -1189,7 +1041,6 @@
     "value": 14954.494546022259,
     "fr": "paire[s] de chaussures en cuir",
     "en": "pair[s] of leather shoes",
-    "de": "Paar Lederschuhe",
     "es": "Par de zapatos de cuero"
   },
   "chaussuresentissu": {
@@ -1197,7 +1048,6 @@
     "value": 18519.8842675649,
     "fr": "paire[s] de chaussures en tissu",
     "en": "pair[s] of fabric shoes",
-    "de": "Paar Stoffschuhe",
     "es": "Par de zapatos de tela"
   },
   "chaussuresdesport": {
@@ -1205,7 +1055,6 @@
     "value": 20125.551283507102,
     "fr": "paire[s] de chaussures de sport",
     "en": "pair[s] of sports shoes",
-    "de": "Paar Sportschuhe",
     "es": "Par de zapatos deportivos"
   },
   "robeencoton": {
@@ -1213,7 +1062,6 @@
     "value": 56907.365827855545,
     "fr": "robe[s] en coton",
     "en": "dress[es] cotton",
-    "de": "Kleider Baumwolle",
     "es": "Vestidos de algodón"
   },
   "robeenpolyester": {
@@ -1221,7 +1069,6 @@
     "value": 58257.20551873938,
     "fr": "robe[s] en polyester",
     "en": "dress[es] polyester",
-    "de": "Kleider Polyester",
     "es": "Vestidos de poliéster"
   },
   "robeenviscose": {
@@ -1229,7 +1076,6 @@
     "value": 52481.52206560145,
     "fr": "robe[s] en viscose",
     "en": "dress[es] viscose",
-    "de": "Kleider Viskose",
     "es": "Vestidos de viscosa"
   },
   "pullenlaine": {
@@ -1237,7 +1083,6 @@
     "value": 56695.456137691894,
     "fr": "pull[s] en laine",
     "en": "sweater[s] wool",
-    "de": "Pullover Wolle",
     "es": "Jerséis de lana"
   },
   "pullenacrylique": {
@@ -1245,7 +1090,6 @@
     "value": 28968.38102563544,
     "fr": "pull[s] en acrylique",
     "en": "sweater[s] acrylic",
-    "de": "Pullover Acryl",
     "es": "Jerséis de acrílico"
   },
   "pullencotonrecycle": {
@@ -1253,7 +1097,6 @@
     "value": 13192.78107847502,
     "fr": "pull[s] en coton recyclé",
     "en": "sweater[s] recycled cotton",
-    "de": "Pullover recycelte Baumwolle",
     "es": "Jerséis de algodón reciclado"
   },
   "manteau": {
@@ -1261,7 +1104,6 @@
     "value": 101420.51607966855,
     "fr": "manteau[x]",
     "en": "coat[s]",
-    "de": "Mäntel",
     "es": "Abrigos"
   },
   "vesteimpermeable": {
@@ -1269,7 +1111,6 @@
     "value": 41147.15954637288,
     "fr": "veste[s] imperméable[s]",
     "en": "waterproof jacket[s]",
-    "de": "wasserdichte Jacken",
     "es": "Chaquetas impermeables"
   },
   "vestesimilicuir": {
@@ -1277,7 +1118,6 @@
     "value": 26825.820363170224,
     "fr": "veste[s] simili-cuir",
     "en": "faux leather jacket[s]",
-    "de": "Kunstlederjacken",
     "es": "Chaquetas de cuero sintético"
   },
   "canapeconvertible": {
@@ -1285,7 +1125,6 @@
     "value": 197500,
     "fr": "canapé[s] convertible[s]",
     "en": "sofa[s] convertible",
-    "de": "Sofa[s] ausziehbar",
     "es": "Sofá[s] convertibles"
   },
   "chaiseenbois": {
@@ -1293,7 +1132,6 @@
     "value": 18630,
     "fr": "chaise[s] en bois",
     "en": "wooden chair[s]",
-    "de": "Holzstühle",
     "es": "Sillas de madera"
   },
   "tableenbois": {
@@ -1301,7 +1139,6 @@
     "value": 80220,
     "fr": "table[s] en bois",
     "en": "wooden table[s]",
-    "de": "Holztische",
     "es": "Mesas de madera"
   },
   "canapetextile": {
@@ -1309,7 +1146,6 @@
     "value": 179100,
     "fr": "canapé[s] en textile",
     "en": "fabric sofa[s]",
-    "de": "Textilsofas",
     "es": "Sofás de tela"
   },
   "armoire": {
@@ -1317,7 +1153,6 @@
     "value": 906880,
     "fr": "armoire",
     "en": "wardrobe",
-    "de": "Kleiderschrank",
     "es": "Armario"
   },
   "lit": {
@@ -1325,7 +1160,6 @@
     "value": 443810.00000000006,
     "fr": "lit",
     "en": "bed",
-    "de": "Bett",
     "es": "Cama)"
   },
   "bouilloire": {
@@ -1333,7 +1167,6 @@
     "value": 40884.03605825422,
     "fr": "bouilloire[s]",
     "en": "kettle[s]",
-    "de": "Wasserkocher",
     "es": "Hervidor de agua"
   },
   "cafetieredosette": {
@@ -1341,7 +1174,6 @@
     "value": 251003.5526905852,
     "fr": "cafetière[s] à dosettes",
     "en": "coffee maker[s] pods",
-    "de": "Kaffeemaschinen Kapsel",
     "es": "Cafetera[s] de cápsulas"
   },
   "cafetierefiltre": {
@@ -1349,7 +1181,6 @@
     "value": 197698.1743339172,
     "fr": "cafetière[s] filtre",
     "en": "coffee maker[s] filter",
-    "de": "Kaffeemaschinen Filter",
     "es": "Cafetera[s] de filtro"
   },
   "cafetiereexpresso": {
@@ -1357,7 +1188,6 @@
     "value": 211771.0842705374,
     "fr": "cafetière[s] expresso",
     "en": "coffee maker[s] espresso",
-    "de": "Kaffeemaschinen Espresso",
     "es": "Cafetera[s] express"
   },
   "fourelectrique": {
@@ -1365,7 +1195,6 @@
     "value": 263064.69996,
     "fr": "four électrique",
     "en": "electric oven",
-    "de": "Ofen elektrisch",
     "es": "Horno eléctrico"
   },
   "lavevaisselle": {
@@ -1373,7 +1202,6 @@
     "value": 467998.2177292116,
     "fr": "lave-vaisselle",
     "en": "dishwasher",
-    "de": "Geschirrspüler",
     "es": "Lavavajillas"
   },
   "lavelinge": {
@@ -1381,7 +1209,6 @@
     "value": 510257.25834098266,
     "fr": "lave-linge",
     "en": "washing machine",
-    "de": "Waschmaschine",
     "es": "Lavadora"
   },
   "refrigirateur": {
@@ -1389,23 +1216,20 @@
     "value": 325460.71642401704,
     "fr": "réfrigérateur",
     "en": "refrigerator",
-    "de": "Kühlschrank",
     "es": "Refrigerador"
   },
   "aspirateur": {
     "category": 6,
     "value": 47310,
-    "fr": "aspirateur",
-    "en": "vacuum cleaner",
-    "de": "Staubsauger",
-    "es": "Aspiradora"
+    "fr": "aspirateur[s]",
+    "en": "vacuum cleaner[s]",
+    "es": "Aspiradora[s]"
   },
   "climatiseur": {
     "category": 6,
     "value": 413881.2884443126,
     "fr": "climatiseur[s]",
     "en": "air conditioner[s]",
-    "de": "Klimaanlagen",
     "es": "Aires acondicionados"
   },
   "eaudurobinet": {
@@ -1413,7 +1237,6 @@
     "value": 0.132,
     "fr": "Litre[s] d';eau du robinet",
     "en": "Liter[s] of ;tap water",
-    "de": "Liter ;Leitungswasser",
     "es": "Litro[s] de ;agua del grifo"
   },
   "eauenbouteille": {
@@ -1421,7 +1244,6 @@
     "value": 267.07461992000003,
     "fr": "Litre[s] d';eau en bouteille",
     "en": "Liter[s] of ;bottled water",
-    "de": "Liter ;Flaschenwasser",
     "es": "Litro[s] de ;agua embotellada"
   },
   "soda": {
@@ -1429,7 +1251,6 @@
     "value": 511.22505490000003,
     "fr": "Litre[s] de ;soda",
     "en": "Liter[s] of ;soda",
-    "de": "Liter ;Limonade",
     "es": "Litro[s] de ;refresco"
   },
   "biere": {
@@ -1437,7 +1258,6 @@
     "value": 1119.3685269,
     "fr": "Litre[s] de ;bière",
     "en": "Liter[s] of ;beer",
-    "de": "Liter ;Bier",
     "es": "Litro[s] de ;cerveza"
   },
   "vin": {
@@ -1445,7 +1265,6 @@
     "value": 1190.3542188999998,
     "fr": "Litre[s] de ;vin",
     "en": "Liter[s] of ;wine",
-    "de": "Liter ;Wein",
     "es": "Litro[s] de ;vino"
   },
   "laitdevache": {
@@ -1453,7 +1272,6 @@
     "value": 1182.1407829999996,
     "fr": "Litre[s] de ;lait de vache",
     "en": "Liter[s] of ;cow milk",
-    "de": "Liter ;Kuhmilch",
     "es": "Litro[s] de ;leche de vaca"
   },
   "soja": {
@@ -1461,7 +1279,6 @@
     "value": 445.649559,
     "fr": "Litre[s] de ;boisson au soja",
     "en": "Liter[s] of ;soy milk",
-    "de": "Liter ;Sojamilch",
     "es": "Litro[s] de ;leche de soja"
   },
   "the": {
@@ -1469,7 +1286,6 @@
     "value": 39.161353500000004,
     "fr": "Litre[s] de ;thé",
     "en": "Liter[s] of ;tea",
-    "de": "Liter ;Tee",
     "es": "Litro[s] de ;té"
   },
   "cafe": {
@@ -1477,7 +1293,6 @@
     "value": 594.22464326,
     "fr": "Litre[s] de ;café",
     "en": "Liter[s] of ;coffee",
-    "de": "Liter ;Kaffee",
     "es": "Litro[s] de ;café"
   }
 }
