@@ -97,7 +97,7 @@
   },
   {
     "id": 2,
-    "empreinteId": 42760,
+    "empreinteId": 43256,
     "name": "TGV",
     "prefix": "km en ",
     "synonyms": [
@@ -133,7 +133,7 @@
   },
   {
     "id": 3,
-    "empreinteId": 42756,
+    "empreinteId": 43272,
     "name": "Intercités",
     "prefix": "km en ",
     "synonyms": [
@@ -149,7 +149,7 @@
     "ecv": [
       {
         "id": 5,
-        "value": 0.00318
+        "value": 0.0017
       },
       {
         "id": 6,
@@ -369,7 +369,7 @@
   },
   {
     "id": 10,
-    "empreinteId": 42761,
+    "empreinteId": 43257,
     "name": "Tramway",
     "prefix": "km en ",
     "synonyms": [
@@ -404,7 +404,7 @@
   },
   {
     "id": 11,
-    "empreinteId": 42757,
+    "empreinteId": 43253,
     "name": "Métro",
     "prefix": "km en ",
     "synonyms": [
@@ -507,7 +507,7 @@
   },
   {
     "id": 14,
-    "empreinteId": 42758,
+    "empreinteId": 43254,
     "name": "RER ou Transilien",
     "prefix": "km en ",
     "synonyms": [
@@ -544,7 +544,7 @@
   },
   {
     "id": 15,
-    "empreinteId": 42759,
+    "empreinteId": 43255,
     "name": "TER",
     "prefix": "km en ",
     "synonyms": [
