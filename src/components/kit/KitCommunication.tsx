@@ -113,6 +113,27 @@ const KitCommunication = () => {
           </div>
         </Card>
       </Block>
+      <Block>
+        <Card className={outilStyles.card}>
+          <div className={classNames(outilStyles.image, styles.image)}>
+            <Image src='/images/banner-kit-quiz.png' width={748} height={180} alt='' />
+          </div>
+          <div className={outilStyles.content}>
+            <h2>Kit de com’ pour le Quiz carbone</h2>
+            <span>
+              Afin de vous faciliter la tâche, nous avons concocté des visuels prêts à l’emploi pour communiquer autour
+              du Quiz carbone.
+            </span>
+            <span>
+              Le kit inclut des exemples de posts pour les réseaux sociaux, ainsi que des visuels personnalisables avec
+              votre logo, ou non, à différents formats (horizontal, carré, vertical, bannière email).{' '}
+            </span>
+          </div>
+          <div className={outilStyles.link}>
+            <Download name='kit' customHref='/kit/quiz.zip' customLabel='Télécharger le kit (.zip)' />
+          </div>
+        </Card>
+      </Block>
     </>
   )
 }
