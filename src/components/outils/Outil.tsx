@@ -45,9 +45,8 @@ const Outil = ({
           <Examples
             title='Exemples'
             description='Ils utilisent nos outils à la perfection.'
-            link='/doc/exemples'
-            linkLabel='Tous les exemples'
             filter={tool.title}
+            tool={tool.title}
           />
         </Suspense>
         <Suspense>

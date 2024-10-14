@@ -6,10 +6,12 @@ import ExamplesList, { ExamplesListProps } from './ExamplesList'
 
 const Examples = async ({
   filter,
+  tool,
   ...rest
 }: {
   filter: string
-} & Omit<ExamplesListProps, 'examples'>) => {
+  tool?: string
+} & Omit<ExamplesListProps, 'examples' | 'link' | 'linkLabel'>) => {
   const examples = await getExamples()
   return (
     <ExamplesList
@@ -19,6 +21,8 @@ const Examples = async ({
           links: example.links.filter((link) => link.tags.includes(filter)),
         }))
         .filter((example) => example.links.length > 0)}
+      link={tool ? `/doc/exemples?tool=${encodeURI(tool)}` : '/doc/exemples'}
+      linkLabel='Tous les exemples'
       {...rest}
     />
   )
