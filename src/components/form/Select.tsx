@@ -18,7 +18,7 @@ const Select = ({ id, label, hint, inline, padding, className, children, ...sele
       {label && (
         <label className={classNames(styles.label, { [styles.labelInline]: inline })} htmlFor={`text-select-${id}`}>
           {label}
-          {!selectProps.required && <span className={styles.notRequired}> - Facultatif</span>}
+          {!selectProps.required && <span className={styles.notRequired}> - Facultatif</span>} :
           {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
         </label>
       )}

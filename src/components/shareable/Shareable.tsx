@@ -138,12 +138,12 @@ const Shareable = ({
           </>
         )}
         <div className={secondary !== undefined ? styles.secondaryContainer : ''}>
+          {secondary && <h3 className={styles.secondaryText}>{secondary}</h3>}
           <div
             ref={secondary !== undefined ? ref : undefined}
             className={secondary !== undefined ? styles.secondaryContent : ''}>
             {children}
           </div>
-          {secondary && <div className={styles.secondaryText}>{secondary}</div>}
         </div>
         {secondary === undefined && (
           <>

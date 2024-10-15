@@ -4,7 +4,13 @@ import styles from './Logo.module.css'
 
 export default function Ademe({ small }: { small?: boolean }) {
   return (
-    <svg className={classNames(styles.logo, { [styles.small]: small })} width='181' height='213' viewBox='0 0 181 213'>
+    <svg
+      className={classNames(styles.logo, { [styles.small]: small })}
+      width='181'
+      height='213'
+      viewBox='0 0 181 213'
+      role='img'
+      aria-label='ADEME'>
       <path d='M180.35 212.6H0V0H180.35V212.6Z' fill='#004899' />
       <path d='M176.33 4.00977H4.00977V208.59H176.33V4.00977Z' fill='white' />
       <path

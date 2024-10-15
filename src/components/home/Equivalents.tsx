@@ -41,6 +41,7 @@ const Equivalents = () => {
         <HiddenLabel htmlFor='input-search'>Rechercher</HiddenLabel>
         <Input
           id='search'
+          title='Rechercher'
           placeholder='Rechercher'
           value={search}
           onChange={(e) => {

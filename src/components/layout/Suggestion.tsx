@@ -16,8 +16,8 @@ const Suggestion = ({
       <div className='main-container'>
         <div className={styles.card}>
           <div>
-            <b className='title-h6'>Un avis, une suggestion ?</b>
-            <div>Vos retours sont précieux pour améliorer le site Impact CO₂.</div>
+            <h2 className='title-h6'>Un avis, une suggestion ?</h2>
+            <p>Vos retours sont précieux pour améliorer le site Impact CO₂.</p>
           </div>
           <Link
             asButton

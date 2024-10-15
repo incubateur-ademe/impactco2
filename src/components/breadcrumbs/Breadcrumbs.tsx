@@ -1,23 +1,25 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Link from 'components/base/buttons/Link'
 import ArrowRightIcon from 'components/base/icons/arrow-right'
 import styles from './Breadcrumbs.module.css'
 
 const Breadcrumbs = ({ links, current }: { links: { label: string; link: string }[]; current: string }) => {
   return (
-    <div className='main-container'>
-      <div className={styles.container}>
+    <nav role='navigation' aria-label='Breadcrumb' className='main-container'>
+      <ol className={styles.container}>
         {links.map(({ label, link }) => (
-          <Fragment key={label}>
+          <li key={label} className={styles.li}>
             <Link className={styles.link} href={link}>
               {label}
             </Link>
             <ArrowRightIcon />
-          </Fragment>
+          </li>
         ))}
-        <div className={styles.current}>{current}</div>
-      </div>
-    </div>
+        <li className={styles.current} aria-current='page'>
+          {current}
+        </li>
+      </ol>
+    </nav>
   )
 }
 

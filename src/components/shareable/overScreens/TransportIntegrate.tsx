@@ -137,7 +137,8 @@ const TransportIntegrate = () => {
               }
             }}
             label={tTransport('distance')}
-            data-testid='transport-integration-distance-checkbox'>
+            data-testid='transport-integration-distance-checkbox'
+            id='transport-integration-distance-checkbox'>
             <DefaultButton
               name='tab'
               main={tabs.length === 1 ? tabs[0] === 'distance' : defaultTab === 'distance'}
@@ -146,6 +147,7 @@ const TransportIntegrate = () => {
             />
           </CheckboxInput>
           <CheckboxInput
+            id='transport-integration-itineraire-checkbox'
             checked={tabs.includes(ITINERAIRE)}
             setChecked={(checked) => {
               if (checked) {
@@ -205,7 +207,8 @@ const TransportIntegrate = () => {
               }
             }}
             label={tTransport('list')}
-            data-testid='transport-integration-list-checkbox'>
+            data-testid='transport-integration-list-checkbox'
+            id='transport-integration-list-checkbox'>
             <DefaultButton
               name='mode'
               main={comparisonModes.length === 1 ? comparisonModes[0] === 'list' : defaultMode === 'list'}
@@ -214,6 +217,7 @@ const TransportIntegrate = () => {
             />
           </CheckboxInput>
           <CheckboxInput
+            id='transport-integration-comparison-checkbox'
             checked={comparisonModes.includes('comparison')}
             setChecked={(checked) => {
               if (checked) {
