@@ -26,7 +26,7 @@ const IframeConnect = ({ src, title }: { src?: string; title: string }) => {
     <>
       {!ready && (
         <div className={styles.loading}>
-          Chargement du formulaire en cours <LoadingIcon />
+          <p>Chargement du formulaire en cours</p> <LoadingIcon />
         </div>
       )}
       <iframe ref={ref} id='iframeUAT' title={title} className={ready ? styles.iframe : styles.hidden} src={src} />

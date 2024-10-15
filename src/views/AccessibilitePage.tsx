@@ -57,15 +57,21 @@ const AccessibilitePage = () => {
       <p>Les contenus listés ci-dessous ne sont pas accessibles pour les raisons suivantes.</p>
 
       <div>
-        <strong>Non-conformité</strong>
+        <h3>
+          <strong>Non-conformité</strong>
+        </h3>
         <p>Néant</p>
       </div>
       <div>
-        <strong>Dérogations pour charge disproportionnée</strong>
+        <h3>
+          <strong>Dérogations pour charge disproportionnée</strong>
+        </h3>
         <p>Néant</p>
       </div>
       <div>
-        <strong>Contenus non soumis à l’obligation d’accessibilité</strong>
+        <h3>
+          <strong>Contenus non soumis à l’obligation d’accessibilité</strong>
+        </h3>
         <p>Néant</p>
       </div>
 

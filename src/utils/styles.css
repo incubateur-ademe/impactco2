@@ -222,6 +222,11 @@ option {
   color: #383838;
 }
 
+input::placeholder {
+  color: var(--neutral-50);
+  opacity: 1;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

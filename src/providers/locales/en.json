@@ -225,6 +225,7 @@
     "title-bis-1": "It's",
     "title-bis-2": "as much emisssion as fabricating, consuming or travelling...",
     "detail": " See more",
+    "number-of": "Number of",
     "co2-unit": "kg of CO₂",
     "generate": "Generate other equivalents",
     "modify": "Change my equivalents",
@@ -232,6 +233,7 @@
     "overscreen": {
       "search": "Search an object...",
       "back": "Go back",
+      "back-title": "Validate the selection and return to the comparator",
       "equivalents": "equivalents",
       "no-result-1": "No result with your research.",
       "no-result-2": "You can try with other words or",

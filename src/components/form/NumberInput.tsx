@@ -48,6 +48,7 @@ const NumberInput = ({
     <>
       {label && <HiddenLabel htmlFor={`input-${id}`}>{label}</HiddenLabel>}
       <Input
+        title={label}
         id={id}
         value={internalValue}
         onChange={(event) => setInternalValue(event.target.value)}

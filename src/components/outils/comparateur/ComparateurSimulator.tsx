@@ -32,7 +32,7 @@ const ComparateurSimulator = () => {
             id='base-value'
             value={baseValue}
             setValue={setBaseValue}
-            label={comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue) : t('co2-unit')}
+            label={`${t('number-of')} ${comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue) : t('co2-unit')}`}
             unit={
               comparedEquivalent ? (
                 <>
@@ -50,15 +50,15 @@ const ComparateurSimulator = () => {
           />
         </div>
         {comparedEquivalent ? (
-          <div className={styles.description}>
+          <p className={styles.description}>
             {t('title-bis-1')}{' '}
             <span className={styles.descriptionValue} data-testid='compared-equivalent-value'>
               <LocalNumber number={value} /> {unit} CO₂e
             </span>
             , {t('title-bis-2')}
-          </div>
+          </p>
         ) : (
-          t('title')
+          <p>{t('title')}</p>
         )}
         {comparedEquivalent && (
           <>
@@ -67,8 +67,13 @@ const ComparateurSimulator = () => {
               className={styles.equivalent}
               target='_blank'
               rel='noopener noreferrer'
-              data-testid='compared-equivalent-link'>
-              <EquivalentIcon height={2.5} equivalent={comparedEquivalent} />
+              data-testid='compared-equivalent-link'
+              title={`${getName(language, comparedEquivalent, true, baseValue)} - Nouvelle fenêtre`}>
+              <EquivalentIcon
+                height={2.5}
+                equivalent={comparedEquivalent}
+                alt={getName(language, comparedEquivalent, true, baseValue)}
+              />
               <LinkIcon />
             </IframeableLink>
             <IframeableLink

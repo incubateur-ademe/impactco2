@@ -1,0 +1,20 @@
+.publicode {
+  margin-bottom: 5rem;
+
+  a {
+    color: var(--primary-60);
+
+    &:hover {
+      color: var(--primary-70);
+    }
+  }
+
+
+  :global(#documentation-rule-explanation) {
+    padding: 5rem;
+
+    a[name="variations"] {
+      color: var(--critical-80) !important;
+    }
+  }
+}

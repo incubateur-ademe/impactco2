@@ -6,6 +6,8 @@ export default function Logo({ small }: { small?: boolean }) {
   return (
     <svg
       className={classNames(styles.smallLogo, { [styles.small]: small })}
+      aria-label='Impact CO2'
+      role='img'
       xmlns='http://www.w3.org/2000/svg'
       width='124'
       height='48'

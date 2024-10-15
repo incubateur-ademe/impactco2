@@ -63,14 +63,14 @@
   transform: translateX(-50%) translateY(-50%) !important;
   border-radius: 50%;
   background-color: var(--neutral-00) !important;
-  color: var(--primary-40) !important;
+  color: var(--primary-60) !important;
   position: absolute !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   height: 1.25em !important;
   width: 1.25em !important;
-  border: 2px solid var(--primary-40) !important;
+  border: 2px solid var(--primary-60) !important;
 
   svg {
     width: 0.75em !important;
