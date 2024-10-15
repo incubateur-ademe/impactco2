@@ -64,7 +64,14 @@ const ColumnEquivalent = ({
               setToDisplay={setToDisplay}
             />
           )}
-          <Disclaimer language={language} comparisons={comparisons} unit={unit} value={value} column />
+          <Disclaimer
+            language={language}
+            comparisons={comparisons}
+            unit={unit}
+            value={value}
+            column
+            id={animated ? 'animated' : 'static'}
+          />
           <ul className={isAnimated ? styles.animatedComparisonsColumn : ''}>
             {comparisons.map((comparison, index) => (
               <li

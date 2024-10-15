@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useState } from 'react'
+import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -8,15 +8,18 @@ import InformationFillIcon from 'components/base/icons/information-fill'
 import CheckboxInput from 'components/form/CheckboxInput'
 import styles from './Checkbox.module.css'
 
-const Checkbox = ({
-  equivalent,
-  equivalents,
-  setEquivalents,
-}: {
-  equivalent: ComputedEquivalent
-  equivalents: string[]
-  setEquivalents: (value: string[]) => void
-}) => {
+const Checkbox = (
+  {
+    equivalent,
+    equivalents,
+    setEquivalents,
+  }: {
+    equivalent: ComputedEquivalent
+    equivalents: string[]
+    setEquivalents: (value: string[]) => void
+  },
+  ref: ForwardedRef<HTMLInputElement>
+) => {
   const { language } = useParamContext()
   const t = useTranslations('comparateur.overscreen')
   const [interacted, setInteracted] = useState(false)
@@ -36,7 +39,9 @@ const Checkbox = ({
 
   return (
     <CheckboxInput
+      ref={ref}
       key={equivalent.slug}
+      id={equivalent.slug}
       className={interacted && equivalents.length > 7 ? styles.warningEquivalent : styles.equivalent}
       checked={equivalents.includes(equivalent.slug)}
       setChecked={(checked) => {
@@ -66,4 +71,4 @@ const Checkbox = ({
   )
 }
 
-export default Checkbox
+export default forwardRef(Checkbox)

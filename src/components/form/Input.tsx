@@ -1,50 +1,77 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { InputHTMLAttributes, ReactNode, useEffect, useRef, useState } from 'react'
+import React, {
+  ForwardedRef,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react'
 import { ZodError } from 'zod'
 import ErrorIcon from 'components/base/icons/error'
 import styles from './Input.module.css'
 import useError from './errors'
 
-const Input = ({
-  id,
-  label,
-  hint,
-  errors,
-  className,
-  icon,
-  unit,
-  secondaryUnitStyle,
-  padding,
-  onUnitClick,
-  extraWidth,
-  ...inputProps
-}: InputHTMLAttributes<HTMLInputElement> & {
-  id: string
-  label?: string
-  hint?: string
-  icon?: ReactNode
-  errors?: ZodError | null
-  unit?: ReactNode
-  secondaryUnitStyle?: boolean
-  padding?: 'sm' | 'lg'
-  onUnitClick?: () => void
-  extraWidth?: string
-}) => {
+const Input = (
+  {
+    id,
+    label,
+    hint,
+    errors,
+    className,
+    icon,
+    iconAria,
+    onIconClick,
+    unit,
+    unitTitle,
+    secondaryUnitStyle,
+    padding,
+    onUnitClick,
+    extraWidth,
+    ...inputProps
+  }: InputHTMLAttributes<HTMLInputElement> & {
+    id: string
+    label?: string
+    hint?: string
+    icon?: ReactNode
+    iconAria?: string
+    onIconClick?: () => void
+    errors?: ZodError | null
+    unit?: ReactNode
+    unitTitle?: string
+    secondaryUnitStyle?: boolean
+    padding?: 'sm' | 'lg'
+    onUnitClick?: () => void
+    extraWidth?: string
+  },
+  ref: ForwardedRef<HTMLInputElement>
+) => {
   const error = useError(id, errors)
-  const ref = useRef<HTMLInputElement>(null)
+  const internalRef = useRef<HTMLInputElement>(null)
   const unitRef = useRef<HTMLButtonElement>(null)
   const [unitDim, setUnitDim] = useState<{ width: number; height: number } | undefined>(undefined)
 
+  // @ts-expect-error: Dans la doc...
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      if (internalRef.current) {
+        internalRef.current.focus()
+      }
+    },
+  }))
+
   useEffect(() => {
-    if (ref.current) {
-      const blur = () => ref.current?.blur()
-      const currentRef = ref.current
+    if (internalRef.current) {
+      const blur = () => internalRef.current?.blur()
+      const currentRef = internalRef.current
       currentRef.addEventListener('wheel', blur, { passive: true })
       return () => currentRef.removeEventListener('wheel', blur)
     }
-  }, [ref])
+  }, [internalRef])
 
   useEffect(() => {
     if (unit) {
@@ -82,8 +109,9 @@ const Input = ({
             [styles.large]: padding === 'lg',
             [styles.inputError]: !!error,
           })}
+          title={inputProps.placeholder}
           {...inputProps}
-          ref={ref}
+          ref={internalRef}
           id={`input-${id}`}
           data-testid={`input-${id}`}
           style={{
@@ -91,11 +119,16 @@ const Input = ({
             paddingRight: unitDim ? `calc(${unitDim.width}px + 1.5rem)` : '1rem',
           }}
         />
-        {icon && <div className={styles.icon}>{icon}</div>}
+        {icon && (
+          <button className={styles.icon} aria-label={iconAria} onClick={onIconClick}>
+            {icon}
+          </button>
+        )}
         {unit && (
           <button
             data-testid={`input-${id}-unit`}
             disabled={!onUnitClick}
+            title={unitTitle}
             className={classNames(secondaryUnitStyle ? styles.secondaryUnit : styles.unit, {
               [styles.clickeable]: onUnitClick,
             })}
@@ -115,4 +148,4 @@ const Input = ({
   )
 }
 
-export default Input
+export default forwardRef(Input)

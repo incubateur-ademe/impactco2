@@ -1,12 +1,13 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
+import SearchIcon from 'components/base/icons/search'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import Category from './Category'
@@ -14,6 +15,8 @@ import Equivalents from './Equivalents'
 import styles from './EquivalentsOverscreen.module.css'
 
 const EquivalentsOverscreen = () => {
+  const equivalentRef = useRef<HTMLInputElement>(null)
+  const noResultRef = useRef<HTMLParagraphElement>(null)
   const {
     setOverscreen,
     comparateur: { equivalents, setEquivalents },
@@ -40,6 +43,15 @@ const EquivalentsOverscreen = () => {
           value={search}
           padding='lg'
           onChange={(e) => setSearch(e.target.value)}
+          icon={<SearchIcon />}
+          iconAria='Afficher les résultats'
+          onIconClick={() => {
+            if (noResultRef.current) {
+              noResultRef.current.focus()
+            } else if (equivalentRef.current) {
+              equivalentRef.current.focus()
+            }
+          }}
         />
         <Button
           size='sm'
@@ -55,12 +67,13 @@ const EquivalentsOverscreen = () => {
         {search ? (
           results.length > 0 ? (
             <Equivalents
+              firstRef={equivalentRef}
               equivalents={tempEquivalents}
               equivalentsToDisplay={results}
               setEquivalents={setTempEquivalents}
             />
           ) : (
-            <div className={styles.noResult}>
+            <p className={styles.noResult} ref={noResultRef} tabIndex={-1}>
               {t('no-result-1')}
               <br />
               {t('no-result-2')}{' '}
@@ -72,7 +85,7 @@ const EquivalentsOverscreen = () => {
                 {t('no-result-3')}
               </Button>
               .
-            </div>
+            </p>
           )
         ) : (
           categories
@@ -89,7 +102,7 @@ const EquivalentsOverscreen = () => {
         )}
       </ul>
       <div className={styles.footer}>
-        <div>
+        <div role='status'>
           <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>
             {tempEquivalents.length}
           </span>
@@ -97,6 +110,7 @@ const EquivalentsOverscreen = () => {
         </div>
         <div>
           <Button
+            title={t('back-title')}
             onClick={() => {
               setEquivalents(tempEquivalents)
               setOverscreen('comparateur', '')

@@ -57,10 +57,12 @@
   "clipboard": {
     "copier": "Copy",
     "copie": "Copied",
+    "copied": "Copia del código realizado",
     "information-1": "This code anchor allows you to display the simulator inside any page of your website.",
     "information-2": "The simulator will be automatically updated with any new features."
   },
   "overscreen": {
+    "equivalent": "Add new equivalents",
     "disclaimer": "Results are based on French carbon data sets, by ",
     "default-true": "displayed by default",
     "default-false": "show by default",
@@ -70,6 +72,7 @@
     "integrate": "Integrate",
     "preview": "Preview the integration",
     "next-actions": "Explore further",
+    "comparison": "Change the mode of transport compared",
     "understand": "Understanding data",
     "download": "Download",
     "m2": {
@@ -150,7 +153,8 @@
     }
   },
   "modal": {
-    "close": "Close"
+    "close": "Close",
+    "close-title": "Close and go back to the simulator"
   },
   "transport": {
     "sorry": "Sorry !",
@@ -225,13 +229,16 @@
     "title-bis-1": "It's",
     "title-bis-2": "as much emisssion as fabricating, consuming or travelling...",
     "detail": " See more",
+    "number-of": "Number of",
     "co2-unit": "kg of CO₂",
+    "unit-title": "Remove the {equivalent} filter and return to the comparator",
     "generate": "Generate other equivalents",
     "modify": "Change my equivalents",
     "add": "Add an equivalent",
     "overscreen": {
       "search": "Search an object...",
       "back": "Go back",
+      "back-title": "Validate the selection and return to the comparator",
       "equivalents": "equivalents",
       "no-result-1": "No result with your research.",
       "no-result-2": "You can try with other words or",

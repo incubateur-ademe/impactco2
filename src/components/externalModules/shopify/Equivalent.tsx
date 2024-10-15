@@ -71,7 +71,13 @@ const Equivalent = ({
                 setToDisplay={setToDisplay}
               />
             )}
-            <Disclaimer language={language} comparisons={comparisons} unit={unit} value={value} />
+            <Disclaimer
+              language={language}
+              comparisons={comparisons}
+              unit={unit}
+              value={value}
+              id={animated ? 'animated' : 'static'}
+            />
             <ul className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
               {comparisons.map((comparison, index) => (
                 <li

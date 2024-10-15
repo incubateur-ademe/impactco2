@@ -66,3 +66,8 @@
     width: 1.5rem;
   }
 }
+
+.hiddenText {
+  left: -99999px;
+  position: absolute;
+}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
@@ -11,6 +11,7 @@ import styles from './Tiles.module.css'
 import { getRandomEquivalents } from './random'
 
 const Tiles = () => {
+  const firstRef = useRef<HTMLLIElement>(null)
   const t = useTranslations('comparateur')
   const {
     setOverscreen,
@@ -38,7 +39,7 @@ const Tiles = () => {
     <>
       <ul className={styles.tiles}>
         {equivalents.map((equivalent, index) => (
-          <li key={equivalent} className={styles.tileContainer}>
+          <li key={equivalent} className={styles.tileContainer} tabIndex={-1} ref={index === 0 ? firstRef : undefined}>
             <div className={styles.background} />
             <div
               className={typeof generation === 'number' && generation <= index ? styles.disapearingTile : styles.tile}>
@@ -60,7 +61,12 @@ const Tiles = () => {
             setGeneration(0)
             setTimeout(() => {
               setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, equivalents.length))
-              setTimeout(() => setGeneration(1), 100)
+              setTimeout(() => {
+                setGeneration(1)
+                if (firstRef.current) {
+                  firstRef.current.focus()
+                }
+              }, 100)
             }, 200)
           }}>
           <MagicWandIcon />

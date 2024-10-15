@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
@@ -17,6 +17,7 @@ import simulatorStyles from '../Simulator.module.css'
 import styles from './ComparateurSimulator.module.css'
 
 const ComparateurSimulator = () => {
+  const inputRef = useRef<HTMLInputElement>(null)
   const {
     language,
     comparateur: { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent },
@@ -24,15 +25,24 @@ const ComparateurSimulator = () => {
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
   const t = useTranslations('comparateur')
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+    window.title
+  }, [comparedEquivalent, inputRef])
+
   return (
     <div>
       <div className={simulatorStyles.simulator}>
         <div className={classNames(styles.numberInput, { [styles.numberInputWithEquivalent]: !!comparedEquivalent })}>
           <NumberInput
+            ref={inputRef}
             id='base-value'
             value={baseValue}
             setValue={setBaseValue}
-            label={comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue) : t('co2-unit')}
+            label={`${t('number-of')} ${comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue) : t('co2-unit')}`}
             unit={
               comparedEquivalent ? (
                 <>
@@ -45,20 +55,27 @@ const ComparateurSimulator = () => {
                 t('co2-unit')
               )
             }
+            unitTitle={
+              comparedEquivalent
+                ? t('unit-title', {
+                    equivalent: getName(language, comparedEquivalent, true, baseValue, true),
+                  })
+                : undefined
+            }
             onUnitClick={comparedEquivalent ? () => setComparedEquivalent(undefined) : undefined}
             extraWidth='8rem'
           />
         </div>
         {comparedEquivalent ? (
-          <div className={styles.description}>
+          <p className={styles.description}>
             {t('title-bis-1')}{' '}
             <span className={styles.descriptionValue} data-testid='compared-equivalent-value'>
               <LocalNumber number={value} /> {unit} CO₂e
             </span>
             , {t('title-bis-2')}
-          </div>
+          </p>
         ) : (
-          t('title')
+          <p>{t('title')}</p>
         )}
         {comparedEquivalent && (
           <>
@@ -67,8 +84,13 @@ const ComparateurSimulator = () => {
               className={styles.equivalent}
               target='_blank'
               rel='noopener noreferrer'
-              data-testid='compared-equivalent-link'>
-              <EquivalentIcon height={2.5} equivalent={comparedEquivalent} />
+              data-testid='compared-equivalent-link'
+              title={`${getName(language, comparedEquivalent, true, baseValue)} - Nouvelle fenêtre`}>
+              <EquivalentIcon
+                height={2.5}
+                equivalent={comparedEquivalent}
+                alt={getName(language, comparedEquivalent, true, baseValue)}
+              />
               <LinkIcon />
             </IframeableLink>
             <IframeableLink

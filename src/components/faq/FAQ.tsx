@@ -16,19 +16,21 @@ const FAQ = ({ faq, page }: { faq: Pick<FAQType, 'title' | 'content'>; page?: st
     <li className={styles.faq}>
       <button
         className={styles.title}
+        aria-expanded={display}
+        aria-controls={`${faq.title}-content`}
         onClick={() => {
           if (!display) {
             track(page === 'Guide utilisation' ? page : 'FAQ', faq.title, page || 'FAQ')
           }
           setDisplay(!display)
         }}>
-        {faq.title}
+        <h3>{faq.title}</h3>
         <span className={classNames(styles.button, { [styles.openButton]: display })}>
           <PlusIcon />
         </span>
       </button>
       {display && (
-        <div className={styles.content}>
+        <div className={styles.content} id={`${faq.title}-content`}>
           <DynamicNotion recordMap={faq.content} />
         </div>
       )}

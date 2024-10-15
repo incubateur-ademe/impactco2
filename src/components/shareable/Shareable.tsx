@@ -64,18 +64,16 @@ const Shareable = ({
       const focusableElements = modalElement.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       )
-      const firstElement = focusableElements[0]
-      const lastElement = focusableElements[focusableElements.length - 1]
+      const firstElement = focusableElements[0] as HTMLElement
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement
 
       const handleTabKeyPress = (event: KeyboardEvent) => {
         if (event.key === 'Tab') {
           if (event.shiftKey && document.activeElement === firstElement) {
             event.preventDefault()
-            // @ts-expect-error: Focusable
             lastElement.focus()
           } else if (!event.shiftKey && document.activeElement === lastElement) {
             event.preventDefault()
-            // @ts-expect-error: Focusable
             firstElement.focus()
           }
         } else if (event.key === 'Escape') {
@@ -101,26 +99,33 @@ const Shareable = ({
           <>
             <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
             <dialog
+              role='dialog'
               ref={overscreenRef}
               tabIndex={-1}
-              aria-modal
+              aria-modal='true'
               aria-label={t(overScreenToDisplay.title)}
               className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
-              {overScreenToDisplay.title && (
+              {!overScreenToDisplay.hideTitle ? (
                 <div>
                   <div className={styles.header}>
-                    <b className='text-lg'>{t(overScreenToDisplay.title)}</b>
-                    <GhostButton icon={<CloseIcon />} iconPosition='right' onClick={onClose}>
+                    <h1 className='text-lg'>{t(overScreenToDisplay.title)}</h1>
+                    <GhostButton
+                      icon={<CloseIcon />}
+                      iconPosition='right'
+                      onClick={onClose}
+                      title={tModal('close-title')}>
                       {tModal('close')}
                     </GhostButton>
                   </div>
                   <div className={styles.separatorBothBorders} />
                 </div>
+              ) : (
+                <h1 className={styles.hiddenTitle}>{t(overScreenToDisplay.title)}</h1>
               )}
               <div className={classNames(styles.overScreenChildren, { [styles.noScroll]: !overScreenToDisplay.title })}>
                 {overScreenToDisplay.children}
               </div>
-              {overScreenToDisplay.title && (
+              {!overScreenToDisplay.hideTitle && (
                 <div>
                   <div className={styles.separatorBothBorders} />
                   <div className={styles.footer}>
@@ -128,6 +133,7 @@ const Shareable = ({
                       icon={<CloseIcon />}
                       iconPosition='right'
                       onClick={onClose}
+                      title={tModal('close-title')}
                       data-testid='cancel-button'>
                       {tModal('close')}
                     </GhostButton>
@@ -138,12 +144,12 @@ const Shareable = ({
           </>
         )}
         <div className={secondary !== undefined ? styles.secondaryContainer : ''}>
+          {secondary && <h3 className={styles.secondaryText}>{secondary}</h3>}
           <div
             ref={secondary !== undefined ? ref : undefined}
             className={secondary !== undefined ? styles.secondaryContent : ''}>
             {children}
           </div>
-          {secondary && <div className={styles.secondaryText}>{secondary}</div>}
         </div>
         {secondary === undefined && (
           <>

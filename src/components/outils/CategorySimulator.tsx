@@ -89,7 +89,7 @@ const CategorySimulator = ({
                   data-testid='category-link'
                   href={equivalent.link}
                   className={styles.link}
-                  aria-live='assertive'
+                  aria-live='polite'
                   aria-label={`${equivalent.name || getNameWithoutSuffix(params.language, equivalent)}${equivalent.carpool ? ` ${equivalent.carpool} passager` : ''} ${formatNumber(equivalent.value)} kg CO₂e`}>
                   <EquivalentIcon equivalent={equivalent} height={3} />
                   <div className={styles.content} data-testid={`category-${equivalent.slug}`}>

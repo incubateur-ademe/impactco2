@@ -35,6 +35,7 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
         {transports.map((transport) => (
           <li key={transport.slug} className={styles.list}>
             <CheckboxInput
+              id={`transport-list-${transport.slug}-checkbox`}
               reversed
               className={classNames(styles.mode, {
                 [styles.active]: modes.length !== 2 && modes.includes(transport.slug),

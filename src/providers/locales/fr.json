@@ -57,10 +57,12 @@
   "clipboard": {
     "copier": "Copier",
     "copie": "Copié",
+    "copied": "Copie du code effectué",
     "information-1": "Cette balise HTML vous permet d'afficher le simulateur à l'intérieur d'une page de votre site internet.",
     "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
   },
   "overscreen": {
+    "equivalent": "Ajouter de nouveaux équivalents",
     "disclaimer": "Résultats basés sur les données des bases carbonne Françaises de ",
     "default-true": "Affiché par défaut",
     "default-false": "Afficher par défaut",
@@ -70,6 +72,7 @@
     "integrate": "Intégrer",
     "preview": "Aperçu de l'integration",
     "next-actions": "Aller plus loin",
+    "comparison": "Changer le mode de transport comparé",
     "understand": "Comprendre les données",
     "download": "Télécharger",
     "m2": {
@@ -150,7 +153,8 @@
     }
   },
   "modal": {
-    "close": "Fermer"
+    "close": "Fermer",
+    "close-title": "Fermer et retourner au simulateur"
   },
   "transport": {
     "sorry": "Désolé !",
@@ -225,13 +229,16 @@
     "title-bis-1": "C'est",
     "title-bis-2": "soit autant d’émissions que pour fabriquer, consommer ou parcourir...",
     "detail": " Voir le détail",
+    "number-of": "Nombre de",
     "co2-unit": "kg de CO₂",
+    "unit-title": "Supprimer le filtre {equivalent} et revenir au comparateur",
     "generate": "Générer d'autres équivalents",
     "modify": "Modifier mes équivalents",
     "add": "Ajouter un équivalent",
     "overscreen": {
       "search": "Rechercher un objet, un geste...",
       "back": "Revenir au comparateur",
+      "back-title": "Valider la sélection et revenir au comparateur",
       "equivalents": "équivalents",
       "no-result-1": "Aucun résultat ne correspond à votre recherche.",
       "no-result-2": "Vous pouvez essayer d'autres termes ou",

@@ -57,10 +57,12 @@
   "clipboard": {
     "copier": "Copiar",
     "copie": "Copiado",
+    "copied": "Copia del código realizado",
     "information-1": "Esta etiqueta HTML te permite mostrar el simulador dentro de una página de tu sitio web.",
     "information-2": "El módulo se actualizará automáticamente con las últimas novedades."
   },
   "overscreen": {
+    "equivalent": "Añadir nuevos equivalentes",
     "disclaimer": "Los resultados se basan en datos de carbono de Francia, por ",
     "default-true": "Mostrar por defecto",
     "default-false": "No mostrar por defecto",
@@ -70,6 +72,7 @@
     "integrate": "Integrar",
     "preview": "Vista previa de la integración",
     "next-actions": "Siguientes acciones",
+    "comparison": "Cambiar el modo de transporte comparar",
     "understand": "Entender los datos",
     "download": "Descargar",
     "m2": {
@@ -150,7 +153,8 @@
     }
   },
   "modal": {
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "close-title": "Cerrar y volver al simulador"
   },
   "transport": {
     "sorry": "¡Lo siento!",
@@ -225,13 +229,16 @@
     "title-bis-1": "Es",
     "title-bis-2": "es decir tantas emisiones como para fabricar, consumir o recorrer...",
     "detail": " Ver el detalle",
+    "number-of": "Número de",
     "co2-unit": "kg de CO₂",
+    "unit-title": "Suprima el filtro {equivalent} y revenir al comparador",
     "generate": "Generar otros equivalentes",
     "modify": "Modificar mis equivalentes",
     "add": "Añadir un equivalente",
     "overscreen": {
       "search": "Buscar un objeto, un gesto...",
       "back": "Volver al comparador",
+      "back-title": "Validar la selección y volver al comparador",
       "equivalents": "equivalentes",
       "no-result-1": "Ningún resultado coincide con tu búsqueda.",
       "no-result-2": "Puedes probar otros términos o",

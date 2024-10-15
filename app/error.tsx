@@ -15,7 +15,7 @@ const Error = () => {
   return (
     <>
       <Header />
-      <main id='contenu'>
+      <main id='contenu' role='main' tabIndex={-1}>
         <ErrorPage />
         <Suggestion fromLabel='Erreur inattendue' simulatorName='du site' />
       </main>
