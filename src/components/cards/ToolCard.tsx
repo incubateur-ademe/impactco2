@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import Image from 'next/image'
-import React from 'react'
+import React, { ReactNode, useMemo } from 'react'
 import { track } from 'utils/matomo'
 import IframeableLink from 'components/base/IframeableLink'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
@@ -11,7 +11,7 @@ import styles from './ToolCard.module.css'
 export type ToolCardProps = {
   slug: string
   title: string
-  description: string
+  description: ReactNode
   linkLabel: string
   horizontal?: boolean
   link?: string
@@ -19,11 +19,30 @@ export type ToolCardProps = {
 }
 
 const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image }: ToolCardProps) => {
+  const isNew = useMemo(() => {
+    const news = process.env.NEXT_PUBLIC_NEWS
+    if (news) {
+      const tools = JSON.parse(news)
+      const limit = tools[slug]
+      if (limit) {
+        const now = new Date().getTime()
+        const limitTime = new Date(limit).getTime()
+        return now < limitTime
+      }
+    }
+    return false
+  }, [slug])
+
   return (
     <li
       className={classNames(styles.list, {
         [styles.horizontalList]: horizontal,
       })}>
+      {isNew && (
+        <div className={classNames(styles.tag, { [styles.horizontalTag]: horizontal })}>
+          {horizontal ? 'Nouveau !' : 'Nouvel outil !'}
+        </div>
+      )}
       <IframeableLink
         href={link || `/outils/${slug}`}
         target={link && link.startsWith('http://') ? '_blank' : undefined}

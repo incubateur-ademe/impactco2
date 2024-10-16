@@ -1,0 +1,27 @@
+.descriptionLine {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.icons {
+  position: relative;
+}
+
+.shape {
+  color: var(--success-10);
+  height: 1.625rem;
+}
+
+.check {
+  position: absolute;
+  left: 0.4625rem;
+  top: 0.075rem;
+  color: var(--success-60);
+
+  @media screen and (max-width: 29.875rem) {
+    top: 0.25rem;
+  }
+}

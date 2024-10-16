@@ -1,16 +1,55 @@
 import React from 'react'
+import CheckIcon from 'components/base/icons/check'
+import SimpleStarShapeIcon from 'components/base/icons/simple-star-shape'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
+import News from 'components/cards/News'
 import ToolCards from 'components/cards/ToolCards'
 import { devTools, quiz, smallTools, tools } from 'components/cards/tools'
 import FAQs from 'components/faq/FAQs'
 import Equivalents from 'components/home/Equivalents'
 import Block from 'components/layout/Block'
+import styles from './Outils.module.css'
 
 const Outils = () => {
   return (
     <>
       <Breadcrumbs current='Les outils' links={[{ label: 'Accueil', link: '/' }]} />
       <Block title='Les outils' as='h1' description='Trouver l’outil adapté à votre prochaine publication.' />
+      <News
+        tools={[
+          {
+            ...quiz,
+            title: 'Découvrez le quiz carbone',
+            linkLabel: 'Faire le quiz',
+            description: (
+              <>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckIcon />
+                    </div>
+                  </div>
+                  <p>10 questions pour tester ses connaissances</p>
+                </div>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckIcon />
+                    </div>
+                  </div>
+                  <p>Un nouveau format interactif pour apprendre et sensibiliser</p>
+                </div>
+              </>
+            ),
+          },
+        ]}
+      />
       <Block
         title='Outils thématiques'
         description='Notre collection de simulateurs, comparateurs et infographies thématiques.'>
