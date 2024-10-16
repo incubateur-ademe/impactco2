@@ -38,13 +38,7 @@ const QuizPage = () => {
         <QuizCards />
       </Block>
       <Suspense>
-        <Examples
-          title='Exemples'
-          description='Ils utilisent le quiz avec brio.'
-          link='/doc/exemples'
-          linkLabel='Tous les exemples'
-          filter='Quiz carbone'
-        />
+        <Examples title='Exemples' description='Ils utilisent le quiz avec brio.' filter='Quiz carbone' />
       </Suspense>
       <Suspense>
         <FAQs filter='Quiz carbone' page='Quiz carbone' />

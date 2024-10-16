@@ -41,9 +41,8 @@ const ComparateurPage = () => {
         <Examples
           title='Exemples'
           description='Ils utilisent le comparateur ou les étiquettes avec brio.'
-          link='/doc/exemples'
-          linkLabel='Tous les exemples'
           filter='Comparateur carbone'
+          tool='Comparateur carbone'
         />
       </Suspense>
       <Suspense>

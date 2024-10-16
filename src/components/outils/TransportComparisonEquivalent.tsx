@@ -12,7 +12,7 @@ import EquivalentIcon from 'components/base/EquivalentIcon'
 import GhostButton from 'components/base/GhostButton'
 import LocalNumber from 'components/base/LocalNumber'
 import NewTabIcon from 'components/base/NewTabIcon'
-import StarShapeIcon from 'components/base/icons/star-shap'
+import StarShapeIcon from 'components/base/icons/star-shape'
 import styles from './TransportComparisonEquivalent.module.css'
 
 const allEquivalents = computedEquivalents.flatMap(getEquivalentWithCarpool)

@@ -8,8 +8,8 @@ import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import LocalNumber from 'components/base/LocalNumber'
-import StarShapeCriticalIcon from 'components/base/icons/star-shap-critical'
-import StarShapeSuccessIcon from 'components/base/icons/star-shap-success'
+import StarShapeCriticalIcon from 'components/base/icons/star-shape-critical'
+import StarShapeSuccessIcon from 'components/base/icons/star-shape-success'
 import styles from './Answer.module.css'
 
 const Answer = ({

@@ -44,9 +44,8 @@ const CategoryPage = ({
         <Examples
           title='Exemples'
           description={category.examples || 'Ils utilisent nos outils à la perfection.'}
-          link='/doc/exemples'
-          linkLabel='Tous les exemples'
           filter={category.name}
+          tool={category.tool}
         />
         <Suspense />
         <FAQs filter={category.name} page={category.name} />

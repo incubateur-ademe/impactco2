@@ -1,6 +1,23 @@
+.newsContainer,
 .container {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   list-style-type: none;
+}
+
+.newsContainer {
+  img {
+    width: unset;
+
+    @media screen and (max-width: 48rem) {
+      width: 7.5rem;
+    }
+
+    @media screen and (max-width: 29.875rem) {
+      display: none;
+    }
+
+
+  }
 }

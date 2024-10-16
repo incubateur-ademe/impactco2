@@ -1,4 +1,5 @@
 .list {
+  position: relative;
   width: calc(100% / 3 - 0.5rem);
   height: auto;
 
@@ -129,5 +130,33 @@
     padding-left: 0.5rem;
     transition: padding 0.3s ease-in-out;
     width: fit-content;
+  }
+}
+
+.tag {
+  position: absolute;
+  text-transform: uppercase;
+  background-color: var(--success-10);
+  border-radius: 0.5rem;
+  color: var(--success-60);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.horizontalTag {
+  left: 8.25rem;
+
+  @media screen and (max-width: 48rem) {
+    left: 5rem;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    left: calc(1rem + 2px);
+    transform: translateY(-50%);
   }
 }
