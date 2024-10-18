@@ -59,7 +59,7 @@ Affiche les comparaisons une à une, avec animation de transition, plutot que to
 
 Default: `false`
 
-#### language : 'en' | 'fr' | 'de' | 'es'
+#### language : 'en' | 'fr' | 'es'
 
 Langue utilisée pour les étiquettes
 
@@ -267,8 +267,8 @@ Liste des équivalents à comparer parmis la liste suivante :
   - tgv-paris-marseille" : A/R Paris - Marseille en tgv
   - voiture-lille-nimes" : A/R Lille - Nîmes en voiture
   - francais : % de l'empreinte carbone d'un citoyen français
-  - game-of-thrones : épisode de game of thrones en streaming
-  - friends : intégrale de friends en streaming
+  - game-of-thrones : épisode de Game of Thrones en streaming
+  - friends : intégrale de Friends en streaming
   - ski : journée au ski
   - piscine : remplissage de piscine
   - terre-voiture : tour de la terre en voiture

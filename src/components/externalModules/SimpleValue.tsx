@@ -79,7 +79,7 @@ const SimpleValue = ({
         <div
           className={classNames(styles.label, 'impactCO2-etiquette-text')}
           data-testid={`etiquette-${comparison}-name`}>
-          {getName(language, equivalent, true, comparisonValue).toLowerCase()}
+          {getName(language, equivalent, true, comparisonValue, true)}
         </div>
       </div>
     </div>

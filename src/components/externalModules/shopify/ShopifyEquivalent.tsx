@@ -4,7 +4,7 @@ import 'utils/variables.css'
 import Equivalent from './Equivalent'
 import Title from './Title'
 
-const languages = ['fr', 'en', 'de', 'es']
+const languages = ['fr', 'en', 'es']
 
 function isValidHttpUrl(string: string) {
   let url
