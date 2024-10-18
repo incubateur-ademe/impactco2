@@ -225,6 +225,7 @@
     "title-bis-1": "C'est",
     "title-bis-2": "soit autant d’émissions que pour fabriquer, consommer ou parcourir...",
     "detail": " Voir le détail",
+    "number-of": "Nombre de",
     "co2-unit": "kg de CO₂",
     "generate": "Générer d'autres équivalents",
     "modify": "Modifier mes équivalents",
@@ -232,6 +233,7 @@
     "overscreen": {
       "search": "Rechercher un objet, un geste...",
       "back": "Revenir au comparateur",
+      "back-title": "Valider la sélection et revenir au comparateur",
       "equivalents": "équivalents",
       "no-result-1": "Aucun résultat ne correspond à votre recherche.",
       "no-result-2": "Vous pouvez essayer d'autres termes ou",

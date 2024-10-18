@@ -31,9 +31,7 @@ const Block = ({ children, title, description, link, linkLabel, as, id }: BlockP
           <div>
             {getTitle(title, as)}
             {description && (
-              <div className={classNames(styles.description, { [styles.mainDescription]: as === 'h1' })}>
-                {description}
-              </div>
+              <p className={classNames(styles.description, { [styles.mainDescription]: as === 'h1' })}>{description}</p>
             )}
           </div>
           {link && <Link href={link}>{linkLabel}</Link>}

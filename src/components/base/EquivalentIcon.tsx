@@ -6,9 +6,11 @@ import { buildCurrentUrlFor } from 'utils/urls'
 const EquivalentIcon = ({
   equivalent,
   height,
+  alt,
 }: {
   equivalent: Pick<ComputedEquivalent, 'slug' | 'carpool'>
   height?: number
+  alt?: string
 }) => {
   const [slug] = equivalent.slug.split('+')
 
@@ -17,7 +19,7 @@ const EquivalentIcon = ({
       src={buildCurrentUrlFor(`/icons/${equivalent.carpool ? 'covoiturage' : ''}${getComparisonSlug(slug)}.svg`)}
       width={(height || 1) * 16}
       height={(height || 1) * 16}
-      alt=''
+      alt={alt || ''}
     />
   )
 }

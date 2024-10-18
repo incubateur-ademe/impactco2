@@ -12,12 +12,12 @@ export const detecteurCO2Test = async (
   await page.getByRole('button', { name: label }).click()
 
   await expect(page.getByRole('alertdialog')).toBeVisible()
-  await expect(page.getByLabel('Impact CO2').nth(locator || 0)).toHaveAttribute(
+  await expect(page.getByTestId('impact-co2-link').nth(locator || 0)).toHaveAttribute(
     'href',
     `https://impactco2.fr/comparateur?value=${expectedValue}`
   )
-  await expect(page.getByLabel('Impact CO2').nth(locator || 0)).toHaveAttribute('target', '_blank')
-  await expect(page.getByLabel('Impact CO2').nth(locator || 0)).toHaveAttribute('rel', 'noreferrer noopener')
+  await expect(page.getByTestId('impact-co2-link').nth(locator || 0)).toHaveAttribute('target', '_blank')
+  await expect(page.getByTestId('impact-co2-link').nth(locator || 0)).toHaveAttribute('rel', 'noreferrer noopener')
 
   const value = await page
     .locator('.impactCO2-etiquette-value')

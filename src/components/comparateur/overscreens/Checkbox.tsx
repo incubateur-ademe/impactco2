@@ -37,6 +37,7 @@ const Checkbox = ({
   return (
     <CheckboxInput
       key={equivalent.slug}
+      id={equivalent.slug}
       className={interacted && equivalents.length > 7 ? styles.warningEquivalent : styles.equivalent}
       checked={equivalents.includes(equivalent.slug)}
       setChecked={(checked) => {

@@ -55,6 +55,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
         <Input
           id='search'
           placeholder={t('search')}
+          title={t('search')}
           value={search}
           padding='lg'
           onChange={(e) => setSearch(e.target.value)}
