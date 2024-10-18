@@ -92,7 +92,7 @@ export type Equivalent =
 
 export type ComputedEquivalent = Equivalent & { value: number; initialValue?: number; link: string; name?: string }
 
-export type Language = 'en' | 'fr' | 'de' | 'es'
+export type Language = 'en' | 'fr' | 'es'
 export type SimpleEquivalent = {
   percentage?: boolean
   value: number

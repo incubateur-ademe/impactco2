@@ -17,9 +17,6 @@ const getCarpool = (language: string, carpool: number) => {
   if (language === 'es') {
     return `1 conductor + ${carpool} ${formatName('pasajero[s]', carpool)}`
   }
-  if (language === 'de') {
-    return `1 Fahrer + ${carpool} Beifahrer`
-  }
   return `1 conducteur + ${carpool} ${formatName('passager[s]', carpool)}`
 }
 

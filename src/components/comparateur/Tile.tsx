@@ -60,7 +60,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
           {Number.isFinite(value) ? <LocalNumber number={formatNumber(value)} /> : <InfinityIcon />}
         </div>
         <div className='text-sm' data-testid={`comparateur-${slug}-name`}>
-          {getName(language, equivalent, true, value)}
+          {getName(language, equivalent, true, value, true)}
         </div>
       </div>
       <button

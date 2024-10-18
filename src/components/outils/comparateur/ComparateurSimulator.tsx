@@ -36,7 +36,7 @@ const ComparateurSimulator = () => {
             unit={
               comparedEquivalent ? (
                 <>
-                  {getName(language, comparedEquivalent, true, baseValue)}
+                  {getName(language, comparedEquivalent, true, baseValue, true)}
                   <div className={styles.unitIcon}>
                     <CloseThickIcon />
                   </div>
