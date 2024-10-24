@@ -1,5 +1,5 @@
+import { getAllNotionDB } from '../utils/notion'
 import { prismaClient } from '../utils/prismaClient'
-import { getAllNotionDB } from 'utils/notion'
 
 const importFromNotion = async () => {
   if (process.env.AUTO_IMPORT_API_KEY !== 'true') {
