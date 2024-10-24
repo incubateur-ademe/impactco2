@@ -10,6 +10,7 @@ export type Stats = {
 }
 
 const internalPages = [
+  'quiz',
   'transport',
   'transport/itineraire',
   'comparateur',
