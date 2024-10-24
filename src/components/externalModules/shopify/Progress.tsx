@@ -75,7 +75,7 @@ const Progress = ({
       <div
         className={className}
         style={{
-          background: `radial-gradient(closest-side, white 59%, transparent 60% 100%), conic-gradient(var(--primary-20) ${progress}%, transparent 0)`,
+          background: `radial-gradient(closest-side, white 59%, transparent 60% 100%), conic-gradient(var(--primary-50) ${progress}%, transparent 0)`,
         }}>
         <progress value={progress} className={styles.progress} max={100}>
           {progress}%

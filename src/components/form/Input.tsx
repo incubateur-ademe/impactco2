@@ -82,6 +82,7 @@ const Input = ({
             [styles.large]: padding === 'lg',
             [styles.inputError]: !!error,
           })}
+          title={inputProps.placeholder}
           {...inputProps}
           ref={ref}
           id={`input-${id}`}

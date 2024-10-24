@@ -105,6 +105,7 @@ const CustomParam = ({
       <fieldset className={styles.container}>
         {config.type !== 'boolean' && config.type !== 'checkbox' && setVisible && (
           <CheckboxInput
+            id={`${slug}.title`}
             checked={visible}
             setChecked={setVisible}
             label={t(`${slug}.title`)}
@@ -151,6 +152,7 @@ const CustomParam = ({
             </>
           ) : config.type === 'boolean' ? (
             <CheckboxInput
+              id={`custom-param-${slug}-checkbox`}
               data-testid={`custom-param-${slug}-checkbox`}
               checked={param.value as boolean}
               setChecked={param.setter}
@@ -160,6 +162,7 @@ const CustomParam = ({
             <Checkbox label={t(`${slug}.title`)} id={slug} required>
               {config.values.map((value) => (
                 <CheckboxInput
+                  id={`${slug}.${value}`}
                   key={`${slug}.${value}`}
                   data-testid={`custom-param-${slug}-${value}-checkbox`}
                   checked={!param.value || param.value === value}
@@ -217,7 +220,9 @@ const CustomParam = ({
   if ('start' in param) {
     return (
       <fieldset className={styles.container}>
-        {setVisible && <CheckboxInput checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} />}
+        {setVisible && (
+          <CheckboxInput checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} id={`${slug}.label`} />
+        )}
         <div className={styles.inputs}>
           <AddressInput
             id={`custom-${slug}-start`}
@@ -254,6 +259,7 @@ const CustomParam = ({
           setChecked={setVisible}
           label={`${t(integration ? 'integrate' : 'share')} ${t(slug)}`}
           data-testid={`custom-param-${slug}-checkbox`}
+          id={`custom-param-${slug}-checkbox`}
         />
       )}
       <div className={styles.params}>

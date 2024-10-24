@@ -89,7 +89,7 @@ const EquivalentsOverscreen = () => {
         )}
       </ul>
       <div className={styles.footer}>
-        <div>
+        <div role='status'>
           <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>
             {tempEquivalents.length}
           </span>
@@ -97,6 +97,7 @@ const EquivalentsOverscreen = () => {
         </div>
         <div>
           <Button
+            title={t('back-title')}
             onClick={() => {
               setEquivalents(tempEquivalents)
               setOverscreen('comparateur', '')

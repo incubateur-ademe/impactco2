@@ -33,12 +33,12 @@ const CheckboxInput = ({
 } & InputHTMLAttributes<HTMLInputElement>) => {
   const error = useError(id, errors)
 
-  // TODO => passer en neutral 30 en disabled
-
   return (
     <div className={className}>
       <div className={styles.container} data-testid={dataTestId}>
-        <label className={classNames(styles.legend, { [styles.checked]: checked, [styles.reversed]: reversed })}>
+        <label
+          className={classNames(styles.legend, { [styles.checked]: checked, [styles.reversed]: reversed })}
+          htmlFor={id}>
           <input
             id={id}
             data-testid={`checkbox-${id}`}
