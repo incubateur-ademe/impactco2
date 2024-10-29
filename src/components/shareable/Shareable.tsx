@@ -122,7 +122,10 @@ const Shareable = ({
               ) : (
                 <h1 className={styles.hiddenTitle}>{t(overScreenToDisplay.title)}</h1>
               )}
-              <div className={classNames(styles.overScreenChildren, { [styles.noScroll]: !overScreenToDisplay.title })}>
+              <div
+                className={classNames(styles.overScreenChildren, {
+                  [styles.noScroll]: overScreenToDisplay.hideTitle,
+                })}>
                 {overScreenToDisplay.children}
               </div>
               {!overScreenToDisplay.hideTitle && (

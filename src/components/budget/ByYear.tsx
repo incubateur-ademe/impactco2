@@ -27,7 +27,7 @@ const budgets: Record<string, { description?: string; values: { label: string; v
     total: '409 691 €',
   },
 }
-const ByYear = () => {
+const ByYear = ({ labelId }: { labelId: string }) => {
   const [budget, setBudget] = useState(budgets['2024'])
 
   return (
@@ -43,11 +43,11 @@ const ByYear = () => {
       </Select>
       <br />
       {budget.description}
-      <table className={styles.table}>
+      <table className={styles.table} aria-labelledby={labelId}>
         <thead>
           <tr>
-            <th>Poste</th>
-            <th>
+            <th scope='col'>Poste</th>
+            <th scope='col'>
               <b>Total</b>
             </th>
           </tr>

@@ -18,7 +18,7 @@ const FAQsList = ({ faqs, page, ...blockProps }: FAQSListProps) => {
       </ul>
       {page && (
         <div className={classNames(styles.footer, styles.footerTop)}>
-          <div>Vous ne trouvez pas de réponse à vos questions ?</div>
+          <p>Vous ne trouvez pas de réponse à vos questions ?</p>
           <ul className={styles.footer}>
             <li className={styles.footer}>
               <Link href={`/rendez-vous?fromLabel=${page}`}>Contactez-nous</Link>

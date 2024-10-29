@@ -207,6 +207,7 @@
   },
   "category-simulator": {
     "passenger": "pasajero[s]",
+    "in": "en",
     "legend": {
       "construction": "Construcción",
       "usage": "Uso"

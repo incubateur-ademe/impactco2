@@ -29,6 +29,18 @@ const Notion = ({
       for (const element of elements) {
         element.setAttribute('alt', '')
       }
+      const icons = ref.current.getElementsByClassName('notion-page-icon')
+      for (const icon of icons) {
+        if (icon.tagName === 'span') {
+          icon.removeAttribute('role')
+          icon.removeAttribute('aria-label')
+          icon.setAttribute('aria-hidden', 'true')
+        }
+      }
+      const fastLinks = ref.current.getElementsByClassName('notion-hash-link')
+      for (const fastLink of fastLinks) {
+        fastLink.remove()
+      }
     }
   }, [ref])
 

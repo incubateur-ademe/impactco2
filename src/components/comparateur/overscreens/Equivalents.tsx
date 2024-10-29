@@ -7,21 +7,24 @@ const Equivalents = ({
   setEquivalents,
   equivalents,
   firstRef,
+  list,
 }: {
   equivalentsToDisplay: ComputedEquivalent[]
   equivalents: string[]
   setEquivalents: (value: string[]) => void
   firstRef?: RefObject<HTMLInputElement>
+  list?: boolean
 }) => {
+  const Container = list ? 'li' : 'div'
   return equivalentsToDisplay.map((equivalent, index) => (
-    <li key={equivalent.slug}>
+    <Container key={equivalent.slug}>
       <Checkbox
         equivalents={equivalents}
         equivalent={equivalent}
         setEquivalents={setEquivalents}
         ref={index === 0 ? firstRef : undefined}
       />
-    </li>
+    </Container>
   ))
 }
 

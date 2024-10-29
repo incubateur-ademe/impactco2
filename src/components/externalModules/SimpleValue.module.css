@@ -37,4 +37,8 @@
 
 .text {
   margin: 0 !important;
+
+  span {
+    display: block;
+  }
 }

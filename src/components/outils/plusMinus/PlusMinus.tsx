@@ -11,6 +11,7 @@ const PlusMinus = ({
   setValue,
   max,
   label,
+  hiddenLabel,
   icon,
   step,
   className,
@@ -19,6 +20,7 @@ const PlusMinus = ({
   setValue: (value: number) => void
   max?: number
   label: string
+  hiddenLabel?: string
   icon?: string
   step?: number
   className?: string
@@ -35,7 +37,10 @@ const PlusMinus = ({
       </button>
       <div className={styles.main}>
         {icon && <Image src={icon} alt='' width={18} height={24} />}
-        {value} {formatName(label, value)}
+        <p aria-live='polite' aria-atomic={false}>
+          {value} {formatName(label, value)}
+          {hiddenLabel && <span className={styles.hiddenLabel}> {hiddenLabel}</span>}
+        </p>
       </div>
       <button
         className={styles.plus}

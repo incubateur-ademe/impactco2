@@ -10,7 +10,7 @@ export default function Marianne({ small }: { small?: boolean }) {
       height='50'
       viewBox='0 0 57 50'
       fill='none'
-      arial-label='République Française'
+      aria-label='République Française'
       role='img'
       xmlns='http://www.w3.org/2000/svg'>
       <path

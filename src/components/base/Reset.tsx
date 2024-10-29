@@ -11,6 +11,7 @@ const Reset = ({ tracking, slug }: { tracking: string; slug: string }) => {
   return (
     <div className={styles.reset}>
       <button
+        title={`Réinitialiser le formulaire ${tracking}`}
         className={styles.button}
         onClick={() => {
           track(tracking, 'Réinitialiser', slug)

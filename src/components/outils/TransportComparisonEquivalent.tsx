@@ -86,23 +86,6 @@ const TransportComparisonEquivalent = ({
             rel='noreferrer noopener'>
             <NewTabIcon noMargin />
           </Link>
-          {equivalent.found && otherEquivalent.found && equivalent.value < otherEquivalent.value && (
-            <div className={styles.winner}>
-              <div className={styles.star}>
-                <StarShapeIcon />
-              </div>
-              <div className={styles.starContent}>
-                <div className={styles.starValue}>
-                  <LocalNumber number={formatNumber(otherEquivalent.value - equivalent.value)} />
-                </div>
-                <div>
-                  Kg CO₂e
-                  <br />
-                  {t('avoided')}
-                </div>
-              </div>
-            </div>
-          )}
           <div className={styles.top}>
             <EquivalentIcon equivalent={equivalent} height={4} />
             {equivalent.found ? equivalent.name : getName(language, equivalent)}
@@ -133,6 +116,23 @@ const TransportComparisonEquivalent = ({
               <b>{t('sorry')}</b>
               <br />
               {t('notFound')}
+            </div>
+          )}
+          {equivalent.found && otherEquivalent.found && equivalent.value < otherEquivalent.value && (
+            <div className={styles.winner}>
+              <div className={styles.star}>
+                <StarShapeIcon />
+              </div>
+              <div className={styles.starContent}>
+                <div className={styles.starValue}>
+                  <LocalNumber number={formatNumber(otherEquivalent.value - equivalent.value)} />
+                </div>
+                <div>
+                  Kg CO₂e
+                  <br />
+                  {t('avoided')}
+                </div>
+              </div>
             </div>
           )}
           {canChange && (

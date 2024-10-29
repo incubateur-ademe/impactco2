@@ -88,8 +88,6 @@ video {
   padding: 0;
   border: 0;
   font-family: 'Marianne', Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
   vertical-align: baseline;
 }
 
@@ -125,6 +123,7 @@ html {
   position: relative;
 }
 
+dialog,
 body {
   background-color: var(--neutral-00);
   color: var(--neutral-70);

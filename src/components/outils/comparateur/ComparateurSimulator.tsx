@@ -6,6 +6,7 @@ import React, { useEffect, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
+import { metaTitles } from 'utils/meta'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
@@ -30,7 +31,7 @@ const ComparateurSimulator = () => {
     if (inputRef.current) {
       inputRef.current.focus()
     }
-    window.title
+    document.title = `${metaTitles.comparateur[language]} - ${comparedEquivalent ? getName(language, comparedEquivalent) : t('co2-unit')} | Impact CO₂`
   }, [comparedEquivalent, inputRef])
 
   return (

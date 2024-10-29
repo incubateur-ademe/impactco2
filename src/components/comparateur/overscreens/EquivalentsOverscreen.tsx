@@ -63,16 +63,19 @@ const EquivalentsOverscreen = () => {
           {tModal('close')}
         </Button>
       </div>
-      <ul className={styles.content}>
-        {search ? (
-          results.length > 0 ? (
+      {search ? (
+        results.length > 0 ? (
+          <ul className={styles.content}>
             <Equivalents
+              list
               firstRef={equivalentRef}
               equivalents={tempEquivalents}
               equivalentsToDisplay={results}
               setEquivalents={setTempEquivalents}
             />
-          ) : (
+          </ul>
+        ) : (
+          <div className={styles.content}>
             <p className={styles.noResult} ref={noResultRef} tabIndex={-1}>
               {t('no-result-1')}
               <br />
@@ -86,9 +89,11 @@ const EquivalentsOverscreen = () => {
               </Button>
               .
             </p>
-          )
-        ) : (
-          categories
+          </div>
+        )
+      ) : (
+        <div className={styles.content}>
+          {categories
             .filter((category) => category.id !== 12 && category.id !== 11)
             .map((category) => (
               <Category
@@ -98,16 +103,16 @@ const EquivalentsOverscreen = () => {
                 setEquivalents={setTempEquivalents}
                 onClose={() => setOverscreen('comparateur', '')}
               />
-            ))
-        )}
-      </ul>
+            ))}
+        </div>
+      )}
       <div className={styles.footer}>
-        <div role='status'>
+        <p role='status'>
           <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>
             {tempEquivalents.length}
           </span>
           <span className={styles.equivalentsInfo}> / 8 {t('equivalents')}</span>
-        </div>
+        </p>
         <div>
           <Button
             title={t('back-title')}

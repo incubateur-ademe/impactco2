@@ -134,6 +134,7 @@ const CategorySimulator = ({
                       }}
                       max={4}
                       label={t('passenger')}
+                      hiddenLabel={`${t('in')} ${getNameWithoutSuffix(params.language, equivalent)}`}
                       icon='/icons/passager.svg'
                     />
                   </div>
