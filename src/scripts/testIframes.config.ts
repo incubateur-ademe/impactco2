@@ -174,6 +174,7 @@ export const checks = [
   },
   {
     slug: '2050today',
+    skipAutoCheck: true,
     url: 'https://2050today.org/empreinte-climat/?lang=fr',
     iframeContent: (page: Page) => page.locator('#iFrameResizer01').contentFrame(),
     checkIframe: async (iframe: FrameLocator) => {
