@@ -88,7 +88,7 @@ const TransportComparisonEquivalent = ({
           </Link>
           <div className={styles.top}>
             <EquivalentIcon equivalent={equivalent} height={4} />
-            {equivalent.found ? equivalent.name : getName(language, equivalent)}
+            <p>{equivalent.found ? equivalent.name : getName(language, equivalent)}</p>
           </div>
           {equivalent.found ? (
             <div>
@@ -120,10 +120,11 @@ const TransportComparisonEquivalent = ({
           )}
           {equivalent.found && otherEquivalent.found && equivalent.value < otherEquivalent.value && (
             <div className={styles.winner}>
+              <p className='hidden'>Moyen le plus écologique</p>
               <div className={styles.star}>
                 <StarShapeIcon />
               </div>
-              <div className={styles.starContent}>
+              <p className={styles.starContent}>
                 <div className={styles.starValue}>
                   <LocalNumber number={formatNumber(otherEquivalent.value - equivalent.value)} />
                 </div>
@@ -132,7 +133,7 @@ const TransportComparisonEquivalent = ({
                   <br />
                   {t('avoided')}
                 </div>
-              </div>
+              </p>
             </div>
           )}
           {canChange && (

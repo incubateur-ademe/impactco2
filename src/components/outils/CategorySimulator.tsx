@@ -6,6 +6,7 @@ import useParamContext, { Params } from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import { track } from 'utils/matomo'
@@ -76,71 +77,77 @@ const CategorySimulator = ({
 
   return (
     <div className={styles.container}>
-      <ul ref={ref}>
+      <ul ref={ref} id='category-equivalents-list'>
         {equivalents &&
           equivalents
             .sort((a, b) => getValue(a, initialParams, type) - getValue(b, initialParams, type))
-            .map((equivalent, index) => (
-              <li
-                key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
-                className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
-                <IframeableLink
-                  ref={index === 0 ? firstElementRef : undefined}
-                  data-testid='category-link'
-                  href={equivalent.link}
-                  className={styles.link}
-                  aria-live='polite'
-                  aria-label={`${equivalent.name || getNameWithoutSuffix(params.language, equivalent)}${equivalent.carpool ? ` ${equivalent.carpool} passager` : ''} ${formatNumber(equivalent.value)} kg CO₂e`}>
-                  <EquivalentIcon equivalent={equivalent} height={3} />
-                  <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
-                    <div className={styles.name}>
-                      {equivalent.name || getNameWithoutSuffix(params.language, equivalent)}
-                    </div>
-                    <div className={styles.data}>
-                      {equivalent.value !== 0 && (
-                        <div
-                          className={styles.fullBar}
-                          style={{ width: max ? `${(basePercent * equivalent.value) / max}%` : '0px' }}>
+            .map((equivalent, index) => {
+              const usagePercent = (100 * formatUsage(equivalent)) / equivalent.value
+              const barExplanation = `usage : ${usagePercent.toFixed(0)}% et construction : ${(100 - usagePercent).toFixed(0)}%`
+
+              return (
+                <li
+                  key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
+                  className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
+                  <IframeableLink
+                    ref={index === 0 ? firstElementRef : undefined}
+                    data-testid='category-link'
+                    href={equivalent.link}
+                    className={styles.link}
+                    aria-live='polite'
+                    aria-label={`${equivalent.name || getNameWithoutSuffix(params.language, equivalent)}${equivalent.carpool ? ` un conducteur plus ${equivalent.carpool} ${formatName('passager[s]', equivalent.carpool)}` : ''} ${formatNumber(equivalent.value)} kg CO₂e (${barExplanation})`}>
+                    <EquivalentIcon equivalent={equivalent} height={3} />
+                    <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
+                      <div className={styles.name}>
+                        {equivalent.name || getNameWithoutSuffix(params.language, equivalent)}
+                      </div>
+                      <div className={styles.data}>
+                        {equivalent.value !== 0 && (
                           <div
-                            className={styles.halfBar}
-                            style={{
-                              width: `${(100 * formatUsage(equivalent)) / equivalent.value}%`,
-                            }}
-                          />
-                        </div>
-                      )}
-                      <span className={styles.value} data-testid={`category-${equivalent.slug}-value`}>
-                        <LocalNumber number={formatNumber(equivalent.value)} />
-                      </span>{' '}
-                      kg CO₂e
+                            className={styles.fullBar}
+                            style={{ width: max ? `${(basePercent * equivalent.value) / max}%` : '0px' }}>
+                            <div
+                              className={styles.halfBar}
+                              style={{
+                                width: `${usagePercent}%`,
+                              }}
+                            />
+                          </div>
+                        )}
+                        <span className={styles.value} data-testid={`category-${equivalent.slug}-value`}>
+                          <LocalNumber number={formatNumber(equivalent.value)} />
+                        </span>{' '}
+                        kg CO₂e
+                      </div>
+                      <p className='hidden'>{barExplanation}</p>
                     </div>
-                  </div>
-                </IframeableLink>
-                {!!equivalent.carpool && type && (
-                  <div className={styles.carpool}>
-                    <div className={styles.triangle} />
-                    <div className={styles.conducteur}>
-                      <Image src='/icons/conducteur.svg' alt='un conducteur' width={20} height={24} />
+                  </IframeableLink>
+                  {!!equivalent.carpool && type && (
+                    <div className={styles.carpool}>
+                      <div className={styles.triangle} />
+                      <div className={styles.conducteur}>
+                        <Image src='/icons/conducteur.svg' alt='un conducteur dans la voiture' width={20} height={24} />
+                      </div>
+                      <PlusMinus
+                        value={params[type].carpool[equivalent.slug] || 1}
+                        setValue={(value) => {
+                          track(
+                            `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
+                            `Covoiturage ${equivalent.slug}`,
+                            value.toString()
+                          )
+                          params[type].setCarpool({ ...params[type].carpool, [equivalent.slug]: value })
+                        }}
+                        max={4}
+                        label={formatName(t('passenger'), 1)}
+                        hiddenLabel={`${t('in')} ${getNameWithoutSuffix(params.language, equivalent)}`}
+                        icon='/icons/passager.svg'
+                      />
                     </div>
-                    <PlusMinus
-                      value={params[type].carpool[equivalent.slug] || 1}
-                      setValue={(value) => {
-                        track(
-                          `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
-                          `Covoiturage ${equivalent.slug}`,
-                          value.toString()
-                        )
-                        params[type].setCarpool({ ...params[type].carpool, [equivalent.slug]: value })
-                      }}
-                      max={4}
-                      label={t('passenger')}
-                      hiddenLabel={`${t('in')} ${getNameWithoutSuffix(params.language, equivalent)}`}
-                      icon='/icons/passager.svg'
-                    />
-                  </div>
-                )}
-              </li>
-            ))}
+                  )}
+                </li>
+              )
+            })}
       </ul>
       {setDisplayAll && displayAll !== undefined && moreText && (
         <CategoryDisplayAll

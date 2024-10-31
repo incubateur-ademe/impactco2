@@ -285,7 +285,7 @@ button,
 a {
   &:focus {
     outline-offset: 2px;
-    outline: 3px solid var(--primary-40);
+    outline: 3px solid var(--primary-50);
   }
 
   &:focus:not(:focus-visible) {
@@ -295,4 +295,9 @@ a {
 
 ul {
   list-style: none;
+}
+
+.hidden {
+  left: -99999px;
+  position: absolute;
 }

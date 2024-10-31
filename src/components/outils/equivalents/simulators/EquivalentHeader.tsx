@@ -32,13 +32,13 @@ const EquivalentHeader = ({ category, equivalent }: { category: Category; equiva
     <>
       <EquivalentCardContent equivalent={equivalent} category={category} />
       {('months' in equivalent || hasPre || hasPost || equivalent.carpool) && (
-        <div className={styles.hypothesis}>
-          <div className={styles.hypothesisTitle}>{t('hypotheses')}</div>
-          {equivalent.carpool && <div>{getCarpool(language, equivalent.carpool)}</div>}
-          {'months' in equivalent && <div>{getMonthsLabel(equivalent.months, language)}</div>}
-          {hasPre && <div>{pre}</div>}
-          {hasPost && <div>{post}</div>}
-        </div>
+        <p className={styles.hypothesis}>
+          <span className={styles.hypothesisTitle}>{t('hypotheses')}</span>
+          {equivalent.carpool && <span>{getCarpool(language, equivalent.carpool)}</span>}
+          {'months' in equivalent && <span>{getMonthsLabel(equivalent.months, language)}</span>}
+          {hasPre && <span>{pre}</span>}
+          {hasPost && <span>{post}</span>}
+        </p>
       )}
     </>
   )

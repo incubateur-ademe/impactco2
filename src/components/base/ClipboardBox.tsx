@@ -32,7 +32,7 @@ const ClipboardBox = ({ children, tracking, form }: { children: string; tracking
           {copied ? <CheckIcon /> : <CopyIcon />}
         </span>
       </button>
-      <p className={styles.hiddenText} role='status'>
+      <p className='hidden' role='status'>
         {copied ? t('copied') : ''}
       </p>
       {children.startsWith('<script') && (

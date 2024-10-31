@@ -102,7 +102,7 @@ const CustomParam = ({
   if ('setter' in param) {
     const config = configs[slug]
     return (
-      <fieldset className={styles.container}>
+      <div className={styles.container}>
         {config.type !== 'boolean' && config.type !== 'checkbox' && setVisible && (
           <CheckboxInput
             id={`${slug}.title`}
@@ -213,13 +213,13 @@ const CustomParam = ({
             />
           )}
         </div>
-      </fieldset>
+      </div>
     )
   }
 
   if ('start' in param) {
     return (
-      <fieldset className={styles.container}>
+      <div className={styles.container}>
         {setVisible && (
           <CheckboxInput checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} id={`${slug}.label`} />
         )}
@@ -247,12 +247,12 @@ const CustomParam = ({
             }}
           />
         </div>
-      </fieldset>
+      </div>
     )
   }
 
   return (
-    <fieldset className={styles.container}>
+    <div className={styles.container}>
       {setVisible && (
         <CheckboxInput
           checked={visible}
@@ -270,7 +270,7 @@ const CustomParam = ({
           </div>
         ))}
       </div>
-    </fieldset>
+    </div>
   )
 }
 

@@ -1,4 +1,5 @@
 .box {
+  margin-top: 2rem;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -65,9 +66,4 @@
     height: 1.5rem;
     width: 1.5rem;
   }
-}
-
-.hiddenText {
-  left: -99999px;
-  position: absolute;
 }

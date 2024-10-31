@@ -46,7 +46,7 @@
     "@incubateur-ademe/publicodes-impact-livraison": "^0.3.1",
     "@next/bundle-analyzer": "^14.2.13",
     "@prisma/client": "^5.19.1",
-    "@publicodes/react-ui": "1.4.0",
+    "@publicodes/react-ui": "1.5.4",
     "@r2wc/react-to-web-component": "^2.0.3",
     "@sentry/nextjs": "^8.31.0",
     "@socialgouv/matomo-next": "^1.9.1",

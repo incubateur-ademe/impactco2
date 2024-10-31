@@ -115,6 +115,10 @@
 .visibleAnimatedComparison,
 .animatedComparison {
   padding: 0.75em 1.25em !important;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .comparison:not(:last-child) {

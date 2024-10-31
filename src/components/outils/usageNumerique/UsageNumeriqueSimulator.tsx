@@ -131,29 +131,29 @@ const UsageNumeriqueSimulator = () => {
             <UsageForm slug='email' value={numberEmails} setValue={setNumberEmails} />
           </form>
           <output form='usage-numerique-simulator' className={styles.results}>
-            <div className={styles.values}>
-              <div className={styles.header}>{t('usages')}</div>
-              <div className={styles.value}>
+            <p className={styles.values}>
+              <span className={styles.header}>{t('usages')}</span>
+              <span className={styles.value}>
                 <span className={styles.number} data-testid='usagenumerique-generated-value'>
                   <LocalNumber number={formatNumber(total / 1000)} />
                 </span>{' '}
                 kg co₂e
-              </div>
-              <div>{t('by-week')}</div>
-            </div>
-            <div className={styles.values}>
-              <div className={styles.header}>{t('or')}</div>
-              <div className={styles.value}>
+              </span>
+              <span>{t('by-week')}</span>
+            </p>
+            <p className={styles.values}>
+              <span className={styles.header}>{t('or')}</span>
+              <span className={styles.value}>
                 <span className={styles.number}>
                   <LocalNumber number={formatNumber((total * 52) / 1000)} />
                 </span>{' '}
                 kg co₂e
-              </div>
-              <div>{t('by-year')}</div>
-            </div>
+              </span>
+              <span>{t('by-year')}</span>
+            </p>
           </output>
           <div className={styles.etiquette}>
-            <div className={styles.header}>{t('total')}</div>
+            <p className={styles.header}>{t('total')}</p>
             <Etiquette
               baseValue={total * 52}
               comparisons={equivalents}
@@ -170,10 +170,10 @@ const UsageNumeriqueSimulator = () => {
       {!mode && <div className={shareableStyles.separatorBothBorders} />}
       {(!mode || mode === 'graphic') && (
         <>
-          <div className={styles.text}>
-            <div className={styles.mainText}>{t('title')}</div>
+          <p className={styles.text}>
+            <span className={styles.mainText}>{t('title')}</span>
             {t('description')}
-          </div>
+          </p>
           <div className={shareableStyles.separatorBothBorders} />
           <CategorySimulator tracking='Usage numérique' equivalents={displayedEquivalents} withSimulator />
         </>

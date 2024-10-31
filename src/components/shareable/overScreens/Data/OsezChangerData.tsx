@@ -17,7 +17,7 @@ const sport = category.equivalents?.find((equivalent) => equivalent.slug === 'ch
 const FROsezChangerData = () => {
   return (
     <>
-      <div>
+      <p>
         L’impact carbone moyen d’une paire de chaussures neuve est de <b>17,9 kg CO₂e.</b>
         <br />
         <br />
@@ -29,13 +29,13 @@ const FROsezChangerData = () => {
           Base Carbone
         </Link>
         {' '}:
-      </div>
+      </p>
       <ul className={styles.cards}>
         <EquivalentCard equivalent={cuir} />
         <EquivalentCard equivalent={tissu} />
         <EquivalentCard equivalent={sport} />
       </ul>
-      <div>
+      <p>
         Soit : (15 + 18,5 + 20,1)/3 = 17,9 kg CO₂e.
         <br />
         <br />
@@ -44,7 +44,7 @@ const FROsezChangerData = () => {
         <br />
         <br />
         <b>facteur d’émission moyen d’une paire de chaussure neuve * nombre de paires de chaussures achetées</b>
-      </div>
+      </p>
     </>
   )
 }
@@ -52,7 +52,7 @@ const FROsezChangerData = () => {
 const ESOsezChangerData = () => {
   return (
     <>
-      <div>
+      <p>
         El impacto medio de carbono de un par de zapatos nuevos es de <b>17,9 kg de CO₂e.</b>
         <br />
         <br />
@@ -64,13 +64,13 @@ const ESOsezChangerData = () => {
           Base Carbone
         </Link>
         {' '}:
-      </div>
-      <div className={styles.cards}>
+      </p>
+      <ul className={styles.cards}>
         <EquivalentCard equivalent={cuir} />
         <EquivalentCard equivalent={tissu} />
         <EquivalentCard equivalent={sport} />
-      </div>
-      <div>
+      </ul>
+      <p>
         Por tanto: (15 + 18,5 + 20,1)/3 = 17,9 kg CO₂e.
         <br />
         <br />
@@ -78,7 +78,7 @@ const ESOsezChangerData = () => {
         siguiente cálculo: <br />
         <br />
         <b>factor medio de emisión de un par de zapatos nuevos * número de pares de zapatos comprados</b>
-      </div>
+      </p>
     </>
   )
 }
@@ -86,7 +86,7 @@ const ESOsezChangerData = () => {
 const ENOsezChangerData = () => {
   return (
     <>
-      <div>
+      <p>
         The average carbon impact of a new pair of shoes is <b>17,9 kg CO₂e.</b>
         <br />
         <br />
@@ -98,13 +98,13 @@ const ENOsezChangerData = () => {
           Carbon Base
         </Link>
         :
-      </div>
-      <div className={styles.cards}>
+      </p>
+      <ul className={styles.cards}>
         <EquivalentCard equivalent={cuir} />
         <EquivalentCard equivalent={tissu} />
         <EquivalentCard equivalent={sport} />
-      </div>
-      <div>
+      </ul>
+      <p>
         Or: (15 + 18,5 + 20,1)/3 = 17,9 kg CO₂e.
         <br />
         <br />
@@ -113,7 +113,7 @@ const ENOsezChangerData = () => {
         <br />
         <br />
         <b>average emission factor of a pair of new shoes * number of pairs of shoes purchased</b>
-      </div>
+      </p>
     </>
   )
 }

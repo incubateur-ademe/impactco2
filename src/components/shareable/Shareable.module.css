@@ -207,8 +207,3 @@
   border-top: 2px solid var(--primary-30);
   color: var(--neutral-50);
 }
-
-.hiddenTitle {
-  left: -99999px;
-  position: absolute;
-}

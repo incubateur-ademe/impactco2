@@ -29,9 +29,11 @@ const Equivalent = ({
   language: Language
   randomize?: () => void
 }) => {
+  const ref = useRef<HTMLLIElement>(null)
   const isAnimated = useMemo(() => animated && comparisons.length > 1, [animated, comparisons])
 
   const [toDisplay, setToDisplay] = useState(0)
+  const [isRandomized, setIsRandomize] = useState(false)
   const [fadeIn, setFadeIn] = useState(false)
 
   useEffect(() => {
@@ -40,6 +42,13 @@ const Equivalent = ({
       setFadeIn(false)
     }
   }, [isAnimated, comparisons])
+
+  useEffect(() => {
+    if (isRandomized && ref.current) {
+      ref.current.focus()
+      setIsRandomize(false)
+    }
+  }, [ref, isRandomized])
 
   const intValue = Number(baseValue)
   const preciseValue = Number.isNaN(intValue) ? 100000 : intValue
@@ -81,6 +90,8 @@ const Equivalent = ({
             <ul className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
               {comparisons.map((comparison, index) => (
                 <li
+                  tabIndex={-1}
+                  ref={index === 0 ? ref : undefined}
                   key={comparison}
                   className={
                     isAnimated
@@ -96,7 +107,13 @@ const Equivalent = ({
           </div>
         </div>
         {randomize && (
-          <button className={styles.randomize} title='Obtenir une nouvelle comparaison' onClick={randomize}>
+          <button
+            className={styles.randomize}
+            title='Obtenir une nouvelle comparaison'
+            onClick={() => {
+              randomize()
+              setIsRandomize(true)
+            }}>
             <RefreshIcon />
           </button>
         )}

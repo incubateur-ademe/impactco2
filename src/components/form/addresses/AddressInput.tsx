@@ -101,7 +101,10 @@ const AddressInput = ({
         onBlur={() => setFocus(false)}
       />
       {isFetching && (
-        <div className={classNames(styles.loading, { [styles.largeLoading]: large })} role='log'>
+        <div className={classNames(styles.loading, { [styles.largeLoading]: large })}>
+          <p className='hidden' role='status'>
+            Chargement en cours
+          </p>
           <LoadingIcon />
         </div>
       )}

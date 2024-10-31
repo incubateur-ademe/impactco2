@@ -2,11 +2,15 @@ import { FrameLocator, Page, expect } from 'playwright/test'
 
 export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: boolean) => {
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique2.18 kg CO₂e Modifier')
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('2.15Kg CO₂eévitésTGV0.03 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText(
+    'TGV0.03 kg CO₂eMoyen le plus écologique2.15Kg CO₂eévités Modifier'
+  )
 
   await page.getByRole('button', { name: 'Voir une autre comparaison' }).click()
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique1.03 kg CO₂e Modifier')
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('0.99Kg CO₂eévitésMétro0.04 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText(
+    'Métro0.04 kg CO₂eMoyen le plus écologique0.99Kg CO₂eévités Modifier'
+  )
 
   await page.getByTestId('header-integrate-button').click()
   await page.getByTestId('text-select-comparison-1').selectOption('voiturethermique+2')
@@ -15,7 +19,9 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   await page.getByTestId('cancel-button').click()
 
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique1.03 kg CO₂e Modifier')
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('0.99Kg CO₂eévitésMétro0.04 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText(
+    'Métro0.04 kg CO₂eMoyen le plus écologique0.99Kg CO₂eévités Modifier'
+  )
 
   await page.getByTestId('comparison-tile-0').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'TGV' }).click()
@@ -25,18 +31,24 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
     'Covoiturage thermique (2 passagers)0.73 kg CO₂e Modifier'
   )
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('0.7Kg CO₂eévitésTGV0.03 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText(
+    'TGV0.03 kg CO₂eMoyen le plus écologique0.7Kg CO₂eévités Modifier'
+  )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
     'Covoiturage thermique (2 passagers)0.73 kg CO₂e Modifier'
   )
 
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'Avion', exact: true }).click()
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('2.56Kg CO₂eévitésTGV0.03 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText(
+    'TGV0.03 kg CO₂eMoyen le plus écologique2.56Kg CO₂eévités Modifier'
+  )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion court courrier2.59 kg CO₂e Modifier')
 
   await page.getByTestId('input-km-value').fill('10000')
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('1,490Kg CO₂eévitésTGV29.3 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText(
+    'TGV29.3 kg CO₂eMoyen le plus écologique1,490Kg CO₂eévités Modifier'
+  )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion long courrier1,520 kg CO₂e Modifier')
 }
 

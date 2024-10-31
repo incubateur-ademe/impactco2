@@ -39,7 +39,7 @@ const PlusMinus = ({
         {icon && <Image src={icon} alt='' width={18} height={24} />}
         <p aria-live='polite' aria-atomic={false}>
           {value} {formatName(label, value)}
-          {hiddenLabel && <span className={styles.hiddenLabel}> {hiddenLabel}</span>}
+          {hiddenLabel && <span className='hidden'> {hiddenLabel}</span>}
         </p>
       </div>
       <button

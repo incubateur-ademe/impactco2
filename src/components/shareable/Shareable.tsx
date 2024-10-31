@@ -80,7 +80,6 @@ const Shareable = ({
           onClose()
         }
       }
-
       modalElement.addEventListener('keydown', handleTabKeyPress)
       return () => modalElement.removeEventListener('keydown', handleTabKeyPress)
     }
@@ -120,7 +119,7 @@ const Shareable = ({
                   <div className={styles.separatorBothBorders} />
                 </div>
               ) : (
-                <h1 className={styles.hiddenTitle}>{t(overScreenToDisplay.title)}</h1>
+                <h1 className='hidden'>{t(overScreenToDisplay.title)}</h1>
               )}
               <div
                 className={classNames(styles.overScreenChildren, {

@@ -98,23 +98,23 @@ export const smallTools = [
     linkLabel: 'Découvrir',
     content: (
       <>
-        <div>
+        <p>
           Dans le prolongement du comparateur carbone, Impact CO₂ propose désormais une version compacte et facilement
           configurable : l'étiquette carbone.
-        </div>
-        <div>
+        </p>
+        <p>
           Elle permet de visualiser rapidement le poids carbone associé à des gestes et objets du quotidien et de les
           comparer entre eux, dans un format mini, idéal pour une communication percutante et ludique des ordres de
           grandeur.
-        </div>
-        <div>
+        </p>
+        <p>
           <b>
             Les étiquettes sont créées automatiquement lorsque vous utilisez le comparateur carbone, juste en dessous de
             ce dernier.
           </b>{' '}
           En faisant défiler la page du comparateur, vous pouvez retrouver votre comparaison au format étiquette et
           l’utiliser dans vos contenus et applications.
-        </div>
+        </p>
       </>
     ),
     toolLink: '/outils/comparateur#etiquette',
@@ -128,22 +128,22 @@ export const smallTools = [
     linkLabel: 'Découvrir',
     content: (
       <>
-        <div>
+        <p>
           Impact CO₂ lance le détecteur CO₂, un nouveau format innovant pour détecter et surligner automatiquement les
           mentions de données carbones dans vos contenus.
-        </div>
-        <div>
+        </p>
+        <p>
           Cet <b>outil gratuit</b>, simple d’utilisation et basé sur les données de l’ADEME a vocation à s’intégrer sur
           les sites internet de médias, d’entreprises ou d’associations pour{' '}
           <b>vulgariser les bons ordres de grandeur et remettre en perspective les données carbones.</b>
-        </div>
-        <div>Un exemple vaut mieux que mille mots ! Découvrez par vous-même 👇</div>
-        <div>
+        </p>
+        <p>Un exemple vaut mieux que mille mots ! Découvrez par vous-même 👇</p>
+        <p>
           <b>
             L’Info Durable est le premier média spécialisé en développement durable à avoir intégré l’outil sur son site
             internet (plus de 45 000 articles en ligne !).
           </b>
-        </div>
+        </p>
         <div>
           <Image src='/images/detecteur-co2.jpg' alt='' width={680} height={208} />
         </div>
@@ -161,20 +161,20 @@ export const devTools = [
     linkLabel: 'Découvrir',
     content: (
       <>
-        <div>
+        <p>
           Grâce à L’API Impact CO₂, vous pouvez accéder aux données carbone utilisées sur Impact CO₂ et dans toutes les
           ressources du site.
-        </div>
-        <div>
+        </p>
+        <p>
           Gratuite, personnalisable, et régulièrement mise à jour elle vous permet de vous emparer facilement des
           informations essentielles sur les émissions carbones de + de 200 objets et gestes du quotidien, et de les
           intégrer dans vos propres applications et contenus.
-        </div>
-        <div>
+        </p>
+        <p>
           Comme toute API, sa documentation s’adresse principalement aux développeurs. Nous vous conseillons ainsi de la
           partager avec votre équipe technique afin d’explorer les possibilités d’intégration au sein de vos contenus et
           applications.
-        </div>
+        </p>
       </>
     ),
     toolLink: '/doc/api',
@@ -188,14 +188,14 @@ export const devTools = [
     linkLabel: 'Découvrir',
     content: (
       <>
-        <div>
+        <p>
           Impact CO₂ a développé à destination des développeurs des packages npm pour l’étiquette carbone, permettant
           d'intégrer facilement cette ressource dans le code source de leurs applications ou sites web.
-        </div>
-        <div>
+        </p>
+        <p>
           Cette solution simplifie et accélère l'intégration de notre outil pour tous les relais désireux de l'héberger
           sur leur site ou application native.
-        </div>
+        </p>
       </>
     ),
     toolLink: 'https://www.npmjs.com/package/@incubateur-ademe/impactco2-react',

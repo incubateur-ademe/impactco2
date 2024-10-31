@@ -181,7 +181,9 @@ const QuizSimulator = () => {
               ref.current.scrollIntoView({ behavior: 'smooth' })
             }
           }}
-          data-testid='quiz-more-info-button'>
+          data-testid='quiz-more-info-button'
+          aria-expanded={displayMore}
+          aria-controls='quiz-more-info'>
           {displayMore ? (
             <>
               {t('less')} <DropdownArrowUpIcon />

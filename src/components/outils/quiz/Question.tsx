@@ -107,6 +107,7 @@ const Question = (
               </Button>
               <div
                 data-testid='quiz-more-info'
+                id='quiz-more-info'
                 className={styles.moreInfo}
                 //@ts-expect-error: inert not managed by react
                 inert={displayMore ? undefined : ''}>

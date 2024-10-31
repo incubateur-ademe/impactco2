@@ -19,7 +19,7 @@ export default function DocumentationUsageNumerique({ slug }: { slug: string }) 
           Head: ({ children }) => {
             Children.forEach(children, (child: ReactNode) => {
               //@ts-expect-error: meta element
-              if (child.type === 'title') {
+              if (child && child.type === 'title') {
                 //@ts-expect-error: meta element
                 document.title = `Documentation des Usages du numérique - ${child.props.children.toString()} | Impact CO₂`
               }

@@ -3979,10 +3979,10 @@
     "@opentelemetry/instrumentation" "^0.49 || ^0.50 || ^0.51 || ^0.52.0"
     "@opentelemetry/sdk-trace-base" "^1.22"
 
-"@publicodes/react-ui@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@publicodes/react-ui/-/react-ui-1.4.0.tgz#907f7602f0d7b0b61329e8f496410a6c282843d1"
-  integrity sha512-HbWjOxscqHAJO52GptR120D1bvAiTMWtddoxJfToZd1PlU0SnaufnpMm7IdjbsUGYYdebjCdig0oCQMn9iiTBA==
+"@publicodes/react-ui@1.5.4":
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@publicodes/react-ui/-/react-ui-1.5.4.tgz#6ca2fb899ce06827bb5218d2dcbcc48c4fbe9fe7"
+  integrity sha512-xheoSay9/i9tzHga0NEYUIAZPaK1HETxJCP6n8g3De1wdEURensbH+TgEYbuKoYroKFJ/HhSGAu/C58I3R8D7A==
   dependencies:
     fuse.js "^7.0.0"
     styled-components "^6.1.1"

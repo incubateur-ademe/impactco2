@@ -57,7 +57,7 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
         <div className={styles.content}>
           <div>
             <div className={styles.title}>{title}</div>
-            <p>{description}</p>
+            {typeof description === 'string' ? <p>{description}</p> : <div>{description}</div>}
           </div>
           <div className={styles.link}>
             {linkLabel}

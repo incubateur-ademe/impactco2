@@ -21,8 +21,8 @@ const CustomParams = ({
   integration?: boolean
 }) => {
   return (
-    <>
-      {title && <div className={styles.title}>{title}</div>}
+    <fieldset>
+      {title && <p className={styles.title}>{title}</p>}
       {Object.entries(params)
         .filter(([key]) => key !== 'theme')
         .map(([key, param]) => (
@@ -42,7 +42,7 @@ const CustomParams = ({
             }}
           />
         ))}
-    </>
+    </fieldset>
   )
 }
 

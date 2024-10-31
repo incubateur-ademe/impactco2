@@ -22,6 +22,8 @@ const CategoryDisplayAll = ({
   return (
     <button
       className={styles.displayAll}
+      aria-expanded={displayAll}
+      aria-controls='category-equivalents-list'
       onClick={() => {
         track(tracking, displayAll ? 'HideMore' : 'DisplayMore', 'category_display_more')
         setDisplayAll(!displayAll)
