@@ -161,6 +161,13 @@ const QuizSimulator = () => {
               tracking='Quiz'
             />
             <Resource
+              image='/images/lvao.png'
+              text='lvao'
+              href='https://quefairedemesobjets.ademe.fr/?mtm_campaign=impactCO2'
+              withLink='Longue Vie Aux Objets'
+              tracking='Quiz'
+            />
+            <Resource
               image='/images/ngc.png'
               text='ngc'
               href='https://nosgestesclimat.fr/'

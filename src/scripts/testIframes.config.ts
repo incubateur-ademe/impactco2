@@ -174,8 +174,9 @@ export const checks = [
   },
   {
     slug: '2050today',
+    skipAutoCheck: true,
     url: 'https://2050today.org/empreinte-climat/?lang=fr',
-    iframeContent: (page: Page) => page.locator('iframe').first().contentFrame(),
+    iframeContent: (page: Page) => page.locator('#iFrameResizer01').contentFrame(),
     checkIframe: async (iframe: FrameLocator) => {
       await expect(await iframe.getByTestId('input-base-value')).toHaveValue('10')
       await iframe.getByTestId('input-base-value').fill('100')
