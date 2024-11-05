@@ -180,9 +180,9 @@ const Shareable = ({
               !noBottomBorders && <div className={classNames('no-screenshot', styles.separator)} />
             )}
             {language !== 'fr' && (
-              <div className={styles.disclaimer}>
+              <p className={styles.disclaimer}>
                 {t('disclaimer')} <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>ADEME</Link>
-              </div>
+              </p>
             )}
             <div className={styles.logos}>
               <Logos small />

@@ -29,12 +29,11 @@ export const searchAddress = async (search: string, limit?: number) => {
     })
 }
 
-export function useSuggestions(search: string, focus: boolean, place?: string) {
+export function useSuggestions(search: string, place?: string) {
   return useQuery({
     queryKey: ['search', search],
     queryFn: () => (!place && search && search.length > 2 ? searchAddress(search) : Promise.resolve([])),
     refetchOnWindowFocus: false,
     staleTime: Infinity,
-    enabled: focus,
   })
 }
