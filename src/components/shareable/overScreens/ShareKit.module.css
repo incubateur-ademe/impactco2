@@ -1,0 +1,27 @@
+.kit {
+  list-style: none;
+}
+
+.kitTitle {
+  text-align: center;
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.separatorBothBorders {
+  height: 0.75rem;
+  background: var(--primary-10);
+  margin: 2rem -1.5rem;
+  border-top: 2px solid var(--primary-30);
+  border-bottom: 2px solid var(--primary-30);
+
+
+
+  @media screen and (max-width: 29.875rem) {
+    margin: 2rem -1rem;
+  }
+}

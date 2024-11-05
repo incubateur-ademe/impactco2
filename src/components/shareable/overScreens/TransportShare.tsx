@@ -12,6 +12,7 @@ import RadioInput from 'components/form/RadioInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import styles from './Share.module.css'
+import ShareKit from './ShareKit'
 import ShareUrl from './ShareUrl'
 
 const category = categories.find((category) => category.slug === 'transport') as Category
@@ -155,6 +156,7 @@ const TransportShare = () => {
         />
       </form>
       <ShareUrl url={url} tracking={tracking} category={category} form='transport-share' />
+      <ShareKit />
     </>
   ) : null
 }
