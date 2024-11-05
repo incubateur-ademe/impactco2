@@ -75,6 +75,7 @@
 
 .value {
   color: var(--neutral-80);
+  display: block;
   font-size: 1.75rem;
   font-weight: 800;
   line-height: 2rem;

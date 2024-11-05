@@ -337,7 +337,7 @@
   },
   "equivalent": {
     "year": "year[s]",
-    "hypotheses": "Hypotheses",
+    "hypotheses": "Hypotheses: ",
     "fabrication": "Manufacturing",
     "usage": "Use",
     "fdv": "End of life",

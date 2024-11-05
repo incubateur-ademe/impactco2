@@ -35,8 +35,10 @@ const Answer = ({
     <div className={styles.content} data-testid={`quiz-answer-${tag}`}>
       <div className={styles.tag}>{tag}</div>
       <EquivalentIcon equivalent={equivalent} height={5} />
-      <div className={styles.value}>{value}</div>
-      <div className={styles.name}>{getName(language, equivalent, true, value)}</div>
+      <p>
+        <span className={styles.value}>{value}</span>
+        <span className={styles.name}>{getName(language, equivalent, true, value)}</span>
+      </p>
     </div>
   )
   return answer ? (
@@ -49,7 +51,11 @@ const Answer = ({
         <div
           className={styles.badge}
           data-testid={correctAnswer === tag ? `quiz-badge-success-${tag}` : `quiz-badge-critical-${tag}`}>
-          {correctAnswer === tag ? <StarShapeSuccessIcon /> : <StarShapeCriticalIcon />}
+          {correctAnswer === tag ? (
+            <StarShapeSuccessIcon aria-label='Bonne réponse' />
+          ) : (
+            <StarShapeCriticalIcon aria-label='Mauvaise réponse' />
+          )}
         </div>
       )}
       <div className={correctAnswer !== tag ? styles.wrong : ''}>{content}</div>
@@ -71,7 +77,7 @@ const Answer = ({
   ) : (
     <button
       className={styles.answer}
-      aria-label={`${value} ${getName(language, equivalent, true, value)}`}
+      aria-label={`Réponse ${tag} : ${value} ${getName(language, equivalent, true, value)}`}
       onClick={onClick}>
       {content}
     </button>

@@ -11,12 +11,12 @@ const QuizCards = () => {
         <Image src='/images/banner-quiz-cards.jpg' width={748} height={180} alt='' />
       </div>
       <div className={outilStyles.content}>
-        <h2>Fiches du quiz</h2>
-        <span>
+        <h3>Fiches du quiz</h3>
+        <p>
           Si vous souhaitez proposer le Quiz Carbone dans un autre contexte, nous mettons à disposition les fiches de
           chacun des équivalents utilisés dans les questions dans un format imprimable.{' '}
-        </span>
-        <span>Pour obtenir les fiches, cliquez sur le bouton ci-dessous : </span>
+        </p>
+        <p>Pour obtenir les fiches, cliquez sur le bouton ci-dessous : </p>
       </div>
       <div className={outilStyles.link}>
         <Download name='fiches' />

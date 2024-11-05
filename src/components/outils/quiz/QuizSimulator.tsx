@@ -69,7 +69,7 @@ const QuizSimulator = () => {
             {t('previous')}
           </button>
         )}
-        <div className={styles.question} data-testid='quiz-header'>
+        <p className={styles.question} data-testid='quiz-header'>
           {config ? (
             <>
               {t('question')} {question + 1} / 10
@@ -77,19 +77,20 @@ const QuizSimulator = () => {
           ) : (
             t('finished')
           )}
-        </div>
-        <div className={styles.title} data-testid='quiz-title'>
+        </p>
+        <p className={styles.title} data-testid='quiz-title'>
           {config
             ? t.rich('title')
             : t.rich('score', { score: score.current.reduce((acc, current) => acc + current, 0) })}
-        </div>
+        </p>
         {config && (
-          <div
+          <p
             className={classNames(styles.tag, {
               [styles.correct]: answer === config.answer,
               [styles.missed]: answer && answer !== config.answer,
             })}
-            data-testid='quiz-question-result'>
+            data-testid='quiz-question-result'
+            role='status'>
             {answer ? (
               answer === config.answer ? (
                 t.rich('correct')
@@ -101,7 +102,7 @@ const QuizSimulator = () => {
             ) : (
               t('tag')
             )}
-          </div>
+          </p>
         )}
       </div>
       {config ? (
@@ -138,7 +139,7 @@ const QuizSimulator = () => {
           </div>
           <div className={shareableStyles.separatorBothBorders} />
           <div className={styles.ressources}>
-            {t('read-more')}
+            <p>{t('read-more')}</p>
             <Resource
               image='/images/fiches.png'
               text='fiches'

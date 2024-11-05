@@ -21,13 +21,11 @@ const ManteauBouilloire = () => {
         <div className={styles.withIcon}>
           <Icon />
           <div>
-            <div>{t.rich('line-1')}</div>
-            <br />
-            <div>{t.rich('line-2')}</div>
+            <p>{t.rich('line-1')}</p>
+            <p>{t.rich('line-2')}</p>
           </div>
         </div>
       </div>
-      <br />
       <EquivalentSimulator category={habillement} equivalent={manteau} className={styles.borders} />
     </>
   )

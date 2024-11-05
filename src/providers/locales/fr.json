@@ -28,7 +28,7 @@
       "line-2": "Pourtant, l’impact carbone d’1 kg d’avocat est légèrement inférieur à celui d’un repas avec poisson blanc."
     },
     "refrigirateur-ordinateur": {
-      "line-1": " Les appareils électroménagers ont aussi un fort impact sur le climat. Tout comme les appareils numériques, l’étape de fabrication est celle qui pèse le plus lourd dans leur bilan carbone."
+      "line-1": "Les appareils électroménagers ont aussi un fort impact sur le climat. Tout comme les appareils numériques, l’étape de fabrication est celle qui pèse le plus lourd dans leur bilan carbone."
     },
     "eau-the": {
       "line-1": "Boire un litre d’eau en bouteille a <important>6x plus d’impacts</important> que boire un litre de thé. Pourquoi ? Car la fabrication de l’emballage plastique de la bouteille et de sa distribution dans les différents points de ventes viennent fortement alourdir l’empreinte carbone."
@@ -337,7 +337,7 @@
   },
   "equivalent": {
     "year": "année[s]",
-    "hypotheses": "Hypothèses",
+    "hypotheses": "Hypothèses : ",
     "fabrication": "Fabrication",
     "usage": "Usage",
     "fdv": "Fin de vie",
