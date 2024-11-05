@@ -14,6 +14,22 @@ const DynamicNotion = ({ recordMap }: { recordMap: ExtendedRecordMap }) => {
       for (const element of elements) {
         element.setAttribute('alt', '')
       }
+      const mains = ref.current.getElementsByTagName('main')
+      for (const main of mains) {
+        main.outerHTML = `<div>${main.innerHTML}</div>`
+      }
+      const lis = ref.current.getElementsByTagName('li')
+      for (const li of lis) {
+        li.innerHTML = `<p>${li.innerHTML}</p>`
+      }
+      const texts = ref.current.getElementsByClassName('notion-text')
+      for (const text of texts) {
+        text.innerHTML = `<p>${text.innerHTML}</p>`
+      }
+      const calloutTexts = ref.current.getElementsByClassName('notion-callout-text')
+      for (const calloutText of calloutTexts) {
+        calloutText.innerHTML = `<p>${calloutText.innerHTML}</p>`
+      }
     }
   }, [ref])
   return (
