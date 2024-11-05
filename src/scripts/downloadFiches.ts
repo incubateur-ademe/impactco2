@@ -50,7 +50,6 @@ const downloadEquivalent = async (page: Page, category: string, equivalent: stri
     .then((buf) => {
       const path = `./public/pdf/${equivalent}.pdf`
       fs.open(path, 'w', function (err, fd) {
-        // @ts-expect-error expected
         fs.write(fd, buf, 0, buf.length, null, function () {
           fs.close(fd, function () {
             console.log('wrote the file successfully')

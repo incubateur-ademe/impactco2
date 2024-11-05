@@ -8,7 +8,6 @@ export type Category = {
   description?: string
   unit: string
   equivalents?: ComputedEquivalent[]
-  resetable?: boolean
   more?: string
   examples?: string
   synonyms?: string[]
