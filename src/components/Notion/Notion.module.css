@@ -21,6 +21,10 @@
     margin: 0 !important;
   }
 
+  :global(.notion-asset-caption) {
+    display: none;
+  }
+
   :global(.notion-title) {
     color: var(--neutral-80);
     font-weight: 700;
