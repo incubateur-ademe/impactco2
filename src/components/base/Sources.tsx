@@ -16,7 +16,7 @@ const Sources = ({
   className?: string
 }) => {
   return (
-    <div className={classNames(styles.wrapper, className)}>
+    <p className={classNames(styles.wrapper, className)}>
       Source{sources.length > 1 ? 's' : ''} :{' '}
       {sources
         .flatMap((source) => [
@@ -26,7 +26,7 @@ const Sources = ({
           <span key={`${source.label}-separator`}> • </span>,
         ])
         .slice(0, sources.length * 2 - 1)}
-    </div>
+    </p>
   )
 }
 

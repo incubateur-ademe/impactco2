@@ -77,7 +77,7 @@ const ShareUrl = ({
           {category ? (
             <Image src={`/meta/${category.slug}-${language}.png`} width={728} height={382.2} alt='' />
           ) : (
-            <img src={customImage} width={728} height={382.2} />
+            <img src={customImage} width={728} height={382.2} alt='' />
           )}
           <div className={styles.text}>
             <div className={styles.metaHeader}>{t('apercu')}</div>

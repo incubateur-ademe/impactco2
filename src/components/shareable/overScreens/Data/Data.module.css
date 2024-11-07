@@ -11,7 +11,11 @@
   font-size: 1.5rem;
   line-height: 1;
   margin-right: 0.5rem;
-  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
 }
 
 .text {

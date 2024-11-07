@@ -54,6 +54,7 @@ const UsageForm = ({
           </HiddenLabel>
           <Select
             id={`appareil-${slug}`}
+            title={`Appareil utilisé pour ${tEquivalent(`${slug}-title`)}`}
             value={situation[values.device] as string}
             onChange={(event) => {
               track('Usage numérique', `Select ${slug} appareil`, event.target.value)
@@ -70,6 +71,7 @@ const UsageForm = ({
           <HiddenLabel htmlFor={`text-select-type-${slug}`}>Type d'{tEquivalent(`${slug}-title`)}</HiddenLabel>
           <Select
             id={`type-${slug}`}
+            title={`Type d'${tEquivalent(`${slug}-title`)}`}
             value={situation[values.type] as string}
             onChange={(event) => {
               track('Usage numérique', `Select ${slug} type`, event.target.value)
@@ -86,6 +88,7 @@ const UsageForm = ({
           </HiddenLabel>
           <Select
             id={`network-${slug}`}
+            title={`Réseaux utilisé pour ${tEquivalent(`${slug}-title`)}`}
             value={situation[values.network] as string}
             onChange={(event) => {
               track('Usage numérique', `Select ${slug} réseau`, event.target.value)

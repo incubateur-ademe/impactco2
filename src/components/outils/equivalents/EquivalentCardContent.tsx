@@ -30,18 +30,20 @@ const EquivalentCardContent = ({
   return (
     <div className={styles.content}>
       <div>
-        <div className={styles.title}>{getName(language, equivalent)}</div>
-        <Result form={output} className={styles.value}>
-          <div className={styles.valueNumber}>
-            <LocalNumber number={value} />
-          </div>{' '}
-          {unit} CO₂e
+        <p className={styles.title}>{getName(language, equivalent)}</p>
+        <Result form={output}>
+          <p className={styles.value}>
+            <span className={styles.valueNumber}>
+              <LocalNumber number={value} />
+            </span>{' '}
+            {unit} CO₂e
+          </p>
         </Result>
         {unitLabel && (
-          <div className={styles.unit}>
+          <p className={styles.unit}>
             {equivalent.unit && t(equivalent.unit).startsWith(t('avec')) ? '' : `${t('par')} `}
             {t(unitLabel)}
-          </div>
+          </p>
         )}
       </div>
       <EquivalentIcon equivalent={equivalent} height={5} />

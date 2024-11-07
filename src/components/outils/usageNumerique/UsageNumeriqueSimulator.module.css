@@ -21,6 +21,8 @@
 .values {
   color: var(--neutral-50);
   text-align: center;
+  display: flex;
+  flex-direction: column;
   padding: 0 1.5rem;
   font-size: 0.875rem;
   font-weight: 400;
@@ -68,6 +70,10 @@
   color: var(--neutral-50);
   padding: 1.5rem;
   text-align: center;
+
+  span {
+    display: block;
+  }
 }
 
 .mainText {

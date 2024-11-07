@@ -158,7 +158,7 @@ export default function Detail({
   return (
     <>
       {withSeparator && <div className={shareableStyles.separator} />}
-      <table className={styles.table}>
+      <table className={styles.table} role='presentation'>
         <tbody>
           {values.map((value) => (
             <Fragment key={value.label}>

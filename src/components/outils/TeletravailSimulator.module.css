@@ -46,6 +46,8 @@
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
+  display: flex;
+  flex-direction: column;
 
   &:not(:last-child) {
     border-right: 2px solid var(--neutral-20);

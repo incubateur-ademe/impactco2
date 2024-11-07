@@ -40,7 +40,7 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
         <div className={styles.roundTrip}>
           <CheckboxInput id='roundTrip' label={t('roundTrip')} checked={roundTrip} setChecked={setRoundTrip} />
         </div>
-        {t('header')}
+        <p>{t('header')}</p>
       </div>
       {start && end && itineraries && (
         <>

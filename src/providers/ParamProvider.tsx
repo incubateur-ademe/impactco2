@@ -2,7 +2,7 @@
 
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation'
 import { ASTNode, PublicodesExpression } from 'publicodes'
-import React, { Dispatch, ReactNode, SetStateAction, useCallback, useContext, useEffect, useRef, useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useRef, useState } from 'react'
 import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { SiteLanguage } from 'types/languages'
 import { TransportSimulateur } from 'types/transport'
@@ -84,7 +84,6 @@ type LivraisonValues = {
 export type Params = {
   overscreen: Record<string, string>
   setOverscreen: (slug: string, value: string) => void
-  reset: (slug: string) => void
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
   language: SiteLanguage
@@ -497,44 +496,11 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     setUsageNumeriqueSituation(situation)
   }, [searchParams])
 
-  const reset = useCallback((slug: string) => {
-    switch (slug) {
-      case 'transport':
-        setKm(10)
-        setItineraireStart(undefined)
-        setItineraireEnd(undefined)
-        setComparison(['voiturethermique', 'tgv'])
-        break
-      case 'teletravail':
-        setTeletravailStart(undefined)
-        setTeletravailEnd(undefined)
-        setTeletravailTransport('voiturethermique')
-        setPresentiel(4)
-        setHomeOffice(1)
-        break
-      case 'usagenumerique':
-        setNumberEmails(50)
-        setUsageNumeriqueSituation(usageNumeriqueDefaultValues)
-        break
-      case 'livraison':
-        setLivraisonValues(livraisonDefaultValues)
-        setNumber(1)
-        setFrequence(12)
-        break
-      case 'chauffage':
-        setM2(63)
-        break
-      default:
-        break
-    }
-  }, [])
-
   return (
     <ParamContext.Provider
       value={{
         overscreen,
         setOverscreen: setOverscreeInternal,
-        reset,
         theme,
         setTheme,
         language,

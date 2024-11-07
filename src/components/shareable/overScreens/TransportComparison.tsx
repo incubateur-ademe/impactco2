@@ -57,7 +57,7 @@ const TransportComparison = ({
 
   return (
     <fieldset>
-      <div className={customStyles.title}>{t('comparison')}</div>
+      <legend className={customStyles.title}>{t('comparison')}</legend>
       <div className={styles.modes}>
         <div className={styles.select}>
           {equivalent1 && (

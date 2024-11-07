@@ -35,9 +35,8 @@ const AddressInput = ({
   const [value, setValue] = useState('')
   const input = useRef<HTMLInputElement>(null)
   const debouncedSearch: string = useDebounce(value)
-  const [focus, setFocus] = useState(false)
   const [open, setOpen] = useState(false)
-  const { data, isFetching } = useSuggestions(debouncedSearch, focus, place)
+  const { data, isFetching } = useSuggestions(debouncedSearch, place)
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
@@ -48,20 +47,9 @@ const AddressInput = ({
     }
   }, [place])
 
-  useEffect(() => {
-    if (!focus) {
-      setCurrent(0)
-      if (input.current) {
-        input.current.blur()
-      }
-    }
-  }, [focus])
-
-  const navigateToPlace = (place: Point) => {
-    if (place) {
-      setPlace(place)
-      setOpen(false)
-    }
+  const navigateToPlace = (place?: Point) => {
+    setPlace(place)
+    setOpen(false)
   }
 
   const error = useError(id, errors)
@@ -77,8 +65,8 @@ const AddressInput = ({
       <input
         role='combobox'
         aria-controls={`suggestions-${id}`}
-        aria-expanded={focus}
-        aria-activedescendant={data && focus ? displayAddress(data[current]) : undefined}
+        aria-expanded={data && open}
+        aria-activedescendant={data ? displayAddress(data[current]) : undefined}
         aria-autocomplete='list'
         className={classNames(inputStyles.input, {
           [inputStyles.withIcon]: isFetching,
@@ -95,18 +83,19 @@ const AddressInput = ({
         }}
         onFocus={() => {
           setOpen(true)
-          setFocus(true)
         }}
         id={`input-${id}`}
-        onBlur={() => setFocus(false)}
       />
       {isFetching && (
         <div className={classNames(styles.loading, { [styles.largeLoading]: large })}>
+          <p className='hidden' role='status'>
+            Chargement en cours
+          </p>
           <LoadingIcon />
         </div>
       )}
       <div id={`suggestions-${id}`} aria-label={isFetching ? 'chargement en cours' : `${data?.length} resultats`}>
-        {data && focus && open && (
+        {data && open && (
           <Suggestions
             isFetching={isFetching}
             results={data}

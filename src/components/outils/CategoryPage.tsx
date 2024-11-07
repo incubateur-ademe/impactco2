@@ -1,6 +1,5 @@
 import React, { ReactNode, Suspense } from 'react'
 import { Category as CategoryType } from 'types/category'
-import Reset from 'components/base/Reset'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
@@ -30,7 +29,6 @@ const CategoryPage = ({
       />
       <Block title={category.name} as='h1' description={category.description}>
         <Category category={category} simulator={simulator} />
-        {category.resetable && <Reset tracking={category.name} slug={category.slug} />}
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>
       {extraSimulator && (

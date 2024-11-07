@@ -77,8 +77,8 @@
   height: calc(1rem - 4px);
   border-radius: 1rem 0 0 1rem;
   background-image: repeating-linear-gradient(-45deg,
-      var(--primary-10),
-      var(--primary-10) 2px,
+      var(--neutral-00),
+      var(--neutral-00) 2px,
       var(--primary-20) 2px,
       var(--primary-20) 4px);
 }

@@ -30,8 +30,8 @@ const BudgetPage = () => {
       <br />
       Le budget exposé ici ne prend pas en compte l’intrapeneur puisque qu’il est salarié de l’ADEME mais concerne les
       membres de l’équipe.
-      <h2>Budget consommé</h2>
-      <ByYear />
+      <h2 id='budget-title'>Budget consommé</h2>
+      <ByYear labelId='budget-title' />
       <br />
       <h3>Description des catégories de coût</h3>
       <ul>

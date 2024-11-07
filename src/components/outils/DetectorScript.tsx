@@ -11,19 +11,21 @@ const DetectorScript = () => {
   const search = useMemo(() => `?theme=${theme}&language=${language}`, [language, theme])
   return (
     <>
-      <div className={styles.clipboardTitle}>Comment l'utiliser ?</div>
-      <CustomParam
-        tracking={'Detecteur CO2'}
-        slug='theme'
-        param={{ value: theme, setter: setTheme } as CustomParamValue}
-        visible
-      />
-      <CustomParam
-        tracking={'Detecteur CO2'}
-        slug='language'
-        param={{ value: language, setter: setLanguage } as CustomParamValue}
-        visible
-      />
+      <fieldset>
+        <legend className={styles.clipboardTitle}>Comment l'utiliser ?</legend>
+        <CustomParam
+          tracking={'Detecteur CO2'}
+          slug='theme'
+          param={{ value: theme, setter: setTheme } as CustomParamValue}
+          visible
+        />
+        <CustomParam
+          tracking={'Detecteur CO2'}
+          slug='language'
+          param={{ value: language, setter: setLanguage } as CustomParamValue}
+          visible
+        />
+      </fieldset>
       <ClipboardBox tracking='Detecteur carbone'>{`<script id="script-detecteur-impact-co2" src="https://impactco2.fr/scripts/detection.js" data-search="${search}"></script>`}</ClipboardBox>
     </>
   )

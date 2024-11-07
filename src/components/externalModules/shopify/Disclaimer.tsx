@@ -49,12 +49,14 @@ const ques = {
 } as Record<string, string>
 
 const Disclaimer = ({
+  id,
   comparisons,
   language,
   value,
   unit,
   column,
 }: {
+  id: string
   comparisons: string[]
   language: string
   value: number
@@ -79,7 +81,9 @@ const Disclaimer = ({
   return (
     <>
       {display && (
-        <div className={classNames(styles.disclaimer, { [styles.disclaimerColumn]: column })}>
+        <div
+          className={classNames(styles.disclaimer, { [styles.disclaimerColumn]: column })}
+          id={`etiquette-${id}-disclaimer`}>
           {basis[language]}
           <br />
           {ques[language]} {value} {unit}{' '}
@@ -87,6 +91,8 @@ const Disclaimer = ({
         </div>
       )}
       <button
+        aria-controls={`etiquette-${id}-disclaimer`}
+        aria-expanded={display}
         title='Afficher les informations de contenus'
         className={classNames(styles.button, { [styles.opened]: display, [styles.buttonColumn]: column })}
         onClick={() => setDisplay(!display)}>

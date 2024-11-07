@@ -15,7 +15,8 @@
   padding: 0.5rem 0.5rem 0.5rem 1rem;
 
   &:hover {
-    background-color: var(--primary-10);
+    color: var(--neutral-00);
+    background-color: var(--primary-50);
   }
 
   mark {
@@ -26,5 +27,6 @@
 }
 
 .current {
-  background-color: var(--primary-10);
+  color: var(--neutral-00);
+  background-color: var(--primary-50);
 }

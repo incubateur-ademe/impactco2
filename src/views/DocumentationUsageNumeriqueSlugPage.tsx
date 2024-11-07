@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 import { UsageNumeriqueProvider } from 'src/providers/UsageNumeriqueProvider'
 
-const DocumentationUsageNumerique = dynamic(() => import('components/base/DocumentationUsageNumerique'), {
+const DocumentationUsageNumerique = dynamic(() => import('components/base/publicode/DocumentationUsageNumerique'), {
   ssr: false,
 })
 
@@ -12,11 +12,6 @@ const DocumentationUsageNumeriqueSlugPage = ({ slug }: { slug: string }) => {
   return (
     <UsageNumeriqueProvider>
       <DocumentationUsageNumerique slug={slug} />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </UsageNumeriqueProvider>
   )
 }

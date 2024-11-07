@@ -40,7 +40,7 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
       })}>
       {isNew && (
         <div className={classNames(styles.tag, { [styles.horizontalTag]: horizontal })}>
-          {horizontal ? 'Nouveau !' : 'Nouvel outil !'}
+          {horizontal ? 'Nouveau !' : 'Nouvel outil !'}
         </div>
       )}
       <IframeableLink
@@ -52,13 +52,12 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
         })}
         onClick={() => {
           track('Outils', link || `/outils/${slug}`, 'click')
-        }}
-        aria-label={`Visualiser l'outil ${title}`}>
+        }}>
         <Image src={image || `/images/tools-${slug}.svg`} width={220} height={180} alt='' />
         <div className={styles.content}>
           <div>
             <div className={styles.title}>{title}</div>
-            <div>{description}</div>
+            {typeof description === 'string' ? <p>{description}</p> : <div>{description}</div>}
           </div>
           <div className={styles.link}>
             {linkLabel}

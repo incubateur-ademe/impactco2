@@ -17,7 +17,7 @@ const Suggestions = ({
   setCurrent: Dispatch<SetStateAction<number>>
   isFetching: boolean
   results: Address[]
-  handleSuggestionClick: (point: Point) => void
+  handleSuggestionClick: (point?: Point) => void
 }) => {
   const maxSuggestions = 7
   const ref = useRef<HTMLUListElement>(null)
@@ -50,6 +50,9 @@ const Suggestions = ({
             address: displayAddress(result),
           })
         }
+      }
+      if (e.code === 'Escape') {
+        handleSuggestionClick(undefined)
       }
     },
     [current, setCurrent, handleSuggestionClick, results]

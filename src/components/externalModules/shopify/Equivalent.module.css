@@ -63,19 +63,25 @@
   transform: translateX(-50%) translateY(-50%) !important;
   border-radius: 50%;
   background-color: var(--neutral-00) !important;
-  color: var(--primary-40) !important;
+  color: var(--primary-50) !important;
   position: absolute !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  height: 1.25em !important;
-  width: 1.25em !important;
-  border: 2px solid var(--primary-40) !important;
+  height: 1rem !important;
+  width: 1rem !important;
 
   svg {
     width: 0.75em !important;
     height: 0.75em !important;
   }
+}
+
+.equalColumn,
+.equal {
+  border: 2px solid var(--primary-30) !important;
+  height: 1.25rem !important;
+  width: 1.25rem !important;
 }
 
 .animatedEqualColumn,
@@ -109,6 +115,10 @@
 .visibleAnimatedComparison,
 .animatedComparison {
   padding: 0.75em 1.25em !important;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .comparison:not(:last-child) {
@@ -143,8 +153,8 @@
 .progressBarColumn,
 .progressBar {
   position: absolute !important;
-  height: 1.75em !important;
-  width: 1.75em !important;
+  height: 1.5em !important;
+  width: 1.5em !important;
   border-radius: 50% !important;
 }
 

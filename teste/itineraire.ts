@@ -48,7 +48,9 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
 
   await expect(page.getByLabel('Arrivée')).toHaveAttribute('value', 'Angers 49000 France')
   await expect(page.getByTestId('category-intercites')).toBeAttached()
-  await expect(page.getByTestId('category-intercites')).toHaveText('Intercités  - 91.2 km0.82 kg CO₂e')
+  await expect(page.getByTestId('category-intercites')).toHaveText(
+    'Intercités  - 91.2 km0.82 kg CO₂eusage : 65% et construction : 35%'
+  )
 
   await page.getByTestId('header-share-button').click()
 

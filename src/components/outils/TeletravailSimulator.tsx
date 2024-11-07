@@ -128,45 +128,45 @@ const TeletravailSimulator = () => {
       {start && end && itineraries ? (
         <>
           <output form='teletravail-simulator' className={styles.results}>
-            <div className={styles.values}>
-              <div className={styles.header}>{t('generate')}</div>
-              <div className={styles.value}>
+            <p className={styles.values}>
+              <span className={styles.header}>{t('generate')}</span>
+              <span className={styles.value}>
                 <span className={styles.number} data-testid='teletravail-generated-value'>
                   <LocalNumber number={formatNumber(total * presentiel)} />
                 </span>{' '}
                 kg co₂e
-              </div>
-              <div>{t('per-year')}</div>
-              <div>
+              </span>
+              <span>{t('per-year')}</span>
+              <span>
                 {t('work')} {presentiel} {`${t('day')}${presentiel === 1 ? '' : 's'}`} / {t('week')}
-              </div>
-            </div>
-            <div className={styles.values}>
-              <div className={styles.header}>{t('saved')}</div>
-              <div className={styles.greenValue}>
+              </span>
+            </p>
+            <p className={styles.values}>
+              <span className={styles.header}>{t('saved')}</span>
+              <span className={styles.greenValue}>
                 <span className={styles.number} data-testid='teletravail-saved-value'>
                   <LocalNumber number={formatNumber(0.75 * homeOffice * total)} />
                 </span>{' '}
                 kg co₂e
-              </div>
-              <div>{t('per-year')}</div>
+              </span>
+              <span>{t('per-year')}</span>
               {t('home')} {homeOffice} {`${t('day')}${homeOffice === 1 ? '' : 's'}`} / {t('week')}
-            </div>
+            </p>
           </output>
           <div>
-            <div className={styles.values}>
-              <div className={styles.header}>{t('or')}</div>
-              <div className={styles.greenValue}>
+            <p className={styles.values}>
+              <span className={styles.header}>{t('or')}</span>
+              <span className={styles.greenValue}>
                 <span className={styles.number} data-testid='teletravail-saved-percent'>
                   <LocalNumber number={formatNumber((0.75 * homeOffice * total) / 99)} />
                 </span>{' '}
                 %
-              </div>
-              <div>{t('economised')}</div>
-            </div>
+              </span>
+              <span>{t('economised')}</span>
+            </p>
           </div>
           <div className={styles.etiquette}>
-            <div className={styles.header}>{t('total')}</div>
+            <p className={styles.header}>{t('total')}</p>
             <Etiquette
               baseValue={0.75 * homeOffice * total * 1000}
               comparisons={equivalents}

@@ -45,7 +45,7 @@ const Category = ({
   const t = useTranslations('comparateur.overscreen')
   const tCategory = useTranslations('category')
   return (
-    <li className={styles.container}>
+    <fieldset className={styles.container}>
       <button
         className={styles.header}
         onClick={() => setOpen(!open)}
@@ -58,7 +58,7 @@ const Category = ({
           <EquivalentIcon height={2.5} equivalent={category} />
         </span>
         <span className={styles.names}>
-          <span className={styles.title}>{tCategory(`name-${category.slug}`)}</span>
+          <legend className={styles.title}>{tCategory(`name-${category.slug}`)}</legend>
           <span>
             <span className={styles.selectedNumber} data-testid={`selected-equivalents-${category.slug}-number`}>
               {categoryEquivalents.filter((equivalent) => equivalents.includes(equivalent.slug)).length}
@@ -86,16 +86,14 @@ const Category = ({
               {t('compare-button')}
             </Button>
           </div>
-          <ul>
-            <Equivalents
-              equivalents={equivalents}
-              equivalentsToDisplay={categoryEquivalents}
-              setEquivalents={setEquivalents}
-            />
-          </ul>
+          <Equivalents
+            equivalents={equivalents}
+            equivalentsToDisplay={categoryEquivalents}
+            setEquivalents={setEquivalents}
+          />
         </>
       )}
-    </li>
+    </fieldset>
   )
 }
 

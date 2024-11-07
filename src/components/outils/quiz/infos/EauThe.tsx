@@ -20,10 +20,9 @@ const EauThe = () => {
       <div className={styles.container}>
         <div className={styles.withIcon}>
           <Icon />
-          <div>{t.rich('line-1')}</div>
+          <p>{t.rich('line-1')}</p>
         </div>
       </div>
-      <br />
       <EquivalentSimulator category={boisson} equivalent={eau} className={styles.borders} />
     </>
   )

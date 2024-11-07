@@ -15,11 +15,13 @@ const Example = ({ example, withTags }: { example: ExampleType; withTags?: boole
       {withTags ? (
         <div className={styles.example}>
           {image}
-          <div className={styles.tags}>
+          <ul className={styles.tags}>
             {example.links.map((link) => (
-              <Tag key={`${link.href}-${link.label}`} text={link.label} href={link.href} name={example.name} />
+              <li key={`${link.href}-${link.label}`}>
+                <Tag text={link.label} href={link.href} name={example.name} />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       ) : (
         <IframeableLink

@@ -6,7 +6,7 @@ import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
-    <footer className={styles.footer} id='footer'>
+    <footer className={styles.footer} id='footer' role='contentinfo' tabIndex={-1}>
       <div className={styles.header} />
       <div className={styles.logos}>
         <Marianne />
@@ -16,14 +16,13 @@ export default function Footer() {
         <div className={styles.internalContainer}>
           <div className={styles.footerExplain}>
             <Logo />
-            <div className='text-sm'>
+            <p className='text-sm'>
               Le site de ressources qui vulgarise et valorise les données environnementales de l'ADEME.
-            </div>
+            </p>
             <Link
               prefetch={false}
               className={styles.followNews}
               href='https://fr.linkedin.com/showcase/accelerateurdelatransitionecologique-ademe/'
-              title='LinkedIn'
               rel='noreferrer noopener'
               target='_blank'>
               Suivre nos actualités sur LinkedIn
@@ -31,7 +30,7 @@ export default function Footer() {
           </div>
           <div className={styles.topLinks}>
             <div>
-              <div className={styles.linkTitle}>LIENS UTILES</div>
+              <h2 className={styles.linkTitle}>LIENS UTILES</h2>
               <ul className={styles.linkContainer}>
                 <li>
                   <Link prefetch={false} href='https://beta.gouv.fr/startups/impact.co2.html'>
@@ -61,7 +60,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <div className={styles.linkTitle}>RESSOURCES</div>
+              <h2 className={styles.linkTitle}>RESSOURCES</h2>
               <ul className={styles.linkContainer}>
                 <li>
                   <Link prefetch={false} href='/doc/guide-utilisation'>

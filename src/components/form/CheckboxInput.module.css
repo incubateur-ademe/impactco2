@@ -31,7 +31,8 @@
   }
 
   input[type='checkbox']:checked {
-    background-color: var(--primary-40);
+    border-color: var(--primary-60);
+    background-color: var(--primary-50);
   }
 
   &:hover {
@@ -47,15 +48,16 @@
   }
 
   input[type='checkbox']:focus {
-    outline: 4px solid var(--primary-30);
+    outline: 3px solid var(--primary-50);
     outline-offset: 0;
   }
 
   input[type='checkbox']:disabled {
-    border-color: var(--neutral-20);
+    border-color: var(--neutral-30);
   }
 
   input[type='checkbox']:disabled:checked {
+    border-color: var(--neutral-20);
     color: var(--neutral-30);
     background-color: var(--neutral-10);
   }

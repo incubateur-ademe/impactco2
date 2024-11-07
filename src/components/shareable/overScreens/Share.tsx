@@ -8,6 +8,7 @@ import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getCustomParams } from './CustomParamsValues'
 import styles from './Share.module.css'
+import ShareKit from './ShareKit'
 import ShareUrl from './ShareUrl'
 import { buildCustomParamsUrl } from './customParamsUrl'
 
@@ -83,6 +84,7 @@ const Share = ({
             : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}`
         }
       />
+      <ShareKit />
     </>
   )
 }
