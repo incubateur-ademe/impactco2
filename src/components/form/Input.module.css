@@ -4,9 +4,9 @@
   align-items: center;
   background: var(--neutral-00);
   border: unset;
-  border: 2px solid var(--primary-30);
+  border: 2px solid var(--primary-50);
   border-radius: 8px;
-  color: var(--neutral-70);
+  color: var(--neutral-80);
   display: flex;
   gap: 0.5rem;
   min-width: 7.5rem;
@@ -18,12 +18,13 @@
   width: 100%;
 
   &:hover {
-    border: 2px solid var(--primary-40);
+    border: 2px solid var(--primary-70);
   }
 
   &:focus {
     border: 2px solid var(--primary-50);
-    outline: 4px solid var(--primary-30);
+    outline-offset: 0;
+    outline: 3px solid var(--primary-50);
   }
 
   &:disabled {
@@ -69,15 +70,16 @@
 }
 
 .inputError {
-  border: 2px solid var(--critical-30) !important;
+  border: 2px solid var(--critical-50) !important;
 
   &:hover {
-    border: 2px solid var(--critical-40) !important;
+    border: 2px solid var(--critical-70) !important;
   }
 
   &:focus {
     border: 2px solid var(--critical-50) !important;
-    outline: 4px solid var(--critical-30) !important;
+    outline-offset: 2px;
+    outline: 3px solid var(--critical-50) !important;
   }
 }
 
@@ -102,13 +104,22 @@
 }
 
 .icon {
+  background-color: transparent;
   color: var(--primary-50);
   position: absolute;
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
-  width: 1.25rem;
-  height: 1.25rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary-10);
+  }
 
   svg {
     width: 1.25rem;
@@ -125,8 +136,8 @@
 
 .containerInline {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .label {

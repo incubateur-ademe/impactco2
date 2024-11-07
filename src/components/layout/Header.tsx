@@ -8,12 +8,12 @@ import SkipLinks from './SkipLinks'
 
 export default function Header() {
   return (
-    <header aria-label='En-tête' className={styles.header} id='header-navigation'>
+    <header role='banner' aria-label='En-tête' className={styles.header} id='header-navigation' tabIndex={-1}>
       <SkipLinks />
       <div className='main-container'>
         <div className={styles.container}>
           <Logos />
-          <div>
+          <nav role='navigation'>
             <ul className={styles.mainLinks}>
               <li>
                 <IframeableLink href='/outils'>
@@ -31,7 +31,7 @@ export default function Header() {
             <div className={styles.menu}>
               <Menu />
             </div>
-          </div>
+          </nav>
         </div>
       </div>
     </header>

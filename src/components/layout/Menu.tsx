@@ -26,11 +26,11 @@ const Menu = () => {
 
   return (
     <>
-      <button ref={ref} onClick={() => setOpen(!open)} title='Menu'>
+      <button ref={ref} onClick={() => setOpen(!open)} title='Menu' aria-expanded={open} aria-controls='mobile-menu'>
         <MenuIcon />
         <span>Menu</span>
       </button>
-      <ul className={classNames(styles.menu, { [styles.open]: open })}>
+      <ul className={classNames(styles.menu, { [styles.open]: open })} id='mobile-menu'>
         <li>
           <IframeableLink href='/outils'>
             <ToolsIcon />

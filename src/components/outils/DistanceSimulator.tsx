@@ -32,7 +32,7 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
           label='Distance parcourue (en km)'
           unit='km'
         />
-        {t('header')}
+        <p>{t('header')}</p>
       </div>
       {withComparisonMode && <TransportComparisonMode tracking='Transport distance' />}
       {comparisonMode === 'list' ? (

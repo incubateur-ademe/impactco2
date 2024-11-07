@@ -13,7 +13,7 @@ const NotFound = () => {
   return (
     <>
       <Header />
-      <main id='contenu'>
+      <main id='contenu' role='main' tabIndex={-1}>
         <NotFoundPage />
         <Suggestion fromLabel='Page non trouvée' simulatorName='du site' />
       </main>

@@ -1,5 +1,9 @@
 .container {
   color: var(--primary-70);
+
+  p {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .withIcon {

@@ -16,7 +16,16 @@ const existingEquivalentsByCategory: Record<string, { file: string; values: Usab
   numerique: { file: 'numerique.json', values: numerique },
 }
 
-const empreinteValues = ["Identifiant_de_l'élément", 'Total_poste_non_décomposé', 'Nom_poste_français', 'Type_poste']
+const empreinteValues = [
+  "Identifiant_de_l'élément",
+  'Total_poste_non_décomposé',
+  'Nom_poste_français',
+  'Type_poste',
+  'Nom_base_français',
+  'Type_Ligne',
+  'Nom_frontière_français',
+  'Nom_attribut_français',
+]
 
 const ecvs = [
   { id: 1, values: ['Matières premières'] },
@@ -70,11 +79,15 @@ const getEquivalents = async (
     Total_poste_non_décomposé: number
     Nom_poste_français: string
     Type_poste: string
+    Nom_base_français: string
+    Type_Ligne: string
+    Nom_attribut_français: string
+    Nom_frontière_français: string
   }[]
 > => {
   const remote_url = encodeURI(
     `https://data.ademe.fr/data-fair/api/v1/datasets/base-carboner/lines?q_fields=Identifiant_de_l'élément&size=${
-      ids.length * 6
+      ids.length * 10
     }&select=${empreinteValues.join(',')}&q=${ids.filter((code) => !!code).join(' | ')}`
   )
 
@@ -93,6 +106,17 @@ const buildTransportFromEmpreinte = async () => {
   })
 
   const newEquivalents = await getEquivalents(ids)
+  console.log('transport')
+  console.log(
+    JSON.stringify(
+      newEquivalents
+        .filter((newEquivalents) => newEquivalents.Type_Ligne === 'Elément')
+        .map(
+          (e) =>
+            `${e.Nom_base_français} ${e.Nom_poste_français || ''} ${e.Nom_frontière_français || ''} ${e.Nom_attribut_français || ''}`
+        )
+    )
+  )
   const finalResult = deplacement.map((equivalent) => {
     if ('empreinteId' in equivalent && equivalent.empreinteId) {
       const elementValues = newEquivalents.filter(
@@ -172,6 +196,17 @@ const buildFromEmpreinte = async (key: string) => {
   })
 
   const newEquivalents = await getEquivalents(ids)
+  console.log(key)
+  console.log(
+    JSON.stringify(
+      newEquivalents
+        .filter((newEquivalents) => newEquivalents.Type_Ligne === 'Elément')
+        .map(
+          (e) =>
+            `${e.Nom_base_français} ${e.Nom_poste_français || ''} ${e.Nom_frontière_français || ''} ${e.Nom_attribut_français || ''}`
+        )
+    )
+  )
   const finalResult = updateEquivalents(existingEquivalents.values, newEquivalents)
   fs.writeFileSync(`src/data/categories/${existingEquivalents.file}`, JSON.stringify(finalResult, null, 2))
 }

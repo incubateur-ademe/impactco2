@@ -70,18 +70,18 @@ const SimpleValue = ({
       <div className={styles.emoji}>
         <EquivalentIcon height={3} equivalent={equivalent} />
       </div>
-      <div className={classNames(styles.text, 'impactCO2-etiquette-content')} id={id}>
-        <div
+      <p className={classNames(styles.text, 'impactCO2-etiquette-content')} id={id}>
+        <span
           className={classNames(styles.equivalentValue, 'impactCO2-etiquette-value')}
           data-testid={`etiquette-${comparison}-value`}>
           {equivalentValue}
-        </div>
-        <div
+        </span>
+        <span
           className={classNames(styles.label, 'impactCO2-etiquette-text')}
           data-testid={`etiquette-${comparison}-name`}>
           {getName(language, equivalent, true, comparisonValue, true)}
-        </div>
-      </div>
+        </span>
+      </p>
     </div>
   )
 }

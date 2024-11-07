@@ -88,8 +88,6 @@ video {
   padding: 0;
   border: 0;
   font-family: 'Marianne', Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
   vertical-align: baseline;
 }
 
@@ -125,6 +123,7 @@ html {
   position: relative;
 }
 
+dialog,
 body {
   background-color: var(--neutral-00);
   color: var(--neutral-70);
@@ -222,6 +221,11 @@ option {
   color: #383838;
 }
 
+input::placeholder {
+  color: var(--neutral-50);
+  opacity: 1;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -281,7 +285,7 @@ button,
 a {
   &:focus {
     outline-offset: 2px;
-    outline: 3px solid var(--primary-40);
+    outline: 3px solid var(--primary-50);
   }
 
   &:focus:not(:focus-visible) {
@@ -291,4 +295,9 @@ a {
 
 ul {
   list-style: none;
+}
+
+.hidden {
+  left: -99999px;
+  position: absolute;
 }

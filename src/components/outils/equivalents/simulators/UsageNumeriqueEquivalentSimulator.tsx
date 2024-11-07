@@ -126,6 +126,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               <HiddenLabel htmlFor='text-select-type'>Type d'{tEquivalent(`${slug}-title`)}</HiddenLabel>
               <Select
                 id='type'
+                title={`Type d'${tEquivalent(`${slug}-title`)}`}
                 value={situation[values.type] as string}
                 onChange={(event) => {
                   track(getName('fr', equivalents[slug]), `Select ${slug} type`, event.target.value)
@@ -142,6 +143,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               </HiddenLabel>
               <Select
                 id='network'
+                title={`Réseaux utilisé pour ${tEquivalent(`${slug}-title`)}`}
                 value={situation[values.network] as string}
                 onChange={(event) => {
                   track(getName('fr', equivalents[slug]), `Select ${slug} réseau`, event.target.value)

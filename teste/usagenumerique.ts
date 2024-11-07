@@ -42,12 +42,16 @@ export const usageNumeriqueTest = async (page: Page | FrameLocator, prod?: boole
   await expect(page.getByTestId('usagenumerique-generated-value')).toHaveText('2.74')
 
   await expect(page.getByTestId('category-visioconference')).toHaveText(
-    '1 an de visioconférences - 468 heures7.07 kg CO₂e'
+    '1 an de visioconférences - 468 heures7.07 kg CO₂eusage : 0% et construction : 100% '
   )
   await expect(page.getByTestId('category-visioconference-value')).toHaveText('7.07')
-  await expect(page.getByTestId('category-email')).toHaveText("1 an d'email - 7800 emails44.6 kg CO₂e")
+  await expect(page.getByTestId('category-email')).toHaveText(
+    "1 an d'email - 7800 emails44.6 kg CO₂eusage : 0% et construction : 100% "
+  )
   await expect(page.getByTestId('category-email-value')).toHaveText('44.6')
-  await expect(page.getByTestId('category-streamingvideo')).toHaveText('1 an de streaming - 520 heures90.7 kg CO₂e')
+  await expect(page.getByTestId('category-streamingvideo')).toHaveText(
+    '1 an de streaming - 520 heures90.7 kg CO₂eusage : 0% et construction : 100% '
+  )
   await expect(page.getByTestId('category-streamingvideo-value')).toHaveText('90.7')
 
   await page.getByTestId('header-share-button').click()

@@ -241,7 +241,7 @@ const FRChauffageData = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.text}>
+      <p className={styles.text}>
         L'ensemble des calculs et des hypothèses sont issus de{' '}
         <Link href='https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel'>
           l’étude Consommation d'énergie par usage du résidentiel 2023
@@ -257,33 +257,35 @@ const FRChauffageData = () => {
         <br />
         Afin de comparer les différents modes de chauffage entre eux, nous partons d’un foyer moyen avec un besoin en
         énergie de 150 kWh/m².
-      </div>
+      </p>
       {Object.entries(data).map(([slug, { values, hypothesis }]) => (
         <div key={slug}>
           <div>
             <div className={styles.emoji}>
               <EquivalentIcon equivalent={{ slug }} />
             </div>
-            <b>{getName(language, { slug, category: 8 })}</b>
+            <b aria-level={2}>{getName(language, { slug, category: 8 })}</b>
           </div>
-          {values.map((value, index) => (
-            <div
-              className={classNames(styles.values, { [styles.border]: index !== values.length - 1 })}
-              key={slug + value.fr}>
-              <div>
-                {value.fr}
-                {'withSource' in value && value.withSource && (
-                  <span>
-                    {' '}
-                    • <Link href={value.withSource.href}>{value.withSource.label}</Link>
-                  </span>
-                )}
-              </div>
-              <div className={styles.value}>{value.value}</div>
-            </div>
-          ))}
+          <ul>
+            {values.map((value, index) => (
+              <li
+                className={classNames(styles.values, { [styles.border]: index !== values.length - 1 })}
+                key={slug + value.fr}>
+                <div>
+                  {value.fr}
+                  {'withSource' in value && value.withSource && (
+                    <span>
+                      {' '}
+                      • <Link href={value.withSource.href}>{value.withSource.label}</Link>
+                    </span>
+                  )}
+                </div>
+                <div className={styles.value}>{value.value}</div>
+              </li>
+            ))}
+          </ul>
           {hypothesis && (
-            <div
+            <p
               className={classNames(styles.hypothesis, 'text-sm')}
               dangerouslySetInnerHTML={{
                 __html: hypothesis.fr,
@@ -301,7 +303,7 @@ const ESChauffageData = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.text}>
+      <p className={styles.text}>
         Todos los cálculos e hipótesis proceden del{' '}
         <Link href='https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel'>
           estudio Consumo energético residencial por usos 2023{' '}
@@ -317,33 +319,35 @@ const ESChauffageData = () => {
         <br />
         Para comparar los distintos métodos de calefacción, partimos de un hogar medio con una demanda energética de 150
         kWh/m².
-      </div>
+      </p>
       {Object.entries(data).map(([slug, { values, hypothesis }]) => (
         <div key={slug}>
           <div>
             <div className={styles.emoji}>
               <EquivalentIcon equivalent={{ slug }} />
             </div>
-            <b>{getName(language, { slug, category: 8 })}</b>
+            <b aria-level={2}>{getName(language, { slug, category: 8 })}</b>
           </div>
-          {values.map((value, index) => (
-            <div
-              className={classNames(styles.values, { [styles.border]: index !== values.length - 1 })}
-              key={slug + value.es}>
-              <div>
-                {value.es}
-                {'withSource' in value && value.withSource && (
-                  <span>
-                    {' '}
-                    • <Link href={value.withSource.href}>{value.withSource.label}</Link>
-                  </span>
-                )}
-              </div>
-              <div className={styles.value}>{value.value}</div>
-            </div>
-          ))}
+          <ul>
+            {values.map((value, index) => (
+              <li
+                className={classNames(styles.values, { [styles.border]: index !== values.length - 1 })}
+                key={slug + value.es}>
+                <div>
+                  {value.es}
+                  {'withSource' in value && value.withSource && (
+                    <span>
+                      {' '}
+                      • <Link href={value.withSource.href}>{value.withSource.label}</Link>
+                    </span>
+                  )}
+                </div>
+                <div className={styles.value}>{value.value}</div>
+              </li>
+            ))}
+          </ul>
           {hypothesis && (
-            <div
+            <p
               className={classNames(styles.hypothesis, 'text-sm')}
               dangerouslySetInnerHTML={{
                 __html: hypothesis.es,
@@ -360,7 +364,7 @@ const ENChauffageData = () => {
   const { language } = useParamContext()
   return (
     <div className={styles.container}>
-      <div className={styles.text}>
+      <p className={styles.text}>
         All calculations and assumptions come from{' '}
         <Link href='https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel'>
           the Energy consumption by residential use 2023 study
@@ -375,33 +379,35 @@ const ENChauffageData = () => {
         <br />
         In order to compare the different heating methods with each other, we start from an average household with an
         energy requirement of 150 kWh/m².
-      </div>
+      </p>
       {Object.entries(data).map(([slug, { values, hypothesis }]) => (
         <div key={slug}>
           <div>
             <div className={styles.emoji}>
               <EquivalentIcon equivalent={{ slug }} />
             </div>
-            <b>{getName(language, { slug, category: 8 })}</b>
+            <b aria-level={2}>{getName(language, { slug, category: 8 })}</b>
           </div>
-          {values.map((value, index) => (
-            <div
-              className={classNames(styles.values, { [styles.border]: index !== values.length - 1 })}
-              key={slug + value.en}>
-              <div>
-                {value.en}
-                {'withSource' in value && value.withSource && (
-                  <span>
-                    {' '}
-                    • <Link href={value.withSource.href}>{value.withSource.label}</Link>
-                  </span>
-                )}
-              </div>
-              <div className={styles.value}>{value.value}</div>
-            </div>
-          ))}
+          <ul>
+            {values.map((value, index) => (
+              <li
+                className={classNames(styles.values, { [styles.border]: index !== values.length - 1 })}
+                key={slug + value.en}>
+                <div>
+                  {value.en}
+                  {'withSource' in value && value.withSource && (
+                    <span>
+                      {' '}
+                      • <Link href={value.withSource.href}>{value.withSource.label}</Link>
+                    </span>
+                  )}
+                </div>
+                <div className={styles.value}>{value.value}</div>
+              </li>
+            ))}
+          </ul>
           {hypothesis && (
-            <div
+            <p
               className={classNames(styles.hypothesis, 'text-sm')}
               dangerouslySetInnerHTML={{
                 __html: hypothesis.en,

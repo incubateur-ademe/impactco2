@@ -51,7 +51,7 @@ const InfographySimulator = ({ equivalents, className }: { equivalents: string[]
             )
           })}
       </div>
-      <div className={styles.disclaimer}>Comparaison basée sur la quantité de kg CO2e émise.</div>
+      <p className={styles.disclaimer}>Comparaison basée sur la quantité de kg CO2e émise.</p>
       <div className={styles.logos}>
         <Logos small />
       </div>

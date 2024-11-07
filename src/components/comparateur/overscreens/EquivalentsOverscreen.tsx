@@ -1,12 +1,13 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
+import SearchIcon from 'components/base/icons/search'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import Category from './Category'
@@ -14,6 +15,8 @@ import Equivalents from './Equivalents'
 import styles from './EquivalentsOverscreen.module.css'
 
 const EquivalentsOverscreen = () => {
+  const equivalentRef = useRef<HTMLInputElement>(null)
+  const noResultRef = useRef<HTMLParagraphElement>(null)
   const {
     setOverscreen,
     comparateur: { equivalents, setEquivalents },
@@ -40,6 +43,15 @@ const EquivalentsOverscreen = () => {
           value={search}
           padding='lg'
           onChange={(e) => setSearch(e.target.value)}
+          icon={<SearchIcon />}
+          iconAria='Afficher les résultats'
+          onIconClick={() => {
+            if (noResultRef.current) {
+              noResultRef.current.focus()
+            } else if (equivalentRef.current) {
+              equivalentRef.current.focus()
+            }
+          }}
         />
         <Button
           size='sm'
@@ -51,16 +63,20 @@ const EquivalentsOverscreen = () => {
           {tModal('close')}
         </Button>
       </div>
-      <ul className={styles.content}>
-        {search ? (
-          results.length > 0 ? (
+      {search ? (
+        results.length > 0 ? (
+          <ul className={styles.content}>
             <Equivalents
+              list
+              firstRef={equivalentRef}
               equivalents={tempEquivalents}
               equivalentsToDisplay={results}
               setEquivalents={setTempEquivalents}
             />
-          ) : (
-            <div className={styles.noResult}>
+          </ul>
+        ) : (
+          <div className={styles.content}>
+            <p className={styles.noResult} ref={noResultRef} tabIndex={-1}>
               {t('no-result-1')}
               <br />
               {t('no-result-2')}{' '}
@@ -72,10 +88,12 @@ const EquivalentsOverscreen = () => {
                 {t('no-result-3')}
               </Button>
               .
-            </div>
-          )
-        ) : (
-          categories
+            </p>
+          </div>
+        )
+      ) : (
+        <div className={styles.content}>
+          {categories
             .filter((category) => category.id !== 12 && category.id !== 11)
             .map((category) => (
               <Category
@@ -85,18 +103,19 @@ const EquivalentsOverscreen = () => {
                 setEquivalents={setTempEquivalents}
                 onClose={() => setOverscreen('comparateur', '')}
               />
-            ))
-        )}
-      </ul>
+            ))}
+        </div>
+      )}
       <div className={styles.footer}>
-        <div>
+        <p role='status'>
           <span className={styles.equivalentsNumber} data-testid='selected-equivalents-number'>
             {tempEquivalents.length}
           </span>
           <span className={styles.equivalentsInfo}> / 8 {t('equivalents')}</span>
-        </div>
+        </p>
         <div>
           <Button
+            title={t('back-title')}
             onClick={() => {
               setEquivalents(tempEquivalents)
               setOverscreen('comparateur', '')

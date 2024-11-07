@@ -56,12 +56,14 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
       </button>
       <div>
         <EquivalentIcon height={3} equivalent={equivalent} />
-        <div className={styles.value} data-testid={`comparateur-${slug}-value`}>
-          {Number.isFinite(value) ? <LocalNumber number={formatNumber(value)} /> : <InfinityIcon />}
-        </div>
-        <div className='text-sm' data-testid={`comparateur-${slug}-name`}>
-          {getName(language, equivalent, true, value, true)}
-        </div>
+        <p className={styles.text}>
+          <span className={styles.value} data-testid={`comparateur-${slug}-value`}>
+            {Number.isFinite(value) ? <LocalNumber number={formatNumber(value)} /> : <InfinityIcon />}
+          </span>
+          <span className='text-sm' data-testid={`comparateur-${slug}-name`}>
+            {getName(language, equivalent, true, value, true)}
+          </span>
+        </p>
       </div>
       <button
         className={buttonStyles.roundButton}

@@ -21,10 +21,8 @@ const EmailSmartphone = () => {
         <div className={styles.withIcon}>
           <Icon />
           <div>
-            {t.rich('line-1')}
-            <br />
-            <br />
-            {t.rich('line-2')}
+            <p>{t.rich('line-1')}</p>
+            <p>{t.rich('line-2')}</p>
           </div>
         </div>
       </div>

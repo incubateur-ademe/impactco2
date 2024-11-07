@@ -30,7 +30,7 @@
 
   input[type='radio']:checked {
     position: relative;
-    background-color: var(--primary-30);
+    background-color: var(--primary-10);
 
     &:before {
       position: absolute;
@@ -53,6 +53,7 @@
 
     input[type='radio']:checked {
       border-color: var(--primary-70);
+      background-color: var(--primary-20);
 
       &:before {
         background-color: var(--primary-70);
@@ -61,7 +62,7 @@
   }
 
   input[type='radio']:focus {
-    outline: 4px solid var(--primary-30);
+    outline: 3px solid var(--primary-50);
     outline-offset: 0;
   }
 }

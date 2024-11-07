@@ -17,111 +17,167 @@ const PlanDuSitePage = () => {
   return (
     <div className={classNames(pageStyles.container, 'main-container')}>
       <h1>Plan du site</h1>
-      <div className={styles.links}>
-        <Link prefetch={false} href='/'>
-          Page d'accueil
-        </Link>
-        <Link prefetch={false} href='/accessibilite'>
-          Accessibilité
-        </Link>
-        <Link prefetch={false} href='/budget'>
-          Budget
-        </Link>
-        <div>Contenus</div>
-        <div className={styles.row}>
-          <Link prefetch={false} href='/contenu/comment-sensibiliser-vos-visiteurs-empreinte-carbone'>
-            Comment sensibiliser vos visiteurs à l’empreinte carbone ?
+      <ul className={styles.links}>
+        <li>
+          <Link prefetch={false} href='/'>
+            Page d'accueil
           </Link>
-          <Link prefetch={false} href='/contenu/detecteur-co2'>
-            Le Détecteur CO₂
+        </li>
+        <li>
+          <Link prefetch={false} href='/accessibilite'>
+            Accessibilité
           </Link>
-          <Link prefetch={false} href='/contenu/etiquette-carbone'>
-            L’étiquette carbone : présentation et tutoriel d’intégration
+        </li>
+        <li>
+          <Link prefetch={false} href='/budget'>
+            Budget
           </Link>
-          <Link prefetch={false} href='/contenu/impact-carbone-hiver-station-ski'>
-            4 conseils pour réduire l’impact carbone des séjours au ski
-          </Link>
-          <Link prefetch={false} href='/contenu/nouveau-site'>
-            Le nouveau site “Impact CO2” est en ligne !
-          </Link>
-          <Link prefetch={false} href='/contenu/quiz-carbone'>
-            Quiz carbone : le nouveau jeu de cartes de l’ADEME est en ligne !
-          </Link>
-          <Link prefetch={false} href='/contenu/semaine-mobilite-simulateur-transport-ademe'>
-            Semaine européenne de la mobilité : découverte du calculateur Impact Transport de l’ADEME
-          </Link>
-        </div>
-        <Link prefetch={false} href='/doc'>
-          La doc
-        </Link>
-        <div className={styles.row}>
-          <Link prefetch={false} href='/doc/api'>
-            API Doc
-          </Link>
-          <Link prefetch={false} href='/doc/guide-utilisation'>
-            Guide d'utilisation
-          </Link>
-          <Link prefetch={false} href='/doc/livraison'>
-            Livraison
-          </Link>
-          <div className={styles.row}>
-            <Link prefetch={false} href='/doc/livraison/livraison-colis'>
-              De colis
+        </li>
+        <p>Contenus</p>
+        <ul className={styles.row}>
+          <li>
+            <Link prefetch={false} href='/contenu/comment-sensibiliser-vos-visiteurs-empreinte-carbone'>
+              Comment sensibiliser vos visiteurs à l’empreinte carbone ?
             </Link>
-            <Link prefetch={false} href='/doc/livraison/livraison-colis-par-avion'>
-              De colis par avion
+          </li>
+          <li>
+            <Link prefetch={false} href='/contenu/detecteur-co2'>
+              Le Détecteur CO₂
             </Link>
-          </div>
-          <Link prefetch={false} href='/doc/questions-frequentes'>
-            Questions fréquentes
+          </li>
+          <li>
+            <Link prefetch={false} href='/contenu/etiquette-carbone'>
+              L’étiquette carbone : présentation et tutoriel d’intégration
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href='/contenu/impact-carbone-hiver-station-ski'>
+              4 conseils pour réduire l’impact carbone des séjours au ski
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href='/contenu/nouveau-site'>
+              Le nouveau site “Impact CO2” est en ligne !
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href='/contenu/quiz-carbone'>
+              Quiz carbone : le nouveau jeu de cartes de l’ADEME est en ligne !
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href='/contenu/semaine-mobilite-simulateur-transport-ademe'>
+              Semaine européenne de la mobilité : découverte du calculateur Impact Transport de l’ADEME
+            </Link>
+          </li>
+        </ul>
+        <li>
+          <Link prefetch={false} href='/doc'>
+            La doc
           </Link>
-          <Link prefetch={false} href='/doc/usage-numerique/acv'>
-            Usage numérique
-          </Link>
-        </div>
-        <Link prefetch={false} href='/mentions-legales'>
-          Mentions légales
-        </Link>
-        <Link prefetch={false} href='/outils'>
-          Les outils
-        </Link>
-        <div className={styles.row}>
-          {tools.map((tool) => (
-            <div key={tool.slug}>
-              <Link prefetch={false} href={`/outils/${tool.slug}`}>
-                {tool.name}
+        </li>
+        <ul className={styles.row}>
+          <li>
+            <Link prefetch={false} href='/doc/api'>
+              API Doc
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href='/doc/guide-utilisation'>
+              Guide d'utilisation
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href='/doc/livraison'>
+              Livraison
+            </Link>
+          </li>
+          <ul className={styles.row}>
+            <li>
+              <Link prefetch={false} href='/doc/livraison/livraison-colis'>
+                De colis
               </Link>
-              {tool.equivalents && (
-                <div className={styles.row}>
-                  {tool.equivalents.map((equivalent) => (
-                    <Link prefetch={false} key={equivalent.slug} href={equivalent.link}>
-                      {getName('fr', equivalent)}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-          <Link prefetch={false} href='/outils/comparateur'>
-            Comparateur
+            </li>
+            <li>
+              <Link prefetch={false} href='/doc/livraison/livraison-colis-par-avion'>
+                De colis par avion
+              </Link>
+            </li>
+          </ul>
+          <li>
+            <Link prefetch={false} href='/doc/questions-frequentes'>
+              Questions fréquentes
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href='/doc/usage-numerique/acv'>
+              Usage numérique
+            </Link>
+          </li>
+        </ul>
+        <li>
+          <Link prefetch={false} href='/mentions-legales'>
+            Mentions légales
           </Link>
-        </div>
-        <Link prefetch={false} href='/plan-du-site'>
-          Plan du site
-        </Link>
-        <Link prefetch={false} href='/politique-de-confidentialite'>
-          Politique de confidentialité
-        </Link>
-        <Link prefetch={false} href='/rendez-vous'>
-          Prendre rendez-vous
-        </Link>
-        <Link prefetch={false} href='/stats'>
-          Statistiques
-        </Link>
-        <Link prefetch={false} href='/suggestion'>
-          Faire une suggestion
-        </Link>
-      </div>
+        </li>
+        <li>
+          <Link prefetch={false} href='/outils'>
+            Les outils
+          </Link>
+        </li>
+        <ul className={styles.row}>
+          {tools.map((tool) => (
+            <ul className={styles.row} key={tool.slug}>
+              <li>
+                <Link prefetch={false} href={`/outils/${tool.slug}`}>
+                  {tool.name}
+                </Link>
+              </li>
+              {tool.equivalents && (
+                <ul className={styles.row}>
+                  {tool.equivalents.map((equivalent) => (
+                    <li key={equivalent.slug}>
+                      <Link prefetch={false} href={equivalent.link}>
+                        {getName('fr', equivalent)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </ul>
+          ))}
+          <li>
+            <Link prefetch={false} href='/outils/comparateur'>
+              Comparateur
+            </Link>
+          </li>
+        </ul>
+        <li>
+          <Link prefetch={false} href='/plan-du-site'>
+            Plan du site
+          </Link>
+        </li>
+        <li>
+          <Link prefetch={false} href='/politique-de-confidentialite'>
+            Politique de confidentialité
+          </Link>
+        </li>
+        <li>
+          <Link prefetch={false} href='/rendez-vous'>
+            Prendre rendez-vous
+          </Link>
+        </li>
+        <li>
+          <Link prefetch={false} href='/stats'>
+            Statistiques
+          </Link>
+        </li>
+        <li>
+          <Link prefetch={false} href='/suggestion'>
+            Faire une suggestion
+          </Link>
+        </li>
+      </ul>
     </div>
   )
 }

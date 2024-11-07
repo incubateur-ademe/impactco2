@@ -73,10 +73,12 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-next-question')).toBeVisible()
 
   await expect(
-    page.getByText('Tablette61.9 kg CO₂epar unitéHypothèsesÉcran de 10,53 pouces, mix de')
+    page.getByText('Tablette61.9 kg CO₂epar unitéHypothèses : Écran de 10,53 pouces, mix de')
   ).not.toBeInViewport()
   await page.getByTestId('quiz-more-info-button').click()
-  await expect(page.getByText('Tablette61.9 kg CO₂epar unitéHypothèsesÉcran de 10,53 pouces, mix de')).toBeInViewport()
+  await expect(
+    page.getByText('Tablette61.9 kg CO₂epar unitéHypothèses : Écran de 10,53 pouces, mix de')
+  ).toBeInViewport()
 
   await page.getByTestId('quiz-previous-button').click()
 

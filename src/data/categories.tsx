@@ -40,7 +40,6 @@ export const categories: Category[] = [
     description: 'Évaluer l’impact carbone de vos usages numériques',
     unit: 'unité',
     equivalents: computedEquivalents('usagenumerique', usageNumeriques),
-    resetable: true,
   },
   {
     id: 12,
@@ -55,7 +54,6 @@ export const categories: Category[] = [
         href: 'https://librairie.ademe.fr/mobilite-et-transport/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html',
       },
     ],
-    resetable: true,
   },
   {
     id: 8,
@@ -75,7 +73,6 @@ export const categories: Category[] = [
     description: 'Situer l’empreinte carbone des différents modes de chauffage',
     unit: 'm²',
     equivalents: computedEquivalents('chauffage', chauffage),
-    resetable: true,
     examples: 'Leur utilisation du simulateur chauffage est exemplaire.',
   },
   {
@@ -93,7 +90,6 @@ export const categories: Category[] = [
     ],
     unit: 'km',
     equivalents: computedEquivalents('transport', flattenEquivalents(deplacements)),
-    resetable: true,
     examples: 'Leur utilisation du simulateur transports est exemplaire.',
   },
   {

@@ -1,28 +1,33 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ForwardedRef, ReactNode, forwardRef, useEffect, useState } from 'react'
 import HiddenLabel from './HiddenLabel'
 import Input from './Input'
 
-const NumberInput = ({
-  id,
-  label,
-  value,
-  setValue,
-  unit,
-  onUnitClick,
-  extraWidth,
-  min,
-  max,
-}: {
-  id: string
-  label?: string
-  value: number
-  setValue: (value: number) => void
-  unit: ReactNode
-  onUnitClick?: () => void
-  extraWidth?: string
-  min?: number
-  max?: number
-}) => {
+const NumberInput = (
+  {
+    id,
+    label,
+    value,
+    setValue,
+    unit,
+    unitTitle,
+    onUnitClick,
+    extraWidth,
+    min,
+    max,
+  }: {
+    id: string
+    label?: string
+    value: number
+    setValue: (value: number) => void
+    unit: ReactNode
+    unitTitle?: string
+    onUnitClick?: () => void
+    extraWidth?: string
+    min?: number
+    max?: number
+  },
+  ref: ForwardedRef<HTMLInputElement>
+) => {
   const [internalValue, setInternalValue] = useState(value.toString())
 
   useEffect(() => {
@@ -48,10 +53,13 @@ const NumberInput = ({
     <>
       {label && <HiddenLabel htmlFor={`input-${id}`}>{label}</HiddenLabel>}
       <Input
+        ref={ref}
+        title={label}
         id={id}
         value={internalValue}
         onChange={(event) => setInternalValue(event.target.value)}
         type='number'
+        unitTitle={unitTitle}
         unit={unit}
         min={min === undefined ? 1 : min}
         max={max}
@@ -62,4 +70,4 @@ const NumberInput = ({
   )
 }
 
-export default NumberInput
+export default forwardRef(NumberInput)

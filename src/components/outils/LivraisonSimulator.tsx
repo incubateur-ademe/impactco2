@@ -153,6 +153,7 @@ const LivraisonSimulator = () => {
                   <HiddenLabel htmlFor={'text-select-km-type'}>Type de véhicule pour faire le trajet</HiddenLabel>
                   <Select
                     id='km-type'
+                    title='Type de véhicule pour faire le trajet'
                     value={values.relay}
                     onChange={(event) => {
                       track('Livraison', 'Transport', event.target.value)
@@ -195,17 +196,19 @@ const LivraisonSimulator = () => {
           />
         </Radio>
       </form>
-      <output form='livraison-simulator' className={styles.results}>
-        <div className={styles.header}>{t('generate')}</div>
-        <div className={styles.value}>
-          <span className={styles.number} data-testid='livraison-colis-value'>
-            <LocalNumber number={formatNumber(total / 1000)} />
-          </span>{' '}
-          kg co₂e
-        </div>
+      <output form='livraison-simulator'>
+        <p className={styles.results}>
+          <span className={styles.header}>{t('generate')}</span>
+          <span className={styles.value}>
+            <span className={styles.number} data-testid='livraison-colis-value'>
+              <LocalNumber number={formatNumber(total / 1000)} />
+            </span>{' '}
+            kg co₂e
+          </span>
+        </p>
       </output>
       <div className={styles.etiquette}>
-        <div className={styles.header}>{t('total')}</div>
+        <p className={styles.header}>{t('total')}</p>
         <Etiquette
           baseValue={total}
           comparisons={equivalents}
@@ -235,6 +238,7 @@ const LivraisonSimulator = () => {
             <Select
               id='frequence-type'
               value={frequence}
+              title='Fréquence'
               onChange={(event) => {
                 track('Livraison', 'Frequence', event.target.value)
                 setFrequence(Number(event.target.value))
@@ -246,16 +250,16 @@ const LivraisonSimulator = () => {
           </div>
         </div>
       </div>
-      <div className={styles.results}>
-        <div className={styles.header}>{t('habits')}</div>
-        <div className={styles.value}>
+      <p className={styles.results}>
+        <span className={styles.header}>{t('habits')}</span>
+        <span className={styles.value}>
           <span className={styles.number} data-testid='livraison-habits-value'>
             <LocalNumber number={formatNumber((total * number * frequence) / 1000)} />
           </span>{' '}
           kg co₂e
-        </div>
-        <div>{t('year')}</div>
-      </div>
+        </span>
+        <span>{t('year')}</span>
+      </p>
     </>
   )
 }

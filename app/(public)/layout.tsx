@@ -9,7 +9,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Header />
       <Suspense fallback={<div className='blank' />}>
         <ParamProvider>
-          <main id='contenu'>{children}</main>
+          <main id='contenu' role='main' tabIndex={-1}>
+            {children}
+          </main>
         </ParamProvider>
       </Suspense>
       <Footer />

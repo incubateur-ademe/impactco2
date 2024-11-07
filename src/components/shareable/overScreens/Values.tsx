@@ -21,7 +21,8 @@ const TransportData = dynamic(() => import('./Data/TransportData'))
 const UsageNumeriqueData = dynamic(() => import('./Data/UsageNumeriqueData'))
 
 export type OverScreenInfo = {
-  title?: string
+  title: string
+  hideTitle?: boolean
   image?: string
   children: ReactNode
   fullHeight?: boolean
@@ -100,6 +101,8 @@ export const overScreenComparateurValues = {
     children: <Integrate path='comparateur' tracking='Comparateur' />,
   },
   equivalents: {
+    title: 'equivalent',
+    hideTitle: true,
     children: <EquivalentsOverscreen />,
     fullHeight: true,
   },
@@ -352,10 +355,14 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         children: <TransportData />,
       },
       comparison0: {
+        title: 'comparison',
+        hideTitle: true,
         children: <ComparisonOverscreen index={0} />,
         fullHeight: true,
       },
       comparison1: {
+        title: 'comparison',
+        hideTitle: true,
         children: <ComparisonOverscreen index={1} />,
         fullHeight: true,
       },
