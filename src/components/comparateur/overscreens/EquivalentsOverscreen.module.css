@@ -51,6 +51,7 @@
   align-items: center;
   gap: 0.5rem 0;
 
+  p,
   div {
     width: calc(100% / 3);
   }
@@ -58,6 +59,7 @@
   @media screen and (max-width: 53rem) {
     justify-content: space-between;
 
+    p,
     div {
       width: fit-content;
     }

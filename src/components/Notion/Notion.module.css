@@ -93,6 +93,10 @@
       outline: none;
     }
   }
+
+  :global(.notion-inline-code) {
+    color: #D70D0C;
+  }
 }
 
 .buttonRef {

@@ -8,8 +8,11 @@
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
-  &:hover {
+  eli &:hover {
     border: 2px solid var(--primary-40);
     background: var(--primary-20);
     color: var(--primary-70);

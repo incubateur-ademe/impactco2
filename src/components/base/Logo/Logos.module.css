@@ -36,7 +36,13 @@
     outline: none;
 
     &::before {
-      outline: 3px solid var(--primary-40);
+      outline: 3px solid var(--primary-50);
+    }
+  }
+
+  &:focus:not(:focus-visible) {
+    &::before {
+      outline: none;
     }
   }
 }
