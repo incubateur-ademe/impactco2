@@ -125,14 +125,14 @@ const TransportComparisonEquivalent = ({
                 <StarShapeIcon />
               </div>
               <p className={styles.starContent}>
-                <div className={styles.starValue}>
+                <span className={styles.starValue}>
                   <LocalNumber number={formatNumber(otherEquivalent.value - equivalent.value)} />
-                </div>
-                <div>
+                </span>
+                <span>
                   Kg CO₂e
                   <br />
                   {t('avoided')}
-                </div>
+                </span>
               </p>
             </div>
           )}
