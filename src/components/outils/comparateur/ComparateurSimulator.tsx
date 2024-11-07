@@ -19,6 +19,7 @@ import styles from './ComparateurSimulator.module.css'
 
 const ComparateurSimulator = () => {
   const inputRef = useRef<HTMLInputElement>(null)
+  const isInitialRender = useRef(true)
   const {
     language,
     comparateur: { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent },
@@ -28,6 +29,10 @@ const ComparateurSimulator = () => {
   const t = useTranslations('comparateur')
 
   useEffect(() => {
+    if (isInitialRender.current) {
+      isInitialRender.current = false
+      return
+    }
     if (inputRef.current) {
       inputRef.current.focus()
     }
