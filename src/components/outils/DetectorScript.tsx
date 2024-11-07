@@ -12,7 +12,7 @@ const DetectorScript = () => {
   return (
     <>
       <fieldset>
-        <p className={styles.clipboardTitle}>Comment l'utiliser ?</p>
+        <legend className={styles.clipboardTitle}>Comment l'utiliser ?</legend>
         <CustomParam
           tracking={'Detecteur CO2'}
           slug='theme'

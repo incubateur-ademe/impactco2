@@ -10,6 +10,7 @@ import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Block from 'components/layout/Block'
 import styles from './Notion.module.css'
+import { improveAccessibility } from './utils'
 
 const Notion = ({
   title,
@@ -25,40 +26,7 @@ const Notion = ({
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (ref.current) {
-      const elements = ref.current.getElementsByTagName('img')
-      for (const element of elements) {
-        element.setAttribute('alt', '')
-      }
-
-      const mains = ref.current.getElementsByTagName('main')
-      for (const main of mains) {
-        main.outerHTML = `<div>${main.innerHTML}</div>`
-      }
-      const lis = ref.current.getElementsByTagName('li')
-      for (const li of lis) {
-        li.innerHTML = `<p>${li.innerHTML}</p>`
-      }
-      const texts = ref.current.getElementsByClassName('notion-text')
-      for (const text of texts) {
-        text.innerHTML = `<p>${text.innerHTML}</p>`
-      }
-      const calloutTexts = ref.current.getElementsByClassName('notion-callout-text')
-      for (const calloutText of calloutTexts) {
-        calloutText.innerHTML = `<p>${calloutText.innerHTML}</p>`
-      }
-
-      const icons = ref.current.getElementsByClassName('notion-page-icon')
-      for (const icon of icons) {
-        if (icon.tagName === 'span') {
-          icon.removeAttribute('role')
-          icon.removeAttribute('aria-label')
-          icon.setAttribute('aria-hidden', 'true')
-        }
-      }
-      const fastLinks = ref.current.getElementsByClassName('notion-hash-link')
-      for (const fastLink of fastLinks) {
-        fastLink.remove()
-      }
+      improveAccessibility(ref.current)
     }
   }, [ref])
 

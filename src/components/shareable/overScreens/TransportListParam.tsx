@@ -22,7 +22,7 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
   const { language } = useParamContext()
   return (
     <fieldset>
-      <div className={customStyles.title}>
+      <legend className={customStyles.title}>
         {t('modes')}
         {modes.length === 2 && (
           <div className={styles.subtitle}>
@@ -30,7 +30,7 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
             {t('modes-hint')}
           </div>
         )}
-      </div>
+      </legend>
       <ul className={styles.modes}>
         {transports.map((transport) => (
           <li key={transport.slug} className={styles.list}>

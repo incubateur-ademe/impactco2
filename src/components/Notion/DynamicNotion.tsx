@@ -5,30 +5,14 @@ import { NotionRenderer } from 'react-notion-x'
 import { Collection } from 'react-notion-x/build/third-party/collection'
 import 'react-notion-x/src/styles.css'
 import Link from 'components/base/buttons/Link'
+import { improveAccessibility } from './utils'
 
 const DynamicNotion = ({ recordMap }: { recordMap: ExtendedRecordMap }) => {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (ref.current) {
-      const elements = ref.current.getElementsByTagName('img')
-      for (const element of elements) {
-        element.setAttribute('alt', '')
-      }
-      const mains = ref.current.getElementsByTagName('main')
-      for (const main of mains) {
-        main.outerHTML = `<div>${main.innerHTML}</div>`
-      }
-      const lis = ref.current.getElementsByTagName('li')
-      for (const li of lis) {
-        li.innerHTML = `<p>${li.innerHTML}</p>`
-      }
-      const texts = ref.current.getElementsByClassName('notion-text')
-      for (const text of texts) {
-        text.innerHTML = `<p>${text.innerHTML}</p>`
-      }
-      const calloutTexts = ref.current.getElementsByClassName('notion-callout-text')
-      for (const calloutText of calloutTexts) {
-        calloutText.innerHTML = `<p>${calloutText.innerHTML}</p>`
+      if (ref.current) {
+        improveAccessibility(ref.current)
       }
     }
   }, [ref])

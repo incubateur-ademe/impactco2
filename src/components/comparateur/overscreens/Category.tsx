@@ -58,7 +58,7 @@ const Category = ({
           <EquivalentIcon height={2.5} equivalent={category} />
         </span>
         <span className={styles.names}>
-          <span className={styles.title}>{tCategory(`name-${category.slug}`)}</span>
+          <legend className={styles.title}>{tCategory(`name-${category.slug}`)}</legend>
           <span>
             <span className={styles.selectedNumber} data-testid={`selected-equivalents-${category.slug}-number`}>
               {categoryEquivalents.filter((equivalent) => equivalents.includes(equivalent.slug)).length}

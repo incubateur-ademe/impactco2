@@ -22,7 +22,7 @@ const CustomParams = ({
 }) => {
   return (
     <fieldset>
-      {title && <p className={styles.title}>{title}</p>}
+      {title && <legend className={styles.title}>{title}</legend>}
       {Object.entries(params)
         .filter(([key]) => key !== 'theme')
         .map(([key, param]) => (
