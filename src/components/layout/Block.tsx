@@ -25,7 +25,7 @@ export type BlockProps = {
 
 const Block = ({ children, title, description, link, linkLabel, as, id }: BlockProps) => {
   return (
-    <div className={classNames('main-container', styles.block)} id={id}>
+    <div className={classNames('main-container', styles.block)} id={id} tabIndex={id ? -1 : undefined}>
       {title && (
         <div className={styles.header}>
           <div>
