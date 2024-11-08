@@ -1,5 +1,5 @@
 import { Category } from 'types/category'
-import { repas } from './categories/alimentation'
+import { alimentation } from './categories/alimentation'
 import { boissons } from './categories/boisson'
 import { casPratiques } from './categories/caspratiques'
 import { chauffage } from './categories/chauffage'
@@ -142,7 +142,7 @@ export const categories: Category[] = [
     ],
     description: 'Pour aborder l’impact carbone de l’alimentation',
     unit: 'repas',
-    equivalents: computedEquivalents('alimentation', repas),
+    equivalents: computedEquivalents('alimentation', alimentation),
   },
   {
     id: 5,

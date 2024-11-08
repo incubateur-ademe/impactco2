@@ -945,48 +945,6 @@
     "en": "box[s]",
     "es": "caha de internet"
   },
-  "repasavecduboeuf": {
-    "category": 2,
-    "value": 7260,
-    "fr": "repas avec du boeuf",
-    "en": "meal[s] with beef",
-    "es": "Comida con carne de vacuno"
-  },
-  "repasvegetarien": {
-    "category": 2,
-    "value": 510,
-    "fr": "repas végétarien[s]",
-    "en": "vegetarian meal[s]",
-    "es": "Comida vegetariana"
-  },
-  "repasvegetalien": {
-    "category": 2,
-    "value": 390,
-    "fr": "repas végétalien[s]",
-    "en": "vegan meal[s]",
-    "es": "Comida vegana"
-  },
-  "repasavecdupoissonblanc": {
-    "category": 2,
-    "value": 1980,
-    "fr": "repas avec du poisson blanc",
-    "en": "meal[s] with white fish",
-    "es": "Comida con pescado blanco"
-  },
-  "repasavecdupoissongras": {
-    "category": 2,
-    "value": 1110,
-    "fr": "repas avec du poisson gras",
-    "en": "meal[s] with fatty fish",
-    "es": "Comida con pescado graso"
-  },
-  "repasavecdupoulet": {
-    "category": 2,
-    "value": 1580,
-    "fr": "repas avec du poulet",
-    "en": "meal[s] with chicken",
-    "es": "Comida con pollo"
-  },
   "jeans": {
     "category": 5,
     "value": 25088.72880618721,
@@ -1294,5 +1252,467 @@
     "fr": "Litre[s] de ;café",
     "en": "Liter[s] of ;coffee",
     "es": "Litro[s] de ;café"
+  },
+  "boeuf": {
+    "category": 2,
+    "value": 26.2,
+    "fr": "kg de ;boeuf",
+    "en": "kg of ;beef",
+    "es": "kg de ;carne de res"
+  },
+  "veau": {
+    "category": 2,
+    "value": 16.9,
+    "fr": "kg de ;veau",
+    "en": "kg of ;veal",
+    "es": "kg de ;becerro"
+  },
+  "porc": {
+    "category": 2,
+    "value": 9.66,
+    "fr": "kg de ;porc",
+    "en": "kg of ;pork",
+    "es": "kg de ;cerdo"
+  },
+  "canard": {
+    "category": 2,
+    "value": 6.97,
+    "fr": "kg de ;canard",
+    "en": "kg of ;duck",
+    "es": "kg de ;pato"
+  },
+  "lapin": {
+    "category": 2,
+    "value": 6.97,
+    "fr": "kg de ;lapin",
+    "en": "kg of ;rabbit",
+    "es": "kg de ;conejo"
+  },
+  "poulet": {
+    "category": 2,
+    "value": 5.55,
+    "fr": "kg de ;poulet",
+    "en": "kg of ;chicken",
+    "es": "kg de ;pollo"
+  },
+  "crevettes": {
+    "category": 2,
+    "value": 21.79,
+    "fr": "kg de ;crevettes",
+    "en": "kg of ;shrimp",
+    "es": "kg de ;camarón"
+  },
+  "moules": {
+    "category": 2,
+    "value": 4.94,
+    "fr": "kg de ;moules",
+    "en": "kg of ;mussels",
+    "es": "kg de ;mejillones"
+  },
+  "huitres": {
+    "category": 2,
+    "value": 4.91,
+    "fr": "kg de ;huitres",
+    "en": "kg of ;oysters",
+    "es": "kg de ;ostras"
+  },
+  "cabillaud": {
+    "category": 2,
+    "value": 10.81,
+    "fr": "kg de ;cabillaud (cru)",
+    "en": "kg of ;cod (raw)",
+    "es": "kg de ;bacalao (crudo)"
+  },
+  "lieu": {
+    "category": 2,
+    "value": 10.81,
+    "fr": "kg de ;lieu jaune ou colin (cru)",
+    "en": "kg of ;pollack or hake (raw)",
+    "es": "kg de ;colín o merluza (crudo)"
+  },
+  "dorade": {
+    "category": 2,
+    "value": 10.8,
+    "fr": "kg de ;dorade royale",
+    "en": "kg of ;sea bream",
+    "es": "kg de ;dorada"
+  },
+  "saumon": {
+    "category": 2,
+    "value": 5.77,
+    "fr": "kg de ;saumon ou truite d'élevage (cru)",
+    "en": "kg of ;salmon or farmed trout (raw)",
+    "es": "kg de ;salmón o trucha de cultivo (crudo)"
+  },
+  "thon": {
+    "category": 2,
+    "value": 4.39,
+    "fr": "kg de ;thon (cru)",
+    "en": "kg of ;tuna (raw)",
+    "es": "kg de ;atún (crudo)"
+  },
+  "sardines": {
+    "category": 2,
+    "value": 1.93,
+    "fr": "kg de ;sardines",
+    "en": "kg of ;sardines",
+    "es": "kg de ;sardinas"
+  },
+  "beurre": {
+    "category": 2,
+    "value": 7.76,
+    "fr": "kg de ;beurre",
+    "en": "kg of ;butter",
+    "es": "kg de ;mantequilla"
+  },
+  "fromagedure": {
+    "category": 2,
+    "value": 6.11,
+    "fr": "kg de ;fromage à pâte dure",
+    "en": "kg of ;hard cheese",
+    "es": "kg de ;queso duro"
+  },
+  "feta": {
+    "category": 2,
+    "value": 5.49,
+    "fr": "kg de ;fêta (brebis)",
+    "en": "kg of ;feta (sheep)",
+    "es": "kg de ;feta (oveja)"
+  },
+  "fromagemolle": {
+    "category": 2,
+    "value": 5.19,
+    "fr": "kg de ;fromage à pâte molle",
+    "en": "kg of ;soft cheese",
+    "es": "kg de ;queso blando"
+  },
+  "mozarella": {
+    "category": 2,
+    "value": 4.61,
+    "fr": "kg de ;mozarella",
+    "en": "kg of ;mozzarella",
+    "es": "kg de ;mozzarella"
+  },
+  "fromagebleu": {
+    "category": 2,
+    "value": 4.13,
+    "fr": "kg de ;fromage bleu",
+    "en": "kg of ;blue cheese",
+    "es": "kg de ;queso azul"
+  },
+  "oeuf": {
+    "category": 2,
+    "value": 3.17,
+    "fr": "kg de ;oeufs",
+    "en": "kg of ;eggs",
+    "es": "kg de ;huevos"
+  },
+  "matieregrasse": {
+    "category": 2,
+    "value": 2.23,
+    "fr": "kg de ;matière grasse végétale",
+    "en": "kg of ;vegetable fat",
+    "es": "kg de ;grasa vegetal"
+  },
+  "yaourt": {
+    "category": 2,
+    "value": 2.11,
+    "fr": "kg de ;yaourt nature ou yaourt à la grecque",
+    "en": "kg of ;natural yogurt or greek yogurt",
+    "es": "kg de ;yogur natural o yogur griego"
+  },
+  "fromageblanc": {
+    "category": 2,
+    "value": 1.6,
+    "fr": "kg de ;fromage blanc 0%",
+    "en": "kg of ;0% white cheese",
+    "es": "kg de ;queso blanco 0%"
+  },
+  "laitdevachealimentation": {
+    "category": 2,
+    "value": 1.33,
+    "fr": "kg de ;lait",
+    "en": "kg of ;milk",
+    "es": "kg de ;leche"
+  },
+  "quinoa": {
+    "category": 2,
+    "value": 7.68,
+    "fr": "kg de ;quinoa (français)",
+    "en": "kg of ;quinoa (french)",
+    "es": "kg de ;quinoa (francés)"
+  },
+  "riz": {
+    "category": 2,
+    "value": 2.75,
+    "fr": "kg de ;riz",
+    "en": "kg of ;rice",
+    "es": "kg de ;arroz"
+  },
+  "pates": {
+    "category": 2,
+    "value": 2.14,
+    "fr": "kg de ;pâtes (sèches)",
+    "en": "kg of ;pasta (dry)",
+    "es": "kg de ;pasta (seca)"
+  },
+  "ble": {
+    "category": 2,
+    "value": 1.21,
+    "fr": "kg de ;blé",
+    "en": "kg of ;wheat",
+    "es": "kg de ;trigo"
+  },
+  "boulgour": {
+    "category": 2,
+    "value": 1.15,
+    "fr": "kg de ;boulgour",
+    "en": "kg of ;bulgur",
+    "es": "kg de ;bulgur"
+  },
+  "poischiches": {
+    "category": 2,
+    "value": 0.99,
+    "fr": "kg de ;pois chiches",
+    "en": "kg of ;chickpeas",
+    "es": "kg de ;garbanzos"
+  },
+  "haricotsrouges": {
+    "category": 2,
+    "value": 0.95,
+    "fr": "kg de ;haricots rouges",
+    "en": "kg of ;red beans",
+    "es": "kg de ;frijoles rojos"
+  },
+  "lentilles": {
+    "category": 2,
+    "value": 0.91,
+    "fr": "kg de ;lentilles (blondes, vertes, corail)",
+    "en": "kg of ;lentils (blond, green, coral)",
+    "es": "kg de ;lentejas (rubias, verdes, coral)"
+  },
+  "maisalimentation": {
+    "category": 2,
+    "value": 0.81,
+    "fr": "kg de ;maïs",
+    "en": "kg of ;corn",
+    "es": "kg de ;maíz"
+  },
+  "cheeseburger": {
+    "category": 2,
+    "value": 17.27,
+    "fr": "kg de ;cheeseburger",
+    "en": "kg of ;cheeseburger",
+    "es": "kg de ;cheeseburger"
+  },
+  "kebab": {
+    "category": 2,
+    "value": 11.65,
+    "fr": "kg de ;kebab",
+    "en": "kg of ;kebab",
+    "es": "kg de ;kebab"
+  },
+  "burgerpoulet": {
+    "category": 2,
+    "value": 4.62,
+    "fr": "kg de ;burger au poulet",
+    "en": "kg of ;chicken burger",
+    "es": "kg de ;hamburguesa de pollo"
+  },
+  "pizza": {
+    "category": 2,
+    "value": 3.28,
+    "fr": "kg de ;pizza quatre fromages",
+    "en": "kg of ;four cheese pizza",
+    "es": "kg de ;pizza de cuatro quesos"
+  },
+  "sushis": {
+    "category": 2,
+    "value": 2.45,
+    "fr": "kg de ;sushis ou makis",
+    "en": "kg of ;sushi or maki",
+    "es": "kg de ;sushi o maki"
+  },
+  "burgervegetarien": {
+    "category": 2,
+    "value": 2.26,
+    "fr": "kg de ;burger végétarien",
+    "en": "kg of ;vegetarian burger",
+    "es": "kg de ;hamburguesa vegetariana"
+  },
+  "frites": {
+    "category": 2,
+    "value": 1.53,
+    "fr": "kg de ;frites (friteuse)",
+    "en": "kg of ;fries (fryer)",
+    "es": "kg de ;papas fritas (freidora)"
+  },
+  "tofu": {
+    "category": 2,
+    "value": 0.66,
+    "fr": "kg de ;tofu nature",
+    "en": "kg of ;natural tofu",
+    "es": "kg de ;tofu natural"
+  },
+  "boucheechocolat": {
+    "category": 2,
+    "value": 9.59,
+    "fr": "kg de ;bouchée au chocolat",
+    "en": "kg of ;chocolate bite",
+    "es": "kg de ;bocado de chocolate"
+  },
+  "pateatartiner": {
+    "category": 2,
+    "value": 7.57,
+    "fr": "kg de ;pâte à tartiner à la noisette",
+    "en": "kg of ;hazelnut spread",
+    "es": "kg de ;crema de avellanas"
+  },
+  "brownie": {
+    "category": 2,
+    "value": 7.2,
+    "fr": "kg de ;brownie au chocolat",
+    "en": "kg of ;chocolate brownie",
+    "es": "kg de ;brownie de chocolate"
+  },
+  "painauchocolat": {
+    "category": 2,
+    "value": 5.14,
+    "fr": "kg de ;pain au chocolat",
+    "en": "kg of ;chocolate bread",
+    "es": "kg de ;pan de chocolate"
+  },
+  "cookie": {
+    "category": 2,
+    "value": 4.06,
+    "fr": "kg de ;cookie au pépites de chocolat",
+    "en": "kg of ;chocolate chip cookie",
+    "es": "kg de ;galleta con chispas de chocolate"
+  },
+  "madeleine": {
+    "category": 2,
+    "value": 2.67,
+    "fr": "kg de ;madeleine",
+    "en": "kg of ;madeleine",
+    "es": "kg de ;magdalena"
+  },
+  "painauxraisins": {
+    "category": 2,
+    "value": 2.63,
+    "fr": "kg de ;pain aux raisins",
+    "en": "kg of ;raisin bread",
+    "es": "kg de ;pan de pasas"
+  },
+  "chaussonauxpommes": {
+    "category": 2,
+    "value": 2.13,
+    "fr": "kg de ;chausson aux pommes",
+    "en": "kg of ;apple turnover",
+    "es": "kg de ;rotación de manzana"
+  },
+  "croissant": {
+    "category": 2,
+    "value": 2.6,
+    "fr": "kg de ;croissant au beurre",
+    "en": "kg of ;butter croissant",
+    "es": "kg de ;croissant de mantequilla"
+  },
+  "paindemie": {
+    "category": 2,
+    "value": 1.75,
+    "fr": "kg de ;pain de mie",
+    "en": "kg of ;sandwich bread",
+    "es": "kg de ;pan de molde"
+  },
+  "bonbons": {
+    "category": 2,
+    "value": 1.56,
+    "fr": "kg de ;bonbons gélifiés",
+    "en": "kg of ;gummy candies",
+    "es": "kg de ;caramelos de goma"
+  },
+  "baguette": {
+    "category": 2,
+    "value": 0.69,
+    "fr": "kg de ;baguette tradition",
+    "en": "kg of ;traditional baguette",
+    "es": "kg de ;baguette tradicional"
+  },
+  "pommealimentation": {
+    "category": 2,
+    "value": 0.396,
+    "fr": "kg de ;pomme",
+    "en": "kg of ;pomme",
+    "es": "kg de ;pomme"
+  },
+  "carottealimentation": {
+    "category": 2,
+    "value": 0.364,
+    "fr": "kg de ;carotte",
+    "en": "kg of ;carrot",
+    "es": "kg de ;zanahoria"
+  },
+  "courgettealimentation": {
+    "category": 2,
+    "value": 0.484,
+    "fr": "kg de ;courgette",
+    "en": "kg of ;zucchini",
+    "es": "kg de ;calabacín"
+  },
+  "tomatealimentation": {
+    "category": 2,
+    "value": 0.582,
+    "fr": "kg de ;tomate",
+    "en": "kg of ;tomato",
+    "es": "kg de ;tomate"
+  },
+  "potironalimentation": {
+    "category": 2,
+    "value": 0.619,
+    "fr": "kg de ;potiron",
+    "en": "kg of ;pumpkin",
+    "es": "kg de ;calabaza"
+  },
+  "laituealimentation": {
+    "category": 2,
+    "value": 0.941,
+    "fr": "kg de ;laitue",
+    "en": "kg of ;lettuce",
+    "es": "kg de ;lechuga"
+  },
+  "bananealimentation": {
+    "category": 2,
+    "value": 0.881,
+    "fr": "kg de ;banane",
+    "en": "kg of ;banana",
+    "es": "kg de ;plátano"
+  },
+  "manguealimentation": {
+    "category": 2,
+    "value": 10.642,
+    "fr": "kg de ;mangue",
+    "en": "kg of ;mango",
+    "es": "kg de ;mango"
+  },
+  "poireaualimentation": {
+    "category": 2,
+    "value": 0.769,
+    "fr": "kg de ;poireau",
+    "en": "kg of ;leek",
+    "es": "kg de ;puerro"
+  },
+  "avocatalimentation": {
+    "category": 2,
+    "value": 1.48,
+    "fr": "kg de ;avocat",
+    "en": "kg of ;avocado",
+    "es": "kg de ;aguacate"
+  },
+  "pommedeterre": {
+    "category": 2,
+    "value": 0.37,
+    "fr": "kg de ;pomme de terre nouvelle",
+    "en": "kg of ;new potato",
+    "es": "kg de ;papa nueva"
   }
 }

@@ -1,6 +1,6 @@
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
-import { repas } from 'data/categories/alimentation'
+import { alimentation } from 'data/categories/alimentation'
 import { boissons } from 'data/categories/boisson'
 import { casPratiques } from 'data/categories/caspratiques'
 import { chauffage } from 'data/categories/chauffage'
@@ -22,7 +22,7 @@ export const computedEquivalents = [
   ...mobiliers,
   ...numeriques,
   ...usageNumeriques,
-  ...repas,
+  ...alimentation,
   ...chauffage,
   ...fruitsEtLegumes,
   ...casPratiques,
