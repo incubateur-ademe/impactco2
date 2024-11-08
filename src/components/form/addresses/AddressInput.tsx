@@ -95,7 +95,7 @@ const AddressInput = ({
         </div>
       )}
       <div id={`suggestions-${id}`} aria-label={isFetching ? 'chargement en cours' : `${data?.length} resultats`}>
-        {data && open && (
+        {data && data.length > 0 && open && (
           <Suggestions
             isFetching={isFetching}
             results={data}
