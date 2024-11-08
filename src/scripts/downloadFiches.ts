@@ -3,12 +3,12 @@ import fs from 'fs'
 import pdftk from 'node-pdftk'
 
 const equivalents = [
-  { category: 'repas', equivalent: 'repasavecduboeuf' },
+  { category: 'alimentation', equivalent: 'repasavecduboeuf' },
   { category: 'caspratiques', equivalent: 'tgv-paris-marseille' },
   { category: 'numerique', equivalent: 'tabletteclassique' },
   { category: 'habillement', equivalent: 'chaussuresencuir' },
   { category: 'fruitsetlegumes', equivalent: 'avocat' },
-  { category: 'repas', equivalent: 'repasavecdupoissonblanc' },
+  { category: 'alimentation', equivalent: 'repasavecdupoissonblanc' },
   { category: 'electromenager', equivalent: 'refrigirateur' },
   { category: 'numerique', equivalent: 'ordinateurportable' },
   { category: 'boisson', equivalent: 'eauenbouteille' },

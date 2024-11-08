@@ -17,8 +17,8 @@ describe('thematiques', () => {
         },
         {
           id: 2,
-          name: 'Repas',
-          slug: 'repas',
+          name: 'Alimentation',
+          slug: 'alimentation',
         },
         {
           id: 3,

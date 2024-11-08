@@ -108,7 +108,7 @@ const categoryValidation = z.object({
  *       description:  |-
  *         ID ou Slug de la thématique demandée
  *         - 1 : numerique
- *         - 2 : repas
+ *         - 2 : alimentation
  *         - 3 : boisson
  *         - 4 : transport
  *         - 5 : habillement
@@ -169,9 +169,9 @@ export async function GET(req: NextRequest, context: { params: { id: string } })
     return NextResponse.json(inputs.error, { status: 400 })
   }
 
-  const { id, detail } = inputs.data
+  const { detail } = inputs.data
+  const id = inputs.data.id === 'repas' ? 'alimentation' : inputs.data.id
   const hasAPIKey = await trackAPIRequest(req, 'category', id)
-
   const idNumber = Number.parseInt(id)
   const category = Number.isNaN(idNumber)
     ? categories.find((category) => category.slug === id)

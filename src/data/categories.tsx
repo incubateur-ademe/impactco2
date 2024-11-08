@@ -1,4 +1,5 @@
 import { Category } from 'types/category'
+import { repas } from './categories/alimentation'
 import { boissons } from './categories/boisson'
 import { casPratiques } from './categories/caspratiques'
 import { chauffage } from './categories/chauffage'
@@ -10,7 +11,6 @@ import { fruitsEtLegumes } from './categories/fruitsetlegumes'
 import { habillements } from './categories/habillement'
 import { mobiliers } from './categories/mobilier'
 import { numeriques } from './categories/numerique'
-import { repas } from './categories/repas'
 import { usageNumeriques } from './categories/usagenumerique'
 
 export const categories: Category[] = [
@@ -130,9 +130,9 @@ export const categories: Category[] = [
   },
   {
     id: 2,
-    name: 'Repas',
-    tool: 'Impact Repas',
-    slug: 'repas',
+    name: 'Alimentation',
+    tool: 'Impact Alimentation',
+    slug: 'alimentation',
     synonyms: ['manger', 'alimenter'],
     sources: [
       {
@@ -142,7 +142,7 @@ export const categories: Category[] = [
     ],
     description: 'Pour aborder l’impact carbone de l’alimentation',
     unit: 'repas',
-    equivalents: computedEquivalents('repas', repas),
+    equivalents: computedEquivalents('alimentation', repas),
   },
   {
     id: 5,

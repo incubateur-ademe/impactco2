@@ -3,6 +3,12 @@ import DetectorScript from 'components/outils/DetectorScript'
 
 export const tools = [
   {
+    slug: 'alimentation',
+    title: 'Alimentation',
+    description: 'Comparer l’empreinte carbone des aliments',
+    linkLabel: 'Découvrir',
+  },
+  {
     slug: 'comparateur',
     title: 'Comparateur',
     description: 'Le bon outil pour obtenir les bons ordres de grandeur',
@@ -34,8 +40,8 @@ export const tools = [
   },
   {
     slug: 'repas',
-    title: 'Alimentation',
-    description: 'Comparer l’empreinte carbone des repas',
+    title: 'Repas',
+    description: 'Comparer l’empreinte carbone des différents types de repas',
     linkLabel: 'Découvrir',
   },
   {

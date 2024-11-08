@@ -127,6 +127,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/outils/repas/:slug*',
+        destination: '/outils/alimentation/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/iframes/repas/:slug*',
+        destination: '/iframes/alimentation/:slug*',
+        permanent: true,
+      },
+      {
         source: '/categories/:slug*',
         destination: '/:slug*',
         permanent: true,
