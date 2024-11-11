@@ -43,7 +43,7 @@ const ChauffageSimulator = () => {
           label='Surface (en m²)'
           unit='m²'
         />
-        {t('title')}
+        <p>{t('title')}</p>
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       {chauffage.equivalents && (

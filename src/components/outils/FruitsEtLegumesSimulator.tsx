@@ -40,7 +40,7 @@ const FruitsEtLegumesSimulator = () => {
             </option>
           ))}
         </Select>
-        {t('title')}
+        <p>{t('title')}</p>
       </div>
       <div className={shareableStyles.separatorBothBorders} />
       {flds.equivalents && (
