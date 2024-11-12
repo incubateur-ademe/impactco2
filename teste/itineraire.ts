@@ -18,11 +18,11 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
   await page.getByTestId('cancel-button').click()
 
   await page.getByLabel('Départ').fill('n')
-  await expect(await page.getByTestId('transportSuggest')).not.toBeVisible()
+  await expect(await page.getByTestId('transportSuggest').first()).not.toBeVisible()
 
   await page.getByLabel('Départ').fill('nan')
 
-  await expect(await page.getByTestId('transportSuggest')).toBeVisible()
+  await expect(await page.getByTestId('transportSuggest').first()).toBeVisible()
 
   await page.getByText('Nantes 44000 France').click()
   await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Nantes 44000 France')
@@ -42,7 +42,7 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
   await page.getByTestId('cancel-button').click()
 
   await page.getByLabel('Arrivée').fill('ang')
-  await expect(await page.getByTestId('transportSuggest')).toBeVisible()
+  await expect(await page.getByTestId('transportSuggest').last()).toBeVisible()
 
   await page.getByText('Angers 49000 France').click()
 
