@@ -9,6 +9,7 @@ import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
 import { comparisons } from 'components/outils/TransportComparisonSimulator'
 import { displayAddress } from 'utils/address'
+import { AlimentationCategories } from 'utils/alimentation'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
@@ -88,6 +89,10 @@ export type Params = {
   setTheme: Dispatch<SetStateAction<string>>
   language: SiteLanguage
   setLanguage: Dispatch<SetStateAction<SiteLanguage>>
+  alimentation: {
+    category: AlimentationCategories
+    setCategory: Dispatch<SetStateAction<AlimentationCategories>>
+  }
   livraison: {
     values: LivraisonValues
     setValues: Dispatch<SetStateAction<LivraisonValues>>
@@ -225,6 +230,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       }
     }
   }
+  // Alimentation
+  const [category, setCategory] = useState(AlimentationCategories.Group)
+
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
   const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>([])
@@ -505,6 +513,10 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setTheme,
         language,
         setLanguage,
+        alimentation: {
+          category,
+          setCategory,
+        },
         livraison: {
           values: livraisonValues,
           setValues: setLivraisonValues,

@@ -1,4 +1,5 @@
-.distanceSimulator, .simulator {
+.distanceSimulator,
+.simulator {
   padding: 1.5rem;
   color: var(--neutral-50);
   display: flex;
@@ -21,6 +22,10 @@
 
   @media screen and (max-width: 29.875rem) {
     padding: 1.5rem 1rem;
+  }
+
+  b {
+    color: var(--neutral-80);
   }
 }
 

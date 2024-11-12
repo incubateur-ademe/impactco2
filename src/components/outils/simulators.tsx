@@ -4,6 +4,7 @@ import { UsageNumeriqueProvider } from 'src/providers/UsageNumeriqueProvider'
 import ChauffageSimulator from 'components/outils/ChauffageSimulator'
 import FruitsEtLegumesSimulator from 'components/outils/FruitsEtLegumesSimulator'
 import TransportSimulator from 'components/outils/TransportSimulator'
+import AlimentationSimulator from './AlimentationSimulator'
 import LivraisonSimulator from './LivraisonSimulator'
 import TeletravailSimulator from './TeletravailSimulator'
 import OsezChangerSimulator from './osezChanger/OsezChangerSimulator'
@@ -14,6 +15,7 @@ export const simulators: Record<string, ReactNode> = {
   transport: <TransportSimulator />,
   teletravail: <TeletravailSimulator />,
   fruitsetlegumes: <FruitsEtLegumesSimulator />,
+  alimentation: <AlimentationSimulator />,
   usagenumerique: (
     <UsageNumeriqueProvider>
       <UsageNumeriqueSimulator />

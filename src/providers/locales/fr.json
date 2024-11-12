@@ -489,5 +489,30 @@
     "ico2-transport": "Calculer l'impact carbone de vos trajets",
     "ico2-fruitsetlegumes": "Découvrir les fruits et légumes de saison et leur impact",
     "fiches": "Télécharger les fiches du quizz à imprimer"
+  },
+  "alimentation": {
+    "title": "Découvrir <important>l’impact carbone des aliments</important> présentés par...",
+    "label": "Selectionner comment grouper les résultats",
+    "group": "Groupe d'aliments (viandes, poissons, produits laitiers...)",
+    "rayon": "Rayons du magasin (épicerie salée, boulangerie, traiteur...)",
+    "popularity": "Popularité (les 10 aliments les plus consommés)",
+    "click": "Cliquez sur une catégorie pour afficher son contenu",
+    "more": "+ {count} autres",
+    "impact": "{value}% de l'impact le plus fort",
+    "hide": "Replier",
+    "viandes": "Viandes",
+    "poissons": "Poissons et fruits de mer",
+    "laitier": "Oeufs et produits laitiers",
+    "cereales": "Céréales et légumineuses",
+    "autres": "Plats préparés",
+    "encas": "En-cas",
+    "fruits": "Fruis et légumes",
+    "boucherie": "Boucherie",
+    "poissonerie": "Poissonerie",
+    "traiteur": "Traiteur",
+    "fromagerie": "Fromagerie",
+    "boulangerie": "Boulangerie",
+    "epiceriesalee": "Épicerie salée",
+    "epiceriesucree": "Épicerie sucrée"
   }
 }
