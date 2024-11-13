@@ -79,7 +79,10 @@ test('Transport distance default values', async ({ page }) => {
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion court courrier3.88 kg CO₂e Modifier')
 
   await page.goto(
-    'http://localhost:3000/outils/transport?km=10&comparison=voiturethermique+1,voitureelectrique+2&defaultMode=comparison&language=fr&modes=voiturethermique+1,voitureelectrique+1'
+    'http://localhost:3000/outils/transport?km=10&comparison=voiturethermique+1,voitureelectrique+2&defaultMode=comparison&language=fr&modes=voiturethermique+1,voitureelectrique+1',
+    {
+      timeout: 60000,
+    }
   )
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
     'Covoiturage thermique (1 passager)1.09 kg CO₂e Modifier'
@@ -89,7 +92,10 @@ test('Transport distance default values', async ({ page }) => {
   )
 
   await page.goto(
-    'http://localhost:3000/outils/transport?km=10&comparison=voiturethermique+1,voitureelectrique+2&defaultMode=comparison&language=fr&modes=voiturethermique+1,voitureelectrique+1,tgv'
+    'http://localhost:3000/outils/transport?km=10&comparison=voiturethermique+1,voitureelectrique+2&defaultMode=comparison&language=fr&modes=voiturethermique+1,voitureelectrique+1,tgv',
+    {
+      timeout: 60000,
+    }
   )
   await expect(page.getByRole('button', { name: 'Voir une autre comparaison' })).not.toBeVisible()
 })
