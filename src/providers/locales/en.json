@@ -450,7 +450,7 @@
     "name-transport": "Transport",
     "name-fruitsetlegumes": "Fruits and vegetables",
     "name-numerique": "Digital",
-    "name-repas": "Meal",
+    "name-alimentation": "Food",
     "name-habillement": "Clothing",
     "name-mobilier": "Furniture",
     "name-electromenager": "Home applicance",
@@ -473,6 +473,7 @@
     "recherche": "search"
   },
   "ressources": {
+    "agir": "Eat better: get rid of false ideas!",
     "tri": "Sort through your cupboards to make more space at home",
     "questions": "Ask yourself the right questions before buying: Do I really need it?",
     "deuxieme-vie": "Give a second life to unused clothes and shoes",
@@ -489,5 +490,32 @@
     "ico2-transport": "Calculate the carbon impact of your journeys",
     "ico2-fruitsetlegumes": "Discover seasonal fruits and vegetables and their impact",
     "fiches": "Download the printable quiz sheets"
+  },
+  "alimentation": {
+    "title": "Discover <important>the carbon impact of foods</important> presented by...",
+    "label": "Select how to group the results",
+    "group": "Food groups (meats, fish, dairy products...)",
+    "rayon": "Store sections (savory groceries, bakery, deli...)",
+    "popularity": "Popularity (the 10 most consumed foods)",
+    "click": "Click on a category to display its content",
+    "biggest": "Highest impact",
+    "smallest": "Lowest impact",
+    "more": "+ {count} more",
+    "impact": "{value}% of the highest impact",
+    "hide": "Hide",
+    "viandes": "Meats",
+    "poissons": "Fish and seafood",
+    "laitier": "Eggs and dairy products",
+    "cereales": "Cereals and legumes",
+    "autres": "Prepared dishes",
+    "encas": "Snacks",
+    "fruits": "Fruits and vegetables",
+    "boucherie": "Butchery",
+    "poissonerie": "Fishmonger",
+    "traiteur": "Deli",
+    "fromagerie": "Cheese shop",
+    "boulangerie": "Bakery",
+    "epiceriesalee": "Savory groceries",
+    "epiceriesucree": "Sweet groceries"
   }
 }

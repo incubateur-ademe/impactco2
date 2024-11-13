@@ -352,8 +352,6 @@
     "Approvisionnement": "Abastecimiento",
     "hypothesis": {
       "pre": {
-        "the": "Suponemos una taza de 250ml (simplificada aquí como 250mg).",
-        "cafe": "Suponemos una taza de 250ml (simplificada aquí como 250mg).",
         "avion-pny": "Distancia total recorrida: 11,600 km.",
         "tgv-paris-berlin": "Distancia total recorrida: 2,478 km.",
         "tgv-paris-marseille": "Distancia total recorrida: 1,504 km.",
@@ -452,7 +450,7 @@
     "name-transport": "Transporte",
     "name-fruitsetlegumes": "Frutas y verduras",
     "name-numerique": "Digital",
-    "name-repas": "Comida",
+    "name-alimentation": "Alimento",
     "name-habillement": "Ropa",
     "name-mobilier": "Mobiliario",
     "name-electromenager": "Electrodomésticos",
@@ -475,6 +473,7 @@
     "recherche": "búsqueda"
   },
   "ressources": {
+    "agir": "Come mejor: ¡ahuyenta las ideas falsas!",
     "tri": "Ordenar tus armarios para ganar espacio en casa",
     "questions": "Hacerse las preguntas correctas antes de comprar: ¿realmente lo necesito?",
     "deuxieme-vie": "Dar una segunda vida a la ropa y zapatos no utilizados",
@@ -491,5 +490,32 @@
     "ico2-transport": "Calcule el impacto de carbono de sus viajes",
     "ico2-fruitsetlegumes": "Descubre frutas y verduras de temporada y su impacto",
     "fiches": "Descargue las hojas del cuestionario para imprimir"
+  },
+  "alimentation": {
+    "title": "Descubrir <important>el impacto de carbono de los alimentos</important> presentados por...",
+    "label": "Seleccionar cómo agrupar los resultados",
+    "group": "Grupo de alimentos (carnes, pescados, productos lácteos...)",
+    "rayon": "Secciones de la tienda (comestibles salados, panadería, charcutería...)",
+    "popularity": "Popularidad (los 10 alimentos más consumidos)",
+    "click": "Haga clic en una categoría para mostrar su contenido",
+    "biggest": "Impacto más alto",
+    "smallest": "Impacto más bajo",
+    "more": "+ {count} otros",
+    "impact": "{value}% del impacto más alto",
+    "hide": "Ocultar",
+    "viandes": "Carnes",
+    "poissons": "Pescados y mariscos",
+    "laitier": "Huevos y productos lácteos",
+    "cereales": "Cereales y legumbres",
+    "autres": "Platos preparados",
+    "encas": "Aperitivos",
+    "fruits": "Frutas y verduras",
+    "boucherie": "Carnicería",
+    "poissonerie": "Pescadería",
+    "traiteur": "Charcutería",
+    "fromagerie": "Quesería",
+    "boulangerie": "Panadería",
+    "epiceriesalee": "Comestibles salados",
+    "epiceriesucree": "Comestibles dulces"
   }
 }
