@@ -12,10 +12,14 @@ const AlimentationSubCategory = ({
   name,
   equivalents,
   proportion,
+  barInfo,
+  logos,
 }: {
   name: string
+  logos?: number[]
   equivalents: ComputedEquivalent[]
   proportion: number
+  barInfo?: string
 }) => {
   const { language } = useParamContext()
   const t = useTranslations('alimentation')
@@ -35,26 +39,32 @@ const AlimentationSubCategory = ({
             style={{ width: `${proportion * 100}%` }}
             aria-label={t('impact', { value: proportion * 100 })}
           />
+          {barInfo && <div className={styles.barText}>{barInfo}</div>}
         </div>
         {display ? (
           <p className={styles.hide}>
             {t('hide')} <DropdownArrowUpIcon />
           </p>
         ) : (
-          <div className={styles.icons}>
-            <div className={styles.icon}>
-              <EquivalentIcon equivalent={equivalents[0]} height={2} alt={getName(language, equivalents[0])} />
+          logos && (
+            <div className={styles.icons}>
+              {logos.map((logo) => (
+                <div className={styles.icon} key={logo}>
+                  <EquivalentIcon
+                    equivalent={equivalents[logo]}
+                    height={2}
+                    alt={getName(language, equivalents[logo])}
+                  />
+                </div>
+              ))}
+              <div className={styles.icon}>{t('more', { count: equivalents.length - logos.length })}</div>
             </div>
-            <div className={styles.icon}>
-              <EquivalentIcon equivalent={equivalents[1]} height={2} alt={getName(language, equivalents[1])} />
-            </div>
-            <div className={styles.icon}>{t('more', { count: equivalents.length - 2 })}</div>
-          </div>
+          )
         )}
       </button>
       {display && (
         <div id={`alimentation-category-${name}`} className={styles.categories}>
-          <CategorySimulator tracking='Alimentation' equivalents={equivalents} withSimulator />
+          <CategorySimulator tracking='Alimentation' equivalents={equivalents} withSimulator reverse />
         </div>
       )}
     </div>

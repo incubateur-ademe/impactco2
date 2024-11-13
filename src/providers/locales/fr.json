@@ -450,7 +450,7 @@
     "name-transport": "Transport",
     "name-fruitsetlegumes": "Fruits et légumes",
     "name-numerique": "Numérique",
-    "name-repas": "Repas",
+    "name-alimentation": "Alimentation",
     "name-habillement": "Habillement",
     "name-mobilier": "Mobilier",
     "name-electromenager": "Électroménager",
@@ -473,6 +473,7 @@
     "recherche": "recherche"
   },
   "ressources": {
+    "agir": "Mieux manger : chassez les fausses idées ! ",
     "tri": "Faire le tri dans ses placards pour gagner de la place chez soi",
     "questions": "Se poser les bonnes questions avant d’acheter : en ai-je vraiment besoin ?",
     "deuxieme-vie": "Donner une seconde vie aux vêtements et chaussures non utilisées",
@@ -488,6 +489,7 @@
     "ecoresponsable": "Écoresponsable au bureau",
     "ico2-transport": "Calculer l'impact carbone de vos trajets",
     "ico2-fruitsetlegumes": "Découvrir les fruits et légumes de saison et leur impact",
+    "ico2-repas": "Comparer l'impact carbone des repas",
     "fiches": "Télécharger les fiches du quizz à imprimer"
   },
   "alimentation": {
@@ -497,6 +499,8 @@
     "rayon": "Rayons du magasin (épicerie salée, boulangerie, traiteur...)",
     "popularity": "Popularité (les 10 aliments les plus consommés)",
     "click": "Cliquez sur une catégorie pour afficher son contenu",
+    "biggest": "Impact le + fort",
+    "smallest": "Impact le + faible",
     "more": "+ {count} autres",
     "impact": "{value}% de l'impact le plus fort",
     "hide": "Replier",

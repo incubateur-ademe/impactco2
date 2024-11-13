@@ -16,9 +16,7 @@ const EquivalentIcon = ({
 
   return (
     <img
-      src={buildCurrentUrlFor(
-        `/icons/${equivalent.carpool ? 'covoiturage' : ''}${slug.endsWith('alimentation') ? slug.replace('alimentation', '') : getComparisonSlug(slug)}.svg`
-      )}
+      src={buildCurrentUrlFor(`/icons/${equivalent.carpool ? 'covoiturage' : ''}${getComparisonSlug(slug)}.svg`)}
       width={(height || 1) * 16}
       height={(height || 1) * 16}
       alt={alt || ''}

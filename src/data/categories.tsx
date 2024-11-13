@@ -11,6 +11,7 @@ import { fruitsEtLegumes } from './categories/fruitsetlegumes'
 import { habillements } from './categories/habillement'
 import { mobiliers } from './categories/mobilier'
 import { numeriques } from './categories/numerique'
+import { repas } from './categories/repas'
 import { usageNumeriques } from './categories/usagenumerique'
 
 export const categories: Category[] = [
@@ -142,7 +143,7 @@ export const categories: Category[] = [
     ],
     description: 'Pour aborder l’impact carbone de l’alimentation',
     unit: 'repas',
-    equivalents: computedEquivalents('alimentation', alimentation),
+    equivalents: [...computedEquivalents('alimentation', alimentation), ...computedEquivalents('alimentation', repas)],
   },
   {
     id: 5,

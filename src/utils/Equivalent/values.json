@@ -945,6 +945,48 @@
     "en": "box[s]",
     "es": "caha de internet"
   },
+  "repasavecduboeuf": {
+    "category": 2,
+    "value": 7260,
+    "fr": "repas avec du boeuf",
+    "en": "meal[s] with beef",
+    "es": "Comida con carne de vacuno"
+  },
+  "repasvegetarien": {
+    "category": 2,
+    "value": 510,
+    "fr": "repas végétarien[s]",
+    "en": "vegetarian meal[s]",
+    "es": "Comida vegetariana"
+  },
+  "repasvegetalien": {
+    "category": 2,
+    "value": 390,
+    "fr": "repas végétalien[s]",
+    "en": "vegan meal[s]",
+    "es": "Comida vegana"
+  },
+  "repasavecdupoissonblanc": {
+    "category": 2,
+    "value": 1980,
+    "fr": "repas avec du poisson blanc",
+    "en": "meal[s] with white fish",
+    "es": "Comida con pescado blanco"
+  },
+  "repasavecdupoissongras": {
+    "category": 2,
+    "value": 1110,
+    "fr": "repas avec du poisson gras",
+    "en": "meal[s] with fatty fish",
+    "es": "Comida con pescado graso"
+  },
+  "repasavecdupoulet": {
+    "category": 2,
+    "value": 1580,
+    "fr": "repas avec du poulet",
+    "en": "meal[s] with chicken",
+    "es": "Comida con pollo"
+  },
   "jeans": {
     "category": 5,
     "value": 25088.72880618721,
@@ -1428,13 +1470,6 @@
     "en": "kg of ;0% white cheese",
     "es": "kg de ;queso blanco 0%"
   },
-  "laitdevachealimentation": {
-    "category": 2,
-    "value": 1.33,
-    "fr": "kg de ;lait",
-    "en": "kg of ;milk",
-    "es": "kg de ;leche"
-  },
   "quinoa": {
     "category": 2,
     "value": 7.68,
@@ -1490,13 +1525,6 @@
     "fr": "kg de ;lentilles (blondes, vertes, corail)",
     "en": "kg of ;lentils (blond, green, coral)",
     "es": "kg de ;lentejas (rubias, verdes, coral)"
-  },
-  "maisalimentation": {
-    "category": 2,
-    "value": 0.81,
-    "fr": "kg de ;maïs",
-    "en": "kg of ;corn",
-    "es": "kg de ;maíz"
   },
   "cheeseburger": {
     "category": 2,
@@ -1637,76 +1665,6 @@
     "fr": "kg de ;baguette tradition",
     "en": "kg of ;traditional baguette",
     "es": "kg de ;baguette tradicional"
-  },
-  "pommealimentation": {
-    "category": 2,
-    "value": 0.396,
-    "fr": "kg de ;pomme",
-    "en": "kg of ;pomme",
-    "es": "kg de ;pomme"
-  },
-  "carottealimentation": {
-    "category": 2,
-    "value": 0.364,
-    "fr": "kg de ;carotte",
-    "en": "kg of ;carrot",
-    "es": "kg de ;zanahoria"
-  },
-  "courgettealimentation": {
-    "category": 2,
-    "value": 0.484,
-    "fr": "kg de ;courgette",
-    "en": "kg of ;zucchini",
-    "es": "kg de ;calabacín"
-  },
-  "tomatealimentation": {
-    "category": 2,
-    "value": 0.582,
-    "fr": "kg de ;tomate",
-    "en": "kg of ;tomato",
-    "es": "kg de ;tomate"
-  },
-  "potironalimentation": {
-    "category": 2,
-    "value": 0.619,
-    "fr": "kg de ;potiron",
-    "en": "kg of ;pumpkin",
-    "es": "kg de ;calabaza"
-  },
-  "laituealimentation": {
-    "category": 2,
-    "value": 0.941,
-    "fr": "kg de ;laitue",
-    "en": "kg of ;lettuce",
-    "es": "kg de ;lechuga"
-  },
-  "bananealimentation": {
-    "category": 2,
-    "value": 0.881,
-    "fr": "kg de ;banane",
-    "en": "kg of ;banana",
-    "es": "kg de ;plátano"
-  },
-  "manguealimentation": {
-    "category": 2,
-    "value": 10.642,
-    "fr": "kg de ;mangue",
-    "en": "kg of ;mango",
-    "es": "kg de ;mango"
-  },
-  "poireaualimentation": {
-    "category": 2,
-    "value": 0.769,
-    "fr": "kg de ;poireau",
-    "en": "kg of ;leek",
-    "es": "kg de ;puerro"
-  },
-  "avocatalimentation": {
-    "category": 2,
-    "value": 1.48,
-    "fr": "kg de ;avocat",
-    "en": "kg of ;avocado",
-    "es": "kg de ;aguacate"
   },
   "pommedeterre": {
     "category": 2,

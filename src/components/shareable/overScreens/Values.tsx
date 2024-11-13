@@ -6,6 +6,7 @@ import { getName } from 'utils/Equivalent/equivalent'
 import Resource from 'components/base/Resource'
 import ComparisonOverscreen from 'components/comparateur/overscreens/ComparisonOverscreen'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
+import AlimentationData from './Data/AlimentationData'
 import Integrate from './Integrate'
 import Share from './Share'
 import TransportIntegrate from './TransportIntegrate'
@@ -26,6 +27,7 @@ export type OverScreenInfo = {
   image?: string
   children: ReactNode
   fullHeight?: boolean
+  noBorder?: boolean
   cancel?: (onClose: () => void) => ReactNode
 }
 
@@ -134,7 +136,7 @@ export const overScreenComparateurEtiquettesValues: () => Record<
   },
 })
 
-export const overScreenExtraSimulatorValues: (slug: string) => Record<string, OverScreenInfo> = () => {
+export const overScreenOsezChangerValues: () => Record<string, OverScreenInfo> = () => {
   return {
     partager: {
       title: 'share',
@@ -407,14 +409,14 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               text='livraison'
               href='https://librairie.ademe.fr/cadic/4466/guide-pratique-econsommateur-responsable.pdf'
               withLink='ADEME'
-              tracking='livraison'
+              tracking='Livraison'
             />
             <Resource
               image='/images/ngc.png'
               text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
-              tracking='livraison'
+              tracking='Livraison'
               imgSize='4.5rem'
             />
           </div>
@@ -424,6 +426,54 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         image: '/images/icn-understand.svg',
         title: 'understand',
         children: <LivraisonData />,
+      },
+    }
+  }
+  if (category.slug === 'alimentation') {
+    return {
+      ...values,
+      hypothesis: {
+        noBorder: true,
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir.png'
+              text='agir'
+              href='https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation/mieux-manger-chassez-fausses-idees'
+              withLink='Agir pour la transition (ADEME)'
+              tracking='Alimentation'
+            />
+            <Resource
+              image='/images/tools-fruitsetlegumes.svg'
+              text='ico2-fruitsetlegumes'
+              href='https://impactco2.fr/outils/fruitsetlegumes'
+              withLink='Fruits et légumes de saison'
+              tracking='Alimentation'
+            />
+            <Resource
+              image='/images/tools-repas.svg'
+              text='ico2-repas'
+              href='https://impactco2.fr/outils/alimentation#repas'
+              withLink='Repas'
+              tracking='Alimentation'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Alimentation'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+      data: {
+        image: '/images/icn-understand.svg',
+        title: 'understand',
+        children: <AlimentationData />,
       },
     }
   }

@@ -132,11 +132,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/iframes/repas/:slug*',
-        destination: '/iframes/alimentation/:slug*',
-        permanent: true,
-      },
-      {
         source: '/categories/:slug*',
         destination: '/:slug*',
         permanent: true,
@@ -170,7 +165,7 @@ const nextConfig = {
       { source: '/transport/:slug*', destination: '/outils/transport/:slug*', permanent: true },
       { source: '/fruitsetlegumes/:slug*', destination: '/outils/fruitsetlegumes/:slug*', permanent: true },
       { source: '/numerique/:slug*', destination: '/outils/numerique/:slug*', permanent: true },
-      { source: '/repas/:slug*', destination: '/outils/repas/:slug*', permanent: true },
+      { source: '/repas/:slug*', destination: '/outils/alimentation/:slug*', permanent: true },
       { source: '/habillement/:slug*', destination: '/outils/habillement/:slug*', permanent: true },
       { source: '/mobilier/:slug*', destination: '/outils/mobilier/:slug*', permanent: true },
       { source: '/electromenager/:slug*', destination: '/outils/electromenager/:slug*', permanent: true },

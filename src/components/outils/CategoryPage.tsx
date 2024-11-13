@@ -16,7 +16,14 @@ const CategoryPage = ({
 }: {
   category: CategoryType
   simulator?: ReactNode
-  extraSimulator?: { slug: string; tracking: string; title: string; description: string; simulator: ReactNode }
+  extraSimulator?: {
+    slug: string
+    tracking: string
+    title: string
+    description: string
+    simulator: ReactNode
+    small?: boolean
+  }
 }) => {
   return (
     <>
@@ -33,7 +40,7 @@ const CategoryPage = ({
       </Block>
       {extraSimulator && (
         <Block id={extraSimulator.slug} title={extraSimulator.title} description={extraSimulator.description}>
-          <ExtraSimulator tracking={extraSimulator.tracking} slug={extraSimulator.slug}>
+          <ExtraSimulator tracking={extraSimulator.tracking} slug={extraSimulator.slug} small={extraSimulator.small}>
             {extraSimulator.simulator}
           </ExtraSimulator>
         </Block>

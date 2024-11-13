@@ -45,15 +45,18 @@ const AlimentationSimulator = () => {
             <CategorySimulator
               equivalents={equivalentsByCategory[category][0]?.equivalents || []}
               tracking='Alimentation'
+              reverse
             />
           </div>
         ) : (
-          values.map((value) => (
+          values.map((value, index) => (
             <AlimentationSubCategory
               equivalents={value.equivalents}
+              logos={value.logos}
               name={value.name}
               key={value.name}
               proportion={value.mean / values[0].mean}
+              barInfo={index === 0 ? t('biggest') : index === values.length - 1 ? t('smallest') : undefined}
             />
           ))
         )}

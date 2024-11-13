@@ -11,6 +11,7 @@ import { fruitsEtLegumes } from 'data/categories/fruitsetlegumes'
 import { habillements } from 'data/categories/habillement'
 import { mobiliers } from 'data/categories/mobilier'
 import { numeriques } from 'data/categories/numerique'
+import { repas } from 'data/categories/repas'
 import { usageNumeriques } from 'data/categories/usagenumerique'
 import { computeECV } from 'utils/computeECV'
 
@@ -23,6 +24,7 @@ export const computedEquivalents = [
   ...numeriques,
   ...usageNumeriques,
   ...alimentation,
+  ...repas,
   ...chauffage,
   ...fruitsEtLegumes,
   ...casPratiques,

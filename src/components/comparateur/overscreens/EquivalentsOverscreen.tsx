@@ -30,7 +30,6 @@ const EquivalentsOverscreen = () => {
 
   const [search, setSearch] = useState('')
   const results = useSearchEquivalent(search, true)
-
   const t = useTranslations('comparateur.overscreen')
   const tModal = useTranslations('modal')
   return (

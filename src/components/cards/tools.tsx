@@ -41,6 +41,7 @@ export const tools = [
   {
     slug: 'repas',
     title: 'Repas',
+    link: '/outils/alimentation#repas',
     description: 'Comparer l’empreinte carbone des différents types de repas',
     linkLabel: 'Découvrir',
   },

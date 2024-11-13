@@ -7,15 +7,18 @@ export enum AlimentationCategories {
   Popularity = 'popularity',
 }
 
-const slugByCategory: Record<AlimentationCategories, { name: string; equivalents: string[] }[]> = {
+const slugByCategory: Record<AlimentationCategories, { name: string; equivalents: string[]; logos?: number[] }[]> = {
   group: [
     {
       name: 'poissons',
       equivalents: ['crevettes', 'cabillaud', 'lieu', 'dorade', 'saumon', 'moules', 'huitres', 'thon', 'sardines'],
+      logos: [0, 4],
     },
-    { name: 'viandes', equivalents: ['boeuf', 'veau', 'porc', 'lapin', 'canard', 'poulet'] },
+
+    { name: 'viandes', logos: [1, 4], equivalents: ['boeuf', 'veau', 'porc', 'lapin', 'canard', 'poulet'] },
     {
       name: 'laitier',
+      logos: [6, 1],
       equivalents: [
         'beurre',
         'fromagedure',
@@ -27,29 +30,22 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
         'matieregrasse',
         'yaourt',
         'fromageblanc',
-        'laitdevachealimentation',
+        'laitdevache',
       ],
     },
     {
       name: 'cereales',
-      equivalents: [
-        'quinoa',
-        'riz',
-        'pates',
-        'ble',
-        'boulgour',
-        'poischiches',
-        'haricotsrouges',
-        'lentilles',
-        'maisalimentation',
-      ],
+      logos: [1, 3],
+      equivalents: ['quinoa', 'riz', 'pates', 'ble', 'boulgour', 'poischiches', 'haricotsrouges', 'lentilles', 'mais'],
     },
     {
       name: 'autres',
+      logos: [0, 4],
       equivalents: ['cheeseburger', 'kebab', 'burgerpoulet', 'pizza', 'sushis', 'burgervegetarien', 'frites', 'tofu'],
     },
     {
       name: 'encas',
+      logos: [3, 1],
       equivalents: [
         'boucheechocolat',
         'pateatartiner',
@@ -67,17 +63,18 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
     },
     {
       name: 'fruits',
+      logos: [0, 5],
       equivalents: [
-        'pommealimentation',
-        'carottealimentation',
-        'courgettealimentation',
-        'tomatealimentation',
-        'potironalimentation',
-        'laituealimentation',
-        'bananealimentation',
-        'manguealimentation',
-        'poireaualimentation',
-        'avocatalimentation',
+        'pomme',
+        'carotte',
+        'courgette',
+        'tomate',
+        'potiron',
+        'laitue',
+        'banane',
+        'mangue',
+        'poireau',
+        'avocat',
         'pommedeterre',
       ],
     },
@@ -85,18 +82,24 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
   rayon: [
     {
       name: 'boucherie',
+      logos: [1, 4],
       equivalents: ['boeuf', 'veau', 'porc', 'lapin', 'canard', 'poulet'],
     },
     {
       name: 'poissonerie',
+      logos: [1, 6],
+
       equivalents: ['crevettes', 'cabillaud', 'lieu', 'dorade', 'saumon', 'moules', 'huitres', 'thon', 'sardines'],
     },
     {
       name: 'traiteur',
+      logos: [2, 4],
+
       equivalents: ['cheeseburger', 'kebab', 'burgerpoulet', 'sushis', 'pizza', 'burgervegetarien'],
     },
     {
       name: 'fromagerie',
+      logos: [3, 5],
       equivalents: [
         'beurre',
         'fromagedure',
@@ -106,18 +109,20 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
         'fromagebleu',
         'yaourt',
         'fromageblanc',
-        'laitdevachealimentation',
+        'laitdevache',
       ],
     },
     {
       name: 'boulangerie',
+      logos: [0, 2],
       equivalents: ['baguette', 'painauchocolat', 'croissant', 'chaussonauxpommes', 'paindemie', 'painauxraisins'],
     },
     {
       name: 'epiceriesalee',
+      logos: [6, 8],
       equivalents: [
         'oeuf',
-        'maisalimentation',
+        'mais',
         'lentilles',
         'quinoa',
         'ble',
@@ -133,21 +138,23 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
     },
     {
       name: 'epiceriesucree',
+      logos: [4, 2],
       equivalents: ['pateatartiner', 'boucheechocolat', 'cookie', 'brownie', 'bonbons', 'madeleine'],
     },
     {
       name: 'fruits',
+      logos: [6, 9],
       equivalents: [
-        'pommealimentation',
-        'carottealimentation',
-        'courgettealimentation',
-        'tomatealimentation',
-        'potironalimentation',
-        'laituealimentation',
-        'bananealimentation',
-        'manguealimentation',
-        'poireaualimentation',
-        'avocatalimentation',
+        'pomme',
+        'carotte',
+        'courgette',
+        'tomate',
+        'potiron',
+        'laitue',
+        'banane',
+        'mangue',
+        'poireau',
+        'avocat',
         'pommedeterre',
       ],
     },
@@ -187,7 +194,7 @@ const compute = (category: { name: string; equivalents: string[] }[]) =>
 
 export const equivalentsByCategory: Record<
   AlimentationCategories,
-  { name: string; equivalents: ComputedEquivalent[]; mean: number }[]
+  { name: string; equivalents: ComputedEquivalent[]; mean: number; logos?: number[] }[]
 > = {
   group: compute(slugByCategory.group),
   rayon: compute(slugByCategory.rayon),

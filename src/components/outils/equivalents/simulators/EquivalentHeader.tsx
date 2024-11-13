@@ -35,7 +35,7 @@ const EquivalentHeader = ({ category, equivalent }: { category: Category; equiva
         <p className={styles.hypothesis}>
           <span className={styles.hypothesisTitle}>{t('hypotheses')}</span>
           {equivalent.carpool && <span>{getCarpool(language, equivalent.carpool)}</span>}
-          {'months' in equivalent && <span>{getMonthsLabel(equivalent.months, language)}</span>}
+          {'months' in equivalent && <span>{getMonthsLabel(equivalent.months, language)} </span>}
           {hasPre && <span>{pre}</span>}
           {hasPost && <span>{post}</span>}
         </p>

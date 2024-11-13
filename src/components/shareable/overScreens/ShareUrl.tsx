@@ -33,6 +33,7 @@ const ShareUrl = ({
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
   const { language } = useParamContext()
+  const slug = category?.slug === 'repas' ? 'alimentation' : category?.slug || ''
   return (
     <>
       <ClipboardBox tracking={trackingValue} form={form}>
@@ -75,17 +76,17 @@ const ShareUrl = ({
       {(category || path?.startsWith('outils/comparateur')) && (
         <div className={styles.meta}>
           {category ? (
-            <Image src={`/meta/${category.slug}-${language}.png`} width={728} height={382.2} alt='' />
+            <Image src={`/meta/${slug}-${language}.png`} width={728} height={382.2} alt='' />
           ) : (
             <img src={customImage} width={728} height={382.2} alt='' />
           )}
           <div className={styles.text}>
             <div className={styles.metaHeader}>{t('apercu')}</div>
             <p className={styles.metaTitle}>
-              {category ? metaTitles[category.slug][language] : metaTitles.comparateur[language]}
+              {category ? metaTitles[slug][language] : metaTitles.comparateur[language]}
             </p>
             <p className='text-sm'>
-              {category ? metaDescriptions[category.slug][language] : metaDescriptions.comparateur[language]}
+              {category ? metaDescriptions[slug][language] : metaDescriptions.comparateur[language]}
             </p>
           </div>
         </div>
