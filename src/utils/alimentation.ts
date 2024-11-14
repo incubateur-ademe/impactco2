@@ -7,18 +7,22 @@ export enum AlimentationCategories {
   Popularity = 'popularity',
 }
 
-const slugByCategory: Record<AlimentationCategories, { name: string; equivalents: string[]; logos?: number[] }[]> = {
+const slugByCategory: Record<AlimentationCategories, { name: string; equivalents: string[]; logos?: string[] }[]> = {
   group: [
     {
       name: 'poissons',
       equivalents: ['crevettes', 'cabillaud', 'lieu', 'dorade', 'saumon', 'moules', 'huitres', 'thon', 'sardines'],
-      logos: [0, 4],
+      logos: ['crevettes', 'saumon'],
     },
 
-    { name: 'viandes', logos: [1, 4], equivalents: ['boeuf', 'veau', 'porc', 'lapin', 'canard', 'poulet'] },
+    {
+      name: 'viandes',
+      logos: ['boeuf', 'poulet'],
+      equivalents: ['boeuf', 'veau', 'porc', 'lapin', 'canard', 'poulet'],
+    },
     {
       name: 'laitier',
-      logos: [6, 1],
+      logos: ['oeuf', 'fromagedure'],
       equivalents: [
         'beurre',
         'fromagedure',
@@ -35,17 +39,17 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
     },
     {
       name: 'cereales',
-      logos: [1, 3],
+      logos: ['riz', 'ble'],
       equivalents: ['quinoa', 'riz', 'pates', 'ble', 'boulgour', 'poischiches', 'haricotsrouges', 'lentilles', 'mais'],
     },
     {
       name: 'autres',
-      logos: [0, 4],
+      logos: ['cheeseburger', 'sushis'],
       equivalents: ['cheeseburger', 'kebab', 'burgerpoulet', 'pizza', 'sushis', 'burgervegetarien', 'frites', 'tofu'],
     },
     {
       name: 'encas',
-      logos: [3, 1],
+      logos: ['painauchocolat', 'pateatartiner'],
       equivalents: [
         'boucheechocolat',
         'pateatartiner',
@@ -63,7 +67,7 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
     },
     {
       name: 'fruits',
-      logos: [0, 5],
+      logos: ['pomme', 'laitue'],
       equivalents: [
         'pomme',
         'carotte',
@@ -82,24 +86,24 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
   rayon: [
     {
       name: 'boucherie',
-      logos: [1, 4],
+      logos: ['veau', 'canard'],
       equivalents: ['boeuf', 'veau', 'porc', 'lapin', 'canard', 'poulet'],
     },
     {
       name: 'poissonerie',
-      logos: [1, 6],
+      logos: ['cabillaud', 'huitres'],
 
       equivalents: ['crevettes', 'cabillaud', 'lieu', 'dorade', 'saumon', 'moules', 'huitres', 'thon', 'sardines'],
     },
     {
       name: 'traiteur',
-      logos: [2, 4],
+      logos: ['burgerpoulet', 'pizza'],
 
       equivalents: ['cheeseburger', 'kebab', 'burgerpoulet', 'sushis', 'pizza', 'burgervegetarien'],
     },
     {
       name: 'fromagerie',
-      logos: [3, 5],
+      logos: ['fromagemolle', 'fromagebleu'],
       equivalents: [
         'beurre',
         'fromagedure',
@@ -114,12 +118,12 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
     },
     {
       name: 'boulangerie',
-      logos: [0, 2],
+      logos: ['baguette', 'croissant'],
       equivalents: ['baguette', 'painauchocolat', 'croissant', 'chaussonauxpommes', 'paindemie', 'painauxraisins'],
     },
     {
       name: 'epiceriesalee',
-      logos: [6, 8],
+      logos: ['pates', 'haricotsrouges'],
       equivalents: [
         'oeuf',
         'mais',
@@ -138,12 +142,12 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
     },
     {
       name: 'epiceriesucree',
-      logos: [4, 2],
+      logos: ['bonbons', 'cookie'],
       equivalents: ['pateatartiner', 'boucheechocolat', 'cookie', 'brownie', 'bonbons', 'madeleine'],
     },
     {
       name: 'fruits',
-      logos: [6, 9],
+      logos: ['banane', 'avocat'],
       equivalents: [
         'pomme',
         'carotte',
@@ -194,7 +198,7 @@ const compute = (category: { name: string; equivalents: string[] }[]) =>
 
 export const equivalentsByCategory: Record<
   AlimentationCategories,
-  { name: string; equivalents: ComputedEquivalent[]; mean: number; logos?: number[] }[]
+  { name: string; equivalents: ComputedEquivalent[]; mean: number; logos?: string[] }[]
 > = {
   group: compute(slugByCategory.group),
   rayon: compute(slugByCategory.rayon),

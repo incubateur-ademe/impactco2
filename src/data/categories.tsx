@@ -142,7 +142,7 @@ export const categories: Category[] = [
       },
     ],
     description: 'Pour aborder l’impact carbone de l’alimentation',
-    unit: 'repas',
+    unit: 'kg',
     equivalents: [...computedEquivalents('alimentation', alimentation), ...computedEquivalents('alimentation', repas)],
   },
   {

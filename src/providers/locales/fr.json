@@ -505,7 +505,7 @@
     "fiches": "Télécharger les fiches du quizz à imprimer"
   },
   "alimentation": {
-    "title": "Découvrir <important>l’impact carbone des aliments</important> présentés par...",
+    "title": "Découvrir <important>l’impact carbone pour 1kg d'aliments</important> présentés par...",
     "label": "Selectionner comment grouper les résultats",
     "group": "Groupe d'aliments (viandes, poissons, produits laitiers...)",
     "rayon": "Rayons du magasin (épicerie salée, boulangerie, traiteur...)",
@@ -522,7 +522,7 @@
     "cereales": "Céréales et légumineuses",
     "autres": "Plats préparés",
     "encas": "En-cas",
-    "fruits": "Fruis et légumes",
+    "fruits": "Fruits et légumes",
     "boucherie": "Boucherie",
     "poissonerie": "Poissonerie",
     "traiteur": "Traiteur",

@@ -19,6 +19,7 @@ const AlimentationSimulator = () => {
 
   const t = useTranslations('alimentation')
   const values = useMemo(() => equivalentsByCategory[category], [category])
+  const [openCategories, setOpenCategories] = React.useState<Record<string, boolean>>({})
   return (
     <>
       <div className={styles.simulator}>
@@ -57,6 +58,12 @@ const AlimentationSimulator = () => {
               key={value.name}
               proportion={value.mean / values[0].mean}
               barInfo={index === 0 ? t('biggest') : index === values.length - 1 ? t('smallest') : undefined}
+              barPosition={index === 0 ? 'absolute' : 'relative'}
+              openCategories={openCategories}
+              toggleCategories={(name) => {
+                const open = openCategories[name]
+                setOpenCategories({ ...openCategories, [name]: !open })
+              }}
             />
           ))
         )}

@@ -492,7 +492,7 @@
     "fiches": "Descargue las hojas del cuestionario para imprimir"
   },
   "alimentation": {
-    "title": "Descubrir <important>el impacto de carbono de los alimentos</important> presentados por...",
+    "title": "Descubrir <important>el impacto de carbono por 1 kg de alimentos.</important> presentados por...",
     "label": "Seleccionar cómo agrupar los resultados",
     "group": "Grupo de alimentos (carnes, pescados, productos lácteos...)",
     "rayon": "Secciones de la tienda (comestibles salados, panadería, charcutería...)",

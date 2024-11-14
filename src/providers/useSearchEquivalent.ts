@@ -52,6 +52,7 @@ export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, cate
   } = useParamContext()
 
   useEffect(() => {
+    console.log('ici')
     const translatedEquivalents = equivalents
       .filter((equivalent) => {
         if (equivalent.category === 4) {
@@ -75,6 +76,7 @@ export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, cate
   }, [language, category, modes])
 
   useEffect(() => {
+    console.log(search, fuses)
     if (fuses) {
       setResults(
         excludeEmpty

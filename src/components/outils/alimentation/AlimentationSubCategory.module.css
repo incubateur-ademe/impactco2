@@ -1,11 +1,12 @@
 .box {
   background-color: var(--neutral-00);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: 2px solid var(--primary-30);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
 }
 
 .button {
-  border-radius: calc(1rem - 2px);
+  border-radius: calc(0.5rem - 2px);
   cursor: pointer;
   width: 100%;
   padding: 1rem;
@@ -21,12 +22,19 @@
   &:hover {
     background-color: var(--primary-10);
 
-    .icon {
+    .icon,
+    .iconText {
       background-color: var(--primary-20);
+      color: var(--primary-70);
     }
 
     .hide {
       color: var(--primary-60);
+    }
+
+    .barAbsoluteText,
+    .barRelativeText {
+      background-color: var(--primary-10);
     }
   }
 
@@ -54,9 +62,14 @@
   }
 }
 
+.barContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
 .displayedBar,
 .bar {
-  margin-top: 0.25rem;
   height: 0.5rem;
   border-radius: 1rem;
 }
@@ -71,18 +84,23 @@
   background: var(--primary-20);
 }
 
-.barText {
+.barAbsoluteText,
+.barRelativeText {
+  display: inline;
   color: var(--primary-60);
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.25rem;
   padding: 0 0.5rem;
+  background-color: var(--neutral-00);
+  width: max-content;
+}
+
+.barAbsoluteText {
   position: absolute;
   left: 50%;
   bottom: 0.25rem;
   transform: translateX(-50%) translateY(50%);
-  background-color: var(--neutral-00);
-  width: max-content;
 }
 
 .hide {
@@ -117,13 +135,18 @@
   }
 }
 
-.icon {
+.icon,
+.iconText {
   display: flex;
   align-items: center;
   padding: 0.25rem;
   height: 2.5rem;
   border-radius: 0.25rem;
   background-color: var(--neutral-10);
+}
+
+.iconText {
+  padding: 0 0.5rem;
   color: var(--neutral-50);
   font-size: 0.875rem;
   font-weight: 700;

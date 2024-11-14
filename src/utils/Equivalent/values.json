@@ -1297,378 +1297,378 @@
   },
   "boeuf": {
     "category": 2,
-    "value": 26.2,
+    "value": 26200,
     "fr": "kg de ;boeuf",
     "en": "kg of ;beef",
     "es": "kg de ;carne de res"
   },
   "veau": {
     "category": 2,
-    "value": 16.9,
+    "value": 16900,
     "fr": "kg de ;veau",
     "en": "kg of ;veal",
     "es": "kg de ;becerro"
   },
   "porc": {
     "category": 2,
-    "value": 9.66,
+    "value": 9660,
     "fr": "kg de ;porc",
     "en": "kg of ;pork",
     "es": "kg de ;cerdo"
   },
   "canard": {
     "category": 2,
-    "value": 6.97,
+    "value": 6970,
     "fr": "kg de ;canard",
     "en": "kg of ;duck",
     "es": "kg de ;pato"
   },
   "lapin": {
     "category": 2,
-    "value": 6.97,
+    "value": 6970,
     "fr": "kg de ;lapin",
     "en": "kg of ;rabbit",
     "es": "kg de ;conejo"
   },
   "poulet": {
     "category": 2,
-    "value": 5.55,
+    "value": 5550,
     "fr": "kg de ;poulet",
     "en": "kg of ;chicken",
     "es": "kg de ;pollo"
   },
   "crevettes": {
     "category": 2,
-    "value": 21.79,
+    "value": 21790,
     "fr": "kg de ;crevettes",
     "en": "kg of ;shrimp",
     "es": "kg de ;camarón"
   },
   "moules": {
     "category": 2,
-    "value": 4.94,
+    "value": 4940,
     "fr": "kg de ;moules",
     "en": "kg of ;mussels",
     "es": "kg de ;mejillones"
   },
   "huitres": {
     "category": 2,
-    "value": 4.91,
+    "value": 4910,
     "fr": "kg de ;huitres",
     "en": "kg of ;oysters",
     "es": "kg de ;ostras"
   },
   "cabillaud": {
     "category": 2,
-    "value": 10.81,
+    "value": 10810,
     "fr": "kg de ;cabillaud (cru)",
     "en": "kg of ;cod (raw)",
     "es": "kg de ;bacalao (crudo)"
   },
   "lieu": {
     "category": 2,
-    "value": 10.81,
+    "value": 10810,
     "fr": "kg de ;lieu jaune ou colin (cru)",
     "en": "kg of ;pollack or hake (raw)",
     "es": "kg de ;colín o merluza (crudo)"
   },
   "dorade": {
     "category": 2,
-    "value": 10.8,
+    "value": 10800,
     "fr": "kg de ;dorade royale",
     "en": "kg of ;sea bream",
     "es": "kg de ;dorada"
   },
   "saumon": {
     "category": 2,
-    "value": 5.77,
+    "value": 5770,
     "fr": "kg de ;saumon ou truite d'élevage (cru)",
     "en": "kg of ;salmon or farmed trout (raw)",
     "es": "kg de ;salmón o trucha de cultivo (crudo)"
   },
   "thon": {
     "category": 2,
-    "value": 4.39,
+    "value": 4390,
     "fr": "kg de ;thon (cru)",
     "en": "kg of ;tuna (raw)",
     "es": "kg de ;atún (crudo)"
   },
   "sardines": {
     "category": 2,
-    "value": 1.93,
+    "value": 1930,
     "fr": "kg de ;sardines",
     "en": "kg of ;sardines",
     "es": "kg de ;sardinas"
   },
   "beurre": {
     "category": 2,
-    "value": 7.76,
+    "value": 7760,
     "fr": "kg de ;beurre",
     "en": "kg of ;butter",
     "es": "kg de ;mantequilla"
   },
   "fromagedure": {
     "category": 2,
-    "value": 6.11,
+    "value": 6110,
     "fr": "kg de ;fromage à pâte dure",
     "en": "kg of ;hard cheese",
     "es": "kg de ;queso duro"
   },
   "feta": {
     "category": 2,
-    "value": 5.49,
+    "value": 5490,
     "fr": "kg de ;fêta (brebis)",
     "en": "kg of ;feta (sheep)",
     "es": "kg de ;feta (oveja)"
   },
   "fromagemolle": {
     "category": 2,
-    "value": 5.19,
+    "value": 5190,
     "fr": "kg de ;fromage à pâte molle",
     "en": "kg of ;soft cheese",
     "es": "kg de ;queso blando"
   },
   "mozarella": {
     "category": 2,
-    "value": 4.61,
+    "value": 4610,
     "fr": "kg de ;mozarella",
     "en": "kg of ;mozzarella",
     "es": "kg de ;mozzarella"
   },
   "fromagebleu": {
     "category": 2,
-    "value": 4.13,
+    "value": 4130,
     "fr": "kg de ;fromage bleu",
     "en": "kg of ;blue cheese",
     "es": "kg de ;queso azul"
   },
   "oeuf": {
     "category": 2,
-    "value": 3.17,
+    "value": 3170,
     "fr": "kg de ;oeufs",
     "en": "kg of ;eggs",
     "es": "kg de ;huevos"
   },
   "matieregrasse": {
     "category": 2,
-    "value": 2.23,
+    "value": 2230,
     "fr": "kg de ;matière grasse végétale",
     "en": "kg of ;vegetable fat",
     "es": "kg de ;grasa vegetal"
   },
   "yaourt": {
     "category": 2,
-    "value": 2.11,
+    "value": 2110,
     "fr": "kg de ;yaourt nature ou yaourt à la grecque",
     "en": "kg of ;natural yogurt or greek yogurt",
     "es": "kg de ;yogur natural o yogur griego"
   },
   "fromageblanc": {
     "category": 2,
-    "value": 1.6,
+    "value": 1600,
     "fr": "kg de ;fromage blanc 0%",
     "en": "kg of ;0% white cheese",
     "es": "kg de ;queso blanco 0%"
   },
   "quinoa": {
     "category": 2,
-    "value": 7.68,
+    "value": 7680,
     "fr": "kg de ;quinoa (français)",
     "en": "kg of ;quinoa (french)",
     "es": "kg de ;quinoa (francés)"
   },
   "riz": {
     "category": 2,
-    "value": 2.75,
+    "value": 2750,
     "fr": "kg de ;riz",
     "en": "kg of ;rice",
     "es": "kg de ;arroz"
   },
   "pates": {
     "category": 2,
-    "value": 2.14,
+    "value": 2140,
     "fr": "kg de ;pâtes (sèches)",
     "en": "kg of ;pasta (dry)",
     "es": "kg de ;pasta (seca)"
   },
   "ble": {
     "category": 2,
-    "value": 1.21,
+    "value": 1210,
     "fr": "kg de ;blé",
     "en": "kg of ;wheat",
     "es": "kg de ;trigo"
   },
   "boulgour": {
     "category": 2,
-    "value": 1.15,
+    "value": 1150,
     "fr": "kg de ;boulgour",
     "en": "kg of ;bulgur",
     "es": "kg de ;bulgur"
   },
   "poischiches": {
     "category": 2,
-    "value": 0.99,
+    "value": 990,
     "fr": "kg de ;pois chiches",
     "en": "kg of ;chickpeas",
     "es": "kg de ;garbanzos"
   },
   "haricotsrouges": {
     "category": 2,
-    "value": 0.95,
+    "value": 950,
     "fr": "kg de ;haricots rouges",
     "en": "kg of ;red beans",
     "es": "kg de ;frijoles rojos"
   },
   "lentilles": {
     "category": 2,
-    "value": 0.91,
+    "value": 910,
     "fr": "kg de ;lentilles (blondes, vertes, corail)",
     "en": "kg of ;lentils (blond, green, coral)",
     "es": "kg de ;lentejas (rubias, verdes, coral)"
   },
   "cheeseburger": {
     "category": 2,
-    "value": 17.27,
+    "value": 17270,
     "fr": "kg de ;cheeseburger",
     "en": "kg of ;cheeseburger",
     "es": "kg de ;cheeseburger"
   },
   "kebab": {
     "category": 2,
-    "value": 11.65,
+    "value": 11650,
     "fr": "kg de ;kebab",
     "en": "kg of ;kebab",
     "es": "kg de ;kebab"
   },
   "burgerpoulet": {
     "category": 2,
-    "value": 4.62,
+    "value": 4620,
     "fr": "kg de ;burger au poulet",
     "en": "kg of ;chicken burger",
     "es": "kg de ;hamburguesa de pollo"
   },
   "pizza": {
     "category": 2,
-    "value": 3.28,
+    "value": 3280,
     "fr": "kg de ;pizza quatre fromages",
     "en": "kg of ;four cheese pizza",
     "es": "kg de ;pizza de cuatro quesos"
   },
   "sushis": {
     "category": 2,
-    "value": 2.45,
+    "value": 2450,
     "fr": "kg de ;sushis ou makis",
     "en": "kg of ;sushi or maki",
     "es": "kg de ;sushi o maki"
   },
   "burgervegetarien": {
     "category": 2,
-    "value": 2.26,
+    "value": 2260,
     "fr": "kg de ;burger végétarien",
     "en": "kg of ;vegetarian burger",
     "es": "kg de ;hamburguesa vegetariana"
   },
   "frites": {
     "category": 2,
-    "value": 1.53,
+    "value": 1530,
     "fr": "kg de ;frites (friteuse)",
     "en": "kg of ;fries (fryer)",
     "es": "kg de ;papas fritas (freidora)"
   },
   "tofu": {
     "category": 2,
-    "value": 0.66,
+    "value": 660,
     "fr": "kg de ;tofu nature",
     "en": "kg of ;natural tofu",
     "es": "kg de ;tofu natural"
   },
   "boucheechocolat": {
     "category": 2,
-    "value": 9.59,
-    "fr": "kg de ;bouchée au chocolat",
-    "en": "kg of ;chocolate bite",
-    "es": "kg de ;bocado de chocolate"
+    "value": 9590,
+    "fr": "kg de ;rocher au chocolat",
+    "en": "kg of ;chocolate rock",
+    "es": "kg de ;roca de chocolate"
   },
   "pateatartiner": {
     "category": 2,
-    "value": 7.57,
+    "value": 7570,
     "fr": "kg de ;pâte à tartiner à la noisette",
     "en": "kg of ;hazelnut spread",
     "es": "kg de ;crema de avellanas"
   },
   "brownie": {
     "category": 2,
-    "value": 7.2,
+    "value": 7200,
     "fr": "kg de ;brownie au chocolat",
     "en": "kg of ;chocolate brownie",
     "es": "kg de ;brownie de chocolate"
   },
   "painauchocolat": {
     "category": 2,
-    "value": 5.14,
-    "fr": "kg de ;pain au chocolat",
+    "value": 5140,
+    "fr": "kg de ;pain au chocolat ou chocolatine",
     "en": "kg of ;chocolate bread",
     "es": "kg de ;pan de chocolate"
   },
   "cookie": {
     "category": 2,
-    "value": 4.06,
+    "value": 4060,
     "fr": "kg de ;cookie au pépites de chocolat",
     "en": "kg of ;chocolate chip cookie",
     "es": "kg de ;galleta con chispas de chocolate"
   },
   "madeleine": {
     "category": 2,
-    "value": 2.67,
+    "value": 2670,
     "fr": "kg de ;madeleine",
     "en": "kg of ;madeleine",
     "es": "kg de ;magdalena"
   },
   "painauxraisins": {
     "category": 2,
-    "value": 2.63,
+    "value": 2630,
     "fr": "kg de ;pain aux raisins",
     "en": "kg of ;raisin bread",
     "es": "kg de ;pan de pasas"
   },
   "chaussonauxpommes": {
     "category": 2,
-    "value": 2.13,
+    "value": 2130,
     "fr": "kg de ;chausson aux pommes",
     "en": "kg of ;apple turnover",
     "es": "kg de ;rotación de manzana"
   },
   "croissant": {
     "category": 2,
-    "value": 2.6,
+    "value": 2600,
     "fr": "kg de ;croissant au beurre",
     "en": "kg of ;butter croissant",
     "es": "kg de ;croissant de mantequilla"
   },
   "paindemie": {
     "category": 2,
-    "value": 1.75,
+    "value": 1750,
     "fr": "kg de ;pain de mie",
     "en": "kg of ;sandwich bread",
     "es": "kg de ;pan de molde"
   },
   "bonbons": {
     "category": 2,
-    "value": 1.56,
+    "value": 1560,
     "fr": "kg de ;bonbons gélifiés",
     "en": "kg of ;gummy candies",
     "es": "kg de ;caramelos de goma"
   },
   "baguette": {
     "category": 2,
-    "value": 0.69,
+    "value": 690,
     "fr": "kg de ;baguette tradition",
     "en": "kg of ;traditional baguette",
     "es": "kg de ;baguette tradicional"
   },
   "pommedeterre": {
     "category": 2,
-    "value": 0.37,
+    "value": 370,
     "fr": "kg de ;pomme de terre nouvelle",
     "en": "kg of ;new potato",
     "es": "kg de ;papa nueva"
