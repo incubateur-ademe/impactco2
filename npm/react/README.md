@@ -108,13 +108,67 @@ Liste des équivalents à comparer parmis la liste suivante :
   - soja : Litre de boisson au soja
   - the : Litre de thé
   - cafe : Litre de café
-- Repas
+- Alimentation
   - repasavecduboeuf : repas avec du boeuf
   - repasvegetarien : repas végétarien
   - repasvegetalien : repas végétalien
   - repasavecdupoissonblanc : repas avec du poisson blanc
   - repasavecdupoissongras : repas avec du poisson gras
   - repasavecdupoulet : repas avec du poulet
+  - boeuf : kg de boeuf
+  - veau : kg de veau
+  - porc : kg de porc
+  - canard : kg de canard
+  - lapin : kg de lapin
+  - poulet : kg de poulet
+  - crevettes : kg de crevettes
+  - moules : kg de moules
+  - huitres : kg de huitres
+  - cabillaud : kg de cabillaud (cru)
+  - lieu : kg de lieu jaune ou colin (cru)
+  - dorade : kg de dorade royale
+  - saumon : kg de saumon ou truite d'élevage (cru)
+  - thon : kg de thon (cru)
+  - sardines : kg de sardines
+  - beurre : kg de beurre
+  - fromagedure : kg de fromage à pâte dure
+  - feta : kg de fêta (brebis)
+  - fromagemolle : kg de fromage à pâte molle
+  - mozarella : kg de mozarella
+  - fromagebleu : kg de fromage bleu
+  - oeuf : kg de oeufs
+  - matieregrasse : kg de matière grasse végétale
+  - yaourt : kg de yaourt nature ou yaourt à la grecque
+  - fromageblanc : kg de fromage blanc 0%
+  - quinoa : kg de quinoa (français)
+  - riz : kg de riz
+  - pates : kg de pâtes (sèches)
+  - ble : kg de blé
+  - boulgour : kg de boulgour
+  - poischiches : kg de pois chiches
+  - haricotsrouges : kg de haricots rouges
+  - lentilles : kg de lentilles (blondes, vertes, corail)
+  - cheeseburger : kg de cheeseburger
+  - kebab : kg de kebab
+  - burgerpoulet : kg de burger au poulet
+  - pizza : kg de pizza quatre fromages
+  - sushis : kg de sushis ou makis
+  - burgervegetarien : kg de burger végétarien
+  - frites : kg de frites (friteuse)
+  - tofu : kg de tofu nature
+  - boucheechocolat : kg de rocher au chocolat
+  - pateatartiner : kg de pâte à tartiner à la noisette
+  - brownie : kg de brownie au chocolat
+  - painauchocolat : kg de pain au chocolat ou chocolatine
+  - cookie : kg de cookie au pépites de chocolat
+  - madeleine : kg de madeleine
+  - painauxraisins : kg de pain aux raisins
+  - chaussonauxpommes : kg de chausson aux pommes
+  - croissant : kg de croissant au beurre
+  - paindemie : kg de pain de mie
+  - bonbons : kg de bonbons gélifiés
+  - baguette : kg de baguette tradition
+  - pommedeterre : kg de pomme de terre nouvelle
 - Fruits et légumes
   - fraise : kg de fraise
   - pomme : kg de pomme
