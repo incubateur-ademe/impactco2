@@ -389,7 +389,16 @@
         "clefusb": "Capacité moyenne (16 Go).",
         "box": "Utilisation personnelle et professionnelle ; xDSL, FTTx.",
         "spam": "Non lu.",
-        "stockagedonnee": "Pendant 1 an."
+        "stockagedonnee": "Pendant 1 an.",
+        "boeuf": "Moyenne des facteurs d’émission de la côte de boeuf, l’entrecôte, la langue de boeuf, la bavette, l’épaule de boeuf, la joue de boeuf",
+        "veau": "Moyenne des facteurs d’émission de la côte de veau, épaule de veau, escalope de veau, noix de veau, poitrine de veau et riz de veau",
+        "dorade": "Moyenne des facteurs d’émission de la dorade royale d’élevage et la dorade royale sauvage",
+        "beurre": "Moyenne des facteurs d’émission du beurre doux et beurre salé",
+        "fromagedure": "Moyenne des facteurs d’émission des différents fromages à pâte dure : Emmental, gruyère, comté, gouda etc.",
+        "fromagemolle": "Moyenne des facteurs d’émission de différents fromages à pâte molle : Camembert, brie, maroilles, mont-d’or etc.",
+        "fromagebleu": "Moyenne des facteurs d’émission des différents fromages à pâte persillées : Roquefort, bleu d’Auvergne, gorgonzola etc.",
+        "riz": "Moyenne des facteurs d’émission des différents riz : Riz blanc, complet, rouge; sauvage",
+        "ble": "Moyenne des facteurs d’émission des différents blés : Blé dur entier, blé précuit, semoule de blé, blé tendre"
       },
       "post": {
         "ski": "Inclus : l’impact carbone du transport (52%), du logement (4%), de l’alimentation (8%), du domaine skiable (3%), des infrastructures, équipements et services du domaine (17%), et de l’équipement (16%).",
@@ -513,7 +522,7 @@
     "click": "Cliquez sur une catégorie pour afficher son contenu",
     "biggest": "Impact le + fort",
     "smallest": "Impact le + faible",
-    "more": "+ {count} autres",
+    "more": "autres",
     "impact": "{value}% de l'impact le plus fort",
     "hide": "Replier",
     "viandes": "Viandes",

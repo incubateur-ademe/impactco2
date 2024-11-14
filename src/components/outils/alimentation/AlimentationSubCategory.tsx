@@ -71,7 +71,13 @@ const AlimentationSubCategory = ({
                   )
                 }
               })}
-              <div className={styles.iconText}>{t('more', { count: equivalents.length - logos.length })}</div>
+              <p className={styles.iconText}>
+                +{equivalents.length - logos.length}
+                <span className={styles.more}>
+                  {' '}
+                  {t('more')}
+                </span>
+              </p>
             </div>
           )
         )}

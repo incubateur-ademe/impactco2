@@ -377,7 +377,16 @@
         "clefusb": "Average capacity (16GB).",
         "box": "Personal and professional usage; xDSL, FTTx.",
         "spam": "Unread.",
-        "stockagedonnee": "For 1 year."
+        "stockagedonnee": "For 1 year.",
+        "boeuf": "Average of emission factors for rib steak, entrecôte, beef tongue, flank steak, beef shoulder, beef cheek",
+        "veau": "Average of emission factors for veal rib, veal shoulder, veal escalope, veal nut, veal breast, and veal sweetbread",
+        "dorade": "Average of emission factors for farmed gilthead seabream and wild gilthead seabream",
+        "beurre": "Average of emission factors for unsalted butter and salted butter",
+        "fromagedure": "Average of emission factors for various hard cheeses: Emmental, Gruyère, Comté, Gouda, etc.",
+        "fromagemolle": "Average of emission factors for various soft cheeses: Camembert, Brie, Maroilles, Mont-d'Or, etc.",
+        "fromagebleu": "Average of emission factors for various blue cheeses: Roquefort, Bleu d'Auvergne, Gorgonzola, etc.",
+        "riz": "Average of emission factors for various rice types: white rice, brown rice, red rice, wild rice",
+        "ble": "Average of emission factors for various wheat types: whole durum wheat, precooked wheat, wheat semolina, soft wheat"
       },
       "post": {
         "ski": "Includes: the carbon impact of transportation (52%), accommodation (4%), food (8%), ski area (3%), infrastructure, equipment, and services (17%), and gear (16%).",
@@ -500,7 +509,7 @@
     "click": "Click on a category to display its content",
     "biggest": "Highest impact",
     "smallest": "Lowest impact",
-    "more": "+ {count} more",
+    "more": "more",
     "impact": "{value}% of the highest impact",
     "hide": "Hide",
     "viandes": "Meats",
