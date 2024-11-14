@@ -79,6 +79,18 @@
     "comparison": "Changer le mode de transport comparé",
     "understand": "Comprendre les données",
     "download": "Télécharger",
+    "categoryIntegrate": {
+      "title": "Liste à afficher par défaut",
+      "group": "Groupe d'aliments",
+      "rayon": "Rayons du magasin",
+      "popularity": "Top 10"
+    },
+    "category": {
+      "title": "Liste à partager",
+      "group": "Groupe d'aliments",
+      "rayon": "Rayons du magasin",
+      "popularity": "Top 10"
+    },
     "m2": {
       "title": "Afficher une surface personnalisée",
       "unit": "m²"

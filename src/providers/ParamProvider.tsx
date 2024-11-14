@@ -345,6 +345,19 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       setLanguage('fr')
     }
 
+    if (searchParams.get('category')) {
+      const category = searchParams.get('category') as AlimentationCategories
+      if (Object.values(AlimentationCategories).includes(category)) {
+        setCategory(category)
+      }
+    }
+    if (searchParams.get('categoryIntegrate')) {
+      const category = searchParams.get('categoryIntegrate') as AlimentationCategories
+      if (Object.values(AlimentationCategories).includes(category)) {
+        setCategory(category)
+      }
+    }
+
     if (searchParams.get('value')) {
       const value = Number(searchParams.get('value') as string)
       if (!Number.isNaN(value)) {
