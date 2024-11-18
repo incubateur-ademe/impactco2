@@ -1698,7 +1698,7 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.3.tgz#4a2868d75d6d6963e423bcf90b7fd1be343409d3"
   integrity sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==
 
-"@iframe-resizer/child@^5.3.1":
+"@iframe-resizer/child@^5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@iframe-resizer/child/-/child-5.3.2.tgz#a7035d277cd9dab69f5e4a04db5b4a765c2f1f18"
   integrity sha512-y4uX26NzdAU1XRURiFCQCNTuLI04WTGUFQNcG4hfNZGvWO/BnfQ3fiVokQwZjnaQH7mzbGE2SLJqYUb1JIqF1Q==
@@ -1708,7 +1708,7 @@
   resolved "https://registry.yarnpkg.com/@iframe-resizer/core/-/core-5.3.2.tgz#0c7f10341bcf18236756b291a16588ffe7fcb2da"
   integrity sha512-is6VXW1m/9y7ZUwyjUuHu5101TPFa69Rv8jNY0HrT5svwb1ICPZKeaoVzDw0TTBBa5eE7XfEFcXCeiP6UR9W3w==
 
-"@iframe-resizer/parent@^5.3.1":
+"@iframe-resizer/parent@^5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@iframe-resizer/parent/-/parent-5.3.2.tgz#5edb16cce4484f5ec0627a8bda82d104c7bd4463"
   integrity sha512-xjrQpRtsC9p1pBUKewYI9cmHoxomhGGSvspLq7Xgh4uYiifORaHqrqOnAgWKsV6Gl83s16g3RE1v1hRM7ZNOMQ==
