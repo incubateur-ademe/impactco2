@@ -21,7 +21,6 @@ const Share = ({
   path?: string
   tracking?: string
 }) => {
-  console.log(category)
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 

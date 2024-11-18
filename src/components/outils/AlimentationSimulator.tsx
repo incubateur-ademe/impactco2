@@ -63,6 +63,7 @@ const AlimentationSimulator = () => {
               toggleCategories={(name) => {
                 const open = openCategories[name]
                 setOpenCategories({ ...openCategories, [name]: !open })
+                track('Alimentation', value.name, open ? 'close' : 'open')
               }}
             />
           ))
