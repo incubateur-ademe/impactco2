@@ -174,11 +174,6 @@
   }
 }
 
-.withoutBorder {
-  border: none;
-  padding-top: 0.75rem;
-}
-
 .bottomLanguage,
 .language {
   position: relative;

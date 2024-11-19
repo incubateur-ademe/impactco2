@@ -10,6 +10,8 @@
 }
 
 .categories {
+  margin-bottom: -0.75rem;
+  position: relative;
   padding: 1.5rem;
   border-top: 2px solid var(--primary-30);
   background-color: var(--primary-10);

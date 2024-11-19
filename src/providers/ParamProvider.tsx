@@ -92,6 +92,10 @@ export type Params = {
   alimentation: {
     category: AlimentationCategories
     setCategory: Dispatch<SetStateAction<AlimentationCategories>>
+    customList: boolean
+    setCustomList: Dispatch<SetStateAction<boolean>>
+    equivalents: string[]
+    setEquivalents: Dispatch<SetStateAction<string[]>>
   }
   livraison: {
     values: LivraisonValues
@@ -232,6 +236,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   }
   // Alimentation
   const [category, setCategory] = useState(AlimentationCategories.Group)
+  const [customList, setCustomList] = useState(false)
+  const [alimentationEquivalents, setAlimentationEquivalents] = useState<string[]>([])
 
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
@@ -345,17 +351,17 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       setLanguage('fr')
     }
 
-    if (searchParams.get('category')) {
-      const category = searchParams.get('category') as AlimentationCategories
+    if (searchParams.get('alimentationCategory')) {
+      const category = searchParams.get('alimentationCategory') as AlimentationCategories
       if (Object.values(AlimentationCategories).includes(category)) {
         setCategory(category)
       }
     }
-    if (searchParams.get('categoryIntegrate')) {
-      const category = searchParams.get('categoryIntegrate') as AlimentationCategories
-      if (Object.values(AlimentationCategories).includes(category)) {
-        setCategory(category)
-      }
+
+    if (searchParams.get('alimentationEquivalents')) {
+      const equivalents = searchParams.get('alimentationEquivalents')?.split(',') as string[]
+      setCustomList(true)
+      setAlimentationEquivalents(equivalents)
     }
 
     if (searchParams.get('value')) {
@@ -529,6 +535,10 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         alimentation: {
           category,
           setCategory,
+          customList,
+          setCustomList,
+          equivalents: alimentationEquivalents,
+          setEquivalents: setAlimentationEquivalents,
         },
         livraison: {
           values: livraisonValues,

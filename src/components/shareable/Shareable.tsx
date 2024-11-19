@@ -2,7 +2,8 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
+import { useSearchParams } from 'next/navigation'
+import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import { SiteLanguage } from 'types/languages'
@@ -54,6 +55,12 @@ const Shareable = ({
   )
 
   const onClose = useCallback(() => setOverscreen(slug, ''), [slug])
+
+  const [showButtons, setShowButtons] = useState(true)
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    setShowButtons(searchParams.get('hideButtons') !== 'true')
+  }, [searchParams])
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
@@ -155,11 +162,8 @@ const Shareable = ({
         </div>
         {secondary === undefined && (
           <>
-            {overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
-              <div
-                className={classNames('no-screenshot', styles.ressources, {
-                  [styles.withoutBorder]: overScreens.hypothesis?.noBorder,
-                })}>
+            {showButtons && overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
+              <div className={classNames('no-screenshot', styles.ressources)}>
                 {'data' in overScreens && (
                   <Feature
                     slug={slug}
@@ -189,39 +193,43 @@ const Shareable = ({
             )}
             <div className={styles.logos}>
               <Logos small />
-              <div className={classNames('no-screenshot', small ? styles.bottomLanguage : styles.language)}>
-                <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
-                <Select
-                  id={`${slug}-language`}
-                  value={language}
-                  onChange={(event) => {
-                    track(tracking, 'Language', event.target.value)
-                    setLanguage(event.target.value as SiteLanguage)
-                  }}>
-                  <option value='fr'>FR</option>
-                  <option value='en'>EN</option>
-                  <option value='es'>ES</option>
-                </Select>
-                <LanguageIcon />
-              </div>
+              {showButtons && (
+                <div className={classNames('no-screenshot', small ? styles.bottomLanguage : styles.language)}>
+                  <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
+                  <Select
+                    id={`${slug}-language`}
+                    value={language}
+                    onChange={(event) => {
+                      track(tracking, 'Language', event.target.value)
+                      setLanguage(event.target.value as SiteLanguage)
+                    }}>
+                    <option value='fr'>FR</option>
+                    <option value='en'>EN</option>
+                    <option value='es'>ES</option>
+                  </Select>
+                  <LanguageIcon />
+                </div>
+              )}
             </div>
           </>
         )}
       </div>
-      <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary !== undefined })}>
-        <Actions
-          onClick={(action) => {
-            if (action === 'telecharger') {
-              takeScreenshot()
-            } else {
-              setOverscreen(slug, action)
-            }
-          }}
-          tracking={tracking}
-          withoutIntegration={withoutIntegration}
-          withoutShare={withoutShare}
-        />
-      </div>
+      {showButtons && (
+        <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary !== undefined })}>
+          <Actions
+            onClick={(action) => {
+              if (action === 'telecharger') {
+                takeScreenshot()
+              } else {
+                setOverscreen(slug, action)
+              }
+            }}
+            tracking={tracking}
+            withoutIntegration={withoutIntegration}
+            withoutShare={withoutShare}
+          />
+        </div>
+      )}
     </div>
   )
 }

@@ -32,19 +32,25 @@ const configs: Record<
     values?: string[]
   }
 > = {
-  categoryIntegrate: {
+  alimentationCategoryIntegrate: {
     type: 'radio',
     options: Object.values(AlimentationCategories).map((category) => ({
       value: category,
       label: category,
     })),
   },
-  category: {
+  alimentationCategory: {
     type: 'radio',
     options: Object.values(AlimentationCategories).map((category) => ({
       value: category,
       label: category,
     })),
+  },
+  customList: {
+    type: 'boolean',
+  },
+  hideButtons: {
+    type: 'boolean',
   },
   transport: { type: 'select-equivalent', equivalents: deplacements },
   presentiel: { type: 'number', unit: 'jour', min: 0, max: 7 },
@@ -107,6 +113,7 @@ const CustomParam = ({
   visible,
   setVisible,
   integration,
+  disabled,
 }: {
   tracking: string
   slug: string
@@ -114,6 +121,7 @@ const CustomParam = ({
   visible: boolean
   setVisible?: (visbile: boolean) => void
   integration?: boolean
+  disabled?: boolean
 }) => {
   const t = useTranslations('overscreen')
   if ('setter' in param) {
@@ -145,6 +153,7 @@ const CustomParam = ({
                     selected={param.value as string}
                     setSelected={(value) => param.setter(value as string)}
                     label={t(`${slug}.${option.label}`)}
+                    disabled={disabled}
                   />
                 ))}
               </Radio>

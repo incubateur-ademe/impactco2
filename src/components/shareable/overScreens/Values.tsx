@@ -6,6 +6,7 @@ import { getName } from 'utils/Equivalent/equivalent'
 import Resource from 'components/base/Resource'
 import ComparisonOverscreen from 'components/comparateur/overscreens/ComparisonOverscreen'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
+import AlimentationIntegrate from './AlimentationIntegrate'
 import AlimentationData from './Data/AlimentationData'
 import Integrate from './Integrate'
 import Share from './Share'
@@ -27,7 +28,6 @@ export type OverScreenInfo = {
   image?: string
   children: ReactNode
   fullHeight?: boolean
-  noBorder?: boolean
   cancel?: (onClose: () => void) => ReactNode
 }
 
@@ -198,16 +198,13 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
     },
     integrer: {
       title: 'integrate',
-      children:
-        category.slug === 'transport' ? (
-          <TransportIntegrate />
-        ) : (
-          <Integrate
-            category={category}
-            path={category ? category.slug : 'comparateur'}
-            tracking={category ? category.name : 'Comparateur'}
-          />
-        ),
+      children: (
+        <Integrate
+          category={category}
+          path={category ? category.slug : 'comparateur'}
+          tracking={category ? category.name : 'Comparateur'}
+        />
+      ),
     },
   }
   if (category.slug === 'chauffage') {
@@ -335,6 +332,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   if (category.slug === 'transport') {
     return {
       ...values,
+      integrer: {
+        title: 'integrate',
+        children: <TransportIntegrate />,
+      },
       hypothesis: {
         image: '/images/icn-next-actions.svg',
         title: 'next-actions',
@@ -432,8 +433,11 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   if (category.slug === 'alimentation') {
     return {
       ...values,
+      integrer: {
+        title: 'integrate',
+        children: <AlimentationIntegrate />,
+      },
       hypothesis: {
-        noBorder: true,
         image: '/images/icn-next-actions.svg',
         title: 'next-actions',
         children: (

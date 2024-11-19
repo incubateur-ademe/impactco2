@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import React, { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import { computedEquivalents } from 'src/providers/equivalents'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
 import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
@@ -14,13 +15,19 @@ import AlimentationSubCategory from './alimentation/AlimentationSubCategory'
 
 const AlimentationSimulator = () => {
   const {
-    alimentation: { category, setCategory },
+    alimentation: { category, setCategory, customList, equivalents },
   } = useParamContext()
 
   const t = useTranslations('alimentation')
   const values = useMemo(() => equivalentsByCategory[category], [category])
   const [openCategories, setOpenCategories] = React.useState<Record<string, boolean>>({})
-  return (
+  return customList ? (
+    <CategorySimulator
+      equivalents={computedEquivalents.filter((equivalent) => equivalents.includes(equivalent.slug))}
+      tracking='Alimentation'
+      reverse
+    />
+  ) : (
     <>
       <div className={styles.simulator}>
         <p>{t.rich('title')}</p>

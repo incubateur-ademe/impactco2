@@ -123,7 +123,7 @@ const CategorySimulator = ({
                         </span>{' '}
                         kg CO₂e
                       </div>
-                      <p className='hidden'>{barExplanation}</p>
+                      {hasUsage && <p className='hidden'>{barExplanation}</p>}
                     </div>
                   </IframeableLink>
                   {!!equivalent.carpool && type && (

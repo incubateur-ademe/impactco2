@@ -79,17 +79,23 @@
     "comparison": "Changer le mode de transport comparé",
     "understand": "Comprendre les données",
     "download": "Télécharger",
-    "categoryIntegrate": {
+    "alimentationCategoryIntegrate": {
       "title": "Liste à afficher par défaut",
       "group": "Groupe d'aliments",
       "rayon": "Rayons du magasin",
       "popularity": "Top 10"
     },
-    "category": {
+    "alimentationCategory": {
       "title": "Liste à partager",
       "group": "Groupe d'aliments",
       "rayon": "Rayons du magasin",
       "popularity": "Top 10"
+    },
+    "customList": {
+      "title": "Créer une liste d’aliments personnalisée"
+    },
+    "hideButtons": {
+      "title": "Afficher les boutons en bas de mon intégration"
     },
     "m2": {
       "title": "Afficher une surface personnalisée",
@@ -538,6 +544,11 @@
     "fromagerie": "Fromagerie",
     "boulangerie": "Boulangerie",
     "epiceriesalee": "Épicerie salée",
-    "epiceriesucree": "Épicerie sucrée"
+    "epiceriesucree": "Épicerie sucrée",
+    "deselect": "tout désélectionner",
+    "integrate": {
+      "customList": "Liste personnalisée",
+      "hideButtons": "Affichage des boutons"
+    }
   }
 }

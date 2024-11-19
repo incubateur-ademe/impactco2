@@ -35,6 +35,7 @@ const AlimentationSubCategory = ({
   return (
     <div className={styles.box}>
       <button
+        data-testid={`alimentation-category-${name}`}
         className={styles.button}
         aria-expanded={display}
         aria-controls={`alimentation-category-${name}`}

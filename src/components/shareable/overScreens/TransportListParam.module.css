@@ -1,7 +1,11 @@
+.equivalents,
 .modes {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.modes {
   margin-top: 1.25rem;
 }
 
@@ -71,7 +75,7 @@
 
   @media screen and (max-width: 48rem) {
     width: 100%;
-    flex: unset
+    flex: unset;
   }
 }
 

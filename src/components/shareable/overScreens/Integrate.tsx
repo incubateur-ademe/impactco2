@@ -29,9 +29,6 @@ const Integrate = ({
   const [theme, setTheme] = useState(allParams.theme)
   const [language, setLanguage] = useState(allParams.language)
 
-  // Alimentation
-  const [alimentationCategory, setAlimentationCategory] = useState(allParams.alimentation.category)
-
   // Chauffage
   const [m2, setM2] = useState(allParams.chauffage.m2)
   useEffect(() => {
@@ -72,12 +69,6 @@ const Integrate = ({
   const params = useMemo(() => {
     if (category) {
       // Warning: Add values in CustomParamsValues.ts also
-      if (category.slug === 'alimentation') {
-        return { categoryIntegrate: { value: alimentationCategory, setter: setAlimentationCategory } } as Record<
-          string,
-          CustomParamValue
-        >
-      }
       if (category.slug === 'chauffage') {
         return { m2: { value: m2, setter: setM2 } } as Record<string, CustomParamValue>
       }
@@ -107,20 +98,7 @@ const Integrate = ({
       return getComparateurParams(allParams, path?.includes('etiquette'))
     }
     return {}
-  }, [
-    allParams,
-    category,
-    path,
-    m2,
-    month,
-    transport,
-    start,
-    end,
-    presentiel,
-    homeOffice,
-    toDisplay,
-    alimentationCategory,
-  ])
+  }, [allParams, category, path, m2, month, transport, start, end, presentiel, homeOffice, toDisplay])
 
   useEffect(() => {
     if (params) {
@@ -136,7 +114,7 @@ const Integrate = ({
 
   return params && visibility ? (
     <>
-      <form id={`${category}-integrate`}>
+      <form id={`${category?.slug}-integrate`}>
         <CustomParams
           integration
           tracking={tracking}
@@ -159,7 +137,7 @@ const Integrate = ({
           visible
         />
       </form>
-      <ClipboardBox form={`${category}-integrate`} tracking={tracking}>{`<script name="impact-co2" src="${
+      <ClipboardBox form={`${category?.slug}-integrate`} tracking={tracking}>{`<script name="impact-co2" src="${
         process.env.NEXT_PUBLIC_URL
       }/iframe.js" data-type="${path}" data-search="?${urlParams}"></script>`}</ClipboardBox>
       <IntegratePreview path={path} urlParams={urlParams} />
