@@ -63,21 +63,21 @@ describe('fruitsetlegumes', () => {
     expect(data).toEqual({
       data: [
         {
-          ecv: 0.396515083,
+          ecv: 0.39651508300000005,
           months: [1, 2, 3, 4, 8, 9, 10, 11, 12],
           name: 'Pomme',
           slug: 'pomme',
           category: 'fruits',
         },
         {
-          ecv: 0.358042894,
+          ecv: 0.35804289400000006,
           months: [7, 8, 9, 10, 11, 12],
           name: 'Ail',
           slug: 'ail',
           category: 'herbes',
         },
         {
-          ecv: 0.3643210989999999,
+          ecv: 0.364321099,
           months: [1, 2, 3, 10, 11, 12],
           name: 'Betterave',
           slug: 'betterave',
@@ -91,28 +91,28 @@ describe('fruitsetlegumes', () => {
           category: 'légumes',
         },
         {
-          ecv: 0.3643210989999999,
+          ecv: 0.364321099,
           months: [1, 2, 3, 9, 10, 11, 12],
           name: 'Carotte',
           slug: 'carotte',
           category: 'légumes',
         },
         {
-          ecv: 0.6770180851000002,
+          ecv: 0.6770180851,
           months: [1, 2, 3, 10, 11, 12],
           name: 'Céleri',
           slug: 'celeri',
           category: 'légumes',
         },
         {
-          ecv: 0.4937143989999999,
+          ecv: 0.493714399,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
           name: 'Champignon (morille crue)',
           slug: 'champignonmorille',
           category: 'légumes',
         },
         {
-          ecv: 0.862097522,
+          ecv: 0.8620975220000001,
           months: [1, 2, 3, 10, 11, 12],
           name: 'Chou',
           slug: 'chou',
@@ -154,21 +154,21 @@ describe('fruitsetlegumes', () => {
           category: 'légumes',
         },
         {
-          ecv: 0.9410662189999999,
+          ecv: 0.941066219,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
           name: 'Cresson',
           slug: 'cresson',
           category: 'légumes',
         },
         {
-          ecv: 0.3648632602000001,
+          ecv: 0.36486326020000004,
           months: [10, 11, 12],
           name: 'Échalote',
           slug: 'echalote',
           category: 'légumes',
         },
         {
-          ecv: 0.9380277949999998,
+          ecv: 0.9380277949999999,
           months: [1, 2, 3, 4, 5, 10],
           name: 'Endive',
           slug: 'endive',
@@ -182,14 +182,14 @@ describe('fruitsetlegumes', () => {
           category: 'légumes',
         },
         {
-          ecv: 10.641545366999999,
+          ecv: 10.641545367,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
           name: 'Mangue',
           slug: 'mangue',
           category: 'fruits',
         },
         {
-          ecv: 0.962528871,
+          ecv: 0.9625288710000001,
           months: [4, 6, 7, 8, 9, 10, 11],
           name: 'Fenouil',
           slug: 'fenouil',
@@ -203,7 +203,7 @@ describe('fruitsetlegumes', () => {
           category: 'légumes',
         },
         {
-          ecv: 0.9410662189999999,
+          ecv: 0.941066219,
           months: [1, 2, 10, 11, 12],
           name: 'Mâche',
           slug: 'mache',
@@ -217,7 +217,7 @@ describe('fruitsetlegumes', () => {
           category: 'légumes',
         },
         {
-          ecv: 0.38953612800000015,
+          ecv: 0.38953612800000004,
           months: [1, 2, 3, 4, 9, 10, 11, 12],
           name: 'Oignon',
           slug: 'oignon',
@@ -252,7 +252,7 @@ describe('fruitsetlegumes', () => {
           category: 'fruits à coque et graines oléagineuses',
         },
         {
-          ecv: 0.5410901117000001,
+          ecv: 0.5410901117,
           months: [10],
           name: 'Coing',
           slug: 'coing',
@@ -294,7 +294,7 @@ describe('fruitsetlegumes', () => {
           category: 'fruits',
         },
         {
-          ecv: 0.9025554719999999,
+          ecv: 0.9025554720000001,
           months: [9, 10, 11],
           name: 'Brocoli',
           slug: 'brocoli',
@@ -308,7 +308,7 @@ describe('fruitsetlegumes', () => {
           category: 'fruits',
         },
         {
-          ecv: 0.8806108929999997,
+          ecv: 0.8806108929999998,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
           name: 'Banane',
           slug: 'banane',
@@ -356,28 +356,28 @@ describe('fruitsetlegumes', () => {
     expect(data).toEqual({
       data: [
         {
-          ecv: 0.396515083,
+          ecv: 0.39651508300000005,
           months: [1, 2, 3, 4, 8, 9, 10, 11, 12],
           name: 'Pomme',
           slug: 'pomme',
           category: 'fruits',
         },
         {
-          ecv: 0.358042894,
+          ecv: 0.35804289400000006,
           months: [7, 8, 9, 10, 11, 12],
           name: 'Ail',
           slug: 'ail',
           category: 'herbes',
         },
         {
-          ecv: 10.641545366999999,
+          ecv: 10.641545367,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
           name: 'Mangue',
           slug: 'mangue',
           category: 'fruits',
         },
         {
-          ecv: 0.5410901117000001,
+          ecv: 0.5410901117,
           months: [10],
           name: 'Coing',
           slug: 'coing',
@@ -412,7 +412,7 @@ describe('fruitsetlegumes', () => {
           category: 'fruits',
         },
         {
-          ecv: 0.8806108929999997,
+          ecv: 0.8806108929999998,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
           name: 'Banane',
           slug: 'banane',
