@@ -22,7 +22,8 @@
     border: 1px solid var(--neutral-80);
   }
 
-  th, td {
+  th,
+  td {
     border: 1px solid var(--neutral-80);
     padding: 0.5rem;
   }

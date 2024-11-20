@@ -12,15 +12,7 @@
   "bracketSameLine": true,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "importOrder": [
-    "data/(.*)$",
-    "utils/(.*)$",
-    "hooks/(.*)$",
-    "components/(.*)$",
-    "^[./]"
-  ],
-  "plugins": [
-    "@trivago/prettier-plugin-sort-imports"
-  ],
+  "importOrder": ["data/(.*)$", "utils/(.*)$", "hooks/(.*)$", "components/(.*)$", "^[./]"],
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrderSortSpecifiers": true
 }

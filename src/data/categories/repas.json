@@ -2,11 +2,7 @@
   {
     "id": 20689,
     "name": "Repas avec du boeuf",
-    "synonyms": [
-      "manger",
-      "alimenter",
-      "viande"
-    ],
+    "synonyms": ["manger", "alimenter", "viande"],
     "slug": "repasavecduboeuf",
     "category": 2,
     "total": 7.26,
@@ -21,10 +17,7 @@
   {
     "id": 20683,
     "name": "Repas végétarien[s]",
-    "synonyms": [
-      "manger",
-      "alimenter"
-    ],
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasvegetarien",
     "category": 2,
     "total": 0.51,
@@ -38,10 +31,7 @@
   },
   {
     "name": "Repas végétalien[s]",
-    "synonyms": [
-      "manger",
-      "alimenter"
-    ],
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasvegetalien",
     "category": 2,
     "total": 0.39,
@@ -55,10 +45,7 @@
   },
   {
     "name": "Repas avec du poisson blanc",
-    "synonyms": [
-      "manger",
-      "alimenter"
-    ],
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasavecdupoissonblanc",
     "category": 2,
     "total": 1.98,
@@ -72,10 +59,7 @@
   },
   {
     "name": "Repas avec du poisson gras",
-    "synonyms": [
-      "manger",
-      "alimenter"
-    ],
+    "synonyms": ["manger", "alimenter"],
     "slug": "repasavecdupoissongras",
     "category": 2,
     "total": 1.11,
@@ -90,11 +74,7 @@
   {
     "id": 20688,
     "name": "Repas avec du poulet",
-    "synonyms": [
-      "manger",
-      "alimenter",
-      "viande"
-    ],
+    "synonyms": ["manger", "alimenter", "viande"],
     "slug": "repasavecdupoulet",
     "category": 2,
     "total": 1.58,

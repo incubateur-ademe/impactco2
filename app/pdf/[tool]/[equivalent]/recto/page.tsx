@@ -4,7 +4,8 @@ import { categories } from 'data/categories'
 import Recto from 'components/outils/equivalents/pdf/Recto'
 import 'components/outils/equivalents/pdf/pdf.css'
 
-const EquivalentPage = ({ params }: { params: { tool: string; equivalent: string } }) => {
+const EquivalentPage = async (props: { params: Promise<{ tool: string; equivalent: string }> }) => {
+  const params = await props.params
   const category = categories.find((category) => category.slug === params.tool)
   if (!category || !category.equivalents) {
     return notFound()

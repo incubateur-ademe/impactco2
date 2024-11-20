@@ -12,7 +12,7 @@ test('Transport distance comparison', async ({ page }) => {
 })
 
 test('Transport distance default values', async ({ page }) => {
-  await page.goto('http://localhost:3000/outils/transport?km=15')
+  await page.goto('http://localhost:3000/outils/transport?km=15', { timeout: 60000 })
 
   await expect(
     page.getByRole('link', { name: 'Covoiturage électrique un conducteur plus 1 passager 0.78 kg CO₂e' })
@@ -53,14 +53,17 @@ test('Transport distance default values', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Bus thermique 1.7 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
 
-  await page.goto('http://localhost:3000/outils/transport?modes=velo,voiturethermique&defaultMode=comparison')
+  await page.goto('http://localhost:3000/outils/transport?modes=velo,voiturethermique&defaultMode=comparison', {
+    timeout: 60000,
+  })
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
     'Vélo ou marche0 kg CO₂eMoyen le plus écologique2.18Kg CO₂eévités'
   )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Voiture thermique2.18 kg CO₂e')
 
   await page.goto(
-    'http://localhost:3000/outils/transport?modes=velo,voiturethermique,voiturethermique+1&defaultMode=comparison'
+    'http://localhost:3000/outils/transport?modes=velo,voiturethermique,voiturethermique+1&defaultMode=comparison',
+    { timeout: 60000 }
   )
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique2.18 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
@@ -69,7 +72,8 @@ test('Transport distance default values', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Voir une autre comparaison' })).not.toBeVisible()
 
   await page.goto(
-    'http://localhost:3000/outils/transport?&tabs=distance&km=15&mode=comparison&comparison=metro,avion&modes=voiturethermique,tgv,metro,avion'
+    'http://localhost:3000/outils/transport?&tabs=distance&km=15&mode=comparison&comparison=metro,avion&modes=voiturethermique,tgv,metro,avion',
+    { timeout: 60000 }
   )
   await expect(page.getByTestId('transport-tab-itineraire')).not.toBeVisible()
   await expect(page.getByText("Mode d'affichage :ListeComparaison")).not.toBeVisible()

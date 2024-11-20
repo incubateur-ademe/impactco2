@@ -3,12 +3,7 @@
     "prefix": "A/R ",
     "name": "Paris - New-York",
     "subtitle": "en avion",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "unit": "A/R",
     "slug": "avion-pny",
     "category": 13,
@@ -29,12 +24,7 @@
     "prefix": "A/R ",
     "name": "Paris - Berlin",
     "subtitle": "en TGV",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "unit": "A/R",
     "slug": "tgv-paris-berlin",
     "category": 13,
@@ -55,12 +45,7 @@
     "prefix": "A/R ",
     "name": "Paris - Marseille",
     "subtitle": "en TGV",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "unit": "A/R",
     "slug": "tgv-paris-marseille",
     "category": 13,
@@ -81,12 +66,7 @@
     "prefix": "A/R ",
     "name": "Lille - Nîmes",
     "subtitle": "en voiture thermique",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "unit": "A/R",
     "slug": "voiture-lille-nimes",
     "category": 13,
@@ -106,12 +86,7 @@
   {
     "prefix": "% de l'",
     "name": "Empreinte carbone d'un citoyen Français",
-    "synonyms": [
-      "",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["", "déplacement", "déplacer", "voyager"],
     "unit": "an",
     "slug": "francais",
     "category": 13,
@@ -132,11 +107,7 @@
   {
     "name": "Épisode[s] de Game of thrones",
     "subtitle": "en streaming",
-    "synonyms": [
-      "streaming",
-      "série",
-      "netflix"
-    ],
+    "synonyms": ["streaming", "série", "netflix"],
     "unit": "épisode",
     "slug": "game-of-thrones",
     "category": 13,
@@ -156,11 +127,7 @@
   {
     "name": "Intégrale[s] de Friends",
     "subtitle": "en streaming",
-    "synonyms": [
-      "streaming",
-      "série",
-      "netflix"
-    ],
+    "synonyms": ["streaming", "série", "netflix"],
     "unit": "intégrale",
     "slug": "friends",
     "category": 13,

@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Documentation({ params: { slug } }: { params: { slug: string[] } }) {
+export default async function Documentation(props: { params: Promise<{ slug: string[] }> }) {
+  const params = await props.params
+
+  const { slug } = params
+
   return <DocumentationLivraisonSlugPage slug={slug.join('/')} />
 }
