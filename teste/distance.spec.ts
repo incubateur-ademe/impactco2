@@ -64,8 +64,6 @@ test('Transport distance default values', async ({ page }) => {
   await page.goto(
     'http://localhost:3000/outils/transport?modes=velo,voiturethermique,voiturethermique+1&defaultMode=comparison',
     { timeout: 60000 }
-    'http://localhost:3000/outils/transport?modes=velo,voiturethermique,voiturethermique+1&defaultMode=comparison',
-    { waitUntil: 'commit', timeout: 60000 }
   )
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique2.18 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
@@ -75,7 +73,7 @@ test('Transport distance default values', async ({ page }) => {
 
   await page.goto(
     'http://localhost:3000/outils/transport?&tabs=distance&km=15&mode=comparison&comparison=metro,avion&modes=voiturethermique,tgv,metro,avion',
-    { waitUntil: 'commit', timeout: 60000 }
+    { timeout: 60000 }
   )
   await expect(page.getByTestId('transport-tab-itineraire')).not.toBeVisible()
   await expect(page.getByText("Mode d'affichage :ListeComparaison")).not.toBeVisible()
