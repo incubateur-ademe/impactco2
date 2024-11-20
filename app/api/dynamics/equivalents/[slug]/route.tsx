@@ -16,12 +16,12 @@ const getFont = async (url: URL) => {
 
 let fonts: { name: string; data: ArrayBuffer; style: FontStyle; weight: FontWeight }[] = []
 
-export async function GET(req: NextRequest, context: { params: { slug: string } }) {
+export async function GET(req: NextRequest, context: { params: Promise<{ slug: string }> }) {
   if (process.env.NO_IMAGE === 'true') {
     return NextResponse.json(`Please use ${process.env.NEXT_PUBLIC_IMAGE_URL}`, { status: 400 })
   }
 
-  const [slug, carpool] = decodeURIComponent(context.params.slug).split('+')
+  const [slug, carpool] = decodeURIComponent((await context.params).slug).split('+')
   if (!slug) {
     return NextResponse.json('No slug specified', { status: 400 })
   }

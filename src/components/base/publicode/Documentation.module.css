@@ -9,11 +9,10 @@
     }
   }
 
-
   :global(#documentation-rule-explanation) {
     padding: 5rem;
 
-    a[name="variations"] {
+    a[name='variations'] {
       color: var(--critical-80) !important;
     }
   }

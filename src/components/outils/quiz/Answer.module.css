@@ -12,7 +12,6 @@
   flex-direction: column;
   justify-content: space-between;
 
-
   @media screen and (max-width: 29.875rem) {
     width: calc(50% - 0.25rem);
   }

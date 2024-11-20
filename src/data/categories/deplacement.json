@@ -4,13 +4,7 @@
     "name": "Avion",
     "slug": "avion",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voler",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voler", "voyager"],
     "type": "plane",
     "category": 4,
     "display": {
@@ -100,13 +94,7 @@
     "empreinteId": 43256,
     "name": "TGV",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager",
-      "train"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
     "slug": "tgv",
     "type": "rail",
     "category": 4,
@@ -136,13 +124,7 @@
     "empreinteId": 43272,
     "name": "Intercités",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager",
-      "train"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "train"],
     "slug": "intercites",
     "type": "rail",
     "category": 4,
@@ -172,13 +154,7 @@
     "name": "Voiture",
     "subtitle": "Moteur thermique",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "conduire",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voiturethermique",
     "carpool": 1,
     "type": "car",
@@ -206,13 +182,7 @@
     "name": "Voiture",
     "subtitle": "Moteur électrique",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "conduire",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "conduire", "voyager"],
     "slug": "voitureelectrique",
     "carpool": 1,
     "type": "car",
@@ -239,12 +209,7 @@
     "id": 6,
     "name": "Autocar",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "autocar",
     "type": "car",
     "category": 4,
@@ -273,14 +238,7 @@
   {
     "id": 7,
     "name": "Vélo ou marche",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager",
-      "marcher",
-      "pedaler"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "marcher", "pedaler"],
     "slug": "velo",
     "type": "foot",
     "category": 4,
@@ -300,13 +258,7 @@
     "empreinteId": 28331,
     "name": "Vélo (ou trottinette) à assistance électrique",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager",
-      "pedaler"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager", "pedaler"],
     "slug": "veloelectrique",
     "type": "foot",
     "category": 4,
@@ -337,12 +289,7 @@
     "name": "Bus",
     "subtitle": "Moteur thermique",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busthermique",
     "type": "car",
     "category": 4,
@@ -372,12 +319,7 @@
     "empreinteId": 43257,
     "name": "Tramway",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "tramway",
     "type": "rail",
     "category": 4,
@@ -407,12 +349,7 @@
     "empreinteId": 43253,
     "name": "Métro",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "rail"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "rail"],
     "slug": "metro",
     "type": "rail",
     "category": 4,
@@ -442,11 +379,7 @@
     "empreinteId": 27992,
     "name": "Scooter ou moto légère",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "scooter",
     "type": "car",
     "category": 4,
@@ -476,11 +409,7 @@
     "empreinteId": 27995,
     "name": "Moto",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer"],
     "slug": "moto",
     "type": "car",
     "category": 4,
@@ -510,13 +439,7 @@
     "empreinteId": 43254,
     "name": "RER ou Transilien",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "train",
-      "rail"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
     "slug": "rer",
     "type": "rail",
     "category": 4,
@@ -547,13 +470,7 @@
     "empreinteId": 43255,
     "name": "TER",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "train",
-      "rail"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "train", "rail"],
     "slug": "ter",
     "type": "rail",
     "category": 4,
@@ -584,12 +501,7 @@
     "name": "Bus",
     "subtitle": "Moteur électrique",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "buselectrique",
     "type": "car",
     "category": 4,
@@ -620,12 +532,7 @@
     "name": "Bus",
     "subtitle": "GNV",
     "prefix": "km en ",
-    "synonyms": [
-      "transport",
-      "déplacement",
-      "déplacer",
-      "voyager"
-    ],
+    "synonyms": ["transport", "déplacement", "déplacer", "voyager"],
     "slug": "busgnv",
     "type": "car",
     "category": 4,

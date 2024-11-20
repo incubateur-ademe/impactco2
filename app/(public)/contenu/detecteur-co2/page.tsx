@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import React from 'react'
 import DetecteurPage from 'src/views/DetecteurPage'
 import Notion from 'components/Notion/Notion'
-import { getNotionContentProps, getNotionRevalidate } from 'components/Notion/utils'
+import { getNotionContentProps } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'
 
-export const revalidate = getNotionRevalidate()
+export const revalidate = 900
 
 const title = 'Le Détecteur CO₂'
 

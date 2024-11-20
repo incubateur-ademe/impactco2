@@ -42,7 +42,7 @@
   margin-top: 1rem;
   min-width: 100%;
 
-  >div {
+  > div {
     flex: 1;
     min-width: 300px;
   }

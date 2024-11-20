@@ -243,7 +243,7 @@ Liste des équivalents à comparer parmis la liste suivante :
   - ordinateurfixeprofessionnel : ordinateur fixe sans écran (professionnel)
   - ecran : écran d'ordinateur
   - tabletteclassique : tablette
-  - television : télévision 
+  - television : télévision
   - ordinateurportable : ordinateur portable
   - enceintebluetooth : enceinte connectée
   - telephonebasique : téléphone basique
@@ -273,6 +273,3 @@ Liste des équivalents à comparer parmis la liste suivante :
   - piscine : remplissage de piscine
   - terre-voiture : tour de la terre en voiture
   - harry-potter : marathon des films Harry Potter en streaming
-
-
-

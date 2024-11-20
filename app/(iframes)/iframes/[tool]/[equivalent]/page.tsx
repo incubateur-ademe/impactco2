@@ -32,10 +32,11 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: { tool: string; equivalent: string }
+  params: Promise<{ tool: string; equivalent: string }>
 }
 
-const page = ({ params }: Props) => {
+const page = async (props: Props) => {
+  const params = await props.params
   const category = categories.find((category) => category.slug === params.tool)
   if (!category || !category.equivalents) {
     return notFound()

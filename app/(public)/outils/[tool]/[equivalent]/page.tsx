@@ -35,11 +35,13 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: { tool: string; equivalent: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: Promise<{ tool: string; equivalent: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const searchParams = await props.searchParams
+  const params = await props.params
   const category = categories.find((category) => category.slug === params.tool)
 
   if (!category || !category.equivalents) {
@@ -68,7 +70,8 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
   }
 }
 
-const EquivalentPage = ({ params }: Props) => {
+const EquivalentPage = async (props: Props) => {
+  const params = await props.params
   const category = categories.find((category) => category.slug === params.tool)
   if (!category || !category.equivalents) {
     return notFound()

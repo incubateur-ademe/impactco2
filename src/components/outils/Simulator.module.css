@@ -1,4 +1,5 @@
-.distanceSimulator, .simulator {
+.distanceSimulator,
+.simulator {
   padding: 1.5rem;
   color: var(--neutral-50);
   display: flex;
