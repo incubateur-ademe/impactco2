@@ -72,7 +72,7 @@
 .usageWidget {
   width: 11rem;
 
-  >div,
+  > div,
   button {
     @media screen and (max-width: 48rem) {
       height: 2rem;

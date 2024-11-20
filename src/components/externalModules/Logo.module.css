@@ -20,7 +20,7 @@
     color: var(--primary-60) !important;
   }
 
-  >svg {
+  > svg {
     width: 1.875rem !important;
     height: auto !important;
   }

@@ -1,3 +1,8 @@
 .impactCO2-container {
   display: inline;
 }
+
+.hidden {
+  left: -99999px;
+  position: absolute;
+}

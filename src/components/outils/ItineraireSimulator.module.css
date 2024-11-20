@@ -13,7 +13,7 @@
   gap: 0.75rem;
   width: 100%;
 
-  >div {
+  > div {
     width: calc(100% - 0.325rem);
   }
 
@@ -29,7 +29,7 @@
   @media only screen and (max-width: 48rem) {
     flex-direction: column;
 
-    >div {
+    > div {
       width: 100%;
     }
   }

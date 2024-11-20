@@ -19,8 +19,6 @@
   border-top: 2px solid var(--primary-30);
   border-bottom: 2px solid var(--primary-30);
 
-
-
   @media screen and (max-width: 29.875rem) {
     margin: 2rem -1rem;
   }

@@ -21,9 +21,14 @@ export async function generateStaticParams() {
   ]
 }
 
-type Props = { params: { tool: string }; searchParams: { [key: string]: string | string[] | undefined } }
+type Props = {
+  params: Promise<{ tool: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
 
-export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const searchParams = await props.searchParams
+  const params = await props.params
   const tool = tools.find((tool) => tool.slug === params.tool)
   if (tool) {
     return {
@@ -52,7 +57,8 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
   return parent as Metadata
 }
 
-const OutilPage = ({ params }: Props) => {
+const OutilPage = async (props: Props) => {
+  const params = await props.params
   const tool = tools.find((tool) => tool.slug === params.tool)
 
   if (tool) {

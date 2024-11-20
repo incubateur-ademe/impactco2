@@ -21,17 +21,16 @@
   @media screen and (max-width: 48rem) {
     gap: 0.25rem;
   }
-
 }
 
-.tile, .disapearingTile {
+.tile,
+.disapearingTile {
   transition: all 0.2s linear;
   visibility: visible;
   opacity: 1;
   width: 100%;
   min-height: 100%;
 }
-
 
 .disapearingTile {
   visibility: hidden;
@@ -43,7 +42,6 @@
   flex: 1;
   height: 100%;
 }
-
 
 .vs {
   color: var(--primary-60);

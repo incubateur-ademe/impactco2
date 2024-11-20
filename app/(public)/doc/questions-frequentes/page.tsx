@@ -2,10 +2,9 @@ import { Metadata } from 'next'
 import React from 'react'
 import FAQPage from 'src/views/FAQPage'
 import { getFAQs } from 'utils/faq'
-import { getRevalidate } from 'utils/revalidate'
 import Suggestion from 'components/layout/Suggestion'
 
-export const revalidate = getRevalidate(process.env.NOTION_TABLE_REVALIDATE)
+export const revalidate = 900
 
 export const metadata: Metadata = {
   title: 'Questions fréquentes | Impact CO₂',

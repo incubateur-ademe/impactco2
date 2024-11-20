@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import React from 'react'
 import Notion from 'components/Notion/Notion'
-import { getNotionContentProps, getNotionRevalidate } from 'components/Notion/utils'
+import { getNotionContentProps } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'
 
 const title = '4 conseils pour réduire l’impact carbone des séjours au ski'
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 }
 
-export const revalidate = getNotionRevalidate()
+export const revalidate = 900
 
 const SkiPage = async () => {
   const recordMap = await getNotionContentProps('519fba8721a445e3b9cb10a6fa4d5208')

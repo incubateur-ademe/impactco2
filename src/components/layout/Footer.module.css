@@ -86,7 +86,7 @@
   @media screen and (max-width: 48rem) {
     width: 100%;
 
-    >div {
+    > div {
       width: calc(50% - 1.25rem);
     }
   }
@@ -94,7 +94,7 @@
   @media screen and (max-width: 29.875rem) {
     flex-wrap: wrap;
 
-    >div {
+    > div {
       width: 100%;
     }
   }

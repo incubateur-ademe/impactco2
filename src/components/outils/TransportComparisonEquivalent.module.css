@@ -57,8 +57,8 @@
 }
 
 .smallBar {
-  border: 2px solid #35A043;
-  background: #CCEAC4;
+  border: 2px solid #35a043;
+  background: #cceac4;
   min-width: 1.5rem;
 }
 
@@ -95,7 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #13701F;
+  color: #13701f;
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1rem;
