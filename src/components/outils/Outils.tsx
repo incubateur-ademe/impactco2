@@ -1,4 +1,3 @@
-import React from 'react'
 import CheckIcon from 'components/base/icons/check'
 import SimpleStarShapeIcon from 'components/base/icons/simple-star-shape'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
@@ -64,7 +63,7 @@ const Outils = () => {
                       <CheckIcon />
                     </div>
                   </div>
-                  <p>Plus de 50 aliments</p>
+                  <p>60 aliments à comparer entre eux</p>
                 </div>
                 <div className={styles.descriptionLine}>
                   <div className={styles.icons}>
@@ -75,7 +74,18 @@ const Outils = () => {
                       <CheckIcon />
                     </div>
                   </div>
-                  <p>À comparer par groupe d’aliments, rayons du magasin...</p>
+                  <p>Un classement d'impact par rayon du magasin, popularité...</p>
+                </div>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckIcon />
+                    </div>
+                  </div>
+                  <p>Un outil facile à intergrer dans un contenu de sensibilisation</p>
                 </div>
               </>
             ),
