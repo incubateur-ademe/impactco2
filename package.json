@@ -26,7 +26,7 @@
     "build": "yarn webpack && next build",
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
-    "webpack": "dotenv -e .env.local webpack",
+    "webpack": "dotenv -e .env webpack",
     "stats": "dotenv -e .env ts-node src/scripts/getStats.ts",
     "start": "next start",
     "lint": "next lint",
