@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 import React from 'react'
 import Notion from 'components/Notion/Notion'
-import { getNotionContentProps, getNotionRevalidate } from 'components/Notion/utils'
+import { getNotionContentProps } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'
 
-export const revalidate = getNotionRevalidate()
+export const revalidate = 900
 
 const title = 'Comment sensibiliser vos visiteurs à l’empreinte carbone ?'
 

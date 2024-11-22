@@ -23,11 +23,7 @@
       }
     ]
   },
-  "plugins": [
-    "@typescript-eslint",
-    "prettier",
-    "jest"
-  ],
+  "plugins": ["@typescript-eslint", "prettier", "jest"],
   "env": {
     "browser": true,
     "es2022": true,

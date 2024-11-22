@@ -1,13 +1,12 @@
 import { Metadata } from 'next'
 import React from 'react'
 import { getGuideUtilisation } from 'utils/guideUtilisation'
-import { getNotionRevalidate } from 'components/Notion/utils'
 import GuideUtilisation from 'components/faq/GuideUtilisation'
 import Suggestion from 'components/layout/Suggestion'
 
 const title = "Guide d'utilisation"
 
-export const revalidate = getNotionRevalidate()
+export const revalidate = 900
 
 export const metadata: Metadata = {
   title: `${title} | Impact CO₂`,
