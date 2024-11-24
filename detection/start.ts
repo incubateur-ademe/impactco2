@@ -60,8 +60,6 @@ const transformText = (element: Element, language: 'fr' | 'en', darkMode?: boole
 }
 export const initMatomo = () => {
   //@ts-expect-error: Matomo redefinition
-  const paqInit = window._paq
-  //@ts-expect-error: Matomo redefinition
   const _paq_impactco2 = (window._paq_impactco2 = window._paq_impactco2 || [])
   ;(function () {
     //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
@@ -75,12 +73,6 @@ export const initMatomo = () => {
     g.type = 'text/javascript'
     g.async = true
     g.src = u + '/matomo.js'
-    g.onload = function () {
-      //@ts-expect-error: Matomo redefinition
-      window._paq_impactco2 = window._paq
-      //@ts-expect-error: Matomo redefinition
-      window._paq = paqInit
-    }
     //@ts-expect-error: Matomo redefinition
     s.parentNode.insertBefore(g, s)
   })()
