@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { usePathname, useSearchParams } from 'next/navigation'
-import React, { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import DistanceSimulator from './DistanceSimulator'
 import ItineraireSimulator from './ItineraireSimulator'
@@ -36,8 +36,15 @@ const TransportSimulator = () => {
   useEffect(() => {
     if (pathName.includes(itineraire.value)) {
       setSelected('itineraire')
+    } else {
+      const tabsParam = searchParams.get('tabs')
+      const values = tabsParam?.split(',')
+
+      if (values && values.includes(itineraire.value)) {
+        setSelected('itineraire')
+      }
     }
-  }, [pathName, setSelected])
+  }, [pathName, setSelected, searchParams])
 
   const tabs = useMemo(() => {
     const tabsParam = searchParams.get('tabs')
@@ -51,10 +58,6 @@ const TransportSimulator = () => {
 
     if (values.includes(distance.value) && (values.includes(itineraire.value) || pathName.includes(itineraire.value))) {
       return true
-    }
-
-    if (values.includes(itineraire.value) && !pathName.includes(itineraire.value)) {
-      setSelected('itineraire')
     }
 
     return false
