@@ -546,7 +546,7 @@
     "boulangerie": "Bakery",
     "epiceriesalee": "Savory groceries",
     "epiceriesucree": "Sweet groceries",
-    "deselect": "deselect all",
+    "select": "select all",
     "integrate": {
       "customList": "Custom list",
       "hideButtons": "Show buttons"

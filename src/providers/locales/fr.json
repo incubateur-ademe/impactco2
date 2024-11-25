@@ -546,7 +546,7 @@
     "boulangerie": "Boulangerie",
     "epiceriesalee": "Épicerie salée",
     "epiceriesucree": "Épicerie sucrée",
-    "deselect": "tout désélectionner",
+    "select": "tout sélectionner",
     "integrate": {
       "customList": "Liste personnalisée",
       "hideButtons": "Affichage des boutons"

@@ -21,9 +21,14 @@ const AlimentationSimulator = () => {
   const t = useTranslations('alimentation')
   const values = useMemo(() => equivalentsByCategory[category], [category])
   const [openCategories, setOpenCategories] = React.useState<Record<string, boolean>>({})
+
   return customList ? (
     <CategorySimulator
-      equivalents={computedEquivalents.filter((equivalent) => equivalents.includes(equivalent.slug))}
+      equivalents={computedEquivalents.filter(
+        (equivalent, index) =>
+          equivalents.includes(equivalent.slug) &&
+          computedEquivalents.findIndex((e) => e.slug === equivalent.slug) === index
+      )}
       tracking='Alimentation'
       reverse
     />

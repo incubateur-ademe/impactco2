@@ -46,12 +46,12 @@ test('Alimentation simulateur', async ({ page }) => {
   await page.getByTestId('checkbox-alimentation-list-crevettes-checkbox').check()
   await page.locator('li').filter({ hasText: 'Poissons et fruits de mertout' }).getByRole('button').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/alimentation" data-search="?alimentationEquivalents=boeuf,porc&theme=default&language=fr"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/alimentation" data-search="?alimentationEquivalents=boeuf,porc,crevettes,cabillaud,lieu,dorade,saumon,moules,huitres,thon,sardines&theme=default&language=fr"></script>'
   )
 
   await page.getByTestId('checkbox-custom-param-hideButtons-checkbox').check()
   await expect(page.getByTestId('clipboard-box')).toContainText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/alimentation" data-search="?alimentationEquivalents=boeuf,porc&hideButtons=true&theme=default&language=fr"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/alimentation" data-search="?alimentationEquivalents=boeuf,porc,crevettes,cabillaud,lieu,dorade,saumon,moules,huitres,thon,sardines&theme=default&language=fr"></script>'
   )
 })
 

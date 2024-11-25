@@ -546,7 +546,7 @@
     "boulangerie": "Panadería",
     "epiceriesalee": "Comestibles salados",
     "epiceriesucree": "Comestibles dulces",
-    "deselect": "deseleccionar todo",
+    "select": "seleccionar todo",
     "integrate": {
       "customList": "Lista personalizada",
       "hideButtons": "Mostrar botones"

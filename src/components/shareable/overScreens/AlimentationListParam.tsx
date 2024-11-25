@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
-import React, { Dispatch } from 'react'
+import { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
@@ -30,11 +30,14 @@ const AlimentationListParam = ({
               asLink
               type='button'
               onClick={() =>
-                setEquivalents(
-                  equivalents.filter((equivalent) => category.equivalents.every(({ slug }) => equivalent !== slug))
-                )
+                setEquivalents([
+                  ...equivalents,
+                  ...category.equivalents
+                    .map(({ slug }) => slug)
+                    .filter((equivalent) => !equivalents.includes(equivalent)),
+                ])
               }>
-              {t('deselect')}
+              {t('select')}
             </Button>
           </div>
           <ul className={listStyles.equivalents}>
