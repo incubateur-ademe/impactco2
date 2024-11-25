@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
-import React, { Dispatch, ForwardedRef, forwardRef, useCallback, useEffect, useMemo } from 'react'
+import { Dispatch, ForwardedRef, forwardRef, useCallback, useEffect, useMemo } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Question as QuestionType } from 'types/question'
 import Button from 'components/base/buttons/Button'
@@ -109,8 +109,7 @@ const Question = (
                 data-testid='quiz-more-info'
                 id='quiz-more-info'
                 className={styles.moreInfo}
-                //@ts-expect-error: inert not managed by react
-                inert={displayMore ? undefined : ''}>
+                inert={displayMore ? undefined : true}>
                 {question.moreInfo}
               </div>
             </div>
