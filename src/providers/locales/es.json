@@ -398,6 +398,7 @@
         "stockagedonnee": "Durante 1 año.",
         "boeuf": "Promedio de los factores de emisión de costilla de res, entrecot, lengua de res, bistec de falda, paleta de res, carrillera de res",
         "veau": "Promedio de los factores de emisión de costilla de ternera, paleta de ternera, escalope de ternera, nuez de ternera, pecho de ternera y molleja de ternera",
+        "porc": "Promedio de los factores de emisión de chuleta de cerdo, paleta de cerdo, panceta de cerdo, lomo de cerdo",
         "dorade": "Promedio de los factores de emisión de dorada de cultivo y dorada salvaje",
         "beurre": "Promedio de los factores de emisión de mantequilla sin sal y mantequilla con sal",
         "fromagedure": "Promedio de los factores de emisión de varios quesos duros: Emmental, Gruyère, Comté, Gouda, etc.",

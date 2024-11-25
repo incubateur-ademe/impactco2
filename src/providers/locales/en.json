@@ -398,6 +398,7 @@
         "stockagedonnee": "For 1 year.",
         "boeuf": "Average of emission factors for rib steak, entrecôte, beef tongue, flank steak, beef shoulder, beef cheek",
         "veau": "Average of emission factors for veal rib, veal shoulder, veal escalope, veal nut, veal breast, and veal sweetbread",
+        "porc": "Average of emission factors for pork chop, pork shoulder, pork belly, pork loin",
         "dorade": "Average of emission factors for farmed gilthead seabream and wild gilthead seabream",
         "beurre": "Average of emission factors for unsalted butter and salted butter",
         "fromagedure": "Average of emission factors for various hard cheeses: Emmental, Gruyère, Comté, Gouda, etc.",

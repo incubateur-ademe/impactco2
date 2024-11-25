@@ -1,4 +1,3 @@
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
@@ -29,6 +28,11 @@ const FRAlimentationData = () => {
             <br />
             Moyenne des facteurs d’émission de la côte de veau, épaule de veau, escalope de veau, noix de veau, poitrine
             de veau et riz de veau
+          </li>
+          <li>
+            Porc : <b>Impact carbone = 9,66 kg de CO2e / kg</b>
+            <br />
+            Moyenne des facteurs d’émission de la côte de porc, échine de porc, poitrine de porc, épaule de porc
           </li>
           <li>
             Dorade royale : <b>Impact carbone = 10,8 kg de CO2e / kg</b>
@@ -108,6 +112,11 @@ const ESAlimentationData = () => {
             ternera, pecho de ternera y molleja de ternera
           </li>
           <li>
+            Cerdo: <b>Impacto de carbono = 9,66 kg de CO2e / kg</b>
+            <br />
+            Promedio de los factores de emisión de chuleta de cerdo, paleta de cerdo, panceta de cerdo, lomo de cerdo
+          </li>
+          <li>
             Dorada: <b>Impacto de carbono = 10,8 kg de CO2e / kg</b>
             <br />
             Promedio de los factores de emisión de dorada de cultivo y dorada salvaje
@@ -160,6 +169,11 @@ const ENAlimentationData = () => {
             <br />
             Average of emission factors for veal rib, veal shoulder, veal escalope, veal nut, veal breast, and veal
             sweetbread
+          </li>
+          <li>
+            Pork: <b>Carbon impact = 9.66 kg CO2e / kg</b>
+            <br />
+            Average of emission factors for pork chop, pork shoulder, pork belly, pork loin
           </li>
           <li>
             Gilthead seabream: <b>Carbon impact = 10.8 kg CO2e / kg</b>
