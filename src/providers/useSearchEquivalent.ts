@@ -38,7 +38,12 @@ const equivalents = computedEquivalents
   })
   .flatMap(getEquivalentWithCarpool)
 
-export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, category?: number) => {
+export const useSearchEquivalent = (
+  search: string,
+  excludeEmpty?: boolean,
+  category?: number,
+  emptyResults?: boolean
+) => {
   const [results, setResults] = useState<ComputedEquivalent[]>([])
   const [fuses, setFuses] = useState<{ fuse: Fuse<ComputedEquivalent>; nonEmptyFuse: Fuse<ComputedEquivalent> }>()
 
@@ -72,17 +77,23 @@ export const useSearchEquivalent = (search: string, excludeEmpty?: boolean, cate
 
   useEffect(() => {
     if (fuses) {
-      setResults(
-        excludeEmpty
-          ? search.length > 0
-            ? fuses.nonEmptyFuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
-            : computedEquivalents.filter((equivalent) => equivalent.value).sort((a, b) => (a.slug > b.slug ? 1 : -1))
-          : search.length > 0
-            ? fuses.fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
-            : computedEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
-      )
+      if (emptyResults && search.length === 0) {
+        setResults([])
+      } else {
+        setResults(
+          excludeEmpty
+            ? search.length > 0
+              ? fuses.nonEmptyFuse
+                  .search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+                  .map(({ item }) => item)
+              : computedEquivalents.filter((equivalent) => equivalent.value).sort((a, b) => (a.slug > b.slug ? 1 : -1))
+            : search.length > 0
+              ? fuses.fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
+              : computedEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
+        )
+      }
     }
-  }, [search, fuses])
+  }, [search, fuses, emptyResults])
 
   return results
 }
