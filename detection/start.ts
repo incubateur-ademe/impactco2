@@ -60,19 +60,20 @@ const transformText = (element: Element, language: 'fr' | 'en', darkMode?: boole
 }
 export const initMatomo = () => {
   //@ts-expect-error: Matomo redefinition
-  const _paq_impactco2 = (window._paq_impactco2 = window._paq_impactco2 || [])
+  const _paq = (window._paq = window._paq || [])
   ;(function () {
     //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
     const u = MATOMO_SITE_URL
-    _paq_impactco2.push(['setTrackerUrl', u + '/matomo.php'])
     //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
-    _paq_impactco2.push(['setSiteId', MATOMO_SITE_ID])
+    _paq.push(['addTracker', u + '/matomo.php', MATOMO_SITE_ID])
+
     const d = document,
       g = d.createElement('script'),
       s = d.getElementsByTagName('script')[0]
     g.type = 'text/javascript'
     g.async = true
     g.src = u + '/matomo.js'
+
     //@ts-expect-error: Matomo redefinition
     s.parentNode.insertBefore(g, s)
   })()
@@ -81,7 +82,12 @@ export const initMatomo = () => {
   window.please = {}
   window.please.track = function (ary) {
     //@ts-expect-error: Matomo redefinition
-    window?._paq_impactco2?.push(ary)
+    const matomo = window.Matomo
+    if (matomo) {
+      //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
+      const matomoTracker = matomo.getTracker(MATOMO_SITE_URL + '/matomo.php', MATOMO_SITE_ID)
+      matomoTracker.trackEvent(ary[0], ary[1], ary[2], ary[3])
+    }
   }
 }
 
