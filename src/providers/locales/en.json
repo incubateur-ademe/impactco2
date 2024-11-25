@@ -79,6 +79,24 @@
     "comparison": "Change the mode of transport compared",
     "understand": "Understanding data",
     "download": "Download",
+    "alimentationCategoryIntegrate": {
+      "title": "List to display by default",
+      "group": "Food group",
+      "rayon": "Store sections",
+      "popularity": "Top 10"
+    },
+    "alimentationCategory": {
+      "title": "List to share",
+      "group": "Food group",
+      "rayon": "Store sections",
+      "popularity": "Top 10"
+    },
+    "customList": {
+      "title": "Create a custom food list"
+    },
+    "hideButtons": {
+      "title": "Show buttons at the bottom of my integration"
+    },
     "m2": {
       "title": "Display a custom surface",
       "unit": "m²"
@@ -498,6 +516,7 @@
     "ecoresponsable": "Eco-responsible at work",
     "ico2-transport": "Calculate the carbon impact of your journeys",
     "ico2-fruitsetlegumes": "Discover seasonal fruits and vegetables and their impact",
+    "ico2-repas": "Comparing the carbon impact of meals",
     "fiches": "Download the printable quiz sheets"
   },
   "alimentation": {
@@ -525,6 +544,11 @@
     "fromagerie": "Cheese shop",
     "boulangerie": "Bakery",
     "epiceriesalee": "Savory groceries",
-    "epiceriesucree": "Sweet groceries"
+    "epiceriesucree": "Sweet groceries",
+    "deselect": "deselect all",
+    "integrate": {
+      "customList": "Custom list",
+      "hideButtons": "Show buttons"
+    }
   }
 }

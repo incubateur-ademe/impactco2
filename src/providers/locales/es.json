@@ -79,6 +79,24 @@
     "comparison": "Cambiar el modo de transporte comparar",
     "understand": "Entender los datos",
     "download": "Descargar",
+    "alimentationCategoryIntegrate": {
+      "title": "Lista para mostrar por defecto",
+      "group": "Grupo de alimentos",
+      "rayon": "Secciones de la tienda",
+      "popularity": "Top 10"
+    },
+    "alimentationCategory": {
+      "title": "Lista para compartir",
+      "group": "Grupo de alimentos",
+      "rayon": "Secciones de la tienda",
+      "popularity": "Top 10"
+    },
+    "customList": {
+      "title": "Crear una lista de alimentos personalizada"
+    },
+    "hideButtons": {
+      "title": "Mostrar botones en la parte inferior de mi integración"
+    },
     "m2": {
       "title": "Mostrar una superficie personalizada",
       "unit": "m²"
@@ -498,6 +516,7 @@
     "ecoresponsable": "Eco-responsabilidad en el trabajo",
     "ico2-transport": "Calcule el impacto de carbono de sus viajes",
     "ico2-fruitsetlegumes": "Descubre frutas y verduras de temporada y su impacto",
+    "ico2-repas": "Compare el impacto de carbono de las comidas",
     "fiches": "Descargue las hojas del cuestionario para imprimir"
   },
   "alimentation": {
@@ -525,6 +544,11 @@
     "fromagerie": "Quesería",
     "boulangerie": "Panadería",
     "epiceriesalee": "Comestibles salados",
-    "epiceriesucree": "Comestibles dulces"
+    "epiceriesucree": "Comestibles dulces",
+    "deselect": "deseleccionar todo",
+    "integrate": {
+      "customList": "Lista personalizada",
+      "hideButtons": "Mostrar botones"
+    }
   }
 }
