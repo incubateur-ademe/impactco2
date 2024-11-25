@@ -43,7 +43,7 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
       equivalents: ['quinoa', 'riz', 'pates', 'ble', 'boulgour', 'poischiches', 'haricotsrouges', 'lentilles', 'mais'],
     },
     {
-      name: 'autres',
+      name: 'plats',
       logos: ['cheeseburger', 'sushis'],
       equivalents: ['cheeseburger', 'kebab', 'burgerpoulet', 'pizza', 'sushis', 'burgervegetarien', 'frites', 'tofu'],
     },

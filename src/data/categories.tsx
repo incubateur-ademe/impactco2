@@ -137,8 +137,8 @@ export const categories: Category[] = [
     synonyms: ['manger', 'alimenter'],
     sources: [
       {
-        label: 'Base Empreinte ADEME',
-        href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
+        label: 'Agribalyse 3.1.1 - Mise à jour le 10/08/2023',
+        href: 'https://agribalyse.ademe.fr/app',
       },
     ],
     description: 'Pour aborder l’impact carbone de l’alimentation',

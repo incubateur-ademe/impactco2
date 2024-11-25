@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import AlimentationListParam from './AlimentationListParam'
@@ -14,7 +14,7 @@ const AlimentationIntegrate = () => {
   const t = useTranslations('alimentation.integrate')
   const { theme, language, alimentation: alimentationParams } = useParamContext()
 
-  const [hideButtons, setHideButtons] = useState(false)
+  const [showButtons, setShowButtons] = useState(true)
   const [category, setCategory] = useState(alimentationParams.category)
   const [customList, setCustomList] = useState(alimentationParams.customList)
   const [equivalents, setEquivalents] = useState(alimentationParams.equivalents)
@@ -25,12 +25,12 @@ const AlimentationIntegrate = () => {
 
   const search = useMemo(() => {
     const result = `&theme=${theme}&language=${language}`
-    const hideButtonsParam = hideButtons ? '&hideButtons=true' : ''
+    const hideButtonsParam = showButtons ? '' : '&hideButtons=true'
     if (customList) {
       return `alimentationEquivalents=${equivalents.join(',')}${hideButtonsParam}${result}`
     }
     return `alimentationCategory=${category}${hideButtonsParam}${result}`
-  }, [category, customList, equivalents, hideButtons, theme, language])
+  }, [category, customList, equivalents, showButtons, theme, language])
 
   return (
     <>
@@ -63,7 +63,7 @@ const AlimentationIntegrate = () => {
             slug='hideButtons'
             integration
             visible
-            param={{ value: hideButtons, setter: setHideButtons } as CustomParamValue}
+            param={{ value: showButtons, setter: setShowButtons } as CustomParamValue}
           />
         </fieldset>
       </form>
