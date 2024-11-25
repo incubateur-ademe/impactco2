@@ -1,18 +1,18 @@
 import axios from 'axios'
 import fs from 'fs'
-import alimentation from '../data/categories/alimentation.json'
 import deplacement from '../data/categories/deplacement.json'
 import electromenager from '../data/categories/electromenager.json'
 import habillement from '../data/categories/habillement.json'
 import mobilier from '../data/categories/mobilier.json'
 import numerique from '../data/categories/numerique.json'
+import repas from '../data/categories/repas.json'
 import { UsableEquivalent } from '../../types/equivalent'
 
 const existingEquivalentsByCategory: Record<string, { file: string; values: UsableEquivalent[] }> = {
   electromenager: { file: 'electromenager.json', values: electromenager },
   habillement: { file: 'habillement.json', values: habillement },
   mobilier: { file: 'mobilier.json', values: mobilier },
-  alimentation: { file: 'alimentation.json', values: alimentation },
+  repas: { file: 'repas.json', values: repas },
   numerique: { file: 'numerique.json', values: numerique },
 }
 
@@ -182,7 +182,7 @@ const buildFromEmpreinte = async (key: string) => {
   }
   const existingEquivalents = existingEquivalentsByCategory[key]
   if (!existingEquivalents || key === 'transport') {
-    console.info('Type should be "transport", "electomenager", "habillement", "mobilier" or "alimentation"')
+    console.info('Type should be "transport", "electomenager", "habillement", "mobilier" or "repas"')
     process.exit(1)
   }
 
@@ -217,6 +217,6 @@ if (process.argv[2]) {
   buildFromEmpreinte('electromenager')
   buildFromEmpreinte('habillement')
   buildFromEmpreinte('mobilier')
-  buildFromEmpreinte('alimentation')
+  buildFromEmpreinte('repas')
   buildFromEmpreinte('transport')
 }
