@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
 import Resource from 'components/base/Resource'
 import Button from 'components/base/buttons/Button'
@@ -12,6 +12,7 @@ import DropdownArrowUpIcon from 'components/base/icons/dropdown-arrow-up'
 import FullArrowLeftIcon from 'components/base/icons/full-arrow-left'
 import shareableStyles from '../../shareable/Shareable.module.css'
 import Question from './Question'
+import QuizInfography from './QuizInfography'
 import styles from './QuizSimulator.module.css'
 import { questions } from './question.config'
 
@@ -137,7 +138,7 @@ const QuizSimulator = () => {
               {t('restart')}
             </Button>
           </div>
-          <div className={shareableStyles.separatorBothBorders} />
+          <QuizInfography />
           <div className={styles.ressources}>
             <p>{t('read-more')}</p>
             <Resource

@@ -1,3 +1,4 @@
+import { computedEquivalents } from 'src/providers/equivalents'
 import { Question } from 'types/question'
 import AvocatPoisson from './infos/AvocatPoisson'
 import BoeufTGV from './infos/BoeufTGV'
@@ -22,3 +23,9 @@ export const questions: Question[] = [
   { answer: 'A', slugA: 'email', valueA: 1000, slugB: 'smartphone', moreInfo: <EmailSmartphone /> },
   { answer: 'A', slugA: 'veloelectrique', valueA: 10, slugB: 'mangue', moreInfo: <VeloMangue />, last: true },
 ]
+
+export const quizEquivalents = computedEquivalents
+  .filter((equivalent) =>
+    questions.some((question) => question.slugA === equivalent.slug || question.slugB === equivalent.slug)
+  )
+  .filter((value, index, array) => array.findIndex((t) => t.slug === value.slug) === index)
