@@ -1,6 +1,8 @@
 {
   "quiz": {
     "infography": "REVISAR LOS PEDIDOS DE TALLAS",
+    "hideAll": "Ocultar la lista de órdenes de magnitud",
+    "displayAll": "Mostrar todas las órdenes de magnitud",
     "question": "Pregunta",
     "previous": "Ant.",
     "title": "Según tú, ¿qué tiene <important>menos</important> impacto en el clima?",

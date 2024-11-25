@@ -1,6 +1,8 @@
 {
   "quiz": {
     "infography": "REVIEW THE ORDERS OF MAGNITUDE",
+    "hideAll": "Collapse the list of orders of magnitude",
+    "displayAll": "Show all orders of magnitude",
     "question": "Question",
     "previous": "Prev.",
     "title": "In your opinion, what has <important>the least</important> impact on the climate?",
